@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['IamUserArgs', 'IamUser']
@@ -55,37 +55,82 @@ class IamUserArgs:
         :param pulumi.Input[str] time_zone: The user's time zone. The value can be any that are available from the view-time-zones operation
         :param pulumi.Input[str] zip_code: The user's five-digit ZIP code
         """
-        pulumi.set(__self__, "auth_grants_json", auth_grants_json)
-        pulumi.set(__self__, "country", country)
-        pulumi.set(__self__, "email", email)
-        pulumi.set(__self__, "enable_tfa", enable_tfa)
-        pulumi.set(__self__, "first_name", first_name)
-        pulumi.set(__self__, "last_name", last_name)
-        pulumi.set(__self__, "phone", phone)
+        IamUserArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auth_grants_json=auth_grants_json,
+            country=country,
+            email=email,
+            enable_tfa=enable_tfa,
+            first_name=first_name,
+            last_name=last_name,
+            phone=phone,
+            address=address,
+            city=city,
+            contact_type=contact_type,
+            job_title=job_title,
+            lock=lock,
+            mobile_phone=mobile_phone,
+            preferred_language=preferred_language,
+            secondary_email=secondary_email,
+            session_timeout=session_timeout,
+            state=state,
+            time_zone=time_zone,
+            zip_code=zip_code,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auth_grants_json: pulumi.Input[str],
+             country: pulumi.Input[str],
+             email: pulumi.Input[str],
+             enable_tfa: pulumi.Input[bool],
+             first_name: pulumi.Input[str],
+             last_name: pulumi.Input[str],
+             phone: pulumi.Input[str],
+             address: Optional[pulumi.Input[str]] = None,
+             city: Optional[pulumi.Input[str]] = None,
+             contact_type: Optional[pulumi.Input[str]] = None,
+             job_title: Optional[pulumi.Input[str]] = None,
+             lock: Optional[pulumi.Input[bool]] = None,
+             mobile_phone: Optional[pulumi.Input[str]] = None,
+             preferred_language: Optional[pulumi.Input[str]] = None,
+             secondary_email: Optional[pulumi.Input[str]] = None,
+             session_timeout: Optional[pulumi.Input[int]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_zone: Optional[pulumi.Input[str]] = None,
+             zip_code: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("auth_grants_json", auth_grants_json)
+        _setter("country", country)
+        _setter("email", email)
+        _setter("enable_tfa", enable_tfa)
+        _setter("first_name", first_name)
+        _setter("last_name", last_name)
+        _setter("phone", phone)
         if address is not None:
-            pulumi.set(__self__, "address", address)
+            _setter("address", address)
         if city is not None:
-            pulumi.set(__self__, "city", city)
+            _setter("city", city)
         if contact_type is not None:
-            pulumi.set(__self__, "contact_type", contact_type)
+            _setter("contact_type", contact_type)
         if job_title is not None:
-            pulumi.set(__self__, "job_title", job_title)
+            _setter("job_title", job_title)
         if lock is not None:
-            pulumi.set(__self__, "lock", lock)
+            _setter("lock", lock)
         if mobile_phone is not None:
-            pulumi.set(__self__, "mobile_phone", mobile_phone)
+            _setter("mobile_phone", mobile_phone)
         if preferred_language is not None:
-            pulumi.set(__self__, "preferred_language", preferred_language)
+            _setter("preferred_language", preferred_language)
         if secondary_email is not None:
-            pulumi.set(__self__, "secondary_email", secondary_email)
+            _setter("secondary_email", secondary_email)
         if session_timeout is not None:
-            pulumi.set(__self__, "session_timeout", session_timeout)
+            _setter("session_timeout", session_timeout)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_zone is not None:
-            pulumi.set(__self__, "time_zone", time_zone)
+            _setter("time_zone", time_zone)
         if zip_code is not None:
-            pulumi.set(__self__, "zip_code", zip_code)
+            _setter("zip_code", zip_code)
 
     @property
     @pulumi.getter(name="authGrantsJson")
@@ -370,54 +415,109 @@ class _IamUserState:
         :param pulumi.Input[str] user_name: A user's `loginId`. Typically, a user's email address
         :param pulumi.Input[str] zip_code: The user's five-digit ZIP code
         """
+        _IamUserState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            address=address,
+            auth_grants_json=auth_grants_json,
+            city=city,
+            contact_type=contact_type,
+            country=country,
+            email=email,
+            email_update_pending=email_update_pending,
+            enable_tfa=enable_tfa,
+            first_name=first_name,
+            job_title=job_title,
+            last_login=last_login,
+            last_name=last_name,
+            lock=lock,
+            mobile_phone=mobile_phone,
+            password_expired_after=password_expired_after,
+            phone=phone,
+            preferred_language=preferred_language,
+            secondary_email=secondary_email,
+            session_timeout=session_timeout,
+            state=state,
+            tfa_configured=tfa_configured,
+            time_zone=time_zone,
+            user_name=user_name,
+            zip_code=zip_code,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             address: Optional[pulumi.Input[str]] = None,
+             auth_grants_json: Optional[pulumi.Input[str]] = None,
+             city: Optional[pulumi.Input[str]] = None,
+             contact_type: Optional[pulumi.Input[str]] = None,
+             country: Optional[pulumi.Input[str]] = None,
+             email: Optional[pulumi.Input[str]] = None,
+             email_update_pending: Optional[pulumi.Input[bool]] = None,
+             enable_tfa: Optional[pulumi.Input[bool]] = None,
+             first_name: Optional[pulumi.Input[str]] = None,
+             job_title: Optional[pulumi.Input[str]] = None,
+             last_login: Optional[pulumi.Input[str]] = None,
+             last_name: Optional[pulumi.Input[str]] = None,
+             lock: Optional[pulumi.Input[bool]] = None,
+             mobile_phone: Optional[pulumi.Input[str]] = None,
+             password_expired_after: Optional[pulumi.Input[str]] = None,
+             phone: Optional[pulumi.Input[str]] = None,
+             preferred_language: Optional[pulumi.Input[str]] = None,
+             secondary_email: Optional[pulumi.Input[str]] = None,
+             session_timeout: Optional[pulumi.Input[int]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             tfa_configured: Optional[pulumi.Input[bool]] = None,
+             time_zone: Optional[pulumi.Input[str]] = None,
+             user_name: Optional[pulumi.Input[str]] = None,
+             zip_code: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if address is not None:
-            pulumi.set(__self__, "address", address)
+            _setter("address", address)
         if auth_grants_json is not None:
-            pulumi.set(__self__, "auth_grants_json", auth_grants_json)
+            _setter("auth_grants_json", auth_grants_json)
         if city is not None:
-            pulumi.set(__self__, "city", city)
+            _setter("city", city)
         if contact_type is not None:
-            pulumi.set(__self__, "contact_type", contact_type)
+            _setter("contact_type", contact_type)
         if country is not None:
-            pulumi.set(__self__, "country", country)
+            _setter("country", country)
         if email is not None:
-            pulumi.set(__self__, "email", email)
+            _setter("email", email)
         if email_update_pending is not None:
-            pulumi.set(__self__, "email_update_pending", email_update_pending)
+            _setter("email_update_pending", email_update_pending)
         if enable_tfa is not None:
-            pulumi.set(__self__, "enable_tfa", enable_tfa)
+            _setter("enable_tfa", enable_tfa)
         if first_name is not None:
-            pulumi.set(__self__, "first_name", first_name)
+            _setter("first_name", first_name)
         if job_title is not None:
-            pulumi.set(__self__, "job_title", job_title)
+            _setter("job_title", job_title)
         if last_login is not None:
-            pulumi.set(__self__, "last_login", last_login)
+            _setter("last_login", last_login)
         if last_name is not None:
-            pulumi.set(__self__, "last_name", last_name)
+            _setter("last_name", last_name)
         if lock is not None:
-            pulumi.set(__self__, "lock", lock)
+            _setter("lock", lock)
         if mobile_phone is not None:
-            pulumi.set(__self__, "mobile_phone", mobile_phone)
+            _setter("mobile_phone", mobile_phone)
         if password_expired_after is not None:
-            pulumi.set(__self__, "password_expired_after", password_expired_after)
+            _setter("password_expired_after", password_expired_after)
         if phone is not None:
-            pulumi.set(__self__, "phone", phone)
+            _setter("phone", phone)
         if preferred_language is not None:
-            pulumi.set(__self__, "preferred_language", preferred_language)
+            _setter("preferred_language", preferred_language)
         if secondary_email is not None:
-            pulumi.set(__self__, "secondary_email", secondary_email)
+            _setter("secondary_email", secondary_email)
         if session_timeout is not None:
-            pulumi.set(__self__, "session_timeout", session_timeout)
+            _setter("session_timeout", session_timeout)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if tfa_configured is not None:
-            pulumi.set(__self__, "tfa_configured", tfa_configured)
+            _setter("tfa_configured", tfa_configured)
         if time_zone is not None:
-            pulumi.set(__self__, "time_zone", time_zone)
+            _setter("time_zone", time_zone)
         if user_name is not None:
-            pulumi.set(__self__, "user_name", user_name)
+            _setter("user_name", user_name)
         if zip_code is not None:
-            pulumi.set(__self__, "zip_code", zip_code)
+            _setter("zip_code", zip_code)
 
     @property
     @pulumi.getter
@@ -775,6 +875,10 @@ class IamUser(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            IamUserArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

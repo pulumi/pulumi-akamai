@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -37,18 +37,43 @@ class PropertyIncludeActivationArgs:
         :param pulumi.Input['PropertyIncludeActivationComplianceRecordArgs'] compliance_record: Provides an audit record when activating on a production network
         :param pulumi.Input[str] note: The note to assign to a log message of the activation request
         """
-        pulumi.set(__self__, "contract_id", contract_id)
-        pulumi.set(__self__, "group_id", group_id)
-        pulumi.set(__self__, "include_id", include_id)
-        pulumi.set(__self__, "network", network)
-        pulumi.set(__self__, "notify_emails", notify_emails)
-        pulumi.set(__self__, "version", version)
+        PropertyIncludeActivationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            contract_id=contract_id,
+            group_id=group_id,
+            include_id=include_id,
+            network=network,
+            notify_emails=notify_emails,
+            version=version,
+            auto_acknowledge_rule_warnings=auto_acknowledge_rule_warnings,
+            compliance_record=compliance_record,
+            note=note,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             contract_id: pulumi.Input[str],
+             group_id: pulumi.Input[str],
+             include_id: pulumi.Input[str],
+             network: pulumi.Input[str],
+             notify_emails: pulumi.Input[Sequence[pulumi.Input[str]]],
+             version: pulumi.Input[int],
+             auto_acknowledge_rule_warnings: Optional[pulumi.Input[bool]] = None,
+             compliance_record: Optional[pulumi.Input['PropertyIncludeActivationComplianceRecordArgs']] = None,
+             note: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("contract_id", contract_id)
+        _setter("group_id", group_id)
+        _setter("include_id", include_id)
+        _setter("network", network)
+        _setter("notify_emails", notify_emails)
+        _setter("version", version)
         if auto_acknowledge_rule_warnings is not None:
-            pulumi.set(__self__, "auto_acknowledge_rule_warnings", auto_acknowledge_rule_warnings)
+            _setter("auto_acknowledge_rule_warnings", auto_acknowledge_rule_warnings)
         if compliance_record is not None:
-            pulumi.set(__self__, "compliance_record", compliance_record)
+            _setter("compliance_record", compliance_record)
         if note is not None:
-            pulumi.set(__self__, "note", note)
+            _setter("note", note)
 
     @property
     @pulumi.getter(name="contractId")
@@ -185,26 +210,53 @@ class _PropertyIncludeActivationState:
         :param pulumi.Input[str] validations: The validation information in JSON format
         :param pulumi.Input[int] version: The unique identifier of the include
         """
+        _PropertyIncludeActivationState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auto_acknowledge_rule_warnings=auto_acknowledge_rule_warnings,
+            compliance_record=compliance_record,
+            contract_id=contract_id,
+            group_id=group_id,
+            include_id=include_id,
+            network=network,
+            note=note,
+            notify_emails=notify_emails,
+            validations=validations,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auto_acknowledge_rule_warnings: Optional[pulumi.Input[bool]] = None,
+             compliance_record: Optional[pulumi.Input['PropertyIncludeActivationComplianceRecordArgs']] = None,
+             contract_id: Optional[pulumi.Input[str]] = None,
+             group_id: Optional[pulumi.Input[str]] = None,
+             include_id: Optional[pulumi.Input[str]] = None,
+             network: Optional[pulumi.Input[str]] = None,
+             note: Optional[pulumi.Input[str]] = None,
+             notify_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             validations: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if auto_acknowledge_rule_warnings is not None:
-            pulumi.set(__self__, "auto_acknowledge_rule_warnings", auto_acknowledge_rule_warnings)
+            _setter("auto_acknowledge_rule_warnings", auto_acknowledge_rule_warnings)
         if compliance_record is not None:
-            pulumi.set(__self__, "compliance_record", compliance_record)
+            _setter("compliance_record", compliance_record)
         if contract_id is not None:
-            pulumi.set(__self__, "contract_id", contract_id)
+            _setter("contract_id", contract_id)
         if group_id is not None:
-            pulumi.set(__self__, "group_id", group_id)
+            _setter("group_id", group_id)
         if include_id is not None:
-            pulumi.set(__self__, "include_id", include_id)
+            _setter("include_id", include_id)
         if network is not None:
-            pulumi.set(__self__, "network", network)
+            _setter("network", network)
         if note is not None:
-            pulumi.set(__self__, "note", note)
+            _setter("note", note)
         if notify_emails is not None:
-            pulumi.set(__self__, "notify_emails", notify_emails)
+            _setter("notify_emails", notify_emails)
         if validations is not None:
-            pulumi.set(__self__, "validations", validations)
+            _setter("validations", validations)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
 
     @property
     @pulumi.getter(name="autoAcknowledgeRuleWarnings")
@@ -374,6 +426,10 @@ class PropertyIncludeActivation(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            PropertyIncludeActivationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -398,6 +454,11 @@ class PropertyIncludeActivation(pulumi.CustomResource):
             __props__ = PropertyIncludeActivationArgs.__new__(PropertyIncludeActivationArgs)
 
             __props__.__dict__["auto_acknowledge_rule_warnings"] = auto_acknowledge_rule_warnings
+            if compliance_record is not None and not isinstance(compliance_record, PropertyIncludeActivationComplianceRecordArgs):
+                compliance_record = compliance_record or {}
+                def _setter(key, value):
+                    compliance_record[key] = value
+                PropertyIncludeActivationComplianceRecordArgs._configure(_setter, **compliance_record)
             __props__.__dict__["compliance_record"] = compliance_record
             if contract_id is None and not opts.urn:
                 raise TypeError("Missing required property 'contract_id'")

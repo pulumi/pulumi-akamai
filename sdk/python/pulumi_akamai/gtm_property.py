@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -51,65 +51,136 @@ class GtmPropertyArgs:
         """
         The set of arguments for constructing a GtmProperty resource.
         """
-        pulumi.set(__self__, "domain", domain)
-        pulumi.set(__self__, "handout_limit", handout_limit)
-        pulumi.set(__self__, "handout_mode", handout_mode)
-        pulumi.set(__self__, "score_aggregation_type", score_aggregation_type)
-        pulumi.set(__self__, "type", type)
+        GtmPropertyArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            domain=domain,
+            handout_limit=handout_limit,
+            handout_mode=handout_mode,
+            score_aggregation_type=score_aggregation_type,
+            type=type,
+            backup_cname=backup_cname,
+            backup_ip=backup_ip,
+            balance_by_download_score=balance_by_download_score,
+            cname=cname,
+            comments=comments,
+            dynamic_ttl=dynamic_ttl,
+            failback_delay=failback_delay,
+            failover_delay=failover_delay,
+            ghost_demand_reporting=ghost_demand_reporting,
+            health_max=health_max,
+            health_multiplier=health_multiplier,
+            health_threshold=health_threshold,
+            ipv6=ipv6,
+            liveness_tests=liveness_tests,
+            load_imbalance_percentage=load_imbalance_percentage,
+            map_name=map_name,
+            max_unreachable_penalty=max_unreachable_penalty,
+            min_live_fraction=min_live_fraction,
+            name=name,
+            static_rr_sets=static_rr_sets,
+            static_ttl=static_ttl,
+            stickiness_bonus_constant=stickiness_bonus_constant,
+            stickiness_bonus_percentage=stickiness_bonus_percentage,
+            traffic_targets=traffic_targets,
+            unreachable_threshold=unreachable_threshold,
+            use_computed_targets=use_computed_targets,
+            wait_on_complete=wait_on_complete,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             domain: pulumi.Input[str],
+             handout_limit: pulumi.Input[int],
+             handout_mode: pulumi.Input[str],
+             score_aggregation_type: pulumi.Input[str],
+             type: pulumi.Input[str],
+             backup_cname: Optional[pulumi.Input[str]] = None,
+             backup_ip: Optional[pulumi.Input[str]] = None,
+             balance_by_download_score: Optional[pulumi.Input[bool]] = None,
+             cname: Optional[pulumi.Input[str]] = None,
+             comments: Optional[pulumi.Input[str]] = None,
+             dynamic_ttl: Optional[pulumi.Input[int]] = None,
+             failback_delay: Optional[pulumi.Input[int]] = None,
+             failover_delay: Optional[pulumi.Input[int]] = None,
+             ghost_demand_reporting: Optional[pulumi.Input[bool]] = None,
+             health_max: Optional[pulumi.Input[float]] = None,
+             health_multiplier: Optional[pulumi.Input[float]] = None,
+             health_threshold: Optional[pulumi.Input[float]] = None,
+             ipv6: Optional[pulumi.Input[bool]] = None,
+             liveness_tests: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestArgs']]]] = None,
+             load_imbalance_percentage: Optional[pulumi.Input[float]] = None,
+             map_name: Optional[pulumi.Input[str]] = None,
+             max_unreachable_penalty: Optional[pulumi.Input[int]] = None,
+             min_live_fraction: Optional[pulumi.Input[float]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             static_rr_sets: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]] = None,
+             static_ttl: Optional[pulumi.Input[int]] = None,
+             stickiness_bonus_constant: Optional[pulumi.Input[int]] = None,
+             stickiness_bonus_percentage: Optional[pulumi.Input[int]] = None,
+             traffic_targets: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]] = None,
+             unreachable_threshold: Optional[pulumi.Input[float]] = None,
+             use_computed_targets: Optional[pulumi.Input[bool]] = None,
+             wait_on_complete: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("domain", domain)
+        _setter("handout_limit", handout_limit)
+        _setter("handout_mode", handout_mode)
+        _setter("score_aggregation_type", score_aggregation_type)
+        _setter("type", type)
         if backup_cname is not None:
-            pulumi.set(__self__, "backup_cname", backup_cname)
+            _setter("backup_cname", backup_cname)
         if backup_ip is not None:
-            pulumi.set(__self__, "backup_ip", backup_ip)
+            _setter("backup_ip", backup_ip)
         if balance_by_download_score is not None:
-            pulumi.set(__self__, "balance_by_download_score", balance_by_download_score)
+            _setter("balance_by_download_score", balance_by_download_score)
         if cname is not None:
-            pulumi.set(__self__, "cname", cname)
+            _setter("cname", cname)
         if comments is not None:
-            pulumi.set(__self__, "comments", comments)
+            _setter("comments", comments)
         if dynamic_ttl is not None:
-            pulumi.set(__self__, "dynamic_ttl", dynamic_ttl)
+            _setter("dynamic_ttl", dynamic_ttl)
         if failback_delay is not None:
-            pulumi.set(__self__, "failback_delay", failback_delay)
+            _setter("failback_delay", failback_delay)
         if failover_delay is not None:
-            pulumi.set(__self__, "failover_delay", failover_delay)
+            _setter("failover_delay", failover_delay)
         if ghost_demand_reporting is not None:
-            pulumi.set(__self__, "ghost_demand_reporting", ghost_demand_reporting)
+            _setter("ghost_demand_reporting", ghost_demand_reporting)
         if health_max is not None:
-            pulumi.set(__self__, "health_max", health_max)
+            _setter("health_max", health_max)
         if health_multiplier is not None:
-            pulumi.set(__self__, "health_multiplier", health_multiplier)
+            _setter("health_multiplier", health_multiplier)
         if health_threshold is not None:
-            pulumi.set(__self__, "health_threshold", health_threshold)
+            _setter("health_threshold", health_threshold)
         if ipv6 is not None:
-            pulumi.set(__self__, "ipv6", ipv6)
+            _setter("ipv6", ipv6)
         if liveness_tests is not None:
-            pulumi.set(__self__, "liveness_tests", liveness_tests)
+            _setter("liveness_tests", liveness_tests)
         if load_imbalance_percentage is not None:
-            pulumi.set(__self__, "load_imbalance_percentage", load_imbalance_percentage)
+            _setter("load_imbalance_percentage", load_imbalance_percentage)
         if map_name is not None:
-            pulumi.set(__self__, "map_name", map_name)
+            _setter("map_name", map_name)
         if max_unreachable_penalty is not None:
-            pulumi.set(__self__, "max_unreachable_penalty", max_unreachable_penalty)
+            _setter("max_unreachable_penalty", max_unreachable_penalty)
         if min_live_fraction is not None:
-            pulumi.set(__self__, "min_live_fraction", min_live_fraction)
+            _setter("min_live_fraction", min_live_fraction)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if static_rr_sets is not None:
-            pulumi.set(__self__, "static_rr_sets", static_rr_sets)
+            _setter("static_rr_sets", static_rr_sets)
         if static_ttl is not None:
-            pulumi.set(__self__, "static_ttl", static_ttl)
+            _setter("static_ttl", static_ttl)
         if stickiness_bonus_constant is not None:
-            pulumi.set(__self__, "stickiness_bonus_constant", stickiness_bonus_constant)
+            _setter("stickiness_bonus_constant", stickiness_bonus_constant)
         if stickiness_bonus_percentage is not None:
-            pulumi.set(__self__, "stickiness_bonus_percentage", stickiness_bonus_percentage)
+            _setter("stickiness_bonus_percentage", stickiness_bonus_percentage)
         if traffic_targets is not None:
-            pulumi.set(__self__, "traffic_targets", traffic_targets)
+            _setter("traffic_targets", traffic_targets)
         if unreachable_threshold is not None:
-            pulumi.set(__self__, "unreachable_threshold", unreachable_threshold)
+            _setter("unreachable_threshold", unreachable_threshold)
         if use_computed_targets is not None:
-            pulumi.set(__self__, "use_computed_targets", use_computed_targets)
+            _setter("use_computed_targets", use_computed_targets)
         if wait_on_complete is not None:
-            pulumi.set(__self__, "wait_on_complete", wait_on_complete)
+            _setter("wait_on_complete", wait_on_complete)
 
     @property
     @pulumi.getter
@@ -440,74 +511,149 @@ class _GtmPropertyState:
         """
         Input properties used for looking up and filtering GtmProperty resources.
         """
+        _GtmPropertyState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backup_cname=backup_cname,
+            backup_ip=backup_ip,
+            balance_by_download_score=balance_by_download_score,
+            cname=cname,
+            comments=comments,
+            domain=domain,
+            dynamic_ttl=dynamic_ttl,
+            failback_delay=failback_delay,
+            failover_delay=failover_delay,
+            ghost_demand_reporting=ghost_demand_reporting,
+            handout_limit=handout_limit,
+            handout_mode=handout_mode,
+            health_max=health_max,
+            health_multiplier=health_multiplier,
+            health_threshold=health_threshold,
+            ipv6=ipv6,
+            liveness_tests=liveness_tests,
+            load_imbalance_percentage=load_imbalance_percentage,
+            map_name=map_name,
+            max_unreachable_penalty=max_unreachable_penalty,
+            min_live_fraction=min_live_fraction,
+            name=name,
+            score_aggregation_type=score_aggregation_type,
+            static_rr_sets=static_rr_sets,
+            static_ttl=static_ttl,
+            stickiness_bonus_constant=stickiness_bonus_constant,
+            stickiness_bonus_percentage=stickiness_bonus_percentage,
+            traffic_targets=traffic_targets,
+            type=type,
+            unreachable_threshold=unreachable_threshold,
+            use_computed_targets=use_computed_targets,
+            wait_on_complete=wait_on_complete,
+            weighted_hash_bits_for_ipv4=weighted_hash_bits_for_ipv4,
+            weighted_hash_bits_for_ipv6=weighted_hash_bits_for_ipv6,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backup_cname: Optional[pulumi.Input[str]] = None,
+             backup_ip: Optional[pulumi.Input[str]] = None,
+             balance_by_download_score: Optional[pulumi.Input[bool]] = None,
+             cname: Optional[pulumi.Input[str]] = None,
+             comments: Optional[pulumi.Input[str]] = None,
+             domain: Optional[pulumi.Input[str]] = None,
+             dynamic_ttl: Optional[pulumi.Input[int]] = None,
+             failback_delay: Optional[pulumi.Input[int]] = None,
+             failover_delay: Optional[pulumi.Input[int]] = None,
+             ghost_demand_reporting: Optional[pulumi.Input[bool]] = None,
+             handout_limit: Optional[pulumi.Input[int]] = None,
+             handout_mode: Optional[pulumi.Input[str]] = None,
+             health_max: Optional[pulumi.Input[float]] = None,
+             health_multiplier: Optional[pulumi.Input[float]] = None,
+             health_threshold: Optional[pulumi.Input[float]] = None,
+             ipv6: Optional[pulumi.Input[bool]] = None,
+             liveness_tests: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyLivenessTestArgs']]]] = None,
+             load_imbalance_percentage: Optional[pulumi.Input[float]] = None,
+             map_name: Optional[pulumi.Input[str]] = None,
+             max_unreachable_penalty: Optional[pulumi.Input[int]] = None,
+             min_live_fraction: Optional[pulumi.Input[float]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             score_aggregation_type: Optional[pulumi.Input[str]] = None,
+             static_rr_sets: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]] = None,
+             static_ttl: Optional[pulumi.Input[int]] = None,
+             stickiness_bonus_constant: Optional[pulumi.Input[int]] = None,
+             stickiness_bonus_percentage: Optional[pulumi.Input[int]] = None,
+             traffic_targets: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             unreachable_threshold: Optional[pulumi.Input[float]] = None,
+             use_computed_targets: Optional[pulumi.Input[bool]] = None,
+             wait_on_complete: Optional[pulumi.Input[bool]] = None,
+             weighted_hash_bits_for_ipv4: Optional[pulumi.Input[int]] = None,
+             weighted_hash_bits_for_ipv6: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if backup_cname is not None:
-            pulumi.set(__self__, "backup_cname", backup_cname)
+            _setter("backup_cname", backup_cname)
         if backup_ip is not None:
-            pulumi.set(__self__, "backup_ip", backup_ip)
+            _setter("backup_ip", backup_ip)
         if balance_by_download_score is not None:
-            pulumi.set(__self__, "balance_by_download_score", balance_by_download_score)
+            _setter("balance_by_download_score", balance_by_download_score)
         if cname is not None:
-            pulumi.set(__self__, "cname", cname)
+            _setter("cname", cname)
         if comments is not None:
-            pulumi.set(__self__, "comments", comments)
+            _setter("comments", comments)
         if domain is not None:
-            pulumi.set(__self__, "domain", domain)
+            _setter("domain", domain)
         if dynamic_ttl is not None:
-            pulumi.set(__self__, "dynamic_ttl", dynamic_ttl)
+            _setter("dynamic_ttl", dynamic_ttl)
         if failback_delay is not None:
-            pulumi.set(__self__, "failback_delay", failback_delay)
+            _setter("failback_delay", failback_delay)
         if failover_delay is not None:
-            pulumi.set(__self__, "failover_delay", failover_delay)
+            _setter("failover_delay", failover_delay)
         if ghost_demand_reporting is not None:
-            pulumi.set(__self__, "ghost_demand_reporting", ghost_demand_reporting)
+            _setter("ghost_demand_reporting", ghost_demand_reporting)
         if handout_limit is not None:
-            pulumi.set(__self__, "handout_limit", handout_limit)
+            _setter("handout_limit", handout_limit)
         if handout_mode is not None:
-            pulumi.set(__self__, "handout_mode", handout_mode)
+            _setter("handout_mode", handout_mode)
         if health_max is not None:
-            pulumi.set(__self__, "health_max", health_max)
+            _setter("health_max", health_max)
         if health_multiplier is not None:
-            pulumi.set(__self__, "health_multiplier", health_multiplier)
+            _setter("health_multiplier", health_multiplier)
         if health_threshold is not None:
-            pulumi.set(__self__, "health_threshold", health_threshold)
+            _setter("health_threshold", health_threshold)
         if ipv6 is not None:
-            pulumi.set(__self__, "ipv6", ipv6)
+            _setter("ipv6", ipv6)
         if liveness_tests is not None:
-            pulumi.set(__self__, "liveness_tests", liveness_tests)
+            _setter("liveness_tests", liveness_tests)
         if load_imbalance_percentage is not None:
-            pulumi.set(__self__, "load_imbalance_percentage", load_imbalance_percentage)
+            _setter("load_imbalance_percentage", load_imbalance_percentage)
         if map_name is not None:
-            pulumi.set(__self__, "map_name", map_name)
+            _setter("map_name", map_name)
         if max_unreachable_penalty is not None:
-            pulumi.set(__self__, "max_unreachable_penalty", max_unreachable_penalty)
+            _setter("max_unreachable_penalty", max_unreachable_penalty)
         if min_live_fraction is not None:
-            pulumi.set(__self__, "min_live_fraction", min_live_fraction)
+            _setter("min_live_fraction", min_live_fraction)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if score_aggregation_type is not None:
-            pulumi.set(__self__, "score_aggregation_type", score_aggregation_type)
+            _setter("score_aggregation_type", score_aggregation_type)
         if static_rr_sets is not None:
-            pulumi.set(__self__, "static_rr_sets", static_rr_sets)
+            _setter("static_rr_sets", static_rr_sets)
         if static_ttl is not None:
-            pulumi.set(__self__, "static_ttl", static_ttl)
+            _setter("static_ttl", static_ttl)
         if stickiness_bonus_constant is not None:
-            pulumi.set(__self__, "stickiness_bonus_constant", stickiness_bonus_constant)
+            _setter("stickiness_bonus_constant", stickiness_bonus_constant)
         if stickiness_bonus_percentage is not None:
-            pulumi.set(__self__, "stickiness_bonus_percentage", stickiness_bonus_percentage)
+            _setter("stickiness_bonus_percentage", stickiness_bonus_percentage)
         if traffic_targets is not None:
-            pulumi.set(__self__, "traffic_targets", traffic_targets)
+            _setter("traffic_targets", traffic_targets)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
         if unreachable_threshold is not None:
-            pulumi.set(__self__, "unreachable_threshold", unreachable_threshold)
+            _setter("unreachable_threshold", unreachable_threshold)
         if use_computed_targets is not None:
-            pulumi.set(__self__, "use_computed_targets", use_computed_targets)
+            _setter("use_computed_targets", use_computed_targets)
         if wait_on_complete is not None:
-            pulumi.set(__self__, "wait_on_complete", wait_on_complete)
+            _setter("wait_on_complete", wait_on_complete)
         if weighted_hash_bits_for_ipv4 is not None:
-            pulumi.set(__self__, "weighted_hash_bits_for_ipv4", weighted_hash_bits_for_ipv4)
+            _setter("weighted_hash_bits_for_ipv4", weighted_hash_bits_for_ipv4)
         if weighted_hash_bits_for_ipv6 is not None:
-            pulumi.set(__self__, "weighted_hash_bits_for_ipv6", weighted_hash_bits_for_ipv6)
+            _setter("weighted_hash_bits_for_ipv6", weighted_hash_bits_for_ipv6)
 
     @property
     @pulumi.getter(name="backupCname")
@@ -877,6 +1023,10 @@ class GtmProperty(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            GtmPropertyArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

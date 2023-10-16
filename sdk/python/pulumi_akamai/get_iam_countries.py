@@ -6,13 +6,14 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = [
     'GetIamCountriesResult',
     'AwaitableGetIamCountriesResult',
     'get_iam_countries',
+    'get_iam_countries_output',
 ]
 
 @pulumi.output_type
@@ -63,3 +64,11 @@ def get_iam_countries(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableG
     return AwaitableGetIamCountriesResult(
         countries=pulumi.get(__ret__, 'countries'),
         id=pulumi.get(__ret__, 'id'))
+
+
+@_utilities.lift_output_func(get_iam_countries)
+def get_iam_countries_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamCountriesResult]:
+    """
+    Use this data source to access information about an existing resource.
+    """
+    ...

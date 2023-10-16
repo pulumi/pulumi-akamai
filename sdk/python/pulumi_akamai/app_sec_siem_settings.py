@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecSiemSettingsArgs', 'AppSecSiemSettings']
@@ -29,13 +29,32 @@ class AppSecSiemSettingsArgs:
         :param pulumi.Input[int] siem_id: Unique identifier of the SIEM settings being modified
         :param pulumi.Input[Sequence[pulumi.Input[str]]] security_policy_ids: List of IDs of security policy for which SIEM integration is to be enabled
         """
-        pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "enable_botman_siem", enable_botman_siem)
-        pulumi.set(__self__, "enable_for_all_policies", enable_for_all_policies)
-        pulumi.set(__self__, "enable_siem", enable_siem)
-        pulumi.set(__self__, "siem_id", siem_id)
+        AppSecSiemSettingsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            enable_botman_siem=enable_botman_siem,
+            enable_for_all_policies=enable_for_all_policies,
+            enable_siem=enable_siem,
+            siem_id=siem_id,
+            security_policy_ids=security_policy_ids,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: pulumi.Input[int],
+             enable_botman_siem: pulumi.Input[bool],
+             enable_for_all_policies: pulumi.Input[bool],
+             enable_siem: pulumi.Input[bool],
+             siem_id: pulumi.Input[int],
+             security_policy_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_id", config_id)
+        _setter("enable_botman_siem", enable_botman_siem)
+        _setter("enable_for_all_policies", enable_for_all_policies)
+        _setter("enable_siem", enable_siem)
+        _setter("siem_id", siem_id)
         if security_policy_ids is not None:
-            pulumi.set(__self__, "security_policy_ids", security_policy_ids)
+            _setter("security_policy_ids", security_policy_ids)
 
     @property
     @pulumi.getter(name="configId")
@@ -128,18 +147,37 @@ class _AppSecSiemSettingsState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] security_policy_ids: List of IDs of security policy for which SIEM integration is to be enabled
         :param pulumi.Input[int] siem_id: Unique identifier of the SIEM settings being modified
         """
+        _AppSecSiemSettingsState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            enable_botman_siem=enable_botman_siem,
+            enable_for_all_policies=enable_for_all_policies,
+            enable_siem=enable_siem,
+            security_policy_ids=security_policy_ids,
+            siem_id=siem_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             enable_botman_siem: Optional[pulumi.Input[bool]] = None,
+             enable_for_all_policies: Optional[pulumi.Input[bool]] = None,
+             enable_siem: Optional[pulumi.Input[bool]] = None,
+             security_policy_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             siem_id: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
         if enable_botman_siem is not None:
-            pulumi.set(__self__, "enable_botman_siem", enable_botman_siem)
+            _setter("enable_botman_siem", enable_botman_siem)
         if enable_for_all_policies is not None:
-            pulumi.set(__self__, "enable_for_all_policies", enable_for_all_policies)
+            _setter("enable_for_all_policies", enable_for_all_policies)
         if enable_siem is not None:
-            pulumi.set(__self__, "enable_siem", enable_siem)
+            _setter("enable_siem", enable_siem)
         if security_policy_ids is not None:
-            pulumi.set(__self__, "security_policy_ids", security_policy_ids)
+            _setter("security_policy_ids", security_policy_ids)
         if siem_id is not None:
-            pulumi.set(__self__, "siem_id", siem_id)
+            _setter("siem_id", siem_id)
 
     @property
     @pulumi.getter(name="configId")
@@ -255,6 +293,10 @@ class AppSecSiemSettings(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AppSecSiemSettingsArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 
@@ -14,6 +14,7 @@ __all__ = [
     'GetIamGrantableRolesResult',
     'AwaitableGetIamGrantableRolesResult',
     'get_iam_grantable_roles',
+    'get_iam_grantable_roles_output',
 ]
 
 @pulumi.output_type
@@ -64,3 +65,11 @@ def get_iam_grantable_roles(opts: Optional[pulumi.InvokeOptions] = None) -> Awai
     return AwaitableGetIamGrantableRolesResult(
         grantable_roles=pulumi.get(__ret__, 'grantable_roles'),
         id=pulumi.get(__ret__, 'id'))
+
+
+@_utilities.lift_output_func(get_iam_grantable_roles)
+def get_iam_grantable_roles_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamGrantableRolesResult]:
+    """
+    Use this data source to access information about an existing resource.
+    """
+    ...

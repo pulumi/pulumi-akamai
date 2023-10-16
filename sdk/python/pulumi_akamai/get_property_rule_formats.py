@@ -6,13 +6,14 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = [
     'GetPropertyRuleFormatsResult',
     'AwaitableGetPropertyRuleFormatsResult',
     'get_property_rule_formats',
+    'get_property_rule_formats_output',
 ]
 
 @pulumi.output_type
@@ -63,3 +64,11 @@ def get_property_rule_formats(opts: Optional[pulumi.InvokeOptions] = None) -> Aw
     return AwaitableGetPropertyRuleFormatsResult(
         id=pulumi.get(__ret__, 'id'),
         rule_formats=pulumi.get(__ret__, 'rule_formats'))
+
+
+@_utilities.lift_output_func(get_property_rule_formats)
+def get_property_rule_formats_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyRuleFormatsResult]:
+    """
+    Use this data source to access information about an existing resource.
+    """
+    ...

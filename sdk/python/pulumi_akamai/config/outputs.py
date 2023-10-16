@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -22,14 +22,33 @@ class Config(dict):
                  host: str,
                  account_key: Optional[str] = None,
                  max_body: Optional[int] = None):
-        pulumi.set(__self__, "access_token", access_token)
-        pulumi.set(__self__, "client_secret", client_secret)
-        pulumi.set(__self__, "client_token", client_token)
-        pulumi.set(__self__, "host", host)
+        Config._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access_token=access_token,
+            client_secret=client_secret,
+            client_token=client_token,
+            host=host,
+            account_key=account_key,
+            max_body=max_body,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access_token: str,
+             client_secret: str,
+             client_token: str,
+             host: str,
+             account_key: Optional[str] = None,
+             max_body: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("access_token", access_token)
+        _setter("client_secret", client_secret)
+        _setter("client_token", client_token)
+        _setter("host", host)
         if account_key is not None:
-            pulumi.set(__self__, "account_key", account_key)
+            _setter("account_key", account_key)
         if max_body is not None:
-            pulumi.set(__self__, "max_body", max_body)
+            _setter("max_body", max_body)
 
     @property
     @pulumi.getter(name="accessToken")

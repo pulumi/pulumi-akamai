@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['EdgeHostNameArgs', 'EdgeHostName']
@@ -27,18 +27,41 @@ class EdgeHostNameArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] status_update_emails: Email address that should receive updates on the IP behavior update request. Required for update operation.
         :param pulumi.Input[str] use_cases: A JSON encoded list of use cases
         """
-        pulumi.set(__self__, "contract_id", contract_id)
-        pulumi.set(__self__, "edge_hostname", edge_hostname)
-        pulumi.set(__self__, "group_id", group_id)
-        pulumi.set(__self__, "ip_behavior", ip_behavior)
+        EdgeHostNameArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            contract_id=contract_id,
+            edge_hostname=edge_hostname,
+            group_id=group_id,
+            ip_behavior=ip_behavior,
+            certificate=certificate,
+            product_id=product_id,
+            status_update_emails=status_update_emails,
+            use_cases=use_cases,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             contract_id: pulumi.Input[str],
+             edge_hostname: pulumi.Input[str],
+             group_id: pulumi.Input[str],
+             ip_behavior: pulumi.Input[str],
+             certificate: Optional[pulumi.Input[int]] = None,
+             product_id: Optional[pulumi.Input[str]] = None,
+             status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             use_cases: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("contract_id", contract_id)
+        _setter("edge_hostname", edge_hostname)
+        _setter("group_id", group_id)
+        _setter("ip_behavior", ip_behavior)
         if certificate is not None:
-            pulumi.set(__self__, "certificate", certificate)
+            _setter("certificate", certificate)
         if product_id is not None:
-            pulumi.set(__self__, "product_id", product_id)
+            _setter("product_id", product_id)
         if status_update_emails is not None:
-            pulumi.set(__self__, "status_update_emails", status_update_emails)
+            _setter("status_update_emails", status_update_emails)
         if use_cases is not None:
-            pulumi.set(__self__, "use_cases", use_cases)
+            _setter("use_cases", use_cases)
 
     @property
     @pulumi.getter(name="contractId")
@@ -135,22 +158,45 @@ class _EdgeHostNameState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] status_update_emails: Email address that should receive updates on the IP behavior update request. Required for update operation.
         :param pulumi.Input[str] use_cases: A JSON encoded list of use cases
         """
+        _EdgeHostNameState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate=certificate,
+            contract_id=contract_id,
+            edge_hostname=edge_hostname,
+            group_id=group_id,
+            ip_behavior=ip_behavior,
+            product_id=product_id,
+            status_update_emails=status_update_emails,
+            use_cases=use_cases,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate: Optional[pulumi.Input[int]] = None,
+             contract_id: Optional[pulumi.Input[str]] = None,
+             edge_hostname: Optional[pulumi.Input[str]] = None,
+             group_id: Optional[pulumi.Input[str]] = None,
+             ip_behavior: Optional[pulumi.Input[str]] = None,
+             product_id: Optional[pulumi.Input[str]] = None,
+             status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             use_cases: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if certificate is not None:
-            pulumi.set(__self__, "certificate", certificate)
+            _setter("certificate", certificate)
         if contract_id is not None:
-            pulumi.set(__self__, "contract_id", contract_id)
+            _setter("contract_id", contract_id)
         if edge_hostname is not None:
-            pulumi.set(__self__, "edge_hostname", edge_hostname)
+            _setter("edge_hostname", edge_hostname)
         if group_id is not None:
-            pulumi.set(__self__, "group_id", group_id)
+            _setter("group_id", group_id)
         if ip_behavior is not None:
-            pulumi.set(__self__, "ip_behavior", ip_behavior)
+            _setter("ip_behavior", ip_behavior)
         if product_id is not None:
-            pulumi.set(__self__, "product_id", product_id)
+            _setter("product_id", product_id)
         if status_update_emails is not None:
-            pulumi.set(__self__, "status_update_emails", status_update_emails)
+            _setter("status_update_emails", status_update_emails)
         if use_cases is not None:
-            pulumi.set(__self__, "use_cases", use_cases)
+            _setter("use_cases", use_cases)
 
     @property
     @pulumi.getter
@@ -270,6 +316,10 @@ class EdgeHostName(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            EdgeHostNameArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

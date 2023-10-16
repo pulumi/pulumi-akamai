@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecIPGeoArgs', 'AppSecIPGeo']
@@ -31,17 +31,38 @@ class AppSecIPGeoArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_network_lists: List of IDs of IP network list to be blocked
         :param pulumi.Input[str] ukraine_geo_control_action: Action set for Ukraine geo control
         """
-        pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "mode", mode)
-        pulumi.set(__self__, "security_policy_id", security_policy_id)
+        AppSecIPGeoArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            mode=mode,
+            security_policy_id=security_policy_id,
+            exception_ip_network_lists=exception_ip_network_lists,
+            geo_network_lists=geo_network_lists,
+            ip_network_lists=ip_network_lists,
+            ukraine_geo_control_action=ukraine_geo_control_action,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: pulumi.Input[int],
+             mode: pulumi.Input[str],
+             security_policy_id: pulumi.Input[str],
+             exception_ip_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             geo_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             ip_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             ukraine_geo_control_action: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_id", config_id)
+        _setter("mode", mode)
+        _setter("security_policy_id", security_policy_id)
         if exception_ip_network_lists is not None:
-            pulumi.set(__self__, "exception_ip_network_lists", exception_ip_network_lists)
+            _setter("exception_ip_network_lists", exception_ip_network_lists)
         if geo_network_lists is not None:
-            pulumi.set(__self__, "geo_network_lists", geo_network_lists)
+            _setter("geo_network_lists", geo_network_lists)
         if ip_network_lists is not None:
-            pulumi.set(__self__, "ip_network_lists", ip_network_lists)
+            _setter("ip_network_lists", ip_network_lists)
         if ukraine_geo_control_action is not None:
-            pulumi.set(__self__, "ukraine_geo_control_action", ukraine_geo_control_action)
+            _setter("ukraine_geo_control_action", ukraine_geo_control_action)
 
     @property
     @pulumi.getter(name="configId")
@@ -148,20 +169,41 @@ class _AppSecIPGeoState:
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         :param pulumi.Input[str] ukraine_geo_control_action: Action set for Ukraine geo control
         """
+        _AppSecIPGeoState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            exception_ip_network_lists=exception_ip_network_lists,
+            geo_network_lists=geo_network_lists,
+            ip_network_lists=ip_network_lists,
+            mode=mode,
+            security_policy_id=security_policy_id,
+            ukraine_geo_control_action=ukraine_geo_control_action,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             exception_ip_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             geo_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             ip_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             mode: Optional[pulumi.Input[str]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             ukraine_geo_control_action: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
         if exception_ip_network_lists is not None:
-            pulumi.set(__self__, "exception_ip_network_lists", exception_ip_network_lists)
+            _setter("exception_ip_network_lists", exception_ip_network_lists)
         if geo_network_lists is not None:
-            pulumi.set(__self__, "geo_network_lists", geo_network_lists)
+            _setter("geo_network_lists", geo_network_lists)
         if ip_network_lists is not None:
-            pulumi.set(__self__, "ip_network_lists", ip_network_lists)
+            _setter("ip_network_lists", ip_network_lists)
         if mode is not None:
-            pulumi.set(__self__, "mode", mode)
+            _setter("mode", mode)
         if security_policy_id is not None:
-            pulumi.set(__self__, "security_policy_id", security_policy_id)
+            _setter("security_policy_id", security_policy_id)
         if ukraine_geo_control_action is not None:
-            pulumi.set(__self__, "ukraine_geo_control_action", ukraine_geo_control_action)
+            _setter("ukraine_geo_control_action", ukraine_geo_control_action)
 
     @property
     @pulumi.getter(name="configId")
@@ -291,6 +333,10 @@ class AppSecIPGeo(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AppSecIPGeoArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

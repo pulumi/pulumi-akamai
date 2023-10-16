@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecAdvancedSettingsEvasivePathMatchArgs', 'AppSecAdvancedSettingsEvasivePathMatch']
@@ -23,10 +23,23 @@ class AppSecAdvancedSettingsEvasivePathMatchArgs:
         :param pulumi.Input[bool] enable_path_match: Whether to enable the evasive path match setting
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
-        pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "enable_path_match", enable_path_match)
+        AppSecAdvancedSettingsEvasivePathMatchArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            enable_path_match=enable_path_match,
+            security_policy_id=security_policy_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: pulumi.Input[int],
+             enable_path_match: pulumi.Input[bool],
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_id", config_id)
+        _setter("enable_path_match", enable_path_match)
         if security_policy_id is not None:
-            pulumi.set(__self__, "security_policy_id", security_policy_id)
+            _setter("security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="configId")
@@ -77,12 +90,25 @@ class _AppSecAdvancedSettingsEvasivePathMatchState:
         :param pulumi.Input[bool] enable_path_match: Whether to enable the evasive path match setting
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
+        _AppSecAdvancedSettingsEvasivePathMatchState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            enable_path_match=enable_path_match,
+            security_policy_id=security_policy_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             enable_path_match: Optional[pulumi.Input[bool]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
         if enable_path_match is not None:
-            pulumi.set(__self__, "enable_path_match", enable_path_match)
+            _setter("enable_path_match", enable_path_match)
         if security_policy_id is not None:
-            pulumi.set(__self__, "security_policy_id", security_policy_id)
+            _setter("security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="configId")
@@ -156,6 +182,10 @@ class AppSecAdvancedSettingsEvasivePathMatch(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AppSecAdvancedSettingsEvasivePathMatchArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

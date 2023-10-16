@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecWafModeArgs', 'AppSecWafMode']
@@ -23,9 +23,22 @@ class AppSecWafModeArgs:
         :param pulumi.Input[str] mode: How Kona Rule Set rules should be upgraded (KRS, AAG, ASE_MANUAL or ASE_AUTO)
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
-        pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "mode", mode)
-        pulumi.set(__self__, "security_policy_id", security_policy_id)
+        AppSecWafModeArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            mode=mode,
+            security_policy_id=security_policy_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: pulumi.Input[int],
+             mode: pulumi.Input[str],
+             security_policy_id: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_id", config_id)
+        _setter("mode", mode)
+        _setter("security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="configId")
@@ -86,22 +99,45 @@ class _AppSecWafModeState:
         :param pulumi.Input[str] output_text: Text representation
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
+        _AppSecWafModeState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            current_ruleset=current_ruleset,
+            eval_expiration_date=eval_expiration_date,
+            eval_ruleset=eval_ruleset,
+            eval_status=eval_status,
+            mode=mode,
+            output_text=output_text,
+            security_policy_id=security_policy_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             current_ruleset: Optional[pulumi.Input[str]] = None,
+             eval_expiration_date: Optional[pulumi.Input[str]] = None,
+             eval_ruleset: Optional[pulumi.Input[str]] = None,
+             eval_status: Optional[pulumi.Input[str]] = None,
+             mode: Optional[pulumi.Input[str]] = None,
+             output_text: Optional[pulumi.Input[str]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
         if current_ruleset is not None:
-            pulumi.set(__self__, "current_ruleset", current_ruleset)
+            _setter("current_ruleset", current_ruleset)
         if eval_expiration_date is not None:
-            pulumi.set(__self__, "eval_expiration_date", eval_expiration_date)
+            _setter("eval_expiration_date", eval_expiration_date)
         if eval_ruleset is not None:
-            pulumi.set(__self__, "eval_ruleset", eval_ruleset)
+            _setter("eval_ruleset", eval_ruleset)
         if eval_status is not None:
-            pulumi.set(__self__, "eval_status", eval_status)
+            _setter("eval_status", eval_status)
         if mode is not None:
-            pulumi.set(__self__, "mode", mode)
+            _setter("mode", mode)
         if output_text is not None:
-            pulumi.set(__self__, "output_text", output_text)
+            _setter("output_text", output_text)
         if security_policy_id is not None:
-            pulumi.set(__self__, "security_policy_id", security_policy_id)
+            _setter("security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="configId")
@@ -235,6 +271,10 @@ class AppSecWafMode(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AppSecWafModeArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

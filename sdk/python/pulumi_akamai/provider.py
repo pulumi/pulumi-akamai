@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from ._inputs import *
 
@@ -25,16 +25,33 @@ class ProviderArgs:
         :param pulumi.Input[str] config_section: The section of the edgerc file to use for configuration
         :param pulumi.Input[int] request_limit: The maximum number of API requests to be made per second (0 for no limit)
         """
+        ProviderArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cache_enabled=cache_enabled,
+            config=config,
+            config_section=config_section,
+            edgerc=edgerc,
+            request_limit=request_limit,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cache_enabled: Optional[pulumi.Input[bool]] = None,
+             config: Optional[pulumi.Input['ProviderConfigArgs']] = None,
+             config_section: Optional[pulumi.Input[str]] = None,
+             edgerc: Optional[pulumi.Input[str]] = None,
+             request_limit: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if cache_enabled is not None:
-            pulumi.set(__self__, "cache_enabled", cache_enabled)
+            _setter("cache_enabled", cache_enabled)
         if config is not None:
-            pulumi.set(__self__, "config", config)
+            _setter("config", config)
         if config_section is not None:
-            pulumi.set(__self__, "config_section", config_section)
+            _setter("config_section", config_section)
         if edgerc is not None:
-            pulumi.set(__self__, "edgerc", edgerc)
+            _setter("edgerc", edgerc)
         if request_limit is not None:
-            pulumi.set(__self__, "request_limit", request_limit)
+            _setter("request_limit", request_limit)
 
     @property
     @pulumi.getter(name="cacheEnabled")
@@ -132,6 +149,10 @@ class Provider(pulumi.ProviderResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ProviderArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -152,6 +173,11 @@ class Provider(pulumi.ProviderResource):
             __props__ = ProviderArgs.__new__(ProviderArgs)
 
             __props__.__dict__["cache_enabled"] = pulumi.Output.from_input(cache_enabled).apply(pulumi.runtime.to_json) if cache_enabled is not None else None
+            if config is not None and not isinstance(config, ProviderConfigArgs):
+                config = config or {}
+                def _setter(key, value):
+                    config[key] = value
+                ProviderConfigArgs._configure(_setter, **config)
             __props__.__dict__["config"] = pulumi.Output.from_input(config).apply(pulumi.runtime.to_json) if config is not None else None
             __props__.__dict__["config_section"] = config_section
             __props__.__dict__["edgerc"] = edgerc

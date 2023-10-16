@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -32,17 +32,38 @@ class PropertyArgs:
         :param pulumi.Input[str] rule_format: Specify the rule format version (defaults to latest version available when created)
         :param pulumi.Input[str] rules: Property Rules as JSON
         """
-        pulumi.set(__self__, "contract_id", contract_id)
-        pulumi.set(__self__, "group_id", group_id)
-        pulumi.set(__self__, "product_id", product_id)
+        PropertyArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            contract_id=contract_id,
+            group_id=group_id,
+            product_id=product_id,
+            hostnames=hostnames,
+            name=name,
+            rule_format=rule_format,
+            rules=rules,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             contract_id: pulumi.Input[str],
+             group_id: pulumi.Input[str],
+             product_id: pulumi.Input[str],
+             hostnames: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             rule_format: Optional[pulumi.Input[str]] = None,
+             rules: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("contract_id", contract_id)
+        _setter("group_id", group_id)
+        _setter("product_id", product_id)
         if hostnames is not None:
-            pulumi.set(__self__, "hostnames", hostnames)
+            _setter("hostnames", hostnames)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if rule_format is not None:
-            pulumi.set(__self__, "rule_format", rule_format)
+            _setter("rule_format", rule_format)
         if rules is not None:
-            pulumi.set(__self__, "rules", rules)
+            _setter("rules", rules)
 
     @property
     @pulumi.getter(name="contractId")
@@ -154,30 +175,61 @@ class _PropertyState:
         :param pulumi.Input[str] rules: Property Rules as JSON
         :param pulumi.Input[int] staging_version: Property's version currently activated in staging (zero when not active in staging)
         """
+        _PropertyState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            contract_id=contract_id,
+            group_id=group_id,
+            hostnames=hostnames,
+            latest_version=latest_version,
+            name=name,
+            product_id=product_id,
+            production_version=production_version,
+            read_version=read_version,
+            rule_errors=rule_errors,
+            rule_format=rule_format,
+            rules=rules,
+            staging_version=staging_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             contract_id: Optional[pulumi.Input[str]] = None,
+             group_id: Optional[pulumi.Input[str]] = None,
+             hostnames: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]]] = None,
+             latest_version: Optional[pulumi.Input[int]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             product_id: Optional[pulumi.Input[str]] = None,
+             production_version: Optional[pulumi.Input[int]] = None,
+             read_version: Optional[pulumi.Input[int]] = None,
+             rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRuleErrorArgs']]]] = None,
+             rule_format: Optional[pulumi.Input[str]] = None,
+             rules: Optional[pulumi.Input[str]] = None,
+             staging_version: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if contract_id is not None:
-            pulumi.set(__self__, "contract_id", contract_id)
+            _setter("contract_id", contract_id)
         if group_id is not None:
-            pulumi.set(__self__, "group_id", group_id)
+            _setter("group_id", group_id)
         if hostnames is not None:
-            pulumi.set(__self__, "hostnames", hostnames)
+            _setter("hostnames", hostnames)
         if latest_version is not None:
-            pulumi.set(__self__, "latest_version", latest_version)
+            _setter("latest_version", latest_version)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if product_id is not None:
-            pulumi.set(__self__, "product_id", product_id)
+            _setter("product_id", product_id)
         if production_version is not None:
-            pulumi.set(__self__, "production_version", production_version)
+            _setter("production_version", production_version)
         if read_version is not None:
-            pulumi.set(__self__, "read_version", read_version)
+            _setter("read_version", read_version)
         if rule_errors is not None:
-            pulumi.set(__self__, "rule_errors", rule_errors)
+            _setter("rule_errors", rule_errors)
         if rule_format is not None:
-            pulumi.set(__self__, "rule_format", rule_format)
+            _setter("rule_format", rule_format)
         if rules is not None:
-            pulumi.set(__self__, "rules", rules)
+            _setter("rules", rules)
         if staging_version is not None:
-            pulumi.set(__self__, "staging_version", staging_version)
+            _setter("staging_version", staging_version)
 
     @property
     @pulumi.getter(name="contractId")
@@ -360,6 +412,10 @@ class Property(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            PropertyArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

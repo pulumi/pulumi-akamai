@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecActivationsArgs', 'AppSecActivations']
@@ -27,13 +27,30 @@ class AppSecActivationsArgs:
         :param pulumi.Input[str] network: Network on which to activate the configuration version (STAGING or PRODUCTION)
         :param pulumi.Input[str] note: Note describing the activation. Will use timestamp if omitted.
         """
-        pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "notification_emails", notification_emails)
-        pulumi.set(__self__, "version", version)
+        AppSecActivationsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            notification_emails=notification_emails,
+            version=version,
+            network=network,
+            note=note,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: pulumi.Input[int],
+             notification_emails: pulumi.Input[Sequence[pulumi.Input[str]]],
+             version: pulumi.Input[int],
+             network: Optional[pulumi.Input[str]] = None,
+             note: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_id", config_id)
+        _setter("notification_emails", notification_emails)
+        _setter("version", version)
         if network is not None:
-            pulumi.set(__self__, "network", network)
+            _setter("network", network)
         if note is not None:
-            pulumi.set(__self__, "note", note)
+            _setter("note", note)
 
     @property
     @pulumi.getter(name="configId")
@@ -114,18 +131,37 @@ class _AppSecActivationsState:
         :param pulumi.Input[str] status: The results of the activation
         :param pulumi.Input[int] version: Version of the security configuration to be activated
         """
+        _AppSecActivationsState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            network=network,
+            note=note,
+            notification_emails=notification_emails,
+            status=status,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             network: Optional[pulumi.Input[str]] = None,
+             note: Optional[pulumi.Input[str]] = None,
+             notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
         if network is not None:
-            pulumi.set(__self__, "network", network)
+            _setter("network", network)
         if note is not None:
-            pulumi.set(__self__, "note", note)
+            _setter("note", note)
         if notification_emails is not None:
-            pulumi.set(__self__, "notification_emails", notification_emails)
+            _setter("notification_emails", notification_emails)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
 
     @property
     @pulumi.getter(name="configId")
@@ -239,6 +275,10 @@ class AppSecActivations(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AppSecActivationsArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
