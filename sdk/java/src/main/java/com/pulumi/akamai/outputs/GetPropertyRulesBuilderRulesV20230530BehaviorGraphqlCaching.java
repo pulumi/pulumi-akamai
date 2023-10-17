@@ -129,17 +129,17 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorGraphqlCaching {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorGraphqlCaching build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorGraphqlCaching();
-            o.advanced = advanced;
-            o.cacheResponsesWithErrors = cacheResponsesWithErrors;
-            o.enabled = enabled;
-            o.locked = locked;
-            o.operationsJsonBodyParameterName = operationsJsonBodyParameterName;
-            o.operationsUrlQueryParameterName = operationsUrlQueryParameterName;
-            o.postRequestProcessingErrorHandling = postRequestProcessingErrorHandling;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorGraphqlCaching();
+            _resultValue.advanced = advanced;
+            _resultValue.cacheResponsesWithErrors = cacheResponsesWithErrors;
+            _resultValue.enabled = enabled;
+            _resultValue.locked = locked;
+            _resultValue.operationsJsonBodyParameterName = operationsJsonBodyParameterName;
+            _resultValue.operationsUrlQueryParameterName = operationsUrlQueryParameterName;
+            _resultValue.postRequestProcessingErrorHandling = postRequestProcessingErrorHandling;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

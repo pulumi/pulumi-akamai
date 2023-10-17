@@ -62,11 +62,11 @@ public final class EdgeKvInitialData {
             return this;
         }
         public EdgeKvInitialData build() {
-            final var o = new EdgeKvInitialData();
-            o.group = group;
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new EdgeKvInitialData();
+            _resultValue.group = group;
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

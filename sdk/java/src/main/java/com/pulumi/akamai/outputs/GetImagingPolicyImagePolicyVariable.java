@@ -100,14 +100,14 @@ public final class GetImagingPolicyImagePolicyVariable {
             return this;
         }
         public GetImagingPolicyImagePolicyVariable build() {
-            final var o = new GetImagingPolicyImagePolicyVariable();
-            o.defaultValue = defaultValue;
-            o.enumOptions = enumOptions;
-            o.name = name;
-            o.postfix = postfix;
-            o.prefix = prefix;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyVariable();
+            _resultValue.defaultValue = defaultValue;
+            _resultValue.enumOptions = enumOptions;
+            _resultValue.name = name;
+            _resultValue.postfix = postfix;
+            _resultValue.prefix = prefix;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

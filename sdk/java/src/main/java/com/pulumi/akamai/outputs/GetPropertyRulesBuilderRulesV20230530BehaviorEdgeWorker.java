@@ -107,15 +107,15 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorEdgeWorker {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorEdgeWorker build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorEdgeWorker();
-            o.createEdgeWorker = createEdgeWorker;
-            o.edgeWorkerId = edgeWorkerId;
-            o.enabled = enabled;
-            o.locked = locked;
-            o.resourceTier = resourceTier;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorEdgeWorker();
+            _resultValue.createEdgeWorker = createEdgeWorker;
+            _resultValue.edgeWorkerId = edgeWorkerId;
+            _resultValue.enabled = enabled;
+            _resultValue.locked = locked;
+            _resultValue.resourceTier = resourceTier;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

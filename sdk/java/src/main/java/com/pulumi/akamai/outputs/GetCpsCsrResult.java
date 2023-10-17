@@ -80,12 +80,12 @@ public final class GetCpsCsrResult {
             return this;
         }
         public GetCpsCsrResult build() {
-            final var o = new GetCpsCsrResult();
-            o.csrEcdsa = csrEcdsa;
-            o.csrRsa = csrRsa;
-            o.enrollmentId = enrollmentId;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetCpsCsrResult();
+            _resultValue.csrEcdsa = csrEcdsa;
+            _resultValue.csrRsa = csrRsa;
+            _resultValue.enrollmentId = enrollmentId;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

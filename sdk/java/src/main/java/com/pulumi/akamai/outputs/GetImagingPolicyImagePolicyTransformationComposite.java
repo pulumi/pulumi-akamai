@@ -173,21 +173,21 @@ public final class GetImagingPolicyImagePolicyTransformationComposite {
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationComposite build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationComposite();
-            o.gravity = gravity;
-            o.gravityVar = gravityVar;
-            o.image = image;
-            o.placement = placement;
-            o.placementVar = placementVar;
-            o.scale = scale;
-            o.scaleDimension = scaleDimension;
-            o.scaleDimensionVar = scaleDimensionVar;
-            o.scaleVar = scaleVar;
-            o.xPosition = xPosition;
-            o.xPositionVar = xPositionVar;
-            o.yPosition = yPosition;
-            o.yPositionVar = yPositionVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationComposite();
+            _resultValue.gravity = gravity;
+            _resultValue.gravityVar = gravityVar;
+            _resultValue.image = image;
+            _resultValue.placement = placement;
+            _resultValue.placementVar = placementVar;
+            _resultValue.scale = scale;
+            _resultValue.scaleDimension = scaleDimension;
+            _resultValue.scaleDimensionVar = scaleDimensionVar;
+            _resultValue.scaleVar = scaleVar;
+            _resultValue.xPosition = xPosition;
+            _resultValue.xPositionVar = xPositionVar;
+            _resultValue.yPosition = yPosition;
+            _resultValue.yPositionVar = yPositionVar;
+            return _resultValue;
         }
     }
 }

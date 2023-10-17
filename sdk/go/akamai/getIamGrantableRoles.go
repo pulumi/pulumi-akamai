@@ -4,8 +4,12 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetIamGrantableRoles(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIamGrantableRolesResult, error) {
@@ -23,4 +27,49 @@ type GetIamGrantableRolesResult struct {
 	GrantableRoles []GetIamGrantableRolesGrantableRole `pulumi:"grantableRoles"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+}
+
+func GetIamGrantableRolesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetIamGrantableRolesResultOutput {
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamGrantableRolesResult, error) {
+		r, err := GetIamGrantableRoles(ctx, opts...)
+		var s GetIamGrantableRolesResult
+		if r != nil {
+			s = *r
+		}
+		return s, err
+	}).(GetIamGrantableRolesResultOutput)
+}
+
+// A collection of values returned by getIamGrantableRoles.
+type GetIamGrantableRolesResultOutput struct{ *pulumi.OutputState }
+
+func (GetIamGrantableRolesResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamGrantableRolesResult)(nil)).Elem()
+}
+
+func (o GetIamGrantableRolesResultOutput) ToGetIamGrantableRolesResultOutput() GetIamGrantableRolesResultOutput {
+	return o
+}
+
+func (o GetIamGrantableRolesResultOutput) ToGetIamGrantableRolesResultOutputWithContext(ctx context.Context) GetIamGrantableRolesResultOutput {
+	return o
+}
+
+func (o GetIamGrantableRolesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIamGrantableRolesResult] {
+	return pulumix.Output[GetIamGrantableRolesResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetIamGrantableRolesResultOutput) GrantableRoles() GetIamGrantableRolesGrantableRoleArrayOutput {
+	return o.ApplyT(func(v GetIamGrantableRolesResult) []GetIamGrantableRolesGrantableRole { return v.GrantableRoles }).(GetIamGrantableRolesGrantableRoleArrayOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetIamGrantableRolesResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamGrantableRolesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetIamGrantableRolesResultOutput{})
 }

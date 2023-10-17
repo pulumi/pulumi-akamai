@@ -119,16 +119,16 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorLargeFileOptimiz
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorLargeFileOptimizationAdvanced build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorLargeFileOptimizationAdvanced();
-            o.enabled = enabled;
-            o.fragmentSize = fragmentSize;
-            o.locked = locked;
-            o.objectSize = objectSize;
-            o.prefetchAfterRequest = prefetchAfterRequest;
-            o.prefetchDuringRequest = prefetchDuringRequest;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorLargeFileOptimizationAdvanced();
+            _resultValue.enabled = enabled;
+            _resultValue.fragmentSize = fragmentSize;
+            _resultValue.locked = locked;
+            _resultValue.objectSize = objectSize;
+            _resultValue.prefetchAfterRequest = prefetchAfterRequest;
+            _resultValue.prefetchDuringRequest = prefetchDuringRequest;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

@@ -129,17 +129,17 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorVerifyJsonWebTok
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorVerifyJsonWebToken build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorVerifyJsonWebToken();
-            o.enableEs256 = enableEs256;
-            o.enableRs256 = enableRs256;
-            o.extractLocation = extractLocation;
-            o.headerName = headerName;
-            o.jwt = jwt;
-            o.locked = locked;
-            o.queryParameterName = queryParameterName;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorVerifyJsonWebToken();
+            _resultValue.enableEs256 = enableEs256;
+            _resultValue.enableRs256 = enableRs256;
+            _resultValue.extractLocation = extractLocation;
+            _resultValue.headerName = headerName;
+            _resultValue.jwt = jwt;
+            _resultValue.locked = locked;
+            _resultValue.queryParameterName = queryParameterName;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

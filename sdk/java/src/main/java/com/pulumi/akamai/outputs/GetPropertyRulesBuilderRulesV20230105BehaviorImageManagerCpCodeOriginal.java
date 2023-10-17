@@ -101,14 +101,14 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerCpCo
             return products(List.of(products));
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerCpCodeOriginal build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerCpCodeOriginal();
-            o.cpCodeLimits = cpCodeLimits;
-            o.createdDate = createdDate;
-            o.description = description;
-            o.id = id;
-            o.name = name;
-            o.products = products;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerCpCodeOriginal();
+            _resultValue.cpCodeLimits = cpCodeLimits;
+            _resultValue.createdDate = createdDate;
+            _resultValue.description = description;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.products = products;
+            return _resultValue;
         }
     }
 }

@@ -49,10 +49,10 @@ public final class GetImagingPolicyImagePolicyVariableEnumOption {
             return this;
         }
         public GetImagingPolicyImagePolicyVariableEnumOption build() {
-            final var o = new GetImagingPolicyImagePolicyVariableEnumOption();
-            o.id = id;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyVariableEnumOption();
+            _resultValue.id = id;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -43,7 +43,19 @@ class AppSecAttackGroupArgs:
              config_id: pulumi.Input[int],
              security_policy_id: pulumi.Input[str],
              condition_exception: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attackGroup' in kwargs:
+            attack_group = kwargs['attackGroup']
+        if 'attackGroupAction' in kwargs:
+            attack_group_action = kwargs['attackGroupAction']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+        if 'conditionException' in kwargs:
+            condition_exception = kwargs['conditionException']
+
         _setter("attack_group", attack_group)
         _setter("attack_group_action", attack_group_action)
         _setter("config_id", config_id)
@@ -144,7 +156,19 @@ class _AppSecAttackGroupState:
              condition_exception: Optional[pulumi.Input[str]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attackGroup' in kwargs:
+            attack_group = kwargs['attackGroup']
+        if 'attackGroupAction' in kwargs:
+            attack_group_action = kwargs['attackGroupAction']
+        if 'conditionException' in kwargs:
+            condition_exception = kwargs['conditionException']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         if attack_group is not None:
             _setter("attack_group", attack_group)
         if attack_group_action is not None:

@@ -51,10 +51,10 @@ public final class PropertyActivationComplianceRecordNoncomplianceReasonOther {
             return this;
         }
         public PropertyActivationComplianceRecordNoncomplianceReasonOther build() {
-            final var o = new PropertyActivationComplianceRecordNoncomplianceReasonOther();
-            o.otherNoncomplianceReason = otherNoncomplianceReason;
-            o.ticketId = ticketId;
-            return o;
+            final var _resultValue = new PropertyActivationComplianceRecordNoncomplianceReasonOther();
+            _resultValue.otherNoncomplianceReason = otherNoncomplianceReason;
+            _resultValue.ticketId = ticketId;
+            return _resultValue;
         }
     }
 }

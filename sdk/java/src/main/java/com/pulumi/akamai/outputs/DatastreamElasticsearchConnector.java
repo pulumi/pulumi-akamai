@@ -173,21 +173,21 @@ public final class DatastreamElasticsearchConnector {
             return this;
         }
         public DatastreamElasticsearchConnector build() {
-            final var o = new DatastreamElasticsearchConnector();
-            o.caCert = caCert;
-            o.clientCert = clientCert;
-            o.clientKey = clientKey;
-            o.contentType = contentType;
-            o.customHeaderName = customHeaderName;
-            o.customHeaderValue = customHeaderValue;
-            o.displayName = displayName;
-            o.endpoint = endpoint;
-            o.indexName = indexName;
-            o.mTls = mTls;
-            o.password = password;
-            o.tlsHostname = tlsHostname;
-            o.userName = userName;
-            return o;
+            final var _resultValue = new DatastreamElasticsearchConnector();
+            _resultValue.caCert = caCert;
+            _resultValue.clientCert = clientCert;
+            _resultValue.clientKey = clientKey;
+            _resultValue.contentType = contentType;
+            _resultValue.customHeaderName = customHeaderName;
+            _resultValue.customHeaderValue = customHeaderValue;
+            _resultValue.displayName = displayName;
+            _resultValue.endpoint = endpoint;
+            _resultValue.indexName = indexName;
+            _resultValue.mTls = mTls;
+            _resultValue.password = password;
+            _resultValue.tlsHostname = tlsHostname;
+            _resultValue.userName = userName;
+            return _resultValue;
         }
     }
 }

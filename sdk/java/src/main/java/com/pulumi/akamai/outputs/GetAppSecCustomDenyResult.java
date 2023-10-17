@@ -93,13 +93,13 @@ public final class GetAppSecCustomDenyResult {
             return this;
         }
         public GetAppSecCustomDenyResult build() {
-            final var o = new GetAppSecCustomDenyResult();
-            o.configId = configId;
-            o.customDenyId = customDenyId;
-            o.id = id;
-            o.json = json;
-            o.outputText = outputText;
-            return o;
+            final var _resultValue = new GetAppSecCustomDenyResult();
+            _resultValue.configId = configId;
+            _resultValue.customDenyId = customDenyId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.outputText = outputText;
+            return _resultValue;
         }
     }
 }

@@ -31,7 +31,13 @@ class AppSecVersionNodesArgs:
              _setter: Callable[[Any, Any], None],
              config_id: pulumi.Input[int],
              version_notes: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'versionNotes' in kwargs:
+            version_notes = kwargs['versionNotes']
+
         _setter("config_id", config_id)
         _setter("version_notes", version_notes)
 
@@ -84,7 +90,15 @@ class _AppSecVersionNodesState:
              config_id: Optional[pulumi.Input[int]] = None,
              output_text: Optional[pulumi.Input[str]] = None,
              version_notes: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'outputText' in kwargs:
+            output_text = kwargs['outputText']
+        if 'versionNotes' in kwargs:
+            version_notes = kwargs['versionNotes']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if output_text is not None:

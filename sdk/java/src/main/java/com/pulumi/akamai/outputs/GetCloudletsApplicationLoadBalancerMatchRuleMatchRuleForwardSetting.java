@@ -38,9 +38,9 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardS
             return this;
         }
         public GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSetting build() {
-            final var o = new GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSetting();
-            o.originId = originId;
-            return o;
+            final var _resultValue = new GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSetting();
+            _resultValue.originId = originId;
+            return _resultValue;
         }
     }
 }

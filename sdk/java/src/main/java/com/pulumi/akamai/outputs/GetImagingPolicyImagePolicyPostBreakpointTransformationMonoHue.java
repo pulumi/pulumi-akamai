@@ -51,10 +51,10 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHu
             return this;
         }
         public GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHue build() {
-            final var o = new GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHue();
-            o.hue = hue;
-            o.hueVar = hueVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHue();
+            _resultValue.hue = hue;
+            _resultValue.hueVar = hueVar;
+            return _resultValue;
         }
     }
 }

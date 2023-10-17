@@ -80,12 +80,12 @@ public final class GetBotmanJavascriptInjectionResult {
             return this;
         }
         public GetBotmanJavascriptInjectionResult build() {
-            final var o = new GetBotmanJavascriptInjectionResult();
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            o.securityPolicyId = securityPolicyId;
-            return o;
+            final var _resultValue = new GetBotmanJavascriptInjectionResult();
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.securityPolicyId = securityPolicyId;
+            return _resultValue;
         }
     }
 }

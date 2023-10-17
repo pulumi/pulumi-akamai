@@ -73,11 +73,11 @@ public final class GetGtmDatacentersResult {
             return this;
         }
         public GetGtmDatacentersResult build() {
-            final var o = new GetGtmDatacentersResult();
-            o.datacenters = datacenters;
-            o.domain = domain;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetGtmDatacentersResult();
+            _resultValue.datacenters = datacenters;
+            _resultValue.domain = domain;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

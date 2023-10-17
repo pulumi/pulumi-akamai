@@ -115,15 +115,15 @@ public final class GetAppSecConfigurationVersionResult {
             return this;
         }
         public GetAppSecConfigurationVersionResult build() {
-            final var o = new GetAppSecConfigurationVersionResult();
-            o.configId = configId;
-            o.id = id;
-            o.latestVersion = latestVersion;
-            o.outputText = outputText;
-            o.productionStatus = productionStatus;
-            o.stagingStatus = stagingStatus;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetAppSecConfigurationVersionResult();
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.latestVersion = latestVersion;
+            _resultValue.outputText = outputText;
+            _resultValue.productionStatus = productionStatus;
+            _resultValue.stagingStatus = stagingStatus;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

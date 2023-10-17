@@ -108,15 +108,15 @@ public final class GetCloudwrapperCapacitiesCapacity {
             return this;
         }
         public GetCloudwrapperCapacitiesCapacity build() {
-            final var o = new GetCloudwrapperCapacitiesCapacity();
-            o.approved = approved;
-            o.assigned = assigned;
-            o.contractId = contractId;
-            o.locationId = locationId;
-            o.locationName = locationName;
-            o.type = type;
-            o.unassigned = unassigned;
-            return o;
+            final var _resultValue = new GetCloudwrapperCapacitiesCapacity();
+            _resultValue.approved = approved;
+            _resultValue.assigned = assigned;
+            _resultValue.contractId = contractId;
+            _resultValue.locationId = locationId;
+            _resultValue.locationName = locationName;
+            _resultValue.type = type;
+            _resultValue.unassigned = unassigned;
+            return _resultValue;
         }
     }
 }

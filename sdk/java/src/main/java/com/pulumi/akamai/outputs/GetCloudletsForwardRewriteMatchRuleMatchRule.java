@@ -125,16 +125,16 @@ public final class GetCloudletsForwardRewriteMatchRuleMatchRule {
             return this;
         }
         public GetCloudletsForwardRewriteMatchRuleMatchRule build() {
-            final var o = new GetCloudletsForwardRewriteMatchRuleMatchRule();
-            o.disabled = disabled;
-            o.end = end;
-            o.forwardSettings = forwardSettings;
-            o.matchUrl = matchUrl;
-            o.matches = matches;
-            o.name = name;
-            o.start = start;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetCloudletsForwardRewriteMatchRuleMatchRule();
+            _resultValue.disabled = disabled;
+            _resultValue.end = end;
+            _resultValue.forwardSettings = forwardSettings;
+            _resultValue.matchUrl = matchUrl;
+            _resultValue.matches = matches;
+            _resultValue.name = name;
+            _resultValue.start = start;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

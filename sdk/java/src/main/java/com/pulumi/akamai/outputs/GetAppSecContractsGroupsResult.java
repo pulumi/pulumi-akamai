@@ -115,15 +115,15 @@ public final class GetAppSecContractsGroupsResult {
             return this;
         }
         public GetAppSecContractsGroupsResult build() {
-            final var o = new GetAppSecContractsGroupsResult();
-            o.contractid = contractid;
-            o.defaultContractid = defaultContractid;
-            o.defaultGroupid = defaultGroupid;
-            o.groupid = groupid;
-            o.id = id;
-            o.json = json;
-            o.outputText = outputText;
-            return o;
+            final var _resultValue = new GetAppSecContractsGroupsResult();
+            _resultValue.contractid = contractid;
+            _resultValue.defaultContractid = defaultContractid;
+            _resultValue.defaultGroupid = defaultGroupid;
+            _resultValue.groupid = groupid;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.outputText = outputText;
+            return _resultValue;
         }
     }
 }

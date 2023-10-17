@@ -145,17 +145,17 @@ public final class GetAppSecWapSelectedHostnamesResult {
             return selectedHosts(List.of(selectedHosts));
         }
         public GetAppSecWapSelectedHostnamesResult build() {
-            final var o = new GetAppSecWapSelectedHostnamesResult();
-            o.configId = configId;
-            o.evaluatedHosts = evaluatedHosts;
-            o.id = id;
-            o.json = json;
-            o.matchTargets = matchTargets;
-            o.outputText = outputText;
-            o.protectedHosts = protectedHosts;
-            o.securityPolicyId = securityPolicyId;
-            o.selectedHosts = selectedHosts;
-            return o;
+            final var _resultValue = new GetAppSecWapSelectedHostnamesResult();
+            _resultValue.configId = configId;
+            _resultValue.evaluatedHosts = evaluatedHosts;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.matchTargets = matchTargets;
+            _resultValue.outputText = outputText;
+            _resultValue.protectedHosts = protectedHosts;
+            _resultValue.securityPolicyId = securityPolicyId;
+            _resultValue.selectedHosts = selectedHosts;
+            return _resultValue;
         }
     }
 }

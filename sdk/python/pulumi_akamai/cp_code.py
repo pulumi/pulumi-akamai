@@ -35,7 +35,15 @@ class CpCodeArgs:
              group_id: pulumi.Input[str],
              name: Optional[pulumi.Input[str]] = None,
              product_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'productId' in kwargs:
+            product_id = kwargs['productId']
+
         _setter("contract_id", contract_id)
         _setter("group_id", group_id)
         if name is not None:
@@ -104,7 +112,15 @@ class _CpCodeState:
              group_id: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              product_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'productId' in kwargs:
+            product_id = kwargs['productId']
+
         if contract_id is not None:
             _setter("contract_id", contract_id)
         if group_id is not None:

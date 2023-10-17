@@ -106,14 +106,14 @@ public final class GetAppSecBypassNetworkListsResult {
             return this;
         }
         public GetAppSecBypassNetworkListsResult build() {
-            final var o = new GetAppSecBypassNetworkListsResult();
-            o.bypassNetworkLists = bypassNetworkLists;
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            o.outputText = outputText;
-            o.securityPolicyId = securityPolicyId;
-            return o;
+            final var _resultValue = new GetAppSecBypassNetworkListsResult();
+            _resultValue.bypassNetworkLists = bypassNetworkLists;
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.outputText = outputText;
+            _resultValue.securityPolicyId = securityPolicyId;
+            return _resultValue;
         }
     }
 }

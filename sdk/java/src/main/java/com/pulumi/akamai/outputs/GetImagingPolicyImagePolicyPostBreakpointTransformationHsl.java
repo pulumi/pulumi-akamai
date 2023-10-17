@@ -95,14 +95,14 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationHsl {
             return this;
         }
         public GetImagingPolicyImagePolicyPostBreakpointTransformationHsl build() {
-            final var o = new GetImagingPolicyImagePolicyPostBreakpointTransformationHsl();
-            o.hue = hue;
-            o.hueVar = hueVar;
-            o.lightness = lightness;
-            o.lightnessVar = lightnessVar;
-            o.saturation = saturation;
-            o.saturationVar = saturationVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyPostBreakpointTransformationHsl();
+            _resultValue.hue = hue;
+            _resultValue.hueVar = hueVar;
+            _resultValue.lightness = lightness;
+            _resultValue.lightnessVar = lightnessVar;
+            _resultValue.saturation = saturation;
+            _resultValue.saturationVar = saturationVar;
+            return _resultValue;
         }
     }
 }

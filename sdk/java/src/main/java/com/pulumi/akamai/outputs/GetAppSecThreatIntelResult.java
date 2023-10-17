@@ -102,14 +102,14 @@ public final class GetAppSecThreatIntelResult {
             return this;
         }
         public GetAppSecThreatIntelResult build() {
-            final var o = new GetAppSecThreatIntelResult();
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            o.outputText = outputText;
-            o.securityPolicyId = securityPolicyId;
-            o.threatIntel = threatIntel;
-            return o;
+            final var _resultValue = new GetAppSecThreatIntelResult();
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.outputText = outputText;
+            _resultValue.securityPolicyId = securityPolicyId;
+            _resultValue.threatIntel = threatIntel;
+            return _resultValue;
         }
     }
 }

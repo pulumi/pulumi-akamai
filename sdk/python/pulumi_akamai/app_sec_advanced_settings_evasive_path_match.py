@@ -35,7 +35,15 @@ class AppSecAdvancedSettingsEvasivePathMatchArgs:
              config_id: pulumi.Input[int],
              enable_path_match: pulumi.Input[bool],
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'enablePathMatch' in kwargs:
+            enable_path_match = kwargs['enablePathMatch']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         _setter("config_id", config_id)
         _setter("enable_path_match", enable_path_match)
         if security_policy_id is not None:
@@ -102,7 +110,15 @@ class _AppSecAdvancedSettingsEvasivePathMatchState:
              config_id: Optional[pulumi.Input[int]] = None,
              enable_path_match: Optional[pulumi.Input[bool]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'enablePathMatch' in kwargs:
+            enable_path_match = kwargs['enablePathMatch']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if enable_path_match is not None:

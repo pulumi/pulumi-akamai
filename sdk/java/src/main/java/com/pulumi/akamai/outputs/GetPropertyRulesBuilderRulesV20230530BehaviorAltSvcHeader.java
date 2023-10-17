@@ -75,12 +75,12 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorAltSvcHeader {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorAltSvcHeader build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorAltSvcHeader();
-            o.locked = locked;
-            o.maxAge = maxAge;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorAltSvcHeader();
+            _resultValue.locked = locked;
+            _resultValue.maxAge = maxAge;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

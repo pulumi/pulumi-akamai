@@ -220,24 +220,24 @@ public final class GetCloudletsPolicyResult {
             return this;
         }
         public GetCloudletsPolicyResult build() {
-            final var o = new GetCloudletsPolicyResult();
-            o.activations = activations;
-            o.apiVersion = apiVersion;
-            o.cloudletCode = cloudletCode;
-            o.cloudletId = cloudletId;
-            o.description = description;
-            o.groupId = groupId;
-            o.id = id;
-            o.matchRuleFormat = matchRuleFormat;
-            o.matchRules = matchRules;
-            o.name = name;
-            o.policyId = policyId;
-            o.revisionId = revisionId;
-            o.rulesLocked = rulesLocked;
-            o.version = version;
-            o.versionDescription = versionDescription;
-            o.warnings = warnings;
-            return o;
+            final var _resultValue = new GetCloudletsPolicyResult();
+            _resultValue.activations = activations;
+            _resultValue.apiVersion = apiVersion;
+            _resultValue.cloudletCode = cloudletCode;
+            _resultValue.cloudletId = cloudletId;
+            _resultValue.description = description;
+            _resultValue.groupId = groupId;
+            _resultValue.id = id;
+            _resultValue.matchRuleFormat = matchRuleFormat;
+            _resultValue.matchRules = matchRules;
+            _resultValue.name = name;
+            _resultValue.policyId = policyId;
+            _resultValue.revisionId = revisionId;
+            _resultValue.rulesLocked = rulesLocked;
+            _resultValue.version = version;
+            _resultValue.versionDescription = versionDescription;
+            _resultValue.warnings = warnings;
+            return _resultValue;
         }
     }
 }

@@ -126,16 +126,16 @@ public final class GetAppSecRulesResult {
             return this;
         }
         public GetAppSecRulesResult build() {
-            final var o = new GetAppSecRulesResult();
-            o.conditionException = conditionException;
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            o.outputText = outputText;
-            o.ruleAction = ruleAction;
-            o.ruleId = ruleId;
-            o.securityPolicyId = securityPolicyId;
-            return o;
+            final var _resultValue = new GetAppSecRulesResult();
+            _resultValue.conditionException = conditionException;
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.outputText = outputText;
+            _resultValue.ruleAction = ruleAction;
+            _resultValue.ruleId = ruleId;
+            _resultValue.securityPolicyId = securityPolicyId;
+            return _resultValue;
         }
     }
 }

@@ -51,10 +51,10 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationGraysc
             return this;
         }
         public GetImagingPolicyImagePolicyPostBreakpointTransformationGrayscale build() {
-            final var o = new GetImagingPolicyImagePolicyPostBreakpointTransformationGrayscale();
-            o.type = type;
-            o.typeVar = typeVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyPostBreakpointTransformationGrayscale();
+            _resultValue.type = type;
+            _resultValue.typeVar = typeVar;
+            return _resultValue;
         }
     }
 }

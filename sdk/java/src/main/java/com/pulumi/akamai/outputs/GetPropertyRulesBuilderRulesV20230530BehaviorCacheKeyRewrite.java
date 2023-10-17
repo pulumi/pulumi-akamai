@@ -74,12 +74,12 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorCacheKeyRewrite 
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorCacheKeyRewrite build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorCacheKeyRewrite();
-            o.locked = locked;
-            o.purgeKey = purgeKey;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorCacheKeyRewrite();
+            _resultValue.locked = locked;
+            _resultValue.purgeKey = purgeKey;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

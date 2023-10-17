@@ -93,13 +93,13 @@ public final class GetBotmanBotDetectionActionResult {
             return this;
         }
         public GetBotmanBotDetectionActionResult build() {
-            final var o = new GetBotmanBotDetectionActionResult();
-            o.configId = configId;
-            o.detectionId = detectionId;
-            o.id = id;
-            o.json = json;
-            o.securityPolicyId = securityPolicyId;
-            return o;
+            final var _resultValue = new GetBotmanBotDetectionActionResult();
+            _resultValue.configId = configId;
+            _resultValue.detectionId = detectionId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.securityPolicyId = securityPolicyId;
+            return _resultValue;
         }
     }
 }

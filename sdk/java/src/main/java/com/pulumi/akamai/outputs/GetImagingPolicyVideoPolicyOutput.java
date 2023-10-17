@@ -95,14 +95,14 @@ public final class GetImagingPolicyVideoPolicyOutput {
             return this;
         }
         public GetImagingPolicyVideoPolicyOutput build() {
-            final var o = new GetImagingPolicyVideoPolicyOutput();
-            o.perceptualQuality = perceptualQuality;
-            o.perceptualQualityVar = perceptualQualityVar;
-            o.placeholderVideoUrl = placeholderVideoUrl;
-            o.placeholderVideoUrlVar = placeholderVideoUrlVar;
-            o.videoAdaptiveQuality = videoAdaptiveQuality;
-            o.videoAdaptiveQualityVar = videoAdaptiveQualityVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyVideoPolicyOutput();
+            _resultValue.perceptualQuality = perceptualQuality;
+            _resultValue.perceptualQualityVar = perceptualQualityVar;
+            _resultValue.placeholderVideoUrl = placeholderVideoUrl;
+            _resultValue.placeholderVideoUrlVar = placeholderVideoUrlVar;
+            _resultValue.videoAdaptiveQuality = videoAdaptiveQuality;
+            _resultValue.videoAdaptiveQualityVar = videoAdaptiveQualityVar;
+            return _resultValue;
         }
     }
 }

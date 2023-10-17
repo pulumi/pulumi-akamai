@@ -40,7 +40,13 @@ class GtmAsmapArgs:
              assignments: Optional[pulumi.Input[Sequence[pulumi.Input['GtmAsmapAssignmentArgs']]]] = None,
              name: Optional[pulumi.Input[str]] = None,
              wait_on_complete: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultDatacenter' in kwargs:
+            default_datacenter = kwargs['defaultDatacenter']
+        if 'waitOnComplete' in kwargs:
+            wait_on_complete = kwargs['waitOnComplete']
+
         _setter("default_datacenter", default_datacenter)
         _setter("domain", domain)
         if assignments is not None:
@@ -123,7 +129,13 @@ class _GtmAsmapState:
              domain: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              wait_on_complete: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultDatacenter' in kwargs:
+            default_datacenter = kwargs['defaultDatacenter']
+        if 'waitOnComplete' in kwargs:
+            wait_on_complete = kwargs['waitOnComplete']
+
         if assignments is not None:
             _setter("assignments", assignments)
         if default_datacenter is not None:

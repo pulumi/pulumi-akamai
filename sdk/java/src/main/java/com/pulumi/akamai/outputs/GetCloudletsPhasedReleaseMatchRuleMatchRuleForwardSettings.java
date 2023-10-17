@@ -50,10 +50,10 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings {
             return this;
         }
         public GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings build() {
-            final var o = new GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings();
-            o.originId = originId;
-            o.percent = percent;
-            return o;
+            final var _resultValue = new GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings();
+            _resultValue.originId = originId;
+            _resultValue.percent = percent;
+            return _resultValue;
         }
     }
 }

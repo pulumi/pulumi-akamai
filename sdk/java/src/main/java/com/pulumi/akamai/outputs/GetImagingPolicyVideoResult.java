@@ -69,11 +69,11 @@ public final class GetImagingPolicyVideoResult {
             return this;
         }
         public GetImagingPolicyVideoResult build() {
-            final var o = new GetImagingPolicyVideoResult();
-            o.id = id;
-            o.json = json;
-            o.policy = policy;
-            return o;
+            final var _resultValue = new GetImagingPolicyVideoResult();
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.policy = policy;
+            return _resultValue;
         }
     }
 }

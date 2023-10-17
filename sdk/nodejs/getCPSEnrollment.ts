@@ -41,6 +41,7 @@ export interface GetCPSEnrollmentResult {
     readonly id: string;
     readonly networkConfigurations: outputs.GetCPSEnrollmentNetworkConfiguration[];
     readonly organizations: outputs.GetCPSEnrollmentOrganization[];
+    readonly pendingChanges: boolean;
     readonly registrationAuthority: string;
     readonly sans: string[];
     readonly secureNetwork: string;

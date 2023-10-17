@@ -66,11 +66,11 @@ public final class GtmCidrmapAssignment {
             return this;
         }
         public GtmCidrmapAssignment build() {
-            final var o = new GtmCidrmapAssignment();
-            o.blocks = blocks;
-            o.datacenterId = datacenterId;
-            o.nickname = nickname;
-            return o;
+            final var _resultValue = new GtmCidrmapAssignment();
+            _resultValue.blocks = blocks;
+            _resultValue.datacenterId = datacenterId;
+            _resultValue.nickname = nickname;
+            return _resultValue;
         }
     }
 }

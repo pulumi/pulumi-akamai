@@ -51,10 +51,10 @@ public final class GetImagingPolicyImagePolicyTransformationBlur {
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationBlur build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationBlur();
-            o.sigma = sigma;
-            o.sigmaVar = sigmaVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationBlur();
+            _resultValue.sigma = sigma;
+            _resultValue.sigmaVar = sigmaVar;
+            return _resultValue;
         }
     }
 }

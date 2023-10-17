@@ -25,8 +25,8 @@ public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop
         }
 
         public GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeUnionShapeShape build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeUnionShapeShape();
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeUnionShapeShape();
+            return _resultValue;
         }
     }
 }

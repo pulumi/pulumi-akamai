@@ -301,32 +301,32 @@ public final class GtmPropertyLivenessTest {
             return this;
         }
         public GtmPropertyLivenessTest build() {
-            final var o = new GtmPropertyLivenessTest();
-            o.answersRequired = answersRequired;
-            o.disableNonstandardPortWarning = disableNonstandardPortWarning;
-            o.disabled = disabled;
-            o.errorPenalty = errorPenalty;
-            o.httpError3xx = httpError3xx;
-            o.httpError4xx = httpError4xx;
-            o.httpError5xx = httpError5xx;
-            o.httpHeaders = httpHeaders;
-            o.name = name;
-            o.peerCertificateVerification = peerCertificateVerification;
-            o.recursionRequested = recursionRequested;
-            o.requestString = requestString;
-            o.resourceType = resourceType;
-            o.responseString = responseString;
-            o.sslClientCertificate = sslClientCertificate;
-            o.sslClientPrivateKey = sslClientPrivateKey;
-            o.testInterval = testInterval;
-            o.testObject = testObject;
-            o.testObjectPassword = testObjectPassword;
-            o.testObjectPort = testObjectPort;
-            o.testObjectProtocol = testObjectProtocol;
-            o.testObjectUsername = testObjectUsername;
-            o.testTimeout = testTimeout;
-            o.timeoutPenalty = timeoutPenalty;
-            return o;
+            final var _resultValue = new GtmPropertyLivenessTest();
+            _resultValue.answersRequired = answersRequired;
+            _resultValue.disableNonstandardPortWarning = disableNonstandardPortWarning;
+            _resultValue.disabled = disabled;
+            _resultValue.errorPenalty = errorPenalty;
+            _resultValue.httpError3xx = httpError3xx;
+            _resultValue.httpError4xx = httpError4xx;
+            _resultValue.httpError5xx = httpError5xx;
+            _resultValue.httpHeaders = httpHeaders;
+            _resultValue.name = name;
+            _resultValue.peerCertificateVerification = peerCertificateVerification;
+            _resultValue.recursionRequested = recursionRequested;
+            _resultValue.requestString = requestString;
+            _resultValue.resourceType = resourceType;
+            _resultValue.responseString = responseString;
+            _resultValue.sslClientCertificate = sslClientCertificate;
+            _resultValue.sslClientPrivateKey = sslClientPrivateKey;
+            _resultValue.testInterval = testInterval;
+            _resultValue.testObject = testObject;
+            _resultValue.testObjectPassword = testObjectPassword;
+            _resultValue.testObjectPort = testObjectPort;
+            _resultValue.testObjectProtocol = testObjectProtocol;
+            _resultValue.testObjectUsername = testObjectUsername;
+            _resultValue.testTimeout = testTimeout;
+            _resultValue.timeoutPenalty = timeoutPenalty;
+            return _resultValue;
         }
     }
 }

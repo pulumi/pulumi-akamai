@@ -73,12 +73,12 @@ public final class GetImagingPolicyImagePolicyTransformationTrim {
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationTrim build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationTrim();
-            o.fuzz = fuzz;
-            o.fuzzVar = fuzzVar;
-            o.padding = padding;
-            o.paddingVar = paddingVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationTrim();
+            _resultValue.fuzz = fuzz;
+            _resultValue.fuzzVar = fuzzVar;
+            _resultValue.padding = padding;
+            _resultValue.paddingVar = paddingVar;
+            return _resultValue;
         }
     }
 }

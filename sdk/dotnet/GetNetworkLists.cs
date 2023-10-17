@@ -68,6 +68,7 @@ namespace Pulumi.Akamai
         public readonly string? Name;
         public readonly string NetworkListId;
         public readonly string OutputText;
+        public readonly int SyncPoint;
         public readonly string? Type;
 
         [OutputConstructor]
@@ -88,6 +89,8 @@ namespace Pulumi.Akamai
 
             string outputText,
 
+            int syncPoint,
+
             string? type)
         {
             ContractId = contractId;
@@ -98,6 +101,7 @@ namespace Pulumi.Akamai
             Name = name;
             NetworkListId = networkListId;
             OutputText = outputText;
+            SyncPoint = syncPoint;
             Type = type;
         }
     }

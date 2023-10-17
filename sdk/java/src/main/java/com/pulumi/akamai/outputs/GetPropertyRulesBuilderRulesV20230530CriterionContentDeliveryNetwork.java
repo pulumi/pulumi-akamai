@@ -85,13 +85,13 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionContentDelivery
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530CriterionContentDeliveryNetwork build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530CriterionContentDeliveryNetwork();
-            o.locked = locked;
-            o.matchOperator = matchOperator;
-            o.network = network;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530CriterionContentDeliveryNetwork();
+            _resultValue.locked = locked;
+            _resultValue.matchOperator = matchOperator;
+            _resultValue.network = network;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

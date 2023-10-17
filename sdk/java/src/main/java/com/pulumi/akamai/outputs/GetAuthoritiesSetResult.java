@@ -72,11 +72,11 @@ public final class GetAuthoritiesSetResult {
             return this;
         }
         public GetAuthoritiesSetResult build() {
-            final var o = new GetAuthoritiesSetResult();
-            o.authorities = authorities;
-            o.contract = contract;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetAuthoritiesSetResult();
+            _resultValue.authorities = authorities;
+            _resultValue.contract = contract;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

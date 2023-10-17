@@ -177,21 +177,21 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorReport {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorReport build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorReport();
-            o.cookies = cookies;
-            o.customLogField = customLogField;
-            o.locked = locked;
-            o.logAcceptLanguage = logAcceptLanguage;
-            o.logCookies = logCookies;
-            o.logCustomLogField = logCustomLogField;
-            o.logEdgeIp = logEdgeIp;
-            o.logHost = logHost;
-            o.logReferer = logReferer;
-            o.logUserAgent = logUserAgent;
-            o.logXForwardedFor = logXForwardedFor;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorReport();
+            _resultValue.cookies = cookies;
+            _resultValue.customLogField = customLogField;
+            _resultValue.locked = locked;
+            _resultValue.logAcceptLanguage = logAcceptLanguage;
+            _resultValue.logCookies = logCookies;
+            _resultValue.logCustomLogField = logCustomLogField;
+            _resultValue.logEdgeIp = logEdgeIp;
+            _resultValue.logHost = logHost;
+            _resultValue.logReferer = logReferer;
+            _resultValue.logUserAgent = logUserAgent;
+            _resultValue.logXForwardedFor = logXForwardedFor;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

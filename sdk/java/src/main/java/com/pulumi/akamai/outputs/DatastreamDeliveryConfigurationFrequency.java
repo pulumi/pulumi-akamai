@@ -38,9 +38,9 @@ public final class DatastreamDeliveryConfigurationFrequency {
             return this;
         }
         public DatastreamDeliveryConfigurationFrequency build() {
-            final var o = new DatastreamDeliveryConfigurationFrequency();
-            o.intervalInSecs = intervalInSecs;
-            return o;
+            final var _resultValue = new DatastreamDeliveryConfigurationFrequency();
+            _resultValue.intervalInSecs = intervalInSecs;
+            return _resultValue;
         }
     }
 }

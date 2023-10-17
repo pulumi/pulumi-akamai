@@ -97,14 +97,14 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorRealTimeReportin
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorRealTimeReporting build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorRealTimeReporting();
-            o.advanced = advanced;
-            o.beaconSamplingPercentage = beaconSamplingPercentage;
-            o.enabled = enabled;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorRealTimeReporting();
+            _resultValue.advanced = advanced;
+            _resultValue.beaconSamplingPercentage = beaconSamplingPercentage;
+            _resultValue.enabled = enabled;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

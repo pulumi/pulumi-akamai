@@ -107,15 +107,15 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompos
             return this;
         }
         public GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxImage build() {
-            final var o = new GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxImage();
-            o.color = color;
-            o.colorVar = colorVar;
-            o.height = height;
-            o.heightVar = heightVar;
-            o.transformation = transformation;
-            o.width = width;
-            o.widthVar = widthVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxImage();
+            _resultValue.color = color;
+            _resultValue.colorVar = colorVar;
+            _resultValue.height = height;
+            _resultValue.heightVar = heightVar;
+            _resultValue.transformation = transformation;
+            _resultValue.width = width;
+            _resultValue.widthVar = widthVar;
+            return _resultValue;
         }
     }
 }

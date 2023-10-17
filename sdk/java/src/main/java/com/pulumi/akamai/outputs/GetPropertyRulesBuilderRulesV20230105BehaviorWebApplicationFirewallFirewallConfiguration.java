@@ -96,14 +96,14 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorWebApplicationFi
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorWebApplicationFirewallFirewallConfiguration build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorWebApplicationFirewallFirewallConfiguration();
-            o.configId = configId;
-            o.fileName = fileName;
-            o.productionStatus = productionStatus;
-            o.productionVersion = productionVersion;
-            o.stagingStatus = stagingStatus;
-            o.stagingVersion = stagingVersion;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorWebApplicationFirewallFirewallConfiguration();
+            _resultValue.configId = configId;
+            _resultValue.fileName = fileName;
+            _resultValue.productionStatus = productionStatus;
+            _resultValue.productionVersion = productionVersion;
+            _resultValue.stagingStatus = stagingStatus;
+            _resultValue.stagingVersion = stagingVersion;
+            return _resultValue;
         }
     }
 }

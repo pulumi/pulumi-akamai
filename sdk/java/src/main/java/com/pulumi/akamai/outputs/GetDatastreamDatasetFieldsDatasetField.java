@@ -83,13 +83,13 @@ public final class GetDatastreamDatasetFieldsDatasetField {
             return this;
         }
         public GetDatastreamDatasetFieldsDatasetField build() {
-            final var o = new GetDatastreamDatasetFieldsDatasetField();
-            o.datasetFieldDescription = datasetFieldDescription;
-            o.datasetFieldGroup = datasetFieldGroup;
-            o.datasetFieldId = datasetFieldId;
-            o.datasetFieldJsonKey = datasetFieldJsonKey;
-            o.datasetFieldName = datasetFieldName;
-            return o;
+            final var _resultValue = new GetDatastreamDatasetFieldsDatasetField();
+            _resultValue.datasetFieldDescription = datasetFieldDescription;
+            _resultValue.datasetFieldGroup = datasetFieldGroup;
+            _resultValue.datasetFieldId = datasetFieldId;
+            _resultValue.datasetFieldJsonKey = datasetFieldJsonKey;
+            _resultValue.datasetFieldName = datasetFieldName;
+            return _resultValue;
         }
     }
 }

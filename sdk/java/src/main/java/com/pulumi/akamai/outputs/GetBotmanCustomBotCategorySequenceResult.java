@@ -73,11 +73,11 @@ public final class GetBotmanCustomBotCategorySequenceResult {
             return this;
         }
         public GetBotmanCustomBotCategorySequenceResult build() {
-            final var o = new GetBotmanCustomBotCategorySequenceResult();
-            o.categoryIds = categoryIds;
-            o.configId = configId;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetBotmanCustomBotCategorySequenceResult();
+            _resultValue.categoryIds = categoryIds;
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

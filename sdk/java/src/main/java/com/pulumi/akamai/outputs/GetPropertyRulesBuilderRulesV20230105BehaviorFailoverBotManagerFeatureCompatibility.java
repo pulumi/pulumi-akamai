@@ -74,12 +74,12 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorFailoverBotManag
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorFailoverBotManagerFeatureCompatibility build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorFailoverBotManagerFeatureCompatibility();
-            o.compatibility = compatibility;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorFailoverBotManagerFeatureCompatibility();
+            _resultValue.compatibility = compatibility;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

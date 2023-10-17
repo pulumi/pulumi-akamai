@@ -124,16 +124,16 @@ public final class GetImagingPolicyImagePolicyOutput {
             return this;
         }
         public GetImagingPolicyImagePolicyOutput build() {
-            final var o = new GetImagingPolicyImagePolicyOutput();
-            o.adaptiveQuality = adaptiveQuality;
-            o.allowedFormats = allowedFormats;
-            o.forcedFormats = forcedFormats;
-            o.perceptualQuality = perceptualQuality;
-            o.perceptualQualityFloor = perceptualQualityFloor;
-            o.perceptualQualityVar = perceptualQualityVar;
-            o.quality = quality;
-            o.qualityVar = qualityVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyOutput();
+            _resultValue.adaptiveQuality = adaptiveQuality;
+            _resultValue.allowedFormats = allowedFormats;
+            _resultValue.forcedFormats = forcedFormats;
+            _resultValue.perceptualQuality = perceptualQuality;
+            _resultValue.perceptualQualityFloor = perceptualQualityFloor;
+            _resultValue.perceptualQualityVar = perceptualQualityVar;
+            _resultValue.quality = quality;
+            _resultValue.qualityVar = qualityVar;
+            return _resultValue;
         }
     }
 }

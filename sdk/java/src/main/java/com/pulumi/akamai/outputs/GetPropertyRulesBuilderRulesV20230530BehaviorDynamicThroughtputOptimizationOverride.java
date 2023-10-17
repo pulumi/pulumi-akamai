@@ -74,12 +74,12 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDynamicThroughtp
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorDynamicThroughtputOptimizationOverride build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorDynamicThroughtputOptimizationOverride();
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.throughput = throughput;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorDynamicThroughtputOptimizationOverride();
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.throughput = throughput;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

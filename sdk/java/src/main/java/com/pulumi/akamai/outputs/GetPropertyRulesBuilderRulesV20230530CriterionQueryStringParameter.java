@@ -178,21 +178,21 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionQueryStringPara
             return values(List.of(values));
         }
         public GetPropertyRulesBuilderRulesV20230530CriterionQueryStringParameter build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530CriterionQueryStringParameter();
-            o.escapeValue = escapeValue;
-            o.locked = locked;
-            o.lowerBound = lowerBound;
-            o.matchCaseSensitiveName = matchCaseSensitiveName;
-            o.matchCaseSensitiveValue = matchCaseSensitiveValue;
-            o.matchOperator = matchOperator;
-            o.matchWildcardName = matchWildcardName;
-            o.matchWildcardValue = matchWildcardValue;
-            o.parameterName = parameterName;
-            o.templateUuid = templateUuid;
-            o.upperBound = upperBound;
-            o.uuid = uuid;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530CriterionQueryStringParameter();
+            _resultValue.escapeValue = escapeValue;
+            _resultValue.locked = locked;
+            _resultValue.lowerBound = lowerBound;
+            _resultValue.matchCaseSensitiveName = matchCaseSensitiveName;
+            _resultValue.matchCaseSensitiveValue = matchCaseSensitiveValue;
+            _resultValue.matchOperator = matchOperator;
+            _resultValue.matchWildcardName = matchWildcardName;
+            _resultValue.matchWildcardValue = matchWildcardValue;
+            _resultValue.parameterName = parameterName;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.upperBound = upperBound;
+            _resultValue.uuid = uuid;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -93,13 +93,13 @@ public final class GetBotmanTransactionalEndpointResult {
             return this;
         }
         public GetBotmanTransactionalEndpointResult build() {
-            final var o = new GetBotmanTransactionalEndpointResult();
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            o.operationId = operationId;
-            o.securityPolicyId = securityPolicyId;
-            return o;
+            final var _resultValue = new GetBotmanTransactionalEndpointResult();
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.operationId = operationId;
+            _resultValue.securityPolicyId = securityPolicyId;
+            return _resultValue;
         }
     }
 }

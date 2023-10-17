@@ -50,10 +50,10 @@ public final class CloudwrapperConfigurationLocationCapacity {
             return this;
         }
         public CloudwrapperConfigurationLocationCapacity build() {
-            final var o = new CloudwrapperConfigurationLocationCapacity();
-            o.unit = unit;
-            o.value = value;
-            return o;
+            final var _resultValue = new CloudwrapperConfigurationLocationCapacity();
+            _resultValue.unit = unit;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -240,27 +240,27 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorAdaptiveImageCom
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorAdaptiveImageCompression build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorAdaptiveImageCompression();
-            o.compressMobile = compressMobile;
-            o.compressStandard = compressStandard;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.tier1MobileCompressionMethod = tier1MobileCompressionMethod;
-            o.tier1MobileCompressionValue = tier1MobileCompressionValue;
-            o.tier1StandardCompressionMethod = tier1StandardCompressionMethod;
-            o.tier1StandardCompressionValue = tier1StandardCompressionValue;
-            o.tier2MobileCompressionMethod = tier2MobileCompressionMethod;
-            o.tier2MobileCompressionValue = tier2MobileCompressionValue;
-            o.tier2StandardCompressionMethod = tier2StandardCompressionMethod;
-            o.tier2StandardCompressionValue = tier2StandardCompressionValue;
-            o.tier3MobileCompressionMethod = tier3MobileCompressionMethod;
-            o.tier3MobileCompressionValue = tier3MobileCompressionValue;
-            o.tier3StandardCompressionMethod = tier3StandardCompressionMethod;
-            o.tier3StandardCompressionValue = tier3StandardCompressionValue;
-            o.titleAicMobile = titleAicMobile;
-            o.titleAicNonmobile = titleAicNonmobile;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorAdaptiveImageCompression();
+            _resultValue.compressMobile = compressMobile;
+            _resultValue.compressStandard = compressStandard;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.tier1MobileCompressionMethod = tier1MobileCompressionMethod;
+            _resultValue.tier1MobileCompressionValue = tier1MobileCompressionValue;
+            _resultValue.tier1StandardCompressionMethod = tier1StandardCompressionMethod;
+            _resultValue.tier1StandardCompressionValue = tier1StandardCompressionValue;
+            _resultValue.tier2MobileCompressionMethod = tier2MobileCompressionMethod;
+            _resultValue.tier2MobileCompressionValue = tier2MobileCompressionValue;
+            _resultValue.tier2StandardCompressionMethod = tier2StandardCompressionMethod;
+            _resultValue.tier2StandardCompressionValue = tier2StandardCompressionValue;
+            _resultValue.tier3MobileCompressionMethod = tier3MobileCompressionMethod;
+            _resultValue.tier3MobileCompressionValue = tier3MobileCompressionValue;
+            _resultValue.tier3StandardCompressionMethod = tier3StandardCompressionMethod;
+            _resultValue.tier3StandardCompressionValue = tier3StandardCompressionValue;
+            _resultValue.titleAicMobile = titleAicMobile;
+            _resultValue.titleAicNonmobile = titleAicNonmobile;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

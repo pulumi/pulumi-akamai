@@ -90,13 +90,13 @@ public final class GtmResourceResourceInstance {
             return this;
         }
         public GtmResourceResourceInstance build() {
-            final var o = new GtmResourceResourceInstance();
-            o.datacenterId = datacenterId;
-            o.loadObject = loadObject;
-            o.loadObjectPort = loadObjectPort;
-            o.loadServers = loadServers;
-            o.useDefaultLoadObject = useDefaultLoadObject;
-            return o;
+            final var _resultValue = new GtmResourceResourceInstance();
+            _resultValue.datacenterId = datacenterId;
+            _resultValue.loadObject = loadObject;
+            _resultValue.loadObjectPort = loadObjectPort;
+            _resultValue.loadServers = loadServers;
+            _resultValue.useDefaultLoadObject = useDefaultLoadObject;
+            return _resultValue;
         }
     }
 }

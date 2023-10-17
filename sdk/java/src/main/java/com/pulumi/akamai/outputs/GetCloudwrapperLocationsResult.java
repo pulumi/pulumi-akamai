@@ -67,10 +67,10 @@ public final class GetCloudwrapperLocationsResult {
             return locations(List.of(locations));
         }
         public GetCloudwrapperLocationsResult build() {
-            final var o = new GetCloudwrapperLocationsResult();
-            o.id = id;
-            o.locations = locations;
-            return o;
+            final var _resultValue = new GetCloudwrapperLocationsResult();
+            _resultValue.id = id;
+            _resultValue.locations = locations;
+            return _resultValue;
         }
     }
 }

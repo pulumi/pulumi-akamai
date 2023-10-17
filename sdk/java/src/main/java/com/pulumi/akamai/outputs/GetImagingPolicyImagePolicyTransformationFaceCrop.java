@@ -227,26 +227,26 @@ public final class GetImagingPolicyImagePolicyTransformationFaceCrop {
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationFaceCrop build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationFaceCrop();
-            o.algorithm = algorithm;
-            o.algorithmVar = algorithmVar;
-            o.confidence = confidence;
-            o.confidenceVar = confidenceVar;
-            o.failGravity = failGravity;
-            o.failGravityVar = failGravityVar;
-            o.focus = focus;
-            o.focusVar = focusVar;
-            o.gravity = gravity;
-            o.gravityVar = gravityVar;
-            o.height = height;
-            o.heightVar = heightVar;
-            o.padding = padding;
-            o.paddingVar = paddingVar;
-            o.style = style;
-            o.styleVar = styleVar;
-            o.width = width;
-            o.widthVar = widthVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationFaceCrop();
+            _resultValue.algorithm = algorithm;
+            _resultValue.algorithmVar = algorithmVar;
+            _resultValue.confidence = confidence;
+            _resultValue.confidenceVar = confidenceVar;
+            _resultValue.failGravity = failGravity;
+            _resultValue.failGravityVar = failGravityVar;
+            _resultValue.focus = focus;
+            _resultValue.focusVar = focusVar;
+            _resultValue.gravity = gravity;
+            _resultValue.gravityVar = gravityVar;
+            _resultValue.height = height;
+            _resultValue.heightVar = heightVar;
+            _resultValue.padding = padding;
+            _resultValue.paddingVar = paddingVar;
+            _resultValue.style = style;
+            _resultValue.styleVar = styleVar;
+            _resultValue.width = width;
+            _resultValue.widthVar = widthVar;
+            return _resultValue;
         }
     }
 }

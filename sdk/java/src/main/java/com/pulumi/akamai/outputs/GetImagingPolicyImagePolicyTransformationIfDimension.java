@@ -118,16 +118,16 @@ public final class GetImagingPolicyImagePolicyTransformationIfDimension {
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationIfDimension build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationIfDimension();
-            o.default_ = default_;
-            o.dimension = dimension;
-            o.dimensionVar = dimensionVar;
-            o.equal = equal;
-            o.greaterThan = greaterThan;
-            o.lessThan = lessThan;
-            o.value = value;
-            o.valueVar = valueVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationIfDimension();
+            _resultValue.default_ = default_;
+            _resultValue.dimension = dimension;
+            _resultValue.dimensionVar = dimensionVar;
+            _resultValue.equal = equal;
+            _resultValue.greaterThan = greaterThan;
+            _resultValue.lessThan = lessThan;
+            _resultValue.value = value;
+            _resultValue.valueVar = valueVar;
+            return _resultValue;
         }
     }
 }

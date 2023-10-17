@@ -52,10 +52,10 @@ public final class GtmCidrmapDefaultDatacenter {
             return this;
         }
         public GtmCidrmapDefaultDatacenter build() {
-            final var o = new GtmCidrmapDefaultDatacenter();
-            o.datacenterId = datacenterId;
-            o.nickname = nickname;
-            return o;
+            final var _resultValue = new GtmCidrmapDefaultDatacenter();
+            _resultValue.datacenterId = datacenterId;
+            _resultValue.nickname = nickname;
+            return _resultValue;
         }
     }
 }

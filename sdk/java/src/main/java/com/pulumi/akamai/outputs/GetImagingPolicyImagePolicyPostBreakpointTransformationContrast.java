@@ -73,12 +73,12 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationContra
             return this;
         }
         public GetImagingPolicyImagePolicyPostBreakpointTransformationContrast build() {
-            final var o = new GetImagingPolicyImagePolicyPostBreakpointTransformationContrast();
-            o.brightness = brightness;
-            o.brightnessVar = brightnessVar;
-            o.contrast = contrast;
-            o.contrastVar = contrastVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyPostBreakpointTransformationContrast();
+            _resultValue.brightness = brightness;
+            _resultValue.brightnessVar = brightnessVar;
+            _resultValue.contrast = contrast;
+            _resultValue.contrastVar = contrastVar;
+            return _resultValue;
         }
     }
 }

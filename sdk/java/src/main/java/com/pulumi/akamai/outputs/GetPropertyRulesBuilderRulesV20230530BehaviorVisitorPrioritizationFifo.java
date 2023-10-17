@@ -167,20 +167,20 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritiz
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationFifo build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationFifo();
-            o.accessTitle = accessTitle;
-            o.cloudletSharedPolicy = cloudletSharedPolicy;
-            o.customCookieDomain = customCookieDomain;
-            o.domainConfig = domainConfig;
-            o.locked = locked;
-            o.sessionAutoProlong = sessionAutoProlong;
-            o.sessionDuration = sessionDuration;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            o.waitingRoomAssetsPaths = waitingRoomAssetsPaths;
-            o.waitingRoomPath = waitingRoomPath;
-            o.waitingRoomTitle = waitingRoomTitle;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationFifo();
+            _resultValue.accessTitle = accessTitle;
+            _resultValue.cloudletSharedPolicy = cloudletSharedPolicy;
+            _resultValue.customCookieDomain = customCookieDomain;
+            _resultValue.domainConfig = domainConfig;
+            _resultValue.locked = locked;
+            _resultValue.sessionAutoProlong = sessionAutoProlong;
+            _resultValue.sessionDuration = sessionDuration;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            _resultValue.waitingRoomAssetsPaths = waitingRoomAssetsPaths;
+            _resultValue.waitingRoomPath = waitingRoomPath;
+            _resultValue.waitingRoomTitle = waitingRoomTitle;
+            return _resultValue;
         }
     }
 }

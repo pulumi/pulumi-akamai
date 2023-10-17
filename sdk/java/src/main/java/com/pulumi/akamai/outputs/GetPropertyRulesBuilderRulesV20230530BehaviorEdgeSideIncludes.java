@@ -144,18 +144,18 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorEdgeSideIncludes
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorEdgeSideIncludes build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorEdgeSideIncludes();
-            o.detectInjection = detectInjection;
-            o.enableViaHttp = enableViaHttp;
-            o.enabled = enabled;
-            o.i18nCharsets = i18nCharsets;
-            o.i18nStatus = i18nStatus;
-            o.locked = locked;
-            o.passClientIp = passClientIp;
-            o.passSetCookie = passSetCookie;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorEdgeSideIncludes();
+            _resultValue.detectInjection = detectInjection;
+            _resultValue.enableViaHttp = enableViaHttp;
+            _resultValue.enabled = enabled;
+            _resultValue.i18nCharsets = i18nCharsets;
+            _resultValue.i18nStatus = i18nStatus;
+            _resultValue.locked = locked;
+            _resultValue.passClientIp = passClientIp;
+            _resultValue.passSetCookie = passSetCookie;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

@@ -35,7 +35,15 @@ class AppSecByPassNetworkListArgs:
              bypass_network_lists: pulumi.Input[Sequence[pulumi.Input[str]]],
              config_id: pulumi.Input[int],
              security_policy_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bypassNetworkLists' in kwargs:
+            bypass_network_lists = kwargs['bypassNetworkLists']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         _setter("bypass_network_lists", bypass_network_lists)
         _setter("config_id", config_id)
         _setter("security_policy_id", security_policy_id)
@@ -101,7 +109,15 @@ class _AppSecByPassNetworkListState:
              bypass_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bypassNetworkLists' in kwargs:
+            bypass_network_lists = kwargs['bypassNetworkLists']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         if bypass_network_lists is not None:
             _setter("bypass_network_lists", bypass_network_lists)
         if config_id is not None:

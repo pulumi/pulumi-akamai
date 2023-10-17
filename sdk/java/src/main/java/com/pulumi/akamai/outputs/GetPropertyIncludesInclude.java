@@ -94,14 +94,14 @@ public final class GetPropertyIncludesInclude {
             return this;
         }
         public GetPropertyIncludesInclude build() {
-            final var o = new GetPropertyIncludesInclude();
-            o.id = id;
-            o.latestVersion = latestVersion;
-            o.name = name;
-            o.productionVersion = productionVersion;
-            o.stagingVersion = stagingVersion;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetPropertyIncludesInclude();
+            _resultValue.id = id;
+            _resultValue.latestVersion = latestVersion;
+            _resultValue.name = name;
+            _resultValue.productionVersion = productionVersion;
+            _resultValue.stagingVersion = stagingVersion;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

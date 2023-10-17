@@ -208,23 +208,23 @@ public final class GetCloudwrapperConfigurationsConfiguration {
             return this;
         }
         public GetCloudwrapperConfigurationsConfiguration build() {
-            final var o = new GetCloudwrapperConfigurationsConfiguration();
-            o.capacityAlertsThreshold = capacityAlertsThreshold;
-            o.comments = comments;
-            o.configName = configName;
-            o.contractId = contractId;
-            o.id = id;
-            o.lastActivatedBy = lastActivatedBy;
-            o.lastActivatedDate = lastActivatedDate;
-            o.lastUpdatedBy = lastUpdatedBy;
-            o.lastUpdatedDate = lastUpdatedDate;
-            o.locations = locations;
-            o.multiCdnSettings = multiCdnSettings;
-            o.notificationEmails = notificationEmails;
-            o.propertyIds = propertyIds;
-            o.retainIdleObjects = retainIdleObjects;
-            o.status = status;
-            return o;
+            final var _resultValue = new GetCloudwrapperConfigurationsConfiguration();
+            _resultValue.capacityAlertsThreshold = capacityAlertsThreshold;
+            _resultValue.comments = comments;
+            _resultValue.configName = configName;
+            _resultValue.contractId = contractId;
+            _resultValue.id = id;
+            _resultValue.lastActivatedBy = lastActivatedBy;
+            _resultValue.lastActivatedDate = lastActivatedDate;
+            _resultValue.lastUpdatedBy = lastUpdatedBy;
+            _resultValue.lastUpdatedDate = lastUpdatedDate;
+            _resultValue.locations = locations;
+            _resultValue.multiCdnSettings = multiCdnSettings;
+            _resultValue.notificationEmails = notificationEmails;
+            _resultValue.propertyIds = propertyIds;
+            _resultValue.retainIdleObjects = retainIdleObjects;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

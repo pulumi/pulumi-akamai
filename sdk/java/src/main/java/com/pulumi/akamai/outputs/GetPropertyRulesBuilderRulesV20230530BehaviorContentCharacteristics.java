@@ -107,15 +107,15 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacter
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacteristics build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacteristics();
-            o.catalogSize = catalogSize;
-            o.contentType = contentType;
-            o.locked = locked;
-            o.objectSize = objectSize;
-            o.popularityDistribution = popularityDistribution;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacteristics();
+            _resultValue.catalogSize = catalogSize;
+            _resultValue.contentType = contentType;
+            _resultValue.locked = locked;
+            _resultValue.objectSize = objectSize;
+            _resultValue.popularityDistribution = popularityDistribution;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

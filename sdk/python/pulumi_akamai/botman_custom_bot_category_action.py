@@ -35,7 +35,17 @@ class BotmanCustomBotCategoryActionArgs:
              config_id: pulumi.Input[int],
              custom_bot_category_action: pulumi.Input[str],
              security_policy_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'categoryId' in kwargs:
+            category_id = kwargs['categoryId']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'customBotCategoryAction' in kwargs:
+            custom_bot_category_action = kwargs['customBotCategoryAction']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         _setter("category_id", category_id)
         _setter("config_id", config_id)
         _setter("custom_bot_category_action", custom_bot_category_action)
@@ -102,7 +112,17 @@ class _BotmanCustomBotCategoryActionState:
              config_id: Optional[pulumi.Input[int]] = None,
              custom_bot_category_action: Optional[pulumi.Input[str]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'categoryId' in kwargs:
+            category_id = kwargs['categoryId']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'customBotCategoryAction' in kwargs:
+            custom_bot_category_action = kwargs['customBotCategoryAction']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         if category_id is not None:
             _setter("category_id", category_id)
         if config_id is not None:

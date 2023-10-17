@@ -195,23 +195,23 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorSureRoute {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorSureRoute build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorSureRoute();
-            o.allowFcmParentOverride = allowFcmParentOverride;
-            o.customMap = customMap;
-            o.customStatKey = customStatKey;
-            o.enableCustomKey = enableCustomKey;
-            o.enabled = enabled;
-            o.forceSslForward = forceSslForward;
-            o.locked = locked;
-            o.raceStatTtl = raceStatTtl;
-            o.srDownloadLinkTitle = srDownloadLinkTitle;
-            o.templateUuid = templateUuid;
-            o.testObjectUrl = testObjectUrl;
-            o.toHost = toHost;
-            o.toHostStatus = toHostStatus;
-            o.type = type;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorSureRoute();
+            _resultValue.allowFcmParentOverride = allowFcmParentOverride;
+            _resultValue.customMap = customMap;
+            _resultValue.customStatKey = customStatKey;
+            _resultValue.enableCustomKey = enableCustomKey;
+            _resultValue.enabled = enabled;
+            _resultValue.forceSslForward = forceSslForward;
+            _resultValue.locked = locked;
+            _resultValue.raceStatTtl = raceStatTtl;
+            _resultValue.srDownloadLinkTitle = srDownloadLinkTitle;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.testObjectUrl = testObjectUrl;
+            _resultValue.toHost = toHost;
+            _resultValue.toHostStatus = toHostStatus;
+            _resultValue.type = type;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

@@ -88,12 +88,12 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompos
             return urlImages(List.of(urlImages));
         }
         public GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImage build() {
-            final var o = new GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImage();
-            o.boxImages = boxImages;
-            o.circleImages = circleImages;
-            o.textImages = textImages;
-            o.urlImages = urlImages;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImage();
+            _resultValue.boxImages = boxImages;
+            _resultValue.circleImages = circleImages;
+            _resultValue.textImages = textImages;
+            _resultValue.urlImages = urlImages;
+            return _resultValue;
         }
     }
 }

@@ -98,14 +98,14 @@ public final class GetPropertyHostnamesHostname {
             return this;
         }
         public GetPropertyHostnamesHostname build() {
-            final var o = new GetPropertyHostnamesHostname();
-            o.certProvisioningType = certProvisioningType;
-            o.certStatuses = certStatuses;
-            o.cnameFrom = cnameFrom;
-            o.cnameTo = cnameTo;
-            o.cnameType = cnameType;
-            o.edgeHostnameId = edgeHostnameId;
-            return o;
+            final var _resultValue = new GetPropertyHostnamesHostname();
+            _resultValue.certProvisioningType = certProvisioningType;
+            _resultValue.certStatuses = certStatuses;
+            _resultValue.cnameFrom = cnameFrom;
+            _resultValue.cnameTo = cnameTo;
+            _resultValue.cnameType = cnameType;
+            _resultValue.edgeHostnameId = edgeHostnameId;
+            return _resultValue;
         }
     }
 }

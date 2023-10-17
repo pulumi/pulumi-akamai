@@ -85,13 +85,13 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancin
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancingDataCenterFailoverRule build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancingDataCenterFailoverRule();
-            o.absolutePath = absolutePath;
-            o.contextRoot = contextRoot;
-            o.failoverHostname = failoverHostname;
-            o.modifyRequest = modifyRequest;
-            o.overrideHostname = overrideHostname;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancingDataCenterFailoverRule();
+            _resultValue.absolutePath = absolutePath;
+            _resultValue.contextRoot = contextRoot;
+            _resultValue.failoverHostname = failoverHostname;
+            _resultValue.modifyRequest = modifyRequest;
+            _resultValue.overrideHostname = overrideHostname;
+            return _resultValue;
         }
     }
 }

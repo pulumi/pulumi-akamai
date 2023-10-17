@@ -53,10 +53,10 @@ public final class GetImagingPolicyImagePolicyTransformationImQuery {
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationImQuery build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationImQuery();
-            o.allowedTransformations = allowedTransformations;
-            o.queryVar = queryVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationImQuery();
+            _resultValue.allowedTransformations = allowedTransformations;
+            _resultValue.queryVar = queryVar;
+            return _resultValue;
         }
     }
 }

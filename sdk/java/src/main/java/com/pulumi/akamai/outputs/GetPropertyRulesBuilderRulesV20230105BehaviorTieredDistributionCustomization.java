@@ -195,23 +195,23 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributi
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionCustomization build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionCustomization();
-            o.cloudwrapperMapMigrationTitle = cloudwrapperMapMigrationTitle;
-            o.customMapEnabled = customMapEnabled;
-            o.customMapName = customMapName;
-            o.hashAlgorithm = hashAlgorithm;
-            o.location = location;
-            o.locked = locked;
-            o.mapMigrationEnabled = mapMigrationEnabled;
-            o.migrationEndDate = migrationEndDate;
-            o.migrationStartDate = migrationStartDate;
-            o.migrationWithinCwMapsEnabled = migrationWithinCwMapsEnabled;
-            o.serialEnd = serialEnd;
-            o.serialStart = serialStart;
-            o.templateUuid = templateUuid;
-            o.tier1Title = tier1Title;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionCustomization();
+            _resultValue.cloudwrapperMapMigrationTitle = cloudwrapperMapMigrationTitle;
+            _resultValue.customMapEnabled = customMapEnabled;
+            _resultValue.customMapName = customMapName;
+            _resultValue.hashAlgorithm = hashAlgorithm;
+            _resultValue.location = location;
+            _resultValue.locked = locked;
+            _resultValue.mapMigrationEnabled = mapMigrationEnabled;
+            _resultValue.migrationEndDate = migrationEndDate;
+            _resultValue.migrationStartDate = migrationStartDate;
+            _resultValue.migrationWithinCwMapsEnabled = migrationWithinCwMapsEnabled;
+            _resultValue.serialEnd = serialEnd;
+            _resultValue.serialStart = serialStart;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.tier1Title = tier1Title;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

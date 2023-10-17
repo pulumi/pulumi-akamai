@@ -117,16 +117,16 @@ public final class GetImagingPolicyImagePolicyTransformationGoop {
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationGoop build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationGoop();
-            o.chaos = chaos;
-            o.chaosVar = chaosVar;
-            o.density = density;
-            o.densityVar = densityVar;
-            o.power = power;
-            o.powerVar = powerVar;
-            o.seed = seed;
-            o.seedVar = seedVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationGoop();
+            _resultValue.chaos = chaos;
+            _resultValue.chaosVar = chaosVar;
+            _resultValue.density = density;
+            _resultValue.densityVar = densityVar;
+            _resultValue.power = power;
+            _resultValue.powerVar = powerVar;
+            _resultValue.seed = seed;
+            _resultValue.seedVar = seedVar;
+            return _resultValue;
         }
     }
 }

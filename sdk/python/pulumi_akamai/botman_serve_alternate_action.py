@@ -29,7 +29,13 @@ class BotmanServeAlternateActionArgs:
              _setter: Callable[[Any, Any], None],
              config_id: pulumi.Input[int],
              serve_alternate_action: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'serveAlternateAction' in kwargs:
+            serve_alternate_action = kwargs['serveAlternateAction']
+
         _setter("config_id", config_id)
         _setter("serve_alternate_action", serve_alternate_action)
 
@@ -73,7 +79,15 @@ class _BotmanServeAlternateActionState:
              action_id: Optional[pulumi.Input[str]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
              serve_alternate_action: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionId' in kwargs:
+            action_id = kwargs['actionId']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'serveAlternateAction' in kwargs:
+            serve_alternate_action = kwargs['serveAlternateAction']
+
         if action_id is not None:
             _setter("action_id", action_id)
         if config_id is not None:

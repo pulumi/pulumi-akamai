@@ -74,12 +74,12 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionEcmdIsAuthentic
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530CriterionEcmdIsAuthenticated build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530CriterionEcmdIsAuthenticated();
-            o.locked = locked;
-            o.matchOperator = matchOperator;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530CriterionEcmdIsAuthenticated();
+            _resultValue.locked = locked;
+            _resultValue.matchOperator = matchOperator;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

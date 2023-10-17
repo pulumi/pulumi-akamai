@@ -52,10 +52,10 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorForwardRewriteCl
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorForwardRewriteCloudletPolicy build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorForwardRewriteCloudletPolicy();
-            o.id = id;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorForwardRewriteCloudletPolicy();
+            _resultValue.id = id;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

@@ -35,7 +35,17 @@ class BotmanBotDetectionActionArgs:
              config_id: pulumi.Input[int],
              detection_id: pulumi.Input[str],
              security_policy_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'botDetectionAction' in kwargs:
+            bot_detection_action = kwargs['botDetectionAction']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'detectionId' in kwargs:
+            detection_id = kwargs['detectionId']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         _setter("bot_detection_action", bot_detection_action)
         _setter("config_id", config_id)
         _setter("detection_id", detection_id)
@@ -102,7 +112,17 @@ class _BotmanBotDetectionActionState:
              config_id: Optional[pulumi.Input[int]] = None,
              detection_id: Optional[pulumi.Input[str]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'botDetectionAction' in kwargs:
+            bot_detection_action = kwargs['botDetectionAction']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'detectionId' in kwargs:
+            detection_id = kwargs['detectionId']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         if bot_detection_action is not None:
             _setter("bot_detection_action", bot_detection_action)
         if config_id is not None:

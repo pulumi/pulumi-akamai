@@ -80,12 +80,12 @@ public final class GetBotmanBotManagementSettingsResult {
             return this;
         }
         public GetBotmanBotManagementSettingsResult build() {
-            final var o = new GetBotmanBotManagementSettingsResult();
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            o.securityPolicyId = securityPolicyId;
-            return o;
+            final var _resultValue = new GetBotmanBotManagementSettingsResult();
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.securityPolicyId = securityPolicyId;
+            return _resultValue;
         }
     }
 }

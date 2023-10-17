@@ -68,11 +68,11 @@ public final class GetAppSecHostnameCoverageResult {
             return this;
         }
         public GetAppSecHostnameCoverageResult build() {
-            final var o = new GetAppSecHostnameCoverageResult();
-            o.id = id;
-            o.json = json;
-            o.outputText = outputText;
-            return o;
+            final var _resultValue = new GetAppSecHostnameCoverageResult();
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.outputText = outputText;
+            return _resultValue;
         }
     }
 }

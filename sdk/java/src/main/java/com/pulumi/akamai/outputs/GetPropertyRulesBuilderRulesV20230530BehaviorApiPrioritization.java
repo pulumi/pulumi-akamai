@@ -199,23 +199,23 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizatio
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritization build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritization();
-            o.alternateResponseCacheTtl = alternateResponseCacheTtl;
-            o.cloudletPolicy = cloudletPolicy;
-            o.cloudletSharedPolicy = cloudletSharedPolicy;
-            o.enabled = enabled;
-            o.isSharedPolicy = isSharedPolicy;
-            o.label = label;
-            o.locked = locked;
-            o.netStorage = netStorage;
-            o.netStoragePath = netStoragePath;
-            o.templateUuid = templateUuid;
-            o.throttledCpCode = throttledCpCode;
-            o.throttledStatusCode = throttledStatusCode;
-            o.useThrottledCpCode = useThrottledCpCode;
-            o.useThrottledStatusCode = useThrottledStatusCode;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritization();
+            _resultValue.alternateResponseCacheTtl = alternateResponseCacheTtl;
+            _resultValue.cloudletPolicy = cloudletPolicy;
+            _resultValue.cloudletSharedPolicy = cloudletSharedPolicy;
+            _resultValue.enabled = enabled;
+            _resultValue.isSharedPolicy = isSharedPolicy;
+            _resultValue.label = label;
+            _resultValue.locked = locked;
+            _resultValue.netStorage = netStorage;
+            _resultValue.netStoragePath = netStoragePath;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.throttledCpCode = throttledCpCode;
+            _resultValue.throttledStatusCode = throttledStatusCode;
+            _resultValue.useThrottledCpCode = useThrottledCpCode;
+            _resultValue.useThrottledStatusCode = useThrottledStatusCode;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

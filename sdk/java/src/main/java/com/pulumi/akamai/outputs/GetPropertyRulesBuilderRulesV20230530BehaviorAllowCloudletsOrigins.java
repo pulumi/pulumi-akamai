@@ -96,14 +96,14 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorAllowCloudletsOr
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorAllowCloudletsOrigins build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorAllowCloudletsOrigins();
-            o.enabled = enabled;
-            o.honorBaseDirectory = honorBaseDirectory;
-            o.locked = locked;
-            o.purgeOriginQueryParameter = purgeOriginQueryParameter;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorAllowCloudletsOrigins();
+            _resultValue.enabled = enabled;
+            _resultValue.honorBaseDirectory = honorBaseDirectory;
+            _resultValue.locked = locked;
+            _resultValue.purgeOriginQueryParameter = purgeOriginQueryParameter;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

@@ -83,13 +83,13 @@ public final class GetCloudwrapperPropertiesProperty {
             return this;
         }
         public GetCloudwrapperPropertiesProperty build() {
-            final var o = new GetCloudwrapperPropertiesProperty();
-            o.contractId = contractId;
-            o.groupId = groupId;
-            o.propertyId = propertyId;
-            o.propertyName = propertyName;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetCloudwrapperPropertiesProperty();
+            _resultValue.contractId = contractId;
+            _resultValue.groupId = groupId;
+            _resultValue.propertyId = propertyId;
+            _resultValue.propertyName = propertyName;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

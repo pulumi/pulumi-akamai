@@ -155,19 +155,19 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorBossBeaconing {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorBossBeaconing build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorBossBeaconing();
-            o.conditionalErrorPattern = conditionalErrorPattern;
-            o.conditionalHttpStatuses = conditionalHttpStatuses;
-            o.conditionalSamplingFrequency = conditionalSamplingFrequency;
-            o.cpcodes = cpcodes;
-            o.enabled = enabled;
-            o.forwardType = forwardType;
-            o.locked = locked;
-            o.requestType = requestType;
-            o.samplingFrequency = samplingFrequency;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorBossBeaconing();
+            _resultValue.conditionalErrorPattern = conditionalErrorPattern;
+            _resultValue.conditionalHttpStatuses = conditionalHttpStatuses;
+            _resultValue.conditionalSamplingFrequency = conditionalSamplingFrequency;
+            _resultValue.cpcodes = cpcodes;
+            _resultValue.enabled = enabled;
+            _resultValue.forwardType = forwardType;
+            _resultValue.locked = locked;
+            _resultValue.requestType = requestType;
+            _resultValue.samplingFrequency = samplingFrequency;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

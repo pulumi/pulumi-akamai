@@ -274,30 +274,30 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacter
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsAmd build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsAmd();
-            o.catalogSize = catalogSize;
-            o.contentType = contentType;
-            o.dash = dash;
-            o.hds = hds;
-            o.hls = hls;
-            o.locked = locked;
-            o.popularityDistribution = popularityDistribution;
-            o.segmentDurationDash = segmentDurationDash;
-            o.segmentDurationDashCustom = segmentDurationDashCustom;
-            o.segmentDurationHds = segmentDurationHds;
-            o.segmentDurationHdsCustom = segmentDurationHdsCustom;
-            o.segmentDurationHls = segmentDurationHls;
-            o.segmentDurationHlsCustom = segmentDurationHlsCustom;
-            o.segmentDurationSmooth = segmentDurationSmooth;
-            o.segmentDurationSmoothCustom = segmentDurationSmoothCustom;
-            o.segmentSizeDash = segmentSizeDash;
-            o.segmentSizeHds = segmentSizeHds;
-            o.segmentSizeHls = segmentSizeHls;
-            o.segmentSizeSmooth = segmentSizeSmooth;
-            o.smooth = smooth;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsAmd();
+            _resultValue.catalogSize = catalogSize;
+            _resultValue.contentType = contentType;
+            _resultValue.dash = dash;
+            _resultValue.hds = hds;
+            _resultValue.hls = hls;
+            _resultValue.locked = locked;
+            _resultValue.popularityDistribution = popularityDistribution;
+            _resultValue.segmentDurationDash = segmentDurationDash;
+            _resultValue.segmentDurationDashCustom = segmentDurationDashCustom;
+            _resultValue.segmentDurationHds = segmentDurationHds;
+            _resultValue.segmentDurationHdsCustom = segmentDurationHdsCustom;
+            _resultValue.segmentDurationHls = segmentDurationHls;
+            _resultValue.segmentDurationHlsCustom = segmentDurationHlsCustom;
+            _resultValue.segmentDurationSmooth = segmentDurationSmooth;
+            _resultValue.segmentDurationSmoothCustom = segmentDurationSmoothCustom;
+            _resultValue.segmentSizeDash = segmentSizeDash;
+            _resultValue.segmentSizeHds = segmentSizeHds;
+            _resultValue.segmentSizeHls = segmentSizeHls;
+            _resultValue.segmentSizeSmooth = segmentSizeSmooth;
+            _resultValue.smooth = smooth;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

@@ -39,7 +39,17 @@ class AppSecReputationProfileAnalysisArgs:
              forward_shared_ip_to_http_header_siem: pulumi.Input[bool],
              forward_to_http_header: pulumi.Input[bool],
              security_policy_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'forwardSharedIpToHttpHeaderSiem' in kwargs:
+            forward_shared_ip_to_http_header_siem = kwargs['forwardSharedIpToHttpHeaderSiem']
+        if 'forwardToHttpHeader' in kwargs:
+            forward_to_http_header = kwargs['forwardToHttpHeader']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         _setter("config_id", config_id)
         _setter("forward_shared_ip_to_http_header_siem", forward_shared_ip_to_http_header_siem)
         _setter("forward_to_http_header", forward_to_http_header)
@@ -122,7 +132,17 @@ class _AppSecReputationProfileAnalysisState:
              forward_shared_ip_to_http_header_siem: Optional[pulumi.Input[bool]] = None,
              forward_to_http_header: Optional[pulumi.Input[bool]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'forwardSharedIpToHttpHeaderSiem' in kwargs:
+            forward_shared_ip_to_http_header_siem = kwargs['forwardSharedIpToHttpHeaderSiem']
+        if 'forwardToHttpHeader' in kwargs:
+            forward_to_http_header = kwargs['forwardToHttpHeader']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if forward_shared_ip_to_http_header_siem is not None:

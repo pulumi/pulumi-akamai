@@ -78,12 +78,12 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMat
             return values(List.of(values));
         }
         public GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptions build() {
-            final var o = new GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptions();
-            o.valueCaseSensitive = valueCaseSensitive;
-            o.valueEscaped = valueEscaped;
-            o.valueHasWildcard = valueHasWildcard;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptions();
+            _resultValue.valueCaseSensitive = valueCaseSensitive;
+            _resultValue.valueEscaped = valueEscaped;
+            _resultValue.valueHasWildcard = valueHasWildcard;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

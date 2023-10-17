@@ -111,15 +111,15 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionUserAgent {
             return values(List.of(values));
         }
         public GetPropertyRulesBuilderRulesV20230105CriterionUserAgent build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105CriterionUserAgent();
-            o.locked = locked;
-            o.matchCaseSensitive = matchCaseSensitive;
-            o.matchOperator = matchOperator;
-            o.matchWildcard = matchWildcard;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105CriterionUserAgent();
+            _resultValue.locked = locked;
+            _resultValue.matchCaseSensitive = matchCaseSensitive;
+            _resultValue.matchOperator = matchOperator;
+            _resultValue.matchWildcard = matchWildcard;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

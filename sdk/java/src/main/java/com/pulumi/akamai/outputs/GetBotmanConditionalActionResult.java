@@ -82,12 +82,12 @@ public final class GetBotmanConditionalActionResult {
             return this;
         }
         public GetBotmanConditionalActionResult build() {
-            final var o = new GetBotmanConditionalActionResult();
-            o.actionId = actionId;
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            return o;
+            final var _resultValue = new GetBotmanConditionalActionResult();
+            _resultValue.actionId = actionId;
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            return _resultValue;
         }
     }
 }

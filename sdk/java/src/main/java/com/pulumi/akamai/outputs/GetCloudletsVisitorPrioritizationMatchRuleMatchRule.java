@@ -125,16 +125,16 @@ public final class GetCloudletsVisitorPrioritizationMatchRuleMatchRule {
             return this;
         }
         public GetCloudletsVisitorPrioritizationMatchRuleMatchRule build() {
-            final var o = new GetCloudletsVisitorPrioritizationMatchRuleMatchRule();
-            o.disabled = disabled;
-            o.end = end;
-            o.matchUrl = matchUrl;
-            o.matches = matches;
-            o.name = name;
-            o.passThroughPercent = passThroughPercent;
-            o.start = start;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetCloudletsVisitorPrioritizationMatchRuleMatchRule();
+            _resultValue.disabled = disabled;
+            _resultValue.end = end;
+            _resultValue.matchUrl = matchUrl;
+            _resultValue.matches = matches;
+            _resultValue.name = name;
+            _resultValue.passThroughPercent = passThroughPercent;
+            _resultValue.start = start;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

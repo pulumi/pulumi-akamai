@@ -85,13 +85,13 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionClientIpVersion
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530CriterionClientIpVersion build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530CriterionClientIpVersion();
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.useXForwardedFor = useXForwardedFor;
-            o.uuid = uuid;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530CriterionClientIpVersion();
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.useXForwardedFor = useXForwardedFor;
+            _resultValue.uuid = uuid;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

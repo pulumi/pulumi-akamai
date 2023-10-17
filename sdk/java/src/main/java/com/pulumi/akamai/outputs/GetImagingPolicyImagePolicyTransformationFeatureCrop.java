@@ -227,26 +227,26 @@ public final class GetImagingPolicyImagePolicyTransformationFeatureCrop {
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationFeatureCrop build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationFeatureCrop();
-            o.failGravity = failGravity;
-            o.failGravityVar = failGravityVar;
-            o.featureRadius = featureRadius;
-            o.featureRadiusVar = featureRadiusVar;
-            o.gravity = gravity;
-            o.gravityVar = gravityVar;
-            o.height = height;
-            o.heightVar = heightVar;
-            o.maxFeatures = maxFeatures;
-            o.maxFeaturesVar = maxFeaturesVar;
-            o.minFeatureQuality = minFeatureQuality;
-            o.minFeatureQualityVar = minFeatureQualityVar;
-            o.padding = padding;
-            o.paddingVar = paddingVar;
-            o.style = style;
-            o.styleVar = styleVar;
-            o.width = width;
-            o.widthVar = widthVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationFeatureCrop();
+            _resultValue.failGravity = failGravity;
+            _resultValue.failGravityVar = failGravityVar;
+            _resultValue.featureRadius = featureRadius;
+            _resultValue.featureRadiusVar = featureRadiusVar;
+            _resultValue.gravity = gravity;
+            _resultValue.gravityVar = gravityVar;
+            _resultValue.height = height;
+            _resultValue.heightVar = heightVar;
+            _resultValue.maxFeatures = maxFeatures;
+            _resultValue.maxFeaturesVar = maxFeaturesVar;
+            _resultValue.minFeatureQuality = minFeatureQuality;
+            _resultValue.minFeatureQualityVar = minFeatureQualityVar;
+            _resultValue.padding = padding;
+            _resultValue.paddingVar = paddingVar;
+            _resultValue.style = style;
+            _resultValue.styleVar = styleVar;
+            _resultValue.width = width;
+            _resultValue.widthVar = widthVar;
+            return _resultValue;
         }
     }
 }

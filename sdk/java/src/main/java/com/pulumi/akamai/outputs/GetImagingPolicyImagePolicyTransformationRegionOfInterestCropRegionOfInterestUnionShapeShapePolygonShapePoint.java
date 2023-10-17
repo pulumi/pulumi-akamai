@@ -73,12 +73,12 @@ public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShapePoint build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShapePoint();
-            o.x = x;
-            o.xVar = xVar;
-            o.y = y;
-            o.yVar = yVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShapePoint();
+            _resultValue.x = x;
+            _resultValue.xVar = xVar;
+            _resultValue.y = y;
+            _resultValue.yVar = yVar;
+            return _resultValue;
         }
     }
 }

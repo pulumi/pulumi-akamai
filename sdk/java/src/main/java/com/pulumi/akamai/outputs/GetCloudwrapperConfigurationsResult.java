@@ -67,10 +67,10 @@ public final class GetCloudwrapperConfigurationsResult {
             return this;
         }
         public GetCloudwrapperConfigurationsResult build() {
-            final var o = new GetCloudwrapperConfigurationsResult();
-            o.configurations = configurations;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetCloudwrapperConfigurationsResult();
+            _resultValue.configurations = configurations;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

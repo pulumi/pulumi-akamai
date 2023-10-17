@@ -215,24 +215,24 @@ public final class GetGtmDatacentersDatacenter {
             return this;
         }
         public GetGtmDatacentersDatacenter build() {
-            final var o = new GetGtmDatacentersDatacenter();
-            o.city = city;
-            o.cloneOf = cloneOf;
-            o.cloudServerHostHeaderOverride = cloudServerHostHeaderOverride;
-            o.cloudServerTargeting = cloudServerTargeting;
-            o.continent = continent;
-            o.country = country;
-            o.datacenterId = datacenterId;
-            o.defaultLoadObjects = defaultLoadObjects;
-            o.latitude = latitude;
-            o.links = links;
-            o.longitude = longitude;
-            o.nickname = nickname;
-            o.scorePenalty = scorePenalty;
-            o.servermonitorPool = servermonitorPool;
-            o.stateOrProvince = stateOrProvince;
-            o.virtual = virtual;
-            return o;
+            final var _resultValue = new GetGtmDatacentersDatacenter();
+            _resultValue.city = city;
+            _resultValue.cloneOf = cloneOf;
+            _resultValue.cloudServerHostHeaderOverride = cloudServerHostHeaderOverride;
+            _resultValue.cloudServerTargeting = cloudServerTargeting;
+            _resultValue.continent = continent;
+            _resultValue.country = country;
+            _resultValue.datacenterId = datacenterId;
+            _resultValue.defaultLoadObjects = defaultLoadObjects;
+            _resultValue.latitude = latitude;
+            _resultValue.links = links;
+            _resultValue.longitude = longitude;
+            _resultValue.nickname = nickname;
+            _resultValue.scorePenalty = scorePenalty;
+            _resultValue.servermonitorPool = servermonitorPool;
+            _resultValue.stateOrProvince = stateOrProvince;
+            _resultValue.virtual = virtual;
+            return _resultValue;
         }
     }
 }

@@ -36,6 +36,7 @@ public final class GetCPSEnrollmentResult {
     private String id;
     private List<GetCPSEnrollmentNetworkConfiguration> networkConfigurations;
     private List<GetCPSEnrollmentOrganization> organizations;
+    private Boolean pendingChanges;
     private String registrationAuthority;
     private List<String> sans;
     private String secureNetwork;
@@ -88,6 +89,9 @@ public final class GetCPSEnrollmentResult {
     public List<GetCPSEnrollmentOrganization> organizations() {
         return this.organizations;
     }
+    public Boolean pendingChanges() {
+        return this.pendingChanges;
+    }
     public String registrationAuthority() {
         return this.registrationAuthority;
     }
@@ -132,6 +136,7 @@ public final class GetCPSEnrollmentResult {
         private String id;
         private List<GetCPSEnrollmentNetworkConfiguration> networkConfigurations;
         private List<GetCPSEnrollmentOrganization> organizations;
+        private Boolean pendingChanges;
         private String registrationAuthority;
         private List<String> sans;
         private String secureNetwork;
@@ -155,6 +160,7 @@ public final class GetCPSEnrollmentResult {
     	      this.id = defaults.id;
     	      this.networkConfigurations = defaults.networkConfigurations;
     	      this.organizations = defaults.organizations;
+    	      this.pendingChanges = defaults.pendingChanges;
     	      this.registrationAuthority = defaults.registrationAuthority;
     	      this.sans = defaults.sans;
     	      this.secureNetwork = defaults.secureNetwork;
@@ -248,6 +254,11 @@ public final class GetCPSEnrollmentResult {
             return organizations(List.of(organizations));
         }
         @CustomType.Setter
+        public Builder pendingChanges(Boolean pendingChanges) {
+            this.pendingChanges = Objects.requireNonNull(pendingChanges);
+            return this;
+        }
+        @CustomType.Setter
         public Builder registrationAuthority(String registrationAuthority) {
             this.registrationAuthority = Objects.requireNonNull(registrationAuthority);
             return this;
@@ -289,28 +300,29 @@ public final class GetCPSEnrollmentResult {
             return this;
         }
         public GetCPSEnrollmentResult build() {
-            final var o = new GetCPSEnrollmentResult();
-            o.adminContacts = adminContacts;
-            o.certificateChainType = certificateChainType;
-            o.certificateType = certificateType;
-            o.commonName = commonName;
-            o.contractId = contractId;
-            o.csrs = csrs;
-            o.dnsChallenges = dnsChallenges;
-            o.enableMultiStackedCertificates = enableMultiStackedCertificates;
-            o.enrollmentId = enrollmentId;
-            o.httpChallenges = httpChallenges;
-            o.id = id;
-            o.networkConfigurations = networkConfigurations;
-            o.organizations = organizations;
-            o.registrationAuthority = registrationAuthority;
-            o.sans = sans;
-            o.secureNetwork = secureNetwork;
-            o.signatureAlgorithm = signatureAlgorithm;
-            o.sniOnly = sniOnly;
-            o.techContacts = techContacts;
-            o.validationType = validationType;
-            return o;
+            final var _resultValue = new GetCPSEnrollmentResult();
+            _resultValue.adminContacts = adminContacts;
+            _resultValue.certificateChainType = certificateChainType;
+            _resultValue.certificateType = certificateType;
+            _resultValue.commonName = commonName;
+            _resultValue.contractId = contractId;
+            _resultValue.csrs = csrs;
+            _resultValue.dnsChallenges = dnsChallenges;
+            _resultValue.enableMultiStackedCertificates = enableMultiStackedCertificates;
+            _resultValue.enrollmentId = enrollmentId;
+            _resultValue.httpChallenges = httpChallenges;
+            _resultValue.id = id;
+            _resultValue.networkConfigurations = networkConfigurations;
+            _resultValue.organizations = organizations;
+            _resultValue.pendingChanges = pendingChanges;
+            _resultValue.registrationAuthority = registrationAuthority;
+            _resultValue.sans = sans;
+            _resultValue.secureNetwork = secureNetwork;
+            _resultValue.signatureAlgorithm = signatureAlgorithm;
+            _resultValue.sniOnly = sniOnly;
+            _resultValue.techContacts = techContacts;
+            _resultValue.validationType = validationType;
+            return _resultValue;
         }
     }
 }

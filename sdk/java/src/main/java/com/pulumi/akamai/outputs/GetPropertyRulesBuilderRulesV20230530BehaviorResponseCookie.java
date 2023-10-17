@@ -228,26 +228,26 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorResponseCookie {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorResponseCookie build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorResponseCookie();
-            o.cookieName = cookieName;
-            o.defaultDomain = defaultDomain;
-            o.defaultPath = defaultPath;
-            o.domain = domain;
-            o.duration = duration;
-            o.enabled = enabled;
-            o.expirationDate = expirationDate;
-            o.expires = expires;
-            o.format = format;
-            o.httpOnly = httpOnly;
-            o.locked = locked;
-            o.path = path;
-            o.sameSite = sameSite;
-            o.secure = secure;
-            o.templateUuid = templateUuid;
-            o.type = type;
-            o.uuid = uuid;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorResponseCookie();
+            _resultValue.cookieName = cookieName;
+            _resultValue.defaultDomain = defaultDomain;
+            _resultValue.defaultPath = defaultPath;
+            _resultValue.domain = domain;
+            _resultValue.duration = duration;
+            _resultValue.enabled = enabled;
+            _resultValue.expirationDate = expirationDate;
+            _resultValue.expires = expires;
+            _resultValue.format = format;
+            _resultValue.httpOnly = httpOnly;
+            _resultValue.locked = locked;
+            _resultValue.path = path;
+            _resultValue.sameSite = sameSite;
+            _resultValue.secure = secure;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.type = type;
+            _resultValue.uuid = uuid;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -118,16 +118,16 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDownstreamCache 
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorDownstreamCache build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorDownstreamCache();
-            o.allowBehavior = allowBehavior;
-            o.behavior = behavior;
-            o.locked = locked;
-            o.sendHeaders = sendHeaders;
-            o.sendPrivate = sendPrivate;
-            o.templateUuid = templateUuid;
-            o.ttl = ttl;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorDownstreamCache();
+            _resultValue.allowBehavior = allowBehavior;
+            _resultValue.behavior = behavior;
+            _resultValue.locked = locked;
+            _resultValue.sendHeaders = sendHeaders;
+            _resultValue.sendPrivate = sendPrivate;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.ttl = ttl;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

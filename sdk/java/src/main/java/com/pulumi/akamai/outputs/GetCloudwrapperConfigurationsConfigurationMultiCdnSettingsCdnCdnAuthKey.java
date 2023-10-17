@@ -71,12 +71,12 @@ public final class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdn
             return this;
         }
         public GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKey build() {
-            final var o = new GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKey();
-            o.authKeyName = authKeyName;
-            o.expiryDate = expiryDate;
-            o.headerName = headerName;
-            o.secret = secret;
-            return o;
+            final var _resultValue = new GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKey();
+            _resultValue.authKeyName = authKeyName;
+            _resultValue.expiryDate = expiryDate;
+            _resultValue.headerName = headerName;
+            _resultValue.secret = secret;
+            return _resultValue;
         }
     }
 }

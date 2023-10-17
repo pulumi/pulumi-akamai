@@ -67,11 +67,11 @@ public final class GtmPropertyStaticRrSet {
             return this;
         }
         public GtmPropertyStaticRrSet build() {
-            final var o = new GtmPropertyStaticRrSet();
-            o.rdatas = rdatas;
-            o.ttl = ttl;
-            o.type = type;
-            return o;
+            final var _resultValue = new GtmPropertyStaticRrSet();
+            _resultValue.rdatas = rdatas;
+            _resultValue.ttl = ttl;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

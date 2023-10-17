@@ -51,10 +51,10 @@ public final class GetPropertyRulesBuilderRulesV20230105CustomOverride {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105CustomOverride build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105CustomOverride();
-            o.name = name;
-            o.overrideId = overrideId;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105CustomOverride();
+            _resultValue.name = name;
+            _resultValue.overrideId = overrideId;
+            return _resultValue;
         }
     }
 }

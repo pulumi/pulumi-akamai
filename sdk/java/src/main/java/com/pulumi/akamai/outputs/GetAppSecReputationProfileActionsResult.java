@@ -115,15 +115,15 @@ public final class GetAppSecReputationProfileActionsResult {
             return this;
         }
         public GetAppSecReputationProfileActionsResult build() {
-            final var o = new GetAppSecReputationProfileActionsResult();
-            o.action = action;
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            o.outputText = outputText;
-            o.reputationProfileId = reputationProfileId;
-            o.securityPolicyId = securityPolicyId;
-            return o;
+            final var _resultValue = new GetAppSecReputationProfileActionsResult();
+            _resultValue.action = action;
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.outputText = outputText;
+            _resultValue.reputationProfileId = reputationProfileId;
+            _resultValue.securityPolicyId = securityPolicyId;
+            return _resultValue;
         }
     }
 }

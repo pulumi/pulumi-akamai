@@ -35,7 +35,15 @@ class AppSecRuleUpgradeArgs:
              config_id: pulumi.Input[int],
              security_policy_id: pulumi.Input[str],
              upgrade_mode: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+        if 'upgradeMode' in kwargs:
+            upgrade_mode = kwargs['upgradeMode']
+
         _setter("config_id", config_id)
         _setter("security_policy_id", security_policy_id)
         if upgrade_mode is not None:
@@ -114,7 +122,19 @@ class _AppSecRuleUpgradeState:
              mode: Optional[pulumi.Input[str]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
              upgrade_mode: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'currentRuleset' in kwargs:
+            current_ruleset = kwargs['currentRuleset']
+        if 'evalStatus' in kwargs:
+            eval_status = kwargs['evalStatus']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+        if 'upgradeMode' in kwargs:
+            upgrade_mode = kwargs['upgradeMode']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if current_ruleset is not None:

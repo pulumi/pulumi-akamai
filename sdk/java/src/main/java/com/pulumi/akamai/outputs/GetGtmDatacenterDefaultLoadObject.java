@@ -65,11 +65,11 @@ public final class GetGtmDatacenterDefaultLoadObject {
             return loadServers(List.of(loadServers));
         }
         public GetGtmDatacenterDefaultLoadObject build() {
-            final var o = new GetGtmDatacenterDefaultLoadObject();
-            o.loadObject = loadObject;
-            o.loadObjectPort = loadObjectPort;
-            o.loadServers = loadServers;
-            return o;
+            final var _resultValue = new GetGtmDatacenterDefaultLoadObject();
+            _resultValue.loadObject = loadObject;
+            _resultValue.loadObjectPort = loadObjectPort;
+            _resultValue.loadServers = loadServers;
+            return _resultValue;
         }
     }
 }

@@ -96,14 +96,14 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorCloudWrapperAdva
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorCloudWrapperAdvanced build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorCloudWrapperAdvanced();
-            o.customFailoverMap = customFailoverMap;
-            o.enabled = enabled;
-            o.failoverMap = failoverMap;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorCloudWrapperAdvanced();
+            _resultValue.customFailoverMap = customFailoverMap;
+            _resultValue.enabled = enabled;
+            _resultValue.failoverMap = failoverMap;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

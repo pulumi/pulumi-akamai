@@ -118,16 +118,16 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorContentPrePositi
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorContentPrePosition build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorContentPrePosition();
-            o.enabled = enabled;
-            o.firstLocation = firstLocation;
-            o.locked = locked;
-            o.secondLocation = secondLocation;
-            o.sourceType = sourceType;
-            o.targets = targets;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorContentPrePosition();
+            _resultValue.enabled = enabled;
+            _resultValue.firstLocation = firstLocation;
+            _resultValue.locked = locked;
+            _resultValue.secondLocation = secondLocation;
+            _resultValue.sourceType = sourceType;
+            _resultValue.targets = targets;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

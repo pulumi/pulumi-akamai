@@ -52,10 +52,10 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorFirstPartyMarket
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorFirstPartyMarketingCloudletPolicy build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorFirstPartyMarketingCloudletPolicy();
-            o.id = id;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorFirstPartyMarketingCloudletPolicy();
+            _resultValue.id = id;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

@@ -61,11 +61,11 @@ public final class GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAu
             return this;
         }
         public GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthentication build() {
-            final var o = new GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthentication();
-            o.ocspEnabled = ocspEnabled;
-            o.sendCaListToClient = sendCaListToClient;
-            o.setId = setId;
-            return o;
+            final var _resultValue = new GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthentication();
+            _resultValue.ocspEnabled = ocspEnabled;
+            _resultValue.sendCaListToClient = sendCaListToClient;
+            _resultValue.setId = setId;
+            return _resultValue;
         }
     }
 }

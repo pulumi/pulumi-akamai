@@ -48,7 +48,21 @@ class AppSecSlowPostArgs:
              duration_threshold_timeout: Optional[pulumi.Input[int]] = None,
              slow_rate_threshold_period: Optional[pulumi.Input[int]] = None,
              slow_rate_threshold_rate: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+        if 'slowRateAction' in kwargs:
+            slow_rate_action = kwargs['slowRateAction']
+        if 'durationThresholdTimeout' in kwargs:
+            duration_threshold_timeout = kwargs['durationThresholdTimeout']
+        if 'slowRateThresholdPeriod' in kwargs:
+            slow_rate_threshold_period = kwargs['slowRateThresholdPeriod']
+        if 'slowRateThresholdRate' in kwargs:
+            slow_rate_threshold_rate = kwargs['slowRateThresholdRate']
+
         _setter("config_id", config_id)
         _setter("security_policy_id", security_policy_id)
         _setter("slow_rate_action", slow_rate_action)
@@ -170,7 +184,21 @@ class _AppSecSlowPostState:
              slow_rate_action: Optional[pulumi.Input[str]] = None,
              slow_rate_threshold_period: Optional[pulumi.Input[int]] = None,
              slow_rate_threshold_rate: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'durationThresholdTimeout' in kwargs:
+            duration_threshold_timeout = kwargs['durationThresholdTimeout']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+        if 'slowRateAction' in kwargs:
+            slow_rate_action = kwargs['slowRateAction']
+        if 'slowRateThresholdPeriod' in kwargs:
+            slow_rate_threshold_period = kwargs['slowRateThresholdPeriod']
+        if 'slowRateThresholdRate' in kwargs:
+            slow_rate_threshold_rate = kwargs['slowRateThresholdRate']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if duration_threshold_timeout is not None:

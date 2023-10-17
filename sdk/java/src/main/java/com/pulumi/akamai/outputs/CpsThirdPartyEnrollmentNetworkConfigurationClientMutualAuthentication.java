@@ -63,11 +63,11 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthen
             return this;
         }
         public CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication build() {
-            final var o = new CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication();
-            o.ocspEnabled = ocspEnabled;
-            o.sendCaListToClient = sendCaListToClient;
-            o.setId = setId;
-            return o;
+            final var _resultValue = new CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication();
+            _resultValue.ocspEnabled = ocspEnabled;
+            _resultValue.sendCaListToClient = sendCaListToClient;
+            _resultValue.setId = setId;
+            return _resultValue;
         }
     }
 }

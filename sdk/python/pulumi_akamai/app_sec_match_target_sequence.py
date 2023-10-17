@@ -31,7 +31,13 @@ class AppSecMatchTargetSequenceArgs:
              _setter: Callable[[Any, Any], None],
              config_id: pulumi.Input[int],
              match_target_sequence: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'matchTargetSequence' in kwargs:
+            match_target_sequence = kwargs['matchTargetSequence']
+
         _setter("config_id", config_id)
         if match_target_sequence is not None:
             _setter("match_target_sequence", match_target_sequence)
@@ -81,7 +87,13 @@ class _AppSecMatchTargetSequenceState:
              _setter: Callable[[Any, Any], None],
              config_id: Optional[pulumi.Input[int]] = None,
              match_target_sequence: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'matchTargetSequence' in kwargs:
+            match_target_sequence = kwargs['matchTargetSequence']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if match_target_sequence is not None:

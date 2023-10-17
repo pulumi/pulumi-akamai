@@ -161,20 +161,20 @@ public final class CpsThirdPartyEnrollmentAdminContact {
             return this;
         }
         public CpsThirdPartyEnrollmentAdminContact build() {
-            final var o = new CpsThirdPartyEnrollmentAdminContact();
-            o.addressLineOne = addressLineOne;
-            o.addressLineTwo = addressLineTwo;
-            o.city = city;
-            o.countryCode = countryCode;
-            o.email = email;
-            o.firstName = firstName;
-            o.lastName = lastName;
-            o.organization = organization;
-            o.phone = phone;
-            o.postalCode = postalCode;
-            o.region = region;
-            o.title = title;
-            return o;
+            final var _resultValue = new CpsThirdPartyEnrollmentAdminContact();
+            _resultValue.addressLineOne = addressLineOne;
+            _resultValue.addressLineTwo = addressLineTwo;
+            _resultValue.city = city;
+            _resultValue.countryCode = countryCode;
+            _resultValue.email = email;
+            _resultValue.firstName = firstName;
+            _resultValue.lastName = lastName;
+            _resultValue.organization = organization;
+            _resultValue.phone = phone;
+            _resultValue.postalCode = postalCode;
+            _resultValue.region = region;
+            _resultValue.title = title;
+            return _resultValue;
         }
     }
 }

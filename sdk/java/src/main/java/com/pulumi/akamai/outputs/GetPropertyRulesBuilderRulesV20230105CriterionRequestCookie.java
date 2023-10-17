@@ -163,20 +163,20 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionRequestCookie {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105CriterionRequestCookie build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105CriterionRequestCookie();
-            o.cookieName = cookieName;
-            o.locked = locked;
-            o.lowerBound = lowerBound;
-            o.matchCaseSensitiveName = matchCaseSensitiveName;
-            o.matchCaseSensitiveValue = matchCaseSensitiveValue;
-            o.matchOperator = matchOperator;
-            o.matchWildcardName = matchWildcardName;
-            o.matchWildcardValue = matchWildcardValue;
-            o.templateUuid = templateUuid;
-            o.upperBound = upperBound;
-            o.uuid = uuid;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105CriterionRequestCookie();
+            _resultValue.cookieName = cookieName;
+            _resultValue.locked = locked;
+            _resultValue.lowerBound = lowerBound;
+            _resultValue.matchCaseSensitiveName = matchCaseSensitiveName;
+            _resultValue.matchCaseSensitiveValue = matchCaseSensitiveValue;
+            _resultValue.matchOperator = matchOperator;
+            _resultValue.matchWildcardName = matchWildcardName;
+            _resultValue.matchWildcardValue = matchWildcardValue;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.upperBound = upperBound;
+            _resultValue.uuid = uuid;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

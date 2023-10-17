@@ -93,13 +93,13 @@ public final class GetAppSecAdvancedSettingsPragmaHeaderResult {
             return this;
         }
         public GetAppSecAdvancedSettingsPragmaHeaderResult build() {
-            final var o = new GetAppSecAdvancedSettingsPragmaHeaderResult();
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            o.outputText = outputText;
-            o.securityPolicyId = securityPolicyId;
-            return o;
+            final var _resultValue = new GetAppSecAdvancedSettingsPragmaHeaderResult();
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.outputText = outputText;
+            _resultValue.securityPolicyId = securityPolicyId;
+            return _resultValue;
         }
     }
 }

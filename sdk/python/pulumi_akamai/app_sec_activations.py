@@ -43,7 +43,13 @@ class AppSecActivationsArgs:
              version: pulumi.Input[int],
              network: Optional[pulumi.Input[str]] = None,
              note: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'notificationEmails' in kwargs:
+            notification_emails = kwargs['notificationEmails']
+
         _setter("config_id", config_id)
         _setter("notification_emails", notification_emails)
         _setter("version", version)
@@ -149,7 +155,13 @@ class _AppSecActivationsState:
              notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              status: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'notificationEmails' in kwargs:
+            notification_emails = kwargs['notificationEmails']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if network is not None:

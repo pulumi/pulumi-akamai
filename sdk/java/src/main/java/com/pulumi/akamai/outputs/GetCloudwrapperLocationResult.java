@@ -95,13 +95,13 @@ public final class GetCloudwrapperLocationResult {
             return this;
         }
         public GetCloudwrapperLocationResult build() {
-            final var o = new GetCloudwrapperLocationResult();
-            o.id = id;
-            o.locationId = locationId;
-            o.locationName = locationName;
-            o.trafficType = trafficType;
-            o.trafficTypeId = trafficTypeId;
-            return o;
+            final var _resultValue = new GetCloudwrapperLocationResult();
+            _resultValue.id = id;
+            _resultValue.locationId = locationId;
+            _resultValue.locationName = locationName;
+            _resultValue.trafficType = trafficType;
+            _resultValue.trafficTypeId = trafficTypeId;
+            return _resultValue;
         }
     }
 }

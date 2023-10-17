@@ -82,12 +82,12 @@ public final class GetPropertyResult {
             return this;
         }
         public GetPropertyResult build() {
-            final var o = new GetPropertyResult();
-            o.id = id;
-            o.name = name;
-            o.rules = rules;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetPropertyResult();
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.rules = rules;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

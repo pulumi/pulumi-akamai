@@ -62,11 +62,11 @@ public final class GetPropertyRulesTemplateVariable {
             return this;
         }
         public GetPropertyRulesTemplateVariable build() {
-            final var o = new GetPropertyRulesTemplateVariable();
-            o.name = name;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetPropertyRulesTemplateVariable();
+            _resultValue.name = name;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

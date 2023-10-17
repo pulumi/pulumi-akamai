@@ -31,7 +31,13 @@ class AppSecReputationProfileArgs:
              _setter: Callable[[Any, Any], None],
              config_id: pulumi.Input[int],
              reputation_profile: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'reputationProfile' in kwargs:
+            reputation_profile = kwargs['reputationProfile']
+
         _setter("config_id", config_id)
         _setter("reputation_profile", reputation_profile)
 
@@ -84,7 +90,15 @@ class _AppSecReputationProfileState:
              config_id: Optional[pulumi.Input[int]] = None,
              reputation_profile: Optional[pulumi.Input[str]] = None,
              reputation_profile_id: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'reputationProfile' in kwargs:
+            reputation_profile = kwargs['reputationProfile']
+        if 'reputationProfileId' in kwargs:
+            reputation_profile_id = kwargs['reputationProfileId']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if reputation_profile is not None:

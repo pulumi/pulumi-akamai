@@ -310,33 +310,33 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteri
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristics build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristics();
-            o.accessKeyEncryptedStorage = accessKeyEncryptedStorage;
-            o.adcTitle = adcTitle;
-            o.authenticationMethod = authenticationMethod;
-            o.authenticationMethodTitle = authenticationMethodTitle;
-            o.awsAccessKeyId = awsAccessKeyId;
-            o.awsAccessKeyVersionGuid = awsAccessKeyVersionGuid;
-            o.awsHost = awsHost;
-            o.awsRegion = awsRegion;
-            o.awsSecretAccessKey = awsSecretAccessKey;
-            o.awsService = awsService;
-            o.country = country;
-            o.customSignStrings = customSignStrings;
-            o.directConnectGeo = directConnectGeo;
-            o.encodingVersion = encodingVersion;
-            o.gcsAccessKeyVersionGuid = gcsAccessKeyVersionGuid;
-            o.gcsHmacKeyAccessId = gcsHmacKeyAccessId;
-            o.gcsHmacKeySecret = gcsHmacKeySecret;
-            o.locked = locked;
-            o.mslkey = mslkey;
-            o.mslname = mslname;
-            o.nonce = nonce;
-            o.secretKey = secretKey;
-            o.templateUuid = templateUuid;
-            o.useCustomSignString = useCustomSignString;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristics();
+            _resultValue.accessKeyEncryptedStorage = accessKeyEncryptedStorage;
+            _resultValue.adcTitle = adcTitle;
+            _resultValue.authenticationMethod = authenticationMethod;
+            _resultValue.authenticationMethodTitle = authenticationMethodTitle;
+            _resultValue.awsAccessKeyId = awsAccessKeyId;
+            _resultValue.awsAccessKeyVersionGuid = awsAccessKeyVersionGuid;
+            _resultValue.awsHost = awsHost;
+            _resultValue.awsRegion = awsRegion;
+            _resultValue.awsSecretAccessKey = awsSecretAccessKey;
+            _resultValue.awsService = awsService;
+            _resultValue.country = country;
+            _resultValue.customSignStrings = customSignStrings;
+            _resultValue.directConnectGeo = directConnectGeo;
+            _resultValue.encodingVersion = encodingVersion;
+            _resultValue.gcsAccessKeyVersionGuid = gcsAccessKeyVersionGuid;
+            _resultValue.gcsHmacKeyAccessId = gcsHmacKeyAccessId;
+            _resultValue.gcsHmacKeySecret = gcsHmacKeySecret;
+            _resultValue.locked = locked;
+            _resultValue.mslkey = mslkey;
+            _resultValue.mslname = mslname;
+            _resultValue.nonce = nonce;
+            _resultValue.secretKey = secretKey;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.useCustomSignString = useCustomSignString;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

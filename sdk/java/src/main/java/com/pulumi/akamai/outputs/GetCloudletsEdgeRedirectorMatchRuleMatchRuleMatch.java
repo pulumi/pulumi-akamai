@@ -112,15 +112,15 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatch {
             return objectMatchValues(List.of(objectMatchValues));
         }
         public GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatch build() {
-            final var o = new GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatch();
-            o.caseSensitive = caseSensitive;
-            o.checkIps = checkIps;
-            o.matchOperator = matchOperator;
-            o.matchType = matchType;
-            o.matchValue = matchValue;
-            o.negate = negate;
-            o.objectMatchValues = objectMatchValues;
-            return o;
+            final var _resultValue = new GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatch();
+            _resultValue.caseSensitive = caseSensitive;
+            _resultValue.checkIps = checkIps;
+            _resultValue.matchOperator = matchOperator;
+            _resultValue.matchType = matchType;
+            _resultValue.matchValue = matchValue;
+            _resultValue.negate = negate;
+            _resultValue.objectMatchValues = objectMatchValues;
+            return _resultValue;
         }
     }
 }

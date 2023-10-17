@@ -107,15 +107,15 @@ public final class GetImagingPolicyImagePolicyTransformationAppendImageCircleIma
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationAppendImageCircleImage build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationAppendImageCircleImage();
-            o.color = color;
-            o.colorVar = colorVar;
-            o.diameter = diameter;
-            o.diameterVar = diameterVar;
-            o.transformation = transformation;
-            o.width = width;
-            o.widthVar = widthVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationAppendImageCircleImage();
+            _resultValue.color = color;
+            _resultValue.colorVar = colorVar;
+            _resultValue.diameter = diameter;
+            _resultValue.diameterVar = diameterVar;
+            _resultValue.transformation = transformation;
+            _resultValue.width = width;
+            _resultValue.widthVar = widthVar;
+            return _resultValue;
         }
     }
 }

@@ -74,11 +74,11 @@ public final class GetCloudletsVisitorPrioritizationMatchRuleResult {
             return matchRules(List.of(matchRules));
         }
         public GetCloudletsVisitorPrioritizationMatchRuleResult build() {
-            final var o = new GetCloudletsVisitorPrioritizationMatchRuleResult();
-            o.id = id;
-            o.json = json;
-            o.matchRules = matchRules;
-            return o;
+            final var _resultValue = new GetCloudletsVisitorPrioritizationMatchRuleResult();
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.matchRules = matchRules;
+            return _resultValue;
         }
     }
 }

@@ -59,10 +59,10 @@ public final class GetIamTimeoutPoliciesResult {
             return this;
         }
         public GetIamTimeoutPoliciesResult build() {
-            final var o = new GetIamTimeoutPoliciesResult();
-            o.id = id;
-            o.policies = policies;
-            return o;
+            final var _resultValue = new GetIamTimeoutPoliciesResult();
+            _resultValue.id = id;
+            _resultValue.policies = policies;
+            return _resultValue;
         }
     }
 }

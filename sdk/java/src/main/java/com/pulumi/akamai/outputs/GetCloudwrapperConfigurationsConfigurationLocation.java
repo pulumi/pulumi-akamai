@@ -73,12 +73,12 @@ public final class GetCloudwrapperConfigurationsConfigurationLocation {
             return this;
         }
         public GetCloudwrapperConfigurationsConfigurationLocation build() {
-            final var o = new GetCloudwrapperConfigurationsConfigurationLocation();
-            o.capacity = capacity;
-            o.comments = comments;
-            o.mapName = mapName;
-            o.trafficTypeId = trafficTypeId;
-            return o;
+            final var _resultValue = new GetCloudwrapperConfigurationsConfigurationLocation();
+            _resultValue.capacity = capacity;
+            _resultValue.comments = comments;
+            _resultValue.mapName = mapName;
+            _resultValue.trafficTypeId = trafficTypeId;
+            return _resultValue;
         }
     }
 }

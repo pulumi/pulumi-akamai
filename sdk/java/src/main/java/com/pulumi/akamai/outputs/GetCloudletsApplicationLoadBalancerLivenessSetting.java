@@ -174,21 +174,21 @@ public final class GetCloudletsApplicationLoadBalancerLivenessSetting {
             return this;
         }
         public GetCloudletsApplicationLoadBalancerLivenessSetting build() {
-            final var o = new GetCloudletsApplicationLoadBalancerLivenessSetting();
-            o.additionalHeaders = additionalHeaders;
-            o.hostHeader = hostHeader;
-            o.interval = interval;
-            o.path = path;
-            o.peerCertificateVerification = peerCertificateVerification;
-            o.port = port;
-            o.protocol = protocol;
-            o.requestString = requestString;
-            o.responseString = responseString;
-            o.status3xxFailure = status3xxFailure;
-            o.status4xxFailure = status4xxFailure;
-            o.status5xxFailure = status5xxFailure;
-            o.timeout = timeout;
-            return o;
+            final var _resultValue = new GetCloudletsApplicationLoadBalancerLivenessSetting();
+            _resultValue.additionalHeaders = additionalHeaders;
+            _resultValue.hostHeader = hostHeader;
+            _resultValue.interval = interval;
+            _resultValue.path = path;
+            _resultValue.peerCertificateVerification = peerCertificateVerification;
+            _resultValue.port = port;
+            _resultValue.protocol = protocol;
+            _resultValue.requestString = requestString;
+            _resultValue.responseString = responseString;
+            _resultValue.status3xxFailure = status3xxFailure;
+            _resultValue.status4xxFailure = status4xxFailure;
+            _resultValue.status5xxFailure = status5xxFailure;
+            _resultValue.timeout = timeout;
+            return _resultValue;
         }
     }
 }

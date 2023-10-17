@@ -40,9 +40,9 @@ public final class CloudwrapperConfigurationTimeouts {
             return this;
         }
         public CloudwrapperConfigurationTimeouts build() {
-            final var o = new CloudwrapperConfigurationTimeouts();
-            o.delete = delete;
-            return o;
+            final var _resultValue = new CloudwrapperConfigurationTimeouts();
+            _resultValue.delete = delete;
+            return _resultValue;
         }
     }
 }

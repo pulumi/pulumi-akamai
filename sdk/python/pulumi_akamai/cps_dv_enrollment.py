@@ -81,7 +81,31 @@ class CpsDvEnrollmentArgs:
              allow_duplicate_common_name: Optional[pulumi.Input[bool]] = None,
              certificate_chain_type: Optional[pulumi.Input[str]] = None,
              sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adminContact' in kwargs:
+            admin_contact = kwargs['adminContact']
+        if 'commonName' in kwargs:
+            common_name = kwargs['commonName']
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if 'networkConfiguration' in kwargs:
+            network_configuration = kwargs['networkConfiguration']
+        if 'secureNetwork' in kwargs:
+            secure_network = kwargs['secureNetwork']
+        if 'signatureAlgorithm' in kwargs:
+            signature_algorithm = kwargs['signatureAlgorithm']
+        if 'sniOnly' in kwargs:
+            sni_only = kwargs['sniOnly']
+        if 'techContact' in kwargs:
+            tech_contact = kwargs['techContact']
+        if 'acknowledgePreVerificationWarnings' in kwargs:
+            acknowledge_pre_verification_warnings = kwargs['acknowledgePreVerificationWarnings']
+        if 'allowDuplicateCommonName' in kwargs:
+            allow_duplicate_common_name = kwargs['allowDuplicateCommonName']
+        if 'certificateChainType' in kwargs:
+            certificate_chain_type = kwargs['certificateChainType']
+
         _setter("admin_contact", admin_contact)
         _setter("common_name", common_name)
         _setter("contract_id", contract_id)
@@ -358,7 +382,41 @@ class _CpsDvEnrollmentState:
              sni_only: Optional[pulumi.Input[bool]] = None,
              tech_contact: Optional[pulumi.Input['CpsDvEnrollmentTechContactArgs']] = None,
              validation_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'acknowledgePreVerificationWarnings' in kwargs:
+            acknowledge_pre_verification_warnings = kwargs['acknowledgePreVerificationWarnings']
+        if 'adminContact' in kwargs:
+            admin_contact = kwargs['adminContact']
+        if 'allowDuplicateCommonName' in kwargs:
+            allow_duplicate_common_name = kwargs['allowDuplicateCommonName']
+        if 'certificateChainType' in kwargs:
+            certificate_chain_type = kwargs['certificateChainType']
+        if 'certificateType' in kwargs:
+            certificate_type = kwargs['certificateType']
+        if 'commonName' in kwargs:
+            common_name = kwargs['commonName']
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if 'dnsChallenges' in kwargs:
+            dns_challenges = kwargs['dnsChallenges']
+        if 'httpChallenges' in kwargs:
+            http_challenges = kwargs['httpChallenges']
+        if 'networkConfiguration' in kwargs:
+            network_configuration = kwargs['networkConfiguration']
+        if 'registrationAuthority' in kwargs:
+            registration_authority = kwargs['registrationAuthority']
+        if 'secureNetwork' in kwargs:
+            secure_network = kwargs['secureNetwork']
+        if 'signatureAlgorithm' in kwargs:
+            signature_algorithm = kwargs['signatureAlgorithm']
+        if 'sniOnly' in kwargs:
+            sni_only = kwargs['sniOnly']
+        if 'techContact' in kwargs:
+            tech_contact = kwargs['techContact']
+        if 'validationType' in kwargs:
+            validation_type = kwargs['validationType']
+
         if acknowledge_pre_verification_warnings is not None:
             _setter("acknowledge_pre_verification_warnings", acknowledge_pre_verification_warnings)
         if admin_contact is not None:

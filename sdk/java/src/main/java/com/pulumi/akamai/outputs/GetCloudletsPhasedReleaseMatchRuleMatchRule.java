@@ -136,17 +136,17 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRule {
             return this;
         }
         public GetCloudletsPhasedReleaseMatchRuleMatchRule build() {
-            final var o = new GetCloudletsPhasedReleaseMatchRuleMatchRule();
-            o.disabled = disabled;
-            o.end = end;
-            o.forwardSettings = forwardSettings;
-            o.matchUrl = matchUrl;
-            o.matches = matches;
-            o.matchesAlways = matchesAlways;
-            o.name = name;
-            o.start = start;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetCloudletsPhasedReleaseMatchRuleMatchRule();
+            _resultValue.disabled = disabled;
+            _resultValue.end = end;
+            _resultValue.forwardSettings = forwardSettings;
+            _resultValue.matchUrl = matchUrl;
+            _resultValue.matches = matches;
+            _resultValue.matchesAlways = matchesAlways;
+            _resultValue.name = name;
+            _resultValue.start = start;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

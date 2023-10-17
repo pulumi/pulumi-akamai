@@ -43,9 +43,9 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompou
             return transformations(List.of(transformations));
         }
         public GetImagingPolicyImagePolicyPostBreakpointTransformationCompound build() {
-            final var o = new GetImagingPolicyImagePolicyPostBreakpointTransformationCompound();
-            o.transformations = transformations;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyPostBreakpointTransformationCompound();
+            _resultValue.transformations = transformations;
+            return _resultValue;
         }
     }
 }

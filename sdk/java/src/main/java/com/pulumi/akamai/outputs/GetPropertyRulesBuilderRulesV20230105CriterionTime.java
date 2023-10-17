@@ -162,20 +162,20 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionTime {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105CriterionTime build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105CriterionTime();
-            o.applyDaylightSavingsTime = applyDaylightSavingsTime;
-            o.beginDate = beginDate;
-            o.endDate = endDate;
-            o.lastingDate = lastingDate;
-            o.lastingDuration = lastingDuration;
-            o.locked = locked;
-            o.matchOperator = matchOperator;
-            o.repeatBeginDate = repeatBeginDate;
-            o.repeatDuration = repeatDuration;
-            o.repeatInterval = repeatInterval;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105CriterionTime();
+            _resultValue.applyDaylightSavingsTime = applyDaylightSavingsTime;
+            _resultValue.beginDate = beginDate;
+            _resultValue.endDate = endDate;
+            _resultValue.lastingDate = lastingDate;
+            _resultValue.lastingDuration = lastingDuration;
+            _resultValue.locked = locked;
+            _resultValue.matchOperator = matchOperator;
+            _resultValue.repeatBeginDate = repeatBeginDate;
+            _resultValue.repeatDuration = repeatDuration;
+            _resultValue.repeatInterval = repeatInterval;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

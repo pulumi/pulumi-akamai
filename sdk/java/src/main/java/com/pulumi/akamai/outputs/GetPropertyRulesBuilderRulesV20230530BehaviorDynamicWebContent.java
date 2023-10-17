@@ -107,15 +107,15 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDynamicWebConten
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorDynamicWebContent build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorDynamicWebContent();
-            o.imageCompression = imageCompression;
-            o.locked = locked;
-            o.prefetch = prefetch;
-            o.realUserMonitoring = realUserMonitoring;
-            o.sureRoute = sureRoute;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorDynamicWebContent();
+            _resultValue.imageCompression = imageCompression;
+            _resultValue.locked = locked;
+            _resultValue.prefetch = prefetch;
+            _resultValue.realUserMonitoring = realUserMonitoring;
+            _resultValue.sureRoute = sureRoute;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

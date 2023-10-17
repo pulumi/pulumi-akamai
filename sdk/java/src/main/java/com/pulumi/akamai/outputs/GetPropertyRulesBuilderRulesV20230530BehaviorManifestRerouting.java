@@ -85,13 +85,13 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorManifestReroutin
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorManifestRerouting build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorManifestRerouting();
-            o.locked = locked;
-            o.partner = partner;
-            o.templateUuid = templateUuid;
-            o.username = username;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorManifestRerouting();
+            _resultValue.locked = locked;
+            _resultValue.partner = partner;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.username = username;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

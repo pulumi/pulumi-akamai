@@ -74,12 +74,12 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorBaseDirectory {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorBaseDirectory build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorBaseDirectory();
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorBaseDirectory();
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

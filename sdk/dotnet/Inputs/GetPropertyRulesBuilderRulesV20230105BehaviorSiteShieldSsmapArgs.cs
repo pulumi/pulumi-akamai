@@ -12,8 +12,17 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmapInputArgs : global::Pulumi.ResourceArgs
     {
+        [Input("chinaCdnMap")]
+        public Input<string>? ChinaCdnMap { get; set; }
+
+        [Input("hasMixedHosts")]
+        public Input<bool>? HasMixedHosts { get; set; }
+
         [Input("name")]
         public Input<string>? Name { get; set; }
+
+        [Input("src")]
+        public Input<string>? Src { get; set; }
 
         [Input("srmap")]
         public Input<string>? Srmap { get; set; }

@@ -91,13 +91,13 @@ public final class GetEdgeWorkerActivationResult {
             return this;
         }
         public GetEdgeWorkerActivationResult build() {
-            final var o = new GetEdgeWorkerActivationResult();
-            o.activationId = activationId;
-            o.edgeworkerId = edgeworkerId;
-            o.id = id;
-            o.network = network;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetEdgeWorkerActivationResult();
+            _resultValue.activationId = activationId;
+            _resultValue.edgeworkerId = edgeworkerId;
+            _resultValue.id = id;
+            _resultValue.network = network;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

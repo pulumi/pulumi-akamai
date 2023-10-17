@@ -84,12 +84,12 @@ public final class GetPropertiesSearchResult {
             return this;
         }
         public GetPropertiesSearchResult build() {
-            final var o = new GetPropertiesSearchResult();
-            o.id = id;
-            o.key = key;
-            o.properties = properties;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetPropertiesSearchResult();
+            _resultValue.id = id;
+            _resultValue.key = key;
+            _resultValue.properties = properties;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

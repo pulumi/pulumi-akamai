@@ -74,12 +74,12 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorRequestTypeMarke
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorRequestTypeMarker build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorRequestTypeMarker();
-            o.locked = locked;
-            o.requestType = requestType;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorRequestTypeMarker();
+            _resultValue.locked = locked;
+            _resultValue.requestType = requestType;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

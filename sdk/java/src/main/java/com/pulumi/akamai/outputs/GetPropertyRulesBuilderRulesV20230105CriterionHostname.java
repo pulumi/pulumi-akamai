@@ -89,13 +89,13 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionHostname {
             return values(List.of(values));
         }
         public GetPropertyRulesBuilderRulesV20230105CriterionHostname build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105CriterionHostname();
-            o.locked = locked;
-            o.matchOperator = matchOperator;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105CriterionHostname();
+            _resultValue.locked = locked;
+            _resultValue.matchOperator = matchOperator;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

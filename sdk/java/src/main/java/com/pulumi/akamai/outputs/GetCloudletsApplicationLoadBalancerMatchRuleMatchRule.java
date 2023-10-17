@@ -150,18 +150,18 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRule {
             return this;
         }
         public GetCloudletsApplicationLoadBalancerMatchRuleMatchRule build() {
-            final var o = new GetCloudletsApplicationLoadBalancerMatchRuleMatchRule();
-            o.disabled = disabled;
-            o.end = end;
-            o.forwardSettings = forwardSettings;
-            o.id = id;
-            o.matchUrl = matchUrl;
-            o.matches = matches;
-            o.matchesAlways = matchesAlways;
-            o.name = name;
-            o.start = start;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetCloudletsApplicationLoadBalancerMatchRuleMatchRule();
+            _resultValue.disabled = disabled;
+            _resultValue.end = end;
+            _resultValue.forwardSettings = forwardSettings;
+            _resultValue.id = id;
+            _resultValue.matchUrl = matchUrl;
+            _resultValue.matches = matches;
+            _resultValue.matchesAlways = matchesAlways;
+            _resultValue.name = name;
+            _resultValue.start = start;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

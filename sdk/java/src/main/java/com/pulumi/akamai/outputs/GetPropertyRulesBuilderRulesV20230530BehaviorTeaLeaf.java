@@ -97,14 +97,14 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorTeaLeaf {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorTeaLeaf build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorTeaLeaf();
-            o.enabled = enabled;
-            o.ibmCustomerId = ibmCustomerId;
-            o.limitToDynamic = limitToDynamic;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorTeaLeaf();
+            _resultValue.enabled = enabled;
+            _resultValue.ibmCustomerId = ibmCustomerId;
+            _resultValue.limitToDynamic = limitToDynamic;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

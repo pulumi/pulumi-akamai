@@ -118,16 +118,16 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorEcmsDatabase {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorEcmsDatabase build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorEcmsDatabase();
-            o.database = database;
-            o.extractLocation = extractLocation;
-            o.headerName = headerName;
-            o.locked = locked;
-            o.queryParameterName = queryParameterName;
-            o.regexPattern = regexPattern;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorEcmsDatabase();
+            _resultValue.database = database;
+            _resultValue.extractLocation = extractLocation;
+            _resultValue.headerName = headerName;
+            _resultValue.locked = locked;
+            _resultValue.queryParameterName = queryParameterName;
+            _resultValue.regexPattern = regexPattern;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

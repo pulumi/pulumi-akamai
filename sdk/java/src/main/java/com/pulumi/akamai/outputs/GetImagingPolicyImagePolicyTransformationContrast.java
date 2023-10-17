@@ -73,12 +73,12 @@ public final class GetImagingPolicyImagePolicyTransformationContrast {
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationContrast build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationContrast();
-            o.brightness = brightness;
-            o.brightnessVar = brightnessVar;
-            o.contrast = contrast;
-            o.contrastVar = contrastVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationContrast();
+            _resultValue.brightness = brightness;
+            _resultValue.brightnessVar = brightnessVar;
+            _resultValue.contrast = contrast;
+            _resultValue.contrastVar = contrastVar;
+            return _resultValue;
         }
     }
 }

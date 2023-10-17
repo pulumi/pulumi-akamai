@@ -46,7 +46,17 @@ class CloudletsApplicationLoadBalancerArgs:
              balancing_type: Optional[pulumi.Input[str]] = None,
              description: Optional[pulumi.Input[str]] = None,
              liveness_settings: Optional[pulumi.Input['CloudletsApplicationLoadBalancerLivenessSettingsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dataCenters' in kwargs:
+            data_centers = kwargs['dataCenters']
+        if 'originId' in kwargs:
+            origin_id = kwargs['originId']
+        if 'balancingType' in kwargs:
+            balancing_type = kwargs['balancingType']
+        if 'livenessSettings' in kwargs:
+            liveness_settings = kwargs['livenessSettings']
+
         _setter("data_centers", data_centers)
         _setter("origin_id", origin_id)
         if balancing_type is not None:
@@ -157,7 +167,17 @@ class _CloudletsApplicationLoadBalancerState:
              origin_id: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[int]] = None,
              warnings: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'balancingType' in kwargs:
+            balancing_type = kwargs['balancingType']
+        if 'dataCenters' in kwargs:
+            data_centers = kwargs['dataCenters']
+        if 'livenessSettings' in kwargs:
+            liveness_settings = kwargs['livenessSettings']
+        if 'originId' in kwargs:
+            origin_id = kwargs['originId']
+
         if balancing_type is not None:
             _setter("balancing_type", balancing_type)
         if data_centers is not None:

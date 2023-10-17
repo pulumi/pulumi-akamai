@@ -50,10 +50,10 @@ public final class GetCloudwrapperCapacitiesCapacityApproved {
             return this;
         }
         public GetCloudwrapperCapacitiesCapacityApproved build() {
-            final var o = new GetCloudwrapperCapacitiesCapacityApproved();
-            o.unit = unit;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetCloudwrapperCapacitiesCapacityApproved();
+            _resultValue.unit = unit;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

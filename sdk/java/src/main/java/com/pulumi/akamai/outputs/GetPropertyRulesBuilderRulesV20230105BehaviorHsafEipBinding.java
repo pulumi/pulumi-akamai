@@ -119,16 +119,16 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorHsafEipBinding {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorHsafEipBinding build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorHsafEipBinding();
-            o.customExtractedSerial = customExtractedSerial;
-            o.enabled = enabled;
-            o.hashMaxValue = hashMaxValue;
-            o.hashMinValue = hashMinValue;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.tier = tier;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorHsafEipBinding();
+            _resultValue.customExtractedSerial = customExtractedSerial;
+            _resultValue.enabled = enabled;
+            _resultValue.hashMaxValue = hashMaxValue;
+            _resultValue.hashMinValue = hashMinValue;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.tier = tier;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

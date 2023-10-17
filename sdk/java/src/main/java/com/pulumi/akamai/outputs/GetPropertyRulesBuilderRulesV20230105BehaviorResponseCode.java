@@ -86,13 +86,13 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorResponseCode {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorResponseCode build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorResponseCode();
-            o.locked = locked;
-            o.override206 = override206;
-            o.statusCode = statusCode;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorResponseCode();
+            _resultValue.locked = locked;
+            _resultValue.override206 = override206;
+            _resultValue.statusCode = statusCode;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

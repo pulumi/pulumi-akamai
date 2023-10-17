@@ -101,14 +101,14 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchV
             return values(List.of(values));
         }
         public GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValue build() {
-            final var o = new GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValue();
-            o.name = name;
-            o.nameCaseSensitive = nameCaseSensitive;
-            o.nameHasWildcard = nameHasWildcard;
-            o.options = options;
-            o.type = type;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValue();
+            _resultValue.name = name;
+            _resultValue.nameCaseSensitive = nameCaseSensitive;
+            _resultValue.nameHasWildcard = nameHasWildcard;
+            _resultValue.options = options;
+            _resultValue.type = type;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

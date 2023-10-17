@@ -75,12 +75,12 @@ public final class GetGroupsGroup {
             return this;
         }
         public GetGroupsGroup build() {
-            final var o = new GetGroupsGroup();
-            o.contractIds = contractIds;
-            o.groupId = groupId;
-            o.groupName = groupName;
-            o.parentGroupId = parentGroupId;
-            return o;
+            final var _resultValue = new GetGroupsGroup();
+            _resultValue.contractIds = contractIds;
+            _resultValue.groupId = groupId;
+            _resultValue.groupName = groupName;
+            _resultValue.parentGroupId = parentGroupId;
+            return _resultValue;
         }
     }
 }

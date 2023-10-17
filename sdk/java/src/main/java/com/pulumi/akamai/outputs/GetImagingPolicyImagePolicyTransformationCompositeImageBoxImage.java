@@ -107,15 +107,15 @@ public final class GetImagingPolicyImagePolicyTransformationCompositeImageBoxIma
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationCompositeImageBoxImage build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationCompositeImageBoxImage();
-            o.color = color;
-            o.colorVar = colorVar;
-            o.height = height;
-            o.heightVar = heightVar;
-            o.transformation = transformation;
-            o.width = width;
-            o.widthVar = widthVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationCompositeImageBoxImage();
+            _resultValue.color = color;
+            _resultValue.colorVar = colorVar;
+            _resultValue.height = height;
+            _resultValue.heightVar = heightVar;
+            _resultValue.transformation = transformation;
+            _resultValue.width = width;
+            _resultValue.widthVar = widthVar;
+            return _resultValue;
         }
     }
 }

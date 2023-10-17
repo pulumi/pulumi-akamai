@@ -74,12 +74,12 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionChinaCdnRegion 
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530CriterionChinaCdnRegion build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530CriterionChinaCdnRegion();
-            o.locked = locked;
-            o.matchOperator = matchOperator;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530CriterionChinaCdnRegion();
+            _resultValue.locked = locked;
+            _resultValue.matchOperator = matchOperator;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

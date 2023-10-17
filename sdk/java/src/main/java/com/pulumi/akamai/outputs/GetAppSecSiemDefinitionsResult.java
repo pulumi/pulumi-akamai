@@ -81,12 +81,12 @@ public final class GetAppSecSiemDefinitionsResult {
             return this;
         }
         public GetAppSecSiemDefinitionsResult build() {
-            final var o = new GetAppSecSiemDefinitionsResult();
-            o.id = id;
-            o.json = json;
-            o.outputText = outputText;
-            o.siemDefinitionName = siemDefinitionName;
-            return o;
+            final var _resultValue = new GetAppSecSiemDefinitionsResult();
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.outputText = outputText;
+            _resultValue.siemDefinitionName = siemDefinitionName;
+            return _resultValue;
         }
     }
 }

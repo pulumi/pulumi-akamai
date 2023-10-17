@@ -107,14 +107,14 @@ public final class GetAppSecExportConfigurationResult {
             return this;
         }
         public GetAppSecExportConfigurationResult build() {
-            final var o = new GetAppSecExportConfigurationResult();
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            o.outputText = outputText;
-            o.searches = searches;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetAppSecExportConfigurationResult();
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.outputText = outputText;
+            _resultValue.searches = searches;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

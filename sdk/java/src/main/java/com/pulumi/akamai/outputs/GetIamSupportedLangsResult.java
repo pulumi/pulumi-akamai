@@ -61,10 +61,10 @@ public final class GetIamSupportedLangsResult {
             return languages(List.of(languages));
         }
         public GetIamSupportedLangsResult build() {
-            final var o = new GetIamSupportedLangsResult();
-            o.id = id;
-            o.languages = languages;
-            return o;
+            final var _resultValue = new GetIamSupportedLangsResult();
+            _resultValue.id = id;
+            _resultValue.languages = languages;
+            return _resultValue;
         }
     }
 }

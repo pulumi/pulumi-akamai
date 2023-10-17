@@ -82,12 +82,12 @@ public final class GetBotmanRecategorizedAkamaiDefinedBotResult {
             return this;
         }
         public GetBotmanRecategorizedAkamaiDefinedBotResult build() {
-            final var o = new GetBotmanRecategorizedAkamaiDefinedBotResult();
-            o.botId = botId;
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            return o;
+            final var _resultValue = new GetBotmanRecategorizedAkamaiDefinedBotResult();
+            _resultValue.botId = botId;
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            return _resultValue;
         }
     }
 }

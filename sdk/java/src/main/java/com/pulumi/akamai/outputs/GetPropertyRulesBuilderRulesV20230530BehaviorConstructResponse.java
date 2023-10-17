@@ -119,16 +119,16 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorConstructRespons
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorConstructResponse build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorConstructResponse();
-            o.body = body;
-            o.enabled = enabled;
-            o.forceEviction = forceEviction;
-            o.ignorePurge = ignorePurge;
-            o.locked = locked;
-            o.responseCode = responseCode;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorConstructResponse();
+            _resultValue.body = body;
+            _resultValue.enabled = enabled;
+            _resultValue.forceEviction = forceEviction;
+            _resultValue.ignorePurge = ignorePurge;
+            _resultValue.locked = locked;
+            _resultValue.responseCode = responseCode;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

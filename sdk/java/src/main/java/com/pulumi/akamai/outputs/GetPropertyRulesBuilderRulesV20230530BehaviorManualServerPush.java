@@ -78,12 +78,12 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorManualServerPush
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorManualServerPush build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorManualServerPush();
-            o.locked = locked;
-            o.serverpushlists = serverpushlists;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorManualServerPush();
+            _resultValue.locked = locked;
+            _resultValue.serverpushlists = serverpushlists;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

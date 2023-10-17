@@ -239,27 +239,27 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorWatermarking {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorWatermarking build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorWatermarking();
-            o.abVariantLocation = abVariantLocation;
-            o.decryptionPassword1 = decryptionPassword1;
-            o.decryptionPassword2 = decryptionPassword2;
-            o.decryptionPasswordId1 = decryptionPasswordId1;
-            o.decryptionPasswordId2 = decryptionPasswordId2;
-            o.enable = enable;
-            o.locked = locked;
-            o.miscellaneousSettingsTitle = miscellaneousSettingsTitle;
-            o.patternDecryptionEnable = patternDecryptionEnable;
-            o.patternEncryptionTitle = patternEncryptionTitle;
-            o.signatureVerificationEnable = signatureVerificationEnable;
-            o.templateUuid = templateUuid;
-            o.tokenSigningTitle = tokenSigningTitle;
-            o.useOriginalAsA = useOriginalAsA;
-            o.uuid = uuid;
-            o.verificationKeyId1 = verificationKeyId1;
-            o.verificationKeyId2 = verificationKeyId2;
-            o.verificationPublicKey1 = verificationPublicKey1;
-            o.verificationPublicKey2 = verificationPublicKey2;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorWatermarking();
+            _resultValue.abVariantLocation = abVariantLocation;
+            _resultValue.decryptionPassword1 = decryptionPassword1;
+            _resultValue.decryptionPassword2 = decryptionPassword2;
+            _resultValue.decryptionPasswordId1 = decryptionPasswordId1;
+            _resultValue.decryptionPasswordId2 = decryptionPasswordId2;
+            _resultValue.enable = enable;
+            _resultValue.locked = locked;
+            _resultValue.miscellaneousSettingsTitle = miscellaneousSettingsTitle;
+            _resultValue.patternDecryptionEnable = patternDecryptionEnable;
+            _resultValue.patternEncryptionTitle = patternEncryptionTitle;
+            _resultValue.signatureVerificationEnable = signatureVerificationEnable;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.tokenSigningTitle = tokenSigningTitle;
+            _resultValue.useOriginalAsA = useOriginalAsA;
+            _resultValue.uuid = uuid;
+            _resultValue.verificationKeyId1 = verificationKeyId1;
+            _resultValue.verificationKeyId2 = verificationKeyId2;
+            _resultValue.verificationPublicKey1 = verificationPublicKey1;
+            _resultValue.verificationPublicKey2 = verificationPublicKey2;
+            return _resultValue;
         }
     }
 }

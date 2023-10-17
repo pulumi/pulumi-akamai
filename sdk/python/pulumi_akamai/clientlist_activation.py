@@ -47,7 +47,15 @@ class ClientlistActivationArgs:
              comments: Optional[pulumi.Input[str]] = None,
              notification_recipients: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              siebel_ticket_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'listId' in kwargs:
+            list_id = kwargs['listId']
+        if 'notificationRecipients' in kwargs:
+            notification_recipients = kwargs['notificationRecipients']
+        if 'siebelTicketId' in kwargs:
+            siebel_ticket_id = kwargs['siebelTicketId']
+
         _setter("list_id", list_id)
         _setter("network", network)
         _setter("version", version)
@@ -171,7 +179,15 @@ class _ClientlistActivationState:
              siebel_ticket_id: Optional[pulumi.Input[str]] = None,
              status: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'listId' in kwargs:
+            list_id = kwargs['listId']
+        if 'notificationRecipients' in kwargs:
+            notification_recipients = kwargs['notificationRecipients']
+        if 'siebelTicketId' in kwargs:
+            siebel_ticket_id = kwargs['siebelTicketId']
+
         if comments is not None:
             _setter("comments", comments)
         if list_id is not None:

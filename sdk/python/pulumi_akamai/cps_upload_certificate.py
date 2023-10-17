@@ -59,7 +59,27 @@ class CpsUploadCertificateArgs:
              trust_chain_ecdsa_pem: Optional[pulumi.Input[str]] = None,
              trust_chain_rsa_pem: Optional[pulumi.Input[str]] = None,
              wait_for_deployment: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enrollmentId' in kwargs:
+            enrollment_id = kwargs['enrollmentId']
+        if 'acknowledgeChangeManagement' in kwargs:
+            acknowledge_change_management = kwargs['acknowledgeChangeManagement']
+        if 'acknowledgePostVerificationWarnings' in kwargs:
+            acknowledge_post_verification_warnings = kwargs['acknowledgePostVerificationWarnings']
+        if 'autoApproveWarnings' in kwargs:
+            auto_approve_warnings = kwargs['autoApproveWarnings']
+        if 'certificateEcdsaPem' in kwargs:
+            certificate_ecdsa_pem = kwargs['certificateEcdsaPem']
+        if 'certificateRsaPem' in kwargs:
+            certificate_rsa_pem = kwargs['certificateRsaPem']
+        if 'trustChainEcdsaPem' in kwargs:
+            trust_chain_ecdsa_pem = kwargs['trustChainEcdsaPem']
+        if 'trustChainRsaPem' in kwargs:
+            trust_chain_rsa_pem = kwargs['trustChainRsaPem']
+        if 'waitForDeployment' in kwargs:
+            wait_for_deployment = kwargs['waitForDeployment']
+
         _setter("enrollment_id", enrollment_id)
         if acknowledge_change_management is not None:
             _setter("acknowledge_change_management", acknowledge_change_management)
@@ -239,7 +259,29 @@ class _CpsUploadCertificateState:
              trust_chain_rsa_pem: Optional[pulumi.Input[str]] = None,
              unacknowledged_warnings: Optional[pulumi.Input[bool]] = None,
              wait_for_deployment: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'acknowledgeChangeManagement' in kwargs:
+            acknowledge_change_management = kwargs['acknowledgeChangeManagement']
+        if 'acknowledgePostVerificationWarnings' in kwargs:
+            acknowledge_post_verification_warnings = kwargs['acknowledgePostVerificationWarnings']
+        if 'autoApproveWarnings' in kwargs:
+            auto_approve_warnings = kwargs['autoApproveWarnings']
+        if 'certificateEcdsaPem' in kwargs:
+            certificate_ecdsa_pem = kwargs['certificateEcdsaPem']
+        if 'certificateRsaPem' in kwargs:
+            certificate_rsa_pem = kwargs['certificateRsaPem']
+        if 'enrollmentId' in kwargs:
+            enrollment_id = kwargs['enrollmentId']
+        if 'trustChainEcdsaPem' in kwargs:
+            trust_chain_ecdsa_pem = kwargs['trustChainEcdsaPem']
+        if 'trustChainRsaPem' in kwargs:
+            trust_chain_rsa_pem = kwargs['trustChainRsaPem']
+        if 'unacknowledgedWarnings' in kwargs:
+            unacknowledged_warnings = kwargs['unacknowledgedWarnings']
+        if 'waitForDeployment' in kwargs:
+            wait_for_deployment = kwargs['waitForDeployment']
+
         if acknowledge_change_management is not None:
             _setter("acknowledge_change_management", acknowledge_change_management)
         if acknowledge_post_verification_warnings is not None:

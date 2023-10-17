@@ -51,7 +51,17 @@ class PropertyIncludeArgs:
              name: Optional[pulumi.Input[str]] = None,
              product_id: Optional[pulumi.Input[str]] = None,
              rules: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'ruleFormat' in kwargs:
+            rule_format = kwargs['ruleFormat']
+        if 'productId' in kwargs:
+            product_id = kwargs['productId']
+
         _setter("contract_id", contract_id)
         _setter("group_id", group_id)
         _setter("rule_format", rule_format)
@@ -208,7 +218,27 @@ class _PropertyIncludeState:
              rules: Optional[pulumi.Input[str]] = None,
              staging_version: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'latestVersion' in kwargs:
+            latest_version = kwargs['latestVersion']
+        if 'productId' in kwargs:
+            product_id = kwargs['productId']
+        if 'productionVersion' in kwargs:
+            production_version = kwargs['productionVersion']
+        if 'ruleErrors' in kwargs:
+            rule_errors = kwargs['ruleErrors']
+        if 'ruleFormat' in kwargs:
+            rule_format = kwargs['ruleFormat']
+        if 'ruleWarnings' in kwargs:
+            rule_warnings = kwargs['ruleWarnings']
+        if 'stagingVersion' in kwargs:
+            staging_version = kwargs['stagingVersion']
+
         if contract_id is not None:
             _setter("contract_id", contract_id)
         if group_id is not None:

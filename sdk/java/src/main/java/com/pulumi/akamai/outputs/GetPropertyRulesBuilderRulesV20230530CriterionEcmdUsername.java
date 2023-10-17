@@ -96,14 +96,14 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionEcmdUsername {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530CriterionEcmdUsername build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530CriterionEcmdUsername();
-            o.length = length;
-            o.locked = locked;
-            o.matchOperator = matchOperator;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530CriterionEcmdUsername();
+            _resultValue.length = length;
+            _resultValue.locked = locked;
+            _resultValue.matchOperator = matchOperator;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -74,12 +74,12 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionRequestProtocol
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530CriterionRequestProtocol build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530CriterionRequestProtocol();
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530CriterionRequestProtocol();
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -39,6 +39,7 @@ export interface GetNetworkListsResult {
     readonly name?: string;
     readonly networkListId: string;
     readonly outputText: string;
+    readonly syncPoint: number;
     readonly type?: string;
 }
 export function getNetworkListsOutput(args?: GetNetworkListsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkListsResult> {

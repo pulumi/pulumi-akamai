@@ -32,7 +32,15 @@ class BotmanJavascriptInjectionArgs:
              config_id: pulumi.Input[int],
              javascript_injection: pulumi.Input[str],
              security_policy_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'javascriptInjection' in kwargs:
+            javascript_injection = kwargs['javascriptInjection']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         _setter("config_id", config_id)
         _setter("javascript_injection", javascript_injection)
         _setter("security_policy_id", security_policy_id)
@@ -86,7 +94,15 @@ class _BotmanJavascriptInjectionState:
              config_id: Optional[pulumi.Input[int]] = None,
              javascript_injection: Optional[pulumi.Input[str]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'javascriptInjection' in kwargs:
+            javascript_injection = kwargs['javascriptInjection']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if javascript_injection is not None:

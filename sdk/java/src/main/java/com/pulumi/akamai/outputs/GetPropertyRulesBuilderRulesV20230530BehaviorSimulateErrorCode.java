@@ -85,13 +85,13 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorSimulateErrorCod
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorSimulateErrorCode build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorSimulateErrorCode();
-            o.errorType = errorType;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.timeout = timeout;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorSimulateErrorCode();
+            _resultValue.errorType = errorType;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.timeout = timeout;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

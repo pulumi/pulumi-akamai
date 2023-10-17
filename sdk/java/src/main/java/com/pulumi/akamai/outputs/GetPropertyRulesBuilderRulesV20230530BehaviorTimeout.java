@@ -74,12 +74,12 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorTimeout {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorTimeout build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorTimeout();
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorTimeout();
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

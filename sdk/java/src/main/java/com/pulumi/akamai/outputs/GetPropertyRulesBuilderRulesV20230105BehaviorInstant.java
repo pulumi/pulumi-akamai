@@ -125,16 +125,16 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorInstant {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorInstant build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorInstant();
-            o.customLinkRelations = customLinkRelations;
-            o.locked = locked;
-            o.prefetchCacheable = prefetchCacheable;
-            o.prefetchHtml = prefetchHtml;
-            o.prefetchNoStore = prefetchNoStore;
-            o.prefetchNoStoreExtensions = prefetchNoStoreExtensions;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorInstant();
+            _resultValue.customLinkRelations = customLinkRelations;
+            _resultValue.locked = locked;
+            _resultValue.prefetchCacheable = prefetchCacheable;
+            _resultValue.prefetchHtml = prefetchHtml;
+            _resultValue.prefetchNoStore = prefetchNoStore;
+            _resultValue.prefetchNoStoreExtensions = prefetchNoStoreExtensions;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

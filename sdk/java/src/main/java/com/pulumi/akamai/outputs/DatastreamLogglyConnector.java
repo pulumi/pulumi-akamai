@@ -106,15 +106,15 @@ public final class DatastreamLogglyConnector {
             return this;
         }
         public DatastreamLogglyConnector build() {
-            final var o = new DatastreamLogglyConnector();
-            o.authToken = authToken;
-            o.contentType = contentType;
-            o.customHeaderName = customHeaderName;
-            o.customHeaderValue = customHeaderValue;
-            o.displayName = displayName;
-            o.endpoint = endpoint;
-            o.tags = tags;
-            return o;
+            final var _resultValue = new DatastreamLogglyConnector();
+            _resultValue.authToken = authToken;
+            _resultValue.contentType = contentType;
+            _resultValue.customHeaderName = customHeaderName;
+            _resultValue.customHeaderValue = customHeaderValue;
+            _resultValue.displayName = displayName;
+            _resultValue.endpoint = endpoint;
+            _resultValue.tags = tags;
+            return _resultValue;
         }
     }
 }

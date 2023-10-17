@@ -52,10 +52,10 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorAudienceSegmenta
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorAudienceSegmentationCloudletPolicy build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorAudienceSegmentationCloudletPolicy();
-            o.id = id;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorAudienceSegmentationCloudletPolicy();
+            _resultValue.id = id;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

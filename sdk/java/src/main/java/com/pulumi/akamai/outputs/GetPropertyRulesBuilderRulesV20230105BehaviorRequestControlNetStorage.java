@@ -63,11 +63,11 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlNe
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlNetStorage build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlNetStorage();
-            o.cpCode = cpCode;
-            o.downloadDomainName = downloadDomainName;
-            o.g2oToken = g2oToken;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlNetStorage();
+            _resultValue.cpCode = cpCode;
+            _resultValue.downloadDomainName = downloadDomainName;
+            _resultValue.g2oToken = g2oToken;
+            return _resultValue;
         }
     }
 }

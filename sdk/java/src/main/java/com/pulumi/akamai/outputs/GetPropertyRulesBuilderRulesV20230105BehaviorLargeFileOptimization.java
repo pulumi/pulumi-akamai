@@ -118,16 +118,16 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorLargeFileOptimiz
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorLargeFileOptimization build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorLargeFileOptimization();
-            o.enablePartialObjectCaching = enablePartialObjectCaching;
-            o.enabled = enabled;
-            o.locked = locked;
-            o.maximumSize = maximumSize;
-            o.minimumSize = minimumSize;
-            o.templateUuid = templateUuid;
-            o.useVersioning = useVersioning;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorLargeFileOptimization();
+            _resultValue.enablePartialObjectCaching = enablePartialObjectCaching;
+            _resultValue.enabled = enabled;
+            _resultValue.locked = locked;
+            _resultValue.maximumSize = maximumSize;
+            _resultValue.minimumSize = minimumSize;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.useVersioning = useVersioning;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

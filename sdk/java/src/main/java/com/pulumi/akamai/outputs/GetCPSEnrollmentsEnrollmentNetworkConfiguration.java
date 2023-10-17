@@ -124,16 +124,16 @@ public final class GetCPSEnrollmentsEnrollmentNetworkConfiguration {
             return this;
         }
         public GetCPSEnrollmentsEnrollmentNetworkConfiguration build() {
-            final var o = new GetCPSEnrollmentsEnrollmentNetworkConfiguration();
-            o.clientMutualAuthentications = clientMutualAuthentications;
-            o.cloneDnsNames = cloneDnsNames;
-            o.disallowedTlsVersions = disallowedTlsVersions;
-            o.geography = geography;
-            o.mustHaveCiphers = mustHaveCiphers;
-            o.ocspStapling = ocspStapling;
-            o.preferredCiphers = preferredCiphers;
-            o.quicEnabled = quicEnabled;
-            return o;
+            final var _resultValue = new GetCPSEnrollmentsEnrollmentNetworkConfiguration();
+            _resultValue.clientMutualAuthentications = clientMutualAuthentications;
+            _resultValue.cloneDnsNames = cloneDnsNames;
+            _resultValue.disallowedTlsVersions = disallowedTlsVersions;
+            _resultValue.geography = geography;
+            _resultValue.mustHaveCiphers = mustHaveCiphers;
+            _resultValue.ocspStapling = ocspStapling;
+            _resultValue.preferredCiphers = preferredCiphers;
+            _resultValue.quicEnabled = quicEnabled;
+            return _resultValue;
         }
     }
 }

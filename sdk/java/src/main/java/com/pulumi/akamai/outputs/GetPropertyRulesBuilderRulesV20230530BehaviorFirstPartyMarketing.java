@@ -108,15 +108,15 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorFirstPartyMarket
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorFirstPartyMarketing build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorFirstPartyMarketing();
-            o.cloudletPolicy = cloudletPolicy;
-            o.enabled = enabled;
-            o.javaScriptInsertionRule = javaScriptInsertionRule;
-            o.locked = locked;
-            o.mediaMathPrefix = mediaMathPrefix;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorFirstPartyMarketing();
+            _resultValue.cloudletPolicy = cloudletPolicy;
+            _resultValue.enabled = enabled;
+            _resultValue.javaScriptInsertionRule = javaScriptInsertionRule;
+            _resultValue.locked = locked;
+            _resultValue.mediaMathPrefix = mediaMathPrefix;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

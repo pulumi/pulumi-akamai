@@ -75,12 +75,12 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorWebApplicationFi
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorWebApplicationFirewall build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorWebApplicationFirewall();
-            o.firewallConfiguration = firewallConfiguration;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorWebApplicationFirewall();
+            _resultValue.firewallConfiguration = firewallConfiguration;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

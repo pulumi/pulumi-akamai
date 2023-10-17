@@ -74,11 +74,11 @@ public final class GetCloudletsRequestControlMatchRuleResult {
             return matchRules(List.of(matchRules));
         }
         public GetCloudletsRequestControlMatchRuleResult build() {
-            final var o = new GetCloudletsRequestControlMatchRuleResult();
-            o.id = id;
-            o.json = json;
-            o.matchRules = matchRules;
-            return o;
+            final var _resultValue = new GetCloudletsRequestControlMatchRuleResult();
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.matchRules = matchRules;
+            return _resultValue;
         }
     }
 }

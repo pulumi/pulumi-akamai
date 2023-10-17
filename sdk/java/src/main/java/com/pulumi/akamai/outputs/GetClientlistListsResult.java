@@ -125,15 +125,15 @@ public final class GetClientlistListsResult {
             return types(List.of(types));
         }
         public GetClientlistListsResult build() {
-            final var o = new GetClientlistListsResult();
-            o.id = id;
-            o.json = json;
-            o.listIds = listIds;
-            o.lists = lists;
-            o.name = name;
-            o.outputText = outputText;
-            o.types = types;
-            return o;
+            final var _resultValue = new GetClientlistListsResult();
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.listIds = listIds;
+            _resultValue.lists = lists;
+            _resultValue.name = name;
+            _resultValue.outputText = outputText;
+            _resultValue.types = types;
+            return _resultValue;
         }
     }
 }

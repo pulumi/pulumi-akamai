@@ -51,10 +51,10 @@ public final class CloudwrapperActivationTimeouts {
             return this;
         }
         public CloudwrapperActivationTimeouts build() {
-            final var o = new CloudwrapperActivationTimeouts();
-            o.create = create;
-            o.update = update;
-            return o;
+            final var _resultValue = new CloudwrapperActivationTimeouts();
+            _resultValue.create = create;
+            _resultValue.update = update;
+            return _resultValue;
         }
     }
 }

@@ -85,13 +85,13 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorStrictHeaderPars
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorStrictHeaderParsing build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorStrictHeaderParsing();
-            o.locked = locked;
-            o.strictMode = strictMode;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            o.validMode = validMode;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorStrictHeaderParsing();
+            _resultValue.locked = locked;
+            _resultValue.strictMode = strictMode;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            _resultValue.validMode = validMode;
+            return _resultValue;
         }
     }
 }

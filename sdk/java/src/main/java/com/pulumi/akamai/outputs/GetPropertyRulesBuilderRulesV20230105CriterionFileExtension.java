@@ -100,14 +100,14 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionFileExtension {
             return values(List.of(values));
         }
         public GetPropertyRulesBuilderRulesV20230105CriterionFileExtension build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105CriterionFileExtension();
-            o.locked = locked;
-            o.matchCaseSensitive = matchCaseSensitive;
-            o.matchOperator = matchOperator;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105CriterionFileExtension();
+            _resultValue.locked = locked;
+            _resultValue.matchCaseSensitive = matchCaseSensitive;
+            _resultValue.matchOperator = matchOperator;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

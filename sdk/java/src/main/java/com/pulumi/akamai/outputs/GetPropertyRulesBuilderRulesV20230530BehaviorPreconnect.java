@@ -78,12 +78,12 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorPreconnect {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorPreconnect build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorPreconnect();
-            o.locked = locked;
-            o.preconnectlists = preconnectlists;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorPreconnect();
+            _resultValue.locked = locked;
+            _resultValue.preconnectlists = preconnectlists;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

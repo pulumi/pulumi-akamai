@@ -74,11 +74,11 @@ public final class GetDatastreamActivationHistoryResult {
             return this;
         }
         public GetDatastreamActivationHistoryResult build() {
-            final var o = new GetDatastreamActivationHistoryResult();
-            o.activations = activations;
-            o.id = id;
-            o.streamId = streamId;
-            return o;
+            final var _resultValue = new GetDatastreamActivationHistoryResult();
+            _resultValue.activations = activations;
+            _resultValue.id = id;
+            _resultValue.streamId = streamId;
+            return _resultValue;
         }
     }
 }

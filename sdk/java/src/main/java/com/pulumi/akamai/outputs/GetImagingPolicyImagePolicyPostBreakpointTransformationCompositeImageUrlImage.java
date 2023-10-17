@@ -63,11 +63,11 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompos
             return this;
         }
         public GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImage build() {
-            final var o = new GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImage();
-            o.transformation = transformation;
-            o.url = url;
-            o.urlVar = urlVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImage();
+            _resultValue.transformation = transformation;
+            _resultValue.url = url;
+            _resultValue.urlVar = urlVar;
+            return _resultValue;
         }
     }
 }

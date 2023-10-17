@@ -74,12 +74,12 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorAutoDomainValida
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorAutoDomainValidation build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorAutoDomainValidation();
-            o.autodv = autodv;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorAutoDomainValidation();
+            _resultValue.autodv = autodv;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

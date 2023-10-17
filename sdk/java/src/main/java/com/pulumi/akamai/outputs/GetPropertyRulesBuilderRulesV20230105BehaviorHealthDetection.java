@@ -97,14 +97,14 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorHealthDetection 
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorHealthDetection build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorHealthDetection();
-            o.locked = locked;
-            o.maximumReconnects = maximumReconnects;
-            o.retryCount = retryCount;
-            o.retryInterval = retryInterval;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorHealthDetection();
+            _resultValue.locked = locked;
+            _resultValue.maximumReconnects = maximumReconnects;
+            _resultValue.retryCount = retryCount;
+            _resultValue.retryInterval = retryInterval;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

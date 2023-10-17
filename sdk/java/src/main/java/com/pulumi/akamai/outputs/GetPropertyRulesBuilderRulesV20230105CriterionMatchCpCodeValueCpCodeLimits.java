@@ -63,11 +63,11 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionMatchCpCodeValu
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105CriterionMatchCpCodeValueCpCodeLimits build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105CriterionMatchCpCodeValueCpCodeLimits();
-            o.currentCapacity = currentCapacity;
-            o.limit = limit;
-            o.limitType = limitType;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105CriterionMatchCpCodeValueCpCodeLimits();
+            _resultValue.currentCapacity = currentCapacity;
+            _resultValue.limit = limit;
+            _resultValue.limitType = limitType;
+            return _resultValue;
         }
     }
 }

@@ -96,14 +96,14 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorMediaClient {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorMediaClient build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorMediaClient();
-            o.beaconId = beaconId;
-            o.enabled = enabled;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.useHybridHttpUdp = useHybridHttpUdp;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorMediaClient();
+            _resultValue.beaconId = beaconId;
+            _resultValue.enabled = enabled;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.useHybridHttpUdp = useHybridHttpUdp;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

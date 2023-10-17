@@ -94,14 +94,14 @@ public final class GetCloudletsPolicyActivationPropertyInfo {
             return this;
         }
         public GetCloudletsPolicyActivationPropertyInfo build() {
-            final var o = new GetCloudletsPolicyActivationPropertyInfo();
-            o.activatedBy = activatedBy;
-            o.activationDate = activationDate;
-            o.groupId = groupId;
-            o.name = name;
-            o.status = status;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetCloudletsPolicyActivationPropertyInfo();
+            _resultValue.activatedBy = activatedBy;
+            _resultValue.activationDate = activationDate;
+            _resultValue.groupId = groupId;
+            _resultValue.name = name;
+            _resultValue.status = status;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

@@ -81,11 +81,11 @@ public final class GetCloudwrapperCapacitiesResult {
             return this;
         }
         public GetCloudwrapperCapacitiesResult build() {
-            final var o = new GetCloudwrapperCapacitiesResult();
-            o.capacities = capacities;
-            o.contractIds = contractIds;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetCloudwrapperCapacitiesResult();
+            _resultValue.capacities = capacities;
+            _resultValue.contractIds = contractIds;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

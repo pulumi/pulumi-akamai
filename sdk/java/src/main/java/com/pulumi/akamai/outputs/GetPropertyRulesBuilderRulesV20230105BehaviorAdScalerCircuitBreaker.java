@@ -140,18 +140,18 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorAdScalerCircuitB
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorAdScalerCircuitBreaker build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorAdScalerCircuitBreaker();
-            o.fallbackActionResponseCodeBased = fallbackActionResponseCodeBased;
-            o.locked = locked;
-            o.responseCodeBased = responseCodeBased;
-            o.responseCodes = responseCodes;
-            o.responseDelayBased = responseDelayBased;
-            o.responseDelayThreshold = responseDelayThreshold;
-            o.returnErrorResponseCodeBased = returnErrorResponseCodeBased;
-            o.specifyYourOwnResponseCodeBased = specifyYourOwnResponseCodeBased;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorAdScalerCircuitBreaker();
+            _resultValue.fallbackActionResponseCodeBased = fallbackActionResponseCodeBased;
+            _resultValue.locked = locked;
+            _resultValue.responseCodeBased = responseCodeBased;
+            _resultValue.responseCodes = responseCodes;
+            _resultValue.responseDelayBased = responseDelayBased;
+            _resultValue.responseDelayThreshold = responseDelayThreshold;
+            _resultValue.returnErrorResponseCodeBased = returnErrorResponseCodeBased;
+            _resultValue.specifyYourOwnResponseCodeBased = specifyYourOwnResponseCodeBased;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

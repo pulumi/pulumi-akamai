@@ -83,13 +83,13 @@ public final class GetPropertyRulesBuilderRulesV20230530Variable {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530Variable build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530Variable();
-            o.description = description;
-            o.hidden = hidden;
-            o.name = name;
-            o.sensitive = sensitive;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530Variable();
+            _resultValue.description = description;
+            _resultValue.hidden = hidden;
+            _resultValue.name = name;
+            _resultValue.sensitive = sensitive;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

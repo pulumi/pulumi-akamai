@@ -55,7 +55,19 @@ class PropertyActivationArgs:
              network: Optional[pulumi.Input[str]] = None,
              note: Optional[pulumi.Input[str]] = None,
              rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleErrorArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'propertyId' in kwargs:
+            property_id = kwargs['propertyId']
+        if 'activationId' in kwargs:
+            activation_id = kwargs['activationId']
+        if 'autoAcknowledgeRuleWarnings' in kwargs:
+            auto_acknowledge_rule_warnings = kwargs['autoAcknowledgeRuleWarnings']
+        if 'complianceRecord' in kwargs:
+            compliance_record = kwargs['complianceRecord']
+        if 'ruleErrors' in kwargs:
+            rule_errors = kwargs['ruleErrors']
+
         _setter("contacts", contacts)
         _setter("property_id", property_id)
         _setter("version", version)
@@ -214,7 +226,19 @@ class _PropertyActivationState:
              status: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[int]] = None,
              warnings: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'activationId' in kwargs:
+            activation_id = kwargs['activationId']
+        if 'autoAcknowledgeRuleWarnings' in kwargs:
+            auto_acknowledge_rule_warnings = kwargs['autoAcknowledgeRuleWarnings']
+        if 'complianceRecord' in kwargs:
+            compliance_record = kwargs['complianceRecord']
+        if 'propertyId' in kwargs:
+            property_id = kwargs['propertyId']
+        if 'ruleErrors' in kwargs:
+            rule_errors = kwargs['ruleErrors']
+
         if activation_id is not None:
             _setter("activation_id", activation_id)
         if auto_acknowledge_rule_warnings is not None:

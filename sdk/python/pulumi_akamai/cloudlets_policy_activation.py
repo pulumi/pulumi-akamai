@@ -39,7 +39,13 @@ class CloudletsPolicyActivationArgs:
              network: pulumi.Input[str],
              policy_id: pulumi.Input[int],
              version: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'associatedProperties' in kwargs:
+            associated_properties = kwargs['associatedProperties']
+        if 'policyId' in kwargs:
+            policy_id = kwargs['policyId']
+
         _setter("associated_properties", associated_properties)
         _setter("network", network)
         _setter("policy_id", policy_id)
@@ -126,7 +132,13 @@ class _CloudletsPolicyActivationState:
              policy_id: Optional[pulumi.Input[int]] = None,
              status: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'associatedProperties' in kwargs:
+            associated_properties = kwargs['associatedProperties']
+        if 'policyId' in kwargs:
+            policy_id = kwargs['policyId']
+
         if associated_properties is not None:
             _setter("associated_properties", associated_properties)
         if network is not None:

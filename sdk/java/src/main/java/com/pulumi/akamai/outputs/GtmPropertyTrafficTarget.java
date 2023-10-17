@@ -114,14 +114,14 @@ public final class GtmPropertyTrafficTarget {
             return this;
         }
         public GtmPropertyTrafficTarget build() {
-            final var o = new GtmPropertyTrafficTarget();
-            o.datacenterId = datacenterId;
-            o.enabled = enabled;
-            o.handoutCname = handoutCname;
-            o.name = name;
-            o.servers = servers;
-            o.weight = weight;
-            return o;
+            final var _resultValue = new GtmPropertyTrafficTarget();
+            _resultValue.datacenterId = datacenterId;
+            _resultValue.enabled = enabled;
+            _resultValue.handoutCname = handoutCname;
+            _resultValue.name = name;
+            _resultValue.servers = servers;
+            _resultValue.weight = weight;
+            return _resultValue;
         }
     }
 }

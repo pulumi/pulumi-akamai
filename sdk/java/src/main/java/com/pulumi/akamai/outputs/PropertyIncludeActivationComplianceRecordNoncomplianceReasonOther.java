@@ -51,10 +51,10 @@ public final class PropertyIncludeActivationComplianceRecordNoncomplianceReasonO
             return this;
         }
         public PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther build() {
-            final var o = new PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther();
-            o.otherNoncomplianceReason = otherNoncomplianceReason;
-            o.ticketId = ticketId;
-            return o;
+            final var _resultValue = new PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther();
+            _resultValue.otherNoncomplianceReason = otherNoncomplianceReason;
+            _resultValue.ticketId = ticketId;
+            return _resultValue;
         }
     }
 }

@@ -163,20 +163,20 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorDatastream {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorDatastream build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorDatastream();
-            o.beaconStreamTitle = beaconStreamTitle;
-            o.collectMidgressTraffic = collectMidgressTraffic;
-            o.datastreamIds = datastreamIds;
-            o.enabled = enabled;
-            o.locked = locked;
-            o.logEnabled = logEnabled;
-            o.logStreamName = logStreamName;
-            o.logStreamTitle = logStreamTitle;
-            o.samplingPercentage = samplingPercentage;
-            o.streamType = streamType;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorDatastream();
+            _resultValue.beaconStreamTitle = beaconStreamTitle;
+            _resultValue.collectMidgressTraffic = collectMidgressTraffic;
+            _resultValue.datastreamIds = datastreamIds;
+            _resultValue.enabled = enabled;
+            _resultValue.locked = locked;
+            _resultValue.logEnabled = logEnabled;
+            _resultValue.logStreamName = logStreamName;
+            _resultValue.logStreamTitle = logStreamTitle;
+            _resultValue.samplingPercentage = samplingPercentage;
+            _resultValue.streamType = streamType;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

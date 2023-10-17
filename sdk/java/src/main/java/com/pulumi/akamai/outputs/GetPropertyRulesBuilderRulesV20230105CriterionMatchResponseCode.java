@@ -112,15 +112,15 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionMatchResponseCo
             return values(List.of(values));
         }
         public GetPropertyRulesBuilderRulesV20230105CriterionMatchResponseCode build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105CriterionMatchResponseCode();
-            o.locked = locked;
-            o.lowerBound = lowerBound;
-            o.matchOperator = matchOperator;
-            o.templateUuid = templateUuid;
-            o.upperBound = upperBound;
-            o.uuid = uuid;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105CriterionMatchResponseCode();
+            _resultValue.locked = locked;
+            _resultValue.lowerBound = lowerBound;
+            _resultValue.matchOperator = matchOperator;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.upperBound = upperBound;
+            _resultValue.uuid = uuid;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

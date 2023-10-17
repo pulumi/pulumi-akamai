@@ -100,14 +100,14 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorCacheKeyQueryPar
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorCacheKeyQueryParams build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorCacheKeyQueryParams();
-            o.behavior = behavior;
-            o.exactMatch = exactMatch;
-            o.locked = locked;
-            o.parameters = parameters;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorCacheKeyQueryParams();
+            _resultValue.behavior = behavior;
+            _resultValue.exactMatch = exactMatch;
+            _resultValue.locked = locked;
+            _resultValue.parameters = parameters;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

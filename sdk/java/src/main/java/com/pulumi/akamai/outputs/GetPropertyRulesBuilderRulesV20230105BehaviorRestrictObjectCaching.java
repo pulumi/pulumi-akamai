@@ -74,12 +74,12 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorRestrictObjectCa
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorRestrictObjectCaching build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorRestrictObjectCaching();
-            o.locked = locked;
-            o.maximumSize = maximumSize;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorRestrictObjectCaching();
+            _resultValue.locked = locked;
+            _resultValue.maximumSize = maximumSize;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

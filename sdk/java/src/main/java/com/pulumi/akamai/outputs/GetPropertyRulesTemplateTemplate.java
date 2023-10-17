@@ -49,10 +49,10 @@ public final class GetPropertyRulesTemplateTemplate {
             return this;
         }
         public GetPropertyRulesTemplateTemplate build() {
-            final var o = new GetPropertyRulesTemplateTemplate();
-            o.templateData = templateData;
-            o.templateDir = templateDir;
-            return o;
+            final var _resultValue = new GetPropertyRulesTemplateTemplate();
+            _resultValue.templateData = templateData;
+            _resultValue.templateDir = templateDir;
+            return _resultValue;
         }
     }
 }

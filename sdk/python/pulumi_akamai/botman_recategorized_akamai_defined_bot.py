@@ -32,7 +32,15 @@ class BotmanRecategorizedAkamaiDefinedBotArgs:
              bot_id: pulumi.Input[str],
              category_id: pulumi.Input[str],
              config_id: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'botId' in kwargs:
+            bot_id = kwargs['botId']
+        if 'categoryId' in kwargs:
+            category_id = kwargs['categoryId']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+
         _setter("bot_id", bot_id)
         _setter("category_id", category_id)
         _setter("config_id", config_id)
@@ -86,7 +94,15 @@ class _BotmanRecategorizedAkamaiDefinedBotState:
              bot_id: Optional[pulumi.Input[str]] = None,
              category_id: Optional[pulumi.Input[str]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'botId' in kwargs:
+            bot_id = kwargs['botId']
+        if 'categoryId' in kwargs:
+            category_id = kwargs['categoryId']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+
         if bot_id is not None:
             _setter("bot_id", bot_id)
         if category_id is not None:

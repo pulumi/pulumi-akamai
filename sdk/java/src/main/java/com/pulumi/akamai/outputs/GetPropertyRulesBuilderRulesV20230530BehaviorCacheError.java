@@ -96,14 +96,14 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorCacheError {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorCacheError build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorCacheError();
-            o.enabled = enabled;
-            o.locked = locked;
-            o.preserveStale = preserveStale;
-            o.templateUuid = templateUuid;
-            o.ttl = ttl;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorCacheError();
+            _resultValue.enabled = enabled;
+            _resultValue.locked = locked;
+            _resultValue.preserveStale = preserveStale;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.ttl = ttl;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

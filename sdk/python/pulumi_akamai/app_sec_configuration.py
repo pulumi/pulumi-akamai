@@ -51,7 +51,19 @@ class AppSecConfigurationArgs:
              create_from_config_id: Optional[pulumi.Input[int]] = None,
              create_from_version: Optional[pulumi.Input[int]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'hostNames' in kwargs:
+            host_names = kwargs['hostNames']
+        if 'createFromConfigId' in kwargs:
+            create_from_config_id = kwargs['createFromConfigId']
+        if 'createFromVersion' in kwargs:
+            create_from_version = kwargs['createFromVersion']
+
         _setter("contract_id", contract_id)
         _setter("description", description)
         _setter("group_id", group_id)
@@ -192,7 +204,21 @@ class _AppSecConfigurationState:
              group_id: Optional[pulumi.Input[int]] = None,
              host_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if 'createFromConfigId' in kwargs:
+            create_from_config_id = kwargs['createFromConfigId']
+        if 'createFromVersion' in kwargs:
+            create_from_version = kwargs['createFromVersion']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'hostNames' in kwargs:
+            host_names = kwargs['hostNames']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if contract_id is not None:

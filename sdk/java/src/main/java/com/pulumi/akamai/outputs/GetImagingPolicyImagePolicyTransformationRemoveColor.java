@@ -95,14 +95,14 @@ public final class GetImagingPolicyImagePolicyTransformationRemoveColor {
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationRemoveColor build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationRemoveColor();
-            o.color = color;
-            o.colorVar = colorVar;
-            o.feather = feather;
-            o.featherVar = featherVar;
-            o.tolerance = tolerance;
-            o.toleranceVar = toleranceVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationRemoveColor();
+            _resultValue.color = color;
+            _resultValue.colorVar = colorVar;
+            _resultValue.feather = feather;
+            _resultValue.featherVar = featherVar;
+            _resultValue.tolerance = tolerance;
+            _resultValue.toleranceVar = toleranceVar;
+            return _resultValue;
         }
     }
 }

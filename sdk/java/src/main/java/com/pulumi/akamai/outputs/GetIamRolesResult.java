@@ -62,10 +62,10 @@ public final class GetIamRolesResult {
             return roles(List.of(roles));
         }
         public GetIamRolesResult build() {
-            final var o = new GetIamRolesResult();
-            o.id = id;
-            o.roles = roles;
-            return o;
+            final var _resultValue = new GetIamRolesResult();
+            _resultValue.id = id;
+            _resultValue.roles = roles;
+            return _resultValue;
         }
     }
 }

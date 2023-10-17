@@ -71,12 +71,12 @@ public final class GetPropertyHostnamesHostnameCertStatus {
             return this;
         }
         public GetPropertyHostnamesHostnameCertStatus build() {
-            final var o = new GetPropertyHostnamesHostnameCertStatus();
-            o.hostname = hostname;
-            o.productionStatus = productionStatus;
-            o.stagingStatus = stagingStatus;
-            o.target = target;
-            return o;
+            final var _resultValue = new GetPropertyHostnamesHostnameCertStatus();
+            _resultValue.hostname = hostname;
+            _resultValue.productionStatus = productionStatus;
+            _resultValue.stagingStatus = stagingStatus;
+            _resultValue.target = target;
+            return _resultValue;
         }
     }
 }

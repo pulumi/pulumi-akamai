@@ -62,10 +62,10 @@ public final class GetContractsResult {
             return this;
         }
         public GetContractsResult build() {
-            final var o = new GetContractsResult();
-            o.contracts = contracts;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetContractsResult();
+            _resultValue.contracts = contracts;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

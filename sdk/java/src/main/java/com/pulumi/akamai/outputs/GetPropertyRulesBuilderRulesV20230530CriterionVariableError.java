@@ -89,13 +89,13 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionVariableError {
             return variableNames(List.of(variableNames));
         }
         public GetPropertyRulesBuilderRulesV20230530CriterionVariableError build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530CriterionVariableError();
-            o.locked = locked;
-            o.result = result;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            o.variableNames = variableNames;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530CriterionVariableError();
+            _resultValue.locked = locked;
+            _resultValue.result = result;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            _resultValue.variableNames = variableNames;
+            return _resultValue;
         }
     }
 }

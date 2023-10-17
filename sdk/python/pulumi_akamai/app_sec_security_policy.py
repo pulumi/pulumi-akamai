@@ -43,7 +43,19 @@ class AppSecSecurityPolicyArgs:
              security_policy_prefix: pulumi.Input[str],
              create_from_security_policy_id: Optional[pulumi.Input[str]] = None,
              default_settings: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'securityPolicyName' in kwargs:
+            security_policy_name = kwargs['securityPolicyName']
+        if 'securityPolicyPrefix' in kwargs:
+            security_policy_prefix = kwargs['securityPolicyPrefix']
+        if 'createFromSecurityPolicyId' in kwargs:
+            create_from_security_policy_id = kwargs['createFromSecurityPolicyId']
+        if 'defaultSettings' in kwargs:
+            default_settings = kwargs['defaultSettings']
+
         _setter("config_id", config_id)
         _setter("security_policy_name", security_policy_name)
         _setter("security_policy_prefix", security_policy_prefix)
@@ -149,7 +161,21 @@ class _AppSecSecurityPolicyState:
              security_policy_id: Optional[pulumi.Input[str]] = None,
              security_policy_name: Optional[pulumi.Input[str]] = None,
              security_policy_prefix: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'createFromSecurityPolicyId' in kwargs:
+            create_from_security_policy_id = kwargs['createFromSecurityPolicyId']
+        if 'defaultSettings' in kwargs:
+            default_settings = kwargs['defaultSettings']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+        if 'securityPolicyName' in kwargs:
+            security_policy_name = kwargs['securityPolicyName']
+        if 'securityPolicyPrefix' in kwargs:
+            security_policy_prefix = kwargs['securityPolicyPrefix']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if create_from_security_policy_id is not None:

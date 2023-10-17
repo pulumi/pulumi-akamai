@@ -29,7 +29,13 @@ class BotmanCustomDenyActionArgs:
              _setter: Callable[[Any, Any], None],
              config_id: pulumi.Input[int],
              custom_deny_action: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'customDenyAction' in kwargs:
+            custom_deny_action = kwargs['customDenyAction']
+
         _setter("config_id", config_id)
         _setter("custom_deny_action", custom_deny_action)
 
@@ -73,7 +79,15 @@ class _BotmanCustomDenyActionState:
              action_id: Optional[pulumi.Input[str]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
              custom_deny_action: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionId' in kwargs:
+            action_id = kwargs['actionId']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'customDenyAction' in kwargs:
+            custom_deny_action = kwargs['customDenyAction']
+
         if action_id is not None:
             _setter("action_id", action_id)
         if config_id is not None:

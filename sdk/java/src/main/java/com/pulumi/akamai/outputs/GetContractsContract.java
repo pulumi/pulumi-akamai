@@ -49,10 +49,10 @@ public final class GetContractsContract {
             return this;
         }
         public GetContractsContract build() {
-            final var o = new GetContractsContract();
-            o.contractId = contractId;
-            o.contractTypeName = contractTypeName;
-            return o;
+            final var _resultValue = new GetContractsContract();
+            _resultValue.contractId = contractId;
+            _resultValue.contractTypeName = contractTypeName;
+            return _resultValue;
         }
     }
 }

@@ -93,13 +93,13 @@ public final class GetGtmDefaultDatacenterResult {
             return this;
         }
         public GetGtmDefaultDatacenterResult build() {
-            final var o = new GetGtmDefaultDatacenterResult();
-            o.datacenter = datacenter;
-            o.datacenterId = datacenterId;
-            o.domain = domain;
-            o.id = id;
-            o.nickname = nickname;
-            return o;
+            final var _resultValue = new GetGtmDefaultDatacenterResult();
+            _resultValue.datacenter = datacenter;
+            _resultValue.datacenterId = datacenterId;
+            _resultValue.domain = domain;
+            _resultValue.id = id;
+            _resultValue.nickname = nickname;
+            return _resultValue;
         }
     }
 }

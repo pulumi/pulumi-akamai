@@ -4,8 +4,12 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetIamCountries(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIamCountriesResult, error) {
@@ -23,4 +27,49 @@ type GetIamCountriesResult struct {
 	Countries []string `pulumi:"countries"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+}
+
+func GetIamCountriesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetIamCountriesResultOutput {
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamCountriesResult, error) {
+		r, err := GetIamCountries(ctx, opts...)
+		var s GetIamCountriesResult
+		if r != nil {
+			s = *r
+		}
+		return s, err
+	}).(GetIamCountriesResultOutput)
+}
+
+// A collection of values returned by getIamCountries.
+type GetIamCountriesResultOutput struct{ *pulumi.OutputState }
+
+func (GetIamCountriesResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamCountriesResult)(nil)).Elem()
+}
+
+func (o GetIamCountriesResultOutput) ToGetIamCountriesResultOutput() GetIamCountriesResultOutput {
+	return o
+}
+
+func (o GetIamCountriesResultOutput) ToGetIamCountriesResultOutputWithContext(ctx context.Context) GetIamCountriesResultOutput {
+	return o
+}
+
+func (o GetIamCountriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIamCountriesResult] {
+	return pulumix.Output[GetIamCountriesResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetIamCountriesResultOutput) Countries() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIamCountriesResult) []string { return v.Countries }).(pulumi.StringArrayOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetIamCountriesResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamCountriesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetIamCountriesResultOutput{})
 }

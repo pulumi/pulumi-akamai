@@ -69,11 +69,11 @@ public final class GetBotmanTransactionalEndpointProtectionResult {
             return this;
         }
         public GetBotmanTransactionalEndpointProtectionResult build() {
-            final var o = new GetBotmanTransactionalEndpointProtectionResult();
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            return o;
+            final var _resultValue = new GetBotmanTransactionalEndpointProtectionResult();
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            return _resultValue;
         }
     }
 }

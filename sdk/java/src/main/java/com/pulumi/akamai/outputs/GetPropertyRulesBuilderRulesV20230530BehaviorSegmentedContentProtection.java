@@ -302,32 +302,32 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedContent
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedContentProtection build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedContentProtection();
-            o.acl = acl;
-            o.dashMediaEncryption = dashMediaEncryption;
-            o.dataPayload = dataPayload;
-            o.enableTokenInUri = enableTokenInUri;
-            o.enabled = enabled;
-            o.fieldCarryOver = fieldCarryOver;
-            o.headerForSalts = headerForSalts;
-            o.hlsMasterManifestFiles = hlsMasterManifestFiles;
-            o.hlsMediaEncryption = hlsMediaEncryption;
-            o.ip = ip;
-            o.key = key;
-            o.locked = locked;
-            o.mediaEncryptionTitle = mediaEncryptionTitle;
-            o.revokedListId = revokedListId;
-            o.salt = salt;
-            o.sessionId = sessionId;
-            o.templateUuid = templateUuid;
-            o.tokenAuthHlsTitle = tokenAuthHlsTitle;
-            o.tokenAuthenticationTitle = tokenAuthenticationTitle;
-            o.tokenRevocationEnabled = tokenRevocationEnabled;
-            o.tokenRevocationTitle = tokenRevocationTitle;
-            o.transitionKey = transitionKey;
-            o.useAdvanced = useAdvanced;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedContentProtection();
+            _resultValue.acl = acl;
+            _resultValue.dashMediaEncryption = dashMediaEncryption;
+            _resultValue.dataPayload = dataPayload;
+            _resultValue.enableTokenInUri = enableTokenInUri;
+            _resultValue.enabled = enabled;
+            _resultValue.fieldCarryOver = fieldCarryOver;
+            _resultValue.headerForSalts = headerForSalts;
+            _resultValue.hlsMasterManifestFiles = hlsMasterManifestFiles;
+            _resultValue.hlsMediaEncryption = hlsMediaEncryption;
+            _resultValue.ip = ip;
+            _resultValue.key = key;
+            _resultValue.locked = locked;
+            _resultValue.mediaEncryptionTitle = mediaEncryptionTitle;
+            _resultValue.revokedListId = revokedListId;
+            _resultValue.salt = salt;
+            _resultValue.sessionId = sessionId;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.tokenAuthHlsTitle = tokenAuthHlsTitle;
+            _resultValue.tokenAuthenticationTitle = tokenAuthenticationTitle;
+            _resultValue.tokenRevocationEnabled = tokenRevocationEnabled;
+            _resultValue.tokenRevocationTitle = tokenRevocationTitle;
+            _resultValue.transitionKey = transitionKey;
+            _resultValue.useAdvanced = useAdvanced;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

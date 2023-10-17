@@ -95,13 +95,13 @@ public final class GetPropertyIncludeParentsResult {
             return parents(List.of(parents));
         }
         public GetPropertyIncludeParentsResult build() {
-            final var o = new GetPropertyIncludeParentsResult();
-            o.contractId = contractId;
-            o.groupId = groupId;
-            o.id = id;
-            o.includeId = includeId;
-            o.parents = parents;
-            return o;
+            final var _resultValue = new GetPropertyIncludeParentsResult();
+            _resultValue.contractId = contractId;
+            _resultValue.groupId = groupId;
+            _resultValue.id = id;
+            _resultValue.includeId = includeId;
+            _resultValue.parents = parents;
+            return _resultValue;
         }
     }
 }

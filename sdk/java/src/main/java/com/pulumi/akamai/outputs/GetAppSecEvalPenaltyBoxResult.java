@@ -103,14 +103,14 @@ public final class GetAppSecEvalPenaltyBoxResult {
             return this;
         }
         public GetAppSecEvalPenaltyBoxResult build() {
-            final var o = new GetAppSecEvalPenaltyBoxResult();
-            o.action = action;
-            o.configId = configId;
-            o.enabled = enabled;
-            o.id = id;
-            o.outputText = outputText;
-            o.securityPolicyId = securityPolicyId;
-            return o;
+            final var _resultValue = new GetAppSecEvalPenaltyBoxResult();
+            _resultValue.action = action;
+            _resultValue.configId = configId;
+            _resultValue.enabled = enabled;
+            _resultValue.id = id;
+            _resultValue.outputText = outputText;
+            _resultValue.securityPolicyId = securityPolicyId;
+            return _resultValue;
         }
     }
 }

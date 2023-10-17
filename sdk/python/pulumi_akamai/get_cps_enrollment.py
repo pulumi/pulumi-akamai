@@ -22,7 +22,7 @@ class GetCPSEnrollmentResult:
     """
     A collection of values returned by getCPSEnrollment.
     """
-    def __init__(__self__, admin_contacts=None, certificate_chain_type=None, certificate_type=None, common_name=None, contract_id=None, csrs=None, dns_challenges=None, enable_multi_stacked_certificates=None, enrollment_id=None, http_challenges=None, id=None, network_configurations=None, organizations=None, registration_authority=None, sans=None, secure_network=None, signature_algorithm=None, sni_only=None, tech_contacts=None, validation_type=None):
+    def __init__(__self__, admin_contacts=None, certificate_chain_type=None, certificate_type=None, common_name=None, contract_id=None, csrs=None, dns_challenges=None, enable_multi_stacked_certificates=None, enrollment_id=None, http_challenges=None, id=None, network_configurations=None, organizations=None, pending_changes=None, registration_authority=None, sans=None, secure_network=None, signature_algorithm=None, sni_only=None, tech_contacts=None, validation_type=None):
         if admin_contacts and not isinstance(admin_contacts, list):
             raise TypeError("Expected argument 'admin_contacts' to be a list")
         pulumi.set(__self__, "admin_contacts", admin_contacts)
@@ -62,6 +62,9 @@ class GetCPSEnrollmentResult:
         if organizations and not isinstance(organizations, list):
             raise TypeError("Expected argument 'organizations' to be a list")
         pulumi.set(__self__, "organizations", organizations)
+        if pending_changes and not isinstance(pending_changes, bool):
+            raise TypeError("Expected argument 'pending_changes' to be a bool")
+        pulumi.set(__self__, "pending_changes", pending_changes)
         if registration_authority and not isinstance(registration_authority, str):
             raise TypeError("Expected argument 'registration_authority' to be a str")
         pulumi.set(__self__, "registration_authority", registration_authority)
@@ -153,6 +156,11 @@ class GetCPSEnrollmentResult:
         return pulumi.get(self, "organizations")
 
     @property
+    @pulumi.getter(name="pendingChanges")
+    def pending_changes(self) -> bool:
+        return pulumi.get(self, "pending_changes")
+
+    @property
     @pulumi.getter(name="registrationAuthority")
     def registration_authority(self) -> str:
         return pulumi.get(self, "registration_authority")
@@ -207,6 +215,7 @@ class AwaitableGetCPSEnrollmentResult(GetCPSEnrollmentResult):
             id=self.id,
             network_configurations=self.network_configurations,
             organizations=self.organizations,
+            pending_changes=self.pending_changes,
             registration_authority=self.registration_authority,
             sans=self.sans,
             secure_network=self.secure_network,
@@ -240,6 +249,7 @@ def get_cps_enrollment(enrollment_id: Optional[int] = None,
         id=pulumi.get(__ret__, 'id'),
         network_configurations=pulumi.get(__ret__, 'network_configurations'),
         organizations=pulumi.get(__ret__, 'organizations'),
+        pending_changes=pulumi.get(__ret__, 'pending_changes'),
         registration_authority=pulumi.get(__ret__, 'registration_authority'),
         sans=pulumi.get(__ret__, 'sans'),
         secure_network=pulumi.get(__ret__, 'secure_network'),

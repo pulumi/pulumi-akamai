@@ -4,8 +4,12 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetIamContactTypes(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIamContactTypesResult, error) {
@@ -23,4 +27,49 @@ type GetIamContactTypesResult struct {
 	ContactTypes []string `pulumi:"contactTypes"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+}
+
+func GetIamContactTypesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetIamContactTypesResultOutput {
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamContactTypesResult, error) {
+		r, err := GetIamContactTypes(ctx, opts...)
+		var s GetIamContactTypesResult
+		if r != nil {
+			s = *r
+		}
+		return s, err
+	}).(GetIamContactTypesResultOutput)
+}
+
+// A collection of values returned by getIamContactTypes.
+type GetIamContactTypesResultOutput struct{ *pulumi.OutputState }
+
+func (GetIamContactTypesResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamContactTypesResult)(nil)).Elem()
+}
+
+func (o GetIamContactTypesResultOutput) ToGetIamContactTypesResultOutput() GetIamContactTypesResultOutput {
+	return o
+}
+
+func (o GetIamContactTypesResultOutput) ToGetIamContactTypesResultOutputWithContext(ctx context.Context) GetIamContactTypesResultOutput {
+	return o
+}
+
+func (o GetIamContactTypesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIamContactTypesResult] {
+	return pulumix.Output[GetIamContactTypesResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetIamContactTypesResultOutput) ContactTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIamContactTypesResult) []string { return v.ContactTypes }).(pulumi.StringArrayOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetIamContactTypesResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamContactTypesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetIamContactTypesResultOutput{})
 }

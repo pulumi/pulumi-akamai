@@ -85,13 +85,13 @@ public final class DatastreamDeliveryConfiguration {
             return this;
         }
         public DatastreamDeliveryConfiguration build() {
-            final var o = new DatastreamDeliveryConfiguration();
-            o.fieldDelimiter = fieldDelimiter;
-            o.format = format;
-            o.frequency = frequency;
-            o.uploadFilePrefix = uploadFilePrefix;
-            o.uploadFileSuffix = uploadFileSuffix;
-            return o;
+            final var _resultValue = new DatastreamDeliveryConfiguration();
+            _resultValue.fieldDelimiter = fieldDelimiter;
+            _resultValue.format = format;
+            _resultValue.frequency = frequency;
+            _resultValue.uploadFilePrefix = uploadFilePrefix;
+            _resultValue.uploadFileSuffix = uploadFileSuffix;
+            return _resultValue;
         }
     }
 }

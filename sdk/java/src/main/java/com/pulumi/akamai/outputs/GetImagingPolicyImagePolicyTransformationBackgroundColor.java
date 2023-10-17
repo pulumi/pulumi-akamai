@@ -51,10 +51,10 @@ public final class GetImagingPolicyImagePolicyTransformationBackgroundColor {
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationBackgroundColor build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationBackgroundColor();
-            o.color = color;
-            o.colorVar = colorVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationBackgroundColor();
+            _resultValue.color = color;
+            _resultValue.colorVar = colorVar;
+            return _resultValue;
         }
     }
 }

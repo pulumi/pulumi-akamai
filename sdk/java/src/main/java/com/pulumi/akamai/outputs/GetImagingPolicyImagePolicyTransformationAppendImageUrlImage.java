@@ -63,11 +63,11 @@ public final class GetImagingPolicyImagePolicyTransformationAppendImageUrlImage 
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationAppendImageUrlImage build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationAppendImageUrlImage();
-            o.transformation = transformation;
-            o.url = url;
-            o.urlVar = urlVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationAppendImageUrlImage();
+            _resultValue.transformation = transformation;
+            _resultValue.url = url;
+            _resultValue.urlVar = urlVar;
+            return _resultValue;
         }
     }
 }

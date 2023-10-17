@@ -142,17 +142,17 @@ public final class GetAppSecSelectableHostnamesResult {
             return this;
         }
         public GetAppSecSelectableHostnamesResult build() {
-            final var o = new GetAppSecSelectableHostnamesResult();
-            o.activeInProduction = activeInProduction;
-            o.activeInStaging = activeInStaging;
-            o.configId = configId;
-            o.contractid = contractid;
-            o.groupid = groupid;
-            o.hostnames = hostnames;
-            o.hostnamesJson = hostnamesJson;
-            o.id = id;
-            o.outputText = outputText;
-            return o;
+            final var _resultValue = new GetAppSecSelectableHostnamesResult();
+            _resultValue.activeInProduction = activeInProduction;
+            _resultValue.activeInStaging = activeInStaging;
+            _resultValue.configId = configId;
+            _resultValue.contractid = contractid;
+            _resultValue.groupid = groupid;
+            _resultValue.hostnames = hostnames;
+            _resultValue.hostnamesJson = hostnamesJson;
+            _resultValue.id = id;
+            _resultValue.outputText = outputText;
+            return _resultValue;
         }
     }
 }

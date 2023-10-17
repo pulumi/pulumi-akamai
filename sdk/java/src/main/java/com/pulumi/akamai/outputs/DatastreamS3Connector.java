@@ -107,15 +107,15 @@ public final class DatastreamS3Connector {
             return this;
         }
         public DatastreamS3Connector build() {
-            final var o = new DatastreamS3Connector();
-            o.accessKey = accessKey;
-            o.bucket = bucket;
-            o.compressLogs = compressLogs;
-            o.displayName = displayName;
-            o.path = path;
-            o.region = region;
-            o.secretAccessKey = secretAccessKey;
-            return o;
+            final var _resultValue = new DatastreamS3Connector();
+            _resultValue.accessKey = accessKey;
+            _resultValue.bucket = bucket;
+            _resultValue.compressLogs = compressLogs;
+            _resultValue.displayName = displayName;
+            _resultValue.path = path;
+            _resultValue.region = region;
+            _resultValue.secretAccessKey = secretAccessKey;
+            return _resultValue;
         }
     }
 }

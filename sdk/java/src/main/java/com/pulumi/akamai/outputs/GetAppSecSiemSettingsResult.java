@@ -80,12 +80,12 @@ public final class GetAppSecSiemSettingsResult {
             return this;
         }
         public GetAppSecSiemSettingsResult build() {
-            final var o = new GetAppSecSiemSettingsResult();
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            o.outputText = outputText;
-            return o;
+            final var _resultValue = new GetAppSecSiemSettingsResult();
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.outputText = outputText;
+            return _resultValue;
         }
     }
 }

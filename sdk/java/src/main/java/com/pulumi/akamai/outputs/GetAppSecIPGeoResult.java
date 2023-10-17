@@ -145,17 +145,17 @@ public final class GetAppSecIPGeoResult {
             return this;
         }
         public GetAppSecIPGeoResult build() {
-            final var o = new GetAppSecIPGeoResult();
-            o.configId = configId;
-            o.exceptionIpNetworkLists = exceptionIpNetworkLists;
-            o.geoNetworkLists = geoNetworkLists;
-            o.id = id;
-            o.ipNetworkLists = ipNetworkLists;
-            o.mode = mode;
-            o.outputText = outputText;
-            o.securityPolicyId = securityPolicyId;
-            o.ukraineGeoControlAction = ukraineGeoControlAction;
-            return o;
+            final var _resultValue = new GetAppSecIPGeoResult();
+            _resultValue.configId = configId;
+            _resultValue.exceptionIpNetworkLists = exceptionIpNetworkLists;
+            _resultValue.geoNetworkLists = geoNetworkLists;
+            _resultValue.id = id;
+            _resultValue.ipNetworkLists = ipNetworkLists;
+            _resultValue.mode = mode;
+            _resultValue.outputText = outputText;
+            _resultValue.securityPolicyId = securityPolicyId;
+            _resultValue.ukraineGeoControlAction = ukraineGeoControlAction;
+            return _resultValue;
         }
     }
 }

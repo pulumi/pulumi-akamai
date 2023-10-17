@@ -39,7 +39,13 @@ class EdgekvGroupItemsArgs:
              items: pulumi.Input[Mapping[str, pulumi.Input[str]]],
              namespace_name: pulumi.Input[str],
              network: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'groupName' in kwargs:
+            group_name = kwargs['groupName']
+        if 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+
         _setter("group_name", group_name)
         _setter("items", items)
         _setter("namespace_name", namespace_name)
@@ -122,7 +128,13 @@ class _EdgekvGroupItemsState:
              items: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
              namespace_name: Optional[pulumi.Input[str]] = None,
              network: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'groupName' in kwargs:
+            group_name = kwargs['groupName']
+        if 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+
         if group_name is not None:
             _setter("group_name", group_name)
         if items is not None:

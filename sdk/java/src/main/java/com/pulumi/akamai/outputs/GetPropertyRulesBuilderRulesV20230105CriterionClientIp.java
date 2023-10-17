@@ -100,14 +100,14 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionClientIp {
             return values(List.of(values));
         }
         public GetPropertyRulesBuilderRulesV20230105CriterionClientIp build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105CriterionClientIp();
-            o.locked = locked;
-            o.matchOperator = matchOperator;
-            o.templateUuid = templateUuid;
-            o.useHeaders = useHeaders;
-            o.uuid = uuid;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105CriterionClientIp();
+            _resultValue.locked = locked;
+            _resultValue.matchOperator = matchOperator;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.useHeaders = useHeaders;
+            _resultValue.uuid = uuid;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

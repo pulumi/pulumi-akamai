@@ -29,7 +29,13 @@ class BotmanChallengeActionArgs:
              _setter: Callable[[Any, Any], None],
              challenge_action: pulumi.Input[str],
              config_id: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'challengeAction' in kwargs:
+            challenge_action = kwargs['challengeAction']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+
         _setter("challenge_action", challenge_action)
         _setter("config_id", config_id)
 
@@ -73,7 +79,15 @@ class _BotmanChallengeActionState:
              action_id: Optional[pulumi.Input[str]] = None,
              challenge_action: Optional[pulumi.Input[str]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionId' in kwargs:
+            action_id = kwargs['actionId']
+        if 'challengeAction' in kwargs:
+            challenge_action = kwargs['challengeAction']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+
         if action_id is not None:
             _setter("action_id", action_id)
         if challenge_action is not None:

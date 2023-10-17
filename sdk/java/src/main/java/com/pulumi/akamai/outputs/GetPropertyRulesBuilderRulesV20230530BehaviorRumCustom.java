@@ -86,13 +86,13 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorRumCustom {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorRumCustom build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorRumCustom();
-            o.locked = locked;
-            o.rumGroupName = rumGroupName;
-            o.rumSampleRate = rumSampleRate;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorRumCustom();
+            _resultValue.locked = locked;
+            _resultValue.rumGroupName = rumGroupName;
+            _resultValue.rumSampleRate = rumSampleRate;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

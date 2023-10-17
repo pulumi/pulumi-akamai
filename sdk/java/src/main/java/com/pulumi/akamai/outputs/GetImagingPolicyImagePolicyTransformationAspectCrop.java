@@ -139,18 +139,18 @@ public final class GetImagingPolicyImagePolicyTransformationAspectCrop {
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationAspectCrop build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationAspectCrop();
-            o.allowExpansion = allowExpansion;
-            o.allowExpansionVar = allowExpansionVar;
-            o.height = height;
-            o.heightVar = heightVar;
-            o.width = width;
-            o.widthVar = widthVar;
-            o.xPosition = xPosition;
-            o.xPositionVar = xPositionVar;
-            o.yPosition = yPosition;
-            o.yPositionVar = yPositionVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationAspectCrop();
+            _resultValue.allowExpansion = allowExpansion;
+            _resultValue.allowExpansionVar = allowExpansionVar;
+            _resultValue.height = height;
+            _resultValue.heightVar = heightVar;
+            _resultValue.width = width;
+            _resultValue.widthVar = widthVar;
+            _resultValue.xPosition = xPosition;
+            _resultValue.xPositionVar = xPositionVar;
+            _resultValue.yPosition = yPosition;
+            _resultValue.yPositionVar = yPositionVar;
+            return _resultValue;
         }
     }
 }

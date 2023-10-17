@@ -118,16 +118,16 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributi
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionAdvanced build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionAdvanced();
-            o.allowall = allowall;
-            o.enabled = enabled;
-            o.locked = locked;
-            o.method = method;
-            o.policy = policy;
-            o.templateUuid = templateUuid;
-            o.tieredDistributionMap = tieredDistributionMap;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionAdvanced();
+            _resultValue.allowall = allowall;
+            _resultValue.enabled = enabled;
+            _resultValue.locked = locked;
+            _resultValue.method = method;
+            _resultValue.policy = policy;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.tieredDistributionMap = tieredDistributionMap;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

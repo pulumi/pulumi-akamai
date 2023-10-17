@@ -4,8 +4,12 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetIamTimezones(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIamTimezonesResult, error) {
@@ -23,4 +27,49 @@ type GetIamTimezonesResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id        string                    `pulumi:"id"`
 	Timezones []GetIamTimezonesTimezone `pulumi:"timezones"`
+}
+
+func GetIamTimezonesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetIamTimezonesResultOutput {
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamTimezonesResult, error) {
+		r, err := GetIamTimezones(ctx, opts...)
+		var s GetIamTimezonesResult
+		if r != nil {
+			s = *r
+		}
+		return s, err
+	}).(GetIamTimezonesResultOutput)
+}
+
+// A collection of values returned by getIamTimezones.
+type GetIamTimezonesResultOutput struct{ *pulumi.OutputState }
+
+func (GetIamTimezonesResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamTimezonesResult)(nil)).Elem()
+}
+
+func (o GetIamTimezonesResultOutput) ToGetIamTimezonesResultOutput() GetIamTimezonesResultOutput {
+	return o
+}
+
+func (o GetIamTimezonesResultOutput) ToGetIamTimezonesResultOutputWithContext(ctx context.Context) GetIamTimezonesResultOutput {
+	return o
+}
+
+func (o GetIamTimezonesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIamTimezonesResult] {
+	return pulumix.Output[GetIamTimezonesResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetIamTimezonesResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamTimezonesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetIamTimezonesResultOutput) Timezones() GetIamTimezonesTimezoneArrayOutput {
+	return o.ApplyT(func(v GetIamTimezonesResult) []GetIamTimezonesTimezone { return v.Timezones }).(GetIamTimezonesTimezoneArrayOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetIamTimezonesResultOutput{})
 }

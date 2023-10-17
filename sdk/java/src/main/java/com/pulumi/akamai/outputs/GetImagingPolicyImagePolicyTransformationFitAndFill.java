@@ -85,13 +85,13 @@ public final class GetImagingPolicyImagePolicyTransformationFitAndFill {
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationFitAndFill build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationFitAndFill();
-            o.fillTransformation = fillTransformation;
-            o.height = height;
-            o.heightVar = heightVar;
-            o.width = width;
-            o.widthVar = widthVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationFitAndFill();
+            _resultValue.fillTransformation = fillTransformation;
+            _resultValue.height = height;
+            _resultValue.heightVar = heightVar;
+            _resultValue.width = width;
+            _resultValue.widthVar = widthVar;
+            return _resultValue;
         }
     }
 }

@@ -185,22 +185,22 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorStandardTlsMigra
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorStandardTlsMigration build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorStandardTlsMigration();
-            o.allowHttpsDowngrade = allowHttpsDowngrade;
-            o.allowHttpsUpgrade = allowHttpsUpgrade;
-            o.cacheSharingDuration = cacheSharingDuration;
-            o.cacheSharingStartTime = cacheSharingStartTime;
-            o.enabled = enabled;
-            o.isCertificateSniOnly = isCertificateSniOnly;
-            o.isTieredDistributionUsed = isTieredDistributionUsed;
-            o.locked = locked;
-            o.migrationDuration = migrationDuration;
-            o.migrationFrom = migrationFrom;
-            o.migrationStartTime = migrationStartTime;
-            o.tdLocation = tdLocation;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorStandardTlsMigration();
+            _resultValue.allowHttpsDowngrade = allowHttpsDowngrade;
+            _resultValue.allowHttpsUpgrade = allowHttpsUpgrade;
+            _resultValue.cacheSharingDuration = cacheSharingDuration;
+            _resultValue.cacheSharingStartTime = cacheSharingStartTime;
+            _resultValue.enabled = enabled;
+            _resultValue.isCertificateSniOnly = isCertificateSniOnly;
+            _resultValue.isTieredDistributionUsed = isTieredDistributionUsed;
+            _resultValue.locked = locked;
+            _resultValue.migrationDuration = migrationDuration;
+            _resultValue.migrationFrom = migrationFrom;
+            _resultValue.migrationStartTime = migrationStartTime;
+            _resultValue.tdLocation = tdLocation;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

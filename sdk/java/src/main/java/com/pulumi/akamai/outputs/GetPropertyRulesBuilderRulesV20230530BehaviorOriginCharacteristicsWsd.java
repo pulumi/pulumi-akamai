@@ -74,12 +74,12 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteri
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteristicsWsd build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteristicsWsd();
-            o.locked = locked;
-            o.origintype = origintype;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteristicsWsd();
+            _resultValue.locked = locked;
+            _resultValue.origintype = origintype;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

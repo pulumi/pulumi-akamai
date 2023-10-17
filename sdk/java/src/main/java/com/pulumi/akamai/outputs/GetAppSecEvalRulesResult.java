@@ -126,16 +126,16 @@ public final class GetAppSecEvalRulesResult {
             return this;
         }
         public GetAppSecEvalRulesResult build() {
-            final var o = new GetAppSecEvalRulesResult();
-            o.conditionException = conditionException;
-            o.configId = configId;
-            o.evalRuleAction = evalRuleAction;
-            o.id = id;
-            o.json = json;
-            o.outputText = outputText;
-            o.ruleId = ruleId;
-            o.securityPolicyId = securityPolicyId;
-            return o;
+            final var _resultValue = new GetAppSecEvalRulesResult();
+            _resultValue.conditionException = conditionException;
+            _resultValue.configId = configId;
+            _resultValue.evalRuleAction = evalRuleAction;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.outputText = outputText;
+            _resultValue.ruleId = ruleId;
+            _resultValue.securityPolicyId = securityPolicyId;
+            return _resultValue;
         }
     }
 }

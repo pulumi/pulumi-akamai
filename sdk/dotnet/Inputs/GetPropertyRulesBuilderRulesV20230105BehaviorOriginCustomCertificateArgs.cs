@@ -12,11 +12,61 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateInputArgs : global::Pulumi.ResourceArgs
     {
+        [Input("canBeCa")]
+        public Input<bool>? CanBeCa { get; set; }
+
+        [Input("canBeLeaf")]
+        public Input<bool>? CanBeLeaf { get; set; }
+
+        [Input("issuerRdns")]
+        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateIssuerRdnsInputArgs>? IssuerRdns { get; set; }
+
+        [Input("notAfter")]
+        public Input<int>? NotAfter { get; set; }
+
+        [Input("notBefore")]
+        public Input<int>? NotBefore { get; set; }
+
         [Input("pemEncodedCert")]
         public Input<string>? PemEncodedCert { get; set; }
 
+        [Input("publicKey")]
+        public Input<string>? PublicKey { get; set; }
+
+        [Input("publicKeyAlgorithm")]
+        public Input<string>? PublicKeyAlgorithm { get; set; }
+
+        [Input("publicKeyFormat")]
+        public Input<string>? PublicKeyFormat { get; set; }
+
+        [Input("selfSigned")]
+        public Input<bool>? SelfSigned { get; set; }
+
+        [Input("serialNumber")]
+        public Input<string>? SerialNumber { get; set; }
+
         [Input("sha1Fingerprint")]
         public Input<string>? Sha1Fingerprint { get; set; }
+
+        [Input("sigAlgName")]
+        public Input<string>? SigAlgName { get; set; }
+
+        [Input("subjectAlternativeNames")]
+        private InputList<string>? _subjectAlternativeNames;
+        public InputList<string> SubjectAlternativeNames
+        {
+            get => _subjectAlternativeNames ?? (_subjectAlternativeNames = new InputList<string>());
+            set => _subjectAlternativeNames = value;
+        }
+
+        [Input("subjectCn")]
+        public Input<string>? SubjectCn { get; set; }
+
+        [Input("subjectRdns")]
+        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateSubjectRdnsInputArgs>? SubjectRdns { get; set; }
+
+        [Input("version")]
+        public Input<int>? Version { get; set; }
 
         public GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateInputArgs()
         {

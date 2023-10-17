@@ -40,7 +40,19 @@ class Config(dict):
              host: str,
              account_key: Optional[str] = None,
              max_body: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessToken' in kwargs:
+            access_token = kwargs['accessToken']
+        if 'clientSecret' in kwargs:
+            client_secret = kwargs['clientSecret']
+        if 'clientToken' in kwargs:
+            client_token = kwargs['clientToken']
+        if 'accountKey' in kwargs:
+            account_key = kwargs['accountKey']
+        if 'maxBody' in kwargs:
+            max_body = kwargs['maxBody']
+
         _setter("access_token", access_token)
         _setter("client_secret", client_secret)
         _setter("client_token", client_token)

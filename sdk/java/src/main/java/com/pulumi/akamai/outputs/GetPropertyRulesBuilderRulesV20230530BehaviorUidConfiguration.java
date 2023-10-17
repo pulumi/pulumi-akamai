@@ -129,17 +129,17 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorUidConfiguration
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorUidConfiguration build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorUidConfiguration();
-            o.enabled = enabled;
-            o.extractLocation = extractLocation;
-            o.headerName = headerName;
-            o.legalText = legalText;
-            o.locked = locked;
-            o.queryParameterName = queryParameterName;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            o.variableName = variableName;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorUidConfiguration();
+            _resultValue.enabled = enabled;
+            _resultValue.extractLocation = extractLocation;
+            _resultValue.headerName = headerName;
+            _resultValue.legalText = legalText;
+            _resultValue.locked = locked;
+            _resultValue.queryParameterName = queryParameterName;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            _resultValue.variableName = variableName;
+            return _resultValue;
         }
     }
 }

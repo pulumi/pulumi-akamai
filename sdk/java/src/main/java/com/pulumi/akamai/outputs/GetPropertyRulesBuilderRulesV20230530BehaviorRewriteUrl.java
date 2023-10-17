@@ -162,20 +162,20 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorRewriteUrl {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorRewriteUrl build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorRewriteUrl();
-            o.behavior = behavior;
-            o.keepQueryString = keepQueryString;
-            o.locked = locked;
-            o.match = match;
-            o.matchMultiple = matchMultiple;
-            o.matchRegex = matchRegex;
-            o.targetPath = targetPath;
-            o.targetPathPrepend = targetPathPrepend;
-            o.targetRegex = targetRegex;
-            o.targetUrl = targetUrl;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorRewriteUrl();
+            _resultValue.behavior = behavior;
+            _resultValue.keepQueryString = keepQueryString;
+            _resultValue.locked = locked;
+            _resultValue.match = match;
+            _resultValue.matchMultiple = matchMultiple;
+            _resultValue.matchRegex = matchRegex;
+            _resultValue.targetPath = targetPath;
+            _resultValue.targetPathPrepend = targetPathPrepend;
+            _resultValue.targetRegex = targetRegex;
+            _resultValue.targetUrl = targetUrl;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

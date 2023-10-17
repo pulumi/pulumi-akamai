@@ -96,14 +96,14 @@ public final class DatastreamAzureConnector {
             return this;
         }
         public DatastreamAzureConnector build() {
-            final var o = new DatastreamAzureConnector();
-            o.accessKey = accessKey;
-            o.accountName = accountName;
-            o.compressLogs = compressLogs;
-            o.containerName = containerName;
-            o.displayName = displayName;
-            o.path = path;
-            return o;
+            final var _resultValue = new DatastreamAzureConnector();
+            _resultValue.accessKey = accessKey;
+            _resultValue.accountName = accountName;
+            _resultValue.compressLogs = compressLogs;
+            _resultValue.containerName = containerName;
+            _resultValue.displayName = displayName;
+            _resultValue.path = path;
+            return _resultValue;
         }
     }
 }

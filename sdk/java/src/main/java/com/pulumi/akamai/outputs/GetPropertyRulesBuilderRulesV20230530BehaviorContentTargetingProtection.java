@@ -324,33 +324,33 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorContentTargeting
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorContentTargetingProtection build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorContentTargetingProtection();
-            o.countries = countries;
-            o.dmas = dmas;
-            o.enableGeoProtection = enableGeoProtection;
-            o.enableGeoRedirectOnDeny = enableGeoRedirectOnDeny;
-            o.enableIpProtection = enableIpProtection;
-            o.enableIpRedirectOnDeny = enableIpRedirectOnDeny;
-            o.enableReferrerProtection = enableReferrerProtection;
-            o.enableReferrerRedirectOnDeny = enableReferrerRedirectOnDeny;
-            o.enabled = enabled;
-            o.geoProtectionMode = geoProtectionMode;
-            o.geoProtectionTitle = geoProtectionTitle;
-            o.geoRedirectUrl = geoRedirectUrl;
-            o.ipAddresses = ipAddresses;
-            o.ipProtectionMode = ipProtectionMode;
-            o.ipProtectionTitle = ipProtectionTitle;
-            o.ipRedirectUrl = ipRedirectUrl;
-            o.locked = locked;
-            o.overrideIpAddresses = overrideIpAddresses;
-            o.referrerDomains = referrerDomains;
-            o.referrerProtectionMode = referrerProtectionMode;
-            o.referrerProtectionTitle = referrerProtectionTitle;
-            o.referrerRedirectUrl = referrerRedirectUrl;
-            o.regions = regions;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorContentTargetingProtection();
+            _resultValue.countries = countries;
+            _resultValue.dmas = dmas;
+            _resultValue.enableGeoProtection = enableGeoProtection;
+            _resultValue.enableGeoRedirectOnDeny = enableGeoRedirectOnDeny;
+            _resultValue.enableIpProtection = enableIpProtection;
+            _resultValue.enableIpRedirectOnDeny = enableIpRedirectOnDeny;
+            _resultValue.enableReferrerProtection = enableReferrerProtection;
+            _resultValue.enableReferrerRedirectOnDeny = enableReferrerRedirectOnDeny;
+            _resultValue.enabled = enabled;
+            _resultValue.geoProtectionMode = geoProtectionMode;
+            _resultValue.geoProtectionTitle = geoProtectionTitle;
+            _resultValue.geoRedirectUrl = geoRedirectUrl;
+            _resultValue.ipAddresses = ipAddresses;
+            _resultValue.ipProtectionMode = ipProtectionMode;
+            _resultValue.ipProtectionTitle = ipProtectionTitle;
+            _resultValue.ipRedirectUrl = ipRedirectUrl;
+            _resultValue.locked = locked;
+            _resultValue.overrideIpAddresses = overrideIpAddresses;
+            _resultValue.referrerDomains = referrerDomains;
+            _resultValue.referrerProtectionMode = referrerProtectionMode;
+            _resultValue.referrerProtectionTitle = referrerProtectionTitle;
+            _resultValue.referrerRedirectUrl = referrerRedirectUrl;
+            _resultValue.regions = regions;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

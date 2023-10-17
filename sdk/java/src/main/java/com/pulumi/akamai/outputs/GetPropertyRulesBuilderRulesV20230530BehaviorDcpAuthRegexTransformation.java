@@ -74,12 +74,12 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDcpAuthRegexTran
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorDcpAuthRegexTransformation build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorDcpAuthRegexTransformation();
-            o.locked = locked;
-            o.regexPattern = regexPattern;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorDcpAuthRegexTransformation();
+            _resultValue.locked = locked;
+            _resultValue.regexPattern = regexPattern;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

@@ -4,8 +4,12 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetPropertyRuleFormats(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetPropertyRuleFormatsResult, error) {
@@ -23,4 +27,49 @@ type GetPropertyRuleFormatsResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id          string   `pulumi:"id"`
 	RuleFormats []string `pulumi:"ruleFormats"`
+}
+
+func GetPropertyRuleFormatsOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetPropertyRuleFormatsResultOutput {
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetPropertyRuleFormatsResult, error) {
+		r, err := GetPropertyRuleFormats(ctx, opts...)
+		var s GetPropertyRuleFormatsResult
+		if r != nil {
+			s = *r
+		}
+		return s, err
+	}).(GetPropertyRuleFormatsResultOutput)
+}
+
+// A collection of values returned by getPropertyRuleFormats.
+type GetPropertyRuleFormatsResultOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyRuleFormatsResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyRuleFormatsResult)(nil)).Elem()
+}
+
+func (o GetPropertyRuleFormatsResultOutput) ToGetPropertyRuleFormatsResultOutput() GetPropertyRuleFormatsResultOutput {
+	return o
+}
+
+func (o GetPropertyRuleFormatsResultOutput) ToGetPropertyRuleFormatsResultOutputWithContext(ctx context.Context) GetPropertyRuleFormatsResultOutput {
+	return o
+}
+
+func (o GetPropertyRuleFormatsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPropertyRuleFormatsResult] {
+	return pulumix.Output[GetPropertyRuleFormatsResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetPropertyRuleFormatsResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyRuleFormatsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetPropertyRuleFormatsResultOutput) RuleFormats() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPropertyRuleFormatsResult) []string { return v.RuleFormats }).(pulumi.StringArrayOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetPropertyRuleFormatsResultOutput{})
 }

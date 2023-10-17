@@ -156,19 +156,19 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorG2oheader {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorG2oheader build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorG2oheader();
-            o.customSignStrings = customSignStrings;
-            o.dataHeader = dataHeader;
-            o.enabled = enabled;
-            o.encodingVersion = encodingVersion;
-            o.locked = locked;
-            o.nonce = nonce;
-            o.secretKey = secretKey;
-            o.signedHeader = signedHeader;
-            o.templateUuid = templateUuid;
-            o.useCustomSignString = useCustomSignString;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorG2oheader();
+            _resultValue.customSignStrings = customSignStrings;
+            _resultValue.dataHeader = dataHeader;
+            _resultValue.enabled = enabled;
+            _resultValue.encodingVersion = encodingVersion;
+            _resultValue.locked = locked;
+            _resultValue.nonce = nonce;
+            _resultValue.secretKey = secretKey;
+            _resultValue.signedHeader = signedHeader;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.useCustomSignString = useCustomSignString;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

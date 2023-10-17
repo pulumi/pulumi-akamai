@@ -85,13 +85,13 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionVisitorPrioriti
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105CriterionVisitorPrioritizationRequest build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105CriterionVisitorPrioritizationRequest();
-            o.locked = locked;
-            o.matchOn = matchOn;
-            o.matchOperator = matchOperator;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105CriterionVisitorPrioritizationRequest();
+            _resultValue.locked = locked;
+            _resultValue.matchOn = matchOn;
+            _resultValue.matchOperator = matchOperator;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

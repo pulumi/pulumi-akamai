@@ -75,11 +75,11 @@ public final class GetDatastreamDatasetFieldsResult {
             return this;
         }
         public GetDatastreamDatasetFieldsResult build() {
-            final var o = new GetDatastreamDatasetFieldsResult();
-            o.datasetFields = datasetFields;
-            o.id = id;
-            o.productId = productId;
-            return o;
+            final var _resultValue = new GetDatastreamDatasetFieldsResult();
+            _resultValue.datasetFields = datasetFields;
+            _resultValue.id = id;
+            _resultValue.productId = productId;
+            return _resultValue;
         }
     }
 }

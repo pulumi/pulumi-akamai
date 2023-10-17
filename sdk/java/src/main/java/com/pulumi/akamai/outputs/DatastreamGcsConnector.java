@@ -107,15 +107,15 @@ public final class DatastreamGcsConnector {
             return this;
         }
         public DatastreamGcsConnector build() {
-            final var o = new DatastreamGcsConnector();
-            o.bucket = bucket;
-            o.compressLogs = compressLogs;
-            o.displayName = displayName;
-            o.path = path;
-            o.privateKey = privateKey;
-            o.projectId = projectId;
-            o.serviceAccountName = serviceAccountName;
-            return o;
+            final var _resultValue = new DatastreamGcsConnector();
+            _resultValue.bucket = bucket;
+            _resultValue.compressLogs = compressLogs;
+            _resultValue.displayName = displayName;
+            _resultValue.path = path;
+            _resultValue.privateKey = privateKey;
+            _resultValue.projectId = projectId;
+            _resultValue.serviceAccountName = serviceAccountName;
+            return _resultValue;
         }
     }
 }

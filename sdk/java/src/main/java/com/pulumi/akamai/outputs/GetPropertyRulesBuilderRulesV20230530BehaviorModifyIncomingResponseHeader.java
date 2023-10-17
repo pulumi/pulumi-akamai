@@ -162,20 +162,20 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorModifyIncomingRe
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorModifyIncomingResponseHeader build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorModifyIncomingResponseHeader();
-            o.action = action;
-            o.avoidDuplicateHeaders = avoidDuplicateHeaders;
-            o.customHeaderName = customHeaderName;
-            o.headerValue = headerValue;
-            o.locked = locked;
-            o.newHeaderValue = newHeaderValue;
-            o.standardAddHeaderName = standardAddHeaderName;
-            o.standardDeleteHeaderName = standardDeleteHeaderName;
-            o.standardModifyHeaderName = standardModifyHeaderName;
-            o.standardPassHeaderName = standardPassHeaderName;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorModifyIncomingResponseHeader();
+            _resultValue.action = action;
+            _resultValue.avoidDuplicateHeaders = avoidDuplicateHeaders;
+            _resultValue.customHeaderName = customHeaderName;
+            _resultValue.headerValue = headerValue;
+            _resultValue.locked = locked;
+            _resultValue.newHeaderValue = newHeaderValue;
+            _resultValue.standardAddHeaderName = standardAddHeaderName;
+            _resultValue.standardDeleteHeaderName = standardDeleteHeaderName;
+            _resultValue.standardModifyHeaderName = standardModifyHeaderName;
+            _resultValue.standardPassHeaderName = standardPassHeaderName;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

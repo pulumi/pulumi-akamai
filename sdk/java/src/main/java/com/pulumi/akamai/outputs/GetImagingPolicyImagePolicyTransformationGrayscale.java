@@ -51,10 +51,10 @@ public final class GetImagingPolicyImagePolicyTransformationGrayscale {
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationGrayscale build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationGrayscale();
-            o.type = type;
-            o.typeVar = typeVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationGrayscale();
+            _resultValue.type = type;
+            _resultValue.typeVar = typeVar;
+            return _resultValue;
         }
     }
 }

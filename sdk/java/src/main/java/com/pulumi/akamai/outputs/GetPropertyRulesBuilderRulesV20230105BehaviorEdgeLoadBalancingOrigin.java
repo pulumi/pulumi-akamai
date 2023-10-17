@@ -129,17 +129,17 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancin
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingOrigin build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingOrigin();
-            o.cookieName = cookieName;
-            o.description = description;
-            o.enableSessionPersistence = enableSessionPersistence;
-            o.hostname = hostname;
-            o.id = id;
-            o.locked = locked;
-            o.sessionPersistenceTitle = sessionPersistenceTitle;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingOrigin();
+            _resultValue.cookieName = cookieName;
+            _resultValue.description = description;
+            _resultValue.enableSessionPersistence = enableSessionPersistence;
+            _resultValue.hostname = hostname;
+            _resultValue.id = id;
+            _resultValue.locked = locked;
+            _resultValue.sessionPersistenceTitle = sessionPersistenceTitle;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

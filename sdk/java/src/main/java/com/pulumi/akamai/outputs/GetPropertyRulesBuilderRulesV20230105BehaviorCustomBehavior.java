@@ -74,12 +74,12 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorCustomBehavior {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorCustomBehavior build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorCustomBehavior();
-            o.behaviorId = behaviorId;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorCustomBehavior();
+            _resultValue.behaviorId = behaviorId;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

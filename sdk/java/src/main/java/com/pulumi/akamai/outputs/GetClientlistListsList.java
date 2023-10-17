@@ -222,25 +222,25 @@ public final class GetClientlistListsList {
             return this;
         }
         public GetClientlistListsList build() {
-            final var o = new GetClientlistListsList();
-            o.createDate = createDate;
-            o.createdBy = createdBy;
-            o.deprecated = deprecated;
-            o.itemsCount = itemsCount;
-            o.listId = listId;
-            o.listType = listType;
-            o.name = name;
-            o.notes = notes;
-            o.productionActivationStatus = productionActivationStatus;
-            o.readOnly = readOnly;
-            o.shared = shared;
-            o.stagingActivationStatus = stagingActivationStatus;
-            o.tags = tags;
-            o.type = type;
-            o.updateDate = updateDate;
-            o.updatedBy = updatedBy;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetClientlistListsList();
+            _resultValue.createDate = createDate;
+            _resultValue.createdBy = createdBy;
+            _resultValue.deprecated = deprecated;
+            _resultValue.itemsCount = itemsCount;
+            _resultValue.listId = listId;
+            _resultValue.listType = listType;
+            _resultValue.name = name;
+            _resultValue.notes = notes;
+            _resultValue.productionActivationStatus = productionActivationStatus;
+            _resultValue.readOnly = readOnly;
+            _resultValue.shared = shared;
+            _resultValue.stagingActivationStatus = stagingActivationStatus;
+            _resultValue.tags = tags;
+            _resultValue.type = type;
+            _resultValue.updateDate = updateDate;
+            _resultValue.updatedBy = updatedBy;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

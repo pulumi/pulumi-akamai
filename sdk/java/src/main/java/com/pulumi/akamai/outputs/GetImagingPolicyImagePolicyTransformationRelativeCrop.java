@@ -117,16 +117,16 @@ public final class GetImagingPolicyImagePolicyTransformationRelativeCrop {
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationRelativeCrop build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationRelativeCrop();
-            o.east = east;
-            o.eastVar = eastVar;
-            o.north = north;
-            o.northVar = northVar;
-            o.south = south;
-            o.southVar = southVar;
-            o.west = west;
-            o.westVar = westVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationRelativeCrop();
+            _resultValue.east = east;
+            _resultValue.eastVar = eastVar;
+            _resultValue.north = north;
+            _resultValue.northVar = northVar;
+            _resultValue.south = south;
+            _resultValue.southVar = southVar;
+            _resultValue.west = west;
+            _resultValue.westVar = westVar;
+            return _resultValue;
         }
     }
 }

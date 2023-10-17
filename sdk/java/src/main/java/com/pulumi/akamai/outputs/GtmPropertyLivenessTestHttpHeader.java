@@ -51,10 +51,10 @@ public final class GtmPropertyLivenessTestHttpHeader {
             return this;
         }
         public GtmPropertyLivenessTestHttpHeader build() {
-            final var o = new GtmPropertyLivenessTestHttpHeader();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GtmPropertyLivenessTestHttpHeader();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

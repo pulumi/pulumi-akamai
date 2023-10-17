@@ -41,7 +41,15 @@ class ProviderArgs:
              config_section: Optional[pulumi.Input[str]] = None,
              edgerc: Optional[pulumi.Input[str]] = None,
              request_limit: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cacheEnabled' in kwargs:
+            cache_enabled = kwargs['cacheEnabled']
+        if 'configSection' in kwargs:
+            config_section = kwargs['configSection']
+        if 'requestLimit' in kwargs:
+            request_limit = kwargs['requestLimit']
+
         if cache_enabled is not None:
             _setter("cache_enabled", cache_enabled)
         if config is not None:

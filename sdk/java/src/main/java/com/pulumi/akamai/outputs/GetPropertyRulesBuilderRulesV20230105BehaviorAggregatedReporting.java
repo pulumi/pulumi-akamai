@@ -141,18 +141,18 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorAggregatedReport
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorAggregatedReporting build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorAggregatedReporting();
-            o.attribute1 = attribute1;
-            o.attribute2 = attribute2;
-            o.attribute3 = attribute3;
-            o.attribute4 = attribute4;
-            o.attributesCount = attributesCount;
-            o.enabled = enabled;
-            o.locked = locked;
-            o.reportName = reportName;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorAggregatedReporting();
+            _resultValue.attribute1 = attribute1;
+            _resultValue.attribute2 = attribute2;
+            _resultValue.attribute3 = attribute3;
+            _resultValue.attribute4 = attribute4;
+            _resultValue.attributesCount = attributesCount;
+            _resultValue.enabled = enabled;
+            _resultValue.locked = locked;
+            _resultValue.reportName = reportName;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

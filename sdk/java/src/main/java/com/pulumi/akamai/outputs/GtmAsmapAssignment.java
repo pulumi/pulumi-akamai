@@ -65,11 +65,11 @@ public final class GtmAsmapAssignment {
             return this;
         }
         public GtmAsmapAssignment build() {
-            final var o = new GtmAsmapAssignment();
-            o.asNumbers = asNumbers;
-            o.datacenterId = datacenterId;
-            o.nickname = nickname;
-            return o;
+            final var _resultValue = new GtmAsmapAssignment();
+            _resultValue.asNumbers = asNumbers;
+            _resultValue.datacenterId = datacenterId;
+            _resultValue.nickname = nickname;
+            return _resultValue;
         }
     }
 }

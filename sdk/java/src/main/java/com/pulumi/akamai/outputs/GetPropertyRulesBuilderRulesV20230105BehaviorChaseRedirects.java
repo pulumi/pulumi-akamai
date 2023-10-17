@@ -96,14 +96,14 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorChaseRedirects {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorChaseRedirects build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorChaseRedirects();
-            o.enabled = enabled;
-            o.limit = limit;
-            o.locked = locked;
-            o.serve404 = serve404;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorChaseRedirects();
+            _resultValue.enabled = enabled;
+            _resultValue.limit = limit;
+            _resultValue.locked = locked;
+            _resultValue.serve404 = serve404;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

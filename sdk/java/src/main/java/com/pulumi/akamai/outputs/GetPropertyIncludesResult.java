@@ -109,14 +109,14 @@ public final class GetPropertyIncludesResult {
             return this;
         }
         public GetPropertyIncludesResult build() {
-            final var o = new GetPropertyIncludesResult();
-            o.contractId = contractId;
-            o.groupId = groupId;
-            o.id = id;
-            o.includes = includes;
-            o.parentProperty = parentProperty;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetPropertyIncludesResult();
+            _resultValue.contractId = contractId;
+            _resultValue.groupId = groupId;
+            _resultValue.id = id;
+            _resultValue.includes = includes;
+            _resultValue.parentProperty = parentProperty;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

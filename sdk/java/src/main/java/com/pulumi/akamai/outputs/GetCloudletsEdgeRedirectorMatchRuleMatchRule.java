@@ -157,19 +157,19 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRule {
             return this;
         }
         public GetCloudletsEdgeRedirectorMatchRuleMatchRule build() {
-            final var o = new GetCloudletsEdgeRedirectorMatchRuleMatchRule();
-            o.disabled = disabled;
-            o.end = end;
-            o.matchUrl = matchUrl;
-            o.matches = matches;
-            o.name = name;
-            o.redirectUrl = redirectUrl;
-            o.start = start;
-            o.statusCode = statusCode;
-            o.type = type;
-            o.useIncomingQueryString = useIncomingQueryString;
-            o.useRelativeUrl = useRelativeUrl;
-            return o;
+            final var _resultValue = new GetCloudletsEdgeRedirectorMatchRuleMatchRule();
+            _resultValue.disabled = disabled;
+            _resultValue.end = end;
+            _resultValue.matchUrl = matchUrl;
+            _resultValue.matches = matches;
+            _resultValue.name = name;
+            _resultValue.redirectUrl = redirectUrl;
+            _resultValue.start = start;
+            _resultValue.statusCode = statusCode;
+            _resultValue.type = type;
+            _resultValue.useIncomingQueryString = useIncomingQueryString;
+            _resultValue.useRelativeUrl = useRelativeUrl;
+            return _resultValue;
         }
     }
 }

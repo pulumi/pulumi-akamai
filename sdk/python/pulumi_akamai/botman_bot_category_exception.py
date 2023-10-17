@@ -32,7 +32,15 @@ class BotmanBotCategoryExceptionArgs:
              bot_category_exception: pulumi.Input[str],
              config_id: pulumi.Input[int],
              security_policy_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'botCategoryException' in kwargs:
+            bot_category_exception = kwargs['botCategoryException']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         _setter("bot_category_exception", bot_category_exception)
         _setter("config_id", config_id)
         _setter("security_policy_id", security_policy_id)
@@ -86,7 +94,15 @@ class _BotmanBotCategoryExceptionState:
              bot_category_exception: Optional[pulumi.Input[str]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'botCategoryException' in kwargs:
+            bot_category_exception = kwargs['botCategoryException']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         if bot_category_exception is not None:
             _setter("bot_category_exception", bot_category_exception)
         if config_id is not None:

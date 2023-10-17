@@ -51,10 +51,10 @@ public final class GetImagingPolicyImagePolicyTransformationMaxColor {
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationMaxColor build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationMaxColor();
-            o.colors = colors;
-            o.colorsVar = colorsVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationMaxColor();
+            _resultValue.colors = colors;
+            _resultValue.colorsVar = colorsVar;
+            return _resultValue;
         }
     }
 }

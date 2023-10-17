@@ -35,7 +35,11 @@ class AppSecConfigurationRenameArgs:
              config_id: pulumi.Input[int],
              description: pulumi.Input[str],
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+
         _setter("config_id", config_id)
         _setter("description", description)
         if name is not None:
@@ -102,7 +106,11 @@ class _AppSecConfigurationRenameState:
              config_id: Optional[pulumi.Input[int]] = None,
              description: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if description is not None:

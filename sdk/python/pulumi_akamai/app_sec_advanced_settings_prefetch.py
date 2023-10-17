@@ -43,7 +43,17 @@ class AppSecAdvancedSettingsPrefetchArgs:
              enable_app_layer: pulumi.Input[bool],
              enable_rate_controls: pulumi.Input[bool],
              extensions: pulumi.Input[Sequence[pulumi.Input[str]]],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allExtensions' in kwargs:
+            all_extensions = kwargs['allExtensions']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'enableAppLayer' in kwargs:
+            enable_app_layer = kwargs['enableAppLayer']
+        if 'enableRateControls' in kwargs:
+            enable_rate_controls = kwargs['enableRateControls']
+
         _setter("all_extensions", all_extensions)
         _setter("config_id", config_id)
         _setter("enable_app_layer", enable_app_layer)
@@ -143,7 +153,17 @@ class _AppSecAdvancedSettingsPrefetchState:
              enable_app_layer: Optional[pulumi.Input[bool]] = None,
              enable_rate_controls: Optional[pulumi.Input[bool]] = None,
              extensions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allExtensions' in kwargs:
+            all_extensions = kwargs['allExtensions']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'enableAppLayer' in kwargs:
+            enable_app_layer = kwargs['enableAppLayer']
+        if 'enableRateControls' in kwargs:
+            enable_rate_controls = kwargs['enableRateControls']
+
         if all_extensions is not None:
             _setter("all_extensions", all_extensions)
         if config_id is not None:

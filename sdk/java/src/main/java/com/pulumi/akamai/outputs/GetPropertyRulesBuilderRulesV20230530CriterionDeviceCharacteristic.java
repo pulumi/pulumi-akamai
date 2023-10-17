@@ -178,21 +178,21 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionDeviceCharacter
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530CriterionDeviceCharacteristic build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530CriterionDeviceCharacteristic();
-            o.booleanValue = booleanValue;
-            o.characteristic = characteristic;
-            o.locked = locked;
-            o.matchCaseSensitive = matchCaseSensitive;
-            o.matchWildcard = matchWildcard;
-            o.numericMatchOperator = numericMatchOperator;
-            o.numericValue = numericValue;
-            o.stringMatchOperator = stringMatchOperator;
-            o.stringValues = stringValues;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            o.versionMatchOperator = versionMatchOperator;
-            o.versionValue = versionValue;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530CriterionDeviceCharacteristic();
+            _resultValue.booleanValue = booleanValue;
+            _resultValue.characteristic = characteristic;
+            _resultValue.locked = locked;
+            _resultValue.matchCaseSensitive = matchCaseSensitive;
+            _resultValue.matchWildcard = matchWildcard;
+            _resultValue.numericMatchOperator = numericMatchOperator;
+            _resultValue.numericValue = numericValue;
+            _resultValue.stringMatchOperator = stringMatchOperator;
+            _resultValue.stringValues = stringValues;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            _resultValue.versionMatchOperator = versionMatchOperator;
+            _resultValue.versionValue = versionValue;
+            return _resultValue;
         }
     }
 }

@@ -109,15 +109,15 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorEdgeRedirector {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorEdgeRedirector build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorEdgeRedirector();
-            o.cloudletPolicy = cloudletPolicy;
-            o.cloudletSharedPolicy = cloudletSharedPolicy;
-            o.enabled = enabled;
-            o.isSharedPolicy = isSharedPolicy;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorEdgeRedirector();
+            _resultValue.cloudletPolicy = cloudletPolicy;
+            _resultValue.cloudletSharedPolicy = cloudletSharedPolicy;
+            _resultValue.enabled = enabled;
+            _resultValue.isSharedPolicy = isSharedPolicy;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

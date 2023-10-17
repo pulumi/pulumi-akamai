@@ -80,12 +80,12 @@ public final class GetAppSecEvalResult {
             return this;
         }
         public GetAppSecEvalResult build() {
-            final var o = new GetAppSecEvalResult();
-            o.configId = configId;
-            o.id = id;
-            o.outputText = outputText;
-            o.securityPolicyId = securityPolicyId;
-            return o;
+            final var _resultValue = new GetAppSecEvalResult();
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.outputText = outputText;
+            _resultValue.securityPolicyId = securityPolicyId;
+            return _resultValue;
         }
     }
 }

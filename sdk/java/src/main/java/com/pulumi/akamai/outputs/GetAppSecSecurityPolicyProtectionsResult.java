@@ -180,21 +180,21 @@ public final class GetAppSecSecurityPolicyProtectionsResult {
             return this;
         }
         public GetAppSecSecurityPolicyProtectionsResult build() {
-            final var o = new GetAppSecSecurityPolicyProtectionsResult();
-            o.applyApiConstraints = applyApiConstraints;
-            o.applyApplicationLayerControls = applyApplicationLayerControls;
-            o.applyBotmanControls = applyBotmanControls;
-            o.applyMalwareControls = applyMalwareControls;
-            o.applyNetworkLayerControls = applyNetworkLayerControls;
-            o.applyRateControls = applyRateControls;
-            o.applyReputationControls = applyReputationControls;
-            o.applySlowPostControls = applySlowPostControls;
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            o.outputText = outputText;
-            o.securityPolicyId = securityPolicyId;
-            return o;
+            final var _resultValue = new GetAppSecSecurityPolicyProtectionsResult();
+            _resultValue.applyApiConstraints = applyApiConstraints;
+            _resultValue.applyApplicationLayerControls = applyApplicationLayerControls;
+            _resultValue.applyBotmanControls = applyBotmanControls;
+            _resultValue.applyMalwareControls = applyMalwareControls;
+            _resultValue.applyNetworkLayerControls = applyNetworkLayerControls;
+            _resultValue.applyRateControls = applyRateControls;
+            _resultValue.applyReputationControls = applyReputationControls;
+            _resultValue.applySlowPostControls = applySlowPostControls;
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.outputText = outputText;
+            _resultValue.securityPolicyId = securityPolicyId;
+            return _resultValue;
         }
     }
 }

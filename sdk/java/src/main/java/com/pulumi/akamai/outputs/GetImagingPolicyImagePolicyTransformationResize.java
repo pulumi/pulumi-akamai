@@ -117,16 +117,16 @@ public final class GetImagingPolicyImagePolicyTransformationResize {
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationResize build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationResize();
-            o.aspect = aspect;
-            o.aspectVar = aspectVar;
-            o.height = height;
-            o.heightVar = heightVar;
-            o.type = type;
-            o.typeVar = typeVar;
-            o.width = width;
-            o.widthVar = widthVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationResize();
+            _resultValue.aspect = aspect;
+            _resultValue.aspectVar = aspectVar;
+            _resultValue.height = height;
+            _resultValue.heightVar = heightVar;
+            _resultValue.type = type;
+            _resultValue.typeVar = typeVar;
+            _resultValue.width = width;
+            _resultValue.widthVar = widthVar;
+            return _resultValue;
         }
     }
 }

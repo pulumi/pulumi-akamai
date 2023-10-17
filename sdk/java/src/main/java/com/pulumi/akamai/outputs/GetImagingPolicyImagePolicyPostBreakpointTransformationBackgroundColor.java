@@ -51,10 +51,10 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationBackgr
             return this;
         }
         public GetImagingPolicyImagePolicyPostBreakpointTransformationBackgroundColor build() {
-            final var o = new GetImagingPolicyImagePolicyPostBreakpointTransformationBackgroundColor();
-            o.color = color;
-            o.colorVar = colorVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyPostBreakpointTransformationBackgroundColor();
+            _resultValue.color = color;
+            _resultValue.colorVar = colorVar;
+            return _resultValue;
         }
     }
 }

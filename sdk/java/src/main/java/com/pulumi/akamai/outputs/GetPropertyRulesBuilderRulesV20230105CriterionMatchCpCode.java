@@ -75,12 +75,12 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionMatchCpCode {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105CriterionMatchCpCode build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105CriterionMatchCpCode();
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105CriterionMatchCpCode();
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

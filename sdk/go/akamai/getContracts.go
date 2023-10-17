@@ -4,8 +4,12 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetContracts(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetContractsResult, error) {
@@ -23,4 +27,49 @@ type GetContractsResult struct {
 	Contracts []GetContractsContract `pulumi:"contracts"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+}
+
+func GetContractsOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetContractsResultOutput {
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetContractsResult, error) {
+		r, err := GetContracts(ctx, opts...)
+		var s GetContractsResult
+		if r != nil {
+			s = *r
+		}
+		return s, err
+	}).(GetContractsResultOutput)
+}
+
+// A collection of values returned by getContracts.
+type GetContractsResultOutput struct{ *pulumi.OutputState }
+
+func (GetContractsResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetContractsResult)(nil)).Elem()
+}
+
+func (o GetContractsResultOutput) ToGetContractsResultOutput() GetContractsResultOutput {
+	return o
+}
+
+func (o GetContractsResultOutput) ToGetContractsResultOutputWithContext(ctx context.Context) GetContractsResultOutput {
+	return o
+}
+
+func (o GetContractsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetContractsResult] {
+	return pulumix.Output[GetContractsResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetContractsResultOutput) Contracts() GetContractsContractArrayOutput {
+	return o.ApplyT(func(v GetContractsResult) []GetContractsContract { return v.Contracts }).(GetContractsContractArrayOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetContractsResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContractsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetContractsResultOutput{})
 }

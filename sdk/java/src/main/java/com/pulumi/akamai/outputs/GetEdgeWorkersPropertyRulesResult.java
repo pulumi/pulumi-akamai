@@ -69,11 +69,11 @@ public final class GetEdgeWorkersPropertyRulesResult {
             return this;
         }
         public GetEdgeWorkersPropertyRulesResult build() {
-            final var o = new GetEdgeWorkersPropertyRulesResult();
-            o.edgeworkerId = edgeworkerId;
-            o.id = id;
-            o.json = json;
-            return o;
+            final var _resultValue = new GetEdgeWorkersPropertyRulesResult();
+            _resultValue.edgeworkerId = edgeworkerId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            return _resultValue;
         }
     }
 }

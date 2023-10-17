@@ -150,18 +150,18 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionUserNetwork {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530CriterionUserNetwork build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530CriterionUserNetwork();
-            o.bandwidthValues = bandwidthValues;
-            o.checkIps = checkIps;
-            o.field = field;
-            o.locked = locked;
-            o.matchOperator = matchOperator;
-            o.networkTypeValues = networkTypeValues;
-            o.networkValues = networkValues;
-            o.templateUuid = templateUuid;
-            o.useOnlyFirstXForwardedForIp = useOnlyFirstXForwardedForIp;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530CriterionUserNetwork();
+            _resultValue.bandwidthValues = bandwidthValues;
+            _resultValue.checkIps = checkIps;
+            _resultValue.field = field;
+            _resultValue.locked = locked;
+            _resultValue.matchOperator = matchOperator;
+            _resultValue.networkTypeValues = networkTypeValues;
+            _resultValue.networkValues = networkValues;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.useOnlyFirstXForwardedForIp = useOnlyFirstXForwardedForIp;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

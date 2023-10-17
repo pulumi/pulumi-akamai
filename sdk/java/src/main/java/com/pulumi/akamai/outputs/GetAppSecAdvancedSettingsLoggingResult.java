@@ -93,13 +93,13 @@ public final class GetAppSecAdvancedSettingsLoggingResult {
             return this;
         }
         public GetAppSecAdvancedSettingsLoggingResult build() {
-            final var o = new GetAppSecAdvancedSettingsLoggingResult();
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            o.outputText = outputText;
-            o.securityPolicyId = securityPolicyId;
-            return o;
+            final var _resultValue = new GetAppSecAdvancedSettingsLoggingResult();
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.outputText = outputText;
+            _resultValue.securityPolicyId = securityPolicyId;
+            return _resultValue;
         }
     }
 }

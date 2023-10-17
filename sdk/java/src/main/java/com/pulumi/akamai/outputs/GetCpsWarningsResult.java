@@ -58,10 +58,10 @@ public final class GetCpsWarningsResult {
             return this;
         }
         public GetCpsWarningsResult build() {
-            final var o = new GetCpsWarningsResult();
-            o.id = id;
-            o.warnings = warnings;
-            return o;
+            final var _resultValue = new GetCpsWarningsResult();
+            _resultValue.id = id;
+            _resultValue.warnings = warnings;
+            return _resultValue;
         }
     }
 }

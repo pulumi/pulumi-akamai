@@ -213,23 +213,23 @@ public final class GetCloudletsApplicationLoadBalancerResult {
             return this;
         }
         public GetCloudletsApplicationLoadBalancerResult build() {
-            final var o = new GetCloudletsApplicationLoadBalancerResult();
-            o.balancingType = balancingType;
-            o.createdBy = createdBy;
-            o.createdDate = createdDate;
-            o.dataCenters = dataCenters;
-            o.deleted = deleted;
-            o.description = description;
-            o.id = id;
-            o.immutable = immutable;
-            o.lastModifiedBy = lastModifiedBy;
-            o.lastModifiedDate = lastModifiedDate;
-            o.livenessSettings = livenessSettings;
-            o.originId = originId;
-            o.type = type;
-            o.version = version;
-            o.warnings = warnings;
-            return o;
+            final var _resultValue = new GetCloudletsApplicationLoadBalancerResult();
+            _resultValue.balancingType = balancingType;
+            _resultValue.createdBy = createdBy;
+            _resultValue.createdDate = createdDate;
+            _resultValue.dataCenters = dataCenters;
+            _resultValue.deleted = deleted;
+            _resultValue.description = description;
+            _resultValue.id = id;
+            _resultValue.immutable = immutable;
+            _resultValue.lastModifiedBy = lastModifiedBy;
+            _resultValue.lastModifiedDate = lastModifiedDate;
+            _resultValue.livenessSettings = livenessSettings;
+            _resultValue.originId = originId;
+            _resultValue.type = type;
+            _resultValue.version = version;
+            _resultValue.warnings = warnings;
+            return _resultValue;
         }
     }
 }
