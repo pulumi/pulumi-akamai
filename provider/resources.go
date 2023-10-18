@@ -32,11 +32,10 @@ import (
 	"github.com/pulumi/pulumi-akamai/provider/v6/pkg/version"
 	pf "github.com/pulumi/pulumi-terraform-bridge/pf/tfbridge"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
-	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge/x"
+	tks "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge/tokens"
 	shimv2 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v2"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/resource"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/tokens"
-	"github.com/pulumi/pulumi/sdk/v3/go/common/util/contract"
 )
 
 // all of the token components used below.
@@ -358,8 +357,7 @@ func Provider() tfbridge.ProviderInfo {
 		MetadataInfo: tfbridge.NewProviderMetadata(metadata),
 	}
 
-	err := x.ComputeDefaults(&prov, x.TokensSingleModule("akamai_", mainMod, x.MakeStandardToken(mainPkg)))
-	contract.AssertNoError(err)
+	prov.MustComputeTokens(tks.SingleModule("akamai_", mainMod, tks.MakeStandard(mainPkg)))
 
 	// The upstream provider decided to move all documentation to their own website,
 	// so we no longer have access to the TF styled markdown.
@@ -369,8 +367,7 @@ func Provider() tfbridge.ProviderInfo {
 	for _, d := range prov.DataSources {
 		d.Docs = noUpstreamDocs()
 	}
-	err = x.AutoAliasing(&prov, prov.GetMetadata())
-	contract.AssertNoErrorf(err, "auto aliasing apply failed")
+	prov.MustApplyAutoAliases()
 
 	prov.SetAutonaming(255, "-")
 
