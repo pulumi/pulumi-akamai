@@ -39,7 +39,17 @@ class AppSecEvalArgs:
              eval_operation: pulumi.Input[str],
              security_policy_id: pulumi.Input[str],
              eval_mode: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'evalOperation' in kwargs:
+            eval_operation = kwargs['evalOperation']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+        if 'evalMode' in kwargs:
+            eval_mode = kwargs['evalMode']
+
         _setter("config_id", config_id)
         _setter("eval_operation", eval_operation)
         _setter("security_policy_id", security_policy_id)
@@ -139,7 +149,25 @@ class _AppSecEvalState:
              evaluating_ruleset: Optional[pulumi.Input[str]] = None,
              expiration_date: Optional[pulumi.Input[str]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'currentRuleset' in kwargs:
+            current_ruleset = kwargs['currentRuleset']
+        if 'evalMode' in kwargs:
+            eval_mode = kwargs['evalMode']
+        if 'evalOperation' in kwargs:
+            eval_operation = kwargs['evalOperation']
+        if 'evalStatus' in kwargs:
+            eval_status = kwargs['evalStatus']
+        if 'evaluatingRuleset' in kwargs:
+            evaluating_ruleset = kwargs['evaluatingRuleset']
+        if 'expirationDate' in kwargs:
+            expiration_date = kwargs['expirationDate']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if current_ruleset is not None:

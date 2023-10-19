@@ -31,7 +31,13 @@ class AppSecCustomRuleArgs:
              _setter: Callable[[Any, Any], None],
              config_id: pulumi.Input[int],
              custom_rule: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'customRule' in kwargs:
+            custom_rule = kwargs['customRule']
+
         _setter("config_id", config_id)
         _setter("custom_rule", custom_rule)
 
@@ -83,7 +89,15 @@ class _AppSecCustomRuleState:
              config_id: Optional[pulumi.Input[int]] = None,
              custom_rule: Optional[pulumi.Input[str]] = None,
              custom_rule_id: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'customRule' in kwargs:
+            custom_rule = kwargs['customRule']
+        if 'customRuleId' in kwargs:
+            custom_rule_id = kwargs['customRuleId']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if custom_rule is not None:

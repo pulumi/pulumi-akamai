@@ -64,11 +64,11 @@ public final class CloudwrapperConfigurationLocation {
             return this;
         }
         public CloudwrapperConfigurationLocation build() {
-            final var o = new CloudwrapperConfigurationLocation();
-            o.capacity = capacity;
-            o.comments = comments;
-            o.trafficTypeId = trafficTypeId;
-            return o;
+            final var _resultValue = new CloudwrapperConfigurationLocation();
+            _resultValue.capacity = capacity;
+            _resultValue.comments = comments;
+            _resultValue.trafficTypeId = trafficTypeId;
+            return _resultValue;
         }
     }
 }

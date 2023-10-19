@@ -156,19 +156,19 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancin
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancingDataCenter build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancingDataCenter();
-            o.cookieName = cookieName;
-            o.description = description;
-            o.enableFailover = enableFailover;
-            o.failoverRules = failoverRules;
-            o.failoverTitle = failoverTitle;
-            o.hostname = hostname;
-            o.ip = ip;
-            o.locked = locked;
-            o.originId = originId;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancingDataCenter();
+            _resultValue.cookieName = cookieName;
+            _resultValue.description = description;
+            _resultValue.enableFailover = enableFailover;
+            _resultValue.failoverRules = failoverRules;
+            _resultValue.failoverTitle = failoverTitle;
+            _resultValue.hostname = hostname;
+            _resultValue.ip = ip;
+            _resultValue.locked = locked;
+            _resultValue.originId = originId;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

@@ -35,7 +35,11 @@ class AppSecSelectedHostnamesArgs:
              config_id: pulumi.Input[int],
              hostnames: pulumi.Input[Sequence[pulumi.Input[str]]],
              mode: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+
         _setter("config_id", config_id)
         _setter("hostnames", hostnames)
         _setter("mode", mode)
@@ -101,7 +105,11 @@ class _AppSecSelectedHostnamesState:
              config_id: Optional[pulumi.Input[int]] = None,
              hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              mode: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if hostnames is not None:

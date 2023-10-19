@@ -201,23 +201,23 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorPhasedRelease {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorPhasedRelease build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorPhasedRelease();
-            o.cloudletPolicy = cloudletPolicy;
-            o.enabled = enabled;
-            o.failoverDuration = failoverDuration;
-            o.failoverEnabled = failoverEnabled;
-            o.failoverResponseCodes = failoverResponseCodes;
-            o.failoverTitle = failoverTitle;
-            o.label = label;
-            o.locked = locked;
-            o.populationCookieType = populationCookieType;
-            o.populationDuration = populationDuration;
-            o.populationExpirationDate = populationExpirationDate;
-            o.populationRefresh = populationRefresh;
-            o.populationTitle = populationTitle;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorPhasedRelease();
+            _resultValue.cloudletPolicy = cloudletPolicy;
+            _resultValue.enabled = enabled;
+            _resultValue.failoverDuration = failoverDuration;
+            _resultValue.failoverEnabled = failoverEnabled;
+            _resultValue.failoverResponseCodes = failoverResponseCodes;
+            _resultValue.failoverTitle = failoverTitle;
+            _resultValue.label = label;
+            _resultValue.locked = locked;
+            _resultValue.populationCookieType = populationCookieType;
+            _resultValue.populationDuration = populationDuration;
+            _resultValue.populationExpirationDate = populationExpirationDate;
+            _resultValue.populationRefresh = populationRefresh;
+            _resultValue.populationTitle = populationTitle;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

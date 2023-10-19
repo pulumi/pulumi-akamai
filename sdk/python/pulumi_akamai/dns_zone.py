@@ -58,7 +58,17 @@ class DnsZoneArgs:
              sign_and_serve_algorithm: Optional[pulumi.Input[str]] = None,
              target: Optional[pulumi.Input[str]] = None,
              tsig_key: Optional[pulumi.Input['DnsZoneTsigKeyArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'endCustomerId' in kwargs:
+            end_customer_id = kwargs['endCustomerId']
+        if 'signAndServe' in kwargs:
+            sign_and_serve = kwargs['signAndServe']
+        if 'signAndServeAlgorithm' in kwargs:
+            sign_and_serve_algorithm = kwargs['signAndServeAlgorithm']
+        if 'tsigKey' in kwargs:
+            tsig_key = kwargs['tsigKey']
+
         _setter("contract", contract)
         _setter("type", type)
         _setter("zone", zone)
@@ -233,7 +243,23 @@ class _DnsZoneState:
              type: Optional[pulumi.Input[str]] = None,
              version_id: Optional[pulumi.Input[str]] = None,
              zone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'activationState' in kwargs:
+            activation_state = kwargs['activationState']
+        if 'aliasCount' in kwargs:
+            alias_count = kwargs['aliasCount']
+        if 'endCustomerId' in kwargs:
+            end_customer_id = kwargs['endCustomerId']
+        if 'signAndServe' in kwargs:
+            sign_and_serve = kwargs['signAndServe']
+        if 'signAndServeAlgorithm' in kwargs:
+            sign_and_serve_algorithm = kwargs['signAndServeAlgorithm']
+        if 'tsigKey' in kwargs:
+            tsig_key = kwargs['tsigKey']
+        if 'versionId' in kwargs:
+            version_id = kwargs['versionId']
+
         if activation_state is not None:
             _setter("activation_state", activation_state)
         if alias_count is not None:

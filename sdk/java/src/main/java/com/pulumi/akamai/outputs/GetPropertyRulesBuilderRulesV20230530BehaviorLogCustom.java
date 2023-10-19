@@ -85,13 +85,13 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorLogCustom {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorLogCustom build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorLogCustom();
-            o.customLogField = customLogField;
-            o.locked = locked;
-            o.logCustomLogField = logCustomLogField;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorLogCustom();
+            _resultValue.customLogField = customLogField;
+            _resultValue.locked = locked;
+            _resultValue.logCustomLogField = logCustomLogField;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

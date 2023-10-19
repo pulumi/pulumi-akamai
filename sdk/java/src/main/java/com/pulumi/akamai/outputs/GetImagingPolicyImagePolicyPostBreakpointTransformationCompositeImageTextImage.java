@@ -173,21 +173,21 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompos
             return this;
         }
         public GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImage build() {
-            final var o = new GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImage();
-            o.fill = fill;
-            o.fillVar = fillVar;
-            o.size = size;
-            o.sizeVar = sizeVar;
-            o.stroke = stroke;
-            o.strokeSize = strokeSize;
-            o.strokeSizeVar = strokeSizeVar;
-            o.strokeVar = strokeVar;
-            o.text = text;
-            o.textVar = textVar;
-            o.transformation = transformation;
-            o.typeface = typeface;
-            o.typefaceVar = typefaceVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImage();
+            _resultValue.fill = fill;
+            _resultValue.fillVar = fillVar;
+            _resultValue.size = size;
+            _resultValue.sizeVar = sizeVar;
+            _resultValue.stroke = stroke;
+            _resultValue.strokeSize = strokeSize;
+            _resultValue.strokeSizeVar = strokeSizeVar;
+            _resultValue.strokeVar = strokeVar;
+            _resultValue.text = text;
+            _resultValue.textVar = textVar;
+            _resultValue.transformation = transformation;
+            _resultValue.typeface = typeface;
+            _resultValue.typefaceVar = typefaceVar;
+            return _resultValue;
         }
     }
 }

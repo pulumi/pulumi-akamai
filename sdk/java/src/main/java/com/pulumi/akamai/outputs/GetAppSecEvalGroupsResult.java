@@ -126,16 +126,16 @@ public final class GetAppSecEvalGroupsResult {
             return this;
         }
         public GetAppSecEvalGroupsResult build() {
-            final var o = new GetAppSecEvalGroupsResult();
-            o.attackGroup = attackGroup;
-            o.attackGroupAction = attackGroupAction;
-            o.conditionException = conditionException;
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            o.outputText = outputText;
-            o.securityPolicyId = securityPolicyId;
-            return o;
+            final var _resultValue = new GetAppSecEvalGroupsResult();
+            _resultValue.attackGroup = attackGroup;
+            _resultValue.attackGroupAction = attackGroupAction;
+            _resultValue.conditionException = conditionException;
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.outputText = outputText;
+            _resultValue.securityPolicyId = securityPolicyId;
+            return _resultValue;
         }
     }
 }

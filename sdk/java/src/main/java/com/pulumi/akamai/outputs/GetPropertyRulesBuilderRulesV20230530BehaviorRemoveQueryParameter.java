@@ -78,12 +78,12 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorRemoveQueryParam
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorRemoveQueryParameter build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorRemoveQueryParameter();
-            o.locked = locked;
-            o.parameters = parameters;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorRemoveQueryParameter();
+            _resultValue.locked = locked;
+            _resultValue.parameters = parameters;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

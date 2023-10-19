@@ -39,7 +39,17 @@ class AppSecWapSelectedHostnamesArgs:
              security_policy_id: pulumi.Input[str],
              evaluated_hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              protected_hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+        if 'evaluatedHosts' in kwargs:
+            evaluated_hosts = kwargs['evaluatedHosts']
+        if 'protectedHosts' in kwargs:
+            protected_hosts = kwargs['protectedHosts']
+
         _setter("config_id", config_id)
         _setter("security_policy_id", security_policy_id)
         if evaluated_hosts is not None:
@@ -124,7 +134,17 @@ class _AppSecWapSelectedHostnamesState:
              evaluated_hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              protected_hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'evaluatedHosts' in kwargs:
+            evaluated_hosts = kwargs['evaluatedHosts']
+        if 'protectedHosts' in kwargs:
+            protected_hosts = kwargs['protectedHosts']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if evaluated_hosts is not None:

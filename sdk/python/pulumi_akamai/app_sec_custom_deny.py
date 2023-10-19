@@ -31,7 +31,13 @@ class AppSecCustomDenyArgs:
              _setter: Callable[[Any, Any], None],
              config_id: pulumi.Input[int],
              custom_deny: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'customDeny' in kwargs:
+            custom_deny = kwargs['customDeny']
+
         _setter("config_id", config_id)
         _setter("custom_deny", custom_deny)
 
@@ -84,7 +90,15 @@ class _AppSecCustomDenyState:
              config_id: Optional[pulumi.Input[int]] = None,
              custom_deny: Optional[pulumi.Input[str]] = None,
              custom_deny_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'customDeny' in kwargs:
+            custom_deny = kwargs['customDeny']
+        if 'customDenyId' in kwargs:
+            custom_deny_id = kwargs['customDenyId']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if custom_deny is not None:

@@ -4,8 +4,12 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetBotmanBotAnalyticsCookieValues(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetBotmanBotAnalyticsCookieValuesResult, error) {
@@ -23,4 +27,49 @@ type GetBotmanBotAnalyticsCookieValuesResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id   string `pulumi:"id"`
 	Json string `pulumi:"json"`
+}
+
+func GetBotmanBotAnalyticsCookieValuesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetBotmanBotAnalyticsCookieValuesResultOutput {
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetBotmanBotAnalyticsCookieValuesResult, error) {
+		r, err := GetBotmanBotAnalyticsCookieValues(ctx, opts...)
+		var s GetBotmanBotAnalyticsCookieValuesResult
+		if r != nil {
+			s = *r
+		}
+		return s, err
+	}).(GetBotmanBotAnalyticsCookieValuesResultOutput)
+}
+
+// A collection of values returned by getBotmanBotAnalyticsCookieValues.
+type GetBotmanBotAnalyticsCookieValuesResultOutput struct{ *pulumi.OutputState }
+
+func (GetBotmanBotAnalyticsCookieValuesResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBotmanBotAnalyticsCookieValuesResult)(nil)).Elem()
+}
+
+func (o GetBotmanBotAnalyticsCookieValuesResultOutput) ToGetBotmanBotAnalyticsCookieValuesResultOutput() GetBotmanBotAnalyticsCookieValuesResultOutput {
+	return o
+}
+
+func (o GetBotmanBotAnalyticsCookieValuesResultOutput) ToGetBotmanBotAnalyticsCookieValuesResultOutputWithContext(ctx context.Context) GetBotmanBotAnalyticsCookieValuesResultOutput {
+	return o
+}
+
+func (o GetBotmanBotAnalyticsCookieValuesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBotmanBotAnalyticsCookieValuesResult] {
+	return pulumix.Output[GetBotmanBotAnalyticsCookieValuesResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetBotmanBotAnalyticsCookieValuesResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBotmanBotAnalyticsCookieValuesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetBotmanBotAnalyticsCookieValuesResultOutput) Json() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBotmanBotAnalyticsCookieValuesResult) string { return v.Json }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetBotmanBotAnalyticsCookieValuesResultOutput{})
 }

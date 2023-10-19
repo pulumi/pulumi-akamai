@@ -47,7 +47,17 @@ class CloudletsPolicyArgs:
              match_rule_format: Optional[pulumi.Input[str]] = None,
              match_rules: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudletCode' in kwargs:
+            cloudlet_code = kwargs['cloudletCode']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'matchRuleFormat' in kwargs:
+            match_rule_format = kwargs['matchRuleFormat']
+        if 'matchRules' in kwargs:
+            match_rules = kwargs['matchRules']
+
         _setter("cloudlet_code", cloudlet_code)
         _setter("group_id", group_id)
         if description is not None:
@@ -180,7 +190,19 @@ class _CloudletsPolicyState:
              name: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[int]] = None,
              warnings: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudletCode' in kwargs:
+            cloudlet_code = kwargs['cloudletCode']
+        if 'cloudletId' in kwargs:
+            cloudlet_id = kwargs['cloudletId']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'matchRuleFormat' in kwargs:
+            match_rule_format = kwargs['matchRuleFormat']
+        if 'matchRules' in kwargs:
+            match_rules = kwargs['matchRules']
+
         if cloudlet_code is not None:
             _setter("cloudlet_code", cloudlet_code)
         if cloudlet_id is not None:

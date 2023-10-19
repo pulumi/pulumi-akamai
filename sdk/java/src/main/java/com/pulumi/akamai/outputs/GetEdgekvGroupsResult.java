@@ -83,12 +83,12 @@ public final class GetEdgekvGroupsResult {
             return this;
         }
         public GetEdgekvGroupsResult build() {
-            final var o = new GetEdgekvGroupsResult();
-            o.groups = groups;
-            o.id = id;
-            o.namespaceName = namespaceName;
-            o.network = network;
-            return o;
+            final var _resultValue = new GetEdgekvGroupsResult();
+            _resultValue.groups = groups;
+            _resultValue.id = id;
+            _resultValue.namespaceName = namespaceName;
+            _resultValue.network = network;
+            return _resultValue;
         }
     }
 }

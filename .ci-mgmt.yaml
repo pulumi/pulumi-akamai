@@ -8,7 +8,7 @@ env:
   AKAMAI_CLIENT_SECRET: ${{ secrets.AKAMAI_CLIENT_SECRET }}
 makeTemplate: bridged
 team: ecosystem
-javaGenVersion: "v0.9.5"
+javaGenVersion: "v0.9.8"
 runner:
   publish: pulumi-ubuntu-8core
   buildSdk: pulumi-ubuntu-8core

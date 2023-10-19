@@ -128,16 +128,16 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionServerLocation 
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530CriterionServerLocation build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530CriterionServerLocation();
-            o.continents = continents;
-            o.countries = countries;
-            o.locationType = locationType;
-            o.locked = locked;
-            o.matchOperator = matchOperator;
-            o.regions = regions;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530CriterionServerLocation();
+            _resultValue.continents = continents;
+            _resultValue.countries = countries;
+            _resultValue.locationType = locationType;
+            _resultValue.locked = locked;
+            _resultValue.matchOperator = matchOperator;
+            _resultValue.regions = regions;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

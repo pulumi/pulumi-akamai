@@ -183,22 +183,22 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKey {
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationChromaKey build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationChromaKey();
-            o.hue = hue;
-            o.hueFeather = hueFeather;
-            o.hueFeatherVar = hueFeatherVar;
-            o.hueTolerance = hueTolerance;
-            o.hueToleranceVar = hueToleranceVar;
-            o.hueVar = hueVar;
-            o.lightnessFeather = lightnessFeather;
-            o.lightnessFeatherVar = lightnessFeatherVar;
-            o.lightnessTolerance = lightnessTolerance;
-            o.lightnessToleranceVar = lightnessToleranceVar;
-            o.saturationFeather = saturationFeather;
-            o.saturationFeatherVar = saturationFeatherVar;
-            o.saturationTolerance = saturationTolerance;
-            o.saturationToleranceVar = saturationToleranceVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationChromaKey();
+            _resultValue.hue = hue;
+            _resultValue.hueFeather = hueFeather;
+            _resultValue.hueFeatherVar = hueFeatherVar;
+            _resultValue.hueTolerance = hueTolerance;
+            _resultValue.hueToleranceVar = hueToleranceVar;
+            _resultValue.hueVar = hueVar;
+            _resultValue.lightnessFeather = lightnessFeather;
+            _resultValue.lightnessFeatherVar = lightnessFeatherVar;
+            _resultValue.lightnessTolerance = lightnessTolerance;
+            _resultValue.lightnessToleranceVar = lightnessToleranceVar;
+            _resultValue.saturationFeather = saturationFeather;
+            _resultValue.saturationFeatherVar = saturationFeatherVar;
+            _resultValue.saturationTolerance = saturationTolerance;
+            _resultValue.saturationToleranceVar = saturationToleranceVar;
+            return _resultValue;
         }
     }
 }

@@ -272,30 +272,30 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorSubCustomer {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorSubCustomer build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorSubCustomer();
-            o.accessControl = accessControl;
-            o.cacheKey = cacheKey;
-            o.caching = caching;
-            o.contentCompressor = contentCompressor;
-            o.dynamicWebContent = dynamicWebContent;
-            o.enabled = enabled;
-            o.geoLocation = geoLocation;
-            o.ip = ip;
-            o.largeFileDelivery = largeFileDelivery;
-            o.liveVideoDelivery = liveVideoDelivery;
-            o.locked = locked;
-            o.modifyPath = modifyPath;
-            o.onDemandVideoDelivery = onDemandVideoDelivery;
-            o.origin = origin;
-            o.partnerDomainSuffix = partnerDomainSuffix;
-            o.referrer = referrer;
-            o.refreshContent = refreshContent;
-            o.siteFailover = siteFailover;
-            o.templateUuid = templateUuid;
-            o.tokenAuthorization = tokenAuthorization;
-            o.uuid = uuid;
-            o.webApplicationFirewall = webApplicationFirewall;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorSubCustomer();
+            _resultValue.accessControl = accessControl;
+            _resultValue.cacheKey = cacheKey;
+            _resultValue.caching = caching;
+            _resultValue.contentCompressor = contentCompressor;
+            _resultValue.dynamicWebContent = dynamicWebContent;
+            _resultValue.enabled = enabled;
+            _resultValue.geoLocation = geoLocation;
+            _resultValue.ip = ip;
+            _resultValue.largeFileDelivery = largeFileDelivery;
+            _resultValue.liveVideoDelivery = liveVideoDelivery;
+            _resultValue.locked = locked;
+            _resultValue.modifyPath = modifyPath;
+            _resultValue.onDemandVideoDelivery = onDemandVideoDelivery;
+            _resultValue.origin = origin;
+            _resultValue.partnerDomainSuffix = partnerDomainSuffix;
+            _resultValue.referrer = referrer;
+            _resultValue.refreshContent = refreshContent;
+            _resultValue.siteFailover = siteFailover;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.tokenAuthorization = tokenAuthorization;
+            _resultValue.uuid = uuid;
+            _resultValue.webApplicationFirewall = webApplicationFirewall;
+            return _resultValue;
         }
     }
 }

@@ -72,11 +72,11 @@ public final class GetIamStatesResult {
             return states(List.of(states));
         }
         public GetIamStatesResult build() {
-            final var o = new GetIamStatesResult();
-            o.country = country;
-            o.id = id;
-            o.states = states;
-            return o;
+            final var _resultValue = new GetIamStatesResult();
+            _resultValue.country = country;
+            _resultValue.id = id;
+            _resultValue.states = states;
+            return _resultValue;
         }
     }
 }

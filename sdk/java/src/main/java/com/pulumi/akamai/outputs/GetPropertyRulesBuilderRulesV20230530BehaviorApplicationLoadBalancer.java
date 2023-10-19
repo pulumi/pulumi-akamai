@@ -349,36 +349,36 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorApplicationLoadB
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorApplicationLoadBalancer build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorApplicationLoadBalancer();
-            o.allDownNetStorage = allDownNetStorage;
-            o.allDownNetStorageFile = allDownNetStorageFile;
-            o.allDownStatusCode = allDownStatusCode;
-            o.allDownTitle = allDownTitle;
-            o.allowCachePrefresh = allowCachePrefresh;
-            o.cachedContentTitle = cachedContentTitle;
-            o.cloudletPolicy = cloudletPolicy;
-            o.enabled = enabled;
-            o.failoverAttemptsThreshold = failoverAttemptsThreshold;
-            o.failoverMode = failoverMode;
-            o.failoverOriginMaps = failoverOriginMaps;
-            o.failoverStatusCodes = failoverStatusCodes;
-            o.failoverTitle = failoverTitle;
-            o.label = label;
-            o.locked = locked;
-            o.originCookieName = originCookieName;
-            o.specifyStickinessCookieDomain = specifyStickinessCookieDomain;
-            o.stickinessCookieAutomaticSalt = stickinessCookieAutomaticSalt;
-            o.stickinessCookieDomain = stickinessCookieDomain;
-            o.stickinessCookieSalt = stickinessCookieSalt;
-            o.stickinessCookieSetHttpOnlyFlag = stickinessCookieSetHttpOnlyFlag;
-            o.stickinessCookieType = stickinessCookieType;
-            o.stickinessDuration = stickinessDuration;
-            o.stickinessExpirationDate = stickinessExpirationDate;
-            o.stickinessRefresh = stickinessRefresh;
-            o.stickinessTitle = stickinessTitle;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorApplicationLoadBalancer();
+            _resultValue.allDownNetStorage = allDownNetStorage;
+            _resultValue.allDownNetStorageFile = allDownNetStorageFile;
+            _resultValue.allDownStatusCode = allDownStatusCode;
+            _resultValue.allDownTitle = allDownTitle;
+            _resultValue.allowCachePrefresh = allowCachePrefresh;
+            _resultValue.cachedContentTitle = cachedContentTitle;
+            _resultValue.cloudletPolicy = cloudletPolicy;
+            _resultValue.enabled = enabled;
+            _resultValue.failoverAttemptsThreshold = failoverAttemptsThreshold;
+            _resultValue.failoverMode = failoverMode;
+            _resultValue.failoverOriginMaps = failoverOriginMaps;
+            _resultValue.failoverStatusCodes = failoverStatusCodes;
+            _resultValue.failoverTitle = failoverTitle;
+            _resultValue.label = label;
+            _resultValue.locked = locked;
+            _resultValue.originCookieName = originCookieName;
+            _resultValue.specifyStickinessCookieDomain = specifyStickinessCookieDomain;
+            _resultValue.stickinessCookieAutomaticSalt = stickinessCookieAutomaticSalt;
+            _resultValue.stickinessCookieDomain = stickinessCookieDomain;
+            _resultValue.stickinessCookieSalt = stickinessCookieSalt;
+            _resultValue.stickinessCookieSetHttpOnlyFlag = stickinessCookieSetHttpOnlyFlag;
+            _resultValue.stickinessCookieType = stickinessCookieType;
+            _resultValue.stickinessDuration = stickinessDuration;
+            _resultValue.stickinessExpirationDate = stickinessExpirationDate;
+            _resultValue.stickinessRefresh = stickinessRefresh;
+            _resultValue.stickinessTitle = stickinessTitle;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

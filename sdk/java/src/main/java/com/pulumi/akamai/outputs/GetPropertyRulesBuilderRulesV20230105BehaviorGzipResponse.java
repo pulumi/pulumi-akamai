@@ -74,12 +74,12 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorGzipResponse {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorGzipResponse build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorGzipResponse();
-            o.behavior = behavior;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorGzipResponse();
+            _resultValue.behavior = behavior;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

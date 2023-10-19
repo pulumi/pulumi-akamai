@@ -4,8 +4,12 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetIamRoles(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIamRolesResult, error) {
@@ -23,4 +27,49 @@ type GetIamRolesResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id    string            `pulumi:"id"`
 	Roles []GetIamRolesRole `pulumi:"roles"`
+}
+
+func GetIamRolesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetIamRolesResultOutput {
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamRolesResult, error) {
+		r, err := GetIamRoles(ctx, opts...)
+		var s GetIamRolesResult
+		if r != nil {
+			s = *r
+		}
+		return s, err
+	}).(GetIamRolesResultOutput)
+}
+
+// A collection of values returned by getIamRoles.
+type GetIamRolesResultOutput struct{ *pulumi.OutputState }
+
+func (GetIamRolesResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamRolesResult)(nil)).Elem()
+}
+
+func (o GetIamRolesResultOutput) ToGetIamRolesResultOutput() GetIamRolesResultOutput {
+	return o
+}
+
+func (o GetIamRolesResultOutput) ToGetIamRolesResultOutputWithContext(ctx context.Context) GetIamRolesResultOutput {
+	return o
+}
+
+func (o GetIamRolesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIamRolesResult] {
+	return pulumix.Output[GetIamRolesResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetIamRolesResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamRolesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetIamRolesResultOutput) Roles() GetIamRolesRoleArrayOutput {
+	return o.ApplyT(func(v GetIamRolesResult) []GetIamRolesRole { return v.Roles }).(GetIamRolesRoleArrayOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetIamRolesResultOutput{})
 }

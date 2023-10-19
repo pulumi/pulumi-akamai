@@ -4,6 +4,7 @@
 package com.pulumi.akamai.inputs;
 
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -14,11 +15,32 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmap 
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmap Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmap();
 
+    @Import(name="chinaCdnMap")
+    private @Nullable String chinaCdnMap;
+
+    public Optional<String> chinaCdnMap() {
+        return Optional.ofNullable(this.chinaCdnMap);
+    }
+
+    @Import(name="hasMixedHosts")
+    private @Nullable Boolean hasMixedHosts;
+
+    public Optional<Boolean> hasMixedHosts() {
+        return Optional.ofNullable(this.hasMixedHosts);
+    }
+
     @Import(name="name")
     private @Nullable String name;
 
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
+    }
+
+    @Import(name="src")
+    private @Nullable String src;
+
+    public Optional<String> src() {
+        return Optional.ofNullable(this.src);
     }
 
     @Import(name="srmap")
@@ -38,7 +60,10 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmap 
     private GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmap() {}
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmap(GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmap $) {
+        this.chinaCdnMap = $.chinaCdnMap;
+        this.hasMixedHosts = $.hasMixedHosts;
         this.name = $.name;
+        this.src = $.src;
         this.srmap = $.srmap;
         this.value = $.value;
     }
@@ -61,8 +86,23 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmap 
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmap(Objects.requireNonNull(defaults));
         }
 
+        public Builder chinaCdnMap(@Nullable String chinaCdnMap) {
+            $.chinaCdnMap = chinaCdnMap;
+            return this;
+        }
+
+        public Builder hasMixedHosts(@Nullable Boolean hasMixedHosts) {
+            $.hasMixedHosts = hasMixedHosts;
+            return this;
+        }
+
         public Builder name(@Nullable String name) {
             $.name = name;
+            return this;
+        }
+
+        public Builder src(@Nullable String src) {
+            $.src = src;
             return this;
         }
 

@@ -55,10 +55,10 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorApplicationLoadB
             return toOriginIds(List.of(toOriginIds));
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorApplicationLoadBalancerFailoverOriginMap build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorApplicationLoadBalancerFailoverOriginMap();
-            o.fromOriginId = fromOriginId;
-            o.toOriginIds = toOriginIds;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorApplicationLoadBalancerFailoverOriginMap();
+            _resultValue.fromOriginId = fromOriginId;
+            _resultValue.toOriginIds = toOriginIds;
+            return _resultValue;
         }
     }
 }

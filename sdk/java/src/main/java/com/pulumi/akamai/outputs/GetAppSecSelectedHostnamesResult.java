@@ -95,13 +95,13 @@ public final class GetAppSecSelectedHostnamesResult {
             return this;
         }
         public GetAppSecSelectedHostnamesResult build() {
-            final var o = new GetAppSecSelectedHostnamesResult();
-            o.configId = configId;
-            o.hostnames = hostnames;
-            o.hostnamesJson = hostnamesJson;
-            o.id = id;
-            o.outputText = outputText;
-            return o;
+            final var _resultValue = new GetAppSecSelectedHostnamesResult();
+            _resultValue.configId = configId;
+            _resultValue.hostnames = hostnames;
+            _resultValue.hostnamesJson = hostnamesJson;
+            _resultValue.id = id;
+            _resultValue.outputText = outputText;
+            return _resultValue;
         }
     }
 }

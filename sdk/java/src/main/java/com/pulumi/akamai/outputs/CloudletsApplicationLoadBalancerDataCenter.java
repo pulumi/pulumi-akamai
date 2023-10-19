@@ -167,20 +167,20 @@ public final class CloudletsApplicationLoadBalancerDataCenter {
             return this;
         }
         public CloudletsApplicationLoadBalancerDataCenter build() {
-            final var o = new CloudletsApplicationLoadBalancerDataCenter();
-            o.city = city;
-            o.cloudServerHostHeaderOverride = cloudServerHostHeaderOverride;
-            o.cloudService = cloudService;
-            o.continent = continent;
-            o.country = country;
-            o.hostname = hostname;
-            o.latitude = latitude;
-            o.livenessHosts = livenessHosts;
-            o.longitude = longitude;
-            o.originId = originId;
-            o.percent = percent;
-            o.stateOrProvince = stateOrProvince;
-            return o;
+            final var _resultValue = new CloudletsApplicationLoadBalancerDataCenter();
+            _resultValue.city = city;
+            _resultValue.cloudServerHostHeaderOverride = cloudServerHostHeaderOverride;
+            _resultValue.cloudService = cloudService;
+            _resultValue.continent = continent;
+            _resultValue.country = country;
+            _resultValue.hostname = hostname;
+            _resultValue.latitude = latitude;
+            _resultValue.livenessHosts = livenessHosts;
+            _resultValue.longitude = longitude;
+            _resultValue.originId = originId;
+            _resultValue.percent = percent;
+            _resultValue.stateOrProvince = stateOrProvince;
+            return _resultValue;
         }
     }
 }

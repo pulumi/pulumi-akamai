@@ -138,18 +138,18 @@ public final class GetPropertiesProperty {
             return this;
         }
         public GetPropertiesProperty build() {
-            final var o = new GetPropertiesProperty();
-            o.contractId = contractId;
-            o.groupId = groupId;
-            o.latestVersion = latestVersion;
-            o.note = note;
-            o.productId = productId;
-            o.productionVersion = productionVersion;
-            o.propertyId = propertyId;
-            o.propertyName = propertyName;
-            o.ruleFormat = ruleFormat;
-            o.stagingVersion = stagingVersion;
-            return o;
+            final var _resultValue = new GetPropertiesProperty();
+            _resultValue.contractId = contractId;
+            _resultValue.groupId = groupId;
+            _resultValue.latestVersion = latestVersion;
+            _resultValue.note = note;
+            _resultValue.productId = productId;
+            _resultValue.productionVersion = productionVersion;
+            _resultValue.propertyId = propertyId;
+            _resultValue.propertyName = propertyName;
+            _resultValue.ruleFormat = ruleFormat;
+            _resultValue.stagingVersion = stagingVersion;
+            return _resultValue;
         }
     }
 }

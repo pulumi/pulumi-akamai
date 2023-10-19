@@ -31,7 +31,13 @@ class AppSecRatePolicyArgs:
              _setter: Callable[[Any, Any], None],
              config_id: pulumi.Input[int],
              rate_policy: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'ratePolicy' in kwargs:
+            rate_policy = kwargs['ratePolicy']
+
         _setter("config_id", config_id)
         _setter("rate_policy", rate_policy)
 
@@ -84,7 +90,15 @@ class _AppSecRatePolicyState:
              config_id: Optional[pulumi.Input[int]] = None,
              rate_policy: Optional[pulumi.Input[str]] = None,
              rate_policy_id: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'ratePolicy' in kwargs:
+            rate_policy = kwargs['ratePolicy']
+        if 'ratePolicyId' in kwargs:
+            rate_policy_id = kwargs['ratePolicyId']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if rate_policy is not None:

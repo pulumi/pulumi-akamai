@@ -4,8 +4,12 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetCpsWarnings(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetCpsWarningsResult, error) {
@@ -23,4 +27,49 @@ type GetCpsWarningsResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id       string            `pulumi:"id"`
 	Warnings map[string]string `pulumi:"warnings"`
+}
+
+func GetCpsWarningsOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetCpsWarningsResultOutput {
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetCpsWarningsResult, error) {
+		r, err := GetCpsWarnings(ctx, opts...)
+		var s GetCpsWarningsResult
+		if r != nil {
+			s = *r
+		}
+		return s, err
+	}).(GetCpsWarningsResultOutput)
+}
+
+// A collection of values returned by getCpsWarnings.
+type GetCpsWarningsResultOutput struct{ *pulumi.OutputState }
+
+func (GetCpsWarningsResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCpsWarningsResult)(nil)).Elem()
+}
+
+func (o GetCpsWarningsResultOutput) ToGetCpsWarningsResultOutput() GetCpsWarningsResultOutput {
+	return o
+}
+
+func (o GetCpsWarningsResultOutput) ToGetCpsWarningsResultOutputWithContext(ctx context.Context) GetCpsWarningsResultOutput {
+	return o
+}
+
+func (o GetCpsWarningsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCpsWarningsResult] {
+	return pulumix.Output[GetCpsWarningsResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetCpsWarningsResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCpsWarningsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetCpsWarningsResultOutput) Warnings() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCpsWarningsResult) map[string]string { return v.Warnings }).(pulumi.StringMapOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetCpsWarningsResultOutput{})
 }

@@ -51,10 +51,10 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationBlur {
             return this;
         }
         public GetImagingPolicyImagePolicyPostBreakpointTransformationBlur build() {
-            final var o = new GetImagingPolicyImagePolicyPostBreakpointTransformationBlur();
-            o.sigma = sigma;
-            o.sigmaVar = sigmaVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyPostBreakpointTransformationBlur();
+            _resultValue.sigma = sigma;
+            _resultValue.sigmaVar = sigmaVar;
+            return _resultValue;
         }
     }
 }

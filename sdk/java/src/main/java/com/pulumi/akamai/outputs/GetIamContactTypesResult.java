@@ -61,10 +61,10 @@ public final class GetIamContactTypesResult {
             return this;
         }
         public GetIamContactTypesResult build() {
-            final var o = new GetIamContactTypesResult();
-            o.contactTypes = contactTypes;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetIamContactTypesResult();
+            _resultValue.contactTypes = contactTypes;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

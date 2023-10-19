@@ -43,9 +43,9 @@ public final class GetImagingPolicyImagePolicyTransformationCompound {
             return transformations(List.of(transformations));
         }
         public GetImagingPolicyImagePolicyTransformationCompound build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationCompound();
-            o.transformations = transformations;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationCompound();
+            _resultValue.transformations = transformations;
+            return _resultValue;
         }
     }
 }

@@ -52,10 +52,10 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritiz
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationCloudletPolicy build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationCloudletPolicy();
-            o.id = id;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationCloudletPolicy();
+            _resultValue.id = id;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

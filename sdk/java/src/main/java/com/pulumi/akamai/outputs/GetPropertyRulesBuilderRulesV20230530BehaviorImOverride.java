@@ -222,25 +222,25 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorImOverride {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorImOverride build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorImOverride();
-            o.dpr = dpr;
-            o.dprvar = dprvar;
-            o.excludeAllQueryParameters = excludeAllQueryParameters;
-            o.excludedQueryParameters = excludedQueryParameters;
-            o.format = format;
-            o.formatvar = formatvar;
-            o.locked = locked;
-            o.override = override;
-            o.policy = policy;
-            o.policyvar = policyvar;
-            o.policyvarIMvar = policyvarIMvar;
-            o.policyvarName = policyvarName;
-            o.templateUuid = templateUuid;
-            o.typesel = typesel;
-            o.uuid = uuid;
-            o.width = width;
-            o.widthvar = widthvar;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorImOverride();
+            _resultValue.dpr = dpr;
+            _resultValue.dprvar = dprvar;
+            _resultValue.excludeAllQueryParameters = excludeAllQueryParameters;
+            _resultValue.excludedQueryParameters = excludedQueryParameters;
+            _resultValue.format = format;
+            _resultValue.formatvar = formatvar;
+            _resultValue.locked = locked;
+            _resultValue.override = override;
+            _resultValue.policy = policy;
+            _resultValue.policyvar = policyvar;
+            _resultValue.policyvarIMvar = policyvarIMvar;
+            _resultValue.policyvarName = policyvarName;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.typesel = typesel;
+            _resultValue.uuid = uuid;
+            _resultValue.width = width;
+            _resultValue.widthvar = widthvar;
+            return _resultValue;
         }
     }
 }

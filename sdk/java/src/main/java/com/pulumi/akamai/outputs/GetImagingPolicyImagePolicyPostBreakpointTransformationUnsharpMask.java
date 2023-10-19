@@ -95,14 +95,14 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationUnshar
             return this;
         }
         public GetImagingPolicyImagePolicyPostBreakpointTransformationUnsharpMask build() {
-            final var o = new GetImagingPolicyImagePolicyPostBreakpointTransformationUnsharpMask();
-            o.gain = gain;
-            o.gainVar = gainVar;
-            o.sigma = sigma;
-            o.sigmaVar = sigmaVar;
-            o.threshold = threshold;
-            o.thresholdVar = thresholdVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyPostBreakpointTransformationUnsharpMask();
+            _resultValue.gain = gain;
+            _resultValue.gainVar = gainVar;
+            _resultValue.sigma = sigma;
+            _resultValue.sigmaVar = sigmaVar;
+            _resultValue.threshold = threshold;
+            _resultValue.thresholdVar = thresholdVar;
+            return _resultValue;
         }
     }
 }

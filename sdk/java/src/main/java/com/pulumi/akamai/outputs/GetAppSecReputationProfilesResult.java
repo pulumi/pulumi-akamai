@@ -93,13 +93,13 @@ public final class GetAppSecReputationProfilesResult {
             return this;
         }
         public GetAppSecReputationProfilesResult build() {
-            final var o = new GetAppSecReputationProfilesResult();
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            o.outputText = outputText;
-            o.reputationProfileId = reputationProfileId;
-            return o;
+            final var _resultValue = new GetAppSecReputationProfilesResult();
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.outputText = outputText;
+            _resultValue.reputationProfileId = reputationProfileId;
+            return _resultValue;
         }
     }
 }

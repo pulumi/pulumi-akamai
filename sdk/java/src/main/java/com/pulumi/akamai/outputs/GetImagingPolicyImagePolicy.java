@@ -124,15 +124,15 @@ public final class GetImagingPolicyImagePolicy {
             return variables(List.of(variables));
         }
         public GetImagingPolicyImagePolicy build() {
-            final var o = new GetImagingPolicyImagePolicy();
-            o.breakpoints = breakpoints;
-            o.hosts = hosts;
-            o.output = output;
-            o.postBreakpointTransformations = postBreakpointTransformations;
-            o.rolloutDuration = rolloutDuration;
-            o.transformations = transformations;
-            o.variables = variables;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicy();
+            _resultValue.breakpoints = breakpoints;
+            _resultValue.hosts = hosts;
+            _resultValue.output = output;
+            _resultValue.postBreakpointTransformations = postBreakpointTransformations;
+            _resultValue.rolloutDuration = rolloutDuration;
+            _resultValue.transformations = transformations;
+            _resultValue.variables = variables;
+            return _resultValue;
         }
     }
 }

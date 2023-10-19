@@ -50,10 +50,10 @@ public final class GetPropertyIncludesParentProperty {
             return this;
         }
         public GetPropertyIncludesParentProperty build() {
-            final var o = new GetPropertyIncludesParentProperty();
-            o.id = id;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetPropertyIncludesParentProperty();
+            _resultValue.id = id;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

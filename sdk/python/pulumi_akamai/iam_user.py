@@ -99,7 +99,33 @@ class IamUserArgs:
              state: Optional[pulumi.Input[str]] = None,
              time_zone: Optional[pulumi.Input[str]] = None,
              zip_code: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authGrantsJson' in kwargs:
+            auth_grants_json = kwargs['authGrantsJson']
+        if 'enableTfa' in kwargs:
+            enable_tfa = kwargs['enableTfa']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'contactType' in kwargs:
+            contact_type = kwargs['contactType']
+        if 'jobTitle' in kwargs:
+            job_title = kwargs['jobTitle']
+        if 'mobilePhone' in kwargs:
+            mobile_phone = kwargs['mobilePhone']
+        if 'preferredLanguage' in kwargs:
+            preferred_language = kwargs['preferredLanguage']
+        if 'secondaryEmail' in kwargs:
+            secondary_email = kwargs['secondaryEmail']
+        if 'sessionTimeout' in kwargs:
+            session_timeout = kwargs['sessionTimeout']
+        if 'timeZone' in kwargs:
+            time_zone = kwargs['timeZone']
+        if 'zipCode' in kwargs:
+            zip_code = kwargs['zipCode']
+
         _setter("auth_grants_json", auth_grants_json)
         _setter("country", country)
         _setter("email", email)
@@ -469,7 +495,43 @@ class _IamUserState:
              time_zone: Optional[pulumi.Input[str]] = None,
              user_name: Optional[pulumi.Input[str]] = None,
              zip_code: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authGrantsJson' in kwargs:
+            auth_grants_json = kwargs['authGrantsJson']
+        if 'contactType' in kwargs:
+            contact_type = kwargs['contactType']
+        if 'emailUpdatePending' in kwargs:
+            email_update_pending = kwargs['emailUpdatePending']
+        if 'enableTfa' in kwargs:
+            enable_tfa = kwargs['enableTfa']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'jobTitle' in kwargs:
+            job_title = kwargs['jobTitle']
+        if 'lastLogin' in kwargs:
+            last_login = kwargs['lastLogin']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'mobilePhone' in kwargs:
+            mobile_phone = kwargs['mobilePhone']
+        if 'passwordExpiredAfter' in kwargs:
+            password_expired_after = kwargs['passwordExpiredAfter']
+        if 'preferredLanguage' in kwargs:
+            preferred_language = kwargs['preferredLanguage']
+        if 'secondaryEmail' in kwargs:
+            secondary_email = kwargs['secondaryEmail']
+        if 'sessionTimeout' in kwargs:
+            session_timeout = kwargs['sessionTimeout']
+        if 'tfaConfigured' in kwargs:
+            tfa_configured = kwargs['tfaConfigured']
+        if 'timeZone' in kwargs:
+            time_zone = kwargs['timeZone']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+        if 'zipCode' in kwargs:
+            zip_code = kwargs['zipCode']
+
         if address is not None:
             _setter("address", address)
         if auth_grants_json is not None:

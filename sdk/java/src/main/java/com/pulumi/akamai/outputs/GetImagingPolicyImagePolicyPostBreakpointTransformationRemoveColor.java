@@ -95,14 +95,14 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationRemove
             return this;
         }
         public GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveColor build() {
-            final var o = new GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveColor();
-            o.color = color;
-            o.colorVar = colorVar;
-            o.feather = feather;
-            o.featherVar = featherVar;
-            o.tolerance = tolerance;
-            o.toleranceVar = toleranceVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveColor();
+            _resultValue.color = color;
+            _resultValue.colorVar = colorVar;
+            _resultValue.feather = feather;
+            _resultValue.featherVar = featherVar;
+            _resultValue.tolerance = tolerance;
+            _resultValue.toleranceVar = toleranceVar;
+            return _resultValue;
         }
     }
 }

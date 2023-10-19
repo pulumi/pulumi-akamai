@@ -91,13 +91,13 @@ public final class GetEdgekvGroupItemsResult {
             return this;
         }
         public GetEdgekvGroupItemsResult build() {
-            final var o = new GetEdgekvGroupItemsResult();
-            o.groupName = groupName;
-            o.id = id;
-            o.items = items;
-            o.namespaceName = namespaceName;
-            o.network = network;
-            return o;
+            final var _resultValue = new GetEdgekvGroupItemsResult();
+            _resultValue.groupName = groupName;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.namespaceName = namespaceName;
+            _resultValue.network = network;
+            return _resultValue;
         }
     }
 }

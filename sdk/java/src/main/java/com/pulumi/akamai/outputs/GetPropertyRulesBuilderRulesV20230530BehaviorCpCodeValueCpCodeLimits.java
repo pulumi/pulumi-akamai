@@ -63,11 +63,11 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorCpCodeValueCpCod
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorCpCodeValueCpCodeLimits build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorCpCodeValueCpCodeLimits();
-            o.currentCapacity = currentCapacity;
-            o.limit = limit;
-            o.limitType = limitType;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorCpCodeValueCpCodeLimits();
+            _resultValue.currentCapacity = currentCapacity;
+            _resultValue.limit = limit;
+            _resultValue.limitType = limitType;
+            return _resultValue;
         }
     }
 }

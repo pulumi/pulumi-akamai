@@ -78,12 +78,12 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDeviceCharacteri
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorDeviceCharacteristicCacheId build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorDeviceCharacteristicCacheId();
-            o.elements = elements;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorDeviceCharacteristicCacheId();
+            _resultValue.elements = elements;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

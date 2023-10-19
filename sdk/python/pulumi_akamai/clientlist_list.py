@@ -53,7 +53,13 @@ class ClientlistListArgs:
              name: Optional[pulumi.Input[str]] = None,
              notes: Optional[pulumi.Input[str]] = None,
              tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+
         _setter("contract_id", contract_id)
         _setter("group_id", group_id)
         _setter("type", type)
@@ -203,7 +209,17 @@ class _ClientlistListState:
              tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'itemsCount' in kwargs:
+            items_count = kwargs['itemsCount']
+        if 'listId' in kwargs:
+            list_id = kwargs['listId']
+
         if contract_id is not None:
             _setter("contract_id", contract_id)
         if group_id is not None:

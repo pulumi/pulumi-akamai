@@ -84,12 +84,12 @@ public final class GetPropertiesResult {
             return properties(List.of(properties));
         }
         public GetPropertiesResult build() {
-            final var o = new GetPropertiesResult();
-            o.contractId = contractId;
-            o.groupId = groupId;
-            o.id = id;
-            o.properties = properties;
-            return o;
+            final var _resultValue = new GetPropertiesResult();
+            _resultValue.contractId = contractId;
+            _resultValue.groupId = groupId;
+            _resultValue.id = id;
+            _resultValue.properties = properties;
+            return _resultValue;
         }
     }
 }

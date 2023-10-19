@@ -201,22 +201,22 @@ public final class GetPropertyRulesBuilderRulesV20230530 {
             return variables(List.of(variables));
         }
         public GetPropertyRulesBuilderRulesV20230530 build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530();
-            o.advancedOverride = advancedOverride;
-            o.behaviors = behaviors;
-            o.childrens = childrens;
-            o.comments = comments;
-            o.criteriaLocked = criteriaLocked;
-            o.criteriaMustSatisfy = criteriaMustSatisfy;
-            o.criterions = criterions;
-            o.customOverride = customOverride;
-            o.isSecure = isSecure;
-            o.name = name;
-            o.templateLink = templateLink;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            o.variables = variables;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530();
+            _resultValue.advancedOverride = advancedOverride;
+            _resultValue.behaviors = behaviors;
+            _resultValue.childrens = childrens;
+            _resultValue.comments = comments;
+            _resultValue.criteriaLocked = criteriaLocked;
+            _resultValue.criteriaMustSatisfy = criteriaMustSatisfy;
+            _resultValue.criterions = criterions;
+            _resultValue.customOverride = customOverride;
+            _resultValue.isSecure = isSecure;
+            _resultValue.name = name;
+            _resultValue.templateLink = templateLink;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            _resultValue.variables = variables;
+            return _resultValue;
         }
     }
 }

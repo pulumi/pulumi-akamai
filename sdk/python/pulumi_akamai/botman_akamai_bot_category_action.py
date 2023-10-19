@@ -35,7 +35,17 @@ class BotmanAkamaiBotCategoryActionArgs:
              category_id: pulumi.Input[str],
              config_id: pulumi.Input[int],
              security_policy_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'akamaiBotCategoryAction' in kwargs:
+            akamai_bot_category_action = kwargs['akamaiBotCategoryAction']
+        if 'categoryId' in kwargs:
+            category_id = kwargs['categoryId']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         _setter("akamai_bot_category_action", akamai_bot_category_action)
         _setter("category_id", category_id)
         _setter("config_id", config_id)
@@ -102,7 +112,17 @@ class _BotmanAkamaiBotCategoryActionState:
              category_id: Optional[pulumi.Input[str]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'akamaiBotCategoryAction' in kwargs:
+            akamai_bot_category_action = kwargs['akamaiBotCategoryAction']
+        if 'categoryId' in kwargs:
+            category_id = kwargs['categoryId']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         if akamai_bot_category_action is not None:
             _setter("akamai_bot_category_action", akamai_bot_category_action)
         if category_id is not None:

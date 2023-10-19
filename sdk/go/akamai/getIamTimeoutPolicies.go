@@ -4,8 +4,12 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetIamTimeoutPolicies(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIamTimeoutPoliciesResult, error) {
@@ -23,4 +27,49 @@ type GetIamTimeoutPoliciesResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id       string         `pulumi:"id"`
 	Policies map[string]int `pulumi:"policies"`
+}
+
+func GetIamTimeoutPoliciesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetIamTimeoutPoliciesResultOutput {
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamTimeoutPoliciesResult, error) {
+		r, err := GetIamTimeoutPolicies(ctx, opts...)
+		var s GetIamTimeoutPoliciesResult
+		if r != nil {
+			s = *r
+		}
+		return s, err
+	}).(GetIamTimeoutPoliciesResultOutput)
+}
+
+// A collection of values returned by getIamTimeoutPolicies.
+type GetIamTimeoutPoliciesResultOutput struct{ *pulumi.OutputState }
+
+func (GetIamTimeoutPoliciesResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamTimeoutPoliciesResult)(nil)).Elem()
+}
+
+func (o GetIamTimeoutPoliciesResultOutput) ToGetIamTimeoutPoliciesResultOutput() GetIamTimeoutPoliciesResultOutput {
+	return o
+}
+
+func (o GetIamTimeoutPoliciesResultOutput) ToGetIamTimeoutPoliciesResultOutputWithContext(ctx context.Context) GetIamTimeoutPoliciesResultOutput {
+	return o
+}
+
+func (o GetIamTimeoutPoliciesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIamTimeoutPoliciesResult] {
+	return pulumix.Output[GetIamTimeoutPoliciesResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetIamTimeoutPoliciesResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamTimeoutPoliciesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetIamTimeoutPoliciesResultOutput) Policies() pulumi.IntMapOutput {
+	return o.ApplyT(func(v GetIamTimeoutPoliciesResult) map[string]int { return v.Policies }).(pulumi.IntMapOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetIamTimeoutPoliciesResultOutput{})
 }

@@ -115,16 +115,16 @@ public final class GetIamRolesRole {
             return this;
         }
         public GetIamRolesRole build() {
-            final var o = new GetIamRolesRole();
-            o.createdBy = createdBy;
-            o.description = description;
-            o.modifiedBy = modifiedBy;
-            o.name = name;
-            o.roleId = roleId;
-            o.timeCreated = timeCreated;
-            o.timeModified = timeModified;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetIamRolesRole();
+            _resultValue.createdBy = createdBy;
+            _resultValue.description = description;
+            _resultValue.modifiedBy = modifiedBy;
+            _resultValue.name = name;
+            _resultValue.roleId = roleId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeModified = timeModified;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

@@ -39,7 +39,17 @@ class AppSecCustomRuleActionArgs:
              custom_rule_action: pulumi.Input[str],
              custom_rule_id: pulumi.Input[int],
              security_policy_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'customRuleAction' in kwargs:
+            custom_rule_action = kwargs['customRuleAction']
+        if 'customRuleId' in kwargs:
+            custom_rule_id = kwargs['customRuleId']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         _setter("config_id", config_id)
         _setter("custom_rule_action", custom_rule_action)
         _setter("custom_rule_id", custom_rule_id)
@@ -122,7 +132,17 @@ class _AppSecCustomRuleActionState:
              custom_rule_action: Optional[pulumi.Input[str]] = None,
              custom_rule_id: Optional[pulumi.Input[int]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'customRuleAction' in kwargs:
+            custom_rule_action = kwargs['customRuleAction']
+        if 'customRuleId' in kwargs:
+            custom_rule_id = kwargs['customRuleId']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if custom_rule_action is not None:

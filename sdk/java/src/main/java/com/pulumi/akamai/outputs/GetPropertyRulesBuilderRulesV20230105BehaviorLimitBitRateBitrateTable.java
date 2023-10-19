@@ -52,10 +52,10 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateBitr
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateBitrateTable build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateBitrateTable();
-            o.bitrateUnit = bitrateUnit;
-            o.bitrateValue = bitrateValue;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateBitrateTable();
+            _resultValue.bitrateUnit = bitrateUnit;
+            _resultValue.bitrateValue = bitrateValue;
+            return _resultValue;
         }
     }
 }

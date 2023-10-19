@@ -127,17 +127,17 @@ public final class GetPropertyIncludeResult {
             return this;
         }
         public GetPropertyIncludeResult build() {
-            final var o = new GetPropertyIncludeResult();
-            o.contractId = contractId;
-            o.groupId = groupId;
-            o.id = id;
-            o.includeId = includeId;
-            o.latestVersion = latestVersion;
-            o.name = name;
-            o.productionVersion = productionVersion;
-            o.stagingVersion = stagingVersion;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetPropertyIncludeResult();
+            _resultValue.contractId = contractId;
+            _resultValue.groupId = groupId;
+            _resultValue.id = id;
+            _resultValue.includeId = includeId;
+            _resultValue.latestVersion = latestVersion;
+            _resultValue.name = name;
+            _resultValue.productionVersion = productionVersion;
+            _resultValue.stagingVersion = stagingVersion;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

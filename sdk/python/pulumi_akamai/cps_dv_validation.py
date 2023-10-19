@@ -31,7 +31,11 @@ class CpsDvValidationArgs:
              _setter: Callable[[Any, Any], None],
              enrollment_id: pulumi.Input[int],
              sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enrollmentId' in kwargs:
+            enrollment_id = kwargs['enrollmentId']
+
         _setter("enrollment_id", enrollment_id)
         if sans is not None:
             _setter("sans", sans)
@@ -85,7 +89,11 @@ class _CpsDvValidationState:
              enrollment_id: Optional[pulumi.Input[int]] = None,
              sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              status: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enrollmentId' in kwargs:
+            enrollment_id = kwargs['enrollmentId']
+
         if enrollment_id is not None:
             _setter("enrollment_id", enrollment_id)
         if sans is not None:

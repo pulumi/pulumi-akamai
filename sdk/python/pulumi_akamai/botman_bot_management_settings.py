@@ -32,7 +32,15 @@ class BotmanBotManagementSettingsArgs:
              bot_management_settings: pulumi.Input[str],
              config_id: pulumi.Input[int],
              security_policy_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'botManagementSettings' in kwargs:
+            bot_management_settings = kwargs['botManagementSettings']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         _setter("bot_management_settings", bot_management_settings)
         _setter("config_id", config_id)
         _setter("security_policy_id", security_policy_id)
@@ -86,7 +94,15 @@ class _BotmanBotManagementSettingsState:
              bot_management_settings: Optional[pulumi.Input[str]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'botManagementSettings' in kwargs:
+            bot_management_settings = kwargs['botManagementSettings']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         if bot_management_settings is not None:
             _setter("bot_management_settings", bot_management_settings)
         if config_id is not None:

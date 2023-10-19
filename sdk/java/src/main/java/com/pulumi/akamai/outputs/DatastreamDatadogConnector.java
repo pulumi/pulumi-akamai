@@ -107,15 +107,15 @@ public final class DatastreamDatadogConnector {
             return this;
         }
         public DatastreamDatadogConnector build() {
-            final var o = new DatastreamDatadogConnector();
-            o.authToken = authToken;
-            o.compressLogs = compressLogs;
-            o.displayName = displayName;
-            o.endpoint = endpoint;
-            o.service = service;
-            o.source = source;
-            o.tags = tags;
-            return o;
+            final var _resultValue = new DatastreamDatadogConnector();
+            _resultValue.authToken = authToken;
+            _resultValue.compressLogs = compressLogs;
+            _resultValue.displayName = displayName;
+            _resultValue.endpoint = endpoint;
+            _resultValue.service = service;
+            _resultValue.source = source;
+            _resultValue.tags = tags;
+            return _resultValue;
         }
     }
 }

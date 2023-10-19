@@ -13751,21 +13751,185 @@
         },
         "akamai:index/getPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificate:getPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificate": {
             "properties": {
+                "canBeCa": {
+                    "type": "boolean"
+                },
+                "canBeLeaf": {
+                    "type": "boolean"
+                },
+                "issuerRdns": {
+                    "$ref": "#/types/akamai:index/getPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateIssuerRdns:getPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateIssuerRdns"
+                },
+                "notAfter": {
+                    "type": "integer"
+                },
+                "notBefore": {
+                    "type": "integer"
+                },
                 "pemEncodedCert": {
+                    "type": "string"
+                },
+                "publicKey": {
+                    "type": "string"
+                },
+                "publicKeyAlgorithm": {
+                    "type": "string"
+                },
+                "publicKeyFormat": {
+                    "type": "string"
+                },
+                "selfSigned": {
+                    "type": "boolean"
+                },
+                "serialNumber": {
                     "type": "string"
                 },
                 "sha1Fingerprint": {
                     "type": "string"
+                },
+                "sigAlgName": {
+                    "type": "string"
+                },
+                "subjectAlternativeNames": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "subjectCn": {
+                    "type": "string"
+                },
+                "subjectRdns": {
+                    "$ref": "#/types/akamai:index/getPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateSubjectRdns:getPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateSubjectRdns"
+                },
+                "version": {
+                    "type": "integer"
                 }
             },
             "type": "object"
         },
         "akamai:index/getPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthority:getPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthority": {
             "properties": {
+                "canBeCa": {
+                    "type": "boolean"
+                },
+                "canBeLeaf": {
+                    "type": "boolean"
+                },
+                "issuerRdns": {
+                    "$ref": "#/types/akamai:index/getPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthorityIssuerRdns:getPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthorityIssuerRdns"
+                },
+                "notAfter": {
+                    "type": "integer"
+                },
+                "notBefore": {
+                    "type": "integer"
+                },
                 "pemEncodedCert": {
                     "type": "string"
                 },
+                "publicKey": {
+                    "type": "string"
+                },
+                "publicKeyAlgorithm": {
+                    "type": "string"
+                },
+                "publicKeyFormat": {
+                    "type": "string"
+                },
+                "selfSigned": {
+                    "type": "boolean"
+                },
+                "serialNumber": {
+                    "type": "string"
+                },
                 "sha1Fingerprint": {
+                    "type": "string"
+                },
+                "sigAlgName": {
+                    "type": "string"
+                },
+                "subjectAlternativeNames": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "subjectCn": {
+                    "type": "string"
+                },
+                "subjectRdns": {
+                    "$ref": "#/types/akamai:index/getPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthoritySubjectRdns:getPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthoritySubjectRdns"
+                },
+                "version": {
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:index/getPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthorityIssuerRdns:getPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthorityIssuerRdns": {
+            "properties": {
+                "c": {
+                    "type": "string"
+                },
+                "cn": {
+                    "type": "string"
+                },
+                "o": {
+                    "type": "string"
+                },
+                "ou": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:index/getPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthoritySubjectRdns:getPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthoritySubjectRdns": {
+            "properties": {
+                "c": {
+                    "type": "string"
+                },
+                "cn": {
+                    "type": "string"
+                },
+                "o": {
+                    "type": "string"
+                },
+                "ou": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:index/getPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateIssuerRdns:getPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateIssuerRdns": {
+            "properties": {
+                "c": {
+                    "type": "string"
+                },
+                "cn": {
+                    "type": "string"
+                },
+                "o": {
+                    "type": "string"
+                },
+                "ou": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:index/getPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateSubjectRdns:getPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateSubjectRdns": {
+            "properties": {
+                "c": {
+                    "type": "string"
+                },
+                "cn": {
+                    "type": "string"
+                },
+                "o": {
+                    "type": "string"
+                },
+                "ou": {
                     "type": "string"
                 }
             },
@@ -15393,7 +15557,16 @@
         },
         "akamai:index/getPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmap:getPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmap": {
             "properties": {
+                "chinaCdnMap": {
+                    "type": "string"
+                },
+                "hasMixedHosts": {
+                    "type": "boolean"
+                },
                 "name": {
+                    "type": "string"
+                },
+                "src": {
                     "type": "string"
                 },
                 "srmap": {
@@ -23468,21 +23641,185 @@
         },
         "akamai:index/getPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificate:getPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificate": {
             "properties": {
+                "canBeCa": {
+                    "type": "boolean"
+                },
+                "canBeLeaf": {
+                    "type": "boolean"
+                },
+                "issuerRdns": {
+                    "$ref": "#/types/akamai:index/getPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateIssuerRdns:getPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateIssuerRdns"
+                },
+                "notAfter": {
+                    "type": "integer"
+                },
+                "notBefore": {
+                    "type": "integer"
+                },
                 "pemEncodedCert": {
+                    "type": "string"
+                },
+                "publicKey": {
+                    "type": "string"
+                },
+                "publicKeyAlgorithm": {
+                    "type": "string"
+                },
+                "publicKeyFormat": {
+                    "type": "string"
+                },
+                "selfSigned": {
+                    "type": "boolean"
+                },
+                "serialNumber": {
                     "type": "string"
                 },
                 "sha1Fingerprint": {
                     "type": "string"
+                },
+                "sigAlgName": {
+                    "type": "string"
+                },
+                "subjectAlternativeNames": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "subjectCn": {
+                    "type": "string"
+                },
+                "subjectRdns": {
+                    "$ref": "#/types/akamai:index/getPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateSubjectRdns:getPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateSubjectRdns"
+                },
+                "version": {
+                    "type": "integer"
                 }
             },
             "type": "object"
         },
         "akamai:index/getPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthority:getPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthority": {
             "properties": {
+                "canBeCa": {
+                    "type": "boolean"
+                },
+                "canBeLeaf": {
+                    "type": "boolean"
+                },
+                "issuerRdns": {
+                    "$ref": "#/types/akamai:index/getPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityIssuerRdns:getPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityIssuerRdns"
+                },
+                "notAfter": {
+                    "type": "integer"
+                },
+                "notBefore": {
+                    "type": "integer"
+                },
                 "pemEncodedCert": {
                     "type": "string"
                 },
+                "publicKey": {
+                    "type": "string"
+                },
+                "publicKeyAlgorithm": {
+                    "type": "string"
+                },
+                "publicKeyFormat": {
+                    "type": "string"
+                },
+                "selfSigned": {
+                    "type": "boolean"
+                },
+                "serialNumber": {
+                    "type": "string"
+                },
                 "sha1Fingerprint": {
+                    "type": "string"
+                },
+                "sigAlgName": {
+                    "type": "string"
+                },
+                "subjectAlternativeNames": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "subjectCn": {
+                    "type": "string"
+                },
+                "subjectRdns": {
+                    "$ref": "#/types/akamai:index/getPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthoritySubjectRdns:getPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthoritySubjectRdns"
+                },
+                "version": {
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:index/getPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityIssuerRdns:getPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityIssuerRdns": {
+            "properties": {
+                "c": {
+                    "type": "string"
+                },
+                "cn": {
+                    "type": "string"
+                },
+                "o": {
+                    "type": "string"
+                },
+                "ou": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:index/getPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthoritySubjectRdns:getPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthoritySubjectRdns": {
+            "properties": {
+                "c": {
+                    "type": "string"
+                },
+                "cn": {
+                    "type": "string"
+                },
+                "o": {
+                    "type": "string"
+                },
+                "ou": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:index/getPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateIssuerRdns:getPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateIssuerRdns": {
+            "properties": {
+                "c": {
+                    "type": "string"
+                },
+                "cn": {
+                    "type": "string"
+                },
+                "o": {
+                    "type": "string"
+                },
+                "ou": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:index/getPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateSubjectRdns:getPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateSubjectRdns": {
+            "properties": {
+                "c": {
+                    "type": "string"
+                },
+                "cn": {
+                    "type": "string"
+                },
+                "o": {
+                    "type": "string"
+                },
+                "ou": {
                     "type": "string"
                 }
             },
@@ -25105,7 +25442,16 @@
         },
         "akamai:index/getPropertyRulesBuilderRulesV20230530BehaviorSiteShieldSsmap:getPropertyRulesBuilderRulesV20230530BehaviorSiteShieldSsmap": {
             "properties": {
+                "chinaCdnMap": {
+                    "type": "string"
+                },
+                "hasMixedHosts": {
+                    "type": "boolean"
+                },
                 "name": {
+                    "type": "string"
+                },
+                "src": {
                     "type": "string"
                 },
                 "srmap": {
@@ -42506,6 +42852,9 @@
                             "$ref": "#/types/akamai:index/getCPSEnrollmentOrganization:getCPSEnrollmentOrganization"
                         }
                     },
+                    "pendingChanges": {
+                        "type": "boolean"
+                    },
                     "registrationAuthority": {
                         "type": "string"
                     },
@@ -42548,6 +42897,7 @@
                     "httpChallenges",
                     "networkConfigurations",
                     "organizations",
+                    "pendingChanges",
                     "registrationAuthority",
                     "sans",
                     "secureNetwork",
@@ -44680,6 +45030,9 @@
                     "outputText": {
                         "type": "string"
                     },
+                    "syncPoint": {
+                        "type": "integer"
+                    },
                     "type": {
                         "type": "string"
                     }
@@ -44692,6 +45045,7 @@
                     "lists",
                     "networkListId",
                     "outputText",
+                    "syncPoint",
                     "id"
                 ]
             }

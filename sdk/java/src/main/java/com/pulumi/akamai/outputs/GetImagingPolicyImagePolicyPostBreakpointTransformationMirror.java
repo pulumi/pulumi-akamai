@@ -73,12 +73,12 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationMirror
             return this;
         }
         public GetImagingPolicyImagePolicyPostBreakpointTransformationMirror build() {
-            final var o = new GetImagingPolicyImagePolicyPostBreakpointTransformationMirror();
-            o.horizontal = horizontal;
-            o.horizontalVar = horizontalVar;
-            o.vertical = vertical;
-            o.verticalVar = verticalVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyPostBreakpointTransformationMirror();
+            _resultValue.horizontal = horizontal;
+            _resultValue.horizontalVar = horizontalVar;
+            _resultValue.vertical = vertical;
+            _resultValue.verticalVar = verticalVar;
+            return _resultValue;
         }
     }
 }

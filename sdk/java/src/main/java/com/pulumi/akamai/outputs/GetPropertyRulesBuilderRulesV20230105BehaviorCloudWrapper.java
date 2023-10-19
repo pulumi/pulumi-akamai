@@ -85,13 +85,13 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorCloudWrapper {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorCloudWrapper build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorCloudWrapper();
-            o.enabled = enabled;
-            o.location = location;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorCloudWrapper();
+            _resultValue.enabled = enabled;
+            _resultValue.location = location;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

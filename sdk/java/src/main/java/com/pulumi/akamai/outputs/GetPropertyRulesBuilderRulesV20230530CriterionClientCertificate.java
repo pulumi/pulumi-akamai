@@ -85,13 +85,13 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionClientCertifica
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530CriterionClientCertificate build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530CriterionClientCertificate();
-            o.isCertificatePresent = isCertificatePresent;
-            o.isCertificateValid = isCertificateValid;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530CriterionClientCertificate();
+            _resultValue.isCertificatePresent = isCertificatePresent;
+            _resultValue.isCertificateValid = isCertificateValid;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

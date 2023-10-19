@@ -298,26 +298,26 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformation {
             return unsharpMasks(List.of(unsharpMasks));
         }
         public GetImagingPolicyImagePolicyPostBreakpointTransformation build() {
-            final var o = new GetImagingPolicyImagePolicyPostBreakpointTransformation();
-            o.backgroundColors = backgroundColors;
-            o.blurs = blurs;
-            o.chromaKeys = chromaKeys;
-            o.composites = composites;
-            o.compounds = compounds;
-            o.contrasts = contrasts;
-            o.goops = goops;
-            o.grayscales = grayscales;
-            o.hsls = hsls;
-            o.hsvs = hsvs;
-            o.ifDimensions = ifDimensions;
-            o.ifOrientations = ifOrientations;
-            o.maxColors = maxColors;
-            o.mirrors = mirrors;
-            o.monoHues = monoHues;
-            o.opacities = opacities;
-            o.removeColors = removeColors;
-            o.unsharpMasks = unsharpMasks;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyPostBreakpointTransformation();
+            _resultValue.backgroundColors = backgroundColors;
+            _resultValue.blurs = blurs;
+            _resultValue.chromaKeys = chromaKeys;
+            _resultValue.composites = composites;
+            _resultValue.compounds = compounds;
+            _resultValue.contrasts = contrasts;
+            _resultValue.goops = goops;
+            _resultValue.grayscales = grayscales;
+            _resultValue.hsls = hsls;
+            _resultValue.hsvs = hsvs;
+            _resultValue.ifDimensions = ifDimensions;
+            _resultValue.ifOrientations = ifOrientations;
+            _resultValue.maxColors = maxColors;
+            _resultValue.mirrors = mirrors;
+            _resultValue.monoHues = monoHues;
+            _resultValue.opacities = opacities;
+            _resultValue.removeColors = removeColors;
+            _resultValue.unsharpMasks = unsharpMasks;
+            return _resultValue;
         }
     }
 }

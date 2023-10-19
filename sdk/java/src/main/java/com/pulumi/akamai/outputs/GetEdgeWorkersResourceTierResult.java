@@ -80,12 +80,12 @@ public final class GetEdgeWorkersResourceTierResult {
             return this;
         }
         public GetEdgeWorkersResourceTierResult build() {
-            final var o = new GetEdgeWorkersResourceTierResult();
-            o.contractId = contractId;
-            o.id = id;
-            o.resourceTierId = resourceTierId;
-            o.resourceTierName = resourceTierName;
-            return o;
+            final var _resultValue = new GetEdgeWorkersResourceTierResult();
+            _resultValue.contractId = contractId;
+            _resultValue.id = id;
+            _resultValue.resourceTierId = resourceTierId;
+            _resultValue.resourceTierName = resourceTierName;
+            return _resultValue;
         }
     }
 }

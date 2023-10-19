@@ -115,16 +115,16 @@ public final class GetCPSEnrollmentsEnrollmentOrganization {
             return this;
         }
         public GetCPSEnrollmentsEnrollmentOrganization build() {
-            final var o = new GetCPSEnrollmentsEnrollmentOrganization();
-            o.addressLineOne = addressLineOne;
-            o.addressLineTwo = addressLineTwo;
-            o.city = city;
-            o.countryCode = countryCode;
-            o.name = name;
-            o.phone = phone;
-            o.postalCode = postalCode;
-            o.region = region;
-            return o;
+            final var _resultValue = new GetCPSEnrollmentsEnrollmentOrganization();
+            _resultValue.addressLineOne = addressLineOne;
+            _resultValue.addressLineTwo = addressLineTwo;
+            _resultValue.city = city;
+            _resultValue.countryCode = countryCode;
+            _resultValue.name = name;
+            _resultValue.phone = phone;
+            _resultValue.postalCode = postalCode;
+            _resultValue.region = region;
+            return _resultValue;
         }
     }
 }

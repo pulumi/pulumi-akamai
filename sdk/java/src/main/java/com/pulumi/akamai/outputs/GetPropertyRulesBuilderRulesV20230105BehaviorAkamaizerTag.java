@@ -129,17 +129,17 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorAkamaizerTag {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorAkamaizerTag build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorAkamaizerTag();
-            o.includeTagsAttribute = includeTagsAttribute;
-            o.locked = locked;
-            o.matchHostname = matchHostname;
-            o.replaceAll = replaceAll;
-            o.replacementHostname = replacementHostname;
-            o.scope = scope;
-            o.tagsAttribute = tagsAttribute;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorAkamaizerTag();
+            _resultValue.includeTagsAttribute = includeTagsAttribute;
+            _resultValue.locked = locked;
+            _resultValue.matchHostname = matchHostname;
+            _resultValue.replaceAll = replaceAll;
+            _resultValue.replacementHostname = replacementHostname;
+            _resultValue.scope = scope;
+            _resultValue.tagsAttribute = tagsAttribute;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

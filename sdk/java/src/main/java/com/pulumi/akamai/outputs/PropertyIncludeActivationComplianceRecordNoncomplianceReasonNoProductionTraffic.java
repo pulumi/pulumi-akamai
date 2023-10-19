@@ -40,9 +40,9 @@ public final class PropertyIncludeActivationComplianceRecordNoncomplianceReasonN
             return this;
         }
         public PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic build() {
-            final var o = new PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic();
-            o.ticketId = ticketId;
-            return o;
+            final var _resultValue = new PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic();
+            _resultValue.ticketId = ticketId;
+            return _resultValue;
         }
     }
 }

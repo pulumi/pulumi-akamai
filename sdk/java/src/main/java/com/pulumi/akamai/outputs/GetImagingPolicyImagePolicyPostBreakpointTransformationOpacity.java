@@ -51,10 +51,10 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationOpacit
             return this;
         }
         public GetImagingPolicyImagePolicyPostBreakpointTransformationOpacity build() {
-            final var o = new GetImagingPolicyImagePolicyPostBreakpointTransformationOpacity();
-            o.opacity = opacity;
-            o.opacityVar = opacityVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyPostBreakpointTransformationOpacity();
+            _resultValue.opacity = opacity;
+            _resultValue.opacityVar = opacityVar;
+            return _resultValue;
         }
     }
 }

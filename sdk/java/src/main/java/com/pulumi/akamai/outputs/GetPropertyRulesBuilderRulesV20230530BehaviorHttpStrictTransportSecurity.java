@@ -130,17 +130,17 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorHttpStrictTransp
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorHttpStrictTransportSecurity build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorHttpStrictTransportSecurity();
-            o.enable = enable;
-            o.includeSubDomains = includeSubDomains;
-            o.locked = locked;
-            o.maxAge = maxAge;
-            o.preload = preload;
-            o.redirect = redirect;
-            o.redirectStatusCode = redirectStatusCode;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorHttpStrictTransportSecurity();
+            _resultValue.enable = enable;
+            _resultValue.includeSubDomains = includeSubDomains;
+            _resultValue.locked = locked;
+            _resultValue.maxAge = maxAge;
+            _resultValue.preload = preload;
+            _resultValue.redirect = redirect;
+            _resultValue.redirectStatusCode = redirectStatusCode;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

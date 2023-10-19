@@ -80,12 +80,12 @@ public final class GetBotmanBotCategoryExceptionResult {
             return this;
         }
         public GetBotmanBotCategoryExceptionResult build() {
-            final var o = new GetBotmanBotCategoryExceptionResult();
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            o.securityPolicyId = securityPolicyId;
-            return o;
+            final var _resultValue = new GetBotmanBotCategoryExceptionResult();
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.securityPolicyId = securityPolicyId;
+            return _resultValue;
         }
     }
 }

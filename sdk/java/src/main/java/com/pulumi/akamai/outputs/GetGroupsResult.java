@@ -62,10 +62,10 @@ public final class GetGroupsResult {
             return this;
         }
         public GetGroupsResult build() {
-            final var o = new GetGroupsResult();
-            o.groups = groups;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetGroupsResult();
+            _resultValue.groups = groups;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

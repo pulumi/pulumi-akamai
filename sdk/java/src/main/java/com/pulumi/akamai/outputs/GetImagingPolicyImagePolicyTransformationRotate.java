@@ -51,10 +51,10 @@ public final class GetImagingPolicyImagePolicyTransformationRotate {
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationRotate build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationRotate();
-            o.degrees = degrees;
-            o.degreesVar = degreesVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationRotate();
+            _resultValue.degrees = degrees;
+            _resultValue.degreesVar = degreesVar;
+            return _resultValue;
         }
     }
 }

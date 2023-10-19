@@ -65,11 +65,11 @@ public final class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDat
             return this;
         }
         public GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreams build() {
-            final var o = new GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreams();
-            o.dataStreamIds = dataStreamIds;
-            o.enabled = enabled;
-            o.samplingRate = samplingRate;
-            return o;
+            final var _resultValue = new GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreams();
+            _resultValue.dataStreamIds = dataStreamIds;
+            _resultValue.enabled = enabled;
+            _resultValue.samplingRate = samplingRate;
+            return _resultValue;
         }
     }
 }

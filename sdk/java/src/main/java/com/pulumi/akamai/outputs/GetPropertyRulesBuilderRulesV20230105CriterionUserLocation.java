@@ -150,18 +150,18 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionUserLocation {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105CriterionUserLocation build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105CriterionUserLocation();
-            o.checkIps = checkIps;
-            o.continentValues = continentValues;
-            o.countryValues = countryValues;
-            o.field = field;
-            o.locked = locked;
-            o.matchOperator = matchOperator;
-            o.regionValues = regionValues;
-            o.templateUuid = templateUuid;
-            o.useOnlyFirstXForwardedForIp = useOnlyFirstXForwardedForIp;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105CriterionUserLocation();
+            _resultValue.checkIps = checkIps;
+            _resultValue.continentValues = continentValues;
+            _resultValue.countryValues = countryValues;
+            _resultValue.field = field;
+            _resultValue.locked = locked;
+            _resultValue.matchOperator = matchOperator;
+            _resultValue.regionValues = regionValues;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.useOnlyFirstXForwardedForIp = useOnlyFirstXForwardedForIp;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

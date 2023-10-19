@@ -117,16 +117,16 @@ public final class CpsDvEnrollmentOrganization {
             return this;
         }
         public CpsDvEnrollmentOrganization build() {
-            final var o = new CpsDvEnrollmentOrganization();
-            o.addressLineOne = addressLineOne;
-            o.addressLineTwo = addressLineTwo;
-            o.city = city;
-            o.countryCode = countryCode;
-            o.name = name;
-            o.phone = phone;
-            o.postalCode = postalCode;
-            o.region = region;
-            return o;
+            final var _resultValue = new CpsDvEnrollmentOrganization();
+            _resultValue.addressLineOne = addressLineOne;
+            _resultValue.addressLineTwo = addressLineTwo;
+            _resultValue.city = city;
+            _resultValue.countryCode = countryCode;
+            _resultValue.name = name;
+            _resultValue.phone = phone;
+            _resultValue.postalCode = postalCode;
+            _resultValue.region = region;
+            return _resultValue;
         }
     }
 }

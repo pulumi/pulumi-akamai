@@ -101,14 +101,14 @@ public final class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjec
             return values(List.of(values));
         }
         public GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValue build() {
-            final var o = new GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValue();
-            o.name = name;
-            o.nameCaseSensitive = nameCaseSensitive;
-            o.nameHasWildcard = nameHasWildcard;
-            o.options = options;
-            o.type = type;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValue();
+            _resultValue.name = name;
+            _resultValue.nameCaseSensitive = nameCaseSensitive;
+            _resultValue.nameHasWildcard = nameHasWildcard;
+            _resultValue.options = options;
+            _resultValue.type = type;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

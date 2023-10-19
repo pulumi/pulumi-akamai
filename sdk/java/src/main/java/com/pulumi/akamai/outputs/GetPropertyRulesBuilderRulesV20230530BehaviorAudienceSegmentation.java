@@ -274,30 +274,30 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorAudienceSegmenta
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorAudienceSegmentation build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorAudienceSegmentation();
-            o.cloudletPolicy = cloudletPolicy;
-            o.cloudletSharedPolicy = cloudletSharedPolicy;
-            o.enabled = enabled;
-            o.isSharedPolicy = isSharedPolicy;
-            o.label = label;
-            o.locked = locked;
-            o.populationCookieAutomaticSalt = populationCookieAutomaticSalt;
-            o.populationCookieDomain = populationCookieDomain;
-            o.populationCookieIncludeRuleName = populationCookieIncludeRuleName;
-            o.populationCookieSalt = populationCookieSalt;
-            o.populationCookieType = populationCookieType;
-            o.populationDuration = populationDuration;
-            o.populationRefresh = populationRefresh;
-            o.populationTitle = populationTitle;
-            o.segmentTrackingCookieName = segmentTrackingCookieName;
-            o.segmentTrackingCustomHeader = segmentTrackingCustomHeader;
-            o.segmentTrackingMethod = segmentTrackingMethod;
-            o.segmentTrackingQueryParam = segmentTrackingQueryParam;
-            o.segmentTrackingTitle = segmentTrackingTitle;
-            o.specifyPopulationCookieDomain = specifyPopulationCookieDomain;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorAudienceSegmentation();
+            _resultValue.cloudletPolicy = cloudletPolicy;
+            _resultValue.cloudletSharedPolicy = cloudletSharedPolicy;
+            _resultValue.enabled = enabled;
+            _resultValue.isSharedPolicy = isSharedPolicy;
+            _resultValue.label = label;
+            _resultValue.locked = locked;
+            _resultValue.populationCookieAutomaticSalt = populationCookieAutomaticSalt;
+            _resultValue.populationCookieDomain = populationCookieDomain;
+            _resultValue.populationCookieIncludeRuleName = populationCookieIncludeRuleName;
+            _resultValue.populationCookieSalt = populationCookieSalt;
+            _resultValue.populationCookieType = populationCookieType;
+            _resultValue.populationDuration = populationDuration;
+            _resultValue.populationRefresh = populationRefresh;
+            _resultValue.populationTitle = populationTitle;
+            _resultValue.segmentTrackingCookieName = segmentTrackingCookieName;
+            _resultValue.segmentTrackingCustomHeader = segmentTrackingCustomHeader;
+            _resultValue.segmentTrackingMethod = segmentTrackingMethod;
+            _resultValue.segmentTrackingQueryParam = segmentTrackingQueryParam;
+            _resultValue.segmentTrackingTitle = segmentTrackingTitle;
+            _resultValue.specifyPopulationCookieDomain = specifyPopulationCookieDomain;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

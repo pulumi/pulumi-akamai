@@ -42,9 +42,9 @@ public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop
             return points(List.of(points));
         }
         public GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShape build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShape();
-            o.points = points;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShape();
+            _resultValue.points = points;
+            return _resultValue;
         }
     }
 }

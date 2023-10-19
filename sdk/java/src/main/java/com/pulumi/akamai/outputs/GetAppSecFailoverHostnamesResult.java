@@ -95,13 +95,13 @@ public final class GetAppSecFailoverHostnamesResult {
             return this;
         }
         public GetAppSecFailoverHostnamesResult build() {
-            final var o = new GetAppSecFailoverHostnamesResult();
-            o.configId = configId;
-            o.hostnames = hostnames;
-            o.id = id;
-            o.json = json;
-            o.outputText = outputText;
-            return o;
+            final var _resultValue = new GetAppSecFailoverHostnamesResult();
+            _resultValue.configId = configId;
+            _resultValue.hostnames = hostnames;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.outputText = outputText;
+            return _resultValue;
         }
     }
 }

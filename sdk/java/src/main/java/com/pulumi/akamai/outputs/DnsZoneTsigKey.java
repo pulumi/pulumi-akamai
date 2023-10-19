@@ -60,11 +60,11 @@ public final class DnsZoneTsigKey {
             return this;
         }
         public DnsZoneTsigKey build() {
-            final var o = new DnsZoneTsigKey();
-            o.algorithm = algorithm;
-            o.name = name;
-            o.secret = secret;
-            return o;
+            final var _resultValue = new DnsZoneTsigKey();
+            _resultValue.algorithm = algorithm;
+            _resultValue.name = name;
+            _resultValue.secret = secret;
+            return _resultValue;
         }
     }
 }

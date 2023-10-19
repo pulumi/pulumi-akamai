@@ -95,7 +95,45 @@ class DatastreamArgs:
              s3_connector: Optional[pulumi.Input['DatastreamS3ConnectorArgs']] = None,
              splunk_connector: Optional[pulumi.Input['DatastreamSplunkConnectorArgs']] = None,
              sumologic_connector: Optional[pulumi.Input['DatastreamSumologicConnectorArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if 'datasetFields' in kwargs:
+            dataset_fields = kwargs['datasetFields']
+        if 'deliveryConfiguration' in kwargs:
+            delivery_configuration = kwargs['deliveryConfiguration']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'streamName' in kwargs:
+            stream_name = kwargs['streamName']
+        if 'azureConnector' in kwargs:
+            azure_connector = kwargs['azureConnector']
+        if 'collectMidgress' in kwargs:
+            collect_midgress = kwargs['collectMidgress']
+        if 'datadogConnector' in kwargs:
+            datadog_connector = kwargs['datadogConnector']
+        if 'elasticsearchConnector' in kwargs:
+            elasticsearch_connector = kwargs['elasticsearchConnector']
+        if 'gcsConnector' in kwargs:
+            gcs_connector = kwargs['gcsConnector']
+        if 'httpsConnector' in kwargs:
+            https_connector = kwargs['httpsConnector']
+        if 'logglyConnector' in kwargs:
+            loggly_connector = kwargs['logglyConnector']
+        if 'newRelicConnector' in kwargs:
+            new_relic_connector = kwargs['newRelicConnector']
+        if 'notificationEmails' in kwargs:
+            notification_emails = kwargs['notificationEmails']
+        if 'oracleConnector' in kwargs:
+            oracle_connector = kwargs['oracleConnector']
+        if 's3Connector' in kwargs:
+            s3_connector = kwargs['s3Connector']
+        if 'splunkConnector' in kwargs:
+            splunk_connector = kwargs['splunkConnector']
+        if 'sumologicConnector' in kwargs:
+            sumologic_connector = kwargs['sumologicConnector']
+
         _setter("active", active)
         _setter("contract_id", contract_id)
         _setter("dataset_fields", dataset_fields)
@@ -453,7 +491,61 @@ class _DatastreamState:
              stream_name: Optional[pulumi.Input[str]] = None,
              stream_version: Optional[pulumi.Input[int]] = None,
              sumologic_connector: Optional[pulumi.Input['DatastreamSumologicConnectorArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'azureConnector' in kwargs:
+            azure_connector = kwargs['azureConnector']
+        if 'collectMidgress' in kwargs:
+            collect_midgress = kwargs['collectMidgress']
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'createdDate' in kwargs:
+            created_date = kwargs['createdDate']
+        if 'datadogConnector' in kwargs:
+            datadog_connector = kwargs['datadogConnector']
+        if 'datasetFields' in kwargs:
+            dataset_fields = kwargs['datasetFields']
+        if 'deliveryConfiguration' in kwargs:
+            delivery_configuration = kwargs['deliveryConfiguration']
+        if 'elasticsearchConnector' in kwargs:
+            elasticsearch_connector = kwargs['elasticsearchConnector']
+        if 'gcsConnector' in kwargs:
+            gcs_connector = kwargs['gcsConnector']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'httpsConnector' in kwargs:
+            https_connector = kwargs['httpsConnector']
+        if 'latestVersion' in kwargs:
+            latest_version = kwargs['latestVersion']
+        if 'logglyConnector' in kwargs:
+            loggly_connector = kwargs['logglyConnector']
+        if 'modifiedBy' in kwargs:
+            modified_by = kwargs['modifiedBy']
+        if 'modifiedDate' in kwargs:
+            modified_date = kwargs['modifiedDate']
+        if 'newRelicConnector' in kwargs:
+            new_relic_connector = kwargs['newRelicConnector']
+        if 'notificationEmails' in kwargs:
+            notification_emails = kwargs['notificationEmails']
+        if 'oracleConnector' in kwargs:
+            oracle_connector = kwargs['oracleConnector']
+        if 'papiJson' in kwargs:
+            papi_json = kwargs['papiJson']
+        if 'productId' in kwargs:
+            product_id = kwargs['productId']
+        if 's3Connector' in kwargs:
+            s3_connector = kwargs['s3Connector']
+        if 'splunkConnector' in kwargs:
+            splunk_connector = kwargs['splunkConnector']
+        if 'streamName' in kwargs:
+            stream_name = kwargs['streamName']
+        if 'streamVersion' in kwargs:
+            stream_version = kwargs['streamVersion']
+        if 'sumologicConnector' in kwargs:
+            sumologic_connector = kwargs['sumologicConnector']
+
         if active is not None:
             _setter("active", active)
         if azure_connector is not None:

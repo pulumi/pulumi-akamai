@@ -239,27 +239,27 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorCaching {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorCaching build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorCaching();
-            o.behavior = behavior;
-            o.cacheControlDirectives = cacheControlDirectives;
-            o.cacheabilitySettings = cacheabilitySettings;
-            o.defaultTtl = defaultTtl;
-            o.enhancedRfcSupport = enhancedRfcSupport;
-            o.expirationSettings = expirationSettings;
-            o.honorMaxAge = honorMaxAge;
-            o.honorMustRevalidate = honorMustRevalidate;
-            o.honorNoCache = honorNoCache;
-            o.honorNoStore = honorNoStore;
-            o.honorPrivate = honorPrivate;
-            o.honorProxyRevalidate = honorProxyRevalidate;
-            o.honorSMaxage = honorSMaxage;
-            o.locked = locked;
-            o.mustRevalidate = mustRevalidate;
-            o.revalidationSettings = revalidationSettings;
-            o.templateUuid = templateUuid;
-            o.ttl = ttl;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorCaching();
+            _resultValue.behavior = behavior;
+            _resultValue.cacheControlDirectives = cacheControlDirectives;
+            _resultValue.cacheabilitySettings = cacheabilitySettings;
+            _resultValue.defaultTtl = defaultTtl;
+            _resultValue.enhancedRfcSupport = enhancedRfcSupport;
+            _resultValue.expirationSettings = expirationSettings;
+            _resultValue.honorMaxAge = honorMaxAge;
+            _resultValue.honorMustRevalidate = honorMustRevalidate;
+            _resultValue.honorNoCache = honorNoCache;
+            _resultValue.honorNoStore = honorNoStore;
+            _resultValue.honorPrivate = honorPrivate;
+            _resultValue.honorProxyRevalidate = honorProxyRevalidate;
+            _resultValue.honorSMaxage = honorSMaxage;
+            _resultValue.locked = locked;
+            _resultValue.mustRevalidate = mustRevalidate;
+            _resultValue.revalidationSettings = revalidationSettings;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.ttl = ttl;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

@@ -74,12 +74,12 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorAkamaizer {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorAkamaizer build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorAkamaizer();
-            o.enabled = enabled;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorAkamaizer();
+            _resultValue.enabled = enabled;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

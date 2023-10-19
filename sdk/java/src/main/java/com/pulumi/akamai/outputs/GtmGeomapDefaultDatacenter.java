@@ -52,10 +52,10 @@ public final class GtmGeomapDefaultDatacenter {
             return this;
         }
         public GtmGeomapDefaultDatacenter build() {
-            final var o = new GtmGeomapDefaultDatacenter();
-            o.datacenterId = datacenterId;
-            o.nickname = nickname;
-            return o;
+            final var _resultValue = new GtmGeomapDefaultDatacenter();
+            _resultValue.datacenterId = datacenterId;
+            _resultValue.nickname = nickname;
+            return _resultValue;
         }
     }
 }

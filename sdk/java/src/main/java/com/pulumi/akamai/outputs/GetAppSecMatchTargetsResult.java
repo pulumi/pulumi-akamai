@@ -93,13 +93,13 @@ public final class GetAppSecMatchTargetsResult {
             return this;
         }
         public GetAppSecMatchTargetsResult build() {
-            final var o = new GetAppSecMatchTargetsResult();
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            o.matchTargetId = matchTargetId;
-            o.outputText = outputText;
-            return o;
+            final var _resultValue = new GetAppSecMatchTargetsResult();
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.matchTargetId = matchTargetId;
+            _resultValue.outputText = outputText;
+            return _resultValue;
         }
     }
 }

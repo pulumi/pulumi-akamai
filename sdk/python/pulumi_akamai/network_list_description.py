@@ -32,7 +32,11 @@ class NetworkListDescriptionArgs:
              description: pulumi.Input[str],
              network_list_id: pulumi.Input[str],
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkListId' in kwargs:
+            network_list_id = kwargs['networkListId']
+
         _setter("description", description)
         _setter("network_list_id", network_list_id)
         if name is not None:
@@ -87,7 +91,11 @@ class _NetworkListDescriptionState:
              description: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              network_list_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkListId' in kwargs:
+            network_list_id = kwargs['networkListId']
+
         if description is not None:
             _setter("description", description)
         if name is not None:

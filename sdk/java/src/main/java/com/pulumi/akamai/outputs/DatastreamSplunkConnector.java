@@ -151,19 +151,19 @@ public final class DatastreamSplunkConnector {
             return this;
         }
         public DatastreamSplunkConnector build() {
-            final var o = new DatastreamSplunkConnector();
-            o.caCert = caCert;
-            o.clientCert = clientCert;
-            o.clientKey = clientKey;
-            o.compressLogs = compressLogs;
-            o.customHeaderName = customHeaderName;
-            o.customHeaderValue = customHeaderValue;
-            o.displayName = displayName;
-            o.endpoint = endpoint;
-            o.eventCollectorToken = eventCollectorToken;
-            o.mTls = mTls;
-            o.tlsHostname = tlsHostname;
-            return o;
+            final var _resultValue = new DatastreamSplunkConnector();
+            _resultValue.caCert = caCert;
+            _resultValue.clientCert = clientCert;
+            _resultValue.clientKey = clientKey;
+            _resultValue.compressLogs = compressLogs;
+            _resultValue.customHeaderName = customHeaderName;
+            _resultValue.customHeaderValue = customHeaderValue;
+            _resultValue.displayName = displayName;
+            _resultValue.endpoint = endpoint;
+            _resultValue.eventCollectorToken = eventCollectorToken;
+            _resultValue.mTls = mTls;
+            _resultValue.tlsHostname = tlsHostname;
+            return _resultValue;
         }
     }
 }

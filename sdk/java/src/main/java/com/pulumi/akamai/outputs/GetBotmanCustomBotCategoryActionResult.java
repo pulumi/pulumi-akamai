@@ -93,13 +93,13 @@ public final class GetBotmanCustomBotCategoryActionResult {
             return this;
         }
         public GetBotmanCustomBotCategoryActionResult build() {
-            final var o = new GetBotmanCustomBotCategoryActionResult();
-            o.categoryId = categoryId;
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            o.securityPolicyId = securityPolicyId;
-            return o;
+            final var _resultValue = new GetBotmanCustomBotCategoryActionResult();
+            _resultValue.categoryId = categoryId;
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.securityPolicyId = securityPolicyId;
+            return _resultValue;
         }
     }
 }

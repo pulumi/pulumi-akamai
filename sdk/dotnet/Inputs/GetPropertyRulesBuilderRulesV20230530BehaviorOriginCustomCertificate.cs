@@ -12,11 +12,61 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateArgs : global::Pulumi.InvokeArgs
     {
+        [Input("canBeCa")]
+        public bool? CanBeCa { get; set; }
+
+        [Input("canBeLeaf")]
+        public bool? CanBeLeaf { get; set; }
+
+        [Input("issuerRdns")]
+        public Inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateIssuerRdnsArgs? IssuerRdns { get; set; }
+
+        [Input("notAfter")]
+        public int? NotAfter { get; set; }
+
+        [Input("notBefore")]
+        public int? NotBefore { get; set; }
+
         [Input("pemEncodedCert")]
         public string? PemEncodedCert { get; set; }
 
+        [Input("publicKey")]
+        public string? PublicKey { get; set; }
+
+        [Input("publicKeyAlgorithm")]
+        public string? PublicKeyAlgorithm { get; set; }
+
+        [Input("publicKeyFormat")]
+        public string? PublicKeyFormat { get; set; }
+
+        [Input("selfSigned")]
+        public bool? SelfSigned { get; set; }
+
+        [Input("serialNumber")]
+        public string? SerialNumber { get; set; }
+
         [Input("sha1Fingerprint")]
         public string? Sha1Fingerprint { get; set; }
+
+        [Input("sigAlgName")]
+        public string? SigAlgName { get; set; }
+
+        [Input("subjectAlternativeNames")]
+        private List<string>? _subjectAlternativeNames;
+        public List<string> SubjectAlternativeNames
+        {
+            get => _subjectAlternativeNames ?? (_subjectAlternativeNames = new List<string>());
+            set => _subjectAlternativeNames = value;
+        }
+
+        [Input("subjectCn")]
+        public string? SubjectCn { get; set; }
+
+        [Input("subjectRdns")]
+        public Inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateSubjectRdnsArgs? SubjectRdns { get; set; }
+
+        [Input("version")]
+        public int? Version { get; set; }
 
         public GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateArgs()
         {

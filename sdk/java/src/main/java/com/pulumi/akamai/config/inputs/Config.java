@@ -96,14 +96,14 @@ public final class Config {
             return this;
         }
         public Config build() {
-            final var o = new Config();
-            o.accessToken = accessToken;
-            o.accountKey = accountKey;
-            o.clientSecret = clientSecret;
-            o.clientToken = clientToken;
-            o.host = host;
-            o.maxBody = maxBody;
-            return o;
+            final var _resultValue = new Config();
+            _resultValue.accessToken = accessToken;
+            _resultValue.accountKey = accountKey;
+            _resultValue.clientSecret = clientSecret;
+            _resultValue.clientToken = clientToken;
+            _resultValue.host = host;
+            _resultValue.maxBody = maxBody;
+            return _resultValue;
         }
     }
 }

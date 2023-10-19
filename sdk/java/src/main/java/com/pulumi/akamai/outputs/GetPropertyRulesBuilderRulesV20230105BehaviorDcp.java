@@ -129,17 +129,17 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorDcp {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorDcp build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorDcp();
-            o.anonymous = anonymous;
-            o.enabled = enabled;
-            o.gwenabled = gwenabled;
-            o.locked = locked;
-            o.namespaceId = namespaceId;
-            o.templateUuid = templateUuid;
-            o.tlsenabled = tlsenabled;
-            o.uuid = uuid;
-            o.wsenabled = wsenabled;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorDcp();
+            _resultValue.anonymous = anonymous;
+            _resultValue.enabled = enabled;
+            _resultValue.gwenabled = gwenabled;
+            _resultValue.locked = locked;
+            _resultValue.namespaceId = namespaceId;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.tlsenabled = tlsenabled;
+            _resultValue.uuid = uuid;
+            _resultValue.wsenabled = wsenabled;
+            return _resultValue;
         }
     }
 }

@@ -121,7 +121,61 @@ class GtmPropertyArgs:
              unreachable_threshold: Optional[pulumi.Input[float]] = None,
              use_computed_targets: Optional[pulumi.Input[bool]] = None,
              wait_on_complete: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'handoutLimit' in kwargs:
+            handout_limit = kwargs['handoutLimit']
+        if 'handoutMode' in kwargs:
+            handout_mode = kwargs['handoutMode']
+        if 'scoreAggregationType' in kwargs:
+            score_aggregation_type = kwargs['scoreAggregationType']
+        if 'backupCname' in kwargs:
+            backup_cname = kwargs['backupCname']
+        if 'backupIp' in kwargs:
+            backup_ip = kwargs['backupIp']
+        if 'balanceByDownloadScore' in kwargs:
+            balance_by_download_score = kwargs['balanceByDownloadScore']
+        if 'dynamicTtl' in kwargs:
+            dynamic_ttl = kwargs['dynamicTtl']
+        if 'failbackDelay' in kwargs:
+            failback_delay = kwargs['failbackDelay']
+        if 'failoverDelay' in kwargs:
+            failover_delay = kwargs['failoverDelay']
+        if 'ghostDemandReporting' in kwargs:
+            ghost_demand_reporting = kwargs['ghostDemandReporting']
+        if 'healthMax' in kwargs:
+            health_max = kwargs['healthMax']
+        if 'healthMultiplier' in kwargs:
+            health_multiplier = kwargs['healthMultiplier']
+        if 'healthThreshold' in kwargs:
+            health_threshold = kwargs['healthThreshold']
+        if 'livenessTests' in kwargs:
+            liveness_tests = kwargs['livenessTests']
+        if 'loadImbalancePercentage' in kwargs:
+            load_imbalance_percentage = kwargs['loadImbalancePercentage']
+        if 'mapName' in kwargs:
+            map_name = kwargs['mapName']
+        if 'maxUnreachablePenalty' in kwargs:
+            max_unreachable_penalty = kwargs['maxUnreachablePenalty']
+        if 'minLiveFraction' in kwargs:
+            min_live_fraction = kwargs['minLiveFraction']
+        if 'staticRrSets' in kwargs:
+            static_rr_sets = kwargs['staticRrSets']
+        if 'staticTtl' in kwargs:
+            static_ttl = kwargs['staticTtl']
+        if 'stickinessBonusConstant' in kwargs:
+            stickiness_bonus_constant = kwargs['stickinessBonusConstant']
+        if 'stickinessBonusPercentage' in kwargs:
+            stickiness_bonus_percentage = kwargs['stickinessBonusPercentage']
+        if 'trafficTargets' in kwargs:
+            traffic_targets = kwargs['trafficTargets']
+        if 'unreachableThreshold' in kwargs:
+            unreachable_threshold = kwargs['unreachableThreshold']
+        if 'useComputedTargets' in kwargs:
+            use_computed_targets = kwargs['useComputedTargets']
+        if 'waitOnComplete' in kwargs:
+            wait_on_complete = kwargs['waitOnComplete']
+
         _setter("domain", domain)
         _setter("handout_limit", handout_limit)
         _setter("handout_mode", handout_mode)
@@ -585,7 +639,65 @@ class _GtmPropertyState:
              wait_on_complete: Optional[pulumi.Input[bool]] = None,
              weighted_hash_bits_for_ipv4: Optional[pulumi.Input[int]] = None,
              weighted_hash_bits_for_ipv6: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backupCname' in kwargs:
+            backup_cname = kwargs['backupCname']
+        if 'backupIp' in kwargs:
+            backup_ip = kwargs['backupIp']
+        if 'balanceByDownloadScore' in kwargs:
+            balance_by_download_score = kwargs['balanceByDownloadScore']
+        if 'dynamicTtl' in kwargs:
+            dynamic_ttl = kwargs['dynamicTtl']
+        if 'failbackDelay' in kwargs:
+            failback_delay = kwargs['failbackDelay']
+        if 'failoverDelay' in kwargs:
+            failover_delay = kwargs['failoverDelay']
+        if 'ghostDemandReporting' in kwargs:
+            ghost_demand_reporting = kwargs['ghostDemandReporting']
+        if 'handoutLimit' in kwargs:
+            handout_limit = kwargs['handoutLimit']
+        if 'handoutMode' in kwargs:
+            handout_mode = kwargs['handoutMode']
+        if 'healthMax' in kwargs:
+            health_max = kwargs['healthMax']
+        if 'healthMultiplier' in kwargs:
+            health_multiplier = kwargs['healthMultiplier']
+        if 'healthThreshold' in kwargs:
+            health_threshold = kwargs['healthThreshold']
+        if 'livenessTests' in kwargs:
+            liveness_tests = kwargs['livenessTests']
+        if 'loadImbalancePercentage' in kwargs:
+            load_imbalance_percentage = kwargs['loadImbalancePercentage']
+        if 'mapName' in kwargs:
+            map_name = kwargs['mapName']
+        if 'maxUnreachablePenalty' in kwargs:
+            max_unreachable_penalty = kwargs['maxUnreachablePenalty']
+        if 'minLiveFraction' in kwargs:
+            min_live_fraction = kwargs['minLiveFraction']
+        if 'scoreAggregationType' in kwargs:
+            score_aggregation_type = kwargs['scoreAggregationType']
+        if 'staticRrSets' in kwargs:
+            static_rr_sets = kwargs['staticRrSets']
+        if 'staticTtl' in kwargs:
+            static_ttl = kwargs['staticTtl']
+        if 'stickinessBonusConstant' in kwargs:
+            stickiness_bonus_constant = kwargs['stickinessBonusConstant']
+        if 'stickinessBonusPercentage' in kwargs:
+            stickiness_bonus_percentage = kwargs['stickinessBonusPercentage']
+        if 'trafficTargets' in kwargs:
+            traffic_targets = kwargs['trafficTargets']
+        if 'unreachableThreshold' in kwargs:
+            unreachable_threshold = kwargs['unreachableThreshold']
+        if 'useComputedTargets' in kwargs:
+            use_computed_targets = kwargs['useComputedTargets']
+        if 'waitOnComplete' in kwargs:
+            wait_on_complete = kwargs['waitOnComplete']
+        if 'weightedHashBitsForIpv4' in kwargs:
+            weighted_hash_bits_for_ipv4 = kwargs['weightedHashBitsForIpv4']
+        if 'weightedHashBitsForIpv6' in kwargs:
+            weighted_hash_bits_for_ipv6 = kwargs['weightedHashBitsForIpv6']
+
         if backup_cname is not None:
             _setter("backup_cname", backup_cname)
         if backup_ip is not None:

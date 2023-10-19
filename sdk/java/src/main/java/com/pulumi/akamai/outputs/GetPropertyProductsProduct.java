@@ -49,10 +49,10 @@ public final class GetPropertyProductsProduct {
             return this;
         }
         public GetPropertyProductsProduct build() {
-            final var o = new GetPropertyProductsProduct();
-            o.productId = productId;
-            o.productName = productName;
-            return o;
+            final var _resultValue = new GetPropertyProductsProduct();
+            _resultValue.productId = productId;
+            _resultValue.productName = productName;
+            return _resultValue;
         }
     }
 }

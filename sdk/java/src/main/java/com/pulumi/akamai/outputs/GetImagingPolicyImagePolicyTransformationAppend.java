@@ -107,15 +107,15 @@ public final class GetImagingPolicyImagePolicyTransformationAppend {
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationAppend build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationAppend();
-            o.gravity = gravity;
-            o.gravityPriority = gravityPriority;
-            o.gravityPriorityVar = gravityPriorityVar;
-            o.gravityVar = gravityVar;
-            o.image = image;
-            o.preserveMinorDimension = preserveMinorDimension;
-            o.preserveMinorDimensionVar = preserveMinorDimensionVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationAppend();
+            _resultValue.gravity = gravity;
+            _resultValue.gravityPriority = gravityPriority;
+            _resultValue.gravityPriorityVar = gravityPriorityVar;
+            _resultValue.gravityVar = gravityVar;
+            _resultValue.image = image;
+            _resultValue.preserveMinorDimension = preserveMinorDimension;
+            _resultValue.preserveMinorDimensionVar = preserveMinorDimensionVar;
+            return _resultValue;
         }
     }
 }

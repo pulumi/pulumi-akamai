@@ -63,11 +63,11 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorFailActionNetSto
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorFailActionNetStorageHostname build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorFailActionNetStorageHostname();
-            o.cpCode = cpCode;
-            o.downloadDomainName = downloadDomainName;
-            o.g2oToken = g2oToken;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorFailActionNetStorageHostname();
+            _resultValue.cpCode = cpCode;
+            _resultValue.downloadDomainName = downloadDomainName;
+            _resultValue.g2oToken = g2oToken;
+            return _resultValue;
         }
     }
 }

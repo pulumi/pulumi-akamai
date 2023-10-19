@@ -63,11 +63,11 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritiz
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomNetStorage build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomNetStorage();
-            o.cpCode = cpCode;
-            o.downloadDomainName = downloadDomainName;
-            o.g2oToken = g2oToken;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomNetStorage();
+            _resultValue.cpCode = cpCode;
+            _resultValue.downloadDomainName = downloadDomainName;
+            _resultValue.g2oToken = g2oToken;
+            return _resultValue;
         }
     }
 }

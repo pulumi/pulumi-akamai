@@ -36,7 +36,11 @@ class CloudwrapperActivationArgs:
              config_id: pulumi.Input[int],
              revision: pulumi.Input[str],
              timeouts: Optional[pulumi.Input['CloudwrapperActivationTimeoutsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+
         _setter("config_id", config_id)
         _setter("revision", revision)
         if timeouts is not None:
@@ -99,7 +103,11 @@ class _CloudwrapperActivationState:
              config_id: Optional[pulumi.Input[int]] = None,
              revision: Optional[pulumi.Input[str]] = None,
              timeouts: Optional[pulumi.Input['CloudwrapperActivationTimeoutsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if revision is not None:

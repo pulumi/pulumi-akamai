@@ -73,12 +73,12 @@ public final class GetImagingPolicyImagePolicyTransformationIfOrientation {
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationIfOrientation build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationIfOrientation();
-            o.default_ = default_;
-            o.landscape = landscape;
-            o.portrait = portrait;
-            o.square = square;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationIfOrientation();
+            _resultValue.default_ = default_;
+            _resultValue.landscape = landscape;
+            _resultValue.portrait = portrait;
+            _resultValue.square = square;
+            return _resultValue;
         }
     }
 }

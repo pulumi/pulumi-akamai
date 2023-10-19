@@ -124,16 +124,16 @@ public final class GetCpsDeploymentsResult {
             return this;
         }
         public GetCpsDeploymentsResult build() {
-            final var o = new GetCpsDeploymentsResult();
-            o.autoRenewalStartTime = autoRenewalStartTime;
-            o.enrollmentId = enrollmentId;
-            o.expiryDate = expiryDate;
-            o.id = id;
-            o.productionCertificateEcdsa = productionCertificateEcdsa;
-            o.productionCertificateRsa = productionCertificateRsa;
-            o.stagingCertificateEcdsa = stagingCertificateEcdsa;
-            o.stagingCertificateRsa = stagingCertificateRsa;
-            return o;
+            final var _resultValue = new GetCpsDeploymentsResult();
+            _resultValue.autoRenewalStartTime = autoRenewalStartTime;
+            _resultValue.enrollmentId = enrollmentId;
+            _resultValue.expiryDate = expiryDate;
+            _resultValue.id = id;
+            _resultValue.productionCertificateEcdsa = productionCertificateEcdsa;
+            _resultValue.productionCertificateRsa = productionCertificateRsa;
+            _resultValue.stagingCertificateEcdsa = stagingCertificateEcdsa;
+            _resultValue.stagingCertificateRsa = stagingCertificateRsa;
+            return _resultValue;
         }
     }
 }

@@ -52,10 +52,10 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateThre
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateThresholdTable build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateThresholdTable();
-            o.thresholdUnit = thresholdUnit;
-            o.thresholdValue = thresholdValue;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateThresholdTable();
+            _resultValue.thresholdUnit = thresholdUnit;
+            _resultValue.thresholdValue = thresholdValue;
+            return _resultValue;
         }
     }
 }

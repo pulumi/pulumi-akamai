@@ -156,19 +156,19 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionResponseHeader 
             return values(List.of(values));
         }
         public GetPropertyRulesBuilderRulesV20230105CriterionResponseHeader build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105CriterionResponseHeader();
-            o.headerName = headerName;
-            o.locked = locked;
-            o.lowerBound = lowerBound;
-            o.matchCaseSensitiveValue = matchCaseSensitiveValue;
-            o.matchOperator = matchOperator;
-            o.matchWildcardName = matchWildcardName;
-            o.matchWildcardValue = matchWildcardValue;
-            o.templateUuid = templateUuid;
-            o.upperBound = upperBound;
-            o.uuid = uuid;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105CriterionResponseHeader();
+            _resultValue.headerName = headerName;
+            _resultValue.locked = locked;
+            _resultValue.lowerBound = lowerBound;
+            _resultValue.matchCaseSensitiveValue = matchCaseSensitiveValue;
+            _resultValue.matchOperator = matchOperator;
+            _resultValue.matchWildcardName = matchWildcardName;
+            _resultValue.matchWildcardValue = matchWildcardValue;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.upperBound = upperBound;
+            _resultValue.uuid = uuid;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

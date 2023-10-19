@@ -29,7 +29,13 @@ class BotmanClientSideSecurityArgs:
              _setter: Callable[[Any, Any], None],
              client_side_security: pulumi.Input[str],
              config_id: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientSideSecurity' in kwargs:
+            client_side_security = kwargs['clientSideSecurity']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+
         _setter("client_side_security", client_side_security)
         _setter("config_id", config_id)
 
@@ -70,7 +76,13 @@ class _BotmanClientSideSecurityState:
              _setter: Callable[[Any, Any], None],
              client_side_security: Optional[pulumi.Input[str]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientSideSecurity' in kwargs:
+            client_side_security = kwargs['clientSideSecurity']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+
         if client_side_security is not None:
             _setter("client_side_security", client_side_security)
         if config_id is not None:

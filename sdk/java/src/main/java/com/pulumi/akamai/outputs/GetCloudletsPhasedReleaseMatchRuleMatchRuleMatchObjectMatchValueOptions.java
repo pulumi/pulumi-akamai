@@ -78,12 +78,12 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchVa
             return values(List.of(values));
         }
         public GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptions build() {
-            final var o = new GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptions();
-            o.valueCaseSensitive = valueCaseSensitive;
-            o.valueEscaped = valueEscaped;
-            o.valueHasWildcard = valueHasWildcard;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptions();
+            _resultValue.valueCaseSensitive = valueCaseSensitive;
+            _resultValue.valueEscaped = valueEscaped;
+            _resultValue.valueHasWildcard = valueHasWildcard;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

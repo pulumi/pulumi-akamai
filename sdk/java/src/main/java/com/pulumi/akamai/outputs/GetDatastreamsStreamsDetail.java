@@ -176,21 +176,21 @@ public final class GetDatastreamsStreamsDetail {
             return this;
         }
         public GetDatastreamsStreamsDetail build() {
-            final var o = new GetDatastreamsStreamsDetail();
-            o.contractId = contractId;
-            o.createdBy = createdBy;
-            o.createdDate = createdDate;
-            o.groupId = groupId;
-            o.latestVersion = latestVersion;
-            o.modifiedBy = modifiedBy;
-            o.modifiedDate = modifiedDate;
-            o.productId = productId;
-            o.properties = properties;
-            o.streamId = streamId;
-            o.streamName = streamName;
-            o.streamStatus = streamStatus;
-            o.streamVersion = streamVersion;
-            return o;
+            final var _resultValue = new GetDatastreamsStreamsDetail();
+            _resultValue.contractId = contractId;
+            _resultValue.createdBy = createdBy;
+            _resultValue.createdDate = createdDate;
+            _resultValue.groupId = groupId;
+            _resultValue.latestVersion = latestVersion;
+            _resultValue.modifiedBy = modifiedBy;
+            _resultValue.modifiedDate = modifiedDate;
+            _resultValue.productId = productId;
+            _resultValue.properties = properties;
+            _resultValue.streamId = streamId;
+            _resultValue.streamName = streamName;
+            _resultValue.streamStatus = streamStatus;
+            _resultValue.streamVersion = streamVersion;
+            return _resultValue;
         }
     }
 }

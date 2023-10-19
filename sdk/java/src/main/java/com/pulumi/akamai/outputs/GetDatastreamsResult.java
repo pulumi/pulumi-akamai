@@ -76,11 +76,11 @@ public final class GetDatastreamsResult {
             return streamsDetails(List.of(streamsDetails));
         }
         public GetDatastreamsResult build() {
-            final var o = new GetDatastreamsResult();
-            o.groupId = groupId;
-            o.id = id;
-            o.streamsDetails = streamsDetails;
-            return o;
+            final var _resultValue = new GetDatastreamsResult();
+            _resultValue.groupId = groupId;
+            _resultValue.id = id;
+            _resultValue.streamsDetails = streamsDetails;
+            return _resultValue;
         }
     }
 }

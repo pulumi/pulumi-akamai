@@ -74,11 +74,11 @@ public final class GetCloudletsAudienceSegmentationMatchRuleResult {
             return matchRules(List.of(matchRules));
         }
         public GetCloudletsAudienceSegmentationMatchRuleResult build() {
-            final var o = new GetCloudletsAudienceSegmentationMatchRuleResult();
-            o.id = id;
-            o.json = json;
-            o.matchRules = matchRules;
-            return o;
+            final var _resultValue = new GetCloudletsAudienceSegmentationMatchRuleResult();
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.matchRules = matchRules;
+            return _resultValue;
         }
     }
 }

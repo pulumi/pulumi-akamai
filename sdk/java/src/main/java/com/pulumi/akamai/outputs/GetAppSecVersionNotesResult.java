@@ -80,12 +80,12 @@ public final class GetAppSecVersionNotesResult {
             return this;
         }
         public GetAppSecVersionNotesResult build() {
-            final var o = new GetAppSecVersionNotesResult();
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            o.outputText = outputText;
-            return o;
+            final var _resultValue = new GetAppSecVersionNotesResult();
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.outputText = outputText;
+            return _resultValue;
         }
     }
 }

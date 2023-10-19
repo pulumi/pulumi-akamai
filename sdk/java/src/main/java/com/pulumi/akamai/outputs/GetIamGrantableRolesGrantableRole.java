@@ -61,11 +61,11 @@ public final class GetIamGrantableRolesGrantableRole {
             return this;
         }
         public GetIamGrantableRolesGrantableRole build() {
-            final var o = new GetIamGrantableRolesGrantableRole();
-            o.description = description;
-            o.grantedRoleId = grantedRoleId;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetIamGrantableRolesGrantableRole();
+            _resultValue.description = description;
+            _resultValue.grantedRoleId = grantedRoleId;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

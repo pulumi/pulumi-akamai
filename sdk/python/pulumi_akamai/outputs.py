@@ -454,6 +454,10 @@ __all__ = [
     'GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristicsWsdResult',
     'GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateResult',
     'GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthorityResult',
+    'GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthorityIssuerRdnsResult',
+    'GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthoritySubjectRdnsResult',
+    'GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateIssuerRdnsResult',
+    'GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateSubjectRdnsResult',
     'GetPropertyRulesBuilderRulesV20230105BehaviorOriginFailureRecoveryMethodResult',
     'GetPropertyRulesBuilderRulesV20230105BehaviorOriginFailureRecoveryPolicyResult',
     'GetPropertyRulesBuilderRulesV20230105BehaviorOriginIpAclResult',
@@ -767,6 +771,10 @@ __all__ = [
     'GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteristicsWsdResult',
     'GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateResult',
     'GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityResult',
+    'GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityIssuerRdnsResult',
+    'GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthoritySubjectRdnsResult',
+    'GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateIssuerRdnsResult',
+    'GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateSubjectRdnsResult',
     'GetPropertyRulesBuilderRulesV20230530BehaviorOriginFailureRecoveryMethodResult',
     'GetPropertyRulesBuilderRulesV20230530BehaviorOriginFailureRecoveryPolicyResult',
     'GetPropertyRulesBuilderRulesV20230530BehaviorOriginIpAclResult',
@@ -943,7 +951,11 @@ class ClientlistListItem(dict):
              description: Optional[str] = None,
              expiration_date: Optional[str] = None,
              tags: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'expirationDate' in kwargs:
+            expiration_date = kwargs['expirationDate']
+
         _setter("value", value)
         if description is not None:
             _setter("description", description)
@@ -1043,7 +1055,19 @@ class CloudletsApplicationLoadBalancerDataCenter(dict):
              hostname: Optional[str] = None,
              liveness_hosts: Optional[Sequence[str]] = None,
              state_or_province: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'originId' in kwargs:
+            origin_id = kwargs['originId']
+        if 'cloudServerHostHeaderOverride' in kwargs:
+            cloud_server_host_header_override = kwargs['cloudServerHostHeaderOverride']
+        if 'cloudService' in kwargs:
+            cloud_service = kwargs['cloudService']
+        if 'livenessHosts' in kwargs:
+            liveness_hosts = kwargs['livenessHosts']
+        if 'stateOrProvince' in kwargs:
+            state_or_province = kwargs['stateOrProvince']
+
         _setter("continent", continent)
         _setter("country", country)
         _setter("latitude", latitude)
@@ -1203,7 +1227,25 @@ class CloudletsApplicationLoadBalancerLivenessSettings(dict):
              status4xx_failure: Optional[bool] = None,
              status5xx_failure: Optional[bool] = None,
              timeout: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalHeaders' in kwargs:
+            additional_headers = kwargs['additionalHeaders']
+        if 'hostHeader' in kwargs:
+            host_header = kwargs['hostHeader']
+        if 'peerCertificateVerification' in kwargs:
+            peer_certificate_verification = kwargs['peerCertificateVerification']
+        if 'requestString' in kwargs:
+            request_string = kwargs['requestString']
+        if 'responseString' in kwargs:
+            response_string = kwargs['responseString']
+        if 'status3xxFailure' in kwargs:
+            status3xx_failure = kwargs['status3xxFailure']
+        if 'status4xxFailure' in kwargs:
+            status4xx_failure = kwargs['status4xxFailure']
+        if 'status5xxFailure' in kwargs:
+            status5xx_failure = kwargs['status5xxFailure']
+
         _setter("path", path)
         _setter("port", port)
         _setter("protocol", protocol)
@@ -1309,7 +1351,9 @@ class CloudwrapperActivationTimeouts(dict):
              _setter: Callable[[Any, Any], None],
              create: Optional[str] = None,
              update: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if create is not None:
             _setter("create", create)
         if update is not None:
@@ -1361,7 +1405,11 @@ class CloudwrapperConfigurationLocation(dict):
              comments: str,
              traffic_type_id: int,
              capacity: Optional['outputs.CloudwrapperConfigurationLocationCapacity'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'trafficTypeId' in kwargs:
+            traffic_type_id = kwargs['trafficTypeId']
+
         _setter("comments", comments)
         _setter("traffic_type_id", traffic_type_id)
         if capacity is not None:
@@ -1398,7 +1446,9 @@ class CloudwrapperConfigurationLocationCapacity(dict):
              _setter: Callable[[Any, Any], None],
              unit: str,
              value: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("unit", unit)
         _setter("value", value)
 
@@ -1425,7 +1475,9 @@ class CloudwrapperConfigurationTimeouts(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              delete: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if delete is not None:
             _setter("delete", delete)
 
@@ -1507,7 +1559,21 @@ class CpsDvEnrollmentAdminContact(dict):
              region: str,
              address_line_two: Optional[str] = None,
              title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressLineOne' in kwargs:
+            address_line_one = kwargs['addressLineOne']
+        if 'countryCode' in kwargs:
+            country_code = kwargs['countryCode']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'addressLineTwo' in kwargs:
+            address_line_two = kwargs['addressLineTwo']
+
         _setter("address_line_one", address_line_one)
         _setter("city", city)
         _setter("country_code", country_code)
@@ -1632,7 +1698,15 @@ class CpsDvEnrollmentCsr(dict):
              organizational_unit: str,
              state: str,
              preferred_trust_chain: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'countryCode' in kwargs:
+            country_code = kwargs['countryCode']
+        if 'organizationalUnit' in kwargs:
+            organizational_unit = kwargs['organizationalUnit']
+        if 'preferredTrustChain' in kwargs:
+            preferred_trust_chain = kwargs['preferredTrustChain']
+
         _setter("city", city)
         _setter("country_code", country_code)
         _setter("organization", organization)
@@ -1709,7 +1783,13 @@ class CpsDvEnrollmentDnsChallenge(dict):
              domain: Optional[str] = None,
              full_path: Optional[str] = None,
              response_body: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fullPath' in kwargs:
+            full_path = kwargs['fullPath']
+        if 'responseBody' in kwargs:
+            response_body = kwargs['responseBody']
+
         if domain is not None:
             _setter("domain", domain)
         if full_path is not None:
@@ -1770,7 +1850,13 @@ class CpsDvEnrollmentHttpChallenge(dict):
              domain: Optional[str] = None,
              full_path: Optional[str] = None,
              response_body: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fullPath' in kwargs:
+            full_path = kwargs['fullPath']
+        if 'responseBody' in kwargs:
+            response_body = kwargs['responseBody']
+
         if domain is not None:
             _setter("domain", domain)
         if full_path is not None:
@@ -1856,7 +1942,23 @@ class CpsDvEnrollmentNetworkConfiguration(dict):
              ocsp_stapling: Optional[str] = None,
              preferred_ciphers: Optional[str] = None,
              quic_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientMutualAuthentication' in kwargs:
+            client_mutual_authentication = kwargs['clientMutualAuthentication']
+        if 'cloneDnsNames' in kwargs:
+            clone_dns_names = kwargs['cloneDnsNames']
+        if 'disallowedTlsVersions' in kwargs:
+            disallowed_tls_versions = kwargs['disallowedTlsVersions']
+        if 'mustHaveCiphers' in kwargs:
+            must_have_ciphers = kwargs['mustHaveCiphers']
+        if 'ocspStapling' in kwargs:
+            ocsp_stapling = kwargs['ocspStapling']
+        if 'preferredCiphers' in kwargs:
+            preferred_ciphers = kwargs['preferredCiphers']
+        if 'quicEnabled' in kwargs:
+            quic_enabled = kwargs['quicEnabled']
+
         _setter("geography", geography)
         if client_mutual_authentication is not None:
             _setter("client_mutual_authentication", client_mutual_authentication)
@@ -1953,7 +2055,15 @@ class CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication(dict):
              ocsp_enabled: Optional[bool] = None,
              send_ca_list_to_client: Optional[bool] = None,
              set_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ocspEnabled' in kwargs:
+            ocsp_enabled = kwargs['ocspEnabled']
+        if 'sendCaListToClient' in kwargs:
+            send_ca_list_to_client = kwargs['sendCaListToClient']
+        if 'setId' in kwargs:
+            set_id = kwargs['setId']
+
         if ocsp_enabled is not None:
             _setter("ocsp_enabled", ocsp_enabled)
         if send_ca_list_to_client is not None:
@@ -2033,7 +2143,17 @@ class CpsDvEnrollmentOrganization(dict):
              postal_code: str,
              region: str,
              address_line_two: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressLineOne' in kwargs:
+            address_line_one = kwargs['addressLineOne']
+        if 'countryCode' in kwargs:
+            country_code = kwargs['countryCode']
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'addressLineTwo' in kwargs:
+            address_line_two = kwargs['addressLineTwo']
+
         _setter("address_line_one", address_line_one)
         _setter("city", city)
         _setter("country_code", country_code)
@@ -2157,7 +2277,21 @@ class CpsDvEnrollmentTechContact(dict):
              region: str,
              address_line_two: Optional[str] = None,
              title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressLineOne' in kwargs:
+            address_line_one = kwargs['addressLineOne']
+        if 'countryCode' in kwargs:
+            country_code = kwargs['countryCode']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'addressLineTwo' in kwargs:
+            address_line_two = kwargs['addressLineTwo']
+
         _setter("address_line_one", address_line_one)
         _setter("city", city)
         _setter("country_code", country_code)
@@ -2306,7 +2440,21 @@ class CpsThirdPartyEnrollmentAdminContact(dict):
              region: str,
              address_line_two: Optional[str] = None,
              title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressLineOne' in kwargs:
+            address_line_one = kwargs['addressLineOne']
+        if 'countryCode' in kwargs:
+            country_code = kwargs['countryCode']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'addressLineTwo' in kwargs:
+            address_line_two = kwargs['addressLineTwo']
+
         _setter("address_line_one", address_line_one)
         _setter("city", city)
         _setter("country_code", country_code)
@@ -2431,7 +2579,15 @@ class CpsThirdPartyEnrollmentCsr(dict):
              organizational_unit: str,
              state: str,
              preferred_trust_chain: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'countryCode' in kwargs:
+            country_code = kwargs['countryCode']
+        if 'organizationalUnit' in kwargs:
+            organizational_unit = kwargs['organizationalUnit']
+        if 'preferredTrustChain' in kwargs:
+            preferred_trust_chain = kwargs['preferredTrustChain']
+
         _setter("city", city)
         _setter("country_code", country_code)
         _setter("organization", organization)
@@ -2533,7 +2689,23 @@ class CpsThirdPartyEnrollmentNetworkConfiguration(dict):
              ocsp_stapling: Optional[str] = None,
              preferred_ciphers: Optional[str] = None,
              quic_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientMutualAuthentication' in kwargs:
+            client_mutual_authentication = kwargs['clientMutualAuthentication']
+        if 'cloneDnsNames' in kwargs:
+            clone_dns_names = kwargs['cloneDnsNames']
+        if 'disallowedTlsVersions' in kwargs:
+            disallowed_tls_versions = kwargs['disallowedTlsVersions']
+        if 'mustHaveCiphers' in kwargs:
+            must_have_ciphers = kwargs['mustHaveCiphers']
+        if 'ocspStapling' in kwargs:
+            ocsp_stapling = kwargs['ocspStapling']
+        if 'preferredCiphers' in kwargs:
+            preferred_ciphers = kwargs['preferredCiphers']
+        if 'quicEnabled' in kwargs:
+            quic_enabled = kwargs['quicEnabled']
+
         _setter("geography", geography)
         if client_mutual_authentication is not None:
             _setter("client_mutual_authentication", client_mutual_authentication)
@@ -2630,7 +2802,15 @@ class CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication(dict
              ocsp_enabled: Optional[bool] = None,
              send_ca_list_to_client: Optional[bool] = None,
              set_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ocspEnabled' in kwargs:
+            ocsp_enabled = kwargs['ocspEnabled']
+        if 'sendCaListToClient' in kwargs:
+            send_ca_list_to_client = kwargs['sendCaListToClient']
+        if 'setId' in kwargs:
+            set_id = kwargs['setId']
+
         if ocsp_enabled is not None:
             _setter("ocsp_enabled", ocsp_enabled)
         if send_ca_list_to_client is not None:
@@ -2710,7 +2890,17 @@ class CpsThirdPartyEnrollmentOrganization(dict):
              postal_code: str,
              region: str,
              address_line_two: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressLineOne' in kwargs:
+            address_line_one = kwargs['addressLineOne']
+        if 'countryCode' in kwargs:
+            country_code = kwargs['countryCode']
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'addressLineTwo' in kwargs:
+            address_line_two = kwargs['addressLineTwo']
+
         _setter("address_line_one", address_line_one)
         _setter("city", city)
         _setter("country_code", country_code)
@@ -2834,7 +3024,21 @@ class CpsThirdPartyEnrollmentTechContact(dict):
              region: str,
              address_line_two: Optional[str] = None,
              title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressLineOne' in kwargs:
+            address_line_one = kwargs['addressLineOne']
+        if 'countryCode' in kwargs:
+            country_code = kwargs['countryCode']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'addressLineTwo' in kwargs:
+            address_line_two = kwargs['addressLineTwo']
+
         _setter("address_line_one", address_line_one)
         _setter("city", city)
         _setter("country_code", country_code)
@@ -2963,7 +3167,19 @@ class DatastreamAzureConnector(dict):
              display_name: str,
              path: str,
              compress_logs: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessKey' in kwargs:
+            access_key = kwargs['accessKey']
+        if 'accountName' in kwargs:
+            account_name = kwargs['accountName']
+        if 'containerName' in kwargs:
+            container_name = kwargs['containerName']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'compressLogs' in kwargs:
+            compress_logs = kwargs['compressLogs']
+
         _setter("access_key", access_key)
         _setter("account_name", account_name)
         _setter("container_name", container_name)
@@ -3054,7 +3270,15 @@ class DatastreamDatadogConnector(dict):
              service: Optional[str] = None,
              source: Optional[str] = None,
              tags: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authToken' in kwargs:
+            auth_token = kwargs['authToken']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'compressLogs' in kwargs:
+            compress_logs = kwargs['compressLogs']
+
         _setter("auth_token", auth_token)
         _setter("display_name", display_name)
         _setter("endpoint", endpoint)
@@ -3148,7 +3372,15 @@ class DatastreamDeliveryConfiguration(dict):
              field_delimiter: Optional[str] = None,
              upload_file_prefix: Optional[str] = None,
              upload_file_suffix: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fieldDelimiter' in kwargs:
+            field_delimiter = kwargs['fieldDelimiter']
+        if 'uploadFilePrefix' in kwargs:
+            upload_file_prefix = kwargs['uploadFilePrefix']
+        if 'uploadFileSuffix' in kwargs:
+            upload_file_suffix = kwargs['uploadFileSuffix']
+
         _setter("format", format)
         _setter("frequency", frequency)
         if field_delimiter is not None:
@@ -3213,7 +3445,11 @@ class DatastreamDeliveryConfigurationFrequency(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              interval_in_secs: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'intervalInSecs' in kwargs:
+            interval_in_secs = kwargs['intervalInSecs']
+
         _setter("interval_in_secs", interval_in_secs)
 
     @property
@@ -3307,7 +3543,31 @@ class DatastreamElasticsearchConnector(dict):
              custom_header_value: Optional[str] = None,
              m_tls: Optional[bool] = None,
              tls_hostname: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'indexName' in kwargs:
+            index_name = kwargs['indexName']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+        if 'caCert' in kwargs:
+            ca_cert = kwargs['caCert']
+        if 'clientCert' in kwargs:
+            client_cert = kwargs['clientCert']
+        if 'clientKey' in kwargs:
+            client_key = kwargs['clientKey']
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'customHeaderName' in kwargs:
+            custom_header_name = kwargs['customHeaderName']
+        if 'customHeaderValue' in kwargs:
+            custom_header_value = kwargs['customHeaderValue']
+        if 'mTls' in kwargs:
+            m_tls = kwargs['mTls']
+        if 'tlsHostname' in kwargs:
+            tls_hostname = kwargs['tlsHostname']
+
         _setter("display_name", display_name)
         _setter("endpoint", endpoint)
         _setter("index_name", index_name)
@@ -3451,7 +3711,19 @@ class DatastreamGcsConnector(dict):
              service_account_name: str,
              compress_logs: Optional[bool] = None,
              path: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'privateKey' in kwargs:
+            private_key = kwargs['privateKey']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'serviceAccountName' in kwargs:
+            service_account_name = kwargs['serviceAccountName']
+        if 'compressLogs' in kwargs:
+            compress_logs = kwargs['compressLogs']
+
         _setter("bucket", bucket)
         _setter("display_name", display_name)
         _setter("private_key", private_key)
@@ -3588,7 +3860,33 @@ class DatastreamHttpsConnector(dict):
              password: Optional[str] = None,
              tls_hostname: Optional[str] = None,
              user_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authenticationType' in kwargs:
+            authentication_type = kwargs['authenticationType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'caCert' in kwargs:
+            ca_cert = kwargs['caCert']
+        if 'clientCert' in kwargs:
+            client_cert = kwargs['clientCert']
+        if 'clientKey' in kwargs:
+            client_key = kwargs['clientKey']
+        if 'compressLogs' in kwargs:
+            compress_logs = kwargs['compressLogs']
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'customHeaderName' in kwargs:
+            custom_header_name = kwargs['customHeaderName']
+        if 'customHeaderValue' in kwargs:
+            custom_header_value = kwargs['customHeaderValue']
+        if 'mTls' in kwargs:
+            m_tls = kwargs['mTls']
+        if 'tlsHostname' in kwargs:
+            tls_hostname = kwargs['tlsHostname']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+
         _setter("authentication_type", authentication_type)
         _setter("display_name", display_name)
         _setter("endpoint", endpoint)
@@ -3741,7 +4039,19 @@ class DatastreamLogglyConnector(dict):
              custom_header_name: Optional[str] = None,
              custom_header_value: Optional[str] = None,
              tags: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authToken' in kwargs:
+            auth_token = kwargs['authToken']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'customHeaderName' in kwargs:
+            custom_header_name = kwargs['customHeaderName']
+        if 'customHeaderValue' in kwargs:
+            custom_header_value = kwargs['customHeaderValue']
+
         _setter("auth_token", auth_token)
         _setter("display_name", display_name)
         _setter("endpoint", endpoint)
@@ -3842,7 +4152,19 @@ class DatastreamNewRelicConnector(dict):
              content_type: Optional[str] = None,
              custom_header_name: Optional[str] = None,
              custom_header_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authToken' in kwargs:
+            auth_token = kwargs['authToken']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'customHeaderName' in kwargs:
+            custom_header_name = kwargs['customHeaderName']
+        if 'customHeaderValue' in kwargs:
+            custom_header_value = kwargs['customHeaderValue']
+
         _setter("auth_token", auth_token)
         _setter("display_name", display_name)
         _setter("endpoint", endpoint)
@@ -3940,7 +4262,17 @@ class DatastreamOracleConnector(dict):
              region: str,
              secret_access_key: str,
              compress_logs: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessKey' in kwargs:
+            access_key = kwargs['accessKey']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'secretAccessKey' in kwargs:
+            secret_access_key = kwargs['secretAccessKey']
+        if 'compressLogs' in kwargs:
+            compress_logs = kwargs['compressLogs']
+
         _setter("access_key", access_key)
         _setter("bucket", bucket)
         _setter("display_name", display_name)
@@ -4045,7 +4377,17 @@ class DatastreamS3Connector(dict):
              region: str,
              secret_access_key: str,
              compress_logs: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessKey' in kwargs:
+            access_key = kwargs['accessKey']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'secretAccessKey' in kwargs:
+            secret_access_key = kwargs['secretAccessKey']
+        if 'compressLogs' in kwargs:
+            compress_logs = kwargs['compressLogs']
+
         _setter("access_key", access_key)
         _setter("bucket", bucket)
         _setter("display_name", display_name)
@@ -4168,7 +4510,29 @@ class DatastreamSplunkConnector(dict):
              custom_header_value: Optional[str] = None,
              m_tls: Optional[bool] = None,
              tls_hostname: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'eventCollectorToken' in kwargs:
+            event_collector_token = kwargs['eventCollectorToken']
+        if 'caCert' in kwargs:
+            ca_cert = kwargs['caCert']
+        if 'clientCert' in kwargs:
+            client_cert = kwargs['clientCert']
+        if 'clientKey' in kwargs:
+            client_key = kwargs['clientKey']
+        if 'compressLogs' in kwargs:
+            compress_logs = kwargs['compressLogs']
+        if 'customHeaderName' in kwargs:
+            custom_header_name = kwargs['customHeaderName']
+        if 'customHeaderValue' in kwargs:
+            custom_header_value = kwargs['customHeaderValue']
+        if 'mTls' in kwargs:
+            m_tls = kwargs['mTls']
+        if 'tlsHostname' in kwargs:
+            tls_hostname = kwargs['tlsHostname']
+
         _setter("display_name", display_name)
         _setter("endpoint", endpoint)
         _setter("event_collector_token", event_collector_token)
@@ -4302,7 +4666,21 @@ class DatastreamSumologicConnector(dict):
              content_type: Optional[str] = None,
              custom_header_name: Optional[str] = None,
              custom_header_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'collectorCode' in kwargs:
+            collector_code = kwargs['collectorCode']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'compressLogs' in kwargs:
+            compress_logs = kwargs['compressLogs']
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'customHeaderName' in kwargs:
+            custom_header_name = kwargs['customHeaderName']
+        if 'customHeaderValue' in kwargs:
+            custom_header_value = kwargs['customHeaderValue']
+
         _setter("collector_code", collector_code)
         _setter("display_name", display_name)
         _setter("endpoint", endpoint)
@@ -4369,7 +4747,9 @@ class DnsZoneTsigKey(dict):
              algorithm: str,
              name: str,
              secret: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("algorithm", algorithm)
         _setter("name", name)
         _setter("secret", secret)
@@ -4408,7 +4788,9 @@ class EdgeKvInitialData(dict):
              key: str,
              value: str,
              group: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
         if group is not None:
@@ -4467,7 +4849,13 @@ class GtmAsmapAssignment(dict):
              as_numbers: Sequence[int],
              datacenter_id: int,
              nickname: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'asNumbers' in kwargs:
+            as_numbers = kwargs['asNumbers']
+        if 'datacenterId' in kwargs:
+            datacenter_id = kwargs['datacenterId']
+
         _setter("as_numbers", as_numbers)
         _setter("datacenter_id", datacenter_id)
         _setter("nickname", nickname)
@@ -4520,7 +4908,11 @@ class GtmAsmapDefaultDatacenter(dict):
              _setter: Callable[[Any, Any], None],
              datacenter_id: int,
              nickname: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datacenterId' in kwargs:
+            datacenter_id = kwargs['datacenterId']
+
         _setter("datacenter_id", datacenter_id)
         if nickname is not None:
             _setter("nickname", nickname)
@@ -4571,7 +4963,11 @@ class GtmCidrmapAssignment(dict):
              datacenter_id: int,
              nickname: str,
              blocks: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datacenterId' in kwargs:
+            datacenter_id = kwargs['datacenterId']
+
         _setter("datacenter_id", datacenter_id)
         _setter("nickname", nickname)
         if blocks is not None:
@@ -4625,7 +5021,11 @@ class GtmCidrmapDefaultDatacenter(dict):
              _setter: Callable[[Any, Any], None],
              datacenter_id: int,
              nickname: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datacenterId' in kwargs:
+            datacenter_id = kwargs['datacenterId']
+
         _setter("datacenter_id", datacenter_id)
         if nickname is not None:
             _setter("nickname", nickname)
@@ -4680,7 +5080,15 @@ class GtmDatacenterDefaultLoadObject(dict):
              load_object: Optional[str] = None,
              load_object_port: Optional[int] = None,
              load_servers: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'loadObject' in kwargs:
+            load_object = kwargs['loadObject']
+        if 'loadObjectPort' in kwargs:
+            load_object_port = kwargs['loadObjectPort']
+        if 'loadServers' in kwargs:
+            load_servers = kwargs['loadServers']
+
         if load_object is not None:
             _setter("load_object", load_object)
         if load_object_port is not None:
@@ -4739,7 +5147,11 @@ class GtmGeomapAssignment(dict):
              datacenter_id: int,
              nickname: str,
              countries: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datacenterId' in kwargs:
+            datacenter_id = kwargs['datacenterId']
+
         _setter("datacenter_id", datacenter_id)
         _setter("nickname", nickname)
         if countries is not None:
@@ -4793,7 +5205,11 @@ class GtmGeomapDefaultDatacenter(dict):
              _setter: Callable[[Any, Any], None],
              datacenter_id: int,
              nickname: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datacenterId' in kwargs:
+            datacenter_id = kwargs['datacenterId']
+
         _setter("datacenter_id", datacenter_id)
         if nickname is not None:
             _setter("nickname", nickname)
@@ -4949,7 +5365,53 @@ class GtmPropertyLivenessTest(dict):
              test_object_port: Optional[int] = None,
              test_object_username: Optional[str] = None,
              timeout_penalty: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'testInterval' in kwargs:
+            test_interval = kwargs['testInterval']
+        if 'testObjectProtocol' in kwargs:
+            test_object_protocol = kwargs['testObjectProtocol']
+        if 'testTimeout' in kwargs:
+            test_timeout = kwargs['testTimeout']
+        if 'answersRequired' in kwargs:
+            answers_required = kwargs['answersRequired']
+        if 'disableNonstandardPortWarning' in kwargs:
+            disable_nonstandard_port_warning = kwargs['disableNonstandardPortWarning']
+        if 'errorPenalty' in kwargs:
+            error_penalty = kwargs['errorPenalty']
+        if 'httpError3xx' in kwargs:
+            http_error3xx = kwargs['httpError3xx']
+        if 'httpError4xx' in kwargs:
+            http_error4xx = kwargs['httpError4xx']
+        if 'httpError5xx' in kwargs:
+            http_error5xx = kwargs['httpError5xx']
+        if 'httpHeaders' in kwargs:
+            http_headers = kwargs['httpHeaders']
+        if 'peerCertificateVerification' in kwargs:
+            peer_certificate_verification = kwargs['peerCertificateVerification']
+        if 'recursionRequested' in kwargs:
+            recursion_requested = kwargs['recursionRequested']
+        if 'requestString' in kwargs:
+            request_string = kwargs['requestString']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if 'responseString' in kwargs:
+            response_string = kwargs['responseString']
+        if 'sslClientCertificate' in kwargs:
+            ssl_client_certificate = kwargs['sslClientCertificate']
+        if 'sslClientPrivateKey' in kwargs:
+            ssl_client_private_key = kwargs['sslClientPrivateKey']
+        if 'testObject' in kwargs:
+            test_object = kwargs['testObject']
+        if 'testObjectPassword' in kwargs:
+            test_object_password = kwargs['testObjectPassword']
+        if 'testObjectPort' in kwargs:
+            test_object_port = kwargs['testObjectPort']
+        if 'testObjectUsername' in kwargs:
+            test_object_username = kwargs['testObjectUsername']
+        if 'timeoutPenalty' in kwargs:
+            timeout_penalty = kwargs['timeoutPenalty']
+
         _setter("name", name)
         _setter("test_interval", test_interval)
         _setter("test_object_protocol", test_object_protocol)
@@ -5131,7 +5593,9 @@ class GtmPropertyLivenessTestHttpHeader(dict):
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
         if value is not None:
@@ -5166,7 +5630,9 @@ class GtmPropertyStaticRrSet(dict):
              rdatas: Optional[Sequence[str]] = None,
              ttl: Optional[int] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if rdatas is not None:
             _setter("rdatas", rdatas)
         if ttl is not None:
@@ -5236,7 +5702,13 @@ class GtmPropertyTrafficTarget(dict):
              name: Optional[str] = None,
              servers: Optional[Sequence[str]] = None,
              weight: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datacenterId' in kwargs:
+            datacenter_id = kwargs['datacenterId']
+        if 'handoutCname' in kwargs:
+            handout_cname = kwargs['handoutCname']
+
         if datacenter_id is not None:
             _setter("datacenter_id", datacenter_id)
         if enabled is not None:
@@ -5333,7 +5805,19 @@ class GtmResourceResourceInstance(dict):
              load_object_port: Optional[int] = None,
              load_servers: Optional[Sequence[str]] = None,
              use_default_load_object: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datacenterId' in kwargs:
+            datacenter_id = kwargs['datacenterId']
+        if 'loadObject' in kwargs:
+            load_object = kwargs['loadObject']
+        if 'loadObjectPort' in kwargs:
+            load_object_port = kwargs['loadObjectPort']
+        if 'loadServers' in kwargs:
+            load_servers = kwargs['loadServers']
+        if 'useDefaultLoadObject' in kwargs:
+            use_default_load_object = kwargs['useDefaultLoadObject']
+
         _setter("datacenter_id", datacenter_id)
         if load_object is not None:
             _setter("load_object", load_object)
@@ -5414,7 +5898,17 @@ class PropertyActivationComplianceRecord(dict):
              noncompliance_reason_no_production_traffic: Optional['outputs.PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic'] = None,
              noncompliance_reason_none: Optional['outputs.PropertyActivationComplianceRecordNoncomplianceReasonNone'] = None,
              noncompliance_reason_other: Optional['outputs.PropertyActivationComplianceRecordNoncomplianceReasonOther'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'noncomplianceReasonEmergency' in kwargs:
+            noncompliance_reason_emergency = kwargs['noncomplianceReasonEmergency']
+        if 'noncomplianceReasonNoProductionTraffic' in kwargs:
+            noncompliance_reason_no_production_traffic = kwargs['noncomplianceReasonNoProductionTraffic']
+        if 'noncomplianceReasonNone' in kwargs:
+            noncompliance_reason_none = kwargs['noncomplianceReasonNone']
+        if 'noncomplianceReasonOther' in kwargs:
+            noncompliance_reason_other = kwargs['noncomplianceReasonOther']
+
         if noncompliance_reason_emergency is not None:
             _setter("noncompliance_reason_emergency", noncompliance_reason_emergency)
         if noncompliance_reason_no_production_traffic is not None:
@@ -5474,7 +5968,11 @@ class PropertyActivationComplianceRecordNoncomplianceReasonEmergency(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              ticket_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ticketId' in kwargs:
+            ticket_id = kwargs['ticketId']
+
         if ticket_id is not None:
             _setter("ticket_id", ticket_id)
 
@@ -5513,7 +6011,11 @@ class PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic(d
     def _configure(
              _setter: Callable[[Any, Any], None],
              ticket_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ticketId' in kwargs:
+            ticket_id = kwargs['ticketId']
+
         if ticket_id is not None:
             _setter("ticket_id", ticket_id)
 
@@ -5567,7 +6069,17 @@ class PropertyActivationComplianceRecordNoncomplianceReasonNone(dict):
              peer_reviewed_by: Optional[str] = None,
              ticket_id: Optional[str] = None,
              unit_tested: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customerEmail' in kwargs:
+            customer_email = kwargs['customerEmail']
+        if 'peerReviewedBy' in kwargs:
+            peer_reviewed_by = kwargs['peerReviewedBy']
+        if 'ticketId' in kwargs:
+            ticket_id = kwargs['ticketId']
+        if 'unitTested' in kwargs:
+            unit_tested = kwargs['unitTested']
+
         if customer_email is not None:
             _setter("customer_email", customer_email)
         if peer_reviewed_by is not None:
@@ -5632,7 +6144,13 @@ class PropertyActivationComplianceRecordNoncomplianceReasonOther(dict):
              _setter: Callable[[Any, Any], None],
              other_noncompliance_reason: Optional[str] = None,
              ticket_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'otherNoncomplianceReason' in kwargs:
+            other_noncompliance_reason = kwargs['otherNoncomplianceReason']
+        if 'ticketId' in kwargs:
+            ticket_id = kwargs['ticketId']
+
         if other_noncompliance_reason is not None:
             _setter("other_noncompliance_reason", other_noncompliance_reason)
         if ticket_id is not None:
@@ -5700,7 +6218,15 @@ class PropertyActivationRuleError(dict):
              status_code: Optional[int] = None,
              title: Optional[str] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'behaviorName' in kwargs:
+            behavior_name = kwargs['behaviorName']
+        if 'errorLocation' in kwargs:
+            error_location = kwargs['errorLocation']
+        if 'statusCode' in kwargs:
+            status_code = kwargs['statusCode']
+
         if behavior_name is not None:
             _setter("behavior_name", behavior_name)
         if detail is not None:
@@ -5806,7 +6332,21 @@ class PropertyHostname(dict):
              cert_statuses: Optional[Sequence['outputs.PropertyHostnameCertStatus']] = None,
              cname_type: Optional[str] = None,
              edge_hostname_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certProvisioningType' in kwargs:
+            cert_provisioning_type = kwargs['certProvisioningType']
+        if 'cnameFrom' in kwargs:
+            cname_from = kwargs['cnameFrom']
+        if 'cnameTo' in kwargs:
+            cname_to = kwargs['cnameTo']
+        if 'certStatuses' in kwargs:
+            cert_statuses = kwargs['certStatuses']
+        if 'cnameType' in kwargs:
+            cname_type = kwargs['cnameType']
+        if 'edgeHostnameId' in kwargs:
+            edge_hostname_id = kwargs['edgeHostnameId']
+
         _setter("cert_provisioning_type", cert_provisioning_type)
         _setter("cname_from", cname_from)
         _setter("cname_to", cname_to)
@@ -5888,7 +6428,13 @@ class PropertyHostnameCertStatus(dict):
              production_status: Optional[str] = None,
              staging_status: Optional[str] = None,
              target: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'productionStatus' in kwargs:
+            production_status = kwargs['productionStatus']
+        if 'stagingStatus' in kwargs:
+            staging_status = kwargs['stagingStatus']
+
         if hostname is not None:
             _setter("hostname", hostname)
         if production_status is not None:
@@ -5963,7 +6509,17 @@ class PropertyIncludeActivationComplianceRecord(dict):
              noncompliance_reason_no_production_traffic: Optional['outputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic'] = None,
              noncompliance_reason_none: Optional['outputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonNone'] = None,
              noncompliance_reason_other: Optional['outputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'noncomplianceReasonEmergency' in kwargs:
+            noncompliance_reason_emergency = kwargs['noncomplianceReasonEmergency']
+        if 'noncomplianceReasonNoProductionTraffic' in kwargs:
+            noncompliance_reason_no_production_traffic = kwargs['noncomplianceReasonNoProductionTraffic']
+        if 'noncomplianceReasonNone' in kwargs:
+            noncompliance_reason_none = kwargs['noncomplianceReasonNone']
+        if 'noncomplianceReasonOther' in kwargs:
+            noncompliance_reason_other = kwargs['noncomplianceReasonOther']
+
         if noncompliance_reason_emergency is not None:
             _setter("noncompliance_reason_emergency", noncompliance_reason_emergency)
         if noncompliance_reason_no_production_traffic is not None:
@@ -6023,7 +6579,11 @@ class PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergency(dict
     def _configure(
              _setter: Callable[[Any, Any], None],
              ticket_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ticketId' in kwargs:
+            ticket_id = kwargs['ticketId']
+
         if ticket_id is not None:
             _setter("ticket_id", ticket_id)
 
@@ -6062,7 +6622,11 @@ class PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTr
     def _configure(
              _setter: Callable[[Any, Any], None],
              ticket_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ticketId' in kwargs:
+            ticket_id = kwargs['ticketId']
+
         if ticket_id is not None:
             _setter("ticket_id", ticket_id)
 
@@ -6116,7 +6680,17 @@ class PropertyIncludeActivationComplianceRecordNoncomplianceReasonNone(dict):
              peer_reviewed_by: Optional[str] = None,
              ticket_id: Optional[str] = None,
              unit_tested: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customerEmail' in kwargs:
+            customer_email = kwargs['customerEmail']
+        if 'peerReviewedBy' in kwargs:
+            peer_reviewed_by = kwargs['peerReviewedBy']
+        if 'ticketId' in kwargs:
+            ticket_id = kwargs['ticketId']
+        if 'unitTested' in kwargs:
+            unit_tested = kwargs['unitTested']
+
         if customer_email is not None:
             _setter("customer_email", customer_email)
         if peer_reviewed_by is not None:
@@ -6181,7 +6755,13 @@ class PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther(dict):
              _setter: Callable[[Any, Any], None],
              other_noncompliance_reason: Optional[str] = None,
              ticket_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'otherNoncomplianceReason' in kwargs:
+            other_noncompliance_reason = kwargs['otherNoncomplianceReason']
+        if 'ticketId' in kwargs:
+            ticket_id = kwargs['ticketId']
+
         if other_noncompliance_reason is not None:
             _setter("other_noncompliance_reason", other_noncompliance_reason)
         if ticket_id is not None:
@@ -6249,7 +6829,15 @@ class PropertyRuleError(dict):
              status_code: Optional[int] = None,
              title: Optional[str] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'behaviorName' in kwargs:
+            behavior_name = kwargs['behaviorName']
+        if 'errorLocation' in kwargs:
+            error_location = kwargs['errorLocation']
+        if 'statusCode' in kwargs:
+            status_code = kwargs['statusCode']
+
         if behavior_name is not None:
             _setter("behavior_name", behavior_name)
         if detail is not None:
@@ -6346,7 +6934,21 @@ class GetCPSEnrollmentAdminContactResult(dict):
              region: str,
              address_line_two: Optional[str] = None,
              title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressLineOne' in kwargs:
+            address_line_one = kwargs['addressLineOne']
+        if 'countryCode' in kwargs:
+            country_code = kwargs['countryCode']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'addressLineTwo' in kwargs:
+            address_line_two = kwargs['addressLineTwo']
+
         _setter("address_line_one", address_line_one)
         _setter("city", city)
         _setter("country_code", country_code)
@@ -6450,7 +7052,15 @@ class GetCPSEnrollmentCsrResult(dict):
              organizational_unit: str,
              preferred_trust_chain: str,
              state: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'countryCode' in kwargs:
+            country_code = kwargs['countryCode']
+        if 'organizationalUnit' in kwargs:
+            organizational_unit = kwargs['organizationalUnit']
+        if 'preferredTrustChain' in kwargs:
+            preferred_trust_chain = kwargs['preferredTrustChain']
+
         _setter("city", city)
         _setter("country_code", country_code)
         _setter("organization", organization)
@@ -6507,7 +7117,13 @@ class GetCPSEnrollmentDnsChallengeResult(dict):
              domain: str,
              full_path: str,
              response_body: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fullPath' in kwargs:
+            full_path = kwargs['fullPath']
+        if 'responseBody' in kwargs:
+            response_body = kwargs['responseBody']
+
         _setter("domain", domain)
         _setter("full_path", full_path)
         _setter("response_body", response_body)
@@ -6546,7 +7162,13 @@ class GetCPSEnrollmentHttpChallengeResult(dict):
              domain: str,
              full_path: str,
              response_body: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fullPath' in kwargs:
+            full_path = kwargs['fullPath']
+        if 'responseBody' in kwargs:
+            response_body = kwargs['responseBody']
+
         _setter("domain", domain)
         _setter("full_path", full_path)
         _setter("response_body", response_body)
@@ -6600,7 +7222,23 @@ class GetCPSEnrollmentNetworkConfigurationResult(dict):
              ocsp_stapling: str,
              preferred_ciphers: str,
              quic_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientMutualAuthentications' in kwargs:
+            client_mutual_authentications = kwargs['clientMutualAuthentications']
+        if 'cloneDnsNames' in kwargs:
+            clone_dns_names = kwargs['cloneDnsNames']
+        if 'disallowedTlsVersions' in kwargs:
+            disallowed_tls_versions = kwargs['disallowedTlsVersions']
+        if 'mustHaveCiphers' in kwargs:
+            must_have_ciphers = kwargs['mustHaveCiphers']
+        if 'ocspStapling' in kwargs:
+            ocsp_stapling = kwargs['ocspStapling']
+        if 'preferredCiphers' in kwargs:
+            preferred_ciphers = kwargs['preferredCiphers']
+        if 'quicEnabled' in kwargs:
+            quic_enabled = kwargs['quicEnabled']
+
         _setter("client_mutual_authentications", client_mutual_authentications)
         _setter("clone_dns_names", clone_dns_names)
         _setter("disallowed_tls_versions", disallowed_tls_versions)
@@ -6669,7 +7307,15 @@ class GetCPSEnrollmentNetworkConfigurationClientMutualAuthenticationResult(dict)
              ocsp_enabled: bool,
              send_ca_list_to_client: bool,
              set_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ocspEnabled' in kwargs:
+            ocsp_enabled = kwargs['ocspEnabled']
+        if 'sendCaListToClient' in kwargs:
+            send_ca_list_to_client = kwargs['sendCaListToClient']
+        if 'setId' in kwargs:
+            set_id = kwargs['setId']
+
         _setter("ocsp_enabled", ocsp_enabled)
         _setter("send_ca_list_to_client", send_ca_list_to_client)
         _setter("set_id", set_id)
@@ -6723,7 +7369,17 @@ class GetCPSEnrollmentOrganizationResult(dict):
              phone: str,
              postal_code: str,
              region: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressLineOne' in kwargs:
+            address_line_one = kwargs['addressLineOne']
+        if 'addressLineTwo' in kwargs:
+            address_line_two = kwargs['addressLineTwo']
+        if 'countryCode' in kwargs:
+            country_code = kwargs['countryCode']
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+
         _setter("address_line_one", address_line_one)
         _setter("address_line_two", address_line_two)
         _setter("city", city)
@@ -6819,7 +7475,21 @@ class GetCPSEnrollmentTechContactResult(dict):
              region: str,
              address_line_two: Optional[str] = None,
              title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressLineOne' in kwargs:
+            address_line_one = kwargs['addressLineOne']
+        if 'countryCode' in kwargs:
+            country_code = kwargs['countryCode']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'addressLineTwo' in kwargs:
+            address_line_two = kwargs['addressLineTwo']
+
         _setter("address_line_one", address_line_one)
         _setter("city", city)
         _setter("country_code", country_code)
@@ -6956,7 +7626,37 @@ class GetCPSEnrollmentsEnrollmentResult(dict):
              sni_only: bool,
              tech_contacts: Sequence['outputs.GetCPSEnrollmentsEnrollmentTechContactResult'],
              validation_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adminContacts' in kwargs:
+            admin_contacts = kwargs['adminContacts']
+        if 'certificateChainType' in kwargs:
+            certificate_chain_type = kwargs['certificateChainType']
+        if 'certificateType' in kwargs:
+            certificate_type = kwargs['certificateType']
+        if 'commonName' in kwargs:
+            common_name = kwargs['commonName']
+        if 'enableMultiStackedCertificates' in kwargs:
+            enable_multi_stacked_certificates = kwargs['enableMultiStackedCertificates']
+        if 'enrollmentId' in kwargs:
+            enrollment_id = kwargs['enrollmentId']
+        if 'networkConfigurations' in kwargs:
+            network_configurations = kwargs['networkConfigurations']
+        if 'pendingChanges' in kwargs:
+            pending_changes = kwargs['pendingChanges']
+        if 'registrationAuthority' in kwargs:
+            registration_authority = kwargs['registrationAuthority']
+        if 'secureNetwork' in kwargs:
+            secure_network = kwargs['secureNetwork']
+        if 'signatureAlgorithm' in kwargs:
+            signature_algorithm = kwargs['signatureAlgorithm']
+        if 'sniOnly' in kwargs:
+            sni_only = kwargs['sniOnly']
+        if 'techContacts' in kwargs:
+            tech_contacts = kwargs['techContacts']
+        if 'validationType' in kwargs:
+            validation_type = kwargs['validationType']
+
         _setter("admin_contacts", admin_contacts)
         _setter("certificate_chain_type", certificate_chain_type)
         _setter("certificate_type", certificate_type)
@@ -7106,7 +7806,21 @@ class GetCPSEnrollmentsEnrollmentAdminContactResult(dict):
              region: str,
              address_line_two: Optional[str] = None,
              title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressLineOne' in kwargs:
+            address_line_one = kwargs['addressLineOne']
+        if 'countryCode' in kwargs:
+            country_code = kwargs['countryCode']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'addressLineTwo' in kwargs:
+            address_line_two = kwargs['addressLineTwo']
+
         _setter("address_line_one", address_line_one)
         _setter("city", city)
         _setter("country_code", country_code)
@@ -7210,7 +7924,15 @@ class GetCPSEnrollmentsEnrollmentCsrResult(dict):
              organizational_unit: str,
              preferred_trust_chain: str,
              state: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'countryCode' in kwargs:
+            country_code = kwargs['countryCode']
+        if 'organizationalUnit' in kwargs:
+            organizational_unit = kwargs['organizationalUnit']
+        if 'preferredTrustChain' in kwargs:
+            preferred_trust_chain = kwargs['preferredTrustChain']
+
         _setter("city", city)
         _setter("country_code", country_code)
         _setter("organization", organization)
@@ -7282,7 +8004,23 @@ class GetCPSEnrollmentsEnrollmentNetworkConfigurationResult(dict):
              ocsp_stapling: str,
              preferred_ciphers: str,
              quic_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientMutualAuthentications' in kwargs:
+            client_mutual_authentications = kwargs['clientMutualAuthentications']
+        if 'cloneDnsNames' in kwargs:
+            clone_dns_names = kwargs['cloneDnsNames']
+        if 'disallowedTlsVersions' in kwargs:
+            disallowed_tls_versions = kwargs['disallowedTlsVersions']
+        if 'mustHaveCiphers' in kwargs:
+            must_have_ciphers = kwargs['mustHaveCiphers']
+        if 'ocspStapling' in kwargs:
+            ocsp_stapling = kwargs['ocspStapling']
+        if 'preferredCiphers' in kwargs:
+            preferred_ciphers = kwargs['preferredCiphers']
+        if 'quicEnabled' in kwargs:
+            quic_enabled = kwargs['quicEnabled']
+
         _setter("client_mutual_authentications", client_mutual_authentications)
         _setter("clone_dns_names", clone_dns_names)
         _setter("disallowed_tls_versions", disallowed_tls_versions)
@@ -7351,7 +8089,15 @@ class GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthenticationR
              ocsp_enabled: bool,
              send_ca_list_to_client: bool,
              set_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ocspEnabled' in kwargs:
+            ocsp_enabled = kwargs['ocspEnabled']
+        if 'sendCaListToClient' in kwargs:
+            send_ca_list_to_client = kwargs['sendCaListToClient']
+        if 'setId' in kwargs:
+            set_id = kwargs['setId']
+
         _setter("ocsp_enabled", ocsp_enabled)
         _setter("send_ca_list_to_client", send_ca_list_to_client)
         _setter("set_id", set_id)
@@ -7405,7 +8151,17 @@ class GetCPSEnrollmentsEnrollmentOrganizationResult(dict):
              phone: str,
              postal_code: str,
              region: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressLineOne' in kwargs:
+            address_line_one = kwargs['addressLineOne']
+        if 'addressLineTwo' in kwargs:
+            address_line_two = kwargs['addressLineTwo']
+        if 'countryCode' in kwargs:
+            country_code = kwargs['countryCode']
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+
         _setter("address_line_one", address_line_one)
         _setter("address_line_two", address_line_two)
         _setter("city", city)
@@ -7501,7 +8257,21 @@ class GetCPSEnrollmentsEnrollmentTechContactResult(dict):
              region: str,
              address_line_two: Optional[str] = None,
              title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressLineOne' in kwargs:
+            address_line_one = kwargs['addressLineOne']
+        if 'countryCode' in kwargs:
+            country_code = kwargs['countryCode']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'addressLineTwo' in kwargs:
+            address_line_two = kwargs['addressLineTwo']
+
         _setter("address_line_one", address_line_one)
         _setter("city", city)
         _setter("country_code", country_code)
@@ -7638,7 +8408,29 @@ class GetClientlistListsListResult(dict):
              version: int,
              name: Optional[str] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'createDate' in kwargs:
+            create_date = kwargs['createDate']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'itemsCount' in kwargs:
+            items_count = kwargs['itemsCount']
+        if 'listId' in kwargs:
+            list_id = kwargs['listId']
+        if 'listType' in kwargs:
+            list_type = kwargs['listType']
+        if 'productionActivationStatus' in kwargs:
+            production_activation_status = kwargs['productionActivationStatus']
+        if 'readOnly' in kwargs:
+            read_only = kwargs['readOnly']
+        if 'stagingActivationStatus' in kwargs:
+            staging_activation_status = kwargs['stagingActivationStatus']
+        if 'updateDate' in kwargs:
+            update_date = kwargs['updateDate']
+        if 'updatedBy' in kwargs:
+            updated_by = kwargs['updatedBy']
+
         _setter("create_date", create_date)
         _setter("created_by", created_by)
         _setter("deprecated", deprecated)
@@ -7778,7 +8570,13 @@ class GetCloudletsApiPrioritizationMatchRuleMatchRuleResult(dict):
              matches: Optional[Sequence['outputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchResult']] = None,
              name: Optional[str] = None,
              start: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'passThroughPercent' in kwargs:
+            pass_through_percent = kwargs['passThroughPercent']
+        if 'matchUrl' in kwargs:
+            match_url = kwargs['matchUrl']
+
         _setter("pass_through_percent", pass_through_percent)
         _setter("type", type)
         if disabled is not None:
@@ -7865,7 +8663,21 @@ class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchResult(dict):
              match_value: Optional[str] = None,
              negate: Optional[bool] = None,
              object_match_values: Optional[Sequence['outputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueResult']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caseSensitive' in kwargs:
+            case_sensitive = kwargs['caseSensitive']
+        if 'checkIps' in kwargs:
+            check_ips = kwargs['checkIps']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'matchType' in kwargs:
+            match_type = kwargs['matchType']
+        if 'matchValue' in kwargs:
+            match_value = kwargs['matchValue']
+        if 'objectMatchValues' in kwargs:
+            object_match_values = kwargs['objectMatchValues']
+
         if case_sensitive is not None:
             _setter("case_sensitive", case_sensitive)
         if check_ips is not None:
@@ -7944,7 +8756,13 @@ class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueResult
              name_has_wildcard: Optional[bool] = None,
              options: Optional['outputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsResult'] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'nameCaseSensitive' in kwargs:
+            name_case_sensitive = kwargs['nameCaseSensitive']
+        if 'nameHasWildcard' in kwargs:
+            name_has_wildcard = kwargs['nameHasWildcard']
+
         _setter("type", type)
         if name is not None:
             _setter("name", name)
@@ -8009,7 +8827,15 @@ class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOption
              value_escaped: Optional[bool] = None,
              value_has_wildcard: Optional[bool] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'valueCaseSensitive' in kwargs:
+            value_case_sensitive = kwargs['valueCaseSensitive']
+        if 'valueEscaped' in kwargs:
+            value_escaped = kwargs['valueEscaped']
+        if 'valueHasWildcard' in kwargs:
+            value_has_wildcard = kwargs['valueHasWildcard']
+
         if value_case_sensitive is not None:
             _setter("value_case_sensitive", value_case_sensitive)
         if value_escaped is not None:
@@ -8085,7 +8911,19 @@ class GetCloudletsApplicationLoadBalancerDataCenterResult(dict):
              origin_id: str,
              percent: float,
              state_or_province: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudServerHostHeaderOverride' in kwargs:
+            cloud_server_host_header_override = kwargs['cloudServerHostHeaderOverride']
+        if 'cloudService' in kwargs:
+            cloud_service = kwargs['cloudService']
+        if 'livenessHosts' in kwargs:
+            liveness_hosts = kwargs['livenessHosts']
+        if 'originId' in kwargs:
+            origin_id = kwargs['originId']
+        if 'stateOrProvince' in kwargs:
+            state_or_province = kwargs['stateOrProvince']
+
         _setter("city", city)
         _setter("cloud_server_host_header_override", cloud_server_host_header_override)
         _setter("cloud_service", cloud_service)
@@ -8208,7 +9046,25 @@ class GetCloudletsApplicationLoadBalancerLivenessSettingResult(dict):
              status4xx_failure: bool,
              status5xx_failure: bool,
              timeout: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalHeaders' in kwargs:
+            additional_headers = kwargs['additionalHeaders']
+        if 'hostHeader' in kwargs:
+            host_header = kwargs['hostHeader']
+        if 'peerCertificateVerification' in kwargs:
+            peer_certificate_verification = kwargs['peerCertificateVerification']
+        if 'requestString' in kwargs:
+            request_string = kwargs['requestString']
+        if 'responseString' in kwargs:
+            response_string = kwargs['responseString']
+        if 'status3xxFailure' in kwargs:
+            status3xx_failure = kwargs['status3xxFailure']
+        if 'status4xxFailure' in kwargs:
+            status4xx_failure = kwargs['status4xxFailure']
+        if 'status5xxFailure' in kwargs:
+            status5xx_failure = kwargs['status5xxFailure']
+
         _setter("additional_headers", additional_headers)
         _setter("host_header", host_header)
         _setter("interval", interval)
@@ -8328,7 +9184,15 @@ class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleResult(dict):
              matches_always: Optional[bool] = None,
              name: Optional[str] = None,
              start: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'forwardSettings' in kwargs:
+            forward_settings = kwargs['forwardSettings']
+        if 'matchUrl' in kwargs:
+            match_url = kwargs['matchUrl']
+        if 'matchesAlways' in kwargs:
+            matches_always = kwargs['matchesAlways']
+
         _setter("forward_settings", forward_settings)
         _setter("type", type)
         if disabled is not None:
@@ -8411,7 +9275,11 @@ class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingResult(
     def _configure(
              _setter: Callable[[Any, Any], None],
              origin_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'originId' in kwargs:
+            origin_id = kwargs['originId']
+
         _setter("origin_id", origin_id)
 
     @property
@@ -8450,7 +9318,21 @@ class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchResult(dict):
              match_value: Optional[str] = None,
              negate: Optional[bool] = None,
              object_match_values: Optional[Sequence['outputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueResult']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caseSensitive' in kwargs:
+            case_sensitive = kwargs['caseSensitive']
+        if 'checkIps' in kwargs:
+            check_ips = kwargs['checkIps']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'matchType' in kwargs:
+            match_type = kwargs['matchType']
+        if 'matchValue' in kwargs:
+            match_value = kwargs['matchValue']
+        if 'objectMatchValues' in kwargs:
+            object_match_values = kwargs['objectMatchValues']
+
         if case_sensitive is not None:
             _setter("case_sensitive", case_sensitive)
         if check_ips is not None:
@@ -8529,7 +9411,13 @@ class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValue
              name_has_wildcard: Optional[bool] = None,
              options: Optional['outputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsResult'] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'nameCaseSensitive' in kwargs:
+            name_case_sensitive = kwargs['nameCaseSensitive']
+        if 'nameHasWildcard' in kwargs:
+            name_has_wildcard = kwargs['nameHasWildcard']
+
         _setter("type", type)
         if name is not None:
             _setter("name", name)
@@ -8594,7 +9482,15 @@ class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValue
              value_escaped: Optional[bool] = None,
              value_has_wildcard: Optional[bool] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'valueCaseSensitive' in kwargs:
+            value_case_sensitive = kwargs['valueCaseSensitive']
+        if 'valueEscaped' in kwargs:
+            value_escaped = kwargs['valueEscaped']
+        if 'valueHasWildcard' in kwargs:
+            value_has_wildcard = kwargs['valueHasWildcard']
+
         if value_case_sensitive is not None:
             _setter("value_case_sensitive", value_case_sensitive)
         if value_escaped is not None:
@@ -8658,7 +9554,13 @@ class GetCloudletsAudienceSegmentationMatchRuleMatchRuleResult(dict):
              matches: Optional[Sequence['outputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchResult']] = None,
              name: Optional[str] = None,
              start: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'forwardSettings' in kwargs:
+            forward_settings = kwargs['forwardSettings']
+        if 'matchUrl' in kwargs:
+            match_url = kwargs['matchUrl']
+
         _setter("forward_settings", forward_settings)
         _setter("type", type)
         if disabled is not None:
@@ -8733,7 +9635,15 @@ class GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsResult(di
              origin_id: Optional[str] = None,
              path_and_qs: Optional[str] = None,
              use_incoming_query_string: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'originId' in kwargs:
+            origin_id = kwargs['originId']
+        if 'pathAndQs' in kwargs:
+            path_and_qs = kwargs['pathAndQs']
+        if 'useIncomingQueryString' in kwargs:
+            use_incoming_query_string = kwargs['useIncomingQueryString']
+
         if origin_id is not None:
             _setter("origin_id", origin_id)
         if path_and_qs is not None:
@@ -8787,7 +9697,21 @@ class GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchResult(dict):
              match_value: Optional[str] = None,
              negate: Optional[bool] = None,
              object_match_values: Optional[Sequence['outputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueResult']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caseSensitive' in kwargs:
+            case_sensitive = kwargs['caseSensitive']
+        if 'checkIps' in kwargs:
+            check_ips = kwargs['checkIps']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'matchType' in kwargs:
+            match_type = kwargs['matchType']
+        if 'matchValue' in kwargs:
+            match_value = kwargs['matchValue']
+        if 'objectMatchValues' in kwargs:
+            object_match_values = kwargs['objectMatchValues']
+
         if case_sensitive is not None:
             _setter("case_sensitive", case_sensitive)
         if check_ips is not None:
@@ -8866,7 +9790,13 @@ class GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueRes
              name_has_wildcard: Optional[bool] = None,
              options: Optional['outputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsResult'] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'nameCaseSensitive' in kwargs:
+            name_case_sensitive = kwargs['nameCaseSensitive']
+        if 'nameHasWildcard' in kwargs:
+            name_has_wildcard = kwargs['nameHasWildcard']
+
         _setter("type", type)
         if name is not None:
             _setter("name", name)
@@ -8931,7 +9861,15 @@ class GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOpt
              value_escaped: Optional[bool] = None,
              value_has_wildcard: Optional[bool] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'valueCaseSensitive' in kwargs:
+            value_case_sensitive = kwargs['valueCaseSensitive']
+        if 'valueEscaped' in kwargs:
+            value_escaped = kwargs['valueEscaped']
+        if 'valueHasWildcard' in kwargs:
+            value_has_wildcard = kwargs['valueHasWildcard']
+
         if value_case_sensitive is not None:
             _setter("value_case_sensitive", value_case_sensitive)
         if value_escaped is not None:
@@ -9004,7 +9942,19 @@ class GetCloudletsEdgeRedirectorMatchRuleMatchRuleResult(dict):
              start: Optional[int] = None,
              use_incoming_query_string: Optional[bool] = None,
              use_relative_url: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'redirectUrl' in kwargs:
+            redirect_url = kwargs['redirectUrl']
+        if 'statusCode' in kwargs:
+            status_code = kwargs['statusCode']
+        if 'matchUrl' in kwargs:
+            match_url = kwargs['matchUrl']
+        if 'useIncomingQueryString' in kwargs:
+            use_incoming_query_string = kwargs['useIncomingQueryString']
+        if 'useRelativeUrl' in kwargs:
+            use_relative_url = kwargs['useRelativeUrl']
+
         _setter("redirect_url", redirect_url)
         _setter("status_code", status_code)
         _setter("type", type)
@@ -9111,7 +10061,21 @@ class GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchResult(dict):
              match_value: Optional[str] = None,
              negate: Optional[bool] = None,
              object_match_values: Optional[Sequence['outputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueResult']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caseSensitive' in kwargs:
+            case_sensitive = kwargs['caseSensitive']
+        if 'checkIps' in kwargs:
+            check_ips = kwargs['checkIps']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'matchType' in kwargs:
+            match_type = kwargs['matchType']
+        if 'matchValue' in kwargs:
+            match_value = kwargs['matchValue']
+        if 'objectMatchValues' in kwargs:
+            object_match_values = kwargs['objectMatchValues']
+
         if case_sensitive is not None:
             _setter("case_sensitive", case_sensitive)
         if check_ips is not None:
@@ -9190,7 +10154,13 @@ class GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueResult(di
              name_has_wildcard: Optional[bool] = None,
              options: Optional['outputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsResult'] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'nameCaseSensitive' in kwargs:
+            name_case_sensitive = kwargs['nameCaseSensitive']
+        if 'nameHasWildcard' in kwargs:
+            name_has_wildcard = kwargs['nameHasWildcard']
+
         _setter("type", type)
         if name is not None:
             _setter("name", name)
@@ -9255,7 +10225,15 @@ class GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptionsRe
              value_escaped: Optional[bool] = None,
              value_has_wildcard: Optional[bool] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'valueCaseSensitive' in kwargs:
+            value_case_sensitive = kwargs['valueCaseSensitive']
+        if 'valueEscaped' in kwargs:
+            value_escaped = kwargs['valueEscaped']
+        if 'valueHasWildcard' in kwargs:
+            value_has_wildcard = kwargs['valueHasWildcard']
+
         if value_case_sensitive is not None:
             _setter("value_case_sensitive", value_case_sensitive)
         if value_escaped is not None:
@@ -9319,7 +10297,13 @@ class GetCloudletsForwardRewriteMatchRuleMatchRuleResult(dict):
              matches: Optional[Sequence['outputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchResult']] = None,
              name: Optional[str] = None,
              start: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'forwardSettings' in kwargs:
+            forward_settings = kwargs['forwardSettings']
+        if 'matchUrl' in kwargs:
+            match_url = kwargs['matchUrl']
+
         _setter("forward_settings", forward_settings)
         _setter("type", type)
         if disabled is not None:
@@ -9394,7 +10378,15 @@ class GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsResult(dict):
              origin_id: Optional[str] = None,
              path_and_qs: Optional[str] = None,
              use_incoming_query_string: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'originId' in kwargs:
+            origin_id = kwargs['originId']
+        if 'pathAndQs' in kwargs:
+            path_and_qs = kwargs['pathAndQs']
+        if 'useIncomingQueryString' in kwargs:
+            use_incoming_query_string = kwargs['useIncomingQueryString']
+
         if origin_id is not None:
             _setter("origin_id", origin_id)
         if path_and_qs is not None:
@@ -9448,7 +10440,21 @@ class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchResult(dict):
              match_value: Optional[str] = None,
              negate: Optional[bool] = None,
              object_match_values: Optional[Sequence['outputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueResult']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caseSensitive' in kwargs:
+            case_sensitive = kwargs['caseSensitive']
+        if 'checkIps' in kwargs:
+            check_ips = kwargs['checkIps']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'matchType' in kwargs:
+            match_type = kwargs['matchType']
+        if 'matchValue' in kwargs:
+            match_value = kwargs['matchValue']
+        if 'objectMatchValues' in kwargs:
+            object_match_values = kwargs['objectMatchValues']
+
         if case_sensitive is not None:
             _setter("case_sensitive", case_sensitive)
         if check_ips is not None:
@@ -9527,7 +10533,13 @@ class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueResult(di
              name_has_wildcard: Optional[bool] = None,
              options: Optional['outputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsResult'] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'nameCaseSensitive' in kwargs:
+            name_case_sensitive = kwargs['nameCaseSensitive']
+        if 'nameHasWildcard' in kwargs:
+            name_has_wildcard = kwargs['nameHasWildcard']
+
         _setter("type", type)
         if name is not None:
             _setter("name", name)
@@ -9592,7 +10604,15 @@ class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsRe
              value_escaped: Optional[bool] = None,
              value_has_wildcard: Optional[bool] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'valueCaseSensitive' in kwargs:
+            value_case_sensitive = kwargs['valueCaseSensitive']
+        if 'valueEscaped' in kwargs:
+            value_escaped = kwargs['valueEscaped']
+        if 'valueHasWildcard' in kwargs:
+            value_has_wildcard = kwargs['valueHasWildcard']
+
         if value_case_sensitive is not None:
             _setter("value_case_sensitive", value_case_sensitive)
         if value_escaped is not None:
@@ -9659,7 +10679,15 @@ class GetCloudletsPhasedReleaseMatchRuleMatchRuleResult(dict):
              matches_always: Optional[bool] = None,
              name: Optional[str] = None,
              start: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'forwardSettings' in kwargs:
+            forward_settings = kwargs['forwardSettings']
+        if 'matchUrl' in kwargs:
+            match_url = kwargs['matchUrl']
+        if 'matchesAlways' in kwargs:
+            matches_always = kwargs['matchesAlways']
+
         _setter("forward_settings", forward_settings)
         _setter("type", type)
         if disabled is not None:
@@ -9738,7 +10766,11 @@ class GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsResult(dict):
              _setter: Callable[[Any, Any], None],
              origin_id: str,
              percent: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'originId' in kwargs:
+            origin_id = kwargs['originId']
+
         _setter("origin_id", origin_id)
         _setter("percent", percent)
 
@@ -9783,7 +10815,21 @@ class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchResult(dict):
              match_value: Optional[str] = None,
              negate: Optional[bool] = None,
              object_match_values: Optional[Sequence['outputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueResult']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caseSensitive' in kwargs:
+            case_sensitive = kwargs['caseSensitive']
+        if 'checkIps' in kwargs:
+            check_ips = kwargs['checkIps']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'matchType' in kwargs:
+            match_type = kwargs['matchType']
+        if 'matchValue' in kwargs:
+            match_value = kwargs['matchValue']
+        if 'objectMatchValues' in kwargs:
+            object_match_values = kwargs['objectMatchValues']
+
         if case_sensitive is not None:
             _setter("case_sensitive", case_sensitive)
         if check_ips is not None:
@@ -9862,7 +10908,13 @@ class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueResult(dic
              name_has_wildcard: Optional[bool] = None,
              options: Optional['outputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsResult'] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'nameCaseSensitive' in kwargs:
+            name_case_sensitive = kwargs['nameCaseSensitive']
+        if 'nameHasWildcard' in kwargs:
+            name_has_wildcard = kwargs['nameHasWildcard']
+
         _setter("type", type)
         if name is not None:
             _setter("name", name)
@@ -9927,7 +10979,15 @@ class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsRes
              value_escaped: Optional[bool] = None,
              value_has_wildcard: Optional[bool] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'valueCaseSensitive' in kwargs:
+            value_case_sensitive = kwargs['valueCaseSensitive']
+        if 'valueEscaped' in kwargs:
+            value_escaped = kwargs['valueEscaped']
+        if 'valueHasWildcard' in kwargs:
+            value_has_wildcard = kwargs['valueHasWildcard']
+
         if value_case_sensitive is not None:
             _setter("value_case_sensitive", value_case_sensitive)
         if value_escaped is not None:
@@ -9979,7 +11039,15 @@ class GetCloudletsPolicyActivationResult(dict):
              network: str,
              policy_infos: Sequence['outputs.GetCloudletsPolicyActivationPolicyInfoResult'],
              property_infos: Sequence['outputs.GetCloudletsPolicyActivationPropertyInfoResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'apiVersion' in kwargs:
+            api_version = kwargs['apiVersion']
+        if 'policyInfos' in kwargs:
+            policy_infos = kwargs['policyInfos']
+        if 'propertyInfos' in kwargs:
+            property_infos = kwargs['propertyInfos']
+
         _setter("api_version", api_version)
         _setter("network", network)
         _setter("policy_infos", policy_infos)
@@ -10036,7 +11104,17 @@ class GetCloudletsPolicyActivationPolicyInfoResult(dict):
              status: str,
              status_detail: str,
              version: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'activatedBy' in kwargs:
+            activated_by = kwargs['activatedBy']
+        if 'activationDate' in kwargs:
+            activation_date = kwargs['activationDate']
+        if 'policyId' in kwargs:
+            policy_id = kwargs['policyId']
+        if 'statusDetail' in kwargs:
+            status_detail = kwargs['statusDetail']
+
         _setter("activated_by", activated_by)
         _setter("activation_date", activation_date)
         _setter("name", name)
@@ -10108,7 +11186,15 @@ class GetCloudletsPolicyActivationPropertyInfoResult(dict):
              name: str,
              status: str,
              version: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'activatedBy' in kwargs:
+            activated_by = kwargs['activatedBy']
+        if 'activationDate' in kwargs:
+            activation_date = kwargs['activationDate']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+
         _setter("activated_by", activated_by)
         _setter("activation_date", activation_date)
         _setter("group_id", group_id)
@@ -10180,7 +11266,13 @@ class GetCloudletsRequestControlMatchRuleMatchRuleResult(dict):
              matches_always: Optional[bool] = None,
              name: Optional[str] = None,
              start: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowDeny' in kwargs:
+            allow_deny = kwargs['allowDeny']
+        if 'matchesAlways' in kwargs:
+            matches_always = kwargs['matchesAlways']
+
         _setter("allow_deny", allow_deny)
         _setter("type", type)
         if disabled is not None:
@@ -10267,7 +11359,21 @@ class GetCloudletsRequestControlMatchRuleMatchRuleMatchResult(dict):
              match_value: Optional[str] = None,
              negate: Optional[bool] = None,
              object_match_values: Optional[Sequence['outputs.GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueResult']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caseSensitive' in kwargs:
+            case_sensitive = kwargs['caseSensitive']
+        if 'checkIps' in kwargs:
+            check_ips = kwargs['checkIps']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'matchType' in kwargs:
+            match_type = kwargs['matchType']
+        if 'matchValue' in kwargs:
+            match_value = kwargs['matchValue']
+        if 'objectMatchValues' in kwargs:
+            object_match_values = kwargs['objectMatchValues']
+
         if case_sensitive is not None:
             _setter("case_sensitive", case_sensitive)
         if check_ips is not None:
@@ -10346,7 +11452,13 @@ class GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueResult(di
              name_has_wildcard: Optional[bool] = None,
              options: Optional['outputs.GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsResult'] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'nameCaseSensitive' in kwargs:
+            name_case_sensitive = kwargs['nameCaseSensitive']
+        if 'nameHasWildcard' in kwargs:
+            name_has_wildcard = kwargs['nameHasWildcard']
+
         _setter("type", type)
         if name is not None:
             _setter("name", name)
@@ -10411,7 +11523,15 @@ class GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsRe
              value_escaped: Optional[bool] = None,
              value_has_wildcard: Optional[bool] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'valueCaseSensitive' in kwargs:
+            value_case_sensitive = kwargs['valueCaseSensitive']
+        if 'valueEscaped' in kwargs:
+            value_escaped = kwargs['valueEscaped']
+        if 'valueHasWildcard' in kwargs:
+            value_has_wildcard = kwargs['valueHasWildcard']
+
         if value_case_sensitive is not None:
             _setter("value_case_sensitive", value_case_sensitive)
         if value_escaped is not None:
@@ -10475,7 +11595,13 @@ class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleResult(dict):
              matches: Optional[Sequence['outputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchResult']] = None,
              name: Optional[str] = None,
              start: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'passThroughPercent' in kwargs:
+            pass_through_percent = kwargs['passThroughPercent']
+        if 'matchUrl' in kwargs:
+            match_url = kwargs['matchUrl']
+
         _setter("pass_through_percent", pass_through_percent)
         _setter("type", type)
         if disabled is not None:
@@ -10562,7 +11688,21 @@ class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchResult(dict):
              match_value: Optional[str] = None,
              negate: Optional[bool] = None,
              object_match_values: Optional[Sequence['outputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueResult']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caseSensitive' in kwargs:
+            case_sensitive = kwargs['caseSensitive']
+        if 'checkIps' in kwargs:
+            check_ips = kwargs['checkIps']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'matchType' in kwargs:
+            match_type = kwargs['matchType']
+        if 'matchValue' in kwargs:
+            match_value = kwargs['matchValue']
+        if 'objectMatchValues' in kwargs:
+            object_match_values = kwargs['objectMatchValues']
+
         if case_sensitive is not None:
             _setter("case_sensitive", case_sensitive)
         if check_ips is not None:
@@ -10641,7 +11781,13 @@ class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueRe
              name_has_wildcard: Optional[bool] = None,
              options: Optional['outputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsResult'] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'nameCaseSensitive' in kwargs:
+            name_case_sensitive = kwargs['nameCaseSensitive']
+        if 'nameHasWildcard' in kwargs:
+            name_has_wildcard = kwargs['nameHasWildcard']
+
         _setter("type", type)
         if name is not None:
             _setter("name", name)
@@ -10706,7 +11852,15 @@ class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOp
              value_escaped: Optional[bool] = None,
              value_has_wildcard: Optional[bool] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'valueCaseSensitive' in kwargs:
+            value_case_sensitive = kwargs['valueCaseSensitive']
+        if 'valueEscaped' in kwargs:
+            value_escaped = kwargs['valueEscaped']
+        if 'valueHasWildcard' in kwargs:
+            value_has_wildcard = kwargs['valueHasWildcard']
+
         if value_case_sensitive is not None:
             _setter("value_case_sensitive", value_case_sensitive)
         if value_escaped is not None:
@@ -10767,7 +11921,15 @@ class GetCloudwrapperCapacitiesCapacityResult(dict):
              location_name: str,
              type: str,
              unassigned: 'outputs.GetCloudwrapperCapacitiesCapacityUnassignedResult',
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if 'locationId' in kwargs:
+            location_id = kwargs['locationId']
+        if 'locationName' in kwargs:
+            location_name = kwargs['locationName']
+
         _setter("approved", approved)
         _setter("assigned", assigned)
         _setter("contract_id", contract_id)
@@ -10827,7 +11989,9 @@ class GetCloudwrapperCapacitiesCapacityApprovedResult(dict):
              _setter: Callable[[Any, Any], None],
              unit: str,
              value: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("unit", unit)
         _setter("value", value)
 
@@ -10857,7 +12021,9 @@ class GetCloudwrapperCapacitiesCapacityAssignedResult(dict):
              _setter: Callable[[Any, Any], None],
              unit: str,
              value: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("unit", unit)
         _setter("value", value)
 
@@ -10887,7 +12053,9 @@ class GetCloudwrapperCapacitiesCapacityUnassignedResult(dict):
              _setter: Callable[[Any, Any], None],
              unit: str,
              value: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("unit", unit)
         _setter("value", value)
 
@@ -10923,7 +12091,13 @@ class GetCloudwrapperConfigurationLocationResult(dict):
              comments: str,
              map_name: str,
              traffic_type_id: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'mapName' in kwargs:
+            map_name = kwargs['mapName']
+        if 'trafficTypeId' in kwargs:
+            traffic_type_id = kwargs['trafficTypeId']
+
         _setter("capacity", capacity)
         _setter("comments", comments)
         _setter("map_name", map_name)
@@ -10965,7 +12139,9 @@ class GetCloudwrapperConfigurationLocationCapacityResult(dict):
              _setter: Callable[[Any, Any], None],
              unit: str,
              value: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("unit", unit)
         _setter("value", value)
 
@@ -11004,7 +12180,13 @@ class GetCloudwrapperConfigurationMultiCdnSettingsResult(dict):
              cdns: Optional[Sequence['outputs.GetCloudwrapperConfigurationMultiCdnSettingsCdnResult']] = None,
              data_streams: Optional['outputs.GetCloudwrapperConfigurationMultiCdnSettingsDataStreamsResult'] = None,
              origins: Optional[Sequence['outputs.GetCloudwrapperConfigurationMultiCdnSettingsOriginResult']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableSoftAlerts' in kwargs:
+            enable_soft_alerts = kwargs['enableSoftAlerts']
+        if 'dataStreams' in kwargs:
+            data_streams = kwargs['dataStreams']
+
         _setter("enable_soft_alerts", enable_soft_alerts)
         if bocc is not None:
             _setter("bocc", bocc)
@@ -11065,7 +12247,17 @@ class GetCloudwrapperConfigurationMultiCdnSettingsBoccResult(dict):
              forward_type: str,
              request_type: str,
              sampling_frequency: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'conditionalSamplingFrequency' in kwargs:
+            conditional_sampling_frequency = kwargs['conditionalSamplingFrequency']
+        if 'forwardType' in kwargs:
+            forward_type = kwargs['forwardType']
+        if 'requestType' in kwargs:
+            request_type = kwargs['requestType']
+        if 'samplingFrequency' in kwargs:
+            sampling_frequency = kwargs['samplingFrequency']
+
         _setter("conditional_sampling_frequency", conditional_sampling_frequency)
         _setter("enabled", enabled)
         _setter("forward_type", forward_type)
@@ -11122,7 +12314,17 @@ class GetCloudwrapperConfigurationMultiCdnSettingsCdnResult(dict):
              https_only: bool,
              ip_acl_cidrs: Sequence[str],
              cdn_auth_keys: Optional[Sequence['outputs.GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyResult']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cdnCode' in kwargs:
+            cdn_code = kwargs['cdnCode']
+        if 'httpsOnly' in kwargs:
+            https_only = kwargs['httpsOnly']
+        if 'ipAclCidrs' in kwargs:
+            ip_acl_cidrs = kwargs['ipAclCidrs']
+        if 'cdnAuthKeys' in kwargs:
+            cdn_auth_keys = kwargs['cdnAuthKeys']
+
         _setter("cdn_code", cdn_code)
         _setter("enabled", enabled)
         _setter("https_only", https_only)
@@ -11177,7 +12379,15 @@ class GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyResult(dict):
              expiry_date: str,
              header_name: str,
              secret: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authKeyName' in kwargs:
+            auth_key_name = kwargs['authKeyName']
+        if 'expiryDate' in kwargs:
+            expiry_date = kwargs['expiryDate']
+        if 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+
         _setter("auth_key_name", auth_key_name)
         _setter("expiry_date", expiry_date)
         _setter("header_name", header_name)
@@ -11222,7 +12432,13 @@ class GetCloudwrapperConfigurationMultiCdnSettingsDataStreamsResult(dict):
              data_stream_ids: Sequence[int],
              enabled: bool,
              sampling_rate: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dataStreamIds' in kwargs:
+            data_stream_ids = kwargs['dataStreamIds']
+        if 'samplingRate' in kwargs:
+            sampling_rate = kwargs['samplingRate']
+
         _setter("data_stream_ids", data_stream_ids)
         _setter("enabled", enabled)
         _setter("sampling_rate", sampling_rate)
@@ -11261,7 +12477,13 @@ class GetCloudwrapperConfigurationMultiCdnSettingsOriginResult(dict):
              hostname: str,
              origin_id: str,
              property_id: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'originId' in kwargs:
+            origin_id = kwargs['originId']
+        if 'propertyId' in kwargs:
+            property_id = kwargs['propertyId']
+
         _setter("hostname", hostname)
         _setter("origin_id", origin_id)
         _setter("property_id", property_id)
@@ -11336,7 +12558,31 @@ class GetCloudwrapperConfigurationsConfigurationResult(dict):
              status: str,
              locations: Optional[Sequence['outputs.GetCloudwrapperConfigurationsConfigurationLocationResult']] = None,
              multi_cdn_settings: Optional['outputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsResult'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'capacityAlertsThreshold' in kwargs:
+            capacity_alerts_threshold = kwargs['capacityAlertsThreshold']
+        if 'configName' in kwargs:
+            config_name = kwargs['configName']
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if 'lastActivatedBy' in kwargs:
+            last_activated_by = kwargs['lastActivatedBy']
+        if 'lastActivatedDate' in kwargs:
+            last_activated_date = kwargs['lastActivatedDate']
+        if 'lastUpdatedBy' in kwargs:
+            last_updated_by = kwargs['lastUpdatedBy']
+        if 'lastUpdatedDate' in kwargs:
+            last_updated_date = kwargs['lastUpdatedDate']
+        if 'notificationEmails' in kwargs:
+            notification_emails = kwargs['notificationEmails']
+        if 'propertyIds' in kwargs:
+            property_ids = kwargs['propertyIds']
+        if 'retainIdleObjects' in kwargs:
+            retain_idle_objects = kwargs['retainIdleObjects']
+        if 'multiCdnSettings' in kwargs:
+            multi_cdn_settings = kwargs['multiCdnSettings']
+
         _setter("capacity_alerts_threshold", capacity_alerts_threshold)
         _setter("comments", comments)
         _setter("config_name", config_name)
@@ -11452,7 +12698,13 @@ class GetCloudwrapperConfigurationsConfigurationLocationResult(dict):
              comments: str,
              map_name: str,
              traffic_type_id: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'mapName' in kwargs:
+            map_name = kwargs['mapName']
+        if 'trafficTypeId' in kwargs:
+            traffic_type_id = kwargs['trafficTypeId']
+
         _setter("capacity", capacity)
         _setter("comments", comments)
         _setter("map_name", map_name)
@@ -11494,7 +12746,9 @@ class GetCloudwrapperConfigurationsConfigurationLocationCapacityResult(dict):
              _setter: Callable[[Any, Any], None],
              unit: str,
              value: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("unit", unit)
         _setter("value", value)
 
@@ -11533,7 +12787,13 @@ class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsResult(dict):
              cdns: Optional[Sequence['outputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnResult']] = None,
              data_streams: Optional['outputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreamsResult'] = None,
              origins: Optional[Sequence['outputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOriginResult']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableSoftAlerts' in kwargs:
+            enable_soft_alerts = kwargs['enableSoftAlerts']
+        if 'dataStreams' in kwargs:
+            data_streams = kwargs['dataStreams']
+
         _setter("enable_soft_alerts", enable_soft_alerts)
         if bocc is not None:
             _setter("bocc", bocc)
@@ -11594,7 +12854,17 @@ class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBoccResult(dict)
              forward_type: str,
              request_type: str,
              sampling_frequency: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'conditionalSamplingFrequency' in kwargs:
+            conditional_sampling_frequency = kwargs['conditionalSamplingFrequency']
+        if 'forwardType' in kwargs:
+            forward_type = kwargs['forwardType']
+        if 'requestType' in kwargs:
+            request_type = kwargs['requestType']
+        if 'samplingFrequency' in kwargs:
+            sampling_frequency = kwargs['samplingFrequency']
+
         _setter("conditional_sampling_frequency", conditional_sampling_frequency)
         _setter("enabled", enabled)
         _setter("forward_type", forward_type)
@@ -11651,7 +12921,17 @@ class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnResult(dict):
              https_only: bool,
              ip_acl_cidrs: Sequence[str],
              cdn_auth_keys: Optional[Sequence['outputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKeyResult']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cdnCode' in kwargs:
+            cdn_code = kwargs['cdnCode']
+        if 'httpsOnly' in kwargs:
+            https_only = kwargs['httpsOnly']
+        if 'ipAclCidrs' in kwargs:
+            ip_acl_cidrs = kwargs['ipAclCidrs']
+        if 'cdnAuthKeys' in kwargs:
+            cdn_auth_keys = kwargs['cdnAuthKeys']
+
         _setter("cdn_code", cdn_code)
         _setter("enabled", enabled)
         _setter("https_only", https_only)
@@ -11706,7 +12986,15 @@ class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKeyRes
              expiry_date: str,
              header_name: str,
              secret: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authKeyName' in kwargs:
+            auth_key_name = kwargs['authKeyName']
+        if 'expiryDate' in kwargs:
+            expiry_date = kwargs['expiryDate']
+        if 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+
         _setter("auth_key_name", auth_key_name)
         _setter("expiry_date", expiry_date)
         _setter("header_name", header_name)
@@ -11751,7 +13039,13 @@ class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreamsResul
              data_stream_ids: Sequence[int],
              enabled: bool,
              sampling_rate: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dataStreamIds' in kwargs:
+            data_stream_ids = kwargs['dataStreamIds']
+        if 'samplingRate' in kwargs:
+            sampling_rate = kwargs['samplingRate']
+
         _setter("data_stream_ids", data_stream_ids)
         _setter("enabled", enabled)
         _setter("sampling_rate", sampling_rate)
@@ -11790,7 +13084,13 @@ class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOriginResult(dic
              hostname: str,
              origin_id: str,
              property_id: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'originId' in kwargs:
+            origin_id = kwargs['originId']
+        if 'propertyId' in kwargs:
+            property_id = kwargs['propertyId']
+
         _setter("hostname", hostname)
         _setter("origin_id", origin_id)
         _setter("property_id", property_id)
@@ -11832,7 +13132,17 @@ class GetCloudwrapperLocationsLocationResult(dict):
              location_name: str,
              multi_cdn_location_id: str,
              traffic_types: Optional[Sequence['outputs.GetCloudwrapperLocationsLocationTrafficTypeResult']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'locationId' in kwargs:
+            location_id = kwargs['locationId']
+        if 'locationName' in kwargs:
+            location_name = kwargs['locationName']
+        if 'multiCdnLocationId' in kwargs:
+            multi_cdn_location_id = kwargs['multiCdnLocationId']
+        if 'trafficTypes' in kwargs:
+            traffic_types = kwargs['trafficTypes']
+
         _setter("location_id", location_id)
         _setter("location_name", location_name)
         _setter("multi_cdn_location_id", multi_cdn_location_id)
@@ -11878,7 +13188,15 @@ class GetCloudwrapperLocationsLocationTrafficTypeResult(dict):
              location_id: str,
              traffic_type: str,
              traffic_type_id: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'locationId' in kwargs:
+            location_id = kwargs['locationId']
+        if 'trafficType' in kwargs:
+            traffic_type = kwargs['trafficType']
+        if 'trafficTypeId' in kwargs:
+            traffic_type_id = kwargs['trafficTypeId']
+
         _setter("location_id", location_id)
         _setter("traffic_type", traffic_type)
         _setter("traffic_type_id", traffic_type_id)
@@ -11923,7 +13241,17 @@ class GetCloudwrapperPropertiesPropertyResult(dict):
              property_id: int,
              property_name: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'propertyId' in kwargs:
+            property_id = kwargs['propertyId']
+        if 'propertyName' in kwargs:
+            property_name = kwargs['propertyName']
+
         _setter("contract_id", contract_id)
         _setter("group_id", group_id)
         _setter("property_id", property_id)
@@ -11971,7 +13299,13 @@ class GetContractsContractResult(dict):
              _setter: Callable[[Any, Any], None],
              contract_id: str,
              contract_type_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if 'contractTypeName' in kwargs:
+            contract_type_name = kwargs['contractTypeName']
+
         _setter("contract_id", contract_id)
         _setter("contract_type_name", contract_type_name)
 
@@ -12010,7 +13344,17 @@ class GetDatastreamActivationHistoryActivationResult(dict):
              status: str,
              stream_id: int,
              stream_version: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'modifiedBy' in kwargs:
+            modified_by = kwargs['modifiedBy']
+        if 'modifiedDate' in kwargs:
+            modified_date = kwargs['modifiedDate']
+        if 'streamId' in kwargs:
+            stream_id = kwargs['streamId']
+        if 'streamVersion' in kwargs:
+            stream_version = kwargs['streamVersion']
+
         _setter("modified_by", modified_by)
         _setter("modified_date", modified_date)
         _setter("status", status)
@@ -12067,7 +13411,19 @@ class GetDatastreamDatasetFieldsDatasetFieldResult(dict):
              dataset_field_id: int,
              dataset_field_json_key: str,
              dataset_field_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetFieldDescription' in kwargs:
+            dataset_field_description = kwargs['datasetFieldDescription']
+        if 'datasetFieldGroup' in kwargs:
+            dataset_field_group = kwargs['datasetFieldGroup']
+        if 'datasetFieldId' in kwargs:
+            dataset_field_id = kwargs['datasetFieldId']
+        if 'datasetFieldJsonKey' in kwargs:
+            dataset_field_json_key = kwargs['datasetFieldJsonKey']
+        if 'datasetFieldName' in kwargs:
+            dataset_field_name = kwargs['datasetFieldName']
+
         _setter("dataset_field_description", dataset_field_description)
         _setter("dataset_field_group", dataset_field_group)
         _setter("dataset_field_id", dataset_field_id)
@@ -12148,7 +13504,33 @@ class GetDatastreamsStreamsDetailResult(dict):
              stream_name: str,
              stream_status: str,
              stream_version: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'createdDate' in kwargs:
+            created_date = kwargs['createdDate']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'latestVersion' in kwargs:
+            latest_version = kwargs['latestVersion']
+        if 'modifiedBy' in kwargs:
+            modified_by = kwargs['modifiedBy']
+        if 'modifiedDate' in kwargs:
+            modified_date = kwargs['modifiedDate']
+        if 'productId' in kwargs:
+            product_id = kwargs['productId']
+        if 'streamId' in kwargs:
+            stream_id = kwargs['streamId']
+        if 'streamName' in kwargs:
+            stream_name = kwargs['streamName']
+        if 'streamStatus' in kwargs:
+            stream_status = kwargs['streamStatus']
+        if 'streamVersion' in kwargs:
+            stream_version = kwargs['streamVersion']
+
         _setter("contract_id", contract_id)
         _setter("created_by", created_by)
         _setter("created_date", created_date)
@@ -12244,7 +13626,13 @@ class GetDatastreamsStreamsDetailPropertyResult(dict):
              _setter: Callable[[Any, Any], None],
              property_id: int,
              property_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'propertyId' in kwargs:
+            property_id = kwargs['propertyId']
+        if 'propertyName' in kwargs:
+            property_name = kwargs['propertyName']
+
         _setter("property_id", property_id)
         _setter("property_name", property_name)
 
@@ -12280,7 +13668,17 @@ class GetGroupsGroupResult(dict):
              group_id: str,
              group_name: str,
              parent_group_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contractIds' in kwargs:
+            contract_ids = kwargs['contractIds']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'groupName' in kwargs:
+            group_name = kwargs['groupName']
+        if 'parentGroupId' in kwargs:
+            parent_group_id = kwargs['parentGroupId']
+
         _setter("contract_ids", contract_ids)
         _setter("group_id", group_id)
         _setter("group_name", group_name)
@@ -12325,7 +13723,15 @@ class GetGtmDatacenterDefaultLoadObjectResult(dict):
              load_object: str,
              load_object_port: int,
              load_servers: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'loadObject' in kwargs:
+            load_object = kwargs['loadObject']
+        if 'loadObjectPort' in kwargs:
+            load_object_port = kwargs['loadObjectPort']
+        if 'loadServers' in kwargs:
+            load_servers = kwargs['loadServers']
+
         _setter("load_object", load_object)
         _setter("load_object_port", load_object_port)
         _setter("load_servers", load_servers)
@@ -12361,7 +13767,9 @@ class GetGtmDatacenterLinkResult(dict):
              _setter: Callable[[Any, Any], None],
              href: str,
              rel: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("href", href)
         _setter("rel", rel)
 
@@ -12433,7 +13841,25 @@ class GetGtmDatacentersDatacenterResult(dict):
              servermonitor_pool: str,
              state_or_province: str,
              virtual: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloneOf' in kwargs:
+            clone_of = kwargs['cloneOf']
+        if 'cloudServerHostHeaderOverride' in kwargs:
+            cloud_server_host_header_override = kwargs['cloudServerHostHeaderOverride']
+        if 'cloudServerTargeting' in kwargs:
+            cloud_server_targeting = kwargs['cloudServerTargeting']
+        if 'datacenterId' in kwargs:
+            datacenter_id = kwargs['datacenterId']
+        if 'defaultLoadObjects' in kwargs:
+            default_load_objects = kwargs['defaultLoadObjects']
+        if 'scorePenalty' in kwargs:
+            score_penalty = kwargs['scorePenalty']
+        if 'servermonitorPool' in kwargs:
+            servermonitor_pool = kwargs['servermonitorPool']
+        if 'stateOrProvince' in kwargs:
+            state_or_province = kwargs['stateOrProvince']
+
         _setter("city", city)
         _setter("clone_of", clone_of)
         _setter("cloud_server_host_header_override", cloud_server_host_header_override)
@@ -12550,7 +13976,15 @@ class GetGtmDatacentersDatacenterDefaultLoadObjectResult(dict):
              load_object: str,
              load_object_port: int,
              load_servers: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'loadObject' in kwargs:
+            load_object = kwargs['loadObject']
+        if 'loadObjectPort' in kwargs:
+            load_object_port = kwargs['loadObjectPort']
+        if 'loadServers' in kwargs:
+            load_servers = kwargs['loadServers']
+
         _setter("load_object", load_object)
         _setter("load_object_port", load_object_port)
         _setter("load_servers", load_servers)
@@ -12586,7 +14020,9 @@ class GetGtmDatacentersDatacenterLinkResult(dict):
              _setter: Callable[[Any, Any], None],
              href: str,
              rel: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("href", href)
         _setter("rel", rel)
 
@@ -12619,7 +14055,11 @@ class GetIamGrantableRolesGrantableRoleResult(dict):
              description: str,
              granted_role_id: int,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'grantedRoleId' in kwargs:
+            granted_role_id = kwargs['grantedRoleId']
+
         _setter("description", description)
         _setter("granted_role_id", granted_role_id)
         _setter("name", name)
@@ -12673,7 +14113,19 @@ class GetIamRolesRoleResult(dict):
              time_created: str,
              time_modified: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'modifiedBy' in kwargs:
+            modified_by = kwargs['modifiedBy']
+        if 'roleId' in kwargs:
+            role_id = kwargs['roleId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeModified' in kwargs:
+            time_modified = kwargs['timeModified']
+
         _setter("created_by", created_by)
         _setter("description", description)
         _setter("modified_by", modified_by)
@@ -12745,7 +14197,9 @@ class GetIamTimezonesTimezoneResult(dict):
              offset: str,
              posix: str,
              timezone: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("description", description)
         _setter("offset", offset)
         _setter("posix", posix)
@@ -12802,7 +14256,13 @@ class GetImagingPolicyImagePolicyResult(dict):
              rollout_duration: Optional[str] = None,
              transformations: Optional[Sequence['outputs.GetImagingPolicyImagePolicyTransformationResult']] = None,
              variables: Optional[Sequence['outputs.GetImagingPolicyImagePolicyVariableResult']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'postBreakpointTransformations' in kwargs:
+            post_breakpoint_transformations = kwargs['postBreakpointTransformations']
+        if 'rolloutDuration' in kwargs:
+            rollout_duration = kwargs['rolloutDuration']
+
         if breakpoints is not None:
             _setter("breakpoints", breakpoints)
         if hosts is not None:
@@ -12866,7 +14326,9 @@ class GetImagingPolicyImagePolicyBreakpointsResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              widths: Optional[Sequence[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if widths is not None:
             _setter("widths", widths)
 
@@ -12909,7 +14371,23 @@ class GetImagingPolicyImagePolicyOutputResult(dict):
              perceptual_quality_var: Optional[str] = None,
              quality: Optional[str] = None,
              quality_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adaptiveQuality' in kwargs:
+            adaptive_quality = kwargs['adaptiveQuality']
+        if 'allowedFormats' in kwargs:
+            allowed_formats = kwargs['allowedFormats']
+        if 'forcedFormats' in kwargs:
+            forced_formats = kwargs['forcedFormats']
+        if 'perceptualQuality' in kwargs:
+            perceptual_quality = kwargs['perceptualQuality']
+        if 'perceptualQualityFloor' in kwargs:
+            perceptual_quality_floor = kwargs['perceptualQualityFloor']
+        if 'perceptualQualityVar' in kwargs:
+            perceptual_quality_var = kwargs['perceptualQualityVar']
+        if 'qualityVar' in kwargs:
+            quality_var = kwargs['qualityVar']
+
         if adaptive_quality is not None:
             _setter("adaptive_quality", adaptive_quality)
         if allowed_formats is not None:
@@ -13031,7 +14509,25 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationResult(dict):
              opacities: Optional[Sequence['outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationOpacityResult']] = None,
              remove_colors: Optional[Sequence['outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveColorResult']] = None,
              unsharp_masks: Optional[Sequence['outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationUnsharpMaskResult']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backgroundColors' in kwargs:
+            background_colors = kwargs['backgroundColors']
+        if 'chromaKeys' in kwargs:
+            chroma_keys = kwargs['chromaKeys']
+        if 'ifDimensions' in kwargs:
+            if_dimensions = kwargs['ifDimensions']
+        if 'ifOrientations' in kwargs:
+            if_orientations = kwargs['ifOrientations']
+        if 'maxColors' in kwargs:
+            max_colors = kwargs['maxColors']
+        if 'monoHues' in kwargs:
+            mono_hues = kwargs['monoHues']
+        if 'removeColors' in kwargs:
+            remove_colors = kwargs['removeColors']
+        if 'unsharpMasks' in kwargs:
+            unsharp_masks = kwargs['unsharpMasks']
+
         if background_colors is not None:
             _setter("background_colors", background_colors)
         if blurs is not None:
@@ -13175,7 +14671,11 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationBackgroundColorResu
              _setter: Callable[[Any, Any], None],
              color: Optional[str] = None,
              color_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'colorVar' in kwargs:
+            color_var = kwargs['colorVar']
+
         if color is not None:
             _setter("color", color)
         if color_var is not None:
@@ -13207,7 +14707,11 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationBlurResult(dict):
              _setter: Callable[[Any, Any], None],
              sigma: Optional[str] = None,
              sigma_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sigmaVar' in kwargs:
+            sigma_var = kwargs['sigmaVar']
+
         if sigma is not None:
             _setter("sigma", sigma)
         if sigma_var is not None:
@@ -13275,7 +14779,35 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationChromaKeyResult(dic
              saturation_feather_var: Optional[str] = None,
              saturation_tolerance: Optional[str] = None,
              saturation_tolerance_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hueFeather' in kwargs:
+            hue_feather = kwargs['hueFeather']
+        if 'hueFeatherVar' in kwargs:
+            hue_feather_var = kwargs['hueFeatherVar']
+        if 'hueTolerance' in kwargs:
+            hue_tolerance = kwargs['hueTolerance']
+        if 'hueToleranceVar' in kwargs:
+            hue_tolerance_var = kwargs['hueToleranceVar']
+        if 'hueVar' in kwargs:
+            hue_var = kwargs['hueVar']
+        if 'lightnessFeather' in kwargs:
+            lightness_feather = kwargs['lightnessFeather']
+        if 'lightnessFeatherVar' in kwargs:
+            lightness_feather_var = kwargs['lightnessFeatherVar']
+        if 'lightnessTolerance' in kwargs:
+            lightness_tolerance = kwargs['lightnessTolerance']
+        if 'lightnessToleranceVar' in kwargs:
+            lightness_tolerance_var = kwargs['lightnessToleranceVar']
+        if 'saturationFeather' in kwargs:
+            saturation_feather = kwargs['saturationFeather']
+        if 'saturationFeatherVar' in kwargs:
+            saturation_feather_var = kwargs['saturationFeatherVar']
+        if 'saturationTolerance' in kwargs:
+            saturation_tolerance = kwargs['saturationTolerance']
+        if 'saturationToleranceVar' in kwargs:
+            saturation_tolerance_var = kwargs['saturationToleranceVar']
+
         if hue is not None:
             _setter("hue", hue)
         if hue_feather is not None:
@@ -13424,7 +14956,27 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeResult(dic
              x_position_var: Optional[str] = None,
              y_position: Optional[str] = None,
              y_position_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'gravityVar' in kwargs:
+            gravity_var = kwargs['gravityVar']
+        if 'placementVar' in kwargs:
+            placement_var = kwargs['placementVar']
+        if 'scaleDimension' in kwargs:
+            scale_dimension = kwargs['scaleDimension']
+        if 'scaleDimensionVar' in kwargs:
+            scale_dimension_var = kwargs['scaleDimensionVar']
+        if 'scaleVar' in kwargs:
+            scale_var = kwargs['scaleVar']
+        if 'xPosition' in kwargs:
+            x_position = kwargs['xPosition']
+        if 'xPositionVar' in kwargs:
+            x_position_var = kwargs['xPositionVar']
+        if 'yPosition' in kwargs:
+            y_position = kwargs['yPosition']
+        if 'yPositionVar' in kwargs:
+            y_position_var = kwargs['yPositionVar']
+
         _setter("image", image)
         if gravity is not None:
             _setter("gravity", gravity)
@@ -13538,7 +15090,17 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageResul
              circle_images: Optional[Sequence['outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageCircleImageResult']] = None,
              text_images: Optional[Sequence['outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImageResult']] = None,
              url_images: Optional[Sequence['outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageResult']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'boxImages' in kwargs:
+            box_images = kwargs['boxImages']
+        if 'circleImages' in kwargs:
+            circle_images = kwargs['circleImages']
+        if 'textImages' in kwargs:
+            text_images = kwargs['textImages']
+        if 'urlImages' in kwargs:
+            url_images = kwargs['urlImages']
+
         if box_images is not None:
             _setter("box_images", box_images)
         if circle_images is not None:
@@ -13599,7 +15161,15 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxIm
              transformation: Optional['outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult'] = None,
              width: Optional[str] = None,
              width_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'colorVar' in kwargs:
+            color_var = kwargs['colorVar']
+        if 'heightVar' in kwargs:
+            height_var = kwargs['heightVar']
+        if 'widthVar' in kwargs:
+            width_var = kwargs['widthVar']
+
         if color is not None:
             _setter("color", color)
         if color_var is not None:
@@ -13681,7 +15251,15 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageCircl
              transformation: Optional['outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult'] = None,
              width: Optional[str] = None,
              width_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'colorVar' in kwargs:
+            color_var = kwargs['colorVar']
+        if 'diameterVar' in kwargs:
+            diameter_var = kwargs['diameterVar']
+        if 'widthVar' in kwargs:
+            width_var = kwargs['widthVar']
+
         if color is not None:
             _setter("color", color)
         if color_var is not None:
@@ -13781,7 +15359,23 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextI
              transformation: Optional['outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult'] = None,
              typeface: Optional[str] = None,
              typeface_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fillVar' in kwargs:
+            fill_var = kwargs['fillVar']
+        if 'sizeVar' in kwargs:
+            size_var = kwargs['sizeVar']
+        if 'strokeSize' in kwargs:
+            stroke_size = kwargs['strokeSize']
+        if 'strokeSizeVar' in kwargs:
+            stroke_size_var = kwargs['strokeSizeVar']
+        if 'strokeVar' in kwargs:
+            stroke_var = kwargs['strokeVar']
+        if 'textVar' in kwargs:
+            text_var = kwargs['textVar']
+        if 'typefaceVar' in kwargs:
+            typeface_var = kwargs['typefaceVar']
+
         if fill is not None:
             _setter("fill", fill)
         if fill_var is not None:
@@ -13893,7 +15487,11 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlIm
              transformation: Optional['outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult'] = None,
              url: Optional[str] = None,
              url_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'urlVar' in kwargs:
+            url_var = kwargs['urlVar']
+
         if transformation is not None:
             _setter("transformation", transformation)
         if url is not None:
@@ -13929,7 +15527,9 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundResult(dict
     def _configure(
              _setter: Callable[[Any, Any], None],
              transformations: Optional[Sequence['outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if transformations is not None:
             _setter("transformations", transformations)
 
@@ -13960,7 +15560,13 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationContrastResult(dict
              brightness_var: Optional[str] = None,
              contrast: Optional[str] = None,
              contrast_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'brightnessVar' in kwargs:
+            brightness_var = kwargs['brightnessVar']
+        if 'contrastVar' in kwargs:
+            contrast_var = kwargs['contrastVar']
+
         if brightness is not None:
             _setter("brightness", brightness)
         if brightness_var is not None:
@@ -14024,7 +15630,17 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationGoopResult(dict):
              power_var: Optional[str] = None,
              seed: Optional[str] = None,
              seed_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'chaosVar' in kwargs:
+            chaos_var = kwargs['chaosVar']
+        if 'densityVar' in kwargs:
+            density_var = kwargs['densityVar']
+        if 'powerVar' in kwargs:
+            power_var = kwargs['powerVar']
+        if 'seedVar' in kwargs:
+            seed_var = kwargs['seedVar']
+
         if chaos is not None:
             _setter("chaos", chaos)
         if chaos_var is not None:
@@ -14098,7 +15714,11 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationGrayscaleResult(dic
              _setter: Callable[[Any, Any], None],
              type: Optional[str] = None,
              type_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'typeVar' in kwargs:
+            type_var = kwargs['typeVar']
+
         if type is not None:
             _setter("type", type)
         if type_var is not None:
@@ -14142,7 +15762,15 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationHslResult(dict):
              lightness_var: Optional[str] = None,
              saturation: Optional[str] = None,
              saturation_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hueVar' in kwargs:
+            hue_var = kwargs['hueVar']
+        if 'lightnessVar' in kwargs:
+            lightness_var = kwargs['lightnessVar']
+        if 'saturationVar' in kwargs:
+            saturation_var = kwargs['saturationVar']
+
         if hue is not None:
             _setter("hue", hue)
         if hue_var is not None:
@@ -14214,7 +15842,15 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationHsvResult(dict):
              saturation_var: Optional[str] = None,
              value: Optional[str] = None,
              value_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hueVar' in kwargs:
+            hue_var = kwargs['hueVar']
+        if 'saturationVar' in kwargs:
+            saturation_var = kwargs['saturationVar']
+        if 'valueVar' in kwargs:
+            value_var = kwargs['valueVar']
+
         if hue is not None:
             _setter("hue", hue)
         if hue_var is not None:
@@ -14292,7 +15928,17 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionResult(d
              less_than: Optional['outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult'] = None,
              value: Optional[str] = None,
              value_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dimensionVar' in kwargs:
+            dimension_var = kwargs['dimensionVar']
+        if 'greaterThan' in kwargs:
+            greater_than = kwargs['greaterThan']
+        if 'lessThan' in kwargs:
+            less_than = kwargs['lessThan']
+        if 'valueVar' in kwargs:
+            value_var = kwargs['valueVar']
+
         if default is not None:
             _setter("default", default)
         if dimension is not None:
@@ -14372,7 +16018,9 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationResult
              landscape: Optional['outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult'] = None,
              portrait: Optional['outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult'] = None,
              square: Optional['outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if default is not None:
             _setter("default", default)
         if landscape is not None:
@@ -14418,7 +16066,11 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColorResult(dict
              _setter: Callable[[Any, Any], None],
              colors: Optional[str] = None,
              colors_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'colorsVar' in kwargs:
+            colors_var = kwargs['colorsVar']
+
         if colors is not None:
             _setter("colors", colors)
         if colors_var is not None:
@@ -14456,7 +16108,13 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationMirrorResult(dict):
              horizontal_var: Optional[str] = None,
              vertical: Optional[str] = None,
              vertical_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'horizontalVar' in kwargs:
+            horizontal_var = kwargs['horizontalVar']
+        if 'verticalVar' in kwargs:
+            vertical_var = kwargs['verticalVar']
+
         if horizontal is not None:
             _setter("horizontal", horizontal)
         if horizontal_var is not None:
@@ -14502,7 +16160,11 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHueResult(dict)
              _setter: Callable[[Any, Any], None],
              hue: Optional[str] = None,
              hue_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hueVar' in kwargs:
+            hue_var = kwargs['hueVar']
+
         if hue is not None:
             _setter("hue", hue)
         if hue_var is not None:
@@ -14534,7 +16196,11 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationOpacityResult(dict)
              _setter: Callable[[Any, Any], None],
              opacity: Optional[str] = None,
              opacity_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'opacityVar' in kwargs:
+            opacity_var = kwargs['opacityVar']
+
         if opacity is not None:
             _setter("opacity", opacity)
         if opacity_var is not None:
@@ -14578,7 +16244,15 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveColorResult(d
              feather_var: Optional[str] = None,
              tolerance: Optional[str] = None,
              tolerance_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'colorVar' in kwargs:
+            color_var = kwargs['colorVar']
+        if 'featherVar' in kwargs:
+            feather_var = kwargs['featherVar']
+        if 'toleranceVar' in kwargs:
+            tolerance_var = kwargs['toleranceVar']
+
         if color is not None:
             _setter("color", color)
         if color_var is not None:
@@ -14650,7 +16324,15 @@ class GetImagingPolicyImagePolicyPostBreakpointTransformationUnsharpMaskResult(d
              sigma_var: Optional[str] = None,
              threshold: Optional[str] = None,
              threshold_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'gainVar' in kwargs:
+            gain_var = kwargs['gainVar']
+        if 'sigmaVar' in kwargs:
+            sigma_var = kwargs['sigmaVar']
+        if 'thresholdVar' in kwargs:
+            threshold_var = kwargs['thresholdVar']
+
         if gain is not None:
             _setter("gain", gain)
         if gain_var is not None:
@@ -14800,7 +16482,39 @@ class GetImagingPolicyImagePolicyTransformationResult(dict):
              shears: Optional[Sequence['outputs.GetImagingPolicyImagePolicyTransformationShearsResult']] = None,
              trims: Optional[Sequence['outputs.GetImagingPolicyImagePolicyTransformationTrimResult']] = None,
              unsharp_masks: Optional[Sequence['outputs.GetImagingPolicyImagePolicyTransformationUnsharpMaskResult']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'aspectCrops' in kwargs:
+            aspect_crops = kwargs['aspectCrops']
+        if 'backgroundColors' in kwargs:
+            background_colors = kwargs['backgroundColors']
+        if 'chromaKeys' in kwargs:
+            chroma_keys = kwargs['chromaKeys']
+        if 'faceCrops' in kwargs:
+            face_crops = kwargs['faceCrops']
+        if 'featureCrops' in kwargs:
+            feature_crops = kwargs['featureCrops']
+        if 'fitAndFills' in kwargs:
+            fit_and_fills = kwargs['fitAndFills']
+        if 'ifDimensions' in kwargs:
+            if_dimensions = kwargs['ifDimensions']
+        if 'ifOrientations' in kwargs:
+            if_orientations = kwargs['ifOrientations']
+        if 'imQueries' in kwargs:
+            im_queries = kwargs['imQueries']
+        if 'maxColors' in kwargs:
+            max_colors = kwargs['maxColors']
+        if 'monoHues' in kwargs:
+            mono_hues = kwargs['monoHues']
+        if 'regionOfInterestCrops' in kwargs:
+            region_of_interest_crops = kwargs['regionOfInterestCrops']
+        if 'relativeCrops' in kwargs:
+            relative_crops = kwargs['relativeCrops']
+        if 'removeColors' in kwargs:
+            remove_colors = kwargs['removeColors']
+        if 'unsharpMasks' in kwargs:
+            unsharp_masks = kwargs['unsharpMasks']
+
         if appends is not None:
             _setter("appends", appends)
         if aspect_crops is not None:
@@ -15057,7 +16771,19 @@ class GetImagingPolicyImagePolicyTransformationAppendResult(dict):
              gravity_var: Optional[str] = None,
              preserve_minor_dimension: Optional[str] = None,
              preserve_minor_dimension_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'gravityPriority' in kwargs:
+            gravity_priority = kwargs['gravityPriority']
+        if 'gravityPriorityVar' in kwargs:
+            gravity_priority_var = kwargs['gravityPriorityVar']
+        if 'gravityVar' in kwargs:
+            gravity_var = kwargs['gravityVar']
+        if 'preserveMinorDimension' in kwargs:
+            preserve_minor_dimension = kwargs['preserveMinorDimension']
+        if 'preserveMinorDimensionVar' in kwargs:
+            preserve_minor_dimension_var = kwargs['preserveMinorDimensionVar']
+
         _setter("image", image)
         if gravity is not None:
             _setter("gravity", gravity)
@@ -15129,7 +16855,17 @@ class GetImagingPolicyImagePolicyTransformationAppendImageResult(dict):
              circle_images: Optional[Sequence['outputs.GetImagingPolicyImagePolicyTransformationAppendImageCircleImageResult']] = None,
              text_images: Optional[Sequence['outputs.GetImagingPolicyImagePolicyTransformationAppendImageTextImageResult']] = None,
              url_images: Optional[Sequence['outputs.GetImagingPolicyImagePolicyTransformationAppendImageUrlImageResult']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'boxImages' in kwargs:
+            box_images = kwargs['boxImages']
+        if 'circleImages' in kwargs:
+            circle_images = kwargs['circleImages']
+        if 'textImages' in kwargs:
+            text_images = kwargs['textImages']
+        if 'urlImages' in kwargs:
+            url_images = kwargs['urlImages']
+
         if box_images is not None:
             _setter("box_images", box_images)
         if circle_images is not None:
@@ -15190,7 +16926,15 @@ class GetImagingPolicyImagePolicyTransformationAppendImageBoxImageResult(dict):
              transformation: Optional['outputs.GetImagingPolicyImagePolicyTransformationResult'] = None,
              width: Optional[str] = None,
              width_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'colorVar' in kwargs:
+            color_var = kwargs['colorVar']
+        if 'heightVar' in kwargs:
+            height_var = kwargs['heightVar']
+        if 'widthVar' in kwargs:
+            width_var = kwargs['widthVar']
+
         if color is not None:
             _setter("color", color)
         if color_var is not None:
@@ -15272,7 +17016,15 @@ class GetImagingPolicyImagePolicyTransformationAppendImageCircleImageResult(dict
              transformation: Optional['outputs.GetImagingPolicyImagePolicyTransformationResult'] = None,
              width: Optional[str] = None,
              width_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'colorVar' in kwargs:
+            color_var = kwargs['colorVar']
+        if 'diameterVar' in kwargs:
+            diameter_var = kwargs['diameterVar']
+        if 'widthVar' in kwargs:
+            width_var = kwargs['widthVar']
+
         if color is not None:
             _setter("color", color)
         if color_var is not None:
@@ -15372,7 +17124,23 @@ class GetImagingPolicyImagePolicyTransformationAppendImageTextImageResult(dict):
              transformation: Optional['outputs.GetImagingPolicyImagePolicyTransformationResult'] = None,
              typeface: Optional[str] = None,
              typeface_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fillVar' in kwargs:
+            fill_var = kwargs['fillVar']
+        if 'sizeVar' in kwargs:
+            size_var = kwargs['sizeVar']
+        if 'strokeSize' in kwargs:
+            stroke_size = kwargs['strokeSize']
+        if 'strokeSizeVar' in kwargs:
+            stroke_size_var = kwargs['strokeSizeVar']
+        if 'strokeVar' in kwargs:
+            stroke_var = kwargs['strokeVar']
+        if 'textVar' in kwargs:
+            text_var = kwargs['textVar']
+        if 'typefaceVar' in kwargs:
+            typeface_var = kwargs['typefaceVar']
+
         if fill is not None:
             _setter("fill", fill)
         if fill_var is not None:
@@ -15484,7 +17252,11 @@ class GetImagingPolicyImagePolicyTransformationAppendImageUrlImageResult(dict):
              transformation: Optional['outputs.GetImagingPolicyImagePolicyTransformationResult'] = None,
              url: Optional[str] = None,
              url_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'urlVar' in kwargs:
+            url_var = kwargs['urlVar']
+
         if transformation is not None:
             _setter("transformation", transformation)
         if url is not None:
@@ -15547,7 +17319,25 @@ class GetImagingPolicyImagePolicyTransformationAspectCropResult(dict):
              x_position_var: Optional[str] = None,
              y_position: Optional[str] = None,
              y_position_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowExpansion' in kwargs:
+            allow_expansion = kwargs['allowExpansion']
+        if 'allowExpansionVar' in kwargs:
+            allow_expansion_var = kwargs['allowExpansionVar']
+        if 'heightVar' in kwargs:
+            height_var = kwargs['heightVar']
+        if 'widthVar' in kwargs:
+            width_var = kwargs['widthVar']
+        if 'xPosition' in kwargs:
+            x_position = kwargs['xPosition']
+        if 'xPositionVar' in kwargs:
+            x_position_var = kwargs['xPositionVar']
+        if 'yPosition' in kwargs:
+            y_position = kwargs['yPosition']
+        if 'yPositionVar' in kwargs:
+            y_position_var = kwargs['yPositionVar']
+
         if allow_expansion is not None:
             _setter("allow_expansion", allow_expansion)
         if allow_expansion_var is not None:
@@ -15635,7 +17425,11 @@ class GetImagingPolicyImagePolicyTransformationBackgroundColorResult(dict):
              _setter: Callable[[Any, Any], None],
              color: Optional[str] = None,
              color_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'colorVar' in kwargs:
+            color_var = kwargs['colorVar']
+
         if color is not None:
             _setter("color", color)
         if color_var is not None:
@@ -15667,7 +17461,11 @@ class GetImagingPolicyImagePolicyTransformationBlurResult(dict):
              _setter: Callable[[Any, Any], None],
              sigma: Optional[str] = None,
              sigma_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sigmaVar' in kwargs:
+            sigma_var = kwargs['sigmaVar']
+
         if sigma is not None:
             _setter("sigma", sigma)
         if sigma_var is not None:
@@ -15735,7 +17533,35 @@ class GetImagingPolicyImagePolicyTransformationChromaKeyResult(dict):
              saturation_feather_var: Optional[str] = None,
              saturation_tolerance: Optional[str] = None,
              saturation_tolerance_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hueFeather' in kwargs:
+            hue_feather = kwargs['hueFeather']
+        if 'hueFeatherVar' in kwargs:
+            hue_feather_var = kwargs['hueFeatherVar']
+        if 'hueTolerance' in kwargs:
+            hue_tolerance = kwargs['hueTolerance']
+        if 'hueToleranceVar' in kwargs:
+            hue_tolerance_var = kwargs['hueToleranceVar']
+        if 'hueVar' in kwargs:
+            hue_var = kwargs['hueVar']
+        if 'lightnessFeather' in kwargs:
+            lightness_feather = kwargs['lightnessFeather']
+        if 'lightnessFeatherVar' in kwargs:
+            lightness_feather_var = kwargs['lightnessFeatherVar']
+        if 'lightnessTolerance' in kwargs:
+            lightness_tolerance = kwargs['lightnessTolerance']
+        if 'lightnessToleranceVar' in kwargs:
+            lightness_tolerance_var = kwargs['lightnessToleranceVar']
+        if 'saturationFeather' in kwargs:
+            saturation_feather = kwargs['saturationFeather']
+        if 'saturationFeatherVar' in kwargs:
+            saturation_feather_var = kwargs['saturationFeatherVar']
+        if 'saturationTolerance' in kwargs:
+            saturation_tolerance = kwargs['saturationTolerance']
+        if 'saturationToleranceVar' in kwargs:
+            saturation_tolerance_var = kwargs['saturationToleranceVar']
+
         if hue is not None:
             _setter("hue", hue)
         if hue_feather is not None:
@@ -15884,7 +17710,27 @@ class GetImagingPolicyImagePolicyTransformationCompositeResult(dict):
              x_position_var: Optional[str] = None,
              y_position: Optional[str] = None,
              y_position_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'gravityVar' in kwargs:
+            gravity_var = kwargs['gravityVar']
+        if 'placementVar' in kwargs:
+            placement_var = kwargs['placementVar']
+        if 'scaleDimension' in kwargs:
+            scale_dimension = kwargs['scaleDimension']
+        if 'scaleDimensionVar' in kwargs:
+            scale_dimension_var = kwargs['scaleDimensionVar']
+        if 'scaleVar' in kwargs:
+            scale_var = kwargs['scaleVar']
+        if 'xPosition' in kwargs:
+            x_position = kwargs['xPosition']
+        if 'xPositionVar' in kwargs:
+            x_position_var = kwargs['xPositionVar']
+        if 'yPosition' in kwargs:
+            y_position = kwargs['yPosition']
+        if 'yPositionVar' in kwargs:
+            y_position_var = kwargs['yPositionVar']
+
         _setter("image", image)
         if gravity is not None:
             _setter("gravity", gravity)
@@ -15998,7 +17844,17 @@ class GetImagingPolicyImagePolicyTransformationCompositeImageResult(dict):
              circle_images: Optional[Sequence['outputs.GetImagingPolicyImagePolicyTransformationCompositeImageCircleImageResult']] = None,
              text_images: Optional[Sequence['outputs.GetImagingPolicyImagePolicyTransformationCompositeImageTextImageResult']] = None,
              url_images: Optional[Sequence['outputs.GetImagingPolicyImagePolicyTransformationCompositeImageUrlImageResult']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'boxImages' in kwargs:
+            box_images = kwargs['boxImages']
+        if 'circleImages' in kwargs:
+            circle_images = kwargs['circleImages']
+        if 'textImages' in kwargs:
+            text_images = kwargs['textImages']
+        if 'urlImages' in kwargs:
+            url_images = kwargs['urlImages']
+
         if box_images is not None:
             _setter("box_images", box_images)
         if circle_images is not None:
@@ -16059,7 +17915,15 @@ class GetImagingPolicyImagePolicyTransformationCompositeImageBoxImageResult(dict
              transformation: Optional['outputs.GetImagingPolicyImagePolicyTransformationResult'] = None,
              width: Optional[str] = None,
              width_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'colorVar' in kwargs:
+            color_var = kwargs['colorVar']
+        if 'heightVar' in kwargs:
+            height_var = kwargs['heightVar']
+        if 'widthVar' in kwargs:
+            width_var = kwargs['widthVar']
+
         if color is not None:
             _setter("color", color)
         if color_var is not None:
@@ -16141,7 +18005,15 @@ class GetImagingPolicyImagePolicyTransformationCompositeImageCircleImageResult(d
              transformation: Optional['outputs.GetImagingPolicyImagePolicyTransformationResult'] = None,
              width: Optional[str] = None,
              width_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'colorVar' in kwargs:
+            color_var = kwargs['colorVar']
+        if 'diameterVar' in kwargs:
+            diameter_var = kwargs['diameterVar']
+        if 'widthVar' in kwargs:
+            width_var = kwargs['widthVar']
+
         if color is not None:
             _setter("color", color)
         if color_var is not None:
@@ -16241,7 +18113,23 @@ class GetImagingPolicyImagePolicyTransformationCompositeImageTextImageResult(dic
              transformation: Optional['outputs.GetImagingPolicyImagePolicyTransformationResult'] = None,
              typeface: Optional[str] = None,
              typeface_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fillVar' in kwargs:
+            fill_var = kwargs['fillVar']
+        if 'sizeVar' in kwargs:
+            size_var = kwargs['sizeVar']
+        if 'strokeSize' in kwargs:
+            stroke_size = kwargs['strokeSize']
+        if 'strokeSizeVar' in kwargs:
+            stroke_size_var = kwargs['strokeSizeVar']
+        if 'strokeVar' in kwargs:
+            stroke_var = kwargs['strokeVar']
+        if 'textVar' in kwargs:
+            text_var = kwargs['textVar']
+        if 'typefaceVar' in kwargs:
+            typeface_var = kwargs['typefaceVar']
+
         if fill is not None:
             _setter("fill", fill)
         if fill_var is not None:
@@ -16353,7 +18241,11 @@ class GetImagingPolicyImagePolicyTransformationCompositeImageUrlImageResult(dict
              transformation: Optional['outputs.GetImagingPolicyImagePolicyTransformationResult'] = None,
              url: Optional[str] = None,
              url_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'urlVar' in kwargs:
+            url_var = kwargs['urlVar']
+
         if transformation is not None:
             _setter("transformation", transformation)
         if url is not None:
@@ -16389,7 +18281,9 @@ class GetImagingPolicyImagePolicyTransformationCompoundResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              transformations: Optional[Sequence['outputs.GetImagingPolicyImagePolicyTransformationResult']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if transformations is not None:
             _setter("transformations", transformations)
 
@@ -16420,7 +18314,13 @@ class GetImagingPolicyImagePolicyTransformationContrastResult(dict):
              brightness_var: Optional[str] = None,
              contrast: Optional[str] = None,
              contrast_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'brightnessVar' in kwargs:
+            brightness_var = kwargs['brightnessVar']
+        if 'contrastVar' in kwargs:
+            contrast_var = kwargs['contrastVar']
+
         if brightness is not None:
             _setter("brightness", brightness)
         if brightness_var is not None:
@@ -16496,7 +18396,27 @@ class GetImagingPolicyImagePolicyTransformationCropResult(dict):
              x_position_var: Optional[str] = None,
              y_position: Optional[str] = None,
              y_position_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowExpansion' in kwargs:
+            allow_expansion = kwargs['allowExpansion']
+        if 'allowExpansionVar' in kwargs:
+            allow_expansion_var = kwargs['allowExpansionVar']
+        if 'gravityVar' in kwargs:
+            gravity_var = kwargs['gravityVar']
+        if 'heightVar' in kwargs:
+            height_var = kwargs['heightVar']
+        if 'widthVar' in kwargs:
+            width_var = kwargs['widthVar']
+        if 'xPosition' in kwargs:
+            x_position = kwargs['xPosition']
+        if 'xPositionVar' in kwargs:
+            x_position_var = kwargs['xPositionVar']
+        if 'yPosition' in kwargs:
+            y_position = kwargs['yPosition']
+        if 'yPositionVar' in kwargs:
+            y_position_var = kwargs['yPositionVar']
+
         if allow_expansion is not None:
             _setter("allow_expansion", allow_expansion)
         if allow_expansion_var is not None:
@@ -16646,7 +18566,29 @@ class GetImagingPolicyImagePolicyTransformationFaceCropResult(dict):
              style_var: Optional[str] = None,
              width: Optional[str] = None,
              width_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'algorithmVar' in kwargs:
+            algorithm_var = kwargs['algorithmVar']
+        if 'confidenceVar' in kwargs:
+            confidence_var = kwargs['confidenceVar']
+        if 'failGravity' in kwargs:
+            fail_gravity = kwargs['failGravity']
+        if 'failGravityVar' in kwargs:
+            fail_gravity_var = kwargs['failGravityVar']
+        if 'focusVar' in kwargs:
+            focus_var = kwargs['focusVar']
+        if 'gravityVar' in kwargs:
+            gravity_var = kwargs['gravityVar']
+        if 'heightVar' in kwargs:
+            height_var = kwargs['heightVar']
+        if 'paddingVar' in kwargs:
+            padding_var = kwargs['paddingVar']
+        if 'styleVar' in kwargs:
+            style_var = kwargs['styleVar']
+        if 'widthVar' in kwargs:
+            width_var = kwargs['widthVar']
+
         if algorithm is not None:
             _setter("algorithm", algorithm)
         if algorithm_var is not None:
@@ -16838,7 +18780,35 @@ class GetImagingPolicyImagePolicyTransformationFeatureCropResult(dict):
              style_var: Optional[str] = None,
              width: Optional[str] = None,
              width_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'failGravity' in kwargs:
+            fail_gravity = kwargs['failGravity']
+        if 'failGravityVar' in kwargs:
+            fail_gravity_var = kwargs['failGravityVar']
+        if 'featureRadius' in kwargs:
+            feature_radius = kwargs['featureRadius']
+        if 'featureRadiusVar' in kwargs:
+            feature_radius_var = kwargs['featureRadiusVar']
+        if 'gravityVar' in kwargs:
+            gravity_var = kwargs['gravityVar']
+        if 'heightVar' in kwargs:
+            height_var = kwargs['heightVar']
+        if 'maxFeatures' in kwargs:
+            max_features = kwargs['maxFeatures']
+        if 'maxFeaturesVar' in kwargs:
+            max_features_var = kwargs['maxFeaturesVar']
+        if 'minFeatureQuality' in kwargs:
+            min_feature_quality = kwargs['minFeatureQuality']
+        if 'minFeatureQualityVar' in kwargs:
+            min_feature_quality_var = kwargs['minFeatureQualityVar']
+        if 'paddingVar' in kwargs:
+            padding_var = kwargs['paddingVar']
+        if 'styleVar' in kwargs:
+            style_var = kwargs['styleVar']
+        if 'widthVar' in kwargs:
+            width_var = kwargs['widthVar']
+
         if fail_gravity is not None:
             _setter("fail_gravity", fail_gravity)
         if fail_gravity_var is not None:
@@ -16991,7 +18961,15 @@ class GetImagingPolicyImagePolicyTransformationFitAndFillResult(dict):
              height_var: Optional[str] = None,
              width: Optional[str] = None,
              width_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fillTransformation' in kwargs:
+            fill_transformation = kwargs['fillTransformation']
+        if 'heightVar' in kwargs:
+            height_var = kwargs['heightVar']
+        if 'widthVar' in kwargs:
+            width_var = kwargs['widthVar']
+
         if fill_transformation is not None:
             _setter("fill_transformation", fill_transformation)
         if height is not None:
@@ -17062,7 +19040,17 @@ class GetImagingPolicyImagePolicyTransformationGoopResult(dict):
              power_var: Optional[str] = None,
              seed: Optional[str] = None,
              seed_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'chaosVar' in kwargs:
+            chaos_var = kwargs['chaosVar']
+        if 'densityVar' in kwargs:
+            density_var = kwargs['densityVar']
+        if 'powerVar' in kwargs:
+            power_var = kwargs['powerVar']
+        if 'seedVar' in kwargs:
+            seed_var = kwargs['seedVar']
+
         if chaos is not None:
             _setter("chaos", chaos)
         if chaos_var is not None:
@@ -17136,7 +19124,11 @@ class GetImagingPolicyImagePolicyTransformationGrayscaleResult(dict):
              _setter: Callable[[Any, Any], None],
              type: Optional[str] = None,
              type_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'typeVar' in kwargs:
+            type_var = kwargs['typeVar']
+
         if type is not None:
             _setter("type", type)
         if type_var is not None:
@@ -17180,7 +19172,15 @@ class GetImagingPolicyImagePolicyTransformationHslResult(dict):
              lightness_var: Optional[str] = None,
              saturation: Optional[str] = None,
              saturation_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hueVar' in kwargs:
+            hue_var = kwargs['hueVar']
+        if 'lightnessVar' in kwargs:
+            lightness_var = kwargs['lightnessVar']
+        if 'saturationVar' in kwargs:
+            saturation_var = kwargs['saturationVar']
+
         if hue is not None:
             _setter("hue", hue)
         if hue_var is not None:
@@ -17252,7 +19252,15 @@ class GetImagingPolicyImagePolicyTransformationHsvResult(dict):
              saturation_var: Optional[str] = None,
              value: Optional[str] = None,
              value_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hueVar' in kwargs:
+            hue_var = kwargs['hueVar']
+        if 'saturationVar' in kwargs:
+            saturation_var = kwargs['saturationVar']
+        if 'valueVar' in kwargs:
+            value_var = kwargs['valueVar']
+
         if hue is not None:
             _setter("hue", hue)
         if hue_var is not None:
@@ -17330,7 +19338,17 @@ class GetImagingPolicyImagePolicyTransformationIfDimensionResult(dict):
              less_than: Optional['outputs.GetImagingPolicyImagePolicyTransformationResult'] = None,
              value: Optional[str] = None,
              value_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dimensionVar' in kwargs:
+            dimension_var = kwargs['dimensionVar']
+        if 'greaterThan' in kwargs:
+            greater_than = kwargs['greaterThan']
+        if 'lessThan' in kwargs:
+            less_than = kwargs['lessThan']
+        if 'valueVar' in kwargs:
+            value_var = kwargs['valueVar']
+
         if default is not None:
             _setter("default", default)
         if dimension is not None:
@@ -17410,7 +19428,9 @@ class GetImagingPolicyImagePolicyTransformationIfOrientationResult(dict):
              landscape: Optional['outputs.GetImagingPolicyImagePolicyTransformationResult'] = None,
              portrait: Optional['outputs.GetImagingPolicyImagePolicyTransformationResult'] = None,
              square: Optional['outputs.GetImagingPolicyImagePolicyTransformationResult'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if default is not None:
             _setter("default", default)
         if landscape is not None:
@@ -17456,7 +19476,13 @@ class GetImagingPolicyImagePolicyTransformationImQueryResult(dict):
              _setter: Callable[[Any, Any], None],
              allowed_transformations: Sequence[str],
              query_var: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedTransformations' in kwargs:
+            allowed_transformations = kwargs['allowedTransformations']
+        if 'queryVar' in kwargs:
+            query_var = kwargs['queryVar']
+
         _setter("allowed_transformations", allowed_transformations)
         _setter("query_var", query_var)
 
@@ -17486,7 +19512,11 @@ class GetImagingPolicyImagePolicyTransformationMaxColorResult(dict):
              _setter: Callable[[Any, Any], None],
              colors: Optional[str] = None,
              colors_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'colorsVar' in kwargs:
+            colors_var = kwargs['colorsVar']
+
         if colors is not None:
             _setter("colors", colors)
         if colors_var is not None:
@@ -17524,7 +19554,13 @@ class GetImagingPolicyImagePolicyTransformationMirrorResult(dict):
              horizontal_var: Optional[str] = None,
              vertical: Optional[str] = None,
              vertical_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'horizontalVar' in kwargs:
+            horizontal_var = kwargs['horizontalVar']
+        if 'verticalVar' in kwargs:
+            vertical_var = kwargs['verticalVar']
+
         if horizontal is not None:
             _setter("horizontal", horizontal)
         if horizontal_var is not None:
@@ -17570,7 +19606,11 @@ class GetImagingPolicyImagePolicyTransformationMonoHueResult(dict):
              _setter: Callable[[Any, Any], None],
              hue: Optional[str] = None,
              hue_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hueVar' in kwargs:
+            hue_var = kwargs['hueVar']
+
         if hue is not None:
             _setter("hue", hue)
         if hue_var is not None:
@@ -17602,7 +19642,11 @@ class GetImagingPolicyImagePolicyTransformationOpacityResult(dict):
              _setter: Callable[[Any, Any], None],
              opacity: Optional[str] = None,
              opacity_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'opacityVar' in kwargs:
+            opacity_var = kwargs['opacityVar']
+
         if opacity is not None:
             _setter("opacity", opacity)
         if opacity_var is not None:
@@ -17655,7 +19699,19 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropResult(dict):
              style_var: Optional[str] = None,
              width: Optional[str] = None,
              width_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'regionOfInterest' in kwargs:
+            region_of_interest = kwargs['regionOfInterest']
+        if 'gravityVar' in kwargs:
+            gravity_var = kwargs['gravityVar']
+        if 'heightVar' in kwargs:
+            height_var = kwargs['heightVar']
+        if 'styleVar' in kwargs:
+            style_var = kwargs['styleVar']
+        if 'widthVar' in kwargs:
+            width_var = kwargs['widthVar']
+
         _setter("region_of_interest", region_of_interest)
         if gravity is not None:
             _setter("gravity", gravity)
@@ -17744,7 +19800,19 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
              polygon_shapes: Optional[Sequence['outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapeResult']] = None,
              rectangle_shapes: Optional[Sequence['outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeResult']] = None,
              union_shapes: Optional[Sequence['outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeResult']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'circleShapes' in kwargs:
+            circle_shapes = kwargs['circleShapes']
+        if 'pointShapes' in kwargs:
+            point_shapes = kwargs['pointShapes']
+        if 'polygonShapes' in kwargs:
+            polygon_shapes = kwargs['polygonShapes']
+        if 'rectangleShapes' in kwargs:
+            rectangle_shapes = kwargs['rectangleShapes']
+        if 'unionShapes' in kwargs:
+            union_shapes = kwargs['unionShapes']
+
         if circle_shapes is not None:
             _setter("circle_shapes", circle_shapes)
         if point_shapes is not None:
@@ -17800,7 +19868,11 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
              center: 'outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeCenterResult',
              radius: Optional[str] = None,
              radius_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'radiusVar' in kwargs:
+            radius_var = kwargs['radiusVar']
+
         _setter("center", center)
         if radius is not None:
             _setter("radius", radius)
@@ -17844,7 +19916,13 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
              x_var: Optional[str] = None,
              y: Optional[str] = None,
              y_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'xVar' in kwargs:
+            x_var = kwargs['xVar']
+        if 'yVar' in kwargs:
+            y_var = kwargs['yVar']
+
         if x is not None:
             _setter("x", x)
         if x_var is not None:
@@ -17896,7 +19974,13 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
              x_var: Optional[str] = None,
              y: Optional[str] = None,
              y_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'xVar' in kwargs:
+            x_var = kwargs['xVar']
+        if 'yVar' in kwargs:
+            y_var = kwargs['yVar']
+
         if x is not None:
             _setter("x", x)
         if x_var is not None:
@@ -17939,7 +20023,9 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
     def _configure(
              _setter: Callable[[Any, Any], None],
              points: Sequence['outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapePointResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("points", points)
 
     @property
@@ -17969,7 +20055,13 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
              x_var: Optional[str] = None,
              y: Optional[str] = None,
              y_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'xVar' in kwargs:
+            x_var = kwargs['xVar']
+        if 'yVar' in kwargs:
+            y_var = kwargs['yVar']
+
         if x is not None:
             _setter("x", x)
         if x_var is not None:
@@ -18024,7 +20116,13 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
              height_var: Optional[str] = None,
              width: Optional[str] = None,
              width_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'heightVar' in kwargs:
+            height_var = kwargs['heightVar']
+        if 'widthVar' in kwargs:
+            width_var = kwargs['widthVar']
+
         _setter("anchor", anchor)
         if height is not None:
             _setter("height", height)
@@ -18082,7 +20180,13 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
              x_var: Optional[str] = None,
              y: Optional[str] = None,
              y_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'xVar' in kwargs:
+            x_var = kwargs['xVar']
+        if 'yVar' in kwargs:
+            y_var = kwargs['yVar']
+
         if x is not None:
             _setter("x", x)
         if x_var is not None:
@@ -18125,7 +20229,9 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
     def _configure(
              _setter: Callable[[Any, Any], None],
              shapes: Sequence['outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("shapes", shapes)
 
     @property
@@ -18158,7 +20264,19 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
              polygon_shapes: Optional[Sequence['outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShapeResult']] = None,
              rectangle_shapes: Optional[Sequence['outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShapeResult']] = None,
              union_shapes: Optional[Sequence['outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeUnionShapeResult']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'circleShapes' in kwargs:
+            circle_shapes = kwargs['circleShapes']
+        if 'pointShapes' in kwargs:
+            point_shapes = kwargs['pointShapes']
+        if 'polygonShapes' in kwargs:
+            polygon_shapes = kwargs['polygonShapes']
+        if 'rectangleShapes' in kwargs:
+            rectangle_shapes = kwargs['rectangleShapes']
+        if 'unionShapes' in kwargs:
+            union_shapes = kwargs['unionShapes']
+
         if circle_shapes is not None:
             _setter("circle_shapes", circle_shapes)
         if point_shapes is not None:
@@ -18214,7 +20332,11 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
              center: 'outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShapeCenterResult',
              radius: Optional[str] = None,
              radius_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'radiusVar' in kwargs:
+            radius_var = kwargs['radiusVar']
+
         _setter("center", center)
         if radius is not None:
             _setter("radius", radius)
@@ -18258,7 +20380,13 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
              x_var: Optional[str] = None,
              y: Optional[str] = None,
              y_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'xVar' in kwargs:
+            x_var = kwargs['xVar']
+        if 'yVar' in kwargs:
+            y_var = kwargs['yVar']
+
         if x is not None:
             _setter("x", x)
         if x_var is not None:
@@ -18310,7 +20438,13 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
              x_var: Optional[str] = None,
              y: Optional[str] = None,
              y_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'xVar' in kwargs:
+            x_var = kwargs['xVar']
+        if 'yVar' in kwargs:
+            y_var = kwargs['yVar']
+
         if x is not None:
             _setter("x", x)
         if x_var is not None:
@@ -18353,7 +20487,9 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
     def _configure(
              _setter: Callable[[Any, Any], None],
              points: Sequence['outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShapePointResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("points", points)
 
     @property
@@ -18383,7 +20519,13 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
              x_var: Optional[str] = None,
              y: Optional[str] = None,
              y_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'xVar' in kwargs:
+            x_var = kwargs['xVar']
+        if 'yVar' in kwargs:
+            y_var = kwargs['yVar']
+
         if x is not None:
             _setter("x", x)
         if x_var is not None:
@@ -18438,7 +20580,13 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
              height_var: Optional[str] = None,
              width: Optional[str] = None,
              width_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'heightVar' in kwargs:
+            height_var = kwargs['heightVar']
+        if 'widthVar' in kwargs:
+            width_var = kwargs['widthVar']
+
         _setter("anchor", anchor)
         if height is not None:
             _setter("height", height)
@@ -18496,7 +20644,13 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
              x_var: Optional[str] = None,
              y: Optional[str] = None,
              y_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'xVar' in kwargs:
+            x_var = kwargs['xVar']
+        if 'yVar' in kwargs:
+            y_var = kwargs['yVar']
+
         if x is not None:
             _setter("x", x)
         if x_var is not None:
@@ -18539,7 +20693,9 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
     def _configure(
              _setter: Callable[[Any, Any], None],
              shapes: Sequence['outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeUnionShapeShapeResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("shapes", shapes)
 
     @property
@@ -18555,8 +20711,10 @@ class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInter
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
         pass
+
 
 
 @pulumi.output_type
@@ -18592,7 +20750,17 @@ class GetImagingPolicyImagePolicyTransformationRelativeCropResult(dict):
              south_var: Optional[str] = None,
              west: Optional[str] = None,
              west_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'eastVar' in kwargs:
+            east_var = kwargs['eastVar']
+        if 'northVar' in kwargs:
+            north_var = kwargs['northVar']
+        if 'southVar' in kwargs:
+            south_var = kwargs['southVar']
+        if 'westVar' in kwargs:
+            west_var = kwargs['westVar']
+
         if east is not None:
             _setter("east", east)
         if east_var is not None:
@@ -18678,7 +20846,15 @@ class GetImagingPolicyImagePolicyTransformationRemoveColorResult(dict):
              feather_var: Optional[str] = None,
              tolerance: Optional[str] = None,
              tolerance_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'colorVar' in kwargs:
+            color_var = kwargs['colorVar']
+        if 'featherVar' in kwargs:
+            feather_var = kwargs['featherVar']
+        if 'toleranceVar' in kwargs:
+            tolerance_var = kwargs['toleranceVar']
+
         if color is not None:
             _setter("color", color)
         if color_var is not None:
@@ -18756,7 +20932,17 @@ class GetImagingPolicyImagePolicyTransformationResizeResult(dict):
              type_var: Optional[str] = None,
              width: Optional[str] = None,
              width_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'aspectVar' in kwargs:
+            aspect_var = kwargs['aspectVar']
+        if 'heightVar' in kwargs:
+            height_var = kwargs['heightVar']
+        if 'typeVar' in kwargs:
+            type_var = kwargs['typeVar']
+        if 'widthVar' in kwargs:
+            width_var = kwargs['widthVar']
+
         if aspect is not None:
             _setter("aspect", aspect)
         if aspect_var is not None:
@@ -18830,7 +21016,11 @@ class GetImagingPolicyImagePolicyTransformationRotateResult(dict):
              _setter: Callable[[Any, Any], None],
              degrees: Optional[str] = None,
              degrees_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'degreesVar' in kwargs:
+            degrees_var = kwargs['degreesVar']
+
         if degrees is not None:
             _setter("degrees", degrees)
         if degrees_var is not None:
@@ -18868,7 +21058,13 @@ class GetImagingPolicyImagePolicyTransformationScaleResult(dict):
              height_var: Optional[str] = None,
              width: Optional[str] = None,
              width_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'heightVar' in kwargs:
+            height_var = kwargs['heightVar']
+        if 'widthVar' in kwargs:
+            width_var = kwargs['widthVar']
+
         if height is not None:
             _setter("height", height)
         if height_var is not None:
@@ -18920,7 +21116,17 @@ class GetImagingPolicyImagePolicyTransformationShearsResult(dict):
              x_shear_var: Optional[str] = None,
              y_shear: Optional[str] = None,
              y_shear_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'xShear' in kwargs:
+            x_shear = kwargs['xShear']
+        if 'xShearVar' in kwargs:
+            x_shear_var = kwargs['xShearVar']
+        if 'yShear' in kwargs:
+            y_shear = kwargs['yShear']
+        if 'yShearVar' in kwargs:
+            y_shear_var = kwargs['yShearVar']
+
         if x_shear is not None:
             _setter("x_shear", x_shear)
         if x_shear_var is not None:
@@ -18972,7 +21178,13 @@ class GetImagingPolicyImagePolicyTransformationTrimResult(dict):
              fuzz_var: Optional[str] = None,
              padding: Optional[str] = None,
              padding_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fuzzVar' in kwargs:
+            fuzz_var = kwargs['fuzzVar']
+        if 'paddingVar' in kwargs:
+            padding_var = kwargs['paddingVar']
+
         if fuzz is not None:
             _setter("fuzz", fuzz)
         if fuzz_var is not None:
@@ -19030,7 +21242,15 @@ class GetImagingPolicyImagePolicyTransformationUnsharpMaskResult(dict):
              sigma_var: Optional[str] = None,
              threshold: Optional[str] = None,
              threshold_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'gainVar' in kwargs:
+            gain_var = kwargs['gainVar']
+        if 'sigmaVar' in kwargs:
+            sigma_var = kwargs['sigmaVar']
+        if 'thresholdVar' in kwargs:
+            threshold_var = kwargs['thresholdVar']
+
         if gain is not None:
             _setter("gain", gain)
         if gain_var is not None:
@@ -19102,7 +21322,13 @@ class GetImagingPolicyImagePolicyVariableResult(dict):
              enum_options: Optional[Sequence['outputs.GetImagingPolicyImagePolicyVariableEnumOptionResult']] = None,
              postfix: Optional[str] = None,
              prefix: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultValue' in kwargs:
+            default_value = kwargs['defaultValue']
+        if 'enumOptions' in kwargs:
+            enum_options = kwargs['enumOptions']
+
         _setter("default_value", default_value)
         _setter("name", name)
         _setter("type", type)
@@ -19159,7 +21385,9 @@ class GetImagingPolicyImagePolicyVariableEnumOptionResult(dict):
              _setter: Callable[[Any, Any], None],
              id: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("id", id)
         _setter("value", value)
 
@@ -19198,7 +21426,11 @@ class GetImagingPolicyVideoPolicyResult(dict):
              output: Optional['outputs.GetImagingPolicyVideoPolicyOutputResult'] = None,
              rollout_duration: Optional[str] = None,
              variables: Optional[Sequence['outputs.GetImagingPolicyVideoPolicyVariableResult']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'rolloutDuration' in kwargs:
+            rollout_duration = kwargs['rolloutDuration']
+
         if breakpoints is not None:
             _setter("breakpoints", breakpoints)
         if hosts is not None:
@@ -19248,7 +21480,9 @@ class GetImagingPolicyVideoPolicyBreakpointsResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              widths: Optional[Sequence[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if widths is not None:
             _setter("widths", widths)
 
@@ -19285,7 +21519,21 @@ class GetImagingPolicyVideoPolicyOutputResult(dict):
              placeholder_video_url_var: Optional[str] = None,
              video_adaptive_quality: Optional[str] = None,
              video_adaptive_quality_var: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'perceptualQuality' in kwargs:
+            perceptual_quality = kwargs['perceptualQuality']
+        if 'perceptualQualityVar' in kwargs:
+            perceptual_quality_var = kwargs['perceptualQualityVar']
+        if 'placeholderVideoUrl' in kwargs:
+            placeholder_video_url = kwargs['placeholderVideoUrl']
+        if 'placeholderVideoUrlVar' in kwargs:
+            placeholder_video_url_var = kwargs['placeholderVideoUrlVar']
+        if 'videoAdaptiveQuality' in kwargs:
+            video_adaptive_quality = kwargs['videoAdaptiveQuality']
+        if 'videoAdaptiveQualityVar' in kwargs:
+            video_adaptive_quality_var = kwargs['videoAdaptiveQualityVar']
+
         if perceptual_quality is not None:
             _setter("perceptual_quality", perceptual_quality)
         if perceptual_quality_var is not None:
@@ -19357,7 +21605,13 @@ class GetImagingPolicyVideoPolicyVariableResult(dict):
              enum_options: Optional[Sequence['outputs.GetImagingPolicyVideoPolicyVariableEnumOptionResult']] = None,
              postfix: Optional[str] = None,
              prefix: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultValue' in kwargs:
+            default_value = kwargs['defaultValue']
+        if 'enumOptions' in kwargs:
+            enum_options = kwargs['enumOptions']
+
         _setter("default_value", default_value)
         _setter("name", name)
         _setter("type", type)
@@ -19414,7 +21668,9 @@ class GetImagingPolicyVideoPolicyVariableEnumOptionResult(dict):
              _setter: Callable[[Any, Any], None],
              id: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("id", id)
         _setter("value", value)
 
@@ -19468,7 +21724,27 @@ class GetPropertiesPropertyResult(dict):
              property_name: str,
              rule_format: str,
              staging_version: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'latestVersion' in kwargs:
+            latest_version = kwargs['latestVersion']
+        if 'productId' in kwargs:
+            product_id = kwargs['productId']
+        if 'productionVersion' in kwargs:
+            production_version = kwargs['productionVersion']
+        if 'propertyId' in kwargs:
+            property_id = kwargs['propertyId']
+        if 'propertyName' in kwargs:
+            property_name = kwargs['propertyName']
+        if 'ruleFormat' in kwargs:
+            rule_format = kwargs['ruleFormat']
+        if 'stagingVersion' in kwargs:
+            staging_version = kwargs['stagingVersion']
+
         _setter("contract_id", contract_id)
         _setter("group_id", group_id)
         _setter("latest_version", latest_version)
@@ -19579,7 +21855,33 @@ class GetPropertiesSearchPropertyResult(dict):
              staging_status: str,
              updated_by_user: str,
              updated_date: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accountId' in kwargs:
+            account_id = kwargs['accountId']
+        if 'assetId' in kwargs:
+            asset_id = kwargs['assetId']
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if 'edgeHostname' in kwargs:
+            edge_hostname = kwargs['edgeHostname']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'productionStatus' in kwargs:
+            production_status = kwargs['productionStatus']
+        if 'propertyId' in kwargs:
+            property_id = kwargs['propertyId']
+        if 'propertyName' in kwargs:
+            property_name = kwargs['propertyName']
+        if 'propertyVersion' in kwargs:
+            property_version = kwargs['propertyVersion']
+        if 'stagingStatus' in kwargs:
+            staging_status = kwargs['stagingStatus']
+        if 'updatedByUser' in kwargs:
+            updated_by_user = kwargs['updatedByUser']
+        if 'updatedDate' in kwargs:
+            updated_date = kwargs['updatedDate']
+
         _setter("account_id", account_id)
         _setter("asset_id", asset_id)
         _setter("contract_id", contract_id)
@@ -19687,7 +21989,21 @@ class GetPropertyHostnamesHostnameResult(dict):
              cname_to: str,
              cname_type: str,
              edge_hostname_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certProvisioningType' in kwargs:
+            cert_provisioning_type = kwargs['certProvisioningType']
+        if 'certStatuses' in kwargs:
+            cert_statuses = kwargs['certStatuses']
+        if 'cnameFrom' in kwargs:
+            cname_from = kwargs['cnameFrom']
+        if 'cnameTo' in kwargs:
+            cname_to = kwargs['cnameTo']
+        if 'cnameType' in kwargs:
+            cname_type = kwargs['cnameType']
+        if 'edgeHostnameId' in kwargs:
+            edge_hostname_id = kwargs['edgeHostnameId']
+
         _setter("cert_provisioning_type", cert_provisioning_type)
         _setter("cert_statuses", cert_statuses)
         _setter("cname_from", cname_from)
@@ -19747,7 +22063,13 @@ class GetPropertyHostnamesHostnameCertStatusResult(dict):
              production_status: str,
              staging_status: str,
              target: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'productionStatus' in kwargs:
+            production_status = kwargs['productionStatus']
+        if 'stagingStatus' in kwargs:
+            staging_status = kwargs['stagingStatus']
+
         _setter("hostname", hostname)
         _setter("production_status", production_status)
         _setter("staging_status", staging_status)
@@ -19801,7 +22123,17 @@ class GetPropertyIncludeParentsParentResult(dict):
              name: str,
              production_version: str,
              staging_version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isIncludeUsedInProductionVersion' in kwargs:
+            is_include_used_in_production_version = kwargs['isIncludeUsedInProductionVersion']
+        if 'isIncludeUsedInStagingVersion' in kwargs:
+            is_include_used_in_staging_version = kwargs['isIncludeUsedInStagingVersion']
+        if 'productionVersion' in kwargs:
+            production_version = kwargs['productionVersion']
+        if 'stagingVersion' in kwargs:
+            staging_version = kwargs['stagingVersion']
+
         _setter("id", id)
         _setter("is_include_used_in_production_version", is_include_used_in_production_version)
         _setter("is_include_used_in_staging_version", is_include_used_in_staging_version)
@@ -19867,7 +22199,15 @@ class GetPropertyIncludesIncludeResult(dict):
              production_version: str,
              staging_version: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'latestVersion' in kwargs:
+            latest_version = kwargs['latestVersion']
+        if 'productionVersion' in kwargs:
+            production_version = kwargs['productionVersion']
+        if 'stagingVersion' in kwargs:
+            staging_version = kwargs['stagingVersion']
+
         _setter("id", id)
         _setter("latest_version", latest_version)
         _setter("name", name)
@@ -19921,7 +22261,9 @@ class GetPropertyIncludesParentPropertyResult(dict):
              _setter: Callable[[Any, Any], None],
              id: str,
              version: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("id", id)
         _setter("version", version)
 
@@ -19951,7 +22293,13 @@ class GetPropertyProductsProductResult(dict):
              _setter: Callable[[Any, Any], None],
              product_id: str,
              product_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'productId' in kwargs:
+            product_id = kwargs['productId']
+        if 'productName' in kwargs:
+            product_name = kwargs['productName']
+
         _setter("product_id", product_id)
         _setter("product_name", product_name)
 
@@ -20017,7 +22365,23 @@ class GetPropertyRulesBuilderRulesV20230105Result(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              variables: Optional[Sequence['outputs.GetPropertyRulesBuilderRulesV20230105VariableResult']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'advancedOverride' in kwargs:
+            advanced_override = kwargs['advancedOverride']
+        if 'criteriaLocked' in kwargs:
+            criteria_locked = kwargs['criteriaLocked']
+        if 'criteriaMustSatisfy' in kwargs:
+            criteria_must_satisfy = kwargs['criteriaMustSatisfy']
+        if 'customOverride' in kwargs:
+            custom_override = kwargs['customOverride']
+        if 'isSecure' in kwargs:
+            is_secure = kwargs['isSecure']
+        if 'templateLink' in kwargs:
+            template_link = kwargs['templateLink']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         _setter("name", name)
         if advanced_override is not None:
             _setter("advanced_override", advanced_override)
@@ -20783,7 +23147,397 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorResult(dict):
              web_application_firewall: Optional['outputs.GetPropertyRulesBuilderRulesV20230105BehaviorWebApplicationFirewallResult'] = None,
              web_sockets: Optional['outputs.GetPropertyRulesBuilderRulesV20230105BehaviorWebSocketsResult'] = None,
              webdav: Optional['outputs.GetPropertyRulesBuilderRulesV20230105BehaviorWebdavResult'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adScalerCircuitBreaker' in kwargs:
+            ad_scaler_circuit_breaker = kwargs['adScalerCircuitBreaker']
+        if 'adaptiveAcceleration' in kwargs:
+            adaptive_acceleration = kwargs['adaptiveAcceleration']
+        if 'adaptiveImageCompression' in kwargs:
+            adaptive_image_compression = kwargs['adaptiveImageCompression']
+        if 'aggregatedReporting' in kwargs:
+            aggregated_reporting = kwargs['aggregatedReporting']
+        if 'akamaizerTag' in kwargs:
+            akamaizer_tag = kwargs['akamaizerTag']
+        if 'allHttpInCacheHierarchy' in kwargs:
+            all_http_in_cache_hierarchy = kwargs['allHttpInCacheHierarchy']
+        if 'allowCloudletsOrigins' in kwargs:
+            allow_cloudlets_origins = kwargs['allowCloudletsOrigins']
+        if 'allowDelete' in kwargs:
+            allow_delete = kwargs['allowDelete']
+        if 'allowHttpsCacheKeySharing' in kwargs:
+            allow_https_cache_key_sharing = kwargs['allowHttpsCacheKeySharing']
+        if 'allowHttpsDowngrade' in kwargs:
+            allow_https_downgrade = kwargs['allowHttpsDowngrade']
+        if 'allowOptions' in kwargs:
+            allow_options = kwargs['allowOptions']
+        if 'allowPatch' in kwargs:
+            allow_patch = kwargs['allowPatch']
+        if 'allowPost' in kwargs:
+            allow_post = kwargs['allowPost']
+        if 'allowPut' in kwargs:
+            allow_put = kwargs['allowPut']
+        if 'allowTransferEncoding' in kwargs:
+            allow_transfer_encoding = kwargs['allowTransferEncoding']
+        if 'altSvcHeader' in kwargs:
+            alt_svc_header = kwargs['altSvcHeader']
+        if 'apiPrioritization' in kwargs:
+            api_prioritization = kwargs['apiPrioritization']
+        if 'applicationLoadBalancer' in kwargs:
+            application_load_balancer = kwargs['applicationLoadBalancer']
+        if 'audienceSegmentation' in kwargs:
+            audience_segmentation = kwargs['audienceSegmentation']
+        if 'autoDomainValidation' in kwargs:
+            auto_domain_validation = kwargs['autoDomainValidation']
+        if 'baseDirectory' in kwargs:
+            base_directory = kwargs['baseDirectory']
+        if 'bossBeaconing' in kwargs:
+            boss_beaconing = kwargs['bossBeaconing']
+        if 'breakConnection' in kwargs:
+            break_connection = kwargs['breakConnection']
+        if 'cacheError' in kwargs:
+            cache_error = kwargs['cacheError']
+        if 'cacheId' in kwargs:
+            cache_id = kwargs['cacheId']
+        if 'cacheKeyIgnoreCase' in kwargs:
+            cache_key_ignore_case = kwargs['cacheKeyIgnoreCase']
+        if 'cacheKeyQueryParams' in kwargs:
+            cache_key_query_params = kwargs['cacheKeyQueryParams']
+        if 'cacheKeyRewrite' in kwargs:
+            cache_key_rewrite = kwargs['cacheKeyRewrite']
+        if 'cachePost' in kwargs:
+            cache_post = kwargs['cachePost']
+        if 'cacheRedirect' in kwargs:
+            cache_redirect = kwargs['cacheRedirect']
+        if 'cacheTag' in kwargs:
+            cache_tag = kwargs['cacheTag']
+        if 'cacheTagVisible' in kwargs:
+            cache_tag_visible = kwargs['cacheTagVisible']
+        if 'centralAuthorization' in kwargs:
+            central_authorization = kwargs['centralAuthorization']
+        if 'chaseRedirects' in kwargs:
+            chase_redirects = kwargs['chaseRedirects']
+        if 'clientCharacteristics' in kwargs:
+            client_characteristics = kwargs['clientCharacteristics']
+        if 'cloudInterconnects' in kwargs:
+            cloud_interconnects = kwargs['cloudInterconnects']
+        if 'cloudWrapper' in kwargs:
+            cloud_wrapper = kwargs['cloudWrapper']
+        if 'cloudWrapperAdvanced' in kwargs:
+            cloud_wrapper_advanced = kwargs['cloudWrapperAdvanced']
+        if 'conditionalOrigin' in kwargs:
+            conditional_origin = kwargs['conditionalOrigin']
+        if 'constructResponse' in kwargs:
+            construct_response = kwargs['constructResponse']
+        if 'contentCharacteristics' in kwargs:
+            content_characteristics = kwargs['contentCharacteristics']
+        if 'contentCharacteristicsAmd' in kwargs:
+            content_characteristics_amd = kwargs['contentCharacteristicsAmd']
+        if 'contentCharacteristicsDd' in kwargs:
+            content_characteristics_dd = kwargs['contentCharacteristicsDd']
+        if 'contentCharacteristicsWsdLargeFile' in kwargs:
+            content_characteristics_wsd_large_file = kwargs['contentCharacteristicsWsdLargeFile']
+        if 'contentCharacteristicsWsdLive' in kwargs:
+            content_characteristics_wsd_live = kwargs['contentCharacteristicsWsdLive']
+        if 'contentCharacteristicsWsdVod' in kwargs:
+            content_characteristics_wsd_vod = kwargs['contentCharacteristicsWsdVod']
+        if 'contentPrePosition' in kwargs:
+            content_pre_position = kwargs['contentPrePosition']
+        if 'contentTargetingProtection' in kwargs:
+            content_targeting_protection = kwargs['contentTargetingProtection']
+        if 'corsSupport' in kwargs:
+            cors_support = kwargs['corsSupport']
+        if 'cpCode' in kwargs:
+            cp_code = kwargs['cpCode']
+        if 'customBehavior' in kwargs:
+            custom_behavior = kwargs['customBehavior']
+        if 'dcpAuthHmacTransformation' in kwargs:
+            dcp_auth_hmac_transformation = kwargs['dcpAuthHmacTransformation']
+        if 'dcpAuthRegexTransformation' in kwargs:
+            dcp_auth_regex_transformation = kwargs['dcpAuthRegexTransformation']
+        if 'dcpAuthSubstringTransformation' in kwargs:
+            dcp_auth_substring_transformation = kwargs['dcpAuthSubstringTransformation']
+        if 'dcpAuthVariableExtractor' in kwargs:
+            dcp_auth_variable_extractor = kwargs['dcpAuthVariableExtractor']
+        if 'dcpDefaultAuthzGroups' in kwargs:
+            dcp_default_authz_groups = kwargs['dcpDefaultAuthzGroups']
+        if 'dcpDevRelations' in kwargs:
+            dcp_dev_relations = kwargs['dcpDevRelations']
+        if 'dcpRealTimeAuth' in kwargs:
+            dcp_real_time_auth = kwargs['dcpRealTimeAuth']
+        if 'deliveryReceipt' in kwargs:
+            delivery_receipt = kwargs['deliveryReceipt']
+        if 'denyAccess' in kwargs:
+            deny_access = kwargs['denyAccess']
+        if 'denyDirectFailoverAccess' in kwargs:
+            deny_direct_failover_access = kwargs['denyDirectFailoverAccess']
+        if 'deviceCharacteristicCacheId' in kwargs:
+            device_characteristic_cache_id = kwargs['deviceCharacteristicCacheId']
+        if 'deviceCharacteristicHeader' in kwargs:
+            device_characteristic_header = kwargs['deviceCharacteristicHeader']
+        if 'dnsAsyncRefresh' in kwargs:
+            dns_async_refresh = kwargs['dnsAsyncRefresh']
+        if 'dnsPrefresh' in kwargs:
+            dns_prefresh = kwargs['dnsPrefresh']
+        if 'downgradeProtocol' in kwargs:
+            downgrade_protocol = kwargs['downgradeProtocol']
+        if 'downloadCompleteMarker' in kwargs:
+            download_complete_marker = kwargs['downloadCompleteMarker']
+        if 'downloadNotification' in kwargs:
+            download_notification = kwargs['downloadNotification']
+        if 'downstreamCache' in kwargs:
+            downstream_cache = kwargs['downstreamCache']
+        if 'dynamicThroughtputOptimization' in kwargs:
+            dynamic_throughtput_optimization = kwargs['dynamicThroughtputOptimization']
+        if 'dynamicThroughtputOptimizationOverride' in kwargs:
+            dynamic_throughtput_optimization_override = kwargs['dynamicThroughtputOptimizationOverride']
+        if 'dynamicWebContent' in kwargs:
+            dynamic_web_content = kwargs['dynamicWebContent']
+        if 'ecmsBulkUpload' in kwargs:
+            ecms_bulk_upload = kwargs['ecmsBulkUpload']
+        if 'ecmsDatabase' in kwargs:
+            ecms_database = kwargs['ecmsDatabase']
+        if 'ecmsDataset' in kwargs:
+            ecms_dataset = kwargs['ecmsDataset']
+        if 'ecmsObjectKey' in kwargs:
+            ecms_object_key = kwargs['ecmsObjectKey']
+        if 'edgeConnect' in kwargs:
+            edge_connect = kwargs['edgeConnect']
+        if 'edgeLoadBalancingAdvanced' in kwargs:
+            edge_load_balancing_advanced = kwargs['edgeLoadBalancingAdvanced']
+        if 'edgeLoadBalancingDataCenter' in kwargs:
+            edge_load_balancing_data_center = kwargs['edgeLoadBalancingDataCenter']
+        if 'edgeLoadBalancingOrigin' in kwargs:
+            edge_load_balancing_origin = kwargs['edgeLoadBalancingOrigin']
+        if 'edgeOriginAuthorization' in kwargs:
+            edge_origin_authorization = kwargs['edgeOriginAuthorization']
+        if 'edgeRedirector' in kwargs:
+            edge_redirector = kwargs['edgeRedirector']
+        if 'edgeScape' in kwargs:
+            edge_scape = kwargs['edgeScape']
+        if 'edgeSideIncludes' in kwargs:
+            edge_side_includes = kwargs['edgeSideIncludes']
+        if 'edgeWorker' in kwargs:
+            edge_worker = kwargs['edgeWorker']
+        if 'enhancedAkamaiProtocol' in kwargs:
+            enhanced_akamai_protocol = kwargs['enhancedAkamaiProtocol']
+        if 'enhancedProxyDetection' in kwargs:
+            enhanced_proxy_detection = kwargs['enhancedProxyDetection']
+        if 'epdForwardHeaderEnrichment' in kwargs:
+            epd_forward_header_enrichment = kwargs['epdForwardHeaderEnrichment']
+        if 'failAction' in kwargs:
+            fail_action = kwargs['failAction']
+        if 'failoverBotManagerFeatureCompatibility' in kwargs:
+            failover_bot_manager_feature_compatibility = kwargs['failoverBotManagerFeatureCompatibility']
+        if 'fastInvalidate' in kwargs:
+            fast_invalidate = kwargs['fastInvalidate']
+        if 'firstPartyMarketing' in kwargs:
+            first_party_marketing = kwargs['firstPartyMarketing']
+        if 'firstPartyMarketingPlus' in kwargs:
+            first_party_marketing_plus = kwargs['firstPartyMarketingPlus']
+        if 'forwardRewrite' in kwargs:
+            forward_rewrite = kwargs['forwardRewrite']
+        if 'frontEndOptimization' in kwargs:
+            front_end_optimization = kwargs['frontEndOptimization']
+        if 'globalRequestNumber' in kwargs:
+            global_request_number = kwargs['globalRequestNumber']
+        if 'graphqlCaching' in kwargs:
+            graphql_caching = kwargs['graphqlCaching']
+        if 'gzipResponse' in kwargs:
+            gzip_response = kwargs['gzipResponse']
+        if 'hdDataAdvanced' in kwargs:
+            hd_data_advanced = kwargs['hdDataAdvanced']
+        if 'healthDetection' in kwargs:
+            health_detection = kwargs['healthDetection']
+        if 'hsafEipBinding' in kwargs:
+            hsaf_eip_binding = kwargs['hsafEipBinding']
+        if 'httpStrictTransportSecurity' in kwargs:
+            http_strict_transport_security = kwargs['httpStrictTransportSecurity']
+        if 'httpToHttpsUpgrade' in kwargs:
+            http_to_https_upgrade = kwargs['httpToHttpsUpgrade']
+        if 'imOverride' in kwargs:
+            im_override = kwargs['imOverride']
+        if 'imageAndVideoManager' in kwargs:
+            image_and_video_manager = kwargs['imageAndVideoManager']
+        if 'imageManager' in kwargs:
+            image_manager = kwargs['imageManager']
+        if 'imageManagerVideo' in kwargs:
+            image_manager_video = kwargs['imageManagerVideo']
+        if 'inputValidation' in kwargs:
+            input_validation = kwargs['inputValidation']
+        if 'instantConfig' in kwargs:
+            instant_config = kwargs['instantConfig']
+        if 'largeFileOptimization' in kwargs:
+            large_file_optimization = kwargs['largeFileOptimization']
+        if 'largeFileOptimizationAdvanced' in kwargs:
+            large_file_optimization_advanced = kwargs['largeFileOptimizationAdvanced']
+        if 'limitBitRate' in kwargs:
+            limit_bit_rate = kwargs['limitBitRate']
+        if 'logCustom' in kwargs:
+            log_custom = kwargs['logCustom']
+        if 'mPulse' in kwargs:
+            m_pulse = kwargs['mPulse']
+        if 'manifestPersonalization' in kwargs:
+            manifest_personalization = kwargs['manifestPersonalization']
+        if 'manifestRerouting' in kwargs:
+            manifest_rerouting = kwargs['manifestRerouting']
+        if 'manualServerPush' in kwargs:
+            manual_server_push = kwargs['manualServerPush']
+        if 'mediaAcceleration' in kwargs:
+            media_acceleration = kwargs['mediaAcceleration']
+        if 'mediaAccelerationQuicOptout' in kwargs:
+            media_acceleration_quic_optout = kwargs['mediaAccelerationQuicOptout']
+        if 'mediaClient' in kwargs:
+            media_client = kwargs['mediaClient']
+        if 'mediaFileRetrievalOptimization' in kwargs:
+            media_file_retrieval_optimization = kwargs['mediaFileRetrievalOptimization']
+        if 'mediaOriginFailover' in kwargs:
+            media_origin_failover = kwargs['mediaOriginFailover']
+        if 'metadataCaching' in kwargs:
+            metadata_caching = kwargs['metadataCaching']
+        if 'mobileSdkPerformance' in kwargs:
+            mobile_sdk_performance = kwargs['mobileSdkPerformance']
+        if 'modifyIncomingRequestHeader' in kwargs:
+            modify_incoming_request_header = kwargs['modifyIncomingRequestHeader']
+        if 'modifyIncomingResponseHeader' in kwargs:
+            modify_incoming_response_header = kwargs['modifyIncomingResponseHeader']
+        if 'modifyOutgoingRequestHeader' in kwargs:
+            modify_outgoing_request_header = kwargs['modifyOutgoingRequestHeader']
+        if 'modifyOutgoingResponseHeader' in kwargs:
+            modify_outgoing_response_header = kwargs['modifyOutgoingResponseHeader']
+        if 'modifyViaHeader' in kwargs:
+            modify_via_header = kwargs['modifyViaHeader']
+        if 'originCharacteristics' in kwargs:
+            origin_characteristics = kwargs['originCharacteristics']
+        if 'originCharacteristicsWsd' in kwargs:
+            origin_characteristics_wsd = kwargs['originCharacteristicsWsd']
+        if 'originFailureRecoveryMethod' in kwargs:
+            origin_failure_recovery_method = kwargs['originFailureRecoveryMethod']
+        if 'originFailureRecoveryPolicy' in kwargs:
+            origin_failure_recovery_policy = kwargs['originFailureRecoveryPolicy']
+        if 'originIpAcl' in kwargs:
+            origin_ip_acl = kwargs['originIpAcl']
+        if 'persistentClientConnection' in kwargs:
+            persistent_client_connection = kwargs['persistentClientConnection']
+        if 'persistentConnection' in kwargs:
+            persistent_connection = kwargs['persistentConnection']
+        if 'personallyIdentifiableInformation' in kwargs:
+            personally_identifiable_information = kwargs['personallyIdentifiableInformation']
+        if 'phasedRelease' in kwargs:
+            phased_release = kwargs['phasedRelease']
+        if 'predictiveContentDelivery' in kwargs:
+            predictive_content_delivery = kwargs['predictiveContentDelivery']
+        if 'predictivePrefetching' in kwargs:
+            predictive_prefetching = kwargs['predictivePrefetching']
+        if 'prefreshCache' in kwargs:
+            prefresh_cache = kwargs['prefreshCache']
+        if 'quicBeta' in kwargs:
+            quic_beta = kwargs['quicBeta']
+        if 'randomSeek' in kwargs:
+            random_seek = kwargs['randomSeek']
+        if 'readTimeout' in kwargs:
+            read_timeout = kwargs['readTimeout']
+        if 'realTimeReporting' in kwargs:
+            real_time_reporting = kwargs['realTimeReporting']
+        if 'realUserMonitoring' in kwargs:
+            real_user_monitoring = kwargs['realUserMonitoring']
+        if 'refererChecking' in kwargs:
+            referer_checking = kwargs['refererChecking']
+        if 'removeQueryParameter' in kwargs:
+            remove_query_parameter = kwargs['removeQueryParameter']
+        if 'removeVary' in kwargs:
+            remove_vary = kwargs['removeVary']
+        if 'requestControl' in kwargs:
+            request_control = kwargs['requestControl']
+        if 'requestTypeMarker' in kwargs:
+            request_type_marker = kwargs['requestTypeMarker']
+        if 'resourceOptimizer' in kwargs:
+            resource_optimizer = kwargs['resourceOptimizer']
+        if 'resourceOptimizerExtendedCompatibility' in kwargs:
+            resource_optimizer_extended_compatibility = kwargs['resourceOptimizerExtendedCompatibility']
+        if 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if 'responseCookie' in kwargs:
+            response_cookie = kwargs['responseCookie']
+        if 'restrictObjectCaching' in kwargs:
+            restrict_object_caching = kwargs['restrictObjectCaching']
+        if 'returnCacheStatus' in kwargs:
+            return_cache_status = kwargs['returnCacheStatus']
+        if 'rewriteUrl' in kwargs:
+            rewrite_url = kwargs['rewriteUrl']
+        if 'rumCustom' in kwargs:
+            rum_custom = kwargs['rumCustom']
+        if 'saasDefinitions' in kwargs:
+            saas_definitions = kwargs['saasDefinitions']
+        if 'salesForceCommerceCloudClient' in kwargs:
+            sales_force_commerce_cloud_client = kwargs['salesForceCommerceCloudClient']
+        if 'salesForceCommerceCloudProvider' in kwargs:
+            sales_force_commerce_cloud_provider = kwargs['salesForceCommerceCloudProvider']
+        if 'salesForceCommerceCloudProviderHostHeader' in kwargs:
+            sales_force_commerce_cloud_provider_host_header = kwargs['salesForceCommerceCloudProviderHostHeader']
+        if 'savePostDcaProcessing' in kwargs:
+            save_post_dca_processing = kwargs['savePostDcaProcessing']
+        if 'scheduleInvalidation' in kwargs:
+            schedule_invalidation = kwargs['scheduleInvalidation']
+        if 'scriptManagement' in kwargs:
+            script_management = kwargs['scriptManagement']
+        if 'segmentedContentProtection' in kwargs:
+            segmented_content_protection = kwargs['segmentedContentProtection']
+        if 'segmentedMediaOptimization' in kwargs:
+            segmented_media_optimization = kwargs['segmentedMediaOptimization']
+        if 'segmentedMediaStreamingPrefetch' in kwargs:
+            segmented_media_streaming_prefetch = kwargs['segmentedMediaStreamingPrefetch']
+        if 'setVariable' in kwargs:
+            set_variable = kwargs['setVariable']
+        if 'simulateErrorCode' in kwargs:
+            simulate_error_code = kwargs['simulateErrorCode']
+        if 'siteShield' in kwargs:
+            site_shield = kwargs['siteShield']
+        if 'standardTlsMigration' in kwargs:
+            standard_tls_migration = kwargs['standardTlsMigration']
+        if 'standardTlsMigrationOverride' in kwargs:
+            standard_tls_migration_override = kwargs['standardTlsMigrationOverride']
+        if 'strictHeaderParsing' in kwargs:
+            strict_header_parsing = kwargs['strictHeaderParsing']
+        if 'subCustomer' in kwargs:
+            sub_customer = kwargs['subCustomer']
+        if 'sureRoute' in kwargs:
+            sure_route = kwargs['sureRoute']
+        if 'tcpOptimization' in kwargs:
+            tcp_optimization = kwargs['tcpOptimization']
+        if 'teaLeaf' in kwargs:
+            tea_leaf = kwargs['teaLeaf']
+        if 'tieredDistribution' in kwargs:
+            tiered_distribution = kwargs['tieredDistribution']
+        if 'tieredDistributionAdvanced' in kwargs:
+            tiered_distribution_advanced = kwargs['tieredDistributionAdvanced']
+        if 'tieredDistributionCustomization' in kwargs:
+            tiered_distribution_customization = kwargs['tieredDistributionCustomization']
+        if 'uidConfiguration' in kwargs:
+            uid_configuration = kwargs['uidConfiguration']
+        if 'validateEntityTag' in kwargs:
+            validate_entity_tag = kwargs['validateEntityTag']
+        if 'verifyJsonWebToken' in kwargs:
+            verify_json_web_token = kwargs['verifyJsonWebToken']
+        if 'verifyJsonWebTokenForDcp' in kwargs:
+            verify_json_web_token_for_dcp = kwargs['verifyJsonWebTokenForDcp']
+        if 'verifyTokenAuthorization' in kwargs:
+            verify_token_authorization = kwargs['verifyTokenAuthorization']
+        if 'virtualWaitingRoom' in kwargs:
+            virtual_waiting_room = kwargs['virtualWaitingRoom']
+        if 'virtualWaitingRoomWithEdgeWorkers' in kwargs:
+            virtual_waiting_room_with_edge_workers = kwargs['virtualWaitingRoomWithEdgeWorkers']
+        if 'visitorPrioritization' in kwargs:
+            visitor_prioritization = kwargs['visitorPrioritization']
+        if 'visitorPrioritizationFifo' in kwargs:
+            visitor_prioritization_fifo = kwargs['visitorPrioritizationFifo']
+        if 'visitorPrioritizationFifoStandalone' in kwargs:
+            visitor_prioritization_fifo_standalone = kwargs['visitorPrioritizationFifoStandalone']
+        if 'webApplicationFirewall' in kwargs:
+            web_application_firewall = kwargs['webApplicationFirewall']
+        if 'webSockets' in kwargs:
+            web_sockets = kwargs['webSockets']
+
         if ad_scaler_circuit_breaker is not None:
             _setter("ad_scaler_circuit_breaker", ad_scaler_circuit_breaker)
         if adaptive_acceleration is not None:
@@ -22358,7 +25112,25 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorAdScalerCircuitBreakerResult(
              specify_your_own_response_code_based: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fallbackActionResponseCodeBased' in kwargs:
+            fallback_action_response_code_based = kwargs['fallbackActionResponseCodeBased']
+        if 'responseCodeBased' in kwargs:
+            response_code_based = kwargs['responseCodeBased']
+        if 'responseCodes' in kwargs:
+            response_codes = kwargs['responseCodes']
+        if 'responseDelayBased' in kwargs:
+            response_delay_based = kwargs['responseDelayBased']
+        if 'responseDelayThreshold' in kwargs:
+            response_delay_threshold = kwargs['responseDelayThreshold']
+        if 'returnErrorResponseCodeBased' in kwargs:
+            return_error_response_code_based = kwargs['returnErrorResponseCodeBased']
+        if 'specifyYourOwnResponseCodeBased' in kwargs:
+            specify_your_own_response_code_based = kwargs['specifyYourOwnResponseCodeBased']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if fallback_action_response_code_based is not None:
             _setter("fallback_action_response_code_based", fallback_action_response_code_based)
         if locked is not None:
@@ -22497,7 +25269,39 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorAdaptiveAccelerationResult(di
              title_preload: Optional[str] = None,
              title_ro: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'abLogic' in kwargs:
+            ab_logic = kwargs['abLogic']
+        if 'abTesting' in kwargs:
+            ab_testing = kwargs['abTesting']
+        if 'cookieName' in kwargs:
+            cookie_name = kwargs['cookieName']
+        if 'enableBrotliCompression' in kwargs:
+            enable_brotli_compression = kwargs['enableBrotliCompression']
+        if 'enableForNoncacheable' in kwargs:
+            enable_for_noncacheable = kwargs['enableForNoncacheable']
+        if 'enablePreconnect' in kwargs:
+            enable_preconnect = kwargs['enablePreconnect']
+        if 'enablePush' in kwargs:
+            enable_push = kwargs['enablePush']
+        if 'enableRo' in kwargs:
+            enable_ro = kwargs['enableRo']
+        if 'preloadEnable' in kwargs:
+            preload_enable = kwargs['preloadEnable']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'titleBrotli' in kwargs:
+            title_brotli = kwargs['titleBrotli']
+        if 'titleHttp2ServerPush' in kwargs:
+            title_http2_server_push = kwargs['titleHttp2ServerPush']
+        if 'titlePreconnect' in kwargs:
+            title_preconnect = kwargs['titlePreconnect']
+        if 'titlePreload' in kwargs:
+            title_preload = kwargs['titlePreload']
+        if 'titleRo' in kwargs:
+            title_ro = kwargs['titleRo']
+
         if ab_logic is not None:
             _setter("ab_logic", ab_logic)
         if ab_testing is not None:
@@ -22699,7 +25503,43 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorAdaptiveImageCompressionResul
              title_aic_mobile: Optional[str] = None,
              title_aic_nonmobile: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compressMobile' in kwargs:
+            compress_mobile = kwargs['compressMobile']
+        if 'compressStandard' in kwargs:
+            compress_standard = kwargs['compressStandard']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'tier1MobileCompressionMethod' in kwargs:
+            tier1_mobile_compression_method = kwargs['tier1MobileCompressionMethod']
+        if 'tier1MobileCompressionValue' in kwargs:
+            tier1_mobile_compression_value = kwargs['tier1MobileCompressionValue']
+        if 'tier1StandardCompressionMethod' in kwargs:
+            tier1_standard_compression_method = kwargs['tier1StandardCompressionMethod']
+        if 'tier1StandardCompressionValue' in kwargs:
+            tier1_standard_compression_value = kwargs['tier1StandardCompressionValue']
+        if 'tier2MobileCompressionMethod' in kwargs:
+            tier2_mobile_compression_method = kwargs['tier2MobileCompressionMethod']
+        if 'tier2MobileCompressionValue' in kwargs:
+            tier2_mobile_compression_value = kwargs['tier2MobileCompressionValue']
+        if 'tier2StandardCompressionMethod' in kwargs:
+            tier2_standard_compression_method = kwargs['tier2StandardCompressionMethod']
+        if 'tier2StandardCompressionValue' in kwargs:
+            tier2_standard_compression_value = kwargs['tier2StandardCompressionValue']
+        if 'tier3MobileCompressionMethod' in kwargs:
+            tier3_mobile_compression_method = kwargs['tier3MobileCompressionMethod']
+        if 'tier3MobileCompressionValue' in kwargs:
+            tier3_mobile_compression_value = kwargs['tier3MobileCompressionValue']
+        if 'tier3StandardCompressionMethod' in kwargs:
+            tier3_standard_compression_method = kwargs['tier3StandardCompressionMethod']
+        if 'tier3StandardCompressionValue' in kwargs:
+            tier3_standard_compression_value = kwargs['tier3StandardCompressionValue']
+        if 'titleAicMobile' in kwargs:
+            title_aic_mobile = kwargs['titleAicMobile']
+        if 'titleAicNonmobile' in kwargs:
+            title_aic_nonmobile = kwargs['titleAicNonmobile']
+
         if compress_mobile is not None:
             _setter("compress_mobile", compress_mobile)
         if compress_standard is not None:
@@ -22859,7 +25699,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorAdvancedResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              xml: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if description is not None:
             _setter("description", description)
         if locked is not None:
@@ -22936,7 +25780,15 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorAggregatedReportingResult(dic
              report_name: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attributesCount' in kwargs:
+            attributes_count = kwargs['attributesCount']
+        if 'reportName' in kwargs:
+            report_name = kwargs['reportName']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if attribute1 is not None:
             _setter("attribute1", attribute1)
         if attribute2 is not None:
@@ -23030,7 +25882,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorAkamaizerResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -23097,7 +25953,21 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorAkamaizerTagResult(dict):
              tags_attribute: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'includeTagsAttribute' in kwargs:
+            include_tags_attribute = kwargs['includeTagsAttribute']
+        if 'matchHostname' in kwargs:
+            match_hostname = kwargs['matchHostname']
+        if 'replaceAll' in kwargs:
+            replace_all = kwargs['replaceAll']
+        if 'replacementHostname' in kwargs:
+            replacement_hostname = kwargs['replacementHostname']
+        if 'tagsAttribute' in kwargs:
+            tags_attribute = kwargs['tagsAttribute']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if include_tags_attribute is not None:
             _setter("include_tags_attribute", include_tags_attribute)
         if locked is not None:
@@ -23184,7 +26054,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorAllHttpInCacheHierarchyResult
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -23242,7 +26116,15 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorAllowCloudletsOriginsResult(d
              purge_origin_query_parameter: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'honorBaseDirectory' in kwargs:
+            honor_base_directory = kwargs['honorBaseDirectory']
+        if 'purgeOriginQueryParameter' in kwargs:
+            purge_origin_query_parameter = kwargs['purgeOriginQueryParameter']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if honor_base_directory is not None:
@@ -23311,7 +26193,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorAllowDeleteResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowBody' in kwargs:
+            allow_body = kwargs['allowBody']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if allow_body is not None:
             _setter("allow_body", allow_body)
         if enabled is not None:
@@ -23370,7 +26258,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorAllowHttpsCacheKeySharingResu
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -23422,7 +26314,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorAllowHttpsDowngradeResult(dic
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -23474,7 +26370,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorAllowOptionsResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -23526,7 +26426,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorAllowPatchResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -23581,7 +26485,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorAllowPostResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowWithoutContentLength' in kwargs:
+            allow_without_content_length = kwargs['allowWithoutContentLength']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if allow_without_content_length is not None:
             _setter("allow_without_content_length", allow_without_content_length)
         if enabled is not None:
@@ -23640,7 +26550,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorAllowPutResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -23692,7 +26606,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorAllowTransferEncodingResult(d
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -23744,7 +26662,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorAltSvcHeaderResult(dict):
              max_age: Optional[int] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maxAge' in kwargs:
+            max_age = kwargs['maxAge']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if max_age is not None:
@@ -23823,7 +26747,27 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritizationResult(dict)
              use_throttled_cp_code: Optional[bool] = None,
              use_throttled_status_code: Optional[bool] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'alternateResponseCacheTtl' in kwargs:
+            alternate_response_cache_ttl = kwargs['alternateResponseCacheTtl']
+        if 'cloudletPolicy' in kwargs:
+            cloudlet_policy = kwargs['cloudletPolicy']
+        if 'netStorage' in kwargs:
+            net_storage = kwargs['netStorage']
+        if 'netStoragePath' in kwargs:
+            net_storage_path = kwargs['netStoragePath']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'throttledCpCode' in kwargs:
+            throttled_cp_code = kwargs['throttledCpCode']
+        if 'throttledStatusCode' in kwargs:
+            throttled_status_code = kwargs['throttledStatusCode']
+        if 'useThrottledCpCode' in kwargs:
+            use_throttled_cp_code = kwargs['useThrottledCpCode']
+        if 'useThrottledStatusCode' in kwargs:
+            use_throttled_status_code = kwargs['useThrottledStatusCode']
+
         if alternate_response_cache_ttl is not None:
             _setter("alternate_response_cache_ttl", alternate_response_cache_ttl)
         if cloudlet_policy is not None:
@@ -23932,7 +26876,9 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritizationCloudletPoli
              _setter: Callable[[Any, Any], None],
              id: Optional[int] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
         if name is not None:
@@ -23967,7 +26913,15 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritizationNetStorageRe
              cp_code: Optional[int] = None,
              download_domain_name: Optional[str] = None,
              g2o_token: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCode' in kwargs:
+            cp_code = kwargs['cpCode']
+        if 'downloadDomainName' in kwargs:
+            download_domain_name = kwargs['downloadDomainName']
+        if 'g2oToken' in kwargs:
+            g2o_token = kwargs['g2oToken']
+
         if cp_code is not None:
             _setter("cp_code", cp_code)
         if download_domain_name is not None:
@@ -24018,7 +26972,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritizationThrottledCpC
              id: Optional[int] = None,
              name: Optional[str] = None,
              products: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCodeLimits' in kwargs:
+            cp_code_limits = kwargs['cpCodeLimits']
+        if 'createdDate' in kwargs:
+            created_date = kwargs['createdDate']
+
         if cp_code_limits is not None:
             _setter("cp_code_limits", cp_code_limits)
         if created_date is not None:
@@ -24081,7 +27041,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritizationThrottledCpC
              current_capacity: Optional[int] = None,
              limit: Optional[int] = None,
              limit_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currentCapacity' in kwargs:
+            current_capacity = kwargs['currentCapacity']
+        if 'limitType' in kwargs:
+            limit_type = kwargs['limitType']
+
         if current_capacity is not None:
             _setter("current_capacity", current_capacity)
         if limit is not None:
@@ -24198,7 +27164,57 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorApplicationLoadBalancerResult
              stickiness_title: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allDownNetStorage' in kwargs:
+            all_down_net_storage = kwargs['allDownNetStorage']
+        if 'allDownNetStorageFile' in kwargs:
+            all_down_net_storage_file = kwargs['allDownNetStorageFile']
+        if 'allDownStatusCode' in kwargs:
+            all_down_status_code = kwargs['allDownStatusCode']
+        if 'allDownTitle' in kwargs:
+            all_down_title = kwargs['allDownTitle']
+        if 'allowCachePrefresh' in kwargs:
+            allow_cache_prefresh = kwargs['allowCachePrefresh']
+        if 'cachedContentTitle' in kwargs:
+            cached_content_title = kwargs['cachedContentTitle']
+        if 'cloudletPolicy' in kwargs:
+            cloudlet_policy = kwargs['cloudletPolicy']
+        if 'failoverAttemptsThreshold' in kwargs:
+            failover_attempts_threshold = kwargs['failoverAttemptsThreshold']
+        if 'failoverMode' in kwargs:
+            failover_mode = kwargs['failoverMode']
+        if 'failoverOriginMaps' in kwargs:
+            failover_origin_maps = kwargs['failoverOriginMaps']
+        if 'failoverStatusCodes' in kwargs:
+            failover_status_codes = kwargs['failoverStatusCodes']
+        if 'failoverTitle' in kwargs:
+            failover_title = kwargs['failoverTitle']
+        if 'originCookieName' in kwargs:
+            origin_cookie_name = kwargs['originCookieName']
+        if 'specifyStickinessCookieDomain' in kwargs:
+            specify_stickiness_cookie_domain = kwargs['specifyStickinessCookieDomain']
+        if 'stickinessCookieAutomaticSalt' in kwargs:
+            stickiness_cookie_automatic_salt = kwargs['stickinessCookieAutomaticSalt']
+        if 'stickinessCookieDomain' in kwargs:
+            stickiness_cookie_domain = kwargs['stickinessCookieDomain']
+        if 'stickinessCookieSalt' in kwargs:
+            stickiness_cookie_salt = kwargs['stickinessCookieSalt']
+        if 'stickinessCookieSetHttpOnlyFlag' in kwargs:
+            stickiness_cookie_set_http_only_flag = kwargs['stickinessCookieSetHttpOnlyFlag']
+        if 'stickinessCookieType' in kwargs:
+            stickiness_cookie_type = kwargs['stickinessCookieType']
+        if 'stickinessDuration' in kwargs:
+            stickiness_duration = kwargs['stickinessDuration']
+        if 'stickinessExpirationDate' in kwargs:
+            stickiness_expiration_date = kwargs['stickinessExpirationDate']
+        if 'stickinessRefresh' in kwargs:
+            stickiness_refresh = kwargs['stickinessRefresh']
+        if 'stickinessTitle' in kwargs:
+            stickiness_title = kwargs['stickinessTitle']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if all_down_net_storage is not None:
             _setter("all_down_net_storage", all_down_net_storage)
         if all_down_net_storage_file is not None:
@@ -24415,7 +27431,15 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorApplicationLoadBalancerAllDow
              cp_code: Optional[int] = None,
              download_domain_name: Optional[str] = None,
              g2o_token: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCode' in kwargs:
+            cp_code = kwargs['cpCode']
+        if 'downloadDomainName' in kwargs:
+            download_domain_name = kwargs['downloadDomainName']
+        if 'g2oToken' in kwargs:
+            g2o_token = kwargs['g2oToken']
+
         if cp_code is not None:
             _setter("cp_code", cp_code)
         if download_domain_name is not None:
@@ -24454,7 +27478,9 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorApplicationLoadBalancerCloudl
              _setter: Callable[[Any, Any], None],
              id: Optional[int] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
         if name is not None:
@@ -24486,7 +27512,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorApplicationLoadBalancerFailov
              _setter: Callable[[Any, Any], None],
              from_origin_id: Optional[str] = None,
              to_origin_ids: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fromOriginId' in kwargs:
+            from_origin_id = kwargs['fromOriginId']
+        if 'toOriginIds' in kwargs:
+            to_origin_ids = kwargs['toOriginIds']
+
         if from_origin_id is not None:
             _setter("from_origin_id", from_origin_id)
         if to_origin_ids is not None:
@@ -24578,7 +27610,45 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorAudienceSegmentationResult(di
              specify_population_cookie_domain: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudletPolicy' in kwargs:
+            cloudlet_policy = kwargs['cloudletPolicy']
+        if 'cloudletSharedPolicy' in kwargs:
+            cloudlet_shared_policy = kwargs['cloudletSharedPolicy']
+        if 'isSharedPolicy' in kwargs:
+            is_shared_policy = kwargs['isSharedPolicy']
+        if 'populationCookieAutomaticSalt' in kwargs:
+            population_cookie_automatic_salt = kwargs['populationCookieAutomaticSalt']
+        if 'populationCookieDomain' in kwargs:
+            population_cookie_domain = kwargs['populationCookieDomain']
+        if 'populationCookieIncludeRuleName' in kwargs:
+            population_cookie_include_rule_name = kwargs['populationCookieIncludeRuleName']
+        if 'populationCookieSalt' in kwargs:
+            population_cookie_salt = kwargs['populationCookieSalt']
+        if 'populationCookieType' in kwargs:
+            population_cookie_type = kwargs['populationCookieType']
+        if 'populationDuration' in kwargs:
+            population_duration = kwargs['populationDuration']
+        if 'populationRefresh' in kwargs:
+            population_refresh = kwargs['populationRefresh']
+        if 'populationTitle' in kwargs:
+            population_title = kwargs['populationTitle']
+        if 'segmentTrackingCookieName' in kwargs:
+            segment_tracking_cookie_name = kwargs['segmentTrackingCookieName']
+        if 'segmentTrackingCustomHeader' in kwargs:
+            segment_tracking_custom_header = kwargs['segmentTrackingCustomHeader']
+        if 'segmentTrackingMethod' in kwargs:
+            segment_tracking_method = kwargs['segmentTrackingMethod']
+        if 'segmentTrackingQueryParam' in kwargs:
+            segment_tracking_query_param = kwargs['segmentTrackingQueryParam']
+        if 'segmentTrackingTitle' in kwargs:
+            segment_tracking_title = kwargs['segmentTrackingTitle']
+        if 'specifyPopulationCookieDomain' in kwargs:
+            specify_population_cookie_domain = kwargs['specifyPopulationCookieDomain']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if cloudlet_policy is not None:
             _setter("cloudlet_policy", cloudlet_policy)
         if cloudlet_shared_policy is not None:
@@ -24750,7 +27820,9 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorAudienceSegmentationCloudletP
              _setter: Callable[[Any, Any], None],
              id: Optional[int] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
         if name is not None:
@@ -24788,7 +27860,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorAutoDomainValidationResult(di
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if autodv is not None:
             _setter("autodv", autodv)
         if locked is not None:
@@ -24840,7 +27916,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorBaseDirectoryResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if template_uuid is not None:
@@ -24913,7 +27993,23 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorBossBeaconingResult(dict):
              sampling_frequency: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'conditionalErrorPattern' in kwargs:
+            conditional_error_pattern = kwargs['conditionalErrorPattern']
+        if 'conditionalHttpStatuses' in kwargs:
+            conditional_http_statuses = kwargs['conditionalHttpStatuses']
+        if 'conditionalSamplingFrequency' in kwargs:
+            conditional_sampling_frequency = kwargs['conditionalSamplingFrequency']
+        if 'forwardType' in kwargs:
+            forward_type = kwargs['forwardType']
+        if 'requestType' in kwargs:
+            request_type = kwargs['requestType']
+        if 'samplingFrequency' in kwargs:
+            sampling_frequency = kwargs['samplingFrequency']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if conditional_error_pattern is not None:
             _setter("conditional_error_pattern", conditional_error_pattern)
         if conditional_http_statuses is not None:
@@ -25020,7 +28116,15 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorBreadcrumbsResult(dict):
              opt_mode: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'loggingEnabled' in kwargs:
+            logging_enabled = kwargs['loggingEnabled']
+        if 'optMode' in kwargs:
+            opt_mode = kwargs['optMode']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -25086,7 +28190,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorBreakConnectionResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -25138,7 +28246,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorBrotliResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -25196,7 +28308,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorCacheErrorResult(dict):
              template_uuid: Optional[str] = None,
              ttl: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'preserveStale' in kwargs:
+            preserve_stale = kwargs['preserveStale']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -25274,7 +28392,15 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorCacheIdResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              variable_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'includeValue' in kwargs:
+            include_value = kwargs['includeValue']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'variableName' in kwargs:
+            variable_name = kwargs['variableName']
+
         if elements is not None:
             _setter("elements", elements)
         if include_value is not None:
@@ -25354,7 +28480,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorCacheKeyIgnoreCaseResult(dict
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -25412,7 +28542,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorCacheKeyQueryParamsResult(dic
              parameters: Optional[Sequence[str]] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'exactMatch' in kwargs:
+            exact_match = kwargs['exactMatch']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if behavior is not None:
             _setter("behavior", behavior)
         if exact_match is not None:
@@ -25478,7 +28614,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorCacheKeyRewriteResult(dict):
              purge_key: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'purgeKey' in kwargs:
+            purge_key = kwargs['purgeKey']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if purge_key is not None:
@@ -25533,7 +28675,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorCachePostResult(dict):
              template_uuid: Optional[str] = None,
              use_body: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'useBody' in kwargs:
+            use_body = kwargs['useBody']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -25592,7 +28740,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorCacheRedirectResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -25644,7 +28796,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorCacheTagResult(dict):
              tag: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if tag is not None:
@@ -25696,7 +28852,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorCacheTagVisibleResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if behavior is not None:
             _setter("behavior", behavior)
         if locked is not None:
@@ -25793,7 +28953,39 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorCachingResult(dict):
              template_uuid: Optional[str] = None,
              ttl: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cacheControlDirectives' in kwargs:
+            cache_control_directives = kwargs['cacheControlDirectives']
+        if 'cacheabilitySettings' in kwargs:
+            cacheability_settings = kwargs['cacheabilitySettings']
+        if 'defaultTtl' in kwargs:
+            default_ttl = kwargs['defaultTtl']
+        if 'enhancedRfcSupport' in kwargs:
+            enhanced_rfc_support = kwargs['enhancedRfcSupport']
+        if 'expirationSettings' in kwargs:
+            expiration_settings = kwargs['expirationSettings']
+        if 'honorMaxAge' in kwargs:
+            honor_max_age = kwargs['honorMaxAge']
+        if 'honorMustRevalidate' in kwargs:
+            honor_must_revalidate = kwargs['honorMustRevalidate']
+        if 'honorNoCache' in kwargs:
+            honor_no_cache = kwargs['honorNoCache']
+        if 'honorNoStore' in kwargs:
+            honor_no_store = kwargs['honorNoStore']
+        if 'honorPrivate' in kwargs:
+            honor_private = kwargs['honorPrivate']
+        if 'honorProxyRevalidate' in kwargs:
+            honor_proxy_revalidate = kwargs['honorProxyRevalidate']
+        if 'honorSMaxage' in kwargs:
+            honor_s_maxage = kwargs['honorSMaxage']
+        if 'mustRevalidate' in kwargs:
+            must_revalidate = kwargs['mustRevalidate']
+        if 'revalidationSettings' in kwargs:
+            revalidation_settings = kwargs['revalidationSettings']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if behavior is not None:
             _setter("behavior", behavior)
         if cache_control_directives is not None:
@@ -25950,7 +29142,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorCentralAuthorizationResult(di
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -26008,7 +29204,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorChaseRedirectsResult(dict):
              serve404: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if limit is not None:
@@ -26074,7 +29274,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorClientCharacteristicsResult(d
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if country is not None:
             _setter("country", country)
         if locked is not None:
@@ -26129,7 +29333,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorCloudInterconnectsResult(dict
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudLocations' in kwargs:
+            cloud_locations = kwargs['cloudLocations']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if cloud_locations is not None:
             _setter("cloud_locations", cloud_locations)
         if enabled is not None:
@@ -26191,7 +29401,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorCloudWrapperResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if location is not None:
@@ -26256,7 +29470,15 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorCloudWrapperAdvancedResult(di
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customFailoverMap' in kwargs:
+            custom_failover_map = kwargs['customFailoverMap']
+        if 'failoverMap' in kwargs:
+            failover_map = kwargs['failoverMap']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if custom_failover_map is not None:
             _setter("custom_failover_map", custom_failover_map)
         if enabled is not None:
@@ -26322,7 +29544,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorConditionalOriginResult(dict)
              origin_id: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'originId' in kwargs:
+            origin_id = kwargs['originId']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if origin_id is not None:
@@ -26386,7 +29614,17 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorConstructResponseResult(dict)
              response_code: Optional[int] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'forceEviction' in kwargs:
+            force_eviction = kwargs['forceEviction']
+        if 'ignorePurge' in kwargs:
+            ignore_purge = kwargs['ignorePurge']
+        if 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if body is not None:
             _setter("body", body)
         if enabled is not None:
@@ -26475,7 +29713,19 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsResult(
              popularity_distribution: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'catalogSize' in kwargs:
+            catalog_size = kwargs['catalogSize']
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'objectSize' in kwargs:
+            object_size = kwargs['objectSize']
+        if 'popularityDistribution' in kwargs:
+            popularity_distribution = kwargs['popularityDistribution']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if catalog_size is not None:
             _setter("catalog_size", catalog_size)
         if content_type is not None:
@@ -26602,7 +29852,41 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsAmdResu
              smooth: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'catalogSize' in kwargs:
+            catalog_size = kwargs['catalogSize']
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'popularityDistribution' in kwargs:
+            popularity_distribution = kwargs['popularityDistribution']
+        if 'segmentDurationDash' in kwargs:
+            segment_duration_dash = kwargs['segmentDurationDash']
+        if 'segmentDurationDashCustom' in kwargs:
+            segment_duration_dash_custom = kwargs['segmentDurationDashCustom']
+        if 'segmentDurationHds' in kwargs:
+            segment_duration_hds = kwargs['segmentDurationHds']
+        if 'segmentDurationHdsCustom' in kwargs:
+            segment_duration_hds_custom = kwargs['segmentDurationHdsCustom']
+        if 'segmentDurationHls' in kwargs:
+            segment_duration_hls = kwargs['segmentDurationHls']
+        if 'segmentDurationHlsCustom' in kwargs:
+            segment_duration_hls_custom = kwargs['segmentDurationHlsCustom']
+        if 'segmentDurationSmooth' in kwargs:
+            segment_duration_smooth = kwargs['segmentDurationSmooth']
+        if 'segmentDurationSmoothCustom' in kwargs:
+            segment_duration_smooth_custom = kwargs['segmentDurationSmoothCustom']
+        if 'segmentSizeDash' in kwargs:
+            segment_size_dash = kwargs['segmentSizeDash']
+        if 'segmentSizeHds' in kwargs:
+            segment_size_hds = kwargs['segmentSizeHds']
+        if 'segmentSizeHls' in kwargs:
+            segment_size_hls = kwargs['segmentSizeHls']
+        if 'segmentSizeSmooth' in kwargs:
+            segment_size_smooth = kwargs['segmentSizeSmooth']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if catalog_size is not None:
             _setter("catalog_size", catalog_size)
         if content_type is not None:
@@ -26792,7 +30076,21 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsDdResul
              popularity_distribution: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'catalogSize' in kwargs:
+            catalog_size = kwargs['catalogSize']
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'objectSize' in kwargs:
+            object_size = kwargs['objectSize']
+        if 'optimizeOption' in kwargs:
+            optimize_option = kwargs['optimizeOption']
+        if 'popularityDistribution' in kwargs:
+            popularity_distribution = kwargs['popularityDistribution']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if catalog_size is not None:
             _setter("catalog_size", catalog_size)
         if content_type is not None:
@@ -26881,7 +30179,19 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsWsdLarg
              popularity_distribution: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'catalogSize' in kwargs:
+            catalog_size = kwargs['catalogSize']
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'objectSize' in kwargs:
+            object_size = kwargs['objectSize']
+        if 'popularityDistribution' in kwargs:
+            popularity_distribution = kwargs['popularityDistribution']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if catalog_size is not None:
             _setter("catalog_size", catalog_size)
         if content_type is not None:
@@ -26996,7 +30306,33 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsWsdLive
              smooth: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'catalogSize' in kwargs:
+            catalog_size = kwargs['catalogSize']
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'popularityDistribution' in kwargs:
+            popularity_distribution = kwargs['popularityDistribution']
+        if 'segmentDurationDash' in kwargs:
+            segment_duration_dash = kwargs['segmentDurationDash']
+        if 'segmentDurationHds' in kwargs:
+            segment_duration_hds = kwargs['segmentDurationHds']
+        if 'segmentDurationHls' in kwargs:
+            segment_duration_hls = kwargs['segmentDurationHls']
+        if 'segmentDurationSmooth' in kwargs:
+            segment_duration_smooth = kwargs['segmentDurationSmooth']
+        if 'segmentSizeDash' in kwargs:
+            segment_size_dash = kwargs['segmentSizeDash']
+        if 'segmentSizeHds' in kwargs:
+            segment_size_hds = kwargs['segmentSizeHds']
+        if 'segmentSizeHls' in kwargs:
+            segment_size_hls = kwargs['segmentSizeHls']
+        if 'segmentSizeSmooth' in kwargs:
+            segment_size_smooth = kwargs['segmentSizeSmooth']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if catalog_size is not None:
             _setter("catalog_size", catalog_size)
         if content_type is not None:
@@ -27188,7 +30524,33 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsWsdVodR
              smooth: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'catalogSize' in kwargs:
+            catalog_size = kwargs['catalogSize']
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'popularityDistribution' in kwargs:
+            popularity_distribution = kwargs['popularityDistribution']
+        if 'segmentDurationDash' in kwargs:
+            segment_duration_dash = kwargs['segmentDurationDash']
+        if 'segmentDurationHds' in kwargs:
+            segment_duration_hds = kwargs['segmentDurationHds']
+        if 'segmentDurationHls' in kwargs:
+            segment_duration_hls = kwargs['segmentDurationHls']
+        if 'segmentDurationSmooth' in kwargs:
+            segment_duration_smooth = kwargs['segmentDurationSmooth']
+        if 'segmentSizeDash' in kwargs:
+            segment_size_dash = kwargs['segmentSizeDash']
+        if 'segmentSizeHds' in kwargs:
+            segment_size_hds = kwargs['segmentSizeHds']
+        if 'segmentSizeHls' in kwargs:
+            segment_size_hls = kwargs['segmentSizeHls']
+        if 'segmentSizeSmooth' in kwargs:
+            segment_size_smooth = kwargs['segmentSizeSmooth']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if catalog_size is not None:
             _setter("catalog_size", catalog_size)
         if content_type is not None:
@@ -27350,7 +30712,17 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorContentPrePositionResult(dict
              targets: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'firstLocation' in kwargs:
+            first_location = kwargs['firstLocation']
+        if 'secondLocation' in kwargs:
+            second_location = kwargs['secondLocation']
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if first_location is not None:
@@ -27493,7 +30865,47 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorContentTargetingProtectionRes
              regions: Optional[Sequence[str]] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableGeoProtection' in kwargs:
+            enable_geo_protection = kwargs['enableGeoProtection']
+        if 'enableGeoRedirectOnDeny' in kwargs:
+            enable_geo_redirect_on_deny = kwargs['enableGeoRedirectOnDeny']
+        if 'enableIpProtection' in kwargs:
+            enable_ip_protection = kwargs['enableIpProtection']
+        if 'enableIpRedirectOnDeny' in kwargs:
+            enable_ip_redirect_on_deny = kwargs['enableIpRedirectOnDeny']
+        if 'enableReferrerProtection' in kwargs:
+            enable_referrer_protection = kwargs['enableReferrerProtection']
+        if 'enableReferrerRedirectOnDeny' in kwargs:
+            enable_referrer_redirect_on_deny = kwargs['enableReferrerRedirectOnDeny']
+        if 'geoProtectionMode' in kwargs:
+            geo_protection_mode = kwargs['geoProtectionMode']
+        if 'geoProtectionTitle' in kwargs:
+            geo_protection_title = kwargs['geoProtectionTitle']
+        if 'geoRedirectUrl' in kwargs:
+            geo_redirect_url = kwargs['geoRedirectUrl']
+        if 'ipAddresses' in kwargs:
+            ip_addresses = kwargs['ipAddresses']
+        if 'ipProtectionMode' in kwargs:
+            ip_protection_mode = kwargs['ipProtectionMode']
+        if 'ipProtectionTitle' in kwargs:
+            ip_protection_title = kwargs['ipProtectionTitle']
+        if 'ipRedirectUrl' in kwargs:
+            ip_redirect_url = kwargs['ipRedirectUrl']
+        if 'overrideIpAddresses' in kwargs:
+            override_ip_addresses = kwargs['overrideIpAddresses']
+        if 'referrerDomains' in kwargs:
+            referrer_domains = kwargs['referrerDomains']
+        if 'referrerProtectionMode' in kwargs:
+            referrer_protection_mode = kwargs['referrerProtectionMode']
+        if 'referrerProtectionTitle' in kwargs:
+            referrer_protection_title = kwargs['referrerProtectionTitle']
+        if 'referrerRedirectUrl' in kwargs:
+            referrer_redirect_url = kwargs['referrerRedirectUrl']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if countries is not None:
             _setter("countries", countries)
         if dmas is not None:
@@ -27716,7 +31128,21 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorCorsSupportResult(dict):
              preflight_max_age: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowCredentials' in kwargs:
+            allow_credentials = kwargs['allowCredentials']
+        if 'allowHeaders' in kwargs:
+            allow_headers = kwargs['allowHeaders']
+        if 'allowOrigins' in kwargs:
+            allow_origins = kwargs['allowOrigins']
+        if 'exposeHeaders' in kwargs:
+            expose_headers = kwargs['exposeHeaders']
+        if 'preflightMaxAge' in kwargs:
+            preflight_max_age = kwargs['preflightMaxAge']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if allow_credentials is not None:
             _setter("allow_credentials", allow_credentials)
         if allow_headers is not None:
@@ -27824,7 +31250,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorCpCodeResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              value: Optional['outputs.GetPropertyRulesBuilderRulesV20230105BehaviorCpCodeValueResult'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if template_uuid is not None:
@@ -27882,7 +31312,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorCpCodeValueResult(dict):
              id: Optional[int] = None,
              name: Optional[str] = None,
              products: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCodeLimits' in kwargs:
+            cp_code_limits = kwargs['cpCodeLimits']
+        if 'createdDate' in kwargs:
+            created_date = kwargs['createdDate']
+
         if cp_code_limits is not None:
             _setter("cp_code_limits", cp_code_limits)
         if created_date is not None:
@@ -27945,7 +31381,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorCpCodeValueCpCodeLimitsResult
              current_capacity: Optional[int] = None,
              limit: Optional[int] = None,
              limit_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currentCapacity' in kwargs:
+            current_capacity = kwargs['currentCapacity']
+        if 'limitType' in kwargs:
+            limit_type = kwargs['limitType']
+
         if current_capacity is not None:
             _setter("current_capacity", current_capacity)
         if limit is not None:
@@ -27990,7 +31432,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorCustomBehaviorResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'behaviorId' in kwargs:
+            behavior_id = kwargs['behaviorId']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if behavior_id is not None:
             _setter("behavior_id", behavior_id)
         if locked is not None:
@@ -28066,7 +31514,27 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorDatastreamResult(dict):
              stream_type: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'beaconStreamTitle' in kwargs:
+            beacon_stream_title = kwargs['beaconStreamTitle']
+        if 'collectMidgressTraffic' in kwargs:
+            collect_midgress_traffic = kwargs['collectMidgressTraffic']
+        if 'datastreamIds' in kwargs:
+            datastream_ids = kwargs['datastreamIds']
+        if 'logEnabled' in kwargs:
+            log_enabled = kwargs['logEnabled']
+        if 'logStreamName' in kwargs:
+            log_stream_name = kwargs['logStreamName']
+        if 'logStreamTitle' in kwargs:
+            log_stream_title = kwargs['logStreamTitle']
+        if 'samplingPercentage' in kwargs:
+            sampling_percentage = kwargs['samplingPercentage']
+        if 'streamType' in kwargs:
+            stream_type = kwargs['streamType']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if beacon_stream_title is not None:
             _setter("beacon_stream_title", beacon_stream_title)
         if collect_midgress_traffic is not None:
@@ -28189,7 +31657,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorDcpResult(dict):
              tlsenabled: Optional[bool] = None,
              uuid: Optional[str] = None,
              wsenabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'namespaceId' in kwargs:
+            namespace_id = kwargs['namespaceId']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if anonymous is not None:
             _setter("anonymous", anonymous)
         if enabled is not None:
@@ -28279,7 +31753,15 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthHmacTransformationResu
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hashConversionAlgorithm' in kwargs:
+            hash_conversion_algorithm = kwargs['hashConversionAlgorithm']
+        if 'hashConversionKey' in kwargs:
+            hash_conversion_key = kwargs['hashConversionKey']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if hash_conversion_algorithm is not None:
             _setter("hash_conversion_algorithm", hash_conversion_algorithm)
         if hash_conversion_key is not None:
@@ -28338,7 +31820,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthRegexTransformationRes
              regex_pattern: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'regexPattern' in kwargs:
+            regex_pattern = kwargs['regexPattern']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if regex_pattern is not None:
@@ -28393,7 +31881,15 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthSubstringTransformatio
              substring_start: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'substringEnd' in kwargs:
+            substring_end = kwargs['substringEnd']
+        if 'substringStart' in kwargs:
+            substring_start = kwargs['substringStart']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if substring_end is not None:
@@ -28455,7 +31951,15 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthVariableExtractorResul
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateField' in kwargs:
+            certificate_field = kwargs['certificateField']
+        if 'dcpMutualAuthProcessingVariableId' in kwargs:
+            dcp_mutual_auth_processing_variable_id = kwargs['dcpMutualAuthProcessingVariableId']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if certificate_field is not None:
             _setter("certificate_field", certificate_field)
         if dcp_mutual_auth_processing_variable_id is not None:
@@ -28514,7 +32018,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorDcpDefaultAuthzGroupsResult(d
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'groupNames' in kwargs:
+            group_names = kwargs['groupNames']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if group_names is not None:
             _setter("group_names", group_names)
         if locked is not None:
@@ -28575,7 +32085,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorDcpDevRelationsResult(dict):
              path: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customValues' in kwargs:
+            custom_values = kwargs['customValues']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if custom_values is not None:
             _setter("custom_values", custom_values)
         if enabled is not None:
@@ -28663,7 +32179,23 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorDcpRealTimeAuthResult(dict):
              namespace_claim: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'extractHostname' in kwargs:
+            extract_hostname = kwargs['extractHostname']
+        if 'extractJurisdiction' in kwargs:
+            extract_jurisdiction = kwargs['extractJurisdiction']
+        if 'extractNamespace' in kwargs:
+            extract_namespace = kwargs['extractNamespace']
+        if 'hostnameClaim' in kwargs:
+            hostname_claim = kwargs['hostnameClaim']
+        if 'jurisdictionClaim' in kwargs:
+            jurisdiction_claim = kwargs['jurisdictionClaim']
+        if 'namespaceClaim' in kwargs:
+            namespace_claim = kwargs['namespaceClaim']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if extract_hostname is not None:
             _setter("extract_hostname", extract_hostname)
         if extract_jurisdiction is not None:
@@ -28750,7 +32282,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorDeliveryReceiptResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -28805,7 +32341,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorDenyAccessResult(dict):
              reason: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -28864,7 +32404,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorDenyDirectFailoverAccessResul
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -28916,7 +32460,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorDeviceCharacteristicCacheIdRe
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if elements is not None:
             _setter("elements", elements)
         if locked is not None:
@@ -28968,7 +32516,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorDeviceCharacteristicHeaderRes
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if elements is not None:
             _setter("elements", elements)
         if locked is not None:
@@ -29023,7 +32575,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorDnsAsyncRefreshResult(dict):
              template_uuid: Optional[str] = None,
              timeout: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -29088,7 +32644,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorDnsPrefreshResult(dict):
              template_uuid: Optional[str] = None,
              timeout: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if delay is not None:
             _setter("delay", delay)
         if enabled is not None:
@@ -29154,7 +32714,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorDowngradeProtocolResult(dict)
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -29206,7 +32770,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorDownloadCompleteMarkerResult(
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -29258,7 +32826,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorDownloadNotificationResult(di
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -29322,7 +32894,17 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorDownstreamCacheResult(dict):
              template_uuid: Optional[str] = None,
              ttl: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowBehavior' in kwargs:
+            allow_behavior = kwargs['allowBehavior']
+        if 'sendHeaders' in kwargs:
+            send_headers = kwargs['sendHeaders']
+        if 'sendPrivate' in kwargs:
+            send_private = kwargs['sendPrivate']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if allow_behavior is not None:
             _setter("allow_behavior", allow_behavior)
         if behavior is not None:
@@ -29402,7 +32984,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorDynamicThroughtputOptimizatio
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -29454,7 +33040,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorDynamicThroughtputOptimizatio
              template_uuid: Optional[str] = None,
              throughput: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if template_uuid is not None:
@@ -29515,7 +33105,17 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorDynamicWebContentResult(dict)
              sure_route: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'imageCompression' in kwargs:
+            image_compression = kwargs['imageCompression']
+        if 'realUserMonitoring' in kwargs:
+            real_user_monitoring = kwargs['realUserMonitoring']
+        if 'sureRoute' in kwargs:
+            sure_route = kwargs['sureRoute']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if image_compression is not None:
             _setter("image_compression", image_compression)
         if locked is not None:
@@ -29588,7 +33188,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorEcmsBulkUploadResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -29652,7 +33256,19 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorEcmsDatabaseResult(dict):
              regex_pattern: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'extractLocation' in kwargs:
+            extract_location = kwargs['extractLocation']
+        if 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+        if 'queryParameterName' in kwargs:
+            query_parameter_name = kwargs['queryParameterName']
+        if 'regexPattern' in kwargs:
+            regex_pattern = kwargs['regexPattern']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if database is not None:
             _setter("database", database)
         if extract_location is not None:
@@ -29744,7 +33360,19 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorEcmsDatasetResult(dict):
              regex_pattern: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'extractLocation' in kwargs:
+            extract_location = kwargs['extractLocation']
+        if 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+        if 'queryParameterName' in kwargs:
+            query_parameter_name = kwargs['queryParameterName']
+        if 'regexPattern' in kwargs:
+            regex_pattern = kwargs['regexPattern']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if dataset is not None:
             _setter("dataset", dataset)
         if extract_location is not None:
@@ -29824,7 +33452,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorEcmsObjectKeyResult(dict):
              regex: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if regex is not None:
@@ -29900,7 +33532,27 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorEdgeConnectResult(dict):
              override_aggregate_settings: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'aggregateLines' in kwargs:
+            aggregate_lines = kwargs['aggregateLines']
+        if 'aggregateSize' in kwargs:
+            aggregate_size = kwargs['aggregateSize']
+        if 'aggregateTime' in kwargs:
+            aggregate_time = kwargs['aggregateTime']
+        if 'apiConnector' in kwargs:
+            api_connector = kwargs['apiConnector']
+        if 'apiDataElements' in kwargs:
+            api_data_elements = kwargs['apiDataElements']
+        if 'destinationHostname' in kwargs:
+            destination_hostname = kwargs['destinationHostname']
+        if 'destinationPath' in kwargs:
+            destination_path = kwargs['destinationPath']
+        if 'overrideAggregateSettings' in kwargs:
+            override_aggregate_settings = kwargs['overrideAggregateSettings']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if aggregate_lines is not None:
             _setter("aggregate_lines", aggregate_lines)
         if aggregate_size is not None:
@@ -30011,7 +33663,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingAdvancedResu
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              xml: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if description is not None:
             _setter("description", description)
         if locked is not None:
@@ -30091,7 +33747,21 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingDataCenterRe
              origin_id: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cookieName' in kwargs:
+            cookie_name = kwargs['cookieName']
+        if 'enableFailover' in kwargs:
+            enable_failover = kwargs['enableFailover']
+        if 'failoverRules' in kwargs:
+            failover_rules = kwargs['failoverRules']
+        if 'failoverTitle' in kwargs:
+            failover_title = kwargs['failoverTitle']
+        if 'originId' in kwargs:
+            origin_id = kwargs['originId']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if cookie_name is not None:
             _setter("cookie_name", cookie_name)
         if description is not None:
@@ -30195,7 +33865,19 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingDataCenterFa
              failover_hostname: Optional[str] = None,
              modify_request: Optional[bool] = None,
              override_hostname: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'absolutePath' in kwargs:
+            absolute_path = kwargs['absolutePath']
+        if 'contextRoot' in kwargs:
+            context_root = kwargs['contextRoot']
+        if 'failoverHostname' in kwargs:
+            failover_hostname = kwargs['failoverHostname']
+        if 'modifyRequest' in kwargs:
+            modify_request = kwargs['modifyRequest']
+        if 'overrideHostname' in kwargs:
+            override_hostname = kwargs['overrideHostname']
+
         if absolute_path is not None:
             _setter("absolute_path", absolute_path)
         if context_root is not None:
@@ -30269,7 +33951,17 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingOriginResult
              session_persistence_title: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cookieName' in kwargs:
+            cookie_name = kwargs['cookieName']
+        if 'enableSessionPersistence' in kwargs:
+            enable_session_persistence = kwargs['enableSessionPersistence']
+        if 'sessionPersistenceTitle' in kwargs:
+            session_persistence_title = kwargs['sessionPersistenceTitle']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if cookie_name is not None:
             _setter("cookie_name", cookie_name)
         if description is not None:
@@ -30365,7 +34057,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorEdgeOriginAuthorizationResult
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cookieName' in kwargs:
+            cookie_name = kwargs['cookieName']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if cookie_name is not None:
             _setter("cookie_name", cookie_name)
         if domain is not None:
@@ -30447,7 +34145,17 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorEdgeRedirectorResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudletPolicy' in kwargs:
+            cloudlet_policy = kwargs['cloudletPolicy']
+        if 'cloudletSharedPolicy' in kwargs:
+            cloudlet_shared_policy = kwargs['cloudletSharedPolicy']
+        if 'isSharedPolicy' in kwargs:
+            is_shared_policy = kwargs['isSharedPolicy']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if cloudlet_policy is not None:
             _setter("cloudlet_policy", cloudlet_policy)
         if cloudlet_shared_policy is not None:
@@ -30514,7 +34222,9 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorEdgeRedirectorCloudletPolicyR
              _setter: Callable[[Any, Any], None],
              id: Optional[int] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
         if name is not None:
@@ -30552,7 +34262,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorEdgeScapeResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -30622,7 +34336,23 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorEdgeSideIncludesResult(dict):
              pass_set_cookie: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'detectInjection' in kwargs:
+            detect_injection = kwargs['detectInjection']
+        if 'enableViaHttp' in kwargs:
+            enable_via_http = kwargs['enableViaHttp']
+        if 'i18nCharsets' in kwargs:
+            i18n_charsets = kwargs['i18nCharsets']
+        if 'i18nStatus' in kwargs:
+            i18n_status = kwargs['i18nStatus']
+        if 'passClientIp' in kwargs:
+            pass_client_ip = kwargs['passClientIp']
+        if 'passSetCookie' in kwargs:
+            pass_set_cookie = kwargs['passSetCookie']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if detect_injection is not None:
             _setter("detect_injection", detect_injection)
         if enable_via_http is not None:
@@ -30725,7 +34455,17 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorEdgeWorkerResult(dict):
              resource_tier: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'createEdgeWorker' in kwargs:
+            create_edge_worker = kwargs['createEdgeWorker']
+        if 'edgeWorkerId' in kwargs:
+            edge_worker_id = kwargs['edgeWorkerId']
+        if 'resourceTier' in kwargs:
+            resource_tier = kwargs['resourceTier']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if create_edge_worker is not None:
             _setter("create_edge_worker", create_edge_worker)
         if edge_worker_id is not None:
@@ -30798,7 +34538,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorEnhancedAkamaiProtocolResult(
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if display is not None:
             _setter("display", display)
         if locked is not None:
@@ -30946,7 +34690,75 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorEnhancedProxyDetectionResult(
              tor_exit_node: Optional[str] = None,
              uuid: Optional[str] = None,
              vpn_data_center: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'anonymousVpn' in kwargs:
+            anonymous_vpn = kwargs['anonymousVpn']
+        if 'bestPracticeAction' in kwargs:
+            best_practice_action = kwargs['bestPracticeAction']
+        if 'bestPracticeRedirecturl' in kwargs:
+            best_practice_redirecturl = kwargs['bestPracticeRedirecturl']
+        if 'detectAnonymousVpn' in kwargs:
+            detect_anonymous_vpn = kwargs['detectAnonymousVpn']
+        if 'detectAnonymousVpnAction' in kwargs:
+            detect_anonymous_vpn_action = kwargs['detectAnonymousVpnAction']
+        if 'detectAnonymousVpnRedirecturl' in kwargs:
+            detect_anonymous_vpn_redirecturl = kwargs['detectAnonymousVpnRedirecturl']
+        if 'detectHostingProvider' in kwargs:
+            detect_hosting_provider = kwargs['detectHostingProvider']
+        if 'detectHostingProviderAction' in kwargs:
+            detect_hosting_provider_action = kwargs['detectHostingProviderAction']
+        if 'detectHostingProviderRedirecturl' in kwargs:
+            detect_hosting_provider_redirecturl = kwargs['detectHostingProviderRedirecturl']
+        if 'detectPublicProxy' in kwargs:
+            detect_public_proxy = kwargs['detectPublicProxy']
+        if 'detectPublicProxyAction' in kwargs:
+            detect_public_proxy_action = kwargs['detectPublicProxyAction']
+        if 'detectPublicProxyRedirecturl' in kwargs:
+            detect_public_proxy_redirecturl = kwargs['detectPublicProxyRedirecturl']
+        if 'detectResidentialProxy' in kwargs:
+            detect_residential_proxy = kwargs['detectResidentialProxy']
+        if 'detectResidentialProxyAction' in kwargs:
+            detect_residential_proxy_action = kwargs['detectResidentialProxyAction']
+        if 'detectResidentialProxyRedirecturl' in kwargs:
+            detect_residential_proxy_redirecturl = kwargs['detectResidentialProxyRedirecturl']
+        if 'detectSmartDnsProxy' in kwargs:
+            detect_smart_dns_proxy = kwargs['detectSmartDnsProxy']
+        if 'detectSmartDnsProxyAction' in kwargs:
+            detect_smart_dns_proxy_action = kwargs['detectSmartDnsProxyAction']
+        if 'detectSmartDnsProxyRedirecturl' in kwargs:
+            detect_smart_dns_proxy_redirecturl = kwargs['detectSmartDnsProxyRedirecturl']
+        if 'detectTorExitNode' in kwargs:
+            detect_tor_exit_node = kwargs['detectTorExitNode']
+        if 'detectTorExitNodeAction' in kwargs:
+            detect_tor_exit_node_action = kwargs['detectTorExitNodeAction']
+        if 'detectTorExitNodeRedirecturl' in kwargs:
+            detect_tor_exit_node_redirecturl = kwargs['detectTorExitNodeRedirecturl']
+        if 'detectVpnDataCenter' in kwargs:
+            detect_vpn_data_center = kwargs['detectVpnDataCenter']
+        if 'detectVpnDataCenterAction' in kwargs:
+            detect_vpn_data_center_action = kwargs['detectVpnDataCenterAction']
+        if 'detectVpnDataCenterRedirecturl' in kwargs:
+            detect_vpn_data_center_redirecturl = kwargs['detectVpnDataCenterRedirecturl']
+        if 'enableConfigurationMode' in kwargs:
+            enable_configuration_mode = kwargs['enableConfigurationMode']
+        if 'forwardHeaderEnrichment' in kwargs:
+            forward_header_enrichment = kwargs['forwardHeaderEnrichment']
+        if 'hostingProvider' in kwargs:
+            hosting_provider = kwargs['hostingProvider']
+        if 'publicProxy' in kwargs:
+            public_proxy = kwargs['publicProxy']
+        if 'residentialProxy' in kwargs:
+            residential_proxy = kwargs['residentialProxy']
+        if 'smartDnsProxy' in kwargs:
+            smart_dns_proxy = kwargs['smartDnsProxy']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'torExitNode' in kwargs:
+            tor_exit_node = kwargs['torExitNode']
+        if 'vpnDataCenter' in kwargs:
+            vpn_data_center = kwargs['vpnDataCenter']
+
         if anonymous_vpn is not None:
             _setter("anonymous_vpn", anonymous_vpn)
         if best_practice_action is not None:
@@ -31222,7 +35034,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorEpdForwardHeaderEnrichmentRes
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -31367,7 +35183,71 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorFailActionResult(dict):
              status_code: Optional[int] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionType' in kwargs:
+            action_type = kwargs['actionType']
+        if 'allowFcmParentOverride' in kwargs:
+            allow_fcm_parent_override = kwargs['allowFcmParentOverride']
+        if 'cexCustomPath' in kwargs:
+            cex_custom_path = kwargs['cexCustomPath']
+        if 'cexHostname' in kwargs:
+            cex_hostname = kwargs['cexHostname']
+        if 'cexPath' in kwargs:
+            cex_path = kwargs['cexPath']
+        if 'contentCustomPath' in kwargs:
+            content_custom_path = kwargs['contentCustomPath']
+        if 'contentHostname' in kwargs:
+            content_hostname = kwargs['contentHostname']
+        if 'contentPath' in kwargs:
+            content_path = kwargs['contentPath']
+        if 'cpCode' in kwargs:
+            cp_code = kwargs['cpCode']
+        if 'dynamicCustomPath' in kwargs:
+            dynamic_custom_path = kwargs['dynamicCustomPath']
+        if 'dynamicMethod' in kwargs:
+            dynamic_method = kwargs['dynamicMethod']
+        if 'dynamicPath' in kwargs:
+            dynamic_path = kwargs['dynamicPath']
+        if 'modifyProtocol' in kwargs:
+            modify_protocol = kwargs['modifyProtocol']
+        if 'netStorageHostname' in kwargs:
+            net_storage_hostname = kwargs['netStorageHostname']
+        if 'netStoragePath' in kwargs:
+            net_storage_path = kwargs['netStoragePath']
+        if 'preserveQueryString' in kwargs:
+            preserve_query_string = kwargs['preserveQueryString']
+        if 'redirectCustomPath' in kwargs:
+            redirect_custom_path = kwargs['redirectCustomPath']
+        if 'redirectHostname' in kwargs:
+            redirect_hostname = kwargs['redirectHostname']
+        if 'redirectHostnameType' in kwargs:
+            redirect_hostname_type = kwargs['redirectHostnameType']
+        if 'redirectMethod' in kwargs:
+            redirect_method = kwargs['redirectMethod']
+        if 'redirectPath' in kwargs:
+            redirect_path = kwargs['redirectPath']
+        if 'saasCnameEnabled' in kwargs:
+            saas_cname_enabled = kwargs['saasCnameEnabled']
+        if 'saasCnameLevel' in kwargs:
+            saas_cname_level = kwargs['saasCnameLevel']
+        if 'saasCookie' in kwargs:
+            saas_cookie = kwargs['saasCookie']
+        if 'saasQueryString' in kwargs:
+            saas_query_string = kwargs['saasQueryString']
+        if 'saasRegex' in kwargs:
+            saas_regex = kwargs['saasRegex']
+        if 'saasReplace' in kwargs:
+            saas_replace = kwargs['saasReplace']
+        if 'saasSuffix' in kwargs:
+            saas_suffix = kwargs['saasSuffix']
+        if 'saasType' in kwargs:
+            saas_type = kwargs['saasType']
+        if 'statusCode' in kwargs:
+            status_code = kwargs['statusCode']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if action_type is not None:
             _setter("action_type", action_type)
         if allow_fcm_parent_override is not None:
@@ -31642,7 +35522,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorFailActionCpCodeResult(dict):
              id: Optional[int] = None,
              name: Optional[str] = None,
              products: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCodeLimits' in kwargs:
+            cp_code_limits = kwargs['cpCodeLimits']
+        if 'createdDate' in kwargs:
+            created_date = kwargs['createdDate']
+
         if cp_code_limits is not None:
             _setter("cp_code_limits", cp_code_limits)
         if created_date is not None:
@@ -31705,7 +35591,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorFailActionCpCodeCpCodeLimitsR
              current_capacity: Optional[int] = None,
              limit: Optional[int] = None,
              limit_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currentCapacity' in kwargs:
+            current_capacity = kwargs['currentCapacity']
+        if 'limitType' in kwargs:
+            limit_type = kwargs['limitType']
+
         if current_capacity is not None:
             _setter("current_capacity", current_capacity)
         if limit is not None:
@@ -31747,7 +35639,15 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorFailActionNetStorageHostnameR
              cp_code: Optional[int] = None,
              download_domain_name: Optional[str] = None,
              g2o_token: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCode' in kwargs:
+            cp_code = kwargs['cpCode']
+        if 'downloadDomainName' in kwargs:
+            download_domain_name = kwargs['downloadDomainName']
+        if 'g2oToken' in kwargs:
+            g2o_token = kwargs['g2oToken']
+
         if cp_code is not None:
             _setter("cp_code", cp_code)
         if download_domain_name is not None:
@@ -31792,7 +35692,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorFailoverBotManagerFeatureComp
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if compatibility is not None:
             _setter("compatibility", compatibility)
         if locked is not None:
@@ -31844,7 +35748,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorFastInvalidateResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -31905,7 +35813,17 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorFirstPartyMarketingResult(dic
              media_math_prefix: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudletPolicy' in kwargs:
+            cloudlet_policy = kwargs['cloudletPolicy']
+        if 'javaScriptInsertionRule' in kwargs:
+            java_script_insertion_rule = kwargs['javaScriptInsertionRule']
+        if 'mediaMathPrefix' in kwargs:
+            media_math_prefix = kwargs['mediaMathPrefix']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if cloudlet_policy is not None:
             _setter("cloudlet_policy", cloudlet_policy)
         if enabled is not None:
@@ -31972,7 +35890,9 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorFirstPartyMarketingCloudletPo
              _setter: Callable[[Any, Any], None],
              id: Optional[int] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
         if name is not None:
@@ -32019,7 +35939,17 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorFirstPartyMarketingPlusResult
              media_math_prefix: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudletPolicy' in kwargs:
+            cloudlet_policy = kwargs['cloudletPolicy']
+        if 'javaScriptInsertionRule' in kwargs:
+            java_script_insertion_rule = kwargs['javaScriptInsertionRule']
+        if 'mediaMathPrefix' in kwargs:
+            media_math_prefix = kwargs['mediaMathPrefix']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if cloudlet_policy is not None:
             _setter("cloudlet_policy", cloudlet_policy)
         if enabled is not None:
@@ -32086,7 +36016,9 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorFirstPartyMarketingPlusCloudl
              _setter: Callable[[Any, Any], None],
              id: Optional[int] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
         if name is not None:
@@ -32133,7 +36065,17 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorForwardRewriteResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudletPolicy' in kwargs:
+            cloudlet_policy = kwargs['cloudletPolicy']
+        if 'cloudletSharedPolicy' in kwargs:
+            cloudlet_shared_policy = kwargs['cloudletSharedPolicy']
+        if 'isSharedPolicy' in kwargs:
+            is_shared_policy = kwargs['isSharedPolicy']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if cloudlet_policy is not None:
             _setter("cloudlet_policy", cloudlet_policy)
         if cloudlet_shared_policy is not None:
@@ -32200,7 +36142,9 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorForwardRewriteCloudletPolicyR
              _setter: Callable[[Any, Any], None],
              id: Optional[int] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
         if name is not None:
@@ -32238,7 +36182,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorFrontEndOptimizationResult(di
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -32311,7 +36259,23 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorG2oheaderResult(dict):
              template_uuid: Optional[str] = None,
              use_custom_sign_string: Optional[bool] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customSignStrings' in kwargs:
+            custom_sign_strings = kwargs['customSignStrings']
+        if 'dataHeader' in kwargs:
+            data_header = kwargs['dataHeader']
+        if 'encodingVersion' in kwargs:
+            encoding_version = kwargs['encodingVersion']
+        if 'secretKey' in kwargs:
+            secret_key = kwargs['secretKey']
+        if 'signedHeader' in kwargs:
+            signed_header = kwargs['signedHeader']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'useCustomSignString' in kwargs:
+            use_custom_sign_string = kwargs['useCustomSignString']
+
         if custom_sign_strings is not None:
             _setter("custom_sign_strings", custom_sign_strings)
         if data_header is not None:
@@ -32418,7 +36382,17 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorGlobalRequestNumberResult(dic
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              variable_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+        if 'outputOption' in kwargs:
+            output_option = kwargs['outputOption']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'variableName' in kwargs:
+            variable_name = kwargs['variableName']
+
         if header_name is not None:
             _setter("header_name", header_name)
         if locked is not None:
@@ -32499,7 +36473,19 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorGraphqlCachingResult(dict):
              post_request_processing_error_handling: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cacheResponsesWithErrors' in kwargs:
+            cache_responses_with_errors = kwargs['cacheResponsesWithErrors']
+        if 'operationsJsonBodyParameterName' in kwargs:
+            operations_json_body_parameter_name = kwargs['operationsJsonBodyParameterName']
+        if 'operationsUrlQueryParameterName' in kwargs:
+            operations_url_query_parameter_name = kwargs['operationsUrlQueryParameterName']
+        if 'postRequestProcessingErrorHandling' in kwargs:
+            post_request_processing_error_handling = kwargs['postRequestProcessingErrorHandling']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if advanced is not None:
             _setter("advanced", advanced)
         if cache_responses_with_errors is not None:
@@ -32586,7 +36572,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorGzipResponseResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if behavior is not None:
             _setter("behavior", behavior)
         if locked is not None:
@@ -32641,7 +36631,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorHdDataAdvancedResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              xml: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if description is not None:
             _setter("description", description)
         if locked is not None:
@@ -32706,7 +36700,17 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorHealthDetectionResult(dict):
              retry_interval: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maximumReconnects' in kwargs:
+            maximum_reconnects = kwargs['maximumReconnects']
+        if 'retryCount' in kwargs:
+            retry_count = kwargs['retryCount']
+        if 'retryInterval' in kwargs:
+            retry_interval = kwargs['retryInterval']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if maximum_reconnects is not None:
@@ -32784,7 +36788,17 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorHsafEipBindingResult(dict):
              template_uuid: Optional[str] = None,
              tier: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customExtractedSerial' in kwargs:
+            custom_extracted_serial = kwargs['customExtractedSerial']
+        if 'hashMaxValue' in kwargs:
+            hash_max_value = kwargs['hashMaxValue']
+        if 'hashMinValue' in kwargs:
+            hash_min_value = kwargs['hashMinValue']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if custom_extracted_serial is not None:
             _setter("custom_extracted_serial", custom_extracted_serial)
         if enabled is not None:
@@ -32864,7 +36878,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorHttp2Result(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -32916,7 +36934,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorHttp3Result(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enable is not None:
             _setter("enable", enable)
         if locked is not None:
@@ -32983,7 +37005,17 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorHttpStrictTransportSecurityRe
              redirect_status_code: Optional[int] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'includeSubDomains' in kwargs:
+            include_sub_domains = kwargs['includeSubDomains']
+        if 'maxAge' in kwargs:
+            max_age = kwargs['maxAge']
+        if 'redirectStatusCode' in kwargs:
+            redirect_status_code = kwargs['redirectStatusCode']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enable is not None:
             _setter("enable", enable)
         if include_sub_domains is not None:
@@ -33070,7 +37102,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorHttpToHttpsUpgradeResult(dict
              template_uuid: Optional[str] = None,
              upgrade: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if template_uuid is not None:
@@ -33161,7 +37197,19 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorImOverrideResult(dict):
              uuid: Optional[str] = None,
              width: Optional[float] = None,
              widthvar: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'excludeAllQueryParameters' in kwargs:
+            exclude_all_query_parameters = kwargs['excludeAllQueryParameters']
+        if 'excludedQueryParameters' in kwargs:
+            excluded_query_parameters = kwargs['excludedQueryParameters']
+        if 'policyvarIMvar' in kwargs:
+            policyvar_i_mvar = kwargs['policyvarIMvar']
+        if 'policyvarName' in kwargs:
+            policyvar_name = kwargs['policyvarName']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if dpr is not None:
             _setter("dpr", dpr)
         if dprvar is not None:
@@ -33325,7 +37373,23 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorImageAndVideoManagerResult(di
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              video_set: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applyBestFileType' in kwargs:
+            apply_best_file_type = kwargs['applyBestFileType']
+        if 'cpCodeOriginal' in kwargs:
+            cp_code_original = kwargs['cpCodeOriginal']
+        if 'cpCodeTransformed' in kwargs:
+            cp_code_transformed = kwargs['cpCodeTransformed']
+        if 'imageSet' in kwargs:
+            image_set = kwargs['imageSet']
+        if 'policySetType' in kwargs:
+            policy_set_type = kwargs['policySetType']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'videoSet' in kwargs:
+            video_set = kwargs['videoSet']
+
         if apply_best_file_type is not None:
             _setter("apply_best_file_type", apply_best_file_type)
         if cp_code_original is not None:
@@ -33432,7 +37496,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorImageAndVideoManagerCpCodeOri
              id: Optional[int] = None,
              name: Optional[str] = None,
              products: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCodeLimits' in kwargs:
+            cp_code_limits = kwargs['cpCodeLimits']
+        if 'createdDate' in kwargs:
+            created_date = kwargs['createdDate']
+
         if cp_code_limits is not None:
             _setter("cp_code_limits", cp_code_limits)
         if created_date is not None:
@@ -33495,7 +37565,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorImageAndVideoManagerCpCodeOri
              current_capacity: Optional[int] = None,
              limit: Optional[int] = None,
              limit_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currentCapacity' in kwargs:
+            current_capacity = kwargs['currentCapacity']
+        if 'limitType' in kwargs:
+            limit_type = kwargs['limitType']
+
         if current_capacity is not None:
             _setter("current_capacity", current_capacity)
         if limit is not None:
@@ -33546,7 +37622,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorImageAndVideoManagerCpCodeTra
              id: Optional[int] = None,
              name: Optional[str] = None,
              products: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCodeLimits' in kwargs:
+            cp_code_limits = kwargs['cpCodeLimits']
+        if 'createdDate' in kwargs:
+            created_date = kwargs['createdDate']
+
         if cp_code_limits is not None:
             _setter("cp_code_limits", cp_code_limits)
         if created_date is not None:
@@ -33609,7 +37691,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorImageAndVideoManagerCpCodeTra
              current_capacity: Optional[int] = None,
              limit: Optional[int] = None,
              limit_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currentCapacity' in kwargs:
+            current_capacity = kwargs['currentCapacity']
+        if 'limitType' in kwargs:
+            limit_type = kwargs['limitType']
+
         if current_capacity is not None:
             _setter("current_capacity", current_capacity)
         if limit is not None:
@@ -33693,7 +37781,33 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerResult(dict):
              traffic_title: Optional[str] = None,
              use_existing_policy_set: Optional[bool] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'apiReferenceTitle' in kwargs:
+            api_reference_title = kwargs['apiReferenceTitle']
+        if 'applyBestFileType' in kwargs:
+            apply_best_file_type = kwargs['applyBestFileType']
+        if 'cpCodeOriginal' in kwargs:
+            cp_code_original = kwargs['cpCodeOriginal']
+        if 'cpCodeTransformed' in kwargs:
+            cp_code_transformed = kwargs['cpCodeTransformed']
+        if 'policySet' in kwargs:
+            policy_set = kwargs['policySet']
+        if 'policyToken' in kwargs:
+            policy_token = kwargs['policyToken']
+        if 'policyTokenDefault' in kwargs:
+            policy_token_default = kwargs['policyTokenDefault']
+        if 'settingsTitle' in kwargs:
+            settings_title = kwargs['settingsTitle']
+        if 'superCacheRegion' in kwargs:
+            super_cache_region = kwargs['superCacheRegion']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'trafficTitle' in kwargs:
+            traffic_title = kwargs['trafficTitle']
+        if 'useExistingPolicySet' in kwargs:
+            use_existing_policy_set = kwargs['useExistingPolicySet']
+
         if advanced is not None:
             _setter("advanced", advanced)
         if api_reference_title is not None:
@@ -33842,7 +37956,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerCpCodeOriginalRes
              id: Optional[int] = None,
              name: Optional[str] = None,
              products: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCodeLimits' in kwargs:
+            cp_code_limits = kwargs['cpCodeLimits']
+        if 'createdDate' in kwargs:
+            created_date = kwargs['createdDate']
+
         if cp_code_limits is not None:
             _setter("cp_code_limits", cp_code_limits)
         if created_date is not None:
@@ -33905,7 +38025,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerCpCodeOriginalCpC
              current_capacity: Optional[int] = None,
              limit: Optional[int] = None,
              limit_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currentCapacity' in kwargs:
+            current_capacity = kwargs['currentCapacity']
+        if 'limitType' in kwargs:
+            limit_type = kwargs['limitType']
+
         if current_capacity is not None:
             _setter("current_capacity", current_capacity)
         if limit is not None:
@@ -33956,7 +38082,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerCpCodeTransformed
              id: Optional[int] = None,
              name: Optional[str] = None,
              products: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCodeLimits' in kwargs:
+            cp_code_limits = kwargs['cpCodeLimits']
+        if 'createdDate' in kwargs:
+            created_date = kwargs['createdDate']
+
         if cp_code_limits is not None:
             _setter("cp_code_limits", cp_code_limits)
         if created_date is not None:
@@ -34019,7 +38151,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerCpCodeTransformed
              current_capacity: Optional[int] = None,
              limit: Optional[int] = None,
              limit_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currentCapacity' in kwargs:
+            current_capacity = kwargs['currentCapacity']
+        if 'limitType' in kwargs:
+            limit_type = kwargs['limitType']
+
         if current_capacity is not None:
             _setter("current_capacity", current_capacity)
         if limit is not None:
@@ -34103,7 +38241,33 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideoResult(dict)
              traffic_title: Optional[str] = None,
              use_existing_policy_set: Optional[bool] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'apiReferenceTitle' in kwargs:
+            api_reference_title = kwargs['apiReferenceTitle']
+        if 'applyBestFileType' in kwargs:
+            apply_best_file_type = kwargs['applyBestFileType']
+        if 'cpCodeOriginal' in kwargs:
+            cp_code_original = kwargs['cpCodeOriginal']
+        if 'cpCodeTransformed' in kwargs:
+            cp_code_transformed = kwargs['cpCodeTransformed']
+        if 'policySet' in kwargs:
+            policy_set = kwargs['policySet']
+        if 'policyToken' in kwargs:
+            policy_token = kwargs['policyToken']
+        if 'policyTokenDefault' in kwargs:
+            policy_token_default = kwargs['policyTokenDefault']
+        if 'settingsTitle' in kwargs:
+            settings_title = kwargs['settingsTitle']
+        if 'superCacheRegion' in kwargs:
+            super_cache_region = kwargs['superCacheRegion']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'trafficTitle' in kwargs:
+            traffic_title = kwargs['trafficTitle']
+        if 'useExistingPolicySet' in kwargs:
+            use_existing_policy_set = kwargs['useExistingPolicySet']
+
         if advanced is not None:
             _setter("advanced", advanced)
         if api_reference_title is not None:
@@ -34252,7 +38416,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideoCpCodeOrigin
              id: Optional[int] = None,
              name: Optional[str] = None,
              products: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCodeLimits' in kwargs:
+            cp_code_limits = kwargs['cpCodeLimits']
+        if 'createdDate' in kwargs:
+            created_date = kwargs['createdDate']
+
         if cp_code_limits is not None:
             _setter("cp_code_limits", cp_code_limits)
         if created_date is not None:
@@ -34315,7 +38485,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideoCpCodeOrigin
              current_capacity: Optional[int] = None,
              limit: Optional[int] = None,
              limit_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currentCapacity' in kwargs:
+            current_capacity = kwargs['currentCapacity']
+        if 'limitType' in kwargs:
+            limit_type = kwargs['limitType']
+
         if current_capacity is not None:
             _setter("current_capacity", current_capacity)
         if limit is not None:
@@ -34366,7 +38542,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideoCpCodeTransf
              id: Optional[int] = None,
              name: Optional[str] = None,
              products: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCodeLimits' in kwargs:
+            cp_code_limits = kwargs['cpCodeLimits']
+        if 'createdDate' in kwargs:
+            created_date = kwargs['createdDate']
+
         if cp_code_limits is not None:
             _setter("cp_code_limits", cp_code_limits)
         if created_date is not None:
@@ -34429,7 +38611,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideoCpCodeTransf
              current_capacity: Optional[int] = None,
              limit: Optional[int] = None,
              limit_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currentCapacity' in kwargs:
+            current_capacity = kwargs['currentCapacity']
+        if 'limitType' in kwargs:
+            limit_type = kwargs['limitType']
+
         if current_capacity is not None:
             _setter("current_capacity", current_capacity)
         if limit is not None:
@@ -34474,7 +38662,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorIncludeResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if id is not None:
             _setter("id", id)
         if locked is not None:
@@ -34601,7 +38793,59 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorInputValidationResult(dict):
              validate_on_origin_response_code: Optional[int] = None,
              validate_on_origin_with: Optional[str] = None,
              validation_title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowLargePostBody' in kwargs:
+            allow_large_post_body = kwargs['allowLargePostBody']
+        if 'cloudletPolicy' in kwargs:
+            cloudlet_policy = kwargs['cloudletPolicy']
+        if 'failure302Uri' in kwargs:
+            failure302_uri = kwargs['failure302Uri']
+        if 'penalty302Uri' in kwargs:
+            penalty302_uri = kwargs['penalty302Uri']
+        if 'penalty403NetStoragePath' in kwargs:
+            penalty403_net_storage_path = kwargs['penalty403NetStoragePath']
+        if 'penaltyAction' in kwargs:
+            penalty_action = kwargs['penaltyAction']
+        if 'penaltyBrandedDenyCacheTtl' in kwargs:
+            penalty_branded_deny_cache_ttl = kwargs['penaltyBrandedDenyCacheTtl']
+        if 'penaltyNetStorage' in kwargs:
+            penalty_net_storage = kwargs['penaltyNetStorage']
+        if 'penaltyThreshold' in kwargs:
+            penalty_threshold = kwargs['penaltyThreshold']
+        if 'penaltyTitle' in kwargs:
+            penalty_title = kwargs['penaltyTitle']
+        if 'resetOnValid' in kwargs:
+            reset_on_valid = kwargs['resetOnValid']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'userIdentificationByCookie' in kwargs:
+            user_identification_by_cookie = kwargs['userIdentificationByCookie']
+        if 'userIdentificationByHeaders' in kwargs:
+            user_identification_by_headers = kwargs['userIdentificationByHeaders']
+        if 'userIdentificationByIp' in kwargs:
+            user_identification_by_ip = kwargs['userIdentificationByIp']
+        if 'userIdentificationByParams' in kwargs:
+            user_identification_by_params = kwargs['userIdentificationByParams']
+        if 'userIdentificationKeyCookie' in kwargs:
+            user_identification_key_cookie = kwargs['userIdentificationKeyCookie']
+        if 'userIdentificationKeyHeaders' in kwargs:
+            user_identification_key_headers = kwargs['userIdentificationKeyHeaders']
+        if 'userIdentificationKeyParams' in kwargs:
+            user_identification_key_params = kwargs['userIdentificationKeyParams']
+        if 'userIdentificationTitle' in kwargs:
+            user_identification_title = kwargs['userIdentificationTitle']
+        if 'validateOnOriginHeaderName' in kwargs:
+            validate_on_origin_header_name = kwargs['validateOnOriginHeaderName']
+        if 'validateOnOriginHeaderValue' in kwargs:
+            validate_on_origin_header_value = kwargs['validateOnOriginHeaderValue']
+        if 'validateOnOriginResponseCode' in kwargs:
+            validate_on_origin_response_code = kwargs['validateOnOriginResponseCode']
+        if 'validateOnOriginWith' in kwargs:
+            validate_on_origin_with = kwargs['validateOnOriginWith']
+        if 'validationTitle' in kwargs:
+            validation_title = kwargs['validationTitle']
+
         if allow_large_post_body is not None:
             _setter("allow_large_post_body", allow_large_post_body)
         if cloudlet_policy is not None:
@@ -34822,7 +39066,9 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorInputValidationCloudletPolicy
              _setter: Callable[[Any, Any], None],
              id: Optional[int] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
         if name is not None:
@@ -34857,7 +39103,15 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorInputValidationPenaltyNetStor
              cp_code: Optional[int] = None,
              download_domain_name: Optional[str] = None,
              g2o_token: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCode' in kwargs:
+            cp_code = kwargs['cpCode']
+        if 'downloadDomainName' in kwargs:
+            download_domain_name = kwargs['downloadDomainName']
+        if 'g2oToken' in kwargs:
+            g2o_token = kwargs['g2oToken']
+
         if cp_code is not None:
             _setter("cp_code", cp_code)
         if download_domain_name is not None:
@@ -34914,7 +39168,21 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorInstantResult(dict):
              prefetch_no_store_extensions: Optional[Sequence[str]] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customLinkRelations' in kwargs:
+            custom_link_relations = kwargs['customLinkRelations']
+        if 'prefetchCacheable' in kwargs:
+            prefetch_cacheable = kwargs['prefetchCacheable']
+        if 'prefetchHtml' in kwargs:
+            prefetch_html = kwargs['prefetchHtml']
+        if 'prefetchNoStore' in kwargs:
+            prefetch_no_store = kwargs['prefetchNoStore']
+        if 'prefetchNoStoreExtensions' in kwargs:
+            prefetch_no_store_extensions = kwargs['prefetchNoStoreExtensions']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if custom_link_relations is not None:
             _setter("custom_link_relations", custom_link_relations)
         if locked is not None:
@@ -34994,7 +39262,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorInstantConfigResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -35058,7 +39330,19 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorLargeFileOptimizationResult(d
              template_uuid: Optional[str] = None,
              use_versioning: Optional[bool] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enablePartialObjectCaching' in kwargs:
+            enable_partial_object_caching = kwargs['enablePartialObjectCaching']
+        if 'maximumSize' in kwargs:
+            maximum_size = kwargs['maximumSize']
+        if 'minimumSize' in kwargs:
+            minimum_size = kwargs['minimumSize']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'useVersioning' in kwargs:
+            use_versioning = kwargs['useVersioning']
+
         if enable_partial_object_caching is not None:
             _setter("enable_partial_object_caching", enable_partial_object_caching)
         if enabled is not None:
@@ -35150,7 +39434,19 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorLargeFileOptimizationAdvanced
              prefetch_during_request: Optional[int] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fragmentSize' in kwargs:
+            fragment_size = kwargs['fragmentSize']
+        if 'objectSize' in kwargs:
+            object_size = kwargs['objectSize']
+        if 'prefetchAfterRequest' in kwargs:
+            prefetch_after_request = kwargs['prefetchAfterRequest']
+        if 'prefetchDuringRequest' in kwargs:
+            prefetch_during_request = kwargs['prefetchDuringRequest']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if fragment_size is not None:
@@ -35236,7 +39532,15 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateResult(dict):
              template_uuid: Optional[str] = None,
              threshold_tables: Optional[Sequence['outputs.GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateThresholdTableResult']] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bitrateTables' in kwargs:
+            bitrate_tables = kwargs['bitrateTables']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'thresholdTables' in kwargs:
+            threshold_tables = kwargs['thresholdTables']
+
         if bitrate_tables is not None:
             _setter("bitrate_tables", bitrate_tables)
         if enabled is not None:
@@ -35296,7 +39600,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateBitrateTableResul
              _setter: Callable[[Any, Any], None],
              bitrate_unit: Optional[str] = None,
              bitrate_value: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bitrateUnit' in kwargs:
+            bitrate_unit = kwargs['bitrateUnit']
+        if 'bitrateValue' in kwargs:
+            bitrate_value = kwargs['bitrateValue']
+
         if bitrate_unit is not None:
             _setter("bitrate_unit", bitrate_unit)
         if bitrate_value is not None:
@@ -35328,7 +39638,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateThresholdTableRes
              _setter: Callable[[Any, Any], None],
              threshold_unit: Optional[str] = None,
              threshold_value: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'thresholdUnit' in kwargs:
+            threshold_unit = kwargs['thresholdUnit']
+        if 'thresholdValue' in kwargs:
+            threshold_value = kwargs['thresholdValue']
+
         if threshold_unit is not None:
             _setter("threshold_unit", threshold_unit)
         if threshold_value is not None:
@@ -35369,7 +39685,15 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorLogCustomResult(dict):
              log_custom_log_field: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customLogField' in kwargs:
+            custom_log_field = kwargs['customLogField']
+        if 'logCustomLogField' in kwargs:
+            log_custom_log_field = kwargs['logCustomLogField']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if custom_log_field is not None:
             _setter("custom_log_field", custom_log_field)
         if locked is not None:
@@ -35446,7 +39770,23 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorMPulseResult(dict):
              template_uuid: Optional[str] = None,
              title_optional: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'apiKey' in kwargs:
+            api_key = kwargs['apiKey']
+        if 'bufferSize' in kwargs:
+            buffer_size = kwargs['bufferSize']
+        if 'configOverride' in kwargs:
+            config_override = kwargs['configOverride']
+        if 'loaderVersion' in kwargs:
+            loader_version = kwargs['loaderVersion']
+        if 'requirePci' in kwargs:
+            require_pci = kwargs['requirePci']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'titleOptional' in kwargs:
+            title_optional = kwargs['titleOptional']
+
         if api_key is not None:
             _setter("api_key", api_key)
         if buffer_size is not None:
@@ -35573,7 +39913,33 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorManifestPersonalizationResult
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hlsEnableDebugHeaders' in kwargs:
+            hls_enable_debug_headers = kwargs['hlsEnableDebugHeaders']
+        if 'hlsEnabled' in kwargs:
+            hls_enabled = kwargs['hlsEnabled']
+        if 'hlsFilterInBitrateRanges' in kwargs:
+            hls_filter_in_bitrate_ranges = kwargs['hlsFilterInBitrateRanges']
+        if 'hlsFilterInBitrates' in kwargs:
+            hls_filter_in_bitrates = kwargs['hlsFilterInBitrates']
+        if 'hlsMode' in kwargs:
+            hls_mode = kwargs['hlsMode']
+        if 'hlsPreferredBitrate' in kwargs:
+            hls_preferred_bitrate = kwargs['hlsPreferredBitrate']
+        if 'hlsQueryParamEnabled' in kwargs:
+            hls_query_param_enabled = kwargs['hlsQueryParamEnabled']
+        if 'hlsQueryParamSecretKey' in kwargs:
+            hls_query_param_secret_key = kwargs['hlsQueryParamSecretKey']
+        if 'hlsQueryParamTransitionKey' in kwargs:
+            hls_query_param_transition_key = kwargs['hlsQueryParamTransitionKey']
+        if 'hlsShowAdvanced' in kwargs:
+            hls_show_advanced = kwargs['hlsShowAdvanced']
+        if 'hlsTitle' in kwargs:
+            hls_title = kwargs['hlsTitle']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if hls_enable_debug_headers is not None:
@@ -35705,7 +40071,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorManifestReroutingResult(dict)
              template_uuid: Optional[str] = None,
              username: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if partner is not None:
@@ -35764,7 +40134,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorManualServerPushResult(dict):
              serverpushlists: Optional[Sequence[str]] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if serverpushlists is not None:
@@ -35816,7 +40190,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorMediaAccelerationResult(dict)
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -35868,7 +40246,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorMediaAccelerationQuicOptoutRe
              optout: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if optout is not None:
@@ -35926,7 +40308,15 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorMediaClientResult(dict):
              template_uuid: Optional[str] = None,
              use_hybrid_http_udp: Optional[bool] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'beaconId' in kwargs:
+            beacon_id = kwargs['beaconId']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'useHybridHttpUdp' in kwargs:
+            use_hybrid_http_udp = kwargs['useHybridHttpUdp']
+
         if beacon_id is not None:
             _setter("beacon_id", beacon_id)
         if enabled is not None:
@@ -35992,7 +40382,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorMediaFileRetrievalOptimizatio
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -36194,7 +40588,113 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorMediaOriginFailoverResult(dic
              other_options: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cacheErrorResponse' in kwargs:
+            cache_error_response = kwargs['cacheErrorResponse']
+        if 'cacheWindow' in kwargs:
+            cache_window = kwargs['cacheWindow']
+        if 'clientResponseCode' in kwargs:
+            client_response_code = kwargs['clientResponseCode']
+        if 'detectObjectUnavailable' in kwargs:
+            detect_object_unavailable = kwargs['detectObjectUnavailable']
+        if 'detectObjectUnavailableTitle' in kwargs:
+            detect_object_unavailable_title = kwargs['detectObjectUnavailableTitle']
+        if 'detectOriginUnavailable' in kwargs:
+            detect_origin_unavailable = kwargs['detectOriginUnavailable']
+        if 'detectOriginUnavailableTitle' in kwargs:
+            detect_origin_unavailable_title = kwargs['detectOriginUnavailableTitle']
+        if 'detectOriginUnresponsive' in kwargs:
+            detect_origin_unresponsive = kwargs['detectOriginUnresponsive']
+        if 'detectOriginUnresponsiveTitle' in kwargs:
+            detect_origin_unresponsive_title = kwargs['detectOriginUnresponsiveTitle']
+        if 'objectUnavailableAlternateHost' in kwargs:
+            object_unavailable_alternate_host = kwargs['objectUnavailableAlternateHost']
+        if 'objectUnavailableBackupHost' in kwargs:
+            object_unavailable_backup_host = kwargs['objectUnavailableBackupHost']
+        if 'objectUnavailableBlacklistOriginIp' in kwargs:
+            object_unavailable_blacklist_origin_ip = kwargs['objectUnavailableBlacklistOriginIp']
+        if 'objectUnavailableBlacklistWindow' in kwargs:
+            object_unavailable_blacklist_window = kwargs['objectUnavailableBlacklistWindow']
+        if 'objectUnavailableChangeProtocol' in kwargs:
+            object_unavailable_change_protocol = kwargs['objectUnavailableChangeProtocol']
+        if 'objectUnavailableDetectionLevel' in kwargs:
+            object_unavailable_detection_level = kwargs['objectUnavailableDetectionLevel']
+        if 'objectUnavailableIncludeQueryString' in kwargs:
+            object_unavailable_include_query_string = kwargs['objectUnavailableIncludeQueryString']
+        if 'objectUnavailableModifiedPath' in kwargs:
+            object_unavailable_modified_path = kwargs['objectUnavailableModifiedPath']
+        if 'objectUnavailableModifyRequestPath' in kwargs:
+            object_unavailable_modify_request_path = kwargs['objectUnavailableModifyRequestPath']
+        if 'objectUnavailableProtocol' in kwargs:
+            object_unavailable_protocol = kwargs['objectUnavailableProtocol']
+        if 'objectUnavailableRecovery' in kwargs:
+            object_unavailable_recovery = kwargs['objectUnavailableRecovery']
+        if 'objectUnavailableRedirectMethod' in kwargs:
+            object_unavailable_redirect_method = kwargs['objectUnavailableRedirectMethod']
+        if 'objectUnavailableResponseCodes' in kwargs:
+            object_unavailable_response_codes = kwargs['objectUnavailableResponseCodes']
+        if 'objectUnavailableRetryLimit' in kwargs:
+            object_unavailable_retry_limit = kwargs['objectUnavailableRetryLimit']
+        if 'originUnavailableAlternateHost' in kwargs:
+            origin_unavailable_alternate_host = kwargs['originUnavailableAlternateHost']
+        if 'originUnavailableBackupHost' in kwargs:
+            origin_unavailable_backup_host = kwargs['originUnavailableBackupHost']
+        if 'originUnavailableBlacklistOriginIp' in kwargs:
+            origin_unavailable_blacklist_origin_ip = kwargs['originUnavailableBlacklistOriginIp']
+        if 'originUnavailableBlacklistWindow' in kwargs:
+            origin_unavailable_blacklist_window = kwargs['originUnavailableBlacklistWindow']
+        if 'originUnavailableChangeProtocol' in kwargs:
+            origin_unavailable_change_protocol = kwargs['originUnavailableChangeProtocol']
+        if 'originUnavailableDetectionLevel' in kwargs:
+            origin_unavailable_detection_level = kwargs['originUnavailableDetectionLevel']
+        if 'originUnavailableIncludeQueryString' in kwargs:
+            origin_unavailable_include_query_string = kwargs['originUnavailableIncludeQueryString']
+        if 'originUnavailableModifiedPath' in kwargs:
+            origin_unavailable_modified_path = kwargs['originUnavailableModifiedPath']
+        if 'originUnavailableModifyRequestPath' in kwargs:
+            origin_unavailable_modify_request_path = kwargs['originUnavailableModifyRequestPath']
+        if 'originUnavailableProtocol' in kwargs:
+            origin_unavailable_protocol = kwargs['originUnavailableProtocol']
+        if 'originUnavailableRecovery' in kwargs:
+            origin_unavailable_recovery = kwargs['originUnavailableRecovery']
+        if 'originUnavailableRedirectMethod' in kwargs:
+            origin_unavailable_redirect_method = kwargs['originUnavailableRedirectMethod']
+        if 'originUnavailableResponseCodes' in kwargs:
+            origin_unavailable_response_codes = kwargs['originUnavailableResponseCodes']
+        if 'originUnavailableRetryLimit' in kwargs:
+            origin_unavailable_retry_limit = kwargs['originUnavailableRetryLimit']
+        if 'originUnresponsiveAlternateHost' in kwargs:
+            origin_unresponsive_alternate_host = kwargs['originUnresponsiveAlternateHost']
+        if 'originUnresponsiveBackupHost' in kwargs:
+            origin_unresponsive_backup_host = kwargs['originUnresponsiveBackupHost']
+        if 'originUnresponsiveBlacklistOriginIp' in kwargs:
+            origin_unresponsive_blacklist_origin_ip = kwargs['originUnresponsiveBlacklistOriginIp']
+        if 'originUnresponsiveBlacklistWindow' in kwargs:
+            origin_unresponsive_blacklist_window = kwargs['originUnresponsiveBlacklistWindow']
+        if 'originUnresponsiveChangeProtocol' in kwargs:
+            origin_unresponsive_change_protocol = kwargs['originUnresponsiveChangeProtocol']
+        if 'originUnresponsiveDetectionLevel' in kwargs:
+            origin_unresponsive_detection_level = kwargs['originUnresponsiveDetectionLevel']
+        if 'originUnresponsiveIncludeQueryString' in kwargs:
+            origin_unresponsive_include_query_string = kwargs['originUnresponsiveIncludeQueryString']
+        if 'originUnresponsiveModifiedPath' in kwargs:
+            origin_unresponsive_modified_path = kwargs['originUnresponsiveModifiedPath']
+        if 'originUnresponsiveModifyRequestPath' in kwargs:
+            origin_unresponsive_modify_request_path = kwargs['originUnresponsiveModifyRequestPath']
+        if 'originUnresponsiveProtocol' in kwargs:
+            origin_unresponsive_protocol = kwargs['originUnresponsiveProtocol']
+        if 'originUnresponsiveRecovery' in kwargs:
+            origin_unresponsive_recovery = kwargs['originUnresponsiveRecovery']
+        if 'originUnresponsiveRedirectMethod' in kwargs:
+            origin_unresponsive_redirect_method = kwargs['originUnresponsiveRedirectMethod']
+        if 'originUnresponsiveRetryLimit' in kwargs:
+            origin_unresponsive_retry_limit = kwargs['originUnresponsiveRetryLimit']
+        if 'otherOptions' in kwargs:
+            other_options = kwargs['otherOptions']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if cache_error_response is not None:
             _setter("cache_error_response", cache_error_response)
         if cache_window is not None:
@@ -36596,7 +41096,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorMetadataCachingResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -36651,7 +41155,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorMobileSdkPerformanceResult(di
              secondary_multipath_to_origin: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'secondaryMultipathToOrigin' in kwargs:
+            secondary_multipath_to_origin = kwargs['secondaryMultipathToOrigin']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -36734,7 +41244,27 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorModifyIncomingRequestHeaderRe
              standard_pass_header_name: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'avoidDuplicateHeaders' in kwargs:
+            avoid_duplicate_headers = kwargs['avoidDuplicateHeaders']
+        if 'customHeaderName' in kwargs:
+            custom_header_name = kwargs['customHeaderName']
+        if 'headerValue' in kwargs:
+            header_value = kwargs['headerValue']
+        if 'newHeaderValue' in kwargs:
+            new_header_value = kwargs['newHeaderValue']
+        if 'standardAddHeaderName' in kwargs:
+            standard_add_header_name = kwargs['standardAddHeaderName']
+        if 'standardDeleteHeaderName' in kwargs:
+            standard_delete_header_name = kwargs['standardDeleteHeaderName']
+        if 'standardModifyHeaderName' in kwargs:
+            standard_modify_header_name = kwargs['standardModifyHeaderName']
+        if 'standardPassHeaderName' in kwargs:
+            standard_pass_header_name = kwargs['standardPassHeaderName']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if action is not None:
             _setter("action", action)
         if avoid_duplicate_headers is not None:
@@ -36866,7 +41396,27 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorModifyIncomingResponseHeaderR
              standard_pass_header_name: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'avoidDuplicateHeaders' in kwargs:
+            avoid_duplicate_headers = kwargs['avoidDuplicateHeaders']
+        if 'customHeaderName' in kwargs:
+            custom_header_name = kwargs['customHeaderName']
+        if 'headerValue' in kwargs:
+            header_value = kwargs['headerValue']
+        if 'newHeaderValue' in kwargs:
+            new_header_value = kwargs['newHeaderValue']
+        if 'standardAddHeaderName' in kwargs:
+            standard_add_header_name = kwargs['standardAddHeaderName']
+        if 'standardDeleteHeaderName' in kwargs:
+            standard_delete_header_name = kwargs['standardDeleteHeaderName']
+        if 'standardModifyHeaderName' in kwargs:
+            standard_modify_header_name = kwargs['standardModifyHeaderName']
+        if 'standardPassHeaderName' in kwargs:
+            standard_pass_header_name = kwargs['standardPassHeaderName']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if action is not None:
             _setter("action", action)
         if avoid_duplicate_headers is not None:
@@ -37004,7 +41554,31 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorModifyOutgoingRequestHeaderRe
              standard_modify_header_name: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'avoidDuplicateHeaders' in kwargs:
+            avoid_duplicate_headers = kwargs['avoidDuplicateHeaders']
+        if 'customHeaderName' in kwargs:
+            custom_header_name = kwargs['customHeaderName']
+        if 'headerValue' in kwargs:
+            header_value = kwargs['headerValue']
+        if 'matchMultiple' in kwargs:
+            match_multiple = kwargs['matchMultiple']
+        if 'newHeaderValue' in kwargs:
+            new_header_value = kwargs['newHeaderValue']
+        if 'regexHeaderMatch' in kwargs:
+            regex_header_match = kwargs['regexHeaderMatch']
+        if 'regexHeaderReplace' in kwargs:
+            regex_header_replace = kwargs['regexHeaderReplace']
+        if 'standardAddHeaderName' in kwargs:
+            standard_add_header_name = kwargs['standardAddHeaderName']
+        if 'standardDeleteHeaderName' in kwargs:
+            standard_delete_header_name = kwargs['standardDeleteHeaderName']
+        if 'standardModifyHeaderName' in kwargs:
+            standard_modify_header_name = kwargs['standardModifyHeaderName']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if action is not None:
             _setter("action", action)
         if avoid_duplicate_headers is not None:
@@ -37156,7 +41730,31 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorModifyOutgoingResponseHeaderR
              standard_modify_header_name: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'avoidDuplicateHeaders' in kwargs:
+            avoid_duplicate_headers = kwargs['avoidDuplicateHeaders']
+        if 'customHeaderName' in kwargs:
+            custom_header_name = kwargs['customHeaderName']
+        if 'headerValue' in kwargs:
+            header_value = kwargs['headerValue']
+        if 'matchMultiple' in kwargs:
+            match_multiple = kwargs['matchMultiple']
+        if 'newHeaderValue' in kwargs:
+            new_header_value = kwargs['newHeaderValue']
+        if 'regexHeaderMatch' in kwargs:
+            regex_header_match = kwargs['regexHeaderMatch']
+        if 'regexHeaderReplace' in kwargs:
+            regex_header_replace = kwargs['regexHeaderReplace']
+        if 'standardAddHeaderName' in kwargs:
+            standard_add_header_name = kwargs['standardAddHeaderName']
+        if 'standardDeleteHeaderName' in kwargs:
+            standard_delete_header_name = kwargs['standardDeleteHeaderName']
+        if 'standardModifyHeaderName' in kwargs:
+            standard_modify_header_name = kwargs['standardModifyHeaderName']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if action is not None:
             _setter("action", action)
         if avoid_duplicate_headers is not None:
@@ -37284,7 +41882,15 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorModifyViaHeaderResult(dict):
              rename_header_to: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'modificationOption' in kwargs:
+            modification_option = kwargs['modificationOption']
+        if 'renameHeaderTo' in kwargs:
+            rename_header_to = kwargs['renameHeaderTo']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -37452,7 +42058,73 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorOriginResult(dict):
              use_unique_cache_key: Optional[bool] = None,
              uuid: Optional[str] = None,
              verification_mode: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cacheKeyHostname' in kwargs:
+            cache_key_hostname = kwargs['cacheKeyHostname']
+        if 'customCertificateAuthorities' in kwargs:
+            custom_certificate_authorities = kwargs['customCertificateAuthorities']
+        if 'customCertificates' in kwargs:
+            custom_certificates = kwargs['customCertificates']
+        if 'customForwardHostHeader' in kwargs:
+            custom_forward_host_header = kwargs['customForwardHostHeader']
+        if 'customValidCnValues' in kwargs:
+            custom_valid_cn_values = kwargs['customValidCnValues']
+        if 'enableTrueClientIp' in kwargs:
+            enable_true_client_ip = kwargs['enableTrueClientIp']
+        if 'forwardHostHeader' in kwargs:
+            forward_host_header = kwargs['forwardHostHeader']
+        if 'httpPort' in kwargs:
+            http_port = kwargs['httpPort']
+        if 'httpsPort' in kwargs:
+            https_port = kwargs['httpsPort']
+        if 'ipVersion' in kwargs:
+            ip_version = kwargs['ipVersion']
+        if 'netStorage' in kwargs:
+            net_storage = kwargs['netStorage']
+        if 'originCertificate' in kwargs:
+            origin_certificate = kwargs['originCertificate']
+        if 'originCertsToHonor' in kwargs:
+            origin_certs_to_honor = kwargs['originCertsToHonor']
+        if 'originId' in kwargs:
+            origin_id = kwargs['originId']
+        if 'originSni' in kwargs:
+            origin_sni = kwargs['originSni']
+        if 'originType' in kwargs:
+            origin_type = kwargs['originType']
+        if 'saasCnameEnabled' in kwargs:
+            saas_cname_enabled = kwargs['saasCnameEnabled']
+        if 'saasCnameLevel' in kwargs:
+            saas_cname_level = kwargs['saasCnameLevel']
+        if 'saasCookie' in kwargs:
+            saas_cookie = kwargs['saasCookie']
+        if 'saasQueryString' in kwargs:
+            saas_query_string = kwargs['saasQueryString']
+        if 'saasRegex' in kwargs:
+            saas_regex = kwargs['saasRegex']
+        if 'saasReplace' in kwargs:
+            saas_replace = kwargs['saasReplace']
+        if 'saasSuffix' in kwargs:
+            saas_suffix = kwargs['saasSuffix']
+        if 'saasType' in kwargs:
+            saas_type = kwargs['saasType']
+        if 'secondHostname' in kwargs:
+            second_hostname = kwargs['secondHostname']
+        if 'secondHostnameEnabled' in kwargs:
+            second_hostname_enabled = kwargs['secondHostnameEnabled']
+        if 'standardCertificateAuthorities' in kwargs:
+            standard_certificate_authorities = kwargs['standardCertificateAuthorities']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'trueClientIpClientSetting' in kwargs:
+            true_client_ip_client_setting = kwargs['trueClientIpClientSetting']
+        if 'trueClientIpHeader' in kwargs:
+            true_client_ip_header = kwargs['trueClientIpHeader']
+        if 'useUniqueCacheKey' in kwargs:
+            use_unique_cache_key = kwargs['useUniqueCacheKey']
+        if 'verificationMode' in kwargs:
+            verification_mode = kwargs['verificationMode']
+
         if cache_key_hostname is not None:
             _setter("cache_key_hostname", cache_key_hostname)
         if compress is not None:
@@ -37805,7 +42477,47 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristicsResult(d
              template_uuid: Optional[str] = None,
              use_custom_sign_string: Optional[bool] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessKeyEncryptedStorage' in kwargs:
+            access_key_encrypted_storage = kwargs['accessKeyEncryptedStorage']
+        if 'adcTitle' in kwargs:
+            adc_title = kwargs['adcTitle']
+        if 'authenticationMethod' in kwargs:
+            authentication_method = kwargs['authenticationMethod']
+        if 'authenticationMethodTitle' in kwargs:
+            authentication_method_title = kwargs['authenticationMethodTitle']
+        if 'awsAccessKeyId' in kwargs:
+            aws_access_key_id = kwargs['awsAccessKeyId']
+        if 'awsAccessKeyVersionGuid' in kwargs:
+            aws_access_key_version_guid = kwargs['awsAccessKeyVersionGuid']
+        if 'awsHost' in kwargs:
+            aws_host = kwargs['awsHost']
+        if 'awsRegion' in kwargs:
+            aws_region = kwargs['awsRegion']
+        if 'awsSecretAccessKey' in kwargs:
+            aws_secret_access_key = kwargs['awsSecretAccessKey']
+        if 'awsService' in kwargs:
+            aws_service = kwargs['awsService']
+        if 'customSignStrings' in kwargs:
+            custom_sign_strings = kwargs['customSignStrings']
+        if 'directConnectGeo' in kwargs:
+            direct_connect_geo = kwargs['directConnectGeo']
+        if 'encodingVersion' in kwargs:
+            encoding_version = kwargs['encodingVersion']
+        if 'gcsAccessKeyVersionGuid' in kwargs:
+            gcs_access_key_version_guid = kwargs['gcsAccessKeyVersionGuid']
+        if 'gcsHmacKeyAccessId' in kwargs:
+            gcs_hmac_key_access_id = kwargs['gcsHmacKeyAccessId']
+        if 'gcsHmacKeySecret' in kwargs:
+            gcs_hmac_key_secret = kwargs['gcsHmacKeySecret']
+        if 'secretKey' in kwargs:
+            secret_key = kwargs['secretKey']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'useCustomSignString' in kwargs:
+            use_custom_sign_string = kwargs['useCustomSignString']
+
         if access_key_encrypted_storage is not None:
             _setter("access_key_encrypted_storage", access_key_encrypted_storage)
         if adc_title is not None:
@@ -38004,7 +42716,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristicsWsdResul
              origintype: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if origintype is not None:
@@ -38038,23 +42754,157 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristicsWsdResul
 @pulumi.output_type
 class GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateResult(dict):
     def __init__(__self__, *,
+                 can_be_ca: Optional[bool] = None,
+                 can_be_leaf: Optional[bool] = None,
+                 issuer_rdns: Optional['outputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateIssuerRdnsResult'] = None,
+                 not_after: Optional[int] = None,
+                 not_before: Optional[int] = None,
                  pem_encoded_cert: Optional[str] = None,
-                 sha1_fingerprint: Optional[str] = None):
+                 public_key: Optional[str] = None,
+                 public_key_algorithm: Optional[str] = None,
+                 public_key_format: Optional[str] = None,
+                 self_signed: Optional[bool] = None,
+                 serial_number: Optional[str] = None,
+                 sha1_fingerprint: Optional[str] = None,
+                 sig_alg_name: Optional[str] = None,
+                 subject_alternative_names: Optional[Sequence[str]] = None,
+                 subject_cn: Optional[str] = None,
+                 subject_rdns: Optional['outputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateSubjectRdnsResult'] = None,
+                 version: Optional[int] = None):
         GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateResult._configure(
             lambda key, value: pulumi.set(__self__, key, value),
+            can_be_ca=can_be_ca,
+            can_be_leaf=can_be_leaf,
+            issuer_rdns=issuer_rdns,
+            not_after=not_after,
+            not_before=not_before,
             pem_encoded_cert=pem_encoded_cert,
+            public_key=public_key,
+            public_key_algorithm=public_key_algorithm,
+            public_key_format=public_key_format,
+            self_signed=self_signed,
+            serial_number=serial_number,
             sha1_fingerprint=sha1_fingerprint,
+            sig_alg_name=sig_alg_name,
+            subject_alternative_names=subject_alternative_names,
+            subject_cn=subject_cn,
+            subject_rdns=subject_rdns,
+            version=version,
         )
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
+             can_be_ca: Optional[bool] = None,
+             can_be_leaf: Optional[bool] = None,
+             issuer_rdns: Optional['outputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateIssuerRdnsResult'] = None,
+             not_after: Optional[int] = None,
+             not_before: Optional[int] = None,
              pem_encoded_cert: Optional[str] = None,
+             public_key: Optional[str] = None,
+             public_key_algorithm: Optional[str] = None,
+             public_key_format: Optional[str] = None,
+             self_signed: Optional[bool] = None,
+             serial_number: Optional[str] = None,
              sha1_fingerprint: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             sig_alg_name: Optional[str] = None,
+             subject_alternative_names: Optional[Sequence[str]] = None,
+             subject_cn: Optional[str] = None,
+             subject_rdns: Optional['outputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateSubjectRdnsResult'] = None,
+             version: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'canBeCa' in kwargs:
+            can_be_ca = kwargs['canBeCa']
+        if 'canBeLeaf' in kwargs:
+            can_be_leaf = kwargs['canBeLeaf']
+        if 'issuerRdns' in kwargs:
+            issuer_rdns = kwargs['issuerRdns']
+        if 'notAfter' in kwargs:
+            not_after = kwargs['notAfter']
+        if 'notBefore' in kwargs:
+            not_before = kwargs['notBefore']
+        if 'pemEncodedCert' in kwargs:
+            pem_encoded_cert = kwargs['pemEncodedCert']
+        if 'publicKey' in kwargs:
+            public_key = kwargs['publicKey']
+        if 'publicKeyAlgorithm' in kwargs:
+            public_key_algorithm = kwargs['publicKeyAlgorithm']
+        if 'publicKeyFormat' in kwargs:
+            public_key_format = kwargs['publicKeyFormat']
+        if 'selfSigned' in kwargs:
+            self_signed = kwargs['selfSigned']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if 'sha1Fingerprint' in kwargs:
+            sha1_fingerprint = kwargs['sha1Fingerprint']
+        if 'sigAlgName' in kwargs:
+            sig_alg_name = kwargs['sigAlgName']
+        if 'subjectAlternativeNames' in kwargs:
+            subject_alternative_names = kwargs['subjectAlternativeNames']
+        if 'subjectCn' in kwargs:
+            subject_cn = kwargs['subjectCn']
+        if 'subjectRdns' in kwargs:
+            subject_rdns = kwargs['subjectRdns']
+
+        if can_be_ca is not None:
+            _setter("can_be_ca", can_be_ca)
+        if can_be_leaf is not None:
+            _setter("can_be_leaf", can_be_leaf)
+        if issuer_rdns is not None:
+            _setter("issuer_rdns", issuer_rdns)
+        if not_after is not None:
+            _setter("not_after", not_after)
+        if not_before is not None:
+            _setter("not_before", not_before)
         if pem_encoded_cert is not None:
             _setter("pem_encoded_cert", pem_encoded_cert)
+        if public_key is not None:
+            _setter("public_key", public_key)
+        if public_key_algorithm is not None:
+            _setter("public_key_algorithm", public_key_algorithm)
+        if public_key_format is not None:
+            _setter("public_key_format", public_key_format)
+        if self_signed is not None:
+            _setter("self_signed", self_signed)
+        if serial_number is not None:
+            _setter("serial_number", serial_number)
         if sha1_fingerprint is not None:
             _setter("sha1_fingerprint", sha1_fingerprint)
+        if sig_alg_name is not None:
+            _setter("sig_alg_name", sig_alg_name)
+        if subject_alternative_names is not None:
+            _setter("subject_alternative_names", subject_alternative_names)
+        if subject_cn is not None:
+            _setter("subject_cn", subject_cn)
+        if subject_rdns is not None:
+            _setter("subject_rdns", subject_rdns)
+        if version is not None:
+            _setter("version", version)
+
+    @property
+    @pulumi.getter(name="canBeCa")
+    def can_be_ca(self) -> Optional[bool]:
+        return pulumi.get(self, "can_be_ca")
+
+    @property
+    @pulumi.getter(name="canBeLeaf")
+    def can_be_leaf(self) -> Optional[bool]:
+        return pulumi.get(self, "can_be_leaf")
+
+    @property
+    @pulumi.getter(name="issuerRdns")
+    def issuer_rdns(self) -> Optional['outputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateIssuerRdnsResult']:
+        return pulumi.get(self, "issuer_rdns")
+
+    @property
+    @pulumi.getter(name="notAfter")
+    def not_after(self) -> Optional[int]:
+        return pulumi.get(self, "not_after")
+
+    @property
+    @pulumi.getter(name="notBefore")
+    def not_before(self) -> Optional[int]:
+        return pulumi.get(self, "not_before")
 
     @property
     @pulumi.getter(name="pemEncodedCert")
@@ -38062,31 +42912,215 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateResult
         return pulumi.get(self, "pem_encoded_cert")
 
     @property
+    @pulumi.getter(name="publicKey")
+    def public_key(self) -> Optional[str]:
+        return pulumi.get(self, "public_key")
+
+    @property
+    @pulumi.getter(name="publicKeyAlgorithm")
+    def public_key_algorithm(self) -> Optional[str]:
+        return pulumi.get(self, "public_key_algorithm")
+
+    @property
+    @pulumi.getter(name="publicKeyFormat")
+    def public_key_format(self) -> Optional[str]:
+        return pulumi.get(self, "public_key_format")
+
+    @property
+    @pulumi.getter(name="selfSigned")
+    def self_signed(self) -> Optional[bool]:
+        return pulumi.get(self, "self_signed")
+
+    @property
+    @pulumi.getter(name="serialNumber")
+    def serial_number(self) -> Optional[str]:
+        return pulumi.get(self, "serial_number")
+
+    @property
     @pulumi.getter(name="sha1Fingerprint")
     def sha1_fingerprint(self) -> Optional[str]:
         return pulumi.get(self, "sha1_fingerprint")
+
+    @property
+    @pulumi.getter(name="sigAlgName")
+    def sig_alg_name(self) -> Optional[str]:
+        return pulumi.get(self, "sig_alg_name")
+
+    @property
+    @pulumi.getter(name="subjectAlternativeNames")
+    def subject_alternative_names(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "subject_alternative_names")
+
+    @property
+    @pulumi.getter(name="subjectCn")
+    def subject_cn(self) -> Optional[str]:
+        return pulumi.get(self, "subject_cn")
+
+    @property
+    @pulumi.getter(name="subjectRdns")
+    def subject_rdns(self) -> Optional['outputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateSubjectRdnsResult']:
+        return pulumi.get(self, "subject_rdns")
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[int]:
+        return pulumi.get(self, "version")
 
 
 @pulumi.output_type
 class GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthorityResult(dict):
     def __init__(__self__, *,
+                 can_be_ca: Optional[bool] = None,
+                 can_be_leaf: Optional[bool] = None,
+                 issuer_rdns: Optional['outputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthorityIssuerRdnsResult'] = None,
+                 not_after: Optional[int] = None,
+                 not_before: Optional[int] = None,
                  pem_encoded_cert: Optional[str] = None,
-                 sha1_fingerprint: Optional[str] = None):
+                 public_key: Optional[str] = None,
+                 public_key_algorithm: Optional[str] = None,
+                 public_key_format: Optional[str] = None,
+                 self_signed: Optional[bool] = None,
+                 serial_number: Optional[str] = None,
+                 sha1_fingerprint: Optional[str] = None,
+                 sig_alg_name: Optional[str] = None,
+                 subject_alternative_names: Optional[Sequence[str]] = None,
+                 subject_cn: Optional[str] = None,
+                 subject_rdns: Optional['outputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthoritySubjectRdnsResult'] = None,
+                 version: Optional[int] = None):
         GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthorityResult._configure(
             lambda key, value: pulumi.set(__self__, key, value),
+            can_be_ca=can_be_ca,
+            can_be_leaf=can_be_leaf,
+            issuer_rdns=issuer_rdns,
+            not_after=not_after,
+            not_before=not_before,
             pem_encoded_cert=pem_encoded_cert,
+            public_key=public_key,
+            public_key_algorithm=public_key_algorithm,
+            public_key_format=public_key_format,
+            self_signed=self_signed,
+            serial_number=serial_number,
             sha1_fingerprint=sha1_fingerprint,
+            sig_alg_name=sig_alg_name,
+            subject_alternative_names=subject_alternative_names,
+            subject_cn=subject_cn,
+            subject_rdns=subject_rdns,
+            version=version,
         )
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
+             can_be_ca: Optional[bool] = None,
+             can_be_leaf: Optional[bool] = None,
+             issuer_rdns: Optional['outputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthorityIssuerRdnsResult'] = None,
+             not_after: Optional[int] = None,
+             not_before: Optional[int] = None,
              pem_encoded_cert: Optional[str] = None,
+             public_key: Optional[str] = None,
+             public_key_algorithm: Optional[str] = None,
+             public_key_format: Optional[str] = None,
+             self_signed: Optional[bool] = None,
+             serial_number: Optional[str] = None,
              sha1_fingerprint: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             sig_alg_name: Optional[str] = None,
+             subject_alternative_names: Optional[Sequence[str]] = None,
+             subject_cn: Optional[str] = None,
+             subject_rdns: Optional['outputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthoritySubjectRdnsResult'] = None,
+             version: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'canBeCa' in kwargs:
+            can_be_ca = kwargs['canBeCa']
+        if 'canBeLeaf' in kwargs:
+            can_be_leaf = kwargs['canBeLeaf']
+        if 'issuerRdns' in kwargs:
+            issuer_rdns = kwargs['issuerRdns']
+        if 'notAfter' in kwargs:
+            not_after = kwargs['notAfter']
+        if 'notBefore' in kwargs:
+            not_before = kwargs['notBefore']
+        if 'pemEncodedCert' in kwargs:
+            pem_encoded_cert = kwargs['pemEncodedCert']
+        if 'publicKey' in kwargs:
+            public_key = kwargs['publicKey']
+        if 'publicKeyAlgorithm' in kwargs:
+            public_key_algorithm = kwargs['publicKeyAlgorithm']
+        if 'publicKeyFormat' in kwargs:
+            public_key_format = kwargs['publicKeyFormat']
+        if 'selfSigned' in kwargs:
+            self_signed = kwargs['selfSigned']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if 'sha1Fingerprint' in kwargs:
+            sha1_fingerprint = kwargs['sha1Fingerprint']
+        if 'sigAlgName' in kwargs:
+            sig_alg_name = kwargs['sigAlgName']
+        if 'subjectAlternativeNames' in kwargs:
+            subject_alternative_names = kwargs['subjectAlternativeNames']
+        if 'subjectCn' in kwargs:
+            subject_cn = kwargs['subjectCn']
+        if 'subjectRdns' in kwargs:
+            subject_rdns = kwargs['subjectRdns']
+
+        if can_be_ca is not None:
+            _setter("can_be_ca", can_be_ca)
+        if can_be_leaf is not None:
+            _setter("can_be_leaf", can_be_leaf)
+        if issuer_rdns is not None:
+            _setter("issuer_rdns", issuer_rdns)
+        if not_after is not None:
+            _setter("not_after", not_after)
+        if not_before is not None:
+            _setter("not_before", not_before)
         if pem_encoded_cert is not None:
             _setter("pem_encoded_cert", pem_encoded_cert)
+        if public_key is not None:
+            _setter("public_key", public_key)
+        if public_key_algorithm is not None:
+            _setter("public_key_algorithm", public_key_algorithm)
+        if public_key_format is not None:
+            _setter("public_key_format", public_key_format)
+        if self_signed is not None:
+            _setter("self_signed", self_signed)
+        if serial_number is not None:
+            _setter("serial_number", serial_number)
         if sha1_fingerprint is not None:
             _setter("sha1_fingerprint", sha1_fingerprint)
+        if sig_alg_name is not None:
+            _setter("sig_alg_name", sig_alg_name)
+        if subject_alternative_names is not None:
+            _setter("subject_alternative_names", subject_alternative_names)
+        if subject_cn is not None:
+            _setter("subject_cn", subject_cn)
+        if subject_rdns is not None:
+            _setter("subject_rdns", subject_rdns)
+        if version is not None:
+            _setter("version", version)
+
+    @property
+    @pulumi.getter(name="canBeCa")
+    def can_be_ca(self) -> Optional[bool]:
+        return pulumi.get(self, "can_be_ca")
+
+    @property
+    @pulumi.getter(name="canBeLeaf")
+    def can_be_leaf(self) -> Optional[bool]:
+        return pulumi.get(self, "can_be_leaf")
+
+    @property
+    @pulumi.getter(name="issuerRdns")
+    def issuer_rdns(self) -> Optional['outputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthorityIssuerRdnsResult']:
+        return pulumi.get(self, "issuer_rdns")
+
+    @property
+    @pulumi.getter(name="notAfter")
+    def not_after(self) -> Optional[int]:
+        return pulumi.get(self, "not_after")
+
+    @property
+    @pulumi.getter(name="notBefore")
+    def not_before(self) -> Optional[int]:
+        return pulumi.get(self, "not_before")
 
     @property
     @pulumi.getter(name="pemEncodedCert")
@@ -38094,9 +43128,275 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthor
         return pulumi.get(self, "pem_encoded_cert")
 
     @property
+    @pulumi.getter(name="publicKey")
+    def public_key(self) -> Optional[str]:
+        return pulumi.get(self, "public_key")
+
+    @property
+    @pulumi.getter(name="publicKeyAlgorithm")
+    def public_key_algorithm(self) -> Optional[str]:
+        return pulumi.get(self, "public_key_algorithm")
+
+    @property
+    @pulumi.getter(name="publicKeyFormat")
+    def public_key_format(self) -> Optional[str]:
+        return pulumi.get(self, "public_key_format")
+
+    @property
+    @pulumi.getter(name="selfSigned")
+    def self_signed(self) -> Optional[bool]:
+        return pulumi.get(self, "self_signed")
+
+    @property
+    @pulumi.getter(name="serialNumber")
+    def serial_number(self) -> Optional[str]:
+        return pulumi.get(self, "serial_number")
+
+    @property
     @pulumi.getter(name="sha1Fingerprint")
     def sha1_fingerprint(self) -> Optional[str]:
         return pulumi.get(self, "sha1_fingerprint")
+
+    @property
+    @pulumi.getter(name="sigAlgName")
+    def sig_alg_name(self) -> Optional[str]:
+        return pulumi.get(self, "sig_alg_name")
+
+    @property
+    @pulumi.getter(name="subjectAlternativeNames")
+    def subject_alternative_names(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "subject_alternative_names")
+
+    @property
+    @pulumi.getter(name="subjectCn")
+    def subject_cn(self) -> Optional[str]:
+        return pulumi.get(self, "subject_cn")
+
+    @property
+    @pulumi.getter(name="subjectRdns")
+    def subject_rdns(self) -> Optional['outputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthoritySubjectRdnsResult']:
+        return pulumi.get(self, "subject_rdns")
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[int]:
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthorityIssuerRdnsResult(dict):
+    def __init__(__self__, *,
+                 c: Optional[str] = None,
+                 cn: Optional[str] = None,
+                 o: Optional[str] = None,
+                 ou: Optional[str] = None):
+        GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthorityIssuerRdnsResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            c=c,
+            cn=cn,
+            o=o,
+            ou=ou,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             c: Optional[str] = None,
+             cn: Optional[str] = None,
+             o: Optional[str] = None,
+             ou: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
+        if c is not None:
+            _setter("c", c)
+        if cn is not None:
+            _setter("cn", cn)
+        if o is not None:
+            _setter("o", o)
+        if ou is not None:
+            _setter("ou", ou)
+
+    @property
+    @pulumi.getter
+    def c(self) -> Optional[str]:
+        return pulumi.get(self, "c")
+
+    @property
+    @pulumi.getter
+    def cn(self) -> Optional[str]:
+        return pulumi.get(self, "cn")
+
+    @property
+    @pulumi.getter
+    def o(self) -> Optional[str]:
+        return pulumi.get(self, "o")
+
+    @property
+    @pulumi.getter
+    def ou(self) -> Optional[str]:
+        return pulumi.get(self, "ou")
+
+
+@pulumi.output_type
+class GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthoritySubjectRdnsResult(dict):
+    def __init__(__self__, *,
+                 c: Optional[str] = None,
+                 cn: Optional[str] = None,
+                 o: Optional[str] = None,
+                 ou: Optional[str] = None):
+        GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthoritySubjectRdnsResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            c=c,
+            cn=cn,
+            o=o,
+            ou=ou,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             c: Optional[str] = None,
+             cn: Optional[str] = None,
+             o: Optional[str] = None,
+             ou: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
+        if c is not None:
+            _setter("c", c)
+        if cn is not None:
+            _setter("cn", cn)
+        if o is not None:
+            _setter("o", o)
+        if ou is not None:
+            _setter("ou", ou)
+
+    @property
+    @pulumi.getter
+    def c(self) -> Optional[str]:
+        return pulumi.get(self, "c")
+
+    @property
+    @pulumi.getter
+    def cn(self) -> Optional[str]:
+        return pulumi.get(self, "cn")
+
+    @property
+    @pulumi.getter
+    def o(self) -> Optional[str]:
+        return pulumi.get(self, "o")
+
+    @property
+    @pulumi.getter
+    def ou(self) -> Optional[str]:
+        return pulumi.get(self, "ou")
+
+
+@pulumi.output_type
+class GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateIssuerRdnsResult(dict):
+    def __init__(__self__, *,
+                 c: Optional[str] = None,
+                 cn: Optional[str] = None,
+                 o: Optional[str] = None,
+                 ou: Optional[str] = None):
+        GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateIssuerRdnsResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            c=c,
+            cn=cn,
+            o=o,
+            ou=ou,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             c: Optional[str] = None,
+             cn: Optional[str] = None,
+             o: Optional[str] = None,
+             ou: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
+        if c is not None:
+            _setter("c", c)
+        if cn is not None:
+            _setter("cn", cn)
+        if o is not None:
+            _setter("o", o)
+        if ou is not None:
+            _setter("ou", ou)
+
+    @property
+    @pulumi.getter
+    def c(self) -> Optional[str]:
+        return pulumi.get(self, "c")
+
+    @property
+    @pulumi.getter
+    def cn(self) -> Optional[str]:
+        return pulumi.get(self, "cn")
+
+    @property
+    @pulumi.getter
+    def o(self) -> Optional[str]:
+        return pulumi.get(self, "o")
+
+    @property
+    @pulumi.getter
+    def ou(self) -> Optional[str]:
+        return pulumi.get(self, "ou")
+
+
+@pulumi.output_type
+class GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateSubjectRdnsResult(dict):
+    def __init__(__self__, *,
+                 c: Optional[str] = None,
+                 cn: Optional[str] = None,
+                 o: Optional[str] = None,
+                 ou: Optional[str] = None):
+        GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateSubjectRdnsResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            c=c,
+            cn=cn,
+            o=o,
+            ou=ou,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             c: Optional[str] = None,
+             cn: Optional[str] = None,
+             o: Optional[str] = None,
+             ou: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
+        if c is not None:
+            _setter("c", c)
+        if cn is not None:
+            _setter("cn", cn)
+        if o is not None:
+            _setter("o", o)
+        if ou is not None:
+            _setter("ou", ou)
+
+    @property
+    @pulumi.getter
+    def c(self) -> Optional[str]:
+        return pulumi.get(self, "c")
+
+    @property
+    @pulumi.getter
+    def cn(self) -> Optional[str]:
+        return pulumi.get(self, "cn")
+
+    @property
+    @pulumi.getter
+    def o(self) -> Optional[str]:
+        return pulumi.get(self, "o")
+
+    @property
+    @pulumi.getter
+    def ou(self) -> Optional[str]:
+        return pulumi.get(self, "ou")
 
 
 @pulumi.output_type
@@ -38123,7 +43423,15 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorOriginFailureRecoveryMethodRe
              recovery_method: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customStatusCode' in kwargs:
+            custom_status_code = kwargs['customStatusCode']
+        if 'recoveryMethod' in kwargs:
+            recovery_method = kwargs['recoveryMethod']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if custom_status_code is not None:
             _setter("custom_status_code", custom_status_code)
         if locked is not None:
@@ -38272,7 +43580,71 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorOriginFailureRecoveryPolicyRe
              template_uuid: Optional[str] = None,
              tuning_parameters: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'binaryEquivalentContent' in kwargs:
+            binary_equivalent_content = kwargs['binaryEquivalentContent']
+        if 'enableIpAvoidance' in kwargs:
+            enable_ip_avoidance = kwargs['enableIpAvoidance']
+        if 'ipAvoidanceErrorThreshold' in kwargs:
+            ip_avoidance_error_threshold = kwargs['ipAvoidanceErrorThreshold']
+        if 'ipAvoidanceRetryInterval' in kwargs:
+            ip_avoidance_retry_interval = kwargs['ipAvoidanceRetryInterval']
+        if 'monitorOriginResponsiveness' in kwargs:
+            monitor_origin_responsiveness = kwargs['monitorOriginResponsiveness']
+        if 'monitorResponseCodes1s' in kwargs:
+            monitor_response_codes1s = kwargs['monitorResponseCodes1s']
+        if 'monitorResponseCodes2s' in kwargs:
+            monitor_response_codes2s = kwargs['monitorResponseCodes2s']
+        if 'monitorResponseCodes3s' in kwargs:
+            monitor_response_codes3s = kwargs['monitorResponseCodes3s']
+        if 'monitorStatusCodes1' in kwargs:
+            monitor_status_codes1 = kwargs['monitorStatusCodes1']
+        if 'monitorStatusCodes1EnableRecovery' in kwargs:
+            monitor_status_codes1_enable_recovery = kwargs['monitorStatusCodes1EnableRecovery']
+        if 'monitorStatusCodes1EnableRetry' in kwargs:
+            monitor_status_codes1_enable_retry = kwargs['monitorStatusCodes1EnableRetry']
+        if 'monitorStatusCodes1RecoveryConfigName' in kwargs:
+            monitor_status_codes1_recovery_config_name = kwargs['monitorStatusCodes1RecoveryConfigName']
+        if 'monitorStatusCodes2' in kwargs:
+            monitor_status_codes2 = kwargs['monitorStatusCodes2']
+        if 'monitorStatusCodes2EnableRecovery' in kwargs:
+            monitor_status_codes2_enable_recovery = kwargs['monitorStatusCodes2EnableRecovery']
+        if 'monitorStatusCodes2EnableRetry' in kwargs:
+            monitor_status_codes2_enable_retry = kwargs['monitorStatusCodes2EnableRetry']
+        if 'monitorStatusCodes2RecoveryConfigName' in kwargs:
+            monitor_status_codes2_recovery_config_name = kwargs['monitorStatusCodes2RecoveryConfigName']
+        if 'monitorStatusCodes3' in kwargs:
+            monitor_status_codes3 = kwargs['monitorStatusCodes3']
+        if 'monitorStatusCodes3EnableRecovery' in kwargs:
+            monitor_status_codes3_enable_recovery = kwargs['monitorStatusCodes3EnableRecovery']
+        if 'monitorStatusCodes3EnableRetry' in kwargs:
+            monitor_status_codes3_enable_retry = kwargs['monitorStatusCodes3EnableRetry']
+        if 'monitorStatusCodes3RecoveryConfigName' in kwargs:
+            monitor_status_codes3_recovery_config_name = kwargs['monitorStatusCodes3RecoveryConfigName']
+        if 'originResponsivenessCustomTimeout' in kwargs:
+            origin_responsiveness_custom_timeout = kwargs['originResponsivenessCustomTimeout']
+        if 'originResponsivenessEnableRecovery' in kwargs:
+            origin_responsiveness_enable_recovery = kwargs['originResponsivenessEnableRecovery']
+        if 'originResponsivenessEnableRetry' in kwargs:
+            origin_responsiveness_enable_retry = kwargs['originResponsivenessEnableRetry']
+        if 'originResponsivenessMonitoring' in kwargs:
+            origin_responsiveness_monitoring = kwargs['originResponsivenessMonitoring']
+        if 'originResponsivenessRecoveryConfigName' in kwargs:
+            origin_responsiveness_recovery_config_name = kwargs['originResponsivenessRecoveryConfigName']
+        if 'originResponsivenessTimeout' in kwargs:
+            origin_responsiveness_timeout = kwargs['originResponsivenessTimeout']
+        if 'statusCodeMonitoring1' in kwargs:
+            status_code_monitoring1 = kwargs['statusCodeMonitoring1']
+        if 'statusCodeMonitoring2' in kwargs:
+            status_code_monitoring2 = kwargs['statusCodeMonitoring2']
+        if 'statusCodeMonitoring3' in kwargs:
+            status_code_monitoring3 = kwargs['statusCodeMonitoring3']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'tuningParameters' in kwargs:
+            tuning_parameters = kwargs['tuningParameters']
+
         if binary_equivalent_content is not None:
             _setter("binary_equivalent_content", binary_equivalent_content)
         if enable_ip_avoidance is not None:
@@ -38534,7 +43906,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorOriginIpAclResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enable is not None:
             _setter("enable", enable)
         if locked is not None:
@@ -38583,7 +43959,15 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorOriginNetStorageResult(dict):
              cp_code: Optional[int] = None,
              download_domain_name: Optional[str] = None,
              g2o_token: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCode' in kwargs:
+            cp_code = kwargs['cpCode']
+        if 'downloadDomainName' in kwargs:
+            download_domain_name = kwargs['downloadDomainName']
+        if 'g2oToken' in kwargs:
+            g2o_token = kwargs['g2oToken']
+
         if cp_code is not None:
             _setter("cp_code", cp_code)
         if download_domain_name is not None:
@@ -38631,7 +44015,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorPersistentClientConnectionRes
              template_uuid: Optional[str] = None,
              timeout: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -38693,7 +44081,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorPersistentConnectionResult(di
              template_uuid: Optional[str] = None,
              timeout: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -38752,7 +44144,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorPersonallyIdentifiableInforma
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -38837,7 +44233,31 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorPhasedReleaseResult(dict):
              population_title: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudletPolicy' in kwargs:
+            cloudlet_policy = kwargs['cloudletPolicy']
+        if 'failoverDuration' in kwargs:
+            failover_duration = kwargs['failoverDuration']
+        if 'failoverEnabled' in kwargs:
+            failover_enabled = kwargs['failoverEnabled']
+        if 'failoverResponseCodes' in kwargs:
+            failover_response_codes = kwargs['failoverResponseCodes']
+        if 'failoverTitle' in kwargs:
+            failover_title = kwargs['failoverTitle']
+        if 'populationCookieType' in kwargs:
+            population_cookie_type = kwargs['populationCookieType']
+        if 'populationDuration' in kwargs:
+            population_duration = kwargs['populationDuration']
+        if 'populationExpirationDate' in kwargs:
+            population_expiration_date = kwargs['populationExpirationDate']
+        if 'populationRefresh' in kwargs:
+            population_refresh = kwargs['populationRefresh']
+        if 'populationTitle' in kwargs:
+            population_title = kwargs['populationTitle']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if cloudlet_policy is not None:
             _setter("cloudlet_policy", cloudlet_policy)
         if enabled is not None:
@@ -38960,7 +44380,9 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorPhasedReleaseCloudletPolicyRe
              _setter: Callable[[Any, Any], None],
              id: Optional[int] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
         if name is not None:
@@ -38998,7 +44420,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorPreconnectResult(dict):
              preconnectlists: Optional[Sequence[str]] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if preconnectlists is not None:
@@ -39050,7 +44476,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorPredictiveContentDeliveryResu
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -39105,7 +44535,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorPredictivePrefetchingResult(d
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accuracyTarget' in kwargs:
+            accuracy_target = kwargs['accuracyTarget']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if accuracy_target is not None:
             _setter("accuracy_target", accuracy_target)
         if enabled is not None:
@@ -39164,7 +44600,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorPrefetchResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -39216,7 +44656,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorPrefetchableResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -39271,7 +44715,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorPrefreshCacheResult(dict):
              prefreshval: Optional[int] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -39375,7 +44823,41 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorQualityResult(dict):
              segment_duration: Optional[int] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'audienceSettings' in kwargs:
+            audience_settings = kwargs['audienceSettings']
+        if 'catalogSize' in kwargs:
+            catalog_size = kwargs['catalogSize']
+        if 'contentSettings' in kwargs:
+            content_settings = kwargs['contentSettings']
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'deliveryFormat' in kwargs:
+            delivery_format = kwargs['deliveryFormat']
+        if 'deliveryType' in kwargs:
+            delivery_type = kwargs['deliveryType']
+        if 'downloadType' in kwargs:
+            download_type = kwargs['downloadType']
+        if 'endUserLocation' in kwargs:
+            end_user_location = kwargs['endUserLocation']
+        if 'maximumConcurrentUsers' in kwargs:
+            maximum_concurrent_users = kwargs['maximumConcurrentUsers']
+        if 'objectSize' in kwargs:
+            object_size = kwargs['objectSize']
+        if 'optimizeFor' in kwargs:
+            optimize_for = kwargs['optimizeFor']
+        if 'originSettings' in kwargs:
+            origin_settings = kwargs['originSettings']
+        if 'popularityDistribution' in kwargs:
+            popularity_distribution = kwargs['popularityDistribution']
+        if 'refreshRate' in kwargs:
+            refresh_rate = kwargs['refreshRate']
+        if 'segmentDuration' in kwargs:
+            segment_duration = kwargs['segmentDuration']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if audience_settings is not None:
             _setter("audience_settings", audience_settings)
         if catalog_size is not None:
@@ -39535,7 +45017,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorQuicBetaResult(dict):
              quic_offer_percentage: Optional[int] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'quicOfferPercentage' in kwargs:
+            quic_offer_percentage = kwargs['quicOfferPercentage']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -39600,7 +45088,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorRandomSeekResult(dict):
              mp4: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maximumSize' in kwargs:
+            maximum_size = kwargs['maximumSize']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if flv is not None:
             _setter("flv", flv)
         if locked is not None:
@@ -39666,7 +45160,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorRapidResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -39718,7 +45216,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorReadTimeoutResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if template_uuid is not None:
@@ -39776,7 +45278,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorRealTimeReportingResult(dict)
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'beaconSamplingPercentage' in kwargs:
+            beacon_sampling_percentage = kwargs['beaconSamplingPercentage']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if advanced is not None:
             _setter("advanced", advanced)
         if beacon_sampling_percentage is not None:
@@ -39842,7 +45350,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorRealUserMonitoringResult(dict
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -39930,7 +45442,37 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorRedirectResult(dict):
              response_code: Optional[int] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationHostname' in kwargs:
+            destination_hostname = kwargs['destinationHostname']
+        if 'destinationHostnameOther' in kwargs:
+            destination_hostname_other = kwargs['destinationHostnameOther']
+        if 'destinationHostnameSibling' in kwargs:
+            destination_hostname_sibling = kwargs['destinationHostnameSibling']
+        if 'destinationHostnameSubdomain' in kwargs:
+            destination_hostname_subdomain = kwargs['destinationHostnameSubdomain']
+        if 'destinationPath' in kwargs:
+            destination_path = kwargs['destinationPath']
+        if 'destinationPathOther' in kwargs:
+            destination_path_other = kwargs['destinationPathOther']
+        if 'destinationPathPrefix' in kwargs:
+            destination_path_prefix = kwargs['destinationPathPrefix']
+        if 'destinationPathSuffix' in kwargs:
+            destination_path_suffix = kwargs['destinationPathSuffix']
+        if 'destinationPathSuffixStatus' in kwargs:
+            destination_path_suffix_status = kwargs['destinationPathSuffixStatus']
+        if 'destinationProtocol' in kwargs:
+            destination_protocol = kwargs['destinationProtocol']
+        if 'mobileDefaultChoice' in kwargs:
+            mobile_default_choice = kwargs['mobileDefaultChoice']
+        if 'queryString' in kwargs:
+            query_string = kwargs['queryString']
+        if 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if destination_hostname is not None:
             _setter("destination_hostname", destination_hostname)
         if destination_hostname_other is not None:
@@ -40072,7 +45614,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorRedirectplusResult(dict):
              response_code: Optional[int] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if destination is not None:
             _setter("destination", destination)
         if enabled is not None:
@@ -40147,7 +45695,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorRefererCheckingResult(dict):
              strict: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowChildren' in kwargs:
+            allow_children = kwargs['allowChildren']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if allow_children is not None:
             _setter("allow_children", allow_children)
         if domains is not None:
@@ -40220,7 +45774,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorRemoveQueryParameterResult(di
              parameters: Optional[Sequence[str]] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if parameters is not None:
@@ -40272,7 +45830,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorRemoveVaryResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -40351,7 +45913,29 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorReportResult(dict):
              log_x_forwarded_for: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customLogField' in kwargs:
+            custom_log_field = kwargs['customLogField']
+        if 'logAcceptLanguage' in kwargs:
+            log_accept_language = kwargs['logAcceptLanguage']
+        if 'logCookies' in kwargs:
+            log_cookies = kwargs['logCookies']
+        if 'logCustomLogField' in kwargs:
+            log_custom_log_field = kwargs['logCustomLogField']
+        if 'logEdgeIp' in kwargs:
+            log_edge_ip = kwargs['logEdgeIp']
+        if 'logHost' in kwargs:
+            log_host = kwargs['logHost']
+        if 'logReferer' in kwargs:
+            log_referer = kwargs['logReferer']
+        if 'logUserAgent' in kwargs:
+            log_user_agent = kwargs['logUserAgent']
+        if 'logXForwardedFor' in kwargs:
+            log_x_forwarded_for = kwargs['logXForwardedFor']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if cookies is not None:
             _setter("cookies", cookies)
         if custom_log_field is not None:
@@ -40487,7 +46071,25 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlResult(dict):
              net_storage: Optional['outputs.GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlNetStorageResult'] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'branded403File' in kwargs:
+            branded403_file = kwargs['branded403File']
+        if 'branded403StatusCode' in kwargs:
+            branded403_status_code = kwargs['branded403StatusCode']
+        if 'branded403Url' in kwargs:
+            branded403_url = kwargs['branded403Url']
+        if 'brandedDenyCacheTtl' in kwargs:
+            branded_deny_cache_ttl = kwargs['brandedDenyCacheTtl']
+        if 'cloudletPolicy' in kwargs:
+            cloudlet_policy = kwargs['cloudletPolicy']
+        if 'enableBranded403' in kwargs:
+            enable_branded403 = kwargs['enableBranded403']
+        if 'netStorage' in kwargs:
+            net_storage = kwargs['netStorage']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if branded403_file is not None:
             _setter("branded403_file", branded403_file)
         if branded403_status_code is not None:
@@ -40582,7 +46184,9 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlCloudletPolicyR
              _setter: Callable[[Any, Any], None],
              id: Optional[int] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
         if name is not None:
@@ -40617,7 +46221,15 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlNetStorageResul
              cp_code: Optional[int] = None,
              download_domain_name: Optional[str] = None,
              g2o_token: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCode' in kwargs:
+            cp_code = kwargs['cpCode']
+        if 'downloadDomainName' in kwargs:
+            download_domain_name = kwargs['downloadDomainName']
+        if 'g2oToken' in kwargs:
+            g2o_token = kwargs['g2oToken']
+
         if cp_code is not None:
             _setter("cp_code", cp_code)
         if download_domain_name is not None:
@@ -40662,7 +46274,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorRequestTypeMarkerResult(dict)
              request_type: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'requestType' in kwargs:
+            request_type = kwargs['requestType']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if request_type is not None:
@@ -40714,7 +46332,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorResourceOptimizerResult(dict)
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -40769,7 +46391,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorResourceOptimizerExtendedComp
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableAllFeatures' in kwargs:
+            enable_all_features = kwargs['enableAllFeatures']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enable_all_features is not None:
             _setter("enable_all_features", enable_all_features)
         if enabled is not None:
@@ -40831,7 +46459,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorResponseCodeResult(dict):
              status_code: Optional[int] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'statusCode' in kwargs:
+            status_code = kwargs['statusCode']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if override206 is not None:
@@ -40932,7 +46566,23 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorResponseCookieResult(dict):
              type: Optional[str] = None,
              uuid: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cookieName' in kwargs:
+            cookie_name = kwargs['cookieName']
+        if 'defaultDomain' in kwargs:
+            default_domain = kwargs['defaultDomain']
+        if 'defaultPath' in kwargs:
+            default_path = kwargs['defaultPath']
+        if 'expirationDate' in kwargs:
+            expiration_date = kwargs['expirationDate']
+        if 'httpOnly' in kwargs:
+            http_only = kwargs['httpOnly']
+        if 'sameSite' in kwargs:
+            same_site = kwargs['sameSite']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if cookie_name is not None:
             _setter("cookie_name", cookie_name)
         if default_domain is not None:
@@ -41082,7 +46732,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorRestrictObjectCachingResult(d
              maximum_size: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maximumSize' in kwargs:
+            maximum_size = kwargs['maximumSize']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if maximum_size is not None:
@@ -41134,7 +46790,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorReturnCacheStatusResult(dict)
              response_header_name: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'responseHeaderName' in kwargs:
+            response_header_name = kwargs['responseHeaderName']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if response_header_name is not None:
@@ -41210,7 +46872,25 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorRewriteUrlResult(dict):
              target_url: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keepQueryString' in kwargs:
+            keep_query_string = kwargs['keepQueryString']
+        if 'matchMultiple' in kwargs:
+            match_multiple = kwargs['matchMultiple']
+        if 'matchRegex' in kwargs:
+            match_regex = kwargs['matchRegex']
+        if 'targetPath' in kwargs:
+            target_path = kwargs['targetPath']
+        if 'targetPathPrepend' in kwargs:
+            target_path_prepend = kwargs['targetPathPrepend']
+        if 'targetRegex' in kwargs:
+            target_regex = kwargs['targetRegex']
+        if 'targetUrl' in kwargs:
+            target_url = kwargs['targetUrl']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if behavior is not None:
             _setter("behavior", behavior)
         if keep_query_string is not None:
@@ -41321,7 +47001,15 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorRumCustomResult(dict):
              rum_sample_rate: Optional[int] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'rumGroupName' in kwargs:
+            rum_group_name = kwargs['rumGroupName']
+        if 'rumSampleRate' in kwargs:
+            rum_sample_rate = kwargs['rumSampleRate']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if rum_group_name is not None:
@@ -41449,7 +47137,59 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorSaasDefinitionsResult(dict):
              users_replace: Optional[str] = None,
              users_title: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applicationAction' in kwargs:
+            application_action = kwargs['applicationAction']
+        if 'applicationCnameEnabled' in kwargs:
+            application_cname_enabled = kwargs['applicationCnameEnabled']
+        if 'applicationCnameLevel' in kwargs:
+            application_cname_level = kwargs['applicationCnameLevel']
+        if 'applicationCookie' in kwargs:
+            application_cookie = kwargs['applicationCookie']
+        if 'applicationQueryString' in kwargs:
+            application_query_string = kwargs['applicationQueryString']
+        if 'applicationRegex' in kwargs:
+            application_regex = kwargs['applicationRegex']
+        if 'applicationReplace' in kwargs:
+            application_replace = kwargs['applicationReplace']
+        if 'applicationTitle' in kwargs:
+            application_title = kwargs['applicationTitle']
+        if 'customerAction' in kwargs:
+            customer_action = kwargs['customerAction']
+        if 'customerCnameEnabled' in kwargs:
+            customer_cname_enabled = kwargs['customerCnameEnabled']
+        if 'customerCnameLevel' in kwargs:
+            customer_cname_level = kwargs['customerCnameLevel']
+        if 'customerCookie' in kwargs:
+            customer_cookie = kwargs['customerCookie']
+        if 'customerQueryString' in kwargs:
+            customer_query_string = kwargs['customerQueryString']
+        if 'customerRegex' in kwargs:
+            customer_regex = kwargs['customerRegex']
+        if 'customerReplace' in kwargs:
+            customer_replace = kwargs['customerReplace']
+        if 'customerTitle' in kwargs:
+            customer_title = kwargs['customerTitle']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'usersAction' in kwargs:
+            users_action = kwargs['usersAction']
+        if 'usersCnameEnabled' in kwargs:
+            users_cname_enabled = kwargs['usersCnameEnabled']
+        if 'usersCnameLevel' in kwargs:
+            users_cname_level = kwargs['usersCnameLevel']
+        if 'usersCookie' in kwargs:
+            users_cookie = kwargs['usersCookie']
+        if 'usersQueryString' in kwargs:
+            users_query_string = kwargs['usersQueryString']
+        if 'usersRegex' in kwargs:
+            users_regex = kwargs['usersRegex']
+        if 'usersReplace' in kwargs:
+            users_replace = kwargs['usersReplace']
+        if 'usersTitle' in kwargs:
+            users_title = kwargs['usersTitle']
+
         if application_action is not None:
             _setter("application_action", application_action)
         if application_cname_enabled is not None:
@@ -41680,7 +47420,23 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudClient
              sf3c_origin_host_header: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowOverrideOriginCacheKey' in kwargs:
+            allow_override_origin_cache_key = kwargs['allowOverrideOriginCacheKey']
+        if 'connectorId' in kwargs:
+            connector_id = kwargs['connectorId']
+        if 'originHostHeader' in kwargs:
+            origin_host_header = kwargs['originHostHeader']
+        if 'originType' in kwargs:
+            origin_type = kwargs['originType']
+        if 'sf3cOriginHost' in kwargs:
+            sf3c_origin_host = kwargs['sf3cOriginHost']
+        if 'sf3cOriginHostHeader' in kwargs:
+            sf3c_origin_host_header = kwargs['sf3cOriginHostHeader']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if allow_override_origin_cache_key is not None:
             _setter("allow_override_origin_cache_key", allow_override_origin_cache_key)
         if connector_id is not None:
@@ -41774,7 +47530,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudProvid
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -41826,7 +47586,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudProvid
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hostHeaderSource' in kwargs:
+            host_header_source = kwargs['hostHeaderSource']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if host_header_source is not None:
             _setter("host_header_source", host_header_source)
         if locked is not None:
@@ -41878,7 +47644,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorSavePostDcaProcessingResult(d
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -41939,7 +47709,15 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorScheduleInvalidationResult(di
              start: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'refreshMethod' in kwargs:
+            refresh_method = kwargs['refreshMethod']
+        if 'repeatInterval' in kwargs:
+            repeat_interval = kwargs['repeatInterval']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if refresh_method is not None:
@@ -42018,7 +47796,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorScriptManagementResult(dict):
              template_uuid: Optional[str] = None,
              timestamp: Optional[int] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -42144,7 +47926,43 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedContentProtectionRes
              transition_key: Optional[str] = None,
              use_advanced: Optional[bool] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dashMediaEncryption' in kwargs:
+            dash_media_encryption = kwargs['dashMediaEncryption']
+        if 'dataPayload' in kwargs:
+            data_payload = kwargs['dataPayload']
+        if 'enableTokenInUri' in kwargs:
+            enable_token_in_uri = kwargs['enableTokenInUri']
+        if 'fieldCarryOver' in kwargs:
+            field_carry_over = kwargs['fieldCarryOver']
+        if 'headerForSalts' in kwargs:
+            header_for_salts = kwargs['headerForSalts']
+        if 'hlsMasterManifestFiles' in kwargs:
+            hls_master_manifest_files = kwargs['hlsMasterManifestFiles']
+        if 'hlsMediaEncryption' in kwargs:
+            hls_media_encryption = kwargs['hlsMediaEncryption']
+        if 'mediaEncryptionTitle' in kwargs:
+            media_encryption_title = kwargs['mediaEncryptionTitle']
+        if 'revokedListId' in kwargs:
+            revoked_list_id = kwargs['revokedListId']
+        if 'sessionId' in kwargs:
+            session_id = kwargs['sessionId']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'tokenAuthHlsTitle' in kwargs:
+            token_auth_hls_title = kwargs['tokenAuthHlsTitle']
+        if 'tokenAuthenticationTitle' in kwargs:
+            token_authentication_title = kwargs['tokenAuthenticationTitle']
+        if 'tokenRevocationEnabled' in kwargs:
+            token_revocation_enabled = kwargs['tokenRevocationEnabled']
+        if 'tokenRevocationTitle' in kwargs:
+            token_revocation_title = kwargs['tokenRevocationTitle']
+        if 'transitionKey' in kwargs:
+            transition_key = kwargs['transitionKey']
+        if 'useAdvanced' in kwargs:
+            use_advanced = kwargs['useAdvanced']
+
         if acl is not None:
             _setter("acl", acl)
         if dash_media_encryption is not None:
@@ -42357,7 +48175,25 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaOptimizationRes
              start_time: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dvrType' in kwargs:
+            dvr_type = kwargs['dvrType']
+        if 'dvrWindow' in kwargs:
+            dvr_window = kwargs['dvrWindow']
+        if 'enableUllStreaming' in kwargs:
+            enable_ull_streaming = kwargs['enableUllStreaming']
+        if 'endTime' in kwargs:
+            end_time = kwargs['endTime']
+        if 'liveType' in kwargs:
+            live_type = kwargs['liveType']
+        if 'showAdvanced' in kwargs:
+            show_advanced = kwargs['showAdvanced']
+        if 'startTime' in kwargs:
+            start_time = kwargs['startTime']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if behavior is not None:
             _setter("behavior", behavior)
         if dvr_type is not None:
@@ -42458,7 +48294,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaStreamingPrefet
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -42639,7 +48479,81 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorSetVariableResult(dict):
              value_source: Optional[str] = None,
              variable_name: Optional[str] = None,
              variable_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caseSensitive' in kwargs:
+            case_sensitive = kwargs['caseSensitive']
+        if 'certificateFieldName' in kwargs:
+            certificate_field_name = kwargs['certificateFieldName']
+        if 'cookieName' in kwargs:
+            cookie_name = kwargs['cookieName']
+        if 'deviceProfile' in kwargs:
+            device_profile = kwargs['deviceProfile']
+        if 'encryptionKey' in kwargs:
+            encryption_key = kwargs['encryptionKey']
+        if 'encryptionMode' in kwargs:
+            encryption_mode = kwargs['encryptionMode']
+        if 'endIndex' in kwargs:
+            end_index = kwargs['endIndex']
+        if 'exceptChars' in kwargs:
+            except_chars = kwargs['exceptChars']
+        if 'extractLocation' in kwargs:
+            extract_location = kwargs['extractLocation']
+        if 'forceChars' in kwargs:
+            force_chars = kwargs['forceChars']
+        if 'formatString' in kwargs:
+            format_string = kwargs['formatString']
+        if 'globalSubstitution' in kwargs:
+            global_substitution = kwargs['globalSubstitution']
+        if 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+        if 'hmacAlgorithm' in kwargs:
+            hmac_algorithm = kwargs['hmacAlgorithm']
+        if 'hmacKey' in kwargs:
+            hmac_key = kwargs['hmacKey']
+        if 'initializationVector' in kwargs:
+            initialization_vector = kwargs['initializationVector']
+        if 'ipVersion' in kwargs:
+            ip_version = kwargs['ipVersion']
+        if 'ipv4Prefix' in kwargs:
+            ipv4_prefix = kwargs['ipv4Prefix']
+        if 'ipv6Prefix' in kwargs:
+            ipv6_prefix = kwargs['ipv6Prefix']
+        if 'locationId' in kwargs:
+            location_id = kwargs['locationId']
+        if 'maxRandomNumber' in kwargs:
+            max_random_number = kwargs['maxRandomNumber']
+        if 'minRandomNumber' in kwargs:
+            min_random_number = kwargs['minRandomNumber']
+        if 'numberOfBytes' in kwargs:
+            number_of_bytes = kwargs['numberOfBytes']
+        if 'operandOne' in kwargs:
+            operand_one = kwargs['operandOne']
+        if 'paramName' in kwargs:
+            param_name = kwargs['paramName']
+        if 'pathComponentOffset' in kwargs:
+            path_component_offset = kwargs['pathComponentOffset']
+        if 'prependBytes' in kwargs:
+            prepend_bytes = kwargs['prependBytes']
+        if 'queryParameterName' in kwargs:
+            query_parameter_name = kwargs['queryParameterName']
+        if 'responseHeaderName' in kwargs:
+            response_header_name = kwargs['responseHeaderName']
+        if 'setCookieName' in kwargs:
+            set_cookie_name = kwargs['setCookieName']
+        if 'startIndex' in kwargs:
+            start_index = kwargs['startIndex']
+        if 'subString' in kwargs:
+            sub_string = kwargs['subString']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'valueSource' in kwargs:
+            value_source = kwargs['valueSource']
+        if 'variableName' in kwargs:
+            variable_name = kwargs['variableName']
+        if 'variableValue' in kwargs:
+            variable_value = kwargs['variableValue']
+
         if algorithm is not None:
             _setter("algorithm", algorithm)
         if case_sensitive is not None:
@@ -42992,7 +48906,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorShutrResult(dict):
              status: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if status is not None:
@@ -43047,7 +48965,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorSimulateErrorCodeResult(dict)
              template_uuid: Optional[str] = None,
              timeout: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'errorType' in kwargs:
+            error_type = kwargs['errorType']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if error_type is not None:
             _setter("error_type", error_type)
         if locked is not None:
@@ -43109,7 +49033,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldResult(dict):
              ssmap: Optional['outputs.GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmapResult'] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if nossmap is not None:
@@ -43150,33 +49078,69 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldResult(dict):
 @pulumi.output_type
 class GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmapResult(dict):
     def __init__(__self__, *,
+                 china_cdn_map: Optional[str] = None,
+                 has_mixed_hosts: Optional[bool] = None,
                  name: Optional[str] = None,
+                 src: Optional[str] = None,
                  srmap: Optional[str] = None,
                  value: Optional[str] = None):
         GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmapResult._configure(
             lambda key, value: pulumi.set(__self__, key, value),
+            china_cdn_map=china_cdn_map,
+            has_mixed_hosts=has_mixed_hosts,
             name=name,
+            src=src,
             srmap=srmap,
             value=value,
         )
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
+             china_cdn_map: Optional[str] = None,
+             has_mixed_hosts: Optional[bool] = None,
              name: Optional[str] = None,
+             src: Optional[str] = None,
              srmap: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'chinaCdnMap' in kwargs:
+            china_cdn_map = kwargs['chinaCdnMap']
+        if 'hasMixedHosts' in kwargs:
+            has_mixed_hosts = kwargs['hasMixedHosts']
+
+        if china_cdn_map is not None:
+            _setter("china_cdn_map", china_cdn_map)
+        if has_mixed_hosts is not None:
+            _setter("has_mixed_hosts", has_mixed_hosts)
         if name is not None:
             _setter("name", name)
+        if src is not None:
+            _setter("src", src)
         if srmap is not None:
             _setter("srmap", srmap)
         if value is not None:
             _setter("value", value)
 
     @property
+    @pulumi.getter(name="chinaCdnMap")
+    def china_cdn_map(self) -> Optional[str]:
+        return pulumi.get(self, "china_cdn_map")
+
+    @property
+    @pulumi.getter(name="hasMixedHosts")
+    def has_mixed_hosts(self) -> Optional[bool]:
+        return pulumi.get(self, "has_mixed_hosts")
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def src(self) -> Optional[str]:
+        return pulumi.get(self, "src")
 
     @property
     @pulumi.getter
@@ -43240,7 +49204,31 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorStandardTlsMigrationResult(di
              td_location: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowHttpsDowngrade' in kwargs:
+            allow_https_downgrade = kwargs['allowHttpsDowngrade']
+        if 'allowHttpsUpgrade' in kwargs:
+            allow_https_upgrade = kwargs['allowHttpsUpgrade']
+        if 'cacheSharingDuration' in kwargs:
+            cache_sharing_duration = kwargs['cacheSharingDuration']
+        if 'cacheSharingStartTime' in kwargs:
+            cache_sharing_start_time = kwargs['cacheSharingStartTime']
+        if 'isCertificateSniOnly' in kwargs:
+            is_certificate_sni_only = kwargs['isCertificateSniOnly']
+        if 'isTieredDistributionUsed' in kwargs:
+            is_tiered_distribution_used = kwargs['isTieredDistributionUsed']
+        if 'migrationDuration' in kwargs:
+            migration_duration = kwargs['migrationDuration']
+        if 'migrationFrom' in kwargs:
+            migration_from = kwargs['migrationFrom']
+        if 'migrationStartTime' in kwargs:
+            migration_start_time = kwargs['migrationStartTime']
+        if 'tdLocation' in kwargs:
+            td_location = kwargs['tdLocation']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if allow_https_downgrade is not None:
             _setter("allow_https_downgrade", allow_https_downgrade)
         if allow_https_upgrade is not None:
@@ -43362,7 +49350,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorStandardTlsMigrationOverrideR
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if info is not None:
             _setter("info", info)
         if locked is not None:
@@ -43417,7 +49409,15 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorStrictHeaderParsingResult(dic
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              valid_mode: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'strictMode' in kwargs:
+            strict_mode = kwargs['strictMode']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'validMode' in kwargs:
+            valid_mode = kwargs['validMode']
+
         if locked is not None:
             _setter("locked", locked)
         if strict_mode is not None:
@@ -43530,7 +49530,39 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorSubCustomerResult(dict):
              token_authorization: Optional[bool] = None,
              uuid: Optional[str] = None,
              web_application_firewall: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessControl' in kwargs:
+            access_control = kwargs['accessControl']
+        if 'cacheKey' in kwargs:
+            cache_key = kwargs['cacheKey']
+        if 'contentCompressor' in kwargs:
+            content_compressor = kwargs['contentCompressor']
+        if 'dynamicWebContent' in kwargs:
+            dynamic_web_content = kwargs['dynamicWebContent']
+        if 'geoLocation' in kwargs:
+            geo_location = kwargs['geoLocation']
+        if 'largeFileDelivery' in kwargs:
+            large_file_delivery = kwargs['largeFileDelivery']
+        if 'liveVideoDelivery' in kwargs:
+            live_video_delivery = kwargs['liveVideoDelivery']
+        if 'modifyPath' in kwargs:
+            modify_path = kwargs['modifyPath']
+        if 'onDemandVideoDelivery' in kwargs:
+            on_demand_video_delivery = kwargs['onDemandVideoDelivery']
+        if 'partnerDomainSuffix' in kwargs:
+            partner_domain_suffix = kwargs['partnerDomainSuffix']
+        if 'refreshContent' in kwargs:
+            refresh_content = kwargs['refreshContent']
+        if 'siteFailover' in kwargs:
+            site_failover = kwargs['siteFailover']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'tokenAuthorization' in kwargs:
+            token_authorization = kwargs['tokenAuthorization']
+        if 'webApplicationFirewall' in kwargs:
+            web_application_firewall = kwargs['webApplicationFirewall']
+
         if access_control is not None:
             _setter("access_control", access_control)
         if cache_key is not None:
@@ -43741,7 +49773,31 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorSureRouteResult(dict):
              to_host_status: Optional[str] = None,
              type: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowFcmParentOverride' in kwargs:
+            allow_fcm_parent_override = kwargs['allowFcmParentOverride']
+        if 'customMap' in kwargs:
+            custom_map = kwargs['customMap']
+        if 'customStatKey' in kwargs:
+            custom_stat_key = kwargs['customStatKey']
+        if 'enableCustomKey' in kwargs:
+            enable_custom_key = kwargs['enableCustomKey']
+        if 'forceSslForward' in kwargs:
+            force_ssl_forward = kwargs['forceSslForward']
+        if 'raceStatTtl' in kwargs:
+            race_stat_ttl = kwargs['raceStatTtl']
+        if 'srDownloadLinkTitle' in kwargs:
+            sr_download_link_title = kwargs['srDownloadLinkTitle']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'testObjectUrl' in kwargs:
+            test_object_url = kwargs['testObjectUrl']
+        if 'toHost' in kwargs:
+            to_host = kwargs['toHost']
+        if 'toHostStatus' in kwargs:
+            to_host_status = kwargs['toHostStatus']
+
         if allow_fcm_parent_override is not None:
             _setter("allow_fcm_parent_override", allow_fcm_parent_override)
         if custom_map is not None:
@@ -43870,7 +49926,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorTcpOptimizationResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if display is not None:
             _setter("display", display)
         if locked is not None:
@@ -43928,7 +49988,15 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorTeaLeafResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ibmCustomerId' in kwargs:
+            ibm_customer_id = kwargs['ibmCustomerId']
+        if 'limitToDynamic' in kwargs:
+            limit_to_dynamic = kwargs['limitToDynamic']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if ibm_customer_id is not None:
@@ -43997,7 +50065,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionResult(dict
              template_uuid: Optional[str] = None,
              tiered_distribution_map: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'tieredDistributionMap' in kwargs:
+            tiered_distribution_map = kwargs['tieredDistributionMap']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -44068,7 +50142,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionAdvancedRes
              template_uuid: Optional[str] = None,
              tiered_distribution_map: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'tieredDistributionMap' in kwargs:
+            tiered_distribution_map = kwargs['tieredDistributionMap']
+
         if allowall is not None:
             _setter("allowall", allowall)
         if enabled is not None:
@@ -44181,7 +50261,33 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionCustomizati
              template_uuid: Optional[str] = None,
              tier1_title: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudwrapperMapMigrationTitle' in kwargs:
+            cloudwrapper_map_migration_title = kwargs['cloudwrapperMapMigrationTitle']
+        if 'customMapEnabled' in kwargs:
+            custom_map_enabled = kwargs['customMapEnabled']
+        if 'customMapName' in kwargs:
+            custom_map_name = kwargs['customMapName']
+        if 'hashAlgorithm' in kwargs:
+            hash_algorithm = kwargs['hashAlgorithm']
+        if 'mapMigrationEnabled' in kwargs:
+            map_migration_enabled = kwargs['mapMigrationEnabled']
+        if 'migrationEndDate' in kwargs:
+            migration_end_date = kwargs['migrationEndDate']
+        if 'migrationStartDate' in kwargs:
+            migration_start_date = kwargs['migrationStartDate']
+        if 'migrationWithinCwMapsEnabled' in kwargs:
+            migration_within_cw_maps_enabled = kwargs['migrationWithinCwMapsEnabled']
+        if 'serialEnd' in kwargs:
+            serial_end = kwargs['serialEnd']
+        if 'serialStart' in kwargs:
+            serial_start = kwargs['serialStart']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'tier1Title' in kwargs:
+            tier1_title = kwargs['tier1Title']
+
         if cloudwrapper_map_migration_title is not None:
             _setter("cloudwrapper_map_migration_title", cloudwrapper_map_migration_title)
         if custom_map_enabled is not None:
@@ -44310,7 +50416,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorTimeoutResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if template_uuid is not None:
@@ -44377,7 +50487,21 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorUidConfigurationResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              variable_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'extractLocation' in kwargs:
+            extract_location = kwargs['extractLocation']
+        if 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+        if 'legalText' in kwargs:
+            legal_text = kwargs['legalText']
+        if 'queryParameterName' in kwargs:
+            query_parameter_name = kwargs['queryParameterName']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'variableName' in kwargs:
+            variable_name = kwargs['variableName']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if extract_location is not None:
@@ -44464,7 +50588,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorValidateEntityTagResult(dict)
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -44531,7 +50659,21 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorVerifyJsonWebTokenResult(dict
              query_parameter_name: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableEs256' in kwargs:
+            enable_es256 = kwargs['enableEs256']
+        if 'enableRs256' in kwargs:
+            enable_rs256 = kwargs['enableRs256']
+        if 'extractLocation' in kwargs:
+            extract_location = kwargs['extractLocation']
+        if 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+        if 'queryParameterName' in kwargs:
+            query_parameter_name = kwargs['queryParameterName']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enable_es256 is not None:
             _setter("enable_es256", enable_es256)
         if enable_rs256 is not None:
@@ -44657,7 +50799,35 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorVerifyJsonWebTokenForDcpResul
              template_uuid: Optional[str] = None,
              user_name: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if 'customHeader' in kwargs:
+            custom_header = kwargs['customHeader']
+        if 'enableEs256' in kwargs:
+            enable_es256 = kwargs['enableEs256']
+        if 'enableRs256' in kwargs:
+            enable_rs256 = kwargs['enableRs256']
+        if 'extractAuthorizations' in kwargs:
+            extract_authorizations = kwargs['extractAuthorizations']
+        if 'extractClientId' in kwargs:
+            extract_client_id = kwargs['extractClientId']
+        if 'extractLocation' in kwargs:
+            extract_location = kwargs['extractLocation']
+        if 'extractUserName' in kwargs:
+            extract_user_name = kwargs['extractUserName']
+        if 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+        if 'primaryLocation' in kwargs:
+            primary_location = kwargs['primaryLocation']
+        if 'queryParameterName' in kwargs:
+            query_parameter_name = kwargs['queryParameterName']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+
         if authorizations is not None:
             _setter("authorizations", authorizations)
         if client_id is not None:
@@ -44827,7 +50997,23 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorVerifyTokenAuthorizationResul
              transition_key: Optional[str] = None,
              use_advanced: Optional[bool] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'escapeHmacInputs' in kwargs:
+            escape_hmac_inputs = kwargs['escapeHmacInputs']
+        if 'failureResponse' in kwargs:
+            failure_response = kwargs['failureResponse']
+        if 'ignoreQueryString' in kwargs:
+            ignore_query_string = kwargs['ignoreQueryString']
+        if 'locationId' in kwargs:
+            location_id = kwargs['locationId']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'transitionKey' in kwargs:
+            transition_key = kwargs['transitionKey']
+        if 'useAdvanced' in kwargs:
+            use_advanced = kwargs['useAdvanced']
+
         if algorithm is not None:
             _setter("algorithm", algorithm)
         if escape_hmac_inputs is not None:
@@ -44966,7 +51152,29 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorVirtualWaitingRoomResult(dict
              waiting_room_assets_paths: Optional[Sequence[str]] = None,
              waiting_room_path: Optional[str] = None,
              waiting_room_title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessTitle' in kwargs:
+            access_title = kwargs['accessTitle']
+        if 'cloudletSharedPolicy' in kwargs:
+            cloudlet_shared_policy = kwargs['cloudletSharedPolicy']
+        if 'customCookieDomain' in kwargs:
+            custom_cookie_domain = kwargs['customCookieDomain']
+        if 'domainConfig' in kwargs:
+            domain_config = kwargs['domainConfig']
+        if 'sessionAutoProlong' in kwargs:
+            session_auto_prolong = kwargs['sessionAutoProlong']
+        if 'sessionDuration' in kwargs:
+            session_duration = kwargs['sessionDuration']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'waitingRoomAssetsPaths' in kwargs:
+            waiting_room_assets_paths = kwargs['waitingRoomAssetsPaths']
+        if 'waitingRoomPath' in kwargs:
+            waiting_room_path = kwargs['waitingRoomPath']
+        if 'waitingRoomTitle' in kwargs:
+            waiting_room_title = kwargs['waitingRoomTitle']
+
         if access_title is not None:
             _setter("access_title", access_title)
         if cloudlet_shared_policy is not None:
@@ -45071,7 +51279,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorVirtualWaitingRoomWithEdgeWor
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if template_uuid is not None:
@@ -45230,7 +51442,87 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationResult(d
              waiting_room_net_storage: Optional['outputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomNetStorageResult'] = None,
              waiting_room_status_code: Optional[int] = None,
              waiting_room_use_cp_code: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedUserCookieAdvanced' in kwargs:
+            allowed_user_cookie_advanced = kwargs['allowedUserCookieAdvanced']
+        if 'allowedUserCookieAutomaticSalt' in kwargs:
+            allowed_user_cookie_automatic_salt = kwargs['allowedUserCookieAutomaticSalt']
+        if 'allowedUserCookieDomain' in kwargs:
+            allowed_user_cookie_domain = kwargs['allowedUserCookieDomain']
+        if 'allowedUserCookieDomainType' in kwargs:
+            allowed_user_cookie_domain_type = kwargs['allowedUserCookieDomainType']
+        if 'allowedUserCookieDuration' in kwargs:
+            allowed_user_cookie_duration = kwargs['allowedUserCookieDuration']
+        if 'allowedUserCookieEnabled' in kwargs:
+            allowed_user_cookie_enabled = kwargs['allowedUserCookieEnabled']
+        if 'allowedUserCookieHttpOnly' in kwargs:
+            allowed_user_cookie_http_only = kwargs['allowedUserCookieHttpOnly']
+        if 'allowedUserCookieLabel' in kwargs:
+            allowed_user_cookie_label = kwargs['allowedUserCookieLabel']
+        if 'allowedUserCookieManagementTitle' in kwargs:
+            allowed_user_cookie_management_title = kwargs['allowedUserCookieManagementTitle']
+        if 'allowedUserCookieRefresh' in kwargs:
+            allowed_user_cookie_refresh = kwargs['allowedUserCookieRefresh']
+        if 'allowedUserCookieSalt' in kwargs:
+            allowed_user_cookie_salt = kwargs['allowedUserCookieSalt']
+        if 'cloudletPolicy' in kwargs:
+            cloudlet_policy = kwargs['cloudletPolicy']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'userIdentificationByCookie' in kwargs:
+            user_identification_by_cookie = kwargs['userIdentificationByCookie']
+        if 'userIdentificationByHeaders' in kwargs:
+            user_identification_by_headers = kwargs['userIdentificationByHeaders']
+        if 'userIdentificationByIp' in kwargs:
+            user_identification_by_ip = kwargs['userIdentificationByIp']
+        if 'userIdentificationByParams' in kwargs:
+            user_identification_by_params = kwargs['userIdentificationByParams']
+        if 'userIdentificationKeyCookie' in kwargs:
+            user_identification_key_cookie = kwargs['userIdentificationKeyCookie']
+        if 'userIdentificationKeyHeaders' in kwargs:
+            user_identification_key_headers = kwargs['userIdentificationKeyHeaders']
+        if 'userIdentificationKeyParams' in kwargs:
+            user_identification_key_params = kwargs['userIdentificationKeyParams']
+        if 'userIdentificationTitle' in kwargs:
+            user_identification_title = kwargs['userIdentificationTitle']
+        if 'waitingRoomCacheTtl' in kwargs:
+            waiting_room_cache_ttl = kwargs['waitingRoomCacheTtl']
+        if 'waitingRoomCookieAdvanced' in kwargs:
+            waiting_room_cookie_advanced = kwargs['waitingRoomCookieAdvanced']
+        if 'waitingRoomCookieAutomaticSalt' in kwargs:
+            waiting_room_cookie_automatic_salt = kwargs['waitingRoomCookieAutomaticSalt']
+        if 'waitingRoomCookieDomain' in kwargs:
+            waiting_room_cookie_domain = kwargs['waitingRoomCookieDomain']
+        if 'waitingRoomCookieDomainType' in kwargs:
+            waiting_room_cookie_domain_type = kwargs['waitingRoomCookieDomainType']
+        if 'waitingRoomCookieDuration' in kwargs:
+            waiting_room_cookie_duration = kwargs['waitingRoomCookieDuration']
+        if 'waitingRoomCookieEnabled' in kwargs:
+            waiting_room_cookie_enabled = kwargs['waitingRoomCookieEnabled']
+        if 'waitingRoomCookieHttpOnly' in kwargs:
+            waiting_room_cookie_http_only = kwargs['waitingRoomCookieHttpOnly']
+        if 'waitingRoomCookieLabel' in kwargs:
+            waiting_room_cookie_label = kwargs['waitingRoomCookieLabel']
+        if 'waitingRoomCookieManagementTitle' in kwargs:
+            waiting_room_cookie_management_title = kwargs['waitingRoomCookieManagementTitle']
+        if 'waitingRoomCookieSalt' in kwargs:
+            waiting_room_cookie_salt = kwargs['waitingRoomCookieSalt']
+        if 'waitingRoomCookieShareLabel' in kwargs:
+            waiting_room_cookie_share_label = kwargs['waitingRoomCookieShareLabel']
+        if 'waitingRoomCpCode' in kwargs:
+            waiting_room_cp_code = kwargs['waitingRoomCpCode']
+        if 'waitingRoomDirectory' in kwargs:
+            waiting_room_directory = kwargs['waitingRoomDirectory']
+        if 'waitingRoomManagementTitle' in kwargs:
+            waiting_room_management_title = kwargs['waitingRoomManagementTitle']
+        if 'waitingRoomNetStorage' in kwargs:
+            waiting_room_net_storage = kwargs['waitingRoomNetStorage']
+        if 'waitingRoomStatusCode' in kwargs:
+            waiting_room_status_code = kwargs['waitingRoomStatusCode']
+        if 'waitingRoomUseCpCode' in kwargs:
+            waiting_room_use_cp_code = kwargs['waitingRoomUseCpCode']
+
         if allowed_user_cookie_advanced is not None:
             _setter("allowed_user_cookie_advanced", allowed_user_cookie_advanced)
         if allowed_user_cookie_automatic_salt is not None:
@@ -45542,7 +51834,9 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationCloudlet
              _setter: Callable[[Any, Any], None],
              id: Optional[int] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
         if name is not None:
@@ -45604,7 +51898,29 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationFifoResu
              waiting_room_assets_paths: Optional[Sequence[str]] = None,
              waiting_room_path: Optional[str] = None,
              waiting_room_title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessTitle' in kwargs:
+            access_title = kwargs['accessTitle']
+        if 'cloudletSharedPolicy' in kwargs:
+            cloudlet_shared_policy = kwargs['cloudletSharedPolicy']
+        if 'customCookieDomain' in kwargs:
+            custom_cookie_domain = kwargs['customCookieDomain']
+        if 'domainConfig' in kwargs:
+            domain_config = kwargs['domainConfig']
+        if 'sessionAutoProlong' in kwargs:
+            session_auto_prolong = kwargs['sessionAutoProlong']
+        if 'sessionDuration' in kwargs:
+            session_duration = kwargs['sessionDuration']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'waitingRoomAssetsPaths' in kwargs:
+            waiting_room_assets_paths = kwargs['waitingRoomAssetsPaths']
+        if 'waitingRoomPath' in kwargs:
+            waiting_room_path = kwargs['waitingRoomPath']
+        if 'waitingRoomTitle' in kwargs:
+            waiting_room_title = kwargs['waitingRoomTitle']
+
         if access_title is not None:
             _setter("access_title", access_title)
         if cloudlet_shared_policy is not None:
@@ -45709,7 +52025,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationFifoStan
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if template_uuid is not None:
@@ -45760,7 +52080,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingR
              id: Optional[int] = None,
              name: Optional[str] = None,
              products: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCodeLimits' in kwargs:
+            cp_code_limits = kwargs['cpCodeLimits']
+        if 'createdDate' in kwargs:
+            created_date = kwargs['createdDate']
+
         if cp_code_limits is not None:
             _setter("cp_code_limits", cp_code_limits)
         if created_date is not None:
@@ -45823,7 +52149,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingR
              current_capacity: Optional[int] = None,
              limit: Optional[int] = None,
              limit_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currentCapacity' in kwargs:
+            current_capacity = kwargs['currentCapacity']
+        if 'limitType' in kwargs:
+            limit_type = kwargs['limitType']
+
         if current_capacity is not None:
             _setter("current_capacity", current_capacity)
         if limit is not None:
@@ -45865,7 +52197,15 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingR
              cp_code: Optional[int] = None,
              download_domain_name: Optional[str] = None,
              g2o_token: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCode' in kwargs:
+            cp_code = kwargs['cpCode']
+        if 'downloadDomainName' in kwargs:
+            download_domain_name = kwargs['downloadDomainName']
+        if 'g2oToken' in kwargs:
+            g2o_token = kwargs['g2oToken']
+
         if cp_code is not None:
             _setter("cp_code", cp_code)
         if download_domain_name is not None:
@@ -45955,7 +52295,41 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorWatermarkingResult(dict):
              verification_key_id2: Optional[str] = None,
              verification_public_key1: Optional[str] = None,
              verification_public_key2: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'abVariantLocation' in kwargs:
+            ab_variant_location = kwargs['abVariantLocation']
+        if 'decryptionPassword1' in kwargs:
+            decryption_password1 = kwargs['decryptionPassword1']
+        if 'decryptionPassword2' in kwargs:
+            decryption_password2 = kwargs['decryptionPassword2']
+        if 'decryptionPasswordId1' in kwargs:
+            decryption_password_id1 = kwargs['decryptionPasswordId1']
+        if 'decryptionPasswordId2' in kwargs:
+            decryption_password_id2 = kwargs['decryptionPasswordId2']
+        if 'miscellaneousSettingsTitle' in kwargs:
+            miscellaneous_settings_title = kwargs['miscellaneousSettingsTitle']
+        if 'patternDecryptionEnable' in kwargs:
+            pattern_decryption_enable = kwargs['patternDecryptionEnable']
+        if 'patternEncryptionTitle' in kwargs:
+            pattern_encryption_title = kwargs['patternEncryptionTitle']
+        if 'signatureVerificationEnable' in kwargs:
+            signature_verification_enable = kwargs['signatureVerificationEnable']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'tokenSigningTitle' in kwargs:
+            token_signing_title = kwargs['tokenSigningTitle']
+        if 'useOriginalAsA' in kwargs:
+            use_original_as_a = kwargs['useOriginalAsA']
+        if 'verificationKeyId1' in kwargs:
+            verification_key_id1 = kwargs['verificationKeyId1']
+        if 'verificationKeyId2' in kwargs:
+            verification_key_id2 = kwargs['verificationKeyId2']
+        if 'verificationPublicKey1' in kwargs:
+            verification_public_key1 = kwargs['verificationPublicKey1']
+        if 'verificationPublicKey2' in kwargs:
+            verification_public_key2 = kwargs['verificationPublicKey2']
+
         if ab_variant_location is not None:
             _setter("ab_variant_location", ab_variant_location)
         if decryption_password1 is not None:
@@ -46112,7 +52486,13 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorWebApplicationFirewallResult(
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'firewallConfiguration' in kwargs:
+            firewall_configuration = kwargs['firewallConfiguration']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if firewall_configuration is not None:
             _setter("firewall_configuration", firewall_configuration)
         if locked is not None:
@@ -46170,7 +52550,21 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorWebApplicationFirewallFirewal
              production_version: Optional[int] = None,
              staging_status: Optional[str] = None,
              staging_version: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'fileName' in kwargs:
+            file_name = kwargs['fileName']
+        if 'productionStatus' in kwargs:
+            production_status = kwargs['productionStatus']
+        if 'productionVersion' in kwargs:
+            production_version = kwargs['productionVersion']
+        if 'stagingStatus' in kwargs:
+            staging_status = kwargs['stagingStatus']
+        if 'stagingVersion' in kwargs:
+            staging_version = kwargs['stagingVersion']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if file_name is not None:
@@ -46236,7 +52630,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorWebSocketsResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -46288,7 +52686,11 @@ class GetPropertyRulesBuilderRulesV20230105BehaviorWebdavResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -46460,7 +52862,83 @@ class GetPropertyRulesBuilderRulesV20230105CriterionResult(dict):
              variable_error: Optional['outputs.GetPropertyRulesBuilderRulesV20230105CriterionVariableErrorResult'] = None,
              virtual_waiting_room_request: Optional['outputs.GetPropertyRulesBuilderRulesV20230105CriterionVirtualWaitingRoomRequestResult'] = None,
              visitor_prioritization_request: Optional['outputs.GetPropertyRulesBuilderRulesV20230105CriterionVisitorPrioritizationRequestResult'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'advancedImMatch' in kwargs:
+            advanced_im_match = kwargs['advancedImMatch']
+        if 'chinaCdnRegion' in kwargs:
+            china_cdn_region = kwargs['chinaCdnRegion']
+        if 'clientCertificate' in kwargs:
+            client_certificate = kwargs['clientCertificate']
+        if 'clientIp' in kwargs:
+            client_ip = kwargs['clientIp']
+        if 'clientIpVersion' in kwargs:
+            client_ip_version = kwargs['clientIpVersion']
+        if 'cloudletsOrigin' in kwargs:
+            cloudlets_origin = kwargs['cloudletsOrigin']
+        if 'contentDeliveryNetwork' in kwargs:
+            content_delivery_network = kwargs['contentDeliveryNetwork']
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'deviceCharacteristic' in kwargs:
+            device_characteristic = kwargs['deviceCharacteristic']
+        if 'ecmdAuthGroups' in kwargs:
+            ecmd_auth_groups = kwargs['ecmdAuthGroups']
+        if 'ecmdAuthScheme' in kwargs:
+            ecmd_auth_scheme = kwargs['ecmdAuthScheme']
+        if 'ecmdIsAuthenticated' in kwargs:
+            ecmd_is_authenticated = kwargs['ecmdIsAuthenticated']
+        if 'ecmdUsername' in kwargs:
+            ecmd_username = kwargs['ecmdUsername']
+        if 'edgeWorkersFailure' in kwargs:
+            edge_workers_failure = kwargs['edgeWorkersFailure']
+        if 'fileExtension' in kwargs:
+            file_extension = kwargs['fileExtension']
+        if 'matchAdvanced' in kwargs:
+            match_advanced = kwargs['matchAdvanced']
+        if 'matchCpCode' in kwargs:
+            match_cp_code = kwargs['matchCpCode']
+        if 'matchResponseCode' in kwargs:
+            match_response_code = kwargs['matchResponseCode']
+        if 'matchVariable' in kwargs:
+            match_variable = kwargs['matchVariable']
+        if 'metadataStage' in kwargs:
+            metadata_stage = kwargs['metadataStage']
+        if 'originTimeout' in kwargs:
+            origin_timeout = kwargs['originTimeout']
+        if 'queryStringParameter' in kwargs:
+            query_string_parameter = kwargs['queryStringParameter']
+        if 'recoveryConfig' in kwargs:
+            recovery_config = kwargs['recoveryConfig']
+        if 'regularExpression' in kwargs:
+            regular_expression = kwargs['regularExpression']
+        if 'requestCookie' in kwargs:
+            request_cookie = kwargs['requestCookie']
+        if 'requestHeader' in kwargs:
+            request_header = kwargs['requestHeader']
+        if 'requestMethod' in kwargs:
+            request_method = kwargs['requestMethod']
+        if 'requestProtocol' in kwargs:
+            request_protocol = kwargs['requestProtocol']
+        if 'requestType' in kwargs:
+            request_type = kwargs['requestType']
+        if 'responseHeader' in kwargs:
+            response_header = kwargs['responseHeader']
+        if 'tokenAuthorization' in kwargs:
+            token_authorization = kwargs['tokenAuthorization']
+        if 'userAgent' in kwargs:
+            user_agent = kwargs['userAgent']
+        if 'userLocation' in kwargs:
+            user_location = kwargs['userLocation']
+        if 'userNetwork' in kwargs:
+            user_network = kwargs['userNetwork']
+        if 'variableError' in kwargs:
+            variable_error = kwargs['variableError']
+        if 'virtualWaitingRoomRequest' in kwargs:
+            virtual_waiting_room_request = kwargs['virtualWaitingRoomRequest']
+        if 'visitorPrioritizationRequest' in kwargs:
+            visitor_prioritization_request = kwargs['visitorPrioritizationRequest']
+
         if advanced_im_match is not None:
             _setter("advanced_im_match", advanced_im_match)
         if bucket is not None:
@@ -46795,7 +53273,15 @@ class GetPropertyRulesBuilderRulesV20230105CriterionAdvancedImMatchResult(dict):
              match_operator: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOn' in kwargs:
+            match_on = kwargs['matchOn']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_on is not None:
@@ -46854,7 +53340,11 @@ class GetPropertyRulesBuilderRulesV20230105CriterionBucketResult(dict):
              percentage: Optional[int] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if percentage is not None:
@@ -46909,7 +53399,13 @@ class GetPropertyRulesBuilderRulesV20230105CriterionCacheabilityResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_operator is not None:
@@ -46968,7 +53464,13 @@ class GetPropertyRulesBuilderRulesV20230105CriterionChinaCdnRegionResult(dict):
              match_operator: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_operator is not None:
@@ -47023,7 +53525,15 @@ class GetPropertyRulesBuilderRulesV20230105CriterionClientCertificateResult(dict
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isCertificatePresent' in kwargs:
+            is_certificate_present = kwargs['isCertificatePresent']
+        if 'isCertificateValid' in kwargs:
+            is_certificate_valid = kwargs['isCertificateValid']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if is_certificate_present is not None:
             _setter("is_certificate_present", is_certificate_present)
         if is_certificate_valid is not None:
@@ -47088,7 +53598,15 @@ class GetPropertyRulesBuilderRulesV20230105CriterionClientIpResult(dict):
              use_headers: Optional[bool] = None,
              uuid: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'useHeaders' in kwargs:
+            use_headers = kwargs['useHeaders']
+
         if locked is not None:
             _setter("locked", locked)
         if match_operator is not None:
@@ -47157,7 +53675,13 @@ class GetPropertyRulesBuilderRulesV20230105CriterionClientIpVersionResult(dict):
              use_x_forwarded_for: Optional[bool] = None,
              uuid: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'useXForwardedFor' in kwargs:
+            use_x_forwarded_for = kwargs['useXForwardedFor']
+
         if locked is not None:
             _setter("locked", locked)
         if template_uuid is not None:
@@ -47216,7 +53740,13 @@ class GetPropertyRulesBuilderRulesV20230105CriterionCloudletsOriginResult(dict):
              origin_id: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'originId' in kwargs:
+            origin_id = kwargs['originId']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if origin_id is not None:
@@ -47271,7 +53801,13 @@ class GetPropertyRulesBuilderRulesV20230105CriterionContentDeliveryNetworkResult
              network: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_operator is not None:
@@ -47339,7 +53875,17 @@ class GetPropertyRulesBuilderRulesV20230105CriterionContentTypeResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchCaseSensitive' in kwargs:
+            match_case_sensitive = kwargs['matchCaseSensitive']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'matchWildcard' in kwargs:
+            match_wildcard = kwargs['matchWildcard']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_case_sensitive is not None:
@@ -47439,7 +53985,29 @@ class GetPropertyRulesBuilderRulesV20230105CriterionDeviceCharacteristicResult(d
              uuid: Optional[str] = None,
              version_match_operator: Optional[str] = None,
              version_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'booleanValue' in kwargs:
+            boolean_value = kwargs['booleanValue']
+        if 'matchCaseSensitive' in kwargs:
+            match_case_sensitive = kwargs['matchCaseSensitive']
+        if 'matchWildcard' in kwargs:
+            match_wildcard = kwargs['matchWildcard']
+        if 'numericMatchOperator' in kwargs:
+            numeric_match_operator = kwargs['numericMatchOperator']
+        if 'numericValue' in kwargs:
+            numeric_value = kwargs['numericValue']
+        if 'stringMatchOperator' in kwargs:
+            string_match_operator = kwargs['stringMatchOperator']
+        if 'stringValues' in kwargs:
+            string_values = kwargs['stringValues']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'versionMatchOperator' in kwargs:
+            version_match_operator = kwargs['versionMatchOperator']
+        if 'versionValue' in kwargs:
+            version_value = kwargs['versionValue']
+
         if boolean_value is not None:
             _setter("boolean_value", boolean_value)
         if characteristic is not None:
@@ -47557,7 +54125,13 @@ class GetPropertyRulesBuilderRulesV20230105CriterionEcmdAuthGroupsResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_operator is not None:
@@ -47616,7 +54190,13 @@ class GetPropertyRulesBuilderRulesV20230105CriterionEcmdAuthSchemeResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authScheme' in kwargs:
+            auth_scheme = kwargs['authScheme']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if auth_scheme is not None:
             _setter("auth_scheme", auth_scheme)
         if locked is not None:
@@ -47668,7 +54248,13 @@ class GetPropertyRulesBuilderRulesV20230105CriterionEcmdIsAuthenticatedResult(di
              match_operator: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_operator is not None:
@@ -47726,7 +54312,13 @@ class GetPropertyRulesBuilderRulesV20230105CriterionEcmdUsernameResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if length is not None:
             _setter("length", length)
         if locked is not None:
@@ -47792,7 +54384,13 @@ class GetPropertyRulesBuilderRulesV20230105CriterionEdgeWorkersFailureResult(dic
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'execStatus' in kwargs:
+            exec_status = kwargs['execStatus']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if exec_status is not None:
             _setter("exec_status", exec_status)
         if locked is not None:
@@ -47850,7 +54448,15 @@ class GetPropertyRulesBuilderRulesV20230105CriterionFileExtensionResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchCaseSensitive' in kwargs:
+            match_case_sensitive = kwargs['matchCaseSensitive']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_case_sensitive is not None:
@@ -47922,7 +54528,15 @@ class GetPropertyRulesBuilderRulesV20230105CriterionFilenameResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchCaseSensitive' in kwargs:
+            match_case_sensitive = kwargs['matchCaseSensitive']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_case_sensitive is not None:
@@ -47991,7 +54605,13 @@ class GetPropertyRulesBuilderRulesV20230105CriterionHostnameResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_operator is not None:
@@ -48056,7 +54676,15 @@ class GetPropertyRulesBuilderRulesV20230105CriterionMatchAdvancedResult(dict):
              open_xml: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'closeXml' in kwargs:
+            close_xml = kwargs['closeXml']
+        if 'openXml' in kwargs:
+            open_xml = kwargs['openXml']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if close_xml is not None:
             _setter("close_xml", close_xml)
         if description is not None:
@@ -48122,7 +54750,11 @@ class GetPropertyRulesBuilderRulesV20230105CriterionMatchCpCodeResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              value: Optional['outputs.GetPropertyRulesBuilderRulesV20230105CriterionMatchCpCodeValueResult'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if template_uuid is not None:
@@ -48180,7 +54812,13 @@ class GetPropertyRulesBuilderRulesV20230105CriterionMatchCpCodeValueResult(dict)
              id: Optional[int] = None,
              name: Optional[str] = None,
              products: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCodeLimits' in kwargs:
+            cp_code_limits = kwargs['cpCodeLimits']
+        if 'createdDate' in kwargs:
+            created_date = kwargs['createdDate']
+
         if cp_code_limits is not None:
             _setter("cp_code_limits", cp_code_limits)
         if created_date is not None:
@@ -48243,7 +54881,13 @@ class GetPropertyRulesBuilderRulesV20230105CriterionMatchCpCodeValueCpCodeLimits
              current_capacity: Optional[int] = None,
              limit: Optional[int] = None,
              limit_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currentCapacity' in kwargs:
+            current_capacity = kwargs['currentCapacity']
+        if 'limitType' in kwargs:
+            limit_type = kwargs['limitType']
+
         if current_capacity is not None:
             _setter("current_capacity", current_capacity)
         if limit is not None:
@@ -48297,7 +54941,17 @@ class GetPropertyRulesBuilderRulesV20230105CriterionMatchResponseCodeResult(dict
              upper_bound: Optional[int] = None,
              uuid: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lowerBound' in kwargs:
+            lower_bound = kwargs['lowerBound']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'upperBound' in kwargs:
+            upper_bound = kwargs['upperBound']
+
         if locked is not None:
             _setter("locked", locked)
         if lower_bound is not None:
@@ -48391,7 +55045,27 @@ class GetPropertyRulesBuilderRulesV20230105CriterionMatchVariableResult(dict):
              variable_expression: Optional[str] = None,
              variable_name: Optional[str] = None,
              variable_values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lowerBound' in kwargs:
+            lower_bound = kwargs['lowerBound']
+        if 'matchCaseSensitive' in kwargs:
+            match_case_sensitive = kwargs['matchCaseSensitive']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'matchWildcard' in kwargs:
+            match_wildcard = kwargs['matchWildcard']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'upperBound' in kwargs:
+            upper_bound = kwargs['upperBound']
+        if 'variableExpression' in kwargs:
+            variable_expression = kwargs['variableExpression']
+        if 'variableName' in kwargs:
+            variable_name = kwargs['variableName']
+        if 'variableValues' in kwargs:
+            variable_values = kwargs['variableValues']
+
         if locked is not None:
             _setter("locked", locked)
         if lower_bound is not None:
@@ -48495,7 +55169,13 @@ class GetPropertyRulesBuilderRulesV20230105CriterionMetadataStageResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_operator is not None:
@@ -48554,7 +55234,13 @@ class GetPropertyRulesBuilderRulesV20230105CriterionOriginTimeoutResult(dict):
              match_operator: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_operator is not None:
@@ -48615,7 +55301,15 @@ class GetPropertyRulesBuilderRulesV20230105CriterionPathResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchCaseSensitive' in kwargs:
+            match_case_sensitive = kwargs['matchCaseSensitive']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_case_sensitive is not None:
@@ -48715,7 +55409,29 @@ class GetPropertyRulesBuilderRulesV20230105CriterionQueryStringParameterResult(d
              upper_bound: Optional[int] = None,
              uuid: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'escapeValue' in kwargs:
+            escape_value = kwargs['escapeValue']
+        if 'lowerBound' in kwargs:
+            lower_bound = kwargs['lowerBound']
+        if 'matchCaseSensitiveName' in kwargs:
+            match_case_sensitive_name = kwargs['matchCaseSensitiveName']
+        if 'matchCaseSensitiveValue' in kwargs:
+            match_case_sensitive_value = kwargs['matchCaseSensitiveValue']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'matchWildcardName' in kwargs:
+            match_wildcard_name = kwargs['matchWildcardName']
+        if 'matchWildcardValue' in kwargs:
+            match_wildcard_value = kwargs['matchWildcardValue']
+        if 'parameterName' in kwargs:
+            parameter_name = kwargs['parameterName']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'upperBound' in kwargs:
+            upper_bound = kwargs['upperBound']
+
         if escape_value is not None:
             _setter("escape_value", escape_value)
         if locked is not None:
@@ -48830,7 +55546,11 @@ class GetPropertyRulesBuilderRulesV20230105CriterionRandomResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if bucket is not None:
             _setter("bucket", bucket)
         if locked is not None:
@@ -48882,7 +55602,13 @@ class GetPropertyRulesBuilderRulesV20230105CriterionRecoveryConfigResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configName' in kwargs:
+            config_name = kwargs['configName']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if config_name is not None:
             _setter("config_name", config_name)
         if locked is not None:
@@ -48940,7 +55666,15 @@ class GetPropertyRulesBuilderRulesV20230105CriterionRegularExpressionResult(dict
              regex: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caseSensitive' in kwargs:
+            case_sensitive = kwargs['caseSensitive']
+        if 'matchString' in kwargs:
+            match_string = kwargs['matchString']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if case_sensitive is not None:
             _setter("case_sensitive", case_sensitive)
         if locked is not None:
@@ -49030,7 +55764,27 @@ class GetPropertyRulesBuilderRulesV20230105CriterionRequestCookieResult(dict):
              upper_bound: Optional[int] = None,
              uuid: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cookieName' in kwargs:
+            cookie_name = kwargs['cookieName']
+        if 'lowerBound' in kwargs:
+            lower_bound = kwargs['lowerBound']
+        if 'matchCaseSensitiveName' in kwargs:
+            match_case_sensitive_name = kwargs['matchCaseSensitiveName']
+        if 'matchCaseSensitiveValue' in kwargs:
+            match_case_sensitive_value = kwargs['matchCaseSensitiveValue']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'matchWildcardName' in kwargs:
+            match_wildcard_name = kwargs['matchWildcardName']
+        if 'matchWildcardValue' in kwargs:
+            match_wildcard_value = kwargs['matchWildcardValue']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'upperBound' in kwargs:
+            upper_bound = kwargs['upperBound']
+
         if cookie_name is not None:
             _setter("cookie_name", cookie_name)
         if locked is not None:
@@ -49153,7 +55907,21 @@ class GetPropertyRulesBuilderRulesV20230105CriterionRequestHeaderResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+        if 'matchCaseSensitiveValue' in kwargs:
+            match_case_sensitive_value = kwargs['matchCaseSensitiveValue']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'matchWildcardName' in kwargs:
+            match_wildcard_name = kwargs['matchWildcardName']
+        if 'matchWildcardValue' in kwargs:
+            match_wildcard_value = kwargs['matchWildcardValue']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if header_name is not None:
             _setter("header_name", header_name)
         if locked is not None:
@@ -49243,7 +56011,13 @@ class GetPropertyRulesBuilderRulesV20230105CriterionRequestMethodResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_operator is not None:
@@ -49302,7 +56076,11 @@ class GetPropertyRulesBuilderRulesV20230105CriterionRequestProtocolResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if template_uuid is not None:
@@ -49357,7 +56135,13 @@ class GetPropertyRulesBuilderRulesV20230105CriterionRequestTypeResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_operator is not None:
@@ -49437,7 +56221,25 @@ class GetPropertyRulesBuilderRulesV20230105CriterionResponseHeaderResult(dict):
              upper_bound: Optional[int] = None,
              uuid: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+        if 'lowerBound' in kwargs:
+            lower_bound = kwargs['lowerBound']
+        if 'matchCaseSensitiveValue' in kwargs:
+            match_case_sensitive_value = kwargs['matchCaseSensitiveValue']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'matchWildcardName' in kwargs:
+            match_wildcard_name = kwargs['matchWildcardName']
+        if 'matchWildcardValue' in kwargs:
+            match_wildcard_value = kwargs['matchWildcardValue']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'upperBound' in kwargs:
+            upper_bound = kwargs['upperBound']
+
         if header_name is not None:
             _setter("header_name", header_name)
         if locked is not None:
@@ -49562,7 +56364,29 @@ class GetPropertyRulesBuilderRulesV20230105CriterionTimeResult(dict):
              repeat_interval: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applyDaylightSavingsTime' in kwargs:
+            apply_daylight_savings_time = kwargs['applyDaylightSavingsTime']
+        if 'beginDate' in kwargs:
+            begin_date = kwargs['beginDate']
+        if 'endDate' in kwargs:
+            end_date = kwargs['endDate']
+        if 'lastingDate' in kwargs:
+            lasting_date = kwargs['lastingDate']
+        if 'lastingDuration' in kwargs:
+            lasting_duration = kwargs['lastingDuration']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'repeatBeginDate' in kwargs:
+            repeat_begin_date = kwargs['repeatBeginDate']
+        if 'repeatDuration' in kwargs:
+            repeat_duration = kwargs['repeatDuration']
+        if 'repeatInterval' in kwargs:
+            repeat_interval = kwargs['repeatInterval']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if apply_daylight_savings_time is not None:
             _setter("apply_daylight_savings_time", apply_daylight_savings_time)
         if begin_date is not None:
@@ -49673,7 +56497,15 @@ class GetPropertyRulesBuilderRulesV20230105CriterionTokenAuthorizationResult(dic
              status_lists: Optional[Sequence[str]] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'statusLists' in kwargs:
+            status_lists = kwargs['statusLists']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_operator is not None:
@@ -49741,7 +56573,17 @@ class GetPropertyRulesBuilderRulesV20230105CriterionUserAgentResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchCaseSensitive' in kwargs:
+            match_case_sensitive = kwargs['matchCaseSensitive']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'matchWildcard' in kwargs:
+            match_wildcard = kwargs['matchWildcard']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_case_sensitive is not None:
@@ -49832,7 +56674,23 @@ class GetPropertyRulesBuilderRulesV20230105CriterionUserLocationResult(dict):
              template_uuid: Optional[str] = None,
              use_only_first_x_forwarded_for_ip: Optional[bool] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'checkIps' in kwargs:
+            check_ips = kwargs['checkIps']
+        if 'continentValues' in kwargs:
+            continent_values = kwargs['continentValues']
+        if 'countryValues' in kwargs:
+            country_values = kwargs['countryValues']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'regionValues' in kwargs:
+            region_values = kwargs['regionValues']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'useOnlyFirstXForwardedForIp' in kwargs:
+            use_only_first_x_forwarded_for_ip = kwargs['useOnlyFirstXForwardedForIp']
+
         if check_ips is not None:
             _setter("check_ips", check_ips)
         if continent_values is not None:
@@ -49944,7 +56802,23 @@ class GetPropertyRulesBuilderRulesV20230105CriterionUserNetworkResult(dict):
              template_uuid: Optional[str] = None,
              use_only_first_x_forwarded_for_ip: Optional[bool] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bandwidthValues' in kwargs:
+            bandwidth_values = kwargs['bandwidthValues']
+        if 'checkIps' in kwargs:
+            check_ips = kwargs['checkIps']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'networkTypeValues' in kwargs:
+            network_type_values = kwargs['networkTypeValues']
+        if 'networkValues' in kwargs:
+            network_values = kwargs['networkValues']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'useOnlyFirstXForwardedForIp' in kwargs:
+            use_only_first_x_forwarded_for_ip = kwargs['useOnlyFirstXForwardedForIp']
+
         if bandwidth_values is not None:
             _setter("bandwidth_values", bandwidth_values)
         if check_ips is not None:
@@ -50041,7 +56915,13 @@ class GetPropertyRulesBuilderRulesV20230105CriterionVariableErrorResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              variable_names: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'variableNames' in kwargs:
+            variable_names = kwargs['variableNames']
+
         if locked is not None:
             _setter("locked", locked)
         if result is not None:
@@ -50103,7 +56983,15 @@ class GetPropertyRulesBuilderRulesV20230105CriterionVirtualWaitingRoomRequestRes
              match_operator: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOn' in kwargs:
+            match_on = kwargs['matchOn']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_on is not None:
@@ -50165,7 +57053,15 @@ class GetPropertyRulesBuilderRulesV20230105CriterionVisitorPrioritizationRequest
              match_operator: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOn' in kwargs:
+            match_on = kwargs['matchOn']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_on is not None:
@@ -50218,7 +57114,11 @@ class GetPropertyRulesBuilderRulesV20230105CustomOverrideResult(dict):
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
              override_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'overrideId' in kwargs:
+            override_id = kwargs['overrideId']
+
         if name is not None:
             _setter("name", name)
         if override_id is not None:
@@ -50259,7 +57159,9 @@ class GetPropertyRulesBuilderRulesV20230105VariableResult(dict):
              name: str,
              sensitive: bool,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("description", description)
         _setter("hidden", hidden)
         _setter("name", name)
@@ -50343,7 +57245,23 @@ class GetPropertyRulesBuilderRulesV20230530Result(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              variables: Optional[Sequence['outputs.GetPropertyRulesBuilderRulesV20230530VariableResult']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'advancedOverride' in kwargs:
+            advanced_override = kwargs['advancedOverride']
+        if 'criteriaLocked' in kwargs:
+            criteria_locked = kwargs['criteriaLocked']
+        if 'criteriaMustSatisfy' in kwargs:
+            criteria_must_satisfy = kwargs['criteriaMustSatisfy']
+        if 'customOverride' in kwargs:
+            custom_override = kwargs['customOverride']
+        if 'isSecure' in kwargs:
+            is_secure = kwargs['isSecure']
+        if 'templateLink' in kwargs:
+            template_link = kwargs['templateLink']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         _setter("name", name)
         if advanced_override is not None:
             _setter("advanced_override", advanced_override)
@@ -51103,7 +58021,395 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorResult(dict):
              web_application_firewall: Optional['outputs.GetPropertyRulesBuilderRulesV20230530BehaviorWebApplicationFirewallResult'] = None,
              web_sockets: Optional['outputs.GetPropertyRulesBuilderRulesV20230530BehaviorWebSocketsResult'] = None,
              webdav: Optional['outputs.GetPropertyRulesBuilderRulesV20230530BehaviorWebdavResult'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adScalerCircuitBreaker' in kwargs:
+            ad_scaler_circuit_breaker = kwargs['adScalerCircuitBreaker']
+        if 'adaptiveAcceleration' in kwargs:
+            adaptive_acceleration = kwargs['adaptiveAcceleration']
+        if 'adaptiveImageCompression' in kwargs:
+            adaptive_image_compression = kwargs['adaptiveImageCompression']
+        if 'aggregatedReporting' in kwargs:
+            aggregated_reporting = kwargs['aggregatedReporting']
+        if 'akamaizerTag' in kwargs:
+            akamaizer_tag = kwargs['akamaizerTag']
+        if 'allHttpInCacheHierarchy' in kwargs:
+            all_http_in_cache_hierarchy = kwargs['allHttpInCacheHierarchy']
+        if 'allowCloudletsOrigins' in kwargs:
+            allow_cloudlets_origins = kwargs['allowCloudletsOrigins']
+        if 'allowDelete' in kwargs:
+            allow_delete = kwargs['allowDelete']
+        if 'allowHttpsCacheKeySharing' in kwargs:
+            allow_https_cache_key_sharing = kwargs['allowHttpsCacheKeySharing']
+        if 'allowHttpsDowngrade' in kwargs:
+            allow_https_downgrade = kwargs['allowHttpsDowngrade']
+        if 'allowOptions' in kwargs:
+            allow_options = kwargs['allowOptions']
+        if 'allowPatch' in kwargs:
+            allow_patch = kwargs['allowPatch']
+        if 'allowPost' in kwargs:
+            allow_post = kwargs['allowPost']
+        if 'allowPut' in kwargs:
+            allow_put = kwargs['allowPut']
+        if 'allowTransferEncoding' in kwargs:
+            allow_transfer_encoding = kwargs['allowTransferEncoding']
+        if 'altSvcHeader' in kwargs:
+            alt_svc_header = kwargs['altSvcHeader']
+        if 'apiPrioritization' in kwargs:
+            api_prioritization = kwargs['apiPrioritization']
+        if 'applicationLoadBalancer' in kwargs:
+            application_load_balancer = kwargs['applicationLoadBalancer']
+        if 'audienceSegmentation' in kwargs:
+            audience_segmentation = kwargs['audienceSegmentation']
+        if 'autoDomainValidation' in kwargs:
+            auto_domain_validation = kwargs['autoDomainValidation']
+        if 'baseDirectory' in kwargs:
+            base_directory = kwargs['baseDirectory']
+        if 'bossBeaconing' in kwargs:
+            boss_beaconing = kwargs['bossBeaconing']
+        if 'breakConnection' in kwargs:
+            break_connection = kwargs['breakConnection']
+        if 'cacheError' in kwargs:
+            cache_error = kwargs['cacheError']
+        if 'cacheId' in kwargs:
+            cache_id = kwargs['cacheId']
+        if 'cacheKeyIgnoreCase' in kwargs:
+            cache_key_ignore_case = kwargs['cacheKeyIgnoreCase']
+        if 'cacheKeyQueryParams' in kwargs:
+            cache_key_query_params = kwargs['cacheKeyQueryParams']
+        if 'cacheKeyRewrite' in kwargs:
+            cache_key_rewrite = kwargs['cacheKeyRewrite']
+        if 'cachePost' in kwargs:
+            cache_post = kwargs['cachePost']
+        if 'cacheRedirect' in kwargs:
+            cache_redirect = kwargs['cacheRedirect']
+        if 'cacheTag' in kwargs:
+            cache_tag = kwargs['cacheTag']
+        if 'cacheTagVisible' in kwargs:
+            cache_tag_visible = kwargs['cacheTagVisible']
+        if 'centralAuthorization' in kwargs:
+            central_authorization = kwargs['centralAuthorization']
+        if 'chaseRedirects' in kwargs:
+            chase_redirects = kwargs['chaseRedirects']
+        if 'clientCharacteristics' in kwargs:
+            client_characteristics = kwargs['clientCharacteristics']
+        if 'cloudInterconnects' in kwargs:
+            cloud_interconnects = kwargs['cloudInterconnects']
+        if 'cloudWrapper' in kwargs:
+            cloud_wrapper = kwargs['cloudWrapper']
+        if 'cloudWrapperAdvanced' in kwargs:
+            cloud_wrapper_advanced = kwargs['cloudWrapperAdvanced']
+        if 'commonMediaClientData' in kwargs:
+            common_media_client_data = kwargs['commonMediaClientData']
+        if 'conditionalOrigin' in kwargs:
+            conditional_origin = kwargs['conditionalOrigin']
+        if 'constructResponse' in kwargs:
+            construct_response = kwargs['constructResponse']
+        if 'contentCharacteristics' in kwargs:
+            content_characteristics = kwargs['contentCharacteristics']
+        if 'contentCharacteristicsAmd' in kwargs:
+            content_characteristics_amd = kwargs['contentCharacteristicsAmd']
+        if 'contentCharacteristicsDd' in kwargs:
+            content_characteristics_dd = kwargs['contentCharacteristicsDd']
+        if 'contentCharacteristicsWsdLargeFile' in kwargs:
+            content_characteristics_wsd_large_file = kwargs['contentCharacteristicsWsdLargeFile']
+        if 'contentCharacteristicsWsdLive' in kwargs:
+            content_characteristics_wsd_live = kwargs['contentCharacteristicsWsdLive']
+        if 'contentCharacteristicsWsdVod' in kwargs:
+            content_characteristics_wsd_vod = kwargs['contentCharacteristicsWsdVod']
+        if 'contentPrePosition' in kwargs:
+            content_pre_position = kwargs['contentPrePosition']
+        if 'contentTargetingProtection' in kwargs:
+            content_targeting_protection = kwargs['contentTargetingProtection']
+        if 'corsSupport' in kwargs:
+            cors_support = kwargs['corsSupport']
+        if 'cpCode' in kwargs:
+            cp_code = kwargs['cpCode']
+        if 'customBehavior' in kwargs:
+            custom_behavior = kwargs['customBehavior']
+        if 'dcpAuthHmacTransformation' in kwargs:
+            dcp_auth_hmac_transformation = kwargs['dcpAuthHmacTransformation']
+        if 'dcpAuthRegexTransformation' in kwargs:
+            dcp_auth_regex_transformation = kwargs['dcpAuthRegexTransformation']
+        if 'dcpAuthSubstringTransformation' in kwargs:
+            dcp_auth_substring_transformation = kwargs['dcpAuthSubstringTransformation']
+        if 'dcpAuthVariableExtractor' in kwargs:
+            dcp_auth_variable_extractor = kwargs['dcpAuthVariableExtractor']
+        if 'dcpDefaultAuthzGroups' in kwargs:
+            dcp_default_authz_groups = kwargs['dcpDefaultAuthzGroups']
+        if 'dcpDevRelations' in kwargs:
+            dcp_dev_relations = kwargs['dcpDevRelations']
+        if 'dcpRealTimeAuth' in kwargs:
+            dcp_real_time_auth = kwargs['dcpRealTimeAuth']
+        if 'deliveryReceipt' in kwargs:
+            delivery_receipt = kwargs['deliveryReceipt']
+        if 'denyAccess' in kwargs:
+            deny_access = kwargs['denyAccess']
+        if 'denyDirectFailoverAccess' in kwargs:
+            deny_direct_failover_access = kwargs['denyDirectFailoverAccess']
+        if 'deviceCharacteristicCacheId' in kwargs:
+            device_characteristic_cache_id = kwargs['deviceCharacteristicCacheId']
+        if 'deviceCharacteristicHeader' in kwargs:
+            device_characteristic_header = kwargs['deviceCharacteristicHeader']
+        if 'dnsAsyncRefresh' in kwargs:
+            dns_async_refresh = kwargs['dnsAsyncRefresh']
+        if 'dnsPrefresh' in kwargs:
+            dns_prefresh = kwargs['dnsPrefresh']
+        if 'downgradeProtocol' in kwargs:
+            downgrade_protocol = kwargs['downgradeProtocol']
+        if 'downloadCompleteMarker' in kwargs:
+            download_complete_marker = kwargs['downloadCompleteMarker']
+        if 'downloadNotification' in kwargs:
+            download_notification = kwargs['downloadNotification']
+        if 'downstreamCache' in kwargs:
+            downstream_cache = kwargs['downstreamCache']
+        if 'dynamicThroughtputOptimization' in kwargs:
+            dynamic_throughtput_optimization = kwargs['dynamicThroughtputOptimization']
+        if 'dynamicThroughtputOptimizationOverride' in kwargs:
+            dynamic_throughtput_optimization_override = kwargs['dynamicThroughtputOptimizationOverride']
+        if 'dynamicWebContent' in kwargs:
+            dynamic_web_content = kwargs['dynamicWebContent']
+        if 'ecmsBulkUpload' in kwargs:
+            ecms_bulk_upload = kwargs['ecmsBulkUpload']
+        if 'ecmsDatabase' in kwargs:
+            ecms_database = kwargs['ecmsDatabase']
+        if 'ecmsDataset' in kwargs:
+            ecms_dataset = kwargs['ecmsDataset']
+        if 'ecmsObjectKey' in kwargs:
+            ecms_object_key = kwargs['ecmsObjectKey']
+        if 'edgeConnect' in kwargs:
+            edge_connect = kwargs['edgeConnect']
+        if 'edgeLoadBalancingAdvanced' in kwargs:
+            edge_load_balancing_advanced = kwargs['edgeLoadBalancingAdvanced']
+        if 'edgeLoadBalancingDataCenter' in kwargs:
+            edge_load_balancing_data_center = kwargs['edgeLoadBalancingDataCenter']
+        if 'edgeLoadBalancingOrigin' in kwargs:
+            edge_load_balancing_origin = kwargs['edgeLoadBalancingOrigin']
+        if 'edgeOriginAuthorization' in kwargs:
+            edge_origin_authorization = kwargs['edgeOriginAuthorization']
+        if 'edgeRedirector' in kwargs:
+            edge_redirector = kwargs['edgeRedirector']
+        if 'edgeScape' in kwargs:
+            edge_scape = kwargs['edgeScape']
+        if 'edgeSideIncludes' in kwargs:
+            edge_side_includes = kwargs['edgeSideIncludes']
+        if 'edgeWorker' in kwargs:
+            edge_worker = kwargs['edgeWorker']
+        if 'enhancedAkamaiProtocol' in kwargs:
+            enhanced_akamai_protocol = kwargs['enhancedAkamaiProtocol']
+        if 'enhancedProxyDetection' in kwargs:
+            enhanced_proxy_detection = kwargs['enhancedProxyDetection']
+        if 'epdForwardHeaderEnrichment' in kwargs:
+            epd_forward_header_enrichment = kwargs['epdForwardHeaderEnrichment']
+        if 'failAction' in kwargs:
+            fail_action = kwargs['failAction']
+        if 'failoverBotManagerFeatureCompatibility' in kwargs:
+            failover_bot_manager_feature_compatibility = kwargs['failoverBotManagerFeatureCompatibility']
+        if 'fastInvalidate' in kwargs:
+            fast_invalidate = kwargs['fastInvalidate']
+        if 'firstPartyMarketing' in kwargs:
+            first_party_marketing = kwargs['firstPartyMarketing']
+        if 'firstPartyMarketingPlus' in kwargs:
+            first_party_marketing_plus = kwargs['firstPartyMarketingPlus']
+        if 'forwardRewrite' in kwargs:
+            forward_rewrite = kwargs['forwardRewrite']
+        if 'globalRequestNumber' in kwargs:
+            global_request_number = kwargs['globalRequestNumber']
+        if 'graphqlCaching' in kwargs:
+            graphql_caching = kwargs['graphqlCaching']
+        if 'gzipResponse' in kwargs:
+            gzip_response = kwargs['gzipResponse']
+        if 'hdDataAdvanced' in kwargs:
+            hd_data_advanced = kwargs['hdDataAdvanced']
+        if 'healthDetection' in kwargs:
+            health_detection = kwargs['healthDetection']
+        if 'hsafEipBinding' in kwargs:
+            hsaf_eip_binding = kwargs['hsafEipBinding']
+        if 'httpStrictTransportSecurity' in kwargs:
+            http_strict_transport_security = kwargs['httpStrictTransportSecurity']
+        if 'httpToHttpsUpgrade' in kwargs:
+            http_to_https_upgrade = kwargs['httpToHttpsUpgrade']
+        if 'imOverride' in kwargs:
+            im_override = kwargs['imOverride']
+        if 'imageAndVideoManager' in kwargs:
+            image_and_video_manager = kwargs['imageAndVideoManager']
+        if 'imageManager' in kwargs:
+            image_manager = kwargs['imageManager']
+        if 'imageManagerVideo' in kwargs:
+            image_manager_video = kwargs['imageManagerVideo']
+        if 'instantConfig' in kwargs:
+            instant_config = kwargs['instantConfig']
+        if 'largeFileOptimization' in kwargs:
+            large_file_optimization = kwargs['largeFileOptimization']
+        if 'largeFileOptimizationAdvanced' in kwargs:
+            large_file_optimization_advanced = kwargs['largeFileOptimizationAdvanced']
+        if 'limitBitRate' in kwargs:
+            limit_bit_rate = kwargs['limitBitRate']
+        if 'logCustom' in kwargs:
+            log_custom = kwargs['logCustom']
+        if 'mPulse' in kwargs:
+            m_pulse = kwargs['mPulse']
+        if 'manifestPersonalization' in kwargs:
+            manifest_personalization = kwargs['manifestPersonalization']
+        if 'manifestRerouting' in kwargs:
+            manifest_rerouting = kwargs['manifestRerouting']
+        if 'manualServerPush' in kwargs:
+            manual_server_push = kwargs['manualServerPush']
+        if 'mediaAcceleration' in kwargs:
+            media_acceleration = kwargs['mediaAcceleration']
+        if 'mediaAccelerationQuicOptout' in kwargs:
+            media_acceleration_quic_optout = kwargs['mediaAccelerationQuicOptout']
+        if 'mediaClient' in kwargs:
+            media_client = kwargs['mediaClient']
+        if 'mediaFileRetrievalOptimization' in kwargs:
+            media_file_retrieval_optimization = kwargs['mediaFileRetrievalOptimization']
+        if 'mediaOriginFailover' in kwargs:
+            media_origin_failover = kwargs['mediaOriginFailover']
+        if 'metadataCaching' in kwargs:
+            metadata_caching = kwargs['metadataCaching']
+        if 'mobileSdkPerformance' in kwargs:
+            mobile_sdk_performance = kwargs['mobileSdkPerformance']
+        if 'modifyIncomingRequestHeader' in kwargs:
+            modify_incoming_request_header = kwargs['modifyIncomingRequestHeader']
+        if 'modifyIncomingResponseHeader' in kwargs:
+            modify_incoming_response_header = kwargs['modifyIncomingResponseHeader']
+        if 'modifyOutgoingRequestHeader' in kwargs:
+            modify_outgoing_request_header = kwargs['modifyOutgoingRequestHeader']
+        if 'modifyOutgoingResponseHeader' in kwargs:
+            modify_outgoing_response_header = kwargs['modifyOutgoingResponseHeader']
+        if 'modifyViaHeader' in kwargs:
+            modify_via_header = kwargs['modifyViaHeader']
+        if 'originCharacteristics' in kwargs:
+            origin_characteristics = kwargs['originCharacteristics']
+        if 'originCharacteristicsWsd' in kwargs:
+            origin_characteristics_wsd = kwargs['originCharacteristicsWsd']
+        if 'originFailureRecoveryMethod' in kwargs:
+            origin_failure_recovery_method = kwargs['originFailureRecoveryMethod']
+        if 'originFailureRecoveryPolicy' in kwargs:
+            origin_failure_recovery_policy = kwargs['originFailureRecoveryPolicy']
+        if 'originIpAcl' in kwargs:
+            origin_ip_acl = kwargs['originIpAcl']
+        if 'persistentClientConnection' in kwargs:
+            persistent_client_connection = kwargs['persistentClientConnection']
+        if 'persistentConnection' in kwargs:
+            persistent_connection = kwargs['persistentConnection']
+        if 'personallyIdentifiableInformation' in kwargs:
+            personally_identifiable_information = kwargs['personallyIdentifiableInformation']
+        if 'phasedRelease' in kwargs:
+            phased_release = kwargs['phasedRelease']
+        if 'predictiveContentDelivery' in kwargs:
+            predictive_content_delivery = kwargs['predictiveContentDelivery']
+        if 'predictivePrefetching' in kwargs:
+            predictive_prefetching = kwargs['predictivePrefetching']
+        if 'prefreshCache' in kwargs:
+            prefresh_cache = kwargs['prefreshCache']
+        if 'quicBeta' in kwargs:
+            quic_beta = kwargs['quicBeta']
+        if 'randomSeek' in kwargs:
+            random_seek = kwargs['randomSeek']
+        if 'readTimeout' in kwargs:
+            read_timeout = kwargs['readTimeout']
+        if 'realTimeReporting' in kwargs:
+            real_time_reporting = kwargs['realTimeReporting']
+        if 'realUserMonitoring' in kwargs:
+            real_user_monitoring = kwargs['realUserMonitoring']
+        if 'refererChecking' in kwargs:
+            referer_checking = kwargs['refererChecking']
+        if 'removeQueryParameter' in kwargs:
+            remove_query_parameter = kwargs['removeQueryParameter']
+        if 'removeVary' in kwargs:
+            remove_vary = kwargs['removeVary']
+        if 'requestControl' in kwargs:
+            request_control = kwargs['requestControl']
+        if 'requestTypeMarker' in kwargs:
+            request_type_marker = kwargs['requestTypeMarker']
+        if 'resourceOptimizer' in kwargs:
+            resource_optimizer = kwargs['resourceOptimizer']
+        if 'resourceOptimizerExtendedCompatibility' in kwargs:
+            resource_optimizer_extended_compatibility = kwargs['resourceOptimizerExtendedCompatibility']
+        if 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if 'responseCookie' in kwargs:
+            response_cookie = kwargs['responseCookie']
+        if 'restrictObjectCaching' in kwargs:
+            restrict_object_caching = kwargs['restrictObjectCaching']
+        if 'returnCacheStatus' in kwargs:
+            return_cache_status = kwargs['returnCacheStatus']
+        if 'rewriteUrl' in kwargs:
+            rewrite_url = kwargs['rewriteUrl']
+        if 'rumCustom' in kwargs:
+            rum_custom = kwargs['rumCustom']
+        if 'saasDefinitions' in kwargs:
+            saas_definitions = kwargs['saasDefinitions']
+        if 'salesForceCommerceCloudClient' in kwargs:
+            sales_force_commerce_cloud_client = kwargs['salesForceCommerceCloudClient']
+        if 'salesForceCommerceCloudProvider' in kwargs:
+            sales_force_commerce_cloud_provider = kwargs['salesForceCommerceCloudProvider']
+        if 'salesForceCommerceCloudProviderHostHeader' in kwargs:
+            sales_force_commerce_cloud_provider_host_header = kwargs['salesForceCommerceCloudProviderHostHeader']
+        if 'savePostDcaProcessing' in kwargs:
+            save_post_dca_processing = kwargs['savePostDcaProcessing']
+        if 'scheduleInvalidation' in kwargs:
+            schedule_invalidation = kwargs['scheduleInvalidation']
+        if 'scriptManagement' in kwargs:
+            script_management = kwargs['scriptManagement']
+        if 'segmentedContentProtection' in kwargs:
+            segmented_content_protection = kwargs['segmentedContentProtection']
+        if 'segmentedMediaOptimization' in kwargs:
+            segmented_media_optimization = kwargs['segmentedMediaOptimization']
+        if 'segmentedMediaStreamingPrefetch' in kwargs:
+            segmented_media_streaming_prefetch = kwargs['segmentedMediaStreamingPrefetch']
+        if 'setVariable' in kwargs:
+            set_variable = kwargs['setVariable']
+        if 'simulateErrorCode' in kwargs:
+            simulate_error_code = kwargs['simulateErrorCode']
+        if 'siteShield' in kwargs:
+            site_shield = kwargs['siteShield']
+        if 'standardTlsMigration' in kwargs:
+            standard_tls_migration = kwargs['standardTlsMigration']
+        if 'standardTlsMigrationOverride' in kwargs:
+            standard_tls_migration_override = kwargs['standardTlsMigrationOverride']
+        if 'strictHeaderParsing' in kwargs:
+            strict_header_parsing = kwargs['strictHeaderParsing']
+        if 'subCustomer' in kwargs:
+            sub_customer = kwargs['subCustomer']
+        if 'sureRoute' in kwargs:
+            sure_route = kwargs['sureRoute']
+        if 'tcpOptimization' in kwargs:
+            tcp_optimization = kwargs['tcpOptimization']
+        if 'teaLeaf' in kwargs:
+            tea_leaf = kwargs['teaLeaf']
+        if 'tieredDistribution' in kwargs:
+            tiered_distribution = kwargs['tieredDistribution']
+        if 'tieredDistributionAdvanced' in kwargs:
+            tiered_distribution_advanced = kwargs['tieredDistributionAdvanced']
+        if 'tieredDistributionCustomization' in kwargs:
+            tiered_distribution_customization = kwargs['tieredDistributionCustomization']
+        if 'uidConfiguration' in kwargs:
+            uid_configuration = kwargs['uidConfiguration']
+        if 'validateEntityTag' in kwargs:
+            validate_entity_tag = kwargs['validateEntityTag']
+        if 'verifyJsonWebToken' in kwargs:
+            verify_json_web_token = kwargs['verifyJsonWebToken']
+        if 'verifyJsonWebTokenForDcp' in kwargs:
+            verify_json_web_token_for_dcp = kwargs['verifyJsonWebTokenForDcp']
+        if 'verifyTokenAuthorization' in kwargs:
+            verify_token_authorization = kwargs['verifyTokenAuthorization']
+        if 'virtualWaitingRoom' in kwargs:
+            virtual_waiting_room = kwargs['virtualWaitingRoom']
+        if 'virtualWaitingRoomWithEdgeWorkers' in kwargs:
+            virtual_waiting_room_with_edge_workers = kwargs['virtualWaitingRoomWithEdgeWorkers']
+        if 'visitorPrioritization' in kwargs:
+            visitor_prioritization = kwargs['visitorPrioritization']
+        if 'visitorPrioritizationFifo' in kwargs:
+            visitor_prioritization_fifo = kwargs['visitorPrioritizationFifo']
+        if 'visitorPrioritizationFifoStandalone' in kwargs:
+            visitor_prioritization_fifo_standalone = kwargs['visitorPrioritizationFifoStandalone']
+        if 'webApplicationFirewall' in kwargs:
+            web_application_firewall = kwargs['webApplicationFirewall']
+        if 'webSockets' in kwargs:
+            web_sockets = kwargs['webSockets']
+
         if ad_scaler_circuit_breaker is not None:
             _setter("ad_scaler_circuit_breaker", ad_scaler_circuit_breaker)
         if adaptive_acceleration is not None:
@@ -52664,7 +59970,25 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorAdScalerCircuitBreakerResult(
              specify_your_own_response_code_based: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fallbackActionResponseCodeBased' in kwargs:
+            fallback_action_response_code_based = kwargs['fallbackActionResponseCodeBased']
+        if 'responseCodeBased' in kwargs:
+            response_code_based = kwargs['responseCodeBased']
+        if 'responseCodes' in kwargs:
+            response_codes = kwargs['responseCodes']
+        if 'responseDelayBased' in kwargs:
+            response_delay_based = kwargs['responseDelayBased']
+        if 'responseDelayThreshold' in kwargs:
+            response_delay_threshold = kwargs['responseDelayThreshold']
+        if 'returnErrorResponseCodeBased' in kwargs:
+            return_error_response_code_based = kwargs['returnErrorResponseCodeBased']
+        if 'specifyYourOwnResponseCodeBased' in kwargs:
+            specify_your_own_response_code_based = kwargs['specifyYourOwnResponseCodeBased']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if fallback_action_response_code_based is not None:
             _setter("fallback_action_response_code_based", fallback_action_response_code_based)
         if locked is not None:
@@ -52803,7 +60127,39 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorAdaptiveAccelerationResult(di
              title_preload: Optional[str] = None,
              title_ro: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'abLogic' in kwargs:
+            ab_logic = kwargs['abLogic']
+        if 'abTesting' in kwargs:
+            ab_testing = kwargs['abTesting']
+        if 'cookieName' in kwargs:
+            cookie_name = kwargs['cookieName']
+        if 'enableBrotliCompression' in kwargs:
+            enable_brotli_compression = kwargs['enableBrotliCompression']
+        if 'enableForNoncacheable' in kwargs:
+            enable_for_noncacheable = kwargs['enableForNoncacheable']
+        if 'enablePreconnect' in kwargs:
+            enable_preconnect = kwargs['enablePreconnect']
+        if 'enablePush' in kwargs:
+            enable_push = kwargs['enablePush']
+        if 'enableRo' in kwargs:
+            enable_ro = kwargs['enableRo']
+        if 'preloadEnable' in kwargs:
+            preload_enable = kwargs['preloadEnable']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'titleBrotli' in kwargs:
+            title_brotli = kwargs['titleBrotli']
+        if 'titleHttp2ServerPush' in kwargs:
+            title_http2_server_push = kwargs['titleHttp2ServerPush']
+        if 'titlePreconnect' in kwargs:
+            title_preconnect = kwargs['titlePreconnect']
+        if 'titlePreload' in kwargs:
+            title_preload = kwargs['titlePreload']
+        if 'titleRo' in kwargs:
+            title_ro = kwargs['titleRo']
+
         if ab_logic is not None:
             _setter("ab_logic", ab_logic)
         if ab_testing is not None:
@@ -53005,7 +60361,43 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorAdaptiveImageCompressionResul
              title_aic_mobile: Optional[str] = None,
              title_aic_nonmobile: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compressMobile' in kwargs:
+            compress_mobile = kwargs['compressMobile']
+        if 'compressStandard' in kwargs:
+            compress_standard = kwargs['compressStandard']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'tier1MobileCompressionMethod' in kwargs:
+            tier1_mobile_compression_method = kwargs['tier1MobileCompressionMethod']
+        if 'tier1MobileCompressionValue' in kwargs:
+            tier1_mobile_compression_value = kwargs['tier1MobileCompressionValue']
+        if 'tier1StandardCompressionMethod' in kwargs:
+            tier1_standard_compression_method = kwargs['tier1StandardCompressionMethod']
+        if 'tier1StandardCompressionValue' in kwargs:
+            tier1_standard_compression_value = kwargs['tier1StandardCompressionValue']
+        if 'tier2MobileCompressionMethod' in kwargs:
+            tier2_mobile_compression_method = kwargs['tier2MobileCompressionMethod']
+        if 'tier2MobileCompressionValue' in kwargs:
+            tier2_mobile_compression_value = kwargs['tier2MobileCompressionValue']
+        if 'tier2StandardCompressionMethod' in kwargs:
+            tier2_standard_compression_method = kwargs['tier2StandardCompressionMethod']
+        if 'tier2StandardCompressionValue' in kwargs:
+            tier2_standard_compression_value = kwargs['tier2StandardCompressionValue']
+        if 'tier3MobileCompressionMethod' in kwargs:
+            tier3_mobile_compression_method = kwargs['tier3MobileCompressionMethod']
+        if 'tier3MobileCompressionValue' in kwargs:
+            tier3_mobile_compression_value = kwargs['tier3MobileCompressionValue']
+        if 'tier3StandardCompressionMethod' in kwargs:
+            tier3_standard_compression_method = kwargs['tier3StandardCompressionMethod']
+        if 'tier3StandardCompressionValue' in kwargs:
+            tier3_standard_compression_value = kwargs['tier3StandardCompressionValue']
+        if 'titleAicMobile' in kwargs:
+            title_aic_mobile = kwargs['titleAicMobile']
+        if 'titleAicNonmobile' in kwargs:
+            title_aic_nonmobile = kwargs['titleAicNonmobile']
+
         if compress_mobile is not None:
             _setter("compress_mobile", compress_mobile)
         if compress_standard is not None:
@@ -53165,7 +60557,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorAdvancedResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              xml: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if description is not None:
             _setter("description", description)
         if locked is not None:
@@ -53242,7 +60638,15 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorAggregatedReportingResult(dic
              report_name: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attributesCount' in kwargs:
+            attributes_count = kwargs['attributesCount']
+        if 'reportName' in kwargs:
+            report_name = kwargs['reportName']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if attribute1 is not None:
             _setter("attribute1", attribute1)
         if attribute2 is not None:
@@ -53336,7 +60740,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorAkamaizerResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -53403,7 +60811,21 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorAkamaizerTagResult(dict):
              tags_attribute: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'includeTagsAttribute' in kwargs:
+            include_tags_attribute = kwargs['includeTagsAttribute']
+        if 'matchHostname' in kwargs:
+            match_hostname = kwargs['matchHostname']
+        if 'replaceAll' in kwargs:
+            replace_all = kwargs['replaceAll']
+        if 'replacementHostname' in kwargs:
+            replacement_hostname = kwargs['replacementHostname']
+        if 'tagsAttribute' in kwargs:
+            tags_attribute = kwargs['tagsAttribute']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if include_tags_attribute is not None:
             _setter("include_tags_attribute", include_tags_attribute)
         if locked is not None:
@@ -53490,7 +60912,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorAllHttpInCacheHierarchyResult
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -53548,7 +60974,15 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorAllowCloudletsOriginsResult(d
              purge_origin_query_parameter: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'honorBaseDirectory' in kwargs:
+            honor_base_directory = kwargs['honorBaseDirectory']
+        if 'purgeOriginQueryParameter' in kwargs:
+            purge_origin_query_parameter = kwargs['purgeOriginQueryParameter']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if honor_base_directory is not None:
@@ -53617,7 +61051,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorAllowDeleteResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowBody' in kwargs:
+            allow_body = kwargs['allowBody']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if allow_body is not None:
             _setter("allow_body", allow_body)
         if enabled is not None:
@@ -53676,7 +61116,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorAllowHttpsCacheKeySharingResu
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -53728,7 +61172,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorAllowHttpsDowngradeResult(dic
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -53780,7 +61228,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorAllowOptionsResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -53832,7 +61284,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorAllowPatchResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -53887,7 +61343,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorAllowPostResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowWithoutContentLength' in kwargs:
+            allow_without_content_length = kwargs['allowWithoutContentLength']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if allow_without_content_length is not None:
             _setter("allow_without_content_length", allow_without_content_length)
         if enabled is not None:
@@ -53946,7 +61408,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorAllowPutResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -53998,7 +61464,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorAllowTransferEncodingResult(d
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -54050,7 +61520,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorAltSvcHeaderResult(dict):
              max_age: Optional[int] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maxAge' in kwargs:
+            max_age = kwargs['maxAge']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if max_age is not None:
@@ -54135,7 +61611,31 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationResult(dict)
              use_throttled_cp_code: Optional[bool] = None,
              use_throttled_status_code: Optional[bool] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'alternateResponseCacheTtl' in kwargs:
+            alternate_response_cache_ttl = kwargs['alternateResponseCacheTtl']
+        if 'cloudletPolicy' in kwargs:
+            cloudlet_policy = kwargs['cloudletPolicy']
+        if 'cloudletSharedPolicy' in kwargs:
+            cloudlet_shared_policy = kwargs['cloudletSharedPolicy']
+        if 'isSharedPolicy' in kwargs:
+            is_shared_policy = kwargs['isSharedPolicy']
+        if 'netStorage' in kwargs:
+            net_storage = kwargs['netStorage']
+        if 'netStoragePath' in kwargs:
+            net_storage_path = kwargs['netStoragePath']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'throttledCpCode' in kwargs:
+            throttled_cp_code = kwargs['throttledCpCode']
+        if 'throttledStatusCode' in kwargs:
+            throttled_status_code = kwargs['throttledStatusCode']
+        if 'useThrottledCpCode' in kwargs:
+            use_throttled_cp_code = kwargs['useThrottledCpCode']
+        if 'useThrottledStatusCode' in kwargs:
+            use_throttled_status_code = kwargs['useThrottledStatusCode']
+
         if alternate_response_cache_ttl is not None:
             _setter("alternate_response_cache_ttl", alternate_response_cache_ttl)
         if cloudlet_policy is not None:
@@ -54258,7 +61758,9 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationCloudletPoli
              _setter: Callable[[Any, Any], None],
              id: Optional[int] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
         if name is not None:
@@ -54293,7 +61795,15 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationNetStorageRe
              cp_code: Optional[int] = None,
              download_domain_name: Optional[str] = None,
              g2o_token: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCode' in kwargs:
+            cp_code = kwargs['cpCode']
+        if 'downloadDomainName' in kwargs:
+            download_domain_name = kwargs['downloadDomainName']
+        if 'g2oToken' in kwargs:
+            g2o_token = kwargs['g2oToken']
+
         if cp_code is not None:
             _setter("cp_code", cp_code)
         if download_domain_name is not None:
@@ -54344,7 +61854,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationThrottledCpC
              id: Optional[int] = None,
              name: Optional[str] = None,
              products: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCodeLimits' in kwargs:
+            cp_code_limits = kwargs['cpCodeLimits']
+        if 'createdDate' in kwargs:
+            created_date = kwargs['createdDate']
+
         if cp_code_limits is not None:
             _setter("cp_code_limits", cp_code_limits)
         if created_date is not None:
@@ -54407,7 +61923,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationThrottledCpC
              current_capacity: Optional[int] = None,
              limit: Optional[int] = None,
              limit_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currentCapacity' in kwargs:
+            current_capacity = kwargs['currentCapacity']
+        if 'limitType' in kwargs:
+            limit_type = kwargs['limitType']
+
         if current_capacity is not None:
             _setter("current_capacity", current_capacity)
         if limit is not None:
@@ -54524,7 +62046,57 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorApplicationLoadBalancerResult
              stickiness_title: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allDownNetStorage' in kwargs:
+            all_down_net_storage = kwargs['allDownNetStorage']
+        if 'allDownNetStorageFile' in kwargs:
+            all_down_net_storage_file = kwargs['allDownNetStorageFile']
+        if 'allDownStatusCode' in kwargs:
+            all_down_status_code = kwargs['allDownStatusCode']
+        if 'allDownTitle' in kwargs:
+            all_down_title = kwargs['allDownTitle']
+        if 'allowCachePrefresh' in kwargs:
+            allow_cache_prefresh = kwargs['allowCachePrefresh']
+        if 'cachedContentTitle' in kwargs:
+            cached_content_title = kwargs['cachedContentTitle']
+        if 'cloudletPolicy' in kwargs:
+            cloudlet_policy = kwargs['cloudletPolicy']
+        if 'failoverAttemptsThreshold' in kwargs:
+            failover_attempts_threshold = kwargs['failoverAttemptsThreshold']
+        if 'failoverMode' in kwargs:
+            failover_mode = kwargs['failoverMode']
+        if 'failoverOriginMaps' in kwargs:
+            failover_origin_maps = kwargs['failoverOriginMaps']
+        if 'failoverStatusCodes' in kwargs:
+            failover_status_codes = kwargs['failoverStatusCodes']
+        if 'failoverTitle' in kwargs:
+            failover_title = kwargs['failoverTitle']
+        if 'originCookieName' in kwargs:
+            origin_cookie_name = kwargs['originCookieName']
+        if 'specifyStickinessCookieDomain' in kwargs:
+            specify_stickiness_cookie_domain = kwargs['specifyStickinessCookieDomain']
+        if 'stickinessCookieAutomaticSalt' in kwargs:
+            stickiness_cookie_automatic_salt = kwargs['stickinessCookieAutomaticSalt']
+        if 'stickinessCookieDomain' in kwargs:
+            stickiness_cookie_domain = kwargs['stickinessCookieDomain']
+        if 'stickinessCookieSalt' in kwargs:
+            stickiness_cookie_salt = kwargs['stickinessCookieSalt']
+        if 'stickinessCookieSetHttpOnlyFlag' in kwargs:
+            stickiness_cookie_set_http_only_flag = kwargs['stickinessCookieSetHttpOnlyFlag']
+        if 'stickinessCookieType' in kwargs:
+            stickiness_cookie_type = kwargs['stickinessCookieType']
+        if 'stickinessDuration' in kwargs:
+            stickiness_duration = kwargs['stickinessDuration']
+        if 'stickinessExpirationDate' in kwargs:
+            stickiness_expiration_date = kwargs['stickinessExpirationDate']
+        if 'stickinessRefresh' in kwargs:
+            stickiness_refresh = kwargs['stickinessRefresh']
+        if 'stickinessTitle' in kwargs:
+            stickiness_title = kwargs['stickinessTitle']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if all_down_net_storage is not None:
             _setter("all_down_net_storage", all_down_net_storage)
         if all_down_net_storage_file is not None:
@@ -54741,7 +62313,15 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorApplicationLoadBalancerAllDow
              cp_code: Optional[int] = None,
              download_domain_name: Optional[str] = None,
              g2o_token: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCode' in kwargs:
+            cp_code = kwargs['cpCode']
+        if 'downloadDomainName' in kwargs:
+            download_domain_name = kwargs['downloadDomainName']
+        if 'g2oToken' in kwargs:
+            g2o_token = kwargs['g2oToken']
+
         if cp_code is not None:
             _setter("cp_code", cp_code)
         if download_domain_name is not None:
@@ -54780,7 +62360,9 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorApplicationLoadBalancerCloudl
              _setter: Callable[[Any, Any], None],
              id: Optional[int] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
         if name is not None:
@@ -54812,7 +62394,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorApplicationLoadBalancerFailov
              _setter: Callable[[Any, Any], None],
              from_origin_id: Optional[str] = None,
              to_origin_ids: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fromOriginId' in kwargs:
+            from_origin_id = kwargs['fromOriginId']
+        if 'toOriginIds' in kwargs:
+            to_origin_ids = kwargs['toOriginIds']
+
         if from_origin_id is not None:
             _setter("from_origin_id", from_origin_id)
         if to_origin_ids is not None:
@@ -54904,7 +62492,45 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorAudienceSegmentationResult(di
              specify_population_cookie_domain: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudletPolicy' in kwargs:
+            cloudlet_policy = kwargs['cloudletPolicy']
+        if 'cloudletSharedPolicy' in kwargs:
+            cloudlet_shared_policy = kwargs['cloudletSharedPolicy']
+        if 'isSharedPolicy' in kwargs:
+            is_shared_policy = kwargs['isSharedPolicy']
+        if 'populationCookieAutomaticSalt' in kwargs:
+            population_cookie_automatic_salt = kwargs['populationCookieAutomaticSalt']
+        if 'populationCookieDomain' in kwargs:
+            population_cookie_domain = kwargs['populationCookieDomain']
+        if 'populationCookieIncludeRuleName' in kwargs:
+            population_cookie_include_rule_name = kwargs['populationCookieIncludeRuleName']
+        if 'populationCookieSalt' in kwargs:
+            population_cookie_salt = kwargs['populationCookieSalt']
+        if 'populationCookieType' in kwargs:
+            population_cookie_type = kwargs['populationCookieType']
+        if 'populationDuration' in kwargs:
+            population_duration = kwargs['populationDuration']
+        if 'populationRefresh' in kwargs:
+            population_refresh = kwargs['populationRefresh']
+        if 'populationTitle' in kwargs:
+            population_title = kwargs['populationTitle']
+        if 'segmentTrackingCookieName' in kwargs:
+            segment_tracking_cookie_name = kwargs['segmentTrackingCookieName']
+        if 'segmentTrackingCustomHeader' in kwargs:
+            segment_tracking_custom_header = kwargs['segmentTrackingCustomHeader']
+        if 'segmentTrackingMethod' in kwargs:
+            segment_tracking_method = kwargs['segmentTrackingMethod']
+        if 'segmentTrackingQueryParam' in kwargs:
+            segment_tracking_query_param = kwargs['segmentTrackingQueryParam']
+        if 'segmentTrackingTitle' in kwargs:
+            segment_tracking_title = kwargs['segmentTrackingTitle']
+        if 'specifyPopulationCookieDomain' in kwargs:
+            specify_population_cookie_domain = kwargs['specifyPopulationCookieDomain']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if cloudlet_policy is not None:
             _setter("cloudlet_policy", cloudlet_policy)
         if cloudlet_shared_policy is not None:
@@ -55076,7 +62702,9 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorAudienceSegmentationCloudletP
              _setter: Callable[[Any, Any], None],
              id: Optional[int] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
         if name is not None:
@@ -55114,7 +62742,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorAutoDomainValidationResult(di
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if autodv is not None:
             _setter("autodv", autodv)
         if locked is not None:
@@ -55166,7 +62798,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorBaseDirectoryResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if template_uuid is not None:
@@ -55239,7 +62875,23 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorBossBeaconingResult(dict):
              sampling_frequency: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'conditionalErrorPattern' in kwargs:
+            conditional_error_pattern = kwargs['conditionalErrorPattern']
+        if 'conditionalHttpStatuses' in kwargs:
+            conditional_http_statuses = kwargs['conditionalHttpStatuses']
+        if 'conditionalSamplingFrequency' in kwargs:
+            conditional_sampling_frequency = kwargs['conditionalSamplingFrequency']
+        if 'forwardType' in kwargs:
+            forward_type = kwargs['forwardType']
+        if 'requestType' in kwargs:
+            request_type = kwargs['requestType']
+        if 'samplingFrequency' in kwargs:
+            sampling_frequency = kwargs['samplingFrequency']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if conditional_error_pattern is not None:
             _setter("conditional_error_pattern", conditional_error_pattern)
         if conditional_http_statuses is not None:
@@ -55346,7 +62998,15 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorBreadcrumbsResult(dict):
              opt_mode: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'loggingEnabled' in kwargs:
+            logging_enabled = kwargs['loggingEnabled']
+        if 'optMode' in kwargs:
+            opt_mode = kwargs['optMode']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -55412,7 +63072,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorBreakConnectionResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -55464,7 +63128,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorBrotliResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -55522,7 +63190,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorCacheErrorResult(dict):
              template_uuid: Optional[str] = None,
              ttl: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'preserveStale' in kwargs:
+            preserve_stale = kwargs['preserveStale']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -55600,7 +63274,15 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorCacheIdResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              variable_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'includeValue' in kwargs:
+            include_value = kwargs['includeValue']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'variableName' in kwargs:
+            variable_name = kwargs['variableName']
+
         if elements is not None:
             _setter("elements", elements)
         if include_value is not None:
@@ -55680,7 +63362,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorCacheKeyIgnoreCaseResult(dict
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -55738,7 +63424,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorCacheKeyQueryParamsResult(dic
              parameters: Optional[Sequence[str]] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'exactMatch' in kwargs:
+            exact_match = kwargs['exactMatch']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if behavior is not None:
             _setter("behavior", behavior)
         if exact_match is not None:
@@ -55804,7 +63496,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorCacheKeyRewriteResult(dict):
              purge_key: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'purgeKey' in kwargs:
+            purge_key = kwargs['purgeKey']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if purge_key is not None:
@@ -55859,7 +63557,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorCachePostResult(dict):
              template_uuid: Optional[str] = None,
              use_body: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'useBody' in kwargs:
+            use_body = kwargs['useBody']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -55918,7 +63622,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorCacheRedirectResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -55970,7 +63678,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorCacheTagResult(dict):
              tag: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if tag is not None:
@@ -56022,7 +63734,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorCacheTagVisibleResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if behavior is not None:
             _setter("behavior", behavior)
         if locked is not None:
@@ -56119,7 +63835,39 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorCachingResult(dict):
              template_uuid: Optional[str] = None,
              ttl: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cacheControlDirectives' in kwargs:
+            cache_control_directives = kwargs['cacheControlDirectives']
+        if 'cacheabilitySettings' in kwargs:
+            cacheability_settings = kwargs['cacheabilitySettings']
+        if 'defaultTtl' in kwargs:
+            default_ttl = kwargs['defaultTtl']
+        if 'enhancedRfcSupport' in kwargs:
+            enhanced_rfc_support = kwargs['enhancedRfcSupport']
+        if 'expirationSettings' in kwargs:
+            expiration_settings = kwargs['expirationSettings']
+        if 'honorMaxAge' in kwargs:
+            honor_max_age = kwargs['honorMaxAge']
+        if 'honorMustRevalidate' in kwargs:
+            honor_must_revalidate = kwargs['honorMustRevalidate']
+        if 'honorNoCache' in kwargs:
+            honor_no_cache = kwargs['honorNoCache']
+        if 'honorNoStore' in kwargs:
+            honor_no_store = kwargs['honorNoStore']
+        if 'honorPrivate' in kwargs:
+            honor_private = kwargs['honorPrivate']
+        if 'honorProxyRevalidate' in kwargs:
+            honor_proxy_revalidate = kwargs['honorProxyRevalidate']
+        if 'honorSMaxage' in kwargs:
+            honor_s_maxage = kwargs['honorSMaxage']
+        if 'mustRevalidate' in kwargs:
+            must_revalidate = kwargs['mustRevalidate']
+        if 'revalidationSettings' in kwargs:
+            revalidation_settings = kwargs['revalidationSettings']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if behavior is not None:
             _setter("behavior", behavior)
         if cache_control_directives is not None:
@@ -56276,7 +64024,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorCentralAuthorizationResult(di
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -56334,7 +64086,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorChaseRedirectsResult(dict):
              serve404: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if limit is not None:
@@ -56400,7 +64156,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorClientCharacteristicsResult(d
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if country is not None:
             _setter("country", country)
         if locked is not None:
@@ -56455,7 +64215,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorCloudInterconnectsResult(dict
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudLocations' in kwargs:
+            cloud_locations = kwargs['cloudLocations']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if cloud_locations is not None:
             _setter("cloud_locations", cloud_locations)
         if enabled is not None:
@@ -56517,7 +64283,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorCloudWrapperResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if location is not None:
@@ -56582,7 +64352,15 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorCloudWrapperAdvancedResult(di
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customFailoverMap' in kwargs:
+            custom_failover_map = kwargs['customFailoverMap']
+        if 'failoverMap' in kwargs:
+            failover_map = kwargs['failoverMap']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if custom_failover_map is not None:
             _setter("custom_failover_map", custom_failover_map)
         if enabled is not None:
@@ -56648,7 +64426,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorCommonMediaClientDataResult(d
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableCmcdSegmentPrefetch' in kwargs:
+            enable_cmcd_segment_prefetch = kwargs['enableCmcdSegmentPrefetch']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enable_cmcd_segment_prefetch is not None:
             _setter("enable_cmcd_segment_prefetch", enable_cmcd_segment_prefetch)
         if locked is not None:
@@ -56700,7 +64484,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorConditionalOriginResult(dict)
              origin_id: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'originId' in kwargs:
+            origin_id = kwargs['originId']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if origin_id is not None:
@@ -56764,7 +64554,17 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorConstructResponseResult(dict)
              response_code: Optional[int] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'forceEviction' in kwargs:
+            force_eviction = kwargs['forceEviction']
+        if 'ignorePurge' in kwargs:
+            ignore_purge = kwargs['ignorePurge']
+        if 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if body is not None:
             _setter("body", body)
         if enabled is not None:
@@ -56853,7 +64653,19 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacteristicsResult(
              popularity_distribution: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'catalogSize' in kwargs:
+            catalog_size = kwargs['catalogSize']
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'objectSize' in kwargs:
+            object_size = kwargs['objectSize']
+        if 'popularityDistribution' in kwargs:
+            popularity_distribution = kwargs['popularityDistribution']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if catalog_size is not None:
             _setter("catalog_size", catalog_size)
         if content_type is not None:
@@ -56980,7 +64792,41 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacteristicsAmdResu
              smooth: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'catalogSize' in kwargs:
+            catalog_size = kwargs['catalogSize']
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'popularityDistribution' in kwargs:
+            popularity_distribution = kwargs['popularityDistribution']
+        if 'segmentDurationDash' in kwargs:
+            segment_duration_dash = kwargs['segmentDurationDash']
+        if 'segmentDurationDashCustom' in kwargs:
+            segment_duration_dash_custom = kwargs['segmentDurationDashCustom']
+        if 'segmentDurationHds' in kwargs:
+            segment_duration_hds = kwargs['segmentDurationHds']
+        if 'segmentDurationHdsCustom' in kwargs:
+            segment_duration_hds_custom = kwargs['segmentDurationHdsCustom']
+        if 'segmentDurationHls' in kwargs:
+            segment_duration_hls = kwargs['segmentDurationHls']
+        if 'segmentDurationHlsCustom' in kwargs:
+            segment_duration_hls_custom = kwargs['segmentDurationHlsCustom']
+        if 'segmentDurationSmooth' in kwargs:
+            segment_duration_smooth = kwargs['segmentDurationSmooth']
+        if 'segmentDurationSmoothCustom' in kwargs:
+            segment_duration_smooth_custom = kwargs['segmentDurationSmoothCustom']
+        if 'segmentSizeDash' in kwargs:
+            segment_size_dash = kwargs['segmentSizeDash']
+        if 'segmentSizeHds' in kwargs:
+            segment_size_hds = kwargs['segmentSizeHds']
+        if 'segmentSizeHls' in kwargs:
+            segment_size_hls = kwargs['segmentSizeHls']
+        if 'segmentSizeSmooth' in kwargs:
+            segment_size_smooth = kwargs['segmentSizeSmooth']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if catalog_size is not None:
             _setter("catalog_size", catalog_size)
         if content_type is not None:
@@ -57170,7 +65016,21 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacteristicsDdResul
              popularity_distribution: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'catalogSize' in kwargs:
+            catalog_size = kwargs['catalogSize']
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'objectSize' in kwargs:
+            object_size = kwargs['objectSize']
+        if 'optimizeOption' in kwargs:
+            optimize_option = kwargs['optimizeOption']
+        if 'popularityDistribution' in kwargs:
+            popularity_distribution = kwargs['popularityDistribution']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if catalog_size is not None:
             _setter("catalog_size", catalog_size)
         if content_type is not None:
@@ -57259,7 +65119,19 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacteristicsWsdLarg
              popularity_distribution: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'catalogSize' in kwargs:
+            catalog_size = kwargs['catalogSize']
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'objectSize' in kwargs:
+            object_size = kwargs['objectSize']
+        if 'popularityDistribution' in kwargs:
+            popularity_distribution = kwargs['popularityDistribution']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if catalog_size is not None:
             _setter("catalog_size", catalog_size)
         if content_type is not None:
@@ -57374,7 +65246,33 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacteristicsWsdLive
              smooth: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'catalogSize' in kwargs:
+            catalog_size = kwargs['catalogSize']
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'popularityDistribution' in kwargs:
+            popularity_distribution = kwargs['popularityDistribution']
+        if 'segmentDurationDash' in kwargs:
+            segment_duration_dash = kwargs['segmentDurationDash']
+        if 'segmentDurationHds' in kwargs:
+            segment_duration_hds = kwargs['segmentDurationHds']
+        if 'segmentDurationHls' in kwargs:
+            segment_duration_hls = kwargs['segmentDurationHls']
+        if 'segmentDurationSmooth' in kwargs:
+            segment_duration_smooth = kwargs['segmentDurationSmooth']
+        if 'segmentSizeDash' in kwargs:
+            segment_size_dash = kwargs['segmentSizeDash']
+        if 'segmentSizeHds' in kwargs:
+            segment_size_hds = kwargs['segmentSizeHds']
+        if 'segmentSizeHls' in kwargs:
+            segment_size_hls = kwargs['segmentSizeHls']
+        if 'segmentSizeSmooth' in kwargs:
+            segment_size_smooth = kwargs['segmentSizeSmooth']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if catalog_size is not None:
             _setter("catalog_size", catalog_size)
         if content_type is not None:
@@ -57566,7 +65464,33 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacteristicsWsdVodR
              smooth: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'catalogSize' in kwargs:
+            catalog_size = kwargs['catalogSize']
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'popularityDistribution' in kwargs:
+            popularity_distribution = kwargs['popularityDistribution']
+        if 'segmentDurationDash' in kwargs:
+            segment_duration_dash = kwargs['segmentDurationDash']
+        if 'segmentDurationHds' in kwargs:
+            segment_duration_hds = kwargs['segmentDurationHds']
+        if 'segmentDurationHls' in kwargs:
+            segment_duration_hls = kwargs['segmentDurationHls']
+        if 'segmentDurationSmooth' in kwargs:
+            segment_duration_smooth = kwargs['segmentDurationSmooth']
+        if 'segmentSizeDash' in kwargs:
+            segment_size_dash = kwargs['segmentSizeDash']
+        if 'segmentSizeHds' in kwargs:
+            segment_size_hds = kwargs['segmentSizeHds']
+        if 'segmentSizeHls' in kwargs:
+            segment_size_hls = kwargs['segmentSizeHls']
+        if 'segmentSizeSmooth' in kwargs:
+            segment_size_smooth = kwargs['segmentSizeSmooth']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if catalog_size is not None:
             _setter("catalog_size", catalog_size)
         if content_type is not None:
@@ -57728,7 +65652,17 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorContentPrePositionResult(dict
              targets: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'firstLocation' in kwargs:
+            first_location = kwargs['firstLocation']
+        if 'secondLocation' in kwargs:
+            second_location = kwargs['secondLocation']
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if first_location is not None:
@@ -57871,7 +65805,47 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorContentTargetingProtectionRes
              regions: Optional[Sequence[str]] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableGeoProtection' in kwargs:
+            enable_geo_protection = kwargs['enableGeoProtection']
+        if 'enableGeoRedirectOnDeny' in kwargs:
+            enable_geo_redirect_on_deny = kwargs['enableGeoRedirectOnDeny']
+        if 'enableIpProtection' in kwargs:
+            enable_ip_protection = kwargs['enableIpProtection']
+        if 'enableIpRedirectOnDeny' in kwargs:
+            enable_ip_redirect_on_deny = kwargs['enableIpRedirectOnDeny']
+        if 'enableReferrerProtection' in kwargs:
+            enable_referrer_protection = kwargs['enableReferrerProtection']
+        if 'enableReferrerRedirectOnDeny' in kwargs:
+            enable_referrer_redirect_on_deny = kwargs['enableReferrerRedirectOnDeny']
+        if 'geoProtectionMode' in kwargs:
+            geo_protection_mode = kwargs['geoProtectionMode']
+        if 'geoProtectionTitle' in kwargs:
+            geo_protection_title = kwargs['geoProtectionTitle']
+        if 'geoRedirectUrl' in kwargs:
+            geo_redirect_url = kwargs['geoRedirectUrl']
+        if 'ipAddresses' in kwargs:
+            ip_addresses = kwargs['ipAddresses']
+        if 'ipProtectionMode' in kwargs:
+            ip_protection_mode = kwargs['ipProtectionMode']
+        if 'ipProtectionTitle' in kwargs:
+            ip_protection_title = kwargs['ipProtectionTitle']
+        if 'ipRedirectUrl' in kwargs:
+            ip_redirect_url = kwargs['ipRedirectUrl']
+        if 'overrideIpAddresses' in kwargs:
+            override_ip_addresses = kwargs['overrideIpAddresses']
+        if 'referrerDomains' in kwargs:
+            referrer_domains = kwargs['referrerDomains']
+        if 'referrerProtectionMode' in kwargs:
+            referrer_protection_mode = kwargs['referrerProtectionMode']
+        if 'referrerProtectionTitle' in kwargs:
+            referrer_protection_title = kwargs['referrerProtectionTitle']
+        if 'referrerRedirectUrl' in kwargs:
+            referrer_redirect_url = kwargs['referrerRedirectUrl']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if countries is not None:
             _setter("countries", countries)
         if dmas is not None:
@@ -58094,7 +66068,21 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorCorsSupportResult(dict):
              preflight_max_age: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowCredentials' in kwargs:
+            allow_credentials = kwargs['allowCredentials']
+        if 'allowHeaders' in kwargs:
+            allow_headers = kwargs['allowHeaders']
+        if 'allowOrigins' in kwargs:
+            allow_origins = kwargs['allowOrigins']
+        if 'exposeHeaders' in kwargs:
+            expose_headers = kwargs['exposeHeaders']
+        if 'preflightMaxAge' in kwargs:
+            preflight_max_age = kwargs['preflightMaxAge']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if allow_credentials is not None:
             _setter("allow_credentials", allow_credentials)
         if allow_headers is not None:
@@ -58202,7 +66190,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorCpCodeResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              value: Optional['outputs.GetPropertyRulesBuilderRulesV20230530BehaviorCpCodeValueResult'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if template_uuid is not None:
@@ -58260,7 +66252,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorCpCodeValueResult(dict):
              id: Optional[int] = None,
              name: Optional[str] = None,
              products: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCodeLimits' in kwargs:
+            cp_code_limits = kwargs['cpCodeLimits']
+        if 'createdDate' in kwargs:
+            created_date = kwargs['createdDate']
+
         if cp_code_limits is not None:
             _setter("cp_code_limits", cp_code_limits)
         if created_date is not None:
@@ -58323,7 +66321,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorCpCodeValueCpCodeLimitsResult
              current_capacity: Optional[int] = None,
              limit: Optional[int] = None,
              limit_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currentCapacity' in kwargs:
+            current_capacity = kwargs['currentCapacity']
+        if 'limitType' in kwargs:
+            limit_type = kwargs['limitType']
+
         if current_capacity is not None:
             _setter("current_capacity", current_capacity)
         if limit is not None:
@@ -58368,7 +66372,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorCustomBehaviorResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'behaviorId' in kwargs:
+            behavior_id = kwargs['behaviorId']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if behavior_id is not None:
             _setter("behavior_id", behavior_id)
         if locked is not None:
@@ -58444,7 +66454,27 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorDatastreamResult(dict):
              stream_type: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'beaconStreamTitle' in kwargs:
+            beacon_stream_title = kwargs['beaconStreamTitle']
+        if 'collectMidgressTraffic' in kwargs:
+            collect_midgress_traffic = kwargs['collectMidgressTraffic']
+        if 'datastreamIds' in kwargs:
+            datastream_ids = kwargs['datastreamIds']
+        if 'logEnabled' in kwargs:
+            log_enabled = kwargs['logEnabled']
+        if 'logStreamNames' in kwargs:
+            log_stream_names = kwargs['logStreamNames']
+        if 'logStreamTitle' in kwargs:
+            log_stream_title = kwargs['logStreamTitle']
+        if 'samplingPercentage' in kwargs:
+            sampling_percentage = kwargs['samplingPercentage']
+        if 'streamType' in kwargs:
+            stream_type = kwargs['streamType']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if beacon_stream_title is not None:
             _setter("beacon_stream_title", beacon_stream_title)
         if collect_midgress_traffic is not None:
@@ -58567,7 +66597,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorDcpResult(dict):
              tlsenabled: Optional[bool] = None,
              uuid: Optional[str] = None,
              wsenabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'namespaceId' in kwargs:
+            namespace_id = kwargs['namespaceId']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if anonymous is not None:
             _setter("anonymous", anonymous)
         if enabled is not None:
@@ -58657,7 +66693,15 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorDcpAuthHmacTransformationResu
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hashConversionAlgorithm' in kwargs:
+            hash_conversion_algorithm = kwargs['hashConversionAlgorithm']
+        if 'hashConversionKey' in kwargs:
+            hash_conversion_key = kwargs['hashConversionKey']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if hash_conversion_algorithm is not None:
             _setter("hash_conversion_algorithm", hash_conversion_algorithm)
         if hash_conversion_key is not None:
@@ -58716,7 +66760,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorDcpAuthRegexTransformationRes
              regex_pattern: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'regexPattern' in kwargs:
+            regex_pattern = kwargs['regexPattern']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if regex_pattern is not None:
@@ -58771,7 +66821,15 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorDcpAuthSubstringTransformatio
              substring_start: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'substringEnd' in kwargs:
+            substring_end = kwargs['substringEnd']
+        if 'substringStart' in kwargs:
+            substring_start = kwargs['substringStart']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if substring_end is not None:
@@ -58833,7 +66891,15 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorDcpAuthVariableExtractorResul
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateField' in kwargs:
+            certificate_field = kwargs['certificateField']
+        if 'dcpMutualAuthProcessingVariableId' in kwargs:
+            dcp_mutual_auth_processing_variable_id = kwargs['dcpMutualAuthProcessingVariableId']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if certificate_field is not None:
             _setter("certificate_field", certificate_field)
         if dcp_mutual_auth_processing_variable_id is not None:
@@ -58892,7 +66958,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorDcpDefaultAuthzGroupsResult(d
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'groupNames' in kwargs:
+            group_names = kwargs['groupNames']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if group_names is not None:
             _setter("group_names", group_names)
         if locked is not None:
@@ -58953,7 +67025,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorDcpDevRelationsResult(dict):
              path: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customValues' in kwargs:
+            custom_values = kwargs['customValues']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if custom_values is not None:
             _setter("custom_values", custom_values)
         if enabled is not None:
@@ -59041,7 +67119,23 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorDcpRealTimeAuthResult(dict):
              namespace_claim: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'extractHostname' in kwargs:
+            extract_hostname = kwargs['extractHostname']
+        if 'extractJurisdiction' in kwargs:
+            extract_jurisdiction = kwargs['extractJurisdiction']
+        if 'extractNamespace' in kwargs:
+            extract_namespace = kwargs['extractNamespace']
+        if 'hostnameClaim' in kwargs:
+            hostname_claim = kwargs['hostnameClaim']
+        if 'jurisdictionClaim' in kwargs:
+            jurisdiction_claim = kwargs['jurisdictionClaim']
+        if 'namespaceClaim' in kwargs:
+            namespace_claim = kwargs['namespaceClaim']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if extract_hostname is not None:
             _setter("extract_hostname", extract_hostname)
         if extract_jurisdiction is not None:
@@ -59128,7 +67222,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorDeliveryReceiptResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -59183,7 +67281,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorDenyAccessResult(dict):
              reason: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -59242,7 +67344,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorDenyDirectFailoverAccessResul
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -59294,7 +67400,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorDeviceCharacteristicCacheIdRe
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if elements is not None:
             _setter("elements", elements)
         if locked is not None:
@@ -59346,7 +67456,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorDeviceCharacteristicHeaderRes
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if elements is not None:
             _setter("elements", elements)
         if locked is not None:
@@ -59401,7 +67515,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorDnsAsyncRefreshResult(dict):
              template_uuid: Optional[str] = None,
              timeout: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -59466,7 +67584,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorDnsPrefreshResult(dict):
              template_uuid: Optional[str] = None,
              timeout: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if delay is not None:
             _setter("delay", delay)
         if enabled is not None:
@@ -59532,7 +67654,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorDowngradeProtocolResult(dict)
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -59584,7 +67710,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorDownloadCompleteMarkerResult(
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -59636,7 +67766,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorDownloadNotificationResult(di
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -59700,7 +67834,17 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorDownstreamCacheResult(dict):
              template_uuid: Optional[str] = None,
              ttl: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowBehavior' in kwargs:
+            allow_behavior = kwargs['allowBehavior']
+        if 'sendHeaders' in kwargs:
+            send_headers = kwargs['sendHeaders']
+        if 'sendPrivate' in kwargs:
+            send_private = kwargs['sendPrivate']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if allow_behavior is not None:
             _setter("allow_behavior", allow_behavior)
         if behavior is not None:
@@ -59780,7 +67924,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorDynamicThroughtputOptimizatio
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -59832,7 +67980,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorDynamicThroughtputOptimizatio
              template_uuid: Optional[str] = None,
              throughput: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if template_uuid is not None:
@@ -59893,7 +68045,17 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorDynamicWebContentResult(dict)
              sure_route: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'imageCompression' in kwargs:
+            image_compression = kwargs['imageCompression']
+        if 'realUserMonitoring' in kwargs:
+            real_user_monitoring = kwargs['realUserMonitoring']
+        if 'sureRoute' in kwargs:
+            sure_route = kwargs['sureRoute']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if image_compression is not None:
             _setter("image_compression", image_compression)
         if locked is not None:
@@ -59966,7 +68128,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorEcmsBulkUploadResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -60030,7 +68196,19 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorEcmsDatabaseResult(dict):
              regex_pattern: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'extractLocation' in kwargs:
+            extract_location = kwargs['extractLocation']
+        if 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+        if 'queryParameterName' in kwargs:
+            query_parameter_name = kwargs['queryParameterName']
+        if 'regexPattern' in kwargs:
+            regex_pattern = kwargs['regexPattern']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if database is not None:
             _setter("database", database)
         if extract_location is not None:
@@ -60122,7 +68300,19 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorEcmsDatasetResult(dict):
              regex_pattern: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'extractLocation' in kwargs:
+            extract_location = kwargs['extractLocation']
+        if 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+        if 'queryParameterName' in kwargs:
+            query_parameter_name = kwargs['queryParameterName']
+        if 'regexPattern' in kwargs:
+            regex_pattern = kwargs['regexPattern']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if dataset is not None:
             _setter("dataset", dataset)
         if extract_location is not None:
@@ -60202,7 +68392,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorEcmsObjectKeyResult(dict):
              regex: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if regex is not None:
@@ -60278,7 +68472,27 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorEdgeConnectResult(dict):
              override_aggregate_settings: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'aggregateLines' in kwargs:
+            aggregate_lines = kwargs['aggregateLines']
+        if 'aggregateSize' in kwargs:
+            aggregate_size = kwargs['aggregateSize']
+        if 'aggregateTime' in kwargs:
+            aggregate_time = kwargs['aggregateTime']
+        if 'apiConnector' in kwargs:
+            api_connector = kwargs['apiConnector']
+        if 'apiDataElements' in kwargs:
+            api_data_elements = kwargs['apiDataElements']
+        if 'destinationHostname' in kwargs:
+            destination_hostname = kwargs['destinationHostname']
+        if 'destinationPath' in kwargs:
+            destination_path = kwargs['destinationPath']
+        if 'overrideAggregateSettings' in kwargs:
+            override_aggregate_settings = kwargs['overrideAggregateSettings']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if aggregate_lines is not None:
             _setter("aggregate_lines", aggregate_lines)
         if aggregate_size is not None:
@@ -60389,7 +68603,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancingAdvancedResu
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              xml: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if description is not None:
             _setter("description", description)
         if locked is not None:
@@ -60469,7 +68687,21 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancingDataCenterRe
              origin_id: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cookieName' in kwargs:
+            cookie_name = kwargs['cookieName']
+        if 'enableFailover' in kwargs:
+            enable_failover = kwargs['enableFailover']
+        if 'failoverRules' in kwargs:
+            failover_rules = kwargs['failoverRules']
+        if 'failoverTitle' in kwargs:
+            failover_title = kwargs['failoverTitle']
+        if 'originId' in kwargs:
+            origin_id = kwargs['originId']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if cookie_name is not None:
             _setter("cookie_name", cookie_name)
         if description is not None:
@@ -60573,7 +68805,19 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancingDataCenterFa
              failover_hostname: Optional[str] = None,
              modify_request: Optional[bool] = None,
              override_hostname: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'absolutePath' in kwargs:
+            absolute_path = kwargs['absolutePath']
+        if 'contextRoot' in kwargs:
+            context_root = kwargs['contextRoot']
+        if 'failoverHostname' in kwargs:
+            failover_hostname = kwargs['failoverHostname']
+        if 'modifyRequest' in kwargs:
+            modify_request = kwargs['modifyRequest']
+        if 'overrideHostname' in kwargs:
+            override_hostname = kwargs['overrideHostname']
+
         if absolute_path is not None:
             _setter("absolute_path", absolute_path)
         if context_root is not None:
@@ -60647,7 +68891,17 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancingOriginResult
              session_persistence_title: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cookieName' in kwargs:
+            cookie_name = kwargs['cookieName']
+        if 'enableSessionPersistence' in kwargs:
+            enable_session_persistence = kwargs['enableSessionPersistence']
+        if 'sessionPersistenceTitle' in kwargs:
+            session_persistence_title = kwargs['sessionPersistenceTitle']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if cookie_name is not None:
             _setter("cookie_name", cookie_name)
         if description is not None:
@@ -60743,7 +68997,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorEdgeOriginAuthorizationResult
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cookieName' in kwargs:
+            cookie_name = kwargs['cookieName']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if cookie_name is not None:
             _setter("cookie_name", cookie_name)
         if domain is not None:
@@ -60825,7 +69085,17 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorEdgeRedirectorResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudletPolicy' in kwargs:
+            cloudlet_policy = kwargs['cloudletPolicy']
+        if 'cloudletSharedPolicy' in kwargs:
+            cloudlet_shared_policy = kwargs['cloudletSharedPolicy']
+        if 'isSharedPolicy' in kwargs:
+            is_shared_policy = kwargs['isSharedPolicy']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if cloudlet_policy is not None:
             _setter("cloudlet_policy", cloudlet_policy)
         if cloudlet_shared_policy is not None:
@@ -60892,7 +69162,9 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorEdgeRedirectorCloudletPolicyR
              _setter: Callable[[Any, Any], None],
              id: Optional[int] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
         if name is not None:
@@ -60930,7 +69202,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorEdgeScapeResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -61000,7 +69276,23 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorEdgeSideIncludesResult(dict):
              pass_set_cookie: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'detectInjection' in kwargs:
+            detect_injection = kwargs['detectInjection']
+        if 'enableViaHttp' in kwargs:
+            enable_via_http = kwargs['enableViaHttp']
+        if 'i18nCharsets' in kwargs:
+            i18n_charsets = kwargs['i18nCharsets']
+        if 'i18nStatus' in kwargs:
+            i18n_status = kwargs['i18nStatus']
+        if 'passClientIp' in kwargs:
+            pass_client_ip = kwargs['passClientIp']
+        if 'passSetCookie' in kwargs:
+            pass_set_cookie = kwargs['passSetCookie']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if detect_injection is not None:
             _setter("detect_injection", detect_injection)
         if enable_via_http is not None:
@@ -61103,7 +69395,17 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorEdgeWorkerResult(dict):
              resource_tier: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'createEdgeWorker' in kwargs:
+            create_edge_worker = kwargs['createEdgeWorker']
+        if 'edgeWorkerId' in kwargs:
+            edge_worker_id = kwargs['edgeWorkerId']
+        if 'resourceTier' in kwargs:
+            resource_tier = kwargs['resourceTier']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if create_edge_worker is not None:
             _setter("create_edge_worker", create_edge_worker)
         if edge_worker_id is not None:
@@ -61176,7 +69478,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorEnhancedAkamaiProtocolResult(
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if display is not None:
             _setter("display", display)
         if locked is not None:
@@ -61324,7 +69630,75 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorEnhancedProxyDetectionResult(
              tor_exit_node: Optional[str] = None,
              uuid: Optional[str] = None,
              vpn_data_center: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'anonymousVpn' in kwargs:
+            anonymous_vpn = kwargs['anonymousVpn']
+        if 'bestPracticeAction' in kwargs:
+            best_practice_action = kwargs['bestPracticeAction']
+        if 'bestPracticeRedirecturl' in kwargs:
+            best_practice_redirecturl = kwargs['bestPracticeRedirecturl']
+        if 'detectAnonymousVpn' in kwargs:
+            detect_anonymous_vpn = kwargs['detectAnonymousVpn']
+        if 'detectAnonymousVpnAction' in kwargs:
+            detect_anonymous_vpn_action = kwargs['detectAnonymousVpnAction']
+        if 'detectAnonymousVpnRedirecturl' in kwargs:
+            detect_anonymous_vpn_redirecturl = kwargs['detectAnonymousVpnRedirecturl']
+        if 'detectHostingProvider' in kwargs:
+            detect_hosting_provider = kwargs['detectHostingProvider']
+        if 'detectHostingProviderAction' in kwargs:
+            detect_hosting_provider_action = kwargs['detectHostingProviderAction']
+        if 'detectHostingProviderRedirecturl' in kwargs:
+            detect_hosting_provider_redirecturl = kwargs['detectHostingProviderRedirecturl']
+        if 'detectPublicProxy' in kwargs:
+            detect_public_proxy = kwargs['detectPublicProxy']
+        if 'detectPublicProxyAction' in kwargs:
+            detect_public_proxy_action = kwargs['detectPublicProxyAction']
+        if 'detectPublicProxyRedirecturl' in kwargs:
+            detect_public_proxy_redirecturl = kwargs['detectPublicProxyRedirecturl']
+        if 'detectResidentialProxy' in kwargs:
+            detect_residential_proxy = kwargs['detectResidentialProxy']
+        if 'detectResidentialProxyAction' in kwargs:
+            detect_residential_proxy_action = kwargs['detectResidentialProxyAction']
+        if 'detectResidentialProxyRedirecturl' in kwargs:
+            detect_residential_proxy_redirecturl = kwargs['detectResidentialProxyRedirecturl']
+        if 'detectSmartDnsProxy' in kwargs:
+            detect_smart_dns_proxy = kwargs['detectSmartDnsProxy']
+        if 'detectSmartDnsProxyAction' in kwargs:
+            detect_smart_dns_proxy_action = kwargs['detectSmartDnsProxyAction']
+        if 'detectSmartDnsProxyRedirecturl' in kwargs:
+            detect_smart_dns_proxy_redirecturl = kwargs['detectSmartDnsProxyRedirecturl']
+        if 'detectTorExitNode' in kwargs:
+            detect_tor_exit_node = kwargs['detectTorExitNode']
+        if 'detectTorExitNodeAction' in kwargs:
+            detect_tor_exit_node_action = kwargs['detectTorExitNodeAction']
+        if 'detectTorExitNodeRedirecturl' in kwargs:
+            detect_tor_exit_node_redirecturl = kwargs['detectTorExitNodeRedirecturl']
+        if 'detectVpnDataCenter' in kwargs:
+            detect_vpn_data_center = kwargs['detectVpnDataCenter']
+        if 'detectVpnDataCenterAction' in kwargs:
+            detect_vpn_data_center_action = kwargs['detectVpnDataCenterAction']
+        if 'detectVpnDataCenterRedirecturl' in kwargs:
+            detect_vpn_data_center_redirecturl = kwargs['detectVpnDataCenterRedirecturl']
+        if 'enableConfigurationMode' in kwargs:
+            enable_configuration_mode = kwargs['enableConfigurationMode']
+        if 'forwardHeaderEnrichment' in kwargs:
+            forward_header_enrichment = kwargs['forwardHeaderEnrichment']
+        if 'hostingProvider' in kwargs:
+            hosting_provider = kwargs['hostingProvider']
+        if 'publicProxy' in kwargs:
+            public_proxy = kwargs['publicProxy']
+        if 'residentialProxy' in kwargs:
+            residential_proxy = kwargs['residentialProxy']
+        if 'smartDnsProxy' in kwargs:
+            smart_dns_proxy = kwargs['smartDnsProxy']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'torExitNode' in kwargs:
+            tor_exit_node = kwargs['torExitNode']
+        if 'vpnDataCenter' in kwargs:
+            vpn_data_center = kwargs['vpnDataCenter']
+
         if anonymous_vpn is not None:
             _setter("anonymous_vpn", anonymous_vpn)
         if best_practice_action is not None:
@@ -61600,7 +69974,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorEpdForwardHeaderEnrichmentRes
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -61745,7 +70123,71 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorFailActionResult(dict):
              status_code: Optional[int] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionType' in kwargs:
+            action_type = kwargs['actionType']
+        if 'allowFcmParentOverride' in kwargs:
+            allow_fcm_parent_override = kwargs['allowFcmParentOverride']
+        if 'cexCustomPath' in kwargs:
+            cex_custom_path = kwargs['cexCustomPath']
+        if 'cexHostname' in kwargs:
+            cex_hostname = kwargs['cexHostname']
+        if 'cexPath' in kwargs:
+            cex_path = kwargs['cexPath']
+        if 'contentCustomPath' in kwargs:
+            content_custom_path = kwargs['contentCustomPath']
+        if 'contentHostname' in kwargs:
+            content_hostname = kwargs['contentHostname']
+        if 'contentPath' in kwargs:
+            content_path = kwargs['contentPath']
+        if 'cpCode' in kwargs:
+            cp_code = kwargs['cpCode']
+        if 'dynamicCustomPath' in kwargs:
+            dynamic_custom_path = kwargs['dynamicCustomPath']
+        if 'dynamicMethod' in kwargs:
+            dynamic_method = kwargs['dynamicMethod']
+        if 'dynamicPath' in kwargs:
+            dynamic_path = kwargs['dynamicPath']
+        if 'modifyProtocol' in kwargs:
+            modify_protocol = kwargs['modifyProtocol']
+        if 'netStorageHostname' in kwargs:
+            net_storage_hostname = kwargs['netStorageHostname']
+        if 'netStoragePath' in kwargs:
+            net_storage_path = kwargs['netStoragePath']
+        if 'preserveQueryString' in kwargs:
+            preserve_query_string = kwargs['preserveQueryString']
+        if 'redirectCustomPath' in kwargs:
+            redirect_custom_path = kwargs['redirectCustomPath']
+        if 'redirectHostname' in kwargs:
+            redirect_hostname = kwargs['redirectHostname']
+        if 'redirectHostnameType' in kwargs:
+            redirect_hostname_type = kwargs['redirectHostnameType']
+        if 'redirectMethod' in kwargs:
+            redirect_method = kwargs['redirectMethod']
+        if 'redirectPath' in kwargs:
+            redirect_path = kwargs['redirectPath']
+        if 'saasCnameEnabled' in kwargs:
+            saas_cname_enabled = kwargs['saasCnameEnabled']
+        if 'saasCnameLevel' in kwargs:
+            saas_cname_level = kwargs['saasCnameLevel']
+        if 'saasCookie' in kwargs:
+            saas_cookie = kwargs['saasCookie']
+        if 'saasQueryString' in kwargs:
+            saas_query_string = kwargs['saasQueryString']
+        if 'saasRegex' in kwargs:
+            saas_regex = kwargs['saasRegex']
+        if 'saasReplace' in kwargs:
+            saas_replace = kwargs['saasReplace']
+        if 'saasSuffix' in kwargs:
+            saas_suffix = kwargs['saasSuffix']
+        if 'saasType' in kwargs:
+            saas_type = kwargs['saasType']
+        if 'statusCode' in kwargs:
+            status_code = kwargs['statusCode']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if action_type is not None:
             _setter("action_type", action_type)
         if allow_fcm_parent_override is not None:
@@ -62020,7 +70462,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorFailActionCpCodeResult(dict):
              id: Optional[int] = None,
              name: Optional[str] = None,
              products: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCodeLimits' in kwargs:
+            cp_code_limits = kwargs['cpCodeLimits']
+        if 'createdDate' in kwargs:
+            created_date = kwargs['createdDate']
+
         if cp_code_limits is not None:
             _setter("cp_code_limits", cp_code_limits)
         if created_date is not None:
@@ -62083,7 +70531,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorFailActionCpCodeCpCodeLimitsR
              current_capacity: Optional[int] = None,
              limit: Optional[int] = None,
              limit_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currentCapacity' in kwargs:
+            current_capacity = kwargs['currentCapacity']
+        if 'limitType' in kwargs:
+            limit_type = kwargs['limitType']
+
         if current_capacity is not None:
             _setter("current_capacity", current_capacity)
         if limit is not None:
@@ -62125,7 +70579,15 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorFailActionNetStorageHostnameR
              cp_code: Optional[int] = None,
              download_domain_name: Optional[str] = None,
              g2o_token: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCode' in kwargs:
+            cp_code = kwargs['cpCode']
+        if 'downloadDomainName' in kwargs:
+            download_domain_name = kwargs['downloadDomainName']
+        if 'g2oToken' in kwargs:
+            g2o_token = kwargs['g2oToken']
+
         if cp_code is not None:
             _setter("cp_code", cp_code)
         if download_domain_name is not None:
@@ -62170,7 +70632,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorFailoverBotManagerFeatureComp
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if compatibility is not None:
             _setter("compatibility", compatibility)
         if locked is not None:
@@ -62222,7 +70688,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorFastInvalidateResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -62283,7 +70753,17 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorFirstPartyMarketingResult(dic
              media_math_prefix: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudletPolicy' in kwargs:
+            cloudlet_policy = kwargs['cloudletPolicy']
+        if 'javaScriptInsertionRule' in kwargs:
+            java_script_insertion_rule = kwargs['javaScriptInsertionRule']
+        if 'mediaMathPrefix' in kwargs:
+            media_math_prefix = kwargs['mediaMathPrefix']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if cloudlet_policy is not None:
             _setter("cloudlet_policy", cloudlet_policy)
         if enabled is not None:
@@ -62350,7 +70830,9 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorFirstPartyMarketingCloudletPo
              _setter: Callable[[Any, Any], None],
              id: Optional[int] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
         if name is not None:
@@ -62397,7 +70879,17 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorFirstPartyMarketingPlusResult
              media_math_prefix: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudletPolicy' in kwargs:
+            cloudlet_policy = kwargs['cloudletPolicy']
+        if 'javaScriptInsertionRule' in kwargs:
+            java_script_insertion_rule = kwargs['javaScriptInsertionRule']
+        if 'mediaMathPrefix' in kwargs:
+            media_math_prefix = kwargs['mediaMathPrefix']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if cloudlet_policy is not None:
             _setter("cloudlet_policy", cloudlet_policy)
         if enabled is not None:
@@ -62464,7 +70956,9 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorFirstPartyMarketingPlusCloudl
              _setter: Callable[[Any, Any], None],
              id: Optional[int] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
         if name is not None:
@@ -62511,7 +71005,17 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorForwardRewriteResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudletPolicy' in kwargs:
+            cloudlet_policy = kwargs['cloudletPolicy']
+        if 'cloudletSharedPolicy' in kwargs:
+            cloudlet_shared_policy = kwargs['cloudletSharedPolicy']
+        if 'isSharedPolicy' in kwargs:
+            is_shared_policy = kwargs['isSharedPolicy']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if cloudlet_policy is not None:
             _setter("cloudlet_policy", cloudlet_policy)
         if cloudlet_shared_policy is not None:
@@ -62578,7 +71082,9 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorForwardRewriteCloudletPolicyR
              _setter: Callable[[Any, Any], None],
              id: Optional[int] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
         if name is not None:
@@ -62637,7 +71143,23 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorG2oheaderResult(dict):
              template_uuid: Optional[str] = None,
              use_custom_sign_string: Optional[bool] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customSignStrings' in kwargs:
+            custom_sign_strings = kwargs['customSignStrings']
+        if 'dataHeader' in kwargs:
+            data_header = kwargs['dataHeader']
+        if 'encodingVersion' in kwargs:
+            encoding_version = kwargs['encodingVersion']
+        if 'secretKey' in kwargs:
+            secret_key = kwargs['secretKey']
+        if 'signedHeader' in kwargs:
+            signed_header = kwargs['signedHeader']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'useCustomSignString' in kwargs:
+            use_custom_sign_string = kwargs['useCustomSignString']
+
         if custom_sign_strings is not None:
             _setter("custom_sign_strings", custom_sign_strings)
         if data_header is not None:
@@ -62744,7 +71266,17 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorGlobalRequestNumberResult(dic
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              variable_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+        if 'outputOption' in kwargs:
+            output_option = kwargs['outputOption']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'variableName' in kwargs:
+            variable_name = kwargs['variableName']
+
         if header_name is not None:
             _setter("header_name", header_name)
         if locked is not None:
@@ -62825,7 +71357,19 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorGraphqlCachingResult(dict):
              post_request_processing_error_handling: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cacheResponsesWithErrors' in kwargs:
+            cache_responses_with_errors = kwargs['cacheResponsesWithErrors']
+        if 'operationsJsonBodyParameterName' in kwargs:
+            operations_json_body_parameter_name = kwargs['operationsJsonBodyParameterName']
+        if 'operationsUrlQueryParameterName' in kwargs:
+            operations_url_query_parameter_name = kwargs['operationsUrlQueryParameterName']
+        if 'postRequestProcessingErrorHandling' in kwargs:
+            post_request_processing_error_handling = kwargs['postRequestProcessingErrorHandling']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if advanced is not None:
             _setter("advanced", advanced)
         if cache_responses_with_errors is not None:
@@ -62912,7 +71456,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorGzipResponseResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if behavior is not None:
             _setter("behavior", behavior)
         if locked is not None:
@@ -62967,7 +71515,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorHdDataAdvancedResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              xml: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if description is not None:
             _setter("description", description)
         if locked is not None:
@@ -63032,7 +71584,17 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorHealthDetectionResult(dict):
              retry_interval: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maximumReconnects' in kwargs:
+            maximum_reconnects = kwargs['maximumReconnects']
+        if 'retryCount' in kwargs:
+            retry_count = kwargs['retryCount']
+        if 'retryInterval' in kwargs:
+            retry_interval = kwargs['retryInterval']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if maximum_reconnects is not None:
@@ -63110,7 +71672,17 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorHsafEipBindingResult(dict):
              template_uuid: Optional[str] = None,
              tier: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customExtractedSerial' in kwargs:
+            custom_extracted_serial = kwargs['customExtractedSerial']
+        if 'hashMaxValue' in kwargs:
+            hash_max_value = kwargs['hashMaxValue']
+        if 'hashMinValue' in kwargs:
+            hash_min_value = kwargs['hashMinValue']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if custom_extracted_serial is not None:
             _setter("custom_extracted_serial", custom_extracted_serial)
         if enabled is not None:
@@ -63190,7 +71762,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorHttp2Result(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -63242,7 +71818,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorHttp3Result(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enable is not None:
             _setter("enable", enable)
         if locked is not None:
@@ -63309,7 +71889,17 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorHttpStrictTransportSecurityRe
              redirect_status_code: Optional[int] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'includeSubDomains' in kwargs:
+            include_sub_domains = kwargs['includeSubDomains']
+        if 'maxAge' in kwargs:
+            max_age = kwargs['maxAge']
+        if 'redirectStatusCode' in kwargs:
+            redirect_status_code = kwargs['redirectStatusCode']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enable is not None:
             _setter("enable", enable)
         if include_sub_domains is not None:
@@ -63396,7 +71986,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorHttpToHttpsUpgradeResult(dict
              template_uuid: Optional[str] = None,
              upgrade: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if template_uuid is not None:
@@ -63487,7 +72081,19 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorImOverrideResult(dict):
              uuid: Optional[str] = None,
              width: Optional[float] = None,
              widthvar: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'excludeAllQueryParameters' in kwargs:
+            exclude_all_query_parameters = kwargs['excludeAllQueryParameters']
+        if 'excludedQueryParameters' in kwargs:
+            excluded_query_parameters = kwargs['excludedQueryParameters']
+        if 'policyvarIMvar' in kwargs:
+            policyvar_i_mvar = kwargs['policyvarIMvar']
+        if 'policyvarName' in kwargs:
+            policyvar_name = kwargs['policyvarName']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if dpr is not None:
             _setter("dpr", dpr)
         if dprvar is not None:
@@ -63651,7 +72257,23 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorImageAndVideoManagerResult(di
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              video_set: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applyBestFileType' in kwargs:
+            apply_best_file_type = kwargs['applyBestFileType']
+        if 'cpCodeOriginal' in kwargs:
+            cp_code_original = kwargs['cpCodeOriginal']
+        if 'cpCodeTransformed' in kwargs:
+            cp_code_transformed = kwargs['cpCodeTransformed']
+        if 'imageSet' in kwargs:
+            image_set = kwargs['imageSet']
+        if 'policySetType' in kwargs:
+            policy_set_type = kwargs['policySetType']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'videoSet' in kwargs:
+            video_set = kwargs['videoSet']
+
         if apply_best_file_type is not None:
             _setter("apply_best_file_type", apply_best_file_type)
         if cp_code_original is not None:
@@ -63758,7 +72380,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorImageAndVideoManagerCpCodeOri
              id: Optional[int] = None,
              name: Optional[str] = None,
              products: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCodeLimits' in kwargs:
+            cp_code_limits = kwargs['cpCodeLimits']
+        if 'createdDate' in kwargs:
+            created_date = kwargs['createdDate']
+
         if cp_code_limits is not None:
             _setter("cp_code_limits", cp_code_limits)
         if created_date is not None:
@@ -63821,7 +72449,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorImageAndVideoManagerCpCodeOri
              current_capacity: Optional[int] = None,
              limit: Optional[int] = None,
              limit_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currentCapacity' in kwargs:
+            current_capacity = kwargs['currentCapacity']
+        if 'limitType' in kwargs:
+            limit_type = kwargs['limitType']
+
         if current_capacity is not None:
             _setter("current_capacity", current_capacity)
         if limit is not None:
@@ -63872,7 +72506,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorImageAndVideoManagerCpCodeTra
              id: Optional[int] = None,
              name: Optional[str] = None,
              products: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCodeLimits' in kwargs:
+            cp_code_limits = kwargs['cpCodeLimits']
+        if 'createdDate' in kwargs:
+            created_date = kwargs['createdDate']
+
         if cp_code_limits is not None:
             _setter("cp_code_limits", cp_code_limits)
         if created_date is not None:
@@ -63935,7 +72575,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorImageAndVideoManagerCpCodeTra
              current_capacity: Optional[int] = None,
              limit: Optional[int] = None,
              limit_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currentCapacity' in kwargs:
+            current_capacity = kwargs['currentCapacity']
+        if 'limitType' in kwargs:
+            limit_type = kwargs['limitType']
+
         if current_capacity is not None:
             _setter("current_capacity", current_capacity)
         if limit is not None:
@@ -64019,7 +72665,33 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerResult(dict):
              traffic_title: Optional[str] = None,
              use_existing_policy_set: Optional[bool] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'apiReferenceTitle' in kwargs:
+            api_reference_title = kwargs['apiReferenceTitle']
+        if 'applyBestFileType' in kwargs:
+            apply_best_file_type = kwargs['applyBestFileType']
+        if 'cpCodeOriginal' in kwargs:
+            cp_code_original = kwargs['cpCodeOriginal']
+        if 'cpCodeTransformed' in kwargs:
+            cp_code_transformed = kwargs['cpCodeTransformed']
+        if 'policySet' in kwargs:
+            policy_set = kwargs['policySet']
+        if 'policyToken' in kwargs:
+            policy_token = kwargs['policyToken']
+        if 'policyTokenDefault' in kwargs:
+            policy_token_default = kwargs['policyTokenDefault']
+        if 'settingsTitle' in kwargs:
+            settings_title = kwargs['settingsTitle']
+        if 'superCacheRegion' in kwargs:
+            super_cache_region = kwargs['superCacheRegion']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'trafficTitle' in kwargs:
+            traffic_title = kwargs['trafficTitle']
+        if 'useExistingPolicySet' in kwargs:
+            use_existing_policy_set = kwargs['useExistingPolicySet']
+
         if advanced is not None:
             _setter("advanced", advanced)
         if api_reference_title is not None:
@@ -64168,7 +72840,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerCpCodeOriginalRes
              id: Optional[int] = None,
              name: Optional[str] = None,
              products: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCodeLimits' in kwargs:
+            cp_code_limits = kwargs['cpCodeLimits']
+        if 'createdDate' in kwargs:
+            created_date = kwargs['createdDate']
+
         if cp_code_limits is not None:
             _setter("cp_code_limits", cp_code_limits)
         if created_date is not None:
@@ -64231,7 +72909,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerCpCodeOriginalCpC
              current_capacity: Optional[int] = None,
              limit: Optional[int] = None,
              limit_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currentCapacity' in kwargs:
+            current_capacity = kwargs['currentCapacity']
+        if 'limitType' in kwargs:
+            limit_type = kwargs['limitType']
+
         if current_capacity is not None:
             _setter("current_capacity", current_capacity)
         if limit is not None:
@@ -64282,7 +72966,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerCpCodeTransformed
              id: Optional[int] = None,
              name: Optional[str] = None,
              products: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCodeLimits' in kwargs:
+            cp_code_limits = kwargs['cpCodeLimits']
+        if 'createdDate' in kwargs:
+            created_date = kwargs['createdDate']
+
         if cp_code_limits is not None:
             _setter("cp_code_limits", cp_code_limits)
         if created_date is not None:
@@ -64345,7 +73035,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerCpCodeTransformed
              current_capacity: Optional[int] = None,
              limit: Optional[int] = None,
              limit_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currentCapacity' in kwargs:
+            current_capacity = kwargs['currentCapacity']
+        if 'limitType' in kwargs:
+            limit_type = kwargs['limitType']
+
         if current_capacity is not None:
             _setter("current_capacity", current_capacity)
         if limit is not None:
@@ -64429,7 +73125,33 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerVideoResult(dict)
              traffic_title: Optional[str] = None,
              use_existing_policy_set: Optional[bool] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'apiReferenceTitle' in kwargs:
+            api_reference_title = kwargs['apiReferenceTitle']
+        if 'applyBestFileType' in kwargs:
+            apply_best_file_type = kwargs['applyBestFileType']
+        if 'cpCodeOriginal' in kwargs:
+            cp_code_original = kwargs['cpCodeOriginal']
+        if 'cpCodeTransformed' in kwargs:
+            cp_code_transformed = kwargs['cpCodeTransformed']
+        if 'policySet' in kwargs:
+            policy_set = kwargs['policySet']
+        if 'policyToken' in kwargs:
+            policy_token = kwargs['policyToken']
+        if 'policyTokenDefault' in kwargs:
+            policy_token_default = kwargs['policyTokenDefault']
+        if 'settingsTitle' in kwargs:
+            settings_title = kwargs['settingsTitle']
+        if 'superCacheRegion' in kwargs:
+            super_cache_region = kwargs['superCacheRegion']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'trafficTitle' in kwargs:
+            traffic_title = kwargs['trafficTitle']
+        if 'useExistingPolicySet' in kwargs:
+            use_existing_policy_set = kwargs['useExistingPolicySet']
+
         if advanced is not None:
             _setter("advanced", advanced)
         if api_reference_title is not None:
@@ -64578,7 +73300,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerVideoCpCodeOrigin
              id: Optional[int] = None,
              name: Optional[str] = None,
              products: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCodeLimits' in kwargs:
+            cp_code_limits = kwargs['cpCodeLimits']
+        if 'createdDate' in kwargs:
+            created_date = kwargs['createdDate']
+
         if cp_code_limits is not None:
             _setter("cp_code_limits", cp_code_limits)
         if created_date is not None:
@@ -64641,7 +73369,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerVideoCpCodeOrigin
              current_capacity: Optional[int] = None,
              limit: Optional[int] = None,
              limit_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currentCapacity' in kwargs:
+            current_capacity = kwargs['currentCapacity']
+        if 'limitType' in kwargs:
+            limit_type = kwargs['limitType']
+
         if current_capacity is not None:
             _setter("current_capacity", current_capacity)
         if limit is not None:
@@ -64692,7 +73426,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerVideoCpCodeTransf
              id: Optional[int] = None,
              name: Optional[str] = None,
              products: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCodeLimits' in kwargs:
+            cp_code_limits = kwargs['cpCodeLimits']
+        if 'createdDate' in kwargs:
+            created_date = kwargs['createdDate']
+
         if cp_code_limits is not None:
             _setter("cp_code_limits", cp_code_limits)
         if created_date is not None:
@@ -64755,7 +73495,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerVideoCpCodeTransf
              current_capacity: Optional[int] = None,
              limit: Optional[int] = None,
              limit_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currentCapacity' in kwargs:
+            current_capacity = kwargs['currentCapacity']
+        if 'limitType' in kwargs:
+            limit_type = kwargs['limitType']
+
         if current_capacity is not None:
             _setter("current_capacity", current_capacity)
         if limit is not None:
@@ -64800,7 +73546,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorIncludeResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if id is not None:
             _setter("id", id)
         if locked is not None:
@@ -64864,7 +73614,21 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorInstantResult(dict):
              prefetch_no_store_extensions: Optional[Sequence[str]] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customLinkRelations' in kwargs:
+            custom_link_relations = kwargs['customLinkRelations']
+        if 'prefetchCacheable' in kwargs:
+            prefetch_cacheable = kwargs['prefetchCacheable']
+        if 'prefetchHtml' in kwargs:
+            prefetch_html = kwargs['prefetchHtml']
+        if 'prefetchNoStore' in kwargs:
+            prefetch_no_store = kwargs['prefetchNoStore']
+        if 'prefetchNoStoreExtensions' in kwargs:
+            prefetch_no_store_extensions = kwargs['prefetchNoStoreExtensions']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if custom_link_relations is not None:
             _setter("custom_link_relations", custom_link_relations)
         if locked is not None:
@@ -64944,7 +73708,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorInstantConfigResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -65008,7 +73776,19 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorLargeFileOptimizationResult(d
              template_uuid: Optional[str] = None,
              use_versioning: Optional[bool] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enablePartialObjectCaching' in kwargs:
+            enable_partial_object_caching = kwargs['enablePartialObjectCaching']
+        if 'maximumSize' in kwargs:
+            maximum_size = kwargs['maximumSize']
+        if 'minimumSize' in kwargs:
+            minimum_size = kwargs['minimumSize']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'useVersioning' in kwargs:
+            use_versioning = kwargs['useVersioning']
+
         if enable_partial_object_caching is not None:
             _setter("enable_partial_object_caching", enable_partial_object_caching)
         if enabled is not None:
@@ -65100,7 +73880,19 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorLargeFileOptimizationAdvanced
              prefetch_during_request: Optional[int] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fragmentSize' in kwargs:
+            fragment_size = kwargs['fragmentSize']
+        if 'objectSize' in kwargs:
+            object_size = kwargs['objectSize']
+        if 'prefetchAfterRequest' in kwargs:
+            prefetch_after_request = kwargs['prefetchAfterRequest']
+        if 'prefetchDuringRequest' in kwargs:
+            prefetch_during_request = kwargs['prefetchDuringRequest']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if fragment_size is not None:
@@ -65186,7 +73978,15 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorLimitBitRateResult(dict):
              template_uuid: Optional[str] = None,
              threshold_tables: Optional[Sequence['outputs.GetPropertyRulesBuilderRulesV20230530BehaviorLimitBitRateThresholdTableResult']] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bitrateTables' in kwargs:
+            bitrate_tables = kwargs['bitrateTables']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'thresholdTables' in kwargs:
+            threshold_tables = kwargs['thresholdTables']
+
         if bitrate_tables is not None:
             _setter("bitrate_tables", bitrate_tables)
         if enabled is not None:
@@ -65246,7 +74046,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorLimitBitRateBitrateTableResul
              _setter: Callable[[Any, Any], None],
              bitrate_unit: Optional[str] = None,
              bitrate_value: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bitrateUnit' in kwargs:
+            bitrate_unit = kwargs['bitrateUnit']
+        if 'bitrateValue' in kwargs:
+            bitrate_value = kwargs['bitrateValue']
+
         if bitrate_unit is not None:
             _setter("bitrate_unit", bitrate_unit)
         if bitrate_value is not None:
@@ -65278,7 +74084,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorLimitBitRateThresholdTableRes
              _setter: Callable[[Any, Any], None],
              threshold_unit: Optional[str] = None,
              threshold_value: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'thresholdUnit' in kwargs:
+            threshold_unit = kwargs['thresholdUnit']
+        if 'thresholdValue' in kwargs:
+            threshold_value = kwargs['thresholdValue']
+
         if threshold_unit is not None:
             _setter("threshold_unit", threshold_unit)
         if threshold_value is not None:
@@ -65319,7 +74131,15 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorLogCustomResult(dict):
              log_custom_log_field: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customLogField' in kwargs:
+            custom_log_field = kwargs['customLogField']
+        if 'logCustomLogField' in kwargs:
+            log_custom_log_field = kwargs['logCustomLogField']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if custom_log_field is not None:
             _setter("custom_log_field", custom_log_field)
         if locked is not None:
@@ -65396,7 +74216,23 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorMPulseResult(dict):
              template_uuid: Optional[str] = None,
              title_optional: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'apiKey' in kwargs:
+            api_key = kwargs['apiKey']
+        if 'bufferSize' in kwargs:
+            buffer_size = kwargs['bufferSize']
+        if 'configOverride' in kwargs:
+            config_override = kwargs['configOverride']
+        if 'loaderVersion' in kwargs:
+            loader_version = kwargs['loaderVersion']
+        if 'requirePci' in kwargs:
+            require_pci = kwargs['requirePci']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'titleOptional' in kwargs:
+            title_optional = kwargs['titleOptional']
+
         if api_key is not None:
             _setter("api_key", api_key)
         if buffer_size is not None:
@@ -65523,7 +74359,33 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorManifestPersonalizationResult
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hlsEnableDebugHeaders' in kwargs:
+            hls_enable_debug_headers = kwargs['hlsEnableDebugHeaders']
+        if 'hlsEnabled' in kwargs:
+            hls_enabled = kwargs['hlsEnabled']
+        if 'hlsFilterInBitrateRanges' in kwargs:
+            hls_filter_in_bitrate_ranges = kwargs['hlsFilterInBitrateRanges']
+        if 'hlsFilterInBitrates' in kwargs:
+            hls_filter_in_bitrates = kwargs['hlsFilterInBitrates']
+        if 'hlsMode' in kwargs:
+            hls_mode = kwargs['hlsMode']
+        if 'hlsPreferredBitrate' in kwargs:
+            hls_preferred_bitrate = kwargs['hlsPreferredBitrate']
+        if 'hlsQueryParamEnabled' in kwargs:
+            hls_query_param_enabled = kwargs['hlsQueryParamEnabled']
+        if 'hlsQueryParamSecretKey' in kwargs:
+            hls_query_param_secret_key = kwargs['hlsQueryParamSecretKey']
+        if 'hlsQueryParamTransitionKey' in kwargs:
+            hls_query_param_transition_key = kwargs['hlsQueryParamTransitionKey']
+        if 'hlsShowAdvanced' in kwargs:
+            hls_show_advanced = kwargs['hlsShowAdvanced']
+        if 'hlsTitle' in kwargs:
+            hls_title = kwargs['hlsTitle']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if hls_enable_debug_headers is not None:
@@ -65655,7 +74517,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorManifestReroutingResult(dict)
              template_uuid: Optional[str] = None,
              username: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if partner is not None:
@@ -65714,7 +74580,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorManualServerPushResult(dict):
              serverpushlists: Optional[Sequence[str]] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if serverpushlists is not None:
@@ -65766,7 +74636,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorMediaAccelerationResult(dict)
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -65818,7 +74692,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorMediaAccelerationQuicOptoutRe
              optout: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if optout is not None:
@@ -65876,7 +74754,15 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorMediaClientResult(dict):
              template_uuid: Optional[str] = None,
              use_hybrid_http_udp: Optional[bool] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'beaconId' in kwargs:
+            beacon_id = kwargs['beaconId']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'useHybridHttpUdp' in kwargs:
+            use_hybrid_http_udp = kwargs['useHybridHttpUdp']
+
         if beacon_id is not None:
             _setter("beacon_id", beacon_id)
         if enabled is not None:
@@ -65942,7 +74828,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorMediaFileRetrievalOptimizatio
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -66144,7 +75034,113 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorMediaOriginFailoverResult(dic
              other_options: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cacheErrorResponse' in kwargs:
+            cache_error_response = kwargs['cacheErrorResponse']
+        if 'cacheWindow' in kwargs:
+            cache_window = kwargs['cacheWindow']
+        if 'clientResponseCode' in kwargs:
+            client_response_code = kwargs['clientResponseCode']
+        if 'detectObjectUnavailable' in kwargs:
+            detect_object_unavailable = kwargs['detectObjectUnavailable']
+        if 'detectObjectUnavailableTitle' in kwargs:
+            detect_object_unavailable_title = kwargs['detectObjectUnavailableTitle']
+        if 'detectOriginUnavailable' in kwargs:
+            detect_origin_unavailable = kwargs['detectOriginUnavailable']
+        if 'detectOriginUnavailableTitle' in kwargs:
+            detect_origin_unavailable_title = kwargs['detectOriginUnavailableTitle']
+        if 'detectOriginUnresponsive' in kwargs:
+            detect_origin_unresponsive = kwargs['detectOriginUnresponsive']
+        if 'detectOriginUnresponsiveTitle' in kwargs:
+            detect_origin_unresponsive_title = kwargs['detectOriginUnresponsiveTitle']
+        if 'objectUnavailableAlternateHost' in kwargs:
+            object_unavailable_alternate_host = kwargs['objectUnavailableAlternateHost']
+        if 'objectUnavailableBackupHost' in kwargs:
+            object_unavailable_backup_host = kwargs['objectUnavailableBackupHost']
+        if 'objectUnavailableBlacklistOriginIp' in kwargs:
+            object_unavailable_blacklist_origin_ip = kwargs['objectUnavailableBlacklistOriginIp']
+        if 'objectUnavailableBlacklistWindow' in kwargs:
+            object_unavailable_blacklist_window = kwargs['objectUnavailableBlacklistWindow']
+        if 'objectUnavailableChangeProtocol' in kwargs:
+            object_unavailable_change_protocol = kwargs['objectUnavailableChangeProtocol']
+        if 'objectUnavailableDetectionLevel' in kwargs:
+            object_unavailable_detection_level = kwargs['objectUnavailableDetectionLevel']
+        if 'objectUnavailableIncludeQueryString' in kwargs:
+            object_unavailable_include_query_string = kwargs['objectUnavailableIncludeQueryString']
+        if 'objectUnavailableModifiedPath' in kwargs:
+            object_unavailable_modified_path = kwargs['objectUnavailableModifiedPath']
+        if 'objectUnavailableModifyRequestPath' in kwargs:
+            object_unavailable_modify_request_path = kwargs['objectUnavailableModifyRequestPath']
+        if 'objectUnavailableProtocol' in kwargs:
+            object_unavailable_protocol = kwargs['objectUnavailableProtocol']
+        if 'objectUnavailableRecovery' in kwargs:
+            object_unavailable_recovery = kwargs['objectUnavailableRecovery']
+        if 'objectUnavailableRedirectMethod' in kwargs:
+            object_unavailable_redirect_method = kwargs['objectUnavailableRedirectMethod']
+        if 'objectUnavailableResponseCodes' in kwargs:
+            object_unavailable_response_codes = kwargs['objectUnavailableResponseCodes']
+        if 'objectUnavailableRetryLimit' in kwargs:
+            object_unavailable_retry_limit = kwargs['objectUnavailableRetryLimit']
+        if 'originUnavailableAlternateHost' in kwargs:
+            origin_unavailable_alternate_host = kwargs['originUnavailableAlternateHost']
+        if 'originUnavailableBackupHost' in kwargs:
+            origin_unavailable_backup_host = kwargs['originUnavailableBackupHost']
+        if 'originUnavailableBlacklistOriginIp' in kwargs:
+            origin_unavailable_blacklist_origin_ip = kwargs['originUnavailableBlacklistOriginIp']
+        if 'originUnavailableBlacklistWindow' in kwargs:
+            origin_unavailable_blacklist_window = kwargs['originUnavailableBlacklistWindow']
+        if 'originUnavailableChangeProtocol' in kwargs:
+            origin_unavailable_change_protocol = kwargs['originUnavailableChangeProtocol']
+        if 'originUnavailableDetectionLevel' in kwargs:
+            origin_unavailable_detection_level = kwargs['originUnavailableDetectionLevel']
+        if 'originUnavailableIncludeQueryString' in kwargs:
+            origin_unavailable_include_query_string = kwargs['originUnavailableIncludeQueryString']
+        if 'originUnavailableModifiedPath' in kwargs:
+            origin_unavailable_modified_path = kwargs['originUnavailableModifiedPath']
+        if 'originUnavailableModifyRequestPath' in kwargs:
+            origin_unavailable_modify_request_path = kwargs['originUnavailableModifyRequestPath']
+        if 'originUnavailableProtocol' in kwargs:
+            origin_unavailable_protocol = kwargs['originUnavailableProtocol']
+        if 'originUnavailableRecovery' in kwargs:
+            origin_unavailable_recovery = kwargs['originUnavailableRecovery']
+        if 'originUnavailableRedirectMethod' in kwargs:
+            origin_unavailable_redirect_method = kwargs['originUnavailableRedirectMethod']
+        if 'originUnavailableResponseCodes' in kwargs:
+            origin_unavailable_response_codes = kwargs['originUnavailableResponseCodes']
+        if 'originUnavailableRetryLimit' in kwargs:
+            origin_unavailable_retry_limit = kwargs['originUnavailableRetryLimit']
+        if 'originUnresponsiveAlternateHost' in kwargs:
+            origin_unresponsive_alternate_host = kwargs['originUnresponsiveAlternateHost']
+        if 'originUnresponsiveBackupHost' in kwargs:
+            origin_unresponsive_backup_host = kwargs['originUnresponsiveBackupHost']
+        if 'originUnresponsiveBlacklistOriginIp' in kwargs:
+            origin_unresponsive_blacklist_origin_ip = kwargs['originUnresponsiveBlacklistOriginIp']
+        if 'originUnresponsiveBlacklistWindow' in kwargs:
+            origin_unresponsive_blacklist_window = kwargs['originUnresponsiveBlacklistWindow']
+        if 'originUnresponsiveChangeProtocol' in kwargs:
+            origin_unresponsive_change_protocol = kwargs['originUnresponsiveChangeProtocol']
+        if 'originUnresponsiveDetectionLevel' in kwargs:
+            origin_unresponsive_detection_level = kwargs['originUnresponsiveDetectionLevel']
+        if 'originUnresponsiveIncludeQueryString' in kwargs:
+            origin_unresponsive_include_query_string = kwargs['originUnresponsiveIncludeQueryString']
+        if 'originUnresponsiveModifiedPath' in kwargs:
+            origin_unresponsive_modified_path = kwargs['originUnresponsiveModifiedPath']
+        if 'originUnresponsiveModifyRequestPath' in kwargs:
+            origin_unresponsive_modify_request_path = kwargs['originUnresponsiveModifyRequestPath']
+        if 'originUnresponsiveProtocol' in kwargs:
+            origin_unresponsive_protocol = kwargs['originUnresponsiveProtocol']
+        if 'originUnresponsiveRecovery' in kwargs:
+            origin_unresponsive_recovery = kwargs['originUnresponsiveRecovery']
+        if 'originUnresponsiveRedirectMethod' in kwargs:
+            origin_unresponsive_redirect_method = kwargs['originUnresponsiveRedirectMethod']
+        if 'originUnresponsiveRetryLimit' in kwargs:
+            origin_unresponsive_retry_limit = kwargs['originUnresponsiveRetryLimit']
+        if 'otherOptions' in kwargs:
+            other_options = kwargs['otherOptions']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if cache_error_response is not None:
             _setter("cache_error_response", cache_error_response)
         if cache_window is not None:
@@ -66546,7 +75542,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorMetadataCachingResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -66601,7 +75601,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorMobileSdkPerformanceResult(di
              secondary_multipath_to_origin: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'secondaryMultipathToOrigin' in kwargs:
+            secondary_multipath_to_origin = kwargs['secondaryMultipathToOrigin']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -66684,7 +75690,27 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorModifyIncomingRequestHeaderRe
              standard_pass_header_name: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'avoidDuplicateHeaders' in kwargs:
+            avoid_duplicate_headers = kwargs['avoidDuplicateHeaders']
+        if 'customHeaderName' in kwargs:
+            custom_header_name = kwargs['customHeaderName']
+        if 'headerValue' in kwargs:
+            header_value = kwargs['headerValue']
+        if 'newHeaderValue' in kwargs:
+            new_header_value = kwargs['newHeaderValue']
+        if 'standardAddHeaderName' in kwargs:
+            standard_add_header_name = kwargs['standardAddHeaderName']
+        if 'standardDeleteHeaderName' in kwargs:
+            standard_delete_header_name = kwargs['standardDeleteHeaderName']
+        if 'standardModifyHeaderName' in kwargs:
+            standard_modify_header_name = kwargs['standardModifyHeaderName']
+        if 'standardPassHeaderName' in kwargs:
+            standard_pass_header_name = kwargs['standardPassHeaderName']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if action is not None:
             _setter("action", action)
         if avoid_duplicate_headers is not None:
@@ -66816,7 +75842,27 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorModifyIncomingResponseHeaderR
              standard_pass_header_name: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'avoidDuplicateHeaders' in kwargs:
+            avoid_duplicate_headers = kwargs['avoidDuplicateHeaders']
+        if 'customHeaderName' in kwargs:
+            custom_header_name = kwargs['customHeaderName']
+        if 'headerValue' in kwargs:
+            header_value = kwargs['headerValue']
+        if 'newHeaderValue' in kwargs:
+            new_header_value = kwargs['newHeaderValue']
+        if 'standardAddHeaderName' in kwargs:
+            standard_add_header_name = kwargs['standardAddHeaderName']
+        if 'standardDeleteHeaderName' in kwargs:
+            standard_delete_header_name = kwargs['standardDeleteHeaderName']
+        if 'standardModifyHeaderName' in kwargs:
+            standard_modify_header_name = kwargs['standardModifyHeaderName']
+        if 'standardPassHeaderName' in kwargs:
+            standard_pass_header_name = kwargs['standardPassHeaderName']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if action is not None:
             _setter("action", action)
         if avoid_duplicate_headers is not None:
@@ -66954,7 +76000,31 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorModifyOutgoingRequestHeaderRe
              standard_modify_header_name: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'avoidDuplicateHeaders' in kwargs:
+            avoid_duplicate_headers = kwargs['avoidDuplicateHeaders']
+        if 'customHeaderName' in kwargs:
+            custom_header_name = kwargs['customHeaderName']
+        if 'headerValue' in kwargs:
+            header_value = kwargs['headerValue']
+        if 'matchMultiple' in kwargs:
+            match_multiple = kwargs['matchMultiple']
+        if 'newHeaderValue' in kwargs:
+            new_header_value = kwargs['newHeaderValue']
+        if 'regexHeaderMatch' in kwargs:
+            regex_header_match = kwargs['regexHeaderMatch']
+        if 'regexHeaderReplace' in kwargs:
+            regex_header_replace = kwargs['regexHeaderReplace']
+        if 'standardAddHeaderName' in kwargs:
+            standard_add_header_name = kwargs['standardAddHeaderName']
+        if 'standardDeleteHeaderName' in kwargs:
+            standard_delete_header_name = kwargs['standardDeleteHeaderName']
+        if 'standardModifyHeaderName' in kwargs:
+            standard_modify_header_name = kwargs['standardModifyHeaderName']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if action is not None:
             _setter("action", action)
         if avoid_duplicate_headers is not None:
@@ -67106,7 +76176,31 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorModifyOutgoingResponseHeaderR
              standard_modify_header_name: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'avoidDuplicateHeaders' in kwargs:
+            avoid_duplicate_headers = kwargs['avoidDuplicateHeaders']
+        if 'customHeaderName' in kwargs:
+            custom_header_name = kwargs['customHeaderName']
+        if 'headerValue' in kwargs:
+            header_value = kwargs['headerValue']
+        if 'matchMultiple' in kwargs:
+            match_multiple = kwargs['matchMultiple']
+        if 'newHeaderValue' in kwargs:
+            new_header_value = kwargs['newHeaderValue']
+        if 'regexHeaderMatch' in kwargs:
+            regex_header_match = kwargs['regexHeaderMatch']
+        if 'regexHeaderReplace' in kwargs:
+            regex_header_replace = kwargs['regexHeaderReplace']
+        if 'standardAddHeaderName' in kwargs:
+            standard_add_header_name = kwargs['standardAddHeaderName']
+        if 'standardDeleteHeaderName' in kwargs:
+            standard_delete_header_name = kwargs['standardDeleteHeaderName']
+        if 'standardModifyHeaderName' in kwargs:
+            standard_modify_header_name = kwargs['standardModifyHeaderName']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if action is not None:
             _setter("action", action)
         if avoid_duplicate_headers is not None:
@@ -67234,7 +76328,15 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorModifyViaHeaderResult(dict):
              rename_header_to: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'modificationOption' in kwargs:
+            modification_option = kwargs['modificationOption']
+        if 'renameHeaderTo' in kwargs:
+            rename_header_to = kwargs['renameHeaderTo']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -67402,7 +76504,73 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorOriginResult(dict):
              use_unique_cache_key: Optional[bool] = None,
              uuid: Optional[str] = None,
              verification_mode: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cacheKeyHostname' in kwargs:
+            cache_key_hostname = kwargs['cacheKeyHostname']
+        if 'customCertificateAuthorities' in kwargs:
+            custom_certificate_authorities = kwargs['customCertificateAuthorities']
+        if 'customCertificates' in kwargs:
+            custom_certificates = kwargs['customCertificates']
+        if 'customForwardHostHeader' in kwargs:
+            custom_forward_host_header = kwargs['customForwardHostHeader']
+        if 'customValidCnValues' in kwargs:
+            custom_valid_cn_values = kwargs['customValidCnValues']
+        if 'enableTrueClientIp' in kwargs:
+            enable_true_client_ip = kwargs['enableTrueClientIp']
+        if 'forwardHostHeader' in kwargs:
+            forward_host_header = kwargs['forwardHostHeader']
+        if 'httpPort' in kwargs:
+            http_port = kwargs['httpPort']
+        if 'httpsPort' in kwargs:
+            https_port = kwargs['httpsPort']
+        if 'ipVersion' in kwargs:
+            ip_version = kwargs['ipVersion']
+        if 'netStorage' in kwargs:
+            net_storage = kwargs['netStorage']
+        if 'originCertificate' in kwargs:
+            origin_certificate = kwargs['originCertificate']
+        if 'originCertsToHonor' in kwargs:
+            origin_certs_to_honor = kwargs['originCertsToHonor']
+        if 'originId' in kwargs:
+            origin_id = kwargs['originId']
+        if 'originSni' in kwargs:
+            origin_sni = kwargs['originSni']
+        if 'originType' in kwargs:
+            origin_type = kwargs['originType']
+        if 'saasCnameEnabled' in kwargs:
+            saas_cname_enabled = kwargs['saasCnameEnabled']
+        if 'saasCnameLevel' in kwargs:
+            saas_cname_level = kwargs['saasCnameLevel']
+        if 'saasCookie' in kwargs:
+            saas_cookie = kwargs['saasCookie']
+        if 'saasQueryString' in kwargs:
+            saas_query_string = kwargs['saasQueryString']
+        if 'saasRegex' in kwargs:
+            saas_regex = kwargs['saasRegex']
+        if 'saasReplace' in kwargs:
+            saas_replace = kwargs['saasReplace']
+        if 'saasSuffix' in kwargs:
+            saas_suffix = kwargs['saasSuffix']
+        if 'saasType' in kwargs:
+            saas_type = kwargs['saasType']
+        if 'secondHostname' in kwargs:
+            second_hostname = kwargs['secondHostname']
+        if 'secondHostnameEnabled' in kwargs:
+            second_hostname_enabled = kwargs['secondHostnameEnabled']
+        if 'standardCertificateAuthorities' in kwargs:
+            standard_certificate_authorities = kwargs['standardCertificateAuthorities']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'trueClientIpClientSetting' in kwargs:
+            true_client_ip_client_setting = kwargs['trueClientIpClientSetting']
+        if 'trueClientIpHeader' in kwargs:
+            true_client_ip_header = kwargs['trueClientIpHeader']
+        if 'useUniqueCacheKey' in kwargs:
+            use_unique_cache_key = kwargs['useUniqueCacheKey']
+        if 'verificationMode' in kwargs:
+            verification_mode = kwargs['verificationMode']
+
         if cache_key_hostname is not None:
             _setter("cache_key_hostname", cache_key_hostname)
         if compress is not None:
@@ -67773,7 +76941,59 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteristicsResult(d
              template_uuid: Optional[str] = None,
              use_custom_sign_string: Optional[bool] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessKeyEncryptedStorage' in kwargs:
+            access_key_encrypted_storage = kwargs['accessKeyEncryptedStorage']
+        if 'adcTitle' in kwargs:
+            adc_title = kwargs['adcTitle']
+        if 'authenticationMethod' in kwargs:
+            authentication_method = kwargs['authenticationMethod']
+        if 'authenticationMethodTitle' in kwargs:
+            authentication_method_title = kwargs['authenticationMethodTitle']
+        if 'awsAccessKeyId' in kwargs:
+            aws_access_key_id = kwargs['awsAccessKeyId']
+        if 'awsAccessKeyVersionGuid' in kwargs:
+            aws_access_key_version_guid = kwargs['awsAccessKeyVersionGuid']
+        if 'awsArRegion' in kwargs:
+            aws_ar_region = kwargs['awsArRegion']
+        if 'awsHost' in kwargs:
+            aws_host = kwargs['awsHost']
+        if 'awsRegion' in kwargs:
+            aws_region = kwargs['awsRegion']
+        if 'awsSecretAccessKey' in kwargs:
+            aws_secret_access_key = kwargs['awsSecretAccessKey']
+        if 'awsService' in kwargs:
+            aws_service = kwargs['awsService']
+        if 'customSignStrings' in kwargs:
+            custom_sign_strings = kwargs['customSignStrings']
+        if 'directConnectGeo' in kwargs:
+            direct_connect_geo = kwargs['directConnectGeo']
+        if 'encodingVersion' in kwargs:
+            encoding_version = kwargs['encodingVersion']
+        if 'endPointService' in kwargs:
+            end_point_service = kwargs['endPointService']
+        if 'gcsAccessKeyVersionGuid' in kwargs:
+            gcs_access_key_version_guid = kwargs['gcsAccessKeyVersionGuid']
+        if 'gcsHmacKeyAccessId' in kwargs:
+            gcs_hmac_key_access_id = kwargs['gcsHmacKeyAccessId']
+        if 'gcsHmacKeySecret' in kwargs:
+            gcs_hmac_key_secret = kwargs['gcsHmacKeySecret']
+        if 'hostnameTag' in kwargs:
+            hostname_tag = kwargs['hostnameTag']
+        if 'originLocationTitle' in kwargs:
+            origin_location_title = kwargs['originLocationTitle']
+        if 'propertyIdTag' in kwargs:
+            property_id_tag = kwargs['propertyIdTag']
+        if 'roleArn' in kwargs:
+            role_arn = kwargs['roleArn']
+        if 'secretKey' in kwargs:
+            secret_key = kwargs['secretKey']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'useCustomSignString' in kwargs:
+            use_custom_sign_string = kwargs['useCustomSignString']
+
         if access_key_encrypted_storage is not None:
             _setter("access_key_encrypted_storage", access_key_encrypted_storage)
         if adc_title is not None:
@@ -68014,7 +77234,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteristicsWsdResul
              origintype: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if origintype is not None:
@@ -68048,23 +77272,157 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteristicsWsdResul
 @pulumi.output_type
 class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateResult(dict):
     def __init__(__self__, *,
+                 can_be_ca: Optional[bool] = None,
+                 can_be_leaf: Optional[bool] = None,
+                 issuer_rdns: Optional['outputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateIssuerRdnsResult'] = None,
+                 not_after: Optional[int] = None,
+                 not_before: Optional[int] = None,
                  pem_encoded_cert: Optional[str] = None,
-                 sha1_fingerprint: Optional[str] = None):
+                 public_key: Optional[str] = None,
+                 public_key_algorithm: Optional[str] = None,
+                 public_key_format: Optional[str] = None,
+                 self_signed: Optional[bool] = None,
+                 serial_number: Optional[str] = None,
+                 sha1_fingerprint: Optional[str] = None,
+                 sig_alg_name: Optional[str] = None,
+                 subject_alternative_names: Optional[Sequence[str]] = None,
+                 subject_cn: Optional[str] = None,
+                 subject_rdns: Optional['outputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateSubjectRdnsResult'] = None,
+                 version: Optional[int] = None):
         GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateResult._configure(
             lambda key, value: pulumi.set(__self__, key, value),
+            can_be_ca=can_be_ca,
+            can_be_leaf=can_be_leaf,
+            issuer_rdns=issuer_rdns,
+            not_after=not_after,
+            not_before=not_before,
             pem_encoded_cert=pem_encoded_cert,
+            public_key=public_key,
+            public_key_algorithm=public_key_algorithm,
+            public_key_format=public_key_format,
+            self_signed=self_signed,
+            serial_number=serial_number,
             sha1_fingerprint=sha1_fingerprint,
+            sig_alg_name=sig_alg_name,
+            subject_alternative_names=subject_alternative_names,
+            subject_cn=subject_cn,
+            subject_rdns=subject_rdns,
+            version=version,
         )
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
+             can_be_ca: Optional[bool] = None,
+             can_be_leaf: Optional[bool] = None,
+             issuer_rdns: Optional['outputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateIssuerRdnsResult'] = None,
+             not_after: Optional[int] = None,
+             not_before: Optional[int] = None,
              pem_encoded_cert: Optional[str] = None,
+             public_key: Optional[str] = None,
+             public_key_algorithm: Optional[str] = None,
+             public_key_format: Optional[str] = None,
+             self_signed: Optional[bool] = None,
+             serial_number: Optional[str] = None,
              sha1_fingerprint: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             sig_alg_name: Optional[str] = None,
+             subject_alternative_names: Optional[Sequence[str]] = None,
+             subject_cn: Optional[str] = None,
+             subject_rdns: Optional['outputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateSubjectRdnsResult'] = None,
+             version: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'canBeCa' in kwargs:
+            can_be_ca = kwargs['canBeCa']
+        if 'canBeLeaf' in kwargs:
+            can_be_leaf = kwargs['canBeLeaf']
+        if 'issuerRdns' in kwargs:
+            issuer_rdns = kwargs['issuerRdns']
+        if 'notAfter' in kwargs:
+            not_after = kwargs['notAfter']
+        if 'notBefore' in kwargs:
+            not_before = kwargs['notBefore']
+        if 'pemEncodedCert' in kwargs:
+            pem_encoded_cert = kwargs['pemEncodedCert']
+        if 'publicKey' in kwargs:
+            public_key = kwargs['publicKey']
+        if 'publicKeyAlgorithm' in kwargs:
+            public_key_algorithm = kwargs['publicKeyAlgorithm']
+        if 'publicKeyFormat' in kwargs:
+            public_key_format = kwargs['publicKeyFormat']
+        if 'selfSigned' in kwargs:
+            self_signed = kwargs['selfSigned']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if 'sha1Fingerprint' in kwargs:
+            sha1_fingerprint = kwargs['sha1Fingerprint']
+        if 'sigAlgName' in kwargs:
+            sig_alg_name = kwargs['sigAlgName']
+        if 'subjectAlternativeNames' in kwargs:
+            subject_alternative_names = kwargs['subjectAlternativeNames']
+        if 'subjectCn' in kwargs:
+            subject_cn = kwargs['subjectCn']
+        if 'subjectRdns' in kwargs:
+            subject_rdns = kwargs['subjectRdns']
+
+        if can_be_ca is not None:
+            _setter("can_be_ca", can_be_ca)
+        if can_be_leaf is not None:
+            _setter("can_be_leaf", can_be_leaf)
+        if issuer_rdns is not None:
+            _setter("issuer_rdns", issuer_rdns)
+        if not_after is not None:
+            _setter("not_after", not_after)
+        if not_before is not None:
+            _setter("not_before", not_before)
         if pem_encoded_cert is not None:
             _setter("pem_encoded_cert", pem_encoded_cert)
+        if public_key is not None:
+            _setter("public_key", public_key)
+        if public_key_algorithm is not None:
+            _setter("public_key_algorithm", public_key_algorithm)
+        if public_key_format is not None:
+            _setter("public_key_format", public_key_format)
+        if self_signed is not None:
+            _setter("self_signed", self_signed)
+        if serial_number is not None:
+            _setter("serial_number", serial_number)
         if sha1_fingerprint is not None:
             _setter("sha1_fingerprint", sha1_fingerprint)
+        if sig_alg_name is not None:
+            _setter("sig_alg_name", sig_alg_name)
+        if subject_alternative_names is not None:
+            _setter("subject_alternative_names", subject_alternative_names)
+        if subject_cn is not None:
+            _setter("subject_cn", subject_cn)
+        if subject_rdns is not None:
+            _setter("subject_rdns", subject_rdns)
+        if version is not None:
+            _setter("version", version)
+
+    @property
+    @pulumi.getter(name="canBeCa")
+    def can_be_ca(self) -> Optional[bool]:
+        return pulumi.get(self, "can_be_ca")
+
+    @property
+    @pulumi.getter(name="canBeLeaf")
+    def can_be_leaf(self) -> Optional[bool]:
+        return pulumi.get(self, "can_be_leaf")
+
+    @property
+    @pulumi.getter(name="issuerRdns")
+    def issuer_rdns(self) -> Optional['outputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateIssuerRdnsResult']:
+        return pulumi.get(self, "issuer_rdns")
+
+    @property
+    @pulumi.getter(name="notAfter")
+    def not_after(self) -> Optional[int]:
+        return pulumi.get(self, "not_after")
+
+    @property
+    @pulumi.getter(name="notBefore")
+    def not_before(self) -> Optional[int]:
+        return pulumi.get(self, "not_before")
 
     @property
     @pulumi.getter(name="pemEncodedCert")
@@ -68072,31 +77430,215 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateResult
         return pulumi.get(self, "pem_encoded_cert")
 
     @property
+    @pulumi.getter(name="publicKey")
+    def public_key(self) -> Optional[str]:
+        return pulumi.get(self, "public_key")
+
+    @property
+    @pulumi.getter(name="publicKeyAlgorithm")
+    def public_key_algorithm(self) -> Optional[str]:
+        return pulumi.get(self, "public_key_algorithm")
+
+    @property
+    @pulumi.getter(name="publicKeyFormat")
+    def public_key_format(self) -> Optional[str]:
+        return pulumi.get(self, "public_key_format")
+
+    @property
+    @pulumi.getter(name="selfSigned")
+    def self_signed(self) -> Optional[bool]:
+        return pulumi.get(self, "self_signed")
+
+    @property
+    @pulumi.getter(name="serialNumber")
+    def serial_number(self) -> Optional[str]:
+        return pulumi.get(self, "serial_number")
+
+    @property
     @pulumi.getter(name="sha1Fingerprint")
     def sha1_fingerprint(self) -> Optional[str]:
         return pulumi.get(self, "sha1_fingerprint")
+
+    @property
+    @pulumi.getter(name="sigAlgName")
+    def sig_alg_name(self) -> Optional[str]:
+        return pulumi.get(self, "sig_alg_name")
+
+    @property
+    @pulumi.getter(name="subjectAlternativeNames")
+    def subject_alternative_names(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "subject_alternative_names")
+
+    @property
+    @pulumi.getter(name="subjectCn")
+    def subject_cn(self) -> Optional[str]:
+        return pulumi.get(self, "subject_cn")
+
+    @property
+    @pulumi.getter(name="subjectRdns")
+    def subject_rdns(self) -> Optional['outputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateSubjectRdnsResult']:
+        return pulumi.get(self, "subject_rdns")
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[int]:
+        return pulumi.get(self, "version")
 
 
 @pulumi.output_type
 class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityResult(dict):
     def __init__(__self__, *,
+                 can_be_ca: Optional[bool] = None,
+                 can_be_leaf: Optional[bool] = None,
+                 issuer_rdns: Optional['outputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityIssuerRdnsResult'] = None,
+                 not_after: Optional[int] = None,
+                 not_before: Optional[int] = None,
                  pem_encoded_cert: Optional[str] = None,
-                 sha1_fingerprint: Optional[str] = None):
+                 public_key: Optional[str] = None,
+                 public_key_algorithm: Optional[str] = None,
+                 public_key_format: Optional[str] = None,
+                 self_signed: Optional[bool] = None,
+                 serial_number: Optional[str] = None,
+                 sha1_fingerprint: Optional[str] = None,
+                 sig_alg_name: Optional[str] = None,
+                 subject_alternative_names: Optional[Sequence[str]] = None,
+                 subject_cn: Optional[str] = None,
+                 subject_rdns: Optional['outputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthoritySubjectRdnsResult'] = None,
+                 version: Optional[int] = None):
         GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityResult._configure(
             lambda key, value: pulumi.set(__self__, key, value),
+            can_be_ca=can_be_ca,
+            can_be_leaf=can_be_leaf,
+            issuer_rdns=issuer_rdns,
+            not_after=not_after,
+            not_before=not_before,
             pem_encoded_cert=pem_encoded_cert,
+            public_key=public_key,
+            public_key_algorithm=public_key_algorithm,
+            public_key_format=public_key_format,
+            self_signed=self_signed,
+            serial_number=serial_number,
             sha1_fingerprint=sha1_fingerprint,
+            sig_alg_name=sig_alg_name,
+            subject_alternative_names=subject_alternative_names,
+            subject_cn=subject_cn,
+            subject_rdns=subject_rdns,
+            version=version,
         )
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
+             can_be_ca: Optional[bool] = None,
+             can_be_leaf: Optional[bool] = None,
+             issuer_rdns: Optional['outputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityIssuerRdnsResult'] = None,
+             not_after: Optional[int] = None,
+             not_before: Optional[int] = None,
              pem_encoded_cert: Optional[str] = None,
+             public_key: Optional[str] = None,
+             public_key_algorithm: Optional[str] = None,
+             public_key_format: Optional[str] = None,
+             self_signed: Optional[bool] = None,
+             serial_number: Optional[str] = None,
              sha1_fingerprint: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             sig_alg_name: Optional[str] = None,
+             subject_alternative_names: Optional[Sequence[str]] = None,
+             subject_cn: Optional[str] = None,
+             subject_rdns: Optional['outputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthoritySubjectRdnsResult'] = None,
+             version: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'canBeCa' in kwargs:
+            can_be_ca = kwargs['canBeCa']
+        if 'canBeLeaf' in kwargs:
+            can_be_leaf = kwargs['canBeLeaf']
+        if 'issuerRdns' in kwargs:
+            issuer_rdns = kwargs['issuerRdns']
+        if 'notAfter' in kwargs:
+            not_after = kwargs['notAfter']
+        if 'notBefore' in kwargs:
+            not_before = kwargs['notBefore']
+        if 'pemEncodedCert' in kwargs:
+            pem_encoded_cert = kwargs['pemEncodedCert']
+        if 'publicKey' in kwargs:
+            public_key = kwargs['publicKey']
+        if 'publicKeyAlgorithm' in kwargs:
+            public_key_algorithm = kwargs['publicKeyAlgorithm']
+        if 'publicKeyFormat' in kwargs:
+            public_key_format = kwargs['publicKeyFormat']
+        if 'selfSigned' in kwargs:
+            self_signed = kwargs['selfSigned']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if 'sha1Fingerprint' in kwargs:
+            sha1_fingerprint = kwargs['sha1Fingerprint']
+        if 'sigAlgName' in kwargs:
+            sig_alg_name = kwargs['sigAlgName']
+        if 'subjectAlternativeNames' in kwargs:
+            subject_alternative_names = kwargs['subjectAlternativeNames']
+        if 'subjectCn' in kwargs:
+            subject_cn = kwargs['subjectCn']
+        if 'subjectRdns' in kwargs:
+            subject_rdns = kwargs['subjectRdns']
+
+        if can_be_ca is not None:
+            _setter("can_be_ca", can_be_ca)
+        if can_be_leaf is not None:
+            _setter("can_be_leaf", can_be_leaf)
+        if issuer_rdns is not None:
+            _setter("issuer_rdns", issuer_rdns)
+        if not_after is not None:
+            _setter("not_after", not_after)
+        if not_before is not None:
+            _setter("not_before", not_before)
         if pem_encoded_cert is not None:
             _setter("pem_encoded_cert", pem_encoded_cert)
+        if public_key is not None:
+            _setter("public_key", public_key)
+        if public_key_algorithm is not None:
+            _setter("public_key_algorithm", public_key_algorithm)
+        if public_key_format is not None:
+            _setter("public_key_format", public_key_format)
+        if self_signed is not None:
+            _setter("self_signed", self_signed)
+        if serial_number is not None:
+            _setter("serial_number", serial_number)
         if sha1_fingerprint is not None:
             _setter("sha1_fingerprint", sha1_fingerprint)
+        if sig_alg_name is not None:
+            _setter("sig_alg_name", sig_alg_name)
+        if subject_alternative_names is not None:
+            _setter("subject_alternative_names", subject_alternative_names)
+        if subject_cn is not None:
+            _setter("subject_cn", subject_cn)
+        if subject_rdns is not None:
+            _setter("subject_rdns", subject_rdns)
+        if version is not None:
+            _setter("version", version)
+
+    @property
+    @pulumi.getter(name="canBeCa")
+    def can_be_ca(self) -> Optional[bool]:
+        return pulumi.get(self, "can_be_ca")
+
+    @property
+    @pulumi.getter(name="canBeLeaf")
+    def can_be_leaf(self) -> Optional[bool]:
+        return pulumi.get(self, "can_be_leaf")
+
+    @property
+    @pulumi.getter(name="issuerRdns")
+    def issuer_rdns(self) -> Optional['outputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityIssuerRdnsResult']:
+        return pulumi.get(self, "issuer_rdns")
+
+    @property
+    @pulumi.getter(name="notAfter")
+    def not_after(self) -> Optional[int]:
+        return pulumi.get(self, "not_after")
+
+    @property
+    @pulumi.getter(name="notBefore")
+    def not_before(self) -> Optional[int]:
+        return pulumi.get(self, "not_before")
 
     @property
     @pulumi.getter(name="pemEncodedCert")
@@ -68104,9 +77646,275 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthor
         return pulumi.get(self, "pem_encoded_cert")
 
     @property
+    @pulumi.getter(name="publicKey")
+    def public_key(self) -> Optional[str]:
+        return pulumi.get(self, "public_key")
+
+    @property
+    @pulumi.getter(name="publicKeyAlgorithm")
+    def public_key_algorithm(self) -> Optional[str]:
+        return pulumi.get(self, "public_key_algorithm")
+
+    @property
+    @pulumi.getter(name="publicKeyFormat")
+    def public_key_format(self) -> Optional[str]:
+        return pulumi.get(self, "public_key_format")
+
+    @property
+    @pulumi.getter(name="selfSigned")
+    def self_signed(self) -> Optional[bool]:
+        return pulumi.get(self, "self_signed")
+
+    @property
+    @pulumi.getter(name="serialNumber")
+    def serial_number(self) -> Optional[str]:
+        return pulumi.get(self, "serial_number")
+
+    @property
     @pulumi.getter(name="sha1Fingerprint")
     def sha1_fingerprint(self) -> Optional[str]:
         return pulumi.get(self, "sha1_fingerprint")
+
+    @property
+    @pulumi.getter(name="sigAlgName")
+    def sig_alg_name(self) -> Optional[str]:
+        return pulumi.get(self, "sig_alg_name")
+
+    @property
+    @pulumi.getter(name="subjectAlternativeNames")
+    def subject_alternative_names(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "subject_alternative_names")
+
+    @property
+    @pulumi.getter(name="subjectCn")
+    def subject_cn(self) -> Optional[str]:
+        return pulumi.get(self, "subject_cn")
+
+    @property
+    @pulumi.getter(name="subjectRdns")
+    def subject_rdns(self) -> Optional['outputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthoritySubjectRdnsResult']:
+        return pulumi.get(self, "subject_rdns")
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[int]:
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityIssuerRdnsResult(dict):
+    def __init__(__self__, *,
+                 c: Optional[str] = None,
+                 cn: Optional[str] = None,
+                 o: Optional[str] = None,
+                 ou: Optional[str] = None):
+        GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityIssuerRdnsResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            c=c,
+            cn=cn,
+            o=o,
+            ou=ou,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             c: Optional[str] = None,
+             cn: Optional[str] = None,
+             o: Optional[str] = None,
+             ou: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
+        if c is not None:
+            _setter("c", c)
+        if cn is not None:
+            _setter("cn", cn)
+        if o is not None:
+            _setter("o", o)
+        if ou is not None:
+            _setter("ou", ou)
+
+    @property
+    @pulumi.getter
+    def c(self) -> Optional[str]:
+        return pulumi.get(self, "c")
+
+    @property
+    @pulumi.getter
+    def cn(self) -> Optional[str]:
+        return pulumi.get(self, "cn")
+
+    @property
+    @pulumi.getter
+    def o(self) -> Optional[str]:
+        return pulumi.get(self, "o")
+
+    @property
+    @pulumi.getter
+    def ou(self) -> Optional[str]:
+        return pulumi.get(self, "ou")
+
+
+@pulumi.output_type
+class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthoritySubjectRdnsResult(dict):
+    def __init__(__self__, *,
+                 c: Optional[str] = None,
+                 cn: Optional[str] = None,
+                 o: Optional[str] = None,
+                 ou: Optional[str] = None):
+        GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthoritySubjectRdnsResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            c=c,
+            cn=cn,
+            o=o,
+            ou=ou,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             c: Optional[str] = None,
+             cn: Optional[str] = None,
+             o: Optional[str] = None,
+             ou: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
+        if c is not None:
+            _setter("c", c)
+        if cn is not None:
+            _setter("cn", cn)
+        if o is not None:
+            _setter("o", o)
+        if ou is not None:
+            _setter("ou", ou)
+
+    @property
+    @pulumi.getter
+    def c(self) -> Optional[str]:
+        return pulumi.get(self, "c")
+
+    @property
+    @pulumi.getter
+    def cn(self) -> Optional[str]:
+        return pulumi.get(self, "cn")
+
+    @property
+    @pulumi.getter
+    def o(self) -> Optional[str]:
+        return pulumi.get(self, "o")
+
+    @property
+    @pulumi.getter
+    def ou(self) -> Optional[str]:
+        return pulumi.get(self, "ou")
+
+
+@pulumi.output_type
+class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateIssuerRdnsResult(dict):
+    def __init__(__self__, *,
+                 c: Optional[str] = None,
+                 cn: Optional[str] = None,
+                 o: Optional[str] = None,
+                 ou: Optional[str] = None):
+        GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateIssuerRdnsResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            c=c,
+            cn=cn,
+            o=o,
+            ou=ou,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             c: Optional[str] = None,
+             cn: Optional[str] = None,
+             o: Optional[str] = None,
+             ou: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
+        if c is not None:
+            _setter("c", c)
+        if cn is not None:
+            _setter("cn", cn)
+        if o is not None:
+            _setter("o", o)
+        if ou is not None:
+            _setter("ou", ou)
+
+    @property
+    @pulumi.getter
+    def c(self) -> Optional[str]:
+        return pulumi.get(self, "c")
+
+    @property
+    @pulumi.getter
+    def cn(self) -> Optional[str]:
+        return pulumi.get(self, "cn")
+
+    @property
+    @pulumi.getter
+    def o(self) -> Optional[str]:
+        return pulumi.get(self, "o")
+
+    @property
+    @pulumi.getter
+    def ou(self) -> Optional[str]:
+        return pulumi.get(self, "ou")
+
+
+@pulumi.output_type
+class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateSubjectRdnsResult(dict):
+    def __init__(__self__, *,
+                 c: Optional[str] = None,
+                 cn: Optional[str] = None,
+                 o: Optional[str] = None,
+                 ou: Optional[str] = None):
+        GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateSubjectRdnsResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            c=c,
+            cn=cn,
+            o=o,
+            ou=ou,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             c: Optional[str] = None,
+             cn: Optional[str] = None,
+             o: Optional[str] = None,
+             ou: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
+        if c is not None:
+            _setter("c", c)
+        if cn is not None:
+            _setter("cn", cn)
+        if o is not None:
+            _setter("o", o)
+        if ou is not None:
+            _setter("ou", ou)
+
+    @property
+    @pulumi.getter
+    def c(self) -> Optional[str]:
+        return pulumi.get(self, "c")
+
+    @property
+    @pulumi.getter
+    def cn(self) -> Optional[str]:
+        return pulumi.get(self, "cn")
+
+    @property
+    @pulumi.getter
+    def o(self) -> Optional[str]:
+        return pulumi.get(self, "o")
+
+    @property
+    @pulumi.getter
+    def ou(self) -> Optional[str]:
+        return pulumi.get(self, "ou")
 
 
 @pulumi.output_type
@@ -68133,7 +77941,15 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorOriginFailureRecoveryMethodRe
              recovery_method: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customStatusCode' in kwargs:
+            custom_status_code = kwargs['customStatusCode']
+        if 'recoveryMethod' in kwargs:
+            recovery_method = kwargs['recoveryMethod']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if custom_status_code is not None:
             _setter("custom_status_code", custom_status_code)
         if locked is not None:
@@ -68282,7 +78098,71 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorOriginFailureRecoveryPolicyRe
              template_uuid: Optional[str] = None,
              tuning_parameters: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'binaryEquivalentContent' in kwargs:
+            binary_equivalent_content = kwargs['binaryEquivalentContent']
+        if 'enableIpAvoidance' in kwargs:
+            enable_ip_avoidance = kwargs['enableIpAvoidance']
+        if 'ipAvoidanceErrorThreshold' in kwargs:
+            ip_avoidance_error_threshold = kwargs['ipAvoidanceErrorThreshold']
+        if 'ipAvoidanceRetryInterval' in kwargs:
+            ip_avoidance_retry_interval = kwargs['ipAvoidanceRetryInterval']
+        if 'monitorOriginResponsiveness' in kwargs:
+            monitor_origin_responsiveness = kwargs['monitorOriginResponsiveness']
+        if 'monitorResponseCodes1s' in kwargs:
+            monitor_response_codes1s = kwargs['monitorResponseCodes1s']
+        if 'monitorResponseCodes2s' in kwargs:
+            monitor_response_codes2s = kwargs['monitorResponseCodes2s']
+        if 'monitorResponseCodes3s' in kwargs:
+            monitor_response_codes3s = kwargs['monitorResponseCodes3s']
+        if 'monitorStatusCodes1' in kwargs:
+            monitor_status_codes1 = kwargs['monitorStatusCodes1']
+        if 'monitorStatusCodes1EnableRecovery' in kwargs:
+            monitor_status_codes1_enable_recovery = kwargs['monitorStatusCodes1EnableRecovery']
+        if 'monitorStatusCodes1EnableRetry' in kwargs:
+            monitor_status_codes1_enable_retry = kwargs['monitorStatusCodes1EnableRetry']
+        if 'monitorStatusCodes1RecoveryConfigName' in kwargs:
+            monitor_status_codes1_recovery_config_name = kwargs['monitorStatusCodes1RecoveryConfigName']
+        if 'monitorStatusCodes2' in kwargs:
+            monitor_status_codes2 = kwargs['monitorStatusCodes2']
+        if 'monitorStatusCodes2EnableRecovery' in kwargs:
+            monitor_status_codes2_enable_recovery = kwargs['monitorStatusCodes2EnableRecovery']
+        if 'monitorStatusCodes2EnableRetry' in kwargs:
+            monitor_status_codes2_enable_retry = kwargs['monitorStatusCodes2EnableRetry']
+        if 'monitorStatusCodes2RecoveryConfigName' in kwargs:
+            monitor_status_codes2_recovery_config_name = kwargs['monitorStatusCodes2RecoveryConfigName']
+        if 'monitorStatusCodes3' in kwargs:
+            monitor_status_codes3 = kwargs['monitorStatusCodes3']
+        if 'monitorStatusCodes3EnableRecovery' in kwargs:
+            monitor_status_codes3_enable_recovery = kwargs['monitorStatusCodes3EnableRecovery']
+        if 'monitorStatusCodes3EnableRetry' in kwargs:
+            monitor_status_codes3_enable_retry = kwargs['monitorStatusCodes3EnableRetry']
+        if 'monitorStatusCodes3RecoveryConfigName' in kwargs:
+            monitor_status_codes3_recovery_config_name = kwargs['monitorStatusCodes3RecoveryConfigName']
+        if 'originResponsivenessCustomTimeout' in kwargs:
+            origin_responsiveness_custom_timeout = kwargs['originResponsivenessCustomTimeout']
+        if 'originResponsivenessEnableRecovery' in kwargs:
+            origin_responsiveness_enable_recovery = kwargs['originResponsivenessEnableRecovery']
+        if 'originResponsivenessEnableRetry' in kwargs:
+            origin_responsiveness_enable_retry = kwargs['originResponsivenessEnableRetry']
+        if 'originResponsivenessMonitoring' in kwargs:
+            origin_responsiveness_monitoring = kwargs['originResponsivenessMonitoring']
+        if 'originResponsivenessRecoveryConfigName' in kwargs:
+            origin_responsiveness_recovery_config_name = kwargs['originResponsivenessRecoveryConfigName']
+        if 'originResponsivenessTimeout' in kwargs:
+            origin_responsiveness_timeout = kwargs['originResponsivenessTimeout']
+        if 'statusCodeMonitoring1' in kwargs:
+            status_code_monitoring1 = kwargs['statusCodeMonitoring1']
+        if 'statusCodeMonitoring2' in kwargs:
+            status_code_monitoring2 = kwargs['statusCodeMonitoring2']
+        if 'statusCodeMonitoring3' in kwargs:
+            status_code_monitoring3 = kwargs['statusCodeMonitoring3']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'tuningParameters' in kwargs:
+            tuning_parameters = kwargs['tuningParameters']
+
         if binary_equivalent_content is not None:
             _setter("binary_equivalent_content", binary_equivalent_content)
         if enable_ip_avoidance is not None:
@@ -68544,7 +78424,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorOriginIpAclResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enable is not None:
             _setter("enable", enable)
         if locked is not None:
@@ -68593,7 +78477,15 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorOriginNetStorageResult(dict):
              cp_code: Optional[int] = None,
              download_domain_name: Optional[str] = None,
              g2o_token: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCode' in kwargs:
+            cp_code = kwargs['cpCode']
+        if 'downloadDomainName' in kwargs:
+            download_domain_name = kwargs['downloadDomainName']
+        if 'g2oToken' in kwargs:
+            g2o_token = kwargs['g2oToken']
+
         if cp_code is not None:
             _setter("cp_code", cp_code)
         if download_domain_name is not None:
@@ -68641,7 +78533,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorPersistentClientConnectionRes
              template_uuid: Optional[str] = None,
              timeout: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -68703,7 +78599,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorPersistentConnectionResult(di
              template_uuid: Optional[str] = None,
              timeout: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -68762,7 +78662,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorPersonallyIdentifiableInforma
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -68853,7 +78757,35 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorPhasedReleaseResult(dict):
              population_title: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudletPolicy' in kwargs:
+            cloudlet_policy = kwargs['cloudletPolicy']
+        if 'cloudletSharedPolicy' in kwargs:
+            cloudlet_shared_policy = kwargs['cloudletSharedPolicy']
+        if 'failoverDuration' in kwargs:
+            failover_duration = kwargs['failoverDuration']
+        if 'failoverEnabled' in kwargs:
+            failover_enabled = kwargs['failoverEnabled']
+        if 'failoverResponseCodes' in kwargs:
+            failover_response_codes = kwargs['failoverResponseCodes']
+        if 'failoverTitle' in kwargs:
+            failover_title = kwargs['failoverTitle']
+        if 'isSharedPolicy' in kwargs:
+            is_shared_policy = kwargs['isSharedPolicy']
+        if 'populationCookieType' in kwargs:
+            population_cookie_type = kwargs['populationCookieType']
+        if 'populationDuration' in kwargs:
+            population_duration = kwargs['populationDuration']
+        if 'populationExpirationDate' in kwargs:
+            population_expiration_date = kwargs['populationExpirationDate']
+        if 'populationRefresh' in kwargs:
+            population_refresh = kwargs['populationRefresh']
+        if 'populationTitle' in kwargs:
+            population_title = kwargs['populationTitle']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if cloudlet_policy is not None:
             _setter("cloudlet_policy", cloudlet_policy)
         if cloudlet_shared_policy is not None:
@@ -68990,7 +78922,9 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorPhasedReleaseCloudletPolicyRe
              _setter: Callable[[Any, Any], None],
              id: Optional[int] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
         if name is not None:
@@ -69028,7 +78962,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorPreconnectResult(dict):
              preconnectlists: Optional[Sequence[str]] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if preconnectlists is not None:
@@ -69080,7 +79018,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorPredictiveContentDeliveryResu
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -69135,7 +79077,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorPredictivePrefetchingResult(d
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accuracyTarget' in kwargs:
+            accuracy_target = kwargs['accuracyTarget']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if accuracy_target is not None:
             _setter("accuracy_target", accuracy_target)
         if enabled is not None:
@@ -69194,7 +79142,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorPrefetchResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -69246,7 +79198,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorPrefetchableResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -69301,7 +79257,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorPrefreshCacheResult(dict):
              prefreshval: Optional[int] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -69405,7 +79365,41 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorQualityResult(dict):
              segment_duration: Optional[int] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'audienceSettings' in kwargs:
+            audience_settings = kwargs['audienceSettings']
+        if 'catalogSize' in kwargs:
+            catalog_size = kwargs['catalogSize']
+        if 'contentSettings' in kwargs:
+            content_settings = kwargs['contentSettings']
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'deliveryFormat' in kwargs:
+            delivery_format = kwargs['deliveryFormat']
+        if 'deliveryType' in kwargs:
+            delivery_type = kwargs['deliveryType']
+        if 'downloadType' in kwargs:
+            download_type = kwargs['downloadType']
+        if 'endUserLocation' in kwargs:
+            end_user_location = kwargs['endUserLocation']
+        if 'maximumConcurrentUsers' in kwargs:
+            maximum_concurrent_users = kwargs['maximumConcurrentUsers']
+        if 'objectSize' in kwargs:
+            object_size = kwargs['objectSize']
+        if 'optimizeFor' in kwargs:
+            optimize_for = kwargs['optimizeFor']
+        if 'originSettings' in kwargs:
+            origin_settings = kwargs['originSettings']
+        if 'popularityDistribution' in kwargs:
+            popularity_distribution = kwargs['popularityDistribution']
+        if 'refreshRate' in kwargs:
+            refresh_rate = kwargs['refreshRate']
+        if 'segmentDuration' in kwargs:
+            segment_duration = kwargs['segmentDuration']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if audience_settings is not None:
             _setter("audience_settings", audience_settings)
         if catalog_size is not None:
@@ -69565,7 +79559,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorQuicBetaResult(dict):
              quic_offer_percentage: Optional[int] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'quicOfferPercentage' in kwargs:
+            quic_offer_percentage = kwargs['quicOfferPercentage']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -69630,7 +79630,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorRandomSeekResult(dict):
              mp4: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maximumSize' in kwargs:
+            maximum_size = kwargs['maximumSize']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if flv is not None:
             _setter("flv", flv)
         if locked is not None:
@@ -69696,7 +79702,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorRapidResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -69748,7 +79758,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorReadTimeoutResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if template_uuid is not None:
@@ -69806,7 +79820,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorRealTimeReportingResult(dict)
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'beaconSamplingPercentage' in kwargs:
+            beacon_sampling_percentage = kwargs['beaconSamplingPercentage']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if advanced is not None:
             _setter("advanced", advanced)
         if beacon_sampling_percentage is not None:
@@ -69872,7 +79892,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorRealUserMonitoringResult(dict
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -69960,7 +79984,37 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorRedirectResult(dict):
              response_code: Optional[int] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationHostname' in kwargs:
+            destination_hostname = kwargs['destinationHostname']
+        if 'destinationHostnameOther' in kwargs:
+            destination_hostname_other = kwargs['destinationHostnameOther']
+        if 'destinationHostnameSibling' in kwargs:
+            destination_hostname_sibling = kwargs['destinationHostnameSibling']
+        if 'destinationHostnameSubdomain' in kwargs:
+            destination_hostname_subdomain = kwargs['destinationHostnameSubdomain']
+        if 'destinationPath' in kwargs:
+            destination_path = kwargs['destinationPath']
+        if 'destinationPathOther' in kwargs:
+            destination_path_other = kwargs['destinationPathOther']
+        if 'destinationPathPrefix' in kwargs:
+            destination_path_prefix = kwargs['destinationPathPrefix']
+        if 'destinationPathSuffix' in kwargs:
+            destination_path_suffix = kwargs['destinationPathSuffix']
+        if 'destinationPathSuffixStatus' in kwargs:
+            destination_path_suffix_status = kwargs['destinationPathSuffixStatus']
+        if 'destinationProtocol' in kwargs:
+            destination_protocol = kwargs['destinationProtocol']
+        if 'mobileDefaultChoice' in kwargs:
+            mobile_default_choice = kwargs['mobileDefaultChoice']
+        if 'queryString' in kwargs:
+            query_string = kwargs['queryString']
+        if 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if destination_hostname is not None:
             _setter("destination_hostname", destination_hostname)
         if destination_hostname_other is not None:
@@ -70102,7 +80156,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorRedirectplusResult(dict):
              response_code: Optional[int] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if destination is not None:
             _setter("destination", destination)
         if enabled is not None:
@@ -70177,7 +80237,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorRefererCheckingResult(dict):
              strict: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowChildren' in kwargs:
+            allow_children = kwargs['allowChildren']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if allow_children is not None:
             _setter("allow_children", allow_children)
         if domains is not None:
@@ -70250,7 +80316,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorRemoveQueryParameterResult(di
              parameters: Optional[Sequence[str]] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if parameters is not None:
@@ -70302,7 +80372,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorRemoveVaryResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -70381,7 +80455,29 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorReportResult(dict):
              log_x_forwarded_for: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customLogField' in kwargs:
+            custom_log_field = kwargs['customLogField']
+        if 'logAcceptLanguage' in kwargs:
+            log_accept_language = kwargs['logAcceptLanguage']
+        if 'logCookies' in kwargs:
+            log_cookies = kwargs['logCookies']
+        if 'logCustomLogField' in kwargs:
+            log_custom_log_field = kwargs['logCustomLogField']
+        if 'logEdgeIp' in kwargs:
+            log_edge_ip = kwargs['logEdgeIp']
+        if 'logHost' in kwargs:
+            log_host = kwargs['logHost']
+        if 'logReferer' in kwargs:
+            log_referer = kwargs['logReferer']
+        if 'logUserAgent' in kwargs:
+            log_user_agent = kwargs['logUserAgent']
+        if 'logXForwardedFor' in kwargs:
+            log_x_forwarded_for = kwargs['logXForwardedFor']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if cookies is not None:
             _setter("cookies", cookies)
         if custom_log_field is not None:
@@ -70523,7 +80619,29 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorRequestControlResult(dict):
              net_storage: Optional['outputs.GetPropertyRulesBuilderRulesV20230530BehaviorRequestControlNetStorageResult'] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'branded403File' in kwargs:
+            branded403_file = kwargs['branded403File']
+        if 'branded403StatusCode' in kwargs:
+            branded403_status_code = kwargs['branded403StatusCode']
+        if 'branded403Url' in kwargs:
+            branded403_url = kwargs['branded403Url']
+        if 'brandedDenyCacheTtl' in kwargs:
+            branded_deny_cache_ttl = kwargs['brandedDenyCacheTtl']
+        if 'cloudletPolicy' in kwargs:
+            cloudlet_policy = kwargs['cloudletPolicy']
+        if 'cloudletSharedPolicy' in kwargs:
+            cloudlet_shared_policy = kwargs['cloudletSharedPolicy']
+        if 'enableBranded403' in kwargs:
+            enable_branded403 = kwargs['enableBranded403']
+        if 'isSharedPolicy' in kwargs:
+            is_shared_policy = kwargs['isSharedPolicy']
+        if 'netStorage' in kwargs:
+            net_storage = kwargs['netStorage']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if branded403_file is not None:
             _setter("branded403_file", branded403_file)
         if branded403_status_code is not None:
@@ -70632,7 +80750,9 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorRequestControlCloudletPolicyR
              _setter: Callable[[Any, Any], None],
              id: Optional[int] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
         if name is not None:
@@ -70667,7 +80787,15 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorRequestControlNetStorageResul
              cp_code: Optional[int] = None,
              download_domain_name: Optional[str] = None,
              g2o_token: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCode' in kwargs:
+            cp_code = kwargs['cpCode']
+        if 'downloadDomainName' in kwargs:
+            download_domain_name = kwargs['downloadDomainName']
+        if 'g2oToken' in kwargs:
+            g2o_token = kwargs['g2oToken']
+
         if cp_code is not None:
             _setter("cp_code", cp_code)
         if download_domain_name is not None:
@@ -70712,7 +80840,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorRequestTypeMarkerResult(dict)
              request_type: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'requestType' in kwargs:
+            request_type = kwargs['requestType']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if request_type is not None:
@@ -70764,7 +80898,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorResourceOptimizerResult(dict)
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -70819,7 +80957,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorResourceOptimizerExtendedComp
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableAllFeatures' in kwargs:
+            enable_all_features = kwargs['enableAllFeatures']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enable_all_features is not None:
             _setter("enable_all_features", enable_all_features)
         if enabled is not None:
@@ -70881,7 +81025,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorResponseCodeResult(dict):
              status_code: Optional[int] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'statusCode' in kwargs:
+            status_code = kwargs['statusCode']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if override206 is not None:
@@ -70982,7 +81132,23 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorResponseCookieResult(dict):
              type: Optional[str] = None,
              uuid: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cookieName' in kwargs:
+            cookie_name = kwargs['cookieName']
+        if 'defaultDomain' in kwargs:
+            default_domain = kwargs['defaultDomain']
+        if 'defaultPath' in kwargs:
+            default_path = kwargs['defaultPath']
+        if 'expirationDate' in kwargs:
+            expiration_date = kwargs['expirationDate']
+        if 'httpOnly' in kwargs:
+            http_only = kwargs['httpOnly']
+        if 'sameSite' in kwargs:
+            same_site = kwargs['sameSite']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if cookie_name is not None:
             _setter("cookie_name", cookie_name)
         if default_domain is not None:
@@ -71132,7 +81298,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorRestrictObjectCachingResult(d
              maximum_size: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maximumSize' in kwargs:
+            maximum_size = kwargs['maximumSize']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if maximum_size is not None:
@@ -71184,7 +81356,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorReturnCacheStatusResult(dict)
              response_header_name: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'responseHeaderName' in kwargs:
+            response_header_name = kwargs['responseHeaderName']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if response_header_name is not None:
@@ -71260,7 +81438,25 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorRewriteUrlResult(dict):
              target_url: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keepQueryString' in kwargs:
+            keep_query_string = kwargs['keepQueryString']
+        if 'matchMultiple' in kwargs:
+            match_multiple = kwargs['matchMultiple']
+        if 'matchRegex' in kwargs:
+            match_regex = kwargs['matchRegex']
+        if 'targetPath' in kwargs:
+            target_path = kwargs['targetPath']
+        if 'targetPathPrepend' in kwargs:
+            target_path_prepend = kwargs['targetPathPrepend']
+        if 'targetRegex' in kwargs:
+            target_regex = kwargs['targetRegex']
+        if 'targetUrl' in kwargs:
+            target_url = kwargs['targetUrl']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if behavior is not None:
             _setter("behavior", behavior)
         if keep_query_string is not None:
@@ -71371,7 +81567,15 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorRumCustomResult(dict):
              rum_sample_rate: Optional[int] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'rumGroupName' in kwargs:
+            rum_group_name = kwargs['rumGroupName']
+        if 'rumSampleRate' in kwargs:
+            rum_sample_rate = kwargs['rumSampleRate']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if rum_group_name is not None:
@@ -71499,7 +81703,59 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorSaasDefinitionsResult(dict):
              users_replace: Optional[str] = None,
              users_title: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applicationAction' in kwargs:
+            application_action = kwargs['applicationAction']
+        if 'applicationCnameEnabled' in kwargs:
+            application_cname_enabled = kwargs['applicationCnameEnabled']
+        if 'applicationCnameLevel' in kwargs:
+            application_cname_level = kwargs['applicationCnameLevel']
+        if 'applicationCookie' in kwargs:
+            application_cookie = kwargs['applicationCookie']
+        if 'applicationQueryString' in kwargs:
+            application_query_string = kwargs['applicationQueryString']
+        if 'applicationRegex' in kwargs:
+            application_regex = kwargs['applicationRegex']
+        if 'applicationReplace' in kwargs:
+            application_replace = kwargs['applicationReplace']
+        if 'applicationTitle' in kwargs:
+            application_title = kwargs['applicationTitle']
+        if 'customerAction' in kwargs:
+            customer_action = kwargs['customerAction']
+        if 'customerCnameEnabled' in kwargs:
+            customer_cname_enabled = kwargs['customerCnameEnabled']
+        if 'customerCnameLevel' in kwargs:
+            customer_cname_level = kwargs['customerCnameLevel']
+        if 'customerCookie' in kwargs:
+            customer_cookie = kwargs['customerCookie']
+        if 'customerQueryString' in kwargs:
+            customer_query_string = kwargs['customerQueryString']
+        if 'customerRegex' in kwargs:
+            customer_regex = kwargs['customerRegex']
+        if 'customerReplace' in kwargs:
+            customer_replace = kwargs['customerReplace']
+        if 'customerTitle' in kwargs:
+            customer_title = kwargs['customerTitle']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'usersAction' in kwargs:
+            users_action = kwargs['usersAction']
+        if 'usersCnameEnabled' in kwargs:
+            users_cname_enabled = kwargs['usersCnameEnabled']
+        if 'usersCnameLevel' in kwargs:
+            users_cname_level = kwargs['usersCnameLevel']
+        if 'usersCookie' in kwargs:
+            users_cookie = kwargs['usersCookie']
+        if 'usersQueryString' in kwargs:
+            users_query_string = kwargs['usersQueryString']
+        if 'usersRegex' in kwargs:
+            users_regex = kwargs['usersRegex']
+        if 'usersReplace' in kwargs:
+            users_replace = kwargs['usersReplace']
+        if 'usersTitle' in kwargs:
+            users_title = kwargs['usersTitle']
+
         if application_action is not None:
             _setter("application_action", application_action)
         if application_cname_enabled is not None:
@@ -71730,7 +81986,23 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorSalesForceCommerceCloudClient
              sf3c_origin_host_header: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowOverrideOriginCacheKey' in kwargs:
+            allow_override_origin_cache_key = kwargs['allowOverrideOriginCacheKey']
+        if 'connectorId' in kwargs:
+            connector_id = kwargs['connectorId']
+        if 'originHostHeader' in kwargs:
+            origin_host_header = kwargs['originHostHeader']
+        if 'originType' in kwargs:
+            origin_type = kwargs['originType']
+        if 'sf3cOriginHost' in kwargs:
+            sf3c_origin_host = kwargs['sf3cOriginHost']
+        if 'sf3cOriginHostHeader' in kwargs:
+            sf3c_origin_host_header = kwargs['sf3cOriginHostHeader']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if allow_override_origin_cache_key is not None:
             _setter("allow_override_origin_cache_key", allow_override_origin_cache_key)
         if connector_id is not None:
@@ -71824,7 +82096,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorSalesForceCommerceCloudProvid
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -71876,7 +82152,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorSalesForceCommerceCloudProvid
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hostHeaderSource' in kwargs:
+            host_header_source = kwargs['hostHeaderSource']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if host_header_source is not None:
             _setter("host_header_source", host_header_source)
         if locked is not None:
@@ -71928,7 +82210,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorSavePostDcaProcessingResult(d
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -71989,7 +82275,15 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorScheduleInvalidationResult(di
              start: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'refreshMethod' in kwargs:
+            refresh_method = kwargs['refreshMethod']
+        if 'repeatInterval' in kwargs:
+            repeat_interval = kwargs['repeatInterval']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if refresh_method is not None:
@@ -72068,7 +82362,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorScriptManagementResult(dict):
              template_uuid: Optional[str] = None,
              timestamp: Optional[int] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -72194,7 +82492,43 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedContentProtectionRes
              transition_key: Optional[str] = None,
              use_advanced: Optional[bool] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dashMediaEncryption' in kwargs:
+            dash_media_encryption = kwargs['dashMediaEncryption']
+        if 'dataPayload' in kwargs:
+            data_payload = kwargs['dataPayload']
+        if 'enableTokenInUri' in kwargs:
+            enable_token_in_uri = kwargs['enableTokenInUri']
+        if 'fieldCarryOver' in kwargs:
+            field_carry_over = kwargs['fieldCarryOver']
+        if 'headerForSalts' in kwargs:
+            header_for_salts = kwargs['headerForSalts']
+        if 'hlsMasterManifestFiles' in kwargs:
+            hls_master_manifest_files = kwargs['hlsMasterManifestFiles']
+        if 'hlsMediaEncryption' in kwargs:
+            hls_media_encryption = kwargs['hlsMediaEncryption']
+        if 'mediaEncryptionTitle' in kwargs:
+            media_encryption_title = kwargs['mediaEncryptionTitle']
+        if 'revokedListId' in kwargs:
+            revoked_list_id = kwargs['revokedListId']
+        if 'sessionId' in kwargs:
+            session_id = kwargs['sessionId']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'tokenAuthHlsTitle' in kwargs:
+            token_auth_hls_title = kwargs['tokenAuthHlsTitle']
+        if 'tokenAuthenticationTitle' in kwargs:
+            token_authentication_title = kwargs['tokenAuthenticationTitle']
+        if 'tokenRevocationEnabled' in kwargs:
+            token_revocation_enabled = kwargs['tokenRevocationEnabled']
+        if 'tokenRevocationTitle' in kwargs:
+            token_revocation_title = kwargs['tokenRevocationTitle']
+        if 'transitionKey' in kwargs:
+            transition_key = kwargs['transitionKey']
+        if 'useAdvanced' in kwargs:
+            use_advanced = kwargs['useAdvanced']
+
         if acl is not None:
             _setter("acl", acl)
         if dash_media_encryption is not None:
@@ -72407,7 +82741,25 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedMediaOptimizationRes
              start_time: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dvrType' in kwargs:
+            dvr_type = kwargs['dvrType']
+        if 'dvrWindow' in kwargs:
+            dvr_window = kwargs['dvrWindow']
+        if 'enableUllStreaming' in kwargs:
+            enable_ull_streaming = kwargs['enableUllStreaming']
+        if 'endTime' in kwargs:
+            end_time = kwargs['endTime']
+        if 'liveType' in kwargs:
+            live_type = kwargs['liveType']
+        if 'showAdvanced' in kwargs:
+            show_advanced = kwargs['showAdvanced']
+        if 'startTime' in kwargs:
+            start_time = kwargs['startTime']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if behavior is not None:
             _setter("behavior", behavior)
         if dvr_type is not None:
@@ -72508,7 +82860,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedMediaStreamingPrefet
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -72689,7 +83045,81 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorSetVariableResult(dict):
              value_source: Optional[str] = None,
              variable_name: Optional[str] = None,
              variable_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caseSensitive' in kwargs:
+            case_sensitive = kwargs['caseSensitive']
+        if 'certificateFieldName' in kwargs:
+            certificate_field_name = kwargs['certificateFieldName']
+        if 'cookieName' in kwargs:
+            cookie_name = kwargs['cookieName']
+        if 'deviceProfile' in kwargs:
+            device_profile = kwargs['deviceProfile']
+        if 'encryptionKey' in kwargs:
+            encryption_key = kwargs['encryptionKey']
+        if 'encryptionMode' in kwargs:
+            encryption_mode = kwargs['encryptionMode']
+        if 'endIndex' in kwargs:
+            end_index = kwargs['endIndex']
+        if 'exceptChars' in kwargs:
+            except_chars = kwargs['exceptChars']
+        if 'extractLocation' in kwargs:
+            extract_location = kwargs['extractLocation']
+        if 'forceChars' in kwargs:
+            force_chars = kwargs['forceChars']
+        if 'formatString' in kwargs:
+            format_string = kwargs['formatString']
+        if 'globalSubstitution' in kwargs:
+            global_substitution = kwargs['globalSubstitution']
+        if 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+        if 'hmacAlgorithm' in kwargs:
+            hmac_algorithm = kwargs['hmacAlgorithm']
+        if 'hmacKey' in kwargs:
+            hmac_key = kwargs['hmacKey']
+        if 'initializationVector' in kwargs:
+            initialization_vector = kwargs['initializationVector']
+        if 'ipVersion' in kwargs:
+            ip_version = kwargs['ipVersion']
+        if 'ipv4Prefix' in kwargs:
+            ipv4_prefix = kwargs['ipv4Prefix']
+        if 'ipv6Prefix' in kwargs:
+            ipv6_prefix = kwargs['ipv6Prefix']
+        if 'locationId' in kwargs:
+            location_id = kwargs['locationId']
+        if 'maxRandomNumber' in kwargs:
+            max_random_number = kwargs['maxRandomNumber']
+        if 'minRandomNumber' in kwargs:
+            min_random_number = kwargs['minRandomNumber']
+        if 'numberOfBytes' in kwargs:
+            number_of_bytes = kwargs['numberOfBytes']
+        if 'operandOne' in kwargs:
+            operand_one = kwargs['operandOne']
+        if 'paramName' in kwargs:
+            param_name = kwargs['paramName']
+        if 'pathComponentOffset' in kwargs:
+            path_component_offset = kwargs['pathComponentOffset']
+        if 'prependBytes' in kwargs:
+            prepend_bytes = kwargs['prependBytes']
+        if 'queryParameterName' in kwargs:
+            query_parameter_name = kwargs['queryParameterName']
+        if 'responseHeaderName' in kwargs:
+            response_header_name = kwargs['responseHeaderName']
+        if 'setCookieName' in kwargs:
+            set_cookie_name = kwargs['setCookieName']
+        if 'startIndex' in kwargs:
+            start_index = kwargs['startIndex']
+        if 'subString' in kwargs:
+            sub_string = kwargs['subString']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'valueSource' in kwargs:
+            value_source = kwargs['valueSource']
+        if 'variableName' in kwargs:
+            variable_name = kwargs['variableName']
+        if 'variableValue' in kwargs:
+            variable_value = kwargs['variableValue']
+
         if algorithm is not None:
             _setter("algorithm", algorithm)
         if case_sensitive is not None:
@@ -73045,7 +83475,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorSimulateErrorCodeResult(dict)
              template_uuid: Optional[str] = None,
              timeout: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'errorType' in kwargs:
+            error_type = kwargs['errorType']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if error_type is not None:
             _setter("error_type", error_type)
         if locked is not None:
@@ -73107,7 +83543,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorSiteShieldResult(dict):
              ssmap: Optional['outputs.GetPropertyRulesBuilderRulesV20230530BehaviorSiteShieldSsmapResult'] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if nossmap is not None:
@@ -73148,33 +83588,69 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorSiteShieldResult(dict):
 @pulumi.output_type
 class GetPropertyRulesBuilderRulesV20230530BehaviorSiteShieldSsmapResult(dict):
     def __init__(__self__, *,
+                 china_cdn_map: Optional[str] = None,
+                 has_mixed_hosts: Optional[bool] = None,
                  name: Optional[str] = None,
+                 src: Optional[str] = None,
                  srmap: Optional[str] = None,
                  value: Optional[str] = None):
         GetPropertyRulesBuilderRulesV20230530BehaviorSiteShieldSsmapResult._configure(
             lambda key, value: pulumi.set(__self__, key, value),
+            china_cdn_map=china_cdn_map,
+            has_mixed_hosts=has_mixed_hosts,
             name=name,
+            src=src,
             srmap=srmap,
             value=value,
         )
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
+             china_cdn_map: Optional[str] = None,
+             has_mixed_hosts: Optional[bool] = None,
              name: Optional[str] = None,
+             src: Optional[str] = None,
              srmap: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'chinaCdnMap' in kwargs:
+            china_cdn_map = kwargs['chinaCdnMap']
+        if 'hasMixedHosts' in kwargs:
+            has_mixed_hosts = kwargs['hasMixedHosts']
+
+        if china_cdn_map is not None:
+            _setter("china_cdn_map", china_cdn_map)
+        if has_mixed_hosts is not None:
+            _setter("has_mixed_hosts", has_mixed_hosts)
         if name is not None:
             _setter("name", name)
+        if src is not None:
+            _setter("src", src)
         if srmap is not None:
             _setter("srmap", srmap)
         if value is not None:
             _setter("value", value)
 
     @property
+    @pulumi.getter(name="chinaCdnMap")
+    def china_cdn_map(self) -> Optional[str]:
+        return pulumi.get(self, "china_cdn_map")
+
+    @property
+    @pulumi.getter(name="hasMixedHosts")
+    def has_mixed_hosts(self) -> Optional[bool]:
+        return pulumi.get(self, "has_mixed_hosts")
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def src(self) -> Optional[str]:
+        return pulumi.get(self, "src")
 
     @property
     @pulumi.getter
@@ -73238,7 +83714,31 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorStandardTlsMigrationResult(di
              td_location: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowHttpsDowngrade' in kwargs:
+            allow_https_downgrade = kwargs['allowHttpsDowngrade']
+        if 'allowHttpsUpgrade' in kwargs:
+            allow_https_upgrade = kwargs['allowHttpsUpgrade']
+        if 'cacheSharingDuration' in kwargs:
+            cache_sharing_duration = kwargs['cacheSharingDuration']
+        if 'cacheSharingStartTime' in kwargs:
+            cache_sharing_start_time = kwargs['cacheSharingStartTime']
+        if 'isCertificateSniOnly' in kwargs:
+            is_certificate_sni_only = kwargs['isCertificateSniOnly']
+        if 'isTieredDistributionUsed' in kwargs:
+            is_tiered_distribution_used = kwargs['isTieredDistributionUsed']
+        if 'migrationDuration' in kwargs:
+            migration_duration = kwargs['migrationDuration']
+        if 'migrationFrom' in kwargs:
+            migration_from = kwargs['migrationFrom']
+        if 'migrationStartTime' in kwargs:
+            migration_start_time = kwargs['migrationStartTime']
+        if 'tdLocation' in kwargs:
+            td_location = kwargs['tdLocation']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if allow_https_downgrade is not None:
             _setter("allow_https_downgrade", allow_https_downgrade)
         if allow_https_upgrade is not None:
@@ -73360,7 +83860,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorStandardTlsMigrationOverrideR
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if info is not None:
             _setter("info", info)
         if locked is not None:
@@ -73415,7 +83919,15 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorStrictHeaderParsingResult(dic
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              valid_mode: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'strictMode' in kwargs:
+            strict_mode = kwargs['strictMode']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'validMode' in kwargs:
+            valid_mode = kwargs['validMode']
+
         if locked is not None:
             _setter("locked", locked)
         if strict_mode is not None:
@@ -73528,7 +84040,39 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorSubCustomerResult(dict):
              token_authorization: Optional[bool] = None,
              uuid: Optional[str] = None,
              web_application_firewall: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessControl' in kwargs:
+            access_control = kwargs['accessControl']
+        if 'cacheKey' in kwargs:
+            cache_key = kwargs['cacheKey']
+        if 'contentCompressor' in kwargs:
+            content_compressor = kwargs['contentCompressor']
+        if 'dynamicWebContent' in kwargs:
+            dynamic_web_content = kwargs['dynamicWebContent']
+        if 'geoLocation' in kwargs:
+            geo_location = kwargs['geoLocation']
+        if 'largeFileDelivery' in kwargs:
+            large_file_delivery = kwargs['largeFileDelivery']
+        if 'liveVideoDelivery' in kwargs:
+            live_video_delivery = kwargs['liveVideoDelivery']
+        if 'modifyPath' in kwargs:
+            modify_path = kwargs['modifyPath']
+        if 'onDemandVideoDelivery' in kwargs:
+            on_demand_video_delivery = kwargs['onDemandVideoDelivery']
+        if 'partnerDomainSuffix' in kwargs:
+            partner_domain_suffix = kwargs['partnerDomainSuffix']
+        if 'refreshContent' in kwargs:
+            refresh_content = kwargs['refreshContent']
+        if 'siteFailover' in kwargs:
+            site_failover = kwargs['siteFailover']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'tokenAuthorization' in kwargs:
+            token_authorization = kwargs['tokenAuthorization']
+        if 'webApplicationFirewall' in kwargs:
+            web_application_firewall = kwargs['webApplicationFirewall']
+
         if access_control is not None:
             _setter("access_control", access_control)
         if cache_key is not None:
@@ -73739,7 +84283,31 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorSureRouteResult(dict):
              to_host_status: Optional[str] = None,
              type: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowFcmParentOverride' in kwargs:
+            allow_fcm_parent_override = kwargs['allowFcmParentOverride']
+        if 'customMap' in kwargs:
+            custom_map = kwargs['customMap']
+        if 'customStatKey' in kwargs:
+            custom_stat_key = kwargs['customStatKey']
+        if 'enableCustomKey' in kwargs:
+            enable_custom_key = kwargs['enableCustomKey']
+        if 'forceSslForward' in kwargs:
+            force_ssl_forward = kwargs['forceSslForward']
+        if 'raceStatTtl' in kwargs:
+            race_stat_ttl = kwargs['raceStatTtl']
+        if 'srDownloadLinkTitle' in kwargs:
+            sr_download_link_title = kwargs['srDownloadLinkTitle']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'testObjectUrl' in kwargs:
+            test_object_url = kwargs['testObjectUrl']
+        if 'toHost' in kwargs:
+            to_host = kwargs['toHost']
+        if 'toHostStatus' in kwargs:
+            to_host_status = kwargs['toHostStatus']
+
         if allow_fcm_parent_override is not None:
             _setter("allow_fcm_parent_override", allow_fcm_parent_override)
         if custom_map is not None:
@@ -73868,7 +84436,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorTcpOptimizationResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if display is not None:
             _setter("display", display)
         if locked is not None:
@@ -73926,7 +84498,15 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorTeaLeafResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ibmCustomerId' in kwargs:
+            ibm_customer_id = kwargs['ibmCustomerId']
+        if 'limitToDynamic' in kwargs:
+            limit_to_dynamic = kwargs['limitToDynamic']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if ibm_customer_id is not None:
@@ -73995,7 +84575,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorTieredDistributionResult(dict
              template_uuid: Optional[str] = None,
              tiered_distribution_map: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'tieredDistributionMap' in kwargs:
+            tiered_distribution_map = kwargs['tieredDistributionMap']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -74066,7 +84652,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorTieredDistributionAdvancedRes
              template_uuid: Optional[str] = None,
              tiered_distribution_map: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'tieredDistributionMap' in kwargs:
+            tiered_distribution_map = kwargs['tieredDistributionMap']
+
         if allowall is not None:
             _setter("allowall", allowall)
         if enabled is not None:
@@ -74179,7 +84771,33 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorTieredDistributionCustomizati
              template_uuid: Optional[str] = None,
              tier1_title: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudwrapperMapMigrationTitle' in kwargs:
+            cloudwrapper_map_migration_title = kwargs['cloudwrapperMapMigrationTitle']
+        if 'customMapEnabled' in kwargs:
+            custom_map_enabled = kwargs['customMapEnabled']
+        if 'customMapName' in kwargs:
+            custom_map_name = kwargs['customMapName']
+        if 'hashAlgorithm' in kwargs:
+            hash_algorithm = kwargs['hashAlgorithm']
+        if 'mapMigrationEnabled' in kwargs:
+            map_migration_enabled = kwargs['mapMigrationEnabled']
+        if 'migrationEndDate' in kwargs:
+            migration_end_date = kwargs['migrationEndDate']
+        if 'migrationStartDate' in kwargs:
+            migration_start_date = kwargs['migrationStartDate']
+        if 'migrationWithinCwMapsEnabled' in kwargs:
+            migration_within_cw_maps_enabled = kwargs['migrationWithinCwMapsEnabled']
+        if 'serialEnd' in kwargs:
+            serial_end = kwargs['serialEnd']
+        if 'serialStart' in kwargs:
+            serial_start = kwargs['serialStart']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'tier1Title' in kwargs:
+            tier1_title = kwargs['tier1Title']
+
         if cloudwrapper_map_migration_title is not None:
             _setter("cloudwrapper_map_migration_title", cloudwrapper_map_migration_title)
         if custom_map_enabled is not None:
@@ -74308,7 +84926,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorTimeoutResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if template_uuid is not None:
@@ -74375,7 +84997,21 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorUidConfigurationResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              variable_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'extractLocation' in kwargs:
+            extract_location = kwargs['extractLocation']
+        if 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+        if 'legalText' in kwargs:
+            legal_text = kwargs['legalText']
+        if 'queryParameterName' in kwargs:
+            query_parameter_name = kwargs['queryParameterName']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'variableName' in kwargs:
+            variable_name = kwargs['variableName']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if extract_location is not None:
@@ -74462,7 +85098,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorValidateEntityTagResult(dict)
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -74529,7 +85169,21 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorVerifyJsonWebTokenResult(dict
              query_parameter_name: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableEs256' in kwargs:
+            enable_es256 = kwargs['enableEs256']
+        if 'enableRs256' in kwargs:
+            enable_rs256 = kwargs['enableRs256']
+        if 'extractLocation' in kwargs:
+            extract_location = kwargs['extractLocation']
+        if 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+        if 'queryParameterName' in kwargs:
+            query_parameter_name = kwargs['queryParameterName']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enable_es256 is not None:
             _setter("enable_es256", enable_es256)
         if enable_rs256 is not None:
@@ -74655,7 +85309,35 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorVerifyJsonWebTokenForDcpResul
              template_uuid: Optional[str] = None,
              user_name: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if 'customHeader' in kwargs:
+            custom_header = kwargs['customHeader']
+        if 'enableEs256' in kwargs:
+            enable_es256 = kwargs['enableEs256']
+        if 'enableRs256' in kwargs:
+            enable_rs256 = kwargs['enableRs256']
+        if 'extractAuthorizations' in kwargs:
+            extract_authorizations = kwargs['extractAuthorizations']
+        if 'extractClientId' in kwargs:
+            extract_client_id = kwargs['extractClientId']
+        if 'extractLocation' in kwargs:
+            extract_location = kwargs['extractLocation']
+        if 'extractUserName' in kwargs:
+            extract_user_name = kwargs['extractUserName']
+        if 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+        if 'primaryLocation' in kwargs:
+            primary_location = kwargs['primaryLocation']
+        if 'queryParameterName' in kwargs:
+            query_parameter_name = kwargs['queryParameterName']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+
         if authorizations is not None:
             _setter("authorizations", authorizations)
         if client_id is not None:
@@ -74825,7 +85507,23 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorVerifyTokenAuthorizationResul
              transition_key: Optional[str] = None,
              use_advanced: Optional[bool] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'escapeHmacInputs' in kwargs:
+            escape_hmac_inputs = kwargs['escapeHmacInputs']
+        if 'failureResponse' in kwargs:
+            failure_response = kwargs['failureResponse']
+        if 'ignoreQueryString' in kwargs:
+            ignore_query_string = kwargs['ignoreQueryString']
+        if 'locationId' in kwargs:
+            location_id = kwargs['locationId']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'transitionKey' in kwargs:
+            transition_key = kwargs['transitionKey']
+        if 'useAdvanced' in kwargs:
+            use_advanced = kwargs['useAdvanced']
+
         if algorithm is not None:
             _setter("algorithm", algorithm)
         if escape_hmac_inputs is not None:
@@ -74964,7 +85662,29 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorVirtualWaitingRoomResult(dict
              waiting_room_assets_paths: Optional[Sequence[str]] = None,
              waiting_room_path: Optional[str] = None,
              waiting_room_title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessTitle' in kwargs:
+            access_title = kwargs['accessTitle']
+        if 'cloudletSharedPolicy' in kwargs:
+            cloudlet_shared_policy = kwargs['cloudletSharedPolicy']
+        if 'customCookieDomain' in kwargs:
+            custom_cookie_domain = kwargs['customCookieDomain']
+        if 'domainConfig' in kwargs:
+            domain_config = kwargs['domainConfig']
+        if 'sessionAutoProlong' in kwargs:
+            session_auto_prolong = kwargs['sessionAutoProlong']
+        if 'sessionDuration' in kwargs:
+            session_duration = kwargs['sessionDuration']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'waitingRoomAssetsPaths' in kwargs:
+            waiting_room_assets_paths = kwargs['waitingRoomAssetsPaths']
+        if 'waitingRoomPath' in kwargs:
+            waiting_room_path = kwargs['waitingRoomPath']
+        if 'waitingRoomTitle' in kwargs:
+            waiting_room_title = kwargs['waitingRoomTitle']
+
         if access_title is not None:
             _setter("access_title", access_title)
         if cloudlet_shared_policy is not None:
@@ -75069,7 +85789,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorVirtualWaitingRoomWithEdgeWor
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if template_uuid is not None:
@@ -75228,7 +85952,87 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationResult(d
              waiting_room_net_storage: Optional['outputs.GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationWaitingRoomNetStorageResult'] = None,
              waiting_room_status_code: Optional[int] = None,
              waiting_room_use_cp_code: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedUserCookieAdvanced' in kwargs:
+            allowed_user_cookie_advanced = kwargs['allowedUserCookieAdvanced']
+        if 'allowedUserCookieAutomaticSalt' in kwargs:
+            allowed_user_cookie_automatic_salt = kwargs['allowedUserCookieAutomaticSalt']
+        if 'allowedUserCookieDomain' in kwargs:
+            allowed_user_cookie_domain = kwargs['allowedUserCookieDomain']
+        if 'allowedUserCookieDomainType' in kwargs:
+            allowed_user_cookie_domain_type = kwargs['allowedUserCookieDomainType']
+        if 'allowedUserCookieDuration' in kwargs:
+            allowed_user_cookie_duration = kwargs['allowedUserCookieDuration']
+        if 'allowedUserCookieEnabled' in kwargs:
+            allowed_user_cookie_enabled = kwargs['allowedUserCookieEnabled']
+        if 'allowedUserCookieHttpOnly' in kwargs:
+            allowed_user_cookie_http_only = kwargs['allowedUserCookieHttpOnly']
+        if 'allowedUserCookieLabel' in kwargs:
+            allowed_user_cookie_label = kwargs['allowedUserCookieLabel']
+        if 'allowedUserCookieManagementTitle' in kwargs:
+            allowed_user_cookie_management_title = kwargs['allowedUserCookieManagementTitle']
+        if 'allowedUserCookieRefresh' in kwargs:
+            allowed_user_cookie_refresh = kwargs['allowedUserCookieRefresh']
+        if 'allowedUserCookieSalt' in kwargs:
+            allowed_user_cookie_salt = kwargs['allowedUserCookieSalt']
+        if 'cloudletPolicy' in kwargs:
+            cloudlet_policy = kwargs['cloudletPolicy']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'userIdentificationByCookie' in kwargs:
+            user_identification_by_cookie = kwargs['userIdentificationByCookie']
+        if 'userIdentificationByHeaders' in kwargs:
+            user_identification_by_headers = kwargs['userIdentificationByHeaders']
+        if 'userIdentificationByIp' in kwargs:
+            user_identification_by_ip = kwargs['userIdentificationByIp']
+        if 'userIdentificationByParams' in kwargs:
+            user_identification_by_params = kwargs['userIdentificationByParams']
+        if 'userIdentificationKeyCookie' in kwargs:
+            user_identification_key_cookie = kwargs['userIdentificationKeyCookie']
+        if 'userIdentificationKeyHeaders' in kwargs:
+            user_identification_key_headers = kwargs['userIdentificationKeyHeaders']
+        if 'userIdentificationKeyParams' in kwargs:
+            user_identification_key_params = kwargs['userIdentificationKeyParams']
+        if 'userIdentificationTitle' in kwargs:
+            user_identification_title = kwargs['userIdentificationTitle']
+        if 'waitingRoomCacheTtl' in kwargs:
+            waiting_room_cache_ttl = kwargs['waitingRoomCacheTtl']
+        if 'waitingRoomCookieAdvanced' in kwargs:
+            waiting_room_cookie_advanced = kwargs['waitingRoomCookieAdvanced']
+        if 'waitingRoomCookieAutomaticSalt' in kwargs:
+            waiting_room_cookie_automatic_salt = kwargs['waitingRoomCookieAutomaticSalt']
+        if 'waitingRoomCookieDomain' in kwargs:
+            waiting_room_cookie_domain = kwargs['waitingRoomCookieDomain']
+        if 'waitingRoomCookieDomainType' in kwargs:
+            waiting_room_cookie_domain_type = kwargs['waitingRoomCookieDomainType']
+        if 'waitingRoomCookieDuration' in kwargs:
+            waiting_room_cookie_duration = kwargs['waitingRoomCookieDuration']
+        if 'waitingRoomCookieEnabled' in kwargs:
+            waiting_room_cookie_enabled = kwargs['waitingRoomCookieEnabled']
+        if 'waitingRoomCookieHttpOnly' in kwargs:
+            waiting_room_cookie_http_only = kwargs['waitingRoomCookieHttpOnly']
+        if 'waitingRoomCookieLabel' in kwargs:
+            waiting_room_cookie_label = kwargs['waitingRoomCookieLabel']
+        if 'waitingRoomCookieManagementTitle' in kwargs:
+            waiting_room_cookie_management_title = kwargs['waitingRoomCookieManagementTitle']
+        if 'waitingRoomCookieSalt' in kwargs:
+            waiting_room_cookie_salt = kwargs['waitingRoomCookieSalt']
+        if 'waitingRoomCookieShareLabel' in kwargs:
+            waiting_room_cookie_share_label = kwargs['waitingRoomCookieShareLabel']
+        if 'waitingRoomCpCode' in kwargs:
+            waiting_room_cp_code = kwargs['waitingRoomCpCode']
+        if 'waitingRoomDirectory' in kwargs:
+            waiting_room_directory = kwargs['waitingRoomDirectory']
+        if 'waitingRoomManagementTitle' in kwargs:
+            waiting_room_management_title = kwargs['waitingRoomManagementTitle']
+        if 'waitingRoomNetStorage' in kwargs:
+            waiting_room_net_storage = kwargs['waitingRoomNetStorage']
+        if 'waitingRoomStatusCode' in kwargs:
+            waiting_room_status_code = kwargs['waitingRoomStatusCode']
+        if 'waitingRoomUseCpCode' in kwargs:
+            waiting_room_use_cp_code = kwargs['waitingRoomUseCpCode']
+
         if allowed_user_cookie_advanced is not None:
             _setter("allowed_user_cookie_advanced", allowed_user_cookie_advanced)
         if allowed_user_cookie_automatic_salt is not None:
@@ -75540,7 +86344,9 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationCloudlet
              _setter: Callable[[Any, Any], None],
              id: Optional[int] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
         if name is not None:
@@ -75602,7 +86408,29 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationFifoResu
              waiting_room_assets_paths: Optional[Sequence[str]] = None,
              waiting_room_path: Optional[str] = None,
              waiting_room_title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessTitle' in kwargs:
+            access_title = kwargs['accessTitle']
+        if 'cloudletSharedPolicy' in kwargs:
+            cloudlet_shared_policy = kwargs['cloudletSharedPolicy']
+        if 'customCookieDomain' in kwargs:
+            custom_cookie_domain = kwargs['customCookieDomain']
+        if 'domainConfig' in kwargs:
+            domain_config = kwargs['domainConfig']
+        if 'sessionAutoProlong' in kwargs:
+            session_auto_prolong = kwargs['sessionAutoProlong']
+        if 'sessionDuration' in kwargs:
+            session_duration = kwargs['sessionDuration']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'waitingRoomAssetsPaths' in kwargs:
+            waiting_room_assets_paths = kwargs['waitingRoomAssetsPaths']
+        if 'waitingRoomPath' in kwargs:
+            waiting_room_path = kwargs['waitingRoomPath']
+        if 'waitingRoomTitle' in kwargs:
+            waiting_room_title = kwargs['waitingRoomTitle']
+
         if access_title is not None:
             _setter("access_title", access_title)
         if cloudlet_shared_policy is not None:
@@ -75707,7 +86535,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationFifoStan
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if template_uuid is not None:
@@ -75758,7 +86590,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationWaitingR
              id: Optional[int] = None,
              name: Optional[str] = None,
              products: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCodeLimits' in kwargs:
+            cp_code_limits = kwargs['cpCodeLimits']
+        if 'createdDate' in kwargs:
+            created_date = kwargs['createdDate']
+
         if cp_code_limits is not None:
             _setter("cp_code_limits", cp_code_limits)
         if created_date is not None:
@@ -75821,7 +86659,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationWaitingR
              current_capacity: Optional[int] = None,
              limit: Optional[int] = None,
              limit_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currentCapacity' in kwargs:
+            current_capacity = kwargs['currentCapacity']
+        if 'limitType' in kwargs:
+            limit_type = kwargs['limitType']
+
         if current_capacity is not None:
             _setter("current_capacity", current_capacity)
         if limit is not None:
@@ -75863,7 +86707,15 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationWaitingR
              cp_code: Optional[int] = None,
              download_domain_name: Optional[str] = None,
              g2o_token: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCode' in kwargs:
+            cp_code = kwargs['cpCode']
+        if 'downloadDomainName' in kwargs:
+            download_domain_name = kwargs['downloadDomainName']
+        if 'g2oToken' in kwargs:
+            g2o_token = kwargs['g2oToken']
+
         if cp_code is not None:
             _setter("cp_code", cp_code)
         if download_domain_name is not None:
@@ -75953,7 +86805,41 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorWatermarkingResult(dict):
              verification_key_id2: Optional[str] = None,
              verification_public_key1: Optional[str] = None,
              verification_public_key2: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'abVariantLocation' in kwargs:
+            ab_variant_location = kwargs['abVariantLocation']
+        if 'decryptionPassword1' in kwargs:
+            decryption_password1 = kwargs['decryptionPassword1']
+        if 'decryptionPassword2' in kwargs:
+            decryption_password2 = kwargs['decryptionPassword2']
+        if 'decryptionPasswordId1' in kwargs:
+            decryption_password_id1 = kwargs['decryptionPasswordId1']
+        if 'decryptionPasswordId2' in kwargs:
+            decryption_password_id2 = kwargs['decryptionPasswordId2']
+        if 'miscellaneousSettingsTitle' in kwargs:
+            miscellaneous_settings_title = kwargs['miscellaneousSettingsTitle']
+        if 'patternDecryptionEnable' in kwargs:
+            pattern_decryption_enable = kwargs['patternDecryptionEnable']
+        if 'patternEncryptionTitle' in kwargs:
+            pattern_encryption_title = kwargs['patternEncryptionTitle']
+        if 'signatureVerificationEnable' in kwargs:
+            signature_verification_enable = kwargs['signatureVerificationEnable']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'tokenSigningTitle' in kwargs:
+            token_signing_title = kwargs['tokenSigningTitle']
+        if 'useOriginalAsA' in kwargs:
+            use_original_as_a = kwargs['useOriginalAsA']
+        if 'verificationKeyId1' in kwargs:
+            verification_key_id1 = kwargs['verificationKeyId1']
+        if 'verificationKeyId2' in kwargs:
+            verification_key_id2 = kwargs['verificationKeyId2']
+        if 'verificationPublicKey1' in kwargs:
+            verification_public_key1 = kwargs['verificationPublicKey1']
+        if 'verificationPublicKey2' in kwargs:
+            verification_public_key2 = kwargs['verificationPublicKey2']
+
         if ab_variant_location is not None:
             _setter("ab_variant_location", ab_variant_location)
         if decryption_password1 is not None:
@@ -76110,7 +86996,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorWebApplicationFirewallResult(
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'firewallConfiguration' in kwargs:
+            firewall_configuration = kwargs['firewallConfiguration']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if firewall_configuration is not None:
             _setter("firewall_configuration", firewall_configuration)
         if locked is not None:
@@ -76168,7 +87060,21 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorWebApplicationFirewallFirewal
              production_version: Optional[int] = None,
              staging_status: Optional[str] = None,
              staging_version: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'fileName' in kwargs:
+            file_name = kwargs['fileName']
+        if 'productionStatus' in kwargs:
+            production_status = kwargs['productionStatus']
+        if 'productionVersion' in kwargs:
+            production_version = kwargs['productionVersion']
+        if 'stagingStatus' in kwargs:
+            staging_status = kwargs['stagingStatus']
+        if 'stagingVersion' in kwargs:
+            staging_version = kwargs['stagingVersion']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if file_name is not None:
@@ -76234,7 +87140,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorWebSocketsResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -76286,7 +87196,11 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorWebdavResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if enabled is not None:
             _setter("enabled", enabled)
         if locked is not None:
@@ -76461,7 +87375,85 @@ class GetPropertyRulesBuilderRulesV20230530CriterionResult(dict):
              variable_error: Optional['outputs.GetPropertyRulesBuilderRulesV20230530CriterionVariableErrorResult'] = None,
              virtual_waiting_room_request: Optional['outputs.GetPropertyRulesBuilderRulesV20230530CriterionVirtualWaitingRoomRequestResult'] = None,
              visitor_prioritization_request: Optional['outputs.GetPropertyRulesBuilderRulesV20230530CriterionVisitorPrioritizationRequestResult'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'advancedImMatch' in kwargs:
+            advanced_im_match = kwargs['advancedImMatch']
+        if 'chinaCdnRegion' in kwargs:
+            china_cdn_region = kwargs['chinaCdnRegion']
+        if 'clientCertificate' in kwargs:
+            client_certificate = kwargs['clientCertificate']
+        if 'clientIp' in kwargs:
+            client_ip = kwargs['clientIp']
+        if 'clientIpVersion' in kwargs:
+            client_ip_version = kwargs['clientIpVersion']
+        if 'cloudletsOrigin' in kwargs:
+            cloudlets_origin = kwargs['cloudletsOrigin']
+        if 'contentDeliveryNetwork' in kwargs:
+            content_delivery_network = kwargs['contentDeliveryNetwork']
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'deviceCharacteristic' in kwargs:
+            device_characteristic = kwargs['deviceCharacteristic']
+        if 'ecmdAuthGroups' in kwargs:
+            ecmd_auth_groups = kwargs['ecmdAuthGroups']
+        if 'ecmdAuthScheme' in kwargs:
+            ecmd_auth_scheme = kwargs['ecmdAuthScheme']
+        if 'ecmdIsAuthenticated' in kwargs:
+            ecmd_is_authenticated = kwargs['ecmdIsAuthenticated']
+        if 'ecmdUsername' in kwargs:
+            ecmd_username = kwargs['ecmdUsername']
+        if 'edgeWorkersFailure' in kwargs:
+            edge_workers_failure = kwargs['edgeWorkersFailure']
+        if 'fileExtension' in kwargs:
+            file_extension = kwargs['fileExtension']
+        if 'matchAdvanced' in kwargs:
+            match_advanced = kwargs['matchAdvanced']
+        if 'matchCpCode' in kwargs:
+            match_cp_code = kwargs['matchCpCode']
+        if 'matchResponseCode' in kwargs:
+            match_response_code = kwargs['matchResponseCode']
+        if 'matchVariable' in kwargs:
+            match_variable = kwargs['matchVariable']
+        if 'metadataStage' in kwargs:
+            metadata_stage = kwargs['metadataStage']
+        if 'originTimeout' in kwargs:
+            origin_timeout = kwargs['originTimeout']
+        if 'queryStringParameter' in kwargs:
+            query_string_parameter = kwargs['queryStringParameter']
+        if 'recoveryConfig' in kwargs:
+            recovery_config = kwargs['recoveryConfig']
+        if 'regularExpression' in kwargs:
+            regular_expression = kwargs['regularExpression']
+        if 'requestCookie' in kwargs:
+            request_cookie = kwargs['requestCookie']
+        if 'requestHeader' in kwargs:
+            request_header = kwargs['requestHeader']
+        if 'requestMethod' in kwargs:
+            request_method = kwargs['requestMethod']
+        if 'requestProtocol' in kwargs:
+            request_protocol = kwargs['requestProtocol']
+        if 'requestType' in kwargs:
+            request_type = kwargs['requestType']
+        if 'responseHeader' in kwargs:
+            response_header = kwargs['responseHeader']
+        if 'serverLocation' in kwargs:
+            server_location = kwargs['serverLocation']
+        if 'tokenAuthorization' in kwargs:
+            token_authorization = kwargs['tokenAuthorization']
+        if 'userAgent' in kwargs:
+            user_agent = kwargs['userAgent']
+        if 'userLocation' in kwargs:
+            user_location = kwargs['userLocation']
+        if 'userNetwork' in kwargs:
+            user_network = kwargs['userNetwork']
+        if 'variableError' in kwargs:
+            variable_error = kwargs['variableError']
+        if 'virtualWaitingRoomRequest' in kwargs:
+            virtual_waiting_room_request = kwargs['virtualWaitingRoomRequest']
+        if 'visitorPrioritizationRequest' in kwargs:
+            visitor_prioritization_request = kwargs['visitorPrioritizationRequest']
+
         if advanced_im_match is not None:
             _setter("advanced_im_match", advanced_im_match)
         if bucket is not None:
@@ -76803,7 +87795,15 @@ class GetPropertyRulesBuilderRulesV20230530CriterionAdvancedImMatchResult(dict):
              match_operator: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOn' in kwargs:
+            match_on = kwargs['matchOn']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_on is not None:
@@ -76862,7 +87862,11 @@ class GetPropertyRulesBuilderRulesV20230530CriterionBucketResult(dict):
              percentage: Optional[int] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if percentage is not None:
@@ -76917,7 +87921,13 @@ class GetPropertyRulesBuilderRulesV20230530CriterionCacheabilityResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_operator is not None:
@@ -76976,7 +87986,13 @@ class GetPropertyRulesBuilderRulesV20230530CriterionChinaCdnRegionResult(dict):
              match_operator: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_operator is not None:
@@ -77031,7 +88047,15 @@ class GetPropertyRulesBuilderRulesV20230530CriterionClientCertificateResult(dict
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isCertificatePresent' in kwargs:
+            is_certificate_present = kwargs['isCertificatePresent']
+        if 'isCertificateValid' in kwargs:
+            is_certificate_valid = kwargs['isCertificateValid']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if is_certificate_present is not None:
             _setter("is_certificate_present", is_certificate_present)
         if is_certificate_valid is not None:
@@ -77096,7 +88120,15 @@ class GetPropertyRulesBuilderRulesV20230530CriterionClientIpResult(dict):
              use_headers: Optional[bool] = None,
              uuid: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'useHeaders' in kwargs:
+            use_headers = kwargs['useHeaders']
+
         if locked is not None:
             _setter("locked", locked)
         if match_operator is not None:
@@ -77165,7 +88197,13 @@ class GetPropertyRulesBuilderRulesV20230530CriterionClientIpVersionResult(dict):
              use_x_forwarded_for: Optional[bool] = None,
              uuid: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'useXForwardedFor' in kwargs:
+            use_x_forwarded_for = kwargs['useXForwardedFor']
+
         if locked is not None:
             _setter("locked", locked)
         if template_uuid is not None:
@@ -77224,7 +88262,13 @@ class GetPropertyRulesBuilderRulesV20230530CriterionCloudletsOriginResult(dict):
              origin_id: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'originId' in kwargs:
+            origin_id = kwargs['originId']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if origin_id is not None:
@@ -77279,7 +88323,13 @@ class GetPropertyRulesBuilderRulesV20230530CriterionContentDeliveryNetworkResult
              network: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_operator is not None:
@@ -77347,7 +88397,17 @@ class GetPropertyRulesBuilderRulesV20230530CriterionContentTypeResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchCaseSensitive' in kwargs:
+            match_case_sensitive = kwargs['matchCaseSensitive']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'matchWildcard' in kwargs:
+            match_wildcard = kwargs['matchWildcard']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_case_sensitive is not None:
@@ -77447,7 +88507,29 @@ class GetPropertyRulesBuilderRulesV20230530CriterionDeviceCharacteristicResult(d
              uuid: Optional[str] = None,
              version_match_operator: Optional[str] = None,
              version_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'booleanValue' in kwargs:
+            boolean_value = kwargs['booleanValue']
+        if 'matchCaseSensitive' in kwargs:
+            match_case_sensitive = kwargs['matchCaseSensitive']
+        if 'matchWildcard' in kwargs:
+            match_wildcard = kwargs['matchWildcard']
+        if 'numericMatchOperator' in kwargs:
+            numeric_match_operator = kwargs['numericMatchOperator']
+        if 'numericValue' in kwargs:
+            numeric_value = kwargs['numericValue']
+        if 'stringMatchOperator' in kwargs:
+            string_match_operator = kwargs['stringMatchOperator']
+        if 'stringValues' in kwargs:
+            string_values = kwargs['stringValues']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'versionMatchOperator' in kwargs:
+            version_match_operator = kwargs['versionMatchOperator']
+        if 'versionValue' in kwargs:
+            version_value = kwargs['versionValue']
+
         if boolean_value is not None:
             _setter("boolean_value", boolean_value)
         if characteristic is not None:
@@ -77565,7 +88647,13 @@ class GetPropertyRulesBuilderRulesV20230530CriterionEcmdAuthGroupsResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_operator is not None:
@@ -77624,7 +88712,13 @@ class GetPropertyRulesBuilderRulesV20230530CriterionEcmdAuthSchemeResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authScheme' in kwargs:
+            auth_scheme = kwargs['authScheme']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if auth_scheme is not None:
             _setter("auth_scheme", auth_scheme)
         if locked is not None:
@@ -77676,7 +88770,13 @@ class GetPropertyRulesBuilderRulesV20230530CriterionEcmdIsAuthenticatedResult(di
              match_operator: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_operator is not None:
@@ -77734,7 +88834,13 @@ class GetPropertyRulesBuilderRulesV20230530CriterionEcmdUsernameResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if length is not None:
             _setter("length", length)
         if locked is not None:
@@ -77800,7 +88906,13 @@ class GetPropertyRulesBuilderRulesV20230530CriterionEdgeWorkersFailureResult(dic
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'execStatus' in kwargs:
+            exec_status = kwargs['execStatus']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if exec_status is not None:
             _setter("exec_status", exec_status)
         if locked is not None:
@@ -77858,7 +88970,15 @@ class GetPropertyRulesBuilderRulesV20230530CriterionFileExtensionResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchCaseSensitive' in kwargs:
+            match_case_sensitive = kwargs['matchCaseSensitive']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_case_sensitive is not None:
@@ -77930,7 +89050,15 @@ class GetPropertyRulesBuilderRulesV20230530CriterionFilenameResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchCaseSensitive' in kwargs:
+            match_case_sensitive = kwargs['matchCaseSensitive']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_case_sensitive is not None:
@@ -77999,7 +89127,13 @@ class GetPropertyRulesBuilderRulesV20230530CriterionHostnameResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_operator is not None:
@@ -78064,7 +89198,15 @@ class GetPropertyRulesBuilderRulesV20230530CriterionMatchAdvancedResult(dict):
              open_xml: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'closeXml' in kwargs:
+            close_xml = kwargs['closeXml']
+        if 'openXml' in kwargs:
+            open_xml = kwargs['openXml']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if close_xml is not None:
             _setter("close_xml", close_xml)
         if description is not None:
@@ -78130,7 +89272,11 @@ class GetPropertyRulesBuilderRulesV20230530CriterionMatchCpCodeResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              value: Optional['outputs.GetPropertyRulesBuilderRulesV20230530CriterionMatchCpCodeValueResult'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if template_uuid is not None:
@@ -78188,7 +89334,13 @@ class GetPropertyRulesBuilderRulesV20230530CriterionMatchCpCodeValueResult(dict)
              id: Optional[int] = None,
              name: Optional[str] = None,
              products: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpCodeLimits' in kwargs:
+            cp_code_limits = kwargs['cpCodeLimits']
+        if 'createdDate' in kwargs:
+            created_date = kwargs['createdDate']
+
         if cp_code_limits is not None:
             _setter("cp_code_limits", cp_code_limits)
         if created_date is not None:
@@ -78251,7 +89403,13 @@ class GetPropertyRulesBuilderRulesV20230530CriterionMatchCpCodeValueCpCodeLimits
              current_capacity: Optional[int] = None,
              limit: Optional[int] = None,
              limit_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currentCapacity' in kwargs:
+            current_capacity = kwargs['currentCapacity']
+        if 'limitType' in kwargs:
+            limit_type = kwargs['limitType']
+
         if current_capacity is not None:
             _setter("current_capacity", current_capacity)
         if limit is not None:
@@ -78305,7 +89463,17 @@ class GetPropertyRulesBuilderRulesV20230530CriterionMatchResponseCodeResult(dict
              upper_bound: Optional[int] = None,
              uuid: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lowerBound' in kwargs:
+            lower_bound = kwargs['lowerBound']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'upperBound' in kwargs:
+            upper_bound = kwargs['upperBound']
+
         if locked is not None:
             _setter("locked", locked)
         if lower_bound is not None:
@@ -78399,7 +89567,27 @@ class GetPropertyRulesBuilderRulesV20230530CriterionMatchVariableResult(dict):
              variable_expression: Optional[str] = None,
              variable_name: Optional[str] = None,
              variable_values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lowerBound' in kwargs:
+            lower_bound = kwargs['lowerBound']
+        if 'matchCaseSensitive' in kwargs:
+            match_case_sensitive = kwargs['matchCaseSensitive']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'matchWildcard' in kwargs:
+            match_wildcard = kwargs['matchWildcard']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'upperBound' in kwargs:
+            upper_bound = kwargs['upperBound']
+        if 'variableExpression' in kwargs:
+            variable_expression = kwargs['variableExpression']
+        if 'variableName' in kwargs:
+            variable_name = kwargs['variableName']
+        if 'variableValues' in kwargs:
+            variable_values = kwargs['variableValues']
+
         if locked is not None:
             _setter("locked", locked)
         if lower_bound is not None:
@@ -78503,7 +89691,13 @@ class GetPropertyRulesBuilderRulesV20230530CriterionMetadataStageResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_operator is not None:
@@ -78562,7 +89756,13 @@ class GetPropertyRulesBuilderRulesV20230530CriterionOriginTimeoutResult(dict):
              match_operator: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_operator is not None:
@@ -78623,7 +89823,15 @@ class GetPropertyRulesBuilderRulesV20230530CriterionPathResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchCaseSensitive' in kwargs:
+            match_case_sensitive = kwargs['matchCaseSensitive']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_case_sensitive is not None:
@@ -78723,7 +89931,29 @@ class GetPropertyRulesBuilderRulesV20230530CriterionQueryStringParameterResult(d
              upper_bound: Optional[int] = None,
              uuid: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'escapeValue' in kwargs:
+            escape_value = kwargs['escapeValue']
+        if 'lowerBound' in kwargs:
+            lower_bound = kwargs['lowerBound']
+        if 'matchCaseSensitiveName' in kwargs:
+            match_case_sensitive_name = kwargs['matchCaseSensitiveName']
+        if 'matchCaseSensitiveValue' in kwargs:
+            match_case_sensitive_value = kwargs['matchCaseSensitiveValue']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'matchWildcardName' in kwargs:
+            match_wildcard_name = kwargs['matchWildcardName']
+        if 'matchWildcardValue' in kwargs:
+            match_wildcard_value = kwargs['matchWildcardValue']
+        if 'parameterName' in kwargs:
+            parameter_name = kwargs['parameterName']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'upperBound' in kwargs:
+            upper_bound = kwargs['upperBound']
+
         if escape_value is not None:
             _setter("escape_value", escape_value)
         if locked is not None:
@@ -78838,7 +90068,11 @@ class GetPropertyRulesBuilderRulesV20230530CriterionRandomResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if bucket is not None:
             _setter("bucket", bucket)
         if locked is not None:
@@ -78890,7 +90124,13 @@ class GetPropertyRulesBuilderRulesV20230530CriterionRecoveryConfigResult(dict):
              locked: Optional[bool] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configName' in kwargs:
+            config_name = kwargs['configName']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if config_name is not None:
             _setter("config_name", config_name)
         if locked is not None:
@@ -78948,7 +90188,15 @@ class GetPropertyRulesBuilderRulesV20230530CriterionRegularExpressionResult(dict
              regex: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caseSensitive' in kwargs:
+            case_sensitive = kwargs['caseSensitive']
+        if 'matchString' in kwargs:
+            match_string = kwargs['matchString']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if case_sensitive is not None:
             _setter("case_sensitive", case_sensitive)
         if locked is not None:
@@ -79038,7 +90286,27 @@ class GetPropertyRulesBuilderRulesV20230530CriterionRequestCookieResult(dict):
              upper_bound: Optional[int] = None,
              uuid: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cookieName' in kwargs:
+            cookie_name = kwargs['cookieName']
+        if 'lowerBound' in kwargs:
+            lower_bound = kwargs['lowerBound']
+        if 'matchCaseSensitiveName' in kwargs:
+            match_case_sensitive_name = kwargs['matchCaseSensitiveName']
+        if 'matchCaseSensitiveValue' in kwargs:
+            match_case_sensitive_value = kwargs['matchCaseSensitiveValue']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'matchWildcardName' in kwargs:
+            match_wildcard_name = kwargs['matchWildcardName']
+        if 'matchWildcardValue' in kwargs:
+            match_wildcard_value = kwargs['matchWildcardValue']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'upperBound' in kwargs:
+            upper_bound = kwargs['upperBound']
+
         if cookie_name is not None:
             _setter("cookie_name", cookie_name)
         if locked is not None:
@@ -79161,7 +90429,21 @@ class GetPropertyRulesBuilderRulesV20230530CriterionRequestHeaderResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+        if 'matchCaseSensitiveValue' in kwargs:
+            match_case_sensitive_value = kwargs['matchCaseSensitiveValue']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'matchWildcardName' in kwargs:
+            match_wildcard_name = kwargs['matchWildcardName']
+        if 'matchWildcardValue' in kwargs:
+            match_wildcard_value = kwargs['matchWildcardValue']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if header_name is not None:
             _setter("header_name", header_name)
         if locked is not None:
@@ -79251,7 +90533,13 @@ class GetPropertyRulesBuilderRulesV20230530CriterionRequestMethodResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_operator is not None:
@@ -79310,7 +90598,11 @@ class GetPropertyRulesBuilderRulesV20230530CriterionRequestProtocolResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if template_uuid is not None:
@@ -79365,7 +90657,13 @@ class GetPropertyRulesBuilderRulesV20230530CriterionRequestTypeResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_operator is not None:
@@ -79445,7 +90743,25 @@ class GetPropertyRulesBuilderRulesV20230530CriterionResponseHeaderResult(dict):
              upper_bound: Optional[int] = None,
              uuid: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+        if 'lowerBound' in kwargs:
+            lower_bound = kwargs['lowerBound']
+        if 'matchCaseSensitiveValue' in kwargs:
+            match_case_sensitive_value = kwargs['matchCaseSensitiveValue']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'matchWildcardName' in kwargs:
+            match_wildcard_name = kwargs['matchWildcardName']
+        if 'matchWildcardValue' in kwargs:
+            match_wildcard_value = kwargs['matchWildcardValue']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'upperBound' in kwargs:
+            upper_bound = kwargs['upperBound']
+
         if header_name is not None:
             _setter("header_name", header_name)
         if locked is not None:
@@ -79558,7 +90874,15 @@ class GetPropertyRulesBuilderRulesV20230530CriterionServerLocationResult(dict):
              regions: Optional[Sequence[str]] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'locationType' in kwargs:
+            location_type = kwargs['locationType']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if continents is not None:
             _setter("continents", continents)
         if countries is not None:
@@ -79662,7 +90986,29 @@ class GetPropertyRulesBuilderRulesV20230530CriterionTimeResult(dict):
              repeat_interval: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applyDaylightSavingsTime' in kwargs:
+            apply_daylight_savings_time = kwargs['applyDaylightSavingsTime']
+        if 'beginDate' in kwargs:
+            begin_date = kwargs['beginDate']
+        if 'endDate' in kwargs:
+            end_date = kwargs['endDate']
+        if 'lastingDate' in kwargs:
+            lasting_date = kwargs['lastingDate']
+        if 'lastingDuration' in kwargs:
+            lasting_duration = kwargs['lastingDuration']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'repeatBeginDate' in kwargs:
+            repeat_begin_date = kwargs['repeatBeginDate']
+        if 'repeatDuration' in kwargs:
+            repeat_duration = kwargs['repeatDuration']
+        if 'repeatInterval' in kwargs:
+            repeat_interval = kwargs['repeatInterval']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if apply_daylight_savings_time is not None:
             _setter("apply_daylight_savings_time", apply_daylight_savings_time)
         if begin_date is not None:
@@ -79773,7 +91119,15 @@ class GetPropertyRulesBuilderRulesV20230530CriterionTokenAuthorizationResult(dic
              status_lists: Optional[Sequence[str]] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'statusLists' in kwargs:
+            status_lists = kwargs['statusLists']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_operator is not None:
@@ -79841,7 +91195,17 @@ class GetPropertyRulesBuilderRulesV20230530CriterionUserAgentResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchCaseSensitive' in kwargs:
+            match_case_sensitive = kwargs['matchCaseSensitive']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'matchWildcard' in kwargs:
+            match_wildcard = kwargs['matchWildcard']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_case_sensitive is not None:
@@ -79932,7 +91296,23 @@ class GetPropertyRulesBuilderRulesV20230530CriterionUserLocationResult(dict):
              template_uuid: Optional[str] = None,
              use_only_first_x_forwarded_for_ip: Optional[bool] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'checkIps' in kwargs:
+            check_ips = kwargs['checkIps']
+        if 'continentValues' in kwargs:
+            continent_values = kwargs['continentValues']
+        if 'countryValues' in kwargs:
+            country_values = kwargs['countryValues']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'regionValues' in kwargs:
+            region_values = kwargs['regionValues']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'useOnlyFirstXForwardedForIp' in kwargs:
+            use_only_first_x_forwarded_for_ip = kwargs['useOnlyFirstXForwardedForIp']
+
         if check_ips is not None:
             _setter("check_ips", check_ips)
         if continent_values is not None:
@@ -80044,7 +91424,23 @@ class GetPropertyRulesBuilderRulesV20230530CriterionUserNetworkResult(dict):
              template_uuid: Optional[str] = None,
              use_only_first_x_forwarded_for_ip: Optional[bool] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bandwidthValues' in kwargs:
+            bandwidth_values = kwargs['bandwidthValues']
+        if 'checkIps' in kwargs:
+            check_ips = kwargs['checkIps']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'networkTypeValues' in kwargs:
+            network_type_values = kwargs['networkTypeValues']
+        if 'networkValues' in kwargs:
+            network_values = kwargs['networkValues']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'useOnlyFirstXForwardedForIp' in kwargs:
+            use_only_first_x_forwarded_for_ip = kwargs['useOnlyFirstXForwardedForIp']
+
         if bandwidth_values is not None:
             _setter("bandwidth_values", bandwidth_values)
         if check_ips is not None:
@@ -80141,7 +91537,13 @@ class GetPropertyRulesBuilderRulesV20230530CriterionVariableErrorResult(dict):
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
              variable_names: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+        if 'variableNames' in kwargs:
+            variable_names = kwargs['variableNames']
+
         if locked is not None:
             _setter("locked", locked)
         if result is not None:
@@ -80203,7 +91605,15 @@ class GetPropertyRulesBuilderRulesV20230530CriterionVirtualWaitingRoomRequestRes
              match_operator: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOn' in kwargs:
+            match_on = kwargs['matchOn']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_on is not None:
@@ -80265,7 +91675,15 @@ class GetPropertyRulesBuilderRulesV20230530CriterionVisitorPrioritizationRequest
              match_operator: Optional[str] = None,
              template_uuid: Optional[str] = None,
              uuid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchOn' in kwargs:
+            match_on = kwargs['matchOn']
+        if 'matchOperator' in kwargs:
+            match_operator = kwargs['matchOperator']
+        if 'templateUuid' in kwargs:
+            template_uuid = kwargs['templateUuid']
+
         if locked is not None:
             _setter("locked", locked)
         if match_on is not None:
@@ -80318,7 +91736,11 @@ class GetPropertyRulesBuilderRulesV20230530CustomOverrideResult(dict):
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
              override_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'overrideId' in kwargs:
+            override_id = kwargs['overrideId']
+
         if name is not None:
             _setter("name", name)
         if override_id is not None:
@@ -80359,7 +91781,9 @@ class GetPropertyRulesBuilderRulesV20230530VariableResult(dict):
              name: str,
              sensitive: bool,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("description", description)
         _setter("hidden", hidden)
         _setter("name", name)
@@ -80407,7 +91831,13 @@ class GetPropertyRulesTemplateTemplateResult(dict):
              _setter: Callable[[Any, Any], None],
              template_data: str,
              template_dir: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'templateData' in kwargs:
+            template_data = kwargs['templateData']
+        if 'templateDir' in kwargs:
+            template_dir = kwargs['templateDir']
+
         _setter("template_data", template_data)
         _setter("template_dir", template_dir)
 
@@ -80440,7 +91870,9 @@ class GetPropertyRulesTemplateVariableResult(dict):
              name: str,
              value: str,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
         if type is not None:

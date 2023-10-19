@@ -29,7 +29,13 @@ class BotmanBotAnalyticsCookieArgs:
              _setter: Callable[[Any, Any], None],
              bot_analytics_cookie: pulumi.Input[str],
              config_id: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'botAnalyticsCookie' in kwargs:
+            bot_analytics_cookie = kwargs['botAnalyticsCookie']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+
         _setter("bot_analytics_cookie", bot_analytics_cookie)
         _setter("config_id", config_id)
 
@@ -70,7 +76,13 @@ class _BotmanBotAnalyticsCookieState:
              _setter: Callable[[Any, Any], None],
              bot_analytics_cookie: Optional[pulumi.Input[str]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'botAnalyticsCookie' in kwargs:
+            bot_analytics_cookie = kwargs['botAnalyticsCookie']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+
         if bot_analytics_cookie is not None:
             _setter("bot_analytics_cookie", bot_analytics_cookie)
         if config_id is not None:

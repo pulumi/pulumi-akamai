@@ -146,18 +146,18 @@ public final class GetAppSecWafModeResult {
             return this;
         }
         public GetAppSecWafModeResult build() {
-            final var o = new GetAppSecWafModeResult();
-            o.configId = configId;
-            o.currentRuleset = currentRuleset;
-            o.evalExpirationDate = evalExpirationDate;
-            o.evalRuleset = evalRuleset;
-            o.evalStatus = evalStatus;
-            o.id = id;
-            o.json = json;
-            o.mode = mode;
-            o.outputText = outputText;
-            o.securityPolicyId = securityPolicyId;
-            return o;
+            final var _resultValue = new GetAppSecWafModeResult();
+            _resultValue.configId = configId;
+            _resultValue.currentRuleset = currentRuleset;
+            _resultValue.evalExpirationDate = evalExpirationDate;
+            _resultValue.evalRuleset = evalRuleset;
+            _resultValue.evalStatus = evalStatus;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.mode = mode;
+            _resultValue.outputText = outputText;
+            _resultValue.securityPolicyId = securityPolicyId;
+            return _resultValue;
         }
     }
 }

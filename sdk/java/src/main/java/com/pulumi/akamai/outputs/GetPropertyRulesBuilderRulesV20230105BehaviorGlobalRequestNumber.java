@@ -96,14 +96,14 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorGlobalRequestNum
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorGlobalRequestNumber build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorGlobalRequestNumber();
-            o.headerName = headerName;
-            o.locked = locked;
-            o.outputOption = outputOption;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            o.variableName = variableName;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorGlobalRequestNumber();
+            _resultValue.headerName = headerName;
+            _resultValue.locked = locked;
+            _resultValue.outputOption = outputOption;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            _resultValue.variableName = variableName;
+            return _resultValue;
         }
     }
 }

@@ -73,11 +73,11 @@ public final class GetPropertyProductsResult {
             return products(List.of(products));
         }
         public GetPropertyProductsResult build() {
-            final var o = new GetPropertyProductsResult();
-            o.contractId = contractId;
-            o.id = id;
-            o.products = products;
-            return o;
+            final var _resultValue = new GetPropertyProductsResult();
+            _resultValue.contractId = contractId;
+            _resultValue.id = id;
+            _resultValue.products = products;
+            return _resultValue;
         }
     }
 }

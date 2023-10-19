@@ -118,16 +118,16 @@ public final class DatastreamOracleConnector {
             return this;
         }
         public DatastreamOracleConnector build() {
-            final var o = new DatastreamOracleConnector();
-            o.accessKey = accessKey;
-            o.bucket = bucket;
-            o.compressLogs = compressLogs;
-            o.displayName = displayName;
-            o.namespace = namespace;
-            o.path = path;
-            o.region = region;
-            o.secretAccessKey = secretAccessKey;
-            return o;
+            final var _resultValue = new DatastreamOracleConnector();
+            _resultValue.accessKey = accessKey;
+            _resultValue.bucket = bucket;
+            _resultValue.compressLogs = compressLogs;
+            _resultValue.displayName = displayName;
+            _resultValue.namespace = namespace;
+            _resultValue.path = path;
+            _resultValue.region = region;
+            _resultValue.secretAccessKey = secretAccessKey;
+            return _resultValue;
         }
     }
 }

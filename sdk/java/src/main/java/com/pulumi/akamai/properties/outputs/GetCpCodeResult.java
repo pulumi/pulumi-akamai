@@ -94,13 +94,13 @@ public final class GetCpCodeResult {
             return productIds(List.of(productIds));
         }
         public GetCpCodeResult build() {
-            final var o = new GetCpCodeResult();
-            o.contractId = contractId;
-            o.groupId = groupId;
-            o.id = id;
-            o.name = name;
-            o.productIds = productIds;
-            return o;
+            final var _resultValue = new GetCpCodeResult();
+            _resultValue.contractId = contractId;
+            _resultValue.groupId = groupId;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.productIds = productIds;
+            return _resultValue;
         }
     }
 }

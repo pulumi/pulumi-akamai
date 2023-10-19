@@ -96,14 +96,14 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorRandomSeek {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorRandomSeek build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorRandomSeek();
-            o.flv = flv;
-            o.locked = locked;
-            o.maximumSize = maximumSize;
-            o.mp4 = mp4;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorRandomSeek();
+            _resultValue.flv = flv;
+            _resultValue.locked = locked;
+            _resultValue.maximumSize = maximumSize;
+            _resultValue.mp4 = mp4;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

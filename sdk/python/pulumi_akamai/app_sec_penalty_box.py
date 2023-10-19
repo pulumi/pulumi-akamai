@@ -39,7 +39,17 @@ class AppSecPenaltyBoxArgs:
              penalty_box_action: pulumi.Input[str],
              penalty_box_protection: pulumi.Input[bool],
              security_policy_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'penaltyBoxAction' in kwargs:
+            penalty_box_action = kwargs['penaltyBoxAction']
+        if 'penaltyBoxProtection' in kwargs:
+            penalty_box_protection = kwargs['penaltyBoxProtection']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         _setter("config_id", config_id)
         _setter("penalty_box_action", penalty_box_action)
         _setter("penalty_box_protection", penalty_box_protection)
@@ -122,7 +132,17 @@ class _AppSecPenaltyBoxState:
              penalty_box_action: Optional[pulumi.Input[str]] = None,
              penalty_box_protection: Optional[pulumi.Input[bool]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'penaltyBoxAction' in kwargs:
+            penalty_box_action = kwargs['penaltyBoxAction']
+        if 'penaltyBoxProtection' in kwargs:
+            penalty_box_protection = kwargs['penaltyBoxProtection']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if penalty_box_action is not None:

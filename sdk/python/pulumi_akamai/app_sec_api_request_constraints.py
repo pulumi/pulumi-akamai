@@ -39,7 +39,15 @@ class AppSecApiRequestConstraintsArgs:
              config_id: pulumi.Input[int],
              security_policy_id: pulumi.Input[str],
              api_endpoint_id: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+        if 'apiEndpointId' in kwargs:
+            api_endpoint_id = kwargs['apiEndpointId']
+
         _setter("action", action)
         _setter("config_id", config_id)
         _setter("security_policy_id", security_policy_id)
@@ -123,7 +131,15 @@ class _AppSecApiRequestConstraintsState:
              api_endpoint_id: Optional[pulumi.Input[int]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'apiEndpointId' in kwargs:
+            api_endpoint_id = kwargs['apiEndpointId']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         if action is not None:
             _setter("action", action)
         if api_endpoint_id is not None:

@@ -93,13 +93,13 @@ public final class GetAppSecCustomRuleActionsResult {
             return this;
         }
         public GetAppSecCustomRuleActionsResult build() {
-            final var o = new GetAppSecCustomRuleActionsResult();
-            o.configId = configId;
-            o.customRuleId = customRuleId;
-            o.id = id;
-            o.outputText = outputText;
-            o.securityPolicyId = securityPolicyId;
-            return o;
+            final var _resultValue = new GetAppSecCustomRuleActionsResult();
+            _resultValue.configId = configId;
+            _resultValue.customRuleId = customRuleId;
+            _resultValue.id = id;
+            _resultValue.outputText = outputText;
+            _resultValue.securityPolicyId = securityPolicyId;
+            return _resultValue;
         }
     }
 }

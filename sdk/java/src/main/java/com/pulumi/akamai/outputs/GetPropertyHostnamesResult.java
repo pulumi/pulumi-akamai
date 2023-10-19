@@ -107,14 +107,14 @@ public final class GetPropertyHostnamesResult {
             return this;
         }
         public GetPropertyHostnamesResult build() {
-            final var o = new GetPropertyHostnamesResult();
-            o.contractId = contractId;
-            o.groupId = groupId;
-            o.hostnames = hostnames;
-            o.id = id;
-            o.propertyId = propertyId;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetPropertyHostnamesResult();
+            _resultValue.contractId = contractId;
+            _resultValue.groupId = groupId;
+            _resultValue.hostnames = hostnames;
+            _resultValue.id = id;
+            _resultValue.propertyId = propertyId;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

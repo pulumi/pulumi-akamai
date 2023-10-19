@@ -61,6 +61,7 @@ namespace Pulumi.Akamai
         public readonly string Id;
         public readonly ImmutableArray<Outputs.GetCPSEnrollmentNetworkConfigurationResult> NetworkConfigurations;
         public readonly ImmutableArray<Outputs.GetCPSEnrollmentOrganizationResult> Organizations;
+        public readonly bool PendingChanges;
         public readonly string RegistrationAuthority;
         public readonly ImmutableArray<string> Sans;
         public readonly string SecureNetwork;
@@ -97,6 +98,8 @@ namespace Pulumi.Akamai
 
             ImmutableArray<Outputs.GetCPSEnrollmentOrganizationResult> organizations,
 
+            bool pendingChanges,
+
             string registrationAuthority,
 
             ImmutableArray<string> sans,
@@ -124,6 +127,7 @@ namespace Pulumi.Akamai
             Id = id;
             NetworkConfigurations = networkConfigurations;
             Organizations = organizations;
+            PendingChanges = pendingChanges;
             RegistrationAuthority = registrationAuthority;
             Sans = sans;
             SecureNetwork = secureNetwork;

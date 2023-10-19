@@ -85,13 +85,13 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionEcmdAuthGroups 
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105CriterionEcmdAuthGroups build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105CriterionEcmdAuthGroups();
-            o.locked = locked;
-            o.matchOperator = matchOperator;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105CriterionEcmdAuthGroups();
+            _resultValue.locked = locked;
+            _resultValue.matchOperator = matchOperator;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

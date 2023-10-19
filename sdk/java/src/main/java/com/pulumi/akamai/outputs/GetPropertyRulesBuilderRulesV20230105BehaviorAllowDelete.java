@@ -85,13 +85,13 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorAllowDelete {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorAllowDelete build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorAllowDelete();
-            o.allowBody = allowBody;
-            o.enabled = enabled;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorAllowDelete();
+            _resultValue.allowBody = allowBody;
+            _resultValue.enabled = enabled;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

@@ -49,10 +49,10 @@ public final class GetGtmDatacenterLink {
             return this;
         }
         public GetGtmDatacenterLink build() {
-            final var o = new GetGtmDatacenterLink();
-            o.href = href;
-            o.rel = rel;
-            return o;
+            final var _resultValue = new GetGtmDatacenterLink();
+            _resultValue.href = href;
+            _resultValue.rel = rel;
+            return _resultValue;
         }
     }
 }

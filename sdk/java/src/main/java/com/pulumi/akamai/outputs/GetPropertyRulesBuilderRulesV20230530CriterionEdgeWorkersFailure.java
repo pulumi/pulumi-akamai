@@ -74,12 +74,12 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionEdgeWorkersFail
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530CriterionEdgeWorkersFailure build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530CriterionEdgeWorkersFailure();
-            o.execStatus = execStatus;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530CriterionEdgeWorkersFailure();
+            _resultValue.execStatus = execStatus;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

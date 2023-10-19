@@ -62,10 +62,10 @@ public final class GetIamGrantableRolesResult {
             return this;
         }
         public GetIamGrantableRolesResult build() {
-            final var o = new GetIamGrantableRolesResult();
-            o.grantableRoles = grantableRoles;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetIamGrantableRolesResult();
+            _resultValue.grantableRoles = grantableRoles;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

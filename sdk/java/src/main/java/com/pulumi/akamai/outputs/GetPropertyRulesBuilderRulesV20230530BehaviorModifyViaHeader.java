@@ -96,14 +96,14 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorModifyViaHeader 
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorModifyViaHeader build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorModifyViaHeader();
-            o.enabled = enabled;
-            o.locked = locked;
-            o.modificationOption = modificationOption;
-            o.renameHeaderTo = renameHeaderTo;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorModifyViaHeader();
+            _resultValue.enabled = enabled;
+            _resultValue.locked = locked;
+            _resultValue.modificationOption = modificationOption;
+            _resultValue.renameHeaderTo = renameHeaderTo;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

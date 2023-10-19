@@ -68,7 +68,29 @@ class GtmDomainArgs:
              load_imbalance_percentage: Optional[pulumi.Input[float]] = None,
              name: Optional[pulumi.Input[str]] = None,
              wait_on_complete: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cnameCoalescingEnabled' in kwargs:
+            cname_coalescing_enabled = kwargs['cnameCoalescingEnabled']
+        if 'defaultErrorPenalty' in kwargs:
+            default_error_penalty = kwargs['defaultErrorPenalty']
+        if 'defaultSslClientCertificate' in kwargs:
+            default_ssl_client_certificate = kwargs['defaultSslClientCertificate']
+        if 'defaultSslClientPrivateKey' in kwargs:
+            default_ssl_client_private_key = kwargs['defaultSslClientPrivateKey']
+        if 'defaultTimeoutPenalty' in kwargs:
+            default_timeout_penalty = kwargs['defaultTimeoutPenalty']
+        if 'emailNotificationLists' in kwargs:
+            email_notification_lists = kwargs['emailNotificationLists']
+        if 'endUserMappingEnabled' in kwargs:
+            end_user_mapping_enabled = kwargs['endUserMappingEnabled']
+        if 'loadFeedback' in kwargs:
+            load_feedback = kwargs['loadFeedback']
+        if 'loadImbalancePercentage' in kwargs:
+            load_imbalance_percentage = kwargs['loadImbalancePercentage']
+        if 'waitOnComplete' in kwargs:
+            wait_on_complete = kwargs['waitOnComplete']
+
         _setter("type", type)
         if cname_coalescing_enabled is not None:
             _setter("cname_coalescing_enabled", cname_coalescing_enabled)
@@ -349,7 +371,67 @@ class _GtmDomainState:
              servermonitor_pool: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              wait_on_complete: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cnameCoalescingEnabled' in kwargs:
+            cname_coalescing_enabled = kwargs['cnameCoalescingEnabled']
+        if 'defaultErrorPenalty' in kwargs:
+            default_error_penalty = kwargs['defaultErrorPenalty']
+        if 'defaultHealthMax' in kwargs:
+            default_health_max = kwargs['defaultHealthMax']
+        if 'defaultHealthMultiplier' in kwargs:
+            default_health_multiplier = kwargs['defaultHealthMultiplier']
+        if 'defaultHealthThreshold' in kwargs:
+            default_health_threshold = kwargs['defaultHealthThreshold']
+        if 'defaultMaxUnreachablePenalty' in kwargs:
+            default_max_unreachable_penalty = kwargs['defaultMaxUnreachablePenalty']
+        if 'defaultSslClientCertificate' in kwargs:
+            default_ssl_client_certificate = kwargs['defaultSslClientCertificate']
+        if 'defaultSslClientPrivateKey' in kwargs:
+            default_ssl_client_private_key = kwargs['defaultSslClientPrivateKey']
+        if 'defaultTimeoutPenalty' in kwargs:
+            default_timeout_penalty = kwargs['defaultTimeoutPenalty']
+        if 'defaultUnreachableThreshold' in kwargs:
+            default_unreachable_threshold = kwargs['defaultUnreachableThreshold']
+        if 'emailNotificationLists' in kwargs:
+            email_notification_lists = kwargs['emailNotificationLists']
+        if 'endUserMappingEnabled' in kwargs:
+            end_user_mapping_enabled = kwargs['endUserMappingEnabled']
+        if 'loadFeedback' in kwargs:
+            load_feedback = kwargs['loadFeedback']
+        if 'loadImbalancePercentage' in kwargs:
+            load_imbalance_percentage = kwargs['loadImbalancePercentage']
+        if 'mapUpdateInterval' in kwargs:
+            map_update_interval = kwargs['mapUpdateInterval']
+        if 'maxProperties' in kwargs:
+            max_properties = kwargs['maxProperties']
+        if 'maxResources' in kwargs:
+            max_resources = kwargs['maxResources']
+        if 'maxTestTimeout' in kwargs:
+            max_test_timeout = kwargs['maxTestTimeout']
+        if 'maxTtl' in kwargs:
+            max_ttl = kwargs['maxTtl']
+        if 'minPingableRegionFraction' in kwargs:
+            min_pingable_region_fraction = kwargs['minPingableRegionFraction']
+        if 'minTestInterval' in kwargs:
+            min_test_interval = kwargs['minTestInterval']
+        if 'minTtl' in kwargs:
+            min_ttl = kwargs['minTtl']
+        if 'pingInterval' in kwargs:
+            ping_interval = kwargs['pingInterval']
+        if 'pingPacketSize' in kwargs:
+            ping_packet_size = kwargs['pingPacketSize']
+        if 'roundRobinPrefix' in kwargs:
+            round_robin_prefix = kwargs['roundRobinPrefix']
+        if 'servermonitorLivenessCount' in kwargs:
+            servermonitor_liveness_count = kwargs['servermonitorLivenessCount']
+        if 'servermonitorLoadCount' in kwargs:
+            servermonitor_load_count = kwargs['servermonitorLoadCount']
+        if 'servermonitorPool' in kwargs:
+            servermonitor_pool = kwargs['servermonitorPool']
+        if 'waitOnComplete' in kwargs:
+            wait_on_complete = kwargs['waitOnComplete']
+
         if cname_coalescing_enabled is not None:
             _setter("cname_coalescing_enabled", cname_coalescing_enabled)
         if comment is not None:

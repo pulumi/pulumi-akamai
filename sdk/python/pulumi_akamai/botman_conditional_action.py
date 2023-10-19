@@ -29,7 +29,13 @@ class BotmanConditionalActionArgs:
              _setter: Callable[[Any, Any], None],
              conditional_action: pulumi.Input[str],
              config_id: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'conditionalAction' in kwargs:
+            conditional_action = kwargs['conditionalAction']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+
         _setter("conditional_action", conditional_action)
         _setter("config_id", config_id)
 
@@ -73,7 +79,15 @@ class _BotmanConditionalActionState:
              action_id: Optional[pulumi.Input[str]] = None,
              conditional_action: Optional[pulumi.Input[str]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionId' in kwargs:
+            action_id = kwargs['actionId']
+        if 'conditionalAction' in kwargs:
+            conditional_action = kwargs['conditionalAction']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+
         if action_id is not None:
             _setter("action_id", action_id)
         if conditional_action is not None:

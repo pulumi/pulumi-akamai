@@ -328,35 +328,35 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorSaasDefinitions 
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorSaasDefinitions build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorSaasDefinitions();
-            o.applicationAction = applicationAction;
-            o.applicationCnameEnabled = applicationCnameEnabled;
-            o.applicationCnameLevel = applicationCnameLevel;
-            o.applicationCookie = applicationCookie;
-            o.applicationQueryString = applicationQueryString;
-            o.applicationRegex = applicationRegex;
-            o.applicationReplace = applicationReplace;
-            o.applicationTitle = applicationTitle;
-            o.customerAction = customerAction;
-            o.customerCnameEnabled = customerCnameEnabled;
-            o.customerCnameLevel = customerCnameLevel;
-            o.customerCookie = customerCookie;
-            o.customerQueryString = customerQueryString;
-            o.customerRegex = customerRegex;
-            o.customerReplace = customerReplace;
-            o.customerTitle = customerTitle;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.usersAction = usersAction;
-            o.usersCnameEnabled = usersCnameEnabled;
-            o.usersCnameLevel = usersCnameLevel;
-            o.usersCookie = usersCookie;
-            o.usersQueryString = usersQueryString;
-            o.usersRegex = usersRegex;
-            o.usersReplace = usersReplace;
-            o.usersTitle = usersTitle;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorSaasDefinitions();
+            _resultValue.applicationAction = applicationAction;
+            _resultValue.applicationCnameEnabled = applicationCnameEnabled;
+            _resultValue.applicationCnameLevel = applicationCnameLevel;
+            _resultValue.applicationCookie = applicationCookie;
+            _resultValue.applicationQueryString = applicationQueryString;
+            _resultValue.applicationRegex = applicationRegex;
+            _resultValue.applicationReplace = applicationReplace;
+            _resultValue.applicationTitle = applicationTitle;
+            _resultValue.customerAction = customerAction;
+            _resultValue.customerCnameEnabled = customerCnameEnabled;
+            _resultValue.customerCnameLevel = customerCnameLevel;
+            _resultValue.customerCookie = customerCookie;
+            _resultValue.customerQueryString = customerQueryString;
+            _resultValue.customerRegex = customerRegex;
+            _resultValue.customerReplace = customerReplace;
+            _resultValue.customerTitle = customerTitle;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.usersAction = usersAction;
+            _resultValue.usersCnameEnabled = usersCnameEnabled;
+            _resultValue.usersCnameLevel = usersCnameLevel;
+            _resultValue.usersCookie = usersCookie;
+            _resultValue.usersQueryString = usersQueryString;
+            _resultValue.usersRegex = usersRegex;
+            _resultValue.usersReplace = usersReplace;
+            _resultValue.usersTitle = usersTitle;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

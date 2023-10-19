@@ -74,11 +74,11 @@ public final class GetCloudletsEdgeRedirectorMatchRuleResult {
             return matchRules(List.of(matchRules));
         }
         public GetCloudletsEdgeRedirectorMatchRuleResult build() {
-            final var o = new GetCloudletsEdgeRedirectorMatchRuleResult();
-            o.id = id;
-            o.json = json;
-            o.matchRules = matchRules;
-            return o;
+            final var _resultValue = new GetCloudletsEdgeRedirectorMatchRuleResult();
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.matchRules = matchRules;
+            return _resultValue;
         }
     }
 }

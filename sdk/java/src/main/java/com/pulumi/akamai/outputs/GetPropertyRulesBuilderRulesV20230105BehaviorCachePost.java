@@ -85,13 +85,13 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorCachePost {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorCachePost build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorCachePost();
-            o.enabled = enabled;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.useBody = useBody;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorCachePost();
+            _resultValue.enabled = enabled;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.useBody = useBody;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

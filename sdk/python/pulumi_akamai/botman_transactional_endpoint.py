@@ -35,7 +35,17 @@ class BotmanTransactionalEndpointArgs:
              operation_id: pulumi.Input[str],
              security_policy_id: pulumi.Input[str],
              transactional_endpoint: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'operationId' in kwargs:
+            operation_id = kwargs['operationId']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+        if 'transactionalEndpoint' in kwargs:
+            transactional_endpoint = kwargs['transactionalEndpoint']
+
         _setter("config_id", config_id)
         _setter("operation_id", operation_id)
         _setter("security_policy_id", security_policy_id)
@@ -102,7 +112,17 @@ class _BotmanTransactionalEndpointState:
              operation_id: Optional[pulumi.Input[str]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
              transactional_endpoint: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'operationId' in kwargs:
+            operation_id = kwargs['operationId']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+        if 'transactionalEndpoint' in kwargs:
+            transactional_endpoint = kwargs['transactionalEndpoint']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if operation_id is not None:

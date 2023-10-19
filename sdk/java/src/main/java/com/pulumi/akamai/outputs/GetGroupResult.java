@@ -68,11 +68,11 @@ public final class GetGroupResult {
             return this;
         }
         public GetGroupResult build() {
-            final var o = new GetGroupResult();
-            o.contractId = contractId;
-            o.groupName = groupName;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetGroupResult();
+            _resultValue.contractId = contractId;
+            _resultValue.groupName = groupName;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

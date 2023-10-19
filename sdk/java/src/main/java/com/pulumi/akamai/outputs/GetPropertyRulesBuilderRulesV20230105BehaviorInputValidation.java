@@ -359,37 +359,37 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorInputValidation 
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorInputValidation build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorInputValidation();
-            o.allowLargePostBody = allowLargePostBody;
-            o.cloudletPolicy = cloudletPolicy;
-            o.enabled = enabled;
-            o.failure302Uri = failure302Uri;
-            o.label = label;
-            o.locked = locked;
-            o.penalty302Uri = penalty302Uri;
-            o.penalty403NetStoragePath = penalty403NetStoragePath;
-            o.penaltyAction = penaltyAction;
-            o.penaltyBrandedDenyCacheTtl = penaltyBrandedDenyCacheTtl;
-            o.penaltyNetStorage = penaltyNetStorage;
-            o.penaltyThreshold = penaltyThreshold;
-            o.penaltyTitle = penaltyTitle;
-            o.resetOnValid = resetOnValid;
-            o.templateUuid = templateUuid;
-            o.userIdentificationByCookie = userIdentificationByCookie;
-            o.userIdentificationByHeaders = userIdentificationByHeaders;
-            o.userIdentificationByIp = userIdentificationByIp;
-            o.userIdentificationByParams = userIdentificationByParams;
-            o.userIdentificationKeyCookie = userIdentificationKeyCookie;
-            o.userIdentificationKeyHeaders = userIdentificationKeyHeaders;
-            o.userIdentificationKeyParams = userIdentificationKeyParams;
-            o.userIdentificationTitle = userIdentificationTitle;
-            o.uuid = uuid;
-            o.validateOnOriginHeaderName = validateOnOriginHeaderName;
-            o.validateOnOriginHeaderValue = validateOnOriginHeaderValue;
-            o.validateOnOriginResponseCode = validateOnOriginResponseCode;
-            o.validateOnOriginWith = validateOnOriginWith;
-            o.validationTitle = validationTitle;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorInputValidation();
+            _resultValue.allowLargePostBody = allowLargePostBody;
+            _resultValue.cloudletPolicy = cloudletPolicy;
+            _resultValue.enabled = enabled;
+            _resultValue.failure302Uri = failure302Uri;
+            _resultValue.label = label;
+            _resultValue.locked = locked;
+            _resultValue.penalty302Uri = penalty302Uri;
+            _resultValue.penalty403NetStoragePath = penalty403NetStoragePath;
+            _resultValue.penaltyAction = penaltyAction;
+            _resultValue.penaltyBrandedDenyCacheTtl = penaltyBrandedDenyCacheTtl;
+            _resultValue.penaltyNetStorage = penaltyNetStorage;
+            _resultValue.penaltyThreshold = penaltyThreshold;
+            _resultValue.penaltyTitle = penaltyTitle;
+            _resultValue.resetOnValid = resetOnValid;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.userIdentificationByCookie = userIdentificationByCookie;
+            _resultValue.userIdentificationByHeaders = userIdentificationByHeaders;
+            _resultValue.userIdentificationByIp = userIdentificationByIp;
+            _resultValue.userIdentificationByParams = userIdentificationByParams;
+            _resultValue.userIdentificationKeyCookie = userIdentificationKeyCookie;
+            _resultValue.userIdentificationKeyHeaders = userIdentificationKeyHeaders;
+            _resultValue.userIdentificationKeyParams = userIdentificationKeyParams;
+            _resultValue.userIdentificationTitle = userIdentificationTitle;
+            _resultValue.uuid = uuid;
+            _resultValue.validateOnOriginHeaderName = validateOnOriginHeaderName;
+            _resultValue.validateOnOriginHeaderValue = validateOnOriginHeaderValue;
+            _resultValue.validateOnOriginResponseCode = validateOnOriginResponseCode;
+            _resultValue.validateOnOriginWith = validateOnOriginWith;
+            _resultValue.validationTitle = validationTitle;
+            return _resultValue;
         }
     }
 }

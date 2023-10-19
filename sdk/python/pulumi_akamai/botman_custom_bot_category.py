@@ -29,7 +29,13 @@ class BotmanCustomBotCategoryArgs:
              _setter: Callable[[Any, Any], None],
              config_id: pulumi.Input[int],
              custom_bot_category: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'customBotCategory' in kwargs:
+            custom_bot_category = kwargs['customBotCategory']
+
         _setter("config_id", config_id)
         _setter("custom_bot_category", custom_bot_category)
 
@@ -73,7 +79,15 @@ class _BotmanCustomBotCategoryState:
              category_id: Optional[pulumi.Input[str]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
              custom_bot_category: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'categoryId' in kwargs:
+            category_id = kwargs['categoryId']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'customBotCategory' in kwargs:
+            custom_bot_category = kwargs['customBotCategory']
+
         if category_id is not None:
             _setter("category_id", category_id)
         if config_id is not None:

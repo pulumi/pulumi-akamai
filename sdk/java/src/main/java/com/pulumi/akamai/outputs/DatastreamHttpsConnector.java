@@ -184,22 +184,22 @@ public final class DatastreamHttpsConnector {
             return this;
         }
         public DatastreamHttpsConnector build() {
-            final var o = new DatastreamHttpsConnector();
-            o.authenticationType = authenticationType;
-            o.caCert = caCert;
-            o.clientCert = clientCert;
-            o.clientKey = clientKey;
-            o.compressLogs = compressLogs;
-            o.contentType = contentType;
-            o.customHeaderName = customHeaderName;
-            o.customHeaderValue = customHeaderValue;
-            o.displayName = displayName;
-            o.endpoint = endpoint;
-            o.mTls = mTls;
-            o.password = password;
-            o.tlsHostname = tlsHostname;
-            o.userName = userName;
-            return o;
+            final var _resultValue = new DatastreamHttpsConnector();
+            _resultValue.authenticationType = authenticationType;
+            _resultValue.caCert = caCert;
+            _resultValue.clientCert = clientCert;
+            _resultValue.clientKey = clientKey;
+            _resultValue.compressLogs = compressLogs;
+            _resultValue.contentType = contentType;
+            _resultValue.customHeaderName = customHeaderName;
+            _resultValue.customHeaderValue = customHeaderValue;
+            _resultValue.displayName = displayName;
+            _resultValue.endpoint = endpoint;
+            _resultValue.mTls = mTls;
+            _resultValue.password = password;
+            _resultValue.tlsHostname = tlsHostname;
+            _resultValue.userName = userName;
+            return _resultValue;
         }
     }
 }

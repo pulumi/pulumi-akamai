@@ -195,23 +195,23 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorManifestPersonal
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorManifestPersonalization build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorManifestPersonalization();
-            o.enabled = enabled;
-            o.hlsEnableDebugHeaders = hlsEnableDebugHeaders;
-            o.hlsEnabled = hlsEnabled;
-            o.hlsFilterInBitrateRanges = hlsFilterInBitrateRanges;
-            o.hlsFilterInBitrates = hlsFilterInBitrates;
-            o.hlsMode = hlsMode;
-            o.hlsPreferredBitrate = hlsPreferredBitrate;
-            o.hlsQueryParamEnabled = hlsQueryParamEnabled;
-            o.hlsQueryParamSecretKey = hlsQueryParamSecretKey;
-            o.hlsQueryParamTransitionKey = hlsQueryParamTransitionKey;
-            o.hlsShowAdvanced = hlsShowAdvanced;
-            o.hlsTitle = hlsTitle;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorManifestPersonalization();
+            _resultValue.enabled = enabled;
+            _resultValue.hlsEnableDebugHeaders = hlsEnableDebugHeaders;
+            _resultValue.hlsEnabled = hlsEnabled;
+            _resultValue.hlsFilterInBitrateRanges = hlsFilterInBitrateRanges;
+            _resultValue.hlsFilterInBitrates = hlsFilterInBitrates;
+            _resultValue.hlsMode = hlsMode;
+            _resultValue.hlsPreferredBitrate = hlsPreferredBitrate;
+            _resultValue.hlsQueryParamEnabled = hlsQueryParamEnabled;
+            _resultValue.hlsQueryParamSecretKey = hlsQueryParamSecretKey;
+            _resultValue.hlsQueryParamTransitionKey = hlsQueryParamTransitionKey;
+            _resultValue.hlsShowAdvanced = hlsShowAdvanced;
+            _resultValue.hlsTitle = hlsTitle;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

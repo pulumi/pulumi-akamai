@@ -74,12 +74,12 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorValidateEntityTa
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorValidateEntityTag build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorValidateEntityTag();
-            o.enabled = enabled;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorValidateEntityTag();
+            _resultValue.enabled = enabled;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

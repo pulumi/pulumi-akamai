@@ -207,24 +207,24 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorRedirect {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorRedirect build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorRedirect();
-            o.destinationHostname = destinationHostname;
-            o.destinationHostnameOther = destinationHostnameOther;
-            o.destinationHostnameSibling = destinationHostnameSibling;
-            o.destinationHostnameSubdomain = destinationHostnameSubdomain;
-            o.destinationPath = destinationPath;
-            o.destinationPathOther = destinationPathOther;
-            o.destinationPathPrefix = destinationPathPrefix;
-            o.destinationPathSuffix = destinationPathSuffix;
-            o.destinationPathSuffixStatus = destinationPathSuffixStatus;
-            o.destinationProtocol = destinationProtocol;
-            o.locked = locked;
-            o.mobileDefaultChoice = mobileDefaultChoice;
-            o.queryString = queryString;
-            o.responseCode = responseCode;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorRedirect();
+            _resultValue.destinationHostname = destinationHostname;
+            _resultValue.destinationHostnameOther = destinationHostnameOther;
+            _resultValue.destinationHostnameSibling = destinationHostnameSibling;
+            _resultValue.destinationHostnameSubdomain = destinationHostnameSubdomain;
+            _resultValue.destinationPath = destinationPath;
+            _resultValue.destinationPathOther = destinationPathOther;
+            _resultValue.destinationPathPrefix = destinationPathPrefix;
+            _resultValue.destinationPathSuffix = destinationPathSuffix;
+            _resultValue.destinationPathSuffixStatus = destinationPathSuffixStatus;
+            _resultValue.destinationProtocol = destinationProtocol;
+            _resultValue.locked = locked;
+            _resultValue.mobileDefaultChoice = mobileDefaultChoice;
+            _resultValue.queryString = queryString;
+            _resultValue.responseCode = responseCode;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

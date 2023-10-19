@@ -93,13 +93,13 @@ public final class GetAppSecRatePoliciesResult {
             return this;
         }
         public GetAppSecRatePoliciesResult build() {
-            final var o = new GetAppSecRatePoliciesResult();
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            o.outputText = outputText;
-            o.ratePolicyId = ratePolicyId;
-            return o;
+            final var _resultValue = new GetAppSecRatePoliciesResult();
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.outputText = outputText;
+            _resultValue.ratePolicyId = ratePolicyId;
+            return _resultValue;
         }
     }
 }

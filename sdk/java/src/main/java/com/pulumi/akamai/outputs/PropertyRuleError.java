@@ -107,15 +107,15 @@ public final class PropertyRuleError {
             return this;
         }
         public PropertyRuleError build() {
-            final var o = new PropertyRuleError();
-            o.behaviorName = behaviorName;
-            o.detail = detail;
-            o.errorLocation = errorLocation;
-            o.instance = instance;
-            o.statusCode = statusCode;
-            o.title = title;
-            o.type = type;
-            return o;
+            final var _resultValue = new PropertyRuleError();
+            _resultValue.behaviorName = behaviorName;
+            _resultValue.detail = detail;
+            _resultValue.errorLocation = errorLocation;
+            _resultValue.instance = instance;
+            _resultValue.statusCode = statusCode;
+            _resultValue.title = title;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

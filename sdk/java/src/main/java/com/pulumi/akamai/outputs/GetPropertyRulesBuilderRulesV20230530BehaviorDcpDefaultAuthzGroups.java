@@ -78,12 +78,12 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDcpDefaultAuthzG
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorDcpDefaultAuthzGroups build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorDcpDefaultAuthzGroups();
-            o.groupNames = groupNames;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorDcpDefaultAuthzGroups();
+            _resultValue.groupNames = groupNames;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

@@ -82,12 +82,12 @@ public final class GetBotmanChallengeActionResult {
             return this;
         }
         public GetBotmanChallengeActionResult build() {
-            final var o = new GetBotmanChallengeActionResult();
-            o.actionId = actionId;
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            return o;
+            final var _resultValue = new GetBotmanChallengeActionResult();
+            _resultValue.actionId = actionId;
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            return _resultValue;
         }
     }
 }

@@ -74,12 +74,12 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorMediaAcceleratio
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorMediaAccelerationQuicOptout build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorMediaAccelerationQuicOptout();
-            o.locked = locked;
-            o.optout = optout;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorMediaAccelerationQuicOptout();
+            _resultValue.locked = locked;
+            _resultValue.optout = optout;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

@@ -74,12 +74,12 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorTcpOptimization 
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorTcpOptimization build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorTcpOptimization();
-            o.display = display;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorTcpOptimization();
+            _resultValue.display = display;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

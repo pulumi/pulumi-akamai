@@ -50,10 +50,10 @@ public final class GetCloudwrapperCapacitiesCapacityUnassigned {
             return this;
         }
         public GetCloudwrapperCapacitiesCapacityUnassigned build() {
-            final var o = new GetCloudwrapperCapacitiesCapacityUnassigned();
-            o.unit = unit;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetCloudwrapperCapacitiesCapacityUnassigned();
+            _resultValue.unit = unit;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

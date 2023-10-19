@@ -83,13 +83,13 @@ public final class GetCloudwrapperConfigurationMultiCdnSettingsBocc {
             return this;
         }
         public GetCloudwrapperConfigurationMultiCdnSettingsBocc build() {
-            final var o = new GetCloudwrapperConfigurationMultiCdnSettingsBocc();
-            o.conditionalSamplingFrequency = conditionalSamplingFrequency;
-            o.enabled = enabled;
-            o.forwardType = forwardType;
-            o.requestType = requestType;
-            o.samplingFrequency = samplingFrequency;
-            return o;
+            final var _resultValue = new GetCloudwrapperConfigurationMultiCdnSettingsBocc();
+            _resultValue.conditionalSamplingFrequency = conditionalSamplingFrequency;
+            _resultValue.enabled = enabled;
+            _resultValue.forwardType = forwardType;
+            _resultValue.requestType = requestType;
+            _resultValue.samplingFrequency = samplingFrequency;
+            return _resultValue;
         }
     }
 }

@@ -50,10 +50,10 @@ public final class GetDatastreamsStreamsDetailProperty {
             return this;
         }
         public GetDatastreamsStreamsDetailProperty build() {
-            final var o = new GetDatastreamsStreamsDetailProperty();
-            o.propertyId = propertyId;
-            o.propertyName = propertyName;
-            return o;
+            final var _resultValue = new GetDatastreamsStreamsDetailProperty();
+            _resultValue.propertyId = propertyId;
+            _resultValue.propertyName = propertyName;
+            return _resultValue;
         }
     }
 }

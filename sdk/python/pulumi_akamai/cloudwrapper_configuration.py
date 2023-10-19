@@ -60,7 +60,21 @@ class CloudwrapperConfigurationArgs:
              notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              retain_idle_objects: Optional[pulumi.Input[bool]] = None,
              timeouts: Optional[pulumi.Input['CloudwrapperConfigurationTimeoutsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configName' in kwargs:
+            config_name = kwargs['configName']
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if 'propertyIds' in kwargs:
+            property_ids = kwargs['propertyIds']
+        if 'capacityAlertsThreshold' in kwargs:
+            capacity_alerts_threshold = kwargs['capacityAlertsThreshold']
+        if 'notificationEmails' in kwargs:
+            notification_emails = kwargs['notificationEmails']
+        if 'retainIdleObjects' in kwargs:
+            retain_idle_objects = kwargs['retainIdleObjects']
+
         _setter("comments", comments)
         _setter("config_name", config_name)
         _setter("contract_id", contract_id)
@@ -233,7 +247,21 @@ class _CloudwrapperConfigurationState:
              retain_idle_objects: Optional[pulumi.Input[bool]] = None,
              revision: Optional[pulumi.Input[str]] = None,
              timeouts: Optional[pulumi.Input['CloudwrapperConfigurationTimeoutsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'capacityAlertsThreshold' in kwargs:
+            capacity_alerts_threshold = kwargs['capacityAlertsThreshold']
+        if 'configName' in kwargs:
+            config_name = kwargs['configName']
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if 'notificationEmails' in kwargs:
+            notification_emails = kwargs['notificationEmails']
+        if 'propertyIds' in kwargs:
+            property_ids = kwargs['propertyIds']
+        if 'retainIdleObjects' in kwargs:
+            retain_idle_objects = kwargs['retainIdleObjects']
+
         if capacity_alerts_threshold is not None:
             _setter("capacity_alerts_threshold", capacity_alerts_threshold)
         if comments is not None:

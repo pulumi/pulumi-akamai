@@ -80,12 +80,12 @@ public final class GetCloudletsPolicyActivation {
             return propertyInfos(List.of(propertyInfos));
         }
         public GetCloudletsPolicyActivation build() {
-            final var o = new GetCloudletsPolicyActivation();
-            o.apiVersion = apiVersion;
-            o.network = network;
-            o.policyInfos = policyInfos;
-            o.propertyInfos = propertyInfos;
-            return o;
+            final var _resultValue = new GetCloudletsPolicyActivation();
+            _resultValue.apiVersion = apiVersion;
+            _resultValue.network = network;
+            _resultValue.policyInfos = policyInfos;
+            _resultValue.propertyInfos = propertyInfos;
+            return _resultValue;
         }
     }
 }

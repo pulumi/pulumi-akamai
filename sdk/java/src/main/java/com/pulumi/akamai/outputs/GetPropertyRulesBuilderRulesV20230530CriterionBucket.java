@@ -75,12 +75,12 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionBucket {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530CriterionBucket build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530CriterionBucket();
-            o.locked = locked;
-            o.percentage = percentage;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530CriterionBucket();
+            _resultValue.locked = locked;
+            _resultValue.percentage = percentage;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

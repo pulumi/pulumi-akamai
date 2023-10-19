@@ -74,11 +74,11 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleResult {
             return matchRules(List.of(matchRules));
         }
         public GetCloudletsApplicationLoadBalancerMatchRuleResult build() {
-            final var o = new GetCloudletsApplicationLoadBalancerMatchRuleResult();
-            o.id = id;
-            o.json = json;
-            o.matchRules = matchRules;
-            return o;
+            final var _resultValue = new GetCloudletsApplicationLoadBalancerMatchRuleResult();
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.matchRules = matchRules;
+            return _resultValue;
         }
     }
 }

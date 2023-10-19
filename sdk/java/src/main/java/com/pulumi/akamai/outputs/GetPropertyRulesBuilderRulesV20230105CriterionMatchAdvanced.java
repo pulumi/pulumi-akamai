@@ -96,14 +96,14 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionMatchAdvanced {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105CriterionMatchAdvanced build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105CriterionMatchAdvanced();
-            o.closeXml = closeXml;
-            o.description = description;
-            o.locked = locked;
-            o.openXml = openXml;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105CriterionMatchAdvanced();
+            _resultValue.closeXml = closeXml;
+            _resultValue.description = description;
+            _resultValue.locked = locked;
+            _resultValue.openXml = openXml;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

@@ -74,12 +74,12 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorEcmsObjectKey {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorEcmsObjectKey build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorEcmsObjectKey();
-            o.locked = locked;
-            o.regex = regex;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorEcmsObjectKey();
+            _resultValue.locked = locked;
+            _resultValue.regex = regex;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

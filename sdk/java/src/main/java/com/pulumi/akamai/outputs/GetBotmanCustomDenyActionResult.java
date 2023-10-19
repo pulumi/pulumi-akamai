@@ -82,12 +82,12 @@ public final class GetBotmanCustomDenyActionResult {
             return this;
         }
         public GetBotmanCustomDenyActionResult build() {
-            final var o = new GetBotmanCustomDenyActionResult();
-            o.actionId = actionId;
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            return o;
+            final var _resultValue = new GetBotmanCustomDenyActionResult();
+            _resultValue.actionId = actionId;
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            return _resultValue;
         }
     }
 }

@@ -29,7 +29,13 @@ class BotmanTransactionalEndpointProtectionArgs:
              _setter: Callable[[Any, Any], None],
              config_id: pulumi.Input[int],
              transactional_endpoint_protection: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'transactionalEndpointProtection' in kwargs:
+            transactional_endpoint_protection = kwargs['transactionalEndpointProtection']
+
         _setter("config_id", config_id)
         _setter("transactional_endpoint_protection", transactional_endpoint_protection)
 
@@ -70,7 +76,13 @@ class _BotmanTransactionalEndpointProtectionState:
              _setter: Callable[[Any, Any], None],
              config_id: Optional[pulumi.Input[int]] = None,
              transactional_endpoint_protection: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'transactionalEndpointProtection' in kwargs:
+            transactional_endpoint_protection = kwargs['transactionalEndpointProtection']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if transactional_endpoint_protection is not None:

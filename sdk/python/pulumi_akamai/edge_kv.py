@@ -49,7 +49,19 @@ class EdgeKvArgs:
              retention_in_seconds: pulumi.Input[int],
              geo_location: Optional[pulumi.Input[str]] = None,
              initial_datas: Optional[pulumi.Input[Sequence[pulumi.Input['EdgeKvInitialDataArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+        if 'retentionInSeconds' in kwargs:
+            retention_in_seconds = kwargs['retentionInSeconds']
+        if 'geoLocation' in kwargs:
+            geo_location = kwargs['geoLocation']
+        if 'initialDatas' in kwargs:
+            initial_datas = kwargs['initialDatas']
+
         _setter("group_id", group_id)
         _setter("namespace_name", namespace_name)
         _setter("network", network)
@@ -174,7 +186,19 @@ class _EdgeKvState:
              namespace_name: Optional[pulumi.Input[str]] = None,
              network: Optional[pulumi.Input[str]] = None,
              retention_in_seconds: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'geoLocation' in kwargs:
+            geo_location = kwargs['geoLocation']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'initialDatas' in kwargs:
+            initial_datas = kwargs['initialDatas']
+        if 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+        if 'retentionInSeconds' in kwargs:
+            retention_in_seconds = kwargs['retentionInSeconds']
+
         if geo_location is not None:
             _setter("geo_location", geo_location)
         if group_id is not None:

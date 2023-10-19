@@ -217,25 +217,25 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorVerifyJsonWebTok
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorVerifyJsonWebTokenForDcp build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorVerifyJsonWebTokenForDcp();
-            o.authorizations = authorizations;
-            o.clientId = clientId;
-            o.customHeader = customHeader;
-            o.enableEs256 = enableEs256;
-            o.enableRs256 = enableRs256;
-            o.extractAuthorizations = extractAuthorizations;
-            o.extractClientId = extractClientId;
-            o.extractLocation = extractLocation;
-            o.extractUserName = extractUserName;
-            o.headerName = headerName;
-            o.jwt = jwt;
-            o.locked = locked;
-            o.primaryLocation = primaryLocation;
-            o.queryParameterName = queryParameterName;
-            o.templateUuid = templateUuid;
-            o.userName = userName;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorVerifyJsonWebTokenForDcp();
+            _resultValue.authorizations = authorizations;
+            _resultValue.clientId = clientId;
+            _resultValue.customHeader = customHeader;
+            _resultValue.enableEs256 = enableEs256;
+            _resultValue.enableRs256 = enableRs256;
+            _resultValue.extractAuthorizations = extractAuthorizations;
+            _resultValue.extractClientId = extractClientId;
+            _resultValue.extractLocation = extractLocation;
+            _resultValue.extractUserName = extractUserName;
+            _resultValue.headerName = headerName;
+            _resultValue.jwt = jwt;
+            _resultValue.locked = locked;
+            _resultValue.primaryLocation = primaryLocation;
+            _resultValue.queryParameterName = queryParameterName;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.userName = userName;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

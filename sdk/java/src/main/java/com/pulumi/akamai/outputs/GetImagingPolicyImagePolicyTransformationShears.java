@@ -73,12 +73,12 @@ public final class GetImagingPolicyImagePolicyTransformationShears {
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationShears build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationShears();
-            o.xShear = xShear;
-            o.xShearVar = xShearVar;
-            o.yShear = yShear;
-            o.yShearVar = yShearVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationShears();
+            _resultValue.xShear = xShear;
+            _resultValue.xShearVar = xShearVar;
+            _resultValue.yShear = yShear;
+            _resultValue.yShearVar = yShearVar;
+            return _resultValue;
         }
     }
 }

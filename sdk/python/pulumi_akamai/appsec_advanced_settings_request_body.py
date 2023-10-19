@@ -35,7 +35,15 @@ class AppsecAdvancedSettingsRequestBodyArgs:
              config_id: pulumi.Input[int],
              request_body_inspection_limit: pulumi.Input[str],
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'requestBodyInspectionLimit' in kwargs:
+            request_body_inspection_limit = kwargs['requestBodyInspectionLimit']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         _setter("config_id", config_id)
         _setter("request_body_inspection_limit", request_body_inspection_limit)
         if security_policy_id is not None:
@@ -102,7 +110,15 @@ class _AppsecAdvancedSettingsRequestBodyState:
              config_id: Optional[pulumi.Input[int]] = None,
              request_body_inspection_limit: Optional[pulumi.Input[str]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'requestBodyInspectionLimit' in kwargs:
+            request_body_inspection_limit = kwargs['requestBodyInspectionLimit']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if request_body_inspection_limit is not None:

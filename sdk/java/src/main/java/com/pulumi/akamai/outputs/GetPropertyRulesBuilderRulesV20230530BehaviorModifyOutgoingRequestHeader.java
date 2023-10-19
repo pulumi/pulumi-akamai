@@ -184,22 +184,22 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorModifyOutgoingRe
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorModifyOutgoingRequestHeader build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorModifyOutgoingRequestHeader();
-            o.action = action;
-            o.avoidDuplicateHeaders = avoidDuplicateHeaders;
-            o.customHeaderName = customHeaderName;
-            o.headerValue = headerValue;
-            o.locked = locked;
-            o.matchMultiple = matchMultiple;
-            o.newHeaderValue = newHeaderValue;
-            o.regexHeaderMatch = regexHeaderMatch;
-            o.regexHeaderReplace = regexHeaderReplace;
-            o.standardAddHeaderName = standardAddHeaderName;
-            o.standardDeleteHeaderName = standardDeleteHeaderName;
-            o.standardModifyHeaderName = standardModifyHeaderName;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorModifyOutgoingRequestHeader();
+            _resultValue.action = action;
+            _resultValue.avoidDuplicateHeaders = avoidDuplicateHeaders;
+            _resultValue.customHeaderName = customHeaderName;
+            _resultValue.headerValue = headerValue;
+            _resultValue.locked = locked;
+            _resultValue.matchMultiple = matchMultiple;
+            _resultValue.newHeaderValue = newHeaderValue;
+            _resultValue.regexHeaderMatch = regexHeaderMatch;
+            _resultValue.regexHeaderReplace = regexHeaderReplace;
+            _resultValue.standardAddHeaderName = standardAddHeaderName;
+            _resultValue.standardDeleteHeaderName = standardDeleteHeaderName;
+            _resultValue.standardModifyHeaderName = standardModifyHeaderName;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

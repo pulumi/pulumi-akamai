@@ -35,7 +35,11 @@ class CloudletsApplicationLoadBalancerActivationArgs:
              network: pulumi.Input[str],
              origin_id: pulumi.Input[str],
              version: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'originId' in kwargs:
+            origin_id = kwargs['originId']
+
         _setter("network", network)
         _setter("origin_id", origin_id)
         _setter("version", version)
@@ -105,7 +109,11 @@ class _CloudletsApplicationLoadBalancerActivationState:
              origin_id: Optional[pulumi.Input[str]] = None,
              status: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'originId' in kwargs:
+            origin_id = kwargs['originId']
+
         if network is not None:
             _setter("network", network)
         if origin_id is not None:

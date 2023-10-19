@@ -94,13 +94,13 @@ public final class GetPropertyRulesBuilderResult {
             return this;
         }
         public GetPropertyRulesBuilderResult build() {
-            final var o = new GetPropertyRulesBuilderResult();
-            o.id = id;
-            o.json = json;
-            o.ruleFormat = ruleFormat;
-            o.rulesV20230105 = rulesV20230105;
-            o.rulesV20230530 = rulesV20230530;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderResult();
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.ruleFormat = ruleFormat;
+            _resultValue.rulesV20230105 = rulesV20230105;
+            _resultValue.rulesV20230530 = rulesV20230530;
+            return _resultValue;
         }
     }
 }

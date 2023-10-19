@@ -13,17 +13,77 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityResult
     {
+        public readonly bool? CanBeCa;
+        public readonly bool? CanBeLeaf;
+        public readonly Outputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityIssuerRdnsResult? IssuerRdns;
+        public readonly int? NotAfter;
+        public readonly int? NotBefore;
         public readonly string? PemEncodedCert;
+        public readonly string? PublicKey;
+        public readonly string? PublicKeyAlgorithm;
+        public readonly string? PublicKeyFormat;
+        public readonly bool? SelfSigned;
+        public readonly string? SerialNumber;
         public readonly string? Sha1Fingerprint;
+        public readonly string? SigAlgName;
+        public readonly ImmutableArray<string> SubjectAlternativeNames;
+        public readonly string? SubjectCn;
+        public readonly Outputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthoritySubjectRdnsResult? SubjectRdns;
+        public readonly int? Version;
 
         [OutputConstructor]
         private GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityResult(
+            bool? canBeCa,
+
+            bool? canBeLeaf,
+
+            Outputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityIssuerRdnsResult? issuerRdns,
+
+            int? notAfter,
+
+            int? notBefore,
+
             string? pemEncodedCert,
 
-            string? sha1Fingerprint)
+            string? publicKey,
+
+            string? publicKeyAlgorithm,
+
+            string? publicKeyFormat,
+
+            bool? selfSigned,
+
+            string? serialNumber,
+
+            string? sha1Fingerprint,
+
+            string? sigAlgName,
+
+            ImmutableArray<string> subjectAlternativeNames,
+
+            string? subjectCn,
+
+            Outputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthoritySubjectRdnsResult? subjectRdns,
+
+            int? version)
         {
+            CanBeCa = canBeCa;
+            CanBeLeaf = canBeLeaf;
+            IssuerRdns = issuerRdns;
+            NotAfter = notAfter;
+            NotBefore = notBefore;
             PemEncodedCert = pemEncodedCert;
+            PublicKey = publicKey;
+            PublicKeyAlgorithm = publicKeyAlgorithm;
+            PublicKeyFormat = publicKeyFormat;
+            SelfSigned = selfSigned;
+            SerialNumber = serialNumber;
             Sha1Fingerprint = sha1Fingerprint;
+            SigAlgName = sigAlgName;
+            SubjectAlternativeNames = subjectAlternativeNames;
+            SubjectCn = subjectCn;
+            SubjectRdns = subjectRdns;
+            Version = version;
         }
     }
 }

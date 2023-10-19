@@ -140,18 +140,18 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommer
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudClient build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudClient();
-            o.allowOverrideOriginCacheKey = allowOverrideOriginCacheKey;
-            o.connectorId = connectorId;
-            o.enabled = enabled;
-            o.locked = locked;
-            o.originHostHeader = originHostHeader;
-            o.originType = originType;
-            o.sf3cOriginHost = sf3cOriginHost;
-            o.sf3cOriginHostHeader = sf3cOriginHostHeader;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudClient();
+            _resultValue.allowOverrideOriginCacheKey = allowOverrideOriginCacheKey;
+            _resultValue.connectorId = connectorId;
+            _resultValue.enabled = enabled;
+            _resultValue.locked = locked;
+            _resultValue.originHostHeader = originHostHeader;
+            _resultValue.originType = originType;
+            _resultValue.sf3cOriginHost = sf3cOriginHost;
+            _resultValue.sf3cOriginHostHeader = sf3cOriginHostHeader;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

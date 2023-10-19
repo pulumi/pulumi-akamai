@@ -47,7 +47,21 @@ class AppSecSiemSettingsArgs:
              enable_siem: pulumi.Input[bool],
              siem_id: pulumi.Input[int],
              security_policy_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'enableBotmanSiem' in kwargs:
+            enable_botman_siem = kwargs['enableBotmanSiem']
+        if 'enableForAllPolicies' in kwargs:
+            enable_for_all_policies = kwargs['enableForAllPolicies']
+        if 'enableSiem' in kwargs:
+            enable_siem = kwargs['enableSiem']
+        if 'siemId' in kwargs:
+            siem_id = kwargs['siemId']
+        if 'securityPolicyIds' in kwargs:
+            security_policy_ids = kwargs['securityPolicyIds']
+
         _setter("config_id", config_id)
         _setter("enable_botman_siem", enable_botman_siem)
         _setter("enable_for_all_policies", enable_for_all_policies)
@@ -165,7 +179,21 @@ class _AppSecSiemSettingsState:
              enable_siem: Optional[pulumi.Input[bool]] = None,
              security_policy_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              siem_id: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'enableBotmanSiem' in kwargs:
+            enable_botman_siem = kwargs['enableBotmanSiem']
+        if 'enableForAllPolicies' in kwargs:
+            enable_for_all_policies = kwargs['enableForAllPolicies']
+        if 'enableSiem' in kwargs:
+            enable_siem = kwargs['enableSiem']
+        if 'securityPolicyIds' in kwargs:
+            security_policy_ids = kwargs['securityPolicyIds']
+        if 'siemId' in kwargs:
+            siem_id = kwargs['siemId']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if enable_botman_siem is not None:

@@ -152,18 +152,18 @@ public final class GetPropertyActivationResult {
             return this;
         }
         public GetPropertyActivationResult build() {
-            final var o = new GetPropertyActivationResult();
-            o.activationId = activationId;
-            o.contacts = contacts;
-            o.errors = errors;
-            o.id = id;
-            o.network = network;
-            o.note = note;
-            o.propertyId = propertyId;
-            o.status = status;
-            o.version = version;
-            o.warnings = warnings;
-            return o;
+            final var _resultValue = new GetPropertyActivationResult();
+            _resultValue.activationId = activationId;
+            _resultValue.contacts = contacts;
+            _resultValue.errors = errors;
+            _resultValue.id = id;
+            _resultValue.network = network;
+            _resultValue.note = note;
+            _resultValue.propertyId = propertyId;
+            _resultValue.status = status;
+            _resultValue.version = version;
+            _resultValue.warnings = warnings;
+            return _resultValue;
         }
     }
 }

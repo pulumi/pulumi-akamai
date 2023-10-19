@@ -61,7 +61,21 @@ class PropertyIncludeActivationArgs:
              auto_acknowledge_rule_warnings: Optional[pulumi.Input[bool]] = None,
              compliance_record: Optional[pulumi.Input['PropertyIncludeActivationComplianceRecordArgs']] = None,
              note: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'includeId' in kwargs:
+            include_id = kwargs['includeId']
+        if 'notifyEmails' in kwargs:
+            notify_emails = kwargs['notifyEmails']
+        if 'autoAcknowledgeRuleWarnings' in kwargs:
+            auto_acknowledge_rule_warnings = kwargs['autoAcknowledgeRuleWarnings']
+        if 'complianceRecord' in kwargs:
+            compliance_record = kwargs['complianceRecord']
+
         _setter("contract_id", contract_id)
         _setter("group_id", group_id)
         _setter("include_id", include_id)
@@ -236,7 +250,21 @@ class _PropertyIncludeActivationState:
              notify_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              validations: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autoAcknowledgeRuleWarnings' in kwargs:
+            auto_acknowledge_rule_warnings = kwargs['autoAcknowledgeRuleWarnings']
+        if 'complianceRecord' in kwargs:
+            compliance_record = kwargs['complianceRecord']
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'includeId' in kwargs:
+            include_id = kwargs['includeId']
+        if 'notifyEmails' in kwargs:
+            notify_emails = kwargs['notifyEmails']
+
         if auto_acknowledge_rule_warnings is not None:
             _setter("auto_acknowledge_rule_warnings", auto_acknowledge_rule_warnings)
         if compliance_record is not None:

@@ -73,12 +73,12 @@ public final class GetImagingPolicyImagePolicyTransformationScale {
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationScale build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationScale();
-            o.height = height;
-            o.heightVar = heightVar;
-            o.width = width;
-            o.widthVar = widthVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationScale();
+            _resultValue.height = height;
+            _resultValue.heightVar = heightVar;
+            _resultValue.width = width;
+            _resultValue.widthVar = widthVar;
+            return _resultValue;
         }
     }
 }

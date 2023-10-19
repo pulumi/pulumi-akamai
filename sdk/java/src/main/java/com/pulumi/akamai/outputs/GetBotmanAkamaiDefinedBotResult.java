@@ -70,11 +70,11 @@ public final class GetBotmanAkamaiDefinedBotResult {
             return this;
         }
         public GetBotmanAkamaiDefinedBotResult build() {
-            final var o = new GetBotmanAkamaiDefinedBotResult();
-            o.botName = botName;
-            o.id = id;
-            o.json = json;
-            return o;
+            final var _resultValue = new GetBotmanAkamaiDefinedBotResult();
+            _resultValue.botName = botName;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            return _resultValue;
         }
     }
 }

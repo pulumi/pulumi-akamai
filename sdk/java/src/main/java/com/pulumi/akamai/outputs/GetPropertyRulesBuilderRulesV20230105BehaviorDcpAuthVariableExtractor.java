@@ -85,13 +85,13 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthVariableE
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthVariableExtractor build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthVariableExtractor();
-            o.certificateField = certificateField;
-            o.dcpMutualAuthProcessingVariableId = dcpMutualAuthProcessingVariableId;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthVariableExtractor();
+            _resultValue.certificateField = certificateField;
+            _resultValue.dcpMutualAuthProcessingVariableId = dcpMutualAuthProcessingVariableId;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

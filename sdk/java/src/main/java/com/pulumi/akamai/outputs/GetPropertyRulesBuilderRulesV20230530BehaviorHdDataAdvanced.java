@@ -85,13 +85,13 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorHdDataAdvanced {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorHdDataAdvanced build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorHdDataAdvanced();
-            o.description = description;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            o.xml = xml;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorHdDataAdvanced();
+            _resultValue.description = description;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            _resultValue.xml = xml;
+            return _resultValue;
         }
     }
 }

@@ -94,14 +94,14 @@ public final class GetPropertyIncludeParentsParent {
             return this;
         }
         public GetPropertyIncludeParentsParent build() {
-            final var o = new GetPropertyIncludeParentsParent();
-            o.id = id;
-            o.isIncludeUsedInProductionVersion = isIncludeUsedInProductionVersion;
-            o.isIncludeUsedInStagingVersion = isIncludeUsedInStagingVersion;
-            o.name = name;
-            o.productionVersion = productionVersion;
-            o.stagingVersion = stagingVersion;
-            return o;
+            final var _resultValue = new GetPropertyIncludeParentsParent();
+            _resultValue.id = id;
+            _resultValue.isIncludeUsedInProductionVersion = isIncludeUsedInProductionVersion;
+            _resultValue.isIncludeUsedInStagingVersion = isIncludeUsedInStagingVersion;
+            _resultValue.name = name;
+            _resultValue.productionVersion = productionVersion;
+            _resultValue.stagingVersion = stagingVersion;
+            return _resultValue;
         }
     }
 }

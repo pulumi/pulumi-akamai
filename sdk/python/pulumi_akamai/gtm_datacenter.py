@@ -64,7 +64,21 @@ class GtmDatacenterArgs:
              nickname: Optional[pulumi.Input[str]] = None,
              state_or_province: Optional[pulumi.Input[str]] = None,
              wait_on_complete: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloneOf' in kwargs:
+            clone_of = kwargs['cloneOf']
+        if 'cloudServerHostHeaderOverride' in kwargs:
+            cloud_server_host_header_override = kwargs['cloudServerHostHeaderOverride']
+        if 'cloudServerTargeting' in kwargs:
+            cloud_server_targeting = kwargs['cloudServerTargeting']
+        if 'defaultLoadObject' in kwargs:
+            default_load_object = kwargs['defaultLoadObject']
+        if 'stateOrProvince' in kwargs:
+            state_or_province = kwargs['stateOrProvince']
+        if 'waitOnComplete' in kwargs:
+            wait_on_complete = kwargs['waitOnComplete']
+
         _setter("domain", domain)
         if city is not None:
             _setter("city", city)
@@ -284,7 +298,35 @@ class _GtmDatacenterState:
              state_or_province: Optional[pulumi.Input[str]] = None,
              virtual: Optional[pulumi.Input[bool]] = None,
              wait_on_complete: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloneOf' in kwargs:
+            clone_of = kwargs['cloneOf']
+        if 'cloudServerHostHeaderOverride' in kwargs:
+            cloud_server_host_header_override = kwargs['cloudServerHostHeaderOverride']
+        if 'cloudServerTargeting' in kwargs:
+            cloud_server_targeting = kwargs['cloudServerTargeting']
+        if 'datacenterId' in kwargs:
+            datacenter_id = kwargs['datacenterId']
+        if 'defaultLoadObject' in kwargs:
+            default_load_object = kwargs['defaultLoadObject']
+        if 'pingInterval' in kwargs:
+            ping_interval = kwargs['pingInterval']
+        if 'pingPacketSize' in kwargs:
+            ping_packet_size = kwargs['pingPacketSize']
+        if 'scorePenalty' in kwargs:
+            score_penalty = kwargs['scorePenalty']
+        if 'servermonitorLivenessCount' in kwargs:
+            servermonitor_liveness_count = kwargs['servermonitorLivenessCount']
+        if 'servermonitorLoadCount' in kwargs:
+            servermonitor_load_count = kwargs['servermonitorLoadCount']
+        if 'servermonitorPool' in kwargs:
+            servermonitor_pool = kwargs['servermonitorPool']
+        if 'stateOrProvince' in kwargs:
+            state_or_province = kwargs['stateOrProvince']
+        if 'waitOnComplete' in kwargs:
+            wait_on_complete = kwargs['waitOnComplete']
+
         if city is not None:
             _setter("city", city)
         if clone_of is not None:

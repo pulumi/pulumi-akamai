@@ -175,20 +175,20 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorCorsSupport {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorCorsSupport build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorCorsSupport();
-            o.allowCredentials = allowCredentials;
-            o.allowHeaders = allowHeaders;
-            o.allowOrigins = allowOrigins;
-            o.enabled = enabled;
-            o.exposeHeaders = exposeHeaders;
-            o.headers = headers;
-            o.locked = locked;
-            o.methods = methods;
-            o.origins = origins;
-            o.preflightMaxAge = preflightMaxAge;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorCorsSupport();
+            _resultValue.allowCredentials = allowCredentials;
+            _resultValue.allowHeaders = allowHeaders;
+            _resultValue.allowOrigins = allowOrigins;
+            _resultValue.enabled = enabled;
+            _resultValue.exposeHeaders = exposeHeaders;
+            _resultValue.headers = headers;
+            _resultValue.locked = locked;
+            _resultValue.methods = methods;
+            _resultValue.origins = origins;
+            _resultValue.preflightMaxAge = preflightMaxAge;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

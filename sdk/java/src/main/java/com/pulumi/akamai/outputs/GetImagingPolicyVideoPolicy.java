@@ -94,13 +94,13 @@ public final class GetImagingPolicyVideoPolicy {
             return variables(List.of(variables));
         }
         public GetImagingPolicyVideoPolicy build() {
-            final var o = new GetImagingPolicyVideoPolicy();
-            o.breakpoints = breakpoints;
-            o.hosts = hosts;
-            o.output = output;
-            o.rolloutDuration = rolloutDuration;
-            o.variables = variables;
-            return o;
+            final var _resultValue = new GetImagingPolicyVideoPolicy();
+            _resultValue.breakpoints = breakpoints;
+            _resultValue.hosts = hosts;
+            _resultValue.output = output;
+            _resultValue.rolloutDuration = rolloutDuration;
+            _resultValue.variables = variables;
+            return _resultValue;
         }
     }
 }

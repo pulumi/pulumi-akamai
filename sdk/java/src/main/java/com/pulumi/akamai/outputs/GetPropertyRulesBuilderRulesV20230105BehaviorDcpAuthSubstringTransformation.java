@@ -85,13 +85,13 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthSubstring
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthSubstringTransformation build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthSubstringTransformation();
-            o.locked = locked;
-            o.substringEnd = substringEnd;
-            o.substringStart = substringStart;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthSubstringTransformation();
+            _resultValue.locked = locked;
+            _resultValue.substringEnd = substringEnd;
+            _resultValue.substringStart = substringStart;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

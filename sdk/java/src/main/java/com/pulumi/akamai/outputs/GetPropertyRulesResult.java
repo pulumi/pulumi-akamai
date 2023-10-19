@@ -126,16 +126,16 @@ public final class GetPropertyRulesResult {
             return this;
         }
         public GetPropertyRulesResult build() {
-            final var o = new GetPropertyRulesResult();
-            o.contractId = contractId;
-            o.errors = errors;
-            o.groupId = groupId;
-            o.id = id;
-            o.propertyId = propertyId;
-            o.ruleFormat = ruleFormat;
-            o.rules = rules;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetPropertyRulesResult();
+            _resultValue.contractId = contractId;
+            _resultValue.errors = errors;
+            _resultValue.groupId = groupId;
+            _resultValue.id = id;
+            _resultValue.propertyId = propertyId;
+            _resultValue.ruleFormat = ruleFormat;
+            _resultValue.rules = rules;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

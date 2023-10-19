@@ -171,21 +171,21 @@ public final class GetPropertiesSearchProperty {
             return this;
         }
         public GetPropertiesSearchProperty build() {
-            final var o = new GetPropertiesSearchProperty();
-            o.accountId = accountId;
-            o.assetId = assetId;
-            o.contractId = contractId;
-            o.edgeHostname = edgeHostname;
-            o.groupId = groupId;
-            o.hostname = hostname;
-            o.productionStatus = productionStatus;
-            o.propertyId = propertyId;
-            o.propertyName = propertyName;
-            o.propertyVersion = propertyVersion;
-            o.stagingStatus = stagingStatus;
-            o.updatedByUser = updatedByUser;
-            o.updatedDate = updatedDate;
-            return o;
+            final var _resultValue = new GetPropertiesSearchProperty();
+            _resultValue.accountId = accountId;
+            _resultValue.assetId = assetId;
+            _resultValue.contractId = contractId;
+            _resultValue.edgeHostname = edgeHostname;
+            _resultValue.groupId = groupId;
+            _resultValue.hostname = hostname;
+            _resultValue.productionStatus = productionStatus;
+            _resultValue.propertyId = propertyId;
+            _resultValue.propertyName = propertyName;
+            _resultValue.propertyVersion = propertyVersion;
+            _resultValue.stagingStatus = stagingStatus;
+            _resultValue.updatedByUser = updatedByUser;
+            _resultValue.updatedDate = updatedDate;
+            return _resultValue;
         }
     }
 }

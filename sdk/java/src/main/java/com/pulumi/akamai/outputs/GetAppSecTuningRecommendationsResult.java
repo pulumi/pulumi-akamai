@@ -115,15 +115,15 @@ public final class GetAppSecTuningRecommendationsResult {
             return this;
         }
         public GetAppSecTuningRecommendationsResult build() {
-            final var o = new GetAppSecTuningRecommendationsResult();
-            o.attackGroup = attackGroup;
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            o.ruleId = ruleId;
-            o.rulesetType = rulesetType;
-            o.securityPolicyId = securityPolicyId;
-            return o;
+            final var _resultValue = new GetAppSecTuningRecommendationsResult();
+            _resultValue.attackGroup = attackGroup;
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.ruleId = ruleId;
+            _resultValue.rulesetType = rulesetType;
+            _resultValue.securityPolicyId = securityPolicyId;
+            return _resultValue;
         }
     }
 }

@@ -49,7 +49,23 @@ class EdgeHostNameArgs:
              product_id: Optional[pulumi.Input[str]] = None,
              status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              use_cases: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if 'edgeHostname' in kwargs:
+            edge_hostname = kwargs['edgeHostname']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'ipBehavior' in kwargs:
+            ip_behavior = kwargs['ipBehavior']
+        if 'productId' in kwargs:
+            product_id = kwargs['productId']
+        if 'statusUpdateEmails' in kwargs:
+            status_update_emails = kwargs['statusUpdateEmails']
+        if 'useCases' in kwargs:
+            use_cases = kwargs['useCases']
+
         _setter("contract_id", contract_id)
         _setter("edge_hostname", edge_hostname)
         _setter("group_id", group_id)
@@ -180,7 +196,23 @@ class _EdgeHostNameState:
              product_id: Optional[pulumi.Input[str]] = None,
              status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              use_cases: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if 'edgeHostname' in kwargs:
+            edge_hostname = kwargs['edgeHostname']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'ipBehavior' in kwargs:
+            ip_behavior = kwargs['ipBehavior']
+        if 'productId' in kwargs:
+            product_id = kwargs['productId']
+        if 'statusUpdateEmails' in kwargs:
+            status_update_emails = kwargs['statusUpdateEmails']
+        if 'useCases' in kwargs:
+            use_cases = kwargs['useCases']
+
         if certificate is not None:
             _setter("certificate", certificate)
         if contract_id is not None:

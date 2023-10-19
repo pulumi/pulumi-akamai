@@ -43,7 +43,15 @@ class NetworkListActivationsArgs:
              sync_point: pulumi.Input[int],
              network: Optional[pulumi.Input[str]] = None,
              notes: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkListId' in kwargs:
+            network_list_id = kwargs['networkListId']
+        if 'notificationEmails' in kwargs:
+            notification_emails = kwargs['notificationEmails']
+        if 'syncPoint' in kwargs:
+            sync_point = kwargs['syncPoint']
+
         _setter("network_list_id", network_list_id)
         _setter("notification_emails", notification_emails)
         _setter("sync_point", sync_point)
@@ -149,7 +157,15 @@ class _NetworkListActivationsState:
              notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              status: Optional[pulumi.Input[str]] = None,
              sync_point: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkListId' in kwargs:
+            network_list_id = kwargs['networkListId']
+        if 'notificationEmails' in kwargs:
+            notification_emails = kwargs['notificationEmails']
+        if 'syncPoint' in kwargs:
+            sync_point = kwargs['syncPoint']
+
         if network is not None:
             _setter("network", network)
         if network_list_id is not None:

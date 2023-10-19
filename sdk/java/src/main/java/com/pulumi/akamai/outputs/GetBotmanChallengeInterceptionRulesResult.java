@@ -69,11 +69,11 @@ public final class GetBotmanChallengeInterceptionRulesResult {
             return this;
         }
         public GetBotmanChallengeInterceptionRulesResult build() {
-            final var o = new GetBotmanChallengeInterceptionRulesResult();
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            return o;
+            final var _resultValue = new GetBotmanChallengeInterceptionRulesResult();
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            return _resultValue;
         }
     }
 }

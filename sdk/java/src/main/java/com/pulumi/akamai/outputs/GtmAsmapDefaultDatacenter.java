@@ -52,10 +52,10 @@ public final class GtmAsmapDefaultDatacenter {
             return this;
         }
         public GtmAsmapDefaultDatacenter build() {
-            final var o = new GtmAsmapDefaultDatacenter();
-            o.datacenterId = datacenterId;
-            o.nickname = nickname;
-            return o;
+            final var _resultValue = new GtmAsmapDefaultDatacenter();
+            _resultValue.datacenterId = datacenterId;
+            _resultValue.nickname = nickname;
+            return _resultValue;
         }
     }
 }

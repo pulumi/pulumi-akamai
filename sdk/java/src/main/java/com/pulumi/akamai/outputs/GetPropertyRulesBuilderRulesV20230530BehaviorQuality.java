@@ -240,27 +240,27 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorQuality {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorQuality build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorQuality();
-            o.audienceSettings = audienceSettings;
-            o.catalogSize = catalogSize;
-            o.contentSettings = contentSettings;
-            o.contentType = contentType;
-            o.country = country;
-            o.deliveryFormat = deliveryFormat;
-            o.deliveryType = deliveryType;
-            o.downloadType = downloadType;
-            o.endUserLocation = endUserLocation;
-            o.locked = locked;
-            o.maximumConcurrentUsers = maximumConcurrentUsers;
-            o.objectSize = objectSize;
-            o.optimizeFor = optimizeFor;
-            o.originSettings = originSettings;
-            o.popularityDistribution = popularityDistribution;
-            o.refreshRate = refreshRate;
-            o.segmentDuration = segmentDuration;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorQuality();
+            _resultValue.audienceSettings = audienceSettings;
+            _resultValue.catalogSize = catalogSize;
+            _resultValue.contentSettings = contentSettings;
+            _resultValue.contentType = contentType;
+            _resultValue.country = country;
+            _resultValue.deliveryFormat = deliveryFormat;
+            _resultValue.deliveryType = deliveryType;
+            _resultValue.downloadType = downloadType;
+            _resultValue.endUserLocation = endUserLocation;
+            _resultValue.locked = locked;
+            _resultValue.maximumConcurrentUsers = maximumConcurrentUsers;
+            _resultValue.objectSize = objectSize;
+            _resultValue.optimizeFor = optimizeFor;
+            _resultValue.originSettings = originSettings;
+            _resultValue.popularityDistribution = popularityDistribution;
+            _resultValue.refreshRate = refreshRate;
+            _resultValue.segmentDuration = segmentDuration;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

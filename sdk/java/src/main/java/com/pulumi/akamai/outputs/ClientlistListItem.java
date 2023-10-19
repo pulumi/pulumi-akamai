@@ -77,12 +77,12 @@ public final class ClientlistListItem {
             return this;
         }
         public ClientlistListItem build() {
-            final var o = new ClientlistListItem();
-            o.description = description;
-            o.expirationDate = expirationDate;
-            o.tags = tags;
-            o.value = value;
-            return o;
+            final var _resultValue = new ClientlistListItem();
+            _resultValue.description = description;
+            _resultValue.expirationDate = expirationDate;
+            _resultValue.tags = tags;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

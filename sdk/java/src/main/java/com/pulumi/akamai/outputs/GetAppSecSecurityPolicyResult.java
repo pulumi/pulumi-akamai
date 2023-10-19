@@ -119,15 +119,15 @@ public final class GetAppSecSecurityPolicyResult {
             return this;
         }
         public GetAppSecSecurityPolicyResult build() {
-            final var o = new GetAppSecSecurityPolicyResult();
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            o.outputText = outputText;
-            o.securityPolicyId = securityPolicyId;
-            o.securityPolicyIdLists = securityPolicyIdLists;
-            o.securityPolicyName = securityPolicyName;
-            return o;
+            final var _resultValue = new GetAppSecSecurityPolicyResult();
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.outputText = outputText;
+            _resultValue.securityPolicyId = securityPolicyId;
+            _resultValue.securityPolicyIdLists = securityPolicyIdLists;
+            _resultValue.securityPolicyName = securityPolicyName;
+            return _resultValue;
         }
     }
 }

@@ -191,7 +191,41 @@ class DnsRecordArgs:
              type_value: Optional[pulumi.Input[int]] = None,
              usage: Optional[pulumi.Input[int]] = None,
              weight: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'digestType' in kwargs:
+            digest_type = kwargs['digestType']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'fingerprintType' in kwargs:
+            fingerprint_type = kwargs['fingerprintType']
+        if 'matchType' in kwargs:
+            match_type = kwargs['matchType']
+        if 'nameServer' in kwargs:
+            name_server = kwargs['nameServer']
+        if 'nextHashedOwnerName' in kwargs:
+            next_hashed_owner_name = kwargs['nextHashedOwnerName']
+        if 'nxdomainTtl' in kwargs:
+            nxdomain_ttl = kwargs['nxdomainTtl']
+        if 'originalTtl' in kwargs:
+            original_ttl = kwargs['originalTtl']
+        if 'priorityIncrement' in kwargs:
+            priority_increment = kwargs['priorityIncrement']
+        if 'svcParams' in kwargs:
+            svc_params = kwargs['svcParams']
+        if 'svcPriority' in kwargs:
+            svc_priority = kwargs['svcPriority']
+        if 'targetName' in kwargs:
+            target_name = kwargs['targetName']
+        if 'typeBitmaps' in kwargs:
+            type_bitmaps = kwargs['typeBitmaps']
+        if 'typeCovered' in kwargs:
+            type_covered = kwargs['typeCovered']
+        if 'typeMnemonic' in kwargs:
+            type_mnemonic = kwargs['typeMnemonic']
+        if 'typeValue' in kwargs:
+            type_value = kwargs['typeValue']
+
         _setter("recordtype", recordtype)
         _setter("ttl", ttl)
         _setter("zone", zone)
@@ -1005,7 +1039,47 @@ class _DnsRecordState:
              usage: Optional[pulumi.Input[int]] = None,
              weight: Optional[pulumi.Input[int]] = None,
              zone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'answerType' in kwargs:
+            answer_type = kwargs['answerType']
+        if 'digestType' in kwargs:
+            digest_type = kwargs['digestType']
+        if 'dnsName' in kwargs:
+            dns_name = kwargs['dnsName']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'fingerprintType' in kwargs:
+            fingerprint_type = kwargs['fingerprintType']
+        if 'matchType' in kwargs:
+            match_type = kwargs['matchType']
+        if 'nameServer' in kwargs:
+            name_server = kwargs['nameServer']
+        if 'nextHashedOwnerName' in kwargs:
+            next_hashed_owner_name = kwargs['nextHashedOwnerName']
+        if 'nxdomainTtl' in kwargs:
+            nxdomain_ttl = kwargs['nxdomainTtl']
+        if 'originalTtl' in kwargs:
+            original_ttl = kwargs['originalTtl']
+        if 'priorityIncrement' in kwargs:
+            priority_increment = kwargs['priorityIncrement']
+        if 'recordSha' in kwargs:
+            record_sha = kwargs['recordSha']
+        if 'svcParams' in kwargs:
+            svc_params = kwargs['svcParams']
+        if 'svcPriority' in kwargs:
+            svc_priority = kwargs['svcPriority']
+        if 'targetName' in kwargs:
+            target_name = kwargs['targetName']
+        if 'typeBitmaps' in kwargs:
+            type_bitmaps = kwargs['typeBitmaps']
+        if 'typeCovered' in kwargs:
+            type_covered = kwargs['typeCovered']
+        if 'typeMnemonic' in kwargs:
+            type_mnemonic = kwargs['typeMnemonic']
+        if 'typeValue' in kwargs:
+            type_value = kwargs['typeValue']
+
         if active is not None:
             warnings.warn("""Field 'active' has been deprecated. Setting it has no effect""", DeprecationWarning)
             pulumi.log.warn("""active is deprecated: Field 'active' has been deprecated. Setting it has no effect""")

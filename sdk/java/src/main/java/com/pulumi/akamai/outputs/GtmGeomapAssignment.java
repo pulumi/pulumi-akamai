@@ -66,11 +66,11 @@ public final class GtmGeomapAssignment {
             return this;
         }
         public GtmGeomapAssignment build() {
-            final var o = new GtmGeomapAssignment();
-            o.countries = countries;
-            o.datacenterId = datacenterId;
-            o.nickname = nickname;
-            return o;
+            final var _resultValue = new GtmGeomapAssignment();
+            _resultValue.countries = countries;
+            _resultValue.datacenterId = datacenterId;
+            _resultValue.nickname = nickname;
+            return _resultValue;
         }
     }
 }

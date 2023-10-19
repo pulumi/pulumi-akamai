@@ -39,7 +39,11 @@ class IamRoleArgs:
              granted_roles: pulumi.Input[Sequence[pulumi.Input[int]]],
              name: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'grantedRoles' in kwargs:
+            granted_roles = kwargs['grantedRoles']
+
         _setter("description", description)
         _setter("granted_roles", granted_roles)
         if name is not None:
@@ -124,7 +128,11 @@ class _IamRoleState:
              granted_roles: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
              name: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'grantedRoles' in kwargs:
+            granted_roles = kwargs['grantedRoles']
+
         if description is not None:
             _setter("description", description)
         if granted_roles is not None:

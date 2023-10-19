@@ -74,12 +74,12 @@ public final class PropertyActivationComplianceRecordNoncomplianceReasonNone {
             return this;
         }
         public PropertyActivationComplianceRecordNoncomplianceReasonNone build() {
-            final var o = new PropertyActivationComplianceRecordNoncomplianceReasonNone();
-            o.customerEmail = customerEmail;
-            o.peerReviewedBy = peerReviewedBy;
-            o.ticketId = ticketId;
-            o.unitTested = unitTested;
-            return o;
+            final var _resultValue = new PropertyActivationComplianceRecordNoncomplianceReasonNone();
+            _resultValue.customerEmail = customerEmail;
+            _resultValue.peerReviewedBy = peerReviewedBy;
+            _resultValue.ticketId = ticketId;
+            _resultValue.unitTested = unitTested;
+            return _resultValue;
         }
     }
 }

@@ -80,12 +80,12 @@ public final class GetAppsecAdvancedSettingsPiiLearningResult {
             return this;
         }
         public GetAppsecAdvancedSettingsPiiLearningResult build() {
-            final var o = new GetAppsecAdvancedSettingsPiiLearningResult();
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            o.outputText = outputText;
-            return o;
+            final var _resultValue = new GetAppsecAdvancedSettingsPiiLearningResult();
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.outputText = outputText;
+            return _resultValue;
         }
     }
 }

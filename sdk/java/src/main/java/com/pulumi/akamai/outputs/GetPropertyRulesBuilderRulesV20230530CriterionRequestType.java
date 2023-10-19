@@ -85,13 +85,13 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionRequestType {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530CriterionRequestType build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530CriterionRequestType();
-            o.locked = locked;
-            o.matchOperator = matchOperator;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530CriterionRequestType();
+            _resultValue.locked = locked;
+            _resultValue.matchOperator = matchOperator;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

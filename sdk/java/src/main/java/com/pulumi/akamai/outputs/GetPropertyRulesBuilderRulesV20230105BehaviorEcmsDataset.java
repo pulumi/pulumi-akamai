@@ -118,16 +118,16 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorEcmsDataset {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorEcmsDataset build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorEcmsDataset();
-            o.dataset = dataset;
-            o.extractLocation = extractLocation;
-            o.headerName = headerName;
-            o.locked = locked;
-            o.queryParameterName = queryParameterName;
-            o.regexPattern = regexPattern;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorEcmsDataset();
+            _resultValue.dataset = dataset;
+            _resultValue.extractLocation = extractLocation;
+            _resultValue.headerName = headerName;
+            _resultValue.locked = locked;
+            _resultValue.queryParameterName = queryParameterName;
+            _resultValue.regexPattern = regexPattern;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

@@ -35,7 +35,11 @@ class EdgeWorkersActivationArgs:
              edgeworker_id: pulumi.Input[int],
              network: pulumi.Input[str],
              version: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'edgeworkerId' in kwargs:
+            edgeworker_id = kwargs['edgeworkerId']
+
         _setter("edgeworker_id", edgeworker_id)
         _setter("network", network)
         _setter("version", version)
@@ -105,7 +109,13 @@ class _EdgeWorkersActivationState:
              edgeworker_id: Optional[pulumi.Input[int]] = None,
              network: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'activationId' in kwargs:
+            activation_id = kwargs['activationId']
+        if 'edgeworkerId' in kwargs:
+            edgeworker_id = kwargs['edgeworkerId']
+
         if activation_id is not None:
             _setter("activation_id", activation_id)
         if edgeworker_id is not None:

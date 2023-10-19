@@ -39,7 +39,11 @@ class ImagingPolicySetArgs:
              region: pulumi.Input[str],
              type: pulumi.Input[str],
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+
         _setter("contract_id", contract_id)
         _setter("region", region)
         _setter("type", type)
@@ -123,7 +127,11 @@ class _ImagingPolicySetState:
              name: Optional[pulumi.Input[str]] = None,
              region: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+
         if contract_id is not None:
             _setter("contract_id", contract_id)
         if name is not None:

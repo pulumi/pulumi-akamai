@@ -73,11 +73,11 @@ public final class GetCPSEnrollmentsResult {
             return this;
         }
         public GetCPSEnrollmentsResult build() {
-            final var o = new GetCPSEnrollmentsResult();
-            o.contractId = contractId;
-            o.enrollments = enrollments;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetCPSEnrollmentsResult();
+            _resultValue.contractId = contractId;
+            _resultValue.enrollments = enrollments;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

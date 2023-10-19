@@ -151,19 +151,19 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaOp
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaOptimization build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaOptimization();
-            o.behavior = behavior;
-            o.dvrType = dvrType;
-            o.dvrWindow = dvrWindow;
-            o.enableUllStreaming = enableUllStreaming;
-            o.endTime = endTime;
-            o.liveType = liveType;
-            o.locked = locked;
-            o.showAdvanced = showAdvanced;
-            o.startTime = startTime;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaOptimization();
+            _resultValue.behavior = behavior;
+            _resultValue.dvrType = dvrType;
+            _resultValue.dvrWindow = dvrWindow;
+            _resultValue.enableUllStreaming = enableUllStreaming;
+            _resultValue.endTime = endTime;
+            _resultValue.liveType = liveType;
+            _resultValue.locked = locked;
+            _resultValue.showAdvanced = showAdvanced;
+            _resultValue.startTime = startTime;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

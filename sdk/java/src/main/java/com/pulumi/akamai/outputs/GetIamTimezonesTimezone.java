@@ -71,12 +71,12 @@ public final class GetIamTimezonesTimezone {
             return this;
         }
         public GetIamTimezonesTimezone build() {
-            final var o = new GetIamTimezonesTimezone();
-            o.description = description;
-            o.offset = offset;
-            o.posix = posix;
-            o.timezone = timezone;
-            return o;
+            final var _resultValue = new GetIamTimezonesTimezone();
+            _resultValue.description = description;
+            _resultValue.offset = offset;
+            _resultValue.posix = posix;
+            _resultValue.timezone = timezone;
+            return _resultValue;
         }
     }
 }

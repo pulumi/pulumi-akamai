@@ -74,12 +74,12 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorSalesForceCommer
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorSalesForceCommerceCloudProviderHostHeader build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorSalesForceCommerceCloudProviderHostHeader();
-            o.hostHeaderSource = hostHeaderSource;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorSalesForceCommerceCloudProviderHostHeader();
+            _resultValue.hostHeaderSource = hostHeaderSource;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

@@ -82,12 +82,12 @@ public final class GetBotmanCustomDefinedBotResult {
             return this;
         }
         public GetBotmanCustomDefinedBotResult build() {
-            final var o = new GetBotmanCustomDefinedBotResult();
-            o.botId = botId;
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            return o;
+            final var _resultValue = new GetBotmanCustomDefinedBotResult();
+            _resultValue.botId = botId;
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            return _resultValue;
         }
     }
 }

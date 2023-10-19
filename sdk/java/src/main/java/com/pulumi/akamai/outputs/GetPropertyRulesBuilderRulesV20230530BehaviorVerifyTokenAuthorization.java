@@ -173,21 +173,21 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorVerifyTokenAutho
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorVerifyTokenAuthorization build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorVerifyTokenAuthorization();
-            o.algorithm = algorithm;
-            o.escapeHmacInputs = escapeHmacInputs;
-            o.failureResponse = failureResponse;
-            o.ignoreQueryString = ignoreQueryString;
-            o.key = key;
-            o.location = location;
-            o.locationId = locationId;
-            o.locked = locked;
-            o.salt = salt;
-            o.templateUuid = templateUuid;
-            o.transitionKey = transitionKey;
-            o.useAdvanced = useAdvanced;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorVerifyTokenAuthorization();
+            _resultValue.algorithm = algorithm;
+            _resultValue.escapeHmacInputs = escapeHmacInputs;
+            _resultValue.failureResponse = failureResponse;
+            _resultValue.ignoreQueryString = ignoreQueryString;
+            _resultValue.key = key;
+            _resultValue.location = location;
+            _resultValue.locationId = locationId;
+            _resultValue.locked = locked;
+            _resultValue.salt = salt;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.transitionKey = transitionKey;
+            _resultValue.useAdvanced = useAdvanced;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

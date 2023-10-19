@@ -43,7 +43,19 @@ class AppSecRuleArgs:
              security_policy_id: pulumi.Input[str],
              condition_exception: Optional[pulumi.Input[str]] = None,
              rule_action: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'ruleId' in kwargs:
+            rule_id = kwargs['ruleId']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+        if 'conditionException' in kwargs:
+            condition_exception = kwargs['conditionException']
+        if 'ruleAction' in kwargs:
+            rule_action = kwargs['ruleAction']
+
         _setter("config_id", config_id)
         _setter("rule_id", rule_id)
         _setter("security_policy_id", security_policy_id)
@@ -145,7 +157,19 @@ class _AppSecRuleState:
              rule_action: Optional[pulumi.Input[str]] = None,
              rule_id: Optional[pulumi.Input[int]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'conditionException' in kwargs:
+            condition_exception = kwargs['conditionException']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'ruleAction' in kwargs:
+            rule_action = kwargs['ruleAction']
+        if 'ruleId' in kwargs:
+            rule_id = kwargs['ruleId']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         if condition_exception is not None:
             _setter("condition_exception", condition_exception)
         if config_id is not None:

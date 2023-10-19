@@ -123,15 +123,15 @@ public final class GetPropertyRulesTemplateResult {
             return variables(List.of(variables));
         }
         public GetPropertyRulesTemplateResult build() {
-            final var o = new GetPropertyRulesTemplateResult();
-            o.id = id;
-            o.json = json;
-            o.templateFile = templateFile;
-            o.templates = templates;
-            o.varDefinitionFile = varDefinitionFile;
-            o.varValuesFile = varValuesFile;
-            o.variables = variables;
-            return o;
+            final var _resultValue = new GetPropertyRulesTemplateResult();
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.templateFile = templateFile;
+            _resultValue.templates = templates;
+            _resultValue.varDefinitionFile = varDefinitionFile;
+            _resultValue.varValuesFile = varValuesFile;
+            _resultValue.variables = variables;
+            return _resultValue;
         }
     }
 }

@@ -51,10 +51,10 @@ public final class GetImagingPolicyImagePolicyTransformationMonoHue {
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationMonoHue build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationMonoHue();
-            o.hue = hue;
-            o.hueVar = hueVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationMonoHue();
+            _resultValue.hue = hue;
+            _resultValue.hueVar = hueVar;
+            return _resultValue;
         }
     }
 }

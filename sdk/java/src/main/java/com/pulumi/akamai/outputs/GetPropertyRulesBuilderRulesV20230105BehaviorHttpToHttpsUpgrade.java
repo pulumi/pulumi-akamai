@@ -74,12 +74,12 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorHttpToHttpsUpgra
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorHttpToHttpsUpgrade build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorHttpToHttpsUpgrade();
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.upgrade = upgrade;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorHttpToHttpsUpgrade();
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.upgrade = upgrade;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

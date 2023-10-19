@@ -103,13 +103,13 @@ public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop
             return unionShapes(List.of(unionShapes));
         }
         public GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterest build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterest();
-            o.circleShapes = circleShapes;
-            o.pointShapes = pointShapes;
-            o.polygonShapes = polygonShapes;
-            o.rectangleShapes = rectangleShapes;
-            o.unionShapes = unionShapes;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterest();
+            _resultValue.circleShapes = circleShapes;
+            _resultValue.pointShapes = pointShapes;
+            _resultValue.polygonShapes = polygonShapes;
+            _resultValue.rectangleShapes = rectangleShapes;
+            _resultValue.unionShapes = unionShapes;
+            return _resultValue;
         }
     }
 }

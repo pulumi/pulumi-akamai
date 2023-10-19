@@ -57,10 +57,10 @@ public final class GetBotmanBotAnalyticsCookieValuesResult {
             return this;
         }
         public GetBotmanBotAnalyticsCookieValuesResult build() {
-            final var o = new GetBotmanBotAnalyticsCookieValuesResult();
-            o.id = id;
-            o.json = json;
-            return o;
+            final var _resultValue = new GetBotmanBotAnalyticsCookieValuesResult();
+            _resultValue.id = id;
+            _resultValue.json = json;
+            return _resultValue;
         }
     }
 }

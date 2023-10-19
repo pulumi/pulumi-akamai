@@ -91,13 +91,13 @@ public final class GetAppSecHostnameCoverageMatchTargetsResult {
             return this;
         }
         public GetAppSecHostnameCoverageMatchTargetsResult build() {
-            final var o = new GetAppSecHostnameCoverageMatchTargetsResult();
-            o.configId = configId;
-            o.hostname = hostname;
-            o.id = id;
-            o.json = json;
-            o.outputText = outputText;
-            return o;
+            final var _resultValue = new GetAppSecHostnameCoverageMatchTargetsResult();
+            _resultValue.configId = configId;
+            _resultValue.hostname = hostname;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.outputText = outputText;
+            return _resultValue;
         }
     }
 }

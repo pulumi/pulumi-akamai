@@ -119,15 +119,15 @@ public final class GetAppSecApiEndpointsResult {
             return this;
         }
         public GetAppSecApiEndpointsResult build() {
-            final var o = new GetAppSecApiEndpointsResult();
-            o.apiName = apiName;
-            o.configId = configId;
-            o.id = id;
-            o.idLists = idLists;
-            o.json = json;
-            o.outputText = outputText;
-            o.securityPolicyId = securityPolicyId;
-            return o;
+            final var _resultValue = new GetAppSecApiEndpointsResult();
+            _resultValue.apiName = apiName;
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.idLists = idLists;
+            _resultValue.json = json;
+            _resultValue.outputText = outputText;
+            _resultValue.securityPolicyId = securityPolicyId;
+            return _resultValue;
         }
     }
 }

@@ -95,13 +95,13 @@ public final class GetCloudwrapperConfigurationMultiCdnSettings {
             return origins(List.of(origins));
         }
         public GetCloudwrapperConfigurationMultiCdnSettings build() {
-            final var o = new GetCloudwrapperConfigurationMultiCdnSettings();
-            o.bocc = bocc;
-            o.cdns = cdns;
-            o.dataStreams = dataStreams;
-            o.enableSoftAlerts = enableSoftAlerts;
-            o.origins = origins;
-            return o;
+            final var _resultValue = new GetCloudwrapperConfigurationMultiCdnSettings();
+            _resultValue.bocc = bocc;
+            _resultValue.cdns = cdns;
+            _resultValue.dataStreams = dataStreams;
+            _resultValue.enableSoftAlerts = enableSoftAlerts;
+            _resultValue.origins = origins;
+            return _resultValue;
         }
     }
 }

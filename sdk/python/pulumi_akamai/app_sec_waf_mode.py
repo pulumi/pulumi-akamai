@@ -35,7 +35,13 @@ class AppSecWafModeArgs:
              config_id: pulumi.Input[int],
              mode: pulumi.Input[str],
              security_policy_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         _setter("config_id", config_id)
         _setter("mode", mode)
         _setter("security_policy_id", security_policy_id)
@@ -121,7 +127,23 @@ class _AppSecWafModeState:
              mode: Optional[pulumi.Input[str]] = None,
              output_text: Optional[pulumi.Input[str]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'currentRuleset' in kwargs:
+            current_ruleset = kwargs['currentRuleset']
+        if 'evalExpirationDate' in kwargs:
+            eval_expiration_date = kwargs['evalExpirationDate']
+        if 'evalRuleset' in kwargs:
+            eval_ruleset = kwargs['evalRuleset']
+        if 'evalStatus' in kwargs:
+            eval_status = kwargs['evalStatus']
+        if 'outputText' in kwargs:
+            output_text = kwargs['outputText']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if current_ruleset is not None:

@@ -122,16 +122,16 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorCacheId {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorCacheId build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorCacheId();
-            o.elements = elements;
-            o.includeValue = includeValue;
-            o.locked = locked;
-            o.optional = optional;
-            o.rule = rule;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            o.variableName = variableName;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorCacheId();
+            _resultValue.elements = elements;
+            _resultValue.includeValue = includeValue;
+            _resultValue.locked = locked;
+            _resultValue.optional = optional;
+            _resultValue.rule = rule;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            _resultValue.variableName = variableName;
+            return _resultValue;
         }
     }
 }

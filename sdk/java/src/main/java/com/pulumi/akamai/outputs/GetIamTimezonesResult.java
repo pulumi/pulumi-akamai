@@ -62,10 +62,10 @@ public final class GetIamTimezonesResult {
             return timezones(List.of(timezones));
         }
         public GetIamTimezonesResult build() {
-            final var o = new GetIamTimezonesResult();
-            o.id = id;
-            o.timezones = timezones;
-            return o;
+            final var _resultValue = new GetIamTimezonesResult();
+            _resultValue.id = id;
+            _resultValue.timezones = timezones;
+            return _resultValue;
         }
     }
 }

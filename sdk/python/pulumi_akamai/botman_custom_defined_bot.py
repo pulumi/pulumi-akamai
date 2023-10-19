@@ -29,7 +29,13 @@ class BotmanCustomDefinedBotArgs:
              _setter: Callable[[Any, Any], None],
              config_id: pulumi.Input[int],
              custom_defined_bot: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'customDefinedBot' in kwargs:
+            custom_defined_bot = kwargs['customDefinedBot']
+
         _setter("config_id", config_id)
         _setter("custom_defined_bot", custom_defined_bot)
 
@@ -73,7 +79,15 @@ class _BotmanCustomDefinedBotState:
              bot_id: Optional[pulumi.Input[str]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
              custom_defined_bot: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'botId' in kwargs:
+            bot_id = kwargs['botId']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'customDefinedBot' in kwargs:
+            custom_defined_bot = kwargs['customDefinedBot']
+
         if bot_id is not None:
             _setter("bot_id", bot_id)
         if config_id is not None:

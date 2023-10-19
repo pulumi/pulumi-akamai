@@ -74,12 +74,12 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionRecoveryConfig 
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530CriterionRecoveryConfig build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530CriterionRecoveryConfig();
-            o.configName = configName;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530CriterionRecoveryConfig();
+            _resultValue.configName = configName;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

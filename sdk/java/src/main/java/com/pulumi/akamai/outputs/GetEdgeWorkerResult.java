@@ -141,17 +141,17 @@ public final class GetEdgeWorkerResult {
             return warnings(List.of(warnings));
         }
         public GetEdgeWorkerResult build() {
-            final var o = new GetEdgeWorkerResult();
-            o.edgeworkerId = edgeworkerId;
-            o.groupId = groupId;
-            o.id = id;
-            o.localBundle = localBundle;
-            o.localBundleHash = localBundleHash;
-            o.name = name;
-            o.resourceTierId = resourceTierId;
-            o.version = version;
-            o.warnings = warnings;
-            return o;
+            final var _resultValue = new GetEdgeWorkerResult();
+            _resultValue.edgeworkerId = edgeworkerId;
+            _resultValue.groupId = groupId;
+            _resultValue.id = id;
+            _resultValue.localBundle = localBundle;
+            _resultValue.localBundleHash = localBundleHash;
+            _resultValue.name = name;
+            _resultValue.resourceTierId = resourceTierId;
+            _resultValue.version = version;
+            _resultValue.warnings = warnings;
+            return _resultValue;
         }
     }
 }

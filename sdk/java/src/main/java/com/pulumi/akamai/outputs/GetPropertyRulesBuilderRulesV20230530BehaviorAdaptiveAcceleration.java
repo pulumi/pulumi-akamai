@@ -239,27 +239,27 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorAdaptiveAccelera
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorAdaptiveAcceleration build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorAdaptiveAcceleration();
-            o.abLogic = abLogic;
-            o.abTesting = abTesting;
-            o.compression = compression;
-            o.cookieName = cookieName;
-            o.enableBrotliCompression = enableBrotliCompression;
-            o.enableForNoncacheable = enableForNoncacheable;
-            o.enablePreconnect = enablePreconnect;
-            o.enablePush = enablePush;
-            o.enableRo = enableRo;
-            o.locked = locked;
-            o.preloadEnable = preloadEnable;
-            o.source = source;
-            o.templateUuid = templateUuid;
-            o.titleBrotli = titleBrotli;
-            o.titleHttp2ServerPush = titleHttp2ServerPush;
-            o.titlePreconnect = titlePreconnect;
-            o.titlePreload = titlePreload;
-            o.titleRo = titleRo;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorAdaptiveAcceleration();
+            _resultValue.abLogic = abLogic;
+            _resultValue.abTesting = abTesting;
+            _resultValue.compression = compression;
+            _resultValue.cookieName = cookieName;
+            _resultValue.enableBrotliCompression = enableBrotliCompression;
+            _resultValue.enableForNoncacheable = enableForNoncacheable;
+            _resultValue.enablePreconnect = enablePreconnect;
+            _resultValue.enablePush = enablePush;
+            _resultValue.enableRo = enableRo;
+            _resultValue.locked = locked;
+            _resultValue.preloadEnable = preloadEnable;
+            _resultValue.source = source;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.titleBrotli = titleBrotli;
+            _resultValue.titleHttp2ServerPush = titleHttp2ServerPush;
+            _resultValue.titlePreconnect = titlePreconnect;
+            _resultValue.titlePreload = titlePreload;
+            _resultValue.titleRo = titleRo;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

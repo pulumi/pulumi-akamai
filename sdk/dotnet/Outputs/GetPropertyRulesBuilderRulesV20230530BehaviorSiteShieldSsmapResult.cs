@@ -13,19 +13,31 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorSiteShieldSsmapResult
     {
+        public readonly string? ChinaCdnMap;
+        public readonly bool? HasMixedHosts;
         public readonly string? Name;
+        public readonly string? Src;
         public readonly string? Srmap;
         public readonly string? Value;
 
         [OutputConstructor]
         private GetPropertyRulesBuilderRulesV20230530BehaviorSiteShieldSsmapResult(
+            string? chinaCdnMap,
+
+            bool? hasMixedHosts,
+
             string? name,
+
+            string? src,
 
             string? srmap,
 
             string? value)
         {
+            ChinaCdnMap = chinaCdnMap;
+            HasMixedHosts = hasMixedHosts;
             Name = name;
+            Src = src;
             Srmap = srmap;
             Value = value;
         }

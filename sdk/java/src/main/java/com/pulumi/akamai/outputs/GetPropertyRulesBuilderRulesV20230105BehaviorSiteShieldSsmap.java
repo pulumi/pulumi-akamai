@@ -4,6 +4,7 @@
 package com.pulumi.akamai.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -11,13 +12,25 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmap {
+    private @Nullable String chinaCdnMap;
+    private @Nullable Boolean hasMixedHosts;
     private @Nullable String name;
+    private @Nullable String src;
     private @Nullable String srmap;
     private @Nullable String value;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmap() {}
+    public Optional<String> chinaCdnMap() {
+        return Optional.ofNullable(this.chinaCdnMap);
+    }
+    public Optional<Boolean> hasMixedHosts() {
+        return Optional.ofNullable(this.hasMixedHosts);
+    }
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
+    }
+    public Optional<String> src() {
+        return Optional.ofNullable(this.src);
     }
     public Optional<String> srmap() {
         return Optional.ofNullable(this.srmap);
@@ -35,20 +48,41 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmap 
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String chinaCdnMap;
+        private @Nullable Boolean hasMixedHosts;
         private @Nullable String name;
+        private @Nullable String src;
         private @Nullable String srmap;
         private @Nullable String value;
         public Builder() {}
         public Builder(GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmap defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.chinaCdnMap = defaults.chinaCdnMap;
+    	      this.hasMixedHosts = defaults.hasMixedHosts;
     	      this.name = defaults.name;
+    	      this.src = defaults.src;
     	      this.srmap = defaults.srmap;
     	      this.value = defaults.value;
         }
 
         @CustomType.Setter
+        public Builder chinaCdnMap(@Nullable String chinaCdnMap) {
+            this.chinaCdnMap = chinaCdnMap;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder hasMixedHosts(@Nullable Boolean hasMixedHosts) {
+            this.hasMixedHosts = hasMixedHosts;
+            return this;
+        }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder src(@Nullable String src) {
+            this.src = src;
             return this;
         }
         @CustomType.Setter
@@ -62,11 +96,14 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmap 
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmap build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmap();
-            o.name = name;
-            o.srmap = srmap;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmap();
+            _resultValue.chinaCdnMap = chinaCdnMap;
+            _resultValue.hasMixedHosts = hasMixedHosts;
+            _resultValue.name = name;
+            _resultValue.src = src;
+            _resultValue.srmap = srmap;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

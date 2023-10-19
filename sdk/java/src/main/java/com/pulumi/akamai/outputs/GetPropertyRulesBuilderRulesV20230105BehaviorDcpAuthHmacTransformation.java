@@ -85,13 +85,13 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthHmacTrans
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthHmacTransformation build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthHmacTransformation();
-            o.hashConversionAlgorithm = hashConversionAlgorithm;
-            o.hashConversionKey = hashConversionKey;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthHmacTransformation();
+            _resultValue.hashConversionAlgorithm = hashConversionAlgorithm;
+            _resultValue.hashConversionKey = hashConversionKey;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

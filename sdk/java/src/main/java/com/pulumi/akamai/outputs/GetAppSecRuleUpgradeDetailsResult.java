@@ -91,13 +91,13 @@ public final class GetAppSecRuleUpgradeDetailsResult {
             return this;
         }
         public GetAppSecRuleUpgradeDetailsResult build() {
-            final var o = new GetAppSecRuleUpgradeDetailsResult();
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            o.outputText = outputText;
-            o.securityPolicyId = securityPolicyId;
-            return o;
+            final var _resultValue = new GetAppSecRuleUpgradeDetailsResult();
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.outputText = outputText;
+            _resultValue.securityPolicyId = securityPolicyId;
+            return _resultValue;
         }
     }
 }

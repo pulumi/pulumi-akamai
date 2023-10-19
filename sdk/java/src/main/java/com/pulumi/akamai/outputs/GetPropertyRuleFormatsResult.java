@@ -61,10 +61,10 @@ public final class GetPropertyRuleFormatsResult {
             return ruleFormats(List.of(ruleFormats));
         }
         public GetPropertyRuleFormatsResult build() {
-            final var o = new GetPropertyRuleFormatsResult();
-            o.id = id;
-            o.ruleFormats = ruleFormats;
-            return o;
+            final var _resultValue = new GetPropertyRuleFormatsResult();
+            _resultValue.id = id;
+            _resultValue.ruleFormats = ruleFormats;
+            return _resultValue;
         }
     }
 }

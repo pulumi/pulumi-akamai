@@ -100,14 +100,14 @@ public final class PropertyHostname {
             return this;
         }
         public PropertyHostname build() {
-            final var o = new PropertyHostname();
-            o.certProvisioningType = certProvisioningType;
-            o.certStatuses = certStatuses;
-            o.cnameFrom = cnameFrom;
-            o.cnameTo = cnameTo;
-            o.cnameType = cnameType;
-            o.edgeHostnameId = edgeHostnameId;
-            return o;
+            final var _resultValue = new PropertyHostname();
+            _resultValue.certProvisioningType = certProvisioningType;
+            _resultValue.certStatuses = certStatuses;
+            _resultValue.cnameFrom = cnameFrom;
+            _resultValue.cnameTo = cnameTo;
+            _resultValue.cnameType = cnameType;
+            _resultValue.edgeHostnameId = edgeHostnameId;
+            return _resultValue;
         }
     }
 }

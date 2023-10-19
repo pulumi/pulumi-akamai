@@ -107,15 +107,15 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorScheduleInvalida
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorScheduleInvalidation build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorScheduleInvalidation();
-            o.locked = locked;
-            o.refreshMethod = refreshMethod;
-            o.repeat = repeat;
-            o.repeatInterval = repeatInterval;
-            o.start = start;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorScheduleInvalidation();
+            _resultValue.locked = locked;
+            _resultValue.refreshMethod = refreshMethod;
+            _resultValue.repeat = repeat;
+            _resultValue.repeatInterval = repeatInterval;
+            _resultValue.start = start;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

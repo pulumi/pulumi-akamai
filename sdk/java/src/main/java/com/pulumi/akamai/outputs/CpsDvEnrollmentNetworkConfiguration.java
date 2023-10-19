@@ -123,16 +123,16 @@ public final class CpsDvEnrollmentNetworkConfiguration {
             return this;
         }
         public CpsDvEnrollmentNetworkConfiguration build() {
-            final var o = new CpsDvEnrollmentNetworkConfiguration();
-            o.clientMutualAuthentication = clientMutualAuthentication;
-            o.cloneDnsNames = cloneDnsNames;
-            o.disallowedTlsVersions = disallowedTlsVersions;
-            o.geography = geography;
-            o.mustHaveCiphers = mustHaveCiphers;
-            o.ocspStapling = ocspStapling;
-            o.preferredCiphers = preferredCiphers;
-            o.quicEnabled = quicEnabled;
-            return o;
+            final var _resultValue = new CpsDvEnrollmentNetworkConfiguration();
+            _resultValue.clientMutualAuthentication = clientMutualAuthentication;
+            _resultValue.cloneDnsNames = cloneDnsNames;
+            _resultValue.disallowedTlsVersions = disallowedTlsVersions;
+            _resultValue.geography = geography;
+            _resultValue.mustHaveCiphers = mustHaveCiphers;
+            _resultValue.ocspStapling = ocspStapling;
+            _resultValue.preferredCiphers = preferredCiphers;
+            _resultValue.quicEnabled = quicEnabled;
+            return _resultValue;
         }
     }
 }

@@ -69,11 +69,11 @@ public final class GetBotmanBotAnalyticsCookieResult {
             return this;
         }
         public GetBotmanBotAnalyticsCookieResult build() {
-            final var o = new GetBotmanBotAnalyticsCookieResult();
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            return o;
+            final var _resultValue = new GetBotmanBotAnalyticsCookieResult();
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            return _resultValue;
         }
     }
 }

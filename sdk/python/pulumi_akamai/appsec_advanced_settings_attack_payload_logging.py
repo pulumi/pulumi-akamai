@@ -35,7 +35,15 @@ class AppsecAdvancedSettingsAttackPayloadLoggingArgs:
              attack_payload_logging: pulumi.Input[str],
              config_id: pulumi.Input[int],
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attackPayloadLogging' in kwargs:
+            attack_payload_logging = kwargs['attackPayloadLogging']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         _setter("attack_payload_logging", attack_payload_logging)
         _setter("config_id", config_id)
         if security_policy_id is not None:
@@ -102,7 +110,15 @@ class _AppsecAdvancedSettingsAttackPayloadLoggingState:
              attack_payload_logging: Optional[pulumi.Input[str]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attackPayloadLogging' in kwargs:
+            attack_payload_logging = kwargs['attackPayloadLogging']
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         if attack_payload_logging is not None:
             _setter("attack_payload_logging", attack_payload_logging)
         if config_id is not None:

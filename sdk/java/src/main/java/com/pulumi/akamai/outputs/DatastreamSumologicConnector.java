@@ -107,15 +107,15 @@ public final class DatastreamSumologicConnector {
             return this;
         }
         public DatastreamSumologicConnector build() {
-            final var o = new DatastreamSumologicConnector();
-            o.collectorCode = collectorCode;
-            o.compressLogs = compressLogs;
-            o.contentType = contentType;
-            o.customHeaderName = customHeaderName;
-            o.customHeaderValue = customHeaderValue;
-            o.displayName = displayName;
-            o.endpoint = endpoint;
-            return o;
+            final var _resultValue = new DatastreamSumologicConnector();
+            _resultValue.collectorCode = collectorCode;
+            _resultValue.compressLogs = compressLogs;
+            _resultValue.contentType = contentType;
+            _resultValue.customHeaderName = customHeaderName;
+            _resultValue.customHeaderValue = customHeaderValue;
+            _resultValue.displayName = displayName;
+            _resultValue.endpoint = endpoint;
+            return _resultValue;
         }
     }
 }

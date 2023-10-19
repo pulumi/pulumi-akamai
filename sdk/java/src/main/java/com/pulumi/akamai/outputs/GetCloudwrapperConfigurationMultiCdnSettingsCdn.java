@@ -92,13 +92,13 @@ public final class GetCloudwrapperConfigurationMultiCdnSettingsCdn {
             return ipAclCidrs(List.of(ipAclCidrs));
         }
         public GetCloudwrapperConfigurationMultiCdnSettingsCdn build() {
-            final var o = new GetCloudwrapperConfigurationMultiCdnSettingsCdn();
-            o.cdnAuthKeys = cdnAuthKeys;
-            o.cdnCode = cdnCode;
-            o.enabled = enabled;
-            o.httpsOnly = httpsOnly;
-            o.ipAclCidrs = ipAclCidrs;
-            return o;
+            final var _resultValue = new GetCloudwrapperConfigurationMultiCdnSettingsCdn();
+            _resultValue.cdnAuthKeys = cdnAuthKeys;
+            _resultValue.cdnCode = cdnCode;
+            _resultValue.enabled = enabled;
+            _resultValue.httpsOnly = httpsOnly;
+            _resultValue.ipAclCidrs = ipAclCidrs;
+            return _resultValue;
         }
     }
 }

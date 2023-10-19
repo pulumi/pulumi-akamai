@@ -51,10 +51,10 @@ public final class GetImagingPolicyImagePolicyTransformationOpacity {
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationOpacity build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationOpacity();
-            o.opacity = opacity;
-            o.opacityVar = opacityVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationOpacity();
+            _resultValue.opacity = opacity;
+            _resultValue.opacityVar = opacityVar;
+            return _resultValue;
         }
     }
 }

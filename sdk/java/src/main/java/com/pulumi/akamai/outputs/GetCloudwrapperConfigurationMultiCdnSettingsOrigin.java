@@ -61,11 +61,11 @@ public final class GetCloudwrapperConfigurationMultiCdnSettingsOrigin {
             return this;
         }
         public GetCloudwrapperConfigurationMultiCdnSettingsOrigin build() {
-            final var o = new GetCloudwrapperConfigurationMultiCdnSettingsOrigin();
-            o.hostname = hostname;
-            o.originId = originId;
-            o.propertyId = propertyId;
-            return o;
+            final var _resultValue = new GetCloudwrapperConfigurationMultiCdnSettingsOrigin();
+            _resultValue.hostname = hostname;
+            _resultValue.originId = originId;
+            _resultValue.propertyId = propertyId;
+            return _resultValue;
         }
     }
 }

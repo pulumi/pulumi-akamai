@@ -74,12 +74,12 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorShutr {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorShutr build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorShutr();
-            o.locked = locked;
-            o.status = status;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorShutr();
+            _resultValue.locked = locked;
+            _resultValue.status = status;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

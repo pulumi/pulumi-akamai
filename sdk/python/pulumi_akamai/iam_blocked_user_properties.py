@@ -35,7 +35,15 @@ class IamBlockedUserPropertiesArgs:
              blocked_properties: pulumi.Input[Sequence[pulumi.Input[int]]],
              group_id: pulumi.Input[int],
              identity_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockedProperties' in kwargs:
+            blocked_properties = kwargs['blockedProperties']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'identityId' in kwargs:
+            identity_id = kwargs['identityId']
+
         _setter("blocked_properties", blocked_properties)
         _setter("group_id", group_id)
         _setter("identity_id", identity_id)
@@ -101,7 +109,15 @@ class _IamBlockedUserPropertiesState:
              blocked_properties: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
              group_id: Optional[pulumi.Input[int]] = None,
              identity_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockedProperties' in kwargs:
+            blocked_properties = kwargs['blockedProperties']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'identityId' in kwargs:
+            identity_id = kwargs['identityId']
+
         if blocked_properties is not None:
             _setter("blocked_properties", blocked_properties)
         if group_id is not None:

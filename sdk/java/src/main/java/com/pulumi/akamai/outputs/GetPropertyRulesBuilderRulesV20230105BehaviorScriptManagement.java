@@ -97,14 +97,14 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorScriptManagement
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorScriptManagement build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorScriptManagement();
-            o.enabled = enabled;
-            o.locked = locked;
-            o.serviceworker = serviceworker;
-            o.templateUuid = templateUuid;
-            o.timestamp = timestamp;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorScriptManagement();
+            _resultValue.enabled = enabled;
+            _resultValue.locked = locked;
+            _resultValue.serviceworker = serviceworker;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.timestamp = timestamp;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

@@ -88,12 +88,12 @@ public final class GetImagingPolicyImagePolicyTransformationAppendImage {
             return urlImages(List.of(urlImages));
         }
         public GetImagingPolicyImagePolicyTransformationAppendImage build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationAppendImage();
-            o.boxImages = boxImages;
-            o.circleImages = circleImages;
-            o.textImages = textImages;
-            o.urlImages = urlImages;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationAppendImage();
+            _resultValue.boxImages = boxImages;
+            _resultValue.circleImages = circleImages;
+            _resultValue.textImages = textImages;
+            _resultValue.urlImages = urlImages;
+            return _resultValue;
         }
     }
 }

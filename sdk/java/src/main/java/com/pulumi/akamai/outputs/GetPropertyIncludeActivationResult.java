@@ -138,17 +138,17 @@ public final class GetPropertyIncludeActivationResult {
             return this;
         }
         public GetPropertyIncludeActivationResult build() {
-            final var o = new GetPropertyIncludeActivationResult();
-            o.contractId = contractId;
-            o.groupId = groupId;
-            o.id = id;
-            o.includeId = includeId;
-            o.name = name;
-            o.network = network;
-            o.note = note;
-            o.notifyEmails = notifyEmails;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetPropertyIncludeActivationResult();
+            _resultValue.contractId = contractId;
+            _resultValue.groupId = groupId;
+            _resultValue.id = id;
+            _resultValue.includeId = includeId;
+            _resultValue.name = name;
+            _resultValue.network = network;
+            _resultValue.note = note;
+            _resultValue.notifyEmails = notifyEmails;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

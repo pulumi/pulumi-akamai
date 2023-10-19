@@ -29,7 +29,13 @@ class BotmanCustomClientSequenceArgs:
              _setter: Callable[[Any, Any], None],
              config_id: pulumi.Input[int],
              custom_client_ids: pulumi.Input[Sequence[pulumi.Input[str]]],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'customClientIds' in kwargs:
+            custom_client_ids = kwargs['customClientIds']
+
         _setter("config_id", config_id)
         _setter("custom_client_ids", custom_client_ids)
 
@@ -70,7 +76,13 @@ class _BotmanCustomClientSequenceState:
              _setter: Callable[[Any, Any], None],
              config_id: Optional[pulumi.Input[int]] = None,
              custom_client_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'customClientIds' in kwargs:
+            custom_client_ids = kwargs['customClientIds']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if custom_client_ids is not None:

@@ -80,12 +80,12 @@ public final class GetAppSecAdvancedSettingsPrefetchResult {
             return this;
         }
         public GetAppSecAdvancedSettingsPrefetchResult build() {
-            final var o = new GetAppSecAdvancedSettingsPrefetchResult();
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            o.outputText = outputText;
-            return o;
+            final var _resultValue = new GetAppSecAdvancedSettingsPrefetchResult();
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.outputText = outputText;
+            return _resultValue;
         }
     }
 }

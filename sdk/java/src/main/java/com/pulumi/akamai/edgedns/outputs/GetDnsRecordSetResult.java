@@ -94,13 +94,13 @@ public final class GetDnsRecordSetResult {
             return this;
         }
         public GetDnsRecordSetResult build() {
-            final var o = new GetDnsRecordSetResult();
-            o.host = host;
-            o.id = id;
-            o.rdatas = rdatas;
-            o.recordType = recordType;
-            o.zone = zone;
-            return o;
+            final var _resultValue = new GetDnsRecordSetResult();
+            _resultValue.host = host;
+            _resultValue.id = id;
+            _resultValue.rdatas = rdatas;
+            _resultValue.recordType = recordType;
+            _resultValue.zone = zone;
+            return _resultValue;
         }
     }
 }

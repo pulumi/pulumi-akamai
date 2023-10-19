@@ -39,7 +39,15 @@ class EdgeWorkerArgs:
              resource_tier_id: pulumi.Input[int],
              local_bundle: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'resourceTierId' in kwargs:
+            resource_tier_id = kwargs['resourceTierId']
+        if 'localBundle' in kwargs:
+            local_bundle = kwargs['localBundle']
+
         _setter("group_id", group_id)
         _setter("resource_tier_id", resource_tier_id)
         if local_bundle is not None:
@@ -140,7 +148,19 @@ class _EdgeWorkerState:
              resource_tier_id: Optional[pulumi.Input[int]] = None,
              version: Optional[pulumi.Input[str]] = None,
              warnings: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'edgeworkerId' in kwargs:
+            edgeworker_id = kwargs['edgeworkerId']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'localBundle' in kwargs:
+            local_bundle = kwargs['localBundle']
+        if 'localBundleHash' in kwargs:
+            local_bundle_hash = kwargs['localBundleHash']
+        if 'resourceTierId' in kwargs:
+            resource_tier_id = kwargs['resourceTierId']
+
         if edgeworker_id is not None:
             _setter("edgeworker_id", edgeworker_id)
         if group_id is not None:

@@ -240,25 +240,25 @@ public final class GetCPSEnrollmentsEnrollment {
             return this;
         }
         public GetCPSEnrollmentsEnrollment build() {
-            final var o = new GetCPSEnrollmentsEnrollment();
-            o.adminContacts = adminContacts;
-            o.certificateChainType = certificateChainType;
-            o.certificateType = certificateType;
-            o.commonName = commonName;
-            o.csrs = csrs;
-            o.enableMultiStackedCertificates = enableMultiStackedCertificates;
-            o.enrollmentId = enrollmentId;
-            o.networkConfigurations = networkConfigurations;
-            o.organizations = organizations;
-            o.pendingChanges = pendingChanges;
-            o.registrationAuthority = registrationAuthority;
-            o.sans = sans;
-            o.secureNetwork = secureNetwork;
-            o.signatureAlgorithm = signatureAlgorithm;
-            o.sniOnly = sniOnly;
-            o.techContacts = techContacts;
-            o.validationType = validationType;
-            return o;
+            final var _resultValue = new GetCPSEnrollmentsEnrollment();
+            _resultValue.adminContacts = adminContacts;
+            _resultValue.certificateChainType = certificateChainType;
+            _resultValue.certificateType = certificateType;
+            _resultValue.commonName = commonName;
+            _resultValue.csrs = csrs;
+            _resultValue.enableMultiStackedCertificates = enableMultiStackedCertificates;
+            _resultValue.enrollmentId = enrollmentId;
+            _resultValue.networkConfigurations = networkConfigurations;
+            _resultValue.organizations = organizations;
+            _resultValue.pendingChanges = pendingChanges;
+            _resultValue.registrationAuthority = registrationAuthority;
+            _resultValue.sans = sans;
+            _resultValue.secureNetwork = secureNetwork;
+            _resultValue.signatureAlgorithm = signatureAlgorithm;
+            _resultValue.sniOnly = sniOnly;
+            _resultValue.techContacts = techContacts;
+            _resultValue.validationType = validationType;
+            return _resultValue;
         }
     }
 }

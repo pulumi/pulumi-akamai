@@ -82,12 +82,12 @@ public final class GetBotmanBotEndpointCoverageReportResult {
             return this;
         }
         public GetBotmanBotEndpointCoverageReportResult build() {
-            final var o = new GetBotmanBotEndpointCoverageReportResult();
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            o.operationId = operationId;
-            return o;
+            final var _resultValue = new GetBotmanBotEndpointCoverageReportResult();
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.operationId = operationId;
+            return _resultValue;
         }
     }
 }

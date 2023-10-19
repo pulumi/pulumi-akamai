@@ -129,17 +129,17 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDcpRealTimeAuth 
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorDcpRealTimeAuth build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorDcpRealTimeAuth();
-            o.extractHostname = extractHostname;
-            o.extractJurisdiction = extractJurisdiction;
-            o.extractNamespace = extractNamespace;
-            o.hostnameClaim = hostnameClaim;
-            o.jurisdictionClaim = jurisdictionClaim;
-            o.locked = locked;
-            o.namespaceClaim = namespaceClaim;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorDcpRealTimeAuth();
+            _resultValue.extractHostname = extractHostname;
+            _resultValue.extractJurisdiction = extractJurisdiction;
+            _resultValue.extractNamespace = extractNamespace;
+            _resultValue.hostnameClaim = hostnameClaim;
+            _resultValue.jurisdictionClaim = jurisdictionClaim;
+            _resultValue.locked = locked;
+            _resultValue.namespaceClaim = namespaceClaim;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

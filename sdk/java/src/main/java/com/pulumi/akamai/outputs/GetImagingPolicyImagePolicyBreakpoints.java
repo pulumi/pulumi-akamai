@@ -43,9 +43,9 @@ public final class GetImagingPolicyImagePolicyBreakpoints {
             return widths(List.of(widths));
         }
         public GetImagingPolicyImagePolicyBreakpoints build() {
-            final var o = new GetImagingPolicyImagePolicyBreakpoints();
-            o.widths = widths;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyBreakpoints();
+            _resultValue.widths = widths;
+            return _resultValue;
         }
     }
 }

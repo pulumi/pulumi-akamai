@@ -95,14 +95,14 @@ public final class CpsThirdPartyEnrollmentCsr {
             return this;
         }
         public CpsThirdPartyEnrollmentCsr build() {
-            final var o = new CpsThirdPartyEnrollmentCsr();
-            o.city = city;
-            o.countryCode = countryCode;
-            o.organization = organization;
-            o.organizationalUnit = organizationalUnit;
-            o.preferredTrustChain = preferredTrustChain;
-            o.state = state;
-            return o;
+            final var _resultValue = new CpsThirdPartyEnrollmentCsr();
+            _resultValue.city = city;
+            _resultValue.countryCode = countryCode;
+            _resultValue.organization = organization;
+            _resultValue.organizationalUnit = organizationalUnit;
+            _resultValue.preferredTrustChain = preferredTrustChain;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

@@ -35,7 +35,15 @@ class AppSecAdvancedSettingsPragmaHeaderArgs:
              config_id: pulumi.Input[int],
              pragma_header: pulumi.Input[str],
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'pragmaHeader' in kwargs:
+            pragma_header = kwargs['pragmaHeader']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         _setter("config_id", config_id)
         _setter("pragma_header", pragma_header)
         if security_policy_id is not None:
@@ -102,7 +110,15 @@ class _AppSecAdvancedSettingsPragmaHeaderState:
              config_id: Optional[pulumi.Input[int]] = None,
              pragma_header: Optional[pulumi.Input[str]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'pragmaHeader' in kwargs:
+            pragma_header = kwargs['pragmaHeader']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if pragma_header is not None:

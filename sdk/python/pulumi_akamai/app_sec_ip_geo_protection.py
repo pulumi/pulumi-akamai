@@ -35,7 +35,13 @@ class AppSecIPGeoProtectionArgs:
              config_id: pulumi.Input[int],
              enabled: pulumi.Input[bool],
              security_policy_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         _setter("config_id", config_id)
         _setter("enabled", enabled)
         _setter("security_policy_id", security_policy_id)
@@ -105,7 +111,15 @@ class _AppSecIPGeoProtectionState:
              enabled: Optional[pulumi.Input[bool]] = None,
              output_text: Optional[pulumi.Input[str]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if 'outputText' in kwargs:
+            output_text = kwargs['outputText']
+        if 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         if config_id is not None:
             _setter("config_id", config_id)
         if enabled is not None:

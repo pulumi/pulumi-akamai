@@ -107,15 +107,15 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorDcpDevRelations 
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorDcpDevRelations build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorDcpDevRelations();
-            o.customValues = customValues;
-            o.enabled = enabled;
-            o.hostname = hostname;
-            o.locked = locked;
-            o.path = path;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorDcpDevRelations();
+            _resultValue.customValues = customValues;
+            _resultValue.enabled = enabled;
+            _resultValue.hostname = hostname;
+            _resultValue.locked = locked;
+            _resultValue.path = path;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

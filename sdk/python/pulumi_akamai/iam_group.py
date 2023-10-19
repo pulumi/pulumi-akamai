@@ -31,7 +31,11 @@ class IamGroupArgs:
              _setter: Callable[[Any, Any], None],
              parent_group_id: pulumi.Input[int],
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'parentGroupId' in kwargs:
+            parent_group_id = kwargs['parentGroupId']
+
         _setter("parent_group_id", parent_group_id)
         if name is not None:
             _setter("name", name)
@@ -85,7 +89,13 @@ class _IamGroupState:
              name: Optional[pulumi.Input[str]] = None,
              parent_group_id: Optional[pulumi.Input[int]] = None,
              sub_groups: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'parentGroupId' in kwargs:
+            parent_group_id = kwargs['parentGroupId']
+        if 'subGroups' in kwargs:
+            sub_groups = kwargs['subGroups']
+
         if name is not None:
             _setter("name", name)
         if parent_group_id is not None:

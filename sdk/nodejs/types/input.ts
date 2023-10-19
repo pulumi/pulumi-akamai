@@ -7308,23 +7308,139 @@ export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacterist
 }
 
 export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificate {
+    canBeCa?: boolean;
+    canBeLeaf?: boolean;
+    issuerRdns?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateIssuerRdns;
+    notAfter?: number;
+    notBefore?: number;
     pemEncodedCert?: string;
+    publicKey?: string;
+    publicKeyAlgorithm?: string;
+    publicKeyFormat?: string;
+    selfSigned?: boolean;
+    serialNumber?: string;
     sha1Fingerprint?: string;
+    sigAlgName?: string;
+    subjectAlternativeNames?: string[];
+    subjectCn?: string;
+    subjectRdns?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateSubjectRdns;
+    version?: number;
 }
 
 export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateArgs {
+    canBeCa?: pulumi.Input<boolean>;
+    canBeLeaf?: pulumi.Input<boolean>;
+    issuerRdns?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateIssuerRdnsArgs>;
+    notAfter?: pulumi.Input<number>;
+    notBefore?: pulumi.Input<number>;
     pemEncodedCert?: pulumi.Input<string>;
+    publicKey?: pulumi.Input<string>;
+    publicKeyAlgorithm?: pulumi.Input<string>;
+    publicKeyFormat?: pulumi.Input<string>;
+    selfSigned?: pulumi.Input<boolean>;
+    serialNumber?: pulumi.Input<string>;
     sha1Fingerprint?: pulumi.Input<string>;
+    sigAlgName?: pulumi.Input<string>;
+    subjectAlternativeNames?: pulumi.Input<pulumi.Input<string>[]>;
+    subjectCn?: pulumi.Input<string>;
+    subjectRdns?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateSubjectRdnsArgs>;
+    version?: pulumi.Input<number>;
 }
 
 export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthority {
+    canBeCa?: boolean;
+    canBeLeaf?: boolean;
+    issuerRdns?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthorityIssuerRdns;
+    notAfter?: number;
+    notBefore?: number;
     pemEncodedCert?: string;
+    publicKey?: string;
+    publicKeyAlgorithm?: string;
+    publicKeyFormat?: string;
+    selfSigned?: boolean;
+    serialNumber?: string;
     sha1Fingerprint?: string;
+    sigAlgName?: string;
+    subjectAlternativeNames?: string[];
+    subjectCn?: string;
+    subjectRdns?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthoritySubjectRdns;
+    version?: number;
 }
 
 export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthorityArgs {
+    canBeCa?: pulumi.Input<boolean>;
+    canBeLeaf?: pulumi.Input<boolean>;
+    issuerRdns?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthorityIssuerRdnsArgs>;
+    notAfter?: pulumi.Input<number>;
+    notBefore?: pulumi.Input<number>;
     pemEncodedCert?: pulumi.Input<string>;
+    publicKey?: pulumi.Input<string>;
+    publicKeyAlgorithm?: pulumi.Input<string>;
+    publicKeyFormat?: pulumi.Input<string>;
+    selfSigned?: pulumi.Input<boolean>;
+    serialNumber?: pulumi.Input<string>;
     sha1Fingerprint?: pulumi.Input<string>;
+    sigAlgName?: pulumi.Input<string>;
+    subjectAlternativeNames?: pulumi.Input<pulumi.Input<string>[]>;
+    subjectCn?: pulumi.Input<string>;
+    subjectRdns?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthoritySubjectRdnsArgs>;
+    version?: pulumi.Input<number>;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthorityIssuerRdns {
+    c?: string;
+    cn?: string;
+    o?: string;
+    ou?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthorityIssuerRdnsArgs {
+    c?: pulumi.Input<string>;
+    cn?: pulumi.Input<string>;
+    o?: pulumi.Input<string>;
+    ou?: pulumi.Input<string>;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthoritySubjectRdns {
+    c?: string;
+    cn?: string;
+    o?: string;
+    ou?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthoritySubjectRdnsArgs {
+    c?: pulumi.Input<string>;
+    cn?: pulumi.Input<string>;
+    o?: pulumi.Input<string>;
+    ou?: pulumi.Input<string>;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateIssuerRdns {
+    c?: string;
+    cn?: string;
+    o?: string;
+    ou?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateIssuerRdnsArgs {
+    c?: pulumi.Input<string>;
+    cn?: pulumi.Input<string>;
+    o?: pulumi.Input<string>;
+    ou?: pulumi.Input<string>;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateSubjectRdns {
+    c?: string;
+    cn?: string;
+    o?: string;
+    ou?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateSubjectRdnsArgs {
+    c?: pulumi.Input<string>;
+    cn?: pulumi.Input<string>;
+    o?: pulumi.Input<string>;
+    ou?: pulumi.Input<string>;
 }
 
 export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginFailureRecoveryMethod {
@@ -8532,13 +8648,19 @@ export interface GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldArgs {
 }
 
 export interface GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmap {
+    chinaCdnMap?: string;
+    hasMixedHosts?: boolean;
     name?: string;
+    src?: string;
     srmap?: string;
     value?: string;
 }
 
 export interface GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmapArgs {
+    chinaCdnMap?: pulumi.Input<string>;
+    hasMixedHosts?: pulumi.Input<boolean>;
     name?: pulumi.Input<string>;
+    src?: pulumi.Input<string>;
     srmap?: pulumi.Input<string>;
     value?: pulumi.Input<string>;
 }
@@ -14438,23 +14560,139 @@ export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacterist
 }
 
 export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificate {
+    canBeCa?: boolean;
+    canBeLeaf?: boolean;
+    issuerRdns?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateIssuerRdns;
+    notAfter?: number;
+    notBefore?: number;
     pemEncodedCert?: string;
+    publicKey?: string;
+    publicKeyAlgorithm?: string;
+    publicKeyFormat?: string;
+    selfSigned?: boolean;
+    serialNumber?: string;
     sha1Fingerprint?: string;
+    sigAlgName?: string;
+    subjectAlternativeNames?: string[];
+    subjectCn?: string;
+    subjectRdns?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateSubjectRdns;
+    version?: number;
 }
 
 export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateArgs {
+    canBeCa?: pulumi.Input<boolean>;
+    canBeLeaf?: pulumi.Input<boolean>;
+    issuerRdns?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateIssuerRdnsArgs>;
+    notAfter?: pulumi.Input<number>;
+    notBefore?: pulumi.Input<number>;
     pemEncodedCert?: pulumi.Input<string>;
+    publicKey?: pulumi.Input<string>;
+    publicKeyAlgorithm?: pulumi.Input<string>;
+    publicKeyFormat?: pulumi.Input<string>;
+    selfSigned?: pulumi.Input<boolean>;
+    serialNumber?: pulumi.Input<string>;
     sha1Fingerprint?: pulumi.Input<string>;
+    sigAlgName?: pulumi.Input<string>;
+    subjectAlternativeNames?: pulumi.Input<pulumi.Input<string>[]>;
+    subjectCn?: pulumi.Input<string>;
+    subjectRdns?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateSubjectRdnsArgs>;
+    version?: pulumi.Input<number>;
 }
 
 export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthority {
+    canBeCa?: boolean;
+    canBeLeaf?: boolean;
+    issuerRdns?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityIssuerRdns;
+    notAfter?: number;
+    notBefore?: number;
     pemEncodedCert?: string;
+    publicKey?: string;
+    publicKeyAlgorithm?: string;
+    publicKeyFormat?: string;
+    selfSigned?: boolean;
+    serialNumber?: string;
     sha1Fingerprint?: string;
+    sigAlgName?: string;
+    subjectAlternativeNames?: string[];
+    subjectCn?: string;
+    subjectRdns?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthoritySubjectRdns;
+    version?: number;
 }
 
 export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityArgs {
+    canBeCa?: pulumi.Input<boolean>;
+    canBeLeaf?: pulumi.Input<boolean>;
+    issuerRdns?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityIssuerRdnsArgs>;
+    notAfter?: pulumi.Input<number>;
+    notBefore?: pulumi.Input<number>;
     pemEncodedCert?: pulumi.Input<string>;
+    publicKey?: pulumi.Input<string>;
+    publicKeyAlgorithm?: pulumi.Input<string>;
+    publicKeyFormat?: pulumi.Input<string>;
+    selfSigned?: pulumi.Input<boolean>;
+    serialNumber?: pulumi.Input<string>;
     sha1Fingerprint?: pulumi.Input<string>;
+    sigAlgName?: pulumi.Input<string>;
+    subjectAlternativeNames?: pulumi.Input<pulumi.Input<string>[]>;
+    subjectCn?: pulumi.Input<string>;
+    subjectRdns?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthoritySubjectRdnsArgs>;
+    version?: pulumi.Input<number>;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityIssuerRdns {
+    c?: string;
+    cn?: string;
+    o?: string;
+    ou?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityIssuerRdnsArgs {
+    c?: pulumi.Input<string>;
+    cn?: pulumi.Input<string>;
+    o?: pulumi.Input<string>;
+    ou?: pulumi.Input<string>;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthoritySubjectRdns {
+    c?: string;
+    cn?: string;
+    o?: string;
+    ou?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthoritySubjectRdnsArgs {
+    c?: pulumi.Input<string>;
+    cn?: pulumi.Input<string>;
+    o?: pulumi.Input<string>;
+    ou?: pulumi.Input<string>;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateIssuerRdns {
+    c?: string;
+    cn?: string;
+    o?: string;
+    ou?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateIssuerRdnsArgs {
+    c?: pulumi.Input<string>;
+    cn?: pulumi.Input<string>;
+    o?: pulumi.Input<string>;
+    ou?: pulumi.Input<string>;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateSubjectRdns {
+    c?: string;
+    cn?: string;
+    o?: string;
+    ou?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateSubjectRdnsArgs {
+    c?: pulumi.Input<string>;
+    cn?: pulumi.Input<string>;
+    o?: pulumi.Input<string>;
+    ou?: pulumi.Input<string>;
 }
 
 export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginFailureRecoveryMethod {
@@ -15656,13 +15894,19 @@ export interface GetPropertyRulesBuilderRulesV20230530BehaviorSiteShieldArgs {
 }
 
 export interface GetPropertyRulesBuilderRulesV20230530BehaviorSiteShieldSsmap {
+    chinaCdnMap?: string;
+    hasMixedHosts?: boolean;
     name?: string;
+    src?: string;
     srmap?: string;
     value?: string;
 }
 
 export interface GetPropertyRulesBuilderRulesV20230530BehaviorSiteShieldSsmapArgs {
+    chinaCdnMap?: pulumi.Input<string>;
+    hasMixedHosts?: pulumi.Input<boolean>;
     name?: pulumi.Input<string>;
+    src?: pulumi.Input<string>;
     srmap?: pulumi.Input<string>;
     value?: pulumi.Input<string>;
 }

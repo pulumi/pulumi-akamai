@@ -83,13 +83,13 @@ public final class GetDatastreamActivationHistoryActivation {
             return this;
         }
         public GetDatastreamActivationHistoryActivation build() {
-            final var o = new GetDatastreamActivationHistoryActivation();
-            o.modifiedBy = modifiedBy;
-            o.modifiedDate = modifiedDate;
-            o.status = status;
-            o.streamId = streamId;
-            o.streamVersion = streamVersion;
-            return o;
+            final var _resultValue = new GetDatastreamActivationHistoryActivation();
+            _resultValue.modifiedBy = modifiedBy;
+            _resultValue.modifiedDate = modifiedDate;
+            _resultValue.status = status;
+            _resultValue.streamId = streamId;
+            _resultValue.streamVersion = streamVersion;
+            return _resultValue;
         }
     }
 }

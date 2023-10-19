@@ -73,12 +73,12 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrie
             return this;
         }
         public GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientation build() {
-            final var o = new GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientation();
-            o.default_ = default_;
-            o.landscape = landscape;
-            o.portrait = portrait;
-            o.square = square;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientation();
+            _resultValue.default_ = default_;
+            _resultValue.landscape = landscape;
+            _resultValue.portrait = portrait;
+            _resultValue.square = square;
+            return _resultValue;
         }
     }
 }

@@ -104,14 +104,14 @@ public final class GetAppSecApiRequestConstraintsResult {
             return this;
         }
         public GetAppSecApiRequestConstraintsResult build() {
-            final var o = new GetAppSecApiRequestConstraintsResult();
-            o.apiId = apiId;
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            o.outputText = outputText;
-            o.securityPolicyId = securityPolicyId;
-            return o;
+            final var _resultValue = new GetAppSecApiRequestConstraintsResult();
+            _resultValue.apiId = apiId;
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.outputText = outputText;
+            _resultValue.securityPolicyId = securityPolicyId;
+            return _resultValue;
         }
     }
 }

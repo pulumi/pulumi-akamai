@@ -153,19 +153,19 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorImageAndVideoMan
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorImageAndVideoManager build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorImageAndVideoManager();
-            o.applyBestFileType = applyBestFileType;
-            o.cpCodeOriginal = cpCodeOriginal;
-            o.cpCodeTransformed = cpCodeTransformed;
-            o.enabled = enabled;
-            o.imageSet = imageSet;
-            o.locked = locked;
-            o.policySetType = policySetType;
-            o.resize = resize;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            o.videoSet = videoSet;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorImageAndVideoManager();
+            _resultValue.applyBestFileType = applyBestFileType;
+            _resultValue.cpCodeOriginal = cpCodeOriginal;
+            _resultValue.cpCodeTransformed = cpCodeTransformed;
+            _resultValue.enabled = enabled;
+            _resultValue.imageSet = imageSet;
+            _resultValue.locked = locked;
+            _resultValue.policySetType = policySetType;
+            _resultValue.resize = resize;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            _resultValue.videoSet = videoSet;
+            return _resultValue;
         }
     }
 }

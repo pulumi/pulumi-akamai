@@ -74,12 +74,12 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionCloudletsOrigin
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105CriterionCloudletsOrigin build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105CriterionCloudletsOrigin();
-            o.locked = locked;
-            o.originId = originId;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105CriterionCloudletsOrigin();
+            _resultValue.locked = locked;
+            _resultValue.originId = originId;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

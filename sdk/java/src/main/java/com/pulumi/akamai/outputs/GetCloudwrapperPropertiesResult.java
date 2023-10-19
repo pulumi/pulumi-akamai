@@ -94,12 +94,12 @@ public final class GetCloudwrapperPropertiesResult {
             return this;
         }
         public GetCloudwrapperPropertiesResult build() {
-            final var o = new GetCloudwrapperPropertiesResult();
-            o.contractIds = contractIds;
-            o.id = id;
-            o.properties = properties;
-            o.unused = unused;
-            return o;
+            final var _resultValue = new GetCloudwrapperPropertiesResult();
+            _resultValue.contractIds = contractIds;
+            _resultValue.id = id;
+            _resultValue.properties = properties;
+            _resultValue.unused = unused;
+            return _resultValue;
         }
     }
 }

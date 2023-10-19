@@ -140,18 +140,18 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorMPulse {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorMPulse build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorMPulse();
-            o.apiKey = apiKey;
-            o.bufferSize = bufferSize;
-            o.configOverride = configOverride;
-            o.enabled = enabled;
-            o.loaderVersion = loaderVersion;
-            o.locked = locked;
-            o.requirePci = requirePci;
-            o.templateUuid = templateUuid;
-            o.titleOptional = titleOptional;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorMPulse();
+            _resultValue.apiKey = apiKey;
+            _resultValue.bufferSize = bufferSize;
+            _resultValue.configOverride = configOverride;
+            _resultValue.enabled = enabled;
+            _resultValue.loaderVersion = loaderVersion;
+            _resultValue.locked = locked;
+            _resultValue.requirePci = requirePci;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.titleOptional = titleOptional;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

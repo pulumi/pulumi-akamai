@@ -107,15 +107,15 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorEdgeOriginAuthor
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorEdgeOriginAuthorization build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorEdgeOriginAuthorization();
-            o.cookieName = cookieName;
-            o.domain = domain;
-            o.enabled = enabled;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorEdgeOriginAuthorization();
+            _resultValue.cookieName = cookieName;
+            _resultValue.domain = domain;
+            _resultValue.enabled = enabled;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

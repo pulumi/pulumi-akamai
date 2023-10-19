@@ -60,11 +60,11 @@ public final class GetCPSEnrollmentDnsChallenge {
             return this;
         }
         public GetCPSEnrollmentDnsChallenge build() {
-            final var o = new GetCPSEnrollmentDnsChallenge();
-            o.domain = domain;
-            o.fullPath = fullPath;
-            o.responseBody = responseBody;
-            return o;
+            final var _resultValue = new GetCPSEnrollmentDnsChallenge();
+            _resultValue.domain = domain;
+            _resultValue.fullPath = fullPath;
+            _resultValue.responseBody = responseBody;
+            return _resultValue;
         }
     }
 }

@@ -228,26 +228,26 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacter
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacteristicsWsdVod build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacteristicsWsdVod();
-            o.catalogSize = catalogSize;
-            o.contentType = contentType;
-            o.dash = dash;
-            o.hds = hds;
-            o.hls = hls;
-            o.locked = locked;
-            o.popularityDistribution = popularityDistribution;
-            o.segmentDurationDash = segmentDurationDash;
-            o.segmentDurationHds = segmentDurationHds;
-            o.segmentDurationHls = segmentDurationHls;
-            o.segmentDurationSmooth = segmentDurationSmooth;
-            o.segmentSizeDash = segmentSizeDash;
-            o.segmentSizeHds = segmentSizeHds;
-            o.segmentSizeHls = segmentSizeHls;
-            o.segmentSizeSmooth = segmentSizeSmooth;
-            o.smooth = smooth;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacteristicsWsdVod();
+            _resultValue.catalogSize = catalogSize;
+            _resultValue.contentType = contentType;
+            _resultValue.dash = dash;
+            _resultValue.hds = hds;
+            _resultValue.hls = hls;
+            _resultValue.locked = locked;
+            _resultValue.popularityDistribution = popularityDistribution;
+            _resultValue.segmentDurationDash = segmentDurationDash;
+            _resultValue.segmentDurationHds = segmentDurationHds;
+            _resultValue.segmentDurationHls = segmentDurationHls;
+            _resultValue.segmentDurationSmooth = segmentDurationSmooth;
+            _resultValue.segmentSizeDash = segmentSizeDash;
+            _resultValue.segmentSizeHds = segmentSizeHds;
+            _resultValue.segmentSizeHls = segmentSizeHls;
+            _resultValue.segmentSizeSmooth = segmentSizeSmooth;
+            _resultValue.smooth = smooth;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

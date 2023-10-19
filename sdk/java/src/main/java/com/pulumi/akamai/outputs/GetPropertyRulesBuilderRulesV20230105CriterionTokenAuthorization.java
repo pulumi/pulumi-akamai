@@ -89,13 +89,13 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionTokenAuthorizat
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105CriterionTokenAuthorization build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105CriterionTokenAuthorization();
-            o.locked = locked;
-            o.matchOperator = matchOperator;
-            o.statusLists = statusLists;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105CriterionTokenAuthorization();
+            _resultValue.locked = locked;
+            _resultValue.matchOperator = matchOperator;
+            _resultValue.statusLists = statusLists;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

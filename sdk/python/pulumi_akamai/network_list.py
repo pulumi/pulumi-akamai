@@ -52,7 +52,13 @@ class NetworkListArgs:
              group_id: Optional[pulumi.Input[int]] = None,
              lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+
         _setter("description", description)
         _setter("mode", mode)
         _setter("type", type)
@@ -204,7 +210,17 @@ class _NetworkListState:
              sync_point: Optional[pulumi.Input[int]] = None,
              type: Optional[pulumi.Input[str]] = None,
              uniqueid: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'networkListId' in kwargs:
+            network_list_id = kwargs['networkListId']
+        if 'syncPoint' in kwargs:
+            sync_point = kwargs['syncPoint']
+
         if contract_id is not None:
             _setter("contract_id", contract_id)
         if description is not None:

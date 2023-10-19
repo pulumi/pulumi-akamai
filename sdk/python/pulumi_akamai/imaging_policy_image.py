@@ -45,7 +45,17 @@ class ImagingPolicyImageArgs:
              policy_id: pulumi.Input[str],
              policyset_id: pulumi.Input[str],
              activate_on_production: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if 'policyId' in kwargs:
+            policy_id = kwargs['policyId']
+        if 'policysetId' in kwargs:
+            policyset_id = kwargs['policysetId']
+        if 'activateOnProduction' in kwargs:
+            activate_on_production = kwargs['activateOnProduction']
+
         _setter("contract_id", contract_id)
         _setter("json", json)
         _setter("policy_id", policy_id)
@@ -154,7 +164,17 @@ class _ImagingPolicyImageState:
              policy_id: Optional[pulumi.Input[str]] = None,
              policyset_id: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'activateOnProduction' in kwargs:
+            activate_on_production = kwargs['activateOnProduction']
+        if 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if 'policyId' in kwargs:
+            policy_id = kwargs['policyId']
+        if 'policysetId' in kwargs:
+            policyset_id = kwargs['policysetId']
+
         if activate_on_production is not None:
             _setter("activate_on_production", activate_on_production)
         if contract_id is not None:

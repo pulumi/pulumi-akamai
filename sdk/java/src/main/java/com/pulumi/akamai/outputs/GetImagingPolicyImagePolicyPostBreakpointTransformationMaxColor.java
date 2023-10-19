@@ -51,10 +51,10 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationMaxCol
             return this;
         }
         public GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColor build() {
-            final var o = new GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColor();
-            o.colors = colors;
-            o.colorsVar = colorsVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColor();
+            _resultValue.colors = colors;
+            _resultValue.colorsVar = colorsVar;
+            return _resultValue;
         }
     }
 }

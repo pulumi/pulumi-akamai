@@ -74,12 +74,12 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorStandardTlsMigra
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorStandardTlsMigrationOverride build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorStandardTlsMigrationOverride();
-            o.info = info;
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorStandardTlsMigrationOverride();
+            _resultValue.info = info;
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

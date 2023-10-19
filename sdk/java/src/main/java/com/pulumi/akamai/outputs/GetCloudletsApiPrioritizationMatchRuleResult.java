@@ -74,11 +74,11 @@ public final class GetCloudletsApiPrioritizationMatchRuleResult {
             return matchRules(List.of(matchRules));
         }
         public GetCloudletsApiPrioritizationMatchRuleResult build() {
-            final var o = new GetCloudletsApiPrioritizationMatchRuleResult();
-            o.id = id;
-            o.json = json;
-            o.matchRules = matchRules;
-            return o;
+            final var _resultValue = new GetCloudletsApiPrioritizationMatchRuleResult();
+            _resultValue.id = id;
+            _resultValue.json = json;
+            _resultValue.matchRules = matchRules;
+            return _resultValue;
         }
     }
 }

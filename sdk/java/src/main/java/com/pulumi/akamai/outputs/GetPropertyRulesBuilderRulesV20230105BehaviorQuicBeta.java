@@ -86,13 +86,13 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorQuicBeta {
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230105BehaviorQuicBeta build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230105BehaviorQuicBeta();
-            o.enabled = enabled;
-            o.locked = locked;
-            o.quicOfferPercentage = quicOfferPercentage;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230105BehaviorQuicBeta();
+            _resultValue.enabled = enabled;
+            _resultValue.locked = locked;
+            _resultValue.quicOfferPercentage = quicOfferPercentage;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

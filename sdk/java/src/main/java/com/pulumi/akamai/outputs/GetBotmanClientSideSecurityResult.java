@@ -69,11 +69,11 @@ public final class GetBotmanClientSideSecurityResult {
             return this;
         }
         public GetBotmanClientSideSecurityResult build() {
-            final var o = new GetBotmanClientSideSecurityResult();
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            return o;
+            final var _resultValue = new GetBotmanClientSideSecurityResult();
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            return _resultValue;
         }
     }
 }

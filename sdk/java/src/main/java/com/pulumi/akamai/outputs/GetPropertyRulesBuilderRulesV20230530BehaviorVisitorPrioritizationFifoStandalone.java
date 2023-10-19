@@ -63,11 +63,11 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritiz
             return this;
         }
         public GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationFifoStandalone build() {
-            final var o = new GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationFifoStandalone();
-            o.locked = locked;
-            o.templateUuid = templateUuid;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationFifoStandalone();
+            _resultValue.locked = locked;
+            _resultValue.templateUuid = templateUuid;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

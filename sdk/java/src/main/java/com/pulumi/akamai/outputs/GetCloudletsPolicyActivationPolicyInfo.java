@@ -105,15 +105,15 @@ public final class GetCloudletsPolicyActivationPolicyInfo {
             return this;
         }
         public GetCloudletsPolicyActivationPolicyInfo build() {
-            final var o = new GetCloudletsPolicyActivationPolicyInfo();
-            o.activatedBy = activatedBy;
-            o.activationDate = activationDate;
-            o.name = name;
-            o.policyId = policyId;
-            o.status = status;
-            o.statusDetail = statusDetail;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetCloudletsPolicyActivationPolicyInfo();
+            _resultValue.activatedBy = activatedBy;
+            _resultValue.activationDate = activationDate;
+            _resultValue.name = name;
+            _resultValue.policyId = policyId;
+            _resultValue.status = status;
+            _resultValue.statusDetail = statusDetail;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

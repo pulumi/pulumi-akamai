@@ -4,8 +4,12 @@
 package akamai
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetIamSupportedLangs(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIamSupportedLangsResult, error) {
@@ -23,4 +27,49 @@ type GetIamSupportedLangsResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id        string   `pulumi:"id"`
 	Languages []string `pulumi:"languages"`
+}
+
+func GetIamSupportedLangsOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetIamSupportedLangsResultOutput {
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamSupportedLangsResult, error) {
+		r, err := GetIamSupportedLangs(ctx, opts...)
+		var s GetIamSupportedLangsResult
+		if r != nil {
+			s = *r
+		}
+		return s, err
+	}).(GetIamSupportedLangsResultOutput)
+}
+
+// A collection of values returned by getIamSupportedLangs.
+type GetIamSupportedLangsResultOutput struct{ *pulumi.OutputState }
+
+func (GetIamSupportedLangsResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamSupportedLangsResult)(nil)).Elem()
+}
+
+func (o GetIamSupportedLangsResultOutput) ToGetIamSupportedLangsResultOutput() GetIamSupportedLangsResultOutput {
+	return o
+}
+
+func (o GetIamSupportedLangsResultOutput) ToGetIamSupportedLangsResultOutputWithContext(ctx context.Context) GetIamSupportedLangsResultOutput {
+	return o
+}
+
+func (o GetIamSupportedLangsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIamSupportedLangsResult] {
+	return pulumix.Output[GetIamSupportedLangsResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetIamSupportedLangsResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamSupportedLangsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetIamSupportedLangsResultOutput) Languages() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIamSupportedLangsResult) []string { return v.Languages }).(pulumi.StringArrayOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetIamSupportedLangsResultOutput{})
 }

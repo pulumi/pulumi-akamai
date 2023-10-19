@@ -82,12 +82,12 @@ public final class GetBotmanResponseActionResult {
             return this;
         }
         public GetBotmanResponseActionResult build() {
-            final var o = new GetBotmanResponseActionResult();
-            o.actionId = actionId;
-            o.configId = configId;
-            o.id = id;
-            o.json = json;
-            return o;
+            final var _resultValue = new GetBotmanResponseActionResult();
+            _resultValue.actionId = actionId;
+            _resultValue.configId = configId;
+            _resultValue.id = id;
+            _resultValue.json = json;
+            return _resultValue;
         }
     }
 }

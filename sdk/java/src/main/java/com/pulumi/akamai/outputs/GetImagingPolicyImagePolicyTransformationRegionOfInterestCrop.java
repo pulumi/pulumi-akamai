@@ -129,17 +129,17 @@ public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop
             return this;
         }
         public GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop build() {
-            final var o = new GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop();
-            o.gravity = gravity;
-            o.gravityVar = gravityVar;
-            o.height = height;
-            o.heightVar = heightVar;
-            o.regionOfInterest = regionOfInterest;
-            o.style = style;
-            o.styleVar = styleVar;
-            o.width = width;
-            o.widthVar = widthVar;
-            return o;
+            final var _resultValue = new GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop();
+            _resultValue.gravity = gravity;
+            _resultValue.gravityVar = gravityVar;
+            _resultValue.height = height;
+            _resultValue.heightVar = heightVar;
+            _resultValue.regionOfInterest = regionOfInterest;
+            _resultValue.style = style;
+            _resultValue.styleVar = styleVar;
+            _resultValue.width = width;
+            _resultValue.widthVar = widthVar;
+            return _resultValue;
         }
     }
 }
