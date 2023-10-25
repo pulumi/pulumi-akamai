@@ -29,17 +29,23 @@ class BotmanBotCategoryExceptionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bot_category_exception: pulumi.Input[str],
-             config_id: pulumi.Input[int],
-             security_policy_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bot_category_exception: Optional[pulumi.Input[str]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'botCategoryException' in kwargs:
+        if bot_category_exception is None and 'botCategoryException' in kwargs:
             bot_category_exception = kwargs['botCategoryException']
-        if 'configId' in kwargs:
+        if bot_category_exception is None:
+            raise TypeError("Missing 'bot_category_exception' argument")
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'securityPolicyId' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
+        if security_policy_id is None:
+            raise TypeError("Missing 'security_policy_id' argument")
 
         _setter("bot_category_exception", bot_category_exception)
         _setter("config_id", config_id)
@@ -94,13 +100,13 @@ class _BotmanBotCategoryExceptionState:
              bot_category_exception: Optional[pulumi.Input[str]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'botCategoryException' in kwargs:
+        if bot_category_exception is None and 'botCategoryException' in kwargs:
             bot_category_exception = kwargs['botCategoryException']
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'securityPolicyId' in kwargs:
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
 
         if bot_category_exception is not None:

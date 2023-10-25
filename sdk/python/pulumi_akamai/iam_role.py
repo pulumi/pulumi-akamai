@@ -35,14 +35,18 @@ class IamRoleArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: pulumi.Input[str],
-             granted_roles: pulumi.Input[Sequence[pulumi.Input[int]]],
+             description: Optional[pulumi.Input[str]] = None,
+             granted_roles: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
              name: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'grantedRoles' in kwargs:
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if granted_roles is None and 'grantedRoles' in kwargs:
             granted_roles = kwargs['grantedRoles']
+        if granted_roles is None:
+            raise TypeError("Missing 'granted_roles' argument")
 
         _setter("description", description)
         _setter("granted_roles", granted_roles)
@@ -128,9 +132,9 @@ class _IamRoleState:
              granted_roles: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
              name: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'grantedRoles' in kwargs:
+        if granted_roles is None and 'grantedRoles' in kwargs:
             granted_roles = kwargs['grantedRoles']
 
         if description is not None:

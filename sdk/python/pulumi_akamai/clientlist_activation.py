@@ -41,19 +41,25 @@ class ClientlistActivationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             list_id: pulumi.Input[str],
-             network: pulumi.Input[str],
-             version: pulumi.Input[int],
+             list_id: Optional[pulumi.Input[str]] = None,
+             network: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[int]] = None,
              comments: Optional[pulumi.Input[str]] = None,
              notification_recipients: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              siebel_ticket_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'listId' in kwargs:
+        if list_id is None and 'listId' in kwargs:
             list_id = kwargs['listId']
-        if 'notificationRecipients' in kwargs:
+        if list_id is None:
+            raise TypeError("Missing 'list_id' argument")
+        if network is None:
+            raise TypeError("Missing 'network' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
+        if notification_recipients is None and 'notificationRecipients' in kwargs:
             notification_recipients = kwargs['notificationRecipients']
-        if 'siebelTicketId' in kwargs:
+        if siebel_ticket_id is None and 'siebelTicketId' in kwargs:
             siebel_ticket_id = kwargs['siebelTicketId']
 
         _setter("list_id", list_id)
@@ -179,13 +185,13 @@ class _ClientlistActivationState:
              siebel_ticket_id: Optional[pulumi.Input[str]] = None,
              status: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'listId' in kwargs:
+        if list_id is None and 'listId' in kwargs:
             list_id = kwargs['listId']
-        if 'notificationRecipients' in kwargs:
+        if notification_recipients is None and 'notificationRecipients' in kwargs:
             notification_recipients = kwargs['notificationRecipients']
-        if 'siebelTicketId' in kwargs:
+        if siebel_ticket_id is None and 'siebelTicketId' in kwargs:
             siebel_ticket_id = kwargs['siebelTicketId']
 
         if comments is not None:

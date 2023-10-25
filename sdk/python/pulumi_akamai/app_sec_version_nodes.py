@@ -29,14 +29,18 @@ class AppSecVersionNodesArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             version_notes: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             version_notes: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'versionNotes' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if version_notes is None and 'versionNotes' in kwargs:
             version_notes = kwargs['versionNotes']
+        if version_notes is None:
+            raise TypeError("Missing 'version_notes' argument")
 
         _setter("config_id", config_id)
         _setter("version_notes", version_notes)
@@ -90,13 +94,13 @@ class _AppSecVersionNodesState:
              config_id: Optional[pulumi.Input[int]] = None,
              output_text: Optional[pulumi.Input[str]] = None,
              version_notes: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'outputText' in kwargs:
+        if output_text is None and 'outputText' in kwargs:
             output_text = kwargs['outputText']
-        if 'versionNotes' in kwargs:
+        if version_notes is None and 'versionNotes' in kwargs:
             version_notes = kwargs['versionNotes']
 
         if config_id is not None:

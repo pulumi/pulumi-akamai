@@ -27,14 +27,18 @@ class BotmanCustomClientArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             custom_client: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             custom_client: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'customClient' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if custom_client is None and 'customClient' in kwargs:
             custom_client = kwargs['customClient']
+        if custom_client is None:
+            raise TypeError("Missing 'custom_client' argument")
 
         _setter("config_id", config_id)
         _setter("custom_client", custom_client)
@@ -79,13 +83,13 @@ class _BotmanCustomClientState:
              config_id: Optional[pulumi.Input[int]] = None,
              custom_client: Optional[pulumi.Input[str]] = None,
              custom_client_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'customClient' in kwargs:
+        if custom_client is None and 'customClient' in kwargs:
             custom_client = kwargs['customClient']
-        if 'customClientId' in kwargs:
+        if custom_client_id is None and 'customClientId' in kwargs:
             custom_client_id = kwargs['customClientId']
 
         if config_id is not None:

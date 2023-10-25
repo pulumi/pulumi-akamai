@@ -35,17 +35,23 @@ class AppSecApiRequestConstraintsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             action: pulumi.Input[str],
-             config_id: pulumi.Input[int],
-             security_policy_id: pulumi.Input[str],
+             action: Optional[pulumi.Input[str]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
              api_endpoint_id: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'securityPolicyId' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
-        if 'apiEndpointId' in kwargs:
+        if security_policy_id is None:
+            raise TypeError("Missing 'security_policy_id' argument")
+        if api_endpoint_id is None and 'apiEndpointId' in kwargs:
             api_endpoint_id = kwargs['apiEndpointId']
 
         _setter("action", action)
@@ -131,13 +137,13 @@ class _AppSecApiRequestConstraintsState:
              api_endpoint_id: Optional[pulumi.Input[int]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'apiEndpointId' in kwargs:
+        if api_endpoint_id is None and 'apiEndpointId' in kwargs:
             api_endpoint_id = kwargs['apiEndpointId']
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'securityPolicyId' in kwargs:
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
 
         if action is not None:

@@ -31,20 +31,28 @@ class BotmanTransactionalEndpointArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             operation_id: pulumi.Input[str],
-             security_policy_id: pulumi.Input[str],
-             transactional_endpoint: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             operation_id: Optional[pulumi.Input[str]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             transactional_endpoint: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'operationId' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if operation_id is None and 'operationId' in kwargs:
             operation_id = kwargs['operationId']
-        if 'securityPolicyId' in kwargs:
+        if operation_id is None:
+            raise TypeError("Missing 'operation_id' argument")
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
-        if 'transactionalEndpoint' in kwargs:
+        if security_policy_id is None:
+            raise TypeError("Missing 'security_policy_id' argument")
+        if transactional_endpoint is None and 'transactionalEndpoint' in kwargs:
             transactional_endpoint = kwargs['transactionalEndpoint']
+        if transactional_endpoint is None:
+            raise TypeError("Missing 'transactional_endpoint' argument")
 
         _setter("config_id", config_id)
         _setter("operation_id", operation_id)
@@ -112,15 +120,15 @@ class _BotmanTransactionalEndpointState:
              operation_id: Optional[pulumi.Input[str]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
              transactional_endpoint: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'operationId' in kwargs:
+        if operation_id is None and 'operationId' in kwargs:
             operation_id = kwargs['operationId']
-        if 'securityPolicyId' in kwargs:
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
-        if 'transactionalEndpoint' in kwargs:
+        if transactional_endpoint is None and 'transactionalEndpoint' in kwargs:
             transactional_endpoint = kwargs['transactionalEndpoint']
 
         if config_id is not None:

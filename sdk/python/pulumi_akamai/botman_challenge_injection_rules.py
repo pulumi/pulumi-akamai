@@ -27,14 +27,18 @@ class BotmanChallengeInjectionRulesArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             challenge_injection_rules: pulumi.Input[str],
-             config_id: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             challenge_injection_rules: Optional[pulumi.Input[str]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'challengeInjectionRules' in kwargs:
+        if challenge_injection_rules is None and 'challengeInjectionRules' in kwargs:
             challenge_injection_rules = kwargs['challengeInjectionRules']
-        if 'configId' in kwargs:
+        if challenge_injection_rules is None:
+            raise TypeError("Missing 'challenge_injection_rules' argument")
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
 
         _setter("challenge_injection_rules", challenge_injection_rules)
         _setter("config_id", config_id)
@@ -76,11 +80,11 @@ class _BotmanChallengeInjectionRulesState:
              _setter: Callable[[Any, Any], None],
              challenge_injection_rules: Optional[pulumi.Input[str]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'challengeInjectionRules' in kwargs:
+        if challenge_injection_rules is None and 'challengeInjectionRules' in kwargs:
             challenge_injection_rules = kwargs['challengeInjectionRules']
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
 
         if challenge_injection_rules is not None:

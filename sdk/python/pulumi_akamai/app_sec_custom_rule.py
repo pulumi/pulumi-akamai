@@ -29,14 +29,18 @@ class AppSecCustomRuleArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             custom_rule: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             custom_rule: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'customRule' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if custom_rule is None and 'customRule' in kwargs:
             custom_rule = kwargs['customRule']
+        if custom_rule is None:
+            raise TypeError("Missing 'custom_rule' argument")
 
         _setter("config_id", config_id)
         _setter("custom_rule", custom_rule)
@@ -89,13 +93,13 @@ class _AppSecCustomRuleState:
              config_id: Optional[pulumi.Input[int]] = None,
              custom_rule: Optional[pulumi.Input[str]] = None,
              custom_rule_id: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'customRule' in kwargs:
+        if custom_rule is None and 'customRule' in kwargs:
             custom_rule = kwargs['customRule']
-        if 'customRuleId' in kwargs:
+        if custom_rule_id is None and 'customRuleId' in kwargs:
             custom_rule_id = kwargs['customRuleId']
 
         if config_id is not None:

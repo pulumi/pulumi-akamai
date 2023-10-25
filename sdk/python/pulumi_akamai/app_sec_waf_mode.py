@@ -32,15 +32,21 @@ class AppSecWafModeArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             mode: pulumi.Input[str],
-             security_policy_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             mode: Optional[pulumi.Input[str]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'securityPolicyId' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if mode is None:
+            raise TypeError("Missing 'mode' argument")
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
+        if security_policy_id is None:
+            raise TypeError("Missing 'security_policy_id' argument")
 
         _setter("config_id", config_id)
         _setter("mode", mode)
@@ -127,21 +133,21 @@ class _AppSecWafModeState:
              mode: Optional[pulumi.Input[str]] = None,
              output_text: Optional[pulumi.Input[str]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'currentRuleset' in kwargs:
+        if current_ruleset is None and 'currentRuleset' in kwargs:
             current_ruleset = kwargs['currentRuleset']
-        if 'evalExpirationDate' in kwargs:
+        if eval_expiration_date is None and 'evalExpirationDate' in kwargs:
             eval_expiration_date = kwargs['evalExpirationDate']
-        if 'evalRuleset' in kwargs:
+        if eval_ruleset is None and 'evalRuleset' in kwargs:
             eval_ruleset = kwargs['evalRuleset']
-        if 'evalStatus' in kwargs:
+        if eval_status is None and 'evalStatus' in kwargs:
             eval_status = kwargs['evalStatus']
-        if 'outputText' in kwargs:
+        if output_text is None and 'outputText' in kwargs:
             output_text = kwargs['outputText']
-        if 'securityPolicyId' in kwargs:
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
 
         if config_id is not None:

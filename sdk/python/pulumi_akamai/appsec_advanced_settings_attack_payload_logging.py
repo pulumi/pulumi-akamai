@@ -32,16 +32,20 @@ class AppsecAdvancedSettingsAttackPayloadLoggingArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             attack_payload_logging: pulumi.Input[str],
-             config_id: pulumi.Input[int],
+             attack_payload_logging: Optional[pulumi.Input[str]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'attackPayloadLogging' in kwargs:
+        if attack_payload_logging is None and 'attackPayloadLogging' in kwargs:
             attack_payload_logging = kwargs['attackPayloadLogging']
-        if 'configId' in kwargs:
+        if attack_payload_logging is None:
+            raise TypeError("Missing 'attack_payload_logging' argument")
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'securityPolicyId' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
 
         _setter("attack_payload_logging", attack_payload_logging)
@@ -110,13 +114,13 @@ class _AppsecAdvancedSettingsAttackPayloadLoggingState:
              attack_payload_logging: Optional[pulumi.Input[str]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'attackPayloadLogging' in kwargs:
+        if attack_payload_logging is None and 'attackPayloadLogging' in kwargs:
             attack_payload_logging = kwargs['attackPayloadLogging']
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'securityPolicyId' in kwargs:
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
 
         if attack_payload_logging is not None:

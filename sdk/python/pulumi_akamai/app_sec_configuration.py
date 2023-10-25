@@ -44,24 +44,32 @@ class AppSecConfigurationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             contract_id: pulumi.Input[str],
-             description: pulumi.Input[str],
-             group_id: pulumi.Input[int],
-             host_names: pulumi.Input[Sequence[pulumi.Input[str]]],
+             contract_id: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             group_id: Optional[pulumi.Input[int]] = None,
+             host_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              create_from_config_id: Optional[pulumi.Input[int]] = None,
              create_from_version: Optional[pulumi.Input[int]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contractId' in kwargs:
+        if contract_id is None and 'contractId' in kwargs:
             contract_id = kwargs['contractId']
-        if 'groupId' in kwargs:
+        if contract_id is None:
+            raise TypeError("Missing 'contract_id' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if group_id is None and 'groupId' in kwargs:
             group_id = kwargs['groupId']
-        if 'hostNames' in kwargs:
+        if group_id is None:
+            raise TypeError("Missing 'group_id' argument")
+        if host_names is None and 'hostNames' in kwargs:
             host_names = kwargs['hostNames']
-        if 'createFromConfigId' in kwargs:
+        if host_names is None:
+            raise TypeError("Missing 'host_names' argument")
+        if create_from_config_id is None and 'createFromConfigId' in kwargs:
             create_from_config_id = kwargs['createFromConfigId']
-        if 'createFromVersion' in kwargs:
+        if create_from_version is None and 'createFromVersion' in kwargs:
             create_from_version = kwargs['createFromVersion']
 
         _setter("contract_id", contract_id)
@@ -204,19 +212,19 @@ class _AppSecConfigurationState:
              group_id: Optional[pulumi.Input[int]] = None,
              host_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'contractId' in kwargs:
+        if contract_id is None and 'contractId' in kwargs:
             contract_id = kwargs['contractId']
-        if 'createFromConfigId' in kwargs:
+        if create_from_config_id is None and 'createFromConfigId' in kwargs:
             create_from_config_id = kwargs['createFromConfigId']
-        if 'createFromVersion' in kwargs:
+        if create_from_version is None and 'createFromVersion' in kwargs:
             create_from_version = kwargs['createFromVersion']
-        if 'groupId' in kwargs:
+        if group_id is None and 'groupId' in kwargs:
             group_id = kwargs['groupId']
-        if 'hostNames' in kwargs:
+        if host_names is None and 'hostNames' in kwargs:
             host_names = kwargs['hostNames']
 
         if config_id is not None:

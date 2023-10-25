@@ -51,28 +51,36 @@ class CloudwrapperConfigurationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             comments: pulumi.Input[str],
-             config_name: pulumi.Input[str],
-             contract_id: pulumi.Input[str],
-             property_ids: pulumi.Input[Sequence[pulumi.Input[str]]],
+             comments: Optional[pulumi.Input[str]] = None,
+             config_name: Optional[pulumi.Input[str]] = None,
+             contract_id: Optional[pulumi.Input[str]] = None,
+             property_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              capacity_alerts_threshold: Optional[pulumi.Input[int]] = None,
              locations: Optional[pulumi.Input[Sequence[pulumi.Input['CloudwrapperConfigurationLocationArgs']]]] = None,
              notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              retain_idle_objects: Optional[pulumi.Input[bool]] = None,
              timeouts: Optional[pulumi.Input['CloudwrapperConfigurationTimeoutsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configName' in kwargs:
+        if comments is None:
+            raise TypeError("Missing 'comments' argument")
+        if config_name is None and 'configName' in kwargs:
             config_name = kwargs['configName']
-        if 'contractId' in kwargs:
+        if config_name is None:
+            raise TypeError("Missing 'config_name' argument")
+        if contract_id is None and 'contractId' in kwargs:
             contract_id = kwargs['contractId']
-        if 'propertyIds' in kwargs:
+        if contract_id is None:
+            raise TypeError("Missing 'contract_id' argument")
+        if property_ids is None and 'propertyIds' in kwargs:
             property_ids = kwargs['propertyIds']
-        if 'capacityAlertsThreshold' in kwargs:
+        if property_ids is None:
+            raise TypeError("Missing 'property_ids' argument")
+        if capacity_alerts_threshold is None and 'capacityAlertsThreshold' in kwargs:
             capacity_alerts_threshold = kwargs['capacityAlertsThreshold']
-        if 'notificationEmails' in kwargs:
+        if notification_emails is None and 'notificationEmails' in kwargs:
             notification_emails = kwargs['notificationEmails']
-        if 'retainIdleObjects' in kwargs:
+        if retain_idle_objects is None and 'retainIdleObjects' in kwargs:
             retain_idle_objects = kwargs['retainIdleObjects']
 
         _setter("comments", comments)
@@ -247,19 +255,19 @@ class _CloudwrapperConfigurationState:
              retain_idle_objects: Optional[pulumi.Input[bool]] = None,
              revision: Optional[pulumi.Input[str]] = None,
              timeouts: Optional[pulumi.Input['CloudwrapperConfigurationTimeoutsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'capacityAlertsThreshold' in kwargs:
+        if capacity_alerts_threshold is None and 'capacityAlertsThreshold' in kwargs:
             capacity_alerts_threshold = kwargs['capacityAlertsThreshold']
-        if 'configName' in kwargs:
+        if config_name is None and 'configName' in kwargs:
             config_name = kwargs['configName']
-        if 'contractId' in kwargs:
+        if contract_id is None and 'contractId' in kwargs:
             contract_id = kwargs['contractId']
-        if 'notificationEmails' in kwargs:
+        if notification_emails is None and 'notificationEmails' in kwargs:
             notification_emails = kwargs['notificationEmails']
-        if 'propertyIds' in kwargs:
+        if property_ids is None and 'propertyIds' in kwargs:
             property_ids = kwargs['propertyIds']
-        if 'retainIdleObjects' in kwargs:
+        if retain_idle_objects is None and 'retainIdleObjects' in kwargs:
             retain_idle_objects = kwargs['retainIdleObjects']
 
         if capacity_alerts_threshold is not None:
@@ -490,11 +498,7 @@ class CloudwrapperConfiguration(pulumi.CustomResource):
                 raise TypeError("Missing required property 'property_ids'")
             __props__.__dict__["property_ids"] = property_ids
             __props__.__dict__["retain_idle_objects"] = retain_idle_objects
-            if timeouts is not None and not isinstance(timeouts, CloudwrapperConfigurationTimeoutsArgs):
-                timeouts = timeouts or {}
-                def _setter(key, value):
-                    timeouts[key] = value
-                CloudwrapperConfigurationTimeoutsArgs._configure(_setter, **timeouts)
+            timeouts = _utilities.configure(timeouts, CloudwrapperConfigurationTimeoutsArgs, True)
             __props__.__dict__["timeouts"] = timeouts
             __props__.__dict__["revision"] = None
         super(CloudwrapperConfiguration, __self__).__init__(

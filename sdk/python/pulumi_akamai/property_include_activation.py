@@ -52,28 +52,40 @@ class PropertyIncludeActivationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             contract_id: pulumi.Input[str],
-             group_id: pulumi.Input[str],
-             include_id: pulumi.Input[str],
-             network: pulumi.Input[str],
-             notify_emails: pulumi.Input[Sequence[pulumi.Input[str]]],
-             version: pulumi.Input[int],
+             contract_id: Optional[pulumi.Input[str]] = None,
+             group_id: Optional[pulumi.Input[str]] = None,
+             include_id: Optional[pulumi.Input[str]] = None,
+             network: Optional[pulumi.Input[str]] = None,
+             notify_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             version: Optional[pulumi.Input[int]] = None,
              auto_acknowledge_rule_warnings: Optional[pulumi.Input[bool]] = None,
              compliance_record: Optional[pulumi.Input['PropertyIncludeActivationComplianceRecordArgs']] = None,
              note: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contractId' in kwargs:
+        if contract_id is None and 'contractId' in kwargs:
             contract_id = kwargs['contractId']
-        if 'groupId' in kwargs:
+        if contract_id is None:
+            raise TypeError("Missing 'contract_id' argument")
+        if group_id is None and 'groupId' in kwargs:
             group_id = kwargs['groupId']
-        if 'includeId' in kwargs:
+        if group_id is None:
+            raise TypeError("Missing 'group_id' argument")
+        if include_id is None and 'includeId' in kwargs:
             include_id = kwargs['includeId']
-        if 'notifyEmails' in kwargs:
+        if include_id is None:
+            raise TypeError("Missing 'include_id' argument")
+        if network is None:
+            raise TypeError("Missing 'network' argument")
+        if notify_emails is None and 'notifyEmails' in kwargs:
             notify_emails = kwargs['notifyEmails']
-        if 'autoAcknowledgeRuleWarnings' in kwargs:
+        if notify_emails is None:
+            raise TypeError("Missing 'notify_emails' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
+        if auto_acknowledge_rule_warnings is None and 'autoAcknowledgeRuleWarnings' in kwargs:
             auto_acknowledge_rule_warnings = kwargs['autoAcknowledgeRuleWarnings']
-        if 'complianceRecord' in kwargs:
+        if compliance_record is None and 'complianceRecord' in kwargs:
             compliance_record = kwargs['complianceRecord']
 
         _setter("contract_id", contract_id)
@@ -250,19 +262,19 @@ class _PropertyIncludeActivationState:
              notify_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              validations: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'autoAcknowledgeRuleWarnings' in kwargs:
+        if auto_acknowledge_rule_warnings is None and 'autoAcknowledgeRuleWarnings' in kwargs:
             auto_acknowledge_rule_warnings = kwargs['autoAcknowledgeRuleWarnings']
-        if 'complianceRecord' in kwargs:
+        if compliance_record is None and 'complianceRecord' in kwargs:
             compliance_record = kwargs['complianceRecord']
-        if 'contractId' in kwargs:
+        if contract_id is None and 'contractId' in kwargs:
             contract_id = kwargs['contractId']
-        if 'groupId' in kwargs:
+        if group_id is None and 'groupId' in kwargs:
             group_id = kwargs['groupId']
-        if 'includeId' in kwargs:
+        if include_id is None and 'includeId' in kwargs:
             include_id = kwargs['includeId']
-        if 'notifyEmails' in kwargs:
+        if notify_emails is None and 'notifyEmails' in kwargs:
             notify_emails = kwargs['notifyEmails']
 
         if auto_acknowledge_rule_warnings is not None:
@@ -482,11 +494,7 @@ class PropertyIncludeActivation(pulumi.CustomResource):
             __props__ = PropertyIncludeActivationArgs.__new__(PropertyIncludeActivationArgs)
 
             __props__.__dict__["auto_acknowledge_rule_warnings"] = auto_acknowledge_rule_warnings
-            if compliance_record is not None and not isinstance(compliance_record, PropertyIncludeActivationComplianceRecordArgs):
-                compliance_record = compliance_record or {}
-                def _setter(key, value):
-                    compliance_record[key] = value
-                PropertyIncludeActivationComplianceRecordArgs._configure(_setter, **compliance_record)
+            compliance_record = _utilities.configure(compliance_record, PropertyIncludeActivationComplianceRecordArgs, True)
             __props__.__dict__["compliance_record"] = compliance_record
             if contract_id is None and not opts.urn:
                 raise TypeError("Missing required property 'contract_id'")

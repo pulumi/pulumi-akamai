@@ -45,18 +45,24 @@ class NetworkListArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: pulumi.Input[str],
-             mode: pulumi.Input[str],
-             type: pulumi.Input[str],
+             description: Optional[pulumi.Input[str]] = None,
+             mode: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
              contract_id: Optional[pulumi.Input[str]] = None,
              group_id: Optional[pulumi.Input[int]] = None,
              lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contractId' in kwargs:
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if mode is None:
+            raise TypeError("Missing 'mode' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if contract_id is None and 'contractId' in kwargs:
             contract_id = kwargs['contractId']
-        if 'groupId' in kwargs:
+        if group_id is None and 'groupId' in kwargs:
             group_id = kwargs['groupId']
 
         _setter("description", description)
@@ -210,15 +216,15 @@ class _NetworkListState:
              sync_point: Optional[pulumi.Input[int]] = None,
              type: Optional[pulumi.Input[str]] = None,
              uniqueid: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contractId' in kwargs:
+        if contract_id is None and 'contractId' in kwargs:
             contract_id = kwargs['contractId']
-        if 'groupId' in kwargs:
+        if group_id is None and 'groupId' in kwargs:
             group_id = kwargs['groupId']
-        if 'networkListId' in kwargs:
+        if network_list_id is None and 'networkListId' in kwargs:
             network_list_id = kwargs['networkListId']
-        if 'syncPoint' in kwargs:
+        if sync_point is None and 'syncPoint' in kwargs:
             sync_point = kwargs['syncPoint']
 
         if contract_id is not None:

@@ -42,25 +42,31 @@ class AppSecSlowPostArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             security_policy_id: pulumi.Input[str],
-             slow_rate_action: pulumi.Input[str],
+             config_id: Optional[pulumi.Input[int]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             slow_rate_action: Optional[pulumi.Input[str]] = None,
              duration_threshold_timeout: Optional[pulumi.Input[int]] = None,
              slow_rate_threshold_period: Optional[pulumi.Input[int]] = None,
              slow_rate_threshold_rate: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'securityPolicyId' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
-        if 'slowRateAction' in kwargs:
+        if security_policy_id is None:
+            raise TypeError("Missing 'security_policy_id' argument")
+        if slow_rate_action is None and 'slowRateAction' in kwargs:
             slow_rate_action = kwargs['slowRateAction']
-        if 'durationThresholdTimeout' in kwargs:
+        if slow_rate_action is None:
+            raise TypeError("Missing 'slow_rate_action' argument")
+        if duration_threshold_timeout is None and 'durationThresholdTimeout' in kwargs:
             duration_threshold_timeout = kwargs['durationThresholdTimeout']
-        if 'slowRateThresholdPeriod' in kwargs:
+        if slow_rate_threshold_period is None and 'slowRateThresholdPeriod' in kwargs:
             slow_rate_threshold_period = kwargs['slowRateThresholdPeriod']
-        if 'slowRateThresholdRate' in kwargs:
+        if slow_rate_threshold_rate is None and 'slowRateThresholdRate' in kwargs:
             slow_rate_threshold_rate = kwargs['slowRateThresholdRate']
 
         _setter("config_id", config_id)
@@ -184,19 +190,19 @@ class _AppSecSlowPostState:
              slow_rate_action: Optional[pulumi.Input[str]] = None,
              slow_rate_threshold_period: Optional[pulumi.Input[int]] = None,
              slow_rate_threshold_rate: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'durationThresholdTimeout' in kwargs:
+        if duration_threshold_timeout is None and 'durationThresholdTimeout' in kwargs:
             duration_threshold_timeout = kwargs['durationThresholdTimeout']
-        if 'securityPolicyId' in kwargs:
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
-        if 'slowRateAction' in kwargs:
+        if slow_rate_action is None and 'slowRateAction' in kwargs:
             slow_rate_action = kwargs['slowRateAction']
-        if 'slowRateThresholdPeriod' in kwargs:
+        if slow_rate_threshold_period is None and 'slowRateThresholdPeriod' in kwargs:
             slow_rate_threshold_period = kwargs['slowRateThresholdPeriod']
-        if 'slowRateThresholdRate' in kwargs:
+        if slow_rate_threshold_rate is None and 'slowRateThresholdRate' in kwargs:
             slow_rate_threshold_rate = kwargs['slowRateThresholdRate']
 
         if config_id is not None:

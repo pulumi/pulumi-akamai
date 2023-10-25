@@ -41,25 +41,35 @@ class AppSecSiemSettingsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             enable_botman_siem: pulumi.Input[bool],
-             enable_for_all_policies: pulumi.Input[bool],
-             enable_siem: pulumi.Input[bool],
-             siem_id: pulumi.Input[int],
+             config_id: Optional[pulumi.Input[int]] = None,
+             enable_botman_siem: Optional[pulumi.Input[bool]] = None,
+             enable_for_all_policies: Optional[pulumi.Input[bool]] = None,
+             enable_siem: Optional[pulumi.Input[bool]] = None,
+             siem_id: Optional[pulumi.Input[int]] = None,
              security_policy_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'enableBotmanSiem' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if enable_botman_siem is None and 'enableBotmanSiem' in kwargs:
             enable_botman_siem = kwargs['enableBotmanSiem']
-        if 'enableForAllPolicies' in kwargs:
+        if enable_botman_siem is None:
+            raise TypeError("Missing 'enable_botman_siem' argument")
+        if enable_for_all_policies is None and 'enableForAllPolicies' in kwargs:
             enable_for_all_policies = kwargs['enableForAllPolicies']
-        if 'enableSiem' in kwargs:
+        if enable_for_all_policies is None:
+            raise TypeError("Missing 'enable_for_all_policies' argument")
+        if enable_siem is None and 'enableSiem' in kwargs:
             enable_siem = kwargs['enableSiem']
-        if 'siemId' in kwargs:
+        if enable_siem is None:
+            raise TypeError("Missing 'enable_siem' argument")
+        if siem_id is None and 'siemId' in kwargs:
             siem_id = kwargs['siemId']
-        if 'securityPolicyIds' in kwargs:
+        if siem_id is None:
+            raise TypeError("Missing 'siem_id' argument")
+        if security_policy_ids is None and 'securityPolicyIds' in kwargs:
             security_policy_ids = kwargs['securityPolicyIds']
 
         _setter("config_id", config_id)
@@ -179,19 +189,19 @@ class _AppSecSiemSettingsState:
              enable_siem: Optional[pulumi.Input[bool]] = None,
              security_policy_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              siem_id: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'enableBotmanSiem' in kwargs:
+        if enable_botman_siem is None and 'enableBotmanSiem' in kwargs:
             enable_botman_siem = kwargs['enableBotmanSiem']
-        if 'enableForAllPolicies' in kwargs:
+        if enable_for_all_policies is None and 'enableForAllPolicies' in kwargs:
             enable_for_all_policies = kwargs['enableForAllPolicies']
-        if 'enableSiem' in kwargs:
+        if enable_siem is None and 'enableSiem' in kwargs:
             enable_siem = kwargs['enableSiem']
-        if 'securityPolicyIds' in kwargs:
+        if security_policy_ids is None and 'securityPolicyIds' in kwargs:
             security_policy_ids = kwargs['securityPolicyIds']
-        if 'siemId' in kwargs:
+        if siem_id is None and 'siemId' in kwargs:
             siem_id = kwargs['siemId']
 
         if config_id is not None:

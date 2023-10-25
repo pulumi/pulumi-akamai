@@ -41,13 +41,13 @@ class ProviderArgs:
              config_section: Optional[pulumi.Input[str]] = None,
              edgerc: Optional[pulumi.Input[str]] = None,
              request_limit: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cacheEnabled' in kwargs:
+        if cache_enabled is None and 'cacheEnabled' in kwargs:
             cache_enabled = kwargs['cacheEnabled']
-        if 'configSection' in kwargs:
+        if config_section is None and 'configSection' in kwargs:
             config_section = kwargs['configSection']
-        if 'requestLimit' in kwargs:
+        if request_limit is None and 'requestLimit' in kwargs:
             request_limit = kwargs['requestLimit']
 
         if cache_enabled is not None:
@@ -181,11 +181,7 @@ class Provider(pulumi.ProviderResource):
             __props__ = ProviderArgs.__new__(ProviderArgs)
 
             __props__.__dict__["cache_enabled"] = pulumi.Output.from_input(cache_enabled).apply(pulumi.runtime.to_json) if cache_enabled is not None else None
-            if config is not None and not isinstance(config, ProviderConfigArgs):
-                config = config or {}
-                def _setter(key, value):
-                    config[key] = value
-                ProviderConfigArgs._configure(_setter, **config)
+            config = _utilities.configure(config, ProviderConfigArgs, True)
             __props__.__dict__["config"] = pulumi.Output.from_input(config).apply(pulumi.runtime.to_json) if config is not None else None
             __props__.__dict__["config_section"] = config_section
             __props__.__dict__["edgerc"] = edgerc

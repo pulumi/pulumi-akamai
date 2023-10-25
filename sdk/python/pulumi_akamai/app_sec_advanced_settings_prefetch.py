@@ -38,21 +38,31 @@ class AppSecAdvancedSettingsPrefetchArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             all_extensions: pulumi.Input[bool],
-             config_id: pulumi.Input[int],
-             enable_app_layer: pulumi.Input[bool],
-             enable_rate_controls: pulumi.Input[bool],
-             extensions: pulumi.Input[Sequence[pulumi.Input[str]]],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             all_extensions: Optional[pulumi.Input[bool]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             enable_app_layer: Optional[pulumi.Input[bool]] = None,
+             enable_rate_controls: Optional[pulumi.Input[bool]] = None,
+             extensions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allExtensions' in kwargs:
+        if all_extensions is None and 'allExtensions' in kwargs:
             all_extensions = kwargs['allExtensions']
-        if 'configId' in kwargs:
+        if all_extensions is None:
+            raise TypeError("Missing 'all_extensions' argument")
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'enableAppLayer' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if enable_app_layer is None and 'enableAppLayer' in kwargs:
             enable_app_layer = kwargs['enableAppLayer']
-        if 'enableRateControls' in kwargs:
+        if enable_app_layer is None:
+            raise TypeError("Missing 'enable_app_layer' argument")
+        if enable_rate_controls is None and 'enableRateControls' in kwargs:
             enable_rate_controls = kwargs['enableRateControls']
+        if enable_rate_controls is None:
+            raise TypeError("Missing 'enable_rate_controls' argument")
+        if extensions is None:
+            raise TypeError("Missing 'extensions' argument")
 
         _setter("all_extensions", all_extensions)
         _setter("config_id", config_id)
@@ -153,15 +163,15 @@ class _AppSecAdvancedSettingsPrefetchState:
              enable_app_layer: Optional[pulumi.Input[bool]] = None,
              enable_rate_controls: Optional[pulumi.Input[bool]] = None,
              extensions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'allExtensions' in kwargs:
+        if all_extensions is None and 'allExtensions' in kwargs:
             all_extensions = kwargs['allExtensions']
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'enableAppLayer' in kwargs:
+        if enable_app_layer is None and 'enableAppLayer' in kwargs:
             enable_app_layer = kwargs['enableAppLayer']
-        if 'enableRateControls' in kwargs:
+        if enable_rate_controls is None and 'enableRateControls' in kwargs:
             enable_rate_controls = kwargs['enableRateControls']
 
         if all_extensions is not None:

@@ -51,7 +51,7 @@ class GtmDatacenterArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             domain: pulumi.Input[str],
+             domain: Optional[pulumi.Input[str]] = None,
              city: Optional[pulumi.Input[str]] = None,
              clone_of: Optional[pulumi.Input[int]] = None,
              cloud_server_host_header_override: Optional[pulumi.Input[bool]] = None,
@@ -64,19 +64,21 @@ class GtmDatacenterArgs:
              nickname: Optional[pulumi.Input[str]] = None,
              state_or_province: Optional[pulumi.Input[str]] = None,
              wait_on_complete: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cloneOf' in kwargs:
+        if domain is None:
+            raise TypeError("Missing 'domain' argument")
+        if clone_of is None and 'cloneOf' in kwargs:
             clone_of = kwargs['cloneOf']
-        if 'cloudServerHostHeaderOverride' in kwargs:
+        if cloud_server_host_header_override is None and 'cloudServerHostHeaderOverride' in kwargs:
             cloud_server_host_header_override = kwargs['cloudServerHostHeaderOverride']
-        if 'cloudServerTargeting' in kwargs:
+        if cloud_server_targeting is None and 'cloudServerTargeting' in kwargs:
             cloud_server_targeting = kwargs['cloudServerTargeting']
-        if 'defaultLoadObject' in kwargs:
+        if default_load_object is None and 'defaultLoadObject' in kwargs:
             default_load_object = kwargs['defaultLoadObject']
-        if 'stateOrProvince' in kwargs:
+        if state_or_province is None and 'stateOrProvince' in kwargs:
             state_or_province = kwargs['stateOrProvince']
-        if 'waitOnComplete' in kwargs:
+        if wait_on_complete is None and 'waitOnComplete' in kwargs:
             wait_on_complete = kwargs['waitOnComplete']
 
         _setter("domain", domain)
@@ -298,33 +300,33 @@ class _GtmDatacenterState:
              state_or_province: Optional[pulumi.Input[str]] = None,
              virtual: Optional[pulumi.Input[bool]] = None,
              wait_on_complete: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cloneOf' in kwargs:
+        if clone_of is None and 'cloneOf' in kwargs:
             clone_of = kwargs['cloneOf']
-        if 'cloudServerHostHeaderOverride' in kwargs:
+        if cloud_server_host_header_override is None and 'cloudServerHostHeaderOverride' in kwargs:
             cloud_server_host_header_override = kwargs['cloudServerHostHeaderOverride']
-        if 'cloudServerTargeting' in kwargs:
+        if cloud_server_targeting is None and 'cloudServerTargeting' in kwargs:
             cloud_server_targeting = kwargs['cloudServerTargeting']
-        if 'datacenterId' in kwargs:
+        if datacenter_id is None and 'datacenterId' in kwargs:
             datacenter_id = kwargs['datacenterId']
-        if 'defaultLoadObject' in kwargs:
+        if default_load_object is None and 'defaultLoadObject' in kwargs:
             default_load_object = kwargs['defaultLoadObject']
-        if 'pingInterval' in kwargs:
+        if ping_interval is None and 'pingInterval' in kwargs:
             ping_interval = kwargs['pingInterval']
-        if 'pingPacketSize' in kwargs:
+        if ping_packet_size is None and 'pingPacketSize' in kwargs:
             ping_packet_size = kwargs['pingPacketSize']
-        if 'scorePenalty' in kwargs:
+        if score_penalty is None and 'scorePenalty' in kwargs:
             score_penalty = kwargs['scorePenalty']
-        if 'servermonitorLivenessCount' in kwargs:
+        if servermonitor_liveness_count is None and 'servermonitorLivenessCount' in kwargs:
             servermonitor_liveness_count = kwargs['servermonitorLivenessCount']
-        if 'servermonitorLoadCount' in kwargs:
+        if servermonitor_load_count is None and 'servermonitorLoadCount' in kwargs:
             servermonitor_load_count = kwargs['servermonitorLoadCount']
-        if 'servermonitorPool' in kwargs:
+        if servermonitor_pool is None and 'servermonitorPool' in kwargs:
             servermonitor_pool = kwargs['servermonitorPool']
-        if 'stateOrProvince' in kwargs:
+        if state_or_province is None and 'stateOrProvince' in kwargs:
             state_or_province = kwargs['stateOrProvince']
-        if 'waitOnComplete' in kwargs:
+        if wait_on_complete is None and 'waitOnComplete' in kwargs:
             wait_on_complete = kwargs['waitOnComplete']
 
         if city is not None:
@@ -639,11 +641,7 @@ class GtmDatacenter(pulumi.CustomResource):
             __props__.__dict__["cloud_server_targeting"] = cloud_server_targeting
             __props__.__dict__["continent"] = continent
             __props__.__dict__["country"] = country
-            if default_load_object is not None and not isinstance(default_load_object, GtmDatacenterDefaultLoadObjectArgs):
-                default_load_object = default_load_object or {}
-                def _setter(key, value):
-                    default_load_object[key] = value
-                GtmDatacenterDefaultLoadObjectArgs._configure(_setter, **default_load_object)
+            default_load_object = _utilities.configure(default_load_object, GtmDatacenterDefaultLoadObjectArgs, True)
             __props__.__dict__["default_load_object"] = default_load_object
             if domain is None and not opts.urn:
                 raise TypeError("Missing required property 'domain'")

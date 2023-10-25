@@ -27,14 +27,18 @@ class BotmanCustomDenyActionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             custom_deny_action: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             custom_deny_action: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'customDenyAction' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if custom_deny_action is None and 'customDenyAction' in kwargs:
             custom_deny_action = kwargs['customDenyAction']
+        if custom_deny_action is None:
+            raise TypeError("Missing 'custom_deny_action' argument")
 
         _setter("config_id", config_id)
         _setter("custom_deny_action", custom_deny_action)
@@ -79,13 +83,13 @@ class _BotmanCustomDenyActionState:
              action_id: Optional[pulumi.Input[str]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
              custom_deny_action: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actionId' in kwargs:
+        if action_id is None and 'actionId' in kwargs:
             action_id = kwargs['actionId']
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'customDenyAction' in kwargs:
+        if custom_deny_action is None and 'customDenyAction' in kwargs:
             custom_deny_action = kwargs['customDenyAction']
 
         if action_id is not None:

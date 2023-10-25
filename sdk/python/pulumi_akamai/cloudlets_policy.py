@@ -41,21 +41,25 @@ class CloudletsPolicyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             cloudlet_code: pulumi.Input[str],
-             group_id: pulumi.Input[str],
+             cloudlet_code: Optional[pulumi.Input[str]] = None,
+             group_id: Optional[pulumi.Input[str]] = None,
              description: Optional[pulumi.Input[str]] = None,
              match_rule_format: Optional[pulumi.Input[str]] = None,
              match_rules: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cloudletCode' in kwargs:
+        if cloudlet_code is None and 'cloudletCode' in kwargs:
             cloudlet_code = kwargs['cloudletCode']
-        if 'groupId' in kwargs:
+        if cloudlet_code is None:
+            raise TypeError("Missing 'cloudlet_code' argument")
+        if group_id is None and 'groupId' in kwargs:
             group_id = kwargs['groupId']
-        if 'matchRuleFormat' in kwargs:
+        if group_id is None:
+            raise TypeError("Missing 'group_id' argument")
+        if match_rule_format is None and 'matchRuleFormat' in kwargs:
             match_rule_format = kwargs['matchRuleFormat']
-        if 'matchRules' in kwargs:
+        if match_rules is None and 'matchRules' in kwargs:
             match_rules = kwargs['matchRules']
 
         _setter("cloudlet_code", cloudlet_code)
@@ -190,17 +194,17 @@ class _CloudletsPolicyState:
              name: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[int]] = None,
              warnings: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cloudletCode' in kwargs:
+        if cloudlet_code is None and 'cloudletCode' in kwargs:
             cloudlet_code = kwargs['cloudletCode']
-        if 'cloudletId' in kwargs:
+        if cloudlet_id is None and 'cloudletId' in kwargs:
             cloudlet_id = kwargs['cloudletId']
-        if 'groupId' in kwargs:
+        if group_id is None and 'groupId' in kwargs:
             group_id = kwargs['groupId']
-        if 'matchRuleFormat' in kwargs:
+        if match_rule_format is None and 'matchRuleFormat' in kwargs:
             match_rule_format = kwargs['matchRuleFormat']
-        if 'matchRules' in kwargs:
+        if match_rules is None and 'matchRules' in kwargs:
             match_rules = kwargs['matchRules']
 
         if cloudlet_code is not None:

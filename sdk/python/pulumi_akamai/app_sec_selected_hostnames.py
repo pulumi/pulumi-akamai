@@ -32,13 +32,19 @@ class AppSecSelectedHostnamesArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             hostnames: pulumi.Input[Sequence[pulumi.Input[str]]],
-             mode: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             mode: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if hostnames is None:
+            raise TypeError("Missing 'hostnames' argument")
+        if mode is None:
+            raise TypeError("Missing 'mode' argument")
 
         _setter("config_id", config_id)
         _setter("hostnames", hostnames)
@@ -105,9 +111,9 @@ class _AppSecSelectedHostnamesState:
              config_id: Optional[pulumi.Input[int]] = None,
              hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              mode: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
 
         if config_id is not None:

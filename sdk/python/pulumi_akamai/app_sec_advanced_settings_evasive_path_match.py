@@ -32,16 +32,20 @@ class AppSecAdvancedSettingsEvasivePathMatchArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             enable_path_match: pulumi.Input[bool],
+             config_id: Optional[pulumi.Input[int]] = None,
+             enable_path_match: Optional[pulumi.Input[bool]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'enablePathMatch' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if enable_path_match is None and 'enablePathMatch' in kwargs:
             enable_path_match = kwargs['enablePathMatch']
-        if 'securityPolicyId' in kwargs:
+        if enable_path_match is None:
+            raise TypeError("Missing 'enable_path_match' argument")
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
 
         _setter("config_id", config_id)
@@ -110,13 +114,13 @@ class _AppSecAdvancedSettingsEvasivePathMatchState:
              config_id: Optional[pulumi.Input[int]] = None,
              enable_path_match: Optional[pulumi.Input[bool]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'enablePathMatch' in kwargs:
+        if enable_path_match is None and 'enablePathMatch' in kwargs:
             enable_path_match = kwargs['enablePathMatch']
-        if 'securityPolicyId' in kwargs:
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
 
         if config_id is not None:

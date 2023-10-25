@@ -38,17 +38,23 @@ class AppSecActivationsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             notification_emails: pulumi.Input[Sequence[pulumi.Input[str]]],
-             version: pulumi.Input[int],
+             config_id: Optional[pulumi.Input[int]] = None,
+             notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             version: Optional[pulumi.Input[int]] = None,
              network: Optional[pulumi.Input[str]] = None,
              note: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'notificationEmails' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if notification_emails is None and 'notificationEmails' in kwargs:
             notification_emails = kwargs['notificationEmails']
+        if notification_emails is None:
+            raise TypeError("Missing 'notification_emails' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("config_id", config_id)
         _setter("notification_emails", notification_emails)
@@ -155,11 +161,11 @@ class _AppSecActivationsState:
              notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              status: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'notificationEmails' in kwargs:
+        if notification_emails is None and 'notificationEmails' in kwargs:
             notification_emails = kwargs['notificationEmails']
 
         if config_id is not None:

@@ -67,43 +67,63 @@ class CpsDvEnrollmentArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             admin_contact: pulumi.Input['CpsDvEnrollmentAdminContactArgs'],
-             common_name: pulumi.Input[str],
-             contract_id: pulumi.Input[str],
-             csr: pulumi.Input['CpsDvEnrollmentCsrArgs'],
-             network_configuration: pulumi.Input['CpsDvEnrollmentNetworkConfigurationArgs'],
-             organization: pulumi.Input['CpsDvEnrollmentOrganizationArgs'],
-             secure_network: pulumi.Input[str],
-             signature_algorithm: pulumi.Input[str],
-             sni_only: pulumi.Input[bool],
-             tech_contact: pulumi.Input['CpsDvEnrollmentTechContactArgs'],
+             admin_contact: Optional[pulumi.Input['CpsDvEnrollmentAdminContactArgs']] = None,
+             common_name: Optional[pulumi.Input[str]] = None,
+             contract_id: Optional[pulumi.Input[str]] = None,
+             csr: Optional[pulumi.Input['CpsDvEnrollmentCsrArgs']] = None,
+             network_configuration: Optional[pulumi.Input['CpsDvEnrollmentNetworkConfigurationArgs']] = None,
+             organization: Optional[pulumi.Input['CpsDvEnrollmentOrganizationArgs']] = None,
+             secure_network: Optional[pulumi.Input[str]] = None,
+             signature_algorithm: Optional[pulumi.Input[str]] = None,
+             sni_only: Optional[pulumi.Input[bool]] = None,
+             tech_contact: Optional[pulumi.Input['CpsDvEnrollmentTechContactArgs']] = None,
              acknowledge_pre_verification_warnings: Optional[pulumi.Input[bool]] = None,
              allow_duplicate_common_name: Optional[pulumi.Input[bool]] = None,
              certificate_chain_type: Optional[pulumi.Input[str]] = None,
              sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'adminContact' in kwargs:
+        if admin_contact is None and 'adminContact' in kwargs:
             admin_contact = kwargs['adminContact']
-        if 'commonName' in kwargs:
+        if admin_contact is None:
+            raise TypeError("Missing 'admin_contact' argument")
+        if common_name is None and 'commonName' in kwargs:
             common_name = kwargs['commonName']
-        if 'contractId' in kwargs:
+        if common_name is None:
+            raise TypeError("Missing 'common_name' argument")
+        if contract_id is None and 'contractId' in kwargs:
             contract_id = kwargs['contractId']
-        if 'networkConfiguration' in kwargs:
+        if contract_id is None:
+            raise TypeError("Missing 'contract_id' argument")
+        if csr is None:
+            raise TypeError("Missing 'csr' argument")
+        if network_configuration is None and 'networkConfiguration' in kwargs:
             network_configuration = kwargs['networkConfiguration']
-        if 'secureNetwork' in kwargs:
+        if network_configuration is None:
+            raise TypeError("Missing 'network_configuration' argument")
+        if organization is None:
+            raise TypeError("Missing 'organization' argument")
+        if secure_network is None and 'secureNetwork' in kwargs:
             secure_network = kwargs['secureNetwork']
-        if 'signatureAlgorithm' in kwargs:
+        if secure_network is None:
+            raise TypeError("Missing 'secure_network' argument")
+        if signature_algorithm is None and 'signatureAlgorithm' in kwargs:
             signature_algorithm = kwargs['signatureAlgorithm']
-        if 'sniOnly' in kwargs:
+        if signature_algorithm is None:
+            raise TypeError("Missing 'signature_algorithm' argument")
+        if sni_only is None and 'sniOnly' in kwargs:
             sni_only = kwargs['sniOnly']
-        if 'techContact' in kwargs:
+        if sni_only is None:
+            raise TypeError("Missing 'sni_only' argument")
+        if tech_contact is None and 'techContact' in kwargs:
             tech_contact = kwargs['techContact']
-        if 'acknowledgePreVerificationWarnings' in kwargs:
+        if tech_contact is None:
+            raise TypeError("Missing 'tech_contact' argument")
+        if acknowledge_pre_verification_warnings is None and 'acknowledgePreVerificationWarnings' in kwargs:
             acknowledge_pre_verification_warnings = kwargs['acknowledgePreVerificationWarnings']
-        if 'allowDuplicateCommonName' in kwargs:
+        if allow_duplicate_common_name is None and 'allowDuplicateCommonName' in kwargs:
             allow_duplicate_common_name = kwargs['allowDuplicateCommonName']
-        if 'certificateChainType' in kwargs:
+        if certificate_chain_type is None and 'certificateChainType' in kwargs:
             certificate_chain_type = kwargs['certificateChainType']
 
         _setter("admin_contact", admin_contact)
@@ -382,39 +402,39 @@ class _CpsDvEnrollmentState:
              sni_only: Optional[pulumi.Input[bool]] = None,
              tech_contact: Optional[pulumi.Input['CpsDvEnrollmentTechContactArgs']] = None,
              validation_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'acknowledgePreVerificationWarnings' in kwargs:
+        if acknowledge_pre_verification_warnings is None and 'acknowledgePreVerificationWarnings' in kwargs:
             acknowledge_pre_verification_warnings = kwargs['acknowledgePreVerificationWarnings']
-        if 'adminContact' in kwargs:
+        if admin_contact is None and 'adminContact' in kwargs:
             admin_contact = kwargs['adminContact']
-        if 'allowDuplicateCommonName' in kwargs:
+        if allow_duplicate_common_name is None and 'allowDuplicateCommonName' in kwargs:
             allow_duplicate_common_name = kwargs['allowDuplicateCommonName']
-        if 'certificateChainType' in kwargs:
+        if certificate_chain_type is None and 'certificateChainType' in kwargs:
             certificate_chain_type = kwargs['certificateChainType']
-        if 'certificateType' in kwargs:
+        if certificate_type is None and 'certificateType' in kwargs:
             certificate_type = kwargs['certificateType']
-        if 'commonName' in kwargs:
+        if common_name is None and 'commonName' in kwargs:
             common_name = kwargs['commonName']
-        if 'contractId' in kwargs:
+        if contract_id is None and 'contractId' in kwargs:
             contract_id = kwargs['contractId']
-        if 'dnsChallenges' in kwargs:
+        if dns_challenges is None and 'dnsChallenges' in kwargs:
             dns_challenges = kwargs['dnsChallenges']
-        if 'httpChallenges' in kwargs:
+        if http_challenges is None and 'httpChallenges' in kwargs:
             http_challenges = kwargs['httpChallenges']
-        if 'networkConfiguration' in kwargs:
+        if network_configuration is None and 'networkConfiguration' in kwargs:
             network_configuration = kwargs['networkConfiguration']
-        if 'registrationAuthority' in kwargs:
+        if registration_authority is None and 'registrationAuthority' in kwargs:
             registration_authority = kwargs['registrationAuthority']
-        if 'secureNetwork' in kwargs:
+        if secure_network is None and 'secureNetwork' in kwargs:
             secure_network = kwargs['secureNetwork']
-        if 'signatureAlgorithm' in kwargs:
+        if signature_algorithm is None and 'signatureAlgorithm' in kwargs:
             signature_algorithm = kwargs['signatureAlgorithm']
-        if 'sniOnly' in kwargs:
+        if sni_only is None and 'sniOnly' in kwargs:
             sni_only = kwargs['sniOnly']
-        if 'techContact' in kwargs:
+        if tech_contact is None and 'techContact' in kwargs:
             tech_contact = kwargs['techContact']
-        if 'validationType' in kwargs:
+        if validation_type is None and 'validationType' in kwargs:
             validation_type = kwargs['validationType']
 
         if acknowledge_pre_verification_warnings is not None:
@@ -775,11 +795,7 @@ class CpsDvEnrollment(pulumi.CustomResource):
             __props__ = CpsDvEnrollmentArgs.__new__(CpsDvEnrollmentArgs)
 
             __props__.__dict__["acknowledge_pre_verification_warnings"] = acknowledge_pre_verification_warnings
-            if admin_contact is not None and not isinstance(admin_contact, CpsDvEnrollmentAdminContactArgs):
-                admin_contact = admin_contact or {}
-                def _setter(key, value):
-                    admin_contact[key] = value
-                CpsDvEnrollmentAdminContactArgs._configure(_setter, **admin_contact)
+            admin_contact = _utilities.configure(admin_contact, CpsDvEnrollmentAdminContactArgs, True)
             if admin_contact is None and not opts.urn:
                 raise TypeError("Missing required property 'admin_contact'")
             __props__.__dict__["admin_contact"] = admin_contact
@@ -791,27 +807,15 @@ class CpsDvEnrollment(pulumi.CustomResource):
             if contract_id is None and not opts.urn:
                 raise TypeError("Missing required property 'contract_id'")
             __props__.__dict__["contract_id"] = contract_id
-            if csr is not None and not isinstance(csr, CpsDvEnrollmentCsrArgs):
-                csr = csr or {}
-                def _setter(key, value):
-                    csr[key] = value
-                CpsDvEnrollmentCsrArgs._configure(_setter, **csr)
+            csr = _utilities.configure(csr, CpsDvEnrollmentCsrArgs, True)
             if csr is None and not opts.urn:
                 raise TypeError("Missing required property 'csr'")
             __props__.__dict__["csr"] = csr
-            if network_configuration is not None and not isinstance(network_configuration, CpsDvEnrollmentNetworkConfigurationArgs):
-                network_configuration = network_configuration or {}
-                def _setter(key, value):
-                    network_configuration[key] = value
-                CpsDvEnrollmentNetworkConfigurationArgs._configure(_setter, **network_configuration)
+            network_configuration = _utilities.configure(network_configuration, CpsDvEnrollmentNetworkConfigurationArgs, True)
             if network_configuration is None and not opts.urn:
                 raise TypeError("Missing required property 'network_configuration'")
             __props__.__dict__["network_configuration"] = network_configuration
-            if organization is not None and not isinstance(organization, CpsDvEnrollmentOrganizationArgs):
-                organization = organization or {}
-                def _setter(key, value):
-                    organization[key] = value
-                CpsDvEnrollmentOrganizationArgs._configure(_setter, **organization)
+            organization = _utilities.configure(organization, CpsDvEnrollmentOrganizationArgs, True)
             if organization is None and not opts.urn:
                 raise TypeError("Missing required property 'organization'")
             __props__.__dict__["organization"] = organization
@@ -825,11 +829,7 @@ class CpsDvEnrollment(pulumi.CustomResource):
             if sni_only is None and not opts.urn:
                 raise TypeError("Missing required property 'sni_only'")
             __props__.__dict__["sni_only"] = sni_only
-            if tech_contact is not None and not isinstance(tech_contact, CpsDvEnrollmentTechContactArgs):
-                tech_contact = tech_contact or {}
-                def _setter(key, value):
-                    tech_contact[key] = value
-                CpsDvEnrollmentTechContactArgs._configure(_setter, **tech_contact)
+            tech_contact = _utilities.configure(tech_contact, CpsDvEnrollmentTechContactArgs, True)
             if tech_contact is None and not opts.urn:
                 raise TypeError("Missing required property 'tech_contact'")
             __props__.__dict__["tech_contact"] = tech_contact

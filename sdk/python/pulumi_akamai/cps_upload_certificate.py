@@ -50,7 +50,7 @@ class CpsUploadCertificateArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             enrollment_id: pulumi.Input[int],
+             enrollment_id: Optional[pulumi.Input[int]] = None,
              acknowledge_change_management: Optional[pulumi.Input[bool]] = None,
              acknowledge_post_verification_warnings: Optional[pulumi.Input[bool]] = None,
              auto_approve_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -59,25 +59,27 @@ class CpsUploadCertificateArgs:
              trust_chain_ecdsa_pem: Optional[pulumi.Input[str]] = None,
              trust_chain_rsa_pem: Optional[pulumi.Input[str]] = None,
              wait_for_deployment: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'enrollmentId' in kwargs:
+        if enrollment_id is None and 'enrollmentId' in kwargs:
             enrollment_id = kwargs['enrollmentId']
-        if 'acknowledgeChangeManagement' in kwargs:
+        if enrollment_id is None:
+            raise TypeError("Missing 'enrollment_id' argument")
+        if acknowledge_change_management is None and 'acknowledgeChangeManagement' in kwargs:
             acknowledge_change_management = kwargs['acknowledgeChangeManagement']
-        if 'acknowledgePostVerificationWarnings' in kwargs:
+        if acknowledge_post_verification_warnings is None and 'acknowledgePostVerificationWarnings' in kwargs:
             acknowledge_post_verification_warnings = kwargs['acknowledgePostVerificationWarnings']
-        if 'autoApproveWarnings' in kwargs:
+        if auto_approve_warnings is None and 'autoApproveWarnings' in kwargs:
             auto_approve_warnings = kwargs['autoApproveWarnings']
-        if 'certificateEcdsaPem' in kwargs:
+        if certificate_ecdsa_pem is None and 'certificateEcdsaPem' in kwargs:
             certificate_ecdsa_pem = kwargs['certificateEcdsaPem']
-        if 'certificateRsaPem' in kwargs:
+        if certificate_rsa_pem is None and 'certificateRsaPem' in kwargs:
             certificate_rsa_pem = kwargs['certificateRsaPem']
-        if 'trustChainEcdsaPem' in kwargs:
+        if trust_chain_ecdsa_pem is None and 'trustChainEcdsaPem' in kwargs:
             trust_chain_ecdsa_pem = kwargs['trustChainEcdsaPem']
-        if 'trustChainRsaPem' in kwargs:
+        if trust_chain_rsa_pem is None and 'trustChainRsaPem' in kwargs:
             trust_chain_rsa_pem = kwargs['trustChainRsaPem']
-        if 'waitForDeployment' in kwargs:
+        if wait_for_deployment is None and 'waitForDeployment' in kwargs:
             wait_for_deployment = kwargs['waitForDeployment']
 
         _setter("enrollment_id", enrollment_id)
@@ -259,27 +261,27 @@ class _CpsUploadCertificateState:
              trust_chain_rsa_pem: Optional[pulumi.Input[str]] = None,
              unacknowledged_warnings: Optional[pulumi.Input[bool]] = None,
              wait_for_deployment: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'acknowledgeChangeManagement' in kwargs:
+        if acknowledge_change_management is None and 'acknowledgeChangeManagement' in kwargs:
             acknowledge_change_management = kwargs['acknowledgeChangeManagement']
-        if 'acknowledgePostVerificationWarnings' in kwargs:
+        if acknowledge_post_verification_warnings is None and 'acknowledgePostVerificationWarnings' in kwargs:
             acknowledge_post_verification_warnings = kwargs['acknowledgePostVerificationWarnings']
-        if 'autoApproveWarnings' in kwargs:
+        if auto_approve_warnings is None and 'autoApproveWarnings' in kwargs:
             auto_approve_warnings = kwargs['autoApproveWarnings']
-        if 'certificateEcdsaPem' in kwargs:
+        if certificate_ecdsa_pem is None and 'certificateEcdsaPem' in kwargs:
             certificate_ecdsa_pem = kwargs['certificateEcdsaPem']
-        if 'certificateRsaPem' in kwargs:
+        if certificate_rsa_pem is None and 'certificateRsaPem' in kwargs:
             certificate_rsa_pem = kwargs['certificateRsaPem']
-        if 'enrollmentId' in kwargs:
+        if enrollment_id is None and 'enrollmentId' in kwargs:
             enrollment_id = kwargs['enrollmentId']
-        if 'trustChainEcdsaPem' in kwargs:
+        if trust_chain_ecdsa_pem is None and 'trustChainEcdsaPem' in kwargs:
             trust_chain_ecdsa_pem = kwargs['trustChainEcdsaPem']
-        if 'trustChainRsaPem' in kwargs:
+        if trust_chain_rsa_pem is None and 'trustChainRsaPem' in kwargs:
             trust_chain_rsa_pem = kwargs['trustChainRsaPem']
-        if 'unacknowledgedWarnings' in kwargs:
+        if unacknowledged_warnings is None and 'unacknowledgedWarnings' in kwargs:
             unacknowledged_warnings = kwargs['unacknowledgedWarnings']
-        if 'waitForDeployment' in kwargs:
+        if wait_for_deployment is None and 'waitForDeployment' in kwargs:
             wait_for_deployment = kwargs['waitForDeployment']
 
         if acknowledge_change_management is not None:

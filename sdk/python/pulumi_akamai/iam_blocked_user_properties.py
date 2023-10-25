@@ -32,17 +32,23 @@ class IamBlockedUserPropertiesArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             blocked_properties: pulumi.Input[Sequence[pulumi.Input[int]]],
-             group_id: pulumi.Input[int],
-             identity_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             blocked_properties: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             group_id: Optional[pulumi.Input[int]] = None,
+             identity_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'blockedProperties' in kwargs:
+        if blocked_properties is None and 'blockedProperties' in kwargs:
             blocked_properties = kwargs['blockedProperties']
-        if 'groupId' in kwargs:
+        if blocked_properties is None:
+            raise TypeError("Missing 'blocked_properties' argument")
+        if group_id is None and 'groupId' in kwargs:
             group_id = kwargs['groupId']
-        if 'identityId' in kwargs:
+        if group_id is None:
+            raise TypeError("Missing 'group_id' argument")
+        if identity_id is None and 'identityId' in kwargs:
             identity_id = kwargs['identityId']
+        if identity_id is None:
+            raise TypeError("Missing 'identity_id' argument")
 
         _setter("blocked_properties", blocked_properties)
         _setter("group_id", group_id)
@@ -109,13 +115,13 @@ class _IamBlockedUserPropertiesState:
              blocked_properties: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
              group_id: Optional[pulumi.Input[int]] = None,
              identity_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'blockedProperties' in kwargs:
+        if blocked_properties is None and 'blockedProperties' in kwargs:
             blocked_properties = kwargs['blockedProperties']
-        if 'groupId' in kwargs:
+        if group_id is None and 'groupId' in kwargs:
             group_id = kwargs['groupId']
-        if 'identityId' in kwargs:
+        if identity_id is None and 'identityId' in kwargs:
             identity_id = kwargs['identityId']
 
         if blocked_properties is not None:

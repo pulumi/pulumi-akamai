@@ -27,14 +27,18 @@ class BotmanChallengeActionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             challenge_action: pulumi.Input[str],
-             config_id: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             challenge_action: Optional[pulumi.Input[str]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'challengeAction' in kwargs:
+        if challenge_action is None and 'challengeAction' in kwargs:
             challenge_action = kwargs['challengeAction']
-        if 'configId' in kwargs:
+        if challenge_action is None:
+            raise TypeError("Missing 'challenge_action' argument")
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
 
         _setter("challenge_action", challenge_action)
         _setter("config_id", config_id)
@@ -79,13 +83,13 @@ class _BotmanChallengeActionState:
              action_id: Optional[pulumi.Input[str]] = None,
              challenge_action: Optional[pulumi.Input[str]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actionId' in kwargs:
+        if action_id is None and 'actionId' in kwargs:
             action_id = kwargs['actionId']
-        if 'challengeAction' in kwargs:
+        if challenge_action is None and 'challengeAction' in kwargs:
             challenge_action = kwargs['challengeAction']
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
 
         if action_id is not None:

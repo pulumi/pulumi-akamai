@@ -27,14 +27,18 @@ class BotmanChallengeInterceptionRulesArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             challenge_interception_rules: pulumi.Input[str],
-             config_id: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             challenge_interception_rules: Optional[pulumi.Input[str]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'challengeInterceptionRules' in kwargs:
+        if challenge_interception_rules is None and 'challengeInterceptionRules' in kwargs:
             challenge_interception_rules = kwargs['challengeInterceptionRules']
-        if 'configId' in kwargs:
+        if challenge_interception_rules is None:
+            raise TypeError("Missing 'challenge_interception_rules' argument")
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
 
         _setter("challenge_interception_rules", challenge_interception_rules)
         _setter("config_id", config_id)
@@ -76,11 +80,11 @@ class _BotmanChallengeInterceptionRulesState:
              _setter: Callable[[Any, Any], None],
              challenge_interception_rules: Optional[pulumi.Input[str]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'challengeInterceptionRules' in kwargs:
+        if challenge_interception_rules is None and 'challengeInterceptionRules' in kwargs:
             challenge_interception_rules = kwargs['challengeInterceptionRules']
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
 
         if challenge_interception_rules is not None:

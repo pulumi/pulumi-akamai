@@ -35,19 +35,25 @@ class AppSecEvalArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             eval_operation: pulumi.Input[str],
-             security_policy_id: pulumi.Input[str],
+             config_id: Optional[pulumi.Input[int]] = None,
+             eval_operation: Optional[pulumi.Input[str]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
              eval_mode: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'evalOperation' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if eval_operation is None and 'evalOperation' in kwargs:
             eval_operation = kwargs['evalOperation']
-        if 'securityPolicyId' in kwargs:
+        if eval_operation is None:
+            raise TypeError("Missing 'eval_operation' argument")
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
-        if 'evalMode' in kwargs:
+        if security_policy_id is None:
+            raise TypeError("Missing 'security_policy_id' argument")
+        if eval_mode is None and 'evalMode' in kwargs:
             eval_mode = kwargs['evalMode']
 
         _setter("config_id", config_id)
@@ -149,23 +155,23 @@ class _AppSecEvalState:
              evaluating_ruleset: Optional[pulumi.Input[str]] = None,
              expiration_date: Optional[pulumi.Input[str]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'currentRuleset' in kwargs:
+        if current_ruleset is None and 'currentRuleset' in kwargs:
             current_ruleset = kwargs['currentRuleset']
-        if 'evalMode' in kwargs:
+        if eval_mode is None and 'evalMode' in kwargs:
             eval_mode = kwargs['evalMode']
-        if 'evalOperation' in kwargs:
+        if eval_operation is None and 'evalOperation' in kwargs:
             eval_operation = kwargs['evalOperation']
-        if 'evalStatus' in kwargs:
+        if eval_status is None and 'evalStatus' in kwargs:
             eval_status = kwargs['evalStatus']
-        if 'evaluatingRuleset' in kwargs:
+        if evaluating_ruleset is None and 'evaluatingRuleset' in kwargs:
             evaluating_ruleset = kwargs['evaluatingRuleset']
-        if 'expirationDate' in kwargs:
+        if expiration_date is None and 'expirationDate' in kwargs:
             expiration_date = kwargs['expirationDate']
-        if 'securityPolicyId' in kwargs:
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
 
         if config_id is not None:

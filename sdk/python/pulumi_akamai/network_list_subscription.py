@@ -27,12 +27,16 @@ class NetworkListSubscriptionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             network_lists: pulumi.Input[Sequence[pulumi.Input[str]]],
-             recipients: pulumi.Input[Sequence[pulumi.Input[str]]],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             recipients: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkLists' in kwargs:
+        if network_lists is None and 'networkLists' in kwargs:
             network_lists = kwargs['networkLists']
+        if network_lists is None:
+            raise TypeError("Missing 'network_lists' argument")
+        if recipients is None:
+            raise TypeError("Missing 'recipients' argument")
 
         _setter("network_lists", network_lists)
         _setter("recipients", recipients)
@@ -74,9 +78,9 @@ class _NetworkListSubscriptionState:
              _setter: Callable[[Any, Any], None],
              network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              recipients: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkLists' in kwargs:
+        if network_lists is None and 'networkLists' in kwargs:
             network_lists = kwargs['networkLists']
 
         if network_lists is not None:

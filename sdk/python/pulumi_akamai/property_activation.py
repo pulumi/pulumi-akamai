@@ -46,26 +46,32 @@ class PropertyActivationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             contacts: pulumi.Input[Sequence[pulumi.Input[str]]],
-             property_id: pulumi.Input[str],
-             version: pulumi.Input[int],
+             contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             property_id: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[int]] = None,
              activation_id: Optional[pulumi.Input[str]] = None,
              auto_acknowledge_rule_warnings: Optional[pulumi.Input[bool]] = None,
              compliance_record: Optional[pulumi.Input['PropertyActivationComplianceRecordArgs']] = None,
              network: Optional[pulumi.Input[str]] = None,
              note: Optional[pulumi.Input[str]] = None,
              rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleErrorArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'propertyId' in kwargs:
+        if contacts is None:
+            raise TypeError("Missing 'contacts' argument")
+        if property_id is None and 'propertyId' in kwargs:
             property_id = kwargs['propertyId']
-        if 'activationId' in kwargs:
+        if property_id is None:
+            raise TypeError("Missing 'property_id' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
+        if activation_id is None and 'activationId' in kwargs:
             activation_id = kwargs['activationId']
-        if 'autoAcknowledgeRuleWarnings' in kwargs:
+        if auto_acknowledge_rule_warnings is None and 'autoAcknowledgeRuleWarnings' in kwargs:
             auto_acknowledge_rule_warnings = kwargs['autoAcknowledgeRuleWarnings']
-        if 'complianceRecord' in kwargs:
+        if compliance_record is None and 'complianceRecord' in kwargs:
             compliance_record = kwargs['complianceRecord']
-        if 'ruleErrors' in kwargs:
+        if rule_errors is None and 'ruleErrors' in kwargs:
             rule_errors = kwargs['ruleErrors']
 
         _setter("contacts", contacts)
@@ -226,17 +232,17 @@ class _PropertyActivationState:
              status: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[int]] = None,
              warnings: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'activationId' in kwargs:
+        if activation_id is None and 'activationId' in kwargs:
             activation_id = kwargs['activationId']
-        if 'autoAcknowledgeRuleWarnings' in kwargs:
+        if auto_acknowledge_rule_warnings is None and 'autoAcknowledgeRuleWarnings' in kwargs:
             auto_acknowledge_rule_warnings = kwargs['autoAcknowledgeRuleWarnings']
-        if 'complianceRecord' in kwargs:
+        if compliance_record is None and 'complianceRecord' in kwargs:
             compliance_record = kwargs['complianceRecord']
-        if 'propertyId' in kwargs:
+        if property_id is None and 'propertyId' in kwargs:
             property_id = kwargs['propertyId']
-        if 'ruleErrors' in kwargs:
+        if rule_errors is None and 'ruleErrors' in kwargs:
             rule_errors = kwargs['ruleErrors']
 
         if activation_id is not None:
@@ -452,11 +458,7 @@ class PropertyActivation(pulumi.CustomResource):
 
             __props__.__dict__["activation_id"] = activation_id
             __props__.__dict__["auto_acknowledge_rule_warnings"] = auto_acknowledge_rule_warnings
-            if compliance_record is not None and not isinstance(compliance_record, PropertyActivationComplianceRecordArgs):
-                compliance_record = compliance_record or {}
-                def _setter(key, value):
-                    compliance_record[key] = value
-                PropertyActivationComplianceRecordArgs._configure(_setter, **compliance_record)
+            compliance_record = _utilities.configure(compliance_record, PropertyActivationComplianceRecordArgs, True)
             __props__.__dict__["compliance_record"] = compliance_record
             if contacts is None and not opts.urn:
                 raise TypeError("Missing required property 'contacts'")

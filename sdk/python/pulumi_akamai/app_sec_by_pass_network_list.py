@@ -32,17 +32,23 @@ class AppSecByPassNetworkListArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bypass_network_lists: pulumi.Input[Sequence[pulumi.Input[str]]],
-             config_id: pulumi.Input[int],
-             security_policy_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bypass_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bypassNetworkLists' in kwargs:
+        if bypass_network_lists is None and 'bypassNetworkLists' in kwargs:
             bypass_network_lists = kwargs['bypassNetworkLists']
-        if 'configId' in kwargs:
+        if bypass_network_lists is None:
+            raise TypeError("Missing 'bypass_network_lists' argument")
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'securityPolicyId' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
+        if security_policy_id is None:
+            raise TypeError("Missing 'security_policy_id' argument")
 
         _setter("bypass_network_lists", bypass_network_lists)
         _setter("config_id", config_id)
@@ -109,13 +115,13 @@ class _AppSecByPassNetworkListState:
              bypass_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'bypassNetworkLists' in kwargs:
+        if bypass_network_lists is None and 'bypassNetworkLists' in kwargs:
             bypass_network_lists = kwargs['bypassNetworkLists']
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'securityPolicyId' in kwargs:
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
 
         if bypass_network_lists is not None:

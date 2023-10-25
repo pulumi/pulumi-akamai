@@ -40,20 +40,28 @@ class ImagingPolicyVideoArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             contract_id: pulumi.Input[str],
-             json: pulumi.Input[str],
-             policy_id: pulumi.Input[str],
-             policyset_id: pulumi.Input[str],
+             contract_id: Optional[pulumi.Input[str]] = None,
+             json: Optional[pulumi.Input[str]] = None,
+             policy_id: Optional[pulumi.Input[str]] = None,
+             policyset_id: Optional[pulumi.Input[str]] = None,
              activate_on_production: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contractId' in kwargs:
+        if contract_id is None and 'contractId' in kwargs:
             contract_id = kwargs['contractId']
-        if 'policyId' in kwargs:
+        if contract_id is None:
+            raise TypeError("Missing 'contract_id' argument")
+        if json is None:
+            raise TypeError("Missing 'json' argument")
+        if policy_id is None and 'policyId' in kwargs:
             policy_id = kwargs['policyId']
-        if 'policysetId' in kwargs:
+        if policy_id is None:
+            raise TypeError("Missing 'policy_id' argument")
+        if policyset_id is None and 'policysetId' in kwargs:
             policyset_id = kwargs['policysetId']
-        if 'activateOnProduction' in kwargs:
+        if policyset_id is None:
+            raise TypeError("Missing 'policyset_id' argument")
+        if activate_on_production is None and 'activateOnProduction' in kwargs:
             activate_on_production = kwargs['activateOnProduction']
 
         _setter("contract_id", contract_id)
@@ -164,15 +172,15 @@ class _ImagingPolicyVideoState:
              policy_id: Optional[pulumi.Input[str]] = None,
              policyset_id: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'activateOnProduction' in kwargs:
+        if activate_on_production is None and 'activateOnProduction' in kwargs:
             activate_on_production = kwargs['activateOnProduction']
-        if 'contractId' in kwargs:
+        if contract_id is None and 'contractId' in kwargs:
             contract_id = kwargs['contractId']
-        if 'policyId' in kwargs:
+        if policy_id is None and 'policyId' in kwargs:
             policy_id = kwargs['policyId']
-        if 'policysetId' in kwargs:
+        if policyset_id is None and 'policysetId' in kwargs:
             policyset_id = kwargs['policysetId']
 
         if activate_on_production is not None:

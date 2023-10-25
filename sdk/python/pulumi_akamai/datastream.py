@@ -75,13 +75,13 @@ class DatastreamArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             active: pulumi.Input[bool],
-             contract_id: pulumi.Input[str],
-             dataset_fields: pulumi.Input[Sequence[pulumi.Input[int]]],
-             delivery_configuration: pulumi.Input['DatastreamDeliveryConfigurationArgs'],
-             group_id: pulumi.Input[str],
-             properties: pulumi.Input[Sequence[pulumi.Input[str]]],
-             stream_name: pulumi.Input[str],
+             active: Optional[pulumi.Input[bool]] = None,
+             contract_id: Optional[pulumi.Input[str]] = None,
+             dataset_fields: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             delivery_configuration: Optional[pulumi.Input['DatastreamDeliveryConfigurationArgs']] = None,
+             group_id: Optional[pulumi.Input[str]] = None,
+             properties: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             stream_name: Optional[pulumi.Input[str]] = None,
              azure_connector: Optional[pulumi.Input['DatastreamAzureConnectorArgs']] = None,
              collect_midgress: Optional[pulumi.Input[bool]] = None,
              datadog_connector: Optional[pulumi.Input['DatastreamDatadogConnectorArgs']] = None,
@@ -95,43 +95,57 @@ class DatastreamArgs:
              s3_connector: Optional[pulumi.Input['DatastreamS3ConnectorArgs']] = None,
              splunk_connector: Optional[pulumi.Input['DatastreamSplunkConnectorArgs']] = None,
              sumologic_connector: Optional[pulumi.Input['DatastreamSumologicConnectorArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contractId' in kwargs:
+        if active is None:
+            raise TypeError("Missing 'active' argument")
+        if contract_id is None and 'contractId' in kwargs:
             contract_id = kwargs['contractId']
-        if 'datasetFields' in kwargs:
+        if contract_id is None:
+            raise TypeError("Missing 'contract_id' argument")
+        if dataset_fields is None and 'datasetFields' in kwargs:
             dataset_fields = kwargs['datasetFields']
-        if 'deliveryConfiguration' in kwargs:
+        if dataset_fields is None:
+            raise TypeError("Missing 'dataset_fields' argument")
+        if delivery_configuration is None and 'deliveryConfiguration' in kwargs:
             delivery_configuration = kwargs['deliveryConfiguration']
-        if 'groupId' in kwargs:
+        if delivery_configuration is None:
+            raise TypeError("Missing 'delivery_configuration' argument")
+        if group_id is None and 'groupId' in kwargs:
             group_id = kwargs['groupId']
-        if 'streamName' in kwargs:
+        if group_id is None:
+            raise TypeError("Missing 'group_id' argument")
+        if properties is None:
+            raise TypeError("Missing 'properties' argument")
+        if stream_name is None and 'streamName' in kwargs:
             stream_name = kwargs['streamName']
-        if 'azureConnector' in kwargs:
+        if stream_name is None:
+            raise TypeError("Missing 'stream_name' argument")
+        if azure_connector is None and 'azureConnector' in kwargs:
             azure_connector = kwargs['azureConnector']
-        if 'collectMidgress' in kwargs:
+        if collect_midgress is None and 'collectMidgress' in kwargs:
             collect_midgress = kwargs['collectMidgress']
-        if 'datadogConnector' in kwargs:
+        if datadog_connector is None and 'datadogConnector' in kwargs:
             datadog_connector = kwargs['datadogConnector']
-        if 'elasticsearchConnector' in kwargs:
+        if elasticsearch_connector is None and 'elasticsearchConnector' in kwargs:
             elasticsearch_connector = kwargs['elasticsearchConnector']
-        if 'gcsConnector' in kwargs:
+        if gcs_connector is None and 'gcsConnector' in kwargs:
             gcs_connector = kwargs['gcsConnector']
-        if 'httpsConnector' in kwargs:
+        if https_connector is None and 'httpsConnector' in kwargs:
             https_connector = kwargs['httpsConnector']
-        if 'logglyConnector' in kwargs:
+        if loggly_connector is None and 'logglyConnector' in kwargs:
             loggly_connector = kwargs['logglyConnector']
-        if 'newRelicConnector' in kwargs:
+        if new_relic_connector is None and 'newRelicConnector' in kwargs:
             new_relic_connector = kwargs['newRelicConnector']
-        if 'notificationEmails' in kwargs:
+        if notification_emails is None and 'notificationEmails' in kwargs:
             notification_emails = kwargs['notificationEmails']
-        if 'oracleConnector' in kwargs:
+        if oracle_connector is None and 'oracleConnector' in kwargs:
             oracle_connector = kwargs['oracleConnector']
-        if 's3Connector' in kwargs:
+        if s3_connector is None and 's3Connector' in kwargs:
             s3_connector = kwargs['s3Connector']
-        if 'splunkConnector' in kwargs:
+        if splunk_connector is None and 'splunkConnector' in kwargs:
             splunk_connector = kwargs['splunkConnector']
-        if 'sumologicConnector' in kwargs:
+        if sumologic_connector is None and 'sumologicConnector' in kwargs:
             sumologic_connector = kwargs['sumologicConnector']
 
         _setter("active", active)
@@ -491,59 +505,59 @@ class _DatastreamState:
              stream_name: Optional[pulumi.Input[str]] = None,
              stream_version: Optional[pulumi.Input[int]] = None,
              sumologic_connector: Optional[pulumi.Input['DatastreamSumologicConnectorArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'azureConnector' in kwargs:
+        if azure_connector is None and 'azureConnector' in kwargs:
             azure_connector = kwargs['azureConnector']
-        if 'collectMidgress' in kwargs:
+        if collect_midgress is None and 'collectMidgress' in kwargs:
             collect_midgress = kwargs['collectMidgress']
-        if 'contractId' in kwargs:
+        if contract_id is None and 'contractId' in kwargs:
             contract_id = kwargs['contractId']
-        if 'createdBy' in kwargs:
+        if created_by is None and 'createdBy' in kwargs:
             created_by = kwargs['createdBy']
-        if 'createdDate' in kwargs:
+        if created_date is None and 'createdDate' in kwargs:
             created_date = kwargs['createdDate']
-        if 'datadogConnector' in kwargs:
+        if datadog_connector is None and 'datadogConnector' in kwargs:
             datadog_connector = kwargs['datadogConnector']
-        if 'datasetFields' in kwargs:
+        if dataset_fields is None and 'datasetFields' in kwargs:
             dataset_fields = kwargs['datasetFields']
-        if 'deliveryConfiguration' in kwargs:
+        if delivery_configuration is None and 'deliveryConfiguration' in kwargs:
             delivery_configuration = kwargs['deliveryConfiguration']
-        if 'elasticsearchConnector' in kwargs:
+        if elasticsearch_connector is None and 'elasticsearchConnector' in kwargs:
             elasticsearch_connector = kwargs['elasticsearchConnector']
-        if 'gcsConnector' in kwargs:
+        if gcs_connector is None and 'gcsConnector' in kwargs:
             gcs_connector = kwargs['gcsConnector']
-        if 'groupId' in kwargs:
+        if group_id is None and 'groupId' in kwargs:
             group_id = kwargs['groupId']
-        if 'httpsConnector' in kwargs:
+        if https_connector is None and 'httpsConnector' in kwargs:
             https_connector = kwargs['httpsConnector']
-        if 'latestVersion' in kwargs:
+        if latest_version is None and 'latestVersion' in kwargs:
             latest_version = kwargs['latestVersion']
-        if 'logglyConnector' in kwargs:
+        if loggly_connector is None and 'logglyConnector' in kwargs:
             loggly_connector = kwargs['logglyConnector']
-        if 'modifiedBy' in kwargs:
+        if modified_by is None and 'modifiedBy' in kwargs:
             modified_by = kwargs['modifiedBy']
-        if 'modifiedDate' in kwargs:
+        if modified_date is None and 'modifiedDate' in kwargs:
             modified_date = kwargs['modifiedDate']
-        if 'newRelicConnector' in kwargs:
+        if new_relic_connector is None and 'newRelicConnector' in kwargs:
             new_relic_connector = kwargs['newRelicConnector']
-        if 'notificationEmails' in kwargs:
+        if notification_emails is None and 'notificationEmails' in kwargs:
             notification_emails = kwargs['notificationEmails']
-        if 'oracleConnector' in kwargs:
+        if oracle_connector is None and 'oracleConnector' in kwargs:
             oracle_connector = kwargs['oracleConnector']
-        if 'papiJson' in kwargs:
+        if papi_json is None and 'papiJson' in kwargs:
             papi_json = kwargs['papiJson']
-        if 'productId' in kwargs:
+        if product_id is None and 'productId' in kwargs:
             product_id = kwargs['productId']
-        if 's3Connector' in kwargs:
+        if s3_connector is None and 's3Connector' in kwargs:
             s3_connector = kwargs['s3Connector']
-        if 'splunkConnector' in kwargs:
+        if splunk_connector is None and 'splunkConnector' in kwargs:
             splunk_connector = kwargs['splunkConnector']
-        if 'streamName' in kwargs:
+        if stream_name is None and 'streamName' in kwargs:
             stream_name = kwargs['streamName']
-        if 'streamVersion' in kwargs:
+        if stream_version is None and 'streamVersion' in kwargs:
             stream_version = kwargs['streamVersion']
-        if 'sumologicConnector' in kwargs:
+        if sumologic_connector is None and 'sumologicConnector' in kwargs:
             sumologic_connector = kwargs['sumologicConnector']
 
         if active is not None:
@@ -1008,96 +1022,48 @@ class Datastream(pulumi.CustomResource):
             if active is None and not opts.urn:
                 raise TypeError("Missing required property 'active'")
             __props__.__dict__["active"] = active
-            if azure_connector is not None and not isinstance(azure_connector, DatastreamAzureConnectorArgs):
-                azure_connector = azure_connector or {}
-                def _setter(key, value):
-                    azure_connector[key] = value
-                DatastreamAzureConnectorArgs._configure(_setter, **azure_connector)
+            azure_connector = _utilities.configure(azure_connector, DatastreamAzureConnectorArgs, True)
             __props__.__dict__["azure_connector"] = azure_connector
             __props__.__dict__["collect_midgress"] = collect_midgress
             if contract_id is None and not opts.urn:
                 raise TypeError("Missing required property 'contract_id'")
             __props__.__dict__["contract_id"] = contract_id
-            if datadog_connector is not None and not isinstance(datadog_connector, DatastreamDatadogConnectorArgs):
-                datadog_connector = datadog_connector or {}
-                def _setter(key, value):
-                    datadog_connector[key] = value
-                DatastreamDatadogConnectorArgs._configure(_setter, **datadog_connector)
+            datadog_connector = _utilities.configure(datadog_connector, DatastreamDatadogConnectorArgs, True)
             __props__.__dict__["datadog_connector"] = datadog_connector
             if dataset_fields is None and not opts.urn:
                 raise TypeError("Missing required property 'dataset_fields'")
             __props__.__dict__["dataset_fields"] = dataset_fields
-            if delivery_configuration is not None and not isinstance(delivery_configuration, DatastreamDeliveryConfigurationArgs):
-                delivery_configuration = delivery_configuration or {}
-                def _setter(key, value):
-                    delivery_configuration[key] = value
-                DatastreamDeliveryConfigurationArgs._configure(_setter, **delivery_configuration)
+            delivery_configuration = _utilities.configure(delivery_configuration, DatastreamDeliveryConfigurationArgs, True)
             if delivery_configuration is None and not opts.urn:
                 raise TypeError("Missing required property 'delivery_configuration'")
             __props__.__dict__["delivery_configuration"] = delivery_configuration
-            if elasticsearch_connector is not None and not isinstance(elasticsearch_connector, DatastreamElasticsearchConnectorArgs):
-                elasticsearch_connector = elasticsearch_connector or {}
-                def _setter(key, value):
-                    elasticsearch_connector[key] = value
-                DatastreamElasticsearchConnectorArgs._configure(_setter, **elasticsearch_connector)
+            elasticsearch_connector = _utilities.configure(elasticsearch_connector, DatastreamElasticsearchConnectorArgs, True)
             __props__.__dict__["elasticsearch_connector"] = elasticsearch_connector
-            if gcs_connector is not None and not isinstance(gcs_connector, DatastreamGcsConnectorArgs):
-                gcs_connector = gcs_connector or {}
-                def _setter(key, value):
-                    gcs_connector[key] = value
-                DatastreamGcsConnectorArgs._configure(_setter, **gcs_connector)
+            gcs_connector = _utilities.configure(gcs_connector, DatastreamGcsConnectorArgs, True)
             __props__.__dict__["gcs_connector"] = gcs_connector
             if group_id is None and not opts.urn:
                 raise TypeError("Missing required property 'group_id'")
             __props__.__dict__["group_id"] = group_id
-            if https_connector is not None and not isinstance(https_connector, DatastreamHttpsConnectorArgs):
-                https_connector = https_connector or {}
-                def _setter(key, value):
-                    https_connector[key] = value
-                DatastreamHttpsConnectorArgs._configure(_setter, **https_connector)
+            https_connector = _utilities.configure(https_connector, DatastreamHttpsConnectorArgs, True)
             __props__.__dict__["https_connector"] = https_connector
-            if loggly_connector is not None and not isinstance(loggly_connector, DatastreamLogglyConnectorArgs):
-                loggly_connector = loggly_connector or {}
-                def _setter(key, value):
-                    loggly_connector[key] = value
-                DatastreamLogglyConnectorArgs._configure(_setter, **loggly_connector)
+            loggly_connector = _utilities.configure(loggly_connector, DatastreamLogglyConnectorArgs, True)
             __props__.__dict__["loggly_connector"] = loggly_connector
-            if new_relic_connector is not None and not isinstance(new_relic_connector, DatastreamNewRelicConnectorArgs):
-                new_relic_connector = new_relic_connector or {}
-                def _setter(key, value):
-                    new_relic_connector[key] = value
-                DatastreamNewRelicConnectorArgs._configure(_setter, **new_relic_connector)
+            new_relic_connector = _utilities.configure(new_relic_connector, DatastreamNewRelicConnectorArgs, True)
             __props__.__dict__["new_relic_connector"] = new_relic_connector
             __props__.__dict__["notification_emails"] = notification_emails
-            if oracle_connector is not None and not isinstance(oracle_connector, DatastreamOracleConnectorArgs):
-                oracle_connector = oracle_connector or {}
-                def _setter(key, value):
-                    oracle_connector[key] = value
-                DatastreamOracleConnectorArgs._configure(_setter, **oracle_connector)
+            oracle_connector = _utilities.configure(oracle_connector, DatastreamOracleConnectorArgs, True)
             __props__.__dict__["oracle_connector"] = oracle_connector
             if properties is None and not opts.urn:
                 raise TypeError("Missing required property 'properties'")
             __props__.__dict__["properties"] = properties
-            if s3_connector is not None and not isinstance(s3_connector, DatastreamS3ConnectorArgs):
-                s3_connector = s3_connector or {}
-                def _setter(key, value):
-                    s3_connector[key] = value
-                DatastreamS3ConnectorArgs._configure(_setter, **s3_connector)
+            s3_connector = _utilities.configure(s3_connector, DatastreamS3ConnectorArgs, True)
             __props__.__dict__["s3_connector"] = s3_connector
-            if splunk_connector is not None and not isinstance(splunk_connector, DatastreamSplunkConnectorArgs):
-                splunk_connector = splunk_connector or {}
-                def _setter(key, value):
-                    splunk_connector[key] = value
-                DatastreamSplunkConnectorArgs._configure(_setter, **splunk_connector)
+            splunk_connector = _utilities.configure(splunk_connector, DatastreamSplunkConnectorArgs, True)
             __props__.__dict__["splunk_connector"] = splunk_connector
             if stream_name is None and not opts.urn:
                 raise TypeError("Missing required property 'stream_name'")
             __props__.__dict__["stream_name"] = stream_name
-            if sumologic_connector is not None and not isinstance(sumologic_connector, DatastreamSumologicConnectorArgs):
-                sumologic_connector = sumologic_connector or {}
-                def _setter(key, value):
-                    sumologic_connector[key] = value
-                DatastreamSumologicConnectorArgs._configure(_setter, **sumologic_connector)
+            sumologic_connector = _utilities.configure(sumologic_connector, DatastreamSumologicConnectorArgs, True)
             __props__.__dict__["sumologic_connector"] = sumologic_connector
             __props__.__dict__["created_by"] = None
             __props__.__dict__["created_date"] = None

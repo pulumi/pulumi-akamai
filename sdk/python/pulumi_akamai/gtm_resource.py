@@ -55,9 +55,9 @@ class GtmResourceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             aggregation_type: pulumi.Input[str],
-             domain: pulumi.Input[str],
-             type: pulumi.Input[str],
+             aggregation_type: Optional[pulumi.Input[str]] = None,
+             domain: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
              constrained_property: Optional[pulumi.Input[str]] = None,
              decay_rate: Optional[pulumi.Input[float]] = None,
              description: Optional[pulumi.Input[str]] = None,
@@ -70,29 +70,35 @@ class GtmResourceArgs:
              resource_instances: Optional[pulumi.Input[Sequence[pulumi.Input['GtmResourceResourceInstanceArgs']]]] = None,
              upper_bound: Optional[pulumi.Input[int]] = None,
              wait_on_complete: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'aggregationType' in kwargs:
+        if aggregation_type is None and 'aggregationType' in kwargs:
             aggregation_type = kwargs['aggregationType']
-        if 'constrainedProperty' in kwargs:
+        if aggregation_type is None:
+            raise TypeError("Missing 'aggregation_type' argument")
+        if domain is None:
+            raise TypeError("Missing 'domain' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if constrained_property is None and 'constrainedProperty' in kwargs:
             constrained_property = kwargs['constrainedProperty']
-        if 'decayRate' in kwargs:
+        if decay_rate is None and 'decayRate' in kwargs:
             decay_rate = kwargs['decayRate']
-        if 'hostHeader' in kwargs:
+        if host_header is None and 'hostHeader' in kwargs:
             host_header = kwargs['hostHeader']
-        if 'leaderString' in kwargs:
+        if leader_string is None and 'leaderString' in kwargs:
             leader_string = kwargs['leaderString']
-        if 'leastSquaresDecay' in kwargs:
+        if least_squares_decay is None and 'leastSquaresDecay' in kwargs:
             least_squares_decay = kwargs['leastSquaresDecay']
-        if 'loadImbalancePercentage' in kwargs:
+        if load_imbalance_percentage is None and 'loadImbalancePercentage' in kwargs:
             load_imbalance_percentage = kwargs['loadImbalancePercentage']
-        if 'maxUMultiplicativeIncrement' in kwargs:
+        if max_u_multiplicative_increment is None and 'maxUMultiplicativeIncrement' in kwargs:
             max_u_multiplicative_increment = kwargs['maxUMultiplicativeIncrement']
-        if 'resourceInstances' in kwargs:
+        if resource_instances is None and 'resourceInstances' in kwargs:
             resource_instances = kwargs['resourceInstances']
-        if 'upperBound' in kwargs:
+        if upper_bound is None and 'upperBound' in kwargs:
             upper_bound = kwargs['upperBound']
-        if 'waitOnComplete' in kwargs:
+        if wait_on_complete is None and 'waitOnComplete' in kwargs:
             wait_on_complete = kwargs['waitOnComplete']
 
         _setter("aggregation_type", aggregation_type)
@@ -316,29 +322,29 @@ class _GtmResourceState:
              type: Optional[pulumi.Input[str]] = None,
              upper_bound: Optional[pulumi.Input[int]] = None,
              wait_on_complete: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'aggregationType' in kwargs:
+        if aggregation_type is None and 'aggregationType' in kwargs:
             aggregation_type = kwargs['aggregationType']
-        if 'constrainedProperty' in kwargs:
+        if constrained_property is None and 'constrainedProperty' in kwargs:
             constrained_property = kwargs['constrainedProperty']
-        if 'decayRate' in kwargs:
+        if decay_rate is None and 'decayRate' in kwargs:
             decay_rate = kwargs['decayRate']
-        if 'hostHeader' in kwargs:
+        if host_header is None and 'hostHeader' in kwargs:
             host_header = kwargs['hostHeader']
-        if 'leaderString' in kwargs:
+        if leader_string is None and 'leaderString' in kwargs:
             leader_string = kwargs['leaderString']
-        if 'leastSquaresDecay' in kwargs:
+        if least_squares_decay is None and 'leastSquaresDecay' in kwargs:
             least_squares_decay = kwargs['leastSquaresDecay']
-        if 'loadImbalancePercentage' in kwargs:
+        if load_imbalance_percentage is None and 'loadImbalancePercentage' in kwargs:
             load_imbalance_percentage = kwargs['loadImbalancePercentage']
-        if 'maxUMultiplicativeIncrement' in kwargs:
+        if max_u_multiplicative_increment is None and 'maxUMultiplicativeIncrement' in kwargs:
             max_u_multiplicative_increment = kwargs['maxUMultiplicativeIncrement']
-        if 'resourceInstances' in kwargs:
+        if resource_instances is None and 'resourceInstances' in kwargs:
             resource_instances = kwargs['resourceInstances']
-        if 'upperBound' in kwargs:
+        if upper_bound is None and 'upperBound' in kwargs:
             upper_bound = kwargs['upperBound']
-        if 'waitOnComplete' in kwargs:
+        if wait_on_complete is None and 'waitOnComplete' in kwargs:
             wait_on_complete = kwargs['waitOnComplete']
 
         if aggregation_type is not None:
