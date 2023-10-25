@@ -35,20 +35,28 @@ class AppSecReputationProfileAnalysisArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             forward_shared_ip_to_http_header_siem: pulumi.Input[bool],
-             forward_to_http_header: pulumi.Input[bool],
-             security_policy_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             forward_shared_ip_to_http_header_siem: Optional[pulumi.Input[bool]] = None,
+             forward_to_http_header: Optional[pulumi.Input[bool]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'forwardSharedIpToHttpHeaderSiem' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if forward_shared_ip_to_http_header_siem is None and 'forwardSharedIpToHttpHeaderSiem' in kwargs:
             forward_shared_ip_to_http_header_siem = kwargs['forwardSharedIpToHttpHeaderSiem']
-        if 'forwardToHttpHeader' in kwargs:
+        if forward_shared_ip_to_http_header_siem is None:
+            raise TypeError("Missing 'forward_shared_ip_to_http_header_siem' argument")
+        if forward_to_http_header is None and 'forwardToHttpHeader' in kwargs:
             forward_to_http_header = kwargs['forwardToHttpHeader']
-        if 'securityPolicyId' in kwargs:
+        if forward_to_http_header is None:
+            raise TypeError("Missing 'forward_to_http_header' argument")
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
+        if security_policy_id is None:
+            raise TypeError("Missing 'security_policy_id' argument")
 
         _setter("config_id", config_id)
         _setter("forward_shared_ip_to_http_header_siem", forward_shared_ip_to_http_header_siem)
@@ -132,15 +140,15 @@ class _AppSecReputationProfileAnalysisState:
              forward_shared_ip_to_http_header_siem: Optional[pulumi.Input[bool]] = None,
              forward_to_http_header: Optional[pulumi.Input[bool]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'forwardSharedIpToHttpHeaderSiem' in kwargs:
+        if forward_shared_ip_to_http_header_siem is None and 'forwardSharedIpToHttpHeaderSiem' in kwargs:
             forward_shared_ip_to_http_header_siem = kwargs['forwardSharedIpToHttpHeaderSiem']
-        if 'forwardToHttpHeader' in kwargs:
+        if forward_to_http_header is None and 'forwardToHttpHeader' in kwargs:
             forward_to_http_header = kwargs['forwardToHttpHeader']
-        if 'securityPolicyId' in kwargs:
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
 
         if config_id is not None:

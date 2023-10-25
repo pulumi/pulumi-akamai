@@ -35,16 +35,20 @@ class GtmAsmapArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             default_datacenter: pulumi.Input['GtmAsmapDefaultDatacenterArgs'],
-             domain: pulumi.Input[str],
+             default_datacenter: Optional[pulumi.Input['GtmAsmapDefaultDatacenterArgs']] = None,
+             domain: Optional[pulumi.Input[str]] = None,
              assignments: Optional[pulumi.Input[Sequence[pulumi.Input['GtmAsmapAssignmentArgs']]]] = None,
              name: Optional[pulumi.Input[str]] = None,
              wait_on_complete: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'defaultDatacenter' in kwargs:
+        if default_datacenter is None and 'defaultDatacenter' in kwargs:
             default_datacenter = kwargs['defaultDatacenter']
-        if 'waitOnComplete' in kwargs:
+        if default_datacenter is None:
+            raise TypeError("Missing 'default_datacenter' argument")
+        if domain is None:
+            raise TypeError("Missing 'domain' argument")
+        if wait_on_complete is None and 'waitOnComplete' in kwargs:
             wait_on_complete = kwargs['waitOnComplete']
 
         _setter("default_datacenter", default_datacenter)
@@ -129,11 +133,11 @@ class _GtmAsmapState:
              domain: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              wait_on_complete: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'defaultDatacenter' in kwargs:
+        if default_datacenter is None and 'defaultDatacenter' in kwargs:
             default_datacenter = kwargs['defaultDatacenter']
-        if 'waitOnComplete' in kwargs:
+        if wait_on_complete is None and 'waitOnComplete' in kwargs:
             wait_on_complete = kwargs['waitOnComplete']
 
         if assignments is not None:
@@ -251,11 +255,7 @@ class GtmAsmap(pulumi.CustomResource):
             __props__ = GtmAsmapArgs.__new__(GtmAsmapArgs)
 
             __props__.__dict__["assignments"] = assignments
-            if default_datacenter is not None and not isinstance(default_datacenter, GtmAsmapDefaultDatacenterArgs):
-                default_datacenter = default_datacenter or {}
-                def _setter(key, value):
-                    default_datacenter[key] = value
-                GtmAsmapDefaultDatacenterArgs._configure(_setter, **default_datacenter)
+            default_datacenter = _utilities.configure(default_datacenter, GtmAsmapDefaultDatacenterArgs, True)
             if default_datacenter is None and not opts.urn:
                 raise TypeError("Missing required property 'default_datacenter'")
             __props__.__dict__["default_datacenter"] = default_datacenter

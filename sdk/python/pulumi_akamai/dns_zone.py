@@ -47,9 +47,9 @@ class DnsZoneArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             contract: pulumi.Input[str],
-             type: pulumi.Input[str],
-             zone: pulumi.Input[str],
+             contract: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             zone: Optional[pulumi.Input[str]] = None,
              comment: Optional[pulumi.Input[str]] = None,
              end_customer_id: Optional[pulumi.Input[str]] = None,
              group: Optional[pulumi.Input[str]] = None,
@@ -58,15 +58,21 @@ class DnsZoneArgs:
              sign_and_serve_algorithm: Optional[pulumi.Input[str]] = None,
              target: Optional[pulumi.Input[str]] = None,
              tsig_key: Optional[pulumi.Input['DnsZoneTsigKeyArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'endCustomerId' in kwargs:
+        if contract is None:
+            raise TypeError("Missing 'contract' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if zone is None:
+            raise TypeError("Missing 'zone' argument")
+        if end_customer_id is None and 'endCustomerId' in kwargs:
             end_customer_id = kwargs['endCustomerId']
-        if 'signAndServe' in kwargs:
+        if sign_and_serve is None and 'signAndServe' in kwargs:
             sign_and_serve = kwargs['signAndServe']
-        if 'signAndServeAlgorithm' in kwargs:
+        if sign_and_serve_algorithm is None and 'signAndServeAlgorithm' in kwargs:
             sign_and_serve_algorithm = kwargs['signAndServeAlgorithm']
-        if 'tsigKey' in kwargs:
+        if tsig_key is None and 'tsigKey' in kwargs:
             tsig_key = kwargs['tsigKey']
 
         _setter("contract", contract)
@@ -243,21 +249,21 @@ class _DnsZoneState:
              type: Optional[pulumi.Input[str]] = None,
              version_id: Optional[pulumi.Input[str]] = None,
              zone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'activationState' in kwargs:
+        if activation_state is None and 'activationState' in kwargs:
             activation_state = kwargs['activationState']
-        if 'aliasCount' in kwargs:
+        if alias_count is None and 'aliasCount' in kwargs:
             alias_count = kwargs['aliasCount']
-        if 'endCustomerId' in kwargs:
+        if end_customer_id is None and 'endCustomerId' in kwargs:
             end_customer_id = kwargs['endCustomerId']
-        if 'signAndServe' in kwargs:
+        if sign_and_serve is None and 'signAndServe' in kwargs:
             sign_and_serve = kwargs['signAndServe']
-        if 'signAndServeAlgorithm' in kwargs:
+        if sign_and_serve_algorithm is None and 'signAndServeAlgorithm' in kwargs:
             sign_and_serve_algorithm = kwargs['signAndServeAlgorithm']
-        if 'tsigKey' in kwargs:
+        if tsig_key is None and 'tsigKey' in kwargs:
             tsig_key = kwargs['tsigKey']
-        if 'versionId' in kwargs:
+        if version_id is None and 'versionId' in kwargs:
             version_id = kwargs['versionId']
 
         if activation_state is not None:
@@ -495,11 +501,7 @@ class DnsZone(pulumi.CustomResource):
             __props__.__dict__["sign_and_serve"] = sign_and_serve
             __props__.__dict__["sign_and_serve_algorithm"] = sign_and_serve_algorithm
             __props__.__dict__["target"] = target
-            if tsig_key is not None and not isinstance(tsig_key, DnsZoneTsigKeyArgs):
-                tsig_key = tsig_key or {}
-                def _setter(key, value):
-                    tsig_key[key] = value
-                DnsZoneTsigKeyArgs._configure(_setter, **tsig_key)
+            tsig_key = _utilities.configure(tsig_key, DnsZoneTsigKeyArgs, True)
             __props__.__dict__["tsig_key"] = tsig_key
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")

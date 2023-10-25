@@ -29,14 +29,18 @@ class AppSecReputationProfileArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             reputation_profile: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             reputation_profile: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'reputationProfile' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if reputation_profile is None and 'reputationProfile' in kwargs:
             reputation_profile = kwargs['reputationProfile']
+        if reputation_profile is None:
+            raise TypeError("Missing 'reputation_profile' argument")
 
         _setter("config_id", config_id)
         _setter("reputation_profile", reputation_profile)
@@ -90,13 +94,13 @@ class _AppSecReputationProfileState:
              config_id: Optional[pulumi.Input[int]] = None,
              reputation_profile: Optional[pulumi.Input[str]] = None,
              reputation_profile_id: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'reputationProfile' in kwargs:
+        if reputation_profile is None and 'reputationProfile' in kwargs:
             reputation_profile = kwargs['reputationProfile']
-        if 'reputationProfileId' in kwargs:
+        if reputation_profile_id is None and 'reputationProfileId' in kwargs:
             reputation_profile_id = kwargs['reputationProfileId']
 
         if config_id is not None:

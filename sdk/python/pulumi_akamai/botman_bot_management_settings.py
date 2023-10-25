@@ -29,17 +29,23 @@ class BotmanBotManagementSettingsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bot_management_settings: pulumi.Input[str],
-             config_id: pulumi.Input[int],
-             security_policy_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bot_management_settings: Optional[pulumi.Input[str]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'botManagementSettings' in kwargs:
+        if bot_management_settings is None and 'botManagementSettings' in kwargs:
             bot_management_settings = kwargs['botManagementSettings']
-        if 'configId' in kwargs:
+        if bot_management_settings is None:
+            raise TypeError("Missing 'bot_management_settings' argument")
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'securityPolicyId' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
+        if security_policy_id is None:
+            raise TypeError("Missing 'security_policy_id' argument")
 
         _setter("bot_management_settings", bot_management_settings)
         _setter("config_id", config_id)
@@ -94,13 +100,13 @@ class _BotmanBotManagementSettingsState:
              bot_management_settings: Optional[pulumi.Input[str]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'botManagementSettings' in kwargs:
+        if bot_management_settings is None and 'botManagementSettings' in kwargs:
             bot_management_settings = kwargs['botManagementSettings']
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'securityPolicyId' in kwargs:
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
 
         if bot_management_settings is not None:

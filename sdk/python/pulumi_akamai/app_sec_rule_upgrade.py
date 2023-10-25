@@ -32,16 +32,20 @@ class AppSecRuleUpgradeArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             security_policy_id: pulumi.Input[str],
+             config_id: Optional[pulumi.Input[int]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
              upgrade_mode: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'securityPolicyId' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
-        if 'upgradeMode' in kwargs:
+        if security_policy_id is None:
+            raise TypeError("Missing 'security_policy_id' argument")
+        if upgrade_mode is None and 'upgradeMode' in kwargs:
             upgrade_mode = kwargs['upgradeMode']
 
         _setter("config_id", config_id)
@@ -122,17 +126,17 @@ class _AppSecRuleUpgradeState:
              mode: Optional[pulumi.Input[str]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
              upgrade_mode: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'currentRuleset' in kwargs:
+        if current_ruleset is None and 'currentRuleset' in kwargs:
             current_ruleset = kwargs['currentRuleset']
-        if 'evalStatus' in kwargs:
+        if eval_status is None and 'evalStatus' in kwargs:
             eval_status = kwargs['evalStatus']
-        if 'securityPolicyId' in kwargs:
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
-        if 'upgradeMode' in kwargs:
+        if upgrade_mode is None and 'upgradeMode' in kwargs:
             upgrade_mode = kwargs['upgradeMode']
 
         if config_id is not None:

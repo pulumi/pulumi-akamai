@@ -31,20 +31,28 @@ class BotmanAkamaiBotCategoryActionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             akamai_bot_category_action: pulumi.Input[str],
-             category_id: pulumi.Input[str],
-             config_id: pulumi.Input[int],
-             security_policy_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             akamai_bot_category_action: Optional[pulumi.Input[str]] = None,
+             category_id: Optional[pulumi.Input[str]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'akamaiBotCategoryAction' in kwargs:
+        if akamai_bot_category_action is None and 'akamaiBotCategoryAction' in kwargs:
             akamai_bot_category_action = kwargs['akamaiBotCategoryAction']
-        if 'categoryId' in kwargs:
+        if akamai_bot_category_action is None:
+            raise TypeError("Missing 'akamai_bot_category_action' argument")
+        if category_id is None and 'categoryId' in kwargs:
             category_id = kwargs['categoryId']
-        if 'configId' in kwargs:
+        if category_id is None:
+            raise TypeError("Missing 'category_id' argument")
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'securityPolicyId' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
+        if security_policy_id is None:
+            raise TypeError("Missing 'security_policy_id' argument")
 
         _setter("akamai_bot_category_action", akamai_bot_category_action)
         _setter("category_id", category_id)
@@ -112,15 +120,15 @@ class _BotmanAkamaiBotCategoryActionState:
              category_id: Optional[pulumi.Input[str]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'akamaiBotCategoryAction' in kwargs:
+        if akamai_bot_category_action is None and 'akamaiBotCategoryAction' in kwargs:
             akamai_bot_category_action = kwargs['akamaiBotCategoryAction']
-        if 'categoryId' in kwargs:
+        if category_id is None and 'categoryId' in kwargs:
             category_id = kwargs['categoryId']
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'securityPolicyId' in kwargs:
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
 
         if akamai_bot_category_action is not None:

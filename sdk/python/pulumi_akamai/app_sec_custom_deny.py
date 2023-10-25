@@ -29,14 +29,18 @@ class AppSecCustomDenyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             custom_deny: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             custom_deny: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'customDeny' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if custom_deny is None and 'customDeny' in kwargs:
             custom_deny = kwargs['customDeny']
+        if custom_deny is None:
+            raise TypeError("Missing 'custom_deny' argument")
 
         _setter("config_id", config_id)
         _setter("custom_deny", custom_deny)
@@ -90,13 +94,13 @@ class _AppSecCustomDenyState:
              config_id: Optional[pulumi.Input[int]] = None,
              custom_deny: Optional[pulumi.Input[str]] = None,
              custom_deny_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'customDeny' in kwargs:
+        if custom_deny is None and 'customDeny' in kwargs:
             custom_deny = kwargs['customDeny']
-        if 'customDenyId' in kwargs:
+        if custom_deny_id is None and 'customDenyId' in kwargs:
             custom_deny_id = kwargs['customDenyId']
 
         if config_id is not None:

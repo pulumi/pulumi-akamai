@@ -32,16 +32,20 @@ class AppsecAdvancedSettingsRequestBodyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             request_body_inspection_limit: pulumi.Input[str],
+             config_id: Optional[pulumi.Input[int]] = None,
+             request_body_inspection_limit: Optional[pulumi.Input[str]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'requestBodyInspectionLimit' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if request_body_inspection_limit is None and 'requestBodyInspectionLimit' in kwargs:
             request_body_inspection_limit = kwargs['requestBodyInspectionLimit']
-        if 'securityPolicyId' in kwargs:
+        if request_body_inspection_limit is None:
+            raise TypeError("Missing 'request_body_inspection_limit' argument")
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
 
         _setter("config_id", config_id)
@@ -110,13 +114,13 @@ class _AppsecAdvancedSettingsRequestBodyState:
              config_id: Optional[pulumi.Input[int]] = None,
              request_body_inspection_limit: Optional[pulumi.Input[str]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'requestBodyInspectionLimit' in kwargs:
+        if request_body_inspection_limit is None and 'requestBodyInspectionLimit' in kwargs:
             request_body_inspection_limit = kwargs['requestBodyInspectionLimit']
-        if 'securityPolicyId' in kwargs:
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
 
         if config_id is not None:

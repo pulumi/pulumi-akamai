@@ -32,13 +32,19 @@ class EdgeWorkersActivationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             edgeworker_id: pulumi.Input[int],
-             network: pulumi.Input[str],
-             version: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             edgeworker_id: Optional[pulumi.Input[int]] = None,
+             network: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'edgeworkerId' in kwargs:
+        if edgeworker_id is None and 'edgeworkerId' in kwargs:
             edgeworker_id = kwargs['edgeworkerId']
+        if edgeworker_id is None:
+            raise TypeError("Missing 'edgeworker_id' argument")
+        if network is None:
+            raise TypeError("Missing 'network' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("edgeworker_id", edgeworker_id)
         _setter("network", network)
@@ -109,11 +115,11 @@ class _EdgeWorkersActivationState:
              edgeworker_id: Optional[pulumi.Input[int]] = None,
              network: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'activationId' in kwargs:
+        if activation_id is None and 'activationId' in kwargs:
             activation_id = kwargs['activationId']
-        if 'edgeworkerId' in kwargs:
+        if edgeworker_id is None and 'edgeworkerId' in kwargs:
             edgeworker_id = kwargs['edgeworkerId']
 
         if activation_id is not None:

@@ -32,15 +32,21 @@ class AppSecApiConstraintsProtectionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             enabled: pulumi.Input[bool],
-             security_policy_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             enabled: Optional[pulumi.Input[bool]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'securityPolicyId' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if enabled is None:
+            raise TypeError("Missing 'enabled' argument")
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
+        if security_policy_id is None:
+            raise TypeError("Missing 'security_policy_id' argument")
 
         _setter("config_id", config_id)
         _setter("enabled", enabled)
@@ -111,13 +117,13 @@ class _AppSecApiConstraintsProtectionState:
              enabled: Optional[pulumi.Input[bool]] = None,
              output_text: Optional[pulumi.Input[str]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'outputText' in kwargs:
+        if output_text is None and 'outputText' in kwargs:
             output_text = kwargs['outputText']
-        if 'securityPolicyId' in kwargs:
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
 
         if config_id is not None:

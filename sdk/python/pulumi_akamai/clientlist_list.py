@@ -46,19 +46,25 @@ class ClientlistListArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             contract_id: pulumi.Input[str],
-             group_id: pulumi.Input[int],
-             type: pulumi.Input[str],
+             contract_id: Optional[pulumi.Input[str]] = None,
+             group_id: Optional[pulumi.Input[int]] = None,
+             type: Optional[pulumi.Input[str]] = None,
              items: Optional[pulumi.Input[Sequence[pulumi.Input['ClientlistListItemArgs']]]] = None,
              name: Optional[pulumi.Input[str]] = None,
              notes: Optional[pulumi.Input[str]] = None,
              tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contractId' in kwargs:
+        if contract_id is None and 'contractId' in kwargs:
             contract_id = kwargs['contractId']
-        if 'groupId' in kwargs:
+        if contract_id is None:
+            raise TypeError("Missing 'contract_id' argument")
+        if group_id is None and 'groupId' in kwargs:
             group_id = kwargs['groupId']
+        if group_id is None:
+            raise TypeError("Missing 'group_id' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("contract_id", contract_id)
         _setter("group_id", group_id)
@@ -209,15 +215,15 @@ class _ClientlistListState:
              tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contractId' in kwargs:
+        if contract_id is None and 'contractId' in kwargs:
             contract_id = kwargs['contractId']
-        if 'groupId' in kwargs:
+        if group_id is None and 'groupId' in kwargs:
             group_id = kwargs['groupId']
-        if 'itemsCount' in kwargs:
+        if items_count is None and 'itemsCount' in kwargs:
             items_count = kwargs['itemsCount']
-        if 'listId' in kwargs:
+        if list_id is None and 'listId' in kwargs:
             list_id = kwargs['listId']
 
         if contract_id is not None:

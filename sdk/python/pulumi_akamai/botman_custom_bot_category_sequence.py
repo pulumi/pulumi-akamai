@@ -27,14 +27,18 @@ class BotmanCustomBotCategorySequenceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             category_ids: pulumi.Input[Sequence[pulumi.Input[str]]],
-             config_id: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             category_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'categoryIds' in kwargs:
+        if category_ids is None and 'categoryIds' in kwargs:
             category_ids = kwargs['categoryIds']
-        if 'configId' in kwargs:
+        if category_ids is None:
+            raise TypeError("Missing 'category_ids' argument")
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
 
         _setter("category_ids", category_ids)
         _setter("config_id", config_id)
@@ -76,11 +80,11 @@ class _BotmanCustomBotCategorySequenceState:
              _setter: Callable[[Any, Any], None],
              category_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'categoryIds' in kwargs:
+        if category_ids is None and 'categoryIds' in kwargs:
             category_ids = kwargs['categoryIds']
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
 
         if category_ids is not None:

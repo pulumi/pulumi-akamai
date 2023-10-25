@@ -89,11 +89,11 @@ class GtmPropertyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             domain: pulumi.Input[str],
-             handout_limit: pulumi.Input[int],
-             handout_mode: pulumi.Input[str],
-             score_aggregation_type: pulumi.Input[str],
-             type: pulumi.Input[str],
+             domain: Optional[pulumi.Input[str]] = None,
+             handout_limit: Optional[pulumi.Input[int]] = None,
+             handout_mode: Optional[pulumi.Input[str]] = None,
+             score_aggregation_type: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
              backup_cname: Optional[pulumi.Input[str]] = None,
              backup_ip: Optional[pulumi.Input[str]] = None,
              balance_by_download_score: Optional[pulumi.Input[bool]] = None,
@@ -121,59 +121,69 @@ class GtmPropertyArgs:
              unreachable_threshold: Optional[pulumi.Input[float]] = None,
              use_computed_targets: Optional[pulumi.Input[bool]] = None,
              wait_on_complete: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'handoutLimit' in kwargs:
+        if domain is None:
+            raise TypeError("Missing 'domain' argument")
+        if handout_limit is None and 'handoutLimit' in kwargs:
             handout_limit = kwargs['handoutLimit']
-        if 'handoutMode' in kwargs:
+        if handout_limit is None:
+            raise TypeError("Missing 'handout_limit' argument")
+        if handout_mode is None and 'handoutMode' in kwargs:
             handout_mode = kwargs['handoutMode']
-        if 'scoreAggregationType' in kwargs:
+        if handout_mode is None:
+            raise TypeError("Missing 'handout_mode' argument")
+        if score_aggregation_type is None and 'scoreAggregationType' in kwargs:
             score_aggregation_type = kwargs['scoreAggregationType']
-        if 'backupCname' in kwargs:
+        if score_aggregation_type is None:
+            raise TypeError("Missing 'score_aggregation_type' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if backup_cname is None and 'backupCname' in kwargs:
             backup_cname = kwargs['backupCname']
-        if 'backupIp' in kwargs:
+        if backup_ip is None and 'backupIp' in kwargs:
             backup_ip = kwargs['backupIp']
-        if 'balanceByDownloadScore' in kwargs:
+        if balance_by_download_score is None and 'balanceByDownloadScore' in kwargs:
             balance_by_download_score = kwargs['balanceByDownloadScore']
-        if 'dynamicTtl' in kwargs:
+        if dynamic_ttl is None and 'dynamicTtl' in kwargs:
             dynamic_ttl = kwargs['dynamicTtl']
-        if 'failbackDelay' in kwargs:
+        if failback_delay is None and 'failbackDelay' in kwargs:
             failback_delay = kwargs['failbackDelay']
-        if 'failoverDelay' in kwargs:
+        if failover_delay is None and 'failoverDelay' in kwargs:
             failover_delay = kwargs['failoverDelay']
-        if 'ghostDemandReporting' in kwargs:
+        if ghost_demand_reporting is None and 'ghostDemandReporting' in kwargs:
             ghost_demand_reporting = kwargs['ghostDemandReporting']
-        if 'healthMax' in kwargs:
+        if health_max is None and 'healthMax' in kwargs:
             health_max = kwargs['healthMax']
-        if 'healthMultiplier' in kwargs:
+        if health_multiplier is None and 'healthMultiplier' in kwargs:
             health_multiplier = kwargs['healthMultiplier']
-        if 'healthThreshold' in kwargs:
+        if health_threshold is None and 'healthThreshold' in kwargs:
             health_threshold = kwargs['healthThreshold']
-        if 'livenessTests' in kwargs:
+        if liveness_tests is None and 'livenessTests' in kwargs:
             liveness_tests = kwargs['livenessTests']
-        if 'loadImbalancePercentage' in kwargs:
+        if load_imbalance_percentage is None and 'loadImbalancePercentage' in kwargs:
             load_imbalance_percentage = kwargs['loadImbalancePercentage']
-        if 'mapName' in kwargs:
+        if map_name is None and 'mapName' in kwargs:
             map_name = kwargs['mapName']
-        if 'maxUnreachablePenalty' in kwargs:
+        if max_unreachable_penalty is None and 'maxUnreachablePenalty' in kwargs:
             max_unreachable_penalty = kwargs['maxUnreachablePenalty']
-        if 'minLiveFraction' in kwargs:
+        if min_live_fraction is None and 'minLiveFraction' in kwargs:
             min_live_fraction = kwargs['minLiveFraction']
-        if 'staticRrSets' in kwargs:
+        if static_rr_sets is None and 'staticRrSets' in kwargs:
             static_rr_sets = kwargs['staticRrSets']
-        if 'staticTtl' in kwargs:
+        if static_ttl is None and 'staticTtl' in kwargs:
             static_ttl = kwargs['staticTtl']
-        if 'stickinessBonusConstant' in kwargs:
+        if stickiness_bonus_constant is None and 'stickinessBonusConstant' in kwargs:
             stickiness_bonus_constant = kwargs['stickinessBonusConstant']
-        if 'stickinessBonusPercentage' in kwargs:
+        if stickiness_bonus_percentage is None and 'stickinessBonusPercentage' in kwargs:
             stickiness_bonus_percentage = kwargs['stickinessBonusPercentage']
-        if 'trafficTargets' in kwargs:
+        if traffic_targets is None and 'trafficTargets' in kwargs:
             traffic_targets = kwargs['trafficTargets']
-        if 'unreachableThreshold' in kwargs:
+        if unreachable_threshold is None and 'unreachableThreshold' in kwargs:
             unreachable_threshold = kwargs['unreachableThreshold']
-        if 'useComputedTargets' in kwargs:
+        if use_computed_targets is None and 'useComputedTargets' in kwargs:
             use_computed_targets = kwargs['useComputedTargets']
-        if 'waitOnComplete' in kwargs:
+        if wait_on_complete is None and 'waitOnComplete' in kwargs:
             wait_on_complete = kwargs['waitOnComplete']
 
         _setter("domain", domain)
@@ -639,63 +649,63 @@ class _GtmPropertyState:
              wait_on_complete: Optional[pulumi.Input[bool]] = None,
              weighted_hash_bits_for_ipv4: Optional[pulumi.Input[int]] = None,
              weighted_hash_bits_for_ipv6: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'backupCname' in kwargs:
+        if backup_cname is None and 'backupCname' in kwargs:
             backup_cname = kwargs['backupCname']
-        if 'backupIp' in kwargs:
+        if backup_ip is None and 'backupIp' in kwargs:
             backup_ip = kwargs['backupIp']
-        if 'balanceByDownloadScore' in kwargs:
+        if balance_by_download_score is None and 'balanceByDownloadScore' in kwargs:
             balance_by_download_score = kwargs['balanceByDownloadScore']
-        if 'dynamicTtl' in kwargs:
+        if dynamic_ttl is None and 'dynamicTtl' in kwargs:
             dynamic_ttl = kwargs['dynamicTtl']
-        if 'failbackDelay' in kwargs:
+        if failback_delay is None and 'failbackDelay' in kwargs:
             failback_delay = kwargs['failbackDelay']
-        if 'failoverDelay' in kwargs:
+        if failover_delay is None and 'failoverDelay' in kwargs:
             failover_delay = kwargs['failoverDelay']
-        if 'ghostDemandReporting' in kwargs:
+        if ghost_demand_reporting is None and 'ghostDemandReporting' in kwargs:
             ghost_demand_reporting = kwargs['ghostDemandReporting']
-        if 'handoutLimit' in kwargs:
+        if handout_limit is None and 'handoutLimit' in kwargs:
             handout_limit = kwargs['handoutLimit']
-        if 'handoutMode' in kwargs:
+        if handout_mode is None and 'handoutMode' in kwargs:
             handout_mode = kwargs['handoutMode']
-        if 'healthMax' in kwargs:
+        if health_max is None and 'healthMax' in kwargs:
             health_max = kwargs['healthMax']
-        if 'healthMultiplier' in kwargs:
+        if health_multiplier is None and 'healthMultiplier' in kwargs:
             health_multiplier = kwargs['healthMultiplier']
-        if 'healthThreshold' in kwargs:
+        if health_threshold is None and 'healthThreshold' in kwargs:
             health_threshold = kwargs['healthThreshold']
-        if 'livenessTests' in kwargs:
+        if liveness_tests is None and 'livenessTests' in kwargs:
             liveness_tests = kwargs['livenessTests']
-        if 'loadImbalancePercentage' in kwargs:
+        if load_imbalance_percentage is None and 'loadImbalancePercentage' in kwargs:
             load_imbalance_percentage = kwargs['loadImbalancePercentage']
-        if 'mapName' in kwargs:
+        if map_name is None and 'mapName' in kwargs:
             map_name = kwargs['mapName']
-        if 'maxUnreachablePenalty' in kwargs:
+        if max_unreachable_penalty is None and 'maxUnreachablePenalty' in kwargs:
             max_unreachable_penalty = kwargs['maxUnreachablePenalty']
-        if 'minLiveFraction' in kwargs:
+        if min_live_fraction is None and 'minLiveFraction' in kwargs:
             min_live_fraction = kwargs['minLiveFraction']
-        if 'scoreAggregationType' in kwargs:
+        if score_aggregation_type is None and 'scoreAggregationType' in kwargs:
             score_aggregation_type = kwargs['scoreAggregationType']
-        if 'staticRrSets' in kwargs:
+        if static_rr_sets is None and 'staticRrSets' in kwargs:
             static_rr_sets = kwargs['staticRrSets']
-        if 'staticTtl' in kwargs:
+        if static_ttl is None and 'staticTtl' in kwargs:
             static_ttl = kwargs['staticTtl']
-        if 'stickinessBonusConstant' in kwargs:
+        if stickiness_bonus_constant is None and 'stickinessBonusConstant' in kwargs:
             stickiness_bonus_constant = kwargs['stickinessBonusConstant']
-        if 'stickinessBonusPercentage' in kwargs:
+        if stickiness_bonus_percentage is None and 'stickinessBonusPercentage' in kwargs:
             stickiness_bonus_percentage = kwargs['stickinessBonusPercentage']
-        if 'trafficTargets' in kwargs:
+        if traffic_targets is None and 'trafficTargets' in kwargs:
             traffic_targets = kwargs['trafficTargets']
-        if 'unreachableThreshold' in kwargs:
+        if unreachable_threshold is None and 'unreachableThreshold' in kwargs:
             unreachable_threshold = kwargs['unreachableThreshold']
-        if 'useComputedTargets' in kwargs:
+        if use_computed_targets is None and 'useComputedTargets' in kwargs:
             use_computed_targets = kwargs['useComputedTargets']
-        if 'waitOnComplete' in kwargs:
+        if wait_on_complete is None and 'waitOnComplete' in kwargs:
             wait_on_complete = kwargs['waitOnComplete']
-        if 'weightedHashBitsForIpv4' in kwargs:
+        if weighted_hash_bits_for_ipv4 is None and 'weightedHashBitsForIpv4' in kwargs:
             weighted_hash_bits_for_ipv4 = kwargs['weightedHashBitsForIpv4']
-        if 'weightedHashBitsForIpv6' in kwargs:
+        if weighted_hash_bits_for_ipv6 is None and 'weightedHashBitsForIpv6' in kwargs:
             weighted_hash_bits_for_ipv6 = kwargs['weightedHashBitsForIpv6']
 
         if backup_cname is not None:

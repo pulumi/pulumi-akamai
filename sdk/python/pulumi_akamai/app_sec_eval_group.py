@@ -38,22 +38,30 @@ class AppSecEvalGroupArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             attack_group: pulumi.Input[str],
-             attack_group_action: pulumi.Input[str],
-             config_id: pulumi.Input[int],
-             security_policy_id: pulumi.Input[str],
+             attack_group: Optional[pulumi.Input[str]] = None,
+             attack_group_action: Optional[pulumi.Input[str]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
              condition_exception: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'attackGroup' in kwargs:
+        if attack_group is None and 'attackGroup' in kwargs:
             attack_group = kwargs['attackGroup']
-        if 'attackGroupAction' in kwargs:
+        if attack_group is None:
+            raise TypeError("Missing 'attack_group' argument")
+        if attack_group_action is None and 'attackGroupAction' in kwargs:
             attack_group_action = kwargs['attackGroupAction']
-        if 'configId' in kwargs:
+        if attack_group_action is None:
+            raise TypeError("Missing 'attack_group_action' argument")
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'securityPolicyId' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
-        if 'conditionException' in kwargs:
+        if security_policy_id is None:
+            raise TypeError("Missing 'security_policy_id' argument")
+        if condition_exception is None and 'conditionException' in kwargs:
             condition_exception = kwargs['conditionException']
 
         _setter("attack_group", attack_group)
@@ -156,17 +164,17 @@ class _AppSecEvalGroupState:
              condition_exception: Optional[pulumi.Input[str]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'attackGroup' in kwargs:
+        if attack_group is None and 'attackGroup' in kwargs:
             attack_group = kwargs['attackGroup']
-        if 'attackGroupAction' in kwargs:
+        if attack_group_action is None and 'attackGroupAction' in kwargs:
             attack_group_action = kwargs['attackGroupAction']
-        if 'conditionException' in kwargs:
+        if condition_exception is None and 'conditionException' in kwargs:
             condition_exception = kwargs['conditionException']
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'securityPolicyId' in kwargs:
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
 
         if attack_group is not None:

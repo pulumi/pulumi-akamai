@@ -38,19 +38,25 @@ class NetworkListActivationsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             network_list_id: pulumi.Input[str],
-             notification_emails: pulumi.Input[Sequence[pulumi.Input[str]]],
-             sync_point: pulumi.Input[int],
+             network_list_id: Optional[pulumi.Input[str]] = None,
+             notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             sync_point: Optional[pulumi.Input[int]] = None,
              network: Optional[pulumi.Input[str]] = None,
              notes: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkListId' in kwargs:
+        if network_list_id is None and 'networkListId' in kwargs:
             network_list_id = kwargs['networkListId']
-        if 'notificationEmails' in kwargs:
+        if network_list_id is None:
+            raise TypeError("Missing 'network_list_id' argument")
+        if notification_emails is None and 'notificationEmails' in kwargs:
             notification_emails = kwargs['notificationEmails']
-        if 'syncPoint' in kwargs:
+        if notification_emails is None:
+            raise TypeError("Missing 'notification_emails' argument")
+        if sync_point is None and 'syncPoint' in kwargs:
             sync_point = kwargs['syncPoint']
+        if sync_point is None:
+            raise TypeError("Missing 'sync_point' argument")
 
         _setter("network_list_id", network_list_id)
         _setter("notification_emails", notification_emails)
@@ -157,13 +163,13 @@ class _NetworkListActivationsState:
              notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              status: Optional[pulumi.Input[str]] = None,
              sync_point: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkListId' in kwargs:
+        if network_list_id is None and 'networkListId' in kwargs:
             network_list_id = kwargs['networkListId']
-        if 'notificationEmails' in kwargs:
+        if notification_emails is None and 'notificationEmails' in kwargs:
             notification_emails = kwargs['notificationEmails']
-        if 'syncPoint' in kwargs:
+        if sync_point is None and 'syncPoint' in kwargs:
             sync_point = kwargs['syncPoint']
 
         if network is not None:

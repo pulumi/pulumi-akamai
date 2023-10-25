@@ -29,17 +29,23 @@ class BotmanRecategorizedAkamaiDefinedBotArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bot_id: pulumi.Input[str],
-             category_id: pulumi.Input[str],
-             config_id: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bot_id: Optional[pulumi.Input[str]] = None,
+             category_id: Optional[pulumi.Input[str]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'botId' in kwargs:
+        if bot_id is None and 'botId' in kwargs:
             bot_id = kwargs['botId']
-        if 'categoryId' in kwargs:
+        if bot_id is None:
+            raise TypeError("Missing 'bot_id' argument")
+        if category_id is None and 'categoryId' in kwargs:
             category_id = kwargs['categoryId']
-        if 'configId' in kwargs:
+        if category_id is None:
+            raise TypeError("Missing 'category_id' argument")
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
 
         _setter("bot_id", bot_id)
         _setter("category_id", category_id)
@@ -94,13 +100,13 @@ class _BotmanRecategorizedAkamaiDefinedBotState:
              bot_id: Optional[pulumi.Input[str]] = None,
              category_id: Optional[pulumi.Input[str]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'botId' in kwargs:
+        if bot_id is None and 'botId' in kwargs:
             bot_id = kwargs['botId']
-        if 'categoryId' in kwargs:
+        if category_id is None and 'categoryId' in kwargs:
             category_id = kwargs['categoryId']
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
 
         if bot_id is not None:

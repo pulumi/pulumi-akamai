@@ -44,26 +44,32 @@ class AppSecIPGeoArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             mode: pulumi.Input[str],
-             security_policy_id: pulumi.Input[str],
+             config_id: Optional[pulumi.Input[int]] = None,
+             mode: Optional[pulumi.Input[str]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
              exception_ip_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              geo_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              ip_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              ukraine_geo_control_action: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'securityPolicyId' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if mode is None:
+            raise TypeError("Missing 'mode' argument")
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
-        if 'exceptionIpNetworkLists' in kwargs:
+        if security_policy_id is None:
+            raise TypeError("Missing 'security_policy_id' argument")
+        if exception_ip_network_lists is None and 'exceptionIpNetworkLists' in kwargs:
             exception_ip_network_lists = kwargs['exceptionIpNetworkLists']
-        if 'geoNetworkLists' in kwargs:
+        if geo_network_lists is None and 'geoNetworkLists' in kwargs:
             geo_network_lists = kwargs['geoNetworkLists']
-        if 'ipNetworkLists' in kwargs:
+        if ip_network_lists is None and 'ipNetworkLists' in kwargs:
             ip_network_lists = kwargs['ipNetworkLists']
-        if 'ukraineGeoControlAction' in kwargs:
+        if ukraine_geo_control_action is None and 'ukraineGeoControlAction' in kwargs:
             ukraine_geo_control_action = kwargs['ukraineGeoControlAction']
 
         _setter("config_id", config_id)
@@ -203,19 +209,19 @@ class _AppSecIPGeoState:
              mode: Optional[pulumi.Input[str]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
              ukraine_geo_control_action: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'exceptionIpNetworkLists' in kwargs:
+        if exception_ip_network_lists is None and 'exceptionIpNetworkLists' in kwargs:
             exception_ip_network_lists = kwargs['exceptionIpNetworkLists']
-        if 'geoNetworkLists' in kwargs:
+        if geo_network_lists is None and 'geoNetworkLists' in kwargs:
             geo_network_lists = kwargs['geoNetworkLists']
-        if 'ipNetworkLists' in kwargs:
+        if ip_network_lists is None and 'ipNetworkLists' in kwargs:
             ip_network_lists = kwargs['ipNetworkLists']
-        if 'securityPolicyId' in kwargs:
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
-        if 'ukraineGeoControlAction' in kwargs:
+        if ukraine_geo_control_action is None and 'ukraineGeoControlAction' in kwargs:
             ukraine_geo_control_action = kwargs['ukraineGeoControlAction']
 
         if config_id is not None:

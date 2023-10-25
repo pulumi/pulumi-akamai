@@ -29,14 +29,18 @@ class AppSecRatePolicyArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             rate_policy: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             rate_policy: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'ratePolicy' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if rate_policy is None and 'ratePolicy' in kwargs:
             rate_policy = kwargs['ratePolicy']
+        if rate_policy is None:
+            raise TypeError("Missing 'rate_policy' argument")
 
         _setter("config_id", config_id)
         _setter("rate_policy", rate_policy)
@@ -90,13 +94,13 @@ class _AppSecRatePolicyState:
              config_id: Optional[pulumi.Input[int]] = None,
              rate_policy: Optional[pulumi.Input[str]] = None,
              rate_policy_id: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'ratePolicy' in kwargs:
+        if rate_policy is None and 'ratePolicy' in kwargs:
             rate_policy = kwargs['ratePolicy']
-        if 'ratePolicyId' in kwargs:
+        if rate_policy_id is None and 'ratePolicyId' in kwargs:
             rate_policy_id = kwargs['ratePolicyId']
 
         if config_id is not None:

@@ -29,14 +29,18 @@ class AppSecMatchTargetArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             match_target: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             match_target: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'matchTarget' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if match_target is None and 'matchTarget' in kwargs:
             match_target = kwargs['matchTarget']
+        if match_target is None:
+            raise TypeError("Missing 'match_target' argument")
 
         _setter("config_id", config_id)
         _setter("match_target", match_target)
@@ -90,13 +94,13 @@ class _AppSecMatchTargetState:
              config_id: Optional[pulumi.Input[int]] = None,
              match_target: Optional[pulumi.Input[str]] = None,
              match_target_id: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'matchTarget' in kwargs:
+        if match_target is None and 'matchTarget' in kwargs:
             match_target = kwargs['matchTarget']
-        if 'matchTargetId' in kwargs:
+        if match_target_id is None and 'matchTargetId' in kwargs:
             match_target_id = kwargs['matchTargetId']
 
         if config_id is not None:

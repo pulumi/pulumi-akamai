@@ -29,13 +29,17 @@ class NetworkListDescriptionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             description: pulumi.Input[str],
-             network_list_id: pulumi.Input[str],
+             description: Optional[pulumi.Input[str]] = None,
+             network_list_id: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkListId' in kwargs:
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if network_list_id is None and 'networkListId' in kwargs:
             network_list_id = kwargs['networkListId']
+        if network_list_id is None:
+            raise TypeError("Missing 'network_list_id' argument")
 
         _setter("description", description)
         _setter("network_list_id", network_list_id)
@@ -91,9 +95,9 @@ class _NetworkListDescriptionState:
              description: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              network_list_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'networkListId' in kwargs:
+        if network_list_id is None and 'networkListId' in kwargs:
             network_list_id = kwargs['networkListId']
 
         if description is not None:

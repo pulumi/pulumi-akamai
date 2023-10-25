@@ -35,16 +35,24 @@ class CloudletsPolicyActivationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             associated_properties: pulumi.Input[Sequence[pulumi.Input[str]]],
-             network: pulumi.Input[str],
-             policy_id: pulumi.Input[int],
-             version: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             associated_properties: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             network: Optional[pulumi.Input[str]] = None,
+             policy_id: Optional[pulumi.Input[int]] = None,
+             version: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'associatedProperties' in kwargs:
+        if associated_properties is None and 'associatedProperties' in kwargs:
             associated_properties = kwargs['associatedProperties']
-        if 'policyId' in kwargs:
+        if associated_properties is None:
+            raise TypeError("Missing 'associated_properties' argument")
+        if network is None:
+            raise TypeError("Missing 'network' argument")
+        if policy_id is None and 'policyId' in kwargs:
             policy_id = kwargs['policyId']
+        if policy_id is None:
+            raise TypeError("Missing 'policy_id' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("associated_properties", associated_properties)
         _setter("network", network)
@@ -132,11 +140,11 @@ class _CloudletsPolicyActivationState:
              policy_id: Optional[pulumi.Input[int]] = None,
              status: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'associatedProperties' in kwargs:
+        if associated_properties is None and 'associatedProperties' in kwargs:
             associated_properties = kwargs['associatedProperties']
-        if 'policyId' in kwargs:
+        if policy_id is None and 'policyId' in kwargs:
             policy_id = kwargs['policyId']
 
         if associated_properties is not None:

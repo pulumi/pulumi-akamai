@@ -35,16 +35,24 @@ class EdgekvGroupItemsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             group_name: pulumi.Input[str],
-             items: pulumi.Input[Mapping[str, pulumi.Input[str]]],
-             namespace_name: pulumi.Input[str],
-             network: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             group_name: Optional[pulumi.Input[str]] = None,
+             items: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+             namespace_name: Optional[pulumi.Input[str]] = None,
+             network: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'groupName' in kwargs:
+        if group_name is None and 'groupName' in kwargs:
             group_name = kwargs['groupName']
-        if 'namespaceName' in kwargs:
+        if group_name is None:
+            raise TypeError("Missing 'group_name' argument")
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if namespace_name is None and 'namespaceName' in kwargs:
             namespace_name = kwargs['namespaceName']
+        if namespace_name is None:
+            raise TypeError("Missing 'namespace_name' argument")
+        if network is None:
+            raise TypeError("Missing 'network' argument")
 
         _setter("group_name", group_name)
         _setter("items", items)
@@ -128,11 +136,11 @@ class _EdgekvGroupItemsState:
              items: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
              namespace_name: Optional[pulumi.Input[str]] = None,
              network: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'groupName' in kwargs:
+        if group_name is None and 'groupName' in kwargs:
             group_name = kwargs['groupName']
-        if 'namespaceName' in kwargs:
+        if namespace_name is None and 'namespaceName' in kwargs:
             namespace_name = kwargs['namespaceName']
 
         if group_name is not None:

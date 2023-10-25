@@ -35,20 +35,28 @@ class AppSecCustomRuleActionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             custom_rule_action: pulumi.Input[str],
-             custom_rule_id: pulumi.Input[int],
-             security_policy_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             custom_rule_action: Optional[pulumi.Input[str]] = None,
+             custom_rule_id: Optional[pulumi.Input[int]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'customRuleAction' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if custom_rule_action is None and 'customRuleAction' in kwargs:
             custom_rule_action = kwargs['customRuleAction']
-        if 'customRuleId' in kwargs:
+        if custom_rule_action is None:
+            raise TypeError("Missing 'custom_rule_action' argument")
+        if custom_rule_id is None and 'customRuleId' in kwargs:
             custom_rule_id = kwargs['customRuleId']
-        if 'securityPolicyId' in kwargs:
+        if custom_rule_id is None:
+            raise TypeError("Missing 'custom_rule_id' argument")
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
+        if security_policy_id is None:
+            raise TypeError("Missing 'security_policy_id' argument")
 
         _setter("config_id", config_id)
         _setter("custom_rule_action", custom_rule_action)
@@ -132,15 +140,15 @@ class _AppSecCustomRuleActionState:
              custom_rule_action: Optional[pulumi.Input[str]] = None,
              custom_rule_id: Optional[pulumi.Input[int]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'customRuleAction' in kwargs:
+        if custom_rule_action is None and 'customRuleAction' in kwargs:
             custom_rule_action = kwargs['customRuleAction']
-        if 'customRuleId' in kwargs:
+        if custom_rule_id is None and 'customRuleId' in kwargs:
             custom_rule_id = kwargs['customRuleId']
-        if 'securityPolicyId' in kwargs:
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
 
         if config_id is not None:

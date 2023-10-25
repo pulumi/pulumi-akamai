@@ -27,14 +27,18 @@ class BotmanServeAlternateActionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             serve_alternate_action: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             serve_alternate_action: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'serveAlternateAction' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if serve_alternate_action is None and 'serveAlternateAction' in kwargs:
             serve_alternate_action = kwargs['serveAlternateAction']
+        if serve_alternate_action is None:
+            raise TypeError("Missing 'serve_alternate_action' argument")
 
         _setter("config_id", config_id)
         _setter("serve_alternate_action", serve_alternate_action)
@@ -79,13 +83,13 @@ class _BotmanServeAlternateActionState:
              action_id: Optional[pulumi.Input[str]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
              serve_alternate_action: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actionId' in kwargs:
+        if action_id is None and 'actionId' in kwargs:
             action_id = kwargs['actionId']
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'serveAlternateAction' in kwargs:
+        if serve_alternate_action is None and 'serveAlternateAction' in kwargs:
             serve_alternate_action = kwargs['serveAlternateAction']
 
         if action_id is not None:

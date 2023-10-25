@@ -35,20 +35,28 @@ class AppSecEvalPenaltyBoxArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             penalty_box_action: pulumi.Input[str],
-             penalty_box_protection: pulumi.Input[bool],
-             security_policy_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             penalty_box_action: Optional[pulumi.Input[str]] = None,
+             penalty_box_protection: Optional[pulumi.Input[bool]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'penaltyBoxAction' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if penalty_box_action is None and 'penaltyBoxAction' in kwargs:
             penalty_box_action = kwargs['penaltyBoxAction']
-        if 'penaltyBoxProtection' in kwargs:
+        if penalty_box_action is None:
+            raise TypeError("Missing 'penalty_box_action' argument")
+        if penalty_box_protection is None and 'penaltyBoxProtection' in kwargs:
             penalty_box_protection = kwargs['penaltyBoxProtection']
-        if 'securityPolicyId' in kwargs:
+        if penalty_box_protection is None:
+            raise TypeError("Missing 'penalty_box_protection' argument")
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
+        if security_policy_id is None:
+            raise TypeError("Missing 'security_policy_id' argument")
 
         _setter("config_id", config_id)
         _setter("penalty_box_action", penalty_box_action)
@@ -132,15 +140,15 @@ class _AppSecEvalPenaltyBoxState:
              penalty_box_action: Optional[pulumi.Input[str]] = None,
              penalty_box_protection: Optional[pulumi.Input[bool]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'penaltyBoxAction' in kwargs:
+        if penalty_box_action is None and 'penaltyBoxAction' in kwargs:
             penalty_box_action = kwargs['penaltyBoxAction']
-        if 'penaltyBoxProtection' in kwargs:
+        if penalty_box_protection is None and 'penaltyBoxProtection' in kwargs:
             penalty_box_protection = kwargs['penaltyBoxProtection']
-        if 'securityPolicyId' in kwargs:
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
 
         if config_id is not None:

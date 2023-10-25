@@ -27,14 +27,18 @@ class BotmanTransactionalEndpointProtectionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             transactional_endpoint_protection: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             transactional_endpoint_protection: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'transactionalEndpointProtection' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if transactional_endpoint_protection is None and 'transactionalEndpointProtection' in kwargs:
             transactional_endpoint_protection = kwargs['transactionalEndpointProtection']
+        if transactional_endpoint_protection is None:
+            raise TypeError("Missing 'transactional_endpoint_protection' argument")
 
         _setter("config_id", config_id)
         _setter("transactional_endpoint_protection", transactional_endpoint_protection)
@@ -76,11 +80,11 @@ class _BotmanTransactionalEndpointProtectionState:
              _setter: Callable[[Any, Any], None],
              config_id: Optional[pulumi.Input[int]] = None,
              transactional_endpoint_protection: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'transactionalEndpointProtection' in kwargs:
+        if transactional_endpoint_protection is None and 'transactionalEndpointProtection' in kwargs:
             transactional_endpoint_protection = kwargs['transactionalEndpointProtection']
 
         if config_id is not None:

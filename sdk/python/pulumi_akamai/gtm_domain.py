@@ -53,7 +53,7 @@ class GtmDomainArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             type: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
              cname_coalescing_enabled: Optional[pulumi.Input[bool]] = None,
              comment: Optional[pulumi.Input[str]] = None,
              contract: Optional[pulumi.Input[str]] = None,
@@ -68,27 +68,29 @@ class GtmDomainArgs:
              load_imbalance_percentage: Optional[pulumi.Input[float]] = None,
              name: Optional[pulumi.Input[str]] = None,
              wait_on_complete: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cnameCoalescingEnabled' in kwargs:
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if cname_coalescing_enabled is None and 'cnameCoalescingEnabled' in kwargs:
             cname_coalescing_enabled = kwargs['cnameCoalescingEnabled']
-        if 'defaultErrorPenalty' in kwargs:
+        if default_error_penalty is None and 'defaultErrorPenalty' in kwargs:
             default_error_penalty = kwargs['defaultErrorPenalty']
-        if 'defaultSslClientCertificate' in kwargs:
+        if default_ssl_client_certificate is None and 'defaultSslClientCertificate' in kwargs:
             default_ssl_client_certificate = kwargs['defaultSslClientCertificate']
-        if 'defaultSslClientPrivateKey' in kwargs:
+        if default_ssl_client_private_key is None and 'defaultSslClientPrivateKey' in kwargs:
             default_ssl_client_private_key = kwargs['defaultSslClientPrivateKey']
-        if 'defaultTimeoutPenalty' in kwargs:
+        if default_timeout_penalty is None and 'defaultTimeoutPenalty' in kwargs:
             default_timeout_penalty = kwargs['defaultTimeoutPenalty']
-        if 'emailNotificationLists' in kwargs:
+        if email_notification_lists is None and 'emailNotificationLists' in kwargs:
             email_notification_lists = kwargs['emailNotificationLists']
-        if 'endUserMappingEnabled' in kwargs:
+        if end_user_mapping_enabled is None and 'endUserMappingEnabled' in kwargs:
             end_user_mapping_enabled = kwargs['endUserMappingEnabled']
-        if 'loadFeedback' in kwargs:
+        if load_feedback is None and 'loadFeedback' in kwargs:
             load_feedback = kwargs['loadFeedback']
-        if 'loadImbalancePercentage' in kwargs:
+        if load_imbalance_percentage is None and 'loadImbalancePercentage' in kwargs:
             load_imbalance_percentage = kwargs['loadImbalancePercentage']
-        if 'waitOnComplete' in kwargs:
+        if wait_on_complete is None and 'waitOnComplete' in kwargs:
             wait_on_complete = kwargs['waitOnComplete']
 
         _setter("type", type)
@@ -371,65 +373,65 @@ class _GtmDomainState:
              servermonitor_pool: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              wait_on_complete: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'cnameCoalescingEnabled' in kwargs:
+        if cname_coalescing_enabled is None and 'cnameCoalescingEnabled' in kwargs:
             cname_coalescing_enabled = kwargs['cnameCoalescingEnabled']
-        if 'defaultErrorPenalty' in kwargs:
+        if default_error_penalty is None and 'defaultErrorPenalty' in kwargs:
             default_error_penalty = kwargs['defaultErrorPenalty']
-        if 'defaultHealthMax' in kwargs:
+        if default_health_max is None and 'defaultHealthMax' in kwargs:
             default_health_max = kwargs['defaultHealthMax']
-        if 'defaultHealthMultiplier' in kwargs:
+        if default_health_multiplier is None and 'defaultHealthMultiplier' in kwargs:
             default_health_multiplier = kwargs['defaultHealthMultiplier']
-        if 'defaultHealthThreshold' in kwargs:
+        if default_health_threshold is None and 'defaultHealthThreshold' in kwargs:
             default_health_threshold = kwargs['defaultHealthThreshold']
-        if 'defaultMaxUnreachablePenalty' in kwargs:
+        if default_max_unreachable_penalty is None and 'defaultMaxUnreachablePenalty' in kwargs:
             default_max_unreachable_penalty = kwargs['defaultMaxUnreachablePenalty']
-        if 'defaultSslClientCertificate' in kwargs:
+        if default_ssl_client_certificate is None and 'defaultSslClientCertificate' in kwargs:
             default_ssl_client_certificate = kwargs['defaultSslClientCertificate']
-        if 'defaultSslClientPrivateKey' in kwargs:
+        if default_ssl_client_private_key is None and 'defaultSslClientPrivateKey' in kwargs:
             default_ssl_client_private_key = kwargs['defaultSslClientPrivateKey']
-        if 'defaultTimeoutPenalty' in kwargs:
+        if default_timeout_penalty is None and 'defaultTimeoutPenalty' in kwargs:
             default_timeout_penalty = kwargs['defaultTimeoutPenalty']
-        if 'defaultUnreachableThreshold' in kwargs:
+        if default_unreachable_threshold is None and 'defaultUnreachableThreshold' in kwargs:
             default_unreachable_threshold = kwargs['defaultUnreachableThreshold']
-        if 'emailNotificationLists' in kwargs:
+        if email_notification_lists is None and 'emailNotificationLists' in kwargs:
             email_notification_lists = kwargs['emailNotificationLists']
-        if 'endUserMappingEnabled' in kwargs:
+        if end_user_mapping_enabled is None and 'endUserMappingEnabled' in kwargs:
             end_user_mapping_enabled = kwargs['endUserMappingEnabled']
-        if 'loadFeedback' in kwargs:
+        if load_feedback is None and 'loadFeedback' in kwargs:
             load_feedback = kwargs['loadFeedback']
-        if 'loadImbalancePercentage' in kwargs:
+        if load_imbalance_percentage is None and 'loadImbalancePercentage' in kwargs:
             load_imbalance_percentage = kwargs['loadImbalancePercentage']
-        if 'mapUpdateInterval' in kwargs:
+        if map_update_interval is None and 'mapUpdateInterval' in kwargs:
             map_update_interval = kwargs['mapUpdateInterval']
-        if 'maxProperties' in kwargs:
+        if max_properties is None and 'maxProperties' in kwargs:
             max_properties = kwargs['maxProperties']
-        if 'maxResources' in kwargs:
+        if max_resources is None and 'maxResources' in kwargs:
             max_resources = kwargs['maxResources']
-        if 'maxTestTimeout' in kwargs:
+        if max_test_timeout is None and 'maxTestTimeout' in kwargs:
             max_test_timeout = kwargs['maxTestTimeout']
-        if 'maxTtl' in kwargs:
+        if max_ttl is None and 'maxTtl' in kwargs:
             max_ttl = kwargs['maxTtl']
-        if 'minPingableRegionFraction' in kwargs:
+        if min_pingable_region_fraction is None and 'minPingableRegionFraction' in kwargs:
             min_pingable_region_fraction = kwargs['minPingableRegionFraction']
-        if 'minTestInterval' in kwargs:
+        if min_test_interval is None and 'minTestInterval' in kwargs:
             min_test_interval = kwargs['minTestInterval']
-        if 'minTtl' in kwargs:
+        if min_ttl is None and 'minTtl' in kwargs:
             min_ttl = kwargs['minTtl']
-        if 'pingInterval' in kwargs:
+        if ping_interval is None and 'pingInterval' in kwargs:
             ping_interval = kwargs['pingInterval']
-        if 'pingPacketSize' in kwargs:
+        if ping_packet_size is None and 'pingPacketSize' in kwargs:
             ping_packet_size = kwargs['pingPacketSize']
-        if 'roundRobinPrefix' in kwargs:
+        if round_robin_prefix is None and 'roundRobinPrefix' in kwargs:
             round_robin_prefix = kwargs['roundRobinPrefix']
-        if 'servermonitorLivenessCount' in kwargs:
+        if servermonitor_liveness_count is None and 'servermonitorLivenessCount' in kwargs:
             servermonitor_liveness_count = kwargs['servermonitorLivenessCount']
-        if 'servermonitorLoadCount' in kwargs:
+        if servermonitor_load_count is None and 'servermonitorLoadCount' in kwargs:
             servermonitor_load_count = kwargs['servermonitorLoadCount']
-        if 'servermonitorPool' in kwargs:
+        if servermonitor_pool is None and 'servermonitorPool' in kwargs:
             servermonitor_pool = kwargs['servermonitorPool']
-        if 'waitOnComplete' in kwargs:
+        if wait_on_complete is None and 'waitOnComplete' in kwargs:
             wait_on_complete = kwargs['waitOnComplete']
 
         if cname_coalescing_enabled is not None:

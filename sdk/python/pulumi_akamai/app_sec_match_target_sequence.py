@@ -29,13 +29,15 @@ class AppSecMatchTargetSequenceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
+             config_id: Optional[pulumi.Input[int]] = None,
              match_target_sequence: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'matchTargetSequence' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if match_target_sequence is None and 'matchTargetSequence' in kwargs:
             match_target_sequence = kwargs['matchTargetSequence']
 
         _setter("config_id", config_id)
@@ -87,11 +89,11 @@ class _AppSecMatchTargetSequenceState:
              _setter: Callable[[Any, Any], None],
              config_id: Optional[pulumi.Input[int]] = None,
              match_target_sequence: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'matchTargetSequence' in kwargs:
+        if match_target_sequence is None and 'matchTargetSequence' in kwargs:
             match_target_sequence = kwargs['matchTargetSequence']
 
         if config_id is not None:

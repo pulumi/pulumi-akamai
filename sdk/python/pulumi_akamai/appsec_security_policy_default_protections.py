@@ -32,17 +32,23 @@ class AppsecSecurityPolicyDefaultProtectionsArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             security_policy_name: pulumi.Input[str],
-             security_policy_prefix: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             security_policy_name: Optional[pulumi.Input[str]] = None,
+             security_policy_prefix: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'securityPolicyName' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if security_policy_name is None and 'securityPolicyName' in kwargs:
             security_policy_name = kwargs['securityPolicyName']
-        if 'securityPolicyPrefix' in kwargs:
+        if security_policy_name is None:
+            raise TypeError("Missing 'security_policy_name' argument")
+        if security_policy_prefix is None and 'securityPolicyPrefix' in kwargs:
             security_policy_prefix = kwargs['securityPolicyPrefix']
+        if security_policy_prefix is None:
+            raise TypeError("Missing 'security_policy_prefix' argument")
 
         _setter("config_id", config_id)
         _setter("security_policy_name", security_policy_name)
@@ -113,15 +119,15 @@ class _AppsecSecurityPolicyDefaultProtectionsState:
              security_policy_id: Optional[pulumi.Input[str]] = None,
              security_policy_name: Optional[pulumi.Input[str]] = None,
              security_policy_prefix: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'securityPolicyId' in kwargs:
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
-        if 'securityPolicyName' in kwargs:
+        if security_policy_name is None and 'securityPolicyName' in kwargs:
             security_policy_name = kwargs['securityPolicyName']
-        if 'securityPolicyPrefix' in kwargs:
+        if security_policy_prefix is None and 'securityPolicyPrefix' in kwargs:
             security_policy_prefix = kwargs['securityPolicyPrefix']
 
         if config_id is not None:

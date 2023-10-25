@@ -43,23 +43,31 @@ class EdgeKvArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             group_id: pulumi.Input[int],
-             namespace_name: pulumi.Input[str],
-             network: pulumi.Input[str],
-             retention_in_seconds: pulumi.Input[int],
+             group_id: Optional[pulumi.Input[int]] = None,
+             namespace_name: Optional[pulumi.Input[str]] = None,
+             network: Optional[pulumi.Input[str]] = None,
+             retention_in_seconds: Optional[pulumi.Input[int]] = None,
              geo_location: Optional[pulumi.Input[str]] = None,
              initial_datas: Optional[pulumi.Input[Sequence[pulumi.Input['EdgeKvInitialDataArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'groupId' in kwargs:
+        if group_id is None and 'groupId' in kwargs:
             group_id = kwargs['groupId']
-        if 'namespaceName' in kwargs:
+        if group_id is None:
+            raise TypeError("Missing 'group_id' argument")
+        if namespace_name is None and 'namespaceName' in kwargs:
             namespace_name = kwargs['namespaceName']
-        if 'retentionInSeconds' in kwargs:
+        if namespace_name is None:
+            raise TypeError("Missing 'namespace_name' argument")
+        if network is None:
+            raise TypeError("Missing 'network' argument")
+        if retention_in_seconds is None and 'retentionInSeconds' in kwargs:
             retention_in_seconds = kwargs['retentionInSeconds']
-        if 'geoLocation' in kwargs:
+        if retention_in_seconds is None:
+            raise TypeError("Missing 'retention_in_seconds' argument")
+        if geo_location is None and 'geoLocation' in kwargs:
             geo_location = kwargs['geoLocation']
-        if 'initialDatas' in kwargs:
+        if initial_datas is None and 'initialDatas' in kwargs:
             initial_datas = kwargs['initialDatas']
 
         _setter("group_id", group_id)
@@ -186,17 +194,17 @@ class _EdgeKvState:
              namespace_name: Optional[pulumi.Input[str]] = None,
              network: Optional[pulumi.Input[str]] = None,
              retention_in_seconds: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'geoLocation' in kwargs:
+        if geo_location is None and 'geoLocation' in kwargs:
             geo_location = kwargs['geoLocation']
-        if 'groupId' in kwargs:
+        if group_id is None and 'groupId' in kwargs:
             group_id = kwargs['groupId']
-        if 'initialDatas' in kwargs:
+        if initial_datas is None and 'initialDatas' in kwargs:
             initial_datas = kwargs['initialDatas']
-        if 'namespaceName' in kwargs:
+        if namespace_name is None and 'namespaceName' in kwargs:
             namespace_name = kwargs['namespaceName']
-        if 'retentionInSeconds' in kwargs:
+        if retention_in_seconds is None and 'retentionInSeconds' in kwargs:
             retention_in_seconds = kwargs['retentionInSeconds']
 
         if geo_location is not None:

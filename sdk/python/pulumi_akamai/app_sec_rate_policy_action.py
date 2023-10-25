@@ -38,23 +38,33 @@ class AppSecRatePolicyActionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             ipv4_action: pulumi.Input[str],
-             ipv6_action: pulumi.Input[str],
-             rate_policy_id: pulumi.Input[int],
-             security_policy_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             ipv4_action: Optional[pulumi.Input[str]] = None,
+             ipv6_action: Optional[pulumi.Input[str]] = None,
+             rate_policy_id: Optional[pulumi.Input[int]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'ipv4Action' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if ipv4_action is None and 'ipv4Action' in kwargs:
             ipv4_action = kwargs['ipv4Action']
-        if 'ipv6Action' in kwargs:
+        if ipv4_action is None:
+            raise TypeError("Missing 'ipv4_action' argument")
+        if ipv6_action is None and 'ipv6Action' in kwargs:
             ipv6_action = kwargs['ipv6Action']
-        if 'ratePolicyId' in kwargs:
+        if ipv6_action is None:
+            raise TypeError("Missing 'ipv6_action' argument")
+        if rate_policy_id is None and 'ratePolicyId' in kwargs:
             rate_policy_id = kwargs['ratePolicyId']
-        if 'securityPolicyId' in kwargs:
+        if rate_policy_id is None:
+            raise TypeError("Missing 'rate_policy_id' argument")
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
+        if security_policy_id is None:
+            raise TypeError("Missing 'security_policy_id' argument")
 
         _setter("config_id", config_id)
         _setter("ipv4_action", ipv4_action)
@@ -155,17 +165,17 @@ class _AppSecRatePolicyActionState:
              ipv6_action: Optional[pulumi.Input[str]] = None,
              rate_policy_id: Optional[pulumi.Input[int]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'ipv4Action' in kwargs:
+        if ipv4_action is None and 'ipv4Action' in kwargs:
             ipv4_action = kwargs['ipv4Action']
-        if 'ipv6Action' in kwargs:
+        if ipv6_action is None and 'ipv6Action' in kwargs:
             ipv6_action = kwargs['ipv6Action']
-        if 'ratePolicyId' in kwargs:
+        if rate_policy_id is None and 'ratePolicyId' in kwargs:
             rate_policy_id = kwargs['ratePolicyId']
-        if 'securityPolicyId' in kwargs:
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
 
         if config_id is not None:

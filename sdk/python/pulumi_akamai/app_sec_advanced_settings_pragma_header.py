@@ -32,16 +32,20 @@ class AppSecAdvancedSettingsPragmaHeaderArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             pragma_header: pulumi.Input[str],
+             config_id: Optional[pulumi.Input[int]] = None,
+             pragma_header: Optional[pulumi.Input[str]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'pragmaHeader' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if pragma_header is None and 'pragmaHeader' in kwargs:
             pragma_header = kwargs['pragmaHeader']
-        if 'securityPolicyId' in kwargs:
+        if pragma_header is None:
+            raise TypeError("Missing 'pragma_header' argument")
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
 
         _setter("config_id", config_id)
@@ -110,13 +114,13 @@ class _AppSecAdvancedSettingsPragmaHeaderState:
              config_id: Optional[pulumi.Input[int]] = None,
              pragma_header: Optional[pulumi.Input[str]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'pragmaHeader' in kwargs:
+        if pragma_header is None and 'pragmaHeader' in kwargs:
             pragma_header = kwargs['pragmaHeader']
-        if 'securityPolicyId' in kwargs:
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
 
         if config_id is not None:

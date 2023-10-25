@@ -35,14 +35,20 @@ class ImagingPolicySetArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             contract_id: pulumi.Input[str],
-             region: pulumi.Input[str],
-             type: pulumi.Input[str],
+             contract_id: Optional[pulumi.Input[str]] = None,
+             region: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contractId' in kwargs:
+        if contract_id is None and 'contractId' in kwargs:
             contract_id = kwargs['contractId']
+        if contract_id is None:
+            raise TypeError("Missing 'contract_id' argument")
+        if region is None:
+            raise TypeError("Missing 'region' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
 
         _setter("contract_id", contract_id)
         _setter("region", region)
@@ -127,9 +133,9 @@ class _ImagingPolicySetState:
              name: Optional[pulumi.Input[str]] = None,
              region: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contractId' in kwargs:
+        if contract_id is None and 'contractId' in kwargs:
             contract_id = kwargs['contractId']
 
         if contract_id is not None:

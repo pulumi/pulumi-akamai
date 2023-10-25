@@ -38,22 +38,28 @@ class AppSecRuleArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             rule_id: pulumi.Input[int],
-             security_policy_id: pulumi.Input[str],
+             config_id: Optional[pulumi.Input[int]] = None,
+             rule_id: Optional[pulumi.Input[int]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
              condition_exception: Optional[pulumi.Input[str]] = None,
              rule_action: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'ruleId' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if rule_id is None and 'ruleId' in kwargs:
             rule_id = kwargs['ruleId']
-        if 'securityPolicyId' in kwargs:
+        if rule_id is None:
+            raise TypeError("Missing 'rule_id' argument")
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
-        if 'conditionException' in kwargs:
+        if security_policy_id is None:
+            raise TypeError("Missing 'security_policy_id' argument")
+        if condition_exception is None and 'conditionException' in kwargs:
             condition_exception = kwargs['conditionException']
-        if 'ruleAction' in kwargs:
+        if rule_action is None and 'ruleAction' in kwargs:
             rule_action = kwargs['ruleAction']
 
         _setter("config_id", config_id)
@@ -157,17 +163,17 @@ class _AppSecRuleState:
              rule_action: Optional[pulumi.Input[str]] = None,
              rule_id: Optional[pulumi.Input[int]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'conditionException' in kwargs:
+        if condition_exception is None and 'conditionException' in kwargs:
             condition_exception = kwargs['conditionException']
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'ruleAction' in kwargs:
+        if rule_action is None and 'ruleAction' in kwargs:
             rule_action = kwargs['ruleAction']
-        if 'ruleId' in kwargs:
+        if rule_id is None and 'ruleId' in kwargs:
             rule_id = kwargs['ruleId']
-        if 'securityPolicyId' in kwargs:
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
 
         if condition_exception is not None:

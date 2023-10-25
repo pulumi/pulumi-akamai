@@ -34,23 +34,31 @@ class Config(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             access_token: str,
-             client_secret: str,
-             client_token: str,
-             host: str,
+             access_token: Optional[str] = None,
+             client_secret: Optional[str] = None,
+             client_token: Optional[str] = None,
+             host: Optional[str] = None,
              account_key: Optional[str] = None,
              max_body: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'accessToken' in kwargs:
+        if access_token is None and 'accessToken' in kwargs:
             access_token = kwargs['accessToken']
-        if 'clientSecret' in kwargs:
+        if access_token is None:
+            raise TypeError("Missing 'access_token' argument")
+        if client_secret is None and 'clientSecret' in kwargs:
             client_secret = kwargs['clientSecret']
-        if 'clientToken' in kwargs:
+        if client_secret is None:
+            raise TypeError("Missing 'client_secret' argument")
+        if client_token is None and 'clientToken' in kwargs:
             client_token = kwargs['clientToken']
-        if 'accountKey' in kwargs:
+        if client_token is None:
+            raise TypeError("Missing 'client_token' argument")
+        if host is None:
+            raise TypeError("Missing 'host' argument")
+        if account_key is None and 'accountKey' in kwargs:
             account_key = kwargs['accountKey']
-        if 'maxBody' in kwargs:
+        if max_body is None and 'maxBody' in kwargs:
             max_body = kwargs['maxBody']
 
         _setter("access_token", access_token)

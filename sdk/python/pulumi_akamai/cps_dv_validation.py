@@ -29,12 +29,14 @@ class CpsDvValidationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             enrollment_id: pulumi.Input[int],
+             enrollment_id: Optional[pulumi.Input[int]] = None,
              sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'enrollmentId' in kwargs:
+        if enrollment_id is None and 'enrollmentId' in kwargs:
             enrollment_id = kwargs['enrollmentId']
+        if enrollment_id is None:
+            raise TypeError("Missing 'enrollment_id' argument")
 
         _setter("enrollment_id", enrollment_id)
         if sans is not None:
@@ -89,9 +91,9 @@ class _CpsDvValidationState:
              enrollment_id: Optional[pulumi.Input[int]] = None,
              sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              status: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'enrollmentId' in kwargs:
+        if enrollment_id is None and 'enrollmentId' in kwargs:
             enrollment_id = kwargs['enrollmentId']
 
         if enrollment_id is not None:

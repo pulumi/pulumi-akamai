@@ -29,14 +29,18 @@ class AppsecAdvancedSettingsPiiLearningArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             enable_pii_learning: pulumi.Input[bool],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             enable_pii_learning: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'enablePiiLearning' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if enable_pii_learning is None and 'enablePiiLearning' in kwargs:
             enable_pii_learning = kwargs['enablePiiLearning']
+        if enable_pii_learning is None:
+            raise TypeError("Missing 'enable_pii_learning' argument")
 
         _setter("config_id", config_id)
         _setter("enable_pii_learning", enable_pii_learning)
@@ -86,11 +90,11 @@ class _AppsecAdvancedSettingsPiiLearningState:
              _setter: Callable[[Any, Any], None],
              config_id: Optional[pulumi.Input[int]] = None,
              enable_pii_learning: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'enablePiiLearning' in kwargs:
+        if enable_pii_learning is None and 'enablePiiLearning' in kwargs:
             enable_pii_learning = kwargs['enablePiiLearning']
 
         if config_id is not None:

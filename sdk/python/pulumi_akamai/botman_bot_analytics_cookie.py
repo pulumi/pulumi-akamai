@@ -27,14 +27,18 @@ class BotmanBotAnalyticsCookieArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bot_analytics_cookie: pulumi.Input[str],
-             config_id: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bot_analytics_cookie: Optional[pulumi.Input[str]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'botAnalyticsCookie' in kwargs:
+        if bot_analytics_cookie is None and 'botAnalyticsCookie' in kwargs:
             bot_analytics_cookie = kwargs['botAnalyticsCookie']
-        if 'configId' in kwargs:
+        if bot_analytics_cookie is None:
+            raise TypeError("Missing 'bot_analytics_cookie' argument")
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
 
         _setter("bot_analytics_cookie", bot_analytics_cookie)
         _setter("config_id", config_id)
@@ -76,11 +80,11 @@ class _BotmanBotAnalyticsCookieState:
              _setter: Callable[[Any, Any], None],
              bot_analytics_cookie: Optional[pulumi.Input[str]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'botAnalyticsCookie' in kwargs:
+        if bot_analytics_cookie is None and 'botAnalyticsCookie' in kwargs:
             bot_analytics_cookie = kwargs['botAnalyticsCookie']
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
 
         if bot_analytics_cookie is not None:

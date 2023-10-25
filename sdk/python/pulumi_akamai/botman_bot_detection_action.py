@@ -31,20 +31,28 @@ class BotmanBotDetectionActionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             bot_detection_action: pulumi.Input[str],
-             config_id: pulumi.Input[int],
-             detection_id: pulumi.Input[str],
-             security_policy_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             bot_detection_action: Optional[pulumi.Input[str]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             detection_id: Optional[pulumi.Input[str]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'botDetectionAction' in kwargs:
+        if bot_detection_action is None and 'botDetectionAction' in kwargs:
             bot_detection_action = kwargs['botDetectionAction']
-        if 'configId' in kwargs:
+        if bot_detection_action is None:
+            raise TypeError("Missing 'bot_detection_action' argument")
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'detectionId' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if detection_id is None and 'detectionId' in kwargs:
             detection_id = kwargs['detectionId']
-        if 'securityPolicyId' in kwargs:
+        if detection_id is None:
+            raise TypeError("Missing 'detection_id' argument")
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
+        if security_policy_id is None:
+            raise TypeError("Missing 'security_policy_id' argument")
 
         _setter("bot_detection_action", bot_detection_action)
         _setter("config_id", config_id)
@@ -112,15 +120,15 @@ class _BotmanBotDetectionActionState:
              config_id: Optional[pulumi.Input[int]] = None,
              detection_id: Optional[pulumi.Input[str]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'botDetectionAction' in kwargs:
+        if bot_detection_action is None and 'botDetectionAction' in kwargs:
             bot_detection_action = kwargs['botDetectionAction']
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'detectionId' in kwargs:
+        if detection_id is None and 'detectionId' in kwargs:
             detection_id = kwargs['detectionId']
-        if 'securityPolicyId' in kwargs:
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
 
         if bot_detection_action is not None:

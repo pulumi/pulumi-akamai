@@ -80,13 +80,13 @@ class IamUserArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             auth_grants_json: pulumi.Input[str],
-             country: pulumi.Input[str],
-             email: pulumi.Input[str],
-             enable_tfa: pulumi.Input[bool],
-             first_name: pulumi.Input[str],
-             last_name: pulumi.Input[str],
-             phone: pulumi.Input[str],
+             auth_grants_json: Optional[pulumi.Input[str]] = None,
+             country: Optional[pulumi.Input[str]] = None,
+             email: Optional[pulumi.Input[str]] = None,
+             enable_tfa: Optional[pulumi.Input[bool]] = None,
+             first_name: Optional[pulumi.Input[str]] = None,
+             last_name: Optional[pulumi.Input[str]] = None,
+             phone: Optional[pulumi.Input[str]] = None,
              address: Optional[pulumi.Input[str]] = None,
              city: Optional[pulumi.Input[str]] = None,
              contact_type: Optional[pulumi.Input[str]] = None,
@@ -99,31 +99,45 @@ class IamUserArgs:
              state: Optional[pulumi.Input[str]] = None,
              time_zone: Optional[pulumi.Input[str]] = None,
              zip_code: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'authGrantsJson' in kwargs:
+        if auth_grants_json is None and 'authGrantsJson' in kwargs:
             auth_grants_json = kwargs['authGrantsJson']
-        if 'enableTfa' in kwargs:
+        if auth_grants_json is None:
+            raise TypeError("Missing 'auth_grants_json' argument")
+        if country is None:
+            raise TypeError("Missing 'country' argument")
+        if email is None:
+            raise TypeError("Missing 'email' argument")
+        if enable_tfa is None and 'enableTfa' in kwargs:
             enable_tfa = kwargs['enableTfa']
-        if 'firstName' in kwargs:
+        if enable_tfa is None:
+            raise TypeError("Missing 'enable_tfa' argument")
+        if first_name is None and 'firstName' in kwargs:
             first_name = kwargs['firstName']
-        if 'lastName' in kwargs:
+        if first_name is None:
+            raise TypeError("Missing 'first_name' argument")
+        if last_name is None and 'lastName' in kwargs:
             last_name = kwargs['lastName']
-        if 'contactType' in kwargs:
+        if last_name is None:
+            raise TypeError("Missing 'last_name' argument")
+        if phone is None:
+            raise TypeError("Missing 'phone' argument")
+        if contact_type is None and 'contactType' in kwargs:
             contact_type = kwargs['contactType']
-        if 'jobTitle' in kwargs:
+        if job_title is None and 'jobTitle' in kwargs:
             job_title = kwargs['jobTitle']
-        if 'mobilePhone' in kwargs:
+        if mobile_phone is None and 'mobilePhone' in kwargs:
             mobile_phone = kwargs['mobilePhone']
-        if 'preferredLanguage' in kwargs:
+        if preferred_language is None and 'preferredLanguage' in kwargs:
             preferred_language = kwargs['preferredLanguage']
-        if 'secondaryEmail' in kwargs:
+        if secondary_email is None and 'secondaryEmail' in kwargs:
             secondary_email = kwargs['secondaryEmail']
-        if 'sessionTimeout' in kwargs:
+        if session_timeout is None and 'sessionTimeout' in kwargs:
             session_timeout = kwargs['sessionTimeout']
-        if 'timeZone' in kwargs:
+        if time_zone is None and 'timeZone' in kwargs:
             time_zone = kwargs['timeZone']
-        if 'zipCode' in kwargs:
+        if zip_code is None and 'zipCode' in kwargs:
             zip_code = kwargs['zipCode']
 
         _setter("auth_grants_json", auth_grants_json)
@@ -495,41 +509,41 @@ class _IamUserState:
              time_zone: Optional[pulumi.Input[str]] = None,
              user_name: Optional[pulumi.Input[str]] = None,
              zip_code: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'authGrantsJson' in kwargs:
+        if auth_grants_json is None and 'authGrantsJson' in kwargs:
             auth_grants_json = kwargs['authGrantsJson']
-        if 'contactType' in kwargs:
+        if contact_type is None and 'contactType' in kwargs:
             contact_type = kwargs['contactType']
-        if 'emailUpdatePending' in kwargs:
+        if email_update_pending is None and 'emailUpdatePending' in kwargs:
             email_update_pending = kwargs['emailUpdatePending']
-        if 'enableTfa' in kwargs:
+        if enable_tfa is None and 'enableTfa' in kwargs:
             enable_tfa = kwargs['enableTfa']
-        if 'firstName' in kwargs:
+        if first_name is None and 'firstName' in kwargs:
             first_name = kwargs['firstName']
-        if 'jobTitle' in kwargs:
+        if job_title is None and 'jobTitle' in kwargs:
             job_title = kwargs['jobTitle']
-        if 'lastLogin' in kwargs:
+        if last_login is None and 'lastLogin' in kwargs:
             last_login = kwargs['lastLogin']
-        if 'lastName' in kwargs:
+        if last_name is None and 'lastName' in kwargs:
             last_name = kwargs['lastName']
-        if 'mobilePhone' in kwargs:
+        if mobile_phone is None and 'mobilePhone' in kwargs:
             mobile_phone = kwargs['mobilePhone']
-        if 'passwordExpiredAfter' in kwargs:
+        if password_expired_after is None and 'passwordExpiredAfter' in kwargs:
             password_expired_after = kwargs['passwordExpiredAfter']
-        if 'preferredLanguage' in kwargs:
+        if preferred_language is None and 'preferredLanguage' in kwargs:
             preferred_language = kwargs['preferredLanguage']
-        if 'secondaryEmail' in kwargs:
+        if secondary_email is None and 'secondaryEmail' in kwargs:
             secondary_email = kwargs['secondaryEmail']
-        if 'sessionTimeout' in kwargs:
+        if session_timeout is None and 'sessionTimeout' in kwargs:
             session_timeout = kwargs['sessionTimeout']
-        if 'tfaConfigured' in kwargs:
+        if tfa_configured is None and 'tfaConfigured' in kwargs:
             tfa_configured = kwargs['tfaConfigured']
-        if 'timeZone' in kwargs:
+        if time_zone is None and 'timeZone' in kwargs:
             time_zone = kwargs['timeZone']
-        if 'userName' in kwargs:
+        if user_name is None and 'userName' in kwargs:
             user_name = kwargs['userName']
-        if 'zipCode' in kwargs:
+        if zip_code is None and 'zipCode' in kwargs:
             zip_code = kwargs['zipCode']
 
         if address is not None:

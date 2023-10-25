@@ -29,17 +29,23 @@ class BotmanJavascriptInjectionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             config_id: pulumi.Input[int],
-             javascript_injection: pulumi.Input[str],
-             security_policy_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             javascript_injection: Optional[pulumi.Input[str]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'javascriptInjection' in kwargs:
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if javascript_injection is None and 'javascriptInjection' in kwargs:
             javascript_injection = kwargs['javascriptInjection']
-        if 'securityPolicyId' in kwargs:
+        if javascript_injection is None:
+            raise TypeError("Missing 'javascript_injection' argument")
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
+        if security_policy_id is None:
+            raise TypeError("Missing 'security_policy_id' argument")
 
         _setter("config_id", config_id)
         _setter("javascript_injection", javascript_injection)
@@ -94,13 +100,13 @@ class _BotmanJavascriptInjectionState:
              config_id: Optional[pulumi.Input[int]] = None,
              javascript_injection: Optional[pulumi.Input[str]] = None,
              security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
-        if 'javascriptInjection' in kwargs:
+        if javascript_injection is None and 'javascriptInjection' in kwargs:
             javascript_injection = kwargs['javascriptInjection']
-        if 'securityPolicyId' in kwargs:
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
             security_policy_id = kwargs['securityPolicyId']
 
         if config_id is not None:

@@ -29,12 +29,14 @@ class IamGroupArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             parent_group_id: pulumi.Input[int],
+             parent_group_id: Optional[pulumi.Input[int]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'parentGroupId' in kwargs:
+        if parent_group_id is None and 'parentGroupId' in kwargs:
             parent_group_id = kwargs['parentGroupId']
+        if parent_group_id is None:
+            raise TypeError("Missing 'parent_group_id' argument")
 
         _setter("parent_group_id", parent_group_id)
         if name is not None:
@@ -89,11 +91,11 @@ class _IamGroupState:
              name: Optional[pulumi.Input[str]] = None,
              parent_group_id: Optional[pulumi.Input[int]] = None,
              sub_groups: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'parentGroupId' in kwargs:
+        if parent_group_id is None and 'parentGroupId' in kwargs:
             parent_group_id = kwargs['parentGroupId']
-        if 'subGroups' in kwargs:
+        if sub_groups is None and 'subGroups' in kwargs:
             sub_groups = kwargs['subGroups']
 
         if name is not None:

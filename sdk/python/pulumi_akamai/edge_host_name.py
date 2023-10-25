@@ -41,29 +41,37 @@ class EdgeHostNameArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             contract_id: pulumi.Input[str],
-             edge_hostname: pulumi.Input[str],
-             group_id: pulumi.Input[str],
-             ip_behavior: pulumi.Input[str],
+             contract_id: Optional[pulumi.Input[str]] = None,
+             edge_hostname: Optional[pulumi.Input[str]] = None,
+             group_id: Optional[pulumi.Input[str]] = None,
+             ip_behavior: Optional[pulumi.Input[str]] = None,
              certificate: Optional[pulumi.Input[int]] = None,
              product_id: Optional[pulumi.Input[str]] = None,
              status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              use_cases: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contractId' in kwargs:
+        if contract_id is None and 'contractId' in kwargs:
             contract_id = kwargs['contractId']
-        if 'edgeHostname' in kwargs:
+        if contract_id is None:
+            raise TypeError("Missing 'contract_id' argument")
+        if edge_hostname is None and 'edgeHostname' in kwargs:
             edge_hostname = kwargs['edgeHostname']
-        if 'groupId' in kwargs:
+        if edge_hostname is None:
+            raise TypeError("Missing 'edge_hostname' argument")
+        if group_id is None and 'groupId' in kwargs:
             group_id = kwargs['groupId']
-        if 'ipBehavior' in kwargs:
+        if group_id is None:
+            raise TypeError("Missing 'group_id' argument")
+        if ip_behavior is None and 'ipBehavior' in kwargs:
             ip_behavior = kwargs['ipBehavior']
-        if 'productId' in kwargs:
+        if ip_behavior is None:
+            raise TypeError("Missing 'ip_behavior' argument")
+        if product_id is None and 'productId' in kwargs:
             product_id = kwargs['productId']
-        if 'statusUpdateEmails' in kwargs:
+        if status_update_emails is None and 'statusUpdateEmails' in kwargs:
             status_update_emails = kwargs['statusUpdateEmails']
-        if 'useCases' in kwargs:
+        if use_cases is None and 'useCases' in kwargs:
             use_cases = kwargs['useCases']
 
         _setter("contract_id", contract_id)
@@ -196,21 +204,21 @@ class _EdgeHostNameState:
              product_id: Optional[pulumi.Input[str]] = None,
              status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              use_cases: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'contractId' in kwargs:
+        if contract_id is None and 'contractId' in kwargs:
             contract_id = kwargs['contractId']
-        if 'edgeHostname' in kwargs:
+        if edge_hostname is None and 'edgeHostname' in kwargs:
             edge_hostname = kwargs['edgeHostname']
-        if 'groupId' in kwargs:
+        if group_id is None and 'groupId' in kwargs:
             group_id = kwargs['groupId']
-        if 'ipBehavior' in kwargs:
+        if ip_behavior is None and 'ipBehavior' in kwargs:
             ip_behavior = kwargs['ipBehavior']
-        if 'productId' in kwargs:
+        if product_id is None and 'productId' in kwargs:
             product_id = kwargs['productId']
-        if 'statusUpdateEmails' in kwargs:
+        if status_update_emails is None and 'statusUpdateEmails' in kwargs:
             status_update_emails = kwargs['statusUpdateEmails']
-        if 'useCases' in kwargs:
+        if use_cases is None and 'useCases' in kwargs:
             use_cases = kwargs['useCases']
 
         if certificate is not None:

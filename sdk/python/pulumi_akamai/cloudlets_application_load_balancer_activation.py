@@ -32,13 +32,19 @@ class CloudletsApplicationLoadBalancerActivationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             network: pulumi.Input[str],
-             origin_id: pulumi.Input[str],
-             version: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             network: Optional[pulumi.Input[str]] = None,
+             origin_id: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'originId' in kwargs:
+        if network is None:
+            raise TypeError("Missing 'network' argument")
+        if origin_id is None and 'originId' in kwargs:
             origin_id = kwargs['originId']
+        if origin_id is None:
+            raise TypeError("Missing 'origin_id' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
 
         _setter("network", network)
         _setter("origin_id", origin_id)
@@ -109,9 +115,9 @@ class _CloudletsApplicationLoadBalancerActivationState:
              origin_id: Optional[pulumi.Input[str]] = None,
              status: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'originId' in kwargs:
+        if origin_id is None and 'originId' in kwargs:
             origin_id = kwargs['originId']
 
         if network is not None:

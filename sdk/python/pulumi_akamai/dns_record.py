@@ -135,9 +135,9 @@ class DnsRecordArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             recordtype: pulumi.Input[str],
-             ttl: pulumi.Input[int],
-             zone: pulumi.Input[str],
+             recordtype: Optional[pulumi.Input[str]] = None,
+             ttl: Optional[pulumi.Input[int]] = None,
+             zone: Optional[pulumi.Input[str]] = None,
              active: Optional[pulumi.Input[bool]] = None,
              algorithm: Optional[pulumi.Input[int]] = None,
              certificate: Optional[pulumi.Input[str]] = None,
@@ -191,39 +191,45 @@ class DnsRecordArgs:
              type_value: Optional[pulumi.Input[int]] = None,
              usage: Optional[pulumi.Input[int]] = None,
              weight: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'digestType' in kwargs:
+        if recordtype is None:
+            raise TypeError("Missing 'recordtype' argument")
+        if ttl is None:
+            raise TypeError("Missing 'ttl' argument")
+        if zone is None:
+            raise TypeError("Missing 'zone' argument")
+        if digest_type is None and 'digestType' in kwargs:
             digest_type = kwargs['digestType']
-        if 'emailAddress' in kwargs:
+        if email_address is None and 'emailAddress' in kwargs:
             email_address = kwargs['emailAddress']
-        if 'fingerprintType' in kwargs:
+        if fingerprint_type is None and 'fingerprintType' in kwargs:
             fingerprint_type = kwargs['fingerprintType']
-        if 'matchType' in kwargs:
+        if match_type is None and 'matchType' in kwargs:
             match_type = kwargs['matchType']
-        if 'nameServer' in kwargs:
+        if name_server is None and 'nameServer' in kwargs:
             name_server = kwargs['nameServer']
-        if 'nextHashedOwnerName' in kwargs:
+        if next_hashed_owner_name is None and 'nextHashedOwnerName' in kwargs:
             next_hashed_owner_name = kwargs['nextHashedOwnerName']
-        if 'nxdomainTtl' in kwargs:
+        if nxdomain_ttl is None and 'nxdomainTtl' in kwargs:
             nxdomain_ttl = kwargs['nxdomainTtl']
-        if 'originalTtl' in kwargs:
+        if original_ttl is None and 'originalTtl' in kwargs:
             original_ttl = kwargs['originalTtl']
-        if 'priorityIncrement' in kwargs:
+        if priority_increment is None and 'priorityIncrement' in kwargs:
             priority_increment = kwargs['priorityIncrement']
-        if 'svcParams' in kwargs:
+        if svc_params is None and 'svcParams' in kwargs:
             svc_params = kwargs['svcParams']
-        if 'svcPriority' in kwargs:
+        if svc_priority is None and 'svcPriority' in kwargs:
             svc_priority = kwargs['svcPriority']
-        if 'targetName' in kwargs:
+        if target_name is None and 'targetName' in kwargs:
             target_name = kwargs['targetName']
-        if 'typeBitmaps' in kwargs:
+        if type_bitmaps is None and 'typeBitmaps' in kwargs:
             type_bitmaps = kwargs['typeBitmaps']
-        if 'typeCovered' in kwargs:
+        if type_covered is None and 'typeCovered' in kwargs:
             type_covered = kwargs['typeCovered']
-        if 'typeMnemonic' in kwargs:
+        if type_mnemonic is None and 'typeMnemonic' in kwargs:
             type_mnemonic = kwargs['typeMnemonic']
-        if 'typeValue' in kwargs:
+        if type_value is None and 'typeValue' in kwargs:
             type_value = kwargs['typeValue']
 
         _setter("recordtype", recordtype)
@@ -1039,45 +1045,45 @@ class _DnsRecordState:
              usage: Optional[pulumi.Input[int]] = None,
              weight: Optional[pulumi.Input[int]] = None,
              zone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'answerType' in kwargs:
+        if answer_type is None and 'answerType' in kwargs:
             answer_type = kwargs['answerType']
-        if 'digestType' in kwargs:
+        if digest_type is None and 'digestType' in kwargs:
             digest_type = kwargs['digestType']
-        if 'dnsName' in kwargs:
+        if dns_name is None and 'dnsName' in kwargs:
             dns_name = kwargs['dnsName']
-        if 'emailAddress' in kwargs:
+        if email_address is None and 'emailAddress' in kwargs:
             email_address = kwargs['emailAddress']
-        if 'fingerprintType' in kwargs:
+        if fingerprint_type is None and 'fingerprintType' in kwargs:
             fingerprint_type = kwargs['fingerprintType']
-        if 'matchType' in kwargs:
+        if match_type is None and 'matchType' in kwargs:
             match_type = kwargs['matchType']
-        if 'nameServer' in kwargs:
+        if name_server is None and 'nameServer' in kwargs:
             name_server = kwargs['nameServer']
-        if 'nextHashedOwnerName' in kwargs:
+        if next_hashed_owner_name is None and 'nextHashedOwnerName' in kwargs:
             next_hashed_owner_name = kwargs['nextHashedOwnerName']
-        if 'nxdomainTtl' in kwargs:
+        if nxdomain_ttl is None and 'nxdomainTtl' in kwargs:
             nxdomain_ttl = kwargs['nxdomainTtl']
-        if 'originalTtl' in kwargs:
+        if original_ttl is None and 'originalTtl' in kwargs:
             original_ttl = kwargs['originalTtl']
-        if 'priorityIncrement' in kwargs:
+        if priority_increment is None and 'priorityIncrement' in kwargs:
             priority_increment = kwargs['priorityIncrement']
-        if 'recordSha' in kwargs:
+        if record_sha is None and 'recordSha' in kwargs:
             record_sha = kwargs['recordSha']
-        if 'svcParams' in kwargs:
+        if svc_params is None and 'svcParams' in kwargs:
             svc_params = kwargs['svcParams']
-        if 'svcPriority' in kwargs:
+        if svc_priority is None and 'svcPriority' in kwargs:
             svc_priority = kwargs['svcPriority']
-        if 'targetName' in kwargs:
+        if target_name is None and 'targetName' in kwargs:
             target_name = kwargs['targetName']
-        if 'typeBitmaps' in kwargs:
+        if type_bitmaps is None and 'typeBitmaps' in kwargs:
             type_bitmaps = kwargs['typeBitmaps']
-        if 'typeCovered' in kwargs:
+        if type_covered is None and 'typeCovered' in kwargs:
             type_covered = kwargs['typeCovered']
-        if 'typeMnemonic' in kwargs:
+        if type_mnemonic is None and 'typeMnemonic' in kwargs:
             type_mnemonic = kwargs['typeMnemonic']
-        if 'typeValue' in kwargs:
+        if type_value is None and 'typeValue' in kwargs:
             type_value = kwargs['typeValue']
 
         if active is not None:

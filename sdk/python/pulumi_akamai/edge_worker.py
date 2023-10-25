@@ -35,17 +35,21 @@ class EdgeWorkerArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             group_id: pulumi.Input[int],
-             resource_tier_id: pulumi.Input[int],
+             group_id: Optional[pulumi.Input[int]] = None,
+             resource_tier_id: Optional[pulumi.Input[int]] = None,
              local_bundle: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'groupId' in kwargs:
+        if group_id is None and 'groupId' in kwargs:
             group_id = kwargs['groupId']
-        if 'resourceTierId' in kwargs:
+        if group_id is None:
+            raise TypeError("Missing 'group_id' argument")
+        if resource_tier_id is None and 'resourceTierId' in kwargs:
             resource_tier_id = kwargs['resourceTierId']
-        if 'localBundle' in kwargs:
+        if resource_tier_id is None:
+            raise TypeError("Missing 'resource_tier_id' argument")
+        if local_bundle is None and 'localBundle' in kwargs:
             local_bundle = kwargs['localBundle']
 
         _setter("group_id", group_id)
@@ -148,17 +152,17 @@ class _EdgeWorkerState:
              resource_tier_id: Optional[pulumi.Input[int]] = None,
              version: Optional[pulumi.Input[str]] = None,
              warnings: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'edgeworkerId' in kwargs:
+        if edgeworker_id is None and 'edgeworkerId' in kwargs:
             edgeworker_id = kwargs['edgeworkerId']
-        if 'groupId' in kwargs:
+        if group_id is None and 'groupId' in kwargs:
             group_id = kwargs['groupId']
-        if 'localBundle' in kwargs:
+        if local_bundle is None and 'localBundle' in kwargs:
             local_bundle = kwargs['localBundle']
-        if 'localBundleHash' in kwargs:
+        if local_bundle_hash is None and 'localBundleHash' in kwargs:
             local_bundle_hash = kwargs['localBundleHash']
-        if 'resourceTierId' in kwargs:
+        if resource_tier_id is None and 'resourceTierId' in kwargs:
             resource_tier_id = kwargs['resourceTierId']
 
         if edgeworker_id is not None:

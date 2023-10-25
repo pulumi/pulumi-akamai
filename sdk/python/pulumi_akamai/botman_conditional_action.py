@@ -27,14 +27,18 @@ class BotmanConditionalActionArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             conditional_action: pulumi.Input[str],
-             config_id: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None,
+             conditional_action: Optional[pulumi.Input[str]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'conditionalAction' in kwargs:
+        if conditional_action is None and 'conditionalAction' in kwargs:
             conditional_action = kwargs['conditionalAction']
-        if 'configId' in kwargs:
+        if conditional_action is None:
+            raise TypeError("Missing 'conditional_action' argument")
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
 
         _setter("conditional_action", conditional_action)
         _setter("config_id", config_id)
@@ -79,13 +83,13 @@ class _BotmanConditionalActionState:
              action_id: Optional[pulumi.Input[str]] = None,
              conditional_action: Optional[pulumi.Input[str]] = None,
              config_id: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None,
+             opts: Optional[pulumi.ResourceOptions] = None,
              **kwargs):
-        if 'actionId' in kwargs:
+        if action_id is None and 'actionId' in kwargs:
             action_id = kwargs['actionId']
-        if 'conditionalAction' in kwargs:
+        if conditional_action is None and 'conditionalAction' in kwargs:
             conditional_action = kwargs['conditionalAction']
-        if 'configId' in kwargs:
+        if config_id is None and 'configId' in kwargs:
             config_id = kwargs['configId']
 
         if action_id is not None:
