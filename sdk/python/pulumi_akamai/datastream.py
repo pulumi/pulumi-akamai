@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -49,138 +49,39 @@ class DatastreamArgs:
         :param pulumi.Input[bool] collect_midgress: Identifies if stream needs to collect midgress data
         :param pulumi.Input[Sequence[pulumi.Input[str]]] notification_emails: List of email addresses where the system sends notifications about activations and deactivations of the stream
         """
-        DatastreamArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            active=active,
-            contract_id=contract_id,
-            dataset_fields=dataset_fields,
-            delivery_configuration=delivery_configuration,
-            group_id=group_id,
-            properties=properties,
-            stream_name=stream_name,
-            azure_connector=azure_connector,
-            collect_midgress=collect_midgress,
-            datadog_connector=datadog_connector,
-            elasticsearch_connector=elasticsearch_connector,
-            gcs_connector=gcs_connector,
-            https_connector=https_connector,
-            loggly_connector=loggly_connector,
-            new_relic_connector=new_relic_connector,
-            notification_emails=notification_emails,
-            oracle_connector=oracle_connector,
-            s3_connector=s3_connector,
-            splunk_connector=splunk_connector,
-            sumologic_connector=sumologic_connector,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             active: Optional[pulumi.Input[bool]] = None,
-             contract_id: Optional[pulumi.Input[str]] = None,
-             dataset_fields: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
-             delivery_configuration: Optional[pulumi.Input['DatastreamDeliveryConfigurationArgs']] = None,
-             group_id: Optional[pulumi.Input[str]] = None,
-             properties: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             stream_name: Optional[pulumi.Input[str]] = None,
-             azure_connector: Optional[pulumi.Input['DatastreamAzureConnectorArgs']] = None,
-             collect_midgress: Optional[pulumi.Input[bool]] = None,
-             datadog_connector: Optional[pulumi.Input['DatastreamDatadogConnectorArgs']] = None,
-             elasticsearch_connector: Optional[pulumi.Input['DatastreamElasticsearchConnectorArgs']] = None,
-             gcs_connector: Optional[pulumi.Input['DatastreamGcsConnectorArgs']] = None,
-             https_connector: Optional[pulumi.Input['DatastreamHttpsConnectorArgs']] = None,
-             loggly_connector: Optional[pulumi.Input['DatastreamLogglyConnectorArgs']] = None,
-             new_relic_connector: Optional[pulumi.Input['DatastreamNewRelicConnectorArgs']] = None,
-             notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             oracle_connector: Optional[pulumi.Input['DatastreamOracleConnectorArgs']] = None,
-             s3_connector: Optional[pulumi.Input['DatastreamS3ConnectorArgs']] = None,
-             splunk_connector: Optional[pulumi.Input['DatastreamSplunkConnectorArgs']] = None,
-             sumologic_connector: Optional[pulumi.Input['DatastreamSumologicConnectorArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if active is None:
-            raise TypeError("Missing 'active' argument")
-        if contract_id is None and 'contractId' in kwargs:
-            contract_id = kwargs['contractId']
-        if contract_id is None:
-            raise TypeError("Missing 'contract_id' argument")
-        if dataset_fields is None and 'datasetFields' in kwargs:
-            dataset_fields = kwargs['datasetFields']
-        if dataset_fields is None:
-            raise TypeError("Missing 'dataset_fields' argument")
-        if delivery_configuration is None and 'deliveryConfiguration' in kwargs:
-            delivery_configuration = kwargs['deliveryConfiguration']
-        if delivery_configuration is None:
-            raise TypeError("Missing 'delivery_configuration' argument")
-        if group_id is None and 'groupId' in kwargs:
-            group_id = kwargs['groupId']
-        if group_id is None:
-            raise TypeError("Missing 'group_id' argument")
-        if properties is None:
-            raise TypeError("Missing 'properties' argument")
-        if stream_name is None and 'streamName' in kwargs:
-            stream_name = kwargs['streamName']
-        if stream_name is None:
-            raise TypeError("Missing 'stream_name' argument")
-        if azure_connector is None and 'azureConnector' in kwargs:
-            azure_connector = kwargs['azureConnector']
-        if collect_midgress is None and 'collectMidgress' in kwargs:
-            collect_midgress = kwargs['collectMidgress']
-        if datadog_connector is None and 'datadogConnector' in kwargs:
-            datadog_connector = kwargs['datadogConnector']
-        if elasticsearch_connector is None and 'elasticsearchConnector' in kwargs:
-            elasticsearch_connector = kwargs['elasticsearchConnector']
-        if gcs_connector is None and 'gcsConnector' in kwargs:
-            gcs_connector = kwargs['gcsConnector']
-        if https_connector is None and 'httpsConnector' in kwargs:
-            https_connector = kwargs['httpsConnector']
-        if loggly_connector is None and 'logglyConnector' in kwargs:
-            loggly_connector = kwargs['logglyConnector']
-        if new_relic_connector is None and 'newRelicConnector' in kwargs:
-            new_relic_connector = kwargs['newRelicConnector']
-        if notification_emails is None and 'notificationEmails' in kwargs:
-            notification_emails = kwargs['notificationEmails']
-        if oracle_connector is None and 'oracleConnector' in kwargs:
-            oracle_connector = kwargs['oracleConnector']
-        if s3_connector is None and 's3Connector' in kwargs:
-            s3_connector = kwargs['s3Connector']
-        if splunk_connector is None and 'splunkConnector' in kwargs:
-            splunk_connector = kwargs['splunkConnector']
-        if sumologic_connector is None and 'sumologicConnector' in kwargs:
-            sumologic_connector = kwargs['sumologicConnector']
-
-        _setter("active", active)
-        _setter("contract_id", contract_id)
-        _setter("dataset_fields", dataset_fields)
-        _setter("delivery_configuration", delivery_configuration)
-        _setter("group_id", group_id)
-        _setter("properties", properties)
-        _setter("stream_name", stream_name)
+        pulumi.set(__self__, "active", active)
+        pulumi.set(__self__, "contract_id", contract_id)
+        pulumi.set(__self__, "dataset_fields", dataset_fields)
+        pulumi.set(__self__, "delivery_configuration", delivery_configuration)
+        pulumi.set(__self__, "group_id", group_id)
+        pulumi.set(__self__, "properties", properties)
+        pulumi.set(__self__, "stream_name", stream_name)
         if azure_connector is not None:
-            _setter("azure_connector", azure_connector)
+            pulumi.set(__self__, "azure_connector", azure_connector)
         if collect_midgress is not None:
-            _setter("collect_midgress", collect_midgress)
+            pulumi.set(__self__, "collect_midgress", collect_midgress)
         if datadog_connector is not None:
-            _setter("datadog_connector", datadog_connector)
+            pulumi.set(__self__, "datadog_connector", datadog_connector)
         if elasticsearch_connector is not None:
-            _setter("elasticsearch_connector", elasticsearch_connector)
+            pulumi.set(__self__, "elasticsearch_connector", elasticsearch_connector)
         if gcs_connector is not None:
-            _setter("gcs_connector", gcs_connector)
+            pulumi.set(__self__, "gcs_connector", gcs_connector)
         if https_connector is not None:
-            _setter("https_connector", https_connector)
+            pulumi.set(__self__, "https_connector", https_connector)
         if loggly_connector is not None:
-            _setter("loggly_connector", loggly_connector)
+            pulumi.set(__self__, "loggly_connector", loggly_connector)
         if new_relic_connector is not None:
-            _setter("new_relic_connector", new_relic_connector)
+            pulumi.set(__self__, "new_relic_connector", new_relic_connector)
         if notification_emails is not None:
-            _setter("notification_emails", notification_emails)
+            pulumi.set(__self__, "notification_emails", notification_emails)
         if oracle_connector is not None:
-            _setter("oracle_connector", oracle_connector)
+            pulumi.set(__self__, "oracle_connector", oracle_connector)
         if s3_connector is not None:
-            _setter("s3_connector", s3_connector)
+            pulumi.set(__self__, "s3_connector", s3_connector)
         if splunk_connector is not None:
-            _setter("splunk_connector", splunk_connector)
+            pulumi.set(__self__, "splunk_connector", splunk_connector)
         if sumologic_connector is not None:
-            _setter("sumologic_connector", sumologic_connector)
+            pulumi.set(__self__, "sumologic_connector", sumologic_connector)
 
     @property
     @pulumi.getter
@@ -443,179 +344,62 @@ class _DatastreamState:
         :param pulumi.Input[str] stream_name: The name of the stream
         :param pulumi.Input[int] stream_version: Identifies the configuration version of the stream
         """
-        _DatastreamState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            active=active,
-            azure_connector=azure_connector,
-            collect_midgress=collect_midgress,
-            contract_id=contract_id,
-            created_by=created_by,
-            created_date=created_date,
-            datadog_connector=datadog_connector,
-            dataset_fields=dataset_fields,
-            delivery_configuration=delivery_configuration,
-            elasticsearch_connector=elasticsearch_connector,
-            gcs_connector=gcs_connector,
-            group_id=group_id,
-            https_connector=https_connector,
-            latest_version=latest_version,
-            loggly_connector=loggly_connector,
-            modified_by=modified_by,
-            modified_date=modified_date,
-            new_relic_connector=new_relic_connector,
-            notification_emails=notification_emails,
-            oracle_connector=oracle_connector,
-            papi_json=papi_json,
-            product_id=product_id,
-            properties=properties,
-            s3_connector=s3_connector,
-            splunk_connector=splunk_connector,
-            stream_name=stream_name,
-            stream_version=stream_version,
-            sumologic_connector=sumologic_connector,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             active: Optional[pulumi.Input[bool]] = None,
-             azure_connector: Optional[pulumi.Input['DatastreamAzureConnectorArgs']] = None,
-             collect_midgress: Optional[pulumi.Input[bool]] = None,
-             contract_id: Optional[pulumi.Input[str]] = None,
-             created_by: Optional[pulumi.Input[str]] = None,
-             created_date: Optional[pulumi.Input[str]] = None,
-             datadog_connector: Optional[pulumi.Input['DatastreamDatadogConnectorArgs']] = None,
-             dataset_fields: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
-             delivery_configuration: Optional[pulumi.Input['DatastreamDeliveryConfigurationArgs']] = None,
-             elasticsearch_connector: Optional[pulumi.Input['DatastreamElasticsearchConnectorArgs']] = None,
-             gcs_connector: Optional[pulumi.Input['DatastreamGcsConnectorArgs']] = None,
-             group_id: Optional[pulumi.Input[str]] = None,
-             https_connector: Optional[pulumi.Input['DatastreamHttpsConnectorArgs']] = None,
-             latest_version: Optional[pulumi.Input[int]] = None,
-             loggly_connector: Optional[pulumi.Input['DatastreamLogglyConnectorArgs']] = None,
-             modified_by: Optional[pulumi.Input[str]] = None,
-             modified_date: Optional[pulumi.Input[str]] = None,
-             new_relic_connector: Optional[pulumi.Input['DatastreamNewRelicConnectorArgs']] = None,
-             notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             oracle_connector: Optional[pulumi.Input['DatastreamOracleConnectorArgs']] = None,
-             papi_json: Optional[pulumi.Input[str]] = None,
-             product_id: Optional[pulumi.Input[str]] = None,
-             properties: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             s3_connector: Optional[pulumi.Input['DatastreamS3ConnectorArgs']] = None,
-             splunk_connector: Optional[pulumi.Input['DatastreamSplunkConnectorArgs']] = None,
-             stream_name: Optional[pulumi.Input[str]] = None,
-             stream_version: Optional[pulumi.Input[int]] = None,
-             sumologic_connector: Optional[pulumi.Input['DatastreamSumologicConnectorArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if azure_connector is None and 'azureConnector' in kwargs:
-            azure_connector = kwargs['azureConnector']
-        if collect_midgress is None and 'collectMidgress' in kwargs:
-            collect_midgress = kwargs['collectMidgress']
-        if contract_id is None and 'contractId' in kwargs:
-            contract_id = kwargs['contractId']
-        if created_by is None and 'createdBy' in kwargs:
-            created_by = kwargs['createdBy']
-        if created_date is None and 'createdDate' in kwargs:
-            created_date = kwargs['createdDate']
-        if datadog_connector is None and 'datadogConnector' in kwargs:
-            datadog_connector = kwargs['datadogConnector']
-        if dataset_fields is None and 'datasetFields' in kwargs:
-            dataset_fields = kwargs['datasetFields']
-        if delivery_configuration is None and 'deliveryConfiguration' in kwargs:
-            delivery_configuration = kwargs['deliveryConfiguration']
-        if elasticsearch_connector is None and 'elasticsearchConnector' in kwargs:
-            elasticsearch_connector = kwargs['elasticsearchConnector']
-        if gcs_connector is None and 'gcsConnector' in kwargs:
-            gcs_connector = kwargs['gcsConnector']
-        if group_id is None and 'groupId' in kwargs:
-            group_id = kwargs['groupId']
-        if https_connector is None and 'httpsConnector' in kwargs:
-            https_connector = kwargs['httpsConnector']
-        if latest_version is None and 'latestVersion' in kwargs:
-            latest_version = kwargs['latestVersion']
-        if loggly_connector is None and 'logglyConnector' in kwargs:
-            loggly_connector = kwargs['logglyConnector']
-        if modified_by is None and 'modifiedBy' in kwargs:
-            modified_by = kwargs['modifiedBy']
-        if modified_date is None and 'modifiedDate' in kwargs:
-            modified_date = kwargs['modifiedDate']
-        if new_relic_connector is None and 'newRelicConnector' in kwargs:
-            new_relic_connector = kwargs['newRelicConnector']
-        if notification_emails is None and 'notificationEmails' in kwargs:
-            notification_emails = kwargs['notificationEmails']
-        if oracle_connector is None and 'oracleConnector' in kwargs:
-            oracle_connector = kwargs['oracleConnector']
-        if papi_json is None and 'papiJson' in kwargs:
-            papi_json = kwargs['papiJson']
-        if product_id is None and 'productId' in kwargs:
-            product_id = kwargs['productId']
-        if s3_connector is None and 's3Connector' in kwargs:
-            s3_connector = kwargs['s3Connector']
-        if splunk_connector is None and 'splunkConnector' in kwargs:
-            splunk_connector = kwargs['splunkConnector']
-        if stream_name is None and 'streamName' in kwargs:
-            stream_name = kwargs['streamName']
-        if stream_version is None and 'streamVersion' in kwargs:
-            stream_version = kwargs['streamVersion']
-        if sumologic_connector is None and 'sumologicConnector' in kwargs:
-            sumologic_connector = kwargs['sumologicConnector']
-
         if active is not None:
-            _setter("active", active)
+            pulumi.set(__self__, "active", active)
         if azure_connector is not None:
-            _setter("azure_connector", azure_connector)
+            pulumi.set(__self__, "azure_connector", azure_connector)
         if collect_midgress is not None:
-            _setter("collect_midgress", collect_midgress)
+            pulumi.set(__self__, "collect_midgress", collect_midgress)
         if contract_id is not None:
-            _setter("contract_id", contract_id)
+            pulumi.set(__self__, "contract_id", contract_id)
         if created_by is not None:
-            _setter("created_by", created_by)
+            pulumi.set(__self__, "created_by", created_by)
         if created_date is not None:
-            _setter("created_date", created_date)
+            pulumi.set(__self__, "created_date", created_date)
         if datadog_connector is not None:
-            _setter("datadog_connector", datadog_connector)
+            pulumi.set(__self__, "datadog_connector", datadog_connector)
         if dataset_fields is not None:
-            _setter("dataset_fields", dataset_fields)
+            pulumi.set(__self__, "dataset_fields", dataset_fields)
         if delivery_configuration is not None:
-            _setter("delivery_configuration", delivery_configuration)
+            pulumi.set(__self__, "delivery_configuration", delivery_configuration)
         if elasticsearch_connector is not None:
-            _setter("elasticsearch_connector", elasticsearch_connector)
+            pulumi.set(__self__, "elasticsearch_connector", elasticsearch_connector)
         if gcs_connector is not None:
-            _setter("gcs_connector", gcs_connector)
+            pulumi.set(__self__, "gcs_connector", gcs_connector)
         if group_id is not None:
-            _setter("group_id", group_id)
+            pulumi.set(__self__, "group_id", group_id)
         if https_connector is not None:
-            _setter("https_connector", https_connector)
+            pulumi.set(__self__, "https_connector", https_connector)
         if latest_version is not None:
-            _setter("latest_version", latest_version)
+            pulumi.set(__self__, "latest_version", latest_version)
         if loggly_connector is not None:
-            _setter("loggly_connector", loggly_connector)
+            pulumi.set(__self__, "loggly_connector", loggly_connector)
         if modified_by is not None:
-            _setter("modified_by", modified_by)
+            pulumi.set(__self__, "modified_by", modified_by)
         if modified_date is not None:
-            _setter("modified_date", modified_date)
+            pulumi.set(__self__, "modified_date", modified_date)
         if new_relic_connector is not None:
-            _setter("new_relic_connector", new_relic_connector)
+            pulumi.set(__self__, "new_relic_connector", new_relic_connector)
         if notification_emails is not None:
-            _setter("notification_emails", notification_emails)
+            pulumi.set(__self__, "notification_emails", notification_emails)
         if oracle_connector is not None:
-            _setter("oracle_connector", oracle_connector)
+            pulumi.set(__self__, "oracle_connector", oracle_connector)
         if papi_json is not None:
-            _setter("papi_json", papi_json)
+            pulumi.set(__self__, "papi_json", papi_json)
         if product_id is not None:
-            _setter("product_id", product_id)
+            pulumi.set(__self__, "product_id", product_id)
         if properties is not None:
-            _setter("properties", properties)
+            pulumi.set(__self__, "properties", properties)
         if s3_connector is not None:
-            _setter("s3_connector", s3_connector)
+            pulumi.set(__self__, "s3_connector", s3_connector)
         if splunk_connector is not None:
-            _setter("splunk_connector", splunk_connector)
+            pulumi.set(__self__, "splunk_connector", splunk_connector)
         if stream_name is not None:
-            _setter("stream_name", stream_name)
+            pulumi.set(__self__, "stream_name", stream_name)
         if stream_version is not None:
-            _setter("stream_version", stream_version)
+            pulumi.set(__self__, "stream_version", stream_version)
         if sumologic_connector is not None:
-            _setter("sumologic_connector", sumologic_connector)
+            pulumi.set(__self__, "sumologic_connector", sumologic_connector)
 
     @property
     @pulumi.getter
@@ -981,10 +765,6 @@ class Datastream(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            DatastreamArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -1022,48 +802,36 @@ class Datastream(pulumi.CustomResource):
             if active is None and not opts.urn:
                 raise TypeError("Missing required property 'active'")
             __props__.__dict__["active"] = active
-            azure_connector = _utilities.configure(azure_connector, DatastreamAzureConnectorArgs, True)
             __props__.__dict__["azure_connector"] = azure_connector
             __props__.__dict__["collect_midgress"] = collect_midgress
             if contract_id is None and not opts.urn:
                 raise TypeError("Missing required property 'contract_id'")
             __props__.__dict__["contract_id"] = contract_id
-            datadog_connector = _utilities.configure(datadog_connector, DatastreamDatadogConnectorArgs, True)
             __props__.__dict__["datadog_connector"] = datadog_connector
             if dataset_fields is None and not opts.urn:
                 raise TypeError("Missing required property 'dataset_fields'")
             __props__.__dict__["dataset_fields"] = dataset_fields
-            delivery_configuration = _utilities.configure(delivery_configuration, DatastreamDeliveryConfigurationArgs, True)
             if delivery_configuration is None and not opts.urn:
                 raise TypeError("Missing required property 'delivery_configuration'")
             __props__.__dict__["delivery_configuration"] = delivery_configuration
-            elasticsearch_connector = _utilities.configure(elasticsearch_connector, DatastreamElasticsearchConnectorArgs, True)
             __props__.__dict__["elasticsearch_connector"] = elasticsearch_connector
-            gcs_connector = _utilities.configure(gcs_connector, DatastreamGcsConnectorArgs, True)
             __props__.__dict__["gcs_connector"] = gcs_connector
             if group_id is None and not opts.urn:
                 raise TypeError("Missing required property 'group_id'")
             __props__.__dict__["group_id"] = group_id
-            https_connector = _utilities.configure(https_connector, DatastreamHttpsConnectorArgs, True)
             __props__.__dict__["https_connector"] = https_connector
-            loggly_connector = _utilities.configure(loggly_connector, DatastreamLogglyConnectorArgs, True)
             __props__.__dict__["loggly_connector"] = loggly_connector
-            new_relic_connector = _utilities.configure(new_relic_connector, DatastreamNewRelicConnectorArgs, True)
             __props__.__dict__["new_relic_connector"] = new_relic_connector
             __props__.__dict__["notification_emails"] = notification_emails
-            oracle_connector = _utilities.configure(oracle_connector, DatastreamOracleConnectorArgs, True)
             __props__.__dict__["oracle_connector"] = oracle_connector
             if properties is None and not opts.urn:
                 raise TypeError("Missing required property 'properties'")
             __props__.__dict__["properties"] = properties
-            s3_connector = _utilities.configure(s3_connector, DatastreamS3ConnectorArgs, True)
             __props__.__dict__["s3_connector"] = s3_connector
-            splunk_connector = _utilities.configure(splunk_connector, DatastreamSplunkConnectorArgs, True)
             __props__.__dict__["splunk_connector"] = splunk_connector
             if stream_name is None and not opts.urn:
                 raise TypeError("Missing required property 'stream_name'")
             __props__.__dict__["stream_name"] = stream_name
-            sumologic_connector = _utilities.configure(sumologic_connector, DatastreamSumologicConnectorArgs, True)
             __props__.__dict__["sumologic_connector"] = sumologic_connector
             __props__.__dict__["created_by"] = None
             __props__.__dict__["created_date"] = None

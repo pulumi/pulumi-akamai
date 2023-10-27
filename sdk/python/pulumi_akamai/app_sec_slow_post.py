@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecSlowPostArgs', 'AppSecSlowPost']
@@ -30,54 +30,15 @@ class AppSecSlowPostArgs:
         :param pulumi.Input[int] slow_rate_threshold_period: Amount of time (in seconds) that the server should allow a request before marking the request as being too slow
         :param pulumi.Input[int] slow_rate_threshold_rate: Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered
         """
-        AppSecSlowPostArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_id=config_id,
-            security_policy_id=security_policy_id,
-            slow_rate_action=slow_rate_action,
-            duration_threshold_timeout=duration_threshold_timeout,
-            slow_rate_threshold_period=slow_rate_threshold_period,
-            slow_rate_threshold_rate=slow_rate_threshold_rate,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_id: Optional[pulumi.Input[int]] = None,
-             security_policy_id: Optional[pulumi.Input[str]] = None,
-             slow_rate_action: Optional[pulumi.Input[str]] = None,
-             duration_threshold_timeout: Optional[pulumi.Input[int]] = None,
-             slow_rate_threshold_period: Optional[pulumi.Input[int]] = None,
-             slow_rate_threshold_rate: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_id is None and 'configId' in kwargs:
-            config_id = kwargs['configId']
-        if config_id is None:
-            raise TypeError("Missing 'config_id' argument")
-        if security_policy_id is None and 'securityPolicyId' in kwargs:
-            security_policy_id = kwargs['securityPolicyId']
-        if security_policy_id is None:
-            raise TypeError("Missing 'security_policy_id' argument")
-        if slow_rate_action is None and 'slowRateAction' in kwargs:
-            slow_rate_action = kwargs['slowRateAction']
-        if slow_rate_action is None:
-            raise TypeError("Missing 'slow_rate_action' argument")
-        if duration_threshold_timeout is None and 'durationThresholdTimeout' in kwargs:
-            duration_threshold_timeout = kwargs['durationThresholdTimeout']
-        if slow_rate_threshold_period is None and 'slowRateThresholdPeriod' in kwargs:
-            slow_rate_threshold_period = kwargs['slowRateThresholdPeriod']
-        if slow_rate_threshold_rate is None and 'slowRateThresholdRate' in kwargs:
-            slow_rate_threshold_rate = kwargs['slowRateThresholdRate']
-
-        _setter("config_id", config_id)
-        _setter("security_policy_id", security_policy_id)
-        _setter("slow_rate_action", slow_rate_action)
+        pulumi.set(__self__, "config_id", config_id)
+        pulumi.set(__self__, "security_policy_id", security_policy_id)
+        pulumi.set(__self__, "slow_rate_action", slow_rate_action)
         if duration_threshold_timeout is not None:
-            _setter("duration_threshold_timeout", duration_threshold_timeout)
+            pulumi.set(__self__, "duration_threshold_timeout", duration_threshold_timeout)
         if slow_rate_threshold_period is not None:
-            _setter("slow_rate_threshold_period", slow_rate_threshold_period)
+            pulumi.set(__self__, "slow_rate_threshold_period", slow_rate_threshold_period)
         if slow_rate_threshold_rate is not None:
-            _setter("slow_rate_threshold_rate", slow_rate_threshold_rate)
+            pulumi.set(__self__, "slow_rate_threshold_rate", slow_rate_threshold_rate)
 
     @property
     @pulumi.getter(name="configId")
@@ -172,51 +133,18 @@ class _AppSecSlowPostState:
         :param pulumi.Input[int] slow_rate_threshold_period: Amount of time (in seconds) that the server should allow a request before marking the request as being too slow
         :param pulumi.Input[int] slow_rate_threshold_rate: Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered
         """
-        _AppSecSlowPostState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_id=config_id,
-            duration_threshold_timeout=duration_threshold_timeout,
-            security_policy_id=security_policy_id,
-            slow_rate_action=slow_rate_action,
-            slow_rate_threshold_period=slow_rate_threshold_period,
-            slow_rate_threshold_rate=slow_rate_threshold_rate,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_id: Optional[pulumi.Input[int]] = None,
-             duration_threshold_timeout: Optional[pulumi.Input[int]] = None,
-             security_policy_id: Optional[pulumi.Input[str]] = None,
-             slow_rate_action: Optional[pulumi.Input[str]] = None,
-             slow_rate_threshold_period: Optional[pulumi.Input[int]] = None,
-             slow_rate_threshold_rate: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_id is None and 'configId' in kwargs:
-            config_id = kwargs['configId']
-        if duration_threshold_timeout is None and 'durationThresholdTimeout' in kwargs:
-            duration_threshold_timeout = kwargs['durationThresholdTimeout']
-        if security_policy_id is None and 'securityPolicyId' in kwargs:
-            security_policy_id = kwargs['securityPolicyId']
-        if slow_rate_action is None and 'slowRateAction' in kwargs:
-            slow_rate_action = kwargs['slowRateAction']
-        if slow_rate_threshold_period is None and 'slowRateThresholdPeriod' in kwargs:
-            slow_rate_threshold_period = kwargs['slowRateThresholdPeriod']
-        if slow_rate_threshold_rate is None and 'slowRateThresholdRate' in kwargs:
-            slow_rate_threshold_rate = kwargs['slowRateThresholdRate']
-
         if config_id is not None:
-            _setter("config_id", config_id)
+            pulumi.set(__self__, "config_id", config_id)
         if duration_threshold_timeout is not None:
-            _setter("duration_threshold_timeout", duration_threshold_timeout)
+            pulumi.set(__self__, "duration_threshold_timeout", duration_threshold_timeout)
         if security_policy_id is not None:
-            _setter("security_policy_id", security_policy_id)
+            pulumi.set(__self__, "security_policy_id", security_policy_id)
         if slow_rate_action is not None:
-            _setter("slow_rate_action", slow_rate_action)
+            pulumi.set(__self__, "slow_rate_action", slow_rate_action)
         if slow_rate_threshold_period is not None:
-            _setter("slow_rate_threshold_period", slow_rate_threshold_period)
+            pulumi.set(__self__, "slow_rate_threshold_period", slow_rate_threshold_period)
         if slow_rate_threshold_rate is not None:
-            _setter("slow_rate_threshold_rate", slow_rate_threshold_rate)
+            pulumi.set(__self__, "slow_rate_threshold_rate", slow_rate_threshold_rate)
 
     @property
     @pulumi.getter(name="configId")
@@ -334,10 +262,6 @@ class AppSecSlowPost(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            AppSecSlowPostArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

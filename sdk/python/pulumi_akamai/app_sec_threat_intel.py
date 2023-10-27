@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecThreatIntelArgs', 'AppSecThreatIntel']
@@ -23,36 +23,9 @@ class AppSecThreatIntelArgs:
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         :param pulumi.Input[str] threat_intel: Whether threat intelligence protection should be on or off
         """
-        AppSecThreatIntelArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_id=config_id,
-            security_policy_id=security_policy_id,
-            threat_intel=threat_intel,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_id: Optional[pulumi.Input[int]] = None,
-             security_policy_id: Optional[pulumi.Input[str]] = None,
-             threat_intel: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_id is None and 'configId' in kwargs:
-            config_id = kwargs['configId']
-        if config_id is None:
-            raise TypeError("Missing 'config_id' argument")
-        if security_policy_id is None and 'securityPolicyId' in kwargs:
-            security_policy_id = kwargs['securityPolicyId']
-        if security_policy_id is None:
-            raise TypeError("Missing 'security_policy_id' argument")
-        if threat_intel is None and 'threatIntel' in kwargs:
-            threat_intel = kwargs['threatIntel']
-        if threat_intel is None:
-            raise TypeError("Missing 'threat_intel' argument")
-
-        _setter("config_id", config_id)
-        _setter("security_policy_id", security_policy_id)
-        _setter("threat_intel", threat_intel)
+        pulumi.set(__self__, "config_id", config_id)
+        pulumi.set(__self__, "security_policy_id", security_policy_id)
+        pulumi.set(__self__, "threat_intel", threat_intel)
 
     @property
     @pulumi.getter(name="configId")
@@ -103,33 +76,12 @@ class _AppSecThreatIntelState:
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         :param pulumi.Input[str] threat_intel: Whether threat intelligence protection should be on or off
         """
-        _AppSecThreatIntelState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_id=config_id,
-            security_policy_id=security_policy_id,
-            threat_intel=threat_intel,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_id: Optional[pulumi.Input[int]] = None,
-             security_policy_id: Optional[pulumi.Input[str]] = None,
-             threat_intel: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_id is None and 'configId' in kwargs:
-            config_id = kwargs['configId']
-        if security_policy_id is None and 'securityPolicyId' in kwargs:
-            security_policy_id = kwargs['securityPolicyId']
-        if threat_intel is None and 'threatIntel' in kwargs:
-            threat_intel = kwargs['threatIntel']
-
         if config_id is not None:
-            _setter("config_id", config_id)
+            pulumi.set(__self__, "config_id", config_id)
         if security_policy_id is not None:
-            _setter("security_policy_id", security_policy_id)
+            pulumi.set(__self__, "security_policy_id", security_policy_id)
         if threat_intel is not None:
-            _setter("threat_intel", threat_intel)
+            pulumi.set(__self__, "threat_intel", threat_intel)
 
     @property
     @pulumi.getter(name="configId")
@@ -203,10 +155,6 @@ class AppSecThreatIntel(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            AppSecThreatIntelArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

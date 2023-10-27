@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['ClientlistActivationArgs', 'ClientlistActivation']
@@ -29,48 +29,15 @@ class ClientlistActivationArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] notification_recipients: Users to notify via email.
         :param pulumi.Input[str] siebel_ticket_id: Identifies the Siebel ticket, if the activation is linked to one.
         """
-        ClientlistActivationArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            list_id=list_id,
-            network=network,
-            version=version,
-            comments=comments,
-            notification_recipients=notification_recipients,
-            siebel_ticket_id=siebel_ticket_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             list_id: Optional[pulumi.Input[str]] = None,
-             network: Optional[pulumi.Input[str]] = None,
-             version: Optional[pulumi.Input[int]] = None,
-             comments: Optional[pulumi.Input[str]] = None,
-             notification_recipients: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             siebel_ticket_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if list_id is None and 'listId' in kwargs:
-            list_id = kwargs['listId']
-        if list_id is None:
-            raise TypeError("Missing 'list_id' argument")
-        if network is None:
-            raise TypeError("Missing 'network' argument")
-        if version is None:
-            raise TypeError("Missing 'version' argument")
-        if notification_recipients is None and 'notificationRecipients' in kwargs:
-            notification_recipients = kwargs['notificationRecipients']
-        if siebel_ticket_id is None and 'siebelTicketId' in kwargs:
-            siebel_ticket_id = kwargs['siebelTicketId']
-
-        _setter("list_id", list_id)
-        _setter("network", network)
-        _setter("version", version)
+        pulumi.set(__self__, "list_id", list_id)
+        pulumi.set(__self__, "network", network)
+        pulumi.set(__self__, "version", version)
         if comments is not None:
-            _setter("comments", comments)
+            pulumi.set(__self__, "comments", comments)
         if notification_recipients is not None:
-            _setter("notification_recipients", notification_recipients)
+            pulumi.set(__self__, "notification_recipients", notification_recipients)
         if siebel_ticket_id is not None:
-            _setter("siebel_ticket_id", siebel_ticket_id)
+            pulumi.set(__self__, "siebel_ticket_id", siebel_ticket_id)
 
     @property
     @pulumi.getter(name="listId")
@@ -165,49 +132,20 @@ class _ClientlistActivationState:
         :param pulumi.Input[str] status: The current activation status, either ACTIVE, INACTIVE, MODIFIED, PENDING_ACTIVATION, PENDING_DEACTIVATION, or FAILED.
         :param pulumi.Input[int] version: The client list version.
         """
-        _ClientlistActivationState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            comments=comments,
-            list_id=list_id,
-            network=network,
-            notification_recipients=notification_recipients,
-            siebel_ticket_id=siebel_ticket_id,
-            status=status,
-            version=version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             comments: Optional[pulumi.Input[str]] = None,
-             list_id: Optional[pulumi.Input[str]] = None,
-             network: Optional[pulumi.Input[str]] = None,
-             notification_recipients: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             siebel_ticket_id: Optional[pulumi.Input[str]] = None,
-             status: Optional[pulumi.Input[str]] = None,
-             version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if list_id is None and 'listId' in kwargs:
-            list_id = kwargs['listId']
-        if notification_recipients is None and 'notificationRecipients' in kwargs:
-            notification_recipients = kwargs['notificationRecipients']
-        if siebel_ticket_id is None and 'siebelTicketId' in kwargs:
-            siebel_ticket_id = kwargs['siebelTicketId']
-
         if comments is not None:
-            _setter("comments", comments)
+            pulumi.set(__self__, "comments", comments)
         if list_id is not None:
-            _setter("list_id", list_id)
+            pulumi.set(__self__, "list_id", list_id)
         if network is not None:
-            _setter("network", network)
+            pulumi.set(__self__, "network", network)
         if notification_recipients is not None:
-            _setter("notification_recipients", notification_recipients)
+            pulumi.set(__self__, "notification_recipients", notification_recipients)
         if siebel_ticket_id is not None:
-            _setter("siebel_ticket_id", siebel_ticket_id)
+            pulumi.set(__self__, "siebel_ticket_id", siebel_ticket_id)
         if status is not None:
-            _setter("status", status)
+            pulumi.set(__self__, "status", status)
         if version is not None:
-            _setter("version", version)
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter
@@ -335,10 +273,6 @@ class ClientlistActivation(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            ClientlistActivationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

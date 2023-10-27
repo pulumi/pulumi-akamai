@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -22,53 +22,14 @@ class Config(dict):
                  host: str,
                  account_key: Optional[str] = None,
                  max_body: Optional[int] = None):
-        Config._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            access_token=access_token,
-            client_secret=client_secret,
-            client_token=client_token,
-            host=host,
-            account_key=account_key,
-            max_body=max_body,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             access_token: Optional[str] = None,
-             client_secret: Optional[str] = None,
-             client_token: Optional[str] = None,
-             host: Optional[str] = None,
-             account_key: Optional[str] = None,
-             max_body: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if access_token is None and 'accessToken' in kwargs:
-            access_token = kwargs['accessToken']
-        if access_token is None:
-            raise TypeError("Missing 'access_token' argument")
-        if client_secret is None and 'clientSecret' in kwargs:
-            client_secret = kwargs['clientSecret']
-        if client_secret is None:
-            raise TypeError("Missing 'client_secret' argument")
-        if client_token is None and 'clientToken' in kwargs:
-            client_token = kwargs['clientToken']
-        if client_token is None:
-            raise TypeError("Missing 'client_token' argument")
-        if host is None:
-            raise TypeError("Missing 'host' argument")
-        if account_key is None and 'accountKey' in kwargs:
-            account_key = kwargs['accountKey']
-        if max_body is None and 'maxBody' in kwargs:
-            max_body = kwargs['maxBody']
-
-        _setter("access_token", access_token)
-        _setter("client_secret", client_secret)
-        _setter("client_token", client_token)
-        _setter("host", host)
+        pulumi.set(__self__, "access_token", access_token)
+        pulumi.set(__self__, "client_secret", client_secret)
+        pulumi.set(__self__, "client_token", client_token)
+        pulumi.set(__self__, "host", host)
         if account_key is not None:
-            _setter("account_key", account_key)
+            pulumi.set(__self__, "account_key", account_key)
         if max_body is not None:
-            _setter("max_body", max_body)
+            pulumi.set(__self__, "max_body", max_body)
 
     @property
     @pulumi.getter(name="accessToken")

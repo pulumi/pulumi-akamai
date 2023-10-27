@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['DnsRecordArgs', 'DnsRecord']
@@ -73,277 +73,118 @@ class DnsRecordArgs:
         """
         The set of arguments for constructing a DnsRecord resource.
         """
-        DnsRecordArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            recordtype=recordtype,
-            ttl=ttl,
-            zone=zone,
-            active=active,
-            algorithm=algorithm,
-            certificate=certificate,
-            digest=digest,
-            digest_type=digest_type,
-            email_address=email_address,
-            expiration=expiration,
-            expiry=expiry,
-            fingerprint=fingerprint,
-            fingerprint_type=fingerprint_type,
-            flags=flags,
-            flagsnaptr=flagsnaptr,
-            hardware=hardware,
-            inception=inception,
-            iterations=iterations,
-            key=key,
-            keytag=keytag,
-            labels=labels,
-            mailbox=mailbox,
-            match_type=match_type,
-            name=name,
-            name_server=name_server,
-            next_hashed_owner_name=next_hashed_owner_name,
-            nxdomain_ttl=nxdomain_ttl,
-            order=order,
-            original_ttl=original_ttl,
-            port=port,
-            preference=preference,
-            priority=priority,
-            priority_increment=priority_increment,
-            protocol=protocol,
-            refresh=refresh,
-            regexp=regexp,
-            replacement=replacement,
-            retry=retry,
-            salt=salt,
-            selector=selector,
-            service=service,
-            signature=signature,
-            signer=signer,
-            software=software,
-            subtype=subtype,
-            svc_params=svc_params,
-            svc_priority=svc_priority,
-            target_name=target_name,
-            targets=targets,
-            txt=txt,
-            type_bitmaps=type_bitmaps,
-            type_covered=type_covered,
-            type_mnemonic=type_mnemonic,
-            type_value=type_value,
-            usage=usage,
-            weight=weight,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             recordtype: Optional[pulumi.Input[str]] = None,
-             ttl: Optional[pulumi.Input[int]] = None,
-             zone: Optional[pulumi.Input[str]] = None,
-             active: Optional[pulumi.Input[bool]] = None,
-             algorithm: Optional[pulumi.Input[int]] = None,
-             certificate: Optional[pulumi.Input[str]] = None,
-             digest: Optional[pulumi.Input[str]] = None,
-             digest_type: Optional[pulumi.Input[int]] = None,
-             email_address: Optional[pulumi.Input[str]] = None,
-             expiration: Optional[pulumi.Input[str]] = None,
-             expiry: Optional[pulumi.Input[int]] = None,
-             fingerprint: Optional[pulumi.Input[str]] = None,
-             fingerprint_type: Optional[pulumi.Input[int]] = None,
-             flags: Optional[pulumi.Input[int]] = None,
-             flagsnaptr: Optional[pulumi.Input[str]] = None,
-             hardware: Optional[pulumi.Input[str]] = None,
-             inception: Optional[pulumi.Input[str]] = None,
-             iterations: Optional[pulumi.Input[int]] = None,
-             key: Optional[pulumi.Input[str]] = None,
-             keytag: Optional[pulumi.Input[int]] = None,
-             labels: Optional[pulumi.Input[int]] = None,
-             mailbox: Optional[pulumi.Input[str]] = None,
-             match_type: Optional[pulumi.Input[int]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             name_server: Optional[pulumi.Input[str]] = None,
-             next_hashed_owner_name: Optional[pulumi.Input[str]] = None,
-             nxdomain_ttl: Optional[pulumi.Input[int]] = None,
-             order: Optional[pulumi.Input[int]] = None,
-             original_ttl: Optional[pulumi.Input[int]] = None,
-             port: Optional[pulumi.Input[int]] = None,
-             preference: Optional[pulumi.Input[int]] = None,
-             priority: Optional[pulumi.Input[int]] = None,
-             priority_increment: Optional[pulumi.Input[int]] = None,
-             protocol: Optional[pulumi.Input[int]] = None,
-             refresh: Optional[pulumi.Input[int]] = None,
-             regexp: Optional[pulumi.Input[str]] = None,
-             replacement: Optional[pulumi.Input[str]] = None,
-             retry: Optional[pulumi.Input[int]] = None,
-             salt: Optional[pulumi.Input[str]] = None,
-             selector: Optional[pulumi.Input[int]] = None,
-             service: Optional[pulumi.Input[str]] = None,
-             signature: Optional[pulumi.Input[str]] = None,
-             signer: Optional[pulumi.Input[str]] = None,
-             software: Optional[pulumi.Input[str]] = None,
-             subtype: Optional[pulumi.Input[int]] = None,
-             svc_params: Optional[pulumi.Input[str]] = None,
-             svc_priority: Optional[pulumi.Input[int]] = None,
-             target_name: Optional[pulumi.Input[str]] = None,
-             targets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             txt: Optional[pulumi.Input[str]] = None,
-             type_bitmaps: Optional[pulumi.Input[str]] = None,
-             type_covered: Optional[pulumi.Input[str]] = None,
-             type_mnemonic: Optional[pulumi.Input[str]] = None,
-             type_value: Optional[pulumi.Input[int]] = None,
-             usage: Optional[pulumi.Input[int]] = None,
-             weight: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if recordtype is None:
-            raise TypeError("Missing 'recordtype' argument")
-        if ttl is None:
-            raise TypeError("Missing 'ttl' argument")
-        if zone is None:
-            raise TypeError("Missing 'zone' argument")
-        if digest_type is None and 'digestType' in kwargs:
-            digest_type = kwargs['digestType']
-        if email_address is None and 'emailAddress' in kwargs:
-            email_address = kwargs['emailAddress']
-        if fingerprint_type is None and 'fingerprintType' in kwargs:
-            fingerprint_type = kwargs['fingerprintType']
-        if match_type is None and 'matchType' in kwargs:
-            match_type = kwargs['matchType']
-        if name_server is None and 'nameServer' in kwargs:
-            name_server = kwargs['nameServer']
-        if next_hashed_owner_name is None and 'nextHashedOwnerName' in kwargs:
-            next_hashed_owner_name = kwargs['nextHashedOwnerName']
-        if nxdomain_ttl is None and 'nxdomainTtl' in kwargs:
-            nxdomain_ttl = kwargs['nxdomainTtl']
-        if original_ttl is None and 'originalTtl' in kwargs:
-            original_ttl = kwargs['originalTtl']
-        if priority_increment is None and 'priorityIncrement' in kwargs:
-            priority_increment = kwargs['priorityIncrement']
-        if svc_params is None and 'svcParams' in kwargs:
-            svc_params = kwargs['svcParams']
-        if svc_priority is None and 'svcPriority' in kwargs:
-            svc_priority = kwargs['svcPriority']
-        if target_name is None and 'targetName' in kwargs:
-            target_name = kwargs['targetName']
-        if type_bitmaps is None and 'typeBitmaps' in kwargs:
-            type_bitmaps = kwargs['typeBitmaps']
-        if type_covered is None and 'typeCovered' in kwargs:
-            type_covered = kwargs['typeCovered']
-        if type_mnemonic is None and 'typeMnemonic' in kwargs:
-            type_mnemonic = kwargs['typeMnemonic']
-        if type_value is None and 'typeValue' in kwargs:
-            type_value = kwargs['typeValue']
-
-        _setter("recordtype", recordtype)
-        _setter("ttl", ttl)
-        _setter("zone", zone)
+        pulumi.set(__self__, "recordtype", recordtype)
+        pulumi.set(__self__, "ttl", ttl)
+        pulumi.set(__self__, "zone", zone)
         if active is not None:
             warnings.warn("""Field 'active' has been deprecated. Setting it has no effect""", DeprecationWarning)
             pulumi.log.warn("""active is deprecated: Field 'active' has been deprecated. Setting it has no effect""")
         if active is not None:
-            _setter("active", active)
+            pulumi.set(__self__, "active", active)
         if algorithm is not None:
-            _setter("algorithm", algorithm)
+            pulumi.set(__self__, "algorithm", algorithm)
         if certificate is not None:
-            _setter("certificate", certificate)
+            pulumi.set(__self__, "certificate", certificate)
         if digest is not None:
-            _setter("digest", digest)
+            pulumi.set(__self__, "digest", digest)
         if digest_type is not None:
-            _setter("digest_type", digest_type)
+            pulumi.set(__self__, "digest_type", digest_type)
         if email_address is not None:
-            _setter("email_address", email_address)
+            pulumi.set(__self__, "email_address", email_address)
         if expiration is not None:
-            _setter("expiration", expiration)
+            pulumi.set(__self__, "expiration", expiration)
         if expiry is not None:
-            _setter("expiry", expiry)
+            pulumi.set(__self__, "expiry", expiry)
         if fingerprint is not None:
-            _setter("fingerprint", fingerprint)
+            pulumi.set(__self__, "fingerprint", fingerprint)
         if fingerprint_type is not None:
-            _setter("fingerprint_type", fingerprint_type)
+            pulumi.set(__self__, "fingerprint_type", fingerprint_type)
         if flags is not None:
-            _setter("flags", flags)
+            pulumi.set(__self__, "flags", flags)
         if flagsnaptr is not None:
-            _setter("flagsnaptr", flagsnaptr)
+            pulumi.set(__self__, "flagsnaptr", flagsnaptr)
         if hardware is not None:
-            _setter("hardware", hardware)
+            pulumi.set(__self__, "hardware", hardware)
         if inception is not None:
-            _setter("inception", inception)
+            pulumi.set(__self__, "inception", inception)
         if iterations is not None:
-            _setter("iterations", iterations)
+            pulumi.set(__self__, "iterations", iterations)
         if key is not None:
-            _setter("key", key)
+            pulumi.set(__self__, "key", key)
         if keytag is not None:
-            _setter("keytag", keytag)
+            pulumi.set(__self__, "keytag", keytag)
         if labels is not None:
-            _setter("labels", labels)
+            pulumi.set(__self__, "labels", labels)
         if mailbox is not None:
-            _setter("mailbox", mailbox)
+            pulumi.set(__self__, "mailbox", mailbox)
         if match_type is not None:
-            _setter("match_type", match_type)
+            pulumi.set(__self__, "match_type", match_type)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if name_server is not None:
-            _setter("name_server", name_server)
+            pulumi.set(__self__, "name_server", name_server)
         if next_hashed_owner_name is not None:
-            _setter("next_hashed_owner_name", next_hashed_owner_name)
+            pulumi.set(__self__, "next_hashed_owner_name", next_hashed_owner_name)
         if nxdomain_ttl is not None:
-            _setter("nxdomain_ttl", nxdomain_ttl)
+            pulumi.set(__self__, "nxdomain_ttl", nxdomain_ttl)
         if order is not None:
-            _setter("order", order)
+            pulumi.set(__self__, "order", order)
         if original_ttl is not None:
-            _setter("original_ttl", original_ttl)
+            pulumi.set(__self__, "original_ttl", original_ttl)
         if port is not None:
-            _setter("port", port)
+            pulumi.set(__self__, "port", port)
         if preference is not None:
-            _setter("preference", preference)
+            pulumi.set(__self__, "preference", preference)
         if priority is not None:
-            _setter("priority", priority)
+            pulumi.set(__self__, "priority", priority)
         if priority_increment is not None:
-            _setter("priority_increment", priority_increment)
+            pulumi.set(__self__, "priority_increment", priority_increment)
         if protocol is not None:
-            _setter("protocol", protocol)
+            pulumi.set(__self__, "protocol", protocol)
         if refresh is not None:
-            _setter("refresh", refresh)
+            pulumi.set(__self__, "refresh", refresh)
         if regexp is not None:
-            _setter("regexp", regexp)
+            pulumi.set(__self__, "regexp", regexp)
         if replacement is not None:
-            _setter("replacement", replacement)
+            pulumi.set(__self__, "replacement", replacement)
         if retry is not None:
-            _setter("retry", retry)
+            pulumi.set(__self__, "retry", retry)
         if salt is not None:
-            _setter("salt", salt)
+            pulumi.set(__self__, "salt", salt)
         if selector is not None:
-            _setter("selector", selector)
+            pulumi.set(__self__, "selector", selector)
         if service is not None:
-            _setter("service", service)
+            pulumi.set(__self__, "service", service)
         if signature is not None:
-            _setter("signature", signature)
+            pulumi.set(__self__, "signature", signature)
         if signer is not None:
-            _setter("signer", signer)
+            pulumi.set(__self__, "signer", signer)
         if software is not None:
-            _setter("software", software)
+            pulumi.set(__self__, "software", software)
         if subtype is not None:
-            _setter("subtype", subtype)
+            pulumi.set(__self__, "subtype", subtype)
         if svc_params is not None:
-            _setter("svc_params", svc_params)
+            pulumi.set(__self__, "svc_params", svc_params)
         if svc_priority is not None:
-            _setter("svc_priority", svc_priority)
+            pulumi.set(__self__, "svc_priority", svc_priority)
         if target_name is not None:
-            _setter("target_name", target_name)
+            pulumi.set(__self__, "target_name", target_name)
         if targets is not None:
-            _setter("targets", targets)
+            pulumi.set(__self__, "targets", targets)
         if txt is not None:
-            _setter("txt", txt)
+            pulumi.set(__self__, "txt", txt)
         if type_bitmaps is not None:
-            _setter("type_bitmaps", type_bitmaps)
+            pulumi.set(__self__, "type_bitmaps", type_bitmaps)
         if type_covered is not None:
-            _setter("type_covered", type_covered)
+            pulumi.set(__self__, "type_covered", type_covered)
         if type_mnemonic is not None:
-            _setter("type_mnemonic", type_mnemonic)
+            pulumi.set(__self__, "type_mnemonic", type_mnemonic)
         if type_value is not None:
-            _setter("type_value", type_value)
+            pulumi.set(__self__, "type_value", type_value)
         if usage is not None:
-            _setter("usage", usage)
+            pulumi.set(__self__, "usage", usage)
         if weight is not None:
-            _setter("weight", weight)
+            pulumi.set(__self__, "weight", weight)
 
     @property
     @pulumi.getter
@@ -919,296 +760,129 @@ class _DnsRecordState:
         """
         Input properties used for looking up and filtering DnsRecord resources.
         """
-        _DnsRecordState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            active=active,
-            algorithm=algorithm,
-            answer_type=answer_type,
-            certificate=certificate,
-            digest=digest,
-            digest_type=digest_type,
-            dns_name=dns_name,
-            email_address=email_address,
-            expiration=expiration,
-            expiry=expiry,
-            fingerprint=fingerprint,
-            fingerprint_type=fingerprint_type,
-            flags=flags,
-            flagsnaptr=flagsnaptr,
-            hardware=hardware,
-            inception=inception,
-            iterations=iterations,
-            key=key,
-            keytag=keytag,
-            labels=labels,
-            mailbox=mailbox,
-            match_type=match_type,
-            name=name,
-            name_server=name_server,
-            next_hashed_owner_name=next_hashed_owner_name,
-            nxdomain_ttl=nxdomain_ttl,
-            order=order,
-            original_ttl=original_ttl,
-            port=port,
-            preference=preference,
-            priority=priority,
-            priority_increment=priority_increment,
-            protocol=protocol,
-            record_sha=record_sha,
-            recordtype=recordtype,
-            refresh=refresh,
-            regexp=regexp,
-            replacement=replacement,
-            retry=retry,
-            salt=salt,
-            selector=selector,
-            serial=serial,
-            service=service,
-            signature=signature,
-            signer=signer,
-            software=software,
-            subtype=subtype,
-            svc_params=svc_params,
-            svc_priority=svc_priority,
-            target_name=target_name,
-            targets=targets,
-            ttl=ttl,
-            txt=txt,
-            type_bitmaps=type_bitmaps,
-            type_covered=type_covered,
-            type_mnemonic=type_mnemonic,
-            type_value=type_value,
-            usage=usage,
-            weight=weight,
-            zone=zone,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             active: Optional[pulumi.Input[bool]] = None,
-             algorithm: Optional[pulumi.Input[int]] = None,
-             answer_type: Optional[pulumi.Input[str]] = None,
-             certificate: Optional[pulumi.Input[str]] = None,
-             digest: Optional[pulumi.Input[str]] = None,
-             digest_type: Optional[pulumi.Input[int]] = None,
-             dns_name: Optional[pulumi.Input[str]] = None,
-             email_address: Optional[pulumi.Input[str]] = None,
-             expiration: Optional[pulumi.Input[str]] = None,
-             expiry: Optional[pulumi.Input[int]] = None,
-             fingerprint: Optional[pulumi.Input[str]] = None,
-             fingerprint_type: Optional[pulumi.Input[int]] = None,
-             flags: Optional[pulumi.Input[int]] = None,
-             flagsnaptr: Optional[pulumi.Input[str]] = None,
-             hardware: Optional[pulumi.Input[str]] = None,
-             inception: Optional[pulumi.Input[str]] = None,
-             iterations: Optional[pulumi.Input[int]] = None,
-             key: Optional[pulumi.Input[str]] = None,
-             keytag: Optional[pulumi.Input[int]] = None,
-             labels: Optional[pulumi.Input[int]] = None,
-             mailbox: Optional[pulumi.Input[str]] = None,
-             match_type: Optional[pulumi.Input[int]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             name_server: Optional[pulumi.Input[str]] = None,
-             next_hashed_owner_name: Optional[pulumi.Input[str]] = None,
-             nxdomain_ttl: Optional[pulumi.Input[int]] = None,
-             order: Optional[pulumi.Input[int]] = None,
-             original_ttl: Optional[pulumi.Input[int]] = None,
-             port: Optional[pulumi.Input[int]] = None,
-             preference: Optional[pulumi.Input[int]] = None,
-             priority: Optional[pulumi.Input[int]] = None,
-             priority_increment: Optional[pulumi.Input[int]] = None,
-             protocol: Optional[pulumi.Input[int]] = None,
-             record_sha: Optional[pulumi.Input[str]] = None,
-             recordtype: Optional[pulumi.Input[str]] = None,
-             refresh: Optional[pulumi.Input[int]] = None,
-             regexp: Optional[pulumi.Input[str]] = None,
-             replacement: Optional[pulumi.Input[str]] = None,
-             retry: Optional[pulumi.Input[int]] = None,
-             salt: Optional[pulumi.Input[str]] = None,
-             selector: Optional[pulumi.Input[int]] = None,
-             serial: Optional[pulumi.Input[int]] = None,
-             service: Optional[pulumi.Input[str]] = None,
-             signature: Optional[pulumi.Input[str]] = None,
-             signer: Optional[pulumi.Input[str]] = None,
-             software: Optional[pulumi.Input[str]] = None,
-             subtype: Optional[pulumi.Input[int]] = None,
-             svc_params: Optional[pulumi.Input[str]] = None,
-             svc_priority: Optional[pulumi.Input[int]] = None,
-             target_name: Optional[pulumi.Input[str]] = None,
-             targets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             ttl: Optional[pulumi.Input[int]] = None,
-             txt: Optional[pulumi.Input[str]] = None,
-             type_bitmaps: Optional[pulumi.Input[str]] = None,
-             type_covered: Optional[pulumi.Input[str]] = None,
-             type_mnemonic: Optional[pulumi.Input[str]] = None,
-             type_value: Optional[pulumi.Input[int]] = None,
-             usage: Optional[pulumi.Input[int]] = None,
-             weight: Optional[pulumi.Input[int]] = None,
-             zone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if answer_type is None and 'answerType' in kwargs:
-            answer_type = kwargs['answerType']
-        if digest_type is None and 'digestType' in kwargs:
-            digest_type = kwargs['digestType']
-        if dns_name is None and 'dnsName' in kwargs:
-            dns_name = kwargs['dnsName']
-        if email_address is None and 'emailAddress' in kwargs:
-            email_address = kwargs['emailAddress']
-        if fingerprint_type is None and 'fingerprintType' in kwargs:
-            fingerprint_type = kwargs['fingerprintType']
-        if match_type is None and 'matchType' in kwargs:
-            match_type = kwargs['matchType']
-        if name_server is None and 'nameServer' in kwargs:
-            name_server = kwargs['nameServer']
-        if next_hashed_owner_name is None and 'nextHashedOwnerName' in kwargs:
-            next_hashed_owner_name = kwargs['nextHashedOwnerName']
-        if nxdomain_ttl is None and 'nxdomainTtl' in kwargs:
-            nxdomain_ttl = kwargs['nxdomainTtl']
-        if original_ttl is None and 'originalTtl' in kwargs:
-            original_ttl = kwargs['originalTtl']
-        if priority_increment is None and 'priorityIncrement' in kwargs:
-            priority_increment = kwargs['priorityIncrement']
-        if record_sha is None and 'recordSha' in kwargs:
-            record_sha = kwargs['recordSha']
-        if svc_params is None and 'svcParams' in kwargs:
-            svc_params = kwargs['svcParams']
-        if svc_priority is None and 'svcPriority' in kwargs:
-            svc_priority = kwargs['svcPriority']
-        if target_name is None and 'targetName' in kwargs:
-            target_name = kwargs['targetName']
-        if type_bitmaps is None and 'typeBitmaps' in kwargs:
-            type_bitmaps = kwargs['typeBitmaps']
-        if type_covered is None and 'typeCovered' in kwargs:
-            type_covered = kwargs['typeCovered']
-        if type_mnemonic is None and 'typeMnemonic' in kwargs:
-            type_mnemonic = kwargs['typeMnemonic']
-        if type_value is None and 'typeValue' in kwargs:
-            type_value = kwargs['typeValue']
-
         if active is not None:
             warnings.warn("""Field 'active' has been deprecated. Setting it has no effect""", DeprecationWarning)
             pulumi.log.warn("""active is deprecated: Field 'active' has been deprecated. Setting it has no effect""")
         if active is not None:
-            _setter("active", active)
+            pulumi.set(__self__, "active", active)
         if algorithm is not None:
-            _setter("algorithm", algorithm)
+            pulumi.set(__self__, "algorithm", algorithm)
         if answer_type is not None:
-            _setter("answer_type", answer_type)
+            pulumi.set(__self__, "answer_type", answer_type)
         if certificate is not None:
-            _setter("certificate", certificate)
+            pulumi.set(__self__, "certificate", certificate)
         if digest is not None:
-            _setter("digest", digest)
+            pulumi.set(__self__, "digest", digest)
         if digest_type is not None:
-            _setter("digest_type", digest_type)
+            pulumi.set(__self__, "digest_type", digest_type)
         if dns_name is not None:
-            _setter("dns_name", dns_name)
+            pulumi.set(__self__, "dns_name", dns_name)
         if email_address is not None:
-            _setter("email_address", email_address)
+            pulumi.set(__self__, "email_address", email_address)
         if expiration is not None:
-            _setter("expiration", expiration)
+            pulumi.set(__self__, "expiration", expiration)
         if expiry is not None:
-            _setter("expiry", expiry)
+            pulumi.set(__self__, "expiry", expiry)
         if fingerprint is not None:
-            _setter("fingerprint", fingerprint)
+            pulumi.set(__self__, "fingerprint", fingerprint)
         if fingerprint_type is not None:
-            _setter("fingerprint_type", fingerprint_type)
+            pulumi.set(__self__, "fingerprint_type", fingerprint_type)
         if flags is not None:
-            _setter("flags", flags)
+            pulumi.set(__self__, "flags", flags)
         if flagsnaptr is not None:
-            _setter("flagsnaptr", flagsnaptr)
+            pulumi.set(__self__, "flagsnaptr", flagsnaptr)
         if hardware is not None:
-            _setter("hardware", hardware)
+            pulumi.set(__self__, "hardware", hardware)
         if inception is not None:
-            _setter("inception", inception)
+            pulumi.set(__self__, "inception", inception)
         if iterations is not None:
-            _setter("iterations", iterations)
+            pulumi.set(__self__, "iterations", iterations)
         if key is not None:
-            _setter("key", key)
+            pulumi.set(__self__, "key", key)
         if keytag is not None:
-            _setter("keytag", keytag)
+            pulumi.set(__self__, "keytag", keytag)
         if labels is not None:
-            _setter("labels", labels)
+            pulumi.set(__self__, "labels", labels)
         if mailbox is not None:
-            _setter("mailbox", mailbox)
+            pulumi.set(__self__, "mailbox", mailbox)
         if match_type is not None:
-            _setter("match_type", match_type)
+            pulumi.set(__self__, "match_type", match_type)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if name_server is not None:
-            _setter("name_server", name_server)
+            pulumi.set(__self__, "name_server", name_server)
         if next_hashed_owner_name is not None:
-            _setter("next_hashed_owner_name", next_hashed_owner_name)
+            pulumi.set(__self__, "next_hashed_owner_name", next_hashed_owner_name)
         if nxdomain_ttl is not None:
-            _setter("nxdomain_ttl", nxdomain_ttl)
+            pulumi.set(__self__, "nxdomain_ttl", nxdomain_ttl)
         if order is not None:
-            _setter("order", order)
+            pulumi.set(__self__, "order", order)
         if original_ttl is not None:
-            _setter("original_ttl", original_ttl)
+            pulumi.set(__self__, "original_ttl", original_ttl)
         if port is not None:
-            _setter("port", port)
+            pulumi.set(__self__, "port", port)
         if preference is not None:
-            _setter("preference", preference)
+            pulumi.set(__self__, "preference", preference)
         if priority is not None:
-            _setter("priority", priority)
+            pulumi.set(__self__, "priority", priority)
         if priority_increment is not None:
-            _setter("priority_increment", priority_increment)
+            pulumi.set(__self__, "priority_increment", priority_increment)
         if protocol is not None:
-            _setter("protocol", protocol)
+            pulumi.set(__self__, "protocol", protocol)
         if record_sha is not None:
-            _setter("record_sha", record_sha)
+            pulumi.set(__self__, "record_sha", record_sha)
         if recordtype is not None:
-            _setter("recordtype", recordtype)
+            pulumi.set(__self__, "recordtype", recordtype)
         if refresh is not None:
-            _setter("refresh", refresh)
+            pulumi.set(__self__, "refresh", refresh)
         if regexp is not None:
-            _setter("regexp", regexp)
+            pulumi.set(__self__, "regexp", regexp)
         if replacement is not None:
-            _setter("replacement", replacement)
+            pulumi.set(__self__, "replacement", replacement)
         if retry is not None:
-            _setter("retry", retry)
+            pulumi.set(__self__, "retry", retry)
         if salt is not None:
-            _setter("salt", salt)
+            pulumi.set(__self__, "salt", salt)
         if selector is not None:
-            _setter("selector", selector)
+            pulumi.set(__self__, "selector", selector)
         if serial is not None:
-            _setter("serial", serial)
+            pulumi.set(__self__, "serial", serial)
         if service is not None:
-            _setter("service", service)
+            pulumi.set(__self__, "service", service)
         if signature is not None:
-            _setter("signature", signature)
+            pulumi.set(__self__, "signature", signature)
         if signer is not None:
-            _setter("signer", signer)
+            pulumi.set(__self__, "signer", signer)
         if software is not None:
-            _setter("software", software)
+            pulumi.set(__self__, "software", software)
         if subtype is not None:
-            _setter("subtype", subtype)
+            pulumi.set(__self__, "subtype", subtype)
         if svc_params is not None:
-            _setter("svc_params", svc_params)
+            pulumi.set(__self__, "svc_params", svc_params)
         if svc_priority is not None:
-            _setter("svc_priority", svc_priority)
+            pulumi.set(__self__, "svc_priority", svc_priority)
         if target_name is not None:
-            _setter("target_name", target_name)
+            pulumi.set(__self__, "target_name", target_name)
         if targets is not None:
-            _setter("targets", targets)
+            pulumi.set(__self__, "targets", targets)
         if ttl is not None:
-            _setter("ttl", ttl)
+            pulumi.set(__self__, "ttl", ttl)
         if txt is not None:
-            _setter("txt", txt)
+            pulumi.set(__self__, "txt", txt)
         if type_bitmaps is not None:
-            _setter("type_bitmaps", type_bitmaps)
+            pulumi.set(__self__, "type_bitmaps", type_bitmaps)
         if type_covered is not None:
-            _setter("type_covered", type_covered)
+            pulumi.set(__self__, "type_covered", type_covered)
         if type_mnemonic is not None:
-            _setter("type_mnemonic", type_mnemonic)
+            pulumi.set(__self__, "type_mnemonic", type_mnemonic)
         if type_value is not None:
-            _setter("type_value", type_value)
+            pulumi.set(__self__, "type_value", type_value)
         if usage is not None:
-            _setter("usage", usage)
+            pulumi.set(__self__, "usage", usage)
         if weight is not None:
-            _setter("weight", weight)
+            pulumi.set(__self__, "weight", weight)
         if zone is not None:
-            _setter("zone", zone)
+            pulumi.set(__self__, "zone", zone)
 
     @property
     @pulumi.getter
@@ -1839,10 +1513,6 @@ class DnsRecord(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            DnsRecordArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
