@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -34,100 +34,33 @@ class GtmResourceArgs:
         """
         The set of arguments for constructing a GtmResource resource.
         """
-        GtmResourceArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            aggregation_type=aggregation_type,
-            domain=domain,
-            type=type,
-            constrained_property=constrained_property,
-            decay_rate=decay_rate,
-            description=description,
-            host_header=host_header,
-            leader_string=leader_string,
-            least_squares_decay=least_squares_decay,
-            load_imbalance_percentage=load_imbalance_percentage,
-            max_u_multiplicative_increment=max_u_multiplicative_increment,
-            name=name,
-            resource_instances=resource_instances,
-            upper_bound=upper_bound,
-            wait_on_complete=wait_on_complete,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             aggregation_type: Optional[pulumi.Input[str]] = None,
-             domain: Optional[pulumi.Input[str]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             constrained_property: Optional[pulumi.Input[str]] = None,
-             decay_rate: Optional[pulumi.Input[float]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             host_header: Optional[pulumi.Input[str]] = None,
-             leader_string: Optional[pulumi.Input[str]] = None,
-             least_squares_decay: Optional[pulumi.Input[float]] = None,
-             load_imbalance_percentage: Optional[pulumi.Input[float]] = None,
-             max_u_multiplicative_increment: Optional[pulumi.Input[float]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             resource_instances: Optional[pulumi.Input[Sequence[pulumi.Input['GtmResourceResourceInstanceArgs']]]] = None,
-             upper_bound: Optional[pulumi.Input[int]] = None,
-             wait_on_complete: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if aggregation_type is None and 'aggregationType' in kwargs:
-            aggregation_type = kwargs['aggregationType']
-        if aggregation_type is None:
-            raise TypeError("Missing 'aggregation_type' argument")
-        if domain is None:
-            raise TypeError("Missing 'domain' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if constrained_property is None and 'constrainedProperty' in kwargs:
-            constrained_property = kwargs['constrainedProperty']
-        if decay_rate is None and 'decayRate' in kwargs:
-            decay_rate = kwargs['decayRate']
-        if host_header is None and 'hostHeader' in kwargs:
-            host_header = kwargs['hostHeader']
-        if leader_string is None and 'leaderString' in kwargs:
-            leader_string = kwargs['leaderString']
-        if least_squares_decay is None and 'leastSquaresDecay' in kwargs:
-            least_squares_decay = kwargs['leastSquaresDecay']
-        if load_imbalance_percentage is None and 'loadImbalancePercentage' in kwargs:
-            load_imbalance_percentage = kwargs['loadImbalancePercentage']
-        if max_u_multiplicative_increment is None and 'maxUMultiplicativeIncrement' in kwargs:
-            max_u_multiplicative_increment = kwargs['maxUMultiplicativeIncrement']
-        if resource_instances is None and 'resourceInstances' in kwargs:
-            resource_instances = kwargs['resourceInstances']
-        if upper_bound is None and 'upperBound' in kwargs:
-            upper_bound = kwargs['upperBound']
-        if wait_on_complete is None and 'waitOnComplete' in kwargs:
-            wait_on_complete = kwargs['waitOnComplete']
-
-        _setter("aggregation_type", aggregation_type)
-        _setter("domain", domain)
-        _setter("type", type)
+        pulumi.set(__self__, "aggregation_type", aggregation_type)
+        pulumi.set(__self__, "domain", domain)
+        pulumi.set(__self__, "type", type)
         if constrained_property is not None:
-            _setter("constrained_property", constrained_property)
+            pulumi.set(__self__, "constrained_property", constrained_property)
         if decay_rate is not None:
-            _setter("decay_rate", decay_rate)
+            pulumi.set(__self__, "decay_rate", decay_rate)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if host_header is not None:
-            _setter("host_header", host_header)
+            pulumi.set(__self__, "host_header", host_header)
         if leader_string is not None:
-            _setter("leader_string", leader_string)
+            pulumi.set(__self__, "leader_string", leader_string)
         if least_squares_decay is not None:
-            _setter("least_squares_decay", least_squares_decay)
+            pulumi.set(__self__, "least_squares_decay", least_squares_decay)
         if load_imbalance_percentage is not None:
-            _setter("load_imbalance_percentage", load_imbalance_percentage)
+            pulumi.set(__self__, "load_imbalance_percentage", load_imbalance_percentage)
         if max_u_multiplicative_increment is not None:
-            _setter("max_u_multiplicative_increment", max_u_multiplicative_increment)
+            pulumi.set(__self__, "max_u_multiplicative_increment", max_u_multiplicative_increment)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if resource_instances is not None:
-            _setter("resource_instances", resource_instances)
+            pulumi.set(__self__, "resource_instances", resource_instances)
         if upper_bound is not None:
-            _setter("upper_bound", upper_bound)
+            pulumi.set(__self__, "upper_bound", upper_bound)
         if wait_on_complete is not None:
-            _setter("wait_on_complete", wait_on_complete)
+            pulumi.set(__self__, "wait_on_complete", wait_on_complete)
 
     @property
     @pulumi.getter(name="aggregationType")
@@ -286,97 +219,36 @@ class _GtmResourceState:
         """
         Input properties used for looking up and filtering GtmResource resources.
         """
-        _GtmResourceState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            aggregation_type=aggregation_type,
-            constrained_property=constrained_property,
-            decay_rate=decay_rate,
-            description=description,
-            domain=domain,
-            host_header=host_header,
-            leader_string=leader_string,
-            least_squares_decay=least_squares_decay,
-            load_imbalance_percentage=load_imbalance_percentage,
-            max_u_multiplicative_increment=max_u_multiplicative_increment,
-            name=name,
-            resource_instances=resource_instances,
-            type=type,
-            upper_bound=upper_bound,
-            wait_on_complete=wait_on_complete,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             aggregation_type: Optional[pulumi.Input[str]] = None,
-             constrained_property: Optional[pulumi.Input[str]] = None,
-             decay_rate: Optional[pulumi.Input[float]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             domain: Optional[pulumi.Input[str]] = None,
-             host_header: Optional[pulumi.Input[str]] = None,
-             leader_string: Optional[pulumi.Input[str]] = None,
-             least_squares_decay: Optional[pulumi.Input[float]] = None,
-             load_imbalance_percentage: Optional[pulumi.Input[float]] = None,
-             max_u_multiplicative_increment: Optional[pulumi.Input[float]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             resource_instances: Optional[pulumi.Input[Sequence[pulumi.Input['GtmResourceResourceInstanceArgs']]]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             upper_bound: Optional[pulumi.Input[int]] = None,
-             wait_on_complete: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if aggregation_type is None and 'aggregationType' in kwargs:
-            aggregation_type = kwargs['aggregationType']
-        if constrained_property is None and 'constrainedProperty' in kwargs:
-            constrained_property = kwargs['constrainedProperty']
-        if decay_rate is None and 'decayRate' in kwargs:
-            decay_rate = kwargs['decayRate']
-        if host_header is None and 'hostHeader' in kwargs:
-            host_header = kwargs['hostHeader']
-        if leader_string is None and 'leaderString' in kwargs:
-            leader_string = kwargs['leaderString']
-        if least_squares_decay is None and 'leastSquaresDecay' in kwargs:
-            least_squares_decay = kwargs['leastSquaresDecay']
-        if load_imbalance_percentage is None and 'loadImbalancePercentage' in kwargs:
-            load_imbalance_percentage = kwargs['loadImbalancePercentage']
-        if max_u_multiplicative_increment is None and 'maxUMultiplicativeIncrement' in kwargs:
-            max_u_multiplicative_increment = kwargs['maxUMultiplicativeIncrement']
-        if resource_instances is None and 'resourceInstances' in kwargs:
-            resource_instances = kwargs['resourceInstances']
-        if upper_bound is None and 'upperBound' in kwargs:
-            upper_bound = kwargs['upperBound']
-        if wait_on_complete is None and 'waitOnComplete' in kwargs:
-            wait_on_complete = kwargs['waitOnComplete']
-
         if aggregation_type is not None:
-            _setter("aggregation_type", aggregation_type)
+            pulumi.set(__self__, "aggregation_type", aggregation_type)
         if constrained_property is not None:
-            _setter("constrained_property", constrained_property)
+            pulumi.set(__self__, "constrained_property", constrained_property)
         if decay_rate is not None:
-            _setter("decay_rate", decay_rate)
+            pulumi.set(__self__, "decay_rate", decay_rate)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if domain is not None:
-            _setter("domain", domain)
+            pulumi.set(__self__, "domain", domain)
         if host_header is not None:
-            _setter("host_header", host_header)
+            pulumi.set(__self__, "host_header", host_header)
         if leader_string is not None:
-            _setter("leader_string", leader_string)
+            pulumi.set(__self__, "leader_string", leader_string)
         if least_squares_decay is not None:
-            _setter("least_squares_decay", least_squares_decay)
+            pulumi.set(__self__, "least_squares_decay", least_squares_decay)
         if load_imbalance_percentage is not None:
-            _setter("load_imbalance_percentage", load_imbalance_percentage)
+            pulumi.set(__self__, "load_imbalance_percentage", load_imbalance_percentage)
         if max_u_multiplicative_increment is not None:
-            _setter("max_u_multiplicative_increment", max_u_multiplicative_increment)
+            pulumi.set(__self__, "max_u_multiplicative_increment", max_u_multiplicative_increment)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if resource_instances is not None:
-            _setter("resource_instances", resource_instances)
+            pulumi.set(__self__, "resource_instances", resource_instances)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
         if upper_bound is not None:
-            _setter("upper_bound", upper_bound)
+            pulumi.set(__self__, "upper_bound", upper_bound)
         if wait_on_complete is not None:
-            _setter("wait_on_complete", wait_on_complete)
+            pulumi.set(__self__, "wait_on_complete", wait_on_complete)
 
     @property
     @pulumi.getter(name="aggregationType")
@@ -558,10 +430,6 @@ class GtmResource(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            GtmResourceArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

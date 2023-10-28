@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecCustomDenyArgs', 'AppSecCustomDeny']
@@ -21,29 +21,8 @@ class AppSecCustomDenyArgs:
         :param pulumi.Input[int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[str] custom_deny: JSON-formatted information about the properties and property values for the custom deny
         """
-        AppSecCustomDenyArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_id=config_id,
-            custom_deny=custom_deny,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_id: Optional[pulumi.Input[int]] = None,
-             custom_deny: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_id is None and 'configId' in kwargs:
-            config_id = kwargs['configId']
-        if config_id is None:
-            raise TypeError("Missing 'config_id' argument")
-        if custom_deny is None and 'customDeny' in kwargs:
-            custom_deny = kwargs['customDeny']
-        if custom_deny is None:
-            raise TypeError("Missing 'custom_deny' argument")
-
-        _setter("config_id", config_id)
-        _setter("custom_deny", custom_deny)
+        pulumi.set(__self__, "config_id", config_id)
+        pulumi.set(__self__, "custom_deny", custom_deny)
 
     @property
     @pulumi.getter(name="configId")
@@ -82,33 +61,12 @@ class _AppSecCustomDenyState:
         :param pulumi.Input[str] custom_deny: JSON-formatted information about the properties and property values for the custom deny
         :param pulumi.Input[str] custom_deny_id: custom_deny_id
         """
-        _AppSecCustomDenyState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_id=config_id,
-            custom_deny=custom_deny,
-            custom_deny_id=custom_deny_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_id: Optional[pulumi.Input[int]] = None,
-             custom_deny: Optional[pulumi.Input[str]] = None,
-             custom_deny_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_id is None and 'configId' in kwargs:
-            config_id = kwargs['configId']
-        if custom_deny is None and 'customDeny' in kwargs:
-            custom_deny = kwargs['customDeny']
-        if custom_deny_id is None and 'customDenyId' in kwargs:
-            custom_deny_id = kwargs['customDenyId']
-
         if config_id is not None:
-            _setter("config_id", config_id)
+            pulumi.set(__self__, "config_id", config_id)
         if custom_deny is not None:
-            _setter("custom_deny", custom_deny)
+            pulumi.set(__self__, "custom_deny", custom_deny)
         if custom_deny_id is not None:
-            _setter("custom_deny_id", custom_deny_id)
+            pulumi.set(__self__, "custom_deny_id", custom_deny_id)
 
     @property
     @pulumi.getter(name="configId")
@@ -180,10 +138,6 @@ class AppSecCustomDeny(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            AppSecCustomDenyArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecWapSelectedHostnamesArgs', 'AppSecWapSelectedHostnames']
@@ -25,41 +25,12 @@ class AppSecWapSelectedHostnamesArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] evaluated_hosts: List of hostnames to be evaluated
         :param pulumi.Input[Sequence[pulumi.Input[str]]] protected_hosts: List of hostnames to be protected
         """
-        AppSecWapSelectedHostnamesArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_id=config_id,
-            security_policy_id=security_policy_id,
-            evaluated_hosts=evaluated_hosts,
-            protected_hosts=protected_hosts,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_id: Optional[pulumi.Input[int]] = None,
-             security_policy_id: Optional[pulumi.Input[str]] = None,
-             evaluated_hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             protected_hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_id is None and 'configId' in kwargs:
-            config_id = kwargs['configId']
-        if config_id is None:
-            raise TypeError("Missing 'config_id' argument")
-        if security_policy_id is None and 'securityPolicyId' in kwargs:
-            security_policy_id = kwargs['securityPolicyId']
-        if security_policy_id is None:
-            raise TypeError("Missing 'security_policy_id' argument")
-        if evaluated_hosts is None and 'evaluatedHosts' in kwargs:
-            evaluated_hosts = kwargs['evaluatedHosts']
-        if protected_hosts is None and 'protectedHosts' in kwargs:
-            protected_hosts = kwargs['protectedHosts']
-
-        _setter("config_id", config_id)
-        _setter("security_policy_id", security_policy_id)
+        pulumi.set(__self__, "config_id", config_id)
+        pulumi.set(__self__, "security_policy_id", security_policy_id)
         if evaluated_hosts is not None:
-            _setter("evaluated_hosts", evaluated_hosts)
+            pulumi.set(__self__, "evaluated_hosts", evaluated_hosts)
         if protected_hosts is not None:
-            _setter("protected_hosts", protected_hosts)
+            pulumi.set(__self__, "protected_hosts", protected_hosts)
 
     @property
     @pulumi.getter(name="configId")
@@ -124,39 +95,14 @@ class _AppSecWapSelectedHostnamesState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] protected_hosts: List of hostnames to be protected
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
-        _AppSecWapSelectedHostnamesState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_id=config_id,
-            evaluated_hosts=evaluated_hosts,
-            protected_hosts=protected_hosts,
-            security_policy_id=security_policy_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_id: Optional[pulumi.Input[int]] = None,
-             evaluated_hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             protected_hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_id is None and 'configId' in kwargs:
-            config_id = kwargs['configId']
-        if evaluated_hosts is None and 'evaluatedHosts' in kwargs:
-            evaluated_hosts = kwargs['evaluatedHosts']
-        if protected_hosts is None and 'protectedHosts' in kwargs:
-            protected_hosts = kwargs['protectedHosts']
-        if security_policy_id is None and 'securityPolicyId' in kwargs:
-            security_policy_id = kwargs['securityPolicyId']
-
         if config_id is not None:
-            _setter("config_id", config_id)
+            pulumi.set(__self__, "config_id", config_id)
         if evaluated_hosts is not None:
-            _setter("evaluated_hosts", evaluated_hosts)
+            pulumi.set(__self__, "evaluated_hosts", evaluated_hosts)
         if protected_hosts is not None:
-            _setter("protected_hosts", protected_hosts)
+            pulumi.set(__self__, "protected_hosts", protected_hosts)
         if security_policy_id is not None:
-            _setter("security_policy_id", security_policy_id)
+            pulumi.set(__self__, "security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="configId")
@@ -244,10 +190,6 @@ class AppSecWapSelectedHostnames(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            AppSecWapSelectedHostnamesArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

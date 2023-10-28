@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['IamBlockedUserPropertiesArgs', 'IamBlockedUserProperties']
@@ -23,36 +23,9 @@ class IamBlockedUserPropertiesArgs:
         :param pulumi.Input[int] group_id: A unique identifier for a group
         :param pulumi.Input[str] identity_id: A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID
         """
-        IamBlockedUserPropertiesArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            blocked_properties=blocked_properties,
-            group_id=group_id,
-            identity_id=identity_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             blocked_properties: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
-             group_id: Optional[pulumi.Input[int]] = None,
-             identity_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if blocked_properties is None and 'blockedProperties' in kwargs:
-            blocked_properties = kwargs['blockedProperties']
-        if blocked_properties is None:
-            raise TypeError("Missing 'blocked_properties' argument")
-        if group_id is None and 'groupId' in kwargs:
-            group_id = kwargs['groupId']
-        if group_id is None:
-            raise TypeError("Missing 'group_id' argument")
-        if identity_id is None and 'identityId' in kwargs:
-            identity_id = kwargs['identityId']
-        if identity_id is None:
-            raise TypeError("Missing 'identity_id' argument")
-
-        _setter("blocked_properties", blocked_properties)
-        _setter("group_id", group_id)
-        _setter("identity_id", identity_id)
+        pulumi.set(__self__, "blocked_properties", blocked_properties)
+        pulumi.set(__self__, "group_id", group_id)
+        pulumi.set(__self__, "identity_id", identity_id)
 
     @property
     @pulumi.getter(name="blockedProperties")
@@ -103,33 +76,12 @@ class _IamBlockedUserPropertiesState:
         :param pulumi.Input[int] group_id: A unique identifier for a group
         :param pulumi.Input[str] identity_id: A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID
         """
-        _IamBlockedUserPropertiesState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            blocked_properties=blocked_properties,
-            group_id=group_id,
-            identity_id=identity_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             blocked_properties: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
-             group_id: Optional[pulumi.Input[int]] = None,
-             identity_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if blocked_properties is None and 'blockedProperties' in kwargs:
-            blocked_properties = kwargs['blockedProperties']
-        if group_id is None and 'groupId' in kwargs:
-            group_id = kwargs['groupId']
-        if identity_id is None and 'identityId' in kwargs:
-            identity_id = kwargs['identityId']
-
         if blocked_properties is not None:
-            _setter("blocked_properties", blocked_properties)
+            pulumi.set(__self__, "blocked_properties", blocked_properties)
         if group_id is not None:
-            _setter("group_id", group_id)
+            pulumi.set(__self__, "group_id", group_id)
         if identity_id is not None:
-            _setter("identity_id", identity_id)
+            pulumi.set(__self__, "identity_id", identity_id)
 
     @property
     @pulumi.getter(name="blockedProperties")
@@ -203,10 +155,6 @@ class IamBlockedUserProperties(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            IamBlockedUserPropertiesArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

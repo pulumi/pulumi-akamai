@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -32,80 +32,31 @@ class GtmDatacenterArgs:
         """
         The set of arguments for constructing a GtmDatacenter resource.
         """
-        GtmDatacenterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            domain=domain,
-            city=city,
-            clone_of=clone_of,
-            cloud_server_host_header_override=cloud_server_host_header_override,
-            cloud_server_targeting=cloud_server_targeting,
-            continent=continent,
-            country=country,
-            default_load_object=default_load_object,
-            latitude=latitude,
-            longitude=longitude,
-            nickname=nickname,
-            state_or_province=state_or_province,
-            wait_on_complete=wait_on_complete,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             domain: Optional[pulumi.Input[str]] = None,
-             city: Optional[pulumi.Input[str]] = None,
-             clone_of: Optional[pulumi.Input[int]] = None,
-             cloud_server_host_header_override: Optional[pulumi.Input[bool]] = None,
-             cloud_server_targeting: Optional[pulumi.Input[bool]] = None,
-             continent: Optional[pulumi.Input[str]] = None,
-             country: Optional[pulumi.Input[str]] = None,
-             default_load_object: Optional[pulumi.Input['GtmDatacenterDefaultLoadObjectArgs']] = None,
-             latitude: Optional[pulumi.Input[float]] = None,
-             longitude: Optional[pulumi.Input[float]] = None,
-             nickname: Optional[pulumi.Input[str]] = None,
-             state_or_province: Optional[pulumi.Input[str]] = None,
-             wait_on_complete: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if domain is None:
-            raise TypeError("Missing 'domain' argument")
-        if clone_of is None and 'cloneOf' in kwargs:
-            clone_of = kwargs['cloneOf']
-        if cloud_server_host_header_override is None and 'cloudServerHostHeaderOverride' in kwargs:
-            cloud_server_host_header_override = kwargs['cloudServerHostHeaderOverride']
-        if cloud_server_targeting is None and 'cloudServerTargeting' in kwargs:
-            cloud_server_targeting = kwargs['cloudServerTargeting']
-        if default_load_object is None and 'defaultLoadObject' in kwargs:
-            default_load_object = kwargs['defaultLoadObject']
-        if state_or_province is None and 'stateOrProvince' in kwargs:
-            state_or_province = kwargs['stateOrProvince']
-        if wait_on_complete is None and 'waitOnComplete' in kwargs:
-            wait_on_complete = kwargs['waitOnComplete']
-
-        _setter("domain", domain)
+        pulumi.set(__self__, "domain", domain)
         if city is not None:
-            _setter("city", city)
+            pulumi.set(__self__, "city", city)
         if clone_of is not None:
-            _setter("clone_of", clone_of)
+            pulumi.set(__self__, "clone_of", clone_of)
         if cloud_server_host_header_override is not None:
-            _setter("cloud_server_host_header_override", cloud_server_host_header_override)
+            pulumi.set(__self__, "cloud_server_host_header_override", cloud_server_host_header_override)
         if cloud_server_targeting is not None:
-            _setter("cloud_server_targeting", cloud_server_targeting)
+            pulumi.set(__self__, "cloud_server_targeting", cloud_server_targeting)
         if continent is not None:
-            _setter("continent", continent)
+            pulumi.set(__self__, "continent", continent)
         if country is not None:
-            _setter("country", country)
+            pulumi.set(__self__, "country", country)
         if default_load_object is not None:
-            _setter("default_load_object", default_load_object)
+            pulumi.set(__self__, "default_load_object", default_load_object)
         if latitude is not None:
-            _setter("latitude", latitude)
+            pulumi.set(__self__, "latitude", latitude)
         if longitude is not None:
-            _setter("longitude", longitude)
+            pulumi.set(__self__, "longitude", longitude)
         if nickname is not None:
-            _setter("nickname", nickname)
+            pulumi.set(__self__, "nickname", nickname)
         if state_or_province is not None:
-            _setter("state_or_province", state_or_province)
+            pulumi.set(__self__, "state_or_province", state_or_province)
         if wait_on_complete is not None:
-            _setter("wait_on_complete", wait_on_complete)
+            pulumi.set(__self__, "wait_on_complete", wait_on_complete)
 
     @property
     @pulumi.getter
@@ -252,125 +203,48 @@ class _GtmDatacenterState:
         """
         Input properties used for looking up and filtering GtmDatacenter resources.
         """
-        _GtmDatacenterState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            city=city,
-            clone_of=clone_of,
-            cloud_server_host_header_override=cloud_server_host_header_override,
-            cloud_server_targeting=cloud_server_targeting,
-            continent=continent,
-            country=country,
-            datacenter_id=datacenter_id,
-            default_load_object=default_load_object,
-            domain=domain,
-            latitude=latitude,
-            longitude=longitude,
-            nickname=nickname,
-            ping_interval=ping_interval,
-            ping_packet_size=ping_packet_size,
-            score_penalty=score_penalty,
-            servermonitor_liveness_count=servermonitor_liveness_count,
-            servermonitor_load_count=servermonitor_load_count,
-            servermonitor_pool=servermonitor_pool,
-            state_or_province=state_or_province,
-            virtual=virtual,
-            wait_on_complete=wait_on_complete,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             city: Optional[pulumi.Input[str]] = None,
-             clone_of: Optional[pulumi.Input[int]] = None,
-             cloud_server_host_header_override: Optional[pulumi.Input[bool]] = None,
-             cloud_server_targeting: Optional[pulumi.Input[bool]] = None,
-             continent: Optional[pulumi.Input[str]] = None,
-             country: Optional[pulumi.Input[str]] = None,
-             datacenter_id: Optional[pulumi.Input[int]] = None,
-             default_load_object: Optional[pulumi.Input['GtmDatacenterDefaultLoadObjectArgs']] = None,
-             domain: Optional[pulumi.Input[str]] = None,
-             latitude: Optional[pulumi.Input[float]] = None,
-             longitude: Optional[pulumi.Input[float]] = None,
-             nickname: Optional[pulumi.Input[str]] = None,
-             ping_interval: Optional[pulumi.Input[int]] = None,
-             ping_packet_size: Optional[pulumi.Input[int]] = None,
-             score_penalty: Optional[pulumi.Input[int]] = None,
-             servermonitor_liveness_count: Optional[pulumi.Input[int]] = None,
-             servermonitor_load_count: Optional[pulumi.Input[int]] = None,
-             servermonitor_pool: Optional[pulumi.Input[str]] = None,
-             state_or_province: Optional[pulumi.Input[str]] = None,
-             virtual: Optional[pulumi.Input[bool]] = None,
-             wait_on_complete: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if clone_of is None and 'cloneOf' in kwargs:
-            clone_of = kwargs['cloneOf']
-        if cloud_server_host_header_override is None and 'cloudServerHostHeaderOverride' in kwargs:
-            cloud_server_host_header_override = kwargs['cloudServerHostHeaderOverride']
-        if cloud_server_targeting is None and 'cloudServerTargeting' in kwargs:
-            cloud_server_targeting = kwargs['cloudServerTargeting']
-        if datacenter_id is None and 'datacenterId' in kwargs:
-            datacenter_id = kwargs['datacenterId']
-        if default_load_object is None and 'defaultLoadObject' in kwargs:
-            default_load_object = kwargs['defaultLoadObject']
-        if ping_interval is None and 'pingInterval' in kwargs:
-            ping_interval = kwargs['pingInterval']
-        if ping_packet_size is None and 'pingPacketSize' in kwargs:
-            ping_packet_size = kwargs['pingPacketSize']
-        if score_penalty is None and 'scorePenalty' in kwargs:
-            score_penalty = kwargs['scorePenalty']
-        if servermonitor_liveness_count is None and 'servermonitorLivenessCount' in kwargs:
-            servermonitor_liveness_count = kwargs['servermonitorLivenessCount']
-        if servermonitor_load_count is None and 'servermonitorLoadCount' in kwargs:
-            servermonitor_load_count = kwargs['servermonitorLoadCount']
-        if servermonitor_pool is None and 'servermonitorPool' in kwargs:
-            servermonitor_pool = kwargs['servermonitorPool']
-        if state_or_province is None and 'stateOrProvince' in kwargs:
-            state_or_province = kwargs['stateOrProvince']
-        if wait_on_complete is None and 'waitOnComplete' in kwargs:
-            wait_on_complete = kwargs['waitOnComplete']
-
         if city is not None:
-            _setter("city", city)
+            pulumi.set(__self__, "city", city)
         if clone_of is not None:
-            _setter("clone_of", clone_of)
+            pulumi.set(__self__, "clone_of", clone_of)
         if cloud_server_host_header_override is not None:
-            _setter("cloud_server_host_header_override", cloud_server_host_header_override)
+            pulumi.set(__self__, "cloud_server_host_header_override", cloud_server_host_header_override)
         if cloud_server_targeting is not None:
-            _setter("cloud_server_targeting", cloud_server_targeting)
+            pulumi.set(__self__, "cloud_server_targeting", cloud_server_targeting)
         if continent is not None:
-            _setter("continent", continent)
+            pulumi.set(__self__, "continent", continent)
         if country is not None:
-            _setter("country", country)
+            pulumi.set(__self__, "country", country)
         if datacenter_id is not None:
-            _setter("datacenter_id", datacenter_id)
+            pulumi.set(__self__, "datacenter_id", datacenter_id)
         if default_load_object is not None:
-            _setter("default_load_object", default_load_object)
+            pulumi.set(__self__, "default_load_object", default_load_object)
         if domain is not None:
-            _setter("domain", domain)
+            pulumi.set(__self__, "domain", domain)
         if latitude is not None:
-            _setter("latitude", latitude)
+            pulumi.set(__self__, "latitude", latitude)
         if longitude is not None:
-            _setter("longitude", longitude)
+            pulumi.set(__self__, "longitude", longitude)
         if nickname is not None:
-            _setter("nickname", nickname)
+            pulumi.set(__self__, "nickname", nickname)
         if ping_interval is not None:
-            _setter("ping_interval", ping_interval)
+            pulumi.set(__self__, "ping_interval", ping_interval)
         if ping_packet_size is not None:
-            _setter("ping_packet_size", ping_packet_size)
+            pulumi.set(__self__, "ping_packet_size", ping_packet_size)
         if score_penalty is not None:
-            _setter("score_penalty", score_penalty)
+            pulumi.set(__self__, "score_penalty", score_penalty)
         if servermonitor_liveness_count is not None:
-            _setter("servermonitor_liveness_count", servermonitor_liveness_count)
+            pulumi.set(__self__, "servermonitor_liveness_count", servermonitor_liveness_count)
         if servermonitor_load_count is not None:
-            _setter("servermonitor_load_count", servermonitor_load_count)
+            pulumi.set(__self__, "servermonitor_load_count", servermonitor_load_count)
         if servermonitor_pool is not None:
-            _setter("servermonitor_pool", servermonitor_pool)
+            pulumi.set(__self__, "servermonitor_pool", servermonitor_pool)
         if state_or_province is not None:
-            _setter("state_or_province", state_or_province)
+            pulumi.set(__self__, "state_or_province", state_or_province)
         if virtual is not None:
-            _setter("virtual", virtual)
+            pulumi.set(__self__, "virtual", virtual)
         if wait_on_complete is not None:
-            _setter("wait_on_complete", wait_on_complete)
+            pulumi.set(__self__, "wait_on_complete", wait_on_complete)
 
     @property
     @pulumi.getter
@@ -604,10 +478,6 @@ class GtmDatacenter(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            GtmDatacenterArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -641,7 +511,6 @@ class GtmDatacenter(pulumi.CustomResource):
             __props__.__dict__["cloud_server_targeting"] = cloud_server_targeting
             __props__.__dict__["continent"] = continent
             __props__.__dict__["country"] = country
-            default_load_object = _utilities.configure(default_load_object, GtmDatacenterDefaultLoadObjectArgs, True)
             __props__.__dict__["default_load_object"] = default_load_object
             if domain is None and not opts.urn:
                 raise TypeError("Missing required property 'domain'")

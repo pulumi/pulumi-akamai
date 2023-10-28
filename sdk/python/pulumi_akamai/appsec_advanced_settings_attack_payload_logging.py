@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppsecAdvancedSettingsAttackPayloadLoggingArgs', 'AppsecAdvancedSettingsAttackPayloadLogging']
@@ -23,35 +23,10 @@ class AppsecAdvancedSettingsAttackPayloadLoggingArgs:
         :param pulumi.Input[int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
-        AppsecAdvancedSettingsAttackPayloadLoggingArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            attack_payload_logging=attack_payload_logging,
-            config_id=config_id,
-            security_policy_id=security_policy_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             attack_payload_logging: Optional[pulumi.Input[str]] = None,
-             config_id: Optional[pulumi.Input[int]] = None,
-             security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if attack_payload_logging is None and 'attackPayloadLogging' in kwargs:
-            attack_payload_logging = kwargs['attackPayloadLogging']
-        if attack_payload_logging is None:
-            raise TypeError("Missing 'attack_payload_logging' argument")
-        if config_id is None and 'configId' in kwargs:
-            config_id = kwargs['configId']
-        if config_id is None:
-            raise TypeError("Missing 'config_id' argument")
-        if security_policy_id is None and 'securityPolicyId' in kwargs:
-            security_policy_id = kwargs['securityPolicyId']
-
-        _setter("attack_payload_logging", attack_payload_logging)
-        _setter("config_id", config_id)
+        pulumi.set(__self__, "attack_payload_logging", attack_payload_logging)
+        pulumi.set(__self__, "config_id", config_id)
         if security_policy_id is not None:
-            _setter("security_policy_id", security_policy_id)
+            pulumi.set(__self__, "security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="attackPayloadLogging")
@@ -102,33 +77,12 @@ class _AppsecAdvancedSettingsAttackPayloadLoggingState:
         :param pulumi.Input[int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
-        _AppsecAdvancedSettingsAttackPayloadLoggingState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            attack_payload_logging=attack_payload_logging,
-            config_id=config_id,
-            security_policy_id=security_policy_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             attack_payload_logging: Optional[pulumi.Input[str]] = None,
-             config_id: Optional[pulumi.Input[int]] = None,
-             security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if attack_payload_logging is None and 'attackPayloadLogging' in kwargs:
-            attack_payload_logging = kwargs['attackPayloadLogging']
-        if config_id is None and 'configId' in kwargs:
-            config_id = kwargs['configId']
-        if security_policy_id is None and 'securityPolicyId' in kwargs:
-            security_policy_id = kwargs['securityPolicyId']
-
         if attack_payload_logging is not None:
-            _setter("attack_payload_logging", attack_payload_logging)
+            pulumi.set(__self__, "attack_payload_logging", attack_payload_logging)
         if config_id is not None:
-            _setter("config_id", config_id)
+            pulumi.set(__self__, "config_id", config_id)
         if security_policy_id is not None:
-            _setter("security_policy_id", security_policy_id)
+            pulumi.set(__self__, "security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="attackPayloadLogging")
@@ -202,10 +156,6 @@ class AppsecAdvancedSettingsAttackPayloadLogging(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            AppsecAdvancedSettingsAttackPayloadLoggingArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

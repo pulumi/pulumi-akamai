@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -36,67 +36,20 @@ class CloudwrapperConfigurationArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] notification_emails: Email addresses to use for notifications.
         :param pulumi.Input[bool] retain_idle_objects: Retain idle objects beyond their max idle lifetime.
         """
-        CloudwrapperConfigurationArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            comments=comments,
-            config_name=config_name,
-            contract_id=contract_id,
-            property_ids=property_ids,
-            capacity_alerts_threshold=capacity_alerts_threshold,
-            locations=locations,
-            notification_emails=notification_emails,
-            retain_idle_objects=retain_idle_objects,
-            timeouts=timeouts,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             comments: Optional[pulumi.Input[str]] = None,
-             config_name: Optional[pulumi.Input[str]] = None,
-             contract_id: Optional[pulumi.Input[str]] = None,
-             property_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             capacity_alerts_threshold: Optional[pulumi.Input[int]] = None,
-             locations: Optional[pulumi.Input[Sequence[pulumi.Input['CloudwrapperConfigurationLocationArgs']]]] = None,
-             notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             retain_idle_objects: Optional[pulumi.Input[bool]] = None,
-             timeouts: Optional[pulumi.Input['CloudwrapperConfigurationTimeoutsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if comments is None:
-            raise TypeError("Missing 'comments' argument")
-        if config_name is None and 'configName' in kwargs:
-            config_name = kwargs['configName']
-        if config_name is None:
-            raise TypeError("Missing 'config_name' argument")
-        if contract_id is None and 'contractId' in kwargs:
-            contract_id = kwargs['contractId']
-        if contract_id is None:
-            raise TypeError("Missing 'contract_id' argument")
-        if property_ids is None and 'propertyIds' in kwargs:
-            property_ids = kwargs['propertyIds']
-        if property_ids is None:
-            raise TypeError("Missing 'property_ids' argument")
-        if capacity_alerts_threshold is None and 'capacityAlertsThreshold' in kwargs:
-            capacity_alerts_threshold = kwargs['capacityAlertsThreshold']
-        if notification_emails is None and 'notificationEmails' in kwargs:
-            notification_emails = kwargs['notificationEmails']
-        if retain_idle_objects is None and 'retainIdleObjects' in kwargs:
-            retain_idle_objects = kwargs['retainIdleObjects']
-
-        _setter("comments", comments)
-        _setter("config_name", config_name)
-        _setter("contract_id", contract_id)
-        _setter("property_ids", property_ids)
+        pulumi.set(__self__, "comments", comments)
+        pulumi.set(__self__, "config_name", config_name)
+        pulumi.set(__self__, "contract_id", contract_id)
+        pulumi.set(__self__, "property_ids", property_ids)
         if capacity_alerts_threshold is not None:
-            _setter("capacity_alerts_threshold", capacity_alerts_threshold)
+            pulumi.set(__self__, "capacity_alerts_threshold", capacity_alerts_threshold)
         if locations is not None:
-            _setter("locations", locations)
+            pulumi.set(__self__, "locations", locations)
         if notification_emails is not None:
-            _setter("notification_emails", notification_emails)
+            pulumi.set(__self__, "notification_emails", notification_emails)
         if retain_idle_objects is not None:
-            _setter("retain_idle_objects", retain_idle_objects)
+            pulumi.set(__self__, "retain_idle_objects", retain_idle_objects)
         if timeouts is not None:
-            _setter("timeouts", timeouts)
+            pulumi.set(__self__, "timeouts", timeouts)
 
     @property
     @pulumi.getter
@@ -229,67 +182,26 @@ class _CloudwrapperConfigurationState:
         :param pulumi.Input[bool] retain_idle_objects: Retain idle objects beyond their max idle lifetime.
         :param pulumi.Input[str] revision: Unique hash value of the configuration.
         """
-        _CloudwrapperConfigurationState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            capacity_alerts_threshold=capacity_alerts_threshold,
-            comments=comments,
-            config_name=config_name,
-            contract_id=contract_id,
-            locations=locations,
-            notification_emails=notification_emails,
-            property_ids=property_ids,
-            retain_idle_objects=retain_idle_objects,
-            revision=revision,
-            timeouts=timeouts,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             capacity_alerts_threshold: Optional[pulumi.Input[int]] = None,
-             comments: Optional[pulumi.Input[str]] = None,
-             config_name: Optional[pulumi.Input[str]] = None,
-             contract_id: Optional[pulumi.Input[str]] = None,
-             locations: Optional[pulumi.Input[Sequence[pulumi.Input['CloudwrapperConfigurationLocationArgs']]]] = None,
-             notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             property_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             retain_idle_objects: Optional[pulumi.Input[bool]] = None,
-             revision: Optional[pulumi.Input[str]] = None,
-             timeouts: Optional[pulumi.Input['CloudwrapperConfigurationTimeoutsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if capacity_alerts_threshold is None and 'capacityAlertsThreshold' in kwargs:
-            capacity_alerts_threshold = kwargs['capacityAlertsThreshold']
-        if config_name is None and 'configName' in kwargs:
-            config_name = kwargs['configName']
-        if contract_id is None and 'contractId' in kwargs:
-            contract_id = kwargs['contractId']
-        if notification_emails is None and 'notificationEmails' in kwargs:
-            notification_emails = kwargs['notificationEmails']
-        if property_ids is None and 'propertyIds' in kwargs:
-            property_ids = kwargs['propertyIds']
-        if retain_idle_objects is None and 'retainIdleObjects' in kwargs:
-            retain_idle_objects = kwargs['retainIdleObjects']
-
         if capacity_alerts_threshold is not None:
-            _setter("capacity_alerts_threshold", capacity_alerts_threshold)
+            pulumi.set(__self__, "capacity_alerts_threshold", capacity_alerts_threshold)
         if comments is not None:
-            _setter("comments", comments)
+            pulumi.set(__self__, "comments", comments)
         if config_name is not None:
-            _setter("config_name", config_name)
+            pulumi.set(__self__, "config_name", config_name)
         if contract_id is not None:
-            _setter("contract_id", contract_id)
+            pulumi.set(__self__, "contract_id", contract_id)
         if locations is not None:
-            _setter("locations", locations)
+            pulumi.set(__self__, "locations", locations)
         if notification_emails is not None:
-            _setter("notification_emails", notification_emails)
+            pulumi.set(__self__, "notification_emails", notification_emails)
         if property_ids is not None:
-            _setter("property_ids", property_ids)
+            pulumi.set(__self__, "property_ids", property_ids)
         if retain_idle_objects is not None:
-            _setter("retain_idle_objects", retain_idle_objects)
+            pulumi.set(__self__, "retain_idle_objects", retain_idle_objects)
         if revision is not None:
-            _setter("revision", revision)
+            pulumi.set(__self__, "revision", revision)
         if timeouts is not None:
-            _setter("timeouts", timeouts)
+            pulumi.set(__self__, "timeouts", timeouts)
 
     @property
     @pulumi.getter(name="capacityAlertsThreshold")
@@ -455,10 +367,6 @@ class CloudwrapperConfiguration(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            CloudwrapperConfigurationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -498,7 +406,6 @@ class CloudwrapperConfiguration(pulumi.CustomResource):
                 raise TypeError("Missing required property 'property_ids'")
             __props__.__dict__["property_ids"] = property_ids
             __props__.__dict__["retain_idle_objects"] = retain_idle_objects
-            timeouts = _utilities.configure(timeouts, CloudwrapperConfigurationTimeoutsArgs, True)
             __props__.__dict__["timeouts"] = timeouts
             __props__.__dict__["revision"] = None
         super(CloudwrapperConfiguration, __self__).__init__(

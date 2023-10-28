@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['BotmanRecategorizedAkamaiDefinedBotArgs', 'BotmanRecategorizedAkamaiDefinedBot']
@@ -20,36 +20,9 @@ class BotmanRecategorizedAkamaiDefinedBotArgs:
         """
         The set of arguments for constructing a BotmanRecategorizedAkamaiDefinedBot resource.
         """
-        BotmanRecategorizedAkamaiDefinedBotArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            bot_id=bot_id,
-            category_id=category_id,
-            config_id=config_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             bot_id: Optional[pulumi.Input[str]] = None,
-             category_id: Optional[pulumi.Input[str]] = None,
-             config_id: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if bot_id is None and 'botId' in kwargs:
-            bot_id = kwargs['botId']
-        if bot_id is None:
-            raise TypeError("Missing 'bot_id' argument")
-        if category_id is None and 'categoryId' in kwargs:
-            category_id = kwargs['categoryId']
-        if category_id is None:
-            raise TypeError("Missing 'category_id' argument")
-        if config_id is None and 'configId' in kwargs:
-            config_id = kwargs['configId']
-        if config_id is None:
-            raise TypeError("Missing 'config_id' argument")
-
-        _setter("bot_id", bot_id)
-        _setter("category_id", category_id)
-        _setter("config_id", config_id)
+        pulumi.set(__self__, "bot_id", bot_id)
+        pulumi.set(__self__, "category_id", category_id)
+        pulumi.set(__self__, "config_id", config_id)
 
     @property
     @pulumi.getter(name="botId")
@@ -88,33 +61,12 @@ class _BotmanRecategorizedAkamaiDefinedBotState:
         """
         Input properties used for looking up and filtering BotmanRecategorizedAkamaiDefinedBot resources.
         """
-        _BotmanRecategorizedAkamaiDefinedBotState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            bot_id=bot_id,
-            category_id=category_id,
-            config_id=config_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             bot_id: Optional[pulumi.Input[str]] = None,
-             category_id: Optional[pulumi.Input[str]] = None,
-             config_id: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if bot_id is None and 'botId' in kwargs:
-            bot_id = kwargs['botId']
-        if category_id is None and 'categoryId' in kwargs:
-            category_id = kwargs['categoryId']
-        if config_id is None and 'configId' in kwargs:
-            config_id = kwargs['configId']
-
         if bot_id is not None:
-            _setter("bot_id", bot_id)
+            pulumi.set(__self__, "bot_id", bot_id)
         if category_id is not None:
-            _setter("category_id", category_id)
+            pulumi.set(__self__, "category_id", category_id)
         if config_id is not None:
-            _setter("config_id", config_id)
+            pulumi.set(__self__, "config_id", config_id)
 
     @property
     @pulumi.getter(name="botId")
@@ -176,10 +128,6 @@ class BotmanRecategorizedAkamaiDefinedBot(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            BotmanRecategorizedAkamaiDefinedBotArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

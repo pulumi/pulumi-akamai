@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['BotmanConditionalActionArgs', 'BotmanConditionalAction']
@@ -19,29 +19,8 @@ class BotmanConditionalActionArgs:
         """
         The set of arguments for constructing a BotmanConditionalAction resource.
         """
-        BotmanConditionalActionArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            conditional_action=conditional_action,
-            config_id=config_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             conditional_action: Optional[pulumi.Input[str]] = None,
-             config_id: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if conditional_action is None and 'conditionalAction' in kwargs:
-            conditional_action = kwargs['conditionalAction']
-        if conditional_action is None:
-            raise TypeError("Missing 'conditional_action' argument")
-        if config_id is None and 'configId' in kwargs:
-            config_id = kwargs['configId']
-        if config_id is None:
-            raise TypeError("Missing 'config_id' argument")
-
-        _setter("conditional_action", conditional_action)
-        _setter("config_id", config_id)
+        pulumi.set(__self__, "conditional_action", conditional_action)
+        pulumi.set(__self__, "config_id", config_id)
 
     @property
     @pulumi.getter(name="conditionalAction")
@@ -71,33 +50,12 @@ class _BotmanConditionalActionState:
         """
         Input properties used for looking up and filtering BotmanConditionalAction resources.
         """
-        _BotmanConditionalActionState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            action_id=action_id,
-            conditional_action=conditional_action,
-            config_id=config_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             action_id: Optional[pulumi.Input[str]] = None,
-             conditional_action: Optional[pulumi.Input[str]] = None,
-             config_id: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if action_id is None and 'actionId' in kwargs:
-            action_id = kwargs['actionId']
-        if conditional_action is None and 'conditionalAction' in kwargs:
-            conditional_action = kwargs['conditionalAction']
-        if config_id is None and 'configId' in kwargs:
-            config_id = kwargs['configId']
-
         if action_id is not None:
-            _setter("action_id", action_id)
+            pulumi.set(__self__, "action_id", action_id)
         if conditional_action is not None:
-            _setter("conditional_action", conditional_action)
+            pulumi.set(__self__, "conditional_action", conditional_action)
         if config_id is not None:
-            _setter("config_id", config_id)
+            pulumi.set(__self__, "config_id", config_id)
 
     @property
     @pulumi.getter(name="actionId")
@@ -158,10 +116,6 @@ class BotmanConditionalAction(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            BotmanConditionalActionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['GtmDomainArgs', 'GtmDomain']
@@ -32,96 +32,35 @@ class GtmDomainArgs:
         """
         The set of arguments for constructing a GtmDomain resource.
         """
-        GtmDomainArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            cname_coalescing_enabled=cname_coalescing_enabled,
-            comment=comment,
-            contract=contract,
-            default_error_penalty=default_error_penalty,
-            default_ssl_client_certificate=default_ssl_client_certificate,
-            default_ssl_client_private_key=default_ssl_client_private_key,
-            default_timeout_penalty=default_timeout_penalty,
-            email_notification_lists=email_notification_lists,
-            end_user_mapping_enabled=end_user_mapping_enabled,
-            group=group,
-            load_feedback=load_feedback,
-            load_imbalance_percentage=load_imbalance_percentage,
-            name=name,
-            wait_on_complete=wait_on_complete,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             cname_coalescing_enabled: Optional[pulumi.Input[bool]] = None,
-             comment: Optional[pulumi.Input[str]] = None,
-             contract: Optional[pulumi.Input[str]] = None,
-             default_error_penalty: Optional[pulumi.Input[int]] = None,
-             default_ssl_client_certificate: Optional[pulumi.Input[str]] = None,
-             default_ssl_client_private_key: Optional[pulumi.Input[str]] = None,
-             default_timeout_penalty: Optional[pulumi.Input[int]] = None,
-             email_notification_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             end_user_mapping_enabled: Optional[pulumi.Input[bool]] = None,
-             group: Optional[pulumi.Input[str]] = None,
-             load_feedback: Optional[pulumi.Input[bool]] = None,
-             load_imbalance_percentage: Optional[pulumi.Input[float]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             wait_on_complete: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if cname_coalescing_enabled is None and 'cnameCoalescingEnabled' in kwargs:
-            cname_coalescing_enabled = kwargs['cnameCoalescingEnabled']
-        if default_error_penalty is None and 'defaultErrorPenalty' in kwargs:
-            default_error_penalty = kwargs['defaultErrorPenalty']
-        if default_ssl_client_certificate is None and 'defaultSslClientCertificate' in kwargs:
-            default_ssl_client_certificate = kwargs['defaultSslClientCertificate']
-        if default_ssl_client_private_key is None and 'defaultSslClientPrivateKey' in kwargs:
-            default_ssl_client_private_key = kwargs['defaultSslClientPrivateKey']
-        if default_timeout_penalty is None and 'defaultTimeoutPenalty' in kwargs:
-            default_timeout_penalty = kwargs['defaultTimeoutPenalty']
-        if email_notification_lists is None and 'emailNotificationLists' in kwargs:
-            email_notification_lists = kwargs['emailNotificationLists']
-        if end_user_mapping_enabled is None and 'endUserMappingEnabled' in kwargs:
-            end_user_mapping_enabled = kwargs['endUserMappingEnabled']
-        if load_feedback is None and 'loadFeedback' in kwargs:
-            load_feedback = kwargs['loadFeedback']
-        if load_imbalance_percentage is None and 'loadImbalancePercentage' in kwargs:
-            load_imbalance_percentage = kwargs['loadImbalancePercentage']
-        if wait_on_complete is None and 'waitOnComplete' in kwargs:
-            wait_on_complete = kwargs['waitOnComplete']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if cname_coalescing_enabled is not None:
-            _setter("cname_coalescing_enabled", cname_coalescing_enabled)
+            pulumi.set(__self__, "cname_coalescing_enabled", cname_coalescing_enabled)
         if comment is not None:
-            _setter("comment", comment)
+            pulumi.set(__self__, "comment", comment)
         if contract is not None:
-            _setter("contract", contract)
+            pulumi.set(__self__, "contract", contract)
         if default_error_penalty is not None:
-            _setter("default_error_penalty", default_error_penalty)
+            pulumi.set(__self__, "default_error_penalty", default_error_penalty)
         if default_ssl_client_certificate is not None:
-            _setter("default_ssl_client_certificate", default_ssl_client_certificate)
+            pulumi.set(__self__, "default_ssl_client_certificate", default_ssl_client_certificate)
         if default_ssl_client_private_key is not None:
-            _setter("default_ssl_client_private_key", default_ssl_client_private_key)
+            pulumi.set(__self__, "default_ssl_client_private_key", default_ssl_client_private_key)
         if default_timeout_penalty is not None:
-            _setter("default_timeout_penalty", default_timeout_penalty)
+            pulumi.set(__self__, "default_timeout_penalty", default_timeout_penalty)
         if email_notification_lists is not None:
-            _setter("email_notification_lists", email_notification_lists)
+            pulumi.set(__self__, "email_notification_lists", email_notification_lists)
         if end_user_mapping_enabled is not None:
-            _setter("end_user_mapping_enabled", end_user_mapping_enabled)
+            pulumi.set(__self__, "end_user_mapping_enabled", end_user_mapping_enabled)
         if group is not None:
-            _setter("group", group)
+            pulumi.set(__self__, "group", group)
         if load_feedback is not None:
-            _setter("load_feedback", load_feedback)
+            pulumi.set(__self__, "load_feedback", load_feedback)
         if load_imbalance_percentage is not None:
-            _setter("load_imbalance_percentage", load_imbalance_percentage)
+            pulumi.set(__self__, "load_imbalance_percentage", load_imbalance_percentage)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if wait_on_complete is not None:
-            _setter("wait_on_complete", wait_on_complete)
+            pulumi.set(__self__, "wait_on_complete", wait_on_complete)
 
     @property
     @pulumi.getter
@@ -299,209 +238,74 @@ class _GtmDomainState:
         """
         Input properties used for looking up and filtering GtmDomain resources.
         """
-        _GtmDomainState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cname_coalescing_enabled=cname_coalescing_enabled,
-            comment=comment,
-            contract=contract,
-            default_error_penalty=default_error_penalty,
-            default_health_max=default_health_max,
-            default_health_multiplier=default_health_multiplier,
-            default_health_threshold=default_health_threshold,
-            default_max_unreachable_penalty=default_max_unreachable_penalty,
-            default_ssl_client_certificate=default_ssl_client_certificate,
-            default_ssl_client_private_key=default_ssl_client_private_key,
-            default_timeout_penalty=default_timeout_penalty,
-            default_unreachable_threshold=default_unreachable_threshold,
-            email_notification_lists=email_notification_lists,
-            end_user_mapping_enabled=end_user_mapping_enabled,
-            group=group,
-            load_feedback=load_feedback,
-            load_imbalance_percentage=load_imbalance_percentage,
-            map_update_interval=map_update_interval,
-            max_properties=max_properties,
-            max_resources=max_resources,
-            max_test_timeout=max_test_timeout,
-            max_ttl=max_ttl,
-            min_pingable_region_fraction=min_pingable_region_fraction,
-            min_test_interval=min_test_interval,
-            min_ttl=min_ttl,
-            name=name,
-            ping_interval=ping_interval,
-            ping_packet_size=ping_packet_size,
-            round_robin_prefix=round_robin_prefix,
-            servermonitor_liveness_count=servermonitor_liveness_count,
-            servermonitor_load_count=servermonitor_load_count,
-            servermonitor_pool=servermonitor_pool,
-            type=type,
-            wait_on_complete=wait_on_complete,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cname_coalescing_enabled: Optional[pulumi.Input[bool]] = None,
-             comment: Optional[pulumi.Input[str]] = None,
-             contract: Optional[pulumi.Input[str]] = None,
-             default_error_penalty: Optional[pulumi.Input[int]] = None,
-             default_health_max: Optional[pulumi.Input[float]] = None,
-             default_health_multiplier: Optional[pulumi.Input[float]] = None,
-             default_health_threshold: Optional[pulumi.Input[float]] = None,
-             default_max_unreachable_penalty: Optional[pulumi.Input[int]] = None,
-             default_ssl_client_certificate: Optional[pulumi.Input[str]] = None,
-             default_ssl_client_private_key: Optional[pulumi.Input[str]] = None,
-             default_timeout_penalty: Optional[pulumi.Input[int]] = None,
-             default_unreachable_threshold: Optional[pulumi.Input[float]] = None,
-             email_notification_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             end_user_mapping_enabled: Optional[pulumi.Input[bool]] = None,
-             group: Optional[pulumi.Input[str]] = None,
-             load_feedback: Optional[pulumi.Input[bool]] = None,
-             load_imbalance_percentage: Optional[pulumi.Input[float]] = None,
-             map_update_interval: Optional[pulumi.Input[int]] = None,
-             max_properties: Optional[pulumi.Input[int]] = None,
-             max_resources: Optional[pulumi.Input[int]] = None,
-             max_test_timeout: Optional[pulumi.Input[float]] = None,
-             max_ttl: Optional[pulumi.Input[int]] = None,
-             min_pingable_region_fraction: Optional[pulumi.Input[float]] = None,
-             min_test_interval: Optional[pulumi.Input[int]] = None,
-             min_ttl: Optional[pulumi.Input[int]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             ping_interval: Optional[pulumi.Input[int]] = None,
-             ping_packet_size: Optional[pulumi.Input[int]] = None,
-             round_robin_prefix: Optional[pulumi.Input[str]] = None,
-             servermonitor_liveness_count: Optional[pulumi.Input[int]] = None,
-             servermonitor_load_count: Optional[pulumi.Input[int]] = None,
-             servermonitor_pool: Optional[pulumi.Input[str]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             wait_on_complete: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cname_coalescing_enabled is None and 'cnameCoalescingEnabled' in kwargs:
-            cname_coalescing_enabled = kwargs['cnameCoalescingEnabled']
-        if default_error_penalty is None and 'defaultErrorPenalty' in kwargs:
-            default_error_penalty = kwargs['defaultErrorPenalty']
-        if default_health_max is None and 'defaultHealthMax' in kwargs:
-            default_health_max = kwargs['defaultHealthMax']
-        if default_health_multiplier is None and 'defaultHealthMultiplier' in kwargs:
-            default_health_multiplier = kwargs['defaultHealthMultiplier']
-        if default_health_threshold is None and 'defaultHealthThreshold' in kwargs:
-            default_health_threshold = kwargs['defaultHealthThreshold']
-        if default_max_unreachable_penalty is None and 'defaultMaxUnreachablePenalty' in kwargs:
-            default_max_unreachable_penalty = kwargs['defaultMaxUnreachablePenalty']
-        if default_ssl_client_certificate is None and 'defaultSslClientCertificate' in kwargs:
-            default_ssl_client_certificate = kwargs['defaultSslClientCertificate']
-        if default_ssl_client_private_key is None and 'defaultSslClientPrivateKey' in kwargs:
-            default_ssl_client_private_key = kwargs['defaultSslClientPrivateKey']
-        if default_timeout_penalty is None and 'defaultTimeoutPenalty' in kwargs:
-            default_timeout_penalty = kwargs['defaultTimeoutPenalty']
-        if default_unreachable_threshold is None and 'defaultUnreachableThreshold' in kwargs:
-            default_unreachable_threshold = kwargs['defaultUnreachableThreshold']
-        if email_notification_lists is None and 'emailNotificationLists' in kwargs:
-            email_notification_lists = kwargs['emailNotificationLists']
-        if end_user_mapping_enabled is None and 'endUserMappingEnabled' in kwargs:
-            end_user_mapping_enabled = kwargs['endUserMappingEnabled']
-        if load_feedback is None and 'loadFeedback' in kwargs:
-            load_feedback = kwargs['loadFeedback']
-        if load_imbalance_percentage is None and 'loadImbalancePercentage' in kwargs:
-            load_imbalance_percentage = kwargs['loadImbalancePercentage']
-        if map_update_interval is None and 'mapUpdateInterval' in kwargs:
-            map_update_interval = kwargs['mapUpdateInterval']
-        if max_properties is None and 'maxProperties' in kwargs:
-            max_properties = kwargs['maxProperties']
-        if max_resources is None and 'maxResources' in kwargs:
-            max_resources = kwargs['maxResources']
-        if max_test_timeout is None and 'maxTestTimeout' in kwargs:
-            max_test_timeout = kwargs['maxTestTimeout']
-        if max_ttl is None and 'maxTtl' in kwargs:
-            max_ttl = kwargs['maxTtl']
-        if min_pingable_region_fraction is None and 'minPingableRegionFraction' in kwargs:
-            min_pingable_region_fraction = kwargs['minPingableRegionFraction']
-        if min_test_interval is None and 'minTestInterval' in kwargs:
-            min_test_interval = kwargs['minTestInterval']
-        if min_ttl is None and 'minTtl' in kwargs:
-            min_ttl = kwargs['minTtl']
-        if ping_interval is None and 'pingInterval' in kwargs:
-            ping_interval = kwargs['pingInterval']
-        if ping_packet_size is None and 'pingPacketSize' in kwargs:
-            ping_packet_size = kwargs['pingPacketSize']
-        if round_robin_prefix is None and 'roundRobinPrefix' in kwargs:
-            round_robin_prefix = kwargs['roundRobinPrefix']
-        if servermonitor_liveness_count is None and 'servermonitorLivenessCount' in kwargs:
-            servermonitor_liveness_count = kwargs['servermonitorLivenessCount']
-        if servermonitor_load_count is None and 'servermonitorLoadCount' in kwargs:
-            servermonitor_load_count = kwargs['servermonitorLoadCount']
-        if servermonitor_pool is None and 'servermonitorPool' in kwargs:
-            servermonitor_pool = kwargs['servermonitorPool']
-        if wait_on_complete is None and 'waitOnComplete' in kwargs:
-            wait_on_complete = kwargs['waitOnComplete']
-
         if cname_coalescing_enabled is not None:
-            _setter("cname_coalescing_enabled", cname_coalescing_enabled)
+            pulumi.set(__self__, "cname_coalescing_enabled", cname_coalescing_enabled)
         if comment is not None:
-            _setter("comment", comment)
+            pulumi.set(__self__, "comment", comment)
         if contract is not None:
-            _setter("contract", contract)
+            pulumi.set(__self__, "contract", contract)
         if default_error_penalty is not None:
-            _setter("default_error_penalty", default_error_penalty)
+            pulumi.set(__self__, "default_error_penalty", default_error_penalty)
         if default_health_max is not None:
-            _setter("default_health_max", default_health_max)
+            pulumi.set(__self__, "default_health_max", default_health_max)
         if default_health_multiplier is not None:
-            _setter("default_health_multiplier", default_health_multiplier)
+            pulumi.set(__self__, "default_health_multiplier", default_health_multiplier)
         if default_health_threshold is not None:
-            _setter("default_health_threshold", default_health_threshold)
+            pulumi.set(__self__, "default_health_threshold", default_health_threshold)
         if default_max_unreachable_penalty is not None:
-            _setter("default_max_unreachable_penalty", default_max_unreachable_penalty)
+            pulumi.set(__self__, "default_max_unreachable_penalty", default_max_unreachable_penalty)
         if default_ssl_client_certificate is not None:
-            _setter("default_ssl_client_certificate", default_ssl_client_certificate)
+            pulumi.set(__self__, "default_ssl_client_certificate", default_ssl_client_certificate)
         if default_ssl_client_private_key is not None:
-            _setter("default_ssl_client_private_key", default_ssl_client_private_key)
+            pulumi.set(__self__, "default_ssl_client_private_key", default_ssl_client_private_key)
         if default_timeout_penalty is not None:
-            _setter("default_timeout_penalty", default_timeout_penalty)
+            pulumi.set(__self__, "default_timeout_penalty", default_timeout_penalty)
         if default_unreachable_threshold is not None:
-            _setter("default_unreachable_threshold", default_unreachable_threshold)
+            pulumi.set(__self__, "default_unreachable_threshold", default_unreachable_threshold)
         if email_notification_lists is not None:
-            _setter("email_notification_lists", email_notification_lists)
+            pulumi.set(__self__, "email_notification_lists", email_notification_lists)
         if end_user_mapping_enabled is not None:
-            _setter("end_user_mapping_enabled", end_user_mapping_enabled)
+            pulumi.set(__self__, "end_user_mapping_enabled", end_user_mapping_enabled)
         if group is not None:
-            _setter("group", group)
+            pulumi.set(__self__, "group", group)
         if load_feedback is not None:
-            _setter("load_feedback", load_feedback)
+            pulumi.set(__self__, "load_feedback", load_feedback)
         if load_imbalance_percentage is not None:
-            _setter("load_imbalance_percentage", load_imbalance_percentage)
+            pulumi.set(__self__, "load_imbalance_percentage", load_imbalance_percentage)
         if map_update_interval is not None:
-            _setter("map_update_interval", map_update_interval)
+            pulumi.set(__self__, "map_update_interval", map_update_interval)
         if max_properties is not None:
-            _setter("max_properties", max_properties)
+            pulumi.set(__self__, "max_properties", max_properties)
         if max_resources is not None:
-            _setter("max_resources", max_resources)
+            pulumi.set(__self__, "max_resources", max_resources)
         if max_test_timeout is not None:
-            _setter("max_test_timeout", max_test_timeout)
+            pulumi.set(__self__, "max_test_timeout", max_test_timeout)
         if max_ttl is not None:
-            _setter("max_ttl", max_ttl)
+            pulumi.set(__self__, "max_ttl", max_ttl)
         if min_pingable_region_fraction is not None:
-            _setter("min_pingable_region_fraction", min_pingable_region_fraction)
+            pulumi.set(__self__, "min_pingable_region_fraction", min_pingable_region_fraction)
         if min_test_interval is not None:
-            _setter("min_test_interval", min_test_interval)
+            pulumi.set(__self__, "min_test_interval", min_test_interval)
         if min_ttl is not None:
-            _setter("min_ttl", min_ttl)
+            pulumi.set(__self__, "min_ttl", min_ttl)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if ping_interval is not None:
-            _setter("ping_interval", ping_interval)
+            pulumi.set(__self__, "ping_interval", ping_interval)
         if ping_packet_size is not None:
-            _setter("ping_packet_size", ping_packet_size)
+            pulumi.set(__self__, "ping_packet_size", ping_packet_size)
         if round_robin_prefix is not None:
-            _setter("round_robin_prefix", round_robin_prefix)
+            pulumi.set(__self__, "round_robin_prefix", round_robin_prefix)
         if servermonitor_liveness_count is not None:
-            _setter("servermonitor_liveness_count", servermonitor_liveness_count)
+            pulumi.set(__self__, "servermonitor_liveness_count", servermonitor_liveness_count)
         if servermonitor_load_count is not None:
-            _setter("servermonitor_load_count", servermonitor_load_count)
+            pulumi.set(__self__, "servermonitor_load_count", servermonitor_load_count)
         if servermonitor_pool is not None:
-            _setter("servermonitor_pool", servermonitor_pool)
+            pulumi.set(__self__, "servermonitor_pool", servermonitor_pool)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
         if wait_on_complete is not None:
-            _setter("wait_on_complete", wait_on_complete)
+            pulumi.set(__self__, "wait_on_complete", wait_on_complete)
 
     @property
     @pulumi.getter(name="cnameCoalescingEnabled")
@@ -854,10 +658,6 @@ class GtmDomain(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            GtmDomainArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

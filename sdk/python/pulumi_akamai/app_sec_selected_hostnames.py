@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecSelectedHostnamesArgs', 'AppSecSelectedHostnames']
@@ -23,32 +23,9 @@ class AppSecSelectedHostnamesArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: List of hostnames to be added or removed from the protected hosts list
         :param pulumi.Input[str] mode: How the hostnames are to be applied (APPEND, REMOVE or REPLACE)
         """
-        AppSecSelectedHostnamesArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_id=config_id,
-            hostnames=hostnames,
-            mode=mode,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_id: Optional[pulumi.Input[int]] = None,
-             hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             mode: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_id is None and 'configId' in kwargs:
-            config_id = kwargs['configId']
-        if config_id is None:
-            raise TypeError("Missing 'config_id' argument")
-        if hostnames is None:
-            raise TypeError("Missing 'hostnames' argument")
-        if mode is None:
-            raise TypeError("Missing 'mode' argument")
-
-        _setter("config_id", config_id)
-        _setter("hostnames", hostnames)
-        _setter("mode", mode)
+        pulumi.set(__self__, "config_id", config_id)
+        pulumi.set(__self__, "hostnames", hostnames)
+        pulumi.set(__self__, "mode", mode)
 
     @property
     @pulumi.getter(name="configId")
@@ -99,29 +76,12 @@ class _AppSecSelectedHostnamesState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: List of hostnames to be added or removed from the protected hosts list
         :param pulumi.Input[str] mode: How the hostnames are to be applied (APPEND, REMOVE or REPLACE)
         """
-        _AppSecSelectedHostnamesState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_id=config_id,
-            hostnames=hostnames,
-            mode=mode,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_id: Optional[pulumi.Input[int]] = None,
-             hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             mode: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_id is None and 'configId' in kwargs:
-            config_id = kwargs['configId']
-
         if config_id is not None:
-            _setter("config_id", config_id)
+            pulumi.set(__self__, "config_id", config_id)
         if hostnames is not None:
-            _setter("hostnames", hostnames)
+            pulumi.set(__self__, "hostnames", hostnames)
         if mode is not None:
-            _setter("mode", mode)
+            pulumi.set(__self__, "mode", mode)
 
     @property
     @pulumi.getter(name="configId")
@@ -195,10 +155,6 @@ class AppSecSelectedHostnames(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            AppSecSelectedHostnamesArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

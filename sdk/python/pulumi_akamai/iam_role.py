@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['IamRoleArgs', 'IamRole']
@@ -25,35 +25,12 @@ class IamRoleArgs:
         :param pulumi.Input[str] name: The name you supply for a role
         :param pulumi.Input[str] type: The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account
         """
-        IamRoleArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            description=description,
-            granted_roles=granted_roles,
-            name=name,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             description: Optional[pulumi.Input[str]] = None,
-             granted_roles: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if granted_roles is None and 'grantedRoles' in kwargs:
-            granted_roles = kwargs['grantedRoles']
-        if granted_roles is None:
-            raise TypeError("Missing 'granted_roles' argument")
-
-        _setter("description", description)
-        _setter("granted_roles", granted_roles)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "granted_roles", granted_roles)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -118,33 +95,14 @@ class _IamRoleState:
         :param pulumi.Input[str] name: The name you supply for a role
         :param pulumi.Input[str] type: The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account
         """
-        _IamRoleState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            description=description,
-            granted_roles=granted_roles,
-            name=name,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             description: Optional[pulumi.Input[str]] = None,
-             granted_roles: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if granted_roles is None and 'grantedRoles' in kwargs:
-            granted_roles = kwargs['grantedRoles']
-
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if granted_roles is not None:
-            _setter("granted_roles", granted_roles)
+            pulumi.set(__self__, "granted_roles", granted_roles)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -232,10 +190,6 @@ class IamRole(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            IamRoleArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

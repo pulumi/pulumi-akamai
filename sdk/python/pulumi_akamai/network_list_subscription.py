@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['NetworkListSubscriptionArgs', 'NetworkListSubscription']
@@ -19,27 +19,8 @@ class NetworkListSubscriptionArgs:
         """
         The set of arguments for constructing a NetworkListSubscription resource.
         """
-        NetworkListSubscriptionArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            network_lists=network_lists,
-            recipients=recipients,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             recipients: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if network_lists is None and 'networkLists' in kwargs:
-            network_lists = kwargs['networkLists']
-        if network_lists is None:
-            raise TypeError("Missing 'network_lists' argument")
-        if recipients is None:
-            raise TypeError("Missing 'recipients' argument")
-
-        _setter("network_lists", network_lists)
-        _setter("recipients", recipients)
+        pulumi.set(__self__, "network_lists", network_lists)
+        pulumi.set(__self__, "recipients", recipients)
 
     @property
     @pulumi.getter(name="networkLists")
@@ -68,25 +49,10 @@ class _NetworkListSubscriptionState:
         """
         Input properties used for looking up and filtering NetworkListSubscription resources.
         """
-        _NetworkListSubscriptionState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            network_lists=network_lists,
-            recipients=recipients,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             recipients: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if network_lists is None and 'networkLists' in kwargs:
-            network_lists = kwargs['networkLists']
-
         if network_lists is not None:
-            _setter("network_lists", network_lists)
+            pulumi.set(__self__, "network_lists", network_lists)
         if recipients is not None:
-            _setter("recipients", recipients)
+            pulumi.set(__self__, "recipients", recipients)
 
     @property
     @pulumi.getter(name="networkLists")
@@ -138,10 +104,6 @@ class NetworkListSubscription(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            NetworkListSubscriptionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
