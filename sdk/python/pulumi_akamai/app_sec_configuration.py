@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecConfigurationArgs', 'AppSecConfiguration']
@@ -31,57 +31,16 @@ class AppSecConfigurationArgs:
         :param pulumi.Input[int] create_from_version: Version number of the existing configuration being cloned to create the new configuration
         :param pulumi.Input[str] name: Name of the new configuration
         """
-        AppSecConfigurationArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            contract_id=contract_id,
-            description=description,
-            group_id=group_id,
-            host_names=host_names,
-            create_from_config_id=create_from_config_id,
-            create_from_version=create_from_version,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             contract_id: Optional[pulumi.Input[str]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             group_id: Optional[pulumi.Input[int]] = None,
-             host_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             create_from_config_id: Optional[pulumi.Input[int]] = None,
-             create_from_version: Optional[pulumi.Input[int]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if contract_id is None and 'contractId' in kwargs:
-            contract_id = kwargs['contractId']
-        if contract_id is None:
-            raise TypeError("Missing 'contract_id' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if group_id is None and 'groupId' in kwargs:
-            group_id = kwargs['groupId']
-        if group_id is None:
-            raise TypeError("Missing 'group_id' argument")
-        if host_names is None and 'hostNames' in kwargs:
-            host_names = kwargs['hostNames']
-        if host_names is None:
-            raise TypeError("Missing 'host_names' argument")
-        if create_from_config_id is None and 'createFromConfigId' in kwargs:
-            create_from_config_id = kwargs['createFromConfigId']
-        if create_from_version is None and 'createFromVersion' in kwargs:
-            create_from_version = kwargs['createFromVersion']
-
-        _setter("contract_id", contract_id)
-        _setter("description", description)
-        _setter("group_id", group_id)
-        _setter("host_names", host_names)
+        pulumi.set(__self__, "contract_id", contract_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "group_id", group_id)
+        pulumi.set(__self__, "host_names", host_names)
         if create_from_config_id is not None:
-            _setter("create_from_config_id", create_from_config_id)
+            pulumi.set(__self__, "create_from_config_id", create_from_config_id)
         if create_from_version is not None:
-            _setter("create_from_version", create_from_version)
+            pulumi.set(__self__, "create_from_version", create_from_version)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="contractId")
@@ -190,59 +149,22 @@ class _AppSecConfigurationState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] host_names: Hostnames to be protected by the new configuration
         :param pulumi.Input[str] name: Name of the new configuration
         """
-        _AppSecConfigurationState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_id=config_id,
-            contract_id=contract_id,
-            create_from_config_id=create_from_config_id,
-            create_from_version=create_from_version,
-            description=description,
-            group_id=group_id,
-            host_names=host_names,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_id: Optional[pulumi.Input[int]] = None,
-             contract_id: Optional[pulumi.Input[str]] = None,
-             create_from_config_id: Optional[pulumi.Input[int]] = None,
-             create_from_version: Optional[pulumi.Input[int]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             group_id: Optional[pulumi.Input[int]] = None,
-             host_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_id is None and 'configId' in kwargs:
-            config_id = kwargs['configId']
-        if contract_id is None and 'contractId' in kwargs:
-            contract_id = kwargs['contractId']
-        if create_from_config_id is None and 'createFromConfigId' in kwargs:
-            create_from_config_id = kwargs['createFromConfigId']
-        if create_from_version is None and 'createFromVersion' in kwargs:
-            create_from_version = kwargs['createFromVersion']
-        if group_id is None and 'groupId' in kwargs:
-            group_id = kwargs['groupId']
-        if host_names is None and 'hostNames' in kwargs:
-            host_names = kwargs['hostNames']
-
         if config_id is not None:
-            _setter("config_id", config_id)
+            pulumi.set(__self__, "config_id", config_id)
         if contract_id is not None:
-            _setter("contract_id", contract_id)
+            pulumi.set(__self__, "contract_id", contract_id)
         if create_from_config_id is not None:
-            _setter("create_from_config_id", create_from_config_id)
+            pulumi.set(__self__, "create_from_config_id", create_from_config_id)
         if create_from_version is not None:
-            _setter("create_from_version", create_from_version)
+            pulumi.set(__self__, "create_from_version", create_from_version)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if group_id is not None:
-            _setter("group_id", group_id)
+            pulumi.set(__self__, "group_id", group_id)
         if host_names is not None:
-            _setter("host_names", host_names)
+            pulumi.set(__self__, "host_names", host_names)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="configId")
@@ -384,10 +306,6 @@ class AppSecConfiguration(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            AppSecConfigurationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

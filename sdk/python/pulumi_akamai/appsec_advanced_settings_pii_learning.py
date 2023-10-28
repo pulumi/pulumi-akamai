@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppsecAdvancedSettingsPiiLearningArgs', 'AppsecAdvancedSettingsPiiLearning']
@@ -21,29 +21,8 @@ class AppsecAdvancedSettingsPiiLearningArgs:
         :param pulumi.Input[int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[bool] enable_pii_learning: Whether to enable the PII learning advanced setting
         """
-        AppsecAdvancedSettingsPiiLearningArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_id=config_id,
-            enable_pii_learning=enable_pii_learning,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_id: Optional[pulumi.Input[int]] = None,
-             enable_pii_learning: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_id is None and 'configId' in kwargs:
-            config_id = kwargs['configId']
-        if config_id is None:
-            raise TypeError("Missing 'config_id' argument")
-        if enable_pii_learning is None and 'enablePiiLearning' in kwargs:
-            enable_pii_learning = kwargs['enablePiiLearning']
-        if enable_pii_learning is None:
-            raise TypeError("Missing 'enable_pii_learning' argument")
-
-        _setter("config_id", config_id)
-        _setter("enable_pii_learning", enable_pii_learning)
+        pulumi.set(__self__, "config_id", config_id)
+        pulumi.set(__self__, "enable_pii_learning", enable_pii_learning)
 
     @property
     @pulumi.getter(name="configId")
@@ -80,27 +59,10 @@ class _AppsecAdvancedSettingsPiiLearningState:
         :param pulumi.Input[int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[bool] enable_pii_learning: Whether to enable the PII learning advanced setting
         """
-        _AppsecAdvancedSettingsPiiLearningState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_id=config_id,
-            enable_pii_learning=enable_pii_learning,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_id: Optional[pulumi.Input[int]] = None,
-             enable_pii_learning: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_id is None and 'configId' in kwargs:
-            config_id = kwargs['configId']
-        if enable_pii_learning is None and 'enablePiiLearning' in kwargs:
-            enable_pii_learning = kwargs['enablePiiLearning']
-
         if config_id is not None:
-            _setter("config_id", config_id)
+            pulumi.set(__self__, "config_id", config_id)
         if enable_pii_learning is not None:
-            _setter("enable_pii_learning", enable_pii_learning)
+            pulumi.set(__self__, "enable_pii_learning", enable_pii_learning)
 
     @property
     @pulumi.getter(name="configId")
@@ -160,10 +122,6 @@ class AppsecAdvancedSettingsPiiLearning(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            AppsecAdvancedSettingsPiiLearningArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

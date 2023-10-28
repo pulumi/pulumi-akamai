@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['NetworkListArgs', 'NetworkList']
@@ -32,50 +32,17 @@ class NetworkListArgs:
                list
         :param pulumi.Input[str] name: The name to be assigned to the network list
         """
-        NetworkListArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            description=description,
-            mode=mode,
-            type=type,
-            contract_id=contract_id,
-            group_id=group_id,
-            lists=lists,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             description: Optional[pulumi.Input[str]] = None,
-             mode: Optional[pulumi.Input[str]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             contract_id: Optional[pulumi.Input[str]] = None,
-             group_id: Optional[pulumi.Input[int]] = None,
-             lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if mode is None:
-            raise TypeError("Missing 'mode' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if contract_id is None and 'contractId' in kwargs:
-            contract_id = kwargs['contractId']
-        if group_id is None and 'groupId' in kwargs:
-            group_id = kwargs['groupId']
-
-        _setter("description", description)
-        _setter("mode", mode)
-        _setter("type", type)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "mode", mode)
+        pulumi.set(__self__, "type", type)
         if contract_id is not None:
-            _setter("contract_id", contract_id)
+            pulumi.set(__self__, "contract_id", contract_id)
         if group_id is not None:
-            _setter("group_id", group_id)
+            pulumi.set(__self__, "group_id", group_id)
         if lists is not None:
-            _setter("lists", lists)
+            pulumi.set(__self__, "lists", lists)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -190,63 +157,26 @@ class _NetworkListState:
         :param pulumi.Input[str] type: The type of the network list; must be either 'IP' or 'GEO'
         :param pulumi.Input[str] uniqueid: unique ID
         """
-        _NetworkListState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            contract_id=contract_id,
-            description=description,
-            group_id=group_id,
-            lists=lists,
-            mode=mode,
-            name=name,
-            network_list_id=network_list_id,
-            sync_point=sync_point,
-            type=type,
-            uniqueid=uniqueid,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             contract_id: Optional[pulumi.Input[str]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             group_id: Optional[pulumi.Input[int]] = None,
-             lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             mode: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             network_list_id: Optional[pulumi.Input[str]] = None,
-             sync_point: Optional[pulumi.Input[int]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             uniqueid: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if contract_id is None and 'contractId' in kwargs:
-            contract_id = kwargs['contractId']
-        if group_id is None and 'groupId' in kwargs:
-            group_id = kwargs['groupId']
-        if network_list_id is None and 'networkListId' in kwargs:
-            network_list_id = kwargs['networkListId']
-        if sync_point is None and 'syncPoint' in kwargs:
-            sync_point = kwargs['syncPoint']
-
         if contract_id is not None:
-            _setter("contract_id", contract_id)
+            pulumi.set(__self__, "contract_id", contract_id)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if group_id is not None:
-            _setter("group_id", group_id)
+            pulumi.set(__self__, "group_id", group_id)
         if lists is not None:
-            _setter("lists", lists)
+            pulumi.set(__self__, "lists", lists)
         if mode is not None:
-            _setter("mode", mode)
+            pulumi.set(__self__, "mode", mode)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if network_list_id is not None:
-            _setter("network_list_id", network_list_id)
+            pulumi.set(__self__, "network_list_id", network_list_id)
         if sync_point is not None:
-            _setter("sync_point", sync_point)
+            pulumi.set(__self__, "sync_point", sync_point)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
         if uniqueid is not None:
-            _setter("uniqueid", uniqueid)
+            pulumi.set(__self__, "uniqueid", uniqueid)
 
     @property
     @pulumi.getter(name="contractId")
@@ -414,10 +344,6 @@ class NetworkList(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            NetworkListArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

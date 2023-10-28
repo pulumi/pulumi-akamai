@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -30,70 +30,25 @@ class DnsZoneArgs:
         """
         The set of arguments for constructing a DnsZone resource.
         """
-        DnsZoneArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            contract=contract,
-            type=type,
-            zone=zone,
-            comment=comment,
-            end_customer_id=end_customer_id,
-            group=group,
-            masters=masters,
-            sign_and_serve=sign_and_serve,
-            sign_and_serve_algorithm=sign_and_serve_algorithm,
-            target=target,
-            tsig_key=tsig_key,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             contract: Optional[pulumi.Input[str]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             zone: Optional[pulumi.Input[str]] = None,
-             comment: Optional[pulumi.Input[str]] = None,
-             end_customer_id: Optional[pulumi.Input[str]] = None,
-             group: Optional[pulumi.Input[str]] = None,
-             masters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             sign_and_serve: Optional[pulumi.Input[bool]] = None,
-             sign_and_serve_algorithm: Optional[pulumi.Input[str]] = None,
-             target: Optional[pulumi.Input[str]] = None,
-             tsig_key: Optional[pulumi.Input['DnsZoneTsigKeyArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if contract is None:
-            raise TypeError("Missing 'contract' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if zone is None:
-            raise TypeError("Missing 'zone' argument")
-        if end_customer_id is None and 'endCustomerId' in kwargs:
-            end_customer_id = kwargs['endCustomerId']
-        if sign_and_serve is None and 'signAndServe' in kwargs:
-            sign_and_serve = kwargs['signAndServe']
-        if sign_and_serve_algorithm is None and 'signAndServeAlgorithm' in kwargs:
-            sign_and_serve_algorithm = kwargs['signAndServeAlgorithm']
-        if tsig_key is None and 'tsigKey' in kwargs:
-            tsig_key = kwargs['tsigKey']
-
-        _setter("contract", contract)
-        _setter("type", type)
-        _setter("zone", zone)
+        pulumi.set(__self__, "contract", contract)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "zone", zone)
         if comment is not None:
-            _setter("comment", comment)
+            pulumi.set(__self__, "comment", comment)
         if end_customer_id is not None:
-            _setter("end_customer_id", end_customer_id)
+            pulumi.set(__self__, "end_customer_id", end_customer_id)
         if group is not None:
-            _setter("group", group)
+            pulumi.set(__self__, "group", group)
         if masters is not None:
-            _setter("masters", masters)
+            pulumi.set(__self__, "masters", masters)
         if sign_and_serve is not None:
-            _setter("sign_and_serve", sign_and_serve)
+            pulumi.set(__self__, "sign_and_serve", sign_and_serve)
         if sign_and_serve_algorithm is not None:
-            _setter("sign_and_serve_algorithm", sign_and_serve_algorithm)
+            pulumi.set(__self__, "sign_and_serve_algorithm", sign_and_serve_algorithm)
         if target is not None:
-            _setter("target", target)
+            pulumi.set(__self__, "target", target)
         if tsig_key is not None:
-            _setter("tsig_key", tsig_key)
+            pulumi.set(__self__, "tsig_key", tsig_key)
 
     @property
     @pulumi.getter
@@ -215,85 +170,34 @@ class _DnsZoneState:
         """
         Input properties used for looking up and filtering DnsZone resources.
         """
-        _DnsZoneState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            activation_state=activation_state,
-            alias_count=alias_count,
-            comment=comment,
-            contract=contract,
-            end_customer_id=end_customer_id,
-            group=group,
-            masters=masters,
-            sign_and_serve=sign_and_serve,
-            sign_and_serve_algorithm=sign_and_serve_algorithm,
-            target=target,
-            tsig_key=tsig_key,
-            type=type,
-            version_id=version_id,
-            zone=zone,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             activation_state: Optional[pulumi.Input[str]] = None,
-             alias_count: Optional[pulumi.Input[int]] = None,
-             comment: Optional[pulumi.Input[str]] = None,
-             contract: Optional[pulumi.Input[str]] = None,
-             end_customer_id: Optional[pulumi.Input[str]] = None,
-             group: Optional[pulumi.Input[str]] = None,
-             masters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             sign_and_serve: Optional[pulumi.Input[bool]] = None,
-             sign_and_serve_algorithm: Optional[pulumi.Input[str]] = None,
-             target: Optional[pulumi.Input[str]] = None,
-             tsig_key: Optional[pulumi.Input['DnsZoneTsigKeyArgs']] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             version_id: Optional[pulumi.Input[str]] = None,
-             zone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if activation_state is None and 'activationState' in kwargs:
-            activation_state = kwargs['activationState']
-        if alias_count is None and 'aliasCount' in kwargs:
-            alias_count = kwargs['aliasCount']
-        if end_customer_id is None and 'endCustomerId' in kwargs:
-            end_customer_id = kwargs['endCustomerId']
-        if sign_and_serve is None and 'signAndServe' in kwargs:
-            sign_and_serve = kwargs['signAndServe']
-        if sign_and_serve_algorithm is None and 'signAndServeAlgorithm' in kwargs:
-            sign_and_serve_algorithm = kwargs['signAndServeAlgorithm']
-        if tsig_key is None and 'tsigKey' in kwargs:
-            tsig_key = kwargs['tsigKey']
-        if version_id is None and 'versionId' in kwargs:
-            version_id = kwargs['versionId']
-
         if activation_state is not None:
-            _setter("activation_state", activation_state)
+            pulumi.set(__self__, "activation_state", activation_state)
         if alias_count is not None:
-            _setter("alias_count", alias_count)
+            pulumi.set(__self__, "alias_count", alias_count)
         if comment is not None:
-            _setter("comment", comment)
+            pulumi.set(__self__, "comment", comment)
         if contract is not None:
-            _setter("contract", contract)
+            pulumi.set(__self__, "contract", contract)
         if end_customer_id is not None:
-            _setter("end_customer_id", end_customer_id)
+            pulumi.set(__self__, "end_customer_id", end_customer_id)
         if group is not None:
-            _setter("group", group)
+            pulumi.set(__self__, "group", group)
         if masters is not None:
-            _setter("masters", masters)
+            pulumi.set(__self__, "masters", masters)
         if sign_and_serve is not None:
-            _setter("sign_and_serve", sign_and_serve)
+            pulumi.set(__self__, "sign_and_serve", sign_and_serve)
         if sign_and_serve_algorithm is not None:
-            _setter("sign_and_serve_algorithm", sign_and_serve_algorithm)
+            pulumi.set(__self__, "sign_and_serve_algorithm", sign_and_serve_algorithm)
         if target is not None:
-            _setter("target", target)
+            pulumi.set(__self__, "target", target)
         if tsig_key is not None:
-            _setter("tsig_key", tsig_key)
+            pulumi.set(__self__, "tsig_key", tsig_key)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
         if version_id is not None:
-            _setter("version_id", version_id)
+            pulumi.set(__self__, "version_id", version_id)
         if zone is not None:
-            _setter("zone", zone)
+            pulumi.set(__self__, "zone", zone)
 
     @property
     @pulumi.getter(name="activationState")
@@ -462,10 +366,6 @@ class DnsZone(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            DnsZoneArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -501,7 +401,6 @@ class DnsZone(pulumi.CustomResource):
             __props__.__dict__["sign_and_serve"] = sign_and_serve
             __props__.__dict__["sign_and_serve_algorithm"] = sign_and_serve_algorithm
             __props__.__dict__["target"] = target
-            tsig_key = _utilities.configure(tsig_key, DnsZoneTsigKeyArgs, True)
             __props__.__dict__["tsig_key"] = tsig_key
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")

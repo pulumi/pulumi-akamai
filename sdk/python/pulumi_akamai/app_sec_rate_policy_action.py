@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecRatePolicyActionArgs', 'AppSecRatePolicyAction']
@@ -27,50 +27,11 @@ class AppSecRatePolicyActionArgs:
         :param pulumi.Input[int] rate_policy_id: Unique identifier of the rate policy
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
-        AppSecRatePolicyActionArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_id=config_id,
-            ipv4_action=ipv4_action,
-            ipv6_action=ipv6_action,
-            rate_policy_id=rate_policy_id,
-            security_policy_id=security_policy_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_id: Optional[pulumi.Input[int]] = None,
-             ipv4_action: Optional[pulumi.Input[str]] = None,
-             ipv6_action: Optional[pulumi.Input[str]] = None,
-             rate_policy_id: Optional[pulumi.Input[int]] = None,
-             security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_id is None and 'configId' in kwargs:
-            config_id = kwargs['configId']
-        if config_id is None:
-            raise TypeError("Missing 'config_id' argument")
-        if ipv4_action is None and 'ipv4Action' in kwargs:
-            ipv4_action = kwargs['ipv4Action']
-        if ipv4_action is None:
-            raise TypeError("Missing 'ipv4_action' argument")
-        if ipv6_action is None and 'ipv6Action' in kwargs:
-            ipv6_action = kwargs['ipv6Action']
-        if ipv6_action is None:
-            raise TypeError("Missing 'ipv6_action' argument")
-        if rate_policy_id is None and 'ratePolicyId' in kwargs:
-            rate_policy_id = kwargs['ratePolicyId']
-        if rate_policy_id is None:
-            raise TypeError("Missing 'rate_policy_id' argument")
-        if security_policy_id is None and 'securityPolicyId' in kwargs:
-            security_policy_id = kwargs['securityPolicyId']
-        if security_policy_id is None:
-            raise TypeError("Missing 'security_policy_id' argument")
-
-        _setter("config_id", config_id)
-        _setter("ipv4_action", ipv4_action)
-        _setter("ipv6_action", ipv6_action)
-        _setter("rate_policy_id", rate_policy_id)
-        _setter("security_policy_id", security_policy_id)
+        pulumi.set(__self__, "config_id", config_id)
+        pulumi.set(__self__, "ipv4_action", ipv4_action)
+        pulumi.set(__self__, "ipv6_action", ipv6_action)
+        pulumi.set(__self__, "rate_policy_id", rate_policy_id)
+        pulumi.set(__self__, "security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="configId")
@@ -149,45 +110,16 @@ class _AppSecRatePolicyActionState:
         :param pulumi.Input[int] rate_policy_id: Unique identifier of the rate policy
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
-        _AppSecRatePolicyActionState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_id=config_id,
-            ipv4_action=ipv4_action,
-            ipv6_action=ipv6_action,
-            rate_policy_id=rate_policy_id,
-            security_policy_id=security_policy_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_id: Optional[pulumi.Input[int]] = None,
-             ipv4_action: Optional[pulumi.Input[str]] = None,
-             ipv6_action: Optional[pulumi.Input[str]] = None,
-             rate_policy_id: Optional[pulumi.Input[int]] = None,
-             security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_id is None and 'configId' in kwargs:
-            config_id = kwargs['configId']
-        if ipv4_action is None and 'ipv4Action' in kwargs:
-            ipv4_action = kwargs['ipv4Action']
-        if ipv6_action is None and 'ipv6Action' in kwargs:
-            ipv6_action = kwargs['ipv6Action']
-        if rate_policy_id is None and 'ratePolicyId' in kwargs:
-            rate_policy_id = kwargs['ratePolicyId']
-        if security_policy_id is None and 'securityPolicyId' in kwargs:
-            security_policy_id = kwargs['securityPolicyId']
-
         if config_id is not None:
-            _setter("config_id", config_id)
+            pulumi.set(__self__, "config_id", config_id)
         if ipv4_action is not None:
-            _setter("ipv4_action", ipv4_action)
+            pulumi.set(__self__, "ipv4_action", ipv4_action)
         if ipv6_action is not None:
-            _setter("ipv6_action", ipv6_action)
+            pulumi.set(__self__, "ipv6_action", ipv6_action)
         if rate_policy_id is not None:
-            _setter("rate_policy_id", rate_policy_id)
+            pulumi.set(__self__, "rate_policy_id", rate_policy_id)
         if security_policy_id is not None:
-            _setter("security_policy_id", security_policy_id)
+            pulumi.set(__self__, "security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="configId")
@@ -289,10 +221,6 @@ class AppSecRatePolicyAction(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            AppSecRatePolicyActionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

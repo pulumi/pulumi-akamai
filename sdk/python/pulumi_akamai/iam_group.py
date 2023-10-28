@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['IamGroupArgs', 'IamGroup']
@@ -21,26 +21,9 @@ class IamGroupArgs:
         :param pulumi.Input[int] parent_group_id: Unique identifier for the parent group
         :param pulumi.Input[str] name: Human readable name for a group
         """
-        IamGroupArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            parent_group_id=parent_group_id,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             parent_group_id: Optional[pulumi.Input[int]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if parent_group_id is None and 'parentGroupId' in kwargs:
-            parent_group_id = kwargs['parentGroupId']
-        if parent_group_id is None:
-            raise TypeError("Missing 'parent_group_id' argument")
-
-        _setter("parent_group_id", parent_group_id)
+        pulumi.set(__self__, "parent_group_id", parent_group_id)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="parentGroupId")
@@ -79,31 +62,12 @@ class _IamGroupState:
         :param pulumi.Input[int] parent_group_id: Unique identifier for the parent group
         :param pulumi.Input[Sequence[pulumi.Input[int]]] sub_groups: Subgroups IDs
         """
-        _IamGroupState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            parent_group_id=parent_group_id,
-            sub_groups=sub_groups,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[pulumi.Input[str]] = None,
-             parent_group_id: Optional[pulumi.Input[int]] = None,
-             sub_groups: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if parent_group_id is None and 'parentGroupId' in kwargs:
-            parent_group_id = kwargs['parentGroupId']
-        if sub_groups is None and 'subGroups' in kwargs:
-            sub_groups = kwargs['subGroups']
-
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if parent_group_id is not None:
-            _setter("parent_group_id", parent_group_id)
+            pulumi.set(__self__, "parent_group_id", parent_group_id)
         if sub_groups is not None:
-            _setter("sub_groups", sub_groups)
+            pulumi.set(__self__, "sub_groups", sub_groups)
 
     @property
     @pulumi.getter
@@ -175,10 +139,6 @@ class IamGroup(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            IamGroupArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

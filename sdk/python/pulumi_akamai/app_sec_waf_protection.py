@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecWafProtectionArgs', 'AppSecWafProtection']
@@ -23,34 +23,9 @@ class AppSecWafProtectionArgs:
         :param pulumi.Input[bool] enabled: Whether to enable WAF protection
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
-        AppSecWafProtectionArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_id=config_id,
-            enabled=enabled,
-            security_policy_id=security_policy_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_id: Optional[pulumi.Input[int]] = None,
-             enabled: Optional[pulumi.Input[bool]] = None,
-             security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_id is None and 'configId' in kwargs:
-            config_id = kwargs['configId']
-        if config_id is None:
-            raise TypeError("Missing 'config_id' argument")
-        if enabled is None:
-            raise TypeError("Missing 'enabled' argument")
-        if security_policy_id is None and 'securityPolicyId' in kwargs:
-            security_policy_id = kwargs['securityPolicyId']
-        if security_policy_id is None:
-            raise TypeError("Missing 'security_policy_id' argument")
-
-        _setter("config_id", config_id)
-        _setter("enabled", enabled)
-        _setter("security_policy_id", security_policy_id)
+        pulumi.set(__self__, "config_id", config_id)
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="configId")
@@ -103,37 +78,14 @@ class _AppSecWafProtectionState:
         :param pulumi.Input[str] output_text: Text representation
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
-        _AppSecWafProtectionState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_id=config_id,
-            enabled=enabled,
-            output_text=output_text,
-            security_policy_id=security_policy_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_id: Optional[pulumi.Input[int]] = None,
-             enabled: Optional[pulumi.Input[bool]] = None,
-             output_text: Optional[pulumi.Input[str]] = None,
-             security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_id is None and 'configId' in kwargs:
-            config_id = kwargs['configId']
-        if output_text is None and 'outputText' in kwargs:
-            output_text = kwargs['outputText']
-        if security_policy_id is None and 'securityPolicyId' in kwargs:
-            security_policy_id = kwargs['securityPolicyId']
-
         if config_id is not None:
-            _setter("config_id", config_id)
+            pulumi.set(__self__, "config_id", config_id)
         if enabled is not None:
-            _setter("enabled", enabled)
+            pulumi.set(__self__, "enabled", enabled)
         if output_text is not None:
-            _setter("output_text", output_text)
+            pulumi.set(__self__, "output_text", output_text)
         if security_policy_id is not None:
-            _setter("security_policy_id", security_policy_id)
+            pulumi.set(__self__, "security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="configId")
@@ -219,10 +171,6 @@ class AppSecWafProtection(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            AppSecWafProtectionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

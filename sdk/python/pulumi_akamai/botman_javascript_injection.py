@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['BotmanJavascriptInjectionArgs', 'BotmanJavascriptInjection']
@@ -20,36 +20,9 @@ class BotmanJavascriptInjectionArgs:
         """
         The set of arguments for constructing a BotmanJavascriptInjection resource.
         """
-        BotmanJavascriptInjectionArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_id=config_id,
-            javascript_injection=javascript_injection,
-            security_policy_id=security_policy_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_id: Optional[pulumi.Input[int]] = None,
-             javascript_injection: Optional[pulumi.Input[str]] = None,
-             security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_id is None and 'configId' in kwargs:
-            config_id = kwargs['configId']
-        if config_id is None:
-            raise TypeError("Missing 'config_id' argument")
-        if javascript_injection is None and 'javascriptInjection' in kwargs:
-            javascript_injection = kwargs['javascriptInjection']
-        if javascript_injection is None:
-            raise TypeError("Missing 'javascript_injection' argument")
-        if security_policy_id is None and 'securityPolicyId' in kwargs:
-            security_policy_id = kwargs['securityPolicyId']
-        if security_policy_id is None:
-            raise TypeError("Missing 'security_policy_id' argument")
-
-        _setter("config_id", config_id)
-        _setter("javascript_injection", javascript_injection)
-        _setter("security_policy_id", security_policy_id)
+        pulumi.set(__self__, "config_id", config_id)
+        pulumi.set(__self__, "javascript_injection", javascript_injection)
+        pulumi.set(__self__, "security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="configId")
@@ -88,33 +61,12 @@ class _BotmanJavascriptInjectionState:
         """
         Input properties used for looking up and filtering BotmanJavascriptInjection resources.
         """
-        _BotmanJavascriptInjectionState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_id=config_id,
-            javascript_injection=javascript_injection,
-            security_policy_id=security_policy_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_id: Optional[pulumi.Input[int]] = None,
-             javascript_injection: Optional[pulumi.Input[str]] = None,
-             security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_id is None and 'configId' in kwargs:
-            config_id = kwargs['configId']
-        if javascript_injection is None and 'javascriptInjection' in kwargs:
-            javascript_injection = kwargs['javascriptInjection']
-        if security_policy_id is None and 'securityPolicyId' in kwargs:
-            security_policy_id = kwargs['securityPolicyId']
-
         if config_id is not None:
-            _setter("config_id", config_id)
+            pulumi.set(__self__, "config_id", config_id)
         if javascript_injection is not None:
-            _setter("javascript_injection", javascript_injection)
+            pulumi.set(__self__, "javascript_injection", javascript_injection)
         if security_policy_id is not None:
-            _setter("security_policy_id", security_policy_id)
+            pulumi.set(__self__, "security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="configId")
@@ -176,10 +128,6 @@ class BotmanJavascriptInjection(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            BotmanJavascriptInjectionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

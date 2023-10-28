@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecAttackGroupArgs', 'AppSecAttackGroup']
@@ -27,49 +27,12 @@ class AppSecAttackGroupArgs:
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         :param pulumi.Input[str] condition_exception: JSON-formatted condition and exception information for the attack group
         """
-        AppSecAttackGroupArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            attack_group=attack_group,
-            attack_group_action=attack_group_action,
-            config_id=config_id,
-            security_policy_id=security_policy_id,
-            condition_exception=condition_exception,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             attack_group: Optional[pulumi.Input[str]] = None,
-             attack_group_action: Optional[pulumi.Input[str]] = None,
-             config_id: Optional[pulumi.Input[int]] = None,
-             security_policy_id: Optional[pulumi.Input[str]] = None,
-             condition_exception: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if attack_group is None and 'attackGroup' in kwargs:
-            attack_group = kwargs['attackGroup']
-        if attack_group is None:
-            raise TypeError("Missing 'attack_group' argument")
-        if attack_group_action is None and 'attackGroupAction' in kwargs:
-            attack_group_action = kwargs['attackGroupAction']
-        if attack_group_action is None:
-            raise TypeError("Missing 'attack_group_action' argument")
-        if config_id is None and 'configId' in kwargs:
-            config_id = kwargs['configId']
-        if config_id is None:
-            raise TypeError("Missing 'config_id' argument")
-        if security_policy_id is None and 'securityPolicyId' in kwargs:
-            security_policy_id = kwargs['securityPolicyId']
-        if security_policy_id is None:
-            raise TypeError("Missing 'security_policy_id' argument")
-        if condition_exception is None and 'conditionException' in kwargs:
-            condition_exception = kwargs['conditionException']
-
-        _setter("attack_group", attack_group)
-        _setter("attack_group_action", attack_group_action)
-        _setter("config_id", config_id)
-        _setter("security_policy_id", security_policy_id)
+        pulumi.set(__self__, "attack_group", attack_group)
+        pulumi.set(__self__, "attack_group_action", attack_group_action)
+        pulumi.set(__self__, "config_id", config_id)
+        pulumi.set(__self__, "security_policy_id", security_policy_id)
         if condition_exception is not None:
-            _setter("condition_exception", condition_exception)
+            pulumi.set(__self__, "condition_exception", condition_exception)
 
     @property
     @pulumi.getter(name="attackGroup")
@@ -148,45 +111,16 @@ class _AppSecAttackGroupState:
         :param pulumi.Input[int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
-        _AppSecAttackGroupState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            attack_group=attack_group,
-            attack_group_action=attack_group_action,
-            condition_exception=condition_exception,
-            config_id=config_id,
-            security_policy_id=security_policy_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             attack_group: Optional[pulumi.Input[str]] = None,
-             attack_group_action: Optional[pulumi.Input[str]] = None,
-             condition_exception: Optional[pulumi.Input[str]] = None,
-             config_id: Optional[pulumi.Input[int]] = None,
-             security_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if attack_group is None and 'attackGroup' in kwargs:
-            attack_group = kwargs['attackGroup']
-        if attack_group_action is None and 'attackGroupAction' in kwargs:
-            attack_group_action = kwargs['attackGroupAction']
-        if condition_exception is None and 'conditionException' in kwargs:
-            condition_exception = kwargs['conditionException']
-        if config_id is None and 'configId' in kwargs:
-            config_id = kwargs['configId']
-        if security_policy_id is None and 'securityPolicyId' in kwargs:
-            security_policy_id = kwargs['securityPolicyId']
-
         if attack_group is not None:
-            _setter("attack_group", attack_group)
+            pulumi.set(__self__, "attack_group", attack_group)
         if attack_group_action is not None:
-            _setter("attack_group_action", attack_group_action)
+            pulumi.set(__self__, "attack_group_action", attack_group_action)
         if condition_exception is not None:
-            _setter("condition_exception", condition_exception)
+            pulumi.set(__self__, "condition_exception", condition_exception)
         if config_id is not None:
-            _setter("config_id", config_id)
+            pulumi.set(__self__, "config_id", config_id)
         if security_policy_id is not None:
-            _setter("security_policy_id", security_policy_id)
+            pulumi.set(__self__, "security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="attackGroup")
@@ -288,10 +222,6 @@ class AppSecAttackGroup(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            AppSecAttackGroupArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['ImagingPolicyImageArgs', 'ImagingPolicyImage']
@@ -29,47 +29,12 @@ class ImagingPolicyImageArgs:
                to production. With this flag set to true, the policy will be saved on the production network. It is possible to change
                it back to false only when there are any changes to the policy qualifying it for the new version.
         """
-        ImagingPolicyImageArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            contract_id=contract_id,
-            json=json,
-            policy_id=policy_id,
-            policyset_id=policyset_id,
-            activate_on_production=activate_on_production,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             contract_id: Optional[pulumi.Input[str]] = None,
-             json: Optional[pulumi.Input[str]] = None,
-             policy_id: Optional[pulumi.Input[str]] = None,
-             policyset_id: Optional[pulumi.Input[str]] = None,
-             activate_on_production: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if contract_id is None and 'contractId' in kwargs:
-            contract_id = kwargs['contractId']
-        if contract_id is None:
-            raise TypeError("Missing 'contract_id' argument")
-        if json is None:
-            raise TypeError("Missing 'json' argument")
-        if policy_id is None and 'policyId' in kwargs:
-            policy_id = kwargs['policyId']
-        if policy_id is None:
-            raise TypeError("Missing 'policy_id' argument")
-        if policyset_id is None and 'policysetId' in kwargs:
-            policyset_id = kwargs['policysetId']
-        if policyset_id is None:
-            raise TypeError("Missing 'policyset_id' argument")
-        if activate_on_production is None and 'activateOnProduction' in kwargs:
-            activate_on_production = kwargs['activateOnProduction']
-
-        _setter("contract_id", contract_id)
-        _setter("json", json)
-        _setter("policy_id", policy_id)
-        _setter("policyset_id", policyset_id)
+        pulumi.set(__self__, "contract_id", contract_id)
+        pulumi.set(__self__, "json", json)
+        pulumi.set(__self__, "policy_id", policy_id)
+        pulumi.set(__self__, "policyset_id", policyset_id)
         if activate_on_production is not None:
-            _setter("activate_on_production", activate_on_production)
+            pulumi.set(__self__, "activate_on_production", activate_on_production)
 
     @property
     @pulumi.getter(name="contractId")
@@ -154,47 +119,18 @@ class _ImagingPolicyImageState:
         :param pulumi.Input[str] policyset_id: Unique identifier for the Image & Video Manager Policy Set.
         :param pulumi.Input[int] version: The version number of this policy version
         """
-        _ImagingPolicyImageState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            activate_on_production=activate_on_production,
-            contract_id=contract_id,
-            json=json,
-            policy_id=policy_id,
-            policyset_id=policyset_id,
-            version=version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             activate_on_production: Optional[pulumi.Input[bool]] = None,
-             contract_id: Optional[pulumi.Input[str]] = None,
-             json: Optional[pulumi.Input[str]] = None,
-             policy_id: Optional[pulumi.Input[str]] = None,
-             policyset_id: Optional[pulumi.Input[str]] = None,
-             version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if activate_on_production is None and 'activateOnProduction' in kwargs:
-            activate_on_production = kwargs['activateOnProduction']
-        if contract_id is None and 'contractId' in kwargs:
-            contract_id = kwargs['contractId']
-        if policy_id is None and 'policyId' in kwargs:
-            policy_id = kwargs['policyId']
-        if policyset_id is None and 'policysetId' in kwargs:
-            policyset_id = kwargs['policysetId']
-
         if activate_on_production is not None:
-            _setter("activate_on_production", activate_on_production)
+            pulumi.set(__self__, "activate_on_production", activate_on_production)
         if contract_id is not None:
-            _setter("contract_id", contract_id)
+            pulumi.set(__self__, "contract_id", contract_id)
         if json is not None:
-            _setter("json", json)
+            pulumi.set(__self__, "json", json)
         if policy_id is not None:
-            _setter("policy_id", policy_id)
+            pulumi.set(__self__, "policy_id", policy_id)
         if policyset_id is not None:
-            _setter("policyset_id", policyset_id)
+            pulumi.set(__self__, "policyset_id", policyset_id)
         if version is not None:
-            _setter("version", version)
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="activateOnProduction")
@@ -312,10 +248,6 @@ class ImagingPolicyImage(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            ImagingPolicyImageArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

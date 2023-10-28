@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['PropertyIncludeArgs', 'PropertyInclude']
@@ -31,55 +31,16 @@ class PropertyIncludeArgs:
         :param pulumi.Input[str] product_id: The product assigned to the include
         :param pulumi.Input[str] rules: Property Rules as JSON
         """
-        PropertyIncludeArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            contract_id=contract_id,
-            group_id=group_id,
-            rule_format=rule_format,
-            type=type,
-            name=name,
-            product_id=product_id,
-            rules=rules,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             contract_id: Optional[pulumi.Input[str]] = None,
-             group_id: Optional[pulumi.Input[str]] = None,
-             rule_format: Optional[pulumi.Input[str]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             product_id: Optional[pulumi.Input[str]] = None,
-             rules: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if contract_id is None and 'contractId' in kwargs:
-            contract_id = kwargs['contractId']
-        if contract_id is None:
-            raise TypeError("Missing 'contract_id' argument")
-        if group_id is None and 'groupId' in kwargs:
-            group_id = kwargs['groupId']
-        if group_id is None:
-            raise TypeError("Missing 'group_id' argument")
-        if rule_format is None and 'ruleFormat' in kwargs:
-            rule_format = kwargs['ruleFormat']
-        if rule_format is None:
-            raise TypeError("Missing 'rule_format' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if product_id is None and 'productId' in kwargs:
-            product_id = kwargs['productId']
-
-        _setter("contract_id", contract_id)
-        _setter("group_id", group_id)
-        _setter("rule_format", rule_format)
-        _setter("type", type)
+        pulumi.set(__self__, "contract_id", contract_id)
+        pulumi.set(__self__, "group_id", group_id)
+        pulumi.set(__self__, "rule_format", rule_format)
+        pulumi.set(__self__, "type", type)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if product_id is not None:
-            _setter("product_id", product_id)
+            pulumi.set(__self__, "product_id", product_id)
         if rules is not None:
-            _setter("rules", rules)
+            pulumi.set(__self__, "rules", rules)
 
     @property
     @pulumi.getter(name="contractId")
@@ -196,81 +157,30 @@ class _PropertyIncludeState:
         :param pulumi.Input[str] staging_version: The most recent version to be activated to the staging network
         :param pulumi.Input[str] type: Specifies the type of the include, either 'MICROSERVICES' or 'COMMON_SETTINGS'
         """
-        _PropertyIncludeState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            contract_id=contract_id,
-            group_id=group_id,
-            latest_version=latest_version,
-            name=name,
-            product_id=product_id,
-            production_version=production_version,
-            rule_errors=rule_errors,
-            rule_format=rule_format,
-            rule_warnings=rule_warnings,
-            rules=rules,
-            staging_version=staging_version,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             contract_id: Optional[pulumi.Input[str]] = None,
-             group_id: Optional[pulumi.Input[str]] = None,
-             latest_version: Optional[pulumi.Input[int]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             product_id: Optional[pulumi.Input[str]] = None,
-             production_version: Optional[pulumi.Input[str]] = None,
-             rule_errors: Optional[pulumi.Input[str]] = None,
-             rule_format: Optional[pulumi.Input[str]] = None,
-             rule_warnings: Optional[pulumi.Input[str]] = None,
-             rules: Optional[pulumi.Input[str]] = None,
-             staging_version: Optional[pulumi.Input[str]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if contract_id is None and 'contractId' in kwargs:
-            contract_id = kwargs['contractId']
-        if group_id is None and 'groupId' in kwargs:
-            group_id = kwargs['groupId']
-        if latest_version is None and 'latestVersion' in kwargs:
-            latest_version = kwargs['latestVersion']
-        if product_id is None and 'productId' in kwargs:
-            product_id = kwargs['productId']
-        if production_version is None and 'productionVersion' in kwargs:
-            production_version = kwargs['productionVersion']
-        if rule_errors is None and 'ruleErrors' in kwargs:
-            rule_errors = kwargs['ruleErrors']
-        if rule_format is None and 'ruleFormat' in kwargs:
-            rule_format = kwargs['ruleFormat']
-        if rule_warnings is None and 'ruleWarnings' in kwargs:
-            rule_warnings = kwargs['ruleWarnings']
-        if staging_version is None and 'stagingVersion' in kwargs:
-            staging_version = kwargs['stagingVersion']
-
         if contract_id is not None:
-            _setter("contract_id", contract_id)
+            pulumi.set(__self__, "contract_id", contract_id)
         if group_id is not None:
-            _setter("group_id", group_id)
+            pulumi.set(__self__, "group_id", group_id)
         if latest_version is not None:
-            _setter("latest_version", latest_version)
+            pulumi.set(__self__, "latest_version", latest_version)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if product_id is not None:
-            _setter("product_id", product_id)
+            pulumi.set(__self__, "product_id", product_id)
         if production_version is not None:
-            _setter("production_version", production_version)
+            pulumi.set(__self__, "production_version", production_version)
         if rule_errors is not None:
-            _setter("rule_errors", rule_errors)
+            pulumi.set(__self__, "rule_errors", rule_errors)
         if rule_format is not None:
-            _setter("rule_format", rule_format)
+            pulumi.set(__self__, "rule_format", rule_format)
         if rule_warnings is not None:
-            _setter("rule_warnings", rule_warnings)
+            pulumi.set(__self__, "rule_warnings", rule_warnings)
         if rules is not None:
-            _setter("rules", rules)
+            pulumi.set(__self__, "rules", rules)
         if staging_version is not None:
-            _setter("staging_version", staging_version)
+            pulumi.set(__self__, "staging_version", staging_version)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="contractId")
@@ -460,10 +370,6 @@ class PropertyInclude(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            PropertyIncludeArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

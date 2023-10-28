@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['BotmanChallengeInjectionRulesArgs', 'BotmanChallengeInjectionRules']
@@ -19,29 +19,8 @@ class BotmanChallengeInjectionRulesArgs:
         """
         The set of arguments for constructing a BotmanChallengeInjectionRules resource.
         """
-        BotmanChallengeInjectionRulesArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            challenge_injection_rules=challenge_injection_rules,
-            config_id=config_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             challenge_injection_rules: Optional[pulumi.Input[str]] = None,
-             config_id: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if challenge_injection_rules is None and 'challengeInjectionRules' in kwargs:
-            challenge_injection_rules = kwargs['challengeInjectionRules']
-        if challenge_injection_rules is None:
-            raise TypeError("Missing 'challenge_injection_rules' argument")
-        if config_id is None and 'configId' in kwargs:
-            config_id = kwargs['configId']
-        if config_id is None:
-            raise TypeError("Missing 'config_id' argument")
-
-        _setter("challenge_injection_rules", challenge_injection_rules)
-        _setter("config_id", config_id)
+        pulumi.set(__self__, "challenge_injection_rules", challenge_injection_rules)
+        pulumi.set(__self__, "config_id", config_id)
 
     @property
     @pulumi.getter(name="challengeInjectionRules")
@@ -70,27 +49,10 @@ class _BotmanChallengeInjectionRulesState:
         """
         Input properties used for looking up and filtering BotmanChallengeInjectionRules resources.
         """
-        _BotmanChallengeInjectionRulesState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            challenge_injection_rules=challenge_injection_rules,
-            config_id=config_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             challenge_injection_rules: Optional[pulumi.Input[str]] = None,
-             config_id: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if challenge_injection_rules is None and 'challengeInjectionRules' in kwargs:
-            challenge_injection_rules = kwargs['challengeInjectionRules']
-        if config_id is None and 'configId' in kwargs:
-            config_id = kwargs['configId']
-
         if challenge_injection_rules is not None:
-            _setter("challenge_injection_rules", challenge_injection_rules)
+            pulumi.set(__self__, "challenge_injection_rules", challenge_injection_rules)
         if config_id is not None:
-            _setter("config_id", config_id)
+            pulumi.set(__self__, "config_id", config_id)
 
     @property
     @pulumi.getter(name="challengeInjectionRules")
@@ -142,10 +104,6 @@ class BotmanChallengeInjectionRules(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            BotmanChallengeInjectionRulesArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
