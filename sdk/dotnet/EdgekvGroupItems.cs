@@ -36,6 +36,12 @@ namespace Pulumi.Akamai
         [Output("network")]
         public Output<string> Network { get; private set; } = null!;
 
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Output("timeouts")]
+        public Output<Outputs.EdgekvGroupItemsTimeouts?> Timeouts { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a EdgekvGroupItems resource with the given unique name, arguments, and options.
@@ -112,6 +118,12 @@ namespace Pulumi.Akamai
         [Input("network", required: true)]
         public Input<string> Network { get; set; } = null!;
 
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.EdgekvGroupItemsTimeoutsArgs>? Timeouts { get; set; }
+
         public EdgekvGroupItemsArgs()
         {
         }
@@ -149,6 +161,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("network")]
         public Input<string>? Network { get; set; }
+
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.EdgekvGroupItemsTimeoutsGetArgs>? Timeouts { get; set; }
 
         public EdgekvGroupItemsState()
         {

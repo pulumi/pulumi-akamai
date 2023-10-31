@@ -26,7 +26,7 @@ func LookupPropertyActivation(ctx *pulumi.Context, args *LookupPropertyActivatio
 type LookupPropertyActivationArgs struct {
 	Network    *string `pulumi:"network"`
 	PropertyId string  `pulumi:"propertyId"`
-	Version    int     `pulumi:"version"`
+	Version    *int    `pulumi:"version"`
 }
 
 // A collection of values returned by getPropertyActivation.
@@ -40,7 +40,7 @@ type LookupPropertyActivationResult struct {
 	Note       string  `pulumi:"note"`
 	PropertyId string  `pulumi:"propertyId"`
 	Status     string  `pulumi:"status"`
-	Version    int     `pulumi:"version"`
+	Version    *int    `pulumi:"version"`
 	Warnings   string  `pulumi:"warnings"`
 }
 
@@ -61,7 +61,7 @@ func LookupPropertyActivationOutput(ctx *pulumi.Context, args LookupPropertyActi
 type LookupPropertyActivationOutputArgs struct {
 	Network    pulumi.StringPtrInput `pulumi:"network"`
 	PropertyId pulumi.StringInput    `pulumi:"propertyId"`
-	Version    pulumi.IntInput       `pulumi:"version"`
+	Version    pulumi.IntPtrInput    `pulumi:"version"`
 }
 
 func (LookupPropertyActivationOutputArgs) ElementType() reflect.Type {
@@ -122,8 +122,8 @@ func (o LookupPropertyActivationResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPropertyActivationResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-func (o LookupPropertyActivationResultOutput) Version() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupPropertyActivationResult) int { return v.Version }).(pulumi.IntOutput)
+func (o LookupPropertyActivationResultOutput) Version() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupPropertyActivationResult) *int { return v.Version }).(pulumi.IntPtrOutput)
 }
 
 func (o LookupPropertyActivationResultOutput) Warnings() pulumi.StringOutput {

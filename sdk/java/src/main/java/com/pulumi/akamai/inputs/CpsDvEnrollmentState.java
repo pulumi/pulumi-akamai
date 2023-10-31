@@ -10,6 +10,7 @@ import com.pulumi.akamai.inputs.CpsDvEnrollmentHttpChallengeArgs;
 import com.pulumi.akamai.inputs.CpsDvEnrollmentNetworkConfigurationArgs;
 import com.pulumi.akamai.inputs.CpsDvEnrollmentOrganizationArgs;
 import com.pulumi.akamai.inputs.CpsDvEnrollmentTechContactArgs;
+import com.pulumi.akamai.inputs.CpsDvEnrollmentTimeoutsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
@@ -295,6 +296,21 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Import(name="timeouts")
+    private @Nullable Output<CpsDvEnrollmentTimeoutsArgs> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Optional<Output<CpsDvEnrollmentTimeoutsArgs>> timeouts() {
+        return Optional.ofNullable(this.timeouts);
+    }
+
+    /**
      * Enrolment validation type
      * 
      */
@@ -330,6 +346,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         this.signatureAlgorithm = $.signatureAlgorithm;
         this.sniOnly = $.sniOnly;
         this.techContact = $.techContact;
+        this.timeouts = $.timeouts;
         this.validationType = $.validationType;
     }
 
@@ -757,6 +774,27 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
          */
         public Builder techContact(CpsDvEnrollmentTechContactArgs techContact) {
             return techContact(Output.of(techContact));
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(@Nullable Output<CpsDvEnrollmentTimeoutsArgs> timeouts) {
+            $.timeouts = timeouts;
+            return this;
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(CpsDvEnrollmentTimeoutsArgs timeouts) {
+            return timeouts(Output.of(timeouts));
         }
 
         /**

@@ -5,6 +5,7 @@ package com.pulumi.akamai.inputs;
 
 import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20230105Args;
 import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20230530Args;
+import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20230920Args;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.util.Objects;
@@ -30,11 +31,19 @@ public final class GetPropertyRulesBuilderArgs extends com.pulumi.resources.Invo
         return Optional.ofNullable(this.rulesV20230530);
     }
 
+    @Import(name="rulesV20230920")
+    private @Nullable Output<GetPropertyRulesBuilderRulesV20230920Args> rulesV20230920;
+
+    public Optional<Output<GetPropertyRulesBuilderRulesV20230920Args>> rulesV20230920() {
+        return Optional.ofNullable(this.rulesV20230920);
+    }
+
     private GetPropertyRulesBuilderArgs() {}
 
     private GetPropertyRulesBuilderArgs(GetPropertyRulesBuilderArgs $) {
         this.rulesV20230105 = $.rulesV20230105;
         this.rulesV20230530 = $.rulesV20230530;
+        this.rulesV20230920 = $.rulesV20230920;
     }
 
     public static Builder builder() {
@@ -71,6 +80,15 @@ public final class GetPropertyRulesBuilderArgs extends com.pulumi.resources.Invo
 
         public Builder rulesV20230530(GetPropertyRulesBuilderRulesV20230530Args rulesV20230530) {
             return rulesV20230530(Output.of(rulesV20230530));
+        }
+
+        public Builder rulesV20230920(@Nullable Output<GetPropertyRulesBuilderRulesV20230920Args> rulesV20230920) {
+            $.rulesV20230920 = rulesV20230920;
+            return this;
+        }
+
+        public Builder rulesV20230920(GetPropertyRulesBuilderRulesV20230920Args rulesV20230920) {
+            return rulesV20230920(Output.of(rulesV20230920));
         }
 
         public GetPropertyRulesBuilderArgs build() {

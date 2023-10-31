@@ -22,6 +22,8 @@ type CloudletsApplicationLoadBalancerActivation struct {
 	OriginId pulumi.StringOutput `pulumi:"originId"`
 	// Activation status for this application load balancer
 	Status pulumi.StringOutput `pulumi:"status"`
+	// Enables to set timeout for processing
+	Timeouts CloudletsApplicationLoadBalancerActivationTimeoutsPtrOutput `pulumi:"timeouts"`
 	// Cloudlets application load balancer version you want to activate
 	Version pulumi.IntOutput `pulumi:"version"`
 }
@@ -71,6 +73,8 @@ type cloudletsApplicationLoadBalancerActivationState struct {
 	OriginId *string `pulumi:"originId"`
 	// Activation status for this application load balancer
 	Status *string `pulumi:"status"`
+	// Enables to set timeout for processing
+	Timeouts *CloudletsApplicationLoadBalancerActivationTimeouts `pulumi:"timeouts"`
 	// Cloudlets application load balancer version you want to activate
 	Version *int `pulumi:"version"`
 }
@@ -82,6 +86,8 @@ type CloudletsApplicationLoadBalancerActivationState struct {
 	OriginId pulumi.StringPtrInput
 	// Activation status for this application load balancer
 	Status pulumi.StringPtrInput
+	// Enables to set timeout for processing
+	Timeouts CloudletsApplicationLoadBalancerActivationTimeoutsPtrInput
 	// Cloudlets application load balancer version you want to activate
 	Version pulumi.IntPtrInput
 }
@@ -95,6 +101,8 @@ type cloudletsApplicationLoadBalancerActivationArgs struct {
 	Network string `pulumi:"network"`
 	// The conditional origin’s unique identifier
 	OriginId string `pulumi:"originId"`
+	// Enables to set timeout for processing
+	Timeouts *CloudletsApplicationLoadBalancerActivationTimeouts `pulumi:"timeouts"`
 	// Cloudlets application load balancer version you want to activate
 	Version int `pulumi:"version"`
 }
@@ -105,6 +113,8 @@ type CloudletsApplicationLoadBalancerActivationArgs struct {
 	Network pulumi.StringInput
 	// The conditional origin’s unique identifier
 	OriginId pulumi.StringInput
+	// Enables to set timeout for processing
+	Timeouts CloudletsApplicationLoadBalancerActivationTimeoutsPtrInput
 	// Cloudlets application load balancer version you want to activate
 	Version pulumi.IntInput
 }
@@ -233,6 +243,13 @@ func (o CloudletsApplicationLoadBalancerActivationOutput) OriginId() pulumi.Stri
 // Activation status for this application load balancer
 func (o CloudletsApplicationLoadBalancerActivationOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudletsApplicationLoadBalancerActivation) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+}
+
+// Enables to set timeout for processing
+func (o CloudletsApplicationLoadBalancerActivationOutput) Timeouts() CloudletsApplicationLoadBalancerActivationTimeoutsPtrOutput {
+	return o.ApplyT(func(v *CloudletsApplicationLoadBalancerActivation) CloudletsApplicationLoadBalancerActivationTimeoutsPtrOutput {
+		return v.Timeouts
+	}).(CloudletsApplicationLoadBalancerActivationTimeoutsPtrOutput)
 }
 
 // Cloudlets application load balancer version you want to activate

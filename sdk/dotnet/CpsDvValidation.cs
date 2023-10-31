@@ -30,6 +30,12 @@ namespace Pulumi.Akamai
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Output("timeouts")]
+        public Output<Outputs.CpsDvValidationTimeouts?> Timeouts { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a CpsDvValidation resource with the given unique name, arguments, and options.
@@ -94,6 +100,12 @@ namespace Pulumi.Akamai
             set => _sans = value;
         }
 
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.CpsDvValidationTimeoutsArgs>? Timeouts { get; set; }
+
         public CpsDvValidationArgs()
         {
         }
@@ -125,6 +137,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
+
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.CpsDvValidationTimeoutsGetArgs>? Timeouts { get; set; }
 
         public CpsDvValidationState()
         {

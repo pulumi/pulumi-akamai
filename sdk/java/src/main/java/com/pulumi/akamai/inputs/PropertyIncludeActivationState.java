@@ -4,6 +4,7 @@
 package com.pulumi.akamai.inputs;
 
 import com.pulumi.akamai.inputs.PropertyIncludeActivationComplianceRecordArgs;
+import com.pulumi.akamai.inputs.PropertyIncludeActivationTimeoutsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
@@ -140,6 +141,21 @@ public final class PropertyIncludeActivationState extends com.pulumi.resources.R
     }
 
     /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Import(name="timeouts")
+    private @Nullable Output<PropertyIncludeActivationTimeoutsArgs> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Optional<Output<PropertyIncludeActivationTimeoutsArgs>> timeouts() {
+        return Optional.ofNullable(this.timeouts);
+    }
+
+    /**
      * The validation information in JSON format
      * 
      */
@@ -180,6 +196,7 @@ public final class PropertyIncludeActivationState extends com.pulumi.resources.R
         this.network = $.network;
         this.note = $.note;
         this.notifyEmails = $.notifyEmails;
+        this.timeouts = $.timeouts;
         this.validations = $.validations;
         this.version = $.version;
     }
@@ -378,6 +395,27 @@ public final class PropertyIncludeActivationState extends com.pulumi.resources.R
          */
         public Builder notifyEmails(String... notifyEmails) {
             return notifyEmails(List.of(notifyEmails));
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(@Nullable Output<PropertyIncludeActivationTimeoutsArgs> timeouts) {
+            $.timeouts = timeouts;
+            return this;
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(PropertyIncludeActivationTimeoutsArgs timeouts) {
+            return timeouts(Output.of(timeouts));
         }
 
         /**

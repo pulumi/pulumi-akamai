@@ -6,6 +6,7 @@ package com.pulumi.akamai;
 import com.pulumi.akamai.CpsDvValidationArgs;
 import com.pulumi.akamai.Utilities;
 import com.pulumi.akamai.inputs.CpsDvValidationState;
+import com.pulumi.akamai.outputs.CpsDvValidationTimeouts;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
@@ -59,6 +60,20 @@ public class CpsDvValidation extends com.pulumi.resources.CustomResource {
      */
     public Output<String> status() {
         return this.status;
+    }
+    /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Export(name="timeouts", refs={CpsDvValidationTimeouts.class}, tree="[0]")
+    private Output</* @Nullable */ CpsDvValidationTimeouts> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Output<Optional<CpsDvValidationTimeouts>> timeouts() {
+        return Codegen.optional(this.timeouts);
     }
 
     /**

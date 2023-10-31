@@ -28,6 +28,8 @@ type CpsUploadCertificate struct {
 	CertificateRsaPem pulumi.StringPtrOutput `pulumi:"certificateRsaPem"`
 	// The unique identifier of the enrollment
 	EnrollmentId pulumi.IntOutput `pulumi:"enrollmentId"`
+	// Enables to set timeout for processing
+	Timeouts CpsUploadCertificateTimeoutsPtrOutput `pulumi:"timeouts"`
 	// Trust chain in pem format for provided ECDSA certificate
 	TrustChainEcdsaPem pulumi.StringPtrOutput `pulumi:"trustChainEcdsaPem"`
 	// Trust chain in pem format for provided RSA certificate
@@ -83,6 +85,8 @@ type cpsUploadCertificateState struct {
 	CertificateRsaPem *string `pulumi:"certificateRsaPem"`
 	// The unique identifier of the enrollment
 	EnrollmentId *int `pulumi:"enrollmentId"`
+	// Enables to set timeout for processing
+	Timeouts *CpsUploadCertificateTimeouts `pulumi:"timeouts"`
 	// Trust chain in pem format for provided ECDSA certificate
 	TrustChainEcdsaPem *string `pulumi:"trustChainEcdsaPem"`
 	// Trust chain in pem format for provided RSA certificate
@@ -106,6 +110,8 @@ type CpsUploadCertificateState struct {
 	CertificateRsaPem pulumi.StringPtrInput
 	// The unique identifier of the enrollment
 	EnrollmentId pulumi.IntPtrInput
+	// Enables to set timeout for processing
+	Timeouts CpsUploadCertificateTimeoutsPtrInput
 	// Trust chain in pem format for provided ECDSA certificate
 	TrustChainEcdsaPem pulumi.StringPtrInput
 	// Trust chain in pem format for provided RSA certificate
@@ -133,6 +139,8 @@ type cpsUploadCertificateArgs struct {
 	CertificateRsaPem *string `pulumi:"certificateRsaPem"`
 	// The unique identifier of the enrollment
 	EnrollmentId int `pulumi:"enrollmentId"`
+	// Enables to set timeout for processing
+	Timeouts *CpsUploadCertificateTimeouts `pulumi:"timeouts"`
 	// Trust chain in pem format for provided ECDSA certificate
 	TrustChainEcdsaPem *string `pulumi:"trustChainEcdsaPem"`
 	// Trust chain in pem format for provided RSA certificate
@@ -155,6 +163,8 @@ type CpsUploadCertificateArgs struct {
 	CertificateRsaPem pulumi.StringPtrInput
 	// The unique identifier of the enrollment
 	EnrollmentId pulumi.IntInput
+	// Enables to set timeout for processing
+	Timeouts CpsUploadCertificateTimeoutsPtrInput
 	// Trust chain in pem format for provided ECDSA certificate
 	TrustChainEcdsaPem pulumi.StringPtrInput
 	// Trust chain in pem format for provided RSA certificate
@@ -302,6 +312,11 @@ func (o CpsUploadCertificateOutput) CertificateRsaPem() pulumi.StringPtrOutput {
 // The unique identifier of the enrollment
 func (o CpsUploadCertificateOutput) EnrollmentId() pulumi.IntOutput {
 	return o.ApplyT(func(v *CpsUploadCertificate) pulumi.IntOutput { return v.EnrollmentId }).(pulumi.IntOutput)
+}
+
+// Enables to set timeout for processing
+func (o CpsUploadCertificateOutput) Timeouts() CpsUploadCertificateTimeoutsPtrOutput {
+	return o.ApplyT(func(v *CpsUploadCertificate) CpsUploadCertificateTimeoutsPtrOutput { return v.Timeouts }).(CpsUploadCertificateTimeoutsPtrOutput)
 }
 
 // Trust chain in pem format for provided ECDSA certificate

@@ -28,8 +28,8 @@ namespace Pulumi.Akamai.Properties
         [Input("propertyId", required: true)]
         public string PropertyId { get; set; } = null!;
 
-        [Input("version", required: true)]
-        public int Version { get; set; }
+        [Input("version")]
+        public int? Version { get; set; }
 
         public GetActivationArgs()
         {
@@ -45,8 +45,8 @@ namespace Pulumi.Akamai.Properties
         [Input("propertyId", required: true)]
         public Input<string> PropertyId { get; set; } = null!;
 
-        [Input("version", required: true)]
-        public Input<int> Version { get; set; } = null!;
+        [Input("version")]
+        public Input<int>? Version { get; set; }
 
         public GetActivationInvokeArgs()
         {
@@ -69,7 +69,7 @@ namespace Pulumi.Akamai.Properties
         public readonly string Note;
         public readonly string PropertyId;
         public readonly string Status;
-        public readonly int Version;
+        public readonly int? Version;
         public readonly string Warnings;
 
         [OutputConstructor]
@@ -90,7 +90,7 @@ namespace Pulumi.Akamai.Properties
 
             string status,
 
-            int version,
+            int? version,
 
             string warnings)
         {

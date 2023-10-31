@@ -47,7 +47,7 @@ type IamUser struct {
 	// The date a user's password expires
 	PasswordExpiredAfter pulumi.StringOutput `pulumi:"passwordExpiredAfter"`
 	// The user's main phone number
-	Phone pulumi.StringOutput `pulumi:"phone"`
+	Phone pulumi.StringPtrOutput `pulumi:"phone"`
 	// The value can be any that are available from the view-languages operation
 	PreferredLanguage pulumi.StringOutput `pulumi:"preferredLanguage"`
 	// The user's secondary email address
@@ -90,9 +90,6 @@ func NewIamUser(ctx *pulumi.Context,
 	}
 	if args.LastName == nil {
 		return nil, errors.New("invalid value for required argument 'LastName'")
-	}
-	if args.Phone == nil {
-		return nil, errors.New("invalid value for required argument 'Phone'")
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource IamUser
@@ -248,7 +245,7 @@ type iamUserArgs struct {
 	// The user's mobile phone number
 	MobilePhone *string `pulumi:"mobilePhone"`
 	// The user's main phone number
-	Phone string `pulumi:"phone"`
+	Phone *string `pulumi:"phone"`
 	// The value can be any that are available from the view-languages operation
 	PreferredLanguage *string `pulumi:"preferredLanguage"`
 	// The user's secondary email address
@@ -290,7 +287,7 @@ type IamUserArgs struct {
 	// The user's mobile phone number
 	MobilePhone pulumi.StringPtrInput
 	// The user's main phone number
-	Phone pulumi.StringInput
+	Phone pulumi.StringPtrInput
 	// The value can be any that are available from the view-languages operation
 	PreferredLanguage pulumi.StringPtrInput
 	// The user's secondary email address
@@ -492,8 +489,8 @@ func (o IamUserOutput) PasswordExpiredAfter() pulumi.StringOutput {
 }
 
 // The user's main phone number
-func (o IamUserOutput) Phone() pulumi.StringOutput {
-	return o.ApplyT(func(v *IamUser) pulumi.StringOutput { return v.Phone }).(pulumi.StringOutput)
+func (o IamUserOutput) Phone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IamUser) pulumi.StringPtrOutput { return v.Phone }).(pulumi.StringPtrOutput)
 }
 
 // The value can be any that are available from the view-languages operation

@@ -24,6 +24,8 @@ type CloudletsPolicyActivation struct {
 	PolicyId pulumi.IntOutput `pulumi:"policyId"`
 	// Activation status for this Cloudlets policy
 	Status pulumi.StringOutput `pulumi:"status"`
+	// Enables to set timeout for processing
+	Timeouts CloudletsPolicyActivationTimeoutsPtrOutput `pulumi:"timeouts"`
 	// Cloudlets policy version you want to activate
 	Version pulumi.IntOutput `pulumi:"version"`
 }
@@ -78,6 +80,8 @@ type cloudletsPolicyActivationState struct {
 	PolicyId *int `pulumi:"policyId"`
 	// Activation status for this Cloudlets policy
 	Status *string `pulumi:"status"`
+	// Enables to set timeout for processing
+	Timeouts *CloudletsPolicyActivationTimeouts `pulumi:"timeouts"`
 	// Cloudlets policy version you want to activate
 	Version *int `pulumi:"version"`
 }
@@ -91,6 +95,8 @@ type CloudletsPolicyActivationState struct {
 	PolicyId pulumi.IntPtrInput
 	// Activation status for this Cloudlets policy
 	Status pulumi.StringPtrInput
+	// Enables to set timeout for processing
+	Timeouts CloudletsPolicyActivationTimeoutsPtrInput
 	// Cloudlets policy version you want to activate
 	Version pulumi.IntPtrInput
 }
@@ -106,6 +112,8 @@ type cloudletsPolicyActivationArgs struct {
 	Network string `pulumi:"network"`
 	// ID of the Cloudlets policy you want to activate
 	PolicyId int `pulumi:"policyId"`
+	// Enables to set timeout for processing
+	Timeouts *CloudletsPolicyActivationTimeouts `pulumi:"timeouts"`
 	// Cloudlets policy version you want to activate
 	Version int `pulumi:"version"`
 }
@@ -118,6 +126,8 @@ type CloudletsPolicyActivationArgs struct {
 	Network pulumi.StringInput
 	// ID of the Cloudlets policy you want to activate
 	PolicyId pulumi.IntInput
+	// Enables to set timeout for processing
+	Timeouts CloudletsPolicyActivationTimeoutsPtrInput
 	// Cloudlets policy version you want to activate
 	Version pulumi.IntInput
 }
@@ -251,6 +261,11 @@ func (o CloudletsPolicyActivationOutput) PolicyId() pulumi.IntOutput {
 // Activation status for this Cloudlets policy
 func (o CloudletsPolicyActivationOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudletsPolicyActivation) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+}
+
+// Enables to set timeout for processing
+func (o CloudletsPolicyActivationOutput) Timeouts() CloudletsPolicyActivationTimeoutsPtrOutput {
+	return o.ApplyT(func(v *CloudletsPolicyActivation) CloudletsPolicyActivationTimeoutsPtrOutput { return v.Timeouts }).(CloudletsPolicyActivationTimeoutsPtrOutput)
 }
 
 // Cloudlets policy version you want to activate

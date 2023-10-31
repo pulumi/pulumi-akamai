@@ -24,6 +24,8 @@ type EdgekvGroupItems struct {
 	NamespaceName pulumi.StringOutput `pulumi:"namespaceName"`
 	// The network against which to execute the API request.
 	Network pulumi.StringOutput `pulumi:"network"`
+	// Enables to set timeout for processing
+	Timeouts EdgekvGroupItemsTimeoutsPtrOutput `pulumi:"timeouts"`
 }
 
 // NewEdgekvGroupItems registers a new resource with the given unique name, arguments, and options.
@@ -76,6 +78,8 @@ type edgekvGroupItemsState struct {
 	NamespaceName *string `pulumi:"namespaceName"`
 	// The network against which to execute the API request.
 	Network *string `pulumi:"network"`
+	// Enables to set timeout for processing
+	Timeouts *EdgekvGroupItemsTimeouts `pulumi:"timeouts"`
 }
 
 type EdgekvGroupItemsState struct {
@@ -87,6 +91,8 @@ type EdgekvGroupItemsState struct {
 	NamespaceName pulumi.StringPtrInput
 	// The network against which to execute the API request.
 	Network pulumi.StringPtrInput
+	// Enables to set timeout for processing
+	Timeouts EdgekvGroupItemsTimeoutsPtrInput
 }
 
 func (EdgekvGroupItemsState) ElementType() reflect.Type {
@@ -102,6 +108,8 @@ type edgekvGroupItemsArgs struct {
 	NamespaceName string `pulumi:"namespaceName"`
 	// The network against which to execute the API request.
 	Network string `pulumi:"network"`
+	// Enables to set timeout for processing
+	Timeouts *EdgekvGroupItemsTimeouts `pulumi:"timeouts"`
 }
 
 // The set of arguments for constructing a EdgekvGroupItems resource.
@@ -114,6 +122,8 @@ type EdgekvGroupItemsArgs struct {
 	NamespaceName pulumi.StringInput
 	// The network against which to execute the API request.
 	Network pulumi.StringInput
+	// Enables to set timeout for processing
+	Timeouts EdgekvGroupItemsTimeoutsPtrInput
 }
 
 func (EdgekvGroupItemsArgs) ElementType() reflect.Type {
@@ -245,6 +255,11 @@ func (o EdgekvGroupItemsOutput) NamespaceName() pulumi.StringOutput {
 // The network against which to execute the API request.
 func (o EdgekvGroupItemsOutput) Network() pulumi.StringOutput {
 	return o.ApplyT(func(v *EdgekvGroupItems) pulumi.StringOutput { return v.Network }).(pulumi.StringOutput)
+}
+
+// Enables to set timeout for processing
+func (o EdgekvGroupItemsOutput) Timeouts() EdgekvGroupItemsTimeoutsPtrOutput {
+	return o.ApplyT(func(v *EdgekvGroupItems) EdgekvGroupItemsTimeoutsPtrOutput { return v.Timeouts }).(EdgekvGroupItemsTimeoutsPtrOutput)
 }
 
 type EdgekvGroupItemsArrayOutput struct{ *pulumi.OutputState }

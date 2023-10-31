@@ -31,10 +31,16 @@ namespace Pulumi.Akamai
         public Output<string> ProductId { get; private set; } = null!;
 
         /// <summary>
-        /// Email address that should receive updates on the IP behavior update request. Required for update operation.
+        /// Email address that should receive updates on the IP behavior update request.
         /// </summary>
         [Output("statusUpdateEmails")]
         public Output<ImmutableArray<string>> StatusUpdateEmails { get; private set; } = null!;
+
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Output("timeouts")]
+        public Output<Outputs.EdgeHostNameTimeouts?> Timeouts { get; private set; } = null!;
 
         /// <summary>
         /// A JSON encoded list of use cases
@@ -114,13 +120,19 @@ namespace Pulumi.Akamai
         private InputList<string>? _statusUpdateEmails;
 
         /// <summary>
-        /// Email address that should receive updates on the IP behavior update request. Required for update operation.
+        /// Email address that should receive updates on the IP behavior update request.
         /// </summary>
         public InputList<string> StatusUpdateEmails
         {
             get => _statusUpdateEmails ?? (_statusUpdateEmails = new InputList<string>());
             set => _statusUpdateEmails = value;
         }
+
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.EdgeHostNameTimeoutsArgs>? Timeouts { get; set; }
 
         /// <summary>
         /// A JSON encoded list of use cases
@@ -158,13 +170,19 @@ namespace Pulumi.Akamai
         private InputList<string>? _statusUpdateEmails;
 
         /// <summary>
-        /// Email address that should receive updates on the IP behavior update request. Required for update operation.
+        /// Email address that should receive updates on the IP behavior update request.
         /// </summary>
         public InputList<string> StatusUpdateEmails
         {
             get => _statusUpdateEmails ?? (_statusUpdateEmails = new InputList<string>());
             set => _statusUpdateEmails = value;
         }
+
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.EdgeHostNameTimeoutsGetArgs>? Timeouts { get; set; }
 
         /// <summary>
         /// A JSON encoded list of use cases

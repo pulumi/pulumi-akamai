@@ -102,6 +102,10 @@ export class CpsThirdPartyEnrollment extends pulumi.CustomResource {
      * Contact information for an administrator at Akamai
      */
     public readonly techContact!: pulumi.Output<outputs.CpsThirdPartyEnrollmentTechContact>;
+    /**
+     * Enables to set timeout for processing
+     */
+    public readonly timeouts!: pulumi.Output<outputs.CpsThirdPartyEnrollmentTimeouts | undefined>;
 
     /**
      * Create a CpsThirdPartyEnrollment resource with the given unique name, arguments, and options.
@@ -133,6 +137,7 @@ export class CpsThirdPartyEnrollment extends pulumi.CustomResource {
             resourceInputs["signatureAlgorithm"] = state ? state.signatureAlgorithm : undefined;
             resourceInputs["sniOnly"] = state ? state.sniOnly : undefined;
             resourceInputs["techContact"] = state ? state.techContact : undefined;
+            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
         } else {
             const args = argsOrState as CpsThirdPartyEnrollmentArgs | undefined;
             if ((!args || args.adminContact === undefined) && !opts.urn) {
@@ -179,6 +184,7 @@ export class CpsThirdPartyEnrollment extends pulumi.CustomResource {
             resourceInputs["signatureAlgorithm"] = args ? args.signatureAlgorithm : undefined;
             resourceInputs["sniOnly"] = args ? args.sniOnly : undefined;
             resourceInputs["techContact"] = args ? args.techContact : undefined;
+            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CpsThirdPartyEnrollment.__pulumiType, name, resourceInputs, opts);
@@ -257,6 +263,10 @@ export interface CpsThirdPartyEnrollmentState {
      * Contact information for an administrator at Akamai
      */
     techContact?: pulumi.Input<inputs.CpsThirdPartyEnrollmentTechContact>;
+    /**
+     * Enables to set timeout for processing
+     */
+    timeouts?: pulumi.Input<inputs.CpsThirdPartyEnrollmentTimeouts>;
 }
 
 /**
@@ -331,4 +341,8 @@ export interface CpsThirdPartyEnrollmentArgs {
      * Contact information for an administrator at Akamai
      */
     techContact: pulumi.Input<inputs.CpsThirdPartyEnrollmentTechContact>;
+    /**
+     * Enables to set timeout for processing
+     */
+    timeouts?: pulumi.Input<inputs.CpsThirdPartyEnrollmentTimeouts>;
 }
