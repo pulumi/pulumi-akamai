@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['BotmanCustomClientSequenceArgs', 'BotmanCustomClientSequence']
@@ -19,8 +19,29 @@ class BotmanCustomClientSequenceArgs:
         """
         The set of arguments for constructing a BotmanCustomClientSequence resource.
         """
-        pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "custom_client_ids", custom_client_ids)
+        BotmanCustomClientSequenceArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            custom_client_ids=custom_client_ids,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             custom_client_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if custom_client_ids is None and 'customClientIds' in kwargs:
+            custom_client_ids = kwargs['customClientIds']
+        if custom_client_ids is None:
+            raise TypeError("Missing 'custom_client_ids' argument")
+
+        _setter("config_id", config_id)
+        _setter("custom_client_ids", custom_client_ids)
 
     @property
     @pulumi.getter(name="configId")
@@ -49,10 +70,27 @@ class _BotmanCustomClientSequenceState:
         """
         Input properties used for looking up and filtering BotmanCustomClientSequence resources.
         """
+        _BotmanCustomClientSequenceState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            custom_client_ids=custom_client_ids,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             custom_client_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if custom_client_ids is None and 'customClientIds' in kwargs:
+            custom_client_ids = kwargs['customClientIds']
+
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
         if custom_client_ids is not None:
-            pulumi.set(__self__, "custom_client_ids", custom_client_ids)
+            _setter("custom_client_ids", custom_client_ids)
 
     @property
     @pulumi.getter(name="configId")
@@ -104,6 +142,10 @@ class BotmanCustomClientSequence(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            BotmanCustomClientSequenceArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['BotmanBotDetectionActionArgs', 'BotmanBotDetectionAction']
@@ -21,10 +21,43 @@ class BotmanBotDetectionActionArgs:
         """
         The set of arguments for constructing a BotmanBotDetectionAction resource.
         """
-        pulumi.set(__self__, "bot_detection_action", bot_detection_action)
-        pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "detection_id", detection_id)
-        pulumi.set(__self__, "security_policy_id", security_policy_id)
+        BotmanBotDetectionActionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bot_detection_action=bot_detection_action,
+            config_id=config_id,
+            detection_id=detection_id,
+            security_policy_id=security_policy_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bot_detection_action: Optional[pulumi.Input[str]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             detection_id: Optional[pulumi.Input[str]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bot_detection_action is None and 'botDetectionAction' in kwargs:
+            bot_detection_action = kwargs['botDetectionAction']
+        if bot_detection_action is None:
+            raise TypeError("Missing 'bot_detection_action' argument")
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if detection_id is None and 'detectionId' in kwargs:
+            detection_id = kwargs['detectionId']
+        if detection_id is None:
+            raise TypeError("Missing 'detection_id' argument")
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+        if security_policy_id is None:
+            raise TypeError("Missing 'security_policy_id' argument")
+
+        _setter("bot_detection_action", bot_detection_action)
+        _setter("config_id", config_id)
+        _setter("detection_id", detection_id)
+        _setter("security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="botDetectionAction")
@@ -73,14 +106,39 @@ class _BotmanBotDetectionActionState:
         """
         Input properties used for looking up and filtering BotmanBotDetectionAction resources.
         """
+        _BotmanBotDetectionActionState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bot_detection_action=bot_detection_action,
+            config_id=config_id,
+            detection_id=detection_id,
+            security_policy_id=security_policy_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bot_detection_action: Optional[pulumi.Input[str]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             detection_id: Optional[pulumi.Input[str]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bot_detection_action is None and 'botDetectionAction' in kwargs:
+            bot_detection_action = kwargs['botDetectionAction']
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if detection_id is None and 'detectionId' in kwargs:
+            detection_id = kwargs['detectionId']
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         if bot_detection_action is not None:
-            pulumi.set(__self__, "bot_detection_action", bot_detection_action)
+            _setter("bot_detection_action", bot_detection_action)
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
         if detection_id is not None:
-            pulumi.set(__self__, "detection_id", detection_id)
+            _setter("detection_id", detection_id)
         if security_policy_id is not None:
-            pulumi.set(__self__, "security_policy_id", security_policy_id)
+            _setter("security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="botDetectionAction")
@@ -152,6 +210,10 @@ class BotmanBotDetectionAction(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            BotmanBotDetectionActionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

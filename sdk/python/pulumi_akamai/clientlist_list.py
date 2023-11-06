@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -33,17 +33,50 @@ class ClientlistListArgs:
         :param pulumi.Input[str] notes: The client list notes.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: The client list tags.
         """
-        pulumi.set(__self__, "contract_id", contract_id)
-        pulumi.set(__self__, "group_id", group_id)
-        pulumi.set(__self__, "type", type)
+        ClientlistListArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            contract_id=contract_id,
+            group_id=group_id,
+            type=type,
+            items=items,
+            name=name,
+            notes=notes,
+            tags=tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             contract_id: Optional[pulumi.Input[str]] = None,
+             group_id: Optional[pulumi.Input[int]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             items: Optional[pulumi.Input[Sequence[pulumi.Input['ClientlistListItemArgs']]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             notes: Optional[pulumi.Input[str]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if contract_id is None and 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if contract_id is None:
+            raise TypeError("Missing 'contract_id' argument")
+        if group_id is None and 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if group_id is None:
+            raise TypeError("Missing 'group_id' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("contract_id", contract_id)
+        _setter("group_id", group_id)
+        _setter("type", type)
         if items is not None:
-            pulumi.set(__self__, "items", items)
+            _setter("items", items)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if notes is not None:
-            pulumi.set(__self__, "notes", notes)
+            _setter("notes", notes)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
 
     @property
     @pulumi.getter(name="contractId")
@@ -156,26 +189,63 @@ class _ClientlistListState:
         :param pulumi.Input[str] type: The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH]
         :param pulumi.Input[int] version: The current version of the client list.
         """
+        _ClientlistListState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            contract_id=contract_id,
+            group_id=group_id,
+            items=items,
+            items_count=items_count,
+            list_id=list_id,
+            name=name,
+            notes=notes,
+            tags=tags,
+            type=type,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             contract_id: Optional[pulumi.Input[str]] = None,
+             group_id: Optional[pulumi.Input[int]] = None,
+             items: Optional[pulumi.Input[Sequence[pulumi.Input['ClientlistListItemArgs']]]] = None,
+             items_count: Optional[pulumi.Input[int]] = None,
+             list_id: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             notes: Optional[pulumi.Input[str]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if contract_id is None and 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if group_id is None and 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if items_count is None and 'itemsCount' in kwargs:
+            items_count = kwargs['itemsCount']
+        if list_id is None and 'listId' in kwargs:
+            list_id = kwargs['listId']
+
         if contract_id is not None:
-            pulumi.set(__self__, "contract_id", contract_id)
+            _setter("contract_id", contract_id)
         if group_id is not None:
-            pulumi.set(__self__, "group_id", group_id)
+            _setter("group_id", group_id)
         if items is not None:
-            pulumi.set(__self__, "items", items)
+            _setter("items", items)
         if items_count is not None:
-            pulumi.set(__self__, "items_count", items_count)
+            _setter("items_count", items_count)
         if list_id is not None:
-            pulumi.set(__self__, "list_id", list_id)
+            _setter("list_id", list_id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if notes is not None:
-            pulumi.set(__self__, "notes", notes)
+            _setter("notes", notes)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
 
     @property
     @pulumi.getter(name="contractId")
@@ -341,6 +411,10 @@ class ClientlistList(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ClientlistListArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

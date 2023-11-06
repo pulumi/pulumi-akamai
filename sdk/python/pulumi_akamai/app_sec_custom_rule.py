@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecCustomRuleArgs', 'AppSecCustomRule']
@@ -21,8 +21,29 @@ class AppSecCustomRuleArgs:
         :param pulumi.Input[int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[str] custom_rule: JSON-formatted definition of the custom rule
         """
-        pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "custom_rule", custom_rule)
+        AppSecCustomRuleArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            custom_rule=custom_rule,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             custom_rule: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if custom_rule is None and 'customRule' in kwargs:
+            custom_rule = kwargs['customRule']
+        if custom_rule is None:
+            raise TypeError("Missing 'custom_rule' argument")
+
+        _setter("config_id", config_id)
+        _setter("custom_rule", custom_rule)
 
     @property
     @pulumi.getter(name="configId")
@@ -60,12 +81,33 @@ class _AppSecCustomRuleState:
         :param pulumi.Input[int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[str] custom_rule: JSON-formatted definition of the custom rule
         """
+        _AppSecCustomRuleState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            custom_rule=custom_rule,
+            custom_rule_id=custom_rule_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             custom_rule: Optional[pulumi.Input[str]] = None,
+             custom_rule_id: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if custom_rule is None and 'customRule' in kwargs:
+            custom_rule = kwargs['customRule']
+        if custom_rule_id is None and 'customRuleId' in kwargs:
+            custom_rule_id = kwargs['customRuleId']
+
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
         if custom_rule is not None:
-            pulumi.set(__self__, "custom_rule", custom_rule)
+            _setter("custom_rule", custom_rule)
         if custom_rule_id is not None:
-            pulumi.set(__self__, "custom_rule_id", custom_rule_id)
+            _setter("custom_rule_id", custom_rule_id)
 
     @property
     @pulumi.getter(name="configId")
@@ -134,6 +176,10 @@ class AppSecCustomRule(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AppSecCustomRuleArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

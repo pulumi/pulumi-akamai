@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -24,10 +24,31 @@ class CloudwrapperActivationArgs:
         :param pulumi.Input[int] config_id: The configuration you want to activate.
         :param pulumi.Input[str] revision: Unique hash value of the configuration.
         """
-        pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "revision", revision)
+        CloudwrapperActivationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            revision=revision,
+            timeouts=timeouts,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             revision: Optional[pulumi.Input[str]] = None,
+             timeouts: Optional[pulumi.Input['CloudwrapperActivationTimeoutsArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if revision is None:
+            raise TypeError("Missing 'revision' argument")
+
+        _setter("config_id", config_id)
+        _setter("revision", revision)
         if timeouts is not None:
-            pulumi.set(__self__, "timeouts", timeouts)
+            _setter("timeouts", timeouts)
 
     @property
     @pulumi.getter(name="configId")
@@ -74,12 +95,29 @@ class _CloudwrapperActivationState:
         :param pulumi.Input[int] config_id: The configuration you want to activate.
         :param pulumi.Input[str] revision: Unique hash value of the configuration.
         """
+        _CloudwrapperActivationState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            revision=revision,
+            timeouts=timeouts,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             revision: Optional[pulumi.Input[str]] = None,
+             timeouts: Optional[pulumi.Input['CloudwrapperActivationTimeoutsArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
         if revision is not None:
-            pulumi.set(__self__, "revision", revision)
+            _setter("revision", revision)
         if timeouts is not None:
-            pulumi.set(__self__, "timeouts", timeouts)
+            _setter("timeouts", timeouts)
 
     @property
     @pulumi.getter(name="configId")
@@ -149,6 +187,10 @@ class CloudwrapperActivation(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            CloudwrapperActivationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -172,6 +214,11 @@ class CloudwrapperActivation(pulumi.CustomResource):
             if revision is None and not opts.urn:
                 raise TypeError("Missing required property 'revision'")
             __props__.__dict__["revision"] = revision
+            if timeouts is not None and not isinstance(timeouts, CloudwrapperActivationTimeoutsArgs):
+                timeouts = timeouts or {}
+                def _setter(key, value):
+                    timeouts[key] = value
+                CloudwrapperActivationTimeoutsArgs._configure(_setter, **timeouts)
             __props__.__dict__["timeouts"] = timeouts
         super(CloudwrapperActivation, __self__).__init__(
             'akamai:index/cloudwrapperActivation:CloudwrapperActivation',

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['BotmanChallengeInterceptionRulesArgs', 'BotmanChallengeInterceptionRules']
@@ -19,8 +19,29 @@ class BotmanChallengeInterceptionRulesArgs:
         """
         The set of arguments for constructing a BotmanChallengeInterceptionRules resource.
         """
-        pulumi.set(__self__, "challenge_interception_rules", challenge_interception_rules)
-        pulumi.set(__self__, "config_id", config_id)
+        BotmanChallengeInterceptionRulesArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            challenge_interception_rules=challenge_interception_rules,
+            config_id=config_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             challenge_interception_rules: Optional[pulumi.Input[str]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if challenge_interception_rules is None and 'challengeInterceptionRules' in kwargs:
+            challenge_interception_rules = kwargs['challengeInterceptionRules']
+        if challenge_interception_rules is None:
+            raise TypeError("Missing 'challenge_interception_rules' argument")
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+
+        _setter("challenge_interception_rules", challenge_interception_rules)
+        _setter("config_id", config_id)
 
     @property
     @pulumi.getter(name="challengeInterceptionRules")
@@ -49,10 +70,27 @@ class _BotmanChallengeInterceptionRulesState:
         """
         Input properties used for looking up and filtering BotmanChallengeInterceptionRules resources.
         """
+        _BotmanChallengeInterceptionRulesState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            challenge_interception_rules=challenge_interception_rules,
+            config_id=config_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             challenge_interception_rules: Optional[pulumi.Input[str]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if challenge_interception_rules is None and 'challengeInterceptionRules' in kwargs:
+            challenge_interception_rules = kwargs['challengeInterceptionRules']
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+
         if challenge_interception_rules is not None:
-            pulumi.set(__self__, "challenge_interception_rules", challenge_interception_rules)
+            _setter("challenge_interception_rules", challenge_interception_rules)
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
 
     @property
     @pulumi.getter(name="challengeInterceptionRules")
@@ -104,6 +142,10 @@ class BotmanChallengeInterceptionRules(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            BotmanChallengeInterceptionRulesArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

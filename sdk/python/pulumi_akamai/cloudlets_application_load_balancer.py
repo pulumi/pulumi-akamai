@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -30,14 +30,45 @@ class CloudletsApplicationLoadBalancerArgs:
         :param pulumi.Input[str] balancing_type: The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
         :param pulumi.Input[str] description: The load balancer configuration description
         """
-        pulumi.set(__self__, "data_centers", data_centers)
-        pulumi.set(__self__, "origin_id", origin_id)
+        CloudletsApplicationLoadBalancerArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data_centers=data_centers,
+            origin_id=origin_id,
+            balancing_type=balancing_type,
+            description=description,
+            liveness_settings=liveness_settings,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data_centers: Optional[pulumi.Input[Sequence[pulumi.Input['CloudletsApplicationLoadBalancerDataCenterArgs']]]] = None,
+             origin_id: Optional[pulumi.Input[str]] = None,
+             balancing_type: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             liveness_settings: Optional[pulumi.Input['CloudletsApplicationLoadBalancerLivenessSettingsArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if data_centers is None and 'dataCenters' in kwargs:
+            data_centers = kwargs['dataCenters']
+        if data_centers is None:
+            raise TypeError("Missing 'data_centers' argument")
+        if origin_id is None and 'originId' in kwargs:
+            origin_id = kwargs['originId']
+        if origin_id is None:
+            raise TypeError("Missing 'origin_id' argument")
+        if balancing_type is None and 'balancingType' in kwargs:
+            balancing_type = kwargs['balancingType']
+        if liveness_settings is None and 'livenessSettings' in kwargs:
+            liveness_settings = kwargs['livenessSettings']
+
+        _setter("data_centers", data_centers)
+        _setter("origin_id", origin_id)
         if balancing_type is not None:
-            pulumi.set(__self__, "balancing_type", balancing_type)
+            _setter("balancing_type", balancing_type)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if liveness_settings is not None:
-            pulumi.set(__self__, "liveness_settings", liveness_settings)
+            _setter("liveness_settings", liveness_settings)
 
     @property
     @pulumi.getter(name="dataCenters")
@@ -120,20 +151,51 @@ class _CloudletsApplicationLoadBalancerState:
         :param pulumi.Input[int] version: The load balancer configuration version
         :param pulumi.Input[str] warnings: Describes warnings during activation of load balancer configuration
         """
+        _CloudletsApplicationLoadBalancerState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            balancing_type=balancing_type,
+            data_centers=data_centers,
+            description=description,
+            liveness_settings=liveness_settings,
+            origin_id=origin_id,
+            version=version,
+            warnings=warnings,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             balancing_type: Optional[pulumi.Input[str]] = None,
+             data_centers: Optional[pulumi.Input[Sequence[pulumi.Input['CloudletsApplicationLoadBalancerDataCenterArgs']]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             liveness_settings: Optional[pulumi.Input['CloudletsApplicationLoadBalancerLivenessSettingsArgs']] = None,
+             origin_id: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[int]] = None,
+             warnings: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if balancing_type is None and 'balancingType' in kwargs:
+            balancing_type = kwargs['balancingType']
+        if data_centers is None and 'dataCenters' in kwargs:
+            data_centers = kwargs['dataCenters']
+        if liveness_settings is None and 'livenessSettings' in kwargs:
+            liveness_settings = kwargs['livenessSettings']
+        if origin_id is None and 'originId' in kwargs:
+            origin_id = kwargs['originId']
+
         if balancing_type is not None:
-            pulumi.set(__self__, "balancing_type", balancing_type)
+            _setter("balancing_type", balancing_type)
         if data_centers is not None:
-            pulumi.set(__self__, "data_centers", data_centers)
+            _setter("data_centers", data_centers)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if liveness_settings is not None:
-            pulumi.set(__self__, "liveness_settings", liveness_settings)
+            _setter("liveness_settings", liveness_settings)
         if origin_id is not None:
-            pulumi.set(__self__, "origin_id", origin_id)
+            _setter("origin_id", origin_id)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
         if warnings is not None:
-            pulumi.set(__self__, "warnings", warnings)
+            _setter("warnings", warnings)
 
     @property
     @pulumi.getter(name="balancingType")
@@ -259,6 +321,10 @@ class CloudletsApplicationLoadBalancer(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            CloudletsApplicationLoadBalancerArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -283,6 +349,11 @@ class CloudletsApplicationLoadBalancer(pulumi.CustomResource):
                 raise TypeError("Missing required property 'data_centers'")
             __props__.__dict__["data_centers"] = data_centers
             __props__.__dict__["description"] = description
+            if liveness_settings is not None and not isinstance(liveness_settings, CloudletsApplicationLoadBalancerLivenessSettingsArgs):
+                liveness_settings = liveness_settings or {}
+                def _setter(key, value):
+                    liveness_settings[key] = value
+                CloudletsApplicationLoadBalancerLivenessSettingsArgs._configure(_setter, **liveness_settings)
             __props__.__dict__["liveness_settings"] = liveness_settings
             if origin_id is None and not opts.urn:
                 raise TypeError("Missing required property 'origin_id'")

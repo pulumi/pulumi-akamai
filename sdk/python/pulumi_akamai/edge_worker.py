@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['EdgeWorkerArgs', 'EdgeWorker']
@@ -25,12 +25,39 @@ class EdgeWorkerArgs:
         :param pulumi.Input[str] local_bundle: The path to the EdgeWorkers tgz code bundle
         :param pulumi.Input[str] name: The EdgeWorker name
         """
-        pulumi.set(__self__, "group_id", group_id)
-        pulumi.set(__self__, "resource_tier_id", resource_tier_id)
+        EdgeWorkerArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            group_id=group_id,
+            resource_tier_id=resource_tier_id,
+            local_bundle=local_bundle,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             group_id: Optional[pulumi.Input[int]] = None,
+             resource_tier_id: Optional[pulumi.Input[int]] = None,
+             local_bundle: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if group_id is None and 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if group_id is None:
+            raise TypeError("Missing 'group_id' argument")
+        if resource_tier_id is None and 'resourceTierId' in kwargs:
+            resource_tier_id = kwargs['resourceTierId']
+        if resource_tier_id is None:
+            raise TypeError("Missing 'resource_tier_id' argument")
+        if local_bundle is None and 'localBundle' in kwargs:
+            local_bundle = kwargs['localBundle']
+
+        _setter("group_id", group_id)
+        _setter("resource_tier_id", resource_tier_id)
         if local_bundle is not None:
-            pulumi.set(__self__, "local_bundle", local_bundle)
+            _setter("local_bundle", local_bundle)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter(name="groupId")
@@ -103,22 +130,57 @@ class _EdgeWorkerState:
         :param pulumi.Input[str] version: The bundle version
         :param pulumi.Input[Sequence[pulumi.Input[str]]] warnings: The list of warnings returned by EdgeWorker validation
         """
+        _EdgeWorkerState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            edgeworker_id=edgeworker_id,
+            group_id=group_id,
+            local_bundle=local_bundle,
+            local_bundle_hash=local_bundle_hash,
+            name=name,
+            resource_tier_id=resource_tier_id,
+            version=version,
+            warnings=warnings,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             edgeworker_id: Optional[pulumi.Input[int]] = None,
+             group_id: Optional[pulumi.Input[int]] = None,
+             local_bundle: Optional[pulumi.Input[str]] = None,
+             local_bundle_hash: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             resource_tier_id: Optional[pulumi.Input[int]] = None,
+             version: Optional[pulumi.Input[str]] = None,
+             warnings: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if edgeworker_id is None and 'edgeworkerId' in kwargs:
+            edgeworker_id = kwargs['edgeworkerId']
+        if group_id is None and 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if local_bundle is None and 'localBundle' in kwargs:
+            local_bundle = kwargs['localBundle']
+        if local_bundle_hash is None and 'localBundleHash' in kwargs:
+            local_bundle_hash = kwargs['localBundleHash']
+        if resource_tier_id is None and 'resourceTierId' in kwargs:
+            resource_tier_id = kwargs['resourceTierId']
+
         if edgeworker_id is not None:
-            pulumi.set(__self__, "edgeworker_id", edgeworker_id)
+            _setter("edgeworker_id", edgeworker_id)
         if group_id is not None:
-            pulumi.set(__self__, "group_id", group_id)
+            _setter("group_id", group_id)
         if local_bundle is not None:
-            pulumi.set(__self__, "local_bundle", local_bundle)
+            _setter("local_bundle", local_bundle)
         if local_bundle_hash is not None:
-            pulumi.set(__self__, "local_bundle_hash", local_bundle_hash)
+            _setter("local_bundle_hash", local_bundle_hash)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if resource_tier_id is not None:
-            pulumi.set(__self__, "resource_tier_id", resource_tier_id)
+            _setter("resource_tier_id", resource_tier_id)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
         if warnings is not None:
-            pulumi.set(__self__, "warnings", warnings)
+            _setter("warnings", warnings)
 
     @property
     @pulumi.getter(name="edgeworkerId")
@@ -254,6 +316,10 @@ class EdgeWorker(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            EdgeWorkerArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

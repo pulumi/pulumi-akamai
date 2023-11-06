@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecRatePolicyArgs', 'AppSecRatePolicy']
@@ -21,8 +21,29 @@ class AppSecRatePolicyArgs:
         :param pulumi.Input[int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[str] rate_policy: JSON-formatted definition of the rate policy
         """
-        pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "rate_policy", rate_policy)
+        AppSecRatePolicyArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            rate_policy=rate_policy,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             rate_policy: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if rate_policy is None and 'ratePolicy' in kwargs:
+            rate_policy = kwargs['ratePolicy']
+        if rate_policy is None:
+            raise TypeError("Missing 'rate_policy' argument")
+
+        _setter("config_id", config_id)
+        _setter("rate_policy", rate_policy)
 
     @property
     @pulumi.getter(name="configId")
@@ -61,12 +82,33 @@ class _AppSecRatePolicyState:
         :param pulumi.Input[str] rate_policy: JSON-formatted definition of the rate policy
         :param pulumi.Input[int] rate_policy_id: Unique identifier of the rate policy
         """
+        _AppSecRatePolicyState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            rate_policy=rate_policy,
+            rate_policy_id=rate_policy_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             rate_policy: Optional[pulumi.Input[str]] = None,
+             rate_policy_id: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if rate_policy is None and 'ratePolicy' in kwargs:
+            rate_policy = kwargs['ratePolicy']
+        if rate_policy_id is None and 'ratePolicyId' in kwargs:
+            rate_policy_id = kwargs['ratePolicyId']
+
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
         if rate_policy is not None:
-            pulumi.set(__self__, "rate_policy", rate_policy)
+            _setter("rate_policy", rate_policy)
         if rate_policy_id is not None:
-            pulumi.set(__self__, "rate_policy_id", rate_policy_id)
+            _setter("rate_policy_id", rate_policy_id)
 
     @property
     @pulumi.getter(name="configId")
@@ -138,6 +180,10 @@ class AppSecRatePolicy(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AppSecRatePolicyArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

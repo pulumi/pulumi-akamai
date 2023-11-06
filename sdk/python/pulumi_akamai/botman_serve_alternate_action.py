@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['BotmanServeAlternateActionArgs', 'BotmanServeAlternateAction']
@@ -19,8 +19,29 @@ class BotmanServeAlternateActionArgs:
         """
         The set of arguments for constructing a BotmanServeAlternateAction resource.
         """
-        pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "serve_alternate_action", serve_alternate_action)
+        BotmanServeAlternateActionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            serve_alternate_action=serve_alternate_action,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             serve_alternate_action: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if serve_alternate_action is None and 'serveAlternateAction' in kwargs:
+            serve_alternate_action = kwargs['serveAlternateAction']
+        if serve_alternate_action is None:
+            raise TypeError("Missing 'serve_alternate_action' argument")
+
+        _setter("config_id", config_id)
+        _setter("serve_alternate_action", serve_alternate_action)
 
     @property
     @pulumi.getter(name="configId")
@@ -50,12 +71,33 @@ class _BotmanServeAlternateActionState:
         """
         Input properties used for looking up and filtering BotmanServeAlternateAction resources.
         """
+        _BotmanServeAlternateActionState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_id=action_id,
+            config_id=config_id,
+            serve_alternate_action=serve_alternate_action,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_id: Optional[pulumi.Input[str]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             serve_alternate_action: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if action_id is None and 'actionId' in kwargs:
+            action_id = kwargs['actionId']
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if serve_alternate_action is None and 'serveAlternateAction' in kwargs:
+            serve_alternate_action = kwargs['serveAlternateAction']
+
         if action_id is not None:
-            pulumi.set(__self__, "action_id", action_id)
+            _setter("action_id", action_id)
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
         if serve_alternate_action is not None:
-            pulumi.set(__self__, "serve_alternate_action", serve_alternate_action)
+            _setter("serve_alternate_action", serve_alternate_action)
 
     @property
     @pulumi.getter(name="actionId")
@@ -116,6 +158,10 @@ class BotmanServeAlternateAction(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            BotmanServeAlternateActionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

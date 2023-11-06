@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecAdvancedSettingsPrefetchArgs', 'AppSecAdvancedSettingsPrefetch']
@@ -27,11 +27,48 @@ class AppSecAdvancedSettingsPrefetchArgs:
         :param pulumi.Input[bool] enable_rate_controls: Whether to enable prefetch requests for rate controls
         :param pulumi.Input[Sequence[pulumi.Input[str]]] extensions: List of file extensions
         """
-        pulumi.set(__self__, "all_extensions", all_extensions)
-        pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "enable_app_layer", enable_app_layer)
-        pulumi.set(__self__, "enable_rate_controls", enable_rate_controls)
-        pulumi.set(__self__, "extensions", extensions)
+        AppSecAdvancedSettingsPrefetchArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            all_extensions=all_extensions,
+            config_id=config_id,
+            enable_app_layer=enable_app_layer,
+            enable_rate_controls=enable_rate_controls,
+            extensions=extensions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             all_extensions: Optional[pulumi.Input[bool]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             enable_app_layer: Optional[pulumi.Input[bool]] = None,
+             enable_rate_controls: Optional[pulumi.Input[bool]] = None,
+             extensions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if all_extensions is None and 'allExtensions' in kwargs:
+            all_extensions = kwargs['allExtensions']
+        if all_extensions is None:
+            raise TypeError("Missing 'all_extensions' argument")
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if enable_app_layer is None and 'enableAppLayer' in kwargs:
+            enable_app_layer = kwargs['enableAppLayer']
+        if enable_app_layer is None:
+            raise TypeError("Missing 'enable_app_layer' argument")
+        if enable_rate_controls is None and 'enableRateControls' in kwargs:
+            enable_rate_controls = kwargs['enableRateControls']
+        if enable_rate_controls is None:
+            raise TypeError("Missing 'enable_rate_controls' argument")
+        if extensions is None:
+            raise TypeError("Missing 'extensions' argument")
+
+        _setter("all_extensions", all_extensions)
+        _setter("config_id", config_id)
+        _setter("enable_app_layer", enable_app_layer)
+        _setter("enable_rate_controls", enable_rate_controls)
+        _setter("extensions", extensions)
 
     @property
     @pulumi.getter(name="allExtensions")
@@ -110,16 +147,43 @@ class _AppSecAdvancedSettingsPrefetchState:
         :param pulumi.Input[bool] enable_rate_controls: Whether to enable prefetch requests for rate controls
         :param pulumi.Input[Sequence[pulumi.Input[str]]] extensions: List of file extensions
         """
+        _AppSecAdvancedSettingsPrefetchState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            all_extensions=all_extensions,
+            config_id=config_id,
+            enable_app_layer=enable_app_layer,
+            enable_rate_controls=enable_rate_controls,
+            extensions=extensions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             all_extensions: Optional[pulumi.Input[bool]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             enable_app_layer: Optional[pulumi.Input[bool]] = None,
+             enable_rate_controls: Optional[pulumi.Input[bool]] = None,
+             extensions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if all_extensions is None and 'allExtensions' in kwargs:
+            all_extensions = kwargs['allExtensions']
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if enable_app_layer is None and 'enableAppLayer' in kwargs:
+            enable_app_layer = kwargs['enableAppLayer']
+        if enable_rate_controls is None and 'enableRateControls' in kwargs:
+            enable_rate_controls = kwargs['enableRateControls']
+
         if all_extensions is not None:
-            pulumi.set(__self__, "all_extensions", all_extensions)
+            _setter("all_extensions", all_extensions)
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
         if enable_app_layer is not None:
-            pulumi.set(__self__, "enable_app_layer", enable_app_layer)
+            _setter("enable_app_layer", enable_app_layer)
         if enable_rate_controls is not None:
-            pulumi.set(__self__, "enable_rate_controls", enable_rate_controls)
+            _setter("enable_rate_controls", enable_rate_controls)
         if extensions is not None:
-            pulumi.set(__self__, "extensions", extensions)
+            _setter("extensions", extensions)
 
     @property
     @pulumi.getter(name="allExtensions")
@@ -221,6 +285,10 @@ class AppSecAdvancedSettingsPrefetch(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AppSecAdvancedSettingsPrefetchArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

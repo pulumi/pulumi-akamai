@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecVersionNodesArgs', 'AppSecVersionNodes']
@@ -21,8 +21,29 @@ class AppSecVersionNodesArgs:
         :param pulumi.Input[int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[str] version_notes: Brief description of the security configuration version
         """
-        pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "version_notes", version_notes)
+        AppSecVersionNodesArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            version_notes=version_notes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             version_notes: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if version_notes is None and 'versionNotes' in kwargs:
+            version_notes = kwargs['versionNotes']
+        if version_notes is None:
+            raise TypeError("Missing 'version_notes' argument")
+
+        _setter("config_id", config_id)
+        _setter("version_notes", version_notes)
 
     @property
     @pulumi.getter(name="configId")
@@ -61,12 +82,33 @@ class _AppSecVersionNodesState:
         :param pulumi.Input[str] output_text: Text representation
         :param pulumi.Input[str] version_notes: Brief description of the security configuration version
         """
+        _AppSecVersionNodesState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            output_text=output_text,
+            version_notes=version_notes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             output_text: Optional[pulumi.Input[str]] = None,
+             version_notes: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if output_text is None and 'outputText' in kwargs:
+            output_text = kwargs['outputText']
+        if version_notes is None and 'versionNotes' in kwargs:
+            version_notes = kwargs['versionNotes']
+
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
         if output_text is not None:
-            pulumi.set(__self__, "output_text", output_text)
+            _setter("output_text", output_text)
         if version_notes is not None:
-            pulumi.set(__self__, "version_notes", version_notes)
+            _setter("version_notes", version_notes)
 
     @property
     @pulumi.getter(name="configId")
@@ -138,6 +180,10 @@ class AppSecVersionNodes(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AppSecVersionNodesArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

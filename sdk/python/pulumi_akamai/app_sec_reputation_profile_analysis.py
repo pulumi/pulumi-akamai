@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecReputationProfileAnalysisArgs', 'AppSecReputationProfileAnalysis']
@@ -25,10 +25,43 @@ class AppSecReputationProfileAnalysisArgs:
         :param pulumi.Input[bool] forward_to_http_header: Whether to add client reputation details to requests forwarded to the origin server
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
-        pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "forward_shared_ip_to_http_header_siem", forward_shared_ip_to_http_header_siem)
-        pulumi.set(__self__, "forward_to_http_header", forward_to_http_header)
-        pulumi.set(__self__, "security_policy_id", security_policy_id)
+        AppSecReputationProfileAnalysisArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            forward_shared_ip_to_http_header_siem=forward_shared_ip_to_http_header_siem,
+            forward_to_http_header=forward_to_http_header,
+            security_policy_id=security_policy_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             forward_shared_ip_to_http_header_siem: Optional[pulumi.Input[bool]] = None,
+             forward_to_http_header: Optional[pulumi.Input[bool]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if forward_shared_ip_to_http_header_siem is None and 'forwardSharedIpToHttpHeaderSiem' in kwargs:
+            forward_shared_ip_to_http_header_siem = kwargs['forwardSharedIpToHttpHeaderSiem']
+        if forward_shared_ip_to_http_header_siem is None:
+            raise TypeError("Missing 'forward_shared_ip_to_http_header_siem' argument")
+        if forward_to_http_header is None and 'forwardToHttpHeader' in kwargs:
+            forward_to_http_header = kwargs['forwardToHttpHeader']
+        if forward_to_http_header is None:
+            raise TypeError("Missing 'forward_to_http_header' argument")
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+        if security_policy_id is None:
+            raise TypeError("Missing 'security_policy_id' argument")
+
+        _setter("config_id", config_id)
+        _setter("forward_shared_ip_to_http_header_siem", forward_shared_ip_to_http_header_siem)
+        _setter("forward_to_http_header", forward_to_http_header)
+        _setter("security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="configId")
@@ -93,14 +126,39 @@ class _AppSecReputationProfileAnalysisState:
         :param pulumi.Input[bool] forward_to_http_header: Whether to add client reputation details to requests forwarded to the origin server
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
+        _AppSecReputationProfileAnalysisState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            forward_shared_ip_to_http_header_siem=forward_shared_ip_to_http_header_siem,
+            forward_to_http_header=forward_to_http_header,
+            security_policy_id=security_policy_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             forward_shared_ip_to_http_header_siem: Optional[pulumi.Input[bool]] = None,
+             forward_to_http_header: Optional[pulumi.Input[bool]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if forward_shared_ip_to_http_header_siem is None and 'forwardSharedIpToHttpHeaderSiem' in kwargs:
+            forward_shared_ip_to_http_header_siem = kwargs['forwardSharedIpToHttpHeaderSiem']
+        if forward_to_http_header is None and 'forwardToHttpHeader' in kwargs:
+            forward_to_http_header = kwargs['forwardToHttpHeader']
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
         if forward_shared_ip_to_http_header_siem is not None:
-            pulumi.set(__self__, "forward_shared_ip_to_http_header_siem", forward_shared_ip_to_http_header_siem)
+            _setter("forward_shared_ip_to_http_header_siem", forward_shared_ip_to_http_header_siem)
         if forward_to_http_header is not None:
-            pulumi.set(__self__, "forward_to_http_header", forward_to_http_header)
+            _setter("forward_to_http_header", forward_to_http_header)
         if security_policy_id is not None:
-            pulumi.set(__self__, "security_policy_id", security_policy_id)
+            _setter("security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="configId")
@@ -188,6 +246,10 @@ class AppSecReputationProfileAnalysis(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AppSecReputationProfileAnalysisArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

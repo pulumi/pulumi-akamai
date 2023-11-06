@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['CloudletsPolicyArgs', 'CloudletsPolicy']
@@ -29,16 +29,49 @@ class CloudletsPolicyArgs:
         :param pulumi.Input[str] match_rules: A JSON structure that defines the rules for this policy
         :param pulumi.Input[str] name: The name of the policy. The name must be unique
         """
-        pulumi.set(__self__, "cloudlet_code", cloudlet_code)
-        pulumi.set(__self__, "group_id", group_id)
+        CloudletsPolicyArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cloudlet_code=cloudlet_code,
+            group_id=group_id,
+            description=description,
+            match_rule_format=match_rule_format,
+            match_rules=match_rules,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cloudlet_code: Optional[pulumi.Input[str]] = None,
+             group_id: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             match_rule_format: Optional[pulumi.Input[str]] = None,
+             match_rules: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if cloudlet_code is None and 'cloudletCode' in kwargs:
+            cloudlet_code = kwargs['cloudletCode']
+        if cloudlet_code is None:
+            raise TypeError("Missing 'cloudlet_code' argument")
+        if group_id is None and 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if group_id is None:
+            raise TypeError("Missing 'group_id' argument")
+        if match_rule_format is None and 'matchRuleFormat' in kwargs:
+            match_rule_format = kwargs['matchRuleFormat']
+        if match_rules is None and 'matchRules' in kwargs:
+            match_rules = kwargs['matchRules']
+
+        _setter("cloudlet_code", cloudlet_code)
+        _setter("group_id", group_id)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if match_rule_format is not None:
-            pulumi.set(__self__, "match_rule_format", match_rule_format)
+            _setter("match_rule_format", match_rule_format)
         if match_rules is not None:
-            pulumi.set(__self__, "match_rules", match_rules)
+            _setter("match_rules", match_rules)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter(name="cloudletCode")
@@ -137,24 +170,61 @@ class _CloudletsPolicyState:
         :param pulumi.Input[int] version: The version number of the policy
         :param pulumi.Input[str] warnings: A JSON encoded list of warnings
         """
+        _CloudletsPolicyState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cloudlet_code=cloudlet_code,
+            cloudlet_id=cloudlet_id,
+            description=description,
+            group_id=group_id,
+            match_rule_format=match_rule_format,
+            match_rules=match_rules,
+            name=name,
+            version=version,
+            warnings=warnings,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cloudlet_code: Optional[pulumi.Input[str]] = None,
+             cloudlet_id: Optional[pulumi.Input[int]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             group_id: Optional[pulumi.Input[str]] = None,
+             match_rule_format: Optional[pulumi.Input[str]] = None,
+             match_rules: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[int]] = None,
+             warnings: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if cloudlet_code is None and 'cloudletCode' in kwargs:
+            cloudlet_code = kwargs['cloudletCode']
+        if cloudlet_id is None and 'cloudletId' in kwargs:
+            cloudlet_id = kwargs['cloudletId']
+        if group_id is None and 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if match_rule_format is None and 'matchRuleFormat' in kwargs:
+            match_rule_format = kwargs['matchRuleFormat']
+        if match_rules is None and 'matchRules' in kwargs:
+            match_rules = kwargs['matchRules']
+
         if cloudlet_code is not None:
-            pulumi.set(__self__, "cloudlet_code", cloudlet_code)
+            _setter("cloudlet_code", cloudlet_code)
         if cloudlet_id is not None:
-            pulumi.set(__self__, "cloudlet_id", cloudlet_id)
+            _setter("cloudlet_id", cloudlet_id)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if group_id is not None:
-            pulumi.set(__self__, "group_id", group_id)
+            _setter("group_id", group_id)
         if match_rule_format is not None:
-            pulumi.set(__self__, "match_rule_format", match_rule_format)
+            _setter("match_rule_format", match_rule_format)
         if match_rules is not None:
-            pulumi.set(__self__, "match_rules", match_rules)
+            _setter("match_rules", match_rules)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
         if warnings is not None:
-            pulumi.set(__self__, "warnings", warnings)
+            _setter("warnings", warnings)
 
     @property
     @pulumi.getter(name="cloudletCode")
@@ -306,6 +376,10 @@ class CloudletsPolicy(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            CloudletsPolicyArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

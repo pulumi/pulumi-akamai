@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -31,17 +31,56 @@ class EdgeKvArgs:
         :param pulumi.Input[str] geo_location: Storage location for data
         :param pulumi.Input[Sequence[pulumi.Input['EdgeKvInitialDataArgs']]] initial_datas: List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
         """
-        pulumi.set(__self__, "group_id", group_id)
-        pulumi.set(__self__, "namespace_name", namespace_name)
-        pulumi.set(__self__, "network", network)
-        pulumi.set(__self__, "retention_in_seconds", retention_in_seconds)
+        EdgeKvArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            group_id=group_id,
+            namespace_name=namespace_name,
+            network=network,
+            retention_in_seconds=retention_in_seconds,
+            geo_location=geo_location,
+            initial_datas=initial_datas,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             group_id: Optional[pulumi.Input[int]] = None,
+             namespace_name: Optional[pulumi.Input[str]] = None,
+             network: Optional[pulumi.Input[str]] = None,
+             retention_in_seconds: Optional[pulumi.Input[int]] = None,
+             geo_location: Optional[pulumi.Input[str]] = None,
+             initial_datas: Optional[pulumi.Input[Sequence[pulumi.Input['EdgeKvInitialDataArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if group_id is None and 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if group_id is None:
+            raise TypeError("Missing 'group_id' argument")
+        if namespace_name is None and 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+        if namespace_name is None:
+            raise TypeError("Missing 'namespace_name' argument")
+        if network is None:
+            raise TypeError("Missing 'network' argument")
+        if retention_in_seconds is None and 'retentionInSeconds' in kwargs:
+            retention_in_seconds = kwargs['retentionInSeconds']
+        if retention_in_seconds is None:
+            raise TypeError("Missing 'retention_in_seconds' argument")
+        if geo_location is None and 'geoLocation' in kwargs:
+            geo_location = kwargs['geoLocation']
+        if initial_datas is None and 'initialDatas' in kwargs:
+            initial_datas = kwargs['initialDatas']
+
+        _setter("group_id", group_id)
+        _setter("namespace_name", namespace_name)
+        _setter("network", network)
+        _setter("retention_in_seconds", retention_in_seconds)
         if geo_location is not None:
-            pulumi.set(__self__, "geo_location", geo_location)
+            _setter("geo_location", geo_location)
         if initial_datas is not None:
             warnings.warn("""The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.""", DeprecationWarning)
             pulumi.log.warn("""initial_datas is deprecated: The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.""")
         if initial_datas is not None:
-            pulumi.set(__self__, "initial_datas", initial_datas)
+            _setter("initial_datas", initial_datas)
 
     @property
     @pulumi.getter(name="groupId")
@@ -137,21 +176,52 @@ class _EdgeKvState:
         :param pulumi.Input[str] network: The network on which the namespace will be activated
         :param pulumi.Input[int] retention_in_seconds: Retention period for data in this namespace. An update of this value will just affect new EKV items.
         """
+        _EdgeKvState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            geo_location=geo_location,
+            group_id=group_id,
+            initial_datas=initial_datas,
+            namespace_name=namespace_name,
+            network=network,
+            retention_in_seconds=retention_in_seconds,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             geo_location: Optional[pulumi.Input[str]] = None,
+             group_id: Optional[pulumi.Input[int]] = None,
+             initial_datas: Optional[pulumi.Input[Sequence[pulumi.Input['EdgeKvInitialDataArgs']]]] = None,
+             namespace_name: Optional[pulumi.Input[str]] = None,
+             network: Optional[pulumi.Input[str]] = None,
+             retention_in_seconds: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if geo_location is None and 'geoLocation' in kwargs:
+            geo_location = kwargs['geoLocation']
+        if group_id is None and 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if initial_datas is None and 'initialDatas' in kwargs:
+            initial_datas = kwargs['initialDatas']
+        if namespace_name is None and 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+        if retention_in_seconds is None and 'retentionInSeconds' in kwargs:
+            retention_in_seconds = kwargs['retentionInSeconds']
+
         if geo_location is not None:
-            pulumi.set(__self__, "geo_location", geo_location)
+            _setter("geo_location", geo_location)
         if group_id is not None:
-            pulumi.set(__self__, "group_id", group_id)
+            _setter("group_id", group_id)
         if initial_datas is not None:
             warnings.warn("""The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.""", DeprecationWarning)
             pulumi.log.warn("""initial_datas is deprecated: The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.""")
         if initial_datas is not None:
-            pulumi.set(__self__, "initial_datas", initial_datas)
+            _setter("initial_datas", initial_datas)
         if namespace_name is not None:
-            pulumi.set(__self__, "namespace_name", namespace_name)
+            _setter("namespace_name", namespace_name)
         if network is not None:
-            pulumi.set(__self__, "network", network)
+            _setter("network", network)
         if retention_in_seconds is not None:
-            pulumi.set(__self__, "retention_in_seconds", retention_in_seconds)
+            _setter("retention_in_seconds", retention_in_seconds)
 
     @property
     @pulumi.getter(name="geoLocation")
@@ -270,6 +340,10 @@ class EdgeKv(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            EdgeKvArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

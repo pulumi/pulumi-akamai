@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecByPassNetworkListArgs', 'AppSecByPassNetworkList']
@@ -23,9 +23,36 @@ class AppSecByPassNetworkListArgs:
         :param pulumi.Input[int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[str] security_policy_id: The unique identifier of the security policy governing the bypass network lists
         """
-        pulumi.set(__self__, "bypass_network_lists", bypass_network_lists)
-        pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "security_policy_id", security_policy_id)
+        AppSecByPassNetworkListArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bypass_network_lists=bypass_network_lists,
+            config_id=config_id,
+            security_policy_id=security_policy_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bypass_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bypass_network_lists is None and 'bypassNetworkLists' in kwargs:
+            bypass_network_lists = kwargs['bypassNetworkLists']
+        if bypass_network_lists is None:
+            raise TypeError("Missing 'bypass_network_lists' argument")
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+        if security_policy_id is None:
+            raise TypeError("Missing 'security_policy_id' argument")
+
+        _setter("bypass_network_lists", bypass_network_lists)
+        _setter("config_id", config_id)
+        _setter("security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="bypassNetworkLists")
@@ -76,12 +103,33 @@ class _AppSecByPassNetworkListState:
         :param pulumi.Input[int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[str] security_policy_id: The unique identifier of the security policy governing the bypass network lists
         """
+        _AppSecByPassNetworkListState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bypass_network_lists=bypass_network_lists,
+            config_id=config_id,
+            security_policy_id=security_policy_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bypass_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bypass_network_lists is None and 'bypassNetworkLists' in kwargs:
+            bypass_network_lists = kwargs['bypassNetworkLists']
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         if bypass_network_lists is not None:
-            pulumi.set(__self__, "bypass_network_lists", bypass_network_lists)
+            _setter("bypass_network_lists", bypass_network_lists)
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
         if security_policy_id is not None:
-            pulumi.set(__self__, "security_policy_id", security_policy_id)
+            _setter("security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="bypassNetworkLists")
@@ -155,6 +203,10 @@ class AppSecByPassNetworkList(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AppSecByPassNetworkListArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

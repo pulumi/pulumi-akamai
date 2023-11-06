@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['EdgekvGroupItemsArgs', 'EdgekvGroupItems']
@@ -25,10 +25,39 @@ class EdgekvGroupItemsArgs:
         :param pulumi.Input[str] namespace_name: The name for the EdgeKV namespace.
         :param pulumi.Input[str] network: The network against which to execute the API request.
         """
-        pulumi.set(__self__, "group_name", group_name)
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "namespace_name", namespace_name)
-        pulumi.set(__self__, "network", network)
+        EdgekvGroupItemsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            group_name=group_name,
+            items=items,
+            namespace_name=namespace_name,
+            network=network,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             group_name: Optional[pulumi.Input[str]] = None,
+             items: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+             namespace_name: Optional[pulumi.Input[str]] = None,
+             network: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if group_name is None and 'groupName' in kwargs:
+            group_name = kwargs['groupName']
+        if group_name is None:
+            raise TypeError("Missing 'group_name' argument")
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if namespace_name is None and 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+        if namespace_name is None:
+            raise TypeError("Missing 'namespace_name' argument")
+        if network is None:
+            raise TypeError("Missing 'network' argument")
+
+        _setter("group_name", group_name)
+        _setter("items", items)
+        _setter("namespace_name", namespace_name)
+        _setter("network", network)
 
     @property
     @pulumi.getter(name="groupName")
@@ -93,14 +122,35 @@ class _EdgekvGroupItemsState:
         :param pulumi.Input[str] namespace_name: The name for the EdgeKV namespace.
         :param pulumi.Input[str] network: The network against which to execute the API request.
         """
+        _EdgekvGroupItemsState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            group_name=group_name,
+            items=items,
+            namespace_name=namespace_name,
+            network=network,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             group_name: Optional[pulumi.Input[str]] = None,
+             items: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+             namespace_name: Optional[pulumi.Input[str]] = None,
+             network: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if group_name is None and 'groupName' in kwargs:
+            group_name = kwargs['groupName']
+        if namespace_name is None and 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+
         if group_name is not None:
-            pulumi.set(__self__, "group_name", group_name)
+            _setter("group_name", group_name)
         if items is not None:
-            pulumi.set(__self__, "items", items)
+            _setter("items", items)
         if namespace_name is not None:
-            pulumi.set(__self__, "namespace_name", namespace_name)
+            _setter("namespace_name", namespace_name)
         if network is not None:
-            pulumi.set(__self__, "network", network)
+            _setter("network", network)
 
     @property
     @pulumi.getter(name="groupName")
@@ -188,6 +238,10 @@ class EdgekvGroupItems(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            EdgekvGroupItemsArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

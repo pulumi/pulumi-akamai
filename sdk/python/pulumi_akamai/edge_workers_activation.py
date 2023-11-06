@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['EdgeWorkersActivationArgs', 'EdgeWorkersActivation']
@@ -23,9 +23,32 @@ class EdgeWorkersActivationArgs:
         :param pulumi.Input[str] network: The network on which the version will be activated
         :param pulumi.Input[str] version: The version of EdgeWorker to activate
         """
-        pulumi.set(__self__, "edgeworker_id", edgeworker_id)
-        pulumi.set(__self__, "network", network)
-        pulumi.set(__self__, "version", version)
+        EdgeWorkersActivationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            edgeworker_id=edgeworker_id,
+            network=network,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             edgeworker_id: Optional[pulumi.Input[int]] = None,
+             network: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if edgeworker_id is None and 'edgeworkerId' in kwargs:
+            edgeworker_id = kwargs['edgeworkerId']
+        if edgeworker_id is None:
+            raise TypeError("Missing 'edgeworker_id' argument")
+        if network is None:
+            raise TypeError("Missing 'network' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
+
+        _setter("edgeworker_id", edgeworker_id)
+        _setter("network", network)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="edgeworkerId")
@@ -78,14 +101,35 @@ class _EdgeWorkersActivationState:
         :param pulumi.Input[str] network: The network on which the version will be activated
         :param pulumi.Input[str] version: The version of EdgeWorker to activate
         """
+        _EdgeWorkersActivationState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            activation_id=activation_id,
+            edgeworker_id=edgeworker_id,
+            network=network,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             activation_id: Optional[pulumi.Input[int]] = None,
+             edgeworker_id: Optional[pulumi.Input[int]] = None,
+             network: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if activation_id is None and 'activationId' in kwargs:
+            activation_id = kwargs['activationId']
+        if edgeworker_id is None and 'edgeworkerId' in kwargs:
+            edgeworker_id = kwargs['edgeworkerId']
+
         if activation_id is not None:
-            pulumi.set(__self__, "activation_id", activation_id)
+            _setter("activation_id", activation_id)
         if edgeworker_id is not None:
-            pulumi.set(__self__, "edgeworker_id", edgeworker_id)
+            _setter("edgeworker_id", edgeworker_id)
         if network is not None:
-            pulumi.set(__self__, "network", network)
+            _setter("network", network)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
 
     @property
     @pulumi.getter(name="activationId")
@@ -171,6 +215,10 @@ class EdgeWorkersActivation(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            EdgeWorkersActivationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['BotmanChallengeActionArgs', 'BotmanChallengeAction']
@@ -19,8 +19,29 @@ class BotmanChallengeActionArgs:
         """
         The set of arguments for constructing a BotmanChallengeAction resource.
         """
-        pulumi.set(__self__, "challenge_action", challenge_action)
-        pulumi.set(__self__, "config_id", config_id)
+        BotmanChallengeActionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            challenge_action=challenge_action,
+            config_id=config_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             challenge_action: Optional[pulumi.Input[str]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if challenge_action is None and 'challengeAction' in kwargs:
+            challenge_action = kwargs['challengeAction']
+        if challenge_action is None:
+            raise TypeError("Missing 'challenge_action' argument")
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+
+        _setter("challenge_action", challenge_action)
+        _setter("config_id", config_id)
 
     @property
     @pulumi.getter(name="challengeAction")
@@ -50,12 +71,33 @@ class _BotmanChallengeActionState:
         """
         Input properties used for looking up and filtering BotmanChallengeAction resources.
         """
+        _BotmanChallengeActionState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_id=action_id,
+            challenge_action=challenge_action,
+            config_id=config_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_id: Optional[pulumi.Input[str]] = None,
+             challenge_action: Optional[pulumi.Input[str]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if action_id is None and 'actionId' in kwargs:
+            action_id = kwargs['actionId']
+        if challenge_action is None and 'challengeAction' in kwargs:
+            challenge_action = kwargs['challengeAction']
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+
         if action_id is not None:
-            pulumi.set(__self__, "action_id", action_id)
+            _setter("action_id", action_id)
         if challenge_action is not None:
-            pulumi.set(__self__, "challenge_action", challenge_action)
+            _setter("challenge_action", challenge_action)
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
 
     @property
     @pulumi.getter(name="actionId")
@@ -116,6 +158,10 @@ class BotmanChallengeAction(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            BotmanChallengeActionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

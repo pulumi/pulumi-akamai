@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecEvalArgs', 'AppSecEval']
@@ -25,11 +25,42 @@ class AppSecEvalArgs:
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         :param pulumi.Input[str] eval_mode: Evaluation mode (ASE_AUTO or ASE_MANUAL)
         """
-        pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "eval_operation", eval_operation)
-        pulumi.set(__self__, "security_policy_id", security_policy_id)
+        AppSecEvalArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            eval_operation=eval_operation,
+            security_policy_id=security_policy_id,
+            eval_mode=eval_mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             eval_operation: Optional[pulumi.Input[str]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             eval_mode: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if eval_operation is None and 'evalOperation' in kwargs:
+            eval_operation = kwargs['evalOperation']
+        if eval_operation is None:
+            raise TypeError("Missing 'eval_operation' argument")
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+        if security_policy_id is None:
+            raise TypeError("Missing 'security_policy_id' argument")
+        if eval_mode is None and 'evalMode' in kwargs:
+            eval_mode = kwargs['evalMode']
+
+        _setter("config_id", config_id)
+        _setter("eval_operation", eval_operation)
+        _setter("security_policy_id", security_policy_id)
         if eval_mode is not None:
-            pulumi.set(__self__, "eval_mode", eval_mode)
+            _setter("eval_mode", eval_mode)
 
     @property
     @pulumi.getter(name="configId")
@@ -102,22 +133,63 @@ class _AppSecEvalState:
         :param pulumi.Input[str] expiration_date: Date when the evaluation period ends
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
+        _AppSecEvalState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            current_ruleset=current_ruleset,
+            eval_mode=eval_mode,
+            eval_operation=eval_operation,
+            eval_status=eval_status,
+            evaluating_ruleset=evaluating_ruleset,
+            expiration_date=expiration_date,
+            security_policy_id=security_policy_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             current_ruleset: Optional[pulumi.Input[str]] = None,
+             eval_mode: Optional[pulumi.Input[str]] = None,
+             eval_operation: Optional[pulumi.Input[str]] = None,
+             eval_status: Optional[pulumi.Input[str]] = None,
+             evaluating_ruleset: Optional[pulumi.Input[str]] = None,
+             expiration_date: Optional[pulumi.Input[str]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if current_ruleset is None and 'currentRuleset' in kwargs:
+            current_ruleset = kwargs['currentRuleset']
+        if eval_mode is None and 'evalMode' in kwargs:
+            eval_mode = kwargs['evalMode']
+        if eval_operation is None and 'evalOperation' in kwargs:
+            eval_operation = kwargs['evalOperation']
+        if eval_status is None and 'evalStatus' in kwargs:
+            eval_status = kwargs['evalStatus']
+        if evaluating_ruleset is None and 'evaluatingRuleset' in kwargs:
+            evaluating_ruleset = kwargs['evaluatingRuleset']
+        if expiration_date is None and 'expirationDate' in kwargs:
+            expiration_date = kwargs['expirationDate']
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
         if current_ruleset is not None:
-            pulumi.set(__self__, "current_ruleset", current_ruleset)
+            _setter("current_ruleset", current_ruleset)
         if eval_mode is not None:
-            pulumi.set(__self__, "eval_mode", eval_mode)
+            _setter("eval_mode", eval_mode)
         if eval_operation is not None:
-            pulumi.set(__self__, "eval_operation", eval_operation)
+            _setter("eval_operation", eval_operation)
         if eval_status is not None:
-            pulumi.set(__self__, "eval_status", eval_status)
+            _setter("eval_status", eval_status)
         if evaluating_ruleset is not None:
-            pulumi.set(__self__, "evaluating_ruleset", evaluating_ruleset)
+            _setter("evaluating_ruleset", evaluating_ruleset)
         if expiration_date is not None:
-            pulumi.set(__self__, "expiration_date", expiration_date)
+            _setter("expiration_date", expiration_date)
         if security_policy_id is not None:
-            pulumi.set(__self__, "security_policy_id", security_policy_id)
+            _setter("security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="configId")
@@ -253,6 +325,10 @@ class AppSecEval(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AppSecEvalArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

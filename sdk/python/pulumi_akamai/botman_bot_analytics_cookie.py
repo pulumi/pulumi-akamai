@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['BotmanBotAnalyticsCookieArgs', 'BotmanBotAnalyticsCookie']
@@ -19,8 +19,29 @@ class BotmanBotAnalyticsCookieArgs:
         """
         The set of arguments for constructing a BotmanBotAnalyticsCookie resource.
         """
-        pulumi.set(__self__, "bot_analytics_cookie", bot_analytics_cookie)
-        pulumi.set(__self__, "config_id", config_id)
+        BotmanBotAnalyticsCookieArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bot_analytics_cookie=bot_analytics_cookie,
+            config_id=config_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bot_analytics_cookie: Optional[pulumi.Input[str]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bot_analytics_cookie is None and 'botAnalyticsCookie' in kwargs:
+            bot_analytics_cookie = kwargs['botAnalyticsCookie']
+        if bot_analytics_cookie is None:
+            raise TypeError("Missing 'bot_analytics_cookie' argument")
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+
+        _setter("bot_analytics_cookie", bot_analytics_cookie)
+        _setter("config_id", config_id)
 
     @property
     @pulumi.getter(name="botAnalyticsCookie")
@@ -49,10 +70,27 @@ class _BotmanBotAnalyticsCookieState:
         """
         Input properties used for looking up and filtering BotmanBotAnalyticsCookie resources.
         """
+        _BotmanBotAnalyticsCookieState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bot_analytics_cookie=bot_analytics_cookie,
+            config_id=config_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bot_analytics_cookie: Optional[pulumi.Input[str]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bot_analytics_cookie is None and 'botAnalyticsCookie' in kwargs:
+            bot_analytics_cookie = kwargs['botAnalyticsCookie']
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+
         if bot_analytics_cookie is not None:
-            pulumi.set(__self__, "bot_analytics_cookie", bot_analytics_cookie)
+            _setter("bot_analytics_cookie", bot_analytics_cookie)
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
 
     @property
     @pulumi.getter(name="botAnalyticsCookie")
@@ -104,6 +142,10 @@ class BotmanBotAnalyticsCookie(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            BotmanBotAnalyticsCookieArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

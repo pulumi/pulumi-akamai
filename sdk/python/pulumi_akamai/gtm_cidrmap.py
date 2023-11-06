@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -24,14 +24,41 @@ class GtmCidrmapArgs:
         """
         The set of arguments for constructing a GtmCidrmap resource.
         """
-        pulumi.set(__self__, "default_datacenter", default_datacenter)
-        pulumi.set(__self__, "domain", domain)
+        GtmCidrmapArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_datacenter=default_datacenter,
+            domain=domain,
+            assignments=assignments,
+            name=name,
+            wait_on_complete=wait_on_complete,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_datacenter: Optional[pulumi.Input['GtmCidrmapDefaultDatacenterArgs']] = None,
+             domain: Optional[pulumi.Input[str]] = None,
+             assignments: Optional[pulumi.Input[Sequence[pulumi.Input['GtmCidrmapAssignmentArgs']]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             wait_on_complete: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if default_datacenter is None and 'defaultDatacenter' in kwargs:
+            default_datacenter = kwargs['defaultDatacenter']
+        if default_datacenter is None:
+            raise TypeError("Missing 'default_datacenter' argument")
+        if domain is None:
+            raise TypeError("Missing 'domain' argument")
+        if wait_on_complete is None and 'waitOnComplete' in kwargs:
+            wait_on_complete = kwargs['waitOnComplete']
+
+        _setter("default_datacenter", default_datacenter)
+        _setter("domain", domain)
         if assignments is not None:
-            pulumi.set(__self__, "assignments", assignments)
+            _setter("assignments", assignments)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if wait_on_complete is not None:
-            pulumi.set(__self__, "wait_on_complete", wait_on_complete)
+            _setter("wait_on_complete", wait_on_complete)
 
     @property
     @pulumi.getter(name="defaultDatacenter")
@@ -90,16 +117,39 @@ class _GtmCidrmapState:
         """
         Input properties used for looking up and filtering GtmCidrmap resources.
         """
+        _GtmCidrmapState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            assignments=assignments,
+            default_datacenter=default_datacenter,
+            domain=domain,
+            name=name,
+            wait_on_complete=wait_on_complete,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             assignments: Optional[pulumi.Input[Sequence[pulumi.Input['GtmCidrmapAssignmentArgs']]]] = None,
+             default_datacenter: Optional[pulumi.Input['GtmCidrmapDefaultDatacenterArgs']] = None,
+             domain: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             wait_on_complete: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if default_datacenter is None and 'defaultDatacenter' in kwargs:
+            default_datacenter = kwargs['defaultDatacenter']
+        if wait_on_complete is None and 'waitOnComplete' in kwargs:
+            wait_on_complete = kwargs['waitOnComplete']
+
         if assignments is not None:
-            pulumi.set(__self__, "assignments", assignments)
+            _setter("assignments", assignments)
         if default_datacenter is not None:
-            pulumi.set(__self__, "default_datacenter", default_datacenter)
+            _setter("default_datacenter", default_datacenter)
         if domain is not None:
-            pulumi.set(__self__, "domain", domain)
+            _setter("domain", domain)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if wait_on_complete is not None:
-            pulumi.set(__self__, "wait_on_complete", wait_on_complete)
+            _setter("wait_on_complete", wait_on_complete)
 
     @property
     @pulumi.getter
@@ -181,6 +231,10 @@ class GtmCidrmap(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            GtmCidrmapArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -201,6 +255,11 @@ class GtmCidrmap(pulumi.CustomResource):
             __props__ = GtmCidrmapArgs.__new__(GtmCidrmapArgs)
 
             __props__.__dict__["assignments"] = assignments
+            if default_datacenter is not None and not isinstance(default_datacenter, GtmCidrmapDefaultDatacenterArgs):
+                default_datacenter = default_datacenter or {}
+                def _setter(key, value):
+                    default_datacenter[key] = value
+                GtmCidrmapDefaultDatacenterArgs._configure(_setter, **default_datacenter)
             if default_datacenter is None and not opts.urn:
                 raise TypeError("Missing required property 'default_datacenter'")
             __props__.__dict__["default_datacenter"] = default_datacenter

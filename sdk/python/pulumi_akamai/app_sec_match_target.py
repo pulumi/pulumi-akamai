@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecMatchTargetArgs', 'AppSecMatchTarget']
@@ -21,8 +21,29 @@ class AppSecMatchTargetArgs:
         :param pulumi.Input[int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[str] match_target: JSON-formatted definition of the match target
         """
-        pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "match_target", match_target)
+        AppSecMatchTargetArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            match_target=match_target,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             match_target: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if config_id is None:
+            raise TypeError("Missing 'config_id' argument")
+        if match_target is None and 'matchTarget' in kwargs:
+            match_target = kwargs['matchTarget']
+        if match_target is None:
+            raise TypeError("Missing 'match_target' argument")
+
+        _setter("config_id", config_id)
+        _setter("match_target", match_target)
 
     @property
     @pulumi.getter(name="configId")
@@ -61,12 +82,33 @@ class _AppSecMatchTargetState:
         :param pulumi.Input[str] match_target: JSON-formatted definition of the match target
         :param pulumi.Input[int] match_target_id: Unique identifier of the match target
         """
+        _AppSecMatchTargetState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            match_target=match_target,
+            match_target_id=match_target_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             match_target: Optional[pulumi.Input[str]] = None,
+             match_target_id: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if config_id is None and 'configId' in kwargs:
+            config_id = kwargs['configId']
+        if match_target is None and 'matchTarget' in kwargs:
+            match_target = kwargs['matchTarget']
+        if match_target_id is None and 'matchTargetId' in kwargs:
+            match_target_id = kwargs['matchTargetId']
+
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
         if match_target is not None:
-            pulumi.set(__self__, "match_target", match_target)
+            _setter("match_target", match_target)
         if match_target_id is not None:
-            pulumi.set(__self__, "match_target_id", match_target_id)
+            _setter("match_target_id", match_target_id)
 
     @property
     @pulumi.getter(name="configId")
@@ -138,6 +180,10 @@ class AppSecMatchTarget(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AppSecMatchTargetArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

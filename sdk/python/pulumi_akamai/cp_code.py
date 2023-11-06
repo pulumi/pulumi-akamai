@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['CpCodeArgs', 'CpCode']
@@ -21,12 +21,39 @@ class CpCodeArgs:
         """
         The set of arguments for constructing a CpCode resource.
         """
-        pulumi.set(__self__, "contract_id", contract_id)
-        pulumi.set(__self__, "group_id", group_id)
+        CpCodeArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            contract_id=contract_id,
+            group_id=group_id,
+            name=name,
+            product_id=product_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             contract_id: Optional[pulumi.Input[str]] = None,
+             group_id: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             product_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if contract_id is None and 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if contract_id is None:
+            raise TypeError("Missing 'contract_id' argument")
+        if group_id is None and 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if group_id is None:
+            raise TypeError("Missing 'group_id' argument")
+        if product_id is None and 'productId' in kwargs:
+            product_id = kwargs['productId']
+
+        _setter("contract_id", contract_id)
+        _setter("group_id", group_id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if product_id is not None:
-            pulumi.set(__self__, "product_id", product_id)
+            _setter("product_id", product_id)
 
     @property
     @pulumi.getter(name="contractId")
@@ -75,14 +102,37 @@ class _CpCodeState:
         """
         Input properties used for looking up and filtering CpCode resources.
         """
+        _CpCodeState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            contract_id=contract_id,
+            group_id=group_id,
+            name=name,
+            product_id=product_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             contract_id: Optional[pulumi.Input[str]] = None,
+             group_id: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             product_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if contract_id is None and 'contractId' in kwargs:
+            contract_id = kwargs['contractId']
+        if group_id is None and 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if product_id is None and 'productId' in kwargs:
+            product_id = kwargs['productId']
+
         if contract_id is not None:
-            pulumi.set(__self__, "contract_id", contract_id)
+            _setter("contract_id", contract_id)
         if group_id is not None:
-            pulumi.set(__self__, "group_id", group_id)
+            _setter("group_id", group_id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if product_id is not None:
-            pulumi.set(__self__, "product_id", product_id)
+            _setter("product_id", product_id)
 
     @property
     @pulumi.getter(name="contractId")
@@ -154,6 +204,10 @@ class CpCode(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            CpCodeArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

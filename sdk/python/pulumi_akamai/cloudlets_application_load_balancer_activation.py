@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['CloudletsApplicationLoadBalancerActivationArgs', 'CloudletsApplicationLoadBalancerActivation']
@@ -23,9 +23,32 @@ class CloudletsApplicationLoadBalancerActivationArgs:
         :param pulumi.Input[str] origin_id: The conditional origin’s unique identifier
         :param pulumi.Input[int] version: Cloudlets application load balancer version you want to activate
         """
-        pulumi.set(__self__, "network", network)
-        pulumi.set(__self__, "origin_id", origin_id)
-        pulumi.set(__self__, "version", version)
+        CloudletsApplicationLoadBalancerActivationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            network=network,
+            origin_id=origin_id,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             network: Optional[pulumi.Input[str]] = None,
+             origin_id: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if network is None:
+            raise TypeError("Missing 'network' argument")
+        if origin_id is None and 'originId' in kwargs:
+            origin_id = kwargs['originId']
+        if origin_id is None:
+            raise TypeError("Missing 'origin_id' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
+
+        _setter("network", network)
+        _setter("origin_id", origin_id)
+        _setter("version", version)
 
     @property
     @pulumi.getter
@@ -78,14 +101,33 @@ class _CloudletsApplicationLoadBalancerActivationState:
         :param pulumi.Input[str] status: Activation status for this application load balancer
         :param pulumi.Input[int] version: Cloudlets application load balancer version you want to activate
         """
+        _CloudletsApplicationLoadBalancerActivationState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            network=network,
+            origin_id=origin_id,
+            status=status,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             network: Optional[pulumi.Input[str]] = None,
+             origin_id: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if origin_id is None and 'originId' in kwargs:
+            origin_id = kwargs['originId']
+
         if network is not None:
-            pulumi.set(__self__, "network", network)
+            _setter("network", network)
         if origin_id is not None:
-            pulumi.set(__self__, "origin_id", origin_id)
+            _setter("origin_id", origin_id)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
 
     @property
     @pulumi.getter
@@ -171,6 +213,10 @@ class CloudletsApplicationLoadBalancerActivation(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            CloudletsApplicationLoadBalancerActivationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

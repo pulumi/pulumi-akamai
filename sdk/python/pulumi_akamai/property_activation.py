@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -31,21 +31,64 @@ class PropertyActivationArgs:
         :param pulumi.Input['PropertyActivationComplianceRecordArgs'] compliance_record: Provides an audit record when activating on a production network
         :param pulumi.Input[str] note: assigns a log message to the activation request
         """
-        pulumi.set(__self__, "contacts", contacts)
-        pulumi.set(__self__, "property_id", property_id)
-        pulumi.set(__self__, "version", version)
+        PropertyActivationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            contacts=contacts,
+            property_id=property_id,
+            version=version,
+            activation_id=activation_id,
+            auto_acknowledge_rule_warnings=auto_acknowledge_rule_warnings,
+            compliance_record=compliance_record,
+            network=network,
+            note=note,
+            rule_errors=rule_errors,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             property_id: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[int]] = None,
+             activation_id: Optional[pulumi.Input[str]] = None,
+             auto_acknowledge_rule_warnings: Optional[pulumi.Input[bool]] = None,
+             compliance_record: Optional[pulumi.Input['PropertyActivationComplianceRecordArgs']] = None,
+             network: Optional[pulumi.Input[str]] = None,
+             note: Optional[pulumi.Input[str]] = None,
+             rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleErrorArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if contacts is None:
+            raise TypeError("Missing 'contacts' argument")
+        if property_id is None and 'propertyId' in kwargs:
+            property_id = kwargs['propertyId']
+        if property_id is None:
+            raise TypeError("Missing 'property_id' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
+        if activation_id is None and 'activationId' in kwargs:
+            activation_id = kwargs['activationId']
+        if auto_acknowledge_rule_warnings is None and 'autoAcknowledgeRuleWarnings' in kwargs:
+            auto_acknowledge_rule_warnings = kwargs['autoAcknowledgeRuleWarnings']
+        if compliance_record is None and 'complianceRecord' in kwargs:
+            compliance_record = kwargs['complianceRecord']
+        if rule_errors is None and 'ruleErrors' in kwargs:
+            rule_errors = kwargs['ruleErrors']
+
+        _setter("contacts", contacts)
+        _setter("property_id", property_id)
+        _setter("version", version)
         if activation_id is not None:
-            pulumi.set(__self__, "activation_id", activation_id)
+            _setter("activation_id", activation_id)
         if auto_acknowledge_rule_warnings is not None:
-            pulumi.set(__self__, "auto_acknowledge_rule_warnings", auto_acknowledge_rule_warnings)
+            _setter("auto_acknowledge_rule_warnings", auto_acknowledge_rule_warnings)
         if compliance_record is not None:
-            pulumi.set(__self__, "compliance_record", compliance_record)
+            _setter("compliance_record", compliance_record)
         if network is not None:
-            pulumi.set(__self__, "network", network)
+            _setter("network", network)
         if note is not None:
-            pulumi.set(__self__, "note", note)
+            _setter("note", note)
         if rule_errors is not None:
-            pulumi.set(__self__, "rule_errors", rule_errors)
+            _setter("rule_errors", rule_errors)
 
     @property
     @pulumi.getter
@@ -159,30 +202,73 @@ class _PropertyActivationState:
         :param pulumi.Input['PropertyActivationComplianceRecordArgs'] compliance_record: Provides an audit record when activating on a production network
         :param pulumi.Input[str] note: assigns a log message to the activation request
         """
+        _PropertyActivationState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            activation_id=activation_id,
+            auto_acknowledge_rule_warnings=auto_acknowledge_rule_warnings,
+            compliance_record=compliance_record,
+            contacts=contacts,
+            errors=errors,
+            network=network,
+            note=note,
+            property_id=property_id,
+            rule_errors=rule_errors,
+            status=status,
+            version=version,
+            warnings=warnings,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             activation_id: Optional[pulumi.Input[str]] = None,
+             auto_acknowledge_rule_warnings: Optional[pulumi.Input[bool]] = None,
+             compliance_record: Optional[pulumi.Input['PropertyActivationComplianceRecordArgs']] = None,
+             contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             errors: Optional[pulumi.Input[str]] = None,
+             network: Optional[pulumi.Input[str]] = None,
+             note: Optional[pulumi.Input[str]] = None,
+             property_id: Optional[pulumi.Input[str]] = None,
+             rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleErrorArgs']]]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[int]] = None,
+             warnings: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if activation_id is None and 'activationId' in kwargs:
+            activation_id = kwargs['activationId']
+        if auto_acknowledge_rule_warnings is None and 'autoAcknowledgeRuleWarnings' in kwargs:
+            auto_acknowledge_rule_warnings = kwargs['autoAcknowledgeRuleWarnings']
+        if compliance_record is None and 'complianceRecord' in kwargs:
+            compliance_record = kwargs['complianceRecord']
+        if property_id is None and 'propertyId' in kwargs:
+            property_id = kwargs['propertyId']
+        if rule_errors is None and 'ruleErrors' in kwargs:
+            rule_errors = kwargs['ruleErrors']
+
         if activation_id is not None:
-            pulumi.set(__self__, "activation_id", activation_id)
+            _setter("activation_id", activation_id)
         if auto_acknowledge_rule_warnings is not None:
-            pulumi.set(__self__, "auto_acknowledge_rule_warnings", auto_acknowledge_rule_warnings)
+            _setter("auto_acknowledge_rule_warnings", auto_acknowledge_rule_warnings)
         if compliance_record is not None:
-            pulumi.set(__self__, "compliance_record", compliance_record)
+            _setter("compliance_record", compliance_record)
         if contacts is not None:
-            pulumi.set(__self__, "contacts", contacts)
+            _setter("contacts", contacts)
         if errors is not None:
-            pulumi.set(__self__, "errors", errors)
+            _setter("errors", errors)
         if network is not None:
-            pulumi.set(__self__, "network", network)
+            _setter("network", network)
         if note is not None:
-            pulumi.set(__self__, "note", note)
+            _setter("note", note)
         if property_id is not None:
-            pulumi.set(__self__, "property_id", property_id)
+            _setter("property_id", property_id)
         if rule_errors is not None:
-            pulumi.set(__self__, "rule_errors", rule_errors)
+            _setter("rule_errors", rule_errors)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
         if warnings is not None:
-            pulumi.set(__self__, "warnings", warnings)
+            _setter("warnings", warnings)
 
     @property
     @pulumi.getter(name="activationId")
@@ -343,6 +429,10 @@ class PropertyActivation(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            PropertyActivationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -368,6 +458,11 @@ class PropertyActivation(pulumi.CustomResource):
 
             __props__.__dict__["activation_id"] = activation_id
             __props__.__dict__["auto_acknowledge_rule_warnings"] = auto_acknowledge_rule_warnings
+            if compliance_record is not None and not isinstance(compliance_record, PropertyActivationComplianceRecordArgs):
+                compliance_record = compliance_record or {}
+                def _setter(key, value):
+                    compliance_record[key] = value
+                PropertyActivationComplianceRecordArgs._configure(_setter, **compliance_record)
             __props__.__dict__["compliance_record"] = compliance_record
             if contacts is None and not opts.urn:
                 raise TypeError("Missing required property 'contacts'")
