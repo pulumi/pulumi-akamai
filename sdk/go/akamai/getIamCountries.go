@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetIamCountries(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIamCountriesResult, error) {
@@ -53,12 +52,6 @@ func (o GetIamCountriesResultOutput) ToGetIamCountriesResultOutput() GetIamCount
 
 func (o GetIamCountriesResultOutput) ToGetIamCountriesResultOutputWithContext(ctx context.Context) GetIamCountriesResultOutput {
 	return o
-}
-
-func (o GetIamCountriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIamCountriesResult] {
-	return pulumix.Output[GetIamCountriesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIamCountriesResultOutput) Countries() pulumi.StringArrayOutput {

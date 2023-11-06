@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type BotmanBotDetectionAction struct {
@@ -119,12 +118,6 @@ func (i *BotmanBotDetectionAction) ToBotmanBotDetectionActionOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanBotDetectionActionOutput)
 }
 
-func (i *BotmanBotDetectionAction) ToOutput(ctx context.Context) pulumix.Output[*BotmanBotDetectionAction] {
-	return pulumix.Output[*BotmanBotDetectionAction]{
-		OutputState: i.ToBotmanBotDetectionActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BotmanBotDetectionActionArrayInput is an input type that accepts BotmanBotDetectionActionArray and BotmanBotDetectionActionArrayOutput values.
 // You can construct a concrete instance of `BotmanBotDetectionActionArrayInput` via:
 //
@@ -148,12 +141,6 @@ func (i BotmanBotDetectionActionArray) ToBotmanBotDetectionActionArrayOutput() B
 
 func (i BotmanBotDetectionActionArray) ToBotmanBotDetectionActionArrayOutputWithContext(ctx context.Context) BotmanBotDetectionActionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanBotDetectionActionArrayOutput)
-}
-
-func (i BotmanBotDetectionActionArray) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanBotDetectionAction] {
-	return pulumix.Output[[]*BotmanBotDetectionAction]{
-		OutputState: i.ToBotmanBotDetectionActionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BotmanBotDetectionActionMapInput is an input type that accepts BotmanBotDetectionActionMap and BotmanBotDetectionActionMapOutput values.
@@ -181,12 +168,6 @@ func (i BotmanBotDetectionActionMap) ToBotmanBotDetectionActionMapOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanBotDetectionActionMapOutput)
 }
 
-func (i BotmanBotDetectionActionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanBotDetectionAction] {
-	return pulumix.Output[map[string]*BotmanBotDetectionAction]{
-		OutputState: i.ToBotmanBotDetectionActionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BotmanBotDetectionActionOutput struct{ *pulumi.OutputState }
 
 func (BotmanBotDetectionActionOutput) ElementType() reflect.Type {
@@ -199,12 +180,6 @@ func (o BotmanBotDetectionActionOutput) ToBotmanBotDetectionActionOutput() Botma
 
 func (o BotmanBotDetectionActionOutput) ToBotmanBotDetectionActionOutputWithContext(ctx context.Context) BotmanBotDetectionActionOutput {
 	return o
-}
-
-func (o BotmanBotDetectionActionOutput) ToOutput(ctx context.Context) pulumix.Output[*BotmanBotDetectionAction] {
-	return pulumix.Output[*BotmanBotDetectionAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BotmanBotDetectionActionOutput) BotDetectionAction() pulumi.StringOutput {
@@ -237,12 +212,6 @@ func (o BotmanBotDetectionActionArrayOutput) ToBotmanBotDetectionActionArrayOutp
 	return o
 }
 
-func (o BotmanBotDetectionActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanBotDetectionAction] {
-	return pulumix.Output[[]*BotmanBotDetectionAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o BotmanBotDetectionActionArrayOutput) Index(i pulumi.IntInput) BotmanBotDetectionActionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BotmanBotDetectionAction {
 		return vs[0].([]*BotmanBotDetectionAction)[vs[1].(int)]
@@ -261,12 +230,6 @@ func (o BotmanBotDetectionActionMapOutput) ToBotmanBotDetectionActionMapOutput()
 
 func (o BotmanBotDetectionActionMapOutput) ToBotmanBotDetectionActionMapOutputWithContext(ctx context.Context) BotmanBotDetectionActionMapOutput {
 	return o
-}
-
-func (o BotmanBotDetectionActionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanBotDetectionAction] {
-	return pulumix.Output[map[string]*BotmanBotDetectionAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BotmanBotDetectionActionMapOutput) MapIndex(k pulumi.StringInput) BotmanBotDetectionActionOutput {

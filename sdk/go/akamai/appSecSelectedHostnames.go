@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppSecSelectedHostnames struct {
@@ -126,12 +125,6 @@ func (i *AppSecSelectedHostnames) ToAppSecSelectedHostnamesOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecSelectedHostnamesOutput)
 }
 
-func (i *AppSecSelectedHostnames) ToOutput(ctx context.Context) pulumix.Output[*AppSecSelectedHostnames] {
-	return pulumix.Output[*AppSecSelectedHostnames]{
-		OutputState: i.ToAppSecSelectedHostnamesOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AppSecSelectedHostnamesArrayInput is an input type that accepts AppSecSelectedHostnamesArray and AppSecSelectedHostnamesArrayOutput values.
 // You can construct a concrete instance of `AppSecSelectedHostnamesArrayInput` via:
 //
@@ -155,12 +148,6 @@ func (i AppSecSelectedHostnamesArray) ToAppSecSelectedHostnamesArrayOutput() App
 
 func (i AppSecSelectedHostnamesArray) ToAppSecSelectedHostnamesArrayOutputWithContext(ctx context.Context) AppSecSelectedHostnamesArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecSelectedHostnamesArrayOutput)
-}
-
-func (i AppSecSelectedHostnamesArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecSelectedHostnames] {
-	return pulumix.Output[[]*AppSecSelectedHostnames]{
-		OutputState: i.ToAppSecSelectedHostnamesArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AppSecSelectedHostnamesMapInput is an input type that accepts AppSecSelectedHostnamesMap and AppSecSelectedHostnamesMapOutput values.
@@ -188,12 +175,6 @@ func (i AppSecSelectedHostnamesMap) ToAppSecSelectedHostnamesMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecSelectedHostnamesMapOutput)
 }
 
-func (i AppSecSelectedHostnamesMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecSelectedHostnames] {
-	return pulumix.Output[map[string]*AppSecSelectedHostnames]{
-		OutputState: i.ToAppSecSelectedHostnamesMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AppSecSelectedHostnamesOutput struct{ *pulumi.OutputState }
 
 func (AppSecSelectedHostnamesOutput) ElementType() reflect.Type {
@@ -206,12 +187,6 @@ func (o AppSecSelectedHostnamesOutput) ToAppSecSelectedHostnamesOutput() AppSecS
 
 func (o AppSecSelectedHostnamesOutput) ToAppSecSelectedHostnamesOutputWithContext(ctx context.Context) AppSecSelectedHostnamesOutput {
 	return o
-}
-
-func (o AppSecSelectedHostnamesOutput) ToOutput(ctx context.Context) pulumix.Output[*AppSecSelectedHostnames] {
-	return pulumix.Output[*AppSecSelectedHostnames]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique identifier of the security configuration
@@ -243,12 +218,6 @@ func (o AppSecSelectedHostnamesArrayOutput) ToAppSecSelectedHostnamesArrayOutput
 	return o
 }
 
-func (o AppSecSelectedHostnamesArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecSelectedHostnames] {
-	return pulumix.Output[[]*AppSecSelectedHostnames]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AppSecSelectedHostnamesArrayOutput) Index(i pulumi.IntInput) AppSecSelectedHostnamesOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecSelectedHostnames {
 		return vs[0].([]*AppSecSelectedHostnames)[vs[1].(int)]
@@ -267,12 +236,6 @@ func (o AppSecSelectedHostnamesMapOutput) ToAppSecSelectedHostnamesMapOutput() A
 
 func (o AppSecSelectedHostnamesMapOutput) ToAppSecSelectedHostnamesMapOutputWithContext(ctx context.Context) AppSecSelectedHostnamesMapOutput {
 	return o
-}
-
-func (o AppSecSelectedHostnamesMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecSelectedHostnames] {
-	return pulumix.Output[map[string]*AppSecSelectedHostnames]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppSecSelectedHostnamesMapOutput) MapIndex(k pulumi.StringInput) AppSecSelectedHostnamesOutput {

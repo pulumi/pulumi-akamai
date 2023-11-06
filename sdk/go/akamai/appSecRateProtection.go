@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppSecRateProtection struct {
@@ -127,12 +126,6 @@ func (i *AppSecRateProtection) ToAppSecRateProtectionOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecRateProtectionOutput)
 }
 
-func (i *AppSecRateProtection) ToOutput(ctx context.Context) pulumix.Output[*AppSecRateProtection] {
-	return pulumix.Output[*AppSecRateProtection]{
-		OutputState: i.ToAppSecRateProtectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AppSecRateProtectionArrayInput is an input type that accepts AppSecRateProtectionArray and AppSecRateProtectionArrayOutput values.
 // You can construct a concrete instance of `AppSecRateProtectionArrayInput` via:
 //
@@ -156,12 +149,6 @@ func (i AppSecRateProtectionArray) ToAppSecRateProtectionArrayOutput() AppSecRat
 
 func (i AppSecRateProtectionArray) ToAppSecRateProtectionArrayOutputWithContext(ctx context.Context) AppSecRateProtectionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecRateProtectionArrayOutput)
-}
-
-func (i AppSecRateProtectionArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecRateProtection] {
-	return pulumix.Output[[]*AppSecRateProtection]{
-		OutputState: i.ToAppSecRateProtectionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AppSecRateProtectionMapInput is an input type that accepts AppSecRateProtectionMap and AppSecRateProtectionMapOutput values.
@@ -189,12 +176,6 @@ func (i AppSecRateProtectionMap) ToAppSecRateProtectionMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecRateProtectionMapOutput)
 }
 
-func (i AppSecRateProtectionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecRateProtection] {
-	return pulumix.Output[map[string]*AppSecRateProtection]{
-		OutputState: i.ToAppSecRateProtectionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AppSecRateProtectionOutput struct{ *pulumi.OutputState }
 
 func (AppSecRateProtectionOutput) ElementType() reflect.Type {
@@ -207,12 +188,6 @@ func (o AppSecRateProtectionOutput) ToAppSecRateProtectionOutput() AppSecRatePro
 
 func (o AppSecRateProtectionOutput) ToAppSecRateProtectionOutputWithContext(ctx context.Context) AppSecRateProtectionOutput {
 	return o
-}
-
-func (o AppSecRateProtectionOutput) ToOutput(ctx context.Context) pulumix.Output[*AppSecRateProtection] {
-	return pulumix.Output[*AppSecRateProtection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique identifier of the security configuration
@@ -248,12 +223,6 @@ func (o AppSecRateProtectionArrayOutput) ToAppSecRateProtectionArrayOutputWithCo
 	return o
 }
 
-func (o AppSecRateProtectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecRateProtection] {
-	return pulumix.Output[[]*AppSecRateProtection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AppSecRateProtectionArrayOutput) Index(i pulumi.IntInput) AppSecRateProtectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecRateProtection {
 		return vs[0].([]*AppSecRateProtection)[vs[1].(int)]
@@ -272,12 +241,6 @@ func (o AppSecRateProtectionMapOutput) ToAppSecRateProtectionMapOutput() AppSecR
 
 func (o AppSecRateProtectionMapOutput) ToAppSecRateProtectionMapOutputWithContext(ctx context.Context) AppSecRateProtectionMapOutput {
 	return o
-}
-
-func (o AppSecRateProtectionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecRateProtection] {
-	return pulumix.Output[map[string]*AppSecRateProtection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppSecRateProtectionMapOutput) MapIndex(k pulumi.StringInput) AppSecRateProtectionOutput {

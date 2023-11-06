@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetAppSecMatchTargets(ctx *pulumi.Context, args *GetAppSecMatchTargetsArgs, opts ...pulumi.InvokeOption) (*GetAppSecMatchTargetsResult, error) {
@@ -74,12 +73,6 @@ func (o GetAppSecMatchTargetsResultOutput) ToGetAppSecMatchTargetsResultOutput()
 
 func (o GetAppSecMatchTargetsResultOutput) ToGetAppSecMatchTargetsResultOutputWithContext(ctx context.Context) GetAppSecMatchTargetsResultOutput {
 	return o
-}
-
-func (o GetAppSecMatchTargetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppSecMatchTargetsResult] {
-	return pulumix.Output[GetAppSecMatchTargetsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAppSecMatchTargetsResultOutput) ConfigId() pulumi.IntOutput {

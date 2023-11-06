@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppsecAdvancedSettingsRequestBody struct {
@@ -123,12 +122,6 @@ func (i *AppsecAdvancedSettingsRequestBody) ToAppsecAdvancedSettingsRequestBodyO
 	return pulumi.ToOutputWithContext(ctx, i).(AppsecAdvancedSettingsRequestBodyOutput)
 }
 
-func (i *AppsecAdvancedSettingsRequestBody) ToOutput(ctx context.Context) pulumix.Output[*AppsecAdvancedSettingsRequestBody] {
-	return pulumix.Output[*AppsecAdvancedSettingsRequestBody]{
-		OutputState: i.ToAppsecAdvancedSettingsRequestBodyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AppsecAdvancedSettingsRequestBodyArrayInput is an input type that accepts AppsecAdvancedSettingsRequestBodyArray and AppsecAdvancedSettingsRequestBodyArrayOutput values.
 // You can construct a concrete instance of `AppsecAdvancedSettingsRequestBodyArrayInput` via:
 //
@@ -152,12 +145,6 @@ func (i AppsecAdvancedSettingsRequestBodyArray) ToAppsecAdvancedSettingsRequestB
 
 func (i AppsecAdvancedSettingsRequestBodyArray) ToAppsecAdvancedSettingsRequestBodyArrayOutputWithContext(ctx context.Context) AppsecAdvancedSettingsRequestBodyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppsecAdvancedSettingsRequestBodyArrayOutput)
-}
-
-func (i AppsecAdvancedSettingsRequestBodyArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppsecAdvancedSettingsRequestBody] {
-	return pulumix.Output[[]*AppsecAdvancedSettingsRequestBody]{
-		OutputState: i.ToAppsecAdvancedSettingsRequestBodyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AppsecAdvancedSettingsRequestBodyMapInput is an input type that accepts AppsecAdvancedSettingsRequestBodyMap and AppsecAdvancedSettingsRequestBodyMapOutput values.
@@ -185,12 +172,6 @@ func (i AppsecAdvancedSettingsRequestBodyMap) ToAppsecAdvancedSettingsRequestBod
 	return pulumi.ToOutputWithContext(ctx, i).(AppsecAdvancedSettingsRequestBodyMapOutput)
 }
 
-func (i AppsecAdvancedSettingsRequestBodyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppsecAdvancedSettingsRequestBody] {
-	return pulumix.Output[map[string]*AppsecAdvancedSettingsRequestBody]{
-		OutputState: i.ToAppsecAdvancedSettingsRequestBodyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AppsecAdvancedSettingsRequestBodyOutput struct{ *pulumi.OutputState }
 
 func (AppsecAdvancedSettingsRequestBodyOutput) ElementType() reflect.Type {
@@ -203,12 +184,6 @@ func (o AppsecAdvancedSettingsRequestBodyOutput) ToAppsecAdvancedSettingsRequest
 
 func (o AppsecAdvancedSettingsRequestBodyOutput) ToAppsecAdvancedSettingsRequestBodyOutputWithContext(ctx context.Context) AppsecAdvancedSettingsRequestBodyOutput {
 	return o
-}
-
-func (o AppsecAdvancedSettingsRequestBodyOutput) ToOutput(ctx context.Context) pulumix.Output[*AppsecAdvancedSettingsRequestBody] {
-	return pulumix.Output[*AppsecAdvancedSettingsRequestBody]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique identifier of the security configuration
@@ -240,12 +215,6 @@ func (o AppsecAdvancedSettingsRequestBodyArrayOutput) ToAppsecAdvancedSettingsRe
 	return o
 }
 
-func (o AppsecAdvancedSettingsRequestBodyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppsecAdvancedSettingsRequestBody] {
-	return pulumix.Output[[]*AppsecAdvancedSettingsRequestBody]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AppsecAdvancedSettingsRequestBodyArrayOutput) Index(i pulumi.IntInput) AppsecAdvancedSettingsRequestBodyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppsecAdvancedSettingsRequestBody {
 		return vs[0].([]*AppsecAdvancedSettingsRequestBody)[vs[1].(int)]
@@ -264,12 +233,6 @@ func (o AppsecAdvancedSettingsRequestBodyMapOutput) ToAppsecAdvancedSettingsRequ
 
 func (o AppsecAdvancedSettingsRequestBodyMapOutput) ToAppsecAdvancedSettingsRequestBodyMapOutputWithContext(ctx context.Context) AppsecAdvancedSettingsRequestBodyMapOutput {
 	return o
-}
-
-func (o AppsecAdvancedSettingsRequestBodyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppsecAdvancedSettingsRequestBody] {
-	return pulumix.Output[map[string]*AppsecAdvancedSettingsRequestBody]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppsecAdvancedSettingsRequestBodyMapOutput) MapIndex(k pulumi.StringInput) AppsecAdvancedSettingsRequestBodyOutput {

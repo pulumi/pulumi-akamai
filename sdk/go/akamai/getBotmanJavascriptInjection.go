@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupBotmanJavascriptInjection(ctx *pulumi.Context, args *LookupBotmanJavascriptInjectionArgs, opts ...pulumi.InvokeOption) (*LookupBotmanJavascriptInjectionResult, error) {
@@ -73,12 +72,6 @@ func (o LookupBotmanJavascriptInjectionResultOutput) ToLookupBotmanJavascriptInj
 
 func (o LookupBotmanJavascriptInjectionResultOutput) ToLookupBotmanJavascriptInjectionResultOutputWithContext(ctx context.Context) LookupBotmanJavascriptInjectionResultOutput {
 	return o
-}
-
-func (o LookupBotmanJavascriptInjectionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupBotmanJavascriptInjectionResult] {
-	return pulumix.Output[LookupBotmanJavascriptInjectionResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupBotmanJavascriptInjectionResultOutput) ConfigId() pulumi.IntOutput {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type GtmGeomap struct {
@@ -124,12 +123,6 @@ func (i *GtmGeomap) ToGtmGeomapOutputWithContext(ctx context.Context) GtmGeomapO
 	return pulumi.ToOutputWithContext(ctx, i).(GtmGeomapOutput)
 }
 
-func (i *GtmGeomap) ToOutput(ctx context.Context) pulumix.Output[*GtmGeomap] {
-	return pulumix.Output[*GtmGeomap]{
-		OutputState: i.ToGtmGeomapOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GtmGeomapArrayInput is an input type that accepts GtmGeomapArray and GtmGeomapArrayOutput values.
 // You can construct a concrete instance of `GtmGeomapArrayInput` via:
 //
@@ -153,12 +146,6 @@ func (i GtmGeomapArray) ToGtmGeomapArrayOutput() GtmGeomapArrayOutput {
 
 func (i GtmGeomapArray) ToGtmGeomapArrayOutputWithContext(ctx context.Context) GtmGeomapArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GtmGeomapArrayOutput)
-}
-
-func (i GtmGeomapArray) ToOutput(ctx context.Context) pulumix.Output[[]*GtmGeomap] {
-	return pulumix.Output[[]*GtmGeomap]{
-		OutputState: i.ToGtmGeomapArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GtmGeomapMapInput is an input type that accepts GtmGeomapMap and GtmGeomapMapOutput values.
@@ -186,12 +173,6 @@ func (i GtmGeomapMap) ToGtmGeomapMapOutputWithContext(ctx context.Context) GtmGe
 	return pulumi.ToOutputWithContext(ctx, i).(GtmGeomapMapOutput)
 }
 
-func (i GtmGeomapMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*GtmGeomap] {
-	return pulumix.Output[map[string]*GtmGeomap]{
-		OutputState: i.ToGtmGeomapMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GtmGeomapOutput struct{ *pulumi.OutputState }
 
 func (GtmGeomapOutput) ElementType() reflect.Type {
@@ -204,12 +185,6 @@ func (o GtmGeomapOutput) ToGtmGeomapOutput() GtmGeomapOutput {
 
 func (o GtmGeomapOutput) ToGtmGeomapOutputWithContext(ctx context.Context) GtmGeomapOutput {
 	return o
-}
-
-func (o GtmGeomapOutput) ToOutput(ctx context.Context) pulumix.Output[*GtmGeomap] {
-	return pulumix.Output[*GtmGeomap]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GtmGeomapOutput) Assignments() GtmGeomapAssignmentArrayOutput {
@@ -246,12 +221,6 @@ func (o GtmGeomapArrayOutput) ToGtmGeomapArrayOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o GtmGeomapArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*GtmGeomap] {
-	return pulumix.Output[[]*GtmGeomap]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GtmGeomapArrayOutput) Index(i pulumi.IntInput) GtmGeomapOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *GtmGeomap {
 		return vs[0].([]*GtmGeomap)[vs[1].(int)]
@@ -270,12 +239,6 @@ func (o GtmGeomapMapOutput) ToGtmGeomapMapOutput() GtmGeomapMapOutput {
 
 func (o GtmGeomapMapOutput) ToGtmGeomapMapOutputWithContext(ctx context.Context) GtmGeomapMapOutput {
 	return o
-}
-
-func (o GtmGeomapMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*GtmGeomap] {
-	return pulumix.Output[map[string]*GtmGeomap]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GtmGeomapMapOutput) MapIndex(k pulumi.StringInput) GtmGeomapOutput {

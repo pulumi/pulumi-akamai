@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type BotmanCustomBotCategory struct {
@@ -106,12 +105,6 @@ func (i *BotmanCustomBotCategory) ToBotmanCustomBotCategoryOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanCustomBotCategoryOutput)
 }
 
-func (i *BotmanCustomBotCategory) ToOutput(ctx context.Context) pulumix.Output[*BotmanCustomBotCategory] {
-	return pulumix.Output[*BotmanCustomBotCategory]{
-		OutputState: i.ToBotmanCustomBotCategoryOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BotmanCustomBotCategoryArrayInput is an input type that accepts BotmanCustomBotCategoryArray and BotmanCustomBotCategoryArrayOutput values.
 // You can construct a concrete instance of `BotmanCustomBotCategoryArrayInput` via:
 //
@@ -135,12 +128,6 @@ func (i BotmanCustomBotCategoryArray) ToBotmanCustomBotCategoryArrayOutput() Bot
 
 func (i BotmanCustomBotCategoryArray) ToBotmanCustomBotCategoryArrayOutputWithContext(ctx context.Context) BotmanCustomBotCategoryArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanCustomBotCategoryArrayOutput)
-}
-
-func (i BotmanCustomBotCategoryArray) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanCustomBotCategory] {
-	return pulumix.Output[[]*BotmanCustomBotCategory]{
-		OutputState: i.ToBotmanCustomBotCategoryArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BotmanCustomBotCategoryMapInput is an input type that accepts BotmanCustomBotCategoryMap and BotmanCustomBotCategoryMapOutput values.
@@ -168,12 +155,6 @@ func (i BotmanCustomBotCategoryMap) ToBotmanCustomBotCategoryMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanCustomBotCategoryMapOutput)
 }
 
-func (i BotmanCustomBotCategoryMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanCustomBotCategory] {
-	return pulumix.Output[map[string]*BotmanCustomBotCategory]{
-		OutputState: i.ToBotmanCustomBotCategoryMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BotmanCustomBotCategoryOutput struct{ *pulumi.OutputState }
 
 func (BotmanCustomBotCategoryOutput) ElementType() reflect.Type {
@@ -186,12 +167,6 @@ func (o BotmanCustomBotCategoryOutput) ToBotmanCustomBotCategoryOutput() BotmanC
 
 func (o BotmanCustomBotCategoryOutput) ToBotmanCustomBotCategoryOutputWithContext(ctx context.Context) BotmanCustomBotCategoryOutput {
 	return o
-}
-
-func (o BotmanCustomBotCategoryOutput) ToOutput(ctx context.Context) pulumix.Output[*BotmanCustomBotCategory] {
-	return pulumix.Output[*BotmanCustomBotCategory]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BotmanCustomBotCategoryOutput) CategoryId() pulumi.StringOutput {
@@ -220,12 +195,6 @@ func (o BotmanCustomBotCategoryArrayOutput) ToBotmanCustomBotCategoryArrayOutput
 	return o
 }
 
-func (o BotmanCustomBotCategoryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanCustomBotCategory] {
-	return pulumix.Output[[]*BotmanCustomBotCategory]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o BotmanCustomBotCategoryArrayOutput) Index(i pulumi.IntInput) BotmanCustomBotCategoryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BotmanCustomBotCategory {
 		return vs[0].([]*BotmanCustomBotCategory)[vs[1].(int)]
@@ -244,12 +213,6 @@ func (o BotmanCustomBotCategoryMapOutput) ToBotmanCustomBotCategoryMapOutput() B
 
 func (o BotmanCustomBotCategoryMapOutput) ToBotmanCustomBotCategoryMapOutputWithContext(ctx context.Context) BotmanCustomBotCategoryMapOutput {
 	return o
-}
-
-func (o BotmanCustomBotCategoryMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanCustomBotCategory] {
-	return pulumix.Output[map[string]*BotmanCustomBotCategory]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BotmanCustomBotCategoryMapOutput) MapIndex(k pulumi.StringInput) BotmanCustomBotCategoryOutput {

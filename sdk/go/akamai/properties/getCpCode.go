@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Deprecated: akamai.properties/getcpcode.getCpCode has been deprecated in favor of akamai.index/getcpcode.getCpCode
@@ -77,12 +76,6 @@ func (o GetCpCodeResultOutput) ToGetCpCodeResultOutput() GetCpCodeResultOutput {
 
 func (o GetCpCodeResultOutput) ToGetCpCodeResultOutputWithContext(ctx context.Context) GetCpCodeResultOutput {
 	return o
-}
-
-func (o GetCpCodeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCpCodeResult] {
-	return pulumix.Output[GetCpCodeResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCpCodeResultOutput) ContractId() pulumi.StringOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetAppSecEvalGroups(ctx *pulumi.Context, args *GetAppSecEvalGroupsArgs, opts ...pulumi.InvokeOption) (*GetAppSecEvalGroupsResult, error) {
@@ -79,12 +78,6 @@ func (o GetAppSecEvalGroupsResultOutput) ToGetAppSecEvalGroupsResultOutput() Get
 
 func (o GetAppSecEvalGroupsResultOutput) ToGetAppSecEvalGroupsResultOutputWithContext(ctx context.Context) GetAppSecEvalGroupsResultOutput {
 	return o
-}
-
-func (o GetAppSecEvalGroupsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppSecEvalGroupsResult] {
-	return pulumix.Output[GetAppSecEvalGroupsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAppSecEvalGroupsResultOutput) AttackGroup() pulumi.StringPtrOutput {

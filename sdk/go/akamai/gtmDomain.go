@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type GtmDomain struct {
@@ -228,12 +227,6 @@ func (i *GtmDomain) ToGtmDomainOutputWithContext(ctx context.Context) GtmDomainO
 	return pulumi.ToOutputWithContext(ctx, i).(GtmDomainOutput)
 }
 
-func (i *GtmDomain) ToOutput(ctx context.Context) pulumix.Output[*GtmDomain] {
-	return pulumix.Output[*GtmDomain]{
-		OutputState: i.ToGtmDomainOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GtmDomainArrayInput is an input type that accepts GtmDomainArray and GtmDomainArrayOutput values.
 // You can construct a concrete instance of `GtmDomainArrayInput` via:
 //
@@ -257,12 +250,6 @@ func (i GtmDomainArray) ToGtmDomainArrayOutput() GtmDomainArrayOutput {
 
 func (i GtmDomainArray) ToGtmDomainArrayOutputWithContext(ctx context.Context) GtmDomainArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GtmDomainArrayOutput)
-}
-
-func (i GtmDomainArray) ToOutput(ctx context.Context) pulumix.Output[[]*GtmDomain] {
-	return pulumix.Output[[]*GtmDomain]{
-		OutputState: i.ToGtmDomainArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GtmDomainMapInput is an input type that accepts GtmDomainMap and GtmDomainMapOutput values.
@@ -290,12 +277,6 @@ func (i GtmDomainMap) ToGtmDomainMapOutputWithContext(ctx context.Context) GtmDo
 	return pulumi.ToOutputWithContext(ctx, i).(GtmDomainMapOutput)
 }
 
-func (i GtmDomainMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*GtmDomain] {
-	return pulumix.Output[map[string]*GtmDomain]{
-		OutputState: i.ToGtmDomainMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GtmDomainOutput struct{ *pulumi.OutputState }
 
 func (GtmDomainOutput) ElementType() reflect.Type {
@@ -308,12 +289,6 @@ func (o GtmDomainOutput) ToGtmDomainOutput() GtmDomainOutput {
 
 func (o GtmDomainOutput) ToGtmDomainOutputWithContext(ctx context.Context) GtmDomainOutput {
 	return o
-}
-
-func (o GtmDomainOutput) ToOutput(ctx context.Context) pulumix.Output[*GtmDomain] {
-	return pulumix.Output[*GtmDomain]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GtmDomainOutput) CnameCoalescingEnabled() pulumi.BoolPtrOutput {
@@ -466,12 +441,6 @@ func (o GtmDomainArrayOutput) ToGtmDomainArrayOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o GtmDomainArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*GtmDomain] {
-	return pulumix.Output[[]*GtmDomain]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GtmDomainArrayOutput) Index(i pulumi.IntInput) GtmDomainOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *GtmDomain {
 		return vs[0].([]*GtmDomain)[vs[1].(int)]
@@ -490,12 +459,6 @@ func (o GtmDomainMapOutput) ToGtmDomainMapOutput() GtmDomainMapOutput {
 
 func (o GtmDomainMapOutput) ToGtmDomainMapOutputWithContext(ctx context.Context) GtmDomainMapOutput {
 	return o
-}
-
-func (o GtmDomainMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*GtmDomain] {
-	return pulumix.Output[map[string]*GtmDomain]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GtmDomainMapOutput) MapIndex(k pulumi.StringInput) GtmDomainOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupAppSecAdvancedSettingsPrefetch(ctx *pulumi.Context, args *LookupAppSecAdvancedSettingsPrefetchArgs, opts ...pulumi.InvokeOption) (*LookupAppSecAdvancedSettingsPrefetchResult, error) {
@@ -71,12 +70,6 @@ func (o LookupAppSecAdvancedSettingsPrefetchResultOutput) ToLookupAppSecAdvanced
 
 func (o LookupAppSecAdvancedSettingsPrefetchResultOutput) ToLookupAppSecAdvancedSettingsPrefetchResultOutputWithContext(ctx context.Context) LookupAppSecAdvancedSettingsPrefetchResultOutput {
 	return o
-}
-
-func (o LookupAppSecAdvancedSettingsPrefetchResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAppSecAdvancedSettingsPrefetchResult] {
-	return pulumix.Output[LookupAppSecAdvancedSettingsPrefetchResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupAppSecAdvancedSettingsPrefetchResultOutput) ConfigId() pulumi.IntOutput {

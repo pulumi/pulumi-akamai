@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type DnsRecord struct {
@@ -399,12 +398,6 @@ func (i *DnsRecord) ToDnsRecordOutputWithContext(ctx context.Context) DnsRecordO
 	return pulumi.ToOutputWithContext(ctx, i).(DnsRecordOutput)
 }
 
-func (i *DnsRecord) ToOutput(ctx context.Context) pulumix.Output[*DnsRecord] {
-	return pulumix.Output[*DnsRecord]{
-		OutputState: i.ToDnsRecordOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DnsRecordArrayInput is an input type that accepts DnsRecordArray and DnsRecordArrayOutput values.
 // You can construct a concrete instance of `DnsRecordArrayInput` via:
 //
@@ -428,12 +421,6 @@ func (i DnsRecordArray) ToDnsRecordArrayOutput() DnsRecordArrayOutput {
 
 func (i DnsRecordArray) ToDnsRecordArrayOutputWithContext(ctx context.Context) DnsRecordArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DnsRecordArrayOutput)
-}
-
-func (i DnsRecordArray) ToOutput(ctx context.Context) pulumix.Output[[]*DnsRecord] {
-	return pulumix.Output[[]*DnsRecord]{
-		OutputState: i.ToDnsRecordArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DnsRecordMapInput is an input type that accepts DnsRecordMap and DnsRecordMapOutput values.
@@ -461,12 +448,6 @@ func (i DnsRecordMap) ToDnsRecordMapOutputWithContext(ctx context.Context) DnsRe
 	return pulumi.ToOutputWithContext(ctx, i).(DnsRecordMapOutput)
 }
 
-func (i DnsRecordMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DnsRecord] {
-	return pulumix.Output[map[string]*DnsRecord]{
-		OutputState: i.ToDnsRecordMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DnsRecordOutput struct{ *pulumi.OutputState }
 
 func (DnsRecordOutput) ElementType() reflect.Type {
@@ -479,12 +460,6 @@ func (o DnsRecordOutput) ToDnsRecordOutput() DnsRecordOutput {
 
 func (o DnsRecordOutput) ToDnsRecordOutputWithContext(ctx context.Context) DnsRecordOutput {
 	return o
-}
-
-func (o DnsRecordOutput) ToOutput(ctx context.Context) pulumix.Output[*DnsRecord] {
-	return pulumix.Output[*DnsRecord]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Deprecated: Field 'active' has been deprecated. Setting it has no effect
@@ -742,12 +717,6 @@ func (o DnsRecordArrayOutput) ToDnsRecordArrayOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o DnsRecordArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DnsRecord] {
-	return pulumix.Output[[]*DnsRecord]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DnsRecordArrayOutput) Index(i pulumi.IntInput) DnsRecordOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DnsRecord {
 		return vs[0].([]*DnsRecord)[vs[1].(int)]
@@ -766,12 +735,6 @@ func (o DnsRecordMapOutput) ToDnsRecordMapOutput() DnsRecordMapOutput {
 
 func (o DnsRecordMapOutput) ToDnsRecordMapOutputWithContext(ctx context.Context) DnsRecordMapOutput {
 	return o
-}
-
-func (o DnsRecordMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DnsRecord] {
-	return pulumix.Output[map[string]*DnsRecord]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DnsRecordMapOutput) MapIndex(k pulumi.StringInput) DnsRecordOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetAppSecContractsGroups(ctx *pulumi.Context, args *GetAppSecContractsGroupsArgs, opts ...pulumi.InvokeOption) (*GetAppSecContractsGroupsResult, error) {
@@ -76,12 +75,6 @@ func (o GetAppSecContractsGroupsResultOutput) ToGetAppSecContractsGroupsResultOu
 
 func (o GetAppSecContractsGroupsResultOutput) ToGetAppSecContractsGroupsResultOutputWithContext(ctx context.Context) GetAppSecContractsGroupsResultOutput {
 	return o
-}
-
-func (o GetAppSecContractsGroupsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppSecContractsGroupsResult] {
-	return pulumix.Output[GetAppSecContractsGroupsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAppSecContractsGroupsResultOutput) Contractid() pulumi.StringPtrOutput {

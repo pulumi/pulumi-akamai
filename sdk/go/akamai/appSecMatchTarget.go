@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppSecMatchTarget struct {
@@ -119,12 +118,6 @@ func (i *AppSecMatchTarget) ToAppSecMatchTargetOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecMatchTargetOutput)
 }
 
-func (i *AppSecMatchTarget) ToOutput(ctx context.Context) pulumix.Output[*AppSecMatchTarget] {
-	return pulumix.Output[*AppSecMatchTarget]{
-		OutputState: i.ToAppSecMatchTargetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AppSecMatchTargetArrayInput is an input type that accepts AppSecMatchTargetArray and AppSecMatchTargetArrayOutput values.
 // You can construct a concrete instance of `AppSecMatchTargetArrayInput` via:
 //
@@ -148,12 +141,6 @@ func (i AppSecMatchTargetArray) ToAppSecMatchTargetArrayOutput() AppSecMatchTarg
 
 func (i AppSecMatchTargetArray) ToAppSecMatchTargetArrayOutputWithContext(ctx context.Context) AppSecMatchTargetArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecMatchTargetArrayOutput)
-}
-
-func (i AppSecMatchTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecMatchTarget] {
-	return pulumix.Output[[]*AppSecMatchTarget]{
-		OutputState: i.ToAppSecMatchTargetArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AppSecMatchTargetMapInput is an input type that accepts AppSecMatchTargetMap and AppSecMatchTargetMapOutput values.
@@ -181,12 +168,6 @@ func (i AppSecMatchTargetMap) ToAppSecMatchTargetMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecMatchTargetMapOutput)
 }
 
-func (i AppSecMatchTargetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecMatchTarget] {
-	return pulumix.Output[map[string]*AppSecMatchTarget]{
-		OutputState: i.ToAppSecMatchTargetMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AppSecMatchTargetOutput struct{ *pulumi.OutputState }
 
 func (AppSecMatchTargetOutput) ElementType() reflect.Type {
@@ -199,12 +180,6 @@ func (o AppSecMatchTargetOutput) ToAppSecMatchTargetOutput() AppSecMatchTargetOu
 
 func (o AppSecMatchTargetOutput) ToAppSecMatchTargetOutputWithContext(ctx context.Context) AppSecMatchTargetOutput {
 	return o
-}
-
-func (o AppSecMatchTargetOutput) ToOutput(ctx context.Context) pulumix.Output[*AppSecMatchTarget] {
-	return pulumix.Output[*AppSecMatchTarget]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique identifier of the security configuration
@@ -236,12 +211,6 @@ func (o AppSecMatchTargetArrayOutput) ToAppSecMatchTargetArrayOutputWithContext(
 	return o
 }
 
-func (o AppSecMatchTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecMatchTarget] {
-	return pulumix.Output[[]*AppSecMatchTarget]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AppSecMatchTargetArrayOutput) Index(i pulumi.IntInput) AppSecMatchTargetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecMatchTarget {
 		return vs[0].([]*AppSecMatchTarget)[vs[1].(int)]
@@ -260,12 +229,6 @@ func (o AppSecMatchTargetMapOutput) ToAppSecMatchTargetMapOutput() AppSecMatchTa
 
 func (o AppSecMatchTargetMapOutput) ToAppSecMatchTargetMapOutputWithContext(ctx context.Context) AppSecMatchTargetMapOutput {
 	return o
-}
-
-func (o AppSecMatchTargetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecMatchTarget] {
-	return pulumix.Output[map[string]*AppSecMatchTarget]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppSecMatchTargetMapOutput) MapIndex(k pulumi.StringInput) AppSecMatchTargetOutput {

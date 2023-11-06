@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Deprecated: akamai.properties/getproperty.getProperty has been deprecated in favor of akamai.index/getproperty.getProperty
@@ -74,12 +73,6 @@ func (o GetPropertyResultOutput) ToGetPropertyResultOutput() GetPropertyResultOu
 
 func (o GetPropertyResultOutput) ToGetPropertyResultOutputWithContext(ctx context.Context) GetPropertyResultOutput {
 	return o
-}
-
-func (o GetPropertyResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPropertyResult] {
-	return pulumix.Output[GetPropertyResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

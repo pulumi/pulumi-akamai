@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetNetworkLists(ctx *pulumi.Context, args *GetNetworkListsArgs, opts ...pulumi.InvokeOption) (*GetNetworkListsResult, error) {
@@ -81,12 +80,6 @@ func (o GetNetworkListsResultOutput) ToGetNetworkListsResultOutput() GetNetworkL
 
 func (o GetNetworkListsResultOutput) ToGetNetworkListsResultOutputWithContext(ctx context.Context) GetNetworkListsResultOutput {
 	return o
-}
-
-func (o GetNetworkListsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkListsResult] {
-	return pulumix.Output[GetNetworkListsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNetworkListsResultOutput) ContractId() pulumi.StringOutput {

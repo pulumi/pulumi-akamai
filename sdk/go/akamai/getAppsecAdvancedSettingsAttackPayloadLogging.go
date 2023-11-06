@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupAppsecAdvancedSettingsAttackPayloadLogging(ctx *pulumi.Context, args *LookupAppsecAdvancedSettingsAttackPayloadLoggingArgs, opts ...pulumi.InvokeOption) (*LookupAppsecAdvancedSettingsAttackPayloadLoggingResult, error) {
@@ -74,12 +73,6 @@ func (o LookupAppsecAdvancedSettingsAttackPayloadLoggingResultOutput) ToLookupAp
 
 func (o LookupAppsecAdvancedSettingsAttackPayloadLoggingResultOutput) ToLookupAppsecAdvancedSettingsAttackPayloadLoggingResultOutputWithContext(ctx context.Context) LookupAppsecAdvancedSettingsAttackPayloadLoggingResultOutput {
 	return o
-}
-
-func (o LookupAppsecAdvancedSettingsAttackPayloadLoggingResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAppsecAdvancedSettingsAttackPayloadLoggingResult] {
-	return pulumix.Output[LookupAppsecAdvancedSettingsAttackPayloadLoggingResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupAppsecAdvancedSettingsAttackPayloadLoggingResultOutput) ConfigId() pulumi.IntOutput {

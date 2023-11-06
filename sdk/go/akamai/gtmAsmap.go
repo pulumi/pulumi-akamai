@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type GtmAsmap struct {
@@ -124,12 +123,6 @@ func (i *GtmAsmap) ToGtmAsmapOutputWithContext(ctx context.Context) GtmAsmapOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GtmAsmapOutput)
 }
 
-func (i *GtmAsmap) ToOutput(ctx context.Context) pulumix.Output[*GtmAsmap] {
-	return pulumix.Output[*GtmAsmap]{
-		OutputState: i.ToGtmAsmapOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GtmAsmapArrayInput is an input type that accepts GtmAsmapArray and GtmAsmapArrayOutput values.
 // You can construct a concrete instance of `GtmAsmapArrayInput` via:
 //
@@ -153,12 +146,6 @@ func (i GtmAsmapArray) ToGtmAsmapArrayOutput() GtmAsmapArrayOutput {
 
 func (i GtmAsmapArray) ToGtmAsmapArrayOutputWithContext(ctx context.Context) GtmAsmapArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GtmAsmapArrayOutput)
-}
-
-func (i GtmAsmapArray) ToOutput(ctx context.Context) pulumix.Output[[]*GtmAsmap] {
-	return pulumix.Output[[]*GtmAsmap]{
-		OutputState: i.ToGtmAsmapArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GtmAsmapMapInput is an input type that accepts GtmAsmapMap and GtmAsmapMapOutput values.
@@ -186,12 +173,6 @@ func (i GtmAsmapMap) ToGtmAsmapMapOutputWithContext(ctx context.Context) GtmAsma
 	return pulumi.ToOutputWithContext(ctx, i).(GtmAsmapMapOutput)
 }
 
-func (i GtmAsmapMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*GtmAsmap] {
-	return pulumix.Output[map[string]*GtmAsmap]{
-		OutputState: i.ToGtmAsmapMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GtmAsmapOutput struct{ *pulumi.OutputState }
 
 func (GtmAsmapOutput) ElementType() reflect.Type {
@@ -204,12 +185,6 @@ func (o GtmAsmapOutput) ToGtmAsmapOutput() GtmAsmapOutput {
 
 func (o GtmAsmapOutput) ToGtmAsmapOutputWithContext(ctx context.Context) GtmAsmapOutput {
 	return o
-}
-
-func (o GtmAsmapOutput) ToOutput(ctx context.Context) pulumix.Output[*GtmAsmap] {
-	return pulumix.Output[*GtmAsmap]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GtmAsmapOutput) Assignments() GtmAsmapAssignmentArrayOutput {
@@ -246,12 +221,6 @@ func (o GtmAsmapArrayOutput) ToGtmAsmapArrayOutputWithContext(ctx context.Contex
 	return o
 }
 
-func (o GtmAsmapArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*GtmAsmap] {
-	return pulumix.Output[[]*GtmAsmap]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GtmAsmapArrayOutput) Index(i pulumi.IntInput) GtmAsmapOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *GtmAsmap {
 		return vs[0].([]*GtmAsmap)[vs[1].(int)]
@@ -270,12 +239,6 @@ func (o GtmAsmapMapOutput) ToGtmAsmapMapOutput() GtmAsmapMapOutput {
 
 func (o GtmAsmapMapOutput) ToGtmAsmapMapOutputWithContext(ctx context.Context) GtmAsmapMapOutput {
 	return o
-}
-
-func (o GtmAsmapMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*GtmAsmap] {
-	return pulumix.Output[map[string]*GtmAsmap]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GtmAsmapMapOutput) MapIndex(k pulumi.StringInput) GtmAsmapOutput {

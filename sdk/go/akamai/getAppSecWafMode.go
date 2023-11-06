@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupAppSecWafMode(ctx *pulumi.Context, args *LookupAppSecWafModeArgs, opts ...pulumi.InvokeOption) (*LookupAppSecWafModeResult, error) {
@@ -79,12 +78,6 @@ func (o LookupAppSecWafModeResultOutput) ToLookupAppSecWafModeResultOutput() Loo
 
 func (o LookupAppSecWafModeResultOutput) ToLookupAppSecWafModeResultOutputWithContext(ctx context.Context) LookupAppSecWafModeResultOutput {
 	return o
-}
-
-func (o LookupAppSecWafModeResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAppSecWafModeResult] {
-	return pulumix.Output[LookupAppSecWafModeResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupAppSecWafModeResultOutput) ConfigId() pulumi.IntOutput {

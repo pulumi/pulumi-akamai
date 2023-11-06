@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupEdgeWorker(ctx *pulumi.Context, args *LookupEdgeWorkerArgs, opts ...pulumi.InvokeOption) (*LookupEdgeWorkerResult, error) {
@@ -78,12 +77,6 @@ func (o LookupEdgeWorkerResultOutput) ToLookupEdgeWorkerResultOutput() LookupEdg
 
 func (o LookupEdgeWorkerResultOutput) ToLookupEdgeWorkerResultOutputWithContext(ctx context.Context) LookupEdgeWorkerResultOutput {
 	return o
-}
-
-func (o LookupEdgeWorkerResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupEdgeWorkerResult] {
-	return pulumix.Output[LookupEdgeWorkerResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupEdgeWorkerResultOutput) EdgeworkerId() pulumi.IntOutput {

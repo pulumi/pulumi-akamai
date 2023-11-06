@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppSecRuleUpgrade struct {
@@ -141,12 +140,6 @@ func (i *AppSecRuleUpgrade) ToAppSecRuleUpgradeOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecRuleUpgradeOutput)
 }
 
-func (i *AppSecRuleUpgrade) ToOutput(ctx context.Context) pulumix.Output[*AppSecRuleUpgrade] {
-	return pulumix.Output[*AppSecRuleUpgrade]{
-		OutputState: i.ToAppSecRuleUpgradeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AppSecRuleUpgradeArrayInput is an input type that accepts AppSecRuleUpgradeArray and AppSecRuleUpgradeArrayOutput values.
 // You can construct a concrete instance of `AppSecRuleUpgradeArrayInput` via:
 //
@@ -170,12 +163,6 @@ func (i AppSecRuleUpgradeArray) ToAppSecRuleUpgradeArrayOutput() AppSecRuleUpgra
 
 func (i AppSecRuleUpgradeArray) ToAppSecRuleUpgradeArrayOutputWithContext(ctx context.Context) AppSecRuleUpgradeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecRuleUpgradeArrayOutput)
-}
-
-func (i AppSecRuleUpgradeArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecRuleUpgrade] {
-	return pulumix.Output[[]*AppSecRuleUpgrade]{
-		OutputState: i.ToAppSecRuleUpgradeArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AppSecRuleUpgradeMapInput is an input type that accepts AppSecRuleUpgradeMap and AppSecRuleUpgradeMapOutput values.
@@ -203,12 +190,6 @@ func (i AppSecRuleUpgradeMap) ToAppSecRuleUpgradeMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecRuleUpgradeMapOutput)
 }
 
-func (i AppSecRuleUpgradeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecRuleUpgrade] {
-	return pulumix.Output[map[string]*AppSecRuleUpgrade]{
-		OutputState: i.ToAppSecRuleUpgradeMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AppSecRuleUpgradeOutput struct{ *pulumi.OutputState }
 
 func (AppSecRuleUpgradeOutput) ElementType() reflect.Type {
@@ -221,12 +202,6 @@ func (o AppSecRuleUpgradeOutput) ToAppSecRuleUpgradeOutput() AppSecRuleUpgradeOu
 
 func (o AppSecRuleUpgradeOutput) ToAppSecRuleUpgradeOutputWithContext(ctx context.Context) AppSecRuleUpgradeOutput {
 	return o
-}
-
-func (o AppSecRuleUpgradeOutput) ToOutput(ctx context.Context) pulumix.Output[*AppSecRuleUpgrade] {
-	return pulumix.Output[*AppSecRuleUpgrade]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique identifier of the security configuration
@@ -273,12 +248,6 @@ func (o AppSecRuleUpgradeArrayOutput) ToAppSecRuleUpgradeArrayOutputWithContext(
 	return o
 }
 
-func (o AppSecRuleUpgradeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecRuleUpgrade] {
-	return pulumix.Output[[]*AppSecRuleUpgrade]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AppSecRuleUpgradeArrayOutput) Index(i pulumi.IntInput) AppSecRuleUpgradeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecRuleUpgrade {
 		return vs[0].([]*AppSecRuleUpgrade)[vs[1].(int)]
@@ -297,12 +266,6 @@ func (o AppSecRuleUpgradeMapOutput) ToAppSecRuleUpgradeMapOutput() AppSecRuleUpg
 
 func (o AppSecRuleUpgradeMapOutput) ToAppSecRuleUpgradeMapOutputWithContext(ctx context.Context) AppSecRuleUpgradeMapOutput {
 	return o
-}
-
-func (o AppSecRuleUpgradeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecRuleUpgrade] {
-	return pulumix.Output[map[string]*AppSecRuleUpgrade]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppSecRuleUpgradeMapOutput) MapIndex(k pulumi.StringInput) AppSecRuleUpgradeOutput {

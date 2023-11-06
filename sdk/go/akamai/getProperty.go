@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupProperty(ctx *pulumi.Context, args *LookupPropertyArgs, opts ...pulumi.InvokeOption) (*LookupPropertyResult, error) {
@@ -73,12 +72,6 @@ func (o LookupPropertyResultOutput) ToLookupPropertyResultOutput() LookupPropert
 
 func (o LookupPropertyResultOutput) ToLookupPropertyResultOutputWithContext(ctx context.Context) LookupPropertyResultOutput {
 	return o
-}
-
-func (o LookupPropertyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupPropertyResult] {
-	return pulumix.Output[LookupPropertyResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

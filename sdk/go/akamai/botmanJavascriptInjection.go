@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type BotmanJavascriptInjection struct {
@@ -111,12 +110,6 @@ func (i *BotmanJavascriptInjection) ToBotmanJavascriptInjectionOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanJavascriptInjectionOutput)
 }
 
-func (i *BotmanJavascriptInjection) ToOutput(ctx context.Context) pulumix.Output[*BotmanJavascriptInjection] {
-	return pulumix.Output[*BotmanJavascriptInjection]{
-		OutputState: i.ToBotmanJavascriptInjectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BotmanJavascriptInjectionArrayInput is an input type that accepts BotmanJavascriptInjectionArray and BotmanJavascriptInjectionArrayOutput values.
 // You can construct a concrete instance of `BotmanJavascriptInjectionArrayInput` via:
 //
@@ -140,12 +133,6 @@ func (i BotmanJavascriptInjectionArray) ToBotmanJavascriptInjectionArrayOutput()
 
 func (i BotmanJavascriptInjectionArray) ToBotmanJavascriptInjectionArrayOutputWithContext(ctx context.Context) BotmanJavascriptInjectionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanJavascriptInjectionArrayOutput)
-}
-
-func (i BotmanJavascriptInjectionArray) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanJavascriptInjection] {
-	return pulumix.Output[[]*BotmanJavascriptInjection]{
-		OutputState: i.ToBotmanJavascriptInjectionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BotmanJavascriptInjectionMapInput is an input type that accepts BotmanJavascriptInjectionMap and BotmanJavascriptInjectionMapOutput values.
@@ -173,12 +160,6 @@ func (i BotmanJavascriptInjectionMap) ToBotmanJavascriptInjectionMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanJavascriptInjectionMapOutput)
 }
 
-func (i BotmanJavascriptInjectionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanJavascriptInjection] {
-	return pulumix.Output[map[string]*BotmanJavascriptInjection]{
-		OutputState: i.ToBotmanJavascriptInjectionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BotmanJavascriptInjectionOutput struct{ *pulumi.OutputState }
 
 func (BotmanJavascriptInjectionOutput) ElementType() reflect.Type {
@@ -191,12 +172,6 @@ func (o BotmanJavascriptInjectionOutput) ToBotmanJavascriptInjectionOutput() Bot
 
 func (o BotmanJavascriptInjectionOutput) ToBotmanJavascriptInjectionOutputWithContext(ctx context.Context) BotmanJavascriptInjectionOutput {
 	return o
-}
-
-func (o BotmanJavascriptInjectionOutput) ToOutput(ctx context.Context) pulumix.Output[*BotmanJavascriptInjection] {
-	return pulumix.Output[*BotmanJavascriptInjection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BotmanJavascriptInjectionOutput) ConfigId() pulumi.IntOutput {
@@ -225,12 +200,6 @@ func (o BotmanJavascriptInjectionArrayOutput) ToBotmanJavascriptInjectionArrayOu
 	return o
 }
 
-func (o BotmanJavascriptInjectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanJavascriptInjection] {
-	return pulumix.Output[[]*BotmanJavascriptInjection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o BotmanJavascriptInjectionArrayOutput) Index(i pulumi.IntInput) BotmanJavascriptInjectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BotmanJavascriptInjection {
 		return vs[0].([]*BotmanJavascriptInjection)[vs[1].(int)]
@@ -249,12 +218,6 @@ func (o BotmanJavascriptInjectionMapOutput) ToBotmanJavascriptInjectionMapOutput
 
 func (o BotmanJavascriptInjectionMapOutput) ToBotmanJavascriptInjectionMapOutputWithContext(ctx context.Context) BotmanJavascriptInjectionMapOutput {
 	return o
-}
-
-func (o BotmanJavascriptInjectionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanJavascriptInjection] {
-	return pulumix.Output[map[string]*BotmanJavascriptInjection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BotmanJavascriptInjectionMapOutput) MapIndex(k pulumi.StringInput) BotmanJavascriptInjectionOutput {

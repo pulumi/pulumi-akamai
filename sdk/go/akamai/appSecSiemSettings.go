@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppSecSiemSettings struct {
@@ -162,12 +161,6 @@ func (i *AppSecSiemSettings) ToAppSecSiemSettingsOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecSiemSettingsOutput)
 }
 
-func (i *AppSecSiemSettings) ToOutput(ctx context.Context) pulumix.Output[*AppSecSiemSettings] {
-	return pulumix.Output[*AppSecSiemSettings]{
-		OutputState: i.ToAppSecSiemSettingsOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AppSecSiemSettingsArrayInput is an input type that accepts AppSecSiemSettingsArray and AppSecSiemSettingsArrayOutput values.
 // You can construct a concrete instance of `AppSecSiemSettingsArrayInput` via:
 //
@@ -191,12 +184,6 @@ func (i AppSecSiemSettingsArray) ToAppSecSiemSettingsArrayOutput() AppSecSiemSet
 
 func (i AppSecSiemSettingsArray) ToAppSecSiemSettingsArrayOutputWithContext(ctx context.Context) AppSecSiemSettingsArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecSiemSettingsArrayOutput)
-}
-
-func (i AppSecSiemSettingsArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecSiemSettings] {
-	return pulumix.Output[[]*AppSecSiemSettings]{
-		OutputState: i.ToAppSecSiemSettingsArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AppSecSiemSettingsMapInput is an input type that accepts AppSecSiemSettingsMap and AppSecSiemSettingsMapOutput values.
@@ -224,12 +211,6 @@ func (i AppSecSiemSettingsMap) ToAppSecSiemSettingsMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecSiemSettingsMapOutput)
 }
 
-func (i AppSecSiemSettingsMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecSiemSettings] {
-	return pulumix.Output[map[string]*AppSecSiemSettings]{
-		OutputState: i.ToAppSecSiemSettingsMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AppSecSiemSettingsOutput struct{ *pulumi.OutputState }
 
 func (AppSecSiemSettingsOutput) ElementType() reflect.Type {
@@ -242,12 +223,6 @@ func (o AppSecSiemSettingsOutput) ToAppSecSiemSettingsOutput() AppSecSiemSetting
 
 func (o AppSecSiemSettingsOutput) ToAppSecSiemSettingsOutputWithContext(ctx context.Context) AppSecSiemSettingsOutput {
 	return o
-}
-
-func (o AppSecSiemSettingsOutput) ToOutput(ctx context.Context) pulumix.Output[*AppSecSiemSettings] {
-	return pulumix.Output[*AppSecSiemSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique identifier of the security configuration
@@ -294,12 +269,6 @@ func (o AppSecSiemSettingsArrayOutput) ToAppSecSiemSettingsArrayOutputWithContex
 	return o
 }
 
-func (o AppSecSiemSettingsArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecSiemSettings] {
-	return pulumix.Output[[]*AppSecSiemSettings]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AppSecSiemSettingsArrayOutput) Index(i pulumi.IntInput) AppSecSiemSettingsOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecSiemSettings {
 		return vs[0].([]*AppSecSiemSettings)[vs[1].(int)]
@@ -318,12 +287,6 @@ func (o AppSecSiemSettingsMapOutput) ToAppSecSiemSettingsMapOutput() AppSecSiemS
 
 func (o AppSecSiemSettingsMapOutput) ToAppSecSiemSettingsMapOutputWithContext(ctx context.Context) AppSecSiemSettingsMapOutput {
 	return o
-}
-
-func (o AppSecSiemSettingsMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecSiemSettings] {
-	return pulumix.Output[map[string]*AppSecSiemSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppSecSiemSettingsMapOutput) MapIndex(k pulumi.StringInput) AppSecSiemSettingsOutput {

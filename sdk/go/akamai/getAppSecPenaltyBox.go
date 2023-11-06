@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupAppSecPenaltyBox(ctx *pulumi.Context, args *LookupAppSecPenaltyBoxArgs, opts ...pulumi.InvokeOption) (*LookupAppSecPenaltyBoxResult, error) {
@@ -75,12 +74,6 @@ func (o LookupAppSecPenaltyBoxResultOutput) ToLookupAppSecPenaltyBoxResultOutput
 
 func (o LookupAppSecPenaltyBoxResultOutput) ToLookupAppSecPenaltyBoxResultOutputWithContext(ctx context.Context) LookupAppSecPenaltyBoxResultOutput {
 	return o
-}
-
-func (o LookupAppSecPenaltyBoxResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAppSecPenaltyBoxResult] {
-	return pulumix.Output[LookupAppSecPenaltyBoxResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupAppSecPenaltyBoxResultOutput) Action() pulumi.StringOutput {

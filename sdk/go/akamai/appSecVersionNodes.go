@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppSecVersionNodes struct {
@@ -119,12 +118,6 @@ func (i *AppSecVersionNodes) ToAppSecVersionNodesOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecVersionNodesOutput)
 }
 
-func (i *AppSecVersionNodes) ToOutput(ctx context.Context) pulumix.Output[*AppSecVersionNodes] {
-	return pulumix.Output[*AppSecVersionNodes]{
-		OutputState: i.ToAppSecVersionNodesOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AppSecVersionNodesArrayInput is an input type that accepts AppSecVersionNodesArray and AppSecVersionNodesArrayOutput values.
 // You can construct a concrete instance of `AppSecVersionNodesArrayInput` via:
 //
@@ -148,12 +141,6 @@ func (i AppSecVersionNodesArray) ToAppSecVersionNodesArrayOutput() AppSecVersion
 
 func (i AppSecVersionNodesArray) ToAppSecVersionNodesArrayOutputWithContext(ctx context.Context) AppSecVersionNodesArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecVersionNodesArrayOutput)
-}
-
-func (i AppSecVersionNodesArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecVersionNodes] {
-	return pulumix.Output[[]*AppSecVersionNodes]{
-		OutputState: i.ToAppSecVersionNodesArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AppSecVersionNodesMapInput is an input type that accepts AppSecVersionNodesMap and AppSecVersionNodesMapOutput values.
@@ -181,12 +168,6 @@ func (i AppSecVersionNodesMap) ToAppSecVersionNodesMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecVersionNodesMapOutput)
 }
 
-func (i AppSecVersionNodesMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecVersionNodes] {
-	return pulumix.Output[map[string]*AppSecVersionNodes]{
-		OutputState: i.ToAppSecVersionNodesMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AppSecVersionNodesOutput struct{ *pulumi.OutputState }
 
 func (AppSecVersionNodesOutput) ElementType() reflect.Type {
@@ -199,12 +180,6 @@ func (o AppSecVersionNodesOutput) ToAppSecVersionNodesOutput() AppSecVersionNode
 
 func (o AppSecVersionNodesOutput) ToAppSecVersionNodesOutputWithContext(ctx context.Context) AppSecVersionNodesOutput {
 	return o
-}
-
-func (o AppSecVersionNodesOutput) ToOutput(ctx context.Context) pulumix.Output[*AppSecVersionNodes] {
-	return pulumix.Output[*AppSecVersionNodes]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique identifier of the security configuration
@@ -236,12 +211,6 @@ func (o AppSecVersionNodesArrayOutput) ToAppSecVersionNodesArrayOutputWithContex
 	return o
 }
 
-func (o AppSecVersionNodesArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecVersionNodes] {
-	return pulumix.Output[[]*AppSecVersionNodes]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AppSecVersionNodesArrayOutput) Index(i pulumi.IntInput) AppSecVersionNodesOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecVersionNodes {
 		return vs[0].([]*AppSecVersionNodes)[vs[1].(int)]
@@ -260,12 +229,6 @@ func (o AppSecVersionNodesMapOutput) ToAppSecVersionNodesMapOutput() AppSecVersi
 
 func (o AppSecVersionNodesMapOutput) ToAppSecVersionNodesMapOutputWithContext(ctx context.Context) AppSecVersionNodesMapOutput {
 	return o
-}
-
-func (o AppSecVersionNodesMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecVersionNodes] {
-	return pulumix.Output[map[string]*AppSecVersionNodes]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppSecVersionNodesMapOutput) MapIndex(k pulumi.StringInput) AppSecVersionNodesOutput {

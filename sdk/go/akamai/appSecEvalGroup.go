@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppSecEvalGroup struct {
@@ -149,12 +148,6 @@ func (i *AppSecEvalGroup) ToAppSecEvalGroupOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecEvalGroupOutput)
 }
 
-func (i *AppSecEvalGroup) ToOutput(ctx context.Context) pulumix.Output[*AppSecEvalGroup] {
-	return pulumix.Output[*AppSecEvalGroup]{
-		OutputState: i.ToAppSecEvalGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AppSecEvalGroupArrayInput is an input type that accepts AppSecEvalGroupArray and AppSecEvalGroupArrayOutput values.
 // You can construct a concrete instance of `AppSecEvalGroupArrayInput` via:
 //
@@ -178,12 +171,6 @@ func (i AppSecEvalGroupArray) ToAppSecEvalGroupArrayOutput() AppSecEvalGroupArra
 
 func (i AppSecEvalGroupArray) ToAppSecEvalGroupArrayOutputWithContext(ctx context.Context) AppSecEvalGroupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecEvalGroupArrayOutput)
-}
-
-func (i AppSecEvalGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecEvalGroup] {
-	return pulumix.Output[[]*AppSecEvalGroup]{
-		OutputState: i.ToAppSecEvalGroupArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AppSecEvalGroupMapInput is an input type that accepts AppSecEvalGroupMap and AppSecEvalGroupMapOutput values.
@@ -211,12 +198,6 @@ func (i AppSecEvalGroupMap) ToAppSecEvalGroupMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecEvalGroupMapOutput)
 }
 
-func (i AppSecEvalGroupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecEvalGroup] {
-	return pulumix.Output[map[string]*AppSecEvalGroup]{
-		OutputState: i.ToAppSecEvalGroupMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AppSecEvalGroupOutput struct{ *pulumi.OutputState }
 
 func (AppSecEvalGroupOutput) ElementType() reflect.Type {
@@ -229,12 +210,6 @@ func (o AppSecEvalGroupOutput) ToAppSecEvalGroupOutput() AppSecEvalGroupOutput {
 
 func (o AppSecEvalGroupOutput) ToAppSecEvalGroupOutputWithContext(ctx context.Context) AppSecEvalGroupOutput {
 	return o
-}
-
-func (o AppSecEvalGroupOutput) ToOutput(ctx context.Context) pulumix.Output[*AppSecEvalGroup] {
-	return pulumix.Output[*AppSecEvalGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique identifier of the evaluation attack group being modified
@@ -276,12 +251,6 @@ func (o AppSecEvalGroupArrayOutput) ToAppSecEvalGroupArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o AppSecEvalGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecEvalGroup] {
-	return pulumix.Output[[]*AppSecEvalGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AppSecEvalGroupArrayOutput) Index(i pulumi.IntInput) AppSecEvalGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecEvalGroup {
 		return vs[0].([]*AppSecEvalGroup)[vs[1].(int)]
@@ -300,12 +269,6 @@ func (o AppSecEvalGroupMapOutput) ToAppSecEvalGroupMapOutput() AppSecEvalGroupMa
 
 func (o AppSecEvalGroupMapOutput) ToAppSecEvalGroupMapOutputWithContext(ctx context.Context) AppSecEvalGroupMapOutput {
 	return o
-}
-
-func (o AppSecEvalGroupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecEvalGroup] {
-	return pulumix.Output[map[string]*AppSecEvalGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppSecEvalGroupMapOutput) MapIndex(k pulumi.StringInput) AppSecEvalGroupOutput {

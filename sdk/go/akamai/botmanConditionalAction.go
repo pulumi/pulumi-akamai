@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type BotmanConditionalAction struct {
@@ -106,12 +105,6 @@ func (i *BotmanConditionalAction) ToBotmanConditionalActionOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanConditionalActionOutput)
 }
 
-func (i *BotmanConditionalAction) ToOutput(ctx context.Context) pulumix.Output[*BotmanConditionalAction] {
-	return pulumix.Output[*BotmanConditionalAction]{
-		OutputState: i.ToBotmanConditionalActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BotmanConditionalActionArrayInput is an input type that accepts BotmanConditionalActionArray and BotmanConditionalActionArrayOutput values.
 // You can construct a concrete instance of `BotmanConditionalActionArrayInput` via:
 //
@@ -135,12 +128,6 @@ func (i BotmanConditionalActionArray) ToBotmanConditionalActionArrayOutput() Bot
 
 func (i BotmanConditionalActionArray) ToBotmanConditionalActionArrayOutputWithContext(ctx context.Context) BotmanConditionalActionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanConditionalActionArrayOutput)
-}
-
-func (i BotmanConditionalActionArray) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanConditionalAction] {
-	return pulumix.Output[[]*BotmanConditionalAction]{
-		OutputState: i.ToBotmanConditionalActionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BotmanConditionalActionMapInput is an input type that accepts BotmanConditionalActionMap and BotmanConditionalActionMapOutput values.
@@ -168,12 +155,6 @@ func (i BotmanConditionalActionMap) ToBotmanConditionalActionMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanConditionalActionMapOutput)
 }
 
-func (i BotmanConditionalActionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanConditionalAction] {
-	return pulumix.Output[map[string]*BotmanConditionalAction]{
-		OutputState: i.ToBotmanConditionalActionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BotmanConditionalActionOutput struct{ *pulumi.OutputState }
 
 func (BotmanConditionalActionOutput) ElementType() reflect.Type {
@@ -186,12 +167,6 @@ func (o BotmanConditionalActionOutput) ToBotmanConditionalActionOutput() BotmanC
 
 func (o BotmanConditionalActionOutput) ToBotmanConditionalActionOutputWithContext(ctx context.Context) BotmanConditionalActionOutput {
 	return o
-}
-
-func (o BotmanConditionalActionOutput) ToOutput(ctx context.Context) pulumix.Output[*BotmanConditionalAction] {
-	return pulumix.Output[*BotmanConditionalAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BotmanConditionalActionOutput) ActionId() pulumi.StringOutput {
@@ -220,12 +195,6 @@ func (o BotmanConditionalActionArrayOutput) ToBotmanConditionalActionArrayOutput
 	return o
 }
 
-func (o BotmanConditionalActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanConditionalAction] {
-	return pulumix.Output[[]*BotmanConditionalAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o BotmanConditionalActionArrayOutput) Index(i pulumi.IntInput) BotmanConditionalActionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BotmanConditionalAction {
 		return vs[0].([]*BotmanConditionalAction)[vs[1].(int)]
@@ -244,12 +213,6 @@ func (o BotmanConditionalActionMapOutput) ToBotmanConditionalActionMapOutput() B
 
 func (o BotmanConditionalActionMapOutput) ToBotmanConditionalActionMapOutputWithContext(ctx context.Context) BotmanConditionalActionMapOutput {
 	return o
-}
-
-func (o BotmanConditionalActionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanConditionalAction] {
-	return pulumix.Output[map[string]*BotmanConditionalAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BotmanConditionalActionMapOutput) MapIndex(k pulumi.StringInput) BotmanConditionalActionOutput {

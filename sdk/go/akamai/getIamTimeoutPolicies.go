@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetIamTimeoutPolicies(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIamTimeoutPoliciesResult, error) {
@@ -53,12 +52,6 @@ func (o GetIamTimeoutPoliciesResultOutput) ToGetIamTimeoutPoliciesResultOutput()
 
 func (o GetIamTimeoutPoliciesResultOutput) ToGetIamTimeoutPoliciesResultOutputWithContext(ctx context.Context) GetIamTimeoutPoliciesResultOutput {
 	return o
-}
-
-func (o GetIamTimeoutPoliciesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIamTimeoutPoliciesResult] {
-	return pulumix.Output[GetIamTimeoutPoliciesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetCloudwrapperCapacities(ctx *pulumi.Context, args *GetCloudwrapperCapacitiesArgs, opts ...pulumi.InvokeOption) (*GetCloudwrapperCapacitiesResult, error) {
@@ -72,12 +71,6 @@ func (o GetCloudwrapperCapacitiesResultOutput) ToGetCloudwrapperCapacitiesResult
 
 func (o GetCloudwrapperCapacitiesResultOutput) ToGetCloudwrapperCapacitiesResultOutputWithContext(ctx context.Context) GetCloudwrapperCapacitiesResultOutput {
 	return o
-}
-
-func (o GetCloudwrapperCapacitiesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCloudwrapperCapacitiesResult] {
-	return pulumix.Output[GetCloudwrapperCapacitiesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCloudwrapperCapacitiesResultOutput) Capacities() GetCloudwrapperCapacitiesCapacityArrayOutput {
