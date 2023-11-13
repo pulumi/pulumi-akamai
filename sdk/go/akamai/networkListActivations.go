@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type NetworkListActivations struct {
@@ -152,12 +151,6 @@ func (i *NetworkListActivations) ToNetworkListActivationsOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkListActivationsOutput)
 }
 
-func (i *NetworkListActivations) ToOutput(ctx context.Context) pulumix.Output[*NetworkListActivations] {
-	return pulumix.Output[*NetworkListActivations]{
-		OutputState: i.ToNetworkListActivationsOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NetworkListActivationsArrayInput is an input type that accepts NetworkListActivationsArray and NetworkListActivationsArrayOutput values.
 // You can construct a concrete instance of `NetworkListActivationsArrayInput` via:
 //
@@ -181,12 +174,6 @@ func (i NetworkListActivationsArray) ToNetworkListActivationsArrayOutput() Netwo
 
 func (i NetworkListActivationsArray) ToNetworkListActivationsArrayOutputWithContext(ctx context.Context) NetworkListActivationsArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkListActivationsArrayOutput)
-}
-
-func (i NetworkListActivationsArray) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkListActivations] {
-	return pulumix.Output[[]*NetworkListActivations]{
-		OutputState: i.ToNetworkListActivationsArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // NetworkListActivationsMapInput is an input type that accepts NetworkListActivationsMap and NetworkListActivationsMapOutput values.
@@ -214,12 +201,6 @@ func (i NetworkListActivationsMap) ToNetworkListActivationsMapOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkListActivationsMapOutput)
 }
 
-func (i NetworkListActivationsMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkListActivations] {
-	return pulumix.Output[map[string]*NetworkListActivations]{
-		OutputState: i.ToNetworkListActivationsMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NetworkListActivationsOutput struct{ *pulumi.OutputState }
 
 func (NetworkListActivationsOutput) ElementType() reflect.Type {
@@ -232,12 +213,6 @@ func (o NetworkListActivationsOutput) ToNetworkListActivationsOutput() NetworkLi
 
 func (o NetworkListActivationsOutput) ToNetworkListActivationsOutputWithContext(ctx context.Context) NetworkListActivationsOutput {
 	return o
-}
-
-func (o NetworkListActivationsOutput) ToOutput(ctx context.Context) pulumix.Output[*NetworkListActivations] {
-	return pulumix.Output[*NetworkListActivations]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The Akamai network on which the list is activated: STAGING or PRODUCTION
@@ -284,12 +259,6 @@ func (o NetworkListActivationsArrayOutput) ToNetworkListActivationsArrayOutputWi
 	return o
 }
 
-func (o NetworkListActivationsArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkListActivations] {
-	return pulumix.Output[[]*NetworkListActivations]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o NetworkListActivationsArrayOutput) Index(i pulumi.IntInput) NetworkListActivationsOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NetworkListActivations {
 		return vs[0].([]*NetworkListActivations)[vs[1].(int)]
@@ -308,12 +277,6 @@ func (o NetworkListActivationsMapOutput) ToNetworkListActivationsMapOutput() Net
 
 func (o NetworkListActivationsMapOutput) ToNetworkListActivationsMapOutputWithContext(ctx context.Context) NetworkListActivationsMapOutput {
 	return o
-}
-
-func (o NetworkListActivationsMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkListActivations] {
-	return pulumix.Output[map[string]*NetworkListActivations]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NetworkListActivationsMapOutput) MapIndex(k pulumi.StringInput) NetworkListActivationsOutput {

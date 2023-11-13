@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type BotmanChallengeAction struct {
@@ -106,12 +105,6 @@ func (i *BotmanChallengeAction) ToBotmanChallengeActionOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanChallengeActionOutput)
 }
 
-func (i *BotmanChallengeAction) ToOutput(ctx context.Context) pulumix.Output[*BotmanChallengeAction] {
-	return pulumix.Output[*BotmanChallengeAction]{
-		OutputState: i.ToBotmanChallengeActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BotmanChallengeActionArrayInput is an input type that accepts BotmanChallengeActionArray and BotmanChallengeActionArrayOutput values.
 // You can construct a concrete instance of `BotmanChallengeActionArrayInput` via:
 //
@@ -135,12 +128,6 @@ func (i BotmanChallengeActionArray) ToBotmanChallengeActionArrayOutput() BotmanC
 
 func (i BotmanChallengeActionArray) ToBotmanChallengeActionArrayOutputWithContext(ctx context.Context) BotmanChallengeActionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanChallengeActionArrayOutput)
-}
-
-func (i BotmanChallengeActionArray) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanChallengeAction] {
-	return pulumix.Output[[]*BotmanChallengeAction]{
-		OutputState: i.ToBotmanChallengeActionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BotmanChallengeActionMapInput is an input type that accepts BotmanChallengeActionMap and BotmanChallengeActionMapOutput values.
@@ -168,12 +155,6 @@ func (i BotmanChallengeActionMap) ToBotmanChallengeActionMapOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanChallengeActionMapOutput)
 }
 
-func (i BotmanChallengeActionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanChallengeAction] {
-	return pulumix.Output[map[string]*BotmanChallengeAction]{
-		OutputState: i.ToBotmanChallengeActionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BotmanChallengeActionOutput struct{ *pulumi.OutputState }
 
 func (BotmanChallengeActionOutput) ElementType() reflect.Type {
@@ -186,12 +167,6 @@ func (o BotmanChallengeActionOutput) ToBotmanChallengeActionOutput() BotmanChall
 
 func (o BotmanChallengeActionOutput) ToBotmanChallengeActionOutputWithContext(ctx context.Context) BotmanChallengeActionOutput {
 	return o
-}
-
-func (o BotmanChallengeActionOutput) ToOutput(ctx context.Context) pulumix.Output[*BotmanChallengeAction] {
-	return pulumix.Output[*BotmanChallengeAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BotmanChallengeActionOutput) ActionId() pulumi.StringOutput {
@@ -220,12 +195,6 @@ func (o BotmanChallengeActionArrayOutput) ToBotmanChallengeActionArrayOutputWith
 	return o
 }
 
-func (o BotmanChallengeActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanChallengeAction] {
-	return pulumix.Output[[]*BotmanChallengeAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o BotmanChallengeActionArrayOutput) Index(i pulumi.IntInput) BotmanChallengeActionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BotmanChallengeAction {
 		return vs[0].([]*BotmanChallengeAction)[vs[1].(int)]
@@ -244,12 +213,6 @@ func (o BotmanChallengeActionMapOutput) ToBotmanChallengeActionMapOutput() Botma
 
 func (o BotmanChallengeActionMapOutput) ToBotmanChallengeActionMapOutputWithContext(ctx context.Context) BotmanChallengeActionMapOutput {
 	return o
-}
-
-func (o BotmanChallengeActionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanChallengeAction] {
-	return pulumix.Output[map[string]*BotmanChallengeAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BotmanChallengeActionMapOutput) MapIndex(k pulumi.StringInput) BotmanChallengeActionOutput {

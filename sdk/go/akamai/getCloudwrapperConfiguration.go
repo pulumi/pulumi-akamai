@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupCloudwrapperConfiguration(ctx *pulumi.Context, args *LookupCloudwrapperConfigurationArgs, opts ...pulumi.InvokeOption) (*LookupCloudwrapperConfigurationResult, error) {
@@ -85,12 +84,6 @@ func (o LookupCloudwrapperConfigurationResultOutput) ToLookupCloudwrapperConfigu
 
 func (o LookupCloudwrapperConfigurationResultOutput) ToLookupCloudwrapperConfigurationResultOutputWithContext(ctx context.Context) LookupCloudwrapperConfigurationResultOutput {
 	return o
-}
-
-func (o LookupCloudwrapperConfigurationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupCloudwrapperConfigurationResult] {
-	return pulumix.Output[LookupCloudwrapperConfigurationResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupCloudwrapperConfigurationResultOutput) CapacityAlertsThreshold() pulumi.IntOutput {

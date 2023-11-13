@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetIamGrantableRoles(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIamGrantableRolesResult, error) {
@@ -53,12 +52,6 @@ func (o GetIamGrantableRolesResultOutput) ToGetIamGrantableRolesResultOutput() G
 
 func (o GetIamGrantableRolesResultOutput) ToGetIamGrantableRolesResultOutputWithContext(ctx context.Context) GetIamGrantableRolesResultOutput {
 	return o
-}
-
-func (o GetIamGrantableRolesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIamGrantableRolesResult] {
-	return pulumix.Output[GetIamGrantableRolesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIamGrantableRolesResultOutput) GrantableRoles() GetIamGrantableRolesGrantableRoleArrayOutput {

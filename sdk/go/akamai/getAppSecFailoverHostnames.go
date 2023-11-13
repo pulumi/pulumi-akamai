@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetAppSecFailoverHostnames(ctx *pulumi.Context, args *GetAppSecFailoverHostnamesArgs, opts ...pulumi.InvokeOption) (*GetAppSecFailoverHostnamesResult, error) {
@@ -72,12 +71,6 @@ func (o GetAppSecFailoverHostnamesResultOutput) ToGetAppSecFailoverHostnamesResu
 
 func (o GetAppSecFailoverHostnamesResultOutput) ToGetAppSecFailoverHostnamesResultOutputWithContext(ctx context.Context) GetAppSecFailoverHostnamesResultOutput {
 	return o
-}
-
-func (o GetAppSecFailoverHostnamesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppSecFailoverHostnamesResult] {
-	return pulumix.Output[GetAppSecFailoverHostnamesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAppSecFailoverHostnamesResultOutput) ConfigId() pulumi.IntOutput {

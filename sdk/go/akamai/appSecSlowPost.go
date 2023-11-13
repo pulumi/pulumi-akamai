@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppSecSlowPost struct {
@@ -161,12 +160,6 @@ func (i *AppSecSlowPost) ToAppSecSlowPostOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecSlowPostOutput)
 }
 
-func (i *AppSecSlowPost) ToOutput(ctx context.Context) pulumix.Output[*AppSecSlowPost] {
-	return pulumix.Output[*AppSecSlowPost]{
-		OutputState: i.ToAppSecSlowPostOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AppSecSlowPostArrayInput is an input type that accepts AppSecSlowPostArray and AppSecSlowPostArrayOutput values.
 // You can construct a concrete instance of `AppSecSlowPostArrayInput` via:
 //
@@ -190,12 +183,6 @@ func (i AppSecSlowPostArray) ToAppSecSlowPostArrayOutput() AppSecSlowPostArrayOu
 
 func (i AppSecSlowPostArray) ToAppSecSlowPostArrayOutputWithContext(ctx context.Context) AppSecSlowPostArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecSlowPostArrayOutput)
-}
-
-func (i AppSecSlowPostArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecSlowPost] {
-	return pulumix.Output[[]*AppSecSlowPost]{
-		OutputState: i.ToAppSecSlowPostArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AppSecSlowPostMapInput is an input type that accepts AppSecSlowPostMap and AppSecSlowPostMapOutput values.
@@ -223,12 +210,6 @@ func (i AppSecSlowPostMap) ToAppSecSlowPostMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecSlowPostMapOutput)
 }
 
-func (i AppSecSlowPostMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecSlowPost] {
-	return pulumix.Output[map[string]*AppSecSlowPost]{
-		OutputState: i.ToAppSecSlowPostMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AppSecSlowPostOutput struct{ *pulumi.OutputState }
 
 func (AppSecSlowPostOutput) ElementType() reflect.Type {
@@ -241,12 +222,6 @@ func (o AppSecSlowPostOutput) ToAppSecSlowPostOutput() AppSecSlowPostOutput {
 
 func (o AppSecSlowPostOutput) ToAppSecSlowPostOutputWithContext(ctx context.Context) AppSecSlowPostOutput {
 	return o
-}
-
-func (o AppSecSlowPostOutput) ToOutput(ctx context.Context) pulumix.Output[*AppSecSlowPost] {
-	return pulumix.Output[*AppSecSlowPost]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique identifier of the security configuration
@@ -294,12 +269,6 @@ func (o AppSecSlowPostArrayOutput) ToAppSecSlowPostArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o AppSecSlowPostArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecSlowPost] {
-	return pulumix.Output[[]*AppSecSlowPost]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AppSecSlowPostArrayOutput) Index(i pulumi.IntInput) AppSecSlowPostOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecSlowPost {
 		return vs[0].([]*AppSecSlowPost)[vs[1].(int)]
@@ -318,12 +287,6 @@ func (o AppSecSlowPostMapOutput) ToAppSecSlowPostMapOutput() AppSecSlowPostMapOu
 
 func (o AppSecSlowPostMapOutput) ToAppSecSlowPostMapOutputWithContext(ctx context.Context) AppSecSlowPostMapOutput {
 	return o
-}
-
-func (o AppSecSlowPostMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecSlowPost] {
-	return pulumix.Output[map[string]*AppSecSlowPost]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppSecSlowPostMapOutput) MapIndex(k pulumi.StringInput) AppSecSlowPostOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetEdgekvGroups(ctx *pulumi.Context, args *GetEdgekvGroupsArgs, opts ...pulumi.InvokeOption) (*GetEdgekvGroupsResult, error) {
@@ -73,12 +72,6 @@ func (o GetEdgekvGroupsResultOutput) ToGetEdgekvGroupsResultOutput() GetEdgekvGr
 
 func (o GetEdgekvGroupsResultOutput) ToGetEdgekvGroupsResultOutputWithContext(ctx context.Context) GetEdgekvGroupsResultOutput {
 	return o
-}
-
-func (o GetEdgekvGroupsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetEdgekvGroupsResult] {
-	return pulumix.Output[GetEdgekvGroupsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEdgekvGroupsResultOutput) Groups() pulumi.StringArrayOutput {

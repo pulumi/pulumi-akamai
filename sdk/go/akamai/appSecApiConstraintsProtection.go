@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppSecApiConstraintsProtection struct {
@@ -132,12 +131,6 @@ func (i *AppSecApiConstraintsProtection) ToAppSecApiConstraintsProtectionOutputW
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecApiConstraintsProtectionOutput)
 }
 
-func (i *AppSecApiConstraintsProtection) ToOutput(ctx context.Context) pulumix.Output[*AppSecApiConstraintsProtection] {
-	return pulumix.Output[*AppSecApiConstraintsProtection]{
-		OutputState: i.ToAppSecApiConstraintsProtectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AppSecApiConstraintsProtectionArrayInput is an input type that accepts AppSecApiConstraintsProtectionArray and AppSecApiConstraintsProtectionArrayOutput values.
 // You can construct a concrete instance of `AppSecApiConstraintsProtectionArrayInput` via:
 //
@@ -161,12 +154,6 @@ func (i AppSecApiConstraintsProtectionArray) ToAppSecApiConstraintsProtectionArr
 
 func (i AppSecApiConstraintsProtectionArray) ToAppSecApiConstraintsProtectionArrayOutputWithContext(ctx context.Context) AppSecApiConstraintsProtectionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecApiConstraintsProtectionArrayOutput)
-}
-
-func (i AppSecApiConstraintsProtectionArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecApiConstraintsProtection] {
-	return pulumix.Output[[]*AppSecApiConstraintsProtection]{
-		OutputState: i.ToAppSecApiConstraintsProtectionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AppSecApiConstraintsProtectionMapInput is an input type that accepts AppSecApiConstraintsProtectionMap and AppSecApiConstraintsProtectionMapOutput values.
@@ -194,12 +181,6 @@ func (i AppSecApiConstraintsProtectionMap) ToAppSecApiConstraintsProtectionMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecApiConstraintsProtectionMapOutput)
 }
 
-func (i AppSecApiConstraintsProtectionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecApiConstraintsProtection] {
-	return pulumix.Output[map[string]*AppSecApiConstraintsProtection]{
-		OutputState: i.ToAppSecApiConstraintsProtectionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AppSecApiConstraintsProtectionOutput struct{ *pulumi.OutputState }
 
 func (AppSecApiConstraintsProtectionOutput) ElementType() reflect.Type {
@@ -212,12 +193,6 @@ func (o AppSecApiConstraintsProtectionOutput) ToAppSecApiConstraintsProtectionOu
 
 func (o AppSecApiConstraintsProtectionOutput) ToAppSecApiConstraintsProtectionOutputWithContext(ctx context.Context) AppSecApiConstraintsProtectionOutput {
 	return o
-}
-
-func (o AppSecApiConstraintsProtectionOutput) ToOutput(ctx context.Context) pulumix.Output[*AppSecApiConstraintsProtection] {
-	return pulumix.Output[*AppSecApiConstraintsProtection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique identifier of the security configuration
@@ -254,12 +229,6 @@ func (o AppSecApiConstraintsProtectionArrayOutput) ToAppSecApiConstraintsProtect
 	return o
 }
 
-func (o AppSecApiConstraintsProtectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecApiConstraintsProtection] {
-	return pulumix.Output[[]*AppSecApiConstraintsProtection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AppSecApiConstraintsProtectionArrayOutput) Index(i pulumi.IntInput) AppSecApiConstraintsProtectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecApiConstraintsProtection {
 		return vs[0].([]*AppSecApiConstraintsProtection)[vs[1].(int)]
@@ -278,12 +247,6 @@ func (o AppSecApiConstraintsProtectionMapOutput) ToAppSecApiConstraintsProtectio
 
 func (o AppSecApiConstraintsProtectionMapOutput) ToAppSecApiConstraintsProtectionMapOutputWithContext(ctx context.Context) AppSecApiConstraintsProtectionMapOutput {
 	return o
-}
-
-func (o AppSecApiConstraintsProtectionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecApiConstraintsProtection] {
-	return pulumix.Output[map[string]*AppSecApiConstraintsProtection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppSecApiConstraintsProtectionMapOutput) MapIndex(k pulumi.StringInput) AppSecApiConstraintsProtectionOutput {

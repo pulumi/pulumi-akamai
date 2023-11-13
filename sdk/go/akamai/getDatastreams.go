@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetDatastreams(ctx *pulumi.Context, args *GetDatastreamsArgs, opts ...pulumi.InvokeOption) (*GetDatastreamsResult, error) {
@@ -70,12 +69,6 @@ func (o GetDatastreamsResultOutput) ToGetDatastreamsResultOutput() GetDatastream
 
 func (o GetDatastreamsResultOutput) ToGetDatastreamsResultOutputWithContext(ctx context.Context) GetDatastreamsResultOutput {
 	return o
-}
-
-func (o GetDatastreamsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatastreamsResult] {
-	return pulumix.Output[GetDatastreamsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatastreamsResultOutput) GroupId() pulumi.IntPtrOutput {

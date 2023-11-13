@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetGroup(ctx *pulumi.Context, args *GetGroupArgs, opts ...pulumi.InvokeOption) (*GetGroupResult, error) {
@@ -72,12 +71,6 @@ func (o GetGroupResultOutput) ToGetGroupResultOutput() GetGroupResultOutput {
 
 func (o GetGroupResultOutput) ToGetGroupResultOutputWithContext(ctx context.Context) GetGroupResultOutput {
 	return o
-}
-
-func (o GetGroupResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetGroupResult] {
-	return pulumix.Output[GetGroupResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGroupResultOutput) ContractId() pulumi.StringOutput {

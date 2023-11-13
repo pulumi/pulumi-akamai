@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupBotmanTransactionalEndpoint(ctx *pulumi.Context, args *LookupBotmanTransactionalEndpointArgs, opts ...pulumi.InvokeOption) (*LookupBotmanTransactionalEndpointResult, error) {
@@ -76,12 +75,6 @@ func (o LookupBotmanTransactionalEndpointResultOutput) ToLookupBotmanTransaction
 
 func (o LookupBotmanTransactionalEndpointResultOutput) ToLookupBotmanTransactionalEndpointResultOutputWithContext(ctx context.Context) LookupBotmanTransactionalEndpointResultOutput {
 	return o
-}
-
-func (o LookupBotmanTransactionalEndpointResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupBotmanTransactionalEndpointResult] {
-	return pulumix.Output[LookupBotmanTransactionalEndpointResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupBotmanTransactionalEndpointResultOutput) ConfigId() pulumi.IntOutput {

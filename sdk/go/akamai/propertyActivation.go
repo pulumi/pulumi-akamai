@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type PropertyActivation struct {
@@ -171,12 +170,6 @@ func (i *PropertyActivation) ToPropertyActivationOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationOutput)
 }
 
-func (i *PropertyActivation) ToOutput(ctx context.Context) pulumix.Output[*PropertyActivation] {
-	return pulumix.Output[*PropertyActivation]{
-		OutputState: i.ToPropertyActivationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PropertyActivationArrayInput is an input type that accepts PropertyActivationArray and PropertyActivationArrayOutput values.
 // You can construct a concrete instance of `PropertyActivationArrayInput` via:
 //
@@ -200,12 +193,6 @@ func (i PropertyActivationArray) ToPropertyActivationArrayOutput() PropertyActiv
 
 func (i PropertyActivationArray) ToPropertyActivationArrayOutputWithContext(ctx context.Context) PropertyActivationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationArrayOutput)
-}
-
-func (i PropertyActivationArray) ToOutput(ctx context.Context) pulumix.Output[[]*PropertyActivation] {
-	return pulumix.Output[[]*PropertyActivation]{
-		OutputState: i.ToPropertyActivationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // PropertyActivationMapInput is an input type that accepts PropertyActivationMap and PropertyActivationMapOutput values.
@@ -233,12 +220,6 @@ func (i PropertyActivationMap) ToPropertyActivationMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationMapOutput)
 }
 
-func (i PropertyActivationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*PropertyActivation] {
-	return pulumix.Output[map[string]*PropertyActivation]{
-		OutputState: i.ToPropertyActivationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PropertyActivationOutput struct{ *pulumi.OutputState }
 
 func (PropertyActivationOutput) ElementType() reflect.Type {
@@ -251,12 +232,6 @@ func (o PropertyActivationOutput) ToPropertyActivationOutput() PropertyActivatio
 
 func (o PropertyActivationOutput) ToPropertyActivationOutputWithContext(ctx context.Context) PropertyActivationOutput {
 	return o
-}
-
-func (o PropertyActivationOutput) ToOutput(ctx context.Context) pulumix.Output[*PropertyActivation] {
-	return pulumix.Output[*PropertyActivation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PropertyActivationOutput) ActivationId() pulumi.StringOutput {
@@ -324,12 +299,6 @@ func (o PropertyActivationArrayOutput) ToPropertyActivationArrayOutputWithContex
 	return o
 }
 
-func (o PropertyActivationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*PropertyActivation] {
-	return pulumix.Output[[]*PropertyActivation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o PropertyActivationArrayOutput) Index(i pulumi.IntInput) PropertyActivationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *PropertyActivation {
 		return vs[0].([]*PropertyActivation)[vs[1].(int)]
@@ -348,12 +317,6 @@ func (o PropertyActivationMapOutput) ToPropertyActivationMapOutput() PropertyAct
 
 func (o PropertyActivationMapOutput) ToPropertyActivationMapOutputWithContext(ctx context.Context) PropertyActivationMapOutput {
 	return o
-}
-
-func (o PropertyActivationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*PropertyActivation] {
-	return pulumix.Output[map[string]*PropertyActivation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PropertyActivationMapOutput) MapIndex(k pulumi.StringInput) PropertyActivationOutput {

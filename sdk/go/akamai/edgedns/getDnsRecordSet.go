@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Deprecated: akamai.edgedns/getdnsrecordset.getDnsRecordSet has been deprecated in favor of akamai.index/getdnsrecordset.getDnsRecordSet
@@ -77,12 +76,6 @@ func (o GetDnsRecordSetResultOutput) ToGetDnsRecordSetResultOutput() GetDnsRecor
 
 func (o GetDnsRecordSetResultOutput) ToGetDnsRecordSetResultOutputWithContext(ctx context.Context) GetDnsRecordSetResultOutput {
 	return o
-}
-
-func (o GetDnsRecordSetResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDnsRecordSetResult] {
-	return pulumix.Output[GetDnsRecordSetResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDnsRecordSetResultOutput) Host() pulumi.StringOutput {

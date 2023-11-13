@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetBotmanBotAnalyticsCookieValues(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetBotmanBotAnalyticsCookieValuesResult, error) {
@@ -53,12 +52,6 @@ func (o GetBotmanBotAnalyticsCookieValuesResultOutput) ToGetBotmanBotAnalyticsCo
 
 func (o GetBotmanBotAnalyticsCookieValuesResultOutput) ToGetBotmanBotAnalyticsCookieValuesResultOutputWithContext(ctx context.Context) GetBotmanBotAnalyticsCookieValuesResultOutput {
 	return o
-}
-
-func (o GetBotmanBotAnalyticsCookieValuesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBotmanBotAnalyticsCookieValuesResult] {
-	return pulumix.Output[GetBotmanBotAnalyticsCookieValuesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type BotmanCustomClientSequence struct {
@@ -103,12 +102,6 @@ func (i *BotmanCustomClientSequence) ToBotmanCustomClientSequenceOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanCustomClientSequenceOutput)
 }
 
-func (i *BotmanCustomClientSequence) ToOutput(ctx context.Context) pulumix.Output[*BotmanCustomClientSequence] {
-	return pulumix.Output[*BotmanCustomClientSequence]{
-		OutputState: i.ToBotmanCustomClientSequenceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BotmanCustomClientSequenceArrayInput is an input type that accepts BotmanCustomClientSequenceArray and BotmanCustomClientSequenceArrayOutput values.
 // You can construct a concrete instance of `BotmanCustomClientSequenceArrayInput` via:
 //
@@ -132,12 +125,6 @@ func (i BotmanCustomClientSequenceArray) ToBotmanCustomClientSequenceArrayOutput
 
 func (i BotmanCustomClientSequenceArray) ToBotmanCustomClientSequenceArrayOutputWithContext(ctx context.Context) BotmanCustomClientSequenceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanCustomClientSequenceArrayOutput)
-}
-
-func (i BotmanCustomClientSequenceArray) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanCustomClientSequence] {
-	return pulumix.Output[[]*BotmanCustomClientSequence]{
-		OutputState: i.ToBotmanCustomClientSequenceArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BotmanCustomClientSequenceMapInput is an input type that accepts BotmanCustomClientSequenceMap and BotmanCustomClientSequenceMapOutput values.
@@ -165,12 +152,6 @@ func (i BotmanCustomClientSequenceMap) ToBotmanCustomClientSequenceMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanCustomClientSequenceMapOutput)
 }
 
-func (i BotmanCustomClientSequenceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanCustomClientSequence] {
-	return pulumix.Output[map[string]*BotmanCustomClientSequence]{
-		OutputState: i.ToBotmanCustomClientSequenceMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BotmanCustomClientSequenceOutput struct{ *pulumi.OutputState }
 
 func (BotmanCustomClientSequenceOutput) ElementType() reflect.Type {
@@ -183,12 +164,6 @@ func (o BotmanCustomClientSequenceOutput) ToBotmanCustomClientSequenceOutput() B
 
 func (o BotmanCustomClientSequenceOutput) ToBotmanCustomClientSequenceOutputWithContext(ctx context.Context) BotmanCustomClientSequenceOutput {
 	return o
-}
-
-func (o BotmanCustomClientSequenceOutput) ToOutput(ctx context.Context) pulumix.Output[*BotmanCustomClientSequence] {
-	return pulumix.Output[*BotmanCustomClientSequence]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BotmanCustomClientSequenceOutput) ConfigId() pulumi.IntOutput {
@@ -213,12 +188,6 @@ func (o BotmanCustomClientSequenceArrayOutput) ToBotmanCustomClientSequenceArray
 	return o
 }
 
-func (o BotmanCustomClientSequenceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanCustomClientSequence] {
-	return pulumix.Output[[]*BotmanCustomClientSequence]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o BotmanCustomClientSequenceArrayOutput) Index(i pulumi.IntInput) BotmanCustomClientSequenceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BotmanCustomClientSequence {
 		return vs[0].([]*BotmanCustomClientSequence)[vs[1].(int)]
@@ -237,12 +206,6 @@ func (o BotmanCustomClientSequenceMapOutput) ToBotmanCustomClientSequenceMapOutp
 
 func (o BotmanCustomClientSequenceMapOutput) ToBotmanCustomClientSequenceMapOutputWithContext(ctx context.Context) BotmanCustomClientSequenceMapOutput {
 	return o
-}
-
-func (o BotmanCustomClientSequenceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanCustomClientSequence] {
-	return pulumix.Output[map[string]*BotmanCustomClientSequence]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BotmanCustomClientSequenceMapOutput) MapIndex(k pulumi.StringInput) BotmanCustomClientSequenceOutput {

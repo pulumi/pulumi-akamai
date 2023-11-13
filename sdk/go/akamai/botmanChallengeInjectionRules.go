@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type BotmanChallengeInjectionRules struct {
@@ -103,12 +102,6 @@ func (i *BotmanChallengeInjectionRules) ToBotmanChallengeInjectionRulesOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanChallengeInjectionRulesOutput)
 }
 
-func (i *BotmanChallengeInjectionRules) ToOutput(ctx context.Context) pulumix.Output[*BotmanChallengeInjectionRules] {
-	return pulumix.Output[*BotmanChallengeInjectionRules]{
-		OutputState: i.ToBotmanChallengeInjectionRulesOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BotmanChallengeInjectionRulesArrayInput is an input type that accepts BotmanChallengeInjectionRulesArray and BotmanChallengeInjectionRulesArrayOutput values.
 // You can construct a concrete instance of `BotmanChallengeInjectionRulesArrayInput` via:
 //
@@ -132,12 +125,6 @@ func (i BotmanChallengeInjectionRulesArray) ToBotmanChallengeInjectionRulesArray
 
 func (i BotmanChallengeInjectionRulesArray) ToBotmanChallengeInjectionRulesArrayOutputWithContext(ctx context.Context) BotmanChallengeInjectionRulesArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanChallengeInjectionRulesArrayOutput)
-}
-
-func (i BotmanChallengeInjectionRulesArray) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanChallengeInjectionRules] {
-	return pulumix.Output[[]*BotmanChallengeInjectionRules]{
-		OutputState: i.ToBotmanChallengeInjectionRulesArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BotmanChallengeInjectionRulesMapInput is an input type that accepts BotmanChallengeInjectionRulesMap and BotmanChallengeInjectionRulesMapOutput values.
@@ -165,12 +152,6 @@ func (i BotmanChallengeInjectionRulesMap) ToBotmanChallengeInjectionRulesMapOutp
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanChallengeInjectionRulesMapOutput)
 }
 
-func (i BotmanChallengeInjectionRulesMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanChallengeInjectionRules] {
-	return pulumix.Output[map[string]*BotmanChallengeInjectionRules]{
-		OutputState: i.ToBotmanChallengeInjectionRulesMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BotmanChallengeInjectionRulesOutput struct{ *pulumi.OutputState }
 
 func (BotmanChallengeInjectionRulesOutput) ElementType() reflect.Type {
@@ -183,12 +164,6 @@ func (o BotmanChallengeInjectionRulesOutput) ToBotmanChallengeInjectionRulesOutp
 
 func (o BotmanChallengeInjectionRulesOutput) ToBotmanChallengeInjectionRulesOutputWithContext(ctx context.Context) BotmanChallengeInjectionRulesOutput {
 	return o
-}
-
-func (o BotmanChallengeInjectionRulesOutput) ToOutput(ctx context.Context) pulumix.Output[*BotmanChallengeInjectionRules] {
-	return pulumix.Output[*BotmanChallengeInjectionRules]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BotmanChallengeInjectionRulesOutput) ChallengeInjectionRules() pulumi.StringOutput {
@@ -213,12 +188,6 @@ func (o BotmanChallengeInjectionRulesArrayOutput) ToBotmanChallengeInjectionRule
 	return o
 }
 
-func (o BotmanChallengeInjectionRulesArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanChallengeInjectionRules] {
-	return pulumix.Output[[]*BotmanChallengeInjectionRules]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o BotmanChallengeInjectionRulesArrayOutput) Index(i pulumi.IntInput) BotmanChallengeInjectionRulesOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BotmanChallengeInjectionRules {
 		return vs[0].([]*BotmanChallengeInjectionRules)[vs[1].(int)]
@@ -237,12 +206,6 @@ func (o BotmanChallengeInjectionRulesMapOutput) ToBotmanChallengeInjectionRulesM
 
 func (o BotmanChallengeInjectionRulesMapOutput) ToBotmanChallengeInjectionRulesMapOutputWithContext(ctx context.Context) BotmanChallengeInjectionRulesMapOutput {
 	return o
-}
-
-func (o BotmanChallengeInjectionRulesMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanChallengeInjectionRules] {
-	return pulumix.Output[map[string]*BotmanChallengeInjectionRules]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BotmanChallengeInjectionRulesMapOutput) MapIndex(k pulumi.StringInput) BotmanChallengeInjectionRulesOutput {

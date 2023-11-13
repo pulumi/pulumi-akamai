@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppSecEvalPenaltyBox struct {
@@ -139,12 +138,6 @@ func (i *AppSecEvalPenaltyBox) ToAppSecEvalPenaltyBoxOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecEvalPenaltyBoxOutput)
 }
 
-func (i *AppSecEvalPenaltyBox) ToOutput(ctx context.Context) pulumix.Output[*AppSecEvalPenaltyBox] {
-	return pulumix.Output[*AppSecEvalPenaltyBox]{
-		OutputState: i.ToAppSecEvalPenaltyBoxOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AppSecEvalPenaltyBoxArrayInput is an input type that accepts AppSecEvalPenaltyBoxArray and AppSecEvalPenaltyBoxArrayOutput values.
 // You can construct a concrete instance of `AppSecEvalPenaltyBoxArrayInput` via:
 //
@@ -168,12 +161,6 @@ func (i AppSecEvalPenaltyBoxArray) ToAppSecEvalPenaltyBoxArrayOutput() AppSecEva
 
 func (i AppSecEvalPenaltyBoxArray) ToAppSecEvalPenaltyBoxArrayOutputWithContext(ctx context.Context) AppSecEvalPenaltyBoxArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecEvalPenaltyBoxArrayOutput)
-}
-
-func (i AppSecEvalPenaltyBoxArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecEvalPenaltyBox] {
-	return pulumix.Output[[]*AppSecEvalPenaltyBox]{
-		OutputState: i.ToAppSecEvalPenaltyBoxArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AppSecEvalPenaltyBoxMapInput is an input type that accepts AppSecEvalPenaltyBoxMap and AppSecEvalPenaltyBoxMapOutput values.
@@ -201,12 +188,6 @@ func (i AppSecEvalPenaltyBoxMap) ToAppSecEvalPenaltyBoxMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecEvalPenaltyBoxMapOutput)
 }
 
-func (i AppSecEvalPenaltyBoxMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecEvalPenaltyBox] {
-	return pulumix.Output[map[string]*AppSecEvalPenaltyBox]{
-		OutputState: i.ToAppSecEvalPenaltyBoxMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AppSecEvalPenaltyBoxOutput struct{ *pulumi.OutputState }
 
 func (AppSecEvalPenaltyBoxOutput) ElementType() reflect.Type {
@@ -219,12 +200,6 @@ func (o AppSecEvalPenaltyBoxOutput) ToAppSecEvalPenaltyBoxOutput() AppSecEvalPen
 
 func (o AppSecEvalPenaltyBoxOutput) ToAppSecEvalPenaltyBoxOutputWithContext(ctx context.Context) AppSecEvalPenaltyBoxOutput {
 	return o
-}
-
-func (o AppSecEvalPenaltyBoxOutput) ToOutput(ctx context.Context) pulumix.Output[*AppSecEvalPenaltyBox] {
-	return pulumix.Output[*AppSecEvalPenaltyBox]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique identifier of the security configuration
@@ -261,12 +236,6 @@ func (o AppSecEvalPenaltyBoxArrayOutput) ToAppSecEvalPenaltyBoxArrayOutputWithCo
 	return o
 }
 
-func (o AppSecEvalPenaltyBoxArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecEvalPenaltyBox] {
-	return pulumix.Output[[]*AppSecEvalPenaltyBox]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AppSecEvalPenaltyBoxArrayOutput) Index(i pulumi.IntInput) AppSecEvalPenaltyBoxOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecEvalPenaltyBox {
 		return vs[0].([]*AppSecEvalPenaltyBox)[vs[1].(int)]
@@ -285,12 +254,6 @@ func (o AppSecEvalPenaltyBoxMapOutput) ToAppSecEvalPenaltyBoxMapOutput() AppSecE
 
 func (o AppSecEvalPenaltyBoxMapOutput) ToAppSecEvalPenaltyBoxMapOutputWithContext(ctx context.Context) AppSecEvalPenaltyBoxMapOutput {
 	return o
-}
-
-func (o AppSecEvalPenaltyBoxMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecEvalPenaltyBox] {
-	return pulumix.Output[map[string]*AppSecEvalPenaltyBox]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppSecEvalPenaltyBoxMapOutput) MapIndex(k pulumi.StringInput) AppSecEvalPenaltyBoxOutput {

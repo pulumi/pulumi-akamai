@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupAppSecApiRequestConstraints(ctx *pulumi.Context, args *LookupAppSecApiRequestConstraintsArgs, opts ...pulumi.InvokeOption) (*LookupAppSecApiRequestConstraintsResult, error) {
@@ -77,12 +76,6 @@ func (o LookupAppSecApiRequestConstraintsResultOutput) ToLookupAppSecApiRequestC
 
 func (o LookupAppSecApiRequestConstraintsResultOutput) ToLookupAppSecApiRequestConstraintsResultOutputWithContext(ctx context.Context) LookupAppSecApiRequestConstraintsResultOutput {
 	return o
-}
-
-func (o LookupAppSecApiRequestConstraintsResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAppSecApiRequestConstraintsResult] {
-	return pulumix.Output[LookupAppSecApiRequestConstraintsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupAppSecApiRequestConstraintsResultOutput) ApiId() pulumi.IntPtrOutput {

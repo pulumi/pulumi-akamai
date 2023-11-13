@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppSecConfiguration struct {
@@ -175,12 +174,6 @@ func (i *AppSecConfiguration) ToAppSecConfigurationOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecConfigurationOutput)
 }
 
-func (i *AppSecConfiguration) ToOutput(ctx context.Context) pulumix.Output[*AppSecConfiguration] {
-	return pulumix.Output[*AppSecConfiguration]{
-		OutputState: i.ToAppSecConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AppSecConfigurationArrayInput is an input type that accepts AppSecConfigurationArray and AppSecConfigurationArrayOutput values.
 // You can construct a concrete instance of `AppSecConfigurationArrayInput` via:
 //
@@ -204,12 +197,6 @@ func (i AppSecConfigurationArray) ToAppSecConfigurationArrayOutput() AppSecConfi
 
 func (i AppSecConfigurationArray) ToAppSecConfigurationArrayOutputWithContext(ctx context.Context) AppSecConfigurationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecConfigurationArrayOutput)
-}
-
-func (i AppSecConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecConfiguration] {
-	return pulumix.Output[[]*AppSecConfiguration]{
-		OutputState: i.ToAppSecConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AppSecConfigurationMapInput is an input type that accepts AppSecConfigurationMap and AppSecConfigurationMapOutput values.
@@ -237,12 +224,6 @@ func (i AppSecConfigurationMap) ToAppSecConfigurationMapOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecConfigurationMapOutput)
 }
 
-func (i AppSecConfigurationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecConfiguration] {
-	return pulumix.Output[map[string]*AppSecConfiguration]{
-		OutputState: i.ToAppSecConfigurationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AppSecConfigurationOutput struct{ *pulumi.OutputState }
 
 func (AppSecConfigurationOutput) ElementType() reflect.Type {
@@ -255,12 +236,6 @@ func (o AppSecConfigurationOutput) ToAppSecConfigurationOutput() AppSecConfigura
 
 func (o AppSecConfigurationOutput) ToAppSecConfigurationOutputWithContext(ctx context.Context) AppSecConfigurationOutput {
 	return o
-}
-
-func (o AppSecConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[*AppSecConfiguration] {
-	return pulumix.Output[*AppSecConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique identifier of the new security configuration
@@ -317,12 +292,6 @@ func (o AppSecConfigurationArrayOutput) ToAppSecConfigurationArrayOutputWithCont
 	return o
 }
 
-func (o AppSecConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecConfiguration] {
-	return pulumix.Output[[]*AppSecConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AppSecConfigurationArrayOutput) Index(i pulumi.IntInput) AppSecConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecConfiguration {
 		return vs[0].([]*AppSecConfiguration)[vs[1].(int)]
@@ -341,12 +310,6 @@ func (o AppSecConfigurationMapOutput) ToAppSecConfigurationMapOutput() AppSecCon
 
 func (o AppSecConfigurationMapOutput) ToAppSecConfigurationMapOutputWithContext(ctx context.Context) AppSecConfigurationMapOutput {
 	return o
-}
-
-func (o AppSecConfigurationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecConfiguration] {
-	return pulumix.Output[map[string]*AppSecConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppSecConfigurationMapOutput) MapIndex(k pulumi.StringInput) AppSecConfigurationOutput {
