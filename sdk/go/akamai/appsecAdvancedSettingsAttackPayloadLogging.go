@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppsecAdvancedSettingsAttackPayloadLogging struct {
@@ -123,12 +122,6 @@ func (i *AppsecAdvancedSettingsAttackPayloadLogging) ToAppsecAdvancedSettingsAtt
 	return pulumi.ToOutputWithContext(ctx, i).(AppsecAdvancedSettingsAttackPayloadLoggingOutput)
 }
 
-func (i *AppsecAdvancedSettingsAttackPayloadLogging) ToOutput(ctx context.Context) pulumix.Output[*AppsecAdvancedSettingsAttackPayloadLogging] {
-	return pulumix.Output[*AppsecAdvancedSettingsAttackPayloadLogging]{
-		OutputState: i.ToAppsecAdvancedSettingsAttackPayloadLoggingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AppsecAdvancedSettingsAttackPayloadLoggingArrayInput is an input type that accepts AppsecAdvancedSettingsAttackPayloadLoggingArray and AppsecAdvancedSettingsAttackPayloadLoggingArrayOutput values.
 // You can construct a concrete instance of `AppsecAdvancedSettingsAttackPayloadLoggingArrayInput` via:
 //
@@ -152,12 +145,6 @@ func (i AppsecAdvancedSettingsAttackPayloadLoggingArray) ToAppsecAdvancedSetting
 
 func (i AppsecAdvancedSettingsAttackPayloadLoggingArray) ToAppsecAdvancedSettingsAttackPayloadLoggingArrayOutputWithContext(ctx context.Context) AppsecAdvancedSettingsAttackPayloadLoggingArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppsecAdvancedSettingsAttackPayloadLoggingArrayOutput)
-}
-
-func (i AppsecAdvancedSettingsAttackPayloadLoggingArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppsecAdvancedSettingsAttackPayloadLogging] {
-	return pulumix.Output[[]*AppsecAdvancedSettingsAttackPayloadLogging]{
-		OutputState: i.ToAppsecAdvancedSettingsAttackPayloadLoggingArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AppsecAdvancedSettingsAttackPayloadLoggingMapInput is an input type that accepts AppsecAdvancedSettingsAttackPayloadLoggingMap and AppsecAdvancedSettingsAttackPayloadLoggingMapOutput values.
@@ -185,12 +172,6 @@ func (i AppsecAdvancedSettingsAttackPayloadLoggingMap) ToAppsecAdvancedSettingsA
 	return pulumi.ToOutputWithContext(ctx, i).(AppsecAdvancedSettingsAttackPayloadLoggingMapOutput)
 }
 
-func (i AppsecAdvancedSettingsAttackPayloadLoggingMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppsecAdvancedSettingsAttackPayloadLogging] {
-	return pulumix.Output[map[string]*AppsecAdvancedSettingsAttackPayloadLogging]{
-		OutputState: i.ToAppsecAdvancedSettingsAttackPayloadLoggingMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AppsecAdvancedSettingsAttackPayloadLoggingOutput struct{ *pulumi.OutputState }
 
 func (AppsecAdvancedSettingsAttackPayloadLoggingOutput) ElementType() reflect.Type {
@@ -203,12 +184,6 @@ func (o AppsecAdvancedSettingsAttackPayloadLoggingOutput) ToAppsecAdvancedSettin
 
 func (o AppsecAdvancedSettingsAttackPayloadLoggingOutput) ToAppsecAdvancedSettingsAttackPayloadLoggingOutputWithContext(ctx context.Context) AppsecAdvancedSettingsAttackPayloadLoggingOutput {
 	return o
-}
-
-func (o AppsecAdvancedSettingsAttackPayloadLoggingOutput) ToOutput(ctx context.Context) pulumix.Output[*AppsecAdvancedSettingsAttackPayloadLogging] {
-	return pulumix.Output[*AppsecAdvancedSettingsAttackPayloadLogging]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Whether to enable, disable, or update attack payload logging settings
@@ -240,12 +215,6 @@ func (o AppsecAdvancedSettingsAttackPayloadLoggingArrayOutput) ToAppsecAdvancedS
 	return o
 }
 
-func (o AppsecAdvancedSettingsAttackPayloadLoggingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppsecAdvancedSettingsAttackPayloadLogging] {
-	return pulumix.Output[[]*AppsecAdvancedSettingsAttackPayloadLogging]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AppsecAdvancedSettingsAttackPayloadLoggingArrayOutput) Index(i pulumi.IntInput) AppsecAdvancedSettingsAttackPayloadLoggingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppsecAdvancedSettingsAttackPayloadLogging {
 		return vs[0].([]*AppsecAdvancedSettingsAttackPayloadLogging)[vs[1].(int)]
@@ -264,12 +233,6 @@ func (o AppsecAdvancedSettingsAttackPayloadLoggingMapOutput) ToAppsecAdvancedSet
 
 func (o AppsecAdvancedSettingsAttackPayloadLoggingMapOutput) ToAppsecAdvancedSettingsAttackPayloadLoggingMapOutputWithContext(ctx context.Context) AppsecAdvancedSettingsAttackPayloadLoggingMapOutput {
 	return o
-}
-
-func (o AppsecAdvancedSettingsAttackPayloadLoggingMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppsecAdvancedSettingsAttackPayloadLogging] {
-	return pulumix.Output[map[string]*AppsecAdvancedSettingsAttackPayloadLogging]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppsecAdvancedSettingsAttackPayloadLoggingMapOutput) MapIndex(k pulumi.StringInput) AppsecAdvancedSettingsAttackPayloadLoggingOutput {

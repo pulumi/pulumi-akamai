@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetPropertyIncludeParents(ctx *pulumi.Context, args *GetPropertyIncludeParentsArgs, opts ...pulumi.InvokeOption) (*GetPropertyIncludeParentsResult, error) {
@@ -76,12 +75,6 @@ func (o GetPropertyIncludeParentsResultOutput) ToGetPropertyIncludeParentsResult
 
 func (o GetPropertyIncludeParentsResultOutput) ToGetPropertyIncludeParentsResultOutputWithContext(ctx context.Context) GetPropertyIncludeParentsResultOutput {
 	return o
-}
-
-func (o GetPropertyIncludeParentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPropertyIncludeParentsResult] {
-	return pulumix.Output[GetPropertyIncludeParentsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPropertyIncludeParentsResultOutput) ContractId() pulumi.StringOutput {

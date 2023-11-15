@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetAppSecConfigurationVersion(ctx *pulumi.Context, args *GetAppSecConfigurationVersionArgs, opts ...pulumi.InvokeOption) (*GetAppSecConfigurationVersionResult, error) {
@@ -76,12 +75,6 @@ func (o GetAppSecConfigurationVersionResultOutput) ToGetAppSecConfigurationVersi
 
 func (o GetAppSecConfigurationVersionResultOutput) ToGetAppSecConfigurationVersionResultOutputWithContext(ctx context.Context) GetAppSecConfigurationVersionResultOutput {
 	return o
-}
-
-func (o GetAppSecConfigurationVersionResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppSecConfigurationVersionResult] {
-	return pulumix.Output[GetAppSecConfigurationVersionResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAppSecConfigurationVersionResultOutput) ConfigId() pulumi.IntOutput {

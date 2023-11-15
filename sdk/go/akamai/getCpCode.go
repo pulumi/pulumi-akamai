@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupCpCode(ctx *pulumi.Context, args *LookupCpCodeArgs, opts ...pulumi.InvokeOption) (*LookupCpCodeResult, error) {
@@ -76,12 +75,6 @@ func (o LookupCpCodeResultOutput) ToLookupCpCodeResultOutput() LookupCpCodeResul
 
 func (o LookupCpCodeResultOutput) ToLookupCpCodeResultOutputWithContext(ctx context.Context) LookupCpCodeResultOutput {
 	return o
-}
-
-func (o LookupCpCodeResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupCpCodeResult] {
-	return pulumix.Output[LookupCpCodeResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupCpCodeResultOutput) ContractId() pulumi.StringOutput {

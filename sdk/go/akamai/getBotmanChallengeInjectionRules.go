@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupBotmanChallengeInjectionRules(ctx *pulumi.Context, args *LookupBotmanChallengeInjectionRulesArgs, opts ...pulumi.InvokeOption) (*LookupBotmanChallengeInjectionRulesResult, error) {
@@ -70,12 +69,6 @@ func (o LookupBotmanChallengeInjectionRulesResultOutput) ToLookupBotmanChallenge
 
 func (o LookupBotmanChallengeInjectionRulesResultOutput) ToLookupBotmanChallengeInjectionRulesResultOutputWithContext(ctx context.Context) LookupBotmanChallengeInjectionRulesResultOutput {
 	return o
-}
-
-func (o LookupBotmanChallengeInjectionRulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupBotmanChallengeInjectionRulesResult] {
-	return pulumix.Output[LookupBotmanChallengeInjectionRulesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupBotmanChallengeInjectionRulesResultOutput) ConfigId() pulumi.IntOutput {

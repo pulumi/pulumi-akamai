@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetAppSecSelectableHostnames(ctx *pulumi.Context, args *GetAppSecSelectableHostnamesArgs, opts ...pulumi.InvokeOption) (*GetAppSecSelectableHostnamesResult, error) {
@@ -84,12 +83,6 @@ func (o GetAppSecSelectableHostnamesResultOutput) ToGetAppSecSelectableHostnames
 
 func (o GetAppSecSelectableHostnamesResultOutput) ToGetAppSecSelectableHostnamesResultOutputWithContext(ctx context.Context) GetAppSecSelectableHostnamesResultOutput {
 	return o
-}
-
-func (o GetAppSecSelectableHostnamesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppSecSelectableHostnamesResult] {
-	return pulumix.Output[GetAppSecSelectableHostnamesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAppSecSelectableHostnamesResultOutput) ActiveInProduction() pulumi.BoolPtrOutput {

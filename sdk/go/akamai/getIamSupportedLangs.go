@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetIamSupportedLangs(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIamSupportedLangsResult, error) {
@@ -53,12 +52,6 @@ func (o GetIamSupportedLangsResultOutput) ToGetIamSupportedLangsResultOutput() G
 
 func (o GetIamSupportedLangsResultOutput) ToGetIamSupportedLangsResultOutputWithContext(ctx context.Context) GetIamSupportedLangsResultOutput {
 	return o
-}
-
-func (o GetIamSupportedLangsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIamSupportedLangsResult] {
-	return pulumix.Output[GetIamSupportedLangsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

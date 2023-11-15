@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetCloudletsVisitorPrioritizationMatchRule(ctx *pulumi.Context, args *GetCloudletsVisitorPrioritizationMatchRuleArgs, opts ...pulumi.InvokeOption) (*GetCloudletsVisitorPrioritizationMatchRuleResult, error) {
@@ -70,12 +69,6 @@ func (o GetCloudletsVisitorPrioritizationMatchRuleResultOutput) ToGetCloudletsVi
 
 func (o GetCloudletsVisitorPrioritizationMatchRuleResultOutput) ToGetCloudletsVisitorPrioritizationMatchRuleResultOutputWithContext(ctx context.Context) GetCloudletsVisitorPrioritizationMatchRuleResultOutput {
 	return o
-}
-
-func (o GetCloudletsVisitorPrioritizationMatchRuleResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCloudletsVisitorPrioritizationMatchRuleResult] {
-	return pulumix.Output[GetCloudletsVisitorPrioritizationMatchRuleResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

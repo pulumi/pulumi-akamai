@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetBotmanBotEndpointCoverageReport(ctx *pulumi.Context, args *GetBotmanBotEndpointCoverageReportArgs, opts ...pulumi.InvokeOption) (*GetBotmanBotEndpointCoverageReportResult, error) {
@@ -73,12 +72,6 @@ func (o GetBotmanBotEndpointCoverageReportResultOutput) ToGetBotmanBotEndpointCo
 
 func (o GetBotmanBotEndpointCoverageReportResultOutput) ToGetBotmanBotEndpointCoverageReportResultOutputWithContext(ctx context.Context) GetBotmanBotEndpointCoverageReportResultOutput {
 	return o
-}
-
-func (o GetBotmanBotEndpointCoverageReportResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBotmanBotEndpointCoverageReportResult] {
-	return pulumix.Output[GetBotmanBotEndpointCoverageReportResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBotmanBotEndpointCoverageReportResultOutput) ConfigId() pulumi.IntPtrOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetIamTimezones(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIamTimezonesResult, error) {
@@ -53,12 +52,6 @@ func (o GetIamTimezonesResultOutput) ToGetIamTimezonesResultOutput() GetIamTimez
 
 func (o GetIamTimezonesResultOutput) ToGetIamTimezonesResultOutputWithContext(ctx context.Context) GetIamTimezonesResultOutput {
 	return o
-}
-
-func (o GetIamTimezonesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIamTimezonesResult] {
-	return pulumix.Output[GetIamTimezonesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

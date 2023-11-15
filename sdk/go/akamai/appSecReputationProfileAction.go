@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppSecReputationProfileAction struct {
@@ -139,12 +138,6 @@ func (i *AppSecReputationProfileAction) ToAppSecReputationProfileActionOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecReputationProfileActionOutput)
 }
 
-func (i *AppSecReputationProfileAction) ToOutput(ctx context.Context) pulumix.Output[*AppSecReputationProfileAction] {
-	return pulumix.Output[*AppSecReputationProfileAction]{
-		OutputState: i.ToAppSecReputationProfileActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AppSecReputationProfileActionArrayInput is an input type that accepts AppSecReputationProfileActionArray and AppSecReputationProfileActionArrayOutput values.
 // You can construct a concrete instance of `AppSecReputationProfileActionArrayInput` via:
 //
@@ -168,12 +161,6 @@ func (i AppSecReputationProfileActionArray) ToAppSecReputationProfileActionArray
 
 func (i AppSecReputationProfileActionArray) ToAppSecReputationProfileActionArrayOutputWithContext(ctx context.Context) AppSecReputationProfileActionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecReputationProfileActionArrayOutput)
-}
-
-func (i AppSecReputationProfileActionArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecReputationProfileAction] {
-	return pulumix.Output[[]*AppSecReputationProfileAction]{
-		OutputState: i.ToAppSecReputationProfileActionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AppSecReputationProfileActionMapInput is an input type that accepts AppSecReputationProfileActionMap and AppSecReputationProfileActionMapOutput values.
@@ -201,12 +188,6 @@ func (i AppSecReputationProfileActionMap) ToAppSecReputationProfileActionMapOutp
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecReputationProfileActionMapOutput)
 }
 
-func (i AppSecReputationProfileActionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecReputationProfileAction] {
-	return pulumix.Output[map[string]*AppSecReputationProfileAction]{
-		OutputState: i.ToAppSecReputationProfileActionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AppSecReputationProfileActionOutput struct{ *pulumi.OutputState }
 
 func (AppSecReputationProfileActionOutput) ElementType() reflect.Type {
@@ -219,12 +200,6 @@ func (o AppSecReputationProfileActionOutput) ToAppSecReputationProfileActionOutp
 
 func (o AppSecReputationProfileActionOutput) ToAppSecReputationProfileActionOutputWithContext(ctx context.Context) AppSecReputationProfileActionOutput {
 	return o
-}
-
-func (o AppSecReputationProfileActionOutput) ToOutput(ctx context.Context) pulumix.Output[*AppSecReputationProfileAction] {
-	return pulumix.Output[*AppSecReputationProfileAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Action to be taken when the reputation profile is triggered
@@ -261,12 +236,6 @@ func (o AppSecReputationProfileActionArrayOutput) ToAppSecReputationProfileActio
 	return o
 }
 
-func (o AppSecReputationProfileActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecReputationProfileAction] {
-	return pulumix.Output[[]*AppSecReputationProfileAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AppSecReputationProfileActionArrayOutput) Index(i pulumi.IntInput) AppSecReputationProfileActionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecReputationProfileAction {
 		return vs[0].([]*AppSecReputationProfileAction)[vs[1].(int)]
@@ -285,12 +254,6 @@ func (o AppSecReputationProfileActionMapOutput) ToAppSecReputationProfileActionM
 
 func (o AppSecReputationProfileActionMapOutput) ToAppSecReputationProfileActionMapOutputWithContext(ctx context.Context) AppSecReputationProfileActionMapOutput {
 	return o
-}
-
-func (o AppSecReputationProfileActionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecReputationProfileAction] {
-	return pulumix.Output[map[string]*AppSecReputationProfileAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppSecReputationProfileActionMapOutput) MapIndex(k pulumi.StringInput) AppSecReputationProfileActionOutput {

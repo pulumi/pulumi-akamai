@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetAppSecApiEndpoints(ctx *pulumi.Context, args *GetAppSecApiEndpointsArgs, opts ...pulumi.InvokeOption) (*GetAppSecApiEndpointsResult, error) {
@@ -78,12 +77,6 @@ func (o GetAppSecApiEndpointsResultOutput) ToGetAppSecApiEndpointsResultOutput()
 
 func (o GetAppSecApiEndpointsResultOutput) ToGetAppSecApiEndpointsResultOutputWithContext(ctx context.Context) GetAppSecApiEndpointsResultOutput {
 	return o
-}
-
-func (o GetAppSecApiEndpointsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppSecApiEndpointsResult] {
-	return pulumix.Output[GetAppSecApiEndpointsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAppSecApiEndpointsResultOutput) ApiName() pulumi.StringPtrOutput {

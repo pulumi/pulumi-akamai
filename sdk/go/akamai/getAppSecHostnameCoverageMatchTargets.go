@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetAppSecHostnameCoverageMatchTargets(ctx *pulumi.Context, args *GetAppSecHostnameCoverageMatchTargetsArgs, opts ...pulumi.InvokeOption) (*GetAppSecHostnameCoverageMatchTargetsResult, error) {
@@ -74,12 +73,6 @@ func (o GetAppSecHostnameCoverageMatchTargetsResultOutput) ToGetAppSecHostnameCo
 
 func (o GetAppSecHostnameCoverageMatchTargetsResultOutput) ToGetAppSecHostnameCoverageMatchTargetsResultOutputWithContext(ctx context.Context) GetAppSecHostnameCoverageMatchTargetsResultOutput {
 	return o
-}
-
-func (o GetAppSecHostnameCoverageMatchTargetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppSecHostnameCoverageMatchTargetsResult] {
-	return pulumix.Output[GetAppSecHostnameCoverageMatchTargetsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAppSecHostnameCoverageMatchTargetsResultOutput) ConfigId() pulumi.IntOutput {

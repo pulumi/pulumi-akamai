@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type CpsUploadCertificate struct {
@@ -186,12 +185,6 @@ func (i *CpsUploadCertificate) ToCpsUploadCertificateOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(CpsUploadCertificateOutput)
 }
 
-func (i *CpsUploadCertificate) ToOutput(ctx context.Context) pulumix.Output[*CpsUploadCertificate] {
-	return pulumix.Output[*CpsUploadCertificate]{
-		OutputState: i.ToCpsUploadCertificateOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CpsUploadCertificateArrayInput is an input type that accepts CpsUploadCertificateArray and CpsUploadCertificateArrayOutput values.
 // You can construct a concrete instance of `CpsUploadCertificateArrayInput` via:
 //
@@ -215,12 +208,6 @@ func (i CpsUploadCertificateArray) ToCpsUploadCertificateArrayOutput() CpsUpload
 
 func (i CpsUploadCertificateArray) ToCpsUploadCertificateArrayOutputWithContext(ctx context.Context) CpsUploadCertificateArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CpsUploadCertificateArrayOutput)
-}
-
-func (i CpsUploadCertificateArray) ToOutput(ctx context.Context) pulumix.Output[[]*CpsUploadCertificate] {
-	return pulumix.Output[[]*CpsUploadCertificate]{
-		OutputState: i.ToCpsUploadCertificateArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CpsUploadCertificateMapInput is an input type that accepts CpsUploadCertificateMap and CpsUploadCertificateMapOutput values.
@@ -248,12 +235,6 @@ func (i CpsUploadCertificateMap) ToCpsUploadCertificateMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(CpsUploadCertificateMapOutput)
 }
 
-func (i CpsUploadCertificateMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CpsUploadCertificate] {
-	return pulumix.Output[map[string]*CpsUploadCertificate]{
-		OutputState: i.ToCpsUploadCertificateMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CpsUploadCertificateOutput struct{ *pulumi.OutputState }
 
 func (CpsUploadCertificateOutput) ElementType() reflect.Type {
@@ -266,12 +247,6 @@ func (o CpsUploadCertificateOutput) ToCpsUploadCertificateOutput() CpsUploadCert
 
 func (o CpsUploadCertificateOutput) ToCpsUploadCertificateOutputWithContext(ctx context.Context) CpsUploadCertificateOutput {
 	return o
-}
-
-func (o CpsUploadCertificateOutput) ToOutput(ctx context.Context) pulumix.Output[*CpsUploadCertificate] {
-	return pulumix.Output[*CpsUploadCertificate]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Whether to acknowledge change management
@@ -338,12 +313,6 @@ func (o CpsUploadCertificateArrayOutput) ToCpsUploadCertificateArrayOutputWithCo
 	return o
 }
 
-func (o CpsUploadCertificateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CpsUploadCertificate] {
-	return pulumix.Output[[]*CpsUploadCertificate]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o CpsUploadCertificateArrayOutput) Index(i pulumi.IntInput) CpsUploadCertificateOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CpsUploadCertificate {
 		return vs[0].([]*CpsUploadCertificate)[vs[1].(int)]
@@ -362,12 +331,6 @@ func (o CpsUploadCertificateMapOutput) ToCpsUploadCertificateMapOutput() CpsUplo
 
 func (o CpsUploadCertificateMapOutput) ToCpsUploadCertificateMapOutputWithContext(ctx context.Context) CpsUploadCertificateMapOutput {
 	return o
-}
-
-func (o CpsUploadCertificateMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CpsUploadCertificate] {
-	return pulumix.Output[map[string]*CpsUploadCertificate]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CpsUploadCertificateMapOutput) MapIndex(k pulumi.StringInput) CpsUploadCertificateOutput {

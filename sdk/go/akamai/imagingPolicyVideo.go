@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type ImagingPolicyVideo struct {
@@ -165,12 +164,6 @@ func (i *ImagingPolicyVideo) ToImagingPolicyVideoOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(ImagingPolicyVideoOutput)
 }
 
-func (i *ImagingPolicyVideo) ToOutput(ctx context.Context) pulumix.Output[*ImagingPolicyVideo] {
-	return pulumix.Output[*ImagingPolicyVideo]{
-		OutputState: i.ToImagingPolicyVideoOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ImagingPolicyVideoArrayInput is an input type that accepts ImagingPolicyVideoArray and ImagingPolicyVideoArrayOutput values.
 // You can construct a concrete instance of `ImagingPolicyVideoArrayInput` via:
 //
@@ -194,12 +187,6 @@ func (i ImagingPolicyVideoArray) ToImagingPolicyVideoArrayOutput() ImagingPolicy
 
 func (i ImagingPolicyVideoArray) ToImagingPolicyVideoArrayOutputWithContext(ctx context.Context) ImagingPolicyVideoArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ImagingPolicyVideoArrayOutput)
-}
-
-func (i ImagingPolicyVideoArray) ToOutput(ctx context.Context) pulumix.Output[[]*ImagingPolicyVideo] {
-	return pulumix.Output[[]*ImagingPolicyVideo]{
-		OutputState: i.ToImagingPolicyVideoArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ImagingPolicyVideoMapInput is an input type that accepts ImagingPolicyVideoMap and ImagingPolicyVideoMapOutput values.
@@ -227,12 +214,6 @@ func (i ImagingPolicyVideoMap) ToImagingPolicyVideoMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(ImagingPolicyVideoMapOutput)
 }
 
-func (i ImagingPolicyVideoMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ImagingPolicyVideo] {
-	return pulumix.Output[map[string]*ImagingPolicyVideo]{
-		OutputState: i.ToImagingPolicyVideoMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ImagingPolicyVideoOutput struct{ *pulumi.OutputState }
 
 func (ImagingPolicyVideoOutput) ElementType() reflect.Type {
@@ -245,12 +226,6 @@ func (o ImagingPolicyVideoOutput) ToImagingPolicyVideoOutput() ImagingPolicyVide
 
 func (o ImagingPolicyVideoOutput) ToImagingPolicyVideoOutputWithContext(ctx context.Context) ImagingPolicyVideoOutput {
 	return o
-}
-
-func (o ImagingPolicyVideoOutput) ToOutput(ctx context.Context) pulumix.Output[*ImagingPolicyVideo] {
-	return pulumix.Output[*ImagingPolicyVideo]{
-		OutputState: o.OutputState,
-	}
 }
 
 // With this flag set to false, the user can perform modifications on staging without affecting the version already saved
@@ -299,12 +274,6 @@ func (o ImagingPolicyVideoArrayOutput) ToImagingPolicyVideoArrayOutputWithContex
 	return o
 }
 
-func (o ImagingPolicyVideoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ImagingPolicyVideo] {
-	return pulumix.Output[[]*ImagingPolicyVideo]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ImagingPolicyVideoArrayOutput) Index(i pulumi.IntInput) ImagingPolicyVideoOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ImagingPolicyVideo {
 		return vs[0].([]*ImagingPolicyVideo)[vs[1].(int)]
@@ -323,12 +292,6 @@ func (o ImagingPolicyVideoMapOutput) ToImagingPolicyVideoMapOutput() ImagingPoli
 
 func (o ImagingPolicyVideoMapOutput) ToImagingPolicyVideoMapOutputWithContext(ctx context.Context) ImagingPolicyVideoMapOutput {
 	return o
-}
-
-func (o ImagingPolicyVideoMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ImagingPolicyVideo] {
-	return pulumix.Output[map[string]*ImagingPolicyVideo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ImagingPolicyVideoMapOutput) MapIndex(k pulumi.StringInput) ImagingPolicyVideoOutput {

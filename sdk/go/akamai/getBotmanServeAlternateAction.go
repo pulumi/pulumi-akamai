@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupBotmanServeAlternateAction(ctx *pulumi.Context, args *LookupBotmanServeAlternateActionArgs, opts ...pulumi.InvokeOption) (*LookupBotmanServeAlternateActionResult, error) {
@@ -73,12 +72,6 @@ func (o LookupBotmanServeAlternateActionResultOutput) ToLookupBotmanServeAlterna
 
 func (o LookupBotmanServeAlternateActionResultOutput) ToLookupBotmanServeAlternateActionResultOutputWithContext(ctx context.Context) LookupBotmanServeAlternateActionResultOutput {
 	return o
-}
-
-func (o LookupBotmanServeAlternateActionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupBotmanServeAlternateActionResult] {
-	return pulumix.Output[LookupBotmanServeAlternateActionResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupBotmanServeAlternateActionResultOutput) ActionId() pulumi.StringPtrOutput {

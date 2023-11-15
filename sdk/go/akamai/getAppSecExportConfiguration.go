@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetAppSecExportConfiguration(ctx *pulumi.Context, args *GetAppSecExportConfigurationArgs, opts ...pulumi.InvokeOption) (*GetAppSecExportConfigurationResult, error) {
@@ -77,12 +76,6 @@ func (o GetAppSecExportConfigurationResultOutput) ToGetAppSecExportConfiguration
 
 func (o GetAppSecExportConfigurationResultOutput) ToGetAppSecExportConfigurationResultOutputWithContext(ctx context.Context) GetAppSecExportConfigurationResultOutput {
 	return o
-}
-
-func (o GetAppSecExportConfigurationResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppSecExportConfigurationResult] {
-	return pulumix.Output[GetAppSecExportConfigurationResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAppSecExportConfigurationResultOutput) ConfigId() pulumi.IntOutput {

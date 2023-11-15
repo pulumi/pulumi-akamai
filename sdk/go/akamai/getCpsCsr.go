@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetCpsCsr(ctx *pulumi.Context, args *GetCpsCsrArgs, opts ...pulumi.InvokeOption) (*GetCpsCsrResult, error) {
@@ -71,12 +70,6 @@ func (o GetCpsCsrResultOutput) ToGetCpsCsrResultOutput() GetCpsCsrResultOutput {
 
 func (o GetCpsCsrResultOutput) ToGetCpsCsrResultOutputWithContext(ctx context.Context) GetCpsCsrResultOutput {
 	return o
-}
-
-func (o GetCpsCsrResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCpsCsrResult] {
-	return pulumix.Output[GetCpsCsrResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCpsCsrResultOutput) CsrEcdsa() pulumi.StringOutput {
