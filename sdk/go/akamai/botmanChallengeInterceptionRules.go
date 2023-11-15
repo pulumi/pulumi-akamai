@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type BotmanChallengeInterceptionRules struct {
@@ -103,12 +102,6 @@ func (i *BotmanChallengeInterceptionRules) ToBotmanChallengeInterceptionRulesOut
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanChallengeInterceptionRulesOutput)
 }
 
-func (i *BotmanChallengeInterceptionRules) ToOutput(ctx context.Context) pulumix.Output[*BotmanChallengeInterceptionRules] {
-	return pulumix.Output[*BotmanChallengeInterceptionRules]{
-		OutputState: i.ToBotmanChallengeInterceptionRulesOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BotmanChallengeInterceptionRulesArrayInput is an input type that accepts BotmanChallengeInterceptionRulesArray and BotmanChallengeInterceptionRulesArrayOutput values.
 // You can construct a concrete instance of `BotmanChallengeInterceptionRulesArrayInput` via:
 //
@@ -132,12 +125,6 @@ func (i BotmanChallengeInterceptionRulesArray) ToBotmanChallengeInterceptionRule
 
 func (i BotmanChallengeInterceptionRulesArray) ToBotmanChallengeInterceptionRulesArrayOutputWithContext(ctx context.Context) BotmanChallengeInterceptionRulesArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanChallengeInterceptionRulesArrayOutput)
-}
-
-func (i BotmanChallengeInterceptionRulesArray) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanChallengeInterceptionRules] {
-	return pulumix.Output[[]*BotmanChallengeInterceptionRules]{
-		OutputState: i.ToBotmanChallengeInterceptionRulesArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BotmanChallengeInterceptionRulesMapInput is an input type that accepts BotmanChallengeInterceptionRulesMap and BotmanChallengeInterceptionRulesMapOutput values.
@@ -165,12 +152,6 @@ func (i BotmanChallengeInterceptionRulesMap) ToBotmanChallengeInterceptionRulesM
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanChallengeInterceptionRulesMapOutput)
 }
 
-func (i BotmanChallengeInterceptionRulesMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanChallengeInterceptionRules] {
-	return pulumix.Output[map[string]*BotmanChallengeInterceptionRules]{
-		OutputState: i.ToBotmanChallengeInterceptionRulesMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BotmanChallengeInterceptionRulesOutput struct{ *pulumi.OutputState }
 
 func (BotmanChallengeInterceptionRulesOutput) ElementType() reflect.Type {
@@ -183,12 +164,6 @@ func (o BotmanChallengeInterceptionRulesOutput) ToBotmanChallengeInterceptionRul
 
 func (o BotmanChallengeInterceptionRulesOutput) ToBotmanChallengeInterceptionRulesOutputWithContext(ctx context.Context) BotmanChallengeInterceptionRulesOutput {
 	return o
-}
-
-func (o BotmanChallengeInterceptionRulesOutput) ToOutput(ctx context.Context) pulumix.Output[*BotmanChallengeInterceptionRules] {
-	return pulumix.Output[*BotmanChallengeInterceptionRules]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BotmanChallengeInterceptionRulesOutput) ChallengeInterceptionRules() pulumi.StringOutput {
@@ -213,12 +188,6 @@ func (o BotmanChallengeInterceptionRulesArrayOutput) ToBotmanChallengeIntercepti
 	return o
 }
 
-func (o BotmanChallengeInterceptionRulesArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanChallengeInterceptionRules] {
-	return pulumix.Output[[]*BotmanChallengeInterceptionRules]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o BotmanChallengeInterceptionRulesArrayOutput) Index(i pulumi.IntInput) BotmanChallengeInterceptionRulesOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BotmanChallengeInterceptionRules {
 		return vs[0].([]*BotmanChallengeInterceptionRules)[vs[1].(int)]
@@ -237,12 +206,6 @@ func (o BotmanChallengeInterceptionRulesMapOutput) ToBotmanChallengeInterception
 
 func (o BotmanChallengeInterceptionRulesMapOutput) ToBotmanChallengeInterceptionRulesMapOutputWithContext(ctx context.Context) BotmanChallengeInterceptionRulesMapOutput {
 	return o
-}
-
-func (o BotmanChallengeInterceptionRulesMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanChallengeInterceptionRules] {
-	return pulumix.Output[map[string]*BotmanChallengeInterceptionRules]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BotmanChallengeInterceptionRulesMapOutput) MapIndex(k pulumi.StringInput) BotmanChallengeInterceptionRulesOutput {

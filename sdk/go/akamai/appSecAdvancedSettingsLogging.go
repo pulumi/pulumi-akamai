@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppSecAdvancedSettingsLogging struct {
@@ -123,12 +122,6 @@ func (i *AppSecAdvancedSettingsLogging) ToAppSecAdvancedSettingsLoggingOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecAdvancedSettingsLoggingOutput)
 }
 
-func (i *AppSecAdvancedSettingsLogging) ToOutput(ctx context.Context) pulumix.Output[*AppSecAdvancedSettingsLogging] {
-	return pulumix.Output[*AppSecAdvancedSettingsLogging]{
-		OutputState: i.ToAppSecAdvancedSettingsLoggingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AppSecAdvancedSettingsLoggingArrayInput is an input type that accepts AppSecAdvancedSettingsLoggingArray and AppSecAdvancedSettingsLoggingArrayOutput values.
 // You can construct a concrete instance of `AppSecAdvancedSettingsLoggingArrayInput` via:
 //
@@ -152,12 +145,6 @@ func (i AppSecAdvancedSettingsLoggingArray) ToAppSecAdvancedSettingsLoggingArray
 
 func (i AppSecAdvancedSettingsLoggingArray) ToAppSecAdvancedSettingsLoggingArrayOutputWithContext(ctx context.Context) AppSecAdvancedSettingsLoggingArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecAdvancedSettingsLoggingArrayOutput)
-}
-
-func (i AppSecAdvancedSettingsLoggingArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecAdvancedSettingsLogging] {
-	return pulumix.Output[[]*AppSecAdvancedSettingsLogging]{
-		OutputState: i.ToAppSecAdvancedSettingsLoggingArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AppSecAdvancedSettingsLoggingMapInput is an input type that accepts AppSecAdvancedSettingsLoggingMap and AppSecAdvancedSettingsLoggingMapOutput values.
@@ -185,12 +172,6 @@ func (i AppSecAdvancedSettingsLoggingMap) ToAppSecAdvancedSettingsLoggingMapOutp
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecAdvancedSettingsLoggingMapOutput)
 }
 
-func (i AppSecAdvancedSettingsLoggingMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecAdvancedSettingsLogging] {
-	return pulumix.Output[map[string]*AppSecAdvancedSettingsLogging]{
-		OutputState: i.ToAppSecAdvancedSettingsLoggingMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AppSecAdvancedSettingsLoggingOutput struct{ *pulumi.OutputState }
 
 func (AppSecAdvancedSettingsLoggingOutput) ElementType() reflect.Type {
@@ -203,12 +184,6 @@ func (o AppSecAdvancedSettingsLoggingOutput) ToAppSecAdvancedSettingsLoggingOutp
 
 func (o AppSecAdvancedSettingsLoggingOutput) ToAppSecAdvancedSettingsLoggingOutputWithContext(ctx context.Context) AppSecAdvancedSettingsLoggingOutput {
 	return o
-}
-
-func (o AppSecAdvancedSettingsLoggingOutput) ToOutput(ctx context.Context) pulumix.Output[*AppSecAdvancedSettingsLogging] {
-	return pulumix.Output[*AppSecAdvancedSettingsLogging]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique identifier of the security configuration
@@ -240,12 +215,6 @@ func (o AppSecAdvancedSettingsLoggingArrayOutput) ToAppSecAdvancedSettingsLoggin
 	return o
 }
 
-func (o AppSecAdvancedSettingsLoggingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecAdvancedSettingsLogging] {
-	return pulumix.Output[[]*AppSecAdvancedSettingsLogging]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AppSecAdvancedSettingsLoggingArrayOutput) Index(i pulumi.IntInput) AppSecAdvancedSettingsLoggingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecAdvancedSettingsLogging {
 		return vs[0].([]*AppSecAdvancedSettingsLogging)[vs[1].(int)]
@@ -264,12 +233,6 @@ func (o AppSecAdvancedSettingsLoggingMapOutput) ToAppSecAdvancedSettingsLoggingM
 
 func (o AppSecAdvancedSettingsLoggingMapOutput) ToAppSecAdvancedSettingsLoggingMapOutputWithContext(ctx context.Context) AppSecAdvancedSettingsLoggingMapOutput {
 	return o
-}
-
-func (o AppSecAdvancedSettingsLoggingMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecAdvancedSettingsLogging] {
-	return pulumix.Output[map[string]*AppSecAdvancedSettingsLogging]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppSecAdvancedSettingsLoggingMapOutput) MapIndex(k pulumi.StringInput) AppSecAdvancedSettingsLoggingOutput {

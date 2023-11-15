@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type BotmanClientSideSecurity struct {
@@ -103,12 +102,6 @@ func (i *BotmanClientSideSecurity) ToBotmanClientSideSecurityOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanClientSideSecurityOutput)
 }
 
-func (i *BotmanClientSideSecurity) ToOutput(ctx context.Context) pulumix.Output[*BotmanClientSideSecurity] {
-	return pulumix.Output[*BotmanClientSideSecurity]{
-		OutputState: i.ToBotmanClientSideSecurityOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BotmanClientSideSecurityArrayInput is an input type that accepts BotmanClientSideSecurityArray and BotmanClientSideSecurityArrayOutput values.
 // You can construct a concrete instance of `BotmanClientSideSecurityArrayInput` via:
 //
@@ -132,12 +125,6 @@ func (i BotmanClientSideSecurityArray) ToBotmanClientSideSecurityArrayOutput() B
 
 func (i BotmanClientSideSecurityArray) ToBotmanClientSideSecurityArrayOutputWithContext(ctx context.Context) BotmanClientSideSecurityArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanClientSideSecurityArrayOutput)
-}
-
-func (i BotmanClientSideSecurityArray) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanClientSideSecurity] {
-	return pulumix.Output[[]*BotmanClientSideSecurity]{
-		OutputState: i.ToBotmanClientSideSecurityArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BotmanClientSideSecurityMapInput is an input type that accepts BotmanClientSideSecurityMap and BotmanClientSideSecurityMapOutput values.
@@ -165,12 +152,6 @@ func (i BotmanClientSideSecurityMap) ToBotmanClientSideSecurityMapOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanClientSideSecurityMapOutput)
 }
 
-func (i BotmanClientSideSecurityMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanClientSideSecurity] {
-	return pulumix.Output[map[string]*BotmanClientSideSecurity]{
-		OutputState: i.ToBotmanClientSideSecurityMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BotmanClientSideSecurityOutput struct{ *pulumi.OutputState }
 
 func (BotmanClientSideSecurityOutput) ElementType() reflect.Type {
@@ -183,12 +164,6 @@ func (o BotmanClientSideSecurityOutput) ToBotmanClientSideSecurityOutput() Botma
 
 func (o BotmanClientSideSecurityOutput) ToBotmanClientSideSecurityOutputWithContext(ctx context.Context) BotmanClientSideSecurityOutput {
 	return o
-}
-
-func (o BotmanClientSideSecurityOutput) ToOutput(ctx context.Context) pulumix.Output[*BotmanClientSideSecurity] {
-	return pulumix.Output[*BotmanClientSideSecurity]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BotmanClientSideSecurityOutput) ClientSideSecurity() pulumi.StringOutput {
@@ -213,12 +188,6 @@ func (o BotmanClientSideSecurityArrayOutput) ToBotmanClientSideSecurityArrayOutp
 	return o
 }
 
-func (o BotmanClientSideSecurityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanClientSideSecurity] {
-	return pulumix.Output[[]*BotmanClientSideSecurity]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o BotmanClientSideSecurityArrayOutput) Index(i pulumi.IntInput) BotmanClientSideSecurityOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BotmanClientSideSecurity {
 		return vs[0].([]*BotmanClientSideSecurity)[vs[1].(int)]
@@ -237,12 +206,6 @@ func (o BotmanClientSideSecurityMapOutput) ToBotmanClientSideSecurityMapOutput()
 
 func (o BotmanClientSideSecurityMapOutput) ToBotmanClientSideSecurityMapOutputWithContext(ctx context.Context) BotmanClientSideSecurityMapOutput {
 	return o
-}
-
-func (o BotmanClientSideSecurityMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanClientSideSecurity] {
-	return pulumix.Output[map[string]*BotmanClientSideSecurity]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BotmanClientSideSecurityMapOutput) MapIndex(k pulumi.StringInput) BotmanClientSideSecurityOutput {

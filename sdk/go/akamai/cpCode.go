@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type CpCode struct {
@@ -119,12 +118,6 @@ func (i *CpCode) ToCpCodeOutputWithContext(ctx context.Context) CpCodeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CpCodeOutput)
 }
 
-func (i *CpCode) ToOutput(ctx context.Context) pulumix.Output[*CpCode] {
-	return pulumix.Output[*CpCode]{
-		OutputState: i.ToCpCodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CpCodeArrayInput is an input type that accepts CpCodeArray and CpCodeArrayOutput values.
 // You can construct a concrete instance of `CpCodeArrayInput` via:
 //
@@ -148,12 +141,6 @@ func (i CpCodeArray) ToCpCodeArrayOutput() CpCodeArrayOutput {
 
 func (i CpCodeArray) ToCpCodeArrayOutputWithContext(ctx context.Context) CpCodeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CpCodeArrayOutput)
-}
-
-func (i CpCodeArray) ToOutput(ctx context.Context) pulumix.Output[[]*CpCode] {
-	return pulumix.Output[[]*CpCode]{
-		OutputState: i.ToCpCodeArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CpCodeMapInput is an input type that accepts CpCodeMap and CpCodeMapOutput values.
@@ -181,12 +168,6 @@ func (i CpCodeMap) ToCpCodeMapOutputWithContext(ctx context.Context) CpCodeMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(CpCodeMapOutput)
 }
 
-func (i CpCodeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CpCode] {
-	return pulumix.Output[map[string]*CpCode]{
-		OutputState: i.ToCpCodeMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CpCodeOutput struct{ *pulumi.OutputState }
 
 func (CpCodeOutput) ElementType() reflect.Type {
@@ -199,12 +180,6 @@ func (o CpCodeOutput) ToCpCodeOutput() CpCodeOutput {
 
 func (o CpCodeOutput) ToCpCodeOutputWithContext(ctx context.Context) CpCodeOutput {
 	return o
-}
-
-func (o CpCodeOutput) ToOutput(ctx context.Context) pulumix.Output[*CpCode] {
-	return pulumix.Output[*CpCode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CpCodeOutput) ContractId() pulumi.StringOutput {
@@ -237,12 +212,6 @@ func (o CpCodeArrayOutput) ToCpCodeArrayOutputWithContext(ctx context.Context) C
 	return o
 }
 
-func (o CpCodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CpCode] {
-	return pulumix.Output[[]*CpCode]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o CpCodeArrayOutput) Index(i pulumi.IntInput) CpCodeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CpCode {
 		return vs[0].([]*CpCode)[vs[1].(int)]
@@ -261,12 +230,6 @@ func (o CpCodeMapOutput) ToCpCodeMapOutput() CpCodeMapOutput {
 
 func (o CpCodeMapOutput) ToCpCodeMapOutputWithContext(ctx context.Context) CpCodeMapOutput {
 	return o
-}
-
-func (o CpCodeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CpCode] {
-	return pulumix.Output[map[string]*CpCode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CpCodeMapOutput) MapIndex(k pulumi.StringInput) CpCodeOutput {

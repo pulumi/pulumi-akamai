@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupPropertyIncludeActivation(ctx *pulumi.Context, args *LookupPropertyIncludeActivationArgs, opts ...pulumi.InvokeOption) (*LookupPropertyIncludeActivationResult, error) {
@@ -82,12 +81,6 @@ func (o LookupPropertyIncludeActivationResultOutput) ToLookupPropertyIncludeActi
 
 func (o LookupPropertyIncludeActivationResultOutput) ToLookupPropertyIncludeActivationResultOutputWithContext(ctx context.Context) LookupPropertyIncludeActivationResultOutput {
 	return o
-}
-
-func (o LookupPropertyIncludeActivationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupPropertyIncludeActivationResult] {
-	return pulumix.Output[LookupPropertyIncludeActivationResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupPropertyIncludeActivationResultOutput) ContractId() pulumi.StringOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupAppsecAdvancedSettingsPiiLearning(ctx *pulumi.Context, args *LookupAppsecAdvancedSettingsPiiLearningArgs, opts ...pulumi.InvokeOption) (*LookupAppsecAdvancedSettingsPiiLearningResult, error) {
@@ -71,12 +70,6 @@ func (o LookupAppsecAdvancedSettingsPiiLearningResultOutput) ToLookupAppsecAdvan
 
 func (o LookupAppsecAdvancedSettingsPiiLearningResultOutput) ToLookupAppsecAdvancedSettingsPiiLearningResultOutputWithContext(ctx context.Context) LookupAppsecAdvancedSettingsPiiLearningResultOutput {
 	return o
-}
-
-func (o LookupAppsecAdvancedSettingsPiiLearningResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAppsecAdvancedSettingsPiiLearningResult] {
-	return pulumix.Output[LookupAppsecAdvancedSettingsPiiLearningResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupAppsecAdvancedSettingsPiiLearningResultOutput) ConfigId() pulumi.IntOutput {

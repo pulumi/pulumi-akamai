@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type ImagingPolicyImage struct {
@@ -165,12 +164,6 @@ func (i *ImagingPolicyImage) ToImagingPolicyImageOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(ImagingPolicyImageOutput)
 }
 
-func (i *ImagingPolicyImage) ToOutput(ctx context.Context) pulumix.Output[*ImagingPolicyImage] {
-	return pulumix.Output[*ImagingPolicyImage]{
-		OutputState: i.ToImagingPolicyImageOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ImagingPolicyImageArrayInput is an input type that accepts ImagingPolicyImageArray and ImagingPolicyImageArrayOutput values.
 // You can construct a concrete instance of `ImagingPolicyImageArrayInput` via:
 //
@@ -194,12 +187,6 @@ func (i ImagingPolicyImageArray) ToImagingPolicyImageArrayOutput() ImagingPolicy
 
 func (i ImagingPolicyImageArray) ToImagingPolicyImageArrayOutputWithContext(ctx context.Context) ImagingPolicyImageArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ImagingPolicyImageArrayOutput)
-}
-
-func (i ImagingPolicyImageArray) ToOutput(ctx context.Context) pulumix.Output[[]*ImagingPolicyImage] {
-	return pulumix.Output[[]*ImagingPolicyImage]{
-		OutputState: i.ToImagingPolicyImageArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ImagingPolicyImageMapInput is an input type that accepts ImagingPolicyImageMap and ImagingPolicyImageMapOutput values.
@@ -227,12 +214,6 @@ func (i ImagingPolicyImageMap) ToImagingPolicyImageMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(ImagingPolicyImageMapOutput)
 }
 
-func (i ImagingPolicyImageMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ImagingPolicyImage] {
-	return pulumix.Output[map[string]*ImagingPolicyImage]{
-		OutputState: i.ToImagingPolicyImageMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ImagingPolicyImageOutput struct{ *pulumi.OutputState }
 
 func (ImagingPolicyImageOutput) ElementType() reflect.Type {
@@ -245,12 +226,6 @@ func (o ImagingPolicyImageOutput) ToImagingPolicyImageOutput() ImagingPolicyImag
 
 func (o ImagingPolicyImageOutput) ToImagingPolicyImageOutputWithContext(ctx context.Context) ImagingPolicyImageOutput {
 	return o
-}
-
-func (o ImagingPolicyImageOutput) ToOutput(ctx context.Context) pulumix.Output[*ImagingPolicyImage] {
-	return pulumix.Output[*ImagingPolicyImage]{
-		OutputState: o.OutputState,
-	}
 }
 
 // With this flag set to false, the user can perform modifications on staging without affecting the version already saved
@@ -299,12 +274,6 @@ func (o ImagingPolicyImageArrayOutput) ToImagingPolicyImageArrayOutputWithContex
 	return o
 }
 
-func (o ImagingPolicyImageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ImagingPolicyImage] {
-	return pulumix.Output[[]*ImagingPolicyImage]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ImagingPolicyImageArrayOutput) Index(i pulumi.IntInput) ImagingPolicyImageOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ImagingPolicyImage {
 		return vs[0].([]*ImagingPolicyImage)[vs[1].(int)]
@@ -323,12 +292,6 @@ func (o ImagingPolicyImageMapOutput) ToImagingPolicyImageMapOutput() ImagingPoli
 
 func (o ImagingPolicyImageMapOutput) ToImagingPolicyImageMapOutputWithContext(ctx context.Context) ImagingPolicyImageMapOutput {
 	return o
-}
-
-func (o ImagingPolicyImageMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ImagingPolicyImage] {
-	return pulumix.Output[map[string]*ImagingPolicyImage]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ImagingPolicyImageMapOutput) MapIndex(k pulumi.StringInput) ImagingPolicyImageOutput {

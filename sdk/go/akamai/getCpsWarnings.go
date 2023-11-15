@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetCpsWarnings(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetCpsWarningsResult, error) {
@@ -53,12 +52,6 @@ func (o GetCpsWarningsResultOutput) ToGetCpsWarningsResultOutput() GetCpsWarning
 
 func (o GetCpsWarningsResultOutput) ToGetCpsWarningsResultOutputWithContext(ctx context.Context) GetCpsWarningsResultOutput {
 	return o
-}
-
-func (o GetCpsWarningsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCpsWarningsResult] {
-	return pulumix.Output[GetCpsWarningsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

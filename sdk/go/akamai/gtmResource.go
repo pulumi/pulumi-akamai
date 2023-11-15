@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type GtmResource struct {
@@ -177,12 +176,6 @@ func (i *GtmResource) ToGtmResourceOutputWithContext(ctx context.Context) GtmRes
 	return pulumi.ToOutputWithContext(ctx, i).(GtmResourceOutput)
 }
 
-func (i *GtmResource) ToOutput(ctx context.Context) pulumix.Output[*GtmResource] {
-	return pulumix.Output[*GtmResource]{
-		OutputState: i.ToGtmResourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GtmResourceArrayInput is an input type that accepts GtmResourceArray and GtmResourceArrayOutput values.
 // You can construct a concrete instance of `GtmResourceArrayInput` via:
 //
@@ -206,12 +199,6 @@ func (i GtmResourceArray) ToGtmResourceArrayOutput() GtmResourceArrayOutput {
 
 func (i GtmResourceArray) ToGtmResourceArrayOutputWithContext(ctx context.Context) GtmResourceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GtmResourceArrayOutput)
-}
-
-func (i GtmResourceArray) ToOutput(ctx context.Context) pulumix.Output[[]*GtmResource] {
-	return pulumix.Output[[]*GtmResource]{
-		OutputState: i.ToGtmResourceArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GtmResourceMapInput is an input type that accepts GtmResourceMap and GtmResourceMapOutput values.
@@ -239,12 +226,6 @@ func (i GtmResourceMap) ToGtmResourceMapOutputWithContext(ctx context.Context) G
 	return pulumi.ToOutputWithContext(ctx, i).(GtmResourceMapOutput)
 }
 
-func (i GtmResourceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*GtmResource] {
-	return pulumix.Output[map[string]*GtmResource]{
-		OutputState: i.ToGtmResourceMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GtmResourceOutput struct{ *pulumi.OutputState }
 
 func (GtmResourceOutput) ElementType() reflect.Type {
@@ -257,12 +238,6 @@ func (o GtmResourceOutput) ToGtmResourceOutput() GtmResourceOutput {
 
 func (o GtmResourceOutput) ToGtmResourceOutputWithContext(ctx context.Context) GtmResourceOutput {
 	return o
-}
-
-func (o GtmResourceOutput) ToOutput(ctx context.Context) pulumix.Output[*GtmResource] {
-	return pulumix.Output[*GtmResource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GtmResourceOutput) AggregationType() pulumi.StringOutput {
@@ -339,12 +314,6 @@ func (o GtmResourceArrayOutput) ToGtmResourceArrayOutputWithContext(ctx context.
 	return o
 }
 
-func (o GtmResourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*GtmResource] {
-	return pulumix.Output[[]*GtmResource]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GtmResourceArrayOutput) Index(i pulumi.IntInput) GtmResourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *GtmResource {
 		return vs[0].([]*GtmResource)[vs[1].(int)]
@@ -363,12 +332,6 @@ func (o GtmResourceMapOutput) ToGtmResourceMapOutput() GtmResourceMapOutput {
 
 func (o GtmResourceMapOutput) ToGtmResourceMapOutputWithContext(ctx context.Context) GtmResourceMapOutput {
 	return o
-}
-
-func (o GtmResourceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*GtmResource] {
-	return pulumix.Output[map[string]*GtmResource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GtmResourceMapOutput) MapIndex(k pulumi.StringInput) GtmResourceOutput {

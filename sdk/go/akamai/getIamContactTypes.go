@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetIamContactTypes(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIamContactTypesResult, error) {
@@ -53,12 +52,6 @@ func (o GetIamContactTypesResultOutput) ToGetIamContactTypesResultOutput() GetIa
 
 func (o GetIamContactTypesResultOutput) ToGetIamContactTypesResultOutputWithContext(ctx context.Context) GetIamContactTypesResultOutput {
 	return o
-}
-
-func (o GetIamContactTypesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIamContactTypesResult] {
-	return pulumix.Output[GetIamContactTypesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIamContactTypesResultOutput) ContactTypes() pulumi.StringArrayOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetCloudletsAudienceSegmentationMatchRule(ctx *pulumi.Context, args *GetCloudletsAudienceSegmentationMatchRuleArgs, opts ...pulumi.InvokeOption) (*GetCloudletsAudienceSegmentationMatchRuleResult, error) {
@@ -70,12 +69,6 @@ func (o GetCloudletsAudienceSegmentationMatchRuleResultOutput) ToGetCloudletsAud
 
 func (o GetCloudletsAudienceSegmentationMatchRuleResultOutput) ToGetCloudletsAudienceSegmentationMatchRuleResultOutputWithContext(ctx context.Context) GetCloudletsAudienceSegmentationMatchRuleResultOutput {
 	return o
-}
-
-func (o GetCloudletsAudienceSegmentationMatchRuleResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCloudletsAudienceSegmentationMatchRuleResult] {
-	return pulumix.Output[GetCloudletsAudienceSegmentationMatchRuleResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetContracts(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetContractsResult, error) {
@@ -53,12 +52,6 @@ func (o GetContractsResultOutput) ToGetContractsResultOutput() GetContractsResul
 
 func (o GetContractsResultOutput) ToGetContractsResultOutputWithContext(ctx context.Context) GetContractsResultOutput {
 	return o
-}
-
-func (o GetContractsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetContractsResult] {
-	return pulumix.Output[GetContractsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContractsResultOutput) Contracts() GetContractsContractArrayOutput {

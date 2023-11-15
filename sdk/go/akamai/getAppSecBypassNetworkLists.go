@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetAppSecBypassNetworkLists(ctx *pulumi.Context, args *GetAppSecBypassNetworkListsArgs, opts ...pulumi.InvokeOption) (*GetAppSecBypassNetworkListsResult, error) {
@@ -75,12 +74,6 @@ func (o GetAppSecBypassNetworkListsResultOutput) ToGetAppSecBypassNetworkListsRe
 
 func (o GetAppSecBypassNetworkListsResultOutput) ToGetAppSecBypassNetworkListsResultOutputWithContext(ctx context.Context) GetAppSecBypassNetworkListsResultOutput {
 	return o
-}
-
-func (o GetAppSecBypassNetworkListsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppSecBypassNetworkListsResult] {
-	return pulumix.Output[GetAppSecBypassNetworkListsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAppSecBypassNetworkListsResultOutput) BypassNetworkLists() pulumi.StringArrayOutput {

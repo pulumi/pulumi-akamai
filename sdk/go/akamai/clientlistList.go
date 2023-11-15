@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type ClientlistList struct {
@@ -184,12 +183,6 @@ func (i *ClientlistList) ToClientlistListOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(ClientlistListOutput)
 }
 
-func (i *ClientlistList) ToOutput(ctx context.Context) pulumix.Output[*ClientlistList] {
-	return pulumix.Output[*ClientlistList]{
-		OutputState: i.ToClientlistListOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ClientlistListArrayInput is an input type that accepts ClientlistListArray and ClientlistListArrayOutput values.
 // You can construct a concrete instance of `ClientlistListArrayInput` via:
 //
@@ -213,12 +206,6 @@ func (i ClientlistListArray) ToClientlistListArrayOutput() ClientlistListArrayOu
 
 func (i ClientlistListArray) ToClientlistListArrayOutputWithContext(ctx context.Context) ClientlistListArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ClientlistListArrayOutput)
-}
-
-func (i ClientlistListArray) ToOutput(ctx context.Context) pulumix.Output[[]*ClientlistList] {
-	return pulumix.Output[[]*ClientlistList]{
-		OutputState: i.ToClientlistListArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ClientlistListMapInput is an input type that accepts ClientlistListMap and ClientlistListMapOutput values.
@@ -246,12 +233,6 @@ func (i ClientlistListMap) ToClientlistListMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ClientlistListMapOutput)
 }
 
-func (i ClientlistListMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ClientlistList] {
-	return pulumix.Output[map[string]*ClientlistList]{
-		OutputState: i.ToClientlistListMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ClientlistListOutput struct{ *pulumi.OutputState }
 
 func (ClientlistListOutput) ElementType() reflect.Type {
@@ -264,12 +245,6 @@ func (o ClientlistListOutput) ToClientlistListOutput() ClientlistListOutput {
 
 func (o ClientlistListOutput) ToClientlistListOutputWithContext(ctx context.Context) ClientlistListOutput {
 	return o
-}
-
-func (o ClientlistListOutput) ToOutput(ctx context.Context) pulumix.Output[*ClientlistList] {
-	return pulumix.Output[*ClientlistList]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Contract ID for which client list is assigned.
@@ -336,12 +311,6 @@ func (o ClientlistListArrayOutput) ToClientlistListArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o ClientlistListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ClientlistList] {
-	return pulumix.Output[[]*ClientlistList]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ClientlistListArrayOutput) Index(i pulumi.IntInput) ClientlistListOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ClientlistList {
 		return vs[0].([]*ClientlistList)[vs[1].(int)]
@@ -360,12 +329,6 @@ func (o ClientlistListMapOutput) ToClientlistListMapOutput() ClientlistListMapOu
 
 func (o ClientlistListMapOutput) ToClientlistListMapOutputWithContext(ctx context.Context) ClientlistListMapOutput {
 	return o
-}
-
-func (o ClientlistListMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ClientlistList] {
-	return pulumix.Output[map[string]*ClientlistList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ClientlistListMapOutput) MapIndex(k pulumi.StringInput) ClientlistListOutput {

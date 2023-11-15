@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetAppSecHostnameCoverage(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetAppSecHostnameCoverageResult, error) {
@@ -54,12 +53,6 @@ func (o GetAppSecHostnameCoverageResultOutput) ToGetAppSecHostnameCoverageResult
 
 func (o GetAppSecHostnameCoverageResultOutput) ToGetAppSecHostnameCoverageResultOutputWithContext(ctx context.Context) GetAppSecHostnameCoverageResultOutput {
 	return o
-}
-
-func (o GetAppSecHostnameCoverageResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppSecHostnameCoverageResult] {
-	return pulumix.Output[GetAppSecHostnameCoverageResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

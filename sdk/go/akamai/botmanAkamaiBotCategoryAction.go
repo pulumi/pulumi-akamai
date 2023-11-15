@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type BotmanAkamaiBotCategoryAction struct {
@@ -119,12 +118,6 @@ func (i *BotmanAkamaiBotCategoryAction) ToBotmanAkamaiBotCategoryActionOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanAkamaiBotCategoryActionOutput)
 }
 
-func (i *BotmanAkamaiBotCategoryAction) ToOutput(ctx context.Context) pulumix.Output[*BotmanAkamaiBotCategoryAction] {
-	return pulumix.Output[*BotmanAkamaiBotCategoryAction]{
-		OutputState: i.ToBotmanAkamaiBotCategoryActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BotmanAkamaiBotCategoryActionArrayInput is an input type that accepts BotmanAkamaiBotCategoryActionArray and BotmanAkamaiBotCategoryActionArrayOutput values.
 // You can construct a concrete instance of `BotmanAkamaiBotCategoryActionArrayInput` via:
 //
@@ -148,12 +141,6 @@ func (i BotmanAkamaiBotCategoryActionArray) ToBotmanAkamaiBotCategoryActionArray
 
 func (i BotmanAkamaiBotCategoryActionArray) ToBotmanAkamaiBotCategoryActionArrayOutputWithContext(ctx context.Context) BotmanAkamaiBotCategoryActionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanAkamaiBotCategoryActionArrayOutput)
-}
-
-func (i BotmanAkamaiBotCategoryActionArray) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanAkamaiBotCategoryAction] {
-	return pulumix.Output[[]*BotmanAkamaiBotCategoryAction]{
-		OutputState: i.ToBotmanAkamaiBotCategoryActionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BotmanAkamaiBotCategoryActionMapInput is an input type that accepts BotmanAkamaiBotCategoryActionMap and BotmanAkamaiBotCategoryActionMapOutput values.
@@ -181,12 +168,6 @@ func (i BotmanAkamaiBotCategoryActionMap) ToBotmanAkamaiBotCategoryActionMapOutp
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanAkamaiBotCategoryActionMapOutput)
 }
 
-func (i BotmanAkamaiBotCategoryActionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanAkamaiBotCategoryAction] {
-	return pulumix.Output[map[string]*BotmanAkamaiBotCategoryAction]{
-		OutputState: i.ToBotmanAkamaiBotCategoryActionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BotmanAkamaiBotCategoryActionOutput struct{ *pulumi.OutputState }
 
 func (BotmanAkamaiBotCategoryActionOutput) ElementType() reflect.Type {
@@ -199,12 +180,6 @@ func (o BotmanAkamaiBotCategoryActionOutput) ToBotmanAkamaiBotCategoryActionOutp
 
 func (o BotmanAkamaiBotCategoryActionOutput) ToBotmanAkamaiBotCategoryActionOutputWithContext(ctx context.Context) BotmanAkamaiBotCategoryActionOutput {
 	return o
-}
-
-func (o BotmanAkamaiBotCategoryActionOutput) ToOutput(ctx context.Context) pulumix.Output[*BotmanAkamaiBotCategoryAction] {
-	return pulumix.Output[*BotmanAkamaiBotCategoryAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BotmanAkamaiBotCategoryActionOutput) AkamaiBotCategoryAction() pulumi.StringOutput {
@@ -237,12 +212,6 @@ func (o BotmanAkamaiBotCategoryActionArrayOutput) ToBotmanAkamaiBotCategoryActio
 	return o
 }
 
-func (o BotmanAkamaiBotCategoryActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanAkamaiBotCategoryAction] {
-	return pulumix.Output[[]*BotmanAkamaiBotCategoryAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o BotmanAkamaiBotCategoryActionArrayOutput) Index(i pulumi.IntInput) BotmanAkamaiBotCategoryActionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BotmanAkamaiBotCategoryAction {
 		return vs[0].([]*BotmanAkamaiBotCategoryAction)[vs[1].(int)]
@@ -261,12 +230,6 @@ func (o BotmanAkamaiBotCategoryActionMapOutput) ToBotmanAkamaiBotCategoryActionM
 
 func (o BotmanAkamaiBotCategoryActionMapOutput) ToBotmanAkamaiBotCategoryActionMapOutputWithContext(ctx context.Context) BotmanAkamaiBotCategoryActionMapOutput {
 	return o
-}
-
-func (o BotmanAkamaiBotCategoryActionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanAkamaiBotCategoryAction] {
-	return pulumix.Output[map[string]*BotmanAkamaiBotCategoryAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BotmanAkamaiBotCategoryActionMapOutput) MapIndex(k pulumi.StringInput) BotmanAkamaiBotCategoryActionOutput {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type ImagingPolicySet struct {
@@ -136,12 +135,6 @@ func (i *ImagingPolicySet) ToImagingPolicySetOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(ImagingPolicySetOutput)
 }
 
-func (i *ImagingPolicySet) ToOutput(ctx context.Context) pulumix.Output[*ImagingPolicySet] {
-	return pulumix.Output[*ImagingPolicySet]{
-		OutputState: i.ToImagingPolicySetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ImagingPolicySetArrayInput is an input type that accepts ImagingPolicySetArray and ImagingPolicySetArrayOutput values.
 // You can construct a concrete instance of `ImagingPolicySetArrayInput` via:
 //
@@ -165,12 +158,6 @@ func (i ImagingPolicySetArray) ToImagingPolicySetArrayOutput() ImagingPolicySetA
 
 func (i ImagingPolicySetArray) ToImagingPolicySetArrayOutputWithContext(ctx context.Context) ImagingPolicySetArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ImagingPolicySetArrayOutput)
-}
-
-func (i ImagingPolicySetArray) ToOutput(ctx context.Context) pulumix.Output[[]*ImagingPolicySet] {
-	return pulumix.Output[[]*ImagingPolicySet]{
-		OutputState: i.ToImagingPolicySetArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ImagingPolicySetMapInput is an input type that accepts ImagingPolicySetMap and ImagingPolicySetMapOutput values.
@@ -198,12 +185,6 @@ func (i ImagingPolicySetMap) ToImagingPolicySetMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(ImagingPolicySetMapOutput)
 }
 
-func (i ImagingPolicySetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ImagingPolicySet] {
-	return pulumix.Output[map[string]*ImagingPolicySet]{
-		OutputState: i.ToImagingPolicySetMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ImagingPolicySetOutput struct{ *pulumi.OutputState }
 
 func (ImagingPolicySetOutput) ElementType() reflect.Type {
@@ -216,12 +197,6 @@ func (o ImagingPolicySetOutput) ToImagingPolicySetOutput() ImagingPolicySetOutpu
 
 func (o ImagingPolicySetOutput) ToImagingPolicySetOutputWithContext(ctx context.Context) ImagingPolicySetOutput {
 	return o
-}
-
-func (o ImagingPolicySetOutput) ToOutput(ctx context.Context) pulumix.Output[*ImagingPolicySet] {
-	return pulumix.Output[*ImagingPolicySet]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The unique identifier for the Akamai Contract containing the Policy Set(s)
@@ -258,12 +233,6 @@ func (o ImagingPolicySetArrayOutput) ToImagingPolicySetArrayOutputWithContext(ct
 	return o
 }
 
-func (o ImagingPolicySetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ImagingPolicySet] {
-	return pulumix.Output[[]*ImagingPolicySet]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ImagingPolicySetArrayOutput) Index(i pulumi.IntInput) ImagingPolicySetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ImagingPolicySet {
 		return vs[0].([]*ImagingPolicySet)[vs[1].(int)]
@@ -282,12 +251,6 @@ func (o ImagingPolicySetMapOutput) ToImagingPolicySetMapOutput() ImagingPolicySe
 
 func (o ImagingPolicySetMapOutput) ToImagingPolicySetMapOutputWithContext(ctx context.Context) ImagingPolicySetMapOutput {
 	return o
-}
-
-func (o ImagingPolicySetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ImagingPolicySet] {
-	return pulumix.Output[map[string]*ImagingPolicySet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ImagingPolicySetMapOutput) MapIndex(k pulumi.StringInput) ImagingPolicySetOutput {

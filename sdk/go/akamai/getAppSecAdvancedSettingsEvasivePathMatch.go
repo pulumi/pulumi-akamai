@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupAppSecAdvancedSettingsEvasivePathMatch(ctx *pulumi.Context, args *LookupAppSecAdvancedSettingsEvasivePathMatchArgs, opts ...pulumi.InvokeOption) (*LookupAppSecAdvancedSettingsEvasivePathMatchResult, error) {
@@ -74,12 +73,6 @@ func (o LookupAppSecAdvancedSettingsEvasivePathMatchResultOutput) ToLookupAppSec
 
 func (o LookupAppSecAdvancedSettingsEvasivePathMatchResultOutput) ToLookupAppSecAdvancedSettingsEvasivePathMatchResultOutputWithContext(ctx context.Context) LookupAppSecAdvancedSettingsEvasivePathMatchResultOutput {
 	return o
-}
-
-func (o LookupAppSecAdvancedSettingsEvasivePathMatchResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAppSecAdvancedSettingsEvasivePathMatchResult] {
-	return pulumix.Output[LookupAppSecAdvancedSettingsEvasivePathMatchResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupAppSecAdvancedSettingsEvasivePathMatchResultOutput) ConfigId() pulumi.IntOutput {

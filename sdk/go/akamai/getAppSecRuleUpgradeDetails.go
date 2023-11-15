@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetAppSecRuleUpgradeDetails(ctx *pulumi.Context, args *GetAppSecRuleUpgradeDetailsArgs, opts ...pulumi.InvokeOption) (*GetAppSecRuleUpgradeDetailsResult, error) {
@@ -74,12 +73,6 @@ func (o GetAppSecRuleUpgradeDetailsResultOutput) ToGetAppSecRuleUpgradeDetailsRe
 
 func (o GetAppSecRuleUpgradeDetailsResultOutput) ToGetAppSecRuleUpgradeDetailsResultOutputWithContext(ctx context.Context) GetAppSecRuleUpgradeDetailsResultOutput {
 	return o
-}
-
-func (o GetAppSecRuleUpgradeDetailsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppSecRuleUpgradeDetailsResult] {
-	return pulumix.Output[GetAppSecRuleUpgradeDetailsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAppSecRuleUpgradeDetailsResultOutput) ConfigId() pulumi.IntOutput {

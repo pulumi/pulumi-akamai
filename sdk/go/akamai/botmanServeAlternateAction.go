@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type BotmanServeAlternateAction struct {
@@ -106,12 +105,6 @@ func (i *BotmanServeAlternateAction) ToBotmanServeAlternateActionOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanServeAlternateActionOutput)
 }
 
-func (i *BotmanServeAlternateAction) ToOutput(ctx context.Context) pulumix.Output[*BotmanServeAlternateAction] {
-	return pulumix.Output[*BotmanServeAlternateAction]{
-		OutputState: i.ToBotmanServeAlternateActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BotmanServeAlternateActionArrayInput is an input type that accepts BotmanServeAlternateActionArray and BotmanServeAlternateActionArrayOutput values.
 // You can construct a concrete instance of `BotmanServeAlternateActionArrayInput` via:
 //
@@ -135,12 +128,6 @@ func (i BotmanServeAlternateActionArray) ToBotmanServeAlternateActionArrayOutput
 
 func (i BotmanServeAlternateActionArray) ToBotmanServeAlternateActionArrayOutputWithContext(ctx context.Context) BotmanServeAlternateActionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanServeAlternateActionArrayOutput)
-}
-
-func (i BotmanServeAlternateActionArray) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanServeAlternateAction] {
-	return pulumix.Output[[]*BotmanServeAlternateAction]{
-		OutputState: i.ToBotmanServeAlternateActionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BotmanServeAlternateActionMapInput is an input type that accepts BotmanServeAlternateActionMap and BotmanServeAlternateActionMapOutput values.
@@ -168,12 +155,6 @@ func (i BotmanServeAlternateActionMap) ToBotmanServeAlternateActionMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanServeAlternateActionMapOutput)
 }
 
-func (i BotmanServeAlternateActionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanServeAlternateAction] {
-	return pulumix.Output[map[string]*BotmanServeAlternateAction]{
-		OutputState: i.ToBotmanServeAlternateActionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BotmanServeAlternateActionOutput struct{ *pulumi.OutputState }
 
 func (BotmanServeAlternateActionOutput) ElementType() reflect.Type {
@@ -186,12 +167,6 @@ func (o BotmanServeAlternateActionOutput) ToBotmanServeAlternateActionOutput() B
 
 func (o BotmanServeAlternateActionOutput) ToBotmanServeAlternateActionOutputWithContext(ctx context.Context) BotmanServeAlternateActionOutput {
 	return o
-}
-
-func (o BotmanServeAlternateActionOutput) ToOutput(ctx context.Context) pulumix.Output[*BotmanServeAlternateAction] {
-	return pulumix.Output[*BotmanServeAlternateAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BotmanServeAlternateActionOutput) ActionId() pulumi.StringOutput {
@@ -220,12 +195,6 @@ func (o BotmanServeAlternateActionArrayOutput) ToBotmanServeAlternateActionArray
 	return o
 }
 
-func (o BotmanServeAlternateActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanServeAlternateAction] {
-	return pulumix.Output[[]*BotmanServeAlternateAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o BotmanServeAlternateActionArrayOutput) Index(i pulumi.IntInput) BotmanServeAlternateActionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BotmanServeAlternateAction {
 		return vs[0].([]*BotmanServeAlternateAction)[vs[1].(int)]
@@ -244,12 +213,6 @@ func (o BotmanServeAlternateActionMapOutput) ToBotmanServeAlternateActionMapOutp
 
 func (o BotmanServeAlternateActionMapOutput) ToBotmanServeAlternateActionMapOutputWithContext(ctx context.Context) BotmanServeAlternateActionMapOutput {
 	return o
-}
-
-func (o BotmanServeAlternateActionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanServeAlternateAction] {
-	return pulumix.Output[map[string]*BotmanServeAlternateAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BotmanServeAlternateActionMapOutput) MapIndex(k pulumi.StringInput) BotmanServeAlternateActionOutput {

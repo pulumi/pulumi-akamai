@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupEdgekvGroupItems(ctx *pulumi.Context, args *LookupEdgekvGroupItemsArgs, opts ...pulumi.InvokeOption) (*LookupEdgekvGroupItemsResult, error) {
@@ -76,12 +75,6 @@ func (o LookupEdgekvGroupItemsResultOutput) ToLookupEdgekvGroupItemsResultOutput
 
 func (o LookupEdgekvGroupItemsResultOutput) ToLookupEdgekvGroupItemsResultOutputWithContext(ctx context.Context) LookupEdgekvGroupItemsResultOutput {
 	return o
-}
-
-func (o LookupEdgekvGroupItemsResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupEdgekvGroupItemsResult] {
-	return pulumix.Output[LookupEdgekvGroupItemsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupEdgekvGroupItemsResultOutput) GroupName() pulumi.StringOutput {

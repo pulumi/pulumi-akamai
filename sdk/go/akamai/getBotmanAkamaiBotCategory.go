@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetBotmanAkamaiBotCategory(ctx *pulumi.Context, args *GetBotmanAkamaiBotCategoryArgs, opts ...pulumi.InvokeOption) (*GetBotmanAkamaiBotCategoryResult, error) {
@@ -70,12 +69,6 @@ func (o GetBotmanAkamaiBotCategoryResultOutput) ToGetBotmanAkamaiBotCategoryResu
 
 func (o GetBotmanAkamaiBotCategoryResultOutput) ToGetBotmanAkamaiBotCategoryResultOutputWithContext(ctx context.Context) GetBotmanAkamaiBotCategoryResultOutput {
 	return o
-}
-
-func (o GetBotmanAkamaiBotCategoryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBotmanAkamaiBotCategoryResult] {
-	return pulumix.Output[GetBotmanAkamaiBotCategoryResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBotmanAkamaiBotCategoryResultOutput) CategoryName() pulumi.StringPtrOutput {

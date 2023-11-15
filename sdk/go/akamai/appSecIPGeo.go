@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppSecIPGeo struct {
@@ -166,12 +165,6 @@ func (i *AppSecIPGeo) ToAppSecIPGeoOutputWithContext(ctx context.Context) AppSec
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecIPGeoOutput)
 }
 
-func (i *AppSecIPGeo) ToOutput(ctx context.Context) pulumix.Output[*AppSecIPGeo] {
-	return pulumix.Output[*AppSecIPGeo]{
-		OutputState: i.ToAppSecIPGeoOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AppSecIPGeoArrayInput is an input type that accepts AppSecIPGeoArray and AppSecIPGeoArrayOutput values.
 // You can construct a concrete instance of `AppSecIPGeoArrayInput` via:
 //
@@ -195,12 +188,6 @@ func (i AppSecIPGeoArray) ToAppSecIPGeoArrayOutput() AppSecIPGeoArrayOutput {
 
 func (i AppSecIPGeoArray) ToAppSecIPGeoArrayOutputWithContext(ctx context.Context) AppSecIPGeoArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecIPGeoArrayOutput)
-}
-
-func (i AppSecIPGeoArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecIPGeo] {
-	return pulumix.Output[[]*AppSecIPGeo]{
-		OutputState: i.ToAppSecIPGeoArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AppSecIPGeoMapInput is an input type that accepts AppSecIPGeoMap and AppSecIPGeoMapOutput values.
@@ -228,12 +215,6 @@ func (i AppSecIPGeoMap) ToAppSecIPGeoMapOutputWithContext(ctx context.Context) A
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecIPGeoMapOutput)
 }
 
-func (i AppSecIPGeoMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecIPGeo] {
-	return pulumix.Output[map[string]*AppSecIPGeo]{
-		OutputState: i.ToAppSecIPGeoMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AppSecIPGeoOutput struct{ *pulumi.OutputState }
 
 func (AppSecIPGeoOutput) ElementType() reflect.Type {
@@ -246,12 +227,6 @@ func (o AppSecIPGeoOutput) ToAppSecIPGeoOutput() AppSecIPGeoOutput {
 
 func (o AppSecIPGeoOutput) ToAppSecIPGeoOutputWithContext(ctx context.Context) AppSecIPGeoOutput {
 	return o
-}
-
-func (o AppSecIPGeoOutput) ToOutput(ctx context.Context) pulumix.Output[*AppSecIPGeo] {
-	return pulumix.Output[*AppSecIPGeo]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique identifier of the security configuration
@@ -303,12 +278,6 @@ func (o AppSecIPGeoArrayOutput) ToAppSecIPGeoArrayOutputWithContext(ctx context.
 	return o
 }
 
-func (o AppSecIPGeoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecIPGeo] {
-	return pulumix.Output[[]*AppSecIPGeo]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AppSecIPGeoArrayOutput) Index(i pulumi.IntInput) AppSecIPGeoOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecIPGeo {
 		return vs[0].([]*AppSecIPGeo)[vs[1].(int)]
@@ -327,12 +296,6 @@ func (o AppSecIPGeoMapOutput) ToAppSecIPGeoMapOutput() AppSecIPGeoMapOutput {
 
 func (o AppSecIPGeoMapOutput) ToAppSecIPGeoMapOutputWithContext(ctx context.Context) AppSecIPGeoMapOutput {
 	return o
-}
-
-func (o AppSecIPGeoMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecIPGeo] {
-	return pulumix.Output[map[string]*AppSecIPGeo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppSecIPGeoMapOutput) MapIndex(k pulumi.StringInput) AppSecIPGeoOutput {

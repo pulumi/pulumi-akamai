@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type PropertyInclude struct {
@@ -199,12 +198,6 @@ func (i *PropertyInclude) ToPropertyIncludeOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(PropertyIncludeOutput)
 }
 
-func (i *PropertyInclude) ToOutput(ctx context.Context) pulumix.Output[*PropertyInclude] {
-	return pulumix.Output[*PropertyInclude]{
-		OutputState: i.ToPropertyIncludeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PropertyIncludeArrayInput is an input type that accepts PropertyIncludeArray and PropertyIncludeArrayOutput values.
 // You can construct a concrete instance of `PropertyIncludeArrayInput` via:
 //
@@ -228,12 +221,6 @@ func (i PropertyIncludeArray) ToPropertyIncludeArrayOutput() PropertyIncludeArra
 
 func (i PropertyIncludeArray) ToPropertyIncludeArrayOutputWithContext(ctx context.Context) PropertyIncludeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PropertyIncludeArrayOutput)
-}
-
-func (i PropertyIncludeArray) ToOutput(ctx context.Context) pulumix.Output[[]*PropertyInclude] {
-	return pulumix.Output[[]*PropertyInclude]{
-		OutputState: i.ToPropertyIncludeArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // PropertyIncludeMapInput is an input type that accepts PropertyIncludeMap and PropertyIncludeMapOutput values.
@@ -261,12 +248,6 @@ func (i PropertyIncludeMap) ToPropertyIncludeMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(PropertyIncludeMapOutput)
 }
 
-func (i PropertyIncludeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*PropertyInclude] {
-	return pulumix.Output[map[string]*PropertyInclude]{
-		OutputState: i.ToPropertyIncludeMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PropertyIncludeOutput struct{ *pulumi.OutputState }
 
 func (PropertyIncludeOutput) ElementType() reflect.Type {
@@ -279,12 +260,6 @@ func (o PropertyIncludeOutput) ToPropertyIncludeOutput() PropertyIncludeOutput {
 
 func (o PropertyIncludeOutput) ToPropertyIncludeOutputWithContext(ctx context.Context) PropertyIncludeOutput {
 	return o
-}
-
-func (o PropertyIncludeOutput) ToOutput(ctx context.Context) pulumix.Output[*PropertyInclude] {
-	return pulumix.Output[*PropertyInclude]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Identifies the contract to which the include is assigned
@@ -361,12 +336,6 @@ func (o PropertyIncludeArrayOutput) ToPropertyIncludeArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o PropertyIncludeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*PropertyInclude] {
-	return pulumix.Output[[]*PropertyInclude]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o PropertyIncludeArrayOutput) Index(i pulumi.IntInput) PropertyIncludeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *PropertyInclude {
 		return vs[0].([]*PropertyInclude)[vs[1].(int)]
@@ -385,12 +354,6 @@ func (o PropertyIncludeMapOutput) ToPropertyIncludeMapOutput() PropertyIncludeMa
 
 func (o PropertyIncludeMapOutput) ToPropertyIncludeMapOutputWithContext(ctx context.Context) PropertyIncludeMapOutput {
 	return o
-}
-
-func (o PropertyIncludeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*PropertyInclude] {
-	return pulumix.Output[map[string]*PropertyInclude]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PropertyIncludeMapOutput) MapIndex(k pulumi.StringInput) PropertyIncludeOutput {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type NetworkList struct {
@@ -189,12 +188,6 @@ func (i *NetworkList) ToNetworkListOutputWithContext(ctx context.Context) Networ
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkListOutput)
 }
 
-func (i *NetworkList) ToOutput(ctx context.Context) pulumix.Output[*NetworkList] {
-	return pulumix.Output[*NetworkList]{
-		OutputState: i.ToNetworkListOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NetworkListArrayInput is an input type that accepts NetworkListArray and NetworkListArrayOutput values.
 // You can construct a concrete instance of `NetworkListArrayInput` via:
 //
@@ -218,12 +211,6 @@ func (i NetworkListArray) ToNetworkListArrayOutput() NetworkListArrayOutput {
 
 func (i NetworkListArray) ToNetworkListArrayOutputWithContext(ctx context.Context) NetworkListArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkListArrayOutput)
-}
-
-func (i NetworkListArray) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkList] {
-	return pulumix.Output[[]*NetworkList]{
-		OutputState: i.ToNetworkListArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // NetworkListMapInput is an input type that accepts NetworkListMap and NetworkListMapOutput values.
@@ -251,12 +238,6 @@ func (i NetworkListMap) ToNetworkListMapOutputWithContext(ctx context.Context) N
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkListMapOutput)
 }
 
-func (i NetworkListMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkList] {
-	return pulumix.Output[map[string]*NetworkList]{
-		OutputState: i.ToNetworkListMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NetworkListOutput struct{ *pulumi.OutputState }
 
 func (NetworkListOutput) ElementType() reflect.Type {
@@ -269,12 +250,6 @@ func (o NetworkListOutput) ToNetworkListOutput() NetworkListOutput {
 
 func (o NetworkListOutput) ToNetworkListOutputWithContext(ctx context.Context) NetworkListOutput {
 	return o
-}
-
-func (o NetworkListOutput) ToOutput(ctx context.Context) pulumix.Output[*NetworkList] {
-	return pulumix.Output[*NetworkList]{
-		OutputState: o.OutputState,
-	}
 }
 
 // contract ID
@@ -342,12 +317,6 @@ func (o NetworkListArrayOutput) ToNetworkListArrayOutputWithContext(ctx context.
 	return o
 }
 
-func (o NetworkListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkList] {
-	return pulumix.Output[[]*NetworkList]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o NetworkListArrayOutput) Index(i pulumi.IntInput) NetworkListOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NetworkList {
 		return vs[0].([]*NetworkList)[vs[1].(int)]
@@ -366,12 +335,6 @@ func (o NetworkListMapOutput) ToNetworkListMapOutput() NetworkListMapOutput {
 
 func (o NetworkListMapOutput) ToNetworkListMapOutputWithContext(ctx context.Context) NetworkListMapOutput {
 	return o
-}
-
-func (o NetworkListMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkList] {
-	return pulumix.Output[map[string]*NetworkList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NetworkListMapOutput) MapIndex(k pulumi.StringInput) NetworkListOutput {

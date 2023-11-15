@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupBotmanBotAnalyticsCookie(ctx *pulumi.Context, args *LookupBotmanBotAnalyticsCookieArgs, opts ...pulumi.InvokeOption) (*LookupBotmanBotAnalyticsCookieResult, error) {
@@ -70,12 +69,6 @@ func (o LookupBotmanBotAnalyticsCookieResultOutput) ToLookupBotmanBotAnalyticsCo
 
 func (o LookupBotmanBotAnalyticsCookieResultOutput) ToLookupBotmanBotAnalyticsCookieResultOutputWithContext(ctx context.Context) LookupBotmanBotAnalyticsCookieResultOutput {
 	return o
-}
-
-func (o LookupBotmanBotAnalyticsCookieResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupBotmanBotAnalyticsCookieResult] {
-	return pulumix.Output[LookupBotmanBotAnalyticsCookieResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupBotmanBotAnalyticsCookieResultOutput) ConfigId() pulumi.IntOutput {

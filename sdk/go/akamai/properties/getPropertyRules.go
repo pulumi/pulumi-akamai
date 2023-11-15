@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Deprecated: akamai.properties/getpropertyrules.getPropertyRules has been deprecated in favor of akamai.index/getpropertyrules.getPropertyRules
@@ -84,12 +83,6 @@ func (o GetPropertyRulesResultOutput) ToGetPropertyRulesResultOutput() GetProper
 
 func (o GetPropertyRulesResultOutput) ToGetPropertyRulesResultOutputWithContext(ctx context.Context) GetPropertyRulesResultOutput {
 	return o
-}
-
-func (o GetPropertyRulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPropertyRulesResult] {
-	return pulumix.Output[GetPropertyRulesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPropertyRulesResultOutput) ContractId() pulumi.StringOutput {
