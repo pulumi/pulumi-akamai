@@ -11,10 +11,10 @@ replace (
 
 require (
 	github.com/akamai/terraform-provider-akamai/v5 v5.0.1
-	github.com/pulumi/pulumi-terraform-bridge/pf v0.19.0
-	github.com/pulumi/pulumi-terraform-bridge/v3 v3.65.0
+	github.com/pulumi/pulumi-terraform-bridge/pf v0.19.1-0.20231116191113-fdc251f0376b
+	github.com/pulumi/pulumi-terraform-bridge/v3 v3.65.1-0.20231116191113-fdc251f0376b
 	github.com/pulumi/pulumi/pkg/v3 v3.93.0
-	github.com/pulumi/pulumi/sdk/v3 v3.93.0
+	github.com/pulumi/pulumi/sdk/v3 v3.94.0
 	github.com/stretchr/testify v1.8.4
 )
 
@@ -192,7 +192,7 @@ require (
 	github.com/pulumi/esc v0.5.7-0.20231030195049-f71961c0d5fa // indirect
 	github.com/pulumi/pulumi-java/pkg v0.9.8 // indirect
 	github.com/pulumi/pulumi-terraform-bridge/x/muxer v0.0.6 // indirect
-	github.com/pulumi/pulumi-yaml v1.4.0 // indirect
+	github.com/pulumi/pulumi-yaml v1.4.1 // indirect
 	github.com/pulumi/schema-tools v0.1.2 // indirect
 	github.com/pulumi/terraform-diff-reader v0.0.2 // indirect
 	github.com/rivo/uniseg v0.4.4 // indirect
@@ -255,3 +255,7 @@ require (
 	lukechampine.com/frand v1.4.2 // indirect
 	sourcegraph.com/sourcegraph/appdash v0.0.0-20211028080628-e2786a622600 // indirect
 )
+
+replace github.com/pulumi/pulumi/pkg/v3 => github.com/pulumi/pulumi/pkg/v3 v3.78.2-0.20231116221104-a6a5df256d3c
+
+replace github.com/pulumi/pulumi/sdk/v3 => github.com/pulumi/pulumi/sdk/v3 v3.94.1-0.20231116221104-a6a5df256d3c
