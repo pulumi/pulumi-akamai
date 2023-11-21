@@ -49,7 +49,7 @@ Create environment variables in the format:
 
 `AKAMAI{_SECTION_NAME}_*`
 
-For example, if you specify `akamak:propertySection papi` you would set the following ENV variables:
+For example, if you specify `akamai:propertySection papi` you would set the following ENV variables:
 
 * AKAMAI_PAPI_HOST
 * AKAMAI_PAPI_ACCESS_TOKEN
