@@ -67,7 +67,7 @@ namespace Pulumi.Akamai
                 Version = Utilities.Version,
                 Aliases =
                 {
-                    new global::Pulumi.Alias { Type = "akamai:properties/edgeHostName:EdgeHostName"},
+                    new global::Pulumi.Alias { Type = "akamai:properties/edgeHostName:EdgeHostName" },
                 },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);

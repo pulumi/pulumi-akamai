@@ -52,7 +52,7 @@ namespace Pulumi.Akamai
                 Version = Utilities.Version,
                 Aliases =
                 {
-                    new global::Pulumi.Alias { Type = "akamai:trafficmanagement/gtmASmap:GtmASmap"},
+                    new global::Pulumi.Alias { Type = "akamai:trafficmanagement/gtmASmap:GtmASmap" },
                 },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
