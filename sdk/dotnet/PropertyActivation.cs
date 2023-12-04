@@ -51,6 +51,12 @@ namespace Pulumi.Akamai
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Output("timeouts")]
+        public Output<Outputs.PropertyActivationTimeouts?> Timeouts { get; private set; } = null!;
+
         [Output("version")]
         public Output<int> Version { get; private set; } = null!;
 
@@ -150,6 +156,12 @@ namespace Pulumi.Akamai
             set => _ruleErrors = value;
         }
 
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.PropertyActivationTimeoutsArgs>? Timeouts { get; set; }
+
         [Input("version", required: true)]
         public Input<int> Version { get; set; } = null!;
 
@@ -209,6 +221,12 @@ namespace Pulumi.Akamai
 
         [Input("status")]
         public Input<string>? Status { get; set; }
+
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.PropertyActivationTimeoutsGetArgs>? Timeouts { get; set; }
 
         [Input("version")]
         public Input<int>? Version { get; set; }

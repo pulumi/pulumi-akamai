@@ -22,7 +22,7 @@ export function getActivation(args: GetActivationArgs, opts?: pulumi.InvokeOptio
 export interface GetActivationArgs {
     network?: string;
     propertyId: string;
-    version: number;
+    version?: number;
 }
 
 /**
@@ -40,7 +40,7 @@ export interface GetActivationResult {
     readonly note: string;
     readonly propertyId: string;
     readonly status: string;
-    readonly version: number;
+    readonly version?: number;
     readonly warnings: string;
 }
 /** @deprecated akamai.properties/getactivation.getActivation has been deprecated in favor of akamai.index/getpropertyactivation.getPropertyActivation */
@@ -54,5 +54,5 @@ export function getActivationOutput(args: GetActivationOutputArgs, opts?: pulumi
 export interface GetActivationOutputArgs {
     network?: pulumi.Input<string>;
     propertyId: pulumi.Input<string>;
-    version: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }

@@ -106,7 +106,7 @@ namespace Pulumi.Akamai
         /// The user's main phone number
         /// </summary>
         [Output("phone")]
-        public Output<string> Phone { get; private set; } = null!;
+        public Output<string?> Phone { get; private set; } = null!;
 
         /// <summary>
         /// The value can be any that are available from the view-languages operation
@@ -277,8 +277,8 @@ namespace Pulumi.Akamai
         /// <summary>
         /// The user's main phone number
         /// </summary>
-        [Input("phone", required: true)]
-        public Input<string> Phone { get; set; } = null!;
+        [Input("phone")]
+        public Input<string>? Phone { get; set; }
 
         /// <summary>
         /// The value can be any that are available from the view-languages operation

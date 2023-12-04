@@ -24,6 +24,12 @@ namespace Pulumi.Akamai
         [Output("productId")]
         public Output<string> ProductId { get; private set; } = null!;
 
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Output("timeouts")]
+        public Output<Outputs.CpCodeTimeouts?> Timeouts { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a CpCode resource with the given unique name, arguments, and options.
@@ -86,6 +92,12 @@ namespace Pulumi.Akamai
         [Input("productId")]
         public Input<string>? ProductId { get; set; }
 
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.CpCodeTimeoutsArgs>? Timeouts { get; set; }
+
         public CpCodeArgs()
         {
         }
@@ -105,6 +117,12 @@ namespace Pulumi.Akamai
 
         [Input("productId")]
         public Input<string>? ProductId { get; set; }
+
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.CpCodeTimeoutsGetArgs>? Timeouts { get; set; }
 
         public CpCodeState()
         {

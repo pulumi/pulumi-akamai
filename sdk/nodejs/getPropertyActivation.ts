@@ -20,7 +20,7 @@ export function getPropertyActivation(args: GetPropertyActivationArgs, opts?: pu
 export interface GetPropertyActivationArgs {
     network?: string;
     propertyId: string;
-    version: number;
+    version?: number;
 }
 
 /**
@@ -38,7 +38,7 @@ export interface GetPropertyActivationResult {
     readonly note: string;
     readonly propertyId: string;
     readonly status: string;
-    readonly version: number;
+    readonly version?: number;
     readonly warnings: string;
 }
 export function getPropertyActivationOutput(args: GetPropertyActivationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyActivationResult> {
@@ -51,5 +51,5 @@ export function getPropertyActivationOutput(args: GetPropertyActivationOutputArg
 export interface GetPropertyActivationOutputArgs {
     network?: pulumi.Input<string>;
     propertyId: pulumi.Input<string>;
-    version: pulumi.Input<number>;
+    version?: pulumi.Input<number>;
 }

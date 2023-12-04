@@ -5,6 +5,7 @@ package com.pulumi.akamai.outputs;
 
 import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230105;
 import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230530;
+import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
@@ -22,6 +23,7 @@ public final class GetPropertyRulesBuilderResult {
     private String ruleFormat;
     private @Nullable GetPropertyRulesBuilderRulesV20230105 rulesV20230105;
     private @Nullable GetPropertyRulesBuilderRulesV20230530 rulesV20230530;
+    private @Nullable GetPropertyRulesBuilderRulesV20230920 rulesV20230920;
 
     private GetPropertyRulesBuilderResult() {}
     /**
@@ -43,6 +45,9 @@ public final class GetPropertyRulesBuilderResult {
     public Optional<GetPropertyRulesBuilderRulesV20230530> rulesV20230530() {
         return Optional.ofNullable(this.rulesV20230530);
     }
+    public Optional<GetPropertyRulesBuilderRulesV20230920> rulesV20230920() {
+        return Optional.ofNullable(this.rulesV20230920);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -58,6 +63,7 @@ public final class GetPropertyRulesBuilderResult {
         private String ruleFormat;
         private @Nullable GetPropertyRulesBuilderRulesV20230105 rulesV20230105;
         private @Nullable GetPropertyRulesBuilderRulesV20230530 rulesV20230530;
+        private @Nullable GetPropertyRulesBuilderRulesV20230920 rulesV20230920;
         public Builder() {}
         public Builder(GetPropertyRulesBuilderResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -66,6 +72,7 @@ public final class GetPropertyRulesBuilderResult {
     	      this.ruleFormat = defaults.ruleFormat;
     	      this.rulesV20230105 = defaults.rulesV20230105;
     	      this.rulesV20230530 = defaults.rulesV20230530;
+    	      this.rulesV20230920 = defaults.rulesV20230920;
         }
 
         @CustomType.Setter
@@ -93,6 +100,11 @@ public final class GetPropertyRulesBuilderResult {
             this.rulesV20230530 = rulesV20230530;
             return this;
         }
+        @CustomType.Setter
+        public Builder rulesV20230920(@Nullable GetPropertyRulesBuilderRulesV20230920 rulesV20230920) {
+            this.rulesV20230920 = rulesV20230920;
+            return this;
+        }
         public GetPropertyRulesBuilderResult build() {
             final var _resultValue = new GetPropertyRulesBuilderResult();
             _resultValue.id = id;
@@ -100,6 +112,7 @@ public final class GetPropertyRulesBuilderResult {
             _resultValue.ruleFormat = ruleFormat;
             _resultValue.rulesV20230105 = rulesV20230105;
             _resultValue.rulesV20230530 = rulesV20230530;
+            _resultValue.rulesV20230920 = rulesV20230920;
             return _resultValue;
         }
     }

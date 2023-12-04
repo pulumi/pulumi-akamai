@@ -6,6 +6,7 @@ package com.pulumi.akamai;
 import com.pulumi.akamai.CloudletsPolicyArgs;
 import com.pulumi.akamai.Utilities;
 import com.pulumi.akamai.inputs.CloudletsPolicyState;
+import com.pulumi.akamai.outputs.CloudletsPolicyTimeouts;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
@@ -114,6 +115,20 @@ public class CloudletsPolicy extends com.pulumi.resources.CustomResource {
      */
     public Output<String> name() {
         return this.name;
+    }
+    /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Export(name="timeouts", refs={CloudletsPolicyTimeouts.class}, tree="[0]")
+    private Output</* @Nullable */ CloudletsPolicyTimeouts> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Output<Optional<CloudletsPolicyTimeouts>> timeouts() {
+        return Codegen.optional(this.timeouts);
     }
     /**
      * The version number of the policy

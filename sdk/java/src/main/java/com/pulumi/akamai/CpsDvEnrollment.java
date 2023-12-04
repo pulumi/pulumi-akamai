@@ -13,6 +13,7 @@ import com.pulumi.akamai.outputs.CpsDvEnrollmentHttpChallenge;
 import com.pulumi.akamai.outputs.CpsDvEnrollmentNetworkConfiguration;
 import com.pulumi.akamai.outputs.CpsDvEnrollmentOrganization;
 import com.pulumi.akamai.outputs.CpsDvEnrollmentTechContact;
+import com.pulumi.akamai.outputs.CpsDvEnrollmentTimeouts;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
@@ -276,6 +277,20 @@ public class CpsDvEnrollment extends com.pulumi.resources.CustomResource {
      */
     public Output<CpsDvEnrollmentTechContact> techContact() {
         return this.techContact;
+    }
+    /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Export(name="timeouts", refs={CpsDvEnrollmentTimeouts.class}, tree="[0]")
+    private Output</* @Nullable */ CpsDvEnrollmentTimeouts> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Output<Optional<CpsDvEnrollmentTimeouts>> timeouts() {
+        return Codegen.optional(this.timeouts);
     }
     /**
      * Enrolment validation type
