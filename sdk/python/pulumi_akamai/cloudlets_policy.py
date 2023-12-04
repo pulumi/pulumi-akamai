@@ -8,6 +8,8 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['CloudletsPolicyArgs', 'CloudletsPolicy']
 
@@ -19,7 +21,8 @@ class CloudletsPolicyArgs:
                  description: Optional[pulumi.Input[str]] = None,
                  match_rule_format: Optional[pulumi.Input[str]] = None,
                  match_rules: Optional[pulumi.Input[str]] = None,
-                 name: Optional[pulumi.Input[str]] = None):
+                 name: Optional[pulumi.Input[str]] = None,
+                 timeouts: Optional[pulumi.Input['CloudletsPolicyTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a CloudletsPolicy resource.
         :param pulumi.Input[str] cloudlet_code: Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
@@ -28,6 +31,7 @@ class CloudletsPolicyArgs:
         :param pulumi.Input[str] match_rule_format: The version of the Cloudlet specific matchRules
         :param pulumi.Input[str] match_rules: A JSON structure that defines the rules for this policy
         :param pulumi.Input[str] name: The name of the policy. The name must be unique
+        :param pulumi.Input['CloudletsPolicyTimeoutsArgs'] timeouts: Enables to set timeout for processing
         """
         pulumi.set(__self__, "cloudlet_code", cloudlet_code)
         pulumi.set(__self__, "group_id", group_id)
@@ -39,6 +43,8 @@ class CloudletsPolicyArgs:
             pulumi.set(__self__, "match_rules", match_rules)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if timeouts is not None:
+            pulumi.set(__self__, "timeouts", timeouts)
 
     @property
     @pulumi.getter(name="cloudletCode")
@@ -112,6 +118,18 @@ class CloudletsPolicyArgs:
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
+    @property
+    @pulumi.getter
+    def timeouts(self) -> Optional[pulumi.Input['CloudletsPolicyTimeoutsArgs']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
+
+    @timeouts.setter
+    def timeouts(self, value: Optional[pulumi.Input['CloudletsPolicyTimeoutsArgs']]):
+        pulumi.set(self, "timeouts", value)
+
 
 @pulumi.input_type
 class _CloudletsPolicyState:
@@ -123,6 +141,7 @@ class _CloudletsPolicyState:
                  match_rule_format: Optional[pulumi.Input[str]] = None,
                  match_rules: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 timeouts: Optional[pulumi.Input['CloudletsPolicyTimeoutsArgs']] = None,
                  version: Optional[pulumi.Input[int]] = None,
                  warnings: Optional[pulumi.Input[str]] = None):
         """
@@ -134,6 +153,7 @@ class _CloudletsPolicyState:
         :param pulumi.Input[str] match_rule_format: The version of the Cloudlet specific matchRules
         :param pulumi.Input[str] match_rules: A JSON structure that defines the rules for this policy
         :param pulumi.Input[str] name: The name of the policy. The name must be unique
+        :param pulumi.Input['CloudletsPolicyTimeoutsArgs'] timeouts: Enables to set timeout for processing
         :param pulumi.Input[int] version: The version number of the policy
         :param pulumi.Input[str] warnings: A JSON encoded list of warnings
         """
@@ -151,6 +171,8 @@ class _CloudletsPolicyState:
             pulumi.set(__self__, "match_rules", match_rules)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if timeouts is not None:
+            pulumi.set(__self__, "timeouts", timeouts)
         if version is not None:
             pulumi.set(__self__, "version", version)
         if warnings is not None:
@@ -242,6 +264,18 @@ class _CloudletsPolicyState:
 
     @property
     @pulumi.getter
+    def timeouts(self) -> Optional[pulumi.Input['CloudletsPolicyTimeoutsArgs']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
+
+    @timeouts.setter
+    def timeouts(self, value: Optional[pulumi.Input['CloudletsPolicyTimeoutsArgs']]):
+        pulumi.set(self, "timeouts", value)
+
+    @property
+    @pulumi.getter
     def version(self) -> Optional[pulumi.Input[int]]:
         """
         The version number of the policy
@@ -276,6 +310,7 @@ class CloudletsPolicy(pulumi.CustomResource):
                  match_rule_format: Optional[pulumi.Input[str]] = None,
                  match_rules: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 timeouts: Optional[pulumi.Input[pulumi.InputType['CloudletsPolicyTimeoutsArgs']]] = None,
                  __props__=None):
         """
         Create a CloudletsPolicy resource with the given unique name, props, and options.
@@ -287,6 +322,7 @@ class CloudletsPolicy(pulumi.CustomResource):
         :param pulumi.Input[str] match_rule_format: The version of the Cloudlet specific matchRules
         :param pulumi.Input[str] match_rules: A JSON structure that defines the rules for this policy
         :param pulumi.Input[str] name: The name of the policy. The name must be unique
+        :param pulumi.Input[pulumi.InputType['CloudletsPolicyTimeoutsArgs']] timeouts: Enables to set timeout for processing
         """
         ...
     @overload
@@ -317,6 +353,7 @@ class CloudletsPolicy(pulumi.CustomResource):
                  match_rule_format: Optional[pulumi.Input[str]] = None,
                  match_rules: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 timeouts: Optional[pulumi.Input[pulumi.InputType['CloudletsPolicyTimeoutsArgs']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -336,6 +373,7 @@ class CloudletsPolicy(pulumi.CustomResource):
             __props__.__dict__["match_rule_format"] = match_rule_format
             __props__.__dict__["match_rules"] = match_rules
             __props__.__dict__["name"] = name
+            __props__.__dict__["timeouts"] = timeouts
             __props__.__dict__["cloudlet_id"] = None
             __props__.__dict__["version"] = None
             __props__.__dict__["warnings"] = None
@@ -356,6 +394,7 @@ class CloudletsPolicy(pulumi.CustomResource):
             match_rule_format: Optional[pulumi.Input[str]] = None,
             match_rules: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
+            timeouts: Optional[pulumi.Input[pulumi.InputType['CloudletsPolicyTimeoutsArgs']]] = None,
             version: Optional[pulumi.Input[int]] = None,
             warnings: Optional[pulumi.Input[str]] = None) -> 'CloudletsPolicy':
         """
@@ -372,6 +411,7 @@ class CloudletsPolicy(pulumi.CustomResource):
         :param pulumi.Input[str] match_rule_format: The version of the Cloudlet specific matchRules
         :param pulumi.Input[str] match_rules: A JSON structure that defines the rules for this policy
         :param pulumi.Input[str] name: The name of the policy. The name must be unique
+        :param pulumi.Input[pulumi.InputType['CloudletsPolicyTimeoutsArgs']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[int] version: The version number of the policy
         :param pulumi.Input[str] warnings: A JSON encoded list of warnings
         """
@@ -386,6 +426,7 @@ class CloudletsPolicy(pulumi.CustomResource):
         __props__.__dict__["match_rule_format"] = match_rule_format
         __props__.__dict__["match_rules"] = match_rules
         __props__.__dict__["name"] = name
+        __props__.__dict__["timeouts"] = timeouts
         __props__.__dict__["version"] = version
         __props__.__dict__["warnings"] = warnings
         return CloudletsPolicy(resource_name, opts=opts, __props__=__props__)
@@ -445,6 +486,14 @@ class CloudletsPolicy(pulumi.CustomResource):
         The name of the policy. The name must be unique
         """
         return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def timeouts(self) -> pulumi.Output[Optional['outputs.CloudletsPolicyTimeouts']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
 
     @property
     @pulumi.getter

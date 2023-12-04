@@ -11,6 +11,7 @@ import com.pulumi.akamai.outputs.CpsThirdPartyEnrollmentCsr;
 import com.pulumi.akamai.outputs.CpsThirdPartyEnrollmentNetworkConfiguration;
 import com.pulumi.akamai.outputs.CpsThirdPartyEnrollmentOrganization;
 import com.pulumi.akamai.outputs.CpsThirdPartyEnrollmentTechContact;
+import com.pulumi.akamai.outputs.CpsThirdPartyEnrollmentTimeouts;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
@@ -260,6 +261,20 @@ public class CpsThirdPartyEnrollment extends com.pulumi.resources.CustomResource
      */
     public Output<CpsThirdPartyEnrollmentTechContact> techContact() {
         return this.techContact;
+    }
+    /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Export(name="timeouts", refs={CpsThirdPartyEnrollmentTimeouts.class}, tree="[0]")
+    private Output</* @Nullable */ CpsThirdPartyEnrollmentTimeouts> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Output<Optional<CpsThirdPartyEnrollmentTimeouts>> timeouts() {
+        return Codegen.optional(this.timeouts);
     }
 
     /**

@@ -6,12 +6,14 @@ package com.pulumi.akamai;
 import com.pulumi.akamai.EdgekvGroupItemsArgs;
 import com.pulumi.akamai.Utilities;
 import com.pulumi.akamai.inputs.EdgekvGroupItemsState;
+import com.pulumi.akamai.outputs.EdgekvGroupItemsTimeouts;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @ResourceType(type="akamai:index/edgekvGroupItems:EdgekvGroupItems")
@@ -71,6 +73,20 @@ public class EdgekvGroupItems extends com.pulumi.resources.CustomResource {
      */
     public Output<String> network() {
         return this.network;
+    }
+    /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Export(name="timeouts", refs={EdgekvGroupItemsTimeouts.class}, tree="[0]")
+    private Output</* @Nullable */ EdgekvGroupItemsTimeouts> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Output<Optional<EdgekvGroupItemsTimeouts>> timeouts() {
+        return Codegen.optional(this.timeouts);
     }
 
     /**

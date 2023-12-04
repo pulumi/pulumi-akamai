@@ -19,6 +19,8 @@ type CpCode struct {
 	GroupId    pulumi.StringOutput `pulumi:"groupId"`
 	Name       pulumi.StringOutput `pulumi:"name"`
 	ProductId  pulumi.StringOutput `pulumi:"productId"`
+	// Enables to set timeout for processing
+	Timeouts CpCodeTimeoutsPtrOutput `pulumi:"timeouts"`
 }
 
 // NewCpCode registers a new resource with the given unique name, arguments, and options.
@@ -67,6 +69,8 @@ type cpCodeState struct {
 	GroupId    *string `pulumi:"groupId"`
 	Name       *string `pulumi:"name"`
 	ProductId  *string `pulumi:"productId"`
+	// Enables to set timeout for processing
+	Timeouts *CpCodeTimeouts `pulumi:"timeouts"`
 }
 
 type CpCodeState struct {
@@ -74,6 +78,8 @@ type CpCodeState struct {
 	GroupId    pulumi.StringPtrInput
 	Name       pulumi.StringPtrInput
 	ProductId  pulumi.StringPtrInput
+	// Enables to set timeout for processing
+	Timeouts CpCodeTimeoutsPtrInput
 }
 
 func (CpCodeState) ElementType() reflect.Type {
@@ -85,6 +91,8 @@ type cpCodeArgs struct {
 	GroupId    string  `pulumi:"groupId"`
 	Name       *string `pulumi:"name"`
 	ProductId  *string `pulumi:"productId"`
+	// Enables to set timeout for processing
+	Timeouts *CpCodeTimeouts `pulumi:"timeouts"`
 }
 
 // The set of arguments for constructing a CpCode resource.
@@ -93,6 +101,8 @@ type CpCodeArgs struct {
 	GroupId    pulumi.StringInput
 	Name       pulumi.StringPtrInput
 	ProductId  pulumi.StringPtrInput
+	// Enables to set timeout for processing
+	Timeouts CpCodeTimeoutsPtrInput
 }
 
 func (CpCodeArgs) ElementType() reflect.Type {
@@ -196,6 +206,11 @@ func (o CpCodeOutput) Name() pulumi.StringOutput {
 
 func (o CpCodeOutput) ProductId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CpCode) pulumi.StringOutput { return v.ProductId }).(pulumi.StringOutput)
+}
+
+// Enables to set timeout for processing
+func (o CpCodeOutput) Timeouts() CpCodeTimeoutsPtrOutput {
+	return o.ApplyT(func(v *CpCode) CpCodeTimeoutsPtrOutput { return v.Timeouts }).(CpCodeTimeoutsPtrOutput)
 }
 
 type CpCodeArrayOutput struct{ *pulumi.OutputState }

@@ -6,6 +6,7 @@ package com.pulumi.akamai;
 import com.pulumi.akamai.CpCodeArgs;
 import com.pulumi.akamai.Utilities;
 import com.pulumi.akamai.inputs.CpCodeState;
+import com.pulumi.akamai.outputs.CpCodeTimeouts;
 import com.pulumi.core.Alias;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
@@ -13,6 +14,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @ResourceType(type="akamai:index/cpCode:CpCode")
@@ -40,6 +42,20 @@ public class CpCode extends com.pulumi.resources.CustomResource {
 
     public Output<String> productId() {
         return this.productId;
+    }
+    /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Export(name="timeouts", refs={CpCodeTimeouts.class}, tree="[0]")
+    private Output</* @Nullable */ CpCodeTimeouts> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Output<Optional<CpCodeTimeouts>> timeouts() {
+        return Codegen.optional(this.timeouts);
     }
 
     /**

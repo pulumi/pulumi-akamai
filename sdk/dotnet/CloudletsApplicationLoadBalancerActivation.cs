@@ -31,6 +31,12 @@ namespace Pulumi.Akamai
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Output("timeouts")]
+        public Output<Outputs.CloudletsApplicationLoadBalancerActivationTimeouts?> Timeouts { get; private set; } = null!;
+
+        /// <summary>
         /// Cloudlets application load balancer version you want to activate
         /// </summary>
         [Output("version")]
@@ -95,6 +101,12 @@ namespace Pulumi.Akamai
         public Input<string> OriginId { get; set; } = null!;
 
         /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.CloudletsApplicationLoadBalancerActivationTimeoutsArgs>? Timeouts { get; set; }
+
+        /// <summary>
         /// Cloudlets application load balancer version you want to activate
         /// </summary>
         [Input("version", required: true)]
@@ -125,6 +137,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
+
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.CloudletsApplicationLoadBalancerActivationTimeoutsGetArgs>? Timeouts { get; set; }
 
         /// <summary>
         /// Cloudlets application load balancer version you want to activate

@@ -107,6 +107,10 @@ export class CpsDvEnrollment extends pulumi.CustomResource {
      */
     public readonly techContact!: pulumi.Output<outputs.CpsDvEnrollmentTechContact>;
     /**
+     * Enables to set timeout for processing
+     */
+    public readonly timeouts!: pulumi.Output<outputs.CpsDvEnrollmentTimeouts | undefined>;
+    /**
      * Enrolment validation type
      */
     public /*out*/ readonly validationType!: pulumi.Output<string>;
@@ -142,6 +146,7 @@ export class CpsDvEnrollment extends pulumi.CustomResource {
             resourceInputs["signatureAlgorithm"] = state ? state.signatureAlgorithm : undefined;
             resourceInputs["sniOnly"] = state ? state.sniOnly : undefined;
             resourceInputs["techContact"] = state ? state.techContact : undefined;
+            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
             resourceInputs["validationType"] = state ? state.validationType : undefined;
         } else {
             const args = argsOrState as CpsDvEnrollmentArgs | undefined;
@@ -189,6 +194,7 @@ export class CpsDvEnrollment extends pulumi.CustomResource {
             resourceInputs["signatureAlgorithm"] = args ? args.signatureAlgorithm : undefined;
             resourceInputs["sniOnly"] = args ? args.sniOnly : undefined;
             resourceInputs["techContact"] = args ? args.techContact : undefined;
+            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
             resourceInputs["certificateType"] = undefined /*out*/;
             resourceInputs["dnsChallenges"] = undefined /*out*/;
             resourceInputs["httpChallenges"] = undefined /*out*/;
@@ -277,6 +283,10 @@ export interface CpsDvEnrollmentState {
      */
     techContact?: pulumi.Input<inputs.CpsDvEnrollmentTechContact>;
     /**
+     * Enables to set timeout for processing
+     */
+    timeouts?: pulumi.Input<inputs.CpsDvEnrollmentTimeouts>;
+    /**
      * Enrolment validation type
      */
     validationType?: pulumi.Input<string>;
@@ -342,4 +352,8 @@ export interface CpsDvEnrollmentArgs {
      * Contact information for an administrator at Akamai
      */
     techContact: pulumi.Input<inputs.CpsDvEnrollmentTechContact>;
+    /**
+     * Enables to set timeout for processing
+     */
+    timeouts?: pulumi.Input<inputs.CpsDvEnrollmentTimeouts>;
 }
