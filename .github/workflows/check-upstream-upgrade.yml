@@ -6,6 +6,10 @@ jobs:
     name: Check for upstream provider upgrades
     runs-on: ubuntu-latest
     steps:
+      - name: Install Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: 1.21.x
       - name: Checkout repo
         uses: actions/checkout@v3
         with:
@@ -23,7 +27,6 @@ jobs:
         run: git config --global user.email bot@pulumi.com
         shell: bash
       - name: Run upgrade-provider upstream check
-        continue-on-error: true
         id: upstream_version
         run: |
           upgrade-provider "$REPO" --kind=check-upstream-version
@@ -31,7 +34,7 @@ jobs:
           REPO: ${{ github.repository }}
         shell: bash
       - name: Report success
-        if: ${{ steps.upstream_version.outcome == 'success' }}
+        if: ${{ job.status == 'success' }}
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_CHANNEL: provider-upgrade-publish-status
@@ -42,7 +45,7 @@ jobs:
           SLACK_USERNAME: provider-bot
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
       - name: Send Check Version Failure To Slack
-        if: ${{ steps.upstream_version.outcome == 'failure' }}
+        if: ${{ job.status == 'failure' }}
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_CHANNEL: provider-upgrade-publish-status
