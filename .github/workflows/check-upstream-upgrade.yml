@@ -16,9 +16,11 @@ jobs:
         run: git config --global user.email bot@pulumi.com
         shell: bash
       - name: Run upgrade-provider upstream check
+        continue-on-error: true
         id: upstream_version
         run: |
-          upgrade-provider "$REPO" --kind="check-upstream-version"
+          upgrade-provider "$REPO" --kind=check-upstream-version
+        shell: bash
       - name: Report success
         if: ${{ steps.upstream_version.outcome == 'success' }}
         uses: rtCamp/action-slack-notify@v2
