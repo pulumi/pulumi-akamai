@@ -6,6 +6,23 @@ jobs:
     name: Check for upstream provider upgrades
     runs-on: ubuntu-latest
     steps:
+      - name: Install Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: 1.21.x
+      - name: Install pulumictl
+        uses: jaxxstorm/action-install-gh-release@v1.10.0
+        with:
+          repo: pulumi/pulumictl
+      - name: Install Pulumi CLI
+        uses: pulumi/actions@v4
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref_name }}
+      - name: Unshallow clone for tags
+        run: git fetch --prune --unshallow --tags
+        shell: bash
       - name: Install upgrade-provider
         run: go install github.com/pulumi/upgrade-provider@76b9fab627d8c180d280ac234feebce80f8dc076
         shell: bash
