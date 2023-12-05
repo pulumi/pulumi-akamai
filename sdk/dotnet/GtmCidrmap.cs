@@ -52,7 +52,7 @@ namespace Pulumi.Akamai
                 Version = Utilities.Version,
                 Aliases =
                 {
-                    new global::Pulumi.Alias { Type = "akamai:trafficmanagement/gtmCidrmap:GtmCidrmap"},
+                    new global::Pulumi.Alias { Type = "akamai:trafficmanagement/gtmCidrmap:GtmCidrmap" },
                 },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);

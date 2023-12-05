@@ -82,7 +82,7 @@ namespace Pulumi.Akamai
                 Version = Utilities.Version,
                 Aliases =
                 {
-                    new global::Pulumi.Alias { Type = "akamai:trafficmanagement/gtmResource:GtmResource"},
+                    new global::Pulumi.Alias { Type = "akamai:trafficmanagement/gtmResource:GtmResource" },
                 },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);

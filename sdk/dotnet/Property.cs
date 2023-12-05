@@ -103,7 +103,7 @@ namespace Pulumi.Akamai
                 Version = Utilities.Version,
                 Aliases =
                 {
-                    new global::Pulumi.Alias { Type = "akamai:properties/property:Property"},
+                    new global::Pulumi.Alias { Type = "akamai:properties/property:Property" },
                 },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
