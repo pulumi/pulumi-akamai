@@ -19,7 +19,9 @@ jobs:
         continue-on-error: true
         id: upstream_version
         run: |
-          upgrade-provider "$REPO" --kind=check-upstream-version
+          ./upgrade-provider "$REPO" --kind=check-upstream-version
+        env:
+          REPO: ${{ github.repository }}
         shell: bash
       - name: Report success
         if: ${{ steps.upstream_version.outcome == 'success' }}
