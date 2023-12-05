@@ -6,6 +6,7 @@ package com.pulumi.akamai;
 import com.pulumi.akamai.EdgeWorkerArgs;
 import com.pulumi.akamai.Utilities;
 import com.pulumi.akamai.inputs.EdgeWorkerState;
+import com.pulumi.akamai.outputs.EdgeWorkerTimeouts;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
@@ -101,6 +102,20 @@ public class EdgeWorker extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> resourceTierId() {
         return this.resourceTierId;
+    }
+    /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Export(name="timeouts", refs={EdgeWorkerTimeouts.class}, tree="[0]")
+    private Output</* @Nullable */ EdgeWorkerTimeouts> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Output<Optional<EdgeWorkerTimeouts>> timeouts() {
+        return Codegen.optional(this.timeouts);
     }
     /**
      * The bundle version

@@ -21,6 +21,8 @@ type EdgeWorkersActivation struct {
 	EdgeworkerId pulumi.IntOutput `pulumi:"edgeworkerId"`
 	// The network on which the version will be activated
 	Network pulumi.StringOutput `pulumi:"network"`
+	// Enables to set timeout for processing
+	Timeouts EdgeWorkersActivationTimeoutsPtrOutput `pulumi:"timeouts"`
 	// The version of EdgeWorker to activate
 	Version pulumi.StringOutput `pulumi:"version"`
 }
@@ -70,6 +72,8 @@ type edgeWorkersActivationState struct {
 	EdgeworkerId *int `pulumi:"edgeworkerId"`
 	// The network on which the version will be activated
 	Network *string `pulumi:"network"`
+	// Enables to set timeout for processing
+	Timeouts *EdgeWorkersActivationTimeouts `pulumi:"timeouts"`
 	// The version of EdgeWorker to activate
 	Version *string `pulumi:"version"`
 }
@@ -81,6 +85,8 @@ type EdgeWorkersActivationState struct {
 	EdgeworkerId pulumi.IntPtrInput
 	// The network on which the version will be activated
 	Network pulumi.StringPtrInput
+	// Enables to set timeout for processing
+	Timeouts EdgeWorkersActivationTimeoutsPtrInput
 	// The version of EdgeWorker to activate
 	Version pulumi.StringPtrInput
 }
@@ -94,6 +100,8 @@ type edgeWorkersActivationArgs struct {
 	EdgeworkerId int `pulumi:"edgeworkerId"`
 	// The network on which the version will be activated
 	Network string `pulumi:"network"`
+	// Enables to set timeout for processing
+	Timeouts *EdgeWorkersActivationTimeouts `pulumi:"timeouts"`
 	// The version of EdgeWorker to activate
 	Version string `pulumi:"version"`
 }
@@ -104,6 +112,8 @@ type EdgeWorkersActivationArgs struct {
 	EdgeworkerId pulumi.IntInput
 	// The network on which the version will be activated
 	Network pulumi.StringInput
+	// Enables to set timeout for processing
+	Timeouts EdgeWorkersActivationTimeoutsPtrInput
 	// The version of EdgeWorker to activate
 	Version pulumi.StringInput
 }
@@ -208,6 +218,11 @@ func (o EdgeWorkersActivationOutput) EdgeworkerId() pulumi.IntOutput {
 // The network on which the version will be activated
 func (o EdgeWorkersActivationOutput) Network() pulumi.StringOutput {
 	return o.ApplyT(func(v *EdgeWorkersActivation) pulumi.StringOutput { return v.Network }).(pulumi.StringOutput)
+}
+
+// Enables to set timeout for processing
+func (o EdgeWorkersActivationOutput) Timeouts() EdgeWorkersActivationTimeoutsPtrOutput {
+	return o.ApplyT(func(v *EdgeWorkersActivation) EdgeWorkersActivationTimeoutsPtrOutput { return v.Timeouts }).(EdgeWorkersActivationTimeoutsPtrOutput)
 }
 
 // The version of EdgeWorker to activate

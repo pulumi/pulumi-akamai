@@ -51,6 +51,8 @@ type CpsDvEnrollment struct {
 	SniOnly pulumi.BoolOutput `pulumi:"sniOnly"`
 	// Contact information for an administrator at Akamai
 	TechContact CpsDvEnrollmentTechContactOutput `pulumi:"techContact"`
+	// Enables to set timeout for processing
+	Timeouts CpsDvEnrollmentTimeoutsPtrOutput `pulumi:"timeouts"`
 	// Enrolment validation type
 	ValidationType pulumi.StringOutput `pulumi:"validationType"`
 }
@@ -151,6 +153,8 @@ type cpsDvEnrollmentState struct {
 	SniOnly *bool `pulumi:"sniOnly"`
 	// Contact information for an administrator at Akamai
 	TechContact *CpsDvEnrollmentTechContact `pulumi:"techContact"`
+	// Enables to set timeout for processing
+	Timeouts *CpsDvEnrollmentTimeouts `pulumi:"timeouts"`
 	// Enrolment validation type
 	ValidationType *string `pulumi:"validationType"`
 }
@@ -192,6 +196,8 @@ type CpsDvEnrollmentState struct {
 	SniOnly pulumi.BoolPtrInput
 	// Contact information for an administrator at Akamai
 	TechContact CpsDvEnrollmentTechContactPtrInput
+	// Enables to set timeout for processing
+	Timeouts CpsDvEnrollmentTimeoutsPtrInput
 	// Enrolment validation type
 	ValidationType pulumi.StringPtrInput
 }
@@ -229,6 +235,8 @@ type cpsDvEnrollmentArgs struct {
 	SniOnly bool `pulumi:"sniOnly"`
 	// Contact information for an administrator at Akamai
 	TechContact CpsDvEnrollmentTechContact `pulumi:"techContact"`
+	// Enables to set timeout for processing
+	Timeouts *CpsDvEnrollmentTimeouts `pulumi:"timeouts"`
 }
 
 // The set of arguments for constructing a CpsDvEnrollment resource.
@@ -261,6 +269,8 @@ type CpsDvEnrollmentArgs struct {
 	SniOnly pulumi.BoolInput
 	// Contact information for an administrator at Akamai
 	TechContact CpsDvEnrollmentTechContactInput
+	// Enables to set timeout for processing
+	Timeouts CpsDvEnrollmentTimeoutsPtrInput
 }
 
 func (CpsDvEnrollmentArgs) ElementType() reflect.Type {
@@ -438,6 +448,11 @@ func (o CpsDvEnrollmentOutput) SniOnly() pulumi.BoolOutput {
 // Contact information for an administrator at Akamai
 func (o CpsDvEnrollmentOutput) TechContact() CpsDvEnrollmentTechContactOutput {
 	return o.ApplyT(func(v *CpsDvEnrollment) CpsDvEnrollmentTechContactOutput { return v.TechContact }).(CpsDvEnrollmentTechContactOutput)
+}
+
+// Enables to set timeout for processing
+func (o CpsDvEnrollmentOutput) Timeouts() CpsDvEnrollmentTimeoutsPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollment) CpsDvEnrollmentTimeoutsPtrOutput { return v.Timeouts }).(CpsDvEnrollmentTimeoutsPtrOutput)
 }
 
 // Enrolment validation type

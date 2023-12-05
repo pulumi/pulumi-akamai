@@ -7,6 +7,7 @@ import com.pulumi.akamai.PropertyIncludeActivationArgs;
 import com.pulumi.akamai.Utilities;
 import com.pulumi.akamai.inputs.PropertyIncludeActivationState;
 import com.pulumi.akamai.outputs.PropertyIncludeActivationComplianceRecord;
+import com.pulumi.akamai.outputs.PropertyIncludeActivationTimeouts;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
@@ -131,6 +132,20 @@ public class PropertyIncludeActivation extends com.pulumi.resources.CustomResour
      */
     public Output<List<String>> notifyEmails() {
         return this.notifyEmails;
+    }
+    /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Export(name="timeouts", refs={PropertyIncludeActivationTimeouts.class}, tree="[0]")
+    private Output</* @Nullable */ PropertyIncludeActivationTimeouts> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Output<Optional<PropertyIncludeActivationTimeouts>> timeouts() {
+        return Codegen.optional(this.timeouts);
     }
     /**
      * The validation information in JSON format

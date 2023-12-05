@@ -30,11 +30,11 @@ public final class GetPropertyActivationArgs extends com.pulumi.resources.Invoke
         return this.propertyId;
     }
 
-    @Import(name="version", required=true)
-    private Output<Integer> version;
+    @Import(name="version")
+    private @Nullable Output<Integer> version;
 
-    public Output<Integer> version() {
-        return this.version;
+    public Optional<Output<Integer>> version() {
+        return Optional.ofNullable(this.version);
     }
 
     private GetPropertyActivationArgs() {}
@@ -81,7 +81,7 @@ public final class GetPropertyActivationArgs extends com.pulumi.resources.Invoke
             return propertyId(Output.of(propertyId));
         }
 
-        public Builder version(Output<Integer> version) {
+        public Builder version(@Nullable Output<Integer> version) {
             $.version = version;
             return this;
         }
@@ -92,7 +92,6 @@ public final class GetPropertyActivationArgs extends com.pulumi.resources.Invoke
 
         public GetPropertyActivationArgs build() {
             $.propertyId = Objects.requireNonNull($.propertyId, "expected parameter 'propertyId' to be non-null");
-            $.version = Objects.requireNonNull($.version, "expected parameter 'version' to be non-null");
             return $;
         }
     }

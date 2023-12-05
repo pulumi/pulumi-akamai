@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export class EdgeHostName extends pulumi.CustomResource {
@@ -39,9 +41,13 @@ export class EdgeHostName extends pulumi.CustomResource {
     public readonly ipBehavior!: pulumi.Output<string>;
     public readonly productId!: pulumi.Output<string>;
     /**
-     * Email address that should receive updates on the IP behavior update request. Required for update operation.
+     * Email address that should receive updates on the IP behavior update request.
      */
     public readonly statusUpdateEmails!: pulumi.Output<string[] | undefined>;
+    /**
+     * Enables to set timeout for processing
+     */
+    public readonly timeouts!: pulumi.Output<outputs.EdgeHostNameTimeouts | undefined>;
     /**
      * A JSON encoded list of use cases
      */
@@ -67,6 +73,7 @@ export class EdgeHostName extends pulumi.CustomResource {
             resourceInputs["ipBehavior"] = state ? state.ipBehavior : undefined;
             resourceInputs["productId"] = state ? state.productId : undefined;
             resourceInputs["statusUpdateEmails"] = state ? state.statusUpdateEmails : undefined;
+            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
             resourceInputs["useCases"] = state ? state.useCases : undefined;
         } else {
             const args = argsOrState as EdgeHostNameArgs | undefined;
@@ -89,6 +96,7 @@ export class EdgeHostName extends pulumi.CustomResource {
             resourceInputs["ipBehavior"] = args ? args.ipBehavior : undefined;
             resourceInputs["productId"] = args ? args.productId : undefined;
             resourceInputs["statusUpdateEmails"] = args ? args.statusUpdateEmails : undefined;
+            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
             resourceInputs["useCases"] = args ? args.useCases : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -109,9 +117,13 @@ export interface EdgeHostNameState {
     ipBehavior?: pulumi.Input<string>;
     productId?: pulumi.Input<string>;
     /**
-     * Email address that should receive updates on the IP behavior update request. Required for update operation.
+     * Email address that should receive updates on the IP behavior update request.
      */
     statusUpdateEmails?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Enables to set timeout for processing
+     */
+    timeouts?: pulumi.Input<inputs.EdgeHostNameTimeouts>;
     /**
      * A JSON encoded list of use cases
      */
@@ -129,9 +141,13 @@ export interface EdgeHostNameArgs {
     ipBehavior: pulumi.Input<string>;
     productId?: pulumi.Input<string>;
     /**
-     * Email address that should receive updates on the IP behavior update request. Required for update operation.
+     * Email address that should receive updates on the IP behavior update request.
      */
     statusUpdateEmails?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Enables to set timeout for processing
+     */
+    timeouts?: pulumi.Input<inputs.EdgeHostNameTimeouts>;
     /**
      * A JSON encoded list of use cases
      */

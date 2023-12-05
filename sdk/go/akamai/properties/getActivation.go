@@ -26,7 +26,7 @@ func GetActivation(ctx *pulumi.Context, args *GetActivationArgs, opts ...pulumi.
 type GetActivationArgs struct {
 	Network    *string `pulumi:"network"`
 	PropertyId string  `pulumi:"propertyId"`
-	Version    int     `pulumi:"version"`
+	Version    *int    `pulumi:"version"`
 }
 
 // A collection of values returned by getActivation.
@@ -40,7 +40,7 @@ type GetActivationResult struct {
 	Note       string  `pulumi:"note"`
 	PropertyId string  `pulumi:"propertyId"`
 	Status     string  `pulumi:"status"`
-	Version    int     `pulumi:"version"`
+	Version    *int    `pulumi:"version"`
 	Warnings   string  `pulumi:"warnings"`
 }
 
@@ -61,7 +61,7 @@ func GetActivationOutput(ctx *pulumi.Context, args GetActivationOutputArgs, opts
 type GetActivationOutputArgs struct {
 	Network    pulumi.StringPtrInput `pulumi:"network"`
 	PropertyId pulumi.StringInput    `pulumi:"propertyId"`
-	Version    pulumi.IntInput       `pulumi:"version"`
+	Version    pulumi.IntPtrInput    `pulumi:"version"`
 }
 
 func (GetActivationOutputArgs) ElementType() reflect.Type {
@@ -116,8 +116,8 @@ func (o GetActivationResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetActivationResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-func (o GetActivationResultOutput) Version() pulumi.IntOutput {
-	return o.ApplyT(func(v GetActivationResult) int { return v.Version }).(pulumi.IntOutput)
+func (o GetActivationResultOutput) Version() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetActivationResult) *int { return v.Version }).(pulumi.IntPtrOutput)
 }
 
 func (o GetActivationResultOutput) Warnings() pulumi.StringOutput {

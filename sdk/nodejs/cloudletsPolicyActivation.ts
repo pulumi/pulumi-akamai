@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export class CloudletsPolicyActivation extends pulumi.CustomResource {
@@ -49,6 +51,10 @@ export class CloudletsPolicyActivation extends pulumi.CustomResource {
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     /**
+     * Enables to set timeout for processing
+     */
+    public readonly timeouts!: pulumi.Output<outputs.CloudletsPolicyActivationTimeouts | undefined>;
+    /**
      * Cloudlets policy version you want to activate
      */
     public readonly version!: pulumi.Output<number>;
@@ -70,6 +76,7 @@ export class CloudletsPolicyActivation extends pulumi.CustomResource {
             resourceInputs["network"] = state ? state.network : undefined;
             resourceInputs["policyId"] = state ? state.policyId : undefined;
             resourceInputs["status"] = state ? state.status : undefined;
+            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
             resourceInputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as CloudletsPolicyActivationArgs | undefined;
@@ -88,6 +95,7 @@ export class CloudletsPolicyActivation extends pulumi.CustomResource {
             resourceInputs["associatedProperties"] = args ? args.associatedProperties : undefined;
             resourceInputs["network"] = args ? args.network : undefined;
             resourceInputs["policyId"] = args ? args.policyId : undefined;
+            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
             resourceInputs["version"] = args ? args.version : undefined;
             resourceInputs["status"] = undefined /*out*/;
         }
@@ -117,6 +125,10 @@ export interface CloudletsPolicyActivationState {
      */
     status?: pulumi.Input<string>;
     /**
+     * Enables to set timeout for processing
+     */
+    timeouts?: pulumi.Input<inputs.CloudletsPolicyActivationTimeouts>;
+    /**
      * Cloudlets policy version you want to activate
      */
     version?: pulumi.Input<number>;
@@ -138,6 +150,10 @@ export interface CloudletsPolicyActivationArgs {
      * ID of the Cloudlets policy you want to activate
      */
     policyId: pulumi.Input<number>;
+    /**
+     * Enables to set timeout for processing
+     */
+    timeouts?: pulumi.Input<inputs.CloudletsPolicyActivationTimeouts>;
     /**
      * Cloudlets policy version you want to activate
      */

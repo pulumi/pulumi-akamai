@@ -8,6 +8,8 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['EdgeHostNameArgs', 'EdgeHostName']
 
@@ -21,10 +23,12 @@ class EdgeHostNameArgs:
                  certificate: Optional[pulumi.Input[int]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
                  status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 timeouts: Optional[pulumi.Input['EdgeHostNameTimeoutsArgs']] = None,
                  use_cases: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a EdgeHostName resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] status_update_emails: Email address that should receive updates on the IP behavior update request. Required for update operation.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] status_update_emails: Email address that should receive updates on the IP behavior update request.
+        :param pulumi.Input['EdgeHostNameTimeoutsArgs'] timeouts: Enables to set timeout for processing
         :param pulumi.Input[str] use_cases: A JSON encoded list of use cases
         """
         pulumi.set(__self__, "contract_id", contract_id)
@@ -37,6 +41,8 @@ class EdgeHostNameArgs:
             pulumi.set(__self__, "product_id", product_id)
         if status_update_emails is not None:
             pulumi.set(__self__, "status_update_emails", status_update_emails)
+        if timeouts is not None:
+            pulumi.set(__self__, "timeouts", timeouts)
         if use_cases is not None:
             pulumi.set(__self__, "use_cases", use_cases)
 
@@ -98,13 +104,25 @@ class EdgeHostNameArgs:
     @pulumi.getter(name="statusUpdateEmails")
     def status_update_emails(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        Email address that should receive updates on the IP behavior update request. Required for update operation.
+        Email address that should receive updates on the IP behavior update request.
         """
         return pulumi.get(self, "status_update_emails")
 
     @status_update_emails.setter
     def status_update_emails(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "status_update_emails", value)
+
+    @property
+    @pulumi.getter
+    def timeouts(self) -> Optional[pulumi.Input['EdgeHostNameTimeoutsArgs']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
+
+    @timeouts.setter
+    def timeouts(self, value: Optional[pulumi.Input['EdgeHostNameTimeoutsArgs']]):
+        pulumi.set(self, "timeouts", value)
 
     @property
     @pulumi.getter(name="useCases")
@@ -129,10 +147,12 @@ class _EdgeHostNameState:
                  ip_behavior: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
                  status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 timeouts: Optional[pulumi.Input['EdgeHostNameTimeoutsArgs']] = None,
                  use_cases: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering EdgeHostName resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] status_update_emails: Email address that should receive updates on the IP behavior update request. Required for update operation.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] status_update_emails: Email address that should receive updates on the IP behavior update request.
+        :param pulumi.Input['EdgeHostNameTimeoutsArgs'] timeouts: Enables to set timeout for processing
         :param pulumi.Input[str] use_cases: A JSON encoded list of use cases
         """
         if certificate is not None:
@@ -149,6 +169,8 @@ class _EdgeHostNameState:
             pulumi.set(__self__, "product_id", product_id)
         if status_update_emails is not None:
             pulumi.set(__self__, "status_update_emails", status_update_emails)
+        if timeouts is not None:
+            pulumi.set(__self__, "timeouts", timeouts)
         if use_cases is not None:
             pulumi.set(__self__, "use_cases", use_cases)
 
@@ -210,13 +232,25 @@ class _EdgeHostNameState:
     @pulumi.getter(name="statusUpdateEmails")
     def status_update_emails(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        Email address that should receive updates on the IP behavior update request. Required for update operation.
+        Email address that should receive updates on the IP behavior update request.
         """
         return pulumi.get(self, "status_update_emails")
 
     @status_update_emails.setter
     def status_update_emails(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "status_update_emails", value)
+
+    @property
+    @pulumi.getter
+    def timeouts(self) -> Optional[pulumi.Input['EdgeHostNameTimeoutsArgs']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
+
+    @timeouts.setter
+    def timeouts(self, value: Optional[pulumi.Input['EdgeHostNameTimeoutsArgs']]):
+        pulumi.set(self, "timeouts", value)
 
     @property
     @pulumi.getter(name="useCases")
@@ -243,13 +277,15 @@ class EdgeHostName(pulumi.CustomResource):
                  ip_behavior: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
                  status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 timeouts: Optional[pulumi.Input[pulumi.InputType['EdgeHostNameTimeoutsArgs']]] = None,
                  use_cases: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         Create a EdgeHostName resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] status_update_emails: Email address that should receive updates on the IP behavior update request. Required for update operation.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] status_update_emails: Email address that should receive updates on the IP behavior update request.
+        :param pulumi.Input[pulumi.InputType['EdgeHostNameTimeoutsArgs']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[str] use_cases: A JSON encoded list of use cases
         """
         ...
@@ -282,6 +318,7 @@ class EdgeHostName(pulumi.CustomResource):
                  ip_behavior: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
                  status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 timeouts: Optional[pulumi.Input[pulumi.InputType['EdgeHostNameTimeoutsArgs']]] = None,
                  use_cases: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -307,6 +344,7 @@ class EdgeHostName(pulumi.CustomResource):
             __props__.__dict__["ip_behavior"] = ip_behavior
             __props__.__dict__["product_id"] = product_id
             __props__.__dict__["status_update_emails"] = status_update_emails
+            __props__.__dict__["timeouts"] = timeouts
             __props__.__dict__["use_cases"] = use_cases
         alias_opts = pulumi.ResourceOptions(aliases=[pulumi.Alias(type_="akamai:properties/edgeHostName:EdgeHostName")])
         opts = pulumi.ResourceOptions.merge(opts, alias_opts)
@@ -327,6 +365,7 @@ class EdgeHostName(pulumi.CustomResource):
             ip_behavior: Optional[pulumi.Input[str]] = None,
             product_id: Optional[pulumi.Input[str]] = None,
             status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            timeouts: Optional[pulumi.Input[pulumi.InputType['EdgeHostNameTimeoutsArgs']]] = None,
             use_cases: Optional[pulumi.Input[str]] = None) -> 'EdgeHostName':
         """
         Get an existing EdgeHostName resource's state with the given name, id, and optional extra
@@ -335,7 +374,8 @@ class EdgeHostName(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] status_update_emails: Email address that should receive updates on the IP behavior update request. Required for update operation.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] status_update_emails: Email address that should receive updates on the IP behavior update request.
+        :param pulumi.Input[pulumi.InputType['EdgeHostNameTimeoutsArgs']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[str] use_cases: A JSON encoded list of use cases
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -349,6 +389,7 @@ class EdgeHostName(pulumi.CustomResource):
         __props__.__dict__["ip_behavior"] = ip_behavior
         __props__.__dict__["product_id"] = product_id
         __props__.__dict__["status_update_emails"] = status_update_emails
+        __props__.__dict__["timeouts"] = timeouts
         __props__.__dict__["use_cases"] = use_cases
         return EdgeHostName(resource_name, opts=opts, __props__=__props__)
 
@@ -386,9 +427,17 @@ class EdgeHostName(pulumi.CustomResource):
     @pulumi.getter(name="statusUpdateEmails")
     def status_update_emails(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
-        Email address that should receive updates on the IP behavior update request. Required for update operation.
+        Email address that should receive updates on the IP behavior update request.
         """
         return pulumi.get(self, "status_update_emails")
+
+    @property
+    @pulumi.getter
+    def timeouts(self) -> pulumi.Output[Optional['outputs.EdgeHostNameTimeouts']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
 
     @property
     @pulumi.getter(name="useCases")
