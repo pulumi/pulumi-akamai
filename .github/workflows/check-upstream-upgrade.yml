@@ -1,3 +1,5 @@
+env:
+  GH_TOKEN: ${{ secrets.PULUMI_BOT_TOKEN }}
 jobs:
   check_upgrade_provider:
     name: Check for upstream provider upgrades
