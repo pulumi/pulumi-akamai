@@ -121,6 +121,12 @@ namespace Pulumi.Akamai
         public Output<Outputs.CpsDvEnrollmentTechContact> TechContact { get; private set; } = null!;
 
         /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Output("timeouts")]
+        public Output<Outputs.CpsDvEnrollmentTimeouts?> Timeouts { get; private set; } = null!;
+
+        /// <summary>
         /// Enrolment validation type
         /// </summary>
         [Output("validationType")]
@@ -262,6 +268,12 @@ namespace Pulumi.Akamai
         [Input("techContact", required: true)]
         public Input<Inputs.CpsDvEnrollmentTechContactArgs> TechContact { get; set; } = null!;
 
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.CpsDvEnrollmentTimeoutsArgs>? Timeouts { get; set; }
+
         public CpsDvEnrollmentArgs()
         {
         }
@@ -395,6 +407,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("techContact")]
         public Input<Inputs.CpsDvEnrollmentTechContactGetArgs>? TechContact { get; set; }
+
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.CpsDvEnrollmentTimeoutsGetArgs>? Timeouts { get; set; }
 
         /// <summary>
         /// Enrolment validation type

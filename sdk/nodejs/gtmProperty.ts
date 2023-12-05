@@ -61,7 +61,7 @@ export class GtmProperty extends pulumi.CustomResource {
     public readonly staticTtl!: pulumi.Output<number | undefined>;
     public readonly stickinessBonusConstant!: pulumi.Output<number | undefined>;
     public readonly stickinessBonusPercentage!: pulumi.Output<number | undefined>;
-    public readonly trafficTargets!: pulumi.Output<outputs.GtmPropertyTrafficTarget[] | undefined>;
+    public readonly trafficTargets!: pulumi.Output<outputs.GtmPropertyTrafficTarget[]>;
     public readonly type!: pulumi.Output<string>;
     public readonly unreachableThreshold!: pulumi.Output<number | undefined>;
     public readonly useComputedTargets!: pulumi.Output<boolean | undefined>;

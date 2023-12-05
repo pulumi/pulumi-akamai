@@ -8,6 +8,7 @@ import com.pulumi.akamai.inputs.CpsDvEnrollmentCsrArgs;
 import com.pulumi.akamai.inputs.CpsDvEnrollmentNetworkConfigurationArgs;
 import com.pulumi.akamai.inputs.CpsDvEnrollmentOrganizationArgs;
 import com.pulumi.akamai.inputs.CpsDvEnrollmentTechContactArgs;
+import com.pulumi.akamai.inputs.CpsDvEnrollmentTimeoutsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
@@ -232,6 +233,21 @@ public final class CpsDvEnrollmentArgs extends com.pulumi.resources.ResourceArgs
         return this.techContact;
     }
 
+    /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Import(name="timeouts")
+    private @Nullable Output<CpsDvEnrollmentTimeoutsArgs> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Optional<Output<CpsDvEnrollmentTimeoutsArgs>> timeouts() {
+        return Optional.ofNullable(this.timeouts);
+    }
+
     private CpsDvEnrollmentArgs() {}
 
     private CpsDvEnrollmentArgs(CpsDvEnrollmentArgs $) {
@@ -249,6 +265,7 @@ public final class CpsDvEnrollmentArgs extends com.pulumi.resources.ResourceArgs
         this.signatureAlgorithm = $.signatureAlgorithm;
         this.sniOnly = $.sniOnly;
         this.techContact = $.techContact;
+        this.timeouts = $.timeouts;
     }
 
     public static Builder builder() {
@@ -571,6 +588,27 @@ public final class CpsDvEnrollmentArgs extends com.pulumi.resources.ResourceArgs
          */
         public Builder techContact(CpsDvEnrollmentTechContactArgs techContact) {
             return techContact(Output.of(techContact));
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(@Nullable Output<CpsDvEnrollmentTimeoutsArgs> timeouts) {
+            $.timeouts = timeouts;
+            return this;
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(CpsDvEnrollmentTimeoutsArgs timeouts) {
+            return timeouts(Output.of(timeouts));
         }
 
         public CpsDvEnrollmentArgs build() {

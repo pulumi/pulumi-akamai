@@ -27,6 +27,8 @@ type EdgeWorker struct {
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The unique identifier of a resource tier
 	ResourceTierId pulumi.IntOutput `pulumi:"resourceTierId"`
+	// Enables to set timeout for processing
+	Timeouts EdgeWorkerTimeoutsPtrOutput `pulumi:"timeouts"`
 	// The bundle version
 	Version pulumi.StringOutput `pulumi:"version"`
 	// The list of warnings returned by EdgeWorker validation
@@ -81,6 +83,8 @@ type edgeWorkerState struct {
 	Name *string `pulumi:"name"`
 	// The unique identifier of a resource tier
 	ResourceTierId *int `pulumi:"resourceTierId"`
+	// Enables to set timeout for processing
+	Timeouts *EdgeWorkerTimeouts `pulumi:"timeouts"`
 	// The bundle version
 	Version *string `pulumi:"version"`
 	// The list of warnings returned by EdgeWorker validation
@@ -100,6 +104,8 @@ type EdgeWorkerState struct {
 	Name pulumi.StringPtrInput
 	// The unique identifier of a resource tier
 	ResourceTierId pulumi.IntPtrInput
+	// Enables to set timeout for processing
+	Timeouts EdgeWorkerTimeoutsPtrInput
 	// The bundle version
 	Version pulumi.StringPtrInput
 	// The list of warnings returned by EdgeWorker validation
@@ -119,6 +125,8 @@ type edgeWorkerArgs struct {
 	Name *string `pulumi:"name"`
 	// The unique identifier of a resource tier
 	ResourceTierId int `pulumi:"resourceTierId"`
+	// Enables to set timeout for processing
+	Timeouts *EdgeWorkerTimeouts `pulumi:"timeouts"`
 }
 
 // The set of arguments for constructing a EdgeWorker resource.
@@ -131,6 +139,8 @@ type EdgeWorkerArgs struct {
 	Name pulumi.StringPtrInput
 	// The unique identifier of a resource tier
 	ResourceTierId pulumi.IntInput
+	// Enables to set timeout for processing
+	Timeouts EdgeWorkerTimeoutsPtrInput
 }
 
 func (EdgeWorkerArgs) ElementType() reflect.Type {
@@ -248,6 +258,11 @@ func (o EdgeWorkerOutput) Name() pulumi.StringOutput {
 // The unique identifier of a resource tier
 func (o EdgeWorkerOutput) ResourceTierId() pulumi.IntOutput {
 	return o.ApplyT(func(v *EdgeWorker) pulumi.IntOutput { return v.ResourceTierId }).(pulumi.IntOutput)
+}
+
+// Enables to set timeout for processing
+func (o EdgeWorkerOutput) Timeouts() EdgeWorkerTimeoutsPtrOutput {
+	return o.ApplyT(func(v *EdgeWorker) EdgeWorkerTimeoutsPtrOutput { return v.Timeouts }).(EdgeWorkerTimeoutsPtrOutput)
 }
 
 // The bundle version

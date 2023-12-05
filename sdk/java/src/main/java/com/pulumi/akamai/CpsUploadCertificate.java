@@ -6,6 +6,7 @@ package com.pulumi.akamai;
 import com.pulumi.akamai.CpsUploadCertificateArgs;
 import com.pulumi.akamai.Utilities;
 import com.pulumi.akamai.inputs.CpsUploadCertificateState;
+import com.pulumi.akamai.outputs.CpsUploadCertificateTimeouts;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
@@ -102,6 +103,20 @@ public class CpsUploadCertificate extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> enrollmentId() {
         return this.enrollmentId;
+    }
+    /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Export(name="timeouts", refs={CpsUploadCertificateTimeouts.class}, tree="[0]")
+    private Output</* @Nullable */ CpsUploadCertificateTimeouts> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Output<Optional<CpsUploadCertificateTimeouts>> timeouts() {
+        return Codegen.optional(this.timeouts);
     }
     /**
      * Trust chain in pem format for provided ECDSA certificate

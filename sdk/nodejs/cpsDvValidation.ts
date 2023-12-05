@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export class CpsDvValidation extends pulumi.CustomResource {
@@ -44,6 +46,10 @@ export class CpsDvValidation extends pulumi.CustomResource {
      * Status of validation
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
+    /**
+     * Enables to set timeout for processing
+     */
+    public readonly timeouts!: pulumi.Output<outputs.CpsDvValidationTimeouts | undefined>;
 
     /**
      * Create a CpsDvValidation resource with the given unique name, arguments, and options.
@@ -61,6 +67,7 @@ export class CpsDvValidation extends pulumi.CustomResource {
             resourceInputs["enrollmentId"] = state ? state.enrollmentId : undefined;
             resourceInputs["sans"] = state ? state.sans : undefined;
             resourceInputs["status"] = state ? state.status : undefined;
+            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
         } else {
             const args = argsOrState as CpsDvValidationArgs | undefined;
             if ((!args || args.enrollmentId === undefined) && !opts.urn) {
@@ -68,6 +75,7 @@ export class CpsDvValidation extends pulumi.CustomResource {
             }
             resourceInputs["enrollmentId"] = args ? args.enrollmentId : undefined;
             resourceInputs["sans"] = args ? args.sans : undefined;
+            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
             resourceInputs["status"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -91,6 +99,10 @@ export interface CpsDvValidationState {
      * Status of validation
      */
     status?: pulumi.Input<string>;
+    /**
+     * Enables to set timeout for processing
+     */
+    timeouts?: pulumi.Input<inputs.CpsDvValidationTimeouts>;
 }
 
 /**
@@ -105,4 +117,8 @@ export interface CpsDvValidationArgs {
      * List of SANs
      */
     sans?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Enables to set timeout for processing
+     */
+    timeouts?: pulumi.Input<inputs.CpsDvValidationTimeouts>;
 }

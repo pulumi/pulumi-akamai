@@ -1198,7 +1198,7 @@ class GtmProperty(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="trafficTargets")
-    def traffic_targets(self) -> pulumi.Output[Optional[Sequence['outputs.GtmPropertyTrafficTarget']]]:
+    def traffic_targets(self) -> pulumi.Output[Sequence['outputs.GtmPropertyTrafficTarget']]:
         return pulumi.get(self, "traffic_targets")
 
     @property

@@ -49,6 +49,8 @@ type CpsThirdPartyEnrollment struct {
 	SniOnly pulumi.BoolOutput `pulumi:"sniOnly"`
 	// Contact information for an administrator at Akamai
 	TechContact CpsThirdPartyEnrollmentTechContactOutput `pulumi:"techContact"`
+	// Enables to set timeout for processing
+	Timeouts CpsThirdPartyEnrollmentTimeoutsPtrOutput `pulumi:"timeouts"`
 }
 
 // NewCpsThirdPartyEnrollment registers a new resource with the given unique name, arguments, and options.
@@ -142,6 +144,8 @@ type cpsThirdPartyEnrollmentState struct {
 	SniOnly *bool `pulumi:"sniOnly"`
 	// Contact information for an administrator at Akamai
 	TechContact *CpsThirdPartyEnrollmentTechContact `pulumi:"techContact"`
+	// Enables to set timeout for processing
+	Timeouts *CpsThirdPartyEnrollmentTimeouts `pulumi:"timeouts"`
 }
 
 type CpsThirdPartyEnrollmentState struct {
@@ -179,6 +183,8 @@ type CpsThirdPartyEnrollmentState struct {
 	SniOnly pulumi.BoolPtrInput
 	// Contact information for an administrator at Akamai
 	TechContact CpsThirdPartyEnrollmentTechContactPtrInput
+	// Enables to set timeout for processing
+	Timeouts CpsThirdPartyEnrollmentTimeoutsPtrInput
 }
 
 func (CpsThirdPartyEnrollmentState) ElementType() reflect.Type {
@@ -220,6 +226,8 @@ type cpsThirdPartyEnrollmentArgs struct {
 	SniOnly bool `pulumi:"sniOnly"`
 	// Contact information for an administrator at Akamai
 	TechContact CpsThirdPartyEnrollmentTechContact `pulumi:"techContact"`
+	// Enables to set timeout for processing
+	Timeouts *CpsThirdPartyEnrollmentTimeouts `pulumi:"timeouts"`
 }
 
 // The set of arguments for constructing a CpsThirdPartyEnrollment resource.
@@ -258,6 +266,8 @@ type CpsThirdPartyEnrollmentArgs struct {
 	SniOnly pulumi.BoolInput
 	// Contact information for an administrator at Akamai
 	TechContact CpsThirdPartyEnrollmentTechContactInput
+	// Enables to set timeout for processing
+	Timeouts CpsThirdPartyEnrollmentTimeoutsPtrInput
 }
 
 func (CpsThirdPartyEnrollmentArgs) ElementType() reflect.Type {
@@ -432,6 +442,11 @@ func (o CpsThirdPartyEnrollmentOutput) SniOnly() pulumi.BoolOutput {
 // Contact information for an administrator at Akamai
 func (o CpsThirdPartyEnrollmentOutput) TechContact() CpsThirdPartyEnrollmentTechContactOutput {
 	return o.ApplyT(func(v *CpsThirdPartyEnrollment) CpsThirdPartyEnrollmentTechContactOutput { return v.TechContact }).(CpsThirdPartyEnrollmentTechContactOutput)
+}
+
+// Enables to set timeout for processing
+func (o CpsThirdPartyEnrollmentOutput) Timeouts() CpsThirdPartyEnrollmentTimeoutsPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollment) CpsThirdPartyEnrollmentTimeoutsPtrOutput { return v.Timeouts }).(CpsThirdPartyEnrollmentTimeoutsPtrOutput)
 }
 
 type CpsThirdPartyEnrollmentArrayOutput struct{ *pulumi.OutputState }

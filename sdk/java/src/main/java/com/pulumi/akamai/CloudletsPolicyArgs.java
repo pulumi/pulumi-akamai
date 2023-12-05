@@ -3,6 +3,7 @@
 
 package com.pulumi.akamai;
 
+import com.pulumi.akamai.inputs.CloudletsPolicyTimeoutsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
@@ -105,6 +106,21 @@ public final class CloudletsPolicyArgs extends com.pulumi.resources.ResourceArgs
         return Optional.ofNullable(this.name);
     }
 
+    /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Import(name="timeouts")
+    private @Nullable Output<CloudletsPolicyTimeoutsArgs> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Optional<Output<CloudletsPolicyTimeoutsArgs>> timeouts() {
+        return Optional.ofNullable(this.timeouts);
+    }
+
     private CloudletsPolicyArgs() {}
 
     private CloudletsPolicyArgs(CloudletsPolicyArgs $) {
@@ -114,6 +130,7 @@ public final class CloudletsPolicyArgs extends com.pulumi.resources.ResourceArgs
         this.matchRuleFormat = $.matchRuleFormat;
         this.matchRules = $.matchRules;
         this.name = $.name;
+        this.timeouts = $.timeouts;
     }
 
     public static Builder builder() {
@@ -258,6 +275,27 @@ public final class CloudletsPolicyArgs extends com.pulumi.resources.ResourceArgs
          */
         public Builder name(String name) {
             return name(Output.of(name));
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(@Nullable Output<CloudletsPolicyTimeoutsArgs> timeouts) {
+            $.timeouts = timeouts;
+            return this;
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(CloudletsPolicyTimeoutsArgs timeouts) {
+            return timeouts(Output.of(timeouts));
         }
 
         public CloudletsPolicyArgs build() {

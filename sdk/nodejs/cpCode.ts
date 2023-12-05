@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export class CpCode extends pulumi.CustomResource {
@@ -36,6 +38,10 @@ export class CpCode extends pulumi.CustomResource {
     public readonly groupId!: pulumi.Output<string>;
     public readonly name!: pulumi.Output<string>;
     public readonly productId!: pulumi.Output<string>;
+    /**
+     * Enables to set timeout for processing
+     */
+    public readonly timeouts!: pulumi.Output<outputs.CpCodeTimeouts | undefined>;
 
     /**
      * Create a CpCode resource with the given unique name, arguments, and options.
@@ -54,6 +60,7 @@ export class CpCode extends pulumi.CustomResource {
             resourceInputs["groupId"] = state ? state.groupId : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["productId"] = state ? state.productId : undefined;
+            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
         } else {
             const args = argsOrState as CpCodeArgs | undefined;
             if ((!args || args.contractId === undefined) && !opts.urn) {
@@ -66,6 +73,7 @@ export class CpCode extends pulumi.CustomResource {
             resourceInputs["groupId"] = args ? args.groupId : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["productId"] = args ? args.productId : undefined;
+            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const aliasOpts = { aliases: [{ type: "akamai:properties/cpCode:CpCode" }] };
@@ -82,6 +90,10 @@ export interface CpCodeState {
     groupId?: pulumi.Input<string>;
     name?: pulumi.Input<string>;
     productId?: pulumi.Input<string>;
+    /**
+     * Enables to set timeout for processing
+     */
+    timeouts?: pulumi.Input<inputs.CpCodeTimeouts>;
 }
 
 /**
@@ -92,4 +104,8 @@ export interface CpCodeArgs {
     groupId: pulumi.Input<string>;
     name?: pulumi.Input<string>;
     productId?: pulumi.Input<string>;
+    /**
+     * Enables to set timeout for processing
+     */
+    timeouts?: pulumi.Input<inputs.CpCodeTimeouts>;
 }

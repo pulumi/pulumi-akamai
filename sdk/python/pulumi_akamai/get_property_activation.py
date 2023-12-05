@@ -98,7 +98,7 @@ class GetPropertyActivationResult:
 
     @property
     @pulumi.getter
-    def version(self) -> int:
+    def version(self) -> Optional[int]:
         return pulumi.get(self, "version")
 
     @property
@@ -155,7 +155,7 @@ def get_property_activation(network: Optional[str] = None,
 @_utilities.lift_output_func(get_property_activation)
 def get_property_activation_output(network: Optional[pulumi.Input[Optional[str]]] = None,
                                    property_id: Optional[pulumi.Input[str]] = None,
-                                   version: Optional[pulumi.Input[int]] = None,
+                                   version: Optional[pulumi.Input[Optional[int]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyActivationResult]:
     """
     Use this data source to access information about an existing resource.
