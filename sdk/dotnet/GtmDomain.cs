@@ -139,7 +139,7 @@ namespace Pulumi.Akamai
                 Version = Utilities.Version,
                 Aliases =
                 {
-                    new global::Pulumi.Alias { Type = "akamai:trafficmanagement/gtmDomain:GtmDomain"},
+                    new global::Pulumi.Alias { Type = "akamai:trafficmanagement/gtmDomain:GtmDomain" },
                 },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);

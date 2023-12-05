@@ -217,7 +217,7 @@ namespace Pulumi.Akamai
                 Version = Utilities.Version,
                 Aliases =
                 {
-                    new global::Pulumi.Alias { Type = "akamai:edgedns/dnsRecord:DnsRecord"},
+                    new global::Pulumi.Alias { Type = "akamai:edgedns/dnsRecord:DnsRecord" },
                 },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
