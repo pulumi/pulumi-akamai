@@ -5,55 +5,55 @@ jobs:
     name: Check for upstream provider upgrades
     runs-on: ubuntu-latest
     steps:
-      - name: Install Go
-        uses: actions/setup-go@v3
-        with:
-          go-version: 1.21.x
-      - name: Checkout repo
-        uses: actions/checkout@v3
-        with:
-          ref: ${{ github.ref_name }}
-      - name: Unshallow clone for tags
-        run: git fetch --prune --unshallow --tags
-        shell: bash
-      - name: Install upgrade-provider
-        run: go install github.com/pulumi/upgrade-provider@76b9fab627d8c180d280ac234feebce80f8dc076
-        shell: bash
-      - name: "Set up git identity: name"
-        run: git config --global user.name pulumi-bot
-        shell: bash
-      - name: "Set up git identity: email"
-        run: git config --global user.email bot@pulumi.com
-        shell: bash
-      - name: Run upgrade-provider upstream check
-        id: upstream_version
-        run: |
-          upgrade-provider "$REPO" --kind=check-upstream-version
-        env:
-          REPO: ${{ github.repository }}
-        shell: bash
-      - name: Report success
-        if: ${{ job.status == 'success' }}
-        uses: rtCamp/action-slack-notify@v2
-        env:
-          SLACK_CHANNEL: provider-upgrade-publish-status
-          SLACK_COLOR: "#FF0000"
-          SLACK_ICON_EMOJI: ":tada:"
-          SLACK_MESSAGE: " Successfully checked for upstream version "
-          SLACK_TITLE: ${{ github.event.repository.name }} upstream version check
-          SLACK_USERNAME: provider-bot
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
-      - name: Send Check Version Failure To Slack
-        if: failure()
-        uses: rtCamp/action-slack-notify@v2
-        env:
-          SLACK_CHANNEL: provider-upgrade-publish-status
-          SLACK_COLOR: "#FF0000"
-          SLACK_ICON_EMOJI: ":owl:"
-          SLACK_MESSAGE: " Failed to check upstream for a new version "
-          SLACK_TITLE: ${{ github.event.repository.name }} upstream version check
-          SLACK_USERNAME: provider-bot
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+    - name: Install Go
+      uses: actions/setup-go@v3
+      with:
+        go-version: 1.21.x
+    - name: Checkout repo
+      uses: actions/checkout@v3
+      with:
+        ref: ${{ github.ref_name }}
+    - name: Unshallow clone for tags
+      run: git fetch --prune --unshallow --tags
+      shell: bash
+    - name: Install upgrade-provider
+      run: go install github.com/pulumi/upgrade-provider@76b9fab627d8c180d280ac234feebce80f8dc076
+      shell: bash
+    - name: "Set up git identity: name"
+      run: git config --global user.name pulumi-bot
+      shell: bash
+    - name: "Set up git identity: email"
+      run: git config --global user.email bot@pulumi.com
+      shell: bash
+    - name: Run upgrade-provider upstream check
+      id: upstream_version
+      run: |
+        upgrade-provider "$REPO" --kind=check-upstream-version
+      env:
+        REPO: ${{ github.repository }}
+      shell: bash
+    - name: Report success
+      if: ${{ job.status == 'success' }}
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_CHANNEL: provider-upgrade-publish-status
+        SLACK_COLOR: "#FF0000"
+        SLACK_ICON_EMOJI: ":tada:"
+        SLACK_MESSAGE: " Successfully checked for upstream version "
+        SLACK_TITLE: ${{ github.event.repository.name }} upstream version check
+        SLACK_USERNAME: provider-bot
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+    - name: Send Check Version Failure To Slack
+      if: failure()
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_CHANNEL: provider-upgrade-publish-status
+        SLACK_COLOR: "#FF0000"
+        SLACK_ICON_EMOJI: ":owl:"
+        SLACK_MESSAGE: " Failed to check upstream for a new version "
+        SLACK_TITLE: ${{ github.event.repository.name }} upstream version check
+        SLACK_USERNAME: provider-bot
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
 
 name: Check upstream upgrade
 on:
