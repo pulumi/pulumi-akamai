@@ -1,6 +1,3 @@
-env:
-  GH_TOKEN: ${{ secrets.PULUMI_BOT_TOKEN }}
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 jobs:
   check_upgrade_provider:
     name: Check for upstream provider upgrades
@@ -29,7 +26,7 @@ jobs:
       - name: Run upgrade-provider upstream check
         id: upstream_version
         run: |
-          upgrade-provider "$REPO" --kind=misspell-upstream-version
+          upgrade-provider "$REPO" --kind=check-upstream-version
         env:
           REPO: ${{ github.repository }}
         shell: bash
