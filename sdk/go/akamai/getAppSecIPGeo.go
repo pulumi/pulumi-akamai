@@ -29,6 +29,7 @@ type LookupAppSecIPGeoArgs struct {
 
 // A collection of values returned by getAppSecIPGeo.
 type LookupAppSecIPGeoResult struct {
+	AsnNetworkLists         []string `pulumi:"asnNetworkLists"`
 	ConfigId                int      `pulumi:"configId"`
 	ExceptionIpNetworkLists []string `pulumi:"exceptionIpNetworkLists"`
 	GeoNetworkLists         []string `pulumi:"geoNetworkLists"`
@@ -77,6 +78,10 @@ func (o LookupAppSecIPGeoResultOutput) ToLookupAppSecIPGeoResultOutput() LookupA
 
 func (o LookupAppSecIPGeoResultOutput) ToLookupAppSecIPGeoResultOutputWithContext(ctx context.Context) LookupAppSecIPGeoResultOutput {
 	return o
+}
+
+func (o LookupAppSecIPGeoResultOutput) AsnNetworkLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupAppSecIPGeoResult) []string { return v.AsnNetworkLists }).(pulumi.StringArrayOutput)
 }
 
 func (o LookupAppSecIPGeoResultOutput) ConfigId() pulumi.IntOutput {

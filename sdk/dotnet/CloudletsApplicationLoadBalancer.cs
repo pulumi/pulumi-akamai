@@ -27,7 +27,7 @@ namespace Pulumi.Akamai
         public Output<ImmutableArray<Outputs.CloudletsApplicationLoadBalancerDataCenter>> DataCenters { get; private set; } = null!;
 
         /// <summary>
-        /// The load balancer configuration description
+        /// The load balancer configuration version description
         /// </summary>
         [Output("description")]
         public Output<string?> Description { get; private set; } = null!;
@@ -36,7 +36,13 @@ namespace Pulumi.Akamai
         public Output<Outputs.CloudletsApplicationLoadBalancerLivenessSettings?> LivenessSettings { get; private set; } = null!;
 
         /// <summary>
-        /// The conditional origin’s unique identifier
+        /// The load balancer configuration description
+        /// </summary>
+        [Output("originDescription")]
+        public Output<string?> OriginDescription { get; private set; } = null!;
+
+        /// <summary>
+        /// The conditional origin's unique identifier
         /// </summary>
         [Output("originId")]
         public Output<string> OriginId { get; private set; } = null!;
@@ -120,7 +126,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// The load balancer configuration description
+        /// The load balancer configuration version description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -129,7 +135,13 @@ namespace Pulumi.Akamai
         public Input<Inputs.CloudletsApplicationLoadBalancerLivenessSettingsArgs>? LivenessSettings { get; set; }
 
         /// <summary>
-        /// The conditional origin’s unique identifier
+        /// The load balancer configuration description
+        /// </summary>
+        [Input("originDescription")]
+        public Input<string>? OriginDescription { get; set; }
+
+        /// <summary>
+        /// The conditional origin's unique identifier
         /// </summary>
         [Input("originId", required: true)]
         public Input<string> OriginId { get; set; } = null!;
@@ -163,7 +175,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// The load balancer configuration description
+        /// The load balancer configuration version description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -172,7 +184,13 @@ namespace Pulumi.Akamai
         public Input<Inputs.CloudletsApplicationLoadBalancerLivenessSettingsGetArgs>? LivenessSettings { get; set; }
 
         /// <summary>
-        /// The conditional origin’s unique identifier
+        /// The load balancer configuration description
+        /// </summary>
+        [Input("originDescription")]
+        public Input<string>? OriginDescription { get; set; }
+
+        /// <summary>
+        /// The conditional origin's unique identifier
         /// </summary>
         [Input("originId")]
         public Input<string>? OriginId { get; set; }

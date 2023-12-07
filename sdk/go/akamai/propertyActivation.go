@@ -28,8 +28,10 @@ type PropertyActivation struct {
 	PropertyId pulumi.StringOutput                    `pulumi:"propertyId"`
 	RuleErrors PropertyActivationRuleErrorArrayOutput `pulumi:"ruleErrors"`
 	Status     pulumi.StringOutput                    `pulumi:"status"`
-	Version    pulumi.IntOutput                       `pulumi:"version"`
-	Warnings   pulumi.StringOutput                    `pulumi:"warnings"`
+	// Enables to set timeout for processing
+	Timeouts PropertyActivationTimeoutsPtrOutput `pulumi:"timeouts"`
+	Version  pulumi.IntOutput                    `pulumi:"version"`
+	Warnings pulumi.StringOutput                 `pulumi:"warnings"`
 }
 
 // NewPropertyActivation registers a new resource with the given unique name, arguments, and options.
@@ -90,8 +92,10 @@ type propertyActivationState struct {
 	PropertyId *string                       `pulumi:"propertyId"`
 	RuleErrors []PropertyActivationRuleError `pulumi:"ruleErrors"`
 	Status     *string                       `pulumi:"status"`
-	Version    *int                          `pulumi:"version"`
-	Warnings   *string                       `pulumi:"warnings"`
+	// Enables to set timeout for processing
+	Timeouts *PropertyActivationTimeouts `pulumi:"timeouts"`
+	Version  *int                        `pulumi:"version"`
+	Warnings *string                     `pulumi:"warnings"`
 }
 
 type PropertyActivationState struct {
@@ -108,8 +112,10 @@ type PropertyActivationState struct {
 	PropertyId pulumi.StringPtrInput
 	RuleErrors PropertyActivationRuleErrorArrayInput
 	Status     pulumi.StringPtrInput
-	Version    pulumi.IntPtrInput
-	Warnings   pulumi.StringPtrInput
+	// Enables to set timeout for processing
+	Timeouts PropertyActivationTimeoutsPtrInput
+	Version  pulumi.IntPtrInput
+	Warnings pulumi.StringPtrInput
 }
 
 func (PropertyActivationState) ElementType() reflect.Type {
@@ -128,7 +134,9 @@ type propertyActivationArgs struct {
 	Note       *string                       `pulumi:"note"`
 	PropertyId string                        `pulumi:"propertyId"`
 	RuleErrors []PropertyActivationRuleError `pulumi:"ruleErrors"`
-	Version    int                           `pulumi:"version"`
+	// Enables to set timeout for processing
+	Timeouts *PropertyActivationTimeouts `pulumi:"timeouts"`
+	Version  int                         `pulumi:"version"`
 }
 
 // The set of arguments for constructing a PropertyActivation resource.
@@ -144,7 +152,9 @@ type PropertyActivationArgs struct {
 	Note       pulumi.StringPtrInput
 	PropertyId pulumi.StringInput
 	RuleErrors PropertyActivationRuleErrorArrayInput
-	Version    pulumi.IntInput
+	// Enables to set timeout for processing
+	Timeouts PropertyActivationTimeoutsPtrInput
+	Version  pulumi.IntInput
 }
 
 func (PropertyActivationArgs) ElementType() reflect.Type {
@@ -275,6 +285,11 @@ func (o PropertyActivationOutput) RuleErrors() PropertyActivationRuleErrorArrayO
 
 func (o PropertyActivationOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyActivation) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+}
+
+// Enables to set timeout for processing
+func (o PropertyActivationOutput) Timeouts() PropertyActivationTimeoutsPtrOutput {
+	return o.ApplyT(func(v *PropertyActivation) PropertyActivationTimeoutsPtrOutput { return v.Timeouts }).(PropertyActivationTimeoutsPtrOutput)
 }
 
 func (o PropertyActivationOutput) Version() pulumi.IntOutput {

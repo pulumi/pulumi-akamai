@@ -49,6 +49,12 @@ namespace Pulumi.Akamai
         public Output<int> EnrollmentId { get; private set; } = null!;
 
         /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Output("timeouts")]
+        public Output<Outputs.CpsUploadCertificateTimeouts?> Timeouts { get; private set; } = null!;
+
+        /// <summary>
         /// Trust chain in pem format for provided ECDSA certificate
         /// </summary>
         [Output("trustChainEcdsaPem")]
@@ -161,6 +167,12 @@ namespace Pulumi.Akamai
         public Input<int> EnrollmentId { get; set; } = null!;
 
         /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.CpsUploadCertificateTimeoutsArgs>? Timeouts { get; set; }
+
+        /// <summary>
         /// Trust chain in pem format for provided ECDSA certificate
         /// </summary>
         [Input("trustChainEcdsaPem")]
@@ -227,6 +239,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("enrollmentId")]
         public Input<int>? EnrollmentId { get; set; }
+
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.CpsUploadCertificateTimeoutsGetArgs>? Timeouts { get; set; }
 
         /// <summary>
         /// Trust chain in pem format for provided ECDSA certificate

@@ -18,6 +18,21 @@ public final class AppSecIPGeoState extends com.pulumi.resources.ResourceArgs {
     public static final AppSecIPGeoState Empty = new AppSecIPGeoState();
 
     /**
+     * List of IDs of ASN network list to be blocked
+     * 
+     */
+    @Import(name="asnNetworkLists")
+    private @Nullable Output<List<String>> asnNetworkLists;
+
+    /**
+     * @return List of IDs of ASN network list to be blocked
+     * 
+     */
+    public Optional<Output<List<String>>> asnNetworkLists() {
+        return Optional.ofNullable(this.asnNetworkLists);
+    }
+
+    /**
      * Unique identifier of the security configuration
      * 
      */
@@ -125,6 +140,7 @@ public final class AppSecIPGeoState extends com.pulumi.resources.ResourceArgs {
     private AppSecIPGeoState() {}
 
     private AppSecIPGeoState(AppSecIPGeoState $) {
+        this.asnNetworkLists = $.asnNetworkLists;
         this.configId = $.configId;
         this.exceptionIpNetworkLists = $.exceptionIpNetworkLists;
         this.geoNetworkLists = $.geoNetworkLists;
@@ -150,6 +166,37 @@ public final class AppSecIPGeoState extends com.pulumi.resources.ResourceArgs {
 
         public Builder(AppSecIPGeoState defaults) {
             $ = new AppSecIPGeoState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param asnNetworkLists List of IDs of ASN network list to be blocked
+         * 
+         * @return builder
+         * 
+         */
+        public Builder asnNetworkLists(@Nullable Output<List<String>> asnNetworkLists) {
+            $.asnNetworkLists = asnNetworkLists;
+            return this;
+        }
+
+        /**
+         * @param asnNetworkLists List of IDs of ASN network list to be blocked
+         * 
+         * @return builder
+         * 
+         */
+        public Builder asnNetworkLists(List<String> asnNetworkLists) {
+            return asnNetworkLists(Output.of(asnNetworkLists));
+        }
+
+        /**
+         * @param asnNetworkLists List of IDs of ASN network list to be blocked
+         * 
+         * @return builder
+         * 
+         */
+        public Builder asnNetworkLists(String... asnNetworkLists) {
+            return asnNetworkLists(List.of(asnNetworkLists));
         }
 
         /**

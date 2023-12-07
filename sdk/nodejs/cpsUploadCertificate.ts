@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export class CpsUploadCertificate extends pulumi.CustomResource {
@@ -57,6 +59,10 @@ export class CpsUploadCertificate extends pulumi.CustomResource {
      */
     public readonly enrollmentId!: pulumi.Output<number>;
     /**
+     * Enables to set timeout for processing
+     */
+    public readonly timeouts!: pulumi.Output<outputs.CpsUploadCertificateTimeouts | undefined>;
+    /**
      * Trust chain in pem format for provided ECDSA certificate
      */
     public readonly trustChainEcdsaPem!: pulumi.Output<string | undefined>;
@@ -92,6 +98,7 @@ export class CpsUploadCertificate extends pulumi.CustomResource {
             resourceInputs["certificateEcdsaPem"] = state ? state.certificateEcdsaPem : undefined;
             resourceInputs["certificateRsaPem"] = state ? state.certificateRsaPem : undefined;
             resourceInputs["enrollmentId"] = state ? state.enrollmentId : undefined;
+            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
             resourceInputs["trustChainEcdsaPem"] = state ? state.trustChainEcdsaPem : undefined;
             resourceInputs["trustChainRsaPem"] = state ? state.trustChainRsaPem : undefined;
             resourceInputs["unacknowledgedWarnings"] = state ? state.unacknowledgedWarnings : undefined;
@@ -107,6 +114,7 @@ export class CpsUploadCertificate extends pulumi.CustomResource {
             resourceInputs["certificateEcdsaPem"] = args ? args.certificateEcdsaPem : undefined;
             resourceInputs["certificateRsaPem"] = args ? args.certificateRsaPem : undefined;
             resourceInputs["enrollmentId"] = args ? args.enrollmentId : undefined;
+            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
             resourceInputs["trustChainEcdsaPem"] = args ? args.trustChainEcdsaPem : undefined;
             resourceInputs["trustChainRsaPem"] = args ? args.trustChainRsaPem : undefined;
             resourceInputs["waitForDeployment"] = args ? args.waitForDeployment : undefined;
@@ -145,6 +153,10 @@ export interface CpsUploadCertificateState {
      * The unique identifier of the enrollment
      */
     enrollmentId?: pulumi.Input<number>;
+    /**
+     * Enables to set timeout for processing
+     */
+    timeouts?: pulumi.Input<inputs.CpsUploadCertificateTimeouts>;
     /**
      * Trust chain in pem format for provided ECDSA certificate
      */
@@ -191,6 +203,10 @@ export interface CpsUploadCertificateArgs {
      * The unique identifier of the enrollment
      */
     enrollmentId: pulumi.Input<number>;
+    /**
+     * Enables to set timeout for processing
+     */
+    timeouts?: pulumi.Input<inputs.CpsUploadCertificateTimeouts>;
     /**
      * Trust chain in pem format for provided ECDSA certificate
      */

@@ -5,6 +5,7 @@ package com.pulumi.akamai;
 
 import com.pulumi.akamai.inputs.PropertyActivationComplianceRecordArgs;
 import com.pulumi.akamai.inputs.PropertyActivationRuleErrorArgs;
+import com.pulumi.akamai.inputs.PropertyActivationTimeoutsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
@@ -100,6 +101,21 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
         return Optional.ofNullable(this.ruleErrors);
     }
 
+    /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Import(name="timeouts")
+    private @Nullable Output<PropertyActivationTimeoutsArgs> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Optional<Output<PropertyActivationTimeoutsArgs>> timeouts() {
+        return Optional.ofNullable(this.timeouts);
+    }
+
     @Import(name="version", required=true)
     private Output<Integer> version;
 
@@ -118,6 +134,7 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
         this.note = $.note;
         this.propertyId = $.propertyId;
         this.ruleErrors = $.ruleErrors;
+        this.timeouts = $.timeouts;
         this.version = $.version;
     }
 
@@ -253,6 +270,27 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
 
         public Builder ruleErrors(PropertyActivationRuleErrorArgs... ruleErrors) {
             return ruleErrors(List.of(ruleErrors));
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(@Nullable Output<PropertyActivationTimeoutsArgs> timeouts) {
+            $.timeouts = timeouts;
+            return this;
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(PropertyActivationTimeoutsArgs timeouts) {
+            return timeouts(Output.of(timeouts));
         }
 
         public Builder version(Output<Integer> version) {

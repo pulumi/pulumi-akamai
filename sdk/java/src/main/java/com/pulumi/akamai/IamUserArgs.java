@@ -201,15 +201,15 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
      * The user&#39;s main phone number
      * 
      */
-    @Import(name="phone", required=true)
-    private Output<String> phone;
+    @Import(name="phone")
+    private @Nullable Output<String> phone;
 
     /**
      * @return The user&#39;s main phone number
      * 
      */
-    public Output<String> phone() {
-        return this.phone;
+    public Optional<Output<String>> phone() {
+        return Optional.ofNullable(this.phone);
     }
 
     /**
@@ -602,7 +602,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder phone(Output<String> phone) {
+        public Builder phone(@Nullable Output<String> phone) {
             $.phone = phone;
             return this;
         }
@@ -750,7 +750,6 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
             $.enableTfa = Objects.requireNonNull($.enableTfa, "expected parameter 'enableTfa' to be non-null");
             $.firstName = Objects.requireNonNull($.firstName, "expected parameter 'firstName' to be non-null");
             $.lastName = Objects.requireNonNull($.lastName, "expected parameter 'lastName' to be non-null");
-            $.phone = Objects.requireNonNull($.phone, "expected parameter 'phone' to be non-null");
             return $;
         }
     }

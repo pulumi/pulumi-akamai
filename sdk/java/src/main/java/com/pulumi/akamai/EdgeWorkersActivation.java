@@ -6,12 +6,14 @@ package com.pulumi.akamai;
 import com.pulumi.akamai.EdgeWorkersActivationArgs;
 import com.pulumi.akamai.Utilities;
 import com.pulumi.akamai.inputs.EdgeWorkersActivationState;
+import com.pulumi.akamai.outputs.EdgeWorkersActivationTimeouts;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @ResourceType(type="akamai:index/edgeWorkersActivation:EdgeWorkersActivation")
@@ -57,6 +59,20 @@ public class EdgeWorkersActivation extends com.pulumi.resources.CustomResource {
      */
     public Output<String> network() {
         return this.network;
+    }
+    /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Export(name="timeouts", refs={EdgeWorkersActivationTimeouts.class}, tree="[0]")
+    private Output</* @Nullable */ EdgeWorkersActivationTimeouts> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Output<Optional<EdgeWorkersActivationTimeouts>> timeouts() {
+        return Codegen.optional(this.timeouts);
     }
     /**
      * The version of EdgeWorker to activate

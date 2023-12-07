@@ -3,12 +3,15 @@
 
 package com.pulumi.akamai;
 
+import com.pulumi.akamai.inputs.CloudletsPolicyActivationTimeoutsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class CloudletsPolicyActivationArgs extends com.pulumi.resources.ResourceArgs {
@@ -61,6 +64,21 @@ public final class CloudletsPolicyActivationArgs extends com.pulumi.resources.Re
     }
 
     /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Import(name="timeouts")
+    private @Nullable Output<CloudletsPolicyActivationTimeoutsArgs> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Optional<Output<CloudletsPolicyActivationTimeoutsArgs>> timeouts() {
+        return Optional.ofNullable(this.timeouts);
+    }
+
+    /**
      * Cloudlets policy version you want to activate
      * 
      */
@@ -81,6 +99,7 @@ public final class CloudletsPolicyActivationArgs extends com.pulumi.resources.Re
         this.associatedProperties = $.associatedProperties;
         this.network = $.network;
         this.policyId = $.policyId;
+        this.timeouts = $.timeouts;
         this.version = $.version;
     }
 
@@ -173,6 +192,27 @@ public final class CloudletsPolicyActivationArgs extends com.pulumi.resources.Re
          */
         public Builder policyId(Integer policyId) {
             return policyId(Output.of(policyId));
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(@Nullable Output<CloudletsPolicyActivationTimeoutsArgs> timeouts) {
+            $.timeouts = timeouts;
+            return this;
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(CloudletsPolicyActivationTimeoutsArgs timeouts) {
+            return timeouts(Output.of(timeouts));
         }
 
         /**

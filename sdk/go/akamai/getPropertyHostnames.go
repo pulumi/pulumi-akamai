@@ -26,6 +26,7 @@ type GetPropertyHostnamesArgs struct {
 	ContractId string `pulumi:"contractId"`
 	GroupId    string `pulumi:"groupId"`
 	PropertyId string `pulumi:"propertyId"`
+	Version    *int   `pulumi:"version"`
 }
 
 // A collection of values returned by getPropertyHostnames.
@@ -57,6 +58,7 @@ type GetPropertyHostnamesOutputArgs struct {
 	ContractId pulumi.StringInput `pulumi:"contractId"`
 	GroupId    pulumi.StringInput `pulumi:"groupId"`
 	PropertyId pulumi.StringInput `pulumi:"propertyId"`
+	Version    pulumi.IntPtrInput `pulumi:"version"`
 }
 
 func (GetPropertyHostnamesOutputArgs) ElementType() reflect.Type {

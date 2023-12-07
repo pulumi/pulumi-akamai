@@ -3,6 +3,7 @@
 
 package com.pulumi.akamai.inputs;
 
+import com.pulumi.akamai.inputs.CpsUploadCertificateTimeoutsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
@@ -109,6 +110,21 @@ public final class CpsUploadCertificateState extends com.pulumi.resources.Resour
     }
 
     /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Import(name="timeouts")
+    private @Nullable Output<CpsUploadCertificateTimeoutsArgs> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Optional<Output<CpsUploadCertificateTimeoutsArgs>> timeouts() {
+        return Optional.ofNullable(this.timeouts);
+    }
+
+    /**
      * Trust chain in pem format for provided ECDSA certificate
      * 
      */
@@ -177,6 +193,7 @@ public final class CpsUploadCertificateState extends com.pulumi.resources.Resour
         this.certificateEcdsaPem = $.certificateEcdsaPem;
         this.certificateRsaPem = $.certificateRsaPem;
         this.enrollmentId = $.enrollmentId;
+        this.timeouts = $.timeouts;
         this.trustChainEcdsaPem = $.trustChainEcdsaPem;
         this.trustChainRsaPem = $.trustChainRsaPem;
         this.unacknowledgedWarnings = $.unacknowledgedWarnings;
@@ -335,6 +352,27 @@ public final class CpsUploadCertificateState extends com.pulumi.resources.Resour
          */
         public Builder enrollmentId(Integer enrollmentId) {
             return enrollmentId(Output.of(enrollmentId));
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(@Nullable Output<CpsUploadCertificateTimeoutsArgs> timeouts) {
+            $.timeouts = timeouts;
+            return this;
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(CpsUploadCertificateTimeoutsArgs timeouts) {
+            return timeouts(Output.of(timeouts));
         }
 
         /**

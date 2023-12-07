@@ -47,6 +47,13 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
         return Optional.ofNullable(this.matches);
     }
 
+    @Import(name="matchesAlways")
+    private @Nullable Output<Boolean> matchesAlways;
+
+    public Optional<Output<Boolean>> matchesAlways() {
+        return Optional.ofNullable(this.matchesAlways);
+    }
+
     @Import(name="name")
     private @Nullable Output<String> name;
 
@@ -103,6 +110,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
         this.end = $.end;
         this.matchUrl = $.matchUrl;
         this.matches = $.matches;
+        this.matchesAlways = $.matchesAlways;
         this.name = $.name;
         this.redirectUrl = $.redirectUrl;
         this.start = $.start;
@@ -168,6 +176,15 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
 
         public Builder matches(GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgs... matches) {
             return matches(List.of(matches));
+        }
+
+        public Builder matchesAlways(@Nullable Output<Boolean> matchesAlways) {
+            $.matchesAlways = matchesAlways;
+            return this;
+        }
+
+        public Builder matchesAlways(Boolean matchesAlways) {
+            return matchesAlways(Output.of(matchesAlways));
         }
 
         public Builder name(@Nullable Output<String> name) {

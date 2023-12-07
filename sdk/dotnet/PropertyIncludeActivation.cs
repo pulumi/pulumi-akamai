@@ -61,6 +61,12 @@ namespace Pulumi.Akamai
         public Output<ImmutableArray<string>> NotifyEmails { get; private set; } = null!;
 
         /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Output("timeouts")]
+        public Output<Outputs.PropertyIncludeActivationTimeouts?> Timeouts { get; private set; } = null!;
+
+        /// <summary>
         /// The validation information in JSON format
         /// </summary>
         [Output("validations")]
@@ -173,6 +179,12 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.PropertyIncludeActivationTimeoutsArgs>? Timeouts { get; set; }
+
+        /// <summary>
         /// The unique identifier of the include
         /// </summary>
         [Input("version", required: true)]
@@ -239,6 +251,12 @@ namespace Pulumi.Akamai
             get => _notifyEmails ?? (_notifyEmails = new InputList<string>());
             set => _notifyEmails = value;
         }
+
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.PropertyIncludeActivationTimeoutsGetArgs>? Timeouts { get; set; }
 
         /// <summary>
         /// The validation information in JSON format

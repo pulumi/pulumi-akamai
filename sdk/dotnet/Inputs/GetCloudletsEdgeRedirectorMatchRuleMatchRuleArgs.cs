@@ -29,6 +29,9 @@ namespace Pulumi.Akamai.Inputs
             set => _matches = value;
         }
 
+        [Input("matchesAlways")]
+        public Input<bool>? MatchesAlways { get; set; }
+
         [Input("name")]
         public Input<string>? Name { get; set; }
 
