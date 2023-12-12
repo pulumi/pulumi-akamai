@@ -17860,3 +17860,175 @@ export interface ProviderConfig {
 }
 export namespace config {
 }
+
+export namespace edgedns {
+    export interface DnsZoneTsigKey {
+        algorithm: pulumi.Input<string>;
+        name: pulumi.Input<string>;
+        secret: pulumi.Input<string>;
+    }
+}
+
+export namespace properties {
+    export interface PropertyActivationComplianceRecord {
+        noncomplianceReasonEmergency?: pulumi.Input<inputs.properties.PropertyActivationComplianceRecordNoncomplianceReasonEmergency>;
+        noncomplianceReasonNoProductionTraffic?: pulumi.Input<inputs.properties.PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic>;
+        noncomplianceReasonNone?: pulumi.Input<inputs.properties.PropertyActivationComplianceRecordNoncomplianceReasonNone>;
+        noncomplianceReasonOther?: pulumi.Input<inputs.properties.PropertyActivationComplianceRecordNoncomplianceReasonOther>;
+    }
+
+    export interface PropertyActivationComplianceRecordNoncomplianceReasonEmergency {
+        ticketId?: pulumi.Input<string>;
+    }
+
+    export interface PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic {
+        ticketId?: pulumi.Input<string>;
+    }
+
+    export interface PropertyActivationComplianceRecordNoncomplianceReasonNone {
+        customerEmail?: pulumi.Input<string>;
+        peerReviewedBy?: pulumi.Input<string>;
+        ticketId?: pulumi.Input<string>;
+        unitTested?: pulumi.Input<boolean>;
+    }
+
+    export interface PropertyActivationComplianceRecordNoncomplianceReasonOther {
+        otherNoncomplianceReason?: pulumi.Input<string>;
+        ticketId?: pulumi.Input<string>;
+    }
+
+    export interface PropertyActivationRuleError {
+        behaviorName?: pulumi.Input<string>;
+        detail?: pulumi.Input<string>;
+        errorLocation?: pulumi.Input<string>;
+        instance?: pulumi.Input<string>;
+        statusCode?: pulumi.Input<number>;
+        title?: pulumi.Input<string>;
+        type?: pulumi.Input<string>;
+    }
+
+    export interface PropertyHostname {
+        certProvisioningType: pulumi.Input<string>;
+        certStatuses?: pulumi.Input<pulumi.Input<inputs.properties.PropertyHostnameCertStatus>[]>;
+        cnameFrom: pulumi.Input<string>;
+        cnameTo: pulumi.Input<string>;
+        cnameType?: pulumi.Input<string>;
+        edgeHostnameId?: pulumi.Input<string>;
+    }
+
+    export interface PropertyHostnameCertStatus {
+        hostname?: pulumi.Input<string>;
+        productionStatus?: pulumi.Input<string>;
+        stagingStatus?: pulumi.Input<string>;
+        target?: pulumi.Input<string>;
+    }
+
+    export interface PropertyRuleError {
+        behaviorName?: pulumi.Input<string>;
+        detail?: pulumi.Input<string>;
+        errorLocation?: pulumi.Input<string>;
+        instance?: pulumi.Input<string>;
+        statusCode?: pulumi.Input<number>;
+        title?: pulumi.Input<string>;
+        type?: pulumi.Input<string>;
+    }
+}
+
+export namespace trafficmanagement {
+    export interface GtmASmapAssignment {
+        asNumbers: pulumi.Input<pulumi.Input<number>[]>;
+        datacenterId: pulumi.Input<number>;
+        nickname: pulumi.Input<string>;
+    }
+
+    export interface GtmASmapDefaultDatacenter {
+        datacenterId: pulumi.Input<number>;
+        nickname?: pulumi.Input<string>;
+    }
+
+    export interface GtmCidrmapAssignment {
+        blocks?: pulumi.Input<pulumi.Input<string>[]>;
+        datacenterId: pulumi.Input<number>;
+        nickname: pulumi.Input<string>;
+    }
+
+    export interface GtmCidrmapDefaultDatacenter {
+        datacenterId: pulumi.Input<number>;
+        nickname?: pulumi.Input<string>;
+    }
+
+    export interface GtmDatacenterDefaultLoadObject {
+        loadObject?: pulumi.Input<string>;
+        loadObjectPort?: pulumi.Input<number>;
+        loadServers?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GtmGeomapAssignment {
+        countries?: pulumi.Input<pulumi.Input<string>[]>;
+        datacenterId: pulumi.Input<number>;
+        nickname: pulumi.Input<string>;
+    }
+
+    export interface GtmGeomapDefaultDatacenter {
+        datacenterId: pulumi.Input<number>;
+        nickname?: pulumi.Input<string>;
+    }
+
+    export interface GtmPropertyLivenessTest {
+        answersRequired?: pulumi.Input<boolean>;
+        disableNonstandardPortWarning?: pulumi.Input<boolean>;
+        disabled?: pulumi.Input<boolean>;
+        errorPenalty?: pulumi.Input<number>;
+        httpError3xx?: pulumi.Input<boolean>;
+        httpError4xx?: pulumi.Input<boolean>;
+        httpError5xx?: pulumi.Input<boolean>;
+        httpHeaders?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmPropertyLivenessTestHttpHeader>[]>;
+        name: pulumi.Input<string>;
+        peerCertificateVerification?: pulumi.Input<boolean>;
+        recursionRequested?: pulumi.Input<boolean>;
+        requestString?: pulumi.Input<string>;
+        resourceType?: pulumi.Input<string>;
+        responseString?: pulumi.Input<string>;
+        sslClientCertificate?: pulumi.Input<string>;
+        sslClientPrivateKey?: pulumi.Input<string>;
+        testInterval: pulumi.Input<number>;
+        testObject?: pulumi.Input<string>;
+        testObjectPassword?: pulumi.Input<string>;
+        testObjectPort?: pulumi.Input<number>;
+        testObjectProtocol: pulumi.Input<string>;
+        testObjectUsername?: pulumi.Input<string>;
+        testTimeout: pulumi.Input<number>;
+        timeoutPenalty?: pulumi.Input<number>;
+    }
+
+    export interface GtmPropertyLivenessTestHttpHeader {
+        name?: pulumi.Input<string>;
+        value?: pulumi.Input<string>;
+    }
+
+    export interface GtmPropertyStaticRrSet {
+        rdatas?: pulumi.Input<pulumi.Input<string>[]>;
+        ttl?: pulumi.Input<number>;
+        type?: pulumi.Input<string>;
+    }
+
+    export interface GtmPropertyTrafficTarget {
+        datacenterId?: pulumi.Input<number>;
+        enabled?: pulumi.Input<boolean>;
+        handoutCname?: pulumi.Input<string>;
+        /**
+         * @deprecated The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored
+         */
+        name?: pulumi.Input<string>;
+        servers?: pulumi.Input<pulumi.Input<string>[]>;
+        weight?: pulumi.Input<number>;
+    }
+
+    export interface GtmResourceResourceInstance {
+        datacenterId: pulumi.Input<number>;
+        loadObject?: pulumi.Input<string>;
+        loadObjectPort?: pulumi.Input<number>;
+        loadServers?: pulumi.Input<pulumi.Input<string>[]>;
+        useDefaultLoadObject?: pulumi.Input<boolean>;
+    }
+}

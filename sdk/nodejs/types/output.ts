@@ -9634,3 +9634,178 @@ export namespace config {
     }
 
 }
+
+export namespace edgedns {
+    export interface DnsZoneTsigKey {
+        algorithm: string;
+        name: string;
+        secret: string;
+    }
+
+}
+
+export namespace properties {
+    export interface PropertyActivationComplianceRecord {
+        noncomplianceReasonEmergency?: outputs.properties.PropertyActivationComplianceRecordNoncomplianceReasonEmergency;
+        noncomplianceReasonNoProductionTraffic?: outputs.properties.PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic;
+        noncomplianceReasonNone?: outputs.properties.PropertyActivationComplianceRecordNoncomplianceReasonNone;
+        noncomplianceReasonOther?: outputs.properties.PropertyActivationComplianceRecordNoncomplianceReasonOther;
+    }
+
+    export interface PropertyActivationComplianceRecordNoncomplianceReasonEmergency {
+        ticketId?: string;
+    }
+
+    export interface PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic {
+        ticketId?: string;
+    }
+
+    export interface PropertyActivationComplianceRecordNoncomplianceReasonNone {
+        customerEmail?: string;
+        peerReviewedBy?: string;
+        ticketId?: string;
+        unitTested?: boolean;
+    }
+
+    export interface PropertyActivationComplianceRecordNoncomplianceReasonOther {
+        otherNoncomplianceReason?: string;
+        ticketId?: string;
+    }
+
+    export interface PropertyActivationRuleError {
+        behaviorName?: string;
+        detail?: string;
+        errorLocation?: string;
+        instance?: string;
+        statusCode?: number;
+        title?: string;
+        type?: string;
+    }
+
+    export interface PropertyHostname {
+        certProvisioningType: string;
+        certStatuses: outputs.properties.PropertyHostnameCertStatus[];
+        cnameFrom: string;
+        cnameTo: string;
+        cnameType: string;
+        edgeHostnameId: string;
+    }
+
+    export interface PropertyHostnameCertStatus {
+        hostname: string;
+        productionStatus: string;
+        stagingStatus: string;
+        target: string;
+    }
+
+    export interface PropertyRuleError {
+        behaviorName?: string;
+        detail?: string;
+        errorLocation?: string;
+        instance?: string;
+        statusCode?: number;
+        title?: string;
+        type?: string;
+    }
+
+}
+
+export namespace trafficmanagement {
+    export interface GtmASmapAssignment {
+        asNumbers: number[];
+        datacenterId: number;
+        nickname: string;
+    }
+
+    export interface GtmASmapDefaultDatacenter {
+        datacenterId: number;
+        nickname?: string;
+    }
+
+    export interface GtmCidrmapAssignment {
+        blocks?: string[];
+        datacenterId: number;
+        nickname: string;
+    }
+
+    export interface GtmCidrmapDefaultDatacenter {
+        datacenterId: number;
+        nickname?: string;
+    }
+
+    export interface GtmDatacenterDefaultLoadObject {
+        loadObject?: string;
+        loadObjectPort?: number;
+        loadServers?: string[];
+    }
+
+    export interface GtmGeomapAssignment {
+        countries?: string[];
+        datacenterId: number;
+        nickname: string;
+    }
+
+    export interface GtmGeomapDefaultDatacenter {
+        datacenterId: number;
+        nickname?: string;
+    }
+
+    export interface GtmPropertyLivenessTest {
+        answersRequired?: boolean;
+        disableNonstandardPortWarning?: boolean;
+        disabled?: boolean;
+        errorPenalty?: number;
+        httpError3xx?: boolean;
+        httpError4xx?: boolean;
+        httpError5xx?: boolean;
+        httpHeaders?: outputs.trafficmanagement.GtmPropertyLivenessTestHttpHeader[];
+        name: string;
+        peerCertificateVerification?: boolean;
+        recursionRequested?: boolean;
+        requestString?: string;
+        resourceType?: string;
+        responseString?: string;
+        sslClientCertificate?: string;
+        sslClientPrivateKey?: string;
+        testInterval: number;
+        testObject?: string;
+        testObjectPassword?: string;
+        testObjectPort?: number;
+        testObjectProtocol: string;
+        testObjectUsername?: string;
+        testTimeout: number;
+        timeoutPenalty?: number;
+    }
+
+    export interface GtmPropertyLivenessTestHttpHeader {
+        name?: string;
+        value?: string;
+    }
+
+    export interface GtmPropertyStaticRrSet {
+        rdatas?: string[];
+        ttl?: number;
+        type?: string;
+    }
+
+    export interface GtmPropertyTrafficTarget {
+        datacenterId?: number;
+        enabled?: boolean;
+        handoutCname?: string;
+        /**
+         * @deprecated The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored
+         */
+        name?: string;
+        servers?: string[];
+        weight?: number;
+    }
+
+    export interface GtmResourceResourceInstance {
+        datacenterId: number;
+        loadObject?: string;
+        loadObjectPort?: number;
+        loadServers?: string[];
+        useDefaultLoadObject?: boolean;
+    }
+
+}

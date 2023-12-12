@@ -292,6 +292,22 @@ _utilities.register(
 [
  {
   "pkg": "akamai",
+  "mod": "edgedns/dnsRecord",
+  "fqn": "pulumi_akamai.edgedns",
+  "classes": {
+   "akamai:edgedns/dnsRecord:DnsRecord": "DnsRecord"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "edgedns/dnsZone",
+  "fqn": "pulumi_akamai.edgedns",
+  "classes": {
+   "akamai:edgedns/dnsZone:DnsZone": "DnsZone"
+  }
+ },
+ {
+  "pkg": "akamai",
   "mod": "index/appSecActivations",
   "fqn": "pulumi_akamai",
   "classes": {
@@ -1216,6 +1232,94 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/propertyIncludeActivation:PropertyIncludeActivation": "PropertyIncludeActivation"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "properties/cpCode",
+  "fqn": "pulumi_akamai.properties",
+  "classes": {
+   "akamai:properties/cpCode:CpCode": "CpCode"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "properties/edgeHostName",
+  "fqn": "pulumi_akamai.properties",
+  "classes": {
+   "akamai:properties/edgeHostName:EdgeHostName": "EdgeHostName"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "properties/property",
+  "fqn": "pulumi_akamai.properties",
+  "classes": {
+   "akamai:properties/property:Property": "Property"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "properties/propertyActivation",
+  "fqn": "pulumi_akamai.properties",
+  "classes": {
+   "akamai:properties/propertyActivation:PropertyActivation": "PropertyActivation"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "trafficmanagement/gtmASmap",
+  "fqn": "pulumi_akamai.trafficmanagement",
+  "classes": {
+   "akamai:trafficmanagement/gtmASmap:GtmASmap": "GtmASmap"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "trafficmanagement/gtmCidrmap",
+  "fqn": "pulumi_akamai.trafficmanagement",
+  "classes": {
+   "akamai:trafficmanagement/gtmCidrmap:GtmCidrmap": "GtmCidrmap"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "trafficmanagement/gtmDatacenter",
+  "fqn": "pulumi_akamai.trafficmanagement",
+  "classes": {
+   "akamai:trafficmanagement/gtmDatacenter:GtmDatacenter": "GtmDatacenter"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "trafficmanagement/gtmDomain",
+  "fqn": "pulumi_akamai.trafficmanagement",
+  "classes": {
+   "akamai:trafficmanagement/gtmDomain:GtmDomain": "GtmDomain"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "trafficmanagement/gtmGeomap",
+  "fqn": "pulumi_akamai.trafficmanagement",
+  "classes": {
+   "akamai:trafficmanagement/gtmGeomap:GtmGeomap": "GtmGeomap"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "trafficmanagement/gtmProperty",
+  "fqn": "pulumi_akamai.trafficmanagement",
+  "classes": {
+   "akamai:trafficmanagement/gtmProperty:GtmProperty": "GtmProperty"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "trafficmanagement/gtmResource",
+  "fqn": "pulumi_akamai.trafficmanagement",
+  "classes": {
+   "akamai:trafficmanagement/gtmResource:GtmResource": "GtmResource"
   }
  }
 ]

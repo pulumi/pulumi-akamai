@@ -12,9 +12,9 @@ import (
 )
 
 // Deprecated: akamai.properties/getcpcode.getCpCode has been deprecated in favor of akamai.index/getcpcode.getCpCode
-func GetCpCode(ctx *pulumi.Context, args *GetCpCodeArgs, opts ...pulumi.InvokeOption) (*GetCpCodeResult, error) {
+func LookupCpCode(ctx *pulumi.Context, args *LookupCpCodeArgs, opts ...pulumi.InvokeOption) (*LookupCpCodeResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
-	var rv GetCpCodeResult
+	var rv LookupCpCodeResult
 	err := ctx.Invoke("akamai:properties/getCpCode:getCpCode", args, &rv, opts...)
 	if err != nil {
 		return nil, err
@@ -23,14 +23,14 @@ func GetCpCode(ctx *pulumi.Context, args *GetCpCodeArgs, opts ...pulumi.InvokeOp
 }
 
 // A collection of arguments for invoking getCpCode.
-type GetCpCodeArgs struct {
+type LookupCpCodeArgs struct {
 	ContractId string `pulumi:"contractId"`
 	GroupId    string `pulumi:"groupId"`
 	Name       string `pulumi:"name"`
 }
 
 // A collection of values returned by getCpCode.
-type GetCpCodeResult struct {
+type LookupCpCodeResult struct {
 	ContractId string `pulumi:"contractId"`
 	GroupId    string `pulumi:"groupId"`
 	// The provider-assigned unique ID for this managed resource.
@@ -39,66 +39,66 @@ type GetCpCodeResult struct {
 	ProductIds []string `pulumi:"productIds"`
 }
 
-func GetCpCodeOutput(ctx *pulumi.Context, args GetCpCodeOutputArgs, opts ...pulumi.InvokeOption) GetCpCodeResultOutput {
+func LookupCpCodeOutput(ctx *pulumi.Context, args LookupCpCodeOutputArgs, opts ...pulumi.InvokeOption) LookupCpCodeResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetCpCodeResult, error) {
-			args := v.(GetCpCodeArgs)
-			r, err := GetCpCode(ctx, &args, opts...)
-			var s GetCpCodeResult
+		ApplyT(func(v interface{}) (LookupCpCodeResult, error) {
+			args := v.(LookupCpCodeArgs)
+			r, err := LookupCpCode(ctx, &args, opts...)
+			var s LookupCpCodeResult
 			if r != nil {
 				s = *r
 			}
 			return s, err
-		}).(GetCpCodeResultOutput)
+		}).(LookupCpCodeResultOutput)
 }
 
 // A collection of arguments for invoking getCpCode.
-type GetCpCodeOutputArgs struct {
+type LookupCpCodeOutputArgs struct {
 	ContractId pulumi.StringInput `pulumi:"contractId"`
 	GroupId    pulumi.StringInput `pulumi:"groupId"`
 	Name       pulumi.StringInput `pulumi:"name"`
 }
 
-func (GetCpCodeOutputArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetCpCodeArgs)(nil)).Elem()
+func (LookupCpCodeOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupCpCodeArgs)(nil)).Elem()
 }
 
 // A collection of values returned by getCpCode.
-type GetCpCodeResultOutput struct{ *pulumi.OutputState }
+type LookupCpCodeResultOutput struct{ *pulumi.OutputState }
 
-func (GetCpCodeResultOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetCpCodeResult)(nil)).Elem()
+func (LookupCpCodeResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupCpCodeResult)(nil)).Elem()
 }
 
-func (o GetCpCodeResultOutput) ToGetCpCodeResultOutput() GetCpCodeResultOutput {
+func (o LookupCpCodeResultOutput) ToLookupCpCodeResultOutput() LookupCpCodeResultOutput {
 	return o
 }
 
-func (o GetCpCodeResultOutput) ToGetCpCodeResultOutputWithContext(ctx context.Context) GetCpCodeResultOutput {
+func (o LookupCpCodeResultOutput) ToLookupCpCodeResultOutputWithContext(ctx context.Context) LookupCpCodeResultOutput {
 	return o
 }
 
-func (o GetCpCodeResultOutput) ContractId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCpCodeResult) string { return v.ContractId }).(pulumi.StringOutput)
+func (o LookupCpCodeResultOutput) ContractId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCpCodeResult) string { return v.ContractId }).(pulumi.StringOutput)
 }
 
-func (o GetCpCodeResultOutput) GroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCpCodeResult) string { return v.GroupId }).(pulumi.StringOutput)
+func (o LookupCpCodeResultOutput) GroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCpCodeResult) string { return v.GroupId }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCpCodeResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCpCodeResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupCpCodeResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCpCodeResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-func (o GetCpCodeResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCpCodeResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupCpCodeResultOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCpCodeResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
-func (o GetCpCodeResultOutput) ProductIds() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetCpCodeResult) []string { return v.ProductIds }).(pulumi.StringArrayOutput)
+func (o LookupCpCodeResultOutput) ProductIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupCpCodeResult) []string { return v.ProductIds }).(pulumi.StringArrayOutput)
 }
 
 func init() {
-	pulumi.RegisterOutputType(GetCpCodeResultOutput{})
+	pulumi.RegisterOutputType(LookupCpCodeResultOutput{})
 }
