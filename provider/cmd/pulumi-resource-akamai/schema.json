@@ -112,6 +112,25 @@
                 }
             }
         },
+        "akamai:edgedns/DnsZoneTsigKey:DnsZoneTsigKey": {
+            "properties": {
+                "algorithm": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "secret": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "required": [
+                "algorithm",
+                "name",
+                "secret"
+            ]
+        },
         "akamai:index/ClientlistListItem:ClientlistListItem": {
             "properties": {
                 "description": {
@@ -27867,6 +27886,479 @@
                 "name",
                 "value"
             ]
+        },
+        "akamai:properties/PropertyActivationComplianceRecord:PropertyActivationComplianceRecord": {
+            "properties": {
+                "noncomplianceReasonEmergency": {
+                    "$ref": "#/types/akamai:properties/PropertyActivationComplianceRecordNoncomplianceReasonEmergency:PropertyActivationComplianceRecordNoncomplianceReasonEmergency"
+                },
+                "noncomplianceReasonNoProductionTraffic": {
+                    "$ref": "#/types/akamai:properties/PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic:PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic"
+                },
+                "noncomplianceReasonNone": {
+                    "$ref": "#/types/akamai:properties/PropertyActivationComplianceRecordNoncomplianceReasonNone:PropertyActivationComplianceRecordNoncomplianceReasonNone"
+                },
+                "noncomplianceReasonOther": {
+                    "$ref": "#/types/akamai:properties/PropertyActivationComplianceRecordNoncomplianceReasonOther:PropertyActivationComplianceRecordNoncomplianceReasonOther"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:properties/PropertyActivationComplianceRecordNoncomplianceReasonEmergency:PropertyActivationComplianceRecordNoncomplianceReasonEmergency": {
+            "properties": {
+                "ticketId": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:properties/PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic:PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic": {
+            "properties": {
+                "ticketId": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:properties/PropertyActivationComplianceRecordNoncomplianceReasonNone:PropertyActivationComplianceRecordNoncomplianceReasonNone": {
+            "properties": {
+                "customerEmail": {
+                    "type": "string"
+                },
+                "peerReviewedBy": {
+                    "type": "string"
+                },
+                "ticketId": {
+                    "type": "string"
+                },
+                "unitTested": {
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:properties/PropertyActivationComplianceRecordNoncomplianceReasonOther:PropertyActivationComplianceRecordNoncomplianceReasonOther": {
+            "properties": {
+                "otherNoncomplianceReason": {
+                    "type": "string"
+                },
+                "ticketId": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:properties/PropertyActivationRuleError:PropertyActivationRuleError": {
+            "properties": {
+                "behaviorName": {
+                    "type": "string"
+                },
+                "detail": {
+                    "type": "string"
+                },
+                "errorLocation": {
+                    "type": "string"
+                },
+                "instance": {
+                    "type": "string"
+                },
+                "statusCode": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:properties/PropertyHostname:PropertyHostname": {
+            "properties": {
+                "certProvisioningType": {
+                    "type": "string"
+                },
+                "certStatuses": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:properties/PropertyHostnameCertStatus:PropertyHostnameCertStatus"
+                    }
+                },
+                "cnameFrom": {
+                    "type": "string"
+                },
+                "cnameTo": {
+                    "type": "string"
+                },
+                "cnameType": {
+                    "type": "string"
+                },
+                "edgeHostnameId": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "required": [
+                "certProvisioningType",
+                "cnameFrom",
+                "cnameTo"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "certProvisioningType",
+                        "certStatuses",
+                        "cnameFrom",
+                        "cnameTo",
+                        "cnameType",
+                        "edgeHostnameId"
+                    ]
+                }
+            }
+        },
+        "akamai:properties/PropertyHostnameCertStatus:PropertyHostnameCertStatus": {
+            "properties": {
+                "hostname": {
+                    "type": "string"
+                },
+                "productionStatus": {
+                    "type": "string"
+                },
+                "stagingStatus": {
+                    "type": "string"
+                },
+                "target": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "hostname",
+                        "productionStatus",
+                        "stagingStatus",
+                        "target"
+                    ]
+                }
+            }
+        },
+        "akamai:properties/PropertyRuleError:PropertyRuleError": {
+            "properties": {
+                "behaviorName": {
+                    "type": "string"
+                },
+                "detail": {
+                    "type": "string"
+                },
+                "errorLocation": {
+                    "type": "string"
+                },
+                "instance": {
+                    "type": "string"
+                },
+                "statusCode": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:trafficmanagement/GtmASmapAssignment:GtmASmapAssignment": {
+            "properties": {
+                "asNumbers": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "datacenterId": {
+                    "type": "integer"
+                },
+                "nickname": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "required": [
+                "asNumbers",
+                "datacenterId",
+                "nickname"
+            ]
+        },
+        "akamai:trafficmanagement/GtmASmapDefaultDatacenter:GtmASmapDefaultDatacenter": {
+            "properties": {
+                "datacenterId": {
+                    "type": "integer"
+                },
+                "nickname": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "required": [
+                "datacenterId"
+            ]
+        },
+        "akamai:trafficmanagement/GtmCidrmapAssignment:GtmCidrmapAssignment": {
+            "properties": {
+                "blocks": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "datacenterId": {
+                    "type": "integer"
+                },
+                "nickname": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "required": [
+                "datacenterId",
+                "nickname"
+            ]
+        },
+        "akamai:trafficmanagement/GtmCidrmapDefaultDatacenter:GtmCidrmapDefaultDatacenter": {
+            "properties": {
+                "datacenterId": {
+                    "type": "integer"
+                },
+                "nickname": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "required": [
+                "datacenterId"
+            ]
+        },
+        "akamai:trafficmanagement/GtmDatacenterDefaultLoadObject:GtmDatacenterDefaultLoadObject": {
+            "properties": {
+                "loadObject": {
+                    "type": "string"
+                },
+                "loadObjectPort": {
+                    "type": "integer"
+                },
+                "loadServers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "type": "object"
+        },
+        "akamai:trafficmanagement/GtmGeomapAssignment:GtmGeomapAssignment": {
+            "properties": {
+                "countries": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "datacenterId": {
+                    "type": "integer"
+                },
+                "nickname": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "required": [
+                "datacenterId",
+                "nickname"
+            ]
+        },
+        "akamai:trafficmanagement/GtmGeomapDefaultDatacenter:GtmGeomapDefaultDatacenter": {
+            "properties": {
+                "datacenterId": {
+                    "type": "integer"
+                },
+                "nickname": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "required": [
+                "datacenterId"
+            ]
+        },
+        "akamai:trafficmanagement/GtmPropertyLivenessTest:GtmPropertyLivenessTest": {
+            "properties": {
+                "answersRequired": {
+                    "type": "boolean"
+                },
+                "disableNonstandardPortWarning": {
+                    "type": "boolean"
+                },
+                "disabled": {
+                    "type": "boolean"
+                },
+                "errorPenalty": {
+                    "type": "number"
+                },
+                "httpError3xx": {
+                    "type": "boolean"
+                },
+                "httpError4xx": {
+                    "type": "boolean"
+                },
+                "httpError5xx": {
+                    "type": "boolean"
+                },
+                "httpHeaders": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:trafficmanagement/GtmPropertyLivenessTestHttpHeader:GtmPropertyLivenessTestHttpHeader"
+                    }
+                },
+                "name": {
+                    "type": "string"
+                },
+                "peerCertificateVerification": {
+                    "type": "boolean"
+                },
+                "recursionRequested": {
+                    "type": "boolean"
+                },
+                "requestString": {
+                    "type": "string"
+                },
+                "resourceType": {
+                    "type": "string"
+                },
+                "responseString": {
+                    "type": "string"
+                },
+                "sslClientCertificate": {
+                    "type": "string"
+                },
+                "sslClientPrivateKey": {
+                    "type": "string"
+                },
+                "testInterval": {
+                    "type": "integer"
+                },
+                "testObject": {
+                    "type": "string"
+                },
+                "testObjectPassword": {
+                    "type": "string"
+                },
+                "testObjectPort": {
+                    "type": "integer"
+                },
+                "testObjectProtocol": {
+                    "type": "string"
+                },
+                "testObjectUsername": {
+                    "type": "string"
+                },
+                "testTimeout": {
+                    "type": "number"
+                },
+                "timeoutPenalty": {
+                    "type": "number"
+                }
+            },
+            "type": "object",
+            "required": [
+                "name",
+                "testInterval",
+                "testObjectProtocol",
+                "testTimeout"
+            ]
+        },
+        "akamai:trafficmanagement/GtmPropertyLivenessTestHttpHeader:GtmPropertyLivenessTestHttpHeader": {
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:trafficmanagement/GtmPropertyStaticRrSet:GtmPropertyStaticRrSet": {
+            "properties": {
+                "rdatas": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ttl": {
+                    "type": "integer"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:trafficmanagement/GtmPropertyTrafficTarget:GtmPropertyTrafficTarget": {
+            "properties": {
+                "datacenterId": {
+                    "type": "integer"
+                },
+                "enabled": {
+                    "type": "boolean"
+                },
+                "handoutCname": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string",
+                    "deprecationMessage": "The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored"
+                },
+                "servers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "weight": {
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:trafficmanagement/GtmResourceResourceInstance:GtmResourceResourceInstance": {
+            "properties": {
+                "datacenterId": {
+                    "type": "integer"
+                },
+                "loadObject": {
+                    "type": "string"
+                },
+                "loadObjectPort": {
+                    "type": "integer"
+                },
+                "loadServers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "useDefaultLoadObject": {
+                    "type": "boolean"
+                }
+            },
+            "type": "object",
+            "required": [
+                "datacenterId"
+            ]
         }
     },
     "provider": {
@@ -27921,6 +28413,734 @@
         }
     },
     "resources": {
+        "akamai:edgedns/dnsRecord:DnsRecord": {
+            "properties": {
+                "active": {
+                    "type": "boolean",
+                    "deprecationMessage": "Field 'active' has been deprecated. Setting it has no effect"
+                },
+                "algorithm": {
+                    "type": "integer"
+                },
+                "answerType": {
+                    "type": "string"
+                },
+                "certificate": {
+                    "type": "string"
+                },
+                "digest": {
+                    "type": "string"
+                },
+                "digestType": {
+                    "type": "integer"
+                },
+                "dnsName": {
+                    "type": "string"
+                },
+                "emailAddress": {
+                    "type": "string"
+                },
+                "expiration": {
+                    "type": "string"
+                },
+                "expiry": {
+                    "type": "integer"
+                },
+                "fingerprint": {
+                    "type": "string"
+                },
+                "fingerprintType": {
+                    "type": "integer"
+                },
+                "flags": {
+                    "type": "integer"
+                },
+                "flagsnaptr": {
+                    "type": "string"
+                },
+                "hardware": {
+                    "type": "string"
+                },
+                "inception": {
+                    "type": "string"
+                },
+                "iterations": {
+                    "type": "integer"
+                },
+                "key": {
+                    "type": "string"
+                },
+                "keytag": {
+                    "type": "integer"
+                },
+                "labels": {
+                    "type": "integer"
+                },
+                "mailbox": {
+                    "type": "string"
+                },
+                "matchType": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "nameServer": {
+                    "type": "string"
+                },
+                "nextHashedOwnerName": {
+                    "type": "string"
+                },
+                "nxdomainTtl": {
+                    "type": "integer"
+                },
+                "order": {
+                    "type": "integer"
+                },
+                "originalTtl": {
+                    "type": "integer"
+                },
+                "port": {
+                    "type": "integer"
+                },
+                "preference": {
+                    "type": "integer"
+                },
+                "priority": {
+                    "type": "integer"
+                },
+                "priorityIncrement": {
+                    "type": "integer"
+                },
+                "protocol": {
+                    "type": "integer"
+                },
+                "recordSha": {
+                    "type": "string"
+                },
+                "recordtype": {
+                    "type": "string"
+                },
+                "refresh": {
+                    "type": "integer"
+                },
+                "regexp": {
+                    "type": "string"
+                },
+                "replacement": {
+                    "type": "string"
+                },
+                "retry": {
+                    "type": "integer"
+                },
+                "salt": {
+                    "type": "string"
+                },
+                "selector": {
+                    "type": "integer"
+                },
+                "serial": {
+                    "type": "integer"
+                },
+                "service": {
+                    "type": "string"
+                },
+                "signature": {
+                    "type": "string"
+                },
+                "signer": {
+                    "type": "string"
+                },
+                "software": {
+                    "type": "string"
+                },
+                "subtype": {
+                    "type": "integer"
+                },
+                "svcParams": {
+                    "type": "string"
+                },
+                "svcPriority": {
+                    "type": "integer"
+                },
+                "targetName": {
+                    "type": "string"
+                },
+                "targets": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ttl": {
+                    "type": "integer"
+                },
+                "txt": {
+                    "type": "string"
+                },
+                "typeBitmaps": {
+                    "type": "string"
+                },
+                "typeCovered": {
+                    "type": "string"
+                },
+                "typeMnemonic": {
+                    "type": "string"
+                },
+                "typeValue": {
+                    "type": "integer"
+                },
+                "usage": {
+                    "type": "integer"
+                },
+                "weight": {
+                    "type": "integer"
+                },
+                "zone": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "answerType",
+                "dnsName",
+                "name",
+                "recordSha",
+                "recordtype",
+                "serial",
+                "ttl",
+                "zone"
+            ],
+            "inputProperties": {
+                "active": {
+                    "type": "boolean",
+                    "deprecationMessage": "Field 'active' has been deprecated. Setting it has no effect"
+                },
+                "algorithm": {
+                    "type": "integer"
+                },
+                "certificate": {
+                    "type": "string"
+                },
+                "digest": {
+                    "type": "string"
+                },
+                "digestType": {
+                    "type": "integer"
+                },
+                "emailAddress": {
+                    "type": "string"
+                },
+                "expiration": {
+                    "type": "string"
+                },
+                "expiry": {
+                    "type": "integer"
+                },
+                "fingerprint": {
+                    "type": "string"
+                },
+                "fingerprintType": {
+                    "type": "integer"
+                },
+                "flags": {
+                    "type": "integer"
+                },
+                "flagsnaptr": {
+                    "type": "string"
+                },
+                "hardware": {
+                    "type": "string"
+                },
+                "inception": {
+                    "type": "string"
+                },
+                "iterations": {
+                    "type": "integer"
+                },
+                "key": {
+                    "type": "string"
+                },
+                "keytag": {
+                    "type": "integer"
+                },
+                "labels": {
+                    "type": "integer"
+                },
+                "mailbox": {
+                    "type": "string"
+                },
+                "matchType": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "nameServer": {
+                    "type": "string"
+                },
+                "nextHashedOwnerName": {
+                    "type": "string"
+                },
+                "nxdomainTtl": {
+                    "type": "integer"
+                },
+                "order": {
+                    "type": "integer"
+                },
+                "originalTtl": {
+                    "type": "integer"
+                },
+                "port": {
+                    "type": "integer"
+                },
+                "preference": {
+                    "type": "integer"
+                },
+                "priority": {
+                    "type": "integer"
+                },
+                "priorityIncrement": {
+                    "type": "integer"
+                },
+                "protocol": {
+                    "type": "integer"
+                },
+                "recordtype": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "refresh": {
+                    "type": "integer"
+                },
+                "regexp": {
+                    "type": "string"
+                },
+                "replacement": {
+                    "type": "string"
+                },
+                "retry": {
+                    "type": "integer"
+                },
+                "salt": {
+                    "type": "string"
+                },
+                "selector": {
+                    "type": "integer"
+                },
+                "service": {
+                    "type": "string"
+                },
+                "signature": {
+                    "type": "string"
+                },
+                "signer": {
+                    "type": "string"
+                },
+                "software": {
+                    "type": "string"
+                },
+                "subtype": {
+                    "type": "integer"
+                },
+                "svcParams": {
+                    "type": "string"
+                },
+                "svcPriority": {
+                    "type": "integer"
+                },
+                "targetName": {
+                    "type": "string"
+                },
+                "targets": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ttl": {
+                    "type": "integer"
+                },
+                "txt": {
+                    "type": "string"
+                },
+                "typeBitmaps": {
+                    "type": "string"
+                },
+                "typeCovered": {
+                    "type": "string"
+                },
+                "typeMnemonic": {
+                    "type": "string"
+                },
+                "typeValue": {
+                    "type": "integer"
+                },
+                "usage": {
+                    "type": "integer"
+                },
+                "weight": {
+                    "type": "integer"
+                },
+                "zone": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                }
+            },
+            "requiredInputs": [
+                "recordtype",
+                "ttl",
+                "zone"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering DnsRecord resources.\n",
+                "properties": {
+                    "active": {
+                        "type": "boolean",
+                        "deprecationMessage": "Field 'active' has been deprecated. Setting it has no effect"
+                    },
+                    "algorithm": {
+                        "type": "integer"
+                    },
+                    "answerType": {
+                        "type": "string"
+                    },
+                    "certificate": {
+                        "type": "string"
+                    },
+                    "digest": {
+                        "type": "string"
+                    },
+                    "digestType": {
+                        "type": "integer"
+                    },
+                    "dnsName": {
+                        "type": "string"
+                    },
+                    "emailAddress": {
+                        "type": "string"
+                    },
+                    "expiration": {
+                        "type": "string"
+                    },
+                    "expiry": {
+                        "type": "integer"
+                    },
+                    "fingerprint": {
+                        "type": "string"
+                    },
+                    "fingerprintType": {
+                        "type": "integer"
+                    },
+                    "flags": {
+                        "type": "integer"
+                    },
+                    "flagsnaptr": {
+                        "type": "string"
+                    },
+                    "hardware": {
+                        "type": "string"
+                    },
+                    "inception": {
+                        "type": "string"
+                    },
+                    "iterations": {
+                        "type": "integer"
+                    },
+                    "key": {
+                        "type": "string"
+                    },
+                    "keytag": {
+                        "type": "integer"
+                    },
+                    "labels": {
+                        "type": "integer"
+                    },
+                    "mailbox": {
+                        "type": "string"
+                    },
+                    "matchType": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "nameServer": {
+                        "type": "string"
+                    },
+                    "nextHashedOwnerName": {
+                        "type": "string"
+                    },
+                    "nxdomainTtl": {
+                        "type": "integer"
+                    },
+                    "order": {
+                        "type": "integer"
+                    },
+                    "originalTtl": {
+                        "type": "integer"
+                    },
+                    "port": {
+                        "type": "integer"
+                    },
+                    "preference": {
+                        "type": "integer"
+                    },
+                    "priority": {
+                        "type": "integer"
+                    },
+                    "priorityIncrement": {
+                        "type": "integer"
+                    },
+                    "protocol": {
+                        "type": "integer"
+                    },
+                    "recordSha": {
+                        "type": "string"
+                    },
+                    "recordtype": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "refresh": {
+                        "type": "integer"
+                    },
+                    "regexp": {
+                        "type": "string"
+                    },
+                    "replacement": {
+                        "type": "string"
+                    },
+                    "retry": {
+                        "type": "integer"
+                    },
+                    "salt": {
+                        "type": "string"
+                    },
+                    "selector": {
+                        "type": "integer"
+                    },
+                    "serial": {
+                        "type": "integer"
+                    },
+                    "service": {
+                        "type": "string"
+                    },
+                    "signature": {
+                        "type": "string"
+                    },
+                    "signer": {
+                        "type": "string"
+                    },
+                    "software": {
+                        "type": "string"
+                    },
+                    "subtype": {
+                        "type": "integer"
+                    },
+                    "svcParams": {
+                        "type": "string"
+                    },
+                    "svcPriority": {
+                        "type": "integer"
+                    },
+                    "targetName": {
+                        "type": "string"
+                    },
+                    "targets": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "ttl": {
+                        "type": "integer"
+                    },
+                    "txt": {
+                        "type": "string"
+                    },
+                    "typeBitmaps": {
+                        "type": "string"
+                    },
+                    "typeCovered": {
+                        "type": "string"
+                    },
+                    "typeMnemonic": {
+                        "type": "string"
+                    },
+                    "typeValue": {
+                        "type": "integer"
+                    },
+                    "usage": {
+                        "type": "integer"
+                    },
+                    "weight": {
+                        "type": "integer"
+                    },
+                    "zone": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    }
+                },
+                "type": "object"
+            },
+            "deprecationMessage": "akamai.edgedns/dnsrecord.DnsRecord has been deprecated in favor of akamai.index/dnsrecord.DnsRecord"
+        },
+        "akamai:edgedns/dnsZone:DnsZone": {
+            "properties": {
+                "activationState": {
+                    "type": "string"
+                },
+                "aliasCount": {
+                    "type": "integer"
+                },
+                "comment": {
+                    "type": "string"
+                },
+                "contract": {
+                    "type": "string"
+                },
+                "endCustomerId": {
+                    "type": "string"
+                },
+                "group": {
+                    "type": "string"
+                },
+                "masters": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "signAndServe": {
+                    "type": "boolean"
+                },
+                "signAndServeAlgorithm": {
+                    "type": "string"
+                },
+                "target": {
+                    "type": "string"
+                },
+                "tsigKey": {
+                    "$ref": "#/types/akamai:edgedns/DnsZoneTsigKey:DnsZoneTsigKey"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "versionId": {
+                    "type": "string"
+                },
+                "zone": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "activationState",
+                "aliasCount",
+                "contract",
+                "type",
+                "versionId",
+                "zone"
+            ],
+            "inputProperties": {
+                "comment": {
+                    "type": "string"
+                },
+                "contract": {
+                    "type": "string"
+                },
+                "endCustomerId": {
+                    "type": "string"
+                },
+                "group": {
+                    "type": "string"
+                },
+                "masters": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "signAndServe": {
+                    "type": "boolean"
+                },
+                "signAndServeAlgorithm": {
+                    "type": "string"
+                },
+                "target": {
+                    "type": "string"
+                },
+                "tsigKey": {
+                    "$ref": "#/types/akamai:edgedns/DnsZoneTsigKey:DnsZoneTsigKey"
+                },
+                "type": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "zone": {
+                    "type": "string"
+                }
+            },
+            "requiredInputs": [
+                "contract",
+                "type",
+                "zone"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering DnsZone resources.\n",
+                "properties": {
+                    "activationState": {
+                        "type": "string"
+                    },
+                    "aliasCount": {
+                        "type": "integer"
+                    },
+                    "comment": {
+                        "type": "string"
+                    },
+                    "contract": {
+                        "type": "string"
+                    },
+                    "endCustomerId": {
+                        "type": "string"
+                    },
+                    "group": {
+                        "type": "string"
+                    },
+                    "masters": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "signAndServe": {
+                        "type": "boolean"
+                    },
+                    "signAndServeAlgorithm": {
+                        "type": "string"
+                    },
+                    "target": {
+                        "type": "string"
+                    },
+                    "tsigKey": {
+                        "$ref": "#/types/akamai:edgedns/DnsZoneTsigKey:DnsZoneTsigKey"
+                    },
+                    "type": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "versionId": {
+                        "type": "string"
+                    },
+                    "zone": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "deprecationMessage": "akamai.edgedns/dnszone.DnsZone has been deprecated in favor of akamai.index/dnszone.DnsZone"
+        },
         "akamai:index/appSecActivations:AppSecActivations": {
             "properties": {
                 "configId": {
@@ -38986,6 +40206,1747 @@
                 },
                 "type": "object"
             }
+        },
+        "akamai:properties/cpCode:CpCode": {
+            "properties": {
+                "contractId": {
+                    "type": "string"
+                },
+                "groupId": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "productId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "contractId",
+                "groupId",
+                "name",
+                "productId"
+            ],
+            "inputProperties": {
+                "contractId": {
+                    "type": "string"
+                },
+                "groupId": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "productId": {
+                    "type": "string"
+                }
+            },
+            "requiredInputs": [
+                "contractId",
+                "groupId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering CpCode resources.\n",
+                "properties": {
+                    "contractId": {
+                        "type": "string"
+                    },
+                    "groupId": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "productId": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "deprecationMessage": "akamai.properties/cpcode.CpCode has been deprecated in favor of akamai.index/cpcode.CpCode"
+        },
+        "akamai:properties/edgeHostName:EdgeHostName": {
+            "properties": {
+                "certificate": {
+                    "type": "integer"
+                },
+                "contractId": {
+                    "type": "string"
+                },
+                "edgeHostname": {
+                    "type": "string"
+                },
+                "groupId": {
+                    "type": "string"
+                },
+                "ipBehavior": {
+                    "type": "string"
+                },
+                "productId": {
+                    "type": "string"
+                },
+                "statusUpdateEmails": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Email address that should receive updates on the IP behavior update request. Required for update operation.\n"
+                },
+                "useCases": {
+                    "type": "string",
+                    "description": "A JSON encoded list of use cases\n"
+                }
+            },
+            "required": [
+                "contractId",
+                "edgeHostname",
+                "groupId",
+                "ipBehavior",
+                "productId"
+            ],
+            "inputProperties": {
+                "certificate": {
+                    "type": "integer",
+                    "willReplaceOnChanges": true
+                },
+                "contractId": {
+                    "type": "string"
+                },
+                "edgeHostname": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "groupId": {
+                    "type": "string"
+                },
+                "ipBehavior": {
+                    "type": "string"
+                },
+                "productId": {
+                    "type": "string"
+                },
+                "statusUpdateEmails": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Email address that should receive updates on the IP behavior update request. Required for update operation.\n"
+                },
+                "useCases": {
+                    "type": "string",
+                    "description": "A JSON encoded list of use cases\n",
+                    "willReplaceOnChanges": true
+                }
+            },
+            "requiredInputs": [
+                "contractId",
+                "edgeHostname",
+                "groupId",
+                "ipBehavior"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering EdgeHostName resources.\n",
+                "properties": {
+                    "certificate": {
+                        "type": "integer",
+                        "willReplaceOnChanges": true
+                    },
+                    "contractId": {
+                        "type": "string"
+                    },
+                    "edgeHostname": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "groupId": {
+                        "type": "string"
+                    },
+                    "ipBehavior": {
+                        "type": "string"
+                    },
+                    "productId": {
+                        "type": "string"
+                    },
+                    "statusUpdateEmails": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Email address that should receive updates on the IP behavior update request. Required for update operation.\n"
+                    },
+                    "useCases": {
+                        "type": "string",
+                        "description": "A JSON encoded list of use cases\n",
+                        "willReplaceOnChanges": true
+                    }
+                },
+                "type": "object"
+            },
+            "deprecationMessage": "akamai.properties/edgehostname.EdgeHostName has been deprecated in favor of akamai.index/edgehostname.EdgeHostName"
+        },
+        "akamai:properties/property:Property": {
+            "properties": {
+                "contractId": {
+                    "type": "string",
+                    "description": "Contract ID to be assigned to the Property\n"
+                },
+                "groupId": {
+                    "type": "string",
+                    "description": "Group ID to be assigned to the Property\n"
+                },
+                "hostnames": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:properties/PropertyHostname:PropertyHostname"
+                    }
+                },
+                "latestVersion": {
+                    "type": "integer",
+                    "description": "Property's current latest version number\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name to give to the Property (must be unique)\n"
+                },
+                "productId": {
+                    "type": "string",
+                    "description": "Product ID to be assigned to the Property\n"
+                },
+                "productionVersion": {
+                    "type": "integer",
+                    "description": "Property's version currently activated in production (zero when not active in production)\n"
+                },
+                "readVersion": {
+                    "type": "integer",
+                    "description": "Required property's version to be read\n"
+                },
+                "ruleErrors": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:properties/PropertyRuleError:PropertyRuleError"
+                    }
+                },
+                "ruleFormat": {
+                    "type": "string",
+                    "description": "Specify the rule format version (defaults to latest version available when created)\n"
+                },
+                "rules": {
+                    "type": "string",
+                    "description": "Property Rules as JSON\n"
+                },
+                "stagingVersion": {
+                    "type": "integer",
+                    "description": "Property's version currently activated in staging (zero when not active in staging)\n"
+                }
+            },
+            "required": [
+                "contractId",
+                "groupId",
+                "latestVersion",
+                "name",
+                "productId",
+                "productionVersion",
+                "readVersion",
+                "ruleErrors",
+                "ruleFormat",
+                "rules",
+                "stagingVersion"
+            ],
+            "inputProperties": {
+                "contractId": {
+                    "type": "string",
+                    "description": "Contract ID to be assigned to the Property\n"
+                },
+                "groupId": {
+                    "type": "string",
+                    "description": "Group ID to be assigned to the Property\n"
+                },
+                "hostnames": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:properties/PropertyHostname:PropertyHostname"
+                    }
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name to give to the Property (must be unique)\n",
+                    "willReplaceOnChanges": true
+                },
+                "productId": {
+                    "type": "string",
+                    "description": "Product ID to be assigned to the Property\n"
+                },
+                "ruleFormat": {
+                    "type": "string",
+                    "description": "Specify the rule format version (defaults to latest version available when created)\n"
+                },
+                "rules": {
+                    "type": "string",
+                    "description": "Property Rules as JSON\n"
+                }
+            },
+            "requiredInputs": [
+                "contractId",
+                "groupId",
+                "productId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Property resources.\n",
+                "properties": {
+                    "contractId": {
+                        "type": "string",
+                        "description": "Contract ID to be assigned to the Property\n"
+                    },
+                    "groupId": {
+                        "type": "string",
+                        "description": "Group ID to be assigned to the Property\n"
+                    },
+                    "hostnames": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:properties/PropertyHostname:PropertyHostname"
+                        }
+                    },
+                    "latestVersion": {
+                        "type": "integer",
+                        "description": "Property's current latest version number\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name to give to the Property (must be unique)\n",
+                        "willReplaceOnChanges": true
+                    },
+                    "productId": {
+                        "type": "string",
+                        "description": "Product ID to be assigned to the Property\n"
+                    },
+                    "productionVersion": {
+                        "type": "integer",
+                        "description": "Property's version currently activated in production (zero when not active in production)\n"
+                    },
+                    "readVersion": {
+                        "type": "integer",
+                        "description": "Required property's version to be read\n"
+                    },
+                    "ruleErrors": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:properties/PropertyRuleError:PropertyRuleError"
+                        }
+                    },
+                    "ruleFormat": {
+                        "type": "string",
+                        "description": "Specify the rule format version (defaults to latest version available when created)\n"
+                    },
+                    "rules": {
+                        "type": "string",
+                        "description": "Property Rules as JSON\n"
+                    },
+                    "stagingVersion": {
+                        "type": "integer",
+                        "description": "Property's version currently activated in staging (zero when not active in staging)\n"
+                    }
+                },
+                "type": "object"
+            },
+            "deprecationMessage": "akamai.properties/property.Property has been deprecated in favor of akamai.index/property.Property"
+        },
+        "akamai:properties/propertyActivation:PropertyActivation": {
+            "properties": {
+                "activationId": {
+                    "type": "string"
+                },
+                "autoAcknowledgeRuleWarnings": {
+                    "type": "boolean",
+                    "description": "Automatically acknowledge all rule warnings for activation to continue. Default is false\n"
+                },
+                "complianceRecord": {
+                    "$ref": "#/types/akamai:properties/PropertyActivationComplianceRecord:PropertyActivationComplianceRecord",
+                    "description": "Provides an audit record when activating on a production network\n"
+                },
+                "contacts": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "errors": {
+                    "type": "string"
+                },
+                "network": {
+                    "type": "string"
+                },
+                "note": {
+                    "type": "string",
+                    "description": "assigns a log message to the activation request\n"
+                },
+                "propertyId": {
+                    "type": "string"
+                },
+                "ruleErrors": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:properties/PropertyActivationRuleError:PropertyActivationRuleError"
+                    }
+                },
+                "status": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "integer"
+                },
+                "warnings": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "activationId",
+                "contacts",
+                "errors",
+                "propertyId",
+                "ruleErrors",
+                "status",
+                "version",
+                "warnings"
+            ],
+            "inputProperties": {
+                "activationId": {
+                    "type": "string"
+                },
+                "autoAcknowledgeRuleWarnings": {
+                    "type": "boolean",
+                    "description": "Automatically acknowledge all rule warnings for activation to continue. Default is false\n"
+                },
+                "complianceRecord": {
+                    "$ref": "#/types/akamai:properties/PropertyActivationComplianceRecord:PropertyActivationComplianceRecord",
+                    "description": "Provides an audit record when activating on a production network\n"
+                },
+                "contacts": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "network": {
+                    "type": "string"
+                },
+                "note": {
+                    "type": "string",
+                    "description": "assigns a log message to the activation request\n"
+                },
+                "propertyId": {
+                    "type": "string"
+                },
+                "ruleErrors": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:properties/PropertyActivationRuleError:PropertyActivationRuleError"
+                    }
+                },
+                "version": {
+                    "type": "integer"
+                }
+            },
+            "requiredInputs": [
+                "contacts",
+                "propertyId",
+                "version"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering PropertyActivation resources.\n",
+                "properties": {
+                    "activationId": {
+                        "type": "string"
+                    },
+                    "autoAcknowledgeRuleWarnings": {
+                        "type": "boolean",
+                        "description": "Automatically acknowledge all rule warnings for activation to continue. Default is false\n"
+                    },
+                    "complianceRecord": {
+                        "$ref": "#/types/akamai:properties/PropertyActivationComplianceRecord:PropertyActivationComplianceRecord",
+                        "description": "Provides an audit record when activating on a production network\n"
+                    },
+                    "contacts": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "errors": {
+                        "type": "string"
+                    },
+                    "network": {
+                        "type": "string"
+                    },
+                    "note": {
+                        "type": "string",
+                        "description": "assigns a log message to the activation request\n"
+                    },
+                    "propertyId": {
+                        "type": "string"
+                    },
+                    "ruleErrors": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:properties/PropertyActivationRuleError:PropertyActivationRuleError"
+                        }
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "version": {
+                        "type": "integer"
+                    },
+                    "warnings": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "deprecationMessage": "akamai.properties/propertyactivation.PropertyActivation has been deprecated in favor of akamai.index/propertyactivation.PropertyActivation"
+        },
+        "akamai:trafficmanagement/gtmASmap:GtmASmap": {
+            "properties": {
+                "assignments": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:trafficmanagement/GtmASmapAssignment:GtmASmapAssignment"
+                    }
+                },
+                "defaultDatacenter": {
+                    "$ref": "#/types/akamai:trafficmanagement/GtmASmapDefaultDatacenter:GtmASmapDefaultDatacenter"
+                },
+                "domain": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "waitOnComplete": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "defaultDatacenter",
+                "domain",
+                "name"
+            ],
+            "inputProperties": {
+                "assignments": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:trafficmanagement/GtmASmapAssignment:GtmASmapAssignment"
+                    }
+                },
+                "defaultDatacenter": {
+                    "$ref": "#/types/akamai:trafficmanagement/GtmASmapDefaultDatacenter:GtmASmapDefaultDatacenter"
+                },
+                "domain": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "waitOnComplete": {
+                    "type": "boolean"
+                }
+            },
+            "requiredInputs": [
+                "defaultDatacenter",
+                "domain"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering GtmASmap resources.\n",
+                "properties": {
+                    "assignments": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:trafficmanagement/GtmASmapAssignment:GtmASmapAssignment"
+                        }
+                    },
+                    "defaultDatacenter": {
+                        "$ref": "#/types/akamai:trafficmanagement/GtmASmapDefaultDatacenter:GtmASmapDefaultDatacenter"
+                    },
+                    "domain": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "waitOnComplete": {
+                        "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
+            "deprecationMessage": "akamai.trafficmanagement/gtmasmap.GtmASmap has been deprecated in favor of akamai.index/gtmasmap.GtmAsmap"
+        },
+        "akamai:trafficmanagement/gtmCidrmap:GtmCidrmap": {
+            "properties": {
+                "assignments": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:trafficmanagement/GtmCidrmapAssignment:GtmCidrmapAssignment"
+                    }
+                },
+                "defaultDatacenter": {
+                    "$ref": "#/types/akamai:trafficmanagement/GtmCidrmapDefaultDatacenter:GtmCidrmapDefaultDatacenter"
+                },
+                "domain": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "waitOnComplete": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "defaultDatacenter",
+                "domain",
+                "name"
+            ],
+            "inputProperties": {
+                "assignments": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:trafficmanagement/GtmCidrmapAssignment:GtmCidrmapAssignment"
+                    }
+                },
+                "defaultDatacenter": {
+                    "$ref": "#/types/akamai:trafficmanagement/GtmCidrmapDefaultDatacenter:GtmCidrmapDefaultDatacenter"
+                },
+                "domain": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "waitOnComplete": {
+                    "type": "boolean"
+                }
+            },
+            "requiredInputs": [
+                "defaultDatacenter",
+                "domain"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering GtmCidrmap resources.\n",
+                "properties": {
+                    "assignments": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:trafficmanagement/GtmCidrmapAssignment:GtmCidrmapAssignment"
+                        }
+                    },
+                    "defaultDatacenter": {
+                        "$ref": "#/types/akamai:trafficmanagement/GtmCidrmapDefaultDatacenter:GtmCidrmapDefaultDatacenter"
+                    },
+                    "domain": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "waitOnComplete": {
+                        "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
+            "deprecationMessage": "akamai.trafficmanagement/gtmcidrmap.GtmCidrmap has been deprecated in favor of akamai.index/gtmcidrmap.GtmCidrmap"
+        },
+        "akamai:trafficmanagement/gtmDatacenter:GtmDatacenter": {
+            "properties": {
+                "city": {
+                    "type": "string"
+                },
+                "cloneOf": {
+                    "type": "integer"
+                },
+                "cloudServerHostHeaderOverride": {
+                    "type": "boolean"
+                },
+                "cloudServerTargeting": {
+                    "type": "boolean"
+                },
+                "continent": {
+                    "type": "string"
+                },
+                "country": {
+                    "type": "string"
+                },
+                "datacenterId": {
+                    "type": "integer"
+                },
+                "defaultLoadObject": {
+                    "$ref": "#/types/akamai:trafficmanagement/GtmDatacenterDefaultLoadObject:GtmDatacenterDefaultLoadObject"
+                },
+                "domain": {
+                    "type": "string"
+                },
+                "latitude": {
+                    "type": "number"
+                },
+                "longitude": {
+                    "type": "number"
+                },
+                "nickname": {
+                    "type": "string"
+                },
+                "pingInterval": {
+                    "type": "integer"
+                },
+                "pingPacketSize": {
+                    "type": "integer"
+                },
+                "scorePenalty": {
+                    "type": "integer"
+                },
+                "servermonitorLivenessCount": {
+                    "type": "integer"
+                },
+                "servermonitorLoadCount": {
+                    "type": "integer"
+                },
+                "servermonitorPool": {
+                    "type": "string"
+                },
+                "stateOrProvince": {
+                    "type": "string"
+                },
+                "virtual": {
+                    "type": "boolean"
+                },
+                "waitOnComplete": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "datacenterId",
+                "domain",
+                "pingInterval",
+                "pingPacketSize",
+                "scorePenalty",
+                "servermonitorLivenessCount",
+                "servermonitorLoadCount",
+                "servermonitorPool",
+                "virtual"
+            ],
+            "inputProperties": {
+                "city": {
+                    "type": "string"
+                },
+                "cloneOf": {
+                    "type": "integer"
+                },
+                "cloudServerHostHeaderOverride": {
+                    "type": "boolean"
+                },
+                "cloudServerTargeting": {
+                    "type": "boolean"
+                },
+                "continent": {
+                    "type": "string"
+                },
+                "country": {
+                    "type": "string"
+                },
+                "defaultLoadObject": {
+                    "$ref": "#/types/akamai:trafficmanagement/GtmDatacenterDefaultLoadObject:GtmDatacenterDefaultLoadObject"
+                },
+                "domain": {
+                    "type": "string"
+                },
+                "latitude": {
+                    "type": "number"
+                },
+                "longitude": {
+                    "type": "number"
+                },
+                "nickname": {
+                    "type": "string"
+                },
+                "stateOrProvince": {
+                    "type": "string"
+                },
+                "waitOnComplete": {
+                    "type": "boolean"
+                }
+            },
+            "requiredInputs": [
+                "domain"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering GtmDatacenter resources.\n",
+                "properties": {
+                    "city": {
+                        "type": "string"
+                    },
+                    "cloneOf": {
+                        "type": "integer"
+                    },
+                    "cloudServerHostHeaderOverride": {
+                        "type": "boolean"
+                    },
+                    "cloudServerTargeting": {
+                        "type": "boolean"
+                    },
+                    "continent": {
+                        "type": "string"
+                    },
+                    "country": {
+                        "type": "string"
+                    },
+                    "datacenterId": {
+                        "type": "integer"
+                    },
+                    "defaultLoadObject": {
+                        "$ref": "#/types/akamai:trafficmanagement/GtmDatacenterDefaultLoadObject:GtmDatacenterDefaultLoadObject"
+                    },
+                    "domain": {
+                        "type": "string"
+                    },
+                    "latitude": {
+                        "type": "number"
+                    },
+                    "longitude": {
+                        "type": "number"
+                    },
+                    "nickname": {
+                        "type": "string"
+                    },
+                    "pingInterval": {
+                        "type": "integer"
+                    },
+                    "pingPacketSize": {
+                        "type": "integer"
+                    },
+                    "scorePenalty": {
+                        "type": "integer"
+                    },
+                    "servermonitorLivenessCount": {
+                        "type": "integer"
+                    },
+                    "servermonitorLoadCount": {
+                        "type": "integer"
+                    },
+                    "servermonitorPool": {
+                        "type": "string"
+                    },
+                    "stateOrProvince": {
+                        "type": "string"
+                    },
+                    "virtual": {
+                        "type": "boolean"
+                    },
+                    "waitOnComplete": {
+                        "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
+            "deprecationMessage": "akamai.trafficmanagement/gtmdatacenter.GtmDatacenter has been deprecated in favor of akamai.index/gtmdatacenter.GtmDatacenter"
+        },
+        "akamai:trafficmanagement/gtmDomain:GtmDomain": {
+            "properties": {
+                "cnameCoalescingEnabled": {
+                    "type": "boolean"
+                },
+                "comment": {
+                    "type": "string"
+                },
+                "contract": {
+                    "type": "string"
+                },
+                "defaultErrorPenalty": {
+                    "type": "integer"
+                },
+                "defaultHealthMax": {
+                    "type": "number"
+                },
+                "defaultHealthMultiplier": {
+                    "type": "number"
+                },
+                "defaultHealthThreshold": {
+                    "type": "number"
+                },
+                "defaultMaxUnreachablePenalty": {
+                    "type": "integer"
+                },
+                "defaultSslClientCertificate": {
+                    "type": "string"
+                },
+                "defaultSslClientPrivateKey": {
+                    "type": "string"
+                },
+                "defaultTimeoutPenalty": {
+                    "type": "integer"
+                },
+                "defaultUnreachableThreshold": {
+                    "type": "number"
+                },
+                "emailNotificationLists": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "endUserMappingEnabled": {
+                    "type": "boolean"
+                },
+                "group": {
+                    "type": "string"
+                },
+                "loadFeedback": {
+                    "type": "boolean"
+                },
+                "loadImbalancePercentage": {
+                    "type": "number"
+                },
+                "mapUpdateInterval": {
+                    "type": "integer"
+                },
+                "maxProperties": {
+                    "type": "integer"
+                },
+                "maxResources": {
+                    "type": "integer"
+                },
+                "maxTestTimeout": {
+                    "type": "number"
+                },
+                "maxTtl": {
+                    "type": "integer"
+                },
+                "minPingableRegionFraction": {
+                    "type": "number"
+                },
+                "minTestInterval": {
+                    "type": "integer"
+                },
+                "minTtl": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "pingInterval": {
+                    "type": "integer"
+                },
+                "pingPacketSize": {
+                    "type": "integer"
+                },
+                "roundRobinPrefix": {
+                    "type": "string"
+                },
+                "servermonitorLivenessCount": {
+                    "type": "integer"
+                },
+                "servermonitorLoadCount": {
+                    "type": "integer"
+                },
+                "servermonitorPool": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "waitOnComplete": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "defaultHealthMax",
+                "defaultHealthMultiplier",
+                "defaultHealthThreshold",
+                "defaultMaxUnreachablePenalty",
+                "defaultUnreachableThreshold",
+                "mapUpdateInterval",
+                "maxProperties",
+                "maxResources",
+                "maxTestTimeout",
+                "maxTtl",
+                "minPingableRegionFraction",
+                "minTestInterval",
+                "minTtl",
+                "name",
+                "pingInterval",
+                "pingPacketSize",
+                "roundRobinPrefix",
+                "servermonitorLivenessCount",
+                "servermonitorLoadCount",
+                "servermonitorPool",
+                "type"
+            ],
+            "inputProperties": {
+                "cnameCoalescingEnabled": {
+                    "type": "boolean"
+                },
+                "comment": {
+                    "type": "string"
+                },
+                "contract": {
+                    "type": "string"
+                },
+                "defaultErrorPenalty": {
+                    "type": "integer"
+                },
+                "defaultSslClientCertificate": {
+                    "type": "string"
+                },
+                "defaultSslClientPrivateKey": {
+                    "type": "string"
+                },
+                "defaultTimeoutPenalty": {
+                    "type": "integer"
+                },
+                "emailNotificationLists": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "endUserMappingEnabled": {
+                    "type": "boolean"
+                },
+                "group": {
+                    "type": "string"
+                },
+                "loadFeedback": {
+                    "type": "boolean"
+                },
+                "loadImbalancePercentage": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "waitOnComplete": {
+                    "type": "boolean"
+                }
+            },
+            "requiredInputs": [
+                "type"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering GtmDomain resources.\n",
+                "properties": {
+                    "cnameCoalescingEnabled": {
+                        "type": "boolean"
+                    },
+                    "comment": {
+                        "type": "string"
+                    },
+                    "contract": {
+                        "type": "string"
+                    },
+                    "defaultErrorPenalty": {
+                        "type": "integer"
+                    },
+                    "defaultHealthMax": {
+                        "type": "number"
+                    },
+                    "defaultHealthMultiplier": {
+                        "type": "number"
+                    },
+                    "defaultHealthThreshold": {
+                        "type": "number"
+                    },
+                    "defaultMaxUnreachablePenalty": {
+                        "type": "integer"
+                    },
+                    "defaultSslClientCertificate": {
+                        "type": "string"
+                    },
+                    "defaultSslClientPrivateKey": {
+                        "type": "string"
+                    },
+                    "defaultTimeoutPenalty": {
+                        "type": "integer"
+                    },
+                    "defaultUnreachableThreshold": {
+                        "type": "number"
+                    },
+                    "emailNotificationLists": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "endUserMappingEnabled": {
+                        "type": "boolean"
+                    },
+                    "group": {
+                        "type": "string"
+                    },
+                    "loadFeedback": {
+                        "type": "boolean"
+                    },
+                    "loadImbalancePercentage": {
+                        "type": "number"
+                    },
+                    "mapUpdateInterval": {
+                        "type": "integer"
+                    },
+                    "maxProperties": {
+                        "type": "integer"
+                    },
+                    "maxResources": {
+                        "type": "integer"
+                    },
+                    "maxTestTimeout": {
+                        "type": "number"
+                    },
+                    "maxTtl": {
+                        "type": "integer"
+                    },
+                    "minPingableRegionFraction": {
+                        "type": "number"
+                    },
+                    "minTestInterval": {
+                        "type": "integer"
+                    },
+                    "minTtl": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "pingInterval": {
+                        "type": "integer"
+                    },
+                    "pingPacketSize": {
+                        "type": "integer"
+                    },
+                    "roundRobinPrefix": {
+                        "type": "string"
+                    },
+                    "servermonitorLivenessCount": {
+                        "type": "integer"
+                    },
+                    "servermonitorLoadCount": {
+                        "type": "integer"
+                    },
+                    "servermonitorPool": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "waitOnComplete": {
+                        "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
+            "deprecationMessage": "akamai.trafficmanagement/gtmdomain.GtmDomain has been deprecated in favor of akamai.index/gtmdomain.GtmDomain"
+        },
+        "akamai:trafficmanagement/gtmGeomap:GtmGeomap": {
+            "properties": {
+                "assignments": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:trafficmanagement/GtmGeomapAssignment:GtmGeomapAssignment"
+                    }
+                },
+                "defaultDatacenter": {
+                    "$ref": "#/types/akamai:trafficmanagement/GtmGeomapDefaultDatacenter:GtmGeomapDefaultDatacenter"
+                },
+                "domain": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "waitOnComplete": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "defaultDatacenter",
+                "domain",
+                "name"
+            ],
+            "inputProperties": {
+                "assignments": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:trafficmanagement/GtmGeomapAssignment:GtmGeomapAssignment"
+                    }
+                },
+                "defaultDatacenter": {
+                    "$ref": "#/types/akamai:trafficmanagement/GtmGeomapDefaultDatacenter:GtmGeomapDefaultDatacenter"
+                },
+                "domain": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "waitOnComplete": {
+                    "type": "boolean"
+                }
+            },
+            "requiredInputs": [
+                "defaultDatacenter",
+                "domain"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering GtmGeomap resources.\n",
+                "properties": {
+                    "assignments": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:trafficmanagement/GtmGeomapAssignment:GtmGeomapAssignment"
+                        }
+                    },
+                    "defaultDatacenter": {
+                        "$ref": "#/types/akamai:trafficmanagement/GtmGeomapDefaultDatacenter:GtmGeomapDefaultDatacenter"
+                    },
+                    "domain": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "waitOnComplete": {
+                        "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
+            "deprecationMessage": "akamai.trafficmanagement/gtmgeomap.GtmGeomap has been deprecated in favor of akamai.index/gtmgeomap.GtmGeomap"
+        },
+        "akamai:trafficmanagement/gtmProperty:GtmProperty": {
+            "properties": {
+                "backupCname": {
+                    "type": "string"
+                },
+                "backupIp": {
+                    "type": "string"
+                },
+                "balanceByDownloadScore": {
+                    "type": "boolean"
+                },
+                "cname": {
+                    "type": "string"
+                },
+                "comments": {
+                    "type": "string"
+                },
+                "domain": {
+                    "type": "string"
+                },
+                "dynamicTtl": {
+                    "type": "integer"
+                },
+                "failbackDelay": {
+                    "type": "integer"
+                },
+                "failoverDelay": {
+                    "type": "integer"
+                },
+                "ghostDemandReporting": {
+                    "type": "boolean"
+                },
+                "handoutLimit": {
+                    "type": "integer"
+                },
+                "handoutMode": {
+                    "type": "string"
+                },
+                "healthMax": {
+                    "type": "number"
+                },
+                "healthMultiplier": {
+                    "type": "number"
+                },
+                "healthThreshold": {
+                    "type": "number"
+                },
+                "ipv6": {
+                    "type": "boolean"
+                },
+                "livenessTests": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:trafficmanagement/GtmPropertyLivenessTest:GtmPropertyLivenessTest"
+                    }
+                },
+                "loadImbalancePercentage": {
+                    "type": "number"
+                },
+                "mapName": {
+                    "type": "string"
+                },
+                "maxUnreachablePenalty": {
+                    "type": "integer"
+                },
+                "minLiveFraction": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "scoreAggregationType": {
+                    "type": "string"
+                },
+                "staticRrSets": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:trafficmanagement/GtmPropertyStaticRrSet:GtmPropertyStaticRrSet"
+                    }
+                },
+                "staticTtl": {
+                    "type": "integer"
+                },
+                "stickinessBonusConstant": {
+                    "type": "integer"
+                },
+                "stickinessBonusPercentage": {
+                    "type": "integer"
+                },
+                "trafficTargets": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:trafficmanagement/GtmPropertyTrafficTarget:GtmPropertyTrafficTarget"
+                    }
+                },
+                "type": {
+                    "type": "string"
+                },
+                "unreachableThreshold": {
+                    "type": "number"
+                },
+                "useComputedTargets": {
+                    "type": "boolean"
+                },
+                "waitOnComplete": {
+                    "type": "boolean"
+                },
+                "weightedHashBitsForIpv4": {
+                    "type": "integer"
+                },
+                "weightedHashBitsForIpv6": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "domain",
+                "handoutLimit",
+                "handoutMode",
+                "name",
+                "scoreAggregationType",
+                "type",
+                "weightedHashBitsForIpv4",
+                "weightedHashBitsForIpv6"
+            ],
+            "inputProperties": {
+                "backupCname": {
+                    "type": "string"
+                },
+                "backupIp": {
+                    "type": "string"
+                },
+                "balanceByDownloadScore": {
+                    "type": "boolean"
+                },
+                "cname": {
+                    "type": "string"
+                },
+                "comments": {
+                    "type": "string"
+                },
+                "domain": {
+                    "type": "string"
+                },
+                "dynamicTtl": {
+                    "type": "integer"
+                },
+                "failbackDelay": {
+                    "type": "integer"
+                },
+                "failoverDelay": {
+                    "type": "integer"
+                },
+                "ghostDemandReporting": {
+                    "type": "boolean"
+                },
+                "handoutLimit": {
+                    "type": "integer"
+                },
+                "handoutMode": {
+                    "type": "string"
+                },
+                "healthMax": {
+                    "type": "number"
+                },
+                "healthMultiplier": {
+                    "type": "number"
+                },
+                "healthThreshold": {
+                    "type": "number"
+                },
+                "ipv6": {
+                    "type": "boolean"
+                },
+                "livenessTests": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:trafficmanagement/GtmPropertyLivenessTest:GtmPropertyLivenessTest"
+                    }
+                },
+                "loadImbalancePercentage": {
+                    "type": "number"
+                },
+                "mapName": {
+                    "type": "string"
+                },
+                "maxUnreachablePenalty": {
+                    "type": "integer"
+                },
+                "minLiveFraction": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "scoreAggregationType": {
+                    "type": "string"
+                },
+                "staticRrSets": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:trafficmanagement/GtmPropertyStaticRrSet:GtmPropertyStaticRrSet"
+                    }
+                },
+                "staticTtl": {
+                    "type": "integer"
+                },
+                "stickinessBonusConstant": {
+                    "type": "integer"
+                },
+                "stickinessBonusPercentage": {
+                    "type": "integer"
+                },
+                "trafficTargets": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:trafficmanagement/GtmPropertyTrafficTarget:GtmPropertyTrafficTarget"
+                    }
+                },
+                "type": {
+                    "type": "string"
+                },
+                "unreachableThreshold": {
+                    "type": "number"
+                },
+                "useComputedTargets": {
+                    "type": "boolean"
+                },
+                "waitOnComplete": {
+                    "type": "boolean"
+                }
+            },
+            "requiredInputs": [
+                "domain",
+                "handoutLimit",
+                "handoutMode",
+                "scoreAggregationType",
+                "type"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering GtmProperty resources.\n",
+                "properties": {
+                    "backupCname": {
+                        "type": "string"
+                    },
+                    "backupIp": {
+                        "type": "string"
+                    },
+                    "balanceByDownloadScore": {
+                        "type": "boolean"
+                    },
+                    "cname": {
+                        "type": "string"
+                    },
+                    "comments": {
+                        "type": "string"
+                    },
+                    "domain": {
+                        "type": "string"
+                    },
+                    "dynamicTtl": {
+                        "type": "integer"
+                    },
+                    "failbackDelay": {
+                        "type": "integer"
+                    },
+                    "failoverDelay": {
+                        "type": "integer"
+                    },
+                    "ghostDemandReporting": {
+                        "type": "boolean"
+                    },
+                    "handoutLimit": {
+                        "type": "integer"
+                    },
+                    "handoutMode": {
+                        "type": "string"
+                    },
+                    "healthMax": {
+                        "type": "number"
+                    },
+                    "healthMultiplier": {
+                        "type": "number"
+                    },
+                    "healthThreshold": {
+                        "type": "number"
+                    },
+                    "ipv6": {
+                        "type": "boolean"
+                    },
+                    "livenessTests": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:trafficmanagement/GtmPropertyLivenessTest:GtmPropertyLivenessTest"
+                        }
+                    },
+                    "loadImbalancePercentage": {
+                        "type": "number"
+                    },
+                    "mapName": {
+                        "type": "string"
+                    },
+                    "maxUnreachablePenalty": {
+                        "type": "integer"
+                    },
+                    "minLiveFraction": {
+                        "type": "number"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "scoreAggregationType": {
+                        "type": "string"
+                    },
+                    "staticRrSets": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:trafficmanagement/GtmPropertyStaticRrSet:GtmPropertyStaticRrSet"
+                        }
+                    },
+                    "staticTtl": {
+                        "type": "integer"
+                    },
+                    "stickinessBonusConstant": {
+                        "type": "integer"
+                    },
+                    "stickinessBonusPercentage": {
+                        "type": "integer"
+                    },
+                    "trafficTargets": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:trafficmanagement/GtmPropertyTrafficTarget:GtmPropertyTrafficTarget"
+                        }
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "unreachableThreshold": {
+                        "type": "number"
+                    },
+                    "useComputedTargets": {
+                        "type": "boolean"
+                    },
+                    "waitOnComplete": {
+                        "type": "boolean"
+                    },
+                    "weightedHashBitsForIpv4": {
+                        "type": "integer"
+                    },
+                    "weightedHashBitsForIpv6": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
+            "deprecationMessage": "akamai.trafficmanagement/gtmproperty.GtmProperty has been deprecated in favor of akamai.index/gtmproperty.GtmProperty"
+        },
+        "akamai:trafficmanagement/gtmResource:GtmResource": {
+            "properties": {
+                "aggregationType": {
+                    "type": "string"
+                },
+                "constrainedProperty": {
+                    "type": "string"
+                },
+                "decayRate": {
+                    "type": "number"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "domain": {
+                    "type": "string"
+                },
+                "hostHeader": {
+                    "type": "string"
+                },
+                "leaderString": {
+                    "type": "string"
+                },
+                "leastSquaresDecay": {
+                    "type": "number"
+                },
+                "loadImbalancePercentage": {
+                    "type": "number"
+                },
+                "maxUMultiplicativeIncrement": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "resourceInstances": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:trafficmanagement/GtmResourceResourceInstance:GtmResourceResourceInstance"
+                    }
+                },
+                "type": {
+                    "type": "string"
+                },
+                "upperBound": {
+                    "type": "integer"
+                },
+                "waitOnComplete": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "aggregationType",
+                "domain",
+                "name",
+                "type"
+            ],
+            "inputProperties": {
+                "aggregationType": {
+                    "type": "string"
+                },
+                "constrainedProperty": {
+                    "type": "string"
+                },
+                "decayRate": {
+                    "type": "number"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "domain": {
+                    "type": "string"
+                },
+                "hostHeader": {
+                    "type": "string"
+                },
+                "leaderString": {
+                    "type": "string"
+                },
+                "leastSquaresDecay": {
+                    "type": "number"
+                },
+                "loadImbalancePercentage": {
+                    "type": "number"
+                },
+                "maxUMultiplicativeIncrement": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "resourceInstances": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:trafficmanagement/GtmResourceResourceInstance:GtmResourceResourceInstance"
+                    }
+                },
+                "type": {
+                    "type": "string"
+                },
+                "upperBound": {
+                    "type": "integer"
+                },
+                "waitOnComplete": {
+                    "type": "boolean"
+                }
+            },
+            "requiredInputs": [
+                "aggregationType",
+                "domain",
+                "type"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering GtmResource resources.\n",
+                "properties": {
+                    "aggregationType": {
+                        "type": "string"
+                    },
+                    "constrainedProperty": {
+                        "type": "string"
+                    },
+                    "decayRate": {
+                        "type": "number"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "domain": {
+                        "type": "string"
+                    },
+                    "hostHeader": {
+                        "type": "string"
+                    },
+                    "leaderString": {
+                        "type": "string"
+                    },
+                    "leastSquaresDecay": {
+                        "type": "number"
+                    },
+                    "loadImbalancePercentage": {
+                        "type": "number"
+                    },
+                    "maxUMultiplicativeIncrement": {
+                        "type": "number"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "resourceInstances": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:trafficmanagement/GtmResourceResourceInstance:GtmResourceResourceInstance"
+                        }
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "upperBound": {
+                        "type": "integer"
+                    },
+                    "waitOnComplete": {
+                        "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
+            "deprecationMessage": "akamai.trafficmanagement/gtmresource.GtmResource has been deprecated in favor of akamai.index/gtmresource.GtmResource"
         }
     },
     "functions": {
