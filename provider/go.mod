@@ -11,8 +11,8 @@ replace (
 
 require (
 	github.com/akamai/terraform-provider-akamai/v5 v5.0.1
-	github.com/pulumi/pulumi-terraform-bridge/pf v0.21.0
-	github.com/pulumi/pulumi-terraform-bridge/v3 v3.68.0
+	github.com/pulumi/pulumi-terraform-bridge/pf v0.21.1-0.20231212190050-3a7306834639
+	github.com/pulumi/pulumi-terraform-bridge/v3 v3.68.1-0.20231212190050-3a7306834639
 	github.com/pulumi/pulumi/pkg/v3 v3.96.2
 	github.com/pulumi/pulumi/sdk/v3 v3.96.2
 	github.com/stretchr/testify v1.8.4
