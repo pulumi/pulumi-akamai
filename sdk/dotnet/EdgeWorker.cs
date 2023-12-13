@@ -49,6 +49,12 @@ namespace Pulumi.Akamai
         public Output<int> ResourceTierId { get; private set; } = null!;
 
         /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Output("timeouts")]
+        public Output<Outputs.EdgeWorkerTimeouts?> Timeouts { get; private set; } = null!;
+
+        /// <summary>
         /// The bundle version
         /// </summary>
         [Output("version")]
@@ -130,6 +136,12 @@ namespace Pulumi.Akamai
         [Input("resourceTierId", required: true)]
         public Input<int> ResourceTierId { get; set; } = null!;
 
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.EdgeWorkerTimeoutsArgs>? Timeouts { get; set; }
+
         public EdgeWorkerArgs()
         {
         }
@@ -173,6 +185,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("resourceTierId")]
         public Input<int>? ResourceTierId { get; set; }
+
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.EdgeWorkerTimeoutsGetArgs>? Timeouts { get; set; }
 
         /// <summary>
         /// The bundle version

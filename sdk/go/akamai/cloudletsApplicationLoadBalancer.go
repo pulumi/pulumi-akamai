@@ -21,10 +21,12 @@ type CloudletsApplicationLoadBalancer struct {
 	// implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
 	// application load balancer configuration.
 	DataCenters CloudletsApplicationLoadBalancerDataCenterArrayOutput `pulumi:"dataCenters"`
-	// The load balancer configuration description
+	// The load balancer configuration version description
 	Description      pulumi.StringPtrOutput                                    `pulumi:"description"`
 	LivenessSettings CloudletsApplicationLoadBalancerLivenessSettingsPtrOutput `pulumi:"livenessSettings"`
-	// The conditional origin’s unique identifier
+	// The load balancer configuration description
+	OriginDescription pulumi.StringPtrOutput `pulumi:"originDescription"`
+	// The conditional origin's unique identifier
 	OriginId pulumi.StringOutput `pulumi:"originId"`
 	// The load balancer configuration version
 	Version pulumi.IntOutput `pulumi:"version"`
@@ -74,10 +76,12 @@ type cloudletsApplicationLoadBalancerState struct {
 	// implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
 	// application load balancer configuration.
 	DataCenters []CloudletsApplicationLoadBalancerDataCenter `pulumi:"dataCenters"`
-	// The load balancer configuration description
+	// The load balancer configuration version description
 	Description      *string                                           `pulumi:"description"`
 	LivenessSettings *CloudletsApplicationLoadBalancerLivenessSettings `pulumi:"livenessSettings"`
-	// The conditional origin’s unique identifier
+	// The load balancer configuration description
+	OriginDescription *string `pulumi:"originDescription"`
+	// The conditional origin's unique identifier
 	OriginId *string `pulumi:"originId"`
 	// The load balancer configuration version
 	Version *int `pulumi:"version"`
@@ -92,10 +96,12 @@ type CloudletsApplicationLoadBalancerState struct {
 	// implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
 	// application load balancer configuration.
 	DataCenters CloudletsApplicationLoadBalancerDataCenterArrayInput
-	// The load balancer configuration description
+	// The load balancer configuration version description
 	Description      pulumi.StringPtrInput
 	LivenessSettings CloudletsApplicationLoadBalancerLivenessSettingsPtrInput
-	// The conditional origin’s unique identifier
+	// The load balancer configuration description
+	OriginDescription pulumi.StringPtrInput
+	// The conditional origin's unique identifier
 	OriginId pulumi.StringPtrInput
 	// The load balancer configuration version
 	Version pulumi.IntPtrInput
@@ -114,10 +120,12 @@ type cloudletsApplicationLoadBalancerArgs struct {
 	// implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
 	// application load balancer configuration.
 	DataCenters []CloudletsApplicationLoadBalancerDataCenter `pulumi:"dataCenters"`
-	// The load balancer configuration description
+	// The load balancer configuration version description
 	Description      *string                                           `pulumi:"description"`
 	LivenessSettings *CloudletsApplicationLoadBalancerLivenessSettings `pulumi:"livenessSettings"`
-	// The conditional origin’s unique identifier
+	// The load balancer configuration description
+	OriginDescription *string `pulumi:"originDescription"`
+	// The conditional origin's unique identifier
 	OriginId string `pulumi:"originId"`
 }
 
@@ -129,10 +137,12 @@ type CloudletsApplicationLoadBalancerArgs struct {
 	// implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
 	// application load balancer configuration.
 	DataCenters CloudletsApplicationLoadBalancerDataCenterArrayInput
-	// The load balancer configuration description
+	// The load balancer configuration version description
 	Description      pulumi.StringPtrInput
 	LivenessSettings CloudletsApplicationLoadBalancerLivenessSettingsPtrInput
-	// The conditional origin’s unique identifier
+	// The load balancer configuration description
+	OriginDescription pulumi.StringPtrInput
+	// The conditional origin's unique identifier
 	OriginId pulumi.StringInput
 }
 
@@ -237,7 +247,7 @@ func (o CloudletsApplicationLoadBalancerOutput) DataCenters() CloudletsApplicati
 	}).(CloudletsApplicationLoadBalancerDataCenterArrayOutput)
 }
 
-// The load balancer configuration description
+// The load balancer configuration version description
 func (o CloudletsApplicationLoadBalancerOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CloudletsApplicationLoadBalancer) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -248,7 +258,12 @@ func (o CloudletsApplicationLoadBalancerOutput) LivenessSettings() CloudletsAppl
 	}).(CloudletsApplicationLoadBalancerLivenessSettingsPtrOutput)
 }
 
-// The conditional origin’s unique identifier
+// The load balancer configuration description
+func (o CloudletsApplicationLoadBalancerOutput) OriginDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudletsApplicationLoadBalancer) pulumi.StringPtrOutput { return v.OriginDescription }).(pulumi.StringPtrOutput)
+}
+
+// The conditional origin's unique identifier
 func (o CloudletsApplicationLoadBalancerOutput) OriginId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudletsApplicationLoadBalancer) pulumi.StringOutput { return v.OriginId }).(pulumi.StringOutput)
 }

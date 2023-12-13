@@ -8,6 +8,7 @@ import com.pulumi.akamai.inputs.CpsThirdPartyEnrollmentCsrArgs;
 import com.pulumi.akamai.inputs.CpsThirdPartyEnrollmentNetworkConfigurationArgs;
 import com.pulumi.akamai.inputs.CpsThirdPartyEnrollmentOrganizationArgs;
 import com.pulumi.akamai.inputs.CpsThirdPartyEnrollmentTechContactArgs;
+import com.pulumi.akamai.inputs.CpsThirdPartyEnrollmentTimeoutsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
@@ -277,6 +278,21 @@ public final class CpsThirdPartyEnrollmentArgs extends com.pulumi.resources.Reso
         return this.techContact;
     }
 
+    /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Import(name="timeouts")
+    private @Nullable Output<CpsThirdPartyEnrollmentTimeoutsArgs> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Optional<Output<CpsThirdPartyEnrollmentTimeoutsArgs>> timeouts() {
+        return Optional.ofNullable(this.timeouts);
+    }
+
     private CpsThirdPartyEnrollmentArgs() {}
 
     private CpsThirdPartyEnrollmentArgs(CpsThirdPartyEnrollmentArgs $) {
@@ -297,6 +313,7 @@ public final class CpsThirdPartyEnrollmentArgs extends com.pulumi.resources.Reso
         this.signatureAlgorithm = $.signatureAlgorithm;
         this.sniOnly = $.sniOnly;
         this.techContact = $.techContact;
+        this.timeouts = $.timeouts;
     }
 
     public static Builder builder() {
@@ -692,6 +709,27 @@ public final class CpsThirdPartyEnrollmentArgs extends com.pulumi.resources.Reso
          */
         public Builder techContact(CpsThirdPartyEnrollmentTechContactArgs techContact) {
             return techContact(Output.of(techContact));
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(@Nullable Output<CpsThirdPartyEnrollmentTimeoutsArgs> timeouts) {
+            $.timeouts = timeouts;
+            return this;
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(CpsThirdPartyEnrollmentTimeoutsArgs timeouts) {
+            return timeouts(Output.of(timeouts));
         }
 
         public CpsThirdPartyEnrollmentArgs build() {

@@ -17,6 +17,7 @@ namespace Pulumi.Akamai.Outputs
         public readonly int? End;
         public readonly string? MatchUrl;
         public readonly ImmutableArray<Outputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchResult> Matches;
+        public readonly bool? MatchesAlways;
         public readonly string? Name;
         public readonly string RedirectUrl;
         public readonly int? Start;
@@ -34,6 +35,8 @@ namespace Pulumi.Akamai.Outputs
             string? matchUrl,
 
             ImmutableArray<Outputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchResult> matches,
+
+            bool? matchesAlways,
 
             string? name,
 
@@ -53,6 +56,7 @@ namespace Pulumi.Akamai.Outputs
             End = end;
             MatchUrl = matchUrl;
             Matches = matches;
+            MatchesAlways = matchesAlways;
             Name = name;
             RedirectUrl = redirectUrl;
             Start = start;

@@ -71,6 +71,7 @@ from .botman_custom_bot_category_action import *
 from .botman_custom_bot_category_sequence import *
 from .botman_custom_client import *
 from .botman_custom_client_sequence import *
+from .botman_custom_code import *
 from .botman_custom_defined_bot import *
 from .botman_custom_deny_action import *
 from .botman_javascript_injection import *
@@ -171,6 +172,7 @@ from .get_botman_custom_bot_category_action import *
 from .get_botman_custom_bot_category_sequence import *
 from .get_botman_custom_client import *
 from .get_botman_custom_client_sequence import *
+from .get_botman_custom_code import *
 from .get_botman_custom_defined_bot import *
 from .get_botman_custom_deny_action import *
 from .get_botman_javascript_injection import *
@@ -816,6 +818,14 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/botmanCustomClientSequence:BotmanCustomClientSequence": "BotmanCustomClientSequence"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/botmanCustomCode",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/botmanCustomCode:BotmanCustomCode": "BotmanCustomCode"
   }
  },
  {

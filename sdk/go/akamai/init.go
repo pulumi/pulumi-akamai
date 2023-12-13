@@ -153,6 +153,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &BotmanCustomClient{}
 	case "akamai:index/botmanCustomClientSequence:BotmanCustomClientSequence":
 		r = &BotmanCustomClientSequence{}
+	case "akamai:index/botmanCustomCode:BotmanCustomCode":
+		r = &BotmanCustomCode{}
 	case "akamai:index/botmanCustomDefinedBot:BotmanCustomDefinedBot":
 		r = &BotmanCustomDefinedBot{}
 	case "akamai:index/botmanCustomDenyAction:BotmanCustomDenyAction":
@@ -612,6 +614,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/botmanCustomClientSequence",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/botmanCustomCode",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

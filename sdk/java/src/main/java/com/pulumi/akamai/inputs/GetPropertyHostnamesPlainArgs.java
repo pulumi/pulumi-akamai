@@ -4,8 +4,11 @@
 package com.pulumi.akamai.inputs;
 
 import com.pulumi.core.annotations.Import;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetPropertyHostnamesPlainArgs extends com.pulumi.resources.InvokeArgs {
@@ -33,12 +36,20 @@ public final class GetPropertyHostnamesPlainArgs extends com.pulumi.resources.In
         return this.propertyId;
     }
 
+    @Import(name="version")
+    private @Nullable Integer version;
+
+    public Optional<Integer> version() {
+        return Optional.ofNullable(this.version);
+    }
+
     private GetPropertyHostnamesPlainArgs() {}
 
     private GetPropertyHostnamesPlainArgs(GetPropertyHostnamesPlainArgs $) {
         this.contractId = $.contractId;
         this.groupId = $.groupId;
         this.propertyId = $.propertyId;
+        this.version = $.version;
     }
 
     public static Builder builder() {
@@ -71,6 +82,11 @@ public final class GetPropertyHostnamesPlainArgs extends com.pulumi.resources.In
 
         public Builder propertyId(String propertyId) {
             $.propertyId = propertyId;
+            return this;
+        }
+
+        public Builder version(@Nullable Integer version) {
+            $.version = version;
             return this;
         }
 

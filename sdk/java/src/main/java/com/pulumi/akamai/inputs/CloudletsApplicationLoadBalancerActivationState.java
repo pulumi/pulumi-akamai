@@ -3,6 +3,7 @@
 
 package com.pulumi.akamai.inputs;
 
+import com.pulumi.akamai.inputs.CloudletsApplicationLoadBalancerActivationTimeoutsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Integer;
@@ -62,6 +63,21 @@ public final class CloudletsApplicationLoadBalancerActivationState extends com.p
     }
 
     /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Import(name="timeouts")
+    private @Nullable Output<CloudletsApplicationLoadBalancerActivationTimeoutsArgs> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Optional<Output<CloudletsApplicationLoadBalancerActivationTimeoutsArgs>> timeouts() {
+        return Optional.ofNullable(this.timeouts);
+    }
+
+    /**
      * Cloudlets application load balancer version you want to activate
      * 
      */
@@ -82,6 +98,7 @@ public final class CloudletsApplicationLoadBalancerActivationState extends com.p
         this.network = $.network;
         this.originId = $.originId;
         this.status = $.status;
+        this.timeouts = $.timeouts;
         this.version = $.version;
     }
 
@@ -164,6 +181,27 @@ public final class CloudletsApplicationLoadBalancerActivationState extends com.p
          */
         public Builder status(String status) {
             return status(Output.of(status));
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(@Nullable Output<CloudletsApplicationLoadBalancerActivationTimeoutsArgs> timeouts) {
+            $.timeouts = timeouts;
+            return this;
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(CloudletsApplicationLoadBalancerActivationTimeoutsArgs timeouts) {
+            return timeouts(Output.of(timeouts));
         }
 
         /**

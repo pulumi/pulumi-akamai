@@ -5,6 +5,7 @@ package com.pulumi.akamai.inputs;
 
 import com.pulumi.akamai.inputs.PropertyActivationComplianceRecordArgs;
 import com.pulumi.akamai.inputs.PropertyActivationRuleErrorArgs;
+import com.pulumi.akamai.inputs.PropertyActivationTimeoutsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
@@ -114,6 +115,21 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Import(name="timeouts")
+    private @Nullable Output<PropertyActivationTimeoutsArgs> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Optional<Output<PropertyActivationTimeoutsArgs>> timeouts() {
+        return Optional.ofNullable(this.timeouts);
+    }
+
     @Import(name="version")
     private @Nullable Output<Integer> version;
 
@@ -141,6 +157,7 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
         this.propertyId = $.propertyId;
         this.ruleErrors = $.ruleErrors;
         this.status = $.status;
+        this.timeouts = $.timeouts;
         this.version = $.version;
         this.warnings = $.warnings;
     }
@@ -295,6 +312,27 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
 
         public Builder status(String status) {
             return status(Output.of(status));
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(@Nullable Output<PropertyActivationTimeoutsArgs> timeouts) {
+            $.timeouts = timeouts;
+            return this;
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(PropertyActivationTimeoutsArgs timeouts) {
+            return timeouts(Output.of(timeouts));
         }
 
         public Builder version(@Nullable Output<Integer> version) {

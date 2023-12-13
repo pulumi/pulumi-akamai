@@ -15,6 +15,8 @@ import (
 type AppSecIPGeo struct {
 	pulumi.CustomResourceState
 
+	// List of IDs of ASN network list to be blocked
+	AsnNetworkLists pulumi.StringArrayOutput `pulumi:"asnNetworkLists"`
 	// Unique identifier of the security configuration
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
 	// List of IDs of network list that are always allowed
@@ -70,6 +72,8 @@ func GetAppSecIPGeo(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecIPGeo resources.
 type appSecIPGeoState struct {
+	// List of IDs of ASN network list to be blocked
+	AsnNetworkLists []string `pulumi:"asnNetworkLists"`
 	// Unique identifier of the security configuration
 	ConfigId *int `pulumi:"configId"`
 	// List of IDs of network list that are always allowed
@@ -87,6 +91,8 @@ type appSecIPGeoState struct {
 }
 
 type AppSecIPGeoState struct {
+	// List of IDs of ASN network list to be blocked
+	AsnNetworkLists pulumi.StringArrayInput
 	// Unique identifier of the security configuration
 	ConfigId pulumi.IntPtrInput
 	// List of IDs of network list that are always allowed
@@ -108,6 +114,8 @@ func (AppSecIPGeoState) ElementType() reflect.Type {
 }
 
 type appSecIPGeoArgs struct {
+	// List of IDs of ASN network list to be blocked
+	AsnNetworkLists []string `pulumi:"asnNetworkLists"`
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`
 	// List of IDs of network list that are always allowed
@@ -126,6 +134,8 @@ type appSecIPGeoArgs struct {
 
 // The set of arguments for constructing a AppSecIPGeo resource.
 type AppSecIPGeoArgs struct {
+	// List of IDs of ASN network list to be blocked
+	AsnNetworkLists pulumi.StringArrayInput
 	// Unique identifier of the security configuration
 	ConfigId pulumi.IntInput
 	// List of IDs of network list that are always allowed
@@ -227,6 +237,11 @@ func (o AppSecIPGeoOutput) ToAppSecIPGeoOutput() AppSecIPGeoOutput {
 
 func (o AppSecIPGeoOutput) ToAppSecIPGeoOutputWithContext(ctx context.Context) AppSecIPGeoOutput {
 	return o
+}
+
+// List of IDs of ASN network list to be blocked
+func (o AppSecIPGeoOutput) AsnNetworkLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *AppSecIPGeo) pulumi.StringArrayOutput { return v.AsnNetworkLists }).(pulumi.StringArrayOutput)
 }
 
 // Unique identifier of the security configuration

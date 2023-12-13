@@ -24,7 +24,8 @@ class PropertyIncludeActivationArgs:
                  version: pulumi.Input[int],
                  auto_acknowledge_rule_warnings: Optional[pulumi.Input[bool]] = None,
                  compliance_record: Optional[pulumi.Input['PropertyIncludeActivationComplianceRecordArgs']] = None,
-                 note: Optional[pulumi.Input[str]] = None):
+                 note: Optional[pulumi.Input[str]] = None,
+                 timeouts: Optional[pulumi.Input['PropertyIncludeActivationTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a PropertyIncludeActivation resource.
         :param pulumi.Input[str] contract_id: The contract under which the include is activated
@@ -36,6 +37,7 @@ class PropertyIncludeActivationArgs:
         :param pulumi.Input[bool] auto_acknowledge_rule_warnings: Automatically acknowledge all rule warnings for activation and continue
         :param pulumi.Input['PropertyIncludeActivationComplianceRecordArgs'] compliance_record: Provides an audit record when activating on a production network
         :param pulumi.Input[str] note: The note to assign to a log message of the activation request
+        :param pulumi.Input['PropertyIncludeActivationTimeoutsArgs'] timeouts: Enables to set timeout for processing
         """
         pulumi.set(__self__, "contract_id", contract_id)
         pulumi.set(__self__, "group_id", group_id)
@@ -49,6 +51,8 @@ class PropertyIncludeActivationArgs:
             pulumi.set(__self__, "compliance_record", compliance_record)
         if note is not None:
             pulumi.set(__self__, "note", note)
+        if timeouts is not None:
+            pulumi.set(__self__, "timeouts", timeouts)
 
     @property
     @pulumi.getter(name="contractId")
@@ -158,6 +162,18 @@ class PropertyIncludeActivationArgs:
     def note(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "note", value)
 
+    @property
+    @pulumi.getter
+    def timeouts(self) -> Optional[pulumi.Input['PropertyIncludeActivationTimeoutsArgs']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
+
+    @timeouts.setter
+    def timeouts(self, value: Optional[pulumi.Input['PropertyIncludeActivationTimeoutsArgs']]):
+        pulumi.set(self, "timeouts", value)
+
 
 @pulumi.input_type
 class _PropertyIncludeActivationState:
@@ -170,6 +186,7 @@ class _PropertyIncludeActivationState:
                  network: Optional[pulumi.Input[str]] = None,
                  note: Optional[pulumi.Input[str]] = None,
                  notify_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 timeouts: Optional[pulumi.Input['PropertyIncludeActivationTimeoutsArgs']] = None,
                  validations: Optional[pulumi.Input[str]] = None,
                  version: Optional[pulumi.Input[int]] = None):
         """
@@ -182,6 +199,7 @@ class _PropertyIncludeActivationState:
         :param pulumi.Input[str] network: The network for which the activation will be performed
         :param pulumi.Input[str] note: The note to assign to a log message of the activation request
         :param pulumi.Input[Sequence[pulumi.Input[str]]] notify_emails: The list of email addresses to notify about an activation status
+        :param pulumi.Input['PropertyIncludeActivationTimeoutsArgs'] timeouts: Enables to set timeout for processing
         :param pulumi.Input[str] validations: The validation information in JSON format
         :param pulumi.Input[int] version: The unique identifier of the include
         """
@@ -201,6 +219,8 @@ class _PropertyIncludeActivationState:
             pulumi.set(__self__, "note", note)
         if notify_emails is not None:
             pulumi.set(__self__, "notify_emails", notify_emails)
+        if timeouts is not None:
+            pulumi.set(__self__, "timeouts", timeouts)
         if validations is not None:
             pulumi.set(__self__, "validations", validations)
         if version is not None:
@@ -304,6 +324,18 @@ class _PropertyIncludeActivationState:
 
     @property
     @pulumi.getter
+    def timeouts(self) -> Optional[pulumi.Input['PropertyIncludeActivationTimeoutsArgs']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
+
+    @timeouts.setter
+    def timeouts(self, value: Optional[pulumi.Input['PropertyIncludeActivationTimeoutsArgs']]):
+        pulumi.set(self, "timeouts", value)
+
+    @property
+    @pulumi.getter
     def validations(self) -> Optional[pulumi.Input[str]]:
         """
         The validation information in JSON format
@@ -340,6 +372,7 @@ class PropertyIncludeActivation(pulumi.CustomResource):
                  network: Optional[pulumi.Input[str]] = None,
                  note: Optional[pulumi.Input[str]] = None,
                  notify_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 timeouts: Optional[pulumi.Input[pulumi.InputType['PropertyIncludeActivationTimeoutsArgs']]] = None,
                  version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
@@ -354,6 +387,7 @@ class PropertyIncludeActivation(pulumi.CustomResource):
         :param pulumi.Input[str] network: The network for which the activation will be performed
         :param pulumi.Input[str] note: The note to assign to a log message of the activation request
         :param pulumi.Input[Sequence[pulumi.Input[str]]] notify_emails: The list of email addresses to notify about an activation status
+        :param pulumi.Input[pulumi.InputType['PropertyIncludeActivationTimeoutsArgs']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[int] version: The unique identifier of the include
         """
         ...
@@ -387,6 +421,7 @@ class PropertyIncludeActivation(pulumi.CustomResource):
                  network: Optional[pulumi.Input[str]] = None,
                  note: Optional[pulumi.Input[str]] = None,
                  notify_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 timeouts: Optional[pulumi.Input[pulumi.InputType['PropertyIncludeActivationTimeoutsArgs']]] = None,
                  version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -415,6 +450,7 @@ class PropertyIncludeActivation(pulumi.CustomResource):
             if notify_emails is None and not opts.urn:
                 raise TypeError("Missing required property 'notify_emails'")
             __props__.__dict__["notify_emails"] = notify_emails
+            __props__.__dict__["timeouts"] = timeouts
             if version is None and not opts.urn:
                 raise TypeError("Missing required property 'version'")
             __props__.__dict__["version"] = version
@@ -437,6 +473,7 @@ class PropertyIncludeActivation(pulumi.CustomResource):
             network: Optional[pulumi.Input[str]] = None,
             note: Optional[pulumi.Input[str]] = None,
             notify_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            timeouts: Optional[pulumi.Input[pulumi.InputType['PropertyIncludeActivationTimeoutsArgs']]] = None,
             validations: Optional[pulumi.Input[str]] = None,
             version: Optional[pulumi.Input[int]] = None) -> 'PropertyIncludeActivation':
         """
@@ -454,6 +491,7 @@ class PropertyIncludeActivation(pulumi.CustomResource):
         :param pulumi.Input[str] network: The network for which the activation will be performed
         :param pulumi.Input[str] note: The note to assign to a log message of the activation request
         :param pulumi.Input[Sequence[pulumi.Input[str]]] notify_emails: The list of email addresses to notify about an activation status
+        :param pulumi.Input[pulumi.InputType['PropertyIncludeActivationTimeoutsArgs']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[str] validations: The validation information in JSON format
         :param pulumi.Input[int] version: The unique identifier of the include
         """
@@ -469,6 +507,7 @@ class PropertyIncludeActivation(pulumi.CustomResource):
         __props__.__dict__["network"] = network
         __props__.__dict__["note"] = note
         __props__.__dict__["notify_emails"] = notify_emails
+        __props__.__dict__["timeouts"] = timeouts
         __props__.__dict__["validations"] = validations
         __props__.__dict__["version"] = version
         return PropertyIncludeActivation(resource_name, opts=opts, __props__=__props__)
@@ -536,6 +575,14 @@ class PropertyIncludeActivation(pulumi.CustomResource):
         The list of email addresses to notify about an activation status
         """
         return pulumi.get(self, "notify_emails")
+
+    @property
+    @pulumi.getter
+    def timeouts(self) -> pulumi.Output[Optional['outputs.PropertyIncludeActivationTimeouts']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
 
     @property
     @pulumi.getter

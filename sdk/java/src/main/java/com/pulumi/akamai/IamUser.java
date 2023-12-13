@@ -233,14 +233,14 @@ public class IamUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="phone", refs={String.class}, tree="[0]")
-    private Output<String> phone;
+    private Output</* @Nullable */ String> phone;
 
     /**
      * @return The user&#39;s main phone number
      * 
      */
-    public Output<String> phone() {
-        return this.phone;
+    public Output<Optional<String>> phone() {
+        return Codegen.optional(this.phone);
     }
     /**
      * The value can be any that are available from the view-languages operation

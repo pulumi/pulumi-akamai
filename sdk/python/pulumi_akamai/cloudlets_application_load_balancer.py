@@ -20,15 +20,17 @@ class CloudletsApplicationLoadBalancerArgs:
                  origin_id: pulumi.Input[str],
                  balancing_type: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 liveness_settings: Optional[pulumi.Input['CloudletsApplicationLoadBalancerLivenessSettingsArgs']] = None):
+                 liveness_settings: Optional[pulumi.Input['CloudletsApplicationLoadBalancerLivenessSettingsArgs']] = None,
+                 origin_description: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a CloudletsApplicationLoadBalancer resource.
         :param pulumi.Input[Sequence[pulumi.Input['CloudletsApplicationLoadBalancerDataCenterArgs']]] data_centers: The object containing information on conditional origins being used as data centers for an Application Load Balancer
                implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
                application load balancer configuration.
-        :param pulumi.Input[str] origin_id: The conditional origin’s unique identifier
+        :param pulumi.Input[str] origin_id: The conditional origin's unique identifier
         :param pulumi.Input[str] balancing_type: The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
-        :param pulumi.Input[str] description: The load balancer configuration description
+        :param pulumi.Input[str] description: The load balancer configuration version description
+        :param pulumi.Input[str] origin_description: The load balancer configuration description
         """
         pulumi.set(__self__, "data_centers", data_centers)
         pulumi.set(__self__, "origin_id", origin_id)
@@ -38,6 +40,8 @@ class CloudletsApplicationLoadBalancerArgs:
             pulumi.set(__self__, "description", description)
         if liveness_settings is not None:
             pulumi.set(__self__, "liveness_settings", liveness_settings)
+        if origin_description is not None:
+            pulumi.set(__self__, "origin_description", origin_description)
 
     @property
     @pulumi.getter(name="dataCenters")
@@ -57,7 +61,7 @@ class CloudletsApplicationLoadBalancerArgs:
     @pulumi.getter(name="originId")
     def origin_id(self) -> pulumi.Input[str]:
         """
-        The conditional origin’s unique identifier
+        The conditional origin's unique identifier
         """
         return pulumi.get(self, "origin_id")
 
@@ -81,7 +85,7 @@ class CloudletsApplicationLoadBalancerArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        The load balancer configuration description
+        The load balancer configuration version description
         """
         return pulumi.get(self, "description")
 
@@ -98,6 +102,18 @@ class CloudletsApplicationLoadBalancerArgs:
     def liveness_settings(self, value: Optional[pulumi.Input['CloudletsApplicationLoadBalancerLivenessSettingsArgs']]):
         pulumi.set(self, "liveness_settings", value)
 
+    @property
+    @pulumi.getter(name="originDescription")
+    def origin_description(self) -> Optional[pulumi.Input[str]]:
+        """
+        The load balancer configuration description
+        """
+        return pulumi.get(self, "origin_description")
+
+    @origin_description.setter
+    def origin_description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "origin_description", value)
+
 
 @pulumi.input_type
 class _CloudletsApplicationLoadBalancerState:
@@ -106,6 +122,7 @@ class _CloudletsApplicationLoadBalancerState:
                  data_centers: Optional[pulumi.Input[Sequence[pulumi.Input['CloudletsApplicationLoadBalancerDataCenterArgs']]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  liveness_settings: Optional[pulumi.Input['CloudletsApplicationLoadBalancerLivenessSettingsArgs']] = None,
+                 origin_description: Optional[pulumi.Input[str]] = None,
                  origin_id: Optional[pulumi.Input[str]] = None,
                  version: Optional[pulumi.Input[int]] = None,
                  warnings: Optional[pulumi.Input[str]] = None):
@@ -115,8 +132,9 @@ class _CloudletsApplicationLoadBalancerState:
         :param pulumi.Input[Sequence[pulumi.Input['CloudletsApplicationLoadBalancerDataCenterArgs']]] data_centers: The object containing information on conditional origins being used as data centers for an Application Load Balancer
                implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
                application load balancer configuration.
-        :param pulumi.Input[str] description: The load balancer configuration description
-        :param pulumi.Input[str] origin_id: The conditional origin’s unique identifier
+        :param pulumi.Input[str] description: The load balancer configuration version description
+        :param pulumi.Input[str] origin_description: The load balancer configuration description
+        :param pulumi.Input[str] origin_id: The conditional origin's unique identifier
         :param pulumi.Input[int] version: The load balancer configuration version
         :param pulumi.Input[str] warnings: Describes warnings during activation of load balancer configuration
         """
@@ -128,6 +146,8 @@ class _CloudletsApplicationLoadBalancerState:
             pulumi.set(__self__, "description", description)
         if liveness_settings is not None:
             pulumi.set(__self__, "liveness_settings", liveness_settings)
+        if origin_description is not None:
+            pulumi.set(__self__, "origin_description", origin_description)
         if origin_id is not None:
             pulumi.set(__self__, "origin_id", origin_id)
         if version is not None:
@@ -165,7 +185,7 @@ class _CloudletsApplicationLoadBalancerState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        The load balancer configuration description
+        The load balancer configuration version description
         """
         return pulumi.get(self, "description")
 
@@ -183,10 +203,22 @@ class _CloudletsApplicationLoadBalancerState:
         pulumi.set(self, "liveness_settings", value)
 
     @property
+    @pulumi.getter(name="originDescription")
+    def origin_description(self) -> Optional[pulumi.Input[str]]:
+        """
+        The load balancer configuration description
+        """
+        return pulumi.get(self, "origin_description")
+
+    @origin_description.setter
+    def origin_description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "origin_description", value)
+
+    @property
     @pulumi.getter(name="originId")
     def origin_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The conditional origin’s unique identifier
+        The conditional origin's unique identifier
         """
         return pulumi.get(self, "origin_id")
 
@@ -228,6 +260,7 @@ class CloudletsApplicationLoadBalancer(pulumi.CustomResource):
                  data_centers: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudletsApplicationLoadBalancerDataCenterArgs']]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  liveness_settings: Optional[pulumi.Input[pulumi.InputType['CloudletsApplicationLoadBalancerLivenessSettingsArgs']]] = None,
+                 origin_description: Optional[pulumi.Input[str]] = None,
                  origin_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -238,8 +271,9 @@ class CloudletsApplicationLoadBalancer(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudletsApplicationLoadBalancerDataCenterArgs']]]] data_centers: The object containing information on conditional origins being used as data centers for an Application Load Balancer
                implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
                application load balancer configuration.
-        :param pulumi.Input[str] description: The load balancer configuration description
-        :param pulumi.Input[str] origin_id: The conditional origin’s unique identifier
+        :param pulumi.Input[str] description: The load balancer configuration version description
+        :param pulumi.Input[str] origin_description: The load balancer configuration description
+        :param pulumi.Input[str] origin_id: The conditional origin's unique identifier
         """
         ...
     @overload
@@ -268,6 +302,7 @@ class CloudletsApplicationLoadBalancer(pulumi.CustomResource):
                  data_centers: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudletsApplicationLoadBalancerDataCenterArgs']]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  liveness_settings: Optional[pulumi.Input[pulumi.InputType['CloudletsApplicationLoadBalancerLivenessSettingsArgs']]] = None,
+                 origin_description: Optional[pulumi.Input[str]] = None,
                  origin_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -284,6 +319,7 @@ class CloudletsApplicationLoadBalancer(pulumi.CustomResource):
             __props__.__dict__["data_centers"] = data_centers
             __props__.__dict__["description"] = description
             __props__.__dict__["liveness_settings"] = liveness_settings
+            __props__.__dict__["origin_description"] = origin_description
             if origin_id is None and not opts.urn:
                 raise TypeError("Missing required property 'origin_id'")
             __props__.__dict__["origin_id"] = origin_id
@@ -303,6 +339,7 @@ class CloudletsApplicationLoadBalancer(pulumi.CustomResource):
             data_centers: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudletsApplicationLoadBalancerDataCenterArgs']]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             liveness_settings: Optional[pulumi.Input[pulumi.InputType['CloudletsApplicationLoadBalancerLivenessSettingsArgs']]] = None,
+            origin_description: Optional[pulumi.Input[str]] = None,
             origin_id: Optional[pulumi.Input[str]] = None,
             version: Optional[pulumi.Input[int]] = None,
             warnings: Optional[pulumi.Input[str]] = None) -> 'CloudletsApplicationLoadBalancer':
@@ -317,8 +354,9 @@ class CloudletsApplicationLoadBalancer(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudletsApplicationLoadBalancerDataCenterArgs']]]] data_centers: The object containing information on conditional origins being used as data centers for an Application Load Balancer
                implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
                application load balancer configuration.
-        :param pulumi.Input[str] description: The load balancer configuration description
-        :param pulumi.Input[str] origin_id: The conditional origin’s unique identifier
+        :param pulumi.Input[str] description: The load balancer configuration version description
+        :param pulumi.Input[str] origin_description: The load balancer configuration description
+        :param pulumi.Input[str] origin_id: The conditional origin's unique identifier
         :param pulumi.Input[int] version: The load balancer configuration version
         :param pulumi.Input[str] warnings: Describes warnings during activation of load balancer configuration
         """
@@ -330,6 +368,7 @@ class CloudletsApplicationLoadBalancer(pulumi.CustomResource):
         __props__.__dict__["data_centers"] = data_centers
         __props__.__dict__["description"] = description
         __props__.__dict__["liveness_settings"] = liveness_settings
+        __props__.__dict__["origin_description"] = origin_description
         __props__.__dict__["origin_id"] = origin_id
         __props__.__dict__["version"] = version
         __props__.__dict__["warnings"] = warnings
@@ -357,7 +396,7 @@ class CloudletsApplicationLoadBalancer(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[str]]:
         """
-        The load balancer configuration description
+        The load balancer configuration version description
         """
         return pulumi.get(self, "description")
 
@@ -367,10 +406,18 @@ class CloudletsApplicationLoadBalancer(pulumi.CustomResource):
         return pulumi.get(self, "liveness_settings")
 
     @property
+    @pulumi.getter(name="originDescription")
+    def origin_description(self) -> pulumi.Output[Optional[str]]:
+        """
+        The load balancer configuration description
+        """
+        return pulumi.get(self, "origin_description")
+
+    @property
     @pulumi.getter(name="originId")
     def origin_id(self) -> pulumi.Output[str]:
         """
-        The conditional origin’s unique identifier
+        The conditional origin's unique identifier
         """
         return pulumi.get(self, "origin_id")
 

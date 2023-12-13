@@ -53,6 +53,10 @@ export class PropertyActivation extends pulumi.CustomResource {
     public readonly propertyId!: pulumi.Output<string>;
     public readonly ruleErrors!: pulumi.Output<outputs.PropertyActivationRuleError[]>;
     public /*out*/ readonly status!: pulumi.Output<string>;
+    /**
+     * Enables to set timeout for processing
+     */
+    public readonly timeouts!: pulumi.Output<outputs.PropertyActivationTimeouts | undefined>;
     public readonly version!: pulumi.Output<number>;
     public /*out*/ readonly warnings!: pulumi.Output<string>;
 
@@ -79,6 +83,7 @@ export class PropertyActivation extends pulumi.CustomResource {
             resourceInputs["propertyId"] = state ? state.propertyId : undefined;
             resourceInputs["ruleErrors"] = state ? state.ruleErrors : undefined;
             resourceInputs["status"] = state ? state.status : undefined;
+            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
             resourceInputs["version"] = state ? state.version : undefined;
             resourceInputs["warnings"] = state ? state.warnings : undefined;
         } else {
@@ -100,6 +105,7 @@ export class PropertyActivation extends pulumi.CustomResource {
             resourceInputs["note"] = args ? args.note : undefined;
             resourceInputs["propertyId"] = args ? args.propertyId : undefined;
             resourceInputs["ruleErrors"] = args ? args.ruleErrors : undefined;
+            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
             resourceInputs["version"] = args ? args.version : undefined;
             resourceInputs["errors"] = undefined /*out*/;
             resourceInputs["status"] = undefined /*out*/;
@@ -135,6 +141,10 @@ export interface PropertyActivationState {
     propertyId?: pulumi.Input<string>;
     ruleErrors?: pulumi.Input<pulumi.Input<inputs.PropertyActivationRuleError>[]>;
     status?: pulumi.Input<string>;
+    /**
+     * Enables to set timeout for processing
+     */
+    timeouts?: pulumi.Input<inputs.PropertyActivationTimeouts>;
     version?: pulumi.Input<number>;
     warnings?: pulumi.Input<string>;
 }
@@ -160,5 +170,9 @@ export interface PropertyActivationArgs {
     note?: pulumi.Input<string>;
     propertyId: pulumi.Input<string>;
     ruleErrors?: pulumi.Input<pulumi.Input<inputs.PropertyActivationRuleError>[]>;
+    /**
+     * Enables to set timeout for processing
+     */
+    timeouts?: pulumi.Input<inputs.PropertyActivationTimeouts>;
     version: pulumi.Input<number>;
 }

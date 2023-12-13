@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export class EdgekvGroupItems extends pulumi.CustomResource {
@@ -48,6 +50,10 @@ export class EdgekvGroupItems extends pulumi.CustomResource {
      * The network against which to execute the API request.
      */
     public readonly network!: pulumi.Output<string>;
+    /**
+     * Enables to set timeout for processing
+     */
+    public readonly timeouts!: pulumi.Output<outputs.EdgekvGroupItemsTimeouts | undefined>;
 
     /**
      * Create a EdgekvGroupItems resource with the given unique name, arguments, and options.
@@ -66,6 +72,7 @@ export class EdgekvGroupItems extends pulumi.CustomResource {
             resourceInputs["items"] = state ? state.items : undefined;
             resourceInputs["namespaceName"] = state ? state.namespaceName : undefined;
             resourceInputs["network"] = state ? state.network : undefined;
+            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
         } else {
             const args = argsOrState as EdgekvGroupItemsArgs | undefined;
             if ((!args || args.groupName === undefined) && !opts.urn) {
@@ -84,6 +91,7 @@ export class EdgekvGroupItems extends pulumi.CustomResource {
             resourceInputs["items"] = args ? args.items : undefined;
             resourceInputs["namespaceName"] = args ? args.namespaceName : undefined;
             resourceInputs["network"] = args ? args.network : undefined;
+            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(EdgekvGroupItems.__pulumiType, name, resourceInputs, opts);
@@ -110,6 +118,10 @@ export interface EdgekvGroupItemsState {
      * The network against which to execute the API request.
      */
     network?: pulumi.Input<string>;
+    /**
+     * Enables to set timeout for processing
+     */
+    timeouts?: pulumi.Input<inputs.EdgekvGroupItemsTimeouts>;
 }
 
 /**
@@ -132,4 +144,8 @@ export interface EdgekvGroupItemsArgs {
      * The network against which to execute the API request.
      */
     network: pulumi.Input<string>;
+    /**
+     * Enables to set timeout for processing
+     */
+    timeouts?: pulumi.Input<inputs.EdgekvGroupItemsTimeouts>;
 }

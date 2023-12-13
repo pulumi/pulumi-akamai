@@ -13,6 +13,12 @@ namespace Pulumi.Akamai
     public partial class AppSecIPGeo : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// List of IDs of ASN network list to be blocked
+        /// </summary>
+        [Output("asnNetworkLists")]
+        public Output<ImmutableArray<string>> AsnNetworkLists { get; private set; } = null!;
+
+        /// <summary>
         /// Unique identifier of the security configuration
         /// </summary>
         [Output("configId")]
@@ -100,6 +106,18 @@ namespace Pulumi.Akamai
 
     public sealed class AppSecIPGeoArgs : global::Pulumi.ResourceArgs
     {
+        [Input("asnNetworkLists")]
+        private InputList<string>? _asnNetworkLists;
+
+        /// <summary>
+        /// List of IDs of ASN network list to be blocked
+        /// </summary>
+        public InputList<string> AsnNetworkLists
+        {
+            get => _asnNetworkLists ?? (_asnNetworkLists = new InputList<string>());
+            set => _asnNetworkLists = value;
+        }
+
         /// <summary>
         /// Unique identifier of the security configuration
         /// </summary>
@@ -168,6 +186,18 @@ namespace Pulumi.Akamai
 
     public sealed class AppSecIPGeoState : global::Pulumi.ResourceArgs
     {
+        [Input("asnNetworkLists")]
+        private InputList<string>? _asnNetworkLists;
+
+        /// <summary>
+        /// List of IDs of ASN network list to be blocked
+        /// </summary>
+        public InputList<string> AsnNetworkLists
+        {
+            get => _asnNetworkLists ?? (_asnNetworkLists = new InputList<string>());
+            set => _asnNetworkLists = value;
+        }
+
         /// <summary>
         /// Unique identifier of the security configuration
         /// </summary>

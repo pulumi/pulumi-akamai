@@ -21,7 +21,10 @@ class GetAppSecIPGeoResult:
     """
     A collection of values returned by getAppSecIPGeo.
     """
-    def __init__(__self__, config_id=None, exception_ip_network_lists=None, geo_network_lists=None, id=None, ip_network_lists=None, mode=None, output_text=None, security_policy_id=None, ukraine_geo_control_action=None):
+    def __init__(__self__, asn_network_lists=None, config_id=None, exception_ip_network_lists=None, geo_network_lists=None, id=None, ip_network_lists=None, mode=None, output_text=None, security_policy_id=None, ukraine_geo_control_action=None):
+        if asn_network_lists and not isinstance(asn_network_lists, list):
+            raise TypeError("Expected argument 'asn_network_lists' to be a list")
+        pulumi.set(__self__, "asn_network_lists", asn_network_lists)
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
@@ -49,6 +52,11 @@ class GetAppSecIPGeoResult:
         if ukraine_geo_control_action and not isinstance(ukraine_geo_control_action, str):
             raise TypeError("Expected argument 'ukraine_geo_control_action' to be a str")
         pulumi.set(__self__, "ukraine_geo_control_action", ukraine_geo_control_action)
+
+    @property
+    @pulumi.getter(name="asnNetworkLists")
+    def asn_network_lists(self) -> Sequence[str]:
+        return pulumi.get(self, "asn_network_lists")
 
     @property
     @pulumi.getter(name="configId")
@@ -105,6 +113,7 @@ class AwaitableGetAppSecIPGeoResult(GetAppSecIPGeoResult):
         if False:
             yield self
         return GetAppSecIPGeoResult(
+            asn_network_lists=self.asn_network_lists,
             config_id=self.config_id,
             exception_ip_network_lists=self.exception_ip_network_lists,
             geo_network_lists=self.geo_network_lists,
@@ -129,6 +138,7 @@ def get_app_sec_ip_geo(config_id: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getAppSecIPGeo:getAppSecIPGeo', __args__, opts=opts, typ=GetAppSecIPGeoResult).value
 
     return AwaitableGetAppSecIPGeoResult(
+        asn_network_lists=pulumi.get(__ret__, 'asn_network_lists'),
         config_id=pulumi.get(__ret__, 'config_id'),
         exception_ip_network_lists=pulumi.get(__ret__, 'exception_ip_network_lists'),
         geo_network_lists=pulumi.get(__ret__, 'geo_network_lists'),

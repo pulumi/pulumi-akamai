@@ -25,7 +25,7 @@ public final class GetActivationResult {
     private String note;
     private String propertyId;
     private String status;
-    private Integer version;
+    private @Nullable Integer version;
     private String warnings;
 
     private GetActivationResult() {}
@@ -57,8 +57,8 @@ public final class GetActivationResult {
     public String status() {
         return this.status;
     }
-    public Integer version() {
-        return this.version;
+    public Optional<Integer> version() {
+        return Optional.ofNullable(this.version);
     }
     public String warnings() {
         return this.warnings;
@@ -81,7 +81,7 @@ public final class GetActivationResult {
         private String note;
         private String propertyId;
         private String status;
-        private Integer version;
+        private @Nullable Integer version;
         private String warnings;
         public Builder() {}
         public Builder(GetActivationResult defaults) {
@@ -142,8 +142,8 @@ public final class GetActivationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder version(Integer version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable Integer version) {
+            this.version = version;
             return this;
         }
         @CustomType.Setter

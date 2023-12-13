@@ -187,10 +187,10 @@ public class GtmProperty extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.stickinessBonusPercentage);
     }
     @Export(name="trafficTargets", refs={List.class,GtmPropertyTrafficTarget.class}, tree="[0,1]")
-    private Output</* @Nullable */ List<GtmPropertyTrafficTarget>> trafficTargets;
+    private Output<List<GtmPropertyTrafficTarget>> trafficTargets;
 
-    public Output<Optional<List<GtmPropertyTrafficTarget>>> trafficTargets() {
-        return Codegen.optional(this.trafficTargets);
+    public Output<List<GtmPropertyTrafficTarget>> trafficTargets() {
+        return this.trafficTargets;
     }
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;

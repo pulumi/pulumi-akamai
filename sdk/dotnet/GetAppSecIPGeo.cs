@@ -51,6 +51,7 @@ namespace Pulumi.Akamai
     [OutputType]
     public sealed class GetAppSecIPGeoResult
     {
+        public readonly ImmutableArray<string> AsnNetworkLists;
         public readonly int ConfigId;
         public readonly ImmutableArray<string> ExceptionIpNetworkLists;
         public readonly ImmutableArray<string> GeoNetworkLists;
@@ -66,6 +67,8 @@ namespace Pulumi.Akamai
 
         [OutputConstructor]
         private GetAppSecIPGeoResult(
+            ImmutableArray<string> asnNetworkLists,
+
             int configId,
 
             ImmutableArray<string> exceptionIpNetworkLists,
@@ -84,6 +87,7 @@ namespace Pulumi.Akamai
 
             string ukraineGeoControlAction)
         {
+            AsnNetworkLists = asnNetworkLists;
             ConfigId = configId;
             ExceptionIpNetworkLists = exceptionIpNetworkLists;
             GeoNetworkLists = geoNetworkLists;

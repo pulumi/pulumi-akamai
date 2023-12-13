@@ -21,6 +21,8 @@ type CpsDvValidation struct {
 	Sans pulumi.StringArrayOutput `pulumi:"sans"`
 	// Status of validation
 	Status pulumi.StringOutput `pulumi:"status"`
+	// Enables to set timeout for processing
+	Timeouts CpsDvValidationTimeoutsPtrOutput `pulumi:"timeouts"`
 }
 
 // NewCpsDvValidation registers a new resource with the given unique name, arguments, and options.
@@ -62,6 +64,8 @@ type cpsDvValidationState struct {
 	Sans []string `pulumi:"sans"`
 	// Status of validation
 	Status *string `pulumi:"status"`
+	// Enables to set timeout for processing
+	Timeouts *CpsDvValidationTimeouts `pulumi:"timeouts"`
 }
 
 type CpsDvValidationState struct {
@@ -71,6 +75,8 @@ type CpsDvValidationState struct {
 	Sans pulumi.StringArrayInput
 	// Status of validation
 	Status pulumi.StringPtrInput
+	// Enables to set timeout for processing
+	Timeouts CpsDvValidationTimeoutsPtrInput
 }
 
 func (CpsDvValidationState) ElementType() reflect.Type {
@@ -82,6 +88,8 @@ type cpsDvValidationArgs struct {
 	EnrollmentId int `pulumi:"enrollmentId"`
 	// List of SANs
 	Sans []string `pulumi:"sans"`
+	// Enables to set timeout for processing
+	Timeouts *CpsDvValidationTimeouts `pulumi:"timeouts"`
 }
 
 // The set of arguments for constructing a CpsDvValidation resource.
@@ -90,6 +98,8 @@ type CpsDvValidationArgs struct {
 	EnrollmentId pulumi.IntInput
 	// List of SANs
 	Sans pulumi.StringArrayInput
+	// Enables to set timeout for processing
+	Timeouts CpsDvValidationTimeoutsPtrInput
 }
 
 func (CpsDvValidationArgs) ElementType() reflect.Type {
@@ -192,6 +202,11 @@ func (o CpsDvValidationOutput) Sans() pulumi.StringArrayOutput {
 // Status of validation
 func (o CpsDvValidationOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *CpsDvValidation) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+}
+
+// Enables to set timeout for processing
+func (o CpsDvValidationOutput) Timeouts() CpsDvValidationTimeoutsPtrOutput {
+	return o.ApplyT(func(v *CpsDvValidation) CpsDvValidationTimeoutsPtrOutput { return v.Timeouts }).(CpsDvValidationTimeoutsPtrOutput)
 }
 
 type CpsDvValidationArrayOutput struct{ *pulumi.OutputState }

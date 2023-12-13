@@ -19,6 +19,20 @@ import javax.annotation.Nullable;
 @ResourceType(type="akamai:index/appSecIPGeo:AppSecIPGeo")
 public class AppSecIPGeo extends com.pulumi.resources.CustomResource {
     /**
+     * List of IDs of ASN network list to be blocked
+     * 
+     */
+    @Export(name="asnNetworkLists", refs={List.class,String.class}, tree="[0,1]")
+    private Output</* @Nullable */ List<String>> asnNetworkLists;
+
+    /**
+     * @return List of IDs of ASN network list to be blocked
+     * 
+     */
+    public Output<Optional<List<String>>> asnNetworkLists() {
+        return Codegen.optional(this.asnNetworkLists);
+    }
+    /**
      * Unique identifier of the security configuration
      * 
      */
