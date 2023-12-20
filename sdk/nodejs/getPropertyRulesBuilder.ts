@@ -13,6 +13,8 @@ export function getPropertyRulesBuilder(args?: GetPropertyRulesBuilderArgs, opts
     return pulumi.runtime.invoke("akamai:index/getPropertyRulesBuilder:getPropertyRulesBuilder", {
         "rulesV20230105": args.rulesV20230105,
         "rulesV20230530": args.rulesV20230530,
+        "rulesV20230920": args.rulesV20230920,
+        "rulesV20231030": args.rulesV20231030,
     }, opts);
 }
 
@@ -22,6 +24,8 @@ export function getPropertyRulesBuilder(args?: GetPropertyRulesBuilderArgs, opts
 export interface GetPropertyRulesBuilderArgs {
     rulesV20230105?: inputs.GetPropertyRulesBuilderRulesV20230105;
     rulesV20230530?: inputs.GetPropertyRulesBuilderRulesV20230530;
+    rulesV20230920?: inputs.GetPropertyRulesBuilderRulesV20230920;
+    rulesV20231030?: inputs.GetPropertyRulesBuilderRulesV20231030;
 }
 
 /**
@@ -36,6 +40,8 @@ export interface GetPropertyRulesBuilderResult {
     readonly ruleFormat: string;
     readonly rulesV20230105?: outputs.GetPropertyRulesBuilderRulesV20230105;
     readonly rulesV20230530?: outputs.GetPropertyRulesBuilderRulesV20230530;
+    readonly rulesV20230920?: outputs.GetPropertyRulesBuilderRulesV20230920;
+    readonly rulesV20231030?: outputs.GetPropertyRulesBuilderRulesV20231030;
 }
 export function getPropertyRulesBuilderOutput(args?: GetPropertyRulesBuilderOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyRulesBuilderResult> {
     return pulumi.output(args).apply((a: any) => getPropertyRulesBuilder(a, opts))
@@ -47,4 +53,6 @@ export function getPropertyRulesBuilderOutput(args?: GetPropertyRulesBuilderOutp
 export interface GetPropertyRulesBuilderOutputArgs {
     rulesV20230105?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105Args>;
     rulesV20230530?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530Args>;
+    rulesV20230920?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920Args>;
+    rulesV20231030?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030Args>;
 }

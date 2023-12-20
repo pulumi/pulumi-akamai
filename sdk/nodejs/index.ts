@@ -335,6 +335,11 @@ export type BotmanCustomClientSequence = import("./botmanCustomClientSequence").
 export const BotmanCustomClientSequence: typeof import("./botmanCustomClientSequence").BotmanCustomClientSequence = null as any;
 utilities.lazyLoad(exports, ["BotmanCustomClientSequence"], () => require("./botmanCustomClientSequence"));
 
+export { BotmanCustomCodeArgs, BotmanCustomCodeState } from "./botmanCustomCode";
+export type BotmanCustomCode = import("./botmanCustomCode").BotmanCustomCode;
+export const BotmanCustomCode: typeof import("./botmanCustomCode").BotmanCustomCode = null as any;
+utilities.lazyLoad(exports, ["BotmanCustomCode"], () => require("./botmanCustomCode"));
+
 export { BotmanCustomDefinedBotArgs, BotmanCustomDefinedBotState } from "./botmanCustomDefinedBot";
 export type BotmanCustomDefinedBot = import("./botmanCustomDefinedBot").BotmanCustomDefinedBot;
 export const BotmanCustomDefinedBot: typeof import("./botmanCustomDefinedBot").BotmanCustomDefinedBot = null as any;
@@ -834,6 +839,11 @@ export { GetBotmanCustomClientSequenceArgs, GetBotmanCustomClientSequenceResult,
 export const getBotmanCustomClientSequence: typeof import("./getBotmanCustomClientSequence").getBotmanCustomClientSequence = null as any;
 export const getBotmanCustomClientSequenceOutput: typeof import("./getBotmanCustomClientSequence").getBotmanCustomClientSequenceOutput = null as any;
 utilities.lazyLoad(exports, ["getBotmanCustomClientSequence","getBotmanCustomClientSequenceOutput"], () => require("./getBotmanCustomClientSequence"));
+
+export { GetBotmanCustomCodeArgs, GetBotmanCustomCodeResult, GetBotmanCustomCodeOutputArgs } from "./getBotmanCustomCode";
+export const getBotmanCustomCode: typeof import("./getBotmanCustomCode").getBotmanCustomCode = null as any;
+export const getBotmanCustomCodeOutput: typeof import("./getBotmanCustomCode").getBotmanCustomCodeOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanCustomCode","getBotmanCustomCodeOutput"], () => require("./getBotmanCustomCode"));
 
 export { GetBotmanCustomDefinedBotArgs, GetBotmanCustomDefinedBotResult, GetBotmanCustomDefinedBotOutputArgs } from "./getBotmanCustomDefinedBot";
 export const getBotmanCustomDefinedBot: typeof import("./getBotmanCustomDefinedBot").getBotmanCustomDefinedBot = null as any;
@@ -1472,6 +1482,8 @@ const _module = {
                 return new BotmanCustomClient(name, <any>undefined, { urn })
             case "akamai:index/botmanCustomClientSequence:BotmanCustomClientSequence":
                 return new BotmanCustomClientSequence(name, <any>undefined, { urn })
+            case "akamai:index/botmanCustomCode:BotmanCustomCode":
+                return new BotmanCustomCode(name, <any>undefined, { urn })
             case "akamai:index/botmanCustomDefinedBot:BotmanCustomDefinedBot":
                 return new BotmanCustomDefinedBot(name, <any>undefined, { urn })
             case "akamai:index/botmanCustomDenyAction:BotmanCustomDenyAction":
@@ -1643,6 +1655,7 @@ pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomBotCategoryAc
 pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomBotCategorySequence", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomClient", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomClientSequence", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomCode", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomDefinedBot", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomDenyAction", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanJavascriptInjection", _module)

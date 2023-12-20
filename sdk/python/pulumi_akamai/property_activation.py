@@ -24,12 +24,14 @@ class PropertyActivationArgs:
                  compliance_record: Optional[pulumi.Input['PropertyActivationComplianceRecordArgs']] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  note: Optional[pulumi.Input[str]] = None,
-                 rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleErrorArgs']]]] = None):
+                 rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleErrorArgs']]]] = None,
+                 timeouts: Optional[pulumi.Input['PropertyActivationTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a PropertyActivation resource.
         :param pulumi.Input[bool] auto_acknowledge_rule_warnings: Automatically acknowledge all rule warnings for activation to continue. Default is false
         :param pulumi.Input['PropertyActivationComplianceRecordArgs'] compliance_record: Provides an audit record when activating on a production network
         :param pulumi.Input[str] note: assigns a log message to the activation request
+        :param pulumi.Input['PropertyActivationTimeoutsArgs'] timeouts: Enables to set timeout for processing
         """
         pulumi.set(__self__, "contacts", contacts)
         pulumi.set(__self__, "property_id", property_id)
@@ -46,6 +48,8 @@ class PropertyActivationArgs:
             pulumi.set(__self__, "note", note)
         if rule_errors is not None:
             pulumi.set(__self__, "rule_errors", rule_errors)
+        if timeouts is not None:
+            pulumi.set(__self__, "timeouts", timeouts)
 
     @property
     @pulumi.getter
@@ -137,6 +141,18 @@ class PropertyActivationArgs:
     def rule_errors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleErrorArgs']]]]):
         pulumi.set(self, "rule_errors", value)
 
+    @property
+    @pulumi.getter
+    def timeouts(self) -> Optional[pulumi.Input['PropertyActivationTimeoutsArgs']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
+
+    @timeouts.setter
+    def timeouts(self, value: Optional[pulumi.Input['PropertyActivationTimeoutsArgs']]):
+        pulumi.set(self, "timeouts", value)
+
 
 @pulumi.input_type
 class _PropertyActivationState:
@@ -151,6 +167,7 @@ class _PropertyActivationState:
                  property_id: Optional[pulumi.Input[str]] = None,
                  rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleErrorArgs']]]] = None,
                  status: Optional[pulumi.Input[str]] = None,
+                 timeouts: Optional[pulumi.Input['PropertyActivationTimeoutsArgs']] = None,
                  version: Optional[pulumi.Input[int]] = None,
                  warnings: Optional[pulumi.Input[str]] = None):
         """
@@ -158,6 +175,7 @@ class _PropertyActivationState:
         :param pulumi.Input[bool] auto_acknowledge_rule_warnings: Automatically acknowledge all rule warnings for activation to continue. Default is false
         :param pulumi.Input['PropertyActivationComplianceRecordArgs'] compliance_record: Provides an audit record when activating on a production network
         :param pulumi.Input[str] note: assigns a log message to the activation request
+        :param pulumi.Input['PropertyActivationTimeoutsArgs'] timeouts: Enables to set timeout for processing
         """
         if activation_id is not None:
             pulumi.set(__self__, "activation_id", activation_id)
@@ -179,6 +197,8 @@ class _PropertyActivationState:
             pulumi.set(__self__, "rule_errors", rule_errors)
         if status is not None:
             pulumi.set(__self__, "status", status)
+        if timeouts is not None:
+            pulumi.set(__self__, "timeouts", timeouts)
         if version is not None:
             pulumi.set(__self__, "version", version)
         if warnings is not None:
@@ -285,6 +305,18 @@ class _PropertyActivationState:
 
     @property
     @pulumi.getter
+    def timeouts(self) -> Optional[pulumi.Input['PropertyActivationTimeoutsArgs']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
+
+    @timeouts.setter
+    def timeouts(self, value: Optional[pulumi.Input['PropertyActivationTimeoutsArgs']]):
+        pulumi.set(self, "timeouts", value)
+
+    @property
+    @pulumi.getter
     def version(self) -> Optional[pulumi.Input[int]]:
         return pulumi.get(self, "version")
 
@@ -315,6 +347,7 @@ class PropertyActivation(pulumi.CustomResource):
                  note: Optional[pulumi.Input[str]] = None,
                  property_id: Optional[pulumi.Input[str]] = None,
                  rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyActivationRuleErrorArgs']]]]] = None,
+                 timeouts: Optional[pulumi.Input[pulumi.InputType['PropertyActivationTimeoutsArgs']]] = None,
                  version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
@@ -324,6 +357,7 @@ class PropertyActivation(pulumi.CustomResource):
         :param pulumi.Input[bool] auto_acknowledge_rule_warnings: Automatically acknowledge all rule warnings for activation to continue. Default is false
         :param pulumi.Input[pulumi.InputType['PropertyActivationComplianceRecordArgs']] compliance_record: Provides an audit record when activating on a production network
         :param pulumi.Input[str] note: assigns a log message to the activation request
+        :param pulumi.Input[pulumi.InputType['PropertyActivationTimeoutsArgs']] timeouts: Enables to set timeout for processing
         """
         ...
     @overload
@@ -356,6 +390,7 @@ class PropertyActivation(pulumi.CustomResource):
                  note: Optional[pulumi.Input[str]] = None,
                  property_id: Optional[pulumi.Input[str]] = None,
                  rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyActivationRuleErrorArgs']]]]] = None,
+                 timeouts: Optional[pulumi.Input[pulumi.InputType['PropertyActivationTimeoutsArgs']]] = None,
                  version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -378,6 +413,7 @@ class PropertyActivation(pulumi.CustomResource):
                 raise TypeError("Missing required property 'property_id'")
             __props__.__dict__["property_id"] = property_id
             __props__.__dict__["rule_errors"] = rule_errors
+            __props__.__dict__["timeouts"] = timeouts
             if version is None and not opts.urn:
                 raise TypeError("Missing required property 'version'")
             __props__.__dict__["version"] = version
@@ -406,6 +442,7 @@ class PropertyActivation(pulumi.CustomResource):
             property_id: Optional[pulumi.Input[str]] = None,
             rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyActivationRuleErrorArgs']]]]] = None,
             status: Optional[pulumi.Input[str]] = None,
+            timeouts: Optional[pulumi.Input[pulumi.InputType['PropertyActivationTimeoutsArgs']]] = None,
             version: Optional[pulumi.Input[int]] = None,
             warnings: Optional[pulumi.Input[str]] = None) -> 'PropertyActivation':
         """
@@ -418,6 +455,7 @@ class PropertyActivation(pulumi.CustomResource):
         :param pulumi.Input[bool] auto_acknowledge_rule_warnings: Automatically acknowledge all rule warnings for activation to continue. Default is false
         :param pulumi.Input[pulumi.InputType['PropertyActivationComplianceRecordArgs']] compliance_record: Provides an audit record when activating on a production network
         :param pulumi.Input[str] note: assigns a log message to the activation request
+        :param pulumi.Input[pulumi.InputType['PropertyActivationTimeoutsArgs']] timeouts: Enables to set timeout for processing
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -433,6 +471,7 @@ class PropertyActivation(pulumi.CustomResource):
         __props__.__dict__["property_id"] = property_id
         __props__.__dict__["rule_errors"] = rule_errors
         __props__.__dict__["status"] = status
+        __props__.__dict__["timeouts"] = timeouts
         __props__.__dict__["version"] = version
         __props__.__dict__["warnings"] = warnings
         return PropertyActivation(resource_name, opts=opts, __props__=__props__)
@@ -495,6 +534,14 @@ class PropertyActivation(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[str]:
         return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter
+    def timeouts(self) -> pulumi.Output[Optional['outputs.PropertyActivationTimeouts']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
 
     @property
     @pulumi.getter

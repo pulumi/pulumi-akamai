@@ -67,6 +67,10 @@ export class PropertyIncludeActivation extends pulumi.CustomResource {
      */
     public readonly notifyEmails!: pulumi.Output<string[]>;
     /**
+     * Enables to set timeout for processing
+     */
+    public readonly timeouts!: pulumi.Output<outputs.PropertyIncludeActivationTimeouts | undefined>;
+    /**
      * The validation information in JSON format
      */
     public /*out*/ readonly validations!: pulumi.Output<string>;
@@ -96,6 +100,7 @@ export class PropertyIncludeActivation extends pulumi.CustomResource {
             resourceInputs["network"] = state ? state.network : undefined;
             resourceInputs["note"] = state ? state.note : undefined;
             resourceInputs["notifyEmails"] = state ? state.notifyEmails : undefined;
+            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
             resourceInputs["validations"] = state ? state.validations : undefined;
             resourceInputs["version"] = state ? state.version : undefined;
         } else {
@@ -126,6 +131,7 @@ export class PropertyIncludeActivation extends pulumi.CustomResource {
             resourceInputs["network"] = args ? args.network : undefined;
             resourceInputs["note"] = args ? args.note : undefined;
             resourceInputs["notifyEmails"] = args ? args.notifyEmails : undefined;
+            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
             resourceInputs["version"] = args ? args.version : undefined;
             resourceInputs["validations"] = undefined /*out*/;
         }
@@ -170,6 +176,10 @@ export interface PropertyIncludeActivationState {
      * The list of email addresses to notify about an activation status
      */
     notifyEmails?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Enables to set timeout for processing
+     */
+    timeouts?: pulumi.Input<inputs.PropertyIncludeActivationTimeouts>;
     /**
      * The validation information in JSON format
      */
@@ -216,6 +226,10 @@ export interface PropertyIncludeActivationArgs {
      * The list of email addresses to notify about an activation status
      */
     notifyEmails: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Enables to set timeout for processing
+     */
+    timeouts?: pulumi.Input<inputs.PropertyIncludeActivationTimeouts>;
     /**
      * The unique identifier of the include
      */

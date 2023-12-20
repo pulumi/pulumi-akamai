@@ -29,6 +29,8 @@ type CloudletsPolicy struct {
 	MatchRules pulumi.StringPtrOutput `pulumi:"matchRules"`
 	// The name of the policy. The name must be unique
 	Name pulumi.StringOutput `pulumi:"name"`
+	// Enables to set timeout for processing
+	Timeouts CloudletsPolicyTimeoutsPtrOutput `pulumi:"timeouts"`
 	// The version number of the policy
 	Version pulumi.IntOutput `pulumi:"version"`
 	// A JSON encoded list of warnings
@@ -85,6 +87,8 @@ type cloudletsPolicyState struct {
 	MatchRules *string `pulumi:"matchRules"`
 	// The name of the policy. The name must be unique
 	Name *string `pulumi:"name"`
+	// Enables to set timeout for processing
+	Timeouts *CloudletsPolicyTimeouts `pulumi:"timeouts"`
 	// The version number of the policy
 	Version *int `pulumi:"version"`
 	// A JSON encoded list of warnings
@@ -106,6 +110,8 @@ type CloudletsPolicyState struct {
 	MatchRules pulumi.StringPtrInput
 	// The name of the policy. The name must be unique
 	Name pulumi.StringPtrInput
+	// Enables to set timeout for processing
+	Timeouts CloudletsPolicyTimeoutsPtrInput
 	// The version number of the policy
 	Version pulumi.IntPtrInput
 	// A JSON encoded list of warnings
@@ -129,6 +135,8 @@ type cloudletsPolicyArgs struct {
 	MatchRules *string `pulumi:"matchRules"`
 	// The name of the policy. The name must be unique
 	Name *string `pulumi:"name"`
+	// Enables to set timeout for processing
+	Timeouts *CloudletsPolicyTimeouts `pulumi:"timeouts"`
 }
 
 // The set of arguments for constructing a CloudletsPolicy resource.
@@ -145,6 +153,8 @@ type CloudletsPolicyArgs struct {
 	MatchRules pulumi.StringPtrInput
 	// The name of the policy. The name must be unique
 	Name pulumi.StringPtrInput
+	// Enables to set timeout for processing
+	Timeouts CloudletsPolicyTimeoutsPtrInput
 }
 
 func (CloudletsPolicyArgs) ElementType() reflect.Type {
@@ -267,6 +277,11 @@ func (o CloudletsPolicyOutput) MatchRules() pulumi.StringPtrOutput {
 // The name of the policy. The name must be unique
 func (o CloudletsPolicyOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudletsPolicy) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// Enables to set timeout for processing
+func (o CloudletsPolicyOutput) Timeouts() CloudletsPolicyTimeoutsPtrOutput {
+	return o.ApplyT(func(v *CloudletsPolicy) CloudletsPolicyTimeoutsPtrOutput { return v.Timeouts }).(CloudletsPolicyTimeoutsPtrOutput)
 }
 
 // The version number of the policy

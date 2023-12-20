@@ -6,6 +6,7 @@ package com.pulumi.akamai;
 import com.pulumi.akamai.EdgeHostNameArgs;
 import com.pulumi.akamai.Utilities;
 import com.pulumi.akamai.inputs.EdgeHostNameState;
+import com.pulumi.akamai.outputs.EdgeHostNameTimeouts;
 import com.pulumi.core.Alias;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
@@ -56,18 +57,32 @@ public class EdgeHostName extends com.pulumi.resources.CustomResource {
         return this.productId;
     }
     /**
-     * Email address that should receive updates on the IP behavior update request. Required for update operation.
+     * Email address that should receive updates on the IP behavior update request.
      * 
      */
     @Export(name="statusUpdateEmails", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> statusUpdateEmails;
 
     /**
-     * @return Email address that should receive updates on the IP behavior update request. Required for update operation.
+     * @return Email address that should receive updates on the IP behavior update request.
      * 
      */
     public Output<Optional<List<String>>> statusUpdateEmails() {
         return Codegen.optional(this.statusUpdateEmails);
+    }
+    /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Export(name="timeouts", refs={EdgeHostNameTimeouts.class}, tree="[0]")
+    private Output</* @Nullable */ EdgeHostNameTimeouts> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Output<Optional<EdgeHostNameTimeouts>> timeouts() {
+        return Codegen.optional(this.timeouts);
     }
     /**
      * A JSON encoded list of use cases

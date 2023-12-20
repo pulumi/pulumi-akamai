@@ -31,6 +31,8 @@ type PropertyIncludeActivation struct {
 	Note pulumi.StringPtrOutput `pulumi:"note"`
 	// The list of email addresses to notify about an activation status
 	NotifyEmails pulumi.StringArrayOutput `pulumi:"notifyEmails"`
+	// Enables to set timeout for processing
+	Timeouts PropertyIncludeActivationTimeoutsPtrOutput `pulumi:"timeouts"`
 	// The validation information in JSON format
 	Validations pulumi.StringOutput `pulumi:"validations"`
 	// The unique identifier of the include
@@ -101,6 +103,8 @@ type propertyIncludeActivationState struct {
 	Note *string `pulumi:"note"`
 	// The list of email addresses to notify about an activation status
 	NotifyEmails []string `pulumi:"notifyEmails"`
+	// Enables to set timeout for processing
+	Timeouts *PropertyIncludeActivationTimeouts `pulumi:"timeouts"`
 	// The validation information in JSON format
 	Validations *string `pulumi:"validations"`
 	// The unique identifier of the include
@@ -124,6 +128,8 @@ type PropertyIncludeActivationState struct {
 	Note pulumi.StringPtrInput
 	// The list of email addresses to notify about an activation status
 	NotifyEmails pulumi.StringArrayInput
+	// Enables to set timeout for processing
+	Timeouts PropertyIncludeActivationTimeoutsPtrInput
 	// The validation information in JSON format
 	Validations pulumi.StringPtrInput
 	// The unique identifier of the include
@@ -151,6 +157,8 @@ type propertyIncludeActivationArgs struct {
 	Note *string `pulumi:"note"`
 	// The list of email addresses to notify about an activation status
 	NotifyEmails []string `pulumi:"notifyEmails"`
+	// Enables to set timeout for processing
+	Timeouts *PropertyIncludeActivationTimeouts `pulumi:"timeouts"`
 	// The unique identifier of the include
 	Version int `pulumi:"version"`
 }
@@ -173,6 +181,8 @@ type PropertyIncludeActivationArgs struct {
 	Note pulumi.StringPtrInput
 	// The list of email addresses to notify about an activation status
 	NotifyEmails pulumi.StringArrayInput
+	// Enables to set timeout for processing
+	Timeouts PropertyIncludeActivationTimeoutsPtrInput
 	// The unique identifier of the include
 	Version pulumi.IntInput
 }
@@ -304,6 +314,11 @@ func (o PropertyIncludeActivationOutput) Note() pulumi.StringPtrOutput {
 // The list of email addresses to notify about an activation status
 func (o PropertyIncludeActivationOutput) NotifyEmails() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *PropertyIncludeActivation) pulumi.StringArrayOutput { return v.NotifyEmails }).(pulumi.StringArrayOutput)
+}
+
+// Enables to set timeout for processing
+func (o PropertyIncludeActivationOutput) Timeouts() PropertyIncludeActivationTimeoutsPtrOutput {
+	return o.ApplyT(func(v *PropertyIncludeActivation) PropertyIncludeActivationTimeoutsPtrOutput { return v.Timeouts }).(PropertyIncludeActivationTimeoutsPtrOutput)
 }
 
 // The validation information in JSON format

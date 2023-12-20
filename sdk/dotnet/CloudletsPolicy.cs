@@ -55,6 +55,12 @@ namespace Pulumi.Akamai
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Output("timeouts")]
+        public Output<Outputs.CloudletsPolicyTimeouts?> Timeouts { get; private set; } = null!;
+
+        /// <summary>
         /// The version number of the policy
         /// </summary>
         [Output("version")]
@@ -148,6 +154,12 @@ namespace Pulumi.Akamai
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.CloudletsPolicyTimeoutsArgs>? Timeouts { get; set; }
+
         public CloudletsPolicyArgs()
         {
         }
@@ -197,6 +209,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
+
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.CloudletsPolicyTimeoutsGetArgs>? Timeouts { get; set; }
 
         /// <summary>
         /// The version number of the policy

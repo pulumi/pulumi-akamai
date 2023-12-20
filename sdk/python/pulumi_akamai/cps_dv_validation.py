@@ -8,6 +8,8 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['CpsDvValidationArgs', 'CpsDvValidation']
 
@@ -15,15 +17,19 @@ __all__ = ['CpsDvValidationArgs', 'CpsDvValidation']
 class CpsDvValidationArgs:
     def __init__(__self__, *,
                  enrollment_id: pulumi.Input[int],
-                 sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+                 sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 timeouts: Optional[pulumi.Input['CpsDvValidationTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a CpsDvValidation resource.
         :param pulumi.Input[int] enrollment_id: The unique identifier of enrollment
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: List of SANs
+        :param pulumi.Input['CpsDvValidationTimeoutsArgs'] timeouts: Enables to set timeout for processing
         """
         pulumi.set(__self__, "enrollment_id", enrollment_id)
         if sans is not None:
             pulumi.set(__self__, "sans", sans)
+        if timeouts is not None:
+            pulumi.set(__self__, "timeouts", timeouts)
 
     @property
     @pulumi.getter(name="enrollmentId")
@@ -49,18 +55,32 @@ class CpsDvValidationArgs:
     def sans(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "sans", value)
 
+    @property
+    @pulumi.getter
+    def timeouts(self) -> Optional[pulumi.Input['CpsDvValidationTimeoutsArgs']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
+
+    @timeouts.setter
+    def timeouts(self, value: Optional[pulumi.Input['CpsDvValidationTimeoutsArgs']]):
+        pulumi.set(self, "timeouts", value)
+
 
 @pulumi.input_type
 class _CpsDvValidationState:
     def __init__(__self__, *,
                  enrollment_id: Optional[pulumi.Input[int]] = None,
                  sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 status: Optional[pulumi.Input[str]] = None):
+                 status: Optional[pulumi.Input[str]] = None,
+                 timeouts: Optional[pulumi.Input['CpsDvValidationTimeoutsArgs']] = None):
         """
         Input properties used for looking up and filtering CpsDvValidation resources.
         :param pulumi.Input[int] enrollment_id: The unique identifier of enrollment
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: List of SANs
         :param pulumi.Input[str] status: Status of validation
+        :param pulumi.Input['CpsDvValidationTimeoutsArgs'] timeouts: Enables to set timeout for processing
         """
         if enrollment_id is not None:
             pulumi.set(__self__, "enrollment_id", enrollment_id)
@@ -68,6 +88,8 @@ class _CpsDvValidationState:
             pulumi.set(__self__, "sans", sans)
         if status is not None:
             pulumi.set(__self__, "status", status)
+        if timeouts is not None:
+            pulumi.set(__self__, "timeouts", timeouts)
 
     @property
     @pulumi.getter(name="enrollmentId")
@@ -105,6 +127,18 @@ class _CpsDvValidationState:
     def status(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "status", value)
 
+    @property
+    @pulumi.getter
+    def timeouts(self) -> Optional[pulumi.Input['CpsDvValidationTimeoutsArgs']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
+
+    @timeouts.setter
+    def timeouts(self, value: Optional[pulumi.Input['CpsDvValidationTimeoutsArgs']]):
+        pulumi.set(self, "timeouts", value)
+
 
 class CpsDvValidation(pulumi.CustomResource):
     @overload
@@ -113,6 +147,7 @@ class CpsDvValidation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enrollment_id: Optional[pulumi.Input[int]] = None,
                  sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 timeouts: Optional[pulumi.Input[pulumi.InputType['CpsDvValidationTimeoutsArgs']]] = None,
                  __props__=None):
         """
         Create a CpsDvValidation resource with the given unique name, props, and options.
@@ -120,6 +155,7 @@ class CpsDvValidation(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] enrollment_id: The unique identifier of enrollment
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: List of SANs
+        :param pulumi.Input[pulumi.InputType['CpsDvValidationTimeoutsArgs']] timeouts: Enables to set timeout for processing
         """
         ...
     @overload
@@ -146,6 +182,7 @@ class CpsDvValidation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enrollment_id: Optional[pulumi.Input[int]] = None,
                  sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 timeouts: Optional[pulumi.Input[pulumi.InputType['CpsDvValidationTimeoutsArgs']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -159,6 +196,7 @@ class CpsDvValidation(pulumi.CustomResource):
                 raise TypeError("Missing required property 'enrollment_id'")
             __props__.__dict__["enrollment_id"] = enrollment_id
             __props__.__dict__["sans"] = sans
+            __props__.__dict__["timeouts"] = timeouts
             __props__.__dict__["status"] = None
         super(CpsDvValidation, __self__).__init__(
             'akamai:index/cpsDvValidation:CpsDvValidation',
@@ -172,7 +210,8 @@ class CpsDvValidation(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             enrollment_id: Optional[pulumi.Input[int]] = None,
             sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            status: Optional[pulumi.Input[str]] = None) -> 'CpsDvValidation':
+            status: Optional[pulumi.Input[str]] = None,
+            timeouts: Optional[pulumi.Input[pulumi.InputType['CpsDvValidationTimeoutsArgs']]] = None) -> 'CpsDvValidation':
         """
         Get an existing CpsDvValidation resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -183,6 +222,7 @@ class CpsDvValidation(pulumi.CustomResource):
         :param pulumi.Input[int] enrollment_id: The unique identifier of enrollment
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: List of SANs
         :param pulumi.Input[str] status: Status of validation
+        :param pulumi.Input[pulumi.InputType['CpsDvValidationTimeoutsArgs']] timeouts: Enables to set timeout for processing
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -191,6 +231,7 @@ class CpsDvValidation(pulumi.CustomResource):
         __props__.__dict__["enrollment_id"] = enrollment_id
         __props__.__dict__["sans"] = sans
         __props__.__dict__["status"] = status
+        __props__.__dict__["timeouts"] = timeouts
         return CpsDvValidation(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -216,4 +257,12 @@ class CpsDvValidation(pulumi.CustomResource):
         Status of validation
         """
         return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter
+    def timeouts(self) -> pulumi.Output[Optional['outputs.CpsDvValidationTimeouts']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
 

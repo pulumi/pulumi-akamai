@@ -144,6 +144,8 @@ import com.pulumi.akamai.inputs.GetBotmanCustomClientArgs;
 import com.pulumi.akamai.inputs.GetBotmanCustomClientPlainArgs;
 import com.pulumi.akamai.inputs.GetBotmanCustomClientSequenceArgs;
 import com.pulumi.akamai.inputs.GetBotmanCustomClientSequencePlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanCustomCodeArgs;
+import com.pulumi.akamai.inputs.GetBotmanCustomCodePlainArgs;
 import com.pulumi.akamai.inputs.GetBotmanCustomDefinedBotArgs;
 import com.pulumi.akamai.inputs.GetBotmanCustomDefinedBotPlainArgs;
 import com.pulumi.akamai.inputs.GetBotmanCustomDenyActionArgs;
@@ -342,6 +344,7 @@ import com.pulumi.akamai.outputs.GetBotmanCustomBotCategoryResult;
 import com.pulumi.akamai.outputs.GetBotmanCustomBotCategorySequenceResult;
 import com.pulumi.akamai.outputs.GetBotmanCustomClientResult;
 import com.pulumi.akamai.outputs.GetBotmanCustomClientSequenceResult;
+import com.pulumi.akamai.outputs.GetBotmanCustomCodeResult;
 import com.pulumi.akamai.outputs.GetBotmanCustomDefinedBotResult;
 import com.pulumi.akamai.outputs.GetBotmanCustomDenyActionResult;
 import com.pulumi.akamai.outputs.GetBotmanJavascriptInjectionResult;
@@ -1347,6 +1350,18 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetBotmanCustomClientSequenceResult> getBotmanCustomClientSequencePlain(GetBotmanCustomClientSequencePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getBotmanCustomClientSequence:getBotmanCustomClientSequence", TypeShape.of(GetBotmanCustomClientSequenceResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanCustomCodeResult> getBotmanCustomCode(GetBotmanCustomCodeArgs args) {
+        return getBotmanCustomCode(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanCustomCodeResult> getBotmanCustomCodePlain(GetBotmanCustomCodePlainArgs args) {
+        return getBotmanCustomCodePlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanCustomCodeResult> getBotmanCustomCode(GetBotmanCustomCodeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanCustomCode:getBotmanCustomCode", TypeShape.of(GetBotmanCustomCodeResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanCustomCodeResult> getBotmanCustomCodePlain(GetBotmanCustomCodePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanCustomCode:getBotmanCustomCode", TypeShape.of(GetBotmanCustomCodeResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetBotmanCustomDefinedBotResult> getBotmanCustomDefinedBot(GetBotmanCustomDefinedBotArgs args) {
         return getBotmanCustomDefinedBot(args, InvokeOptions.Empty);
