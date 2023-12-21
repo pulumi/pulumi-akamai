@@ -148,93 +148,93 @@ namespace Pulumi.Akamai.Outputs
         public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorMediaAccelerationQuicOptoutResult? MediaAccelerationQuicOptout;
         public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorMediaClientResult? MediaClient;
         public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorMediaFileRetrievalOptimizationResult? MediaFileRetrievalOptimization;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorMediaOriginFailoverResult? MediaOriginFailover;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorMetadataCachingResult? MetadataCaching;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorMobileSdkPerformanceResult? MobileSdkPerformance;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorModifyIncomingRequestHeaderResult? ModifyIncomingRequestHeader;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorModifyIncomingResponseHeaderResult? ModifyIncomingResponseHeader;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorModifyOutgoingRequestHeaderResult? ModifyOutgoingRequestHeader;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorModifyOutgoingResponseHeaderResult? ModifyOutgoingResponseHeader;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorModifyViaHeaderResult? ModifyViaHeader;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginResult? Origin;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginCharacteristicsResult? OriginCharacteristics;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginCharacteristicsWsdResult? OriginCharacteristicsWsd;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginFailureRecoveryMethodResult? OriginFailureRecoveryMethod;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginFailureRecoveryPolicyResult? OriginFailureRecoveryPolicy;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginIpAclResult? OriginIpAcl;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorPermissionsPolicyResult? PermissionsPolicy;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorPersistentClientConnectionResult? PersistentClientConnection;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorPersistentConnectionResult? PersistentConnection;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorPersonallyIdentifiableInformationResult? PersonallyIdentifiableInformation;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorPhasedReleaseResult? PhasedRelease;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorPreconnectResult? Preconnect;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorPredictiveContentDeliveryResult? PredictiveContentDelivery;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorPredictivePrefetchingResult? PredictivePrefetching;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorPrefetchResult? Prefetch;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorPrefetchableResult? Prefetchable;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorPrefreshCacheResult? PrefreshCache;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorQualityResult? Quality;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorQuicBetaResult? QuicBeta;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRandomSeekResult? RandomSeek;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRapidResult? Rapid;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorReadTimeoutResult? ReadTimeout;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRealTimeReportingResult? RealTimeReporting;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRealUserMonitoringResult? RealUserMonitoring;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRedirectResult? Redirect;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRedirectplusResult? Redirectplus;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRefererCheckingResult? RefererChecking;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRemoveQueryParameterResult? RemoveQueryParameter;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRemoveVaryResult? RemoveVary;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorReportResult? Report;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRequestClientHintsResult? RequestClientHints;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRequestControlResult? RequestControl;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRequestTypeMarkerResult? RequestTypeMarker;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorResourceOptimizerResult? ResourceOptimizer;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorResourceOptimizerExtendedCompatibilityResult? ResourceOptimizerExtendedCompatibility;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorResponseCodeResult? ResponseCode;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorResponseCookieResult? ResponseCookie;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRestrictObjectCachingResult? RestrictObjectCaching;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorReturnCacheStatusResult? ReturnCacheStatus;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRewriteUrlResult? RewriteUrl;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRumCustomResult? RumCustom;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorSaasDefinitionsResult? SaasDefinitions;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudClientResult? SalesForceCommerceCloudClient;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudProviderResult? SalesForceCommerceCloudProvider;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudProviderHostHeaderResult? SalesForceCommerceCloudProviderHostHeader;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorSavePostDcaProcessingResult? SavePostDcaProcessing;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorScheduleInvalidationResult? ScheduleInvalidation;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorScriptManagementResult? ScriptManagement;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedContentProtectionResult? SegmentedContentProtection;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedMediaOptimizationResult? SegmentedMediaOptimization;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedMediaStreamingPrefetchResult? SegmentedMediaStreamingPrefetch;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorSetVariableResult? SetVariable;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorSimulateErrorCodeResult? SimulateErrorCode;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorSiteShieldResult? SiteShield;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorStandardTlsMigrationResult? StandardTlsMigration;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorStandardTlsMigrationOverrideResult? StandardTlsMigrationOverride;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorStrictHeaderParsingResult? StrictHeaderParsing;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorSubCustomerResult? SubCustomer;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorSureRouteResult? SureRoute;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorTcpOptimizationResult? TcpOptimization;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorTeaLeafResult? TeaLeaf;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionResult? TieredDistribution;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionAdvancedResult? TieredDistributionAdvanced;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionCustomizationResult? TieredDistributionCustomization;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorTimeoutResult? Timeout;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorUidConfigurationResult? UidConfiguration;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorValidateEntityTagResult? ValidateEntityTag;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorVerifyJsonWebTokenResult? VerifyJsonWebToken;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorVerifyJsonWebTokenForDcpResult? VerifyJsonWebTokenForDcp;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorVerifyTokenAuthorizationResult? VerifyTokenAuthorization;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorVirtualWaitingRoomResult? VirtualWaitingRoom;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorVirtualWaitingRoomWithEdgeWorkersResult? VirtualWaitingRoomWithEdgeWorkers;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationResult? VisitorPrioritization;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationFifoResult? VisitorPrioritizationFifo;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationFifoStandaloneResult? VisitorPrioritizationFifoStandalone;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorWatermarkingResult? Watermarking;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorWebApplicationFirewallResult? WebApplicationFirewall;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorWebSocketsResult? WebSockets;
-        public readonly Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorWebdavResult? Webdav;
+        public readonly Outputs.MediaOriginFailoverResult? MediaOriginFailover;
+        public readonly Outputs.MetadataCachingResult? MetadataCaching;
+        public readonly Outputs.MobileSdkPerformanceResult? MobileSdkPerformance;
+        public readonly Outputs.ModifyIncomingRequestHeaderResult? ModifyIncomingRequestHeader;
+        public readonly Outputs.ModifyIncomingResponseHeaderResult? ModifyIncomingResponseHeader;
+        public readonly Outputs.ModifyOutgoingRequestHeaderResult? ModifyOutgoingRequestHeader;
+        public readonly Outputs.ModifyOutgoingResponseHeaderResult? ModifyOutgoingResponseHeader;
+        public readonly Outputs.ModifyViaHeaderResult? ModifyViaHeader;
+        public readonly Outputs.OriginResult? Origin;
+        public readonly Outputs.OriginCharacteristicsResult? OriginCharacteristics;
+        public readonly Outputs.OriginCharacteristicsWsdResult? OriginCharacteristicsWsd;
+        public readonly Outputs.OriginFailureRecoveryMethodResult? OriginFailureRecoveryMethod;
+        public readonly Outputs.OriginFailureRecoveryPolicyResult? OriginFailureRecoveryPolicy;
+        public readonly Outputs.OriginIpAclResult? OriginIpAcl;
+        public readonly Outputs.PermissionsPolicyResult? PermissionsPolicy;
+        public readonly Outputs.PersistentClientConnectionResult? PersistentClientConnection;
+        public readonly Outputs.PersistentConnectionResult? PersistentConnection;
+        public readonly Outputs.PersonallyIdentifiableInformationResult? PersonallyIdentifiableInformation;
+        public readonly Outputs.PhasedReleaseResult? PhasedRelease;
+        public readonly Outputs.PreconnectResult? Preconnect;
+        public readonly Outputs.PredictiveContentDeliveryResult? PredictiveContentDelivery;
+        public readonly Outputs.PredictivePrefetchingResult? PredictivePrefetching;
+        public readonly Outputs.PrefetchResult? Prefetch;
+        public readonly Outputs.PrefetchableResult? Prefetchable;
+        public readonly Outputs.PrefreshCacheResult? PrefreshCache;
+        public readonly Outputs.QualityResult? Quality;
+        public readonly Outputs.QuicBetaResult? QuicBeta;
+        public readonly Outputs.RandomSeekResult? RandomSeek;
+        public readonly Outputs.RapidResult? Rapid;
+        public readonly Outputs.ReadTimeoutResult? ReadTimeout;
+        public readonly Outputs.RealTimeReportingResult? RealTimeReporting;
+        public readonly Outputs.RealUserMonitoringResult? RealUserMonitoring;
+        public readonly Outputs.RedirectResult? Redirect;
+        public readonly Outputs.RedirectplusResult? Redirectplus;
+        public readonly Outputs.RefererCheckingResult? RefererChecking;
+        public readonly Outputs.RemoveQueryParameterResult? RemoveQueryParameter;
+        public readonly Outputs.RemoveVaryResult? RemoveVary;
+        public readonly Outputs.ReportResult? Report;
+        public readonly Outputs.RequestClientHintsResult? RequestClientHints;
+        public readonly Outputs.RequestControlResult? RequestControl;
+        public readonly Outputs.RequestTypeMarkerResult? RequestTypeMarker;
+        public readonly Outputs.ResourceOptimizerResult? ResourceOptimizer;
+        public readonly Outputs.ResourceOptimizerExtendedCompatibilityResult? ResourceOptimizerExtendedCompatibility;
+        public readonly Outputs.ResponseCodeResult? ResponseCode;
+        public readonly Outputs.ResponseCookieResult? ResponseCookie;
+        public readonly Outputs.RestrictObjectCachingResult? RestrictObjectCaching;
+        public readonly Outputs.ReturnCacheStatusResult? ReturnCacheStatus;
+        public readonly Outputs.RewriteUrlResult? RewriteUrl;
+        public readonly Outputs.RumCustomResult? RumCustom;
+        public readonly Outputs.SaasDefinitionsResult? SaasDefinitions;
+        public readonly Outputs.SalesForceCommerceCloudClientResult? SalesForceCommerceCloudClient;
+        public readonly Outputs.SalesForceCommerceCloudProviderResult? SalesForceCommerceCloudProvider;
+        public readonly Outputs.SalesForceCommerceCloudProviderHostHeaderResult? SalesForceCommerceCloudProviderHostHeader;
+        public readonly Outputs.SavePostDcaProcessingResult? SavePostDcaProcessing;
+        public readonly Outputs.ScheduleInvalidationResult? ScheduleInvalidation;
+        public readonly Outputs.ScriptManagementResult? ScriptManagement;
+        public readonly Outputs.SegmentedContentProtectionResult? SegmentedContentProtection;
+        public readonly Outputs.SegmentedMediaOptimizationResult? SegmentedMediaOptimization;
+        public readonly Outputs.SegmentedMediaStreamingPrefetchResult? SegmentedMediaStreamingPrefetch;
+        public readonly Outputs.SetVariableResult? SetVariable;
+        public readonly Outputs.SimulateErrorCodeResult? SimulateErrorCode;
+        public readonly Outputs.SiteShieldResult? SiteShield;
+        public readonly Outputs.StandardTlsMigrationResult? StandardTlsMigration;
+        public readonly Outputs.StandardTlsMigrationOverrideResult? StandardTlsMigrationOverride;
+        public readonly Outputs.StrictHeaderParsingResult? StrictHeaderParsing;
+        public readonly Outputs.SubCustomerResult? SubCustomer;
+        public readonly Outputs.SureRouteResult? SureRoute;
+        public readonly Outputs.TcpOptimizationResult? TcpOptimization;
+        public readonly Outputs.TeaLeafResult? TeaLeaf;
+        public readonly Outputs.TieredDistributionResult? TieredDistribution;
+        public readonly Outputs.TieredDistributionAdvancedResult? TieredDistributionAdvanced;
+        public readonly Outputs.TieredDistributionCustomizationResult? TieredDistributionCustomization;
+        public readonly Outputs.TimeoutResult? Timeout;
+        public readonly Outputs.UidConfigurationResult? UidConfiguration;
+        public readonly Outputs.ValidateEntityTagResult? ValidateEntityTag;
+        public readonly Outputs.VerifyJsonWebTokenResult? VerifyJsonWebToken;
+        public readonly Outputs.VerifyJsonWebTokenForDcpResult? VerifyJsonWebTokenForDcp;
+        public readonly Outputs.VerifyTokenAuthorizationResult? VerifyTokenAuthorization;
+        public readonly Outputs.VirtualWaitingRoomResult? VirtualWaitingRoom;
+        public readonly Outputs.VirtualWaitingRoomWithEdgeWorkersResult? VirtualWaitingRoomWithEdgeWorkers;
+        public readonly Outputs.VisitorPrioritizationResult? VisitorPrioritization;
+        public readonly Outputs.VisitorPrioritizationFifoResult? VisitorPrioritizationFifo;
+        public readonly Outputs.VisitorPrioritizationFifoStandaloneResult? VisitorPrioritizationFifoStandalone;
+        public readonly Outputs.WatermarkingResult? Watermarking;
+        public readonly Outputs.WebApplicationFirewallResult? WebApplicationFirewall;
+        public readonly Outputs.WebSocketsResult? WebSockets;
+        public readonly Outputs.WebdavResult? Webdav;
 
         [OutputConstructor]
         private GetPropertyRulesBuilderRulesV20231030BehaviorResult(
@@ -508,179 +508,179 @@ namespace Pulumi.Akamai.Outputs
 
             Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorMediaFileRetrievalOptimizationResult? mediaFileRetrievalOptimization,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorMediaOriginFailoverResult? mediaOriginFailover,
+            Outputs.MediaOriginFailoverResult? mediaOriginFailover,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorMetadataCachingResult? metadataCaching,
+            Outputs.MetadataCachingResult? metadataCaching,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorMobileSdkPerformanceResult? mobileSdkPerformance,
+            Outputs.MobileSdkPerformanceResult? mobileSdkPerformance,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorModifyIncomingRequestHeaderResult? modifyIncomingRequestHeader,
+            Outputs.ModifyIncomingRequestHeaderResult? modifyIncomingRequestHeader,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorModifyIncomingResponseHeaderResult? modifyIncomingResponseHeader,
+            Outputs.ModifyIncomingResponseHeaderResult? modifyIncomingResponseHeader,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorModifyOutgoingRequestHeaderResult? modifyOutgoingRequestHeader,
+            Outputs.ModifyOutgoingRequestHeaderResult? modifyOutgoingRequestHeader,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorModifyOutgoingResponseHeaderResult? modifyOutgoingResponseHeader,
+            Outputs.ModifyOutgoingResponseHeaderResult? modifyOutgoingResponseHeader,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorModifyViaHeaderResult? modifyViaHeader,
+            Outputs.ModifyViaHeaderResult? modifyViaHeader,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginResult? origin,
+            Outputs.OriginResult? origin,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginCharacteristicsResult? originCharacteristics,
+            Outputs.OriginCharacteristicsResult? originCharacteristics,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginCharacteristicsWsdResult? originCharacteristicsWsd,
+            Outputs.OriginCharacteristicsWsdResult? originCharacteristicsWsd,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginFailureRecoveryMethodResult? originFailureRecoveryMethod,
+            Outputs.OriginFailureRecoveryMethodResult? originFailureRecoveryMethod,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginFailureRecoveryPolicyResult? originFailureRecoveryPolicy,
+            Outputs.OriginFailureRecoveryPolicyResult? originFailureRecoveryPolicy,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginIpAclResult? originIpAcl,
+            Outputs.OriginIpAclResult? originIpAcl,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorPermissionsPolicyResult? permissionsPolicy,
+            Outputs.PermissionsPolicyResult? permissionsPolicy,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorPersistentClientConnectionResult? persistentClientConnection,
+            Outputs.PersistentClientConnectionResult? persistentClientConnection,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorPersistentConnectionResult? persistentConnection,
+            Outputs.PersistentConnectionResult? persistentConnection,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorPersonallyIdentifiableInformationResult? personallyIdentifiableInformation,
+            Outputs.PersonallyIdentifiableInformationResult? personallyIdentifiableInformation,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorPhasedReleaseResult? phasedRelease,
+            Outputs.PhasedReleaseResult? phasedRelease,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorPreconnectResult? preconnect,
+            Outputs.PreconnectResult? preconnect,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorPredictiveContentDeliveryResult? predictiveContentDelivery,
+            Outputs.PredictiveContentDeliveryResult? predictiveContentDelivery,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorPredictivePrefetchingResult? predictivePrefetching,
+            Outputs.PredictivePrefetchingResult? predictivePrefetching,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorPrefetchResult? prefetch,
+            Outputs.PrefetchResult? prefetch,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorPrefetchableResult? prefetchable,
+            Outputs.PrefetchableResult? prefetchable,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorPrefreshCacheResult? prefreshCache,
+            Outputs.PrefreshCacheResult? prefreshCache,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorQualityResult? quality,
+            Outputs.QualityResult? quality,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorQuicBetaResult? quicBeta,
+            Outputs.QuicBetaResult? quicBeta,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRandomSeekResult? randomSeek,
+            Outputs.RandomSeekResult? randomSeek,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRapidResult? rapid,
+            Outputs.RapidResult? rapid,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorReadTimeoutResult? readTimeout,
+            Outputs.ReadTimeoutResult? readTimeout,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRealTimeReportingResult? realTimeReporting,
+            Outputs.RealTimeReportingResult? realTimeReporting,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRealUserMonitoringResult? realUserMonitoring,
+            Outputs.RealUserMonitoringResult? realUserMonitoring,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRedirectResult? redirect,
+            Outputs.RedirectResult? redirect,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRedirectplusResult? redirectplus,
+            Outputs.RedirectplusResult? redirectplus,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRefererCheckingResult? refererChecking,
+            Outputs.RefererCheckingResult? refererChecking,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRemoveQueryParameterResult? removeQueryParameter,
+            Outputs.RemoveQueryParameterResult? removeQueryParameter,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRemoveVaryResult? removeVary,
+            Outputs.RemoveVaryResult? removeVary,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorReportResult? report,
+            Outputs.ReportResult? report,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRequestClientHintsResult? requestClientHints,
+            Outputs.RequestClientHintsResult? requestClientHints,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRequestControlResult? requestControl,
+            Outputs.RequestControlResult? requestControl,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRequestTypeMarkerResult? requestTypeMarker,
+            Outputs.RequestTypeMarkerResult? requestTypeMarker,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorResourceOptimizerResult? resourceOptimizer,
+            Outputs.ResourceOptimizerResult? resourceOptimizer,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorResourceOptimizerExtendedCompatibilityResult? resourceOptimizerExtendedCompatibility,
+            Outputs.ResourceOptimizerExtendedCompatibilityResult? resourceOptimizerExtendedCompatibility,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorResponseCodeResult? responseCode,
+            Outputs.ResponseCodeResult? responseCode,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorResponseCookieResult? responseCookie,
+            Outputs.ResponseCookieResult? responseCookie,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRestrictObjectCachingResult? restrictObjectCaching,
+            Outputs.RestrictObjectCachingResult? restrictObjectCaching,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorReturnCacheStatusResult? returnCacheStatus,
+            Outputs.ReturnCacheStatusResult? returnCacheStatus,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRewriteUrlResult? rewriteUrl,
+            Outputs.RewriteUrlResult? rewriteUrl,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorRumCustomResult? rumCustom,
+            Outputs.RumCustomResult? rumCustom,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorSaasDefinitionsResult? saasDefinitions,
+            Outputs.SaasDefinitionsResult? saasDefinitions,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudClientResult? salesForceCommerceCloudClient,
+            Outputs.SalesForceCommerceCloudClientResult? salesForceCommerceCloudClient,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudProviderResult? salesForceCommerceCloudProvider,
+            Outputs.SalesForceCommerceCloudProviderResult? salesForceCommerceCloudProvider,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudProviderHostHeaderResult? salesForceCommerceCloudProviderHostHeader,
+            Outputs.SalesForceCommerceCloudProviderHostHeaderResult? salesForceCommerceCloudProviderHostHeader,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorSavePostDcaProcessingResult? savePostDcaProcessing,
+            Outputs.SavePostDcaProcessingResult? savePostDcaProcessing,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorScheduleInvalidationResult? scheduleInvalidation,
+            Outputs.ScheduleInvalidationResult? scheduleInvalidation,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorScriptManagementResult? scriptManagement,
+            Outputs.ScriptManagementResult? scriptManagement,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedContentProtectionResult? segmentedContentProtection,
+            Outputs.SegmentedContentProtectionResult? segmentedContentProtection,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedMediaOptimizationResult? segmentedMediaOptimization,
+            Outputs.SegmentedMediaOptimizationResult? segmentedMediaOptimization,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedMediaStreamingPrefetchResult? segmentedMediaStreamingPrefetch,
+            Outputs.SegmentedMediaStreamingPrefetchResult? segmentedMediaStreamingPrefetch,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorSetVariableResult? setVariable,
+            Outputs.SetVariableResult? setVariable,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorSimulateErrorCodeResult? simulateErrorCode,
+            Outputs.SimulateErrorCodeResult? simulateErrorCode,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorSiteShieldResult? siteShield,
+            Outputs.SiteShieldResult? siteShield,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorStandardTlsMigrationResult? standardTlsMigration,
+            Outputs.StandardTlsMigrationResult? standardTlsMigration,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorStandardTlsMigrationOverrideResult? standardTlsMigrationOverride,
+            Outputs.StandardTlsMigrationOverrideResult? standardTlsMigrationOverride,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorStrictHeaderParsingResult? strictHeaderParsing,
+            Outputs.StrictHeaderParsingResult? strictHeaderParsing,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorSubCustomerResult? subCustomer,
+            Outputs.SubCustomerResult? subCustomer,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorSureRouteResult? sureRoute,
+            Outputs.SureRouteResult? sureRoute,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorTcpOptimizationResult? tcpOptimization,
+            Outputs.TcpOptimizationResult? tcpOptimization,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorTeaLeafResult? teaLeaf,
+            Outputs.TeaLeafResult? teaLeaf,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionResult? tieredDistribution,
+            Outputs.TieredDistributionResult? tieredDistribution,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionAdvancedResult? tieredDistributionAdvanced,
+            Outputs.TieredDistributionAdvancedResult? tieredDistributionAdvanced,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionCustomizationResult? tieredDistributionCustomization,
+            Outputs.TieredDistributionCustomizationResult? tieredDistributionCustomization,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorTimeoutResult? timeout,
+            Outputs.TimeoutResult? timeout,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorUidConfigurationResult? uidConfiguration,
+            Outputs.UidConfigurationResult? uidConfiguration,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorValidateEntityTagResult? validateEntityTag,
+            Outputs.ValidateEntityTagResult? validateEntityTag,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorVerifyJsonWebTokenResult? verifyJsonWebToken,
+            Outputs.VerifyJsonWebTokenResult? verifyJsonWebToken,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorVerifyJsonWebTokenForDcpResult? verifyJsonWebTokenForDcp,
+            Outputs.VerifyJsonWebTokenForDcpResult? verifyJsonWebTokenForDcp,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorVerifyTokenAuthorizationResult? verifyTokenAuthorization,
+            Outputs.VerifyTokenAuthorizationResult? verifyTokenAuthorization,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorVirtualWaitingRoomResult? virtualWaitingRoom,
+            Outputs.VirtualWaitingRoomResult? virtualWaitingRoom,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorVirtualWaitingRoomWithEdgeWorkersResult? virtualWaitingRoomWithEdgeWorkers,
+            Outputs.VirtualWaitingRoomWithEdgeWorkersResult? virtualWaitingRoomWithEdgeWorkers,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationResult? visitorPrioritization,
+            Outputs.VisitorPrioritizationResult? visitorPrioritization,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationFifoResult? visitorPrioritizationFifo,
+            Outputs.VisitorPrioritizationFifoResult? visitorPrioritizationFifo,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationFifoStandaloneResult? visitorPrioritizationFifoStandalone,
+            Outputs.VisitorPrioritizationFifoStandaloneResult? visitorPrioritizationFifoStandalone,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorWatermarkingResult? watermarking,
+            Outputs.WatermarkingResult? watermarking,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorWebApplicationFirewallResult? webApplicationFirewall,
+            Outputs.WebApplicationFirewallResult? webApplicationFirewall,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorWebSocketsResult? webSockets,
+            Outputs.WebSocketsResult? webSockets,
 
-            Outputs.GetPropertyRulesBuilderRulesV20231030BehaviorWebdavResult? webdav)
+            Outputs.WebdavResult? webdav)
         {
             AdScalerCircuitBreaker = adScalerCircuitBreaker;
             AdaptiveAcceleration = adaptiveAcceleration;

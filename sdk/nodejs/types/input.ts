@@ -3264,92 +3264,92 @@ export interface GetPropertyRulesBuilderRulesV20230105Behavior {
     mediaAccelerationQuicOptout?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorMediaAccelerationQuicOptout;
     mediaClient?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorMediaClient;
     mediaFileRetrievalOptimization?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorMediaFileRetrievalOptimization;
-    mediaOriginFailover?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorMediaOriginFailover;
-    metadataCaching?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorMetadataCaching;
-    mobileSdkPerformance?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorMobileSdkPerformance;
-    modifyIncomingRequestHeader?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorModifyIncomingRequestHeader;
-    modifyIncomingResponseHeader?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorModifyIncomingResponseHeader;
-    modifyOutgoingRequestHeader?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorModifyOutgoingRequestHeader;
-    modifyOutgoingResponseHeader?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorModifyOutgoingResponseHeader;
-    modifyViaHeader?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorModifyViaHeader;
-    origin?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOrigin;
-    originCharacteristics?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristics;
-    originCharacteristicsWsd?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristicsWsd;
-    originFailureRecoveryMethod?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginFailureRecoveryMethod;
-    originFailureRecoveryPolicy?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginFailureRecoveryPolicy;
-    originIpAcl?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginIpAcl;
-    persistentClientConnection?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPersistentClientConnection;
-    persistentConnection?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPersistentConnection;
-    personallyIdentifiableInformation?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPersonallyIdentifiableInformation;
-    phasedRelease?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPhasedRelease;
-    preconnect?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPreconnect;
-    predictiveContentDelivery?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPredictiveContentDelivery;
-    predictivePrefetching?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPredictivePrefetching;
-    prefetch?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPrefetch;
-    prefetchable?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPrefetchable;
-    prefreshCache?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPrefreshCache;
-    quality?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorQuality;
-    quicBeta?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorQuicBeta;
-    randomSeek?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRandomSeek;
-    rapid?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRapid;
-    readTimeout?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorReadTimeout;
-    realTimeReporting?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRealTimeReporting;
-    realUserMonitoring?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRealUserMonitoring;
-    redirect?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRedirect;
-    redirectplus?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRedirectplus;
-    refererChecking?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRefererChecking;
-    removeQueryParameter?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRemoveQueryParameter;
-    removeVary?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRemoveVary;
-    report?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorReport;
-    requestControl?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRequestControl;
-    requestTypeMarker?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRequestTypeMarker;
-    resourceOptimizer?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorResourceOptimizer;
-    resourceOptimizerExtendedCompatibility?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorResourceOptimizerExtendedCompatibility;
-    responseCode?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorResponseCode;
-    responseCookie?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorResponseCookie;
-    restrictObjectCaching?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRestrictObjectCaching;
-    returnCacheStatus?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorReturnCacheStatus;
-    rewriteUrl?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRewriteUrl;
-    rumCustom?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRumCustom;
-    saasDefinitions?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSaasDefinitions;
-    salesForceCommerceCloudClient?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudClient;
-    salesForceCommerceCloudProvider?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudProvider;
-    salesForceCommerceCloudProviderHostHeader?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudProviderHostHeader;
-    savePostDcaProcessing?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSavePostDcaProcessing;
-    scheduleInvalidation?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorScheduleInvalidation;
-    scriptManagement?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorScriptManagement;
-    segmentedContentProtection?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedContentProtection;
-    segmentedMediaOptimization?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaOptimization;
-    segmentedMediaStreamingPrefetch?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaStreamingPrefetch;
-    setVariable?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSetVariable;
-    shutr?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorShutr;
-    simulateErrorCode?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSimulateErrorCode;
-    siteShield?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSiteShield;
-    standardTlsMigration?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorStandardTlsMigration;
-    standardTlsMigrationOverride?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorStandardTlsMigrationOverride;
-    strictHeaderParsing?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorStrictHeaderParsing;
-    subCustomer?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSubCustomer;
-    sureRoute?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSureRoute;
-    tcpOptimization?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorTcpOptimization;
-    teaLeaf?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorTeaLeaf;
-    tieredDistribution?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistribution;
-    tieredDistributionAdvanced?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionAdvanced;
-    tieredDistributionCustomization?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionCustomization;
-    timeout?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorTimeout;
-    uidConfiguration?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorUidConfiguration;
-    validateEntityTag?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorValidateEntityTag;
-    verifyJsonWebToken?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVerifyJsonWebToken;
-    verifyJsonWebTokenForDcp?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVerifyJsonWebTokenForDcp;
-    verifyTokenAuthorization?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVerifyTokenAuthorization;
-    virtualWaitingRoom?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVirtualWaitingRoom;
-    virtualWaitingRoomWithEdgeWorkers?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVirtualWaitingRoomWithEdgeWorkers;
-    visitorPrioritization?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritization;
-    visitorPrioritizationFifo?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationFifo;
-    visitorPrioritizationFifoStandalone?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationFifoStandalone;
-    watermarking?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorWatermarking;
-    webApplicationFirewall?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorWebApplicationFirewall;
-    webSockets?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorWebSockets;
-    webdav?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorWebdav;
+    mediaOriginFailover?: inputs.MediaOriginFailover;
+    metadataCaching?: inputs.MetadataCaching;
+    mobileSdkPerformance?: inputs.MobileSdkPerformance;
+    modifyIncomingRequestHeader?: inputs.ModifyIncomingRequestHeader;
+    modifyIncomingResponseHeader?: inputs.ModifyIncomingResponseHeader;
+    modifyOutgoingRequestHeader?: inputs.ModifyOutgoingRequestHeader;
+    modifyOutgoingResponseHeader?: inputs.ModifyOutgoingResponseHeader;
+    modifyViaHeader?: inputs.ModifyViaHeader;
+    origin?: inputs.Origin;
+    originCharacteristics?: inputs.OriginCharacteristics;
+    originCharacteristicsWsd?: inputs.OriginCharacteristicsWsd;
+    originFailureRecoveryMethod?: inputs.OriginFailureRecoveryMethod;
+    originFailureRecoveryPolicy?: inputs.OriginFailureRecoveryPolicy;
+    originIpAcl?: inputs.OriginIpAcl;
+    persistentClientConnection?: inputs.PersistentClientConnection;
+    persistentConnection?: inputs.PersistentConnection;
+    personallyIdentifiableInformation?: inputs.PersonallyIdentifiableInformation;
+    phasedRelease?: inputs.PhasedRelease;
+    preconnect?: inputs.Preconnect;
+    predictiveContentDelivery?: inputs.PredictiveContentDelivery;
+    predictivePrefetching?: inputs.PredictivePrefetching;
+    prefetch?: inputs.Prefetch;
+    prefetchable?: inputs.Prefetchable;
+    prefreshCache?: inputs.PrefreshCache;
+    quality?: inputs.Quality;
+    quicBeta?: inputs.QuicBeta;
+    randomSeek?: inputs.RandomSeek;
+    rapid?: inputs.Rapid;
+    readTimeout?: inputs.ReadTimeout;
+    realTimeReporting?: inputs.RealTimeReporting;
+    realUserMonitoring?: inputs.RealUserMonitoring;
+    redirect?: inputs.Redirect;
+    redirectplus?: inputs.Redirectplus;
+    refererChecking?: inputs.RefererChecking;
+    removeQueryParameter?: inputs.RemoveQueryParameter;
+    removeVary?: inputs.RemoveVary;
+    report?: inputs.Report;
+    requestControl?: inputs.RequestControl;
+    requestTypeMarker?: inputs.RequestTypeMarker;
+    resourceOptimizer?: inputs.ResourceOptimizer;
+    resourceOptimizerExtendedCompatibility?: inputs.ResourceOptimizerExtendedCompatibility;
+    responseCode?: inputs.ResponseCode;
+    responseCookie?: inputs.ResponseCookie;
+    restrictObjectCaching?: inputs.RestrictObjectCaching;
+    returnCacheStatus?: inputs.ReturnCacheStatus;
+    rewriteUrl?: inputs.RewriteUrl;
+    rumCustom?: inputs.RumCustom;
+    saasDefinitions?: inputs.SaasDefinitions;
+    salesForceCommerceCloudClient?: inputs.SalesForceCommerceCloudClient;
+    salesForceCommerceCloudProvider?: inputs.SalesForceCommerceCloudProvider;
+    salesForceCommerceCloudProviderHostHeader?: inputs.SalesForceCommerceCloudProviderHostHeader;
+    savePostDcaProcessing?: inputs.SavePostDcaProcessing;
+    scheduleInvalidation?: inputs.ScheduleInvalidation;
+    scriptManagement?: inputs.ScriptManagement;
+    segmentedContentProtection?: inputs.SegmentedContentProtection;
+    segmentedMediaOptimization?: inputs.SegmentedMediaOptimization;
+    segmentedMediaStreamingPrefetch?: inputs.SegmentedMediaStreamingPrefetch;
+    setVariable?: inputs.SetVariable;
+    shutr?: inputs.Shutr;
+    simulateErrorCode?: inputs.SimulateErrorCode;
+    siteShield?: inputs.SiteShield;
+    standardTlsMigration?: inputs.StandardTlsMigration;
+    standardTlsMigrationOverride?: inputs.StandardTlsMigrationOverride;
+    strictHeaderParsing?: inputs.StrictHeaderParsing;
+    subCustomer?: inputs.SubCustomer;
+    sureRoute?: inputs.SureRoute;
+    tcpOptimization?: inputs.TcpOptimization;
+    teaLeaf?: inputs.TeaLeaf;
+    tieredDistribution?: inputs.TieredDistribution;
+    tieredDistributionAdvanced?: inputs.TieredDistributionAdvanced;
+    tieredDistributionCustomization?: inputs.TieredDistributionCustomization;
+    timeout?: inputs.Timeout;
+    uidConfiguration?: inputs.UidConfiguration;
+    validateEntityTag?: inputs.ValidateEntityTag;
+    verifyJsonWebToken?: inputs.VerifyJsonWebToken;
+    verifyJsonWebTokenForDcp?: inputs.VerifyJsonWebTokenForDcp;
+    verifyTokenAuthorization?: inputs.VerifyTokenAuthorization;
+    virtualWaitingRoom?: inputs.VirtualWaitingRoom;
+    virtualWaitingRoomWithEdgeWorkers?: inputs.VirtualWaitingRoomWithEdgeWorkers;
+    visitorPrioritization?: inputs.VisitorPrioritization;
+    visitorPrioritizationFifo?: inputs.VisitorPrioritizationFifo;
+    visitorPrioritizationFifoStandalone?: inputs.VisitorPrioritizationFifoStandalone;
+    watermarking?: inputs.Watermarking;
+    webApplicationFirewall?: inputs.WebApplicationFirewall;
+    webSockets?: inputs.WebSockets;
+    webdav?: inputs.Webdav;
 }
 
 export interface GetPropertyRulesBuilderRulesV20230105BehaviorArgs {
@@ -3486,92 +3486,92 @@ export interface GetPropertyRulesBuilderRulesV20230105BehaviorArgs {
     mediaAccelerationQuicOptout?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorMediaAccelerationQuicOptoutArgs>;
     mediaClient?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorMediaClientArgs>;
     mediaFileRetrievalOptimization?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorMediaFileRetrievalOptimizationArgs>;
-    mediaOriginFailover?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorMediaOriginFailoverArgs>;
-    metadataCaching?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorMetadataCachingArgs>;
-    mobileSdkPerformance?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorMobileSdkPerformanceArgs>;
-    modifyIncomingRequestHeader?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorModifyIncomingRequestHeaderArgs>;
-    modifyIncomingResponseHeader?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorModifyIncomingResponseHeaderArgs>;
-    modifyOutgoingRequestHeader?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorModifyOutgoingRequestHeaderArgs>;
-    modifyOutgoingResponseHeader?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorModifyOutgoingResponseHeaderArgs>;
-    modifyViaHeader?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorModifyViaHeaderArgs>;
-    origin?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginArgs>;
-    originCharacteristics?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristicsArgs>;
-    originCharacteristicsWsd?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristicsWsdArgs>;
-    originFailureRecoveryMethod?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginFailureRecoveryMethodArgs>;
-    originFailureRecoveryPolicy?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginFailureRecoveryPolicyArgs>;
-    originIpAcl?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginIpAclArgs>;
-    persistentClientConnection?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPersistentClientConnectionArgs>;
-    persistentConnection?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPersistentConnectionArgs>;
-    personallyIdentifiableInformation?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPersonallyIdentifiableInformationArgs>;
-    phasedRelease?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPhasedReleaseArgs>;
-    preconnect?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPreconnectArgs>;
-    predictiveContentDelivery?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPredictiveContentDeliveryArgs>;
-    predictivePrefetching?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPredictivePrefetchingArgs>;
-    prefetch?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPrefetchArgs>;
-    prefetchable?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPrefetchableArgs>;
-    prefreshCache?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPrefreshCacheArgs>;
-    quality?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorQualityArgs>;
-    quicBeta?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorQuicBetaArgs>;
-    randomSeek?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRandomSeekArgs>;
-    rapid?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRapidArgs>;
-    readTimeout?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorReadTimeoutArgs>;
-    realTimeReporting?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRealTimeReportingArgs>;
-    realUserMonitoring?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRealUserMonitoringArgs>;
-    redirect?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRedirectArgs>;
-    redirectplus?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRedirectplusArgs>;
-    refererChecking?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRefererCheckingArgs>;
-    removeQueryParameter?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRemoveQueryParameterArgs>;
-    removeVary?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRemoveVaryArgs>;
-    report?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorReportArgs>;
-    requestControl?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlArgs>;
-    requestTypeMarker?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRequestTypeMarkerArgs>;
-    resourceOptimizer?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorResourceOptimizerArgs>;
-    resourceOptimizerExtendedCompatibility?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorResourceOptimizerExtendedCompatibilityArgs>;
-    responseCode?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorResponseCodeArgs>;
-    responseCookie?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorResponseCookieArgs>;
-    restrictObjectCaching?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRestrictObjectCachingArgs>;
-    returnCacheStatus?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorReturnCacheStatusArgs>;
-    rewriteUrl?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRewriteUrlArgs>;
-    rumCustom?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRumCustomArgs>;
-    saasDefinitions?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSaasDefinitionsArgs>;
-    salesForceCommerceCloudClient?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudClientArgs>;
-    salesForceCommerceCloudProvider?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudProviderArgs>;
-    salesForceCommerceCloudProviderHostHeader?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudProviderHostHeaderArgs>;
-    savePostDcaProcessing?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSavePostDcaProcessingArgs>;
-    scheduleInvalidation?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorScheduleInvalidationArgs>;
-    scriptManagement?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorScriptManagementArgs>;
-    segmentedContentProtection?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedContentProtectionArgs>;
-    segmentedMediaOptimization?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaOptimizationArgs>;
-    segmentedMediaStreamingPrefetch?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaStreamingPrefetchArgs>;
-    setVariable?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSetVariableArgs>;
-    shutr?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorShutrArgs>;
-    simulateErrorCode?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSimulateErrorCodeArgs>;
-    siteShield?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldArgs>;
-    standardTlsMigration?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorStandardTlsMigrationArgs>;
-    standardTlsMigrationOverride?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorStandardTlsMigrationOverrideArgs>;
-    strictHeaderParsing?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorStrictHeaderParsingArgs>;
-    subCustomer?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSubCustomerArgs>;
-    sureRoute?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSureRouteArgs>;
-    tcpOptimization?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorTcpOptimizationArgs>;
-    teaLeaf?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorTeaLeafArgs>;
-    tieredDistribution?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionArgs>;
-    tieredDistributionAdvanced?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionAdvancedArgs>;
-    tieredDistributionCustomization?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionCustomizationArgs>;
-    timeout?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorTimeoutArgs>;
-    uidConfiguration?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorUidConfigurationArgs>;
-    validateEntityTag?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorValidateEntityTagArgs>;
-    verifyJsonWebToken?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVerifyJsonWebTokenArgs>;
-    verifyJsonWebTokenForDcp?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVerifyJsonWebTokenForDcpArgs>;
-    verifyTokenAuthorization?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVerifyTokenAuthorizationArgs>;
-    virtualWaitingRoom?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVirtualWaitingRoomArgs>;
-    virtualWaitingRoomWithEdgeWorkers?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVirtualWaitingRoomWithEdgeWorkersArgs>;
-    visitorPrioritization?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationArgs>;
-    visitorPrioritizationFifo?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationFifoArgs>;
-    visitorPrioritizationFifoStandalone?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationFifoStandaloneArgs>;
-    watermarking?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorWatermarkingArgs>;
-    webApplicationFirewall?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorWebApplicationFirewallArgs>;
-    webSockets?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorWebSocketsArgs>;
-    webdav?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorWebdavArgs>;
+    mediaOriginFailover?: pulumi.Input<inputs.MediaOriginFailoverArgs>;
+    metadataCaching?: pulumi.Input<inputs.MetadataCachingArgs>;
+    mobileSdkPerformance?: pulumi.Input<inputs.MobileSdkPerformanceArgs>;
+    modifyIncomingRequestHeader?: pulumi.Input<inputs.ModifyIncomingRequestHeaderArgs>;
+    modifyIncomingResponseHeader?: pulumi.Input<inputs.ModifyIncomingResponseHeaderArgs>;
+    modifyOutgoingRequestHeader?: pulumi.Input<inputs.ModifyOutgoingRequestHeaderArgs>;
+    modifyOutgoingResponseHeader?: pulumi.Input<inputs.ModifyOutgoingResponseHeaderArgs>;
+    modifyViaHeader?: pulumi.Input<inputs.ModifyViaHeaderArgs>;
+    origin?: pulumi.Input<inputs.OriginArgs>;
+    originCharacteristics?: pulumi.Input<inputs.OriginCharacteristicsArgs>;
+    originCharacteristicsWsd?: pulumi.Input<inputs.OriginCharacteristicsWsdArgs>;
+    originFailureRecoveryMethod?: pulumi.Input<inputs.OriginFailureRecoveryMethodArgs>;
+    originFailureRecoveryPolicy?: pulumi.Input<inputs.OriginFailureRecoveryPolicyArgs>;
+    originIpAcl?: pulumi.Input<inputs.OriginIpAclArgs>;
+    persistentClientConnection?: pulumi.Input<inputs.PersistentClientConnectionArgs>;
+    persistentConnection?: pulumi.Input<inputs.PersistentConnectionArgs>;
+    personallyIdentifiableInformation?: pulumi.Input<inputs.PersonallyIdentifiableInformationArgs>;
+    phasedRelease?: pulumi.Input<inputs.PhasedReleaseArgs>;
+    preconnect?: pulumi.Input<inputs.PreconnectArgs>;
+    predictiveContentDelivery?: pulumi.Input<inputs.PredictiveContentDeliveryArgs>;
+    predictivePrefetching?: pulumi.Input<inputs.PredictivePrefetchingArgs>;
+    prefetch?: pulumi.Input<inputs.PrefetchArgs>;
+    prefetchable?: pulumi.Input<inputs.PrefetchableArgs>;
+    prefreshCache?: pulumi.Input<inputs.PrefreshCacheArgs>;
+    quality?: pulumi.Input<inputs.QualityArgs>;
+    quicBeta?: pulumi.Input<inputs.QuicBetaArgs>;
+    randomSeek?: pulumi.Input<inputs.RandomSeekArgs>;
+    rapid?: pulumi.Input<inputs.RapidArgs>;
+    readTimeout?: pulumi.Input<inputs.ReadTimeoutArgs>;
+    realTimeReporting?: pulumi.Input<inputs.RealTimeReportingArgs>;
+    realUserMonitoring?: pulumi.Input<inputs.RealUserMonitoringArgs>;
+    redirect?: pulumi.Input<inputs.RedirectArgs>;
+    redirectplus?: pulumi.Input<inputs.RedirectplusArgs>;
+    refererChecking?: pulumi.Input<inputs.RefererCheckingArgs>;
+    removeQueryParameter?: pulumi.Input<inputs.RemoveQueryParameterArgs>;
+    removeVary?: pulumi.Input<inputs.RemoveVaryArgs>;
+    report?: pulumi.Input<inputs.ReportArgs>;
+    requestControl?: pulumi.Input<inputs.RequestControlArgs>;
+    requestTypeMarker?: pulumi.Input<inputs.RequestTypeMarkerArgs>;
+    resourceOptimizer?: pulumi.Input<inputs.ResourceOptimizerArgs>;
+    resourceOptimizerExtendedCompatibility?: pulumi.Input<inputs.ResourceOptimizerExtendedCompatibilityArgs>;
+    responseCode?: pulumi.Input<inputs.ResponseCodeArgs>;
+    responseCookie?: pulumi.Input<inputs.ResponseCookieArgs>;
+    restrictObjectCaching?: pulumi.Input<inputs.RestrictObjectCachingArgs>;
+    returnCacheStatus?: pulumi.Input<inputs.ReturnCacheStatusArgs>;
+    rewriteUrl?: pulumi.Input<inputs.RewriteUrlArgs>;
+    rumCustom?: pulumi.Input<inputs.RumCustomArgs>;
+    saasDefinitions?: pulumi.Input<inputs.SaasDefinitionsArgs>;
+    salesForceCommerceCloudClient?: pulumi.Input<inputs.SalesForceCommerceCloudClientArgs>;
+    salesForceCommerceCloudProvider?: pulumi.Input<inputs.SalesForceCommerceCloudProviderArgs>;
+    salesForceCommerceCloudProviderHostHeader?: pulumi.Input<inputs.SalesForceCommerceCloudProviderHostHeaderArgs>;
+    savePostDcaProcessing?: pulumi.Input<inputs.SavePostDcaProcessingArgs>;
+    scheduleInvalidation?: pulumi.Input<inputs.ScheduleInvalidationArgs>;
+    scriptManagement?: pulumi.Input<inputs.ScriptManagementArgs>;
+    segmentedContentProtection?: pulumi.Input<inputs.SegmentedContentProtectionArgs>;
+    segmentedMediaOptimization?: pulumi.Input<inputs.SegmentedMediaOptimizationArgs>;
+    segmentedMediaStreamingPrefetch?: pulumi.Input<inputs.SegmentedMediaStreamingPrefetchArgs>;
+    setVariable?: pulumi.Input<inputs.SetVariableArgs>;
+    shutr?: pulumi.Input<inputs.ShutrArgs>;
+    simulateErrorCode?: pulumi.Input<inputs.SimulateErrorCodeArgs>;
+    siteShield?: pulumi.Input<inputs.SiteShieldArgs>;
+    standardTlsMigration?: pulumi.Input<inputs.StandardTlsMigrationArgs>;
+    standardTlsMigrationOverride?: pulumi.Input<inputs.StandardTlsMigrationOverrideArgs>;
+    strictHeaderParsing?: pulumi.Input<inputs.StrictHeaderParsingArgs>;
+    subCustomer?: pulumi.Input<inputs.SubCustomerArgs>;
+    sureRoute?: pulumi.Input<inputs.SureRouteArgs>;
+    tcpOptimization?: pulumi.Input<inputs.TcpOptimizationArgs>;
+    teaLeaf?: pulumi.Input<inputs.TeaLeafArgs>;
+    tieredDistribution?: pulumi.Input<inputs.TieredDistributionArgs>;
+    tieredDistributionAdvanced?: pulumi.Input<inputs.TieredDistributionAdvancedArgs>;
+    tieredDistributionCustomization?: pulumi.Input<inputs.TieredDistributionCustomizationArgs>;
+    timeout?: pulumi.Input<inputs.TimeoutArgs>;
+    uidConfiguration?: pulumi.Input<inputs.UidConfigurationArgs>;
+    validateEntityTag?: pulumi.Input<inputs.ValidateEntityTagArgs>;
+    verifyJsonWebToken?: pulumi.Input<inputs.VerifyJsonWebTokenArgs>;
+    verifyJsonWebTokenForDcp?: pulumi.Input<inputs.VerifyJsonWebTokenForDcpArgs>;
+    verifyTokenAuthorization?: pulumi.Input<inputs.VerifyTokenAuthorizationArgs>;
+    virtualWaitingRoom?: pulumi.Input<inputs.VirtualWaitingRoomArgs>;
+    virtualWaitingRoomWithEdgeWorkers?: pulumi.Input<inputs.VirtualWaitingRoomWithEdgeWorkersArgs>;
+    visitorPrioritization?: pulumi.Input<inputs.VisitorPrioritizationArgs>;
+    visitorPrioritizationFifo?: pulumi.Input<inputs.VisitorPrioritizationFifoArgs>;
+    visitorPrioritizationFifoStandalone?: pulumi.Input<inputs.VisitorPrioritizationFifoStandaloneArgs>;
+    watermarking?: pulumi.Input<inputs.WatermarkingArgs>;
+    webApplicationFirewall?: pulumi.Input<inputs.WebApplicationFirewallArgs>;
+    webSockets?: pulumi.Input<inputs.WebSocketsArgs>;
+    webdav?: pulumi.Input<inputs.WebdavArgs>;
 }
 
 export interface GetPropertyRulesBuilderRulesV20230105BehaviorAdScalerCircuitBreaker {
@@ -6916,2540 +6916,6 @@ export interface GetPropertyRulesBuilderRulesV20230105BehaviorMediaFileRetrieval
     uuid?: pulumi.Input<string>;
 }
 
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorMediaOriginFailover {
-    cacheErrorResponse?: boolean;
-    cacheWindow?: string;
-    clientResponseCode?: string;
-    detectObjectUnavailable?: boolean;
-    detectObjectUnavailableTitle?: string;
-    detectOriginUnavailable?: boolean;
-    detectOriginUnavailableTitle?: string;
-    detectOriginUnresponsive?: boolean;
-    detectOriginUnresponsiveTitle?: string;
-    locked?: boolean;
-    objectUnavailableAlternateHost?: string;
-    objectUnavailableBackupHost?: string;
-    objectUnavailableBlacklistOriginIp?: boolean;
-    objectUnavailableBlacklistWindow?: string;
-    objectUnavailableChangeProtocol?: boolean;
-    objectUnavailableDetectionLevel?: string;
-    objectUnavailableIncludeQueryString?: boolean;
-    objectUnavailableModifiedPath?: string;
-    objectUnavailableModifyRequestPath?: boolean;
-    objectUnavailableProtocol?: string;
-    objectUnavailableRecovery?: string;
-    objectUnavailableRedirectMethod?: number;
-    objectUnavailableResponseCodes?: string[];
-    objectUnavailableRetryLimit?: string;
-    originUnavailableAlternateHost?: string;
-    originUnavailableBackupHost?: string;
-    originUnavailableBlacklistOriginIp?: boolean;
-    originUnavailableBlacklistWindow?: string;
-    originUnavailableChangeProtocol?: boolean;
-    originUnavailableDetectionLevel?: string;
-    originUnavailableIncludeQueryString?: boolean;
-    originUnavailableModifiedPath?: string;
-    originUnavailableModifyRequestPath?: boolean;
-    originUnavailableProtocol?: string;
-    originUnavailableRecovery?: string;
-    originUnavailableRedirectMethod?: number;
-    originUnavailableResponseCodes?: string[];
-    originUnavailableRetryLimit?: string;
-    originUnresponsiveAlternateHost?: string;
-    originUnresponsiveBackupHost?: string;
-    originUnresponsiveBlacklistOriginIp?: boolean;
-    originUnresponsiveBlacklistWindow?: string;
-    originUnresponsiveChangeProtocol?: boolean;
-    originUnresponsiveDetectionLevel?: string;
-    originUnresponsiveIncludeQueryString?: boolean;
-    originUnresponsiveModifiedPath?: string;
-    originUnresponsiveModifyRequestPath?: boolean;
-    originUnresponsiveProtocol?: string;
-    originUnresponsiveRecovery?: string;
-    originUnresponsiveRedirectMethod?: number;
-    originUnresponsiveRetryLimit?: string;
-    otherOptions?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorMediaOriginFailoverArgs {
-    cacheErrorResponse?: pulumi.Input<boolean>;
-    cacheWindow?: pulumi.Input<string>;
-    clientResponseCode?: pulumi.Input<string>;
-    detectObjectUnavailable?: pulumi.Input<boolean>;
-    detectObjectUnavailableTitle?: pulumi.Input<string>;
-    detectOriginUnavailable?: pulumi.Input<boolean>;
-    detectOriginUnavailableTitle?: pulumi.Input<string>;
-    detectOriginUnresponsive?: pulumi.Input<boolean>;
-    detectOriginUnresponsiveTitle?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    objectUnavailableAlternateHost?: pulumi.Input<string>;
-    objectUnavailableBackupHost?: pulumi.Input<string>;
-    objectUnavailableBlacklistOriginIp?: pulumi.Input<boolean>;
-    objectUnavailableBlacklistWindow?: pulumi.Input<string>;
-    objectUnavailableChangeProtocol?: pulumi.Input<boolean>;
-    objectUnavailableDetectionLevel?: pulumi.Input<string>;
-    objectUnavailableIncludeQueryString?: pulumi.Input<boolean>;
-    objectUnavailableModifiedPath?: pulumi.Input<string>;
-    objectUnavailableModifyRequestPath?: pulumi.Input<boolean>;
-    objectUnavailableProtocol?: pulumi.Input<string>;
-    objectUnavailableRecovery?: pulumi.Input<string>;
-    objectUnavailableRedirectMethod?: pulumi.Input<number>;
-    objectUnavailableResponseCodes?: pulumi.Input<pulumi.Input<string>[]>;
-    objectUnavailableRetryLimit?: pulumi.Input<string>;
-    originUnavailableAlternateHost?: pulumi.Input<string>;
-    originUnavailableBackupHost?: pulumi.Input<string>;
-    originUnavailableBlacklistOriginIp?: pulumi.Input<boolean>;
-    originUnavailableBlacklistWindow?: pulumi.Input<string>;
-    originUnavailableChangeProtocol?: pulumi.Input<boolean>;
-    originUnavailableDetectionLevel?: pulumi.Input<string>;
-    originUnavailableIncludeQueryString?: pulumi.Input<boolean>;
-    originUnavailableModifiedPath?: pulumi.Input<string>;
-    originUnavailableModifyRequestPath?: pulumi.Input<boolean>;
-    originUnavailableProtocol?: pulumi.Input<string>;
-    originUnavailableRecovery?: pulumi.Input<string>;
-    originUnavailableRedirectMethod?: pulumi.Input<number>;
-    originUnavailableResponseCodes?: pulumi.Input<pulumi.Input<string>[]>;
-    originUnavailableRetryLimit?: pulumi.Input<string>;
-    originUnresponsiveAlternateHost?: pulumi.Input<string>;
-    originUnresponsiveBackupHost?: pulumi.Input<string>;
-    originUnresponsiveBlacklistOriginIp?: pulumi.Input<boolean>;
-    originUnresponsiveBlacklistWindow?: pulumi.Input<string>;
-    originUnresponsiveChangeProtocol?: pulumi.Input<boolean>;
-    originUnresponsiveDetectionLevel?: pulumi.Input<string>;
-    originUnresponsiveIncludeQueryString?: pulumi.Input<boolean>;
-    originUnresponsiveModifiedPath?: pulumi.Input<string>;
-    originUnresponsiveModifyRequestPath?: pulumi.Input<boolean>;
-    originUnresponsiveProtocol?: pulumi.Input<string>;
-    originUnresponsiveRecovery?: pulumi.Input<string>;
-    originUnresponsiveRedirectMethod?: pulumi.Input<number>;
-    originUnresponsiveRetryLimit?: pulumi.Input<string>;
-    otherOptions?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorMetadataCaching {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorMetadataCachingArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorMobileSdkPerformance {
-    enabled?: boolean;
-    locked?: boolean;
-    secondaryMultipathToOrigin?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorMobileSdkPerformanceArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    secondaryMultipathToOrigin?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorModifyIncomingRequestHeader {
-    action?: string;
-    avoidDuplicateHeaders?: boolean;
-    customHeaderName?: string;
-    headerValue?: string;
-    locked?: boolean;
-    newHeaderValue?: string;
-    standardAddHeaderName?: string;
-    standardDeleteHeaderName?: string;
-    standardModifyHeaderName?: string;
-    standardPassHeaderName?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorModifyIncomingRequestHeaderArgs {
-    action?: pulumi.Input<string>;
-    avoidDuplicateHeaders?: pulumi.Input<boolean>;
-    customHeaderName?: pulumi.Input<string>;
-    headerValue?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    newHeaderValue?: pulumi.Input<string>;
-    standardAddHeaderName?: pulumi.Input<string>;
-    standardDeleteHeaderName?: pulumi.Input<string>;
-    standardModifyHeaderName?: pulumi.Input<string>;
-    standardPassHeaderName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorModifyIncomingResponseHeader {
-    action?: string;
-    avoidDuplicateHeaders?: boolean;
-    customHeaderName?: string;
-    headerValue?: string;
-    locked?: boolean;
-    newHeaderValue?: string;
-    standardAddHeaderName?: string;
-    standardDeleteHeaderName?: string;
-    standardModifyHeaderName?: string;
-    standardPassHeaderName?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorModifyIncomingResponseHeaderArgs {
-    action?: pulumi.Input<string>;
-    avoidDuplicateHeaders?: pulumi.Input<boolean>;
-    customHeaderName?: pulumi.Input<string>;
-    headerValue?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    newHeaderValue?: pulumi.Input<string>;
-    standardAddHeaderName?: pulumi.Input<string>;
-    standardDeleteHeaderName?: pulumi.Input<string>;
-    standardModifyHeaderName?: pulumi.Input<string>;
-    standardPassHeaderName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorModifyOutgoingRequestHeader {
-    action?: string;
-    avoidDuplicateHeaders?: boolean;
-    customHeaderName?: string;
-    headerValue?: string;
-    locked?: boolean;
-    matchMultiple?: boolean;
-    newHeaderValue?: string;
-    regexHeaderMatch?: string;
-    regexHeaderReplace?: string;
-    standardAddHeaderName?: string;
-    standardDeleteHeaderName?: string;
-    standardModifyHeaderName?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorModifyOutgoingRequestHeaderArgs {
-    action?: pulumi.Input<string>;
-    avoidDuplicateHeaders?: pulumi.Input<boolean>;
-    customHeaderName?: pulumi.Input<string>;
-    headerValue?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    matchMultiple?: pulumi.Input<boolean>;
-    newHeaderValue?: pulumi.Input<string>;
-    regexHeaderMatch?: pulumi.Input<string>;
-    regexHeaderReplace?: pulumi.Input<string>;
-    standardAddHeaderName?: pulumi.Input<string>;
-    standardDeleteHeaderName?: pulumi.Input<string>;
-    standardModifyHeaderName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorModifyOutgoingResponseHeader {
-    action?: string;
-    avoidDuplicateHeaders?: boolean;
-    customHeaderName?: string;
-    headerValue?: string;
-    locked?: boolean;
-    matchMultiple?: boolean;
-    newHeaderValue?: string;
-    regexHeaderMatch?: string;
-    regexHeaderReplace?: string;
-    standardAddHeaderName?: string;
-    standardDeleteHeaderName?: string;
-    standardModifyHeaderName?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorModifyOutgoingResponseHeaderArgs {
-    action?: pulumi.Input<string>;
-    avoidDuplicateHeaders?: pulumi.Input<boolean>;
-    customHeaderName?: pulumi.Input<string>;
-    headerValue?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    matchMultiple?: pulumi.Input<boolean>;
-    newHeaderValue?: pulumi.Input<string>;
-    regexHeaderMatch?: pulumi.Input<string>;
-    regexHeaderReplace?: pulumi.Input<string>;
-    standardAddHeaderName?: pulumi.Input<string>;
-    standardDeleteHeaderName?: pulumi.Input<string>;
-    standardModifyHeaderName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorModifyViaHeader {
-    enabled?: boolean;
-    locked?: boolean;
-    modificationOption?: string;
-    renameHeaderTo?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorModifyViaHeaderArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    modificationOption?: pulumi.Input<string>;
-    renameHeaderTo?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorOrigin {
-    cacheKeyHostname?: string;
-    compress?: boolean;
-    customCertificateAuthorities?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthority[];
-    customCertificates?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificate[];
-    customForwardHostHeader?: string;
-    customValidCnValues?: string[];
-    enableTrueClientIp?: boolean;
-    forwardHostHeader?: string;
-    hostname?: string;
-    httpPort?: number;
-    httpsPort?: number;
-    ipVersion?: string;
-    locked?: boolean;
-    mslorigin?: string;
-    netStorage?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginNetStorage;
-    originCertificate?: string;
-    originCertsToHonor?: string;
-    originId?: string;
-    originSni?: boolean;
-    originType?: string;
-    ports?: string;
-    saasCnameEnabled?: boolean;
-    saasCnameLevel?: number;
-    saasCookie?: string;
-    saasQueryString?: string;
-    saasRegex?: string;
-    saasReplace?: string;
-    saasSuffix?: string;
-    saasType?: string;
-    secondHostname?: string;
-    secondHostnameEnabled?: boolean;
-    standardCertificateAuthorities?: string[];
-    templateUuid?: string;
-    trueClientIpClientSetting?: boolean;
-    trueClientIpHeader?: string;
-    useUniqueCacheKey?: boolean;
-    uuid?: string;
-    verificationMode?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginArgs {
-    cacheKeyHostname?: pulumi.Input<string>;
-    compress?: pulumi.Input<boolean>;
-    customCertificateAuthorities?: pulumi.Input<pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthorityArgs>[]>;
-    customCertificates?: pulumi.Input<pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateArgs>[]>;
-    customForwardHostHeader?: pulumi.Input<string>;
-    customValidCnValues?: pulumi.Input<pulumi.Input<string>[]>;
-    enableTrueClientIp?: pulumi.Input<boolean>;
-    forwardHostHeader?: pulumi.Input<string>;
-    hostname?: pulumi.Input<string>;
-    httpPort?: pulumi.Input<number>;
-    httpsPort?: pulumi.Input<number>;
-    ipVersion?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    mslorigin?: pulumi.Input<string>;
-    netStorage?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginNetStorageArgs>;
-    originCertificate?: pulumi.Input<string>;
-    originCertsToHonor?: pulumi.Input<string>;
-    originId?: pulumi.Input<string>;
-    originSni?: pulumi.Input<boolean>;
-    originType?: pulumi.Input<string>;
-    ports?: pulumi.Input<string>;
-    saasCnameEnabled?: pulumi.Input<boolean>;
-    saasCnameLevel?: pulumi.Input<number>;
-    saasCookie?: pulumi.Input<string>;
-    saasQueryString?: pulumi.Input<string>;
-    saasRegex?: pulumi.Input<string>;
-    saasReplace?: pulumi.Input<string>;
-    saasSuffix?: pulumi.Input<string>;
-    saasType?: pulumi.Input<string>;
-    secondHostname?: pulumi.Input<string>;
-    secondHostnameEnabled?: pulumi.Input<boolean>;
-    standardCertificateAuthorities?: pulumi.Input<pulumi.Input<string>[]>;
-    templateUuid?: pulumi.Input<string>;
-    trueClientIpClientSetting?: pulumi.Input<boolean>;
-    trueClientIpHeader?: pulumi.Input<string>;
-    useUniqueCacheKey?: pulumi.Input<boolean>;
-    uuid?: pulumi.Input<string>;
-    verificationMode?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristics {
-    accessKeyEncryptedStorage?: boolean;
-    adcTitle?: string;
-    authenticationMethod?: string;
-    authenticationMethodTitle?: string;
-    awsAccessKeyId?: string;
-    awsAccessKeyVersionGuid?: string;
-    awsHost?: string;
-    awsRegion?: string;
-    awsSecretAccessKey?: string;
-    awsService?: string;
-    country?: string;
-    customSignStrings?: string[];
-    directConnectGeo?: string;
-    encodingVersion?: number;
-    gcsAccessKeyVersionGuid?: string;
-    gcsHmacKeyAccessId?: string;
-    gcsHmacKeySecret?: string;
-    locked?: boolean;
-    mslkey?: string;
-    mslname?: string;
-    nonce?: string;
-    secretKey?: string;
-    templateUuid?: string;
-    useCustomSignString?: boolean;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristicsArgs {
-    accessKeyEncryptedStorage?: pulumi.Input<boolean>;
-    adcTitle?: pulumi.Input<string>;
-    authenticationMethod?: pulumi.Input<string>;
-    authenticationMethodTitle?: pulumi.Input<string>;
-    awsAccessKeyId?: pulumi.Input<string>;
-    awsAccessKeyVersionGuid?: pulumi.Input<string>;
-    awsHost?: pulumi.Input<string>;
-    awsRegion?: pulumi.Input<string>;
-    awsSecretAccessKey?: pulumi.Input<string>;
-    awsService?: pulumi.Input<string>;
-    country?: pulumi.Input<string>;
-    customSignStrings?: pulumi.Input<pulumi.Input<string>[]>;
-    directConnectGeo?: pulumi.Input<string>;
-    encodingVersion?: pulumi.Input<number>;
-    gcsAccessKeyVersionGuid?: pulumi.Input<string>;
-    gcsHmacKeyAccessId?: pulumi.Input<string>;
-    gcsHmacKeySecret?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    mslkey?: pulumi.Input<string>;
-    mslname?: pulumi.Input<string>;
-    nonce?: pulumi.Input<string>;
-    secretKey?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    useCustomSignString?: pulumi.Input<boolean>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristicsWsd {
-    locked?: boolean;
-    origintype?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristicsWsdArgs {
-    locked?: pulumi.Input<boolean>;
-    origintype?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificate {
-    canBeCa?: boolean;
-    canBeLeaf?: boolean;
-    issuerRdns?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateIssuerRdns;
-    notAfter?: number;
-    notBefore?: number;
-    pemEncodedCert?: string;
-    publicKey?: string;
-    publicKeyAlgorithm?: string;
-    publicKeyFormat?: string;
-    selfSigned?: boolean;
-    serialNumber?: string;
-    sha1Fingerprint?: string;
-    sigAlgName?: string;
-    subjectAlternativeNames?: string[];
-    subjectCn?: string;
-    subjectRdns?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateSubjectRdns;
-    version?: number;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateArgs {
-    canBeCa?: pulumi.Input<boolean>;
-    canBeLeaf?: pulumi.Input<boolean>;
-    issuerRdns?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateIssuerRdnsArgs>;
-    notAfter?: pulumi.Input<number>;
-    notBefore?: pulumi.Input<number>;
-    pemEncodedCert?: pulumi.Input<string>;
-    publicKey?: pulumi.Input<string>;
-    publicKeyAlgorithm?: pulumi.Input<string>;
-    publicKeyFormat?: pulumi.Input<string>;
-    selfSigned?: pulumi.Input<boolean>;
-    serialNumber?: pulumi.Input<string>;
-    sha1Fingerprint?: pulumi.Input<string>;
-    sigAlgName?: pulumi.Input<string>;
-    subjectAlternativeNames?: pulumi.Input<pulumi.Input<string>[]>;
-    subjectCn?: pulumi.Input<string>;
-    subjectRdns?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateSubjectRdnsArgs>;
-    version?: pulumi.Input<number>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthority {
-    canBeCa?: boolean;
-    canBeLeaf?: boolean;
-    issuerRdns?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthorityIssuerRdns;
-    notAfter?: number;
-    notBefore?: number;
-    pemEncodedCert?: string;
-    publicKey?: string;
-    publicKeyAlgorithm?: string;
-    publicKeyFormat?: string;
-    selfSigned?: boolean;
-    serialNumber?: string;
-    sha1Fingerprint?: string;
-    sigAlgName?: string;
-    subjectAlternativeNames?: string[];
-    subjectCn?: string;
-    subjectRdns?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthoritySubjectRdns;
-    version?: number;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthorityArgs {
-    canBeCa?: pulumi.Input<boolean>;
-    canBeLeaf?: pulumi.Input<boolean>;
-    issuerRdns?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthorityIssuerRdnsArgs>;
-    notAfter?: pulumi.Input<number>;
-    notBefore?: pulumi.Input<number>;
-    pemEncodedCert?: pulumi.Input<string>;
-    publicKey?: pulumi.Input<string>;
-    publicKeyAlgorithm?: pulumi.Input<string>;
-    publicKeyFormat?: pulumi.Input<string>;
-    selfSigned?: pulumi.Input<boolean>;
-    serialNumber?: pulumi.Input<string>;
-    sha1Fingerprint?: pulumi.Input<string>;
-    sigAlgName?: pulumi.Input<string>;
-    subjectAlternativeNames?: pulumi.Input<pulumi.Input<string>[]>;
-    subjectCn?: pulumi.Input<string>;
-    subjectRdns?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthoritySubjectRdnsArgs>;
-    version?: pulumi.Input<number>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthorityIssuerRdns {
-    c?: string;
-    cn?: string;
-    o?: string;
-    ou?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthorityIssuerRdnsArgs {
-    c?: pulumi.Input<string>;
-    cn?: pulumi.Input<string>;
-    o?: pulumi.Input<string>;
-    ou?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthoritySubjectRdns {
-    c?: string;
-    cn?: string;
-    o?: string;
-    ou?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthoritySubjectRdnsArgs {
-    c?: pulumi.Input<string>;
-    cn?: pulumi.Input<string>;
-    o?: pulumi.Input<string>;
-    ou?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateIssuerRdns {
-    c?: string;
-    cn?: string;
-    o?: string;
-    ou?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateIssuerRdnsArgs {
-    c?: pulumi.Input<string>;
-    cn?: pulumi.Input<string>;
-    o?: pulumi.Input<string>;
-    ou?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateSubjectRdns {
-    c?: string;
-    cn?: string;
-    o?: string;
-    ou?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateSubjectRdnsArgs {
-    c?: pulumi.Input<string>;
-    cn?: pulumi.Input<string>;
-    o?: pulumi.Input<string>;
-    ou?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginFailureRecoveryMethod {
-    customStatusCode?: string;
-    locked?: boolean;
-    recoveryMethod?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginFailureRecoveryMethodArgs {
-    customStatusCode?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    recoveryMethod?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginFailureRecoveryPolicy {
-    binaryEquivalentContent?: boolean;
-    enableIpAvoidance?: boolean;
-    enabled?: boolean;
-    ipAvoidanceErrorThreshold?: number;
-    ipAvoidanceRetryInterval?: number;
-    locked?: boolean;
-    monitorOriginResponsiveness?: boolean;
-    monitorResponseCodes1s?: string[];
-    monitorResponseCodes2s?: string[];
-    monitorResponseCodes3s?: string[];
-    monitorStatusCodes1?: boolean;
-    monitorStatusCodes1EnableRecovery?: boolean;
-    monitorStatusCodes1EnableRetry?: boolean;
-    monitorStatusCodes1RecoveryConfigName?: string;
-    monitorStatusCodes2?: boolean;
-    monitorStatusCodes2EnableRecovery?: boolean;
-    monitorStatusCodes2EnableRetry?: boolean;
-    monitorStatusCodes2RecoveryConfigName?: string;
-    monitorStatusCodes3?: boolean;
-    monitorStatusCodes3EnableRecovery?: boolean;
-    monitorStatusCodes3EnableRetry?: boolean;
-    monitorStatusCodes3RecoveryConfigName?: string;
-    originResponsivenessCustomTimeout?: number;
-    originResponsivenessEnableRecovery?: boolean;
-    originResponsivenessEnableRetry?: boolean;
-    originResponsivenessMonitoring?: string;
-    originResponsivenessRecoveryConfigName?: string;
-    originResponsivenessTimeout?: string;
-    statusCodeMonitoring1?: string;
-    statusCodeMonitoring2?: string;
-    statusCodeMonitoring3?: string;
-    templateUuid?: string;
-    tuningParameters?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginFailureRecoveryPolicyArgs {
-    binaryEquivalentContent?: pulumi.Input<boolean>;
-    enableIpAvoidance?: pulumi.Input<boolean>;
-    enabled?: pulumi.Input<boolean>;
-    ipAvoidanceErrorThreshold?: pulumi.Input<number>;
-    ipAvoidanceRetryInterval?: pulumi.Input<number>;
-    locked?: pulumi.Input<boolean>;
-    monitorOriginResponsiveness?: pulumi.Input<boolean>;
-    monitorResponseCodes1s?: pulumi.Input<pulumi.Input<string>[]>;
-    monitorResponseCodes2s?: pulumi.Input<pulumi.Input<string>[]>;
-    monitorResponseCodes3s?: pulumi.Input<pulumi.Input<string>[]>;
-    monitorStatusCodes1?: pulumi.Input<boolean>;
-    monitorStatusCodes1EnableRecovery?: pulumi.Input<boolean>;
-    monitorStatusCodes1EnableRetry?: pulumi.Input<boolean>;
-    monitorStatusCodes1RecoveryConfigName?: pulumi.Input<string>;
-    monitorStatusCodes2?: pulumi.Input<boolean>;
-    monitorStatusCodes2EnableRecovery?: pulumi.Input<boolean>;
-    monitorStatusCodes2EnableRetry?: pulumi.Input<boolean>;
-    monitorStatusCodes2RecoveryConfigName?: pulumi.Input<string>;
-    monitorStatusCodes3?: pulumi.Input<boolean>;
-    monitorStatusCodes3EnableRecovery?: pulumi.Input<boolean>;
-    monitorStatusCodes3EnableRetry?: pulumi.Input<boolean>;
-    monitorStatusCodes3RecoveryConfigName?: pulumi.Input<string>;
-    originResponsivenessCustomTimeout?: pulumi.Input<number>;
-    originResponsivenessEnableRecovery?: pulumi.Input<boolean>;
-    originResponsivenessEnableRetry?: pulumi.Input<boolean>;
-    originResponsivenessMonitoring?: pulumi.Input<string>;
-    originResponsivenessRecoveryConfigName?: pulumi.Input<string>;
-    originResponsivenessTimeout?: pulumi.Input<string>;
-    statusCodeMonitoring1?: pulumi.Input<string>;
-    statusCodeMonitoring2?: pulumi.Input<string>;
-    statusCodeMonitoring3?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    tuningParameters?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginIpAcl {
-    enable?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginIpAclArgs {
-    enable?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginNetStorage {
-    cpCode?: number;
-    downloadDomainName?: string;
-    g2oToken?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginNetStorageArgs {
-    cpCode?: pulumi.Input<number>;
-    downloadDomainName?: pulumi.Input<string>;
-    g2oToken?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorPersistentClientConnection {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    timeout?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorPersistentClientConnectionArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    timeout?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorPersistentConnection {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    timeout?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorPersistentConnectionArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    timeout?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorPersonallyIdentifiableInformation {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorPersonallyIdentifiableInformationArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorPhasedRelease {
-    cloudletPolicy?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPhasedReleaseCloudletPolicy;
-    enabled?: boolean;
-    failoverDuration?: number;
-    failoverEnabled?: boolean;
-    failoverResponseCodes?: string[];
-    failoverTitle?: string;
-    label?: string;
-    locked?: boolean;
-    populationCookieType?: string;
-    populationDuration?: string;
-    populationExpirationDate?: string;
-    populationRefresh?: boolean;
-    populationTitle?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorPhasedReleaseArgs {
-    cloudletPolicy?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPhasedReleaseCloudletPolicyArgs>;
-    enabled?: pulumi.Input<boolean>;
-    failoverDuration?: pulumi.Input<number>;
-    failoverEnabled?: pulumi.Input<boolean>;
-    failoverResponseCodes?: pulumi.Input<pulumi.Input<string>[]>;
-    failoverTitle?: pulumi.Input<string>;
-    label?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    populationCookieType?: pulumi.Input<string>;
-    populationDuration?: pulumi.Input<string>;
-    populationExpirationDate?: pulumi.Input<string>;
-    populationRefresh?: pulumi.Input<boolean>;
-    populationTitle?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorPhasedReleaseCloudletPolicy {
-    id?: number;
-    name?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorPhasedReleaseCloudletPolicyArgs {
-    id?: pulumi.Input<number>;
-    name?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorPreconnect {
-    locked?: boolean;
-    preconnectlists?: string[];
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorPreconnectArgs {
-    locked?: pulumi.Input<boolean>;
-    preconnectlists?: pulumi.Input<pulumi.Input<string>[]>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorPredictiveContentDelivery {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorPredictiveContentDeliveryArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorPredictivePrefetching {
-    accuracyTarget?: string;
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorPredictivePrefetchingArgs {
-    accuracyTarget?: pulumi.Input<string>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorPrefetch {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorPrefetchArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorPrefetchable {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorPrefetchableArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorPrefreshCache {
-    enabled?: boolean;
-    locked?: boolean;
-    prefreshval?: number;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorPrefreshCacheArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    prefreshval?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorQuality {
-    audienceSettings?: string;
-    catalogSize?: string;
-    contentSettings?: string;
-    contentType?: string;
-    country?: string;
-    deliveryFormat?: string;
-    deliveryType?: string;
-    downloadType?: string;
-    endUserLocation?: string;
-    locked?: boolean;
-    maximumConcurrentUsers?: string;
-    objectSize?: string;
-    optimizeFor?: string;
-    originSettings?: string;
-    popularityDistribution?: string;
-    refreshRate?: string;
-    segmentDuration?: number;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorQualityArgs {
-    audienceSettings?: pulumi.Input<string>;
-    catalogSize?: pulumi.Input<string>;
-    contentSettings?: pulumi.Input<string>;
-    contentType?: pulumi.Input<string>;
-    country?: pulumi.Input<string>;
-    deliveryFormat?: pulumi.Input<string>;
-    deliveryType?: pulumi.Input<string>;
-    downloadType?: pulumi.Input<string>;
-    endUserLocation?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    maximumConcurrentUsers?: pulumi.Input<string>;
-    objectSize?: pulumi.Input<string>;
-    optimizeFor?: pulumi.Input<string>;
-    originSettings?: pulumi.Input<string>;
-    popularityDistribution?: pulumi.Input<string>;
-    refreshRate?: pulumi.Input<string>;
-    segmentDuration?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorQuicBeta {
-    enabled?: boolean;
-    locked?: boolean;
-    quicOfferPercentage?: number;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorQuicBetaArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    quicOfferPercentage?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRandomSeek {
-    flv?: boolean;
-    locked?: boolean;
-    maximumSize?: string;
-    mp4?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRandomSeekArgs {
-    flv?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    maximumSize?: pulumi.Input<string>;
-    mp4?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRapid {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRapidArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorReadTimeout {
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-    value?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorReadTimeoutArgs {
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    value?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRealTimeReporting {
-    advanced?: boolean;
-    beaconSamplingPercentage?: number;
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRealTimeReportingArgs {
-    advanced?: pulumi.Input<boolean>;
-    beaconSamplingPercentage?: pulumi.Input<number>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRealUserMonitoring {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRealUserMonitoringArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRedirect {
-    destinationHostname?: string;
-    destinationHostnameOther?: string;
-    destinationHostnameSibling?: string;
-    destinationHostnameSubdomain?: string;
-    destinationPath?: string;
-    destinationPathOther?: string;
-    destinationPathPrefix?: string;
-    destinationPathSuffix?: string;
-    destinationPathSuffixStatus?: string;
-    destinationProtocol?: string;
-    locked?: boolean;
-    mobileDefaultChoice?: string;
-    queryString?: string;
-    responseCode?: number;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRedirectArgs {
-    destinationHostname?: pulumi.Input<string>;
-    destinationHostnameOther?: pulumi.Input<string>;
-    destinationHostnameSibling?: pulumi.Input<string>;
-    destinationHostnameSubdomain?: pulumi.Input<string>;
-    destinationPath?: pulumi.Input<string>;
-    destinationPathOther?: pulumi.Input<string>;
-    destinationPathPrefix?: pulumi.Input<string>;
-    destinationPathSuffix?: pulumi.Input<string>;
-    destinationPathSuffixStatus?: pulumi.Input<string>;
-    destinationProtocol?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    mobileDefaultChoice?: pulumi.Input<string>;
-    queryString?: pulumi.Input<string>;
-    responseCode?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRedirectplus {
-    destination?: string;
-    enabled?: boolean;
-    locked?: boolean;
-    responseCode?: number;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRedirectplusArgs {
-    destination?: pulumi.Input<string>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    responseCode?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRefererChecking {
-    allowChildren?: boolean;
-    domains?: string[];
-    enabled?: boolean;
-    locked?: boolean;
-    strict?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRefererCheckingArgs {
-    allowChildren?: pulumi.Input<boolean>;
-    domains?: pulumi.Input<pulumi.Input<string>[]>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    strict?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRemoveQueryParameter {
-    locked?: boolean;
-    parameters?: string[];
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRemoveQueryParameterArgs {
-    locked?: pulumi.Input<boolean>;
-    parameters?: pulumi.Input<pulumi.Input<string>[]>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRemoveVary {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRemoveVaryArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorReport {
-    cookies?: string[];
-    customLogField?: string;
-    locked?: boolean;
-    logAcceptLanguage?: boolean;
-    logCookies?: string;
-    logCustomLogField?: boolean;
-    logEdgeIp?: boolean;
-    logHost?: boolean;
-    logReferer?: boolean;
-    logUserAgent?: boolean;
-    logXForwardedFor?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorReportArgs {
-    cookies?: pulumi.Input<pulumi.Input<string>[]>;
-    customLogField?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    logAcceptLanguage?: pulumi.Input<boolean>;
-    logCookies?: pulumi.Input<string>;
-    logCustomLogField?: pulumi.Input<boolean>;
-    logEdgeIp?: pulumi.Input<boolean>;
-    logHost?: pulumi.Input<boolean>;
-    logReferer?: pulumi.Input<boolean>;
-    logUserAgent?: pulumi.Input<boolean>;
-    logXForwardedFor?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRequestControl {
-    branded403File?: string;
-    branded403StatusCode?: number;
-    branded403Url?: string;
-    brandedDenyCacheTtl?: number;
-    cloudletPolicy?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlCloudletPolicy;
-    enableBranded403?: boolean;
-    enabled?: boolean;
-    locked?: boolean;
-    netStorage?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlNetStorage;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlArgs {
-    branded403File?: pulumi.Input<string>;
-    branded403StatusCode?: pulumi.Input<number>;
-    branded403Url?: pulumi.Input<string>;
-    brandedDenyCacheTtl?: pulumi.Input<number>;
-    cloudletPolicy?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlCloudletPolicyArgs>;
-    enableBranded403?: pulumi.Input<boolean>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    netStorage?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlNetStorageArgs>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlCloudletPolicy {
-    id?: number;
-    name?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlCloudletPolicyArgs {
-    id?: pulumi.Input<number>;
-    name?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlNetStorage {
-    cpCode?: number;
-    downloadDomainName?: string;
-    g2oToken?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlNetStorageArgs {
-    cpCode?: pulumi.Input<number>;
-    downloadDomainName?: pulumi.Input<string>;
-    g2oToken?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRequestTypeMarker {
-    locked?: boolean;
-    requestType?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRequestTypeMarkerArgs {
-    locked?: pulumi.Input<boolean>;
-    requestType?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorResourceOptimizer {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorResourceOptimizerArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorResourceOptimizerExtendedCompatibility {
-    enableAllFeatures?: boolean;
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorResourceOptimizerExtendedCompatibilityArgs {
-    enableAllFeatures?: pulumi.Input<boolean>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorResponseCode {
-    locked?: boolean;
-    override206?: boolean;
-    statusCode?: number;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorResponseCodeArgs {
-    locked?: pulumi.Input<boolean>;
-    override206?: pulumi.Input<boolean>;
-    statusCode?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorResponseCookie {
-    cookieName?: string;
-    defaultDomain?: boolean;
-    defaultPath?: boolean;
-    domain?: string;
-    duration?: string;
-    enabled?: boolean;
-    expirationDate?: string;
-    expires?: string;
-    format?: string;
-    httpOnly?: boolean;
-    locked?: boolean;
-    path?: string;
-    sameSite?: string;
-    secure?: boolean;
-    templateUuid?: string;
-    type?: string;
-    uuid?: string;
-    value?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorResponseCookieArgs {
-    cookieName?: pulumi.Input<string>;
-    defaultDomain?: pulumi.Input<boolean>;
-    defaultPath?: pulumi.Input<boolean>;
-    domain?: pulumi.Input<string>;
-    duration?: pulumi.Input<string>;
-    enabled?: pulumi.Input<boolean>;
-    expirationDate?: pulumi.Input<string>;
-    expires?: pulumi.Input<string>;
-    format?: pulumi.Input<string>;
-    httpOnly?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    path?: pulumi.Input<string>;
-    sameSite?: pulumi.Input<string>;
-    secure?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    type?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    value?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRestrictObjectCaching {
-    locked?: boolean;
-    maximumSize?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRestrictObjectCachingArgs {
-    locked?: pulumi.Input<boolean>;
-    maximumSize?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorReturnCacheStatus {
-    locked?: boolean;
-    responseHeaderName?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorReturnCacheStatusArgs {
-    locked?: pulumi.Input<boolean>;
-    responseHeaderName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRewriteUrl {
-    behavior?: string;
-    keepQueryString?: boolean;
-    locked?: boolean;
-    match?: string;
-    matchMultiple?: boolean;
-    matchRegex?: string;
-    targetPath?: string;
-    targetPathPrepend?: string;
-    targetRegex?: string;
-    targetUrl?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRewriteUrlArgs {
-    behavior?: pulumi.Input<string>;
-    keepQueryString?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    match?: pulumi.Input<string>;
-    matchMultiple?: pulumi.Input<boolean>;
-    matchRegex?: pulumi.Input<string>;
-    targetPath?: pulumi.Input<string>;
-    targetPathPrepend?: pulumi.Input<string>;
-    targetRegex?: pulumi.Input<string>;
-    targetUrl?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRumCustom {
-    locked?: boolean;
-    rumGroupName?: string;
-    rumSampleRate?: number;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorRumCustomArgs {
-    locked?: pulumi.Input<boolean>;
-    rumGroupName?: pulumi.Input<string>;
-    rumSampleRate?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorSaasDefinitions {
-    applicationAction?: string;
-    applicationCnameEnabled?: boolean;
-    applicationCnameLevel?: number;
-    applicationCookie?: string;
-    applicationQueryString?: string;
-    applicationRegex?: string;
-    applicationReplace?: string;
-    applicationTitle?: string;
-    customerAction?: string;
-    customerCnameEnabled?: boolean;
-    customerCnameLevel?: number;
-    customerCookie?: string;
-    customerQueryString?: string;
-    customerRegex?: string;
-    customerReplace?: string;
-    customerTitle?: string;
-    locked?: boolean;
-    templateUuid?: string;
-    usersAction?: string;
-    usersCnameEnabled?: boolean;
-    usersCnameLevel?: number;
-    usersCookie?: string;
-    usersQueryString?: string;
-    usersRegex?: string;
-    usersReplace?: string;
-    usersTitle?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorSaasDefinitionsArgs {
-    applicationAction?: pulumi.Input<string>;
-    applicationCnameEnabled?: pulumi.Input<boolean>;
-    applicationCnameLevel?: pulumi.Input<number>;
-    applicationCookie?: pulumi.Input<string>;
-    applicationQueryString?: pulumi.Input<string>;
-    applicationRegex?: pulumi.Input<string>;
-    applicationReplace?: pulumi.Input<string>;
-    applicationTitle?: pulumi.Input<string>;
-    customerAction?: pulumi.Input<string>;
-    customerCnameEnabled?: pulumi.Input<boolean>;
-    customerCnameLevel?: pulumi.Input<number>;
-    customerCookie?: pulumi.Input<string>;
-    customerQueryString?: pulumi.Input<string>;
-    customerRegex?: pulumi.Input<string>;
-    customerReplace?: pulumi.Input<string>;
-    customerTitle?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    usersAction?: pulumi.Input<string>;
-    usersCnameEnabled?: pulumi.Input<boolean>;
-    usersCnameLevel?: pulumi.Input<number>;
-    usersCookie?: pulumi.Input<string>;
-    usersQueryString?: pulumi.Input<string>;
-    usersRegex?: pulumi.Input<string>;
-    usersReplace?: pulumi.Input<string>;
-    usersTitle?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudClient {
-    allowOverrideOriginCacheKey?: boolean;
-    connectorId?: string;
-    enabled?: boolean;
-    locked?: boolean;
-    originHostHeader?: string;
-    originType?: string;
-    sf3cOriginHost?: string;
-    sf3cOriginHostHeader?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudClientArgs {
-    allowOverrideOriginCacheKey?: pulumi.Input<boolean>;
-    connectorId?: pulumi.Input<string>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    originHostHeader?: pulumi.Input<string>;
-    originType?: pulumi.Input<string>;
-    sf3cOriginHost?: pulumi.Input<string>;
-    sf3cOriginHostHeader?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudProvider {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudProviderArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudProviderHostHeader {
-    hostHeaderSource?: string;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudProviderHostHeaderArgs {
-    hostHeaderSource?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorSavePostDcaProcessing {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorSavePostDcaProcessingArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorScheduleInvalidation {
-    locked?: boolean;
-    refreshMethod?: string;
-    repeat?: boolean;
-    repeatInterval?: string;
-    start?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorScheduleInvalidationArgs {
-    locked?: pulumi.Input<boolean>;
-    refreshMethod?: pulumi.Input<string>;
-    repeat?: pulumi.Input<boolean>;
-    repeatInterval?: pulumi.Input<string>;
-    start?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorScriptManagement {
-    enabled?: boolean;
-    locked?: boolean;
-    serviceworker?: string;
-    templateUuid?: string;
-    timestamp?: number;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorScriptManagementArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    serviceworker?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    timestamp?: pulumi.Input<number>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedContentProtection {
-    acl?: boolean;
-    dashMediaEncryption?: boolean;
-    dataPayload?: boolean;
-    enableTokenInUri?: boolean;
-    enabled?: boolean;
-    fieldCarryOver?: string;
-    headerForSalts?: string[];
-    hlsMasterManifestFiles?: string[];
-    hlsMediaEncryption?: boolean;
-    ip?: boolean;
-    key?: string;
-    locked?: boolean;
-    mediaEncryptionTitle?: string;
-    revokedListId?: number;
-    salt?: string;
-    sessionId?: boolean;
-    templateUuid?: string;
-    tokenAuthHlsTitle?: string;
-    tokenAuthenticationTitle?: string;
-    tokenRevocationEnabled?: boolean;
-    tokenRevocationTitle?: string;
-    transitionKey?: string;
-    useAdvanced?: boolean;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedContentProtectionArgs {
-    acl?: pulumi.Input<boolean>;
-    dashMediaEncryption?: pulumi.Input<boolean>;
-    dataPayload?: pulumi.Input<boolean>;
-    enableTokenInUri?: pulumi.Input<boolean>;
-    enabled?: pulumi.Input<boolean>;
-    fieldCarryOver?: pulumi.Input<string>;
-    headerForSalts?: pulumi.Input<pulumi.Input<string>[]>;
-    hlsMasterManifestFiles?: pulumi.Input<pulumi.Input<string>[]>;
-    hlsMediaEncryption?: pulumi.Input<boolean>;
-    ip?: pulumi.Input<boolean>;
-    key?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    mediaEncryptionTitle?: pulumi.Input<string>;
-    revokedListId?: pulumi.Input<number>;
-    salt?: pulumi.Input<string>;
-    sessionId?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    tokenAuthHlsTitle?: pulumi.Input<string>;
-    tokenAuthenticationTitle?: pulumi.Input<string>;
-    tokenRevocationEnabled?: pulumi.Input<boolean>;
-    tokenRevocationTitle?: pulumi.Input<string>;
-    transitionKey?: pulumi.Input<string>;
-    useAdvanced?: pulumi.Input<boolean>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaOptimization {
-    behavior?: string;
-    dvrType?: string;
-    dvrWindow?: string;
-    enableUllStreaming?: boolean;
-    endTime?: string;
-    liveType?: string;
-    locked?: boolean;
-    showAdvanced?: boolean;
-    startTime?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaOptimizationArgs {
-    behavior?: pulumi.Input<string>;
-    dvrType?: pulumi.Input<string>;
-    dvrWindow?: pulumi.Input<string>;
-    enableUllStreaming?: pulumi.Input<boolean>;
-    endTime?: pulumi.Input<string>;
-    liveType?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    showAdvanced?: pulumi.Input<boolean>;
-    startTime?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaStreamingPrefetch {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaStreamingPrefetchArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorSetVariable {
-    algorithm?: string;
-    caseSensitive?: boolean;
-    certificateFieldName?: string;
-    cookieName?: string;
-    deviceProfile?: string;
-    encryptionKey?: string;
-    encryptionMode?: string;
-    endIndex?: string;
-    exceptChars?: string;
-    extractLocation?: string;
-    forceChars?: string;
-    formatString?: string;
-    generator?: string;
-    globalSubstitution?: boolean;
-    headerName?: string;
-    hmacAlgorithm?: string;
-    hmacKey?: string;
-    initializationVector?: string;
-    ipVersion?: string;
-    ipv4Prefix?: number;
-    ipv6Prefix?: number;
-    locationId?: string;
-    locked?: boolean;
-    max?: number;
-    maxRandomNumber?: string;
-    min?: number;
-    minRandomNumber?: string;
-    nonce?: string;
-    numberOfBytes?: number;
-    operandOne?: string;
-    paramName?: string;
-    pathComponentOffset?: string;
-    prependBytes?: boolean;
-    queryParameterName?: string;
-    regex?: string;
-    replacement?: string;
-    responseHeaderName?: string;
-    separator?: string;
-    setCookieName?: string;
-    startIndex?: string;
-    subString?: string;
-    templateUuid?: string;
-    transform?: string;
-    uuid?: string;
-    valueSource?: string;
-    variableName?: string;
-    variableValue?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorSetVariableArgs {
-    algorithm?: pulumi.Input<string>;
-    caseSensitive?: pulumi.Input<boolean>;
-    certificateFieldName?: pulumi.Input<string>;
-    cookieName?: pulumi.Input<string>;
-    deviceProfile?: pulumi.Input<string>;
-    encryptionKey?: pulumi.Input<string>;
-    encryptionMode?: pulumi.Input<string>;
-    endIndex?: pulumi.Input<string>;
-    exceptChars?: pulumi.Input<string>;
-    extractLocation?: pulumi.Input<string>;
-    forceChars?: pulumi.Input<string>;
-    formatString?: pulumi.Input<string>;
-    generator?: pulumi.Input<string>;
-    globalSubstitution?: pulumi.Input<boolean>;
-    headerName?: pulumi.Input<string>;
-    hmacAlgorithm?: pulumi.Input<string>;
-    hmacKey?: pulumi.Input<string>;
-    initializationVector?: pulumi.Input<string>;
-    ipVersion?: pulumi.Input<string>;
-    ipv4Prefix?: pulumi.Input<number>;
-    ipv6Prefix?: pulumi.Input<number>;
-    locationId?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    max?: pulumi.Input<number>;
-    maxRandomNumber?: pulumi.Input<string>;
-    min?: pulumi.Input<number>;
-    minRandomNumber?: pulumi.Input<string>;
-    nonce?: pulumi.Input<string>;
-    numberOfBytes?: pulumi.Input<number>;
-    operandOne?: pulumi.Input<string>;
-    paramName?: pulumi.Input<string>;
-    pathComponentOffset?: pulumi.Input<string>;
-    prependBytes?: pulumi.Input<boolean>;
-    queryParameterName?: pulumi.Input<string>;
-    regex?: pulumi.Input<string>;
-    replacement?: pulumi.Input<string>;
-    responseHeaderName?: pulumi.Input<string>;
-    separator?: pulumi.Input<string>;
-    setCookieName?: pulumi.Input<string>;
-    startIndex?: pulumi.Input<string>;
-    subString?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    transform?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    valueSource?: pulumi.Input<string>;
-    variableName?: pulumi.Input<string>;
-    variableValue?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorShutr {
-    locked?: boolean;
-    status?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorShutrArgs {
-    locked?: pulumi.Input<boolean>;
-    status?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorSimulateErrorCode {
-    errorType?: string;
-    locked?: boolean;
-    templateUuid?: string;
-    timeout?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorSimulateErrorCodeArgs {
-    errorType?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    timeout?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorSiteShield {
-    locked?: boolean;
-    nossmap?: string;
-    ssmap?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmap;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldArgs {
-    locked?: pulumi.Input<boolean>;
-    nossmap?: pulumi.Input<string>;
-    ssmap?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmapArgs>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmap {
-    chinaCdnMap?: string;
-    hasMixedHosts?: boolean;
-    name?: string;
-    src?: string;
-    srmap?: string;
-    value?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmapArgs {
-    chinaCdnMap?: pulumi.Input<string>;
-    hasMixedHosts?: pulumi.Input<boolean>;
-    name?: pulumi.Input<string>;
-    src?: pulumi.Input<string>;
-    srmap?: pulumi.Input<string>;
-    value?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorStandardTlsMigration {
-    allowHttpsDowngrade?: boolean;
-    allowHttpsUpgrade?: boolean;
-    cacheSharingDuration?: number;
-    cacheSharingStartTime?: string;
-    enabled?: boolean;
-    isCertificateSniOnly?: boolean;
-    isTieredDistributionUsed?: boolean;
-    locked?: boolean;
-    migrationDuration?: number;
-    migrationFrom?: string;
-    migrationStartTime?: string;
-    tdLocation?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorStandardTlsMigrationArgs {
-    allowHttpsDowngrade?: pulumi.Input<boolean>;
-    allowHttpsUpgrade?: pulumi.Input<boolean>;
-    cacheSharingDuration?: pulumi.Input<number>;
-    cacheSharingStartTime?: pulumi.Input<string>;
-    enabled?: pulumi.Input<boolean>;
-    isCertificateSniOnly?: pulumi.Input<boolean>;
-    isTieredDistributionUsed?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    migrationDuration?: pulumi.Input<number>;
-    migrationFrom?: pulumi.Input<string>;
-    migrationStartTime?: pulumi.Input<string>;
-    tdLocation?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorStandardTlsMigrationOverride {
-    info?: string;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorStandardTlsMigrationOverrideArgs {
-    info?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorStrictHeaderParsing {
-    locked?: boolean;
-    strictMode?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-    validMode?: boolean;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorStrictHeaderParsingArgs {
-    locked?: pulumi.Input<boolean>;
-    strictMode?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    validMode?: pulumi.Input<boolean>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorSubCustomer {
-    accessControl?: boolean;
-    cacheKey?: boolean;
-    caching?: boolean;
-    contentCompressor?: boolean;
-    dynamicWebContent?: boolean;
-    enabled?: boolean;
-    geoLocation?: boolean;
-    ip?: boolean;
-    largeFileDelivery?: boolean;
-    liveVideoDelivery?: boolean;
-    locked?: boolean;
-    modifyPath?: boolean;
-    onDemandVideoDelivery?: boolean;
-    origin?: boolean;
-    partnerDomainSuffix?: string;
-    referrer?: boolean;
-    refreshContent?: boolean;
-    siteFailover?: boolean;
-    templateUuid?: string;
-    tokenAuthorization?: boolean;
-    uuid?: string;
-    webApplicationFirewall?: boolean;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorSubCustomerArgs {
-    accessControl?: pulumi.Input<boolean>;
-    cacheKey?: pulumi.Input<boolean>;
-    caching?: pulumi.Input<boolean>;
-    contentCompressor?: pulumi.Input<boolean>;
-    dynamicWebContent?: pulumi.Input<boolean>;
-    enabled?: pulumi.Input<boolean>;
-    geoLocation?: pulumi.Input<boolean>;
-    ip?: pulumi.Input<boolean>;
-    largeFileDelivery?: pulumi.Input<boolean>;
-    liveVideoDelivery?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    modifyPath?: pulumi.Input<boolean>;
-    onDemandVideoDelivery?: pulumi.Input<boolean>;
-    origin?: pulumi.Input<boolean>;
-    partnerDomainSuffix?: pulumi.Input<string>;
-    referrer?: pulumi.Input<boolean>;
-    refreshContent?: pulumi.Input<boolean>;
-    siteFailover?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    tokenAuthorization?: pulumi.Input<boolean>;
-    uuid?: pulumi.Input<string>;
-    webApplicationFirewall?: pulumi.Input<boolean>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorSureRoute {
-    allowFcmParentOverride?: boolean;
-    customMap?: string;
-    customStatKey?: string;
-    enableCustomKey?: boolean;
-    enabled?: boolean;
-    forceSslForward?: boolean;
-    locked?: boolean;
-    raceStatTtl?: string;
-    srDownloadLinkTitle?: string;
-    templateUuid?: string;
-    testObjectUrl?: string;
-    toHost?: string;
-    toHostStatus?: string;
-    type?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorSureRouteArgs {
-    allowFcmParentOverride?: pulumi.Input<boolean>;
-    customMap?: pulumi.Input<string>;
-    customStatKey?: pulumi.Input<string>;
-    enableCustomKey?: pulumi.Input<boolean>;
-    enabled?: pulumi.Input<boolean>;
-    forceSslForward?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    raceStatTtl?: pulumi.Input<string>;
-    srDownloadLinkTitle?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    testObjectUrl?: pulumi.Input<string>;
-    toHost?: pulumi.Input<string>;
-    toHostStatus?: pulumi.Input<string>;
-    type?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorTcpOptimization {
-    display?: string;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorTcpOptimizationArgs {
-    display?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorTeaLeaf {
-    enabled?: boolean;
-    ibmCustomerId?: number;
-    limitToDynamic?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorTeaLeafArgs {
-    enabled?: pulumi.Input<boolean>;
-    ibmCustomerId?: pulumi.Input<number>;
-    limitToDynamic?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistribution {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    tieredDistributionMap?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    tieredDistributionMap?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionAdvanced {
-    allowall?: boolean;
-    enabled?: boolean;
-    locked?: boolean;
-    method?: string;
-    policy?: string;
-    templateUuid?: string;
-    tieredDistributionMap?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionAdvancedArgs {
-    allowall?: pulumi.Input<boolean>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    method?: pulumi.Input<string>;
-    policy?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    tieredDistributionMap?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionCustomization {
-    cloudwrapperMapMigrationTitle?: string;
-    customMapEnabled?: boolean;
-    customMapName?: string;
-    hashAlgorithm?: string;
-    location?: string;
-    locked?: boolean;
-    mapMigrationEnabled?: boolean;
-    migrationEndDate?: string;
-    migrationStartDate?: string;
-    migrationWithinCwMapsEnabled?: boolean;
-    serialEnd?: string;
-    serialStart?: string;
-    templateUuid?: string;
-    tier1Title?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionCustomizationArgs {
-    cloudwrapperMapMigrationTitle?: pulumi.Input<string>;
-    customMapEnabled?: pulumi.Input<boolean>;
-    customMapName?: pulumi.Input<string>;
-    hashAlgorithm?: pulumi.Input<string>;
-    location?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    mapMigrationEnabled?: pulumi.Input<boolean>;
-    migrationEndDate?: pulumi.Input<string>;
-    migrationStartDate?: pulumi.Input<string>;
-    migrationWithinCwMapsEnabled?: pulumi.Input<boolean>;
-    serialEnd?: pulumi.Input<string>;
-    serialStart?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    tier1Title?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorTimeout {
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-    value?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorTimeoutArgs {
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    value?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorUidConfiguration {
-    enabled?: boolean;
-    extractLocation?: string;
-    headerName?: string;
-    legalText?: string;
-    locked?: boolean;
-    queryParameterName?: string;
-    templateUuid?: string;
-    uuid?: string;
-    variableName?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorUidConfigurationArgs {
-    enabled?: pulumi.Input<boolean>;
-    extractLocation?: pulumi.Input<string>;
-    headerName?: pulumi.Input<string>;
-    legalText?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    queryParameterName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    variableName?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorValidateEntityTag {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorValidateEntityTagArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorVerifyJsonWebToken {
-    enableEs256?: boolean;
-    enableRs256?: boolean;
-    extractLocation?: string;
-    headerName?: string;
-    jwt?: string;
-    locked?: boolean;
-    queryParameterName?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorVerifyJsonWebTokenArgs {
-    enableEs256?: pulumi.Input<boolean>;
-    enableRs256?: pulumi.Input<boolean>;
-    extractLocation?: pulumi.Input<string>;
-    headerName?: pulumi.Input<string>;
-    jwt?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    queryParameterName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorVerifyJsonWebTokenForDcp {
-    authorizations?: string;
-    clientId?: string;
-    customHeader?: boolean;
-    enableEs256?: boolean;
-    enableRs256?: boolean;
-    extractAuthorizations?: boolean;
-    extractClientId?: boolean;
-    extractLocation?: string;
-    extractUserName?: boolean;
-    headerName?: string;
-    jwt?: string;
-    locked?: boolean;
-    primaryLocation?: string;
-    queryParameterName?: string;
-    templateUuid?: string;
-    userName?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorVerifyJsonWebTokenForDcpArgs {
-    authorizations?: pulumi.Input<string>;
-    clientId?: pulumi.Input<string>;
-    customHeader?: pulumi.Input<boolean>;
-    enableEs256?: pulumi.Input<boolean>;
-    enableRs256?: pulumi.Input<boolean>;
-    extractAuthorizations?: pulumi.Input<boolean>;
-    extractClientId?: pulumi.Input<boolean>;
-    extractLocation?: pulumi.Input<string>;
-    extractUserName?: pulumi.Input<boolean>;
-    headerName?: pulumi.Input<string>;
-    jwt?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    primaryLocation?: pulumi.Input<string>;
-    queryParameterName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    userName?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorVerifyTokenAuthorization {
-    algorithm?: string;
-    escapeHmacInputs?: boolean;
-    failureResponse?: boolean;
-    ignoreQueryString?: boolean;
-    key?: string;
-    location?: string;
-    locationId?: string;
-    locked?: boolean;
-    salt?: string;
-    templateUuid?: string;
-    transitionKey?: string;
-    useAdvanced?: boolean;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorVerifyTokenAuthorizationArgs {
-    algorithm?: pulumi.Input<string>;
-    escapeHmacInputs?: pulumi.Input<boolean>;
-    failureResponse?: pulumi.Input<boolean>;
-    ignoreQueryString?: pulumi.Input<boolean>;
-    key?: pulumi.Input<string>;
-    location?: pulumi.Input<string>;
-    locationId?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    salt?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    transitionKey?: pulumi.Input<string>;
-    useAdvanced?: pulumi.Input<boolean>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorVirtualWaitingRoom {
-    accessTitle?: string;
-    cloudletSharedPolicy?: number;
-    customCookieDomain?: string;
-    domainConfig?: string;
-    locked?: boolean;
-    sessionAutoProlong?: boolean;
-    sessionDuration?: number;
-    templateUuid?: string;
-    uuid?: string;
-    waitingRoomAssetsPaths?: string[];
-    waitingRoomPath?: string;
-    waitingRoomTitle?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorVirtualWaitingRoomArgs {
-    accessTitle?: pulumi.Input<string>;
-    cloudletSharedPolicy?: pulumi.Input<number>;
-    customCookieDomain?: pulumi.Input<string>;
-    domainConfig?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    sessionAutoProlong?: pulumi.Input<boolean>;
-    sessionDuration?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    waitingRoomAssetsPaths?: pulumi.Input<pulumi.Input<string>[]>;
-    waitingRoomPath?: pulumi.Input<string>;
-    waitingRoomTitle?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorVirtualWaitingRoomWithEdgeWorkers {
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorVirtualWaitingRoomWithEdgeWorkersArgs {
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritization {
-    allowedUserCookieAdvanced?: boolean;
-    allowedUserCookieAutomaticSalt?: boolean;
-    allowedUserCookieDomain?: string;
-    allowedUserCookieDomainType?: string;
-    allowedUserCookieDuration?: number;
-    allowedUserCookieEnabled?: boolean;
-    allowedUserCookieHttpOnly?: boolean;
-    allowedUserCookieLabel?: string;
-    allowedUserCookieManagementTitle?: string;
-    allowedUserCookieRefresh?: boolean;
-    allowedUserCookieSalt?: string;
-    cloudletPolicy?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationCloudletPolicy;
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    userIdentificationByCookie?: boolean;
-    userIdentificationByHeaders?: boolean;
-    userIdentificationByIp?: boolean;
-    userIdentificationByParams?: boolean;
-    userIdentificationKeyCookie?: string;
-    userIdentificationKeyHeaders?: string[];
-    userIdentificationKeyParams?: string[];
-    userIdentificationTitle?: string;
-    uuid?: string;
-    waitingRoomCacheTtl?: number;
-    waitingRoomCookieAdvanced?: boolean;
-    waitingRoomCookieAutomaticSalt?: boolean;
-    waitingRoomCookieDomain?: string;
-    waitingRoomCookieDomainType?: string;
-    waitingRoomCookieDuration?: number;
-    waitingRoomCookieEnabled?: boolean;
-    waitingRoomCookieHttpOnly?: boolean;
-    waitingRoomCookieLabel?: string;
-    waitingRoomCookieManagementTitle?: string;
-    waitingRoomCookieSalt?: string;
-    waitingRoomCookieShareLabel?: boolean;
-    waitingRoomCpCode?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomCpCode;
-    waitingRoomDirectory?: string;
-    waitingRoomManagementTitle?: string;
-    waitingRoomNetStorage?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomNetStorage;
-    waitingRoomStatusCode?: number;
-    waitingRoomUseCpCode?: boolean;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationArgs {
-    allowedUserCookieAdvanced?: pulumi.Input<boolean>;
-    allowedUserCookieAutomaticSalt?: pulumi.Input<boolean>;
-    allowedUserCookieDomain?: pulumi.Input<string>;
-    allowedUserCookieDomainType?: pulumi.Input<string>;
-    allowedUserCookieDuration?: pulumi.Input<number>;
-    allowedUserCookieEnabled?: pulumi.Input<boolean>;
-    allowedUserCookieHttpOnly?: pulumi.Input<boolean>;
-    allowedUserCookieLabel?: pulumi.Input<string>;
-    allowedUserCookieManagementTitle?: pulumi.Input<string>;
-    allowedUserCookieRefresh?: pulumi.Input<boolean>;
-    allowedUserCookieSalt?: pulumi.Input<string>;
-    cloudletPolicy?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationCloudletPolicyArgs>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    userIdentificationByCookie?: pulumi.Input<boolean>;
-    userIdentificationByHeaders?: pulumi.Input<boolean>;
-    userIdentificationByIp?: pulumi.Input<boolean>;
-    userIdentificationByParams?: pulumi.Input<boolean>;
-    userIdentificationKeyCookie?: pulumi.Input<string>;
-    userIdentificationKeyHeaders?: pulumi.Input<pulumi.Input<string>[]>;
-    userIdentificationKeyParams?: pulumi.Input<pulumi.Input<string>[]>;
-    userIdentificationTitle?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    waitingRoomCacheTtl?: pulumi.Input<number>;
-    waitingRoomCookieAdvanced?: pulumi.Input<boolean>;
-    waitingRoomCookieAutomaticSalt?: pulumi.Input<boolean>;
-    waitingRoomCookieDomain?: pulumi.Input<string>;
-    waitingRoomCookieDomainType?: pulumi.Input<string>;
-    waitingRoomCookieDuration?: pulumi.Input<number>;
-    waitingRoomCookieEnabled?: pulumi.Input<boolean>;
-    waitingRoomCookieHttpOnly?: pulumi.Input<boolean>;
-    waitingRoomCookieLabel?: pulumi.Input<string>;
-    waitingRoomCookieManagementTitle?: pulumi.Input<string>;
-    waitingRoomCookieSalt?: pulumi.Input<string>;
-    waitingRoomCookieShareLabel?: pulumi.Input<boolean>;
-    waitingRoomCpCode?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomCpCodeArgs>;
-    waitingRoomDirectory?: pulumi.Input<string>;
-    waitingRoomManagementTitle?: pulumi.Input<string>;
-    waitingRoomNetStorage?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomNetStorageArgs>;
-    waitingRoomStatusCode?: pulumi.Input<number>;
-    waitingRoomUseCpCode?: pulumi.Input<boolean>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationCloudletPolicy {
-    id?: number;
-    name?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationCloudletPolicyArgs {
-    id?: pulumi.Input<number>;
-    name?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationFifo {
-    accessTitle?: string;
-    cloudletSharedPolicy?: number;
-    customCookieDomain?: string;
-    domainConfig?: string;
-    locked?: boolean;
-    sessionAutoProlong?: boolean;
-    sessionDuration?: number;
-    templateUuid?: string;
-    uuid?: string;
-    waitingRoomAssetsPaths?: string[];
-    waitingRoomPath?: string;
-    waitingRoomTitle?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationFifoArgs {
-    accessTitle?: pulumi.Input<string>;
-    cloudletSharedPolicy?: pulumi.Input<number>;
-    customCookieDomain?: pulumi.Input<string>;
-    domainConfig?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    sessionAutoProlong?: pulumi.Input<boolean>;
-    sessionDuration?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    waitingRoomAssetsPaths?: pulumi.Input<pulumi.Input<string>[]>;
-    waitingRoomPath?: pulumi.Input<string>;
-    waitingRoomTitle?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationFifoStandalone {
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationFifoStandaloneArgs {
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomCpCode {
-    cpCodeLimits?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomCpCodeCpCodeLimits;
-    createdDate?: number;
-    description?: string;
-    id?: number;
-    name?: string;
-    products?: string[];
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomCpCodeArgs {
-    cpCodeLimits?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomCpCodeCpCodeLimitsArgs>;
-    createdDate?: pulumi.Input<number>;
-    description?: pulumi.Input<string>;
-    id?: pulumi.Input<number>;
-    name?: pulumi.Input<string>;
-    products?: pulumi.Input<pulumi.Input<string>[]>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomCpCodeCpCodeLimits {
-    currentCapacity?: number;
-    limit?: number;
-    limitType?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomCpCodeCpCodeLimitsArgs {
-    currentCapacity?: pulumi.Input<number>;
-    limit?: pulumi.Input<number>;
-    limitType?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomNetStorage {
-    cpCode?: number;
-    downloadDomainName?: string;
-    g2oToken?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomNetStorageArgs {
-    cpCode?: pulumi.Input<number>;
-    downloadDomainName?: pulumi.Input<string>;
-    g2oToken?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorWatermarking {
-    abVariantLocation?: string;
-    decryptionPassword1?: string;
-    decryptionPassword2?: string;
-    decryptionPasswordId1?: string;
-    decryptionPasswordId2?: string;
-    enable?: boolean;
-    locked?: boolean;
-    miscellaneousSettingsTitle?: string;
-    patternDecryptionEnable?: boolean;
-    patternEncryptionTitle?: string;
-    signatureVerificationEnable?: boolean;
-    templateUuid?: string;
-    tokenSigningTitle?: string;
-    useOriginalAsA?: boolean;
-    uuid?: string;
-    verificationKeyId1?: string;
-    verificationKeyId2?: string;
-    verificationPublicKey1?: string;
-    verificationPublicKey2?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorWatermarkingArgs {
-    abVariantLocation?: pulumi.Input<string>;
-    decryptionPassword1?: pulumi.Input<string>;
-    decryptionPassword2?: pulumi.Input<string>;
-    decryptionPasswordId1?: pulumi.Input<string>;
-    decryptionPasswordId2?: pulumi.Input<string>;
-    enable?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    miscellaneousSettingsTitle?: pulumi.Input<string>;
-    patternDecryptionEnable?: pulumi.Input<boolean>;
-    patternEncryptionTitle?: pulumi.Input<string>;
-    signatureVerificationEnable?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    tokenSigningTitle?: pulumi.Input<string>;
-    useOriginalAsA?: pulumi.Input<boolean>;
-    uuid?: pulumi.Input<string>;
-    verificationKeyId1?: pulumi.Input<string>;
-    verificationKeyId2?: pulumi.Input<string>;
-    verificationPublicKey1?: pulumi.Input<string>;
-    verificationPublicKey2?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorWebApplicationFirewall {
-    firewallConfiguration?: inputs.GetPropertyRulesBuilderRulesV20230105BehaviorWebApplicationFirewallFirewallConfiguration;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorWebApplicationFirewallArgs {
-    firewallConfiguration?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230105BehaviorWebApplicationFirewallFirewallConfigurationArgs>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorWebApplicationFirewallFirewallConfiguration {
-    configId?: number;
-    fileName?: string;
-    productionStatus?: string;
-    productionVersion?: number;
-    stagingStatus?: string;
-    stagingVersion?: number;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorWebApplicationFirewallFirewallConfigurationArgs {
-    configId?: pulumi.Input<number>;
-    fileName?: pulumi.Input<string>;
-    productionStatus?: pulumi.Input<string>;
-    productionVersion?: pulumi.Input<number>;
-    stagingStatus?: pulumi.Input<string>;
-    stagingVersion?: pulumi.Input<number>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorWebSockets {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorWebSocketsArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorWebdav {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230105BehaviorWebdavArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
 export interface GetPropertyRulesBuilderRulesV20230105Criterion {
     advancedImMatch?: inputs.GetPropertyRulesBuilderRulesV20230105CriterionAdvancedImMatch;
     bucket?: inputs.GetPropertyRulesBuilderRulesV20230105CriterionBucket;
@@ -10589,91 +8055,91 @@ export interface GetPropertyRulesBuilderRulesV20230530Behavior {
     mediaAccelerationQuicOptout?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorMediaAccelerationQuicOptout;
     mediaClient?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorMediaClient;
     mediaFileRetrievalOptimization?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorMediaFileRetrievalOptimization;
-    mediaOriginFailover?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorMediaOriginFailover;
-    metadataCaching?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorMetadataCaching;
-    mobileSdkPerformance?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorMobileSdkPerformance;
-    modifyIncomingRequestHeader?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorModifyIncomingRequestHeader;
-    modifyIncomingResponseHeader?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorModifyIncomingResponseHeader;
-    modifyOutgoingRequestHeader?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorModifyOutgoingRequestHeader;
-    modifyOutgoingResponseHeader?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorModifyOutgoingResponseHeader;
-    modifyViaHeader?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorModifyViaHeader;
-    origin?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOrigin;
-    originCharacteristics?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteristics;
-    originCharacteristicsWsd?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteristicsWsd;
-    originFailureRecoveryMethod?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginFailureRecoveryMethod;
-    originFailureRecoveryPolicy?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginFailureRecoveryPolicy;
-    originIpAcl?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginIpAcl;
-    persistentClientConnection?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorPersistentClientConnection;
-    persistentConnection?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorPersistentConnection;
-    personallyIdentifiableInformation?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorPersonallyIdentifiableInformation;
-    phasedRelease?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorPhasedRelease;
-    preconnect?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorPreconnect;
-    predictiveContentDelivery?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorPredictiveContentDelivery;
-    predictivePrefetching?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorPredictivePrefetching;
-    prefetch?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorPrefetch;
-    prefetchable?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorPrefetchable;
-    prefreshCache?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorPrefreshCache;
-    quality?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorQuality;
-    quicBeta?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorQuicBeta;
-    randomSeek?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRandomSeek;
-    rapid?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRapid;
-    readTimeout?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorReadTimeout;
-    realTimeReporting?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRealTimeReporting;
-    realUserMonitoring?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRealUserMonitoring;
-    redirect?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRedirect;
-    redirectplus?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRedirectplus;
-    refererChecking?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRefererChecking;
-    removeQueryParameter?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRemoveQueryParameter;
-    removeVary?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRemoveVary;
-    report?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorReport;
-    requestControl?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRequestControl;
-    requestTypeMarker?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRequestTypeMarker;
-    resourceOptimizer?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorResourceOptimizer;
-    resourceOptimizerExtendedCompatibility?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorResourceOptimizerExtendedCompatibility;
-    responseCode?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorResponseCode;
-    responseCookie?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorResponseCookie;
-    restrictObjectCaching?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRestrictObjectCaching;
-    returnCacheStatus?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorReturnCacheStatus;
-    rewriteUrl?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRewriteUrl;
-    rumCustom?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRumCustom;
-    saasDefinitions?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorSaasDefinitions;
-    salesForceCommerceCloudClient?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorSalesForceCommerceCloudClient;
-    salesForceCommerceCloudProvider?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorSalesForceCommerceCloudProvider;
-    salesForceCommerceCloudProviderHostHeader?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorSalesForceCommerceCloudProviderHostHeader;
-    savePostDcaProcessing?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorSavePostDcaProcessing;
-    scheduleInvalidation?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorScheduleInvalidation;
-    scriptManagement?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorScriptManagement;
-    segmentedContentProtection?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedContentProtection;
-    segmentedMediaOptimization?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedMediaOptimization;
-    segmentedMediaStreamingPrefetch?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedMediaStreamingPrefetch;
-    setVariable?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorSetVariable;
-    simulateErrorCode?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorSimulateErrorCode;
-    siteShield?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorSiteShield;
-    standardTlsMigration?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorStandardTlsMigration;
-    standardTlsMigrationOverride?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorStandardTlsMigrationOverride;
-    strictHeaderParsing?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorStrictHeaderParsing;
-    subCustomer?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorSubCustomer;
-    sureRoute?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorSureRoute;
-    tcpOptimization?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorTcpOptimization;
-    teaLeaf?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorTeaLeaf;
-    tieredDistribution?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorTieredDistribution;
-    tieredDistributionAdvanced?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorTieredDistributionAdvanced;
-    tieredDistributionCustomization?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorTieredDistributionCustomization;
-    timeout?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorTimeout;
-    uidConfiguration?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorUidConfiguration;
-    validateEntityTag?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorValidateEntityTag;
-    verifyJsonWebToken?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorVerifyJsonWebToken;
-    verifyJsonWebTokenForDcp?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorVerifyJsonWebTokenForDcp;
-    verifyTokenAuthorization?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorVerifyTokenAuthorization;
-    virtualWaitingRoom?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorVirtualWaitingRoom;
-    virtualWaitingRoomWithEdgeWorkers?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorVirtualWaitingRoomWithEdgeWorkers;
-    visitorPrioritization?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritization;
-    visitorPrioritizationFifo?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationFifo;
-    visitorPrioritizationFifoStandalone?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationFifoStandalone;
-    watermarking?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorWatermarking;
-    webApplicationFirewall?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorWebApplicationFirewall;
-    webSockets?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorWebSockets;
-    webdav?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorWebdav;
+    mediaOriginFailover?: inputs.MediaOriginFailover;
+    metadataCaching?: inputs.MetadataCaching;
+    mobileSdkPerformance?: inputs.MobileSdkPerformance;
+    modifyIncomingRequestHeader?: inputs.ModifyIncomingRequestHeader;
+    modifyIncomingResponseHeader?: inputs.ModifyIncomingResponseHeader;
+    modifyOutgoingRequestHeader?: inputs.ModifyOutgoingRequestHeader;
+    modifyOutgoingResponseHeader?: inputs.ModifyOutgoingResponseHeader;
+    modifyViaHeader?: inputs.ModifyViaHeader;
+    origin?: inputs.Origin;
+    originCharacteristics?: inputs.OriginCharacteristics;
+    originCharacteristicsWsd?: inputs.OriginCharacteristicsWsd;
+    originFailureRecoveryMethod?: inputs.OriginFailureRecoveryMethod;
+    originFailureRecoveryPolicy?: inputs.OriginFailureRecoveryPolicy;
+    originIpAcl?: inputs.OriginIpAcl;
+    persistentClientConnection?: inputs.PersistentClientConnection;
+    persistentConnection?: inputs.PersistentConnection;
+    personallyIdentifiableInformation?: inputs.PersonallyIdentifiableInformation;
+    phasedRelease?: inputs.PhasedRelease;
+    preconnect?: inputs.Preconnect;
+    predictiveContentDelivery?: inputs.PredictiveContentDelivery;
+    predictivePrefetching?: inputs.PredictivePrefetching;
+    prefetch?: inputs.Prefetch;
+    prefetchable?: inputs.Prefetchable;
+    prefreshCache?: inputs.PrefreshCache;
+    quality?: inputs.Quality;
+    quicBeta?: inputs.QuicBeta;
+    randomSeek?: inputs.RandomSeek;
+    rapid?: inputs.Rapid;
+    readTimeout?: inputs.ReadTimeout;
+    realTimeReporting?: inputs.RealTimeReporting;
+    realUserMonitoring?: inputs.RealUserMonitoring;
+    redirect?: inputs.Redirect;
+    redirectplus?: inputs.Redirectplus;
+    refererChecking?: inputs.RefererChecking;
+    removeQueryParameter?: inputs.RemoveQueryParameter;
+    removeVary?: inputs.RemoveVary;
+    report?: inputs.Report;
+    requestControl?: inputs.RequestControl;
+    requestTypeMarker?: inputs.RequestTypeMarker;
+    resourceOptimizer?: inputs.ResourceOptimizer;
+    resourceOptimizerExtendedCompatibility?: inputs.ResourceOptimizerExtendedCompatibility;
+    responseCode?: inputs.ResponseCode;
+    responseCookie?: inputs.ResponseCookie;
+    restrictObjectCaching?: inputs.RestrictObjectCaching;
+    returnCacheStatus?: inputs.ReturnCacheStatus;
+    rewriteUrl?: inputs.RewriteUrl;
+    rumCustom?: inputs.RumCustom;
+    saasDefinitions?: inputs.SaasDefinitions;
+    salesForceCommerceCloudClient?: inputs.SalesForceCommerceCloudClient;
+    salesForceCommerceCloudProvider?: inputs.SalesForceCommerceCloudProvider;
+    salesForceCommerceCloudProviderHostHeader?: inputs.SalesForceCommerceCloudProviderHostHeader;
+    savePostDcaProcessing?: inputs.SavePostDcaProcessing;
+    scheduleInvalidation?: inputs.ScheduleInvalidation;
+    scriptManagement?: inputs.ScriptManagement;
+    segmentedContentProtection?: inputs.SegmentedContentProtection;
+    segmentedMediaOptimization?: inputs.SegmentedMediaOptimization;
+    segmentedMediaStreamingPrefetch?: inputs.SegmentedMediaStreamingPrefetch;
+    setVariable?: inputs.SetVariable;
+    simulateErrorCode?: inputs.SimulateErrorCode;
+    siteShield?: inputs.SiteShield;
+    standardTlsMigration?: inputs.StandardTlsMigration;
+    standardTlsMigrationOverride?: inputs.StandardTlsMigrationOverride;
+    strictHeaderParsing?: inputs.StrictHeaderParsing;
+    subCustomer?: inputs.SubCustomer;
+    sureRoute?: inputs.SureRoute;
+    tcpOptimization?: inputs.TcpOptimization;
+    teaLeaf?: inputs.TeaLeaf;
+    tieredDistribution?: inputs.TieredDistribution;
+    tieredDistributionAdvanced?: inputs.TieredDistributionAdvanced;
+    tieredDistributionCustomization?: inputs.TieredDistributionCustomization;
+    timeout?: inputs.Timeout;
+    uidConfiguration?: inputs.UidConfiguration;
+    validateEntityTag?: inputs.ValidateEntityTag;
+    verifyJsonWebToken?: inputs.VerifyJsonWebToken;
+    verifyJsonWebTokenForDcp?: inputs.VerifyJsonWebTokenForDcp;
+    verifyTokenAuthorization?: inputs.VerifyTokenAuthorization;
+    virtualWaitingRoom?: inputs.VirtualWaitingRoom;
+    virtualWaitingRoomWithEdgeWorkers?: inputs.VirtualWaitingRoomWithEdgeWorkers;
+    visitorPrioritization?: inputs.VisitorPrioritization;
+    visitorPrioritizationFifo?: inputs.VisitorPrioritizationFifo;
+    visitorPrioritizationFifoStandalone?: inputs.VisitorPrioritizationFifoStandalone;
+    watermarking?: inputs.Watermarking;
+    webApplicationFirewall?: inputs.WebApplicationFirewall;
+    webSockets?: inputs.WebSockets;
+    webdav?: inputs.Webdav;
 }
 
 export interface GetPropertyRulesBuilderRulesV20230530BehaviorArgs {
@@ -10809,91 +8275,91 @@ export interface GetPropertyRulesBuilderRulesV20230530BehaviorArgs {
     mediaAccelerationQuicOptout?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorMediaAccelerationQuicOptoutArgs>;
     mediaClient?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorMediaClientArgs>;
     mediaFileRetrievalOptimization?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorMediaFileRetrievalOptimizationArgs>;
-    mediaOriginFailover?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorMediaOriginFailoverArgs>;
-    metadataCaching?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorMetadataCachingArgs>;
-    mobileSdkPerformance?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorMobileSdkPerformanceArgs>;
-    modifyIncomingRequestHeader?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorModifyIncomingRequestHeaderArgs>;
-    modifyIncomingResponseHeader?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorModifyIncomingResponseHeaderArgs>;
-    modifyOutgoingRequestHeader?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorModifyOutgoingRequestHeaderArgs>;
-    modifyOutgoingResponseHeader?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorModifyOutgoingResponseHeaderArgs>;
-    modifyViaHeader?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorModifyViaHeaderArgs>;
-    origin?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginArgs>;
-    originCharacteristics?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteristicsArgs>;
-    originCharacteristicsWsd?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteristicsWsdArgs>;
-    originFailureRecoveryMethod?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginFailureRecoveryMethodArgs>;
-    originFailureRecoveryPolicy?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginFailureRecoveryPolicyArgs>;
-    originIpAcl?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginIpAclArgs>;
-    persistentClientConnection?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorPersistentClientConnectionArgs>;
-    persistentConnection?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorPersistentConnectionArgs>;
-    personallyIdentifiableInformation?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorPersonallyIdentifiableInformationArgs>;
-    phasedRelease?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorPhasedReleaseArgs>;
-    preconnect?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorPreconnectArgs>;
-    predictiveContentDelivery?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorPredictiveContentDeliveryArgs>;
-    predictivePrefetching?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorPredictivePrefetchingArgs>;
-    prefetch?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorPrefetchArgs>;
-    prefetchable?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorPrefetchableArgs>;
-    prefreshCache?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorPrefreshCacheArgs>;
-    quality?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorQualityArgs>;
-    quicBeta?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorQuicBetaArgs>;
-    randomSeek?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRandomSeekArgs>;
-    rapid?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRapidArgs>;
-    readTimeout?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorReadTimeoutArgs>;
-    realTimeReporting?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRealTimeReportingArgs>;
-    realUserMonitoring?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRealUserMonitoringArgs>;
-    redirect?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRedirectArgs>;
-    redirectplus?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRedirectplusArgs>;
-    refererChecking?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRefererCheckingArgs>;
-    removeQueryParameter?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRemoveQueryParameterArgs>;
-    removeVary?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRemoveVaryArgs>;
-    report?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorReportArgs>;
-    requestControl?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRequestControlArgs>;
-    requestTypeMarker?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRequestTypeMarkerArgs>;
-    resourceOptimizer?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorResourceOptimizerArgs>;
-    resourceOptimizerExtendedCompatibility?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorResourceOptimizerExtendedCompatibilityArgs>;
-    responseCode?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorResponseCodeArgs>;
-    responseCookie?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorResponseCookieArgs>;
-    restrictObjectCaching?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRestrictObjectCachingArgs>;
-    returnCacheStatus?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorReturnCacheStatusArgs>;
-    rewriteUrl?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRewriteUrlArgs>;
-    rumCustom?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRumCustomArgs>;
-    saasDefinitions?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorSaasDefinitionsArgs>;
-    salesForceCommerceCloudClient?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorSalesForceCommerceCloudClientArgs>;
-    salesForceCommerceCloudProvider?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorSalesForceCommerceCloudProviderArgs>;
-    salesForceCommerceCloudProviderHostHeader?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorSalesForceCommerceCloudProviderHostHeaderArgs>;
-    savePostDcaProcessing?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorSavePostDcaProcessingArgs>;
-    scheduleInvalidation?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorScheduleInvalidationArgs>;
-    scriptManagement?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorScriptManagementArgs>;
-    segmentedContentProtection?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedContentProtectionArgs>;
-    segmentedMediaOptimization?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedMediaOptimizationArgs>;
-    segmentedMediaStreamingPrefetch?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedMediaStreamingPrefetchArgs>;
-    setVariable?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorSetVariableArgs>;
-    simulateErrorCode?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorSimulateErrorCodeArgs>;
-    siteShield?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorSiteShieldArgs>;
-    standardTlsMigration?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorStandardTlsMigrationArgs>;
-    standardTlsMigrationOverride?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorStandardTlsMigrationOverrideArgs>;
-    strictHeaderParsing?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorStrictHeaderParsingArgs>;
-    subCustomer?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorSubCustomerArgs>;
-    sureRoute?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorSureRouteArgs>;
-    tcpOptimization?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorTcpOptimizationArgs>;
-    teaLeaf?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorTeaLeafArgs>;
-    tieredDistribution?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorTieredDistributionArgs>;
-    tieredDistributionAdvanced?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorTieredDistributionAdvancedArgs>;
-    tieredDistributionCustomization?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorTieredDistributionCustomizationArgs>;
-    timeout?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorTimeoutArgs>;
-    uidConfiguration?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorUidConfigurationArgs>;
-    validateEntityTag?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorValidateEntityTagArgs>;
-    verifyJsonWebToken?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorVerifyJsonWebTokenArgs>;
-    verifyJsonWebTokenForDcp?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorVerifyJsonWebTokenForDcpArgs>;
-    verifyTokenAuthorization?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorVerifyTokenAuthorizationArgs>;
-    virtualWaitingRoom?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorVirtualWaitingRoomArgs>;
-    virtualWaitingRoomWithEdgeWorkers?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorVirtualWaitingRoomWithEdgeWorkersArgs>;
-    visitorPrioritization?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationArgs>;
-    visitorPrioritizationFifo?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationFifoArgs>;
-    visitorPrioritizationFifoStandalone?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationFifoStandaloneArgs>;
-    watermarking?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorWatermarkingArgs>;
-    webApplicationFirewall?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorWebApplicationFirewallArgs>;
-    webSockets?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorWebSocketsArgs>;
-    webdav?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorWebdavArgs>;
+    mediaOriginFailover?: pulumi.Input<inputs.MediaOriginFailoverArgs>;
+    metadataCaching?: pulumi.Input<inputs.MetadataCachingArgs>;
+    mobileSdkPerformance?: pulumi.Input<inputs.MobileSdkPerformanceArgs>;
+    modifyIncomingRequestHeader?: pulumi.Input<inputs.ModifyIncomingRequestHeaderArgs>;
+    modifyIncomingResponseHeader?: pulumi.Input<inputs.ModifyIncomingResponseHeaderArgs>;
+    modifyOutgoingRequestHeader?: pulumi.Input<inputs.ModifyOutgoingRequestHeaderArgs>;
+    modifyOutgoingResponseHeader?: pulumi.Input<inputs.ModifyOutgoingResponseHeaderArgs>;
+    modifyViaHeader?: pulumi.Input<inputs.ModifyViaHeaderArgs>;
+    origin?: pulumi.Input<inputs.OriginArgs>;
+    originCharacteristics?: pulumi.Input<inputs.OriginCharacteristicsArgs>;
+    originCharacteristicsWsd?: pulumi.Input<inputs.OriginCharacteristicsWsdArgs>;
+    originFailureRecoveryMethod?: pulumi.Input<inputs.OriginFailureRecoveryMethodArgs>;
+    originFailureRecoveryPolicy?: pulumi.Input<inputs.OriginFailureRecoveryPolicyArgs>;
+    originIpAcl?: pulumi.Input<inputs.OriginIpAclArgs>;
+    persistentClientConnection?: pulumi.Input<inputs.PersistentClientConnectionArgs>;
+    persistentConnection?: pulumi.Input<inputs.PersistentConnectionArgs>;
+    personallyIdentifiableInformation?: pulumi.Input<inputs.PersonallyIdentifiableInformationArgs>;
+    phasedRelease?: pulumi.Input<inputs.PhasedReleaseArgs>;
+    preconnect?: pulumi.Input<inputs.PreconnectArgs>;
+    predictiveContentDelivery?: pulumi.Input<inputs.PredictiveContentDeliveryArgs>;
+    predictivePrefetching?: pulumi.Input<inputs.PredictivePrefetchingArgs>;
+    prefetch?: pulumi.Input<inputs.PrefetchArgs>;
+    prefetchable?: pulumi.Input<inputs.PrefetchableArgs>;
+    prefreshCache?: pulumi.Input<inputs.PrefreshCacheArgs>;
+    quality?: pulumi.Input<inputs.QualityArgs>;
+    quicBeta?: pulumi.Input<inputs.QuicBetaArgs>;
+    randomSeek?: pulumi.Input<inputs.RandomSeekArgs>;
+    rapid?: pulumi.Input<inputs.RapidArgs>;
+    readTimeout?: pulumi.Input<inputs.ReadTimeoutArgs>;
+    realTimeReporting?: pulumi.Input<inputs.RealTimeReportingArgs>;
+    realUserMonitoring?: pulumi.Input<inputs.RealUserMonitoringArgs>;
+    redirect?: pulumi.Input<inputs.RedirectArgs>;
+    redirectplus?: pulumi.Input<inputs.RedirectplusArgs>;
+    refererChecking?: pulumi.Input<inputs.RefererCheckingArgs>;
+    removeQueryParameter?: pulumi.Input<inputs.RemoveQueryParameterArgs>;
+    removeVary?: pulumi.Input<inputs.RemoveVaryArgs>;
+    report?: pulumi.Input<inputs.ReportArgs>;
+    requestControl?: pulumi.Input<inputs.RequestControlArgs>;
+    requestTypeMarker?: pulumi.Input<inputs.RequestTypeMarkerArgs>;
+    resourceOptimizer?: pulumi.Input<inputs.ResourceOptimizerArgs>;
+    resourceOptimizerExtendedCompatibility?: pulumi.Input<inputs.ResourceOptimizerExtendedCompatibilityArgs>;
+    responseCode?: pulumi.Input<inputs.ResponseCodeArgs>;
+    responseCookie?: pulumi.Input<inputs.ResponseCookieArgs>;
+    restrictObjectCaching?: pulumi.Input<inputs.RestrictObjectCachingArgs>;
+    returnCacheStatus?: pulumi.Input<inputs.ReturnCacheStatusArgs>;
+    rewriteUrl?: pulumi.Input<inputs.RewriteUrlArgs>;
+    rumCustom?: pulumi.Input<inputs.RumCustomArgs>;
+    saasDefinitions?: pulumi.Input<inputs.SaasDefinitionsArgs>;
+    salesForceCommerceCloudClient?: pulumi.Input<inputs.SalesForceCommerceCloudClientArgs>;
+    salesForceCommerceCloudProvider?: pulumi.Input<inputs.SalesForceCommerceCloudProviderArgs>;
+    salesForceCommerceCloudProviderHostHeader?: pulumi.Input<inputs.SalesForceCommerceCloudProviderHostHeaderArgs>;
+    savePostDcaProcessing?: pulumi.Input<inputs.SavePostDcaProcessingArgs>;
+    scheduleInvalidation?: pulumi.Input<inputs.ScheduleInvalidationArgs>;
+    scriptManagement?: pulumi.Input<inputs.ScriptManagementArgs>;
+    segmentedContentProtection?: pulumi.Input<inputs.SegmentedContentProtectionArgs>;
+    segmentedMediaOptimization?: pulumi.Input<inputs.SegmentedMediaOptimizationArgs>;
+    segmentedMediaStreamingPrefetch?: pulumi.Input<inputs.SegmentedMediaStreamingPrefetchArgs>;
+    setVariable?: pulumi.Input<inputs.SetVariableArgs>;
+    simulateErrorCode?: pulumi.Input<inputs.SimulateErrorCodeArgs>;
+    siteShield?: pulumi.Input<inputs.SiteShieldArgs>;
+    standardTlsMigration?: pulumi.Input<inputs.StandardTlsMigrationArgs>;
+    standardTlsMigrationOverride?: pulumi.Input<inputs.StandardTlsMigrationOverrideArgs>;
+    strictHeaderParsing?: pulumi.Input<inputs.StrictHeaderParsingArgs>;
+    subCustomer?: pulumi.Input<inputs.SubCustomerArgs>;
+    sureRoute?: pulumi.Input<inputs.SureRouteArgs>;
+    tcpOptimization?: pulumi.Input<inputs.TcpOptimizationArgs>;
+    teaLeaf?: pulumi.Input<inputs.TeaLeafArgs>;
+    tieredDistribution?: pulumi.Input<inputs.TieredDistributionArgs>;
+    tieredDistributionAdvanced?: pulumi.Input<inputs.TieredDistributionAdvancedArgs>;
+    tieredDistributionCustomization?: pulumi.Input<inputs.TieredDistributionCustomizationArgs>;
+    timeout?: pulumi.Input<inputs.TimeoutArgs>;
+    uidConfiguration?: pulumi.Input<inputs.UidConfigurationArgs>;
+    validateEntityTag?: pulumi.Input<inputs.ValidateEntityTagArgs>;
+    verifyJsonWebToken?: pulumi.Input<inputs.VerifyJsonWebTokenArgs>;
+    verifyJsonWebTokenForDcp?: pulumi.Input<inputs.VerifyJsonWebTokenForDcpArgs>;
+    verifyTokenAuthorization?: pulumi.Input<inputs.VerifyTokenAuthorizationArgs>;
+    virtualWaitingRoom?: pulumi.Input<inputs.VirtualWaitingRoomArgs>;
+    virtualWaitingRoomWithEdgeWorkers?: pulumi.Input<inputs.VirtualWaitingRoomWithEdgeWorkersArgs>;
+    visitorPrioritization?: pulumi.Input<inputs.VisitorPrioritizationArgs>;
+    visitorPrioritizationFifo?: pulumi.Input<inputs.VisitorPrioritizationFifoArgs>;
+    visitorPrioritizationFifoStandalone?: pulumi.Input<inputs.VisitorPrioritizationFifoStandaloneArgs>;
+    watermarking?: pulumi.Input<inputs.WatermarkingArgs>;
+    webApplicationFirewall?: pulumi.Input<inputs.WebApplicationFirewallArgs>;
+    webSockets?: pulumi.Input<inputs.WebSocketsArgs>;
+    webdav?: pulumi.Input<inputs.WebdavArgs>;
 }
 
 export interface GetPropertyRulesBuilderRulesV20230530BehaviorAdScalerCircuitBreaker {
@@ -14156,2546 +11622,6 @@ export interface GetPropertyRulesBuilderRulesV20230530BehaviorMediaFileRetrieval
     uuid?: pulumi.Input<string>;
 }
 
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorMediaOriginFailover {
-    cacheErrorResponse?: boolean;
-    cacheWindow?: string;
-    clientResponseCode?: string;
-    detectObjectUnavailable?: boolean;
-    detectObjectUnavailableTitle?: string;
-    detectOriginUnavailable?: boolean;
-    detectOriginUnavailableTitle?: string;
-    detectOriginUnresponsive?: boolean;
-    detectOriginUnresponsiveTitle?: string;
-    locked?: boolean;
-    objectUnavailableAlternateHost?: string;
-    objectUnavailableBackupHost?: string;
-    objectUnavailableBlacklistOriginIp?: boolean;
-    objectUnavailableBlacklistWindow?: string;
-    objectUnavailableChangeProtocol?: boolean;
-    objectUnavailableDetectionLevel?: string;
-    objectUnavailableIncludeQueryString?: boolean;
-    objectUnavailableModifiedPath?: string;
-    objectUnavailableModifyRequestPath?: boolean;
-    objectUnavailableProtocol?: string;
-    objectUnavailableRecovery?: string;
-    objectUnavailableRedirectMethod?: number;
-    objectUnavailableResponseCodes?: string[];
-    objectUnavailableRetryLimit?: string;
-    originUnavailableAlternateHost?: string;
-    originUnavailableBackupHost?: string;
-    originUnavailableBlacklistOriginIp?: boolean;
-    originUnavailableBlacklistWindow?: string;
-    originUnavailableChangeProtocol?: boolean;
-    originUnavailableDetectionLevel?: string;
-    originUnavailableIncludeQueryString?: boolean;
-    originUnavailableModifiedPath?: string;
-    originUnavailableModifyRequestPath?: boolean;
-    originUnavailableProtocol?: string;
-    originUnavailableRecovery?: string;
-    originUnavailableRedirectMethod?: number;
-    originUnavailableResponseCodes?: string[];
-    originUnavailableRetryLimit?: string;
-    originUnresponsiveAlternateHost?: string;
-    originUnresponsiveBackupHost?: string;
-    originUnresponsiveBlacklistOriginIp?: boolean;
-    originUnresponsiveBlacklistWindow?: string;
-    originUnresponsiveChangeProtocol?: boolean;
-    originUnresponsiveDetectionLevel?: string;
-    originUnresponsiveIncludeQueryString?: boolean;
-    originUnresponsiveModifiedPath?: string;
-    originUnresponsiveModifyRequestPath?: boolean;
-    originUnresponsiveProtocol?: string;
-    originUnresponsiveRecovery?: string;
-    originUnresponsiveRedirectMethod?: number;
-    originUnresponsiveRetryLimit?: string;
-    otherOptions?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorMediaOriginFailoverArgs {
-    cacheErrorResponse?: pulumi.Input<boolean>;
-    cacheWindow?: pulumi.Input<string>;
-    clientResponseCode?: pulumi.Input<string>;
-    detectObjectUnavailable?: pulumi.Input<boolean>;
-    detectObjectUnavailableTitle?: pulumi.Input<string>;
-    detectOriginUnavailable?: pulumi.Input<boolean>;
-    detectOriginUnavailableTitle?: pulumi.Input<string>;
-    detectOriginUnresponsive?: pulumi.Input<boolean>;
-    detectOriginUnresponsiveTitle?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    objectUnavailableAlternateHost?: pulumi.Input<string>;
-    objectUnavailableBackupHost?: pulumi.Input<string>;
-    objectUnavailableBlacklistOriginIp?: pulumi.Input<boolean>;
-    objectUnavailableBlacklistWindow?: pulumi.Input<string>;
-    objectUnavailableChangeProtocol?: pulumi.Input<boolean>;
-    objectUnavailableDetectionLevel?: pulumi.Input<string>;
-    objectUnavailableIncludeQueryString?: pulumi.Input<boolean>;
-    objectUnavailableModifiedPath?: pulumi.Input<string>;
-    objectUnavailableModifyRequestPath?: pulumi.Input<boolean>;
-    objectUnavailableProtocol?: pulumi.Input<string>;
-    objectUnavailableRecovery?: pulumi.Input<string>;
-    objectUnavailableRedirectMethod?: pulumi.Input<number>;
-    objectUnavailableResponseCodes?: pulumi.Input<pulumi.Input<string>[]>;
-    objectUnavailableRetryLimit?: pulumi.Input<string>;
-    originUnavailableAlternateHost?: pulumi.Input<string>;
-    originUnavailableBackupHost?: pulumi.Input<string>;
-    originUnavailableBlacklistOriginIp?: pulumi.Input<boolean>;
-    originUnavailableBlacklistWindow?: pulumi.Input<string>;
-    originUnavailableChangeProtocol?: pulumi.Input<boolean>;
-    originUnavailableDetectionLevel?: pulumi.Input<string>;
-    originUnavailableIncludeQueryString?: pulumi.Input<boolean>;
-    originUnavailableModifiedPath?: pulumi.Input<string>;
-    originUnavailableModifyRequestPath?: pulumi.Input<boolean>;
-    originUnavailableProtocol?: pulumi.Input<string>;
-    originUnavailableRecovery?: pulumi.Input<string>;
-    originUnavailableRedirectMethod?: pulumi.Input<number>;
-    originUnavailableResponseCodes?: pulumi.Input<pulumi.Input<string>[]>;
-    originUnavailableRetryLimit?: pulumi.Input<string>;
-    originUnresponsiveAlternateHost?: pulumi.Input<string>;
-    originUnresponsiveBackupHost?: pulumi.Input<string>;
-    originUnresponsiveBlacklistOriginIp?: pulumi.Input<boolean>;
-    originUnresponsiveBlacklistWindow?: pulumi.Input<string>;
-    originUnresponsiveChangeProtocol?: pulumi.Input<boolean>;
-    originUnresponsiveDetectionLevel?: pulumi.Input<string>;
-    originUnresponsiveIncludeQueryString?: pulumi.Input<boolean>;
-    originUnresponsiveModifiedPath?: pulumi.Input<string>;
-    originUnresponsiveModifyRequestPath?: pulumi.Input<boolean>;
-    originUnresponsiveProtocol?: pulumi.Input<string>;
-    originUnresponsiveRecovery?: pulumi.Input<string>;
-    originUnresponsiveRedirectMethod?: pulumi.Input<number>;
-    originUnresponsiveRetryLimit?: pulumi.Input<string>;
-    otherOptions?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorMetadataCaching {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorMetadataCachingArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorMobileSdkPerformance {
-    enabled?: boolean;
-    locked?: boolean;
-    secondaryMultipathToOrigin?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorMobileSdkPerformanceArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    secondaryMultipathToOrigin?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorModifyIncomingRequestHeader {
-    action?: string;
-    avoidDuplicateHeaders?: boolean;
-    customHeaderName?: string;
-    headerValue?: string;
-    locked?: boolean;
-    newHeaderValue?: string;
-    standardAddHeaderName?: string;
-    standardDeleteHeaderName?: string;
-    standardModifyHeaderName?: string;
-    standardPassHeaderName?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorModifyIncomingRequestHeaderArgs {
-    action?: pulumi.Input<string>;
-    avoidDuplicateHeaders?: pulumi.Input<boolean>;
-    customHeaderName?: pulumi.Input<string>;
-    headerValue?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    newHeaderValue?: pulumi.Input<string>;
-    standardAddHeaderName?: pulumi.Input<string>;
-    standardDeleteHeaderName?: pulumi.Input<string>;
-    standardModifyHeaderName?: pulumi.Input<string>;
-    standardPassHeaderName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorModifyIncomingResponseHeader {
-    action?: string;
-    avoidDuplicateHeaders?: boolean;
-    customHeaderName?: string;
-    headerValue?: string;
-    locked?: boolean;
-    newHeaderValue?: string;
-    standardAddHeaderName?: string;
-    standardDeleteHeaderName?: string;
-    standardModifyHeaderName?: string;
-    standardPassHeaderName?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorModifyIncomingResponseHeaderArgs {
-    action?: pulumi.Input<string>;
-    avoidDuplicateHeaders?: pulumi.Input<boolean>;
-    customHeaderName?: pulumi.Input<string>;
-    headerValue?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    newHeaderValue?: pulumi.Input<string>;
-    standardAddHeaderName?: pulumi.Input<string>;
-    standardDeleteHeaderName?: pulumi.Input<string>;
-    standardModifyHeaderName?: pulumi.Input<string>;
-    standardPassHeaderName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorModifyOutgoingRequestHeader {
-    action?: string;
-    avoidDuplicateHeaders?: boolean;
-    customHeaderName?: string;
-    headerValue?: string;
-    locked?: boolean;
-    matchMultiple?: boolean;
-    newHeaderValue?: string;
-    regexHeaderMatch?: string;
-    regexHeaderReplace?: string;
-    standardAddHeaderName?: string;
-    standardDeleteHeaderName?: string;
-    standardModifyHeaderName?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorModifyOutgoingRequestHeaderArgs {
-    action?: pulumi.Input<string>;
-    avoidDuplicateHeaders?: pulumi.Input<boolean>;
-    customHeaderName?: pulumi.Input<string>;
-    headerValue?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    matchMultiple?: pulumi.Input<boolean>;
-    newHeaderValue?: pulumi.Input<string>;
-    regexHeaderMatch?: pulumi.Input<string>;
-    regexHeaderReplace?: pulumi.Input<string>;
-    standardAddHeaderName?: pulumi.Input<string>;
-    standardDeleteHeaderName?: pulumi.Input<string>;
-    standardModifyHeaderName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorModifyOutgoingResponseHeader {
-    action?: string;
-    avoidDuplicateHeaders?: boolean;
-    customHeaderName?: string;
-    headerValue?: string;
-    locked?: boolean;
-    matchMultiple?: boolean;
-    newHeaderValue?: string;
-    regexHeaderMatch?: string;
-    regexHeaderReplace?: string;
-    standardAddHeaderName?: string;
-    standardDeleteHeaderName?: string;
-    standardModifyHeaderName?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorModifyOutgoingResponseHeaderArgs {
-    action?: pulumi.Input<string>;
-    avoidDuplicateHeaders?: pulumi.Input<boolean>;
-    customHeaderName?: pulumi.Input<string>;
-    headerValue?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    matchMultiple?: pulumi.Input<boolean>;
-    newHeaderValue?: pulumi.Input<string>;
-    regexHeaderMatch?: pulumi.Input<string>;
-    regexHeaderReplace?: pulumi.Input<string>;
-    standardAddHeaderName?: pulumi.Input<string>;
-    standardDeleteHeaderName?: pulumi.Input<string>;
-    standardModifyHeaderName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorModifyViaHeader {
-    enabled?: boolean;
-    locked?: boolean;
-    modificationOption?: string;
-    renameHeaderTo?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorModifyViaHeaderArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    modificationOption?: pulumi.Input<string>;
-    renameHeaderTo?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorOrigin {
-    cacheKeyHostname?: string;
-    compress?: boolean;
-    customCertificateAuthorities?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthority[];
-    customCertificates?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificate[];
-    customForwardHostHeader?: string;
-    customValidCnValues?: string[];
-    enableTrueClientIp?: boolean;
-    forwardHostHeader?: string;
-    hostname?: string;
-    httpPort?: number;
-    httpsPort?: number;
-    ipVersion?: string;
-    locked?: boolean;
-    mslorigin?: string;
-    netStorage?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginNetStorage;
-    originCertificate?: string;
-    originCertsToHonor?: string;
-    originId?: string;
-    originSni?: boolean;
-    originType?: string;
-    ports?: string;
-    saasCnameEnabled?: boolean;
-    saasCnameLevel?: number;
-    saasCookie?: string;
-    saasQueryString?: string;
-    saasRegex?: string;
-    saasReplace?: string;
-    saasSuffix?: string;
-    saasType?: string;
-    secondHostname?: string;
-    secondHostnameEnabled?: boolean;
-    standardCertificateAuthorities?: string[];
-    templateUuid?: string;
-    trueClientIpClientSetting?: boolean;
-    trueClientIpHeader?: string;
-    useUniqueCacheKey?: boolean;
-    uuid?: string;
-    verificationMode?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginArgs {
-    cacheKeyHostname?: pulumi.Input<string>;
-    compress?: pulumi.Input<boolean>;
-    customCertificateAuthorities?: pulumi.Input<pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityArgs>[]>;
-    customCertificates?: pulumi.Input<pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateArgs>[]>;
-    customForwardHostHeader?: pulumi.Input<string>;
-    customValidCnValues?: pulumi.Input<pulumi.Input<string>[]>;
-    enableTrueClientIp?: pulumi.Input<boolean>;
-    forwardHostHeader?: pulumi.Input<string>;
-    hostname?: pulumi.Input<string>;
-    httpPort?: pulumi.Input<number>;
-    httpsPort?: pulumi.Input<number>;
-    ipVersion?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    mslorigin?: pulumi.Input<string>;
-    netStorage?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginNetStorageArgs>;
-    originCertificate?: pulumi.Input<string>;
-    originCertsToHonor?: pulumi.Input<string>;
-    originId?: pulumi.Input<string>;
-    originSni?: pulumi.Input<boolean>;
-    originType?: pulumi.Input<string>;
-    ports?: pulumi.Input<string>;
-    saasCnameEnabled?: pulumi.Input<boolean>;
-    saasCnameLevel?: pulumi.Input<number>;
-    saasCookie?: pulumi.Input<string>;
-    saasQueryString?: pulumi.Input<string>;
-    saasRegex?: pulumi.Input<string>;
-    saasReplace?: pulumi.Input<string>;
-    saasSuffix?: pulumi.Input<string>;
-    saasType?: pulumi.Input<string>;
-    secondHostname?: pulumi.Input<string>;
-    secondHostnameEnabled?: pulumi.Input<boolean>;
-    standardCertificateAuthorities?: pulumi.Input<pulumi.Input<string>[]>;
-    templateUuid?: pulumi.Input<string>;
-    trueClientIpClientSetting?: pulumi.Input<boolean>;
-    trueClientIpHeader?: pulumi.Input<string>;
-    useUniqueCacheKey?: pulumi.Input<boolean>;
-    uuid?: pulumi.Input<string>;
-    verificationMode?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteristics {
-    accessKeyEncryptedStorage?: boolean;
-    adcTitle?: string;
-    authenticationMethod?: string;
-    authenticationMethodTitle?: string;
-    awsAccessKeyId?: string;
-    awsAccessKeyVersionGuid?: string;
-    awsArRegion?: string;
-    awsHost?: string;
-    awsRegion?: string;
-    awsSecretAccessKey?: string;
-    awsService?: string;
-    country?: string;
-    customSignStrings?: string[];
-    directConnectGeo?: string;
-    encodingVersion?: number;
-    endPointService?: string;
-    gcsAccessKeyVersionGuid?: string;
-    gcsHmacKeyAccessId?: string;
-    gcsHmacKeySecret?: string;
-    hostnameTag?: boolean;
-    locked?: boolean;
-    mslkey?: string;
-    mslname?: string;
-    nonce?: string;
-    originLocationTitle?: string;
-    propertyIdTag?: boolean;
-    roleArn?: string;
-    secretKey?: string;
-    templateUuid?: string;
-    useCustomSignString?: boolean;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteristicsArgs {
-    accessKeyEncryptedStorage?: pulumi.Input<boolean>;
-    adcTitle?: pulumi.Input<string>;
-    authenticationMethod?: pulumi.Input<string>;
-    authenticationMethodTitle?: pulumi.Input<string>;
-    awsAccessKeyId?: pulumi.Input<string>;
-    awsAccessKeyVersionGuid?: pulumi.Input<string>;
-    awsArRegion?: pulumi.Input<string>;
-    awsHost?: pulumi.Input<string>;
-    awsRegion?: pulumi.Input<string>;
-    awsSecretAccessKey?: pulumi.Input<string>;
-    awsService?: pulumi.Input<string>;
-    country?: pulumi.Input<string>;
-    customSignStrings?: pulumi.Input<pulumi.Input<string>[]>;
-    directConnectGeo?: pulumi.Input<string>;
-    encodingVersion?: pulumi.Input<number>;
-    endPointService?: pulumi.Input<string>;
-    gcsAccessKeyVersionGuid?: pulumi.Input<string>;
-    gcsHmacKeyAccessId?: pulumi.Input<string>;
-    gcsHmacKeySecret?: pulumi.Input<string>;
-    hostnameTag?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    mslkey?: pulumi.Input<string>;
-    mslname?: pulumi.Input<string>;
-    nonce?: pulumi.Input<string>;
-    originLocationTitle?: pulumi.Input<string>;
-    propertyIdTag?: pulumi.Input<boolean>;
-    roleArn?: pulumi.Input<string>;
-    secretKey?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    useCustomSignString?: pulumi.Input<boolean>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteristicsWsd {
-    locked?: boolean;
-    origintype?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteristicsWsdArgs {
-    locked?: pulumi.Input<boolean>;
-    origintype?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificate {
-    canBeCa?: boolean;
-    canBeLeaf?: boolean;
-    issuerRdns?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateIssuerRdns;
-    notAfter?: number;
-    notBefore?: number;
-    pemEncodedCert?: string;
-    publicKey?: string;
-    publicKeyAlgorithm?: string;
-    publicKeyFormat?: string;
-    selfSigned?: boolean;
-    serialNumber?: string;
-    sha1Fingerprint?: string;
-    sigAlgName?: string;
-    subjectAlternativeNames?: string[];
-    subjectCn?: string;
-    subjectRdns?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateSubjectRdns;
-    version?: number;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateArgs {
-    canBeCa?: pulumi.Input<boolean>;
-    canBeLeaf?: pulumi.Input<boolean>;
-    issuerRdns?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateIssuerRdnsArgs>;
-    notAfter?: pulumi.Input<number>;
-    notBefore?: pulumi.Input<number>;
-    pemEncodedCert?: pulumi.Input<string>;
-    publicKey?: pulumi.Input<string>;
-    publicKeyAlgorithm?: pulumi.Input<string>;
-    publicKeyFormat?: pulumi.Input<string>;
-    selfSigned?: pulumi.Input<boolean>;
-    serialNumber?: pulumi.Input<string>;
-    sha1Fingerprint?: pulumi.Input<string>;
-    sigAlgName?: pulumi.Input<string>;
-    subjectAlternativeNames?: pulumi.Input<pulumi.Input<string>[]>;
-    subjectCn?: pulumi.Input<string>;
-    subjectRdns?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateSubjectRdnsArgs>;
-    version?: pulumi.Input<number>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthority {
-    canBeCa?: boolean;
-    canBeLeaf?: boolean;
-    issuerRdns?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityIssuerRdns;
-    notAfter?: number;
-    notBefore?: number;
-    pemEncodedCert?: string;
-    publicKey?: string;
-    publicKeyAlgorithm?: string;
-    publicKeyFormat?: string;
-    selfSigned?: boolean;
-    serialNumber?: string;
-    sha1Fingerprint?: string;
-    sigAlgName?: string;
-    subjectAlternativeNames?: string[];
-    subjectCn?: string;
-    subjectRdns?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthoritySubjectRdns;
-    version?: number;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityArgs {
-    canBeCa?: pulumi.Input<boolean>;
-    canBeLeaf?: pulumi.Input<boolean>;
-    issuerRdns?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityIssuerRdnsArgs>;
-    notAfter?: pulumi.Input<number>;
-    notBefore?: pulumi.Input<number>;
-    pemEncodedCert?: pulumi.Input<string>;
-    publicKey?: pulumi.Input<string>;
-    publicKeyAlgorithm?: pulumi.Input<string>;
-    publicKeyFormat?: pulumi.Input<string>;
-    selfSigned?: pulumi.Input<boolean>;
-    serialNumber?: pulumi.Input<string>;
-    sha1Fingerprint?: pulumi.Input<string>;
-    sigAlgName?: pulumi.Input<string>;
-    subjectAlternativeNames?: pulumi.Input<pulumi.Input<string>[]>;
-    subjectCn?: pulumi.Input<string>;
-    subjectRdns?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthoritySubjectRdnsArgs>;
-    version?: pulumi.Input<number>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityIssuerRdns {
-    c?: string;
-    cn?: string;
-    o?: string;
-    ou?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityIssuerRdnsArgs {
-    c?: pulumi.Input<string>;
-    cn?: pulumi.Input<string>;
-    o?: pulumi.Input<string>;
-    ou?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthoritySubjectRdns {
-    c?: string;
-    cn?: string;
-    o?: string;
-    ou?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthoritySubjectRdnsArgs {
-    c?: pulumi.Input<string>;
-    cn?: pulumi.Input<string>;
-    o?: pulumi.Input<string>;
-    ou?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateIssuerRdns {
-    c?: string;
-    cn?: string;
-    o?: string;
-    ou?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateIssuerRdnsArgs {
-    c?: pulumi.Input<string>;
-    cn?: pulumi.Input<string>;
-    o?: pulumi.Input<string>;
-    ou?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateSubjectRdns {
-    c?: string;
-    cn?: string;
-    o?: string;
-    ou?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateSubjectRdnsArgs {
-    c?: pulumi.Input<string>;
-    cn?: pulumi.Input<string>;
-    o?: pulumi.Input<string>;
-    ou?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginFailureRecoveryMethod {
-    customStatusCode?: string;
-    locked?: boolean;
-    recoveryMethod?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginFailureRecoveryMethodArgs {
-    customStatusCode?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    recoveryMethod?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginFailureRecoveryPolicy {
-    binaryEquivalentContent?: boolean;
-    enableIpAvoidance?: boolean;
-    enabled?: boolean;
-    ipAvoidanceErrorThreshold?: number;
-    ipAvoidanceRetryInterval?: number;
-    locked?: boolean;
-    monitorOriginResponsiveness?: boolean;
-    monitorResponseCodes1s?: string[];
-    monitorResponseCodes2s?: string[];
-    monitorResponseCodes3s?: string[];
-    monitorStatusCodes1?: boolean;
-    monitorStatusCodes1EnableRecovery?: boolean;
-    monitorStatusCodes1EnableRetry?: boolean;
-    monitorStatusCodes1RecoveryConfigName?: string;
-    monitorStatusCodes2?: boolean;
-    monitorStatusCodes2EnableRecovery?: boolean;
-    monitorStatusCodes2EnableRetry?: boolean;
-    monitorStatusCodes2RecoveryConfigName?: string;
-    monitorStatusCodes3?: boolean;
-    monitorStatusCodes3EnableRecovery?: boolean;
-    monitorStatusCodes3EnableRetry?: boolean;
-    monitorStatusCodes3RecoveryConfigName?: string;
-    originResponsivenessCustomTimeout?: number;
-    originResponsivenessEnableRecovery?: boolean;
-    originResponsivenessEnableRetry?: boolean;
-    originResponsivenessMonitoring?: string;
-    originResponsivenessRecoveryConfigName?: string;
-    originResponsivenessTimeout?: string;
-    statusCodeMonitoring1?: string;
-    statusCodeMonitoring2?: string;
-    statusCodeMonitoring3?: string;
-    templateUuid?: string;
-    tuningParameters?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginFailureRecoveryPolicyArgs {
-    binaryEquivalentContent?: pulumi.Input<boolean>;
-    enableIpAvoidance?: pulumi.Input<boolean>;
-    enabled?: pulumi.Input<boolean>;
-    ipAvoidanceErrorThreshold?: pulumi.Input<number>;
-    ipAvoidanceRetryInterval?: pulumi.Input<number>;
-    locked?: pulumi.Input<boolean>;
-    monitorOriginResponsiveness?: pulumi.Input<boolean>;
-    monitorResponseCodes1s?: pulumi.Input<pulumi.Input<string>[]>;
-    monitorResponseCodes2s?: pulumi.Input<pulumi.Input<string>[]>;
-    monitorResponseCodes3s?: pulumi.Input<pulumi.Input<string>[]>;
-    monitorStatusCodes1?: pulumi.Input<boolean>;
-    monitorStatusCodes1EnableRecovery?: pulumi.Input<boolean>;
-    monitorStatusCodes1EnableRetry?: pulumi.Input<boolean>;
-    monitorStatusCodes1RecoveryConfigName?: pulumi.Input<string>;
-    monitorStatusCodes2?: pulumi.Input<boolean>;
-    monitorStatusCodes2EnableRecovery?: pulumi.Input<boolean>;
-    monitorStatusCodes2EnableRetry?: pulumi.Input<boolean>;
-    monitorStatusCodes2RecoveryConfigName?: pulumi.Input<string>;
-    monitorStatusCodes3?: pulumi.Input<boolean>;
-    monitorStatusCodes3EnableRecovery?: pulumi.Input<boolean>;
-    monitorStatusCodes3EnableRetry?: pulumi.Input<boolean>;
-    monitorStatusCodes3RecoveryConfigName?: pulumi.Input<string>;
-    originResponsivenessCustomTimeout?: pulumi.Input<number>;
-    originResponsivenessEnableRecovery?: pulumi.Input<boolean>;
-    originResponsivenessEnableRetry?: pulumi.Input<boolean>;
-    originResponsivenessMonitoring?: pulumi.Input<string>;
-    originResponsivenessRecoveryConfigName?: pulumi.Input<string>;
-    originResponsivenessTimeout?: pulumi.Input<string>;
-    statusCodeMonitoring1?: pulumi.Input<string>;
-    statusCodeMonitoring2?: pulumi.Input<string>;
-    statusCodeMonitoring3?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    tuningParameters?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginIpAcl {
-    enable?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginIpAclArgs {
-    enable?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginNetStorage {
-    cpCode?: number;
-    downloadDomainName?: string;
-    g2oToken?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginNetStorageArgs {
-    cpCode?: pulumi.Input<number>;
-    downloadDomainName?: pulumi.Input<string>;
-    g2oToken?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorPersistentClientConnection {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    timeout?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorPersistentClientConnectionArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    timeout?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorPersistentConnection {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    timeout?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorPersistentConnectionArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    timeout?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorPersonallyIdentifiableInformation {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorPersonallyIdentifiableInformationArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorPhasedRelease {
-    cloudletPolicy?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorPhasedReleaseCloudletPolicy;
-    cloudletSharedPolicy?: number;
-    enabled?: boolean;
-    failoverDuration?: number;
-    failoverEnabled?: boolean;
-    failoverResponseCodes?: string[];
-    failoverTitle?: string;
-    isSharedPolicy?: boolean;
-    label?: string;
-    locked?: boolean;
-    populationCookieType?: string;
-    populationDuration?: string;
-    populationExpirationDate?: string;
-    populationRefresh?: boolean;
-    populationTitle?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorPhasedReleaseArgs {
-    cloudletPolicy?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorPhasedReleaseCloudletPolicyArgs>;
-    cloudletSharedPolicy?: pulumi.Input<number>;
-    enabled?: pulumi.Input<boolean>;
-    failoverDuration?: pulumi.Input<number>;
-    failoverEnabled?: pulumi.Input<boolean>;
-    failoverResponseCodes?: pulumi.Input<pulumi.Input<string>[]>;
-    failoverTitle?: pulumi.Input<string>;
-    isSharedPolicy?: pulumi.Input<boolean>;
-    label?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    populationCookieType?: pulumi.Input<string>;
-    populationDuration?: pulumi.Input<string>;
-    populationExpirationDate?: pulumi.Input<string>;
-    populationRefresh?: pulumi.Input<boolean>;
-    populationTitle?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorPhasedReleaseCloudletPolicy {
-    id?: number;
-    name?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorPhasedReleaseCloudletPolicyArgs {
-    id?: pulumi.Input<number>;
-    name?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorPreconnect {
-    locked?: boolean;
-    preconnectlists?: string[];
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorPreconnectArgs {
-    locked?: pulumi.Input<boolean>;
-    preconnectlists?: pulumi.Input<pulumi.Input<string>[]>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorPredictiveContentDelivery {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorPredictiveContentDeliveryArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorPredictivePrefetching {
-    accuracyTarget?: string;
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorPredictivePrefetchingArgs {
-    accuracyTarget?: pulumi.Input<string>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorPrefetch {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorPrefetchArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorPrefetchable {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorPrefetchableArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorPrefreshCache {
-    enabled?: boolean;
-    locked?: boolean;
-    prefreshval?: number;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorPrefreshCacheArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    prefreshval?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorQuality {
-    audienceSettings?: string;
-    catalogSize?: string;
-    contentSettings?: string;
-    contentType?: string;
-    country?: string;
-    deliveryFormat?: string;
-    deliveryType?: string;
-    downloadType?: string;
-    endUserLocation?: string;
-    locked?: boolean;
-    maximumConcurrentUsers?: string;
-    objectSize?: string;
-    optimizeFor?: string;
-    originSettings?: string;
-    popularityDistribution?: string;
-    refreshRate?: string;
-    segmentDuration?: number;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorQualityArgs {
-    audienceSettings?: pulumi.Input<string>;
-    catalogSize?: pulumi.Input<string>;
-    contentSettings?: pulumi.Input<string>;
-    contentType?: pulumi.Input<string>;
-    country?: pulumi.Input<string>;
-    deliveryFormat?: pulumi.Input<string>;
-    deliveryType?: pulumi.Input<string>;
-    downloadType?: pulumi.Input<string>;
-    endUserLocation?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    maximumConcurrentUsers?: pulumi.Input<string>;
-    objectSize?: pulumi.Input<string>;
-    optimizeFor?: pulumi.Input<string>;
-    originSettings?: pulumi.Input<string>;
-    popularityDistribution?: pulumi.Input<string>;
-    refreshRate?: pulumi.Input<string>;
-    segmentDuration?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorQuicBeta {
-    enabled?: boolean;
-    locked?: boolean;
-    quicOfferPercentage?: number;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorQuicBetaArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    quicOfferPercentage?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRandomSeek {
-    flv?: boolean;
-    locked?: boolean;
-    maximumSize?: string;
-    mp4?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRandomSeekArgs {
-    flv?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    maximumSize?: pulumi.Input<string>;
-    mp4?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRapid {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRapidArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorReadTimeout {
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-    value?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorReadTimeoutArgs {
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    value?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRealTimeReporting {
-    advanced?: boolean;
-    beaconSamplingPercentage?: number;
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRealTimeReportingArgs {
-    advanced?: pulumi.Input<boolean>;
-    beaconSamplingPercentage?: pulumi.Input<number>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRealUserMonitoring {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRealUserMonitoringArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRedirect {
-    destinationHostname?: string;
-    destinationHostnameOther?: string;
-    destinationHostnameSibling?: string;
-    destinationHostnameSubdomain?: string;
-    destinationPath?: string;
-    destinationPathOther?: string;
-    destinationPathPrefix?: string;
-    destinationPathSuffix?: string;
-    destinationPathSuffixStatus?: string;
-    destinationProtocol?: string;
-    locked?: boolean;
-    mobileDefaultChoice?: string;
-    queryString?: string;
-    responseCode?: number;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRedirectArgs {
-    destinationHostname?: pulumi.Input<string>;
-    destinationHostnameOther?: pulumi.Input<string>;
-    destinationHostnameSibling?: pulumi.Input<string>;
-    destinationHostnameSubdomain?: pulumi.Input<string>;
-    destinationPath?: pulumi.Input<string>;
-    destinationPathOther?: pulumi.Input<string>;
-    destinationPathPrefix?: pulumi.Input<string>;
-    destinationPathSuffix?: pulumi.Input<string>;
-    destinationPathSuffixStatus?: pulumi.Input<string>;
-    destinationProtocol?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    mobileDefaultChoice?: pulumi.Input<string>;
-    queryString?: pulumi.Input<string>;
-    responseCode?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRedirectplus {
-    destination?: string;
-    enabled?: boolean;
-    locked?: boolean;
-    responseCode?: number;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRedirectplusArgs {
-    destination?: pulumi.Input<string>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    responseCode?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRefererChecking {
-    allowChildren?: boolean;
-    domains?: string[];
-    enabled?: boolean;
-    locked?: boolean;
-    strict?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRefererCheckingArgs {
-    allowChildren?: pulumi.Input<boolean>;
-    domains?: pulumi.Input<pulumi.Input<string>[]>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    strict?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRemoveQueryParameter {
-    locked?: boolean;
-    parameters?: string[];
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRemoveQueryParameterArgs {
-    locked?: pulumi.Input<boolean>;
-    parameters?: pulumi.Input<pulumi.Input<string>[]>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRemoveVary {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRemoveVaryArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorReport {
-    cookies?: string[];
-    customLogField?: string;
-    locked?: boolean;
-    logAcceptLanguage?: boolean;
-    logCookies?: string;
-    logCustomLogField?: boolean;
-    logEdgeIp?: boolean;
-    logHost?: boolean;
-    logReferer?: boolean;
-    logUserAgent?: boolean;
-    logXForwardedFor?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorReportArgs {
-    cookies?: pulumi.Input<pulumi.Input<string>[]>;
-    customLogField?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    logAcceptLanguage?: pulumi.Input<boolean>;
-    logCookies?: pulumi.Input<string>;
-    logCustomLogField?: pulumi.Input<boolean>;
-    logEdgeIp?: pulumi.Input<boolean>;
-    logHost?: pulumi.Input<boolean>;
-    logReferer?: pulumi.Input<boolean>;
-    logUserAgent?: pulumi.Input<boolean>;
-    logXForwardedFor?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRequestControl {
-    branded403File?: string;
-    branded403StatusCode?: number;
-    branded403Url?: string;
-    brandedDenyCacheTtl?: number;
-    cloudletPolicy?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRequestControlCloudletPolicy;
-    cloudletSharedPolicy?: number;
-    enableBranded403?: boolean;
-    enabled?: boolean;
-    isSharedPolicy?: boolean;
-    locked?: boolean;
-    netStorage?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRequestControlNetStorage;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRequestControlArgs {
-    branded403File?: pulumi.Input<string>;
-    branded403StatusCode?: pulumi.Input<number>;
-    branded403Url?: pulumi.Input<string>;
-    brandedDenyCacheTtl?: pulumi.Input<number>;
-    cloudletPolicy?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRequestControlCloudletPolicyArgs>;
-    cloudletSharedPolicy?: pulumi.Input<number>;
-    enableBranded403?: pulumi.Input<boolean>;
-    enabled?: pulumi.Input<boolean>;
-    isSharedPolicy?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    netStorage?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRequestControlNetStorageArgs>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRequestControlCloudletPolicy {
-    id?: number;
-    name?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRequestControlCloudletPolicyArgs {
-    id?: pulumi.Input<number>;
-    name?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRequestControlNetStorage {
-    cpCode?: number;
-    downloadDomainName?: string;
-    g2oToken?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRequestControlNetStorageArgs {
-    cpCode?: pulumi.Input<number>;
-    downloadDomainName?: pulumi.Input<string>;
-    g2oToken?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRequestTypeMarker {
-    locked?: boolean;
-    requestType?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRequestTypeMarkerArgs {
-    locked?: pulumi.Input<boolean>;
-    requestType?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorResourceOptimizer {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorResourceOptimizerArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorResourceOptimizerExtendedCompatibility {
-    enableAllFeatures?: boolean;
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorResourceOptimizerExtendedCompatibilityArgs {
-    enableAllFeatures?: pulumi.Input<boolean>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorResponseCode {
-    locked?: boolean;
-    override206?: boolean;
-    statusCode?: number;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorResponseCodeArgs {
-    locked?: pulumi.Input<boolean>;
-    override206?: pulumi.Input<boolean>;
-    statusCode?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorResponseCookie {
-    cookieName?: string;
-    defaultDomain?: boolean;
-    defaultPath?: boolean;
-    domain?: string;
-    duration?: string;
-    enabled?: boolean;
-    expirationDate?: string;
-    expires?: string;
-    format?: string;
-    httpOnly?: boolean;
-    locked?: boolean;
-    path?: string;
-    sameSite?: string;
-    secure?: boolean;
-    templateUuid?: string;
-    type?: string;
-    uuid?: string;
-    value?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorResponseCookieArgs {
-    cookieName?: pulumi.Input<string>;
-    defaultDomain?: pulumi.Input<boolean>;
-    defaultPath?: pulumi.Input<boolean>;
-    domain?: pulumi.Input<string>;
-    duration?: pulumi.Input<string>;
-    enabled?: pulumi.Input<boolean>;
-    expirationDate?: pulumi.Input<string>;
-    expires?: pulumi.Input<string>;
-    format?: pulumi.Input<string>;
-    httpOnly?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    path?: pulumi.Input<string>;
-    sameSite?: pulumi.Input<string>;
-    secure?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    type?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    value?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRestrictObjectCaching {
-    locked?: boolean;
-    maximumSize?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRestrictObjectCachingArgs {
-    locked?: pulumi.Input<boolean>;
-    maximumSize?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorReturnCacheStatus {
-    locked?: boolean;
-    responseHeaderName?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorReturnCacheStatusArgs {
-    locked?: pulumi.Input<boolean>;
-    responseHeaderName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRewriteUrl {
-    behavior?: string;
-    keepQueryString?: boolean;
-    locked?: boolean;
-    match?: string;
-    matchMultiple?: boolean;
-    matchRegex?: string;
-    targetPath?: string;
-    targetPathPrepend?: string;
-    targetRegex?: string;
-    targetUrl?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRewriteUrlArgs {
-    behavior?: pulumi.Input<string>;
-    keepQueryString?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    match?: pulumi.Input<string>;
-    matchMultiple?: pulumi.Input<boolean>;
-    matchRegex?: pulumi.Input<string>;
-    targetPath?: pulumi.Input<string>;
-    targetPathPrepend?: pulumi.Input<string>;
-    targetRegex?: pulumi.Input<string>;
-    targetUrl?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRumCustom {
-    locked?: boolean;
-    rumGroupName?: string;
-    rumSampleRate?: number;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorRumCustomArgs {
-    locked?: pulumi.Input<boolean>;
-    rumGroupName?: pulumi.Input<string>;
-    rumSampleRate?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorSaasDefinitions {
-    applicationAction?: string;
-    applicationCnameEnabled?: boolean;
-    applicationCnameLevel?: number;
-    applicationCookie?: string;
-    applicationQueryString?: string;
-    applicationRegex?: string;
-    applicationReplace?: string;
-    applicationTitle?: string;
-    customerAction?: string;
-    customerCnameEnabled?: boolean;
-    customerCnameLevel?: number;
-    customerCookie?: string;
-    customerQueryString?: string;
-    customerRegex?: string;
-    customerReplace?: string;
-    customerTitle?: string;
-    locked?: boolean;
-    templateUuid?: string;
-    usersAction?: string;
-    usersCnameEnabled?: boolean;
-    usersCnameLevel?: number;
-    usersCookie?: string;
-    usersQueryString?: string;
-    usersRegex?: string;
-    usersReplace?: string;
-    usersTitle?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorSaasDefinitionsArgs {
-    applicationAction?: pulumi.Input<string>;
-    applicationCnameEnabled?: pulumi.Input<boolean>;
-    applicationCnameLevel?: pulumi.Input<number>;
-    applicationCookie?: pulumi.Input<string>;
-    applicationQueryString?: pulumi.Input<string>;
-    applicationRegex?: pulumi.Input<string>;
-    applicationReplace?: pulumi.Input<string>;
-    applicationTitle?: pulumi.Input<string>;
-    customerAction?: pulumi.Input<string>;
-    customerCnameEnabled?: pulumi.Input<boolean>;
-    customerCnameLevel?: pulumi.Input<number>;
-    customerCookie?: pulumi.Input<string>;
-    customerQueryString?: pulumi.Input<string>;
-    customerRegex?: pulumi.Input<string>;
-    customerReplace?: pulumi.Input<string>;
-    customerTitle?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    usersAction?: pulumi.Input<string>;
-    usersCnameEnabled?: pulumi.Input<boolean>;
-    usersCnameLevel?: pulumi.Input<number>;
-    usersCookie?: pulumi.Input<string>;
-    usersQueryString?: pulumi.Input<string>;
-    usersRegex?: pulumi.Input<string>;
-    usersReplace?: pulumi.Input<string>;
-    usersTitle?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorSalesForceCommerceCloudClient {
-    allowOverrideOriginCacheKey?: boolean;
-    connectorId?: string;
-    enabled?: boolean;
-    locked?: boolean;
-    originHostHeader?: string;
-    originType?: string;
-    sf3cOriginHost?: string;
-    sf3cOriginHostHeader?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorSalesForceCommerceCloudClientArgs {
-    allowOverrideOriginCacheKey?: pulumi.Input<boolean>;
-    connectorId?: pulumi.Input<string>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    originHostHeader?: pulumi.Input<string>;
-    originType?: pulumi.Input<string>;
-    sf3cOriginHost?: pulumi.Input<string>;
-    sf3cOriginHostHeader?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorSalesForceCommerceCloudProvider {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorSalesForceCommerceCloudProviderArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorSalesForceCommerceCloudProviderHostHeader {
-    hostHeaderSource?: string;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorSalesForceCommerceCloudProviderHostHeaderArgs {
-    hostHeaderSource?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorSavePostDcaProcessing {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorSavePostDcaProcessingArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorScheduleInvalidation {
-    locked?: boolean;
-    refreshMethod?: string;
-    repeat?: boolean;
-    repeatInterval?: string;
-    start?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorScheduleInvalidationArgs {
-    locked?: pulumi.Input<boolean>;
-    refreshMethod?: pulumi.Input<string>;
-    repeat?: pulumi.Input<boolean>;
-    repeatInterval?: pulumi.Input<string>;
-    start?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorScriptManagement {
-    enabled?: boolean;
-    locked?: boolean;
-    serviceworker?: string;
-    templateUuid?: string;
-    timestamp?: number;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorScriptManagementArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    serviceworker?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    timestamp?: pulumi.Input<number>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedContentProtection {
-    acl?: boolean;
-    dashMediaEncryption?: boolean;
-    dataPayload?: boolean;
-    enableTokenInUri?: boolean;
-    enabled?: boolean;
-    fieldCarryOver?: string;
-    headerForSalts?: string[];
-    hlsMasterManifestFiles?: string[];
-    hlsMediaEncryption?: boolean;
-    ip?: boolean;
-    key?: string;
-    locked?: boolean;
-    mediaEncryptionTitle?: string;
-    revokedListId?: number;
-    salt?: string;
-    sessionId?: boolean;
-    templateUuid?: string;
-    tokenAuthHlsTitle?: string;
-    tokenAuthenticationTitle?: string;
-    tokenRevocationEnabled?: boolean;
-    tokenRevocationTitle?: string;
-    transitionKey?: string;
-    useAdvanced?: boolean;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedContentProtectionArgs {
-    acl?: pulumi.Input<boolean>;
-    dashMediaEncryption?: pulumi.Input<boolean>;
-    dataPayload?: pulumi.Input<boolean>;
-    enableTokenInUri?: pulumi.Input<boolean>;
-    enabled?: pulumi.Input<boolean>;
-    fieldCarryOver?: pulumi.Input<string>;
-    headerForSalts?: pulumi.Input<pulumi.Input<string>[]>;
-    hlsMasterManifestFiles?: pulumi.Input<pulumi.Input<string>[]>;
-    hlsMediaEncryption?: pulumi.Input<boolean>;
-    ip?: pulumi.Input<boolean>;
-    key?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    mediaEncryptionTitle?: pulumi.Input<string>;
-    revokedListId?: pulumi.Input<number>;
-    salt?: pulumi.Input<string>;
-    sessionId?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    tokenAuthHlsTitle?: pulumi.Input<string>;
-    tokenAuthenticationTitle?: pulumi.Input<string>;
-    tokenRevocationEnabled?: pulumi.Input<boolean>;
-    tokenRevocationTitle?: pulumi.Input<string>;
-    transitionKey?: pulumi.Input<string>;
-    useAdvanced?: pulumi.Input<boolean>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedMediaOptimization {
-    behavior?: string;
-    dvrType?: string;
-    dvrWindow?: string;
-    enableUllStreaming?: boolean;
-    endTime?: string;
-    liveType?: string;
-    locked?: boolean;
-    showAdvanced?: boolean;
-    startTime?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedMediaOptimizationArgs {
-    behavior?: pulumi.Input<string>;
-    dvrType?: pulumi.Input<string>;
-    dvrWindow?: pulumi.Input<string>;
-    enableUllStreaming?: pulumi.Input<boolean>;
-    endTime?: pulumi.Input<string>;
-    liveType?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    showAdvanced?: pulumi.Input<boolean>;
-    startTime?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedMediaStreamingPrefetch {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedMediaStreamingPrefetchArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorSetVariable {
-    algorithm?: string;
-    caseSensitive?: boolean;
-    certificateFieldName?: string;
-    cookieName?: string;
-    deviceProfile?: string;
-    encryptionKey?: string;
-    encryptionMode?: string;
-    endIndex?: string;
-    exceptChars?: string;
-    extractLocation?: string;
-    forceChars?: string;
-    formatString?: string;
-    generator?: string;
-    globalSubstitution?: boolean;
-    headerName?: string;
-    hmacAlgorithm?: string;
-    hmacKey?: string;
-    initializationVector?: string;
-    ipVersion?: string;
-    ipv4Prefix?: number;
-    ipv6Prefix?: number;
-    locationId?: string;
-    locked?: boolean;
-    max?: number;
-    maxRandomNumber?: string;
-    min?: number;
-    minRandomNumber?: string;
-    nonce?: string;
-    numberOfBytes?: number;
-    operandOne?: string;
-    paramName?: string;
-    pathComponentOffset?: string;
-    prependBytes?: boolean;
-    queryParameterName?: string;
-    regex?: string;
-    replacement?: string;
-    responseHeaderName?: string;
-    separator?: string;
-    setCookieName?: string;
-    startIndex?: string;
-    subString?: string;
-    templateUuid?: string;
-    transform?: string;
-    uuid?: string;
-    valueSource?: string;
-    variableName?: string;
-    variableValue?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorSetVariableArgs {
-    algorithm?: pulumi.Input<string>;
-    caseSensitive?: pulumi.Input<boolean>;
-    certificateFieldName?: pulumi.Input<string>;
-    cookieName?: pulumi.Input<string>;
-    deviceProfile?: pulumi.Input<string>;
-    encryptionKey?: pulumi.Input<string>;
-    encryptionMode?: pulumi.Input<string>;
-    endIndex?: pulumi.Input<string>;
-    exceptChars?: pulumi.Input<string>;
-    extractLocation?: pulumi.Input<string>;
-    forceChars?: pulumi.Input<string>;
-    formatString?: pulumi.Input<string>;
-    generator?: pulumi.Input<string>;
-    globalSubstitution?: pulumi.Input<boolean>;
-    headerName?: pulumi.Input<string>;
-    hmacAlgorithm?: pulumi.Input<string>;
-    hmacKey?: pulumi.Input<string>;
-    initializationVector?: pulumi.Input<string>;
-    ipVersion?: pulumi.Input<string>;
-    ipv4Prefix?: pulumi.Input<number>;
-    ipv6Prefix?: pulumi.Input<number>;
-    locationId?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    max?: pulumi.Input<number>;
-    maxRandomNumber?: pulumi.Input<string>;
-    min?: pulumi.Input<number>;
-    minRandomNumber?: pulumi.Input<string>;
-    nonce?: pulumi.Input<string>;
-    numberOfBytes?: pulumi.Input<number>;
-    operandOne?: pulumi.Input<string>;
-    paramName?: pulumi.Input<string>;
-    pathComponentOffset?: pulumi.Input<string>;
-    prependBytes?: pulumi.Input<boolean>;
-    queryParameterName?: pulumi.Input<string>;
-    regex?: pulumi.Input<string>;
-    replacement?: pulumi.Input<string>;
-    responseHeaderName?: pulumi.Input<string>;
-    separator?: pulumi.Input<string>;
-    setCookieName?: pulumi.Input<string>;
-    startIndex?: pulumi.Input<string>;
-    subString?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    transform?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    valueSource?: pulumi.Input<string>;
-    variableName?: pulumi.Input<string>;
-    variableValue?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorSimulateErrorCode {
-    errorType?: string;
-    locked?: boolean;
-    templateUuid?: string;
-    timeout?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorSimulateErrorCodeArgs {
-    errorType?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    timeout?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorSiteShield {
-    locked?: boolean;
-    nossmap?: string;
-    ssmap?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorSiteShieldSsmap;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorSiteShieldArgs {
-    locked?: pulumi.Input<boolean>;
-    nossmap?: pulumi.Input<string>;
-    ssmap?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorSiteShieldSsmapArgs>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorSiteShieldSsmap {
-    chinaCdnMap?: string;
-    hasMixedHosts?: boolean;
-    name?: string;
-    src?: string;
-    srmap?: string;
-    value?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorSiteShieldSsmapArgs {
-    chinaCdnMap?: pulumi.Input<string>;
-    hasMixedHosts?: pulumi.Input<boolean>;
-    name?: pulumi.Input<string>;
-    src?: pulumi.Input<string>;
-    srmap?: pulumi.Input<string>;
-    value?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorStandardTlsMigration {
-    allowHttpsDowngrade?: boolean;
-    allowHttpsUpgrade?: boolean;
-    cacheSharingDuration?: number;
-    cacheSharingStartTime?: string;
-    enabled?: boolean;
-    isCertificateSniOnly?: boolean;
-    isTieredDistributionUsed?: boolean;
-    locked?: boolean;
-    migrationDuration?: number;
-    migrationFrom?: string;
-    migrationStartTime?: string;
-    tdLocation?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorStandardTlsMigrationArgs {
-    allowHttpsDowngrade?: pulumi.Input<boolean>;
-    allowHttpsUpgrade?: pulumi.Input<boolean>;
-    cacheSharingDuration?: pulumi.Input<number>;
-    cacheSharingStartTime?: pulumi.Input<string>;
-    enabled?: pulumi.Input<boolean>;
-    isCertificateSniOnly?: pulumi.Input<boolean>;
-    isTieredDistributionUsed?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    migrationDuration?: pulumi.Input<number>;
-    migrationFrom?: pulumi.Input<string>;
-    migrationStartTime?: pulumi.Input<string>;
-    tdLocation?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorStandardTlsMigrationOverride {
-    info?: string;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorStandardTlsMigrationOverrideArgs {
-    info?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorStrictHeaderParsing {
-    locked?: boolean;
-    strictMode?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-    validMode?: boolean;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorStrictHeaderParsingArgs {
-    locked?: pulumi.Input<boolean>;
-    strictMode?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    validMode?: pulumi.Input<boolean>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorSubCustomer {
-    accessControl?: boolean;
-    cacheKey?: boolean;
-    caching?: boolean;
-    contentCompressor?: boolean;
-    dynamicWebContent?: boolean;
-    enabled?: boolean;
-    geoLocation?: boolean;
-    ip?: boolean;
-    largeFileDelivery?: boolean;
-    liveVideoDelivery?: boolean;
-    locked?: boolean;
-    modifyPath?: boolean;
-    onDemandVideoDelivery?: boolean;
-    origin?: boolean;
-    partnerDomainSuffix?: string;
-    referrer?: boolean;
-    refreshContent?: boolean;
-    siteFailover?: boolean;
-    templateUuid?: string;
-    tokenAuthorization?: boolean;
-    uuid?: string;
-    webApplicationFirewall?: boolean;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorSubCustomerArgs {
-    accessControl?: pulumi.Input<boolean>;
-    cacheKey?: pulumi.Input<boolean>;
-    caching?: pulumi.Input<boolean>;
-    contentCompressor?: pulumi.Input<boolean>;
-    dynamicWebContent?: pulumi.Input<boolean>;
-    enabled?: pulumi.Input<boolean>;
-    geoLocation?: pulumi.Input<boolean>;
-    ip?: pulumi.Input<boolean>;
-    largeFileDelivery?: pulumi.Input<boolean>;
-    liveVideoDelivery?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    modifyPath?: pulumi.Input<boolean>;
-    onDemandVideoDelivery?: pulumi.Input<boolean>;
-    origin?: pulumi.Input<boolean>;
-    partnerDomainSuffix?: pulumi.Input<string>;
-    referrer?: pulumi.Input<boolean>;
-    refreshContent?: pulumi.Input<boolean>;
-    siteFailover?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    tokenAuthorization?: pulumi.Input<boolean>;
-    uuid?: pulumi.Input<string>;
-    webApplicationFirewall?: pulumi.Input<boolean>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorSureRoute {
-    allowFcmParentOverride?: boolean;
-    customMap?: string;
-    customStatKey?: string;
-    enableCustomKey?: boolean;
-    enabled?: boolean;
-    forceSslForward?: boolean;
-    locked?: boolean;
-    raceStatTtl?: string;
-    srDownloadLinkTitle?: string;
-    templateUuid?: string;
-    testObjectUrl?: string;
-    toHost?: string;
-    toHostStatus?: string;
-    type?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorSureRouteArgs {
-    allowFcmParentOverride?: pulumi.Input<boolean>;
-    customMap?: pulumi.Input<string>;
-    customStatKey?: pulumi.Input<string>;
-    enableCustomKey?: pulumi.Input<boolean>;
-    enabled?: pulumi.Input<boolean>;
-    forceSslForward?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    raceStatTtl?: pulumi.Input<string>;
-    srDownloadLinkTitle?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    testObjectUrl?: pulumi.Input<string>;
-    toHost?: pulumi.Input<string>;
-    toHostStatus?: pulumi.Input<string>;
-    type?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorTcpOptimization {
-    display?: string;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorTcpOptimizationArgs {
-    display?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorTeaLeaf {
-    enabled?: boolean;
-    ibmCustomerId?: number;
-    limitToDynamic?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorTeaLeafArgs {
-    enabled?: pulumi.Input<boolean>;
-    ibmCustomerId?: pulumi.Input<number>;
-    limitToDynamic?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorTieredDistribution {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    tieredDistributionMap?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorTieredDistributionArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    tieredDistributionMap?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorTieredDistributionAdvanced {
-    allowall?: boolean;
-    enabled?: boolean;
-    locked?: boolean;
-    method?: string;
-    policy?: string;
-    templateUuid?: string;
-    tieredDistributionMap?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorTieredDistributionAdvancedArgs {
-    allowall?: pulumi.Input<boolean>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    method?: pulumi.Input<string>;
-    policy?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    tieredDistributionMap?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorTieredDistributionCustomization {
-    cloudwrapperMapMigrationTitle?: string;
-    customMapEnabled?: boolean;
-    customMapName?: string;
-    hashAlgorithm?: string;
-    location?: string;
-    locked?: boolean;
-    mapMigrationEnabled?: boolean;
-    migrationEndDate?: string;
-    migrationStartDate?: string;
-    migrationWithinCwMapsEnabled?: boolean;
-    serialEnd?: string;
-    serialStart?: string;
-    templateUuid?: string;
-    tier1Title?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorTieredDistributionCustomizationArgs {
-    cloudwrapperMapMigrationTitle?: pulumi.Input<string>;
-    customMapEnabled?: pulumi.Input<boolean>;
-    customMapName?: pulumi.Input<string>;
-    hashAlgorithm?: pulumi.Input<string>;
-    location?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    mapMigrationEnabled?: pulumi.Input<boolean>;
-    migrationEndDate?: pulumi.Input<string>;
-    migrationStartDate?: pulumi.Input<string>;
-    migrationWithinCwMapsEnabled?: pulumi.Input<boolean>;
-    serialEnd?: pulumi.Input<string>;
-    serialStart?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    tier1Title?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorTimeout {
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-    value?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorTimeoutArgs {
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    value?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorUidConfiguration {
-    enabled?: boolean;
-    extractLocation?: string;
-    headerName?: string;
-    legalText?: string;
-    locked?: boolean;
-    queryParameterName?: string;
-    templateUuid?: string;
-    uuid?: string;
-    variableName?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorUidConfigurationArgs {
-    enabled?: pulumi.Input<boolean>;
-    extractLocation?: pulumi.Input<string>;
-    headerName?: pulumi.Input<string>;
-    legalText?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    queryParameterName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    variableName?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorValidateEntityTag {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorValidateEntityTagArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorVerifyJsonWebToken {
-    enableEs256?: boolean;
-    enableRs256?: boolean;
-    extractLocation?: string;
-    headerName?: string;
-    jwt?: string;
-    locked?: boolean;
-    queryParameterName?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorVerifyJsonWebTokenArgs {
-    enableEs256?: pulumi.Input<boolean>;
-    enableRs256?: pulumi.Input<boolean>;
-    extractLocation?: pulumi.Input<string>;
-    headerName?: pulumi.Input<string>;
-    jwt?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    queryParameterName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorVerifyJsonWebTokenForDcp {
-    authorizations?: string;
-    clientId?: string;
-    customHeader?: boolean;
-    enableEs256?: boolean;
-    enableRs256?: boolean;
-    extractAuthorizations?: boolean;
-    extractClientId?: boolean;
-    extractLocation?: string;
-    extractUserName?: boolean;
-    headerName?: string;
-    jwt?: string;
-    locked?: boolean;
-    primaryLocation?: string;
-    queryParameterName?: string;
-    templateUuid?: string;
-    userName?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorVerifyJsonWebTokenForDcpArgs {
-    authorizations?: pulumi.Input<string>;
-    clientId?: pulumi.Input<string>;
-    customHeader?: pulumi.Input<boolean>;
-    enableEs256?: pulumi.Input<boolean>;
-    enableRs256?: pulumi.Input<boolean>;
-    extractAuthorizations?: pulumi.Input<boolean>;
-    extractClientId?: pulumi.Input<boolean>;
-    extractLocation?: pulumi.Input<string>;
-    extractUserName?: pulumi.Input<boolean>;
-    headerName?: pulumi.Input<string>;
-    jwt?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    primaryLocation?: pulumi.Input<string>;
-    queryParameterName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    userName?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorVerifyTokenAuthorization {
-    algorithm?: string;
-    escapeHmacInputs?: boolean;
-    failureResponse?: boolean;
-    ignoreQueryString?: boolean;
-    key?: string;
-    location?: string;
-    locationId?: string;
-    locked?: boolean;
-    salt?: string;
-    templateUuid?: string;
-    transitionKey?: string;
-    useAdvanced?: boolean;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorVerifyTokenAuthorizationArgs {
-    algorithm?: pulumi.Input<string>;
-    escapeHmacInputs?: pulumi.Input<boolean>;
-    failureResponse?: pulumi.Input<boolean>;
-    ignoreQueryString?: pulumi.Input<boolean>;
-    key?: pulumi.Input<string>;
-    location?: pulumi.Input<string>;
-    locationId?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    salt?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    transitionKey?: pulumi.Input<string>;
-    useAdvanced?: pulumi.Input<boolean>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorVirtualWaitingRoom {
-    accessTitle?: string;
-    cloudletSharedPolicy?: number;
-    customCookieDomain?: string;
-    domainConfig?: string;
-    locked?: boolean;
-    sessionAutoProlong?: boolean;
-    sessionDuration?: number;
-    templateUuid?: string;
-    uuid?: string;
-    waitingRoomAssetsPaths?: string[];
-    waitingRoomPath?: string;
-    waitingRoomTitle?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorVirtualWaitingRoomArgs {
-    accessTitle?: pulumi.Input<string>;
-    cloudletSharedPolicy?: pulumi.Input<number>;
-    customCookieDomain?: pulumi.Input<string>;
-    domainConfig?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    sessionAutoProlong?: pulumi.Input<boolean>;
-    sessionDuration?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    waitingRoomAssetsPaths?: pulumi.Input<pulumi.Input<string>[]>;
-    waitingRoomPath?: pulumi.Input<string>;
-    waitingRoomTitle?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorVirtualWaitingRoomWithEdgeWorkers {
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorVirtualWaitingRoomWithEdgeWorkersArgs {
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritization {
-    allowedUserCookieAdvanced?: boolean;
-    allowedUserCookieAutomaticSalt?: boolean;
-    allowedUserCookieDomain?: string;
-    allowedUserCookieDomainType?: string;
-    allowedUserCookieDuration?: number;
-    allowedUserCookieEnabled?: boolean;
-    allowedUserCookieHttpOnly?: boolean;
-    allowedUserCookieLabel?: string;
-    allowedUserCookieManagementTitle?: string;
-    allowedUserCookieRefresh?: boolean;
-    allowedUserCookieSalt?: string;
-    cloudletPolicy?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationCloudletPolicy;
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    userIdentificationByCookie?: boolean;
-    userIdentificationByHeaders?: boolean;
-    userIdentificationByIp?: boolean;
-    userIdentificationByParams?: boolean;
-    userIdentificationKeyCookie?: string;
-    userIdentificationKeyHeaders?: string[];
-    userIdentificationKeyParams?: string[];
-    userIdentificationTitle?: string;
-    uuid?: string;
-    waitingRoomCacheTtl?: number;
-    waitingRoomCookieAdvanced?: boolean;
-    waitingRoomCookieAutomaticSalt?: boolean;
-    waitingRoomCookieDomain?: string;
-    waitingRoomCookieDomainType?: string;
-    waitingRoomCookieDuration?: number;
-    waitingRoomCookieEnabled?: boolean;
-    waitingRoomCookieHttpOnly?: boolean;
-    waitingRoomCookieLabel?: string;
-    waitingRoomCookieManagementTitle?: string;
-    waitingRoomCookieSalt?: string;
-    waitingRoomCookieShareLabel?: boolean;
-    waitingRoomCpCode?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationWaitingRoomCpCode;
-    waitingRoomDirectory?: string;
-    waitingRoomManagementTitle?: string;
-    waitingRoomNetStorage?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationWaitingRoomNetStorage;
-    waitingRoomStatusCode?: number;
-    waitingRoomUseCpCode?: boolean;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationArgs {
-    allowedUserCookieAdvanced?: pulumi.Input<boolean>;
-    allowedUserCookieAutomaticSalt?: pulumi.Input<boolean>;
-    allowedUserCookieDomain?: pulumi.Input<string>;
-    allowedUserCookieDomainType?: pulumi.Input<string>;
-    allowedUserCookieDuration?: pulumi.Input<number>;
-    allowedUserCookieEnabled?: pulumi.Input<boolean>;
-    allowedUserCookieHttpOnly?: pulumi.Input<boolean>;
-    allowedUserCookieLabel?: pulumi.Input<string>;
-    allowedUserCookieManagementTitle?: pulumi.Input<string>;
-    allowedUserCookieRefresh?: pulumi.Input<boolean>;
-    allowedUserCookieSalt?: pulumi.Input<string>;
-    cloudletPolicy?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationCloudletPolicyArgs>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    userIdentificationByCookie?: pulumi.Input<boolean>;
-    userIdentificationByHeaders?: pulumi.Input<boolean>;
-    userIdentificationByIp?: pulumi.Input<boolean>;
-    userIdentificationByParams?: pulumi.Input<boolean>;
-    userIdentificationKeyCookie?: pulumi.Input<string>;
-    userIdentificationKeyHeaders?: pulumi.Input<pulumi.Input<string>[]>;
-    userIdentificationKeyParams?: pulumi.Input<pulumi.Input<string>[]>;
-    userIdentificationTitle?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    waitingRoomCacheTtl?: pulumi.Input<number>;
-    waitingRoomCookieAdvanced?: pulumi.Input<boolean>;
-    waitingRoomCookieAutomaticSalt?: pulumi.Input<boolean>;
-    waitingRoomCookieDomain?: pulumi.Input<string>;
-    waitingRoomCookieDomainType?: pulumi.Input<string>;
-    waitingRoomCookieDuration?: pulumi.Input<number>;
-    waitingRoomCookieEnabled?: pulumi.Input<boolean>;
-    waitingRoomCookieHttpOnly?: pulumi.Input<boolean>;
-    waitingRoomCookieLabel?: pulumi.Input<string>;
-    waitingRoomCookieManagementTitle?: pulumi.Input<string>;
-    waitingRoomCookieSalt?: pulumi.Input<string>;
-    waitingRoomCookieShareLabel?: pulumi.Input<boolean>;
-    waitingRoomCpCode?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationWaitingRoomCpCodeArgs>;
-    waitingRoomDirectory?: pulumi.Input<string>;
-    waitingRoomManagementTitle?: pulumi.Input<string>;
-    waitingRoomNetStorage?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationWaitingRoomNetStorageArgs>;
-    waitingRoomStatusCode?: pulumi.Input<number>;
-    waitingRoomUseCpCode?: pulumi.Input<boolean>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationCloudletPolicy {
-    id?: number;
-    name?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationCloudletPolicyArgs {
-    id?: pulumi.Input<number>;
-    name?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationFifo {
-    accessTitle?: string;
-    cloudletSharedPolicy?: number;
-    customCookieDomain?: string;
-    domainConfig?: string;
-    locked?: boolean;
-    sessionAutoProlong?: boolean;
-    sessionDuration?: number;
-    templateUuid?: string;
-    uuid?: string;
-    waitingRoomAssetsPaths?: string[];
-    waitingRoomPath?: string;
-    waitingRoomTitle?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationFifoArgs {
-    accessTitle?: pulumi.Input<string>;
-    cloudletSharedPolicy?: pulumi.Input<number>;
-    customCookieDomain?: pulumi.Input<string>;
-    domainConfig?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    sessionAutoProlong?: pulumi.Input<boolean>;
-    sessionDuration?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    waitingRoomAssetsPaths?: pulumi.Input<pulumi.Input<string>[]>;
-    waitingRoomPath?: pulumi.Input<string>;
-    waitingRoomTitle?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationFifoStandalone {
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationFifoStandaloneArgs {
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationWaitingRoomCpCode {
-    cpCodeLimits?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationWaitingRoomCpCodeCpCodeLimits;
-    createdDate?: number;
-    description?: string;
-    id?: number;
-    name?: string;
-    products?: string[];
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationWaitingRoomCpCodeArgs {
-    cpCodeLimits?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationWaitingRoomCpCodeCpCodeLimitsArgs>;
-    createdDate?: pulumi.Input<number>;
-    description?: pulumi.Input<string>;
-    id?: pulumi.Input<number>;
-    name?: pulumi.Input<string>;
-    products?: pulumi.Input<pulumi.Input<string>[]>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationWaitingRoomCpCodeCpCodeLimits {
-    currentCapacity?: number;
-    limit?: number;
-    limitType?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationWaitingRoomCpCodeCpCodeLimitsArgs {
-    currentCapacity?: pulumi.Input<number>;
-    limit?: pulumi.Input<number>;
-    limitType?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationWaitingRoomNetStorage {
-    cpCode?: number;
-    downloadDomainName?: string;
-    g2oToken?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationWaitingRoomNetStorageArgs {
-    cpCode?: pulumi.Input<number>;
-    downloadDomainName?: pulumi.Input<string>;
-    g2oToken?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorWatermarking {
-    abVariantLocation?: string;
-    decryptionPassword1?: string;
-    decryptionPassword2?: string;
-    decryptionPasswordId1?: string;
-    decryptionPasswordId2?: string;
-    enable?: boolean;
-    locked?: boolean;
-    miscellaneousSettingsTitle?: string;
-    patternDecryptionEnable?: boolean;
-    patternEncryptionTitle?: string;
-    signatureVerificationEnable?: boolean;
-    templateUuid?: string;
-    tokenSigningTitle?: string;
-    useOriginalAsA?: boolean;
-    uuid?: string;
-    verificationKeyId1?: string;
-    verificationKeyId2?: string;
-    verificationPublicKey1?: string;
-    verificationPublicKey2?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorWatermarkingArgs {
-    abVariantLocation?: pulumi.Input<string>;
-    decryptionPassword1?: pulumi.Input<string>;
-    decryptionPassword2?: pulumi.Input<string>;
-    decryptionPasswordId1?: pulumi.Input<string>;
-    decryptionPasswordId2?: pulumi.Input<string>;
-    enable?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    miscellaneousSettingsTitle?: pulumi.Input<string>;
-    patternDecryptionEnable?: pulumi.Input<boolean>;
-    patternEncryptionTitle?: pulumi.Input<string>;
-    signatureVerificationEnable?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    tokenSigningTitle?: pulumi.Input<string>;
-    useOriginalAsA?: pulumi.Input<boolean>;
-    uuid?: pulumi.Input<string>;
-    verificationKeyId1?: pulumi.Input<string>;
-    verificationKeyId2?: pulumi.Input<string>;
-    verificationPublicKey1?: pulumi.Input<string>;
-    verificationPublicKey2?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorWebApplicationFirewall {
-    firewallConfiguration?: inputs.GetPropertyRulesBuilderRulesV20230530BehaviorWebApplicationFirewallFirewallConfiguration;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorWebApplicationFirewallArgs {
-    firewallConfiguration?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230530BehaviorWebApplicationFirewallFirewallConfigurationArgs>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorWebApplicationFirewallFirewallConfiguration {
-    configId?: number;
-    fileName?: string;
-    productionStatus?: string;
-    productionVersion?: number;
-    stagingStatus?: string;
-    stagingVersion?: number;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorWebApplicationFirewallFirewallConfigurationArgs {
-    configId?: pulumi.Input<number>;
-    fileName?: pulumi.Input<string>;
-    productionStatus?: pulumi.Input<string>;
-    productionVersion?: pulumi.Input<number>;
-    stagingStatus?: pulumi.Input<string>;
-    stagingVersion?: pulumi.Input<number>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorWebSockets {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorWebSocketsArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorWebdav {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230530BehaviorWebdavArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
 export interface GetPropertyRulesBuilderRulesV20230530Criterion {
     advancedImMatch?: inputs.GetPropertyRulesBuilderRulesV20230530CriterionAdvancedImMatch;
     bucket?: inputs.GetPropertyRulesBuilderRulesV20230530CriterionBucket;
@@ -17862,93 +12788,93 @@ export interface GetPropertyRulesBuilderRulesV20230920Behavior {
     mediaAccelerationQuicOptout?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorMediaAccelerationQuicOptout;
     mediaClient?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorMediaClient;
     mediaFileRetrievalOptimization?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorMediaFileRetrievalOptimization;
-    mediaOriginFailover?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorMediaOriginFailover;
-    metadataCaching?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorMetadataCaching;
-    mobileSdkPerformance?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorMobileSdkPerformance;
-    modifyIncomingRequestHeader?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorModifyIncomingRequestHeader;
-    modifyIncomingResponseHeader?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorModifyIncomingResponseHeader;
-    modifyOutgoingRequestHeader?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorModifyOutgoingRequestHeader;
-    modifyOutgoingResponseHeader?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorModifyOutgoingResponseHeader;
-    modifyViaHeader?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorModifyViaHeader;
-    origin?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorOrigin;
-    originCharacteristics?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginCharacteristics;
-    originCharacteristicsWsd?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginCharacteristicsWsd;
-    originFailureRecoveryMethod?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginFailureRecoveryMethod;
-    originFailureRecoveryPolicy?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginFailureRecoveryPolicy;
-    originIpAcl?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginIpAcl;
-    permissionsPolicy?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorPermissionsPolicy;
-    persistentClientConnection?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorPersistentClientConnection;
-    persistentConnection?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorPersistentConnection;
-    personallyIdentifiableInformation?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorPersonallyIdentifiableInformation;
-    phasedRelease?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorPhasedRelease;
-    preconnect?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorPreconnect;
-    predictiveContentDelivery?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorPredictiveContentDelivery;
-    predictivePrefetching?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorPredictivePrefetching;
-    prefetch?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorPrefetch;
-    prefetchable?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorPrefetchable;
-    prefreshCache?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorPrefreshCache;
-    quality?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorQuality;
-    quicBeta?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorQuicBeta;
-    randomSeek?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRandomSeek;
-    rapid?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRapid;
-    readTimeout?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorReadTimeout;
-    realTimeReporting?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRealTimeReporting;
-    realUserMonitoring?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRealUserMonitoring;
-    redirect?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRedirect;
-    redirectplus?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRedirectplus;
-    refererChecking?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRefererChecking;
-    removeQueryParameter?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRemoveQueryParameter;
-    removeVary?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRemoveVary;
-    report?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorReport;
-    requestClientHints?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRequestClientHints;
-    requestControl?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRequestControl;
-    requestTypeMarker?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRequestTypeMarker;
-    resourceOptimizer?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorResourceOptimizer;
-    resourceOptimizerExtendedCompatibility?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorResourceOptimizerExtendedCompatibility;
-    responseCode?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorResponseCode;
-    responseCookie?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorResponseCookie;
-    restrictObjectCaching?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRestrictObjectCaching;
-    returnCacheStatus?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorReturnCacheStatus;
-    rewriteUrl?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRewriteUrl;
-    rumCustom?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRumCustom;
-    saasDefinitions?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorSaasDefinitions;
-    salesForceCommerceCloudClient?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorSalesForceCommerceCloudClient;
-    salesForceCommerceCloudProvider?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorSalesForceCommerceCloudProvider;
-    salesForceCommerceCloudProviderHostHeader?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorSalesForceCommerceCloudProviderHostHeader;
-    savePostDcaProcessing?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorSavePostDcaProcessing;
-    scheduleInvalidation?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorScheduleInvalidation;
-    scriptManagement?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorScriptManagement;
-    segmentedContentProtection?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorSegmentedContentProtection;
-    segmentedMediaOptimization?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorSegmentedMediaOptimization;
-    segmentedMediaStreamingPrefetch?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorSegmentedMediaStreamingPrefetch;
-    setVariable?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorSetVariable;
-    simulateErrorCode?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorSimulateErrorCode;
-    siteShield?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorSiteShield;
-    standardTlsMigration?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorStandardTlsMigration;
-    standardTlsMigrationOverride?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorStandardTlsMigrationOverride;
-    strictHeaderParsing?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorStrictHeaderParsing;
-    subCustomer?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorSubCustomer;
-    sureRoute?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorSureRoute;
-    tcpOptimization?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorTcpOptimization;
-    teaLeaf?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorTeaLeaf;
-    tieredDistribution?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorTieredDistribution;
-    tieredDistributionAdvanced?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorTieredDistributionAdvanced;
-    tieredDistributionCustomization?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorTieredDistributionCustomization;
-    timeout?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorTimeout;
-    uidConfiguration?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorUidConfiguration;
-    validateEntityTag?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorValidateEntityTag;
-    verifyJsonWebToken?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorVerifyJsonWebToken;
-    verifyJsonWebTokenForDcp?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorVerifyJsonWebTokenForDcp;
-    verifyTokenAuthorization?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorVerifyTokenAuthorization;
-    virtualWaitingRoom?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorVirtualWaitingRoom;
-    virtualWaitingRoomWithEdgeWorkers?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorVirtualWaitingRoomWithEdgeWorkers;
-    visitorPrioritization?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritization;
-    visitorPrioritizationFifo?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationFifo;
-    visitorPrioritizationFifoStandalone?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationFifoStandalone;
-    watermarking?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorWatermarking;
-    webApplicationFirewall?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorWebApplicationFirewall;
-    webSockets?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorWebSockets;
-    webdav?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorWebdav;
+    mediaOriginFailover?: inputs.MediaOriginFailover;
+    metadataCaching?: inputs.MetadataCaching;
+    mobileSdkPerformance?: inputs.MobileSdkPerformance;
+    modifyIncomingRequestHeader?: inputs.ModifyIncomingRequestHeader;
+    modifyIncomingResponseHeader?: inputs.ModifyIncomingResponseHeader;
+    modifyOutgoingRequestHeader?: inputs.ModifyOutgoingRequestHeader;
+    modifyOutgoingResponseHeader?: inputs.ModifyOutgoingResponseHeader;
+    modifyViaHeader?: inputs.ModifyViaHeader;
+    origin?: inputs.Origin;
+    originCharacteristics?: inputs.OriginCharacteristics;
+    originCharacteristicsWsd?: inputs.OriginCharacteristicsWsd;
+    originFailureRecoveryMethod?: inputs.OriginFailureRecoveryMethod;
+    originFailureRecoveryPolicy?: inputs.OriginFailureRecoveryPolicy;
+    originIpAcl?: inputs.OriginIpAcl;
+    permissionsPolicy?: inputs.PermissionsPolicy;
+    persistentClientConnection?: inputs.PersistentClientConnection;
+    persistentConnection?: inputs.PersistentConnection;
+    personallyIdentifiableInformation?: inputs.PersonallyIdentifiableInformation;
+    phasedRelease?: inputs.PhasedRelease;
+    preconnect?: inputs.Preconnect;
+    predictiveContentDelivery?: inputs.PredictiveContentDelivery;
+    predictivePrefetching?: inputs.PredictivePrefetching;
+    prefetch?: inputs.Prefetch;
+    prefetchable?: inputs.Prefetchable;
+    prefreshCache?: inputs.PrefreshCache;
+    quality?: inputs.Quality;
+    quicBeta?: inputs.QuicBeta;
+    randomSeek?: inputs.RandomSeek;
+    rapid?: inputs.Rapid;
+    readTimeout?: inputs.ReadTimeout;
+    realTimeReporting?: inputs.RealTimeReporting;
+    realUserMonitoring?: inputs.RealUserMonitoring;
+    redirect?: inputs.Redirect;
+    redirectplus?: inputs.Redirectplus;
+    refererChecking?: inputs.RefererChecking;
+    removeQueryParameter?: inputs.RemoveQueryParameter;
+    removeVary?: inputs.RemoveVary;
+    report?: inputs.Report;
+    requestClientHints?: inputs.RequestClientHints;
+    requestControl?: inputs.RequestControl;
+    requestTypeMarker?: inputs.RequestTypeMarker;
+    resourceOptimizer?: inputs.ResourceOptimizer;
+    resourceOptimizerExtendedCompatibility?: inputs.ResourceOptimizerExtendedCompatibility;
+    responseCode?: inputs.ResponseCode;
+    responseCookie?: inputs.ResponseCookie;
+    restrictObjectCaching?: inputs.RestrictObjectCaching;
+    returnCacheStatus?: inputs.ReturnCacheStatus;
+    rewriteUrl?: inputs.RewriteUrl;
+    rumCustom?: inputs.RumCustom;
+    saasDefinitions?: inputs.SaasDefinitions;
+    salesForceCommerceCloudClient?: inputs.SalesForceCommerceCloudClient;
+    salesForceCommerceCloudProvider?: inputs.SalesForceCommerceCloudProvider;
+    salesForceCommerceCloudProviderHostHeader?: inputs.SalesForceCommerceCloudProviderHostHeader;
+    savePostDcaProcessing?: inputs.SavePostDcaProcessing;
+    scheduleInvalidation?: inputs.ScheduleInvalidation;
+    scriptManagement?: inputs.ScriptManagement;
+    segmentedContentProtection?: inputs.SegmentedContentProtection;
+    segmentedMediaOptimization?: inputs.SegmentedMediaOptimization;
+    segmentedMediaStreamingPrefetch?: inputs.SegmentedMediaStreamingPrefetch;
+    setVariable?: inputs.SetVariable;
+    simulateErrorCode?: inputs.SimulateErrorCode;
+    siteShield?: inputs.SiteShield;
+    standardTlsMigration?: inputs.StandardTlsMigration;
+    standardTlsMigrationOverride?: inputs.StandardTlsMigrationOverride;
+    strictHeaderParsing?: inputs.StrictHeaderParsing;
+    subCustomer?: inputs.SubCustomer;
+    sureRoute?: inputs.SureRoute;
+    tcpOptimization?: inputs.TcpOptimization;
+    teaLeaf?: inputs.TeaLeaf;
+    tieredDistribution?: inputs.TieredDistribution;
+    tieredDistributionAdvanced?: inputs.TieredDistributionAdvanced;
+    tieredDistributionCustomization?: inputs.TieredDistributionCustomization;
+    timeout?: inputs.Timeout;
+    uidConfiguration?: inputs.UidConfiguration;
+    validateEntityTag?: inputs.ValidateEntityTag;
+    verifyJsonWebToken?: inputs.VerifyJsonWebToken;
+    verifyJsonWebTokenForDcp?: inputs.VerifyJsonWebTokenForDcp;
+    verifyTokenAuthorization?: inputs.VerifyTokenAuthorization;
+    virtualWaitingRoom?: inputs.VirtualWaitingRoom;
+    virtualWaitingRoomWithEdgeWorkers?: inputs.VirtualWaitingRoomWithEdgeWorkers;
+    visitorPrioritization?: inputs.VisitorPrioritization;
+    visitorPrioritizationFifo?: inputs.VisitorPrioritizationFifo;
+    visitorPrioritizationFifoStandalone?: inputs.VisitorPrioritizationFifoStandalone;
+    watermarking?: inputs.Watermarking;
+    webApplicationFirewall?: inputs.WebApplicationFirewall;
+    webSockets?: inputs.WebSockets;
+    webdav?: inputs.Webdav;
 }
 
 export interface GetPropertyRulesBuilderRulesV20230920BehaviorArgs {
@@ -18087,93 +13013,93 @@ export interface GetPropertyRulesBuilderRulesV20230920BehaviorArgs {
     mediaAccelerationQuicOptout?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorMediaAccelerationQuicOptoutArgs>;
     mediaClient?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorMediaClientArgs>;
     mediaFileRetrievalOptimization?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorMediaFileRetrievalOptimizationArgs>;
-    mediaOriginFailover?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorMediaOriginFailoverArgs>;
-    metadataCaching?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorMetadataCachingArgs>;
-    mobileSdkPerformance?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorMobileSdkPerformanceArgs>;
-    modifyIncomingRequestHeader?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorModifyIncomingRequestHeaderArgs>;
-    modifyIncomingResponseHeader?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorModifyIncomingResponseHeaderArgs>;
-    modifyOutgoingRequestHeader?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorModifyOutgoingRequestHeaderArgs>;
-    modifyOutgoingResponseHeader?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorModifyOutgoingResponseHeaderArgs>;
-    modifyViaHeader?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorModifyViaHeaderArgs>;
-    origin?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginArgs>;
-    originCharacteristics?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginCharacteristicsArgs>;
-    originCharacteristicsWsd?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginCharacteristicsWsdArgs>;
-    originFailureRecoveryMethod?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginFailureRecoveryMethodArgs>;
-    originFailureRecoveryPolicy?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginFailureRecoveryPolicyArgs>;
-    originIpAcl?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginIpAclArgs>;
-    permissionsPolicy?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorPermissionsPolicyArgs>;
-    persistentClientConnection?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorPersistentClientConnectionArgs>;
-    persistentConnection?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorPersistentConnectionArgs>;
-    personallyIdentifiableInformation?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorPersonallyIdentifiableInformationArgs>;
-    phasedRelease?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorPhasedReleaseArgs>;
-    preconnect?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorPreconnectArgs>;
-    predictiveContentDelivery?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorPredictiveContentDeliveryArgs>;
-    predictivePrefetching?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorPredictivePrefetchingArgs>;
-    prefetch?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorPrefetchArgs>;
-    prefetchable?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorPrefetchableArgs>;
-    prefreshCache?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorPrefreshCacheArgs>;
-    quality?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorQualityArgs>;
-    quicBeta?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorQuicBetaArgs>;
-    randomSeek?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRandomSeekArgs>;
-    rapid?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRapidArgs>;
-    readTimeout?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorReadTimeoutArgs>;
-    realTimeReporting?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRealTimeReportingArgs>;
-    realUserMonitoring?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRealUserMonitoringArgs>;
-    redirect?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRedirectArgs>;
-    redirectplus?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRedirectplusArgs>;
-    refererChecking?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRefererCheckingArgs>;
-    removeQueryParameter?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRemoveQueryParameterArgs>;
-    removeVary?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRemoveVaryArgs>;
-    report?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorReportArgs>;
-    requestClientHints?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRequestClientHintsArgs>;
-    requestControl?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRequestControlArgs>;
-    requestTypeMarker?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRequestTypeMarkerArgs>;
-    resourceOptimizer?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorResourceOptimizerArgs>;
-    resourceOptimizerExtendedCompatibility?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorResourceOptimizerExtendedCompatibilityArgs>;
-    responseCode?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorResponseCodeArgs>;
-    responseCookie?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorResponseCookieArgs>;
-    restrictObjectCaching?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRestrictObjectCachingArgs>;
-    returnCacheStatus?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorReturnCacheStatusArgs>;
-    rewriteUrl?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRewriteUrlArgs>;
-    rumCustom?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRumCustomArgs>;
-    saasDefinitions?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorSaasDefinitionsArgs>;
-    salesForceCommerceCloudClient?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorSalesForceCommerceCloudClientArgs>;
-    salesForceCommerceCloudProvider?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorSalesForceCommerceCloudProviderArgs>;
-    salesForceCommerceCloudProviderHostHeader?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorSalesForceCommerceCloudProviderHostHeaderArgs>;
-    savePostDcaProcessing?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorSavePostDcaProcessingArgs>;
-    scheduleInvalidation?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorScheduleInvalidationArgs>;
-    scriptManagement?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorScriptManagementArgs>;
-    segmentedContentProtection?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorSegmentedContentProtectionArgs>;
-    segmentedMediaOptimization?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorSegmentedMediaOptimizationArgs>;
-    segmentedMediaStreamingPrefetch?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorSegmentedMediaStreamingPrefetchArgs>;
-    setVariable?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorSetVariableArgs>;
-    simulateErrorCode?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorSimulateErrorCodeArgs>;
-    siteShield?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorSiteShieldArgs>;
-    standardTlsMigration?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorStandardTlsMigrationArgs>;
-    standardTlsMigrationOverride?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorStandardTlsMigrationOverrideArgs>;
-    strictHeaderParsing?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorStrictHeaderParsingArgs>;
-    subCustomer?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorSubCustomerArgs>;
-    sureRoute?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorSureRouteArgs>;
-    tcpOptimization?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorTcpOptimizationArgs>;
-    teaLeaf?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorTeaLeafArgs>;
-    tieredDistribution?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorTieredDistributionArgs>;
-    tieredDistributionAdvanced?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorTieredDistributionAdvancedArgs>;
-    tieredDistributionCustomization?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorTieredDistributionCustomizationArgs>;
-    timeout?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorTimeoutArgs>;
-    uidConfiguration?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorUidConfigurationArgs>;
-    validateEntityTag?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorValidateEntityTagArgs>;
-    verifyJsonWebToken?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorVerifyJsonWebTokenArgs>;
-    verifyJsonWebTokenForDcp?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorVerifyJsonWebTokenForDcpArgs>;
-    verifyTokenAuthorization?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorVerifyTokenAuthorizationArgs>;
-    virtualWaitingRoom?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorVirtualWaitingRoomArgs>;
-    virtualWaitingRoomWithEdgeWorkers?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorVirtualWaitingRoomWithEdgeWorkersArgs>;
-    visitorPrioritization?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationArgs>;
-    visitorPrioritizationFifo?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationFifoArgs>;
-    visitorPrioritizationFifoStandalone?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationFifoStandaloneArgs>;
-    watermarking?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorWatermarkingArgs>;
-    webApplicationFirewall?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorWebApplicationFirewallArgs>;
-    webSockets?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorWebSocketsArgs>;
-    webdav?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorWebdavArgs>;
+    mediaOriginFailover?: pulumi.Input<inputs.MediaOriginFailoverArgs>;
+    metadataCaching?: pulumi.Input<inputs.MetadataCachingArgs>;
+    mobileSdkPerformance?: pulumi.Input<inputs.MobileSdkPerformanceArgs>;
+    modifyIncomingRequestHeader?: pulumi.Input<inputs.ModifyIncomingRequestHeaderArgs>;
+    modifyIncomingResponseHeader?: pulumi.Input<inputs.ModifyIncomingResponseHeaderArgs>;
+    modifyOutgoingRequestHeader?: pulumi.Input<inputs.ModifyOutgoingRequestHeaderArgs>;
+    modifyOutgoingResponseHeader?: pulumi.Input<inputs.ModifyOutgoingResponseHeaderArgs>;
+    modifyViaHeader?: pulumi.Input<inputs.ModifyViaHeaderArgs>;
+    origin?: pulumi.Input<inputs.OriginArgs>;
+    originCharacteristics?: pulumi.Input<inputs.OriginCharacteristicsArgs>;
+    originCharacteristicsWsd?: pulumi.Input<inputs.OriginCharacteristicsWsdArgs>;
+    originFailureRecoveryMethod?: pulumi.Input<inputs.OriginFailureRecoveryMethodArgs>;
+    originFailureRecoveryPolicy?: pulumi.Input<inputs.OriginFailureRecoveryPolicyArgs>;
+    originIpAcl?: pulumi.Input<inputs.OriginIpAclArgs>;
+    permissionsPolicy?: pulumi.Input<inputs.PermissionsPolicyArgs>;
+    persistentClientConnection?: pulumi.Input<inputs.PersistentClientConnectionArgs>;
+    persistentConnection?: pulumi.Input<inputs.PersistentConnectionArgs>;
+    personallyIdentifiableInformation?: pulumi.Input<inputs.PersonallyIdentifiableInformationArgs>;
+    phasedRelease?: pulumi.Input<inputs.PhasedReleaseArgs>;
+    preconnect?: pulumi.Input<inputs.PreconnectArgs>;
+    predictiveContentDelivery?: pulumi.Input<inputs.PredictiveContentDeliveryArgs>;
+    predictivePrefetching?: pulumi.Input<inputs.PredictivePrefetchingArgs>;
+    prefetch?: pulumi.Input<inputs.PrefetchArgs>;
+    prefetchable?: pulumi.Input<inputs.PrefetchableArgs>;
+    prefreshCache?: pulumi.Input<inputs.PrefreshCacheArgs>;
+    quality?: pulumi.Input<inputs.QualityArgs>;
+    quicBeta?: pulumi.Input<inputs.QuicBetaArgs>;
+    randomSeek?: pulumi.Input<inputs.RandomSeekArgs>;
+    rapid?: pulumi.Input<inputs.RapidArgs>;
+    readTimeout?: pulumi.Input<inputs.ReadTimeoutArgs>;
+    realTimeReporting?: pulumi.Input<inputs.RealTimeReportingArgs>;
+    realUserMonitoring?: pulumi.Input<inputs.RealUserMonitoringArgs>;
+    redirect?: pulumi.Input<inputs.RedirectArgs>;
+    redirectplus?: pulumi.Input<inputs.RedirectplusArgs>;
+    refererChecking?: pulumi.Input<inputs.RefererCheckingArgs>;
+    removeQueryParameter?: pulumi.Input<inputs.RemoveQueryParameterArgs>;
+    removeVary?: pulumi.Input<inputs.RemoveVaryArgs>;
+    report?: pulumi.Input<inputs.ReportArgs>;
+    requestClientHints?: pulumi.Input<inputs.RequestClientHintsArgs>;
+    requestControl?: pulumi.Input<inputs.RequestControlArgs>;
+    requestTypeMarker?: pulumi.Input<inputs.RequestTypeMarkerArgs>;
+    resourceOptimizer?: pulumi.Input<inputs.ResourceOptimizerArgs>;
+    resourceOptimizerExtendedCompatibility?: pulumi.Input<inputs.ResourceOptimizerExtendedCompatibilityArgs>;
+    responseCode?: pulumi.Input<inputs.ResponseCodeArgs>;
+    responseCookie?: pulumi.Input<inputs.ResponseCookieArgs>;
+    restrictObjectCaching?: pulumi.Input<inputs.RestrictObjectCachingArgs>;
+    returnCacheStatus?: pulumi.Input<inputs.ReturnCacheStatusArgs>;
+    rewriteUrl?: pulumi.Input<inputs.RewriteUrlArgs>;
+    rumCustom?: pulumi.Input<inputs.RumCustomArgs>;
+    saasDefinitions?: pulumi.Input<inputs.SaasDefinitionsArgs>;
+    salesForceCommerceCloudClient?: pulumi.Input<inputs.SalesForceCommerceCloudClientArgs>;
+    salesForceCommerceCloudProvider?: pulumi.Input<inputs.SalesForceCommerceCloudProviderArgs>;
+    salesForceCommerceCloudProviderHostHeader?: pulumi.Input<inputs.SalesForceCommerceCloudProviderHostHeaderArgs>;
+    savePostDcaProcessing?: pulumi.Input<inputs.SavePostDcaProcessingArgs>;
+    scheduleInvalidation?: pulumi.Input<inputs.ScheduleInvalidationArgs>;
+    scriptManagement?: pulumi.Input<inputs.ScriptManagementArgs>;
+    segmentedContentProtection?: pulumi.Input<inputs.SegmentedContentProtectionArgs>;
+    segmentedMediaOptimization?: pulumi.Input<inputs.SegmentedMediaOptimizationArgs>;
+    segmentedMediaStreamingPrefetch?: pulumi.Input<inputs.SegmentedMediaStreamingPrefetchArgs>;
+    setVariable?: pulumi.Input<inputs.SetVariableArgs>;
+    simulateErrorCode?: pulumi.Input<inputs.SimulateErrorCodeArgs>;
+    siteShield?: pulumi.Input<inputs.SiteShieldArgs>;
+    standardTlsMigration?: pulumi.Input<inputs.StandardTlsMigrationArgs>;
+    standardTlsMigrationOverride?: pulumi.Input<inputs.StandardTlsMigrationOverrideArgs>;
+    strictHeaderParsing?: pulumi.Input<inputs.StrictHeaderParsingArgs>;
+    subCustomer?: pulumi.Input<inputs.SubCustomerArgs>;
+    sureRoute?: pulumi.Input<inputs.SureRouteArgs>;
+    tcpOptimization?: pulumi.Input<inputs.TcpOptimizationArgs>;
+    teaLeaf?: pulumi.Input<inputs.TeaLeafArgs>;
+    tieredDistribution?: pulumi.Input<inputs.TieredDistributionArgs>;
+    tieredDistributionAdvanced?: pulumi.Input<inputs.TieredDistributionAdvancedArgs>;
+    tieredDistributionCustomization?: pulumi.Input<inputs.TieredDistributionCustomizationArgs>;
+    timeout?: pulumi.Input<inputs.TimeoutArgs>;
+    uidConfiguration?: pulumi.Input<inputs.UidConfigurationArgs>;
+    validateEntityTag?: pulumi.Input<inputs.ValidateEntityTagArgs>;
+    verifyJsonWebToken?: pulumi.Input<inputs.VerifyJsonWebTokenArgs>;
+    verifyJsonWebTokenForDcp?: pulumi.Input<inputs.VerifyJsonWebTokenForDcpArgs>;
+    verifyTokenAuthorization?: pulumi.Input<inputs.VerifyTokenAuthorizationArgs>;
+    virtualWaitingRoom?: pulumi.Input<inputs.VirtualWaitingRoomArgs>;
+    virtualWaitingRoomWithEdgeWorkers?: pulumi.Input<inputs.VirtualWaitingRoomWithEdgeWorkersArgs>;
+    visitorPrioritization?: pulumi.Input<inputs.VisitorPrioritizationArgs>;
+    visitorPrioritizationFifo?: pulumi.Input<inputs.VisitorPrioritizationFifoArgs>;
+    visitorPrioritizationFifoStandalone?: pulumi.Input<inputs.VisitorPrioritizationFifoStandaloneArgs>;
+    watermarking?: pulumi.Input<inputs.WatermarkingArgs>;
+    webApplicationFirewall?: pulumi.Input<inputs.WebApplicationFirewallArgs>;
+    webSockets?: pulumi.Input<inputs.WebSocketsArgs>;
+    webdav?: pulumi.Input<inputs.WebdavArgs>;
 }
 
 export interface GetPropertyRulesBuilderRulesV20230920BehaviorAdScalerCircuitBreaker {
@@ -21494,2588 +16420,6 @@ export interface GetPropertyRulesBuilderRulesV20230920BehaviorMediaFileRetrieval
     uuid?: pulumi.Input<string>;
 }
 
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorMediaOriginFailover {
-    cacheErrorResponse?: boolean;
-    cacheWindow?: string;
-    clientResponseCode?: string;
-    detectObjectUnavailable?: boolean;
-    detectObjectUnavailableTitle?: string;
-    detectOriginUnavailable?: boolean;
-    detectOriginUnavailableTitle?: string;
-    detectOriginUnresponsive?: boolean;
-    detectOriginUnresponsiveTitle?: string;
-    locked?: boolean;
-    objectUnavailableAlternateHost?: string;
-    objectUnavailableBackupHost?: string;
-    objectUnavailableBlacklistOriginIp?: boolean;
-    objectUnavailableBlacklistWindow?: string;
-    objectUnavailableChangeProtocol?: boolean;
-    objectUnavailableDetectionLevel?: string;
-    objectUnavailableIncludeQueryString?: boolean;
-    objectUnavailableModifiedPath?: string;
-    objectUnavailableModifyRequestPath?: boolean;
-    objectUnavailableProtocol?: string;
-    objectUnavailableRecovery?: string;
-    objectUnavailableRedirectMethod?: number;
-    objectUnavailableResponseCodes?: string[];
-    objectUnavailableRetryLimit?: string;
-    originUnavailableAlternateHost?: string;
-    originUnavailableBackupHost?: string;
-    originUnavailableBlacklistOriginIp?: boolean;
-    originUnavailableBlacklistWindow?: string;
-    originUnavailableChangeProtocol?: boolean;
-    originUnavailableDetectionLevel?: string;
-    originUnavailableIncludeQueryString?: boolean;
-    originUnavailableModifiedPath?: string;
-    originUnavailableModifyRequestPath?: boolean;
-    originUnavailableProtocol?: string;
-    originUnavailableRecovery?: string;
-    originUnavailableRedirectMethod?: number;
-    originUnavailableResponseCodes?: string[];
-    originUnavailableRetryLimit?: string;
-    originUnresponsiveAlternateHost?: string;
-    originUnresponsiveBackupHost?: string;
-    originUnresponsiveBlacklistOriginIp?: boolean;
-    originUnresponsiveBlacklistWindow?: string;
-    originUnresponsiveChangeProtocol?: boolean;
-    originUnresponsiveDetectionLevel?: string;
-    originUnresponsiveIncludeQueryString?: boolean;
-    originUnresponsiveModifiedPath?: string;
-    originUnresponsiveModifyRequestPath?: boolean;
-    originUnresponsiveProtocol?: string;
-    originUnresponsiveRecovery?: string;
-    originUnresponsiveRedirectMethod?: number;
-    originUnresponsiveRetryLimit?: string;
-    otherOptions?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorMediaOriginFailoverArgs {
-    cacheErrorResponse?: pulumi.Input<boolean>;
-    cacheWindow?: pulumi.Input<string>;
-    clientResponseCode?: pulumi.Input<string>;
-    detectObjectUnavailable?: pulumi.Input<boolean>;
-    detectObjectUnavailableTitle?: pulumi.Input<string>;
-    detectOriginUnavailable?: pulumi.Input<boolean>;
-    detectOriginUnavailableTitle?: pulumi.Input<string>;
-    detectOriginUnresponsive?: pulumi.Input<boolean>;
-    detectOriginUnresponsiveTitle?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    objectUnavailableAlternateHost?: pulumi.Input<string>;
-    objectUnavailableBackupHost?: pulumi.Input<string>;
-    objectUnavailableBlacklistOriginIp?: pulumi.Input<boolean>;
-    objectUnavailableBlacklistWindow?: pulumi.Input<string>;
-    objectUnavailableChangeProtocol?: pulumi.Input<boolean>;
-    objectUnavailableDetectionLevel?: pulumi.Input<string>;
-    objectUnavailableIncludeQueryString?: pulumi.Input<boolean>;
-    objectUnavailableModifiedPath?: pulumi.Input<string>;
-    objectUnavailableModifyRequestPath?: pulumi.Input<boolean>;
-    objectUnavailableProtocol?: pulumi.Input<string>;
-    objectUnavailableRecovery?: pulumi.Input<string>;
-    objectUnavailableRedirectMethod?: pulumi.Input<number>;
-    objectUnavailableResponseCodes?: pulumi.Input<pulumi.Input<string>[]>;
-    objectUnavailableRetryLimit?: pulumi.Input<string>;
-    originUnavailableAlternateHost?: pulumi.Input<string>;
-    originUnavailableBackupHost?: pulumi.Input<string>;
-    originUnavailableBlacklistOriginIp?: pulumi.Input<boolean>;
-    originUnavailableBlacklistWindow?: pulumi.Input<string>;
-    originUnavailableChangeProtocol?: pulumi.Input<boolean>;
-    originUnavailableDetectionLevel?: pulumi.Input<string>;
-    originUnavailableIncludeQueryString?: pulumi.Input<boolean>;
-    originUnavailableModifiedPath?: pulumi.Input<string>;
-    originUnavailableModifyRequestPath?: pulumi.Input<boolean>;
-    originUnavailableProtocol?: pulumi.Input<string>;
-    originUnavailableRecovery?: pulumi.Input<string>;
-    originUnavailableRedirectMethod?: pulumi.Input<number>;
-    originUnavailableResponseCodes?: pulumi.Input<pulumi.Input<string>[]>;
-    originUnavailableRetryLimit?: pulumi.Input<string>;
-    originUnresponsiveAlternateHost?: pulumi.Input<string>;
-    originUnresponsiveBackupHost?: pulumi.Input<string>;
-    originUnresponsiveBlacklistOriginIp?: pulumi.Input<boolean>;
-    originUnresponsiveBlacklistWindow?: pulumi.Input<string>;
-    originUnresponsiveChangeProtocol?: pulumi.Input<boolean>;
-    originUnresponsiveDetectionLevel?: pulumi.Input<string>;
-    originUnresponsiveIncludeQueryString?: pulumi.Input<boolean>;
-    originUnresponsiveModifiedPath?: pulumi.Input<string>;
-    originUnresponsiveModifyRequestPath?: pulumi.Input<boolean>;
-    originUnresponsiveProtocol?: pulumi.Input<string>;
-    originUnresponsiveRecovery?: pulumi.Input<string>;
-    originUnresponsiveRedirectMethod?: pulumi.Input<number>;
-    originUnresponsiveRetryLimit?: pulumi.Input<string>;
-    otherOptions?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorMetadataCaching {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorMetadataCachingArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorMobileSdkPerformance {
-    enabled?: boolean;
-    locked?: boolean;
-    secondaryMultipathToOrigin?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorMobileSdkPerformanceArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    secondaryMultipathToOrigin?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorModifyIncomingRequestHeader {
-    action?: string;
-    avoidDuplicateHeaders?: boolean;
-    customHeaderName?: string;
-    headerValue?: string;
-    locked?: boolean;
-    newHeaderValue?: string;
-    standardAddHeaderName?: string;
-    standardDeleteHeaderName?: string;
-    standardModifyHeaderName?: string;
-    standardPassHeaderName?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorModifyIncomingRequestHeaderArgs {
-    action?: pulumi.Input<string>;
-    avoidDuplicateHeaders?: pulumi.Input<boolean>;
-    customHeaderName?: pulumi.Input<string>;
-    headerValue?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    newHeaderValue?: pulumi.Input<string>;
-    standardAddHeaderName?: pulumi.Input<string>;
-    standardDeleteHeaderName?: pulumi.Input<string>;
-    standardModifyHeaderName?: pulumi.Input<string>;
-    standardPassHeaderName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorModifyIncomingResponseHeader {
-    action?: string;
-    avoidDuplicateHeaders?: boolean;
-    customHeaderName?: string;
-    headerValue?: string;
-    locked?: boolean;
-    newHeaderValue?: string;
-    standardAddHeaderName?: string;
-    standardDeleteHeaderName?: string;
-    standardModifyHeaderName?: string;
-    standardPassHeaderName?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorModifyIncomingResponseHeaderArgs {
-    action?: pulumi.Input<string>;
-    avoidDuplicateHeaders?: pulumi.Input<boolean>;
-    customHeaderName?: pulumi.Input<string>;
-    headerValue?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    newHeaderValue?: pulumi.Input<string>;
-    standardAddHeaderName?: pulumi.Input<string>;
-    standardDeleteHeaderName?: pulumi.Input<string>;
-    standardModifyHeaderName?: pulumi.Input<string>;
-    standardPassHeaderName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorModifyOutgoingRequestHeader {
-    action?: string;
-    avoidDuplicateHeaders?: boolean;
-    customHeaderName?: string;
-    headerValue?: string;
-    locked?: boolean;
-    matchMultiple?: boolean;
-    newHeaderValue?: string;
-    regexHeaderMatch?: string;
-    regexHeaderReplace?: string;
-    standardAddHeaderName?: string;
-    standardDeleteHeaderName?: string;
-    standardModifyHeaderName?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorModifyOutgoingRequestHeaderArgs {
-    action?: pulumi.Input<string>;
-    avoidDuplicateHeaders?: pulumi.Input<boolean>;
-    customHeaderName?: pulumi.Input<string>;
-    headerValue?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    matchMultiple?: pulumi.Input<boolean>;
-    newHeaderValue?: pulumi.Input<string>;
-    regexHeaderMatch?: pulumi.Input<string>;
-    regexHeaderReplace?: pulumi.Input<string>;
-    standardAddHeaderName?: pulumi.Input<string>;
-    standardDeleteHeaderName?: pulumi.Input<string>;
-    standardModifyHeaderName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorModifyOutgoingResponseHeader {
-    action?: string;
-    avoidDuplicateHeaders?: boolean;
-    customHeaderName?: string;
-    headerValue?: string;
-    locked?: boolean;
-    matchMultiple?: boolean;
-    newHeaderValue?: string;
-    regexHeaderMatch?: string;
-    regexHeaderReplace?: string;
-    standardAddHeaderName?: string;
-    standardDeleteHeaderName?: string;
-    standardModifyHeaderName?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorModifyOutgoingResponseHeaderArgs {
-    action?: pulumi.Input<string>;
-    avoidDuplicateHeaders?: pulumi.Input<boolean>;
-    customHeaderName?: pulumi.Input<string>;
-    headerValue?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    matchMultiple?: pulumi.Input<boolean>;
-    newHeaderValue?: pulumi.Input<string>;
-    regexHeaderMatch?: pulumi.Input<string>;
-    regexHeaderReplace?: pulumi.Input<string>;
-    standardAddHeaderName?: pulumi.Input<string>;
-    standardDeleteHeaderName?: pulumi.Input<string>;
-    standardModifyHeaderName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorModifyViaHeader {
-    enabled?: boolean;
-    locked?: boolean;
-    modificationOption?: string;
-    renameHeaderTo?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorModifyViaHeaderArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    modificationOption?: pulumi.Input<string>;
-    renameHeaderTo?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorOrigin {
-    cacheKeyHostname?: string;
-    compress?: boolean;
-    customCertificateAuthorities?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginCustomCertificateAuthority[];
-    customCertificates?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginCustomCertificate[];
-    customForwardHostHeader?: string;
-    customValidCnValues?: string[];
-    enableTrueClientIp?: boolean;
-    forwardHostHeader?: string;
-    hostname?: string;
-    httpPort?: number;
-    httpsPort?: number;
-    ipVersion?: string;
-    locked?: boolean;
-    maxTlsVersion?: string;
-    minTlsVersion?: string;
-    mslorigin?: string;
-    netStorage?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginNetStorage;
-    originCertificate?: string;
-    originCertsToHonor?: string;
-    originId?: string;
-    originSni?: boolean;
-    originType?: string;
-    ports?: string;
-    saasCnameEnabled?: boolean;
-    saasCnameLevel?: number;
-    saasCookie?: string;
-    saasQueryString?: string;
-    saasRegex?: string;
-    saasReplace?: string;
-    saasSuffix?: string;
-    saasType?: string;
-    secondHostname?: string;
-    secondHostnameEnabled?: boolean;
-    standardCertificateAuthorities?: string[];
-    templateUuid?: string;
-    tls13Support?: boolean;
-    tlsVersionTitle?: string;
-    trueClientIpClientSetting?: boolean;
-    trueClientIpHeader?: string;
-    useUniqueCacheKey?: boolean;
-    uuid?: string;
-    verificationMode?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorOriginArgs {
-    cacheKeyHostname?: pulumi.Input<string>;
-    compress?: pulumi.Input<boolean>;
-    customCertificateAuthorities?: pulumi.Input<pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginCustomCertificateAuthorityArgs>[]>;
-    customCertificates?: pulumi.Input<pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginCustomCertificateArgs>[]>;
-    customForwardHostHeader?: pulumi.Input<string>;
-    customValidCnValues?: pulumi.Input<pulumi.Input<string>[]>;
-    enableTrueClientIp?: pulumi.Input<boolean>;
-    forwardHostHeader?: pulumi.Input<string>;
-    hostname?: pulumi.Input<string>;
-    httpPort?: pulumi.Input<number>;
-    httpsPort?: pulumi.Input<number>;
-    ipVersion?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    maxTlsVersion?: pulumi.Input<string>;
-    minTlsVersion?: pulumi.Input<string>;
-    mslorigin?: pulumi.Input<string>;
-    netStorage?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginNetStorageArgs>;
-    originCertificate?: pulumi.Input<string>;
-    originCertsToHonor?: pulumi.Input<string>;
-    originId?: pulumi.Input<string>;
-    originSni?: pulumi.Input<boolean>;
-    originType?: pulumi.Input<string>;
-    ports?: pulumi.Input<string>;
-    saasCnameEnabled?: pulumi.Input<boolean>;
-    saasCnameLevel?: pulumi.Input<number>;
-    saasCookie?: pulumi.Input<string>;
-    saasQueryString?: pulumi.Input<string>;
-    saasRegex?: pulumi.Input<string>;
-    saasReplace?: pulumi.Input<string>;
-    saasSuffix?: pulumi.Input<string>;
-    saasType?: pulumi.Input<string>;
-    secondHostname?: pulumi.Input<string>;
-    secondHostnameEnabled?: pulumi.Input<boolean>;
-    standardCertificateAuthorities?: pulumi.Input<pulumi.Input<string>[]>;
-    templateUuid?: pulumi.Input<string>;
-    tls13Support?: pulumi.Input<boolean>;
-    tlsVersionTitle?: pulumi.Input<string>;
-    trueClientIpClientSetting?: pulumi.Input<boolean>;
-    trueClientIpHeader?: pulumi.Input<string>;
-    useUniqueCacheKey?: pulumi.Input<boolean>;
-    uuid?: pulumi.Input<string>;
-    verificationMode?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorOriginCharacteristics {
-    accessKeyEncryptedStorage?: boolean;
-    adcTitle?: string;
-    authenticationMethod?: string;
-    authenticationMethodTitle?: string;
-    awsAccessKeyId?: string;
-    awsAccessKeyVersionGuid?: string;
-    awsArRegion?: string;
-    awsHost?: string;
-    awsRegion?: string;
-    awsSecretAccessKey?: string;
-    awsService?: string;
-    country?: string;
-    customSignStrings?: string[];
-    directConnectGeo?: string;
-    encodingVersion?: number;
-    endPointService?: string;
-    gcsAccessKeyVersionGuid?: string;
-    gcsHmacKeyAccessId?: string;
-    gcsHmacKeySecret?: string;
-    hostnameTag?: boolean;
-    locked?: boolean;
-    mslkey?: string;
-    mslname?: string;
-    nonce?: string;
-    originLocationTitle?: string;
-    propertyIdTag?: boolean;
-    roleArn?: string;
-    secretKey?: string;
-    templateUuid?: string;
-    useCustomSignString?: boolean;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorOriginCharacteristicsArgs {
-    accessKeyEncryptedStorage?: pulumi.Input<boolean>;
-    adcTitle?: pulumi.Input<string>;
-    authenticationMethod?: pulumi.Input<string>;
-    authenticationMethodTitle?: pulumi.Input<string>;
-    awsAccessKeyId?: pulumi.Input<string>;
-    awsAccessKeyVersionGuid?: pulumi.Input<string>;
-    awsArRegion?: pulumi.Input<string>;
-    awsHost?: pulumi.Input<string>;
-    awsRegion?: pulumi.Input<string>;
-    awsSecretAccessKey?: pulumi.Input<string>;
-    awsService?: pulumi.Input<string>;
-    country?: pulumi.Input<string>;
-    customSignStrings?: pulumi.Input<pulumi.Input<string>[]>;
-    directConnectGeo?: pulumi.Input<string>;
-    encodingVersion?: pulumi.Input<number>;
-    endPointService?: pulumi.Input<string>;
-    gcsAccessKeyVersionGuid?: pulumi.Input<string>;
-    gcsHmacKeyAccessId?: pulumi.Input<string>;
-    gcsHmacKeySecret?: pulumi.Input<string>;
-    hostnameTag?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    mslkey?: pulumi.Input<string>;
-    mslname?: pulumi.Input<string>;
-    nonce?: pulumi.Input<string>;
-    originLocationTitle?: pulumi.Input<string>;
-    propertyIdTag?: pulumi.Input<boolean>;
-    roleArn?: pulumi.Input<string>;
-    secretKey?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    useCustomSignString?: pulumi.Input<boolean>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorOriginCharacteristicsWsd {
-    locked?: boolean;
-    origintype?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorOriginCharacteristicsWsdArgs {
-    locked?: pulumi.Input<boolean>;
-    origintype?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorOriginCustomCertificate {
-    canBeCa?: boolean;
-    canBeLeaf?: boolean;
-    issuerRdns?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginCustomCertificateIssuerRdns;
-    notAfter?: number;
-    notBefore?: number;
-    pemEncodedCert?: string;
-    publicKey?: string;
-    publicKeyAlgorithm?: string;
-    publicKeyFormat?: string;
-    selfSigned?: boolean;
-    serialNumber?: string;
-    sha1Fingerprint?: string;
-    sigAlgName?: string;
-    subjectAlternativeNames?: string[];
-    subjectCn?: string;
-    subjectRdns?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginCustomCertificateSubjectRdns;
-    version?: number;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorOriginCustomCertificateArgs {
-    canBeCa?: pulumi.Input<boolean>;
-    canBeLeaf?: pulumi.Input<boolean>;
-    issuerRdns?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginCustomCertificateIssuerRdnsArgs>;
-    notAfter?: pulumi.Input<number>;
-    notBefore?: pulumi.Input<number>;
-    pemEncodedCert?: pulumi.Input<string>;
-    publicKey?: pulumi.Input<string>;
-    publicKeyAlgorithm?: pulumi.Input<string>;
-    publicKeyFormat?: pulumi.Input<string>;
-    selfSigned?: pulumi.Input<boolean>;
-    serialNumber?: pulumi.Input<string>;
-    sha1Fingerprint?: pulumi.Input<string>;
-    sigAlgName?: pulumi.Input<string>;
-    subjectAlternativeNames?: pulumi.Input<pulumi.Input<string>[]>;
-    subjectCn?: pulumi.Input<string>;
-    subjectRdns?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginCustomCertificateSubjectRdnsArgs>;
-    version?: pulumi.Input<number>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorOriginCustomCertificateAuthority {
-    canBeCa?: boolean;
-    canBeLeaf?: boolean;
-    issuerRdns?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginCustomCertificateAuthorityIssuerRdns;
-    notAfter?: number;
-    notBefore?: number;
-    pemEncodedCert?: string;
-    publicKey?: string;
-    publicKeyAlgorithm?: string;
-    publicKeyFormat?: string;
-    selfSigned?: boolean;
-    serialNumber?: string;
-    sha1Fingerprint?: string;
-    sigAlgName?: string;
-    subjectAlternativeNames?: string[];
-    subjectCn?: string;
-    subjectRdns?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginCustomCertificateAuthoritySubjectRdns;
-    version?: number;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorOriginCustomCertificateAuthorityArgs {
-    canBeCa?: pulumi.Input<boolean>;
-    canBeLeaf?: pulumi.Input<boolean>;
-    issuerRdns?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginCustomCertificateAuthorityIssuerRdnsArgs>;
-    notAfter?: pulumi.Input<number>;
-    notBefore?: pulumi.Input<number>;
-    pemEncodedCert?: pulumi.Input<string>;
-    publicKey?: pulumi.Input<string>;
-    publicKeyAlgorithm?: pulumi.Input<string>;
-    publicKeyFormat?: pulumi.Input<string>;
-    selfSigned?: pulumi.Input<boolean>;
-    serialNumber?: pulumi.Input<string>;
-    sha1Fingerprint?: pulumi.Input<string>;
-    sigAlgName?: pulumi.Input<string>;
-    subjectAlternativeNames?: pulumi.Input<pulumi.Input<string>[]>;
-    subjectCn?: pulumi.Input<string>;
-    subjectRdns?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginCustomCertificateAuthoritySubjectRdnsArgs>;
-    version?: pulumi.Input<number>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorOriginCustomCertificateAuthorityIssuerRdns {
-    c?: string;
-    cn?: string;
-    o?: string;
-    ou?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorOriginCustomCertificateAuthorityIssuerRdnsArgs {
-    c?: pulumi.Input<string>;
-    cn?: pulumi.Input<string>;
-    o?: pulumi.Input<string>;
-    ou?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorOriginCustomCertificateAuthoritySubjectRdns {
-    c?: string;
-    cn?: string;
-    o?: string;
-    ou?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorOriginCustomCertificateAuthoritySubjectRdnsArgs {
-    c?: pulumi.Input<string>;
-    cn?: pulumi.Input<string>;
-    o?: pulumi.Input<string>;
-    ou?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorOriginCustomCertificateIssuerRdns {
-    c?: string;
-    cn?: string;
-    o?: string;
-    ou?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorOriginCustomCertificateIssuerRdnsArgs {
-    c?: pulumi.Input<string>;
-    cn?: pulumi.Input<string>;
-    o?: pulumi.Input<string>;
-    ou?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorOriginCustomCertificateSubjectRdns {
-    c?: string;
-    cn?: string;
-    o?: string;
-    ou?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorOriginCustomCertificateSubjectRdnsArgs {
-    c?: pulumi.Input<string>;
-    cn?: pulumi.Input<string>;
-    o?: pulumi.Input<string>;
-    ou?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorOriginFailureRecoveryMethod {
-    customStatusCode?: string;
-    locked?: boolean;
-    recoveryMethod?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorOriginFailureRecoveryMethodArgs {
-    customStatusCode?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    recoveryMethod?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorOriginFailureRecoveryPolicy {
-    binaryEquivalentContent?: boolean;
-    enableIpAvoidance?: boolean;
-    enabled?: boolean;
-    ipAvoidanceErrorThreshold?: number;
-    ipAvoidanceRetryInterval?: number;
-    locked?: boolean;
-    monitorOriginResponsiveness?: boolean;
-    monitorResponseCodes1s?: string[];
-    monitorResponseCodes2s?: string[];
-    monitorResponseCodes3s?: string[];
-    monitorStatusCodes1?: boolean;
-    monitorStatusCodes1EnableRecovery?: boolean;
-    monitorStatusCodes1EnableRetry?: boolean;
-    monitorStatusCodes1RecoveryConfigName?: string;
-    monitorStatusCodes2?: boolean;
-    monitorStatusCodes2EnableRecovery?: boolean;
-    monitorStatusCodes2EnableRetry?: boolean;
-    monitorStatusCodes2RecoveryConfigName?: string;
-    monitorStatusCodes3?: boolean;
-    monitorStatusCodes3EnableRecovery?: boolean;
-    monitorStatusCodes3EnableRetry?: boolean;
-    monitorStatusCodes3RecoveryConfigName?: string;
-    originResponsivenessCustomTimeout?: number;
-    originResponsivenessEnableRecovery?: boolean;
-    originResponsivenessEnableRetry?: boolean;
-    originResponsivenessMonitoring?: string;
-    originResponsivenessRecoveryConfigName?: string;
-    originResponsivenessTimeout?: string;
-    statusCodeMonitoring1?: string;
-    statusCodeMonitoring2?: string;
-    statusCodeMonitoring3?: string;
-    templateUuid?: string;
-    tuningParameters?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorOriginFailureRecoveryPolicyArgs {
-    binaryEquivalentContent?: pulumi.Input<boolean>;
-    enableIpAvoidance?: pulumi.Input<boolean>;
-    enabled?: pulumi.Input<boolean>;
-    ipAvoidanceErrorThreshold?: pulumi.Input<number>;
-    ipAvoidanceRetryInterval?: pulumi.Input<number>;
-    locked?: pulumi.Input<boolean>;
-    monitorOriginResponsiveness?: pulumi.Input<boolean>;
-    monitorResponseCodes1s?: pulumi.Input<pulumi.Input<string>[]>;
-    monitorResponseCodes2s?: pulumi.Input<pulumi.Input<string>[]>;
-    monitorResponseCodes3s?: pulumi.Input<pulumi.Input<string>[]>;
-    monitorStatusCodes1?: pulumi.Input<boolean>;
-    monitorStatusCodes1EnableRecovery?: pulumi.Input<boolean>;
-    monitorStatusCodes1EnableRetry?: pulumi.Input<boolean>;
-    monitorStatusCodes1RecoveryConfigName?: pulumi.Input<string>;
-    monitorStatusCodes2?: pulumi.Input<boolean>;
-    monitorStatusCodes2EnableRecovery?: pulumi.Input<boolean>;
-    monitorStatusCodes2EnableRetry?: pulumi.Input<boolean>;
-    monitorStatusCodes2RecoveryConfigName?: pulumi.Input<string>;
-    monitorStatusCodes3?: pulumi.Input<boolean>;
-    monitorStatusCodes3EnableRecovery?: pulumi.Input<boolean>;
-    monitorStatusCodes3EnableRetry?: pulumi.Input<boolean>;
-    monitorStatusCodes3RecoveryConfigName?: pulumi.Input<string>;
-    originResponsivenessCustomTimeout?: pulumi.Input<number>;
-    originResponsivenessEnableRecovery?: pulumi.Input<boolean>;
-    originResponsivenessEnableRetry?: pulumi.Input<boolean>;
-    originResponsivenessMonitoring?: pulumi.Input<string>;
-    originResponsivenessRecoveryConfigName?: pulumi.Input<string>;
-    originResponsivenessTimeout?: pulumi.Input<string>;
-    statusCodeMonitoring1?: pulumi.Input<string>;
-    statusCodeMonitoring2?: pulumi.Input<string>;
-    statusCodeMonitoring3?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    tuningParameters?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorOriginIpAcl {
-    enable?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorOriginIpAclArgs {
-    enable?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorOriginNetStorage {
-    cpCode?: number;
-    downloadDomainName?: string;
-    g2oToken?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorOriginNetStorageArgs {
-    cpCode?: pulumi.Input<number>;
-    downloadDomainName?: pulumi.Input<string>;
-    g2oToken?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorPermissionsPolicy {
-    allowList?: string;
-    locked?: boolean;
-    permissionsPolicyDirectives?: string[];
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorPermissionsPolicyArgs {
-    allowList?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    permissionsPolicyDirectives?: pulumi.Input<pulumi.Input<string>[]>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorPersistentClientConnection {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    timeout?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorPersistentClientConnectionArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    timeout?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorPersistentConnection {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    timeout?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorPersistentConnectionArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    timeout?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorPersonallyIdentifiableInformation {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorPersonallyIdentifiableInformationArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorPhasedRelease {
-    cloudletPolicy?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorPhasedReleaseCloudletPolicy;
-    cloudletSharedPolicy?: number;
-    enabled?: boolean;
-    failoverDuration?: number;
-    failoverEnabled?: boolean;
-    failoverResponseCodes?: string[];
-    failoverTitle?: string;
-    isSharedPolicy?: boolean;
-    label?: string;
-    locked?: boolean;
-    populationCookieType?: string;
-    populationDuration?: string;
-    populationExpirationDate?: string;
-    populationRefresh?: boolean;
-    populationTitle?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorPhasedReleaseArgs {
-    cloudletPolicy?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorPhasedReleaseCloudletPolicyArgs>;
-    cloudletSharedPolicy?: pulumi.Input<number>;
-    enabled?: pulumi.Input<boolean>;
-    failoverDuration?: pulumi.Input<number>;
-    failoverEnabled?: pulumi.Input<boolean>;
-    failoverResponseCodes?: pulumi.Input<pulumi.Input<string>[]>;
-    failoverTitle?: pulumi.Input<string>;
-    isSharedPolicy?: pulumi.Input<boolean>;
-    label?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    populationCookieType?: pulumi.Input<string>;
-    populationDuration?: pulumi.Input<string>;
-    populationExpirationDate?: pulumi.Input<string>;
-    populationRefresh?: pulumi.Input<boolean>;
-    populationTitle?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorPhasedReleaseCloudletPolicy {
-    id?: number;
-    name?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorPhasedReleaseCloudletPolicyArgs {
-    id?: pulumi.Input<number>;
-    name?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorPreconnect {
-    locked?: boolean;
-    preconnectlists?: string[];
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorPreconnectArgs {
-    locked?: pulumi.Input<boolean>;
-    preconnectlists?: pulumi.Input<pulumi.Input<string>[]>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorPredictiveContentDelivery {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorPredictiveContentDeliveryArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorPredictivePrefetching {
-    accuracyTarget?: string;
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorPredictivePrefetchingArgs {
-    accuracyTarget?: pulumi.Input<string>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorPrefetch {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorPrefetchArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorPrefetchable {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorPrefetchableArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorPrefreshCache {
-    enabled?: boolean;
-    locked?: boolean;
-    prefreshval?: number;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorPrefreshCacheArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    prefreshval?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorQuality {
-    audienceSettings?: string;
-    catalogSize?: string;
-    contentSettings?: string;
-    contentType?: string;
-    country?: string;
-    deliveryFormat?: string;
-    deliveryType?: string;
-    downloadType?: string;
-    endUserLocation?: string;
-    locked?: boolean;
-    maximumConcurrentUsers?: string;
-    objectSize?: string;
-    optimizeFor?: string;
-    originSettings?: string;
-    popularityDistribution?: string;
-    refreshRate?: string;
-    segmentDuration?: number;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorQualityArgs {
-    audienceSettings?: pulumi.Input<string>;
-    catalogSize?: pulumi.Input<string>;
-    contentSettings?: pulumi.Input<string>;
-    contentType?: pulumi.Input<string>;
-    country?: pulumi.Input<string>;
-    deliveryFormat?: pulumi.Input<string>;
-    deliveryType?: pulumi.Input<string>;
-    downloadType?: pulumi.Input<string>;
-    endUserLocation?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    maximumConcurrentUsers?: pulumi.Input<string>;
-    objectSize?: pulumi.Input<string>;
-    optimizeFor?: pulumi.Input<string>;
-    originSettings?: pulumi.Input<string>;
-    popularityDistribution?: pulumi.Input<string>;
-    refreshRate?: pulumi.Input<string>;
-    segmentDuration?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorQuicBeta {
-    enabled?: boolean;
-    locked?: boolean;
-    quicOfferPercentage?: number;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorQuicBetaArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    quicOfferPercentage?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRandomSeek {
-    flv?: boolean;
-    locked?: boolean;
-    maximumSize?: string;
-    mp4?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRandomSeekArgs {
-    flv?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    maximumSize?: pulumi.Input<string>;
-    mp4?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRapid {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRapidArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorReadTimeout {
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-    value?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorReadTimeoutArgs {
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    value?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRealTimeReporting {
-    advanced?: boolean;
-    beaconSamplingPercentage?: number;
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRealTimeReportingArgs {
-    advanced?: pulumi.Input<boolean>;
-    beaconSamplingPercentage?: pulumi.Input<number>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRealUserMonitoring {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRealUserMonitoringArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRedirect {
-    destinationHostname?: string;
-    destinationHostnameOther?: string;
-    destinationHostnameSibling?: string;
-    destinationHostnameSubdomain?: string;
-    destinationPath?: string;
-    destinationPathOther?: string;
-    destinationPathPrefix?: string;
-    destinationPathSuffix?: string;
-    destinationPathSuffixStatus?: string;
-    destinationProtocol?: string;
-    locked?: boolean;
-    mobileDefaultChoice?: string;
-    queryString?: string;
-    responseCode?: number;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRedirectArgs {
-    destinationHostname?: pulumi.Input<string>;
-    destinationHostnameOther?: pulumi.Input<string>;
-    destinationHostnameSibling?: pulumi.Input<string>;
-    destinationHostnameSubdomain?: pulumi.Input<string>;
-    destinationPath?: pulumi.Input<string>;
-    destinationPathOther?: pulumi.Input<string>;
-    destinationPathPrefix?: pulumi.Input<string>;
-    destinationPathSuffix?: pulumi.Input<string>;
-    destinationPathSuffixStatus?: pulumi.Input<string>;
-    destinationProtocol?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    mobileDefaultChoice?: pulumi.Input<string>;
-    queryString?: pulumi.Input<string>;
-    responseCode?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRedirectplus {
-    destination?: string;
-    enabled?: boolean;
-    locked?: boolean;
-    responseCode?: number;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRedirectplusArgs {
-    destination?: pulumi.Input<string>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    responseCode?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRefererChecking {
-    allowChildren?: boolean;
-    domains?: string[];
-    enabled?: boolean;
-    locked?: boolean;
-    strict?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRefererCheckingArgs {
-    allowChildren?: pulumi.Input<boolean>;
-    domains?: pulumi.Input<pulumi.Input<string>[]>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    strict?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRemoveQueryParameter {
-    locked?: boolean;
-    parameters?: string[];
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRemoveQueryParameterArgs {
-    locked?: pulumi.Input<boolean>;
-    parameters?: pulumi.Input<pulumi.Input<string>[]>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRemoveVary {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRemoveVaryArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorReport {
-    cookies?: string[];
-    customLogField?: string;
-    locked?: boolean;
-    logAcceptLanguage?: boolean;
-    logCookies?: string;
-    logCustomLogField?: boolean;
-    logEdgeIp?: boolean;
-    logHost?: boolean;
-    logReferer?: boolean;
-    logUserAgent?: boolean;
-    logXForwardedFor?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorReportArgs {
-    cookies?: pulumi.Input<pulumi.Input<string>[]>;
-    customLogField?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    logAcceptLanguage?: pulumi.Input<boolean>;
-    logCookies?: pulumi.Input<string>;
-    logCustomLogField?: pulumi.Input<boolean>;
-    logEdgeIp?: pulumi.Input<boolean>;
-    logHost?: pulumi.Input<boolean>;
-    logReferer?: pulumi.Input<boolean>;
-    logUserAgent?: pulumi.Input<boolean>;
-    logXForwardedFor?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRequestClientHints {
-    acceptChes?: string[];
-    acceptCriticalChes?: string[];
-    locked?: boolean;
-    reset?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRequestClientHintsArgs {
-    acceptChes?: pulumi.Input<pulumi.Input<string>[]>;
-    acceptCriticalChes?: pulumi.Input<pulumi.Input<string>[]>;
-    locked?: pulumi.Input<boolean>;
-    reset?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRequestControl {
-    branded403File?: string;
-    branded403StatusCode?: number;
-    branded403Url?: string;
-    brandedDenyCacheTtl?: number;
-    cloudletPolicy?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRequestControlCloudletPolicy;
-    cloudletSharedPolicy?: number;
-    enableBranded403?: boolean;
-    enabled?: boolean;
-    isSharedPolicy?: boolean;
-    locked?: boolean;
-    netStorage?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRequestControlNetStorage;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRequestControlArgs {
-    branded403File?: pulumi.Input<string>;
-    branded403StatusCode?: pulumi.Input<number>;
-    branded403Url?: pulumi.Input<string>;
-    brandedDenyCacheTtl?: pulumi.Input<number>;
-    cloudletPolicy?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRequestControlCloudletPolicyArgs>;
-    cloudletSharedPolicy?: pulumi.Input<number>;
-    enableBranded403?: pulumi.Input<boolean>;
-    enabled?: pulumi.Input<boolean>;
-    isSharedPolicy?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    netStorage?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorRequestControlNetStorageArgs>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRequestControlCloudletPolicy {
-    id?: number;
-    name?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRequestControlCloudletPolicyArgs {
-    id?: pulumi.Input<number>;
-    name?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRequestControlNetStorage {
-    cpCode?: number;
-    downloadDomainName?: string;
-    g2oToken?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRequestControlNetStorageArgs {
-    cpCode?: pulumi.Input<number>;
-    downloadDomainName?: pulumi.Input<string>;
-    g2oToken?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRequestTypeMarker {
-    locked?: boolean;
-    requestType?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRequestTypeMarkerArgs {
-    locked?: pulumi.Input<boolean>;
-    requestType?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorResourceOptimizer {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorResourceOptimizerArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorResourceOptimizerExtendedCompatibility {
-    enableAllFeatures?: boolean;
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorResourceOptimizerExtendedCompatibilityArgs {
-    enableAllFeatures?: pulumi.Input<boolean>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorResponseCode {
-    locked?: boolean;
-    override206?: boolean;
-    statusCode?: number;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorResponseCodeArgs {
-    locked?: pulumi.Input<boolean>;
-    override206?: pulumi.Input<boolean>;
-    statusCode?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorResponseCookie {
-    cookieName?: string;
-    defaultDomain?: boolean;
-    defaultPath?: boolean;
-    domain?: string;
-    duration?: string;
-    enabled?: boolean;
-    expirationDate?: string;
-    expires?: string;
-    format?: string;
-    httpOnly?: boolean;
-    locked?: boolean;
-    path?: string;
-    sameSite?: string;
-    secure?: boolean;
-    templateUuid?: string;
-    type?: string;
-    uuid?: string;
-    value?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorResponseCookieArgs {
-    cookieName?: pulumi.Input<string>;
-    defaultDomain?: pulumi.Input<boolean>;
-    defaultPath?: pulumi.Input<boolean>;
-    domain?: pulumi.Input<string>;
-    duration?: pulumi.Input<string>;
-    enabled?: pulumi.Input<boolean>;
-    expirationDate?: pulumi.Input<string>;
-    expires?: pulumi.Input<string>;
-    format?: pulumi.Input<string>;
-    httpOnly?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    path?: pulumi.Input<string>;
-    sameSite?: pulumi.Input<string>;
-    secure?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    type?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    value?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRestrictObjectCaching {
-    locked?: boolean;
-    maximumSize?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRestrictObjectCachingArgs {
-    locked?: pulumi.Input<boolean>;
-    maximumSize?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorReturnCacheStatus {
-    locked?: boolean;
-    responseHeaderName?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorReturnCacheStatusArgs {
-    locked?: pulumi.Input<boolean>;
-    responseHeaderName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRewriteUrl {
-    behavior?: string;
-    keepQueryString?: boolean;
-    locked?: boolean;
-    match?: string;
-    matchMultiple?: boolean;
-    matchRegex?: string;
-    targetPath?: string;
-    targetPathPrepend?: string;
-    targetRegex?: string;
-    targetUrl?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRewriteUrlArgs {
-    behavior?: pulumi.Input<string>;
-    keepQueryString?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    match?: pulumi.Input<string>;
-    matchMultiple?: pulumi.Input<boolean>;
-    matchRegex?: pulumi.Input<string>;
-    targetPath?: pulumi.Input<string>;
-    targetPathPrepend?: pulumi.Input<string>;
-    targetRegex?: pulumi.Input<string>;
-    targetUrl?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRumCustom {
-    locked?: boolean;
-    rumGroupName?: string;
-    rumSampleRate?: number;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorRumCustomArgs {
-    locked?: pulumi.Input<boolean>;
-    rumGroupName?: pulumi.Input<string>;
-    rumSampleRate?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorSaasDefinitions {
-    applicationAction?: string;
-    applicationCnameEnabled?: boolean;
-    applicationCnameLevel?: number;
-    applicationCookie?: string;
-    applicationQueryString?: string;
-    applicationRegex?: string;
-    applicationReplace?: string;
-    applicationTitle?: string;
-    customerAction?: string;
-    customerCnameEnabled?: boolean;
-    customerCnameLevel?: number;
-    customerCookie?: string;
-    customerQueryString?: string;
-    customerRegex?: string;
-    customerReplace?: string;
-    customerTitle?: string;
-    locked?: boolean;
-    templateUuid?: string;
-    usersAction?: string;
-    usersCnameEnabled?: boolean;
-    usersCnameLevel?: number;
-    usersCookie?: string;
-    usersQueryString?: string;
-    usersRegex?: string;
-    usersReplace?: string;
-    usersTitle?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorSaasDefinitionsArgs {
-    applicationAction?: pulumi.Input<string>;
-    applicationCnameEnabled?: pulumi.Input<boolean>;
-    applicationCnameLevel?: pulumi.Input<number>;
-    applicationCookie?: pulumi.Input<string>;
-    applicationQueryString?: pulumi.Input<string>;
-    applicationRegex?: pulumi.Input<string>;
-    applicationReplace?: pulumi.Input<string>;
-    applicationTitle?: pulumi.Input<string>;
-    customerAction?: pulumi.Input<string>;
-    customerCnameEnabled?: pulumi.Input<boolean>;
-    customerCnameLevel?: pulumi.Input<number>;
-    customerCookie?: pulumi.Input<string>;
-    customerQueryString?: pulumi.Input<string>;
-    customerRegex?: pulumi.Input<string>;
-    customerReplace?: pulumi.Input<string>;
-    customerTitle?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    usersAction?: pulumi.Input<string>;
-    usersCnameEnabled?: pulumi.Input<boolean>;
-    usersCnameLevel?: pulumi.Input<number>;
-    usersCookie?: pulumi.Input<string>;
-    usersQueryString?: pulumi.Input<string>;
-    usersRegex?: pulumi.Input<string>;
-    usersReplace?: pulumi.Input<string>;
-    usersTitle?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorSalesForceCommerceCloudClient {
-    allowOverrideOriginCacheKey?: boolean;
-    connectorId?: string;
-    enabled?: boolean;
-    locked?: boolean;
-    originHostHeader?: string;
-    originType?: string;
-    sf3cOriginHost?: string;
-    sf3cOriginHostHeader?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorSalesForceCommerceCloudClientArgs {
-    allowOverrideOriginCacheKey?: pulumi.Input<boolean>;
-    connectorId?: pulumi.Input<string>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    originHostHeader?: pulumi.Input<string>;
-    originType?: pulumi.Input<string>;
-    sf3cOriginHost?: pulumi.Input<string>;
-    sf3cOriginHostHeader?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorSalesForceCommerceCloudProvider {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorSalesForceCommerceCloudProviderArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorSalesForceCommerceCloudProviderHostHeader {
-    hostHeaderSource?: string;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorSalesForceCommerceCloudProviderHostHeaderArgs {
-    hostHeaderSource?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorSavePostDcaProcessing {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorSavePostDcaProcessingArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorScheduleInvalidation {
-    locked?: boolean;
-    refreshMethod?: string;
-    repeat?: boolean;
-    repeatInterval?: string;
-    start?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorScheduleInvalidationArgs {
-    locked?: pulumi.Input<boolean>;
-    refreshMethod?: pulumi.Input<string>;
-    repeat?: pulumi.Input<boolean>;
-    repeatInterval?: pulumi.Input<string>;
-    start?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorScriptManagement {
-    enabled?: boolean;
-    locked?: boolean;
-    serviceworker?: string;
-    templateUuid?: string;
-    timestamp?: number;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorScriptManagementArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    serviceworker?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    timestamp?: pulumi.Input<number>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorSegmentedContentProtection {
-    acl?: boolean;
-    dashMediaEncryption?: boolean;
-    dataPayload?: boolean;
-    enableTokenInUri?: boolean;
-    enabled?: boolean;
-    fieldCarryOver?: string;
-    headerForSalts?: string[];
-    hlsMasterManifestFiles?: string[];
-    hlsMediaEncryption?: boolean;
-    ip?: boolean;
-    key?: string;
-    locked?: boolean;
-    mediaEncryptionTitle?: string;
-    revokedListId?: number;
-    salt?: string;
-    sessionId?: boolean;
-    templateUuid?: string;
-    tokenAuthHlsTitle?: string;
-    tokenAuthenticationTitle?: string;
-    tokenRevocationEnabled?: boolean;
-    tokenRevocationTitle?: string;
-    transitionKey?: string;
-    useAdvanced?: boolean;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorSegmentedContentProtectionArgs {
-    acl?: pulumi.Input<boolean>;
-    dashMediaEncryption?: pulumi.Input<boolean>;
-    dataPayload?: pulumi.Input<boolean>;
-    enableTokenInUri?: pulumi.Input<boolean>;
-    enabled?: pulumi.Input<boolean>;
-    fieldCarryOver?: pulumi.Input<string>;
-    headerForSalts?: pulumi.Input<pulumi.Input<string>[]>;
-    hlsMasterManifestFiles?: pulumi.Input<pulumi.Input<string>[]>;
-    hlsMediaEncryption?: pulumi.Input<boolean>;
-    ip?: pulumi.Input<boolean>;
-    key?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    mediaEncryptionTitle?: pulumi.Input<string>;
-    revokedListId?: pulumi.Input<number>;
-    salt?: pulumi.Input<string>;
-    sessionId?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    tokenAuthHlsTitle?: pulumi.Input<string>;
-    tokenAuthenticationTitle?: pulumi.Input<string>;
-    tokenRevocationEnabled?: pulumi.Input<boolean>;
-    tokenRevocationTitle?: pulumi.Input<string>;
-    transitionKey?: pulumi.Input<string>;
-    useAdvanced?: pulumi.Input<boolean>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorSegmentedMediaOptimization {
-    behavior?: string;
-    dvrType?: string;
-    dvrWindow?: string;
-    enableUllStreaming?: boolean;
-    endTime?: string;
-    liveType?: string;
-    locked?: boolean;
-    showAdvanced?: boolean;
-    startTime?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorSegmentedMediaOptimizationArgs {
-    behavior?: pulumi.Input<string>;
-    dvrType?: pulumi.Input<string>;
-    dvrWindow?: pulumi.Input<string>;
-    enableUllStreaming?: pulumi.Input<boolean>;
-    endTime?: pulumi.Input<string>;
-    liveType?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    showAdvanced?: pulumi.Input<boolean>;
-    startTime?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorSegmentedMediaStreamingPrefetch {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorSegmentedMediaStreamingPrefetchArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorSetVariable {
-    algorithm?: string;
-    caseSensitive?: boolean;
-    certificateFieldName?: string;
-    cookieName?: string;
-    deviceProfile?: string;
-    encryptionKey?: string;
-    encryptionMode?: string;
-    endIndex?: number;
-    exceptChars?: string;
-    extractLocation?: string;
-    forceChars?: string;
-    formatString?: string;
-    generator?: string;
-    globalSubstitution?: boolean;
-    headerName?: string;
-    hmacAlgorithm?: string;
-    hmacKey?: string;
-    initializationVector?: string;
-    ipVersion?: string;
-    ipv4Prefix?: number;
-    ipv6Prefix?: number;
-    locationId?: string;
-    locked?: boolean;
-    max?: number;
-    maxRandomNumber?: number;
-    min?: number;
-    minRandomNumber?: number;
-    nonce?: string;
-    numberOfBytes?: number;
-    operandOne?: string;
-    paramName?: string;
-    pathComponentOffset?: string;
-    prependBytes?: boolean;
-    queryParameterName?: string;
-    regex?: string;
-    replacement?: string;
-    responseHeaderName?: string;
-    separator?: string;
-    setCookieName?: string;
-    startIndex?: number;
-    subString?: string;
-    templateUuid?: string;
-    transform?: string;
-    uuid?: string;
-    valueSource?: string;
-    variableName?: string;
-    variableValue?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorSetVariableArgs {
-    algorithm?: pulumi.Input<string>;
-    caseSensitive?: pulumi.Input<boolean>;
-    certificateFieldName?: pulumi.Input<string>;
-    cookieName?: pulumi.Input<string>;
-    deviceProfile?: pulumi.Input<string>;
-    encryptionKey?: pulumi.Input<string>;
-    encryptionMode?: pulumi.Input<string>;
-    endIndex?: pulumi.Input<number>;
-    exceptChars?: pulumi.Input<string>;
-    extractLocation?: pulumi.Input<string>;
-    forceChars?: pulumi.Input<string>;
-    formatString?: pulumi.Input<string>;
-    generator?: pulumi.Input<string>;
-    globalSubstitution?: pulumi.Input<boolean>;
-    headerName?: pulumi.Input<string>;
-    hmacAlgorithm?: pulumi.Input<string>;
-    hmacKey?: pulumi.Input<string>;
-    initializationVector?: pulumi.Input<string>;
-    ipVersion?: pulumi.Input<string>;
-    ipv4Prefix?: pulumi.Input<number>;
-    ipv6Prefix?: pulumi.Input<number>;
-    locationId?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    max?: pulumi.Input<number>;
-    maxRandomNumber?: pulumi.Input<number>;
-    min?: pulumi.Input<number>;
-    minRandomNumber?: pulumi.Input<number>;
-    nonce?: pulumi.Input<string>;
-    numberOfBytes?: pulumi.Input<number>;
-    operandOne?: pulumi.Input<string>;
-    paramName?: pulumi.Input<string>;
-    pathComponentOffset?: pulumi.Input<string>;
-    prependBytes?: pulumi.Input<boolean>;
-    queryParameterName?: pulumi.Input<string>;
-    regex?: pulumi.Input<string>;
-    replacement?: pulumi.Input<string>;
-    responseHeaderName?: pulumi.Input<string>;
-    separator?: pulumi.Input<string>;
-    setCookieName?: pulumi.Input<string>;
-    startIndex?: pulumi.Input<number>;
-    subString?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    transform?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    valueSource?: pulumi.Input<string>;
-    variableName?: pulumi.Input<string>;
-    variableValue?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorSimulateErrorCode {
-    errorType?: string;
-    locked?: boolean;
-    templateUuid?: string;
-    timeout?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorSimulateErrorCodeArgs {
-    errorType?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    timeout?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorSiteShield {
-    locked?: boolean;
-    nossmap?: string;
-    ssmap?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorSiteShieldSsmap;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorSiteShieldArgs {
-    locked?: pulumi.Input<boolean>;
-    nossmap?: pulumi.Input<string>;
-    ssmap?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorSiteShieldSsmapArgs>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorSiteShieldSsmap {
-    chinaCdnMap?: string;
-    hasMixedHosts?: boolean;
-    name?: string;
-    src?: string;
-    srmap?: string;
-    value?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorSiteShieldSsmapArgs {
-    chinaCdnMap?: pulumi.Input<string>;
-    hasMixedHosts?: pulumi.Input<boolean>;
-    name?: pulumi.Input<string>;
-    src?: pulumi.Input<string>;
-    srmap?: pulumi.Input<string>;
-    value?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorStandardTlsMigration {
-    allowHttpsDowngrade?: boolean;
-    allowHttpsUpgrade?: boolean;
-    cacheSharingDuration?: number;
-    cacheSharingStartTime?: string;
-    enabled?: boolean;
-    isCertificateSniOnly?: boolean;
-    isTieredDistributionUsed?: boolean;
-    locked?: boolean;
-    migrationDuration?: number;
-    migrationFrom?: string;
-    migrationStartTime?: string;
-    tdLocation?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorStandardTlsMigrationArgs {
-    allowHttpsDowngrade?: pulumi.Input<boolean>;
-    allowHttpsUpgrade?: pulumi.Input<boolean>;
-    cacheSharingDuration?: pulumi.Input<number>;
-    cacheSharingStartTime?: pulumi.Input<string>;
-    enabled?: pulumi.Input<boolean>;
-    isCertificateSniOnly?: pulumi.Input<boolean>;
-    isTieredDistributionUsed?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    migrationDuration?: pulumi.Input<number>;
-    migrationFrom?: pulumi.Input<string>;
-    migrationStartTime?: pulumi.Input<string>;
-    tdLocation?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorStandardTlsMigrationOverride {
-    info?: string;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorStandardTlsMigrationOverrideArgs {
-    info?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorStrictHeaderParsing {
-    locked?: boolean;
-    strictMode?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-    validMode?: boolean;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorStrictHeaderParsingArgs {
-    locked?: pulumi.Input<boolean>;
-    strictMode?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    validMode?: pulumi.Input<boolean>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorSubCustomer {
-    accessControl?: boolean;
-    cacheKey?: boolean;
-    caching?: boolean;
-    contentCompressor?: boolean;
-    dynamicWebContent?: boolean;
-    enabled?: boolean;
-    geoLocation?: boolean;
-    ip?: boolean;
-    largeFileDelivery?: boolean;
-    liveVideoDelivery?: boolean;
-    locked?: boolean;
-    modifyPath?: boolean;
-    onDemandVideoDelivery?: boolean;
-    origin?: boolean;
-    partnerDomainSuffix?: string;
-    referrer?: boolean;
-    refreshContent?: boolean;
-    siteFailover?: boolean;
-    templateUuid?: string;
-    tokenAuthorization?: boolean;
-    uuid?: string;
-    webApplicationFirewall?: boolean;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorSubCustomerArgs {
-    accessControl?: pulumi.Input<boolean>;
-    cacheKey?: pulumi.Input<boolean>;
-    caching?: pulumi.Input<boolean>;
-    contentCompressor?: pulumi.Input<boolean>;
-    dynamicWebContent?: pulumi.Input<boolean>;
-    enabled?: pulumi.Input<boolean>;
-    geoLocation?: pulumi.Input<boolean>;
-    ip?: pulumi.Input<boolean>;
-    largeFileDelivery?: pulumi.Input<boolean>;
-    liveVideoDelivery?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    modifyPath?: pulumi.Input<boolean>;
-    onDemandVideoDelivery?: pulumi.Input<boolean>;
-    origin?: pulumi.Input<boolean>;
-    partnerDomainSuffix?: pulumi.Input<string>;
-    referrer?: pulumi.Input<boolean>;
-    refreshContent?: pulumi.Input<boolean>;
-    siteFailover?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    tokenAuthorization?: pulumi.Input<boolean>;
-    uuid?: pulumi.Input<string>;
-    webApplicationFirewall?: pulumi.Input<boolean>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorSureRoute {
-    allowFcmParentOverride?: boolean;
-    customMap?: string;
-    customStatKey?: string;
-    enableCustomKey?: boolean;
-    enabled?: boolean;
-    forceSslForward?: boolean;
-    locked?: boolean;
-    raceStatTtl?: string;
-    srDownloadLinkTitle?: string;
-    templateUuid?: string;
-    testObjectUrl?: string;
-    toHost?: string;
-    toHostStatus?: string;
-    type?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorSureRouteArgs {
-    allowFcmParentOverride?: pulumi.Input<boolean>;
-    customMap?: pulumi.Input<string>;
-    customStatKey?: pulumi.Input<string>;
-    enableCustomKey?: pulumi.Input<boolean>;
-    enabled?: pulumi.Input<boolean>;
-    forceSslForward?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    raceStatTtl?: pulumi.Input<string>;
-    srDownloadLinkTitle?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    testObjectUrl?: pulumi.Input<string>;
-    toHost?: pulumi.Input<string>;
-    toHostStatus?: pulumi.Input<string>;
-    type?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorTcpOptimization {
-    display?: string;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorTcpOptimizationArgs {
-    display?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorTeaLeaf {
-    enabled?: boolean;
-    ibmCustomerId?: number;
-    limitToDynamic?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorTeaLeafArgs {
-    enabled?: pulumi.Input<boolean>;
-    ibmCustomerId?: pulumi.Input<number>;
-    limitToDynamic?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorTieredDistribution {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    tieredDistributionMap?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorTieredDistributionArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    tieredDistributionMap?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorTieredDistributionAdvanced {
-    allowall?: boolean;
-    enabled?: boolean;
-    locked?: boolean;
-    method?: string;
-    policy?: string;
-    templateUuid?: string;
-    tieredDistributionMap?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorTieredDistributionAdvancedArgs {
-    allowall?: pulumi.Input<boolean>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    method?: pulumi.Input<string>;
-    policy?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    tieredDistributionMap?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorTieredDistributionCustomization {
-    cloudwrapperMapMigrationTitle?: string;
-    customMapEnabled?: boolean;
-    customMapName?: string;
-    hashAlgorithm?: string;
-    location?: string;
-    locked?: boolean;
-    mapMigrationEnabled?: boolean;
-    migrationEndDate?: string;
-    migrationStartDate?: string;
-    migrationWithinCwMapsEnabled?: boolean;
-    serialEnd?: string;
-    serialStart?: string;
-    templateUuid?: string;
-    tier1Title?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorTieredDistributionCustomizationArgs {
-    cloudwrapperMapMigrationTitle?: pulumi.Input<string>;
-    customMapEnabled?: pulumi.Input<boolean>;
-    customMapName?: pulumi.Input<string>;
-    hashAlgorithm?: pulumi.Input<string>;
-    location?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    mapMigrationEnabled?: pulumi.Input<boolean>;
-    migrationEndDate?: pulumi.Input<string>;
-    migrationStartDate?: pulumi.Input<string>;
-    migrationWithinCwMapsEnabled?: pulumi.Input<boolean>;
-    serialEnd?: pulumi.Input<string>;
-    serialStart?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    tier1Title?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorTimeout {
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-    value?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorTimeoutArgs {
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    value?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorUidConfiguration {
-    enabled?: boolean;
-    extractLocation?: string;
-    headerName?: string;
-    legalText?: string;
-    locked?: boolean;
-    queryParameterName?: string;
-    templateUuid?: string;
-    uuid?: string;
-    variableName?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorUidConfigurationArgs {
-    enabled?: pulumi.Input<boolean>;
-    extractLocation?: pulumi.Input<string>;
-    headerName?: pulumi.Input<string>;
-    legalText?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    queryParameterName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    variableName?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorValidateEntityTag {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorValidateEntityTagArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorVerifyJsonWebToken {
-    enableEs256?: boolean;
-    enableRs256?: boolean;
-    extractLocation?: string;
-    headerName?: string;
-    jwt?: string;
-    locked?: boolean;
-    queryParameterName?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorVerifyJsonWebTokenArgs {
-    enableEs256?: pulumi.Input<boolean>;
-    enableRs256?: pulumi.Input<boolean>;
-    extractLocation?: pulumi.Input<string>;
-    headerName?: pulumi.Input<string>;
-    jwt?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    queryParameterName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorVerifyJsonWebTokenForDcp {
-    authorizations?: string;
-    clientId?: string;
-    customHeader?: boolean;
-    enableEs256?: boolean;
-    enableRs256?: boolean;
-    extractAuthorizations?: boolean;
-    extractClientId?: boolean;
-    extractLocation?: string;
-    extractUserName?: boolean;
-    headerName?: string;
-    jwt?: string;
-    locked?: boolean;
-    primaryLocation?: string;
-    queryParameterName?: string;
-    templateUuid?: string;
-    userName?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorVerifyJsonWebTokenForDcpArgs {
-    authorizations?: pulumi.Input<string>;
-    clientId?: pulumi.Input<string>;
-    customHeader?: pulumi.Input<boolean>;
-    enableEs256?: pulumi.Input<boolean>;
-    enableRs256?: pulumi.Input<boolean>;
-    extractAuthorizations?: pulumi.Input<boolean>;
-    extractClientId?: pulumi.Input<boolean>;
-    extractLocation?: pulumi.Input<string>;
-    extractUserName?: pulumi.Input<boolean>;
-    headerName?: pulumi.Input<string>;
-    jwt?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    primaryLocation?: pulumi.Input<string>;
-    queryParameterName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    userName?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorVerifyTokenAuthorization {
-    algorithm?: string;
-    escapeHmacInputs?: boolean;
-    failureResponse?: boolean;
-    ignoreQueryString?: boolean;
-    key?: string;
-    location?: string;
-    locationId?: string;
-    locked?: boolean;
-    salt?: string;
-    templateUuid?: string;
-    transitionKey?: string;
-    useAdvanced?: boolean;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorVerifyTokenAuthorizationArgs {
-    algorithm?: pulumi.Input<string>;
-    escapeHmacInputs?: pulumi.Input<boolean>;
-    failureResponse?: pulumi.Input<boolean>;
-    ignoreQueryString?: pulumi.Input<boolean>;
-    key?: pulumi.Input<string>;
-    location?: pulumi.Input<string>;
-    locationId?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    salt?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    transitionKey?: pulumi.Input<string>;
-    useAdvanced?: pulumi.Input<boolean>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorVirtualWaitingRoom {
-    accessTitle?: string;
-    cloudletSharedPolicy?: number;
-    customCookieDomain?: string;
-    domainConfig?: string;
-    locked?: boolean;
-    sessionAutoProlong?: boolean;
-    sessionDuration?: number;
-    templateUuid?: string;
-    uuid?: string;
-    waitingRoomAssetsPaths?: string[];
-    waitingRoomPath?: string;
-    waitingRoomTitle?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorVirtualWaitingRoomArgs {
-    accessTitle?: pulumi.Input<string>;
-    cloudletSharedPolicy?: pulumi.Input<number>;
-    customCookieDomain?: pulumi.Input<string>;
-    domainConfig?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    sessionAutoProlong?: pulumi.Input<boolean>;
-    sessionDuration?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    waitingRoomAssetsPaths?: pulumi.Input<pulumi.Input<string>[]>;
-    waitingRoomPath?: pulumi.Input<string>;
-    waitingRoomTitle?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorVirtualWaitingRoomWithEdgeWorkers {
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorVirtualWaitingRoomWithEdgeWorkersArgs {
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritization {
-    allowedUserCookieAdvanced?: boolean;
-    allowedUserCookieAutomaticSalt?: boolean;
-    allowedUserCookieDomain?: string;
-    allowedUserCookieDomainType?: string;
-    allowedUserCookieDuration?: number;
-    allowedUserCookieEnabled?: boolean;
-    allowedUserCookieHttpOnly?: boolean;
-    allowedUserCookieLabel?: string;
-    allowedUserCookieManagementTitle?: string;
-    allowedUserCookieRefresh?: boolean;
-    allowedUserCookieSalt?: string;
-    cloudletPolicy?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationCloudletPolicy;
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    userIdentificationByCookie?: boolean;
-    userIdentificationByHeaders?: boolean;
-    userIdentificationByIp?: boolean;
-    userIdentificationByParams?: boolean;
-    userIdentificationKeyCookie?: string;
-    userIdentificationKeyHeaders?: string[];
-    userIdentificationKeyParams?: string[];
-    userIdentificationTitle?: string;
-    uuid?: string;
-    waitingRoomCacheTtl?: number;
-    waitingRoomCookieAdvanced?: boolean;
-    waitingRoomCookieAutomaticSalt?: boolean;
-    waitingRoomCookieDomain?: string;
-    waitingRoomCookieDomainType?: string;
-    waitingRoomCookieDuration?: number;
-    waitingRoomCookieEnabled?: boolean;
-    waitingRoomCookieHttpOnly?: boolean;
-    waitingRoomCookieLabel?: string;
-    waitingRoomCookieManagementTitle?: string;
-    waitingRoomCookieSalt?: string;
-    waitingRoomCookieShareLabel?: boolean;
-    waitingRoomCpCode?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationWaitingRoomCpCode;
-    waitingRoomDirectory?: string;
-    waitingRoomManagementTitle?: string;
-    waitingRoomNetStorage?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationWaitingRoomNetStorage;
-    waitingRoomStatusCode?: number;
-    waitingRoomUseCpCode?: boolean;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationArgs {
-    allowedUserCookieAdvanced?: pulumi.Input<boolean>;
-    allowedUserCookieAutomaticSalt?: pulumi.Input<boolean>;
-    allowedUserCookieDomain?: pulumi.Input<string>;
-    allowedUserCookieDomainType?: pulumi.Input<string>;
-    allowedUserCookieDuration?: pulumi.Input<number>;
-    allowedUserCookieEnabled?: pulumi.Input<boolean>;
-    allowedUserCookieHttpOnly?: pulumi.Input<boolean>;
-    allowedUserCookieLabel?: pulumi.Input<string>;
-    allowedUserCookieManagementTitle?: pulumi.Input<string>;
-    allowedUserCookieRefresh?: pulumi.Input<boolean>;
-    allowedUserCookieSalt?: pulumi.Input<string>;
-    cloudletPolicy?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationCloudletPolicyArgs>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    userIdentificationByCookie?: pulumi.Input<boolean>;
-    userIdentificationByHeaders?: pulumi.Input<boolean>;
-    userIdentificationByIp?: pulumi.Input<boolean>;
-    userIdentificationByParams?: pulumi.Input<boolean>;
-    userIdentificationKeyCookie?: pulumi.Input<string>;
-    userIdentificationKeyHeaders?: pulumi.Input<pulumi.Input<string>[]>;
-    userIdentificationKeyParams?: pulumi.Input<pulumi.Input<string>[]>;
-    userIdentificationTitle?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    waitingRoomCacheTtl?: pulumi.Input<number>;
-    waitingRoomCookieAdvanced?: pulumi.Input<boolean>;
-    waitingRoomCookieAutomaticSalt?: pulumi.Input<boolean>;
-    waitingRoomCookieDomain?: pulumi.Input<string>;
-    waitingRoomCookieDomainType?: pulumi.Input<string>;
-    waitingRoomCookieDuration?: pulumi.Input<number>;
-    waitingRoomCookieEnabled?: pulumi.Input<boolean>;
-    waitingRoomCookieHttpOnly?: pulumi.Input<boolean>;
-    waitingRoomCookieLabel?: pulumi.Input<string>;
-    waitingRoomCookieManagementTitle?: pulumi.Input<string>;
-    waitingRoomCookieSalt?: pulumi.Input<string>;
-    waitingRoomCookieShareLabel?: pulumi.Input<boolean>;
-    waitingRoomCpCode?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationWaitingRoomCpCodeArgs>;
-    waitingRoomDirectory?: pulumi.Input<string>;
-    waitingRoomManagementTitle?: pulumi.Input<string>;
-    waitingRoomNetStorage?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationWaitingRoomNetStorageArgs>;
-    waitingRoomStatusCode?: pulumi.Input<number>;
-    waitingRoomUseCpCode?: pulumi.Input<boolean>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationCloudletPolicy {
-    id?: number;
-    name?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationCloudletPolicyArgs {
-    id?: pulumi.Input<number>;
-    name?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationFifo {
-    accessTitle?: string;
-    cloudletSharedPolicy?: number;
-    customCookieDomain?: string;
-    domainConfig?: string;
-    locked?: boolean;
-    sessionAutoProlong?: boolean;
-    sessionDuration?: number;
-    templateUuid?: string;
-    uuid?: string;
-    waitingRoomAssetsPaths?: string[];
-    waitingRoomPath?: string;
-    waitingRoomTitle?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationFifoArgs {
-    accessTitle?: pulumi.Input<string>;
-    cloudletSharedPolicy?: pulumi.Input<number>;
-    customCookieDomain?: pulumi.Input<string>;
-    domainConfig?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    sessionAutoProlong?: pulumi.Input<boolean>;
-    sessionDuration?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    waitingRoomAssetsPaths?: pulumi.Input<pulumi.Input<string>[]>;
-    waitingRoomPath?: pulumi.Input<string>;
-    waitingRoomTitle?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationFifoStandalone {
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationFifoStandaloneArgs {
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationWaitingRoomCpCode {
-    cpCodeLimits?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationWaitingRoomCpCodeCpCodeLimits;
-    createdDate?: number;
-    description?: string;
-    id?: number;
-    name?: string;
-    products?: string[];
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationWaitingRoomCpCodeArgs {
-    cpCodeLimits?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationWaitingRoomCpCodeCpCodeLimitsArgs>;
-    createdDate?: pulumi.Input<number>;
-    description?: pulumi.Input<string>;
-    id?: pulumi.Input<number>;
-    name?: pulumi.Input<string>;
-    products?: pulumi.Input<pulumi.Input<string>[]>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationWaitingRoomCpCodeCpCodeLimits {
-    currentCapacity?: number;
-    limit?: number;
-    limitType?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationWaitingRoomCpCodeCpCodeLimitsArgs {
-    currentCapacity?: pulumi.Input<number>;
-    limit?: pulumi.Input<number>;
-    limitType?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationWaitingRoomNetStorage {
-    cpCode?: number;
-    downloadDomainName?: string;
-    g2oToken?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationWaitingRoomNetStorageArgs {
-    cpCode?: pulumi.Input<number>;
-    downloadDomainName?: pulumi.Input<string>;
-    g2oToken?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorWatermarking {
-    abVariantLocation?: string;
-    decryptionPassword1?: string;
-    decryptionPassword2?: string;
-    decryptionPasswordId1?: string;
-    decryptionPasswordId2?: string;
-    enable?: boolean;
-    locked?: boolean;
-    miscellaneousSettingsTitle?: string;
-    patternDecryptionEnable?: boolean;
-    patternEncryptionTitle?: string;
-    signatureVerificationEnable?: boolean;
-    templateUuid?: string;
-    tokenSigningTitle?: string;
-    useOriginalAsA?: boolean;
-    uuid?: string;
-    verificationKeyId1?: string;
-    verificationKeyId2?: string;
-    verificationPublicKey1?: string;
-    verificationPublicKey2?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorWatermarkingArgs {
-    abVariantLocation?: pulumi.Input<string>;
-    decryptionPassword1?: pulumi.Input<string>;
-    decryptionPassword2?: pulumi.Input<string>;
-    decryptionPasswordId1?: pulumi.Input<string>;
-    decryptionPasswordId2?: pulumi.Input<string>;
-    enable?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    miscellaneousSettingsTitle?: pulumi.Input<string>;
-    patternDecryptionEnable?: pulumi.Input<boolean>;
-    patternEncryptionTitle?: pulumi.Input<string>;
-    signatureVerificationEnable?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    tokenSigningTitle?: pulumi.Input<string>;
-    useOriginalAsA?: pulumi.Input<boolean>;
-    uuid?: pulumi.Input<string>;
-    verificationKeyId1?: pulumi.Input<string>;
-    verificationKeyId2?: pulumi.Input<string>;
-    verificationPublicKey1?: pulumi.Input<string>;
-    verificationPublicKey2?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorWebApplicationFirewall {
-    firewallConfiguration?: inputs.GetPropertyRulesBuilderRulesV20230920BehaviorWebApplicationFirewallFirewallConfiguration;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorWebApplicationFirewallArgs {
-    firewallConfiguration?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20230920BehaviorWebApplicationFirewallFirewallConfigurationArgs>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorWebApplicationFirewallFirewallConfiguration {
-    configId?: number;
-    fileName?: string;
-    productionStatus?: string;
-    productionVersion?: number;
-    stagingStatus?: string;
-    stagingVersion?: number;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorWebApplicationFirewallFirewallConfigurationArgs {
-    configId?: pulumi.Input<number>;
-    fileName?: pulumi.Input<string>;
-    productionStatus?: pulumi.Input<string>;
-    productionVersion?: pulumi.Input<number>;
-    stagingStatus?: pulumi.Input<string>;
-    stagingVersion?: pulumi.Input<number>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorWebSockets {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorWebSocketsArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorWebdav {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20230920BehaviorWebdavArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
 export interface GetPropertyRulesBuilderRulesV20230920Criterion {
     advancedImMatch?: inputs.GetPropertyRulesBuilderRulesV20230920CriterionAdvancedImMatch;
     bucket?: inputs.GetPropertyRulesBuilderRulesV20230920CriterionBucket;
@@ -25244,93 +17588,93 @@ export interface GetPropertyRulesBuilderRulesV20231030Behavior {
     mediaAccelerationQuicOptout?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorMediaAccelerationQuicOptout;
     mediaClient?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorMediaClient;
     mediaFileRetrievalOptimization?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorMediaFileRetrievalOptimization;
-    mediaOriginFailover?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorMediaOriginFailover;
-    metadataCaching?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorMetadataCaching;
-    mobileSdkPerformance?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorMobileSdkPerformance;
-    modifyIncomingRequestHeader?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorModifyIncomingRequestHeader;
-    modifyIncomingResponseHeader?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorModifyIncomingResponseHeader;
-    modifyOutgoingRequestHeader?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorModifyOutgoingRequestHeader;
-    modifyOutgoingResponseHeader?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorModifyOutgoingResponseHeader;
-    modifyViaHeader?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorModifyViaHeader;
-    origin?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOrigin;
-    originCharacteristics?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginCharacteristics;
-    originCharacteristicsWsd?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginCharacteristicsWsd;
-    originFailureRecoveryMethod?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginFailureRecoveryMethod;
-    originFailureRecoveryPolicy?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginFailureRecoveryPolicy;
-    originIpAcl?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginIpAcl;
-    permissionsPolicy?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPermissionsPolicy;
-    persistentClientConnection?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPersistentClientConnection;
-    persistentConnection?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPersistentConnection;
-    personallyIdentifiableInformation?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPersonallyIdentifiableInformation;
-    phasedRelease?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPhasedRelease;
-    preconnect?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPreconnect;
-    predictiveContentDelivery?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPredictiveContentDelivery;
-    predictivePrefetching?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPredictivePrefetching;
-    prefetch?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPrefetch;
-    prefetchable?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPrefetchable;
-    prefreshCache?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPrefreshCache;
-    quality?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorQuality;
-    quicBeta?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorQuicBeta;
-    randomSeek?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRandomSeek;
-    rapid?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRapid;
-    readTimeout?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorReadTimeout;
-    realTimeReporting?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRealTimeReporting;
-    realUserMonitoring?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRealUserMonitoring;
-    redirect?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRedirect;
-    redirectplus?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRedirectplus;
-    refererChecking?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRefererChecking;
-    removeQueryParameter?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRemoveQueryParameter;
-    removeVary?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRemoveVary;
-    report?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorReport;
-    requestClientHints?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRequestClientHints;
-    requestControl?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRequestControl;
-    requestTypeMarker?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRequestTypeMarker;
-    resourceOptimizer?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorResourceOptimizer;
-    resourceOptimizerExtendedCompatibility?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorResourceOptimizerExtendedCompatibility;
-    responseCode?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorResponseCode;
-    responseCookie?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorResponseCookie;
-    restrictObjectCaching?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRestrictObjectCaching;
-    returnCacheStatus?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorReturnCacheStatus;
-    rewriteUrl?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRewriteUrl;
-    rumCustom?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRumCustom;
-    saasDefinitions?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSaasDefinitions;
-    salesForceCommerceCloudClient?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudClient;
-    salesForceCommerceCloudProvider?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudProvider;
-    salesForceCommerceCloudProviderHostHeader?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudProviderHostHeader;
-    savePostDcaProcessing?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSavePostDcaProcessing;
-    scheduleInvalidation?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorScheduleInvalidation;
-    scriptManagement?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorScriptManagement;
-    segmentedContentProtection?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedContentProtection;
-    segmentedMediaOptimization?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedMediaOptimization;
-    segmentedMediaStreamingPrefetch?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedMediaStreamingPrefetch;
-    setVariable?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSetVariable;
-    simulateErrorCode?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSimulateErrorCode;
-    siteShield?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSiteShield;
-    standardTlsMigration?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorStandardTlsMigration;
-    standardTlsMigrationOverride?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorStandardTlsMigrationOverride;
-    strictHeaderParsing?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorStrictHeaderParsing;
-    subCustomer?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSubCustomer;
-    sureRoute?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSureRoute;
-    tcpOptimization?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorTcpOptimization;
-    teaLeaf?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorTeaLeaf;
-    tieredDistribution?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistribution;
-    tieredDistributionAdvanced?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionAdvanced;
-    tieredDistributionCustomization?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionCustomization;
-    timeout?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorTimeout;
-    uidConfiguration?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorUidConfiguration;
-    validateEntityTag?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorValidateEntityTag;
-    verifyJsonWebToken?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVerifyJsonWebToken;
-    verifyJsonWebTokenForDcp?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVerifyJsonWebTokenForDcp;
-    verifyTokenAuthorization?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVerifyTokenAuthorization;
-    virtualWaitingRoom?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVirtualWaitingRoom;
-    virtualWaitingRoomWithEdgeWorkers?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVirtualWaitingRoomWithEdgeWorkers;
-    visitorPrioritization?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritization;
-    visitorPrioritizationFifo?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationFifo;
-    visitorPrioritizationFifoStandalone?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationFifoStandalone;
-    watermarking?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorWatermarking;
-    webApplicationFirewall?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorWebApplicationFirewall;
-    webSockets?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorWebSockets;
-    webdav?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorWebdav;
+    mediaOriginFailover?: inputs.MediaOriginFailover;
+    metadataCaching?: inputs.MetadataCaching;
+    mobileSdkPerformance?: inputs.MobileSdkPerformance;
+    modifyIncomingRequestHeader?: inputs.ModifyIncomingRequestHeader;
+    modifyIncomingResponseHeader?: inputs.ModifyIncomingResponseHeader;
+    modifyOutgoingRequestHeader?: inputs.ModifyOutgoingRequestHeader;
+    modifyOutgoingResponseHeader?: inputs.ModifyOutgoingResponseHeader;
+    modifyViaHeader?: inputs.ModifyViaHeader;
+    origin?: inputs.Origin;
+    originCharacteristics?: inputs.OriginCharacteristics;
+    originCharacteristicsWsd?: inputs.OriginCharacteristicsWsd;
+    originFailureRecoveryMethod?: inputs.OriginFailureRecoveryMethod;
+    originFailureRecoveryPolicy?: inputs.OriginFailureRecoveryPolicy;
+    originIpAcl?: inputs.OriginIpAcl;
+    permissionsPolicy?: inputs.PermissionsPolicy;
+    persistentClientConnection?: inputs.PersistentClientConnection;
+    persistentConnection?: inputs.PersistentConnection;
+    personallyIdentifiableInformation?: inputs.PersonallyIdentifiableInformation;
+    phasedRelease?: inputs.PhasedRelease;
+    preconnect?: inputs.Preconnect;
+    predictiveContentDelivery?: inputs.PredictiveContentDelivery;
+    predictivePrefetching?: inputs.PredictivePrefetching;
+    prefetch?: inputs.Prefetch;
+    prefetchable?: inputs.Prefetchable;
+    prefreshCache?: inputs.PrefreshCache;
+    quality?: inputs.Quality;
+    quicBeta?: inputs.QuicBeta;
+    randomSeek?: inputs.RandomSeek;
+    rapid?: inputs.Rapid;
+    readTimeout?: inputs.ReadTimeout;
+    realTimeReporting?: inputs.RealTimeReporting;
+    realUserMonitoring?: inputs.RealUserMonitoring;
+    redirect?: inputs.Redirect;
+    redirectplus?: inputs.Redirectplus;
+    refererChecking?: inputs.RefererChecking;
+    removeQueryParameter?: inputs.RemoveQueryParameter;
+    removeVary?: inputs.RemoveVary;
+    report?: inputs.Report;
+    requestClientHints?: inputs.RequestClientHints;
+    requestControl?: inputs.RequestControl;
+    requestTypeMarker?: inputs.RequestTypeMarker;
+    resourceOptimizer?: inputs.ResourceOptimizer;
+    resourceOptimizerExtendedCompatibility?: inputs.ResourceOptimizerExtendedCompatibility;
+    responseCode?: inputs.ResponseCode;
+    responseCookie?: inputs.ResponseCookie;
+    restrictObjectCaching?: inputs.RestrictObjectCaching;
+    returnCacheStatus?: inputs.ReturnCacheStatus;
+    rewriteUrl?: inputs.RewriteUrl;
+    rumCustom?: inputs.RumCustom;
+    saasDefinitions?: inputs.SaasDefinitions;
+    salesForceCommerceCloudClient?: inputs.SalesForceCommerceCloudClient;
+    salesForceCommerceCloudProvider?: inputs.SalesForceCommerceCloudProvider;
+    salesForceCommerceCloudProviderHostHeader?: inputs.SalesForceCommerceCloudProviderHostHeader;
+    savePostDcaProcessing?: inputs.SavePostDcaProcessing;
+    scheduleInvalidation?: inputs.ScheduleInvalidation;
+    scriptManagement?: inputs.ScriptManagement;
+    segmentedContentProtection?: inputs.SegmentedContentProtection;
+    segmentedMediaOptimization?: inputs.SegmentedMediaOptimization;
+    segmentedMediaStreamingPrefetch?: inputs.SegmentedMediaStreamingPrefetch;
+    setVariable?: inputs.SetVariable;
+    simulateErrorCode?: inputs.SimulateErrorCode;
+    siteShield?: inputs.SiteShield;
+    standardTlsMigration?: inputs.StandardTlsMigration;
+    standardTlsMigrationOverride?: inputs.StandardTlsMigrationOverride;
+    strictHeaderParsing?: inputs.StrictHeaderParsing;
+    subCustomer?: inputs.SubCustomer;
+    sureRoute?: inputs.SureRoute;
+    tcpOptimization?: inputs.TcpOptimization;
+    teaLeaf?: inputs.TeaLeaf;
+    tieredDistribution?: inputs.TieredDistribution;
+    tieredDistributionAdvanced?: inputs.TieredDistributionAdvanced;
+    tieredDistributionCustomization?: inputs.TieredDistributionCustomization;
+    timeout?: inputs.Timeout;
+    uidConfiguration?: inputs.UidConfiguration;
+    validateEntityTag?: inputs.ValidateEntityTag;
+    verifyJsonWebToken?: inputs.VerifyJsonWebToken;
+    verifyJsonWebTokenForDcp?: inputs.VerifyJsonWebTokenForDcp;
+    verifyTokenAuthorization?: inputs.VerifyTokenAuthorization;
+    virtualWaitingRoom?: inputs.VirtualWaitingRoom;
+    virtualWaitingRoomWithEdgeWorkers?: inputs.VirtualWaitingRoomWithEdgeWorkers;
+    visitorPrioritization?: inputs.VisitorPrioritization;
+    visitorPrioritizationFifo?: inputs.VisitorPrioritizationFifo;
+    visitorPrioritizationFifoStandalone?: inputs.VisitorPrioritizationFifoStandalone;
+    watermarking?: inputs.Watermarking;
+    webApplicationFirewall?: inputs.WebApplicationFirewall;
+    webSockets?: inputs.WebSockets;
+    webdav?: inputs.Webdav;
 }
 
 export interface GetPropertyRulesBuilderRulesV20231030BehaviorArgs {
@@ -25469,93 +17813,93 @@ export interface GetPropertyRulesBuilderRulesV20231030BehaviorArgs {
     mediaAccelerationQuicOptout?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorMediaAccelerationQuicOptoutArgs>;
     mediaClient?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorMediaClientArgs>;
     mediaFileRetrievalOptimization?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorMediaFileRetrievalOptimizationArgs>;
-    mediaOriginFailover?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorMediaOriginFailoverArgs>;
-    metadataCaching?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorMetadataCachingArgs>;
-    mobileSdkPerformance?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorMobileSdkPerformanceArgs>;
-    modifyIncomingRequestHeader?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorModifyIncomingRequestHeaderArgs>;
-    modifyIncomingResponseHeader?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorModifyIncomingResponseHeaderArgs>;
-    modifyOutgoingRequestHeader?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorModifyOutgoingRequestHeaderArgs>;
-    modifyOutgoingResponseHeader?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorModifyOutgoingResponseHeaderArgs>;
-    modifyViaHeader?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorModifyViaHeaderArgs>;
-    origin?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginArgs>;
-    originCharacteristics?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginCharacteristicsArgs>;
-    originCharacteristicsWsd?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginCharacteristicsWsdArgs>;
-    originFailureRecoveryMethod?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginFailureRecoveryMethodArgs>;
-    originFailureRecoveryPolicy?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginFailureRecoveryPolicyArgs>;
-    originIpAcl?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginIpAclArgs>;
-    permissionsPolicy?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPermissionsPolicyArgs>;
-    persistentClientConnection?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPersistentClientConnectionArgs>;
-    persistentConnection?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPersistentConnectionArgs>;
-    personallyIdentifiableInformation?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPersonallyIdentifiableInformationArgs>;
-    phasedRelease?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPhasedReleaseArgs>;
-    preconnect?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPreconnectArgs>;
-    predictiveContentDelivery?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPredictiveContentDeliveryArgs>;
-    predictivePrefetching?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPredictivePrefetchingArgs>;
-    prefetch?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPrefetchArgs>;
-    prefetchable?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPrefetchableArgs>;
-    prefreshCache?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPrefreshCacheArgs>;
-    quality?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorQualityArgs>;
-    quicBeta?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorQuicBetaArgs>;
-    randomSeek?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRandomSeekArgs>;
-    rapid?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRapidArgs>;
-    readTimeout?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorReadTimeoutArgs>;
-    realTimeReporting?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRealTimeReportingArgs>;
-    realUserMonitoring?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRealUserMonitoringArgs>;
-    redirect?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRedirectArgs>;
-    redirectplus?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRedirectplusArgs>;
-    refererChecking?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRefererCheckingArgs>;
-    removeQueryParameter?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRemoveQueryParameterArgs>;
-    removeVary?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRemoveVaryArgs>;
-    report?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorReportArgs>;
-    requestClientHints?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRequestClientHintsArgs>;
-    requestControl?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRequestControlArgs>;
-    requestTypeMarker?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRequestTypeMarkerArgs>;
-    resourceOptimizer?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorResourceOptimizerArgs>;
-    resourceOptimizerExtendedCompatibility?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorResourceOptimizerExtendedCompatibilityArgs>;
-    responseCode?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorResponseCodeArgs>;
-    responseCookie?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorResponseCookieArgs>;
-    restrictObjectCaching?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRestrictObjectCachingArgs>;
-    returnCacheStatus?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorReturnCacheStatusArgs>;
-    rewriteUrl?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRewriteUrlArgs>;
-    rumCustom?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRumCustomArgs>;
-    saasDefinitions?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSaasDefinitionsArgs>;
-    salesForceCommerceCloudClient?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudClientArgs>;
-    salesForceCommerceCloudProvider?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudProviderArgs>;
-    salesForceCommerceCloudProviderHostHeader?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudProviderHostHeaderArgs>;
-    savePostDcaProcessing?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSavePostDcaProcessingArgs>;
-    scheduleInvalidation?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorScheduleInvalidationArgs>;
-    scriptManagement?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorScriptManagementArgs>;
-    segmentedContentProtection?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedContentProtectionArgs>;
-    segmentedMediaOptimization?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedMediaOptimizationArgs>;
-    segmentedMediaStreamingPrefetch?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedMediaStreamingPrefetchArgs>;
-    setVariable?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSetVariableArgs>;
-    simulateErrorCode?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSimulateErrorCodeArgs>;
-    siteShield?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSiteShieldArgs>;
-    standardTlsMigration?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorStandardTlsMigrationArgs>;
-    standardTlsMigrationOverride?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorStandardTlsMigrationOverrideArgs>;
-    strictHeaderParsing?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorStrictHeaderParsingArgs>;
-    subCustomer?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSubCustomerArgs>;
-    sureRoute?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSureRouteArgs>;
-    tcpOptimization?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorTcpOptimizationArgs>;
-    teaLeaf?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorTeaLeafArgs>;
-    tieredDistribution?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionArgs>;
-    tieredDistributionAdvanced?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionAdvancedArgs>;
-    tieredDistributionCustomization?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionCustomizationArgs>;
-    timeout?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorTimeoutArgs>;
-    uidConfiguration?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorUidConfigurationArgs>;
-    validateEntityTag?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorValidateEntityTagArgs>;
-    verifyJsonWebToken?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVerifyJsonWebTokenArgs>;
-    verifyJsonWebTokenForDcp?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVerifyJsonWebTokenForDcpArgs>;
-    verifyTokenAuthorization?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVerifyTokenAuthorizationArgs>;
-    virtualWaitingRoom?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVirtualWaitingRoomArgs>;
-    virtualWaitingRoomWithEdgeWorkers?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVirtualWaitingRoomWithEdgeWorkersArgs>;
-    visitorPrioritization?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationArgs>;
-    visitorPrioritizationFifo?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationFifoArgs>;
-    visitorPrioritizationFifoStandalone?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationFifoStandaloneArgs>;
-    watermarking?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorWatermarkingArgs>;
-    webApplicationFirewall?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorWebApplicationFirewallArgs>;
-    webSockets?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorWebSocketsArgs>;
-    webdav?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorWebdavArgs>;
+    mediaOriginFailover?: pulumi.Input<inputs.MediaOriginFailoverArgs>;
+    metadataCaching?: pulumi.Input<inputs.MetadataCachingArgs>;
+    mobileSdkPerformance?: pulumi.Input<inputs.MobileSdkPerformanceArgs>;
+    modifyIncomingRequestHeader?: pulumi.Input<inputs.ModifyIncomingRequestHeaderArgs>;
+    modifyIncomingResponseHeader?: pulumi.Input<inputs.ModifyIncomingResponseHeaderArgs>;
+    modifyOutgoingRequestHeader?: pulumi.Input<inputs.ModifyOutgoingRequestHeaderArgs>;
+    modifyOutgoingResponseHeader?: pulumi.Input<inputs.ModifyOutgoingResponseHeaderArgs>;
+    modifyViaHeader?: pulumi.Input<inputs.ModifyViaHeaderArgs>;
+    origin?: pulumi.Input<inputs.OriginArgs>;
+    originCharacteristics?: pulumi.Input<inputs.OriginCharacteristicsArgs>;
+    originCharacteristicsWsd?: pulumi.Input<inputs.OriginCharacteristicsWsdArgs>;
+    originFailureRecoveryMethod?: pulumi.Input<inputs.OriginFailureRecoveryMethodArgs>;
+    originFailureRecoveryPolicy?: pulumi.Input<inputs.OriginFailureRecoveryPolicyArgs>;
+    originIpAcl?: pulumi.Input<inputs.OriginIpAclArgs>;
+    permissionsPolicy?: pulumi.Input<inputs.PermissionsPolicyArgs>;
+    persistentClientConnection?: pulumi.Input<inputs.PersistentClientConnectionArgs>;
+    persistentConnection?: pulumi.Input<inputs.PersistentConnectionArgs>;
+    personallyIdentifiableInformation?: pulumi.Input<inputs.PersonallyIdentifiableInformationArgs>;
+    phasedRelease?: pulumi.Input<inputs.PhasedReleaseArgs>;
+    preconnect?: pulumi.Input<inputs.PreconnectArgs>;
+    predictiveContentDelivery?: pulumi.Input<inputs.PredictiveContentDeliveryArgs>;
+    predictivePrefetching?: pulumi.Input<inputs.PredictivePrefetchingArgs>;
+    prefetch?: pulumi.Input<inputs.PrefetchArgs>;
+    prefetchable?: pulumi.Input<inputs.PrefetchableArgs>;
+    prefreshCache?: pulumi.Input<inputs.PrefreshCacheArgs>;
+    quality?: pulumi.Input<inputs.QualityArgs>;
+    quicBeta?: pulumi.Input<inputs.QuicBetaArgs>;
+    randomSeek?: pulumi.Input<inputs.RandomSeekArgs>;
+    rapid?: pulumi.Input<inputs.RapidArgs>;
+    readTimeout?: pulumi.Input<inputs.ReadTimeoutArgs>;
+    realTimeReporting?: pulumi.Input<inputs.RealTimeReportingArgs>;
+    realUserMonitoring?: pulumi.Input<inputs.RealUserMonitoringArgs>;
+    redirect?: pulumi.Input<inputs.RedirectArgs>;
+    redirectplus?: pulumi.Input<inputs.RedirectplusArgs>;
+    refererChecking?: pulumi.Input<inputs.RefererCheckingArgs>;
+    removeQueryParameter?: pulumi.Input<inputs.RemoveQueryParameterArgs>;
+    removeVary?: pulumi.Input<inputs.RemoveVaryArgs>;
+    report?: pulumi.Input<inputs.ReportArgs>;
+    requestClientHints?: pulumi.Input<inputs.RequestClientHintsArgs>;
+    requestControl?: pulumi.Input<inputs.RequestControlArgs>;
+    requestTypeMarker?: pulumi.Input<inputs.RequestTypeMarkerArgs>;
+    resourceOptimizer?: pulumi.Input<inputs.ResourceOptimizerArgs>;
+    resourceOptimizerExtendedCompatibility?: pulumi.Input<inputs.ResourceOptimizerExtendedCompatibilityArgs>;
+    responseCode?: pulumi.Input<inputs.ResponseCodeArgs>;
+    responseCookie?: pulumi.Input<inputs.ResponseCookieArgs>;
+    restrictObjectCaching?: pulumi.Input<inputs.RestrictObjectCachingArgs>;
+    returnCacheStatus?: pulumi.Input<inputs.ReturnCacheStatusArgs>;
+    rewriteUrl?: pulumi.Input<inputs.RewriteUrlArgs>;
+    rumCustom?: pulumi.Input<inputs.RumCustomArgs>;
+    saasDefinitions?: pulumi.Input<inputs.SaasDefinitionsArgs>;
+    salesForceCommerceCloudClient?: pulumi.Input<inputs.SalesForceCommerceCloudClientArgs>;
+    salesForceCommerceCloudProvider?: pulumi.Input<inputs.SalesForceCommerceCloudProviderArgs>;
+    salesForceCommerceCloudProviderHostHeader?: pulumi.Input<inputs.SalesForceCommerceCloudProviderHostHeaderArgs>;
+    savePostDcaProcessing?: pulumi.Input<inputs.SavePostDcaProcessingArgs>;
+    scheduleInvalidation?: pulumi.Input<inputs.ScheduleInvalidationArgs>;
+    scriptManagement?: pulumi.Input<inputs.ScriptManagementArgs>;
+    segmentedContentProtection?: pulumi.Input<inputs.SegmentedContentProtectionArgs>;
+    segmentedMediaOptimization?: pulumi.Input<inputs.SegmentedMediaOptimizationArgs>;
+    segmentedMediaStreamingPrefetch?: pulumi.Input<inputs.SegmentedMediaStreamingPrefetchArgs>;
+    setVariable?: pulumi.Input<inputs.SetVariableArgs>;
+    simulateErrorCode?: pulumi.Input<inputs.SimulateErrorCodeArgs>;
+    siteShield?: pulumi.Input<inputs.SiteShieldArgs>;
+    standardTlsMigration?: pulumi.Input<inputs.StandardTlsMigrationArgs>;
+    standardTlsMigrationOverride?: pulumi.Input<inputs.StandardTlsMigrationOverrideArgs>;
+    strictHeaderParsing?: pulumi.Input<inputs.StrictHeaderParsingArgs>;
+    subCustomer?: pulumi.Input<inputs.SubCustomerArgs>;
+    sureRoute?: pulumi.Input<inputs.SureRouteArgs>;
+    tcpOptimization?: pulumi.Input<inputs.TcpOptimizationArgs>;
+    teaLeaf?: pulumi.Input<inputs.TeaLeafArgs>;
+    tieredDistribution?: pulumi.Input<inputs.TieredDistributionArgs>;
+    tieredDistributionAdvanced?: pulumi.Input<inputs.TieredDistributionAdvancedArgs>;
+    tieredDistributionCustomization?: pulumi.Input<inputs.TieredDistributionCustomizationArgs>;
+    timeout?: pulumi.Input<inputs.TimeoutArgs>;
+    uidConfiguration?: pulumi.Input<inputs.UidConfigurationArgs>;
+    validateEntityTag?: pulumi.Input<inputs.ValidateEntityTagArgs>;
+    verifyJsonWebToken?: pulumi.Input<inputs.VerifyJsonWebTokenArgs>;
+    verifyJsonWebTokenForDcp?: pulumi.Input<inputs.VerifyJsonWebTokenForDcpArgs>;
+    verifyTokenAuthorization?: pulumi.Input<inputs.VerifyTokenAuthorizationArgs>;
+    virtualWaitingRoom?: pulumi.Input<inputs.VirtualWaitingRoomArgs>;
+    virtualWaitingRoomWithEdgeWorkers?: pulumi.Input<inputs.VirtualWaitingRoomWithEdgeWorkersArgs>;
+    visitorPrioritization?: pulumi.Input<inputs.VisitorPrioritizationArgs>;
+    visitorPrioritizationFifo?: pulumi.Input<inputs.VisitorPrioritizationFifoArgs>;
+    visitorPrioritizationFifoStandalone?: pulumi.Input<inputs.VisitorPrioritizationFifoStandaloneArgs>;
+    watermarking?: pulumi.Input<inputs.WatermarkingArgs>;
+    webApplicationFirewall?: pulumi.Input<inputs.WebApplicationFirewallArgs>;
+    webSockets?: pulumi.Input<inputs.WebSocketsArgs>;
+    webdav?: pulumi.Input<inputs.WebdavArgs>;
 }
 
 export interface GetPropertyRulesBuilderRulesV20231030BehaviorAdScalerCircuitBreaker {
@@ -28876,2588 +21220,6 @@ export interface GetPropertyRulesBuilderRulesV20231030BehaviorMediaFileRetrieval
     uuid?: pulumi.Input<string>;
 }
 
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorMediaOriginFailover {
-    cacheErrorResponse?: boolean;
-    cacheWindow?: string;
-    clientResponseCode?: string;
-    detectObjectUnavailable?: boolean;
-    detectObjectUnavailableTitle?: string;
-    detectOriginUnavailable?: boolean;
-    detectOriginUnavailableTitle?: string;
-    detectOriginUnresponsive?: boolean;
-    detectOriginUnresponsiveTitle?: string;
-    locked?: boolean;
-    objectUnavailableAlternateHost?: string;
-    objectUnavailableBackupHost?: string;
-    objectUnavailableBlacklistOriginIp?: boolean;
-    objectUnavailableBlacklistWindow?: string;
-    objectUnavailableChangeProtocol?: boolean;
-    objectUnavailableDetectionLevel?: string;
-    objectUnavailableIncludeQueryString?: boolean;
-    objectUnavailableModifiedPath?: string;
-    objectUnavailableModifyRequestPath?: boolean;
-    objectUnavailableProtocol?: string;
-    objectUnavailableRecovery?: string;
-    objectUnavailableRedirectMethod?: number;
-    objectUnavailableResponseCodes?: string[];
-    objectUnavailableRetryLimit?: string;
-    originUnavailableAlternateHost?: string;
-    originUnavailableBackupHost?: string;
-    originUnavailableBlacklistOriginIp?: boolean;
-    originUnavailableBlacklistWindow?: string;
-    originUnavailableChangeProtocol?: boolean;
-    originUnavailableDetectionLevel?: string;
-    originUnavailableIncludeQueryString?: boolean;
-    originUnavailableModifiedPath?: string;
-    originUnavailableModifyRequestPath?: boolean;
-    originUnavailableProtocol?: string;
-    originUnavailableRecovery?: string;
-    originUnavailableRedirectMethod?: number;
-    originUnavailableResponseCodes?: string[];
-    originUnavailableRetryLimit?: string;
-    originUnresponsiveAlternateHost?: string;
-    originUnresponsiveBackupHost?: string;
-    originUnresponsiveBlacklistOriginIp?: boolean;
-    originUnresponsiveBlacklistWindow?: string;
-    originUnresponsiveChangeProtocol?: boolean;
-    originUnresponsiveDetectionLevel?: string;
-    originUnresponsiveIncludeQueryString?: boolean;
-    originUnresponsiveModifiedPath?: string;
-    originUnresponsiveModifyRequestPath?: boolean;
-    originUnresponsiveProtocol?: string;
-    originUnresponsiveRecovery?: string;
-    originUnresponsiveRedirectMethod?: number;
-    originUnresponsiveRetryLimit?: string;
-    otherOptions?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorMediaOriginFailoverArgs {
-    cacheErrorResponse?: pulumi.Input<boolean>;
-    cacheWindow?: pulumi.Input<string>;
-    clientResponseCode?: pulumi.Input<string>;
-    detectObjectUnavailable?: pulumi.Input<boolean>;
-    detectObjectUnavailableTitle?: pulumi.Input<string>;
-    detectOriginUnavailable?: pulumi.Input<boolean>;
-    detectOriginUnavailableTitle?: pulumi.Input<string>;
-    detectOriginUnresponsive?: pulumi.Input<boolean>;
-    detectOriginUnresponsiveTitle?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    objectUnavailableAlternateHost?: pulumi.Input<string>;
-    objectUnavailableBackupHost?: pulumi.Input<string>;
-    objectUnavailableBlacklistOriginIp?: pulumi.Input<boolean>;
-    objectUnavailableBlacklistWindow?: pulumi.Input<string>;
-    objectUnavailableChangeProtocol?: pulumi.Input<boolean>;
-    objectUnavailableDetectionLevel?: pulumi.Input<string>;
-    objectUnavailableIncludeQueryString?: pulumi.Input<boolean>;
-    objectUnavailableModifiedPath?: pulumi.Input<string>;
-    objectUnavailableModifyRequestPath?: pulumi.Input<boolean>;
-    objectUnavailableProtocol?: pulumi.Input<string>;
-    objectUnavailableRecovery?: pulumi.Input<string>;
-    objectUnavailableRedirectMethod?: pulumi.Input<number>;
-    objectUnavailableResponseCodes?: pulumi.Input<pulumi.Input<string>[]>;
-    objectUnavailableRetryLimit?: pulumi.Input<string>;
-    originUnavailableAlternateHost?: pulumi.Input<string>;
-    originUnavailableBackupHost?: pulumi.Input<string>;
-    originUnavailableBlacklistOriginIp?: pulumi.Input<boolean>;
-    originUnavailableBlacklistWindow?: pulumi.Input<string>;
-    originUnavailableChangeProtocol?: pulumi.Input<boolean>;
-    originUnavailableDetectionLevel?: pulumi.Input<string>;
-    originUnavailableIncludeQueryString?: pulumi.Input<boolean>;
-    originUnavailableModifiedPath?: pulumi.Input<string>;
-    originUnavailableModifyRequestPath?: pulumi.Input<boolean>;
-    originUnavailableProtocol?: pulumi.Input<string>;
-    originUnavailableRecovery?: pulumi.Input<string>;
-    originUnavailableRedirectMethod?: pulumi.Input<number>;
-    originUnavailableResponseCodes?: pulumi.Input<pulumi.Input<string>[]>;
-    originUnavailableRetryLimit?: pulumi.Input<string>;
-    originUnresponsiveAlternateHost?: pulumi.Input<string>;
-    originUnresponsiveBackupHost?: pulumi.Input<string>;
-    originUnresponsiveBlacklistOriginIp?: pulumi.Input<boolean>;
-    originUnresponsiveBlacklistWindow?: pulumi.Input<string>;
-    originUnresponsiveChangeProtocol?: pulumi.Input<boolean>;
-    originUnresponsiveDetectionLevel?: pulumi.Input<string>;
-    originUnresponsiveIncludeQueryString?: pulumi.Input<boolean>;
-    originUnresponsiveModifiedPath?: pulumi.Input<string>;
-    originUnresponsiveModifyRequestPath?: pulumi.Input<boolean>;
-    originUnresponsiveProtocol?: pulumi.Input<string>;
-    originUnresponsiveRecovery?: pulumi.Input<string>;
-    originUnresponsiveRedirectMethod?: pulumi.Input<number>;
-    originUnresponsiveRetryLimit?: pulumi.Input<string>;
-    otherOptions?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorMetadataCaching {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorMetadataCachingArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorMobileSdkPerformance {
-    enabled?: boolean;
-    locked?: boolean;
-    secondaryMultipathToOrigin?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorMobileSdkPerformanceArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    secondaryMultipathToOrigin?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorModifyIncomingRequestHeader {
-    action?: string;
-    avoidDuplicateHeaders?: boolean;
-    customHeaderName?: string;
-    headerValue?: string;
-    locked?: boolean;
-    newHeaderValue?: string;
-    standardAddHeaderName?: string;
-    standardDeleteHeaderName?: string;
-    standardModifyHeaderName?: string;
-    standardPassHeaderName?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorModifyIncomingRequestHeaderArgs {
-    action?: pulumi.Input<string>;
-    avoidDuplicateHeaders?: pulumi.Input<boolean>;
-    customHeaderName?: pulumi.Input<string>;
-    headerValue?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    newHeaderValue?: pulumi.Input<string>;
-    standardAddHeaderName?: pulumi.Input<string>;
-    standardDeleteHeaderName?: pulumi.Input<string>;
-    standardModifyHeaderName?: pulumi.Input<string>;
-    standardPassHeaderName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorModifyIncomingResponseHeader {
-    action?: string;
-    avoidDuplicateHeaders?: boolean;
-    customHeaderName?: string;
-    headerValue?: string;
-    locked?: boolean;
-    newHeaderValue?: string;
-    standardAddHeaderName?: string;
-    standardDeleteHeaderName?: string;
-    standardModifyHeaderName?: string;
-    standardPassHeaderName?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorModifyIncomingResponseHeaderArgs {
-    action?: pulumi.Input<string>;
-    avoidDuplicateHeaders?: pulumi.Input<boolean>;
-    customHeaderName?: pulumi.Input<string>;
-    headerValue?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    newHeaderValue?: pulumi.Input<string>;
-    standardAddHeaderName?: pulumi.Input<string>;
-    standardDeleteHeaderName?: pulumi.Input<string>;
-    standardModifyHeaderName?: pulumi.Input<string>;
-    standardPassHeaderName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorModifyOutgoingRequestHeader {
-    action?: string;
-    avoidDuplicateHeaders?: boolean;
-    customHeaderName?: string;
-    headerValue?: string;
-    locked?: boolean;
-    matchMultiple?: boolean;
-    newHeaderValue?: string;
-    regexHeaderMatch?: string;
-    regexHeaderReplace?: string;
-    standardAddHeaderName?: string;
-    standardDeleteHeaderName?: string;
-    standardModifyHeaderName?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorModifyOutgoingRequestHeaderArgs {
-    action?: pulumi.Input<string>;
-    avoidDuplicateHeaders?: pulumi.Input<boolean>;
-    customHeaderName?: pulumi.Input<string>;
-    headerValue?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    matchMultiple?: pulumi.Input<boolean>;
-    newHeaderValue?: pulumi.Input<string>;
-    regexHeaderMatch?: pulumi.Input<string>;
-    regexHeaderReplace?: pulumi.Input<string>;
-    standardAddHeaderName?: pulumi.Input<string>;
-    standardDeleteHeaderName?: pulumi.Input<string>;
-    standardModifyHeaderName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorModifyOutgoingResponseHeader {
-    action?: string;
-    avoidDuplicateHeaders?: boolean;
-    customHeaderName?: string;
-    headerValue?: string;
-    locked?: boolean;
-    matchMultiple?: boolean;
-    newHeaderValue?: string;
-    regexHeaderMatch?: string;
-    regexHeaderReplace?: string;
-    standardAddHeaderName?: string;
-    standardDeleteHeaderName?: string;
-    standardModifyHeaderName?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorModifyOutgoingResponseHeaderArgs {
-    action?: pulumi.Input<string>;
-    avoidDuplicateHeaders?: pulumi.Input<boolean>;
-    customHeaderName?: pulumi.Input<string>;
-    headerValue?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    matchMultiple?: pulumi.Input<boolean>;
-    newHeaderValue?: pulumi.Input<string>;
-    regexHeaderMatch?: pulumi.Input<string>;
-    regexHeaderReplace?: pulumi.Input<string>;
-    standardAddHeaderName?: pulumi.Input<string>;
-    standardDeleteHeaderName?: pulumi.Input<string>;
-    standardModifyHeaderName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorModifyViaHeader {
-    enabled?: boolean;
-    locked?: boolean;
-    modificationOption?: string;
-    renameHeaderTo?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorModifyViaHeaderArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    modificationOption?: pulumi.Input<string>;
-    renameHeaderTo?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorOrigin {
-    cacheKeyHostname?: string;
-    compress?: boolean;
-    customCertificateAuthorities?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginCustomCertificateAuthority[];
-    customCertificates?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginCustomCertificate[];
-    customForwardHostHeader?: string;
-    customValidCnValues?: string[];
-    enableTrueClientIp?: boolean;
-    forwardHostHeader?: string;
-    hostname?: string;
-    httpPort?: number;
-    httpsPort?: number;
-    ipVersion?: string;
-    locked?: boolean;
-    maxTlsVersion?: string;
-    minTlsVersion?: string;
-    mslorigin?: string;
-    netStorage?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginNetStorage;
-    originCertificate?: string;
-    originCertsToHonor?: string;
-    originId?: string;
-    originSni?: boolean;
-    originType?: string;
-    ports?: string;
-    saasCnameEnabled?: boolean;
-    saasCnameLevel?: number;
-    saasCookie?: string;
-    saasQueryString?: string;
-    saasRegex?: string;
-    saasReplace?: string;
-    saasSuffix?: string;
-    saasType?: string;
-    secondHostname?: string;
-    secondHostnameEnabled?: boolean;
-    standardCertificateAuthorities?: string[];
-    templateUuid?: string;
-    tls13Support?: boolean;
-    tlsVersionTitle?: string;
-    trueClientIpClientSetting?: boolean;
-    trueClientIpHeader?: string;
-    useUniqueCacheKey?: boolean;
-    uuid?: string;
-    verificationMode?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorOriginArgs {
-    cacheKeyHostname?: pulumi.Input<string>;
-    compress?: pulumi.Input<boolean>;
-    customCertificateAuthorities?: pulumi.Input<pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginCustomCertificateAuthorityArgs>[]>;
-    customCertificates?: pulumi.Input<pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginCustomCertificateArgs>[]>;
-    customForwardHostHeader?: pulumi.Input<string>;
-    customValidCnValues?: pulumi.Input<pulumi.Input<string>[]>;
-    enableTrueClientIp?: pulumi.Input<boolean>;
-    forwardHostHeader?: pulumi.Input<string>;
-    hostname?: pulumi.Input<string>;
-    httpPort?: pulumi.Input<number>;
-    httpsPort?: pulumi.Input<number>;
-    ipVersion?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    maxTlsVersion?: pulumi.Input<string>;
-    minTlsVersion?: pulumi.Input<string>;
-    mslorigin?: pulumi.Input<string>;
-    netStorage?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginNetStorageArgs>;
-    originCertificate?: pulumi.Input<string>;
-    originCertsToHonor?: pulumi.Input<string>;
-    originId?: pulumi.Input<string>;
-    originSni?: pulumi.Input<boolean>;
-    originType?: pulumi.Input<string>;
-    ports?: pulumi.Input<string>;
-    saasCnameEnabled?: pulumi.Input<boolean>;
-    saasCnameLevel?: pulumi.Input<number>;
-    saasCookie?: pulumi.Input<string>;
-    saasQueryString?: pulumi.Input<string>;
-    saasRegex?: pulumi.Input<string>;
-    saasReplace?: pulumi.Input<string>;
-    saasSuffix?: pulumi.Input<string>;
-    saasType?: pulumi.Input<string>;
-    secondHostname?: pulumi.Input<string>;
-    secondHostnameEnabled?: pulumi.Input<boolean>;
-    standardCertificateAuthorities?: pulumi.Input<pulumi.Input<string>[]>;
-    templateUuid?: pulumi.Input<string>;
-    tls13Support?: pulumi.Input<boolean>;
-    tlsVersionTitle?: pulumi.Input<string>;
-    trueClientIpClientSetting?: pulumi.Input<boolean>;
-    trueClientIpHeader?: pulumi.Input<string>;
-    useUniqueCacheKey?: pulumi.Input<boolean>;
-    uuid?: pulumi.Input<string>;
-    verificationMode?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorOriginCharacteristics {
-    accessKeyEncryptedStorage?: boolean;
-    adcTitle?: string;
-    authenticationMethod?: string;
-    authenticationMethodTitle?: string;
-    awsAccessKeyId?: string;
-    awsAccessKeyVersionGuid?: string;
-    awsArRegion?: string;
-    awsHost?: string;
-    awsRegion?: string;
-    awsSecretAccessKey?: string;
-    awsService?: string;
-    country?: string;
-    customSignStrings?: string[];
-    directConnectGeo?: string;
-    encodingVersion?: number;
-    endPointService?: string;
-    gcsAccessKeyVersionGuid?: string;
-    gcsHmacKeyAccessId?: string;
-    gcsHmacKeySecret?: string;
-    hostnameTag?: boolean;
-    locked?: boolean;
-    mslkey?: string;
-    mslname?: string;
-    nonce?: string;
-    originLocationTitle?: string;
-    propertyIdTag?: boolean;
-    roleArn?: string;
-    secretKey?: string;
-    templateUuid?: string;
-    useCustomSignString?: boolean;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorOriginCharacteristicsArgs {
-    accessKeyEncryptedStorage?: pulumi.Input<boolean>;
-    adcTitle?: pulumi.Input<string>;
-    authenticationMethod?: pulumi.Input<string>;
-    authenticationMethodTitle?: pulumi.Input<string>;
-    awsAccessKeyId?: pulumi.Input<string>;
-    awsAccessKeyVersionGuid?: pulumi.Input<string>;
-    awsArRegion?: pulumi.Input<string>;
-    awsHost?: pulumi.Input<string>;
-    awsRegion?: pulumi.Input<string>;
-    awsSecretAccessKey?: pulumi.Input<string>;
-    awsService?: pulumi.Input<string>;
-    country?: pulumi.Input<string>;
-    customSignStrings?: pulumi.Input<pulumi.Input<string>[]>;
-    directConnectGeo?: pulumi.Input<string>;
-    encodingVersion?: pulumi.Input<number>;
-    endPointService?: pulumi.Input<string>;
-    gcsAccessKeyVersionGuid?: pulumi.Input<string>;
-    gcsHmacKeyAccessId?: pulumi.Input<string>;
-    gcsHmacKeySecret?: pulumi.Input<string>;
-    hostnameTag?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    mslkey?: pulumi.Input<string>;
-    mslname?: pulumi.Input<string>;
-    nonce?: pulumi.Input<string>;
-    originLocationTitle?: pulumi.Input<string>;
-    propertyIdTag?: pulumi.Input<boolean>;
-    roleArn?: pulumi.Input<string>;
-    secretKey?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    useCustomSignString?: pulumi.Input<boolean>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorOriginCharacteristicsWsd {
-    locked?: boolean;
-    origintype?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorOriginCharacteristicsWsdArgs {
-    locked?: pulumi.Input<boolean>;
-    origintype?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorOriginCustomCertificate {
-    canBeCa?: boolean;
-    canBeLeaf?: boolean;
-    issuerRdns?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginCustomCertificateIssuerRdns;
-    notAfter?: number;
-    notBefore?: number;
-    pemEncodedCert?: string;
-    publicKey?: string;
-    publicKeyAlgorithm?: string;
-    publicKeyFormat?: string;
-    selfSigned?: boolean;
-    serialNumber?: string;
-    sha1Fingerprint?: string;
-    sigAlgName?: string;
-    subjectAlternativeNames?: string[];
-    subjectCn?: string;
-    subjectRdns?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginCustomCertificateSubjectRdns;
-    version?: number;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorOriginCustomCertificateArgs {
-    canBeCa?: pulumi.Input<boolean>;
-    canBeLeaf?: pulumi.Input<boolean>;
-    issuerRdns?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginCustomCertificateIssuerRdnsArgs>;
-    notAfter?: pulumi.Input<number>;
-    notBefore?: pulumi.Input<number>;
-    pemEncodedCert?: pulumi.Input<string>;
-    publicKey?: pulumi.Input<string>;
-    publicKeyAlgorithm?: pulumi.Input<string>;
-    publicKeyFormat?: pulumi.Input<string>;
-    selfSigned?: pulumi.Input<boolean>;
-    serialNumber?: pulumi.Input<string>;
-    sha1Fingerprint?: pulumi.Input<string>;
-    sigAlgName?: pulumi.Input<string>;
-    subjectAlternativeNames?: pulumi.Input<pulumi.Input<string>[]>;
-    subjectCn?: pulumi.Input<string>;
-    subjectRdns?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginCustomCertificateSubjectRdnsArgs>;
-    version?: pulumi.Input<number>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorOriginCustomCertificateAuthority {
-    canBeCa?: boolean;
-    canBeLeaf?: boolean;
-    issuerRdns?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginCustomCertificateAuthorityIssuerRdns;
-    notAfter?: number;
-    notBefore?: number;
-    pemEncodedCert?: string;
-    publicKey?: string;
-    publicKeyAlgorithm?: string;
-    publicKeyFormat?: string;
-    selfSigned?: boolean;
-    serialNumber?: string;
-    sha1Fingerprint?: string;
-    sigAlgName?: string;
-    subjectAlternativeNames?: string[];
-    subjectCn?: string;
-    subjectRdns?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginCustomCertificateAuthoritySubjectRdns;
-    version?: number;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorOriginCustomCertificateAuthorityArgs {
-    canBeCa?: pulumi.Input<boolean>;
-    canBeLeaf?: pulumi.Input<boolean>;
-    issuerRdns?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginCustomCertificateAuthorityIssuerRdnsArgs>;
-    notAfter?: pulumi.Input<number>;
-    notBefore?: pulumi.Input<number>;
-    pemEncodedCert?: pulumi.Input<string>;
-    publicKey?: pulumi.Input<string>;
-    publicKeyAlgorithm?: pulumi.Input<string>;
-    publicKeyFormat?: pulumi.Input<string>;
-    selfSigned?: pulumi.Input<boolean>;
-    serialNumber?: pulumi.Input<string>;
-    sha1Fingerprint?: pulumi.Input<string>;
-    sigAlgName?: pulumi.Input<string>;
-    subjectAlternativeNames?: pulumi.Input<pulumi.Input<string>[]>;
-    subjectCn?: pulumi.Input<string>;
-    subjectRdns?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginCustomCertificateAuthoritySubjectRdnsArgs>;
-    version?: pulumi.Input<number>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorOriginCustomCertificateAuthorityIssuerRdns {
-    c?: string;
-    cn?: string;
-    o?: string;
-    ou?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorOriginCustomCertificateAuthorityIssuerRdnsArgs {
-    c?: pulumi.Input<string>;
-    cn?: pulumi.Input<string>;
-    o?: pulumi.Input<string>;
-    ou?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorOriginCustomCertificateAuthoritySubjectRdns {
-    c?: string;
-    cn?: string;
-    o?: string;
-    ou?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorOriginCustomCertificateAuthoritySubjectRdnsArgs {
-    c?: pulumi.Input<string>;
-    cn?: pulumi.Input<string>;
-    o?: pulumi.Input<string>;
-    ou?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorOriginCustomCertificateIssuerRdns {
-    c?: string;
-    cn?: string;
-    o?: string;
-    ou?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorOriginCustomCertificateIssuerRdnsArgs {
-    c?: pulumi.Input<string>;
-    cn?: pulumi.Input<string>;
-    o?: pulumi.Input<string>;
-    ou?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorOriginCustomCertificateSubjectRdns {
-    c?: string;
-    cn?: string;
-    o?: string;
-    ou?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorOriginCustomCertificateSubjectRdnsArgs {
-    c?: pulumi.Input<string>;
-    cn?: pulumi.Input<string>;
-    o?: pulumi.Input<string>;
-    ou?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorOriginFailureRecoveryMethod {
-    customStatusCode?: string;
-    locked?: boolean;
-    recoveryMethod?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorOriginFailureRecoveryMethodArgs {
-    customStatusCode?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    recoveryMethod?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorOriginFailureRecoveryPolicy {
-    binaryEquivalentContent?: boolean;
-    enableIpAvoidance?: boolean;
-    enabled?: boolean;
-    ipAvoidanceErrorThreshold?: number;
-    ipAvoidanceRetryInterval?: number;
-    locked?: boolean;
-    monitorOriginResponsiveness?: boolean;
-    monitorResponseCodes1s?: string[];
-    monitorResponseCodes2s?: string[];
-    monitorResponseCodes3s?: string[];
-    monitorStatusCodes1?: boolean;
-    monitorStatusCodes1EnableRecovery?: boolean;
-    monitorStatusCodes1EnableRetry?: boolean;
-    monitorStatusCodes1RecoveryConfigName?: string;
-    monitorStatusCodes2?: boolean;
-    monitorStatusCodes2EnableRecovery?: boolean;
-    monitorStatusCodes2EnableRetry?: boolean;
-    monitorStatusCodes2RecoveryConfigName?: string;
-    monitorStatusCodes3?: boolean;
-    monitorStatusCodes3EnableRecovery?: boolean;
-    monitorStatusCodes3EnableRetry?: boolean;
-    monitorStatusCodes3RecoveryConfigName?: string;
-    originResponsivenessCustomTimeout?: number;
-    originResponsivenessEnableRecovery?: boolean;
-    originResponsivenessEnableRetry?: boolean;
-    originResponsivenessMonitoring?: string;
-    originResponsivenessRecoveryConfigName?: string;
-    originResponsivenessTimeout?: string;
-    statusCodeMonitoring1?: string;
-    statusCodeMonitoring2?: string;
-    statusCodeMonitoring3?: string;
-    templateUuid?: string;
-    tuningParameters?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorOriginFailureRecoveryPolicyArgs {
-    binaryEquivalentContent?: pulumi.Input<boolean>;
-    enableIpAvoidance?: pulumi.Input<boolean>;
-    enabled?: pulumi.Input<boolean>;
-    ipAvoidanceErrorThreshold?: pulumi.Input<number>;
-    ipAvoidanceRetryInterval?: pulumi.Input<number>;
-    locked?: pulumi.Input<boolean>;
-    monitorOriginResponsiveness?: pulumi.Input<boolean>;
-    monitorResponseCodes1s?: pulumi.Input<pulumi.Input<string>[]>;
-    monitorResponseCodes2s?: pulumi.Input<pulumi.Input<string>[]>;
-    monitorResponseCodes3s?: pulumi.Input<pulumi.Input<string>[]>;
-    monitorStatusCodes1?: pulumi.Input<boolean>;
-    monitorStatusCodes1EnableRecovery?: pulumi.Input<boolean>;
-    monitorStatusCodes1EnableRetry?: pulumi.Input<boolean>;
-    monitorStatusCodes1RecoveryConfigName?: pulumi.Input<string>;
-    monitorStatusCodes2?: pulumi.Input<boolean>;
-    monitorStatusCodes2EnableRecovery?: pulumi.Input<boolean>;
-    monitorStatusCodes2EnableRetry?: pulumi.Input<boolean>;
-    monitorStatusCodes2RecoveryConfigName?: pulumi.Input<string>;
-    monitorStatusCodes3?: pulumi.Input<boolean>;
-    monitorStatusCodes3EnableRecovery?: pulumi.Input<boolean>;
-    monitorStatusCodes3EnableRetry?: pulumi.Input<boolean>;
-    monitorStatusCodes3RecoveryConfigName?: pulumi.Input<string>;
-    originResponsivenessCustomTimeout?: pulumi.Input<number>;
-    originResponsivenessEnableRecovery?: pulumi.Input<boolean>;
-    originResponsivenessEnableRetry?: pulumi.Input<boolean>;
-    originResponsivenessMonitoring?: pulumi.Input<string>;
-    originResponsivenessRecoveryConfigName?: pulumi.Input<string>;
-    originResponsivenessTimeout?: pulumi.Input<string>;
-    statusCodeMonitoring1?: pulumi.Input<string>;
-    statusCodeMonitoring2?: pulumi.Input<string>;
-    statusCodeMonitoring3?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    tuningParameters?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorOriginIpAcl {
-    enable?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorOriginIpAclArgs {
-    enable?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorOriginNetStorage {
-    cpCode?: number;
-    downloadDomainName?: string;
-    g2oToken?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorOriginNetStorageArgs {
-    cpCode?: pulumi.Input<number>;
-    downloadDomainName?: pulumi.Input<string>;
-    g2oToken?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorPermissionsPolicy {
-    allowList?: string;
-    locked?: boolean;
-    permissionsPolicyDirectives?: string[];
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorPermissionsPolicyArgs {
-    allowList?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    permissionsPolicyDirectives?: pulumi.Input<pulumi.Input<string>[]>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorPersistentClientConnection {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    timeout?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorPersistentClientConnectionArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    timeout?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorPersistentConnection {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    timeout?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorPersistentConnectionArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    timeout?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorPersonallyIdentifiableInformation {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorPersonallyIdentifiableInformationArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorPhasedRelease {
-    cloudletPolicy?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPhasedReleaseCloudletPolicy;
-    cloudletSharedPolicy?: number;
-    enabled?: boolean;
-    failoverDuration?: number;
-    failoverEnabled?: boolean;
-    failoverResponseCodes?: string[];
-    failoverTitle?: string;
-    isSharedPolicy?: boolean;
-    label?: string;
-    locked?: boolean;
-    populationCookieType?: string;
-    populationDuration?: string;
-    populationExpirationDate?: string;
-    populationRefresh?: boolean;
-    populationTitle?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorPhasedReleaseArgs {
-    cloudletPolicy?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPhasedReleaseCloudletPolicyArgs>;
-    cloudletSharedPolicy?: pulumi.Input<number>;
-    enabled?: pulumi.Input<boolean>;
-    failoverDuration?: pulumi.Input<number>;
-    failoverEnabled?: pulumi.Input<boolean>;
-    failoverResponseCodes?: pulumi.Input<pulumi.Input<string>[]>;
-    failoverTitle?: pulumi.Input<string>;
-    isSharedPolicy?: pulumi.Input<boolean>;
-    label?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    populationCookieType?: pulumi.Input<string>;
-    populationDuration?: pulumi.Input<string>;
-    populationExpirationDate?: pulumi.Input<string>;
-    populationRefresh?: pulumi.Input<boolean>;
-    populationTitle?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorPhasedReleaseCloudletPolicy {
-    id?: number;
-    name?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorPhasedReleaseCloudletPolicyArgs {
-    id?: pulumi.Input<number>;
-    name?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorPreconnect {
-    locked?: boolean;
-    preconnectlists?: string[];
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorPreconnectArgs {
-    locked?: pulumi.Input<boolean>;
-    preconnectlists?: pulumi.Input<pulumi.Input<string>[]>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorPredictiveContentDelivery {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorPredictiveContentDeliveryArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorPredictivePrefetching {
-    accuracyTarget?: string;
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorPredictivePrefetchingArgs {
-    accuracyTarget?: pulumi.Input<string>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorPrefetch {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorPrefetchArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorPrefetchable {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorPrefetchableArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorPrefreshCache {
-    enabled?: boolean;
-    locked?: boolean;
-    prefreshval?: number;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorPrefreshCacheArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    prefreshval?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorQuality {
-    audienceSettings?: string;
-    catalogSize?: string;
-    contentSettings?: string;
-    contentType?: string;
-    country?: string;
-    deliveryFormat?: string;
-    deliveryType?: string;
-    downloadType?: string;
-    endUserLocation?: string;
-    locked?: boolean;
-    maximumConcurrentUsers?: string;
-    objectSize?: string;
-    optimizeFor?: string;
-    originSettings?: string;
-    popularityDistribution?: string;
-    refreshRate?: string;
-    segmentDuration?: number;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorQualityArgs {
-    audienceSettings?: pulumi.Input<string>;
-    catalogSize?: pulumi.Input<string>;
-    contentSettings?: pulumi.Input<string>;
-    contentType?: pulumi.Input<string>;
-    country?: pulumi.Input<string>;
-    deliveryFormat?: pulumi.Input<string>;
-    deliveryType?: pulumi.Input<string>;
-    downloadType?: pulumi.Input<string>;
-    endUserLocation?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    maximumConcurrentUsers?: pulumi.Input<string>;
-    objectSize?: pulumi.Input<string>;
-    optimizeFor?: pulumi.Input<string>;
-    originSettings?: pulumi.Input<string>;
-    popularityDistribution?: pulumi.Input<string>;
-    refreshRate?: pulumi.Input<string>;
-    segmentDuration?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorQuicBeta {
-    enabled?: boolean;
-    locked?: boolean;
-    quicOfferPercentage?: number;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorQuicBetaArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    quicOfferPercentage?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRandomSeek {
-    flv?: boolean;
-    locked?: boolean;
-    maximumSize?: string;
-    mp4?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRandomSeekArgs {
-    flv?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    maximumSize?: pulumi.Input<string>;
-    mp4?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRapid {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRapidArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorReadTimeout {
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-    value?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorReadTimeoutArgs {
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    value?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRealTimeReporting {
-    advanced?: boolean;
-    beaconSamplingPercentage?: number;
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRealTimeReportingArgs {
-    advanced?: pulumi.Input<boolean>;
-    beaconSamplingPercentage?: pulumi.Input<number>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRealUserMonitoring {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRealUserMonitoringArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRedirect {
-    destinationHostname?: string;
-    destinationHostnameOther?: string;
-    destinationHostnameSibling?: string;
-    destinationHostnameSubdomain?: string;
-    destinationPath?: string;
-    destinationPathOther?: string;
-    destinationPathPrefix?: string;
-    destinationPathSuffix?: string;
-    destinationPathSuffixStatus?: string;
-    destinationProtocol?: string;
-    locked?: boolean;
-    mobileDefaultChoice?: string;
-    queryString?: string;
-    responseCode?: number;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRedirectArgs {
-    destinationHostname?: pulumi.Input<string>;
-    destinationHostnameOther?: pulumi.Input<string>;
-    destinationHostnameSibling?: pulumi.Input<string>;
-    destinationHostnameSubdomain?: pulumi.Input<string>;
-    destinationPath?: pulumi.Input<string>;
-    destinationPathOther?: pulumi.Input<string>;
-    destinationPathPrefix?: pulumi.Input<string>;
-    destinationPathSuffix?: pulumi.Input<string>;
-    destinationPathSuffixStatus?: pulumi.Input<string>;
-    destinationProtocol?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    mobileDefaultChoice?: pulumi.Input<string>;
-    queryString?: pulumi.Input<string>;
-    responseCode?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRedirectplus {
-    destination?: string;
-    enabled?: boolean;
-    locked?: boolean;
-    responseCode?: number;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRedirectplusArgs {
-    destination?: pulumi.Input<string>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    responseCode?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRefererChecking {
-    allowChildren?: boolean;
-    domains?: string[];
-    enabled?: boolean;
-    locked?: boolean;
-    strict?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRefererCheckingArgs {
-    allowChildren?: pulumi.Input<boolean>;
-    domains?: pulumi.Input<pulumi.Input<string>[]>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    strict?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRemoveQueryParameter {
-    locked?: boolean;
-    parameters?: string[];
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRemoveQueryParameterArgs {
-    locked?: pulumi.Input<boolean>;
-    parameters?: pulumi.Input<pulumi.Input<string>[]>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRemoveVary {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRemoveVaryArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorReport {
-    cookies?: string[];
-    customLogField?: string;
-    locked?: boolean;
-    logAcceptLanguage?: boolean;
-    logCookies?: string;
-    logCustomLogField?: boolean;
-    logEdgeIp?: boolean;
-    logHost?: boolean;
-    logReferer?: boolean;
-    logUserAgent?: boolean;
-    logXForwardedFor?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorReportArgs {
-    cookies?: pulumi.Input<pulumi.Input<string>[]>;
-    customLogField?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    logAcceptLanguage?: pulumi.Input<boolean>;
-    logCookies?: pulumi.Input<string>;
-    logCustomLogField?: pulumi.Input<boolean>;
-    logEdgeIp?: pulumi.Input<boolean>;
-    logHost?: pulumi.Input<boolean>;
-    logReferer?: pulumi.Input<boolean>;
-    logUserAgent?: pulumi.Input<boolean>;
-    logXForwardedFor?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRequestClientHints {
-    acceptChes?: string[];
-    acceptCriticalChes?: string[];
-    locked?: boolean;
-    reset?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRequestClientHintsArgs {
-    acceptChes?: pulumi.Input<pulumi.Input<string>[]>;
-    acceptCriticalChes?: pulumi.Input<pulumi.Input<string>[]>;
-    locked?: pulumi.Input<boolean>;
-    reset?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRequestControl {
-    branded403File?: string;
-    branded403StatusCode?: number;
-    branded403Url?: string;
-    brandedDenyCacheTtl?: number;
-    cloudletPolicy?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRequestControlCloudletPolicy;
-    cloudletSharedPolicy?: number;
-    enableBranded403?: boolean;
-    enabled?: boolean;
-    isSharedPolicy?: boolean;
-    locked?: boolean;
-    netStorage?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRequestControlNetStorage;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRequestControlArgs {
-    branded403File?: pulumi.Input<string>;
-    branded403StatusCode?: pulumi.Input<number>;
-    branded403Url?: pulumi.Input<string>;
-    brandedDenyCacheTtl?: pulumi.Input<number>;
-    cloudletPolicy?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRequestControlCloudletPolicyArgs>;
-    cloudletSharedPolicy?: pulumi.Input<number>;
-    enableBranded403?: pulumi.Input<boolean>;
-    enabled?: pulumi.Input<boolean>;
-    isSharedPolicy?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    netStorage?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRequestControlNetStorageArgs>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRequestControlCloudletPolicy {
-    id?: number;
-    name?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRequestControlCloudletPolicyArgs {
-    id?: pulumi.Input<number>;
-    name?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRequestControlNetStorage {
-    cpCode?: number;
-    downloadDomainName?: string;
-    g2oToken?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRequestControlNetStorageArgs {
-    cpCode?: pulumi.Input<number>;
-    downloadDomainName?: pulumi.Input<string>;
-    g2oToken?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRequestTypeMarker {
-    locked?: boolean;
-    requestType?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRequestTypeMarkerArgs {
-    locked?: pulumi.Input<boolean>;
-    requestType?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorResourceOptimizer {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorResourceOptimizerArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorResourceOptimizerExtendedCompatibility {
-    enableAllFeatures?: boolean;
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorResourceOptimizerExtendedCompatibilityArgs {
-    enableAllFeatures?: pulumi.Input<boolean>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorResponseCode {
-    locked?: boolean;
-    override206?: boolean;
-    statusCode?: number;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorResponseCodeArgs {
-    locked?: pulumi.Input<boolean>;
-    override206?: pulumi.Input<boolean>;
-    statusCode?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorResponseCookie {
-    cookieName?: string;
-    defaultDomain?: boolean;
-    defaultPath?: boolean;
-    domain?: string;
-    duration?: string;
-    enabled?: boolean;
-    expirationDate?: string;
-    expires?: string;
-    format?: string;
-    httpOnly?: boolean;
-    locked?: boolean;
-    path?: string;
-    sameSite?: string;
-    secure?: boolean;
-    templateUuid?: string;
-    type?: string;
-    uuid?: string;
-    value?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorResponseCookieArgs {
-    cookieName?: pulumi.Input<string>;
-    defaultDomain?: pulumi.Input<boolean>;
-    defaultPath?: pulumi.Input<boolean>;
-    domain?: pulumi.Input<string>;
-    duration?: pulumi.Input<string>;
-    enabled?: pulumi.Input<boolean>;
-    expirationDate?: pulumi.Input<string>;
-    expires?: pulumi.Input<string>;
-    format?: pulumi.Input<string>;
-    httpOnly?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    path?: pulumi.Input<string>;
-    sameSite?: pulumi.Input<string>;
-    secure?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    type?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    value?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRestrictObjectCaching {
-    locked?: boolean;
-    maximumSize?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRestrictObjectCachingArgs {
-    locked?: pulumi.Input<boolean>;
-    maximumSize?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorReturnCacheStatus {
-    locked?: boolean;
-    responseHeaderName?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorReturnCacheStatusArgs {
-    locked?: pulumi.Input<boolean>;
-    responseHeaderName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRewriteUrl {
-    behavior?: string;
-    keepQueryString?: boolean;
-    locked?: boolean;
-    match?: string;
-    matchMultiple?: boolean;
-    matchRegex?: string;
-    targetPath?: string;
-    targetPathPrepend?: string;
-    targetRegex?: string;
-    targetUrl?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRewriteUrlArgs {
-    behavior?: pulumi.Input<string>;
-    keepQueryString?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    match?: pulumi.Input<string>;
-    matchMultiple?: pulumi.Input<boolean>;
-    matchRegex?: pulumi.Input<string>;
-    targetPath?: pulumi.Input<string>;
-    targetPathPrepend?: pulumi.Input<string>;
-    targetRegex?: pulumi.Input<string>;
-    targetUrl?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRumCustom {
-    locked?: boolean;
-    rumGroupName?: string;
-    rumSampleRate?: number;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorRumCustomArgs {
-    locked?: pulumi.Input<boolean>;
-    rumGroupName?: pulumi.Input<string>;
-    rumSampleRate?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorSaasDefinitions {
-    applicationAction?: string;
-    applicationCnameEnabled?: boolean;
-    applicationCnameLevel?: number;
-    applicationCookie?: string;
-    applicationQueryString?: string;
-    applicationRegex?: string;
-    applicationReplace?: string;
-    applicationTitle?: string;
-    customerAction?: string;
-    customerCnameEnabled?: boolean;
-    customerCnameLevel?: number;
-    customerCookie?: string;
-    customerQueryString?: string;
-    customerRegex?: string;
-    customerReplace?: string;
-    customerTitle?: string;
-    locked?: boolean;
-    templateUuid?: string;
-    usersAction?: string;
-    usersCnameEnabled?: boolean;
-    usersCnameLevel?: number;
-    usersCookie?: string;
-    usersQueryString?: string;
-    usersRegex?: string;
-    usersReplace?: string;
-    usersTitle?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorSaasDefinitionsArgs {
-    applicationAction?: pulumi.Input<string>;
-    applicationCnameEnabled?: pulumi.Input<boolean>;
-    applicationCnameLevel?: pulumi.Input<number>;
-    applicationCookie?: pulumi.Input<string>;
-    applicationQueryString?: pulumi.Input<string>;
-    applicationRegex?: pulumi.Input<string>;
-    applicationReplace?: pulumi.Input<string>;
-    applicationTitle?: pulumi.Input<string>;
-    customerAction?: pulumi.Input<string>;
-    customerCnameEnabled?: pulumi.Input<boolean>;
-    customerCnameLevel?: pulumi.Input<number>;
-    customerCookie?: pulumi.Input<string>;
-    customerQueryString?: pulumi.Input<string>;
-    customerRegex?: pulumi.Input<string>;
-    customerReplace?: pulumi.Input<string>;
-    customerTitle?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    usersAction?: pulumi.Input<string>;
-    usersCnameEnabled?: pulumi.Input<boolean>;
-    usersCnameLevel?: pulumi.Input<number>;
-    usersCookie?: pulumi.Input<string>;
-    usersQueryString?: pulumi.Input<string>;
-    usersRegex?: pulumi.Input<string>;
-    usersReplace?: pulumi.Input<string>;
-    usersTitle?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudClient {
-    allowOverrideOriginCacheKey?: boolean;
-    connectorId?: string;
-    enabled?: boolean;
-    locked?: boolean;
-    originHostHeader?: string;
-    originType?: string;
-    sf3cOriginHost?: string;
-    sf3cOriginHostHeader?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudClientArgs {
-    allowOverrideOriginCacheKey?: pulumi.Input<boolean>;
-    connectorId?: pulumi.Input<string>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    originHostHeader?: pulumi.Input<string>;
-    originType?: pulumi.Input<string>;
-    sf3cOriginHost?: pulumi.Input<string>;
-    sf3cOriginHostHeader?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudProvider {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudProviderArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudProviderHostHeader {
-    hostHeaderSource?: string;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudProviderHostHeaderArgs {
-    hostHeaderSource?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorSavePostDcaProcessing {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorSavePostDcaProcessingArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorScheduleInvalidation {
-    locked?: boolean;
-    refreshMethod?: string;
-    repeat?: boolean;
-    repeatInterval?: string;
-    start?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorScheduleInvalidationArgs {
-    locked?: pulumi.Input<boolean>;
-    refreshMethod?: pulumi.Input<string>;
-    repeat?: pulumi.Input<boolean>;
-    repeatInterval?: pulumi.Input<string>;
-    start?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorScriptManagement {
-    enabled?: boolean;
-    locked?: boolean;
-    serviceworker?: string;
-    templateUuid?: string;
-    timestamp?: number;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorScriptManagementArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    serviceworker?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    timestamp?: pulumi.Input<number>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedContentProtection {
-    acl?: boolean;
-    dashMediaEncryption?: boolean;
-    dataPayload?: boolean;
-    enableTokenInUri?: boolean;
-    enabled?: boolean;
-    fieldCarryOver?: string;
-    headerForSalts?: string[];
-    hlsMasterManifestFiles?: string[];
-    hlsMediaEncryption?: boolean;
-    ip?: boolean;
-    key?: string;
-    locked?: boolean;
-    mediaEncryptionTitle?: string;
-    revokedListId?: number;
-    salt?: string;
-    sessionId?: boolean;
-    templateUuid?: string;
-    tokenAuthHlsTitle?: string;
-    tokenAuthenticationTitle?: string;
-    tokenRevocationEnabled?: boolean;
-    tokenRevocationTitle?: string;
-    transitionKey?: string;
-    useAdvanced?: boolean;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedContentProtectionArgs {
-    acl?: pulumi.Input<boolean>;
-    dashMediaEncryption?: pulumi.Input<boolean>;
-    dataPayload?: pulumi.Input<boolean>;
-    enableTokenInUri?: pulumi.Input<boolean>;
-    enabled?: pulumi.Input<boolean>;
-    fieldCarryOver?: pulumi.Input<string>;
-    headerForSalts?: pulumi.Input<pulumi.Input<string>[]>;
-    hlsMasterManifestFiles?: pulumi.Input<pulumi.Input<string>[]>;
-    hlsMediaEncryption?: pulumi.Input<boolean>;
-    ip?: pulumi.Input<boolean>;
-    key?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    mediaEncryptionTitle?: pulumi.Input<string>;
-    revokedListId?: pulumi.Input<number>;
-    salt?: pulumi.Input<string>;
-    sessionId?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    tokenAuthHlsTitle?: pulumi.Input<string>;
-    tokenAuthenticationTitle?: pulumi.Input<string>;
-    tokenRevocationEnabled?: pulumi.Input<boolean>;
-    tokenRevocationTitle?: pulumi.Input<string>;
-    transitionKey?: pulumi.Input<string>;
-    useAdvanced?: pulumi.Input<boolean>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedMediaOptimization {
-    behavior?: string;
-    dvrType?: string;
-    dvrWindow?: string;
-    enableUllStreaming?: boolean;
-    endTime?: string;
-    liveType?: string;
-    locked?: boolean;
-    showAdvanced?: boolean;
-    startTime?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedMediaOptimizationArgs {
-    behavior?: pulumi.Input<string>;
-    dvrType?: pulumi.Input<string>;
-    dvrWindow?: pulumi.Input<string>;
-    enableUllStreaming?: pulumi.Input<boolean>;
-    endTime?: pulumi.Input<string>;
-    liveType?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    showAdvanced?: pulumi.Input<boolean>;
-    startTime?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedMediaStreamingPrefetch {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedMediaStreamingPrefetchArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorSetVariable {
-    algorithm?: string;
-    caseSensitive?: boolean;
-    certificateFieldName?: string;
-    cookieName?: string;
-    deviceProfile?: string;
-    encryptionKey?: string;
-    encryptionMode?: string;
-    endIndex?: number;
-    exceptChars?: string;
-    extractLocation?: string;
-    forceChars?: string;
-    formatString?: string;
-    generator?: string;
-    globalSubstitution?: boolean;
-    headerName?: string;
-    hmacAlgorithm?: string;
-    hmacKey?: string;
-    initializationVector?: string;
-    ipVersion?: string;
-    ipv4Prefix?: number;
-    ipv6Prefix?: number;
-    locationId?: string;
-    locked?: boolean;
-    max?: number;
-    maxRandomNumber?: number;
-    min?: number;
-    minRandomNumber?: number;
-    nonce?: string;
-    numberOfBytes?: number;
-    operandOne?: string;
-    paramName?: string;
-    pathComponentOffset?: string;
-    prependBytes?: boolean;
-    queryParameterName?: string;
-    regex?: string;
-    replacement?: string;
-    responseHeaderName?: string;
-    separator?: string;
-    setCookieName?: string;
-    startIndex?: number;
-    subString?: string;
-    templateUuid?: string;
-    transform?: string;
-    uuid?: string;
-    valueSource?: string;
-    variableName?: string;
-    variableValue?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorSetVariableArgs {
-    algorithm?: pulumi.Input<string>;
-    caseSensitive?: pulumi.Input<boolean>;
-    certificateFieldName?: pulumi.Input<string>;
-    cookieName?: pulumi.Input<string>;
-    deviceProfile?: pulumi.Input<string>;
-    encryptionKey?: pulumi.Input<string>;
-    encryptionMode?: pulumi.Input<string>;
-    endIndex?: pulumi.Input<number>;
-    exceptChars?: pulumi.Input<string>;
-    extractLocation?: pulumi.Input<string>;
-    forceChars?: pulumi.Input<string>;
-    formatString?: pulumi.Input<string>;
-    generator?: pulumi.Input<string>;
-    globalSubstitution?: pulumi.Input<boolean>;
-    headerName?: pulumi.Input<string>;
-    hmacAlgorithm?: pulumi.Input<string>;
-    hmacKey?: pulumi.Input<string>;
-    initializationVector?: pulumi.Input<string>;
-    ipVersion?: pulumi.Input<string>;
-    ipv4Prefix?: pulumi.Input<number>;
-    ipv6Prefix?: pulumi.Input<number>;
-    locationId?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    max?: pulumi.Input<number>;
-    maxRandomNumber?: pulumi.Input<number>;
-    min?: pulumi.Input<number>;
-    minRandomNumber?: pulumi.Input<number>;
-    nonce?: pulumi.Input<string>;
-    numberOfBytes?: pulumi.Input<number>;
-    operandOne?: pulumi.Input<string>;
-    paramName?: pulumi.Input<string>;
-    pathComponentOffset?: pulumi.Input<string>;
-    prependBytes?: pulumi.Input<boolean>;
-    queryParameterName?: pulumi.Input<string>;
-    regex?: pulumi.Input<string>;
-    replacement?: pulumi.Input<string>;
-    responseHeaderName?: pulumi.Input<string>;
-    separator?: pulumi.Input<string>;
-    setCookieName?: pulumi.Input<string>;
-    startIndex?: pulumi.Input<number>;
-    subString?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    transform?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    valueSource?: pulumi.Input<string>;
-    variableName?: pulumi.Input<string>;
-    variableValue?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorSimulateErrorCode {
-    errorType?: string;
-    locked?: boolean;
-    templateUuid?: string;
-    timeout?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorSimulateErrorCodeArgs {
-    errorType?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    timeout?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorSiteShield {
-    locked?: boolean;
-    nossmap?: string;
-    ssmap?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSiteShieldSsmap;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorSiteShieldArgs {
-    locked?: pulumi.Input<boolean>;
-    nossmap?: pulumi.Input<string>;
-    ssmap?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSiteShieldSsmapArgs>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorSiteShieldSsmap {
-    chinaCdnMap?: string;
-    hasMixedHosts?: boolean;
-    name?: string;
-    src?: string;
-    srmap?: string;
-    value?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorSiteShieldSsmapArgs {
-    chinaCdnMap?: pulumi.Input<string>;
-    hasMixedHosts?: pulumi.Input<boolean>;
-    name?: pulumi.Input<string>;
-    src?: pulumi.Input<string>;
-    srmap?: pulumi.Input<string>;
-    value?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorStandardTlsMigration {
-    allowHttpsDowngrade?: boolean;
-    allowHttpsUpgrade?: boolean;
-    cacheSharingDuration?: number;
-    cacheSharingStartTime?: string;
-    enabled?: boolean;
-    isCertificateSniOnly?: boolean;
-    isTieredDistributionUsed?: boolean;
-    locked?: boolean;
-    migrationDuration?: number;
-    migrationFrom?: string;
-    migrationStartTime?: string;
-    tdLocation?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorStandardTlsMigrationArgs {
-    allowHttpsDowngrade?: pulumi.Input<boolean>;
-    allowHttpsUpgrade?: pulumi.Input<boolean>;
-    cacheSharingDuration?: pulumi.Input<number>;
-    cacheSharingStartTime?: pulumi.Input<string>;
-    enabled?: pulumi.Input<boolean>;
-    isCertificateSniOnly?: pulumi.Input<boolean>;
-    isTieredDistributionUsed?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    migrationDuration?: pulumi.Input<number>;
-    migrationFrom?: pulumi.Input<string>;
-    migrationStartTime?: pulumi.Input<string>;
-    tdLocation?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorStandardTlsMigrationOverride {
-    info?: string;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorStandardTlsMigrationOverrideArgs {
-    info?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorStrictHeaderParsing {
-    locked?: boolean;
-    strictMode?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-    validMode?: boolean;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorStrictHeaderParsingArgs {
-    locked?: pulumi.Input<boolean>;
-    strictMode?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    validMode?: pulumi.Input<boolean>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorSubCustomer {
-    accessControl?: boolean;
-    cacheKey?: boolean;
-    caching?: boolean;
-    contentCompressor?: boolean;
-    dynamicWebContent?: boolean;
-    enabled?: boolean;
-    geoLocation?: boolean;
-    ip?: boolean;
-    largeFileDelivery?: boolean;
-    liveVideoDelivery?: boolean;
-    locked?: boolean;
-    modifyPath?: boolean;
-    onDemandVideoDelivery?: boolean;
-    origin?: boolean;
-    partnerDomainSuffix?: string;
-    referrer?: boolean;
-    refreshContent?: boolean;
-    siteFailover?: boolean;
-    templateUuid?: string;
-    tokenAuthorization?: boolean;
-    uuid?: string;
-    webApplicationFirewall?: boolean;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorSubCustomerArgs {
-    accessControl?: pulumi.Input<boolean>;
-    cacheKey?: pulumi.Input<boolean>;
-    caching?: pulumi.Input<boolean>;
-    contentCompressor?: pulumi.Input<boolean>;
-    dynamicWebContent?: pulumi.Input<boolean>;
-    enabled?: pulumi.Input<boolean>;
-    geoLocation?: pulumi.Input<boolean>;
-    ip?: pulumi.Input<boolean>;
-    largeFileDelivery?: pulumi.Input<boolean>;
-    liveVideoDelivery?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    modifyPath?: pulumi.Input<boolean>;
-    onDemandVideoDelivery?: pulumi.Input<boolean>;
-    origin?: pulumi.Input<boolean>;
-    partnerDomainSuffix?: pulumi.Input<string>;
-    referrer?: pulumi.Input<boolean>;
-    refreshContent?: pulumi.Input<boolean>;
-    siteFailover?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    tokenAuthorization?: pulumi.Input<boolean>;
-    uuid?: pulumi.Input<string>;
-    webApplicationFirewall?: pulumi.Input<boolean>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorSureRoute {
-    allowFcmParentOverride?: boolean;
-    customMap?: string;
-    customStatKey?: string;
-    enableCustomKey?: boolean;
-    enabled?: boolean;
-    forceSslForward?: boolean;
-    locked?: boolean;
-    raceStatTtl?: string;
-    srDownloadLinkTitle?: string;
-    templateUuid?: string;
-    testObjectUrl?: string;
-    toHost?: string;
-    toHostStatus?: string;
-    type?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorSureRouteArgs {
-    allowFcmParentOverride?: pulumi.Input<boolean>;
-    customMap?: pulumi.Input<string>;
-    customStatKey?: pulumi.Input<string>;
-    enableCustomKey?: pulumi.Input<boolean>;
-    enabled?: pulumi.Input<boolean>;
-    forceSslForward?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    raceStatTtl?: pulumi.Input<string>;
-    srDownloadLinkTitle?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    testObjectUrl?: pulumi.Input<string>;
-    toHost?: pulumi.Input<string>;
-    toHostStatus?: pulumi.Input<string>;
-    type?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorTcpOptimization {
-    display?: string;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorTcpOptimizationArgs {
-    display?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorTeaLeaf {
-    enabled?: boolean;
-    ibmCustomerId?: number;
-    limitToDynamic?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorTeaLeafArgs {
-    enabled?: pulumi.Input<boolean>;
-    ibmCustomerId?: pulumi.Input<number>;
-    limitToDynamic?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistribution {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    tieredDistributionMap?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    tieredDistributionMap?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionAdvanced {
-    allowall?: boolean;
-    enabled?: boolean;
-    locked?: boolean;
-    method?: string;
-    policy?: string;
-    templateUuid?: string;
-    tieredDistributionMap?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionAdvancedArgs {
-    allowall?: pulumi.Input<boolean>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    method?: pulumi.Input<string>;
-    policy?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    tieredDistributionMap?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionCustomization {
-    cloudwrapperMapMigrationTitle?: string;
-    customMapEnabled?: boolean;
-    customMapName?: string;
-    hashAlgorithm?: string;
-    location?: string;
-    locked?: boolean;
-    mapMigrationEnabled?: boolean;
-    migrationEndDate?: string;
-    migrationStartDate?: string;
-    migrationWithinCwMapsEnabled?: boolean;
-    serialEnd?: string;
-    serialStart?: string;
-    templateUuid?: string;
-    tier1Title?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionCustomizationArgs {
-    cloudwrapperMapMigrationTitle?: pulumi.Input<string>;
-    customMapEnabled?: pulumi.Input<boolean>;
-    customMapName?: pulumi.Input<string>;
-    hashAlgorithm?: pulumi.Input<string>;
-    location?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    mapMigrationEnabled?: pulumi.Input<boolean>;
-    migrationEndDate?: pulumi.Input<string>;
-    migrationStartDate?: pulumi.Input<string>;
-    migrationWithinCwMapsEnabled?: pulumi.Input<boolean>;
-    serialEnd?: pulumi.Input<string>;
-    serialStart?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    tier1Title?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorTimeout {
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-    value?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorTimeoutArgs {
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    value?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorUidConfiguration {
-    enabled?: boolean;
-    extractLocation?: string;
-    headerName?: string;
-    legalText?: string;
-    locked?: boolean;
-    queryParameterName?: string;
-    templateUuid?: string;
-    uuid?: string;
-    variableName?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorUidConfigurationArgs {
-    enabled?: pulumi.Input<boolean>;
-    extractLocation?: pulumi.Input<string>;
-    headerName?: pulumi.Input<string>;
-    legalText?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    queryParameterName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    variableName?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorValidateEntityTag {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorValidateEntityTagArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorVerifyJsonWebToken {
-    enableEs256?: boolean;
-    enableRs256?: boolean;
-    extractLocation?: string;
-    headerName?: string;
-    jwt?: string;
-    locked?: boolean;
-    queryParameterName?: string;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorVerifyJsonWebTokenArgs {
-    enableEs256?: pulumi.Input<boolean>;
-    enableRs256?: pulumi.Input<boolean>;
-    extractLocation?: pulumi.Input<string>;
-    headerName?: pulumi.Input<string>;
-    jwt?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    queryParameterName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorVerifyJsonWebTokenForDcp {
-    authorizations?: string;
-    clientId?: string;
-    customHeader?: boolean;
-    enableEs256?: boolean;
-    enableRs256?: boolean;
-    extractAuthorizations?: boolean;
-    extractClientId?: boolean;
-    extractLocation?: string;
-    extractUserName?: boolean;
-    headerName?: string;
-    jwt?: string;
-    locked?: boolean;
-    primaryLocation?: string;
-    queryParameterName?: string;
-    templateUuid?: string;
-    userName?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorVerifyJsonWebTokenForDcpArgs {
-    authorizations?: pulumi.Input<string>;
-    clientId?: pulumi.Input<string>;
-    customHeader?: pulumi.Input<boolean>;
-    enableEs256?: pulumi.Input<boolean>;
-    enableRs256?: pulumi.Input<boolean>;
-    extractAuthorizations?: pulumi.Input<boolean>;
-    extractClientId?: pulumi.Input<boolean>;
-    extractLocation?: pulumi.Input<string>;
-    extractUserName?: pulumi.Input<boolean>;
-    headerName?: pulumi.Input<string>;
-    jwt?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    primaryLocation?: pulumi.Input<string>;
-    queryParameterName?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    userName?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorVerifyTokenAuthorization {
-    algorithm?: string;
-    escapeHmacInputs?: boolean;
-    failureResponse?: boolean;
-    ignoreQueryString?: boolean;
-    key?: string;
-    location?: string;
-    locationId?: string;
-    locked?: boolean;
-    salt?: string;
-    templateUuid?: string;
-    transitionKey?: string;
-    useAdvanced?: boolean;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorVerifyTokenAuthorizationArgs {
-    algorithm?: pulumi.Input<string>;
-    escapeHmacInputs?: pulumi.Input<boolean>;
-    failureResponse?: pulumi.Input<boolean>;
-    ignoreQueryString?: pulumi.Input<boolean>;
-    key?: pulumi.Input<string>;
-    location?: pulumi.Input<string>;
-    locationId?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    salt?: pulumi.Input<string>;
-    templateUuid?: pulumi.Input<string>;
-    transitionKey?: pulumi.Input<string>;
-    useAdvanced?: pulumi.Input<boolean>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorVirtualWaitingRoom {
-    accessTitle?: string;
-    cloudletSharedPolicy?: number;
-    customCookieDomain?: string;
-    domainConfig?: string;
-    locked?: boolean;
-    sessionAutoProlong?: boolean;
-    sessionDuration?: number;
-    templateUuid?: string;
-    uuid?: string;
-    waitingRoomAssetsPaths?: string[];
-    waitingRoomPath?: string;
-    waitingRoomTitle?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorVirtualWaitingRoomArgs {
-    accessTitle?: pulumi.Input<string>;
-    cloudletSharedPolicy?: pulumi.Input<number>;
-    customCookieDomain?: pulumi.Input<string>;
-    domainConfig?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    sessionAutoProlong?: pulumi.Input<boolean>;
-    sessionDuration?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    waitingRoomAssetsPaths?: pulumi.Input<pulumi.Input<string>[]>;
-    waitingRoomPath?: pulumi.Input<string>;
-    waitingRoomTitle?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorVirtualWaitingRoomWithEdgeWorkers {
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorVirtualWaitingRoomWithEdgeWorkersArgs {
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritization {
-    allowedUserCookieAdvanced?: boolean;
-    allowedUserCookieAutomaticSalt?: boolean;
-    allowedUserCookieDomain?: string;
-    allowedUserCookieDomainType?: string;
-    allowedUserCookieDuration?: number;
-    allowedUserCookieEnabled?: boolean;
-    allowedUserCookieHttpOnly?: boolean;
-    allowedUserCookieLabel?: string;
-    allowedUserCookieManagementTitle?: string;
-    allowedUserCookieRefresh?: boolean;
-    allowedUserCookieSalt?: string;
-    cloudletPolicy?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationCloudletPolicy;
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    userIdentificationByCookie?: boolean;
-    userIdentificationByHeaders?: boolean;
-    userIdentificationByIp?: boolean;
-    userIdentificationByParams?: boolean;
-    userIdentificationKeyCookie?: string;
-    userIdentificationKeyHeaders?: string[];
-    userIdentificationKeyParams?: string[];
-    userIdentificationTitle?: string;
-    uuid?: string;
-    waitingRoomCacheTtl?: number;
-    waitingRoomCookieAdvanced?: boolean;
-    waitingRoomCookieAutomaticSalt?: boolean;
-    waitingRoomCookieDomain?: string;
-    waitingRoomCookieDomainType?: string;
-    waitingRoomCookieDuration?: number;
-    waitingRoomCookieEnabled?: boolean;
-    waitingRoomCookieHttpOnly?: boolean;
-    waitingRoomCookieLabel?: string;
-    waitingRoomCookieManagementTitle?: string;
-    waitingRoomCookieSalt?: string;
-    waitingRoomCookieShareLabel?: boolean;
-    waitingRoomCpCode?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationWaitingRoomCpCode;
-    waitingRoomDirectory?: string;
-    waitingRoomManagementTitle?: string;
-    waitingRoomNetStorage?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationWaitingRoomNetStorage;
-    waitingRoomStatusCode?: number;
-    waitingRoomUseCpCode?: boolean;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationArgs {
-    allowedUserCookieAdvanced?: pulumi.Input<boolean>;
-    allowedUserCookieAutomaticSalt?: pulumi.Input<boolean>;
-    allowedUserCookieDomain?: pulumi.Input<string>;
-    allowedUserCookieDomainType?: pulumi.Input<string>;
-    allowedUserCookieDuration?: pulumi.Input<number>;
-    allowedUserCookieEnabled?: pulumi.Input<boolean>;
-    allowedUserCookieHttpOnly?: pulumi.Input<boolean>;
-    allowedUserCookieLabel?: pulumi.Input<string>;
-    allowedUserCookieManagementTitle?: pulumi.Input<string>;
-    allowedUserCookieRefresh?: pulumi.Input<boolean>;
-    allowedUserCookieSalt?: pulumi.Input<string>;
-    cloudletPolicy?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationCloudletPolicyArgs>;
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    userIdentificationByCookie?: pulumi.Input<boolean>;
-    userIdentificationByHeaders?: pulumi.Input<boolean>;
-    userIdentificationByIp?: pulumi.Input<boolean>;
-    userIdentificationByParams?: pulumi.Input<boolean>;
-    userIdentificationKeyCookie?: pulumi.Input<string>;
-    userIdentificationKeyHeaders?: pulumi.Input<pulumi.Input<string>[]>;
-    userIdentificationKeyParams?: pulumi.Input<pulumi.Input<string>[]>;
-    userIdentificationTitle?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    waitingRoomCacheTtl?: pulumi.Input<number>;
-    waitingRoomCookieAdvanced?: pulumi.Input<boolean>;
-    waitingRoomCookieAutomaticSalt?: pulumi.Input<boolean>;
-    waitingRoomCookieDomain?: pulumi.Input<string>;
-    waitingRoomCookieDomainType?: pulumi.Input<string>;
-    waitingRoomCookieDuration?: pulumi.Input<number>;
-    waitingRoomCookieEnabled?: pulumi.Input<boolean>;
-    waitingRoomCookieHttpOnly?: pulumi.Input<boolean>;
-    waitingRoomCookieLabel?: pulumi.Input<string>;
-    waitingRoomCookieManagementTitle?: pulumi.Input<string>;
-    waitingRoomCookieSalt?: pulumi.Input<string>;
-    waitingRoomCookieShareLabel?: pulumi.Input<boolean>;
-    waitingRoomCpCode?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationWaitingRoomCpCodeArgs>;
-    waitingRoomDirectory?: pulumi.Input<string>;
-    waitingRoomManagementTitle?: pulumi.Input<string>;
-    waitingRoomNetStorage?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationWaitingRoomNetStorageArgs>;
-    waitingRoomStatusCode?: pulumi.Input<number>;
-    waitingRoomUseCpCode?: pulumi.Input<boolean>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationCloudletPolicy {
-    id?: number;
-    name?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationCloudletPolicyArgs {
-    id?: pulumi.Input<number>;
-    name?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationFifo {
-    accessTitle?: string;
-    cloudletSharedPolicy?: number;
-    customCookieDomain?: string;
-    domainConfig?: string;
-    locked?: boolean;
-    sessionAutoProlong?: boolean;
-    sessionDuration?: number;
-    templateUuid?: string;
-    uuid?: string;
-    waitingRoomAssetsPaths?: string[];
-    waitingRoomPath?: string;
-    waitingRoomTitle?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationFifoArgs {
-    accessTitle?: pulumi.Input<string>;
-    cloudletSharedPolicy?: pulumi.Input<number>;
-    customCookieDomain?: pulumi.Input<string>;
-    domainConfig?: pulumi.Input<string>;
-    locked?: pulumi.Input<boolean>;
-    sessionAutoProlong?: pulumi.Input<boolean>;
-    sessionDuration?: pulumi.Input<number>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-    waitingRoomAssetsPaths?: pulumi.Input<pulumi.Input<string>[]>;
-    waitingRoomPath?: pulumi.Input<string>;
-    waitingRoomTitle?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationFifoStandalone {
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationFifoStandaloneArgs {
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationWaitingRoomCpCode {
-    cpCodeLimits?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationWaitingRoomCpCodeCpCodeLimits;
-    createdDate?: number;
-    description?: string;
-    id?: number;
-    name?: string;
-    products?: string[];
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationWaitingRoomCpCodeArgs {
-    cpCodeLimits?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationWaitingRoomCpCodeCpCodeLimitsArgs>;
-    createdDate?: pulumi.Input<number>;
-    description?: pulumi.Input<string>;
-    id?: pulumi.Input<number>;
-    name?: pulumi.Input<string>;
-    products?: pulumi.Input<pulumi.Input<string>[]>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationWaitingRoomCpCodeCpCodeLimits {
-    currentCapacity?: number;
-    limit?: number;
-    limitType?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationWaitingRoomCpCodeCpCodeLimitsArgs {
-    currentCapacity?: pulumi.Input<number>;
-    limit?: pulumi.Input<number>;
-    limitType?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationWaitingRoomNetStorage {
-    cpCode?: number;
-    downloadDomainName?: string;
-    g2oToken?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationWaitingRoomNetStorageArgs {
-    cpCode?: pulumi.Input<number>;
-    downloadDomainName?: pulumi.Input<string>;
-    g2oToken?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorWatermarking {
-    abVariantLocation?: string;
-    decryptionPassword1?: string;
-    decryptionPassword2?: string;
-    decryptionPasswordId1?: string;
-    decryptionPasswordId2?: string;
-    enable?: boolean;
-    locked?: boolean;
-    miscellaneousSettingsTitle?: string;
-    patternDecryptionEnable?: boolean;
-    patternEncryptionTitle?: string;
-    signatureVerificationEnable?: boolean;
-    templateUuid?: string;
-    tokenSigningTitle?: string;
-    useOriginalAsA?: boolean;
-    uuid?: string;
-    verificationKeyId1?: string;
-    verificationKeyId2?: string;
-    verificationPublicKey1?: string;
-    verificationPublicKey2?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorWatermarkingArgs {
-    abVariantLocation?: pulumi.Input<string>;
-    decryptionPassword1?: pulumi.Input<string>;
-    decryptionPassword2?: pulumi.Input<string>;
-    decryptionPasswordId1?: pulumi.Input<string>;
-    decryptionPasswordId2?: pulumi.Input<string>;
-    enable?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    miscellaneousSettingsTitle?: pulumi.Input<string>;
-    patternDecryptionEnable?: pulumi.Input<boolean>;
-    patternEncryptionTitle?: pulumi.Input<string>;
-    signatureVerificationEnable?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    tokenSigningTitle?: pulumi.Input<string>;
-    useOriginalAsA?: pulumi.Input<boolean>;
-    uuid?: pulumi.Input<string>;
-    verificationKeyId1?: pulumi.Input<string>;
-    verificationKeyId2?: pulumi.Input<string>;
-    verificationPublicKey1?: pulumi.Input<string>;
-    verificationPublicKey2?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorWebApplicationFirewall {
-    firewallConfiguration?: inputs.GetPropertyRulesBuilderRulesV20231030BehaviorWebApplicationFirewallFirewallConfiguration;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorWebApplicationFirewallArgs {
-    firewallConfiguration?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030BehaviorWebApplicationFirewallFirewallConfigurationArgs>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorWebApplicationFirewallFirewallConfiguration {
-    configId?: number;
-    fileName?: string;
-    productionStatus?: string;
-    productionVersion?: number;
-    stagingStatus?: string;
-    stagingVersion?: number;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorWebApplicationFirewallFirewallConfigurationArgs {
-    configId?: pulumi.Input<number>;
-    fileName?: pulumi.Input<string>;
-    productionStatus?: pulumi.Input<string>;
-    productionVersion?: pulumi.Input<number>;
-    stagingStatus?: pulumi.Input<string>;
-    stagingVersion?: pulumi.Input<number>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorWebSockets {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorWebSocketsArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorWebdav {
-    enabled?: boolean;
-    locked?: boolean;
-    templateUuid?: string;
-    uuid?: string;
-}
-
-export interface GetPropertyRulesBuilderRulesV20231030BehaviorWebdavArgs {
-    enabled?: pulumi.Input<boolean>;
-    locked?: pulumi.Input<boolean>;
-    templateUuid?: pulumi.Input<string>;
-    uuid?: pulumi.Input<string>;
-}
-
 export interface GetPropertyRulesBuilderRulesV20231030Criterion {
     advancedImMatch?: inputs.GetPropertyRulesBuilderRulesV20231030CriterionAdvancedImMatch;
     bucket?: inputs.GetPropertyRulesBuilderRulesV20231030CriterionBucket;
@@ -32575,6 +22337,920 @@ export interface GtmResourceResourceInstance {
     useDefaultLoadObject?: pulumi.Input<boolean>;
 }
 
+export interface MediaOriginFailover {
+    cacheErrorResponse?: boolean;
+    cacheWindow?: string;
+    clientResponseCode?: string;
+    detectObjectUnavailable?: boolean;
+    detectObjectUnavailableTitle?: string;
+    detectOriginUnavailable?: boolean;
+    detectOriginUnavailableTitle?: string;
+    detectOriginUnresponsive?: boolean;
+    detectOriginUnresponsiveTitle?: string;
+    locked?: boolean;
+    objectUnavailableAlternateHost?: string;
+    objectUnavailableBackupHost?: string;
+    objectUnavailableBlacklistOriginIp?: boolean;
+    objectUnavailableBlacklistWindow?: string;
+    objectUnavailableChangeProtocol?: boolean;
+    objectUnavailableDetectionLevel?: string;
+    objectUnavailableIncludeQueryString?: boolean;
+    objectUnavailableModifiedPath?: string;
+    objectUnavailableModifyRequestPath?: boolean;
+    objectUnavailableProtocol?: string;
+    objectUnavailableRecovery?: string;
+    objectUnavailableRedirectMethod?: number;
+    objectUnavailableResponseCodes?: string[];
+    objectUnavailableRetryLimit?: string;
+    originUnavailableAlternateHost?: string;
+    originUnavailableBackupHost?: string;
+    originUnavailableBlacklistOriginIp?: boolean;
+    originUnavailableBlacklistWindow?: string;
+    originUnavailableChangeProtocol?: boolean;
+    originUnavailableDetectionLevel?: string;
+    originUnavailableIncludeQueryString?: boolean;
+    originUnavailableModifiedPath?: string;
+    originUnavailableModifyRequestPath?: boolean;
+    originUnavailableProtocol?: string;
+    originUnavailableRecovery?: string;
+    originUnavailableRedirectMethod?: number;
+    originUnavailableResponseCodes?: string[];
+    originUnavailableRetryLimit?: string;
+    originUnresponsiveAlternateHost?: string;
+    originUnresponsiveBackupHost?: string;
+    originUnresponsiveBlacklistOriginIp?: boolean;
+    originUnresponsiveBlacklistWindow?: string;
+    originUnresponsiveChangeProtocol?: boolean;
+    originUnresponsiveDetectionLevel?: string;
+    originUnresponsiveIncludeQueryString?: boolean;
+    originUnresponsiveModifiedPath?: string;
+    originUnresponsiveModifyRequestPath?: boolean;
+    originUnresponsiveProtocol?: string;
+    originUnresponsiveRecovery?: string;
+    originUnresponsiveRedirectMethod?: number;
+    originUnresponsiveRetryLimit?: string;
+    otherOptions?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface MediaOriginFailoverArgs {
+    cacheErrorResponse?: pulumi.Input<boolean>;
+    cacheWindow?: pulumi.Input<string>;
+    clientResponseCode?: pulumi.Input<string>;
+    detectObjectUnavailable?: pulumi.Input<boolean>;
+    detectObjectUnavailableTitle?: pulumi.Input<string>;
+    detectOriginUnavailable?: pulumi.Input<boolean>;
+    detectOriginUnavailableTitle?: pulumi.Input<string>;
+    detectOriginUnresponsive?: pulumi.Input<boolean>;
+    detectOriginUnresponsiveTitle?: pulumi.Input<string>;
+    locked?: pulumi.Input<boolean>;
+    objectUnavailableAlternateHost?: pulumi.Input<string>;
+    objectUnavailableBackupHost?: pulumi.Input<string>;
+    objectUnavailableBlacklistOriginIp?: pulumi.Input<boolean>;
+    objectUnavailableBlacklistWindow?: pulumi.Input<string>;
+    objectUnavailableChangeProtocol?: pulumi.Input<boolean>;
+    objectUnavailableDetectionLevel?: pulumi.Input<string>;
+    objectUnavailableIncludeQueryString?: pulumi.Input<boolean>;
+    objectUnavailableModifiedPath?: pulumi.Input<string>;
+    objectUnavailableModifyRequestPath?: pulumi.Input<boolean>;
+    objectUnavailableProtocol?: pulumi.Input<string>;
+    objectUnavailableRecovery?: pulumi.Input<string>;
+    objectUnavailableRedirectMethod?: pulumi.Input<number>;
+    objectUnavailableResponseCodes?: pulumi.Input<pulumi.Input<string>[]>;
+    objectUnavailableRetryLimit?: pulumi.Input<string>;
+    originUnavailableAlternateHost?: pulumi.Input<string>;
+    originUnavailableBackupHost?: pulumi.Input<string>;
+    originUnavailableBlacklistOriginIp?: pulumi.Input<boolean>;
+    originUnavailableBlacklistWindow?: pulumi.Input<string>;
+    originUnavailableChangeProtocol?: pulumi.Input<boolean>;
+    originUnavailableDetectionLevel?: pulumi.Input<string>;
+    originUnavailableIncludeQueryString?: pulumi.Input<boolean>;
+    originUnavailableModifiedPath?: pulumi.Input<string>;
+    originUnavailableModifyRequestPath?: pulumi.Input<boolean>;
+    originUnavailableProtocol?: pulumi.Input<string>;
+    originUnavailableRecovery?: pulumi.Input<string>;
+    originUnavailableRedirectMethod?: pulumi.Input<number>;
+    originUnavailableResponseCodes?: pulumi.Input<pulumi.Input<string>[]>;
+    originUnavailableRetryLimit?: pulumi.Input<string>;
+    originUnresponsiveAlternateHost?: pulumi.Input<string>;
+    originUnresponsiveBackupHost?: pulumi.Input<string>;
+    originUnresponsiveBlacklistOriginIp?: pulumi.Input<boolean>;
+    originUnresponsiveBlacklistWindow?: pulumi.Input<string>;
+    originUnresponsiveChangeProtocol?: pulumi.Input<boolean>;
+    originUnresponsiveDetectionLevel?: pulumi.Input<string>;
+    originUnresponsiveIncludeQueryString?: pulumi.Input<boolean>;
+    originUnresponsiveModifiedPath?: pulumi.Input<string>;
+    originUnresponsiveModifyRequestPath?: pulumi.Input<boolean>;
+    originUnresponsiveProtocol?: pulumi.Input<string>;
+    originUnresponsiveRecovery?: pulumi.Input<string>;
+    originUnresponsiveRedirectMethod?: pulumi.Input<number>;
+    originUnresponsiveRetryLimit?: pulumi.Input<string>;
+    otherOptions?: pulumi.Input<string>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface MetadataCaching {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface MetadataCachingArgs {
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface MobileSdkPerformance {
+    enabled?: boolean;
+    locked?: boolean;
+    secondaryMultipathToOrigin?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface MobileSdkPerformanceArgs {
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    secondaryMultipathToOrigin?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface ModifyIncomingRequestHeader {
+    action?: string;
+    avoidDuplicateHeaders?: boolean;
+    customHeaderName?: string;
+    headerValue?: string;
+    locked?: boolean;
+    newHeaderValue?: string;
+    standardAddHeaderName?: string;
+    standardDeleteHeaderName?: string;
+    standardModifyHeaderName?: string;
+    standardPassHeaderName?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface ModifyIncomingRequestHeaderArgs {
+    action?: pulumi.Input<string>;
+    avoidDuplicateHeaders?: pulumi.Input<boolean>;
+    customHeaderName?: pulumi.Input<string>;
+    headerValue?: pulumi.Input<string>;
+    locked?: pulumi.Input<boolean>;
+    newHeaderValue?: pulumi.Input<string>;
+    standardAddHeaderName?: pulumi.Input<string>;
+    standardDeleteHeaderName?: pulumi.Input<string>;
+    standardModifyHeaderName?: pulumi.Input<string>;
+    standardPassHeaderName?: pulumi.Input<string>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface ModifyIncomingResponseHeader {
+    action?: string;
+    avoidDuplicateHeaders?: boolean;
+    customHeaderName?: string;
+    headerValue?: string;
+    locked?: boolean;
+    newHeaderValue?: string;
+    standardAddHeaderName?: string;
+    standardDeleteHeaderName?: string;
+    standardModifyHeaderName?: string;
+    standardPassHeaderName?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface ModifyIncomingResponseHeaderArgs {
+    action?: pulumi.Input<string>;
+    avoidDuplicateHeaders?: pulumi.Input<boolean>;
+    customHeaderName?: pulumi.Input<string>;
+    headerValue?: pulumi.Input<string>;
+    locked?: pulumi.Input<boolean>;
+    newHeaderValue?: pulumi.Input<string>;
+    standardAddHeaderName?: pulumi.Input<string>;
+    standardDeleteHeaderName?: pulumi.Input<string>;
+    standardModifyHeaderName?: pulumi.Input<string>;
+    standardPassHeaderName?: pulumi.Input<string>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface ModifyOutgoingRequestHeader {
+    action?: string;
+    avoidDuplicateHeaders?: boolean;
+    customHeaderName?: string;
+    headerValue?: string;
+    locked?: boolean;
+    matchMultiple?: boolean;
+    newHeaderValue?: string;
+    regexHeaderMatch?: string;
+    regexHeaderReplace?: string;
+    standardAddHeaderName?: string;
+    standardDeleteHeaderName?: string;
+    standardModifyHeaderName?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface ModifyOutgoingRequestHeaderArgs {
+    action?: pulumi.Input<string>;
+    avoidDuplicateHeaders?: pulumi.Input<boolean>;
+    customHeaderName?: pulumi.Input<string>;
+    headerValue?: pulumi.Input<string>;
+    locked?: pulumi.Input<boolean>;
+    matchMultiple?: pulumi.Input<boolean>;
+    newHeaderValue?: pulumi.Input<string>;
+    regexHeaderMatch?: pulumi.Input<string>;
+    regexHeaderReplace?: pulumi.Input<string>;
+    standardAddHeaderName?: pulumi.Input<string>;
+    standardDeleteHeaderName?: pulumi.Input<string>;
+    standardModifyHeaderName?: pulumi.Input<string>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface ModifyOutgoingResponseHeader {
+    action?: string;
+    avoidDuplicateHeaders?: boolean;
+    customHeaderName?: string;
+    headerValue?: string;
+    locked?: boolean;
+    matchMultiple?: boolean;
+    newHeaderValue?: string;
+    regexHeaderMatch?: string;
+    regexHeaderReplace?: string;
+    standardAddHeaderName?: string;
+    standardDeleteHeaderName?: string;
+    standardModifyHeaderName?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface ModifyOutgoingResponseHeaderArgs {
+    action?: pulumi.Input<string>;
+    avoidDuplicateHeaders?: pulumi.Input<boolean>;
+    customHeaderName?: pulumi.Input<string>;
+    headerValue?: pulumi.Input<string>;
+    locked?: pulumi.Input<boolean>;
+    matchMultiple?: pulumi.Input<boolean>;
+    newHeaderValue?: pulumi.Input<string>;
+    regexHeaderMatch?: pulumi.Input<string>;
+    regexHeaderReplace?: pulumi.Input<string>;
+    standardAddHeaderName?: pulumi.Input<string>;
+    standardDeleteHeaderName?: pulumi.Input<string>;
+    standardModifyHeaderName?: pulumi.Input<string>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface ModifyViaHeader {
+    enabled?: boolean;
+    locked?: boolean;
+    modificationOption?: string;
+    renameHeaderTo?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface ModifyViaHeaderArgs {
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    modificationOption?: pulumi.Input<string>;
+    renameHeaderTo?: pulumi.Input<string>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface Origin {
+    cacheKeyHostname?: string;
+    compress?: boolean;
+    customCertificateAuthorities?: inputs.OriginCustomCertificateAuthority[];
+    customCertificates?: inputs.OriginCustomCertificate[];
+    customForwardHostHeader?: string;
+    customValidCnValues?: string[];
+    enableTrueClientIp?: boolean;
+    forwardHostHeader?: string;
+    hostname?: string;
+    httpPort?: number;
+    httpsPort?: number;
+    ipVersion?: string;
+    locked?: boolean;
+    maxTlsVersion?: string;
+    minTlsVersion?: string;
+    mslorigin?: string;
+    netStorage?: inputs.OriginNetStorage;
+    originCertificate?: string;
+    originCertsToHonor?: string;
+    originId?: string;
+    originSni?: boolean;
+    originType?: string;
+    ports?: string;
+    saasCnameEnabled?: boolean;
+    saasCnameLevel?: number;
+    saasCookie?: string;
+    saasQueryString?: string;
+    saasRegex?: string;
+    saasReplace?: string;
+    saasSuffix?: string;
+    saasType?: string;
+    secondHostname?: string;
+    secondHostnameEnabled?: boolean;
+    standardCertificateAuthorities?: string[];
+    templateUuid?: string;
+    tls13Support?: boolean;
+    tlsVersionTitle?: string;
+    trueClientIpClientSetting?: boolean;
+    trueClientIpHeader?: string;
+    useUniqueCacheKey?: boolean;
+    uuid?: string;
+    verificationMode?: string;
+}
+
+export interface OriginArgs {
+    cacheKeyHostname?: pulumi.Input<string>;
+    compress?: pulumi.Input<boolean>;
+    customCertificateAuthorities?: pulumi.Input<pulumi.Input<inputs.OriginCustomCertificateAuthorityArgs>[]>;
+    customCertificates?: pulumi.Input<pulumi.Input<inputs.OriginCustomCertificateArgs>[]>;
+    customForwardHostHeader?: pulumi.Input<string>;
+    customValidCnValues?: pulumi.Input<pulumi.Input<string>[]>;
+    enableTrueClientIp?: pulumi.Input<boolean>;
+    forwardHostHeader?: pulumi.Input<string>;
+    hostname?: pulumi.Input<string>;
+    httpPort?: pulumi.Input<number>;
+    httpsPort?: pulumi.Input<number>;
+    ipVersion?: pulumi.Input<string>;
+    locked?: pulumi.Input<boolean>;
+    maxTlsVersion?: pulumi.Input<string>;
+    minTlsVersion?: pulumi.Input<string>;
+    mslorigin?: pulumi.Input<string>;
+    netStorage?: pulumi.Input<inputs.OriginNetStorageArgs>;
+    originCertificate?: pulumi.Input<string>;
+    originCertsToHonor?: pulumi.Input<string>;
+    originId?: pulumi.Input<string>;
+    originSni?: pulumi.Input<boolean>;
+    originType?: pulumi.Input<string>;
+    ports?: pulumi.Input<string>;
+    saasCnameEnabled?: pulumi.Input<boolean>;
+    saasCnameLevel?: pulumi.Input<number>;
+    saasCookie?: pulumi.Input<string>;
+    saasQueryString?: pulumi.Input<string>;
+    saasRegex?: pulumi.Input<string>;
+    saasReplace?: pulumi.Input<string>;
+    saasSuffix?: pulumi.Input<string>;
+    saasType?: pulumi.Input<string>;
+    secondHostname?: pulumi.Input<string>;
+    secondHostnameEnabled?: pulumi.Input<boolean>;
+    standardCertificateAuthorities?: pulumi.Input<pulumi.Input<string>[]>;
+    templateUuid?: pulumi.Input<string>;
+    tls13Support?: pulumi.Input<boolean>;
+    tlsVersionTitle?: pulumi.Input<string>;
+    trueClientIpClientSetting?: pulumi.Input<boolean>;
+    trueClientIpHeader?: pulumi.Input<string>;
+    useUniqueCacheKey?: pulumi.Input<boolean>;
+    uuid?: pulumi.Input<string>;
+    verificationMode?: pulumi.Input<string>;
+}
+
+export interface OriginCharacteristics {
+    accessKeyEncryptedStorage?: boolean;
+    adcTitle?: string;
+    authenticationMethod?: string;
+    authenticationMethodTitle?: string;
+    awsAccessKeyId?: string;
+    awsAccessKeyVersionGuid?: string;
+    awsArRegion?: string;
+    awsHost?: string;
+    awsRegion?: string;
+    awsSecretAccessKey?: string;
+    awsService?: string;
+    country?: string;
+    customSignStrings?: string[];
+    directConnectGeo?: string;
+    encodingVersion?: number;
+    endPointService?: string;
+    gcsAccessKeyVersionGuid?: string;
+    gcsHmacKeyAccessId?: string;
+    gcsHmacKeySecret?: string;
+    hostnameTag?: boolean;
+    locked?: boolean;
+    mslkey?: string;
+    mslname?: string;
+    nonce?: string;
+    originLocationTitle?: string;
+    propertyIdTag?: boolean;
+    roleArn?: string;
+    secretKey?: string;
+    templateUuid?: string;
+    useCustomSignString?: boolean;
+    uuid?: string;
+}
+
+export interface OriginCharacteristicsArgs {
+    accessKeyEncryptedStorage?: pulumi.Input<boolean>;
+    adcTitle?: pulumi.Input<string>;
+    authenticationMethod?: pulumi.Input<string>;
+    authenticationMethodTitle?: pulumi.Input<string>;
+    awsAccessKeyId?: pulumi.Input<string>;
+    awsAccessKeyVersionGuid?: pulumi.Input<string>;
+    awsArRegion?: pulumi.Input<string>;
+    awsHost?: pulumi.Input<string>;
+    awsRegion?: pulumi.Input<string>;
+    awsSecretAccessKey?: pulumi.Input<string>;
+    awsService?: pulumi.Input<string>;
+    country?: pulumi.Input<string>;
+    customSignStrings?: pulumi.Input<pulumi.Input<string>[]>;
+    directConnectGeo?: pulumi.Input<string>;
+    encodingVersion?: pulumi.Input<number>;
+    endPointService?: pulumi.Input<string>;
+    gcsAccessKeyVersionGuid?: pulumi.Input<string>;
+    gcsHmacKeyAccessId?: pulumi.Input<string>;
+    gcsHmacKeySecret?: pulumi.Input<string>;
+    hostnameTag?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    mslkey?: pulumi.Input<string>;
+    mslname?: pulumi.Input<string>;
+    nonce?: pulumi.Input<string>;
+    originLocationTitle?: pulumi.Input<string>;
+    propertyIdTag?: pulumi.Input<boolean>;
+    roleArn?: pulumi.Input<string>;
+    secretKey?: pulumi.Input<string>;
+    templateUuid?: pulumi.Input<string>;
+    useCustomSignString?: pulumi.Input<boolean>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface OriginCharacteristicsWsd {
+    locked?: boolean;
+    origintype?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface OriginCharacteristicsWsdArgs {
+    locked?: pulumi.Input<boolean>;
+    origintype?: pulumi.Input<string>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface OriginCustomCertificate {
+    canBeCa?: boolean;
+    canBeLeaf?: boolean;
+    issuerRdns?: inputs.OriginCustomCertificateIssuerRdns;
+    notAfter?: number;
+    notBefore?: number;
+    pemEncodedCert?: string;
+    publicKey?: string;
+    publicKeyAlgorithm?: string;
+    publicKeyFormat?: string;
+    selfSigned?: boolean;
+    serialNumber?: string;
+    sha1Fingerprint?: string;
+    sigAlgName?: string;
+    subjectAlternativeNames?: string[];
+    subjectCn?: string;
+    subjectRdns?: inputs.OriginCustomCertificateSubjectRdns;
+    version?: number;
+}
+
+export interface OriginCustomCertificateArgs {
+    canBeCa?: pulumi.Input<boolean>;
+    canBeLeaf?: pulumi.Input<boolean>;
+    issuerRdns?: pulumi.Input<inputs.OriginCustomCertificateIssuerRdnsArgs>;
+    notAfter?: pulumi.Input<number>;
+    notBefore?: pulumi.Input<number>;
+    pemEncodedCert?: pulumi.Input<string>;
+    publicKey?: pulumi.Input<string>;
+    publicKeyAlgorithm?: pulumi.Input<string>;
+    publicKeyFormat?: pulumi.Input<string>;
+    selfSigned?: pulumi.Input<boolean>;
+    serialNumber?: pulumi.Input<string>;
+    sha1Fingerprint?: pulumi.Input<string>;
+    sigAlgName?: pulumi.Input<string>;
+    subjectAlternativeNames?: pulumi.Input<pulumi.Input<string>[]>;
+    subjectCn?: pulumi.Input<string>;
+    subjectRdns?: pulumi.Input<inputs.OriginCustomCertificateSubjectRdnsArgs>;
+    version?: pulumi.Input<number>;
+}
+
+export interface OriginCustomCertificateAuthority {
+    canBeCa?: boolean;
+    canBeLeaf?: boolean;
+    issuerRdns?: inputs.OriginCustomCertificateAuthorityIssuerRdns;
+    notAfter?: number;
+    notBefore?: number;
+    pemEncodedCert?: string;
+    publicKey?: string;
+    publicKeyAlgorithm?: string;
+    publicKeyFormat?: string;
+    selfSigned?: boolean;
+    serialNumber?: string;
+    sha1Fingerprint?: string;
+    sigAlgName?: string;
+    subjectAlternativeNames?: string[];
+    subjectCn?: string;
+    subjectRdns?: inputs.OriginCustomCertificateAuthoritySubjectRdns;
+    version?: number;
+}
+
+export interface OriginCustomCertificateAuthorityArgs {
+    canBeCa?: pulumi.Input<boolean>;
+    canBeLeaf?: pulumi.Input<boolean>;
+    issuerRdns?: pulumi.Input<inputs.OriginCustomCertificateAuthorityIssuerRdnsArgs>;
+    notAfter?: pulumi.Input<number>;
+    notBefore?: pulumi.Input<number>;
+    pemEncodedCert?: pulumi.Input<string>;
+    publicKey?: pulumi.Input<string>;
+    publicKeyAlgorithm?: pulumi.Input<string>;
+    publicKeyFormat?: pulumi.Input<string>;
+    selfSigned?: pulumi.Input<boolean>;
+    serialNumber?: pulumi.Input<string>;
+    sha1Fingerprint?: pulumi.Input<string>;
+    sigAlgName?: pulumi.Input<string>;
+    subjectAlternativeNames?: pulumi.Input<pulumi.Input<string>[]>;
+    subjectCn?: pulumi.Input<string>;
+    subjectRdns?: pulumi.Input<inputs.OriginCustomCertificateAuthoritySubjectRdnsArgs>;
+    version?: pulumi.Input<number>;
+}
+
+export interface OriginCustomCertificateAuthorityIssuerRdns {
+    c?: string;
+    cn?: string;
+    o?: string;
+    ou?: string;
+}
+
+export interface OriginCustomCertificateAuthorityIssuerRdnsArgs {
+    c?: pulumi.Input<string>;
+    cn?: pulumi.Input<string>;
+    o?: pulumi.Input<string>;
+    ou?: pulumi.Input<string>;
+}
+
+export interface OriginCustomCertificateAuthoritySubjectRdns {
+    c?: string;
+    cn?: string;
+    o?: string;
+    ou?: string;
+}
+
+export interface OriginCustomCertificateAuthoritySubjectRdnsArgs {
+    c?: pulumi.Input<string>;
+    cn?: pulumi.Input<string>;
+    o?: pulumi.Input<string>;
+    ou?: pulumi.Input<string>;
+}
+
+export interface OriginCustomCertificateIssuerRdns {
+    c?: string;
+    cn?: string;
+    o?: string;
+    ou?: string;
+}
+
+export interface OriginCustomCertificateIssuerRdnsArgs {
+    c?: pulumi.Input<string>;
+    cn?: pulumi.Input<string>;
+    o?: pulumi.Input<string>;
+    ou?: pulumi.Input<string>;
+}
+
+export interface OriginCustomCertificateSubjectRdns {
+    c?: string;
+    cn?: string;
+    o?: string;
+    ou?: string;
+}
+
+export interface OriginCustomCertificateSubjectRdnsArgs {
+    c?: pulumi.Input<string>;
+    cn?: pulumi.Input<string>;
+    o?: pulumi.Input<string>;
+    ou?: pulumi.Input<string>;
+}
+
+export interface OriginFailureRecoveryMethod {
+    customStatusCode?: string;
+    locked?: boolean;
+    recoveryMethod?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface OriginFailureRecoveryMethodArgs {
+    customStatusCode?: pulumi.Input<string>;
+    locked?: pulumi.Input<boolean>;
+    recoveryMethod?: pulumi.Input<string>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface OriginFailureRecoveryPolicy {
+    binaryEquivalentContent?: boolean;
+    enableIpAvoidance?: boolean;
+    enabled?: boolean;
+    ipAvoidanceErrorThreshold?: number;
+    ipAvoidanceRetryInterval?: number;
+    locked?: boolean;
+    monitorOriginResponsiveness?: boolean;
+    monitorResponseCodes1s?: string[];
+    monitorResponseCodes2s?: string[];
+    monitorResponseCodes3s?: string[];
+    monitorStatusCodes1?: boolean;
+    monitorStatusCodes1EnableRecovery?: boolean;
+    monitorStatusCodes1EnableRetry?: boolean;
+    monitorStatusCodes1RecoveryConfigName?: string;
+    monitorStatusCodes2?: boolean;
+    monitorStatusCodes2EnableRecovery?: boolean;
+    monitorStatusCodes2EnableRetry?: boolean;
+    monitorStatusCodes2RecoveryConfigName?: string;
+    monitorStatusCodes3?: boolean;
+    monitorStatusCodes3EnableRecovery?: boolean;
+    monitorStatusCodes3EnableRetry?: boolean;
+    monitorStatusCodes3RecoveryConfigName?: string;
+    originResponsivenessCustomTimeout?: number;
+    originResponsivenessEnableRecovery?: boolean;
+    originResponsivenessEnableRetry?: boolean;
+    originResponsivenessMonitoring?: string;
+    originResponsivenessRecoveryConfigName?: string;
+    originResponsivenessTimeout?: string;
+    statusCodeMonitoring1?: string;
+    statusCodeMonitoring2?: string;
+    statusCodeMonitoring3?: string;
+    templateUuid?: string;
+    tuningParameters?: string;
+    uuid?: string;
+}
+
+export interface OriginFailureRecoveryPolicyArgs {
+    binaryEquivalentContent?: pulumi.Input<boolean>;
+    enableIpAvoidance?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean>;
+    ipAvoidanceErrorThreshold?: pulumi.Input<number>;
+    ipAvoidanceRetryInterval?: pulumi.Input<number>;
+    locked?: pulumi.Input<boolean>;
+    monitorOriginResponsiveness?: pulumi.Input<boolean>;
+    monitorResponseCodes1s?: pulumi.Input<pulumi.Input<string>[]>;
+    monitorResponseCodes2s?: pulumi.Input<pulumi.Input<string>[]>;
+    monitorResponseCodes3s?: pulumi.Input<pulumi.Input<string>[]>;
+    monitorStatusCodes1?: pulumi.Input<boolean>;
+    monitorStatusCodes1EnableRecovery?: pulumi.Input<boolean>;
+    monitorStatusCodes1EnableRetry?: pulumi.Input<boolean>;
+    monitorStatusCodes1RecoveryConfigName?: pulumi.Input<string>;
+    monitorStatusCodes2?: pulumi.Input<boolean>;
+    monitorStatusCodes2EnableRecovery?: pulumi.Input<boolean>;
+    monitorStatusCodes2EnableRetry?: pulumi.Input<boolean>;
+    monitorStatusCodes2RecoveryConfigName?: pulumi.Input<string>;
+    monitorStatusCodes3?: pulumi.Input<boolean>;
+    monitorStatusCodes3EnableRecovery?: pulumi.Input<boolean>;
+    monitorStatusCodes3EnableRetry?: pulumi.Input<boolean>;
+    monitorStatusCodes3RecoveryConfigName?: pulumi.Input<string>;
+    originResponsivenessCustomTimeout?: pulumi.Input<number>;
+    originResponsivenessEnableRecovery?: pulumi.Input<boolean>;
+    originResponsivenessEnableRetry?: pulumi.Input<boolean>;
+    originResponsivenessMonitoring?: pulumi.Input<string>;
+    originResponsivenessRecoveryConfigName?: pulumi.Input<string>;
+    originResponsivenessTimeout?: pulumi.Input<string>;
+    statusCodeMonitoring1?: pulumi.Input<string>;
+    statusCodeMonitoring2?: pulumi.Input<string>;
+    statusCodeMonitoring3?: pulumi.Input<string>;
+    templateUuid?: pulumi.Input<string>;
+    tuningParameters?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface OriginIpAcl {
+    enable?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface OriginIpAclArgs {
+    enable?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface OriginNetStorage {
+    cpCode?: number;
+    downloadDomainName?: string;
+    g2oToken?: string;
+}
+
+export interface OriginNetStorageArgs {
+    cpCode?: pulumi.Input<number>;
+    downloadDomainName?: pulumi.Input<string>;
+    g2oToken?: pulumi.Input<string>;
+}
+
+export interface PermissionsPolicy {
+    allowList?: string;
+    locked?: boolean;
+    permissionsPolicyDirectives?: string[];
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface PermissionsPolicyArgs {
+    allowList?: pulumi.Input<string>;
+    locked?: pulumi.Input<boolean>;
+    permissionsPolicyDirectives?: pulumi.Input<pulumi.Input<string>[]>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface PersistentClientConnection {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    timeout?: string;
+    uuid?: string;
+}
+
+export interface PersistentClientConnectionArgs {
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    timeout?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface PersistentConnection {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    timeout?: string;
+    uuid?: string;
+}
+
+export interface PersistentConnectionArgs {
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    timeout?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface PersonallyIdentifiableInformation {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface PersonallyIdentifiableInformationArgs {
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface PhasedRelease {
+    cloudletPolicy?: inputs.PhasedReleaseCloudletPolicy;
+    cloudletSharedPolicy?: number;
+    enabled?: boolean;
+    failoverDuration?: number;
+    failoverEnabled?: boolean;
+    failoverResponseCodes?: string[];
+    failoverTitle?: string;
+    isSharedPolicy?: boolean;
+    label?: string;
+    locked?: boolean;
+    populationCookieType?: string;
+    populationDuration?: string;
+    populationExpirationDate?: string;
+    populationRefresh?: boolean;
+    populationTitle?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface PhasedReleaseArgs {
+    cloudletPolicy?: pulumi.Input<inputs.PhasedReleaseCloudletPolicyArgs>;
+    cloudletSharedPolicy?: pulumi.Input<number>;
+    enabled?: pulumi.Input<boolean>;
+    failoverDuration?: pulumi.Input<number>;
+    failoverEnabled?: pulumi.Input<boolean>;
+    failoverResponseCodes?: pulumi.Input<pulumi.Input<string>[]>;
+    failoverTitle?: pulumi.Input<string>;
+    isSharedPolicy?: pulumi.Input<boolean>;
+    label?: pulumi.Input<string>;
+    locked?: pulumi.Input<boolean>;
+    populationCookieType?: pulumi.Input<string>;
+    populationDuration?: pulumi.Input<string>;
+    populationExpirationDate?: pulumi.Input<string>;
+    populationRefresh?: pulumi.Input<boolean>;
+    populationTitle?: pulumi.Input<string>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface PhasedReleaseCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface PhasedReleaseCloudletPolicyArgs {
+    id?: pulumi.Input<number>;
+    name?: pulumi.Input<string>;
+}
+
+export interface Preconnect {
+    locked?: boolean;
+    preconnectlists?: string[];
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface PreconnectArgs {
+    locked?: pulumi.Input<boolean>;
+    preconnectlists?: pulumi.Input<pulumi.Input<string>[]>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface PredictiveContentDelivery {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface PredictiveContentDeliveryArgs {
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface PredictivePrefetching {
+    accuracyTarget?: string;
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface PredictivePrefetchingArgs {
+    accuracyTarget?: pulumi.Input<string>;
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface Prefetch {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface PrefetchArgs {
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface Prefetchable {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface PrefetchableArgs {
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface PrefreshCache {
+    enabled?: boolean;
+    locked?: boolean;
+    prefreshval?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface PrefreshCacheArgs {
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    prefreshval?: pulumi.Input<number>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
 export interface PropertyActivationComplianceRecord {
     noncomplianceReasonEmergency?: pulumi.Input<inputs.PropertyActivationComplianceRecordNoncomplianceReasonEmergency>;
     noncomplianceReasonNoProductionTraffic?: pulumi.Input<inputs.PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic>;
@@ -32680,6 +23356,1688 @@ export interface ProviderConfig {
     clientToken: pulumi.Input<string>;
     host: pulumi.Input<string>;
     maxBody?: pulumi.Input<number>;
+}
+
+export interface Quality {
+    audienceSettings?: string;
+    catalogSize?: string;
+    contentSettings?: string;
+    contentType?: string;
+    country?: string;
+    deliveryFormat?: string;
+    deliveryType?: string;
+    downloadType?: string;
+    endUserLocation?: string;
+    locked?: boolean;
+    maximumConcurrentUsers?: string;
+    objectSize?: string;
+    optimizeFor?: string;
+    originSettings?: string;
+    popularityDistribution?: string;
+    refreshRate?: string;
+    segmentDuration?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface QualityArgs {
+    audienceSettings?: pulumi.Input<string>;
+    catalogSize?: pulumi.Input<string>;
+    contentSettings?: pulumi.Input<string>;
+    contentType?: pulumi.Input<string>;
+    country?: pulumi.Input<string>;
+    deliveryFormat?: pulumi.Input<string>;
+    deliveryType?: pulumi.Input<string>;
+    downloadType?: pulumi.Input<string>;
+    endUserLocation?: pulumi.Input<string>;
+    locked?: pulumi.Input<boolean>;
+    maximumConcurrentUsers?: pulumi.Input<string>;
+    objectSize?: pulumi.Input<string>;
+    optimizeFor?: pulumi.Input<string>;
+    originSettings?: pulumi.Input<string>;
+    popularityDistribution?: pulumi.Input<string>;
+    refreshRate?: pulumi.Input<string>;
+    segmentDuration?: pulumi.Input<number>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface QuicBeta {
+    enabled?: boolean;
+    locked?: boolean;
+    quicOfferPercentage?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface QuicBetaArgs {
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    quicOfferPercentage?: pulumi.Input<number>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface RandomSeek {
+    flv?: boolean;
+    locked?: boolean;
+    maximumSize?: string;
+    mp4?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface RandomSeekArgs {
+    flv?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    maximumSize?: pulumi.Input<string>;
+    mp4?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface Rapid {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface RapidArgs {
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface ReadTimeout {
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    value?: string;
+}
+
+export interface ReadTimeoutArgs {
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface RealTimeReporting {
+    advanced?: boolean;
+    beaconSamplingPercentage?: number;
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface RealTimeReportingArgs {
+    advanced?: pulumi.Input<boolean>;
+    beaconSamplingPercentage?: pulumi.Input<number>;
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface RealUserMonitoring {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface RealUserMonitoringArgs {
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface Redirect {
+    destinationHostname?: string;
+    destinationHostnameOther?: string;
+    destinationHostnameSibling?: string;
+    destinationHostnameSubdomain?: string;
+    destinationPath?: string;
+    destinationPathOther?: string;
+    destinationPathPrefix?: string;
+    destinationPathSuffix?: string;
+    destinationPathSuffixStatus?: string;
+    destinationProtocol?: string;
+    locked?: boolean;
+    mobileDefaultChoice?: string;
+    queryString?: string;
+    responseCode?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface RedirectArgs {
+    destinationHostname?: pulumi.Input<string>;
+    destinationHostnameOther?: pulumi.Input<string>;
+    destinationHostnameSibling?: pulumi.Input<string>;
+    destinationHostnameSubdomain?: pulumi.Input<string>;
+    destinationPath?: pulumi.Input<string>;
+    destinationPathOther?: pulumi.Input<string>;
+    destinationPathPrefix?: pulumi.Input<string>;
+    destinationPathSuffix?: pulumi.Input<string>;
+    destinationPathSuffixStatus?: pulumi.Input<string>;
+    destinationProtocol?: pulumi.Input<string>;
+    locked?: pulumi.Input<boolean>;
+    mobileDefaultChoice?: pulumi.Input<string>;
+    queryString?: pulumi.Input<string>;
+    responseCode?: pulumi.Input<number>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface Redirectplus {
+    destination?: string;
+    enabled?: boolean;
+    locked?: boolean;
+    responseCode?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface RedirectplusArgs {
+    destination?: pulumi.Input<string>;
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    responseCode?: pulumi.Input<number>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface RefererChecking {
+    allowChildren?: boolean;
+    domains?: string[];
+    enabled?: boolean;
+    locked?: boolean;
+    strict?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface RefererCheckingArgs {
+    allowChildren?: pulumi.Input<boolean>;
+    domains?: pulumi.Input<pulumi.Input<string>[]>;
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    strict?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface RemoveQueryParameter {
+    locked?: boolean;
+    parameters?: string[];
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface RemoveQueryParameterArgs {
+    locked?: pulumi.Input<boolean>;
+    parameters?: pulumi.Input<pulumi.Input<string>[]>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface RemoveVary {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface RemoveVaryArgs {
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface Report {
+    cookies?: string[];
+    customLogField?: string;
+    locked?: boolean;
+    logAcceptLanguage?: boolean;
+    logCookies?: string;
+    logCustomLogField?: boolean;
+    logEdgeIp?: boolean;
+    logHost?: boolean;
+    logReferer?: boolean;
+    logUserAgent?: boolean;
+    logXForwardedFor?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface ReportArgs {
+    cookies?: pulumi.Input<pulumi.Input<string>[]>;
+    customLogField?: pulumi.Input<string>;
+    locked?: pulumi.Input<boolean>;
+    logAcceptLanguage?: pulumi.Input<boolean>;
+    logCookies?: pulumi.Input<string>;
+    logCustomLogField?: pulumi.Input<boolean>;
+    logEdgeIp?: pulumi.Input<boolean>;
+    logHost?: pulumi.Input<boolean>;
+    logReferer?: pulumi.Input<boolean>;
+    logUserAgent?: pulumi.Input<boolean>;
+    logXForwardedFor?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface RequestClientHints {
+    acceptChes?: string[];
+    acceptCriticalChes?: string[];
+    locked?: boolean;
+    reset?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface RequestClientHintsArgs {
+    acceptChes?: pulumi.Input<pulumi.Input<string>[]>;
+    acceptCriticalChes?: pulumi.Input<pulumi.Input<string>[]>;
+    locked?: pulumi.Input<boolean>;
+    reset?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface RequestControl {
+    branded403File?: string;
+    branded403StatusCode?: number;
+    branded403Url?: string;
+    brandedDenyCacheTtl?: number;
+    cloudletPolicy?: inputs.RequestControlCloudletPolicy;
+    cloudletSharedPolicy?: number;
+    enableBranded403?: boolean;
+    enabled?: boolean;
+    isSharedPolicy?: boolean;
+    locked?: boolean;
+    netStorage?: inputs.RequestControlNetStorage;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface RequestControlArgs {
+    branded403File?: pulumi.Input<string>;
+    branded403StatusCode?: pulumi.Input<number>;
+    branded403Url?: pulumi.Input<string>;
+    brandedDenyCacheTtl?: pulumi.Input<number>;
+    cloudletPolicy?: pulumi.Input<inputs.RequestControlCloudletPolicyArgs>;
+    cloudletSharedPolicy?: pulumi.Input<number>;
+    enableBranded403?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean>;
+    isSharedPolicy?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    netStorage?: pulumi.Input<inputs.RequestControlNetStorageArgs>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface RequestControlCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface RequestControlCloudletPolicyArgs {
+    id?: pulumi.Input<number>;
+    name?: pulumi.Input<string>;
+}
+
+export interface RequestControlNetStorage {
+    cpCode?: number;
+    downloadDomainName?: string;
+    g2oToken?: string;
+}
+
+export interface RequestControlNetStorageArgs {
+    cpCode?: pulumi.Input<number>;
+    downloadDomainName?: pulumi.Input<string>;
+    g2oToken?: pulumi.Input<string>;
+}
+
+export interface RequestTypeMarker {
+    locked?: boolean;
+    requestType?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface RequestTypeMarkerArgs {
+    locked?: pulumi.Input<boolean>;
+    requestType?: pulumi.Input<string>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface ResourceOptimizer {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface ResourceOptimizerArgs {
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface ResourceOptimizerExtendedCompatibility {
+    enableAllFeatures?: boolean;
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface ResourceOptimizerExtendedCompatibilityArgs {
+    enableAllFeatures?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface ResponseCode {
+    locked?: boolean;
+    override206?: boolean;
+    statusCode?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface ResponseCodeArgs {
+    locked?: pulumi.Input<boolean>;
+    override206?: pulumi.Input<boolean>;
+    statusCode?: pulumi.Input<number>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface ResponseCookie {
+    cookieName?: string;
+    defaultDomain?: boolean;
+    defaultPath?: boolean;
+    domain?: string;
+    duration?: string;
+    enabled?: boolean;
+    expirationDate?: string;
+    expires?: string;
+    format?: string;
+    httpOnly?: boolean;
+    locked?: boolean;
+    path?: string;
+    sameSite?: string;
+    secure?: boolean;
+    templateUuid?: string;
+    type?: string;
+    uuid?: string;
+    value?: string;
+}
+
+export interface ResponseCookieArgs {
+    cookieName?: pulumi.Input<string>;
+    defaultDomain?: pulumi.Input<boolean>;
+    defaultPath?: pulumi.Input<boolean>;
+    domain?: pulumi.Input<string>;
+    duration?: pulumi.Input<string>;
+    enabled?: pulumi.Input<boolean>;
+    expirationDate?: pulumi.Input<string>;
+    expires?: pulumi.Input<string>;
+    format?: pulumi.Input<string>;
+    httpOnly?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    path?: pulumi.Input<string>;
+    sameSite?: pulumi.Input<string>;
+    secure?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    type?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface RestrictObjectCaching {
+    locked?: boolean;
+    maximumSize?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface RestrictObjectCachingArgs {
+    locked?: pulumi.Input<boolean>;
+    maximumSize?: pulumi.Input<string>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface ReturnCacheStatus {
+    locked?: boolean;
+    responseHeaderName?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface ReturnCacheStatusArgs {
+    locked?: pulumi.Input<boolean>;
+    responseHeaderName?: pulumi.Input<string>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface RewriteUrl {
+    behavior?: string;
+    keepQueryString?: boolean;
+    locked?: boolean;
+    match?: string;
+    matchMultiple?: boolean;
+    matchRegex?: string;
+    targetPath?: string;
+    targetPathPrepend?: string;
+    targetRegex?: string;
+    targetUrl?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface RewriteUrlArgs {
+    behavior?: pulumi.Input<string>;
+    keepQueryString?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    match?: pulumi.Input<string>;
+    matchMultiple?: pulumi.Input<boolean>;
+    matchRegex?: pulumi.Input<string>;
+    targetPath?: pulumi.Input<string>;
+    targetPathPrepend?: pulumi.Input<string>;
+    targetRegex?: pulumi.Input<string>;
+    targetUrl?: pulumi.Input<string>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface RumCustom {
+    locked?: boolean;
+    rumGroupName?: string;
+    rumSampleRate?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface RumCustomArgs {
+    locked?: pulumi.Input<boolean>;
+    rumGroupName?: pulumi.Input<string>;
+    rumSampleRate?: pulumi.Input<number>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface SaasDefinitions {
+    applicationAction?: string;
+    applicationCnameEnabled?: boolean;
+    applicationCnameLevel?: number;
+    applicationCookie?: string;
+    applicationQueryString?: string;
+    applicationRegex?: string;
+    applicationReplace?: string;
+    applicationTitle?: string;
+    customerAction?: string;
+    customerCnameEnabled?: boolean;
+    customerCnameLevel?: number;
+    customerCookie?: string;
+    customerQueryString?: string;
+    customerRegex?: string;
+    customerReplace?: string;
+    customerTitle?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    usersAction?: string;
+    usersCnameEnabled?: boolean;
+    usersCnameLevel?: number;
+    usersCookie?: string;
+    usersQueryString?: string;
+    usersRegex?: string;
+    usersReplace?: string;
+    usersTitle?: string;
+    uuid?: string;
+}
+
+export interface SaasDefinitionsArgs {
+    applicationAction?: pulumi.Input<string>;
+    applicationCnameEnabled?: pulumi.Input<boolean>;
+    applicationCnameLevel?: pulumi.Input<number>;
+    applicationCookie?: pulumi.Input<string>;
+    applicationQueryString?: pulumi.Input<string>;
+    applicationRegex?: pulumi.Input<string>;
+    applicationReplace?: pulumi.Input<string>;
+    applicationTitle?: pulumi.Input<string>;
+    customerAction?: pulumi.Input<string>;
+    customerCnameEnabled?: pulumi.Input<boolean>;
+    customerCnameLevel?: pulumi.Input<number>;
+    customerCookie?: pulumi.Input<string>;
+    customerQueryString?: pulumi.Input<string>;
+    customerRegex?: pulumi.Input<string>;
+    customerReplace?: pulumi.Input<string>;
+    customerTitle?: pulumi.Input<string>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    usersAction?: pulumi.Input<string>;
+    usersCnameEnabled?: pulumi.Input<boolean>;
+    usersCnameLevel?: pulumi.Input<number>;
+    usersCookie?: pulumi.Input<string>;
+    usersQueryString?: pulumi.Input<string>;
+    usersRegex?: pulumi.Input<string>;
+    usersReplace?: pulumi.Input<string>;
+    usersTitle?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface SalesForceCommerceCloudClient {
+    allowOverrideOriginCacheKey?: boolean;
+    connectorId?: string;
+    enabled?: boolean;
+    locked?: boolean;
+    originHostHeader?: string;
+    originType?: string;
+    sf3cOriginHost?: string;
+    sf3cOriginHostHeader?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface SalesForceCommerceCloudClientArgs {
+    allowOverrideOriginCacheKey?: pulumi.Input<boolean>;
+    connectorId?: pulumi.Input<string>;
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    originHostHeader?: pulumi.Input<string>;
+    originType?: pulumi.Input<string>;
+    sf3cOriginHost?: pulumi.Input<string>;
+    sf3cOriginHostHeader?: pulumi.Input<string>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface SalesForceCommerceCloudProvider {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface SalesForceCommerceCloudProviderArgs {
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface SalesForceCommerceCloudProviderHostHeader {
+    hostHeaderSource?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface SalesForceCommerceCloudProviderHostHeaderArgs {
+    hostHeaderSource?: pulumi.Input<string>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface SavePostDcaProcessing {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface SavePostDcaProcessingArgs {
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface ScheduleInvalidation {
+    locked?: boolean;
+    refreshMethod?: string;
+    repeat?: boolean;
+    repeatInterval?: string;
+    start?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface ScheduleInvalidationArgs {
+    locked?: pulumi.Input<boolean>;
+    refreshMethod?: pulumi.Input<string>;
+    repeat?: pulumi.Input<boolean>;
+    repeatInterval?: pulumi.Input<string>;
+    start?: pulumi.Input<string>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface ScriptManagement {
+    enabled?: boolean;
+    locked?: boolean;
+    serviceworker?: string;
+    templateUuid?: string;
+    timestamp?: number;
+    uuid?: string;
+}
+
+export interface ScriptManagementArgs {
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    serviceworker?: pulumi.Input<string>;
+    templateUuid?: pulumi.Input<string>;
+    timestamp?: pulumi.Input<number>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface SegmentedContentProtection {
+    acl?: boolean;
+    dashMediaEncryption?: boolean;
+    dataPayload?: boolean;
+    enableTokenInUri?: boolean;
+    enabled?: boolean;
+    fieldCarryOver?: string;
+    headerForSalts?: string[];
+    hlsMasterManifestFiles?: string[];
+    hlsMediaEncryption?: boolean;
+    ip?: boolean;
+    key?: string;
+    locked?: boolean;
+    mediaEncryptionTitle?: string;
+    revokedListId?: number;
+    salt?: string;
+    sessionId?: boolean;
+    templateUuid?: string;
+    tokenAuthHlsTitle?: string;
+    tokenAuthenticationTitle?: string;
+    tokenRevocationEnabled?: boolean;
+    tokenRevocationTitle?: string;
+    transitionKey?: string;
+    useAdvanced?: boolean;
+    uuid?: string;
+}
+
+export interface SegmentedContentProtectionArgs {
+    acl?: pulumi.Input<boolean>;
+    dashMediaEncryption?: pulumi.Input<boolean>;
+    dataPayload?: pulumi.Input<boolean>;
+    enableTokenInUri?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean>;
+    fieldCarryOver?: pulumi.Input<string>;
+    headerForSalts?: pulumi.Input<pulumi.Input<string>[]>;
+    hlsMasterManifestFiles?: pulumi.Input<pulumi.Input<string>[]>;
+    hlsMediaEncryption?: pulumi.Input<boolean>;
+    ip?: pulumi.Input<boolean>;
+    key?: pulumi.Input<string>;
+    locked?: pulumi.Input<boolean>;
+    mediaEncryptionTitle?: pulumi.Input<string>;
+    revokedListId?: pulumi.Input<number>;
+    salt?: pulumi.Input<string>;
+    sessionId?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    tokenAuthHlsTitle?: pulumi.Input<string>;
+    tokenAuthenticationTitle?: pulumi.Input<string>;
+    tokenRevocationEnabled?: pulumi.Input<boolean>;
+    tokenRevocationTitle?: pulumi.Input<string>;
+    transitionKey?: pulumi.Input<string>;
+    useAdvanced?: pulumi.Input<boolean>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface SegmentedMediaOptimization {
+    behavior?: string;
+    dvrType?: string;
+    dvrWindow?: string;
+    enableUllStreaming?: boolean;
+    endTime?: string;
+    liveType?: string;
+    locked?: boolean;
+    showAdvanced?: boolean;
+    startTime?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface SegmentedMediaOptimizationArgs {
+    behavior?: pulumi.Input<string>;
+    dvrType?: pulumi.Input<string>;
+    dvrWindow?: pulumi.Input<string>;
+    enableUllStreaming?: pulumi.Input<boolean>;
+    endTime?: pulumi.Input<string>;
+    liveType?: pulumi.Input<string>;
+    locked?: pulumi.Input<boolean>;
+    showAdvanced?: pulumi.Input<boolean>;
+    startTime?: pulumi.Input<string>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface SegmentedMediaStreamingPrefetch {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface SegmentedMediaStreamingPrefetchArgs {
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface SetVariable {
+    algorithm?: string;
+    caseSensitive?: boolean;
+    certificateFieldName?: string;
+    cookieName?: string;
+    deviceProfile?: string;
+    encryptionKey?: string;
+    encryptionMode?: string;
+    endIndex?: number;
+    exceptChars?: string;
+    extractLocation?: string;
+    forceChars?: string;
+    formatString?: string;
+    generator?: string;
+    globalSubstitution?: boolean;
+    headerName?: string;
+    hmacAlgorithm?: string;
+    hmacKey?: string;
+    initializationVector?: string;
+    ipVersion?: string;
+    ipv4Prefix?: number;
+    ipv6Prefix?: number;
+    locationId?: string;
+    locked?: boolean;
+    max?: number;
+    maxRandomNumber?: number;
+    min?: number;
+    minRandomNumber?: number;
+    nonce?: string;
+    numberOfBytes?: number;
+    operandOne?: string;
+    paramName?: string;
+    pathComponentOffset?: string;
+    prependBytes?: boolean;
+    queryParameterName?: string;
+    regex?: string;
+    replacement?: string;
+    responseHeaderName?: string;
+    separator?: string;
+    setCookieName?: string;
+    startIndex?: number;
+    subString?: string;
+    templateUuid?: string;
+    transform?: string;
+    uuid?: string;
+    valueSource?: string;
+    variableName?: string;
+    variableValue?: string;
+}
+
+export interface SetVariableArgs {
+    algorithm?: pulumi.Input<string>;
+    caseSensitive?: pulumi.Input<boolean>;
+    certificateFieldName?: pulumi.Input<string>;
+    cookieName?: pulumi.Input<string>;
+    deviceProfile?: pulumi.Input<string>;
+    encryptionKey?: pulumi.Input<string>;
+    encryptionMode?: pulumi.Input<string>;
+    endIndex?: pulumi.Input<number>;
+    exceptChars?: pulumi.Input<string>;
+    extractLocation?: pulumi.Input<string>;
+    forceChars?: pulumi.Input<string>;
+    formatString?: pulumi.Input<string>;
+    generator?: pulumi.Input<string>;
+    globalSubstitution?: pulumi.Input<boolean>;
+    headerName?: pulumi.Input<string>;
+    hmacAlgorithm?: pulumi.Input<string>;
+    hmacKey?: pulumi.Input<string>;
+    initializationVector?: pulumi.Input<string>;
+    ipVersion?: pulumi.Input<string>;
+    ipv4Prefix?: pulumi.Input<number>;
+    ipv6Prefix?: pulumi.Input<number>;
+    locationId?: pulumi.Input<string>;
+    locked?: pulumi.Input<boolean>;
+    max?: pulumi.Input<number>;
+    maxRandomNumber?: pulumi.Input<number>;
+    min?: pulumi.Input<number>;
+    minRandomNumber?: pulumi.Input<number>;
+    nonce?: pulumi.Input<string>;
+    numberOfBytes?: pulumi.Input<number>;
+    operandOne?: pulumi.Input<string>;
+    paramName?: pulumi.Input<string>;
+    pathComponentOffset?: pulumi.Input<string>;
+    prependBytes?: pulumi.Input<boolean>;
+    queryParameterName?: pulumi.Input<string>;
+    regex?: pulumi.Input<string>;
+    replacement?: pulumi.Input<string>;
+    responseHeaderName?: pulumi.Input<string>;
+    separator?: pulumi.Input<string>;
+    setCookieName?: pulumi.Input<string>;
+    startIndex?: pulumi.Input<number>;
+    subString?: pulumi.Input<string>;
+    templateUuid?: pulumi.Input<string>;
+    transform?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+    valueSource?: pulumi.Input<string>;
+    variableName?: pulumi.Input<string>;
+    variableValue?: pulumi.Input<string>;
+}
+
+export interface Shutr {
+    locked?: boolean;
+    status?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface ShutrArgs {
+    locked?: pulumi.Input<boolean>;
+    status?: pulumi.Input<string>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface SimulateErrorCode {
+    errorType?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    timeout?: string;
+    uuid?: string;
+}
+
+export interface SimulateErrorCodeArgs {
+    errorType?: pulumi.Input<string>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    timeout?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface SiteShield {
+    locked?: boolean;
+    nossmap?: string;
+    ssmap?: inputs.SiteShieldSsmap;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface SiteShieldArgs {
+    locked?: pulumi.Input<boolean>;
+    nossmap?: pulumi.Input<string>;
+    ssmap?: pulumi.Input<inputs.SiteShieldSsmapArgs>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface SiteShieldSsmap {
+    chinaCdnMap?: string;
+    hasMixedHosts?: boolean;
+    name?: string;
+    src?: string;
+    srmap?: string;
+    value?: string;
+}
+
+export interface SiteShieldSsmapArgs {
+    chinaCdnMap?: pulumi.Input<string>;
+    hasMixedHosts?: pulumi.Input<boolean>;
+    name?: pulumi.Input<string>;
+    src?: pulumi.Input<string>;
+    srmap?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface StandardTlsMigration {
+    allowHttpsDowngrade?: boolean;
+    allowHttpsUpgrade?: boolean;
+    cacheSharingDuration?: number;
+    cacheSharingStartTime?: string;
+    enabled?: boolean;
+    isCertificateSniOnly?: boolean;
+    isTieredDistributionUsed?: boolean;
+    locked?: boolean;
+    migrationDuration?: number;
+    migrationFrom?: string;
+    migrationStartTime?: string;
+    tdLocation?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface StandardTlsMigrationArgs {
+    allowHttpsDowngrade?: pulumi.Input<boolean>;
+    allowHttpsUpgrade?: pulumi.Input<boolean>;
+    cacheSharingDuration?: pulumi.Input<number>;
+    cacheSharingStartTime?: pulumi.Input<string>;
+    enabled?: pulumi.Input<boolean>;
+    isCertificateSniOnly?: pulumi.Input<boolean>;
+    isTieredDistributionUsed?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    migrationDuration?: pulumi.Input<number>;
+    migrationFrom?: pulumi.Input<string>;
+    migrationStartTime?: pulumi.Input<string>;
+    tdLocation?: pulumi.Input<string>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface StandardTlsMigrationOverride {
+    info?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface StandardTlsMigrationOverrideArgs {
+    info?: pulumi.Input<string>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface StrictHeaderParsing {
+    locked?: boolean;
+    strictMode?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    validMode?: boolean;
+}
+
+export interface StrictHeaderParsingArgs {
+    locked?: pulumi.Input<boolean>;
+    strictMode?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+    validMode?: pulumi.Input<boolean>;
+}
+
+export interface SubCustomer {
+    accessControl?: boolean;
+    cacheKey?: boolean;
+    caching?: boolean;
+    contentCompressor?: boolean;
+    dynamicWebContent?: boolean;
+    enabled?: boolean;
+    geoLocation?: boolean;
+    ip?: boolean;
+    largeFileDelivery?: boolean;
+    liveVideoDelivery?: boolean;
+    locked?: boolean;
+    modifyPath?: boolean;
+    onDemandVideoDelivery?: boolean;
+    origin?: boolean;
+    partnerDomainSuffix?: string;
+    referrer?: boolean;
+    refreshContent?: boolean;
+    siteFailover?: boolean;
+    templateUuid?: string;
+    tokenAuthorization?: boolean;
+    uuid?: string;
+    webApplicationFirewall?: boolean;
+}
+
+export interface SubCustomerArgs {
+    accessControl?: pulumi.Input<boolean>;
+    cacheKey?: pulumi.Input<boolean>;
+    caching?: pulumi.Input<boolean>;
+    contentCompressor?: pulumi.Input<boolean>;
+    dynamicWebContent?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean>;
+    geoLocation?: pulumi.Input<boolean>;
+    ip?: pulumi.Input<boolean>;
+    largeFileDelivery?: pulumi.Input<boolean>;
+    liveVideoDelivery?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    modifyPath?: pulumi.Input<boolean>;
+    onDemandVideoDelivery?: pulumi.Input<boolean>;
+    origin?: pulumi.Input<boolean>;
+    partnerDomainSuffix?: pulumi.Input<string>;
+    referrer?: pulumi.Input<boolean>;
+    refreshContent?: pulumi.Input<boolean>;
+    siteFailover?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    tokenAuthorization?: pulumi.Input<boolean>;
+    uuid?: pulumi.Input<string>;
+    webApplicationFirewall?: pulumi.Input<boolean>;
+}
+
+export interface SureRoute {
+    allowFcmParentOverride?: boolean;
+    customMap?: string;
+    customStatKey?: string;
+    enableCustomKey?: boolean;
+    enabled?: boolean;
+    forceSslForward?: boolean;
+    locked?: boolean;
+    raceStatTtl?: string;
+    srDownloadLinkTitle?: string;
+    templateUuid?: string;
+    testObjectUrl?: string;
+    toHost?: string;
+    toHostStatus?: string;
+    type?: string;
+    uuid?: string;
+}
+
+export interface SureRouteArgs {
+    allowFcmParentOverride?: pulumi.Input<boolean>;
+    customMap?: pulumi.Input<string>;
+    customStatKey?: pulumi.Input<string>;
+    enableCustomKey?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean>;
+    forceSslForward?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    raceStatTtl?: pulumi.Input<string>;
+    srDownloadLinkTitle?: pulumi.Input<string>;
+    templateUuid?: pulumi.Input<string>;
+    testObjectUrl?: pulumi.Input<string>;
+    toHost?: pulumi.Input<string>;
+    toHostStatus?: pulumi.Input<string>;
+    type?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface TcpOptimization {
+    display?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface TcpOptimizationArgs {
+    display?: pulumi.Input<string>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface TeaLeaf {
+    enabled?: boolean;
+    ibmCustomerId?: number;
+    limitToDynamic?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface TeaLeafArgs {
+    enabled?: pulumi.Input<boolean>;
+    ibmCustomerId?: pulumi.Input<number>;
+    limitToDynamic?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface TieredDistribution {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    tieredDistributionMap?: string;
+    uuid?: string;
+}
+
+export interface TieredDistributionArgs {
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    tieredDistributionMap?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface TieredDistributionAdvanced {
+    allowall?: boolean;
+    enabled?: boolean;
+    locked?: boolean;
+    method?: string;
+    policy?: string;
+    templateUuid?: string;
+    tieredDistributionMap?: string;
+    uuid?: string;
+}
+
+export interface TieredDistributionAdvancedArgs {
+    allowall?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    method?: pulumi.Input<string>;
+    policy?: pulumi.Input<string>;
+    templateUuid?: pulumi.Input<string>;
+    tieredDistributionMap?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface TieredDistributionCustomization {
+    cloudwrapperMapMigrationTitle?: string;
+    customMapEnabled?: boolean;
+    customMapName?: string;
+    hashAlgorithm?: string;
+    location?: string;
+    locked?: boolean;
+    mapMigrationEnabled?: boolean;
+    migrationEndDate?: string;
+    migrationStartDate?: string;
+    migrationWithinCwMapsEnabled?: boolean;
+    serialEnd?: string;
+    serialStart?: string;
+    templateUuid?: string;
+    tier1Title?: string;
+    uuid?: string;
+}
+
+export interface TieredDistributionCustomizationArgs {
+    cloudwrapperMapMigrationTitle?: pulumi.Input<string>;
+    customMapEnabled?: pulumi.Input<boolean>;
+    customMapName?: pulumi.Input<string>;
+    hashAlgorithm?: pulumi.Input<string>;
+    location?: pulumi.Input<string>;
+    locked?: pulumi.Input<boolean>;
+    mapMigrationEnabled?: pulumi.Input<boolean>;
+    migrationEndDate?: pulumi.Input<string>;
+    migrationStartDate?: pulumi.Input<string>;
+    migrationWithinCwMapsEnabled?: pulumi.Input<boolean>;
+    serialEnd?: pulumi.Input<string>;
+    serialStart?: pulumi.Input<string>;
+    templateUuid?: pulumi.Input<string>;
+    tier1Title?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface Timeout {
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    value?: string;
+}
+
+export interface TimeoutArgs {
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface UidConfiguration {
+    enabled?: boolean;
+    extractLocation?: string;
+    headerName?: string;
+    legalText?: string;
+    locked?: boolean;
+    queryParameterName?: string;
+    templateUuid?: string;
+    uuid?: string;
+    variableName?: string;
+}
+
+export interface UidConfigurationArgs {
+    enabled?: pulumi.Input<boolean>;
+    extractLocation?: pulumi.Input<string>;
+    headerName?: pulumi.Input<string>;
+    legalText?: pulumi.Input<string>;
+    locked?: pulumi.Input<boolean>;
+    queryParameterName?: pulumi.Input<string>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+    variableName?: pulumi.Input<string>;
+}
+
+export interface ValidateEntityTag {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface ValidateEntityTagArgs {
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface VerifyJsonWebToken {
+    enableEs256?: boolean;
+    enableRs256?: boolean;
+    extractLocation?: string;
+    headerName?: string;
+    jwt?: string;
+    locked?: boolean;
+    queryParameterName?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface VerifyJsonWebTokenArgs {
+    enableEs256?: pulumi.Input<boolean>;
+    enableRs256?: pulumi.Input<boolean>;
+    extractLocation?: pulumi.Input<string>;
+    headerName?: pulumi.Input<string>;
+    jwt?: pulumi.Input<string>;
+    locked?: pulumi.Input<boolean>;
+    queryParameterName?: pulumi.Input<string>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface VerifyJsonWebTokenForDcp {
+    authorizations?: string;
+    clientId?: string;
+    customHeader?: boolean;
+    enableEs256?: boolean;
+    enableRs256?: boolean;
+    extractAuthorizations?: boolean;
+    extractClientId?: boolean;
+    extractLocation?: string;
+    extractUserName?: boolean;
+    headerName?: string;
+    jwt?: string;
+    locked?: boolean;
+    primaryLocation?: string;
+    queryParameterName?: string;
+    templateUuid?: string;
+    userName?: string;
+    uuid?: string;
+}
+
+export interface VerifyJsonWebTokenForDcpArgs {
+    authorizations?: pulumi.Input<string>;
+    clientId?: pulumi.Input<string>;
+    customHeader?: pulumi.Input<boolean>;
+    enableEs256?: pulumi.Input<boolean>;
+    enableRs256?: pulumi.Input<boolean>;
+    extractAuthorizations?: pulumi.Input<boolean>;
+    extractClientId?: pulumi.Input<boolean>;
+    extractLocation?: pulumi.Input<string>;
+    extractUserName?: pulumi.Input<boolean>;
+    headerName?: pulumi.Input<string>;
+    jwt?: pulumi.Input<string>;
+    locked?: pulumi.Input<boolean>;
+    primaryLocation?: pulumi.Input<string>;
+    queryParameterName?: pulumi.Input<string>;
+    templateUuid?: pulumi.Input<string>;
+    userName?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface VerifyTokenAuthorization {
+    algorithm?: string;
+    escapeHmacInputs?: boolean;
+    failureResponse?: boolean;
+    ignoreQueryString?: boolean;
+    key?: string;
+    location?: string;
+    locationId?: string;
+    locked?: boolean;
+    salt?: string;
+    templateUuid?: string;
+    transitionKey?: string;
+    useAdvanced?: boolean;
+    uuid?: string;
+}
+
+export interface VerifyTokenAuthorizationArgs {
+    algorithm?: pulumi.Input<string>;
+    escapeHmacInputs?: pulumi.Input<boolean>;
+    failureResponse?: pulumi.Input<boolean>;
+    ignoreQueryString?: pulumi.Input<boolean>;
+    key?: pulumi.Input<string>;
+    location?: pulumi.Input<string>;
+    locationId?: pulumi.Input<string>;
+    locked?: pulumi.Input<boolean>;
+    salt?: pulumi.Input<string>;
+    templateUuid?: pulumi.Input<string>;
+    transitionKey?: pulumi.Input<string>;
+    useAdvanced?: pulumi.Input<boolean>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface VirtualWaitingRoom {
+    accessTitle?: string;
+    cloudletSharedPolicy?: number;
+    customCookieDomain?: string;
+    domainConfig?: string;
+    locked?: boolean;
+    sessionAutoProlong?: boolean;
+    sessionDuration?: number;
+    templateUuid?: string;
+    uuid?: string;
+    waitingRoomAssetsPaths?: string[];
+    waitingRoomPath?: string;
+    waitingRoomTitle?: string;
+}
+
+export interface VirtualWaitingRoomArgs {
+    accessTitle?: pulumi.Input<string>;
+    cloudletSharedPolicy?: pulumi.Input<number>;
+    customCookieDomain?: pulumi.Input<string>;
+    domainConfig?: pulumi.Input<string>;
+    locked?: pulumi.Input<boolean>;
+    sessionAutoProlong?: pulumi.Input<boolean>;
+    sessionDuration?: pulumi.Input<number>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+    waitingRoomAssetsPaths?: pulumi.Input<pulumi.Input<string>[]>;
+    waitingRoomPath?: pulumi.Input<string>;
+    waitingRoomTitle?: pulumi.Input<string>;
+}
+
+export interface VirtualWaitingRoomWithEdgeWorkers {
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface VirtualWaitingRoomWithEdgeWorkersArgs {
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface VisitorPrioritization {
+    allowedUserCookieAdvanced?: boolean;
+    allowedUserCookieAutomaticSalt?: boolean;
+    allowedUserCookieDomain?: string;
+    allowedUserCookieDomainType?: string;
+    allowedUserCookieDuration?: number;
+    allowedUserCookieEnabled?: boolean;
+    allowedUserCookieHttpOnly?: boolean;
+    allowedUserCookieLabel?: string;
+    allowedUserCookieManagementTitle?: string;
+    allowedUserCookieRefresh?: boolean;
+    allowedUserCookieSalt?: string;
+    cloudletPolicy?: inputs.VisitorPrioritizationCloudletPolicy;
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    userIdentificationByCookie?: boolean;
+    userIdentificationByHeaders?: boolean;
+    userIdentificationByIp?: boolean;
+    userIdentificationByParams?: boolean;
+    userIdentificationKeyCookie?: string;
+    userIdentificationKeyHeaders?: string[];
+    userIdentificationKeyParams?: string[];
+    userIdentificationTitle?: string;
+    uuid?: string;
+    waitingRoomCacheTtl?: number;
+    waitingRoomCookieAdvanced?: boolean;
+    waitingRoomCookieAutomaticSalt?: boolean;
+    waitingRoomCookieDomain?: string;
+    waitingRoomCookieDomainType?: string;
+    waitingRoomCookieDuration?: number;
+    waitingRoomCookieEnabled?: boolean;
+    waitingRoomCookieHttpOnly?: boolean;
+    waitingRoomCookieLabel?: string;
+    waitingRoomCookieManagementTitle?: string;
+    waitingRoomCookieSalt?: string;
+    waitingRoomCookieShareLabel?: boolean;
+    waitingRoomCpCode?: inputs.VisitorPrioritizationWaitingRoomCpCode;
+    waitingRoomDirectory?: string;
+    waitingRoomManagementTitle?: string;
+    waitingRoomNetStorage?: inputs.VisitorPrioritizationWaitingRoomNetStorage;
+    waitingRoomStatusCode?: number;
+    waitingRoomUseCpCode?: boolean;
+}
+
+export interface VisitorPrioritizationArgs {
+    allowedUserCookieAdvanced?: pulumi.Input<boolean>;
+    allowedUserCookieAutomaticSalt?: pulumi.Input<boolean>;
+    allowedUserCookieDomain?: pulumi.Input<string>;
+    allowedUserCookieDomainType?: pulumi.Input<string>;
+    allowedUserCookieDuration?: pulumi.Input<number>;
+    allowedUserCookieEnabled?: pulumi.Input<boolean>;
+    allowedUserCookieHttpOnly?: pulumi.Input<boolean>;
+    allowedUserCookieLabel?: pulumi.Input<string>;
+    allowedUserCookieManagementTitle?: pulumi.Input<string>;
+    allowedUserCookieRefresh?: pulumi.Input<boolean>;
+    allowedUserCookieSalt?: pulumi.Input<string>;
+    cloudletPolicy?: pulumi.Input<inputs.VisitorPrioritizationCloudletPolicyArgs>;
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    userIdentificationByCookie?: pulumi.Input<boolean>;
+    userIdentificationByHeaders?: pulumi.Input<boolean>;
+    userIdentificationByIp?: pulumi.Input<boolean>;
+    userIdentificationByParams?: pulumi.Input<boolean>;
+    userIdentificationKeyCookie?: pulumi.Input<string>;
+    userIdentificationKeyHeaders?: pulumi.Input<pulumi.Input<string>[]>;
+    userIdentificationKeyParams?: pulumi.Input<pulumi.Input<string>[]>;
+    userIdentificationTitle?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+    waitingRoomCacheTtl?: pulumi.Input<number>;
+    waitingRoomCookieAdvanced?: pulumi.Input<boolean>;
+    waitingRoomCookieAutomaticSalt?: pulumi.Input<boolean>;
+    waitingRoomCookieDomain?: pulumi.Input<string>;
+    waitingRoomCookieDomainType?: pulumi.Input<string>;
+    waitingRoomCookieDuration?: pulumi.Input<number>;
+    waitingRoomCookieEnabled?: pulumi.Input<boolean>;
+    waitingRoomCookieHttpOnly?: pulumi.Input<boolean>;
+    waitingRoomCookieLabel?: pulumi.Input<string>;
+    waitingRoomCookieManagementTitle?: pulumi.Input<string>;
+    waitingRoomCookieSalt?: pulumi.Input<string>;
+    waitingRoomCookieShareLabel?: pulumi.Input<boolean>;
+    waitingRoomCpCode?: pulumi.Input<inputs.VisitorPrioritizationWaitingRoomCpCodeArgs>;
+    waitingRoomDirectory?: pulumi.Input<string>;
+    waitingRoomManagementTitle?: pulumi.Input<string>;
+    waitingRoomNetStorage?: pulumi.Input<inputs.VisitorPrioritizationWaitingRoomNetStorageArgs>;
+    waitingRoomStatusCode?: pulumi.Input<number>;
+    waitingRoomUseCpCode?: pulumi.Input<boolean>;
+}
+
+export interface VisitorPrioritizationCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface VisitorPrioritizationCloudletPolicyArgs {
+    id?: pulumi.Input<number>;
+    name?: pulumi.Input<string>;
+}
+
+export interface VisitorPrioritizationFifo {
+    accessTitle?: string;
+    cloudletSharedPolicy?: number;
+    customCookieDomain?: string;
+    domainConfig?: string;
+    locked?: boolean;
+    sessionAutoProlong?: boolean;
+    sessionDuration?: number;
+    templateUuid?: string;
+    uuid?: string;
+    waitingRoomAssetsPaths?: string[];
+    waitingRoomPath?: string;
+    waitingRoomTitle?: string;
+}
+
+export interface VisitorPrioritizationFifoArgs {
+    accessTitle?: pulumi.Input<string>;
+    cloudletSharedPolicy?: pulumi.Input<number>;
+    customCookieDomain?: pulumi.Input<string>;
+    domainConfig?: pulumi.Input<string>;
+    locked?: pulumi.Input<boolean>;
+    sessionAutoProlong?: pulumi.Input<boolean>;
+    sessionDuration?: pulumi.Input<number>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+    waitingRoomAssetsPaths?: pulumi.Input<pulumi.Input<string>[]>;
+    waitingRoomPath?: pulumi.Input<string>;
+    waitingRoomTitle?: pulumi.Input<string>;
+}
+
+export interface VisitorPrioritizationFifoStandalone {
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface VisitorPrioritizationFifoStandaloneArgs {
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface VisitorPrioritizationWaitingRoomCpCode {
+    cpCodeLimits?: inputs.VisitorPrioritizationWaitingRoomCpCodeCpCodeLimits;
+    createdDate?: number;
+    description?: string;
+    id?: number;
+    name?: string;
+    products?: string[];
+}
+
+export interface VisitorPrioritizationWaitingRoomCpCodeArgs {
+    cpCodeLimits?: pulumi.Input<inputs.VisitorPrioritizationWaitingRoomCpCodeCpCodeLimitsArgs>;
+    createdDate?: pulumi.Input<number>;
+    description?: pulumi.Input<string>;
+    id?: pulumi.Input<number>;
+    name?: pulumi.Input<string>;
+    products?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface VisitorPrioritizationWaitingRoomCpCodeCpCodeLimits {
+    currentCapacity?: number;
+    limit?: number;
+    limitType?: string;
+}
+
+export interface VisitorPrioritizationWaitingRoomCpCodeCpCodeLimitsArgs {
+    currentCapacity?: pulumi.Input<number>;
+    limit?: pulumi.Input<number>;
+    limitType?: pulumi.Input<string>;
+}
+
+export interface VisitorPrioritizationWaitingRoomNetStorage {
+    cpCode?: number;
+    downloadDomainName?: string;
+    g2oToken?: string;
+}
+
+export interface VisitorPrioritizationWaitingRoomNetStorageArgs {
+    cpCode?: pulumi.Input<number>;
+    downloadDomainName?: pulumi.Input<string>;
+    g2oToken?: pulumi.Input<string>;
+}
+
+export interface Watermarking {
+    abVariantLocation?: string;
+    decryptionPassword1?: string;
+    decryptionPassword2?: string;
+    decryptionPasswordId1?: string;
+    decryptionPasswordId2?: string;
+    enable?: boolean;
+    locked?: boolean;
+    miscellaneousSettingsTitle?: string;
+    patternDecryptionEnable?: boolean;
+    patternEncryptionTitle?: string;
+    signatureVerificationEnable?: boolean;
+    templateUuid?: string;
+    tokenSigningTitle?: string;
+    useOriginalAsA?: boolean;
+    uuid?: string;
+    verificationKeyId1?: string;
+    verificationKeyId2?: string;
+    verificationPublicKey1?: string;
+    verificationPublicKey2?: string;
+}
+
+export interface WatermarkingArgs {
+    abVariantLocation?: pulumi.Input<string>;
+    decryptionPassword1?: pulumi.Input<string>;
+    decryptionPassword2?: pulumi.Input<string>;
+    decryptionPasswordId1?: pulumi.Input<string>;
+    decryptionPasswordId2?: pulumi.Input<string>;
+    enable?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    miscellaneousSettingsTitle?: pulumi.Input<string>;
+    patternDecryptionEnable?: pulumi.Input<boolean>;
+    patternEncryptionTitle?: pulumi.Input<string>;
+    signatureVerificationEnable?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    tokenSigningTitle?: pulumi.Input<string>;
+    useOriginalAsA?: pulumi.Input<boolean>;
+    uuid?: pulumi.Input<string>;
+    verificationKeyId1?: pulumi.Input<string>;
+    verificationKeyId2?: pulumi.Input<string>;
+    verificationPublicKey1?: pulumi.Input<string>;
+    verificationPublicKey2?: pulumi.Input<string>;
+}
+
+export interface WebApplicationFirewall {
+    firewallConfiguration?: inputs.WebApplicationFirewallFirewallConfiguration;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface WebApplicationFirewallArgs {
+    firewallConfiguration?: pulumi.Input<inputs.WebApplicationFirewallFirewallConfigurationArgs>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface WebApplicationFirewallFirewallConfiguration {
+    configId?: number;
+    fileName?: string;
+    productionStatus?: string;
+    productionVersion?: number;
+    stagingStatus?: string;
+    stagingVersion?: number;
+}
+
+export interface WebApplicationFirewallFirewallConfigurationArgs {
+    configId?: pulumi.Input<number>;
+    fileName?: pulumi.Input<string>;
+    productionStatus?: pulumi.Input<string>;
+    productionVersion?: pulumi.Input<number>;
+    stagingStatus?: pulumi.Input<string>;
+    stagingVersion?: pulumi.Input<number>;
+}
+
+export interface WebSockets {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface WebSocketsArgs {
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
+}
+
+export interface Webdav {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface WebdavArgs {
+    enabled?: pulumi.Input<boolean>;
+    locked?: pulumi.Input<boolean>;
+    templateUuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
 }
 export namespace config {
 }

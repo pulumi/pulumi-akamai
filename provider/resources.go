@@ -33,7 +33,7 @@ import (
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
 	tks "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge/tokens"
 	shimv2 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v2"
-	// "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/walk"
+	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/walk"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/resource"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/tokens"
 )
@@ -352,25 +352,25 @@ func Provider() tfbridge.ProviderInfo {
 
 	prov.SetAutonaming(255, "-")
 
-	// tfbridge.MustTraverseSchemas(&prov, "rules", func(ctx tfbridge.VisitInfo, path tfbridge.SchemaPath) (tfbridge.VisitResult, error) {
-	// 	root, ok := ctx.Root.(tfbridge.VisitDataSourceRoot)
-	// 	if !ok || root.TfToken != "akamai_property_rules_builder" {
-	// 		return tfbridge.VisitResult{}, nil
-	// 	}
+	tfbridge.MustTraverseSchemas(&prov, "rules", func(ctx tfbridge.VisitInfo, path tfbridge.SchemaPath) (tfbridge.VisitResult, error) {
+		root, ok := ctx.Root.(tfbridge.VisitDataSourceRoot)
+		if !ok || root.TfToken != "akamai_property_rules_builder" {
+			return tfbridge.VisitResult{}, nil
+		}
 
-	// 	last, _ := path[len(path)-1].(walk.GetAttrStep)
-	// 	switch last.Name {
-	// 	case "media_origin_failover":
-	// 		info := ctx.SchemaInfo()
-	// 		if info.Elem == nil {
-	// 			info.Elem = &tfbridge.SchemaInfo{}
-	// 		}
-	// 		info.Elem.Type = "akamai:index/rulesV20230920:MediaOriginFailover"
-	// 	default:
-	// 		return tfbridge.VisitResult{}, nil
-	// 	}
-	// 	return tfbridge.VisitResult{HasEffect: true}, nil
-	// })
+		last, _ := path[len(path)-1].(walk.GetAttrStep)
+		switch last.Name {
+		case "media_origin_failover":
+			info := ctx.SchemaInfo()
+			if info.Elem == nil {
+				info.Elem = &tfbridge.SchemaInfo{}
+			}
+			info.Elem.Type = "akamai:index/rulesV20230920:MediaOriginFailover"
+		default:
+			return tfbridge.VisitResult{}, nil
+		}
+		return tfbridge.VisitResult{HasEffect: true}, nil
+	})
 
 	return prov
 }

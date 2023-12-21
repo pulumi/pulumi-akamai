@@ -412,262 +412,262 @@ namespace Pulumi.Akamai.Inputs
         public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorMediaFileRetrievalOptimizationInputArgs>? MediaFileRetrievalOptimization { get; set; }
 
         [Input("mediaOriginFailover")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorMediaOriginFailoverInputArgs>? MediaOriginFailover { get; set; }
+        public Input<Inputs.MediaOriginFailoverInputArgs>? MediaOriginFailover { get; set; }
 
         [Input("metadataCaching")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorMetadataCachingInputArgs>? MetadataCaching { get; set; }
+        public Input<Inputs.MetadataCachingInputArgs>? MetadataCaching { get; set; }
 
         [Input("mobileSdkPerformance")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorMobileSdkPerformanceInputArgs>? MobileSdkPerformance { get; set; }
+        public Input<Inputs.MobileSdkPerformanceInputArgs>? MobileSdkPerformance { get; set; }
 
         [Input("modifyIncomingRequestHeader")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorModifyIncomingRequestHeaderInputArgs>? ModifyIncomingRequestHeader { get; set; }
+        public Input<Inputs.ModifyIncomingRequestHeaderInputArgs>? ModifyIncomingRequestHeader { get; set; }
 
         [Input("modifyIncomingResponseHeader")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorModifyIncomingResponseHeaderInputArgs>? ModifyIncomingResponseHeader { get; set; }
+        public Input<Inputs.ModifyIncomingResponseHeaderInputArgs>? ModifyIncomingResponseHeader { get; set; }
 
         [Input("modifyOutgoingRequestHeader")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorModifyOutgoingRequestHeaderInputArgs>? ModifyOutgoingRequestHeader { get; set; }
+        public Input<Inputs.ModifyOutgoingRequestHeaderInputArgs>? ModifyOutgoingRequestHeader { get; set; }
 
         [Input("modifyOutgoingResponseHeader")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorModifyOutgoingResponseHeaderInputArgs>? ModifyOutgoingResponseHeader { get; set; }
+        public Input<Inputs.ModifyOutgoingResponseHeaderInputArgs>? ModifyOutgoingResponseHeader { get; set; }
 
         [Input("modifyViaHeader")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorModifyViaHeaderInputArgs>? ModifyViaHeader { get; set; }
+        public Input<Inputs.ModifyViaHeaderInputArgs>? ModifyViaHeader { get; set; }
 
         [Input("origin")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginInputArgs>? Origin { get; set; }
+        public Input<Inputs.OriginInputArgs>? Origin { get; set; }
 
         [Input("originCharacteristics")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristicsInputArgs>? OriginCharacteristics { get; set; }
+        public Input<Inputs.OriginCharacteristicsInputArgs>? OriginCharacteristics { get; set; }
 
         [Input("originCharacteristicsWsd")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristicsWsdInputArgs>? OriginCharacteristicsWsd { get; set; }
+        public Input<Inputs.OriginCharacteristicsWsdInputArgs>? OriginCharacteristicsWsd { get; set; }
 
         [Input("originFailureRecoveryMethod")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginFailureRecoveryMethodInputArgs>? OriginFailureRecoveryMethod { get; set; }
+        public Input<Inputs.OriginFailureRecoveryMethodInputArgs>? OriginFailureRecoveryMethod { get; set; }
 
         [Input("originFailureRecoveryPolicy")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginFailureRecoveryPolicyInputArgs>? OriginFailureRecoveryPolicy { get; set; }
+        public Input<Inputs.OriginFailureRecoveryPolicyInputArgs>? OriginFailureRecoveryPolicy { get; set; }
 
         [Input("originIpAcl")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginIpAclInputArgs>? OriginIpAcl { get; set; }
+        public Input<Inputs.OriginIpAclInputArgs>? OriginIpAcl { get; set; }
 
         [Input("persistentClientConnection")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPersistentClientConnectionInputArgs>? PersistentClientConnection { get; set; }
+        public Input<Inputs.PersistentClientConnectionInputArgs>? PersistentClientConnection { get; set; }
 
         [Input("persistentConnection")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPersistentConnectionInputArgs>? PersistentConnection { get; set; }
+        public Input<Inputs.PersistentConnectionInputArgs>? PersistentConnection { get; set; }
 
         [Input("personallyIdentifiableInformation")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPersonallyIdentifiableInformationInputArgs>? PersonallyIdentifiableInformation { get; set; }
+        public Input<Inputs.PersonallyIdentifiableInformationInputArgs>? PersonallyIdentifiableInformation { get; set; }
 
         [Input("phasedRelease")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPhasedReleaseInputArgs>? PhasedRelease { get; set; }
+        public Input<Inputs.PhasedReleaseInputArgs>? PhasedRelease { get; set; }
 
         [Input("preconnect")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPreconnectInputArgs>? Preconnect { get; set; }
+        public Input<Inputs.PreconnectInputArgs>? Preconnect { get; set; }
 
         [Input("predictiveContentDelivery")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPredictiveContentDeliveryInputArgs>? PredictiveContentDelivery { get; set; }
+        public Input<Inputs.PredictiveContentDeliveryInputArgs>? PredictiveContentDelivery { get; set; }
 
         [Input("predictivePrefetching")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPredictivePrefetchingInputArgs>? PredictivePrefetching { get; set; }
+        public Input<Inputs.PredictivePrefetchingInputArgs>? PredictivePrefetching { get; set; }
 
         [Input("prefetch")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPrefetchInputArgs>? Prefetch { get; set; }
+        public Input<Inputs.PrefetchInputArgs>? Prefetch { get; set; }
 
         [Input("prefetchable")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPrefetchableInputArgs>? Prefetchable { get; set; }
+        public Input<Inputs.PrefetchableInputArgs>? Prefetchable { get; set; }
 
         [Input("prefreshCache")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorPrefreshCacheInputArgs>? PrefreshCache { get; set; }
+        public Input<Inputs.PrefreshCacheInputArgs>? PrefreshCache { get; set; }
 
         [Input("quality")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorQualityInputArgs>? Quality { get; set; }
+        public Input<Inputs.QualityInputArgs>? Quality { get; set; }
 
         [Input("quicBeta")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorQuicBetaInputArgs>? QuicBeta { get; set; }
+        public Input<Inputs.QuicBetaInputArgs>? QuicBeta { get; set; }
 
         [Input("randomSeek")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRandomSeekInputArgs>? RandomSeek { get; set; }
+        public Input<Inputs.RandomSeekInputArgs>? RandomSeek { get; set; }
 
         [Input("rapid")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRapidInputArgs>? Rapid { get; set; }
+        public Input<Inputs.RapidInputArgs>? Rapid { get; set; }
 
         [Input("readTimeout")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorReadTimeoutInputArgs>? ReadTimeout { get; set; }
+        public Input<Inputs.ReadTimeoutInputArgs>? ReadTimeout { get; set; }
 
         [Input("realTimeReporting")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRealTimeReportingInputArgs>? RealTimeReporting { get; set; }
+        public Input<Inputs.RealTimeReportingInputArgs>? RealTimeReporting { get; set; }
 
         [Input("realUserMonitoring")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRealUserMonitoringInputArgs>? RealUserMonitoring { get; set; }
+        public Input<Inputs.RealUserMonitoringInputArgs>? RealUserMonitoring { get; set; }
 
         [Input("redirect")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRedirectInputArgs>? Redirect { get; set; }
+        public Input<Inputs.RedirectInputArgs>? Redirect { get; set; }
 
         [Input("redirectplus")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRedirectplusInputArgs>? Redirectplus { get; set; }
+        public Input<Inputs.RedirectplusInputArgs>? Redirectplus { get; set; }
 
         [Input("refererChecking")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRefererCheckingInputArgs>? RefererChecking { get; set; }
+        public Input<Inputs.RefererCheckingInputArgs>? RefererChecking { get; set; }
 
         [Input("removeQueryParameter")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRemoveQueryParameterInputArgs>? RemoveQueryParameter { get; set; }
+        public Input<Inputs.RemoveQueryParameterInputArgs>? RemoveQueryParameter { get; set; }
 
         [Input("removeVary")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRemoveVaryInputArgs>? RemoveVary { get; set; }
+        public Input<Inputs.RemoveVaryInputArgs>? RemoveVary { get; set; }
 
         [Input("report")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorReportInputArgs>? Report { get; set; }
+        public Input<Inputs.ReportInputArgs>? Report { get; set; }
 
         [Input("requestControl")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlInputArgs>? RequestControl { get; set; }
+        public Input<Inputs.RequestControlInputArgs>? RequestControl { get; set; }
 
         [Input("requestTypeMarker")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRequestTypeMarkerInputArgs>? RequestTypeMarker { get; set; }
+        public Input<Inputs.RequestTypeMarkerInputArgs>? RequestTypeMarker { get; set; }
 
         [Input("resourceOptimizer")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorResourceOptimizerInputArgs>? ResourceOptimizer { get; set; }
+        public Input<Inputs.ResourceOptimizerInputArgs>? ResourceOptimizer { get; set; }
 
         [Input("resourceOptimizerExtendedCompatibility")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorResourceOptimizerExtendedCompatibilityInputArgs>? ResourceOptimizerExtendedCompatibility { get; set; }
+        public Input<Inputs.ResourceOptimizerExtendedCompatibilityInputArgs>? ResourceOptimizerExtendedCompatibility { get; set; }
 
         [Input("responseCode")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorResponseCodeInputArgs>? ResponseCode { get; set; }
+        public Input<Inputs.ResponseCodeInputArgs>? ResponseCode { get; set; }
 
         [Input("responseCookie")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorResponseCookieInputArgs>? ResponseCookie { get; set; }
+        public Input<Inputs.ResponseCookieInputArgs>? ResponseCookie { get; set; }
 
         [Input("restrictObjectCaching")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRestrictObjectCachingInputArgs>? RestrictObjectCaching { get; set; }
+        public Input<Inputs.RestrictObjectCachingInputArgs>? RestrictObjectCaching { get; set; }
 
         [Input("returnCacheStatus")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorReturnCacheStatusInputArgs>? ReturnCacheStatus { get; set; }
+        public Input<Inputs.ReturnCacheStatusInputArgs>? ReturnCacheStatus { get; set; }
 
         [Input("rewriteUrl")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRewriteUrlInputArgs>? RewriteUrl { get; set; }
+        public Input<Inputs.RewriteUrlInputArgs>? RewriteUrl { get; set; }
 
         [Input("rumCustom")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRumCustomInputArgs>? RumCustom { get; set; }
+        public Input<Inputs.RumCustomInputArgs>? RumCustom { get; set; }
 
         [Input("saasDefinitions")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSaasDefinitionsInputArgs>? SaasDefinitions { get; set; }
+        public Input<Inputs.SaasDefinitionsInputArgs>? SaasDefinitions { get; set; }
 
         [Input("salesForceCommerceCloudClient")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudClientInputArgs>? SalesForceCommerceCloudClient { get; set; }
+        public Input<Inputs.SalesForceCommerceCloudClientInputArgs>? SalesForceCommerceCloudClient { get; set; }
 
         [Input("salesForceCommerceCloudProvider")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudProviderInputArgs>? SalesForceCommerceCloudProvider { get; set; }
+        public Input<Inputs.SalesForceCommerceCloudProviderInputArgs>? SalesForceCommerceCloudProvider { get; set; }
 
         [Input("salesForceCommerceCloudProviderHostHeader")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudProviderHostHeaderInputArgs>? SalesForceCommerceCloudProviderHostHeader { get; set; }
+        public Input<Inputs.SalesForceCommerceCloudProviderHostHeaderInputArgs>? SalesForceCommerceCloudProviderHostHeader { get; set; }
 
         [Input("savePostDcaProcessing")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSavePostDcaProcessingInputArgs>? SavePostDcaProcessing { get; set; }
+        public Input<Inputs.SavePostDcaProcessingInputArgs>? SavePostDcaProcessing { get; set; }
 
         [Input("scheduleInvalidation")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorScheduleInvalidationInputArgs>? ScheduleInvalidation { get; set; }
+        public Input<Inputs.ScheduleInvalidationInputArgs>? ScheduleInvalidation { get; set; }
 
         [Input("scriptManagement")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorScriptManagementInputArgs>? ScriptManagement { get; set; }
+        public Input<Inputs.ScriptManagementInputArgs>? ScriptManagement { get; set; }
 
         [Input("segmentedContentProtection")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedContentProtectionInputArgs>? SegmentedContentProtection { get; set; }
+        public Input<Inputs.SegmentedContentProtectionInputArgs>? SegmentedContentProtection { get; set; }
 
         [Input("segmentedMediaOptimization")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaOptimizationInputArgs>? SegmentedMediaOptimization { get; set; }
+        public Input<Inputs.SegmentedMediaOptimizationInputArgs>? SegmentedMediaOptimization { get; set; }
 
         [Input("segmentedMediaStreamingPrefetch")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaStreamingPrefetchInputArgs>? SegmentedMediaStreamingPrefetch { get; set; }
+        public Input<Inputs.SegmentedMediaStreamingPrefetchInputArgs>? SegmentedMediaStreamingPrefetch { get; set; }
 
         [Input("setVariable")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSetVariableInputArgs>? SetVariable { get; set; }
+        public Input<Inputs.SetVariableInputArgs>? SetVariable { get; set; }
 
         [Input("shutr")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorShutrInputArgs>? Shutr { get; set; }
+        public Input<Inputs.ShutrInputArgs>? Shutr { get; set; }
 
         [Input("simulateErrorCode")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSimulateErrorCodeInputArgs>? SimulateErrorCode { get; set; }
+        public Input<Inputs.SimulateErrorCodeInputArgs>? SimulateErrorCode { get; set; }
 
         [Input("siteShield")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldInputArgs>? SiteShield { get; set; }
+        public Input<Inputs.SiteShieldInputArgs>? SiteShield { get; set; }
 
         [Input("standardTlsMigration")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorStandardTlsMigrationInputArgs>? StandardTlsMigration { get; set; }
+        public Input<Inputs.StandardTlsMigrationInputArgs>? StandardTlsMigration { get; set; }
 
         [Input("standardTlsMigrationOverride")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorStandardTlsMigrationOverrideInputArgs>? StandardTlsMigrationOverride { get; set; }
+        public Input<Inputs.StandardTlsMigrationOverrideInputArgs>? StandardTlsMigrationOverride { get; set; }
 
         [Input("strictHeaderParsing")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorStrictHeaderParsingInputArgs>? StrictHeaderParsing { get; set; }
+        public Input<Inputs.StrictHeaderParsingInputArgs>? StrictHeaderParsing { get; set; }
 
         [Input("subCustomer")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSubCustomerInputArgs>? SubCustomer { get; set; }
+        public Input<Inputs.SubCustomerInputArgs>? SubCustomer { get; set; }
 
         [Input("sureRoute")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorSureRouteInputArgs>? SureRoute { get; set; }
+        public Input<Inputs.SureRouteInputArgs>? SureRoute { get; set; }
 
         [Input("tcpOptimization")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorTcpOptimizationInputArgs>? TcpOptimization { get; set; }
+        public Input<Inputs.TcpOptimizationInputArgs>? TcpOptimization { get; set; }
 
         [Input("teaLeaf")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorTeaLeafInputArgs>? TeaLeaf { get; set; }
+        public Input<Inputs.TeaLeafInputArgs>? TeaLeaf { get; set; }
 
         [Input("tieredDistribution")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionInputArgs>? TieredDistribution { get; set; }
+        public Input<Inputs.TieredDistributionInputArgs>? TieredDistribution { get; set; }
 
         [Input("tieredDistributionAdvanced")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionAdvancedInputArgs>? TieredDistributionAdvanced { get; set; }
+        public Input<Inputs.TieredDistributionAdvancedInputArgs>? TieredDistributionAdvanced { get; set; }
 
         [Input("tieredDistributionCustomization")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionCustomizationInputArgs>? TieredDistributionCustomization { get; set; }
+        public Input<Inputs.TieredDistributionCustomizationInputArgs>? TieredDistributionCustomization { get; set; }
 
         [Input("timeout")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorTimeoutInputArgs>? Timeout { get; set; }
+        public Input<Inputs.TimeoutInputArgs>? Timeout { get; set; }
 
         [Input("uidConfiguration")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorUidConfigurationInputArgs>? UidConfiguration { get; set; }
+        public Input<Inputs.UidConfigurationInputArgs>? UidConfiguration { get; set; }
 
         [Input("validateEntityTag")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorValidateEntityTagInputArgs>? ValidateEntityTag { get; set; }
+        public Input<Inputs.ValidateEntityTagInputArgs>? ValidateEntityTag { get; set; }
 
         [Input("verifyJsonWebToken")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVerifyJsonWebTokenInputArgs>? VerifyJsonWebToken { get; set; }
+        public Input<Inputs.VerifyJsonWebTokenInputArgs>? VerifyJsonWebToken { get; set; }
 
         [Input("verifyJsonWebTokenForDcp")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVerifyJsonWebTokenForDcpInputArgs>? VerifyJsonWebTokenForDcp { get; set; }
+        public Input<Inputs.VerifyJsonWebTokenForDcpInputArgs>? VerifyJsonWebTokenForDcp { get; set; }
 
         [Input("verifyTokenAuthorization")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVerifyTokenAuthorizationInputArgs>? VerifyTokenAuthorization { get; set; }
+        public Input<Inputs.VerifyTokenAuthorizationInputArgs>? VerifyTokenAuthorization { get; set; }
 
         [Input("virtualWaitingRoom")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVirtualWaitingRoomInputArgs>? VirtualWaitingRoom { get; set; }
+        public Input<Inputs.VirtualWaitingRoomInputArgs>? VirtualWaitingRoom { get; set; }
 
         [Input("virtualWaitingRoomWithEdgeWorkers")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVirtualWaitingRoomWithEdgeWorkersInputArgs>? VirtualWaitingRoomWithEdgeWorkers { get; set; }
+        public Input<Inputs.VirtualWaitingRoomWithEdgeWorkersInputArgs>? VirtualWaitingRoomWithEdgeWorkers { get; set; }
 
         [Input("visitorPrioritization")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationInputArgs>? VisitorPrioritization { get; set; }
+        public Input<Inputs.VisitorPrioritizationInputArgs>? VisitorPrioritization { get; set; }
 
         [Input("visitorPrioritizationFifo")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationFifoInputArgs>? VisitorPrioritizationFifo { get; set; }
+        public Input<Inputs.VisitorPrioritizationFifoInputArgs>? VisitorPrioritizationFifo { get; set; }
 
         [Input("visitorPrioritizationFifoStandalone")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationFifoStandaloneInputArgs>? VisitorPrioritizationFifoStandalone { get; set; }
+        public Input<Inputs.VisitorPrioritizationFifoStandaloneInputArgs>? VisitorPrioritizationFifoStandalone { get; set; }
 
         [Input("watermarking")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorWatermarkingInputArgs>? Watermarking { get; set; }
+        public Input<Inputs.WatermarkingInputArgs>? Watermarking { get; set; }
 
         [Input("webApplicationFirewall")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorWebApplicationFirewallInputArgs>? WebApplicationFirewall { get; set; }
+        public Input<Inputs.WebApplicationFirewallInputArgs>? WebApplicationFirewall { get; set; }
 
         [Input("webSockets")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorWebSocketsInputArgs>? WebSockets { get; set; }
+        public Input<Inputs.WebSocketsInputArgs>? WebSockets { get; set; }
 
         [Input("webdav")]
-        public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorWebdavInputArgs>? Webdav { get; set; }
+        public Input<Inputs.WebdavInputArgs>? Webdav { get; set; }
 
         public GetPropertyRulesBuilderRulesV20230105BehaviorInputArgs()
         {

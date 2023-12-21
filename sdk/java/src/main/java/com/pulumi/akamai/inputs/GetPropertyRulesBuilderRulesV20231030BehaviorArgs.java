@@ -138,93 +138,93 @@ import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorMed
 import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorMediaAccelerationQuicOptoutArgs;
 import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorMediaClientArgs;
 import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorMediaFileRetrievalOptimizationArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorMediaOriginFailoverArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorMetadataCachingArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorMobileSdkPerformanceArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorModifyIncomingRequestHeaderArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorModifyIncomingResponseHeaderArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorModifyOutgoingRequestHeaderArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorModifyOutgoingResponseHeaderArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorModifyViaHeaderArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginCharacteristicsArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginCharacteristicsWsdArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginFailureRecoveryMethodArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginFailureRecoveryPolicyArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorOriginIpAclArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPermissionsPolicyArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPersistentClientConnectionArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPersistentConnectionArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPersonallyIdentifiableInformationArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPhasedReleaseArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPreconnectArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPredictiveContentDeliveryArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPredictivePrefetchingArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPrefetchArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPrefetchableArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorPrefreshCacheArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorQualityArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorQuicBetaArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRandomSeekArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRapidArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorReadTimeoutArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRealTimeReportingArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRealUserMonitoringArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRedirectArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRedirectplusArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRefererCheckingArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRemoveQueryParameterArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRemoveVaryArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorReportArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRequestClientHintsArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRequestControlArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRequestTypeMarkerArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorResourceOptimizerArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorResourceOptimizerExtendedCompatibilityArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorResponseCodeArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorResponseCookieArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRestrictObjectCachingArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorReturnCacheStatusArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRewriteUrlArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorRumCustomArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSaasDefinitionsArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudClientArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudProviderArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudProviderHostHeaderArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSavePostDcaProcessingArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorScheduleInvalidationArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorScriptManagementArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedContentProtectionArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedMediaOptimizationArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedMediaStreamingPrefetchArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSetVariableArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSimulateErrorCodeArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSiteShieldArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorStandardTlsMigrationArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorStandardTlsMigrationOverrideArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorStrictHeaderParsingArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSubCustomerArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorSureRouteArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorTcpOptimizationArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorTeaLeafArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionAdvancedArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionCustomizationArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorTimeoutArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorUidConfigurationArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorValidateEntityTagArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVerifyJsonWebTokenArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVerifyJsonWebTokenForDcpArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVerifyTokenAuthorizationArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVirtualWaitingRoomArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVirtualWaitingRoomWithEdgeWorkersArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationFifoArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationFifoStandaloneArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorWatermarkingArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorWebApplicationFirewallArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorWebSocketsArgs;
-import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030BehaviorWebdavArgs;
+import com.pulumi.akamai.inputs.MediaOriginFailoverArgs;
+import com.pulumi.akamai.inputs.MetadataCachingArgs;
+import com.pulumi.akamai.inputs.MobileSdkPerformanceArgs;
+import com.pulumi.akamai.inputs.ModifyIncomingRequestHeaderArgs;
+import com.pulumi.akamai.inputs.ModifyIncomingResponseHeaderArgs;
+import com.pulumi.akamai.inputs.ModifyOutgoingRequestHeaderArgs;
+import com.pulumi.akamai.inputs.ModifyOutgoingResponseHeaderArgs;
+import com.pulumi.akamai.inputs.ModifyViaHeaderArgs;
+import com.pulumi.akamai.inputs.OriginArgs;
+import com.pulumi.akamai.inputs.OriginCharacteristicsArgs;
+import com.pulumi.akamai.inputs.OriginCharacteristicsWsdArgs;
+import com.pulumi.akamai.inputs.OriginFailureRecoveryMethodArgs;
+import com.pulumi.akamai.inputs.OriginFailureRecoveryPolicyArgs;
+import com.pulumi.akamai.inputs.OriginIpAclArgs;
+import com.pulumi.akamai.inputs.PermissionsPolicyArgs;
+import com.pulumi.akamai.inputs.PersistentClientConnectionArgs;
+import com.pulumi.akamai.inputs.PersistentConnectionArgs;
+import com.pulumi.akamai.inputs.PersonallyIdentifiableInformationArgs;
+import com.pulumi.akamai.inputs.PhasedReleaseArgs;
+import com.pulumi.akamai.inputs.PreconnectArgs;
+import com.pulumi.akamai.inputs.PredictiveContentDeliveryArgs;
+import com.pulumi.akamai.inputs.PredictivePrefetchingArgs;
+import com.pulumi.akamai.inputs.PrefetchArgs;
+import com.pulumi.akamai.inputs.PrefetchableArgs;
+import com.pulumi.akamai.inputs.PrefreshCacheArgs;
+import com.pulumi.akamai.inputs.QualityArgs;
+import com.pulumi.akamai.inputs.QuicBetaArgs;
+import com.pulumi.akamai.inputs.RandomSeekArgs;
+import com.pulumi.akamai.inputs.RapidArgs;
+import com.pulumi.akamai.inputs.ReadTimeoutArgs;
+import com.pulumi.akamai.inputs.RealTimeReportingArgs;
+import com.pulumi.akamai.inputs.RealUserMonitoringArgs;
+import com.pulumi.akamai.inputs.RedirectArgs;
+import com.pulumi.akamai.inputs.RedirectplusArgs;
+import com.pulumi.akamai.inputs.RefererCheckingArgs;
+import com.pulumi.akamai.inputs.RemoveQueryParameterArgs;
+import com.pulumi.akamai.inputs.RemoveVaryArgs;
+import com.pulumi.akamai.inputs.ReportArgs;
+import com.pulumi.akamai.inputs.RequestClientHintsArgs;
+import com.pulumi.akamai.inputs.RequestControlArgs;
+import com.pulumi.akamai.inputs.RequestTypeMarkerArgs;
+import com.pulumi.akamai.inputs.ResourceOptimizerArgs;
+import com.pulumi.akamai.inputs.ResourceOptimizerExtendedCompatibilityArgs;
+import com.pulumi.akamai.inputs.ResponseCodeArgs;
+import com.pulumi.akamai.inputs.ResponseCookieArgs;
+import com.pulumi.akamai.inputs.RestrictObjectCachingArgs;
+import com.pulumi.akamai.inputs.ReturnCacheStatusArgs;
+import com.pulumi.akamai.inputs.RewriteUrlArgs;
+import com.pulumi.akamai.inputs.RumCustomArgs;
+import com.pulumi.akamai.inputs.SaasDefinitionsArgs;
+import com.pulumi.akamai.inputs.SalesForceCommerceCloudClientArgs;
+import com.pulumi.akamai.inputs.SalesForceCommerceCloudProviderArgs;
+import com.pulumi.akamai.inputs.SalesForceCommerceCloudProviderHostHeaderArgs;
+import com.pulumi.akamai.inputs.SavePostDcaProcessingArgs;
+import com.pulumi.akamai.inputs.ScheduleInvalidationArgs;
+import com.pulumi.akamai.inputs.ScriptManagementArgs;
+import com.pulumi.akamai.inputs.SegmentedContentProtectionArgs;
+import com.pulumi.akamai.inputs.SegmentedMediaOptimizationArgs;
+import com.pulumi.akamai.inputs.SegmentedMediaStreamingPrefetchArgs;
+import com.pulumi.akamai.inputs.SetVariableArgs;
+import com.pulumi.akamai.inputs.SimulateErrorCodeArgs;
+import com.pulumi.akamai.inputs.SiteShieldArgs;
+import com.pulumi.akamai.inputs.StandardTlsMigrationArgs;
+import com.pulumi.akamai.inputs.StandardTlsMigrationOverrideArgs;
+import com.pulumi.akamai.inputs.StrictHeaderParsingArgs;
+import com.pulumi.akamai.inputs.SubCustomerArgs;
+import com.pulumi.akamai.inputs.SureRouteArgs;
+import com.pulumi.akamai.inputs.TcpOptimizationArgs;
+import com.pulumi.akamai.inputs.TeaLeafArgs;
+import com.pulumi.akamai.inputs.TieredDistributionAdvancedArgs;
+import com.pulumi.akamai.inputs.TieredDistributionArgs;
+import com.pulumi.akamai.inputs.TieredDistributionCustomizationArgs;
+import com.pulumi.akamai.inputs.TimeoutArgs;
+import com.pulumi.akamai.inputs.UidConfigurationArgs;
+import com.pulumi.akamai.inputs.ValidateEntityTagArgs;
+import com.pulumi.akamai.inputs.VerifyJsonWebTokenArgs;
+import com.pulumi.akamai.inputs.VerifyJsonWebTokenForDcpArgs;
+import com.pulumi.akamai.inputs.VerifyTokenAuthorizationArgs;
+import com.pulumi.akamai.inputs.VirtualWaitingRoomArgs;
+import com.pulumi.akamai.inputs.VirtualWaitingRoomWithEdgeWorkersArgs;
+import com.pulumi.akamai.inputs.VisitorPrioritizationArgs;
+import com.pulumi.akamai.inputs.VisitorPrioritizationFifoArgs;
+import com.pulumi.akamai.inputs.VisitorPrioritizationFifoStandaloneArgs;
+import com.pulumi.akamai.inputs.WatermarkingArgs;
+import com.pulumi.akamai.inputs.WebApplicationFirewallArgs;
+import com.pulumi.akamai.inputs.WebSocketsArgs;
+import com.pulumi.akamai.inputs.WebdavArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.util.Objects;
@@ -1182,611 +1182,611 @@ public final class GetPropertyRulesBuilderRulesV20231030BehaviorArgs extends com
     }
 
     @Import(name="mediaOriginFailover")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorMediaOriginFailoverArgs> mediaOriginFailover;
+    private @Nullable Output<MediaOriginFailoverArgs> mediaOriginFailover;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorMediaOriginFailoverArgs>> mediaOriginFailover() {
+    public Optional<Output<MediaOriginFailoverArgs>> mediaOriginFailover() {
         return Optional.ofNullable(this.mediaOriginFailover);
     }
 
     @Import(name="metadataCaching")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorMetadataCachingArgs> metadataCaching;
+    private @Nullable Output<MetadataCachingArgs> metadataCaching;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorMetadataCachingArgs>> metadataCaching() {
+    public Optional<Output<MetadataCachingArgs>> metadataCaching() {
         return Optional.ofNullable(this.metadataCaching);
     }
 
     @Import(name="mobileSdkPerformance")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorMobileSdkPerformanceArgs> mobileSdkPerformance;
+    private @Nullable Output<MobileSdkPerformanceArgs> mobileSdkPerformance;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorMobileSdkPerformanceArgs>> mobileSdkPerformance() {
+    public Optional<Output<MobileSdkPerformanceArgs>> mobileSdkPerformance() {
         return Optional.ofNullable(this.mobileSdkPerformance);
     }
 
     @Import(name="modifyIncomingRequestHeader")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorModifyIncomingRequestHeaderArgs> modifyIncomingRequestHeader;
+    private @Nullable Output<ModifyIncomingRequestHeaderArgs> modifyIncomingRequestHeader;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorModifyIncomingRequestHeaderArgs>> modifyIncomingRequestHeader() {
+    public Optional<Output<ModifyIncomingRequestHeaderArgs>> modifyIncomingRequestHeader() {
         return Optional.ofNullable(this.modifyIncomingRequestHeader);
     }
 
     @Import(name="modifyIncomingResponseHeader")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorModifyIncomingResponseHeaderArgs> modifyIncomingResponseHeader;
+    private @Nullable Output<ModifyIncomingResponseHeaderArgs> modifyIncomingResponseHeader;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorModifyIncomingResponseHeaderArgs>> modifyIncomingResponseHeader() {
+    public Optional<Output<ModifyIncomingResponseHeaderArgs>> modifyIncomingResponseHeader() {
         return Optional.ofNullable(this.modifyIncomingResponseHeader);
     }
 
     @Import(name="modifyOutgoingRequestHeader")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorModifyOutgoingRequestHeaderArgs> modifyOutgoingRequestHeader;
+    private @Nullable Output<ModifyOutgoingRequestHeaderArgs> modifyOutgoingRequestHeader;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorModifyOutgoingRequestHeaderArgs>> modifyOutgoingRequestHeader() {
+    public Optional<Output<ModifyOutgoingRequestHeaderArgs>> modifyOutgoingRequestHeader() {
         return Optional.ofNullable(this.modifyOutgoingRequestHeader);
     }
 
     @Import(name="modifyOutgoingResponseHeader")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorModifyOutgoingResponseHeaderArgs> modifyOutgoingResponseHeader;
+    private @Nullable Output<ModifyOutgoingResponseHeaderArgs> modifyOutgoingResponseHeader;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorModifyOutgoingResponseHeaderArgs>> modifyOutgoingResponseHeader() {
+    public Optional<Output<ModifyOutgoingResponseHeaderArgs>> modifyOutgoingResponseHeader() {
         return Optional.ofNullable(this.modifyOutgoingResponseHeader);
     }
 
     @Import(name="modifyViaHeader")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorModifyViaHeaderArgs> modifyViaHeader;
+    private @Nullable Output<ModifyViaHeaderArgs> modifyViaHeader;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorModifyViaHeaderArgs>> modifyViaHeader() {
+    public Optional<Output<ModifyViaHeaderArgs>> modifyViaHeader() {
         return Optional.ofNullable(this.modifyViaHeader);
     }
 
     @Import(name="origin")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorOriginArgs> origin;
+    private @Nullable Output<OriginArgs> origin;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorOriginArgs>> origin() {
+    public Optional<Output<OriginArgs>> origin() {
         return Optional.ofNullable(this.origin);
     }
 
     @Import(name="originCharacteristics")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorOriginCharacteristicsArgs> originCharacteristics;
+    private @Nullable Output<OriginCharacteristicsArgs> originCharacteristics;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorOriginCharacteristicsArgs>> originCharacteristics() {
+    public Optional<Output<OriginCharacteristicsArgs>> originCharacteristics() {
         return Optional.ofNullable(this.originCharacteristics);
     }
 
     @Import(name="originCharacteristicsWsd")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorOriginCharacteristicsWsdArgs> originCharacteristicsWsd;
+    private @Nullable Output<OriginCharacteristicsWsdArgs> originCharacteristicsWsd;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorOriginCharacteristicsWsdArgs>> originCharacteristicsWsd() {
+    public Optional<Output<OriginCharacteristicsWsdArgs>> originCharacteristicsWsd() {
         return Optional.ofNullable(this.originCharacteristicsWsd);
     }
 
     @Import(name="originFailureRecoveryMethod")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorOriginFailureRecoveryMethodArgs> originFailureRecoveryMethod;
+    private @Nullable Output<OriginFailureRecoveryMethodArgs> originFailureRecoveryMethod;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorOriginFailureRecoveryMethodArgs>> originFailureRecoveryMethod() {
+    public Optional<Output<OriginFailureRecoveryMethodArgs>> originFailureRecoveryMethod() {
         return Optional.ofNullable(this.originFailureRecoveryMethod);
     }
 
     @Import(name="originFailureRecoveryPolicy")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorOriginFailureRecoveryPolicyArgs> originFailureRecoveryPolicy;
+    private @Nullable Output<OriginFailureRecoveryPolicyArgs> originFailureRecoveryPolicy;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorOriginFailureRecoveryPolicyArgs>> originFailureRecoveryPolicy() {
+    public Optional<Output<OriginFailureRecoveryPolicyArgs>> originFailureRecoveryPolicy() {
         return Optional.ofNullable(this.originFailureRecoveryPolicy);
     }
 
     @Import(name="originIpAcl")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorOriginIpAclArgs> originIpAcl;
+    private @Nullable Output<OriginIpAclArgs> originIpAcl;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorOriginIpAclArgs>> originIpAcl() {
+    public Optional<Output<OriginIpAclArgs>> originIpAcl() {
         return Optional.ofNullable(this.originIpAcl);
     }
 
     @Import(name="permissionsPolicy")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorPermissionsPolicyArgs> permissionsPolicy;
+    private @Nullable Output<PermissionsPolicyArgs> permissionsPolicy;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorPermissionsPolicyArgs>> permissionsPolicy() {
+    public Optional<Output<PermissionsPolicyArgs>> permissionsPolicy() {
         return Optional.ofNullable(this.permissionsPolicy);
     }
 
     @Import(name="persistentClientConnection")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorPersistentClientConnectionArgs> persistentClientConnection;
+    private @Nullable Output<PersistentClientConnectionArgs> persistentClientConnection;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorPersistentClientConnectionArgs>> persistentClientConnection() {
+    public Optional<Output<PersistentClientConnectionArgs>> persistentClientConnection() {
         return Optional.ofNullable(this.persistentClientConnection);
     }
 
     @Import(name="persistentConnection")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorPersistentConnectionArgs> persistentConnection;
+    private @Nullable Output<PersistentConnectionArgs> persistentConnection;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorPersistentConnectionArgs>> persistentConnection() {
+    public Optional<Output<PersistentConnectionArgs>> persistentConnection() {
         return Optional.ofNullable(this.persistentConnection);
     }
 
     @Import(name="personallyIdentifiableInformation")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorPersonallyIdentifiableInformationArgs> personallyIdentifiableInformation;
+    private @Nullable Output<PersonallyIdentifiableInformationArgs> personallyIdentifiableInformation;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorPersonallyIdentifiableInformationArgs>> personallyIdentifiableInformation() {
+    public Optional<Output<PersonallyIdentifiableInformationArgs>> personallyIdentifiableInformation() {
         return Optional.ofNullable(this.personallyIdentifiableInformation);
     }
 
     @Import(name="phasedRelease")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorPhasedReleaseArgs> phasedRelease;
+    private @Nullable Output<PhasedReleaseArgs> phasedRelease;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorPhasedReleaseArgs>> phasedRelease() {
+    public Optional<Output<PhasedReleaseArgs>> phasedRelease() {
         return Optional.ofNullable(this.phasedRelease);
     }
 
     @Import(name="preconnect")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorPreconnectArgs> preconnect;
+    private @Nullable Output<PreconnectArgs> preconnect;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorPreconnectArgs>> preconnect() {
+    public Optional<Output<PreconnectArgs>> preconnect() {
         return Optional.ofNullable(this.preconnect);
     }
 
     @Import(name="predictiveContentDelivery")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorPredictiveContentDeliveryArgs> predictiveContentDelivery;
+    private @Nullable Output<PredictiveContentDeliveryArgs> predictiveContentDelivery;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorPredictiveContentDeliveryArgs>> predictiveContentDelivery() {
+    public Optional<Output<PredictiveContentDeliveryArgs>> predictiveContentDelivery() {
         return Optional.ofNullable(this.predictiveContentDelivery);
     }
 
     @Import(name="predictivePrefetching")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorPredictivePrefetchingArgs> predictivePrefetching;
+    private @Nullable Output<PredictivePrefetchingArgs> predictivePrefetching;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorPredictivePrefetchingArgs>> predictivePrefetching() {
+    public Optional<Output<PredictivePrefetchingArgs>> predictivePrefetching() {
         return Optional.ofNullable(this.predictivePrefetching);
     }
 
     @Import(name="prefetch")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorPrefetchArgs> prefetch;
+    private @Nullable Output<PrefetchArgs> prefetch;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorPrefetchArgs>> prefetch() {
+    public Optional<Output<PrefetchArgs>> prefetch() {
         return Optional.ofNullable(this.prefetch);
     }
 
     @Import(name="prefetchable")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorPrefetchableArgs> prefetchable;
+    private @Nullable Output<PrefetchableArgs> prefetchable;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorPrefetchableArgs>> prefetchable() {
+    public Optional<Output<PrefetchableArgs>> prefetchable() {
         return Optional.ofNullable(this.prefetchable);
     }
 
     @Import(name="prefreshCache")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorPrefreshCacheArgs> prefreshCache;
+    private @Nullable Output<PrefreshCacheArgs> prefreshCache;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorPrefreshCacheArgs>> prefreshCache() {
+    public Optional<Output<PrefreshCacheArgs>> prefreshCache() {
         return Optional.ofNullable(this.prefreshCache);
     }
 
     @Import(name="quality")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorQualityArgs> quality;
+    private @Nullable Output<QualityArgs> quality;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorQualityArgs>> quality() {
+    public Optional<Output<QualityArgs>> quality() {
         return Optional.ofNullable(this.quality);
     }
 
     @Import(name="quicBeta")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorQuicBetaArgs> quicBeta;
+    private @Nullable Output<QuicBetaArgs> quicBeta;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorQuicBetaArgs>> quicBeta() {
+    public Optional<Output<QuicBetaArgs>> quicBeta() {
         return Optional.ofNullable(this.quicBeta);
     }
 
     @Import(name="randomSeek")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRandomSeekArgs> randomSeek;
+    private @Nullable Output<RandomSeekArgs> randomSeek;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorRandomSeekArgs>> randomSeek() {
+    public Optional<Output<RandomSeekArgs>> randomSeek() {
         return Optional.ofNullable(this.randomSeek);
     }
 
     @Import(name="rapid")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRapidArgs> rapid;
+    private @Nullable Output<RapidArgs> rapid;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorRapidArgs>> rapid() {
+    public Optional<Output<RapidArgs>> rapid() {
         return Optional.ofNullable(this.rapid);
     }
 
     @Import(name="readTimeout")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorReadTimeoutArgs> readTimeout;
+    private @Nullable Output<ReadTimeoutArgs> readTimeout;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorReadTimeoutArgs>> readTimeout() {
+    public Optional<Output<ReadTimeoutArgs>> readTimeout() {
         return Optional.ofNullable(this.readTimeout);
     }
 
     @Import(name="realTimeReporting")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRealTimeReportingArgs> realTimeReporting;
+    private @Nullable Output<RealTimeReportingArgs> realTimeReporting;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorRealTimeReportingArgs>> realTimeReporting() {
+    public Optional<Output<RealTimeReportingArgs>> realTimeReporting() {
         return Optional.ofNullable(this.realTimeReporting);
     }
 
     @Import(name="realUserMonitoring")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRealUserMonitoringArgs> realUserMonitoring;
+    private @Nullable Output<RealUserMonitoringArgs> realUserMonitoring;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorRealUserMonitoringArgs>> realUserMonitoring() {
+    public Optional<Output<RealUserMonitoringArgs>> realUserMonitoring() {
         return Optional.ofNullable(this.realUserMonitoring);
     }
 
     @Import(name="redirect")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRedirectArgs> redirect;
+    private @Nullable Output<RedirectArgs> redirect;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorRedirectArgs>> redirect() {
+    public Optional<Output<RedirectArgs>> redirect() {
         return Optional.ofNullable(this.redirect);
     }
 
     @Import(name="redirectplus")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRedirectplusArgs> redirectplus;
+    private @Nullable Output<RedirectplusArgs> redirectplus;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorRedirectplusArgs>> redirectplus() {
+    public Optional<Output<RedirectplusArgs>> redirectplus() {
         return Optional.ofNullable(this.redirectplus);
     }
 
     @Import(name="refererChecking")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRefererCheckingArgs> refererChecking;
+    private @Nullable Output<RefererCheckingArgs> refererChecking;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorRefererCheckingArgs>> refererChecking() {
+    public Optional<Output<RefererCheckingArgs>> refererChecking() {
         return Optional.ofNullable(this.refererChecking);
     }
 
     @Import(name="removeQueryParameter")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRemoveQueryParameterArgs> removeQueryParameter;
+    private @Nullable Output<RemoveQueryParameterArgs> removeQueryParameter;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorRemoveQueryParameterArgs>> removeQueryParameter() {
+    public Optional<Output<RemoveQueryParameterArgs>> removeQueryParameter() {
         return Optional.ofNullable(this.removeQueryParameter);
     }
 
     @Import(name="removeVary")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRemoveVaryArgs> removeVary;
+    private @Nullable Output<RemoveVaryArgs> removeVary;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorRemoveVaryArgs>> removeVary() {
+    public Optional<Output<RemoveVaryArgs>> removeVary() {
         return Optional.ofNullable(this.removeVary);
     }
 
     @Import(name="report")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorReportArgs> report;
+    private @Nullable Output<ReportArgs> report;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorReportArgs>> report() {
+    public Optional<Output<ReportArgs>> report() {
         return Optional.ofNullable(this.report);
     }
 
     @Import(name="requestClientHints")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRequestClientHintsArgs> requestClientHints;
+    private @Nullable Output<RequestClientHintsArgs> requestClientHints;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorRequestClientHintsArgs>> requestClientHints() {
+    public Optional<Output<RequestClientHintsArgs>> requestClientHints() {
         return Optional.ofNullable(this.requestClientHints);
     }
 
     @Import(name="requestControl")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRequestControlArgs> requestControl;
+    private @Nullable Output<RequestControlArgs> requestControl;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorRequestControlArgs>> requestControl() {
+    public Optional<Output<RequestControlArgs>> requestControl() {
         return Optional.ofNullable(this.requestControl);
     }
 
     @Import(name="requestTypeMarker")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRequestTypeMarkerArgs> requestTypeMarker;
+    private @Nullable Output<RequestTypeMarkerArgs> requestTypeMarker;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorRequestTypeMarkerArgs>> requestTypeMarker() {
+    public Optional<Output<RequestTypeMarkerArgs>> requestTypeMarker() {
         return Optional.ofNullable(this.requestTypeMarker);
     }
 
     @Import(name="resourceOptimizer")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorResourceOptimizerArgs> resourceOptimizer;
+    private @Nullable Output<ResourceOptimizerArgs> resourceOptimizer;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorResourceOptimizerArgs>> resourceOptimizer() {
+    public Optional<Output<ResourceOptimizerArgs>> resourceOptimizer() {
         return Optional.ofNullable(this.resourceOptimizer);
     }
 
     @Import(name="resourceOptimizerExtendedCompatibility")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorResourceOptimizerExtendedCompatibilityArgs> resourceOptimizerExtendedCompatibility;
+    private @Nullable Output<ResourceOptimizerExtendedCompatibilityArgs> resourceOptimizerExtendedCompatibility;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorResourceOptimizerExtendedCompatibilityArgs>> resourceOptimizerExtendedCompatibility() {
+    public Optional<Output<ResourceOptimizerExtendedCompatibilityArgs>> resourceOptimizerExtendedCompatibility() {
         return Optional.ofNullable(this.resourceOptimizerExtendedCompatibility);
     }
 
     @Import(name="responseCode")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorResponseCodeArgs> responseCode;
+    private @Nullable Output<ResponseCodeArgs> responseCode;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorResponseCodeArgs>> responseCode() {
+    public Optional<Output<ResponseCodeArgs>> responseCode() {
         return Optional.ofNullable(this.responseCode);
     }
 
     @Import(name="responseCookie")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorResponseCookieArgs> responseCookie;
+    private @Nullable Output<ResponseCookieArgs> responseCookie;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorResponseCookieArgs>> responseCookie() {
+    public Optional<Output<ResponseCookieArgs>> responseCookie() {
         return Optional.ofNullable(this.responseCookie);
     }
 
     @Import(name="restrictObjectCaching")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRestrictObjectCachingArgs> restrictObjectCaching;
+    private @Nullable Output<RestrictObjectCachingArgs> restrictObjectCaching;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorRestrictObjectCachingArgs>> restrictObjectCaching() {
+    public Optional<Output<RestrictObjectCachingArgs>> restrictObjectCaching() {
         return Optional.ofNullable(this.restrictObjectCaching);
     }
 
     @Import(name="returnCacheStatus")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorReturnCacheStatusArgs> returnCacheStatus;
+    private @Nullable Output<ReturnCacheStatusArgs> returnCacheStatus;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorReturnCacheStatusArgs>> returnCacheStatus() {
+    public Optional<Output<ReturnCacheStatusArgs>> returnCacheStatus() {
         return Optional.ofNullable(this.returnCacheStatus);
     }
 
     @Import(name="rewriteUrl")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRewriteUrlArgs> rewriteUrl;
+    private @Nullable Output<RewriteUrlArgs> rewriteUrl;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorRewriteUrlArgs>> rewriteUrl() {
+    public Optional<Output<RewriteUrlArgs>> rewriteUrl() {
         return Optional.ofNullable(this.rewriteUrl);
     }
 
     @Import(name="rumCustom")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRumCustomArgs> rumCustom;
+    private @Nullable Output<RumCustomArgs> rumCustom;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorRumCustomArgs>> rumCustom() {
+    public Optional<Output<RumCustomArgs>> rumCustom() {
         return Optional.ofNullable(this.rumCustom);
     }
 
     @Import(name="saasDefinitions")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorSaasDefinitionsArgs> saasDefinitions;
+    private @Nullable Output<SaasDefinitionsArgs> saasDefinitions;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorSaasDefinitionsArgs>> saasDefinitions() {
+    public Optional<Output<SaasDefinitionsArgs>> saasDefinitions() {
         return Optional.ofNullable(this.saasDefinitions);
     }
 
     @Import(name="salesForceCommerceCloudClient")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudClientArgs> salesForceCommerceCloudClient;
+    private @Nullable Output<SalesForceCommerceCloudClientArgs> salesForceCommerceCloudClient;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudClientArgs>> salesForceCommerceCloudClient() {
+    public Optional<Output<SalesForceCommerceCloudClientArgs>> salesForceCommerceCloudClient() {
         return Optional.ofNullable(this.salesForceCommerceCloudClient);
     }
 
     @Import(name="salesForceCommerceCloudProvider")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudProviderArgs> salesForceCommerceCloudProvider;
+    private @Nullable Output<SalesForceCommerceCloudProviderArgs> salesForceCommerceCloudProvider;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudProviderArgs>> salesForceCommerceCloudProvider() {
+    public Optional<Output<SalesForceCommerceCloudProviderArgs>> salesForceCommerceCloudProvider() {
         return Optional.ofNullable(this.salesForceCommerceCloudProvider);
     }
 
     @Import(name="salesForceCommerceCloudProviderHostHeader")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudProviderHostHeaderArgs> salesForceCommerceCloudProviderHostHeader;
+    private @Nullable Output<SalesForceCommerceCloudProviderHostHeaderArgs> salesForceCommerceCloudProviderHostHeader;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudProviderHostHeaderArgs>> salesForceCommerceCloudProviderHostHeader() {
+    public Optional<Output<SalesForceCommerceCloudProviderHostHeaderArgs>> salesForceCommerceCloudProviderHostHeader() {
         return Optional.ofNullable(this.salesForceCommerceCloudProviderHostHeader);
     }
 
     @Import(name="savePostDcaProcessing")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorSavePostDcaProcessingArgs> savePostDcaProcessing;
+    private @Nullable Output<SavePostDcaProcessingArgs> savePostDcaProcessing;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorSavePostDcaProcessingArgs>> savePostDcaProcessing() {
+    public Optional<Output<SavePostDcaProcessingArgs>> savePostDcaProcessing() {
         return Optional.ofNullable(this.savePostDcaProcessing);
     }
 
     @Import(name="scheduleInvalidation")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorScheduleInvalidationArgs> scheduleInvalidation;
+    private @Nullable Output<ScheduleInvalidationArgs> scheduleInvalidation;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorScheduleInvalidationArgs>> scheduleInvalidation() {
+    public Optional<Output<ScheduleInvalidationArgs>> scheduleInvalidation() {
         return Optional.ofNullable(this.scheduleInvalidation);
     }
 
     @Import(name="scriptManagement")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorScriptManagementArgs> scriptManagement;
+    private @Nullable Output<ScriptManagementArgs> scriptManagement;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorScriptManagementArgs>> scriptManagement() {
+    public Optional<Output<ScriptManagementArgs>> scriptManagement() {
         return Optional.ofNullable(this.scriptManagement);
     }
 
     @Import(name="segmentedContentProtection")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedContentProtectionArgs> segmentedContentProtection;
+    private @Nullable Output<SegmentedContentProtectionArgs> segmentedContentProtection;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedContentProtectionArgs>> segmentedContentProtection() {
+    public Optional<Output<SegmentedContentProtectionArgs>> segmentedContentProtection() {
         return Optional.ofNullable(this.segmentedContentProtection);
     }
 
     @Import(name="segmentedMediaOptimization")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedMediaOptimizationArgs> segmentedMediaOptimization;
+    private @Nullable Output<SegmentedMediaOptimizationArgs> segmentedMediaOptimization;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedMediaOptimizationArgs>> segmentedMediaOptimization() {
+    public Optional<Output<SegmentedMediaOptimizationArgs>> segmentedMediaOptimization() {
         return Optional.ofNullable(this.segmentedMediaOptimization);
     }
 
     @Import(name="segmentedMediaStreamingPrefetch")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedMediaStreamingPrefetchArgs> segmentedMediaStreamingPrefetch;
+    private @Nullable Output<SegmentedMediaStreamingPrefetchArgs> segmentedMediaStreamingPrefetch;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedMediaStreamingPrefetchArgs>> segmentedMediaStreamingPrefetch() {
+    public Optional<Output<SegmentedMediaStreamingPrefetchArgs>> segmentedMediaStreamingPrefetch() {
         return Optional.ofNullable(this.segmentedMediaStreamingPrefetch);
     }
 
     @Import(name="setVariable")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorSetVariableArgs> setVariable;
+    private @Nullable Output<SetVariableArgs> setVariable;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorSetVariableArgs>> setVariable() {
+    public Optional<Output<SetVariableArgs>> setVariable() {
         return Optional.ofNullable(this.setVariable);
     }
 
     @Import(name="simulateErrorCode")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorSimulateErrorCodeArgs> simulateErrorCode;
+    private @Nullable Output<SimulateErrorCodeArgs> simulateErrorCode;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorSimulateErrorCodeArgs>> simulateErrorCode() {
+    public Optional<Output<SimulateErrorCodeArgs>> simulateErrorCode() {
         return Optional.ofNullable(this.simulateErrorCode);
     }
 
     @Import(name="siteShield")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorSiteShieldArgs> siteShield;
+    private @Nullable Output<SiteShieldArgs> siteShield;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorSiteShieldArgs>> siteShield() {
+    public Optional<Output<SiteShieldArgs>> siteShield() {
         return Optional.ofNullable(this.siteShield);
     }
 
     @Import(name="standardTlsMigration")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorStandardTlsMigrationArgs> standardTlsMigration;
+    private @Nullable Output<StandardTlsMigrationArgs> standardTlsMigration;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorStandardTlsMigrationArgs>> standardTlsMigration() {
+    public Optional<Output<StandardTlsMigrationArgs>> standardTlsMigration() {
         return Optional.ofNullable(this.standardTlsMigration);
     }
 
     @Import(name="standardTlsMigrationOverride")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorStandardTlsMigrationOverrideArgs> standardTlsMigrationOverride;
+    private @Nullable Output<StandardTlsMigrationOverrideArgs> standardTlsMigrationOverride;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorStandardTlsMigrationOverrideArgs>> standardTlsMigrationOverride() {
+    public Optional<Output<StandardTlsMigrationOverrideArgs>> standardTlsMigrationOverride() {
         return Optional.ofNullable(this.standardTlsMigrationOverride);
     }
 
     @Import(name="strictHeaderParsing")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorStrictHeaderParsingArgs> strictHeaderParsing;
+    private @Nullable Output<StrictHeaderParsingArgs> strictHeaderParsing;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorStrictHeaderParsingArgs>> strictHeaderParsing() {
+    public Optional<Output<StrictHeaderParsingArgs>> strictHeaderParsing() {
         return Optional.ofNullable(this.strictHeaderParsing);
     }
 
     @Import(name="subCustomer")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorSubCustomerArgs> subCustomer;
+    private @Nullable Output<SubCustomerArgs> subCustomer;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorSubCustomerArgs>> subCustomer() {
+    public Optional<Output<SubCustomerArgs>> subCustomer() {
         return Optional.ofNullable(this.subCustomer);
     }
 
     @Import(name="sureRoute")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorSureRouteArgs> sureRoute;
+    private @Nullable Output<SureRouteArgs> sureRoute;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorSureRouteArgs>> sureRoute() {
+    public Optional<Output<SureRouteArgs>> sureRoute() {
         return Optional.ofNullable(this.sureRoute);
     }
 
     @Import(name="tcpOptimization")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorTcpOptimizationArgs> tcpOptimization;
+    private @Nullable Output<TcpOptimizationArgs> tcpOptimization;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorTcpOptimizationArgs>> tcpOptimization() {
+    public Optional<Output<TcpOptimizationArgs>> tcpOptimization() {
         return Optional.ofNullable(this.tcpOptimization);
     }
 
     @Import(name="teaLeaf")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorTeaLeafArgs> teaLeaf;
+    private @Nullable Output<TeaLeafArgs> teaLeaf;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorTeaLeafArgs>> teaLeaf() {
+    public Optional<Output<TeaLeafArgs>> teaLeaf() {
         return Optional.ofNullable(this.teaLeaf);
     }
 
     @Import(name="tieredDistribution")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionArgs> tieredDistribution;
+    private @Nullable Output<TieredDistributionArgs> tieredDistribution;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionArgs>> tieredDistribution() {
+    public Optional<Output<TieredDistributionArgs>> tieredDistribution() {
         return Optional.ofNullable(this.tieredDistribution);
     }
 
     @Import(name="tieredDistributionAdvanced")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionAdvancedArgs> tieredDistributionAdvanced;
+    private @Nullable Output<TieredDistributionAdvancedArgs> tieredDistributionAdvanced;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionAdvancedArgs>> tieredDistributionAdvanced() {
+    public Optional<Output<TieredDistributionAdvancedArgs>> tieredDistributionAdvanced() {
         return Optional.ofNullable(this.tieredDistributionAdvanced);
     }
 
     @Import(name="tieredDistributionCustomization")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionCustomizationArgs> tieredDistributionCustomization;
+    private @Nullable Output<TieredDistributionCustomizationArgs> tieredDistributionCustomization;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionCustomizationArgs>> tieredDistributionCustomization() {
+    public Optional<Output<TieredDistributionCustomizationArgs>> tieredDistributionCustomization() {
         return Optional.ofNullable(this.tieredDistributionCustomization);
     }
 
     @Import(name="timeout")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorTimeoutArgs> timeout;
+    private @Nullable Output<TimeoutArgs> timeout;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorTimeoutArgs>> timeout() {
+    public Optional<Output<TimeoutArgs>> timeout() {
         return Optional.ofNullable(this.timeout);
     }
 
     @Import(name="uidConfiguration")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorUidConfigurationArgs> uidConfiguration;
+    private @Nullable Output<UidConfigurationArgs> uidConfiguration;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorUidConfigurationArgs>> uidConfiguration() {
+    public Optional<Output<UidConfigurationArgs>> uidConfiguration() {
         return Optional.ofNullable(this.uidConfiguration);
     }
 
     @Import(name="validateEntityTag")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorValidateEntityTagArgs> validateEntityTag;
+    private @Nullable Output<ValidateEntityTagArgs> validateEntityTag;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorValidateEntityTagArgs>> validateEntityTag() {
+    public Optional<Output<ValidateEntityTagArgs>> validateEntityTag() {
         return Optional.ofNullable(this.validateEntityTag);
     }
 
     @Import(name="verifyJsonWebToken")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorVerifyJsonWebTokenArgs> verifyJsonWebToken;
+    private @Nullable Output<VerifyJsonWebTokenArgs> verifyJsonWebToken;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorVerifyJsonWebTokenArgs>> verifyJsonWebToken() {
+    public Optional<Output<VerifyJsonWebTokenArgs>> verifyJsonWebToken() {
         return Optional.ofNullable(this.verifyJsonWebToken);
     }
 
     @Import(name="verifyJsonWebTokenForDcp")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorVerifyJsonWebTokenForDcpArgs> verifyJsonWebTokenForDcp;
+    private @Nullable Output<VerifyJsonWebTokenForDcpArgs> verifyJsonWebTokenForDcp;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorVerifyJsonWebTokenForDcpArgs>> verifyJsonWebTokenForDcp() {
+    public Optional<Output<VerifyJsonWebTokenForDcpArgs>> verifyJsonWebTokenForDcp() {
         return Optional.ofNullable(this.verifyJsonWebTokenForDcp);
     }
 
     @Import(name="verifyTokenAuthorization")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorVerifyTokenAuthorizationArgs> verifyTokenAuthorization;
+    private @Nullable Output<VerifyTokenAuthorizationArgs> verifyTokenAuthorization;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorVerifyTokenAuthorizationArgs>> verifyTokenAuthorization() {
+    public Optional<Output<VerifyTokenAuthorizationArgs>> verifyTokenAuthorization() {
         return Optional.ofNullable(this.verifyTokenAuthorization);
     }
 
     @Import(name="virtualWaitingRoom")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorVirtualWaitingRoomArgs> virtualWaitingRoom;
+    private @Nullable Output<VirtualWaitingRoomArgs> virtualWaitingRoom;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorVirtualWaitingRoomArgs>> virtualWaitingRoom() {
+    public Optional<Output<VirtualWaitingRoomArgs>> virtualWaitingRoom() {
         return Optional.ofNullable(this.virtualWaitingRoom);
     }
 
     @Import(name="virtualWaitingRoomWithEdgeWorkers")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorVirtualWaitingRoomWithEdgeWorkersArgs> virtualWaitingRoomWithEdgeWorkers;
+    private @Nullable Output<VirtualWaitingRoomWithEdgeWorkersArgs> virtualWaitingRoomWithEdgeWorkers;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorVirtualWaitingRoomWithEdgeWorkersArgs>> virtualWaitingRoomWithEdgeWorkers() {
+    public Optional<Output<VirtualWaitingRoomWithEdgeWorkersArgs>> virtualWaitingRoomWithEdgeWorkers() {
         return Optional.ofNullable(this.virtualWaitingRoomWithEdgeWorkers);
     }
 
     @Import(name="visitorPrioritization")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationArgs> visitorPrioritization;
+    private @Nullable Output<VisitorPrioritizationArgs> visitorPrioritization;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationArgs>> visitorPrioritization() {
+    public Optional<Output<VisitorPrioritizationArgs>> visitorPrioritization() {
         return Optional.ofNullable(this.visitorPrioritization);
     }
 
     @Import(name="visitorPrioritizationFifo")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationFifoArgs> visitorPrioritizationFifo;
+    private @Nullable Output<VisitorPrioritizationFifoArgs> visitorPrioritizationFifo;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationFifoArgs>> visitorPrioritizationFifo() {
+    public Optional<Output<VisitorPrioritizationFifoArgs>> visitorPrioritizationFifo() {
         return Optional.ofNullable(this.visitorPrioritizationFifo);
     }
 
     @Import(name="visitorPrioritizationFifoStandalone")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationFifoStandaloneArgs> visitorPrioritizationFifoStandalone;
+    private @Nullable Output<VisitorPrioritizationFifoStandaloneArgs> visitorPrioritizationFifoStandalone;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationFifoStandaloneArgs>> visitorPrioritizationFifoStandalone() {
+    public Optional<Output<VisitorPrioritizationFifoStandaloneArgs>> visitorPrioritizationFifoStandalone() {
         return Optional.ofNullable(this.visitorPrioritizationFifoStandalone);
     }
 
     @Import(name="watermarking")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorWatermarkingArgs> watermarking;
+    private @Nullable Output<WatermarkingArgs> watermarking;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorWatermarkingArgs>> watermarking() {
+    public Optional<Output<WatermarkingArgs>> watermarking() {
         return Optional.ofNullable(this.watermarking);
     }
 
     @Import(name="webApplicationFirewall")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorWebApplicationFirewallArgs> webApplicationFirewall;
+    private @Nullable Output<WebApplicationFirewallArgs> webApplicationFirewall;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorWebApplicationFirewallArgs>> webApplicationFirewall() {
+    public Optional<Output<WebApplicationFirewallArgs>> webApplicationFirewall() {
         return Optional.ofNullable(this.webApplicationFirewall);
     }
 
     @Import(name="webSockets")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorWebSocketsArgs> webSockets;
+    private @Nullable Output<WebSocketsArgs> webSockets;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorWebSocketsArgs>> webSockets() {
+    public Optional<Output<WebSocketsArgs>> webSockets() {
         return Optional.ofNullable(this.webSockets);
     }
 
     @Import(name="webdav")
-    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorWebdavArgs> webdav;
+    private @Nullable Output<WebdavArgs> webdav;
 
-    public Optional<Output<GetPropertyRulesBuilderRulesV20231030BehaviorWebdavArgs>> webdav() {
+    public Optional<Output<WebdavArgs>> webdav() {
         return Optional.ofNullable(this.webdav);
     }
 
@@ -3250,786 +3250,786 @@ public final class GetPropertyRulesBuilderRulesV20231030BehaviorArgs extends com
             return mediaFileRetrievalOptimization(Output.of(mediaFileRetrievalOptimization));
         }
 
-        public Builder mediaOriginFailover(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorMediaOriginFailoverArgs> mediaOriginFailover) {
+        public Builder mediaOriginFailover(@Nullable Output<MediaOriginFailoverArgs> mediaOriginFailover) {
             $.mediaOriginFailover = mediaOriginFailover;
             return this;
         }
 
-        public Builder mediaOriginFailover(GetPropertyRulesBuilderRulesV20231030BehaviorMediaOriginFailoverArgs mediaOriginFailover) {
+        public Builder mediaOriginFailover(MediaOriginFailoverArgs mediaOriginFailover) {
             return mediaOriginFailover(Output.of(mediaOriginFailover));
         }
 
-        public Builder metadataCaching(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorMetadataCachingArgs> metadataCaching) {
+        public Builder metadataCaching(@Nullable Output<MetadataCachingArgs> metadataCaching) {
             $.metadataCaching = metadataCaching;
             return this;
         }
 
-        public Builder metadataCaching(GetPropertyRulesBuilderRulesV20231030BehaviorMetadataCachingArgs metadataCaching) {
+        public Builder metadataCaching(MetadataCachingArgs metadataCaching) {
             return metadataCaching(Output.of(metadataCaching));
         }
 
-        public Builder mobileSdkPerformance(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorMobileSdkPerformanceArgs> mobileSdkPerformance) {
+        public Builder mobileSdkPerformance(@Nullable Output<MobileSdkPerformanceArgs> mobileSdkPerformance) {
             $.mobileSdkPerformance = mobileSdkPerformance;
             return this;
         }
 
-        public Builder mobileSdkPerformance(GetPropertyRulesBuilderRulesV20231030BehaviorMobileSdkPerformanceArgs mobileSdkPerformance) {
+        public Builder mobileSdkPerformance(MobileSdkPerformanceArgs mobileSdkPerformance) {
             return mobileSdkPerformance(Output.of(mobileSdkPerformance));
         }
 
-        public Builder modifyIncomingRequestHeader(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorModifyIncomingRequestHeaderArgs> modifyIncomingRequestHeader) {
+        public Builder modifyIncomingRequestHeader(@Nullable Output<ModifyIncomingRequestHeaderArgs> modifyIncomingRequestHeader) {
             $.modifyIncomingRequestHeader = modifyIncomingRequestHeader;
             return this;
         }
 
-        public Builder modifyIncomingRequestHeader(GetPropertyRulesBuilderRulesV20231030BehaviorModifyIncomingRequestHeaderArgs modifyIncomingRequestHeader) {
+        public Builder modifyIncomingRequestHeader(ModifyIncomingRequestHeaderArgs modifyIncomingRequestHeader) {
             return modifyIncomingRequestHeader(Output.of(modifyIncomingRequestHeader));
         }
 
-        public Builder modifyIncomingResponseHeader(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorModifyIncomingResponseHeaderArgs> modifyIncomingResponseHeader) {
+        public Builder modifyIncomingResponseHeader(@Nullable Output<ModifyIncomingResponseHeaderArgs> modifyIncomingResponseHeader) {
             $.modifyIncomingResponseHeader = modifyIncomingResponseHeader;
             return this;
         }
 
-        public Builder modifyIncomingResponseHeader(GetPropertyRulesBuilderRulesV20231030BehaviorModifyIncomingResponseHeaderArgs modifyIncomingResponseHeader) {
+        public Builder modifyIncomingResponseHeader(ModifyIncomingResponseHeaderArgs modifyIncomingResponseHeader) {
             return modifyIncomingResponseHeader(Output.of(modifyIncomingResponseHeader));
         }
 
-        public Builder modifyOutgoingRequestHeader(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorModifyOutgoingRequestHeaderArgs> modifyOutgoingRequestHeader) {
+        public Builder modifyOutgoingRequestHeader(@Nullable Output<ModifyOutgoingRequestHeaderArgs> modifyOutgoingRequestHeader) {
             $.modifyOutgoingRequestHeader = modifyOutgoingRequestHeader;
             return this;
         }
 
-        public Builder modifyOutgoingRequestHeader(GetPropertyRulesBuilderRulesV20231030BehaviorModifyOutgoingRequestHeaderArgs modifyOutgoingRequestHeader) {
+        public Builder modifyOutgoingRequestHeader(ModifyOutgoingRequestHeaderArgs modifyOutgoingRequestHeader) {
             return modifyOutgoingRequestHeader(Output.of(modifyOutgoingRequestHeader));
         }
 
-        public Builder modifyOutgoingResponseHeader(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorModifyOutgoingResponseHeaderArgs> modifyOutgoingResponseHeader) {
+        public Builder modifyOutgoingResponseHeader(@Nullable Output<ModifyOutgoingResponseHeaderArgs> modifyOutgoingResponseHeader) {
             $.modifyOutgoingResponseHeader = modifyOutgoingResponseHeader;
             return this;
         }
 
-        public Builder modifyOutgoingResponseHeader(GetPropertyRulesBuilderRulesV20231030BehaviorModifyOutgoingResponseHeaderArgs modifyOutgoingResponseHeader) {
+        public Builder modifyOutgoingResponseHeader(ModifyOutgoingResponseHeaderArgs modifyOutgoingResponseHeader) {
             return modifyOutgoingResponseHeader(Output.of(modifyOutgoingResponseHeader));
         }
 
-        public Builder modifyViaHeader(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorModifyViaHeaderArgs> modifyViaHeader) {
+        public Builder modifyViaHeader(@Nullable Output<ModifyViaHeaderArgs> modifyViaHeader) {
             $.modifyViaHeader = modifyViaHeader;
             return this;
         }
 
-        public Builder modifyViaHeader(GetPropertyRulesBuilderRulesV20231030BehaviorModifyViaHeaderArgs modifyViaHeader) {
+        public Builder modifyViaHeader(ModifyViaHeaderArgs modifyViaHeader) {
             return modifyViaHeader(Output.of(modifyViaHeader));
         }
 
-        public Builder origin(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorOriginArgs> origin) {
+        public Builder origin(@Nullable Output<OriginArgs> origin) {
             $.origin = origin;
             return this;
         }
 
-        public Builder origin(GetPropertyRulesBuilderRulesV20231030BehaviorOriginArgs origin) {
+        public Builder origin(OriginArgs origin) {
             return origin(Output.of(origin));
         }
 
-        public Builder originCharacteristics(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorOriginCharacteristicsArgs> originCharacteristics) {
+        public Builder originCharacteristics(@Nullable Output<OriginCharacteristicsArgs> originCharacteristics) {
             $.originCharacteristics = originCharacteristics;
             return this;
         }
 
-        public Builder originCharacteristics(GetPropertyRulesBuilderRulesV20231030BehaviorOriginCharacteristicsArgs originCharacteristics) {
+        public Builder originCharacteristics(OriginCharacteristicsArgs originCharacteristics) {
             return originCharacteristics(Output.of(originCharacteristics));
         }
 
-        public Builder originCharacteristicsWsd(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorOriginCharacteristicsWsdArgs> originCharacteristicsWsd) {
+        public Builder originCharacteristicsWsd(@Nullable Output<OriginCharacteristicsWsdArgs> originCharacteristicsWsd) {
             $.originCharacteristicsWsd = originCharacteristicsWsd;
             return this;
         }
 
-        public Builder originCharacteristicsWsd(GetPropertyRulesBuilderRulesV20231030BehaviorOriginCharacteristicsWsdArgs originCharacteristicsWsd) {
+        public Builder originCharacteristicsWsd(OriginCharacteristicsWsdArgs originCharacteristicsWsd) {
             return originCharacteristicsWsd(Output.of(originCharacteristicsWsd));
         }
 
-        public Builder originFailureRecoveryMethod(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorOriginFailureRecoveryMethodArgs> originFailureRecoveryMethod) {
+        public Builder originFailureRecoveryMethod(@Nullable Output<OriginFailureRecoveryMethodArgs> originFailureRecoveryMethod) {
             $.originFailureRecoveryMethod = originFailureRecoveryMethod;
             return this;
         }
 
-        public Builder originFailureRecoveryMethod(GetPropertyRulesBuilderRulesV20231030BehaviorOriginFailureRecoveryMethodArgs originFailureRecoveryMethod) {
+        public Builder originFailureRecoveryMethod(OriginFailureRecoveryMethodArgs originFailureRecoveryMethod) {
             return originFailureRecoveryMethod(Output.of(originFailureRecoveryMethod));
         }
 
-        public Builder originFailureRecoveryPolicy(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorOriginFailureRecoveryPolicyArgs> originFailureRecoveryPolicy) {
+        public Builder originFailureRecoveryPolicy(@Nullable Output<OriginFailureRecoveryPolicyArgs> originFailureRecoveryPolicy) {
             $.originFailureRecoveryPolicy = originFailureRecoveryPolicy;
             return this;
         }
 
-        public Builder originFailureRecoveryPolicy(GetPropertyRulesBuilderRulesV20231030BehaviorOriginFailureRecoveryPolicyArgs originFailureRecoveryPolicy) {
+        public Builder originFailureRecoveryPolicy(OriginFailureRecoveryPolicyArgs originFailureRecoveryPolicy) {
             return originFailureRecoveryPolicy(Output.of(originFailureRecoveryPolicy));
         }
 
-        public Builder originIpAcl(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorOriginIpAclArgs> originIpAcl) {
+        public Builder originIpAcl(@Nullable Output<OriginIpAclArgs> originIpAcl) {
             $.originIpAcl = originIpAcl;
             return this;
         }
 
-        public Builder originIpAcl(GetPropertyRulesBuilderRulesV20231030BehaviorOriginIpAclArgs originIpAcl) {
+        public Builder originIpAcl(OriginIpAclArgs originIpAcl) {
             return originIpAcl(Output.of(originIpAcl));
         }
 
-        public Builder permissionsPolicy(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorPermissionsPolicyArgs> permissionsPolicy) {
+        public Builder permissionsPolicy(@Nullable Output<PermissionsPolicyArgs> permissionsPolicy) {
             $.permissionsPolicy = permissionsPolicy;
             return this;
         }
 
-        public Builder permissionsPolicy(GetPropertyRulesBuilderRulesV20231030BehaviorPermissionsPolicyArgs permissionsPolicy) {
+        public Builder permissionsPolicy(PermissionsPolicyArgs permissionsPolicy) {
             return permissionsPolicy(Output.of(permissionsPolicy));
         }
 
-        public Builder persistentClientConnection(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorPersistentClientConnectionArgs> persistentClientConnection) {
+        public Builder persistentClientConnection(@Nullable Output<PersistentClientConnectionArgs> persistentClientConnection) {
             $.persistentClientConnection = persistentClientConnection;
             return this;
         }
 
-        public Builder persistentClientConnection(GetPropertyRulesBuilderRulesV20231030BehaviorPersistentClientConnectionArgs persistentClientConnection) {
+        public Builder persistentClientConnection(PersistentClientConnectionArgs persistentClientConnection) {
             return persistentClientConnection(Output.of(persistentClientConnection));
         }
 
-        public Builder persistentConnection(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorPersistentConnectionArgs> persistentConnection) {
+        public Builder persistentConnection(@Nullable Output<PersistentConnectionArgs> persistentConnection) {
             $.persistentConnection = persistentConnection;
             return this;
         }
 
-        public Builder persistentConnection(GetPropertyRulesBuilderRulesV20231030BehaviorPersistentConnectionArgs persistentConnection) {
+        public Builder persistentConnection(PersistentConnectionArgs persistentConnection) {
             return persistentConnection(Output.of(persistentConnection));
         }
 
-        public Builder personallyIdentifiableInformation(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorPersonallyIdentifiableInformationArgs> personallyIdentifiableInformation) {
+        public Builder personallyIdentifiableInformation(@Nullable Output<PersonallyIdentifiableInformationArgs> personallyIdentifiableInformation) {
             $.personallyIdentifiableInformation = personallyIdentifiableInformation;
             return this;
         }
 
-        public Builder personallyIdentifiableInformation(GetPropertyRulesBuilderRulesV20231030BehaviorPersonallyIdentifiableInformationArgs personallyIdentifiableInformation) {
+        public Builder personallyIdentifiableInformation(PersonallyIdentifiableInformationArgs personallyIdentifiableInformation) {
             return personallyIdentifiableInformation(Output.of(personallyIdentifiableInformation));
         }
 
-        public Builder phasedRelease(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorPhasedReleaseArgs> phasedRelease) {
+        public Builder phasedRelease(@Nullable Output<PhasedReleaseArgs> phasedRelease) {
             $.phasedRelease = phasedRelease;
             return this;
         }
 
-        public Builder phasedRelease(GetPropertyRulesBuilderRulesV20231030BehaviorPhasedReleaseArgs phasedRelease) {
+        public Builder phasedRelease(PhasedReleaseArgs phasedRelease) {
             return phasedRelease(Output.of(phasedRelease));
         }
 
-        public Builder preconnect(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorPreconnectArgs> preconnect) {
+        public Builder preconnect(@Nullable Output<PreconnectArgs> preconnect) {
             $.preconnect = preconnect;
             return this;
         }
 
-        public Builder preconnect(GetPropertyRulesBuilderRulesV20231030BehaviorPreconnectArgs preconnect) {
+        public Builder preconnect(PreconnectArgs preconnect) {
             return preconnect(Output.of(preconnect));
         }
 
-        public Builder predictiveContentDelivery(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorPredictiveContentDeliveryArgs> predictiveContentDelivery) {
+        public Builder predictiveContentDelivery(@Nullable Output<PredictiveContentDeliveryArgs> predictiveContentDelivery) {
             $.predictiveContentDelivery = predictiveContentDelivery;
             return this;
         }
 
-        public Builder predictiveContentDelivery(GetPropertyRulesBuilderRulesV20231030BehaviorPredictiveContentDeliveryArgs predictiveContentDelivery) {
+        public Builder predictiveContentDelivery(PredictiveContentDeliveryArgs predictiveContentDelivery) {
             return predictiveContentDelivery(Output.of(predictiveContentDelivery));
         }
 
-        public Builder predictivePrefetching(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorPredictivePrefetchingArgs> predictivePrefetching) {
+        public Builder predictivePrefetching(@Nullable Output<PredictivePrefetchingArgs> predictivePrefetching) {
             $.predictivePrefetching = predictivePrefetching;
             return this;
         }
 
-        public Builder predictivePrefetching(GetPropertyRulesBuilderRulesV20231030BehaviorPredictivePrefetchingArgs predictivePrefetching) {
+        public Builder predictivePrefetching(PredictivePrefetchingArgs predictivePrefetching) {
             return predictivePrefetching(Output.of(predictivePrefetching));
         }
 
-        public Builder prefetch(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorPrefetchArgs> prefetch) {
+        public Builder prefetch(@Nullable Output<PrefetchArgs> prefetch) {
             $.prefetch = prefetch;
             return this;
         }
 
-        public Builder prefetch(GetPropertyRulesBuilderRulesV20231030BehaviorPrefetchArgs prefetch) {
+        public Builder prefetch(PrefetchArgs prefetch) {
             return prefetch(Output.of(prefetch));
         }
 
-        public Builder prefetchable(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorPrefetchableArgs> prefetchable) {
+        public Builder prefetchable(@Nullable Output<PrefetchableArgs> prefetchable) {
             $.prefetchable = prefetchable;
             return this;
         }
 
-        public Builder prefetchable(GetPropertyRulesBuilderRulesV20231030BehaviorPrefetchableArgs prefetchable) {
+        public Builder prefetchable(PrefetchableArgs prefetchable) {
             return prefetchable(Output.of(prefetchable));
         }
 
-        public Builder prefreshCache(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorPrefreshCacheArgs> prefreshCache) {
+        public Builder prefreshCache(@Nullable Output<PrefreshCacheArgs> prefreshCache) {
             $.prefreshCache = prefreshCache;
             return this;
         }
 
-        public Builder prefreshCache(GetPropertyRulesBuilderRulesV20231030BehaviorPrefreshCacheArgs prefreshCache) {
+        public Builder prefreshCache(PrefreshCacheArgs prefreshCache) {
             return prefreshCache(Output.of(prefreshCache));
         }
 
-        public Builder quality(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorQualityArgs> quality) {
+        public Builder quality(@Nullable Output<QualityArgs> quality) {
             $.quality = quality;
             return this;
         }
 
-        public Builder quality(GetPropertyRulesBuilderRulesV20231030BehaviorQualityArgs quality) {
+        public Builder quality(QualityArgs quality) {
             return quality(Output.of(quality));
         }
 
-        public Builder quicBeta(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorQuicBetaArgs> quicBeta) {
+        public Builder quicBeta(@Nullable Output<QuicBetaArgs> quicBeta) {
             $.quicBeta = quicBeta;
             return this;
         }
 
-        public Builder quicBeta(GetPropertyRulesBuilderRulesV20231030BehaviorQuicBetaArgs quicBeta) {
+        public Builder quicBeta(QuicBetaArgs quicBeta) {
             return quicBeta(Output.of(quicBeta));
         }
 
-        public Builder randomSeek(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRandomSeekArgs> randomSeek) {
+        public Builder randomSeek(@Nullable Output<RandomSeekArgs> randomSeek) {
             $.randomSeek = randomSeek;
             return this;
         }
 
-        public Builder randomSeek(GetPropertyRulesBuilderRulesV20231030BehaviorRandomSeekArgs randomSeek) {
+        public Builder randomSeek(RandomSeekArgs randomSeek) {
             return randomSeek(Output.of(randomSeek));
         }
 
-        public Builder rapid(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRapidArgs> rapid) {
+        public Builder rapid(@Nullable Output<RapidArgs> rapid) {
             $.rapid = rapid;
             return this;
         }
 
-        public Builder rapid(GetPropertyRulesBuilderRulesV20231030BehaviorRapidArgs rapid) {
+        public Builder rapid(RapidArgs rapid) {
             return rapid(Output.of(rapid));
         }
 
-        public Builder readTimeout(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorReadTimeoutArgs> readTimeout) {
+        public Builder readTimeout(@Nullable Output<ReadTimeoutArgs> readTimeout) {
             $.readTimeout = readTimeout;
             return this;
         }
 
-        public Builder readTimeout(GetPropertyRulesBuilderRulesV20231030BehaviorReadTimeoutArgs readTimeout) {
+        public Builder readTimeout(ReadTimeoutArgs readTimeout) {
             return readTimeout(Output.of(readTimeout));
         }
 
-        public Builder realTimeReporting(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRealTimeReportingArgs> realTimeReporting) {
+        public Builder realTimeReporting(@Nullable Output<RealTimeReportingArgs> realTimeReporting) {
             $.realTimeReporting = realTimeReporting;
             return this;
         }
 
-        public Builder realTimeReporting(GetPropertyRulesBuilderRulesV20231030BehaviorRealTimeReportingArgs realTimeReporting) {
+        public Builder realTimeReporting(RealTimeReportingArgs realTimeReporting) {
             return realTimeReporting(Output.of(realTimeReporting));
         }
 
-        public Builder realUserMonitoring(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRealUserMonitoringArgs> realUserMonitoring) {
+        public Builder realUserMonitoring(@Nullable Output<RealUserMonitoringArgs> realUserMonitoring) {
             $.realUserMonitoring = realUserMonitoring;
             return this;
         }
 
-        public Builder realUserMonitoring(GetPropertyRulesBuilderRulesV20231030BehaviorRealUserMonitoringArgs realUserMonitoring) {
+        public Builder realUserMonitoring(RealUserMonitoringArgs realUserMonitoring) {
             return realUserMonitoring(Output.of(realUserMonitoring));
         }
 
-        public Builder redirect(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRedirectArgs> redirect) {
+        public Builder redirect(@Nullable Output<RedirectArgs> redirect) {
             $.redirect = redirect;
             return this;
         }
 
-        public Builder redirect(GetPropertyRulesBuilderRulesV20231030BehaviorRedirectArgs redirect) {
+        public Builder redirect(RedirectArgs redirect) {
             return redirect(Output.of(redirect));
         }
 
-        public Builder redirectplus(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRedirectplusArgs> redirectplus) {
+        public Builder redirectplus(@Nullable Output<RedirectplusArgs> redirectplus) {
             $.redirectplus = redirectplus;
             return this;
         }
 
-        public Builder redirectplus(GetPropertyRulesBuilderRulesV20231030BehaviorRedirectplusArgs redirectplus) {
+        public Builder redirectplus(RedirectplusArgs redirectplus) {
             return redirectplus(Output.of(redirectplus));
         }
 
-        public Builder refererChecking(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRefererCheckingArgs> refererChecking) {
+        public Builder refererChecking(@Nullable Output<RefererCheckingArgs> refererChecking) {
             $.refererChecking = refererChecking;
             return this;
         }
 
-        public Builder refererChecking(GetPropertyRulesBuilderRulesV20231030BehaviorRefererCheckingArgs refererChecking) {
+        public Builder refererChecking(RefererCheckingArgs refererChecking) {
             return refererChecking(Output.of(refererChecking));
         }
 
-        public Builder removeQueryParameter(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRemoveQueryParameterArgs> removeQueryParameter) {
+        public Builder removeQueryParameter(@Nullable Output<RemoveQueryParameterArgs> removeQueryParameter) {
             $.removeQueryParameter = removeQueryParameter;
             return this;
         }
 
-        public Builder removeQueryParameter(GetPropertyRulesBuilderRulesV20231030BehaviorRemoveQueryParameterArgs removeQueryParameter) {
+        public Builder removeQueryParameter(RemoveQueryParameterArgs removeQueryParameter) {
             return removeQueryParameter(Output.of(removeQueryParameter));
         }
 
-        public Builder removeVary(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRemoveVaryArgs> removeVary) {
+        public Builder removeVary(@Nullable Output<RemoveVaryArgs> removeVary) {
             $.removeVary = removeVary;
             return this;
         }
 
-        public Builder removeVary(GetPropertyRulesBuilderRulesV20231030BehaviorRemoveVaryArgs removeVary) {
+        public Builder removeVary(RemoveVaryArgs removeVary) {
             return removeVary(Output.of(removeVary));
         }
 
-        public Builder report(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorReportArgs> report) {
+        public Builder report(@Nullable Output<ReportArgs> report) {
             $.report = report;
             return this;
         }
 
-        public Builder report(GetPropertyRulesBuilderRulesV20231030BehaviorReportArgs report) {
+        public Builder report(ReportArgs report) {
             return report(Output.of(report));
         }
 
-        public Builder requestClientHints(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRequestClientHintsArgs> requestClientHints) {
+        public Builder requestClientHints(@Nullable Output<RequestClientHintsArgs> requestClientHints) {
             $.requestClientHints = requestClientHints;
             return this;
         }
 
-        public Builder requestClientHints(GetPropertyRulesBuilderRulesV20231030BehaviorRequestClientHintsArgs requestClientHints) {
+        public Builder requestClientHints(RequestClientHintsArgs requestClientHints) {
             return requestClientHints(Output.of(requestClientHints));
         }
 
-        public Builder requestControl(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRequestControlArgs> requestControl) {
+        public Builder requestControl(@Nullable Output<RequestControlArgs> requestControl) {
             $.requestControl = requestControl;
             return this;
         }
 
-        public Builder requestControl(GetPropertyRulesBuilderRulesV20231030BehaviorRequestControlArgs requestControl) {
+        public Builder requestControl(RequestControlArgs requestControl) {
             return requestControl(Output.of(requestControl));
         }
 
-        public Builder requestTypeMarker(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRequestTypeMarkerArgs> requestTypeMarker) {
+        public Builder requestTypeMarker(@Nullable Output<RequestTypeMarkerArgs> requestTypeMarker) {
             $.requestTypeMarker = requestTypeMarker;
             return this;
         }
 
-        public Builder requestTypeMarker(GetPropertyRulesBuilderRulesV20231030BehaviorRequestTypeMarkerArgs requestTypeMarker) {
+        public Builder requestTypeMarker(RequestTypeMarkerArgs requestTypeMarker) {
             return requestTypeMarker(Output.of(requestTypeMarker));
         }
 
-        public Builder resourceOptimizer(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorResourceOptimizerArgs> resourceOptimizer) {
+        public Builder resourceOptimizer(@Nullable Output<ResourceOptimizerArgs> resourceOptimizer) {
             $.resourceOptimizer = resourceOptimizer;
             return this;
         }
 
-        public Builder resourceOptimizer(GetPropertyRulesBuilderRulesV20231030BehaviorResourceOptimizerArgs resourceOptimizer) {
+        public Builder resourceOptimizer(ResourceOptimizerArgs resourceOptimizer) {
             return resourceOptimizer(Output.of(resourceOptimizer));
         }
 
-        public Builder resourceOptimizerExtendedCompatibility(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorResourceOptimizerExtendedCompatibilityArgs> resourceOptimizerExtendedCompatibility) {
+        public Builder resourceOptimizerExtendedCompatibility(@Nullable Output<ResourceOptimizerExtendedCompatibilityArgs> resourceOptimizerExtendedCompatibility) {
             $.resourceOptimizerExtendedCompatibility = resourceOptimizerExtendedCompatibility;
             return this;
         }
 
-        public Builder resourceOptimizerExtendedCompatibility(GetPropertyRulesBuilderRulesV20231030BehaviorResourceOptimizerExtendedCompatibilityArgs resourceOptimizerExtendedCompatibility) {
+        public Builder resourceOptimizerExtendedCompatibility(ResourceOptimizerExtendedCompatibilityArgs resourceOptimizerExtendedCompatibility) {
             return resourceOptimizerExtendedCompatibility(Output.of(resourceOptimizerExtendedCompatibility));
         }
 
-        public Builder responseCode(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorResponseCodeArgs> responseCode) {
+        public Builder responseCode(@Nullable Output<ResponseCodeArgs> responseCode) {
             $.responseCode = responseCode;
             return this;
         }
 
-        public Builder responseCode(GetPropertyRulesBuilderRulesV20231030BehaviorResponseCodeArgs responseCode) {
+        public Builder responseCode(ResponseCodeArgs responseCode) {
             return responseCode(Output.of(responseCode));
         }
 
-        public Builder responseCookie(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorResponseCookieArgs> responseCookie) {
+        public Builder responseCookie(@Nullable Output<ResponseCookieArgs> responseCookie) {
             $.responseCookie = responseCookie;
             return this;
         }
 
-        public Builder responseCookie(GetPropertyRulesBuilderRulesV20231030BehaviorResponseCookieArgs responseCookie) {
+        public Builder responseCookie(ResponseCookieArgs responseCookie) {
             return responseCookie(Output.of(responseCookie));
         }
 
-        public Builder restrictObjectCaching(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRestrictObjectCachingArgs> restrictObjectCaching) {
+        public Builder restrictObjectCaching(@Nullable Output<RestrictObjectCachingArgs> restrictObjectCaching) {
             $.restrictObjectCaching = restrictObjectCaching;
             return this;
         }
 
-        public Builder restrictObjectCaching(GetPropertyRulesBuilderRulesV20231030BehaviorRestrictObjectCachingArgs restrictObjectCaching) {
+        public Builder restrictObjectCaching(RestrictObjectCachingArgs restrictObjectCaching) {
             return restrictObjectCaching(Output.of(restrictObjectCaching));
         }
 
-        public Builder returnCacheStatus(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorReturnCacheStatusArgs> returnCacheStatus) {
+        public Builder returnCacheStatus(@Nullable Output<ReturnCacheStatusArgs> returnCacheStatus) {
             $.returnCacheStatus = returnCacheStatus;
             return this;
         }
 
-        public Builder returnCacheStatus(GetPropertyRulesBuilderRulesV20231030BehaviorReturnCacheStatusArgs returnCacheStatus) {
+        public Builder returnCacheStatus(ReturnCacheStatusArgs returnCacheStatus) {
             return returnCacheStatus(Output.of(returnCacheStatus));
         }
 
-        public Builder rewriteUrl(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRewriteUrlArgs> rewriteUrl) {
+        public Builder rewriteUrl(@Nullable Output<RewriteUrlArgs> rewriteUrl) {
             $.rewriteUrl = rewriteUrl;
             return this;
         }
 
-        public Builder rewriteUrl(GetPropertyRulesBuilderRulesV20231030BehaviorRewriteUrlArgs rewriteUrl) {
+        public Builder rewriteUrl(RewriteUrlArgs rewriteUrl) {
             return rewriteUrl(Output.of(rewriteUrl));
         }
 
-        public Builder rumCustom(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorRumCustomArgs> rumCustom) {
+        public Builder rumCustom(@Nullable Output<RumCustomArgs> rumCustom) {
             $.rumCustom = rumCustom;
             return this;
         }
 
-        public Builder rumCustom(GetPropertyRulesBuilderRulesV20231030BehaviorRumCustomArgs rumCustom) {
+        public Builder rumCustom(RumCustomArgs rumCustom) {
             return rumCustom(Output.of(rumCustom));
         }
 
-        public Builder saasDefinitions(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorSaasDefinitionsArgs> saasDefinitions) {
+        public Builder saasDefinitions(@Nullable Output<SaasDefinitionsArgs> saasDefinitions) {
             $.saasDefinitions = saasDefinitions;
             return this;
         }
 
-        public Builder saasDefinitions(GetPropertyRulesBuilderRulesV20231030BehaviorSaasDefinitionsArgs saasDefinitions) {
+        public Builder saasDefinitions(SaasDefinitionsArgs saasDefinitions) {
             return saasDefinitions(Output.of(saasDefinitions));
         }
 
-        public Builder salesForceCommerceCloudClient(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudClientArgs> salesForceCommerceCloudClient) {
+        public Builder salesForceCommerceCloudClient(@Nullable Output<SalesForceCommerceCloudClientArgs> salesForceCommerceCloudClient) {
             $.salesForceCommerceCloudClient = salesForceCommerceCloudClient;
             return this;
         }
 
-        public Builder salesForceCommerceCloudClient(GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudClientArgs salesForceCommerceCloudClient) {
+        public Builder salesForceCommerceCloudClient(SalesForceCommerceCloudClientArgs salesForceCommerceCloudClient) {
             return salesForceCommerceCloudClient(Output.of(salesForceCommerceCloudClient));
         }
 
-        public Builder salesForceCommerceCloudProvider(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudProviderArgs> salesForceCommerceCloudProvider) {
+        public Builder salesForceCommerceCloudProvider(@Nullable Output<SalesForceCommerceCloudProviderArgs> salesForceCommerceCloudProvider) {
             $.salesForceCommerceCloudProvider = salesForceCommerceCloudProvider;
             return this;
         }
 
-        public Builder salesForceCommerceCloudProvider(GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudProviderArgs salesForceCommerceCloudProvider) {
+        public Builder salesForceCommerceCloudProvider(SalesForceCommerceCloudProviderArgs salesForceCommerceCloudProvider) {
             return salesForceCommerceCloudProvider(Output.of(salesForceCommerceCloudProvider));
         }
 
-        public Builder salesForceCommerceCloudProviderHostHeader(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudProviderHostHeaderArgs> salesForceCommerceCloudProviderHostHeader) {
+        public Builder salesForceCommerceCloudProviderHostHeader(@Nullable Output<SalesForceCommerceCloudProviderHostHeaderArgs> salesForceCommerceCloudProviderHostHeader) {
             $.salesForceCommerceCloudProviderHostHeader = salesForceCommerceCloudProviderHostHeader;
             return this;
         }
 
-        public Builder salesForceCommerceCloudProviderHostHeader(GetPropertyRulesBuilderRulesV20231030BehaviorSalesForceCommerceCloudProviderHostHeaderArgs salesForceCommerceCloudProviderHostHeader) {
+        public Builder salesForceCommerceCloudProviderHostHeader(SalesForceCommerceCloudProviderHostHeaderArgs salesForceCommerceCloudProviderHostHeader) {
             return salesForceCommerceCloudProviderHostHeader(Output.of(salesForceCommerceCloudProviderHostHeader));
         }
 
-        public Builder savePostDcaProcessing(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorSavePostDcaProcessingArgs> savePostDcaProcessing) {
+        public Builder savePostDcaProcessing(@Nullable Output<SavePostDcaProcessingArgs> savePostDcaProcessing) {
             $.savePostDcaProcessing = savePostDcaProcessing;
             return this;
         }
 
-        public Builder savePostDcaProcessing(GetPropertyRulesBuilderRulesV20231030BehaviorSavePostDcaProcessingArgs savePostDcaProcessing) {
+        public Builder savePostDcaProcessing(SavePostDcaProcessingArgs savePostDcaProcessing) {
             return savePostDcaProcessing(Output.of(savePostDcaProcessing));
         }
 
-        public Builder scheduleInvalidation(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorScheduleInvalidationArgs> scheduleInvalidation) {
+        public Builder scheduleInvalidation(@Nullable Output<ScheduleInvalidationArgs> scheduleInvalidation) {
             $.scheduleInvalidation = scheduleInvalidation;
             return this;
         }
 
-        public Builder scheduleInvalidation(GetPropertyRulesBuilderRulesV20231030BehaviorScheduleInvalidationArgs scheduleInvalidation) {
+        public Builder scheduleInvalidation(ScheduleInvalidationArgs scheduleInvalidation) {
             return scheduleInvalidation(Output.of(scheduleInvalidation));
         }
 
-        public Builder scriptManagement(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorScriptManagementArgs> scriptManagement) {
+        public Builder scriptManagement(@Nullable Output<ScriptManagementArgs> scriptManagement) {
             $.scriptManagement = scriptManagement;
             return this;
         }
 
-        public Builder scriptManagement(GetPropertyRulesBuilderRulesV20231030BehaviorScriptManagementArgs scriptManagement) {
+        public Builder scriptManagement(ScriptManagementArgs scriptManagement) {
             return scriptManagement(Output.of(scriptManagement));
         }
 
-        public Builder segmentedContentProtection(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedContentProtectionArgs> segmentedContentProtection) {
+        public Builder segmentedContentProtection(@Nullable Output<SegmentedContentProtectionArgs> segmentedContentProtection) {
             $.segmentedContentProtection = segmentedContentProtection;
             return this;
         }
 
-        public Builder segmentedContentProtection(GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedContentProtectionArgs segmentedContentProtection) {
+        public Builder segmentedContentProtection(SegmentedContentProtectionArgs segmentedContentProtection) {
             return segmentedContentProtection(Output.of(segmentedContentProtection));
         }
 
-        public Builder segmentedMediaOptimization(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedMediaOptimizationArgs> segmentedMediaOptimization) {
+        public Builder segmentedMediaOptimization(@Nullable Output<SegmentedMediaOptimizationArgs> segmentedMediaOptimization) {
             $.segmentedMediaOptimization = segmentedMediaOptimization;
             return this;
         }
 
-        public Builder segmentedMediaOptimization(GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedMediaOptimizationArgs segmentedMediaOptimization) {
+        public Builder segmentedMediaOptimization(SegmentedMediaOptimizationArgs segmentedMediaOptimization) {
             return segmentedMediaOptimization(Output.of(segmentedMediaOptimization));
         }
 
-        public Builder segmentedMediaStreamingPrefetch(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedMediaStreamingPrefetchArgs> segmentedMediaStreamingPrefetch) {
+        public Builder segmentedMediaStreamingPrefetch(@Nullable Output<SegmentedMediaStreamingPrefetchArgs> segmentedMediaStreamingPrefetch) {
             $.segmentedMediaStreamingPrefetch = segmentedMediaStreamingPrefetch;
             return this;
         }
 
-        public Builder segmentedMediaStreamingPrefetch(GetPropertyRulesBuilderRulesV20231030BehaviorSegmentedMediaStreamingPrefetchArgs segmentedMediaStreamingPrefetch) {
+        public Builder segmentedMediaStreamingPrefetch(SegmentedMediaStreamingPrefetchArgs segmentedMediaStreamingPrefetch) {
             return segmentedMediaStreamingPrefetch(Output.of(segmentedMediaStreamingPrefetch));
         }
 
-        public Builder setVariable(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorSetVariableArgs> setVariable) {
+        public Builder setVariable(@Nullable Output<SetVariableArgs> setVariable) {
             $.setVariable = setVariable;
             return this;
         }
 
-        public Builder setVariable(GetPropertyRulesBuilderRulesV20231030BehaviorSetVariableArgs setVariable) {
+        public Builder setVariable(SetVariableArgs setVariable) {
             return setVariable(Output.of(setVariable));
         }
 
-        public Builder simulateErrorCode(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorSimulateErrorCodeArgs> simulateErrorCode) {
+        public Builder simulateErrorCode(@Nullable Output<SimulateErrorCodeArgs> simulateErrorCode) {
             $.simulateErrorCode = simulateErrorCode;
             return this;
         }
 
-        public Builder simulateErrorCode(GetPropertyRulesBuilderRulesV20231030BehaviorSimulateErrorCodeArgs simulateErrorCode) {
+        public Builder simulateErrorCode(SimulateErrorCodeArgs simulateErrorCode) {
             return simulateErrorCode(Output.of(simulateErrorCode));
         }
 
-        public Builder siteShield(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorSiteShieldArgs> siteShield) {
+        public Builder siteShield(@Nullable Output<SiteShieldArgs> siteShield) {
             $.siteShield = siteShield;
             return this;
         }
 
-        public Builder siteShield(GetPropertyRulesBuilderRulesV20231030BehaviorSiteShieldArgs siteShield) {
+        public Builder siteShield(SiteShieldArgs siteShield) {
             return siteShield(Output.of(siteShield));
         }
 
-        public Builder standardTlsMigration(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorStandardTlsMigrationArgs> standardTlsMigration) {
+        public Builder standardTlsMigration(@Nullable Output<StandardTlsMigrationArgs> standardTlsMigration) {
             $.standardTlsMigration = standardTlsMigration;
             return this;
         }
 
-        public Builder standardTlsMigration(GetPropertyRulesBuilderRulesV20231030BehaviorStandardTlsMigrationArgs standardTlsMigration) {
+        public Builder standardTlsMigration(StandardTlsMigrationArgs standardTlsMigration) {
             return standardTlsMigration(Output.of(standardTlsMigration));
         }
 
-        public Builder standardTlsMigrationOverride(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorStandardTlsMigrationOverrideArgs> standardTlsMigrationOverride) {
+        public Builder standardTlsMigrationOverride(@Nullable Output<StandardTlsMigrationOverrideArgs> standardTlsMigrationOverride) {
             $.standardTlsMigrationOverride = standardTlsMigrationOverride;
             return this;
         }
 
-        public Builder standardTlsMigrationOverride(GetPropertyRulesBuilderRulesV20231030BehaviorStandardTlsMigrationOverrideArgs standardTlsMigrationOverride) {
+        public Builder standardTlsMigrationOverride(StandardTlsMigrationOverrideArgs standardTlsMigrationOverride) {
             return standardTlsMigrationOverride(Output.of(standardTlsMigrationOverride));
         }
 
-        public Builder strictHeaderParsing(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorStrictHeaderParsingArgs> strictHeaderParsing) {
+        public Builder strictHeaderParsing(@Nullable Output<StrictHeaderParsingArgs> strictHeaderParsing) {
             $.strictHeaderParsing = strictHeaderParsing;
             return this;
         }
 
-        public Builder strictHeaderParsing(GetPropertyRulesBuilderRulesV20231030BehaviorStrictHeaderParsingArgs strictHeaderParsing) {
+        public Builder strictHeaderParsing(StrictHeaderParsingArgs strictHeaderParsing) {
             return strictHeaderParsing(Output.of(strictHeaderParsing));
         }
 
-        public Builder subCustomer(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorSubCustomerArgs> subCustomer) {
+        public Builder subCustomer(@Nullable Output<SubCustomerArgs> subCustomer) {
             $.subCustomer = subCustomer;
             return this;
         }
 
-        public Builder subCustomer(GetPropertyRulesBuilderRulesV20231030BehaviorSubCustomerArgs subCustomer) {
+        public Builder subCustomer(SubCustomerArgs subCustomer) {
             return subCustomer(Output.of(subCustomer));
         }
 
-        public Builder sureRoute(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorSureRouteArgs> sureRoute) {
+        public Builder sureRoute(@Nullable Output<SureRouteArgs> sureRoute) {
             $.sureRoute = sureRoute;
             return this;
         }
 
-        public Builder sureRoute(GetPropertyRulesBuilderRulesV20231030BehaviorSureRouteArgs sureRoute) {
+        public Builder sureRoute(SureRouteArgs sureRoute) {
             return sureRoute(Output.of(sureRoute));
         }
 
-        public Builder tcpOptimization(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorTcpOptimizationArgs> tcpOptimization) {
+        public Builder tcpOptimization(@Nullable Output<TcpOptimizationArgs> tcpOptimization) {
             $.tcpOptimization = tcpOptimization;
             return this;
         }
 
-        public Builder tcpOptimization(GetPropertyRulesBuilderRulesV20231030BehaviorTcpOptimizationArgs tcpOptimization) {
+        public Builder tcpOptimization(TcpOptimizationArgs tcpOptimization) {
             return tcpOptimization(Output.of(tcpOptimization));
         }
 
-        public Builder teaLeaf(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorTeaLeafArgs> teaLeaf) {
+        public Builder teaLeaf(@Nullable Output<TeaLeafArgs> teaLeaf) {
             $.teaLeaf = teaLeaf;
             return this;
         }
 
-        public Builder teaLeaf(GetPropertyRulesBuilderRulesV20231030BehaviorTeaLeafArgs teaLeaf) {
+        public Builder teaLeaf(TeaLeafArgs teaLeaf) {
             return teaLeaf(Output.of(teaLeaf));
         }
 
-        public Builder tieredDistribution(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionArgs> tieredDistribution) {
+        public Builder tieredDistribution(@Nullable Output<TieredDistributionArgs> tieredDistribution) {
             $.tieredDistribution = tieredDistribution;
             return this;
         }
 
-        public Builder tieredDistribution(GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionArgs tieredDistribution) {
+        public Builder tieredDistribution(TieredDistributionArgs tieredDistribution) {
             return tieredDistribution(Output.of(tieredDistribution));
         }
 
-        public Builder tieredDistributionAdvanced(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionAdvancedArgs> tieredDistributionAdvanced) {
+        public Builder tieredDistributionAdvanced(@Nullable Output<TieredDistributionAdvancedArgs> tieredDistributionAdvanced) {
             $.tieredDistributionAdvanced = tieredDistributionAdvanced;
             return this;
         }
 
-        public Builder tieredDistributionAdvanced(GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionAdvancedArgs tieredDistributionAdvanced) {
+        public Builder tieredDistributionAdvanced(TieredDistributionAdvancedArgs tieredDistributionAdvanced) {
             return tieredDistributionAdvanced(Output.of(tieredDistributionAdvanced));
         }
 
-        public Builder tieredDistributionCustomization(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionCustomizationArgs> tieredDistributionCustomization) {
+        public Builder tieredDistributionCustomization(@Nullable Output<TieredDistributionCustomizationArgs> tieredDistributionCustomization) {
             $.tieredDistributionCustomization = tieredDistributionCustomization;
             return this;
         }
 
-        public Builder tieredDistributionCustomization(GetPropertyRulesBuilderRulesV20231030BehaviorTieredDistributionCustomizationArgs tieredDistributionCustomization) {
+        public Builder tieredDistributionCustomization(TieredDistributionCustomizationArgs tieredDistributionCustomization) {
             return tieredDistributionCustomization(Output.of(tieredDistributionCustomization));
         }
 
-        public Builder timeout(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorTimeoutArgs> timeout) {
+        public Builder timeout(@Nullable Output<TimeoutArgs> timeout) {
             $.timeout = timeout;
             return this;
         }
 
-        public Builder timeout(GetPropertyRulesBuilderRulesV20231030BehaviorTimeoutArgs timeout) {
+        public Builder timeout(TimeoutArgs timeout) {
             return timeout(Output.of(timeout));
         }
 
-        public Builder uidConfiguration(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorUidConfigurationArgs> uidConfiguration) {
+        public Builder uidConfiguration(@Nullable Output<UidConfigurationArgs> uidConfiguration) {
             $.uidConfiguration = uidConfiguration;
             return this;
         }
 
-        public Builder uidConfiguration(GetPropertyRulesBuilderRulesV20231030BehaviorUidConfigurationArgs uidConfiguration) {
+        public Builder uidConfiguration(UidConfigurationArgs uidConfiguration) {
             return uidConfiguration(Output.of(uidConfiguration));
         }
 
-        public Builder validateEntityTag(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorValidateEntityTagArgs> validateEntityTag) {
+        public Builder validateEntityTag(@Nullable Output<ValidateEntityTagArgs> validateEntityTag) {
             $.validateEntityTag = validateEntityTag;
             return this;
         }
 
-        public Builder validateEntityTag(GetPropertyRulesBuilderRulesV20231030BehaviorValidateEntityTagArgs validateEntityTag) {
+        public Builder validateEntityTag(ValidateEntityTagArgs validateEntityTag) {
             return validateEntityTag(Output.of(validateEntityTag));
         }
 
-        public Builder verifyJsonWebToken(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorVerifyJsonWebTokenArgs> verifyJsonWebToken) {
+        public Builder verifyJsonWebToken(@Nullable Output<VerifyJsonWebTokenArgs> verifyJsonWebToken) {
             $.verifyJsonWebToken = verifyJsonWebToken;
             return this;
         }
 
-        public Builder verifyJsonWebToken(GetPropertyRulesBuilderRulesV20231030BehaviorVerifyJsonWebTokenArgs verifyJsonWebToken) {
+        public Builder verifyJsonWebToken(VerifyJsonWebTokenArgs verifyJsonWebToken) {
             return verifyJsonWebToken(Output.of(verifyJsonWebToken));
         }
 
-        public Builder verifyJsonWebTokenForDcp(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorVerifyJsonWebTokenForDcpArgs> verifyJsonWebTokenForDcp) {
+        public Builder verifyJsonWebTokenForDcp(@Nullable Output<VerifyJsonWebTokenForDcpArgs> verifyJsonWebTokenForDcp) {
             $.verifyJsonWebTokenForDcp = verifyJsonWebTokenForDcp;
             return this;
         }
 
-        public Builder verifyJsonWebTokenForDcp(GetPropertyRulesBuilderRulesV20231030BehaviorVerifyJsonWebTokenForDcpArgs verifyJsonWebTokenForDcp) {
+        public Builder verifyJsonWebTokenForDcp(VerifyJsonWebTokenForDcpArgs verifyJsonWebTokenForDcp) {
             return verifyJsonWebTokenForDcp(Output.of(verifyJsonWebTokenForDcp));
         }
 
-        public Builder verifyTokenAuthorization(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorVerifyTokenAuthorizationArgs> verifyTokenAuthorization) {
+        public Builder verifyTokenAuthorization(@Nullable Output<VerifyTokenAuthorizationArgs> verifyTokenAuthorization) {
             $.verifyTokenAuthorization = verifyTokenAuthorization;
             return this;
         }
 
-        public Builder verifyTokenAuthorization(GetPropertyRulesBuilderRulesV20231030BehaviorVerifyTokenAuthorizationArgs verifyTokenAuthorization) {
+        public Builder verifyTokenAuthorization(VerifyTokenAuthorizationArgs verifyTokenAuthorization) {
             return verifyTokenAuthorization(Output.of(verifyTokenAuthorization));
         }
 
-        public Builder virtualWaitingRoom(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorVirtualWaitingRoomArgs> virtualWaitingRoom) {
+        public Builder virtualWaitingRoom(@Nullable Output<VirtualWaitingRoomArgs> virtualWaitingRoom) {
             $.virtualWaitingRoom = virtualWaitingRoom;
             return this;
         }
 
-        public Builder virtualWaitingRoom(GetPropertyRulesBuilderRulesV20231030BehaviorVirtualWaitingRoomArgs virtualWaitingRoom) {
+        public Builder virtualWaitingRoom(VirtualWaitingRoomArgs virtualWaitingRoom) {
             return virtualWaitingRoom(Output.of(virtualWaitingRoom));
         }
 
-        public Builder virtualWaitingRoomWithEdgeWorkers(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorVirtualWaitingRoomWithEdgeWorkersArgs> virtualWaitingRoomWithEdgeWorkers) {
+        public Builder virtualWaitingRoomWithEdgeWorkers(@Nullable Output<VirtualWaitingRoomWithEdgeWorkersArgs> virtualWaitingRoomWithEdgeWorkers) {
             $.virtualWaitingRoomWithEdgeWorkers = virtualWaitingRoomWithEdgeWorkers;
             return this;
         }
 
-        public Builder virtualWaitingRoomWithEdgeWorkers(GetPropertyRulesBuilderRulesV20231030BehaviorVirtualWaitingRoomWithEdgeWorkersArgs virtualWaitingRoomWithEdgeWorkers) {
+        public Builder virtualWaitingRoomWithEdgeWorkers(VirtualWaitingRoomWithEdgeWorkersArgs virtualWaitingRoomWithEdgeWorkers) {
             return virtualWaitingRoomWithEdgeWorkers(Output.of(virtualWaitingRoomWithEdgeWorkers));
         }
 
-        public Builder visitorPrioritization(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationArgs> visitorPrioritization) {
+        public Builder visitorPrioritization(@Nullable Output<VisitorPrioritizationArgs> visitorPrioritization) {
             $.visitorPrioritization = visitorPrioritization;
             return this;
         }
 
-        public Builder visitorPrioritization(GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationArgs visitorPrioritization) {
+        public Builder visitorPrioritization(VisitorPrioritizationArgs visitorPrioritization) {
             return visitorPrioritization(Output.of(visitorPrioritization));
         }
 
-        public Builder visitorPrioritizationFifo(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationFifoArgs> visitorPrioritizationFifo) {
+        public Builder visitorPrioritizationFifo(@Nullable Output<VisitorPrioritizationFifoArgs> visitorPrioritizationFifo) {
             $.visitorPrioritizationFifo = visitorPrioritizationFifo;
             return this;
         }
 
-        public Builder visitorPrioritizationFifo(GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationFifoArgs visitorPrioritizationFifo) {
+        public Builder visitorPrioritizationFifo(VisitorPrioritizationFifoArgs visitorPrioritizationFifo) {
             return visitorPrioritizationFifo(Output.of(visitorPrioritizationFifo));
         }
 
-        public Builder visitorPrioritizationFifoStandalone(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationFifoStandaloneArgs> visitorPrioritizationFifoStandalone) {
+        public Builder visitorPrioritizationFifoStandalone(@Nullable Output<VisitorPrioritizationFifoStandaloneArgs> visitorPrioritizationFifoStandalone) {
             $.visitorPrioritizationFifoStandalone = visitorPrioritizationFifoStandalone;
             return this;
         }
 
-        public Builder visitorPrioritizationFifoStandalone(GetPropertyRulesBuilderRulesV20231030BehaviorVisitorPrioritizationFifoStandaloneArgs visitorPrioritizationFifoStandalone) {
+        public Builder visitorPrioritizationFifoStandalone(VisitorPrioritizationFifoStandaloneArgs visitorPrioritizationFifoStandalone) {
             return visitorPrioritizationFifoStandalone(Output.of(visitorPrioritizationFifoStandalone));
         }
 
-        public Builder watermarking(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorWatermarkingArgs> watermarking) {
+        public Builder watermarking(@Nullable Output<WatermarkingArgs> watermarking) {
             $.watermarking = watermarking;
             return this;
         }
 
-        public Builder watermarking(GetPropertyRulesBuilderRulesV20231030BehaviorWatermarkingArgs watermarking) {
+        public Builder watermarking(WatermarkingArgs watermarking) {
             return watermarking(Output.of(watermarking));
         }
 
-        public Builder webApplicationFirewall(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorWebApplicationFirewallArgs> webApplicationFirewall) {
+        public Builder webApplicationFirewall(@Nullable Output<WebApplicationFirewallArgs> webApplicationFirewall) {
             $.webApplicationFirewall = webApplicationFirewall;
             return this;
         }
 
-        public Builder webApplicationFirewall(GetPropertyRulesBuilderRulesV20231030BehaviorWebApplicationFirewallArgs webApplicationFirewall) {
+        public Builder webApplicationFirewall(WebApplicationFirewallArgs webApplicationFirewall) {
             return webApplicationFirewall(Output.of(webApplicationFirewall));
         }
 
-        public Builder webSockets(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorWebSocketsArgs> webSockets) {
+        public Builder webSockets(@Nullable Output<WebSocketsArgs> webSockets) {
             $.webSockets = webSockets;
             return this;
         }
 
-        public Builder webSockets(GetPropertyRulesBuilderRulesV20231030BehaviorWebSocketsArgs webSockets) {
+        public Builder webSockets(WebSocketsArgs webSockets) {
             return webSockets(Output.of(webSockets));
         }
 
-        public Builder webdav(@Nullable Output<GetPropertyRulesBuilderRulesV20231030BehaviorWebdavArgs> webdav) {
+        public Builder webdav(@Nullable Output<WebdavArgs> webdav) {
             $.webdav = webdav;
             return this;
         }
 
-        public Builder webdav(GetPropertyRulesBuilderRulesV20231030BehaviorWebdavArgs webdav) {
+        public Builder webdav(WebdavArgs webdav) {
             return webdav(Output.of(webdav));
         }
 

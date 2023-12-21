@@ -138,93 +138,93 @@ import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorMe
 import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorMediaAccelerationQuicOptout;
 import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorMediaClient;
 import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorMediaFileRetrievalOptimization;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorMediaOriginFailover;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorMetadataCaching;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorMobileSdkPerformance;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorModifyIncomingRequestHeader;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorModifyIncomingResponseHeader;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorModifyOutgoingRequestHeader;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorModifyOutgoingResponseHeader;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorModifyViaHeader;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorOrigin;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginCharacteristics;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginCharacteristicsWsd;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginFailureRecoveryMethod;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginFailureRecoveryPolicy;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorOriginIpAcl;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorPermissionsPolicy;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorPersistentClientConnection;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorPersistentConnection;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorPersonallyIdentifiableInformation;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorPhasedRelease;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorPreconnect;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorPredictiveContentDelivery;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorPredictivePrefetching;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorPrefetch;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorPrefetchable;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorPrefreshCache;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorQuality;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorQuicBeta;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorRandomSeek;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorRapid;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorReadTimeout;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorRealTimeReporting;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorRealUserMonitoring;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorRedirect;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorRedirectplus;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorRefererChecking;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorRemoveQueryParameter;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorRemoveVary;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorReport;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorRequestClientHints;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorRequestControl;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorRequestTypeMarker;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorResourceOptimizer;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorResourceOptimizerExtendedCompatibility;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorResponseCode;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorResponseCookie;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorRestrictObjectCaching;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorReturnCacheStatus;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorRewriteUrl;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorRumCustom;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorSaasDefinitions;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorSalesForceCommerceCloudClient;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorSalesForceCommerceCloudProvider;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorSalesForceCommerceCloudProviderHostHeader;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorSavePostDcaProcessing;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorScheduleInvalidation;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorScriptManagement;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorSegmentedContentProtection;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorSegmentedMediaOptimization;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorSegmentedMediaStreamingPrefetch;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorSetVariable;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorSimulateErrorCode;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorSiteShield;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorStandardTlsMigration;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorStandardTlsMigrationOverride;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorStrictHeaderParsing;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorSubCustomer;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorSureRoute;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorTcpOptimization;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorTeaLeaf;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorTieredDistribution;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorTieredDistributionAdvanced;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorTieredDistributionCustomization;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorTimeout;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorUidConfiguration;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorValidateEntityTag;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorVerifyJsonWebToken;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorVerifyJsonWebTokenForDcp;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorVerifyTokenAuthorization;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorVirtualWaitingRoom;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorVirtualWaitingRoomWithEdgeWorkers;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritization;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationFifo;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationFifoStandalone;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorWatermarking;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorWebApplicationFirewall;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorWebSockets;
-import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920BehaviorWebdav;
+import com.pulumi.akamai.outputs.MediaOriginFailover;
+import com.pulumi.akamai.outputs.MetadataCaching;
+import com.pulumi.akamai.outputs.MobileSdkPerformance;
+import com.pulumi.akamai.outputs.ModifyIncomingRequestHeader;
+import com.pulumi.akamai.outputs.ModifyIncomingResponseHeader;
+import com.pulumi.akamai.outputs.ModifyOutgoingRequestHeader;
+import com.pulumi.akamai.outputs.ModifyOutgoingResponseHeader;
+import com.pulumi.akamai.outputs.ModifyViaHeader;
+import com.pulumi.akamai.outputs.Origin;
+import com.pulumi.akamai.outputs.OriginCharacteristics;
+import com.pulumi.akamai.outputs.OriginCharacteristicsWsd;
+import com.pulumi.akamai.outputs.OriginFailureRecoveryMethod;
+import com.pulumi.akamai.outputs.OriginFailureRecoveryPolicy;
+import com.pulumi.akamai.outputs.OriginIpAcl;
+import com.pulumi.akamai.outputs.PermissionsPolicy;
+import com.pulumi.akamai.outputs.PersistentClientConnection;
+import com.pulumi.akamai.outputs.PersistentConnection;
+import com.pulumi.akamai.outputs.PersonallyIdentifiableInformation;
+import com.pulumi.akamai.outputs.PhasedRelease;
+import com.pulumi.akamai.outputs.Preconnect;
+import com.pulumi.akamai.outputs.PredictiveContentDelivery;
+import com.pulumi.akamai.outputs.PredictivePrefetching;
+import com.pulumi.akamai.outputs.Prefetch;
+import com.pulumi.akamai.outputs.Prefetchable;
+import com.pulumi.akamai.outputs.PrefreshCache;
+import com.pulumi.akamai.outputs.Quality;
+import com.pulumi.akamai.outputs.QuicBeta;
+import com.pulumi.akamai.outputs.RandomSeek;
+import com.pulumi.akamai.outputs.Rapid;
+import com.pulumi.akamai.outputs.ReadTimeout;
+import com.pulumi.akamai.outputs.RealTimeReporting;
+import com.pulumi.akamai.outputs.RealUserMonitoring;
+import com.pulumi.akamai.outputs.Redirect;
+import com.pulumi.akamai.outputs.Redirectplus;
+import com.pulumi.akamai.outputs.RefererChecking;
+import com.pulumi.akamai.outputs.RemoveQueryParameter;
+import com.pulumi.akamai.outputs.RemoveVary;
+import com.pulumi.akamai.outputs.Report;
+import com.pulumi.akamai.outputs.RequestClientHints;
+import com.pulumi.akamai.outputs.RequestControl;
+import com.pulumi.akamai.outputs.RequestTypeMarker;
+import com.pulumi.akamai.outputs.ResourceOptimizer;
+import com.pulumi.akamai.outputs.ResourceOptimizerExtendedCompatibility;
+import com.pulumi.akamai.outputs.ResponseCode;
+import com.pulumi.akamai.outputs.ResponseCookie;
+import com.pulumi.akamai.outputs.RestrictObjectCaching;
+import com.pulumi.akamai.outputs.ReturnCacheStatus;
+import com.pulumi.akamai.outputs.RewriteUrl;
+import com.pulumi.akamai.outputs.RumCustom;
+import com.pulumi.akamai.outputs.SaasDefinitions;
+import com.pulumi.akamai.outputs.SalesForceCommerceCloudClient;
+import com.pulumi.akamai.outputs.SalesForceCommerceCloudProvider;
+import com.pulumi.akamai.outputs.SalesForceCommerceCloudProviderHostHeader;
+import com.pulumi.akamai.outputs.SavePostDcaProcessing;
+import com.pulumi.akamai.outputs.ScheduleInvalidation;
+import com.pulumi.akamai.outputs.ScriptManagement;
+import com.pulumi.akamai.outputs.SegmentedContentProtection;
+import com.pulumi.akamai.outputs.SegmentedMediaOptimization;
+import com.pulumi.akamai.outputs.SegmentedMediaStreamingPrefetch;
+import com.pulumi.akamai.outputs.SetVariable;
+import com.pulumi.akamai.outputs.SimulateErrorCode;
+import com.pulumi.akamai.outputs.SiteShield;
+import com.pulumi.akamai.outputs.StandardTlsMigration;
+import com.pulumi.akamai.outputs.StandardTlsMigrationOverride;
+import com.pulumi.akamai.outputs.StrictHeaderParsing;
+import com.pulumi.akamai.outputs.SubCustomer;
+import com.pulumi.akamai.outputs.SureRoute;
+import com.pulumi.akamai.outputs.TcpOptimization;
+import com.pulumi.akamai.outputs.TeaLeaf;
+import com.pulumi.akamai.outputs.TieredDistribution;
+import com.pulumi.akamai.outputs.TieredDistributionAdvanced;
+import com.pulumi.akamai.outputs.TieredDistributionCustomization;
+import com.pulumi.akamai.outputs.Timeout;
+import com.pulumi.akamai.outputs.UidConfiguration;
+import com.pulumi.akamai.outputs.ValidateEntityTag;
+import com.pulumi.akamai.outputs.VerifyJsonWebToken;
+import com.pulumi.akamai.outputs.VerifyJsonWebTokenForDcp;
+import com.pulumi.akamai.outputs.VerifyTokenAuthorization;
+import com.pulumi.akamai.outputs.VirtualWaitingRoom;
+import com.pulumi.akamai.outputs.VirtualWaitingRoomWithEdgeWorkers;
+import com.pulumi.akamai.outputs.VisitorPrioritization;
+import com.pulumi.akamai.outputs.VisitorPrioritizationFifo;
+import com.pulumi.akamai.outputs.VisitorPrioritizationFifoStandalone;
+import com.pulumi.akamai.outputs.Watermarking;
+import com.pulumi.akamai.outputs.WebApplicationFirewall;
+import com.pulumi.akamai.outputs.WebSockets;
+import com.pulumi.akamai.outputs.Webdav;
 import com.pulumi.core.annotations.CustomType;
 import java.util.Objects;
 import java.util.Optional;
@@ -367,93 +367,93 @@ public final class GetPropertyRulesBuilderRulesV20230920Behavior {
     private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorMediaAccelerationQuicOptout mediaAccelerationQuicOptout;
     private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorMediaClient mediaClient;
     private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorMediaFileRetrievalOptimization mediaFileRetrievalOptimization;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorMediaOriginFailover mediaOriginFailover;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorMetadataCaching metadataCaching;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorMobileSdkPerformance mobileSdkPerformance;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorModifyIncomingRequestHeader modifyIncomingRequestHeader;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorModifyIncomingResponseHeader modifyIncomingResponseHeader;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorModifyOutgoingRequestHeader modifyOutgoingRequestHeader;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorModifyOutgoingResponseHeader modifyOutgoingResponseHeader;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorModifyViaHeader modifyViaHeader;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorOrigin origin;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorOriginCharacteristics originCharacteristics;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorOriginCharacteristicsWsd originCharacteristicsWsd;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorOriginFailureRecoveryMethod originFailureRecoveryMethod;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorOriginFailureRecoveryPolicy originFailureRecoveryPolicy;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorOriginIpAcl originIpAcl;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPermissionsPolicy permissionsPolicy;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPersistentClientConnection persistentClientConnection;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPersistentConnection persistentConnection;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPersonallyIdentifiableInformation personallyIdentifiableInformation;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPhasedRelease phasedRelease;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPreconnect preconnect;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPredictiveContentDelivery predictiveContentDelivery;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPredictivePrefetching predictivePrefetching;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPrefetch prefetch;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPrefetchable prefetchable;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPrefreshCache prefreshCache;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorQuality quality;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorQuicBeta quicBeta;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRandomSeek randomSeek;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRapid rapid;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorReadTimeout readTimeout;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRealTimeReporting realTimeReporting;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRealUserMonitoring realUserMonitoring;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRedirect redirect;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRedirectplus redirectplus;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRefererChecking refererChecking;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRemoveQueryParameter removeQueryParameter;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRemoveVary removeVary;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorReport report;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRequestClientHints requestClientHints;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRequestControl requestControl;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRequestTypeMarker requestTypeMarker;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorResourceOptimizer resourceOptimizer;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorResourceOptimizerExtendedCompatibility resourceOptimizerExtendedCompatibility;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorResponseCode responseCode;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorResponseCookie responseCookie;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRestrictObjectCaching restrictObjectCaching;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorReturnCacheStatus returnCacheStatus;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRewriteUrl rewriteUrl;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRumCustom rumCustom;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSaasDefinitions saasDefinitions;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSalesForceCommerceCloudClient salesForceCommerceCloudClient;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSalesForceCommerceCloudProvider salesForceCommerceCloudProvider;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSalesForceCommerceCloudProviderHostHeader salesForceCommerceCloudProviderHostHeader;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSavePostDcaProcessing savePostDcaProcessing;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorScheduleInvalidation scheduleInvalidation;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorScriptManagement scriptManagement;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSegmentedContentProtection segmentedContentProtection;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSegmentedMediaOptimization segmentedMediaOptimization;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSegmentedMediaStreamingPrefetch segmentedMediaStreamingPrefetch;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSetVariable setVariable;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSimulateErrorCode simulateErrorCode;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSiteShield siteShield;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorStandardTlsMigration standardTlsMigration;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorStandardTlsMigrationOverride standardTlsMigrationOverride;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorStrictHeaderParsing strictHeaderParsing;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSubCustomer subCustomer;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSureRoute sureRoute;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorTcpOptimization tcpOptimization;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorTeaLeaf teaLeaf;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorTieredDistribution tieredDistribution;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorTieredDistributionAdvanced tieredDistributionAdvanced;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorTieredDistributionCustomization tieredDistributionCustomization;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorTimeout timeout;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorUidConfiguration uidConfiguration;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorValidateEntityTag validateEntityTag;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorVerifyJsonWebToken verifyJsonWebToken;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorVerifyJsonWebTokenForDcp verifyJsonWebTokenForDcp;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorVerifyTokenAuthorization verifyTokenAuthorization;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorVirtualWaitingRoom virtualWaitingRoom;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorVirtualWaitingRoomWithEdgeWorkers virtualWaitingRoomWithEdgeWorkers;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritization visitorPrioritization;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationFifo visitorPrioritizationFifo;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationFifoStandalone visitorPrioritizationFifoStandalone;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorWatermarking watermarking;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorWebApplicationFirewall webApplicationFirewall;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorWebSockets webSockets;
-    private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorWebdav webdav;
+    private @Nullable MediaOriginFailover mediaOriginFailover;
+    private @Nullable MetadataCaching metadataCaching;
+    private @Nullable MobileSdkPerformance mobileSdkPerformance;
+    private @Nullable ModifyIncomingRequestHeader modifyIncomingRequestHeader;
+    private @Nullable ModifyIncomingResponseHeader modifyIncomingResponseHeader;
+    private @Nullable ModifyOutgoingRequestHeader modifyOutgoingRequestHeader;
+    private @Nullable ModifyOutgoingResponseHeader modifyOutgoingResponseHeader;
+    private @Nullable ModifyViaHeader modifyViaHeader;
+    private @Nullable Origin origin;
+    private @Nullable OriginCharacteristics originCharacteristics;
+    private @Nullable OriginCharacteristicsWsd originCharacteristicsWsd;
+    private @Nullable OriginFailureRecoveryMethod originFailureRecoveryMethod;
+    private @Nullable OriginFailureRecoveryPolicy originFailureRecoveryPolicy;
+    private @Nullable OriginIpAcl originIpAcl;
+    private @Nullable PermissionsPolicy permissionsPolicy;
+    private @Nullable PersistentClientConnection persistentClientConnection;
+    private @Nullable PersistentConnection persistentConnection;
+    private @Nullable PersonallyIdentifiableInformation personallyIdentifiableInformation;
+    private @Nullable PhasedRelease phasedRelease;
+    private @Nullable Preconnect preconnect;
+    private @Nullable PredictiveContentDelivery predictiveContentDelivery;
+    private @Nullable PredictivePrefetching predictivePrefetching;
+    private @Nullable Prefetch prefetch;
+    private @Nullable Prefetchable prefetchable;
+    private @Nullable PrefreshCache prefreshCache;
+    private @Nullable Quality quality;
+    private @Nullable QuicBeta quicBeta;
+    private @Nullable RandomSeek randomSeek;
+    private @Nullable Rapid rapid;
+    private @Nullable ReadTimeout readTimeout;
+    private @Nullable RealTimeReporting realTimeReporting;
+    private @Nullable RealUserMonitoring realUserMonitoring;
+    private @Nullable Redirect redirect;
+    private @Nullable Redirectplus redirectplus;
+    private @Nullable RefererChecking refererChecking;
+    private @Nullable RemoveQueryParameter removeQueryParameter;
+    private @Nullable RemoveVary removeVary;
+    private @Nullable Report report;
+    private @Nullable RequestClientHints requestClientHints;
+    private @Nullable RequestControl requestControl;
+    private @Nullable RequestTypeMarker requestTypeMarker;
+    private @Nullable ResourceOptimizer resourceOptimizer;
+    private @Nullable ResourceOptimizerExtendedCompatibility resourceOptimizerExtendedCompatibility;
+    private @Nullable ResponseCode responseCode;
+    private @Nullable ResponseCookie responseCookie;
+    private @Nullable RestrictObjectCaching restrictObjectCaching;
+    private @Nullable ReturnCacheStatus returnCacheStatus;
+    private @Nullable RewriteUrl rewriteUrl;
+    private @Nullable RumCustom rumCustom;
+    private @Nullable SaasDefinitions saasDefinitions;
+    private @Nullable SalesForceCommerceCloudClient salesForceCommerceCloudClient;
+    private @Nullable SalesForceCommerceCloudProvider salesForceCommerceCloudProvider;
+    private @Nullable SalesForceCommerceCloudProviderHostHeader salesForceCommerceCloudProviderHostHeader;
+    private @Nullable SavePostDcaProcessing savePostDcaProcessing;
+    private @Nullable ScheduleInvalidation scheduleInvalidation;
+    private @Nullable ScriptManagement scriptManagement;
+    private @Nullable SegmentedContentProtection segmentedContentProtection;
+    private @Nullable SegmentedMediaOptimization segmentedMediaOptimization;
+    private @Nullable SegmentedMediaStreamingPrefetch segmentedMediaStreamingPrefetch;
+    private @Nullable SetVariable setVariable;
+    private @Nullable SimulateErrorCode simulateErrorCode;
+    private @Nullable SiteShield siteShield;
+    private @Nullable StandardTlsMigration standardTlsMigration;
+    private @Nullable StandardTlsMigrationOverride standardTlsMigrationOverride;
+    private @Nullable StrictHeaderParsing strictHeaderParsing;
+    private @Nullable SubCustomer subCustomer;
+    private @Nullable SureRoute sureRoute;
+    private @Nullable TcpOptimization tcpOptimization;
+    private @Nullable TeaLeaf teaLeaf;
+    private @Nullable TieredDistribution tieredDistribution;
+    private @Nullable TieredDistributionAdvanced tieredDistributionAdvanced;
+    private @Nullable TieredDistributionCustomization tieredDistributionCustomization;
+    private @Nullable Timeout timeout;
+    private @Nullable UidConfiguration uidConfiguration;
+    private @Nullable ValidateEntityTag validateEntityTag;
+    private @Nullable VerifyJsonWebToken verifyJsonWebToken;
+    private @Nullable VerifyJsonWebTokenForDcp verifyJsonWebTokenForDcp;
+    private @Nullable VerifyTokenAuthorization verifyTokenAuthorization;
+    private @Nullable VirtualWaitingRoom virtualWaitingRoom;
+    private @Nullable VirtualWaitingRoomWithEdgeWorkers virtualWaitingRoomWithEdgeWorkers;
+    private @Nullable VisitorPrioritization visitorPrioritization;
+    private @Nullable VisitorPrioritizationFifo visitorPrioritizationFifo;
+    private @Nullable VisitorPrioritizationFifoStandalone visitorPrioritizationFifoStandalone;
+    private @Nullable Watermarking watermarking;
+    private @Nullable WebApplicationFirewall webApplicationFirewall;
+    private @Nullable WebSockets webSockets;
+    private @Nullable Webdav webdav;
 
     private GetPropertyRulesBuilderRulesV20230920Behavior() {}
     public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorAdScalerCircuitBreaker> adScalerCircuitBreaker() {
@@ -861,265 +861,265 @@ public final class GetPropertyRulesBuilderRulesV20230920Behavior {
     public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorMediaFileRetrievalOptimization> mediaFileRetrievalOptimization() {
         return Optional.ofNullable(this.mediaFileRetrievalOptimization);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorMediaOriginFailover> mediaOriginFailover() {
+    public Optional<MediaOriginFailover> mediaOriginFailover() {
         return Optional.ofNullable(this.mediaOriginFailover);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorMetadataCaching> metadataCaching() {
+    public Optional<MetadataCaching> metadataCaching() {
         return Optional.ofNullable(this.metadataCaching);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorMobileSdkPerformance> mobileSdkPerformance() {
+    public Optional<MobileSdkPerformance> mobileSdkPerformance() {
         return Optional.ofNullable(this.mobileSdkPerformance);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorModifyIncomingRequestHeader> modifyIncomingRequestHeader() {
+    public Optional<ModifyIncomingRequestHeader> modifyIncomingRequestHeader() {
         return Optional.ofNullable(this.modifyIncomingRequestHeader);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorModifyIncomingResponseHeader> modifyIncomingResponseHeader() {
+    public Optional<ModifyIncomingResponseHeader> modifyIncomingResponseHeader() {
         return Optional.ofNullable(this.modifyIncomingResponseHeader);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorModifyOutgoingRequestHeader> modifyOutgoingRequestHeader() {
+    public Optional<ModifyOutgoingRequestHeader> modifyOutgoingRequestHeader() {
         return Optional.ofNullable(this.modifyOutgoingRequestHeader);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorModifyOutgoingResponseHeader> modifyOutgoingResponseHeader() {
+    public Optional<ModifyOutgoingResponseHeader> modifyOutgoingResponseHeader() {
         return Optional.ofNullable(this.modifyOutgoingResponseHeader);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorModifyViaHeader> modifyViaHeader() {
+    public Optional<ModifyViaHeader> modifyViaHeader() {
         return Optional.ofNullable(this.modifyViaHeader);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorOrigin> origin() {
+    public Optional<Origin> origin() {
         return Optional.ofNullable(this.origin);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorOriginCharacteristics> originCharacteristics() {
+    public Optional<OriginCharacteristics> originCharacteristics() {
         return Optional.ofNullable(this.originCharacteristics);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorOriginCharacteristicsWsd> originCharacteristicsWsd() {
+    public Optional<OriginCharacteristicsWsd> originCharacteristicsWsd() {
         return Optional.ofNullable(this.originCharacteristicsWsd);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorOriginFailureRecoveryMethod> originFailureRecoveryMethod() {
+    public Optional<OriginFailureRecoveryMethod> originFailureRecoveryMethod() {
         return Optional.ofNullable(this.originFailureRecoveryMethod);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorOriginFailureRecoveryPolicy> originFailureRecoveryPolicy() {
+    public Optional<OriginFailureRecoveryPolicy> originFailureRecoveryPolicy() {
         return Optional.ofNullable(this.originFailureRecoveryPolicy);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorOriginIpAcl> originIpAcl() {
+    public Optional<OriginIpAcl> originIpAcl() {
         return Optional.ofNullable(this.originIpAcl);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorPermissionsPolicy> permissionsPolicy() {
+    public Optional<PermissionsPolicy> permissionsPolicy() {
         return Optional.ofNullable(this.permissionsPolicy);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorPersistentClientConnection> persistentClientConnection() {
+    public Optional<PersistentClientConnection> persistentClientConnection() {
         return Optional.ofNullable(this.persistentClientConnection);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorPersistentConnection> persistentConnection() {
+    public Optional<PersistentConnection> persistentConnection() {
         return Optional.ofNullable(this.persistentConnection);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorPersonallyIdentifiableInformation> personallyIdentifiableInformation() {
+    public Optional<PersonallyIdentifiableInformation> personallyIdentifiableInformation() {
         return Optional.ofNullable(this.personallyIdentifiableInformation);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorPhasedRelease> phasedRelease() {
+    public Optional<PhasedRelease> phasedRelease() {
         return Optional.ofNullable(this.phasedRelease);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorPreconnect> preconnect() {
+    public Optional<Preconnect> preconnect() {
         return Optional.ofNullable(this.preconnect);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorPredictiveContentDelivery> predictiveContentDelivery() {
+    public Optional<PredictiveContentDelivery> predictiveContentDelivery() {
         return Optional.ofNullable(this.predictiveContentDelivery);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorPredictivePrefetching> predictivePrefetching() {
+    public Optional<PredictivePrefetching> predictivePrefetching() {
         return Optional.ofNullable(this.predictivePrefetching);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorPrefetch> prefetch() {
+    public Optional<Prefetch> prefetch() {
         return Optional.ofNullable(this.prefetch);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorPrefetchable> prefetchable() {
+    public Optional<Prefetchable> prefetchable() {
         return Optional.ofNullable(this.prefetchable);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorPrefreshCache> prefreshCache() {
+    public Optional<PrefreshCache> prefreshCache() {
         return Optional.ofNullable(this.prefreshCache);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorQuality> quality() {
+    public Optional<Quality> quality() {
         return Optional.ofNullable(this.quality);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorQuicBeta> quicBeta() {
+    public Optional<QuicBeta> quicBeta() {
         return Optional.ofNullable(this.quicBeta);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorRandomSeek> randomSeek() {
+    public Optional<RandomSeek> randomSeek() {
         return Optional.ofNullable(this.randomSeek);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorRapid> rapid() {
+    public Optional<Rapid> rapid() {
         return Optional.ofNullable(this.rapid);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorReadTimeout> readTimeout() {
+    public Optional<ReadTimeout> readTimeout() {
         return Optional.ofNullable(this.readTimeout);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorRealTimeReporting> realTimeReporting() {
+    public Optional<RealTimeReporting> realTimeReporting() {
         return Optional.ofNullable(this.realTimeReporting);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorRealUserMonitoring> realUserMonitoring() {
+    public Optional<RealUserMonitoring> realUserMonitoring() {
         return Optional.ofNullable(this.realUserMonitoring);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorRedirect> redirect() {
+    public Optional<Redirect> redirect() {
         return Optional.ofNullable(this.redirect);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorRedirectplus> redirectplus() {
+    public Optional<Redirectplus> redirectplus() {
         return Optional.ofNullable(this.redirectplus);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorRefererChecking> refererChecking() {
+    public Optional<RefererChecking> refererChecking() {
         return Optional.ofNullable(this.refererChecking);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorRemoveQueryParameter> removeQueryParameter() {
+    public Optional<RemoveQueryParameter> removeQueryParameter() {
         return Optional.ofNullable(this.removeQueryParameter);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorRemoveVary> removeVary() {
+    public Optional<RemoveVary> removeVary() {
         return Optional.ofNullable(this.removeVary);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorReport> report() {
+    public Optional<Report> report() {
         return Optional.ofNullable(this.report);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorRequestClientHints> requestClientHints() {
+    public Optional<RequestClientHints> requestClientHints() {
         return Optional.ofNullable(this.requestClientHints);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorRequestControl> requestControl() {
+    public Optional<RequestControl> requestControl() {
         return Optional.ofNullable(this.requestControl);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorRequestTypeMarker> requestTypeMarker() {
+    public Optional<RequestTypeMarker> requestTypeMarker() {
         return Optional.ofNullable(this.requestTypeMarker);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorResourceOptimizer> resourceOptimizer() {
+    public Optional<ResourceOptimizer> resourceOptimizer() {
         return Optional.ofNullable(this.resourceOptimizer);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorResourceOptimizerExtendedCompatibility> resourceOptimizerExtendedCompatibility() {
+    public Optional<ResourceOptimizerExtendedCompatibility> resourceOptimizerExtendedCompatibility() {
         return Optional.ofNullable(this.resourceOptimizerExtendedCompatibility);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorResponseCode> responseCode() {
+    public Optional<ResponseCode> responseCode() {
         return Optional.ofNullable(this.responseCode);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorResponseCookie> responseCookie() {
+    public Optional<ResponseCookie> responseCookie() {
         return Optional.ofNullable(this.responseCookie);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorRestrictObjectCaching> restrictObjectCaching() {
+    public Optional<RestrictObjectCaching> restrictObjectCaching() {
         return Optional.ofNullable(this.restrictObjectCaching);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorReturnCacheStatus> returnCacheStatus() {
+    public Optional<ReturnCacheStatus> returnCacheStatus() {
         return Optional.ofNullable(this.returnCacheStatus);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorRewriteUrl> rewriteUrl() {
+    public Optional<RewriteUrl> rewriteUrl() {
         return Optional.ofNullable(this.rewriteUrl);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorRumCustom> rumCustom() {
+    public Optional<RumCustom> rumCustom() {
         return Optional.ofNullable(this.rumCustom);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorSaasDefinitions> saasDefinitions() {
+    public Optional<SaasDefinitions> saasDefinitions() {
         return Optional.ofNullable(this.saasDefinitions);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorSalesForceCommerceCloudClient> salesForceCommerceCloudClient() {
+    public Optional<SalesForceCommerceCloudClient> salesForceCommerceCloudClient() {
         return Optional.ofNullable(this.salesForceCommerceCloudClient);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorSalesForceCommerceCloudProvider> salesForceCommerceCloudProvider() {
+    public Optional<SalesForceCommerceCloudProvider> salesForceCommerceCloudProvider() {
         return Optional.ofNullable(this.salesForceCommerceCloudProvider);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorSalesForceCommerceCloudProviderHostHeader> salesForceCommerceCloudProviderHostHeader() {
+    public Optional<SalesForceCommerceCloudProviderHostHeader> salesForceCommerceCloudProviderHostHeader() {
         return Optional.ofNullable(this.salesForceCommerceCloudProviderHostHeader);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorSavePostDcaProcessing> savePostDcaProcessing() {
+    public Optional<SavePostDcaProcessing> savePostDcaProcessing() {
         return Optional.ofNullable(this.savePostDcaProcessing);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorScheduleInvalidation> scheduleInvalidation() {
+    public Optional<ScheduleInvalidation> scheduleInvalidation() {
         return Optional.ofNullable(this.scheduleInvalidation);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorScriptManagement> scriptManagement() {
+    public Optional<ScriptManagement> scriptManagement() {
         return Optional.ofNullable(this.scriptManagement);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorSegmentedContentProtection> segmentedContentProtection() {
+    public Optional<SegmentedContentProtection> segmentedContentProtection() {
         return Optional.ofNullable(this.segmentedContentProtection);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorSegmentedMediaOptimization> segmentedMediaOptimization() {
+    public Optional<SegmentedMediaOptimization> segmentedMediaOptimization() {
         return Optional.ofNullable(this.segmentedMediaOptimization);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorSegmentedMediaStreamingPrefetch> segmentedMediaStreamingPrefetch() {
+    public Optional<SegmentedMediaStreamingPrefetch> segmentedMediaStreamingPrefetch() {
         return Optional.ofNullable(this.segmentedMediaStreamingPrefetch);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorSetVariable> setVariable() {
+    public Optional<SetVariable> setVariable() {
         return Optional.ofNullable(this.setVariable);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorSimulateErrorCode> simulateErrorCode() {
+    public Optional<SimulateErrorCode> simulateErrorCode() {
         return Optional.ofNullable(this.simulateErrorCode);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorSiteShield> siteShield() {
+    public Optional<SiteShield> siteShield() {
         return Optional.ofNullable(this.siteShield);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorStandardTlsMigration> standardTlsMigration() {
+    public Optional<StandardTlsMigration> standardTlsMigration() {
         return Optional.ofNullable(this.standardTlsMigration);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorStandardTlsMigrationOverride> standardTlsMigrationOverride() {
+    public Optional<StandardTlsMigrationOverride> standardTlsMigrationOverride() {
         return Optional.ofNullable(this.standardTlsMigrationOverride);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorStrictHeaderParsing> strictHeaderParsing() {
+    public Optional<StrictHeaderParsing> strictHeaderParsing() {
         return Optional.ofNullable(this.strictHeaderParsing);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorSubCustomer> subCustomer() {
+    public Optional<SubCustomer> subCustomer() {
         return Optional.ofNullable(this.subCustomer);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorSureRoute> sureRoute() {
+    public Optional<SureRoute> sureRoute() {
         return Optional.ofNullable(this.sureRoute);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorTcpOptimization> tcpOptimization() {
+    public Optional<TcpOptimization> tcpOptimization() {
         return Optional.ofNullable(this.tcpOptimization);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorTeaLeaf> teaLeaf() {
+    public Optional<TeaLeaf> teaLeaf() {
         return Optional.ofNullable(this.teaLeaf);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorTieredDistribution> tieredDistribution() {
+    public Optional<TieredDistribution> tieredDistribution() {
         return Optional.ofNullable(this.tieredDistribution);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorTieredDistributionAdvanced> tieredDistributionAdvanced() {
+    public Optional<TieredDistributionAdvanced> tieredDistributionAdvanced() {
         return Optional.ofNullable(this.tieredDistributionAdvanced);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorTieredDistributionCustomization> tieredDistributionCustomization() {
+    public Optional<TieredDistributionCustomization> tieredDistributionCustomization() {
         return Optional.ofNullable(this.tieredDistributionCustomization);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorTimeout> timeout() {
+    public Optional<Timeout> timeout() {
         return Optional.ofNullable(this.timeout);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorUidConfiguration> uidConfiguration() {
+    public Optional<UidConfiguration> uidConfiguration() {
         return Optional.ofNullable(this.uidConfiguration);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorValidateEntityTag> validateEntityTag() {
+    public Optional<ValidateEntityTag> validateEntityTag() {
         return Optional.ofNullable(this.validateEntityTag);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorVerifyJsonWebToken> verifyJsonWebToken() {
+    public Optional<VerifyJsonWebToken> verifyJsonWebToken() {
         return Optional.ofNullable(this.verifyJsonWebToken);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorVerifyJsonWebTokenForDcp> verifyJsonWebTokenForDcp() {
+    public Optional<VerifyJsonWebTokenForDcp> verifyJsonWebTokenForDcp() {
         return Optional.ofNullable(this.verifyJsonWebTokenForDcp);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorVerifyTokenAuthorization> verifyTokenAuthorization() {
+    public Optional<VerifyTokenAuthorization> verifyTokenAuthorization() {
         return Optional.ofNullable(this.verifyTokenAuthorization);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorVirtualWaitingRoom> virtualWaitingRoom() {
+    public Optional<VirtualWaitingRoom> virtualWaitingRoom() {
         return Optional.ofNullable(this.virtualWaitingRoom);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorVirtualWaitingRoomWithEdgeWorkers> virtualWaitingRoomWithEdgeWorkers() {
+    public Optional<VirtualWaitingRoomWithEdgeWorkers> virtualWaitingRoomWithEdgeWorkers() {
         return Optional.ofNullable(this.virtualWaitingRoomWithEdgeWorkers);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritization> visitorPrioritization() {
+    public Optional<VisitorPrioritization> visitorPrioritization() {
         return Optional.ofNullable(this.visitorPrioritization);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationFifo> visitorPrioritizationFifo() {
+    public Optional<VisitorPrioritizationFifo> visitorPrioritizationFifo() {
         return Optional.ofNullable(this.visitorPrioritizationFifo);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationFifoStandalone> visitorPrioritizationFifoStandalone() {
+    public Optional<VisitorPrioritizationFifoStandalone> visitorPrioritizationFifoStandalone() {
         return Optional.ofNullable(this.visitorPrioritizationFifoStandalone);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorWatermarking> watermarking() {
+    public Optional<Watermarking> watermarking() {
         return Optional.ofNullable(this.watermarking);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorWebApplicationFirewall> webApplicationFirewall() {
+    public Optional<WebApplicationFirewall> webApplicationFirewall() {
         return Optional.ofNullable(this.webApplicationFirewall);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorWebSockets> webSockets() {
+    public Optional<WebSockets> webSockets() {
         return Optional.ofNullable(this.webSockets);
     }
-    public Optional<GetPropertyRulesBuilderRulesV20230920BehaviorWebdav> webdav() {
+    public Optional<Webdav> webdav() {
         return Optional.ofNullable(this.webdav);
     }
 
@@ -1267,93 +1267,93 @@ public final class GetPropertyRulesBuilderRulesV20230920Behavior {
         private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorMediaAccelerationQuicOptout mediaAccelerationQuicOptout;
         private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorMediaClient mediaClient;
         private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorMediaFileRetrievalOptimization mediaFileRetrievalOptimization;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorMediaOriginFailover mediaOriginFailover;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorMetadataCaching metadataCaching;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorMobileSdkPerformance mobileSdkPerformance;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorModifyIncomingRequestHeader modifyIncomingRequestHeader;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorModifyIncomingResponseHeader modifyIncomingResponseHeader;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorModifyOutgoingRequestHeader modifyOutgoingRequestHeader;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorModifyOutgoingResponseHeader modifyOutgoingResponseHeader;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorModifyViaHeader modifyViaHeader;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorOrigin origin;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorOriginCharacteristics originCharacteristics;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorOriginCharacteristicsWsd originCharacteristicsWsd;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorOriginFailureRecoveryMethod originFailureRecoveryMethod;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorOriginFailureRecoveryPolicy originFailureRecoveryPolicy;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorOriginIpAcl originIpAcl;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPermissionsPolicy permissionsPolicy;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPersistentClientConnection persistentClientConnection;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPersistentConnection persistentConnection;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPersonallyIdentifiableInformation personallyIdentifiableInformation;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPhasedRelease phasedRelease;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPreconnect preconnect;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPredictiveContentDelivery predictiveContentDelivery;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPredictivePrefetching predictivePrefetching;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPrefetch prefetch;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPrefetchable prefetchable;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPrefreshCache prefreshCache;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorQuality quality;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorQuicBeta quicBeta;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRandomSeek randomSeek;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRapid rapid;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorReadTimeout readTimeout;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRealTimeReporting realTimeReporting;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRealUserMonitoring realUserMonitoring;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRedirect redirect;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRedirectplus redirectplus;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRefererChecking refererChecking;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRemoveQueryParameter removeQueryParameter;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRemoveVary removeVary;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorReport report;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRequestClientHints requestClientHints;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRequestControl requestControl;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRequestTypeMarker requestTypeMarker;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorResourceOptimizer resourceOptimizer;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorResourceOptimizerExtendedCompatibility resourceOptimizerExtendedCompatibility;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorResponseCode responseCode;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorResponseCookie responseCookie;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRestrictObjectCaching restrictObjectCaching;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorReturnCacheStatus returnCacheStatus;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRewriteUrl rewriteUrl;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRumCustom rumCustom;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSaasDefinitions saasDefinitions;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSalesForceCommerceCloudClient salesForceCommerceCloudClient;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSalesForceCommerceCloudProvider salesForceCommerceCloudProvider;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSalesForceCommerceCloudProviderHostHeader salesForceCommerceCloudProviderHostHeader;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSavePostDcaProcessing savePostDcaProcessing;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorScheduleInvalidation scheduleInvalidation;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorScriptManagement scriptManagement;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSegmentedContentProtection segmentedContentProtection;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSegmentedMediaOptimization segmentedMediaOptimization;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSegmentedMediaStreamingPrefetch segmentedMediaStreamingPrefetch;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSetVariable setVariable;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSimulateErrorCode simulateErrorCode;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSiteShield siteShield;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorStandardTlsMigration standardTlsMigration;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorStandardTlsMigrationOverride standardTlsMigrationOverride;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorStrictHeaderParsing strictHeaderParsing;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSubCustomer subCustomer;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSureRoute sureRoute;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorTcpOptimization tcpOptimization;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorTeaLeaf teaLeaf;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorTieredDistribution tieredDistribution;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorTieredDistributionAdvanced tieredDistributionAdvanced;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorTieredDistributionCustomization tieredDistributionCustomization;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorTimeout timeout;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorUidConfiguration uidConfiguration;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorValidateEntityTag validateEntityTag;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorVerifyJsonWebToken verifyJsonWebToken;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorVerifyJsonWebTokenForDcp verifyJsonWebTokenForDcp;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorVerifyTokenAuthorization verifyTokenAuthorization;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorVirtualWaitingRoom virtualWaitingRoom;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorVirtualWaitingRoomWithEdgeWorkers virtualWaitingRoomWithEdgeWorkers;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritization visitorPrioritization;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationFifo visitorPrioritizationFifo;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationFifoStandalone visitorPrioritizationFifoStandalone;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorWatermarking watermarking;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorWebApplicationFirewall webApplicationFirewall;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorWebSockets webSockets;
-        private @Nullable GetPropertyRulesBuilderRulesV20230920BehaviorWebdav webdav;
+        private @Nullable MediaOriginFailover mediaOriginFailover;
+        private @Nullable MetadataCaching metadataCaching;
+        private @Nullable MobileSdkPerformance mobileSdkPerformance;
+        private @Nullable ModifyIncomingRequestHeader modifyIncomingRequestHeader;
+        private @Nullable ModifyIncomingResponseHeader modifyIncomingResponseHeader;
+        private @Nullable ModifyOutgoingRequestHeader modifyOutgoingRequestHeader;
+        private @Nullable ModifyOutgoingResponseHeader modifyOutgoingResponseHeader;
+        private @Nullable ModifyViaHeader modifyViaHeader;
+        private @Nullable Origin origin;
+        private @Nullable OriginCharacteristics originCharacteristics;
+        private @Nullable OriginCharacteristicsWsd originCharacteristicsWsd;
+        private @Nullable OriginFailureRecoveryMethod originFailureRecoveryMethod;
+        private @Nullable OriginFailureRecoveryPolicy originFailureRecoveryPolicy;
+        private @Nullable OriginIpAcl originIpAcl;
+        private @Nullable PermissionsPolicy permissionsPolicy;
+        private @Nullable PersistentClientConnection persistentClientConnection;
+        private @Nullable PersistentConnection persistentConnection;
+        private @Nullable PersonallyIdentifiableInformation personallyIdentifiableInformation;
+        private @Nullable PhasedRelease phasedRelease;
+        private @Nullable Preconnect preconnect;
+        private @Nullable PredictiveContentDelivery predictiveContentDelivery;
+        private @Nullable PredictivePrefetching predictivePrefetching;
+        private @Nullable Prefetch prefetch;
+        private @Nullable Prefetchable prefetchable;
+        private @Nullable PrefreshCache prefreshCache;
+        private @Nullable Quality quality;
+        private @Nullable QuicBeta quicBeta;
+        private @Nullable RandomSeek randomSeek;
+        private @Nullable Rapid rapid;
+        private @Nullable ReadTimeout readTimeout;
+        private @Nullable RealTimeReporting realTimeReporting;
+        private @Nullable RealUserMonitoring realUserMonitoring;
+        private @Nullable Redirect redirect;
+        private @Nullable Redirectplus redirectplus;
+        private @Nullable RefererChecking refererChecking;
+        private @Nullable RemoveQueryParameter removeQueryParameter;
+        private @Nullable RemoveVary removeVary;
+        private @Nullable Report report;
+        private @Nullable RequestClientHints requestClientHints;
+        private @Nullable RequestControl requestControl;
+        private @Nullable RequestTypeMarker requestTypeMarker;
+        private @Nullable ResourceOptimizer resourceOptimizer;
+        private @Nullable ResourceOptimizerExtendedCompatibility resourceOptimizerExtendedCompatibility;
+        private @Nullable ResponseCode responseCode;
+        private @Nullable ResponseCookie responseCookie;
+        private @Nullable RestrictObjectCaching restrictObjectCaching;
+        private @Nullable ReturnCacheStatus returnCacheStatus;
+        private @Nullable RewriteUrl rewriteUrl;
+        private @Nullable RumCustom rumCustom;
+        private @Nullable SaasDefinitions saasDefinitions;
+        private @Nullable SalesForceCommerceCloudClient salesForceCommerceCloudClient;
+        private @Nullable SalesForceCommerceCloudProvider salesForceCommerceCloudProvider;
+        private @Nullable SalesForceCommerceCloudProviderHostHeader salesForceCommerceCloudProviderHostHeader;
+        private @Nullable SavePostDcaProcessing savePostDcaProcessing;
+        private @Nullable ScheduleInvalidation scheduleInvalidation;
+        private @Nullable ScriptManagement scriptManagement;
+        private @Nullable SegmentedContentProtection segmentedContentProtection;
+        private @Nullable SegmentedMediaOptimization segmentedMediaOptimization;
+        private @Nullable SegmentedMediaStreamingPrefetch segmentedMediaStreamingPrefetch;
+        private @Nullable SetVariable setVariable;
+        private @Nullable SimulateErrorCode simulateErrorCode;
+        private @Nullable SiteShield siteShield;
+        private @Nullable StandardTlsMigration standardTlsMigration;
+        private @Nullable StandardTlsMigrationOverride standardTlsMigrationOverride;
+        private @Nullable StrictHeaderParsing strictHeaderParsing;
+        private @Nullable SubCustomer subCustomer;
+        private @Nullable SureRoute sureRoute;
+        private @Nullable TcpOptimization tcpOptimization;
+        private @Nullable TeaLeaf teaLeaf;
+        private @Nullable TieredDistribution tieredDistribution;
+        private @Nullable TieredDistributionAdvanced tieredDistributionAdvanced;
+        private @Nullable TieredDistributionCustomization tieredDistributionCustomization;
+        private @Nullable Timeout timeout;
+        private @Nullable UidConfiguration uidConfiguration;
+        private @Nullable ValidateEntityTag validateEntityTag;
+        private @Nullable VerifyJsonWebToken verifyJsonWebToken;
+        private @Nullable VerifyJsonWebTokenForDcp verifyJsonWebTokenForDcp;
+        private @Nullable VerifyTokenAuthorization verifyTokenAuthorization;
+        private @Nullable VirtualWaitingRoom virtualWaitingRoom;
+        private @Nullable VirtualWaitingRoomWithEdgeWorkers virtualWaitingRoomWithEdgeWorkers;
+        private @Nullable VisitorPrioritization visitorPrioritization;
+        private @Nullable VisitorPrioritizationFifo visitorPrioritizationFifo;
+        private @Nullable VisitorPrioritizationFifoStandalone visitorPrioritizationFifoStandalone;
+        private @Nullable Watermarking watermarking;
+        private @Nullable WebApplicationFirewall webApplicationFirewall;
+        private @Nullable WebSockets webSockets;
+        private @Nullable Webdav webdav;
         public Builder() {}
         public Builder(GetPropertyRulesBuilderRulesV20230920Behavior defaults) {
     	      Objects.requireNonNull(defaults);
@@ -2257,437 +2257,437 @@ public final class GetPropertyRulesBuilderRulesV20230920Behavior {
             return this;
         }
         @CustomType.Setter
-        public Builder mediaOriginFailover(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorMediaOriginFailover mediaOriginFailover) {
+        public Builder mediaOriginFailover(@Nullable MediaOriginFailover mediaOriginFailover) {
             this.mediaOriginFailover = mediaOriginFailover;
             return this;
         }
         @CustomType.Setter
-        public Builder metadataCaching(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorMetadataCaching metadataCaching) {
+        public Builder metadataCaching(@Nullable MetadataCaching metadataCaching) {
             this.metadataCaching = metadataCaching;
             return this;
         }
         @CustomType.Setter
-        public Builder mobileSdkPerformance(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorMobileSdkPerformance mobileSdkPerformance) {
+        public Builder mobileSdkPerformance(@Nullable MobileSdkPerformance mobileSdkPerformance) {
             this.mobileSdkPerformance = mobileSdkPerformance;
             return this;
         }
         @CustomType.Setter
-        public Builder modifyIncomingRequestHeader(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorModifyIncomingRequestHeader modifyIncomingRequestHeader) {
+        public Builder modifyIncomingRequestHeader(@Nullable ModifyIncomingRequestHeader modifyIncomingRequestHeader) {
             this.modifyIncomingRequestHeader = modifyIncomingRequestHeader;
             return this;
         }
         @CustomType.Setter
-        public Builder modifyIncomingResponseHeader(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorModifyIncomingResponseHeader modifyIncomingResponseHeader) {
+        public Builder modifyIncomingResponseHeader(@Nullable ModifyIncomingResponseHeader modifyIncomingResponseHeader) {
             this.modifyIncomingResponseHeader = modifyIncomingResponseHeader;
             return this;
         }
         @CustomType.Setter
-        public Builder modifyOutgoingRequestHeader(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorModifyOutgoingRequestHeader modifyOutgoingRequestHeader) {
+        public Builder modifyOutgoingRequestHeader(@Nullable ModifyOutgoingRequestHeader modifyOutgoingRequestHeader) {
             this.modifyOutgoingRequestHeader = modifyOutgoingRequestHeader;
             return this;
         }
         @CustomType.Setter
-        public Builder modifyOutgoingResponseHeader(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorModifyOutgoingResponseHeader modifyOutgoingResponseHeader) {
+        public Builder modifyOutgoingResponseHeader(@Nullable ModifyOutgoingResponseHeader modifyOutgoingResponseHeader) {
             this.modifyOutgoingResponseHeader = modifyOutgoingResponseHeader;
             return this;
         }
         @CustomType.Setter
-        public Builder modifyViaHeader(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorModifyViaHeader modifyViaHeader) {
+        public Builder modifyViaHeader(@Nullable ModifyViaHeader modifyViaHeader) {
             this.modifyViaHeader = modifyViaHeader;
             return this;
         }
         @CustomType.Setter
-        public Builder origin(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorOrigin origin) {
+        public Builder origin(@Nullable Origin origin) {
             this.origin = origin;
             return this;
         }
         @CustomType.Setter
-        public Builder originCharacteristics(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorOriginCharacteristics originCharacteristics) {
+        public Builder originCharacteristics(@Nullable OriginCharacteristics originCharacteristics) {
             this.originCharacteristics = originCharacteristics;
             return this;
         }
         @CustomType.Setter
-        public Builder originCharacteristicsWsd(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorOriginCharacteristicsWsd originCharacteristicsWsd) {
+        public Builder originCharacteristicsWsd(@Nullable OriginCharacteristicsWsd originCharacteristicsWsd) {
             this.originCharacteristicsWsd = originCharacteristicsWsd;
             return this;
         }
         @CustomType.Setter
-        public Builder originFailureRecoveryMethod(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorOriginFailureRecoveryMethod originFailureRecoveryMethod) {
+        public Builder originFailureRecoveryMethod(@Nullable OriginFailureRecoveryMethod originFailureRecoveryMethod) {
             this.originFailureRecoveryMethod = originFailureRecoveryMethod;
             return this;
         }
         @CustomType.Setter
-        public Builder originFailureRecoveryPolicy(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorOriginFailureRecoveryPolicy originFailureRecoveryPolicy) {
+        public Builder originFailureRecoveryPolicy(@Nullable OriginFailureRecoveryPolicy originFailureRecoveryPolicy) {
             this.originFailureRecoveryPolicy = originFailureRecoveryPolicy;
             return this;
         }
         @CustomType.Setter
-        public Builder originIpAcl(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorOriginIpAcl originIpAcl) {
+        public Builder originIpAcl(@Nullable OriginIpAcl originIpAcl) {
             this.originIpAcl = originIpAcl;
             return this;
         }
         @CustomType.Setter
-        public Builder permissionsPolicy(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPermissionsPolicy permissionsPolicy) {
+        public Builder permissionsPolicy(@Nullable PermissionsPolicy permissionsPolicy) {
             this.permissionsPolicy = permissionsPolicy;
             return this;
         }
         @CustomType.Setter
-        public Builder persistentClientConnection(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPersistentClientConnection persistentClientConnection) {
+        public Builder persistentClientConnection(@Nullable PersistentClientConnection persistentClientConnection) {
             this.persistentClientConnection = persistentClientConnection;
             return this;
         }
         @CustomType.Setter
-        public Builder persistentConnection(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPersistentConnection persistentConnection) {
+        public Builder persistentConnection(@Nullable PersistentConnection persistentConnection) {
             this.persistentConnection = persistentConnection;
             return this;
         }
         @CustomType.Setter
-        public Builder personallyIdentifiableInformation(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPersonallyIdentifiableInformation personallyIdentifiableInformation) {
+        public Builder personallyIdentifiableInformation(@Nullable PersonallyIdentifiableInformation personallyIdentifiableInformation) {
             this.personallyIdentifiableInformation = personallyIdentifiableInformation;
             return this;
         }
         @CustomType.Setter
-        public Builder phasedRelease(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPhasedRelease phasedRelease) {
+        public Builder phasedRelease(@Nullable PhasedRelease phasedRelease) {
             this.phasedRelease = phasedRelease;
             return this;
         }
         @CustomType.Setter
-        public Builder preconnect(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPreconnect preconnect) {
+        public Builder preconnect(@Nullable Preconnect preconnect) {
             this.preconnect = preconnect;
             return this;
         }
         @CustomType.Setter
-        public Builder predictiveContentDelivery(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPredictiveContentDelivery predictiveContentDelivery) {
+        public Builder predictiveContentDelivery(@Nullable PredictiveContentDelivery predictiveContentDelivery) {
             this.predictiveContentDelivery = predictiveContentDelivery;
             return this;
         }
         @CustomType.Setter
-        public Builder predictivePrefetching(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPredictivePrefetching predictivePrefetching) {
+        public Builder predictivePrefetching(@Nullable PredictivePrefetching predictivePrefetching) {
             this.predictivePrefetching = predictivePrefetching;
             return this;
         }
         @CustomType.Setter
-        public Builder prefetch(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPrefetch prefetch) {
+        public Builder prefetch(@Nullable Prefetch prefetch) {
             this.prefetch = prefetch;
             return this;
         }
         @CustomType.Setter
-        public Builder prefetchable(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPrefetchable prefetchable) {
+        public Builder prefetchable(@Nullable Prefetchable prefetchable) {
             this.prefetchable = prefetchable;
             return this;
         }
         @CustomType.Setter
-        public Builder prefreshCache(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorPrefreshCache prefreshCache) {
+        public Builder prefreshCache(@Nullable PrefreshCache prefreshCache) {
             this.prefreshCache = prefreshCache;
             return this;
         }
         @CustomType.Setter
-        public Builder quality(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorQuality quality) {
+        public Builder quality(@Nullable Quality quality) {
             this.quality = quality;
             return this;
         }
         @CustomType.Setter
-        public Builder quicBeta(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorQuicBeta quicBeta) {
+        public Builder quicBeta(@Nullable QuicBeta quicBeta) {
             this.quicBeta = quicBeta;
             return this;
         }
         @CustomType.Setter
-        public Builder randomSeek(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRandomSeek randomSeek) {
+        public Builder randomSeek(@Nullable RandomSeek randomSeek) {
             this.randomSeek = randomSeek;
             return this;
         }
         @CustomType.Setter
-        public Builder rapid(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRapid rapid) {
+        public Builder rapid(@Nullable Rapid rapid) {
             this.rapid = rapid;
             return this;
         }
         @CustomType.Setter
-        public Builder readTimeout(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorReadTimeout readTimeout) {
+        public Builder readTimeout(@Nullable ReadTimeout readTimeout) {
             this.readTimeout = readTimeout;
             return this;
         }
         @CustomType.Setter
-        public Builder realTimeReporting(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRealTimeReporting realTimeReporting) {
+        public Builder realTimeReporting(@Nullable RealTimeReporting realTimeReporting) {
             this.realTimeReporting = realTimeReporting;
             return this;
         }
         @CustomType.Setter
-        public Builder realUserMonitoring(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRealUserMonitoring realUserMonitoring) {
+        public Builder realUserMonitoring(@Nullable RealUserMonitoring realUserMonitoring) {
             this.realUserMonitoring = realUserMonitoring;
             return this;
         }
         @CustomType.Setter
-        public Builder redirect(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRedirect redirect) {
+        public Builder redirect(@Nullable Redirect redirect) {
             this.redirect = redirect;
             return this;
         }
         @CustomType.Setter
-        public Builder redirectplus(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRedirectplus redirectplus) {
+        public Builder redirectplus(@Nullable Redirectplus redirectplus) {
             this.redirectplus = redirectplus;
             return this;
         }
         @CustomType.Setter
-        public Builder refererChecking(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRefererChecking refererChecking) {
+        public Builder refererChecking(@Nullable RefererChecking refererChecking) {
             this.refererChecking = refererChecking;
             return this;
         }
         @CustomType.Setter
-        public Builder removeQueryParameter(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRemoveQueryParameter removeQueryParameter) {
+        public Builder removeQueryParameter(@Nullable RemoveQueryParameter removeQueryParameter) {
             this.removeQueryParameter = removeQueryParameter;
             return this;
         }
         @CustomType.Setter
-        public Builder removeVary(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRemoveVary removeVary) {
+        public Builder removeVary(@Nullable RemoveVary removeVary) {
             this.removeVary = removeVary;
             return this;
         }
         @CustomType.Setter
-        public Builder report(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorReport report) {
+        public Builder report(@Nullable Report report) {
             this.report = report;
             return this;
         }
         @CustomType.Setter
-        public Builder requestClientHints(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRequestClientHints requestClientHints) {
+        public Builder requestClientHints(@Nullable RequestClientHints requestClientHints) {
             this.requestClientHints = requestClientHints;
             return this;
         }
         @CustomType.Setter
-        public Builder requestControl(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRequestControl requestControl) {
+        public Builder requestControl(@Nullable RequestControl requestControl) {
             this.requestControl = requestControl;
             return this;
         }
         @CustomType.Setter
-        public Builder requestTypeMarker(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRequestTypeMarker requestTypeMarker) {
+        public Builder requestTypeMarker(@Nullable RequestTypeMarker requestTypeMarker) {
             this.requestTypeMarker = requestTypeMarker;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceOptimizer(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorResourceOptimizer resourceOptimizer) {
+        public Builder resourceOptimizer(@Nullable ResourceOptimizer resourceOptimizer) {
             this.resourceOptimizer = resourceOptimizer;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceOptimizerExtendedCompatibility(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorResourceOptimizerExtendedCompatibility resourceOptimizerExtendedCompatibility) {
+        public Builder resourceOptimizerExtendedCompatibility(@Nullable ResourceOptimizerExtendedCompatibility resourceOptimizerExtendedCompatibility) {
             this.resourceOptimizerExtendedCompatibility = resourceOptimizerExtendedCompatibility;
             return this;
         }
         @CustomType.Setter
-        public Builder responseCode(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorResponseCode responseCode) {
+        public Builder responseCode(@Nullable ResponseCode responseCode) {
             this.responseCode = responseCode;
             return this;
         }
         @CustomType.Setter
-        public Builder responseCookie(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorResponseCookie responseCookie) {
+        public Builder responseCookie(@Nullable ResponseCookie responseCookie) {
             this.responseCookie = responseCookie;
             return this;
         }
         @CustomType.Setter
-        public Builder restrictObjectCaching(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRestrictObjectCaching restrictObjectCaching) {
+        public Builder restrictObjectCaching(@Nullable RestrictObjectCaching restrictObjectCaching) {
             this.restrictObjectCaching = restrictObjectCaching;
             return this;
         }
         @CustomType.Setter
-        public Builder returnCacheStatus(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorReturnCacheStatus returnCacheStatus) {
+        public Builder returnCacheStatus(@Nullable ReturnCacheStatus returnCacheStatus) {
             this.returnCacheStatus = returnCacheStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder rewriteUrl(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRewriteUrl rewriteUrl) {
+        public Builder rewriteUrl(@Nullable RewriteUrl rewriteUrl) {
             this.rewriteUrl = rewriteUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder rumCustom(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorRumCustom rumCustom) {
+        public Builder rumCustom(@Nullable RumCustom rumCustom) {
             this.rumCustom = rumCustom;
             return this;
         }
         @CustomType.Setter
-        public Builder saasDefinitions(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSaasDefinitions saasDefinitions) {
+        public Builder saasDefinitions(@Nullable SaasDefinitions saasDefinitions) {
             this.saasDefinitions = saasDefinitions;
             return this;
         }
         @CustomType.Setter
-        public Builder salesForceCommerceCloudClient(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSalesForceCommerceCloudClient salesForceCommerceCloudClient) {
+        public Builder salesForceCommerceCloudClient(@Nullable SalesForceCommerceCloudClient salesForceCommerceCloudClient) {
             this.salesForceCommerceCloudClient = salesForceCommerceCloudClient;
             return this;
         }
         @CustomType.Setter
-        public Builder salesForceCommerceCloudProvider(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSalesForceCommerceCloudProvider salesForceCommerceCloudProvider) {
+        public Builder salesForceCommerceCloudProvider(@Nullable SalesForceCommerceCloudProvider salesForceCommerceCloudProvider) {
             this.salesForceCommerceCloudProvider = salesForceCommerceCloudProvider;
             return this;
         }
         @CustomType.Setter
-        public Builder salesForceCommerceCloudProviderHostHeader(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSalesForceCommerceCloudProviderHostHeader salesForceCommerceCloudProviderHostHeader) {
+        public Builder salesForceCommerceCloudProviderHostHeader(@Nullable SalesForceCommerceCloudProviderHostHeader salesForceCommerceCloudProviderHostHeader) {
             this.salesForceCommerceCloudProviderHostHeader = salesForceCommerceCloudProviderHostHeader;
             return this;
         }
         @CustomType.Setter
-        public Builder savePostDcaProcessing(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSavePostDcaProcessing savePostDcaProcessing) {
+        public Builder savePostDcaProcessing(@Nullable SavePostDcaProcessing savePostDcaProcessing) {
             this.savePostDcaProcessing = savePostDcaProcessing;
             return this;
         }
         @CustomType.Setter
-        public Builder scheduleInvalidation(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorScheduleInvalidation scheduleInvalidation) {
+        public Builder scheduleInvalidation(@Nullable ScheduleInvalidation scheduleInvalidation) {
             this.scheduleInvalidation = scheduleInvalidation;
             return this;
         }
         @CustomType.Setter
-        public Builder scriptManagement(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorScriptManagement scriptManagement) {
+        public Builder scriptManagement(@Nullable ScriptManagement scriptManagement) {
             this.scriptManagement = scriptManagement;
             return this;
         }
         @CustomType.Setter
-        public Builder segmentedContentProtection(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSegmentedContentProtection segmentedContentProtection) {
+        public Builder segmentedContentProtection(@Nullable SegmentedContentProtection segmentedContentProtection) {
             this.segmentedContentProtection = segmentedContentProtection;
             return this;
         }
         @CustomType.Setter
-        public Builder segmentedMediaOptimization(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSegmentedMediaOptimization segmentedMediaOptimization) {
+        public Builder segmentedMediaOptimization(@Nullable SegmentedMediaOptimization segmentedMediaOptimization) {
             this.segmentedMediaOptimization = segmentedMediaOptimization;
             return this;
         }
         @CustomType.Setter
-        public Builder segmentedMediaStreamingPrefetch(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSegmentedMediaStreamingPrefetch segmentedMediaStreamingPrefetch) {
+        public Builder segmentedMediaStreamingPrefetch(@Nullable SegmentedMediaStreamingPrefetch segmentedMediaStreamingPrefetch) {
             this.segmentedMediaStreamingPrefetch = segmentedMediaStreamingPrefetch;
             return this;
         }
         @CustomType.Setter
-        public Builder setVariable(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSetVariable setVariable) {
+        public Builder setVariable(@Nullable SetVariable setVariable) {
             this.setVariable = setVariable;
             return this;
         }
         @CustomType.Setter
-        public Builder simulateErrorCode(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSimulateErrorCode simulateErrorCode) {
+        public Builder simulateErrorCode(@Nullable SimulateErrorCode simulateErrorCode) {
             this.simulateErrorCode = simulateErrorCode;
             return this;
         }
         @CustomType.Setter
-        public Builder siteShield(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSiteShield siteShield) {
+        public Builder siteShield(@Nullable SiteShield siteShield) {
             this.siteShield = siteShield;
             return this;
         }
         @CustomType.Setter
-        public Builder standardTlsMigration(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorStandardTlsMigration standardTlsMigration) {
+        public Builder standardTlsMigration(@Nullable StandardTlsMigration standardTlsMigration) {
             this.standardTlsMigration = standardTlsMigration;
             return this;
         }
         @CustomType.Setter
-        public Builder standardTlsMigrationOverride(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorStandardTlsMigrationOverride standardTlsMigrationOverride) {
+        public Builder standardTlsMigrationOverride(@Nullable StandardTlsMigrationOverride standardTlsMigrationOverride) {
             this.standardTlsMigrationOverride = standardTlsMigrationOverride;
             return this;
         }
         @CustomType.Setter
-        public Builder strictHeaderParsing(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorStrictHeaderParsing strictHeaderParsing) {
+        public Builder strictHeaderParsing(@Nullable StrictHeaderParsing strictHeaderParsing) {
             this.strictHeaderParsing = strictHeaderParsing;
             return this;
         }
         @CustomType.Setter
-        public Builder subCustomer(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSubCustomer subCustomer) {
+        public Builder subCustomer(@Nullable SubCustomer subCustomer) {
             this.subCustomer = subCustomer;
             return this;
         }
         @CustomType.Setter
-        public Builder sureRoute(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorSureRoute sureRoute) {
+        public Builder sureRoute(@Nullable SureRoute sureRoute) {
             this.sureRoute = sureRoute;
             return this;
         }
         @CustomType.Setter
-        public Builder tcpOptimization(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorTcpOptimization tcpOptimization) {
+        public Builder tcpOptimization(@Nullable TcpOptimization tcpOptimization) {
             this.tcpOptimization = tcpOptimization;
             return this;
         }
         @CustomType.Setter
-        public Builder teaLeaf(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorTeaLeaf teaLeaf) {
+        public Builder teaLeaf(@Nullable TeaLeaf teaLeaf) {
             this.teaLeaf = teaLeaf;
             return this;
         }
         @CustomType.Setter
-        public Builder tieredDistribution(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorTieredDistribution tieredDistribution) {
+        public Builder tieredDistribution(@Nullable TieredDistribution tieredDistribution) {
             this.tieredDistribution = tieredDistribution;
             return this;
         }
         @CustomType.Setter
-        public Builder tieredDistributionAdvanced(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorTieredDistributionAdvanced tieredDistributionAdvanced) {
+        public Builder tieredDistributionAdvanced(@Nullable TieredDistributionAdvanced tieredDistributionAdvanced) {
             this.tieredDistributionAdvanced = tieredDistributionAdvanced;
             return this;
         }
         @CustomType.Setter
-        public Builder tieredDistributionCustomization(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorTieredDistributionCustomization tieredDistributionCustomization) {
+        public Builder tieredDistributionCustomization(@Nullable TieredDistributionCustomization tieredDistributionCustomization) {
             this.tieredDistributionCustomization = tieredDistributionCustomization;
             return this;
         }
         @CustomType.Setter
-        public Builder timeout(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorTimeout timeout) {
+        public Builder timeout(@Nullable Timeout timeout) {
             this.timeout = timeout;
             return this;
         }
         @CustomType.Setter
-        public Builder uidConfiguration(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorUidConfiguration uidConfiguration) {
+        public Builder uidConfiguration(@Nullable UidConfiguration uidConfiguration) {
             this.uidConfiguration = uidConfiguration;
             return this;
         }
         @CustomType.Setter
-        public Builder validateEntityTag(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorValidateEntityTag validateEntityTag) {
+        public Builder validateEntityTag(@Nullable ValidateEntityTag validateEntityTag) {
             this.validateEntityTag = validateEntityTag;
             return this;
         }
         @CustomType.Setter
-        public Builder verifyJsonWebToken(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorVerifyJsonWebToken verifyJsonWebToken) {
+        public Builder verifyJsonWebToken(@Nullable VerifyJsonWebToken verifyJsonWebToken) {
             this.verifyJsonWebToken = verifyJsonWebToken;
             return this;
         }
         @CustomType.Setter
-        public Builder verifyJsonWebTokenForDcp(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorVerifyJsonWebTokenForDcp verifyJsonWebTokenForDcp) {
+        public Builder verifyJsonWebTokenForDcp(@Nullable VerifyJsonWebTokenForDcp verifyJsonWebTokenForDcp) {
             this.verifyJsonWebTokenForDcp = verifyJsonWebTokenForDcp;
             return this;
         }
         @CustomType.Setter
-        public Builder verifyTokenAuthorization(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorVerifyTokenAuthorization verifyTokenAuthorization) {
+        public Builder verifyTokenAuthorization(@Nullable VerifyTokenAuthorization verifyTokenAuthorization) {
             this.verifyTokenAuthorization = verifyTokenAuthorization;
             return this;
         }
         @CustomType.Setter
-        public Builder virtualWaitingRoom(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorVirtualWaitingRoom virtualWaitingRoom) {
+        public Builder virtualWaitingRoom(@Nullable VirtualWaitingRoom virtualWaitingRoom) {
             this.virtualWaitingRoom = virtualWaitingRoom;
             return this;
         }
         @CustomType.Setter
-        public Builder virtualWaitingRoomWithEdgeWorkers(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorVirtualWaitingRoomWithEdgeWorkers virtualWaitingRoomWithEdgeWorkers) {
+        public Builder virtualWaitingRoomWithEdgeWorkers(@Nullable VirtualWaitingRoomWithEdgeWorkers virtualWaitingRoomWithEdgeWorkers) {
             this.virtualWaitingRoomWithEdgeWorkers = virtualWaitingRoomWithEdgeWorkers;
             return this;
         }
         @CustomType.Setter
-        public Builder visitorPrioritization(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritization visitorPrioritization) {
+        public Builder visitorPrioritization(@Nullable VisitorPrioritization visitorPrioritization) {
             this.visitorPrioritization = visitorPrioritization;
             return this;
         }
         @CustomType.Setter
-        public Builder visitorPrioritizationFifo(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationFifo visitorPrioritizationFifo) {
+        public Builder visitorPrioritizationFifo(@Nullable VisitorPrioritizationFifo visitorPrioritizationFifo) {
             this.visitorPrioritizationFifo = visitorPrioritizationFifo;
             return this;
         }
         @CustomType.Setter
-        public Builder visitorPrioritizationFifoStandalone(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorVisitorPrioritizationFifoStandalone visitorPrioritizationFifoStandalone) {
+        public Builder visitorPrioritizationFifoStandalone(@Nullable VisitorPrioritizationFifoStandalone visitorPrioritizationFifoStandalone) {
             this.visitorPrioritizationFifoStandalone = visitorPrioritizationFifoStandalone;
             return this;
         }
         @CustomType.Setter
-        public Builder watermarking(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorWatermarking watermarking) {
+        public Builder watermarking(@Nullable Watermarking watermarking) {
             this.watermarking = watermarking;
             return this;
         }
         @CustomType.Setter
-        public Builder webApplicationFirewall(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorWebApplicationFirewall webApplicationFirewall) {
+        public Builder webApplicationFirewall(@Nullable WebApplicationFirewall webApplicationFirewall) {
             this.webApplicationFirewall = webApplicationFirewall;
             return this;
         }
         @CustomType.Setter
-        public Builder webSockets(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorWebSockets webSockets) {
+        public Builder webSockets(@Nullable WebSockets webSockets) {
             this.webSockets = webSockets;
             return this;
         }
         @CustomType.Setter
-        public Builder webdav(@Nullable GetPropertyRulesBuilderRulesV20230920BehaviorWebdav webdav) {
+        public Builder webdav(@Nullable Webdav webdav) {
             this.webdav = webdav;
             return this;
         }
