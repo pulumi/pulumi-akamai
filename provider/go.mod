@@ -2,6 +2,10 @@ module github.com/pulumi/pulumi-akamai/provider/v6
 
 go 1.21
 
+replace github.com/pulumi/pulumi-terraform-bridge/v3 => ../../pulumi-terraform-bridge
+
+replace github.com/pulumi/pulumi-terraform-bridge/pf => ../../pulumi-terraform-bridge/pf
+
 replace (
 	github.com/akamai/terraform-provider-akamai/v5 => ../upstream
 	github.com/hashicorp/go-getter v1.5.0 => github.com/hashicorp/go-getter v1.4.0
@@ -12,7 +16,7 @@ replace (
 require (
 	github.com/akamai/terraform-provider-akamai/v5 v5.0.1
 	github.com/pulumi/pulumi-terraform-bridge/pf v0.21.1-0.20231219195724-a549710583d9
-	github.com/pulumi/pulumi-terraform-bridge/v3 v3.68.1-0.20231219195724-a549710583d9
+	github.com/pulumi/pulumi-terraform-bridge/v3 v3.69.0
 	github.com/pulumi/pulumi/pkg/v3 v3.98.0
 	github.com/pulumi/pulumi/sdk/v3 v3.98.0
 	github.com/stretchr/testify v1.8.4
