@@ -361,16 +361,23 @@ func Provider() tfbridge.ProviderInfo {
 		setType := func(typ tokens.Type) {
 			info := ctx.SchemaInfo()
 			info.Type = typ
+			if info.Elem == nil {
+				info.Elem = &tfbridge.SchemaInfo{}
+			}
+			info.Elem.Type = typ
 		}
 
 		last, _ := path[len(path)-1].(walk.GetAttrStep)
+
 		switch last.Name {
-		case "rules_v2023_01_05":
-			setType("akamai:index/rulesV20230105:RulesV20230105")
-		case "rules_v2023_05_30":
-			setType("akamai:index/rulesV20230530:RulesV20230530")
-		case "rules_v2023_09_20":
-			setType("akamai:index/rulesV20230920:RulesV20230920")
+		case "cloudlet_policy":
+			setType("akamai:index/rulesCloudletPolicy:RulesCloudletPolicy")
+		case "cp_code":
+			setType("akamai:index/rulesCpCode:RulesCpCode")
+			// "issuer_rdns"
+			// "subject_rdns"
+			// "value"
+			// "net_storage"
 		default:
 			return tfbridge.VisitResult{}, nil
 		}
