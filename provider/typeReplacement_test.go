@@ -3,8 +3,9 @@ package akamai
 import (
 	"testing"
 
-	"github.com/pulumi/pulumi/pkg/v3/codegen/schema"
 	"github.com/stretchr/testify/assert"
+
+	"github.com/pulumi/pulumi/pkg/v3/codegen/schema"
 )
 
 func TestRecursiveReplacement(t *testing.T) {
