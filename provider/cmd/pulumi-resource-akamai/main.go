@@ -18,10 +18,12 @@ package main
 
 import (
 	"context"
+
 	_ "embed"
 
-	akamai "github.com/pulumi/pulumi-akamai/provider/v6"
 	"github.com/pulumi/pulumi-terraform-bridge/pf/tfbridge"
+
+	akamai "github.com/pulumi/pulumi-akamai/provider/v6"
 )
 
 //go:embed schema-embed.json
