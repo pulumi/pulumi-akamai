@@ -13,37 +13,101 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DatastreamOracleConnector {
+    /**
+     * @return The access key identifier used to authenticate requests to the Oracle Cloud account
+     * 
+     */
     private String accessKey;
+    /**
+     * @return The name of the Oracle Cloud Storage bucket
+     * 
+     */
     private String bucket;
+    /**
+     * @return Indicates whether the logs should be compressed
+     * 
+     */
     private @Nullable Boolean compressLogs;
+    /**
+     * @return The name of the connector
+     * 
+     */
     private String displayName;
+    /**
+     * @return The namespace of Oracle Cloud Storage account
+     * 
+     */
     private String namespace;
+    /**
+     * @return The path to the folder within your Oracle Cloud Storage bucket where logs will be stored
+     * 
+     */
     private String path;
+    /**
+     * @return The Oracle Cloud Storage region where bucket resides
+     * 
+     */
     private String region;
+    /**
+     * @return The secret access key identifier used to authenticate requests to the Oracle Cloud account
+     * 
+     */
     private String secretAccessKey;
 
     private DatastreamOracleConnector() {}
+    /**
+     * @return The access key identifier used to authenticate requests to the Oracle Cloud account
+     * 
+     */
     public String accessKey() {
         return this.accessKey;
     }
+    /**
+     * @return The name of the Oracle Cloud Storage bucket
+     * 
+     */
     public String bucket() {
         return this.bucket;
     }
+    /**
+     * @return Indicates whether the logs should be compressed
+     * 
+     */
     public Optional<Boolean> compressLogs() {
         return Optional.ofNullable(this.compressLogs);
     }
+    /**
+     * @return The name of the connector
+     * 
+     */
     public String displayName() {
         return this.displayName;
     }
+    /**
+     * @return The namespace of Oracle Cloud Storage account
+     * 
+     */
     public String namespace() {
         return this.namespace;
     }
+    /**
+     * @return The path to the folder within your Oracle Cloud Storage bucket where logs will be stored
+     * 
+     */
     public String path() {
         return this.path;
     }
+    /**
+     * @return The Oracle Cloud Storage region where bucket resides
+     * 
+     */
     public String region() {
         return this.region;
     }
+    /**
+     * @return The secret access key identifier used to authenticate requests to the Oracle Cloud account
+     * 
+     */
     public String secretAccessKey() {
         return this.secretAccessKey;
     }

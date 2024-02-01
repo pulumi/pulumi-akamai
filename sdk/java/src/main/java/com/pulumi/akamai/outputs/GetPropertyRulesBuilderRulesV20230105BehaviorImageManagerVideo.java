@@ -14,73 +14,209 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideo {
+    /**
+     * @return When disabled, applies a single standard policy based on your property name.  Allows you to reference a rule-specific `policyToken` for videos with different match criteria.
+     * 
+     */
     private @Nullable Boolean advanced;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String apiReferenceTitle;
+    /**
+     * @return When enabled, automatically converts videos to the best file type for the requesting device. This produces the smallest file size that retains image quality, based on the user agent and the initial image file.
+     * 
+     */
     private @Nullable Boolean applyBestFileType;
+    /**
+     * @return Select the CP code for which to track Image and Video Manager video traffic. Use this along with `cpCodeTransformed` to track traffic to derivative video content.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideoCpCodeOriginal cpCodeOriginal;
+    /**
+     * @return Select the CP code to identify derivative transformed video content.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideoCpCodeTransformed cpCodeTransformed;
+    /**
+     * @return Applies Image and Video Manager&#39;s video optimization to the current content.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Identifies the existing policy set configured with `Image and Video Manager API`.
+     * 
+     */
     private @Nullable String policySet;
+    /**
+     * @return Specifies a custom policy defined in the Image and Video Manager Policy Manager or the `Image and Video Manager API`. The policy name can include up to 64 alphanumeric, dash, or underscore characters.
+     * 
+     */
     private @Nullable String policyToken;
+    /**
+     * @return Specify the default policy identifier, which is registered with the `Image and Video Manager API` once you activate this property.
+     * 
+     */
     private @Nullable String policyTokenDefault;
+    /**
+     * @return When enabled, scales down video for smaller mobile screens, based on the device&#39;s `User-Agent` header.
+     * 
+     */
     private @Nullable Boolean resize;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String settingsTitle;
+    /**
+     * @return To optimize caching, assign a region close to your site&#39;s heaviest traffic.
+     * 
+     */
     private @Nullable String superCacheRegion;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String trafficTitle;
+    /**
+     * @return Whether to use a previously created policy set that may be referenced in other properties, or create a new policy set to use with this property. A policy set can be shared across multiple properties belonging to the same contract. The behavior populates any changes to the policy set across all properties that reference that set.
+     * 
+     */
     private @Nullable Boolean useExistingPolicySet;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideo() {}
+    /**
+     * @return When disabled, applies a single standard policy based on your property name.  Allows you to reference a rule-specific `policyToken` for videos with different match criteria.
+     * 
+     */
     public Optional<Boolean> advanced() {
         return Optional.ofNullable(this.advanced);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> apiReferenceTitle() {
         return Optional.ofNullable(this.apiReferenceTitle);
     }
+    /**
+     * @return When enabled, automatically converts videos to the best file type for the requesting device. This produces the smallest file size that retains image quality, based on the user agent and the initial image file.
+     * 
+     */
     public Optional<Boolean> applyBestFileType() {
         return Optional.ofNullable(this.applyBestFileType);
     }
+    /**
+     * @return Select the CP code for which to track Image and Video Manager video traffic. Use this along with `cpCodeTransformed` to track traffic to derivative video content.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideoCpCodeOriginal> cpCodeOriginal() {
         return Optional.ofNullable(this.cpCodeOriginal);
     }
+    /**
+     * @return Select the CP code to identify derivative transformed video content.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideoCpCodeTransformed> cpCodeTransformed() {
         return Optional.ofNullable(this.cpCodeTransformed);
     }
+    /**
+     * @return Applies Image and Video Manager&#39;s video optimization to the current content.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Identifies the existing policy set configured with `Image and Video Manager API`.
+     * 
+     */
     public Optional<String> policySet() {
         return Optional.ofNullable(this.policySet);
     }
+    /**
+     * @return Specifies a custom policy defined in the Image and Video Manager Policy Manager or the `Image and Video Manager API`. The policy name can include up to 64 alphanumeric, dash, or underscore characters.
+     * 
+     */
     public Optional<String> policyToken() {
         return Optional.ofNullable(this.policyToken);
     }
+    /**
+     * @return Specify the default policy identifier, which is registered with the `Image and Video Manager API` once you activate this property.
+     * 
+     */
     public Optional<String> policyTokenDefault() {
         return Optional.ofNullable(this.policyTokenDefault);
     }
+    /**
+     * @return When enabled, scales down video for smaller mobile screens, based on the device&#39;s `User-Agent` header.
+     * 
+     */
     public Optional<Boolean> resize() {
         return Optional.ofNullable(this.resize);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> settingsTitle() {
         return Optional.ofNullable(this.settingsTitle);
     }
+    /**
+     * @return To optimize caching, assign a region close to your site&#39;s heaviest traffic.
+     * 
+     */
     public Optional<String> superCacheRegion() {
         return Optional.ofNullable(this.superCacheRegion);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> trafficTitle() {
         return Optional.ofNullable(this.trafficTitle);
     }
+    /**
+     * @return Whether to use a previously created policy set that may be referenced in other properties, or create a new policy set to use with this property. A policy set can be shared across multiple properties belonging to the same contract. The behavior populates any changes to the policy set across all properties that reference that set.
+     * 
+     */
     public Optional<Boolean> useExistingPolicySet() {
         return Optional.ofNullable(this.useExistingPolicySet);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

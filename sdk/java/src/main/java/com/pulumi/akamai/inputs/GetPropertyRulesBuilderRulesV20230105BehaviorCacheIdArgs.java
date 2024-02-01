@@ -17,58 +17,122 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorCacheIdArgs exte
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorCacheIdArgs Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorCacheIdArgs();
 
+    /**
+     * Specifies the names of the query parameters, cookies, or headers to include or exclude from the cache ID.
+     * 
+     */
     @Import(name="elements")
     private @Nullable Output<List<String>> elements;
 
+    /**
+     * @return Specifies the names of the query parameters, cookies, or headers to include or exclude from the cache ID.
+     * 
+     */
     public Optional<Output<List<String>>> elements() {
         return Optional.ofNullable(this.elements);
     }
 
+    /**
+     * Includes the value of the specified elements in the cache ID. Otherwise only their names are included.
+     * 
+     */
     @Import(name="includeValue")
     private @Nullable Output<Boolean> includeValue;
 
+    /**
+     * @return Includes the value of the specified elements in the cache ID. Otherwise only their names are included.
+     * 
+     */
     public Optional<Output<Boolean>> includeValue() {
         return Optional.ofNullable(this.includeValue);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Requires the behavior&#39;s specified elements to be present for content to cache. When disabled, requests that lack the specified elements are still cached.
+     * 
+     */
     @Import(name="optional")
     private @Nullable Output<Boolean> optional;
 
+    /**
+     * @return Requires the behavior&#39;s specified elements to be present for content to cache. When disabled, requests that lack the specified elements are still cached.
+     * 
+     */
     public Optional<Output<Boolean>> optional() {
         return Optional.ofNullable(this.optional);
     }
 
+    /**
+     * Specifies how to modify the cache ID.
+     * 
+     */
     @Import(name="rule")
     private @Nullable Output<String> rule;
 
+    /**
+     * @return Specifies how to modify the cache ID.
+     * 
+     */
     public Optional<Output<String>> rule() {
         return Optional.ofNullable(this.rule);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
 
+    /**
+     * Specifies the name of the variable you want to include in the cache key.
+     * 
+     */
     @Import(name="variableName")
     private @Nullable Output<String> variableName;
 
+    /**
+     * @return Specifies the name of the variable you want to include in the cache key.
+     * 
+     */
     public Optional<Output<String>> variableName() {
         return Optional.ofNullable(this.variableName);
     }
@@ -104,78 +168,180 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorCacheIdArgs exte
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorCacheIdArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param elements Specifies the names of the query parameters, cookies, or headers to include or exclude from the cache ID.
+         * 
+         * @return builder
+         * 
+         */
         public Builder elements(@Nullable Output<List<String>> elements) {
             $.elements = elements;
             return this;
         }
 
+        /**
+         * @param elements Specifies the names of the query parameters, cookies, or headers to include or exclude from the cache ID.
+         * 
+         * @return builder
+         * 
+         */
         public Builder elements(List<String> elements) {
             return elements(Output.of(elements));
         }
 
+        /**
+         * @param elements Specifies the names of the query parameters, cookies, or headers to include or exclude from the cache ID.
+         * 
+         * @return builder
+         * 
+         */
         public Builder elements(String... elements) {
             return elements(List.of(elements));
         }
 
+        /**
+         * @param includeValue Includes the value of the specified elements in the cache ID. Otherwise only their names are included.
+         * 
+         * @return builder
+         * 
+         */
         public Builder includeValue(@Nullable Output<Boolean> includeValue) {
             $.includeValue = includeValue;
             return this;
         }
 
+        /**
+         * @param includeValue Includes the value of the specified elements in the cache ID. Otherwise only their names are included.
+         * 
+         * @return builder
+         * 
+         */
         public Builder includeValue(Boolean includeValue) {
             return includeValue(Output.of(includeValue));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param optional Requires the behavior&#39;s specified elements to be present for content to cache. When disabled, requests that lack the specified elements are still cached.
+         * 
+         * @return builder
+         * 
+         */
         public Builder optional(@Nullable Output<Boolean> optional) {
             $.optional = optional;
             return this;
         }
 
+        /**
+         * @param optional Requires the behavior&#39;s specified elements to be present for content to cache. When disabled, requests that lack the specified elements are still cached.
+         * 
+         * @return builder
+         * 
+         */
         public Builder optional(Boolean optional) {
             return optional(Output.of(optional));
         }
 
+        /**
+         * @param rule Specifies how to modify the cache ID.
+         * 
+         * @return builder
+         * 
+         */
         public Builder rule(@Nullable Output<String> rule) {
             $.rule = rule;
             return this;
         }
 
+        /**
+         * @param rule Specifies how to modify the cache ID.
+         * 
+         * @return builder
+         * 
+         */
         public Builder rule(String rule) {
             return rule(Output.of(rule));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }
 
+        /**
+         * @param variableName Specifies the name of the variable you want to include in the cache key.
+         * 
+         * @return builder
+         * 
+         */
         public Builder variableName(@Nullable Output<String> variableName) {
             $.variableName = variableName;
             return this;
         }
 
+        /**
+         * @param variableName Specifies the name of the variable you want to include in the cache key.
+         * 
+         * @return builder
+         * 
+         */
         public Builder variableName(String variableName) {
             return variableName(Output.of(variableName));
         }

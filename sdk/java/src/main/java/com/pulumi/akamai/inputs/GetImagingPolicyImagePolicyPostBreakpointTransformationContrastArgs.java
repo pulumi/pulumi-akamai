@@ -15,30 +15,62 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationContra
 
     public static final GetImagingPolicyImagePolicyPostBreakpointTransformationContrastArgs Empty = new GetImagingPolicyImagePolicyPostBreakpointTransformationContrastArgs();
 
+    /**
+     * Adjusts the brightness of the image. Positive values increase brightness and negative values decrease brightness. A value of  `1` produces a white image. A value of  `-1` produces a black image. The default value is `0`, which leaves the image unchanged. The acceptable value range is `-1.0` to `1.0`. Values outside of the acceptable range clamp to this range.
+     * 
+     */
     @Import(name="brightness")
     private @Nullable Output<String> brightness;
 
+    /**
+     * @return Adjusts the brightness of the image. Positive values increase brightness and negative values decrease brightness. A value of  `1` produces a white image. A value of  `-1` produces a black image. The default value is `0`, which leaves the image unchanged. The acceptable value range is `-1.0` to `1.0`. Values outside of the acceptable range clamp to this range.
+     * 
+     */
     public Optional<Output<String>> brightness() {
         return Optional.ofNullable(this.brightness);
     }
 
+    /**
+     * Adjusts the brightness of the image. Positive values increase brightness and negative values decrease brightness. A value of  `1` produces a white image. A value of  `-1` produces a black image. The default value is `0`, which leaves the image unchanged. The acceptable value range is `-1.0` to `1.0`. Values outside of the acceptable range clamp to this range.
+     * 
+     */
     @Import(name="brightnessVar")
     private @Nullable Output<String> brightnessVar;
 
+    /**
+     * @return Adjusts the brightness of the image. Positive values increase brightness and negative values decrease brightness. A value of  `1` produces a white image. A value of  `-1` produces a black image. The default value is `0`, which leaves the image unchanged. The acceptable value range is `-1.0` to `1.0`. Values outside of the acceptable range clamp to this range.
+     * 
+     */
     public Optional<Output<String>> brightnessVar() {
         return Optional.ofNullable(this.brightnessVar);
     }
 
+    /**
+     * Adjusts the contrast of the image. Expressed as a range from `-1` to `1`, positive values increase contrast, negative values decrease it, while `0` leaves the image unchanged. Values outside of the `-1` to `1` range clamp to this range.
+     * 
+     */
     @Import(name="contrast")
     private @Nullable Output<String> contrast;
 
+    /**
+     * @return Adjusts the contrast of the image. Expressed as a range from `-1` to `1`, positive values increase contrast, negative values decrease it, while `0` leaves the image unchanged. Values outside of the `-1` to `1` range clamp to this range.
+     * 
+     */
     public Optional<Output<String>> contrast() {
         return Optional.ofNullable(this.contrast);
     }
 
+    /**
+     * Adjusts the contrast of the image. Expressed as a range from `-1` to `1`, positive values increase contrast, negative values decrease it, while `0` leaves the image unchanged. Values outside of the `-1` to `1` range clamp to this range.
+     * 
+     */
     @Import(name="contrastVar")
     private @Nullable Output<String> contrastVar;
 
+    /**
+     * @return Adjusts the contrast of the image. Expressed as a range from `-1` to `1`, positive values increase contrast, negative values decrease it, while `0` leaves the image unchanged. Values outside of the `-1` to `1` range clamp to this range.
+     * 
+     */
     public Optional<Output<String>> contrastVar() {
         return Optional.ofNullable(this.contrastVar);
     }
@@ -70,38 +102,86 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationContra
             $ = new GetImagingPolicyImagePolicyPostBreakpointTransformationContrastArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param brightness Adjusts the brightness of the image. Positive values increase brightness and negative values decrease brightness. A value of  `1` produces a white image. A value of  `-1` produces a black image. The default value is `0`, which leaves the image unchanged. The acceptable value range is `-1.0` to `1.0`. Values outside of the acceptable range clamp to this range.
+         * 
+         * @return builder
+         * 
+         */
         public Builder brightness(@Nullable Output<String> brightness) {
             $.brightness = brightness;
             return this;
         }
 
+        /**
+         * @param brightness Adjusts the brightness of the image. Positive values increase brightness and negative values decrease brightness. A value of  `1` produces a white image. A value of  `-1` produces a black image. The default value is `0`, which leaves the image unchanged. The acceptable value range is `-1.0` to `1.0`. Values outside of the acceptable range clamp to this range.
+         * 
+         * @return builder
+         * 
+         */
         public Builder brightness(String brightness) {
             return brightness(Output.of(brightness));
         }
 
+        /**
+         * @param brightnessVar Adjusts the brightness of the image. Positive values increase brightness and negative values decrease brightness. A value of  `1` produces a white image. A value of  `-1` produces a black image. The default value is `0`, which leaves the image unchanged. The acceptable value range is `-1.0` to `1.0`. Values outside of the acceptable range clamp to this range.
+         * 
+         * @return builder
+         * 
+         */
         public Builder brightnessVar(@Nullable Output<String> brightnessVar) {
             $.brightnessVar = brightnessVar;
             return this;
         }
 
+        /**
+         * @param brightnessVar Adjusts the brightness of the image. Positive values increase brightness and negative values decrease brightness. A value of  `1` produces a white image. A value of  `-1` produces a black image. The default value is `0`, which leaves the image unchanged. The acceptable value range is `-1.0` to `1.0`. Values outside of the acceptable range clamp to this range.
+         * 
+         * @return builder
+         * 
+         */
         public Builder brightnessVar(String brightnessVar) {
             return brightnessVar(Output.of(brightnessVar));
         }
 
+        /**
+         * @param contrast Adjusts the contrast of the image. Expressed as a range from `-1` to `1`, positive values increase contrast, negative values decrease it, while `0` leaves the image unchanged. Values outside of the `-1` to `1` range clamp to this range.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contrast(@Nullable Output<String> contrast) {
             $.contrast = contrast;
             return this;
         }
 
+        /**
+         * @param contrast Adjusts the contrast of the image. Expressed as a range from `-1` to `1`, positive values increase contrast, negative values decrease it, while `0` leaves the image unchanged. Values outside of the `-1` to `1` range clamp to this range.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contrast(String contrast) {
             return contrast(Output.of(contrast));
         }
 
+        /**
+         * @param contrastVar Adjusts the contrast of the image. Expressed as a range from `-1` to `1`, positive values increase contrast, negative values decrease it, while `0` leaves the image unchanged. Values outside of the `-1` to `1` range clamp to this range.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contrastVar(@Nullable Output<String> contrastVar) {
             $.contrastVar = contrastVar;
             return this;
         }
 
+        /**
+         * @param contrastVar Adjusts the contrast of the image. Expressed as a range from `-1` to `1`, positive values increase contrast, negative values decrease it, while `0` leaves the image unchanged. Values outside of the `-1` to `1` range clamp to this range.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contrastVar(String contrastVar) {
             return contrastVar(Output.of(contrastVar));
         }

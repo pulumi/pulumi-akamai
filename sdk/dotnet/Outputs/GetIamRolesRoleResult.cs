@@ -13,13 +13,37 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetIamRolesRoleResult
     {
+        /// <summary>
+        /// The user name or email of the person who created the role
+        /// </summary>
         public readonly string CreatedBy;
+        /// <summary>
+        /// The role's description
+        /// </summary>
         public readonly string Description;
+        /// <summary>
+        /// The username or email of the last person to edit the role
+        /// </summary>
         public readonly string ModifiedBy;
+        /// <summary>
+        /// The role's name
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// A unique identifier for each role
+        /// </summary>
         public readonly string RoleId;
+        /// <summary>
+        /// ISO 8601 timestamp indicating when the role was originally created
+        /// </summary>
         public readonly string TimeCreated;
+        /// <summary>
+        /// ISO 8601 timestamp indicating when the role was last updated
+        /// </summary>
         public readonly string TimeModified;
+        /// <summary>
+        /// Whether the role is a standard role or a custom role
+        /// </summary>
         public readonly string Type;
 
         [OutputConstructor]

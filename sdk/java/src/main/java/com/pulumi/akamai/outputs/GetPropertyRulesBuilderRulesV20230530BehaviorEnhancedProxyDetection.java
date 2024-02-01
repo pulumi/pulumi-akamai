@@ -12,149 +12,437 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorEnhancedProxyDetection {
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String anonymousVpn;
+    /**
+     * @return Specifies how to field the proxy request.
+     * 
+     */
     private @Nullable String bestPracticeAction;
+    /**
+     * @return This specifies the URL to which to redirect requests.
+     * 
+     */
     private @Nullable String bestPracticeRedirecturl;
+    /**
+     * @return This enables detection of requests from anonymous VPNs.
+     * 
+     */
     private @Nullable Boolean detectAnonymousVpn;
+    /**
+     * @return Specifies how to field anonymous VPN requests.
+     * 
+     */
     private @Nullable String detectAnonymousVpnAction;
+    /**
+     * @return This specifies the URL to which to redirect anonymous VPN requests.
+     * 
+     */
     private @Nullable String detectAnonymousVpnRedirecturl;
+    /**
+     * @return This detects requests from a hosting provider.
+     * 
+     */
     private @Nullable Boolean detectHostingProvider;
+    /**
+     * @return This specifies whether to `DENY`, `ALLOW`, or `REDIRECT` requests from hosting providers.
+     * 
+     */
     private @Nullable String detectHostingProviderAction;
+    /**
+     * @return This specifies the absolute URL to which to redirect requests from hosting providers.
+     * 
+     */
     private @Nullable String detectHostingProviderRedirecturl;
+    /**
+     * @return This enables detection of requests from public proxies.
+     * 
+     */
     private @Nullable Boolean detectPublicProxy;
+    /**
+     * @return Specifies how to field public proxy requests.
+     * 
+     */
     private @Nullable String detectPublicProxyAction;
+    /**
+     * @return This specifies the URL to which to redirect public proxy requests.
+     * 
+     */
     private @Nullable String detectPublicProxyRedirecturl;
+    /**
+     * @return This enables detection of requests from a residential proxy. See `Enhanced Proxy Detection with GeoGuard` and learn more about this GeoGuard category before enabling it.
+     * 
+     */
     private @Nullable Boolean detectResidentialProxy;
+    /**
+     * @return This specifies whether to `DENY`, `ALLOW`, or `REDIRECT` requests from residential proxies.
+     * 
+     */
     private @Nullable String detectResidentialProxyAction;
+    /**
+     * @return This specifies the URL to which to redirect requests.
+     * 
+     */
     private @Nullable String detectResidentialProxyRedirecturl;
+    /**
+     * @return This enables detection of requests from smart DNS proxies.
+     * 
+     */
     private @Nullable Boolean detectSmartDnsProxy;
+    /**
+     * @return Specifies whether to `DENY`, `ALLOW`, or `REDIRECT` smart DNS proxy requests.
+     * 
+     */
     private @Nullable String detectSmartDnsProxyAction;
+    /**
+     * @return This specifies the URL to which to redirect DNS proxy requests.
+     * 
+     */
     private @Nullable String detectSmartDnsProxyRedirecturl;
+    /**
+     * @return This enables detection of requests from Tor exit nodes.
+     * 
+     */
     private @Nullable Boolean detectTorExitNode;
+    /**
+     * @return This specifies whether to `DENY`, `ALLOW`, or `REDIRECT` requests from Tor exit nodes.
+     * 
+     */
     private @Nullable String detectTorExitNodeAction;
+    /**
+     * @return This specifies the URL to which to redirect requests from Tor exit nodes.
+     * 
+     */
     private @Nullable String detectTorExitNodeRedirecturl;
+    /**
+     * @return This enables detection of requests from VPN data centers.
+     * 
+     */
     private @Nullable Boolean detectVpnDataCenter;
+    /**
+     * @return This specifies whether to `DENY`, `ALLOW`, or `REDIRECT` requests from VPN data centers.
+     * 
+     */
     private @Nullable String detectVpnDataCenterAction;
+    /**
+     * @return This specifies the URL to which to redirect requests from VPN data centers.
+     * 
+     */
     private @Nullable String detectVpnDataCenterRedirecturl;
+    /**
+     * @return Specifies how to field the proxy request.
+     * 
+     */
     private @Nullable String enableConfigurationMode;
+    /**
+     * @return Applies GeoGuard proxy detection.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Whether the Enhanced Proxy Detection (Akamai-EPD) header is included in the forward request to mark a connecting IP address as an anonymous proxy, with a two-letter designation. See the `epdForwardHeaderEnrichment` behavior for details.
+     * 
+     */
     private @Nullable Boolean forwardHeaderEnrichment;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String hostingProvider;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String publicProxy;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String residentialProxy;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String smartDnsProxy;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String torExitNode;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String vpnDataCenter;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorEnhancedProxyDetection() {}
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> anonymousVpn() {
         return Optional.ofNullable(this.anonymousVpn);
     }
+    /**
+     * @return Specifies how to field the proxy request.
+     * 
+     */
     public Optional<String> bestPracticeAction() {
         return Optional.ofNullable(this.bestPracticeAction);
     }
+    /**
+     * @return This specifies the URL to which to redirect requests.
+     * 
+     */
     public Optional<String> bestPracticeRedirecturl() {
         return Optional.ofNullable(this.bestPracticeRedirecturl);
     }
+    /**
+     * @return This enables detection of requests from anonymous VPNs.
+     * 
+     */
     public Optional<Boolean> detectAnonymousVpn() {
         return Optional.ofNullable(this.detectAnonymousVpn);
     }
+    /**
+     * @return Specifies how to field anonymous VPN requests.
+     * 
+     */
     public Optional<String> detectAnonymousVpnAction() {
         return Optional.ofNullable(this.detectAnonymousVpnAction);
     }
+    /**
+     * @return This specifies the URL to which to redirect anonymous VPN requests.
+     * 
+     */
     public Optional<String> detectAnonymousVpnRedirecturl() {
         return Optional.ofNullable(this.detectAnonymousVpnRedirecturl);
     }
+    /**
+     * @return This detects requests from a hosting provider.
+     * 
+     */
     public Optional<Boolean> detectHostingProvider() {
         return Optional.ofNullable(this.detectHostingProvider);
     }
+    /**
+     * @return This specifies whether to `DENY`, `ALLOW`, or `REDIRECT` requests from hosting providers.
+     * 
+     */
     public Optional<String> detectHostingProviderAction() {
         return Optional.ofNullable(this.detectHostingProviderAction);
     }
+    /**
+     * @return This specifies the absolute URL to which to redirect requests from hosting providers.
+     * 
+     */
     public Optional<String> detectHostingProviderRedirecturl() {
         return Optional.ofNullable(this.detectHostingProviderRedirecturl);
     }
+    /**
+     * @return This enables detection of requests from public proxies.
+     * 
+     */
     public Optional<Boolean> detectPublicProxy() {
         return Optional.ofNullable(this.detectPublicProxy);
     }
+    /**
+     * @return Specifies how to field public proxy requests.
+     * 
+     */
     public Optional<String> detectPublicProxyAction() {
         return Optional.ofNullable(this.detectPublicProxyAction);
     }
+    /**
+     * @return This specifies the URL to which to redirect public proxy requests.
+     * 
+     */
     public Optional<String> detectPublicProxyRedirecturl() {
         return Optional.ofNullable(this.detectPublicProxyRedirecturl);
     }
+    /**
+     * @return This enables detection of requests from a residential proxy. See `Enhanced Proxy Detection with GeoGuard` and learn more about this GeoGuard category before enabling it.
+     * 
+     */
     public Optional<Boolean> detectResidentialProxy() {
         return Optional.ofNullable(this.detectResidentialProxy);
     }
+    /**
+     * @return This specifies whether to `DENY`, `ALLOW`, or `REDIRECT` requests from residential proxies.
+     * 
+     */
     public Optional<String> detectResidentialProxyAction() {
         return Optional.ofNullable(this.detectResidentialProxyAction);
     }
+    /**
+     * @return This specifies the URL to which to redirect requests.
+     * 
+     */
     public Optional<String> detectResidentialProxyRedirecturl() {
         return Optional.ofNullable(this.detectResidentialProxyRedirecturl);
     }
+    /**
+     * @return This enables detection of requests from smart DNS proxies.
+     * 
+     */
     public Optional<Boolean> detectSmartDnsProxy() {
         return Optional.ofNullable(this.detectSmartDnsProxy);
     }
+    /**
+     * @return Specifies whether to `DENY`, `ALLOW`, or `REDIRECT` smart DNS proxy requests.
+     * 
+     */
     public Optional<String> detectSmartDnsProxyAction() {
         return Optional.ofNullable(this.detectSmartDnsProxyAction);
     }
+    /**
+     * @return This specifies the URL to which to redirect DNS proxy requests.
+     * 
+     */
     public Optional<String> detectSmartDnsProxyRedirecturl() {
         return Optional.ofNullable(this.detectSmartDnsProxyRedirecturl);
     }
+    /**
+     * @return This enables detection of requests from Tor exit nodes.
+     * 
+     */
     public Optional<Boolean> detectTorExitNode() {
         return Optional.ofNullable(this.detectTorExitNode);
     }
+    /**
+     * @return This specifies whether to `DENY`, `ALLOW`, or `REDIRECT` requests from Tor exit nodes.
+     * 
+     */
     public Optional<String> detectTorExitNodeAction() {
         return Optional.ofNullable(this.detectTorExitNodeAction);
     }
+    /**
+     * @return This specifies the URL to which to redirect requests from Tor exit nodes.
+     * 
+     */
     public Optional<String> detectTorExitNodeRedirecturl() {
         return Optional.ofNullable(this.detectTorExitNodeRedirecturl);
     }
+    /**
+     * @return This enables detection of requests from VPN data centers.
+     * 
+     */
     public Optional<Boolean> detectVpnDataCenter() {
         return Optional.ofNullable(this.detectVpnDataCenter);
     }
+    /**
+     * @return This specifies whether to `DENY`, `ALLOW`, or `REDIRECT` requests from VPN data centers.
+     * 
+     */
     public Optional<String> detectVpnDataCenterAction() {
         return Optional.ofNullable(this.detectVpnDataCenterAction);
     }
+    /**
+     * @return This specifies the URL to which to redirect requests from VPN data centers.
+     * 
+     */
     public Optional<String> detectVpnDataCenterRedirecturl() {
         return Optional.ofNullable(this.detectVpnDataCenterRedirecturl);
     }
+    /**
+     * @return Specifies how to field the proxy request.
+     * 
+     */
     public Optional<String> enableConfigurationMode() {
         return Optional.ofNullable(this.enableConfigurationMode);
     }
+    /**
+     * @return Applies GeoGuard proxy detection.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Whether the Enhanced Proxy Detection (Akamai-EPD) header is included in the forward request to mark a connecting IP address as an anonymous proxy, with a two-letter designation. See the `epdForwardHeaderEnrichment` behavior for details.
+     * 
+     */
     public Optional<Boolean> forwardHeaderEnrichment() {
         return Optional.ofNullable(this.forwardHeaderEnrichment);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> hostingProvider() {
         return Optional.ofNullable(this.hostingProvider);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> publicProxy() {
         return Optional.ofNullable(this.publicProxy);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> residentialProxy() {
         return Optional.ofNullable(this.residentialProxy);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> smartDnsProxy() {
         return Optional.ofNullable(this.smartDnsProxy);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> torExitNode() {
         return Optional.ofNullable(this.torExitNode);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> vpnDataCenter() {
         return Optional.ofNullable(this.vpnDataCenter);
     }

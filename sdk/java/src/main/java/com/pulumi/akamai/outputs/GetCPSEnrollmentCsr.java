@@ -10,29 +10,77 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCPSEnrollmentCsr {
+    /**
+     * @return City where organization is located
+     * 
+     */
     private String city;
+    /**
+     * @return The code of the country where organization is located
+     * 
+     */
     private String countryCode;
+    /**
+     * @return Name of organization used in all legal documents
+     * 
+     */
     private String organization;
+    /**
+     * @return Organizational unit of organization
+     * 
+     */
     private String organizationalUnit;
+    /**
+     * @return For the Let&#39;s Encrypt Domain Validated (DV) SAN certificates, the preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default
+     * 
+     */
     private String preferredTrustChain;
+    /**
+     * @return State or province of organization location
+     * 
+     */
     private String state;
 
     private GetCPSEnrollmentCsr() {}
+    /**
+     * @return City where organization is located
+     * 
+     */
     public String city() {
         return this.city;
     }
+    /**
+     * @return The code of the country where organization is located
+     * 
+     */
     public String countryCode() {
         return this.countryCode;
     }
+    /**
+     * @return Name of organization used in all legal documents
+     * 
+     */
     public String organization() {
         return this.organization;
     }
+    /**
+     * @return Organizational unit of organization
+     * 
+     */
     public String organizationalUnit() {
         return this.organizationalUnit;
     }
+    /**
+     * @return For the Let&#39;s Encrypt Domain Validated (DV) SAN certificates, the preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default
+     * 
+     */
     public String preferredTrustChain() {
         return this.preferredTrustChain;
     }
+    /**
+     * @return State or province of organization location
+     * 
+     */
     public String state() {
         return this.state;
     }

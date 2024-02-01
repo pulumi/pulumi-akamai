@@ -13,49 +13,137 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105CriterionMatchVariable {
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Specifies the range&#39;s numeric minimum value.
+     * 
+     */
     private @Nullable String lowerBound;
+    /**
+     * @return When matching string expressions, enabling this performs a case-sensitive match.
+     * 
+     */
     private @Nullable Boolean matchCaseSensitive;
+    /**
+     * @return The type of match, based on which you use different options to specify the match criteria.
+     * 
+     */
     private @Nullable String matchOperator;
+    /**
+     * @return When matching string expressions, enabling this allows wildcards, where `?` matches a single character and `*` matches zero or more characters.
+     * 
+     */
     private @Nullable Boolean matchWildcard;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return Specifies the range&#39;s numeric maximum value.
+     * 
+     */
     private @Nullable String upperBound;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
+    /**
+     * @return Specifies a single matching string.
+     * 
+     */
     private @Nullable String variableExpression;
+    /**
+     * @return The name of the variable to match.
+     * 
+     */
     private @Nullable String variableName;
+    /**
+     * @return Specifies an array of matching strings.
+     * 
+     */
     private @Nullable List<String> variableValues;
 
     private GetPropertyRulesBuilderRulesV20230105CriterionMatchVariable() {}
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Specifies the range&#39;s numeric minimum value.
+     * 
+     */
     public Optional<String> lowerBound() {
         return Optional.ofNullable(this.lowerBound);
     }
+    /**
+     * @return When matching string expressions, enabling this performs a case-sensitive match.
+     * 
+     */
     public Optional<Boolean> matchCaseSensitive() {
         return Optional.ofNullable(this.matchCaseSensitive);
     }
+    /**
+     * @return The type of match, based on which you use different options to specify the match criteria.
+     * 
+     */
     public Optional<String> matchOperator() {
         return Optional.ofNullable(this.matchOperator);
     }
+    /**
+     * @return When matching string expressions, enabling this allows wildcards, where `?` matches a single character and `*` matches zero or more characters.
+     * 
+     */
     public Optional<Boolean> matchWildcard() {
         return Optional.ofNullable(this.matchWildcard);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return Specifies the range&#39;s numeric maximum value.
+     * 
+     */
     public Optional<String> upperBound() {
         return Optional.ofNullable(this.upperBound);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
+    /**
+     * @return Specifies a single matching string.
+     * 
+     */
     public Optional<String> variableExpression() {
         return Optional.ofNullable(this.variableExpression);
     }
+    /**
+     * @return The name of the variable to match.
+     * 
+     */
     public Optional<String> variableName() {
         return Optional.ofNullable(this.variableName);
     }
+    /**
+     * @return Specifies an array of matching strings.
+     * 
+     */
     public List<String> variableValues() {
         return this.variableValues == null ? List.of() : this.variableValues;
     }

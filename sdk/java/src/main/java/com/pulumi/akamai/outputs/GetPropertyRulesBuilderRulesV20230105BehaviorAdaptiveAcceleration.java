@@ -12,81 +12,233 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorAdaptiveAcceleration {
+    /**
+     * @return Specifies whether to use Adaptive Acceleration in an A/B testing environment. To include Adaptive Acceleration data in your A/B testing, specify the mode you want to apply. Otherwise, `DISABLED` by default. See `Add A/B testing to A2` for details.
+     * 
+     */
     private @Nullable String abLogic;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String abTesting;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String compression;
+    /**
+     * @return This specifies the name of the cookie file used for redirecting the requests in the A/B testing environment.
+     * 
+     */
     private @Nullable String cookieName;
+    /**
+     * @return Applies Brotli compression, converting your origin content to cache on edge servers.
+     * 
+     */
     private @Nullable Boolean enableBrotliCompression;
+    /**
+     * @return Applies Brotli compression to non-cacheable content.
+     * 
+     */
     private @Nullable Boolean enableForNoncacheable;
+    /**
+     * @return Allows browsers to anticipate what connections your site needs, and establishes those connections ahead of time. See `Automatic Preconnect` for more information.
+     * 
+     */
     private @Nullable Boolean enablePreconnect;
+    /**
+     * @return Recognizes resources like JavaScript, CSS, and images  based on gathered timing data and sends these resources to a browser as it&#39;s waiting for a response to the initial request for your website or app. See `Automatic Server Push` for more information.
+     * 
+     */
     private @Nullable Boolean enablePush;
+    /**
+     * @return Enables the Resource Optimizer, which automates the compression and delivery of your `.css`, `.js`, and `.svg` content using a combination of Brotli and Zopfli compressions. The compression is performed offline, during a time to live that the feature automatically sets. See the `resourceOptimizer` and `resourceOptimizerExtendedCompatibility` behaviors for more details.
+     * 
+     */
     private @Nullable Boolean enableRo;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Allows browsers to preload necessary fonts before they fetch and process other resources. See `Automatic Font Preload` for more information.
+     * 
+     */
     private @Nullable Boolean preloadEnable;
+    /**
+     * @return The source Adaptive Acceleration uses to gather the real user monitoring timing data, either `mPulse` or `realUserMonitoring`. The recommended `mPulse` option supports all optimizations and requires the `mPulse` behavior added by default to new Ion properties. The classic `realUserMonitoring` method has been deprecated. If you set it as the data source, make sure you use it with the `realUserMonitoring` behavior.
+     * 
+     */
     private @Nullable String source;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String titleBrotli;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String titleHttp2ServerPush;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String titlePreconnect;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String titlePreload;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String titleRo;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorAdaptiveAcceleration() {}
+    /**
+     * @return Specifies whether to use Adaptive Acceleration in an A/B testing environment. To include Adaptive Acceleration data in your A/B testing, specify the mode you want to apply. Otherwise, `DISABLED` by default. See `Add A/B testing to A2` for details.
+     * 
+     */
     public Optional<String> abLogic() {
         return Optional.ofNullable(this.abLogic);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> abTesting() {
         return Optional.ofNullable(this.abTesting);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> compression() {
         return Optional.ofNullable(this.compression);
     }
+    /**
+     * @return This specifies the name of the cookie file used for redirecting the requests in the A/B testing environment.
+     * 
+     */
     public Optional<String> cookieName() {
         return Optional.ofNullable(this.cookieName);
     }
+    /**
+     * @return Applies Brotli compression, converting your origin content to cache on edge servers.
+     * 
+     */
     public Optional<Boolean> enableBrotliCompression() {
         return Optional.ofNullable(this.enableBrotliCompression);
     }
+    /**
+     * @return Applies Brotli compression to non-cacheable content.
+     * 
+     */
     public Optional<Boolean> enableForNoncacheable() {
         return Optional.ofNullable(this.enableForNoncacheable);
     }
+    /**
+     * @return Allows browsers to anticipate what connections your site needs, and establishes those connections ahead of time. See `Automatic Preconnect` for more information.
+     * 
+     */
     public Optional<Boolean> enablePreconnect() {
         return Optional.ofNullable(this.enablePreconnect);
     }
+    /**
+     * @return Recognizes resources like JavaScript, CSS, and images  based on gathered timing data and sends these resources to a browser as it&#39;s waiting for a response to the initial request for your website or app. See `Automatic Server Push` for more information.
+     * 
+     */
     public Optional<Boolean> enablePush() {
         return Optional.ofNullable(this.enablePush);
     }
+    /**
+     * @return Enables the Resource Optimizer, which automates the compression and delivery of your `.css`, `.js`, and `.svg` content using a combination of Brotli and Zopfli compressions. The compression is performed offline, during a time to live that the feature automatically sets. See the `resourceOptimizer` and `resourceOptimizerExtendedCompatibility` behaviors for more details.
+     * 
+     */
     public Optional<Boolean> enableRo() {
         return Optional.ofNullable(this.enableRo);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Allows browsers to preload necessary fonts before they fetch and process other resources. See `Automatic Font Preload` for more information.
+     * 
+     */
     public Optional<Boolean> preloadEnable() {
         return Optional.ofNullable(this.preloadEnable);
     }
+    /**
+     * @return The source Adaptive Acceleration uses to gather the real user monitoring timing data, either `mPulse` or `realUserMonitoring`. The recommended `mPulse` option supports all optimizations and requires the `mPulse` behavior added by default to new Ion properties. The classic `realUserMonitoring` method has been deprecated. If you set it as the data source, make sure you use it with the `realUserMonitoring` behavior.
+     * 
+     */
     public Optional<String> source() {
         return Optional.ofNullable(this.source);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> titleBrotli() {
         return Optional.ofNullable(this.titleBrotli);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> titleHttp2ServerPush() {
         return Optional.ofNullable(this.titleHttp2ServerPush);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> titlePreconnect() {
         return Optional.ofNullable(this.titlePreconnect);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> titlePreload() {
         return Optional.ofNullable(this.titlePreload);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> titleRo() {
         return Optional.ofNullable(this.titleRo);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

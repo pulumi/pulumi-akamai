@@ -12,21 +12,39 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorGlobalRequestNumberInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// With `outputOption` set to specify any set of headers, this specifies the name of the header to report the GRN value.
+        /// </summary>
         [Input("headerName")]
         public Input<string>? HeaderName { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public Input<bool>? Locked { get; set; }
 
+        /// <summary>
+        /// Specifies how to report the GRN value.
+        /// </summary>
         [Input("outputOption")]
         public Input<string>? OutputOption { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public Input<string>? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public Input<string>? Uuid { get; set; }
 
+        /// <summary>
+        /// This specifies the name of the variable to assign the GRN value to. You need to pre-declare any `variable` you specify within the rule tree.
+        /// </summary>
         [Input("variableName")]
         public Input<string>? VariableName { get; set; }
 

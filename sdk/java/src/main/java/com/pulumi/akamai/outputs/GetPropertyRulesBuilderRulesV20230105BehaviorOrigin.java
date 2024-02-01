@@ -17,157 +17,453 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorOrigin {
+    /**
+     * @return Specifies the hostname to use when forming a cache key.
+     * 
+     */
     private @Nullable String cacheKeyHostname;
+    /**
+     * @return Enables `gzip` compression for non-NetStorage origins.
+     * 
+     */
     private @Nullable Boolean compress;
+    /**
+     * @return Specifies an array of certification objects. See the `verification settings in the Origin Server behavior` or contact your Akamai representative for details on this object&#39;s requirements.
+     * 
+     */
     private @Nullable List<GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthority> customCertificateAuthorities;
+    /**
+     * @return Specifies an array of certification objects. See the `verification settings in the Origin Server behavior` or contact your Akamai representative for details on this object&#39;s requirements.
+     * 
+     */
     private @Nullable List<GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificate> customCertificates;
+    /**
+     * @return This specifies the name of the custom host header the edge server should pass to the origin.
+     * 
+     */
     private @Nullable String customForwardHostHeader;
+    /**
+     * @return Specifies values to look for in the origin certificate&#39;s `Subject Alternate Name` or `Common Name` fields. Specify `{{Origin Hostname}}` and `{{Forward Host Header}}` within the text in the order you want them to be evaluated. (Note that these two template items are not the same as in-line `variables`, which use the same curly-brace syntax.)
+     * 
+     */
     private @Nullable List<String> customValidCnValues;
+    /**
+     * @return When enabled on non-NetStorage origins, allows you to send a custom header (the `trueClientIpHeader`) identifying the IP address of the immediate client connecting to the edge server. This may provide more useful information than the standard `X-Forward-For` header, which proxies may modify.
+     * 
+     */
     private @Nullable Boolean enableTrueClientIp;
+    /**
+     * @return When the `originType` is set to either `CUSTOMER` or `SAAS_DYNAMIC_ORIGIN`, this specifies which `Host` header to pass to the origin.
+     * 
+     */
     private @Nullable String forwardHostHeader;
+    /**
+     * @return Specifies the hostname or IPv4 address of your origin server, from which edge servers can retrieve your content.
+     * 
+     */
     private @Nullable String hostname;
+    /**
+     * @return Specifies the port on your origin server to which edge servers should connect for HTTP requests, customarily `80`.
+     * 
+     */
     private @Nullable Integer httpPort;
+    /**
+     * @return Specifies the port on your origin server to which edge servers should connect for secure HTTPS requests, customarily `443`. This option only applies if the property is marked as secure. See `Secure property requirements` for guidance.
+     * 
+     */
     private @Nullable Integer httpsPort;
+    /**
+     * @return Specifies which IP version to use when getting content from the origin.
+     * 
+     */
     private @Nullable String ipVersion;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return This specifies the media&#39;s origin server.
+     * 
+     */
     private @Nullable String mslorigin;
+    /**
+     * @return Specifies the details of the NetStorage server.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorOriginNetStorage netStorage;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String originCertificate;
+    /**
+     * @return Specifies which certificate to trust.
+     * 
+     */
     private @Nullable String originCertsToHonor;
+    /**
+     * @return Identifies the Edge Load Balancing origin. This needs to correspond to an `edgeLoadBalancingOrigin` behavior&#39;s `id` attribute within the same property.
+     * 
+     */
     private @Nullable String originId;
+    /**
+     * @return For non-NetStorage origins, enabling this adds a Server Name Indication (SNI) header in the SSL request sent to the origin, with the origin hostname as the value. See the `verification settings in the Origin Server behavior` or contact your Akamai representative for more information.
+     * 
+     */
     private @Nullable Boolean originSni;
+    /**
+     * @return Choose where your content is retrieved from.
+     * 
+     */
     private @Nullable String originType;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String ports;
+    /**
+     * @return Enabling this allows you to use a `CNAME chain` to determine the hostname for this SaaS dynamic origin.
+     * 
+     */
     private @Nullable Boolean saasCnameEnabled;
+    /**
+     * @return Specifies the desired number of hostnames to use in the `CNAME chain`, starting backwards from the edge server.
+     * 
+     */
     private @Nullable Integer saasCnameLevel;
+    /**
+     * @return Specifies the name of the cookie that identifies this SaaS dynamic origin.
+     * 
+     */
     private @Nullable String saasCookie;
+    /**
+     * @return Specifies the name of the query parameter that identifies this SaaS dynamic origin.
+     * 
+     */
     private @Nullable String saasQueryString;
+    /**
+     * @return Specifies the Perl-compatible regular expression match that identifies this SaaS dynamic origin.
+     * 
+     */
     private @Nullable String saasRegex;
+    /**
+     * @return Specifies replacement text for what `saasRegex` matches.
+     * 
+     */
     private @Nullable String saasReplace;
+    /**
+     * @return Specifies the static part of the SaaS dynamic origin.
+     * 
+     */
     private @Nullable String saasSuffix;
+    /**
+     * @return Specifies the part of the request that identifies this SaaS dynamic origin.
+     * 
+     */
     private @Nullable String saasType;
+    /**
+     * @return Specifies the origin server&#39;s hostname, IPv4 address, or IPv6 address. Edge servers retrieve your content from this origin server.
+     * 
+     */
     private @Nullable String secondHostname;
+    /**
+     * @return Available only for certain products. This specifies whether you want to use an additional origin server address.
+     * 
+     */
     private @Nullable Boolean secondHostnameEnabled;
     private @Nullable List<String> standardCertificateAuthorities;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return If a client sets the `True-Client-IP` header, the edge server allows it and passes the value to the origin. Otherwise the edge server removes it and sets the value itself.
+     * 
+     */
     private @Nullable Boolean trueClientIpClientSetting;
+    /**
+     * @return This specifies the name of the field that identifies the end client&#39;s IP address, for example `True-Client-IP`.
+     * 
+     */
     private @Nullable String trueClientIpHeader;
+    /**
+     * @return With a shared `hostname` such as provided by Amazon AWS, sets a unique cache key for your content.
+     * 
+     */
     private @Nullable Boolean useUniqueCacheKey;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
+    /**
+     * @return For non-NetStorage origins, maximize security by controlling which certificates edge servers should trust.
+     * 
+     */
     private @Nullable String verificationMode;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorOrigin() {}
+    /**
+     * @return Specifies the hostname to use when forming a cache key.
+     * 
+     */
     public Optional<String> cacheKeyHostname() {
         return Optional.ofNullable(this.cacheKeyHostname);
     }
+    /**
+     * @return Enables `gzip` compression for non-NetStorage origins.
+     * 
+     */
     public Optional<Boolean> compress() {
         return Optional.ofNullable(this.compress);
     }
+    /**
+     * @return Specifies an array of certification objects. See the `verification settings in the Origin Server behavior` or contact your Akamai representative for details on this object&#39;s requirements.
+     * 
+     */
     public List<GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthority> customCertificateAuthorities() {
         return this.customCertificateAuthorities == null ? List.of() : this.customCertificateAuthorities;
     }
+    /**
+     * @return Specifies an array of certification objects. See the `verification settings in the Origin Server behavior` or contact your Akamai representative for details on this object&#39;s requirements.
+     * 
+     */
     public List<GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificate> customCertificates() {
         return this.customCertificates == null ? List.of() : this.customCertificates;
     }
+    /**
+     * @return This specifies the name of the custom host header the edge server should pass to the origin.
+     * 
+     */
     public Optional<String> customForwardHostHeader() {
         return Optional.ofNullable(this.customForwardHostHeader);
     }
+    /**
+     * @return Specifies values to look for in the origin certificate&#39;s `Subject Alternate Name` or `Common Name` fields. Specify `{{Origin Hostname}}` and `{{Forward Host Header}}` within the text in the order you want them to be evaluated. (Note that these two template items are not the same as in-line `variables`, which use the same curly-brace syntax.)
+     * 
+     */
     public List<String> customValidCnValues() {
         return this.customValidCnValues == null ? List.of() : this.customValidCnValues;
     }
+    /**
+     * @return When enabled on non-NetStorage origins, allows you to send a custom header (the `trueClientIpHeader`) identifying the IP address of the immediate client connecting to the edge server. This may provide more useful information than the standard `X-Forward-For` header, which proxies may modify.
+     * 
+     */
     public Optional<Boolean> enableTrueClientIp() {
         return Optional.ofNullable(this.enableTrueClientIp);
     }
+    /**
+     * @return When the `originType` is set to either `CUSTOMER` or `SAAS_DYNAMIC_ORIGIN`, this specifies which `Host` header to pass to the origin.
+     * 
+     */
     public Optional<String> forwardHostHeader() {
         return Optional.ofNullable(this.forwardHostHeader);
     }
+    /**
+     * @return Specifies the hostname or IPv4 address of your origin server, from which edge servers can retrieve your content.
+     * 
+     */
     public Optional<String> hostname() {
         return Optional.ofNullable(this.hostname);
     }
+    /**
+     * @return Specifies the port on your origin server to which edge servers should connect for HTTP requests, customarily `80`.
+     * 
+     */
     public Optional<Integer> httpPort() {
         return Optional.ofNullable(this.httpPort);
     }
+    /**
+     * @return Specifies the port on your origin server to which edge servers should connect for secure HTTPS requests, customarily `443`. This option only applies if the property is marked as secure. See `Secure property requirements` for guidance.
+     * 
+     */
     public Optional<Integer> httpsPort() {
         return Optional.ofNullable(this.httpsPort);
     }
+    /**
+     * @return Specifies which IP version to use when getting content from the origin.
+     * 
+     */
     public Optional<String> ipVersion() {
         return Optional.ofNullable(this.ipVersion);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return This specifies the media&#39;s origin server.
+     * 
+     */
     public Optional<String> mslorigin() {
         return Optional.ofNullable(this.mslorigin);
     }
+    /**
+     * @return Specifies the details of the NetStorage server.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorOriginNetStorage> netStorage() {
         return Optional.ofNullable(this.netStorage);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> originCertificate() {
         return Optional.ofNullable(this.originCertificate);
     }
+    /**
+     * @return Specifies which certificate to trust.
+     * 
+     */
     public Optional<String> originCertsToHonor() {
         return Optional.ofNullable(this.originCertsToHonor);
     }
+    /**
+     * @return Identifies the Edge Load Balancing origin. This needs to correspond to an `edgeLoadBalancingOrigin` behavior&#39;s `id` attribute within the same property.
+     * 
+     */
     public Optional<String> originId() {
         return Optional.ofNullable(this.originId);
     }
+    /**
+     * @return For non-NetStorage origins, enabling this adds a Server Name Indication (SNI) header in the SSL request sent to the origin, with the origin hostname as the value. See the `verification settings in the Origin Server behavior` or contact your Akamai representative for more information.
+     * 
+     */
     public Optional<Boolean> originSni() {
         return Optional.ofNullable(this.originSni);
     }
+    /**
+     * @return Choose where your content is retrieved from.
+     * 
+     */
     public Optional<String> originType() {
         return Optional.ofNullable(this.originType);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> ports() {
         return Optional.ofNullable(this.ports);
     }
+    /**
+     * @return Enabling this allows you to use a `CNAME chain` to determine the hostname for this SaaS dynamic origin.
+     * 
+     */
     public Optional<Boolean> saasCnameEnabled() {
         return Optional.ofNullable(this.saasCnameEnabled);
     }
+    /**
+     * @return Specifies the desired number of hostnames to use in the `CNAME chain`, starting backwards from the edge server.
+     * 
+     */
     public Optional<Integer> saasCnameLevel() {
         return Optional.ofNullable(this.saasCnameLevel);
     }
+    /**
+     * @return Specifies the name of the cookie that identifies this SaaS dynamic origin.
+     * 
+     */
     public Optional<String> saasCookie() {
         return Optional.ofNullable(this.saasCookie);
     }
+    /**
+     * @return Specifies the name of the query parameter that identifies this SaaS dynamic origin.
+     * 
+     */
     public Optional<String> saasQueryString() {
         return Optional.ofNullable(this.saasQueryString);
     }
+    /**
+     * @return Specifies the Perl-compatible regular expression match that identifies this SaaS dynamic origin.
+     * 
+     */
     public Optional<String> saasRegex() {
         return Optional.ofNullable(this.saasRegex);
     }
+    /**
+     * @return Specifies replacement text for what `saasRegex` matches.
+     * 
+     */
     public Optional<String> saasReplace() {
         return Optional.ofNullable(this.saasReplace);
     }
+    /**
+     * @return Specifies the static part of the SaaS dynamic origin.
+     * 
+     */
     public Optional<String> saasSuffix() {
         return Optional.ofNullable(this.saasSuffix);
     }
+    /**
+     * @return Specifies the part of the request that identifies this SaaS dynamic origin.
+     * 
+     */
     public Optional<String> saasType() {
         return Optional.ofNullable(this.saasType);
     }
+    /**
+     * @return Specifies the origin server&#39;s hostname, IPv4 address, or IPv6 address. Edge servers retrieve your content from this origin server.
+     * 
+     */
     public Optional<String> secondHostname() {
         return Optional.ofNullable(this.secondHostname);
     }
+    /**
+     * @return Available only for certain products. This specifies whether you want to use an additional origin server address.
+     * 
+     */
     public Optional<Boolean> secondHostnameEnabled() {
         return Optional.ofNullable(this.secondHostnameEnabled);
     }
     public List<String> standardCertificateAuthorities() {
         return this.standardCertificateAuthorities == null ? List.of() : this.standardCertificateAuthorities;
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return If a client sets the `True-Client-IP` header, the edge server allows it and passes the value to the origin. Otherwise the edge server removes it and sets the value itself.
+     * 
+     */
     public Optional<Boolean> trueClientIpClientSetting() {
         return Optional.ofNullable(this.trueClientIpClientSetting);
     }
+    /**
+     * @return This specifies the name of the field that identifies the end client&#39;s IP address, for example `True-Client-IP`.
+     * 
+     */
     public Optional<String> trueClientIpHeader() {
         return Optional.ofNullable(this.trueClientIpHeader);
     }
+    /**
+     * @return With a shared `hostname` such as provided by Amazon AWS, sets a unique cache key for your content.
+     * 
+     */
     public Optional<Boolean> useUniqueCacheKey() {
         return Optional.ofNullable(this.useUniqueCacheKey);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
+    /**
+     * @return For non-NetStorage origins, maximize security by controlling which certificates edge servers should trust.
+     * 
+     */
     public Optional<String> verificationMode() {
         return Optional.ofNullable(this.verificationMode);
     }

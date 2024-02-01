@@ -16,44 +16,92 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorRealTimeReportin
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorRealTimeReporting Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorRealTimeReporting();
 
+    /**
+     * Enables advanced options.
+     * 
+     */
     @Import(name="advanced")
     private @Nullable Boolean advanced;
 
+    /**
+     * @return Enables advanced options.
+     * 
+     */
     public Optional<Boolean> advanced() {
         return Optional.ofNullable(this.advanced);
     }
 
+    /**
+     * Specifies the percentage for sampling.
+     * 
+     */
     @Import(name="beaconSamplingPercentage")
     private @Nullable Double beaconSamplingPercentage;
 
+    /**
+     * @return Specifies the percentage for sampling.
+     * 
+     */
     public Optional<Double> beaconSamplingPercentage() {
         return Optional.ofNullable(this.beaconSamplingPercentage);
     }
 
+    /**
+     * Enables reports on delivery of cloud hosted content at near real-time latencies.
+     * 
+     */
     @Import(name="enabled")
     private @Nullable Boolean enabled;
 
+    /**
+     * @return Enables reports on delivery of cloud hosted content at near real-time latencies.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -87,31 +135,67 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorRealTimeReportin
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorRealTimeReporting(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param advanced Enables advanced options.
+         * 
+         * @return builder
+         * 
+         */
         public Builder advanced(@Nullable Boolean advanced) {
             $.advanced = advanced;
             return this;
         }
 
+        /**
+         * @param beaconSamplingPercentage Specifies the percentage for sampling.
+         * 
+         * @return builder
+         * 
+         */
         public Builder beaconSamplingPercentage(@Nullable Double beaconSamplingPercentage) {
             $.beaconSamplingPercentage = beaconSamplingPercentage;
             return this;
         }
 
+        /**
+         * @param enabled Enables reports on delivery of cloud hosted content at near real-time latencies.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(@Nullable Boolean enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

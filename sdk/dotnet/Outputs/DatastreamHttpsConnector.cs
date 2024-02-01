@@ -13,19 +13,61 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class DatastreamHttpsConnector
     {
+        /// <summary>
+        /// Either NONE for no authentication, or BASIC for username and password authentication
+        /// </summary>
         public readonly string AuthenticationType;
+        /// <summary>
+        /// The certification authority (CA) certificate used to verify the origin server's certificate. If the certificate is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+        /// </summary>
         public readonly string? CaCert;
+        /// <summary>
+        /// The digital certificate in the PEM format you want to use to authenticate requests to your destination. If you want to use mutual authentication, you need to provide both the client certificate and the client key (in the PEM format).
+        /// </summary>
         public readonly string? ClientCert;
+        /// <summary>
+        /// The private key in the non-encrypted PKCS8 format you want to use to authenticate with the back-end server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+        /// </summary>
         public readonly string? ClientKey;
+        /// <summary>
+        /// Indicates whether the logs should be compressed
+        /// </summary>
         public readonly bool? CompressLogs;
+        /// <summary>
+        /// Content type to pass in the log file header
+        /// </summary>
         public readonly string? ContentType;
+        /// <summary>
+        /// The name of custom header passed with the request to the destination
+        /// </summary>
         public readonly string? CustomHeaderName;
+        /// <summary>
+        /// The custom header's contents passed with the request to the destination
+        /// </summary>
         public readonly string? CustomHeaderValue;
+        /// <summary>
+        /// The name of the connector
+        /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// URL where logs will be stored
+        /// </summary>
         public readonly string Endpoint;
+        /// <summary>
+        /// Indicates whether mTLS is enabled or not.
+        /// </summary>
         public readonly bool? MTls;
+        /// <summary>
+        /// Password set for custom HTTPS endpoint for authentication
+        /// </summary>
         public readonly string? Password;
+        /// <summary>
+        /// The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+        /// </summary>
         public readonly string? TlsHostname;
+        /// <summary>
+        /// Username used for authentication
+        /// </summary>
         public readonly string? UserName;
 
         [OutputConstructor]

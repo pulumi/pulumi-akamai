@@ -14,21 +14,53 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationCompositeImage {
+    /**
+     * @return A rectangular box, with a specified color and applied transformation.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationCompositeImageBoxImage> boxImages;
+    /**
+     * @return A rectangular box, with a specified color and applied transformation.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationCompositeImageCircleImage> circleImages;
+    /**
+     * @return A snippet of text. Defines font family and size, fill color, and outline stroke width and color.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationCompositeImageTextImage> textImages;
+    /**
+     * @return An image loaded from a URL.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationCompositeImageUrlImage> urlImages;
 
     private GetImagingPolicyImagePolicyTransformationCompositeImage() {}
+    /**
+     * @return A rectangular box, with a specified color and applied transformation.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationCompositeImageBoxImage> boxImages() {
         return this.boxImages == null ? List.of() : this.boxImages;
     }
+    /**
+     * @return A rectangular box, with a specified color and applied transformation.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationCompositeImageCircleImage> circleImages() {
         return this.circleImages == null ? List.of() : this.circleImages;
     }
+    /**
+     * @return A snippet of text. Defines font family and size, fill color, and outline stroke width and color.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationCompositeImageTextImage> textImages() {
         return this.textImages == null ? List.of() : this.textImages;
     }
+    /**
+     * @return An image loaded from a URL.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationCompositeImageUrlImage> urlImages() {
         return this.urlImages == null ? List.of() : this.urlImages;
     }

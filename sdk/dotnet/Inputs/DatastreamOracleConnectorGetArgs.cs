@@ -14,6 +14,10 @@ namespace Pulumi.Akamai.Inputs
     {
         [Input("accessKey", required: true)]
         private Input<string>? _accessKey;
+
+        /// <summary>
+        /// The access key identifier used to authenticate requests to the Oracle Cloud account
+        /// </summary>
         public Input<string>? AccessKey
         {
             get => _accessKey;
@@ -24,26 +28,48 @@ namespace Pulumi.Akamai.Inputs
             }
         }
 
+        /// <summary>
+        /// The name of the Oracle Cloud Storage bucket
+        /// </summary>
         [Input("bucket", required: true)]
         public Input<string> Bucket { get; set; } = null!;
 
+        /// <summary>
+        /// Indicates whether the logs should be compressed
+        /// </summary>
         [Input("compressLogs")]
         public Input<bool>? CompressLogs { get; set; }
 
+        /// <summary>
+        /// The name of the connector
+        /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
 
+        /// <summary>
+        /// The namespace of Oracle Cloud Storage account
+        /// </summary>
         [Input("namespace", required: true)]
         public Input<string> Namespace { get; set; } = null!;
 
+        /// <summary>
+        /// The path to the folder within your Oracle Cloud Storage bucket where logs will be stored
+        /// </summary>
         [Input("path", required: true)]
         public Input<string> Path { get; set; } = null!;
 
+        /// <summary>
+        /// The Oracle Cloud Storage region where bucket resides
+        /// </summary>
         [Input("region", required: true)]
         public Input<string> Region { get; set; } = null!;
 
         [Input("secretAccessKey", required: true)]
         private Input<string>? _secretAccessKey;
+
+        /// <summary>
+        /// The secret access key identifier used to authenticate requests to the Oracle Cloud account
+        /// </summary>
         public Input<string>? SecretAccessKey
         {
             get => _secretAccessKey;

@@ -13,7 +13,13 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyPostBreakpointTransformationGrayscaleResult
     {
+        /// <summary>
+        /// The algorithm used to transform colors to grays, either `Brightness`, `Lightness`, `Rec601`, or the default `Rec709`.
+        /// </summary>
         public readonly string? Type;
+        /// <summary>
+        /// The algorithm used to transform colors to grays, either `Brightness`, `Lightness`, `Rec601`, or the default `Rec709`.
+        /// </summary>
         public readonly string? TypeVar;
 
         [OutputConstructor]

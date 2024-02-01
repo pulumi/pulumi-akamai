@@ -15,37 +15,77 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionContentDelivery
 
     public static final GetPropertyRulesBuilderRulesV20230105CriterionContentDeliveryNetwork Empty = new GetPropertyRulesBuilderRulesV20230105CriterionContentDeliveryNetwork();
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Matches the specified `network` if set to `IS`, otherwise `IS_NOT` reverses the match.
+     * 
+     */
     @Import(name="matchOperator")
     private @Nullable String matchOperator;
 
+    /**
+     * @return Matches the specified `network` if set to `IS`, otherwise `IS_NOT` reverses the match.
+     * 
+     */
     public Optional<String> matchOperator() {
         return Optional.ofNullable(this.matchOperator);
     }
 
+    /**
+     * Match the network.
+     * 
+     */
     @Import(name="network")
     private @Nullable String network;
 
+    /**
+     * @return Match the network.
+     * 
+     */
     public Optional<String> network() {
         return Optional.ofNullable(this.network);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -78,26 +118,56 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionContentDelivery
             $ = new GetPropertyRulesBuilderRulesV20230105CriterionContentDeliveryNetwork(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param matchOperator Matches the specified `network` if set to `IS`, otherwise `IS_NOT` reverses the match.
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchOperator(@Nullable String matchOperator) {
             $.matchOperator = matchOperator;
             return this;
         }
 
+        /**
+         * @param network Match the network.
+         * 
+         * @return builder
+         * 
+         */
         public Builder network(@Nullable String network) {
             $.network = network;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

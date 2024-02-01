@@ -13,12 +13,33 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class DatastreamS3Connector
     {
+        /// <summary>
+        /// The access key identifier used to authenticate requests to the Amazon S3 account
+        /// </summary>
         public readonly string AccessKey;
+        /// <summary>
+        /// The name of the Amazon S3 bucket
+        /// </summary>
         public readonly string Bucket;
+        /// <summary>
+        /// Indicates whether the logs should be compressed
+        /// </summary>
         public readonly bool? CompressLogs;
+        /// <summary>
+        /// The name of the connector
+        /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// The path to the folder within Amazon S3 bucket where logs will be stored
+        /// </summary>
         public readonly string Path;
+        /// <summary>
+        /// The AWS region where Amazon S3 bucket resides
+        /// </summary>
         public readonly string Region;
+        /// <summary>
+        /// The secret access key identifier used to authenticate requests to the Amazon S3 account
+        /// </summary>
         public readonly string SecretAccessKey;
 
         [OutputConstructor]

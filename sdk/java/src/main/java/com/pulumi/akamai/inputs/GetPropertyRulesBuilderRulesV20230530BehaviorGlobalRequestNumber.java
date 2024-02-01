@@ -15,44 +15,92 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorGlobalRequestNum
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorGlobalRequestNumber Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorGlobalRequestNumber();
 
+    /**
+     * With `outputOption` set to specify any set of headers, this specifies the name of the header to report the GRN value.
+     * 
+     */
     @Import(name="headerName")
     private @Nullable String headerName;
 
+    /**
+     * @return With `outputOption` set to specify any set of headers, this specifies the name of the header to report the GRN value.
+     * 
+     */
     public Optional<String> headerName() {
         return Optional.ofNullable(this.headerName);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Specifies how to report the GRN value.
+     * 
+     */
     @Import(name="outputOption")
     private @Nullable String outputOption;
 
+    /**
+     * @return Specifies how to report the GRN value.
+     * 
+     */
     public Optional<String> outputOption() {
         return Optional.ofNullable(this.outputOption);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
 
+    /**
+     * This specifies the name of the variable to assign the GRN value to. You need to pre-declare any `variable` you specify within the rule tree.
+     * 
+     */
     @Import(name="variableName")
     private @Nullable String variableName;
 
+    /**
+     * @return This specifies the name of the variable to assign the GRN value to. You need to pre-declare any `variable` you specify within the rule tree.
+     * 
+     */
     public Optional<String> variableName() {
         return Optional.ofNullable(this.variableName);
     }
@@ -86,31 +134,67 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorGlobalRequestNum
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorGlobalRequestNumber(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param headerName With `outputOption` set to specify any set of headers, this specifies the name of the header to report the GRN value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder headerName(@Nullable String headerName) {
             $.headerName = headerName;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param outputOption Specifies how to report the GRN value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder outputOption(@Nullable String outputOption) {
             $.outputOption = outputOption;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param variableName This specifies the name of the variable to assign the GRN value to. You need to pre-declare any `variable` you specify within the rule tree.
+         * 
+         * @return builder
+         * 
+         */
         public Builder variableName(@Nullable String variableName) {
             $.variableName = variableName;
             return this;

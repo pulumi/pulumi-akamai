@@ -13,13 +13,37 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyTransformationResizeResult
     {
+        /// <summary>
+        /// Preserves the aspect ratio. Select `fit` to make the image fit entirely within the selected width and height. When using `fit`, the resulting image has the largest possible size for the specified dimensions. Select `fill` to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise `ignore` changes the original aspect ratio to fit within an arbitrarily shaped rectangle.
+        /// </summary>
         public readonly string? Aspect;
+        /// <summary>
+        /// Preserves the aspect ratio. Select `fit` to make the image fit entirely within the selected width and height. When using `fit`, the resulting image has the largest possible size for the specified dimensions. Select `fill` to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise `ignore` changes the original aspect ratio to fit within an arbitrarily shaped rectangle.
+        /// </summary>
         public readonly string? AspectVar;
+        /// <summary>
+        /// The height to resize the source image to. Must be set if height is not specified.
+        /// </summary>
         public readonly string? Height;
+        /// <summary>
+        /// The height to resize the source image to. Must be set if height is not specified.
+        /// </summary>
         public readonly string? HeightVar;
+        /// <summary>
+        /// Sets constraints for the image resize. Select `normal` to resize in all cases, either increasing or decreasing the dimensions. Select `downsize` to ignore this transformation if the result would be larger than the original. Select `upsize` to ignore this transformation if the result would be smaller.
+        /// </summary>
         public readonly string? Type;
+        /// <summary>
+        /// Sets constraints for the image resize. Select `normal` to resize in all cases, either increasing or decreasing the dimensions. Select `downsize` to ignore this transformation if the result would be larger than the original. Select `upsize` to ignore this transformation if the result would be smaller.
+        /// </summary>
         public readonly string? TypeVar;
+        /// <summary>
+        /// The width to resize the source image to. Must be set if width is not specified.
+        /// </summary>
         public readonly string? Width;
+        /// <summary>
+        /// The width to resize the source image to. Must be set if width is not specified.
+        /// </summary>
         public readonly string? WidthVar;
 
         [OutputConstructor]

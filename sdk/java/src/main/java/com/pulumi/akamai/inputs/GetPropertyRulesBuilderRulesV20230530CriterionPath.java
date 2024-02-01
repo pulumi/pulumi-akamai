@@ -16,51 +16,107 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionPath extends co
 
     public static final GetPropertyRulesBuilderRulesV20230530CriterionPath Empty = new GetPropertyRulesBuilderRulesV20230530CriterionPath();
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Sets a case-sensitive match.
+     * 
+     */
     @Import(name="matchCaseSensitive")
     private @Nullable Boolean matchCaseSensitive;
 
+    /**
+     * @return Sets a case-sensitive match.
+     * 
+     */
     public Optional<Boolean> matchCaseSensitive() {
         return Optional.ofNullable(this.matchCaseSensitive);
     }
 
+    /**
+     * Matches the contents of the `values` array.
+     * 
+     */
     @Import(name="matchOperator")
     private @Nullable String matchOperator;
 
+    /**
+     * @return Matches the contents of the `values` array.
+     * 
+     */
     public Optional<String> matchOperator() {
         return Optional.ofNullable(this.matchOperator);
     }
 
+    /**
+     * Transforms URLs before comparing them with the provided value. URLs are decoded, and any directory syntax such as `../..` or `//` is stripped as a security measure. This protects URL paths from being accessed by unauthorized users.
+     * 
+     */
     @Import(name="normalize")
     private @Nullable Boolean normalize;
 
+    /**
+     * @return Transforms URLs before comparing them with the provided value. URLs are decoded, and any directory syntax such as `../..` or `//` is stripped as a security measure. This protects URL paths from being accessed by unauthorized users.
+     * 
+     */
     public Optional<Boolean> normalize() {
         return Optional.ofNullable(this.normalize);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
 
+    /**
+     * Matches the URL path, excluding leading hostname and trailing query parameters. The path is relative to the server root, for example `/blog`. This field allows wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `/blog/*{@literal /}2014` matches paths with two fixed segments and other varying segments between them.
+     * 
+     */
     @Import(name="values")
     private @Nullable List<String> values;
 
+    /**
+     * @return Matches the URL path, excluding leading hostname and trailing query parameters. The path is relative to the server root, for example `/blog`. This field allows wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `/blog/*{@literal /}2014` matches paths with two fixed segments and other varying segments between them.
+     * 
+     */
     public Optional<List<String>> values() {
         return Optional.ofNullable(this.values);
     }
@@ -95,41 +151,89 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionPath extends co
             $ = new GetPropertyRulesBuilderRulesV20230530CriterionPath(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param matchCaseSensitive Sets a case-sensitive match.
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchCaseSensitive(@Nullable Boolean matchCaseSensitive) {
             $.matchCaseSensitive = matchCaseSensitive;
             return this;
         }
 
+        /**
+         * @param matchOperator Matches the contents of the `values` array.
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchOperator(@Nullable String matchOperator) {
             $.matchOperator = matchOperator;
             return this;
         }
 
+        /**
+         * @param normalize Transforms URLs before comparing them with the provided value. URLs are decoded, and any directory syntax such as `../..` or `//` is stripped as a security measure. This protects URL paths from being accessed by unauthorized users.
+         * 
+         * @return builder
+         * 
+         */
         public Builder normalize(@Nullable Boolean normalize) {
             $.normalize = normalize;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param values Matches the URL path, excluding leading hostname and trailing query parameters. The path is relative to the server root, for example `/blog`. This field allows wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `/blog/*{@literal /}2014` matches paths with two fixed segments and other varying segments between them.
+         * 
+         * @return builder
+         * 
+         */
         public Builder values(@Nullable List<String> values) {
             $.values = values;
             return this;
         }
 
+        /**
+         * @param values Matches the URL path, excluding leading hostname and trailing query parameters. The path is relative to the server root, for example `/blog`. This field allows wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `/blog/*{@literal /}2014` matches paths with two fixed segments and other varying segments between them.
+         * 
+         * @return builder
+         * 
+         */
         public Builder values(String... values) {
             return values(List.of(values));
         }

@@ -13,10 +13,25 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetCloudwrapperConfigurationMultiCdnSettingsCdnResult
     {
+        /// <summary>
+        /// List of auth keys configured for the CDN.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyResult> CdnAuthKeys;
+        /// <summary>
+        /// Unique identifier for the CDN.
+        /// </summary>
         public readonly string CdnCode;
+        /// <summary>
+        /// Enable CDN.
+        /// </summary>
         public readonly bool Enabled;
+        /// <summary>
+        /// Specify whether CDN communication is HTTPS only.
+        /// </summary>
         public readonly bool HttpsOnly;
+        /// <summary>
+        /// Configure an access control list using IP addresses in CIDR notation.
+        /// </summary>
         public readonly ImmutableArray<string> IpAclCidrs;
 
         [OutputConstructor]

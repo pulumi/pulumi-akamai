@@ -15,9 +15,15 @@ namespace Pulumi.Akamai.Inputs
         [Input("default")]
         public Input<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationInputArgs>? Default { get; set; }
 
+        /// <summary>
+        /// The dimension to use to select the transformation, either `height`, `width`, or `both`.
+        /// </summary>
         [Input("dimension")]
         public Input<string>? Dimension { get; set; }
 
+        /// <summary>
+        /// The dimension to use to select the transformation, either `height`, `width`, or `both`.
+        /// </summary>
         [Input("dimensionVar")]
         public Input<string>? DimensionVar { get; set; }
 
@@ -30,9 +36,15 @@ namespace Pulumi.Akamai.Inputs
         [Input("lessThan")]
         public Input<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationInputArgs>? LessThan { get; set; }
 
+        /// <summary>
+        /// The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
+        /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
 
+        /// <summary>
+        /// The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
+        /// </summary>
         [Input("valueVar")]
         public Input<string>? ValueVar { get; set; }
 

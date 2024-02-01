@@ -12,6 +12,9 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class DatastreamDeliveryConfigurationFrequencyArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The time in seconds after which the system bundles log lines into a file and sends it to a destination
+        /// </summary>
         [Input("intervalInSecs", required: true)]
         public Input<int> IntervalInSecs { get; set; } = null!;
 

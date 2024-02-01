@@ -13,12 +13,33 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class DatastreamDatadogConnector
     {
+        /// <summary>
+        /// The API key associated with Datadog account
+        /// </summary>
         public readonly string AuthToken;
+        /// <summary>
+        /// Indicates whether the logs should be compressed
+        /// </summary>
         public readonly bool? CompressLogs;
+        /// <summary>
+        /// The name of the connector
+        /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// The Datadog endpoint where logs will be stored
+        /// </summary>
         public readonly string Endpoint;
+        /// <summary>
+        /// The service of the Datadog connector
+        /// </summary>
         public readonly string? Service;
+        /// <summary>
+        /// The source of the Datadog connector
+        /// </summary>
         public readonly string? Source;
+        /// <summary>
+        /// The tags of the Datadog connector
+        /// </summary>
         public readonly string? Tags;
 
         [OutputConstructor]

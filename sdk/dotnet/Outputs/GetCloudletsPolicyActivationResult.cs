@@ -13,9 +13,21 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetCloudletsPolicyActivationResult
     {
+        /// <summary>
+        /// The specific version of this API
+        /// </summary>
         public readonly string ApiVersion;
+        /// <summary>
+        /// The network type, either 'staging' or 'prod' where a property or a Cloudlet policy has been activated
+        /// </summary>
         public readonly string Network;
+        /// <summary>
+        /// The object containing Cloudlet policy information
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetCloudletsPolicyActivationPolicyInfoResult> PolicyInfos;
+        /// <summary>
+        /// A set containing information about the property associated with a particular Cloudlet policy
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetCloudletsPolicyActivationPropertyInfoResult> PropertyInfos;
 
         [OutputConstructor]

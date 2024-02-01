@@ -12,111 +12,219 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorEnhancedProxyDetectionInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("anonymousVpn")]
         public Input<string>? AnonymousVpn { get; set; }
 
+        /// <summary>
+        /// Specifies how to field the proxy request.
+        /// </summary>
         [Input("bestPracticeAction")]
         public Input<string>? BestPracticeAction { get; set; }
 
+        /// <summary>
+        /// This specifies the URL to which to redirect requests.
+        /// </summary>
         [Input("bestPracticeRedirecturl")]
         public Input<string>? BestPracticeRedirecturl { get; set; }
 
+        /// <summary>
+        /// This enables detection of requests from anonymous VPNs.
+        /// </summary>
         [Input("detectAnonymousVpn")]
         public Input<bool>? DetectAnonymousVpn { get; set; }
 
+        /// <summary>
+        /// Specifies how to field anonymous VPN requests.
+        /// </summary>
         [Input("detectAnonymousVpnAction")]
         public Input<string>? DetectAnonymousVpnAction { get; set; }
 
+        /// <summary>
+        /// This specifies the URL to which to redirect anonymous VPN requests.
+        /// </summary>
         [Input("detectAnonymousVpnRedirecturl")]
         public Input<string>? DetectAnonymousVpnRedirecturl { get; set; }
 
+        /// <summary>
+        /// This detects requests from a hosting provider.
+        /// </summary>
         [Input("detectHostingProvider")]
         public Input<bool>? DetectHostingProvider { get; set; }
 
+        /// <summary>
+        /// This specifies whether to `DENY`, `ALLOW`, or `REDIRECT` requests from hosting providers.
+        /// </summary>
         [Input("detectHostingProviderAction")]
         public Input<string>? DetectHostingProviderAction { get; set; }
 
+        /// <summary>
+        /// This specifies the absolute URL to which to redirect requests from hosting providers.
+        /// </summary>
         [Input("detectHostingProviderRedirecturl")]
         public Input<string>? DetectHostingProviderRedirecturl { get; set; }
 
+        /// <summary>
+        /// This enables detection of requests from public proxies.
+        /// </summary>
         [Input("detectPublicProxy")]
         public Input<bool>? DetectPublicProxy { get; set; }
 
+        /// <summary>
+        /// Specifies how to field public proxy requests.
+        /// </summary>
         [Input("detectPublicProxyAction")]
         public Input<string>? DetectPublicProxyAction { get; set; }
 
+        /// <summary>
+        /// This specifies the URL to which to redirect public proxy requests.
+        /// </summary>
         [Input("detectPublicProxyRedirecturl")]
         public Input<string>? DetectPublicProxyRedirecturl { get; set; }
 
+        /// <summary>
+        /// This enables detection of requests from a residential proxy. See `Enhanced Proxy Detection with GeoGuard` and learn more about this GeoGuard category before enabling it.
+        /// </summary>
         [Input("detectResidentialProxy")]
         public Input<bool>? DetectResidentialProxy { get; set; }
 
+        /// <summary>
+        /// This specifies whether to `DENY`, `ALLOW`, or `REDIRECT` requests from residential proxies.
+        /// </summary>
         [Input("detectResidentialProxyAction")]
         public Input<string>? DetectResidentialProxyAction { get; set; }
 
+        /// <summary>
+        /// This specifies the URL to which to redirect requests.
+        /// </summary>
         [Input("detectResidentialProxyRedirecturl")]
         public Input<string>? DetectResidentialProxyRedirecturl { get; set; }
 
+        /// <summary>
+        /// This enables detection of requests from smart DNS proxies.
+        /// </summary>
         [Input("detectSmartDnsProxy")]
         public Input<bool>? DetectSmartDnsProxy { get; set; }
 
+        /// <summary>
+        /// Specifies whether to `DENY`, `ALLOW`, or `REDIRECT` smart DNS proxy requests.
+        /// </summary>
         [Input("detectSmartDnsProxyAction")]
         public Input<string>? DetectSmartDnsProxyAction { get; set; }
 
+        /// <summary>
+        /// This specifies the URL to which to redirect DNS proxy requests.
+        /// </summary>
         [Input("detectSmartDnsProxyRedirecturl")]
         public Input<string>? DetectSmartDnsProxyRedirecturl { get; set; }
 
+        /// <summary>
+        /// This enables detection of requests from Tor exit nodes.
+        /// </summary>
         [Input("detectTorExitNode")]
         public Input<bool>? DetectTorExitNode { get; set; }
 
+        /// <summary>
+        /// This specifies whether to `DENY`, `ALLOW`, or `REDIRECT` requests from Tor exit nodes.
+        /// </summary>
         [Input("detectTorExitNodeAction")]
         public Input<string>? DetectTorExitNodeAction { get; set; }
 
+        /// <summary>
+        /// This specifies the URL to which to redirect requests from Tor exit nodes.
+        /// </summary>
         [Input("detectTorExitNodeRedirecturl")]
         public Input<string>? DetectTorExitNodeRedirecturl { get; set; }
 
+        /// <summary>
+        /// This enables detection of requests from VPN data centers.
+        /// </summary>
         [Input("detectVpnDataCenter")]
         public Input<bool>? DetectVpnDataCenter { get; set; }
 
+        /// <summary>
+        /// This specifies whether to `DENY`, `ALLOW`, or `REDIRECT` requests from VPN data centers.
+        /// </summary>
         [Input("detectVpnDataCenterAction")]
         public Input<string>? DetectVpnDataCenterAction { get; set; }
 
+        /// <summary>
+        /// This specifies the URL to which to redirect requests from VPN data centers.
+        /// </summary>
         [Input("detectVpnDataCenterRedirecturl")]
         public Input<string>? DetectVpnDataCenterRedirecturl { get; set; }
 
+        /// <summary>
+        /// Specifies how to field the proxy request.
+        /// </summary>
         [Input("enableConfigurationMode")]
         public Input<string>? EnableConfigurationMode { get; set; }
 
+        /// <summary>
+        /// Applies GeoGuard proxy detection.
+        /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
+        /// <summary>
+        /// Whether the Enhanced Proxy Detection (Akamai-EPD) header is included in the forward request to mark a connecting IP address as an anonymous proxy, with a two-letter designation. See the `epdForwardHeaderEnrichment` behavior for details.
+        /// </summary>
         [Input("forwardHeaderEnrichment")]
         public Input<bool>? ForwardHeaderEnrichment { get; set; }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("hostingProvider")]
         public Input<string>? HostingProvider { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public Input<bool>? Locked { get; set; }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("publicProxy")]
         public Input<string>? PublicProxy { get; set; }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("residentialProxy")]
         public Input<string>? ResidentialProxy { get; set; }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("smartDnsProxy")]
         public Input<string>? SmartDnsProxy { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public Input<string>? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("torExitNode")]
         public Input<string>? TorExitNode { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public Input<string>? Uuid { get; set; }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("vpnDataCenter")]
         public Input<string>? VpnDataCenter { get; set; }
 

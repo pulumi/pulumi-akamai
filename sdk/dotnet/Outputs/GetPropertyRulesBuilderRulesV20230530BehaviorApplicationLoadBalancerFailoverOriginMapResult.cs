@@ -13,7 +13,13 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorApplicationLoadBalancerFailoverOriginMapResult
     {
+        /// <summary>
+        /// Specifies the origin whose failure triggers the mapping rule.
+        /// </summary>
         public readonly string? FromOriginId;
+        /// <summary>
+        /// Requests stuck to the `fromOriginId` origin retry for each alternate origin `toOriginIds`, until one succeeds.
+        /// </summary>
         public readonly ImmutableArray<string> ToOriginIds;
 
         [OutputConstructor]

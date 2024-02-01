@@ -17,79 +17,167 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionResponseHeader 
 
     public static final GetPropertyRulesBuilderRulesV20230105CriterionResponseHeader Empty = new GetPropertyRulesBuilderRulesV20230105CriterionResponseHeader();
 
+    /**
+     * The name of the response header, for example `Content-Type`.
+     * 
+     */
     @Import(name="headerName")
     private @Nullable String headerName;
 
+    /**
+     * @return The name of the response header, for example `Content-Type`.
+     * 
+     */
     public Optional<String> headerName() {
         return Optional.ofNullable(this.headerName);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * When the `value` is numeric, this field specifies the match&#39;s minimum value.
+     * 
+     */
     @Import(name="lowerBound")
     private @Nullable Integer lowerBound;
 
+    /**
+     * @return When the `value` is numeric, this field specifies the match&#39;s minimum value.
+     * 
+     */
     public Optional<Integer> lowerBound() {
         return Optional.ofNullable(this.lowerBound);
     }
 
+    /**
+     * When enabled, the match is case-sensitive for the `value` field.
+     * 
+     */
     @Import(name="matchCaseSensitiveValue")
     private @Nullable Boolean matchCaseSensitiveValue;
 
+    /**
+     * @return When enabled, the match is case-sensitive for the `value` field.
+     * 
+     */
     public Optional<Boolean> matchCaseSensitiveValue() {
         return Optional.ofNullable(this.matchCaseSensitiveValue);
     }
 
+    /**
+     * Narrows the match according to various criteria.
+     * 
+     */
     @Import(name="matchOperator")
     private @Nullable String matchOperator;
 
+    /**
+     * @return Narrows the match according to various criteria.
+     * 
+     */
     public Optional<String> matchOperator() {
         return Optional.ofNullable(this.matchOperator);
     }
 
+    /**
+     * Allows wildcards in the `headerName` field, where `?` matches a single character and `*` matches zero or more characters.
+     * 
+     */
     @Import(name="matchWildcardName")
     private @Nullable Boolean matchWildcardName;
 
+    /**
+     * @return Allows wildcards in the `headerName` field, where `?` matches a single character and `*` matches zero or more characters.
+     * 
+     */
     public Optional<Boolean> matchWildcardName() {
         return Optional.ofNullable(this.matchWildcardName);
     }
 
+    /**
+     * Allows wildcards in the `value` field, where `?` matches a single character and `*` matches zero or more characters.
+     * 
+     */
     @Import(name="matchWildcardValue")
     private @Nullable Boolean matchWildcardValue;
 
+    /**
+     * @return Allows wildcards in the `value` field, where `?` matches a single character and `*` matches zero or more characters.
+     * 
+     */
     public Optional<Boolean> matchWildcardValue() {
         return Optional.ofNullable(this.matchWildcardValue);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * When the `value` is numeric, this field specifies the match&#39;s maximum value.
+     * 
+     */
     @Import(name="upperBound")
     private @Nullable Integer upperBound;
 
+    /**
+     * @return When the `value` is numeric, this field specifies the match&#39;s maximum value.
+     * 
+     */
     public Optional<Integer> upperBound() {
         return Optional.ofNullable(this.upperBound);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
 
+    /**
+     * The response header&#39;s value, for example `application/x-www-form-urlencoded` when the header `headerName` is `Content-Type`.
+     * 
+     */
     @Import(name="values")
     private @Nullable List<String> values;
 
+    /**
+     * @return The response header&#39;s value, for example `application/x-www-form-urlencoded` when the header `headerName` is `Content-Type`.
+     * 
+     */
     public Optional<List<String>> values() {
         return Optional.ofNullable(this.values);
     }
@@ -128,61 +216,133 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionResponseHeader 
             $ = new GetPropertyRulesBuilderRulesV20230105CriterionResponseHeader(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param headerName The name of the response header, for example `Content-Type`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder headerName(@Nullable String headerName) {
             $.headerName = headerName;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param lowerBound When the `value` is numeric, this field specifies the match&#39;s minimum value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder lowerBound(@Nullable Integer lowerBound) {
             $.lowerBound = lowerBound;
             return this;
         }
 
+        /**
+         * @param matchCaseSensitiveValue When enabled, the match is case-sensitive for the `value` field.
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchCaseSensitiveValue(@Nullable Boolean matchCaseSensitiveValue) {
             $.matchCaseSensitiveValue = matchCaseSensitiveValue;
             return this;
         }
 
+        /**
+         * @param matchOperator Narrows the match according to various criteria.
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchOperator(@Nullable String matchOperator) {
             $.matchOperator = matchOperator;
             return this;
         }
 
+        /**
+         * @param matchWildcardName Allows wildcards in the `headerName` field, where `?` matches a single character and `*` matches zero or more characters.
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchWildcardName(@Nullable Boolean matchWildcardName) {
             $.matchWildcardName = matchWildcardName;
             return this;
         }
 
+        /**
+         * @param matchWildcardValue Allows wildcards in the `value` field, where `?` matches a single character and `*` matches zero or more characters.
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchWildcardValue(@Nullable Boolean matchWildcardValue) {
             $.matchWildcardValue = matchWildcardValue;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param upperBound When the `value` is numeric, this field specifies the match&#39;s maximum value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder upperBound(@Nullable Integer upperBound) {
             $.upperBound = upperBound;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param values The response header&#39;s value, for example `application/x-www-form-urlencoded` when the header `headerName` is `Content-Type`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder values(@Nullable List<String> values) {
             $.values = values;
             return this;
         }
 
+        /**
+         * @param values The response header&#39;s value, for example `application/x-www-form-urlencoded` when the header `headerName` is `Content-Type`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder values(String... values) {
             return values(List.of(values));
         }

@@ -16,79 +16,167 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorBossBeaconing ex
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorBossBeaconing Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorBossBeaconing();
 
+    /**
+     * A space-separated set of error patterns that trigger beacons to conditional feeds. Each pattern can include wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `*CONNECT* *DENIED*` matches two different words as substrings.
+     * 
+     */
     @Import(name="conditionalErrorPattern")
     private @Nullable String conditionalErrorPattern;
 
+    /**
+     * @return A space-separated set of error patterns that trigger beacons to conditional feeds. Each pattern can include wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `*CONNECT* *DENIED*` matches two different words as substrings.
+     * 
+     */
     public Optional<String> conditionalErrorPattern() {
         return Optional.ofNullable(this.conditionalErrorPattern);
     }
 
+    /**
+     * Specifies the set of response status codes or ranges that trigger the beacon.
+     * 
+     */
     @Import(name="conditionalHttpStatuses")
     private @Nullable List<String> conditionalHttpStatuses;
 
+    /**
+     * @return Specifies the set of response status codes or ranges that trigger the beacon.
+     * 
+     */
     public Optional<List<String>> conditionalHttpStatuses() {
         return Optional.ofNullable(this.conditionalHttpStatuses);
     }
 
+    /**
+     * Specifies a conditional sampling frequency or disables beacons.
+     * 
+     */
     @Import(name="conditionalSamplingFrequency")
     private @Nullable String conditionalSamplingFrequency;
 
+    /**
+     * @return Specifies a conditional sampling frequency or disables beacons.
+     * 
+     */
     public Optional<String> conditionalSamplingFrequency() {
         return Optional.ofNullable(this.conditionalSamplingFrequency);
     }
 
+    /**
+     * The space-separated list of CP codes that trigger the beacons. You need to specify the same set of CP codes within BOSS.
+     * 
+     */
     @Import(name="cpcodes")
     private @Nullable String cpcodes;
 
+    /**
+     * @return The space-separated list of CP codes that trigger the beacons. You need to specify the same set of CP codes within BOSS.
+     * 
+     */
     public Optional<String> cpcodes() {
         return Optional.ofNullable(this.cpcodes);
     }
 
+    /**
+     * Enable diagnostic data beacons.
+     * 
+     */
     @Import(name="enabled")
     private @Nullable Boolean enabled;
 
+    /**
+     * @return Enable diagnostic data beacons.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
 
+    /**
+     * Specify when to trigger a beacon.
+     * 
+     */
     @Import(name="forwardType")
     private @Nullable String forwardType;
 
+    /**
+     * @return Specify when to trigger a beacon.
+     * 
+     */
     public Optional<String> forwardType() {
         return Optional.ofNullable(this.forwardType);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Specify when to trigger a beacon.
+     * 
+     */
     @Import(name="requestType")
     private @Nullable String requestType;
 
+    /**
+     * @return Specify when to trigger a beacon.
+     * 
+     */
     public Optional<String> requestType() {
         return Optional.ofNullable(this.requestType);
     }
 
+    /**
+     * Specifies a sampling frequency or disables beacons.
+     * 
+     */
     @Import(name="samplingFrequency")
     private @Nullable String samplingFrequency;
 
+    /**
+     * @return Specifies a sampling frequency or disables beacons.
+     * 
+     */
     public Optional<String> samplingFrequency() {
         return Optional.ofNullable(this.samplingFrequency);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -127,60 +215,132 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorBossBeaconing ex
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorBossBeaconing(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param conditionalErrorPattern A space-separated set of error patterns that trigger beacons to conditional feeds. Each pattern can include wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `*CONNECT* *DENIED*` matches two different words as substrings.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditionalErrorPattern(@Nullable String conditionalErrorPattern) {
             $.conditionalErrorPattern = conditionalErrorPattern;
             return this;
         }
 
+        /**
+         * @param conditionalHttpStatuses Specifies the set of response status codes or ranges that trigger the beacon.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditionalHttpStatuses(@Nullable List<String> conditionalHttpStatuses) {
             $.conditionalHttpStatuses = conditionalHttpStatuses;
             return this;
         }
 
+        /**
+         * @param conditionalHttpStatuses Specifies the set of response status codes or ranges that trigger the beacon.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditionalHttpStatuses(String... conditionalHttpStatuses) {
             return conditionalHttpStatuses(List.of(conditionalHttpStatuses));
         }
 
+        /**
+         * @param conditionalSamplingFrequency Specifies a conditional sampling frequency or disables beacons.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditionalSamplingFrequency(@Nullable String conditionalSamplingFrequency) {
             $.conditionalSamplingFrequency = conditionalSamplingFrequency;
             return this;
         }
 
+        /**
+         * @param cpcodes The space-separated list of CP codes that trigger the beacons. You need to specify the same set of CP codes within BOSS.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cpcodes(@Nullable String cpcodes) {
             $.cpcodes = cpcodes;
             return this;
         }
 
+        /**
+         * @param enabled Enable diagnostic data beacons.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(@Nullable Boolean enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param forwardType Specify when to trigger a beacon.
+         * 
+         * @return builder
+         * 
+         */
         public Builder forwardType(@Nullable String forwardType) {
             $.forwardType = forwardType;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param requestType Specify when to trigger a beacon.
+         * 
+         * @return builder
+         * 
+         */
         public Builder requestType(@Nullable String requestType) {
             $.requestType = requestType;
             return this;
         }
 
+        /**
+         * @param samplingFrequency Specifies a sampling frequency or disables beacons.
+         * 
+         * @return builder
+         * 
+         */
         public Builder samplingFrequency(@Nullable String samplingFrequency) {
             $.samplingFrequency = samplingFrequency;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

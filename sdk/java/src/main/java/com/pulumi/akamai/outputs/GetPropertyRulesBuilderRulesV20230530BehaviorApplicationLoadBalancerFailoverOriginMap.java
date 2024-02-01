@@ -12,13 +12,29 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorApplicationLoadBalancerFailoverOriginMap {
+    /**
+     * @return Specifies the origin whose failure triggers the mapping rule.
+     * 
+     */
     private @Nullable String fromOriginId;
+    /**
+     * @return Requests stuck to the `fromOriginId` origin retry for each alternate origin `toOriginIds`, until one succeeds.
+     * 
+     */
     private @Nullable List<String> toOriginIds;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorApplicationLoadBalancerFailoverOriginMap() {}
+    /**
+     * @return Specifies the origin whose failure triggers the mapping rule.
+     * 
+     */
     public Optional<String> fromOriginId() {
         return Optional.ofNullable(this.fromOriginId);
     }
+    /**
+     * @return Requests stuck to the `fromOriginId` origin retry for each alternate origin `toOriginIds`, until one succeeds.
+     * 
+     */
     public List<String> toOriginIds() {
         return this.toOriginIds == null ? List.of() : this.toOriginIds;
     }

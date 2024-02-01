@@ -12,24 +12,42 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetImagingPolicyImagePolicyTransformationAppendImageCircleImageArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
+        /// </summary>
         [Input("color")]
         public string? Color { get; set; }
 
+        /// <summary>
+        /// The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
+        /// </summary>
         [Input("colorVar")]
         public string? ColorVar { get; set; }
 
+        /// <summary>
+        /// The diameter of the circle. The diameter will be the width and the height of the image in pixels.
+        /// </summary>
         [Input("diameter")]
         public string? Diameter { get; set; }
 
+        /// <summary>
+        /// The diameter of the circle. The diameter will be the width and the height of the image in pixels.
+        /// </summary>
         [Input("diameterVar")]
         public string? DiameterVar { get; set; }
 
         [Input("transformation")]
         public Inputs.GetImagingPolicyImagePolicyTransformationArgs? Transformation { get; set; }
 
+        /// <summary>
+        /// The width of the box in pixels.
+        /// </summary>
         [Input("width")]
         public string? Width { get; set; }
 
+        /// <summary>
+        /// The width of the box in pixels.
+        /// </summary>
         [Input("widthVar")]
         public string? WidthVar { get; set; }
 

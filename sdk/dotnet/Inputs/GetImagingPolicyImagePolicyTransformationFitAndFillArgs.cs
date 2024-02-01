@@ -15,15 +15,27 @@ namespace Pulumi.Akamai.Inputs
         [Input("fillTransformation")]
         public Input<Inputs.GetImagingPolicyImagePolicyTransformationInputArgs>? FillTransformation { get; set; }
 
+        /// <summary>
+        /// The height value of the resized image.
+        /// </summary>
         [Input("height")]
         public Input<string>? Height { get; set; }
 
+        /// <summary>
+        /// The height value of the resized image.
+        /// </summary>
         [Input("heightVar")]
         public Input<string>? HeightVar { get; set; }
 
+        /// <summary>
+        /// The width value of the resized image.
+        /// </summary>
         [Input("width")]
         public Input<string>? Width { get; set; }
 
+        /// <summary>
+        /// The width value of the resized image.
+        /// </summary>
         [Input("widthVar")]
         public Input<string>? WidthVar { get; set; }
 

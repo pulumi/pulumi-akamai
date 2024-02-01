@@ -14,33 +14,89 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatch {
+    /**
+     * @return If true, the match is case sensitive
+     * 
+     */
     private @Nullable Boolean caseSensitive;
+    /**
+     * @return For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
+     * 
+     */
     private @Nullable String checkIps;
+    /**
+     * @return Valid entries for this property: contains, exists, and equals
+     * 
+     */
     private @Nullable String matchOperator;
+    /**
+     * @return The type of match used
+     * 
+     */
     private @Nullable String matchType;
+    /**
+     * @return Depends on the matchType
+     * 
+     */
     private @Nullable String matchValue;
+    /**
+     * @return If true, negates the match
+     * 
+     */
     private @Nullable Boolean negate;
+    /**
+     * @return An object used when a rule either includes more complex match criteria, like multiple value attributes
+     * 
+     */
     private @Nullable List<GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValue> objectMatchValues;
 
     private GetCloudletsPhasedReleaseMatchRuleMatchRuleMatch() {}
+    /**
+     * @return If true, the match is case sensitive
+     * 
+     */
     public Optional<Boolean> caseSensitive() {
         return Optional.ofNullable(this.caseSensitive);
     }
+    /**
+     * @return For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
+     * 
+     */
     public Optional<String> checkIps() {
         return Optional.ofNullable(this.checkIps);
     }
+    /**
+     * @return Valid entries for this property: contains, exists, and equals
+     * 
+     */
     public Optional<String> matchOperator() {
         return Optional.ofNullable(this.matchOperator);
     }
+    /**
+     * @return The type of match used
+     * 
+     */
     public Optional<String> matchType() {
         return Optional.ofNullable(this.matchType);
     }
+    /**
+     * @return Depends on the matchType
+     * 
+     */
     public Optional<String> matchValue() {
         return Optional.ofNullable(this.matchValue);
     }
+    /**
+     * @return If true, negates the match
+     * 
+     */
     public Optional<Boolean> negate() {
         return Optional.ofNullable(this.negate);
     }
+    /**
+     * @return An object used when a rule either includes more complex match criteria, like multiple value attributes
+     * 
+     */
     public List<GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValue> objectMatchValues() {
         return this.objectMatchValues == null ? List.of() : this.objectMatchValues;
     }

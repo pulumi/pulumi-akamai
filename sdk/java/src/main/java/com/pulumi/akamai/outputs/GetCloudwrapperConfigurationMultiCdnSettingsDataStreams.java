@@ -12,17 +12,41 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCloudwrapperConfigurationMultiCdnSettingsDataStreams {
+    /**
+     * @return Unique identifiers of the Data Streams.
+     * 
+     */
     private List<Integer> dataStreamIds;
+    /**
+     * @return Enables DataStream reporting.
+     * 
+     */
     private Boolean enabled;
+    /**
+     * @return Specifies the percentage of log data you want to collect for this configuration.
+     * 
+     */
     private Integer samplingRate;
 
     private GetCloudwrapperConfigurationMultiCdnSettingsDataStreams() {}
+    /**
+     * @return Unique identifiers of the Data Streams.
+     * 
+     */
     public List<Integer> dataStreamIds() {
         return this.dataStreamIds;
     }
+    /**
+     * @return Enables DataStream reporting.
+     * 
+     */
     public Boolean enabled() {
         return this.enabled;
     }
+    /**
+     * @return Specifies the percentage of log data you want to collect for this configuration.
+     * 
+     */
     public Integer samplingRate() {
         return this.samplingRate;
     }

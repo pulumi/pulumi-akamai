@@ -16,16 +16,32 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateBitr
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateBitrateTableArgs Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateBitrateTableArgs();
 
+    /**
+     * The unit of measurement, either `KBPS`, `MBPS`, or `GBPS`.
+     * 
+     */
     @Import(name="bitrateUnit")
     private @Nullable Output<String> bitrateUnit;
 
+    /**
+     * @return The unit of measurement, either `KBPS`, `MBPS`, or `GBPS`.
+     * 
+     */
     public Optional<Output<String>> bitrateUnit() {
         return Optional.ofNullable(this.bitrateUnit);
     }
 
+    /**
+     * The numeric indicator of the download rate.
+     * 
+     */
     @Import(name="bitrateValue")
     private @Nullable Output<Double> bitrateValue;
 
+    /**
+     * @return The numeric indicator of the download rate.
+     * 
+     */
     public Optional<Output<Double>> bitrateValue() {
         return Optional.ofNullable(this.bitrateValue);
     }
@@ -55,20 +71,44 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateBitr
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateBitrateTableArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param bitrateUnit The unit of measurement, either `KBPS`, `MBPS`, or `GBPS`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder bitrateUnit(@Nullable Output<String> bitrateUnit) {
             $.bitrateUnit = bitrateUnit;
             return this;
         }
 
+        /**
+         * @param bitrateUnit The unit of measurement, either `KBPS`, `MBPS`, or `GBPS`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder bitrateUnit(String bitrateUnit) {
             return bitrateUnit(Output.of(bitrateUnit));
         }
 
+        /**
+         * @param bitrateValue The numeric indicator of the download rate.
+         * 
+         * @return builder
+         * 
+         */
         public Builder bitrateValue(@Nullable Output<Double> bitrateValue) {
             $.bitrateValue = bitrateValue;
             return this;
         }
 
+        /**
+         * @param bitrateValue The numeric indicator of the download rate.
+         * 
+         * @return builder
+         * 
+         */
         public Builder bitrateValue(Double bitrateValue) {
             return bitrateValue(Output.of(bitrateValue));
         }

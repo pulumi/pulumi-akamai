@@ -14,16 +14,32 @@ public final class GetImagingPolicyImagePolicyTransformationGrayscale extends co
 
     public static final GetImagingPolicyImagePolicyTransformationGrayscale Empty = new GetImagingPolicyImagePolicyTransformationGrayscale();
 
+    /**
+     * The algorithm used to transform colors to grays, either `Brightness`, `Lightness`, `Rec601`, or the default `Rec709`.
+     * 
+     */
     @Import(name="type")
     private @Nullable String type;
 
+    /**
+     * @return The algorithm used to transform colors to grays, either `Brightness`, `Lightness`, `Rec601`, or the default `Rec709`.
+     * 
+     */
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }
 
+    /**
+     * The algorithm used to transform colors to grays, either `Brightness`, `Lightness`, `Rec601`, or the default `Rec709`.
+     * 
+     */
     @Import(name="typeVar")
     private @Nullable String typeVar;
 
+    /**
+     * @return The algorithm used to transform colors to grays, either `Brightness`, `Lightness`, `Rec601`, or the default `Rec709`.
+     * 
+     */
     public Optional<String> typeVar() {
         return Optional.ofNullable(this.typeVar);
     }
@@ -53,11 +69,23 @@ public final class GetImagingPolicyImagePolicyTransformationGrayscale extends co
             $ = new GetImagingPolicyImagePolicyTransformationGrayscale(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param type The algorithm used to transform colors to grays, either `Brightness`, `Lightness`, `Rec601`, or the default `Rec709`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder type(@Nullable String type) {
             $.type = type;
             return this;
         }
 
+        /**
+         * @param typeVar The algorithm used to transform colors to grays, either `Brightness`, `Lightness`, `Rec601`, or the default `Rec709`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder typeVar(@Nullable String typeVar) {
             $.typeVar = typeVar;
             return this;

@@ -15,16 +15,32 @@ public final class CloudwrapperConfigurationLocationCapacityArgs extends com.pul
 
     public static final CloudwrapperConfigurationLocationCapacityArgs Empty = new CloudwrapperConfigurationLocationCapacityArgs();
 
+    /**
+     * Unit of capacity. Can be either &#39;GB&#39; or &#39;TB&#39;.
+     * 
+     */
     @Import(name="unit", required=true)
     private Output<String> unit;
 
+    /**
+     * @return Unit of capacity. Can be either &#39;GB&#39; or &#39;TB&#39;.
+     * 
+     */
     public Output<String> unit() {
         return this.unit;
     }
 
+    /**
+     * Value of capacity.
+     * 
+     */
     @Import(name="value", required=true)
     private Output<Integer> value;
 
+    /**
+     * @return Value of capacity.
+     * 
+     */
     public Output<Integer> value() {
         return this.value;
     }
@@ -54,20 +70,44 @@ public final class CloudwrapperConfigurationLocationCapacityArgs extends com.pul
             $ = new CloudwrapperConfigurationLocationCapacityArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param unit Unit of capacity. Can be either &#39;GB&#39; or &#39;TB&#39;.
+         * 
+         * @return builder
+         * 
+         */
         public Builder unit(Output<String> unit) {
             $.unit = unit;
             return this;
         }
 
+        /**
+         * @param unit Unit of capacity. Can be either &#39;GB&#39; or &#39;TB&#39;.
+         * 
+         * @return builder
+         * 
+         */
         public Builder unit(String unit) {
             return unit(Output.of(unit));
         }
 
+        /**
+         * @param value Value of capacity.
+         * 
+         * @return builder
+         * 
+         */
         public Builder value(Output<Integer> value) {
             $.value = value;
             return this;
         }
 
+        /**
+         * @param value Value of capacity.
+         * 
+         * @return builder
+         * 
+         */
         public Builder value(Integer value) {
             return value(Output.of(value));
         }

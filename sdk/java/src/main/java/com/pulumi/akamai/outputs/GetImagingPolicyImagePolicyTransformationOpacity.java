@@ -11,13 +11,29 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationOpacity {
+    /**
+     * @return Represents alpha values on a scale of `0` to `1`. Values below `1` increase transparency, and `0` is invisible. For images that have some transparency, values above `1` increase the opacity of the transparent portions.
+     * 
+     */
     private @Nullable String opacity;
+    /**
+     * @return Represents alpha values on a scale of `0` to `1`. Values below `1` increase transparency, and `0` is invisible. For images that have some transparency, values above `1` increase the opacity of the transparent portions.
+     * 
+     */
     private @Nullable String opacityVar;
 
     private GetImagingPolicyImagePolicyTransformationOpacity() {}
+    /**
+     * @return Represents alpha values on a scale of `0` to `1`. Values below `1` increase transparency, and `0` is invisible. For images that have some transparency, values above `1` increase the opacity of the transparent portions.
+     * 
+     */
     public Optional<String> opacity() {
         return Optional.ofNullable(this.opacity);
     }
+    /**
+     * @return Represents alpha values on a scale of `0` to `1`. Values below `1` increase transparency, and `0` is invisible. For images that have some transparency, values above `1` increase the opacity of the transparent portions.
+     * 
+     */
     public Optional<String> opacityVar() {
         return Optional.ofNullable(this.opacityVar);
     }

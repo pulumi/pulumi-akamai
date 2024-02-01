@@ -14,23 +14,47 @@ public final class GetCloudwrapperLocationsLocationTrafficType extends com.pulum
 
     public static final GetCloudwrapperLocationsLocationTrafficType Empty = new GetCloudwrapperLocationsLocationTrafficType();
 
+    /**
+     * Represents the failover map.
+     * 
+     */
     @Import(name="locationId", required=true)
     private String locationId;
 
+    /**
+     * @return Represents the failover map.
+     * 
+     */
     public String locationId() {
         return this.locationId;
     }
 
+    /**
+     * Represents the traffic type. LIVE applies to low-latency media traffic, such as live streaming. LIVE_VOD applies to redundant media traffic, like video on demand content. WEB_STANDARD_TLS or WEB_ENHANCED_TLS applies to web content using Standard TLS security or Enhanced TLS security, respectively.
+     * 
+     */
     @Import(name="trafficType", required=true)
     private String trafficType;
 
+    /**
+     * @return Represents the traffic type. LIVE applies to low-latency media traffic, such as live streaming. LIVE_VOD applies to redundant media traffic, like video on demand content. WEB_STANDARD_TLS or WEB_ENHANCED_TLS applies to web content using Standard TLS security or Enhanced TLS security, respectively.
+     * 
+     */
     public String trafficType() {
         return this.trafficType;
     }
 
+    /**
+     * Unique identifier for the location and traffic type combination.
+     * 
+     */
     @Import(name="trafficTypeId", required=true)
     private Integer trafficTypeId;
 
+    /**
+     * @return Unique identifier for the location and traffic type combination.
+     * 
+     */
     public Integer trafficTypeId() {
         return this.trafficTypeId;
     }
@@ -61,16 +85,34 @@ public final class GetCloudwrapperLocationsLocationTrafficType extends com.pulum
             $ = new GetCloudwrapperLocationsLocationTrafficType(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param locationId Represents the failover map.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locationId(String locationId) {
             $.locationId = locationId;
             return this;
         }
 
+        /**
+         * @param trafficType Represents the traffic type. LIVE applies to low-latency media traffic, such as live streaming. LIVE_VOD applies to redundant media traffic, like video on demand content. WEB_STANDARD_TLS or WEB_ENHANCED_TLS applies to web content using Standard TLS security or Enhanced TLS security, respectively.
+         * 
+         * @return builder
+         * 
+         */
         public Builder trafficType(String trafficType) {
             $.trafficType = trafficType;
             return this;
         }
 
+        /**
+         * @param trafficTypeId Unique identifier for the location and traffic type combination.
+         * 
+         * @return builder
+         * 
+         */
         public Builder trafficTypeId(Integer trafficTypeId) {
             $.trafficTypeId = trafficTypeId;
             return this;

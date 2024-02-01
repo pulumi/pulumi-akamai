@@ -17,37 +17,77 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorRumCustomArgs ex
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorRumCustomArgs Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorRumCustomArgs();
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * A deprecated option to specify an alternate name under which to batch this set of web traffic in your report. Do not use it.
+     * 
+     */
     @Import(name="rumGroupName")
     private @Nullable Output<String> rumGroupName;
 
+    /**
+     * @return A deprecated option to specify an alternate name under which to batch this set of web traffic in your report. Do not use it.
+     * 
+     */
     public Optional<Output<String>> rumGroupName() {
         return Optional.ofNullable(this.rumGroupName);
     }
 
+    /**
+     * Specifies the percentage of web traffic to include in your RUM report.
+     * 
+     */
     @Import(name="rumSampleRate")
     private @Nullable Output<Integer> rumSampleRate;
 
+    /**
+     * @return Specifies the percentage of web traffic to include in your RUM report.
+     * 
+     */
     public Optional<Output<Integer>> rumSampleRate() {
         return Optional.ofNullable(this.rumSampleRate);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -80,47 +120,107 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorRumCustomArgs ex
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorRumCustomArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param rumGroupName A deprecated option to specify an alternate name under which to batch this set of web traffic in your report. Do not use it.
+         * 
+         * @return builder
+         * 
+         */
         public Builder rumGroupName(@Nullable Output<String> rumGroupName) {
             $.rumGroupName = rumGroupName;
             return this;
         }
 
+        /**
+         * @param rumGroupName A deprecated option to specify an alternate name under which to batch this set of web traffic in your report. Do not use it.
+         * 
+         * @return builder
+         * 
+         */
         public Builder rumGroupName(String rumGroupName) {
             return rumGroupName(Output.of(rumGroupName));
         }
 
+        /**
+         * @param rumSampleRate Specifies the percentage of web traffic to include in your RUM report.
+         * 
+         * @return builder
+         * 
+         */
         public Builder rumSampleRate(@Nullable Output<Integer> rumSampleRate) {
             $.rumSampleRate = rumSampleRate;
             return this;
         }
 
+        /**
+         * @param rumSampleRate Specifies the percentage of web traffic to include in your RUM report.
+         * 
+         * @return builder
+         * 
+         */
         public Builder rumSampleRate(Integer rumSampleRate) {
             return rumSampleRate(Output.of(rumSampleRate));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

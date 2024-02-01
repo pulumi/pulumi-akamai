@@ -13,14 +13,41 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230105CriterionRequestHeaderResult
     {
+        /// <summary>
+        /// The name of the request header, for example `Accept-Language`.
+        /// </summary>
         public readonly string? HeaderName;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// Sets a case-sensitive match for the `value` field.
+        /// </summary>
         public readonly bool? MatchCaseSensitiveValue;
+        /// <summary>
+        /// Narrows the match criteria.
+        /// </summary>
         public readonly string? MatchOperator;
+        /// <summary>
+        /// Allows wildcards in the `headerName` field, where `?` matches a single character and `*` matches zero or more characters.
+        /// </summary>
         public readonly bool? MatchWildcardName;
+        /// <summary>
+        /// Allows wildcards in the `value` field, where `?` matches a single character and `*` matches zero or more characters.
+        /// </summary>
         public readonly bool? MatchWildcardValue;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
+        /// <summary>
+        /// The request header's value, for example `en-US` when the header `headerName` is `Accept-Language`.
+        /// </summary>
         public readonly ImmutableArray<string> Values;
 
         [OutputConstructor]

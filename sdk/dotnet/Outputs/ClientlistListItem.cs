@@ -13,9 +13,21 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class ClientlistListItem
     {
+        /// <summary>
+        /// A description of the item.
+        /// </summary>
         public readonly string? Description;
+        /// <summary>
+        /// The item expiration date.
+        /// </summary>
         public readonly string? ExpirationDate;
+        /// <summary>
+        /// The item tags.
+        /// </summary>
         public readonly ImmutableArray<string> Tags;
+        /// <summary>
+        /// Value of the item. (i.e. IP address, AS Number, GEO, ...etc)
+        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

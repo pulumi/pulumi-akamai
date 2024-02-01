@@ -16,58 +16,122 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorLargeFileOptimiz
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorLargeFileOptimizationAdvanced Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorLargeFileOptimizationAdvanced();
 
+    /**
+     * Enables the file optimization behavior.
+     * 
+     */
     @Import(name="enabled")
     private @Nullable Boolean enabled;
 
+    /**
+     * @return Enables the file optimization behavior.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
 
+    /**
+     * Specifies the size of each fragment used for partial object caching.
+     * 
+     */
     @Import(name="fragmentSize")
     private @Nullable String fragmentSize;
 
+    /**
+     * @return Specifies the size of each fragment used for partial object caching.
+     * 
+     */
     public Optional<String> fragmentSize() {
         return Optional.ofNullable(this.fragmentSize);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Specifies the size of the file at which point to apply partial object (POC) caching. Append a numeric value with a `MB` or `GB` suffix.
+     * 
+     */
     @Import(name="objectSize")
     private @Nullable String objectSize;
 
+    /**
+     * @return Specifies the size of the file at which point to apply partial object (POC) caching. Append a numeric value with a `MB` or `GB` suffix.
+     * 
+     */
     public Optional<String> objectSize() {
         return Optional.ofNullable(this.objectSize);
     }
 
+    /**
+     * The number of POC fragments to prefetch after the request.
+     * 
+     */
     @Import(name="prefetchAfterRequest")
     private @Nullable Integer prefetchAfterRequest;
 
+    /**
+     * @return The number of POC fragments to prefetch after the request.
+     * 
+     */
     public Optional<Integer> prefetchAfterRequest() {
         return Optional.ofNullable(this.prefetchAfterRequest);
     }
 
+    /**
+     * The number of POC fragments to prefetch during the request.
+     * 
+     */
     @Import(name="prefetchDuringRequest")
     private @Nullable Integer prefetchDuringRequest;
 
+    /**
+     * @return The number of POC fragments to prefetch during the request.
+     * 
+     */
     public Optional<Integer> prefetchDuringRequest() {
         return Optional.ofNullable(this.prefetchDuringRequest);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -103,41 +167,89 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorLargeFileOptimiz
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorLargeFileOptimizationAdvanced(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param enabled Enables the file optimization behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(@Nullable Boolean enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param fragmentSize Specifies the size of each fragment used for partial object caching.
+         * 
+         * @return builder
+         * 
+         */
         public Builder fragmentSize(@Nullable String fragmentSize) {
             $.fragmentSize = fragmentSize;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param objectSize Specifies the size of the file at which point to apply partial object (POC) caching. Append a numeric value with a `MB` or `GB` suffix.
+         * 
+         * @return builder
+         * 
+         */
         public Builder objectSize(@Nullable String objectSize) {
             $.objectSize = objectSize;
             return this;
         }
 
+        /**
+         * @param prefetchAfterRequest The number of POC fragments to prefetch after the request.
+         * 
+         * @return builder
+         * 
+         */
         public Builder prefetchAfterRequest(@Nullable Integer prefetchAfterRequest) {
             $.prefetchAfterRequest = prefetchAfterRequest;
             return this;
         }
 
+        /**
+         * @param prefetchDuringRequest The number of POC fragments to prefetch during the request.
+         * 
+         * @return builder
+         * 
+         */
         public Builder prefetchDuringRequest(@Nullable Integer prefetchDuringRequest) {
             $.prefetchDuringRequest = prefetchDuringRequest;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

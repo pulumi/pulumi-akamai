@@ -12,42 +12,78 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImageInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The main fill color of the text.
+        /// </summary>
         [Input("fill")]
         public Input<string>? Fill { get; set; }
 
+        /// <summary>
+        /// The main fill color of the text.
+        /// </summary>
         [Input("fillVar")]
         public Input<string>? FillVar { get; set; }
 
+        /// <summary>
+        /// The size in pixels to render the text.
+        /// </summary>
         [Input("size")]
         public Input<string>? Size { get; set; }
 
+        /// <summary>
+        /// The size in pixels to render the text.
+        /// </summary>
         [Input("sizeVar")]
         public Input<string>? SizeVar { get; set; }
 
+        /// <summary>
+        /// The color for the outline of the text.
+        /// </summary>
         [Input("stroke")]
         public Input<string>? Stroke { get; set; }
 
+        /// <summary>
+        /// The thickness in points for the outline of the text.
+        /// </summary>
         [Input("strokeSize")]
         public Input<string>? StrokeSize { get; set; }
 
+        /// <summary>
+        /// The thickness in points for the outline of the text.
+        /// </summary>
         [Input("strokeSizeVar")]
         public Input<string>? StrokeSizeVar { get; set; }
 
+        /// <summary>
+        /// The color for the outline of the text.
+        /// </summary>
         [Input("strokeVar")]
         public Input<string>? StrokeVar { get; set; }
 
+        /// <summary>
+        /// The line of text to render.
+        /// </summary>
         [Input("text")]
         public Input<string>? Text { get; set; }
 
+        /// <summary>
+        /// The line of text to render.
+        /// </summary>
         [Input("textVar")]
         public Input<string>? TextVar { get; set; }
 
         [Input("transformation")]
         public Input<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationInputArgs>? Transformation { get; set; }
 
+        /// <summary>
+        /// The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
+        /// </summary>
         [Input("typeface")]
         public Input<string>? Typeface { get; set; }
 
+        /// <summary>
+        /// The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
+        /// </summary>
         [Input("typefaceVar")]
         public Input<string>? TypefaceVar { get; set; }
 

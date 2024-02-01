@@ -11,29 +11,77 @@ import java.util.Objects;
 
 @CustomType
 public final class GetPropertyIncludeParentsParent {
+    /**
+     * @return The property&#39;s unique identifier
+     * 
+     */
     private String id;
+    /**
+     * @return Indicates if the include is used in the production network
+     * 
+     */
     private Boolean isIncludeUsedInProductionVersion;
+    /**
+     * @return Indicates if the include is used in the staging network
+     * 
+     */
     private Boolean isIncludeUsedInStagingVersion;
+    /**
+     * @return A descriptive name for the property
+     * 
+     */
     private String name;
+    /**
+     * @return The most recent property version to be activated to the production network
+     * 
+     */
     private String productionVersion;
+    /**
+     * @return The most recent property version to be activated to the staging network
+     * 
+     */
     private String stagingVersion;
 
     private GetPropertyIncludeParentsParent() {}
+    /**
+     * @return The property&#39;s unique identifier
+     * 
+     */
     public String id() {
         return this.id;
     }
+    /**
+     * @return Indicates if the include is used in the production network
+     * 
+     */
     public Boolean isIncludeUsedInProductionVersion() {
         return this.isIncludeUsedInProductionVersion;
     }
+    /**
+     * @return Indicates if the include is used in the staging network
+     * 
+     */
     public Boolean isIncludeUsedInStagingVersion() {
         return this.isIncludeUsedInStagingVersion;
     }
+    /**
+     * @return A descriptive name for the property
+     * 
+     */
     public String name() {
         return this.name;
     }
+    /**
+     * @return The most recent property version to be activated to the production network
+     * 
+     */
     public String productionVersion() {
         return this.productionVersion;
     }
+    /**
+     * @return The most recent property version to be activated to the staging network
+     * 
+     */
     public String stagingVersion() {
         return this.stagingVersion;
     }

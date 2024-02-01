@@ -12,21 +12,53 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class PropertyActivationComplianceRecordNoncomplianceReasonNone {
+    /**
+     * @return Identifies the customer
+     * 
+     */
     private @Nullable String customerEmail;
+    /**
+     * @return Identifies person who has independently approved the activation request
+     * 
+     */
     private @Nullable String peerReviewedBy;
+    /**
+     * @return Identifies the ticket that describes the need for the activation
+     * 
+     */
     private @Nullable String ticketId;
+    /**
+     * @return Whether the metadata to activate has been fully tested
+     * 
+     */
     private @Nullable Boolean unitTested;
 
     private PropertyActivationComplianceRecordNoncomplianceReasonNone() {}
+    /**
+     * @return Identifies the customer
+     * 
+     */
     public Optional<String> customerEmail() {
         return Optional.ofNullable(this.customerEmail);
     }
+    /**
+     * @return Identifies person who has independently approved the activation request
+     * 
+     */
     public Optional<String> peerReviewedBy() {
         return Optional.ofNullable(this.peerReviewedBy);
     }
+    /**
+     * @return Identifies the ticket that describes the need for the activation
+     * 
+     */
     public Optional<String> ticketId() {
         return Optional.ofNullable(this.ticketId);
     }
+    /**
+     * @return Whether the metadata to activate has been fully tested
+     * 
+     */
     public Optional<Boolean> unitTested() {
         return Optional.ofNullable(this.unitTested);
     }

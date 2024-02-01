@@ -13,11 +13,26 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyVideoPolicyVariableResult
     {
+        /// <summary>
+        /// The default value of the variable if no query parameter is provided. It needs to be one of the `enumOptions` if any are provided.
+        /// </summary>
         public readonly string DefaultValue;
         public readonly ImmutableArray<Outputs.GetImagingPolicyVideoPolicyVariableEnumOptionResult> EnumOptions;
+        /// <summary>
+        /// The name of the variable, also available as the query parameter name to set the variable's value dynamically. Use up to 50 alphanumeric characters.
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// A postfix added to the value provided for the variable, or to the default value.
+        /// </summary>
         public readonly string? Postfix;
+        /// <summary>
+        /// A prefix added to the value provided for the variable, or to the default value.
+        /// </summary>
         public readonly string? Prefix;
+        /// <summary>
+        /// The type of value for the variable.
+        /// </summary>
         public readonly string Type;
 
         [OutputConstructor]

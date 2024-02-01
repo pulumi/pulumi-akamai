@@ -12,11 +12,18 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class DatastreamHttpsConnectorArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Either NONE for no authentication, or BASIC for username and password authentication
+        /// </summary>
         [Input("authenticationType", required: true)]
         public Input<string> AuthenticationType { get; set; } = null!;
 
         [Input("caCert")]
         private Input<string>? _caCert;
+
+        /// <summary>
+        /// The certification authority (CA) certificate used to verify the origin server's certificate. If the certificate is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+        /// </summary>
         public Input<string>? CaCert
         {
             get => _caCert;
@@ -29,6 +36,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("clientCert")]
         private Input<string>? _clientCert;
+
+        /// <summary>
+        /// The digital certificate in the PEM format you want to use to authenticate requests to your destination. If you want to use mutual authentication, you need to provide both the client certificate and the client key (in the PEM format).
+        /// </summary>
         public Input<string>? ClientCert
         {
             get => _clientCert;
@@ -41,6 +52,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("clientKey")]
         private Input<string>? _clientKey;
+
+        /// <summary>
+        /// The private key in the non-encrypted PKCS8 format you want to use to authenticate with the back-end server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+        /// </summary>
         public Input<string>? ClientKey
         {
             get => _clientKey;
@@ -51,29 +66,54 @@ namespace Pulumi.Akamai.Inputs
             }
         }
 
+        /// <summary>
+        /// Indicates whether the logs should be compressed
+        /// </summary>
         [Input("compressLogs")]
         public Input<bool>? CompressLogs { get; set; }
 
+        /// <summary>
+        /// Content type to pass in the log file header
+        /// </summary>
         [Input("contentType")]
         public Input<string>? ContentType { get; set; }
 
+        /// <summary>
+        /// The name of custom header passed with the request to the destination
+        /// </summary>
         [Input("customHeaderName")]
         public Input<string>? CustomHeaderName { get; set; }
 
+        /// <summary>
+        /// The custom header's contents passed with the request to the destination
+        /// </summary>
         [Input("customHeaderValue")]
         public Input<string>? CustomHeaderValue { get; set; }
 
+        /// <summary>
+        /// The name of the connector
+        /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
 
+        /// <summary>
+        /// URL where logs will be stored
+        /// </summary>
         [Input("endpoint", required: true)]
         public Input<string> Endpoint { get; set; } = null!;
 
+        /// <summary>
+        /// Indicates whether mTLS is enabled or not.
+        /// </summary>
         [Input("mTls")]
         public Input<bool>? MTls { get; set; }
 
         [Input("password")]
         private Input<string>? _password;
+
+        /// <summary>
+        /// Password set for custom HTTPS endpoint for authentication
+        /// </summary>
         public Input<string>? Password
         {
             get => _password;
@@ -84,11 +124,18 @@ namespace Pulumi.Akamai.Inputs
             }
         }
 
+        /// <summary>
+        /// The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+        /// </summary>
         [Input("tlsHostname")]
         public Input<string>? TlsHostname { get; set; }
 
         [Input("userName")]
         private Input<string>? _userName;
+
+        /// <summary>
+        /// Username used for authentication
+        /// </summary>
         public Input<string>? UserName
         {
             get => _userName;

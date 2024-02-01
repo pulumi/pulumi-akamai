@@ -14,21 +14,53 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationAppendImage {
+    /**
+     * @return A rectangular box, with a specified color and applied transformation.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationAppendImageBoxImage> boxImages;
+    /**
+     * @return A rectangular box, with a specified color and applied transformation.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationAppendImageCircleImage> circleImages;
+    /**
+     * @return A snippet of text. Defines font family and size, fill color, and outline stroke width and color.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationAppendImageTextImage> textImages;
+    /**
+     * @return An image loaded from a URL.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationAppendImageUrlImage> urlImages;
 
     private GetImagingPolicyImagePolicyTransformationAppendImage() {}
+    /**
+     * @return A rectangular box, with a specified color and applied transformation.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationAppendImageBoxImage> boxImages() {
         return this.boxImages == null ? List.of() : this.boxImages;
     }
+    /**
+     * @return A rectangular box, with a specified color and applied transformation.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationAppendImageCircleImage> circleImages() {
         return this.circleImages == null ? List.of() : this.circleImages;
     }
+    /**
+     * @return A snippet of text. Defines font family and size, fill color, and outline stroke width and color.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationAppendImageTextImage> textImages() {
         return this.textImages == null ? List.of() : this.textImages;
     }
+    /**
+     * @return An image loaded from a URL.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationAppendImageUrlImage> urlImages() {
         return this.urlImages == null ? List.of() : this.urlImages;
     }

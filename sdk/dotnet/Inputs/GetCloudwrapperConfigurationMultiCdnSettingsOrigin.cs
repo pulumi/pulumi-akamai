@@ -12,12 +12,21 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetCloudwrapperConfigurationMultiCdnSettingsOriginArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Origins hostname corresponding to the Akamai Delivery Property.
+        /// </summary>
         [Input("hostname", required: true)]
         public string Hostname { get; set; } = null!;
 
+        /// <summary>
+        /// Origin identifier and will be used to generated Multi CDN host names.
+        /// </summary>
         [Input("originId", required: true)]
         public string OriginId { get; set; } = null!;
 
+        /// <summary>
+        /// Property ID of the property that origin belongs to.
+        /// </summary>
         [Input("propertyId", required: true)]
         public int PropertyId { get; set; }
 

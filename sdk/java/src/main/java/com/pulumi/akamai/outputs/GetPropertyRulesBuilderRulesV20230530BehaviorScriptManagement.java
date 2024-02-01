@@ -13,29 +13,77 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorScriptManagement {
+    /**
+     * @return Enables the Script Management feature.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Script Management uses a JavaScript service worker called `akam-sw.js`. It applies a policy that helps you manage scripts.
+     * 
+     */
     private @Nullable String serviceworker;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A read-only epoch timestamp that represents the last time a Script Management policy was synchronized with its Ion property.
+     * 
+     */
     private @Nullable Integer timestamp;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorScriptManagement() {}
+    /**
+     * @return Enables the Script Management feature.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Script Management uses a JavaScript service worker called `akam-sw.js`. It applies a policy that helps you manage scripts.
+     * 
+     */
     public Optional<String> serviceworker() {
         return Optional.ofNullable(this.serviceworker);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A read-only epoch timestamp that represents the last time a Script Management policy was synchronized with its Ion property.
+     * 
+     */
     public Optional<Integer> timestamp() {
         return Optional.ofNullable(this.timestamp);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

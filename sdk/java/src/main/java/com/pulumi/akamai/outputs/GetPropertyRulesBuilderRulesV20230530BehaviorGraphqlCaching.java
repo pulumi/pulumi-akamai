@@ -12,41 +12,113 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorGraphqlCaching {
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String advanced;
+    /**
+     * @return When enabled, caches responses that include an `error` field at the top of the response body object.  Disable this if your GraphQL server yields temporary errors with success codes in the 2xx range.
+     * 
+     */
     private @Nullable Boolean cacheResponsesWithErrors;
+    /**
+     * @return Enables GraphQL caching.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return The name of the JSON body parameter that identifies GraphQL POST requests.
+     * 
+     */
     private @Nullable String operationsJsonBodyParameterName;
+    /**
+     * @return Specifies the name of a query parameter that identifies requests as GraphQL queries.
+     * 
+     */
     private @Nullable String operationsUrlQueryParameterName;
+    /**
+     * @return Specify what happens if GraphQL query processing fails on POST requests.
+     * 
+     */
     private @Nullable String postRequestProcessingErrorHandling;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorGraphqlCaching() {}
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> advanced() {
         return Optional.ofNullable(this.advanced);
     }
+    /**
+     * @return When enabled, caches responses that include an `error` field at the top of the response body object.  Disable this if your GraphQL server yields temporary errors with success codes in the 2xx range.
+     * 
+     */
     public Optional<Boolean> cacheResponsesWithErrors() {
         return Optional.ofNullable(this.cacheResponsesWithErrors);
     }
+    /**
+     * @return Enables GraphQL caching.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return The name of the JSON body parameter that identifies GraphQL POST requests.
+     * 
+     */
     public Optional<String> operationsJsonBodyParameterName() {
         return Optional.ofNullable(this.operationsJsonBodyParameterName);
     }
+    /**
+     * @return Specifies the name of a query parameter that identifies requests as GraphQL queries.
+     * 
+     */
     public Optional<String> operationsUrlQueryParameterName() {
         return Optional.ofNullable(this.operationsUrlQueryParameterName);
     }
+    /**
+     * @return Specify what happens if GraphQL query processing fails on POST requests.
+     * 
+     */
     public Optional<String> postRequestProcessingErrorHandling() {
         return Optional.ofNullable(this.postRequestProcessingErrorHandling);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

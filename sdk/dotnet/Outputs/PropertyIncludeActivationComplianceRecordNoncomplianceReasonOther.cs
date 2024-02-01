@@ -13,7 +13,13 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther
     {
+        /// <summary>
+        /// Describes the reason why the activation must occur immediately, out of compliance with the standard procedure
+        /// </summary>
         public readonly string? OtherNoncomplianceReason;
+        /// <summary>
+        /// Identifies the ticket that describes the need for the activation
+        /// </summary>
         public readonly string? TicketId;
 
         [OutputConstructor]

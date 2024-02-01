@@ -12,12 +12,21 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230530CriterionMatchCpCodeValueCpCodeLimitsArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("currentCapacity")]
         public int? CurrentCapacity { get; set; }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("limit")]
         public int? Limit { get; set; }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("limitType")]
         public string? LimitType { get; set; }
 

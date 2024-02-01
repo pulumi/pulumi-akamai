@@ -16,37 +16,77 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDcpAuthSubstring
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorDcpAuthSubstringTransformationArgs Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorDcpAuthSubstringTransformationArgs();
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * The zero-based index offset of the last character to extract, where `-1` selects the remainder of the string. If the index is out of bound from the string&#39;s length, authentication may fail.
+     * 
+     */
     @Import(name="substringEnd")
     private @Nullable Output<String> substringEnd;
 
+    /**
+     * @return The zero-based index offset of the last character to extract, where `-1` selects the remainder of the string. If the index is out of bound from the string&#39;s length, authentication may fail.
+     * 
+     */
     public Optional<Output<String>> substringEnd() {
         return Optional.ofNullable(this.substringEnd);
     }
 
+    /**
+     * The zero-based index offset of the first character to extract. If the index is out of bound from the string&#39;s length, authentication may fail.
+     * 
+     */
     @Import(name="substringStart")
     private @Nullable Output<String> substringStart;
 
+    /**
+     * @return The zero-based index offset of the first character to extract. If the index is out of bound from the string&#39;s length, authentication may fail.
+     * 
+     */
     public Optional<Output<String>> substringStart() {
         return Optional.ofNullable(this.substringStart);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -79,47 +119,107 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDcpAuthSubstring
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorDcpAuthSubstringTransformationArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param substringEnd The zero-based index offset of the last character to extract, where `-1` selects the remainder of the string. If the index is out of bound from the string&#39;s length, authentication may fail.
+         * 
+         * @return builder
+         * 
+         */
         public Builder substringEnd(@Nullable Output<String> substringEnd) {
             $.substringEnd = substringEnd;
             return this;
         }
 
+        /**
+         * @param substringEnd The zero-based index offset of the last character to extract, where `-1` selects the remainder of the string. If the index is out of bound from the string&#39;s length, authentication may fail.
+         * 
+         * @return builder
+         * 
+         */
         public Builder substringEnd(String substringEnd) {
             return substringEnd(Output.of(substringEnd));
         }
 
+        /**
+         * @param substringStart The zero-based index offset of the first character to extract. If the index is out of bound from the string&#39;s length, authentication may fail.
+         * 
+         * @return builder
+         * 
+         */
         public Builder substringStart(@Nullable Output<String> substringStart) {
             $.substringStart = substringStart;
             return this;
         }
 
+        /**
+         * @param substringStart The zero-based index offset of the first character to extract. If the index is out of bound from the string&#39;s length, authentication may fail.
+         * 
+         * @return builder
+         * 
+         */
         public Builder substringStart(String substringStart) {
             return substringStart(Output.of(substringStart));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

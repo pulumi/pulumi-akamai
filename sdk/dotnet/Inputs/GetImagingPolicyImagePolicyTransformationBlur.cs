@@ -12,9 +12,15 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetImagingPolicyImagePolicyTransformationBlurArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The number of pixels to scatter the original pixel by to create the blur effect. Resulting images may be larger than the original as pixels at the edge of the image might scatter outside the image's original dimensions.
+        /// </summary>
         [Input("sigma")]
         public string? Sigma { get; set; }
 
+        /// <summary>
+        /// The number of pixels to scatter the original pixel by to create the blur effect. Resulting images may be larger than the original as pixels at the edge of the image might scatter outside the image's original dimensions.
+        /// </summary>
         [Input("sigmaVar")]
         public string? SigmaVar { get; set; }
 

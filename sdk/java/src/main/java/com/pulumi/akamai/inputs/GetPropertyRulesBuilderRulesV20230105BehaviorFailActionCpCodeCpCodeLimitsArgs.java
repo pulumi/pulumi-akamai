@@ -16,23 +16,47 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorFailActionCpCode
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorFailActionCpCodeCpCodeLimitsArgs Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorFailActionCpCodeCpCodeLimitsArgs();
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     @Import(name="currentCapacity")
     private @Nullable Output<Integer> currentCapacity;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<Output<Integer>> currentCapacity() {
         return Optional.ofNullable(this.currentCapacity);
     }
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     @Import(name="limit")
     private @Nullable Output<Integer> limit;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<Output<Integer>> limit() {
         return Optional.ofNullable(this.limit);
     }
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     @Import(name="limitType")
     private @Nullable Output<String> limitType;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<Output<String>> limitType() {
         return Optional.ofNullable(this.limitType);
     }
@@ -63,29 +87,65 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorFailActionCpCode
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorFailActionCpCodeCpCodeLimitsArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param currentCapacity This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder currentCapacity(@Nullable Output<Integer> currentCapacity) {
             $.currentCapacity = currentCapacity;
             return this;
         }
 
+        /**
+         * @param currentCapacity This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder currentCapacity(Integer currentCapacity) {
             return currentCapacity(Output.of(currentCapacity));
         }
 
+        /**
+         * @param limit This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder limit(@Nullable Output<Integer> limit) {
             $.limit = limit;
             return this;
         }
 
+        /**
+         * @param limit This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder limit(Integer limit) {
             return limit(Output.of(limit));
         }
 
+        /**
+         * @param limitType This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder limitType(@Nullable Output<String> limitType) {
             $.limitType = limitType;
             return this;
         }
 
+        /**
+         * @param limitType This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder limitType(String limitType) {
             return limitType(Output.of(limitType));
         }

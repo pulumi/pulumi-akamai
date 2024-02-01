@@ -15,16 +15,32 @@ public final class GetPropertyRulesBuilderRulesV20230530CustomOverrideArgs exten
 
     public static final GetPropertyRulesBuilderRulesV20230530CustomOverrideArgs Empty = new GetPropertyRulesBuilderRulesV20230530CustomOverrideArgs();
 
+    /**
+     * The name of a custom override
+     * 
+     */
     @Import(name="name")
     private @Nullable Output<String> name;
 
+    /**
+     * @return The name of a custom override
+     * 
+     */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
     }
 
+    /**
+     * The ID of a custom override
+     * 
+     */
     @Import(name="overrideId")
     private @Nullable Output<String> overrideId;
 
+    /**
+     * @return The ID of a custom override
+     * 
+     */
     public Optional<Output<String>> overrideId() {
         return Optional.ofNullable(this.overrideId);
     }
@@ -54,20 +70,44 @@ public final class GetPropertyRulesBuilderRulesV20230530CustomOverrideArgs exten
             $ = new GetPropertyRulesBuilderRulesV20230530CustomOverrideArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param name The name of a custom override
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
             return this;
         }
 
+        /**
+         * @param name The name of a custom override
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(String name) {
             return name(Output.of(name));
         }
 
+        /**
+         * @param overrideId The ID of a custom override
+         * 
+         * @return builder
+         * 
+         */
         public Builder overrideId(@Nullable Output<String> overrideId) {
             $.overrideId = overrideId;
             return this;
         }
 
+        /**
+         * @param overrideId The ID of a custom override
+         * 
+         * @return builder
+         * 
+         */
         public Builder overrideId(String overrideId) {
             return overrideId(Output.of(overrideId));
         }

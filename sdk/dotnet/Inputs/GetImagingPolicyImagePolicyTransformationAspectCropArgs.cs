@@ -12,33 +12,63 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetImagingPolicyImagePolicyTransformationAspectCropInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Increases the size of the image canvas to achieve the requested aspect ratio instead of cropping the image. Use the Horizontal Offset and Vertical Offset settings to determine where to add the fully transparent pixels on the expanded image canvas.
+        /// </summary>
         [Input("allowExpansion")]
         public Input<string>? AllowExpansion { get; set; }
 
+        /// <summary>
+        /// Increases the size of the image canvas to achieve the requested aspect ratio instead of cropping the image. Use the Horizontal Offset and Vertical Offset settings to determine where to add the fully transparent pixels on the expanded image canvas.
+        /// </summary>
         [Input("allowExpansionVar")]
         public Input<string>? AllowExpansionVar { get; set; }
 
+        /// <summary>
+        /// The height term of the aspect ratio to crop.
+        /// </summary>
         [Input("height")]
         public Input<string>? Height { get; set; }
 
+        /// <summary>
+        /// The height term of the aspect ratio to crop.
+        /// </summary>
         [Input("heightVar")]
         public Input<string>? HeightVar { get; set; }
 
+        /// <summary>
+        /// The width term of the aspect ratio to crop.
+        /// </summary>
         [Input("width")]
         public Input<string>? Width { get; set; }
 
+        /// <summary>
+        /// The width term of the aspect ratio to crop.
+        /// </summary>
         [Input("widthVar")]
         public Input<string>? WidthVar { get; set; }
 
+        /// <summary>
+        /// Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+        /// </summary>
         [Input("xPosition")]
         public Input<string>? XPosition { get; set; }
 
+        /// <summary>
+        /// Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+        /// </summary>
         [Input("xPositionVar")]
         public Input<string>? XPositionVar { get; set; }
 
+        /// <summary>
+        /// Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+        /// </summary>
         [Input("yPosition")]
         public Input<string>? YPosition { get; set; }
 
+        /// <summary>
+        /// Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+        /// </summary>
         [Input("yPositionVar")]
         public Input<string>? YPositionVar { get; set; }
 

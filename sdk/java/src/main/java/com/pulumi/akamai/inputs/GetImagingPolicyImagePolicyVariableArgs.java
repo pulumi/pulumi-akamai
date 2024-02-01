@@ -18,9 +18,17 @@ public final class GetImagingPolicyImagePolicyVariableArgs extends com.pulumi.re
 
     public static final GetImagingPolicyImagePolicyVariableArgs Empty = new GetImagingPolicyImagePolicyVariableArgs();
 
+    /**
+     * The default value of the variable if no query parameter is provided. It needs to be one of the `enumOptions` if any are provided.
+     * 
+     */
     @Import(name="defaultValue", required=true)
     private Output<String> defaultValue;
 
+    /**
+     * @return The default value of the variable if no query parameter is provided. It needs to be one of the `enumOptions` if any are provided.
+     * 
+     */
     public Output<String> defaultValue() {
         return this.defaultValue;
     }
@@ -32,30 +40,62 @@ public final class GetImagingPolicyImagePolicyVariableArgs extends com.pulumi.re
         return Optional.ofNullable(this.enumOptions);
     }
 
+    /**
+     * The name of the variable, also available as the query parameter name to set the variable&#39;s value dynamically. Use up to 50 alphanumeric characters.
+     * 
+     */
     @Import(name="name", required=true)
     private Output<String> name;
 
+    /**
+     * @return The name of the variable, also available as the query parameter name to set the variable&#39;s value dynamically. Use up to 50 alphanumeric characters.
+     * 
+     */
     public Output<String> name() {
         return this.name;
     }
 
+    /**
+     * A postfix added to the value provided for the variable, or to the default value.
+     * 
+     */
     @Import(name="postfix")
     private @Nullable Output<String> postfix;
 
+    /**
+     * @return A postfix added to the value provided for the variable, or to the default value.
+     * 
+     */
     public Optional<Output<String>> postfix() {
         return Optional.ofNullable(this.postfix);
     }
 
+    /**
+     * A prefix added to the value provided for the variable, or to the default value.
+     * 
+     */
     @Import(name="prefix")
     private @Nullable Output<String> prefix;
 
+    /**
+     * @return A prefix added to the value provided for the variable, or to the default value.
+     * 
+     */
     public Optional<Output<String>> prefix() {
         return Optional.ofNullable(this.prefix);
     }
 
+    /**
+     * The type of value for the variable.
+     * 
+     */
     @Import(name="type", required=true)
     private Output<String> type;
 
+    /**
+     * @return The type of value for the variable.
+     * 
+     */
     public Output<String> type() {
         return this.type;
     }
@@ -89,11 +129,23 @@ public final class GetImagingPolicyImagePolicyVariableArgs extends com.pulumi.re
             $ = new GetImagingPolicyImagePolicyVariableArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param defaultValue The default value of the variable if no query parameter is provided. It needs to be one of the `enumOptions` if any are provided.
+         * 
+         * @return builder
+         * 
+         */
         public Builder defaultValue(Output<String> defaultValue) {
             $.defaultValue = defaultValue;
             return this;
         }
 
+        /**
+         * @param defaultValue The default value of the variable if no query parameter is provided. It needs to be one of the `enumOptions` if any are provided.
+         * 
+         * @return builder
+         * 
+         */
         public Builder defaultValue(String defaultValue) {
             return defaultValue(Output.of(defaultValue));
         }
@@ -111,38 +163,86 @@ public final class GetImagingPolicyImagePolicyVariableArgs extends com.pulumi.re
             return enumOptions(List.of(enumOptions));
         }
 
+        /**
+         * @param name The name of the variable, also available as the query parameter name to set the variable&#39;s value dynamically. Use up to 50 alphanumeric characters.
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(Output<String> name) {
             $.name = name;
             return this;
         }
 
+        /**
+         * @param name The name of the variable, also available as the query parameter name to set the variable&#39;s value dynamically. Use up to 50 alphanumeric characters.
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(String name) {
             return name(Output.of(name));
         }
 
+        /**
+         * @param postfix A postfix added to the value provided for the variable, or to the default value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder postfix(@Nullable Output<String> postfix) {
             $.postfix = postfix;
             return this;
         }
 
+        /**
+         * @param postfix A postfix added to the value provided for the variable, or to the default value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder postfix(String postfix) {
             return postfix(Output.of(postfix));
         }
 
+        /**
+         * @param prefix A prefix added to the value provided for the variable, or to the default value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder prefix(@Nullable Output<String> prefix) {
             $.prefix = prefix;
             return this;
         }
 
+        /**
+         * @param prefix A prefix added to the value provided for the variable, or to the default value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder prefix(String prefix) {
             return prefix(Output.of(prefix));
         }
 
+        /**
+         * @param type The type of value for the variable.
+         * 
+         * @return builder
+         * 
+         */
         public Builder type(Output<String> type) {
             $.type = type;
             return this;
         }
 
+        /**
+         * @param type The type of value for the variable.
+         * 
+         * @return builder
+         * 
+         */
         public Builder type(String type) {
             return type(Output.of(type));
         }

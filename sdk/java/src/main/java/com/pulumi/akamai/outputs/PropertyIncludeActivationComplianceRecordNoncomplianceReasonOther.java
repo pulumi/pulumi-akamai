@@ -11,13 +11,29 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther {
+    /**
+     * @return Describes the reason why the activation must occur immediately, out of compliance with the standard procedure
+     * 
+     */
     private @Nullable String otherNoncomplianceReason;
+    /**
+     * @return Identifies the ticket that describes the need for the activation
+     * 
+     */
     private @Nullable String ticketId;
 
     private PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther() {}
+    /**
+     * @return Describes the reason why the activation must occur immediately, out of compliance with the standard procedure
+     * 
+     */
     public Optional<String> otherNoncomplianceReason() {
         return Optional.ofNullable(this.otherNoncomplianceReason);
     }
+    /**
+     * @return Identifies the ticket that describes the need for the activation
+     * 
+     */
     public Optional<String> ticketId() {
         return Optional.ofNullable(this.ticketId);
     }

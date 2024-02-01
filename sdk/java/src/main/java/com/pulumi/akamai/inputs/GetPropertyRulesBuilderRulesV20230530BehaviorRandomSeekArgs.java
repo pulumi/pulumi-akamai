@@ -16,44 +16,92 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorRandomSeekArgs e
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorRandomSeekArgs Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorRandomSeekArgs();
 
+    /**
+     * Enables random seek optimization in FLV files.
+     * 
+     */
     @Import(name="flv")
     private @Nullable Output<Boolean> flv;
 
+    /**
+     * @return Enables random seek optimization in FLV files.
+     * 
+     */
     public Optional<Output<Boolean>> flv() {
         return Optional.ofNullable(this.flv);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Sets the maximum size of the MP4 file to optimize, expressed as a number suffixed with a unit string such as `MB` or `GB`.
+     * 
+     */
     @Import(name="maximumSize")
     private @Nullable Output<String> maximumSize;
 
+    /**
+     * @return Sets the maximum size of the MP4 file to optimize, expressed as a number suffixed with a unit string such as `MB` or `GB`.
+     * 
+     */
     public Optional<Output<String>> maximumSize() {
         return Optional.ofNullable(this.maximumSize);
     }
 
+    /**
+     * Enables random seek optimization in MP4 files.
+     * 
+     */
     @Import(name="mp4")
     private @Nullable Output<Boolean> mp4;
 
+    /**
+     * @return Enables random seek optimization in MP4 files.
+     * 
+     */
     public Optional<Output<Boolean>> mp4() {
         return Optional.ofNullable(this.mp4);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -87,56 +135,128 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorRandomSeekArgs e
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorRandomSeekArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param flv Enables random seek optimization in FLV files.
+         * 
+         * @return builder
+         * 
+         */
         public Builder flv(@Nullable Output<Boolean> flv) {
             $.flv = flv;
             return this;
         }
 
+        /**
+         * @param flv Enables random seek optimization in FLV files.
+         * 
+         * @return builder
+         * 
+         */
         public Builder flv(Boolean flv) {
             return flv(Output.of(flv));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param maximumSize Sets the maximum size of the MP4 file to optimize, expressed as a number suffixed with a unit string such as `MB` or `GB`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder maximumSize(@Nullable Output<String> maximumSize) {
             $.maximumSize = maximumSize;
             return this;
         }
 
+        /**
+         * @param maximumSize Sets the maximum size of the MP4 file to optimize, expressed as a number suffixed with a unit string such as `MB` or `GB`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder maximumSize(String maximumSize) {
             return maximumSize(Output.of(maximumSize));
         }
 
+        /**
+         * @param mp4 Enables random seek optimization in MP4 files.
+         * 
+         * @return builder
+         * 
+         */
         public Builder mp4(@Nullable Output<Boolean> mp4) {
             $.mp4 = mp4;
             return this;
         }
 
+        /**
+         * @param mp4 Enables random seek optimization in MP4 files.
+         * 
+         * @return builder
+         * 
+         */
         public Builder mp4(Boolean mp4) {
             return mp4(Output.of(mp4));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

@@ -13,7 +13,13 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyTransformationRotateResult
     {
+        /// <summary>
+        /// The value to rotate the image by. Positive values rotate clockwise, while negative values rotate counter-clockwise.
+        /// </summary>
         public readonly string? Degrees;
+        /// <summary>
+        /// The value to rotate the image by. Positive values rotate clockwise, while negative values rotate counter-clockwise.
+        /// </summary>
         public readonly string? DegreesVar;
 
         [OutputConstructor]

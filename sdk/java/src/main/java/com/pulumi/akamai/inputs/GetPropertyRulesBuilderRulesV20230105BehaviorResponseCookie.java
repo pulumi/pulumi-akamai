@@ -15,128 +15,272 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorResponseCookie e
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorResponseCookie Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorResponseCookie();
 
+    /**
+     * Specifies the name of the cookie, which serves as a key to determine if the cookie is set.
+     * 
+     */
     @Import(name="cookieName")
     private @Nullable String cookieName;
 
+    /**
+     * @return Specifies the name of the cookie, which serves as a key to determine if the cookie is set.
+     * 
+     */
     public Optional<String> cookieName() {
         return Optional.ofNullable(this.cookieName);
     }
 
+    /**
+     * When enabled, uses the default domain value, otherwise the set specified in the `domain` field.
+     * 
+     */
     @Import(name="defaultDomain")
     private @Nullable Boolean defaultDomain;
 
+    /**
+     * @return When enabled, uses the default domain value, otherwise the set specified in the `domain` field.
+     * 
+     */
     public Optional<Boolean> defaultDomain() {
         return Optional.ofNullable(this.defaultDomain);
     }
 
+    /**
+     * When enabled, uses the default path value, otherwise the set specified in the `path` field.
+     * 
+     */
     @Import(name="defaultPath")
     private @Nullable Boolean defaultPath;
 
+    /**
+     * @return When enabled, uses the default path value, otherwise the set specified in the `path` field.
+     * 
+     */
     public Optional<Boolean> defaultPath() {
         return Optional.ofNullable(this.defaultPath);
     }
 
+    /**
+     * If the `defaultDomain` is disabled, this sets the domain for which the cookie is valid. For example, `example.com` makes the cookie valid for that hostname and all subdomains.
+     * 
+     */
     @Import(name="domain")
     private @Nullable String domain;
 
+    /**
+     * @return If the `defaultDomain` is disabled, this sets the domain for which the cookie is valid. For example, `example.com` makes the cookie valid for that hostname and all subdomains.
+     * 
+     */
     public Optional<String> domain() {
         return Optional.ofNullable(this.domain);
     }
 
+    /**
+     * If `expires` is set to `DURATION`, this sets the cookie&#39;s lifetime.
+     * 
+     */
     @Import(name="duration")
     private @Nullable String duration;
 
+    /**
+     * @return If `expires` is set to `DURATION`, this sets the cookie&#39;s lifetime.
+     * 
+     */
     public Optional<String> duration() {
         return Optional.ofNullable(this.duration);
     }
 
+    /**
+     * Allows you to set a response cookie.
+     * 
+     */
     @Import(name="enabled")
     private @Nullable Boolean enabled;
 
+    /**
+     * @return Allows you to set a response cookie.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
 
+    /**
+     * If `expires` is set to `FIXED_DATE`, this sets when the cookie expires as a UTC date and time.
+     * 
+     */
     @Import(name="expirationDate")
     private @Nullable String expirationDate;
 
+    /**
+     * @return If `expires` is set to `FIXED_DATE`, this sets when the cookie expires as a UTC date and time.
+     * 
+     */
     public Optional<String> expirationDate() {
         return Optional.ofNullable(this.expirationDate);
     }
 
+    /**
+     * Sets various ways to specify when the cookie expires.
+     * 
+     */
     @Import(name="expires")
     private @Nullable String expires;
 
+    /**
+     * @return Sets various ways to specify when the cookie expires.
+     * 
+     */
     public Optional<String> expires() {
         return Optional.ofNullable(this.expires);
     }
 
+    /**
+     * When the `type` of cookie is set to `UNIQUE`, this sets the date format.
+     * 
+     */
     @Import(name="format")
     private @Nullable String format;
 
+    /**
+     * @return When the `type` of cookie is set to `UNIQUE`, this sets the date format.
+     * 
+     */
     public Optional<String> format() {
         return Optional.ofNullable(this.format);
     }
 
+    /**
+     * When enabled, includes the `HttpOnly` attribute in the `Set-Cookie` response header to mitigate the risk of client-side scripts accessing the protected cookie, if the browser supports it.
+     * 
+     */
     @Import(name="httpOnly")
     private @Nullable Boolean httpOnly;
 
+    /**
+     * @return When enabled, includes the `HttpOnly` attribute in the `Set-Cookie` response header to mitigate the risk of client-side scripts accessing the protected cookie, if the browser supports it.
+     * 
+     */
     public Optional<Boolean> httpOnly() {
         return Optional.ofNullable(this.httpOnly);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * If the `defaultPath` is disabled, sets the path component for which the cookie is valid.
+     * 
+     */
     @Import(name="path")
     private @Nullable String path;
 
+    /**
+     * @return If the `defaultPath` is disabled, sets the path component for which the cookie is valid.
+     * 
+     */
     public Optional<String> path() {
         return Optional.ofNullable(this.path);
     }
 
+    /**
+     * This option controls the `SameSite` cookie attribute that reduces the risk of cross-site request forgery attacks.
+     * 
+     */
     @Import(name="sameSite")
     private @Nullable String sameSite;
 
+    /**
+     * @return This option controls the `SameSite` cookie attribute that reduces the risk of cross-site request forgery attacks.
+     * 
+     */
     public Optional<String> sameSite() {
         return Optional.ofNullable(this.sameSite);
     }
 
+    /**
+     * When enabled, sets the cookie&#39;s `Secure` flag to transmit it with `HTTPS`.
+     * 
+     */
     @Import(name="secure")
     private @Nullable Boolean secure;
 
+    /**
+     * @return When enabled, sets the cookie&#39;s `Secure` flag to transmit it with `HTTPS`.
+     * 
+     */
     public Optional<Boolean> secure() {
         return Optional.ofNullable(this.secure);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * What type of value to assign.
+     * 
+     */
     @Import(name="type")
     private @Nullable String type;
 
+    /**
+     * @return What type of value to assign.
+     * 
+     */
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
 
+    /**
+     * If the cookie `type` is `FIXED`, this specifies the cookie value.
+     * 
+     */
     @Import(name="value")
     private @Nullable String value;
 
+    /**
+     * @return If the cookie `type` is `FIXED`, this specifies the cookie value.
+     * 
+     */
     public Optional<String> value() {
         return Optional.ofNullable(this.value);
     }
@@ -182,91 +326,199 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorResponseCookie e
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorResponseCookie(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param cookieName Specifies the name of the cookie, which serves as a key to determine if the cookie is set.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cookieName(@Nullable String cookieName) {
             $.cookieName = cookieName;
             return this;
         }
 
+        /**
+         * @param defaultDomain When enabled, uses the default domain value, otherwise the set specified in the `domain` field.
+         * 
+         * @return builder
+         * 
+         */
         public Builder defaultDomain(@Nullable Boolean defaultDomain) {
             $.defaultDomain = defaultDomain;
             return this;
         }
 
+        /**
+         * @param defaultPath When enabled, uses the default path value, otherwise the set specified in the `path` field.
+         * 
+         * @return builder
+         * 
+         */
         public Builder defaultPath(@Nullable Boolean defaultPath) {
             $.defaultPath = defaultPath;
             return this;
         }
 
+        /**
+         * @param domain If the `defaultDomain` is disabled, this sets the domain for which the cookie is valid. For example, `example.com` makes the cookie valid for that hostname and all subdomains.
+         * 
+         * @return builder
+         * 
+         */
         public Builder domain(@Nullable String domain) {
             $.domain = domain;
             return this;
         }
 
+        /**
+         * @param duration If `expires` is set to `DURATION`, this sets the cookie&#39;s lifetime.
+         * 
+         * @return builder
+         * 
+         */
         public Builder duration(@Nullable String duration) {
             $.duration = duration;
             return this;
         }
 
+        /**
+         * @param enabled Allows you to set a response cookie.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(@Nullable Boolean enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param expirationDate If `expires` is set to `FIXED_DATE`, this sets when the cookie expires as a UTC date and time.
+         * 
+         * @return builder
+         * 
+         */
         public Builder expirationDate(@Nullable String expirationDate) {
             $.expirationDate = expirationDate;
             return this;
         }
 
+        /**
+         * @param expires Sets various ways to specify when the cookie expires.
+         * 
+         * @return builder
+         * 
+         */
         public Builder expires(@Nullable String expires) {
             $.expires = expires;
             return this;
         }
 
+        /**
+         * @param format When the `type` of cookie is set to `UNIQUE`, this sets the date format.
+         * 
+         * @return builder
+         * 
+         */
         public Builder format(@Nullable String format) {
             $.format = format;
             return this;
         }
 
+        /**
+         * @param httpOnly When enabled, includes the `HttpOnly` attribute in the `Set-Cookie` response header to mitigate the risk of client-side scripts accessing the protected cookie, if the browser supports it.
+         * 
+         * @return builder
+         * 
+         */
         public Builder httpOnly(@Nullable Boolean httpOnly) {
             $.httpOnly = httpOnly;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param path If the `defaultPath` is disabled, sets the path component for which the cookie is valid.
+         * 
+         * @return builder
+         * 
+         */
         public Builder path(@Nullable String path) {
             $.path = path;
             return this;
         }
 
+        /**
+         * @param sameSite This option controls the `SameSite` cookie attribute that reduces the risk of cross-site request forgery attacks.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sameSite(@Nullable String sameSite) {
             $.sameSite = sameSite;
             return this;
         }
 
+        /**
+         * @param secure When enabled, sets the cookie&#39;s `Secure` flag to transmit it with `HTTPS`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder secure(@Nullable Boolean secure) {
             $.secure = secure;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param type What type of value to assign.
+         * 
+         * @return builder
+         * 
+         */
         public Builder type(@Nullable String type) {
             $.type = type;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param value If the cookie `type` is `FIXED`, this specifies the cookie value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder value(@Nullable String value) {
             $.value = value;
             return this;

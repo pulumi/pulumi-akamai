@@ -12,33 +12,89 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsWsdLargeFile {
+    /**
+     * @return Optimize based on the total size of the content library delivered.
+     * 
+     */
     private @Nullable String catalogSize;
+    /**
+     * @return Optimize based on the type of content.
+     * 
+     */
     private @Nullable String contentType;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Optimize based on the size of the object retrieved from the origin.
+     * 
+     */
     private @Nullable String objectSize;
+    /**
+     * @return Optimize based on the content&#39;s expected popularity.
+     * 
+     */
     private @Nullable String popularityDistribution;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsWsdLargeFile() {}
+    /**
+     * @return Optimize based on the total size of the content library delivered.
+     * 
+     */
     public Optional<String> catalogSize() {
         return Optional.ofNullable(this.catalogSize);
     }
+    /**
+     * @return Optimize based on the type of content.
+     * 
+     */
     public Optional<String> contentType() {
         return Optional.ofNullable(this.contentType);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Optimize based on the size of the object retrieved from the origin.
+     * 
+     */
     public Optional<String> objectSize() {
         return Optional.ofNullable(this.objectSize);
     }
+    /**
+     * @return Optimize based on the content&#39;s expected popularity.
+     * 
+     */
     public Optional<String> popularityDistribution() {
         return Optional.ofNullable(this.popularityDistribution);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

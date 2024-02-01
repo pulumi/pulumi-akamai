@@ -13,11 +13,29 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class DatastreamAzureConnector
     {
+        /// <summary>
+        /// Access keys associated with Azure Storage account
+        /// </summary>
         public readonly string AccessKey;
+        /// <summary>
+        /// Specifies the Azure Storage account name
+        /// </summary>
         public readonly string AccountName;
+        /// <summary>
+        /// Indicates whether the logs should be compressed
+        /// </summary>
         public readonly bool? CompressLogs;
+        /// <summary>
+        /// Specifies the Azure Storage container name
+        /// </summary>
         public readonly string ContainerName;
+        /// <summary>
+        /// The name of the connector
+        /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// The path to the folder within Azure Storage container where logs will be stored
+        /// </summary>
         public readonly string Path;
 
         [OutputConstructor]

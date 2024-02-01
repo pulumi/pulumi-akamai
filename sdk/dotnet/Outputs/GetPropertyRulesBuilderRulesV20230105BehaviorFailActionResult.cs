@@ -13,40 +13,142 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorFailActionResult
     {
+        /// <summary>
+        /// Specifies the basic action to take when there is a failure to contact the origin.
+        /// </summary>
         public readonly string? ActionType;
         public readonly bool? AllowFcmParentOverride;
+        /// <summary>
+        /// Specifies a custom path.
+        /// </summary>
         public readonly bool? CexCustomPath;
+        /// <summary>
+        /// Specifies a hostname.
+        /// </summary>
         public readonly string? CexHostname;
+        /// <summary>
+        /// Specifies a custom path.
+        /// </summary>
         public readonly string? CexPath;
+        /// <summary>
+        /// Specifies a custom redirect path.
+        /// </summary>
         public readonly bool? ContentCustomPath;
+        /// <summary>
+        /// Specifies the static hostname for the alternate redirect.
+        /// </summary>
         public readonly string? ContentHostname;
+        /// <summary>
+        /// Specifies a custom redirect path.
+        /// </summary>
         public readonly string? ContentPath;
+        /// <summary>
+        /// Specifies a CP code for which to log errors for the NetStorage location.
+        /// </summary>
         public readonly Outputs.GetPropertyRulesBuilderRulesV20230105BehaviorFailActionCpCodeResult? CpCode;
+        /// <summary>
+        /// Allows you to modify the original requested path.
+        /// </summary>
         public readonly bool? DynamicCustomPath;
+        /// <summary>
+        /// Specifies the redirect method.
+        /// </summary>
         public readonly string? DynamicMethod;
+        /// <summary>
+        /// Specifies the new path.
+        /// </summary>
         public readonly string? DynamicPath;
+        /// <summary>
+        /// When enabled in case of a failure to contact the origin, the current behavior applies.
+        /// </summary>
         public readonly bool? Enabled;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// Modifies the redirect's protocol using the value of the `protocol` field.
+        /// </summary>
         public readonly bool? ModifyProtocol;
+        /// <summary>
+        /// When the `actionType` is `RECREATED_NS`, specifies the `NetStorage` origin to serve the alternate content. Contact Akamai Professional Services for your NetStorage origin's `id`.
+        /// </summary>
         public readonly Outputs.GetPropertyRulesBuilderRulesV20230105BehaviorFailActionNetStorageHostnameResult? NetStorageHostname;
+        /// <summary>
+        /// When the `actionType` is `RECREATED_NS`, specifies the path for the `NetStorage` request.
+        /// </summary>
         public readonly string? NetStoragePath;
+        /// <summary>
+        /// When using either `contentCustomPath`, `cexCustomPath`, `dynamicCustomPath`, or `redirectCustomPath` to specify a custom path, enabling this passes in the original request's query string as part of the path.
+        /// </summary>
         public readonly bool? PreserveQueryString;
+        /// <summary>
+        /// When the `actionType` is `REDIRECT` and `modifyProtocol` is enabled, this specifies the redirect's protocol.
+        /// </summary>
         public readonly string? Protocol;
+        /// <summary>
+        /// Uses the `redirectPath` to customize a new path.
+        /// </summary>
         public readonly bool? RedirectCustomPath;
+        /// <summary>
+        /// When the `actionType` is `REDIRECT` and the `redirectHostnameType` is `ALTERNATE`, this specifies the hostname for the redirect.
+        /// </summary>
         public readonly string? RedirectHostname;
+        /// <summary>
+        /// Whether to preserve or customize the hostname.
+        /// </summary>
         public readonly string? RedirectHostnameType;
+        /// <summary>
+        /// Specifies the HTTP response code.
+        /// </summary>
         public readonly int? RedirectMethod;
+        /// <summary>
+        /// Specifies a new path.
+        /// </summary>
         public readonly string? RedirectPath;
+        /// <summary>
+        /// Specifies whether to use a CNAME chain to determine the hostname for the SaaS dynamic failaction.
+        /// </summary>
         public readonly bool? SaasCnameEnabled;
+        /// <summary>
+        /// Specifies the number of elements in the CNAME chain backwards from the edge hostname that determines the hostname for the SaaS dynamic failaction.
+        /// </summary>
         public readonly int? SaasCnameLevel;
+        /// <summary>
+        /// Specifies the name of the cookie that identifies this SaaS dynamic failaction.
+        /// </summary>
         public readonly string? SaasCookie;
+        /// <summary>
+        /// Specifies the name of the query parameter that identifies this SaaS dynamic failaction.
+        /// </summary>
         public readonly string? SaasQueryString;
+        /// <summary>
+        /// Specifies the substitution pattern (a Perl-compatible regular expression) that defines the SaaS dynamic failaction.
+        /// </summary>
         public readonly string? SaasRegex;
+        /// <summary>
+        /// Specifies the replacement pattern that defines the SaaS dynamic failaction.
+        /// </summary>
         public readonly string? SaasReplace;
+        /// <summary>
+        /// Specifies the static portion of the SaaS dynamic failaction.
+        /// </summary>
         public readonly string? SaasSuffix;
+        /// <summary>
+        /// Identifies the component of the request that identifies the SaaS dynamic fail action.
+        /// </summary>
         public readonly string? SaasType;
+        /// <summary>
+        /// Assigns a new HTTP status code to the failure response.
+        /// </summary>
         public readonly int? StatusCode;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

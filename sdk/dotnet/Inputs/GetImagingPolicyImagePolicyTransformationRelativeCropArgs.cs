@@ -12,27 +12,51 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetImagingPolicyImagePolicyTransformationRelativeCropInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The number of pixels to shrink or expand the right side of the image.
+        /// </summary>
         [Input("east")]
         public Input<string>? East { get; set; }
 
+        /// <summary>
+        /// The number of pixels to shrink or expand the right side of the image.
+        /// </summary>
         [Input("eastVar")]
         public Input<string>? EastVar { get; set; }
 
+        /// <summary>
+        /// The number of pixels to shrink or expand the top side of the image.
+        /// </summary>
         [Input("north")]
         public Input<string>? North { get; set; }
 
+        /// <summary>
+        /// The number of pixels to shrink or expand the top side of the image.
+        /// </summary>
         [Input("northVar")]
         public Input<string>? NorthVar { get; set; }
 
+        /// <summary>
+        /// The number of pixels to shrink or expand the bottom side of the image.
+        /// </summary>
         [Input("south")]
         public Input<string>? South { get; set; }
 
+        /// <summary>
+        /// The number of pixels to shrink or expand the bottom side of the image.
+        /// </summary>
         [Input("southVar")]
         public Input<string>? SouthVar { get; set; }
 
+        /// <summary>
+        /// The number of pixels to shrink or expand the left side of the image.
+        /// </summary>
         [Input("west")]
         public Input<string>? West { get; set; }
 
+        /// <summary>
+        /// The number of pixels to shrink or expand the left side of the image.
+        /// </summary>
         [Input("westVar")]
         public Input<string>? WestVar { get; set; }
 

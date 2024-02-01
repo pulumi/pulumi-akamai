@@ -15,37 +15,77 @@ public final class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBoc
 
     public static final GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBoccArgs Empty = new GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBoccArgs();
 
+    /**
+     * The sampling frequency of requests and forwards for EDGE, MIDGRESS, and ORIGIN beacons.
+     * 
+     */
     @Import(name="conditionalSamplingFrequency", required=true)
     private Output<String> conditionalSamplingFrequency;
 
+    /**
+     * @return The sampling frequency of requests and forwards for EDGE, MIDGRESS, and ORIGIN beacons.
+     * 
+     */
     public Output<String> conditionalSamplingFrequency() {
         return this.conditionalSamplingFrequency;
     }
 
+    /**
+     * Enable diagnostic data beacons for consumption by the Broadcast Operations Control Center.
+     * 
+     */
     @Import(name="enabled", required=true)
     private Output<Boolean> enabled;
 
+    /**
+     * @return Enable diagnostic data beacons for consumption by the Broadcast Operations Control Center.
+     * 
+     */
     public Output<Boolean> enabled() {
         return this.enabled;
     }
 
+    /**
+     * Select whether to beacon diagnostics data for internal ORIGIN_ONLY, MIDGRESS_ONLY, or both ORIGIN_AND_MIDGRESS forwards.
+     * 
+     */
     @Import(name="forwardType", required=true)
     private Output<String> forwardType;
 
+    /**
+     * @return Select whether to beacon diagnostics data for internal ORIGIN_ONLY, MIDGRESS_ONLY, or both ORIGIN_AND_MIDGRESS forwards.
+     * 
+     */
     public Output<String> forwardType() {
         return this.forwardType;
     }
 
+    /**
+     * Select whether to beacon diagnostics data for EDGE_ONLY or EDGE_AND_MIDGRESS requests.
+     * 
+     */
     @Import(name="requestType", required=true)
     private Output<String> requestType;
 
+    /**
+     * @return Select whether to beacon diagnostics data for EDGE_ONLY or EDGE_AND_MIDGRESS requests.
+     * 
+     */
     public Output<String> requestType() {
         return this.requestType;
     }
 
+    /**
+     * The sampling frequency of requests and forwards for EDGE, MIDGRESS, and ORIGIN beacons.
+     * 
+     */
     @Import(name="samplingFrequency", required=true)
     private Output<String> samplingFrequency;
 
+    /**
+     * @return The sampling frequency of requests and forwards for EDGE, MIDGRESS, and ORIGIN beacons.
+     * 
+     */
     public Output<String> samplingFrequency() {
         return this.samplingFrequency;
     }
@@ -78,47 +118,107 @@ public final class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBoc
             $ = new GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBoccArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param conditionalSamplingFrequency The sampling frequency of requests and forwards for EDGE, MIDGRESS, and ORIGIN beacons.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditionalSamplingFrequency(Output<String> conditionalSamplingFrequency) {
             $.conditionalSamplingFrequency = conditionalSamplingFrequency;
             return this;
         }
 
+        /**
+         * @param conditionalSamplingFrequency The sampling frequency of requests and forwards for EDGE, MIDGRESS, and ORIGIN beacons.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditionalSamplingFrequency(String conditionalSamplingFrequency) {
             return conditionalSamplingFrequency(Output.of(conditionalSamplingFrequency));
         }
 
+        /**
+         * @param enabled Enable diagnostic data beacons for consumption by the Broadcast Operations Control Center.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(Output<Boolean> enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param enabled Enable diagnostic data beacons for consumption by the Broadcast Operations Control Center.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(Boolean enabled) {
             return enabled(Output.of(enabled));
         }
 
+        /**
+         * @param forwardType Select whether to beacon diagnostics data for internal ORIGIN_ONLY, MIDGRESS_ONLY, or both ORIGIN_AND_MIDGRESS forwards.
+         * 
+         * @return builder
+         * 
+         */
         public Builder forwardType(Output<String> forwardType) {
             $.forwardType = forwardType;
             return this;
         }
 
+        /**
+         * @param forwardType Select whether to beacon diagnostics data for internal ORIGIN_ONLY, MIDGRESS_ONLY, or both ORIGIN_AND_MIDGRESS forwards.
+         * 
+         * @return builder
+         * 
+         */
         public Builder forwardType(String forwardType) {
             return forwardType(Output.of(forwardType));
         }
 
+        /**
+         * @param requestType Select whether to beacon diagnostics data for EDGE_ONLY or EDGE_AND_MIDGRESS requests.
+         * 
+         * @return builder
+         * 
+         */
         public Builder requestType(Output<String> requestType) {
             $.requestType = requestType;
             return this;
         }
 
+        /**
+         * @param requestType Select whether to beacon diagnostics data for EDGE_ONLY or EDGE_AND_MIDGRESS requests.
+         * 
+         * @return builder
+         * 
+         */
         public Builder requestType(String requestType) {
             return requestType(Output.of(requestType));
         }
 
+        /**
+         * @param samplingFrequency The sampling frequency of requests and forwards for EDGE, MIDGRESS, and ORIGIN beacons.
+         * 
+         * @return builder
+         * 
+         */
         public Builder samplingFrequency(Output<String> samplingFrequency) {
             $.samplingFrequency = samplingFrequency;
             return this;
         }
 
+        /**
+         * @param samplingFrequency The sampling frequency of requests and forwards for EDGE, MIDGRESS, and ORIGIN beacons.
+         * 
+         * @return builder
+         * 
+         */
         public Builder samplingFrequency(String samplingFrequency) {
             return samplingFrequency(Output.of(samplingFrequency));
         }

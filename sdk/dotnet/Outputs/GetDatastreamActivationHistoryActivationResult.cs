@@ -13,10 +13,25 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetDatastreamActivationHistoryActivationResult
     {
+        /// <summary>
+        /// The username who activated or deactivated the stream
+        /// </summary>
         public readonly string ModifiedBy;
+        /// <summary>
+        /// The date and time when activation status was modified
+        /// </summary>
         public readonly string ModifiedDate;
+        /// <summary>
+        /// Stream Status
+        /// </summary>
         public readonly string Status;
+        /// <summary>
+        /// Identifies the stream
+        /// </summary>
         public readonly int StreamId;
+        /// <summary>
+        /// Identifies the version of the stream
+        /// </summary>
         public readonly int StreamVersion;
 
         [OutputConstructor]

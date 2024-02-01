@@ -17,117 +17,341 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorApplicationLoadBalancer {
+    /**
+     * @return Specifies a NetStorage account for a static maintenance page as a fallback when no origins are available.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorApplicationLoadBalancerAllDownNetStorage allDownNetStorage;
+    /**
+     * @return Specifies the fallback maintenance page&#39;s filename, expressed as a full path from the root of the NetStorage server.
+     * 
+     */
     private @Nullable String allDownNetStorageFile;
+    /**
+     * @return Specifies the HTTP response code when all load-balancing origins are unavailable.
+     * 
+     */
     private @Nullable String allDownStatusCode;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String allDownTitle;
+    /**
+     * @return Allows the cache to prefresh.  Only appropriate if all origins serve the same content for the same URL.
+     * 
+     */
     private @Nullable Boolean allowCachePrefresh;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String cachedContentTitle;
+    /**
+     * @return Identifies the Cloudlet policy.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorApplicationLoadBalancerCloudletPolicy cloudletPolicy;
+    /**
+     * @return Activates the Application Load Balancer Cloudlet.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Sets the number of failed requests that would trigger the failover process.
+     * 
+     */
     private @Nullable Integer failoverAttemptsThreshold;
+    /**
+     * @return Determines what to do if an origin fails.
+     * 
+     */
     private @Nullable String failoverMode;
+    /**
+     * @return Specifies a fixed set of failover mapping rules.
+     * 
+     */
     private @Nullable List<GetPropertyRulesBuilderRulesV20230105BehaviorApplicationLoadBalancerFailoverOriginMap> failoverOriginMaps;
+    /**
+     * @return Specifies a set of HTTP status codes that signal a failure on the origin, in which case the cookie that binds the client to that origin is invalidated and the client is rerouted to another available origin.
+     * 
+     */
     private @Nullable List<String> failoverStatusCodes;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String failoverTitle;
+    /**
+     * @return A label to distinguish this Application Load Balancer policy from any others within the same property.
+     * 
+     */
     private @Nullable String label;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Specifies the name for your session cookie.
+     * 
+     */
     private @Nullable String originCookieName;
+    /**
+     * @return Specifies whether to use a cookie domain with the stickiness cookie, to tell the browser to which domain to send the cookie.
+     * 
+     */
     private @Nullable Boolean specifyStickinessCookieDomain;
+    /**
+     * @return Sets whether to assign a `salt` value automatically to the cookie to prevent manipulation by the user. You should not enable this if sharing the population cookie across more than one property.
+     * 
+     */
     private @Nullable Boolean stickinessCookieAutomaticSalt;
+    /**
+     * @return Specifies the domain to track the stickiness cookie.
+     * 
+     */
     private @Nullable String stickinessCookieDomain;
+    /**
+     * @return Specifies the stickiness cookie&#39;s salt value. Use this option to share the cookie across many properties.
+     * 
+     */
     private @Nullable String stickinessCookieSalt;
+    /**
+     * @return Ensures the cookie is transmitted only over HTTP.
+     * 
+     */
     private @Nullable Boolean stickinessCookieSetHttpOnlyFlag;
+    /**
+     * @return Determines how a cookie persistently associates the client with a load-balanced origin.
+     * 
+     */
     private @Nullable String stickinessCookieType;
+    /**
+     * @return Sets how long it is before the cookie expires.
+     * 
+     */
     private @Nullable String stickinessDuration;
+    /**
+     * @return Specifies when the cookie expires.
+     * 
+     */
     private @Nullable String stickinessExpirationDate;
+    /**
+     * @return Extends the duration of the cookie with each new request. When enabled, the `DURATION` thus specifies the latency between requests that would cause the cookie to expire.
+     * 
+     */
     private @Nullable Boolean stickinessRefresh;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String stickinessTitle;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorApplicationLoadBalancer() {}
+    /**
+     * @return Specifies a NetStorage account for a static maintenance page as a fallback when no origins are available.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorApplicationLoadBalancerAllDownNetStorage> allDownNetStorage() {
         return Optional.ofNullable(this.allDownNetStorage);
     }
+    /**
+     * @return Specifies the fallback maintenance page&#39;s filename, expressed as a full path from the root of the NetStorage server.
+     * 
+     */
     public Optional<String> allDownNetStorageFile() {
         return Optional.ofNullable(this.allDownNetStorageFile);
     }
+    /**
+     * @return Specifies the HTTP response code when all load-balancing origins are unavailable.
+     * 
+     */
     public Optional<String> allDownStatusCode() {
         return Optional.ofNullable(this.allDownStatusCode);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> allDownTitle() {
         return Optional.ofNullable(this.allDownTitle);
     }
+    /**
+     * @return Allows the cache to prefresh.  Only appropriate if all origins serve the same content for the same URL.
+     * 
+     */
     public Optional<Boolean> allowCachePrefresh() {
         return Optional.ofNullable(this.allowCachePrefresh);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> cachedContentTitle() {
         return Optional.ofNullable(this.cachedContentTitle);
     }
+    /**
+     * @return Identifies the Cloudlet policy.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorApplicationLoadBalancerCloudletPolicy> cloudletPolicy() {
         return Optional.ofNullable(this.cloudletPolicy);
     }
+    /**
+     * @return Activates the Application Load Balancer Cloudlet.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Sets the number of failed requests that would trigger the failover process.
+     * 
+     */
     public Optional<Integer> failoverAttemptsThreshold() {
         return Optional.ofNullable(this.failoverAttemptsThreshold);
     }
+    /**
+     * @return Determines what to do if an origin fails.
+     * 
+     */
     public Optional<String> failoverMode() {
         return Optional.ofNullable(this.failoverMode);
     }
+    /**
+     * @return Specifies a fixed set of failover mapping rules.
+     * 
+     */
     public List<GetPropertyRulesBuilderRulesV20230105BehaviorApplicationLoadBalancerFailoverOriginMap> failoverOriginMaps() {
         return this.failoverOriginMaps == null ? List.of() : this.failoverOriginMaps;
     }
+    /**
+     * @return Specifies a set of HTTP status codes that signal a failure on the origin, in which case the cookie that binds the client to that origin is invalidated and the client is rerouted to another available origin.
+     * 
+     */
     public List<String> failoverStatusCodes() {
         return this.failoverStatusCodes == null ? List.of() : this.failoverStatusCodes;
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> failoverTitle() {
         return Optional.ofNullable(this.failoverTitle);
     }
+    /**
+     * @return A label to distinguish this Application Load Balancer policy from any others within the same property.
+     * 
+     */
     public Optional<String> label() {
         return Optional.ofNullable(this.label);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Specifies the name for your session cookie.
+     * 
+     */
     public Optional<String> originCookieName() {
         return Optional.ofNullable(this.originCookieName);
     }
+    /**
+     * @return Specifies whether to use a cookie domain with the stickiness cookie, to tell the browser to which domain to send the cookie.
+     * 
+     */
     public Optional<Boolean> specifyStickinessCookieDomain() {
         return Optional.ofNullable(this.specifyStickinessCookieDomain);
     }
+    /**
+     * @return Sets whether to assign a `salt` value automatically to the cookie to prevent manipulation by the user. You should not enable this if sharing the population cookie across more than one property.
+     * 
+     */
     public Optional<Boolean> stickinessCookieAutomaticSalt() {
         return Optional.ofNullable(this.stickinessCookieAutomaticSalt);
     }
+    /**
+     * @return Specifies the domain to track the stickiness cookie.
+     * 
+     */
     public Optional<String> stickinessCookieDomain() {
         return Optional.ofNullable(this.stickinessCookieDomain);
     }
+    /**
+     * @return Specifies the stickiness cookie&#39;s salt value. Use this option to share the cookie across many properties.
+     * 
+     */
     public Optional<String> stickinessCookieSalt() {
         return Optional.ofNullable(this.stickinessCookieSalt);
     }
+    /**
+     * @return Ensures the cookie is transmitted only over HTTP.
+     * 
+     */
     public Optional<Boolean> stickinessCookieSetHttpOnlyFlag() {
         return Optional.ofNullable(this.stickinessCookieSetHttpOnlyFlag);
     }
+    /**
+     * @return Determines how a cookie persistently associates the client with a load-balanced origin.
+     * 
+     */
     public Optional<String> stickinessCookieType() {
         return Optional.ofNullable(this.stickinessCookieType);
     }
+    /**
+     * @return Sets how long it is before the cookie expires.
+     * 
+     */
     public Optional<String> stickinessDuration() {
         return Optional.ofNullable(this.stickinessDuration);
     }
+    /**
+     * @return Specifies when the cookie expires.
+     * 
+     */
     public Optional<String> stickinessExpirationDate() {
         return Optional.ofNullable(this.stickinessExpirationDate);
     }
+    /**
+     * @return Extends the duration of the cookie with each new request. When enabled, the `DURATION` thus specifies the latency between requests that would cause the cookie to expire.
+     * 
+     */
     public Optional<Boolean> stickinessRefresh() {
         return Optional.ofNullable(this.stickinessRefresh);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> stickinessTitle() {
         return Optional.ofNullable(this.stickinessTitle);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

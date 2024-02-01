@@ -12,24 +12,45 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetCloudwrapperCapacitiesCapacityInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Capacity allocated for the location.
+        /// </summary>
         [Input("approved", required: true)]
         public Input<Inputs.GetCloudwrapperCapacitiesCapacityApprovedInputArgs> Approved { get; set; } = null!;
 
+        /// <summary>
+        /// Capacity already assigned to Cloud Wrapper configurations.
+        /// </summary>
         [Input("assigned", required: true)]
         public Input<Inputs.GetCloudwrapperCapacitiesCapacityAssignedInputArgs> Assigned { get; set; } = null!;
 
+        /// <summary>
+        /// Contract ID having Cloud Wrapper entitlement.
+        /// </summary>
         [Input("contractId", required: true)]
         public Input<string> ContractId { get; set; } = null!;
 
+        /// <summary>
+        /// Unique identifier of the configured location.
+        /// </summary>
         [Input("locationId", required: true)]
         public Input<int> LocationId { get; set; } = null!;
 
+        /// <summary>
+        /// Name of the location.
+        /// </summary>
         [Input("locationName", required: true)]
         public Input<string> LocationName { get; set; } = null!;
 
+        /// <summary>
+        /// The type of property this capacity is related to.
+        /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 
+        /// <summary>
+        /// Capacity value that can be assigned to Cloud Wrapper configurations.
+        /// </summary>
         [Input("unassigned", required: true)]
         public Input<Inputs.GetCloudwrapperCapacitiesCapacityUnassignedInputArgs> Unassigned { get; set; } = null!;
 

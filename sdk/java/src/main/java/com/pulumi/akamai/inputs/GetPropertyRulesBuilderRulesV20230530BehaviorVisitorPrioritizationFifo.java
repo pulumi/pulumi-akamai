@@ -17,86 +17,182 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritiz
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationFifo Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationFifo();
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     @Import(name="accessTitle")
     private @Nullable String accessTitle;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> accessTitle() {
         return Optional.ofNullable(this.accessTitle);
     }
 
+    /**
+     * This identifies the Visitor Prioritization FIFO shared policy to use with this behavior. You can list available shared policies with the `Cloudlets API`.
+     * 
+     */
     @Import(name="cloudletSharedPolicy")
     private @Nullable Integer cloudletSharedPolicy;
 
+    /**
+     * @return This identifies the Visitor Prioritization FIFO shared policy to use with this behavior. You can list available shared policies with the `Cloudlets API`.
+     * 
+     */
     public Optional<Integer> cloudletSharedPolicy() {
         return Optional.ofNullable(this.cloudletSharedPolicy);
     }
 
+    /**
+     * This specifies a domain for all session cookies. In case you configure many property hostnames, this may be their common domain. Make sure the user agent accepts the custom domain for any request matching the `visitorPrioritizationFifo` behavior. Don&#39;t use top level domains (TLDs).
+     * 
+     */
     @Import(name="customCookieDomain")
     private @Nullable String customCookieDomain;
 
+    /**
+     * @return This specifies a domain for all session cookies. In case you configure many property hostnames, this may be their common domain. Make sure the user agent accepts the custom domain for any request matching the `visitorPrioritizationFifo` behavior. Don&#39;t use top level domains (TLDs).
+     * 
+     */
     public Optional<String> customCookieDomain() {
         return Optional.ofNullable(this.customCookieDomain);
     }
 
+    /**
+     * This specifies how to set the domain used to establish a session with the visitor.
+     * 
+     */
     @Import(name="domainConfig")
     private @Nullable String domainConfig;
 
+    /**
+     * @return This specifies how to set the domain used to establish a session with the visitor.
+     * 
+     */
     public Optional<String> domainConfig() {
         return Optional.ofNullable(this.domainConfig);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Whether the queue session should prolong automatically when the `sessionDuration` expires  and the visitor remains active.
+     * 
+     */
     @Import(name="sessionAutoProlong")
     private @Nullable Boolean sessionAutoProlong;
 
+    /**
+     * @return Whether the queue session should prolong automatically when the `sessionDuration` expires  and the visitor remains active.
+     * 
+     */
     public Optional<Boolean> sessionAutoProlong() {
         return Optional.ofNullable(this.sessionAutoProlong);
     }
 
+    /**
+     * Specifies the number of seconds users remain in the waiting room queue.
+     * 
+     */
     @Import(name="sessionDuration")
     private @Nullable Integer sessionDuration;
 
+    /**
+     * @return Specifies the number of seconds users remain in the waiting room queue.
+     * 
+     */
     public Optional<Integer> sessionDuration() {
         return Optional.ofNullable(this.sessionDuration);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
 
+    /**
+     * This specifies the base paths to static resources such as `JavaScript`, `CSS`, or image files for the `Waiting Room Main Page` requests. The option supports the `*` wildcard wildcard that matches zero or more characters. Requests matching any of these paths aren&#39;t blocked, but marked as Waiting Room Assets and passed through to the origin. See the `visitorPrioritizationRequest` match criteria to further customize these requests.
+     * 
+     */
     @Import(name="waitingRoomAssetsPaths")
     private @Nullable List<String> waitingRoomAssetsPaths;
 
+    /**
+     * @return This specifies the base paths to static resources such as `JavaScript`, `CSS`, or image files for the `Waiting Room Main Page` requests. The option supports the `*` wildcard wildcard that matches zero or more characters. Requests matching any of these paths aren&#39;t blocked, but marked as Waiting Room Assets and passed through to the origin. See the `visitorPrioritizationRequest` match criteria to further customize these requests.
+     * 
+     */
     public Optional<List<String>> waitingRoomAssetsPaths() {
         return Optional.ofNullable(this.waitingRoomAssetsPaths);
     }
 
+    /**
+     * This specifies the path to the waiting room main page on the origin server, for example `/vp/waiting-room.html`. When the request is marked as `Waiting Room Main Page` and blocked, the visitor enters the waiting room. The behavior sets the outgoing request path to the `waitingRoomPath` and modifies the cache key accordingly. See the `visitorPrioritizationRequest` match criteria to further customize these requests.
+     * 
+     */
     @Import(name="waitingRoomPath")
     private @Nullable String waitingRoomPath;
 
+    /**
+     * @return This specifies the path to the waiting room main page on the origin server, for example `/vp/waiting-room.html`. When the request is marked as `Waiting Room Main Page` and blocked, the visitor enters the waiting room. The behavior sets the outgoing request path to the `waitingRoomPath` and modifies the cache key accordingly. See the `visitorPrioritizationRequest` match criteria to further customize these requests.
+     * 
+     */
     public Optional<String> waitingRoomPath() {
         return Optional.ofNullable(this.waitingRoomPath);
     }
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     @Import(name="waitingRoomTitle")
     private @Nullable String waitingRoomTitle;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> waitingRoomTitle() {
         return Optional.ofNullable(this.waitingRoomTitle);
     }
@@ -136,65 +232,143 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritiz
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationFifo(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param accessTitle This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder accessTitle(@Nullable String accessTitle) {
             $.accessTitle = accessTitle;
             return this;
         }
 
+        /**
+         * @param cloudletSharedPolicy This identifies the Visitor Prioritization FIFO shared policy to use with this behavior. You can list available shared policies with the `Cloudlets API`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cloudletSharedPolicy(@Nullable Integer cloudletSharedPolicy) {
             $.cloudletSharedPolicy = cloudletSharedPolicy;
             return this;
         }
 
+        /**
+         * @param customCookieDomain This specifies a domain for all session cookies. In case you configure many property hostnames, this may be their common domain. Make sure the user agent accepts the custom domain for any request matching the `visitorPrioritizationFifo` behavior. Don&#39;t use top level domains (TLDs).
+         * 
+         * @return builder
+         * 
+         */
         public Builder customCookieDomain(@Nullable String customCookieDomain) {
             $.customCookieDomain = customCookieDomain;
             return this;
         }
 
+        /**
+         * @param domainConfig This specifies how to set the domain used to establish a session with the visitor.
+         * 
+         * @return builder
+         * 
+         */
         public Builder domainConfig(@Nullable String domainConfig) {
             $.domainConfig = domainConfig;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param sessionAutoProlong Whether the queue session should prolong automatically when the `sessionDuration` expires  and the visitor remains active.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sessionAutoProlong(@Nullable Boolean sessionAutoProlong) {
             $.sessionAutoProlong = sessionAutoProlong;
             return this;
         }
 
+        /**
+         * @param sessionDuration Specifies the number of seconds users remain in the waiting room queue.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sessionDuration(@Nullable Integer sessionDuration) {
             $.sessionDuration = sessionDuration;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param waitingRoomAssetsPaths This specifies the base paths to static resources such as `JavaScript`, `CSS`, or image files for the `Waiting Room Main Page` requests. The option supports the `*` wildcard wildcard that matches zero or more characters. Requests matching any of these paths aren&#39;t blocked, but marked as Waiting Room Assets and passed through to the origin. See the `visitorPrioritizationRequest` match criteria to further customize these requests.
+         * 
+         * @return builder
+         * 
+         */
         public Builder waitingRoomAssetsPaths(@Nullable List<String> waitingRoomAssetsPaths) {
             $.waitingRoomAssetsPaths = waitingRoomAssetsPaths;
             return this;
         }
 
+        /**
+         * @param waitingRoomAssetsPaths This specifies the base paths to static resources such as `JavaScript`, `CSS`, or image files for the `Waiting Room Main Page` requests. The option supports the `*` wildcard wildcard that matches zero or more characters. Requests matching any of these paths aren&#39;t blocked, but marked as Waiting Room Assets and passed through to the origin. See the `visitorPrioritizationRequest` match criteria to further customize these requests.
+         * 
+         * @return builder
+         * 
+         */
         public Builder waitingRoomAssetsPaths(String... waitingRoomAssetsPaths) {
             return waitingRoomAssetsPaths(List.of(waitingRoomAssetsPaths));
         }
 
+        /**
+         * @param waitingRoomPath This specifies the path to the waiting room main page on the origin server, for example `/vp/waiting-room.html`. When the request is marked as `Waiting Room Main Page` and blocked, the visitor enters the waiting room. The behavior sets the outgoing request path to the `waitingRoomPath` and modifies the cache key accordingly. See the `visitorPrioritizationRequest` match criteria to further customize these requests.
+         * 
+         * @return builder
+         * 
+         */
         public Builder waitingRoomPath(@Nullable String waitingRoomPath) {
             $.waitingRoomPath = waitingRoomPath;
             return this;
         }
 
+        /**
+         * @param waitingRoomTitle This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder waitingRoomTitle(@Nullable String waitingRoomTitle) {
             $.waitingRoomTitle = waitingRoomTitle;
             return this;

@@ -13,105 +13,305 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorContentTargetingProtection {
+    /**
+     * @return Specifies a set of two-character ISO 3166 country codes from which to allow or deny traffic. See `EdgeScape Data Codes` for a list.
+     * 
+     */
     private @Nullable List<String> countries;
+    /**
+     * @return Specifies the set of Designated Market Area codes from which to allow or deny traffic.  See `EdgeScape Data Codes` for a list.
+     * 
+     */
     private @Nullable List<String> dmas;
+    /**
+     * @return When enabled, verifies IP addresses are unique to specific geographic regions.
+     * 
+     */
     private @Nullable Boolean enableGeoProtection;
+    /**
+     * @return When enabled, redirects denied requests rather than responding with an error code.
+     * 
+     */
     private @Nullable Boolean enableGeoRedirectOnDeny;
+    /**
+     * @return Allows you to control access to your content from specific sets of IP addresses and CIDR blocks.
+     * 
+     */
     private @Nullable Boolean enableIpProtection;
+    /**
+     * @return When enabled, redirects denied requests rather than responding with an error code.
+     * 
+     */
     private @Nullable Boolean enableIpRedirectOnDeny;
+    /**
+     * @return Allows you allow traffic from certain referring websites, and disallow traffic from unauthorized sites that hijack those links.
+     * 
+     */
     private @Nullable Boolean enableReferrerProtection;
+    /**
+     * @return When enabled, redirects denied requests rather than responding with an error code.
+     * 
+     */
     private @Nullable Boolean enableReferrerRedirectOnDeny;
+    /**
+     * @return Enables the Content Targeting feature.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Specifies how to handle requests.
+     * 
+     */
     private @Nullable String geoProtectionMode;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String geoProtectionTitle;
+    /**
+     * @return This specifies the full URL to the redirect page for denied requests.
+     * 
+     */
     private @Nullable String geoRedirectUrl;
+    /**
+     * @return Specify a set of IP addresses or CIDR blocks to allow or deny.
+     * 
+     */
     private @Nullable List<String> ipAddresses;
+    /**
+     * @return Specifies how to handle requests.
+     * 
+     */
     private @Nullable String ipProtectionMode;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String ipProtectionTitle;
+    /**
+     * @return This specifies the full URL to the redirect page for denied requests.
+     * 
+     */
     private @Nullable String ipRedirectUrl;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Specify a set of IP addresses or CIDR blocks that exceptions to the set of included or excluded areas.
+     * 
+     */
     private @Nullable List<String> overrideIpAddresses;
+    /**
+     * @return Specifies the set of domains from which to allow or deny traffic.
+     * 
+     */
     private @Nullable List<String> referrerDomains;
+    /**
+     * @return Specify the action to take.
+     * 
+     */
     private @Nullable String referrerProtectionMode;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String referrerProtectionTitle;
+    /**
+     * @return This specifies the full URL to the redirect page for denied requests.
+     * 
+     */
     private @Nullable String referrerRedirectUrl;
+    /**
+     * @return Specifies a set of ISO 3166-2 regional codes from which to allow or deny traffic. See `EdgeScape Data Codes` for a list.
+     * 
+     */
     private @Nullable List<String> regions;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorContentTargetingProtection() {}
+    /**
+     * @return Specifies a set of two-character ISO 3166 country codes from which to allow or deny traffic. See `EdgeScape Data Codes` for a list.
+     * 
+     */
     public List<String> countries() {
         return this.countries == null ? List.of() : this.countries;
     }
+    /**
+     * @return Specifies the set of Designated Market Area codes from which to allow or deny traffic.  See `EdgeScape Data Codes` for a list.
+     * 
+     */
     public List<String> dmas() {
         return this.dmas == null ? List.of() : this.dmas;
     }
+    /**
+     * @return When enabled, verifies IP addresses are unique to specific geographic regions.
+     * 
+     */
     public Optional<Boolean> enableGeoProtection() {
         return Optional.ofNullable(this.enableGeoProtection);
     }
+    /**
+     * @return When enabled, redirects denied requests rather than responding with an error code.
+     * 
+     */
     public Optional<Boolean> enableGeoRedirectOnDeny() {
         return Optional.ofNullable(this.enableGeoRedirectOnDeny);
     }
+    /**
+     * @return Allows you to control access to your content from specific sets of IP addresses and CIDR blocks.
+     * 
+     */
     public Optional<Boolean> enableIpProtection() {
         return Optional.ofNullable(this.enableIpProtection);
     }
+    /**
+     * @return When enabled, redirects denied requests rather than responding with an error code.
+     * 
+     */
     public Optional<Boolean> enableIpRedirectOnDeny() {
         return Optional.ofNullable(this.enableIpRedirectOnDeny);
     }
+    /**
+     * @return Allows you allow traffic from certain referring websites, and disallow traffic from unauthorized sites that hijack those links.
+     * 
+     */
     public Optional<Boolean> enableReferrerProtection() {
         return Optional.ofNullable(this.enableReferrerProtection);
     }
+    /**
+     * @return When enabled, redirects denied requests rather than responding with an error code.
+     * 
+     */
     public Optional<Boolean> enableReferrerRedirectOnDeny() {
         return Optional.ofNullable(this.enableReferrerRedirectOnDeny);
     }
+    /**
+     * @return Enables the Content Targeting feature.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Specifies how to handle requests.
+     * 
+     */
     public Optional<String> geoProtectionMode() {
         return Optional.ofNullable(this.geoProtectionMode);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> geoProtectionTitle() {
         return Optional.ofNullable(this.geoProtectionTitle);
     }
+    /**
+     * @return This specifies the full URL to the redirect page for denied requests.
+     * 
+     */
     public Optional<String> geoRedirectUrl() {
         return Optional.ofNullable(this.geoRedirectUrl);
     }
+    /**
+     * @return Specify a set of IP addresses or CIDR blocks to allow or deny.
+     * 
+     */
     public List<String> ipAddresses() {
         return this.ipAddresses == null ? List.of() : this.ipAddresses;
     }
+    /**
+     * @return Specifies how to handle requests.
+     * 
+     */
     public Optional<String> ipProtectionMode() {
         return Optional.ofNullable(this.ipProtectionMode);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> ipProtectionTitle() {
         return Optional.ofNullable(this.ipProtectionTitle);
     }
+    /**
+     * @return This specifies the full URL to the redirect page for denied requests.
+     * 
+     */
     public Optional<String> ipRedirectUrl() {
         return Optional.ofNullable(this.ipRedirectUrl);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Specify a set of IP addresses or CIDR blocks that exceptions to the set of included or excluded areas.
+     * 
+     */
     public List<String> overrideIpAddresses() {
         return this.overrideIpAddresses == null ? List.of() : this.overrideIpAddresses;
     }
+    /**
+     * @return Specifies the set of domains from which to allow or deny traffic.
+     * 
+     */
     public List<String> referrerDomains() {
         return this.referrerDomains == null ? List.of() : this.referrerDomains;
     }
+    /**
+     * @return Specify the action to take.
+     * 
+     */
     public Optional<String> referrerProtectionMode() {
         return Optional.ofNullable(this.referrerProtectionMode);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> referrerProtectionTitle() {
         return Optional.ofNullable(this.referrerProtectionTitle);
     }
+    /**
+     * @return This specifies the full URL to the redirect page for denied requests.
+     * 
+     */
     public Optional<String> referrerRedirectUrl() {
         return Optional.ofNullable(this.referrerRedirectUrl);
     }
+    /**
+     * @return Specifies a set of ISO 3166-2 regional codes from which to allow or deny traffic. See `EdgeScape Data Codes` for a list.
+     * 
+     */
     public List<String> regions() {
         return this.regions == null ? List.of() : this.regions;
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

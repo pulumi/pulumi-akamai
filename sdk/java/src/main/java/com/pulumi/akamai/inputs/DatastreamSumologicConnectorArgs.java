@@ -17,51 +17,107 @@ public final class DatastreamSumologicConnectorArgs extends com.pulumi.resources
 
     public static final DatastreamSumologicConnectorArgs Empty = new DatastreamSumologicConnectorArgs();
 
+    /**
+     * The unique HTTP collector code of Sumo Logic endpoint
+     * 
+     */
     @Import(name="collectorCode", required=true)
     private Output<String> collectorCode;
 
+    /**
+     * @return The unique HTTP collector code of Sumo Logic endpoint
+     * 
+     */
     public Output<String> collectorCode() {
         return this.collectorCode;
     }
 
+    /**
+     * Indicates whether the logs should be compressed
+     * 
+     */
     @Import(name="compressLogs")
     private @Nullable Output<Boolean> compressLogs;
 
+    /**
+     * @return Indicates whether the logs should be compressed
+     * 
+     */
     public Optional<Output<Boolean>> compressLogs() {
         return Optional.ofNullable(this.compressLogs);
     }
 
+    /**
+     * Content type to pass in the log file header
+     * 
+     */
     @Import(name="contentType")
     private @Nullable Output<String> contentType;
 
+    /**
+     * @return Content type to pass in the log file header
+     * 
+     */
     public Optional<Output<String>> contentType() {
         return Optional.ofNullable(this.contentType);
     }
 
+    /**
+     * The name of custom header passed with the request to the destination
+     * 
+     */
     @Import(name="customHeaderName")
     private @Nullable Output<String> customHeaderName;
 
+    /**
+     * @return The name of custom header passed with the request to the destination
+     * 
+     */
     public Optional<Output<String>> customHeaderName() {
         return Optional.ofNullable(this.customHeaderName);
     }
 
+    /**
+     * The custom header&#39;s contents passed with the request to the destination
+     * 
+     */
     @Import(name="customHeaderValue")
     private @Nullable Output<String> customHeaderValue;
 
+    /**
+     * @return The custom header&#39;s contents passed with the request to the destination
+     * 
+     */
     public Optional<Output<String>> customHeaderValue() {
         return Optional.ofNullable(this.customHeaderValue);
     }
 
+    /**
+     * The name of the connector
+     * 
+     */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
+    /**
+     * @return The name of the connector
+     * 
+     */
     public Output<String> displayName() {
         return this.displayName;
     }
 
+    /**
+     * The Sumo Logic collection endpoint where logs will be stored
+     * 
+     */
     @Import(name="endpoint", required=true)
     private Output<String> endpoint;
 
+    /**
+     * @return The Sumo Logic collection endpoint where logs will be stored
+     * 
+     */
     public Output<String> endpoint() {
         return this.endpoint;
     }
@@ -96,65 +152,149 @@ public final class DatastreamSumologicConnectorArgs extends com.pulumi.resources
             $ = new DatastreamSumologicConnectorArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param collectorCode The unique HTTP collector code of Sumo Logic endpoint
+         * 
+         * @return builder
+         * 
+         */
         public Builder collectorCode(Output<String> collectorCode) {
             $.collectorCode = collectorCode;
             return this;
         }
 
+        /**
+         * @param collectorCode The unique HTTP collector code of Sumo Logic endpoint
+         * 
+         * @return builder
+         * 
+         */
         public Builder collectorCode(String collectorCode) {
             return collectorCode(Output.of(collectorCode));
         }
 
+        /**
+         * @param compressLogs Indicates whether the logs should be compressed
+         * 
+         * @return builder
+         * 
+         */
         public Builder compressLogs(@Nullable Output<Boolean> compressLogs) {
             $.compressLogs = compressLogs;
             return this;
         }
 
+        /**
+         * @param compressLogs Indicates whether the logs should be compressed
+         * 
+         * @return builder
+         * 
+         */
         public Builder compressLogs(Boolean compressLogs) {
             return compressLogs(Output.of(compressLogs));
         }
 
+        /**
+         * @param contentType Content type to pass in the log file header
+         * 
+         * @return builder
+         * 
+         */
         public Builder contentType(@Nullable Output<String> contentType) {
             $.contentType = contentType;
             return this;
         }
 
+        /**
+         * @param contentType Content type to pass in the log file header
+         * 
+         * @return builder
+         * 
+         */
         public Builder contentType(String contentType) {
             return contentType(Output.of(contentType));
         }
 
+        /**
+         * @param customHeaderName The name of custom header passed with the request to the destination
+         * 
+         * @return builder
+         * 
+         */
         public Builder customHeaderName(@Nullable Output<String> customHeaderName) {
             $.customHeaderName = customHeaderName;
             return this;
         }
 
+        /**
+         * @param customHeaderName The name of custom header passed with the request to the destination
+         * 
+         * @return builder
+         * 
+         */
         public Builder customHeaderName(String customHeaderName) {
             return customHeaderName(Output.of(customHeaderName));
         }
 
+        /**
+         * @param customHeaderValue The custom header&#39;s contents passed with the request to the destination
+         * 
+         * @return builder
+         * 
+         */
         public Builder customHeaderValue(@Nullable Output<String> customHeaderValue) {
             $.customHeaderValue = customHeaderValue;
             return this;
         }
 
+        /**
+         * @param customHeaderValue The custom header&#39;s contents passed with the request to the destination
+         * 
+         * @return builder
+         * 
+         */
         public Builder customHeaderValue(String customHeaderValue) {
             return customHeaderValue(Output.of(customHeaderValue));
         }
 
+        /**
+         * @param displayName The name of the connector
+         * 
+         * @return builder
+         * 
+         */
         public Builder displayName(Output<String> displayName) {
             $.displayName = displayName;
             return this;
         }
 
+        /**
+         * @param displayName The name of the connector
+         * 
+         * @return builder
+         * 
+         */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
         }
 
+        /**
+         * @param endpoint The Sumo Logic collection endpoint where logs will be stored
+         * 
+         * @return builder
+         * 
+         */
         public Builder endpoint(Output<String> endpoint) {
             $.endpoint = endpoint;
             return this;
         }
 
+        /**
+         * @param endpoint The Sumo Logic collection endpoint where logs will be stored
+         * 
+         * @return builder
+         * 
+         */
         public Builder endpoint(String endpoint) {
             return endpoint(Output.of(endpoint));
         }

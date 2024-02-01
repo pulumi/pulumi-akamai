@@ -13,13 +13,37 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetCloudletsRequestControlMatchRuleMatchRuleResult
     {
+        /// <summary>
+        /// If set to allow, the request is sent to origin when all conditions are true. If deny, the request is denied when all conditions are true. If denybranded, the request is denied and rerouted according to the configuration of the Request Control behavior
+        /// </summary>
         public readonly string AllowDeny;
+        /// <summary>
+        /// If set to true, disables a rule so it is not evaluated against incoming requests.
+        /// </summary>
         public readonly bool? Disabled;
+        /// <summary>
+        /// The end time for this match (in seconds since the epoch)
+        /// </summary>
         public readonly int? End;
+        /// <summary>
+        /// Defines a set of match objects
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetCloudletsRequestControlMatchRuleMatchRuleMatchResult> Matches;
+        /// <summary>
+        /// Is used in some cloudlets to support default rules (rule that is always matched)
+        /// </summary>
         public readonly bool? MatchesAlways;
+        /// <summary>
+        /// The name of the rule
+        /// </summary>
         public readonly string? Name;
+        /// <summary>
+        /// The start time for this match (in seconds since the epoch)
+        /// </summary>
         public readonly int? Start;
+        /// <summary>
+        /// The type of Cloudlet the rule is for
+        /// </summary>
         public readonly string Type;
 
         [OutputConstructor]

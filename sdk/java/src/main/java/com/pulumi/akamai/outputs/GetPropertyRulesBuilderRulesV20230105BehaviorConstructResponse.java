@@ -13,37 +13,101 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorConstructResponse {
+    /**
+     * @return HTML response of up to 2000 characters to send to the end-user client.
+     * 
+     */
     private @Nullable String body;
+    /**
+     * @return Serves the custom response.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Removes the underlying object from the cache, since it is not being served.
+     * 
+     */
     private @Nullable Boolean forceEviction;
+    /**
+     * @return Whether to ignore the custom response when purging.
+     * 
+     */
     private @Nullable Boolean ignorePurge;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return The HTTP response code to send to the end-user client.
+     * 
+     */
     private @Nullable Integer responseCode;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorConstructResponse() {}
+    /**
+     * @return HTML response of up to 2000 characters to send to the end-user client.
+     * 
+     */
     public Optional<String> body() {
         return Optional.ofNullable(this.body);
     }
+    /**
+     * @return Serves the custom response.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Removes the underlying object from the cache, since it is not being served.
+     * 
+     */
     public Optional<Boolean> forceEviction() {
         return Optional.ofNullable(this.forceEviction);
     }
+    /**
+     * @return Whether to ignore the custom response when purging.
+     * 
+     */
     public Optional<Boolean> ignorePurge() {
         return Optional.ofNullable(this.ignorePurge);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return The HTTP response code to send to the end-user client.
+     * 
+     */
     public Optional<Integer> responseCode() {
         return Optional.ofNullable(this.responseCode);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

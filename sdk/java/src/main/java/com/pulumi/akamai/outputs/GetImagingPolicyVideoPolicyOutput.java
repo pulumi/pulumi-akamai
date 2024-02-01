@@ -11,29 +11,77 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyVideoPolicyOutput {
+    /**
+     * @return The quality of derivative videos. High preserves video quality with reduced byte savings while low reduces video quality to increase byte savings.
+     * 
+     */
     private @Nullable String perceptualQuality;
+    /**
+     * @return The quality of derivative videos. High preserves video quality with reduced byte savings while low reduces video quality to increase byte savings.
+     * 
+     */
     private @Nullable String perceptualQualityVar;
+    /**
+     * @return Allows you to add a specific placeholder video that appears when a user first requests a video, but before Image &amp; Video Manager processes the video. If not specified the original video plays during the processing time.
+     * 
+     */
     private @Nullable String placeholderVideoUrl;
+    /**
+     * @return Allows you to add a specific placeholder video that appears when a user first requests a video, but before Image &amp; Video Manager processes the video. If not specified the original video plays during the processing time.
+     * 
+     */
     private @Nullable String placeholderVideoUrlVar;
+    /**
+     * @return Override the quality of video to serve when Image &amp; Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of videos for users with faster connections.
+     * 
+     */
     private @Nullable String videoAdaptiveQuality;
+    /**
+     * @return Override the quality of video to serve when Image &amp; Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of videos for users with faster connections.
+     * 
+     */
     private @Nullable String videoAdaptiveQualityVar;
 
     private GetImagingPolicyVideoPolicyOutput() {}
+    /**
+     * @return The quality of derivative videos. High preserves video quality with reduced byte savings while low reduces video quality to increase byte savings.
+     * 
+     */
     public Optional<String> perceptualQuality() {
         return Optional.ofNullable(this.perceptualQuality);
     }
+    /**
+     * @return The quality of derivative videos. High preserves video quality with reduced byte savings while low reduces video quality to increase byte savings.
+     * 
+     */
     public Optional<String> perceptualQualityVar() {
         return Optional.ofNullable(this.perceptualQualityVar);
     }
+    /**
+     * @return Allows you to add a specific placeholder video that appears when a user first requests a video, but before Image &amp; Video Manager processes the video. If not specified the original video plays during the processing time.
+     * 
+     */
     public Optional<String> placeholderVideoUrl() {
         return Optional.ofNullable(this.placeholderVideoUrl);
     }
+    /**
+     * @return Allows you to add a specific placeholder video that appears when a user first requests a video, but before Image &amp; Video Manager processes the video. If not specified the original video plays during the processing time.
+     * 
+     */
     public Optional<String> placeholderVideoUrlVar() {
         return Optional.ofNullable(this.placeholderVideoUrlVar);
     }
+    /**
+     * @return Override the quality of video to serve when Image &amp; Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of videos for users with faster connections.
+     * 
+     */
     public Optional<String> videoAdaptiveQuality() {
         return Optional.ofNullable(this.videoAdaptiveQuality);
     }
+    /**
+     * @return Override the quality of video to serve when Image &amp; Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of videos for users with faster connections.
+     * 
+     */
     public Optional<String> videoAdaptiveQualityVar() {
         return Optional.ofNullable(this.videoAdaptiveQualityVar);
     }

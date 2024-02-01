@@ -17,51 +17,107 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorFirstPartyMarket
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorFirstPartyMarketingPlusArgs Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorFirstPartyMarketingPlusArgs();
 
+    /**
+     * Identifies the Cloudlet policy.
+     * 
+     */
     @Import(name="cloudletPolicy")
     private @Nullable Output<GetPropertyRulesBuilderRulesV20230105BehaviorFirstPartyMarketingPlusCloudletPolicyArgs> cloudletPolicy;
 
+    /**
+     * @return Identifies the Cloudlet policy.
+     * 
+     */
     public Optional<Output<GetPropertyRulesBuilderRulesV20230105BehaviorFirstPartyMarketingPlusCloudletPolicyArgs>> cloudletPolicy() {
         return Optional.ofNullable(this.cloudletPolicy);
     }
 
+    /**
+     * Enables the Cloud Marketing Plus Cloudlet.
+     * 
+     */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
+    /**
+     * @return Enables the Cloud Marketing Plus Cloudlet.
+     * 
+     */
     public Optional<Output<Boolean>> enabled() {
         return Optional.ofNullable(this.enabled);
     }
 
+    /**
+     * Select how to insert the MediaMath JavaScript reference script.
+     * 
+     */
     @Import(name="javaScriptInsertionRule")
     private @Nullable Output<String> javaScriptInsertionRule;
 
+    /**
+     * @return Select how to insert the MediaMath JavaScript reference script.
+     * 
+     */
     public Optional<Output<String>> javaScriptInsertionRule() {
         return Optional.ofNullable(this.javaScriptInsertionRule);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Specify the URL path prefix that distinguishes Cloud Marketing requests from your other web traffic. Include the leading slash character, but no trailing slash.  For example, if the path prefix is `/mmath`, and the request is for `www.example.com/dir`, the new URL is `www.example.com/mmath/dir`.
+     * 
+     */
     @Import(name="mediaMathPrefix")
     private @Nullable Output<String> mediaMathPrefix;
 
+    /**
+     * @return Specify the URL path prefix that distinguishes Cloud Marketing requests from your other web traffic. Include the leading slash character, but no trailing slash.  For example, if the path prefix is `/mmath`, and the request is for `www.example.com/dir`, the new URL is `www.example.com/mmath/dir`.
+     * 
+     */
     public Optional<Output<String>> mediaMathPrefix() {
         return Optional.ofNullable(this.mediaMathPrefix);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -96,65 +152,149 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorFirstPartyMarket
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorFirstPartyMarketingPlusArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param cloudletPolicy Identifies the Cloudlet policy.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cloudletPolicy(@Nullable Output<GetPropertyRulesBuilderRulesV20230105BehaviorFirstPartyMarketingPlusCloudletPolicyArgs> cloudletPolicy) {
             $.cloudletPolicy = cloudletPolicy;
             return this;
         }
 
+        /**
+         * @param cloudletPolicy Identifies the Cloudlet policy.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cloudletPolicy(GetPropertyRulesBuilderRulesV20230105BehaviorFirstPartyMarketingPlusCloudletPolicyArgs cloudletPolicy) {
             return cloudletPolicy(Output.of(cloudletPolicy));
         }
 
+        /**
+         * @param enabled Enables the Cloud Marketing Plus Cloudlet.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(@Nullable Output<Boolean> enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param enabled Enables the Cloud Marketing Plus Cloudlet.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(Boolean enabled) {
             return enabled(Output.of(enabled));
         }
 
+        /**
+         * @param javaScriptInsertionRule Select how to insert the MediaMath JavaScript reference script.
+         * 
+         * @return builder
+         * 
+         */
         public Builder javaScriptInsertionRule(@Nullable Output<String> javaScriptInsertionRule) {
             $.javaScriptInsertionRule = javaScriptInsertionRule;
             return this;
         }
 
+        /**
+         * @param javaScriptInsertionRule Select how to insert the MediaMath JavaScript reference script.
+         * 
+         * @return builder
+         * 
+         */
         public Builder javaScriptInsertionRule(String javaScriptInsertionRule) {
             return javaScriptInsertionRule(Output.of(javaScriptInsertionRule));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param mediaMathPrefix Specify the URL path prefix that distinguishes Cloud Marketing requests from your other web traffic. Include the leading slash character, but no trailing slash.  For example, if the path prefix is `/mmath`, and the request is for `www.example.com/dir`, the new URL is `www.example.com/mmath/dir`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder mediaMathPrefix(@Nullable Output<String> mediaMathPrefix) {
             $.mediaMathPrefix = mediaMathPrefix;
             return this;
         }
 
+        /**
+         * @param mediaMathPrefix Specify the URL path prefix that distinguishes Cloud Marketing requests from your other web traffic. Include the leading slash character, but no trailing slash.  For example, if the path prefix is `/mmath`, and the request is for `www.example.com/dir`, the new URL is `www.example.com/mmath/dir`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder mediaMathPrefix(String mediaMathPrefix) {
             return mediaMathPrefix(Output.of(mediaMathPrefix));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

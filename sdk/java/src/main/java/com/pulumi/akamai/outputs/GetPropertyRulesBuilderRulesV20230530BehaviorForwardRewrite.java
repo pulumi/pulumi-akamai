@@ -14,33 +14,89 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorForwardRewrite {
+    /**
+     * @return Identifies the Cloudlet policy.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530BehaviorForwardRewriteCloudletPolicy cloudletPolicy;
+    /**
+     * @return This identifies the Cloudlet shared policy to use with this behavior. You can list available shared policies with the `Cloudlets API`.
+     * 
+     */
     private @Nullable Integer cloudletSharedPolicy;
+    /**
+     * @return Enables the Forward Rewrite Cloudlet behavior.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Whether you want to use a shared policy for a Cloudlet. Learn more about shared policies and how to create them in `Cloudlets Policy Manager`.
+     * 
+     */
     private @Nullable Boolean isSharedPolicy;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorForwardRewrite() {}
+    /**
+     * @return Identifies the Cloudlet policy.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530BehaviorForwardRewriteCloudletPolicy> cloudletPolicy() {
         return Optional.ofNullable(this.cloudletPolicy);
     }
+    /**
+     * @return This identifies the Cloudlet shared policy to use with this behavior. You can list available shared policies with the `Cloudlets API`.
+     * 
+     */
     public Optional<Integer> cloudletSharedPolicy() {
         return Optional.ofNullable(this.cloudletSharedPolicy);
     }
+    /**
+     * @return Enables the Forward Rewrite Cloudlet behavior.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Whether you want to use a shared policy for a Cloudlet. Learn more about shared policies and how to create them in `Cloudlets Policy Manager`.
+     * 
+     */
     public Optional<Boolean> isSharedPolicy() {
         return Optional.ofNullable(this.isSharedPolicy);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

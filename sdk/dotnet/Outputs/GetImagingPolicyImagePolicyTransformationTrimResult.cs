@@ -13,9 +13,21 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyTransformationTrimResult
     {
+        /// <summary>
+        /// The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.
+        /// </summary>
         public readonly string? Fuzz;
+        /// <summary>
+        /// The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.
+        /// </summary>
         public readonly string? FuzzVar;
+        /// <summary>
+        /// The amount of padding in pixels to add to the trimmed image.
+        /// </summary>
         public readonly string? Padding;
+        /// <summary>
+        /// The amount of padding in pixels to add to the trimmed image.
+        /// </summary>
         public readonly string? PaddingVar;
 
         [OutputConstructor]

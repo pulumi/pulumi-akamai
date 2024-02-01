@@ -14,21 +14,53 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class PropertyIncludeActivationComplianceRecord {
+    /**
+     * @return Provides an audit record when activating on a production network with noncompliance reason as `EMERGENCY`
+     * 
+     */
     private @Nullable PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergency noncomplianceReasonEmergency;
+    /**
+     * @return Provides an audit record when activating on a production network with noncompliance reason as `NO_PRODUCTION_TRAFFIC`
+     * 
+     */
     private @Nullable PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic noncomplianceReasonNoProductionTraffic;
+    /**
+     * @return Provides an audit record when activating on a production network with noncompliance reason as `NONE`
+     * 
+     */
     private @Nullable PropertyIncludeActivationComplianceRecordNoncomplianceReasonNone noncomplianceReasonNone;
+    /**
+     * @return Provides an audit record when activating on a production network with noncompliance reason as `OTHER`
+     * 
+     */
     private @Nullable PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther noncomplianceReasonOther;
 
     private PropertyIncludeActivationComplianceRecord() {}
+    /**
+     * @return Provides an audit record when activating on a production network with noncompliance reason as `EMERGENCY`
+     * 
+     */
     public Optional<PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergency> noncomplianceReasonEmergency() {
         return Optional.ofNullable(this.noncomplianceReasonEmergency);
     }
+    /**
+     * @return Provides an audit record when activating on a production network with noncompliance reason as `NO_PRODUCTION_TRAFFIC`
+     * 
+     */
     public Optional<PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic> noncomplianceReasonNoProductionTraffic() {
         return Optional.ofNullable(this.noncomplianceReasonNoProductionTraffic);
     }
+    /**
+     * @return Provides an audit record when activating on a production network with noncompliance reason as `NONE`
+     * 
+     */
     public Optional<PropertyIncludeActivationComplianceRecordNoncomplianceReasonNone> noncomplianceReasonNone() {
         return Optional.ofNullable(this.noncomplianceReasonNone);
     }
+    /**
+     * @return Provides an audit record when activating on a production network with noncompliance reason as `OTHER`
+     * 
+     */
     public Optional<PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther> noncomplianceReasonOther() {
         return Optional.ofNullable(this.noncomplianceReasonOther);
     }

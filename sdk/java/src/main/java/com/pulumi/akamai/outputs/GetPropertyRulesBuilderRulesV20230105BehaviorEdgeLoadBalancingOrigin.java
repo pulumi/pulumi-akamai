@@ -12,41 +12,113 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingOrigin {
+    /**
+     * @return This specifies the name of the cookie that marks users&#39; persistent sessions. The accompanying `edgeLoadBalancingDataCenter` behavior&#39;s `description` option specifies the cookie&#39;s value.
+     * 
+     */
     private @Nullable String cookieName;
+    /**
+     * @return Provides a description for the ELB origin, for your own reference.
+     * 
+     */
     private @Nullable String description;
+    /**
+     * @return Allows you to specify a cookie to pin the user&#39;s browser session to one data center. When disabled, ELB&#39;s default load balancing may send users to various data centers within the same session.
+     * 
+     */
     private @Nullable Boolean enableSessionPersistence;
+    /**
+     * @return Specifies the hostname associated with the ELB rule.
+     * 
+     */
     private @Nullable String hostname;
+    /**
+     * @return Specifies a unique descriptive string for this ELB origin. The value needs to match the `origin_id` specified by the `edgeLoadBalancingDataCenter` behavior associated with this origin.
+     * 
+     */
     private @Nullable String id;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String sessionPersistenceTitle;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingOrigin() {}
+    /**
+     * @return This specifies the name of the cookie that marks users&#39; persistent sessions. The accompanying `edgeLoadBalancingDataCenter` behavior&#39;s `description` option specifies the cookie&#39;s value.
+     * 
+     */
     public Optional<String> cookieName() {
         return Optional.ofNullable(this.cookieName);
     }
+    /**
+     * @return Provides a description for the ELB origin, for your own reference.
+     * 
+     */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
+    /**
+     * @return Allows you to specify a cookie to pin the user&#39;s browser session to one data center. When disabled, ELB&#39;s default load balancing may send users to various data centers within the same session.
+     * 
+     */
     public Optional<Boolean> enableSessionPersistence() {
         return Optional.ofNullable(this.enableSessionPersistence);
     }
+    /**
+     * @return Specifies the hostname associated with the ELB rule.
+     * 
+     */
     public Optional<String> hostname() {
         return Optional.ofNullable(this.hostname);
     }
+    /**
+     * @return Specifies a unique descriptive string for this ELB origin. The value needs to match the `origin_id` specified by the `edgeLoadBalancingDataCenter` behavior associated with this origin.
+     * 
+     */
     public Optional<String> id() {
         return Optional.ofNullable(this.id);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> sessionPersistenceTitle() {
         return Optional.ofNullable(this.sessionPersistenceTitle);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

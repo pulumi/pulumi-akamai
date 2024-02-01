@@ -14,101 +14,293 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedContentProtection {
+    /**
+     * @return Enabling this option carries the `ACL` field from the access token over to the session token, to limit the requesting client&#39;s access to the specific URL or path set in the `ACL` field. Playback may fail if the base path of the master playlist (and variant playlist, plus segments) varies from that of the `ACL` field.
+     * 
+     */
     private @Nullable Boolean acl;
+    /**
+     * @return Whether to enable DASH Media Encryption.
+     * 
+     */
     private @Nullable Boolean dashMediaEncryption;
+    /**
+     * @return Enabling this option carries the `data/payload` field from the access token over to the session token, allowing access to opaque data for log analysis for a URL protected by a session token.
+     * 
+     */
     private @Nullable Boolean dataPayload;
+    /**
+     * @return When enabled, passes tokens in HLS variant manifest URLs and HLS segment URLs, as an alternative to cookies.
+     * 
+     */
     private @Nullable Boolean enableTokenInUri;
+    /**
+     * @return Enables the segmented content protection behavior.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String fieldCarryOver;
+    /**
+     * @return This allows you to include additional salt properties specific to each end user to strengthen the relationship between the session token and playback session. This specifies the set of request headers whose values generate the salt value, typically `User-Agent`, `X-Playback-Session-Id`, and `Origin`. Any specified header needs to appear in the player&#39;s request.
+     * 
+     */
     private @Nullable List<String> headerForSalts;
+    /**
+     * @return Specifies the set of filenames that form HLS master manifest URLs. You can use `*` wildcard character that matches zero or more characters. Make sure to specify master manifest filenames uniquely, to distinguish them from variant manifest files.
+     * 
+     */
     private @Nullable List<String> hlsMasterManifestFiles;
+    /**
+     * @return Enables HLS Segment Encryption.
+     * 
+     */
     private @Nullable Boolean hlsMediaEncryption;
+    /**
+     * @return Enabling this restricts content access to a specific IP address, only appropriate if it does not change during the playback session.
+     * 
+     */
     private @Nullable Boolean ip;
+    /**
+     * @return Specifies the encryption key to use as a shared secret to validate tokens.
+     * 
+     */
     private @Nullable String key;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String mediaEncryptionTitle;
+    /**
+     * @return Identifies the `TokenAuth` tokens to block from accessing your content.
+     * 
+     */
     private @Nullable Integer revokedListId;
+    /**
+     * @return Specifies a salt as input into the token for added security. This value needs to match the salt used in the token generation code.
+     * 
+     */
     private @Nullable String salt;
+    /**
+     * @return Enabling this option carries the `session_id` value from the access token over to the session token, for use in tracking and counting unique playback sessions.
+     * 
+     */
     private @Nullable Boolean sessionId;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String tokenAuthHlsTitle;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String tokenAuthenticationTitle;
+    /**
+     * @return Enable this to deny requests from playback URLs that contain a `TokenAuth` token that uses specific token identifiers.
+     * 
+     */
     private @Nullable Boolean tokenRevocationEnabled;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String tokenRevocationTitle;
+    /**
+     * @return An alternate encryption key to match along with the `key` field, allowing you to rotate keys with no down time.
+     * 
+     */
     private @Nullable String transitionKey;
+    /**
+     * @return Allows you to specify advanced `transitionKey` and `salt` options.
+     * 
+     */
     private @Nullable Boolean useAdvanced;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedContentProtection() {}
+    /**
+     * @return Enabling this option carries the `ACL` field from the access token over to the session token, to limit the requesting client&#39;s access to the specific URL or path set in the `ACL` field. Playback may fail if the base path of the master playlist (and variant playlist, plus segments) varies from that of the `ACL` field.
+     * 
+     */
     public Optional<Boolean> acl() {
         return Optional.ofNullable(this.acl);
     }
+    /**
+     * @return Whether to enable DASH Media Encryption.
+     * 
+     */
     public Optional<Boolean> dashMediaEncryption() {
         return Optional.ofNullable(this.dashMediaEncryption);
     }
+    /**
+     * @return Enabling this option carries the `data/payload` field from the access token over to the session token, allowing access to opaque data for log analysis for a URL protected by a session token.
+     * 
+     */
     public Optional<Boolean> dataPayload() {
         return Optional.ofNullable(this.dataPayload);
     }
+    /**
+     * @return When enabled, passes tokens in HLS variant manifest URLs and HLS segment URLs, as an alternative to cookies.
+     * 
+     */
     public Optional<Boolean> enableTokenInUri() {
         return Optional.ofNullable(this.enableTokenInUri);
     }
+    /**
+     * @return Enables the segmented content protection behavior.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> fieldCarryOver() {
         return Optional.ofNullable(this.fieldCarryOver);
     }
+    /**
+     * @return This allows you to include additional salt properties specific to each end user to strengthen the relationship between the session token and playback session. This specifies the set of request headers whose values generate the salt value, typically `User-Agent`, `X-Playback-Session-Id`, and `Origin`. Any specified header needs to appear in the player&#39;s request.
+     * 
+     */
     public List<String> headerForSalts() {
         return this.headerForSalts == null ? List.of() : this.headerForSalts;
     }
+    /**
+     * @return Specifies the set of filenames that form HLS master manifest URLs. You can use `*` wildcard character that matches zero or more characters. Make sure to specify master manifest filenames uniquely, to distinguish them from variant manifest files.
+     * 
+     */
     public List<String> hlsMasterManifestFiles() {
         return this.hlsMasterManifestFiles == null ? List.of() : this.hlsMasterManifestFiles;
     }
+    /**
+     * @return Enables HLS Segment Encryption.
+     * 
+     */
     public Optional<Boolean> hlsMediaEncryption() {
         return Optional.ofNullable(this.hlsMediaEncryption);
     }
+    /**
+     * @return Enabling this restricts content access to a specific IP address, only appropriate if it does not change during the playback session.
+     * 
+     */
     public Optional<Boolean> ip() {
         return Optional.ofNullable(this.ip);
     }
+    /**
+     * @return Specifies the encryption key to use as a shared secret to validate tokens.
+     * 
+     */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> mediaEncryptionTitle() {
         return Optional.ofNullable(this.mediaEncryptionTitle);
     }
+    /**
+     * @return Identifies the `TokenAuth` tokens to block from accessing your content.
+     * 
+     */
     public Optional<Integer> revokedListId() {
         return Optional.ofNullable(this.revokedListId);
     }
+    /**
+     * @return Specifies a salt as input into the token for added security. This value needs to match the salt used in the token generation code.
+     * 
+     */
     public Optional<String> salt() {
         return Optional.ofNullable(this.salt);
     }
+    /**
+     * @return Enabling this option carries the `session_id` value from the access token over to the session token, for use in tracking and counting unique playback sessions.
+     * 
+     */
     public Optional<Boolean> sessionId() {
         return Optional.ofNullable(this.sessionId);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> tokenAuthHlsTitle() {
         return Optional.ofNullable(this.tokenAuthHlsTitle);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> tokenAuthenticationTitle() {
         return Optional.ofNullable(this.tokenAuthenticationTitle);
     }
+    /**
+     * @return Enable this to deny requests from playback URLs that contain a `TokenAuth` token that uses specific token identifiers.
+     * 
+     */
     public Optional<Boolean> tokenRevocationEnabled() {
         return Optional.ofNullable(this.tokenRevocationEnabled);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> tokenRevocationTitle() {
         return Optional.ofNullable(this.tokenRevocationTitle);
     }
+    /**
+     * @return An alternate encryption key to match along with the `key` field, allowing you to rotate keys with no down time.
+     * 
+     */
     public Optional<String> transitionKey() {
         return Optional.ofNullable(this.transitionKey);
     }
+    /**
+     * @return Allows you to specify advanced `transitionKey` and `salt` options.
+     * 
+     */
     public Optional<Boolean> useAdvanced() {
         return Optional.ofNullable(this.useAdvanced);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

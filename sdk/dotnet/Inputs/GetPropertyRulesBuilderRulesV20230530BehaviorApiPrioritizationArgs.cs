@@ -12,48 +12,93 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Specifies the alternate response's time to live in the cache, `5` minutes by default.
+        /// </summary>
         [Input("alternateResponseCacheTtl")]
         public Input<int>? AlternateResponseCacheTtl { get; set; }
 
+        /// <summary>
+        /// Identifies the Cloudlet policy.
+        /// </summary>
         [Input("cloudletPolicy")]
         public Input<Inputs.GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationCloudletPolicyInputArgs>? CloudletPolicy { get; set; }
 
+        /// <summary>
+        /// Identifies the Cloudlet shared policy to use with this behavior. Use the `Cloudlets API` to list available shared policies.
+        /// </summary>
         [Input("cloudletSharedPolicy")]
         public Input<int>? CloudletSharedPolicy { get; set; }
 
+        /// <summary>
+        /// Activates the API Prioritization feature.
+        /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
+        /// <summary>
+        /// Whether you want to apply the Cloudlet shared policy to an unlimited number of properties within your account. Learn more about shared policies and how to create them in `Cloudlets Policy Manager`.
+        /// </summary>
         [Input("isSharedPolicy")]
         public Input<bool>? IsSharedPolicy { get; set; }
 
+        /// <summary>
+        /// A label to distinguish this API Prioritization policy from any others in the same property.
+        /// </summary>
         [Input("label")]
         public Input<string>? Label { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public Input<bool>? Locked { get; set; }
 
+        /// <summary>
+        /// Specify the NetStorage domain that contains the alternate response.
+        /// </summary>
         [Input("netStorage")]
         public Input<Inputs.GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationNetStorageInputArgs>? NetStorage { get; set; }
 
+        /// <summary>
+        /// Specify the full NetStorage path for the alternate response, including trailing file name.
+        /// </summary>
         [Input("netStoragePath")]
         public Input<string>? NetStoragePath { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public Input<string>? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// Specifies the CP code as an object.
+        /// </summary>
         [Input("throttledCpCode")]
         public Input<Inputs.GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationThrottledCpCodeInputArgs>? ThrottledCpCode { get; set; }
 
+        /// <summary>
+        /// Specifies the HTTP response code for requests that receive the alternate response.
+        /// </summary>
         [Input("throttledStatusCode")]
         public Input<int>? ThrottledStatusCode { get; set; }
 
+        /// <summary>
+        /// Specifies whether to apply an alternative CP code for requests served the alternate response.
+        /// </summary>
         [Input("useThrottledCpCode")]
         public Input<bool>? UseThrottledCpCode { get; set; }
 
+        /// <summary>
+        /// Allows you to assign a specific HTTP response code to a throttled request.
+        /// </summary>
         [Input("useThrottledStatusCode")]
         public Input<bool>? UseThrottledStatusCode { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public Input<string>? Uuid { get; set; }
 

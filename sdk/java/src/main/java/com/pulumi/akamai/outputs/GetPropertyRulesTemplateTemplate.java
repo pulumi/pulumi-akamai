@@ -10,13 +10,29 @@ import java.util.Objects;
 
 @CustomType
 public final class GetPropertyRulesTemplateTemplate {
+    /**
+     * @return Content of the template as string
+     * 
+     */
     private String templateData;
+    /**
+     * @return Directory points to a folder, which contains snippets to include into template.
+     * 
+     */
     private String templateDir;
 
     private GetPropertyRulesTemplateTemplate() {}
+    /**
+     * @return Content of the template as string
+     * 
+     */
     public String templateData() {
         return this.templateData;
     }
+    /**
+     * @return Directory points to a folder, which contains snippets to include into template.
+     * 
+     */
     public String templateDir() {
         return this.templateDir;
     }

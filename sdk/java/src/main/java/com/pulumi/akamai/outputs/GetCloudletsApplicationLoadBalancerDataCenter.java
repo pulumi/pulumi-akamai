@@ -13,53 +13,149 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCloudletsApplicationLoadBalancerDataCenter {
+    /**
+     * @return The city in which the data center is located.
+     * 
+     */
     private String city;
+    /**
+     * @return Describes if cloud server host header is overridden
+     * 
+     */
     private Boolean cloudServerHostHeaderOverride;
+    /**
+     * @return Describes if this datacenter is a cloud service
+     * 
+     */
     private Boolean cloudService;
+    /**
+     * @return The continent on which the data center is located
+     * 
+     */
     private String continent;
+    /**
+     * @return The country in which the data center is located
+     * 
+     */
     private String country;
+    /**
+     * @return This should match the &#39;hostname&#39; value defined for this datacenter in Property Manager
+     * 
+     */
     private String hostname;
+    /**
+     * @return The latitude value for the data center. This member supports six decimal places of precision.
+     * 
+     */
     private Double latitude;
+    /**
+     * @return An array of strings that represent the origin servers used to poll the data centers in an application load balancer configuration. These servers support basic HTTP polling.
+     * 
+     */
     private List<String> livenessHosts;
+    /**
+     * @return The longitude value for the data center. This member supports six decimal places of precision.
+     * 
+     */
     private Double longitude;
+    /**
+     * @return The id of an origin that represents the data center. The conditional origin, which is defined in the Property Manager API, must have an originType of either CUSTOMER or NET_STORAGE
+     * 
+     */
     private String originId;
+    /**
+     * @return The percent of traffic that is sent to the data center. The total for all data centers must equal 100%.
+     * 
+     */
     private Double percent;
+    /**
+     * @return The state, province, or region where the data center is located
+     * 
+     */
     private String stateOrProvince;
 
     private GetCloudletsApplicationLoadBalancerDataCenter() {}
+    /**
+     * @return The city in which the data center is located.
+     * 
+     */
     public String city() {
         return this.city;
     }
+    /**
+     * @return Describes if cloud server host header is overridden
+     * 
+     */
     public Boolean cloudServerHostHeaderOverride() {
         return this.cloudServerHostHeaderOverride;
     }
+    /**
+     * @return Describes if this datacenter is a cloud service
+     * 
+     */
     public Boolean cloudService() {
         return this.cloudService;
     }
+    /**
+     * @return The continent on which the data center is located
+     * 
+     */
     public String continent() {
         return this.continent;
     }
+    /**
+     * @return The country in which the data center is located
+     * 
+     */
     public String country() {
         return this.country;
     }
+    /**
+     * @return This should match the &#39;hostname&#39; value defined for this datacenter in Property Manager
+     * 
+     */
     public String hostname() {
         return this.hostname;
     }
+    /**
+     * @return The latitude value for the data center. This member supports six decimal places of precision.
+     * 
+     */
     public Double latitude() {
         return this.latitude;
     }
+    /**
+     * @return An array of strings that represent the origin servers used to poll the data centers in an application load balancer configuration. These servers support basic HTTP polling.
+     * 
+     */
     public List<String> livenessHosts() {
         return this.livenessHosts;
     }
+    /**
+     * @return The longitude value for the data center. This member supports six decimal places of precision.
+     * 
+     */
     public Double longitude() {
         return this.longitude;
     }
+    /**
+     * @return The id of an origin that represents the data center. The conditional origin, which is defined in the Property Manager API, must have an originType of either CUSTOMER or NET_STORAGE
+     * 
+     */
     public String originId() {
         return this.originId;
     }
+    /**
+     * @return The percent of traffic that is sent to the data center. The total for all data centers must equal 100%.
+     * 
+     */
     public Double percent() {
         return this.percent;
     }
+    /**
+     * @return The state, province, or region where the data center is located
+     * 
+     */
     public String stateOrProvince() {
         return this.stateOrProvince;
     }

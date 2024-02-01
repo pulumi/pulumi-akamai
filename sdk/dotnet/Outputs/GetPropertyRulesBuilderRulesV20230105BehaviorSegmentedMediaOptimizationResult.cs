@@ -13,16 +13,49 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaOptimizationResult
     {
+        /// <summary>
+        /// Sets the type of media content to optimize.
+        /// </summary>
         public readonly string? Behavior;
+        /// <summary>
+        /// The type of DVR.
+        /// </summary>
         public readonly string? DvrType;
+        /// <summary>
+        /// Set the duration for your media, or `0m` if a DVR is not required.
+        /// </summary>
         public readonly string? DvrWindow;
+        /// <summary>
+        /// Enables ultra low latency (ULL) streaming. ULL reduces latency and decreases overall transfer time of live streams.
+        /// </summary>
         public readonly bool? EnableUllStreaming;
+        /// <summary>
+        /// This specifies when the live media event ends.
+        /// </summary>
         public readonly string? EndTime;
+        /// <summary>
+        /// The type of live media.
+        /// </summary>
         public readonly string? LiveType;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// Allows you to configure advanced media options.
+        /// </summary>
         public readonly bool? ShowAdvanced;
+        /// <summary>
+        /// This specifies when the live media event begins.
+        /// </summary>
         public readonly string? StartTime;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

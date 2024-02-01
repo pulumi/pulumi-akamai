@@ -12,11 +12,18 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230105CriterionUserLocationArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Specifies which IP addresses determine the user's location.
+        /// </summary>
         [Input("checkIps")]
         public string? CheckIps { get; set; }
 
         [Input("continentValues")]
         private List<string>? _continentValues;
+
+        /// <summary>
+        /// Continent codes.
+        /// </summary>
         public List<string> ContinentValues
         {
             get => _continentValues ?? (_continentValues = new List<string>());
@@ -25,35 +32,61 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("countryValues")]
         private List<string>? _countryValues;
+
+        /// <summary>
+        /// ISO 3166-1 country codes, such as `US` or `CN`.
+        /// </summary>
         public List<string> CountryValues
         {
             get => _countryValues ?? (_countryValues = new List<string>());
             set => _countryValues = value;
         }
 
+        /// <summary>
+        /// Indicates the geographic scope.
+        /// </summary>
         [Input("field")]
         public string? Field { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public bool? Locked { get; set; }
 
+        /// <summary>
+        /// Matches the specified set of values when set to `IS_ONE_OF`, otherwise `IS_NOT_ONE_OF` reverses the match.
+        /// </summary>
         [Input("matchOperator")]
         public string? MatchOperator { get; set; }
 
         [Input("regionValues")]
         private List<string>? _regionValues;
+
+        /// <summary>
+        /// ISO 3166 country and region codes, for example `US:MA` for Massachusetts or `JP:13` for Tokyo.
+        /// </summary>
         public List<string> RegionValues
         {
             get => _regionValues ?? (_regionValues = new List<string>());
             set => _regionValues = value;
         }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public string? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// When connecting via a proxy server as determined by the `X-Forwarded-For` header, enabling this option matches the end client specified in the header. Disabling it matches the connecting client's IP address.
+        /// </summary>
         [Input("useOnlyFirstXForwardedForIp")]
         public bool? UseOnlyFirstXForwardedForIp { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public string? Uuid { get; set; }
 

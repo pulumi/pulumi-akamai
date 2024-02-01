@@ -15,44 +15,92 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionRegularExpressi
 
     public static final GetPropertyRulesBuilderRulesV20230530CriterionRegularExpression Empty = new GetPropertyRulesBuilderRulesV20230530CriterionRegularExpression();
 
+    /**
+     * Sets a case-sensitive regular expression match.
+     * 
+     */
     @Import(name="caseSensitive")
     private @Nullable Boolean caseSensitive;
 
+    /**
+     * @return Sets a case-sensitive regular expression match.
+     * 
+     */
     public Optional<Boolean> caseSensitive() {
         return Optional.ofNullable(this.caseSensitive);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * The string to match, typically the contents of a dynamic variable.
+     * 
+     */
     @Import(name="matchString")
     private @Nullable String matchString;
 
+    /**
+     * @return The string to match, typically the contents of a dynamic variable.
+     * 
+     */
     public Optional<String> matchString() {
         return Optional.ofNullable(this.matchString);
     }
 
+    /**
+     * The regular expression (PCRE) to match against the string.
+     * 
+     */
     @Import(name="regex")
     private @Nullable String regex;
 
+    /**
+     * @return The regular expression (PCRE) to match against the string.
+     * 
+     */
     public Optional<String> regex() {
         return Optional.ofNullable(this.regex);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -86,31 +134,67 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionRegularExpressi
             $ = new GetPropertyRulesBuilderRulesV20230530CriterionRegularExpression(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param caseSensitive Sets a case-sensitive regular expression match.
+         * 
+         * @return builder
+         * 
+         */
         public Builder caseSensitive(@Nullable Boolean caseSensitive) {
             $.caseSensitive = caseSensitive;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param matchString The string to match, typically the contents of a dynamic variable.
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchString(@Nullable String matchString) {
             $.matchString = matchString;
             return this;
         }
 
+        /**
+         * @param regex The regular expression (PCRE) to match against the string.
+         * 
+         * @return builder
+         * 
+         */
         public Builder regex(@Nullable String regex) {
             $.regex = regex;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

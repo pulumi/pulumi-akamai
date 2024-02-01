@@ -16,51 +16,107 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorEdgeWorkerArgs e
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorEdgeWorkerArgs Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorEdgeWorkerArgs();
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     @Import(name="createEdgeWorker")
     private @Nullable Output<String> createEdgeWorker;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<Output<String>> createEdgeWorker() {
         return Optional.ofNullable(this.createEdgeWorker);
     }
 
+    /**
+     * Identifies the EdgeWorker application to apply to this rule&#39;s web traffic. You can use the `EdgeWorkers API` to get this value.
+     * 
+     */
     @Import(name="edgeWorkerId")
     private @Nullable Output<String> edgeWorkerId;
 
+    /**
+     * @return Identifies the EdgeWorker application to apply to this rule&#39;s web traffic. You can use the `EdgeWorkers API` to get this value.
+     * 
+     */
     public Optional<Output<String>> edgeWorkerId() {
         return Optional.ofNullable(this.edgeWorkerId);
     }
 
+    /**
+     * When enabled, applies specified EdgeWorker functionality to this rule&#39;s web traffic.
+     * 
+     */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
+    /**
+     * @return When enabled, applies specified EdgeWorker functionality to this rule&#39;s web traffic.
+     * 
+     */
     public Optional<Output<Boolean>> enabled() {
         return Optional.ofNullable(this.enabled);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     @Import(name="resourceTier")
     private @Nullable Output<String> resourceTier;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<Output<String>> resourceTier() {
         return Optional.ofNullable(this.resourceTier);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -95,65 +151,149 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorEdgeWorkerArgs e
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorEdgeWorkerArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param createEdgeWorker This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder createEdgeWorker(@Nullable Output<String> createEdgeWorker) {
             $.createEdgeWorker = createEdgeWorker;
             return this;
         }
 
+        /**
+         * @param createEdgeWorker This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder createEdgeWorker(String createEdgeWorker) {
             return createEdgeWorker(Output.of(createEdgeWorker));
         }
 
+        /**
+         * @param edgeWorkerId Identifies the EdgeWorker application to apply to this rule&#39;s web traffic. You can use the `EdgeWorkers API` to get this value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder edgeWorkerId(@Nullable Output<String> edgeWorkerId) {
             $.edgeWorkerId = edgeWorkerId;
             return this;
         }
 
+        /**
+         * @param edgeWorkerId Identifies the EdgeWorker application to apply to this rule&#39;s web traffic. You can use the `EdgeWorkers API` to get this value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder edgeWorkerId(String edgeWorkerId) {
             return edgeWorkerId(Output.of(edgeWorkerId));
         }
 
+        /**
+         * @param enabled When enabled, applies specified EdgeWorker functionality to this rule&#39;s web traffic.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(@Nullable Output<Boolean> enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param enabled When enabled, applies specified EdgeWorker functionality to this rule&#39;s web traffic.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(Boolean enabled) {
             return enabled(Output.of(enabled));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param resourceTier This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder resourceTier(@Nullable Output<String> resourceTier) {
             $.resourceTier = resourceTier;
             return this;
         }
 
+        /**
+         * @param resourceTier This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder resourceTier(String resourceTier) {
             return resourceTier(Output.of(resourceTier));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

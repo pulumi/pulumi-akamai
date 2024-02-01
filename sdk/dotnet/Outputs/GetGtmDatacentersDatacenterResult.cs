@@ -13,21 +13,69 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetGtmDatacentersDatacenterResult
     {
+        /// <summary>
+        /// The name of the city where the data center is located.
+        /// </summary>
         public readonly string City;
+        /// <summary>
+        /// Identifies the data center's ID of which this data center is a clone.
+        /// </summary>
         public readonly int CloneOf;
+        /// <summary>
+        /// Balances load between two or more servers in a cloud environment.
+        /// </summary>
         public readonly bool CloudServerHostHeaderOverride;
+        /// <summary>
+        /// Balances load between two or more servers in a cloud environment.
+        /// </summary>
         public readonly bool CloudServerTargeting;
+        /// <summary>
+        /// A two-letter code that specifies the continent where the data center maps to.
+        /// </summary>
         public readonly string Continent;
+        /// <summary>
+        /// A two-letter ISO 3166 country code that specifies the country where the data center is located.
+        /// </summary>
         public readonly string Country;
+        /// <summary>
+        /// A unique identifier for an existing data center in the domain.
+        /// </summary>
         public readonly int DatacenterId;
+        /// <summary>
+        /// Specifies the load reporting interface between you and the GTM system.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetGtmDatacentersDatacenterDefaultLoadObjectResult> DefaultLoadObjects;
+        /// <summary>
+        /// Specifies the geographic latitude of the data center's position.
+        /// </summary>
         public readonly double Latitude;
+        /// <summary>
+        /// Provides a URL path that allows direct navigation to a data center.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetGtmDatacentersDatacenterLinkResult> Links;
+        /// <summary>
+        /// Specifies the geographic longitude of the data center's position.
+        /// </summary>
         public readonly double Longitude;
+        /// <summary>
+        /// A descriptive label for the datacenter.
+        /// </summary>
         public readonly string Nickname;
+        /// <summary>
+        /// Influences the score for a datacenter.
+        /// </summary>
         public readonly int ScorePenalty;
+        /// <summary>
+        /// The name of the pool from which servermonitors are drawn for liveness tests in this datacenter. If omitted (null), the domain-wide default is used. (If no domain-wide default is specified, the pool used is all servermonitors in the same continent as the datacenter.)
+        /// </summary>
         public readonly string ServermonitorPool;
+        /// <summary>
+        /// Specifies a two-letter ISO 3166 country code for the state of province, where the data center is located.
+        /// </summary>
         public readonly string StateOrProvince;
+        /// <summary>
+        /// Indicates whether or not the data center is virtual or physical.
+        /// </summary>
         public readonly bool Virtual;
 
         [OutputConstructor]

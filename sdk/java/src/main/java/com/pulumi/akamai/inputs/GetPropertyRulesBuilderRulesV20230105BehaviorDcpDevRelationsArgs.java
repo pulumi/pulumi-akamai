@@ -16,51 +16,107 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorDcpDevRelationsA
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorDcpDevRelationsArgs Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorDcpDevRelationsArgs();
 
+    /**
+     * Allows you to specify custom JWT server connection values.
+     * 
+     */
     @Import(name="customValues")
     private @Nullable Output<Boolean> customValues;
 
+    /**
+     * @return Allows you to specify custom JWT server connection values.
+     * 
+     */
     public Optional<Output<Boolean>> customValues() {
         return Optional.ofNullable(this.customValues);
     }
 
+    /**
+     * Enables the default JWT server and sets the authentication endpoint to a default path.
+     * 
+     */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
+    /**
+     * @return Enables the default JWT server and sets the authentication endpoint to a default path.
+     * 
+     */
     public Optional<Output<Boolean>> enabled() {
         return Optional.ofNullable(this.enabled);
     }
 
+    /**
+     * Specifies the JWT server&#39;s hostname.
+     * 
+     */
     @Import(name="hostname")
     private @Nullable Output<String> hostname;
 
+    /**
+     * @return Specifies the JWT server&#39;s hostname.
+     * 
+     */
     public Optional<Output<String>> hostname() {
         return Optional.ofNullable(this.hostname);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Specifies the path to your JWT server&#39;s authentication endpoint. This lets you generate JWTs to sign your requests.
+     * 
+     */
     @Import(name="path")
     private @Nullable Output<String> path;
 
+    /**
+     * @return Specifies the path to your JWT server&#39;s authentication endpoint. This lets you generate JWTs to sign your requests.
+     * 
+     */
     public Optional<Output<String>> path() {
         return Optional.ofNullable(this.path);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -95,65 +151,149 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorDcpDevRelationsA
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorDcpDevRelationsArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param customValues Allows you to specify custom JWT server connection values.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customValues(@Nullable Output<Boolean> customValues) {
             $.customValues = customValues;
             return this;
         }
 
+        /**
+         * @param customValues Allows you to specify custom JWT server connection values.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customValues(Boolean customValues) {
             return customValues(Output.of(customValues));
         }
 
+        /**
+         * @param enabled Enables the default JWT server and sets the authentication endpoint to a default path.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(@Nullable Output<Boolean> enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param enabled Enables the default JWT server and sets the authentication endpoint to a default path.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(Boolean enabled) {
             return enabled(Output.of(enabled));
         }
 
+        /**
+         * @param hostname Specifies the JWT server&#39;s hostname.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hostname(@Nullable Output<String> hostname) {
             $.hostname = hostname;
             return this;
         }
 
+        /**
+         * @param hostname Specifies the JWT server&#39;s hostname.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hostname(String hostname) {
             return hostname(Output.of(hostname));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param path Specifies the path to your JWT server&#39;s authentication endpoint. This lets you generate JWTs to sign your requests.
+         * 
+         * @return builder
+         * 
+         */
         public Builder path(@Nullable Output<String> path) {
             $.path = path;
             return this;
         }
 
+        /**
+         * @param path Specifies the path to your JWT server&#39;s authentication endpoint. This lets you generate JWTs to sign your requests.
+         * 
+         * @return builder
+         * 
+         */
         public Builder path(String path) {
             return path(Output.of(path));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

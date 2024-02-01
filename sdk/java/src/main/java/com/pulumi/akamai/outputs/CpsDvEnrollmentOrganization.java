@@ -12,37 +12,101 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class CpsDvEnrollmentOrganization {
+    /**
+     * @return The address of organization
+     * 
+     */
     private String addressLineOne;
+    /**
+     * @return The address of organization
+     * 
+     */
     private @Nullable String addressLineTwo;
+    /**
+     * @return City of organization
+     * 
+     */
     private String city;
+    /**
+     * @return Country code of organization
+     * 
+     */
     private String countryCode;
+    /**
+     * @return Name of organization
+     * 
+     */
     private String name;
+    /**
+     * @return Phone number of organization
+     * 
+     */
     private String phone;
+    /**
+     * @return Postal code of organization
+     * 
+     */
     private String postalCode;
+    /**
+     * @return The region of organization
+     * 
+     */
     private String region;
 
     private CpsDvEnrollmentOrganization() {}
+    /**
+     * @return The address of organization
+     * 
+     */
     public String addressLineOne() {
         return this.addressLineOne;
     }
+    /**
+     * @return The address of organization
+     * 
+     */
     public Optional<String> addressLineTwo() {
         return Optional.ofNullable(this.addressLineTwo);
     }
+    /**
+     * @return City of organization
+     * 
+     */
     public String city() {
         return this.city;
     }
+    /**
+     * @return Country code of organization
+     * 
+     */
     public String countryCode() {
         return this.countryCode;
     }
+    /**
+     * @return Name of organization
+     * 
+     */
     public String name() {
         return this.name;
     }
+    /**
+     * @return Phone number of organization
+     * 
+     */
     public String phone() {
         return this.phone;
     }
+    /**
+     * @return Postal code of organization
+     * 
+     */
     public String postalCode() {
         return this.postalCode;
     }
+    /**
+     * @return The region of organization
+     * 
+     */
     public String region() {
         return this.region;
     }

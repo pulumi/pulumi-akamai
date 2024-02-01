@@ -13,11 +13,29 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class DatastreamNewRelicConnector
     {
+        /// <summary>
+        /// Your Log API token for your account in New Relic.
+        /// </summary>
         public readonly string AuthToken;
+        /// <summary>
+        /// The type of the resource passed in the request's custom header. For details, see Additional options in the DataStream user guide.
+        /// </summary>
         public readonly string? ContentType;
+        /// <summary>
+        /// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.
+        /// </summary>
         public readonly string? CustomHeaderName;
+        /// <summary>
+        /// The custom header's contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.
+        /// </summary>
         public readonly string? CustomHeaderValue;
+        /// <summary>
+        /// The name of the connector.
+        /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// A New Relic endpoint URL you want to send your logs to. The endpoint URL should follow the https://&lt;newrelic.com&gt;/log/v1/ format format. See Introduction to the Log API https://docs.newrelic.com/docs/logs/log-api/introduction-log-api/ if you want to retrieve your New Relic endpoint URL.
+        /// </summary>
         public readonly string Endpoint;
 
         [OutputConstructor]

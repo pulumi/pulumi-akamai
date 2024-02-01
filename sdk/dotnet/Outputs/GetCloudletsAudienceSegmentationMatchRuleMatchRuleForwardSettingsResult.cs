@@ -13,8 +13,17 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsResult
     {
+        /// <summary>
+        /// The ID of the Conditional Origin requests are forwarded to
+        /// </summary>
         public readonly string? OriginId;
+        /// <summary>
+        /// If a value is provided and match conditions are met, this property defines the path/resource/query string to rewrite URL for the incoming request.
+        /// </summary>
         public readonly string? PathAndQs;
+        /// <summary>
+        /// If set to true, the Cloudlet includes the query string from the request in the rewritten or forwarded URL.
+        /// </summary>
         public readonly bool? UseIncomingQueryString;
 
         [OutputConstructor]

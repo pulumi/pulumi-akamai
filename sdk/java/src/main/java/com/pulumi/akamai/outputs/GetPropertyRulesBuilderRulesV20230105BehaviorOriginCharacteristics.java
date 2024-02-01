@@ -14,105 +14,305 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristics {
+    /**
+     * @return Enables secure use of access keys defined in Cloud Access Manager. Access keys store encrypted authentication details required to sign requests to cloud origins. If you disable this option, you&#39;ll need to store the authentication details unencrypted.
+     * 
+     */
     private @Nullable Boolean accessKeyEncryptedStorage;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String adcTitle;
+    /**
+     * @return Specifies the authentication method.
+     * 
+     */
     private @Nullable String authenticationMethod;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String authenticationMethodTitle;
+    /**
+     * @return Specifies active access key ID linked to your AWS account.
+     * 
+     */
     private @Nullable String awsAccessKeyId;
+    /**
+     * @return Identifies the unique `awsAccessKeyVersionGuid` access key `created` in Cloud Access Manager to sign your requests to AWS S3.
+     * 
+     */
     private @Nullable String awsAccessKeyVersionGuid;
+    /**
+     * @return This specifies the AWS hostname, without `http://` or `https://` prefixes. If you leave this option empty, it inherits the hostname from the `origin` behavior.
+     * 
+     */
     private @Nullable String awsHost;
+    /**
+     * @return This specifies the AWS region code of the location where your bucket resides.
+     * 
+     */
     private @Nullable String awsRegion;
+    /**
+     * @return Specifies the secret linked to the access key identifier that you want to use to sign requests to AWS.
+     * 
+     */
     private @Nullable String awsSecretAccessKey;
+    /**
+     * @return This specifies the subdomain of your AWS service. It precedes `amazonaws.com` or the region code in the AWS hostname. For example, `s3.amazonaws.com`.
+     * 
+     */
     private @Nullable String awsService;
+    /**
+     * @return Specifies the origin&#39;s geographic region.
+     * 
+     */
     private @Nullable String country;
+    /**
+     * @return Specifies the data to be encrypted as a series of enumerated variable names. See `Built-in system variables` for guidance on each.
+     * 
+     */
     private @Nullable List<String> customSignStrings;
+    /**
+     * @return Provides a region used by Akamai Direct Connection.
+     * 
+     */
     private @Nullable String directConnectGeo;
+    /**
+     * @return Specifies the version of the encryption algorithm, an integer from `1` to `5`.
+     * 
+     */
     private @Nullable Integer encodingVersion;
+    /**
+     * @return Identifies the unique `gcsAccessKeyVersionGuid` access key `created` in Cloud Access Manager to sign your requests to Google Cloud Storage in interoperability mode.
+     * 
+     */
     private @Nullable String gcsAccessKeyVersionGuid;
+    /**
+     * @return Specifies the active access ID linked to your Google account.
+     * 
+     */
     private @Nullable String gcsHmacKeyAccessId;
+    /**
+     * @return Specifies the secret linked to the access ID that you want to use to sign requests to Google Cloud Storage.
+     * 
+     */
     private @Nullable String gcsHmacKeySecret;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Specifies the access key provided by the hosting service.
+     * 
+     */
     private @Nullable String mslkey;
+    /**
+     * @return Specifies the origin name provided by the hosting service.
+     * 
+     */
     private @Nullable String mslname;
+    /**
+     * @return Specifies the nonce.
+     * 
+     */
     private @Nullable String nonce;
+    /**
+     * @return Specifies the shared secret key.
+     * 
+     */
     private @Nullable String secretKey;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return Specifies whether to customize your signed string.
+     * 
+     */
     private @Nullable Boolean useCustomSignString;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristics() {}
+    /**
+     * @return Enables secure use of access keys defined in Cloud Access Manager. Access keys store encrypted authentication details required to sign requests to cloud origins. If you disable this option, you&#39;ll need to store the authentication details unencrypted.
+     * 
+     */
     public Optional<Boolean> accessKeyEncryptedStorage() {
         return Optional.ofNullable(this.accessKeyEncryptedStorage);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> adcTitle() {
         return Optional.ofNullable(this.adcTitle);
     }
+    /**
+     * @return Specifies the authentication method.
+     * 
+     */
     public Optional<String> authenticationMethod() {
         return Optional.ofNullable(this.authenticationMethod);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> authenticationMethodTitle() {
         return Optional.ofNullable(this.authenticationMethodTitle);
     }
+    /**
+     * @return Specifies active access key ID linked to your AWS account.
+     * 
+     */
     public Optional<String> awsAccessKeyId() {
         return Optional.ofNullable(this.awsAccessKeyId);
     }
+    /**
+     * @return Identifies the unique `awsAccessKeyVersionGuid` access key `created` in Cloud Access Manager to sign your requests to AWS S3.
+     * 
+     */
     public Optional<String> awsAccessKeyVersionGuid() {
         return Optional.ofNullable(this.awsAccessKeyVersionGuid);
     }
+    /**
+     * @return This specifies the AWS hostname, without `http://` or `https://` prefixes. If you leave this option empty, it inherits the hostname from the `origin` behavior.
+     * 
+     */
     public Optional<String> awsHost() {
         return Optional.ofNullable(this.awsHost);
     }
+    /**
+     * @return This specifies the AWS region code of the location where your bucket resides.
+     * 
+     */
     public Optional<String> awsRegion() {
         return Optional.ofNullable(this.awsRegion);
     }
+    /**
+     * @return Specifies the secret linked to the access key identifier that you want to use to sign requests to AWS.
+     * 
+     */
     public Optional<String> awsSecretAccessKey() {
         return Optional.ofNullable(this.awsSecretAccessKey);
     }
+    /**
+     * @return This specifies the subdomain of your AWS service. It precedes `amazonaws.com` or the region code in the AWS hostname. For example, `s3.amazonaws.com`.
+     * 
+     */
     public Optional<String> awsService() {
         return Optional.ofNullable(this.awsService);
     }
+    /**
+     * @return Specifies the origin&#39;s geographic region.
+     * 
+     */
     public Optional<String> country() {
         return Optional.ofNullable(this.country);
     }
+    /**
+     * @return Specifies the data to be encrypted as a series of enumerated variable names. See `Built-in system variables` for guidance on each.
+     * 
+     */
     public List<String> customSignStrings() {
         return this.customSignStrings == null ? List.of() : this.customSignStrings;
     }
+    /**
+     * @return Provides a region used by Akamai Direct Connection.
+     * 
+     */
     public Optional<String> directConnectGeo() {
         return Optional.ofNullable(this.directConnectGeo);
     }
+    /**
+     * @return Specifies the version of the encryption algorithm, an integer from `1` to `5`.
+     * 
+     */
     public Optional<Integer> encodingVersion() {
         return Optional.ofNullable(this.encodingVersion);
     }
+    /**
+     * @return Identifies the unique `gcsAccessKeyVersionGuid` access key `created` in Cloud Access Manager to sign your requests to Google Cloud Storage in interoperability mode.
+     * 
+     */
     public Optional<String> gcsAccessKeyVersionGuid() {
         return Optional.ofNullable(this.gcsAccessKeyVersionGuid);
     }
+    /**
+     * @return Specifies the active access ID linked to your Google account.
+     * 
+     */
     public Optional<String> gcsHmacKeyAccessId() {
         return Optional.ofNullable(this.gcsHmacKeyAccessId);
     }
+    /**
+     * @return Specifies the secret linked to the access ID that you want to use to sign requests to Google Cloud Storage.
+     * 
+     */
     public Optional<String> gcsHmacKeySecret() {
         return Optional.ofNullable(this.gcsHmacKeySecret);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Specifies the access key provided by the hosting service.
+     * 
+     */
     public Optional<String> mslkey() {
         return Optional.ofNullable(this.mslkey);
     }
+    /**
+     * @return Specifies the origin name provided by the hosting service.
+     * 
+     */
     public Optional<String> mslname() {
         return Optional.ofNullable(this.mslname);
     }
+    /**
+     * @return Specifies the nonce.
+     * 
+     */
     public Optional<String> nonce() {
         return Optional.ofNullable(this.nonce);
     }
+    /**
+     * @return Specifies the shared secret key.
+     * 
+     */
     public Optional<String> secretKey() {
         return Optional.ofNullable(this.secretKey);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return Specifies whether to customize your signed string.
+     * 
+     */
     public Optional<Boolean> useCustomSignString() {
         return Optional.ofNullable(this.useCustomSignString);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

@@ -16,72 +16,152 @@ public final class GetImagingPolicyImagePolicyTransformationCompositeImageTextIm
 
     public static final GetImagingPolicyImagePolicyTransformationCompositeImageTextImageArgs Empty = new GetImagingPolicyImagePolicyTransformationCompositeImageTextImageArgs();
 
+    /**
+     * The main fill color of the text.
+     * 
+     */
     @Import(name="fill")
     private @Nullable Output<String> fill;
 
+    /**
+     * @return The main fill color of the text.
+     * 
+     */
     public Optional<Output<String>> fill() {
         return Optional.ofNullable(this.fill);
     }
 
+    /**
+     * The main fill color of the text.
+     * 
+     */
     @Import(name="fillVar")
     private @Nullable Output<String> fillVar;
 
+    /**
+     * @return The main fill color of the text.
+     * 
+     */
     public Optional<Output<String>> fillVar() {
         return Optional.ofNullable(this.fillVar);
     }
 
+    /**
+     * The size in pixels to render the text.
+     * 
+     */
     @Import(name="size")
     private @Nullable Output<String> size;
 
+    /**
+     * @return The size in pixels to render the text.
+     * 
+     */
     public Optional<Output<String>> size() {
         return Optional.ofNullable(this.size);
     }
 
+    /**
+     * The size in pixels to render the text.
+     * 
+     */
     @Import(name="sizeVar")
     private @Nullable Output<String> sizeVar;
 
+    /**
+     * @return The size in pixels to render the text.
+     * 
+     */
     public Optional<Output<String>> sizeVar() {
         return Optional.ofNullable(this.sizeVar);
     }
 
+    /**
+     * The color for the outline of the text.
+     * 
+     */
     @Import(name="stroke")
     private @Nullable Output<String> stroke;
 
+    /**
+     * @return The color for the outline of the text.
+     * 
+     */
     public Optional<Output<String>> stroke() {
         return Optional.ofNullable(this.stroke);
     }
 
+    /**
+     * The thickness in points for the outline of the text.
+     * 
+     */
     @Import(name="strokeSize")
     private @Nullable Output<String> strokeSize;
 
+    /**
+     * @return The thickness in points for the outline of the text.
+     * 
+     */
     public Optional<Output<String>> strokeSize() {
         return Optional.ofNullable(this.strokeSize);
     }
 
+    /**
+     * The thickness in points for the outline of the text.
+     * 
+     */
     @Import(name="strokeSizeVar")
     private @Nullable Output<String> strokeSizeVar;
 
+    /**
+     * @return The thickness in points for the outline of the text.
+     * 
+     */
     public Optional<Output<String>> strokeSizeVar() {
         return Optional.ofNullable(this.strokeSizeVar);
     }
 
+    /**
+     * The color for the outline of the text.
+     * 
+     */
     @Import(name="strokeVar")
     private @Nullable Output<String> strokeVar;
 
+    /**
+     * @return The color for the outline of the text.
+     * 
+     */
     public Optional<Output<String>> strokeVar() {
         return Optional.ofNullable(this.strokeVar);
     }
 
+    /**
+     * The line of text to render.
+     * 
+     */
     @Import(name="text")
     private @Nullable Output<String> text;
 
+    /**
+     * @return The line of text to render.
+     * 
+     */
     public Optional<Output<String>> text() {
         return Optional.ofNullable(this.text);
     }
 
+    /**
+     * The line of text to render.
+     * 
+     */
     @Import(name="textVar")
     private @Nullable Output<String> textVar;
 
+    /**
+     * @return The line of text to render.
+     * 
+     */
     public Optional<Output<String>> textVar() {
         return Optional.ofNullable(this.textVar);
     }
@@ -93,16 +173,32 @@ public final class GetImagingPolicyImagePolicyTransformationCompositeImageTextIm
         return Optional.ofNullable(this.transformation);
     }
 
+    /**
+     * The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
+     * 
+     */
     @Import(name="typeface")
     private @Nullable Output<String> typeface;
 
+    /**
+     * @return The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
+     * 
+     */
     public Optional<Output<String>> typeface() {
         return Optional.ofNullable(this.typeface);
     }
 
+    /**
+     * The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
+     * 
+     */
     @Import(name="typefaceVar")
     private @Nullable Output<String> typefaceVar;
 
+    /**
+     * @return The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
+     * 
+     */
     public Optional<Output<String>> typefaceVar() {
         return Optional.ofNullable(this.typefaceVar);
     }
@@ -143,92 +239,212 @@ public final class GetImagingPolicyImagePolicyTransformationCompositeImageTextIm
             $ = new GetImagingPolicyImagePolicyTransformationCompositeImageTextImageArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param fill The main fill color of the text.
+         * 
+         * @return builder
+         * 
+         */
         public Builder fill(@Nullable Output<String> fill) {
             $.fill = fill;
             return this;
         }
 
+        /**
+         * @param fill The main fill color of the text.
+         * 
+         * @return builder
+         * 
+         */
         public Builder fill(String fill) {
             return fill(Output.of(fill));
         }
 
+        /**
+         * @param fillVar The main fill color of the text.
+         * 
+         * @return builder
+         * 
+         */
         public Builder fillVar(@Nullable Output<String> fillVar) {
             $.fillVar = fillVar;
             return this;
         }
 
+        /**
+         * @param fillVar The main fill color of the text.
+         * 
+         * @return builder
+         * 
+         */
         public Builder fillVar(String fillVar) {
             return fillVar(Output.of(fillVar));
         }
 
+        /**
+         * @param size The size in pixels to render the text.
+         * 
+         * @return builder
+         * 
+         */
         public Builder size(@Nullable Output<String> size) {
             $.size = size;
             return this;
         }
 
+        /**
+         * @param size The size in pixels to render the text.
+         * 
+         * @return builder
+         * 
+         */
         public Builder size(String size) {
             return size(Output.of(size));
         }
 
+        /**
+         * @param sizeVar The size in pixels to render the text.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sizeVar(@Nullable Output<String> sizeVar) {
             $.sizeVar = sizeVar;
             return this;
         }
 
+        /**
+         * @param sizeVar The size in pixels to render the text.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sizeVar(String sizeVar) {
             return sizeVar(Output.of(sizeVar));
         }
 
+        /**
+         * @param stroke The color for the outline of the text.
+         * 
+         * @return builder
+         * 
+         */
         public Builder stroke(@Nullable Output<String> stroke) {
             $.stroke = stroke;
             return this;
         }
 
+        /**
+         * @param stroke The color for the outline of the text.
+         * 
+         * @return builder
+         * 
+         */
         public Builder stroke(String stroke) {
             return stroke(Output.of(stroke));
         }
 
+        /**
+         * @param strokeSize The thickness in points for the outline of the text.
+         * 
+         * @return builder
+         * 
+         */
         public Builder strokeSize(@Nullable Output<String> strokeSize) {
             $.strokeSize = strokeSize;
             return this;
         }
 
+        /**
+         * @param strokeSize The thickness in points for the outline of the text.
+         * 
+         * @return builder
+         * 
+         */
         public Builder strokeSize(String strokeSize) {
             return strokeSize(Output.of(strokeSize));
         }
 
+        /**
+         * @param strokeSizeVar The thickness in points for the outline of the text.
+         * 
+         * @return builder
+         * 
+         */
         public Builder strokeSizeVar(@Nullable Output<String> strokeSizeVar) {
             $.strokeSizeVar = strokeSizeVar;
             return this;
         }
 
+        /**
+         * @param strokeSizeVar The thickness in points for the outline of the text.
+         * 
+         * @return builder
+         * 
+         */
         public Builder strokeSizeVar(String strokeSizeVar) {
             return strokeSizeVar(Output.of(strokeSizeVar));
         }
 
+        /**
+         * @param strokeVar The color for the outline of the text.
+         * 
+         * @return builder
+         * 
+         */
         public Builder strokeVar(@Nullable Output<String> strokeVar) {
             $.strokeVar = strokeVar;
             return this;
         }
 
+        /**
+         * @param strokeVar The color for the outline of the text.
+         * 
+         * @return builder
+         * 
+         */
         public Builder strokeVar(String strokeVar) {
             return strokeVar(Output.of(strokeVar));
         }
 
+        /**
+         * @param text The line of text to render.
+         * 
+         * @return builder
+         * 
+         */
         public Builder text(@Nullable Output<String> text) {
             $.text = text;
             return this;
         }
 
+        /**
+         * @param text The line of text to render.
+         * 
+         * @return builder
+         * 
+         */
         public Builder text(String text) {
             return text(Output.of(text));
         }
 
+        /**
+         * @param textVar The line of text to render.
+         * 
+         * @return builder
+         * 
+         */
         public Builder textVar(@Nullable Output<String> textVar) {
             $.textVar = textVar;
             return this;
         }
 
+        /**
+         * @param textVar The line of text to render.
+         * 
+         * @return builder
+         * 
+         */
         public Builder textVar(String textVar) {
             return textVar(Output.of(textVar));
         }
@@ -242,20 +458,44 @@ public final class GetImagingPolicyImagePolicyTransformationCompositeImageTextIm
             return transformation(Output.of(transformation));
         }
 
+        /**
+         * @param typeface The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
+         * 
+         * @return builder
+         * 
+         */
         public Builder typeface(@Nullable Output<String> typeface) {
             $.typeface = typeface;
             return this;
         }
 
+        /**
+         * @param typeface The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
+         * 
+         * @return builder
+         * 
+         */
         public Builder typeface(String typeface) {
             return typeface(Output.of(typeface));
         }
 
+        /**
+         * @param typefaceVar The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
+         * 
+         * @return builder
+         * 
+         */
         public Builder typefaceVar(@Nullable Output<String> typefaceVar) {
             $.typefaceVar = typefaceVar;
             return this;
         }
 
+        /**
+         * @param typefaceVar The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
+         * 
+         * @return builder
+         * 
+         */
         public Builder typefaceVar(String typefaceVar) {
             return typefaceVar(Output.of(typefaceVar));
         }

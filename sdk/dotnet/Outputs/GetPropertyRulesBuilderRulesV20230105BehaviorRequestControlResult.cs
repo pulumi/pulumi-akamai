@@ -13,16 +13,49 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlResult
     {
+        /// <summary>
+        /// Specifies the full path of the branded 403 page, including the filename, but excluding the NetStorage CP code path component.
+        /// </summary>
         public readonly string? Branded403File;
+        /// <summary>
+        /// Specifies the response status code for the branded deny action.
+        /// </summary>
         public readonly int? Branded403StatusCode;
+        /// <summary>
+        /// Specifies the redirect URL for the branded deny action.
+        /// </summary>
         public readonly string? Branded403Url;
+        /// <summary>
+        /// Specifies the branded response page's time to live in the cache, `5` minutes by default.
+        /// </summary>
         public readonly int? BrandedDenyCacheTtl;
+        /// <summary>
+        /// Identifies the Cloudlet policy.
+        /// </summary>
         public readonly Outputs.GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlCloudletPolicyResult? CloudletPolicy;
+        /// <summary>
+        /// If enabled, serves a branded 403 page for this Cloudlet instance.
+        /// </summary>
         public readonly bool? EnableBranded403;
+        /// <summary>
+        /// Enables the Request Control Cloudlet.
+        /// </summary>
         public readonly bool? Enabled;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// Specifies the NetStorage domain that contains the branded 403 page.
+        /// </summary>
         public readonly Outputs.GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlNetStorageResult? NetStorage;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

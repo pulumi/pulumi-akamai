@@ -13,25 +13,65 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorSiteShield {
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String nossmap;
+    /**
+     * @return Identifies the hostname for the Site Shield map. See `Create a Site Shield map` for more details. Form an object with a `value` key that references the hostname, for example: `&#34;ssmap&#34;:{&#34;value&#34;:&#34;ss.akamai.net&#34;}`.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmap ssmap;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorSiteShield() {}
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> nossmap() {
         return Optional.ofNullable(this.nossmap);
     }
+    /**
+     * @return Identifies the hostname for the Site Shield map. See `Create a Site Shield map` for more details. Form an object with a `value` key that references the hostname, for example: `&#34;ssmap&#34;:{&#34;value&#34;:&#34;ss.akamai.net&#34;}`.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmap> ssmap() {
         return Optional.ofNullable(this.ssmap);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

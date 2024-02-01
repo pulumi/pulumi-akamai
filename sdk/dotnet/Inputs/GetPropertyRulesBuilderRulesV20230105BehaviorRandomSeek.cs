@@ -12,21 +12,39 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorRandomSeekArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Enables random seek optimization in FLV files.
+        /// </summary>
         [Input("flv")]
         public bool? Flv { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public bool? Locked { get; set; }
 
+        /// <summary>
+        /// Sets the maximum size of the MP4 file to optimize, expressed as a number suffixed with a unit string such as `MB` or `GB`.
+        /// </summary>
         [Input("maximumSize")]
         public string? MaximumSize { get; set; }
 
+        /// <summary>
+        /// Enables random seek optimization in MP4 files.
+        /// </summary>
         [Input("mp4")]
         public bool? Mp4 { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public string? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public string? Uuid { get; set; }
 

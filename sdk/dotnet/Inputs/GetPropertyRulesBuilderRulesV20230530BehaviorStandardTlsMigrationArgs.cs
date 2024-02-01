@@ -12,45 +12,87 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorStandardTlsMigrationInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Allow temporary downgrade of HTTPS traffic to HTTP. This removes various `Origin`, `Referer`, `Cookie`, `Cookie2`, `sec-*` and `proxy-*` headers from the request to origin.
+        /// </summary>
         [Input("allowHttpsDowngrade")]
         public Input<bool>? AllowHttpsDowngrade { get; set; }
 
+        /// <summary>
+        /// Allows temporary upgrade of HTTP traffic to HTTPS.
+        /// </summary>
         [Input("allowHttpsUpgrade")]
         public Input<bool>? AllowHttpsUpgrade { get; set; }
 
+        /// <summary>
+        /// Specifies the number cache sharing days.
+        /// </summary>
         [Input("cacheSharingDuration")]
         public Input<int>? CacheSharingDuration { get; set; }
 
+        /// <summary>
+        /// Specifies when to start cache sharing.
+        /// </summary>
         [Input("cacheSharingStartTime")]
         public Input<string>? CacheSharingStartTime { get; set; }
 
+        /// <summary>
+        /// Allows migration to Standard TLS.
+        /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
+        /// <summary>
+        /// Sets whether your new certificate is SNI-only.
+        /// </summary>
         [Input("isCertificateSniOnly")]
         public Input<bool>? IsCertificateSniOnly { get; set; }
 
+        /// <summary>
+        /// Allows you to align traffic to various `tieredDistribution` areas.
+        /// </summary>
         [Input("isTieredDistributionUsed")]
         public Input<bool>? IsTieredDistributionUsed { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public Input<bool>? Locked { get; set; }
 
+        /// <summary>
+        /// Specifies the number of days to migrate the cache.
+        /// </summary>
         [Input("migrationDuration")]
         public Input<int>? MigrationDuration { get; set; }
 
+        /// <summary>
+        /// What kind of traffic you're migrating from.
+        /// </summary>
         [Input("migrationFrom")]
         public Input<string>? MigrationFrom { get; set; }
 
+        /// <summary>
+        /// Specifies when to start migrating the cache.
+        /// </summary>
         [Input("migrationStartTime")]
         public Input<string>? MigrationStartTime { get; set; }
 
+        /// <summary>
+        /// Specifies the `tieredDistribution` location.
+        /// </summary>
         [Input("tdLocation")]
         public Input<string>? TdLocation { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public Input<string>? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public Input<string>? Uuid { get; set; }
 

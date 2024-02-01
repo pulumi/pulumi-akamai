@@ -15,23 +15,47 @@ public final class GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSett
 
     public static final GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettings Empty = new GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettings();
 
+    /**
+     * The ID of the Conditional Origin requests are forwarded to
+     * 
+     */
     @Import(name="originId")
     private @Nullable String originId;
 
+    /**
+     * @return The ID of the Conditional Origin requests are forwarded to
+     * 
+     */
     public Optional<String> originId() {
         return Optional.ofNullable(this.originId);
     }
 
+    /**
+     * If a value is provided and match conditions are met, this property defines the path/resource/query string to rewrite URL for the incoming request.
+     * 
+     */
     @Import(name="pathAndQs")
     private @Nullable String pathAndQs;
 
+    /**
+     * @return If a value is provided and match conditions are met, this property defines the path/resource/query string to rewrite URL for the incoming request.
+     * 
+     */
     public Optional<String> pathAndQs() {
         return Optional.ofNullable(this.pathAndQs);
     }
 
+    /**
+     * If set to true, the Cloudlet includes the query string from the request in the rewritten or forwarded URL.
+     * 
+     */
     @Import(name="useIncomingQueryString")
     private @Nullable Boolean useIncomingQueryString;
 
+    /**
+     * @return If set to true, the Cloudlet includes the query string from the request in the rewritten or forwarded URL.
+     * 
+     */
     public Optional<Boolean> useIncomingQueryString() {
         return Optional.ofNullable(this.useIncomingQueryString);
     }
@@ -62,16 +86,34 @@ public final class GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSett
             $ = new GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettings(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param originId The ID of the Conditional Origin requests are forwarded to
+         * 
+         * @return builder
+         * 
+         */
         public Builder originId(@Nullable String originId) {
             $.originId = originId;
             return this;
         }
 
+        /**
+         * @param pathAndQs If a value is provided and match conditions are met, this property defines the path/resource/query string to rewrite URL for the incoming request.
+         * 
+         * @return builder
+         * 
+         */
         public Builder pathAndQs(@Nullable String pathAndQs) {
             $.pathAndQs = pathAndQs;
             return this;
         }
 
+        /**
+         * @param useIncomingQueryString If set to true, the Cloudlet includes the query string from the request in the rewritten or forwarded URL.
+         * 
+         * @return builder
+         * 
+         */
         public Builder useIncomingQueryString(@Nullable Boolean useIncomingQueryString) {
             $.useIncomingQueryString = useIncomingQueryString;
             return this;

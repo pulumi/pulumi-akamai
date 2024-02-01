@@ -12,33 +12,63 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorSalesForceCommerceCloudClientInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// When enabled, overrides the forwarding origin's cache key.
+        /// </summary>
         [Input("allowOverrideOriginCacheKey")]
         public Input<bool>? AllowOverrideOriginCacheKey { get; set; }
 
+        /// <summary>
+        /// An ID value that helps distinguish different types of traffic sent from Akamai to the Salesforce Commerce Cloud. Form the value as `instance-realm-customer`, where `instance` is either `production` or `development`, `realm` is your Salesforce Commerce Cloud service `$REALM` value, and `customer` is the name for your organization in Salesforce Commerce Cloud.  You can use alphanumeric characters, underscores, or dot characters within dash-delimited segment values.
+        /// </summary>
         [Input("connectorId")]
         public Input<string>? ConnectorId { get; set; }
 
+        /// <summary>
+        /// Enables the Akamai Connector for Salesforce Commerce Cloud.
+        /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public Input<bool>? Locked { get; set; }
 
+        /// <summary>
+        /// Specifies where the `Host` header is defined.
+        /// </summary>
         [Input("originHostHeader")]
         public Input<string>? OriginHostHeader { get; set; }
 
+        /// <summary>
+        /// Specifies where the origin is.
+        /// </summary>
         [Input("originType")]
         public Input<string>? OriginType { get; set; }
 
+        /// <summary>
+        /// This specifies the hostname or IP address of the custom Salesforce origin.
+        /// </summary>
         [Input("sf3cOriginHost")]
         public Input<string>? Sf3cOriginHost { get; set; }
 
+        /// <summary>
+        /// This specifies the hostname or IP address of the custom Salesforce host header.
+        /// </summary>
         [Input("sf3cOriginHostHeader")]
         public Input<string>? Sf3cOriginHostHeader { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public Input<string>? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public Input<string>? Uuid { get; set; }
 

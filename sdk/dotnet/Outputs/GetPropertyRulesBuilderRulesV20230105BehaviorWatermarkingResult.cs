@@ -13,24 +13,81 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorWatermarkingResult
     {
+        /// <summary>
+        /// When you work with your watermarking vendor, you can apply several preprocessing methods to your content. See the `AMD help` for more information. Use this option to specify the location of the `A` and `B` variant segments.
+        /// </summary>
         public readonly string? AbVariantLocation;
+        /// <summary>
+        /// Provides the primary password used to encrypt patterns in your watermarking tokens.
+        /// </summary>
         public readonly string? DecryptionPassword1;
+        /// <summary>
+        /// Provides the secondary password you can use to rotate passwords.
+        /// </summary>
         public readonly string? DecryptionPassword2;
+        /// <summary>
+        /// Specifies a label that corresponds to the primary password.
+        /// </summary>
         public readonly string? DecryptionPasswordId1;
+        /// <summary>
+        /// Specifies a label for the secondary password, used in rotation scenarios to identify which password to use for decryption.
+        /// </summary>
         public readonly string? DecryptionPasswordId2;
+        /// <summary>
+        /// Enables the watermarking behavior.
+        /// </summary>
         public readonly bool? Enable;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? MiscellaneousSettingsTitle;
+        /// <summary>
+        /// If patterns in your watermarking tokens have been encrypted, enabling this allows you to provide values to decrypt them.
+        /// </summary>
         public readonly bool? PatternDecryptionEnable;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? PatternEncryptionTitle;
+        /// <summary>
+        /// When enabled, you can verify the signature in your watermarking token.
+        /// </summary>
         public readonly bool? SignatureVerificationEnable;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? TokenSigningTitle;
+        /// <summary>
+        /// When you work with your watermarking vendor, you can apply several preprocessing methods to your content. See the `AMD help` for more information. With the standard `filename-prefix AB naming` preprocessing method, the watermarking vendor creates two variants of the original segment content and labels them as an `A` and `B` segment in the filename. If you selected the `unlabeled A variant` preprocessing method, enabling this option tells your configuration to use the original filename segment content as your `A` variant.
+        /// </summary>
         public readonly bool? UseOriginalAsA;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
+        /// <summary>
+        /// Specifies a unique identifier for the first public key.
+        /// </summary>
         public readonly string? VerificationKeyId1;
+        /// <summary>
+        /// Specifies a unique identifier for the optional second public key.
+        /// </summary>
         public readonly string? VerificationKeyId2;
+        /// <summary>
+        /// Specifies the first public key in its entirety.
+        /// </summary>
         public readonly string? VerificationPublicKey1;
+        /// <summary>
+        /// Specifies the optional second public key in its entirety. Specify a second key to enable rotation.
+        /// </summary>
         public readonly string? VerificationPublicKey2;
 
         [OutputConstructor]

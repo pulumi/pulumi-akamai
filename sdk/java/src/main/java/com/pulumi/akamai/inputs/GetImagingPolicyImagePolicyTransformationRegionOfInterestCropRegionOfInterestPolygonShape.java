@@ -14,9 +14,17 @@ public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop
 
     public static final GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShape Empty = new GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShape();
 
+    /**
+     * Series of PointShapeType objects. The last and first points connect to close the shape automatically.
+     * 
+     */
     @Import(name="points", required=true)
     private List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapePoint> points;
 
+    /**
+     * @return Series of PointShapeType objects. The last and first points connect to close the shape automatically.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapePoint> points() {
         return this.points;
     }
@@ -45,11 +53,23 @@ public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop
             $ = new GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShape(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param points Series of PointShapeType objects. The last and first points connect to close the shape automatically.
+         * 
+         * @return builder
+         * 
+         */
         public Builder points(List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapePoint> points) {
             $.points = points;
             return this;
         }
 
+        /**
+         * @param points Series of PointShapeType objects. The last and first points connect to close the shape automatically.
+         * 
+         * @return builder
+         * 
+         */
         public Builder points(GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapePoint... points) {
             return points(List.of(points));
         }

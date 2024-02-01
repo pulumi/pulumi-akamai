@@ -17,51 +17,107 @@ public final class GetCloudletsForwardRewriteMatchRuleMatchRuleMatch extends com
 
     public static final GetCloudletsForwardRewriteMatchRuleMatchRuleMatch Empty = new GetCloudletsForwardRewriteMatchRuleMatchRuleMatch();
 
+    /**
+     * If true, the match is case sensitive
+     * 
+     */
     @Import(name="caseSensitive")
     private @Nullable Boolean caseSensitive;
 
+    /**
+     * @return If true, the match is case sensitive
+     * 
+     */
     public Optional<Boolean> caseSensitive() {
         return Optional.ofNullable(this.caseSensitive);
     }
 
+    /**
+     * For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
+     * 
+     */
     @Import(name="checkIps")
     private @Nullable String checkIps;
 
+    /**
+     * @return For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
+     * 
+     */
     public Optional<String> checkIps() {
         return Optional.ofNullable(this.checkIps);
     }
 
+    /**
+     * Valid entries for this property: contains, exists, and equals
+     * 
+     */
     @Import(name="matchOperator")
     private @Nullable String matchOperator;
 
+    /**
+     * @return Valid entries for this property: contains, exists, and equals
+     * 
+     */
     public Optional<String> matchOperator() {
         return Optional.ofNullable(this.matchOperator);
     }
 
+    /**
+     * The type of match used
+     * 
+     */
     @Import(name="matchType")
     private @Nullable String matchType;
 
+    /**
+     * @return The type of match used
+     * 
+     */
     public Optional<String> matchType() {
         return Optional.ofNullable(this.matchType);
     }
 
+    /**
+     * Depends on the matchType
+     * 
+     */
     @Import(name="matchValue")
     private @Nullable String matchValue;
 
+    /**
+     * @return Depends on the matchType
+     * 
+     */
     public Optional<String> matchValue() {
         return Optional.ofNullable(this.matchValue);
     }
 
+    /**
+     * If true, negates the match
+     * 
+     */
     @Import(name="negate")
     private @Nullable Boolean negate;
 
+    /**
+     * @return If true, negates the match
+     * 
+     */
     public Optional<Boolean> negate() {
         return Optional.ofNullable(this.negate);
     }
 
+    /**
+     * An object used when a rule either includes more complex match criteria, like multiple value attributes
+     * 
+     */
     @Import(name="objectMatchValues")
     private @Nullable List<GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValue> objectMatchValues;
 
+    /**
+     * @return An object used when a rule either includes more complex match criteria, like multiple value attributes
+     * 
+     */
     public Optional<List<GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValue>> objectMatchValues() {
         return Optional.ofNullable(this.objectMatchValues);
     }
@@ -96,41 +152,89 @@ public final class GetCloudletsForwardRewriteMatchRuleMatchRuleMatch extends com
             $ = new GetCloudletsForwardRewriteMatchRuleMatchRuleMatch(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param caseSensitive If true, the match is case sensitive
+         * 
+         * @return builder
+         * 
+         */
         public Builder caseSensitive(@Nullable Boolean caseSensitive) {
             $.caseSensitive = caseSensitive;
             return this;
         }
 
+        /**
+         * @param checkIps For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
+         * 
+         * @return builder
+         * 
+         */
         public Builder checkIps(@Nullable String checkIps) {
             $.checkIps = checkIps;
             return this;
         }
 
+        /**
+         * @param matchOperator Valid entries for this property: contains, exists, and equals
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchOperator(@Nullable String matchOperator) {
             $.matchOperator = matchOperator;
             return this;
         }
 
+        /**
+         * @param matchType The type of match used
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchType(@Nullable String matchType) {
             $.matchType = matchType;
             return this;
         }
 
+        /**
+         * @param matchValue Depends on the matchType
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchValue(@Nullable String matchValue) {
             $.matchValue = matchValue;
             return this;
         }
 
+        /**
+         * @param negate If true, negates the match
+         * 
+         * @return builder
+         * 
+         */
         public Builder negate(@Nullable Boolean negate) {
             $.negate = negate;
             return this;
         }
 
+        /**
+         * @param objectMatchValues An object used when a rule either includes more complex match criteria, like multiple value attributes
+         * 
+         * @return builder
+         * 
+         */
         public Builder objectMatchValues(@Nullable List<GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValue> objectMatchValues) {
             $.objectMatchValues = objectMatchValues;
             return this;
         }
 
+        /**
+         * @param objectMatchValues An object used when a rule either includes more complex match criteria, like multiple value attributes
+         * 
+         * @return builder
+         * 
+         */
         public Builder objectMatchValues(GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValue... objectMatchValues) {
             return objectMatchValues(List.of(objectMatchValues));
         }

@@ -13,17 +13,53 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class CloudletsApplicationLoadBalancerDataCenter
     {
+        /// <summary>
+        /// The city in which the data center is located.
+        /// </summary>
         public readonly string? City;
+        /// <summary>
+        /// Describes if cloud server host header is overridden
+        /// </summary>
         public readonly bool? CloudServerHostHeaderOverride;
+        /// <summary>
+        /// Describes if this datacenter is a cloud service
+        /// </summary>
         public readonly bool? CloudService;
+        /// <summary>
+        /// The continent on which the data center is located
+        /// </summary>
         public readonly string Continent;
+        /// <summary>
+        /// The country in which the data center is located
+        /// </summary>
         public readonly string Country;
+        /// <summary>
+        /// This should match the 'hostname' value defined for this datacenter in Property Manager
+        /// </summary>
         public readonly string? Hostname;
+        /// <summary>
+        /// The latitude value for the data center. This member supports six decimal places of precision.
+        /// </summary>
         public readonly double Latitude;
+        /// <summary>
+        /// An array of strings that represent the origin servers used to poll the data centers in an application load balancer configuration. These servers support basic HTTP polling.
+        /// </summary>
         public readonly ImmutableArray<string> LivenessHosts;
+        /// <summary>
+        /// The longitude value for the data center. This member supports six decimal places of precision.
+        /// </summary>
         public readonly double Longitude;
+        /// <summary>
+        /// The ID of an origin that represents the data center. The conditional origin, which is defined in the Property Manager API, must have an originType of either CUSTOMER or NET_STORAGE
+        /// </summary>
         public readonly string OriginId;
+        /// <summary>
+        /// The percent of traffic that is sent to the data center. The total for all data centers must equal 100%.
+        /// </summary>
         public readonly double Percent;
+        /// <summary>
+        /// The state, province, or region where the data center is located
+        /// </summary>
         public readonly string? StateOrProvince;
 
         [OutputConstructor]

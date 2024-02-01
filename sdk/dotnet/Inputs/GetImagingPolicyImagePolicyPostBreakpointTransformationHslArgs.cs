@@ -12,21 +12,39 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetImagingPolicyImagePolicyPostBreakpointTransformationHslInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The number of degrees to rotate colors around the color wheel, `0` by default.
+        /// </summary>
         [Input("hue")]
         public Input<string>? Hue { get; set; }
 
+        /// <summary>
+        /// The number of degrees to rotate colors around the color wheel, `0` by default.
+        /// </summary>
         [Input("hueVar")]
         public Input<string>? HueVar { get; set; }
 
+        /// <summary>
+        /// A multiplier to adjust the lightness of colors in the image. Note that lightness is distinct from brightness. For example, reducing the lightness of a light green might give you a lime green whereas reducing the brightness of a light green might give you a darker shade of the same green. Values less than `1.0` decrease the lightness of colors in the image. Values greater than `1.0` increase the lightness of colors in the image.
+        /// </summary>
         [Input("lightness")]
         public Input<string>? Lightness { get; set; }
 
+        /// <summary>
+        /// A multiplier to adjust the lightness of colors in the image. Note that lightness is distinct from brightness. For example, reducing the lightness of a light green might give you a lime green whereas reducing the brightness of a light green might give you a darker shade of the same green. Values less than `1.0` decrease the lightness of colors in the image. Values greater than `1.0` increase the lightness of colors in the image.
+        /// </summary>
         [Input("lightnessVar")]
         public Input<string>? LightnessVar { get; set; }
 
+        /// <summary>
+        /// A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
+        /// </summary>
         [Input("saturation")]
         public Input<string>? Saturation { get; set; }
 
+        /// <summary>
+        /// A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
+        /// </summary>
         [Input("saturationVar")]
         public Input<string>? SaturationVar { get; set; }
 

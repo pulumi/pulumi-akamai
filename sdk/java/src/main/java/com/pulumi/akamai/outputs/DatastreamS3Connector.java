@@ -13,33 +13,89 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DatastreamS3Connector {
+    /**
+     * @return The access key identifier used to authenticate requests to the Amazon S3 account
+     * 
+     */
     private String accessKey;
+    /**
+     * @return The name of the Amazon S3 bucket
+     * 
+     */
     private String bucket;
+    /**
+     * @return Indicates whether the logs should be compressed
+     * 
+     */
     private @Nullable Boolean compressLogs;
+    /**
+     * @return The name of the connector
+     * 
+     */
     private String displayName;
+    /**
+     * @return The path to the folder within Amazon S3 bucket where logs will be stored
+     * 
+     */
     private String path;
+    /**
+     * @return The AWS region where Amazon S3 bucket resides
+     * 
+     */
     private String region;
+    /**
+     * @return The secret access key identifier used to authenticate requests to the Amazon S3 account
+     * 
+     */
     private String secretAccessKey;
 
     private DatastreamS3Connector() {}
+    /**
+     * @return The access key identifier used to authenticate requests to the Amazon S3 account
+     * 
+     */
     public String accessKey() {
         return this.accessKey;
     }
+    /**
+     * @return The name of the Amazon S3 bucket
+     * 
+     */
     public String bucket() {
         return this.bucket;
     }
+    /**
+     * @return Indicates whether the logs should be compressed
+     * 
+     */
     public Optional<Boolean> compressLogs() {
         return Optional.ofNullable(this.compressLogs);
     }
+    /**
+     * @return The name of the connector
+     * 
+     */
     public String displayName() {
         return this.displayName;
     }
+    /**
+     * @return The path to the folder within Amazon S3 bucket where logs will be stored
+     * 
+     */
     public String path() {
         return this.path;
     }
+    /**
+     * @return The AWS region where Amazon S3 bucket resides
+     * 
+     */
     public String region() {
         return this.region;
     }
+    /**
+     * @return The secret access key identifier used to authenticate requests to the Amazon S3 account
+     * 
+     */
     public String secretAccessKey() {
         return this.secretAccessKey;
     }

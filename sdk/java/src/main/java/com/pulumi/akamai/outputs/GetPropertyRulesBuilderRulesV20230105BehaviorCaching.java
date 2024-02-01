@@ -12,81 +12,233 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorCaching {
+    /**
+     * @return Specify the caching option.
+     * 
+     */
     private @Nullable String behavior;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String cacheControlDirectives;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String cacheabilitySettings;
+    /**
+     * @return Set the `MAX_AGE` header for the cached content.
+     * 
+     */
     private @Nullable String defaultTtl;
+    /**
+     * @return This enables honoring particular `Cache-Control` header directives from the origin. Supports all official `RFC 7234` directives except for `no-transform`.
+     * 
+     */
     private @Nullable Boolean enhancedRfcSupport;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String expirationSettings;
+    /**
+     * @return This instructs edge servers to cache the object for a length of time set by the `max-age` directive in the response. When present in the origin response, this directive takes precedence over the `max-age` directive and the `defaultTtl` setting.
+     * 
+     */
     private @Nullable Boolean honorMaxAge;
+    /**
+     * @return This instructs edge servers to successfully revalidate with the origin server before using stale objects in the cache to satisfy new requests.
+     * 
+     */
     private @Nullable Boolean honorMustRevalidate;
+    /**
+     * @return With the `no-cache` directive present in the response, this instructs edge servers to validate or refetch the response for each request. Effectively, set the time to live `ttl` to zero seconds.
+     * 
+     */
     private @Nullable Boolean honorNoCache;
+    /**
+     * @return Instructs edge servers not to cache the response when the origin response includes the `no-store` directive.
+     * 
+     */
     private @Nullable Boolean honorNoStore;
+    /**
+     * @return Instructs edge servers not to cache the response when the origin response includes the `private` directive.
+     * 
+     */
     private @Nullable Boolean honorPrivate;
+    /**
+     * @return With the `proxy-revalidate` directive present in the response, this instructs edge servers to successfully revalidate with the origin server before using stale objects in the cache to satisfy new requests.
+     * 
+     */
     private @Nullable Boolean honorProxyRevalidate;
+    /**
+     * @return Instructs edge servers to cache the object for a length of time set by the `s-maxage` directive in the response. When present in the origin response, this directive takes precedence over the `max-age` directive and the `defaultTtl` setting.
+     * 
+     */
     private @Nullable Boolean honorSMaxage;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Determines what to do once the cached content has expired, by which time the Akamai platform should have re-fetched and validated content from the origin. If enabled, only allows the re-fetched content to be served. If disabled, may serve stale content if the origin is unavailable.
+     * 
+     */
     private @Nullable Boolean mustRevalidate;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String revalidationSettings;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return The maximum time content may remain cached. Setting the value to `0` is the same as setting a `no-cache` header, which forces content to revalidate.
+     * 
+     */
     private @Nullable String ttl;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorCaching() {}
+    /**
+     * @return Specify the caching option.
+     * 
+     */
     public Optional<String> behavior() {
         return Optional.ofNullable(this.behavior);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> cacheControlDirectives() {
         return Optional.ofNullable(this.cacheControlDirectives);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> cacheabilitySettings() {
         return Optional.ofNullable(this.cacheabilitySettings);
     }
+    /**
+     * @return Set the `MAX_AGE` header for the cached content.
+     * 
+     */
     public Optional<String> defaultTtl() {
         return Optional.ofNullable(this.defaultTtl);
     }
+    /**
+     * @return This enables honoring particular `Cache-Control` header directives from the origin. Supports all official `RFC 7234` directives except for `no-transform`.
+     * 
+     */
     public Optional<Boolean> enhancedRfcSupport() {
         return Optional.ofNullable(this.enhancedRfcSupport);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> expirationSettings() {
         return Optional.ofNullable(this.expirationSettings);
     }
+    /**
+     * @return This instructs edge servers to cache the object for a length of time set by the `max-age` directive in the response. When present in the origin response, this directive takes precedence over the `max-age` directive and the `defaultTtl` setting.
+     * 
+     */
     public Optional<Boolean> honorMaxAge() {
         return Optional.ofNullable(this.honorMaxAge);
     }
+    /**
+     * @return This instructs edge servers to successfully revalidate with the origin server before using stale objects in the cache to satisfy new requests.
+     * 
+     */
     public Optional<Boolean> honorMustRevalidate() {
         return Optional.ofNullable(this.honorMustRevalidate);
     }
+    /**
+     * @return With the `no-cache` directive present in the response, this instructs edge servers to validate or refetch the response for each request. Effectively, set the time to live `ttl` to zero seconds.
+     * 
+     */
     public Optional<Boolean> honorNoCache() {
         return Optional.ofNullable(this.honorNoCache);
     }
+    /**
+     * @return Instructs edge servers not to cache the response when the origin response includes the `no-store` directive.
+     * 
+     */
     public Optional<Boolean> honorNoStore() {
         return Optional.ofNullable(this.honorNoStore);
     }
+    /**
+     * @return Instructs edge servers not to cache the response when the origin response includes the `private` directive.
+     * 
+     */
     public Optional<Boolean> honorPrivate() {
         return Optional.ofNullable(this.honorPrivate);
     }
+    /**
+     * @return With the `proxy-revalidate` directive present in the response, this instructs edge servers to successfully revalidate with the origin server before using stale objects in the cache to satisfy new requests.
+     * 
+     */
     public Optional<Boolean> honorProxyRevalidate() {
         return Optional.ofNullable(this.honorProxyRevalidate);
     }
+    /**
+     * @return Instructs edge servers to cache the object for a length of time set by the `s-maxage` directive in the response. When present in the origin response, this directive takes precedence over the `max-age` directive and the `defaultTtl` setting.
+     * 
+     */
     public Optional<Boolean> honorSMaxage() {
         return Optional.ofNullable(this.honorSMaxage);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Determines what to do once the cached content has expired, by which time the Akamai platform should have re-fetched and validated content from the origin. If enabled, only allows the re-fetched content to be served. If disabled, may serve stale content if the origin is unavailable.
+     * 
+     */
     public Optional<Boolean> mustRevalidate() {
         return Optional.ofNullable(this.mustRevalidate);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> revalidationSettings() {
         return Optional.ofNullable(this.revalidationSettings);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return The maximum time content may remain cached. Setting the value to `0` is the same as setting a `no-cache` header, which forces content to revalidate.
+     * 
+     */
     public Optional<String> ttl() {
         return Optional.ofNullable(this.ttl);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

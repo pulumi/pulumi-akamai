@@ -14,9 +14,17 @@ public final class DatastreamDeliveryConfigurationFrequencyArgs extends com.pulu
 
     public static final DatastreamDeliveryConfigurationFrequencyArgs Empty = new DatastreamDeliveryConfigurationFrequencyArgs();
 
+    /**
+     * The time in seconds after which the system bundles log lines into a file and sends it to a destination
+     * 
+     */
     @Import(name="intervalInSecs", required=true)
     private Output<Integer> intervalInSecs;
 
+    /**
+     * @return The time in seconds after which the system bundles log lines into a file and sends it to a destination
+     * 
+     */
     public Output<Integer> intervalInSecs() {
         return this.intervalInSecs;
     }
@@ -45,11 +53,23 @@ public final class DatastreamDeliveryConfigurationFrequencyArgs extends com.pulu
             $ = new DatastreamDeliveryConfigurationFrequencyArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param intervalInSecs The time in seconds after which the system bundles log lines into a file and sends it to a destination
+         * 
+         * @return builder
+         * 
+         */
         public Builder intervalInSecs(Output<Integer> intervalInSecs) {
             $.intervalInSecs = intervalInSecs;
             return this;
         }
 
+        /**
+         * @param intervalInSecs The time in seconds after which the system bundles log lines into a file and sends it to a destination
+         * 
+         * @return builder
+         * 
+         */
         public Builder intervalInSecs(Integer intervalInSecs) {
             return intervalInSecs(Output.of(intervalInSecs));
         }

@@ -12,73 +12,209 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorVerifyJsonWebTokenForDcp {
+    /**
+     * @return This specifies the authorization group name.
+     * 
+     */
     private @Nullable String authorizations;
+    /**
+     * @return This specifies the claim name.
+     * 
+     */
     private @Nullable String clientId;
+    /**
+     * @return The JWT value comes from the `X-Akamai-DCP-Token` header by default.  Enabling this option allows you to extract it from another header name that you specify.
+     * 
+     */
     private @Nullable Boolean customHeader;
+    /**
+     * @return Verifies JWTs signed with the ES256 algorithm. This signature helps to ensure that the token hasn&#39;t been tampered with.
+     * 
+     */
     private @Nullable Boolean enableEs256;
+    /**
+     * @return Verifies JWTs signed with the RS256 algorithm. This signature helps to ensure that the token hasn&#39;t been tampered with.
+     * 
+     */
     private @Nullable Boolean enableRs256;
+    /**
+     * @return Allows you to extract the authorization groups stored in the JWT.
+     * 
+     */
     private @Nullable Boolean extractAuthorizations;
+    /**
+     * @return Allows you to extract the client ID claim name stored in JWT.
+     * 
+     */
     private @Nullable Boolean extractClientId;
+    /**
+     * @return Specifies where to get the JWT value from.
+     * 
+     */
     private @Nullable String extractLocation;
+    /**
+     * @return Allows you to extract the user name stored in the JWT.
+     * 
+     */
     private @Nullable Boolean extractUserName;
+    /**
+     * @return This specifies the name of the header to extract the JWT value from.
+     * 
+     */
     private @Nullable String headerName;
+    /**
+     * @return An identifier for the JWT keys collection.
+     * 
+     */
     private @Nullable String jwt;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Specifies the primary location to extract the JWT value from. If the specified option doesn&#39;t include the JWTs, the system checks the secondary one.
+     * 
+     */
     private @Nullable String primaryLocation;
+    /**
+     * @return Specifies the name of the query parameter from which to extract the JWT value.
+     * 
+     */
     private @Nullable String queryParameterName;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return This specifies the user name.
+     * 
+     */
     private @Nullable String userName;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorVerifyJsonWebTokenForDcp() {}
+    /**
+     * @return This specifies the authorization group name.
+     * 
+     */
     public Optional<String> authorizations() {
         return Optional.ofNullable(this.authorizations);
     }
+    /**
+     * @return This specifies the claim name.
+     * 
+     */
     public Optional<String> clientId() {
         return Optional.ofNullable(this.clientId);
     }
+    /**
+     * @return The JWT value comes from the `X-Akamai-DCP-Token` header by default.  Enabling this option allows you to extract it from another header name that you specify.
+     * 
+     */
     public Optional<Boolean> customHeader() {
         return Optional.ofNullable(this.customHeader);
     }
+    /**
+     * @return Verifies JWTs signed with the ES256 algorithm. This signature helps to ensure that the token hasn&#39;t been tampered with.
+     * 
+     */
     public Optional<Boolean> enableEs256() {
         return Optional.ofNullable(this.enableEs256);
     }
+    /**
+     * @return Verifies JWTs signed with the RS256 algorithm. This signature helps to ensure that the token hasn&#39;t been tampered with.
+     * 
+     */
     public Optional<Boolean> enableRs256() {
         return Optional.ofNullable(this.enableRs256);
     }
+    /**
+     * @return Allows you to extract the authorization groups stored in the JWT.
+     * 
+     */
     public Optional<Boolean> extractAuthorizations() {
         return Optional.ofNullable(this.extractAuthorizations);
     }
+    /**
+     * @return Allows you to extract the client ID claim name stored in JWT.
+     * 
+     */
     public Optional<Boolean> extractClientId() {
         return Optional.ofNullable(this.extractClientId);
     }
+    /**
+     * @return Specifies where to get the JWT value from.
+     * 
+     */
     public Optional<String> extractLocation() {
         return Optional.ofNullable(this.extractLocation);
     }
+    /**
+     * @return Allows you to extract the user name stored in the JWT.
+     * 
+     */
     public Optional<Boolean> extractUserName() {
         return Optional.ofNullable(this.extractUserName);
     }
+    /**
+     * @return This specifies the name of the header to extract the JWT value from.
+     * 
+     */
     public Optional<String> headerName() {
         return Optional.ofNullable(this.headerName);
     }
+    /**
+     * @return An identifier for the JWT keys collection.
+     * 
+     */
     public Optional<String> jwt() {
         return Optional.ofNullable(this.jwt);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Specifies the primary location to extract the JWT value from. If the specified option doesn&#39;t include the JWTs, the system checks the secondary one.
+     * 
+     */
     public Optional<String> primaryLocation() {
         return Optional.ofNullable(this.primaryLocation);
     }
+    /**
+     * @return Specifies the name of the query parameter from which to extract the JWT value.
+     * 
+     */
     public Optional<String> queryParameterName() {
         return Optional.ofNullable(this.queryParameterName);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return This specifies the user name.
+     * 
+     */
     public Optional<String> userName() {
         return Optional.ofNullable(this.userName);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

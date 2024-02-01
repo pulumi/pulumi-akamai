@@ -12,15 +12,27 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetImagingPolicyImagePolicyTransformationTrimInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.
+        /// </summary>
         [Input("fuzz")]
         public Input<string>? Fuzz { get; set; }
 
+        /// <summary>
+        /// The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.
+        /// </summary>
         [Input("fuzzVar")]
         public Input<string>? FuzzVar { get; set; }
 
+        /// <summary>
+        /// The amount of padding in pixels to add to the trimmed image.
+        /// </summary>
         [Input("padding")]
         public Input<string>? Padding { get; set; }
 
+        /// <summary>
+        /// The amount of padding in pixels to add to the trimmed image.
+        /// </summary>
         [Input("paddingVar")]
         public Input<string>? PaddingVar { get; set; }
 

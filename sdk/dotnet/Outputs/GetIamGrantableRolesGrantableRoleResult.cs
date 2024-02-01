@@ -13,8 +13,17 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetIamGrantableRolesGrantableRoleResult
     {
+        /// <summary>
+        /// Granted role description
+        /// </summary>
         public readonly string Description;
+        /// <summary>
+        /// Granted role ID
+        /// </summary>
         public readonly int GrantedRoleId;
+        /// <summary>
+        /// Granted role name
+        /// </summary>
         public readonly string Name;
 
         [OutputConstructor]

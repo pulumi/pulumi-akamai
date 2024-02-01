@@ -33,30 +33,62 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationArgs e
 
     public static final GetImagingPolicyImagePolicyPostBreakpointTransformationArgs Empty = new GetImagingPolicyImagePolicyPostBreakpointTransformationArgs();
 
+    /**
+     * Places a transparent image on a set background color. Color is specified in the typical CSS hexadecimal format.
+     * 
+     */
     @Import(name="backgroundColors")
     private @Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationBackgroundColorArgs>> backgroundColors;
 
+    /**
+     * @return Places a transparent image on a set background color. Color is specified in the typical CSS hexadecimal format.
+     * 
+     */
     public Optional<Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationBackgroundColorArgs>>> backgroundColors() {
         return Optional.ofNullable(this.backgroundColors);
     }
 
+    /**
+     * Applies a Gaussian blur to the image.
+     * 
+     */
     @Import(name="blurs")
     private @Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationBlurArgs>> blurs;
 
+    /**
+     * @return Applies a Gaussian blur to the image.
+     * 
+     */
     public Optional<Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationBlurArgs>>> blurs() {
         return Optional.ofNullable(this.blurs);
     }
 
+    /**
+     * Changes any color in an image within the specified volume of the HSL colorspace to transparent or semitransparent. This transformation applies a &#39;green screen&#39; technique commonly used to isolate and remove background colors.
+     * 
+     */
     @Import(name="chromaKeys")
     private @Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationChromaKeyArgs>> chromaKeys;
 
+    /**
+     * @return Changes any color in an image within the specified volume of the HSL colorspace to transparent or semitransparent. This transformation applies a &#39;green screen&#39; technique commonly used to isolate and remove background colors.
+     * 
+     */
     public Optional<Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationChromaKeyArgs>>> chromaKeys() {
         return Optional.ofNullable(this.chromaKeys);
     }
 
+    /**
+     * Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
+     * 
+     */
     @Import(name="composites")
     private @Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeArgs>> composites;
 
+    /**
+     * @return Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
+     * 
+     */
     public Optional<Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeArgs>>> composites() {
         return Optional.ofNullable(this.composites);
     }
@@ -68,37 +100,77 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationArgs e
         return Optional.ofNullable(this.compounds);
     }
 
+    /**
+     * Adjusts both the contrast and brightness of an image.
+     * 
+     */
     @Import(name="contrasts")
     private @Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationContrastArgs>> contrasts;
 
+    /**
+     * @return Adjusts both the contrast and brightness of an image.
+     * 
+     */
     public Optional<Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationContrastArgs>>> contrasts() {
         return Optional.ofNullable(this.contrasts);
     }
 
+    /**
+     * Distorts an image by randomly repositioning a set of control points along a specified grid. The transformed image appears _goopy_. Adjust the density of the grid and the degree of randomity. You can use this transformation to create watermarks for use in security.
+     * 
+     */
     @Import(name="goops")
     private @Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationGoopArgs>> goops;
 
+    /**
+     * @return Distorts an image by randomly repositioning a set of control points along a specified grid. The transformed image appears _goopy_. Adjust the density of the grid and the degree of randomity. You can use this transformation to create watermarks for use in security.
+     * 
+     */
     public Optional<Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationGoopArgs>>> goops() {
         return Optional.ofNullable(this.goops);
     }
 
+    /**
+     * Restricts image color to shades of gray only.
+     * 
+     */
     @Import(name="grayscales")
     private @Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationGrayscaleArgs>> grayscales;
 
+    /**
+     * @return Restricts image color to shades of gray only.
+     * 
+     */
     public Optional<Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationGrayscaleArgs>>> grayscales() {
         return Optional.ofNullable(this.grayscales);
     }
 
+    /**
+     * Adjusts the hue, saturation, and lightness (HSL) of an image. Hue is the number of degrees that colors rotate around the color wheel. Saturation is a multiplier to increase or decrease color saturation. Lightness is a multiplier to increase or decrease the lightness of an image. Other transformations can also affect color, such as `Grayscale` and `MaxColors`. If youre using more than one, consider the order to apply them for the desired results.
+     * 
+     */
     @Import(name="hsls")
     private @Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationHslArgs>> hsls;
 
+    /**
+     * @return Adjusts the hue, saturation, and lightness (HSL) of an image. Hue is the number of degrees that colors rotate around the color wheel. Saturation is a multiplier to increase or decrease color saturation. Lightness is a multiplier to increase or decrease the lightness of an image. Other transformations can also affect color, such as `Grayscale` and `MaxColors`. If youre using more than one, consider the order to apply them for the desired results.
+     * 
+     */
     public Optional<Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationHslArgs>>> hsls() {
         return Optional.ofNullable(this.hsls);
     }
 
+    /**
+     * Identical to HSL except it replaces `lightness` with `value`. For example, if you reduce the `lightness` of a light green, almost white, image, the color turns a vibrant green. Reducing the `value` turns the image a darker color, close to grey. This happens because the original image color is very close to white.
+     * 
+     */
     @Import(name="hsvs")
     private @Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationHsvArgs>> hsvs;
 
+    /**
+     * @return Identical to HSL except it replaces `lightness` with `value`. For example, if you reduce the `lightness` of a light green, almost white, image, the color turns a vibrant green. Reducing the `value` turns the image a darker color, close to grey. This happens because the original image color is very close to white.
+     * 
+     */
     public Optional<Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationHsvArgs>>> hsvs() {
         return Optional.ofNullable(this.hsvs);
     }
@@ -117,44 +189,92 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationArgs e
         return Optional.ofNullable(this.ifOrientations);
     }
 
+    /**
+     * Set the maximum number of colors in the images palette. Reducing the number of colors in an image can help to reduce file size.
+     * 
+     */
     @Import(name="maxColors")
     private @Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColorArgs>> maxColors;
 
+    /**
+     * @return Set the maximum number of colors in the images palette. Reducing the number of colors in an image can help to reduce file size.
+     * 
+     */
     public Optional<Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColorArgs>>> maxColors() {
         return Optional.ofNullable(this.maxColors);
     }
 
+    /**
+     * Flips an image horizontally, vertically, or both.
+     * 
+     */
     @Import(name="mirrors")
     private @Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationMirrorArgs>> mirrors;
 
+    /**
+     * @return Flips an image horizontally, vertically, or both.
+     * 
+     */
     public Optional<Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationMirrorArgs>>> mirrors() {
         return Optional.ofNullable(this.mirrors);
     }
 
+    /**
+     * Allows you to set all hues in an image to a single specified hue of your choosing. Mono Hue maintains the original color’s lightness and saturation but sets the hue to that of the specified value. This has the effect of making the image shades of the specified hue.
+     * 
+     */
     @Import(name="monoHues")
     private @Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHueArgs>> monoHues;
 
+    /**
+     * @return Allows you to set all hues in an image to a single specified hue of your choosing. Mono Hue maintains the original color’s lightness and saturation but sets the hue to that of the specified value. This has the effect of making the image shades of the specified hue.
+     * 
+     */
     public Optional<Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHueArgs>>> monoHues() {
         return Optional.ofNullable(this.monoHues);
     }
 
+    /**
+     * Adjusts the level of transparency of an image. Use this transformation to make an image more or less transparent.
+     * 
+     */
     @Import(name="opacities")
     private @Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationOpacityArgs>> opacities;
 
+    /**
+     * @return Adjusts the level of transparency of an image. Use this transformation to make an image more or less transparent.
+     * 
+     */
     public Optional<Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationOpacityArgs>>> opacities() {
         return Optional.ofNullable(this.opacities);
     }
 
+    /**
+     * Removes a specified color from an image and replaces it with transparent pixels. This transformation is ideal for removing solid background colors from product images photographed on clean, consistent backgrounds without any shadows.
+     * 
+     */
     @Import(name="removeColors")
     private @Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveColorArgs>> removeColors;
 
+    /**
+     * @return Removes a specified color from an image and replaces it with transparent pixels. This transformation is ideal for removing solid background colors from product images photographed on clean, consistent backgrounds without any shadows.
+     * 
+     */
     public Optional<Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveColorArgs>>> removeColors() {
         return Optional.ofNullable(this.removeColors);
     }
 
+    /**
+     * Emphasizes edges and details in source images without distorting the colors. Although this effect is often referred to as _sharpening_ an image, it actually creates a blurred, inverted copy of the image known as an unsharp mask. Image and Video Manager combines the unsharp mask with the source image to create an image perceived as clearer.
+     * 
+     */
     @Import(name="unsharpMasks")
     private @Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationUnsharpMaskArgs>> unsharpMasks;
 
+    /**
+     * @return Emphasizes edges and details in source images without distorting the colors. Although this effect is often referred to as _sharpening_ an image, it actually creates a blurred, inverted copy of the image known as an unsharp mask. Image and Video Manager combines the unsharp mask with the source image to create an image perceived as clearer.
+     * 
+     */
     public Optional<Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationUnsharpMaskArgs>>> unsharpMasks() {
         return Optional.ofNullable(this.unsharpMasks);
     }
@@ -200,54 +320,126 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationArgs e
             $ = new GetImagingPolicyImagePolicyPostBreakpointTransformationArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param backgroundColors Places a transparent image on a set background color. Color is specified in the typical CSS hexadecimal format.
+         * 
+         * @return builder
+         * 
+         */
         public Builder backgroundColors(@Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationBackgroundColorArgs>> backgroundColors) {
             $.backgroundColors = backgroundColors;
             return this;
         }
 
+        /**
+         * @param backgroundColors Places a transparent image on a set background color. Color is specified in the typical CSS hexadecimal format.
+         * 
+         * @return builder
+         * 
+         */
         public Builder backgroundColors(List<GetImagingPolicyImagePolicyPostBreakpointTransformationBackgroundColorArgs> backgroundColors) {
             return backgroundColors(Output.of(backgroundColors));
         }
 
+        /**
+         * @param backgroundColors Places a transparent image on a set background color. Color is specified in the typical CSS hexadecimal format.
+         * 
+         * @return builder
+         * 
+         */
         public Builder backgroundColors(GetImagingPolicyImagePolicyPostBreakpointTransformationBackgroundColorArgs... backgroundColors) {
             return backgroundColors(List.of(backgroundColors));
         }
 
+        /**
+         * @param blurs Applies a Gaussian blur to the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder blurs(@Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationBlurArgs>> blurs) {
             $.blurs = blurs;
             return this;
         }
 
+        /**
+         * @param blurs Applies a Gaussian blur to the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder blurs(List<GetImagingPolicyImagePolicyPostBreakpointTransformationBlurArgs> blurs) {
             return blurs(Output.of(blurs));
         }
 
+        /**
+         * @param blurs Applies a Gaussian blur to the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder blurs(GetImagingPolicyImagePolicyPostBreakpointTransformationBlurArgs... blurs) {
             return blurs(List.of(blurs));
         }
 
+        /**
+         * @param chromaKeys Changes any color in an image within the specified volume of the HSL colorspace to transparent or semitransparent. This transformation applies a &#39;green screen&#39; technique commonly used to isolate and remove background colors.
+         * 
+         * @return builder
+         * 
+         */
         public Builder chromaKeys(@Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationChromaKeyArgs>> chromaKeys) {
             $.chromaKeys = chromaKeys;
             return this;
         }
 
+        /**
+         * @param chromaKeys Changes any color in an image within the specified volume of the HSL colorspace to transparent or semitransparent. This transformation applies a &#39;green screen&#39; technique commonly used to isolate and remove background colors.
+         * 
+         * @return builder
+         * 
+         */
         public Builder chromaKeys(List<GetImagingPolicyImagePolicyPostBreakpointTransformationChromaKeyArgs> chromaKeys) {
             return chromaKeys(Output.of(chromaKeys));
         }
 
+        /**
+         * @param chromaKeys Changes any color in an image within the specified volume of the HSL colorspace to transparent or semitransparent. This transformation applies a &#39;green screen&#39; technique commonly used to isolate and remove background colors.
+         * 
+         * @return builder
+         * 
+         */
         public Builder chromaKeys(GetImagingPolicyImagePolicyPostBreakpointTransformationChromaKeyArgs... chromaKeys) {
             return chromaKeys(List.of(chromaKeys));
         }
 
+        /**
+         * @param composites Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
+         * 
+         * @return builder
+         * 
+         */
         public Builder composites(@Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeArgs>> composites) {
             $.composites = composites;
             return this;
         }
 
+        /**
+         * @param composites Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
+         * 
+         * @return builder
+         * 
+         */
         public Builder composites(List<GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeArgs> composites) {
             return composites(Output.of(composites));
         }
 
+        /**
+         * @param composites Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
+         * 
+         * @return builder
+         * 
+         */
         public Builder composites(GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeArgs... composites) {
             return composites(List.of(composites));
         }
@@ -265,67 +457,157 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationArgs e
             return compounds(List.of(compounds));
         }
 
+        /**
+         * @param contrasts Adjusts both the contrast and brightness of an image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contrasts(@Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationContrastArgs>> contrasts) {
             $.contrasts = contrasts;
             return this;
         }
 
+        /**
+         * @param contrasts Adjusts both the contrast and brightness of an image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contrasts(List<GetImagingPolicyImagePolicyPostBreakpointTransformationContrastArgs> contrasts) {
             return contrasts(Output.of(contrasts));
         }
 
+        /**
+         * @param contrasts Adjusts both the contrast and brightness of an image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contrasts(GetImagingPolicyImagePolicyPostBreakpointTransformationContrastArgs... contrasts) {
             return contrasts(List.of(contrasts));
         }
 
+        /**
+         * @param goops Distorts an image by randomly repositioning a set of control points along a specified grid. The transformed image appears _goopy_. Adjust the density of the grid and the degree of randomity. You can use this transformation to create watermarks for use in security.
+         * 
+         * @return builder
+         * 
+         */
         public Builder goops(@Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationGoopArgs>> goops) {
             $.goops = goops;
             return this;
         }
 
+        /**
+         * @param goops Distorts an image by randomly repositioning a set of control points along a specified grid. The transformed image appears _goopy_. Adjust the density of the grid and the degree of randomity. You can use this transformation to create watermarks for use in security.
+         * 
+         * @return builder
+         * 
+         */
         public Builder goops(List<GetImagingPolicyImagePolicyPostBreakpointTransformationGoopArgs> goops) {
             return goops(Output.of(goops));
         }
 
+        /**
+         * @param goops Distorts an image by randomly repositioning a set of control points along a specified grid. The transformed image appears _goopy_. Adjust the density of the grid and the degree of randomity. You can use this transformation to create watermarks for use in security.
+         * 
+         * @return builder
+         * 
+         */
         public Builder goops(GetImagingPolicyImagePolicyPostBreakpointTransformationGoopArgs... goops) {
             return goops(List.of(goops));
         }
 
+        /**
+         * @param grayscales Restricts image color to shades of gray only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder grayscales(@Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationGrayscaleArgs>> grayscales) {
             $.grayscales = grayscales;
             return this;
         }
 
+        /**
+         * @param grayscales Restricts image color to shades of gray only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder grayscales(List<GetImagingPolicyImagePolicyPostBreakpointTransformationGrayscaleArgs> grayscales) {
             return grayscales(Output.of(grayscales));
         }
 
+        /**
+         * @param grayscales Restricts image color to shades of gray only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder grayscales(GetImagingPolicyImagePolicyPostBreakpointTransformationGrayscaleArgs... grayscales) {
             return grayscales(List.of(grayscales));
         }
 
+        /**
+         * @param hsls Adjusts the hue, saturation, and lightness (HSL) of an image. Hue is the number of degrees that colors rotate around the color wheel. Saturation is a multiplier to increase or decrease color saturation. Lightness is a multiplier to increase or decrease the lightness of an image. Other transformations can also affect color, such as `Grayscale` and `MaxColors`. If youre using more than one, consider the order to apply them for the desired results.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hsls(@Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationHslArgs>> hsls) {
             $.hsls = hsls;
             return this;
         }
 
+        /**
+         * @param hsls Adjusts the hue, saturation, and lightness (HSL) of an image. Hue is the number of degrees that colors rotate around the color wheel. Saturation is a multiplier to increase or decrease color saturation. Lightness is a multiplier to increase or decrease the lightness of an image. Other transformations can also affect color, such as `Grayscale` and `MaxColors`. If youre using more than one, consider the order to apply them for the desired results.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hsls(List<GetImagingPolicyImagePolicyPostBreakpointTransformationHslArgs> hsls) {
             return hsls(Output.of(hsls));
         }
 
+        /**
+         * @param hsls Adjusts the hue, saturation, and lightness (HSL) of an image. Hue is the number of degrees that colors rotate around the color wheel. Saturation is a multiplier to increase or decrease color saturation. Lightness is a multiplier to increase or decrease the lightness of an image. Other transformations can also affect color, such as `Grayscale` and `MaxColors`. If youre using more than one, consider the order to apply them for the desired results.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hsls(GetImagingPolicyImagePolicyPostBreakpointTransformationHslArgs... hsls) {
             return hsls(List.of(hsls));
         }
 
+        /**
+         * @param hsvs Identical to HSL except it replaces `lightness` with `value`. For example, if you reduce the `lightness` of a light green, almost white, image, the color turns a vibrant green. Reducing the `value` turns the image a darker color, close to grey. This happens because the original image color is very close to white.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hsvs(@Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationHsvArgs>> hsvs) {
             $.hsvs = hsvs;
             return this;
         }
 
+        /**
+         * @param hsvs Identical to HSL except it replaces `lightness` with `value`. For example, if you reduce the `lightness` of a light green, almost white, image, the color turns a vibrant green. Reducing the `value` turns the image a darker color, close to grey. This happens because the original image color is very close to white.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hsvs(List<GetImagingPolicyImagePolicyPostBreakpointTransformationHsvArgs> hsvs) {
             return hsvs(Output.of(hsvs));
         }
 
+        /**
+         * @param hsvs Identical to HSL except it replaces `lightness` with `value`. For example, if you reduce the `lightness` of a light green, almost white, image, the color turns a vibrant green. Reducing the `value` turns the image a darker color, close to grey. This happens because the original image color is very close to white.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hsvs(GetImagingPolicyImagePolicyPostBreakpointTransformationHsvArgs... hsvs) {
             return hsvs(List.of(hsvs));
         }
@@ -356,80 +638,188 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationArgs e
             return ifOrientations(List.of(ifOrientations));
         }
 
+        /**
+         * @param maxColors Set the maximum number of colors in the images palette. Reducing the number of colors in an image can help to reduce file size.
+         * 
+         * @return builder
+         * 
+         */
         public Builder maxColors(@Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColorArgs>> maxColors) {
             $.maxColors = maxColors;
             return this;
         }
 
+        /**
+         * @param maxColors Set the maximum number of colors in the images palette. Reducing the number of colors in an image can help to reduce file size.
+         * 
+         * @return builder
+         * 
+         */
         public Builder maxColors(List<GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColorArgs> maxColors) {
             return maxColors(Output.of(maxColors));
         }
 
+        /**
+         * @param maxColors Set the maximum number of colors in the images palette. Reducing the number of colors in an image can help to reduce file size.
+         * 
+         * @return builder
+         * 
+         */
         public Builder maxColors(GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColorArgs... maxColors) {
             return maxColors(List.of(maxColors));
         }
 
+        /**
+         * @param mirrors Flips an image horizontally, vertically, or both.
+         * 
+         * @return builder
+         * 
+         */
         public Builder mirrors(@Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationMirrorArgs>> mirrors) {
             $.mirrors = mirrors;
             return this;
         }
 
+        /**
+         * @param mirrors Flips an image horizontally, vertically, or both.
+         * 
+         * @return builder
+         * 
+         */
         public Builder mirrors(List<GetImagingPolicyImagePolicyPostBreakpointTransformationMirrorArgs> mirrors) {
             return mirrors(Output.of(mirrors));
         }
 
+        /**
+         * @param mirrors Flips an image horizontally, vertically, or both.
+         * 
+         * @return builder
+         * 
+         */
         public Builder mirrors(GetImagingPolicyImagePolicyPostBreakpointTransformationMirrorArgs... mirrors) {
             return mirrors(List.of(mirrors));
         }
 
+        /**
+         * @param monoHues Allows you to set all hues in an image to a single specified hue of your choosing. Mono Hue maintains the original color’s lightness and saturation but sets the hue to that of the specified value. This has the effect of making the image shades of the specified hue.
+         * 
+         * @return builder
+         * 
+         */
         public Builder monoHues(@Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHueArgs>> monoHues) {
             $.monoHues = monoHues;
             return this;
         }
 
+        /**
+         * @param monoHues Allows you to set all hues in an image to a single specified hue of your choosing. Mono Hue maintains the original color’s lightness and saturation but sets the hue to that of the specified value. This has the effect of making the image shades of the specified hue.
+         * 
+         * @return builder
+         * 
+         */
         public Builder monoHues(List<GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHueArgs> monoHues) {
             return monoHues(Output.of(monoHues));
         }
 
+        /**
+         * @param monoHues Allows you to set all hues in an image to a single specified hue of your choosing. Mono Hue maintains the original color’s lightness and saturation but sets the hue to that of the specified value. This has the effect of making the image shades of the specified hue.
+         * 
+         * @return builder
+         * 
+         */
         public Builder monoHues(GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHueArgs... monoHues) {
             return monoHues(List.of(monoHues));
         }
 
+        /**
+         * @param opacities Adjusts the level of transparency of an image. Use this transformation to make an image more or less transparent.
+         * 
+         * @return builder
+         * 
+         */
         public Builder opacities(@Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationOpacityArgs>> opacities) {
             $.opacities = opacities;
             return this;
         }
 
+        /**
+         * @param opacities Adjusts the level of transparency of an image. Use this transformation to make an image more or less transparent.
+         * 
+         * @return builder
+         * 
+         */
         public Builder opacities(List<GetImagingPolicyImagePolicyPostBreakpointTransformationOpacityArgs> opacities) {
             return opacities(Output.of(opacities));
         }
 
+        /**
+         * @param opacities Adjusts the level of transparency of an image. Use this transformation to make an image more or less transparent.
+         * 
+         * @return builder
+         * 
+         */
         public Builder opacities(GetImagingPolicyImagePolicyPostBreakpointTransformationOpacityArgs... opacities) {
             return opacities(List.of(opacities));
         }
 
+        /**
+         * @param removeColors Removes a specified color from an image and replaces it with transparent pixels. This transformation is ideal for removing solid background colors from product images photographed on clean, consistent backgrounds without any shadows.
+         * 
+         * @return builder
+         * 
+         */
         public Builder removeColors(@Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveColorArgs>> removeColors) {
             $.removeColors = removeColors;
             return this;
         }
 
+        /**
+         * @param removeColors Removes a specified color from an image and replaces it with transparent pixels. This transformation is ideal for removing solid background colors from product images photographed on clean, consistent backgrounds without any shadows.
+         * 
+         * @return builder
+         * 
+         */
         public Builder removeColors(List<GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveColorArgs> removeColors) {
             return removeColors(Output.of(removeColors));
         }
 
+        /**
+         * @param removeColors Removes a specified color from an image and replaces it with transparent pixels. This transformation is ideal for removing solid background colors from product images photographed on clean, consistent backgrounds without any shadows.
+         * 
+         * @return builder
+         * 
+         */
         public Builder removeColors(GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveColorArgs... removeColors) {
             return removeColors(List.of(removeColors));
         }
 
+        /**
+         * @param unsharpMasks Emphasizes edges and details in source images without distorting the colors. Although this effect is often referred to as _sharpening_ an image, it actually creates a blurred, inverted copy of the image known as an unsharp mask. Image and Video Manager combines the unsharp mask with the source image to create an image perceived as clearer.
+         * 
+         * @return builder
+         * 
+         */
         public Builder unsharpMasks(@Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationUnsharpMaskArgs>> unsharpMasks) {
             $.unsharpMasks = unsharpMasks;
             return this;
         }
 
+        /**
+         * @param unsharpMasks Emphasizes edges and details in source images without distorting the colors. Although this effect is often referred to as _sharpening_ an image, it actually creates a blurred, inverted copy of the image known as an unsharp mask. Image and Video Manager combines the unsharp mask with the source image to create an image perceived as clearer.
+         * 
+         * @return builder
+         * 
+         */
         public Builder unsharpMasks(List<GetImagingPolicyImagePolicyPostBreakpointTransformationUnsharpMaskArgs> unsharpMasks) {
             return unsharpMasks(Output.of(unsharpMasks));
         }
 
+        /**
+         * @param unsharpMasks Emphasizes edges and details in source images without distorting the colors. Although this effect is often referred to as _sharpening_ an image, it actually creates a blurred, inverted copy of the image known as an unsharp mask. Image and Video Manager combines the unsharp mask with the source image to create an image perceived as clearer.
+         * 
+         * @return builder
+         * 
+         */
         public Builder unsharpMasks(GetImagingPolicyImagePolicyPostBreakpointTransformationUnsharpMaskArgs... unsharpMasks) {
             return unsharpMasks(List.of(unsharpMasks));
         }

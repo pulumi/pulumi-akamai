@@ -13,193 +13,569 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorSetVariable {
+    /**
+     * @return Specifies the algorithm to apply.
+     * 
+     */
     private @Nullable String algorithm;
+    /**
+     * @return Enabling this makes all matches case sensitive.
+     * 
+     */
     private @Nullable Boolean caseSensitive;
+    /**
+     * @return Specifies the certificate&#39;s content.
+     * 
+     */
     private @Nullable String certificateFieldName;
+    /**
+     * @return Specifies the name of the cookie to extract.
+     * 
+     */
     private @Nullable String cookieName;
+    /**
+     * @return Specifies the client device attribute. Possible values specify information about the client device, including device type, size and browser. For details on fields, see `Device Characterization`.
+     * 
+     */
     private @Nullable String deviceProfile;
+    /**
+     * @return Specifies the encryption hex key. For `ALG_3DES` it needs to be 48 characters long, 32 characters for `ALG_AES128`, and 64 characters for `ALG_AES256`.
+     * 
+     */
     private @Nullable String encryptionKey;
+    /**
+     * @return Specifies the encryption mode.
+     * 
+     */
     private @Nullable String encryptionMode;
+    /**
+     * @return Specifies the zero-based character offset at the end of the substring, without including the character at that index position. Negative indexes specify the offset from the end of the string.
+     * 
+     */
     private @Nullable String endIndex;
+    /**
+     * @return Specifies characters `not` to encode, possibly overriding the default set.
+     * 
+     */
     private @Nullable String exceptChars;
+    /**
+     * @return This specifies from where to get the value.
+     * 
+     */
     private @Nullable String extractLocation;
+    /**
+     * @return Specifies characters to encode, possibly overriding the default set.
+     * 
+     */
     private @Nullable String forceChars;
+    /**
+     * @return Specifies an optional format string for the conversion, using format codes such as `%m/%d/%y` as specified by `strftime`. A blank value defaults to RFC-2616 format.
+     * 
+     */
     private @Nullable String formatString;
+    /**
+     * @return This specifies the type of value to generate.
+     * 
+     */
     private @Nullable String generator;
+    /**
+     * @return Replaces all matches in the string, not just the first.
+     * 
+     */
     private @Nullable Boolean globalSubstitution;
+    /**
+     * @return Specifies the case-insensitive name of the HTTP header to extract.
+     * 
+     */
     private @Nullable String headerName;
+    /**
+     * @return Specifies the algorithm to use to generate the base64-encoded digest.
+     * 
+     */
     private @Nullable String hmacAlgorithm;
+    /**
+     * @return Specifies the secret to use in generating the base64-encoded digest.
+     * 
+     */
     private @Nullable String hmacKey;
+    /**
+     * @return Specifies a one-time number as an initialization vector.  It needs to be 15 characters long for `ALG_3DES`, and 32 characters for both `ALG_AES128` and `ALG_AES256`.
+     * 
+     */
     private @Nullable String initializationVector;
+    /**
+     * @return Specifies the IP version under which a subnet mask generates.
+     * 
+     */
     private @Nullable String ipVersion;
+    /**
+     * @return Specifies the prefix of the IPV4 address, a value between 0 and 32.
+     * 
+     */
     private @Nullable Integer ipv4Prefix;
+    /**
+     * @return Specifies the prefix of the IPV6 address, a value between 0 and 128.
+     * 
+     */
     private @Nullable Integer ipv6Prefix;
+    /**
+     * @return Specifies the `X-Akamai-Edgescape` header&#39;s field name. Possible values specify basic geolocation, various geographic standards, and information about the client&#39;s network. For details on EdgeScape header fields, see the `EdgeScape User Guide`.
+     * 
+     */
     private @Nullable String locationId;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Specifies a maximum value for the generated integer.
+     * 
+     */
     private @Nullable Integer max;
+    /**
+     * @return Specifies the upper bound of the random number.
+     * 
+     */
     private @Nullable String maxRandomNumber;
+    /**
+     * @return Specifies a minimum value for the generated integer.
+     * 
+     */
     private @Nullable Integer min;
+    /**
+     * @return Specifies the lower bound of the random number.
+     * 
+     */
     private @Nullable String minRandomNumber;
+    /**
+     * @return Specifies the one-time number used for encryption.
+     * 
+     */
     private @Nullable String nonce;
+    /**
+     * @return Specifies the number of random hex bytes to generate.
+     * 
+     */
     private @Nullable Integer numberOfBytes;
+    /**
+     * @return Specifies an additional operand when the `transform` function is set to various arithmetic functions (`ADD`, `SUBTRACT`, `MULTIPLY`, `DIVIDE`, or `MODULO`) or bitwise functions (`BITWISE_AND`, `BITWISE_OR`, or `BITWISE_XOR`).
+     * 
+     */
     private @Nullable String operandOne;
+    /**
+     * @return Extracts the value for the specified parameter name from a string that contains key/value pairs. (Use `separator` below to parse them.)
+     * 
+     */
     private @Nullable String paramName;
+    /**
+     * @return This specifies a portion of the path.  The indexing starts from `1`, so a value of `/path/to/nested/filename.html` and an offset of `1` yields `path`, and `3` yields `nested`. Negative indexes offset from the right, so `-2` also yields `nested`.
+     * 
+     */
     private @Nullable String pathComponentOffset;
+    /**
+     * @return Specifies a number of random bytes to prepend to the key.
+     * 
+     */
     private @Nullable Boolean prependBytes;
+    /**
+     * @return Specifies the name of the query parameter from which to extract the value.
+     * 
+     */
     private @Nullable String queryParameterName;
+    /**
+     * @return Specifies the regular expression pattern (PCRE) to match the value.
+     * 
+     */
     private @Nullable String regex;
+    /**
+     * @return Specifies the replacement string. Reinsert grouped items from the match into the replacement using `$1`, `$2` ... `$n`.
+     * 
+     */
     private @Nullable String replacement;
+    /**
+     * @return Specifies the case-insensitive name of the HTTP header to extract.
+     * 
+     */
     private @Nullable String responseHeaderName;
+    /**
+     * @return Specifies the character that separates pairs of values within the string.
+     * 
+     */
     private @Nullable String separator;
+    /**
+     * @return Specifies the name of the origin&#39;s `Set-Cookie` response header.
+     * 
+     */
     private @Nullable String setCookieName;
+    /**
+     * @return Specifies the zero-based character offset at the start of the substring. Negative indexes specify the offset from the end of the string.
+     * 
+     */
     private @Nullable String startIndex;
+    /**
+     * @return Specifies a substring for which the returned value represents a zero-based offset of where it appears in the original string, or `-1` if there&#39;s no match.
+     * 
+     */
     private @Nullable String subString;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return Specifies a function to transform the value. For more details on each transform function, see `Set Variable: Operations`.
+     * 
+     */
     private @Nullable String transform;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
+    /**
+     * @return Determines how you want to set the value.
+     * 
+     */
     private @Nullable String valueSource;
+    /**
+     * @return Specifies the predeclared root name of the variable to modify.  When you declare a variable name such as `VAR`, its name is preprended with `PMUSER_` and accessible in a `user` namespace, so that you invoke it in subsequent text fields within the rule tree as `{{user.PMUSER_VAR}}`. In deployed `XML metadata`, it appears as `%(PMUSER_VAR)`.
+     * 
+     */
     private @Nullable String variableName;
+    /**
+     * @return This directly specifies the value to assign to the variable. The expression may include a mix of static text and other variables, such as `new_filename.{{builtin.AK_EXTENSION}}` to embed a system variable.
+     * 
+     */
     private @Nullable String variableValue;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorSetVariable() {}
+    /**
+     * @return Specifies the algorithm to apply.
+     * 
+     */
     public Optional<String> algorithm() {
         return Optional.ofNullable(this.algorithm);
     }
+    /**
+     * @return Enabling this makes all matches case sensitive.
+     * 
+     */
     public Optional<Boolean> caseSensitive() {
         return Optional.ofNullable(this.caseSensitive);
     }
+    /**
+     * @return Specifies the certificate&#39;s content.
+     * 
+     */
     public Optional<String> certificateFieldName() {
         return Optional.ofNullable(this.certificateFieldName);
     }
+    /**
+     * @return Specifies the name of the cookie to extract.
+     * 
+     */
     public Optional<String> cookieName() {
         return Optional.ofNullable(this.cookieName);
     }
+    /**
+     * @return Specifies the client device attribute. Possible values specify information about the client device, including device type, size and browser. For details on fields, see `Device Characterization`.
+     * 
+     */
     public Optional<String> deviceProfile() {
         return Optional.ofNullable(this.deviceProfile);
     }
+    /**
+     * @return Specifies the encryption hex key. For `ALG_3DES` it needs to be 48 characters long, 32 characters for `ALG_AES128`, and 64 characters for `ALG_AES256`.
+     * 
+     */
     public Optional<String> encryptionKey() {
         return Optional.ofNullable(this.encryptionKey);
     }
+    /**
+     * @return Specifies the encryption mode.
+     * 
+     */
     public Optional<String> encryptionMode() {
         return Optional.ofNullable(this.encryptionMode);
     }
+    /**
+     * @return Specifies the zero-based character offset at the end of the substring, without including the character at that index position. Negative indexes specify the offset from the end of the string.
+     * 
+     */
     public Optional<String> endIndex() {
         return Optional.ofNullable(this.endIndex);
     }
+    /**
+     * @return Specifies characters `not` to encode, possibly overriding the default set.
+     * 
+     */
     public Optional<String> exceptChars() {
         return Optional.ofNullable(this.exceptChars);
     }
+    /**
+     * @return This specifies from where to get the value.
+     * 
+     */
     public Optional<String> extractLocation() {
         return Optional.ofNullable(this.extractLocation);
     }
+    /**
+     * @return Specifies characters to encode, possibly overriding the default set.
+     * 
+     */
     public Optional<String> forceChars() {
         return Optional.ofNullable(this.forceChars);
     }
+    /**
+     * @return Specifies an optional format string for the conversion, using format codes such as `%m/%d/%y` as specified by `strftime`. A blank value defaults to RFC-2616 format.
+     * 
+     */
     public Optional<String> formatString() {
         return Optional.ofNullable(this.formatString);
     }
+    /**
+     * @return This specifies the type of value to generate.
+     * 
+     */
     public Optional<String> generator() {
         return Optional.ofNullable(this.generator);
     }
+    /**
+     * @return Replaces all matches in the string, not just the first.
+     * 
+     */
     public Optional<Boolean> globalSubstitution() {
         return Optional.ofNullable(this.globalSubstitution);
     }
+    /**
+     * @return Specifies the case-insensitive name of the HTTP header to extract.
+     * 
+     */
     public Optional<String> headerName() {
         return Optional.ofNullable(this.headerName);
     }
+    /**
+     * @return Specifies the algorithm to use to generate the base64-encoded digest.
+     * 
+     */
     public Optional<String> hmacAlgorithm() {
         return Optional.ofNullable(this.hmacAlgorithm);
     }
+    /**
+     * @return Specifies the secret to use in generating the base64-encoded digest.
+     * 
+     */
     public Optional<String> hmacKey() {
         return Optional.ofNullable(this.hmacKey);
     }
+    /**
+     * @return Specifies a one-time number as an initialization vector.  It needs to be 15 characters long for `ALG_3DES`, and 32 characters for both `ALG_AES128` and `ALG_AES256`.
+     * 
+     */
     public Optional<String> initializationVector() {
         return Optional.ofNullable(this.initializationVector);
     }
+    /**
+     * @return Specifies the IP version under which a subnet mask generates.
+     * 
+     */
     public Optional<String> ipVersion() {
         return Optional.ofNullable(this.ipVersion);
     }
+    /**
+     * @return Specifies the prefix of the IPV4 address, a value between 0 and 32.
+     * 
+     */
     public Optional<Integer> ipv4Prefix() {
         return Optional.ofNullable(this.ipv4Prefix);
     }
+    /**
+     * @return Specifies the prefix of the IPV6 address, a value between 0 and 128.
+     * 
+     */
     public Optional<Integer> ipv6Prefix() {
         return Optional.ofNullable(this.ipv6Prefix);
     }
+    /**
+     * @return Specifies the `X-Akamai-Edgescape` header&#39;s field name. Possible values specify basic geolocation, various geographic standards, and information about the client&#39;s network. For details on EdgeScape header fields, see the `EdgeScape User Guide`.
+     * 
+     */
     public Optional<String> locationId() {
         return Optional.ofNullable(this.locationId);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Specifies a maximum value for the generated integer.
+     * 
+     */
     public Optional<Integer> max() {
         return Optional.ofNullable(this.max);
     }
+    /**
+     * @return Specifies the upper bound of the random number.
+     * 
+     */
     public Optional<String> maxRandomNumber() {
         return Optional.ofNullable(this.maxRandomNumber);
     }
+    /**
+     * @return Specifies a minimum value for the generated integer.
+     * 
+     */
     public Optional<Integer> min() {
         return Optional.ofNullable(this.min);
     }
+    /**
+     * @return Specifies the lower bound of the random number.
+     * 
+     */
     public Optional<String> minRandomNumber() {
         return Optional.ofNullable(this.minRandomNumber);
     }
+    /**
+     * @return Specifies the one-time number used for encryption.
+     * 
+     */
     public Optional<String> nonce() {
         return Optional.ofNullable(this.nonce);
     }
+    /**
+     * @return Specifies the number of random hex bytes to generate.
+     * 
+     */
     public Optional<Integer> numberOfBytes() {
         return Optional.ofNullable(this.numberOfBytes);
     }
+    /**
+     * @return Specifies an additional operand when the `transform` function is set to various arithmetic functions (`ADD`, `SUBTRACT`, `MULTIPLY`, `DIVIDE`, or `MODULO`) or bitwise functions (`BITWISE_AND`, `BITWISE_OR`, or `BITWISE_XOR`).
+     * 
+     */
     public Optional<String> operandOne() {
         return Optional.ofNullable(this.operandOne);
     }
+    /**
+     * @return Extracts the value for the specified parameter name from a string that contains key/value pairs. (Use `separator` below to parse them.)
+     * 
+     */
     public Optional<String> paramName() {
         return Optional.ofNullable(this.paramName);
     }
+    /**
+     * @return This specifies a portion of the path.  The indexing starts from `1`, so a value of `/path/to/nested/filename.html` and an offset of `1` yields `path`, and `3` yields `nested`. Negative indexes offset from the right, so `-2` also yields `nested`.
+     * 
+     */
     public Optional<String> pathComponentOffset() {
         return Optional.ofNullable(this.pathComponentOffset);
     }
+    /**
+     * @return Specifies a number of random bytes to prepend to the key.
+     * 
+     */
     public Optional<Boolean> prependBytes() {
         return Optional.ofNullable(this.prependBytes);
     }
+    /**
+     * @return Specifies the name of the query parameter from which to extract the value.
+     * 
+     */
     public Optional<String> queryParameterName() {
         return Optional.ofNullable(this.queryParameterName);
     }
+    /**
+     * @return Specifies the regular expression pattern (PCRE) to match the value.
+     * 
+     */
     public Optional<String> regex() {
         return Optional.ofNullable(this.regex);
     }
+    /**
+     * @return Specifies the replacement string. Reinsert grouped items from the match into the replacement using `$1`, `$2` ... `$n`.
+     * 
+     */
     public Optional<String> replacement() {
         return Optional.ofNullable(this.replacement);
     }
+    /**
+     * @return Specifies the case-insensitive name of the HTTP header to extract.
+     * 
+     */
     public Optional<String> responseHeaderName() {
         return Optional.ofNullable(this.responseHeaderName);
     }
+    /**
+     * @return Specifies the character that separates pairs of values within the string.
+     * 
+     */
     public Optional<String> separator() {
         return Optional.ofNullable(this.separator);
     }
+    /**
+     * @return Specifies the name of the origin&#39;s `Set-Cookie` response header.
+     * 
+     */
     public Optional<String> setCookieName() {
         return Optional.ofNullable(this.setCookieName);
     }
+    /**
+     * @return Specifies the zero-based character offset at the start of the substring. Negative indexes specify the offset from the end of the string.
+     * 
+     */
     public Optional<String> startIndex() {
         return Optional.ofNullable(this.startIndex);
     }
+    /**
+     * @return Specifies a substring for which the returned value represents a zero-based offset of where it appears in the original string, or `-1` if there&#39;s no match.
+     * 
+     */
     public Optional<String> subString() {
         return Optional.ofNullable(this.subString);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return Specifies a function to transform the value. For more details on each transform function, see `Set Variable: Operations`.
+     * 
+     */
     public Optional<String> transform() {
         return Optional.ofNullable(this.transform);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
+    /**
+     * @return Determines how you want to set the value.
+     * 
+     */
     public Optional<String> valueSource() {
         return Optional.ofNullable(this.valueSource);
     }
+    /**
+     * @return Specifies the predeclared root name of the variable to modify.  When you declare a variable name such as `VAR`, its name is preprended with `PMUSER_` and accessible in a `user` namespace, so that you invoke it in subsequent text fields within the rule tree as `{{user.PMUSER_VAR}}`. In deployed `XML metadata`, it appears as `%(PMUSER_VAR)`.
+     * 
+     */
     public Optional<String> variableName() {
         return Optional.ofNullable(this.variableName);
     }
+    /**
+     * @return This directly specifies the value to assign to the variable. The expression may include a mix of static text and other variables, such as `new_filename.{{builtin.AK_EXTENSION}}` to embed a system variable.
+     * 
+     */
     public Optional<String> variableValue() {
         return Optional.ofNullable(this.variableValue);
     }

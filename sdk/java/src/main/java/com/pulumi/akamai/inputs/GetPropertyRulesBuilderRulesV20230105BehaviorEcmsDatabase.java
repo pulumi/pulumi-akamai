@@ -15,58 +15,122 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorEcmsDatabase ext
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorEcmsDatabase Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorEcmsDatabase();
 
+    /**
+     * Specifies a default database for this property. If you don&#39;t configure a default data set in the `ecmsDataset` behavior, requests to objects in this database follow the pattern: `&lt;hostname&gt;/datastore/&lt;data_set_name&gt;/&lt;object_key&gt;`.
+     * 
+     */
     @Import(name="database")
     private @Nullable String database;
 
+    /**
+     * @return Specifies a default database for this property. If you don&#39;t configure a default data set in the `ecmsDataset` behavior, requests to objects in this database follow the pattern: `&lt;hostname&gt;/datastore/&lt;data_set_name&gt;/&lt;object_key&gt;`.
+     * 
+     */
     public Optional<String> database() {
         return Optional.ofNullable(this.database);
     }
 
+    /**
+     * Specifies where to pass a database name in requests. If the specified location doesn&#39;t include the database name or the name doesn&#39;t match the regular expression, the default database is used.
+     * 
+     */
     @Import(name="extractLocation")
     private @Nullable String extractLocation;
 
+    /**
+     * @return Specifies where to pass a database name in requests. If the specified location doesn&#39;t include the database name or the name doesn&#39;t match the regular expression, the default database is used.
+     * 
+     */
     public Optional<String> extractLocation() {
         return Optional.ofNullable(this.extractLocation);
     }
 
+    /**
+     * Specifies the request header that passed the database name. By default, it points to `X-KV-Database`.
+     * 
+     */
     @Import(name="headerName")
     private @Nullable String headerName;
 
+    /**
+     * @return Specifies the request header that passed the database name. By default, it points to `X-KV-Database`.
+     * 
+     */
     public Optional<String> headerName() {
         return Optional.ofNullable(this.headerName);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Specifies the query string parameter that passed the database name. By default, it points to `database`.
+     * 
+     */
     @Import(name="queryParameterName")
     private @Nullable String queryParameterName;
 
+    /**
+     * @return Specifies the query string parameter that passed the database name. By default, it points to `database`.
+     * 
+     */
     public Optional<String> queryParameterName() {
         return Optional.ofNullable(this.queryParameterName);
     }
 
+    /**
+     * Specifies the regular expression that matches the database name in the URL.
+     * 
+     */
     @Import(name="regexPattern")
     private @Nullable String regexPattern;
 
+    /**
+     * @return Specifies the regular expression that matches the database name in the URL.
+     * 
+     */
     public Optional<String> regexPattern() {
         return Optional.ofNullable(this.regexPattern);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -102,41 +166,89 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorEcmsDatabase ext
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorEcmsDatabase(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param database Specifies a default database for this property. If you don&#39;t configure a default data set in the `ecmsDataset` behavior, requests to objects in this database follow the pattern: `&lt;hostname&gt;/datastore/&lt;data_set_name&gt;/&lt;object_key&gt;`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder database(@Nullable String database) {
             $.database = database;
             return this;
         }
 
+        /**
+         * @param extractLocation Specifies where to pass a database name in requests. If the specified location doesn&#39;t include the database name or the name doesn&#39;t match the regular expression, the default database is used.
+         * 
+         * @return builder
+         * 
+         */
         public Builder extractLocation(@Nullable String extractLocation) {
             $.extractLocation = extractLocation;
             return this;
         }
 
+        /**
+         * @param headerName Specifies the request header that passed the database name. By default, it points to `X-KV-Database`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder headerName(@Nullable String headerName) {
             $.headerName = headerName;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param queryParameterName Specifies the query string parameter that passed the database name. By default, it points to `database`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder queryParameterName(@Nullable String queryParameterName) {
             $.queryParameterName = queryParameterName;
             return this;
         }
 
+        /**
+         * @param regexPattern Specifies the regular expression that matches the database name in the URL.
+         * 
+         * @return builder
+         * 
+         */
         public Builder regexPattern(@Nullable String regexPattern) {
             $.regexPattern = regexPattern;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

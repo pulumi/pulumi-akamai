@@ -17,33 +17,89 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicy {
+    /**
+     * @return The breakpoint widths (in pixels) to use to create derivative images/videos.
+     * 
+     */
     private @Nullable GetImagingPolicyImagePolicyBreakpoints breakpoints;
+    /**
+     * @return Hosts that are allowed for image/video URLs within transformations or variables.
+     * 
+     */
     private @Nullable List<String> hosts;
+    /**
+     * @return Dictates the output quality (either `quality` or `perceptualQuality`) and formats that are created for each resized image. If unspecified, image formats are created to support all browsers at the default quality level (`85`), which includes formats such as WEBP, JPEG2000 and JPEG-XR for specific browsers.
+     * 
+     */
     private @Nullable GetImagingPolicyImagePolicyOutput output;
+    /**
+     * @return Post-processing Transformations are applied to the image after image and quality settings have been applied.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformation> postBreakpointTransformations;
+    /**
+     * @return The amount of time in seconds that the policy takes to rollout. During the rollout an increasing proportion of images/videos will begin to use the new policy instead of the cached images/videos from the previous version. This value has no effect on the staging network.
+     * 
+     */
     private @Nullable String rolloutDuration;
+    /**
+     * @return Set of image transformations to apply to the source image. If unspecified, no operations are performed.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformation> transformations;
+    /**
+     * @return Declares variables for use within the policy. Any variable declared here can be invoked throughout transformations as a Variable object, so that you don&#39;t have to specify values separately. You can also pass in these variable names and values dynamically as query parameters in the image&#39;s request URL.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyVariable> variables;
 
     private GetImagingPolicyImagePolicy() {}
+    /**
+     * @return The breakpoint widths (in pixels) to use to create derivative images/videos.
+     * 
+     */
     public Optional<GetImagingPolicyImagePolicyBreakpoints> breakpoints() {
         return Optional.ofNullable(this.breakpoints);
     }
+    /**
+     * @return Hosts that are allowed for image/video URLs within transformations or variables.
+     * 
+     */
     public List<String> hosts() {
         return this.hosts == null ? List.of() : this.hosts;
     }
+    /**
+     * @return Dictates the output quality (either `quality` or `perceptualQuality`) and formats that are created for each resized image. If unspecified, image formats are created to support all browsers at the default quality level (`85`), which includes formats such as WEBP, JPEG2000 and JPEG-XR for specific browsers.
+     * 
+     */
     public Optional<GetImagingPolicyImagePolicyOutput> output() {
         return Optional.ofNullable(this.output);
     }
+    /**
+     * @return Post-processing Transformations are applied to the image after image and quality settings have been applied.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyPostBreakpointTransformation> postBreakpointTransformations() {
         return this.postBreakpointTransformations == null ? List.of() : this.postBreakpointTransformations;
     }
+    /**
+     * @return The amount of time in seconds that the policy takes to rollout. During the rollout an increasing proportion of images/videos will begin to use the new policy instead of the cached images/videos from the previous version. This value has no effect on the staging network.
+     * 
+     */
     public Optional<String> rolloutDuration() {
         return Optional.ofNullable(this.rolloutDuration);
     }
+    /**
+     * @return Set of image transformations to apply to the source image. If unspecified, no operations are performed.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformation> transformations() {
         return this.transformations == null ? List.of() : this.transformations;
     }
+    /**
+     * @return Declares variables for use within the policy. Any variable declared here can be invoked throughout transformations as a Variable object, so that you don&#39;t have to specify values separately. You can also pass in these variable names and values dynamically as query parameters in the image&#39;s request URL.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyVariable> variables() {
         return this.variables == null ? List.of() : this.variables;
     }

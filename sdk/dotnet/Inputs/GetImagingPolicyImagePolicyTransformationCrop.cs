@@ -12,39 +12,75 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetImagingPolicyImagePolicyTransformationCropArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// If cropping an area outside of the existing canvas, expands the image canvas.
+        /// </summary>
         [Input("allowExpansion")]
         public string? AllowExpansion { get; set; }
 
+        /// <summary>
+        /// If cropping an area outside of the existing canvas, expands the image canvas.
+        /// </summary>
         [Input("allowExpansionVar")]
         public string? AllowExpansionVar { get; set; }
 
+        /// <summary>
+        /// Frame of reference for X and Y Positions.
+        /// </summary>
         [Input("gravity")]
         public string? Gravity { get; set; }
 
+        /// <summary>
+        /// Frame of reference for X and Y Positions.
+        /// </summary>
         [Input("gravityVar")]
         public string? GravityVar { get; set; }
 
+        /// <summary>
+        /// The number of pixels to crop along the y-axis.
+        /// </summary>
         [Input("height")]
         public string? Height { get; set; }
 
+        /// <summary>
+        /// The number of pixels to crop along the y-axis.
+        /// </summary>
         [Input("heightVar")]
         public string? HeightVar { get; set; }
 
+        /// <summary>
+        /// The number of pixels to crop along the x-axis.
+        /// </summary>
         [Input("width")]
         public string? Width { get; set; }
 
+        /// <summary>
+        /// The number of pixels to crop along the x-axis.
+        /// </summary>
         [Input("widthVar")]
         public string? WidthVar { get; set; }
 
+        /// <summary>
+        /// The x-axis position of the image to crop from.
+        /// </summary>
         [Input("xPosition")]
         public string? XPosition { get; set; }
 
+        /// <summary>
+        /// The x-axis position of the image to crop from.
+        /// </summary>
         [Input("xPositionVar")]
         public string? XPositionVar { get; set; }
 
+        /// <summary>
+        /// The y-axis position of the image to crop from.
+        /// </summary>
         [Input("yPosition")]
         public string? YPosition { get; set; }
 
+        /// <summary>
+        /// The y-axis position of the image to crop from.
+        /// </summary>
         [Input("yPositionVar")]
         public string? YPositionVar { get; set; }
 

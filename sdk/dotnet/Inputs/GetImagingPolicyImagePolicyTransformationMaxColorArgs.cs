@@ -12,9 +12,15 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetImagingPolicyImagePolicyTransformationMaxColorInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The value representing the maximum number of colors to use with the source image.
+        /// </summary>
         [Input("colors")]
         public Input<string>? Colors { get; set; }
 
+        /// <summary>
+        /// The value representing the maximum number of colors to use with the source image.
+        /// </summary>
         [Input("colorsVar")]
         public Input<string>? ColorsVar { get; set; }
 

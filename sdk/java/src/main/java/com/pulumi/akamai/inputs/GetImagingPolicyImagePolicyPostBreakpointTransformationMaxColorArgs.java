@@ -15,16 +15,32 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationMaxCol
 
     public static final GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColorArgs Empty = new GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColorArgs();
 
+    /**
+     * The value representing the maximum number of colors to use with the source image.
+     * 
+     */
     @Import(name="colors")
     private @Nullable Output<String> colors;
 
+    /**
+     * @return The value representing the maximum number of colors to use with the source image.
+     * 
+     */
     public Optional<Output<String>> colors() {
         return Optional.ofNullable(this.colors);
     }
 
+    /**
+     * The value representing the maximum number of colors to use with the source image.
+     * 
+     */
     @Import(name="colorsVar")
     private @Nullable Output<String> colorsVar;
 
+    /**
+     * @return The value representing the maximum number of colors to use with the source image.
+     * 
+     */
     public Optional<Output<String>> colorsVar() {
         return Optional.ofNullable(this.colorsVar);
     }
@@ -54,20 +70,44 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationMaxCol
             $ = new GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColorArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param colors The value representing the maximum number of colors to use with the source image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder colors(@Nullable Output<String> colors) {
             $.colors = colors;
             return this;
         }
 
+        /**
+         * @param colors The value representing the maximum number of colors to use with the source image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder colors(String colors) {
             return colors(Output.of(colors));
         }
 
+        /**
+         * @param colorsVar The value representing the maximum number of colors to use with the source image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder colorsVar(@Nullable Output<String> colorsVar) {
             $.colorsVar = colorsVar;
             return this;
         }
 
+        /**
+         * @param colorsVar The value representing the maximum number of colors to use with the source image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder colorsVar(String colorsVar) {
             return colorsVar(Output.of(colorsVar));
         }

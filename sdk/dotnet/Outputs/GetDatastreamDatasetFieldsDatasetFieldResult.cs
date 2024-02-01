@@ -13,10 +13,25 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetDatastreamDatasetFieldsDatasetFieldResult
     {
+        /// <summary>
+        /// Describes the data set field
+        /// </summary>
         public readonly string DatasetFieldDescription;
+        /// <summary>
+        /// A name of the group for data set field
+        /// </summary>
         public readonly string DatasetFieldGroup;
+        /// <summary>
+        /// Identifies the field
+        /// </summary>
         public readonly int DatasetFieldId;
+        /// <summary>
+        /// Specifies the JSON key for the field in a log line
+        /// </summary>
         public readonly string DatasetFieldJsonKey;
+        /// <summary>
+        /// A name of the data set field
+        /// </summary>
         public readonly string DatasetFieldName;
 
         [OutputConstructor]

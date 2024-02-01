@@ -12,9 +12,15 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The ID of the Conditional Origin requests are forwarded to
+        /// </summary>
         [Input("originId", required: true)]
         public string OriginId { get; set; } = null!;
 
+        /// <summary>
+        /// The percent of traffic that is sent to the data center.
+        /// </summary>
         [Input("percent", required: true)]
         public int Percent { get; set; }
 

@@ -14,6 +14,10 @@ namespace Pulumi.Akamai.Inputs
     {
         [Input("authToken", required: true)]
         private Input<string>? _authToken;
+
+        /// <summary>
+        /// The API key associated with Datadog account
+        /// </summary>
         public Input<string>? AuthToken
         {
             get => _authToken;
@@ -24,21 +28,39 @@ namespace Pulumi.Akamai.Inputs
             }
         }
 
+        /// <summary>
+        /// Indicates whether the logs should be compressed
+        /// </summary>
         [Input("compressLogs")]
         public Input<bool>? CompressLogs { get; set; }
 
+        /// <summary>
+        /// The name of the connector
+        /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
 
+        /// <summary>
+        /// The Datadog endpoint where logs will be stored
+        /// </summary>
         [Input("endpoint", required: true)]
         public Input<string> Endpoint { get; set; } = null!;
 
+        /// <summary>
+        /// The service of the Datadog connector
+        /// </summary>
         [Input("service")]
         public Input<string>? Service { get; set; }
 
+        /// <summary>
+        /// The source of the Datadog connector
+        /// </summary>
         [Input("source")]
         public Input<string>? Source { get; set; }
 
+        /// <summary>
+        /// The tags of the Datadog connector
+        /// </summary>
         [Input("tags")]
         public Input<string>? Tags { get; set; }
 

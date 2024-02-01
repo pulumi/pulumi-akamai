@@ -13,39 +13,141 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorOriginFailureRecoveryPolicyResult
     {
+        /// <summary>
+        /// Synchronizes content between the primary and backup origins, byte for byte.
+        /// </summary>
         public readonly bool? BinaryEquivalentContent;
+        /// <summary>
+        /// Temporarily blocks an origin IP address that experienced a certain number of failures. When an IP address is blocked, the `configName` established for `originResponsivenessRecoveryConfigName` is applied.
+        /// </summary>
         public readonly bool? EnableIpAvoidance;
+        /// <summary>
+        /// Activates and configures a recovery policy.
+        /// </summary>
         public readonly bool? Enabled;
+        /// <summary>
+        /// Defines the number of failures that need to occur to an origin address before it's blocked.
+        /// </summary>
         public readonly int? IpAvoidanceErrorThreshold;
+        /// <summary>
+        /// Defines the number of seconds after which the IP address is removed from the blocklist.
+        /// </summary>
         public readonly int? IpAvoidanceRetryInterval;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// Enables continuous monitoring of connectivity to the origin. If necessary, applies retry or recovery actions.
+        /// </summary>
         public readonly bool? MonitorOriginResponsiveness;
+        /// <summary>
+        /// Defines the origin response codes that trigger a subsequent retry or recovery action. Specify a single code entry (`501`) or a range (`501:504`). If you configure other `monitorStatusCodes*` and `monitorResponseCodes*` options, you can't use the same codes here.
+        /// </summary>
         public readonly ImmutableArray<string> MonitorResponseCodes1s;
+        /// <summary>
+        /// Defines the origin response codes that trigger a subsequent retry or recovery action. Specify a single code entry (`501`) or a range (`501:504`). If you configure other `monitorStatusCodes*` and `monitorResponseCodes*` options, you can't use the same codes here.
+        /// </summary>
         public readonly ImmutableArray<string> MonitorResponseCodes2s;
+        /// <summary>
+        /// Defines the origin response codes that trigger a subsequent retry or recovery action. Specify a single code entry (`501`) or a range (`501:504`). If you configure other `monitorStatusCodes*` and `monitorResponseCodes*` options, you can't use the same codes here..
+        /// </summary>
         public readonly ImmutableArray<string> MonitorResponseCodes3s;
+        /// <summary>
+        /// Enables continuous monitoring for the specific origin status codes that trigger retry or recovery actions.
+        /// </summary>
         public readonly bool? MonitorStatusCodes1;
+        /// <summary>
+        /// Enables the recovery action for the response codes you define.
+        /// </summary>
         public readonly bool? MonitorStatusCodes1EnableRecovery;
+        /// <summary>
+        /// When the defined response codes apply, attempts a retry on the same origin before executing the recovery method.
+        /// </summary>
         public readonly bool? MonitorStatusCodes1EnableRetry;
+        /// <summary>
+        /// Specifies a recovery configuration using the `configName` you defined in the `recoveryConfig` match criteria. Specify 3 to 20 alphanumeric characters or dashes. Ensure that you use the `recoveryConfig` match criteria to apply this option.
+        /// </summary>
         public readonly string? MonitorStatusCodes1RecoveryConfigName;
+        /// <summary>
+        /// Enables continuous monitoring for the specific origin status codes that trigger retry or recovery actions.
+        /// </summary>
         public readonly bool? MonitorStatusCodes2;
+        /// <summary>
+        /// Enables the recovery action for the response codes you define.
+        /// </summary>
         public readonly bool? MonitorStatusCodes2EnableRecovery;
+        /// <summary>
+        /// When the defined response codes apply, attempts a retry on the same origin before executing the recovery method.
+        /// </summary>
         public readonly bool? MonitorStatusCodes2EnableRetry;
+        /// <summary>
+        /// Specifies a recovery configuration using the `configName` you defined in the `recoveryConfig` match criteria. Specify 3 to 20 alphanumeric characters or dashes. Ensure that you use the `recoveryConfig` match criteria to apply this option.
+        /// </summary>
         public readonly string? MonitorStatusCodes2RecoveryConfigName;
+        /// <summary>
+        /// Enables continuous monitoring for the specific origin status codes that trigger retry or recovery actions.
+        /// </summary>
         public readonly bool? MonitorStatusCodes3;
+        /// <summary>
+        /// Enables the recovery action for the response codes you define.
+        /// </summary>
         public readonly bool? MonitorStatusCodes3EnableRecovery;
+        /// <summary>
+        /// When the defined response codes apply, attempts a retry on the same origin before executing the recovery method.
+        /// </summary>
         public readonly bool? MonitorStatusCodes3EnableRetry;
+        /// <summary>
+        /// Specifies a recovery configuration using the `configName` you defined in the `recoveryConfig` match criteria. Specify 3 to 20 alphanumeric characters or dashes. Ensure that you use the `recoveryConfig` match criteria to apply this option.
+        /// </summary>
         public readonly string? MonitorStatusCodes3RecoveryConfigName;
+        /// <summary>
+        /// Specify a custom timeout, from 1 to 10 seconds.
+        /// </summary>
         public readonly int? OriginResponsivenessCustomTimeout;
+        /// <summary>
+        /// Enables a recovery action for a specific failure condition.
+        /// </summary>
         public readonly bool? OriginResponsivenessEnableRecovery;
+        /// <summary>
+        /// If a specific failure condition applies, attempts a retry on the same origin before executing the recovery method.
+        /// </summary>
         public readonly bool? OriginResponsivenessEnableRetry;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? OriginResponsivenessMonitoring;
+        /// <summary>
+        /// Specifies a recovery configuration using the `configName` you defined in the `recoveryConfig` match criteria. Specify 3 to 20 alphanumeric characters or dashes. Ensure that you use the `recoveryConfig` match criteria to apply this option.
+        /// </summary>
         public readonly string? OriginResponsivenessRecoveryConfigName;
+        /// <summary>
+        /// The timeout threshold that triggers a retry or recovery action.
+        /// </summary>
         public readonly string? OriginResponsivenessTimeout;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? StatusCodeMonitoring1;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? StatusCodeMonitoring2;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? StatusCodeMonitoring3;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? TuningParameters;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

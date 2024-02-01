@@ -13,22 +13,73 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetCPSEnrollmentsEnrollmentResult
     {
+        /// <summary>
+        /// Contact information for the certificate administrator used at organization
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetCPSEnrollmentsEnrollmentAdminContactResult> AdminContacts;
+        /// <summary>
+        /// Certificate trust chain type
+        /// </summary>
         public readonly string CertificateChainType;
+        /// <summary>
+        /// Certificate type of enrollment
+        /// </summary>
         public readonly string CertificateType;
+        /// <summary>
+        /// Common name used for enrollment
+        /// </summary>
         public readonly string CommonName;
+        /// <summary>
+        /// Data used for generation of Certificate Signing Request
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetCPSEnrollmentsEnrollmentCsrResult> Csrs;
+        /// <summary>
+        /// Enable Dual-Stacked certificate deployment for enrollment
+        /// </summary>
         public readonly bool EnableMultiStackedCertificates;
+        /// <summary>
+        /// The unique identifier of enrollment
+        /// </summary>
         public readonly int EnrollmentId;
+        /// <summary>
+        /// Settings containing network information and TLS metadata used by CPS
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetCPSEnrollmentsEnrollmentNetworkConfigurationResult> NetworkConfigurations;
+        /// <summary>
+        /// Organization information
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetCPSEnrollmentsEnrollmentOrganizationResult> Organizations;
+        /// <summary>
+        /// Whether some changes are pending
+        /// </summary>
         public readonly bool PendingChanges;
+        /// <summary>
+        /// The registration authority or certificate authority (CA) used to obtain a certificate
+        /// </summary>
         public readonly string RegistrationAuthority;
+        /// <summary>
+        /// List of SANs
+        /// </summary>
         public readonly ImmutableArray<string> Sans;
+        /// <summary>
+        /// Type of TLS deployment network
+        /// </summary>
         public readonly string SecureNetwork;
+        /// <summary>
+        /// SHA algorithm type
+        /// </summary>
         public readonly string SignatureAlgorithm;
+        /// <summary>
+        /// Whether Server Name Indication is used for enrollment
+        /// </summary>
         public readonly bool SniOnly;
+        /// <summary>
+        /// Contact information for an administrator at Akamai
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetCPSEnrollmentsEnrollmentTechContactResult> TechContacts;
+        /// <summary>
+        /// Enrolment validation type
+        /// </summary>
         public readonly string ValidationType;
 
         [OutputConstructor]

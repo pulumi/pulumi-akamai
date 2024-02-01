@@ -13,29 +13,77 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DatastreamAzureConnector {
+    /**
+     * @return Access keys associated with Azure Storage account
+     * 
+     */
     private String accessKey;
+    /**
+     * @return Specifies the Azure Storage account name
+     * 
+     */
     private String accountName;
+    /**
+     * @return Indicates whether the logs should be compressed
+     * 
+     */
     private @Nullable Boolean compressLogs;
+    /**
+     * @return Specifies the Azure Storage container name
+     * 
+     */
     private String containerName;
+    /**
+     * @return The name of the connector
+     * 
+     */
     private String displayName;
+    /**
+     * @return The path to the folder within Azure Storage container where logs will be stored
+     * 
+     */
     private String path;
 
     private DatastreamAzureConnector() {}
+    /**
+     * @return Access keys associated with Azure Storage account
+     * 
+     */
     public String accessKey() {
         return this.accessKey;
     }
+    /**
+     * @return Specifies the Azure Storage account name
+     * 
+     */
     public String accountName() {
         return this.accountName;
     }
+    /**
+     * @return Indicates whether the logs should be compressed
+     * 
+     */
     public Optional<Boolean> compressLogs() {
         return Optional.ofNullable(this.compressLogs);
     }
+    /**
+     * @return Specifies the Azure Storage container name
+     * 
+     */
     public String containerName() {
         return this.containerName;
     }
+    /**
+     * @return The name of the connector
+     * 
+     */
     public String displayName() {
         return this.displayName;
     }
+    /**
+     * @return The path to the folder within Azure Storage container where logs will be stored
+     * 
+     */
     public String path() {
         return this.path;
     }

@@ -11,13 +11,29 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyPostBreakpointTransformationBlur {
+    /**
+     * @return The number of pixels to scatter the original pixel by to create the blur effect. Resulting images may be larger than the original as pixels at the edge of the image might scatter outside the image&#39;s original dimensions.
+     * 
+     */
     private @Nullable String sigma;
+    /**
+     * @return The number of pixels to scatter the original pixel by to create the blur effect. Resulting images may be larger than the original as pixels at the edge of the image might scatter outside the image&#39;s original dimensions.
+     * 
+     */
     private @Nullable String sigmaVar;
 
     private GetImagingPolicyImagePolicyPostBreakpointTransformationBlur() {}
+    /**
+     * @return The number of pixels to scatter the original pixel by to create the blur effect. Resulting images may be larger than the original as pixels at the edge of the image might scatter outside the image&#39;s original dimensions.
+     * 
+     */
     public Optional<String> sigma() {
         return Optional.ofNullable(this.sigma);
     }
+    /**
+     * @return The number of pixels to scatter the original pixel by to create the blur effect. Resulting images may be larger than the original as pixels at the edge of the image might scatter outside the image&#39;s original dimensions.
+     * 
+     */
     public Optional<String> sigmaVar() {
         return Optional.ofNullable(this.sigmaVar);
     }

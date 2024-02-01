@@ -13,21 +13,53 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class ClientlistListItem {
+    /**
+     * @return A description of the item.
+     * 
+     */
     private @Nullable String description;
+    /**
+     * @return The item expiration date.
+     * 
+     */
     private @Nullable String expirationDate;
+    /**
+     * @return The item tags.
+     * 
+     */
     private @Nullable List<String> tags;
+    /**
+     * @return Value of the item. (i.e. IP address, AS Number, GEO, ...etc)
+     * 
+     */
     private String value;
 
     private ClientlistListItem() {}
+    /**
+     * @return A description of the item.
+     * 
+     */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
+    /**
+     * @return The item expiration date.
+     * 
+     */
     public Optional<String> expirationDate() {
         return Optional.ofNullable(this.expirationDate);
     }
+    /**
+     * @return The item tags.
+     * 
+     */
     public List<String> tags() {
         return this.tags == null ? List.of() : this.tags;
     }
+    /**
+     * @return Value of the item. (i.e. IP address, AS Number, GEO, ...etc)
+     * 
+     */
     public String value() {
         return this.value;
     }

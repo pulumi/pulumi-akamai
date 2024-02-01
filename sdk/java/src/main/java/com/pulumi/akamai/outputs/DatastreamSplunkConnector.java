@@ -13,49 +13,137 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DatastreamSplunkConnector {
+    /**
+     * @return The certification authority (CA) certificate used to verify the origin server&#39;s certificate. If the certificate is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+     * 
+     */
     private @Nullable String caCert;
+    /**
+     * @return The digital certificate in the PEM format you want to use to authenticate requests to your destination. If you want to use mutual authentication, you need to provide both the client certificate and the client key (in the PEM format).
+     * 
+     */
     private @Nullable String clientCert;
+    /**
+     * @return The private key in the non-encrypted PKCS8 format you want to use to authenticate with the back-end server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+     * 
+     */
     private @Nullable String clientKey;
+    /**
+     * @return Indicates whether the logs should be compressed
+     * 
+     */
     private @Nullable Boolean compressLogs;
+    /**
+     * @return The name of custom header passed with the request to the destination
+     * 
+     */
     private @Nullable String customHeaderName;
+    /**
+     * @return The custom header&#39;s contents passed with the request to the destination
+     * 
+     */
     private @Nullable String customHeaderValue;
+    /**
+     * @return The name of the connector
+     * 
+     */
     private String displayName;
+    /**
+     * @return The raw event Splunk URL where logs will be stored
+     * 
+     */
     private String endpoint;
+    /**
+     * @return The Event Collector token associated with Splunk account
+     * 
+     */
     private String eventCollectorToken;
+    /**
+     * @return Indicates whether mTLS is enabled or not.
+     * 
+     */
     private @Nullable Boolean mTls;
+    /**
+     * @return The hostname that verifies the server&#39;s certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+     * 
+     */
     private @Nullable String tlsHostname;
 
     private DatastreamSplunkConnector() {}
+    /**
+     * @return The certification authority (CA) certificate used to verify the origin server&#39;s certificate. If the certificate is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+     * 
+     */
     public Optional<String> caCert() {
         return Optional.ofNullable(this.caCert);
     }
+    /**
+     * @return The digital certificate in the PEM format you want to use to authenticate requests to your destination. If you want to use mutual authentication, you need to provide both the client certificate and the client key (in the PEM format).
+     * 
+     */
     public Optional<String> clientCert() {
         return Optional.ofNullable(this.clientCert);
     }
+    /**
+     * @return The private key in the non-encrypted PKCS8 format you want to use to authenticate with the back-end server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+     * 
+     */
     public Optional<String> clientKey() {
         return Optional.ofNullable(this.clientKey);
     }
+    /**
+     * @return Indicates whether the logs should be compressed
+     * 
+     */
     public Optional<Boolean> compressLogs() {
         return Optional.ofNullable(this.compressLogs);
     }
+    /**
+     * @return The name of custom header passed with the request to the destination
+     * 
+     */
     public Optional<String> customHeaderName() {
         return Optional.ofNullable(this.customHeaderName);
     }
+    /**
+     * @return The custom header&#39;s contents passed with the request to the destination
+     * 
+     */
     public Optional<String> customHeaderValue() {
         return Optional.ofNullable(this.customHeaderValue);
     }
+    /**
+     * @return The name of the connector
+     * 
+     */
     public String displayName() {
         return this.displayName;
     }
+    /**
+     * @return The raw event Splunk URL where logs will be stored
+     * 
+     */
     public String endpoint() {
         return this.endpoint;
     }
+    /**
+     * @return The Event Collector token associated with Splunk account
+     * 
+     */
     public String eventCollectorToken() {
         return this.eventCollectorToken;
     }
+    /**
+     * @return Indicates whether mTLS is enabled or not.
+     * 
+     */
     public Optional<Boolean> mTls() {
         return Optional.ofNullable(this.mTls);
     }
+    /**
+     * @return The hostname that verifies the server&#39;s certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+     * 
+     */
     public Optional<String> tlsHostname() {
         return Optional.ofNullable(this.tlsHostname);
     }

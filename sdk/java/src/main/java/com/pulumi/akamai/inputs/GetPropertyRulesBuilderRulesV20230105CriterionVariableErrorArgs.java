@@ -17,37 +17,77 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionVariableErrorAr
 
     public static final GetPropertyRulesBuilderRulesV20230105CriterionVariableErrorArgs Empty = new GetPropertyRulesBuilderRulesV20230105CriterionVariableErrorArgs();
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Matches errors for the specified set of `variableNames`, otherwise matches errors from variables outside that set.
+     * 
+     */
     @Import(name="result")
     private @Nullable Output<Boolean> result;
 
+    /**
+     * @return Matches errors for the specified set of `variableNames`, otherwise matches errors from variables outside that set.
+     * 
+     */
     public Optional<Output<Boolean>> result() {
         return Optional.ofNullable(this.result);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
 
+    /**
+     * The name of the variable whose error triggers the match, or a space- or comma-delimited list of more than one variable name. Note that if you define a variable named `VAR`, the name in this field needs to appear with its added prefix as `PMUSER_VAR`. When such a variable is inserted into other fields, it appears with an additional namespace as `{{user.PMUSER_VAR}}`. See the `setVariable` behavior for details on variable names.
+     * 
+     */
     @Import(name="variableNames")
     private @Nullable Output<List<String>> variableNames;
 
+    /**
+     * @return The name of the variable whose error triggers the match, or a space- or comma-delimited list of more than one variable name. Note that if you define a variable named `VAR`, the name in this field needs to appear with its added prefix as `PMUSER_VAR`. When such a variable is inserted into other fields, it appears with an additional namespace as `{{user.PMUSER_VAR}}`. See the `setVariable` behavior for details on variable names.
+     * 
+     */
     public Optional<Output<List<String>>> variableNames() {
         return Optional.ofNullable(this.variableNames);
     }
@@ -80,51 +120,117 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionVariableErrorAr
             $ = new GetPropertyRulesBuilderRulesV20230105CriterionVariableErrorArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param result Matches errors for the specified set of `variableNames`, otherwise matches errors from variables outside that set.
+         * 
+         * @return builder
+         * 
+         */
         public Builder result(@Nullable Output<Boolean> result) {
             $.result = result;
             return this;
         }
 
+        /**
+         * @param result Matches errors for the specified set of `variableNames`, otherwise matches errors from variables outside that set.
+         * 
+         * @return builder
+         * 
+         */
         public Builder result(Boolean result) {
             return result(Output.of(result));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }
 
+        /**
+         * @param variableNames The name of the variable whose error triggers the match, or a space- or comma-delimited list of more than one variable name. Note that if you define a variable named `VAR`, the name in this field needs to appear with its added prefix as `PMUSER_VAR`. When such a variable is inserted into other fields, it appears with an additional namespace as `{{user.PMUSER_VAR}}`. See the `setVariable` behavior for details on variable names.
+         * 
+         * @return builder
+         * 
+         */
         public Builder variableNames(@Nullable Output<List<String>> variableNames) {
             $.variableNames = variableNames;
             return this;
         }
 
+        /**
+         * @param variableNames The name of the variable whose error triggers the match, or a space- or comma-delimited list of more than one variable name. Note that if you define a variable named `VAR`, the name in this field needs to appear with its added prefix as `PMUSER_VAR`. When such a variable is inserted into other fields, it appears with an additional namespace as `{{user.PMUSER_VAR}}`. See the `setVariable` behavior for details on variable names.
+         * 
+         * @return builder
+         * 
+         */
         public Builder variableNames(List<String> variableNames) {
             return variableNames(Output.of(variableNames));
         }
 
+        /**
+         * @param variableNames The name of the variable whose error triggers the match, or a space- or comma-delimited list of more than one variable name. Note that if you define a variable named `VAR`, the name in this field needs to appear with its added prefix as `PMUSER_VAR`. When such a variable is inserted into other fields, it appears with an additional namespace as `{{user.PMUSER_VAR}}`. See the `setVariable` behavior for details on variable names.
+         * 
+         * @return builder
+         * 
+         */
         public Builder variableNames(String... variableNames) {
             return variableNames(List.of(variableNames));
         }

@@ -13,12 +13,33 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorRefererCheckingResult
     {
+        /// <summary>
+        /// Allows all subdomains for the `domains` set, just like adding a `*.` prefix to each.
+        /// </summary>
         public readonly bool? AllowChildren;
+        /// <summary>
+        /// Specifies the set of allowed domains. With `allowChildren` disabled, prefixing values with `*.` specifies domains for which subdomains are allowed.
+        /// </summary>
         public readonly ImmutableArray<string> Domains;
+        /// <summary>
+        /// Enables the referer-checking behavior.
+        /// </summary>
         public readonly bool? Enabled;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// When enabled, excludes requests whose `Referer` header include a relative path, or that are missing a `Referer`. When disabled, only excludes requests whose `Referer` hostname is not part of the `domains` set.
+        /// </summary>
         public readonly bool? Strict;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

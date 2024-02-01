@@ -13,15 +13,45 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorEdgeSideIncludesResult
     {
+        /// <summary>
+        /// Denies attempts to inject ESI code.
+        /// </summary>
         public readonly bool? DetectInjection;
+        /// <summary>
+        /// Enable ESI only for content featuring the `Edge-control: dca=esi` HTTP response header.
+        /// </summary>
         public readonly bool? EnableViaHttp;
+        /// <summary>
+        /// Enables ESI processing.
+        /// </summary>
         public readonly bool? Enabled;
+        /// <summary>
+        /// Specifies the character sets to use when transcoding the ESI language, `UTF-8` and `ISO-8859-1` for example.
+        /// </summary>
         public readonly ImmutableArray<string> I18nCharsets;
+        /// <summary>
+        /// Provides internationalization support for ESI.
+        /// </summary>
         public readonly bool? I18nStatus;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// Allows edge servers to pass the client IP header to the ESI processor.
+        /// </summary>
         public readonly bool? PassClientIp;
+        /// <summary>
+        /// Allows edge servers to pass your origin server's cookies to the ESI processor.
+        /// </summary>
         public readonly bool? PassSetCookie;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

@@ -12,41 +12,113 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorAkamaizerTag {
+    /**
+     * @return Whether to include the `tagsAttribute` value.
+     * 
+     */
     private @Nullable Boolean includeTagsAttribute;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Specifies the hostname to match on as a Perl-compatible regular expression.
+     * 
+     */
     private @Nullable String matchHostname;
+    /**
+     * @return Replaces all matches when enabled, otherwise replaces only the first match.
+     * 
+     */
     private @Nullable Boolean replaceAll;
+    /**
+     * @return Specifies the replacement hostname for the tag to use.
+     * 
+     */
     private @Nullable String replacementHostname;
+    /**
+     * @return Specifies the part of HTML content the `tagsAttribute` refers to.
+     * 
+     */
     private @Nullable String scope;
+    /**
+     * @return Specifies the tag or tag/attribute combination to operate on.
+     * 
+     */
     private @Nullable String tagsAttribute;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorAkamaizerTag() {}
+    /**
+     * @return Whether to include the `tagsAttribute` value.
+     * 
+     */
     public Optional<Boolean> includeTagsAttribute() {
         return Optional.ofNullable(this.includeTagsAttribute);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Specifies the hostname to match on as a Perl-compatible regular expression.
+     * 
+     */
     public Optional<String> matchHostname() {
         return Optional.ofNullable(this.matchHostname);
     }
+    /**
+     * @return Replaces all matches when enabled, otherwise replaces only the first match.
+     * 
+     */
     public Optional<Boolean> replaceAll() {
         return Optional.ofNullable(this.replaceAll);
     }
+    /**
+     * @return Specifies the replacement hostname for the tag to use.
+     * 
+     */
     public Optional<String> replacementHostname() {
         return Optional.ofNullable(this.replacementHostname);
     }
+    /**
+     * @return Specifies the part of HTML content the `tagsAttribute` refers to.
+     * 
+     */
     public Optional<String> scope() {
         return Optional.ofNullable(this.scope);
     }
+    /**
+     * @return Specifies the tag or tag/attribute combination to operate on.
+     * 
+     */
     public Optional<String> tagsAttribute() {
         return Optional.ofNullable(this.tagsAttribute);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

@@ -13,21 +13,53 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptions {
+    /**
+     * @return Set to true if the entries for the value property should be evaluated based on case sensitivity
+     * 
+     */
     private @Nullable Boolean valueCaseSensitive;
+    /**
+     * @return Set to true if provided value should be compared in escaped form
+     * 
+     */
     private @Nullable Boolean valueEscaped;
+    /**
+     * @return Set to true if the entries for the value property include wildcards
+     * 
+     */
     private @Nullable Boolean valueHasWildcard;
+    /**
+     * @return The value attributes in the incoming request to match on
+     * 
+     */
     private @Nullable List<String> values;
 
     private GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptions() {}
+    /**
+     * @return Set to true if the entries for the value property should be evaluated based on case sensitivity
+     * 
+     */
     public Optional<Boolean> valueCaseSensitive() {
         return Optional.ofNullable(this.valueCaseSensitive);
     }
+    /**
+     * @return Set to true if provided value should be compared in escaped form
+     * 
+     */
     public Optional<Boolean> valueEscaped() {
         return Optional.ofNullable(this.valueEscaped);
     }
+    /**
+     * @return Set to true if the entries for the value property include wildcards
+     * 
+     */
     public Optional<Boolean> valueHasWildcard() {
         return Optional.ofNullable(this.valueHasWildcard);
     }
+    /**
+     * @return The value attributes in the incoming request to match on
+     * 
+     */
     public List<String> values() {
         return this.values == null ? List.of() : this.values;
     }

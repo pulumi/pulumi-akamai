@@ -14,57 +14,161 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530CriterionQueryStringParameter {
+    /**
+     * @return Matches when the `value` is URL-escaped.
+     * 
+     */
     private @Nullable Boolean escapeValue;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Specifies the match&#39;s minimum value.
+     * 
+     */
     private @Nullable Integer lowerBound;
+    /**
+     * @return Sets a case-sensitive match for the `parameterName` field.
+     * 
+     */
     private @Nullable Boolean matchCaseSensitiveName;
+    /**
+     * @return Sets a case-sensitive match for the `value` field.
+     * 
+     */
     private @Nullable Boolean matchCaseSensitiveValue;
+    /**
+     * @return Narrows the match criteria.
+     * 
+     */
     private @Nullable String matchOperator;
+    /**
+     * @return Allows wildcards in the `parameterName` field, where `?` matches a single character and `*` matches zero or more characters.
+     * 
+     */
     private @Nullable Boolean matchWildcardName;
+    /**
+     * @return Allows wildcards in the `value` field, where `?` matches a single character and `*` matches zero or more characters.
+     * 
+     */
     private @Nullable Boolean matchWildcardValue;
+    /**
+     * @return The name of the query field, for example, `q` in `?q=string`.
+     * 
+     */
     private @Nullable String parameterName;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return When the `value` is numeric, this field specifies the match&#39;s maximum value.
+     * 
+     */
     private @Nullable Integer upperBound;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
+    /**
+     * @return The value of the query field, for example, `string` in `?q=string`.
+     * 
+     */
     private @Nullable List<String> values;
 
     private GetPropertyRulesBuilderRulesV20230530CriterionQueryStringParameter() {}
+    /**
+     * @return Matches when the `value` is URL-escaped.
+     * 
+     */
     public Optional<Boolean> escapeValue() {
         return Optional.ofNullable(this.escapeValue);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Specifies the match&#39;s minimum value.
+     * 
+     */
     public Optional<Integer> lowerBound() {
         return Optional.ofNullable(this.lowerBound);
     }
+    /**
+     * @return Sets a case-sensitive match for the `parameterName` field.
+     * 
+     */
     public Optional<Boolean> matchCaseSensitiveName() {
         return Optional.ofNullable(this.matchCaseSensitiveName);
     }
+    /**
+     * @return Sets a case-sensitive match for the `value` field.
+     * 
+     */
     public Optional<Boolean> matchCaseSensitiveValue() {
         return Optional.ofNullable(this.matchCaseSensitiveValue);
     }
+    /**
+     * @return Narrows the match criteria.
+     * 
+     */
     public Optional<String> matchOperator() {
         return Optional.ofNullable(this.matchOperator);
     }
+    /**
+     * @return Allows wildcards in the `parameterName` field, where `?` matches a single character and `*` matches zero or more characters.
+     * 
+     */
     public Optional<Boolean> matchWildcardName() {
         return Optional.ofNullable(this.matchWildcardName);
     }
+    /**
+     * @return Allows wildcards in the `value` field, where `?` matches a single character and `*` matches zero or more characters.
+     * 
+     */
     public Optional<Boolean> matchWildcardValue() {
         return Optional.ofNullable(this.matchWildcardValue);
     }
+    /**
+     * @return The name of the query field, for example, `q` in `?q=string`.
+     * 
+     */
     public Optional<String> parameterName() {
         return Optional.ofNullable(this.parameterName);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return When the `value` is numeric, this field specifies the match&#39;s maximum value.
+     * 
+     */
     public Optional<Integer> upperBound() {
         return Optional.ofNullable(this.upperBound);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
+    /**
+     * @return The value of the query field, for example, `string` in `?q=string`.
+     * 
+     */
     public List<String> values() {
         return this.values == null ? List.of() : this.values;
     }

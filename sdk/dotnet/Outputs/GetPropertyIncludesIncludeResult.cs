@@ -13,11 +13,29 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyIncludesIncludeResult
     {
+        /// <summary>
+        /// The include's unique identifier
+        /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// Specifies the most recent version of the include
+        /// </summary>
         public readonly int LatestVersion;
+        /// <summary>
+        /// A descriptive name for the include
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// The most recent version to be activated to the production network
+        /// </summary>
         public readonly string ProductionVersion;
+        /// <summary>
+        /// The most recent version to be activated to the staging network
+        /// </summary>
         public readonly string StagingVersion;
+        /// <summary>
+        /// Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`
+        /// </summary>
         public readonly string Type;
 
         [OutputConstructor]

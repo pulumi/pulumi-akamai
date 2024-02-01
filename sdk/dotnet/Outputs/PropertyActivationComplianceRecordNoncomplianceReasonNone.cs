@@ -13,9 +13,21 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class PropertyActivationComplianceRecordNoncomplianceReasonNone
     {
+        /// <summary>
+        /// Identifies the customer
+        /// </summary>
         public readonly string? CustomerEmail;
+        /// <summary>
+        /// Identifies person who has independently approved the activation request
+        /// </summary>
         public readonly string? PeerReviewedBy;
+        /// <summary>
+        /// Identifies the ticket that describes the need for the activation
+        /// </summary>
         public readonly string? TicketId;
+        /// <summary>
+        /// Whether the metadata to activate has been fully tested
+        /// </summary>
         public readonly bool? UnitTested;
 
         [OutputConstructor]

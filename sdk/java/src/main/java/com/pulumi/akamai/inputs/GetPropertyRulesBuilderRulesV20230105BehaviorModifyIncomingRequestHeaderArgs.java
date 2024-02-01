@@ -16,86 +16,182 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorModifyIncomingRe
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorModifyIncomingRequestHeaderArgs Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorModifyIncomingRequestHeaderArgs();
 
+    /**
+     * Either `ADD`, `DELETE`, `MODIFY`, or `PASS` incoming HTTP request headers.
+     * 
+     */
     @Import(name="action")
     private @Nullable Output<String> action;
 
+    /**
+     * @return Either `ADD`, `DELETE`, `MODIFY`, or `PASS` incoming HTTP request headers.
+     * 
+     */
     public Optional<Output<String>> action() {
         return Optional.ofNullable(this.action);
     }
 
+    /**
+     * When enabled with the `action` set to `MODIFY`, prevents creation of more than one instance of a header.
+     * 
+     */
     @Import(name="avoidDuplicateHeaders")
     private @Nullable Output<Boolean> avoidDuplicateHeaders;
 
+    /**
+     * @return When enabled with the `action` set to `MODIFY`, prevents creation of more than one instance of a header.
+     * 
+     */
     public Optional<Output<Boolean>> avoidDuplicateHeaders() {
         return Optional.ofNullable(this.avoidDuplicateHeaders);
     }
 
+    /**
+     * Specifies a custom field name that applies when the relevant `standard` header name is set to `OTHER`.
+     * 
+     */
     @Import(name="customHeaderName")
     private @Nullable Output<String> customHeaderName;
 
+    /**
+     * @return Specifies a custom field name that applies when the relevant `standard` header name is set to `OTHER`.
+     * 
+     */
     public Optional<Output<String>> customHeaderName() {
         return Optional.ofNullable(this.customHeaderName);
     }
 
+    /**
+     * Specifies the new header value.
+     * 
+     */
     @Import(name="headerValue")
     private @Nullable Output<String> headerValue;
 
+    /**
+     * @return Specifies the new header value.
+     * 
+     */
     public Optional<Output<String>> headerValue() {
         return Optional.ofNullable(this.headerValue);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Supplies an HTTP header replacement value.
+     * 
+     */
     @Import(name="newHeaderValue")
     private @Nullable Output<String> newHeaderValue;
 
+    /**
+     * @return Supplies an HTTP header replacement value.
+     * 
+     */
     public Optional<Output<String>> newHeaderValue() {
         return Optional.ofNullable(this.newHeaderValue);
     }
 
+    /**
+     * If the value of `action` is `ADD`, this specifies the name of the field to add.
+     * 
+     */
     @Import(name="standardAddHeaderName")
     private @Nullable Output<String> standardAddHeaderName;
 
+    /**
+     * @return If the value of `action` is `ADD`, this specifies the name of the field to add.
+     * 
+     */
     public Optional<Output<String>> standardAddHeaderName() {
         return Optional.ofNullable(this.standardAddHeaderName);
     }
 
+    /**
+     * If the value of `action` is `DELETE`, this specifies the name of the field to remove.
+     * 
+     */
     @Import(name="standardDeleteHeaderName")
     private @Nullable Output<String> standardDeleteHeaderName;
 
+    /**
+     * @return If the value of `action` is `DELETE`, this specifies the name of the field to remove.
+     * 
+     */
     public Optional<Output<String>> standardDeleteHeaderName() {
         return Optional.ofNullable(this.standardDeleteHeaderName);
     }
 
+    /**
+     * If the value of `action` is `MODIFY`, this specifies the name of the field to modify.
+     * 
+     */
     @Import(name="standardModifyHeaderName")
     private @Nullable Output<String> standardModifyHeaderName;
 
+    /**
+     * @return If the value of `action` is `MODIFY`, this specifies the name of the field to modify.
+     * 
+     */
     public Optional<Output<String>> standardModifyHeaderName() {
         return Optional.ofNullable(this.standardModifyHeaderName);
     }
 
+    /**
+     * If the value of `action` is `PASS`, this specifies the name of the field to pass through.
+     * 
+     */
     @Import(name="standardPassHeaderName")
     private @Nullable Output<String> standardPassHeaderName;
 
+    /**
+     * @return If the value of `action` is `PASS`, this specifies the name of the field to pass through.
+     * 
+     */
     public Optional<Output<String>> standardPassHeaderName() {
         return Optional.ofNullable(this.standardPassHeaderName);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -135,110 +231,254 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorModifyIncomingRe
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorModifyIncomingRequestHeaderArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param action Either `ADD`, `DELETE`, `MODIFY`, or `PASS` incoming HTTP request headers.
+         * 
+         * @return builder
+         * 
+         */
         public Builder action(@Nullable Output<String> action) {
             $.action = action;
             return this;
         }
 
+        /**
+         * @param action Either `ADD`, `DELETE`, `MODIFY`, or `PASS` incoming HTTP request headers.
+         * 
+         * @return builder
+         * 
+         */
         public Builder action(String action) {
             return action(Output.of(action));
         }
 
+        /**
+         * @param avoidDuplicateHeaders When enabled with the `action` set to `MODIFY`, prevents creation of more than one instance of a header.
+         * 
+         * @return builder
+         * 
+         */
         public Builder avoidDuplicateHeaders(@Nullable Output<Boolean> avoidDuplicateHeaders) {
             $.avoidDuplicateHeaders = avoidDuplicateHeaders;
             return this;
         }
 
+        /**
+         * @param avoidDuplicateHeaders When enabled with the `action` set to `MODIFY`, prevents creation of more than one instance of a header.
+         * 
+         * @return builder
+         * 
+         */
         public Builder avoidDuplicateHeaders(Boolean avoidDuplicateHeaders) {
             return avoidDuplicateHeaders(Output.of(avoidDuplicateHeaders));
         }
 
+        /**
+         * @param customHeaderName Specifies a custom field name that applies when the relevant `standard` header name is set to `OTHER`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customHeaderName(@Nullable Output<String> customHeaderName) {
             $.customHeaderName = customHeaderName;
             return this;
         }
 
+        /**
+         * @param customHeaderName Specifies a custom field name that applies when the relevant `standard` header name is set to `OTHER`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customHeaderName(String customHeaderName) {
             return customHeaderName(Output.of(customHeaderName));
         }
 
+        /**
+         * @param headerValue Specifies the new header value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder headerValue(@Nullable Output<String> headerValue) {
             $.headerValue = headerValue;
             return this;
         }
 
+        /**
+         * @param headerValue Specifies the new header value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder headerValue(String headerValue) {
             return headerValue(Output.of(headerValue));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param newHeaderValue Supplies an HTTP header replacement value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder newHeaderValue(@Nullable Output<String> newHeaderValue) {
             $.newHeaderValue = newHeaderValue;
             return this;
         }
 
+        /**
+         * @param newHeaderValue Supplies an HTTP header replacement value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder newHeaderValue(String newHeaderValue) {
             return newHeaderValue(Output.of(newHeaderValue));
         }
 
+        /**
+         * @param standardAddHeaderName If the value of `action` is `ADD`, this specifies the name of the field to add.
+         * 
+         * @return builder
+         * 
+         */
         public Builder standardAddHeaderName(@Nullable Output<String> standardAddHeaderName) {
             $.standardAddHeaderName = standardAddHeaderName;
             return this;
         }
 
+        /**
+         * @param standardAddHeaderName If the value of `action` is `ADD`, this specifies the name of the field to add.
+         * 
+         * @return builder
+         * 
+         */
         public Builder standardAddHeaderName(String standardAddHeaderName) {
             return standardAddHeaderName(Output.of(standardAddHeaderName));
         }
 
+        /**
+         * @param standardDeleteHeaderName If the value of `action` is `DELETE`, this specifies the name of the field to remove.
+         * 
+         * @return builder
+         * 
+         */
         public Builder standardDeleteHeaderName(@Nullable Output<String> standardDeleteHeaderName) {
             $.standardDeleteHeaderName = standardDeleteHeaderName;
             return this;
         }
 
+        /**
+         * @param standardDeleteHeaderName If the value of `action` is `DELETE`, this specifies the name of the field to remove.
+         * 
+         * @return builder
+         * 
+         */
         public Builder standardDeleteHeaderName(String standardDeleteHeaderName) {
             return standardDeleteHeaderName(Output.of(standardDeleteHeaderName));
         }
 
+        /**
+         * @param standardModifyHeaderName If the value of `action` is `MODIFY`, this specifies the name of the field to modify.
+         * 
+         * @return builder
+         * 
+         */
         public Builder standardModifyHeaderName(@Nullable Output<String> standardModifyHeaderName) {
             $.standardModifyHeaderName = standardModifyHeaderName;
             return this;
         }
 
+        /**
+         * @param standardModifyHeaderName If the value of `action` is `MODIFY`, this specifies the name of the field to modify.
+         * 
+         * @return builder
+         * 
+         */
         public Builder standardModifyHeaderName(String standardModifyHeaderName) {
             return standardModifyHeaderName(Output.of(standardModifyHeaderName));
         }
 
+        /**
+         * @param standardPassHeaderName If the value of `action` is `PASS`, this specifies the name of the field to pass through.
+         * 
+         * @return builder
+         * 
+         */
         public Builder standardPassHeaderName(@Nullable Output<String> standardPassHeaderName) {
             $.standardPassHeaderName = standardPassHeaderName;
             return this;
         }
 
+        /**
+         * @param standardPassHeaderName If the value of `action` is `PASS`, this specifies the name of the field to pass through.
+         * 
+         * @return builder
+         * 
+         */
         public Builder standardPassHeaderName(String standardPassHeaderName) {
             return standardPassHeaderName(Output.of(standardPassHeaderName));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

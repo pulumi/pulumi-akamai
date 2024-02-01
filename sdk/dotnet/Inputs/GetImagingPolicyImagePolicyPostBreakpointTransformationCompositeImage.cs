@@ -14,6 +14,10 @@ namespace Pulumi.Akamai.Inputs
     {
         [Input("boxImages")]
         private List<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxImageArgs>? _boxImages;
+
+        /// <summary>
+        /// A rectangular box, with a specified color and applied transformation.
+        /// </summary>
         public List<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxImageArgs> BoxImages
         {
             get => _boxImages ?? (_boxImages = new List<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxImageArgs>());
@@ -22,6 +26,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("circleImages")]
         private List<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageCircleImageArgs>? _circleImages;
+
+        /// <summary>
+        /// A rectangular box, with a specified color and applied transformation.
+        /// </summary>
         public List<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageCircleImageArgs> CircleImages
         {
             get => _circleImages ?? (_circleImages = new List<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageCircleImageArgs>());
@@ -30,6 +38,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("textImages")]
         private List<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImageArgs>? _textImages;
+
+        /// <summary>
+        /// A snippet of text. Defines font family and size, fill color, and outline stroke width and color.
+        /// </summary>
         public List<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImageArgs> TextImages
         {
             get => _textImages ?? (_textImages = new List<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImageArgs>());
@@ -38,6 +50,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("urlImages")]
         private List<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageArgs>? _urlImages;
+
+        /// <summary>
+        /// An image loaded from a URL.
+        /// </summary>
         public List<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageArgs> UrlImages
         {
             get => _urlImages ?? (_urlImages = new List<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageArgs>());

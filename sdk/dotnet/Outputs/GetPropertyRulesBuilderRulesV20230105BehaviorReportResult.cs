@@ -13,18 +13,57 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorReportResult
     {
+        /// <summary>
+        /// This specifies the set of cookies names whose values you want to log.
+        /// </summary>
         public readonly ImmutableArray<string> Cookies;
+        /// <summary>
+        /// Specifies an additional data field to append to each log line, maximum 1000 bytes, typically based on a dynamically generated built-in system variable. For example, `round-trip: {{builtin.AK_CLIENT_TURNAROUND_TIME}}ms` logs the total time to complete the response. See `Support for variables` for more information. If you enable the `logCustom` behavior, it overrides the `customLogField` option.
+        /// </summary>
         public readonly string? CustomLogField;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// Log the `Accept-Language` header.
+        /// </summary>
         public readonly bool? LogAcceptLanguage;
+        /// <summary>
+        /// Specifies the set of cookies to log.
+        /// </summary>
         public readonly string? LogCookies;
+        /// <summary>
+        /// Whether to append additional custom data to each log line.
+        /// </summary>
         public readonly bool? LogCustomLogField;
+        /// <summary>
+        /// Whether to log the IP address of the Akamai edge server that served the response to the client.
+        /// </summary>
         public readonly bool? LogEdgeIp;
+        /// <summary>
+        /// Log the `Host` header.
+        /// </summary>
         public readonly bool? LogHost;
+        /// <summary>
+        /// Log the `Referer` header.
+        /// </summary>
         public readonly bool? LogReferer;
+        /// <summary>
+        /// Log the `User-Agent` header.
+        /// </summary>
         public readonly bool? LogUserAgent;
+        /// <summary>
+        /// Log any `X-Forwarded-For` request header.
+        /// </summary>
         public readonly bool? LogXForwardedFor;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

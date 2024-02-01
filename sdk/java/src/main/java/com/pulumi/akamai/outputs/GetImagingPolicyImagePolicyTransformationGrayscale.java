@@ -11,13 +11,29 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationGrayscale {
+    /**
+     * @return The algorithm used to transform colors to grays, either `Brightness`, `Lightness`, `Rec601`, or the default `Rec709`.
+     * 
+     */
     private @Nullable String type;
+    /**
+     * @return The algorithm used to transform colors to grays, either `Brightness`, `Lightness`, `Rec601`, or the default `Rec709`.
+     * 
+     */
     private @Nullable String typeVar;
 
     private GetImagingPolicyImagePolicyTransformationGrayscale() {}
+    /**
+     * @return The algorithm used to transform colors to grays, either `Brightness`, `Lightness`, `Rec601`, or the default `Rec709`.
+     * 
+     */
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }
+    /**
+     * @return The algorithm used to transform colors to grays, either `Brightness`, `Lightness`, `Rec601`, or the default `Rec709`.
+     * 
+     */
     public Optional<String> typeVar() {
         return Optional.ofNullable(this.typeVar);
     }

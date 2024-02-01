@@ -11,21 +11,53 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationShears {
+    /**
+     * @return The amount to shear along the x-axis, measured in multiples of the image&#39;s width. Must be set if yShear is not specified.
+     * 
+     */
     private @Nullable String xShear;
+    /**
+     * @return The amount to shear along the x-axis, measured in multiples of the image&#39;s width. Must be set if yShear is not specified.
+     * 
+     */
     private @Nullable String xShearVar;
+    /**
+     * @return The amount to shear along the y-axis, measured in multiples of the image&#39;s height. Must be set if xShear is not specified.
+     * 
+     */
     private @Nullable String yShear;
+    /**
+     * @return The amount to shear along the y-axis, measured in multiples of the image&#39;s height. Must be set if xShear is not specified.
+     * 
+     */
     private @Nullable String yShearVar;
 
     private GetImagingPolicyImagePolicyTransformationShears() {}
+    /**
+     * @return The amount to shear along the x-axis, measured in multiples of the image&#39;s width. Must be set if yShear is not specified.
+     * 
+     */
     public Optional<String> xShear() {
         return Optional.ofNullable(this.xShear);
     }
+    /**
+     * @return The amount to shear along the x-axis, measured in multiples of the image&#39;s width. Must be set if yShear is not specified.
+     * 
+     */
     public Optional<String> xShearVar() {
         return Optional.ofNullable(this.xShearVar);
     }
+    /**
+     * @return The amount to shear along the y-axis, measured in multiples of the image&#39;s height. Must be set if xShear is not specified.
+     * 
+     */
     public Optional<String> yShear() {
         return Optional.ofNullable(this.yShear);
     }
+    /**
+     * @return The amount to shear along the y-axis, measured in multiples of the image&#39;s height. Must be set if xShear is not specified.
+     * 
+     */
     public Optional<String> yShearVar() {
         return Optional.ofNullable(this.yShearVar);
     }

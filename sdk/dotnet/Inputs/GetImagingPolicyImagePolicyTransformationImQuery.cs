@@ -14,6 +14,10 @@ namespace Pulumi.Akamai.Inputs
     {
         [Input("allowedTransformations", required: true)]
         private List<string>? _allowedTransformations;
+
+        /// <summary>
+        /// Specifies the transformations that can be applied using the query string parameter.
+        /// </summary>
         public List<string> AllowedTransformations
         {
             get => _allowedTransformations ?? (_allowedTransformations = new List<string>());
