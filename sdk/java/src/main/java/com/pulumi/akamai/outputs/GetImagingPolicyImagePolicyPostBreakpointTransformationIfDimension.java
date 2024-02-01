@@ -13,21 +13,45 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimension {
     private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation default_;
+    /**
+     * @return The dimension to use to select the transformation, either `height`, `width`, or `both`.
+     * 
+     */
     private @Nullable String dimension;
+    /**
+     * @return The dimension to use to select the transformation, either `height`, `width`, or `both`.
+     * 
+     */
     private @Nullable String dimensionVar;
     private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation equal;
     private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation greaterThan;
     private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation lessThan;
+    /**
+     * @return The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
+     * 
+     */
     private @Nullable String value;
+    /**
+     * @return The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
+     * 
+     */
     private @Nullable String valueVar;
 
     private GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimension() {}
     public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformation> default_() {
         return Optional.ofNullable(this.default_);
     }
+    /**
+     * @return The dimension to use to select the transformation, either `height`, `width`, or `both`.
+     * 
+     */
     public Optional<String> dimension() {
         return Optional.ofNullable(this.dimension);
     }
+    /**
+     * @return The dimension to use to select the transformation, either `height`, `width`, or `both`.
+     * 
+     */
     public Optional<String> dimensionVar() {
         return Optional.ofNullable(this.dimensionVar);
     }
@@ -40,9 +64,17 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationIfDime
     public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformation> lessThan() {
         return Optional.ofNullable(this.lessThan);
     }
+    /**
+     * @return The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
+     * 
+     */
     public Optional<String> value() {
         return Optional.ofNullable(this.value);
     }
+    /**
+     * @return The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
+     * 
+     */
     public Optional<String> valueVar() {
         return Optional.ofNullable(this.valueVar);
     }

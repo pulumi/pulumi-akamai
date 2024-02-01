@@ -13,9 +13,21 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyPostBreakpointTransformationMirrorResult
     {
+        /// <summary>
+        /// Flips the image horizontally.
+        /// </summary>
         public readonly string? Horizontal;
+        /// <summary>
+        /// Flips the image horizontally.
+        /// </summary>
         public readonly string? HorizontalVar;
+        /// <summary>
+        /// Flips the image vertically.
+        /// </summary>
         public readonly string? Vertical;
+        /// <summary>
+        /// Flips the image vertically.
+        /// </summary>
         public readonly string? VerticalVar;
 
         [OutputConstructor]

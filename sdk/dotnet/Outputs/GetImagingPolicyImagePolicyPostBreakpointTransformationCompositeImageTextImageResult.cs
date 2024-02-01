@@ -13,18 +13,54 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImageResult
     {
+        /// <summary>
+        /// The main fill color of the text.
+        /// </summary>
         public readonly string? Fill;
+        /// <summary>
+        /// The main fill color of the text.
+        /// </summary>
         public readonly string? FillVar;
+        /// <summary>
+        /// The size in pixels to render the text.
+        /// </summary>
         public readonly string? Size;
+        /// <summary>
+        /// The size in pixels to render the text.
+        /// </summary>
         public readonly string? SizeVar;
+        /// <summary>
+        /// The color for the outline of the text.
+        /// </summary>
         public readonly string? Stroke;
+        /// <summary>
+        /// The thickness in points for the outline of the text.
+        /// </summary>
         public readonly string? StrokeSize;
+        /// <summary>
+        /// The thickness in points for the outline of the text.
+        /// </summary>
         public readonly string? StrokeSizeVar;
+        /// <summary>
+        /// The color for the outline of the text.
+        /// </summary>
         public readonly string? StrokeVar;
+        /// <summary>
+        /// The line of text to render.
+        /// </summary>
         public readonly string? Text;
+        /// <summary>
+        /// The line of text to render.
+        /// </summary>
         public readonly string? TextVar;
         public readonly Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult? Transformation;
+        /// <summary>
+        /// The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
+        /// </summary>
         public readonly string? Typeface;
+        /// <summary>
+        /// The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
+        /// </summary>
         public readonly string? TypefaceVar;
 
         [OutputConstructor]

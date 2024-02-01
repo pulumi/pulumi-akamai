@@ -13,7 +13,13 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyTransformationBlurResult
     {
+        /// <summary>
+        /// The number of pixels to scatter the original pixel by to create the blur effect. Resulting images may be larger than the original as pixels at the edge of the image might scatter outside the image's original dimensions.
+        /// </summary>
         public readonly string? Sigma;
+        /// <summary>
+        /// The number of pixels to scatter the original pixel by to create the blur effect. Resulting images may be larger than the original as pixels at the edge of the image might scatter outside the image's original dimensions.
+        /// </summary>
         public readonly string? SigmaVar;
 
         [OutputConstructor]

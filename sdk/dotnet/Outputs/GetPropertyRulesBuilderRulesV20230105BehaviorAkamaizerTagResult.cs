@@ -13,14 +13,41 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorAkamaizerTagResult
     {
+        /// <summary>
+        /// Whether to include the `tagsAttribute` value.
+        /// </summary>
         public readonly bool? IncludeTagsAttribute;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// Specifies the hostname to match on as a Perl-compatible regular expression.
+        /// </summary>
         public readonly string? MatchHostname;
+        /// <summary>
+        /// Replaces all matches when enabled, otherwise replaces only the first match.
+        /// </summary>
         public readonly bool? ReplaceAll;
+        /// <summary>
+        /// Specifies the replacement hostname for the tag to use.
+        /// </summary>
         public readonly string? ReplacementHostname;
+        /// <summary>
+        /// Specifies the part of HTML content the `tagsAttribute` refers to.
+        /// </summary>
         public readonly string? Scope;
+        /// <summary>
+        /// Specifies the tag or tag/attribute combination to operate on.
+        /// </summary>
         public readonly string? TagsAttribute;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

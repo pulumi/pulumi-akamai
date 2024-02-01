@@ -13,53 +13,149 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorCorsSupport {
+    /**
+     * @return Accepts requests made using credentials, like cookies or TLS client certificates.
+     * 
+     */
     private @Nullable Boolean allowCredentials;
+    /**
+     * @return In responses to preflight requests, defines which headers to allow when making the actual request.
+     * 
+     */
     private @Nullable String allowHeaders;
+    /**
+     * @return In responses to preflight requests, sets which origin hostnames to accept requests from.
+     * 
+     */
     private @Nullable String allowOrigins;
+    /**
+     * @return Enables CORS feature.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return In responses to preflight requests, lists names of headers that clients can access. By default, clients can access the following simple response headers: `Cache-Control`, `Content-Language`, `Content-Type`, `Expires`, `Last-Modified`, and `Pragma`. You can add other header names to make them accessible to clients.
+     * 
+     */
     private @Nullable List<String> exposeHeaders;
+    /**
+     * @return Defines the supported request headers.
+     * 
+     */
     private @Nullable List<String> headers;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Specifies any combination of the following methods: `DELETE`, `GET`, `PATCH`, `POST`, and `PUT` that are allowed when accessing the resource from an external domain.
+     * 
+     */
     private @Nullable List<String> methods;
+    /**
+     * @return Defines the origin hostnames to accept requests from. The hostnames that you enter need to start with `http` or `https`. For detailed hostname syntax requirements, refer to RFC-952 and RFC-1123 specifications.
+     * 
+     */
     private @Nullable List<String> origins;
+    /**
+     * @return Defines the number of seconds that the browser should cache the response to a preflight request.
+     * 
+     */
     private @Nullable String preflightMaxAge;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorCorsSupport() {}
+    /**
+     * @return Accepts requests made using credentials, like cookies or TLS client certificates.
+     * 
+     */
     public Optional<Boolean> allowCredentials() {
         return Optional.ofNullable(this.allowCredentials);
     }
+    /**
+     * @return In responses to preflight requests, defines which headers to allow when making the actual request.
+     * 
+     */
     public Optional<String> allowHeaders() {
         return Optional.ofNullable(this.allowHeaders);
     }
+    /**
+     * @return In responses to preflight requests, sets which origin hostnames to accept requests from.
+     * 
+     */
     public Optional<String> allowOrigins() {
         return Optional.ofNullable(this.allowOrigins);
     }
+    /**
+     * @return Enables CORS feature.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return In responses to preflight requests, lists names of headers that clients can access. By default, clients can access the following simple response headers: `Cache-Control`, `Content-Language`, `Content-Type`, `Expires`, `Last-Modified`, and `Pragma`. You can add other header names to make them accessible to clients.
+     * 
+     */
     public List<String> exposeHeaders() {
         return this.exposeHeaders == null ? List.of() : this.exposeHeaders;
     }
+    /**
+     * @return Defines the supported request headers.
+     * 
+     */
     public List<String> headers() {
         return this.headers == null ? List.of() : this.headers;
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Specifies any combination of the following methods: `DELETE`, `GET`, `PATCH`, `POST`, and `PUT` that are allowed when accessing the resource from an external domain.
+     * 
+     */
     public List<String> methods() {
         return this.methods == null ? List.of() : this.methods;
     }
+    /**
+     * @return Defines the origin hostnames to accept requests from. The hostnames that you enter need to start with `http` or `https`. For detailed hostname syntax requirements, refer to RFC-952 and RFC-1123 specifications.
+     * 
+     */
     public List<String> origins() {
         return this.origins == null ? List.of() : this.origins;
     }
+    /**
+     * @return Defines the number of seconds that the browser should cache the response to a preflight request.
+     * 
+     */
     public Optional<String> preflightMaxAge() {
         return Optional.ofNullable(this.preflightMaxAge);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

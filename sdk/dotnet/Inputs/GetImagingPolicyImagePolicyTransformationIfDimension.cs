@@ -15,9 +15,15 @@ namespace Pulumi.Akamai.Inputs
         [Input("default")]
         public Inputs.GetImagingPolicyImagePolicyTransformationArgs? Default { get; set; }
 
+        /// <summary>
+        /// The dimension to use to select the transformation, either `height`, `width`, or `both`.
+        /// </summary>
         [Input("dimension")]
         public string? Dimension { get; set; }
 
+        /// <summary>
+        /// The dimension to use to select the transformation, either `height`, `width`, or `both`.
+        /// </summary>
         [Input("dimensionVar")]
         public string? DimensionVar { get; set; }
 
@@ -30,9 +36,15 @@ namespace Pulumi.Akamai.Inputs
         [Input("lessThan")]
         public Inputs.GetImagingPolicyImagePolicyTransformationArgs? LessThan { get; set; }
 
+        /// <summary>
+        /// The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
+        /// </summary>
         [Input("value")]
         public string? Value { get; set; }
 
+        /// <summary>
+        /// The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
+        /// </summary>
         [Input("valueVar")]
         public string? ValueVar { get; set; }
 

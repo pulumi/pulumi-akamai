@@ -14,141 +14,413 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorOriginFailureRecoveryPolicy {
+    /**
+     * @return Synchronizes content between the primary and backup origins, byte for byte.
+     * 
+     */
     private @Nullable Boolean binaryEquivalentContent;
+    /**
+     * @return Temporarily blocks an origin IP address that experienced a certain number of failures. When an IP address is blocked, the `configName` established for `originResponsivenessRecoveryConfigName` is applied.
+     * 
+     */
     private @Nullable Boolean enableIpAvoidance;
+    /**
+     * @return Activates and configures a recovery policy.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Defines the number of failures that need to occur to an origin address before it&#39;s blocked.
+     * 
+     */
     private @Nullable Integer ipAvoidanceErrorThreshold;
+    /**
+     * @return Defines the number of seconds after which the IP address is removed from the blocklist.
+     * 
+     */
     private @Nullable Integer ipAvoidanceRetryInterval;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Enables continuous monitoring of connectivity to the origin. If necessary, applies retry or recovery actions.
+     * 
+     */
     private @Nullable Boolean monitorOriginResponsiveness;
+    /**
+     * @return Defines the origin response codes that trigger a subsequent retry or recovery action. Specify a single code entry (`501`) or a range (`501:504`). If you configure other `monitorStatusCodes*` and `monitorResponseCodes*` options, you can&#39;t use the same codes here.
+     * 
+     */
     private @Nullable List<String> monitorResponseCodes1s;
+    /**
+     * @return Defines the origin response codes that trigger a subsequent retry or recovery action. Specify a single code entry (`501`) or a range (`501:504`). If you configure other `monitorStatusCodes*` and `monitorResponseCodes*` options, you can&#39;t use the same codes here.
+     * 
+     */
     private @Nullable List<String> monitorResponseCodes2s;
+    /**
+     * @return Defines the origin response codes that trigger a subsequent retry or recovery action. Specify a single code entry (`501`) or a range (`501:504`). If you configure other `monitorStatusCodes*` and `monitorResponseCodes*` options, you can&#39;t use the same codes here..
+     * 
+     */
     private @Nullable List<String> monitorResponseCodes3s;
+    /**
+     * @return Enables continuous monitoring for the specific origin status codes that trigger retry or recovery actions.
+     * 
+     */
     private @Nullable Boolean monitorStatusCodes1;
+    /**
+     * @return Enables the recovery action for the response codes you define.
+     * 
+     */
     private @Nullable Boolean monitorStatusCodes1EnableRecovery;
+    /**
+     * @return When the defined response codes apply, attempts a retry on the same origin before executing the recovery method.
+     * 
+     */
     private @Nullable Boolean monitorStatusCodes1EnableRetry;
+    /**
+     * @return Specifies a recovery configuration using the `configName` you defined in the `recoveryConfig` match criteria. Specify 3 to 20 alphanumeric characters or dashes. Ensure that you use the `recoveryConfig` match criteria to apply this option.
+     * 
+     */
     private @Nullable String monitorStatusCodes1RecoveryConfigName;
+    /**
+     * @return Enables continuous monitoring for the specific origin status codes that trigger retry or recovery actions.
+     * 
+     */
     private @Nullable Boolean monitorStatusCodes2;
+    /**
+     * @return Enables the recovery action for the response codes you define.
+     * 
+     */
     private @Nullable Boolean monitorStatusCodes2EnableRecovery;
+    /**
+     * @return When the defined response codes apply, attempts a retry on the same origin before executing the recovery method.
+     * 
+     */
     private @Nullable Boolean monitorStatusCodes2EnableRetry;
+    /**
+     * @return Specifies a recovery configuration using the `configName` you defined in the `recoveryConfig` match criteria. Specify 3 to 20 alphanumeric characters or dashes. Ensure that you use the `recoveryConfig` match criteria to apply this option.
+     * 
+     */
     private @Nullable String monitorStatusCodes2RecoveryConfigName;
+    /**
+     * @return Enables continuous monitoring for the specific origin status codes that trigger retry or recovery actions.
+     * 
+     */
     private @Nullable Boolean monitorStatusCodes3;
+    /**
+     * @return Enables the recovery action for the response codes you define.
+     * 
+     */
     private @Nullable Boolean monitorStatusCodes3EnableRecovery;
+    /**
+     * @return When the defined response codes apply, attempts a retry on the same origin before executing the recovery method.
+     * 
+     */
     private @Nullable Boolean monitorStatusCodes3EnableRetry;
+    /**
+     * @return Specifies a recovery configuration using the `configName` you defined in the `recoveryConfig` match criteria. Specify 3 to 20 alphanumeric characters or dashes. Ensure that you use the `recoveryConfig` match criteria to apply this option.
+     * 
+     */
     private @Nullable String monitorStatusCodes3RecoveryConfigName;
+    /**
+     * @return Specify a custom timeout, from 1 to 10 seconds.
+     * 
+     */
     private @Nullable Integer originResponsivenessCustomTimeout;
+    /**
+     * @return Enables a recovery action for a specific failure condition.
+     * 
+     */
     private @Nullable Boolean originResponsivenessEnableRecovery;
+    /**
+     * @return If a specific failure condition applies, attempts a retry on the same origin before executing the recovery method.
+     * 
+     */
     private @Nullable Boolean originResponsivenessEnableRetry;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String originResponsivenessMonitoring;
+    /**
+     * @return Specifies a recovery configuration using the `configName` you defined in the `recoveryConfig` match criteria. Specify 3 to 20 alphanumeric characters or dashes. Ensure that you use the `recoveryConfig` match criteria to apply this option.
+     * 
+     */
     private @Nullable String originResponsivenessRecoveryConfigName;
+    /**
+     * @return The timeout threshold that triggers a retry or recovery action.
+     * 
+     */
     private @Nullable String originResponsivenessTimeout;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String statusCodeMonitoring1;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String statusCodeMonitoring2;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String statusCodeMonitoring3;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String tuningParameters;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorOriginFailureRecoveryPolicy() {}
+    /**
+     * @return Synchronizes content between the primary and backup origins, byte for byte.
+     * 
+     */
     public Optional<Boolean> binaryEquivalentContent() {
         return Optional.ofNullable(this.binaryEquivalentContent);
     }
+    /**
+     * @return Temporarily blocks an origin IP address that experienced a certain number of failures. When an IP address is blocked, the `configName` established for `originResponsivenessRecoveryConfigName` is applied.
+     * 
+     */
     public Optional<Boolean> enableIpAvoidance() {
         return Optional.ofNullable(this.enableIpAvoidance);
     }
+    /**
+     * @return Activates and configures a recovery policy.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Defines the number of failures that need to occur to an origin address before it&#39;s blocked.
+     * 
+     */
     public Optional<Integer> ipAvoidanceErrorThreshold() {
         return Optional.ofNullable(this.ipAvoidanceErrorThreshold);
     }
+    /**
+     * @return Defines the number of seconds after which the IP address is removed from the blocklist.
+     * 
+     */
     public Optional<Integer> ipAvoidanceRetryInterval() {
         return Optional.ofNullable(this.ipAvoidanceRetryInterval);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Enables continuous monitoring of connectivity to the origin. If necessary, applies retry or recovery actions.
+     * 
+     */
     public Optional<Boolean> monitorOriginResponsiveness() {
         return Optional.ofNullable(this.monitorOriginResponsiveness);
     }
+    /**
+     * @return Defines the origin response codes that trigger a subsequent retry or recovery action. Specify a single code entry (`501`) or a range (`501:504`). If you configure other `monitorStatusCodes*` and `monitorResponseCodes*` options, you can&#39;t use the same codes here.
+     * 
+     */
     public List<String> monitorResponseCodes1s() {
         return this.monitorResponseCodes1s == null ? List.of() : this.monitorResponseCodes1s;
     }
+    /**
+     * @return Defines the origin response codes that trigger a subsequent retry or recovery action. Specify a single code entry (`501`) or a range (`501:504`). If you configure other `monitorStatusCodes*` and `monitorResponseCodes*` options, you can&#39;t use the same codes here.
+     * 
+     */
     public List<String> monitorResponseCodes2s() {
         return this.monitorResponseCodes2s == null ? List.of() : this.monitorResponseCodes2s;
     }
+    /**
+     * @return Defines the origin response codes that trigger a subsequent retry or recovery action. Specify a single code entry (`501`) or a range (`501:504`). If you configure other `monitorStatusCodes*` and `monitorResponseCodes*` options, you can&#39;t use the same codes here..
+     * 
+     */
     public List<String> monitorResponseCodes3s() {
         return this.monitorResponseCodes3s == null ? List.of() : this.monitorResponseCodes3s;
     }
+    /**
+     * @return Enables continuous monitoring for the specific origin status codes that trigger retry or recovery actions.
+     * 
+     */
     public Optional<Boolean> monitorStatusCodes1() {
         return Optional.ofNullable(this.monitorStatusCodes1);
     }
+    /**
+     * @return Enables the recovery action for the response codes you define.
+     * 
+     */
     public Optional<Boolean> monitorStatusCodes1EnableRecovery() {
         return Optional.ofNullable(this.monitorStatusCodes1EnableRecovery);
     }
+    /**
+     * @return When the defined response codes apply, attempts a retry on the same origin before executing the recovery method.
+     * 
+     */
     public Optional<Boolean> monitorStatusCodes1EnableRetry() {
         return Optional.ofNullable(this.monitorStatusCodes1EnableRetry);
     }
+    /**
+     * @return Specifies a recovery configuration using the `configName` you defined in the `recoveryConfig` match criteria. Specify 3 to 20 alphanumeric characters or dashes. Ensure that you use the `recoveryConfig` match criteria to apply this option.
+     * 
+     */
     public Optional<String> monitorStatusCodes1RecoveryConfigName() {
         return Optional.ofNullable(this.monitorStatusCodes1RecoveryConfigName);
     }
+    /**
+     * @return Enables continuous monitoring for the specific origin status codes that trigger retry or recovery actions.
+     * 
+     */
     public Optional<Boolean> monitorStatusCodes2() {
         return Optional.ofNullable(this.monitorStatusCodes2);
     }
+    /**
+     * @return Enables the recovery action for the response codes you define.
+     * 
+     */
     public Optional<Boolean> monitorStatusCodes2EnableRecovery() {
         return Optional.ofNullable(this.monitorStatusCodes2EnableRecovery);
     }
+    /**
+     * @return When the defined response codes apply, attempts a retry on the same origin before executing the recovery method.
+     * 
+     */
     public Optional<Boolean> monitorStatusCodes2EnableRetry() {
         return Optional.ofNullable(this.monitorStatusCodes2EnableRetry);
     }
+    /**
+     * @return Specifies a recovery configuration using the `configName` you defined in the `recoveryConfig` match criteria. Specify 3 to 20 alphanumeric characters or dashes. Ensure that you use the `recoveryConfig` match criteria to apply this option.
+     * 
+     */
     public Optional<String> monitorStatusCodes2RecoveryConfigName() {
         return Optional.ofNullable(this.monitorStatusCodes2RecoveryConfigName);
     }
+    /**
+     * @return Enables continuous monitoring for the specific origin status codes that trigger retry or recovery actions.
+     * 
+     */
     public Optional<Boolean> monitorStatusCodes3() {
         return Optional.ofNullable(this.monitorStatusCodes3);
     }
+    /**
+     * @return Enables the recovery action for the response codes you define.
+     * 
+     */
     public Optional<Boolean> monitorStatusCodes3EnableRecovery() {
         return Optional.ofNullable(this.monitorStatusCodes3EnableRecovery);
     }
+    /**
+     * @return When the defined response codes apply, attempts a retry on the same origin before executing the recovery method.
+     * 
+     */
     public Optional<Boolean> monitorStatusCodes3EnableRetry() {
         return Optional.ofNullable(this.monitorStatusCodes3EnableRetry);
     }
+    /**
+     * @return Specifies a recovery configuration using the `configName` you defined in the `recoveryConfig` match criteria. Specify 3 to 20 alphanumeric characters or dashes. Ensure that you use the `recoveryConfig` match criteria to apply this option.
+     * 
+     */
     public Optional<String> monitorStatusCodes3RecoveryConfigName() {
         return Optional.ofNullable(this.monitorStatusCodes3RecoveryConfigName);
     }
+    /**
+     * @return Specify a custom timeout, from 1 to 10 seconds.
+     * 
+     */
     public Optional<Integer> originResponsivenessCustomTimeout() {
         return Optional.ofNullable(this.originResponsivenessCustomTimeout);
     }
+    /**
+     * @return Enables a recovery action for a specific failure condition.
+     * 
+     */
     public Optional<Boolean> originResponsivenessEnableRecovery() {
         return Optional.ofNullable(this.originResponsivenessEnableRecovery);
     }
+    /**
+     * @return If a specific failure condition applies, attempts a retry on the same origin before executing the recovery method.
+     * 
+     */
     public Optional<Boolean> originResponsivenessEnableRetry() {
         return Optional.ofNullable(this.originResponsivenessEnableRetry);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> originResponsivenessMonitoring() {
         return Optional.ofNullable(this.originResponsivenessMonitoring);
     }
+    /**
+     * @return Specifies a recovery configuration using the `configName` you defined in the `recoveryConfig` match criteria. Specify 3 to 20 alphanumeric characters or dashes. Ensure that you use the `recoveryConfig` match criteria to apply this option.
+     * 
+     */
     public Optional<String> originResponsivenessRecoveryConfigName() {
         return Optional.ofNullable(this.originResponsivenessRecoveryConfigName);
     }
+    /**
+     * @return The timeout threshold that triggers a retry or recovery action.
+     * 
+     */
     public Optional<String> originResponsivenessTimeout() {
         return Optional.ofNullable(this.originResponsivenessTimeout);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> statusCodeMonitoring1() {
         return Optional.ofNullable(this.statusCodeMonitoring1);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> statusCodeMonitoring2() {
         return Optional.ofNullable(this.statusCodeMonitoring2);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> statusCodeMonitoring3() {
         return Optional.ofNullable(this.statusCodeMonitoring3);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> tuningParameters() {
         return Optional.ofNullable(this.tuningParameters);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

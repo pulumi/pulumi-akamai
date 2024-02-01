@@ -13,7 +13,13 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230105CustomOverrideResult
     {
+        /// <summary>
+        /// The name of a custom override
+        /// </summary>
         public readonly string? Name;
+        /// <summary>
+        /// The ID of a custom override
+        /// </summary>
         public readonly string? OverrideId;
 
         [OutputConstructor]

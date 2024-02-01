@@ -15,16 +15,32 @@ public final class CloudwrapperActivationTimeoutsArgs extends com.pulumi.resourc
 
     public static final CloudwrapperActivationTimeoutsArgs Empty = new CloudwrapperActivationTimeoutsArgs();
 
+    /**
+     * Optional configurable activation timeout to be used on resource create. By default it&#39;s 4h with 1s pooling interval.
+     * 
+     */
     @Import(name="create")
     private @Nullable Output<String> create;
 
+    /**
+     * @return Optional configurable activation timeout to be used on resource create. By default it&#39;s 4h with 1s pooling interval.
+     * 
+     */
     public Optional<Output<String>> create() {
         return Optional.ofNullable(this.create);
     }
 
+    /**
+     * Optional configurable activation timeout to be used on resource update. By default it&#39;s 4h with 1s pooling interval.
+     * 
+     */
     @Import(name="update")
     private @Nullable Output<String> update;
 
+    /**
+     * @return Optional configurable activation timeout to be used on resource update. By default it&#39;s 4h with 1s pooling interval.
+     * 
+     */
     public Optional<Output<String>> update() {
         return Optional.ofNullable(this.update);
     }
@@ -54,20 +70,44 @@ public final class CloudwrapperActivationTimeoutsArgs extends com.pulumi.resourc
             $ = new CloudwrapperActivationTimeoutsArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param create Optional configurable activation timeout to be used on resource create. By default it&#39;s 4h with 1s pooling interval.
+         * 
+         * @return builder
+         * 
+         */
         public Builder create(@Nullable Output<String> create) {
             $.create = create;
             return this;
         }
 
+        /**
+         * @param create Optional configurable activation timeout to be used on resource create. By default it&#39;s 4h with 1s pooling interval.
+         * 
+         * @return builder
+         * 
+         */
         public Builder create(String create) {
             return create(Output.of(create));
         }
 
+        /**
+         * @param update Optional configurable activation timeout to be used on resource update. By default it&#39;s 4h with 1s pooling interval.
+         * 
+         * @return builder
+         * 
+         */
         public Builder update(@Nullable Output<String> update) {
             $.update = update;
             return this;
         }
 
+        /**
+         * @param update Optional configurable activation timeout to be used on resource update. By default it&#39;s 4h with 1s pooling interval.
+         * 
+         * @return builder
+         * 
+         */
         public Builder update(String update) {
             return update(Output.of(update));
         }

@@ -14,44 +14,92 @@ public final class GetImagingPolicyImagePolicyTransformationHsl extends com.pulu
 
     public static final GetImagingPolicyImagePolicyTransformationHsl Empty = new GetImagingPolicyImagePolicyTransformationHsl();
 
+    /**
+     * The number of degrees to rotate colors around the color wheel, `0` by default.
+     * 
+     */
     @Import(name="hue")
     private @Nullable String hue;
 
+    /**
+     * @return The number of degrees to rotate colors around the color wheel, `0` by default.
+     * 
+     */
     public Optional<String> hue() {
         return Optional.ofNullable(this.hue);
     }
 
+    /**
+     * The number of degrees to rotate colors around the color wheel, `0` by default.
+     * 
+     */
     @Import(name="hueVar")
     private @Nullable String hueVar;
 
+    /**
+     * @return The number of degrees to rotate colors around the color wheel, `0` by default.
+     * 
+     */
     public Optional<String> hueVar() {
         return Optional.ofNullable(this.hueVar);
     }
 
+    /**
+     * A multiplier to adjust the lightness of colors in the image. Note that lightness is distinct from brightness. For example, reducing the lightness of a light green might give you a lime green whereas reducing the brightness of a light green might give you a darker shade of the same green. Values less than `1.0` decrease the lightness of colors in the image. Values greater than `1.0` increase the lightness of colors in the image.
+     * 
+     */
     @Import(name="lightness")
     private @Nullable String lightness;
 
+    /**
+     * @return A multiplier to adjust the lightness of colors in the image. Note that lightness is distinct from brightness. For example, reducing the lightness of a light green might give you a lime green whereas reducing the brightness of a light green might give you a darker shade of the same green. Values less than `1.0` decrease the lightness of colors in the image. Values greater than `1.0` increase the lightness of colors in the image.
+     * 
+     */
     public Optional<String> lightness() {
         return Optional.ofNullable(this.lightness);
     }
 
+    /**
+     * A multiplier to adjust the lightness of colors in the image. Note that lightness is distinct from brightness. For example, reducing the lightness of a light green might give you a lime green whereas reducing the brightness of a light green might give you a darker shade of the same green. Values less than `1.0` decrease the lightness of colors in the image. Values greater than `1.0` increase the lightness of colors in the image.
+     * 
+     */
     @Import(name="lightnessVar")
     private @Nullable String lightnessVar;
 
+    /**
+     * @return A multiplier to adjust the lightness of colors in the image. Note that lightness is distinct from brightness. For example, reducing the lightness of a light green might give you a lime green whereas reducing the brightness of a light green might give you a darker shade of the same green. Values less than `1.0` decrease the lightness of colors in the image. Values greater than `1.0` increase the lightness of colors in the image.
+     * 
+     */
     public Optional<String> lightnessVar() {
         return Optional.ofNullable(this.lightnessVar);
     }
 
+    /**
+     * A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
+     * 
+     */
     @Import(name="saturation")
     private @Nullable String saturation;
 
+    /**
+     * @return A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
+     * 
+     */
     public Optional<String> saturation() {
         return Optional.ofNullable(this.saturation);
     }
 
+    /**
+     * A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
+     * 
+     */
     @Import(name="saturationVar")
     private @Nullable String saturationVar;
 
+    /**
+     * @return A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
+     * 
+     */
     public Optional<String> saturationVar() {
         return Optional.ofNullable(this.saturationVar);
     }
@@ -85,31 +133,67 @@ public final class GetImagingPolicyImagePolicyTransformationHsl extends com.pulu
             $ = new GetImagingPolicyImagePolicyTransformationHsl(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param hue The number of degrees to rotate colors around the color wheel, `0` by default.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hue(@Nullable String hue) {
             $.hue = hue;
             return this;
         }
 
+        /**
+         * @param hueVar The number of degrees to rotate colors around the color wheel, `0` by default.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hueVar(@Nullable String hueVar) {
             $.hueVar = hueVar;
             return this;
         }
 
+        /**
+         * @param lightness A multiplier to adjust the lightness of colors in the image. Note that lightness is distinct from brightness. For example, reducing the lightness of a light green might give you a lime green whereas reducing the brightness of a light green might give you a darker shade of the same green. Values less than `1.0` decrease the lightness of colors in the image. Values greater than `1.0` increase the lightness of colors in the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder lightness(@Nullable String lightness) {
             $.lightness = lightness;
             return this;
         }
 
+        /**
+         * @param lightnessVar A multiplier to adjust the lightness of colors in the image. Note that lightness is distinct from brightness. For example, reducing the lightness of a light green might give you a lime green whereas reducing the brightness of a light green might give you a darker shade of the same green. Values less than `1.0` decrease the lightness of colors in the image. Values greater than `1.0` increase the lightness of colors in the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder lightnessVar(@Nullable String lightnessVar) {
             $.lightnessVar = lightnessVar;
             return this;
         }
 
+        /**
+         * @param saturation A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder saturation(@Nullable String saturation) {
             $.saturation = saturation;
             return this;
         }
 
+        /**
+         * @param saturationVar A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder saturationVar(@Nullable String saturationVar) {
             $.saturationVar = saturationVar;
             return this;

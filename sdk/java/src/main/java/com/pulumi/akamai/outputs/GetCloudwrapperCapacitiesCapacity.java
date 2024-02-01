@@ -14,33 +14,89 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCloudwrapperCapacitiesCapacity {
+    /**
+     * @return Capacity allocated for the location.
+     * 
+     */
     private GetCloudwrapperCapacitiesCapacityApproved approved;
+    /**
+     * @return Capacity already assigned to Cloud Wrapper configurations.
+     * 
+     */
     private GetCloudwrapperCapacitiesCapacityAssigned assigned;
+    /**
+     * @return Contract ID having Cloud Wrapper entitlement.
+     * 
+     */
     private String contractId;
+    /**
+     * @return Unique identifier of the configured location.
+     * 
+     */
     private Integer locationId;
+    /**
+     * @return Name of the location.
+     * 
+     */
     private String locationName;
+    /**
+     * @return The type of property this capacity is related to.
+     * 
+     */
     private String type;
+    /**
+     * @return Capacity value that can be assigned to Cloud Wrapper configurations.
+     * 
+     */
     private GetCloudwrapperCapacitiesCapacityUnassigned unassigned;
 
     private GetCloudwrapperCapacitiesCapacity() {}
+    /**
+     * @return Capacity allocated for the location.
+     * 
+     */
     public GetCloudwrapperCapacitiesCapacityApproved approved() {
         return this.approved;
     }
+    /**
+     * @return Capacity already assigned to Cloud Wrapper configurations.
+     * 
+     */
     public GetCloudwrapperCapacitiesCapacityAssigned assigned() {
         return this.assigned;
     }
+    /**
+     * @return Contract ID having Cloud Wrapper entitlement.
+     * 
+     */
     public String contractId() {
         return this.contractId;
     }
+    /**
+     * @return Unique identifier of the configured location.
+     * 
+     */
     public Integer locationId() {
         return this.locationId;
     }
+    /**
+     * @return Name of the location.
+     * 
+     */
     public String locationName() {
         return this.locationName;
     }
+    /**
+     * @return The type of property this capacity is related to.
+     * 
+     */
     public String type() {
         return this.type;
     }
+    /**
+     * @return Capacity value that can be assigned to Cloud Wrapper configurations.
+     * 
+     */
     public GetCloudwrapperCapacitiesCapacityUnassigned unassigned() {
         return this.unassigned;
     }

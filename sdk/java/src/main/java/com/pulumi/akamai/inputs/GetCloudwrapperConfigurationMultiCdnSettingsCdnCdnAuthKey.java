@@ -13,30 +13,62 @@ public final class GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKey ext
 
     public static final GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKey Empty = new GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKey();
 
+    /**
+     * The name of the auth key.
+     * 
+     */
     @Import(name="authKeyName", required=true)
     private String authKeyName;
 
+    /**
+     * @return The name of the auth key.
+     * 
+     */
     public String authKeyName() {
         return this.authKeyName;
     }
 
+    /**
+     * The expirty date of an auth key.
+     * 
+     */
     @Import(name="expiryDate", required=true)
     private String expiryDate;
 
+    /**
+     * @return The expirty date of an auth key.
+     * 
+     */
     public String expiryDate() {
         return this.expiryDate;
     }
 
+    /**
+     * The header name of an auth key.
+     * 
+     */
     @Import(name="headerName", required=true)
     private String headerName;
 
+    /**
+     * @return The header name of an auth key.
+     * 
+     */
     public String headerName() {
         return this.headerName;
     }
 
+    /**
+     * The secret of an auth key.
+     * 
+     */
     @Import(name="secret", required=true)
     private String secret;
 
+    /**
+     * @return The secret of an auth key.
+     * 
+     */
     public String secret() {
         return this.secret;
     }
@@ -68,21 +100,45 @@ public final class GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKey ext
             $ = new GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKey(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param authKeyName The name of the auth key.
+         * 
+         * @return builder
+         * 
+         */
         public Builder authKeyName(String authKeyName) {
             $.authKeyName = authKeyName;
             return this;
         }
 
+        /**
+         * @param expiryDate The expirty date of an auth key.
+         * 
+         * @return builder
+         * 
+         */
         public Builder expiryDate(String expiryDate) {
             $.expiryDate = expiryDate;
             return this;
         }
 
+        /**
+         * @param headerName The header name of an auth key.
+         * 
+         * @return builder
+         * 
+         */
         public Builder headerName(String headerName) {
             $.headerName = headerName;
             return this;
         }
 
+        /**
+         * @param secret The secret of an auth key.
+         * 
+         * @return builder
+         * 
+         */
         public Builder secret(String secret) {
             $.secret = secret;
             return this;

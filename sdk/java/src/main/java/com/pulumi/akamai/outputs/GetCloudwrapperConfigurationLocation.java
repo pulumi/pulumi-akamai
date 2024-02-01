@@ -12,21 +12,53 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCloudwrapperConfigurationLocation {
+    /**
+     * @return The capacity assigned to this configuration&#39;s location.
+     * 
+     */
     private GetCloudwrapperConfigurationLocationCapacity capacity;
+    /**
+     * @return Additional comments provided by user.
+     * 
+     */
     private String comments;
+    /**
+     * @return The name of the map.
+     * 
+     */
     private String mapName;
+    /**
+     * @return Unique identifier for the location and traffic type combination.
+     * 
+     */
     private Integer trafficTypeId;
 
     private GetCloudwrapperConfigurationLocation() {}
+    /**
+     * @return The capacity assigned to this configuration&#39;s location.
+     * 
+     */
     public GetCloudwrapperConfigurationLocationCapacity capacity() {
         return this.capacity;
     }
+    /**
+     * @return Additional comments provided by user.
+     * 
+     */
     public String comments() {
         return this.comments;
     }
+    /**
+     * @return The name of the map.
+     * 
+     */
     public String mapName() {
         return this.mapName;
     }
+    /**
+     * @return Unique identifier for the location and traffic type combination.
+     * 
+     */
     public Integer trafficTypeId() {
         return this.trafficTypeId;
     }

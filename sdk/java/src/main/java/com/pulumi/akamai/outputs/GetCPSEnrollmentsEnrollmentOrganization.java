@@ -10,37 +10,101 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCPSEnrollmentsEnrollmentOrganization {
+    /**
+     * @return The address of organization
+     * 
+     */
     private String addressLineOne;
+    /**
+     * @return The address of organization
+     * 
+     */
     private String addressLineTwo;
+    /**
+     * @return City where organization is located
+     * 
+     */
     private String city;
+    /**
+     * @return Country code of country where organization is located
+     * 
+     */
     private String countryCode;
+    /**
+     * @return Name of organization
+     * 
+     */
     private String name;
+    /**
+     * @return The phone number of the administrator who is organization contact
+     * 
+     */
     private String phone;
+    /**
+     * @return The postal code of organization
+     * 
+     */
     private String postalCode;
+    /**
+     * @return The region where organization resides
+     * 
+     */
     private String region;
 
     private GetCPSEnrollmentsEnrollmentOrganization() {}
+    /**
+     * @return The address of organization
+     * 
+     */
     public String addressLineOne() {
         return this.addressLineOne;
     }
+    /**
+     * @return The address of organization
+     * 
+     */
     public String addressLineTwo() {
         return this.addressLineTwo;
     }
+    /**
+     * @return City where organization is located
+     * 
+     */
     public String city() {
         return this.city;
     }
+    /**
+     * @return Country code of country where organization is located
+     * 
+     */
     public String countryCode() {
         return this.countryCode;
     }
+    /**
+     * @return Name of organization
+     * 
+     */
     public String name() {
         return this.name;
     }
+    /**
+     * @return The phone number of the administrator who is organization contact
+     * 
+     */
     public String phone() {
         return this.phone;
     }
+    /**
+     * @return The postal code of organization
+     * 
+     */
     public String postalCode() {
         return this.postalCode;
     }
+    /**
+     * @return The region where organization resides
+     * 
+     */
     public String region() {
         return this.region;
     }

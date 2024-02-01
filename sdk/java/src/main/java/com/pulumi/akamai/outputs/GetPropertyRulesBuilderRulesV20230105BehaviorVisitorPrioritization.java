@@ -17,173 +17,509 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritization {
+    /**
+     * @return Sets advanced configuration options for the allowed user&#39;s cookie.
+     * 
+     */
     private @Nullable Boolean allowedUserCookieAdvanced;
+    /**
+     * @return Sets an automatic `salt` value to verify the integrity of the cookie for an allowed user. Disable this if you want to share the cookie across properties.
+     * 
+     */
     private @Nullable Boolean allowedUserCookieAutomaticSalt;
+    /**
+     * @return Specifies a domain for an allowed user cookie.
+     * 
+     */
     private @Nullable String allowedUserCookieDomain;
+    /**
+     * @return Specify with `allowedUserCookieAdvanced` enabled.
+     * 
+     */
     private @Nullable String allowedUserCookieDomainType;
+    /**
+     * @return Sets the number of seconds for the allowed user&#39;s session once allowed through to the site.
+     * 
+     */
     private @Nullable Integer allowedUserCookieDuration;
+    /**
+     * @return Sets a cookie for users who have been allowed through to the site.
+     * 
+     */
     private @Nullable Boolean allowedUserCookieEnabled;
+    /**
+     * @return Applies the `HttpOnly` flag to the allowed user&#39;s cookie to ensure it&#39;s accessed over HTTP and not manipulated by the client.
+     * 
+     */
     private @Nullable Boolean allowedUserCookieHttpOnly;
+    /**
+     * @return Specifies a label to distinguish this cookie for an allowed user from others. The value appends to the cookie&#39;s name, and helps you to maintain the same user assignment across behaviors within a property, and across properties.
+     * 
+     */
     private @Nullable String allowedUserCookieLabel;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String allowedUserCookieManagementTitle;
+    /**
+     * @return Resets the duration of an allowed cookie with each request, so that it only expires if the user doesn&#39;t make any requests for the specified duration. Do not enable this option if you want to set a fixed time for all users.
+     * 
+     */
     private @Nullable Boolean allowedUserCookieRefresh;
+    /**
+     * @return Specifies a fixed `salt` value, which is incorporated into the cookie&#39;s value to prevent users from manipulating it. You can use the same salt string across different behaviors or properties to apply a single cookie to all allowed users.
+     * 
+     */
     private @Nullable String allowedUserCookieSalt;
+    /**
+     * @return Identifies the Cloudlet policy.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationCloudletPolicy cloudletPolicy;
+    /**
+     * @return Enables the Visitor Prioritization behavior.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return When enabled, identifies users by the value of a cookie.
+     * 
+     */
     private @Nullable Boolean userIdentificationByCookie;
+    /**
+     * @return When enabled, identifies users by the values of GET or POST request headers.
+     * 
+     */
     private @Nullable Boolean userIdentificationByHeaders;
+    /**
+     * @return Allows IP addresses to identify users.
+     * 
+     */
     private @Nullable Boolean userIdentificationByIp;
+    /**
+     * @return When enabled, identifies users by the values of GET or POST request parameters.
+     * 
+     */
     private @Nullable Boolean userIdentificationByParams;
+    /**
+     * @return Specifies the name of the cookie whose value identifies users. To match a user, the value of the cookie needs to remain constant across all requests.
+     * 
+     */
     private @Nullable String userIdentificationKeyCookie;
+    /**
+     * @return Specifies names of request headers whose values identify users. To match a user, values for all the specified headers need to remain constant across all requests.
+     * 
+     */
     private @Nullable List<String> userIdentificationKeyHeaders;
+    /**
+     * @return Specifies names of request parameters whose values identify users. To match a user, values for all the specified parameters need to remain constant across all requests. Parameters that are absent or blank may also identify users.
+     * 
+     */
     private @Nullable List<String> userIdentificationKeyParams;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String userIdentificationTitle;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
+    /**
+     * @return Specifies the waiting room page&#39;s time to live in the cache, `5` minutes by default.
+     * 
+     */
     private @Nullable Integer waitingRoomCacheTtl;
+    /**
+     * @return When enabled along with `waitingRoomCookieEnabled`, sets advanced configuration options for the waiting room cookie.
+     * 
+     */
     private @Nullable Boolean waitingRoomCookieAdvanced;
+    /**
+     * @return Sets an automatic `salt` value to verify the integrity of the waiting room cookie.  Disable this if you want to share the cookie across properties.
+     * 
+     */
     private @Nullable Boolean waitingRoomCookieAutomaticSalt;
+    /**
+     * @return Specifies a domain for the waiting room cookie.
+     * 
+     */
     private @Nullable String waitingRoomCookieDomain;
+    /**
+     * @return Specify with `waitingRoomCookieAdvanced` enabled, selects whether to use the `DYNAMIC` incoming host header, or a `CUSTOMER`-defined cookie domain.
+     * 
+     */
     private @Nullable String waitingRoomCookieDomainType;
+    /**
+     * @return Sets the number of seconds for which users remain in the waiting room. During this time, users who refresh the waiting room page remain there.
+     * 
+     */
     private @Nullable Integer waitingRoomCookieDuration;
+    /**
+     * @return Enables a cookie to track a waiting room assignment.
+     * 
+     */
     private @Nullable Boolean waitingRoomCookieEnabled;
+    /**
+     * @return Applies the `HttpOnly` flag to the waiting room cookie to ensure it&#39;s accessed over HTTP and not manipulated by the client.
+     * 
+     */
     private @Nullable Boolean waitingRoomCookieHttpOnly;
+    /**
+     * @return Specifies a label to distinguish this waiting room cookie from others. The value appends to the cookie&#39;s name, and helps you to maintain the same waiting room assignment across behaviors within a property, and across properties.
+     * 
+     */
     private @Nullable String waitingRoomCookieLabel;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String waitingRoomCookieManagementTitle;
+    /**
+     * @return Specifies a fixed `salt` value, which is incorporated into the cookie&#39;s value to prevent users from manipulating it. You can use the same salt string across different behaviors or properties to apply a single cookie for the waiting room session.
+     * 
+     */
     private @Nullable String waitingRoomCookieSalt;
+    /**
+     * @return Enabling this option shares the same `allowedUserCookieLabel` string. If disabled, specify a different `waitingRoomCookieLabel`.
+     * 
+     */
     private @Nullable Boolean waitingRoomCookieShareLabel;
+    /**
+     * @return Specifies a `cpcode` object for requests sent to the waiting room, including a numeric `id` key and a descriptive `name`.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomCpCode waitingRoomCpCode;
+    /**
+     * @return Specifies the NetStorage directory that contains the static waiting room page, with no trailing slash character.
+     * 
+     */
     private @Nullable String waitingRoomDirectory;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String waitingRoomManagementTitle;
+    /**
+     * @return Specifies the NetStorage domain for the waiting room page.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomNetStorage waitingRoomNetStorage;
+    /**
+     * @return Specifies the response code for requests sent to the waiting room.
+     * 
+     */
     private @Nullable Integer waitingRoomStatusCode;
+    /**
+     * @return Allows you to assign a different CP code that tracks any requests that are sent to the waiting room.
+     * 
+     */
     private @Nullable Boolean waitingRoomUseCpCode;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritization() {}
+    /**
+     * @return Sets advanced configuration options for the allowed user&#39;s cookie.
+     * 
+     */
     public Optional<Boolean> allowedUserCookieAdvanced() {
         return Optional.ofNullable(this.allowedUserCookieAdvanced);
     }
+    /**
+     * @return Sets an automatic `salt` value to verify the integrity of the cookie for an allowed user. Disable this if you want to share the cookie across properties.
+     * 
+     */
     public Optional<Boolean> allowedUserCookieAutomaticSalt() {
         return Optional.ofNullable(this.allowedUserCookieAutomaticSalt);
     }
+    /**
+     * @return Specifies a domain for an allowed user cookie.
+     * 
+     */
     public Optional<String> allowedUserCookieDomain() {
         return Optional.ofNullable(this.allowedUserCookieDomain);
     }
+    /**
+     * @return Specify with `allowedUserCookieAdvanced` enabled.
+     * 
+     */
     public Optional<String> allowedUserCookieDomainType() {
         return Optional.ofNullable(this.allowedUserCookieDomainType);
     }
+    /**
+     * @return Sets the number of seconds for the allowed user&#39;s session once allowed through to the site.
+     * 
+     */
     public Optional<Integer> allowedUserCookieDuration() {
         return Optional.ofNullable(this.allowedUserCookieDuration);
     }
+    /**
+     * @return Sets a cookie for users who have been allowed through to the site.
+     * 
+     */
     public Optional<Boolean> allowedUserCookieEnabled() {
         return Optional.ofNullable(this.allowedUserCookieEnabled);
     }
+    /**
+     * @return Applies the `HttpOnly` flag to the allowed user&#39;s cookie to ensure it&#39;s accessed over HTTP and not manipulated by the client.
+     * 
+     */
     public Optional<Boolean> allowedUserCookieHttpOnly() {
         return Optional.ofNullable(this.allowedUserCookieHttpOnly);
     }
+    /**
+     * @return Specifies a label to distinguish this cookie for an allowed user from others. The value appends to the cookie&#39;s name, and helps you to maintain the same user assignment across behaviors within a property, and across properties.
+     * 
+     */
     public Optional<String> allowedUserCookieLabel() {
         return Optional.ofNullable(this.allowedUserCookieLabel);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> allowedUserCookieManagementTitle() {
         return Optional.ofNullable(this.allowedUserCookieManagementTitle);
     }
+    /**
+     * @return Resets the duration of an allowed cookie with each request, so that it only expires if the user doesn&#39;t make any requests for the specified duration. Do not enable this option if you want to set a fixed time for all users.
+     * 
+     */
     public Optional<Boolean> allowedUserCookieRefresh() {
         return Optional.ofNullable(this.allowedUserCookieRefresh);
     }
+    /**
+     * @return Specifies a fixed `salt` value, which is incorporated into the cookie&#39;s value to prevent users from manipulating it. You can use the same salt string across different behaviors or properties to apply a single cookie to all allowed users.
+     * 
+     */
     public Optional<String> allowedUserCookieSalt() {
         return Optional.ofNullable(this.allowedUserCookieSalt);
     }
+    /**
+     * @return Identifies the Cloudlet policy.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationCloudletPolicy> cloudletPolicy() {
         return Optional.ofNullable(this.cloudletPolicy);
     }
+    /**
+     * @return Enables the Visitor Prioritization behavior.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return When enabled, identifies users by the value of a cookie.
+     * 
+     */
     public Optional<Boolean> userIdentificationByCookie() {
         return Optional.ofNullable(this.userIdentificationByCookie);
     }
+    /**
+     * @return When enabled, identifies users by the values of GET or POST request headers.
+     * 
+     */
     public Optional<Boolean> userIdentificationByHeaders() {
         return Optional.ofNullable(this.userIdentificationByHeaders);
     }
+    /**
+     * @return Allows IP addresses to identify users.
+     * 
+     */
     public Optional<Boolean> userIdentificationByIp() {
         return Optional.ofNullable(this.userIdentificationByIp);
     }
+    /**
+     * @return When enabled, identifies users by the values of GET or POST request parameters.
+     * 
+     */
     public Optional<Boolean> userIdentificationByParams() {
         return Optional.ofNullable(this.userIdentificationByParams);
     }
+    /**
+     * @return Specifies the name of the cookie whose value identifies users. To match a user, the value of the cookie needs to remain constant across all requests.
+     * 
+     */
     public Optional<String> userIdentificationKeyCookie() {
         return Optional.ofNullable(this.userIdentificationKeyCookie);
     }
+    /**
+     * @return Specifies names of request headers whose values identify users. To match a user, values for all the specified headers need to remain constant across all requests.
+     * 
+     */
     public List<String> userIdentificationKeyHeaders() {
         return this.userIdentificationKeyHeaders == null ? List.of() : this.userIdentificationKeyHeaders;
     }
+    /**
+     * @return Specifies names of request parameters whose values identify users. To match a user, values for all the specified parameters need to remain constant across all requests. Parameters that are absent or blank may also identify users.
+     * 
+     */
     public List<String> userIdentificationKeyParams() {
         return this.userIdentificationKeyParams == null ? List.of() : this.userIdentificationKeyParams;
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> userIdentificationTitle() {
         return Optional.ofNullable(this.userIdentificationTitle);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
+    /**
+     * @return Specifies the waiting room page&#39;s time to live in the cache, `5` minutes by default.
+     * 
+     */
     public Optional<Integer> waitingRoomCacheTtl() {
         return Optional.ofNullable(this.waitingRoomCacheTtl);
     }
+    /**
+     * @return When enabled along with `waitingRoomCookieEnabled`, sets advanced configuration options for the waiting room cookie.
+     * 
+     */
     public Optional<Boolean> waitingRoomCookieAdvanced() {
         return Optional.ofNullable(this.waitingRoomCookieAdvanced);
     }
+    /**
+     * @return Sets an automatic `salt` value to verify the integrity of the waiting room cookie.  Disable this if you want to share the cookie across properties.
+     * 
+     */
     public Optional<Boolean> waitingRoomCookieAutomaticSalt() {
         return Optional.ofNullable(this.waitingRoomCookieAutomaticSalt);
     }
+    /**
+     * @return Specifies a domain for the waiting room cookie.
+     * 
+     */
     public Optional<String> waitingRoomCookieDomain() {
         return Optional.ofNullable(this.waitingRoomCookieDomain);
     }
+    /**
+     * @return Specify with `waitingRoomCookieAdvanced` enabled, selects whether to use the `DYNAMIC` incoming host header, or a `CUSTOMER`-defined cookie domain.
+     * 
+     */
     public Optional<String> waitingRoomCookieDomainType() {
         return Optional.ofNullable(this.waitingRoomCookieDomainType);
     }
+    /**
+     * @return Sets the number of seconds for which users remain in the waiting room. During this time, users who refresh the waiting room page remain there.
+     * 
+     */
     public Optional<Integer> waitingRoomCookieDuration() {
         return Optional.ofNullable(this.waitingRoomCookieDuration);
     }
+    /**
+     * @return Enables a cookie to track a waiting room assignment.
+     * 
+     */
     public Optional<Boolean> waitingRoomCookieEnabled() {
         return Optional.ofNullable(this.waitingRoomCookieEnabled);
     }
+    /**
+     * @return Applies the `HttpOnly` flag to the waiting room cookie to ensure it&#39;s accessed over HTTP and not manipulated by the client.
+     * 
+     */
     public Optional<Boolean> waitingRoomCookieHttpOnly() {
         return Optional.ofNullable(this.waitingRoomCookieHttpOnly);
     }
+    /**
+     * @return Specifies a label to distinguish this waiting room cookie from others. The value appends to the cookie&#39;s name, and helps you to maintain the same waiting room assignment across behaviors within a property, and across properties.
+     * 
+     */
     public Optional<String> waitingRoomCookieLabel() {
         return Optional.ofNullable(this.waitingRoomCookieLabel);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> waitingRoomCookieManagementTitle() {
         return Optional.ofNullable(this.waitingRoomCookieManagementTitle);
     }
+    /**
+     * @return Specifies a fixed `salt` value, which is incorporated into the cookie&#39;s value to prevent users from manipulating it. You can use the same salt string across different behaviors or properties to apply a single cookie for the waiting room session.
+     * 
+     */
     public Optional<String> waitingRoomCookieSalt() {
         return Optional.ofNullable(this.waitingRoomCookieSalt);
     }
+    /**
+     * @return Enabling this option shares the same `allowedUserCookieLabel` string. If disabled, specify a different `waitingRoomCookieLabel`.
+     * 
+     */
     public Optional<Boolean> waitingRoomCookieShareLabel() {
         return Optional.ofNullable(this.waitingRoomCookieShareLabel);
     }
+    /**
+     * @return Specifies a `cpcode` object for requests sent to the waiting room, including a numeric `id` key and a descriptive `name`.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomCpCode> waitingRoomCpCode() {
         return Optional.ofNullable(this.waitingRoomCpCode);
     }
+    /**
+     * @return Specifies the NetStorage directory that contains the static waiting room page, with no trailing slash character.
+     * 
+     */
     public Optional<String> waitingRoomDirectory() {
         return Optional.ofNullable(this.waitingRoomDirectory);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> waitingRoomManagementTitle() {
         return Optional.ofNullable(this.waitingRoomManagementTitle);
     }
+    /**
+     * @return Specifies the NetStorage domain for the waiting room page.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomNetStorage> waitingRoomNetStorage() {
         return Optional.ofNullable(this.waitingRoomNetStorage);
     }
+    /**
+     * @return Specifies the response code for requests sent to the waiting room.
+     * 
+     */
     public Optional<Integer> waitingRoomStatusCode() {
         return Optional.ofNullable(this.waitingRoomStatusCode);
     }
+    /**
+     * @return Allows you to assign a different CP code that tracks any requests that are sent to the waiting room.
+     * 
+     */
     public Optional<Boolean> waitingRoomUseCpCode() {
         return Optional.ofNullable(this.waitingRoomUseCpCode);
     }

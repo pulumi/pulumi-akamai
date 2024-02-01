@@ -11,77 +11,221 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationFaceCrop {
+    /**
+     * @return Specifies the type of algorithm used to detect faces in the image, either `cascade` for the cascade classifier algorithm or `dnn` for the deep neural network algorithm, `cascade` by default.
+     * 
+     */
     private @Nullable String algorithm;
+    /**
+     * @return Specifies the type of algorithm used to detect faces in the image, either `cascade` for the cascade classifier algorithm or `dnn` for the deep neural network algorithm, `cascade` by default.
+     * 
+     */
     private @Nullable String algorithmVar;
+    /**
+     * @return With `algorithm` set to `dnn`, specifies the minimum confidence needed to detect faces in the image. Values range from `0` to `1` for increased confidence, and possibly fewer faces detected.
+     * 
+     */
     private @Nullable String confidence;
+    /**
+     * @return With `algorithm` set to `dnn`, specifies the minimum confidence needed to detect faces in the image. Values range from `0` to `1` for increased confidence, and possibly fewer faces detected.
+     * 
+     */
     private @Nullable String confidenceVar;
+    /**
+     * @return Controls placement of the crop if Image and Video Manager does not detect any faces in the image. Directions are relative to the edges of the image being transformed.
+     * 
+     */
     private @Nullable String failGravity;
+    /**
+     * @return Controls placement of the crop if Image and Video Manager does not detect any faces in the image. Directions are relative to the edges of the image being transformed.
+     * 
+     */
     private @Nullable String failGravityVar;
+    /**
+     * @return Distinguishes the faces detected, either `biggestFace` or `allFaces` to place the crop rectangle around the full set of faces, `all` by default.
+     * 
+     */
     private @Nullable String focus;
+    /**
+     * @return Distinguishes the faces detected, either `biggestFace` or `allFaces` to place the crop rectangle around the full set of faces, `all` by default.
+     * 
+     */
     private @Nullable String focusVar;
+    /**
+     * @return Controls placement of the crop. Directions are relative to the face(s) plus padding.
+     * 
+     */
     private @Nullable String gravity;
+    /**
+     * @return Controls placement of the crop. Directions are relative to the face(s) plus padding.
+     * 
+     */
     private @Nullable String gravityVar;
+    /**
+     * @return The height of the output image in pixels relative to the specified `style` value.
+     * 
+     */
     private @Nullable String height;
+    /**
+     * @return The height of the output image in pixels relative to the specified `style` value.
+     * 
+     */
     private @Nullable String heightVar;
+    /**
+     * @return The padding ratio based on the dimensions of the biggest face detected, `0.5` by default. Larger values increase padding.
+     * 
+     */
     private @Nullable String padding;
+    /**
+     * @return The padding ratio based on the dimensions of the biggest face detected, `0.5` by default. Larger values increase padding.
+     * 
+     */
     private @Nullable String paddingVar;
+    /**
+     * @return Specifies how to crop or scale a crop area for the faces detected in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places a raw crop around the faces, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and faces as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the faces, relative to the specified `width` and `height` values. Allows Variable substitution.
+     * 
+     */
     private @Nullable String style;
+    /**
+     * @return Specifies how to crop or scale a crop area for the faces detected in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places a raw crop around the faces, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and faces as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the faces, relative to the specified `width` and `height` values. Allows Variable substitution.
+     * 
+     */
     private @Nullable String styleVar;
+    /**
+     * @return The width of the output image in pixels relative to the specified `style` value.
+     * 
+     */
     private @Nullable String width;
+    /**
+     * @return The width of the output image in pixels relative to the specified `style` value.
+     * 
+     */
     private @Nullable String widthVar;
 
     private GetImagingPolicyImagePolicyTransformationFaceCrop() {}
+    /**
+     * @return Specifies the type of algorithm used to detect faces in the image, either `cascade` for the cascade classifier algorithm or `dnn` for the deep neural network algorithm, `cascade` by default.
+     * 
+     */
     public Optional<String> algorithm() {
         return Optional.ofNullable(this.algorithm);
     }
+    /**
+     * @return Specifies the type of algorithm used to detect faces in the image, either `cascade` for the cascade classifier algorithm or `dnn` for the deep neural network algorithm, `cascade` by default.
+     * 
+     */
     public Optional<String> algorithmVar() {
         return Optional.ofNullable(this.algorithmVar);
     }
+    /**
+     * @return With `algorithm` set to `dnn`, specifies the minimum confidence needed to detect faces in the image. Values range from `0` to `1` for increased confidence, and possibly fewer faces detected.
+     * 
+     */
     public Optional<String> confidence() {
         return Optional.ofNullable(this.confidence);
     }
+    /**
+     * @return With `algorithm` set to `dnn`, specifies the minimum confidence needed to detect faces in the image. Values range from `0` to `1` for increased confidence, and possibly fewer faces detected.
+     * 
+     */
     public Optional<String> confidenceVar() {
         return Optional.ofNullable(this.confidenceVar);
     }
+    /**
+     * @return Controls placement of the crop if Image and Video Manager does not detect any faces in the image. Directions are relative to the edges of the image being transformed.
+     * 
+     */
     public Optional<String> failGravity() {
         return Optional.ofNullable(this.failGravity);
     }
+    /**
+     * @return Controls placement of the crop if Image and Video Manager does not detect any faces in the image. Directions are relative to the edges of the image being transformed.
+     * 
+     */
     public Optional<String> failGravityVar() {
         return Optional.ofNullable(this.failGravityVar);
     }
+    /**
+     * @return Distinguishes the faces detected, either `biggestFace` or `allFaces` to place the crop rectangle around the full set of faces, `all` by default.
+     * 
+     */
     public Optional<String> focus() {
         return Optional.ofNullable(this.focus);
     }
+    /**
+     * @return Distinguishes the faces detected, either `biggestFace` or `allFaces` to place the crop rectangle around the full set of faces, `all` by default.
+     * 
+     */
     public Optional<String> focusVar() {
         return Optional.ofNullable(this.focusVar);
     }
+    /**
+     * @return Controls placement of the crop. Directions are relative to the face(s) plus padding.
+     * 
+     */
     public Optional<String> gravity() {
         return Optional.ofNullable(this.gravity);
     }
+    /**
+     * @return Controls placement of the crop. Directions are relative to the face(s) plus padding.
+     * 
+     */
     public Optional<String> gravityVar() {
         return Optional.ofNullable(this.gravityVar);
     }
+    /**
+     * @return The height of the output image in pixels relative to the specified `style` value.
+     * 
+     */
     public Optional<String> height() {
         return Optional.ofNullable(this.height);
     }
+    /**
+     * @return The height of the output image in pixels relative to the specified `style` value.
+     * 
+     */
     public Optional<String> heightVar() {
         return Optional.ofNullable(this.heightVar);
     }
+    /**
+     * @return The padding ratio based on the dimensions of the biggest face detected, `0.5` by default. Larger values increase padding.
+     * 
+     */
     public Optional<String> padding() {
         return Optional.ofNullable(this.padding);
     }
+    /**
+     * @return The padding ratio based on the dimensions of the biggest face detected, `0.5` by default. Larger values increase padding.
+     * 
+     */
     public Optional<String> paddingVar() {
         return Optional.ofNullable(this.paddingVar);
     }
+    /**
+     * @return Specifies how to crop or scale a crop area for the faces detected in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places a raw crop around the faces, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and faces as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the faces, relative to the specified `width` and `height` values. Allows Variable substitution.
+     * 
+     */
     public Optional<String> style() {
         return Optional.ofNullable(this.style);
     }
+    /**
+     * @return Specifies how to crop or scale a crop area for the faces detected in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places a raw crop around the faces, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and faces as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the faces, relative to the specified `width` and `height` values. Allows Variable substitution.
+     * 
+     */
     public Optional<String> styleVar() {
         return Optional.ofNullable(this.styleVar);
     }
+    /**
+     * @return The width of the output image in pixels relative to the specified `style` value.
+     * 
+     */
     public Optional<String> width() {
         return Optional.ofNullable(this.width);
     }
+    /**
+     * @return The width of the output image in pixels relative to the specified `style` value.
+     * 
+     */
     public Optional<String> widthVar() {
         return Optional.ofNullable(this.widthVar);
     }

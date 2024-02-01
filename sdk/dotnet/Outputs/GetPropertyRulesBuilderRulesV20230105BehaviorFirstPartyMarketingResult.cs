@@ -13,12 +13,33 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorFirstPartyMarketingResult
     {
+        /// <summary>
+        /// Identifies the Cloudlet policy.
+        /// </summary>
         public readonly Outputs.GetPropertyRulesBuilderRulesV20230105BehaviorFirstPartyMarketingCloudletPolicyResult? CloudletPolicy;
+        /// <summary>
+        /// Enables the Cloud Marketing Cloudlet.
+        /// </summary>
         public readonly bool? Enabled;
+        /// <summary>
+        /// Select how to insert the MediaMath JavaScript reference script.
+        /// </summary>
         public readonly string? JavaScriptInsertionRule;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// Specify the URL path prefix that distinguishes Cloud Marketing requests from your other web traffic. Include the leading slash character, but no trailing slash.  For example, if the path prefix is `/mmath`, and the request is for `www.example.com/dir`, the new URL is `www.example.com/mmath/dir`.
+        /// </summary>
         public readonly string? MediaMathPrefix;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

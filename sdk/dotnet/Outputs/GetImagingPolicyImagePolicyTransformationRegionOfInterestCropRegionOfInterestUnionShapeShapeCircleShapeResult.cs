@@ -13,8 +13,17 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShapeResult
     {
+        /// <summary>
+        /// Defines coordinates for a single point, to help define polygons and rectangles. Each point may be an object with `x`and `y` members, or a two-element array.
+        /// </summary>
         public readonly Outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShapeCenterResult Center;
+        /// <summary>
+        /// The radius of the circle measured in pixels.
+        /// </summary>
         public readonly string? Radius;
+        /// <summary>
+        /// The radius of the circle measured in pixels.
+        /// </summary>
         public readonly string? RadiusVar;
 
         [OutputConstructor]

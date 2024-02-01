@@ -10,13 +10,29 @@ import java.util.Objects;
 
 @CustomType
 public final class GetImagingPolicyVideoPolicyVariableEnumOption {
+    /**
+     * @return The unique identifier for each enum value, up to 50 alphanumeric characters.
+     * 
+     */
     private String id;
+    /**
+     * @return The value of the variable when the `id` is provided.
+     * 
+     */
     private String value;
 
     private GetImagingPolicyVideoPolicyVariableEnumOption() {}
+    /**
+     * @return The unique identifier for each enum value, up to 50 alphanumeric characters.
+     * 
+     */
     public String id() {
         return this.id;
     }
+    /**
+     * @return The value of the variable when the `id` is provided.
+     * 
+     */
     public String value() {
         return this.value;
     }

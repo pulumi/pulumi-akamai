@@ -17,51 +17,107 @@ public final class GetCloudwrapperCapacitiesCapacity extends com.pulumi.resource
 
     public static final GetCloudwrapperCapacitiesCapacity Empty = new GetCloudwrapperCapacitiesCapacity();
 
+    /**
+     * Capacity allocated for the location.
+     * 
+     */
     @Import(name="approved", required=true)
     private GetCloudwrapperCapacitiesCapacityApproved approved;
 
+    /**
+     * @return Capacity allocated for the location.
+     * 
+     */
     public GetCloudwrapperCapacitiesCapacityApproved approved() {
         return this.approved;
     }
 
+    /**
+     * Capacity already assigned to Cloud Wrapper configurations.
+     * 
+     */
     @Import(name="assigned", required=true)
     private GetCloudwrapperCapacitiesCapacityAssigned assigned;
 
+    /**
+     * @return Capacity already assigned to Cloud Wrapper configurations.
+     * 
+     */
     public GetCloudwrapperCapacitiesCapacityAssigned assigned() {
         return this.assigned;
     }
 
+    /**
+     * Contract ID having Cloud Wrapper entitlement.
+     * 
+     */
     @Import(name="contractId", required=true)
     private String contractId;
 
+    /**
+     * @return Contract ID having Cloud Wrapper entitlement.
+     * 
+     */
     public String contractId() {
         return this.contractId;
     }
 
+    /**
+     * Unique identifier of the configured location.
+     * 
+     */
     @Import(name="locationId", required=true)
     private Integer locationId;
 
+    /**
+     * @return Unique identifier of the configured location.
+     * 
+     */
     public Integer locationId() {
         return this.locationId;
     }
 
+    /**
+     * Name of the location.
+     * 
+     */
     @Import(name="locationName", required=true)
     private String locationName;
 
+    /**
+     * @return Name of the location.
+     * 
+     */
     public String locationName() {
         return this.locationName;
     }
 
+    /**
+     * The type of property this capacity is related to.
+     * 
+     */
     @Import(name="type", required=true)
     private String type;
 
+    /**
+     * @return The type of property this capacity is related to.
+     * 
+     */
     public String type() {
         return this.type;
     }
 
+    /**
+     * Capacity value that can be assigned to Cloud Wrapper configurations.
+     * 
+     */
     @Import(name="unassigned", required=true)
     private GetCloudwrapperCapacitiesCapacityUnassigned unassigned;
 
+    /**
+     * @return Capacity value that can be assigned to Cloud Wrapper configurations.
+     * 
+     */
     public GetCloudwrapperCapacitiesCapacityUnassigned unassigned() {
         return this.unassigned;
     }
@@ -96,36 +152,78 @@ public final class GetCloudwrapperCapacitiesCapacity extends com.pulumi.resource
             $ = new GetCloudwrapperCapacitiesCapacity(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param approved Capacity allocated for the location.
+         * 
+         * @return builder
+         * 
+         */
         public Builder approved(GetCloudwrapperCapacitiesCapacityApproved approved) {
             $.approved = approved;
             return this;
         }
 
+        /**
+         * @param assigned Capacity already assigned to Cloud Wrapper configurations.
+         * 
+         * @return builder
+         * 
+         */
         public Builder assigned(GetCloudwrapperCapacitiesCapacityAssigned assigned) {
             $.assigned = assigned;
             return this;
         }
 
+        /**
+         * @param contractId Contract ID having Cloud Wrapper entitlement.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contractId(String contractId) {
             $.contractId = contractId;
             return this;
         }
 
+        /**
+         * @param locationId Unique identifier of the configured location.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locationId(Integer locationId) {
             $.locationId = locationId;
             return this;
         }
 
+        /**
+         * @param locationName Name of the location.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locationName(String locationName) {
             $.locationName = locationName;
             return this;
         }
 
+        /**
+         * @param type The type of property this capacity is related to.
+         * 
+         * @return builder
+         * 
+         */
         public Builder type(String type) {
             $.type = type;
             return this;
         }
 
+        /**
+         * @param unassigned Capacity value that can be assigned to Cloud Wrapper configurations.
+         * 
+         * @return builder
+         * 
+         */
         public Builder unassigned(GetCloudwrapperCapacitiesCapacityUnassigned unassigned) {
             $.unassigned = unassigned;
             return this;

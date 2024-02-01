@@ -13,21 +13,45 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationIfDimension {
     private @Nullable GetImagingPolicyImagePolicyTransformation default_;
+    /**
+     * @return The dimension to use to select the transformation, either `height`, `width`, or `both`.
+     * 
+     */
     private @Nullable String dimension;
+    /**
+     * @return The dimension to use to select the transformation, either `height`, `width`, or `both`.
+     * 
+     */
     private @Nullable String dimensionVar;
     private @Nullable GetImagingPolicyImagePolicyTransformation equal;
     private @Nullable GetImagingPolicyImagePolicyTransformation greaterThan;
     private @Nullable GetImagingPolicyImagePolicyTransformation lessThan;
+    /**
+     * @return The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
+     * 
+     */
     private @Nullable String value;
+    /**
+     * @return The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
+     * 
+     */
     private @Nullable String valueVar;
 
     private GetImagingPolicyImagePolicyTransformationIfDimension() {}
     public Optional<GetImagingPolicyImagePolicyTransformation> default_() {
         return Optional.ofNullable(this.default_);
     }
+    /**
+     * @return The dimension to use to select the transformation, either `height`, `width`, or `both`.
+     * 
+     */
     public Optional<String> dimension() {
         return Optional.ofNullable(this.dimension);
     }
+    /**
+     * @return The dimension to use to select the transformation, either `height`, `width`, or `both`.
+     * 
+     */
     public Optional<String> dimensionVar() {
         return Optional.ofNullable(this.dimensionVar);
     }
@@ -40,9 +64,17 @@ public final class GetImagingPolicyImagePolicyTransformationIfDimension {
     public Optional<GetImagingPolicyImagePolicyTransformation> lessThan() {
         return Optional.ofNullable(this.lessThan);
     }
+    /**
+     * @return The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
+     * 
+     */
     public Optional<String> value() {
         return Optional.ofNullable(this.value);
     }
+    /**
+     * @return The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
+     * 
+     */
     public Optional<String> valueVar() {
         return Optional.ofNullable(this.valueVar);
     }

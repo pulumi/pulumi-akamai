@@ -23,30 +23,62 @@ public final class GetImagingPolicyImagePolicyTransformationFitAndFillArgs exten
         return Optional.ofNullable(this.fillTransformation);
     }
 
+    /**
+     * The height value of the resized image.
+     * 
+     */
     @Import(name="height")
     private @Nullable Output<String> height;
 
+    /**
+     * @return The height value of the resized image.
+     * 
+     */
     public Optional<Output<String>> height() {
         return Optional.ofNullable(this.height);
     }
 
+    /**
+     * The height value of the resized image.
+     * 
+     */
     @Import(name="heightVar")
     private @Nullable Output<String> heightVar;
 
+    /**
+     * @return The height value of the resized image.
+     * 
+     */
     public Optional<Output<String>> heightVar() {
         return Optional.ofNullable(this.heightVar);
     }
 
+    /**
+     * The width value of the resized image.
+     * 
+     */
     @Import(name="width")
     private @Nullable Output<String> width;
 
+    /**
+     * @return The width value of the resized image.
+     * 
+     */
     public Optional<Output<String>> width() {
         return Optional.ofNullable(this.width);
     }
 
+    /**
+     * The width value of the resized image.
+     * 
+     */
     @Import(name="widthVar")
     private @Nullable Output<String> widthVar;
 
+    /**
+     * @return The width value of the resized image.
+     * 
+     */
     public Optional<Output<String>> widthVar() {
         return Optional.ofNullable(this.widthVar);
     }
@@ -88,38 +120,86 @@ public final class GetImagingPolicyImagePolicyTransformationFitAndFillArgs exten
             return fillTransformation(Output.of(fillTransformation));
         }
 
+        /**
+         * @param height The height value of the resized image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder height(@Nullable Output<String> height) {
             $.height = height;
             return this;
         }
 
+        /**
+         * @param height The height value of the resized image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder height(String height) {
             return height(Output.of(height));
         }
 
+        /**
+         * @param heightVar The height value of the resized image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder heightVar(@Nullable Output<String> heightVar) {
             $.heightVar = heightVar;
             return this;
         }
 
+        /**
+         * @param heightVar The height value of the resized image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder heightVar(String heightVar) {
             return heightVar(Output.of(heightVar));
         }
 
+        /**
+         * @param width The width value of the resized image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder width(@Nullable Output<String> width) {
             $.width = width;
             return this;
         }
 
+        /**
+         * @param width The width value of the resized image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder width(String width) {
             return width(Output.of(width));
         }
 
+        /**
+         * @param widthVar The width value of the resized image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder widthVar(@Nullable Output<String> widthVar) {
             $.widthVar = widthVar;
             return this;
         }
 
+        /**
+         * @param widthVar The width value of the resized image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder widthVar(String widthVar) {
             return widthVar(Output.of(widthVar));
         }

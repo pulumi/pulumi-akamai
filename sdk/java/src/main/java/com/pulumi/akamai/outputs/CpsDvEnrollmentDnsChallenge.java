@@ -11,17 +11,41 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class CpsDvEnrollmentDnsChallenge {
+    /**
+     * @return Domain for which the challenges were completed
+     * 
+     */
     private @Nullable String domain;
+    /**
+     * @return The domain name where Akamai publishes the response body to validate
+     * 
+     */
     private @Nullable String fullPath;
+    /**
+     * @return The unique content of the challenge
+     * 
+     */
     private @Nullable String responseBody;
 
     private CpsDvEnrollmentDnsChallenge() {}
+    /**
+     * @return Domain for which the challenges were completed
+     * 
+     */
     public Optional<String> domain() {
         return Optional.ofNullable(this.domain);
     }
+    /**
+     * @return The domain name where Akamai publishes the response body to validate
+     * 
+     */
     public Optional<String> fullPath() {
         return Optional.ofNullable(this.fullPath);
     }
+    /**
+     * @return The unique content of the challenge
+     * 
+     */
     public Optional<String> responseBody() {
         return Optional.ofNullable(this.responseBody);
     }

@@ -15,18 +15,33 @@ namespace Pulumi.Akamai.Inputs
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+        /// </summary>
         [Input("fileName")]
         public Input<string>? FileName { get; set; }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+        /// </summary>
         [Input("productionStatus")]
         public Input<string>? ProductionStatus { get; set; }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+        /// </summary>
         [Input("productionVersion")]
         public Input<int>? ProductionVersion { get; set; }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+        /// </summary>
         [Input("stagingStatus")]
         public Input<string>? StagingStatus { get; set; }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+        /// </summary>
         [Input("stagingVersion")]
         public Input<int>? StagingVersion { get; set; }
 

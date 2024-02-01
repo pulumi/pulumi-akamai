@@ -12,12 +12,21 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class CpsDvEnrollmentHttpChallengeArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Domain for which the challenges were completed
+        /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }
 
+        /// <summary>
+        /// The URL where Akamai publishes the response body to validate
+        /// </summary>
         [Input("fullPath")]
         public Input<string>? FullPath { get; set; }
 
+        /// <summary>
+        /// The unique content of the challenge
+        /// </summary>
         [Input("responseBody")]
         public Input<string>? ResponseBody { get; set; }
 

@@ -16,58 +16,122 @@ public final class CpsThirdPartyEnrollmentOrganizationArgs extends com.pulumi.re
 
     public static final CpsThirdPartyEnrollmentOrganizationArgs Empty = new CpsThirdPartyEnrollmentOrganizationArgs();
 
+    /**
+     * The address of organization
+     * 
+     */
     @Import(name="addressLineOne", required=true)
     private Output<String> addressLineOne;
 
+    /**
+     * @return The address of organization
+     * 
+     */
     public Output<String> addressLineOne() {
         return this.addressLineOne;
     }
 
+    /**
+     * The address of organization
+     * 
+     */
     @Import(name="addressLineTwo")
     private @Nullable Output<String> addressLineTwo;
 
+    /**
+     * @return The address of organization
+     * 
+     */
     public Optional<Output<String>> addressLineTwo() {
         return Optional.ofNullable(this.addressLineTwo);
     }
 
+    /**
+     * City of organization
+     * 
+     */
     @Import(name="city", required=true)
     private Output<String> city;
 
+    /**
+     * @return City of organization
+     * 
+     */
     public Output<String> city() {
         return this.city;
     }
 
+    /**
+     * Country code of organization
+     * 
+     */
     @Import(name="countryCode", required=true)
     private Output<String> countryCode;
 
+    /**
+     * @return Country code of organization
+     * 
+     */
     public Output<String> countryCode() {
         return this.countryCode;
     }
 
+    /**
+     * Name of organization
+     * 
+     */
     @Import(name="name", required=true)
     private Output<String> name;
 
+    /**
+     * @return Name of organization
+     * 
+     */
     public Output<String> name() {
         return this.name;
     }
 
+    /**
+     * Phone number of organization
+     * 
+     */
     @Import(name="phone", required=true)
     private Output<String> phone;
 
+    /**
+     * @return Phone number of organization
+     * 
+     */
     public Output<String> phone() {
         return this.phone;
     }
 
+    /**
+     * Postal code of organization
+     * 
+     */
     @Import(name="postalCode", required=true)
     private Output<String> postalCode;
 
+    /**
+     * @return Postal code of organization
+     * 
+     */
     public Output<String> postalCode() {
         return this.postalCode;
     }
 
+    /**
+     * The region of organization
+     * 
+     */
     @Import(name="region", required=true)
     private Output<String> region;
 
+    /**
+     * @return The region of organization
+     * 
+     */
     public Output<String> region() {
         return this.region;
     }
@@ -103,74 +167,170 @@ public final class CpsThirdPartyEnrollmentOrganizationArgs extends com.pulumi.re
             $ = new CpsThirdPartyEnrollmentOrganizationArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param addressLineOne The address of organization
+         * 
+         * @return builder
+         * 
+         */
         public Builder addressLineOne(Output<String> addressLineOne) {
             $.addressLineOne = addressLineOne;
             return this;
         }
 
+        /**
+         * @param addressLineOne The address of organization
+         * 
+         * @return builder
+         * 
+         */
         public Builder addressLineOne(String addressLineOne) {
             return addressLineOne(Output.of(addressLineOne));
         }
 
+        /**
+         * @param addressLineTwo The address of organization
+         * 
+         * @return builder
+         * 
+         */
         public Builder addressLineTwo(@Nullable Output<String> addressLineTwo) {
             $.addressLineTwo = addressLineTwo;
             return this;
         }
 
+        /**
+         * @param addressLineTwo The address of organization
+         * 
+         * @return builder
+         * 
+         */
         public Builder addressLineTwo(String addressLineTwo) {
             return addressLineTwo(Output.of(addressLineTwo));
         }
 
+        /**
+         * @param city City of organization
+         * 
+         * @return builder
+         * 
+         */
         public Builder city(Output<String> city) {
             $.city = city;
             return this;
         }
 
+        /**
+         * @param city City of organization
+         * 
+         * @return builder
+         * 
+         */
         public Builder city(String city) {
             return city(Output.of(city));
         }
 
+        /**
+         * @param countryCode Country code of organization
+         * 
+         * @return builder
+         * 
+         */
         public Builder countryCode(Output<String> countryCode) {
             $.countryCode = countryCode;
             return this;
         }
 
+        /**
+         * @param countryCode Country code of organization
+         * 
+         * @return builder
+         * 
+         */
         public Builder countryCode(String countryCode) {
             return countryCode(Output.of(countryCode));
         }
 
+        /**
+         * @param name Name of organization
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(Output<String> name) {
             $.name = name;
             return this;
         }
 
+        /**
+         * @param name Name of organization
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(String name) {
             return name(Output.of(name));
         }
 
+        /**
+         * @param phone Phone number of organization
+         * 
+         * @return builder
+         * 
+         */
         public Builder phone(Output<String> phone) {
             $.phone = phone;
             return this;
         }
 
+        /**
+         * @param phone Phone number of organization
+         * 
+         * @return builder
+         * 
+         */
         public Builder phone(String phone) {
             return phone(Output.of(phone));
         }
 
+        /**
+         * @param postalCode Postal code of organization
+         * 
+         * @return builder
+         * 
+         */
         public Builder postalCode(Output<String> postalCode) {
             $.postalCode = postalCode;
             return this;
         }
 
+        /**
+         * @param postalCode Postal code of organization
+         * 
+         * @return builder
+         * 
+         */
         public Builder postalCode(String postalCode) {
             return postalCode(Output.of(postalCode));
         }
 
+        /**
+         * @param region The region of organization
+         * 
+         * @return builder
+         * 
+         */
         public Builder region(Output<String> region) {
             $.region = region;
             return this;
         }
 
+        /**
+         * @param region The region of organization
+         * 
+         * @return builder
+         * 
+         */
         public Builder region(String region) {
             return region(Output.of(region));
         }

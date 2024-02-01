@@ -18,23 +18,47 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionMatchCpCodeValu
 
     public static final GetPropertyRulesBuilderRulesV20230530CriterionMatchCpCodeValueArgs Empty = new GetPropertyRulesBuilderRulesV20230530CriterionMatchCpCodeValueArgs();
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     @Import(name="cpCodeLimits")
     private @Nullable Output<GetPropertyRulesBuilderRulesV20230530CriterionMatchCpCodeValueCpCodeLimitsArgs> cpCodeLimits;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<Output<GetPropertyRulesBuilderRulesV20230530CriterionMatchCpCodeValueCpCodeLimitsArgs>> cpCodeLimits() {
         return Optional.ofNullable(this.cpCodeLimits);
     }
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     @Import(name="createdDate")
     private @Nullable Output<Integer> createdDate;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<Output<Integer>> createdDate() {
         return Optional.ofNullable(this.createdDate);
     }
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     @Import(name="description")
     private @Nullable Output<String> description;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
     }
@@ -46,16 +70,32 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionMatchCpCodeValu
         return Optional.ofNullable(this.id);
     }
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     @Import(name="name")
     private @Nullable Output<String> name;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
     }
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     @Import(name="products")
     private @Nullable Output<List<String>> products;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<Output<List<String>>> products() {
         return Optional.ofNullable(this.products);
     }
@@ -89,29 +129,65 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionMatchCpCodeValu
             $ = new GetPropertyRulesBuilderRulesV20230530CriterionMatchCpCodeValueArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param cpCodeLimits This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cpCodeLimits(@Nullable Output<GetPropertyRulesBuilderRulesV20230530CriterionMatchCpCodeValueCpCodeLimitsArgs> cpCodeLimits) {
             $.cpCodeLimits = cpCodeLimits;
             return this;
         }
 
+        /**
+         * @param cpCodeLimits This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cpCodeLimits(GetPropertyRulesBuilderRulesV20230530CriterionMatchCpCodeValueCpCodeLimitsArgs cpCodeLimits) {
             return cpCodeLimits(Output.of(cpCodeLimits));
         }
 
+        /**
+         * @param createdDate This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder createdDate(@Nullable Output<Integer> createdDate) {
             $.createdDate = createdDate;
             return this;
         }
 
+        /**
+         * @param createdDate This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder createdDate(Integer createdDate) {
             return createdDate(Output.of(createdDate));
         }
 
+        /**
+         * @param description This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
             return this;
         }
 
+        /**
+         * @param description This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder description(String description) {
             return description(Output.of(description));
         }
@@ -125,24 +201,54 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionMatchCpCodeValu
             return id(Output.of(id));
         }
 
+        /**
+         * @param name This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
             return this;
         }
 
+        /**
+         * @param name This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(String name) {
             return name(Output.of(name));
         }
 
+        /**
+         * @param products This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder products(@Nullable Output<List<String>> products) {
             $.products = products;
             return this;
         }
 
+        /**
+         * @param products This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder products(List<String> products) {
             return products(Output.of(products));
         }
 
+        /**
+         * @param products This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder products(String... products) {
             return products(List.of(products));
         }

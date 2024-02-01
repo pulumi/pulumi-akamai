@@ -11,10 +11,18 @@ import java.util.Objects;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationImQuery {
+    /**
+     * @return Specifies the transformations that can be applied using the query string parameter.
+     * 
+     */
     private List<String> allowedTransformations;
     private String queryVar;
 
     private GetImagingPolicyImagePolicyTransformationImQuery() {}
+    /**
+     * @return Specifies the transformations that can be applied using the query string parameter.
+     * 
+     */
     public List<String> allowedTransformations() {
         return this.allowedTransformations;
     }

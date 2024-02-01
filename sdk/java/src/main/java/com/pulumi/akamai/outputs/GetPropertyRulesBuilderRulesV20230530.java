@@ -18,61 +18,173 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530 {
+    /**
+     * @return XML metadata of the rule
+     * 
+     */
     private @Nullable String advancedOverride;
+    /**
+     * @return The list of behaviors for a rule
+     * 
+     */
     private @Nullable List<GetPropertyRulesBuilderRulesV20230530Behavior> behaviors;
+    /**
+     * @return A list of child rules for a particular rule in JSON format
+     * 
+     */
     private @Nullable List<String> childrens;
+    /**
+     * @return The comments for a rule
+     * 
+     */
     private @Nullable String comments;
+    /**
+     * @return States whether changes to &#39;criterion&#39; objects are prohibited
+     * 
+     */
     private @Nullable Boolean criteriaLocked;
+    /**
+     * @return States whether &#39;all&#39; criteria need to match or &#39;any&#39;
+     * 
+     */
     private @Nullable String criteriaMustSatisfy;
+    /**
+     * @return The list of criteria for a rule
+     * 
+     */
     private @Nullable List<GetPropertyRulesBuilderRulesV20230530Criterion> criterions;
+    /**
+     * @return XML metadata of the rule
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CustomOverride customOverride;
+    /**
+     * @return States whether a rule is secure
+     * 
+     */
     private @Nullable Boolean isSecure;
+    /**
+     * @return The name of a rule
+     * 
+     */
     private String name;
+    /**
+     * @return The template link for the rule
+     * 
+     */
     private @Nullable String templateLink;
+    /**
+     * @return The UUID of a rule template
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return The UUID of the rule
+     * 
+     */
     private @Nullable String uuid;
+    /**
+     * @return A list of variables for a rule
+     * 
+     */
     private @Nullable List<GetPropertyRulesBuilderRulesV20230530Variable> variables;
 
     private GetPropertyRulesBuilderRulesV20230530() {}
+    /**
+     * @return XML metadata of the rule
+     * 
+     */
     public Optional<String> advancedOverride() {
         return Optional.ofNullable(this.advancedOverride);
     }
+    /**
+     * @return The list of behaviors for a rule
+     * 
+     */
     public List<GetPropertyRulesBuilderRulesV20230530Behavior> behaviors() {
         return this.behaviors == null ? List.of() : this.behaviors;
     }
+    /**
+     * @return A list of child rules for a particular rule in JSON format
+     * 
+     */
     public List<String> childrens() {
         return this.childrens == null ? List.of() : this.childrens;
     }
+    /**
+     * @return The comments for a rule
+     * 
+     */
     public Optional<String> comments() {
         return Optional.ofNullable(this.comments);
     }
+    /**
+     * @return States whether changes to &#39;criterion&#39; objects are prohibited
+     * 
+     */
     public Optional<Boolean> criteriaLocked() {
         return Optional.ofNullable(this.criteriaLocked);
     }
+    /**
+     * @return States whether &#39;all&#39; criteria need to match or &#39;any&#39;
+     * 
+     */
     public Optional<String> criteriaMustSatisfy() {
         return Optional.ofNullable(this.criteriaMustSatisfy);
     }
+    /**
+     * @return The list of criteria for a rule
+     * 
+     */
     public List<GetPropertyRulesBuilderRulesV20230530Criterion> criterions() {
         return this.criterions == null ? List.of() : this.criterions;
     }
+    /**
+     * @return XML metadata of the rule
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CustomOverride> customOverride() {
         return Optional.ofNullable(this.customOverride);
     }
+    /**
+     * @return States whether a rule is secure
+     * 
+     */
     public Optional<Boolean> isSecure() {
         return Optional.ofNullable(this.isSecure);
     }
+    /**
+     * @return The name of a rule
+     * 
+     */
     public String name() {
         return this.name;
     }
+    /**
+     * @return The template link for the rule
+     * 
+     */
     public Optional<String> templateLink() {
         return Optional.ofNullable(this.templateLink);
     }
+    /**
+     * @return The UUID of a rule template
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return The UUID of the rule
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
+    /**
+     * @return A list of variables for a rule
+     * 
+     */
     public List<GetPropertyRulesBuilderRulesV20230530Variable> variables() {
         return this.variables == null ? List.of() : this.variables;
     }

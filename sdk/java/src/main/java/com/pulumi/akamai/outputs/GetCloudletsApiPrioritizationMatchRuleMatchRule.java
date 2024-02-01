@@ -17,37 +17,101 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCloudletsApiPrioritizationMatchRuleMatchRule {
+    /**
+     * @return If set to true, disables a rule so it is not evaluated against incoming requests.
+     * 
+     */
     private @Nullable Boolean disabled;
+    /**
+     * @return The end time for this match (in seconds since the epoch)
+     * 
+     */
     private @Nullable Integer end;
+    /**
+     * @return If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
+     * 
+     */
     private @Nullable String matchUrl;
+    /**
+     * @return Defines a set of match objects
+     * 
+     */
     private @Nullable List<GetCloudletsApiPrioritizationMatchRuleMatchRuleMatch> matches;
+    /**
+     * @return The name of the rule
+     * 
+     */
     private @Nullable String name;
+    /**
+     * @return The range 0.0: 99.0 specifies the percentage of requests that pass through to the origin. The value of 100 means the request always passes through to the origin. A value of -1 means send everyone to the waiting room.
+     * 
+     */
     private Double passThroughPercent;
+    /**
+     * @return The start time for this match (in seconds since the epoch)
+     * 
+     */
     private @Nullable Integer start;
+    /**
+     * @return The type of Cloudlet the rule is for
+     * 
+     */
     private String type;
 
     private GetCloudletsApiPrioritizationMatchRuleMatchRule() {}
+    /**
+     * @return If set to true, disables a rule so it is not evaluated against incoming requests.
+     * 
+     */
     public Optional<Boolean> disabled() {
         return Optional.ofNullable(this.disabled);
     }
+    /**
+     * @return The end time for this match (in seconds since the epoch)
+     * 
+     */
     public Optional<Integer> end() {
         return Optional.ofNullable(this.end);
     }
+    /**
+     * @return If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
+     * 
+     */
     public Optional<String> matchUrl() {
         return Optional.ofNullable(this.matchUrl);
     }
+    /**
+     * @return Defines a set of match objects
+     * 
+     */
     public List<GetCloudletsApiPrioritizationMatchRuleMatchRuleMatch> matches() {
         return this.matches == null ? List.of() : this.matches;
     }
+    /**
+     * @return The name of the rule
+     * 
+     */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
+    /**
+     * @return The range 0.0: 99.0 specifies the percentage of requests that pass through to the origin. The value of 100 means the request always passes through to the origin. A value of -1 means send everyone to the waiting room.
+     * 
+     */
     public Double passThroughPercent() {
         return this.passThroughPercent;
     }
+    /**
+     * @return The start time for this match (in seconds since the epoch)
+     * 
+     */
     public Optional<Integer> start() {
         return Optional.ofNullable(this.start);
     }
+    /**
+     * @return The type of Cloudlet the rule is for
+     * 
+     */
     public String type() {
         return this.type;
     }

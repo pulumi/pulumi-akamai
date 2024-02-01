@@ -15,44 +15,92 @@ public final class GetImagingPolicyImagePolicyTransformationUnsharpMaskArgs exte
 
     public static final GetImagingPolicyImagePolicyTransformationUnsharpMaskArgs Empty = new GetImagingPolicyImagePolicyTransformationUnsharpMaskArgs();
 
+    /**
+     * Set how much emphasis the filter applies to details. Higher values increase apparent sharpness of details.
+     * 
+     */
     @Import(name="gain")
     private @Nullable Output<String> gain;
 
+    /**
+     * @return Set how much emphasis the filter applies to details. Higher values increase apparent sharpness of details.
+     * 
+     */
     public Optional<Output<String>> gain() {
         return Optional.ofNullable(this.gain);
     }
 
+    /**
+     * Set how much emphasis the filter applies to details. Higher values increase apparent sharpness of details.
+     * 
+     */
     @Import(name="gainVar")
     private @Nullable Output<String> gainVar;
 
+    /**
+     * @return Set how much emphasis the filter applies to details. Higher values increase apparent sharpness of details.
+     * 
+     */
     public Optional<Output<String>> gainVar() {
         return Optional.ofNullable(this.gainVar);
     }
 
+    /**
+     * The standard deviation of the Gaussian distribution used in the in unsharp mask, measured in pixels, `1.0` by default. High values emphasize large details and low values emphasize small details.
+     * 
+     */
     @Import(name="sigma")
     private @Nullable Output<String> sigma;
 
+    /**
+     * @return The standard deviation of the Gaussian distribution used in the in unsharp mask, measured in pixels, `1.0` by default. High values emphasize large details and low values emphasize small details.
+     * 
+     */
     public Optional<Output<String>> sigma() {
         return Optional.ofNullable(this.sigma);
     }
 
+    /**
+     * The standard deviation of the Gaussian distribution used in the in unsharp mask, measured in pixels, `1.0` by default. High values emphasize large details and low values emphasize small details.
+     * 
+     */
     @Import(name="sigmaVar")
     private @Nullable Output<String> sigmaVar;
 
+    /**
+     * @return The standard deviation of the Gaussian distribution used in the in unsharp mask, measured in pixels, `1.0` by default. High values emphasize large details and low values emphasize small details.
+     * 
+     */
     public Optional<Output<String>> sigmaVar() {
         return Optional.ofNullable(this.sigmaVar);
     }
 
+    /**
+     * Set the minimum change required to include a detail in the filter. Higher values discard more changes.
+     * 
+     */
     @Import(name="threshold")
     private @Nullable Output<String> threshold;
 
+    /**
+     * @return Set the minimum change required to include a detail in the filter. Higher values discard more changes.
+     * 
+     */
     public Optional<Output<String>> threshold() {
         return Optional.ofNullable(this.threshold);
     }
 
+    /**
+     * Set the minimum change required to include a detail in the filter. Higher values discard more changes.
+     * 
+     */
     @Import(name="thresholdVar")
     private @Nullable Output<String> thresholdVar;
 
+    /**
+     * @return Set the minimum change required to include a detail in the filter. Higher values discard more changes.
+     * 
+     */
     public Optional<Output<String>> thresholdVar() {
         return Optional.ofNullable(this.thresholdVar);
     }
@@ -86,56 +134,128 @@ public final class GetImagingPolicyImagePolicyTransformationUnsharpMaskArgs exte
             $ = new GetImagingPolicyImagePolicyTransformationUnsharpMaskArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param gain Set how much emphasis the filter applies to details. Higher values increase apparent sharpness of details.
+         * 
+         * @return builder
+         * 
+         */
         public Builder gain(@Nullable Output<String> gain) {
             $.gain = gain;
             return this;
         }
 
+        /**
+         * @param gain Set how much emphasis the filter applies to details. Higher values increase apparent sharpness of details.
+         * 
+         * @return builder
+         * 
+         */
         public Builder gain(String gain) {
             return gain(Output.of(gain));
         }
 
+        /**
+         * @param gainVar Set how much emphasis the filter applies to details. Higher values increase apparent sharpness of details.
+         * 
+         * @return builder
+         * 
+         */
         public Builder gainVar(@Nullable Output<String> gainVar) {
             $.gainVar = gainVar;
             return this;
         }
 
+        /**
+         * @param gainVar Set how much emphasis the filter applies to details. Higher values increase apparent sharpness of details.
+         * 
+         * @return builder
+         * 
+         */
         public Builder gainVar(String gainVar) {
             return gainVar(Output.of(gainVar));
         }
 
+        /**
+         * @param sigma The standard deviation of the Gaussian distribution used in the in unsharp mask, measured in pixels, `1.0` by default. High values emphasize large details and low values emphasize small details.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sigma(@Nullable Output<String> sigma) {
             $.sigma = sigma;
             return this;
         }
 
+        /**
+         * @param sigma The standard deviation of the Gaussian distribution used in the in unsharp mask, measured in pixels, `1.0` by default. High values emphasize large details and low values emphasize small details.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sigma(String sigma) {
             return sigma(Output.of(sigma));
         }
 
+        /**
+         * @param sigmaVar The standard deviation of the Gaussian distribution used in the in unsharp mask, measured in pixels, `1.0` by default. High values emphasize large details and low values emphasize small details.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sigmaVar(@Nullable Output<String> sigmaVar) {
             $.sigmaVar = sigmaVar;
             return this;
         }
 
+        /**
+         * @param sigmaVar The standard deviation of the Gaussian distribution used in the in unsharp mask, measured in pixels, `1.0` by default. High values emphasize large details and low values emphasize small details.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sigmaVar(String sigmaVar) {
             return sigmaVar(Output.of(sigmaVar));
         }
 
+        /**
+         * @param threshold Set the minimum change required to include a detail in the filter. Higher values discard more changes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder threshold(@Nullable Output<String> threshold) {
             $.threshold = threshold;
             return this;
         }
 
+        /**
+         * @param threshold Set the minimum change required to include a detail in the filter. Higher values discard more changes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder threshold(String threshold) {
             return threshold(Output.of(threshold));
         }
 
+        /**
+         * @param thresholdVar Set the minimum change required to include a detail in the filter. Higher values discard more changes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder thresholdVar(@Nullable Output<String> thresholdVar) {
             $.thresholdVar = thresholdVar;
             return this;
         }
 
+        /**
+         * @param thresholdVar Set the minimum change required to include a detail in the filter. Higher values discard more changes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder thresholdVar(String thresholdVar) {
             return thresholdVar(Output.of(thresholdVar));
         }

@@ -12,48 +12,93 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorManifestPersonalizationInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Enables the Manifest Personalization feature.
+        /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
+        /// <summary>
+        /// Includes additional `Akamai-Manifest-Personalization` and `Akamai-Manifest-Personalization-Config-Source` debugging headers.
+        /// </summary>
         [Input("hlsEnableDebugHeaders")]
         public Input<bool>? HlsEnableDebugHeaders { get; set; }
 
+        /// <summary>
+        /// Allows you to customize the HLS master manifest that's sent to the requesting client.
+        /// </summary>
         [Input("hlsEnabled")]
         public Input<bool>? HlsEnabled { get; set; }
 
+        /// <summary>
+        /// Specifies a comma-delimited set of bit rate ranges, such as `100-400,1000-4000`. Playlists specified in the `#EXT-X-STREAM-INF` tag with bit rates outside of any of those ranges are excluded from the manifest.
+        /// </summary>
         [Input("hlsFilterInBitrateRanges")]
         public Input<string>? HlsFilterInBitrateRanges { get; set; }
 
+        /// <summary>
+        /// Specifies a comma-delimited set of preferred bit rates, such as `100,200,400`. Playlists specified in the `#EXT-X-STREAM-INF` tag with bit rates outside of any of those values by up to 100 Kbps are excluded from the manifest.
+        /// </summary>
         [Input("hlsFilterInBitrates")]
         public Input<string>? HlsFilterInBitrates { get; set; }
 
+        /// <summary>
+        /// Applies with `hlsEnabled` on.
+        /// </summary>
         [Input("hlsMode")]
         public Input<string>? HlsMode { get; set; }
 
+        /// <summary>
+        /// Sets the preferred bit rate in Kbps. This causes the media playlist specified in the `#EXT-X-STREAM-INF` tag that most closely matches the value to list first. All other playlists maintain their current position in the manifest.
+        /// </summary>
         [Input("hlsPreferredBitrate")]
         public Input<string>? HlsPreferredBitrate { get; set; }
 
+        /// <summary>
+        /// Specifies query parameters for the HLS master manifest to customize the manifest's content.  Any settings specified in the query string override those already configured in Property Manager.
+        /// </summary>
         [Input("hlsQueryParamEnabled")]
         public Input<bool>? HlsQueryParamEnabled { get; set; }
 
+        /// <summary>
+        /// Specifies a primary key as a token to accompany the request.
+        /// </summary>
         [Input("hlsQueryParamSecretKey")]
         public Input<string>? HlsQueryParamSecretKey { get; set; }
 
+        /// <summary>
+        /// Specifies a transition key as a token to accompany the request.
+        /// </summary>
         [Input("hlsQueryParamTransitionKey")]
         public Input<string>? HlsQueryParamTransitionKey { get; set; }
 
+        /// <summary>
+        /// Allows you to configure advanced settings.
+        /// </summary>
         [Input("hlsShowAdvanced")]
         public Input<bool>? HlsShowAdvanced { get; set; }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("hlsTitle")]
         public Input<string>? HlsTitle { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public Input<bool>? Locked { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public Input<string>? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public Input<string>? Uuid { get; set; }
 

@@ -15,58 +15,122 @@ public final class GetImagingPolicyImagePolicyTransformationResizeArgs extends c
 
     public static final GetImagingPolicyImagePolicyTransformationResizeArgs Empty = new GetImagingPolicyImagePolicyTransformationResizeArgs();
 
+    /**
+     * Preserves the aspect ratio. Select `fit` to make the image fit entirely within the selected width and height. When using `fit`, the resulting image has the largest possible size for the specified dimensions. Select `fill` to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise `ignore` changes the original aspect ratio to fit within an arbitrarily shaped rectangle.
+     * 
+     */
     @Import(name="aspect")
     private @Nullable Output<String> aspect;
 
+    /**
+     * @return Preserves the aspect ratio. Select `fit` to make the image fit entirely within the selected width and height. When using `fit`, the resulting image has the largest possible size for the specified dimensions. Select `fill` to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise `ignore` changes the original aspect ratio to fit within an arbitrarily shaped rectangle.
+     * 
+     */
     public Optional<Output<String>> aspect() {
         return Optional.ofNullable(this.aspect);
     }
 
+    /**
+     * Preserves the aspect ratio. Select `fit` to make the image fit entirely within the selected width and height. When using `fit`, the resulting image has the largest possible size for the specified dimensions. Select `fill` to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise `ignore` changes the original aspect ratio to fit within an arbitrarily shaped rectangle.
+     * 
+     */
     @Import(name="aspectVar")
     private @Nullable Output<String> aspectVar;
 
+    /**
+     * @return Preserves the aspect ratio. Select `fit` to make the image fit entirely within the selected width and height. When using `fit`, the resulting image has the largest possible size for the specified dimensions. Select `fill` to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise `ignore` changes the original aspect ratio to fit within an arbitrarily shaped rectangle.
+     * 
+     */
     public Optional<Output<String>> aspectVar() {
         return Optional.ofNullable(this.aspectVar);
     }
 
+    /**
+     * The height to resize the source image to. Must be set if height is not specified.
+     * 
+     */
     @Import(name="height")
     private @Nullable Output<String> height;
 
+    /**
+     * @return The height to resize the source image to. Must be set if height is not specified.
+     * 
+     */
     public Optional<Output<String>> height() {
         return Optional.ofNullable(this.height);
     }
 
+    /**
+     * The height to resize the source image to. Must be set if height is not specified.
+     * 
+     */
     @Import(name="heightVar")
     private @Nullable Output<String> heightVar;
 
+    /**
+     * @return The height to resize the source image to. Must be set if height is not specified.
+     * 
+     */
     public Optional<Output<String>> heightVar() {
         return Optional.ofNullable(this.heightVar);
     }
 
+    /**
+     * Sets constraints for the image resize. Select `normal` to resize in all cases, either increasing or decreasing the dimensions. Select `downsize` to ignore this transformation if the result would be larger than the original. Select `upsize` to ignore this transformation if the result would be smaller.
+     * 
+     */
     @Import(name="type")
     private @Nullable Output<String> type;
 
+    /**
+     * @return Sets constraints for the image resize. Select `normal` to resize in all cases, either increasing or decreasing the dimensions. Select `downsize` to ignore this transformation if the result would be larger than the original. Select `upsize` to ignore this transformation if the result would be smaller.
+     * 
+     */
     public Optional<Output<String>> type() {
         return Optional.ofNullable(this.type);
     }
 
+    /**
+     * Sets constraints for the image resize. Select `normal` to resize in all cases, either increasing or decreasing the dimensions. Select `downsize` to ignore this transformation if the result would be larger than the original. Select `upsize` to ignore this transformation if the result would be smaller.
+     * 
+     */
     @Import(name="typeVar")
     private @Nullable Output<String> typeVar;
 
+    /**
+     * @return Sets constraints for the image resize. Select `normal` to resize in all cases, either increasing or decreasing the dimensions. Select `downsize` to ignore this transformation if the result would be larger than the original. Select `upsize` to ignore this transformation if the result would be smaller.
+     * 
+     */
     public Optional<Output<String>> typeVar() {
         return Optional.ofNullable(this.typeVar);
     }
 
+    /**
+     * The width to resize the source image to. Must be set if width is not specified.
+     * 
+     */
     @Import(name="width")
     private @Nullable Output<String> width;
 
+    /**
+     * @return The width to resize the source image to. Must be set if width is not specified.
+     * 
+     */
     public Optional<Output<String>> width() {
         return Optional.ofNullable(this.width);
     }
 
+    /**
+     * The width to resize the source image to. Must be set if width is not specified.
+     * 
+     */
     @Import(name="widthVar")
     private @Nullable Output<String> widthVar;
 
+    /**
+     * @return The width to resize the source image to. Must be set if width is not specified.
+     * 
+     */
     public Optional<Output<String>> widthVar() {
         return Optional.ofNullable(this.widthVar);
     }
@@ -102,74 +166,170 @@ public final class GetImagingPolicyImagePolicyTransformationResizeArgs extends c
             $ = new GetImagingPolicyImagePolicyTransformationResizeArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param aspect Preserves the aspect ratio. Select `fit` to make the image fit entirely within the selected width and height. When using `fit`, the resulting image has the largest possible size for the specified dimensions. Select `fill` to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise `ignore` changes the original aspect ratio to fit within an arbitrarily shaped rectangle.
+         * 
+         * @return builder
+         * 
+         */
         public Builder aspect(@Nullable Output<String> aspect) {
             $.aspect = aspect;
             return this;
         }
 
+        /**
+         * @param aspect Preserves the aspect ratio. Select `fit` to make the image fit entirely within the selected width and height. When using `fit`, the resulting image has the largest possible size for the specified dimensions. Select `fill` to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise `ignore` changes the original aspect ratio to fit within an arbitrarily shaped rectangle.
+         * 
+         * @return builder
+         * 
+         */
         public Builder aspect(String aspect) {
             return aspect(Output.of(aspect));
         }
 
+        /**
+         * @param aspectVar Preserves the aspect ratio. Select `fit` to make the image fit entirely within the selected width and height. When using `fit`, the resulting image has the largest possible size for the specified dimensions. Select `fill` to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise `ignore` changes the original aspect ratio to fit within an arbitrarily shaped rectangle.
+         * 
+         * @return builder
+         * 
+         */
         public Builder aspectVar(@Nullable Output<String> aspectVar) {
             $.aspectVar = aspectVar;
             return this;
         }
 
+        /**
+         * @param aspectVar Preserves the aspect ratio. Select `fit` to make the image fit entirely within the selected width and height. When using `fit`, the resulting image has the largest possible size for the specified dimensions. Select `fill` to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise `ignore` changes the original aspect ratio to fit within an arbitrarily shaped rectangle.
+         * 
+         * @return builder
+         * 
+         */
         public Builder aspectVar(String aspectVar) {
             return aspectVar(Output.of(aspectVar));
         }
 
+        /**
+         * @param height The height to resize the source image to. Must be set if height is not specified.
+         * 
+         * @return builder
+         * 
+         */
         public Builder height(@Nullable Output<String> height) {
             $.height = height;
             return this;
         }
 
+        /**
+         * @param height The height to resize the source image to. Must be set if height is not specified.
+         * 
+         * @return builder
+         * 
+         */
         public Builder height(String height) {
             return height(Output.of(height));
         }
 
+        /**
+         * @param heightVar The height to resize the source image to. Must be set if height is not specified.
+         * 
+         * @return builder
+         * 
+         */
         public Builder heightVar(@Nullable Output<String> heightVar) {
             $.heightVar = heightVar;
             return this;
         }
 
+        /**
+         * @param heightVar The height to resize the source image to. Must be set if height is not specified.
+         * 
+         * @return builder
+         * 
+         */
         public Builder heightVar(String heightVar) {
             return heightVar(Output.of(heightVar));
         }
 
+        /**
+         * @param type Sets constraints for the image resize. Select `normal` to resize in all cases, either increasing or decreasing the dimensions. Select `downsize` to ignore this transformation if the result would be larger than the original. Select `upsize` to ignore this transformation if the result would be smaller.
+         * 
+         * @return builder
+         * 
+         */
         public Builder type(@Nullable Output<String> type) {
             $.type = type;
             return this;
         }
 
+        /**
+         * @param type Sets constraints for the image resize. Select `normal` to resize in all cases, either increasing or decreasing the dimensions. Select `downsize` to ignore this transformation if the result would be larger than the original. Select `upsize` to ignore this transformation if the result would be smaller.
+         * 
+         * @return builder
+         * 
+         */
         public Builder type(String type) {
             return type(Output.of(type));
         }
 
+        /**
+         * @param typeVar Sets constraints for the image resize. Select `normal` to resize in all cases, either increasing or decreasing the dimensions. Select `downsize` to ignore this transformation if the result would be larger than the original. Select `upsize` to ignore this transformation if the result would be smaller.
+         * 
+         * @return builder
+         * 
+         */
         public Builder typeVar(@Nullable Output<String> typeVar) {
             $.typeVar = typeVar;
             return this;
         }
 
+        /**
+         * @param typeVar Sets constraints for the image resize. Select `normal` to resize in all cases, either increasing or decreasing the dimensions. Select `downsize` to ignore this transformation if the result would be larger than the original. Select `upsize` to ignore this transformation if the result would be smaller.
+         * 
+         * @return builder
+         * 
+         */
         public Builder typeVar(String typeVar) {
             return typeVar(Output.of(typeVar));
         }
 
+        /**
+         * @param width The width to resize the source image to. Must be set if width is not specified.
+         * 
+         * @return builder
+         * 
+         */
         public Builder width(@Nullable Output<String> width) {
             $.width = width;
             return this;
         }
 
+        /**
+         * @param width The width to resize the source image to. Must be set if width is not specified.
+         * 
+         * @return builder
+         * 
+         */
         public Builder width(String width) {
             return width(Output.of(width));
         }
 
+        /**
+         * @param widthVar The width to resize the source image to. Must be set if width is not specified.
+         * 
+         * @return builder
+         * 
+         */
         public Builder widthVar(@Nullable Output<String> widthVar) {
             $.widthVar = widthVar;
             return this;
         }
 
+        /**
+         * @param widthVar The width to resize the source image to. Must be set if width is not specified.
+         * 
+         * @return builder
+         * 
+         */
         public Builder widthVar(String widthVar) {
             return widthVar(Output.of(widthVar));
         }

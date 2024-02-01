@@ -12,18 +12,33 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorResponseCodeInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public Input<bool>? Locked { get; set; }
 
+        /// <summary>
+        /// Allows any specified `200` success code to override a `206` partial-content code, in which case the response's content length matches the requested range length.
+        /// </summary>
         [Input("override206")]
         public Input<bool>? Override206 { get; set; }
 
+        /// <summary>
+        /// The HTTP status code to replace the existing one.
+        /// </summary>
         [Input("statusCode")]
         public Input<int>? StatusCode { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public Input<string>? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public Input<string>? Uuid { get; set; }
 

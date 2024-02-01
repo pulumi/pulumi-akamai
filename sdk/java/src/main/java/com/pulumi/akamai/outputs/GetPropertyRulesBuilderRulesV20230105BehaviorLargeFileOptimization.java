@@ -12,37 +12,101 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorLargeFileOptimization {
+    /**
+     * @return Specifies whether to cache partial objects.
+     * 
+     */
     private @Nullable String enablePartialObjectCaching;
+    /**
+     * @return Enables the file optimization behavior.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Optimization does not apply to files larger than this, expressed as a number suffixed with a unit string such as `MB` or `GB`. The size of a file can&#39;t be greater than 323 GB. If you need to optimize a larger file, contact Akamai Professional Services for help. This option is for internal usage only.
+     * 
+     */
     private @Nullable String maximumSize;
+    /**
+     * @return Optimization only applies to files larger than this, expressed as a number suffixed with a unit string such as `MB` or `GB`.
+     * 
+     */
     private @Nullable String minimumSize;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return When `enablePartialObjectCaching` is set to `PARTIAL_OBJECT_CACHING`, enabling this option signals your intention to vary filenames by version, strongly recommended to avoid serving corrupt content when chunks come from different versions of the same file.
+     * 
+     */
     private @Nullable Boolean useVersioning;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorLargeFileOptimization() {}
+    /**
+     * @return Specifies whether to cache partial objects.
+     * 
+     */
     public Optional<String> enablePartialObjectCaching() {
         return Optional.ofNullable(this.enablePartialObjectCaching);
     }
+    /**
+     * @return Enables the file optimization behavior.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Optimization does not apply to files larger than this, expressed as a number suffixed with a unit string such as `MB` or `GB`. The size of a file can&#39;t be greater than 323 GB. If you need to optimize a larger file, contact Akamai Professional Services for help. This option is for internal usage only.
+     * 
+     */
     public Optional<String> maximumSize() {
         return Optional.ofNullable(this.maximumSize);
     }
+    /**
+     * @return Optimization only applies to files larger than this, expressed as a number suffixed with a unit string such as `MB` or `GB`.
+     * 
+     */
     public Optional<String> minimumSize() {
         return Optional.ofNullable(this.minimumSize);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return When `enablePartialObjectCaching` is set to `PARTIAL_OBJECT_CACHING`, enabling this option signals your intention to vary filenames by version, strongly recommended to avoid serving corrupt content when chunks come from different versions of the same file.
+     * 
+     */
     public Optional<Boolean> useVersioning() {
         return Optional.ofNullable(this.useVersioning);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

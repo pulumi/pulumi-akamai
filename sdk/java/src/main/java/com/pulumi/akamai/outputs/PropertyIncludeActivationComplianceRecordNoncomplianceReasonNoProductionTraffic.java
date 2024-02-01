@@ -11,9 +11,17 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic {
+    /**
+     * @return Identifies the ticket that describes the need for the activation
+     * 
+     */
     private @Nullable String ticketId;
 
     private PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic() {}
+    /**
+     * @return Identifies the ticket that describes the need for the activation
+     * 
+     */
     public Optional<String> ticketId() {
         return Optional.ofNullable(this.ticketId);
     }

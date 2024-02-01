@@ -14,44 +14,92 @@ public final class GetImagingPolicyImagePolicyTransformationRemoveColor extends 
 
     public static final GetImagingPolicyImagePolicyTransformationRemoveColor Empty = new GetImagingPolicyImagePolicyTransformationRemoveColor();
 
+    /**
+     * The hexadecimal CSS color value to remove.
+     * 
+     */
     @Import(name="color")
     private @Nullable String color;
 
+    /**
+     * @return The hexadecimal CSS color value to remove.
+     * 
+     */
     public Optional<String> color() {
         return Optional.ofNullable(this.color);
     }
 
+    /**
+     * The hexadecimal CSS color value to remove.
+     * 
+     */
     @Import(name="colorVar")
     private @Nullable String colorVar;
 
+    /**
+     * @return The hexadecimal CSS color value to remove.
+     * 
+     */
     public Optional<String> colorVar() {
         return Optional.ofNullable(this.colorVar);
     }
 
+    /**
+     * The RemoveColor transformation may create a hard edge around an image. To minimize these hard edges and make the removal of the color more gradual in appearance, use the Feather option. This option allows you to extend the color removal beyond the specified Tolerance. The pixels in this extended tolerance become semi-transparent - creating a softer edge.  The first realtime request for an image using the feather option may result in a slow transformation time. Subsequent requests are not impacted as they are served directly out of cache.
+     * 
+     */
     @Import(name="feather")
     private @Nullable String feather;
 
+    /**
+     * @return The RemoveColor transformation may create a hard edge around an image. To minimize these hard edges and make the removal of the color more gradual in appearance, use the Feather option. This option allows you to extend the color removal beyond the specified Tolerance. The pixels in this extended tolerance become semi-transparent - creating a softer edge.  The first realtime request for an image using the feather option may result in a slow transformation time. Subsequent requests are not impacted as they are served directly out of cache.
+     * 
+     */
     public Optional<String> feather() {
         return Optional.ofNullable(this.feather);
     }
 
+    /**
+     * The RemoveColor transformation may create a hard edge around an image. To minimize these hard edges and make the removal of the color more gradual in appearance, use the Feather option. This option allows you to extend the color removal beyond the specified Tolerance. The pixels in this extended tolerance become semi-transparent - creating a softer edge.  The first realtime request for an image using the feather option may result in a slow transformation time. Subsequent requests are not impacted as they are served directly out of cache.
+     * 
+     */
     @Import(name="featherVar")
     private @Nullable String featherVar;
 
+    /**
+     * @return The RemoveColor transformation may create a hard edge around an image. To minimize these hard edges and make the removal of the color more gradual in appearance, use the Feather option. This option allows you to extend the color removal beyond the specified Tolerance. The pixels in this extended tolerance become semi-transparent - creating a softer edge.  The first realtime request for an image using the feather option may result in a slow transformation time. Subsequent requests are not impacted as they are served directly out of cache.
+     * 
+     */
     public Optional<String> featherVar() {
         return Optional.ofNullable(this.featherVar);
     }
 
+    /**
+     * The Tolerance option defines how close the color needs to be to the selected color before it&#39;s changed to fully transparent. Set the Tolerance to 0.0 to remove only the exact color specified.
+     * 
+     */
     @Import(name="tolerance")
     private @Nullable String tolerance;
 
+    /**
+     * @return The Tolerance option defines how close the color needs to be to the selected color before it&#39;s changed to fully transparent. Set the Tolerance to 0.0 to remove only the exact color specified.
+     * 
+     */
     public Optional<String> tolerance() {
         return Optional.ofNullable(this.tolerance);
     }
 
+    /**
+     * The Tolerance option defines how close the color needs to be to the selected color before it&#39;s changed to fully transparent. Set the Tolerance to 0.0 to remove only the exact color specified.
+     * 
+     */
     @Import(name="toleranceVar")
     private @Nullable String toleranceVar;
 
+    /**
+     * @return The Tolerance option defines how close the color needs to be to the selected color before it&#39;s changed to fully transparent. Set the Tolerance to 0.0 to remove only the exact color specified.
+     * 
+     */
     public Optional<String> toleranceVar() {
         return Optional.ofNullable(this.toleranceVar);
     }
@@ -85,31 +133,67 @@ public final class GetImagingPolicyImagePolicyTransformationRemoveColor extends 
             $ = new GetImagingPolicyImagePolicyTransformationRemoveColor(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param color The hexadecimal CSS color value to remove.
+         * 
+         * @return builder
+         * 
+         */
         public Builder color(@Nullable String color) {
             $.color = color;
             return this;
         }
 
+        /**
+         * @param colorVar The hexadecimal CSS color value to remove.
+         * 
+         * @return builder
+         * 
+         */
         public Builder colorVar(@Nullable String colorVar) {
             $.colorVar = colorVar;
             return this;
         }
 
+        /**
+         * @param feather The RemoveColor transformation may create a hard edge around an image. To minimize these hard edges and make the removal of the color more gradual in appearance, use the Feather option. This option allows you to extend the color removal beyond the specified Tolerance. The pixels in this extended tolerance become semi-transparent - creating a softer edge.  The first realtime request for an image using the feather option may result in a slow transformation time. Subsequent requests are not impacted as they are served directly out of cache.
+         * 
+         * @return builder
+         * 
+         */
         public Builder feather(@Nullable String feather) {
             $.feather = feather;
             return this;
         }
 
+        /**
+         * @param featherVar The RemoveColor transformation may create a hard edge around an image. To minimize these hard edges and make the removal of the color more gradual in appearance, use the Feather option. This option allows you to extend the color removal beyond the specified Tolerance. The pixels in this extended tolerance become semi-transparent - creating a softer edge.  The first realtime request for an image using the feather option may result in a slow transformation time. Subsequent requests are not impacted as they are served directly out of cache.
+         * 
+         * @return builder
+         * 
+         */
         public Builder featherVar(@Nullable String featherVar) {
             $.featherVar = featherVar;
             return this;
         }
 
+        /**
+         * @param tolerance The Tolerance option defines how close the color needs to be to the selected color before it&#39;s changed to fully transparent. Set the Tolerance to 0.0 to remove only the exact color specified.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tolerance(@Nullable String tolerance) {
             $.tolerance = tolerance;
             return this;
         }
 
+        /**
+         * @param toleranceVar The Tolerance option defines how close the color needs to be to the selected color before it&#39;s changed to fully transparent. Set the Tolerance to 0.0 to remove only the exact color specified.
+         * 
+         * @return builder
+         * 
+         */
         public Builder toleranceVar(@Nullable String toleranceVar) {
             $.toleranceVar = toleranceVar;
             return this;

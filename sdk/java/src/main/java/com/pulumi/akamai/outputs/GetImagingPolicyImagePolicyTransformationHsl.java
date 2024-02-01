@@ -11,29 +11,77 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationHsl {
+    /**
+     * @return The number of degrees to rotate colors around the color wheel, `0` by default.
+     * 
+     */
     private @Nullable String hue;
+    /**
+     * @return The number of degrees to rotate colors around the color wheel, `0` by default.
+     * 
+     */
     private @Nullable String hueVar;
+    /**
+     * @return A multiplier to adjust the lightness of colors in the image. Note that lightness is distinct from brightness. For example, reducing the lightness of a light green might give you a lime green whereas reducing the brightness of a light green might give you a darker shade of the same green. Values less than `1.0` decrease the lightness of colors in the image. Values greater than `1.0` increase the lightness of colors in the image.
+     * 
+     */
     private @Nullable String lightness;
+    /**
+     * @return A multiplier to adjust the lightness of colors in the image. Note that lightness is distinct from brightness. For example, reducing the lightness of a light green might give you a lime green whereas reducing the brightness of a light green might give you a darker shade of the same green. Values less than `1.0` decrease the lightness of colors in the image. Values greater than `1.0` increase the lightness of colors in the image.
+     * 
+     */
     private @Nullable String lightnessVar;
+    /**
+     * @return A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
+     * 
+     */
     private @Nullable String saturation;
+    /**
+     * @return A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
+     * 
+     */
     private @Nullable String saturationVar;
 
     private GetImagingPolicyImagePolicyTransformationHsl() {}
+    /**
+     * @return The number of degrees to rotate colors around the color wheel, `0` by default.
+     * 
+     */
     public Optional<String> hue() {
         return Optional.ofNullable(this.hue);
     }
+    /**
+     * @return The number of degrees to rotate colors around the color wheel, `0` by default.
+     * 
+     */
     public Optional<String> hueVar() {
         return Optional.ofNullable(this.hueVar);
     }
+    /**
+     * @return A multiplier to adjust the lightness of colors in the image. Note that lightness is distinct from brightness. For example, reducing the lightness of a light green might give you a lime green whereas reducing the brightness of a light green might give you a darker shade of the same green. Values less than `1.0` decrease the lightness of colors in the image. Values greater than `1.0` increase the lightness of colors in the image.
+     * 
+     */
     public Optional<String> lightness() {
         return Optional.ofNullable(this.lightness);
     }
+    /**
+     * @return A multiplier to adjust the lightness of colors in the image. Note that lightness is distinct from brightness. For example, reducing the lightness of a light green might give you a lime green whereas reducing the brightness of a light green might give you a darker shade of the same green. Values less than `1.0` decrease the lightness of colors in the image. Values greater than `1.0` increase the lightness of colors in the image.
+     * 
+     */
     public Optional<String> lightnessVar() {
         return Optional.ofNullable(this.lightnessVar);
     }
+    /**
+     * @return A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
+     * 
+     */
     public Optional<String> saturation() {
         return Optional.ofNullable(this.saturation);
     }
+    /**
+     * @return A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
+     * 
+     */
     public Optional<String> saturationVar() {
         return Optional.ofNullable(this.saturationVar);
     }

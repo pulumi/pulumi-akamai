@@ -13,57 +13,161 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorReport {
+    /**
+     * @return This specifies the set of cookies names whose values you want to log.
+     * 
+     */
     private @Nullable List<String> cookies;
+    /**
+     * @return Specifies an additional data field to append to each log line, maximum 1000 bytes, typically based on a dynamically generated built-in system variable. For example, `round-trip: {{builtin.AK_CLIENT_TURNAROUND_TIME}}ms` logs the total time to complete the response. See `Support for variables` for more information. If you enable the `logCustom` behavior, it overrides the `customLogField` option.
+     * 
+     */
     private @Nullable String customLogField;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Log the `Accept-Language` header.
+     * 
+     */
     private @Nullable Boolean logAcceptLanguage;
+    /**
+     * @return Specifies the set of cookies to log.
+     * 
+     */
     private @Nullable String logCookies;
+    /**
+     * @return Whether to append additional custom data to each log line.
+     * 
+     */
     private @Nullable Boolean logCustomLogField;
+    /**
+     * @return Whether to log the IP address of the Akamai edge server that served the response to the client.
+     * 
+     */
     private @Nullable Boolean logEdgeIp;
+    /**
+     * @return Log the `Host` header.
+     * 
+     */
     private @Nullable Boolean logHost;
+    /**
+     * @return Log the `Referer` header.
+     * 
+     */
     private @Nullable Boolean logReferer;
+    /**
+     * @return Log the `User-Agent` header.
+     * 
+     */
     private @Nullable Boolean logUserAgent;
+    /**
+     * @return Log any `X-Forwarded-For` request header.
+     * 
+     */
     private @Nullable Boolean logXForwardedFor;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorReport() {}
+    /**
+     * @return This specifies the set of cookies names whose values you want to log.
+     * 
+     */
     public List<String> cookies() {
         return this.cookies == null ? List.of() : this.cookies;
     }
+    /**
+     * @return Specifies an additional data field to append to each log line, maximum 1000 bytes, typically based on a dynamically generated built-in system variable. For example, `round-trip: {{builtin.AK_CLIENT_TURNAROUND_TIME}}ms` logs the total time to complete the response. See `Support for variables` for more information. If you enable the `logCustom` behavior, it overrides the `customLogField` option.
+     * 
+     */
     public Optional<String> customLogField() {
         return Optional.ofNullable(this.customLogField);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Log the `Accept-Language` header.
+     * 
+     */
     public Optional<Boolean> logAcceptLanguage() {
         return Optional.ofNullable(this.logAcceptLanguage);
     }
+    /**
+     * @return Specifies the set of cookies to log.
+     * 
+     */
     public Optional<String> logCookies() {
         return Optional.ofNullable(this.logCookies);
     }
+    /**
+     * @return Whether to append additional custom data to each log line.
+     * 
+     */
     public Optional<Boolean> logCustomLogField() {
         return Optional.ofNullable(this.logCustomLogField);
     }
+    /**
+     * @return Whether to log the IP address of the Akamai edge server that served the response to the client.
+     * 
+     */
     public Optional<Boolean> logEdgeIp() {
         return Optional.ofNullable(this.logEdgeIp);
     }
+    /**
+     * @return Log the `Host` header.
+     * 
+     */
     public Optional<Boolean> logHost() {
         return Optional.ofNullable(this.logHost);
     }
+    /**
+     * @return Log the `Referer` header.
+     * 
+     */
     public Optional<Boolean> logReferer() {
         return Optional.ofNullable(this.logReferer);
     }
+    /**
+     * @return Log the `User-Agent` header.
+     * 
+     */
     public Optional<Boolean> logUserAgent() {
         return Optional.ofNullable(this.logUserAgent);
     }
+    /**
+     * @return Log any `X-Forwarded-For` request header.
+     * 
+     */
     public Optional<Boolean> logXForwardedFor() {
         return Optional.ofNullable(this.logXForwardedFor);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

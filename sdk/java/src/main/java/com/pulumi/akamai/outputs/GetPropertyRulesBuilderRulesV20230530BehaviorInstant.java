@@ -13,37 +13,101 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorInstant {
+    /**
+     * @return Specify link relation values that activate the prefetching behavior. For example, specifying `fetch` allows you to use shorter `rel=&#34;fetch&#34;` markup.
+     * 
+     */
     private @Nullable List<String> customLinkRelations;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return When enabled, applies prefetching only to objects already set to be cacheable, for example using the `caching` behavior. Only applies to content with the `tieredDistribution` behavior enabled.
+     * 
+     */
     private @Nullable Boolean prefetchCacheable;
+    /**
+     * @return Allows edge servers to prefetch additional HTML pages while pages that link to them are being delivered. This only applies to links from `&lt;a&gt;` or `&lt;link&gt;` tags with the appropriate link relation attribute.
+     * 
+     */
     private @Nullable Boolean prefetchHtml;
+    /**
+     * @return Allows otherwise non-cacheable `no-store` content to prefetch if the URL path ends with `/` to indicate a request for a default file, or if the extension matches the value of the `prefetchNoStoreExtensions` option. Only applies to content with the `sureRoute` behavior enabled.
+     * 
+     */
     private @Nullable Boolean prefetchNoStore;
+    /**
+     * @return Specifies a set of file extensions for which the `prefetchNoStore` option is allowed.
+     * 
+     */
     private @Nullable List<String> prefetchNoStoreExtensions;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorInstant() {}
+    /**
+     * @return Specify link relation values that activate the prefetching behavior. For example, specifying `fetch` allows you to use shorter `rel=&#34;fetch&#34;` markup.
+     * 
+     */
     public List<String> customLinkRelations() {
         return this.customLinkRelations == null ? List.of() : this.customLinkRelations;
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return When enabled, applies prefetching only to objects already set to be cacheable, for example using the `caching` behavior. Only applies to content with the `tieredDistribution` behavior enabled.
+     * 
+     */
     public Optional<Boolean> prefetchCacheable() {
         return Optional.ofNullable(this.prefetchCacheable);
     }
+    /**
+     * @return Allows edge servers to prefetch additional HTML pages while pages that link to them are being delivered. This only applies to links from `&lt;a&gt;` or `&lt;link&gt;` tags with the appropriate link relation attribute.
+     * 
+     */
     public Optional<Boolean> prefetchHtml() {
         return Optional.ofNullable(this.prefetchHtml);
     }
+    /**
+     * @return Allows otherwise non-cacheable `no-store` content to prefetch if the URL path ends with `/` to indicate a request for a default file, or if the extension matches the value of the `prefetchNoStoreExtensions` option. Only applies to content with the `sureRoute` behavior enabled.
+     * 
+     */
     public Optional<Boolean> prefetchNoStore() {
         return Optional.ofNullable(this.prefetchNoStore);
     }
+    /**
+     * @return Specifies a set of file extensions for which the `prefetchNoStore` option is allowed.
+     * 
+     */
     public List<String> prefetchNoStoreExtensions() {
         return this.prefetchNoStoreExtensions == null ? List.of() : this.prefetchNoStoreExtensions;
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

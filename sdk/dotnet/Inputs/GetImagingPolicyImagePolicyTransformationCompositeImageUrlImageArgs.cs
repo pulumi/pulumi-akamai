@@ -15,9 +15,15 @@ namespace Pulumi.Akamai.Inputs
         [Input("transformation")]
         public Input<Inputs.GetImagingPolicyImagePolicyTransformationInputArgs>? Transformation { get; set; }
 
+        /// <summary>
+        /// The URL of the image.
+        /// </summary>
         [Input("url")]
         public Input<string>? Url { get; set; }
 
+        /// <summary>
+        /// The URL of the image.
+        /// </summary>
         [Input("urlVar")]
         public Input<string>? UrlVar { get; set; }
 

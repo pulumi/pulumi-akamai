@@ -12,21 +12,39 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230105CriterionRegularExpressionInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Sets a case-sensitive regular expression match.
+        /// </summary>
         [Input("caseSensitive")]
         public Input<bool>? CaseSensitive { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public Input<bool>? Locked { get; set; }
 
+        /// <summary>
+        /// The string to match, typically the contents of a dynamic variable.
+        /// </summary>
         [Input("matchString")]
         public Input<string>? MatchString { get; set; }
 
+        /// <summary>
+        /// The regular expression (PCRE) to match against the string.
+        /// </summary>
         [Input("regex")]
         public Input<string>? Regex { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public Input<string>? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public Input<string>? Uuid { get; set; }
 

@@ -12,41 +12,113 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorUidConfiguration {
+    /**
+     * @return Allows you to extract UIDs from client requests.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Where to extract the UID value from.
+     * 
+     */
     private @Nullable String extractLocation;
+    /**
+     * @return This specifies the name of the HTTP header from which to extract the UID value.
+     * 
+     */
     private @Nullable String headerName;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String legalText;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return This specifies the name of the query parameter from which to extract the UID value.
+     * 
+     */
     private @Nullable String queryParameterName;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
+    /**
+     * @return This specifies the name of the rule tree variable from which to extract the UID value.
+     * 
+     */
     private @Nullable String variableName;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorUidConfiguration() {}
+    /**
+     * @return Allows you to extract UIDs from client requests.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Where to extract the UID value from.
+     * 
+     */
     public Optional<String> extractLocation() {
         return Optional.ofNullable(this.extractLocation);
     }
+    /**
+     * @return This specifies the name of the HTTP header from which to extract the UID value.
+     * 
+     */
     public Optional<String> headerName() {
         return Optional.ofNullable(this.headerName);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> legalText() {
         return Optional.ofNullable(this.legalText);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return This specifies the name of the query parameter from which to extract the UID value.
+     * 
+     */
     public Optional<String> queryParameterName() {
         return Optional.ofNullable(this.queryParameterName);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
+    /**
+     * @return This specifies the name of the rule tree variable from which to extract the UID value.
+     * 
+     */
     public Optional<String> variableName() {
         return Optional.ofNullable(this.variableName);
     }

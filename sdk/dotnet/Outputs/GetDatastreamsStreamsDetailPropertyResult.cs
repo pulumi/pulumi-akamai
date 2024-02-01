@@ -13,7 +13,13 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetDatastreamsStreamsDetailPropertyResult
     {
+        /// <summary>
+        /// The identifier of the property.
+        /// </summary>
         public readonly int PropertyId;
+        /// <summary>
+        /// The descriptive label for the property.
+        /// </summary>
         public readonly string PropertyName;
 
         [OutputConstructor]

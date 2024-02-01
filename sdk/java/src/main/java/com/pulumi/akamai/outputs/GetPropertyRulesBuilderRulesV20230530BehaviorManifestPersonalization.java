@@ -12,65 +12,185 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorManifestPersonalization {
+    /**
+     * @return Enables the Manifest Personalization feature.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Includes additional `Akamai-Manifest-Personalization` and `Akamai-Manifest-Personalization-Config-Source` debugging headers.
+     * 
+     */
     private @Nullable Boolean hlsEnableDebugHeaders;
+    /**
+     * @return Allows you to customize the HLS master manifest that&#39;s sent to the requesting client.
+     * 
+     */
     private @Nullable Boolean hlsEnabled;
+    /**
+     * @return Specifies a comma-delimited set of bit rate ranges, such as `100-400,1000-4000`. Playlists specified in the `#EXT-X-STREAM-INF` tag with bit rates outside of any of those ranges are excluded from the manifest.
+     * 
+     */
     private @Nullable String hlsFilterInBitrateRanges;
+    /**
+     * @return Specifies a comma-delimited set of preferred bit rates, such as `100,200,400`. Playlists specified in the `#EXT-X-STREAM-INF` tag with bit rates outside of any of those values by up to 100 Kbps are excluded from the manifest.
+     * 
+     */
     private @Nullable String hlsFilterInBitrates;
+    /**
+     * @return Applies with `hlsEnabled` on.
+     * 
+     */
     private @Nullable String hlsMode;
+    /**
+     * @return Sets the preferred bit rate in Kbps. This causes the media playlist specified in the `#EXT-X-STREAM-INF` tag that most closely matches the value to list first. All other playlists maintain their current position in the manifest.
+     * 
+     */
     private @Nullable String hlsPreferredBitrate;
+    /**
+     * @return Specifies query parameters for the HLS master manifest to customize the manifest&#39;s content.  Any settings specified in the query string override those already configured in Property Manager.
+     * 
+     */
     private @Nullable Boolean hlsQueryParamEnabled;
+    /**
+     * @return Specifies a primary key as a token to accompany the request.
+     * 
+     */
     private @Nullable String hlsQueryParamSecretKey;
+    /**
+     * @return Specifies a transition key as a token to accompany the request.
+     * 
+     */
     private @Nullable String hlsQueryParamTransitionKey;
+    /**
+     * @return Allows you to configure advanced settings.
+     * 
+     */
     private @Nullable Boolean hlsShowAdvanced;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String hlsTitle;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorManifestPersonalization() {}
+    /**
+     * @return Enables the Manifest Personalization feature.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Includes additional `Akamai-Manifest-Personalization` and `Akamai-Manifest-Personalization-Config-Source` debugging headers.
+     * 
+     */
     public Optional<Boolean> hlsEnableDebugHeaders() {
         return Optional.ofNullable(this.hlsEnableDebugHeaders);
     }
+    /**
+     * @return Allows you to customize the HLS master manifest that&#39;s sent to the requesting client.
+     * 
+     */
     public Optional<Boolean> hlsEnabled() {
         return Optional.ofNullable(this.hlsEnabled);
     }
+    /**
+     * @return Specifies a comma-delimited set of bit rate ranges, such as `100-400,1000-4000`. Playlists specified in the `#EXT-X-STREAM-INF` tag with bit rates outside of any of those ranges are excluded from the manifest.
+     * 
+     */
     public Optional<String> hlsFilterInBitrateRanges() {
         return Optional.ofNullable(this.hlsFilterInBitrateRanges);
     }
+    /**
+     * @return Specifies a comma-delimited set of preferred bit rates, such as `100,200,400`. Playlists specified in the `#EXT-X-STREAM-INF` tag with bit rates outside of any of those values by up to 100 Kbps are excluded from the manifest.
+     * 
+     */
     public Optional<String> hlsFilterInBitrates() {
         return Optional.ofNullable(this.hlsFilterInBitrates);
     }
+    /**
+     * @return Applies with `hlsEnabled` on.
+     * 
+     */
     public Optional<String> hlsMode() {
         return Optional.ofNullable(this.hlsMode);
     }
+    /**
+     * @return Sets the preferred bit rate in Kbps. This causes the media playlist specified in the `#EXT-X-STREAM-INF` tag that most closely matches the value to list first. All other playlists maintain their current position in the manifest.
+     * 
+     */
     public Optional<String> hlsPreferredBitrate() {
         return Optional.ofNullable(this.hlsPreferredBitrate);
     }
+    /**
+     * @return Specifies query parameters for the HLS master manifest to customize the manifest&#39;s content.  Any settings specified in the query string override those already configured in Property Manager.
+     * 
+     */
     public Optional<Boolean> hlsQueryParamEnabled() {
         return Optional.ofNullable(this.hlsQueryParamEnabled);
     }
+    /**
+     * @return Specifies a primary key as a token to accompany the request.
+     * 
+     */
     public Optional<String> hlsQueryParamSecretKey() {
         return Optional.ofNullable(this.hlsQueryParamSecretKey);
     }
+    /**
+     * @return Specifies a transition key as a token to accompany the request.
+     * 
+     */
     public Optional<String> hlsQueryParamTransitionKey() {
         return Optional.ofNullable(this.hlsQueryParamTransitionKey);
     }
+    /**
+     * @return Allows you to configure advanced settings.
+     * 
+     */
     public Optional<Boolean> hlsShowAdvanced() {
         return Optional.ofNullable(this.hlsShowAdvanced);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> hlsTitle() {
         return Optional.ofNullable(this.hlsTitle);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

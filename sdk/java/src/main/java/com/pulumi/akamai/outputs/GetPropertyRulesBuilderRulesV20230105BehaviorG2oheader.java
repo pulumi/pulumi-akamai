@@ -14,49 +14,137 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorG2oheader {
+    /**
+     * @return Specifies the set of data to be encrypted as a combination of concatenated strings.
+     * 
+     */
     private @Nullable List<String> customSignStrings;
+    /**
+     * @return Specifies the name of the header that contains the request data that needs to be encrypted.
+     * 
+     */
     private @Nullable String dataHeader;
+    /**
+     * @return Enables the g2o verification behavior.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Specifies the version of the encryption algorithm as an integer from `1` through `5`.
+     * 
+     */
     private @Nullable Integer encodingVersion;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Specifies the cryptographic `nonce` string.
+     * 
+     */
     private @Nullable String nonce;
+    /**
+     * @return Specifies the shared secret key.
+     * 
+     */
     private @Nullable String secretKey;
+    /**
+     * @return Specifies the name of the header containing encrypted request data.
+     * 
+     */
     private @Nullable String signedHeader;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return When disabled, the encrypted string is based on the forwarded URL. If enabled, you can use `customSignString` to customize the set of data to encrypt.
+     * 
+     */
     private @Nullable Boolean useCustomSignString;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorG2oheader() {}
+    /**
+     * @return Specifies the set of data to be encrypted as a combination of concatenated strings.
+     * 
+     */
     public List<String> customSignStrings() {
         return this.customSignStrings == null ? List.of() : this.customSignStrings;
     }
+    /**
+     * @return Specifies the name of the header that contains the request data that needs to be encrypted.
+     * 
+     */
     public Optional<String> dataHeader() {
         return Optional.ofNullable(this.dataHeader);
     }
+    /**
+     * @return Enables the g2o verification behavior.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Specifies the version of the encryption algorithm as an integer from `1` through `5`.
+     * 
+     */
     public Optional<Integer> encodingVersion() {
         return Optional.ofNullable(this.encodingVersion);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Specifies the cryptographic `nonce` string.
+     * 
+     */
     public Optional<String> nonce() {
         return Optional.ofNullable(this.nonce);
     }
+    /**
+     * @return Specifies the shared secret key.
+     * 
+     */
     public Optional<String> secretKey() {
         return Optional.ofNullable(this.secretKey);
     }
+    /**
+     * @return Specifies the name of the header containing encrypted request data.
+     * 
+     */
     public Optional<String> signedHeader() {
         return Optional.ofNullable(this.signedHeader);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return When disabled, the encrypted string is based on the forwarded URL. If enabled, you can use `customSignString` to customize the set of data to encrypt.
+     * 
+     */
     public Optional<Boolean> useCustomSignString() {
         return Optional.ofNullable(this.useCustomSignString);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

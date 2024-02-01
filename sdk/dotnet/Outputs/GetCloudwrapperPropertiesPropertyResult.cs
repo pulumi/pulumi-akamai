@@ -13,10 +13,25 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetCloudwrapperPropertiesPropertyResult
     {
+        /// <summary>
+        /// Contract ID having Cloud Wrapper entitlement.
+        /// </summary>
         public readonly string ContractId;
+        /// <summary>
+        /// ID of the group which the property belongs to.
+        /// </summary>
         public readonly int GroupId;
+        /// <summary>
+        /// Property ID of the property.
+        /// </summary>
         public readonly int PropertyId;
+        /// <summary>
+        /// Name of the property belonging to the origin.
+        /// </summary>
         public readonly string PropertyName;
+        /// <summary>
+        /// The type of property. MEDIA applies to live or video on demand content. WEB applies to website or app content.
+        /// </summary>
         public readonly string Type;
 
         [OutputConstructor]

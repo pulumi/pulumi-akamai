@@ -14,6 +14,10 @@ namespace Pulumi.Akamai.Inputs
     {
         [Input("backgroundColors")]
         private InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationBackgroundColorInputArgs>? _backgroundColors;
+
+        /// <summary>
+        /// Places a transparent image on a set background color. Color is specified in the typical CSS hexadecimal format.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationBackgroundColorInputArgs> BackgroundColors
         {
             get => _backgroundColors ?? (_backgroundColors = new InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationBackgroundColorInputArgs>());
@@ -22,6 +26,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("blurs")]
         private InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationBlurInputArgs>? _blurs;
+
+        /// <summary>
+        /// Applies a Gaussian blur to the image.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationBlurInputArgs> Blurs
         {
             get => _blurs ?? (_blurs = new InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationBlurInputArgs>());
@@ -30,6 +38,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("chromaKeys")]
         private InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationChromaKeyInputArgs>? _chromaKeys;
+
+        /// <summary>
+        /// Changes any color in an image within the specified volume of the HSL colorspace to transparent or semitransparent. This transformation applies a 'green screen' technique commonly used to isolate and remove background colors.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationChromaKeyInputArgs> ChromaKeys
         {
             get => _chromaKeys ?? (_chromaKeys = new InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationChromaKeyInputArgs>());
@@ -38,6 +50,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("composites")]
         private InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeInputArgs>? _composites;
+
+        /// <summary>
+        /// Applies another image to the source image, either as an overlay or an underlay. The image that's underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeInputArgs> Composites
         {
             get => _composites ?? (_composites = new InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeInputArgs>());
@@ -54,6 +70,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("contrasts")]
         private InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationContrastInputArgs>? _contrasts;
+
+        /// <summary>
+        /// Adjusts both the contrast and brightness of an image.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationContrastInputArgs> Contrasts
         {
             get => _contrasts ?? (_contrasts = new InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationContrastInputArgs>());
@@ -62,6 +82,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("goops")]
         private InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationGoopInputArgs>? _goops;
+
+        /// <summary>
+        /// Distorts an image by randomly repositioning a set of control points along a specified grid. The transformed image appears _goopy_. Adjust the density of the grid and the degree of randomity. You can use this transformation to create watermarks for use in security.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationGoopInputArgs> Goops
         {
             get => _goops ?? (_goops = new InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationGoopInputArgs>());
@@ -70,6 +94,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("grayscales")]
         private InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationGrayscaleInputArgs>? _grayscales;
+
+        /// <summary>
+        /// Restricts image color to shades of gray only.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationGrayscaleInputArgs> Grayscales
         {
             get => _grayscales ?? (_grayscales = new InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationGrayscaleInputArgs>());
@@ -78,6 +106,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("hsls")]
         private InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationHslInputArgs>? _hsls;
+
+        /// <summary>
+        /// Adjusts the hue, saturation, and lightness (HSL) of an image. Hue is the number of degrees that colors rotate around the color wheel. Saturation is a multiplier to increase or decrease color saturation. Lightness is a multiplier to increase or decrease the lightness of an image. Other transformations can also affect color, such as `Grayscale` and `MaxColors`. If youre using more than one, consider the order to apply them for the desired results.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationHslInputArgs> Hsls
         {
             get => _hsls ?? (_hsls = new InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationHslInputArgs>());
@@ -86,6 +118,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("hsvs")]
         private InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationHsvInputArgs>? _hsvs;
+
+        /// <summary>
+        /// Identical to HSL except it replaces `lightness` with `value`. For example, if you reduce the `lightness` of a light green, almost white, image, the color turns a vibrant green. Reducing the `value` turns the image a darker color, close to grey. This happens because the original image color is very close to white.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationHsvInputArgs> Hsvs
         {
             get => _hsvs ?? (_hsvs = new InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationHsvInputArgs>());
@@ -110,6 +146,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("maxColors")]
         private InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColorInputArgs>? _maxColors;
+
+        /// <summary>
+        /// Set the maximum number of colors in the images palette. Reducing the number of colors in an image can help to reduce file size.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColorInputArgs> MaxColors
         {
             get => _maxColors ?? (_maxColors = new InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColorInputArgs>());
@@ -118,6 +158,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("mirrors")]
         private InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationMirrorInputArgs>? _mirrors;
+
+        /// <summary>
+        /// Flips an image horizontally, vertically, or both.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationMirrorInputArgs> Mirrors
         {
             get => _mirrors ?? (_mirrors = new InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationMirrorInputArgs>());
@@ -126,6 +170,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("monoHues")]
         private InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHueInputArgs>? _monoHues;
+
+        /// <summary>
+        /// Allows you to set all hues in an image to a single specified hue of your choosing. Mono Hue maintains the original color’s lightness and saturation but sets the hue to that of the specified value. This has the effect of making the image shades of the specified hue.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHueInputArgs> MonoHues
         {
             get => _monoHues ?? (_monoHues = new InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHueInputArgs>());
@@ -134,6 +182,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("opacities")]
         private InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationOpacityInputArgs>? _opacities;
+
+        /// <summary>
+        /// Adjusts the level of transparency of an image. Use this transformation to make an image more or less transparent.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationOpacityInputArgs> Opacities
         {
             get => _opacities ?? (_opacities = new InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationOpacityInputArgs>());
@@ -142,6 +194,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("removeColors")]
         private InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveColorInputArgs>? _removeColors;
+
+        /// <summary>
+        /// Removes a specified color from an image and replaces it with transparent pixels. This transformation is ideal for removing solid background colors from product images photographed on clean, consistent backgrounds without any shadows.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveColorInputArgs> RemoveColors
         {
             get => _removeColors ?? (_removeColors = new InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveColorInputArgs>());
@@ -150,6 +206,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("unsharpMasks")]
         private InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationUnsharpMaskInputArgs>? _unsharpMasks;
+
+        /// <summary>
+        /// Emphasizes edges and details in source images without distorting the colors. Although this effect is often referred to as _sharpening_ an image, it actually creates a blurred, inverted copy of the image known as an unsharp mask. Image and Video Manager combines the unsharp mask with the source image to create an image perceived as clearer.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationUnsharpMaskInputArgs> UnsharpMasks
         {
             get => _unsharpMasks ?? (_unsharpMasks = new InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationUnsharpMaskInputArgs>());

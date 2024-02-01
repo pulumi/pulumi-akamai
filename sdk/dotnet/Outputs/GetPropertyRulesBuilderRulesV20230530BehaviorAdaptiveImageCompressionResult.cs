@@ -13,24 +13,81 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorAdaptiveImageCompressionResult
     {
+        /// <summary>
+        /// Adapts images served over cellular mobile networks.
+        /// </summary>
         public readonly bool? CompressMobile;
+        /// <summary>
+        /// Adapts images served over non-cellular networks.
+        /// </summary>
         public readonly bool? CompressStandard;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// Specifies tier-1 behavior.
+        /// </summary>
         public readonly string? Tier1MobileCompressionMethod;
+        /// <summary>
+        /// Specifies the compression percentage.
+        /// </summary>
         public readonly int? Tier1MobileCompressionValue;
+        /// <summary>
+        /// Specifies tier-1 non-cellular network behavior.
+        /// </summary>
         public readonly string? Tier1StandardCompressionMethod;
+        /// <summary>
+        /// Specifies the compression percentage.
+        /// </summary>
         public readonly int? Tier1StandardCompressionValue;
+        /// <summary>
+        /// Specifies tier-2 cellular-network behavior.
+        /// </summary>
         public readonly string? Tier2MobileCompressionMethod;
+        /// <summary>
+        /// Specifies the compression percentage.
+        /// </summary>
         public readonly int? Tier2MobileCompressionValue;
+        /// <summary>
+        /// Specifies tier-2 non-cellular network behavior.
+        /// </summary>
         public readonly string? Tier2StandardCompressionMethod;
+        /// <summary>
+        /// Specifies the compression percentage.
+        /// </summary>
         public readonly int? Tier2StandardCompressionValue;
+        /// <summary>
+        /// Specifies tier-3 cellular-network behavior.
+        /// </summary>
         public readonly string? Tier3MobileCompressionMethod;
+        /// <summary>
+        /// Specifies the compression percentage.
+        /// </summary>
         public readonly int? Tier3MobileCompressionValue;
+        /// <summary>
+        /// Specifies tier-3 non-cellular network behavior.
+        /// </summary>
         public readonly string? Tier3StandardCompressionMethod;
+        /// <summary>
+        /// Specifies the compression percentage.
+        /// </summary>
         public readonly int? Tier3StandardCompressionValue;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? TitleAicMobile;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? TitleAicNonmobile;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

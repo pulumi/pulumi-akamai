@@ -13,16 +13,32 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationAppendImageUrlImage {
     private @Nullable GetImagingPolicyImagePolicyTransformation transformation;
+    /**
+     * @return The URL of the image.
+     * 
+     */
     private @Nullable String url;
+    /**
+     * @return The URL of the image.
+     * 
+     */
     private @Nullable String urlVar;
 
     private GetImagingPolicyImagePolicyTransformationAppendImageUrlImage() {}
     public Optional<GetImagingPolicyImagePolicyTransformation> transformation() {
         return Optional.ofNullable(this.transformation);
     }
+    /**
+     * @return The URL of the image.
+     * 
+     */
     public Optional<String> url() {
         return Optional.ofNullable(this.url);
     }
+    /**
+     * @return The URL of the image.
+     * 
+     */
     public Optional<String> urlVar() {
         return Optional.ofNullable(this.urlVar);
     }

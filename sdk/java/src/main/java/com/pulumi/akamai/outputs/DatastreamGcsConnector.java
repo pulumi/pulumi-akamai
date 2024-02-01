@@ -13,33 +13,89 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DatastreamGcsConnector {
+    /**
+     * @return The name of the storage bucket created in Google Cloud account
+     * 
+     */
     private String bucket;
+    /**
+     * @return Indicates whether the logs should be compressed
+     * 
+     */
     private @Nullable Boolean compressLogs;
+    /**
+     * @return The name of the connector
+     * 
+     */
     private String displayName;
+    /**
+     * @return The path to the folder within Google Cloud bucket where logs will be stored
+     * 
+     */
     private @Nullable String path;
+    /**
+     * @return The contents of the JSON private key generated and downloaded in Google Cloud Storage account
+     * 
+     */
     private String privateKey;
+    /**
+     * @return The unique ID of Google Cloud project
+     * 
+     */
     private String projectId;
+    /**
+     * @return The name of the service account with the storage.object.create permission or Storage Object Creator role
+     * 
+     */
     private String serviceAccountName;
 
     private DatastreamGcsConnector() {}
+    /**
+     * @return The name of the storage bucket created in Google Cloud account
+     * 
+     */
     public String bucket() {
         return this.bucket;
     }
+    /**
+     * @return Indicates whether the logs should be compressed
+     * 
+     */
     public Optional<Boolean> compressLogs() {
         return Optional.ofNullable(this.compressLogs);
     }
+    /**
+     * @return The name of the connector
+     * 
+     */
     public String displayName() {
         return this.displayName;
     }
+    /**
+     * @return The path to the folder within Google Cloud bucket where logs will be stored
+     * 
+     */
     public Optional<String> path() {
         return Optional.ofNullable(this.path);
     }
+    /**
+     * @return The contents of the JSON private key generated and downloaded in Google Cloud Storage account
+     * 
+     */
     public String privateKey() {
         return this.privateKey;
     }
+    /**
+     * @return The unique ID of Google Cloud project
+     * 
+     */
     public String projectId() {
         return this.projectId;
     }
+    /**
+     * @return The name of the service account with the storage.object.create permission or Storage Object Creator role
+     * 
+     */
     public String serviceAccountName() {
         return this.serviceAccountName;
     }

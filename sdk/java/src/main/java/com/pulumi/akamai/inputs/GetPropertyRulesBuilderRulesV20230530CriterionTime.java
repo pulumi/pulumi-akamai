@@ -15,86 +15,182 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionTime extends co
 
     public static final GetPropertyRulesBuilderRulesV20230530CriterionTime Empty = new GetPropertyRulesBuilderRulesV20230530CriterionTime();
 
+    /**
+     * Adjusts the start time plus repeat interval to account for daylight saving time. Applies when the current time and the start time use different systems, daylight and standard, and the two values are in conflict.
+     * 
+     */
     @Import(name="applyDaylightSavingsTime")
     private @Nullable Boolean applyDaylightSavingsTime;
 
+    /**
+     * @return Adjusts the start time plus repeat interval to account for daylight saving time. Applies when the current time and the start time use different systems, daylight and standard, and the two values are in conflict.
+     * 
+     */
     public Optional<Boolean> applyDaylightSavingsTime() {
         return Optional.ofNullable(this.applyDaylightSavingsTime);
     }
 
+    /**
+     * Sets the start of a time period.
+     * 
+     */
     @Import(name="beginDate")
     private @Nullable String beginDate;
 
+    /**
+     * @return Sets the start of a time period.
+     * 
+     */
     public Optional<String> beginDate() {
         return Optional.ofNullable(this.beginDate);
     }
 
+    /**
+     * Sets the end of a fixed time period.
+     * 
+     */
     @Import(name="endDate")
     private @Nullable String endDate;
 
+    /**
+     * @return Sets the end of a fixed time period.
+     * 
+     */
     public Optional<String> endDate() {
         return Optional.ofNullable(this.endDate);
     }
 
+    /**
+     * Sets the start of a fixed time period.
+     * 
+     */
     @Import(name="lastingDate")
     private @Nullable String lastingDate;
 
+    /**
+     * @return Sets the start of a fixed time period.
+     * 
+     */
     public Optional<String> lastingDate() {
         return Optional.ofNullable(this.lastingDate);
     }
 
+    /**
+     * Specifies the end of a time period as a duration relative to the `lastingDate`.
+     * 
+     */
     @Import(name="lastingDuration")
     private @Nullable String lastingDuration;
 
+    /**
+     * @return Specifies the end of a time period as a duration relative to the `lastingDate`.
+     * 
+     */
     public Optional<String> lastingDuration() {
         return Optional.ofNullable(this.lastingDuration);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Specifies how to define the range of time.
+     * 
+     */
     @Import(name="matchOperator")
     private @Nullable String matchOperator;
 
+    /**
+     * @return Specifies how to define the range of time.
+     * 
+     */
     public Optional<String> matchOperator() {
         return Optional.ofNullable(this.matchOperator);
     }
 
+    /**
+     * Sets the start of the initial time period.
+     * 
+     */
     @Import(name="repeatBeginDate")
     private @Nullable String repeatBeginDate;
 
+    /**
+     * @return Sets the start of the initial time period.
+     * 
+     */
     public Optional<String> repeatBeginDate() {
         return Optional.ofNullable(this.repeatBeginDate);
     }
 
+    /**
+     * Sets the duration of each repeating time period.
+     * 
+     */
     @Import(name="repeatDuration")
     private @Nullable String repeatDuration;
 
+    /**
+     * @return Sets the duration of each repeating time period.
+     * 
+     */
     public Optional<String> repeatDuration() {
         return Optional.ofNullable(this.repeatDuration);
     }
 
+    /**
+     * Sets the time between each repeating time period&#39;s starting points.
+     * 
+     */
     @Import(name="repeatInterval")
     private @Nullable String repeatInterval;
 
+    /**
+     * @return Sets the time between each repeating time period&#39;s starting points.
+     * 
+     */
     public Optional<String> repeatInterval() {
         return Optional.ofNullable(this.repeatInterval);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -134,61 +230,133 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionTime extends co
             $ = new GetPropertyRulesBuilderRulesV20230530CriterionTime(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param applyDaylightSavingsTime Adjusts the start time plus repeat interval to account for daylight saving time. Applies when the current time and the start time use different systems, daylight and standard, and the two values are in conflict.
+         * 
+         * @return builder
+         * 
+         */
         public Builder applyDaylightSavingsTime(@Nullable Boolean applyDaylightSavingsTime) {
             $.applyDaylightSavingsTime = applyDaylightSavingsTime;
             return this;
         }
 
+        /**
+         * @param beginDate Sets the start of a time period.
+         * 
+         * @return builder
+         * 
+         */
         public Builder beginDate(@Nullable String beginDate) {
             $.beginDate = beginDate;
             return this;
         }
 
+        /**
+         * @param endDate Sets the end of a fixed time period.
+         * 
+         * @return builder
+         * 
+         */
         public Builder endDate(@Nullable String endDate) {
             $.endDate = endDate;
             return this;
         }
 
+        /**
+         * @param lastingDate Sets the start of a fixed time period.
+         * 
+         * @return builder
+         * 
+         */
         public Builder lastingDate(@Nullable String lastingDate) {
             $.lastingDate = lastingDate;
             return this;
         }
 
+        /**
+         * @param lastingDuration Specifies the end of a time period as a duration relative to the `lastingDate`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder lastingDuration(@Nullable String lastingDuration) {
             $.lastingDuration = lastingDuration;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param matchOperator Specifies how to define the range of time.
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchOperator(@Nullable String matchOperator) {
             $.matchOperator = matchOperator;
             return this;
         }
 
+        /**
+         * @param repeatBeginDate Sets the start of the initial time period.
+         * 
+         * @return builder
+         * 
+         */
         public Builder repeatBeginDate(@Nullable String repeatBeginDate) {
             $.repeatBeginDate = repeatBeginDate;
             return this;
         }
 
+        /**
+         * @param repeatDuration Sets the duration of each repeating time period.
+         * 
+         * @return builder
+         * 
+         */
         public Builder repeatDuration(@Nullable String repeatDuration) {
             $.repeatDuration = repeatDuration;
             return this;
         }
 
+        /**
+         * @param repeatInterval Sets the time between each repeating time period&#39;s starting points.
+         * 
+         * @return builder
+         * 
+         */
         public Builder repeatInterval(@Nullable String repeatInterval) {
             $.repeatInterval = repeatInterval;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

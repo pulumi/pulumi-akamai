@@ -15,25 +15,57 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShape {
+    /**
+     * @return Defines a circle with a specified `radius` from its `center` point.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShape> circleShapes;
     private @Nullable List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePointShape> pointShapes;
+    /**
+     * @return Defines a polygon from a series of connected points.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShape> polygonShapes;
+    /**
+     * @return Defines a rectangle&#39;s `width` and `height` relative to an `anchor` point at the top left corner.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShape> rectangleShapes;
+    /**
+     * @return Identifies a combined shape based on a set of other shapes. You can use a full JSON object to represent a union or an array of shapes that describe it.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeUnionShape> unionShapes;
 
     private GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShape() {}
+    /**
+     * @return Defines a circle with a specified `radius` from its `center` point.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShape> circleShapes() {
         return this.circleShapes == null ? List.of() : this.circleShapes;
     }
     public List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePointShape> pointShapes() {
         return this.pointShapes == null ? List.of() : this.pointShapes;
     }
+    /**
+     * @return Defines a polygon from a series of connected points.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShape> polygonShapes() {
         return this.polygonShapes == null ? List.of() : this.polygonShapes;
     }
+    /**
+     * @return Defines a rectangle&#39;s `width` and `height` relative to an `anchor` point at the top left corner.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShape> rectangleShapes() {
         return this.rectangleShapes == null ? List.of() : this.rectangleShapes;
     }
+    /**
+     * @return Identifies a combined shape based on a set of other shapes. You can use a full JSON object to represent a union or an array of shapes that describe it.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeUnionShape> unionShapes() {
         return this.unionShapes == null ? List.of() : this.unionShapes;
     }

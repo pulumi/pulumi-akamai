@@ -15,30 +15,62 @@ public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop
 
     public static final GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapePointArgs Empty = new GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapePointArgs();
 
+    /**
+     * The horizontal position of the point, measured in pixels.
+     * 
+     */
     @Import(name="x")
     private @Nullable Output<String> x;
 
+    /**
+     * @return The horizontal position of the point, measured in pixels.
+     * 
+     */
     public Optional<Output<String>> x() {
         return Optional.ofNullable(this.x);
     }
 
+    /**
+     * The horizontal position of the point, measured in pixels.
+     * 
+     */
     @Import(name="xVar")
     private @Nullable Output<String> xVar;
 
+    /**
+     * @return The horizontal position of the point, measured in pixels.
+     * 
+     */
     public Optional<Output<String>> xVar() {
         return Optional.ofNullable(this.xVar);
     }
 
+    /**
+     * The vertical position of the point, measured in pixels.
+     * 
+     */
     @Import(name="y")
     private @Nullable Output<String> y;
 
+    /**
+     * @return The vertical position of the point, measured in pixels.
+     * 
+     */
     public Optional<Output<String>> y() {
         return Optional.ofNullable(this.y);
     }
 
+    /**
+     * The vertical position of the point, measured in pixels.
+     * 
+     */
     @Import(name="yVar")
     private @Nullable Output<String> yVar;
 
+    /**
+     * @return The vertical position of the point, measured in pixels.
+     * 
+     */
     public Optional<Output<String>> yVar() {
         return Optional.ofNullable(this.yVar);
     }
@@ -70,38 +102,86 @@ public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop
             $ = new GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapePointArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param x The horizontal position of the point, measured in pixels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder x(@Nullable Output<String> x) {
             $.x = x;
             return this;
         }
 
+        /**
+         * @param x The horizontal position of the point, measured in pixels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder x(String x) {
             return x(Output.of(x));
         }
 
+        /**
+         * @param xVar The horizontal position of the point, measured in pixels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder xVar(@Nullable Output<String> xVar) {
             $.xVar = xVar;
             return this;
         }
 
+        /**
+         * @param xVar The horizontal position of the point, measured in pixels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder xVar(String xVar) {
             return xVar(Output.of(xVar));
         }
 
+        /**
+         * @param y The vertical position of the point, measured in pixels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder y(@Nullable Output<String> y) {
             $.y = y;
             return this;
         }
 
+        /**
+         * @param y The vertical position of the point, measured in pixels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder y(String y) {
             return y(Output.of(y));
         }
 
+        /**
+         * @param yVar The vertical position of the point, measured in pixels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder yVar(@Nullable Output<String> yVar) {
             $.yVar = yVar;
             return this;
         }
 
+        /**
+         * @param yVar The vertical position of the point, measured in pixels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder yVar(String yVar) {
             return yVar(Output.of(yVar));
         }

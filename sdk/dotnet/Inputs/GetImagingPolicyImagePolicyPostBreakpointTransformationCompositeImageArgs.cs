@@ -14,6 +14,10 @@ namespace Pulumi.Akamai.Inputs
     {
         [Input("boxImages")]
         private InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxImageInputArgs>? _boxImages;
+
+        /// <summary>
+        /// A rectangular box, with a specified color and applied transformation.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxImageInputArgs> BoxImages
         {
             get => _boxImages ?? (_boxImages = new InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxImageInputArgs>());
@@ -22,6 +26,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("circleImages")]
         private InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageCircleImageInputArgs>? _circleImages;
+
+        /// <summary>
+        /// A rectangular box, with a specified color and applied transformation.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageCircleImageInputArgs> CircleImages
         {
             get => _circleImages ?? (_circleImages = new InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageCircleImageInputArgs>());
@@ -30,6 +38,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("textImages")]
         private InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImageInputArgs>? _textImages;
+
+        /// <summary>
+        /// A snippet of text. Defines font family and size, fill color, and outline stroke width and color.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImageInputArgs> TextImages
         {
             get => _textImages ?? (_textImages = new InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImageInputArgs>());
@@ -38,6 +50,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("urlImages")]
         private InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageInputArgs>? _urlImages;
+
+        /// <summary>
+        /// An image loaded from a URL.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageInputArgs> UrlImages
         {
             get => _urlImages ?? (_urlImages = new InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageInputArgs>());

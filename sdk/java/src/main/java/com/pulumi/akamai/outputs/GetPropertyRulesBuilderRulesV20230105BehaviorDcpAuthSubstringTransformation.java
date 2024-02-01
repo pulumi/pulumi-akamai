@@ -12,25 +12,65 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthSubstringTransformation {
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return The zero-based index offset of the last character to extract, where `-1` selects the remainder of the string. If the index is out of bound from the string&#39;s length, authentication may fail.
+     * 
+     */
     private @Nullable String substringEnd;
+    /**
+     * @return The zero-based index offset of the first character to extract. If the index is out of bound from the string&#39;s length, authentication may fail.
+     * 
+     */
     private @Nullable String substringStart;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthSubstringTransformation() {}
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return The zero-based index offset of the last character to extract, where `-1` selects the remainder of the string. If the index is out of bound from the string&#39;s length, authentication may fail.
+     * 
+     */
     public Optional<String> substringEnd() {
         return Optional.ofNullable(this.substringEnd);
     }
+    /**
+     * @return The zero-based index offset of the first character to extract. If the index is out of bound from the string&#39;s length, authentication may fail.
+     * 
+     */
     public Optional<String> substringStart() {
         return Optional.ofNullable(this.substringStart);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

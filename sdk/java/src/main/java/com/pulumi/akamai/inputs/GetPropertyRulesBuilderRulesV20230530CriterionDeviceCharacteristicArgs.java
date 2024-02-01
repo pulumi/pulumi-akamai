@@ -18,93 +18,197 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionDeviceCharacter
 
     public static final GetPropertyRulesBuilderRulesV20230530CriterionDeviceCharacteristicArgs Empty = new GetPropertyRulesBuilderRulesV20230530CriterionDeviceCharacteristicArgs();
 
+    /**
+     * When the `characteristic` expects a boolean value, this specifies the value.
+     * 
+     */
     @Import(name="booleanValue")
     private @Nullable Output<Boolean> booleanValue;
 
+    /**
+     * @return When the `characteristic` expects a boolean value, this specifies the value.
+     * 
+     */
     public Optional<Output<Boolean>> booleanValue() {
         return Optional.ofNullable(this.booleanValue);
     }
 
+    /**
+     * Aspect of the device or browser to match.
+     * 
+     */
     @Import(name="characteristic")
     private @Nullable Output<String> characteristic;
 
+    /**
+     * @return Aspect of the device or browser to match.
+     * 
+     */
     public Optional<Output<String>> characteristic() {
         return Optional.ofNullable(this.characteristic);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Sets a case-sensitive match for the `stringValue` field.
+     * 
+     */
     @Import(name="matchCaseSensitive")
     private @Nullable Output<Boolean> matchCaseSensitive;
 
+    /**
+     * @return Sets a case-sensitive match for the `stringValue` field.
+     * 
+     */
     public Optional<Output<Boolean>> matchCaseSensitive() {
         return Optional.ofNullable(this.matchCaseSensitive);
     }
 
+    /**
+     * Allows wildcards in the `stringValue` field, where `?` matches a single character and `*` matches zero or more characters.
+     * 
+     */
     @Import(name="matchWildcard")
     private @Nullable Output<Boolean> matchWildcard;
 
+    /**
+     * @return Allows wildcards in the `stringValue` field, where `?` matches a single character and `*` matches zero or more characters.
+     * 
+     */
     public Optional<Output<Boolean>> matchWildcard() {
         return Optional.ofNullable(this.matchWildcard);
     }
 
+    /**
+     * When the `characteristic` expects a numeric value, compares the specified `numericValue` against the matched client.
+     * 
+     */
     @Import(name="numericMatchOperator")
     private @Nullable Output<String> numericMatchOperator;
 
+    /**
+     * @return When the `characteristic` expects a numeric value, compares the specified `numericValue` against the matched client.
+     * 
+     */
     public Optional<Output<String>> numericMatchOperator() {
         return Optional.ofNullable(this.numericMatchOperator);
     }
 
+    /**
+     * When the `characteristic` expects a numeric value, this specifies the number.
+     * 
+     */
     @Import(name="numericValue")
     private @Nullable Output<Integer> numericValue;
 
+    /**
+     * @return When the `characteristic` expects a numeric value, this specifies the number.
+     * 
+     */
     public Optional<Output<Integer>> numericValue() {
         return Optional.ofNullable(this.numericValue);
     }
 
+    /**
+     * When the `characteristic` expects a string value, set this to `MATCHES_ONE_OF` to match against the `stringValue` set, otherwise set to `DOES_NOT_MATCH_ONE_OF` to exclude that set of values.
+     * 
+     */
     @Import(name="stringMatchOperator")
     private @Nullable Output<String> stringMatchOperator;
 
+    /**
+     * @return When the `characteristic` expects a string value, set this to `MATCHES_ONE_OF` to match against the `stringValue` set, otherwise set to `DOES_NOT_MATCH_ONE_OF` to exclude that set of values.
+     * 
+     */
     public Optional<Output<String>> stringMatchOperator() {
         return Optional.ofNullable(this.stringMatchOperator);
     }
 
+    /**
+     * When the `characteristic` expects a string, this specifies the set of values.
+     * 
+     */
     @Import(name="stringValues")
     private @Nullable Output<List<String>> stringValues;
 
+    /**
+     * @return When the `characteristic` expects a string, this specifies the set of values.
+     * 
+     */
     public Optional<Output<List<String>>> stringValues() {
         return Optional.ofNullable(this.stringValues);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
 
+    /**
+     * When the `characteristic` expects a version string value, compares the specified `versionValue` against the matched client, using the following operators: `IS`, `IS_MORE_THAN_OR_EQUAL`, `IS_MORE_THAN`, `IS_LESS_THAN_OR_EQUAL`, `IS_LESS_THAN`, `IS_NOT`.
+     * 
+     */
     @Import(name="versionMatchOperator")
     private @Nullable Output<String> versionMatchOperator;
 
+    /**
+     * @return When the `characteristic` expects a version string value, compares the specified `versionValue` against the matched client, using the following operators: `IS`, `IS_MORE_THAN_OR_EQUAL`, `IS_MORE_THAN`, `IS_LESS_THAN_OR_EQUAL`, `IS_LESS_THAN`, `IS_NOT`.
+     * 
+     */
     public Optional<Output<String>> versionMatchOperator() {
         return Optional.ofNullable(this.versionMatchOperator);
     }
 
+    /**
+     * When the `characteristic` expects a version number, this specifies it as a string.
+     * 
+     */
     @Import(name="versionValue")
     private @Nullable Output<String> versionValue;
 
+    /**
+     * @return When the `characteristic` expects a version number, this specifies it as a string.
+     * 
+     */
     public Optional<Output<String>> versionValue() {
         return Optional.ofNullable(this.versionValue);
     }
@@ -145,123 +249,285 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionDeviceCharacter
             $ = new GetPropertyRulesBuilderRulesV20230530CriterionDeviceCharacteristicArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param booleanValue When the `characteristic` expects a boolean value, this specifies the value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder booleanValue(@Nullable Output<Boolean> booleanValue) {
             $.booleanValue = booleanValue;
             return this;
         }
 
+        /**
+         * @param booleanValue When the `characteristic` expects a boolean value, this specifies the value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder booleanValue(Boolean booleanValue) {
             return booleanValue(Output.of(booleanValue));
         }
 
+        /**
+         * @param characteristic Aspect of the device or browser to match.
+         * 
+         * @return builder
+         * 
+         */
         public Builder characteristic(@Nullable Output<String> characteristic) {
             $.characteristic = characteristic;
             return this;
         }
 
+        /**
+         * @param characteristic Aspect of the device or browser to match.
+         * 
+         * @return builder
+         * 
+         */
         public Builder characteristic(String characteristic) {
             return characteristic(Output.of(characteristic));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param matchCaseSensitive Sets a case-sensitive match for the `stringValue` field.
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchCaseSensitive(@Nullable Output<Boolean> matchCaseSensitive) {
             $.matchCaseSensitive = matchCaseSensitive;
             return this;
         }
 
+        /**
+         * @param matchCaseSensitive Sets a case-sensitive match for the `stringValue` field.
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchCaseSensitive(Boolean matchCaseSensitive) {
             return matchCaseSensitive(Output.of(matchCaseSensitive));
         }
 
+        /**
+         * @param matchWildcard Allows wildcards in the `stringValue` field, where `?` matches a single character and `*` matches zero or more characters.
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchWildcard(@Nullable Output<Boolean> matchWildcard) {
             $.matchWildcard = matchWildcard;
             return this;
         }
 
+        /**
+         * @param matchWildcard Allows wildcards in the `stringValue` field, where `?` matches a single character and `*` matches zero or more characters.
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchWildcard(Boolean matchWildcard) {
             return matchWildcard(Output.of(matchWildcard));
         }
 
+        /**
+         * @param numericMatchOperator When the `characteristic` expects a numeric value, compares the specified `numericValue` against the matched client.
+         * 
+         * @return builder
+         * 
+         */
         public Builder numericMatchOperator(@Nullable Output<String> numericMatchOperator) {
             $.numericMatchOperator = numericMatchOperator;
             return this;
         }
 
+        /**
+         * @param numericMatchOperator When the `characteristic` expects a numeric value, compares the specified `numericValue` against the matched client.
+         * 
+         * @return builder
+         * 
+         */
         public Builder numericMatchOperator(String numericMatchOperator) {
             return numericMatchOperator(Output.of(numericMatchOperator));
         }
 
+        /**
+         * @param numericValue When the `characteristic` expects a numeric value, this specifies the number.
+         * 
+         * @return builder
+         * 
+         */
         public Builder numericValue(@Nullable Output<Integer> numericValue) {
             $.numericValue = numericValue;
             return this;
         }
 
+        /**
+         * @param numericValue When the `characteristic` expects a numeric value, this specifies the number.
+         * 
+         * @return builder
+         * 
+         */
         public Builder numericValue(Integer numericValue) {
             return numericValue(Output.of(numericValue));
         }
 
+        /**
+         * @param stringMatchOperator When the `characteristic` expects a string value, set this to `MATCHES_ONE_OF` to match against the `stringValue` set, otherwise set to `DOES_NOT_MATCH_ONE_OF` to exclude that set of values.
+         * 
+         * @return builder
+         * 
+         */
         public Builder stringMatchOperator(@Nullable Output<String> stringMatchOperator) {
             $.stringMatchOperator = stringMatchOperator;
             return this;
         }
 
+        /**
+         * @param stringMatchOperator When the `characteristic` expects a string value, set this to `MATCHES_ONE_OF` to match against the `stringValue` set, otherwise set to `DOES_NOT_MATCH_ONE_OF` to exclude that set of values.
+         * 
+         * @return builder
+         * 
+         */
         public Builder stringMatchOperator(String stringMatchOperator) {
             return stringMatchOperator(Output.of(stringMatchOperator));
         }
 
+        /**
+         * @param stringValues When the `characteristic` expects a string, this specifies the set of values.
+         * 
+         * @return builder
+         * 
+         */
         public Builder stringValues(@Nullable Output<List<String>> stringValues) {
             $.stringValues = stringValues;
             return this;
         }
 
+        /**
+         * @param stringValues When the `characteristic` expects a string, this specifies the set of values.
+         * 
+         * @return builder
+         * 
+         */
         public Builder stringValues(List<String> stringValues) {
             return stringValues(Output.of(stringValues));
         }
 
+        /**
+         * @param stringValues When the `characteristic` expects a string, this specifies the set of values.
+         * 
+         * @return builder
+         * 
+         */
         public Builder stringValues(String... stringValues) {
             return stringValues(List.of(stringValues));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }
 
+        /**
+         * @param versionMatchOperator When the `characteristic` expects a version string value, compares the specified `versionValue` against the matched client, using the following operators: `IS`, `IS_MORE_THAN_OR_EQUAL`, `IS_MORE_THAN`, `IS_LESS_THAN_OR_EQUAL`, `IS_LESS_THAN`, `IS_NOT`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder versionMatchOperator(@Nullable Output<String> versionMatchOperator) {
             $.versionMatchOperator = versionMatchOperator;
             return this;
         }
 
+        /**
+         * @param versionMatchOperator When the `characteristic` expects a version string value, compares the specified `versionValue` against the matched client, using the following operators: `IS`, `IS_MORE_THAN_OR_EQUAL`, `IS_MORE_THAN`, `IS_LESS_THAN_OR_EQUAL`, `IS_LESS_THAN`, `IS_NOT`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder versionMatchOperator(String versionMatchOperator) {
             return versionMatchOperator(Output.of(versionMatchOperator));
         }
 
+        /**
+         * @param versionValue When the `characteristic` expects a version number, this specifies it as a string.
+         * 
+         * @return builder
+         * 
+         */
         public Builder versionValue(@Nullable Output<String> versionValue) {
             $.versionValue = versionValue;
             return this;
         }
 
+        /**
+         * @param versionValue When the `characteristic` expects a version number, this specifies it as a string.
+         * 
+         * @return builder
+         * 
+         */
         public Builder versionValue(String versionValue) {
             return versionValue(Output.of(versionValue));
         }

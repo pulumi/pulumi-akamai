@@ -13,9 +13,21 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyTransformationScaleResult
     {
+        /// <summary>
+        /// Scaling factor for the input height to determine the output height of the image, where values between `0` and `1` decrease size. Image dimensions need to be non-zero positive numbers.
+        /// </summary>
         public readonly string? Height;
+        /// <summary>
+        /// Scaling factor for the input height to determine the output height of the image, where values between `0` and `1` decrease size. Image dimensions need to be non-zero positive numbers.
+        /// </summary>
         public readonly string? HeightVar;
+        /// <summary>
+        /// Scaling factor for the input width to determine the output width of the image, where `1` leaves the width unchanged. Values greater than `1` increase the image size. Image dimensions need to be non-zero positive numbers.
+        /// </summary>
         public readonly string? Width;
+        /// <summary>
+        /// Scaling factor for the input width to determine the output width of the image, where `1` leaves the width unchanged. Values greater than `1` increase the image size. Image dimensions need to be non-zero positive numbers.
+        /// </summary>
         public readonly string? WidthVar;
 
         [OutputConstructor]

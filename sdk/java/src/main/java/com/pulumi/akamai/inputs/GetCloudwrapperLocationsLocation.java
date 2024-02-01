@@ -18,30 +18,62 @@ public final class GetCloudwrapperLocationsLocation extends com.pulumi.resources
 
     public static final GetCloudwrapperLocationsLocation Empty = new GetCloudwrapperLocationsLocation();
 
+    /**
+     * Unique identifier of the location.
+     * 
+     */
     @Import(name="locationId", required=true)
     private Integer locationId;
 
+    /**
+     * @return Unique identifier of the location.
+     * 
+     */
     public Integer locationId() {
         return this.locationId;
     }
 
+    /**
+     * Name of the location.
+     * 
+     */
     @Import(name="locationName", required=true)
     private String locationName;
 
+    /**
+     * @return Name of the location.
+     * 
+     */
     public String locationName() {
         return this.locationName;
     }
 
+    /**
+     * Unique identifier of the multi CDN location.
+     * 
+     */
     @Import(name="multiCdnLocationId", required=true)
     private String multiCdnLocationId;
 
+    /**
+     * @return Unique identifier of the multi CDN location.
+     * 
+     */
     public String multiCdnLocationId() {
         return this.multiCdnLocationId;
     }
 
+    /**
+     * List of traffic types for the location.
+     * 
+     */
     @Import(name="trafficTypes")
     private @Nullable List<GetCloudwrapperLocationsLocationTrafficType> trafficTypes;
 
+    /**
+     * @return List of traffic types for the location.
+     * 
+     */
     public Optional<List<GetCloudwrapperLocationsLocationTrafficType>> trafficTypes() {
         return Optional.ofNullable(this.trafficTypes);
     }
@@ -73,26 +105,56 @@ public final class GetCloudwrapperLocationsLocation extends com.pulumi.resources
             $ = new GetCloudwrapperLocationsLocation(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param locationId Unique identifier of the location.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locationId(Integer locationId) {
             $.locationId = locationId;
             return this;
         }
 
+        /**
+         * @param locationName Name of the location.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locationName(String locationName) {
             $.locationName = locationName;
             return this;
         }
 
+        /**
+         * @param multiCdnLocationId Unique identifier of the multi CDN location.
+         * 
+         * @return builder
+         * 
+         */
         public Builder multiCdnLocationId(String multiCdnLocationId) {
             $.multiCdnLocationId = multiCdnLocationId;
             return this;
         }
 
+        /**
+         * @param trafficTypes List of traffic types for the location.
+         * 
+         * @return builder
+         * 
+         */
         public Builder trafficTypes(@Nullable List<GetCloudwrapperLocationsLocationTrafficType> trafficTypes) {
             $.trafficTypes = trafficTypes;
             return this;
         }
 
+        /**
+         * @param trafficTypes List of traffic types for the location.
+         * 
+         * @return builder
+         * 
+         */
         public Builder trafficTypes(GetCloudwrapperLocationsLocationTrafficType... trafficTypes) {
             return trafficTypes(List.of(trafficTypes));
         }

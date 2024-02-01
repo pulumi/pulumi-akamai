@@ -11,45 +11,125 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationAspectCrop {
+    /**
+     * @return Increases the size of the image canvas to achieve the requested aspect ratio instead of cropping the image. Use the Horizontal Offset and Vertical Offset settings to determine where to add the fully transparent pixels on the expanded image canvas.
+     * 
+     */
     private @Nullable String allowExpansion;
+    /**
+     * @return Increases the size of the image canvas to achieve the requested aspect ratio instead of cropping the image. Use the Horizontal Offset and Vertical Offset settings to determine where to add the fully transparent pixels on the expanded image canvas.
+     * 
+     */
     private @Nullable String allowExpansionVar;
+    /**
+     * @return The height term of the aspect ratio to crop.
+     * 
+     */
     private @Nullable String height;
+    /**
+     * @return The height term of the aspect ratio to crop.
+     * 
+     */
     private @Nullable String heightVar;
+    /**
+     * @return The width term of the aspect ratio to crop.
+     * 
+     */
     private @Nullable String width;
+    /**
+     * @return The width term of the aspect ratio to crop.
+     * 
+     */
     private @Nullable String widthVar;
+    /**
+     * @return Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+     * 
+     */
     private @Nullable String xPosition;
+    /**
+     * @return Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+     * 
+     */
     private @Nullable String xPositionVar;
+    /**
+     * @return Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+     * 
+     */
     private @Nullable String yPosition;
+    /**
+     * @return Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+     * 
+     */
     private @Nullable String yPositionVar;
 
     private GetImagingPolicyImagePolicyTransformationAspectCrop() {}
+    /**
+     * @return Increases the size of the image canvas to achieve the requested aspect ratio instead of cropping the image. Use the Horizontal Offset and Vertical Offset settings to determine where to add the fully transparent pixels on the expanded image canvas.
+     * 
+     */
     public Optional<String> allowExpansion() {
         return Optional.ofNullable(this.allowExpansion);
     }
+    /**
+     * @return Increases the size of the image canvas to achieve the requested aspect ratio instead of cropping the image. Use the Horizontal Offset and Vertical Offset settings to determine where to add the fully transparent pixels on the expanded image canvas.
+     * 
+     */
     public Optional<String> allowExpansionVar() {
         return Optional.ofNullable(this.allowExpansionVar);
     }
+    /**
+     * @return The height term of the aspect ratio to crop.
+     * 
+     */
     public Optional<String> height() {
         return Optional.ofNullable(this.height);
     }
+    /**
+     * @return The height term of the aspect ratio to crop.
+     * 
+     */
     public Optional<String> heightVar() {
         return Optional.ofNullable(this.heightVar);
     }
+    /**
+     * @return The width term of the aspect ratio to crop.
+     * 
+     */
     public Optional<String> width() {
         return Optional.ofNullable(this.width);
     }
+    /**
+     * @return The width term of the aspect ratio to crop.
+     * 
+     */
     public Optional<String> widthVar() {
         return Optional.ofNullable(this.widthVar);
     }
+    /**
+     * @return Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+     * 
+     */
     public Optional<String> xPosition() {
         return Optional.ofNullable(this.xPosition);
     }
+    /**
+     * @return Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+     * 
+     */
     public Optional<String> xPositionVar() {
         return Optional.ofNullable(this.xPositionVar);
     }
+    /**
+     * @return Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+     * 
+     */
     public Optional<String> yPosition() {
         return Optional.ofNullable(this.yPosition);
     }
+    /**
+     * @return Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+     * 
+     */
     public Optional<String> yPositionVar() {
         return Optional.ofNullable(this.yPositionVar);
     }

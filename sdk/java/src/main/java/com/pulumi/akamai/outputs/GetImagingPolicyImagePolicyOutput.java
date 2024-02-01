@@ -12,37 +12,101 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyOutput {
+    /**
+     * @return Override the quality of image to serve when Image &amp; Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of images for users with faster connections.
+     * 
+     */
     private @Nullable String adaptiveQuality;
+    /**
+     * @return The graphics file formats allowed for browser specific results.
+     * 
+     */
     private @Nullable List<String> allowedFormats;
+    /**
+     * @return The forced extra formats for the `imFormat` query parameter, which requests a specific browser type. By default, Image and Video Manager detects the browser and returns the appropriate image.
+     * 
+     */
     private @Nullable List<String> forcedFormats;
+    /**
+     * @return Mutually exclusive with quality. The perceptual quality to use when comparing resulting images, which overrides the `quality` setting. Perceptual quality tunes each image format&#39;s quality parameter dynamically based on the human-perceived quality of the output image. This can result in better byte savings (as compared to using regular quality) as many images can be encoded at a much lower quality without compromising perception of the image. In addition, certain images may need to be encoded at a slightly higher quality in order to maintain human-perceived quality. Values are tiered `high`, `mediumHigh`, `medium`, `mediumLow`, or `low`.
+     * 
+     */
     private @Nullable String perceptualQuality;
+    /**
+     * @return Only applies with perceptualQuality set. Sets a minimum image quality to respect when using perceptual quality. Perceptual quality will not reduce the quality below this value even if it determines the compressed image to be acceptably visually similar.
+     * 
+     */
     private @Nullable String perceptualQualityFloor;
+    /**
+     * @return Mutually exclusive with quality. The perceptual quality to use when comparing resulting images, which overrides the `quality` setting. Perceptual quality tunes each image format&#39;s quality parameter dynamically based on the human-perceived quality of the output image. This can result in better byte savings (as compared to using regular quality) as many images can be encoded at a much lower quality without compromising perception of the image. In addition, certain images may need to be encoded at a slightly higher quality in order to maintain human-perceived quality. Values are tiered `high`, `mediumHigh`, `medium`, `mediumLow`, or `low`.
+     * 
+     */
     private @Nullable String perceptualQualityVar;
+    /**
+     * @return Mutually exclusive with perceptualQuality, used by default if neither is specified. The chosen quality of the output images. Using a quality value from 1-100 resembles JPEG quality across output formats.
+     * 
+     */
     private @Nullable String quality;
+    /**
+     * @return Mutually exclusive with perceptualQuality, used by default if neither is specified. The chosen quality of the output images. Using a quality value from 1-100 resembles JPEG quality across output formats.
+     * 
+     */
     private @Nullable String qualityVar;
 
     private GetImagingPolicyImagePolicyOutput() {}
+    /**
+     * @return Override the quality of image to serve when Image &amp; Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of images for users with faster connections.
+     * 
+     */
     public Optional<String> adaptiveQuality() {
         return Optional.ofNullable(this.adaptiveQuality);
     }
+    /**
+     * @return The graphics file formats allowed for browser specific results.
+     * 
+     */
     public List<String> allowedFormats() {
         return this.allowedFormats == null ? List.of() : this.allowedFormats;
     }
+    /**
+     * @return The forced extra formats for the `imFormat` query parameter, which requests a specific browser type. By default, Image and Video Manager detects the browser and returns the appropriate image.
+     * 
+     */
     public List<String> forcedFormats() {
         return this.forcedFormats == null ? List.of() : this.forcedFormats;
     }
+    /**
+     * @return Mutually exclusive with quality. The perceptual quality to use when comparing resulting images, which overrides the `quality` setting. Perceptual quality tunes each image format&#39;s quality parameter dynamically based on the human-perceived quality of the output image. This can result in better byte savings (as compared to using regular quality) as many images can be encoded at a much lower quality without compromising perception of the image. In addition, certain images may need to be encoded at a slightly higher quality in order to maintain human-perceived quality. Values are tiered `high`, `mediumHigh`, `medium`, `mediumLow`, or `low`.
+     * 
+     */
     public Optional<String> perceptualQuality() {
         return Optional.ofNullable(this.perceptualQuality);
     }
+    /**
+     * @return Only applies with perceptualQuality set. Sets a minimum image quality to respect when using perceptual quality. Perceptual quality will not reduce the quality below this value even if it determines the compressed image to be acceptably visually similar.
+     * 
+     */
     public Optional<String> perceptualQualityFloor() {
         return Optional.ofNullable(this.perceptualQualityFloor);
     }
+    /**
+     * @return Mutually exclusive with quality. The perceptual quality to use when comparing resulting images, which overrides the `quality` setting. Perceptual quality tunes each image format&#39;s quality parameter dynamically based on the human-perceived quality of the output image. This can result in better byte savings (as compared to using regular quality) as many images can be encoded at a much lower quality without compromising perception of the image. In addition, certain images may need to be encoded at a slightly higher quality in order to maintain human-perceived quality. Values are tiered `high`, `mediumHigh`, `medium`, `mediumLow`, or `low`.
+     * 
+     */
     public Optional<String> perceptualQualityVar() {
         return Optional.ofNullable(this.perceptualQualityVar);
     }
+    /**
+     * @return Mutually exclusive with perceptualQuality, used by default if neither is specified. The chosen quality of the output images. Using a quality value from 1-100 resembles JPEG quality across output formats.
+     * 
+     */
     public Optional<String> quality() {
         return Optional.ofNullable(this.quality);
     }
+    /**
+     * @return Mutually exclusive with perceptualQuality, used by default if neither is specified. The chosen quality of the output images. Using a quality value from 1-100 resembles JPEG quality across output formats.
+     * 
+     */
     public Optional<String> qualityVar() {
         return Optional.ofNullable(this.qualityVar);
     }

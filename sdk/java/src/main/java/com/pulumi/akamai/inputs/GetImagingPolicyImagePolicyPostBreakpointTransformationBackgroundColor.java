@@ -14,16 +14,32 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationBackgr
 
     public static final GetImagingPolicyImagePolicyPostBreakpointTransformationBackgroundColor Empty = new GetImagingPolicyImagePolicyPostBreakpointTransformationBackgroundColor();
 
+    /**
+     * The hexadecimal CSS color value for the background.
+     * 
+     */
     @Import(name="color")
     private @Nullable String color;
 
+    /**
+     * @return The hexadecimal CSS color value for the background.
+     * 
+     */
     public Optional<String> color() {
         return Optional.ofNullable(this.color);
     }
 
+    /**
+     * The hexadecimal CSS color value for the background.
+     * 
+     */
     @Import(name="colorVar")
     private @Nullable String colorVar;
 
+    /**
+     * @return The hexadecimal CSS color value for the background.
+     * 
+     */
     public Optional<String> colorVar() {
         return Optional.ofNullable(this.colorVar);
     }
@@ -53,11 +69,23 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationBackgr
             $ = new GetImagingPolicyImagePolicyPostBreakpointTransformationBackgroundColor(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param color The hexadecimal CSS color value for the background.
+         * 
+         * @return builder
+         * 
+         */
         public Builder color(@Nullable String color) {
             $.color = color;
             return this;
         }
 
+        /**
+         * @param colorVar The hexadecimal CSS color value for the background.
+         * 
+         * @return builder
+         * 
+         */
         public Builder colorVar(@Nullable String colorVar) {
             $.colorVar = colorVar;
             return this;

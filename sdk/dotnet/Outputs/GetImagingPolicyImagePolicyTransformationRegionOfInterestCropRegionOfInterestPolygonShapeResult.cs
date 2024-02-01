@@ -13,6 +13,9 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapeResult
     {
+        /// <summary>
+        /// Series of PointShapeType objects. The last and first points connect to close the shape automatically.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapePointResult> Points;
 
         [OutputConstructor]

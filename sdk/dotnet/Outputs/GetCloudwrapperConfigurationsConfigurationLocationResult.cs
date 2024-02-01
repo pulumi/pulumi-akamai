@@ -13,9 +13,21 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetCloudwrapperConfigurationsConfigurationLocationResult
     {
+        /// <summary>
+        /// The capacity assigned to this configuration's location.
+        /// </summary>
         public readonly Outputs.GetCloudwrapperConfigurationsConfigurationLocationCapacityResult Capacity;
+        /// <summary>
+        /// Additional comments provided by user.
+        /// </summary>
         public readonly string Comments;
+        /// <summary>
+        /// The name of the map.
+        /// </summary>
         public readonly string MapName;
+        /// <summary>
+        /// Unique identifier for the location and traffic type combination.
+        /// </summary>
         public readonly int TrafficTypeId;
 
         [OutputConstructor]

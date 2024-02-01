@@ -13,37 +13,101 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorHsafEipBinding {
+    /**
+     * @return Whether to pull the serial number from the variable value set in the `advanced` behavior. Work with your Akamai Services team to add the `advanced` behavior earlier in your property to extract and apply the `AKA_PM_EIP_HSAF_SERIAL` variable.
+     * 
+     */
     private @Nullable Boolean customExtractedSerial;
+    /**
+     * @return Enables HSAF for Edge IP Binding customers with a large footprint.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Specifies the maximum value for the hash range, from 3 through 2046. This needs to be higher than `hashMinValue`.
+     * 
+     */
     private @Nullable Integer hashMaxValue;
+    /**
+     * @return Specifies the minimum value for the HSAF hash range, from 2 through 2045. This needs to be lower than `hashMaxValue`.
+     * 
+     */
     private @Nullable Integer hashMinValue;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return Specifies where the behavior is applied.
+     * 
+     */
     private @Nullable String tier;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorHsafEipBinding() {}
+    /**
+     * @return Whether to pull the serial number from the variable value set in the `advanced` behavior. Work with your Akamai Services team to add the `advanced` behavior earlier in your property to extract and apply the `AKA_PM_EIP_HSAF_SERIAL` variable.
+     * 
+     */
     public Optional<Boolean> customExtractedSerial() {
         return Optional.ofNullable(this.customExtractedSerial);
     }
+    /**
+     * @return Enables HSAF for Edge IP Binding customers with a large footprint.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Specifies the maximum value for the hash range, from 3 through 2046. This needs to be higher than `hashMinValue`.
+     * 
+     */
     public Optional<Integer> hashMaxValue() {
         return Optional.ofNullable(this.hashMaxValue);
     }
+    /**
+     * @return Specifies the minimum value for the HSAF hash range, from 2 through 2045. This needs to be lower than `hashMaxValue`.
+     * 
+     */
     public Optional<Integer> hashMinValue() {
         return Optional.ofNullable(this.hashMinValue);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return Specifies where the behavior is applied.
+     * 
+     */
     public Optional<String> tier() {
         return Optional.ofNullable(this.tier);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

@@ -12,36 +12,69 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaOptimizationInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Sets the type of media content to optimize.
+        /// </summary>
         [Input("behavior")]
         public Input<string>? Behavior { get; set; }
 
+        /// <summary>
+        /// The type of DVR.
+        /// </summary>
         [Input("dvrType")]
         public Input<string>? DvrType { get; set; }
 
+        /// <summary>
+        /// Set the duration for your media, or `0m` if a DVR is not required.
+        /// </summary>
         [Input("dvrWindow")]
         public Input<string>? DvrWindow { get; set; }
 
+        /// <summary>
+        /// Enables ultra low latency (ULL) streaming. ULL reduces latency and decreases overall transfer time of live streams.
+        /// </summary>
         [Input("enableUllStreaming")]
         public Input<bool>? EnableUllStreaming { get; set; }
 
+        /// <summary>
+        /// This specifies when the live media event ends.
+        /// </summary>
         [Input("endTime")]
         public Input<string>? EndTime { get; set; }
 
+        /// <summary>
+        /// The type of live media.
+        /// </summary>
         [Input("liveType")]
         public Input<string>? LiveType { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public Input<bool>? Locked { get; set; }
 
+        /// <summary>
+        /// Allows you to configure advanced media options.
+        /// </summary>
         [Input("showAdvanced")]
         public Input<bool>? ShowAdvanced { get; set; }
 
+        /// <summary>
+        /// This specifies when the live media event begins.
+        /// </summary>
         [Input("startTime")]
         public Input<string>? StartTime { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public Input<string>? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public Input<string>? Uuid { get; set; }
 

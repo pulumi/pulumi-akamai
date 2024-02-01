@@ -12,25 +12,65 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancingDataCenterFailoverRule {
+    /**
+     * @return When enabled, interprets the path specified by `context_root` as an absolute server path, for example to reference a site-down page. Otherwise when disabled, the path is appended to the request.
+     * 
+     */
     private @Nullable Boolean absolutePath;
+    /**
+     * @return Specifies the path to use in the forwarding request, typically the root (`/`) when failing over to a different data center, or a full path such as `/static/error.html` when failing over to an error page.
+     * 
+     */
     private @Nullable String contextRoot;
+    /**
+     * @return The hostname of the data center to fail over to.
+     * 
+     */
     private @Nullable String failoverHostname;
+    /**
+     * @return Allows you to modify the request&#39;s hostname or path.
+     * 
+     */
     private @Nullable Boolean modifyRequest;
+    /**
+     * @return Overrides the request&#39;s hostname with the `failover_hostname`.
+     * 
+     */
     private @Nullable Boolean overrideHostname;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancingDataCenterFailoverRule() {}
+    /**
+     * @return When enabled, interprets the path specified by `context_root` as an absolute server path, for example to reference a site-down page. Otherwise when disabled, the path is appended to the request.
+     * 
+     */
     public Optional<Boolean> absolutePath() {
         return Optional.ofNullable(this.absolutePath);
     }
+    /**
+     * @return Specifies the path to use in the forwarding request, typically the root (`/`) when failing over to a different data center, or a full path such as `/static/error.html` when failing over to an error page.
+     * 
+     */
     public Optional<String> contextRoot() {
         return Optional.ofNullable(this.contextRoot);
     }
+    /**
+     * @return The hostname of the data center to fail over to.
+     * 
+     */
     public Optional<String> failoverHostname() {
         return Optional.ofNullable(this.failoverHostname);
     }
+    /**
+     * @return Allows you to modify the request&#39;s hostname or path.
+     * 
+     */
     public Optional<Boolean> modifyRequest() {
         return Optional.ofNullable(this.modifyRequest);
     }
+    /**
+     * @return Overrides the request&#39;s hostname with the `failover_hostname`.
+     * 
+     */
     public Optional<Boolean> overrideHostname() {
         return Optional.ofNullable(this.overrideHostname);
     }

@@ -15,9 +15,17 @@ public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop
 
     public static final GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapeArgs Empty = new GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapeArgs();
 
+    /**
+     * Series of PointShapeType objects. The last and first points connect to close the shape automatically.
+     * 
+     */
     @Import(name="points", required=true)
     private Output<List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapePointArgs>> points;
 
+    /**
+     * @return Series of PointShapeType objects. The last and first points connect to close the shape automatically.
+     * 
+     */
     public Output<List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapePointArgs>> points() {
         return this.points;
     }
@@ -46,15 +54,33 @@ public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop
             $ = new GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapeArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param points Series of PointShapeType objects. The last and first points connect to close the shape automatically.
+         * 
+         * @return builder
+         * 
+         */
         public Builder points(Output<List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapePointArgs>> points) {
             $.points = points;
             return this;
         }
 
+        /**
+         * @param points Series of PointShapeType objects. The last and first points connect to close the shape automatically.
+         * 
+         * @return builder
+         * 
+         */
         public Builder points(List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapePointArgs> points) {
             return points(Output.of(points));
         }
 
+        /**
+         * @param points Series of PointShapeType objects. The last and first points connect to close the shape automatically.
+         * 
+         * @return builder
+         * 
+         */
         public Builder points(GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapePointArgs... points) {
             return points(List.of(points));
         }

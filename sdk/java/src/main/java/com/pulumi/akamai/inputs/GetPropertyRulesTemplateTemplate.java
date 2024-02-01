@@ -13,16 +13,32 @@ public final class GetPropertyRulesTemplateTemplate extends com.pulumi.resources
 
     public static final GetPropertyRulesTemplateTemplate Empty = new GetPropertyRulesTemplateTemplate();
 
+    /**
+     * Content of the template as string
+     * 
+     */
     @Import(name="templateData", required=true)
     private String templateData;
 
+    /**
+     * @return Content of the template as string
+     * 
+     */
     public String templateData() {
         return this.templateData;
     }
 
+    /**
+     * Directory points to a folder, which contains snippets to include into template.
+     * 
+     */
     @Import(name="templateDir", required=true)
     private String templateDir;
 
+    /**
+     * @return Directory points to a folder, which contains snippets to include into template.
+     * 
+     */
     public String templateDir() {
         return this.templateDir;
     }
@@ -52,11 +68,23 @@ public final class GetPropertyRulesTemplateTemplate extends com.pulumi.resources
             $ = new GetPropertyRulesTemplateTemplate(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param templateData Content of the template as string
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateData(String templateData) {
             $.templateData = templateData;
             return this;
         }
 
+        /**
+         * @param templateDir Directory points to a folder, which contains snippets to include into template.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateDir(String templateDir) {
             $.templateDir = templateDir;
             return this;

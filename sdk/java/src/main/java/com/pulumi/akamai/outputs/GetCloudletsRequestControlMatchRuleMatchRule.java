@@ -16,37 +16,101 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCloudletsRequestControlMatchRuleMatchRule {
+    /**
+     * @return If set to allow, the request is sent to origin when all conditions are true. If deny, the request is denied when all conditions are true. If denybranded, the request is denied and rerouted according to the configuration of the Request Control behavior
+     * 
+     */
     private String allowDeny;
+    /**
+     * @return If set to true, disables a rule so it is not evaluated against incoming requests.
+     * 
+     */
     private @Nullable Boolean disabled;
+    /**
+     * @return The end time for this match (in seconds since the epoch)
+     * 
+     */
     private @Nullable Integer end;
+    /**
+     * @return Defines a set of match objects
+     * 
+     */
     private @Nullable List<GetCloudletsRequestControlMatchRuleMatchRuleMatch> matches;
+    /**
+     * @return Is used in some cloudlets to support default rules (rule that is always matched)
+     * 
+     */
     private @Nullable Boolean matchesAlways;
+    /**
+     * @return The name of the rule
+     * 
+     */
     private @Nullable String name;
+    /**
+     * @return The start time for this match (in seconds since the epoch)
+     * 
+     */
     private @Nullable Integer start;
+    /**
+     * @return The type of Cloudlet the rule is for
+     * 
+     */
     private String type;
 
     private GetCloudletsRequestControlMatchRuleMatchRule() {}
+    /**
+     * @return If set to allow, the request is sent to origin when all conditions are true. If deny, the request is denied when all conditions are true. If denybranded, the request is denied and rerouted according to the configuration of the Request Control behavior
+     * 
+     */
     public String allowDeny() {
         return this.allowDeny;
     }
+    /**
+     * @return If set to true, disables a rule so it is not evaluated against incoming requests.
+     * 
+     */
     public Optional<Boolean> disabled() {
         return Optional.ofNullable(this.disabled);
     }
+    /**
+     * @return The end time for this match (in seconds since the epoch)
+     * 
+     */
     public Optional<Integer> end() {
         return Optional.ofNullable(this.end);
     }
+    /**
+     * @return Defines a set of match objects
+     * 
+     */
     public List<GetCloudletsRequestControlMatchRuleMatchRuleMatch> matches() {
         return this.matches == null ? List.of() : this.matches;
     }
+    /**
+     * @return Is used in some cloudlets to support default rules (rule that is always matched)
+     * 
+     */
     public Optional<Boolean> matchesAlways() {
         return Optional.ofNullable(this.matchesAlways);
     }
+    /**
+     * @return The name of the rule
+     * 
+     */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
+    /**
+     * @return The start time for this match (in seconds since the epoch)
+     * 
+     */
     public Optional<Integer> start() {
         return Optional.ofNullable(this.start);
     }
+    /**
+     * @return The type of Cloudlet the rule is for
+     * 
+     */
     public String type() {
         return this.type;
     }

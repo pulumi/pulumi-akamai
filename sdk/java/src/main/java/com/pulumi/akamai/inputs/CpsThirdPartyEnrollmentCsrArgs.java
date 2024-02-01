@@ -16,44 +16,92 @@ public final class CpsThirdPartyEnrollmentCsrArgs extends com.pulumi.resources.R
 
     public static final CpsThirdPartyEnrollmentCsrArgs Empty = new CpsThirdPartyEnrollmentCsrArgs();
 
+    /**
+     * City where organization is located
+     * 
+     */
     @Import(name="city", required=true)
     private Output<String> city;
 
+    /**
+     * @return City where organization is located
+     * 
+     */
     public Output<String> city() {
         return this.city;
     }
 
+    /**
+     * The code of the country where organization is located
+     * 
+     */
     @Import(name="countryCode", required=true)
     private Output<String> countryCode;
 
+    /**
+     * @return The code of the country where organization is located
+     * 
+     */
     public Output<String> countryCode() {
         return this.countryCode;
     }
 
+    /**
+     * Name of organization used in all legal documents
+     * 
+     */
     @Import(name="organization", required=true)
     private Output<String> organization;
 
+    /**
+     * @return Name of organization used in all legal documents
+     * 
+     */
     public Output<String> organization() {
         return this.organization;
     }
 
+    /**
+     * Organizational unit of organization
+     * 
+     */
     @Import(name="organizationalUnit", required=true)
     private Output<String> organizationalUnit;
 
+    /**
+     * @return Organizational unit of organization
+     * 
+     */
     public Output<String> organizationalUnit() {
         return this.organizationalUnit;
     }
 
+    /**
+     * For the Let&#39;s Encrypt Domain Validated (DV) SAN certificates, the preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default
+     * 
+     */
     @Import(name="preferredTrustChain")
     private @Nullable Output<String> preferredTrustChain;
 
+    /**
+     * @return For the Let&#39;s Encrypt Domain Validated (DV) SAN certificates, the preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default
+     * 
+     */
     public Optional<Output<String>> preferredTrustChain() {
         return Optional.ofNullable(this.preferredTrustChain);
     }
 
+    /**
+     * State or province of organization location
+     * 
+     */
     @Import(name="state", required=true)
     private Output<String> state;
 
+    /**
+     * @return State or province of organization location
+     * 
+     */
     public Output<String> state() {
         return this.state;
     }
@@ -87,56 +135,128 @@ public final class CpsThirdPartyEnrollmentCsrArgs extends com.pulumi.resources.R
             $ = new CpsThirdPartyEnrollmentCsrArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param city City where organization is located
+         * 
+         * @return builder
+         * 
+         */
         public Builder city(Output<String> city) {
             $.city = city;
             return this;
         }
 
+        /**
+         * @param city City where organization is located
+         * 
+         * @return builder
+         * 
+         */
         public Builder city(String city) {
             return city(Output.of(city));
         }
 
+        /**
+         * @param countryCode The code of the country where organization is located
+         * 
+         * @return builder
+         * 
+         */
         public Builder countryCode(Output<String> countryCode) {
             $.countryCode = countryCode;
             return this;
         }
 
+        /**
+         * @param countryCode The code of the country where organization is located
+         * 
+         * @return builder
+         * 
+         */
         public Builder countryCode(String countryCode) {
             return countryCode(Output.of(countryCode));
         }
 
+        /**
+         * @param organization Name of organization used in all legal documents
+         * 
+         * @return builder
+         * 
+         */
         public Builder organization(Output<String> organization) {
             $.organization = organization;
             return this;
         }
 
+        /**
+         * @param organization Name of organization used in all legal documents
+         * 
+         * @return builder
+         * 
+         */
         public Builder organization(String organization) {
             return organization(Output.of(organization));
         }
 
+        /**
+         * @param organizationalUnit Organizational unit of organization
+         * 
+         * @return builder
+         * 
+         */
         public Builder organizationalUnit(Output<String> organizationalUnit) {
             $.organizationalUnit = organizationalUnit;
             return this;
         }
 
+        /**
+         * @param organizationalUnit Organizational unit of organization
+         * 
+         * @return builder
+         * 
+         */
         public Builder organizationalUnit(String organizationalUnit) {
             return organizationalUnit(Output.of(organizationalUnit));
         }
 
+        /**
+         * @param preferredTrustChain For the Let&#39;s Encrypt Domain Validated (DV) SAN certificates, the preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default
+         * 
+         * @return builder
+         * 
+         */
         public Builder preferredTrustChain(@Nullable Output<String> preferredTrustChain) {
             $.preferredTrustChain = preferredTrustChain;
             return this;
         }
 
+        /**
+         * @param preferredTrustChain For the Let&#39;s Encrypt Domain Validated (DV) SAN certificates, the preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default
+         * 
+         * @return builder
+         * 
+         */
         public Builder preferredTrustChain(String preferredTrustChain) {
             return preferredTrustChain(Output.of(preferredTrustChain));
         }
 
+        /**
+         * @param state State or province of organization location
+         * 
+         * @return builder
+         * 
+         */
         public Builder state(Output<String> state) {
             $.state = state;
             return this;
         }
 
+        /**
+         * @param state State or province of organization location
+         * 
+         * @return builder
+         * 
+         */
         public Builder state(String state) {
             return state(Output.of(state));
         }

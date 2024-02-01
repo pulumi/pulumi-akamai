@@ -18,23 +18,47 @@ public final class CloudwrapperConfigurationLocationArgs extends com.pulumi.reso
 
     public static final CloudwrapperConfigurationLocationArgs Empty = new CloudwrapperConfigurationLocationArgs();
 
+    /**
+     * The capacity assigned to this configuration&#39;s location
+     * 
+     */
     @Import(name="capacity")
     private @Nullable Output<CloudwrapperConfigurationLocationCapacityArgs> capacity;
 
+    /**
+     * @return The capacity assigned to this configuration&#39;s location
+     * 
+     */
     public Optional<Output<CloudwrapperConfigurationLocationCapacityArgs>> capacity() {
         return Optional.ofNullable(this.capacity);
     }
 
+    /**
+     * Additional comments provided by the user.
+     * 
+     */
     @Import(name="comments", required=true)
     private Output<String> comments;
 
+    /**
+     * @return Additional comments provided by the user.
+     * 
+     */
     public Output<String> comments() {
         return this.comments;
     }
 
+    /**
+     * Unique identifier for the location and traffic type combination
+     * 
+     */
     @Import(name="trafficTypeId", required=true)
     private Output<Integer> trafficTypeId;
 
+    /**
+     * @return Unique identifier for the location and traffic type combination
+     * 
+     */
     public Output<Integer> trafficTypeId() {
         return this.trafficTypeId;
     }
@@ -65,29 +89,65 @@ public final class CloudwrapperConfigurationLocationArgs extends com.pulumi.reso
             $ = new CloudwrapperConfigurationLocationArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param capacity The capacity assigned to this configuration&#39;s location
+         * 
+         * @return builder
+         * 
+         */
         public Builder capacity(@Nullable Output<CloudwrapperConfigurationLocationCapacityArgs> capacity) {
             $.capacity = capacity;
             return this;
         }
 
+        /**
+         * @param capacity The capacity assigned to this configuration&#39;s location
+         * 
+         * @return builder
+         * 
+         */
         public Builder capacity(CloudwrapperConfigurationLocationCapacityArgs capacity) {
             return capacity(Output.of(capacity));
         }
 
+        /**
+         * @param comments Additional comments provided by the user.
+         * 
+         * @return builder
+         * 
+         */
         public Builder comments(Output<String> comments) {
             $.comments = comments;
             return this;
         }
 
+        /**
+         * @param comments Additional comments provided by the user.
+         * 
+         * @return builder
+         * 
+         */
         public Builder comments(String comments) {
             return comments(Output.of(comments));
         }
 
+        /**
+         * @param trafficTypeId Unique identifier for the location and traffic type combination
+         * 
+         * @return builder
+         * 
+         */
         public Builder trafficTypeId(Output<Integer> trafficTypeId) {
             $.trafficTypeId = trafficTypeId;
             return this;
         }
 
+        /**
+         * @param trafficTypeId Unique identifier for the location and traffic type combination
+         * 
+         * @return builder
+         * 
+         */
         public Builder trafficTypeId(Integer trafficTypeId) {
             return trafficTypeId(Output.of(trafficTypeId));
         }

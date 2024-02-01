@@ -42,85 +42,261 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformation {
+    /**
+     * @return Places a specified `image` beside the source image. The API places the `image` on a major dimension, then aligns it on the minor dimension. Transparent pixels fill any area not covered by either image.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationAppend> appends;
+    /**
+     * @return Lets you change the height or width of an image (either by cropping or expanding the area) to an aspect ratio of your choosing.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationAspectCrop> aspectCrops;
+    /**
+     * @return Places a transparent image on a set background color. Color is specified in the typical CSS hexadecimal format.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationBackgroundColor> backgroundColors;
+    /**
+     * @return Applies a Gaussian blur to the image.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationBlur> blurs;
+    /**
+     * @return Changes any color in an image within the specified volume of the HSL colorspace to transparent or semitransparent. This transformation applies a &#39;green screen&#39; technique commonly used to isolate and remove background colors.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationChromaKey> chromaKeys;
+    /**
+     * @return Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationComposite> composites;
     private @Nullable List<GetImagingPolicyImagePolicyTransformationCompound> compounds;
+    /**
+     * @return Adjusts both the contrast and brightness of an image.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationContrast> contrasts;
+    /**
+     * @return Crops an image.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationCrop> crops;
+    /**
+     * @return Applies a method to detect faces in the source image and applies the rectangular crop on either the `biggest` face or `all` of the faces detected. Image and Video Manager tries to preserve faces in the image instead of using specified crop coordinates.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationFaceCrop> faceCrops;
+    /**
+     * @return Identifies prominent features of the source image, then crops around as many of these features as possible relative to the specified `width` and `height` values.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationFeatureCrop> featureCrops;
+    /**
+     * @return Resizes an image to fit within a specific size box and then uses a fill of that same image to cover any transparent space at the edges. By default the fill image has a Blur transformation with a sigma value of 8 applied, but the transformation can be customized using the fillTransformation parameter.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationFitAndFill> fitAndFills;
+    /**
+     * @return Distorts an image by randomly repositioning a set of control points along a specified grid. The transformed image appears _goopy_. Adjust the density of the grid and the degree of randomity. You can use this transformation to create watermarks for use in security.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationGoop> goops;
+    /**
+     * @return Restricts image color to shades of gray only.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationGrayscale> grayscales;
+    /**
+     * @return Adjusts the hue, saturation, and lightness (HSL) of an image. Hue is the number of degrees that colors rotate around the color wheel. Saturation is a multiplier to increase or decrease color saturation. Lightness is a multiplier to increase or decrease the lightness of an image. Other transformations can also affect color, such as `Grayscale` and `MaxColors`. If youre using more than one, consider the order to apply them for the desired results.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationHsl> hsls;
+    /**
+     * @return Identical to HSL except it replaces `lightness` with `value`. For example, if you reduce the `lightness` of a light green, almost white, image, the color turns a vibrant green. Reducing the `value` turns the image a darker color, close to grey. This happens because the original image color is very close to white.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationHsv> hsvs;
     private @Nullable List<GetImagingPolicyImagePolicyTransformationIfDimension> ifDimensions;
     private @Nullable List<GetImagingPolicyImagePolicyTransformationIfOrientation> ifOrientations;
+    /**
+     * @return Apply artistic transformations to images quickly and dynamically by specifying transformations with a query string appendedto the image URL.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationImQuery> imQueries;
+    /**
+     * @return Set the maximum number of colors in the images palette. Reducing the number of colors in an image can help to reduce file size.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationMaxColor> maxColors;
+    /**
+     * @return Flips an image horizontally, vertically, or both.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationMirror> mirrors;
+    /**
+     * @return Allows you to set all hues in an image to a single specified hue of your choosing. Mono Hue maintains the original color’s lightness and saturation but sets the hue to that of the specified value. This has the effect of making the image shades of the specified hue.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationMonoHue> monoHues;
+    /**
+     * @return Adjusts the level of transparency of an image. Use this transformation to make an image more or less transparent.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationOpacity> opacities;
+    /**
+     * @return Crops to a region around a specified area of interest relative to the specified `width` and `height` values.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop> regionOfInterestCrops;
+    /**
+     * @return Shrinks or expands an image relative to the image&#39;s specified dimensions. Image and Video Manager fills the expanded areas with transparency. Positive values shrink the side, while negative values expand it.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationRelativeCrop> relativeCrops;
+    /**
+     * @return Removes a specified color from an image and replaces it with transparent pixels. This transformation is ideal for removing solid background colors from product images photographed on clean, consistent backgrounds without any shadows.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationRemoveColor> removeColors;
+    /**
+     * @return Resizes an image to a particular, absolute dimension. If you don&#39;t enter a `width` or a `height`, the image is resized with the `fit` aspect preservation mode, which selects a value for the missing dimension that preserves the image&#39;s aspect.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationResize> resizes;
+    /**
+     * @return Rotate the image around its center by indicating the degrees of rotation.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationRotate> rotates;
+    /**
+     * @return Changes the image&#39;s size to different dimensions relative to its starting size.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationScale> scales;
+    /**
+     * @return Slants an image into a parallelogram, as a percent of the starting dimension as represented in decimal format. You need to specify at least one axis property. Transparent pixels fill empty areas around the sheared image as needed, so it&#39;s often useful to use a `BackgroundColor` transformation for these areas.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationShears> shears;
+    /**
+     * @return Automatically crops uniform backgrounds from the edges of an image.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationTrim> trims;
+    /**
+     * @return Emphasizes edges and details in source images without distorting the colors. Although this effect is often referred to as _sharpening_ an image, it actually creates a blurred, inverted copy of the image known as an unsharp mask. Image and Video Manager combines the unsharp mask with the source image to create an image perceived as clearer.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationUnsharpMask> unsharpMasks;
 
     private GetImagingPolicyImagePolicyTransformation() {}
+    /**
+     * @return Places a specified `image` beside the source image. The API places the `image` on a major dimension, then aligns it on the minor dimension. Transparent pixels fill any area not covered by either image.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationAppend> appends() {
         return this.appends == null ? List.of() : this.appends;
     }
+    /**
+     * @return Lets you change the height or width of an image (either by cropping or expanding the area) to an aspect ratio of your choosing.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationAspectCrop> aspectCrops() {
         return this.aspectCrops == null ? List.of() : this.aspectCrops;
     }
+    /**
+     * @return Places a transparent image on a set background color. Color is specified in the typical CSS hexadecimal format.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationBackgroundColor> backgroundColors() {
         return this.backgroundColors == null ? List.of() : this.backgroundColors;
     }
+    /**
+     * @return Applies a Gaussian blur to the image.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationBlur> blurs() {
         return this.blurs == null ? List.of() : this.blurs;
     }
+    /**
+     * @return Changes any color in an image within the specified volume of the HSL colorspace to transparent or semitransparent. This transformation applies a &#39;green screen&#39; technique commonly used to isolate and remove background colors.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationChromaKey> chromaKeys() {
         return this.chromaKeys == null ? List.of() : this.chromaKeys;
     }
+    /**
+     * @return Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationComposite> composites() {
         return this.composites == null ? List.of() : this.composites;
     }
     public List<GetImagingPolicyImagePolicyTransformationCompound> compounds() {
         return this.compounds == null ? List.of() : this.compounds;
     }
+    /**
+     * @return Adjusts both the contrast and brightness of an image.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationContrast> contrasts() {
         return this.contrasts == null ? List.of() : this.contrasts;
     }
+    /**
+     * @return Crops an image.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationCrop> crops() {
         return this.crops == null ? List.of() : this.crops;
     }
+    /**
+     * @return Applies a method to detect faces in the source image and applies the rectangular crop on either the `biggest` face or `all` of the faces detected. Image and Video Manager tries to preserve faces in the image instead of using specified crop coordinates.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationFaceCrop> faceCrops() {
         return this.faceCrops == null ? List.of() : this.faceCrops;
     }
+    /**
+     * @return Identifies prominent features of the source image, then crops around as many of these features as possible relative to the specified `width` and `height` values.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationFeatureCrop> featureCrops() {
         return this.featureCrops == null ? List.of() : this.featureCrops;
     }
+    /**
+     * @return Resizes an image to fit within a specific size box and then uses a fill of that same image to cover any transparent space at the edges. By default the fill image has a Blur transformation with a sigma value of 8 applied, but the transformation can be customized using the fillTransformation parameter.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationFitAndFill> fitAndFills() {
         return this.fitAndFills == null ? List.of() : this.fitAndFills;
     }
+    /**
+     * @return Distorts an image by randomly repositioning a set of control points along a specified grid. The transformed image appears _goopy_. Adjust the density of the grid and the degree of randomity. You can use this transformation to create watermarks for use in security.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationGoop> goops() {
         return this.goops == null ? List.of() : this.goops;
     }
+    /**
+     * @return Restricts image color to shades of gray only.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationGrayscale> grayscales() {
         return this.grayscales == null ? List.of() : this.grayscales;
     }
+    /**
+     * @return Adjusts the hue, saturation, and lightness (HSL) of an image. Hue is the number of degrees that colors rotate around the color wheel. Saturation is a multiplier to increase or decrease color saturation. Lightness is a multiplier to increase or decrease the lightness of an image. Other transformations can also affect color, such as `Grayscale` and `MaxColors`. If youre using more than one, consider the order to apply them for the desired results.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationHsl> hsls() {
         return this.hsls == null ? List.of() : this.hsls;
     }
+    /**
+     * @return Identical to HSL except it replaces `lightness` with `value`. For example, if you reduce the `lightness` of a light green, almost white, image, the color turns a vibrant green. Reducing the `value` turns the image a darker color, close to grey. This happens because the original image color is very close to white.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationHsv> hsvs() {
         return this.hsvs == null ? List.of() : this.hsvs;
     }
@@ -130,45 +306,101 @@ public final class GetImagingPolicyImagePolicyTransformation {
     public List<GetImagingPolicyImagePolicyTransformationIfOrientation> ifOrientations() {
         return this.ifOrientations == null ? List.of() : this.ifOrientations;
     }
+    /**
+     * @return Apply artistic transformations to images quickly and dynamically by specifying transformations with a query string appendedto the image URL.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationImQuery> imQueries() {
         return this.imQueries == null ? List.of() : this.imQueries;
     }
+    /**
+     * @return Set the maximum number of colors in the images palette. Reducing the number of colors in an image can help to reduce file size.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationMaxColor> maxColors() {
         return this.maxColors == null ? List.of() : this.maxColors;
     }
+    /**
+     * @return Flips an image horizontally, vertically, or both.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationMirror> mirrors() {
         return this.mirrors == null ? List.of() : this.mirrors;
     }
+    /**
+     * @return Allows you to set all hues in an image to a single specified hue of your choosing. Mono Hue maintains the original color’s lightness and saturation but sets the hue to that of the specified value. This has the effect of making the image shades of the specified hue.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationMonoHue> monoHues() {
         return this.monoHues == null ? List.of() : this.monoHues;
     }
+    /**
+     * @return Adjusts the level of transparency of an image. Use this transformation to make an image more or less transparent.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationOpacity> opacities() {
         return this.opacities == null ? List.of() : this.opacities;
     }
+    /**
+     * @return Crops to a region around a specified area of interest relative to the specified `width` and `height` values.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop> regionOfInterestCrops() {
         return this.regionOfInterestCrops == null ? List.of() : this.regionOfInterestCrops;
     }
+    /**
+     * @return Shrinks or expands an image relative to the image&#39;s specified dimensions. Image and Video Manager fills the expanded areas with transparency. Positive values shrink the side, while negative values expand it.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationRelativeCrop> relativeCrops() {
         return this.relativeCrops == null ? List.of() : this.relativeCrops;
     }
+    /**
+     * @return Removes a specified color from an image and replaces it with transparent pixels. This transformation is ideal for removing solid background colors from product images photographed on clean, consistent backgrounds without any shadows.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationRemoveColor> removeColors() {
         return this.removeColors == null ? List.of() : this.removeColors;
     }
+    /**
+     * @return Resizes an image to a particular, absolute dimension. If you don&#39;t enter a `width` or a `height`, the image is resized with the `fit` aspect preservation mode, which selects a value for the missing dimension that preserves the image&#39;s aspect.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationResize> resizes() {
         return this.resizes == null ? List.of() : this.resizes;
     }
+    /**
+     * @return Rotate the image around its center by indicating the degrees of rotation.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationRotate> rotates() {
         return this.rotates == null ? List.of() : this.rotates;
     }
+    /**
+     * @return Changes the image&#39;s size to different dimensions relative to its starting size.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationScale> scales() {
         return this.scales == null ? List.of() : this.scales;
     }
+    /**
+     * @return Slants an image into a parallelogram, as a percent of the starting dimension as represented in decimal format. You need to specify at least one axis property. Transparent pixels fill empty areas around the sheared image as needed, so it&#39;s often useful to use a `BackgroundColor` transformation for these areas.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationShears> shears() {
         return this.shears == null ? List.of() : this.shears;
     }
+    /**
+     * @return Automatically crops uniform backgrounds from the edges of an image.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationTrim> trims() {
         return this.trims == null ? List.of() : this.trims;
     }
+    /**
+     * @return Emphasizes edges and details in source images without distorting the colors. Although this effect is often referred to as _sharpening_ an image, it actually creates a blurred, inverted copy of the image known as an unsharp mask. Image and Video Manager combines the unsharp mask with the source image to create an image perceived as clearer.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationUnsharpMask> unsharpMasks() {
         return this.unsharpMasks == null ? List.of() : this.unsharpMasks;
     }

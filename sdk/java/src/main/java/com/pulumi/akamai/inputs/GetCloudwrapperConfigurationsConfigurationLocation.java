@@ -15,30 +15,62 @@ public final class GetCloudwrapperConfigurationsConfigurationLocation extends co
 
     public static final GetCloudwrapperConfigurationsConfigurationLocation Empty = new GetCloudwrapperConfigurationsConfigurationLocation();
 
+    /**
+     * The capacity assigned to this configuration&#39;s location.
+     * 
+     */
     @Import(name="capacity", required=true)
     private GetCloudwrapperConfigurationsConfigurationLocationCapacity capacity;
 
+    /**
+     * @return The capacity assigned to this configuration&#39;s location.
+     * 
+     */
     public GetCloudwrapperConfigurationsConfigurationLocationCapacity capacity() {
         return this.capacity;
     }
 
+    /**
+     * Additional comments provided by user.
+     * 
+     */
     @Import(name="comments", required=true)
     private String comments;
 
+    /**
+     * @return Additional comments provided by user.
+     * 
+     */
     public String comments() {
         return this.comments;
     }
 
+    /**
+     * The name of the map.
+     * 
+     */
     @Import(name="mapName", required=true)
     private String mapName;
 
+    /**
+     * @return The name of the map.
+     * 
+     */
     public String mapName() {
         return this.mapName;
     }
 
+    /**
+     * Unique identifier for the location and traffic type combination.
+     * 
+     */
     @Import(name="trafficTypeId", required=true)
     private Integer trafficTypeId;
 
+    /**
+     * @return Unique identifier for the location and traffic type combination.
+     * 
+     */
     public Integer trafficTypeId() {
         return this.trafficTypeId;
     }
@@ -70,21 +102,45 @@ public final class GetCloudwrapperConfigurationsConfigurationLocation extends co
             $ = new GetCloudwrapperConfigurationsConfigurationLocation(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param capacity The capacity assigned to this configuration&#39;s location.
+         * 
+         * @return builder
+         * 
+         */
         public Builder capacity(GetCloudwrapperConfigurationsConfigurationLocationCapacity capacity) {
             $.capacity = capacity;
             return this;
         }
 
+        /**
+         * @param comments Additional comments provided by user.
+         * 
+         * @return builder
+         * 
+         */
         public Builder comments(String comments) {
             $.comments = comments;
             return this;
         }
 
+        /**
+         * @param mapName The name of the map.
+         * 
+         * @return builder
+         * 
+         */
         public Builder mapName(String mapName) {
             $.mapName = mapName;
             return this;
         }
 
+        /**
+         * @param trafficTypeId Unique identifier for the location and traffic type combination.
+         * 
+         * @return builder
+         * 
+         */
         public Builder trafficTypeId(Integer trafficTypeId) {
             $.trafficTypeId = trafficTypeId;
             return this;

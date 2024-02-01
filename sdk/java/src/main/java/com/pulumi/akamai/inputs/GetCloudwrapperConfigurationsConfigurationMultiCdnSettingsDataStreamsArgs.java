@@ -16,23 +16,47 @@ public final class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDat
 
     public static final GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreamsArgs Empty = new GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreamsArgs();
 
+    /**
+     * Unique identifiers of the Data Streams.
+     * 
+     */
     @Import(name="dataStreamIds", required=true)
     private Output<List<Integer>> dataStreamIds;
 
+    /**
+     * @return Unique identifiers of the Data Streams.
+     * 
+     */
     public Output<List<Integer>> dataStreamIds() {
         return this.dataStreamIds;
     }
 
+    /**
+     * Enables DataStream reporting.
+     * 
+     */
     @Import(name="enabled", required=true)
     private Output<Boolean> enabled;
 
+    /**
+     * @return Enables DataStream reporting.
+     * 
+     */
     public Output<Boolean> enabled() {
         return this.enabled;
     }
 
+    /**
+     * Specifies the percentage of log data you want to collect for this configuration.
+     * 
+     */
     @Import(name="samplingRate", required=true)
     private Output<Integer> samplingRate;
 
+    /**
+     * @return Specifies the percentage of log data you want to collect for this configuration.
+     * 
+     */
     public Output<Integer> samplingRate() {
         return this.samplingRate;
     }
@@ -63,33 +87,75 @@ public final class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDat
             $ = new GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreamsArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param dataStreamIds Unique identifiers of the Data Streams.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dataStreamIds(Output<List<Integer>> dataStreamIds) {
             $.dataStreamIds = dataStreamIds;
             return this;
         }
 
+        /**
+         * @param dataStreamIds Unique identifiers of the Data Streams.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dataStreamIds(List<Integer> dataStreamIds) {
             return dataStreamIds(Output.of(dataStreamIds));
         }
 
+        /**
+         * @param dataStreamIds Unique identifiers of the Data Streams.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dataStreamIds(Integer... dataStreamIds) {
             return dataStreamIds(List.of(dataStreamIds));
         }
 
+        /**
+         * @param enabled Enables DataStream reporting.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(Output<Boolean> enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param enabled Enables DataStream reporting.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(Boolean enabled) {
             return enabled(Output.of(enabled));
         }
 
+        /**
+         * @param samplingRate Specifies the percentage of log data you want to collect for this configuration.
+         * 
+         * @return builder
+         * 
+         */
         public Builder samplingRate(Output<Integer> samplingRate) {
             $.samplingRate = samplingRate;
             return this;
         }
 
+        /**
+         * @param samplingRate Specifies the percentage of log data you want to collect for this configuration.
+         * 
+         * @return builder
+         * 
+         */
         public Builder samplingRate(Integer samplingRate) {
             return samplingRate(Output.of(samplingRate));
         }

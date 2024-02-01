@@ -17,65 +17,185 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCloudwrapperConfigurationsConfiguration {
+    /**
+     * @return Represents the threshold for sending alerts.
+     * 
+     */
     private Integer capacityAlertsThreshold;
+    /**
+     * @return Additional information provided by user which can help to differentiate or track changes of the configuration.
+     * 
+     */
     private String comments;
+    /**
+     * @return Name of the configuration.
+     * 
+     */
     private String configName;
+    /**
+     * @return Contract ID with Cloud Wrapper entitlement.
+     * 
+     */
     private String contractId;
+    /**
+     * @return Unique identifier of a Cloud Wrapper configuration.
+     * 
+     */
     private Integer id;
+    /**
+     * @return User to last activate the configuration.
+     * 
+     */
     private String lastActivatedBy;
+    /**
+     * @return ISO format date that represents when the configuration was last activated successfully.
+     * 
+     */
     private String lastActivatedDate;
+    /**
+     * @return User to last modify the configuration.
+     * 
+     */
     private String lastUpdatedBy;
+    /**
+     * @return ISO format date that represents when the configuration was last edited.
+     * 
+     */
     private String lastUpdatedDate;
+    /**
+     * @return List of all unused properties.
+     * 
+     */
     private @Nullable List<GetCloudwrapperConfigurationsConfigurationLocation> locations;
+    /**
+     * @return Specify details about the Multi CDN settings.
+     * 
+     */
     private @Nullable GetCloudwrapperConfigurationsConfigurationMultiCdnSettings multiCdnSettings;
+    /**
+     * @return Email addresses to receive notifications.
+     * 
+     */
     private List<String> notificationEmails;
+    /**
+     * @return List of properties belonging to media delivery products. Properties need to be unique across configurations.
+     * 
+     */
     private List<String> propertyIds;
+    /**
+     * @return Retain idle objects beyond their max idle lifetime.
+     * 
+     */
     private Boolean retainIdleObjects;
+    /**
+     * @return Current state of the provisioning of the configuration, either SAVED, IN_PROGRESS, ACTIVE, DELETE_IN_PROGRESS, or FAILED.
+     * 
+     */
     private String status;
 
     private GetCloudwrapperConfigurationsConfiguration() {}
+    /**
+     * @return Represents the threshold for sending alerts.
+     * 
+     */
     public Integer capacityAlertsThreshold() {
         return this.capacityAlertsThreshold;
     }
+    /**
+     * @return Additional information provided by user which can help to differentiate or track changes of the configuration.
+     * 
+     */
     public String comments() {
         return this.comments;
     }
+    /**
+     * @return Name of the configuration.
+     * 
+     */
     public String configName() {
         return this.configName;
     }
+    /**
+     * @return Contract ID with Cloud Wrapper entitlement.
+     * 
+     */
     public String contractId() {
         return this.contractId;
     }
+    /**
+     * @return Unique identifier of a Cloud Wrapper configuration.
+     * 
+     */
     public Integer id() {
         return this.id;
     }
+    /**
+     * @return User to last activate the configuration.
+     * 
+     */
     public String lastActivatedBy() {
         return this.lastActivatedBy;
     }
+    /**
+     * @return ISO format date that represents when the configuration was last activated successfully.
+     * 
+     */
     public String lastActivatedDate() {
         return this.lastActivatedDate;
     }
+    /**
+     * @return User to last modify the configuration.
+     * 
+     */
     public String lastUpdatedBy() {
         return this.lastUpdatedBy;
     }
+    /**
+     * @return ISO format date that represents when the configuration was last edited.
+     * 
+     */
     public String lastUpdatedDate() {
         return this.lastUpdatedDate;
     }
+    /**
+     * @return List of all unused properties.
+     * 
+     */
     public List<GetCloudwrapperConfigurationsConfigurationLocation> locations() {
         return this.locations == null ? List.of() : this.locations;
     }
+    /**
+     * @return Specify details about the Multi CDN settings.
+     * 
+     */
     public Optional<GetCloudwrapperConfigurationsConfigurationMultiCdnSettings> multiCdnSettings() {
         return Optional.ofNullable(this.multiCdnSettings);
     }
+    /**
+     * @return Email addresses to receive notifications.
+     * 
+     */
     public List<String> notificationEmails() {
         return this.notificationEmails;
     }
+    /**
+     * @return List of properties belonging to media delivery products. Properties need to be unique across configurations.
+     * 
+     */
     public List<String> propertyIds() {
         return this.propertyIds;
     }
+    /**
+     * @return Retain idle objects beyond their max idle lifetime.
+     * 
+     */
     public Boolean retainIdleObjects() {
         return this.retainIdleObjects;
     }
+    /**
+     * @return Current state of the provisioning of the configuration, either SAVED, IN_PROGRESS, ACTIVE, DELETE_IN_PROGRESS, or FAILED.
+     * 
+     */
     public String status() {
         return this.status;
     }

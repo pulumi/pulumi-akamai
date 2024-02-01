@@ -15,16 +15,32 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateBitr
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateBitrateTable Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateBitrateTable();
 
+    /**
+     * The unit of measurement, either `KBPS`, `MBPS`, or `GBPS`.
+     * 
+     */
     @Import(name="bitrateUnit")
     private @Nullable String bitrateUnit;
 
+    /**
+     * @return The unit of measurement, either `KBPS`, `MBPS`, or `GBPS`.
+     * 
+     */
     public Optional<String> bitrateUnit() {
         return Optional.ofNullable(this.bitrateUnit);
     }
 
+    /**
+     * The numeric indicator of the download rate.
+     * 
+     */
     @Import(name="bitrateValue")
     private @Nullable Double bitrateValue;
 
+    /**
+     * @return The numeric indicator of the download rate.
+     * 
+     */
     public Optional<Double> bitrateValue() {
         return Optional.ofNullable(this.bitrateValue);
     }
@@ -54,11 +70,23 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateBitr
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateBitrateTable(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param bitrateUnit The unit of measurement, either `KBPS`, `MBPS`, or `GBPS`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder bitrateUnit(@Nullable String bitrateUnit) {
             $.bitrateUnit = bitrateUnit;
             return this;
         }
 
+        /**
+         * @param bitrateValue The numeric indicator of the download rate.
+         * 
+         * @return builder
+         * 
+         */
         public Builder bitrateValue(@Nullable Double bitrateValue) {
             $.bitrateValue = bitrateValue;
             return this;

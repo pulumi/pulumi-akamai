@@ -17,37 +17,77 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorResponseCodeArgs
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorResponseCodeArgs Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorResponseCodeArgs();
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Allows any specified `200` success code to override a `206` partial-content code, in which case the response&#39;s content length matches the requested range length.
+     * 
+     */
     @Import(name="override206")
     private @Nullable Output<Boolean> override206;
 
+    /**
+     * @return Allows any specified `200` success code to override a `206` partial-content code, in which case the response&#39;s content length matches the requested range length.
+     * 
+     */
     public Optional<Output<Boolean>> override206() {
         return Optional.ofNullable(this.override206);
     }
 
+    /**
+     * The HTTP status code to replace the existing one.
+     * 
+     */
     @Import(name="statusCode")
     private @Nullable Output<Integer> statusCode;
 
+    /**
+     * @return The HTTP status code to replace the existing one.
+     * 
+     */
     public Optional<Output<Integer>> statusCode() {
         return Optional.ofNullable(this.statusCode);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -80,47 +120,107 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorResponseCodeArgs
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorResponseCodeArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param override206 Allows any specified `200` success code to override a `206` partial-content code, in which case the response&#39;s content length matches the requested range length.
+         * 
+         * @return builder
+         * 
+         */
         public Builder override206(@Nullable Output<Boolean> override206) {
             $.override206 = override206;
             return this;
         }
 
+        /**
+         * @param override206 Allows any specified `200` success code to override a `206` partial-content code, in which case the response&#39;s content length matches the requested range length.
+         * 
+         * @return builder
+         * 
+         */
         public Builder override206(Boolean override206) {
             return override206(Output.of(override206));
         }
 
+        /**
+         * @param statusCode The HTTP status code to replace the existing one.
+         * 
+         * @return builder
+         * 
+         */
         public Builder statusCode(@Nullable Output<Integer> statusCode) {
             $.statusCode = statusCode;
             return this;
         }
 
+        /**
+         * @param statusCode The HTTP status code to replace the existing one.
+         * 
+         * @return builder
+         * 
+         */
         public Builder statusCode(Integer statusCode) {
             return statusCode(Output.of(statusCode));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

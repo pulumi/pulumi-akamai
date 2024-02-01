@@ -15,37 +15,101 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class CpsDvEnrollmentNetworkConfiguration {
+    /**
+     * @return The trust chain configuration used for client mutual authentication
+     * 
+     */
     private @Nullable CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication clientMutualAuthentication;
+    /**
+     * @return Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created
+     * 
+     */
     private @Nullable Boolean cloneDnsNames;
+    /**
+     * @return TLS versions which are disallowed
+     * 
+     */
     private @Nullable List<String> disallowedTlsVersions;
+    /**
+     * @return Geography type used for enrollment
+     * 
+     */
     private String geography;
+    /**
+     * @return Mandatory Ciphers which are included for enrollment
+     * 
+     */
     private @Nullable String mustHaveCiphers;
+    /**
+     * @return Enable OCSP stapling
+     * 
+     */
     private @Nullable String ocspStapling;
+    /**
+     * @return Preferred Ciphers which are included for enrollment
+     * 
+     */
     private @Nullable String preferredCiphers;
+    /**
+     * @return Enable QUIC protocol
+     * 
+     */
     private @Nullable Boolean quicEnabled;
 
     private CpsDvEnrollmentNetworkConfiguration() {}
+    /**
+     * @return The trust chain configuration used for client mutual authentication
+     * 
+     */
     public Optional<CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication> clientMutualAuthentication() {
         return Optional.ofNullable(this.clientMutualAuthentication);
     }
+    /**
+     * @return Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created
+     * 
+     */
     public Optional<Boolean> cloneDnsNames() {
         return Optional.ofNullable(this.cloneDnsNames);
     }
+    /**
+     * @return TLS versions which are disallowed
+     * 
+     */
     public List<String> disallowedTlsVersions() {
         return this.disallowedTlsVersions == null ? List.of() : this.disallowedTlsVersions;
     }
+    /**
+     * @return Geography type used for enrollment
+     * 
+     */
     public String geography() {
         return this.geography;
     }
+    /**
+     * @return Mandatory Ciphers which are included for enrollment
+     * 
+     */
     public Optional<String> mustHaveCiphers() {
         return Optional.ofNullable(this.mustHaveCiphers);
     }
+    /**
+     * @return Enable OCSP stapling
+     * 
+     */
     public Optional<String> ocspStapling() {
         return Optional.ofNullable(this.ocspStapling);
     }
+    /**
+     * @return Preferred Ciphers which are included for enrollment
+     * 
+     */
     public Optional<String> preferredCiphers() {
         return Optional.ofNullable(this.preferredCiphers);
     }
+    /**
+     * @return Enable QUIC protocol
+     * 
+     */
     public Optional<Boolean> quicEnabled() {
         return Optional.ofNullable(this.quicEnabled);
     }

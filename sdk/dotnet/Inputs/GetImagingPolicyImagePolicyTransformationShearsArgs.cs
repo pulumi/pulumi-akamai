@@ -12,15 +12,27 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetImagingPolicyImagePolicyTransformationShearsInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The amount to shear along the x-axis, measured in multiples of the image's width. Must be set if yShear is not specified.
+        /// </summary>
         [Input("xShear")]
         public Input<string>? XShear { get; set; }
 
+        /// <summary>
+        /// The amount to shear along the x-axis, measured in multiples of the image's width. Must be set if yShear is not specified.
+        /// </summary>
         [Input("xShearVar")]
         public Input<string>? XShearVar { get; set; }
 
+        /// <summary>
+        /// The amount to shear along the y-axis, measured in multiples of the image's height. Must be set if xShear is not specified.
+        /// </summary>
         [Input("yShear")]
         public Input<string>? YShear { get; set; }
 
+        /// <summary>
+        /// The amount to shear along the y-axis, measured in multiples of the image's height. Must be set if xShear is not specified.
+        /// </summary>
         [Input("yShearVar")]
         public Input<string>? YShearVar { get; set; }
 

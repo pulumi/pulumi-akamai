@@ -13,14 +13,41 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorDcpRealTimeAuthResult
     {
+        /// <summary>
+        /// Extracts a hostname from JWT.
+        /// </summary>
         public readonly bool? ExtractHostname;
+        /// <summary>
+        /// Extracts a jurisdiction that defines a geographically distributed set of servers from JWT.
+        /// </summary>
         public readonly bool? ExtractJurisdiction;
+        /// <summary>
+        /// Extracts a namespace from JSON web tokens (JWT).
+        /// </summary>
         public readonly bool? ExtractNamespace;
+        /// <summary>
+        /// Specifies the claim in JWT to extract the hostname from.
+        /// </summary>
         public readonly string? HostnameClaim;
+        /// <summary>
+        /// Specifies the claim in JWT to extract the jurisdiction from.
+        /// </summary>
         public readonly string? JurisdictionClaim;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// Specifies the claim in JWT to extract the namespace from.
+        /// </summary>
         public readonly string? NamespaceClaim;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

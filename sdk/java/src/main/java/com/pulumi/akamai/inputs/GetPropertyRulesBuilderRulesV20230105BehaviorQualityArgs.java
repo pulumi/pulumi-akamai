@@ -17,9 +17,17 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorQualityArgs exte
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorQualityArgs Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorQualityArgs();
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     @Import(name="audienceSettings")
     private @Nullable Output<String> audienceSettings;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<Output<String>> audienceSettings() {
         return Optional.ofNullable(this.audienceSettings);
     }
@@ -31,9 +39,17 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorQualityArgs exte
         return Optional.ofNullable(this.catalogSize);
     }
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     @Import(name="contentSettings")
     private @Nullable Output<String> contentSettings;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<Output<String>> contentSettings() {
         return Optional.ofNullable(this.contentSettings);
     }
@@ -80,9 +96,17 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorQualityArgs exte
         return Optional.ofNullable(this.endUserLocation);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
@@ -108,9 +132,17 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorQualityArgs exte
         return Optional.ofNullable(this.optimizeFor);
     }
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     @Import(name="originSettings")
     private @Nullable Output<String> originSettings;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<Output<String>> originSettings() {
         return Optional.ofNullable(this.originSettings);
     }
@@ -136,16 +168,32 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorQualityArgs exte
         return Optional.ofNullable(this.segmentDuration);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -192,11 +240,23 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorQualityArgs exte
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorQualityArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param audienceSettings This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder audienceSettings(@Nullable Output<String> audienceSettings) {
             $.audienceSettings = audienceSettings;
             return this;
         }
 
+        /**
+         * @param audienceSettings This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder audienceSettings(String audienceSettings) {
             return audienceSettings(Output.of(audienceSettings));
         }
@@ -210,11 +270,23 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorQualityArgs exte
             return catalogSize(Output.of(catalogSize));
         }
 
+        /**
+         * @param contentSettings This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contentSettings(@Nullable Output<String> contentSettings) {
             $.contentSettings = contentSettings;
             return this;
         }
 
+        /**
+         * @param contentSettings This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contentSettings(String contentSettings) {
             return contentSettings(Output.of(contentSettings));
         }
@@ -273,11 +345,23 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorQualityArgs exte
             return endUserLocation(Output.of(endUserLocation));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
@@ -309,11 +393,23 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorQualityArgs exte
             return optimizeFor(Output.of(optimizeFor));
         }
 
+        /**
+         * @param originSettings This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder originSettings(@Nullable Output<String> originSettings) {
             $.originSettings = originSettings;
             return this;
         }
 
+        /**
+         * @param originSettings This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder originSettings(String originSettings) {
             return originSettings(Output.of(originSettings));
         }
@@ -345,20 +441,44 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorQualityArgs exte
             return segmentDuration(Output.of(segmentDuration));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

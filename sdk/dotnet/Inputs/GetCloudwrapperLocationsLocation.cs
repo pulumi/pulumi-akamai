@@ -12,17 +12,30 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetCloudwrapperLocationsLocationArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Unique identifier of the location.
+        /// </summary>
         [Input("locationId", required: true)]
         public int LocationId { get; set; }
 
+        /// <summary>
+        /// Name of the location.
+        /// </summary>
         [Input("locationName", required: true)]
         public string LocationName { get; set; } = null!;
 
+        /// <summary>
+        /// Unique identifier of the multi CDN location.
+        /// </summary>
         [Input("multiCdnLocationId", required: true)]
         public string MultiCdnLocationId { get; set; } = null!;
 
         [Input("trafficTypes")]
         private List<Inputs.GetCloudwrapperLocationsLocationTrafficTypeArgs>? _trafficTypes;
+
+        /// <summary>
+        /// List of traffic types for the location.
+        /// </summary>
         public List<Inputs.GetCloudwrapperLocationsLocationTrafficTypeArgs> TrafficTypes
         {
             get => _trafficTypes ?? (_trafficTypes = new List<Inputs.GetCloudwrapperLocationsLocationTrafficTypeArgs>());

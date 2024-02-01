@@ -15,23 +15,47 @@ public final class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOri
 
     public static final GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOriginArgs Empty = new GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOriginArgs();
 
+    /**
+     * Origins hostname corresponding to the Akamai Delivery Property.
+     * 
+     */
     @Import(name="hostname", required=true)
     private Output<String> hostname;
 
+    /**
+     * @return Origins hostname corresponding to the Akamai Delivery Property.
+     * 
+     */
     public Output<String> hostname() {
         return this.hostname;
     }
 
+    /**
+     * Origin identifier and will be used to generated Multi CDN host names.
+     * 
+     */
     @Import(name="originId", required=true)
     private Output<String> originId;
 
+    /**
+     * @return Origin identifier and will be used to generated Multi CDN host names.
+     * 
+     */
     public Output<String> originId() {
         return this.originId;
     }
 
+    /**
+     * Property ID of the property that origin belongs to.
+     * 
+     */
     @Import(name="propertyId", required=true)
     private Output<Integer> propertyId;
 
+    /**
+     * @return Property ID of the property that origin belongs to.
+     * 
+     */
     public Output<Integer> propertyId() {
         return this.propertyId;
     }
@@ -62,29 +86,65 @@ public final class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOri
             $ = new GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOriginArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param hostname Origins hostname corresponding to the Akamai Delivery Property.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hostname(Output<String> hostname) {
             $.hostname = hostname;
             return this;
         }
 
+        /**
+         * @param hostname Origins hostname corresponding to the Akamai Delivery Property.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hostname(String hostname) {
             return hostname(Output.of(hostname));
         }
 
+        /**
+         * @param originId Origin identifier and will be used to generated Multi CDN host names.
+         * 
+         * @return builder
+         * 
+         */
         public Builder originId(Output<String> originId) {
             $.originId = originId;
             return this;
         }
 
+        /**
+         * @param originId Origin identifier and will be used to generated Multi CDN host names.
+         * 
+         * @return builder
+         * 
+         */
         public Builder originId(String originId) {
             return originId(Output.of(originId));
         }
 
+        /**
+         * @param propertyId Property ID of the property that origin belongs to.
+         * 
+         * @return builder
+         * 
+         */
         public Builder propertyId(Output<Integer> propertyId) {
             $.propertyId = propertyId;
             return this;
         }
 
+        /**
+         * @param propertyId Property ID of the property that origin belongs to.
+         * 
+         * @return builder
+         * 
+         */
         public Builder propertyId(Integer propertyId) {
             return propertyId(Output.of(propertyId));
         }

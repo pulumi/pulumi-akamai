@@ -13,28 +13,68 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorWebApplicationFirewallFirewallConfiguration {
     private @Nullable Integer configId;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+     * 
+     */
     private @Nullable String fileName;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+     * 
+     */
     private @Nullable String productionStatus;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+     * 
+     */
     private @Nullable Integer productionVersion;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+     * 
+     */
     private @Nullable String stagingStatus;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+     * 
+     */
     private @Nullable Integer stagingVersion;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorWebApplicationFirewallFirewallConfiguration() {}
     public Optional<Integer> configId() {
         return Optional.ofNullable(this.configId);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+     * 
+     */
     public Optional<String> fileName() {
         return Optional.ofNullable(this.fileName);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+     * 
+     */
     public Optional<String> productionStatus() {
         return Optional.ofNullable(this.productionStatus);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+     * 
+     */
     public Optional<Integer> productionVersion() {
         return Optional.ofNullable(this.productionVersion);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+     * 
+     */
     public Optional<String> stagingStatus() {
         return Optional.ofNullable(this.stagingStatus);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+     * 
+     */
     public Optional<Integer> stagingVersion() {
         return Optional.ofNullable(this.stagingVersion);
     }

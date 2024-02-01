@@ -17,58 +17,122 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorConstructRespons
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorConstructResponseArgs Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorConstructResponseArgs();
 
+    /**
+     * HTML response of up to 2000 characters to send to the end-user client.
+     * 
+     */
     @Import(name="body")
     private @Nullable Output<String> body;
 
+    /**
+     * @return HTML response of up to 2000 characters to send to the end-user client.
+     * 
+     */
     public Optional<Output<String>> body() {
         return Optional.ofNullable(this.body);
     }
 
+    /**
+     * Serves the custom response.
+     * 
+     */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
+    /**
+     * @return Serves the custom response.
+     * 
+     */
     public Optional<Output<Boolean>> enabled() {
         return Optional.ofNullable(this.enabled);
     }
 
+    /**
+     * Removes the underlying object from the cache, since it is not being served.
+     * 
+     */
     @Import(name="forceEviction")
     private @Nullable Output<Boolean> forceEviction;
 
+    /**
+     * @return Removes the underlying object from the cache, since it is not being served.
+     * 
+     */
     public Optional<Output<Boolean>> forceEviction() {
         return Optional.ofNullable(this.forceEviction);
     }
 
+    /**
+     * Whether to ignore the custom response when purging.
+     * 
+     */
     @Import(name="ignorePurge")
     private @Nullable Output<Boolean> ignorePurge;
 
+    /**
+     * @return Whether to ignore the custom response when purging.
+     * 
+     */
     public Optional<Output<Boolean>> ignorePurge() {
         return Optional.ofNullable(this.ignorePurge);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * The HTTP response code to send to the end-user client.
+     * 
+     */
     @Import(name="responseCode")
     private @Nullable Output<Integer> responseCode;
 
+    /**
+     * @return The HTTP response code to send to the end-user client.
+     * 
+     */
     public Optional<Output<Integer>> responseCode() {
         return Optional.ofNullable(this.responseCode);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -104,74 +168,170 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorConstructRespons
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorConstructResponseArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param body HTML response of up to 2000 characters to send to the end-user client.
+         * 
+         * @return builder
+         * 
+         */
         public Builder body(@Nullable Output<String> body) {
             $.body = body;
             return this;
         }
 
+        /**
+         * @param body HTML response of up to 2000 characters to send to the end-user client.
+         * 
+         * @return builder
+         * 
+         */
         public Builder body(String body) {
             return body(Output.of(body));
         }
 
+        /**
+         * @param enabled Serves the custom response.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(@Nullable Output<Boolean> enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param enabled Serves the custom response.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(Boolean enabled) {
             return enabled(Output.of(enabled));
         }
 
+        /**
+         * @param forceEviction Removes the underlying object from the cache, since it is not being served.
+         * 
+         * @return builder
+         * 
+         */
         public Builder forceEviction(@Nullable Output<Boolean> forceEviction) {
             $.forceEviction = forceEviction;
             return this;
         }
 
+        /**
+         * @param forceEviction Removes the underlying object from the cache, since it is not being served.
+         * 
+         * @return builder
+         * 
+         */
         public Builder forceEviction(Boolean forceEviction) {
             return forceEviction(Output.of(forceEviction));
         }
 
+        /**
+         * @param ignorePurge Whether to ignore the custom response when purging.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ignorePurge(@Nullable Output<Boolean> ignorePurge) {
             $.ignorePurge = ignorePurge;
             return this;
         }
 
+        /**
+         * @param ignorePurge Whether to ignore the custom response when purging.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ignorePurge(Boolean ignorePurge) {
             return ignorePurge(Output.of(ignorePurge));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param responseCode The HTTP response code to send to the end-user client.
+         * 
+         * @return builder
+         * 
+         */
         public Builder responseCode(@Nullable Output<Integer> responseCode) {
             $.responseCode = responseCode;
             return this;
         }
 
+        /**
+         * @param responseCode The HTTP response code to send to the end-user client.
+         * 
+         * @return builder
+         * 
+         */
         public Builder responseCode(Integer responseCode) {
             return responseCode(Output.of(responseCode));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

@@ -15,58 +15,122 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorLargeFileOptimiz
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorLargeFileOptimization Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorLargeFileOptimization();
 
+    /**
+     * Specifies whether to cache partial objects.
+     * 
+     */
     @Import(name="enablePartialObjectCaching")
     private @Nullable String enablePartialObjectCaching;
 
+    /**
+     * @return Specifies whether to cache partial objects.
+     * 
+     */
     public Optional<String> enablePartialObjectCaching() {
         return Optional.ofNullable(this.enablePartialObjectCaching);
     }
 
+    /**
+     * Enables the file optimization behavior.
+     * 
+     */
     @Import(name="enabled")
     private @Nullable Boolean enabled;
 
+    /**
+     * @return Enables the file optimization behavior.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Optimization does not apply to files larger than this, expressed as a number suffixed with a unit string such as `MB` or `GB`. The size of a file can&#39;t be greater than 323 GB. If you need to optimize a larger file, contact Akamai Professional Services for help. This option is for internal usage only.
+     * 
+     */
     @Import(name="maximumSize")
     private @Nullable String maximumSize;
 
+    /**
+     * @return Optimization does not apply to files larger than this, expressed as a number suffixed with a unit string such as `MB` or `GB`. The size of a file can&#39;t be greater than 323 GB. If you need to optimize a larger file, contact Akamai Professional Services for help. This option is for internal usage only.
+     * 
+     */
     public Optional<String> maximumSize() {
         return Optional.ofNullable(this.maximumSize);
     }
 
+    /**
+     * Optimization only applies to files larger than this, expressed as a number suffixed with a unit string such as `MB` or `GB`.
+     * 
+     */
     @Import(name="minimumSize")
     private @Nullable String minimumSize;
 
+    /**
+     * @return Optimization only applies to files larger than this, expressed as a number suffixed with a unit string such as `MB` or `GB`.
+     * 
+     */
     public Optional<String> minimumSize() {
         return Optional.ofNullable(this.minimumSize);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * When `enablePartialObjectCaching` is set to `PARTIAL_OBJECT_CACHING`, enabling this option signals your intention to vary filenames by version, strongly recommended to avoid serving corrupt content when chunks come from different versions of the same file.
+     * 
+     */
     @Import(name="useVersioning")
     private @Nullable Boolean useVersioning;
 
+    /**
+     * @return When `enablePartialObjectCaching` is set to `PARTIAL_OBJECT_CACHING`, enabling this option signals your intention to vary filenames by version, strongly recommended to avoid serving corrupt content when chunks come from different versions of the same file.
+     * 
+     */
     public Optional<Boolean> useVersioning() {
         return Optional.ofNullable(this.useVersioning);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -102,41 +166,89 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorLargeFileOptimiz
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorLargeFileOptimization(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param enablePartialObjectCaching Specifies whether to cache partial objects.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enablePartialObjectCaching(@Nullable String enablePartialObjectCaching) {
             $.enablePartialObjectCaching = enablePartialObjectCaching;
             return this;
         }
 
+        /**
+         * @param enabled Enables the file optimization behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(@Nullable Boolean enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param maximumSize Optimization does not apply to files larger than this, expressed as a number suffixed with a unit string such as `MB` or `GB`. The size of a file can&#39;t be greater than 323 GB. If you need to optimize a larger file, contact Akamai Professional Services for help. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder maximumSize(@Nullable String maximumSize) {
             $.maximumSize = maximumSize;
             return this;
         }
 
+        /**
+         * @param minimumSize Optimization only applies to files larger than this, expressed as a number suffixed with a unit string such as `MB` or `GB`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder minimumSize(@Nullable String minimumSize) {
             $.minimumSize = minimumSize;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param useVersioning When `enablePartialObjectCaching` is set to `PARTIAL_OBJECT_CACHING`, enabling this option signals your intention to vary filenames by version, strongly recommended to avoid serving corrupt content when chunks come from different versions of the same file.
+         * 
+         * @return builder
+         * 
+         */
         public Builder useVersioning(@Nullable Boolean useVersioning) {
             $.useVersioning = useVersioning;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

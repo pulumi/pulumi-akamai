@@ -10,9 +10,17 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSetting {
+    /**
+     * @return The ID of the Conditional Origin requests are forwarded to
+     * 
+     */
     private String originId;
 
     private GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSetting() {}
+    /**
+     * @return The ID of the Conditional Origin requests are forwarded to
+     * 
+     */
     public String originId() {
         return this.originId;
     }

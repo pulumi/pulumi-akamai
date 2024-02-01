@@ -13,10 +13,25 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsResult
     {
+        /// <summary>
+        /// Specify diagnostic data beacons details.
+        /// </summary>
         public readonly Outputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBoccResult? Bocc;
+        /// <summary>
+        /// List of CDN added for the configuration.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnResult> Cdns;
+        /// <summary>
+        /// Specifies data streams details.
+        /// </summary>
         public readonly Outputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreamsResult? DataStreams;
+        /// <summary>
+        /// Option to opt out of alerts based on soft limits of bandwidth usage.
+        /// </summary>
         public readonly bool EnableSoftAlerts;
+        /// <summary>
+        /// List of origins corresponding to the properties selected in the configuration.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOriginResult> Origins;
 
         [OutputConstructor]

@@ -12,29 +12,77 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DatastreamNewRelicConnector {
+    /**
+     * @return Your Log API token for your account in New Relic.
+     * 
+     */
     private String authToken;
+    /**
+     * @return The type of the resource passed in the request&#39;s custom header. For details, see Additional options in the DataStream user guide.
+     * 
+     */
     private @Nullable String contentType;
+    /**
+     * @return A human-readable name for the request&#39;s custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.
+     * 
+     */
     private @Nullable String customHeaderName;
+    /**
+     * @return The custom header&#39;s contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.
+     * 
+     */
     private @Nullable String customHeaderValue;
+    /**
+     * @return The name of the connector.
+     * 
+     */
     private String displayName;
+    /**
+     * @return A New Relic endpoint URL you want to send your logs to. The endpoint URL should follow the https://&lt;newrelic.com&gt;/log/v1/ format format. See Introduction to the Log API https://docs.newrelic.com/docs/logs/log-api/introduction-log-api/ if you want to retrieve your New Relic endpoint URL.
+     * 
+     */
     private String endpoint;
 
     private DatastreamNewRelicConnector() {}
+    /**
+     * @return Your Log API token for your account in New Relic.
+     * 
+     */
     public String authToken() {
         return this.authToken;
     }
+    /**
+     * @return The type of the resource passed in the request&#39;s custom header. For details, see Additional options in the DataStream user guide.
+     * 
+     */
     public Optional<String> contentType() {
         return Optional.ofNullable(this.contentType);
     }
+    /**
+     * @return A human-readable name for the request&#39;s custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.
+     * 
+     */
     public Optional<String> customHeaderName() {
         return Optional.ofNullable(this.customHeaderName);
     }
+    /**
+     * @return The custom header&#39;s contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.
+     * 
+     */
     public Optional<String> customHeaderValue() {
         return Optional.ofNullable(this.customHeaderValue);
     }
+    /**
+     * @return The name of the connector.
+     * 
+     */
     public String displayName() {
         return this.displayName;
     }
+    /**
+     * @return A New Relic endpoint URL you want to send your logs to. The endpoint URL should follow the https://&lt;newrelic.com&gt;/log/v1/ format format. See Introduction to the Log API https://docs.newrelic.com/docs/logs/log-api/introduction-log-api/ if you want to retrieve your New Relic endpoint URL.
+     * 
+     */
     public String endpoint() {
         return this.endpoint;
     }

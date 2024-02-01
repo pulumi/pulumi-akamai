@@ -16,37 +16,77 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDcpAuthHmacTrans
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorDcpAuthHmacTransformationArgs Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorDcpAuthHmacTransformationArgs();
 
+    /**
+     * Specifies the hash algorithm.
+     * 
+     */
     @Import(name="hashConversionAlgorithm")
     private @Nullable Output<String> hashConversionAlgorithm;
 
+    /**
+     * @return Specifies the hash algorithm.
+     * 
+     */
     public Optional<Output<String>> hashConversionAlgorithm() {
         return Optional.ofNullable(this.hashConversionAlgorithm);
     }
 
+    /**
+     * Specifies the key to generate the hash, ideally a long random string to ensure adequate security.
+     * 
+     */
     @Import(name="hashConversionKey")
     private @Nullable Output<String> hashConversionKey;
 
+    /**
+     * @return Specifies the key to generate the hash, ideally a long random string to ensure adequate security.
+     * 
+     */
     public Optional<Output<String>> hashConversionKey() {
         return Optional.ofNullable(this.hashConversionKey);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -79,47 +119,107 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDcpAuthHmacTrans
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorDcpAuthHmacTransformationArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param hashConversionAlgorithm Specifies the hash algorithm.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hashConversionAlgorithm(@Nullable Output<String> hashConversionAlgorithm) {
             $.hashConversionAlgorithm = hashConversionAlgorithm;
             return this;
         }
 
+        /**
+         * @param hashConversionAlgorithm Specifies the hash algorithm.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hashConversionAlgorithm(String hashConversionAlgorithm) {
             return hashConversionAlgorithm(Output.of(hashConversionAlgorithm));
         }
 
+        /**
+         * @param hashConversionKey Specifies the key to generate the hash, ideally a long random string to ensure adequate security.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hashConversionKey(@Nullable Output<String> hashConversionKey) {
             $.hashConversionKey = hashConversionKey;
             return this;
         }
 
+        /**
+         * @param hashConversionKey Specifies the key to generate the hash, ideally a long random string to ensure adequate security.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hashConversionKey(String hashConversionKey) {
             return hashConversionKey(Output.of(hashConversionKey));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

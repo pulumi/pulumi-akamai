@@ -13,33 +13,89 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DatastreamDatadogConnector {
+    /**
+     * @return The API key associated with Datadog account
+     * 
+     */
     private String authToken;
+    /**
+     * @return Indicates whether the logs should be compressed
+     * 
+     */
     private @Nullable Boolean compressLogs;
+    /**
+     * @return The name of the connector
+     * 
+     */
     private String displayName;
+    /**
+     * @return The Datadog endpoint where logs will be stored
+     * 
+     */
     private String endpoint;
+    /**
+     * @return The service of the Datadog connector
+     * 
+     */
     private @Nullable String service;
+    /**
+     * @return The source of the Datadog connector
+     * 
+     */
     private @Nullable String source;
+    /**
+     * @return The tags of the Datadog connector
+     * 
+     */
     private @Nullable String tags;
 
     private DatastreamDatadogConnector() {}
+    /**
+     * @return The API key associated with Datadog account
+     * 
+     */
     public String authToken() {
         return this.authToken;
     }
+    /**
+     * @return Indicates whether the logs should be compressed
+     * 
+     */
     public Optional<Boolean> compressLogs() {
         return Optional.ofNullable(this.compressLogs);
     }
+    /**
+     * @return The name of the connector
+     * 
+     */
     public String displayName() {
         return this.displayName;
     }
+    /**
+     * @return The Datadog endpoint where logs will be stored
+     * 
+     */
     public String endpoint() {
         return this.endpoint;
     }
+    /**
+     * @return The service of the Datadog connector
+     * 
+     */
     public Optional<String> service() {
         return Optional.ofNullable(this.service);
     }
+    /**
+     * @return The source of the Datadog connector
+     * 
+     */
     public Optional<String> source() {
         return Optional.ofNullable(this.source);
     }
+    /**
+     * @return The tags of the Datadog connector
+     * 
+     */
     public Optional<String> tags() {
         return Optional.ofNullable(this.tags);
     }

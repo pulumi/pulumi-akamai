@@ -13,8 +13,17 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class CpsDvEnrollmentHttpChallenge
     {
+        /// <summary>
+        /// Domain for which the challenges were completed
+        /// </summary>
         public readonly string? Domain;
+        /// <summary>
+        /// The URL where Akamai publishes the response body to validate
+        /// </summary>
         public readonly string? FullPath;
+        /// <summary>
+        /// The unique content of the challenge
+        /// </summary>
         public readonly string? ResponseBody;
 
         [OutputConstructor]

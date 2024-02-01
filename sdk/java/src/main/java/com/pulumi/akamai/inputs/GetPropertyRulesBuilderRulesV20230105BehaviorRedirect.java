@@ -16,114 +16,242 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorRedirect extends
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorRedirect Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorRedirect();
 
+    /**
+     * Specify how to change the requested hostname, independently from the pathname.
+     * 
+     */
     @Import(name="destinationHostname")
     private @Nullable String destinationHostname;
 
+    /**
+     * @return Specify how to change the requested hostname, independently from the pathname.
+     * 
+     */
     public Optional<String> destinationHostname() {
         return Optional.ofNullable(this.destinationHostname);
     }
 
+    /**
+     * Specifies the full hostname with which to replace the current hostname.
+     * 
+     */
     @Import(name="destinationHostnameOther")
     private @Nullable String destinationHostnameOther;
 
+    /**
+     * @return Specifies the full hostname with which to replace the current hostname.
+     * 
+     */
     public Optional<String> destinationHostnameOther() {
         return Optional.ofNullable(this.destinationHostnameOther);
     }
 
+    /**
+     * Specifies the subdomain with which to replace to the current hostname&#39;s leftmost subdomain. For example, a value of `m` changes `www.example.com` to `m.example.com`.
+     * 
+     */
     @Import(name="destinationHostnameSibling")
     private @Nullable String destinationHostnameSibling;
 
+    /**
+     * @return Specifies the subdomain with which to replace to the current hostname&#39;s leftmost subdomain. For example, a value of `m` changes `www.example.com` to `m.example.com`.
+     * 
+     */
     public Optional<String> destinationHostnameSibling() {
         return Optional.ofNullable(this.destinationHostnameSibling);
     }
 
+    /**
+     * Specifies a subdomain to prepend to the current hostname. For example, a value of `m` changes `www.example.com` to `m.www.example.com`.
+     * 
+     */
     @Import(name="destinationHostnameSubdomain")
     private @Nullable String destinationHostnameSubdomain;
 
+    /**
+     * @return Specifies a subdomain to prepend to the current hostname. For example, a value of `m` changes `www.example.com` to `m.www.example.com`.
+     * 
+     */
     public Optional<String> destinationHostnameSubdomain() {
         return Optional.ofNullable(this.destinationHostnameSubdomain);
     }
 
+    /**
+     * Specify how to change the requested pathname, independently from the hostname.
+     * 
+     */
     @Import(name="destinationPath")
     private @Nullable String destinationPath;
 
+    /**
+     * @return Specify how to change the requested pathname, independently from the hostname.
+     * 
+     */
     public Optional<String> destinationPath() {
         return Optional.ofNullable(this.destinationPath);
     }
 
+    /**
+     * When `destinationPath` is set to `PREFIX_REQUEST`, this replaces the current path.
+     * 
+     */
     @Import(name="destinationPathOther")
     private @Nullable String destinationPathOther;
 
+    /**
+     * @return When `destinationPath` is set to `PREFIX_REQUEST`, this replaces the current path.
+     * 
+     */
     public Optional<String> destinationPathOther() {
         return Optional.ofNullable(this.destinationPathOther);
     }
 
+    /**
+     * When `destinationPath` is set to `PREFIX_REQUEST`, this prepends the current path. For example, a value of `/prefix/path` changes `/example/index.html` to `/prefix/path/example/index.html`.
+     * 
+     */
     @Import(name="destinationPathPrefix")
     private @Nullable String destinationPathPrefix;
 
+    /**
+     * @return When `destinationPath` is set to `PREFIX_REQUEST`, this prepends the current path. For example, a value of `/prefix/path` changes `/example/index.html` to `/prefix/path/example/index.html`.
+     * 
+     */
     public Optional<String> destinationPathPrefix() {
         return Optional.ofNullable(this.destinationPathPrefix);
     }
 
+    /**
+     * When `destinationPath` is set to `PREFIX_REQUEST` and `destinationPathSuffixStatus` is set to `SUFFIX`, this specifies the suffix to append to the path.
+     * 
+     */
     @Import(name="destinationPathSuffix")
     private @Nullable String destinationPathSuffix;
 
+    /**
+     * @return When `destinationPath` is set to `PREFIX_REQUEST` and `destinationPathSuffixStatus` is set to `SUFFIX`, this specifies the suffix to append to the path.
+     * 
+     */
     public Optional<String> destinationPathSuffix() {
         return Optional.ofNullable(this.destinationPathSuffix);
     }
 
+    /**
+     * When `destinationPath` is set to `PREFIX_REQUEST`, this gives you the option of adding a suffix.
+     * 
+     */
     @Import(name="destinationPathSuffixStatus")
     private @Nullable String destinationPathSuffixStatus;
 
+    /**
+     * @return When `destinationPath` is set to `PREFIX_REQUEST`, this gives you the option of adding a suffix.
+     * 
+     */
     public Optional<String> destinationPathSuffixStatus() {
         return Optional.ofNullable(this.destinationPathSuffixStatus);
     }
 
+    /**
+     * Choose the protocol for the redirect URL.
+     * 
+     */
     @Import(name="destinationProtocol")
     private @Nullable String destinationProtocol;
 
+    /**
+     * @return Choose the protocol for the redirect URL.
+     * 
+     */
     public Optional<String> destinationProtocol() {
         return Optional.ofNullable(this.destinationProtocol);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Either specify a default response for mobile browsers, or customize your own.
+     * 
+     */
     @Import(name="mobileDefaultChoice")
     private @Nullable String mobileDefaultChoice;
 
+    /**
+     * @return Either specify a default response for mobile browsers, or customize your own.
+     * 
+     */
     public Optional<String> mobileDefaultChoice() {
         return Optional.ofNullable(this.mobileDefaultChoice);
     }
 
+    /**
+     * When set to `APPEND`, passes incoming query string parameters as part of the redirect URL. Otherwise set this to `IGNORE`.
+     * 
+     */
     @Import(name="queryString")
     private @Nullable String queryString;
 
+    /**
+     * @return When set to `APPEND`, passes incoming query string parameters as part of the redirect URL. Otherwise set this to `IGNORE`.
+     * 
+     */
     public Optional<String> queryString() {
         return Optional.ofNullable(this.queryString);
     }
 
+    /**
+     * Specify the redirect&#39;s response code.
+     * 
+     */
     @Import(name="responseCode")
     private @Nullable Integer responseCode;
 
+    /**
+     * @return Specify the redirect&#39;s response code.
+     * 
+     */
     public Optional<Integer> responseCode() {
         return Optional.ofNullable(this.responseCode);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -167,81 +295,177 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorRedirect extends
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorRedirect(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param destinationHostname Specify how to change the requested hostname, independently from the pathname.
+         * 
+         * @return builder
+         * 
+         */
         public Builder destinationHostname(@Nullable String destinationHostname) {
             $.destinationHostname = destinationHostname;
             return this;
         }
 
+        /**
+         * @param destinationHostnameOther Specifies the full hostname with which to replace the current hostname.
+         * 
+         * @return builder
+         * 
+         */
         public Builder destinationHostnameOther(@Nullable String destinationHostnameOther) {
             $.destinationHostnameOther = destinationHostnameOther;
             return this;
         }
 
+        /**
+         * @param destinationHostnameSibling Specifies the subdomain with which to replace to the current hostname&#39;s leftmost subdomain. For example, a value of `m` changes `www.example.com` to `m.example.com`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder destinationHostnameSibling(@Nullable String destinationHostnameSibling) {
             $.destinationHostnameSibling = destinationHostnameSibling;
             return this;
         }
 
+        /**
+         * @param destinationHostnameSubdomain Specifies a subdomain to prepend to the current hostname. For example, a value of `m` changes `www.example.com` to `m.www.example.com`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder destinationHostnameSubdomain(@Nullable String destinationHostnameSubdomain) {
             $.destinationHostnameSubdomain = destinationHostnameSubdomain;
             return this;
         }
 
+        /**
+         * @param destinationPath Specify how to change the requested pathname, independently from the hostname.
+         * 
+         * @return builder
+         * 
+         */
         public Builder destinationPath(@Nullable String destinationPath) {
             $.destinationPath = destinationPath;
             return this;
         }
 
+        /**
+         * @param destinationPathOther When `destinationPath` is set to `PREFIX_REQUEST`, this replaces the current path.
+         * 
+         * @return builder
+         * 
+         */
         public Builder destinationPathOther(@Nullable String destinationPathOther) {
             $.destinationPathOther = destinationPathOther;
             return this;
         }
 
+        /**
+         * @param destinationPathPrefix When `destinationPath` is set to `PREFIX_REQUEST`, this prepends the current path. For example, a value of `/prefix/path` changes `/example/index.html` to `/prefix/path/example/index.html`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder destinationPathPrefix(@Nullable String destinationPathPrefix) {
             $.destinationPathPrefix = destinationPathPrefix;
             return this;
         }
 
+        /**
+         * @param destinationPathSuffix When `destinationPath` is set to `PREFIX_REQUEST` and `destinationPathSuffixStatus` is set to `SUFFIX`, this specifies the suffix to append to the path.
+         * 
+         * @return builder
+         * 
+         */
         public Builder destinationPathSuffix(@Nullable String destinationPathSuffix) {
             $.destinationPathSuffix = destinationPathSuffix;
             return this;
         }
 
+        /**
+         * @param destinationPathSuffixStatus When `destinationPath` is set to `PREFIX_REQUEST`, this gives you the option of adding a suffix.
+         * 
+         * @return builder
+         * 
+         */
         public Builder destinationPathSuffixStatus(@Nullable String destinationPathSuffixStatus) {
             $.destinationPathSuffixStatus = destinationPathSuffixStatus;
             return this;
         }
 
+        /**
+         * @param destinationProtocol Choose the protocol for the redirect URL.
+         * 
+         * @return builder
+         * 
+         */
         public Builder destinationProtocol(@Nullable String destinationProtocol) {
             $.destinationProtocol = destinationProtocol;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param mobileDefaultChoice Either specify a default response for mobile browsers, or customize your own.
+         * 
+         * @return builder
+         * 
+         */
         public Builder mobileDefaultChoice(@Nullable String mobileDefaultChoice) {
             $.mobileDefaultChoice = mobileDefaultChoice;
             return this;
         }
 
+        /**
+         * @param queryString When set to `APPEND`, passes incoming query string parameters as part of the redirect URL. Otherwise set this to `IGNORE`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder queryString(@Nullable String queryString) {
             $.queryString = queryString;
             return this;
         }
 
+        /**
+         * @param responseCode Specify the redirect&#39;s response code.
+         * 
+         * @return builder
+         * 
+         */
         public Builder responseCode(@Nullable Integer responseCode) {
             $.responseCode = responseCode;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

@@ -15,37 +15,77 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorLogCustom extend
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorLogCustom Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorLogCustom();
 
+    /**
+     * Specifies an additional data field to append to each log line, maximum 1000 bytes, typically based on a dynamically generated built-in system variable. For example, `round-trip: {{builtin.AK_CLIENT_TURNAROUND_TIME}}ms` logs the total time to complete the response. See `Support for variables` for more information. Since this option can specify both a request and response, it overrides any `customLogField` settings in the `report` behavior.
+     * 
+     */
     @Import(name="customLogField")
     private @Nullable String customLogField;
 
+    /**
+     * @return Specifies an additional data field to append to each log line, maximum 1000 bytes, typically based on a dynamically generated built-in system variable. For example, `round-trip: {{builtin.AK_CLIENT_TURNAROUND_TIME}}ms` logs the total time to complete the response. See `Support for variables` for more information. Since this option can specify both a request and response, it overrides any `customLogField` settings in the `report` behavior.
+     * 
+     */
     public Optional<String> customLogField() {
         return Optional.ofNullable(this.customLogField);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Whether to append additional custom data to each log line.
+     * 
+     */
     @Import(name="logCustomLogField")
     private @Nullable Boolean logCustomLogField;
 
+    /**
+     * @return Whether to append additional custom data to each log line.
+     * 
+     */
     public Optional<Boolean> logCustomLogField() {
         return Optional.ofNullable(this.logCustomLogField);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -78,26 +118,56 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorLogCustom extend
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorLogCustom(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param customLogField Specifies an additional data field to append to each log line, maximum 1000 bytes, typically based on a dynamically generated built-in system variable. For example, `round-trip: {{builtin.AK_CLIENT_TURNAROUND_TIME}}ms` logs the total time to complete the response. See `Support for variables` for more information. Since this option can specify both a request and response, it overrides any `customLogField` settings in the `report` behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customLogField(@Nullable String customLogField) {
             $.customLogField = customLogField;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param logCustomLogField Whether to append additional custom data to each log line.
+         * 
+         * @return builder
+         * 
+         */
         public Builder logCustomLogField(@Nullable Boolean logCustomLogField) {
             $.logCustomLogField = logCustomLogField;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

@@ -14,12 +14,24 @@ namespace Pulumi.Akamai.Outputs
     public sealed class GetImagingPolicyImagePolicyTransformationIfDimensionResult
     {
         public readonly Outputs.GetImagingPolicyImagePolicyTransformationResult? Default;
+        /// <summary>
+        /// The dimension to use to select the transformation, either `height`, `width`, or `both`.
+        /// </summary>
         public readonly string? Dimension;
+        /// <summary>
+        /// The dimension to use to select the transformation, either `height`, `width`, or `both`.
+        /// </summary>
         public readonly string? DimensionVar;
         public readonly Outputs.GetImagingPolicyImagePolicyTransformationResult? Equal;
         public readonly Outputs.GetImagingPolicyImagePolicyTransformationResult? GreaterThan;
         public readonly Outputs.GetImagingPolicyImagePolicyTransformationResult? LessThan;
+        /// <summary>
+        /// The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
+        /// </summary>
         public readonly string? Value;
+        /// <summary>
+        /// The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
+        /// </summary>
         public readonly string? ValueVar;
 
         [OutputConstructor]

@@ -13,12 +13,33 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class DatastreamLogglyConnector
     {
+        /// <summary>
+        /// The unique HTTP code for your Loggly bulk endpoint.
+        /// </summary>
         public readonly string AuthToken;
+        /// <summary>
+        /// The type of the resource passed in the request's custom header. For details, see Additional options in the DataStream user guide.
+        /// </summary>
         public readonly string? ContentType;
+        /// <summary>
+        /// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.
+        /// </summary>
         public readonly string? CustomHeaderName;
+        /// <summary>
+        /// The custom header's contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.
+        /// </summary>
         public readonly string? CustomHeaderValue;
+        /// <summary>
+        /// The name of the connector.
+        /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// The Loggly bulk endpoint URL in the https://hostname.loggly.com/bulk/ format. Set the endpoint code in the authToken field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. See Stream logs to Loggly.
+        /// </summary>
         public readonly string Endpoint;
+        /// <summary>
+        /// The tags you can use to segment and filter log events in Loggly. See Tags in the Loggly documentation.
+        /// </summary>
         public readonly string? Tags;
 
         [OutputConstructor]

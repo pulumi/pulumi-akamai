@@ -17,51 +17,107 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorRefererCheckingA
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorRefererCheckingArgs Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorRefererCheckingArgs();
 
+    /**
+     * Allows all subdomains for the `domains` set, just like adding a `*.` prefix to each.
+     * 
+     */
     @Import(name="allowChildren")
     private @Nullable Output<Boolean> allowChildren;
 
+    /**
+     * @return Allows all subdomains for the `domains` set, just like adding a `*.` prefix to each.
+     * 
+     */
     public Optional<Output<Boolean>> allowChildren() {
         return Optional.ofNullable(this.allowChildren);
     }
 
+    /**
+     * Specifies the set of allowed domains. With `allowChildren` disabled, prefixing values with `*.` specifies domains for which subdomains are allowed.
+     * 
+     */
     @Import(name="domains")
     private @Nullable Output<List<String>> domains;
 
+    /**
+     * @return Specifies the set of allowed domains. With `allowChildren` disabled, prefixing values with `*.` specifies domains for which subdomains are allowed.
+     * 
+     */
     public Optional<Output<List<String>>> domains() {
         return Optional.ofNullable(this.domains);
     }
 
+    /**
+     * Enables the referer-checking behavior.
+     * 
+     */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
+    /**
+     * @return Enables the referer-checking behavior.
+     * 
+     */
     public Optional<Output<Boolean>> enabled() {
         return Optional.ofNullable(this.enabled);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * When enabled, excludes requests whose `Referer` header include a relative path, or that are missing a `Referer`. When disabled, only excludes requests whose `Referer` hostname is not part of the `domains` set.
+     * 
+     */
     @Import(name="strict")
     private @Nullable Output<Boolean> strict;
 
+    /**
+     * @return When enabled, excludes requests whose `Referer` header include a relative path, or that are missing a `Referer`. When disabled, only excludes requests whose `Referer` hostname is not part of the `domains` set.
+     * 
+     */
     public Optional<Output<Boolean>> strict() {
         return Optional.ofNullable(this.strict);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -96,69 +152,159 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorRefererCheckingA
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorRefererCheckingArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param allowChildren Allows all subdomains for the `domains` set, just like adding a `*.` prefix to each.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allowChildren(@Nullable Output<Boolean> allowChildren) {
             $.allowChildren = allowChildren;
             return this;
         }
 
+        /**
+         * @param allowChildren Allows all subdomains for the `domains` set, just like adding a `*.` prefix to each.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allowChildren(Boolean allowChildren) {
             return allowChildren(Output.of(allowChildren));
         }
 
+        /**
+         * @param domains Specifies the set of allowed domains. With `allowChildren` disabled, prefixing values with `*.` specifies domains for which subdomains are allowed.
+         * 
+         * @return builder
+         * 
+         */
         public Builder domains(@Nullable Output<List<String>> domains) {
             $.domains = domains;
             return this;
         }
 
+        /**
+         * @param domains Specifies the set of allowed domains. With `allowChildren` disabled, prefixing values with `*.` specifies domains for which subdomains are allowed.
+         * 
+         * @return builder
+         * 
+         */
         public Builder domains(List<String> domains) {
             return domains(Output.of(domains));
         }
 
+        /**
+         * @param domains Specifies the set of allowed domains. With `allowChildren` disabled, prefixing values with `*.` specifies domains for which subdomains are allowed.
+         * 
+         * @return builder
+         * 
+         */
         public Builder domains(String... domains) {
             return domains(List.of(domains));
         }
 
+        /**
+         * @param enabled Enables the referer-checking behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(@Nullable Output<Boolean> enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param enabled Enables the referer-checking behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(Boolean enabled) {
             return enabled(Output.of(enabled));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param strict When enabled, excludes requests whose `Referer` header include a relative path, or that are missing a `Referer`. When disabled, only excludes requests whose `Referer` hostname is not part of the `domains` set.
+         * 
+         * @return builder
+         * 
+         */
         public Builder strict(@Nullable Output<Boolean> strict) {
             $.strict = strict;
             return this;
         }
 
+        /**
+         * @param strict When enabled, excludes requests whose `Referer` header include a relative path, or that are missing a `Referer`. When disabled, only excludes requests whose `Referer` hostname is not part of the `domains` set.
+         * 
+         * @return builder
+         * 
+         */
         public Builder strict(Boolean strict) {
             return strict(Output.of(strict));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

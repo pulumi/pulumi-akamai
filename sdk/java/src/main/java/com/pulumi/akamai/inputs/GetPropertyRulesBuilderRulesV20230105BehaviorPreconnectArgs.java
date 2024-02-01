@@ -17,30 +17,62 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorPreconnectArgs e
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorPreconnectArgs Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorPreconnectArgs();
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Specifies the set of hostnames to which to preconnect over HTTP2.
+     * 
+     */
     @Import(name="preconnectlists")
     private @Nullable Output<List<String>> preconnectlists;
 
+    /**
+     * @return Specifies the set of hostnames to which to preconnect over HTTP2.
+     * 
+     */
     public Optional<Output<List<String>>> preconnectlists() {
         return Optional.ofNullable(this.preconnectlists);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -72,42 +104,96 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorPreconnectArgs e
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorPreconnectArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param preconnectlists Specifies the set of hostnames to which to preconnect over HTTP2.
+         * 
+         * @return builder
+         * 
+         */
         public Builder preconnectlists(@Nullable Output<List<String>> preconnectlists) {
             $.preconnectlists = preconnectlists;
             return this;
         }
 
+        /**
+         * @param preconnectlists Specifies the set of hostnames to which to preconnect over HTTP2.
+         * 
+         * @return builder
+         * 
+         */
         public Builder preconnectlists(List<String> preconnectlists) {
             return preconnectlists(Output.of(preconnectlists));
         }
 
+        /**
+         * @param preconnectlists Specifies the set of hostnames to which to preconnect over HTTP2.
+         * 
+         * @return builder
+         * 
+         */
         public Builder preconnectlists(String... preconnectlists) {
             return preconnectlists(List.of(preconnectlists));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

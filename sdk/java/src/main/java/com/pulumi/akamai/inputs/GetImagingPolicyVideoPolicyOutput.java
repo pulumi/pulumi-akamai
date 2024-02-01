@@ -14,44 +14,92 @@ public final class GetImagingPolicyVideoPolicyOutput extends com.pulumi.resource
 
     public static final GetImagingPolicyVideoPolicyOutput Empty = new GetImagingPolicyVideoPolicyOutput();
 
+    /**
+     * The quality of derivative videos. High preserves video quality with reduced byte savings while low reduces video quality to increase byte savings.
+     * 
+     */
     @Import(name="perceptualQuality")
     private @Nullable String perceptualQuality;
 
+    /**
+     * @return The quality of derivative videos. High preserves video quality with reduced byte savings while low reduces video quality to increase byte savings.
+     * 
+     */
     public Optional<String> perceptualQuality() {
         return Optional.ofNullable(this.perceptualQuality);
     }
 
+    /**
+     * The quality of derivative videos. High preserves video quality with reduced byte savings while low reduces video quality to increase byte savings.
+     * 
+     */
     @Import(name="perceptualQualityVar")
     private @Nullable String perceptualQualityVar;
 
+    /**
+     * @return The quality of derivative videos. High preserves video quality with reduced byte savings while low reduces video quality to increase byte savings.
+     * 
+     */
     public Optional<String> perceptualQualityVar() {
         return Optional.ofNullable(this.perceptualQualityVar);
     }
 
+    /**
+     * Allows you to add a specific placeholder video that appears when a user first requests a video, but before Image &amp; Video Manager processes the video. If not specified the original video plays during the processing time.
+     * 
+     */
     @Import(name="placeholderVideoUrl")
     private @Nullable String placeholderVideoUrl;
 
+    /**
+     * @return Allows you to add a specific placeholder video that appears when a user first requests a video, but before Image &amp; Video Manager processes the video. If not specified the original video plays during the processing time.
+     * 
+     */
     public Optional<String> placeholderVideoUrl() {
         return Optional.ofNullable(this.placeholderVideoUrl);
     }
 
+    /**
+     * Allows you to add a specific placeholder video that appears when a user first requests a video, but before Image &amp; Video Manager processes the video. If not specified the original video plays during the processing time.
+     * 
+     */
     @Import(name="placeholderVideoUrlVar")
     private @Nullable String placeholderVideoUrlVar;
 
+    /**
+     * @return Allows you to add a specific placeholder video that appears when a user first requests a video, but before Image &amp; Video Manager processes the video. If not specified the original video plays during the processing time.
+     * 
+     */
     public Optional<String> placeholderVideoUrlVar() {
         return Optional.ofNullable(this.placeholderVideoUrlVar);
     }
 
+    /**
+     * Override the quality of video to serve when Image &amp; Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of videos for users with faster connections.
+     * 
+     */
     @Import(name="videoAdaptiveQuality")
     private @Nullable String videoAdaptiveQuality;
 
+    /**
+     * @return Override the quality of video to serve when Image &amp; Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of videos for users with faster connections.
+     * 
+     */
     public Optional<String> videoAdaptiveQuality() {
         return Optional.ofNullable(this.videoAdaptiveQuality);
     }
 
+    /**
+     * Override the quality of video to serve when Image &amp; Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of videos for users with faster connections.
+     * 
+     */
     @Import(name="videoAdaptiveQualityVar")
     private @Nullable String videoAdaptiveQualityVar;
 
+    /**
+     * @return Override the quality of video to serve when Image &amp; Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of videos for users with faster connections.
+     * 
+     */
     public Optional<String> videoAdaptiveQualityVar() {
         return Optional.ofNullable(this.videoAdaptiveQualityVar);
     }
@@ -85,31 +133,67 @@ public final class GetImagingPolicyVideoPolicyOutput extends com.pulumi.resource
             $ = new GetImagingPolicyVideoPolicyOutput(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param perceptualQuality The quality of derivative videos. High preserves video quality with reduced byte savings while low reduces video quality to increase byte savings.
+         * 
+         * @return builder
+         * 
+         */
         public Builder perceptualQuality(@Nullable String perceptualQuality) {
             $.perceptualQuality = perceptualQuality;
             return this;
         }
 
+        /**
+         * @param perceptualQualityVar The quality of derivative videos. High preserves video quality with reduced byte savings while low reduces video quality to increase byte savings.
+         * 
+         * @return builder
+         * 
+         */
         public Builder perceptualQualityVar(@Nullable String perceptualQualityVar) {
             $.perceptualQualityVar = perceptualQualityVar;
             return this;
         }
 
+        /**
+         * @param placeholderVideoUrl Allows you to add a specific placeholder video that appears when a user first requests a video, but before Image &amp; Video Manager processes the video. If not specified the original video plays during the processing time.
+         * 
+         * @return builder
+         * 
+         */
         public Builder placeholderVideoUrl(@Nullable String placeholderVideoUrl) {
             $.placeholderVideoUrl = placeholderVideoUrl;
             return this;
         }
 
+        /**
+         * @param placeholderVideoUrlVar Allows you to add a specific placeholder video that appears when a user first requests a video, but before Image &amp; Video Manager processes the video. If not specified the original video plays during the processing time.
+         * 
+         * @return builder
+         * 
+         */
         public Builder placeholderVideoUrlVar(@Nullable String placeholderVideoUrlVar) {
             $.placeholderVideoUrlVar = placeholderVideoUrlVar;
             return this;
         }
 
+        /**
+         * @param videoAdaptiveQuality Override the quality of video to serve when Image &amp; Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of videos for users with faster connections.
+         * 
+         * @return builder
+         * 
+         */
         public Builder videoAdaptiveQuality(@Nullable String videoAdaptiveQuality) {
             $.videoAdaptiveQuality = videoAdaptiveQuality;
             return this;
         }
 
+        /**
+         * @param videoAdaptiveQualityVar Override the quality of video to serve when Image &amp; Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of videos for users with faster connections.
+         * 
+         * @return builder
+         * 
+         */
         public Builder videoAdaptiveQualityVar(@Nullable String videoAdaptiveQualityVar) {
             $.videoAdaptiveQualityVar = videoAdaptiveQualityVar;
             return this;

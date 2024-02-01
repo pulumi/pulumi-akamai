@@ -13,9 +13,21 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class PropertyIncludeActivationComplianceRecord
     {
+        /// <summary>
+        /// Provides an audit record when activating on a production network with noncompliance reason as `EMERGENCY`
+        /// </summary>
         public readonly Outputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergency? NoncomplianceReasonEmergency;
+        /// <summary>
+        /// Provides an audit record when activating on a production network with noncompliance reason as `NO_PRODUCTION_TRAFFIC`
+        /// </summary>
         public readonly Outputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic? NoncomplianceReasonNoProductionTraffic;
+        /// <summary>
+        /// Provides an audit record when activating on a production network with noncompliance reason as `NONE`
+        /// </summary>
         public readonly Outputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonNone? NoncomplianceReasonNone;
+        /// <summary>
+        /// Provides an audit record when activating on a production network with noncompliance reason as `OTHER`
+        /// </summary>
         public readonly Outputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther? NoncomplianceReasonOther;
 
         [OutputConstructor]

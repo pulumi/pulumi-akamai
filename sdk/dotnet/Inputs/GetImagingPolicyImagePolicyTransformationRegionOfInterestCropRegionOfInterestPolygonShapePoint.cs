@@ -12,15 +12,27 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapePointArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The horizontal position of the point, measured in pixels.
+        /// </summary>
         [Input("x")]
         public string? X { get; set; }
 
+        /// <summary>
+        /// The horizontal position of the point, measured in pixels.
+        /// </summary>
         [Input("xVar")]
         public string? XVar { get; set; }
 
+        /// <summary>
+        /// The vertical position of the point, measured in pixels.
+        /// </summary>
         [Input("y")]
         public string? Y { get; set; }
 
+        /// <summary>
+        /// The vertical position of the point, measured in pixels.
+        /// </summary>
         [Input("yVar")]
         public string? YVar { get; set; }
 

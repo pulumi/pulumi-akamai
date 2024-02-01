@@ -13,33 +13,89 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105CriterionPath {
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Sets a case-sensitive match.
+     * 
+     */
     private @Nullable Boolean matchCaseSensitive;
+    /**
+     * @return Matches the contents of the `values` array.
+     * 
+     */
     private @Nullable String matchOperator;
+    /**
+     * @return Transforms URLs before comparing them with the provided value. URLs are decoded, and any directory syntax such as `../..` or `//` is stripped as a security measure. This protects URL paths from being accessed by unauthorized users.
+     * 
+     */
     private @Nullable Boolean normalize;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
+    /**
+     * @return Matches the URL path, excluding leading hostname and trailing query parameters. The path is relative to the server root, for example `/blog`. This field allows wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `/blog/*{@literal /}2014` matches paths with two fixed segments and other varying segments between them.
+     * 
+     */
     private @Nullable List<String> values;
 
     private GetPropertyRulesBuilderRulesV20230105CriterionPath() {}
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Sets a case-sensitive match.
+     * 
+     */
     public Optional<Boolean> matchCaseSensitive() {
         return Optional.ofNullable(this.matchCaseSensitive);
     }
+    /**
+     * @return Matches the contents of the `values` array.
+     * 
+     */
     public Optional<String> matchOperator() {
         return Optional.ofNullable(this.matchOperator);
     }
+    /**
+     * @return Transforms URLs before comparing them with the provided value. URLs are decoded, and any directory syntax such as `../..` or `//` is stripped as a security measure. This protects URL paths from being accessed by unauthorized users.
+     * 
+     */
     public Optional<Boolean> normalize() {
         return Optional.ofNullable(this.normalize);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
+    /**
+     * @return Matches the URL path, excluding leading hostname and trailing query parameters. The path is relative to the server root, for example `/blog`. This field allows wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `/blog/*{@literal /}2014` matches paths with two fixed segments and other varying segments between them.
+     * 
+     */
     public List<String> values() {
         return this.values == null ? List.of() : this.values;
     }

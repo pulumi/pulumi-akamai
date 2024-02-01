@@ -15,16 +15,32 @@ public final class GetImagingPolicyImagePolicyTransformationBlurArgs extends com
 
     public static final GetImagingPolicyImagePolicyTransformationBlurArgs Empty = new GetImagingPolicyImagePolicyTransformationBlurArgs();
 
+    /**
+     * The number of pixels to scatter the original pixel by to create the blur effect. Resulting images may be larger than the original as pixels at the edge of the image might scatter outside the image&#39;s original dimensions.
+     * 
+     */
     @Import(name="sigma")
     private @Nullable Output<String> sigma;
 
+    /**
+     * @return The number of pixels to scatter the original pixel by to create the blur effect. Resulting images may be larger than the original as pixels at the edge of the image might scatter outside the image&#39;s original dimensions.
+     * 
+     */
     public Optional<Output<String>> sigma() {
         return Optional.ofNullable(this.sigma);
     }
 
+    /**
+     * The number of pixels to scatter the original pixel by to create the blur effect. Resulting images may be larger than the original as pixels at the edge of the image might scatter outside the image&#39;s original dimensions.
+     * 
+     */
     @Import(name="sigmaVar")
     private @Nullable Output<String> sigmaVar;
 
+    /**
+     * @return The number of pixels to scatter the original pixel by to create the blur effect. Resulting images may be larger than the original as pixels at the edge of the image might scatter outside the image&#39;s original dimensions.
+     * 
+     */
     public Optional<Output<String>> sigmaVar() {
         return Optional.ofNullable(this.sigmaVar);
     }
@@ -54,20 +70,44 @@ public final class GetImagingPolicyImagePolicyTransformationBlurArgs extends com
             $ = new GetImagingPolicyImagePolicyTransformationBlurArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param sigma The number of pixels to scatter the original pixel by to create the blur effect. Resulting images may be larger than the original as pixels at the edge of the image might scatter outside the image&#39;s original dimensions.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sigma(@Nullable Output<String> sigma) {
             $.sigma = sigma;
             return this;
         }
 
+        /**
+         * @param sigma The number of pixels to scatter the original pixel by to create the blur effect. Resulting images may be larger than the original as pixels at the edge of the image might scatter outside the image&#39;s original dimensions.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sigma(String sigma) {
             return sigma(Output.of(sigma));
         }
 
+        /**
+         * @param sigmaVar The number of pixels to scatter the original pixel by to create the blur effect. Resulting images may be larger than the original as pixels at the edge of the image might scatter outside the image&#39;s original dimensions.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sigmaVar(@Nullable Output<String> sigmaVar) {
             $.sigmaVar = sigmaVar;
             return this;
         }
 
+        /**
+         * @param sigmaVar The number of pixels to scatter the original pixel by to create the blur effect. Resulting images may be larger than the original as pixels at the edge of the image might scatter outside the image&#39;s original dimensions.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sigmaVar(String sigmaVar) {
             return sigmaVar(Output.of(sigmaVar));
         }

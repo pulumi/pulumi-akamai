@@ -10,21 +10,53 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKey {
+    /**
+     * @return The name of the auth key.
+     * 
+     */
     private String authKeyName;
+    /**
+     * @return The expirty date of an auth key.
+     * 
+     */
     private String expiryDate;
+    /**
+     * @return The header name of an auth key.
+     * 
+     */
     private String headerName;
+    /**
+     * @return The secret of an auth key.
+     * 
+     */
     private String secret;
 
     private GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKey() {}
+    /**
+     * @return The name of the auth key.
+     * 
+     */
     public String authKeyName() {
         return this.authKeyName;
     }
+    /**
+     * @return The expirty date of an auth key.
+     * 
+     */
     public String expiryDate() {
         return this.expiryDate;
     }
+    /**
+     * @return The header name of an auth key.
+     * 
+     */
     public String headerName() {
         return this.headerName;
     }
+    /**
+     * @return The secret of an auth key.
+     * 
+     */
     public String secret() {
         return this.secret;
     }

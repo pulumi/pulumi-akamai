@@ -13,8 +13,17 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication
     {
+        /// <summary>
+        /// Enable OCSP stapling
+        /// </summary>
         public readonly bool? OcspEnabled;
+        /// <summary>
+        /// Enable the server to send the certificate authority (CA) list to the client
+        /// </summary>
         public readonly bool? SendCaListToClient;
+        /// <summary>
+        /// The identifier of the set of trust chains, created in the Trust Chain Manager
+        /// </summary>
         public readonly string? SetId;
 
         [OutputConstructor]

@@ -13,9 +13,21 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageResult
     {
+        /// <summary>
+        /// A rectangular box, with a specified color and applied transformation.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxImageResult> BoxImages;
+        /// <summary>
+        /// A rectangular box, with a specified color and applied transformation.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageCircleImageResult> CircleImages;
+        /// <summary>
+        /// A snippet of text. Defines font family and size, fill color, and outline stroke width and color.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImageResult> TextImages;
+        /// <summary>
+        /// An image loaded from a URL.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageResult> UrlImages;
 
         [OutputConstructor]

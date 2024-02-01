@@ -14,9 +14,17 @@ public final class GetImagingPolicyImagePolicyTransformationImQuery extends com.
 
     public static final GetImagingPolicyImagePolicyTransformationImQuery Empty = new GetImagingPolicyImagePolicyTransformationImQuery();
 
+    /**
+     * Specifies the transformations that can be applied using the query string parameter.
+     * 
+     */
     @Import(name="allowedTransformations", required=true)
     private List<String> allowedTransformations;
 
+    /**
+     * @return Specifies the transformations that can be applied using the query string parameter.
+     * 
+     */
     public List<String> allowedTransformations() {
         return this.allowedTransformations;
     }
@@ -53,11 +61,23 @@ public final class GetImagingPolicyImagePolicyTransformationImQuery extends com.
             $ = new GetImagingPolicyImagePolicyTransformationImQuery(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param allowedTransformations Specifies the transformations that can be applied using the query string parameter.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allowedTransformations(List<String> allowedTransformations) {
             $.allowedTransformations = allowedTransformations;
             return this;
         }
 
+        /**
+         * @param allowedTransformations Specifies the transformations that can be applied using the query string parameter.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allowedTransformations(String... allowedTransformations) {
             return allowedTransformations(List.of(allowedTransformations));
         }

@@ -13,6 +13,9 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyTransformationImQueryResult
     {
+        /// <summary>
+        /// Specifies the transformations that can be applied using the query string parameter.
+        /// </summary>
         public readonly ImmutableArray<string> AllowedTransformations;
         public readonly string QueryVar;
 

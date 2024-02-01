@@ -13,17 +13,53 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetCPSEnrollmentsEnrollmentAdminContactResult
     {
+        /// <summary>
+        /// The address of the contact
+        /// </summary>
         public readonly string AddressLineOne;
+        /// <summary>
+        /// The address of the contact
+        /// </summary>
         public readonly string? AddressLineTwo;
+        /// <summary>
+        /// City of residence of the contact
+        /// </summary>
         public readonly string City;
+        /// <summary>
+        /// Country code of the contact
+        /// </summary>
         public readonly string CountryCode;
+        /// <summary>
+        /// E-mail address of the contact
+        /// </summary>
         public readonly string Email;
+        /// <summary>
+        /// First name of the contact
+        /// </summary>
         public readonly string FirstName;
+        /// <summary>
+        /// Last name of the contact
+        /// </summary>
         public readonly string LastName;
+        /// <summary>
+        /// Organization where contact is hired
+        /// </summary>
         public readonly string Organization;
+        /// <summary>
+        /// Phone number of the contact
+        /// </summary>
         public readonly string Phone;
+        /// <summary>
+        /// Postal code of the contact
+        /// </summary>
         public readonly string PostalCode;
+        /// <summary>
+        /// The region of the contact
+        /// </summary>
         public readonly string Region;
+        /// <summary>
+        /// Title of the the contact
+        /// </summary>
         public readonly string? Title;
 
         [OutputConstructor]

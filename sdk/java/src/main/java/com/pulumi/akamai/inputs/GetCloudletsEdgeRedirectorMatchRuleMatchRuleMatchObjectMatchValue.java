@@ -18,44 +18,92 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchV
 
     public static final GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValue Empty = new GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValue();
 
+    /**
+     * If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
+     * 
+     */
     @Import(name="name")
     private @Nullable String name;
 
+    /**
+     * @return If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
+     * 
+     */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
 
+    /**
+     * Set to true if the entry for the name property should be evaluated based on case sensitivity
+     * 
+     */
     @Import(name="nameCaseSensitive")
     private @Nullable Boolean nameCaseSensitive;
 
+    /**
+     * @return Set to true if the entry for the name property should be evaluated based on case sensitivity
+     * 
+     */
     public Optional<Boolean> nameCaseSensitive() {
         return Optional.ofNullable(this.nameCaseSensitive);
     }
 
+    /**
+     * Set to true if the entry for the name property includes wildcards
+     * 
+     */
     @Import(name="nameHasWildcard")
     private @Nullable Boolean nameHasWildcard;
 
+    /**
+     * @return Set to true if the entry for the name property includes wildcards
+     * 
+     */
     public Optional<Boolean> nameHasWildcard() {
         return Optional.ofNullable(this.nameHasWildcard);
     }
 
+    /**
+     * If using the object type, use this set to list the values to match on (use only with the object type)
+     * 
+     */
     @Import(name="options")
     private @Nullable GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptions options;
 
+    /**
+     * @return If using the object type, use this set to list the values to match on (use only with the object type)
+     * 
+     */
     public Optional<GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptions> options() {
         return Optional.ofNullable(this.options);
     }
 
+    /**
+     * The array type, which can be one of the following: object or simple. Use the simple option when adding only an array of string-based values
+     * 
+     */
     @Import(name="type", required=true)
     private String type;
 
+    /**
+     * @return The array type, which can be one of the following: object or simple. Use the simple option when adding only an array of string-based values
+     * 
+     */
     public String type() {
         return this.type;
     }
 
+    /**
+     * The value attributes in the incoming request to match on (use only with simple type)
+     * 
+     */
     @Import(name="values")
     private @Nullable List<String> values;
 
+    /**
+     * @return The value attributes in the incoming request to match on (use only with simple type)
+     * 
+     */
     public Optional<List<String>> values() {
         return Optional.ofNullable(this.values);
     }
@@ -89,36 +137,78 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchV
             $ = new GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValue(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param name If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(@Nullable String name) {
             $.name = name;
             return this;
         }
 
+        /**
+         * @param nameCaseSensitive Set to true if the entry for the name property should be evaluated based on case sensitivity
+         * 
+         * @return builder
+         * 
+         */
         public Builder nameCaseSensitive(@Nullable Boolean nameCaseSensitive) {
             $.nameCaseSensitive = nameCaseSensitive;
             return this;
         }
 
+        /**
+         * @param nameHasWildcard Set to true if the entry for the name property includes wildcards
+         * 
+         * @return builder
+         * 
+         */
         public Builder nameHasWildcard(@Nullable Boolean nameHasWildcard) {
             $.nameHasWildcard = nameHasWildcard;
             return this;
         }
 
+        /**
+         * @param options If using the object type, use this set to list the values to match on (use only with the object type)
+         * 
+         * @return builder
+         * 
+         */
         public Builder options(@Nullable GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptions options) {
             $.options = options;
             return this;
         }
 
+        /**
+         * @param type The array type, which can be one of the following: object or simple. Use the simple option when adding only an array of string-based values
+         * 
+         * @return builder
+         * 
+         */
         public Builder type(String type) {
             $.type = type;
             return this;
         }
 
+        /**
+         * @param values The value attributes in the incoming request to match on (use only with simple type)
+         * 
+         * @return builder
+         * 
+         */
         public Builder values(@Nullable List<String> values) {
             $.values = values;
             return this;
         }
 
+        /**
+         * @param values The value attributes in the incoming request to match on (use only with simple type)
+         * 
+         * @return builder
+         * 
+         */
         public Builder values(String... values) {
             return values(List.of(values));
         }

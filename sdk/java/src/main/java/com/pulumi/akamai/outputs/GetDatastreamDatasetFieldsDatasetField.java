@@ -11,25 +11,65 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDatastreamDatasetFieldsDatasetField {
+    /**
+     * @return Describes the data set field
+     * 
+     */
     private String datasetFieldDescription;
+    /**
+     * @return A name of the group for data set field
+     * 
+     */
     private String datasetFieldGroup;
+    /**
+     * @return Identifies the field
+     * 
+     */
     private Integer datasetFieldId;
+    /**
+     * @return Specifies the JSON key for the field in a log line
+     * 
+     */
     private String datasetFieldJsonKey;
+    /**
+     * @return A name of the data set field
+     * 
+     */
     private String datasetFieldName;
 
     private GetDatastreamDatasetFieldsDatasetField() {}
+    /**
+     * @return Describes the data set field
+     * 
+     */
     public String datasetFieldDescription() {
         return this.datasetFieldDescription;
     }
+    /**
+     * @return A name of the group for data set field
+     * 
+     */
     public String datasetFieldGroup() {
         return this.datasetFieldGroup;
     }
+    /**
+     * @return Identifies the field
+     * 
+     */
     public Integer datasetFieldId() {
         return this.datasetFieldId;
     }
+    /**
+     * @return Specifies the JSON key for the field in a log line
+     * 
+     */
     public String datasetFieldJsonKey() {
         return this.datasetFieldJsonKey;
     }
+    /**
+     * @return A name of the data set field
+     * 
+     */
     public String datasetFieldName() {
         return this.datasetFieldName;
     }

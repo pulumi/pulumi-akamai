@@ -20,9 +20,17 @@ public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop
 
     public static final GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestArgs Empty = new GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestArgs();
 
+    /**
+     * Defines a circle with a specified `radius` from its `center` point.
+     * 
+     */
     @Import(name="circleShapes")
     private @Nullable Output<List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeArgs>> circleShapes;
 
+    /**
+     * @return Defines a circle with a specified `radius` from its `center` point.
+     * 
+     */
     public Optional<Output<List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeArgs>>> circleShapes() {
         return Optional.ofNullable(this.circleShapes);
     }
@@ -34,23 +42,47 @@ public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop
         return Optional.ofNullable(this.pointShapes);
     }
 
+    /**
+     * Defines a polygon from a series of connected points.
+     * 
+     */
     @Import(name="polygonShapes")
     private @Nullable Output<List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapeArgs>> polygonShapes;
 
+    /**
+     * @return Defines a polygon from a series of connected points.
+     * 
+     */
     public Optional<Output<List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapeArgs>>> polygonShapes() {
         return Optional.ofNullable(this.polygonShapes);
     }
 
+    /**
+     * Defines a rectangle&#39;s `width` and `height` relative to an `anchor` point at the top left corner.
+     * 
+     */
     @Import(name="rectangleShapes")
     private @Nullable Output<List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeArgs>> rectangleShapes;
 
+    /**
+     * @return Defines a rectangle&#39;s `width` and `height` relative to an `anchor` point at the top left corner.
+     * 
+     */
     public Optional<Output<List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeArgs>>> rectangleShapes() {
         return Optional.ofNullable(this.rectangleShapes);
     }
 
+    /**
+     * Identifies a combined shape based on a set of other shapes. You can use a full JSON object to represent a union or an array of shapes that describe it.
+     * 
+     */
     @Import(name="unionShapes")
     private @Nullable Output<List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeArgs>> unionShapes;
 
+    /**
+     * @return Identifies a combined shape based on a set of other shapes. You can use a full JSON object to represent a union or an array of shapes that describe it.
+     * 
+     */
     public Optional<Output<List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeArgs>>> unionShapes() {
         return Optional.ofNullable(this.unionShapes);
     }
@@ -83,15 +115,33 @@ public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop
             $ = new GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param circleShapes Defines a circle with a specified `radius` from its `center` point.
+         * 
+         * @return builder
+         * 
+         */
         public Builder circleShapes(@Nullable Output<List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeArgs>> circleShapes) {
             $.circleShapes = circleShapes;
             return this;
         }
 
+        /**
+         * @param circleShapes Defines a circle with a specified `radius` from its `center` point.
+         * 
+         * @return builder
+         * 
+         */
         public Builder circleShapes(List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeArgs> circleShapes) {
             return circleShapes(Output.of(circleShapes));
         }
 
+        /**
+         * @param circleShapes Defines a circle with a specified `radius` from its `center` point.
+         * 
+         * @return builder
+         * 
+         */
         public Builder circleShapes(GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeArgs... circleShapes) {
             return circleShapes(List.of(circleShapes));
         }
@@ -109,41 +159,95 @@ public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop
             return pointShapes(List.of(pointShapes));
         }
 
+        /**
+         * @param polygonShapes Defines a polygon from a series of connected points.
+         * 
+         * @return builder
+         * 
+         */
         public Builder polygonShapes(@Nullable Output<List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapeArgs>> polygonShapes) {
             $.polygonShapes = polygonShapes;
             return this;
         }
 
+        /**
+         * @param polygonShapes Defines a polygon from a series of connected points.
+         * 
+         * @return builder
+         * 
+         */
         public Builder polygonShapes(List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapeArgs> polygonShapes) {
             return polygonShapes(Output.of(polygonShapes));
         }
 
+        /**
+         * @param polygonShapes Defines a polygon from a series of connected points.
+         * 
+         * @return builder
+         * 
+         */
         public Builder polygonShapes(GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapeArgs... polygonShapes) {
             return polygonShapes(List.of(polygonShapes));
         }
 
+        /**
+         * @param rectangleShapes Defines a rectangle&#39;s `width` and `height` relative to an `anchor` point at the top left corner.
+         * 
+         * @return builder
+         * 
+         */
         public Builder rectangleShapes(@Nullable Output<List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeArgs>> rectangleShapes) {
             $.rectangleShapes = rectangleShapes;
             return this;
         }
 
+        /**
+         * @param rectangleShapes Defines a rectangle&#39;s `width` and `height` relative to an `anchor` point at the top left corner.
+         * 
+         * @return builder
+         * 
+         */
         public Builder rectangleShapes(List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeArgs> rectangleShapes) {
             return rectangleShapes(Output.of(rectangleShapes));
         }
 
+        /**
+         * @param rectangleShapes Defines a rectangle&#39;s `width` and `height` relative to an `anchor` point at the top left corner.
+         * 
+         * @return builder
+         * 
+         */
         public Builder rectangleShapes(GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeArgs... rectangleShapes) {
             return rectangleShapes(List.of(rectangleShapes));
         }
 
+        /**
+         * @param unionShapes Identifies a combined shape based on a set of other shapes. You can use a full JSON object to represent a union or an array of shapes that describe it.
+         * 
+         * @return builder
+         * 
+         */
         public Builder unionShapes(@Nullable Output<List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeArgs>> unionShapes) {
             $.unionShapes = unionShapes;
             return this;
         }
 
+        /**
+         * @param unionShapes Identifies a combined shape based on a set of other shapes. You can use a full JSON object to represent a union or an array of shapes that describe it.
+         * 
+         * @return builder
+         * 
+         */
         public Builder unionShapes(List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeArgs> unionShapes) {
             return unionShapes(Output.of(unionShapes));
         }
 
+        /**
+         * @param unionShapes Identifies a combined shape based on a set of other shapes. You can use a full JSON object to represent a union or an array of shapes that describe it.
+         * 
+         * @return builder
+         * 
+         */
         public Builder unionShapes(GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeArgs... unionShapes) {
             return unionShapes(List.of(unionShapes));
         }

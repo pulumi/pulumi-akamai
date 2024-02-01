@@ -13,10 +13,25 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230105VariableResult
     {
+        /// <summary>
+        /// The description for a variable
+        /// </summary>
         public readonly string Description;
+        /// <summary>
+        /// Whether a variable should be hidden
+        /// </summary>
         public readonly bool Hidden;
+        /// <summary>
+        /// The name of a variable
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// States whether a variable contains sensitive information
+        /// </summary>
         public readonly bool Sensitive;
+        /// <summary>
+        /// The value for a variable
+        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

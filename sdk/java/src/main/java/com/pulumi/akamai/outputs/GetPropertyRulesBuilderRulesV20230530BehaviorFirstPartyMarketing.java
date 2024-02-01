@@ -13,33 +13,89 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorFirstPartyMarketing {
+    /**
+     * @return Identifies the Cloudlet policy.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530BehaviorFirstPartyMarketingCloudletPolicy cloudletPolicy;
+    /**
+     * @return Enables the Cloud Marketing Cloudlet.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Select how to insert the MediaMath JavaScript reference script.
+     * 
+     */
     private @Nullable String javaScriptInsertionRule;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Specify the URL path prefix that distinguishes Cloud Marketing requests from your other web traffic. Include the leading slash character, but no trailing slash.  For example, if the path prefix is `/mmath`, and the request is for `www.example.com/dir`, the new URL is `www.example.com/mmath/dir`.
+     * 
+     */
     private @Nullable String mediaMathPrefix;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorFirstPartyMarketing() {}
+    /**
+     * @return Identifies the Cloudlet policy.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530BehaviorFirstPartyMarketingCloudletPolicy> cloudletPolicy() {
         return Optional.ofNullable(this.cloudletPolicy);
     }
+    /**
+     * @return Enables the Cloud Marketing Cloudlet.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Select how to insert the MediaMath JavaScript reference script.
+     * 
+     */
     public Optional<String> javaScriptInsertionRule() {
         return Optional.ofNullable(this.javaScriptInsertionRule);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Specify the URL path prefix that distinguishes Cloud Marketing requests from your other web traffic. Include the leading slash character, but no trailing slash.  For example, if the path prefix is `/mmath`, and the request is for `www.example.com/dir`, the new URL is `www.example.com/mmath/dir`.
+     * 
+     */
     public Optional<String> mediaMathPrefix() {
         return Optional.ofNullable(this.mediaMathPrefix);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

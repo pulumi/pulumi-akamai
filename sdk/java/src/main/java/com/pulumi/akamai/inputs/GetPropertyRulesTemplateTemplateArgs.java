@@ -14,16 +14,32 @@ public final class GetPropertyRulesTemplateTemplateArgs extends com.pulumi.resou
 
     public static final GetPropertyRulesTemplateTemplateArgs Empty = new GetPropertyRulesTemplateTemplateArgs();
 
+    /**
+     * Content of the template as string
+     * 
+     */
     @Import(name="templateData", required=true)
     private Output<String> templateData;
 
+    /**
+     * @return Content of the template as string
+     * 
+     */
     public Output<String> templateData() {
         return this.templateData;
     }
 
+    /**
+     * Directory points to a folder, which contains snippets to include into template.
+     * 
+     */
     @Import(name="templateDir", required=true)
     private Output<String> templateDir;
 
+    /**
+     * @return Directory points to a folder, which contains snippets to include into template.
+     * 
+     */
     public Output<String> templateDir() {
         return this.templateDir;
     }
@@ -53,20 +69,44 @@ public final class GetPropertyRulesTemplateTemplateArgs extends com.pulumi.resou
             $ = new GetPropertyRulesTemplateTemplateArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param templateData Content of the template as string
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateData(Output<String> templateData) {
             $.templateData = templateData;
             return this;
         }
 
+        /**
+         * @param templateData Content of the template as string
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateData(String templateData) {
             return templateData(Output.of(templateData));
         }
 
+        /**
+         * @param templateDir Directory points to a folder, which contains snippets to include into template.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateDir(Output<String> templateDir) {
             $.templateDir = templateDir;
             return this;
         }
 
+        /**
+         * @param templateDir Directory points to a folder, which contains snippets to include into template.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateDir(String templateDir) {
             return templateDir(Output.of(templateDir));
         }

@@ -13,6 +13,9 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergency
     {
+        /// <summary>
+        /// Identifies the ticket that describes the need for the activation
+        /// </summary>
         public readonly string? TicketId;
 
         [OutputConstructor]

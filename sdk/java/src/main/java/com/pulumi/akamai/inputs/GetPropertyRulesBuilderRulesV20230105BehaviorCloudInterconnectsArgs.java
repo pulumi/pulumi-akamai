@@ -17,37 +17,77 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorCloudInterconnec
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorCloudInterconnectsArgs Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorCloudInterconnectsArgs();
 
+    /**
+     * Specifies the geographical locations of your cloud origin. You should enable Cloud Interconnects only if your origin is in one of these locations, since GCP doesn&#39;t provide a discount for egress traffic for any other regions.
+     * 
+     */
     @Import(name="cloudLocations")
     private @Nullable Output<List<String>> cloudLocations;
 
+    /**
+     * @return Specifies the geographical locations of your cloud origin. You should enable Cloud Interconnects only if your origin is in one of these locations, since GCP doesn&#39;t provide a discount for egress traffic for any other regions.
+     * 
+     */
     public Optional<Output<List<String>>> cloudLocations() {
         return Optional.ofNullable(this.cloudLocations);
     }
 
+    /**
+     * Channels the traffic to maximize the egress discount at the origin.
+     * 
+     */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
+    /**
+     * @return Channels the traffic to maximize the egress discount at the origin.
+     * 
+     */
     public Optional<Output<Boolean>> enabled() {
         return Optional.ofNullable(this.enabled);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -80,51 +120,117 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorCloudInterconnec
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorCloudInterconnectsArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param cloudLocations Specifies the geographical locations of your cloud origin. You should enable Cloud Interconnects only if your origin is in one of these locations, since GCP doesn&#39;t provide a discount for egress traffic for any other regions.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cloudLocations(@Nullable Output<List<String>> cloudLocations) {
             $.cloudLocations = cloudLocations;
             return this;
         }
 
+        /**
+         * @param cloudLocations Specifies the geographical locations of your cloud origin. You should enable Cloud Interconnects only if your origin is in one of these locations, since GCP doesn&#39;t provide a discount for egress traffic for any other regions.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cloudLocations(List<String> cloudLocations) {
             return cloudLocations(Output.of(cloudLocations));
         }
 
+        /**
+         * @param cloudLocations Specifies the geographical locations of your cloud origin. You should enable Cloud Interconnects only if your origin is in one of these locations, since GCP doesn&#39;t provide a discount for egress traffic for any other regions.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cloudLocations(String... cloudLocations) {
             return cloudLocations(List.of(cloudLocations));
         }
 
+        /**
+         * @param enabled Channels the traffic to maximize the egress discount at the origin.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(@Nullable Output<Boolean> enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param enabled Channels the traffic to maximize the egress discount at the origin.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(Boolean enabled) {
             return enabled(Output.of(enabled));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

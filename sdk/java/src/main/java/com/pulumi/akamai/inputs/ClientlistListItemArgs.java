@@ -17,30 +17,62 @@ public final class ClientlistListItemArgs extends com.pulumi.resources.ResourceA
 
     public static final ClientlistListItemArgs Empty = new ClientlistListItemArgs();
 
+    /**
+     * A description of the item.
+     * 
+     */
     @Import(name="description")
     private @Nullable Output<String> description;
 
+    /**
+     * @return A description of the item.
+     * 
+     */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
     }
 
+    /**
+     * The item expiration date.
+     * 
+     */
     @Import(name="expirationDate")
     private @Nullable Output<String> expirationDate;
 
+    /**
+     * @return The item expiration date.
+     * 
+     */
     public Optional<Output<String>> expirationDate() {
         return Optional.ofNullable(this.expirationDate);
     }
 
+    /**
+     * The item tags.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<String>> tags;
 
+    /**
+     * @return The item tags.
+     * 
+     */
     public Optional<Output<List<String>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
+    /**
+     * Value of the item. (i.e. IP address, AS Number, GEO, ...etc)
+     * 
+     */
     @Import(name="value", required=true)
     private Output<String> value;
 
+    /**
+     * @return Value of the item. (i.e. IP address, AS Number, GEO, ...etc)
+     * 
+     */
     public Output<String> value() {
         return this.value;
     }
@@ -72,42 +104,96 @@ public final class ClientlistListItemArgs extends com.pulumi.resources.ResourceA
             $ = new ClientlistListItemArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param description A description of the item.
+         * 
+         * @return builder
+         * 
+         */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
             return this;
         }
 
+        /**
+         * @param description A description of the item.
+         * 
+         * @return builder
+         * 
+         */
         public Builder description(String description) {
             return description(Output.of(description));
         }
 
+        /**
+         * @param expirationDate The item expiration date.
+         * 
+         * @return builder
+         * 
+         */
         public Builder expirationDate(@Nullable Output<String> expirationDate) {
             $.expirationDate = expirationDate;
             return this;
         }
 
+        /**
+         * @param expirationDate The item expiration date.
+         * 
+         * @return builder
+         * 
+         */
         public Builder expirationDate(String expirationDate) {
             return expirationDate(Output.of(expirationDate));
         }
 
+        /**
+         * @param tags The item tags.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<String>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags The item tags.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<String> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags The item tags.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(String... tags) {
             return tags(List.of(tags));
         }
 
+        /**
+         * @param value Value of the item. (i.e. IP address, AS Number, GEO, ...etc)
+         * 
+         * @return builder
+         * 
+         */
         public Builder value(Output<String> value) {
             $.value = value;
             return this;
         }
 
+        /**
+         * @param value Value of the item. (i.e. IP address, AS Number, GEO, ...etc)
+         * 
+         * @return builder
+         * 
+         */
         public Builder value(String value) {
             return value(Output.of(value));
         }

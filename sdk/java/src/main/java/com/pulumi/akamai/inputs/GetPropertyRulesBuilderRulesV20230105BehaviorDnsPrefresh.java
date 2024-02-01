@@ -15,44 +15,92 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorDnsPrefresh exte
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorDnsPrefresh Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorDnsPrefresh();
 
+    /**
+     * Specifies the amount of time following a DNS record&#39;s expiration to asynchronously prefresh it.
+     * 
+     */
     @Import(name="delay")
     private @Nullable String delay;
 
+    /**
+     * @return Specifies the amount of time following a DNS record&#39;s expiration to asynchronously prefresh it.
+     * 
+     */
     public Optional<String> delay() {
         return Optional.ofNullable(this.delay);
     }
 
+    /**
+     * Allows edge servers to refresh DNS records before they expire.
+     * 
+     */
     @Import(name="enabled")
     private @Nullable Boolean enabled;
 
+    /**
+     * @return Allows edge servers to refresh DNS records before they expire.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * Specifies the amount of time to prefresh a DNS entry if there have been no requests to the domain name.
+     * 
+     */
     @Import(name="timeout")
     private @Nullable String timeout;
 
+    /**
+     * @return Specifies the amount of time to prefresh a DNS entry if there have been no requests to the domain name.
+     * 
+     */
     public Optional<String> timeout() {
         return Optional.ofNullable(this.timeout);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -86,31 +134,67 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorDnsPrefresh exte
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorDnsPrefresh(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param delay Specifies the amount of time following a DNS record&#39;s expiration to asynchronously prefresh it.
+         * 
+         * @return builder
+         * 
+         */
         public Builder delay(@Nullable String delay) {
             $.delay = delay;
             return this;
         }
 
+        /**
+         * @param enabled Allows edge servers to refresh DNS records before they expire.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(@Nullable Boolean enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param timeout Specifies the amount of time to prefresh a DNS entry if there have been no requests to the domain name.
+         * 
+         * @return builder
+         * 
+         */
         public Builder timeout(@Nullable String timeout) {
             $.timeout = timeout;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

@@ -12,24 +12,45 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorFirstPartyMarketingArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Identifies the Cloudlet policy.
+        /// </summary>
         [Input("cloudletPolicy")]
         public Inputs.GetPropertyRulesBuilderRulesV20230530BehaviorFirstPartyMarketingCloudletPolicyArgs? CloudletPolicy { get; set; }
 
+        /// <summary>
+        /// Enables the Cloud Marketing Cloudlet.
+        /// </summary>
         [Input("enabled")]
         public bool? Enabled { get; set; }
 
+        /// <summary>
+        /// Select how to insert the MediaMath JavaScript reference script.
+        /// </summary>
         [Input("javaScriptInsertionRule")]
         public string? JavaScriptInsertionRule { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public bool? Locked { get; set; }
 
+        /// <summary>
+        /// Specify the URL path prefix that distinguishes Cloud Marketing requests from your other web traffic. Include the leading slash character, but no trailing slash.  For example, if the path prefix is `/mmath`, and the request is for `www.example.com/dir`, the new URL is `www.example.com/mmath/dir`.
+        /// </summary>
         [Input("mediaMathPrefix")]
         public string? MediaMathPrefix { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public string? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public string? Uuid { get; set; }
 

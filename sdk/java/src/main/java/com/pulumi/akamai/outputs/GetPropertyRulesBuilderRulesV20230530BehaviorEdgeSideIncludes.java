@@ -13,45 +13,125 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorEdgeSideIncludes {
+    /**
+     * @return Denies attempts to inject ESI code.
+     * 
+     */
     private @Nullable Boolean detectInjection;
+    /**
+     * @return Enable ESI only for content featuring the `Edge-control: dca=esi` HTTP response header.
+     * 
+     */
     private @Nullable Boolean enableViaHttp;
+    /**
+     * @return Enables ESI processing.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Specifies the character sets to use when transcoding the ESI language, `UTF-8` and `ISO-8859-1` for example.
+     * 
+     */
     private @Nullable List<String> i18nCharsets;
+    /**
+     * @return Provides internationalization support for ESI.
+     * 
+     */
     private @Nullable Boolean i18nStatus;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Allows edge servers to pass the client IP header to the ESI processor.
+     * 
+     */
     private @Nullable Boolean passClientIp;
+    /**
+     * @return Allows edge servers to pass your origin server&#39;s cookies to the ESI processor.
+     * 
+     */
     private @Nullable Boolean passSetCookie;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorEdgeSideIncludes() {}
+    /**
+     * @return Denies attempts to inject ESI code.
+     * 
+     */
     public Optional<Boolean> detectInjection() {
         return Optional.ofNullable(this.detectInjection);
     }
+    /**
+     * @return Enable ESI only for content featuring the `Edge-control: dca=esi` HTTP response header.
+     * 
+     */
     public Optional<Boolean> enableViaHttp() {
         return Optional.ofNullable(this.enableViaHttp);
     }
+    /**
+     * @return Enables ESI processing.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Specifies the character sets to use when transcoding the ESI language, `UTF-8` and `ISO-8859-1` for example.
+     * 
+     */
     public List<String> i18nCharsets() {
         return this.i18nCharsets == null ? List.of() : this.i18nCharsets;
     }
+    /**
+     * @return Provides internationalization support for ESI.
+     * 
+     */
     public Optional<Boolean> i18nStatus() {
         return Optional.ofNullable(this.i18nStatus);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Allows edge servers to pass the client IP header to the ESI processor.
+     * 
+     */
     public Optional<Boolean> passClientIp() {
         return Optional.ofNullable(this.passClientIp);
     }
+    /**
+     * @return Allows edge servers to pass your origin server&#39;s cookies to the ESI processor.
+     * 
+     */
     public Optional<Boolean> passSetCookie() {
         return Optional.ofNullable(this.passSetCookie);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

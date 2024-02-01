@@ -15,23 +15,47 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorImageAndVideoMan
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorImageAndVideoManagerCpCodeTransformedCpCodeLimits Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorImageAndVideoManagerCpCodeTransformedCpCodeLimits();
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     @Import(name="currentCapacity")
     private @Nullable Integer currentCapacity;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<Integer> currentCapacity() {
         return Optional.ofNullable(this.currentCapacity);
     }
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     @Import(name="limit")
     private @Nullable Integer limit;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<Integer> limit() {
         return Optional.ofNullable(this.limit);
     }
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     @Import(name="limitType")
     private @Nullable String limitType;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> limitType() {
         return Optional.ofNullable(this.limitType);
     }
@@ -62,16 +86,34 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorImageAndVideoMan
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorImageAndVideoManagerCpCodeTransformedCpCodeLimits(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param currentCapacity This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder currentCapacity(@Nullable Integer currentCapacity) {
             $.currentCapacity = currentCapacity;
             return this;
         }
 
+        /**
+         * @param limit This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder limit(@Nullable Integer limit) {
             $.limit = limit;
             return this;
         }
 
+        /**
+         * @param limitType This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder limitType(@Nullable String limitType) {
             $.limitType = limitType;
             return this;

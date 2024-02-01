@@ -13,57 +13,161 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDatastreamsStreamsDetail {
+    /**
+     * @return Identifies the contract that the stream is associated with.
+     * 
+     */
     private String contractId;
+    /**
+     * @return The username who created the stream.
+     * 
+     */
     private String createdBy;
+    /**
+     * @return The date and time when the stream was created.
+     * 
+     */
     private String createdDate;
+    /**
+     * @return Identifies the group where the stream is created.
+     * 
+     */
     private Integer groupId;
+    /**
+     * @return Identifies the latestVersion version of the stream.
+     * 
+     */
     private Integer latestVersion;
+    /**
+     * @return The username who activated or deactivated the stream
+     * 
+     */
     private String modifiedBy;
+    /**
+     * @return The date and time when activation status was modified
+     * 
+     */
     private String modifiedDate;
+    /**
+     * @return The productId.
+     * 
+     */
     private String productId;
+    /**
+     * @return List of properties associated with the stream.
+     * 
+     */
     private List<GetDatastreamsStreamsDetailProperty> properties;
+    /**
+     * @return Identifies the stream.
+     * 
+     */
     private Integer streamId;
+    /**
+     * @return The name of the stream.
+     * 
+     */
     private String streamName;
+    /**
+     * @return The activation status of the stream.
+     * 
+     */
     private String streamStatus;
+    /**
+     * @return Identifies the current version of the stream.
+     * 
+     */
     private Integer streamVersion;
 
     private GetDatastreamsStreamsDetail() {}
+    /**
+     * @return Identifies the contract that the stream is associated with.
+     * 
+     */
     public String contractId() {
         return this.contractId;
     }
+    /**
+     * @return The username who created the stream.
+     * 
+     */
     public String createdBy() {
         return this.createdBy;
     }
+    /**
+     * @return The date and time when the stream was created.
+     * 
+     */
     public String createdDate() {
         return this.createdDate;
     }
+    /**
+     * @return Identifies the group where the stream is created.
+     * 
+     */
     public Integer groupId() {
         return this.groupId;
     }
+    /**
+     * @return Identifies the latestVersion version of the stream.
+     * 
+     */
     public Integer latestVersion() {
         return this.latestVersion;
     }
+    /**
+     * @return The username who activated or deactivated the stream
+     * 
+     */
     public String modifiedBy() {
         return this.modifiedBy;
     }
+    /**
+     * @return The date and time when activation status was modified
+     * 
+     */
     public String modifiedDate() {
         return this.modifiedDate;
     }
+    /**
+     * @return The productId.
+     * 
+     */
     public String productId() {
         return this.productId;
     }
+    /**
+     * @return List of properties associated with the stream.
+     * 
+     */
     public List<GetDatastreamsStreamsDetailProperty> properties() {
         return this.properties;
     }
+    /**
+     * @return Identifies the stream.
+     * 
+     */
     public Integer streamId() {
         return this.streamId;
     }
+    /**
+     * @return The name of the stream.
+     * 
+     */
     public String streamName() {
         return this.streamName;
     }
+    /**
+     * @return The activation status of the stream.
+     * 
+     */
     public String streamStatus() {
         return this.streamStatus;
     }
+    /**
+     * @return Identifies the current version of the stream.
+     * 
+     */
     public Integer streamVersion() {
         return this.streamVersion;
     }

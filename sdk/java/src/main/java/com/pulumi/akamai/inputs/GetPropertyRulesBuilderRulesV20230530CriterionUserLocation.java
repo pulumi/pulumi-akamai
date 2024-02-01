@@ -16,72 +16,152 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionUserLocation ex
 
     public static final GetPropertyRulesBuilderRulesV20230530CriterionUserLocation Empty = new GetPropertyRulesBuilderRulesV20230530CriterionUserLocation();
 
+    /**
+     * Specifies which IP addresses determine the user&#39;s location.
+     * 
+     */
     @Import(name="checkIps")
     private @Nullable String checkIps;
 
+    /**
+     * @return Specifies which IP addresses determine the user&#39;s location.
+     * 
+     */
     public Optional<String> checkIps() {
         return Optional.ofNullable(this.checkIps);
     }
 
+    /**
+     * Continent codes.
+     * 
+     */
     @Import(name="continentValues")
     private @Nullable List<String> continentValues;
 
+    /**
+     * @return Continent codes.
+     * 
+     */
     public Optional<List<String>> continentValues() {
         return Optional.ofNullable(this.continentValues);
     }
 
+    /**
+     * ISO 3166-1 country codes, such as `US` or `CN`.
+     * 
+     */
     @Import(name="countryValues")
     private @Nullable List<String> countryValues;
 
+    /**
+     * @return ISO 3166-1 country codes, such as `US` or `CN`.
+     * 
+     */
     public Optional<List<String>> countryValues() {
         return Optional.ofNullable(this.countryValues);
     }
 
+    /**
+     * Indicates the geographic scope.
+     * 
+     */
     @Import(name="field")
     private @Nullable String field;
 
+    /**
+     * @return Indicates the geographic scope.
+     * 
+     */
     public Optional<String> field() {
         return Optional.ofNullable(this.field);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Matches the specified set of values when set to `IS_ONE_OF`, otherwise `IS_NOT_ONE_OF` reverses the match.
+     * 
+     */
     @Import(name="matchOperator")
     private @Nullable String matchOperator;
 
+    /**
+     * @return Matches the specified set of values when set to `IS_ONE_OF`, otherwise `IS_NOT_ONE_OF` reverses the match.
+     * 
+     */
     public Optional<String> matchOperator() {
         return Optional.ofNullable(this.matchOperator);
     }
 
+    /**
+     * ISO 3166 country and region codes, for example `US:MA` for Massachusetts or `JP:13` for Tokyo.
+     * 
+     */
     @Import(name="regionValues")
     private @Nullable List<String> regionValues;
 
+    /**
+     * @return ISO 3166 country and region codes, for example `US:MA` for Massachusetts or `JP:13` for Tokyo.
+     * 
+     */
     public Optional<List<String>> regionValues() {
         return Optional.ofNullable(this.regionValues);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * When connecting via a proxy server as determined by the `X-Forwarded-For` header, enabling this option matches the end client specified in the header. Disabling it matches the connecting client&#39;s IP address.
+     * 
+     */
     @Import(name="useOnlyFirstXForwardedForIp")
     private @Nullable Boolean useOnlyFirstXForwardedForIp;
 
+    /**
+     * @return When connecting via a proxy server as determined by the `X-Forwarded-For` header, enabling this option matches the end client specified in the header. Disabling it matches the connecting client&#39;s IP address.
+     * 
+     */
     public Optional<Boolean> useOnlyFirstXForwardedForIp() {
         return Optional.ofNullable(this.useOnlyFirstXForwardedForIp);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -119,63 +199,141 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionUserLocation ex
             $ = new GetPropertyRulesBuilderRulesV20230530CriterionUserLocation(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param checkIps Specifies which IP addresses determine the user&#39;s location.
+         * 
+         * @return builder
+         * 
+         */
         public Builder checkIps(@Nullable String checkIps) {
             $.checkIps = checkIps;
             return this;
         }
 
+        /**
+         * @param continentValues Continent codes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder continentValues(@Nullable List<String> continentValues) {
             $.continentValues = continentValues;
             return this;
         }
 
+        /**
+         * @param continentValues Continent codes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder continentValues(String... continentValues) {
             return continentValues(List.of(continentValues));
         }
 
+        /**
+         * @param countryValues ISO 3166-1 country codes, such as `US` or `CN`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder countryValues(@Nullable List<String> countryValues) {
             $.countryValues = countryValues;
             return this;
         }
 
+        /**
+         * @param countryValues ISO 3166-1 country codes, such as `US` or `CN`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder countryValues(String... countryValues) {
             return countryValues(List.of(countryValues));
         }
 
+        /**
+         * @param field Indicates the geographic scope.
+         * 
+         * @return builder
+         * 
+         */
         public Builder field(@Nullable String field) {
             $.field = field;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param matchOperator Matches the specified set of values when set to `IS_ONE_OF`, otherwise `IS_NOT_ONE_OF` reverses the match.
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchOperator(@Nullable String matchOperator) {
             $.matchOperator = matchOperator;
             return this;
         }
 
+        /**
+         * @param regionValues ISO 3166 country and region codes, for example `US:MA` for Massachusetts or `JP:13` for Tokyo.
+         * 
+         * @return builder
+         * 
+         */
         public Builder regionValues(@Nullable List<String> regionValues) {
             $.regionValues = regionValues;
             return this;
         }
 
+        /**
+         * @param regionValues ISO 3166 country and region codes, for example `US:MA` for Massachusetts or `JP:13` for Tokyo.
+         * 
+         * @return builder
+         * 
+         */
         public Builder regionValues(String... regionValues) {
             return regionValues(List.of(regionValues));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param useOnlyFirstXForwardedForIp When connecting via a proxy server as determined by the `X-Forwarded-For` header, enabling this option matches the end client specified in the header. Disabling it matches the connecting client&#39;s IP address.
+         * 
+         * @return builder
+         * 
+         */
         public Builder useOnlyFirstXForwardedForIp(@Nullable Boolean useOnlyFirstXForwardedForIp) {
             $.useOnlyFirstXForwardedForIp = useOnlyFirstXForwardedForIp;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

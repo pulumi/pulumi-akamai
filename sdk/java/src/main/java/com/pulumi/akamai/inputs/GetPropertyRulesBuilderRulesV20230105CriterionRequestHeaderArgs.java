@@ -17,65 +17,137 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionRequestHeaderAr
 
     public static final GetPropertyRulesBuilderRulesV20230105CriterionRequestHeaderArgs Empty = new GetPropertyRulesBuilderRulesV20230105CriterionRequestHeaderArgs();
 
+    /**
+     * The name of the request header, for example `Accept-Language`.
+     * 
+     */
     @Import(name="headerName")
     private @Nullable Output<String> headerName;
 
+    /**
+     * @return The name of the request header, for example `Accept-Language`.
+     * 
+     */
     public Optional<Output<String>> headerName() {
         return Optional.ofNullable(this.headerName);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Sets a case-sensitive match for the `value` field.
+     * 
+     */
     @Import(name="matchCaseSensitiveValue")
     private @Nullable Output<Boolean> matchCaseSensitiveValue;
 
+    /**
+     * @return Sets a case-sensitive match for the `value` field.
+     * 
+     */
     public Optional<Output<Boolean>> matchCaseSensitiveValue() {
         return Optional.ofNullable(this.matchCaseSensitiveValue);
     }
 
+    /**
+     * Narrows the match criteria.
+     * 
+     */
     @Import(name="matchOperator")
     private @Nullable Output<String> matchOperator;
 
+    /**
+     * @return Narrows the match criteria.
+     * 
+     */
     public Optional<Output<String>> matchOperator() {
         return Optional.ofNullable(this.matchOperator);
     }
 
+    /**
+     * Allows wildcards in the `headerName` field, where `?` matches a single character and `*` matches zero or more characters.
+     * 
+     */
     @Import(name="matchWildcardName")
     private @Nullable Output<Boolean> matchWildcardName;
 
+    /**
+     * @return Allows wildcards in the `headerName` field, where `?` matches a single character and `*` matches zero or more characters.
+     * 
+     */
     public Optional<Output<Boolean>> matchWildcardName() {
         return Optional.ofNullable(this.matchWildcardName);
     }
 
+    /**
+     * Allows wildcards in the `value` field, where `?` matches a single character and `*` matches zero or more characters.
+     * 
+     */
     @Import(name="matchWildcardValue")
     private @Nullable Output<Boolean> matchWildcardValue;
 
+    /**
+     * @return Allows wildcards in the `value` field, where `?` matches a single character and `*` matches zero or more characters.
+     * 
+     */
     public Optional<Output<Boolean>> matchWildcardValue() {
         return Optional.ofNullable(this.matchWildcardValue);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
 
+    /**
+     * The request header&#39;s value, for example `en-US` when the header `headerName` is `Accept-Language`.
+     * 
+     */
     @Import(name="values")
     private @Nullable Output<List<String>> values;
 
+    /**
+     * @return The request header&#39;s value, for example `en-US` when the header `headerName` is `Accept-Language`.
+     * 
+     */
     public Optional<Output<List<String>>> values() {
         return Optional.ofNullable(this.values);
     }
@@ -112,87 +184,201 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionRequestHeaderAr
             $ = new GetPropertyRulesBuilderRulesV20230105CriterionRequestHeaderArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param headerName The name of the request header, for example `Accept-Language`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder headerName(@Nullable Output<String> headerName) {
             $.headerName = headerName;
             return this;
         }
 
+        /**
+         * @param headerName The name of the request header, for example `Accept-Language`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder headerName(String headerName) {
             return headerName(Output.of(headerName));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param matchCaseSensitiveValue Sets a case-sensitive match for the `value` field.
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchCaseSensitiveValue(@Nullable Output<Boolean> matchCaseSensitiveValue) {
             $.matchCaseSensitiveValue = matchCaseSensitiveValue;
             return this;
         }
 
+        /**
+         * @param matchCaseSensitiveValue Sets a case-sensitive match for the `value` field.
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchCaseSensitiveValue(Boolean matchCaseSensitiveValue) {
             return matchCaseSensitiveValue(Output.of(matchCaseSensitiveValue));
         }
 
+        /**
+         * @param matchOperator Narrows the match criteria.
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchOperator(@Nullable Output<String> matchOperator) {
             $.matchOperator = matchOperator;
             return this;
         }
 
+        /**
+         * @param matchOperator Narrows the match criteria.
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchOperator(String matchOperator) {
             return matchOperator(Output.of(matchOperator));
         }
 
+        /**
+         * @param matchWildcardName Allows wildcards in the `headerName` field, where `?` matches a single character and `*` matches zero or more characters.
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchWildcardName(@Nullable Output<Boolean> matchWildcardName) {
             $.matchWildcardName = matchWildcardName;
             return this;
         }
 
+        /**
+         * @param matchWildcardName Allows wildcards in the `headerName` field, where `?` matches a single character and `*` matches zero or more characters.
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchWildcardName(Boolean matchWildcardName) {
             return matchWildcardName(Output.of(matchWildcardName));
         }
 
+        /**
+         * @param matchWildcardValue Allows wildcards in the `value` field, where `?` matches a single character and `*` matches zero or more characters.
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchWildcardValue(@Nullable Output<Boolean> matchWildcardValue) {
             $.matchWildcardValue = matchWildcardValue;
             return this;
         }
 
+        /**
+         * @param matchWildcardValue Allows wildcards in the `value` field, where `?` matches a single character and `*` matches zero or more characters.
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchWildcardValue(Boolean matchWildcardValue) {
             return matchWildcardValue(Output.of(matchWildcardValue));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }
 
+        /**
+         * @param values The request header&#39;s value, for example `en-US` when the header `headerName` is `Accept-Language`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder values(@Nullable Output<List<String>> values) {
             $.values = values;
             return this;
         }
 
+        /**
+         * @param values The request header&#39;s value, for example `en-US` when the header `headerName` is `Accept-Language`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder values(List<String> values) {
             return values(Output.of(values));
         }
 
+        /**
+         * @param values The request header&#39;s value, for example `en-US` when the header `headerName` is `Accept-Language`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder values(String... values) {
             return values(List.of(values));
         }

@@ -12,29 +12,77 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorCloudWrapperAdvanced {
+    /**
+     * @return Specifies the custom failover map to handle Cloud Wrapper failures. Contact your account representative for more information.
+     * 
+     */
     private @Nullable String customFailoverMap;
+    /**
+     * @return Enables failover for Cloud Wrapper.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Specifies the failover map to handle Cloud Wrapper failures. Contact your account representative for more information.
+     * 
+     */
     private @Nullable String failoverMap;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorCloudWrapperAdvanced() {}
+    /**
+     * @return Specifies the custom failover map to handle Cloud Wrapper failures. Contact your account representative for more information.
+     * 
+     */
     public Optional<String> customFailoverMap() {
         return Optional.ofNullable(this.customFailoverMap);
     }
+    /**
+     * @return Enables failover for Cloud Wrapper.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Specifies the failover map to handle Cloud Wrapper failures. Contact your account representative for more information.
+     * 
+     */
     public Optional<String> failoverMap() {
         return Optional.ofNullable(this.failoverMap);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

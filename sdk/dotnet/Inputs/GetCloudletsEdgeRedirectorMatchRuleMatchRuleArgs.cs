@@ -12,41 +12,75 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetCloudletsEdgeRedirectorMatchRuleMatchRuleInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// If set to true, disables a rule so it is not evaluated against incoming requests.
+        /// </summary>
         [Input("disabled")]
         public Input<bool>? Disabled { get; set; }
 
+        /// <summary>
+        /// The end time for this match (in seconds since the epoch)
+        /// </summary>
         [Input("end")]
         public Input<int>? End { get; set; }
 
+        /// <summary>
+        /// If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
+        /// </summary>
         [Input("matchUrl")]
         public Input<string>? MatchUrl { get; set; }
 
         [Input("matches")]
         private InputList<Inputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchInputArgs>? _matches;
+
+        /// <summary>
+        /// Defines a set of match objects
+        /// </summary>
         public InputList<Inputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchInputArgs> Matches
         {
             get => _matches ?? (_matches = new InputList<Inputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchInputArgs>());
             set => _matches = value;
         }
 
+        /// <summary>
+        /// The name of the rule
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// The URL Edge Redirector redirects the request to. If using use_relative_url, you can enter a path for the value
+        /// </summary>
         [Input("redirectUrl", required: true)]
         public Input<string> RedirectUrl { get; set; } = null!;
 
+        /// <summary>
+        /// The start time for this match (in seconds since the epoch)
+        /// </summary>
         [Input("start")]
         public Input<int>? Start { get; set; }
 
+        /// <summary>
+        /// The HTTP response status code (allowed values: 301, 302, 303, 307, 308)
+        /// </summary>
         [Input("statusCode", required: true)]
         public Input<int> StatusCode { get; set; } = null!;
 
+        /// <summary>
+        /// The type of Cloudlet the rule is for
+        /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 
+        /// <summary>
+        /// If set to true, the Cloudlet includes the query string from the request in the rewritten or forwarded URL
+        /// </summary>
         [Input("useIncomingQueryString")]
         public Input<bool>? UseIncomingQueryString { get; set; }
 
+        /// <summary>
+        /// If set to relative_url, takes the path entered for the redirectUrl and sets it in the response’s Location header. If set to copy_scheme_hostname, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information entered for the redirectUrl. If this property is not included, or is set to none, then the redirect_url should be fully-qualified URL
+        /// </summary>
         [Input("useRelativeUrl")]
         public Input<string>? UseRelativeUrl { get; set; }
 

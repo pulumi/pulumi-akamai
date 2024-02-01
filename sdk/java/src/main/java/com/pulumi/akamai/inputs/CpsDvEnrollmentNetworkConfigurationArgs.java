@@ -19,58 +19,122 @@ public final class CpsDvEnrollmentNetworkConfigurationArgs extends com.pulumi.re
 
     public static final CpsDvEnrollmentNetworkConfigurationArgs Empty = new CpsDvEnrollmentNetworkConfigurationArgs();
 
+    /**
+     * The trust chain configuration used for client mutual authentication
+     * 
+     */
     @Import(name="clientMutualAuthentication")
     private @Nullable Output<CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs> clientMutualAuthentication;
 
+    /**
+     * @return The trust chain configuration used for client mutual authentication
+     * 
+     */
     public Optional<Output<CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs>> clientMutualAuthentication() {
         return Optional.ofNullable(this.clientMutualAuthentication);
     }
 
+    /**
+     * Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created
+     * 
+     */
     @Import(name="cloneDnsNames")
     private @Nullable Output<Boolean> cloneDnsNames;
 
+    /**
+     * @return Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created
+     * 
+     */
     public Optional<Output<Boolean>> cloneDnsNames() {
         return Optional.ofNullable(this.cloneDnsNames);
     }
 
+    /**
+     * TLS versions which are disallowed
+     * 
+     */
     @Import(name="disallowedTlsVersions")
     private @Nullable Output<List<String>> disallowedTlsVersions;
 
+    /**
+     * @return TLS versions which are disallowed
+     * 
+     */
     public Optional<Output<List<String>>> disallowedTlsVersions() {
         return Optional.ofNullable(this.disallowedTlsVersions);
     }
 
+    /**
+     * Geography type used for enrollment
+     * 
+     */
     @Import(name="geography", required=true)
     private Output<String> geography;
 
+    /**
+     * @return Geography type used for enrollment
+     * 
+     */
     public Output<String> geography() {
         return this.geography;
     }
 
+    /**
+     * Mandatory Ciphers which are included for enrollment
+     * 
+     */
     @Import(name="mustHaveCiphers")
     private @Nullable Output<String> mustHaveCiphers;
 
+    /**
+     * @return Mandatory Ciphers which are included for enrollment
+     * 
+     */
     public Optional<Output<String>> mustHaveCiphers() {
         return Optional.ofNullable(this.mustHaveCiphers);
     }
 
+    /**
+     * Enable OCSP stapling
+     * 
+     */
     @Import(name="ocspStapling")
     private @Nullable Output<String> ocspStapling;
 
+    /**
+     * @return Enable OCSP stapling
+     * 
+     */
     public Optional<Output<String>> ocspStapling() {
         return Optional.ofNullable(this.ocspStapling);
     }
 
+    /**
+     * Preferred Ciphers which are included for enrollment
+     * 
+     */
     @Import(name="preferredCiphers")
     private @Nullable Output<String> preferredCiphers;
 
+    /**
+     * @return Preferred Ciphers which are included for enrollment
+     * 
+     */
     public Optional<Output<String>> preferredCiphers() {
         return Optional.ofNullable(this.preferredCiphers);
     }
 
+    /**
+     * Enable QUIC protocol
+     * 
+     */
     @Import(name="quicEnabled")
     private @Nullable Output<Boolean> quicEnabled;
 
+    /**
+     * @return Enable QUIC protocol
+     * 
+     */
     public Optional<Output<Boolean>> quicEnabled() {
         return Optional.ofNullable(this.quicEnabled);
     }
@@ -106,78 +170,180 @@ public final class CpsDvEnrollmentNetworkConfigurationArgs extends com.pulumi.re
             $ = new CpsDvEnrollmentNetworkConfigurationArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param clientMutualAuthentication The trust chain configuration used for client mutual authentication
+         * 
+         * @return builder
+         * 
+         */
         public Builder clientMutualAuthentication(@Nullable Output<CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs> clientMutualAuthentication) {
             $.clientMutualAuthentication = clientMutualAuthentication;
             return this;
         }
 
+        /**
+         * @param clientMutualAuthentication The trust chain configuration used for client mutual authentication
+         * 
+         * @return builder
+         * 
+         */
         public Builder clientMutualAuthentication(CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs clientMutualAuthentication) {
             return clientMutualAuthentication(Output.of(clientMutualAuthentication));
         }
 
+        /**
+         * @param cloneDnsNames Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created
+         * 
+         * @return builder
+         * 
+         */
         public Builder cloneDnsNames(@Nullable Output<Boolean> cloneDnsNames) {
             $.cloneDnsNames = cloneDnsNames;
             return this;
         }
 
+        /**
+         * @param cloneDnsNames Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created
+         * 
+         * @return builder
+         * 
+         */
         public Builder cloneDnsNames(Boolean cloneDnsNames) {
             return cloneDnsNames(Output.of(cloneDnsNames));
         }
 
+        /**
+         * @param disallowedTlsVersions TLS versions which are disallowed
+         * 
+         * @return builder
+         * 
+         */
         public Builder disallowedTlsVersions(@Nullable Output<List<String>> disallowedTlsVersions) {
             $.disallowedTlsVersions = disallowedTlsVersions;
             return this;
         }
 
+        /**
+         * @param disallowedTlsVersions TLS versions which are disallowed
+         * 
+         * @return builder
+         * 
+         */
         public Builder disallowedTlsVersions(List<String> disallowedTlsVersions) {
             return disallowedTlsVersions(Output.of(disallowedTlsVersions));
         }
 
+        /**
+         * @param disallowedTlsVersions TLS versions which are disallowed
+         * 
+         * @return builder
+         * 
+         */
         public Builder disallowedTlsVersions(String... disallowedTlsVersions) {
             return disallowedTlsVersions(List.of(disallowedTlsVersions));
         }
 
+        /**
+         * @param geography Geography type used for enrollment
+         * 
+         * @return builder
+         * 
+         */
         public Builder geography(Output<String> geography) {
             $.geography = geography;
             return this;
         }
 
+        /**
+         * @param geography Geography type used for enrollment
+         * 
+         * @return builder
+         * 
+         */
         public Builder geography(String geography) {
             return geography(Output.of(geography));
         }
 
+        /**
+         * @param mustHaveCiphers Mandatory Ciphers which are included for enrollment
+         * 
+         * @return builder
+         * 
+         */
         public Builder mustHaveCiphers(@Nullable Output<String> mustHaveCiphers) {
             $.mustHaveCiphers = mustHaveCiphers;
             return this;
         }
 
+        /**
+         * @param mustHaveCiphers Mandatory Ciphers which are included for enrollment
+         * 
+         * @return builder
+         * 
+         */
         public Builder mustHaveCiphers(String mustHaveCiphers) {
             return mustHaveCiphers(Output.of(mustHaveCiphers));
         }
 
+        /**
+         * @param ocspStapling Enable OCSP stapling
+         * 
+         * @return builder
+         * 
+         */
         public Builder ocspStapling(@Nullable Output<String> ocspStapling) {
             $.ocspStapling = ocspStapling;
             return this;
         }
 
+        /**
+         * @param ocspStapling Enable OCSP stapling
+         * 
+         * @return builder
+         * 
+         */
         public Builder ocspStapling(String ocspStapling) {
             return ocspStapling(Output.of(ocspStapling));
         }
 
+        /**
+         * @param preferredCiphers Preferred Ciphers which are included for enrollment
+         * 
+         * @return builder
+         * 
+         */
         public Builder preferredCiphers(@Nullable Output<String> preferredCiphers) {
             $.preferredCiphers = preferredCiphers;
             return this;
         }
 
+        /**
+         * @param preferredCiphers Preferred Ciphers which are included for enrollment
+         * 
+         * @return builder
+         * 
+         */
         public Builder preferredCiphers(String preferredCiphers) {
             return preferredCiphers(Output.of(preferredCiphers));
         }
 
+        /**
+         * @param quicEnabled Enable QUIC protocol
+         * 
+         * @return builder
+         * 
+         */
         public Builder quicEnabled(@Nullable Output<Boolean> quicEnabled) {
             $.quicEnabled = quicEnabled;
             return this;
         }
 
+        /**
+         * @param quicEnabled Enable QUIC protocol
+         * 
+         * @return builder
+         * 
+         */
         public Builder quicEnabled(Boolean quicEnabled) {
             return quicEnabled(Output.of(quicEnabled));
         }

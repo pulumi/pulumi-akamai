@@ -15,44 +15,92 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorChaseRedirects e
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorChaseRedirects Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorChaseRedirects();
 
+    /**
+     * Allows edge servers to chase redirects.
+     * 
+     */
     @Import(name="enabled")
     private @Nullable Boolean enabled;
 
+    /**
+     * @return Allows edge servers to chase redirects.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
 
+    /**
+     * Specifies, as a string, the maximum number of redirects to follow.
+     * 
+     */
     @Import(name="limit")
     private @Nullable String limit;
 
+    /**
+     * @return Specifies, as a string, the maximum number of redirects to follow.
+     * 
+     */
     public Optional<String> limit() {
         return Optional.ofNullable(this.limit);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Once the redirect `limit` is reached, enabling this option serves an HTTP `404` (Not Found) error instead of the last redirect.
+     * 
+     */
     @Import(name="serve404")
     private @Nullable Boolean serve404;
 
+    /**
+     * @return Once the redirect `limit` is reached, enabling this option serves an HTTP `404` (Not Found) error instead of the last redirect.
+     * 
+     */
     public Optional<Boolean> serve404() {
         return Optional.ofNullable(this.serve404);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -86,31 +134,67 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorChaseRedirects e
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorChaseRedirects(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param enabled Allows edge servers to chase redirects.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(@Nullable Boolean enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param limit Specifies, as a string, the maximum number of redirects to follow.
+         * 
+         * @return builder
+         * 
+         */
         public Builder limit(@Nullable String limit) {
             $.limit = limit;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param serve404 Once the redirect `limit` is reached, enabling this option serves an HTTP `404` (Not Found) error instead of the last redirect.
+         * 
+         * @return builder
+         * 
+         */
         public Builder serve404(@Nullable Boolean serve404) {
             $.serve404 = serve404;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

@@ -18,51 +18,107 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionMatchResponseCo
 
     public static final GetPropertyRulesBuilderRulesV20230530CriterionMatchResponseCodeArgs Empty = new GetPropertyRulesBuilderRulesV20230530CriterionMatchResponseCodeArgs();
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Specifies the start of a range of responses. For example, `400` to match anything from `400` to `500`.
+     * 
+     */
     @Import(name="lowerBound")
     private @Nullable Output<Integer> lowerBound;
 
+    /**
+     * @return Specifies the start of a range of responses. For example, `400` to match anything from `400` to `500`.
+     * 
+     */
     public Optional<Output<Integer>> lowerBound() {
         return Optional.ofNullable(this.lowerBound);
     }
 
+    /**
+     * Matches numeric range or a specified set of `values`.
+     * 
+     */
     @Import(name="matchOperator")
     private @Nullable Output<String> matchOperator;
 
+    /**
+     * @return Matches numeric range or a specified set of `values`.
+     * 
+     */
     public Optional<Output<String>> matchOperator() {
         return Optional.ofNullable(this.matchOperator);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * Specifies the end of a range of responses. For example, `500` to match anything from `400` to `500`.
+     * 
+     */
     @Import(name="upperBound")
     private @Nullable Output<Integer> upperBound;
 
+    /**
+     * @return Specifies the end of a range of responses. For example, `500` to match anything from `400` to `500`.
+     * 
+     */
     public Optional<Output<Integer>> upperBound() {
         return Optional.ofNullable(this.upperBound);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
 
+    /**
+     * A set of response codes to match, for example `[&#34;404&#34;,&#34;500&#34;]`.
+     * 
+     */
     @Import(name="values")
     private @Nullable Output<List<String>> values;
 
+    /**
+     * @return A set of response codes to match, for example `[&#34;404&#34;,&#34;500&#34;]`.
+     * 
+     */
     public Optional<Output<List<String>>> values() {
         return Optional.ofNullable(this.values);
     }
@@ -97,69 +153,159 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionMatchResponseCo
             $ = new GetPropertyRulesBuilderRulesV20230530CriterionMatchResponseCodeArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param lowerBound Specifies the start of a range of responses. For example, `400` to match anything from `400` to `500`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder lowerBound(@Nullable Output<Integer> lowerBound) {
             $.lowerBound = lowerBound;
             return this;
         }
 
+        /**
+         * @param lowerBound Specifies the start of a range of responses. For example, `400` to match anything from `400` to `500`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder lowerBound(Integer lowerBound) {
             return lowerBound(Output.of(lowerBound));
         }
 
+        /**
+         * @param matchOperator Matches numeric range or a specified set of `values`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchOperator(@Nullable Output<String> matchOperator) {
             $.matchOperator = matchOperator;
             return this;
         }
 
+        /**
+         * @param matchOperator Matches numeric range or a specified set of `values`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchOperator(String matchOperator) {
             return matchOperator(Output.of(matchOperator));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param upperBound Specifies the end of a range of responses. For example, `500` to match anything from `400` to `500`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder upperBound(@Nullable Output<Integer> upperBound) {
             $.upperBound = upperBound;
             return this;
         }
 
+        /**
+         * @param upperBound Specifies the end of a range of responses. For example, `500` to match anything from `400` to `500`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder upperBound(Integer upperBound) {
             return upperBound(Output.of(upperBound));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }
 
+        /**
+         * @param values A set of response codes to match, for example `[&#34;404&#34;,&#34;500&#34;]`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder values(@Nullable Output<List<String>> values) {
             $.values = values;
             return this;
         }
 
+        /**
+         * @param values A set of response codes to match, for example `[&#34;404&#34;,&#34;500&#34;]`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder values(List<String> values) {
             return values(Output.of(values));
         }
 
+        /**
+         * @param values A set of response codes to match, for example `[&#34;404&#34;,&#34;500&#34;]`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder values(String... values) {
             return values(List.of(values));
         }

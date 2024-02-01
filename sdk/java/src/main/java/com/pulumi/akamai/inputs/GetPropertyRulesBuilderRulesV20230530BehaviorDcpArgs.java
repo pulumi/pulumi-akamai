@@ -16,65 +16,137 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDcpArgs extends 
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorDcpArgs Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorDcpArgs();
 
+    /**
+     * When enabled, you don&#39;t need to pass the JWT token with the mqtt request, and JWT validation is skipped.
+     * 
+     */
     @Import(name="anonymous")
     private @Nullable Output<Boolean> anonymous;
 
+    /**
+     * @return When enabled, you don&#39;t need to pass the JWT token with the mqtt request, and JWT validation is skipped.
+     * 
+     */
     public Optional<Output<Boolean>> anonymous() {
         return Optional.ofNullable(this.anonymous);
     }
 
+    /**
+     * Enables IoT Edge Connect.
+     * 
+     */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
+    /**
+     * @return Enables IoT Edge Connect.
+     * 
+     */
     public Optional<Output<Boolean>> enabled() {
         return Optional.ofNullable(this.enabled);
     }
 
+    /**
+     * When enabled, you can publish and receive messages over a secured HTTP connection on port 443.
+     * 
+     */
     @Import(name="gwenabled")
     private @Nullable Output<Boolean> gwenabled;
 
+    /**
+     * @return When enabled, you can publish and receive messages over a secured HTTP connection on port 443.
+     * 
+     */
     public Optional<Output<Boolean>> gwenabled() {
         return Optional.ofNullable(this.gwenabled);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Specifies the globally reserved name for a specific configuration. It includes authorization rules over publishing and subscribing to logical categories known as `topics`. This provides a root path for all topics defined within a namespace configuration.  You can use the `IoT Edge Connect API` to configure access control lists for your namespace configuration.
+     * 
+     */
     @Import(name="namespaceId")
     private @Nullable Output<String> namespaceId;
 
+    /**
+     * @return Specifies the globally reserved name for a specific configuration. It includes authorization rules over publishing and subscribing to logical categories known as `topics`. This provides a root path for all topics defined within a namespace configuration.  You can use the `IoT Edge Connect API` to configure access control lists for your namespace configuration.
+     * 
+     */
     public Optional<Output<String>> namespaceId() {
         return Optional.ofNullable(this.namespaceId);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * When enabled, you can publish and receive messages over a secured MQTT connection on port 8883.
+     * 
+     */
     @Import(name="tlsenabled")
     private @Nullable Output<Boolean> tlsenabled;
 
+    /**
+     * @return When enabled, you can publish and receive messages over a secured MQTT connection on port 8883.
+     * 
+     */
     public Optional<Output<Boolean>> tlsenabled() {
         return Optional.ofNullable(this.tlsenabled);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
 
+    /**
+     * When enabled, you can publish and receive messages through a secured MQTT connection over WebSockets on port 443.
+     * 
+     */
     @Import(name="wsenabled")
     private @Nullable Output<Boolean> wsenabled;
 
+    /**
+     * @return When enabled, you can publish and receive messages through a secured MQTT connection over WebSockets on port 443.
+     * 
+     */
     public Optional<Output<Boolean>> wsenabled() {
         return Optional.ofNullable(this.wsenabled);
     }
@@ -111,83 +183,191 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDcpArgs extends 
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorDcpArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param anonymous When enabled, you don&#39;t need to pass the JWT token with the mqtt request, and JWT validation is skipped.
+         * 
+         * @return builder
+         * 
+         */
         public Builder anonymous(@Nullable Output<Boolean> anonymous) {
             $.anonymous = anonymous;
             return this;
         }
 
+        /**
+         * @param anonymous When enabled, you don&#39;t need to pass the JWT token with the mqtt request, and JWT validation is skipped.
+         * 
+         * @return builder
+         * 
+         */
         public Builder anonymous(Boolean anonymous) {
             return anonymous(Output.of(anonymous));
         }
 
+        /**
+         * @param enabled Enables IoT Edge Connect.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(@Nullable Output<Boolean> enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param enabled Enables IoT Edge Connect.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(Boolean enabled) {
             return enabled(Output.of(enabled));
         }
 
+        /**
+         * @param gwenabled When enabled, you can publish and receive messages over a secured HTTP connection on port 443.
+         * 
+         * @return builder
+         * 
+         */
         public Builder gwenabled(@Nullable Output<Boolean> gwenabled) {
             $.gwenabled = gwenabled;
             return this;
         }
 
+        /**
+         * @param gwenabled When enabled, you can publish and receive messages over a secured HTTP connection on port 443.
+         * 
+         * @return builder
+         * 
+         */
         public Builder gwenabled(Boolean gwenabled) {
             return gwenabled(Output.of(gwenabled));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param namespaceId Specifies the globally reserved name for a specific configuration. It includes authorization rules over publishing and subscribing to logical categories known as `topics`. This provides a root path for all topics defined within a namespace configuration.  You can use the `IoT Edge Connect API` to configure access control lists for your namespace configuration.
+         * 
+         * @return builder
+         * 
+         */
         public Builder namespaceId(@Nullable Output<String> namespaceId) {
             $.namespaceId = namespaceId;
             return this;
         }
 
+        /**
+         * @param namespaceId Specifies the globally reserved name for a specific configuration. It includes authorization rules over publishing and subscribing to logical categories known as `topics`. This provides a root path for all topics defined within a namespace configuration.  You can use the `IoT Edge Connect API` to configure access control lists for your namespace configuration.
+         * 
+         * @return builder
+         * 
+         */
         public Builder namespaceId(String namespaceId) {
             return namespaceId(Output.of(namespaceId));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param tlsenabled When enabled, you can publish and receive messages over a secured MQTT connection on port 8883.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tlsenabled(@Nullable Output<Boolean> tlsenabled) {
             $.tlsenabled = tlsenabled;
             return this;
         }
 
+        /**
+         * @param tlsenabled When enabled, you can publish and receive messages over a secured MQTT connection on port 8883.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tlsenabled(Boolean tlsenabled) {
             return tlsenabled(Output.of(tlsenabled));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }
 
+        /**
+         * @param wsenabled When enabled, you can publish and receive messages through a secured MQTT connection over WebSockets on port 443.
+         * 
+         * @return builder
+         * 
+         */
         public Builder wsenabled(@Nullable Output<Boolean> wsenabled) {
             $.wsenabled = wsenabled;
             return this;
         }
 
+        /**
+         * @param wsenabled When enabled, you can publish and receive messages through a secured MQTT connection over WebSockets on port 443.
+         * 
+         * @return builder
+         * 
+         */
         public Builder wsenabled(Boolean wsenabled) {
             return wsenabled(Output.of(wsenabled));
         }

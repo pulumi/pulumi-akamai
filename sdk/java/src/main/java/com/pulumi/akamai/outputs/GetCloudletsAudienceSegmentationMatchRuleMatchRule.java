@@ -17,37 +17,101 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCloudletsAudienceSegmentationMatchRuleMatchRule {
+    /**
+     * @return If set to true, disables a rule so it is not evaluated against incoming requests.
+     * 
+     */
     private @Nullable Boolean disabled;
+    /**
+     * @return The end time for this match (in seconds since the epoch)
+     * 
+     */
     private @Nullable Integer end;
+    /**
+     * @return This property defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, then the Edge Server returns an HTTP response from the rewritten URL
+     * 
+     */
     private GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettings forwardSettings;
+    /**
+     * @return If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
+     * 
+     */
     private @Nullable String matchUrl;
+    /**
+     * @return Defines a set of match objects
+     * 
+     */
     private @Nullable List<GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatch> matches;
+    /**
+     * @return The name of the rule
+     * 
+     */
     private @Nullable String name;
+    /**
+     * @return The start time for this match (in seconds since the epoch)
+     * 
+     */
     private @Nullable Integer start;
+    /**
+     * @return The type of Cloudlet the rule is for
+     * 
+     */
     private String type;
 
     private GetCloudletsAudienceSegmentationMatchRuleMatchRule() {}
+    /**
+     * @return If set to true, disables a rule so it is not evaluated against incoming requests.
+     * 
+     */
     public Optional<Boolean> disabled() {
         return Optional.ofNullable(this.disabled);
     }
+    /**
+     * @return The end time for this match (in seconds since the epoch)
+     * 
+     */
     public Optional<Integer> end() {
         return Optional.ofNullable(this.end);
     }
+    /**
+     * @return This property defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, then the Edge Server returns an HTTP response from the rewritten URL
+     * 
+     */
     public GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettings forwardSettings() {
         return this.forwardSettings;
     }
+    /**
+     * @return If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
+     * 
+     */
     public Optional<String> matchUrl() {
         return Optional.ofNullable(this.matchUrl);
     }
+    /**
+     * @return Defines a set of match objects
+     * 
+     */
     public List<GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatch> matches() {
         return this.matches == null ? List.of() : this.matches;
     }
+    /**
+     * @return The name of the rule
+     * 
+     */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
+    /**
+     * @return The start time for this match (in seconds since the epoch)
+     * 
+     */
     public Optional<Integer> start() {
         return Optional.ofNullable(this.start);
     }
+    /**
+     * @return The type of Cloudlet the rule is for
+     * 
+     */
     public String type() {
         return this.type;
     }

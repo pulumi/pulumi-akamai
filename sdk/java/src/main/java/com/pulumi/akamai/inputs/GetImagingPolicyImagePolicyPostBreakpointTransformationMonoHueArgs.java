@@ -15,16 +15,32 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHu
 
     public static final GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHueArgs Empty = new GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHueArgs();
 
+    /**
+     * Specify a hue by indicating the degree of rotation between 0 and 360 degrees around the color wheel. By default Mono Hue applies a red hue, 0.0 on the color wheel.
+     * 
+     */
     @Import(name="hue")
     private @Nullable Output<String> hue;
 
+    /**
+     * @return Specify a hue by indicating the degree of rotation between 0 and 360 degrees around the color wheel. By default Mono Hue applies a red hue, 0.0 on the color wheel.
+     * 
+     */
     public Optional<Output<String>> hue() {
         return Optional.ofNullable(this.hue);
     }
 
+    /**
+     * Specify a hue by indicating the degree of rotation between 0 and 360 degrees around the color wheel. By default Mono Hue applies a red hue, 0.0 on the color wheel.
+     * 
+     */
     @Import(name="hueVar")
     private @Nullable Output<String> hueVar;
 
+    /**
+     * @return Specify a hue by indicating the degree of rotation between 0 and 360 degrees around the color wheel. By default Mono Hue applies a red hue, 0.0 on the color wheel.
+     * 
+     */
     public Optional<Output<String>> hueVar() {
         return Optional.ofNullable(this.hueVar);
     }
@@ -54,20 +70,44 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHu
             $ = new GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHueArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param hue Specify a hue by indicating the degree of rotation between 0 and 360 degrees around the color wheel. By default Mono Hue applies a red hue, 0.0 on the color wheel.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hue(@Nullable Output<String> hue) {
             $.hue = hue;
             return this;
         }
 
+        /**
+         * @param hue Specify a hue by indicating the degree of rotation between 0 and 360 degrees around the color wheel. By default Mono Hue applies a red hue, 0.0 on the color wheel.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hue(String hue) {
             return hue(Output.of(hue));
         }
 
+        /**
+         * @param hueVar Specify a hue by indicating the degree of rotation between 0 and 360 degrees around the color wheel. By default Mono Hue applies a red hue, 0.0 on the color wheel.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hueVar(@Nullable Output<String> hueVar) {
             $.hueVar = hueVar;
             return this;
         }
 
+        /**
+         * @param hueVar Specify a hue by indicating the degree of rotation between 0 and 360 degrees around the color wheel. By default Mono Hue applies a red hue, 0.0 on the color wheel.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hueVar(String hueVar) {
             return hueVar(Output.of(hueVar));
         }

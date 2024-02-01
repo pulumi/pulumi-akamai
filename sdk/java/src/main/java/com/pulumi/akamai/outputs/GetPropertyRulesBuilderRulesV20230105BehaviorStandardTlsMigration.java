@@ -13,61 +13,173 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorStandardTlsMigration {
+    /**
+     * @return Allow temporary downgrade of HTTPS traffic to HTTP. This removes various `Origin`, `Referer`, `Cookie`, `Cookie2`, `sec-*` and `proxy-*` headers from the request to origin.
+     * 
+     */
     private @Nullable Boolean allowHttpsDowngrade;
+    /**
+     * @return Allows temporary upgrade of HTTP traffic to HTTPS.
+     * 
+     */
     private @Nullable Boolean allowHttpsUpgrade;
+    /**
+     * @return Specifies the number cache sharing days.
+     * 
+     */
     private @Nullable Integer cacheSharingDuration;
+    /**
+     * @return Specifies when to start cache sharing.
+     * 
+     */
     private @Nullable String cacheSharingStartTime;
+    /**
+     * @return Allows migration to Standard TLS.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Sets whether your new certificate is SNI-only.
+     * 
+     */
     private @Nullable Boolean isCertificateSniOnly;
+    /**
+     * @return Allows you to align traffic to various `tieredDistribution` areas.
+     * 
+     */
     private @Nullable Boolean isTieredDistributionUsed;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Specifies the number of days to migrate the cache.
+     * 
+     */
     private @Nullable Integer migrationDuration;
+    /**
+     * @return What kind of traffic you&#39;re migrating from.
+     * 
+     */
     private @Nullable String migrationFrom;
+    /**
+     * @return Specifies when to start migrating the cache.
+     * 
+     */
     private @Nullable String migrationStartTime;
+    /**
+     * @return Specifies the `tieredDistribution` location.
+     * 
+     */
     private @Nullable String tdLocation;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorStandardTlsMigration() {}
+    /**
+     * @return Allow temporary downgrade of HTTPS traffic to HTTP. This removes various `Origin`, `Referer`, `Cookie`, `Cookie2`, `sec-*` and `proxy-*` headers from the request to origin.
+     * 
+     */
     public Optional<Boolean> allowHttpsDowngrade() {
         return Optional.ofNullable(this.allowHttpsDowngrade);
     }
+    /**
+     * @return Allows temporary upgrade of HTTP traffic to HTTPS.
+     * 
+     */
     public Optional<Boolean> allowHttpsUpgrade() {
         return Optional.ofNullable(this.allowHttpsUpgrade);
     }
+    /**
+     * @return Specifies the number cache sharing days.
+     * 
+     */
     public Optional<Integer> cacheSharingDuration() {
         return Optional.ofNullable(this.cacheSharingDuration);
     }
+    /**
+     * @return Specifies when to start cache sharing.
+     * 
+     */
     public Optional<String> cacheSharingStartTime() {
         return Optional.ofNullable(this.cacheSharingStartTime);
     }
+    /**
+     * @return Allows migration to Standard TLS.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Sets whether your new certificate is SNI-only.
+     * 
+     */
     public Optional<Boolean> isCertificateSniOnly() {
         return Optional.ofNullable(this.isCertificateSniOnly);
     }
+    /**
+     * @return Allows you to align traffic to various `tieredDistribution` areas.
+     * 
+     */
     public Optional<Boolean> isTieredDistributionUsed() {
         return Optional.ofNullable(this.isTieredDistributionUsed);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Specifies the number of days to migrate the cache.
+     * 
+     */
     public Optional<Integer> migrationDuration() {
         return Optional.ofNullable(this.migrationDuration);
     }
+    /**
+     * @return What kind of traffic you&#39;re migrating from.
+     * 
+     */
     public Optional<String> migrationFrom() {
         return Optional.ofNullable(this.migrationFrom);
     }
+    /**
+     * @return Specifies when to start migrating the cache.
+     * 
+     */
     public Optional<String> migrationStartTime() {
         return Optional.ofNullable(this.migrationStartTime);
     }
+    /**
+     * @return Specifies the `tieredDistribution` location.
+     * 
+     */
     public Optional<String> tdLocation() {
         return Optional.ofNullable(this.tdLocation);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

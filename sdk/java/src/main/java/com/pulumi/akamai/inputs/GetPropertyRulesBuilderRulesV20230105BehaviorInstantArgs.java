@@ -17,58 +17,122 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorInstantArgs exte
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorInstantArgs Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorInstantArgs();
 
+    /**
+     * Specify link relation values that activate the prefetching behavior. For example, specifying `fetch` allows you to use shorter `rel=&#34;fetch&#34;` markup.
+     * 
+     */
     @Import(name="customLinkRelations")
     private @Nullable Output<List<String>> customLinkRelations;
 
+    /**
+     * @return Specify link relation values that activate the prefetching behavior. For example, specifying `fetch` allows you to use shorter `rel=&#34;fetch&#34;` markup.
+     * 
+     */
     public Optional<Output<List<String>>> customLinkRelations() {
         return Optional.ofNullable(this.customLinkRelations);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * When enabled, applies prefetching only to objects already set to be cacheable, for example using the `caching` behavior. Only applies to content with the `tieredDistribution` behavior enabled.
+     * 
+     */
     @Import(name="prefetchCacheable")
     private @Nullable Output<Boolean> prefetchCacheable;
 
+    /**
+     * @return When enabled, applies prefetching only to objects already set to be cacheable, for example using the `caching` behavior. Only applies to content with the `tieredDistribution` behavior enabled.
+     * 
+     */
     public Optional<Output<Boolean>> prefetchCacheable() {
         return Optional.ofNullable(this.prefetchCacheable);
     }
 
+    /**
+     * Allows edge servers to prefetch additional HTML pages while pages that link to them are being delivered. This only applies to links from `&lt;a&gt;` or `&lt;link&gt;` tags with the appropriate link relation attribute.
+     * 
+     */
     @Import(name="prefetchHtml")
     private @Nullable Output<Boolean> prefetchHtml;
 
+    /**
+     * @return Allows edge servers to prefetch additional HTML pages while pages that link to them are being delivered. This only applies to links from `&lt;a&gt;` or `&lt;link&gt;` tags with the appropriate link relation attribute.
+     * 
+     */
     public Optional<Output<Boolean>> prefetchHtml() {
         return Optional.ofNullable(this.prefetchHtml);
     }
 
+    /**
+     * Allows otherwise non-cacheable `no-store` content to prefetch if the URL path ends with `/` to indicate a request for a default file, or if the extension matches the value of the `prefetchNoStoreExtensions` option. Only applies to content with the `sureRoute` behavior enabled.
+     * 
+     */
     @Import(name="prefetchNoStore")
     private @Nullable Output<Boolean> prefetchNoStore;
 
+    /**
+     * @return Allows otherwise non-cacheable `no-store` content to prefetch if the URL path ends with `/` to indicate a request for a default file, or if the extension matches the value of the `prefetchNoStoreExtensions` option. Only applies to content with the `sureRoute` behavior enabled.
+     * 
+     */
     public Optional<Output<Boolean>> prefetchNoStore() {
         return Optional.ofNullable(this.prefetchNoStore);
     }
 
+    /**
+     * Specifies a set of file extensions for which the `prefetchNoStore` option is allowed.
+     * 
+     */
     @Import(name="prefetchNoStoreExtensions")
     private @Nullable Output<List<String>> prefetchNoStoreExtensions;
 
+    /**
+     * @return Specifies a set of file extensions for which the `prefetchNoStore` option is allowed.
+     * 
+     */
     public Optional<Output<List<String>>> prefetchNoStoreExtensions() {
         return Optional.ofNullable(this.prefetchNoStoreExtensions);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -104,82 +168,190 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorInstantArgs exte
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorInstantArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param customLinkRelations Specify link relation values that activate the prefetching behavior. For example, specifying `fetch` allows you to use shorter `rel=&#34;fetch&#34;` markup.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customLinkRelations(@Nullable Output<List<String>> customLinkRelations) {
             $.customLinkRelations = customLinkRelations;
             return this;
         }
 
+        /**
+         * @param customLinkRelations Specify link relation values that activate the prefetching behavior. For example, specifying `fetch` allows you to use shorter `rel=&#34;fetch&#34;` markup.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customLinkRelations(List<String> customLinkRelations) {
             return customLinkRelations(Output.of(customLinkRelations));
         }
 
+        /**
+         * @param customLinkRelations Specify link relation values that activate the prefetching behavior. For example, specifying `fetch` allows you to use shorter `rel=&#34;fetch&#34;` markup.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customLinkRelations(String... customLinkRelations) {
             return customLinkRelations(List.of(customLinkRelations));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param prefetchCacheable When enabled, applies prefetching only to objects already set to be cacheable, for example using the `caching` behavior. Only applies to content with the `tieredDistribution` behavior enabled.
+         * 
+         * @return builder
+         * 
+         */
         public Builder prefetchCacheable(@Nullable Output<Boolean> prefetchCacheable) {
             $.prefetchCacheable = prefetchCacheable;
             return this;
         }
 
+        /**
+         * @param prefetchCacheable When enabled, applies prefetching only to objects already set to be cacheable, for example using the `caching` behavior. Only applies to content with the `tieredDistribution` behavior enabled.
+         * 
+         * @return builder
+         * 
+         */
         public Builder prefetchCacheable(Boolean prefetchCacheable) {
             return prefetchCacheable(Output.of(prefetchCacheable));
         }
 
+        /**
+         * @param prefetchHtml Allows edge servers to prefetch additional HTML pages while pages that link to them are being delivered. This only applies to links from `&lt;a&gt;` or `&lt;link&gt;` tags with the appropriate link relation attribute.
+         * 
+         * @return builder
+         * 
+         */
         public Builder prefetchHtml(@Nullable Output<Boolean> prefetchHtml) {
             $.prefetchHtml = prefetchHtml;
             return this;
         }
 
+        /**
+         * @param prefetchHtml Allows edge servers to prefetch additional HTML pages while pages that link to them are being delivered. This only applies to links from `&lt;a&gt;` or `&lt;link&gt;` tags with the appropriate link relation attribute.
+         * 
+         * @return builder
+         * 
+         */
         public Builder prefetchHtml(Boolean prefetchHtml) {
             return prefetchHtml(Output.of(prefetchHtml));
         }
 
+        /**
+         * @param prefetchNoStore Allows otherwise non-cacheable `no-store` content to prefetch if the URL path ends with `/` to indicate a request for a default file, or if the extension matches the value of the `prefetchNoStoreExtensions` option. Only applies to content with the `sureRoute` behavior enabled.
+         * 
+         * @return builder
+         * 
+         */
         public Builder prefetchNoStore(@Nullable Output<Boolean> prefetchNoStore) {
             $.prefetchNoStore = prefetchNoStore;
             return this;
         }
 
+        /**
+         * @param prefetchNoStore Allows otherwise non-cacheable `no-store` content to prefetch if the URL path ends with `/` to indicate a request for a default file, or if the extension matches the value of the `prefetchNoStoreExtensions` option. Only applies to content with the `sureRoute` behavior enabled.
+         * 
+         * @return builder
+         * 
+         */
         public Builder prefetchNoStore(Boolean prefetchNoStore) {
             return prefetchNoStore(Output.of(prefetchNoStore));
         }
 
+        /**
+         * @param prefetchNoStoreExtensions Specifies a set of file extensions for which the `prefetchNoStore` option is allowed.
+         * 
+         * @return builder
+         * 
+         */
         public Builder prefetchNoStoreExtensions(@Nullable Output<List<String>> prefetchNoStoreExtensions) {
             $.prefetchNoStoreExtensions = prefetchNoStoreExtensions;
             return this;
         }
 
+        /**
+         * @param prefetchNoStoreExtensions Specifies a set of file extensions for which the `prefetchNoStore` option is allowed.
+         * 
+         * @return builder
+         * 
+         */
         public Builder prefetchNoStoreExtensions(List<String> prefetchNoStoreExtensions) {
             return prefetchNoStoreExtensions(Output.of(prefetchNoStoreExtensions));
         }
 
+        /**
+         * @param prefetchNoStoreExtensions Specifies a set of file extensions for which the `prefetchNoStore` option is allowed.
+         * 
+         * @return builder
+         * 
+         */
         public Builder prefetchNoStoreExtensions(String... prefetchNoStoreExtensions) {
             return prefetchNoStoreExtensions(List.of(prefetchNoStoreExtensions));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

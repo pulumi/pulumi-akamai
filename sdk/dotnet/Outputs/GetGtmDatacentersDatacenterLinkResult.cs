@@ -13,7 +13,13 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetGtmDatacentersDatacenterLinkResult
     {
+        /// <summary>
+        /// A hypermedia link to the complete URL that uniquely defines a resource.
+        /// </summary>
         public readonly string Href;
+        /// <summary>
+        /// Indicates the link relationship of the object.
+        /// </summary>
         public readonly string Rel;
 
         [OutputConstructor]

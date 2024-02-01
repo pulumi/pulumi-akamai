@@ -12,25 +12,42 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Specify diagnostic data beacons details.
+        /// </summary>
         [Input("bocc")]
         public Input<Inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBoccInputArgs>? Bocc { get; set; }
 
         [Input("cdns")]
         private InputList<Inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnInputArgs>? _cdns;
+
+        /// <summary>
+        /// List of CDN added for the configuration.
+        /// </summary>
         public InputList<Inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnInputArgs> Cdns
         {
             get => _cdns ?? (_cdns = new InputList<Inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnInputArgs>());
             set => _cdns = value;
         }
 
+        /// <summary>
+        /// Specifies data streams details.
+        /// </summary>
         [Input("dataStreams")]
         public Input<Inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreamsInputArgs>? DataStreams { get; set; }
 
+        /// <summary>
+        /// Option to opt out of alerts based on soft limits of bandwidth usage.
+        /// </summary>
         [Input("enableSoftAlerts", required: true)]
         public Input<bool> EnableSoftAlerts { get; set; } = null!;
 
         [Input("origins")]
         private InputList<Inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOriginInputArgs>? _origins;
+
+        /// <summary>
+        /// List of origins corresponding to the properties selected in the configuration.
+        /// </summary>
         public InputList<Inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOriginInputArgs> Origins
         {
             get => _origins ?? (_origins = new InputList<Inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOriginInputArgs>());

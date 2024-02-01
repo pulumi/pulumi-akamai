@@ -17,30 +17,62 @@ public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop
 
     public static final GetImagingPolicyImagePolicyTransformationRegionOfInterestCropArgs Empty = new GetImagingPolicyImagePolicyTransformationRegionOfInterestCropArgs();
 
+    /**
+     * The placement of the crop area relative to the specified area of interest.
+     * 
+     */
     @Import(name="gravity")
     private @Nullable Output<String> gravity;
 
+    /**
+     * @return The placement of the crop area relative to the specified area of interest.
+     * 
+     */
     public Optional<Output<String>> gravity() {
         return Optional.ofNullable(this.gravity);
     }
 
+    /**
+     * The placement of the crop area relative to the specified area of interest.
+     * 
+     */
     @Import(name="gravityVar")
     private @Nullable Output<String> gravityVar;
 
+    /**
+     * @return The placement of the crop area relative to the specified area of interest.
+     * 
+     */
     public Optional<Output<String>> gravityVar() {
         return Optional.ofNullable(this.gravityVar);
     }
 
+    /**
+     * The height in pixels of the output image relative to the specified `style` value.
+     * 
+     */
     @Import(name="height")
     private @Nullable Output<String> height;
 
+    /**
+     * @return The height in pixels of the output image relative to the specified `style` value.
+     * 
+     */
     public Optional<Output<String>> height() {
         return Optional.ofNullable(this.height);
     }
 
+    /**
+     * The height in pixels of the output image relative to the specified `style` value.
+     * 
+     */
     @Import(name="heightVar")
     private @Nullable Output<String> heightVar;
 
+    /**
+     * @return The height in pixels of the output image relative to the specified `style` value.
+     * 
+     */
     public Optional<Output<String>> heightVar() {
         return Optional.ofNullable(this.heightVar);
     }
@@ -52,30 +84,62 @@ public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop
         return this.regionOfInterest;
     }
 
+    /**
+     * Specifies how to crop or scale a crop area for the specified area of interest in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.
+     * 
+     */
     @Import(name="style")
     private @Nullable Output<String> style;
 
+    /**
+     * @return Specifies how to crop or scale a crop area for the specified area of interest in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.
+     * 
+     */
     public Optional<Output<String>> style() {
         return Optional.ofNullable(this.style);
     }
 
+    /**
+     * Specifies how to crop or scale a crop area for the specified area of interest in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.
+     * 
+     */
     @Import(name="styleVar")
     private @Nullable Output<String> styleVar;
 
+    /**
+     * @return Specifies how to crop or scale a crop area for the specified area of interest in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.
+     * 
+     */
     public Optional<Output<String>> styleVar() {
         return Optional.ofNullable(this.styleVar);
     }
 
+    /**
+     * The width in pixels of the output image relative to the specified `style` value.
+     * 
+     */
     @Import(name="width")
     private @Nullable Output<String> width;
 
+    /**
+     * @return The width in pixels of the output image relative to the specified `style` value.
+     * 
+     */
     public Optional<Output<String>> width() {
         return Optional.ofNullable(this.width);
     }
 
+    /**
+     * The width in pixels of the output image relative to the specified `style` value.
+     * 
+     */
     @Import(name="widthVar")
     private @Nullable Output<String> widthVar;
 
+    /**
+     * @return The width in pixels of the output image relative to the specified `style` value.
+     * 
+     */
     public Optional<Output<String>> widthVar() {
         return Optional.ofNullable(this.widthVar);
     }
@@ -112,38 +176,86 @@ public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop
             $ = new GetImagingPolicyImagePolicyTransformationRegionOfInterestCropArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param gravity The placement of the crop area relative to the specified area of interest.
+         * 
+         * @return builder
+         * 
+         */
         public Builder gravity(@Nullable Output<String> gravity) {
             $.gravity = gravity;
             return this;
         }
 
+        /**
+         * @param gravity The placement of the crop area relative to the specified area of interest.
+         * 
+         * @return builder
+         * 
+         */
         public Builder gravity(String gravity) {
             return gravity(Output.of(gravity));
         }
 
+        /**
+         * @param gravityVar The placement of the crop area relative to the specified area of interest.
+         * 
+         * @return builder
+         * 
+         */
         public Builder gravityVar(@Nullable Output<String> gravityVar) {
             $.gravityVar = gravityVar;
             return this;
         }
 
+        /**
+         * @param gravityVar The placement of the crop area relative to the specified area of interest.
+         * 
+         * @return builder
+         * 
+         */
         public Builder gravityVar(String gravityVar) {
             return gravityVar(Output.of(gravityVar));
         }
 
+        /**
+         * @param height The height in pixels of the output image relative to the specified `style` value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder height(@Nullable Output<String> height) {
             $.height = height;
             return this;
         }
 
+        /**
+         * @param height The height in pixels of the output image relative to the specified `style` value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder height(String height) {
             return height(Output.of(height));
         }
 
+        /**
+         * @param heightVar The height in pixels of the output image relative to the specified `style` value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder heightVar(@Nullable Output<String> heightVar) {
             $.heightVar = heightVar;
             return this;
         }
 
+        /**
+         * @param heightVar The height in pixels of the output image relative to the specified `style` value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder heightVar(String heightVar) {
             return heightVar(Output.of(heightVar));
         }
@@ -157,38 +269,86 @@ public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop
             return regionOfInterest(Output.of(regionOfInterest));
         }
 
+        /**
+         * @param style Specifies how to crop or scale a crop area for the specified area of interest in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.
+         * 
+         * @return builder
+         * 
+         */
         public Builder style(@Nullable Output<String> style) {
             $.style = style;
             return this;
         }
 
+        /**
+         * @param style Specifies how to crop or scale a crop area for the specified area of interest in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.
+         * 
+         * @return builder
+         * 
+         */
         public Builder style(String style) {
             return style(Output.of(style));
         }
 
+        /**
+         * @param styleVar Specifies how to crop or scale a crop area for the specified area of interest in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.
+         * 
+         * @return builder
+         * 
+         */
         public Builder styleVar(@Nullable Output<String> styleVar) {
             $.styleVar = styleVar;
             return this;
         }
 
+        /**
+         * @param styleVar Specifies how to crop or scale a crop area for the specified area of interest in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.
+         * 
+         * @return builder
+         * 
+         */
         public Builder styleVar(String styleVar) {
             return styleVar(Output.of(styleVar));
         }
 
+        /**
+         * @param width The width in pixels of the output image relative to the specified `style` value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder width(@Nullable Output<String> width) {
             $.width = width;
             return this;
         }
 
+        /**
+         * @param width The width in pixels of the output image relative to the specified `style` value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder width(String width) {
             return width(Output.of(width));
         }
 
+        /**
+         * @param widthVar The width in pixels of the output image relative to the specified `style` value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder widthVar(@Nullable Output<String> widthVar) {
             $.widthVar = widthVar;
             return this;
         }
 
+        /**
+         * @param widthVar The width in pixels of the output image relative to the specified `style` value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder widthVar(String widthVar) {
             return widthVar(Output.of(widthVar));
         }

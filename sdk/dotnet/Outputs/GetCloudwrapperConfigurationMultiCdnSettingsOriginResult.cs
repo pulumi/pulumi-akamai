@@ -13,8 +13,17 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetCloudwrapperConfigurationMultiCdnSettingsOriginResult
     {
+        /// <summary>
+        /// Origins hostname corresponding to the Akamai Delivery Property.
+        /// </summary>
         public readonly string Hostname;
+        /// <summary>
+        /// Origin identifier and will be used to generated Multi CDN host names.
+        /// </summary>
         public readonly string OriginId;
+        /// <summary>
+        /// Property ID of the property that origin belongs to.
+        /// </summary>
         public readonly int PropertyId;
 
         [OutputConstructor]

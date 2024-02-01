@@ -13,41 +13,113 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorHttpStrictTransportSecurity {
+    /**
+     * @return Applies HSTS to this set of requests.
+     * 
+     */
     private @Nullable Boolean enable;
+    /**
+     * @return When enabled, applies HSTS to all subdomains.
+     * 
+     */
     private @Nullable Boolean includeSubDomains;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Specifies the duration for which to apply HSTS for new browser connections.
+     * 
+     */
     private @Nullable String maxAge;
+    /**
+     * @return When enabled, adds this domain to the browser&#39;s preload list. You still need to declare the domain at `hstspreload.org`.
+     * 
+     */
     private @Nullable Boolean preload;
+    /**
+     * @return When enabled, redirects all HTTP requests to HTTPS.
+     * 
+     */
     private @Nullable Boolean redirect;
+    /**
+     * @return Specifies a response code.
+     * 
+     */
     private @Nullable Integer redirectStatusCode;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorHttpStrictTransportSecurity() {}
+    /**
+     * @return Applies HSTS to this set of requests.
+     * 
+     */
     public Optional<Boolean> enable() {
         return Optional.ofNullable(this.enable);
     }
+    /**
+     * @return When enabled, applies HSTS to all subdomains.
+     * 
+     */
     public Optional<Boolean> includeSubDomains() {
         return Optional.ofNullable(this.includeSubDomains);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Specifies the duration for which to apply HSTS for new browser connections.
+     * 
+     */
     public Optional<String> maxAge() {
         return Optional.ofNullable(this.maxAge);
     }
+    /**
+     * @return When enabled, adds this domain to the browser&#39;s preload list. You still need to declare the domain at `hstspreload.org`.
+     * 
+     */
     public Optional<Boolean> preload() {
         return Optional.ofNullable(this.preload);
     }
+    /**
+     * @return When enabled, redirects all HTTP requests to HTTPS.
+     * 
+     */
     public Optional<Boolean> redirect() {
         return Optional.ofNullable(this.redirect);
     }
+    /**
+     * @return Specifies a response code.
+     * 
+     */
     public Optional<Integer> redirectStatusCode() {
         return Optional.ofNullable(this.redirectStatusCode);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

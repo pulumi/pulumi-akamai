@@ -12,53 +12,149 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530CriterionTime {
+    /**
+     * @return Adjusts the start time plus repeat interval to account for daylight saving time. Applies when the current time and the start time use different systems, daylight and standard, and the two values are in conflict.
+     * 
+     */
     private @Nullable Boolean applyDaylightSavingsTime;
+    /**
+     * @return Sets the start of a time period.
+     * 
+     */
     private @Nullable String beginDate;
+    /**
+     * @return Sets the end of a fixed time period.
+     * 
+     */
     private @Nullable String endDate;
+    /**
+     * @return Sets the start of a fixed time period.
+     * 
+     */
     private @Nullable String lastingDate;
+    /**
+     * @return Specifies the end of a time period as a duration relative to the `lastingDate`.
+     * 
+     */
     private @Nullable String lastingDuration;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Specifies how to define the range of time.
+     * 
+     */
     private @Nullable String matchOperator;
+    /**
+     * @return Sets the start of the initial time period.
+     * 
+     */
     private @Nullable String repeatBeginDate;
+    /**
+     * @return Sets the duration of each repeating time period.
+     * 
+     */
     private @Nullable String repeatDuration;
+    /**
+     * @return Sets the time between each repeating time period&#39;s starting points.
+     * 
+     */
     private @Nullable String repeatInterval;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530CriterionTime() {}
+    /**
+     * @return Adjusts the start time plus repeat interval to account for daylight saving time. Applies when the current time and the start time use different systems, daylight and standard, and the two values are in conflict.
+     * 
+     */
     public Optional<Boolean> applyDaylightSavingsTime() {
         return Optional.ofNullable(this.applyDaylightSavingsTime);
     }
+    /**
+     * @return Sets the start of a time period.
+     * 
+     */
     public Optional<String> beginDate() {
         return Optional.ofNullable(this.beginDate);
     }
+    /**
+     * @return Sets the end of a fixed time period.
+     * 
+     */
     public Optional<String> endDate() {
         return Optional.ofNullable(this.endDate);
     }
+    /**
+     * @return Sets the start of a fixed time period.
+     * 
+     */
     public Optional<String> lastingDate() {
         return Optional.ofNullable(this.lastingDate);
     }
+    /**
+     * @return Specifies the end of a time period as a duration relative to the `lastingDate`.
+     * 
+     */
     public Optional<String> lastingDuration() {
         return Optional.ofNullable(this.lastingDuration);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Specifies how to define the range of time.
+     * 
+     */
     public Optional<String> matchOperator() {
         return Optional.ofNullable(this.matchOperator);
     }
+    /**
+     * @return Sets the start of the initial time period.
+     * 
+     */
     public Optional<String> repeatBeginDate() {
         return Optional.ofNullable(this.repeatBeginDate);
     }
+    /**
+     * @return Sets the duration of each repeating time period.
+     * 
+     */
     public Optional<String> repeatDuration() {
         return Optional.ofNullable(this.repeatDuration);
     }
+    /**
+     * @return Sets the time between each repeating time period&#39;s starting points.
+     * 
+     */
     public Optional<String> repeatInterval() {
         return Optional.ofNullable(this.repeatInterval);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

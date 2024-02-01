@@ -13,81 +13,233 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorAdaptiveImageCompression {
+    /**
+     * @return Adapts images served over cellular mobile networks.
+     * 
+     */
     private @Nullable Boolean compressMobile;
+    /**
+     * @return Adapts images served over non-cellular networks.
+     * 
+     */
     private @Nullable Boolean compressStandard;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return Specifies tier-1 behavior.
+     * 
+     */
     private @Nullable String tier1MobileCompressionMethod;
+    /**
+     * @return Specifies the compression percentage.
+     * 
+     */
     private @Nullable Integer tier1MobileCompressionValue;
+    /**
+     * @return Specifies tier-1 non-cellular network behavior.
+     * 
+     */
     private @Nullable String tier1StandardCompressionMethod;
+    /**
+     * @return Specifies the compression percentage.
+     * 
+     */
     private @Nullable Integer tier1StandardCompressionValue;
+    /**
+     * @return Specifies tier-2 cellular-network behavior.
+     * 
+     */
     private @Nullable String tier2MobileCompressionMethod;
+    /**
+     * @return Specifies the compression percentage.
+     * 
+     */
     private @Nullable Integer tier2MobileCompressionValue;
+    /**
+     * @return Specifies tier-2 non-cellular network behavior.
+     * 
+     */
     private @Nullable String tier2StandardCompressionMethod;
+    /**
+     * @return Specifies the compression percentage.
+     * 
+     */
     private @Nullable Integer tier2StandardCompressionValue;
+    /**
+     * @return Specifies tier-3 cellular-network behavior.
+     * 
+     */
     private @Nullable String tier3MobileCompressionMethod;
+    /**
+     * @return Specifies the compression percentage.
+     * 
+     */
     private @Nullable Integer tier3MobileCompressionValue;
+    /**
+     * @return Specifies tier-3 non-cellular network behavior.
+     * 
+     */
     private @Nullable String tier3StandardCompressionMethod;
+    /**
+     * @return Specifies the compression percentage.
+     * 
+     */
     private @Nullable Integer tier3StandardCompressionValue;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String titleAicMobile;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String titleAicNonmobile;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorAdaptiveImageCompression() {}
+    /**
+     * @return Adapts images served over cellular mobile networks.
+     * 
+     */
     public Optional<Boolean> compressMobile() {
         return Optional.ofNullable(this.compressMobile);
     }
+    /**
+     * @return Adapts images served over non-cellular networks.
+     * 
+     */
     public Optional<Boolean> compressStandard() {
         return Optional.ofNullable(this.compressStandard);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return Specifies tier-1 behavior.
+     * 
+     */
     public Optional<String> tier1MobileCompressionMethod() {
         return Optional.ofNullable(this.tier1MobileCompressionMethod);
     }
+    /**
+     * @return Specifies the compression percentage.
+     * 
+     */
     public Optional<Integer> tier1MobileCompressionValue() {
         return Optional.ofNullable(this.tier1MobileCompressionValue);
     }
+    /**
+     * @return Specifies tier-1 non-cellular network behavior.
+     * 
+     */
     public Optional<String> tier1StandardCompressionMethod() {
         return Optional.ofNullable(this.tier1StandardCompressionMethod);
     }
+    /**
+     * @return Specifies the compression percentage.
+     * 
+     */
     public Optional<Integer> tier1StandardCompressionValue() {
         return Optional.ofNullable(this.tier1StandardCompressionValue);
     }
+    /**
+     * @return Specifies tier-2 cellular-network behavior.
+     * 
+     */
     public Optional<String> tier2MobileCompressionMethod() {
         return Optional.ofNullable(this.tier2MobileCompressionMethod);
     }
+    /**
+     * @return Specifies the compression percentage.
+     * 
+     */
     public Optional<Integer> tier2MobileCompressionValue() {
         return Optional.ofNullable(this.tier2MobileCompressionValue);
     }
+    /**
+     * @return Specifies tier-2 non-cellular network behavior.
+     * 
+     */
     public Optional<String> tier2StandardCompressionMethod() {
         return Optional.ofNullable(this.tier2StandardCompressionMethod);
     }
+    /**
+     * @return Specifies the compression percentage.
+     * 
+     */
     public Optional<Integer> tier2StandardCompressionValue() {
         return Optional.ofNullable(this.tier2StandardCompressionValue);
     }
+    /**
+     * @return Specifies tier-3 cellular-network behavior.
+     * 
+     */
     public Optional<String> tier3MobileCompressionMethod() {
         return Optional.ofNullable(this.tier3MobileCompressionMethod);
     }
+    /**
+     * @return Specifies the compression percentage.
+     * 
+     */
     public Optional<Integer> tier3MobileCompressionValue() {
         return Optional.ofNullable(this.tier3MobileCompressionValue);
     }
+    /**
+     * @return Specifies tier-3 non-cellular network behavior.
+     * 
+     */
     public Optional<String> tier3StandardCompressionMethod() {
         return Optional.ofNullable(this.tier3StandardCompressionMethod);
     }
+    /**
+     * @return Specifies the compression percentage.
+     * 
+     */
     public Optional<Integer> tier3StandardCompressionValue() {
         return Optional.ofNullable(this.tier3StandardCompressionValue);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> titleAicMobile() {
         return Optional.ofNullable(this.titleAicMobile);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> titleAicNonmobile() {
         return Optional.ofNullable(this.titleAicNonmobile);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

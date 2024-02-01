@@ -13,22 +13,73 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetClientlistListsListResult
     {
+        /// <summary>
+        /// The client list creation date.
+        /// </summary>
         public readonly string CreateDate;
+        /// <summary>
+        /// The username of the user who created the client list.
+        /// </summary>
         public readonly string CreatedBy;
+        /// <summary>
+        /// Whether the client list was removed.
+        /// </summary>
         public readonly bool Deprecated;
+        /// <summary>
+        /// The number of items that a client list contains.
+        /// </summary>
         public readonly int ItemsCount;
+        /// <summary>
+        /// The ID of the client list.
+        /// </summary>
         public readonly string ListId;
+        /// <summary>
+        /// The client list type.
+        /// </summary>
         public readonly string ListType;
+        /// <summary>
+        /// The name of the client list
+        /// </summary>
         public readonly string? Name;
+        /// <summary>
+        /// The client list notes
+        /// </summary>
         public readonly string Notes;
+        /// <summary>
+        /// The activation status in production environment.
+        /// </summary>
         public readonly string ProductionActivationStatus;
+        /// <summary>
+        /// Whether the client is editable for the authenticated user.
+        /// </summary>
         public readonly bool ReadOnly;
+        /// <summary>
+        /// Whether the client list is shared.
+        /// </summary>
         public readonly bool Shared;
+        /// <summary>
+        /// The activation status in staging environment.
+        /// </summary>
         public readonly string StagingActivationStatus;
+        /// <summary>
+        /// The client list tags
+        /// </summary>
         public readonly ImmutableArray<string> Tags;
+        /// <summary>
+        /// The type of the client list
+        /// </summary>
         public readonly string? Type;
+        /// <summary>
+        /// The date of last update.
+        /// </summary>
         public readonly string UpdateDate;
+        /// <summary>
+        /// The username of the user that updated the client list last.
+        /// </summary>
         public readonly string UpdatedBy;
+        /// <summary>
+        /// The current version of the client list.
+        /// </summary>
         public readonly int Version;
 
         [OutputConstructor]

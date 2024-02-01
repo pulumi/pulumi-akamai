@@ -13,7 +13,13 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyVariableEnumOptionResult
     {
+        /// <summary>
+        /// The unique identifier for each enum value, up to 50 alphanumeric characters.
+        /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The value of the variable when the `id` is provided.
+        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

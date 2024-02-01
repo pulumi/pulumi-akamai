@@ -16,69 +16,197 @@ import java.util.Objects;
 
 @CustomType
 public final class GetGtmDatacentersDatacenter {
+    /**
+     * @return The name of the city where the data center is located.
+     * 
+     */
     private String city;
+    /**
+     * @return Identifies the data center&#39;s ID of which this data center is a clone.
+     * 
+     */
     private Integer cloneOf;
+    /**
+     * @return Balances load between two or more servers in a cloud environment.
+     * 
+     */
     private Boolean cloudServerHostHeaderOverride;
+    /**
+     * @return Balances load between two or more servers in a cloud environment.
+     * 
+     */
     private Boolean cloudServerTargeting;
+    /**
+     * @return A two-letter code that specifies the continent where the data center maps to.
+     * 
+     */
     private String continent;
+    /**
+     * @return A two-letter ISO 3166 country code that specifies the country where the data center is located.
+     * 
+     */
     private String country;
+    /**
+     * @return A unique identifier for an existing data center in the domain.
+     * 
+     */
     private Integer datacenterId;
+    /**
+     * @return Specifies the load reporting interface between you and the GTM system.
+     * 
+     */
     private List<GetGtmDatacentersDatacenterDefaultLoadObject> defaultLoadObjects;
+    /**
+     * @return Specifies the geographic latitude of the data center&#39;s position.
+     * 
+     */
     private Double latitude;
+    /**
+     * @return Provides a URL path that allows direct navigation to a data center.
+     * 
+     */
     private List<GetGtmDatacentersDatacenterLink> links;
+    /**
+     * @return Specifies the geographic longitude of the data center&#39;s position.
+     * 
+     */
     private Double longitude;
+    /**
+     * @return A descriptive label for the datacenter.
+     * 
+     */
     private String nickname;
+    /**
+     * @return Influences the score for a datacenter.
+     * 
+     */
     private Integer scorePenalty;
+    /**
+     * @return The name of the pool from which servermonitors are drawn for liveness tests in this datacenter. If omitted (null), the domain-wide default is used. (If no domain-wide default is specified, the pool used is all servermonitors in the same continent as the datacenter.)
+     * 
+     */
     private String servermonitorPool;
+    /**
+     * @return Specifies a two-letter ISO 3166 country code for the state of province, where the data center is located.
+     * 
+     */
     private String stateOrProvince;
+    /**
+     * @return Indicates whether or not the data center is virtual or physical.
+     * 
+     */
     private Boolean virtual;
 
     private GetGtmDatacentersDatacenter() {}
+    /**
+     * @return The name of the city where the data center is located.
+     * 
+     */
     public String city() {
         return this.city;
     }
+    /**
+     * @return Identifies the data center&#39;s ID of which this data center is a clone.
+     * 
+     */
     public Integer cloneOf() {
         return this.cloneOf;
     }
+    /**
+     * @return Balances load between two or more servers in a cloud environment.
+     * 
+     */
     public Boolean cloudServerHostHeaderOverride() {
         return this.cloudServerHostHeaderOverride;
     }
+    /**
+     * @return Balances load between two or more servers in a cloud environment.
+     * 
+     */
     public Boolean cloudServerTargeting() {
         return this.cloudServerTargeting;
     }
+    /**
+     * @return A two-letter code that specifies the continent where the data center maps to.
+     * 
+     */
     public String continent() {
         return this.continent;
     }
+    /**
+     * @return A two-letter ISO 3166 country code that specifies the country where the data center is located.
+     * 
+     */
     public String country() {
         return this.country;
     }
+    /**
+     * @return A unique identifier for an existing data center in the domain.
+     * 
+     */
     public Integer datacenterId() {
         return this.datacenterId;
     }
+    /**
+     * @return Specifies the load reporting interface between you and the GTM system.
+     * 
+     */
     public List<GetGtmDatacentersDatacenterDefaultLoadObject> defaultLoadObjects() {
         return this.defaultLoadObjects;
     }
+    /**
+     * @return Specifies the geographic latitude of the data center&#39;s position.
+     * 
+     */
     public Double latitude() {
         return this.latitude;
     }
+    /**
+     * @return Provides a URL path that allows direct navigation to a data center.
+     * 
+     */
     public List<GetGtmDatacentersDatacenterLink> links() {
         return this.links;
     }
+    /**
+     * @return Specifies the geographic longitude of the data center&#39;s position.
+     * 
+     */
     public Double longitude() {
         return this.longitude;
     }
+    /**
+     * @return A descriptive label for the datacenter.
+     * 
+     */
     public String nickname() {
         return this.nickname;
     }
+    /**
+     * @return Influences the score for a datacenter.
+     * 
+     */
     public Integer scorePenalty() {
         return this.scorePenalty;
     }
+    /**
+     * @return The name of the pool from which servermonitors are drawn for liveness tests in this datacenter. If omitted (null), the domain-wide default is used. (If no domain-wide default is specified, the pool used is all servermonitors in the same continent as the datacenter.)
+     * 
+     */
     public String servermonitorPool() {
         return this.servermonitorPool;
     }
+    /**
+     * @return Specifies a two-letter ISO 3166 country code for the state of province, where the data center is located.
+     * 
+     */
     public String stateOrProvince() {
         return this.stateOrProvince;
     }
+    /**
+     * @return Indicates whether or not the data center is virtual or physical.
+     * 
+     */
     public Boolean virtual() {
         return this.virtual;
     }

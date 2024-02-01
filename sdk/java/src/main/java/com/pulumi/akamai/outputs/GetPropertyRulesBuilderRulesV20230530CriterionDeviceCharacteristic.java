@@ -14,57 +14,161 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530CriterionDeviceCharacteristic {
+    /**
+     * @return When the `characteristic` expects a boolean value, this specifies the value.
+     * 
+     */
     private @Nullable Boolean booleanValue;
+    /**
+     * @return Aspect of the device or browser to match.
+     * 
+     */
     private @Nullable String characteristic;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Sets a case-sensitive match for the `stringValue` field.
+     * 
+     */
     private @Nullable Boolean matchCaseSensitive;
+    /**
+     * @return Allows wildcards in the `stringValue` field, where `?` matches a single character and `*` matches zero or more characters.
+     * 
+     */
     private @Nullable Boolean matchWildcard;
+    /**
+     * @return When the `characteristic` expects a numeric value, compares the specified `numericValue` against the matched client.
+     * 
+     */
     private @Nullable String numericMatchOperator;
+    /**
+     * @return When the `characteristic` expects a numeric value, this specifies the number.
+     * 
+     */
     private @Nullable Integer numericValue;
+    /**
+     * @return When the `characteristic` expects a string value, set this to `MATCHES_ONE_OF` to match against the `stringValue` set, otherwise set to `DOES_NOT_MATCH_ONE_OF` to exclude that set of values.
+     * 
+     */
     private @Nullable String stringMatchOperator;
+    /**
+     * @return When the `characteristic` expects a string, this specifies the set of values.
+     * 
+     */
     private @Nullable List<String> stringValues;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
+    /**
+     * @return When the `characteristic` expects a version string value, compares the specified `versionValue` against the matched client, using the following operators: `IS`, `IS_MORE_THAN_OR_EQUAL`, `IS_MORE_THAN`, `IS_LESS_THAN_OR_EQUAL`, `IS_LESS_THAN`, `IS_NOT`.
+     * 
+     */
     private @Nullable String versionMatchOperator;
+    /**
+     * @return When the `characteristic` expects a version number, this specifies it as a string.
+     * 
+     */
     private @Nullable String versionValue;
 
     private GetPropertyRulesBuilderRulesV20230530CriterionDeviceCharacteristic() {}
+    /**
+     * @return When the `characteristic` expects a boolean value, this specifies the value.
+     * 
+     */
     public Optional<Boolean> booleanValue() {
         return Optional.ofNullable(this.booleanValue);
     }
+    /**
+     * @return Aspect of the device or browser to match.
+     * 
+     */
     public Optional<String> characteristic() {
         return Optional.ofNullable(this.characteristic);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Sets a case-sensitive match for the `stringValue` field.
+     * 
+     */
     public Optional<Boolean> matchCaseSensitive() {
         return Optional.ofNullable(this.matchCaseSensitive);
     }
+    /**
+     * @return Allows wildcards in the `stringValue` field, where `?` matches a single character and `*` matches zero or more characters.
+     * 
+     */
     public Optional<Boolean> matchWildcard() {
         return Optional.ofNullable(this.matchWildcard);
     }
+    /**
+     * @return When the `characteristic` expects a numeric value, compares the specified `numericValue` against the matched client.
+     * 
+     */
     public Optional<String> numericMatchOperator() {
         return Optional.ofNullable(this.numericMatchOperator);
     }
+    /**
+     * @return When the `characteristic` expects a numeric value, this specifies the number.
+     * 
+     */
     public Optional<Integer> numericValue() {
         return Optional.ofNullable(this.numericValue);
     }
+    /**
+     * @return When the `characteristic` expects a string value, set this to `MATCHES_ONE_OF` to match against the `stringValue` set, otherwise set to `DOES_NOT_MATCH_ONE_OF` to exclude that set of values.
+     * 
+     */
     public Optional<String> stringMatchOperator() {
         return Optional.ofNullable(this.stringMatchOperator);
     }
+    /**
+     * @return When the `characteristic` expects a string, this specifies the set of values.
+     * 
+     */
     public List<String> stringValues() {
         return this.stringValues == null ? List.of() : this.stringValues;
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
+    /**
+     * @return When the `characteristic` expects a version string value, compares the specified `versionValue` against the matched client, using the following operators: `IS`, `IS_MORE_THAN_OR_EQUAL`, `IS_MORE_THAN`, `IS_LESS_THAN_OR_EQUAL`, `IS_LESS_THAN`, `IS_NOT`.
+     * 
+     */
     public Optional<String> versionMatchOperator() {
         return Optional.ofNullable(this.versionMatchOperator);
     }
+    /**
+     * @return When the `characteristic` expects a version number, this specifies it as a string.
+     * 
+     */
     public Optional<String> versionValue() {
         return Optional.ofNullable(this.versionValue);
     }

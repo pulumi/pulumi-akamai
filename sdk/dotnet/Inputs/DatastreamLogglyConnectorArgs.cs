@@ -14,6 +14,10 @@ namespace Pulumi.Akamai.Inputs
     {
         [Input("authToken", required: true)]
         private Input<string>? _authToken;
+
+        /// <summary>
+        /// The unique HTTP code for your Loggly bulk endpoint.
+        /// </summary>
         public Input<string>? AuthToken
         {
             get => _authToken;
@@ -24,21 +28,39 @@ namespace Pulumi.Akamai.Inputs
             }
         }
 
+        /// <summary>
+        /// The type of the resource passed in the request's custom header. For details, see Additional options in the DataStream user guide.
+        /// </summary>
         [Input("contentType")]
         public Input<string>? ContentType { get; set; }
 
+        /// <summary>
+        /// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.
+        /// </summary>
         [Input("customHeaderName")]
         public Input<string>? CustomHeaderName { get; set; }
 
+        /// <summary>
+        /// The custom header's contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.
+        /// </summary>
         [Input("customHeaderValue")]
         public Input<string>? CustomHeaderValue { get; set; }
 
+        /// <summary>
+        /// The name of the connector.
+        /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
 
+        /// <summary>
+        /// The Loggly bulk endpoint URL in the https://hostname.loggly.com/bulk/ format. Set the endpoint code in the authToken field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. See Stream logs to Loggly.
+        /// </summary>
         [Input("endpoint", required: true)]
         public Input<string> Endpoint { get; set; } = null!;
 
+        /// <summary>
+        /// The tags you can use to segment and filter log events in Loggly. See Tags in the Loggly documentation.
+        /// </summary>
         [Input("tags")]
         public Input<string>? Tags { get; set; }
 

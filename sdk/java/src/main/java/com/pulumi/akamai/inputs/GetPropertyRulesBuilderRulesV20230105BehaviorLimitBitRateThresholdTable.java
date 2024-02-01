@@ -15,16 +15,32 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateThre
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateThresholdTable Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateThresholdTable();
 
+    /**
+     * The unit of measurement, either `SECONDS` of the elapsed download time, or `BYTES` of the file size.
+     * 
+     */
     @Import(name="thresholdUnit")
     private @Nullable String thresholdUnit;
 
+    /**
+     * @return The unit of measurement, either `SECONDS` of the elapsed download time, or `BYTES` of the file size.
+     * 
+     */
     public Optional<String> thresholdUnit() {
         return Optional.ofNullable(this.thresholdUnit);
     }
 
+    /**
+     * The numeric indicator of the minimum file size or elapsed download time.
+     * 
+     */
     @Import(name="thresholdValue")
     private @Nullable Integer thresholdValue;
 
+    /**
+     * @return The numeric indicator of the minimum file size or elapsed download time.
+     * 
+     */
     public Optional<Integer> thresholdValue() {
         return Optional.ofNullable(this.thresholdValue);
     }
@@ -54,11 +70,23 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateThre
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateThresholdTable(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param thresholdUnit The unit of measurement, either `SECONDS` of the elapsed download time, or `BYTES` of the file size.
+         * 
+         * @return builder
+         * 
+         */
         public Builder thresholdUnit(@Nullable String thresholdUnit) {
             $.thresholdUnit = thresholdUnit;
             return this;
         }
 
+        /**
+         * @param thresholdValue The numeric indicator of the minimum file size or elapsed download time.
+         * 
+         * @return builder
+         * 
+         */
         public Builder thresholdValue(@Nullable Integer thresholdValue) {
             $.thresholdValue = thresholdValue;
             return this;

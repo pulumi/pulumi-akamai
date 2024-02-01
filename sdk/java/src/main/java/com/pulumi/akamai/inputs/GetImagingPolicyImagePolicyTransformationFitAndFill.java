@@ -22,30 +22,62 @@ public final class GetImagingPolicyImagePolicyTransformationFitAndFill extends c
         return Optional.ofNullable(this.fillTransformation);
     }
 
+    /**
+     * The height value of the resized image.
+     * 
+     */
     @Import(name="height")
     private @Nullable String height;
 
+    /**
+     * @return The height value of the resized image.
+     * 
+     */
     public Optional<String> height() {
         return Optional.ofNullable(this.height);
     }
 
+    /**
+     * The height value of the resized image.
+     * 
+     */
     @Import(name="heightVar")
     private @Nullable String heightVar;
 
+    /**
+     * @return The height value of the resized image.
+     * 
+     */
     public Optional<String> heightVar() {
         return Optional.ofNullable(this.heightVar);
     }
 
+    /**
+     * The width value of the resized image.
+     * 
+     */
     @Import(name="width")
     private @Nullable String width;
 
+    /**
+     * @return The width value of the resized image.
+     * 
+     */
     public Optional<String> width() {
         return Optional.ofNullable(this.width);
     }
 
+    /**
+     * The width value of the resized image.
+     * 
+     */
     @Import(name="widthVar")
     private @Nullable String widthVar;
 
+    /**
+     * @return The width value of the resized image.
+     * 
+     */
     public Optional<String> widthVar() {
         return Optional.ofNullable(this.widthVar);
     }
@@ -83,21 +115,45 @@ public final class GetImagingPolicyImagePolicyTransformationFitAndFill extends c
             return this;
         }
 
+        /**
+         * @param height The height value of the resized image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder height(@Nullable String height) {
             $.height = height;
             return this;
         }
 
+        /**
+         * @param heightVar The height value of the resized image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder heightVar(@Nullable String heightVar) {
             $.heightVar = heightVar;
             return this;
         }
 
+        /**
+         * @param width The width value of the resized image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder width(@Nullable String width) {
             $.width = width;
             return this;
         }
 
+        /**
+         * @param widthVar The width value of the resized image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder widthVar(@Nullable String widthVar) {
             $.widthVar = widthVar;
             return this;

@@ -15,16 +15,32 @@ public final class PropertyActivationComplianceRecordNoncomplianceReasonOtherArg
 
     public static final PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs Empty = new PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs();
 
+    /**
+     * Describes the reason why the activation must occur immediately, out of compliance with the standard procedure
+     * 
+     */
     @Import(name="otherNoncomplianceReason")
     private @Nullable Output<String> otherNoncomplianceReason;
 
+    /**
+     * @return Describes the reason why the activation must occur immediately, out of compliance with the standard procedure
+     * 
+     */
     public Optional<Output<String>> otherNoncomplianceReason() {
         return Optional.ofNullable(this.otherNoncomplianceReason);
     }
 
+    /**
+     * Identifies the ticket that describes the need for the activation
+     * 
+     */
     @Import(name="ticketId")
     private @Nullable Output<String> ticketId;
 
+    /**
+     * @return Identifies the ticket that describes the need for the activation
+     * 
+     */
     public Optional<Output<String>> ticketId() {
         return Optional.ofNullable(this.ticketId);
     }
@@ -54,20 +70,44 @@ public final class PropertyActivationComplianceRecordNoncomplianceReasonOtherArg
             $ = new PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param otherNoncomplianceReason Describes the reason why the activation must occur immediately, out of compliance with the standard procedure
+         * 
+         * @return builder
+         * 
+         */
         public Builder otherNoncomplianceReason(@Nullable Output<String> otherNoncomplianceReason) {
             $.otherNoncomplianceReason = otherNoncomplianceReason;
             return this;
         }
 
+        /**
+         * @param otherNoncomplianceReason Describes the reason why the activation must occur immediately, out of compliance with the standard procedure
+         * 
+         * @return builder
+         * 
+         */
         public Builder otherNoncomplianceReason(String otherNoncomplianceReason) {
             return otherNoncomplianceReason(Output.of(otherNoncomplianceReason));
         }
 
+        /**
+         * @param ticketId Identifies the ticket that describes the need for the activation
+         * 
+         * @return builder
+         * 
+         */
         public Builder ticketId(@Nullable Output<String> ticketId) {
             $.ticketId = ticketId;
             return this;
         }
 
+        /**
+         * @param ticketId Identifies the ticket that describes the need for the activation
+         * 
+         * @return builder
+         * 
+         */
         public Builder ticketId(String ticketId) {
             return ticketId(Output.of(ticketId));
         }

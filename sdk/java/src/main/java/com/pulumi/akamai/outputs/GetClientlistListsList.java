@@ -15,73 +15,209 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetClientlistListsList {
+    /**
+     * @return The client list creation date.
+     * 
+     */
     private String createDate;
+    /**
+     * @return The username of the user who created the client list.
+     * 
+     */
     private String createdBy;
+    /**
+     * @return Whether the client list was removed.
+     * 
+     */
     private Boolean deprecated;
+    /**
+     * @return The number of items that a client list contains.
+     * 
+     */
     private Integer itemsCount;
+    /**
+     * @return The ID of the client list.
+     * 
+     */
     private String listId;
+    /**
+     * @return The client list type.
+     * 
+     */
     private String listType;
+    /**
+     * @return The name of the client list
+     * 
+     */
     private @Nullable String name;
+    /**
+     * @return The client list notes
+     * 
+     */
     private String notes;
+    /**
+     * @return The activation status in production environment.
+     * 
+     */
     private String productionActivationStatus;
+    /**
+     * @return Whether the client is editable for the authenticated user.
+     * 
+     */
     private Boolean readOnly;
+    /**
+     * @return Whether the client list is shared.
+     * 
+     */
     private Boolean shared;
+    /**
+     * @return The activation status in staging environment.
+     * 
+     */
     private String stagingActivationStatus;
+    /**
+     * @return The client list tags
+     * 
+     */
     private List<String> tags;
+    /**
+     * @return The type of the client list
+     * 
+     */
     private @Nullable String type;
+    /**
+     * @return The date of last update.
+     * 
+     */
     private String updateDate;
+    /**
+     * @return The username of the user that updated the client list last.
+     * 
+     */
     private String updatedBy;
+    /**
+     * @return The current version of the client list.
+     * 
+     */
     private Integer version;
 
     private GetClientlistListsList() {}
+    /**
+     * @return The client list creation date.
+     * 
+     */
     public String createDate() {
         return this.createDate;
     }
+    /**
+     * @return The username of the user who created the client list.
+     * 
+     */
     public String createdBy() {
         return this.createdBy;
     }
+    /**
+     * @return Whether the client list was removed.
+     * 
+     */
     public Boolean deprecated() {
         return this.deprecated;
     }
+    /**
+     * @return The number of items that a client list contains.
+     * 
+     */
     public Integer itemsCount() {
         return this.itemsCount;
     }
+    /**
+     * @return The ID of the client list.
+     * 
+     */
     public String listId() {
         return this.listId;
     }
+    /**
+     * @return The client list type.
+     * 
+     */
     public String listType() {
         return this.listType;
     }
+    /**
+     * @return The name of the client list
+     * 
+     */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
+    /**
+     * @return The client list notes
+     * 
+     */
     public String notes() {
         return this.notes;
     }
+    /**
+     * @return The activation status in production environment.
+     * 
+     */
     public String productionActivationStatus() {
         return this.productionActivationStatus;
     }
+    /**
+     * @return Whether the client is editable for the authenticated user.
+     * 
+     */
     public Boolean readOnly() {
         return this.readOnly;
     }
+    /**
+     * @return Whether the client list is shared.
+     * 
+     */
     public Boolean shared() {
         return this.shared;
     }
+    /**
+     * @return The activation status in staging environment.
+     * 
+     */
     public String stagingActivationStatus() {
         return this.stagingActivationStatus;
     }
+    /**
+     * @return The client list tags
+     * 
+     */
     public List<String> tags() {
         return this.tags;
     }
+    /**
+     * @return The type of the client list
+     * 
+     */
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }
+    /**
+     * @return The date of last update.
+     * 
+     */
     public String updateDate() {
         return this.updateDate;
     }
+    /**
+     * @return The username of the user that updated the client list last.
+     * 
+     */
     public String updatedBy() {
         return this.updatedBy;
     }
+    /**
+     * @return The current version of the client list.
+     * 
+     */
     public Integer version() {
         return this.version;
     }

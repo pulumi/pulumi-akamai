@@ -12,38 +12,72 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorApplicationLoadBalancerArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Specifies a NetStorage account for a static maintenance page as a fallback when no origins are available.
+        /// </summary>
         [Input("allDownNetStorage")]
         public Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorApplicationLoadBalancerAllDownNetStorageArgs? AllDownNetStorage { get; set; }
 
+        /// <summary>
+        /// Specifies the fallback maintenance page's filename, expressed as a full path from the root of the NetStorage server.
+        /// </summary>
         [Input("allDownNetStorageFile")]
         public string? AllDownNetStorageFile { get; set; }
 
+        /// <summary>
+        /// Specifies the HTTP response code when all load-balancing origins are unavailable.
+        /// </summary>
         [Input("allDownStatusCode")]
         public string? AllDownStatusCode { get; set; }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("allDownTitle")]
         public string? AllDownTitle { get; set; }
 
+        /// <summary>
+        /// Allows the cache to prefresh.  Only appropriate if all origins serve the same content for the same URL.
+        /// </summary>
         [Input("allowCachePrefresh")]
         public bool? AllowCachePrefresh { get; set; }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("cachedContentTitle")]
         public string? CachedContentTitle { get; set; }
 
+        /// <summary>
+        /// Identifies the Cloudlet policy.
+        /// </summary>
         [Input("cloudletPolicy")]
         public Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorApplicationLoadBalancerCloudletPolicyArgs? CloudletPolicy { get; set; }
 
+        /// <summary>
+        /// Activates the Application Load Balancer Cloudlet.
+        /// </summary>
         [Input("enabled")]
         public bool? Enabled { get; set; }
 
+        /// <summary>
+        /// Sets the number of failed requests that would trigger the failover process.
+        /// </summary>
         [Input("failoverAttemptsThreshold")]
         public int? FailoverAttemptsThreshold { get; set; }
 
+        /// <summary>
+        /// Determines what to do if an origin fails.
+        /// </summary>
         [Input("failoverMode")]
         public string? FailoverMode { get; set; }
 
         [Input("failoverOriginMaps")]
         private List<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorApplicationLoadBalancerFailoverOriginMapArgs>? _failoverOriginMaps;
+
+        /// <summary>
+        /// Specifies a fixed set of failover mapping rules.
+        /// </summary>
         public List<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorApplicationLoadBalancerFailoverOriginMapArgs> FailoverOriginMaps
         {
             get => _failoverOriginMaps ?? (_failoverOriginMaps = new List<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorApplicationLoadBalancerFailoverOriginMapArgs>());
@@ -52,57 +86,109 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("failoverStatusCodes")]
         private List<string>? _failoverStatusCodes;
+
+        /// <summary>
+        /// Specifies a set of HTTP status codes that signal a failure on the origin, in which case the cookie that binds the client to that origin is invalidated and the client is rerouted to another available origin.
+        /// </summary>
         public List<string> FailoverStatusCodes
         {
             get => _failoverStatusCodes ?? (_failoverStatusCodes = new List<string>());
             set => _failoverStatusCodes = value;
         }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("failoverTitle")]
         public string? FailoverTitle { get; set; }
 
+        /// <summary>
+        /// A label to distinguish this Application Load Balancer policy from any others within the same property.
+        /// </summary>
         [Input("label")]
         public string? Label { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public bool? Locked { get; set; }
 
+        /// <summary>
+        /// Specifies the name for your session cookie.
+        /// </summary>
         [Input("originCookieName")]
         public string? OriginCookieName { get; set; }
 
+        /// <summary>
+        /// Specifies whether to use a cookie domain with the stickiness cookie, to tell the browser to which domain to send the cookie.
+        /// </summary>
         [Input("specifyStickinessCookieDomain")]
         public bool? SpecifyStickinessCookieDomain { get; set; }
 
+        /// <summary>
+        /// Sets whether to assign a `salt` value automatically to the cookie to prevent manipulation by the user. You should not enable this if sharing the population cookie across more than one property.
+        /// </summary>
         [Input("stickinessCookieAutomaticSalt")]
         public bool? StickinessCookieAutomaticSalt { get; set; }
 
+        /// <summary>
+        /// Specifies the domain to track the stickiness cookie.
+        /// </summary>
         [Input("stickinessCookieDomain")]
         public string? StickinessCookieDomain { get; set; }
 
+        /// <summary>
+        /// Specifies the stickiness cookie's salt value. Use this option to share the cookie across many properties.
+        /// </summary>
         [Input("stickinessCookieSalt")]
         public string? StickinessCookieSalt { get; set; }
 
+        /// <summary>
+        /// Ensures the cookie is transmitted only over HTTP.
+        /// </summary>
         [Input("stickinessCookieSetHttpOnlyFlag")]
         public bool? StickinessCookieSetHttpOnlyFlag { get; set; }
 
+        /// <summary>
+        /// Determines how a cookie persistently associates the client with a load-balanced origin.
+        /// </summary>
         [Input("stickinessCookieType")]
         public string? StickinessCookieType { get; set; }
 
+        /// <summary>
+        /// Sets how long it is before the cookie expires.
+        /// </summary>
         [Input("stickinessDuration")]
         public string? StickinessDuration { get; set; }
 
+        /// <summary>
+        /// Specifies when the cookie expires.
+        /// </summary>
         [Input("stickinessExpirationDate")]
         public string? StickinessExpirationDate { get; set; }
 
+        /// <summary>
+        /// Extends the duration of the cookie with each new request. When enabled, the `DURATION` thus specifies the latency between requests that would cause the cookie to expire.
+        /// </summary>
         [Input("stickinessRefresh")]
         public bool? StickinessRefresh { get; set; }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("stickinessTitle")]
         public string? StickinessTitle { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public string? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public string? Uuid { get; set; }
 

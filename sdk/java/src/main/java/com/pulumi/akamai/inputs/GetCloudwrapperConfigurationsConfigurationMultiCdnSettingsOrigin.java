@@ -14,23 +14,47 @@ public final class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOri
 
     public static final GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOrigin Empty = new GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOrigin();
 
+    /**
+     * Origins hostname corresponding to the Akamai Delivery Property.
+     * 
+     */
     @Import(name="hostname", required=true)
     private String hostname;
 
+    /**
+     * @return Origins hostname corresponding to the Akamai Delivery Property.
+     * 
+     */
     public String hostname() {
         return this.hostname;
     }
 
+    /**
+     * Origin identifier and will be used to generated Multi CDN host names.
+     * 
+     */
     @Import(name="originId", required=true)
     private String originId;
 
+    /**
+     * @return Origin identifier and will be used to generated Multi CDN host names.
+     * 
+     */
     public String originId() {
         return this.originId;
     }
 
+    /**
+     * Property ID of the property that origin belongs to.
+     * 
+     */
     @Import(name="propertyId", required=true)
     private Integer propertyId;
 
+    /**
+     * @return Property ID of the property that origin belongs to.
+     * 
+     */
     public Integer propertyId() {
         return this.propertyId;
     }
@@ -61,16 +85,34 @@ public final class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOri
             $ = new GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOrigin(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param hostname Origins hostname corresponding to the Akamai Delivery Property.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hostname(String hostname) {
             $.hostname = hostname;
             return this;
         }
 
+        /**
+         * @param originId Origin identifier and will be used to generated Multi CDN host names.
+         * 
+         * @return builder
+         * 
+         */
         public Builder originId(String originId) {
             $.originId = originId;
             return this;
         }
 
+        /**
+         * @param propertyId Property ID of the property that origin belongs to.
+         * 
+         * @return builder
+         * 
+         */
         public Builder propertyId(Integer propertyId) {
             $.propertyId = propertyId;
             return this;

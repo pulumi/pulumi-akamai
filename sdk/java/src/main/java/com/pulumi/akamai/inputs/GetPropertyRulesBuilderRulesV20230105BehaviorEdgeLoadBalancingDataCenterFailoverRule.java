@@ -15,37 +15,77 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancin
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingDataCenterFailoverRule Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingDataCenterFailoverRule();
 
+    /**
+     * When enabled, interprets the path specified by `context_root` as an absolute server path, for example to reference a site-down page. Otherwise when disabled, the path is appended to the request.
+     * 
+     */
     @Import(name="absolutePath")
     private @Nullable Boolean absolutePath;
 
+    /**
+     * @return When enabled, interprets the path specified by `context_root` as an absolute server path, for example to reference a site-down page. Otherwise when disabled, the path is appended to the request.
+     * 
+     */
     public Optional<Boolean> absolutePath() {
         return Optional.ofNullable(this.absolutePath);
     }
 
+    /**
+     * Specifies the path to use in the forwarding request, typically the root (`/`) when failing over to a different data center, or a full path such as `/static/error.html` when failing over to an error page.
+     * 
+     */
     @Import(name="contextRoot")
     private @Nullable String contextRoot;
 
+    /**
+     * @return Specifies the path to use in the forwarding request, typically the root (`/`) when failing over to a different data center, or a full path such as `/static/error.html` when failing over to an error page.
+     * 
+     */
     public Optional<String> contextRoot() {
         return Optional.ofNullable(this.contextRoot);
     }
 
+    /**
+     * The hostname of the data center to fail over to.
+     * 
+     */
     @Import(name="failoverHostname")
     private @Nullable String failoverHostname;
 
+    /**
+     * @return The hostname of the data center to fail over to.
+     * 
+     */
     public Optional<String> failoverHostname() {
         return Optional.ofNullable(this.failoverHostname);
     }
 
+    /**
+     * Allows you to modify the request&#39;s hostname or path.
+     * 
+     */
     @Import(name="modifyRequest")
     private @Nullable Boolean modifyRequest;
 
+    /**
+     * @return Allows you to modify the request&#39;s hostname or path.
+     * 
+     */
     public Optional<Boolean> modifyRequest() {
         return Optional.ofNullable(this.modifyRequest);
     }
 
+    /**
+     * Overrides the request&#39;s hostname with the `failover_hostname`.
+     * 
+     */
     @Import(name="overrideHostname")
     private @Nullable Boolean overrideHostname;
 
+    /**
+     * @return Overrides the request&#39;s hostname with the `failover_hostname`.
+     * 
+     */
     public Optional<Boolean> overrideHostname() {
         return Optional.ofNullable(this.overrideHostname);
     }
@@ -78,26 +118,56 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancin
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingDataCenterFailoverRule(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param absolutePath When enabled, interprets the path specified by `context_root` as an absolute server path, for example to reference a site-down page. Otherwise when disabled, the path is appended to the request.
+         * 
+         * @return builder
+         * 
+         */
         public Builder absolutePath(@Nullable Boolean absolutePath) {
             $.absolutePath = absolutePath;
             return this;
         }
 
+        /**
+         * @param contextRoot Specifies the path to use in the forwarding request, typically the root (`/`) when failing over to a different data center, or a full path such as `/static/error.html` when failing over to an error page.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contextRoot(@Nullable String contextRoot) {
             $.contextRoot = contextRoot;
             return this;
         }
 
+        /**
+         * @param failoverHostname The hostname of the data center to fail over to.
+         * 
+         * @return builder
+         * 
+         */
         public Builder failoverHostname(@Nullable String failoverHostname) {
             $.failoverHostname = failoverHostname;
             return this;
         }
 
+        /**
+         * @param modifyRequest Allows you to modify the request&#39;s hostname or path.
+         * 
+         * @return builder
+         * 
+         */
         public Builder modifyRequest(@Nullable Boolean modifyRequest) {
             $.modifyRequest = modifyRequest;
             return this;
         }
 
+        /**
+         * @param overrideHostname Overrides the request&#39;s hostname with the `failover_hostname`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder overrideHostname(@Nullable Boolean overrideHostname) {
             $.overrideHostname = overrideHostname;
             return this;

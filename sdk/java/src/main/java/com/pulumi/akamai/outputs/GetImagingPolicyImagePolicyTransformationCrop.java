@@ -11,53 +11,149 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationCrop {
+    /**
+     * @return If cropping an area outside of the existing canvas, expands the image canvas.
+     * 
+     */
     private @Nullable String allowExpansion;
+    /**
+     * @return If cropping an area outside of the existing canvas, expands the image canvas.
+     * 
+     */
     private @Nullable String allowExpansionVar;
+    /**
+     * @return Frame of reference for X and Y Positions.
+     * 
+     */
     private @Nullable String gravity;
+    /**
+     * @return Frame of reference for X and Y Positions.
+     * 
+     */
     private @Nullable String gravityVar;
+    /**
+     * @return The number of pixels to crop along the y-axis.
+     * 
+     */
     private @Nullable String height;
+    /**
+     * @return The number of pixels to crop along the y-axis.
+     * 
+     */
     private @Nullable String heightVar;
+    /**
+     * @return The number of pixels to crop along the x-axis.
+     * 
+     */
     private @Nullable String width;
+    /**
+     * @return The number of pixels to crop along the x-axis.
+     * 
+     */
     private @Nullable String widthVar;
+    /**
+     * @return The x-axis position of the image to crop from.
+     * 
+     */
     private @Nullable String xPosition;
+    /**
+     * @return The x-axis position of the image to crop from.
+     * 
+     */
     private @Nullable String xPositionVar;
+    /**
+     * @return The y-axis position of the image to crop from.
+     * 
+     */
     private @Nullable String yPosition;
+    /**
+     * @return The y-axis position of the image to crop from.
+     * 
+     */
     private @Nullable String yPositionVar;
 
     private GetImagingPolicyImagePolicyTransformationCrop() {}
+    /**
+     * @return If cropping an area outside of the existing canvas, expands the image canvas.
+     * 
+     */
     public Optional<String> allowExpansion() {
         return Optional.ofNullable(this.allowExpansion);
     }
+    /**
+     * @return If cropping an area outside of the existing canvas, expands the image canvas.
+     * 
+     */
     public Optional<String> allowExpansionVar() {
         return Optional.ofNullable(this.allowExpansionVar);
     }
+    /**
+     * @return Frame of reference for X and Y Positions.
+     * 
+     */
     public Optional<String> gravity() {
         return Optional.ofNullable(this.gravity);
     }
+    /**
+     * @return Frame of reference for X and Y Positions.
+     * 
+     */
     public Optional<String> gravityVar() {
         return Optional.ofNullable(this.gravityVar);
     }
+    /**
+     * @return The number of pixels to crop along the y-axis.
+     * 
+     */
     public Optional<String> height() {
         return Optional.ofNullable(this.height);
     }
+    /**
+     * @return The number of pixels to crop along the y-axis.
+     * 
+     */
     public Optional<String> heightVar() {
         return Optional.ofNullable(this.heightVar);
     }
+    /**
+     * @return The number of pixels to crop along the x-axis.
+     * 
+     */
     public Optional<String> width() {
         return Optional.ofNullable(this.width);
     }
+    /**
+     * @return The number of pixels to crop along the x-axis.
+     * 
+     */
     public Optional<String> widthVar() {
         return Optional.ofNullable(this.widthVar);
     }
+    /**
+     * @return The x-axis position of the image to crop from.
+     * 
+     */
     public Optional<String> xPosition() {
         return Optional.ofNullable(this.xPosition);
     }
+    /**
+     * @return The x-axis position of the image to crop from.
+     * 
+     */
     public Optional<String> xPositionVar() {
         return Optional.ofNullable(this.xPositionVar);
     }
+    /**
+     * @return The y-axis position of the image to crop from.
+     * 
+     */
     public Optional<String> yPosition() {
         return Optional.ofNullable(this.yPosition);
     }
+    /**
+     * @return The y-axis position of the image to crop from.
+     * 
+     */
     public Optional<String> yPositionVar() {
         return Optional.ofNullable(this.yPositionVar);
     }

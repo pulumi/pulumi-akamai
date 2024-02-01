@@ -13,9 +13,21 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyTransformationShearsResult
     {
+        /// <summary>
+        /// The amount to shear along the x-axis, measured in multiples of the image's width. Must be set if yShear is not specified.
+        /// </summary>
         public readonly string? XShear;
+        /// <summary>
+        /// The amount to shear along the x-axis, measured in multiples of the image's width. Must be set if yShear is not specified.
+        /// </summary>
         public readonly string? XShearVar;
+        /// <summary>
+        /// The amount to shear along the y-axis, measured in multiples of the image's height. Must be set if xShear is not specified.
+        /// </summary>
         public readonly string? YShear;
+        /// <summary>
+        /// The amount to shear along the y-axis, measured in multiples of the image's height. Must be set if xShear is not specified.
+        /// </summary>
         public readonly string? YShearVar;
 
         [OutputConstructor]

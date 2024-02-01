@@ -17,23 +17,47 @@ public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop
 
     public static final GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeArgs Empty = new GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeArgs();
 
+    /**
+     * Defines coordinates for a single point, to help define polygons and rectangles. Each point may be an object with `x`and `y` members, or a two-element array.
+     * 
+     */
     @Import(name="center", required=true)
     private Output<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeCenterArgs> center;
 
+    /**
+     * @return Defines coordinates for a single point, to help define polygons and rectangles. Each point may be an object with `x`and `y` members, or a two-element array.
+     * 
+     */
     public Output<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeCenterArgs> center() {
         return this.center;
     }
 
+    /**
+     * The radius of the circle measured in pixels.
+     * 
+     */
     @Import(name="radius")
     private @Nullable Output<String> radius;
 
+    /**
+     * @return The radius of the circle measured in pixels.
+     * 
+     */
     public Optional<Output<String>> radius() {
         return Optional.ofNullable(this.radius);
     }
 
+    /**
+     * The radius of the circle measured in pixels.
+     * 
+     */
     @Import(name="radiusVar")
     private @Nullable Output<String> radiusVar;
 
+    /**
+     * @return The radius of the circle measured in pixels.
+     * 
+     */
     public Optional<Output<String>> radiusVar() {
         return Optional.ofNullable(this.radiusVar);
     }
@@ -64,29 +88,65 @@ public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop
             $ = new GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param center Defines coordinates for a single point, to help define polygons and rectangles. Each point may be an object with `x`and `y` members, or a two-element array.
+         * 
+         * @return builder
+         * 
+         */
         public Builder center(Output<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeCenterArgs> center) {
             $.center = center;
             return this;
         }
 
+        /**
+         * @param center Defines coordinates for a single point, to help define polygons and rectangles. Each point may be an object with `x`and `y` members, or a two-element array.
+         * 
+         * @return builder
+         * 
+         */
         public Builder center(GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeCenterArgs center) {
             return center(Output.of(center));
         }
 
+        /**
+         * @param radius The radius of the circle measured in pixels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder radius(@Nullable Output<String> radius) {
             $.radius = radius;
             return this;
         }
 
+        /**
+         * @param radius The radius of the circle measured in pixels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder radius(String radius) {
             return radius(Output.of(radius));
         }
 
+        /**
+         * @param radiusVar The radius of the circle measured in pixels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder radiusVar(@Nullable Output<String> radiusVar) {
             $.radiusVar = radiusVar;
             return this;
         }
 
+        /**
+         * @param radiusVar The radius of the circle measured in pixels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder radiusVar(String radiusVar) {
             return radiusVar(Output.of(radiusVar));
         }
