@@ -13,11 +13,29 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueResult
     {
+        /// <summary>
+        /// If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
+        /// </summary>
         public readonly string? Name;
+        /// <summary>
+        /// Set to true if the entry for the name property should be evaluated based on case sensitivity
+        /// </summary>
         public readonly bool? NameCaseSensitive;
+        /// <summary>
+        /// Set to true if the entry for the name property includes wildcards
+        /// </summary>
         public readonly bool? NameHasWildcard;
+        /// <summary>
+        /// If using the object type, use this set to list the values to match on (use only with the object type)
+        /// </summary>
         public readonly Outputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsResult? Options;
+        /// <summary>
+        /// The array type, which can be one of the following: object or simple. Use the simple option when adding only an array of string-based values
+        /// </summary>
         public readonly string Type;
+        /// <summary>
+        /// The value attributes in the incoming request to match on (use only with simple type)
+        /// </summary>
         public readonly ImmutableArray<string> Values;
 
         [OutputConstructor]

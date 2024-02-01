@@ -12,24 +12,42 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetImagingPolicyImagePolicyTransformationCompositeImageBoxImageInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
+        /// </summary>
         [Input("color")]
         public Input<string>? Color { get; set; }
 
+        /// <summary>
+        /// The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
+        /// </summary>
         [Input("colorVar")]
         public Input<string>? ColorVar { get; set; }
 
+        /// <summary>
+        /// The height of the box in pixels.
+        /// </summary>
         [Input("height")]
         public Input<string>? Height { get; set; }
 
+        /// <summary>
+        /// The height of the box in pixels.
+        /// </summary>
         [Input("heightVar")]
         public Input<string>? HeightVar { get; set; }
 
         [Input("transformation")]
         public Input<Inputs.GetImagingPolicyImagePolicyTransformationInputArgs>? Transformation { get; set; }
 
+        /// <summary>
+        /// The width of the box in pixels.
+        /// </summary>
         [Input("width")]
         public Input<string>? Width { get; set; }
 
+        /// <summary>
+        /// The width of the box in pixels.
+        /// </summary>
         [Input("widthVar")]
         public Input<string>? WidthVar { get; set; }
 

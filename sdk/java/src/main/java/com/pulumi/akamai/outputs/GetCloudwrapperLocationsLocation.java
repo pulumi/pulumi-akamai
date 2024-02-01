@@ -14,21 +14,53 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCloudwrapperLocationsLocation {
+    /**
+     * @return Unique identifier of the location.
+     * 
+     */
     private Integer locationId;
+    /**
+     * @return Name of the location.
+     * 
+     */
     private String locationName;
+    /**
+     * @return Unique identifier of the multi CDN location.
+     * 
+     */
     private String multiCdnLocationId;
+    /**
+     * @return List of traffic types for the location.
+     * 
+     */
     private @Nullable List<GetCloudwrapperLocationsLocationTrafficType> trafficTypes;
 
     private GetCloudwrapperLocationsLocation() {}
+    /**
+     * @return Unique identifier of the location.
+     * 
+     */
     public Integer locationId() {
         return this.locationId;
     }
+    /**
+     * @return Name of the location.
+     * 
+     */
     public String locationName() {
         return this.locationName;
     }
+    /**
+     * @return Unique identifier of the multi CDN location.
+     * 
+     */
     public String multiCdnLocationId() {
         return this.multiCdnLocationId;
     }
+    /**
+     * @return List of traffic types for the location.
+     * 
+     */
     public List<GetCloudwrapperLocationsLocationTrafficType> trafficTypes() {
         return this.trafficTypes == null ? List.of() : this.trafficTypes;
     }

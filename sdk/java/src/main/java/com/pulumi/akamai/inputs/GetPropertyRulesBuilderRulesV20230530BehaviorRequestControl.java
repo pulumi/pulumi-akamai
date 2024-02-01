@@ -18,93 +18,197 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorRequestControl e
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorRequestControl Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorRequestControl();
 
+    /**
+     * Specifies the full path of the branded 403 page, including the filename, but excluding the NetStorage CP code path component.
+     * 
+     */
     @Import(name="branded403File")
     private @Nullable String branded403File;
 
+    /**
+     * @return Specifies the full path of the branded 403 page, including the filename, but excluding the NetStorage CP code path component.
+     * 
+     */
     public Optional<String> branded403File() {
         return Optional.ofNullable(this.branded403File);
     }
 
+    /**
+     * Specifies the response status code for the branded deny action.
+     * 
+     */
     @Import(name="branded403StatusCode")
     private @Nullable Integer branded403StatusCode;
 
+    /**
+     * @return Specifies the response status code for the branded deny action.
+     * 
+     */
     public Optional<Integer> branded403StatusCode() {
         return Optional.ofNullable(this.branded403StatusCode);
     }
 
+    /**
+     * Specifies the redirect URL for the branded deny action.
+     * 
+     */
     @Import(name="branded403Url")
     private @Nullable String branded403Url;
 
+    /**
+     * @return Specifies the redirect URL for the branded deny action.
+     * 
+     */
     public Optional<String> branded403Url() {
         return Optional.ofNullable(this.branded403Url);
     }
 
+    /**
+     * Specifies the branded response page&#39;s time to live in the cache, `5` minutes by default.
+     * 
+     */
     @Import(name="brandedDenyCacheTtl")
     private @Nullable Integer brandedDenyCacheTtl;
 
+    /**
+     * @return Specifies the branded response page&#39;s time to live in the cache, `5` minutes by default.
+     * 
+     */
     public Optional<Integer> brandedDenyCacheTtl() {
         return Optional.ofNullable(this.brandedDenyCacheTtl);
     }
 
+    /**
+     * Identifies the Cloudlet policy.
+     * 
+     */
     @Import(name="cloudletPolicy")
     private @Nullable GetPropertyRulesBuilderRulesV20230530BehaviorRequestControlCloudletPolicy cloudletPolicy;
 
+    /**
+     * @return Identifies the Cloudlet policy.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530BehaviorRequestControlCloudletPolicy> cloudletPolicy() {
         return Optional.ofNullable(this.cloudletPolicy);
     }
 
+    /**
+     * Identifies the Cloudlet shared policy to use with this behavior. Use the `Cloudlets API` to list available shared policies.
+     * 
+     */
     @Import(name="cloudletSharedPolicy")
     private @Nullable Integer cloudletSharedPolicy;
 
+    /**
+     * @return Identifies the Cloudlet shared policy to use with this behavior. Use the `Cloudlets API` to list available shared policies.
+     * 
+     */
     public Optional<Integer> cloudletSharedPolicy() {
         return Optional.ofNullable(this.cloudletSharedPolicy);
     }
 
+    /**
+     * If enabled, serves a branded 403 page for this Cloudlet instance.
+     * 
+     */
     @Import(name="enableBranded403")
     private @Nullable Boolean enableBranded403;
 
+    /**
+     * @return If enabled, serves a branded 403 page for this Cloudlet instance.
+     * 
+     */
     public Optional<Boolean> enableBranded403() {
         return Optional.ofNullable(this.enableBranded403);
     }
 
+    /**
+     * Enables the Request Control Cloudlet.
+     * 
+     */
     @Import(name="enabled")
     private @Nullable Boolean enabled;
 
+    /**
+     * @return Enables the Request Control Cloudlet.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
 
+    /**
+     * Whether you want to apply the Cloudlet shared policy to an unlimited number of properties within your account. Learn more about shared policies and how to create them in `Cloudlets Policy Manager`.
+     * 
+     */
     @Import(name="isSharedPolicy")
     private @Nullable Boolean isSharedPolicy;
 
+    /**
+     * @return Whether you want to apply the Cloudlet shared policy to an unlimited number of properties within your account. Learn more about shared policies and how to create them in `Cloudlets Policy Manager`.
+     * 
+     */
     public Optional<Boolean> isSharedPolicy() {
         return Optional.ofNullable(this.isSharedPolicy);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Specifies the NetStorage domain that contains the branded 403 page.
+     * 
+     */
     @Import(name="netStorage")
     private @Nullable GetPropertyRulesBuilderRulesV20230530BehaviorRequestControlNetStorage netStorage;
 
+    /**
+     * @return Specifies the NetStorage domain that contains the branded 403 page.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530BehaviorRequestControlNetStorage> netStorage() {
         return Optional.ofNullable(this.netStorage);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -145,66 +249,144 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorRequestControl e
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorRequestControl(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param branded403File Specifies the full path of the branded 403 page, including the filename, but excluding the NetStorage CP code path component.
+         * 
+         * @return builder
+         * 
+         */
         public Builder branded403File(@Nullable String branded403File) {
             $.branded403File = branded403File;
             return this;
         }
 
+        /**
+         * @param branded403StatusCode Specifies the response status code for the branded deny action.
+         * 
+         * @return builder
+         * 
+         */
         public Builder branded403StatusCode(@Nullable Integer branded403StatusCode) {
             $.branded403StatusCode = branded403StatusCode;
             return this;
         }
 
+        /**
+         * @param branded403Url Specifies the redirect URL for the branded deny action.
+         * 
+         * @return builder
+         * 
+         */
         public Builder branded403Url(@Nullable String branded403Url) {
             $.branded403Url = branded403Url;
             return this;
         }
 
+        /**
+         * @param brandedDenyCacheTtl Specifies the branded response page&#39;s time to live in the cache, `5` minutes by default.
+         * 
+         * @return builder
+         * 
+         */
         public Builder brandedDenyCacheTtl(@Nullable Integer brandedDenyCacheTtl) {
             $.brandedDenyCacheTtl = brandedDenyCacheTtl;
             return this;
         }
 
+        /**
+         * @param cloudletPolicy Identifies the Cloudlet policy.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cloudletPolicy(@Nullable GetPropertyRulesBuilderRulesV20230530BehaviorRequestControlCloudletPolicy cloudletPolicy) {
             $.cloudletPolicy = cloudletPolicy;
             return this;
         }
 
+        /**
+         * @param cloudletSharedPolicy Identifies the Cloudlet shared policy to use with this behavior. Use the `Cloudlets API` to list available shared policies.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cloudletSharedPolicy(@Nullable Integer cloudletSharedPolicy) {
             $.cloudletSharedPolicy = cloudletSharedPolicy;
             return this;
         }
 
+        /**
+         * @param enableBranded403 If enabled, serves a branded 403 page for this Cloudlet instance.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enableBranded403(@Nullable Boolean enableBranded403) {
             $.enableBranded403 = enableBranded403;
             return this;
         }
 
+        /**
+         * @param enabled Enables the Request Control Cloudlet.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(@Nullable Boolean enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param isSharedPolicy Whether you want to apply the Cloudlet shared policy to an unlimited number of properties within your account. Learn more about shared policies and how to create them in `Cloudlets Policy Manager`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder isSharedPolicy(@Nullable Boolean isSharedPolicy) {
             $.isSharedPolicy = isSharedPolicy;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param netStorage Specifies the NetStorage domain that contains the branded 403 page.
+         * 
+         * @return builder
+         * 
+         */
         public Builder netStorage(@Nullable GetPropertyRulesBuilderRulesV20230530BehaviorRequestControlNetStorage netStorage) {
             $.netStorage = netStorage;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

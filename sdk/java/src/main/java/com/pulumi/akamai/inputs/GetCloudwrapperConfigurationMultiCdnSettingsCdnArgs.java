@@ -19,37 +19,77 @@ public final class GetCloudwrapperConfigurationMultiCdnSettingsCdnArgs extends c
 
     public static final GetCloudwrapperConfigurationMultiCdnSettingsCdnArgs Empty = new GetCloudwrapperConfigurationMultiCdnSettingsCdnArgs();
 
+    /**
+     * List of auth keys configured for the CDN.
+     * 
+     */
     @Import(name="cdnAuthKeys")
     private @Nullable Output<List<GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyArgs>> cdnAuthKeys;
 
+    /**
+     * @return List of auth keys configured for the CDN.
+     * 
+     */
     public Optional<Output<List<GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyArgs>>> cdnAuthKeys() {
         return Optional.ofNullable(this.cdnAuthKeys);
     }
 
+    /**
+     * Unique identifier for the CDN.
+     * 
+     */
     @Import(name="cdnCode", required=true)
     private Output<String> cdnCode;
 
+    /**
+     * @return Unique identifier for the CDN.
+     * 
+     */
     public Output<String> cdnCode() {
         return this.cdnCode;
     }
 
+    /**
+     * Enable CDN.
+     * 
+     */
     @Import(name="enabled", required=true)
     private Output<Boolean> enabled;
 
+    /**
+     * @return Enable CDN.
+     * 
+     */
     public Output<Boolean> enabled() {
         return this.enabled;
     }
 
+    /**
+     * Specify whether CDN communication is HTTPS only.
+     * 
+     */
     @Import(name="httpsOnly", required=true)
     private Output<Boolean> httpsOnly;
 
+    /**
+     * @return Specify whether CDN communication is HTTPS only.
+     * 
+     */
     public Output<Boolean> httpsOnly() {
         return this.httpsOnly;
     }
 
+    /**
+     * Configure an access control list using IP addresses in CIDR notation.
+     * 
+     */
     @Import(name="ipAclCidrs", required=true)
     private Output<List<String>> ipAclCidrs;
 
+    /**
+     * @return Configure an access control list using IP addresses in CIDR notation.
+     * 
+     */
     public Output<List<String>> ipAclCidrs() {
         return this.ipAclCidrs;
     }
@@ -82,55 +122,127 @@ public final class GetCloudwrapperConfigurationMultiCdnSettingsCdnArgs extends c
             $ = new GetCloudwrapperConfigurationMultiCdnSettingsCdnArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param cdnAuthKeys List of auth keys configured for the CDN.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cdnAuthKeys(@Nullable Output<List<GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyArgs>> cdnAuthKeys) {
             $.cdnAuthKeys = cdnAuthKeys;
             return this;
         }
 
+        /**
+         * @param cdnAuthKeys List of auth keys configured for the CDN.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cdnAuthKeys(List<GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyArgs> cdnAuthKeys) {
             return cdnAuthKeys(Output.of(cdnAuthKeys));
         }
 
+        /**
+         * @param cdnAuthKeys List of auth keys configured for the CDN.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cdnAuthKeys(GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyArgs... cdnAuthKeys) {
             return cdnAuthKeys(List.of(cdnAuthKeys));
         }
 
+        /**
+         * @param cdnCode Unique identifier for the CDN.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cdnCode(Output<String> cdnCode) {
             $.cdnCode = cdnCode;
             return this;
         }
 
+        /**
+         * @param cdnCode Unique identifier for the CDN.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cdnCode(String cdnCode) {
             return cdnCode(Output.of(cdnCode));
         }
 
+        /**
+         * @param enabled Enable CDN.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(Output<Boolean> enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param enabled Enable CDN.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(Boolean enabled) {
             return enabled(Output.of(enabled));
         }
 
+        /**
+         * @param httpsOnly Specify whether CDN communication is HTTPS only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder httpsOnly(Output<Boolean> httpsOnly) {
             $.httpsOnly = httpsOnly;
             return this;
         }
 
+        /**
+         * @param httpsOnly Specify whether CDN communication is HTTPS only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder httpsOnly(Boolean httpsOnly) {
             return httpsOnly(Output.of(httpsOnly));
         }
 
+        /**
+         * @param ipAclCidrs Configure an access control list using IP addresses in CIDR notation.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ipAclCidrs(Output<List<String>> ipAclCidrs) {
             $.ipAclCidrs = ipAclCidrs;
             return this;
         }
 
+        /**
+         * @param ipAclCidrs Configure an access control list using IP addresses in CIDR notation.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ipAclCidrs(List<String> ipAclCidrs) {
             return ipAclCidrs(Output.of(ipAclCidrs));
         }
 
+        /**
+         * @param ipAclCidrs Configure an access control list using IP addresses in CIDR notation.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ipAclCidrs(String... ipAclCidrs) {
             return ipAclCidrs(List.of(ipAclCidrs));
         }

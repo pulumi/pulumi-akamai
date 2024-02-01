@@ -14,49 +14,137 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530CriterionResponseHeader {
+    /**
+     * @return The name of the response header, for example `Content-Type`.
+     * 
+     */
     private @Nullable String headerName;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return When the `value` is numeric, this field specifies the match&#39;s minimum value.
+     * 
+     */
     private @Nullable Integer lowerBound;
+    /**
+     * @return When enabled, the match is case-sensitive for the `value` field.
+     * 
+     */
     private @Nullable Boolean matchCaseSensitiveValue;
+    /**
+     * @return Narrows the match according to various criteria.
+     * 
+     */
     private @Nullable String matchOperator;
+    /**
+     * @return Allows wildcards in the `headerName` field, where `?` matches a single character and `*` matches zero or more characters.
+     * 
+     */
     private @Nullable Boolean matchWildcardName;
+    /**
+     * @return Allows wildcards in the `value` field, where `?` matches a single character and `*` matches zero or more characters.
+     * 
+     */
     private @Nullable Boolean matchWildcardValue;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return When the `value` is numeric, this field specifies the match&#39;s maximum value.
+     * 
+     */
     private @Nullable Integer upperBound;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
+    /**
+     * @return The response header&#39;s value, for example `application/x-www-form-urlencoded` when the header `headerName` is `Content-Type`.
+     * 
+     */
     private @Nullable List<String> values;
 
     private GetPropertyRulesBuilderRulesV20230530CriterionResponseHeader() {}
+    /**
+     * @return The name of the response header, for example `Content-Type`.
+     * 
+     */
     public Optional<String> headerName() {
         return Optional.ofNullable(this.headerName);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return When the `value` is numeric, this field specifies the match&#39;s minimum value.
+     * 
+     */
     public Optional<Integer> lowerBound() {
         return Optional.ofNullable(this.lowerBound);
     }
+    /**
+     * @return When enabled, the match is case-sensitive for the `value` field.
+     * 
+     */
     public Optional<Boolean> matchCaseSensitiveValue() {
         return Optional.ofNullable(this.matchCaseSensitiveValue);
     }
+    /**
+     * @return Narrows the match according to various criteria.
+     * 
+     */
     public Optional<String> matchOperator() {
         return Optional.ofNullable(this.matchOperator);
     }
+    /**
+     * @return Allows wildcards in the `headerName` field, where `?` matches a single character and `*` matches zero or more characters.
+     * 
+     */
     public Optional<Boolean> matchWildcardName() {
         return Optional.ofNullable(this.matchWildcardName);
     }
+    /**
+     * @return Allows wildcards in the `value` field, where `?` matches a single character and `*` matches zero or more characters.
+     * 
+     */
     public Optional<Boolean> matchWildcardValue() {
         return Optional.ofNullable(this.matchWildcardValue);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return When the `value` is numeric, this field specifies the match&#39;s maximum value.
+     * 
+     */
     public Optional<Integer> upperBound() {
         return Optional.ofNullable(this.upperBound);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
+    /**
+     * @return The response header&#39;s value, for example `application/x-www-form-urlencoded` when the header `headerName` is `Content-Type`.
+     * 
+     */
     public List<String> values() {
         return this.values == null ? List.of() : this.values;
     }

@@ -13,23 +13,77 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyTransformationFaceCropResult
     {
+        /// <summary>
+        /// Specifies the type of algorithm used to detect faces in the image, either `cascade` for the cascade classifier algorithm or `dnn` for the deep neural network algorithm, `cascade` by default.
+        /// </summary>
         public readonly string? Algorithm;
+        /// <summary>
+        /// Specifies the type of algorithm used to detect faces in the image, either `cascade` for the cascade classifier algorithm or `dnn` for the deep neural network algorithm, `cascade` by default.
+        /// </summary>
         public readonly string? AlgorithmVar;
+        /// <summary>
+        /// With `algorithm` set to `dnn`, specifies the minimum confidence needed to detect faces in the image. Values range from `0` to `1` for increased confidence, and possibly fewer faces detected.
+        /// </summary>
         public readonly string? Confidence;
+        /// <summary>
+        /// With `algorithm` set to `dnn`, specifies the minimum confidence needed to detect faces in the image. Values range from `0` to `1` for increased confidence, and possibly fewer faces detected.
+        /// </summary>
         public readonly string? ConfidenceVar;
+        /// <summary>
+        /// Controls placement of the crop if Image and Video Manager does not detect any faces in the image. Directions are relative to the edges of the image being transformed.
+        /// </summary>
         public readonly string? FailGravity;
+        /// <summary>
+        /// Controls placement of the crop if Image and Video Manager does not detect any faces in the image. Directions are relative to the edges of the image being transformed.
+        /// </summary>
         public readonly string? FailGravityVar;
+        /// <summary>
+        /// Distinguishes the faces detected, either `biggestFace` or `allFaces` to place the crop rectangle around the full set of faces, `all` by default.
+        /// </summary>
         public readonly string? Focus;
+        /// <summary>
+        /// Distinguishes the faces detected, either `biggestFace` or `allFaces` to place the crop rectangle around the full set of faces, `all` by default.
+        /// </summary>
         public readonly string? FocusVar;
+        /// <summary>
+        /// Controls placement of the crop. Directions are relative to the face(s) plus padding.
+        /// </summary>
         public readonly string? Gravity;
+        /// <summary>
+        /// Controls placement of the crop. Directions are relative to the face(s) plus padding.
+        /// </summary>
         public readonly string? GravityVar;
+        /// <summary>
+        /// The height of the output image in pixels relative to the specified `style` value.
+        /// </summary>
         public readonly string? Height;
+        /// <summary>
+        /// The height of the output image in pixels relative to the specified `style` value.
+        /// </summary>
         public readonly string? HeightVar;
+        /// <summary>
+        /// The padding ratio based on the dimensions of the biggest face detected, `0.5` by default. Larger values increase padding.
+        /// </summary>
         public readonly string? Padding;
+        /// <summary>
+        /// The padding ratio based on the dimensions of the biggest face detected, `0.5` by default. Larger values increase padding.
+        /// </summary>
         public readonly string? PaddingVar;
+        /// <summary>
+        /// Specifies how to crop or scale a crop area for the faces detected in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places a raw crop around the faces, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and faces as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the faces, relative to the specified `width` and `height` values. Allows Variable substitution.
+        /// </summary>
         public readonly string? Style;
+        /// <summary>
+        /// Specifies how to crop or scale a crop area for the faces detected in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places a raw crop around the faces, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and faces as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the faces, relative to the specified `width` and `height` values. Allows Variable substitution.
+        /// </summary>
         public readonly string? StyleVar;
+        /// <summary>
+        /// The width of the output image in pixels relative to the specified `style` value.
+        /// </summary>
         public readonly string? Width;
+        /// <summary>
+        /// The width of the output image in pixels relative to the specified `style` value.
+        /// </summary>
         public readonly string? WidthVar;
 
         [OutputConstructor]

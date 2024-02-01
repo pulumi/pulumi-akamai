@@ -13,29 +13,77 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorCacheKeyQueryParams {
+    /**
+     * @return Configures how sets of query string parameters translate to cache keys. Be careful not to ignore any parameters that result in substantially different content, as it is `not` reflected in the cached object.
+     * 
+     */
     private @Nullable String behavior;
+    /**
+     * @return When enabled, `parameters` needs to match exactly. Keep disabled to match string prefixes.
+     * 
+     */
     private @Nullable Boolean exactMatch;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Specifies the set of parameter field names to include in or exclude from the cache key. By default, these match the field names as string prefixes.
+     * 
+     */
     private @Nullable List<String> parameters;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorCacheKeyQueryParams() {}
+    /**
+     * @return Configures how sets of query string parameters translate to cache keys. Be careful not to ignore any parameters that result in substantially different content, as it is `not` reflected in the cached object.
+     * 
+     */
     public Optional<String> behavior() {
         return Optional.ofNullable(this.behavior);
     }
+    /**
+     * @return When enabled, `parameters` needs to match exactly. Keep disabled to match string prefixes.
+     * 
+     */
     public Optional<Boolean> exactMatch() {
         return Optional.ofNullable(this.exactMatch);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Specifies the set of parameter field names to include in or exclude from the cache key. By default, these match the field names as string prefixes.
+     * 
+     */
     public List<String> parameters() {
         return this.parameters == null ? List.of() : this.parameters;
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

@@ -12,21 +12,39 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorAllowCloudletsOriginsInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Allows you to assign custom origin definitions referenced in sub-rules by `cloudletsOrigin` labels. If disabled, all sub-rules are ignored.
+        /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
+        /// <summary>
+        /// Prefixes any Cloudlet-generated origin path with a path defined by an Origin Base Path behavior. If no path is defined, it has no effect. If another Cloudlet policy already prepends the same Origin Base Path, the path is not duplicated.
+        /// </summary>
         [Input("honorBaseDirectory")]
         public Input<bool>? HonorBaseDirectory { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public Input<bool>? Locked { get; set; }
 
+        /// <summary>
+        /// When purging content from a Cloudlets Origin, this specifies a query parameter name whose value is the specific named origin to purge.  Note that this only applies to content purge requests, for example when using the `Content Control Utility API`.
+        /// </summary>
         [Input("purgeOriginQueryParameter")]
         public Input<string>? PurgeOriginQueryParameter { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public Input<string>? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public Input<string>? Uuid { get; set; }
 

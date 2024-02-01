@@ -14,30 +14,62 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationMirror
 
     public static final GetImagingPolicyImagePolicyPostBreakpointTransformationMirror Empty = new GetImagingPolicyImagePolicyPostBreakpointTransformationMirror();
 
+    /**
+     * Flips the image horizontally.
+     * 
+     */
     @Import(name="horizontal")
     private @Nullable String horizontal;
 
+    /**
+     * @return Flips the image horizontally.
+     * 
+     */
     public Optional<String> horizontal() {
         return Optional.ofNullable(this.horizontal);
     }
 
+    /**
+     * Flips the image horizontally.
+     * 
+     */
     @Import(name="horizontalVar")
     private @Nullable String horizontalVar;
 
+    /**
+     * @return Flips the image horizontally.
+     * 
+     */
     public Optional<String> horizontalVar() {
         return Optional.ofNullable(this.horizontalVar);
     }
 
+    /**
+     * Flips the image vertically.
+     * 
+     */
     @Import(name="vertical")
     private @Nullable String vertical;
 
+    /**
+     * @return Flips the image vertically.
+     * 
+     */
     public Optional<String> vertical() {
         return Optional.ofNullable(this.vertical);
     }
 
+    /**
+     * Flips the image vertically.
+     * 
+     */
     @Import(name="verticalVar")
     private @Nullable String verticalVar;
 
+    /**
+     * @return Flips the image vertically.
+     * 
+     */
     public Optional<String> verticalVar() {
         return Optional.ofNullable(this.verticalVar);
     }
@@ -69,21 +101,45 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationMirror
             $ = new GetImagingPolicyImagePolicyPostBreakpointTransformationMirror(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param horizontal Flips the image horizontally.
+         * 
+         * @return builder
+         * 
+         */
         public Builder horizontal(@Nullable String horizontal) {
             $.horizontal = horizontal;
             return this;
         }
 
+        /**
+         * @param horizontalVar Flips the image horizontally.
+         * 
+         * @return builder
+         * 
+         */
         public Builder horizontalVar(@Nullable String horizontalVar) {
             $.horizontalVar = horizontalVar;
             return this;
         }
 
+        /**
+         * @param vertical Flips the image vertically.
+         * 
+         * @return builder
+         * 
+         */
         public Builder vertical(@Nullable String vertical) {
             $.vertical = vertical;
             return this;
         }
 
+        /**
+         * @param verticalVar Flips the image vertically.
+         * 
+         * @return builder
+         * 
+         */
         public Builder verticalVar(@Nullable String verticalVar) {
             $.verticalVar = verticalVar;
             return this;

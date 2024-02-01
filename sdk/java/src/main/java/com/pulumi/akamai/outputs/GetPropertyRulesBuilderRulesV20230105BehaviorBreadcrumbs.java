@@ -12,29 +12,77 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorBreadcrumbs {
+    /**
+     * @return Enables the Breadcrumbs feature.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Whether to collect all Breadcrumbs data in logs, including the response headers sent a requesting client. This can also be helpful if you&#39;re using `DataStream 2` to retrieve log data. This way, all Breadcrumbs data is carried in the logs it uses.
+     * 
+     */
     private @Nullable Boolean loggingEnabled;
+    /**
+     * @return Specifies whether to include Breadcrumbs data in the response header. To bypass the current `optMode`, append the opposite `ak-bc` query string to each request from your player.
+     * 
+     */
     private @Nullable Boolean optMode;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorBreadcrumbs() {}
+    /**
+     * @return Enables the Breadcrumbs feature.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Whether to collect all Breadcrumbs data in logs, including the response headers sent a requesting client. This can also be helpful if you&#39;re using `DataStream 2` to retrieve log data. This way, all Breadcrumbs data is carried in the logs it uses.
+     * 
+     */
     public Optional<Boolean> loggingEnabled() {
         return Optional.ofNullable(this.loggingEnabled);
     }
+    /**
+     * @return Specifies whether to include Breadcrumbs data in the response header. To bypass the current `optMode`, append the opposite `ak-bc` query string to each request from your player.
+     * 
+     */
     public Optional<Boolean> optMode() {
         return Optional.ofNullable(this.optMode);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

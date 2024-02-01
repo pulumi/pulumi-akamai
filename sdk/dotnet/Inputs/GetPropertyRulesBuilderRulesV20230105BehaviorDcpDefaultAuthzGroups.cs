@@ -14,18 +14,31 @@ namespace Pulumi.Akamai.Inputs
     {
         [Input("groupNames")]
         private List<string>? _groupNames;
+
+        /// <summary>
+        /// Specifies the set of authorization groups to assign to all connecting devices.
+        /// </summary>
         public List<string> GroupNames
         {
             get => _groupNames ?? (_groupNames = new List<string>());
             set => _groupNames = value;
         }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public bool? Locked { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public string? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public string? Uuid { get; set; }
 

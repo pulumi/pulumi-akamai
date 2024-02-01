@@ -12,18 +12,33 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorCloudWrapperInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Enables Cloud Wrapper behavior.
+        /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
+        /// <summary>
+        /// The location you want to distribute your Cloud Wrapper cache space to. This behavior allows all locations configured in your Cloud Wrapper configuration.
+        /// </summary>
         [Input("location")]
         public Input<string>? Location { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public Input<bool>? Locked { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public Input<string>? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public Input<string>? Uuid { get; set; }
 

@@ -17,51 +17,107 @@ public final class DatastreamGcsConnectorArgs extends com.pulumi.resources.Resou
 
     public static final DatastreamGcsConnectorArgs Empty = new DatastreamGcsConnectorArgs();
 
+    /**
+     * The name of the storage bucket created in Google Cloud account
+     * 
+     */
     @Import(name="bucket", required=true)
     private Output<String> bucket;
 
+    /**
+     * @return The name of the storage bucket created in Google Cloud account
+     * 
+     */
     public Output<String> bucket() {
         return this.bucket;
     }
 
+    /**
+     * Indicates whether the logs should be compressed
+     * 
+     */
     @Import(name="compressLogs")
     private @Nullable Output<Boolean> compressLogs;
 
+    /**
+     * @return Indicates whether the logs should be compressed
+     * 
+     */
     public Optional<Output<Boolean>> compressLogs() {
         return Optional.ofNullable(this.compressLogs);
     }
 
+    /**
+     * The name of the connector
+     * 
+     */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
+    /**
+     * @return The name of the connector
+     * 
+     */
     public Output<String> displayName() {
         return this.displayName;
     }
 
+    /**
+     * The path to the folder within Google Cloud bucket where logs will be stored
+     * 
+     */
     @Import(name="path")
     private @Nullable Output<String> path;
 
+    /**
+     * @return The path to the folder within Google Cloud bucket where logs will be stored
+     * 
+     */
     public Optional<Output<String>> path() {
         return Optional.ofNullable(this.path);
     }
 
+    /**
+     * The contents of the JSON private key generated and downloaded in Google Cloud Storage account
+     * 
+     */
     @Import(name="privateKey", required=true)
     private Output<String> privateKey;
 
+    /**
+     * @return The contents of the JSON private key generated and downloaded in Google Cloud Storage account
+     * 
+     */
     public Output<String> privateKey() {
         return this.privateKey;
     }
 
+    /**
+     * The unique ID of Google Cloud project
+     * 
+     */
     @Import(name="projectId", required=true)
     private Output<String> projectId;
 
+    /**
+     * @return The unique ID of Google Cloud project
+     * 
+     */
     public Output<String> projectId() {
         return this.projectId;
     }
 
+    /**
+     * The name of the service account with the storage.object.create permission or Storage Object Creator role
+     * 
+     */
     @Import(name="serviceAccountName", required=true)
     private Output<String> serviceAccountName;
 
+    /**
+     * @return The name of the service account with the storage.object.create permission or Storage Object Creator role
+     * 
+     */
     public Output<String> serviceAccountName() {
         return this.serviceAccountName;
     }
@@ -96,65 +152,149 @@ public final class DatastreamGcsConnectorArgs extends com.pulumi.resources.Resou
             $ = new DatastreamGcsConnectorArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param bucket The name of the storage bucket created in Google Cloud account
+         * 
+         * @return builder
+         * 
+         */
         public Builder bucket(Output<String> bucket) {
             $.bucket = bucket;
             return this;
         }
 
+        /**
+         * @param bucket The name of the storage bucket created in Google Cloud account
+         * 
+         * @return builder
+         * 
+         */
         public Builder bucket(String bucket) {
             return bucket(Output.of(bucket));
         }
 
+        /**
+         * @param compressLogs Indicates whether the logs should be compressed
+         * 
+         * @return builder
+         * 
+         */
         public Builder compressLogs(@Nullable Output<Boolean> compressLogs) {
             $.compressLogs = compressLogs;
             return this;
         }
 
+        /**
+         * @param compressLogs Indicates whether the logs should be compressed
+         * 
+         * @return builder
+         * 
+         */
         public Builder compressLogs(Boolean compressLogs) {
             return compressLogs(Output.of(compressLogs));
         }
 
+        /**
+         * @param displayName The name of the connector
+         * 
+         * @return builder
+         * 
+         */
         public Builder displayName(Output<String> displayName) {
             $.displayName = displayName;
             return this;
         }
 
+        /**
+         * @param displayName The name of the connector
+         * 
+         * @return builder
+         * 
+         */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
         }
 
+        /**
+         * @param path The path to the folder within Google Cloud bucket where logs will be stored
+         * 
+         * @return builder
+         * 
+         */
         public Builder path(@Nullable Output<String> path) {
             $.path = path;
             return this;
         }
 
+        /**
+         * @param path The path to the folder within Google Cloud bucket where logs will be stored
+         * 
+         * @return builder
+         * 
+         */
         public Builder path(String path) {
             return path(Output.of(path));
         }
 
+        /**
+         * @param privateKey The contents of the JSON private key generated and downloaded in Google Cloud Storage account
+         * 
+         * @return builder
+         * 
+         */
         public Builder privateKey(Output<String> privateKey) {
             $.privateKey = privateKey;
             return this;
         }
 
+        /**
+         * @param privateKey The contents of the JSON private key generated and downloaded in Google Cloud Storage account
+         * 
+         * @return builder
+         * 
+         */
         public Builder privateKey(String privateKey) {
             return privateKey(Output.of(privateKey));
         }
 
+        /**
+         * @param projectId The unique ID of Google Cloud project
+         * 
+         * @return builder
+         * 
+         */
         public Builder projectId(Output<String> projectId) {
             $.projectId = projectId;
             return this;
         }
 
+        /**
+         * @param projectId The unique ID of Google Cloud project
+         * 
+         * @return builder
+         * 
+         */
         public Builder projectId(String projectId) {
             return projectId(Output.of(projectId));
         }
 
+        /**
+         * @param serviceAccountName The name of the service account with the storage.object.create permission or Storage Object Creator role
+         * 
+         * @return builder
+         * 
+         */
         public Builder serviceAccountName(Output<String> serviceAccountName) {
             $.serviceAccountName = serviceAccountName;
             return this;
         }
 
+        /**
+         * @param serviceAccountName The name of the service account with the storage.object.create permission or Storage Object Creator role
+         * 
+         * @return builder
+         * 
+         */
         public Builder serviceAccountName(String serviceAccountName) {
             return serviceAccountName(Output.of(serviceAccountName));
         }

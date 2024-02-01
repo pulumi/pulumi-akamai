@@ -13,11 +13,29 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyIncludeParentsParentResult
     {
+        /// <summary>
+        /// The property's unique identifier
+        /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// Indicates if the include is used in the production network
+        /// </summary>
         public readonly bool IsIncludeUsedInProductionVersion;
+        /// <summary>
+        /// Indicates if the include is used in the staging network
+        /// </summary>
         public readonly bool IsIncludeUsedInStagingVersion;
+        /// <summary>
+        /// A descriptive name for the property
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// The most recent property version to be activated to the production network
+        /// </summary>
         public readonly string ProductionVersion;
+        /// <summary>
+        /// The most recent property version to be activated to the staging network
+        /// </summary>
         public readonly string StagingVersion;
 
         [OutputConstructor]

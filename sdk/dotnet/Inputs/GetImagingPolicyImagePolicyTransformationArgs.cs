@@ -14,6 +14,10 @@ namespace Pulumi.Akamai.Inputs
     {
         [Input("appends")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationAppendInputArgs>? _appends;
+
+        /// <summary>
+        /// Places a specified `image` beside the source image. The API places the `image` on a major dimension, then aligns it on the minor dimension. Transparent pixels fill any area not covered by either image.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationAppendInputArgs> Appends
         {
             get => _appends ?? (_appends = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationAppendInputArgs>());
@@ -22,6 +26,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("aspectCrops")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationAspectCropInputArgs>? _aspectCrops;
+
+        /// <summary>
+        /// Lets you change the height or width of an image (either by cropping or expanding the area) to an aspect ratio of your choosing.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationAspectCropInputArgs> AspectCrops
         {
             get => _aspectCrops ?? (_aspectCrops = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationAspectCropInputArgs>());
@@ -30,6 +38,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("backgroundColors")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationBackgroundColorInputArgs>? _backgroundColors;
+
+        /// <summary>
+        /// Places a transparent image on a set background color. Color is specified in the typical CSS hexadecimal format.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationBackgroundColorInputArgs> BackgroundColors
         {
             get => _backgroundColors ?? (_backgroundColors = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationBackgroundColorInputArgs>());
@@ -38,6 +50,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("blurs")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationBlurInputArgs>? _blurs;
+
+        /// <summary>
+        /// Applies a Gaussian blur to the image.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationBlurInputArgs> Blurs
         {
             get => _blurs ?? (_blurs = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationBlurInputArgs>());
@@ -46,6 +62,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("chromaKeys")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationChromaKeyInputArgs>? _chromaKeys;
+
+        /// <summary>
+        /// Changes any color in an image within the specified volume of the HSL colorspace to transparent or semitransparent. This transformation applies a 'green screen' technique commonly used to isolate and remove background colors.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationChromaKeyInputArgs> ChromaKeys
         {
             get => _chromaKeys ?? (_chromaKeys = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationChromaKeyInputArgs>());
@@ -54,6 +74,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("composites")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationCompositeInputArgs>? _composites;
+
+        /// <summary>
+        /// Applies another image to the source image, either as an overlay or an underlay. The image that's underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationCompositeInputArgs> Composites
         {
             get => _composites ?? (_composites = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationCompositeInputArgs>());
@@ -70,6 +94,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("contrasts")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationContrastInputArgs>? _contrasts;
+
+        /// <summary>
+        /// Adjusts both the contrast and brightness of an image.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationContrastInputArgs> Contrasts
         {
             get => _contrasts ?? (_contrasts = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationContrastInputArgs>());
@@ -78,6 +106,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("crops")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationCropInputArgs>? _crops;
+
+        /// <summary>
+        /// Crops an image.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationCropInputArgs> Crops
         {
             get => _crops ?? (_crops = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationCropInputArgs>());
@@ -86,6 +118,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("faceCrops")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationFaceCropInputArgs>? _faceCrops;
+
+        /// <summary>
+        /// Applies a method to detect faces in the source image and applies the rectangular crop on either the `biggest` face or `all` of the faces detected. Image and Video Manager tries to preserve faces in the image instead of using specified crop coordinates.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationFaceCropInputArgs> FaceCrops
         {
             get => _faceCrops ?? (_faceCrops = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationFaceCropInputArgs>());
@@ -94,6 +130,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("featureCrops")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationFeatureCropInputArgs>? _featureCrops;
+
+        /// <summary>
+        /// Identifies prominent features of the source image, then crops around as many of these features as possible relative to the specified `width` and `height` values.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationFeatureCropInputArgs> FeatureCrops
         {
             get => _featureCrops ?? (_featureCrops = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationFeatureCropInputArgs>());
@@ -102,6 +142,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("fitAndFills")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationFitAndFillInputArgs>? _fitAndFills;
+
+        /// <summary>
+        /// Resizes an image to fit within a specific size box and then uses a fill of that same image to cover any transparent space at the edges. By default the fill image has a Blur transformation with a sigma value of 8 applied, but the transformation can be customized using the fillTransformation parameter.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationFitAndFillInputArgs> FitAndFills
         {
             get => _fitAndFills ?? (_fitAndFills = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationFitAndFillInputArgs>());
@@ -110,6 +154,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("goops")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationGoopInputArgs>? _goops;
+
+        /// <summary>
+        /// Distorts an image by randomly repositioning a set of control points along a specified grid. The transformed image appears _goopy_. Adjust the density of the grid and the degree of randomity. You can use this transformation to create watermarks for use in security.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationGoopInputArgs> Goops
         {
             get => _goops ?? (_goops = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationGoopInputArgs>());
@@ -118,6 +166,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("grayscales")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationGrayscaleInputArgs>? _grayscales;
+
+        /// <summary>
+        /// Restricts image color to shades of gray only.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationGrayscaleInputArgs> Grayscales
         {
             get => _grayscales ?? (_grayscales = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationGrayscaleInputArgs>());
@@ -126,6 +178,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("hsls")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationHslInputArgs>? _hsls;
+
+        /// <summary>
+        /// Adjusts the hue, saturation, and lightness (HSL) of an image. Hue is the number of degrees that colors rotate around the color wheel. Saturation is a multiplier to increase or decrease color saturation. Lightness is a multiplier to increase or decrease the lightness of an image. Other transformations can also affect color, such as `Grayscale` and `MaxColors`. If youre using more than one, consider the order to apply them for the desired results.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationHslInputArgs> Hsls
         {
             get => _hsls ?? (_hsls = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationHslInputArgs>());
@@ -134,6 +190,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("hsvs")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationHsvInputArgs>? _hsvs;
+
+        /// <summary>
+        /// Identical to HSL except it replaces `lightness` with `value`. For example, if you reduce the `lightness` of a light green, almost white, image, the color turns a vibrant green. Reducing the `value` turns the image a darker color, close to grey. This happens because the original image color is very close to white.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationHsvInputArgs> Hsvs
         {
             get => _hsvs ?? (_hsvs = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationHsvInputArgs>());
@@ -158,6 +218,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("imQueries")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationImQueryInputArgs>? _imQueries;
+
+        /// <summary>
+        /// Apply artistic transformations to images quickly and dynamically by specifying transformations with a query string appendedto the image URL.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationImQueryInputArgs> ImQueries
         {
             get => _imQueries ?? (_imQueries = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationImQueryInputArgs>());
@@ -166,6 +230,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("maxColors")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationMaxColorInputArgs>? _maxColors;
+
+        /// <summary>
+        /// Set the maximum number of colors in the images palette. Reducing the number of colors in an image can help to reduce file size.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationMaxColorInputArgs> MaxColors
         {
             get => _maxColors ?? (_maxColors = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationMaxColorInputArgs>());
@@ -174,6 +242,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("mirrors")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationMirrorInputArgs>? _mirrors;
+
+        /// <summary>
+        /// Flips an image horizontally, vertically, or both.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationMirrorInputArgs> Mirrors
         {
             get => _mirrors ?? (_mirrors = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationMirrorInputArgs>());
@@ -182,6 +254,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("monoHues")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationMonoHueInputArgs>? _monoHues;
+
+        /// <summary>
+        /// Allows you to set all hues in an image to a single specified hue of your choosing. Mono Hue maintains the original color’s lightness and saturation but sets the hue to that of the specified value. This has the effect of making the image shades of the specified hue.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationMonoHueInputArgs> MonoHues
         {
             get => _monoHues ?? (_monoHues = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationMonoHueInputArgs>());
@@ -190,6 +266,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("opacities")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationOpacityInputArgs>? _opacities;
+
+        /// <summary>
+        /// Adjusts the level of transparency of an image. Use this transformation to make an image more or less transparent.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationOpacityInputArgs> Opacities
         {
             get => _opacities ?? (_opacities = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationOpacityInputArgs>());
@@ -198,6 +278,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("regionOfInterestCrops")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropInputArgs>? _regionOfInterestCrops;
+
+        /// <summary>
+        /// Crops to a region around a specified area of interest relative to the specified `width` and `height` values.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropInputArgs> RegionOfInterestCrops
         {
             get => _regionOfInterestCrops ?? (_regionOfInterestCrops = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropInputArgs>());
@@ -206,6 +290,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("relativeCrops")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationRelativeCropInputArgs>? _relativeCrops;
+
+        /// <summary>
+        /// Shrinks or expands an image relative to the image's specified dimensions. Image and Video Manager fills the expanded areas with transparency. Positive values shrink the side, while negative values expand it.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationRelativeCropInputArgs> RelativeCrops
         {
             get => _relativeCrops ?? (_relativeCrops = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationRelativeCropInputArgs>());
@@ -214,6 +302,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("removeColors")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationRemoveColorInputArgs>? _removeColors;
+
+        /// <summary>
+        /// Removes a specified color from an image and replaces it with transparent pixels. This transformation is ideal for removing solid background colors from product images photographed on clean, consistent backgrounds without any shadows.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationRemoveColorInputArgs> RemoveColors
         {
             get => _removeColors ?? (_removeColors = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationRemoveColorInputArgs>());
@@ -222,6 +314,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("resizes")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationResizeInputArgs>? _resizes;
+
+        /// <summary>
+        /// Resizes an image to a particular, absolute dimension. If you don't enter a `width` or a `height`, the image is resized with the `fit` aspect preservation mode, which selects a value for the missing dimension that preserves the image's aspect.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationResizeInputArgs> Resizes
         {
             get => _resizes ?? (_resizes = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationResizeInputArgs>());
@@ -230,6 +326,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("rotates")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationRotateInputArgs>? _rotates;
+
+        /// <summary>
+        /// Rotate the image around its center by indicating the degrees of rotation.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationRotateInputArgs> Rotates
         {
             get => _rotates ?? (_rotates = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationRotateInputArgs>());
@@ -238,6 +338,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("scales")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationScaleInputArgs>? _scales;
+
+        /// <summary>
+        /// Changes the image's size to different dimensions relative to its starting size.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationScaleInputArgs> Scales
         {
             get => _scales ?? (_scales = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationScaleInputArgs>());
@@ -246,6 +350,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("shears")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationShearsInputArgs>? _shears;
+
+        /// <summary>
+        /// Slants an image into a parallelogram, as a percent of the starting dimension as represented in decimal format. You need to specify at least one axis property. Transparent pixels fill empty areas around the sheared image as needed, so it's often useful to use a `BackgroundColor` transformation for these areas.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationShearsInputArgs> Shears
         {
             get => _shears ?? (_shears = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationShearsInputArgs>());
@@ -254,6 +362,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("trims")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationTrimInputArgs>? _trims;
+
+        /// <summary>
+        /// Automatically crops uniform backgrounds from the edges of an image.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationTrimInputArgs> Trims
         {
             get => _trims ?? (_trims = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationTrimInputArgs>());
@@ -262,6 +374,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("unsharpMasks")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationUnsharpMaskInputArgs>? _unsharpMasks;
+
+        /// <summary>
+        /// Emphasizes edges and details in source images without distorting the colors. Although this effect is often referred to as _sharpening_ an image, it actually creates a blurred, inverted copy of the image known as an unsharp mask. Image and Video Manager combines the unsharp mask with the source image to create an image perceived as clearer.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationUnsharpMaskInputArgs> UnsharpMasks
         {
             get => _unsharpMasks ?? (_unsharpMasks = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationUnsharpMaskInputArgs>());

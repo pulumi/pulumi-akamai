@@ -13,49 +13,137 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorBossBeaconing {
+    /**
+     * @return A space-separated set of error patterns that trigger beacons to conditional feeds. Each pattern can include wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `*CONNECT* *DENIED*` matches two different words as substrings.
+     * 
+     */
     private @Nullable String conditionalErrorPattern;
+    /**
+     * @return Specifies the set of response status codes or ranges that trigger the beacon.
+     * 
+     */
     private @Nullable List<String> conditionalHttpStatuses;
+    /**
+     * @return Specifies a conditional sampling frequency or disables beacons.
+     * 
+     */
     private @Nullable String conditionalSamplingFrequency;
+    /**
+     * @return The space-separated list of CP codes that trigger the beacons. You need to specify the same set of CP codes within BOSS.
+     * 
+     */
     private @Nullable String cpcodes;
+    /**
+     * @return Enable diagnostic data beacons.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Specify when to trigger a beacon.
+     * 
+     */
     private @Nullable String forwardType;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Specify when to trigger a beacon.
+     * 
+     */
     private @Nullable String requestType;
+    /**
+     * @return Specifies a sampling frequency or disables beacons.
+     * 
+     */
     private @Nullable String samplingFrequency;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorBossBeaconing() {}
+    /**
+     * @return A space-separated set of error patterns that trigger beacons to conditional feeds. Each pattern can include wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `*CONNECT* *DENIED*` matches two different words as substrings.
+     * 
+     */
     public Optional<String> conditionalErrorPattern() {
         return Optional.ofNullable(this.conditionalErrorPattern);
     }
+    /**
+     * @return Specifies the set of response status codes or ranges that trigger the beacon.
+     * 
+     */
     public List<String> conditionalHttpStatuses() {
         return this.conditionalHttpStatuses == null ? List.of() : this.conditionalHttpStatuses;
     }
+    /**
+     * @return Specifies a conditional sampling frequency or disables beacons.
+     * 
+     */
     public Optional<String> conditionalSamplingFrequency() {
         return Optional.ofNullable(this.conditionalSamplingFrequency);
     }
+    /**
+     * @return The space-separated list of CP codes that trigger the beacons. You need to specify the same set of CP codes within BOSS.
+     * 
+     */
     public Optional<String> cpcodes() {
         return Optional.ofNullable(this.cpcodes);
     }
+    /**
+     * @return Enable diagnostic data beacons.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Specify when to trigger a beacon.
+     * 
+     */
     public Optional<String> forwardType() {
         return Optional.ofNullable(this.forwardType);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Specify when to trigger a beacon.
+     * 
+     */
     public Optional<String> requestType() {
         return Optional.ofNullable(this.requestType);
     }
+    /**
+     * @return Specifies a sampling frequency or disables beacons.
+     * 
+     */
     public Optional<String> samplingFrequency() {
         return Optional.ofNullable(this.samplingFrequency);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

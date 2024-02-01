@@ -12,27 +12,51 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetImagingPolicyImagePolicyTransformationResizeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Preserves the aspect ratio. Select `fit` to make the image fit entirely within the selected width and height. When using `fit`, the resulting image has the largest possible size for the specified dimensions. Select `fill` to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise `ignore` changes the original aspect ratio to fit within an arbitrarily shaped rectangle.
+        /// </summary>
         [Input("aspect")]
         public string? Aspect { get; set; }
 
+        /// <summary>
+        /// Preserves the aspect ratio. Select `fit` to make the image fit entirely within the selected width and height. When using `fit`, the resulting image has the largest possible size for the specified dimensions. Select `fill` to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise `ignore` changes the original aspect ratio to fit within an arbitrarily shaped rectangle.
+        /// </summary>
         [Input("aspectVar")]
         public string? AspectVar { get; set; }
 
+        /// <summary>
+        /// The height to resize the source image to. Must be set if height is not specified.
+        /// </summary>
         [Input("height")]
         public string? Height { get; set; }
 
+        /// <summary>
+        /// The height to resize the source image to. Must be set if height is not specified.
+        /// </summary>
         [Input("heightVar")]
         public string? HeightVar { get; set; }
 
+        /// <summary>
+        /// Sets constraints for the image resize. Select `normal` to resize in all cases, either increasing or decreasing the dimensions. Select `downsize` to ignore this transformation if the result would be larger than the original. Select `upsize` to ignore this transformation if the result would be smaller.
+        /// </summary>
         [Input("type")]
         public string? Type { get; set; }
 
+        /// <summary>
+        /// Sets constraints for the image resize. Select `normal` to resize in all cases, either increasing or decreasing the dimensions. Select `downsize` to ignore this transformation if the result would be larger than the original. Select `upsize` to ignore this transformation if the result would be smaller.
+        /// </summary>
         [Input("typeVar")]
         public string? TypeVar { get; set; }
 
+        /// <summary>
+        /// The width to resize the source image to. Must be set if width is not specified.
+        /// </summary>
         [Input("width")]
         public string? Width { get; set; }
 
+        /// <summary>
+        /// The width to resize the source image to. Must be set if width is not specified.
+        /// </summary>
         [Input("widthVar")]
         public string? WidthVar { get; set; }
 

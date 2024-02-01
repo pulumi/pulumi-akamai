@@ -15,37 +15,77 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionClientCertifica
 
     public static final GetPropertyRulesBuilderRulesV20230530CriterionClientCertificate Empty = new GetPropertyRulesBuilderRulesV20230530CriterionClientCertificate();
 
+    /**
+     * Executes rule behaviors only if a client certificate authenticates requests.
+     * 
+     */
     @Import(name="isCertificatePresent")
     private @Nullable Boolean isCertificatePresent;
 
+    /**
+     * @return Executes rule behaviors only if a client certificate authenticates requests.
+     * 
+     */
     public Optional<Boolean> isCertificatePresent() {
         return Optional.ofNullable(this.isCertificatePresent);
     }
 
+    /**
+     * Matches whether the certificate is `VALID` or `INVALID`. You can also `IGNORE` the certificate&#39;s validity.
+     * 
+     */
     @Import(name="isCertificateValid")
     private @Nullable String isCertificateValid;
 
+    /**
+     * @return Matches whether the certificate is `VALID` or `INVALID`. You can also `IGNORE` the certificate&#39;s validity.
+     * 
+     */
     public Optional<String> isCertificateValid() {
         return Optional.ofNullable(this.isCertificateValid);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -78,26 +118,56 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionClientCertifica
             $ = new GetPropertyRulesBuilderRulesV20230530CriterionClientCertificate(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param isCertificatePresent Executes rule behaviors only if a client certificate authenticates requests.
+         * 
+         * @return builder
+         * 
+         */
         public Builder isCertificatePresent(@Nullable Boolean isCertificatePresent) {
             $.isCertificatePresent = isCertificatePresent;
             return this;
         }
 
+        /**
+         * @param isCertificateValid Matches whether the certificate is `VALID` or `INVALID`. You can also `IGNORE` the certificate&#39;s validity.
+         * 
+         * @return builder
+         * 
+         */
         public Builder isCertificateValid(@Nullable String isCertificateValid) {
             $.isCertificateValid = isCertificateValid;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

@@ -22,16 +22,32 @@ public final class GetImagingPolicyImagePolicyTransformationCompositeImageUrlIma
         return Optional.ofNullable(this.transformation);
     }
 
+    /**
+     * The URL of the image.
+     * 
+     */
     @Import(name="url")
     private @Nullable String url;
 
+    /**
+     * @return The URL of the image.
+     * 
+     */
     public Optional<String> url() {
         return Optional.ofNullable(this.url);
     }
 
+    /**
+     * The URL of the image.
+     * 
+     */
     @Import(name="urlVar")
     private @Nullable String urlVar;
 
+    /**
+     * @return The URL of the image.
+     * 
+     */
     public Optional<String> urlVar() {
         return Optional.ofNullable(this.urlVar);
     }
@@ -67,11 +83,23 @@ public final class GetImagingPolicyImagePolicyTransformationCompositeImageUrlIma
             return this;
         }
 
+        /**
+         * @param url The URL of the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder url(@Nullable String url) {
             $.url = url;
             return this;
         }
 
+        /**
+         * @param urlVar The URL of the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder urlVar(@Nullable String urlVar) {
             $.urlVar = urlVar;
             return this;

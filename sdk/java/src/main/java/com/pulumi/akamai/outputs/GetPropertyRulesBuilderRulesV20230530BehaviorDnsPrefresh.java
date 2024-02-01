@@ -12,29 +12,77 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorDnsPrefresh {
+    /**
+     * @return Specifies the amount of time following a DNS record&#39;s expiration to asynchronously prefresh it.
+     * 
+     */
     private @Nullable String delay;
+    /**
+     * @return Allows edge servers to refresh DNS records before they expire.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return Specifies the amount of time to prefresh a DNS entry if there have been no requests to the domain name.
+     * 
+     */
     private @Nullable String timeout;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorDnsPrefresh() {}
+    /**
+     * @return Specifies the amount of time following a DNS record&#39;s expiration to asynchronously prefresh it.
+     * 
+     */
     public Optional<String> delay() {
         return Optional.ofNullable(this.delay);
     }
+    /**
+     * @return Allows edge servers to refresh DNS records before they expire.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return Specifies the amount of time to prefresh a DNS entry if there have been no requests to the domain name.
+     * 
+     */
     public Optional<String> timeout() {
         return Optional.ofNullable(this.timeout);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

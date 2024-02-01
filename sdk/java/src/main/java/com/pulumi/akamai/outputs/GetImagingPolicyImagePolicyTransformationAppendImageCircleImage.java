@@ -12,33 +12,81 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationAppendImageCircleImage {
+    /**
+     * @return The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
+     * 
+     */
     private @Nullable String color;
+    /**
+     * @return The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
+     * 
+     */
     private @Nullable String colorVar;
+    /**
+     * @return The diameter of the circle. The diameter will be the width and the height of the image in pixels.
+     * 
+     */
     private @Nullable String diameter;
+    /**
+     * @return The diameter of the circle. The diameter will be the width and the height of the image in pixels.
+     * 
+     */
     private @Nullable String diameterVar;
     private @Nullable GetImagingPolicyImagePolicyTransformation transformation;
+    /**
+     * @return The width of the box in pixels.
+     * 
+     */
     private @Nullable String width;
+    /**
+     * @return The width of the box in pixels.
+     * 
+     */
     private @Nullable String widthVar;
 
     private GetImagingPolicyImagePolicyTransformationAppendImageCircleImage() {}
+    /**
+     * @return The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
+     * 
+     */
     public Optional<String> color() {
         return Optional.ofNullable(this.color);
     }
+    /**
+     * @return The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
+     * 
+     */
     public Optional<String> colorVar() {
         return Optional.ofNullable(this.colorVar);
     }
+    /**
+     * @return The diameter of the circle. The diameter will be the width and the height of the image in pixels.
+     * 
+     */
     public Optional<String> diameter() {
         return Optional.ofNullable(this.diameter);
     }
+    /**
+     * @return The diameter of the circle. The diameter will be the width and the height of the image in pixels.
+     * 
+     */
     public Optional<String> diameterVar() {
         return Optional.ofNullable(this.diameterVar);
     }
     public Optional<GetImagingPolicyImagePolicyTransformation> transformation() {
         return Optional.ofNullable(this.transformation);
     }
+    /**
+     * @return The width of the box in pixels.
+     * 
+     */
     public Optional<String> width() {
         return Optional.ofNullable(this.width);
     }
+    /**
+     * @return The width of the box in pixels.
+     * 
+     */
     public Optional<String> widthVar() {
         return Optional.ofNullable(this.widthVar);
     }

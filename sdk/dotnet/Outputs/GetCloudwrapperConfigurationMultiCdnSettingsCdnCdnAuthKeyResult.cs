@@ -13,9 +13,21 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyResult
     {
+        /// <summary>
+        /// The name of the auth key.
+        /// </summary>
         public readonly string AuthKeyName;
+        /// <summary>
+        /// The expirty date of an auth key.
+        /// </summary>
         public readonly string ExpiryDate;
+        /// <summary>
+        /// The header name of an auth key.
+        /// </summary>
         public readonly string HeaderName;
+        /// <summary>
+        /// The secret of an auth key.
+        /// </summary>
         public readonly string Secret;
 
         [OutputConstructor]

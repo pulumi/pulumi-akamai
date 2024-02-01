@@ -13,45 +13,125 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530CriterionUserLocation {
+    /**
+     * @return Specifies which IP addresses determine the user&#39;s location.
+     * 
+     */
     private @Nullable String checkIps;
+    /**
+     * @return Continent codes.
+     * 
+     */
     private @Nullable List<String> continentValues;
+    /**
+     * @return ISO 3166-1 country codes, such as `US` or `CN`.
+     * 
+     */
     private @Nullable List<String> countryValues;
+    /**
+     * @return Indicates the geographic scope.
+     * 
+     */
     private @Nullable String field;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Matches the specified set of values when set to `IS_ONE_OF`, otherwise `IS_NOT_ONE_OF` reverses the match.
+     * 
+     */
     private @Nullable String matchOperator;
+    /**
+     * @return ISO 3166 country and region codes, for example `US:MA` for Massachusetts or `JP:13` for Tokyo.
+     * 
+     */
     private @Nullable List<String> regionValues;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return When connecting via a proxy server as determined by the `X-Forwarded-For` header, enabling this option matches the end client specified in the header. Disabling it matches the connecting client&#39;s IP address.
+     * 
+     */
     private @Nullable Boolean useOnlyFirstXForwardedForIp;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530CriterionUserLocation() {}
+    /**
+     * @return Specifies which IP addresses determine the user&#39;s location.
+     * 
+     */
     public Optional<String> checkIps() {
         return Optional.ofNullable(this.checkIps);
     }
+    /**
+     * @return Continent codes.
+     * 
+     */
     public List<String> continentValues() {
         return this.continentValues == null ? List.of() : this.continentValues;
     }
+    /**
+     * @return ISO 3166-1 country codes, such as `US` or `CN`.
+     * 
+     */
     public List<String> countryValues() {
         return this.countryValues == null ? List.of() : this.countryValues;
     }
+    /**
+     * @return Indicates the geographic scope.
+     * 
+     */
     public Optional<String> field() {
         return Optional.ofNullable(this.field);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Matches the specified set of values when set to `IS_ONE_OF`, otherwise `IS_NOT_ONE_OF` reverses the match.
+     * 
+     */
     public Optional<String> matchOperator() {
         return Optional.ofNullable(this.matchOperator);
     }
+    /**
+     * @return ISO 3166 country and region codes, for example `US:MA` for Massachusetts or `JP:13` for Tokyo.
+     * 
+     */
     public List<String> regionValues() {
         return this.regionValues == null ? List.of() : this.regionValues;
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return When connecting via a proxy server as determined by the `X-Forwarded-For` header, enabling this option matches the end client specified in the header. Disabling it matches the connecting client&#39;s IP address.
+     * 
+     */
     public Optional<Boolean> useOnlyFirstXForwardedForIp() {
         return Optional.ofNullable(this.useOnlyFirstXForwardedForIp);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

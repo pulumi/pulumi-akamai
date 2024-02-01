@@ -12,57 +12,161 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorVerifyTokenAuthorization {
+    /**
+     * @return Specifies the algorithm that generates the token. It needs to match the method chosen in the token generation code.
+     * 
+     */
     private @Nullable String algorithm;
+    /**
+     * @return URL-escapes HMAC inputs passed in as query parameters.
+     * 
+     */
     private @Nullable Boolean escapeHmacInputs;
+    /**
+     * @return When enabled, sends an HTTP error when an authentication test fails.
+     * 
+     */
     private @Nullable Boolean failureResponse;
+    /**
+     * @return Enabling this removes the query string from the URL used to form an encryption key.
+     * 
+     */
     private @Nullable Boolean ignoreQueryString;
+    /**
+     * @return The shared secret used to validate tokens, which needs to match the key used in the token generation code.
+     * 
+     */
     private @Nullable String key;
+    /**
+     * @return Specifies where to find the token in the incoming request.
+     * 
+     */
     private @Nullable String location;
+    /**
+     * @return When `location` is `CLIENT_REQUEST_HEADER`, specifies the name of the incoming request&#39;s header where to find the token.
+     * 
+     */
     private @Nullable String locationId;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Specifies a salt string for input when generating the token, which needs to match the salt value used in the token generation code.
+     * 
+     */
     private @Nullable String salt;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return Specifies a transition key as a hex value.
+     * 
+     */
     private @Nullable String transitionKey;
+    /**
+     * @return If enabled, allows you to specify advanced options such as `algorithm`, `escapeHmacInputs`, `ignoreQueryString`, `transitionKey`, and `salt`.
+     * 
+     */
     private @Nullable Boolean useAdvanced;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorVerifyTokenAuthorization() {}
+    /**
+     * @return Specifies the algorithm that generates the token. It needs to match the method chosen in the token generation code.
+     * 
+     */
     public Optional<String> algorithm() {
         return Optional.ofNullable(this.algorithm);
     }
+    /**
+     * @return URL-escapes HMAC inputs passed in as query parameters.
+     * 
+     */
     public Optional<Boolean> escapeHmacInputs() {
         return Optional.ofNullable(this.escapeHmacInputs);
     }
+    /**
+     * @return When enabled, sends an HTTP error when an authentication test fails.
+     * 
+     */
     public Optional<Boolean> failureResponse() {
         return Optional.ofNullable(this.failureResponse);
     }
+    /**
+     * @return Enabling this removes the query string from the URL used to form an encryption key.
+     * 
+     */
     public Optional<Boolean> ignoreQueryString() {
         return Optional.ofNullable(this.ignoreQueryString);
     }
+    /**
+     * @return The shared secret used to validate tokens, which needs to match the key used in the token generation code.
+     * 
+     */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
+    /**
+     * @return Specifies where to find the token in the incoming request.
+     * 
+     */
     public Optional<String> location() {
         return Optional.ofNullable(this.location);
     }
+    /**
+     * @return When `location` is `CLIENT_REQUEST_HEADER`, specifies the name of the incoming request&#39;s header where to find the token.
+     * 
+     */
     public Optional<String> locationId() {
         return Optional.ofNullable(this.locationId);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Specifies a salt string for input when generating the token, which needs to match the salt value used in the token generation code.
+     * 
+     */
     public Optional<String> salt() {
         return Optional.ofNullable(this.salt);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return Specifies a transition key as a hex value.
+     * 
+     */
     public Optional<String> transitionKey() {
         return Optional.ofNullable(this.transitionKey);
     }
+    /**
+     * @return If enabled, allows you to specify advanced options such as `algorithm`, `escapeHmacInputs`, `ignoreQueryString`, `transitionKey`, and `salt`.
+     * 
+     */
     public Optional<Boolean> useAdvanced() {
         return Optional.ofNullable(this.useAdvanced);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

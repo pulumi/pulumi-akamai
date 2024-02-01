@@ -19,30 +19,62 @@ public final class GetCloudwrapperLocationsLocationArgs extends com.pulumi.resou
 
     public static final GetCloudwrapperLocationsLocationArgs Empty = new GetCloudwrapperLocationsLocationArgs();
 
+    /**
+     * Unique identifier of the location.
+     * 
+     */
     @Import(name="locationId", required=true)
     private Output<Integer> locationId;
 
+    /**
+     * @return Unique identifier of the location.
+     * 
+     */
     public Output<Integer> locationId() {
         return this.locationId;
     }
 
+    /**
+     * Name of the location.
+     * 
+     */
     @Import(name="locationName", required=true)
     private Output<String> locationName;
 
+    /**
+     * @return Name of the location.
+     * 
+     */
     public Output<String> locationName() {
         return this.locationName;
     }
 
+    /**
+     * Unique identifier of the multi CDN location.
+     * 
+     */
     @Import(name="multiCdnLocationId", required=true)
     private Output<String> multiCdnLocationId;
 
+    /**
+     * @return Unique identifier of the multi CDN location.
+     * 
+     */
     public Output<String> multiCdnLocationId() {
         return this.multiCdnLocationId;
     }
 
+    /**
+     * List of traffic types for the location.
+     * 
+     */
     @Import(name="trafficTypes")
     private @Nullable Output<List<GetCloudwrapperLocationsLocationTrafficTypeArgs>> trafficTypes;
 
+    /**
+     * @return List of traffic types for the location.
+     * 
+     */
     public Optional<Output<List<GetCloudwrapperLocationsLocationTrafficTypeArgs>>> trafficTypes() {
         return Optional.ofNullable(this.trafficTypes);
     }
@@ -74,42 +106,96 @@ public final class GetCloudwrapperLocationsLocationArgs extends com.pulumi.resou
             $ = new GetCloudwrapperLocationsLocationArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param locationId Unique identifier of the location.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locationId(Output<Integer> locationId) {
             $.locationId = locationId;
             return this;
         }
 
+        /**
+         * @param locationId Unique identifier of the location.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locationId(Integer locationId) {
             return locationId(Output.of(locationId));
         }
 
+        /**
+         * @param locationName Name of the location.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locationName(Output<String> locationName) {
             $.locationName = locationName;
             return this;
         }
 
+        /**
+         * @param locationName Name of the location.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locationName(String locationName) {
             return locationName(Output.of(locationName));
         }
 
+        /**
+         * @param multiCdnLocationId Unique identifier of the multi CDN location.
+         * 
+         * @return builder
+         * 
+         */
         public Builder multiCdnLocationId(Output<String> multiCdnLocationId) {
             $.multiCdnLocationId = multiCdnLocationId;
             return this;
         }
 
+        /**
+         * @param multiCdnLocationId Unique identifier of the multi CDN location.
+         * 
+         * @return builder
+         * 
+         */
         public Builder multiCdnLocationId(String multiCdnLocationId) {
             return multiCdnLocationId(Output.of(multiCdnLocationId));
         }
 
+        /**
+         * @param trafficTypes List of traffic types for the location.
+         * 
+         * @return builder
+         * 
+         */
         public Builder trafficTypes(@Nullable Output<List<GetCloudwrapperLocationsLocationTrafficTypeArgs>> trafficTypes) {
             $.trafficTypes = trafficTypes;
             return this;
         }
 
+        /**
+         * @param trafficTypes List of traffic types for the location.
+         * 
+         * @return builder
+         * 
+         */
         public Builder trafficTypes(List<GetCloudwrapperLocationsLocationTrafficTypeArgs> trafficTypes) {
             return trafficTypes(Output.of(trafficTypes));
         }
 
+        /**
+         * @param trafficTypes List of traffic types for the location.
+         * 
+         * @return builder
+         * 
+         */
         public Builder trafficTypes(GetCloudwrapperLocationsLocationTrafficTypeArgs... trafficTypes) {
             return trafficTypes(List.of(trafficTypes));
         }

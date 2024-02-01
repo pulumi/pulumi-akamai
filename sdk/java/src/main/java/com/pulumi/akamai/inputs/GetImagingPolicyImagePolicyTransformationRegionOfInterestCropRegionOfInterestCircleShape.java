@@ -16,23 +16,47 @@ public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop
 
     public static final GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShape Empty = new GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShape();
 
+    /**
+     * Defines coordinates for a single point, to help define polygons and rectangles. Each point may be an object with `x`and `y` members, or a two-element array.
+     * 
+     */
     @Import(name="center", required=true)
     private GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeCenter center;
 
+    /**
+     * @return Defines coordinates for a single point, to help define polygons and rectangles. Each point may be an object with `x`and `y` members, or a two-element array.
+     * 
+     */
     public GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeCenter center() {
         return this.center;
     }
 
+    /**
+     * The radius of the circle measured in pixels.
+     * 
+     */
     @Import(name="radius")
     private @Nullable String radius;
 
+    /**
+     * @return The radius of the circle measured in pixels.
+     * 
+     */
     public Optional<String> radius() {
         return Optional.ofNullable(this.radius);
     }
 
+    /**
+     * The radius of the circle measured in pixels.
+     * 
+     */
     @Import(name="radiusVar")
     private @Nullable String radiusVar;
 
+    /**
+     * @return The radius of the circle measured in pixels.
+     * 
+     */
     public Optional<String> radiusVar() {
         return Optional.ofNullable(this.radiusVar);
     }
@@ -63,16 +87,34 @@ public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop
             $ = new GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShape(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param center Defines coordinates for a single point, to help define polygons and rectangles. Each point may be an object with `x`and `y` members, or a two-element array.
+         * 
+         * @return builder
+         * 
+         */
         public Builder center(GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeCenter center) {
             $.center = center;
             return this;
         }
 
+        /**
+         * @param radius The radius of the circle measured in pixels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder radius(@Nullable String radius) {
             $.radius = radius;
             return this;
         }
 
+        /**
+         * @param radiusVar The radius of the circle measured in pixels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder radiusVar(@Nullable String radiusVar) {
             $.radiusVar = radiusVar;
             return this;

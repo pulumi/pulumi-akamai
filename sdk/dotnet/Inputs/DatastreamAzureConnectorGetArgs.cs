@@ -14,6 +14,10 @@ namespace Pulumi.Akamai.Inputs
     {
         [Input("accessKey", required: true)]
         private Input<string>? _accessKey;
+
+        /// <summary>
+        /// Access keys associated with Azure Storage account
+        /// </summary>
         public Input<string>? AccessKey
         {
             get => _accessKey;
@@ -24,18 +28,33 @@ namespace Pulumi.Akamai.Inputs
             }
         }
 
+        /// <summary>
+        /// Specifies the Azure Storage account name
+        /// </summary>
         [Input("accountName", required: true)]
         public Input<string> AccountName { get; set; } = null!;
 
+        /// <summary>
+        /// Indicates whether the logs should be compressed
+        /// </summary>
         [Input("compressLogs")]
         public Input<bool>? CompressLogs { get; set; }
 
+        /// <summary>
+        /// Specifies the Azure Storage container name
+        /// </summary>
         [Input("containerName", required: true)]
         public Input<string> ContainerName { get; set; } = null!;
 
+        /// <summary>
+        /// The name of the connector
+        /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
 
+        /// <summary>
+        /// The path to the folder within Azure Storage container where logs will be stored
+        /// </summary>
         [Input("path", required: true)]
         public Input<string> Path { get; set; } = null!;
 

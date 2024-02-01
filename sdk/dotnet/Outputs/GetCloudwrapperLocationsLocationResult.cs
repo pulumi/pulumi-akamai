@@ -13,9 +13,21 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetCloudwrapperLocationsLocationResult
     {
+        /// <summary>
+        /// Unique identifier of the location.
+        /// </summary>
         public readonly int LocationId;
+        /// <summary>
+        /// Name of the location.
+        /// </summary>
         public readonly string LocationName;
+        /// <summary>
+        /// Unique identifier of the multi CDN location.
+        /// </summary>
         public readonly string MultiCdnLocationId;
+        /// <summary>
+        /// List of traffic types for the location.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetCloudwrapperLocationsLocationTrafficTypeResult> TrafficTypes;
 
         [OutputConstructor]

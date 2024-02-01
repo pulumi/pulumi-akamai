@@ -16,23 +16,47 @@ public final class GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsAr
 
     public static final GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsArgs Empty = new GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsArgs();
 
+    /**
+     * The ID of the Conditional Origin requests are forwarded to
+     * 
+     */
     @Import(name="originId")
     private @Nullable Output<String> originId;
 
+    /**
+     * @return The ID of the Conditional Origin requests are forwarded to
+     * 
+     */
     public Optional<Output<String>> originId() {
         return Optional.ofNullable(this.originId);
     }
 
+    /**
+     * If a value is provided and match conditions are met, this property defines the path/resource/query string to rewrite URL for the incoming request.
+     * 
+     */
     @Import(name="pathAndQs")
     private @Nullable Output<String> pathAndQs;
 
+    /**
+     * @return If a value is provided and match conditions are met, this property defines the path/resource/query string to rewrite URL for the incoming request.
+     * 
+     */
     public Optional<Output<String>> pathAndQs() {
         return Optional.ofNullable(this.pathAndQs);
     }
 
+    /**
+     * If set to true, the Cloudlet includes the query string from the request in the rewritten or forwarded URL.
+     * 
+     */
     @Import(name="useIncomingQueryString")
     private @Nullable Output<Boolean> useIncomingQueryString;
 
+    /**
+     * @return If set to true, the Cloudlet includes the query string from the request in the rewritten or forwarded URL.
+     * 
+     */
     public Optional<Output<Boolean>> useIncomingQueryString() {
         return Optional.ofNullable(this.useIncomingQueryString);
     }
@@ -63,29 +87,65 @@ public final class GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsAr
             $ = new GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param originId The ID of the Conditional Origin requests are forwarded to
+         * 
+         * @return builder
+         * 
+         */
         public Builder originId(@Nullable Output<String> originId) {
             $.originId = originId;
             return this;
         }
 
+        /**
+         * @param originId The ID of the Conditional Origin requests are forwarded to
+         * 
+         * @return builder
+         * 
+         */
         public Builder originId(String originId) {
             return originId(Output.of(originId));
         }
 
+        /**
+         * @param pathAndQs If a value is provided and match conditions are met, this property defines the path/resource/query string to rewrite URL for the incoming request.
+         * 
+         * @return builder
+         * 
+         */
         public Builder pathAndQs(@Nullable Output<String> pathAndQs) {
             $.pathAndQs = pathAndQs;
             return this;
         }
 
+        /**
+         * @param pathAndQs If a value is provided and match conditions are met, this property defines the path/resource/query string to rewrite URL for the incoming request.
+         * 
+         * @return builder
+         * 
+         */
         public Builder pathAndQs(String pathAndQs) {
             return pathAndQs(Output.of(pathAndQs));
         }
 
+        /**
+         * @param useIncomingQueryString If set to true, the Cloudlet includes the query string from the request in the rewritten or forwarded URL.
+         * 
+         * @return builder
+         * 
+         */
         public Builder useIncomingQueryString(@Nullable Output<Boolean> useIncomingQueryString) {
             $.useIncomingQueryString = useIncomingQueryString;
             return this;
         }
 
+        /**
+         * @param useIncomingQueryString If set to true, the Cloudlet includes the query string from the request in the rewritten or forwarded URL.
+         * 
+         * @return builder
+         * 
+         */
         public Builder useIncomingQueryString(Boolean useIncomingQueryString) {
             return useIncomingQueryString(Output.of(useIncomingQueryString));
         }

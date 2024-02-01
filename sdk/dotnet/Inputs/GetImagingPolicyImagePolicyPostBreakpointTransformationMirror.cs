@@ -12,15 +12,27 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetImagingPolicyImagePolicyPostBreakpointTransformationMirrorArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Flips the image horizontally.
+        /// </summary>
         [Input("horizontal")]
         public string? Horizontal { get; set; }
 
+        /// <summary>
+        /// Flips the image horizontally.
+        /// </summary>
         [Input("horizontalVar")]
         public string? HorizontalVar { get; set; }
 
+        /// <summary>
+        /// Flips the image vertically.
+        /// </summary>
         [Input("vertical")]
         public string? Vertical { get; set; }
 
+        /// <summary>
+        /// Flips the image vertically.
+        /// </summary>
         [Input("verticalVar")]
         public string? VerticalVar { get; set; }
 

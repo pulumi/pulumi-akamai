@@ -12,18 +12,33 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230530VariableInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The description for a variable
+        /// </summary>
         [Input("description", required: true)]
         public Input<string> Description { get; set; } = null!;
 
+        /// <summary>
+        /// Whether a variable should be hidden
+        /// </summary>
         [Input("hidden", required: true)]
         public Input<bool> Hidden { get; set; } = null!;
 
+        /// <summary>
+        /// The name of a variable
+        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
+        /// <summary>
+        /// States whether a variable contains sensitive information
+        /// </summary>
         [Input("sensitive", required: true)]
         public Input<bool> Sensitive { get; set; } = null!;
 
+        /// <summary>
+        /// The value for a variable
+        /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;
 

@@ -15,37 +15,77 @@ public final class GetPropertyRulesBuilderRulesV20230530VariableArgs extends com
 
     public static final GetPropertyRulesBuilderRulesV20230530VariableArgs Empty = new GetPropertyRulesBuilderRulesV20230530VariableArgs();
 
+    /**
+     * The description for a variable
+     * 
+     */
     @Import(name="description", required=true)
     private Output<String> description;
 
+    /**
+     * @return The description for a variable
+     * 
+     */
     public Output<String> description() {
         return this.description;
     }
 
+    /**
+     * Whether a variable should be hidden
+     * 
+     */
     @Import(name="hidden", required=true)
     private Output<Boolean> hidden;
 
+    /**
+     * @return Whether a variable should be hidden
+     * 
+     */
     public Output<Boolean> hidden() {
         return this.hidden;
     }
 
+    /**
+     * The name of a variable
+     * 
+     */
     @Import(name="name", required=true)
     private Output<String> name;
 
+    /**
+     * @return The name of a variable
+     * 
+     */
     public Output<String> name() {
         return this.name;
     }
 
+    /**
+     * States whether a variable contains sensitive information
+     * 
+     */
     @Import(name="sensitive", required=true)
     private Output<Boolean> sensitive;
 
+    /**
+     * @return States whether a variable contains sensitive information
+     * 
+     */
     public Output<Boolean> sensitive() {
         return this.sensitive;
     }
 
+    /**
+     * The value for a variable
+     * 
+     */
     @Import(name="value", required=true)
     private Output<String> value;
 
+    /**
+     * @return The value for a variable
+     * 
+     */
     public Output<String> value() {
         return this.value;
     }
@@ -78,47 +118,107 @@ public final class GetPropertyRulesBuilderRulesV20230530VariableArgs extends com
             $ = new GetPropertyRulesBuilderRulesV20230530VariableArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param description The description for a variable
+         * 
+         * @return builder
+         * 
+         */
         public Builder description(Output<String> description) {
             $.description = description;
             return this;
         }
 
+        /**
+         * @param description The description for a variable
+         * 
+         * @return builder
+         * 
+         */
         public Builder description(String description) {
             return description(Output.of(description));
         }
 
+        /**
+         * @param hidden Whether a variable should be hidden
+         * 
+         * @return builder
+         * 
+         */
         public Builder hidden(Output<Boolean> hidden) {
             $.hidden = hidden;
             return this;
         }
 
+        /**
+         * @param hidden Whether a variable should be hidden
+         * 
+         * @return builder
+         * 
+         */
         public Builder hidden(Boolean hidden) {
             return hidden(Output.of(hidden));
         }
 
+        /**
+         * @param name The name of a variable
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(Output<String> name) {
             $.name = name;
             return this;
         }
 
+        /**
+         * @param name The name of a variable
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(String name) {
             return name(Output.of(name));
         }
 
+        /**
+         * @param sensitive States whether a variable contains sensitive information
+         * 
+         * @return builder
+         * 
+         */
         public Builder sensitive(Output<Boolean> sensitive) {
             $.sensitive = sensitive;
             return this;
         }
 
+        /**
+         * @param sensitive States whether a variable contains sensitive information
+         * 
+         * @return builder
+         * 
+         */
         public Builder sensitive(Boolean sensitive) {
             return sensitive(Output.of(sensitive));
         }
 
+        /**
+         * @param value The value for a variable
+         * 
+         * @return builder
+         * 
+         */
         public Builder value(Output<String> value) {
             $.value = value;
             return this;
         }
 
+        /**
+         * @param value The value for a variable
+         * 
+         * @return builder
+         * 
+         */
         public Builder value(String value) {
             return value(Output.of(value));
         }

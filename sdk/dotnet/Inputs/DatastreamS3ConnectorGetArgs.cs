@@ -14,6 +14,10 @@ namespace Pulumi.Akamai.Inputs
     {
         [Input("accessKey", required: true)]
         private Input<string>? _accessKey;
+
+        /// <summary>
+        /// The access key identifier used to authenticate requests to the Amazon S3 account
+        /// </summary>
         public Input<string>? AccessKey
         {
             get => _accessKey;
@@ -24,23 +28,42 @@ namespace Pulumi.Akamai.Inputs
             }
         }
 
+        /// <summary>
+        /// The name of the Amazon S3 bucket
+        /// </summary>
         [Input("bucket", required: true)]
         public Input<string> Bucket { get; set; } = null!;
 
+        /// <summary>
+        /// Indicates whether the logs should be compressed
+        /// </summary>
         [Input("compressLogs")]
         public Input<bool>? CompressLogs { get; set; }
 
+        /// <summary>
+        /// The name of the connector
+        /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
 
+        /// <summary>
+        /// The path to the folder within Amazon S3 bucket where logs will be stored
+        /// </summary>
         [Input("path", required: true)]
         public Input<string> Path { get; set; } = null!;
 
+        /// <summary>
+        /// The AWS region where Amazon S3 bucket resides
+        /// </summary>
         [Input("region", required: true)]
         public Input<string> Region { get; set; } = null!;
 
         [Input("secretAccessKey", required: true)]
         private Input<string>? _secretAccessKey;
+
+        /// <summary>
+        /// The secret access key identifier used to authenticate requests to the Amazon S3 account
+        /// </summary>
         public Input<string>? SecretAccessKey
         {
             get => _secretAccessKey;

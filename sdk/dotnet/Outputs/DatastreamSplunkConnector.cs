@@ -13,16 +13,49 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class DatastreamSplunkConnector
     {
+        /// <summary>
+        /// The certification authority (CA) certificate used to verify the origin server's certificate. If the certificate is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+        /// </summary>
         public readonly string? CaCert;
+        /// <summary>
+        /// The digital certificate in the PEM format you want to use to authenticate requests to your destination. If you want to use mutual authentication, you need to provide both the client certificate and the client key (in the PEM format).
+        /// </summary>
         public readonly string? ClientCert;
+        /// <summary>
+        /// The private key in the non-encrypted PKCS8 format you want to use to authenticate with the back-end server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+        /// </summary>
         public readonly string? ClientKey;
+        /// <summary>
+        /// Indicates whether the logs should be compressed
+        /// </summary>
         public readonly bool? CompressLogs;
+        /// <summary>
+        /// The name of custom header passed with the request to the destination
+        /// </summary>
         public readonly string? CustomHeaderName;
+        /// <summary>
+        /// The custom header's contents passed with the request to the destination
+        /// </summary>
         public readonly string? CustomHeaderValue;
+        /// <summary>
+        /// The name of the connector
+        /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// The raw event Splunk URL where logs will be stored
+        /// </summary>
         public readonly string Endpoint;
+        /// <summary>
+        /// The Event Collector token associated with Splunk account
+        /// </summary>
         public readonly string EventCollectorToken;
+        /// <summary>
+        /// Indicates whether mTLS is enabled or not.
+        /// </summary>
         public readonly bool? MTls;
+        /// <summary>
+        /// The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+        /// </summary>
         public readonly string? TlsHostname;
 
         [OutputConstructor]

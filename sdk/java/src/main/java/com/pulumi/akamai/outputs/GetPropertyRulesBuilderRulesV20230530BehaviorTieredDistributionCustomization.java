@@ -12,65 +12,185 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorTieredDistributionCustomization {
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String cloudwrapperMapMigrationTitle;
+    /**
+     * @return Enables custom maps.
+     * 
+     */
     private @Nullable Boolean customMapEnabled;
+    /**
+     * @return Specifies the custom map name.
+     * 
+     */
     private @Nullable String customMapName;
+    /**
+     * @return Specifies the hash algorithm.
+     * 
+     */
     private @Nullable String hashAlgorithm;
+    /**
+     * @return Location from which Cloud Wrapper migration is performed. User should choose the existing Cloud Wrapper location. The new Cloud Wrapper location (to which migration has to happen) is expected to be updated as part of the main &#34;Cloud Wrapper&#34; behavior.
+     * 
+     */
     private @Nullable String location;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Enables migration of the custom map to Cloud Wrapper.
+     * 
+     */
     private @Nullable Boolean mapMigrationEnabled;
+    /**
+     * @return Specifies when the map migration should end.
+     * 
+     */
     private @Nullable String migrationEndDate;
+    /**
+     * @return Specifies when to start migrating the map.
+     * 
+     */
     private @Nullable String migrationStartDate;
+    /**
+     * @return Enables migration within Cloud Wrapper maps.
+     * 
+     */
     private @Nullable Boolean migrationWithinCwMapsEnabled;
+    /**
+     * @return Specifies a numeric serial end value. Akamai uses serial numbers to group machines and share objects in their cache with other machines in the same region.
+     * 
+     */
     private @Nullable String serialEnd;
+    /**
+     * @return Specifies a numeric serial start value.
+     * 
+     */
     private @Nullable String serialStart;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String tier1Title;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorTieredDistributionCustomization() {}
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> cloudwrapperMapMigrationTitle() {
         return Optional.ofNullable(this.cloudwrapperMapMigrationTitle);
     }
+    /**
+     * @return Enables custom maps.
+     * 
+     */
     public Optional<Boolean> customMapEnabled() {
         return Optional.ofNullable(this.customMapEnabled);
     }
+    /**
+     * @return Specifies the custom map name.
+     * 
+     */
     public Optional<String> customMapName() {
         return Optional.ofNullable(this.customMapName);
     }
+    /**
+     * @return Specifies the hash algorithm.
+     * 
+     */
     public Optional<String> hashAlgorithm() {
         return Optional.ofNullable(this.hashAlgorithm);
     }
+    /**
+     * @return Location from which Cloud Wrapper migration is performed. User should choose the existing Cloud Wrapper location. The new Cloud Wrapper location (to which migration has to happen) is expected to be updated as part of the main &#34;Cloud Wrapper&#34; behavior.
+     * 
+     */
     public Optional<String> location() {
         return Optional.ofNullable(this.location);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Enables migration of the custom map to Cloud Wrapper.
+     * 
+     */
     public Optional<Boolean> mapMigrationEnabled() {
         return Optional.ofNullable(this.mapMigrationEnabled);
     }
+    /**
+     * @return Specifies when the map migration should end.
+     * 
+     */
     public Optional<String> migrationEndDate() {
         return Optional.ofNullable(this.migrationEndDate);
     }
+    /**
+     * @return Specifies when to start migrating the map.
+     * 
+     */
     public Optional<String> migrationStartDate() {
         return Optional.ofNullable(this.migrationStartDate);
     }
+    /**
+     * @return Enables migration within Cloud Wrapper maps.
+     * 
+     */
     public Optional<Boolean> migrationWithinCwMapsEnabled() {
         return Optional.ofNullable(this.migrationWithinCwMapsEnabled);
     }
+    /**
+     * @return Specifies a numeric serial end value. Akamai uses serial numbers to group machines and share objects in their cache with other machines in the same region.
+     * 
+     */
     public Optional<String> serialEnd() {
         return Optional.ofNullable(this.serialEnd);
     }
+    /**
+     * @return Specifies a numeric serial start value.
+     * 
+     */
     public Optional<String> serialStart() {
         return Optional.ofNullable(this.serialStart);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> tier1Title() {
         return Optional.ofNullable(this.tier1Title);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

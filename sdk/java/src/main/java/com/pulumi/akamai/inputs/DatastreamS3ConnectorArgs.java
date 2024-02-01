@@ -17,51 +17,107 @@ public final class DatastreamS3ConnectorArgs extends com.pulumi.resources.Resour
 
     public static final DatastreamS3ConnectorArgs Empty = new DatastreamS3ConnectorArgs();
 
+    /**
+     * The access key identifier used to authenticate requests to the Amazon S3 account
+     * 
+     */
     @Import(name="accessKey", required=true)
     private Output<String> accessKey;
 
+    /**
+     * @return The access key identifier used to authenticate requests to the Amazon S3 account
+     * 
+     */
     public Output<String> accessKey() {
         return this.accessKey;
     }
 
+    /**
+     * The name of the Amazon S3 bucket
+     * 
+     */
     @Import(name="bucket", required=true)
     private Output<String> bucket;
 
+    /**
+     * @return The name of the Amazon S3 bucket
+     * 
+     */
     public Output<String> bucket() {
         return this.bucket;
     }
 
+    /**
+     * Indicates whether the logs should be compressed
+     * 
+     */
     @Import(name="compressLogs")
     private @Nullable Output<Boolean> compressLogs;
 
+    /**
+     * @return Indicates whether the logs should be compressed
+     * 
+     */
     public Optional<Output<Boolean>> compressLogs() {
         return Optional.ofNullable(this.compressLogs);
     }
 
+    /**
+     * The name of the connector
+     * 
+     */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
+    /**
+     * @return The name of the connector
+     * 
+     */
     public Output<String> displayName() {
         return this.displayName;
     }
 
+    /**
+     * The path to the folder within Amazon S3 bucket where logs will be stored
+     * 
+     */
     @Import(name="path", required=true)
     private Output<String> path;
 
+    /**
+     * @return The path to the folder within Amazon S3 bucket where logs will be stored
+     * 
+     */
     public Output<String> path() {
         return this.path;
     }
 
+    /**
+     * The AWS region where Amazon S3 bucket resides
+     * 
+     */
     @Import(name="region", required=true)
     private Output<String> region;
 
+    /**
+     * @return The AWS region where Amazon S3 bucket resides
+     * 
+     */
     public Output<String> region() {
         return this.region;
     }
 
+    /**
+     * The secret access key identifier used to authenticate requests to the Amazon S3 account
+     * 
+     */
     @Import(name="secretAccessKey", required=true)
     private Output<String> secretAccessKey;
 
+    /**
+     * @return The secret access key identifier used to authenticate requests to the Amazon S3 account
+     * 
+     */
     public Output<String> secretAccessKey() {
         return this.secretAccessKey;
     }
@@ -96,65 +152,149 @@ public final class DatastreamS3ConnectorArgs extends com.pulumi.resources.Resour
             $ = new DatastreamS3ConnectorArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param accessKey The access key identifier used to authenticate requests to the Amazon S3 account
+         * 
+         * @return builder
+         * 
+         */
         public Builder accessKey(Output<String> accessKey) {
             $.accessKey = accessKey;
             return this;
         }
 
+        /**
+         * @param accessKey The access key identifier used to authenticate requests to the Amazon S3 account
+         * 
+         * @return builder
+         * 
+         */
         public Builder accessKey(String accessKey) {
             return accessKey(Output.of(accessKey));
         }
 
+        /**
+         * @param bucket The name of the Amazon S3 bucket
+         * 
+         * @return builder
+         * 
+         */
         public Builder bucket(Output<String> bucket) {
             $.bucket = bucket;
             return this;
         }
 
+        /**
+         * @param bucket The name of the Amazon S3 bucket
+         * 
+         * @return builder
+         * 
+         */
         public Builder bucket(String bucket) {
             return bucket(Output.of(bucket));
         }
 
+        /**
+         * @param compressLogs Indicates whether the logs should be compressed
+         * 
+         * @return builder
+         * 
+         */
         public Builder compressLogs(@Nullable Output<Boolean> compressLogs) {
             $.compressLogs = compressLogs;
             return this;
         }
 
+        /**
+         * @param compressLogs Indicates whether the logs should be compressed
+         * 
+         * @return builder
+         * 
+         */
         public Builder compressLogs(Boolean compressLogs) {
             return compressLogs(Output.of(compressLogs));
         }
 
+        /**
+         * @param displayName The name of the connector
+         * 
+         * @return builder
+         * 
+         */
         public Builder displayName(Output<String> displayName) {
             $.displayName = displayName;
             return this;
         }
 
+        /**
+         * @param displayName The name of the connector
+         * 
+         * @return builder
+         * 
+         */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
         }
 
+        /**
+         * @param path The path to the folder within Amazon S3 bucket where logs will be stored
+         * 
+         * @return builder
+         * 
+         */
         public Builder path(Output<String> path) {
             $.path = path;
             return this;
         }
 
+        /**
+         * @param path The path to the folder within Amazon S3 bucket where logs will be stored
+         * 
+         * @return builder
+         * 
+         */
         public Builder path(String path) {
             return path(Output.of(path));
         }
 
+        /**
+         * @param region The AWS region where Amazon S3 bucket resides
+         * 
+         * @return builder
+         * 
+         */
         public Builder region(Output<String> region) {
             $.region = region;
             return this;
         }
 
+        /**
+         * @param region The AWS region where Amazon S3 bucket resides
+         * 
+         * @return builder
+         * 
+         */
         public Builder region(String region) {
             return region(Output.of(region));
         }
 
+        /**
+         * @param secretAccessKey The secret access key identifier used to authenticate requests to the Amazon S3 account
+         * 
+         * @return builder
+         * 
+         */
         public Builder secretAccessKey(Output<String> secretAccessKey) {
             $.secretAccessKey = secretAccessKey;
             return this;
         }
 
+        /**
+         * @param secretAccessKey The secret access key identifier used to authenticate requests to the Amazon S3 account
+         * 
+         * @return builder
+         * 
+         */
         public Builder secretAccessKey(String secretAccessKey) {
             return secretAccessKey(Output.of(secretAccessKey));
         }

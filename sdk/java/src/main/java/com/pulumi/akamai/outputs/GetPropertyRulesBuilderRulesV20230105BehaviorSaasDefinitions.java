@@ -13,113 +13,329 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorSaasDefinitions {
+    /**
+     * @return Specifies the request component that identifies a SaaS application.
+     * 
+     */
     private @Nullable String applicationAction;
+    /**
+     * @return Enabling this allows you to identify applications using a `CNAME chain` rather than a single hostname.
+     * 
+     */
     private @Nullable Boolean applicationCnameEnabled;
+    /**
+     * @return Specifies the number of CNAMEs to use in the chain.
+     * 
+     */
     private @Nullable Integer applicationCnameLevel;
+    /**
+     * @return This specifies the name of the cookie that identifies the application.
+     * 
+     */
     private @Nullable String applicationCookie;
+    /**
+     * @return This names the query parameter that identifies the application.
+     * 
+     */
     private @Nullable String applicationQueryString;
+    /**
+     * @return Specifies a Perl-compatible regular expression with which to substitute the request&#39;s application ID.
+     * 
+     */
     private @Nullable String applicationRegex;
+    /**
+     * @return Specifies a string to replace the request&#39;s application ID matched by `applicationRegex`.
+     * 
+     */
     private @Nullable String applicationReplace;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String applicationTitle;
+    /**
+     * @return Specifies the request component that identifies a SaaS customer.
+     * 
+     */
     private @Nullable String customerAction;
+    /**
+     * @return Enabling this allows you to identify customers using a `CNAME chain` rather than a single hostname.
+     * 
+     */
     private @Nullable Boolean customerCnameEnabled;
+    /**
+     * @return Specifies the number of CNAMEs to use in the chain.
+     * 
+     */
     private @Nullable Integer customerCnameLevel;
+    /**
+     * @return This specifies the name of the cookie that identifies the customer.
+     * 
+     */
     private @Nullable String customerCookie;
+    /**
+     * @return This names the query parameter that identifies the customer.
+     * 
+     */
     private @Nullable String customerQueryString;
+    /**
+     * @return Specifies a Perl-compatible regular expression with which to substitute the request&#39;s customer ID.
+     * 
+     */
     private @Nullable String customerRegex;
+    /**
+     * @return Specifies a string to replace the request&#39;s customer ID matched by `customerRegex`.
+     * 
+     */
     private @Nullable String customerReplace;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String customerTitle;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return Specifies the request component that identifies a SaaS user.
+     * 
+     */
     private @Nullable String usersAction;
+    /**
+     * @return Enabling this allows you to identify users using a `CNAME chain` rather than a single hostname.
+     * 
+     */
     private @Nullable Boolean usersCnameEnabled;
+    /**
+     * @return Specifies the number of CNAMEs to use in the chain.
+     * 
+     */
     private @Nullable Integer usersCnameLevel;
+    /**
+     * @return This specifies the name of the cookie that identifies the user.
+     * 
+     */
     private @Nullable String usersCookie;
+    /**
+     * @return This names the query parameter that identifies the user.
+     * 
+     */
     private @Nullable String usersQueryString;
+    /**
+     * @return Specifies a Perl-compatible regular expression with which to substitute the request&#39;s user ID.
+     * 
+     */
     private @Nullable String usersRegex;
+    /**
+     * @return Specifies a string to replace the request&#39;s user ID matched by `usersRegex`.
+     * 
+     */
     private @Nullable String usersReplace;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String usersTitle;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorSaasDefinitions() {}
+    /**
+     * @return Specifies the request component that identifies a SaaS application.
+     * 
+     */
     public Optional<String> applicationAction() {
         return Optional.ofNullable(this.applicationAction);
     }
+    /**
+     * @return Enabling this allows you to identify applications using a `CNAME chain` rather than a single hostname.
+     * 
+     */
     public Optional<Boolean> applicationCnameEnabled() {
         return Optional.ofNullable(this.applicationCnameEnabled);
     }
+    /**
+     * @return Specifies the number of CNAMEs to use in the chain.
+     * 
+     */
     public Optional<Integer> applicationCnameLevel() {
         return Optional.ofNullable(this.applicationCnameLevel);
     }
+    /**
+     * @return This specifies the name of the cookie that identifies the application.
+     * 
+     */
     public Optional<String> applicationCookie() {
         return Optional.ofNullable(this.applicationCookie);
     }
+    /**
+     * @return This names the query parameter that identifies the application.
+     * 
+     */
     public Optional<String> applicationQueryString() {
         return Optional.ofNullable(this.applicationQueryString);
     }
+    /**
+     * @return Specifies a Perl-compatible regular expression with which to substitute the request&#39;s application ID.
+     * 
+     */
     public Optional<String> applicationRegex() {
         return Optional.ofNullable(this.applicationRegex);
     }
+    /**
+     * @return Specifies a string to replace the request&#39;s application ID matched by `applicationRegex`.
+     * 
+     */
     public Optional<String> applicationReplace() {
         return Optional.ofNullable(this.applicationReplace);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> applicationTitle() {
         return Optional.ofNullable(this.applicationTitle);
     }
+    /**
+     * @return Specifies the request component that identifies a SaaS customer.
+     * 
+     */
     public Optional<String> customerAction() {
         return Optional.ofNullable(this.customerAction);
     }
+    /**
+     * @return Enabling this allows you to identify customers using a `CNAME chain` rather than a single hostname.
+     * 
+     */
     public Optional<Boolean> customerCnameEnabled() {
         return Optional.ofNullable(this.customerCnameEnabled);
     }
+    /**
+     * @return Specifies the number of CNAMEs to use in the chain.
+     * 
+     */
     public Optional<Integer> customerCnameLevel() {
         return Optional.ofNullable(this.customerCnameLevel);
     }
+    /**
+     * @return This specifies the name of the cookie that identifies the customer.
+     * 
+     */
     public Optional<String> customerCookie() {
         return Optional.ofNullable(this.customerCookie);
     }
+    /**
+     * @return This names the query parameter that identifies the customer.
+     * 
+     */
     public Optional<String> customerQueryString() {
         return Optional.ofNullable(this.customerQueryString);
     }
+    /**
+     * @return Specifies a Perl-compatible regular expression with which to substitute the request&#39;s customer ID.
+     * 
+     */
     public Optional<String> customerRegex() {
         return Optional.ofNullable(this.customerRegex);
     }
+    /**
+     * @return Specifies a string to replace the request&#39;s customer ID matched by `customerRegex`.
+     * 
+     */
     public Optional<String> customerReplace() {
         return Optional.ofNullable(this.customerReplace);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> customerTitle() {
         return Optional.ofNullable(this.customerTitle);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return Specifies the request component that identifies a SaaS user.
+     * 
+     */
     public Optional<String> usersAction() {
         return Optional.ofNullable(this.usersAction);
     }
+    /**
+     * @return Enabling this allows you to identify users using a `CNAME chain` rather than a single hostname.
+     * 
+     */
     public Optional<Boolean> usersCnameEnabled() {
         return Optional.ofNullable(this.usersCnameEnabled);
     }
+    /**
+     * @return Specifies the number of CNAMEs to use in the chain.
+     * 
+     */
     public Optional<Integer> usersCnameLevel() {
         return Optional.ofNullable(this.usersCnameLevel);
     }
+    /**
+     * @return This specifies the name of the cookie that identifies the user.
+     * 
+     */
     public Optional<String> usersCookie() {
         return Optional.ofNullable(this.usersCookie);
     }
+    /**
+     * @return This names the query parameter that identifies the user.
+     * 
+     */
     public Optional<String> usersQueryString() {
         return Optional.ofNullable(this.usersQueryString);
     }
+    /**
+     * @return Specifies a Perl-compatible regular expression with which to substitute the request&#39;s user ID.
+     * 
+     */
     public Optional<String> usersRegex() {
         return Optional.ofNullable(this.usersRegex);
     }
+    /**
+     * @return Specifies a string to replace the request&#39;s user ID matched by `usersRegex`.
+     * 
+     */
     public Optional<String> usersReplace() {
         return Optional.ofNullable(this.usersReplace);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> usersTitle() {
         return Optional.ofNullable(this.usersTitle);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

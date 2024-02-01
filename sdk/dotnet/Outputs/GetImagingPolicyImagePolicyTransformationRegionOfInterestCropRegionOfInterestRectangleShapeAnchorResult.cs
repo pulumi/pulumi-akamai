@@ -13,9 +13,21 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeAnchorResult
     {
+        /// <summary>
+        /// The horizontal position of the point, measured in pixels.
+        /// </summary>
         public readonly string? X;
+        /// <summary>
+        /// The horizontal position of the point, measured in pixels.
+        /// </summary>
         public readonly string? XVar;
+        /// <summary>
+        /// The vertical position of the point, measured in pixels.
+        /// </summary>
         public readonly string? Y;
+        /// <summary>
+        /// The vertical position of the point, measured in pixels.
+        /// </summary>
         public readonly string? YVar;
 
         [OutputConstructor]

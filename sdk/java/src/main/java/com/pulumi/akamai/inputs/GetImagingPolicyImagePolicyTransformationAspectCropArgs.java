@@ -15,72 +15,152 @@ public final class GetImagingPolicyImagePolicyTransformationAspectCropArgs exten
 
     public static final GetImagingPolicyImagePolicyTransformationAspectCropArgs Empty = new GetImagingPolicyImagePolicyTransformationAspectCropArgs();
 
+    /**
+     * Increases the size of the image canvas to achieve the requested aspect ratio instead of cropping the image. Use the Horizontal Offset and Vertical Offset settings to determine where to add the fully transparent pixels on the expanded image canvas.
+     * 
+     */
     @Import(name="allowExpansion")
     private @Nullable Output<String> allowExpansion;
 
+    /**
+     * @return Increases the size of the image canvas to achieve the requested aspect ratio instead of cropping the image. Use the Horizontal Offset and Vertical Offset settings to determine where to add the fully transparent pixels on the expanded image canvas.
+     * 
+     */
     public Optional<Output<String>> allowExpansion() {
         return Optional.ofNullable(this.allowExpansion);
     }
 
+    /**
+     * Increases the size of the image canvas to achieve the requested aspect ratio instead of cropping the image. Use the Horizontal Offset and Vertical Offset settings to determine where to add the fully transparent pixels on the expanded image canvas.
+     * 
+     */
     @Import(name="allowExpansionVar")
     private @Nullable Output<String> allowExpansionVar;
 
+    /**
+     * @return Increases the size of the image canvas to achieve the requested aspect ratio instead of cropping the image. Use the Horizontal Offset and Vertical Offset settings to determine where to add the fully transparent pixels on the expanded image canvas.
+     * 
+     */
     public Optional<Output<String>> allowExpansionVar() {
         return Optional.ofNullable(this.allowExpansionVar);
     }
 
+    /**
+     * The height term of the aspect ratio to crop.
+     * 
+     */
     @Import(name="height")
     private @Nullable Output<String> height;
 
+    /**
+     * @return The height term of the aspect ratio to crop.
+     * 
+     */
     public Optional<Output<String>> height() {
         return Optional.ofNullable(this.height);
     }
 
+    /**
+     * The height term of the aspect ratio to crop.
+     * 
+     */
     @Import(name="heightVar")
     private @Nullable Output<String> heightVar;
 
+    /**
+     * @return The height term of the aspect ratio to crop.
+     * 
+     */
     public Optional<Output<String>> heightVar() {
         return Optional.ofNullable(this.heightVar);
     }
 
+    /**
+     * The width term of the aspect ratio to crop.
+     * 
+     */
     @Import(name="width")
     private @Nullable Output<String> width;
 
+    /**
+     * @return The width term of the aspect ratio to crop.
+     * 
+     */
     public Optional<Output<String>> width() {
         return Optional.ofNullable(this.width);
     }
 
+    /**
+     * The width term of the aspect ratio to crop.
+     * 
+     */
     @Import(name="widthVar")
     private @Nullable Output<String> widthVar;
 
+    /**
+     * @return The width term of the aspect ratio to crop.
+     * 
+     */
     public Optional<Output<String>> widthVar() {
         return Optional.ofNullable(this.widthVar);
     }
 
+    /**
+     * Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+     * 
+     */
     @Import(name="xPosition")
     private @Nullable Output<String> xPosition;
 
+    /**
+     * @return Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+     * 
+     */
     public Optional<Output<String>> xPosition() {
         return Optional.ofNullable(this.xPosition);
     }
 
+    /**
+     * Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+     * 
+     */
     @Import(name="xPositionVar")
     private @Nullable Output<String> xPositionVar;
 
+    /**
+     * @return Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+     * 
+     */
     public Optional<Output<String>> xPositionVar() {
         return Optional.ofNullable(this.xPositionVar);
     }
 
+    /**
+     * Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+     * 
+     */
     @Import(name="yPosition")
     private @Nullable Output<String> yPosition;
 
+    /**
+     * @return Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+     * 
+     */
     public Optional<Output<String>> yPosition() {
         return Optional.ofNullable(this.yPosition);
     }
 
+    /**
+     * Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+     * 
+     */
     @Import(name="yPositionVar")
     private @Nullable Output<String> yPositionVar;
 
+    /**
+     * @return Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+     * 
+     */
     public Optional<Output<String>> yPositionVar() {
         return Optional.ofNullable(this.yPositionVar);
     }
@@ -118,92 +198,212 @@ public final class GetImagingPolicyImagePolicyTransformationAspectCropArgs exten
             $ = new GetImagingPolicyImagePolicyTransformationAspectCropArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param allowExpansion Increases the size of the image canvas to achieve the requested aspect ratio instead of cropping the image. Use the Horizontal Offset and Vertical Offset settings to determine where to add the fully transparent pixels on the expanded image canvas.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allowExpansion(@Nullable Output<String> allowExpansion) {
             $.allowExpansion = allowExpansion;
             return this;
         }
 
+        /**
+         * @param allowExpansion Increases the size of the image canvas to achieve the requested aspect ratio instead of cropping the image. Use the Horizontal Offset and Vertical Offset settings to determine where to add the fully transparent pixels on the expanded image canvas.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allowExpansion(String allowExpansion) {
             return allowExpansion(Output.of(allowExpansion));
         }
 
+        /**
+         * @param allowExpansionVar Increases the size of the image canvas to achieve the requested aspect ratio instead of cropping the image. Use the Horizontal Offset and Vertical Offset settings to determine where to add the fully transparent pixels on the expanded image canvas.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allowExpansionVar(@Nullable Output<String> allowExpansionVar) {
             $.allowExpansionVar = allowExpansionVar;
             return this;
         }
 
+        /**
+         * @param allowExpansionVar Increases the size of the image canvas to achieve the requested aspect ratio instead of cropping the image. Use the Horizontal Offset and Vertical Offset settings to determine where to add the fully transparent pixels on the expanded image canvas.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allowExpansionVar(String allowExpansionVar) {
             return allowExpansionVar(Output.of(allowExpansionVar));
         }
 
+        /**
+         * @param height The height term of the aspect ratio to crop.
+         * 
+         * @return builder
+         * 
+         */
         public Builder height(@Nullable Output<String> height) {
             $.height = height;
             return this;
         }
 
+        /**
+         * @param height The height term of the aspect ratio to crop.
+         * 
+         * @return builder
+         * 
+         */
         public Builder height(String height) {
             return height(Output.of(height));
         }
 
+        /**
+         * @param heightVar The height term of the aspect ratio to crop.
+         * 
+         * @return builder
+         * 
+         */
         public Builder heightVar(@Nullable Output<String> heightVar) {
             $.heightVar = heightVar;
             return this;
         }
 
+        /**
+         * @param heightVar The height term of the aspect ratio to crop.
+         * 
+         * @return builder
+         * 
+         */
         public Builder heightVar(String heightVar) {
             return heightVar(Output.of(heightVar));
         }
 
+        /**
+         * @param width The width term of the aspect ratio to crop.
+         * 
+         * @return builder
+         * 
+         */
         public Builder width(@Nullable Output<String> width) {
             $.width = width;
             return this;
         }
 
+        /**
+         * @param width The width term of the aspect ratio to crop.
+         * 
+         * @return builder
+         * 
+         */
         public Builder width(String width) {
             return width(Output.of(width));
         }
 
+        /**
+         * @param widthVar The width term of the aspect ratio to crop.
+         * 
+         * @return builder
+         * 
+         */
         public Builder widthVar(@Nullable Output<String> widthVar) {
             $.widthVar = widthVar;
             return this;
         }
 
+        /**
+         * @param widthVar The width term of the aspect ratio to crop.
+         * 
+         * @return builder
+         * 
+         */
         public Builder widthVar(String widthVar) {
             return widthVar(Output.of(widthVar));
         }
 
+        /**
+         * @param xPosition Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+         * 
+         * @return builder
+         * 
+         */
         public Builder xPosition(@Nullable Output<String> xPosition) {
             $.xPosition = xPosition;
             return this;
         }
 
+        /**
+         * @param xPosition Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+         * 
+         * @return builder
+         * 
+         */
         public Builder xPosition(String xPosition) {
             return xPosition(Output.of(xPosition));
         }
 
+        /**
+         * @param xPositionVar Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+         * 
+         * @return builder
+         * 
+         */
         public Builder xPositionVar(@Nullable Output<String> xPositionVar) {
             $.xPositionVar = xPositionVar;
             return this;
         }
 
+        /**
+         * @param xPositionVar Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+         * 
+         * @return builder
+         * 
+         */
         public Builder xPositionVar(String xPositionVar) {
             return xPositionVar(Output.of(xPositionVar));
         }
 
+        /**
+         * @param yPosition Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+         * 
+         * @return builder
+         * 
+         */
         public Builder yPosition(@Nullable Output<String> yPosition) {
             $.yPosition = yPosition;
             return this;
         }
 
+        /**
+         * @param yPosition Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+         * 
+         * @return builder
+         * 
+         */
         public Builder yPosition(String yPosition) {
             return yPosition(Output.of(yPosition));
         }
 
+        /**
+         * @param yPositionVar Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+         * 
+         * @return builder
+         * 
+         */
         public Builder yPositionVar(@Nullable Output<String> yPositionVar) {
             $.yPositionVar = yPositionVar;
             return this;
         }
 
+        /**
+         * @param yPositionVar Specifies the horizontal portion of the image you want to keep when the aspect ratio cropping is applied. When using Allow Expansion this setting defines the horizontal position of the image on the new expanded image canvas.
+         * 
+         * @return builder
+         * 
+         */
         public Builder yPositionVar(String yPositionVar) {
             return yPositionVar(Output.of(yPositionVar));
         }

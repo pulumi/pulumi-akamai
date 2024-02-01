@@ -16,65 +16,137 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancin
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancingOriginArgs Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancingOriginArgs();
 
+    /**
+     * This specifies the name of the cookie that marks users&#39; persistent sessions. The accompanying `edgeLoadBalancingDataCenter` behavior&#39;s `description` option specifies the cookie&#39;s value.
+     * 
+     */
     @Import(name="cookieName")
     private @Nullable Output<String> cookieName;
 
+    /**
+     * @return This specifies the name of the cookie that marks users&#39; persistent sessions. The accompanying `edgeLoadBalancingDataCenter` behavior&#39;s `description` option specifies the cookie&#39;s value.
+     * 
+     */
     public Optional<Output<String>> cookieName() {
         return Optional.ofNullable(this.cookieName);
     }
 
+    /**
+     * Provides a description for the ELB origin, for your own reference.
+     * 
+     */
     @Import(name="description")
     private @Nullable Output<String> description;
 
+    /**
+     * @return Provides a description for the ELB origin, for your own reference.
+     * 
+     */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
     }
 
+    /**
+     * Allows you to specify a cookie to pin the user&#39;s browser session to one data center. When disabled, ELB&#39;s default load balancing may send users to various data centers within the same session.
+     * 
+     */
     @Import(name="enableSessionPersistence")
     private @Nullable Output<Boolean> enableSessionPersistence;
 
+    /**
+     * @return Allows you to specify a cookie to pin the user&#39;s browser session to one data center. When disabled, ELB&#39;s default load balancing may send users to various data centers within the same session.
+     * 
+     */
     public Optional<Output<Boolean>> enableSessionPersistence() {
         return Optional.ofNullable(this.enableSessionPersistence);
     }
 
+    /**
+     * Specifies the hostname associated with the ELB rule.
+     * 
+     */
     @Import(name="hostname")
     private @Nullable Output<String> hostname;
 
+    /**
+     * @return Specifies the hostname associated with the ELB rule.
+     * 
+     */
     public Optional<Output<String>> hostname() {
         return Optional.ofNullable(this.hostname);
     }
 
+    /**
+     * Specifies a unique descriptive string for this ELB origin. The value needs to match the `origin_id` specified by the `edgeLoadBalancingDataCenter` behavior associated with this origin.
+     * 
+     */
     @Import(name="id")
     private @Nullable Output<String> id;
 
+    /**
+     * @return Specifies a unique descriptive string for this ELB origin. The value needs to match the `origin_id` specified by the `edgeLoadBalancingDataCenter` behavior associated with this origin.
+     * 
+     */
     public Optional<Output<String>> id() {
         return Optional.ofNullable(this.id);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     @Import(name="sessionPersistenceTitle")
     private @Nullable Output<String> sessionPersistenceTitle;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<Output<String>> sessionPersistenceTitle() {
         return Optional.ofNullable(this.sessionPersistenceTitle);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -111,83 +183,191 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancin
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancingOriginArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param cookieName This specifies the name of the cookie that marks users&#39; persistent sessions. The accompanying `edgeLoadBalancingDataCenter` behavior&#39;s `description` option specifies the cookie&#39;s value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cookieName(@Nullable Output<String> cookieName) {
             $.cookieName = cookieName;
             return this;
         }
 
+        /**
+         * @param cookieName This specifies the name of the cookie that marks users&#39; persistent sessions. The accompanying `edgeLoadBalancingDataCenter` behavior&#39;s `description` option specifies the cookie&#39;s value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cookieName(String cookieName) {
             return cookieName(Output.of(cookieName));
         }
 
+        /**
+         * @param description Provides a description for the ELB origin, for your own reference.
+         * 
+         * @return builder
+         * 
+         */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
             return this;
         }
 
+        /**
+         * @param description Provides a description for the ELB origin, for your own reference.
+         * 
+         * @return builder
+         * 
+         */
         public Builder description(String description) {
             return description(Output.of(description));
         }
 
+        /**
+         * @param enableSessionPersistence Allows you to specify a cookie to pin the user&#39;s browser session to one data center. When disabled, ELB&#39;s default load balancing may send users to various data centers within the same session.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enableSessionPersistence(@Nullable Output<Boolean> enableSessionPersistence) {
             $.enableSessionPersistence = enableSessionPersistence;
             return this;
         }
 
+        /**
+         * @param enableSessionPersistence Allows you to specify a cookie to pin the user&#39;s browser session to one data center. When disabled, ELB&#39;s default load balancing may send users to various data centers within the same session.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enableSessionPersistence(Boolean enableSessionPersistence) {
             return enableSessionPersistence(Output.of(enableSessionPersistence));
         }
 
+        /**
+         * @param hostname Specifies the hostname associated with the ELB rule.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hostname(@Nullable Output<String> hostname) {
             $.hostname = hostname;
             return this;
         }
 
+        /**
+         * @param hostname Specifies the hostname associated with the ELB rule.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hostname(String hostname) {
             return hostname(Output.of(hostname));
         }
 
+        /**
+         * @param id Specifies a unique descriptive string for this ELB origin. The value needs to match the `origin_id` specified by the `edgeLoadBalancingDataCenter` behavior associated with this origin.
+         * 
+         * @return builder
+         * 
+         */
         public Builder id(@Nullable Output<String> id) {
             $.id = id;
             return this;
         }
 
+        /**
+         * @param id Specifies a unique descriptive string for this ELB origin. The value needs to match the `origin_id` specified by the `edgeLoadBalancingDataCenter` behavior associated with this origin.
+         * 
+         * @return builder
+         * 
+         */
         public Builder id(String id) {
             return id(Output.of(id));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param sessionPersistenceTitle This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sessionPersistenceTitle(@Nullable Output<String> sessionPersistenceTitle) {
             $.sessionPersistenceTitle = sessionPersistenceTitle;
             return this;
         }
 
+        /**
+         * @param sessionPersistenceTitle This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sessionPersistenceTitle(String sessionPersistenceTitle) {
             return sessionPersistenceTitle(Output.of(sessionPersistenceTitle));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

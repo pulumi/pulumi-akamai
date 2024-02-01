@@ -11,33 +11,89 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCloudletsPolicyActivationPolicyInfo {
+    /**
+     * @return The name of the user who activated the policy
+     * 
+     */
     private String activatedBy;
+    /**
+     * @return The date on which the policy was activated (in milliseconds since Epoch)
+     * 
+     */
     private Integer activationDate;
+    /**
+     * @return The name of the policy
+     * 
+     */
     private String name;
+    /**
+     * @return An integer ID that is associated with all versions of a policy
+     * 
+     */
     private Integer policyId;
+    /**
+     * @return The activation status for the policy: active, inactive, deactivated, pending or failed
+     * 
+     */
     private String status;
+    /**
+     * @return Information about the status of an activation operation
+     * 
+     */
     private String statusDetail;
+    /**
+     * @return The version number of the activated policy
+     * 
+     */
     private Integer version;
 
     private GetCloudletsPolicyActivationPolicyInfo() {}
+    /**
+     * @return The name of the user who activated the policy
+     * 
+     */
     public String activatedBy() {
         return this.activatedBy;
     }
+    /**
+     * @return The date on which the policy was activated (in milliseconds since Epoch)
+     * 
+     */
     public Integer activationDate() {
         return this.activationDate;
     }
+    /**
+     * @return The name of the policy
+     * 
+     */
     public String name() {
         return this.name;
     }
+    /**
+     * @return An integer ID that is associated with all versions of a policy
+     * 
+     */
     public Integer policyId() {
         return this.policyId;
     }
+    /**
+     * @return The activation status for the policy: active, inactive, deactivated, pending or failed
+     * 
+     */
     public String status() {
         return this.status;
     }
+    /**
+     * @return Information about the status of an activation operation
+     * 
+     */
     public String statusDetail() {
         return this.statusDetail;
     }
+    /**
+     * @return The version number of the activated policy
+     * 
+     */
     public Integer version() {
         return this.version;
     }

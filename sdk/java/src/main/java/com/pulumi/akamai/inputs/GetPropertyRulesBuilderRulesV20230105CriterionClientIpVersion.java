@@ -15,37 +15,77 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionClientIpVersion
 
     public static final GetPropertyRulesBuilderRulesV20230105CriterionClientIpVersion Empty = new GetPropertyRulesBuilderRulesV20230105CriterionClientIpVersion();
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * When connecting via a proxy server as determined by the `X-Forwarded-For` header, enabling this option matches the connecting client&#39;s IP address rather than the original end client specified in the header.
+     * 
+     */
     @Import(name="useXForwardedFor")
     private @Nullable Boolean useXForwardedFor;
 
+    /**
+     * @return When connecting via a proxy server as determined by the `X-Forwarded-For` header, enabling this option matches the connecting client&#39;s IP address rather than the original end client specified in the header.
+     * 
+     */
     public Optional<Boolean> useXForwardedFor() {
         return Optional.ofNullable(this.useXForwardedFor);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
 
+    /**
+     * The IP version of the client request, either `IPV4` or `IPV6`.
+     * 
+     */
     @Import(name="value")
     private @Nullable String value;
 
+    /**
+     * @return The IP version of the client request, either `IPV4` or `IPV6`.
+     * 
+     */
     public Optional<String> value() {
         return Optional.ofNullable(this.value);
     }
@@ -78,26 +118,56 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionClientIpVersion
             $ = new GetPropertyRulesBuilderRulesV20230105CriterionClientIpVersion(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param useXForwardedFor When connecting via a proxy server as determined by the `X-Forwarded-For` header, enabling this option matches the connecting client&#39;s IP address rather than the original end client specified in the header.
+         * 
+         * @return builder
+         * 
+         */
         public Builder useXForwardedFor(@Nullable Boolean useXForwardedFor) {
             $.useXForwardedFor = useXForwardedFor;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param value The IP version of the client request, either `IPV4` or `IPV6`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder value(@Nullable String value) {
             $.value = value;
             return this;

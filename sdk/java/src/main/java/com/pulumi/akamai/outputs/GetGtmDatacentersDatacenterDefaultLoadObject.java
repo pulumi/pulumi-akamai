@@ -12,17 +12,41 @@ import java.util.Objects;
 
 @CustomType
 public final class GetGtmDatacentersDatacenterDefaultLoadObject {
+    /**
+     * @return Specifies the load object that GTM requests.
+     * 
+     */
     private String loadObject;
+    /**
+     * @return Specifies the TCP port to connect to when requesting the load object.
+     * 
+     */
     private Integer loadObjectPort;
+    /**
+     * @return Specifies the list of servers to requests the load object from.
+     * 
+     */
     private List<String> loadServers;
 
     private GetGtmDatacentersDatacenterDefaultLoadObject() {}
+    /**
+     * @return Specifies the load object that GTM requests.
+     * 
+     */
     public String loadObject() {
         return this.loadObject;
     }
+    /**
+     * @return Specifies the TCP port to connect to when requesting the load object.
+     * 
+     */
     public Integer loadObjectPort() {
         return this.loadObjectPort;
     }
+    /**
+     * @return Specifies the list of servers to requests the load object from.
+     * 
+     */
     public List<String> loadServers() {
         return this.loadServers;
     }

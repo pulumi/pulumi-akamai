@@ -13,10 +13,22 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeResult
     {
+        /// <summary>
+        /// Defines a circle with a specified `radius` from its `center` point.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShapeResult> CircleShapes;
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePointShapeResult> PointShapes;
+        /// <summary>
+        /// Defines a polygon from a series of connected points.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShapeResult> PolygonShapes;
+        /// <summary>
+        /// Defines a rectangle's `width` and `height` relative to an `anchor` point at the top left corner.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShapeResult> RectangleShapes;
+        /// <summary>
+        /// Identifies a combined shape based on a set of other shapes. You can use a full JSON object to represent a union or an array of shapes that describe it.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeUnionShapeResult> UnionShapes;
 
         [OutputConstructor]

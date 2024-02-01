@@ -12,9 +12,15 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230530CustomOverrideInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The name of a custom override
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// The ID of a custom override
+        /// </summary>
         [Input("overrideId")]
         public Input<string>? OverrideId { get; set; }
 

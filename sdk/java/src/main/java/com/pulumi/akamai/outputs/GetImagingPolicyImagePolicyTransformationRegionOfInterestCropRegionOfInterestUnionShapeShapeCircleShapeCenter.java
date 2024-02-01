@@ -11,21 +11,53 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShapeCenter {
+    /**
+     * @return The horizontal position of the point, measured in pixels.
+     * 
+     */
     private @Nullable String x;
+    /**
+     * @return The horizontal position of the point, measured in pixels.
+     * 
+     */
     private @Nullable String xVar;
+    /**
+     * @return The vertical position of the point, measured in pixels.
+     * 
+     */
     private @Nullable String y;
+    /**
+     * @return The vertical position of the point, measured in pixels.
+     * 
+     */
     private @Nullable String yVar;
 
     private GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShapeCenter() {}
+    /**
+     * @return The horizontal position of the point, measured in pixels.
+     * 
+     */
     public Optional<String> x() {
         return Optional.ofNullable(this.x);
     }
+    /**
+     * @return The horizontal position of the point, measured in pixels.
+     * 
+     */
     public Optional<String> xVar() {
         return Optional.ofNullable(this.xVar);
     }
+    /**
+     * @return The vertical position of the point, measured in pixels.
+     * 
+     */
     public Optional<String> y() {
         return Optional.ofNullable(this.y);
     }
+    /**
+     * @return The vertical position of the point, measured in pixels.
+     * 
+     */
     public Optional<String> yVar() {
         return Optional.ofNullable(this.yVar);
     }

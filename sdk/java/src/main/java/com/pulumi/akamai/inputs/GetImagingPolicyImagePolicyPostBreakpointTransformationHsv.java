@@ -14,44 +14,92 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationHsv ex
 
     public static final GetImagingPolicyImagePolicyPostBreakpointTransformationHsv Empty = new GetImagingPolicyImagePolicyPostBreakpointTransformationHsv();
 
+    /**
+     * The number of degrees to rotate colors around the color wheel, `0.0` by default.
+     * 
+     */
     @Import(name="hue")
     private @Nullable String hue;
 
+    /**
+     * @return The number of degrees to rotate colors around the color wheel, `0.0` by default.
+     * 
+     */
     public Optional<String> hue() {
         return Optional.ofNullable(this.hue);
     }
 
+    /**
+     * The number of degrees to rotate colors around the color wheel, `0.0` by default.
+     * 
+     */
     @Import(name="hueVar")
     private @Nullable String hueVar;
 
+    /**
+     * @return The number of degrees to rotate colors around the color wheel, `0.0` by default.
+     * 
+     */
     public Optional<String> hueVar() {
         return Optional.ofNullable(this.hueVar);
     }
 
+    /**
+     * A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
+     * 
+     */
     @Import(name="saturation")
     private @Nullable String saturation;
 
+    /**
+     * @return A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
+     * 
+     */
     public Optional<String> saturation() {
         return Optional.ofNullable(this.saturation);
     }
 
+    /**
+     * A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
+     * 
+     */
     @Import(name="saturationVar")
     private @Nullable String saturationVar;
 
+    /**
+     * @return A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
+     * 
+     */
     public Optional<String> saturationVar() {
         return Optional.ofNullable(this.saturationVar);
     }
 
+    /**
+     * A multiplier to adjust the lightness or darkness of the images base color. Values less than 1.0 decrease the base colors in the image, making them appear darker. Values greater than 1.0 increase the base colors in the image, making them appear lighter.
+     * 
+     */
     @Import(name="value")
     private @Nullable String value;
 
+    /**
+     * @return A multiplier to adjust the lightness or darkness of the images base color. Values less than 1.0 decrease the base colors in the image, making them appear darker. Values greater than 1.0 increase the base colors in the image, making them appear lighter.
+     * 
+     */
     public Optional<String> value() {
         return Optional.ofNullable(this.value);
     }
 
+    /**
+     * A multiplier to adjust the lightness or darkness of the images base color. Values less than 1.0 decrease the base colors in the image, making them appear darker. Values greater than 1.0 increase the base colors in the image, making them appear lighter.
+     * 
+     */
     @Import(name="valueVar")
     private @Nullable String valueVar;
 
+    /**
+     * @return A multiplier to adjust the lightness or darkness of the images base color. Values less than 1.0 decrease the base colors in the image, making them appear darker. Values greater than 1.0 increase the base colors in the image, making them appear lighter.
+     * 
+     */
     public Optional<String> valueVar() {
         return Optional.ofNullable(this.valueVar);
     }
@@ -85,31 +133,67 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationHsv ex
             $ = new GetImagingPolicyImagePolicyPostBreakpointTransformationHsv(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param hue The number of degrees to rotate colors around the color wheel, `0.0` by default.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hue(@Nullable String hue) {
             $.hue = hue;
             return this;
         }
 
+        /**
+         * @param hueVar The number of degrees to rotate colors around the color wheel, `0.0` by default.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hueVar(@Nullable String hueVar) {
             $.hueVar = hueVar;
             return this;
         }
 
+        /**
+         * @param saturation A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder saturation(@Nullable String saturation) {
             $.saturation = saturation;
             return this;
         }
 
+        /**
+         * @param saturationVar A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder saturationVar(@Nullable String saturationVar) {
             $.saturationVar = saturationVar;
             return this;
         }
 
+        /**
+         * @param value A multiplier to adjust the lightness or darkness of the images base color. Values less than 1.0 decrease the base colors in the image, making them appear darker. Values greater than 1.0 increase the base colors in the image, making them appear lighter.
+         * 
+         * @return builder
+         * 
+         */
         public Builder value(@Nullable String value) {
             $.value = value;
             return this;
         }
 
+        /**
+         * @param valueVar A multiplier to adjust the lightness or darkness of the images base color. Values less than 1.0 decrease the base colors in the image, making them appear darker. Values greater than 1.0 increase the base colors in the image, making them appear lighter.
+         * 
+         * @return builder
+         * 
+         */
         public Builder valueVar(@Nullable String valueVar) {
             $.valueVar = valueVar;
             return this;

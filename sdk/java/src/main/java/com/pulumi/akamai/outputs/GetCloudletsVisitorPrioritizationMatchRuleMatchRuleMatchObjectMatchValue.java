@@ -15,29 +15,77 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValue {
+    /**
+     * @return If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
+     * 
+     */
     private @Nullable String name;
+    /**
+     * @return Set to true if the entry for the name property should be evaluated based on case sensitivity
+     * 
+     */
     private @Nullable Boolean nameCaseSensitive;
+    /**
+     * @return Set to true if the entry for the name property includes wildcards
+     * 
+     */
     private @Nullable Boolean nameHasWildcard;
+    /**
+     * @return If using the object type, use this set to list the values to match on (use only with the object type)
+     * 
+     */
     private @Nullable GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptions options;
+    /**
+     * @return The array type, which can be one of the following: object or simple. Use the simple option when adding only an array of string-based values
+     * 
+     */
     private String type;
+    /**
+     * @return The value attributes in the incoming request to match on (use only with simple type)
+     * 
+     */
     private @Nullable List<String> values;
 
     private GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValue() {}
+    /**
+     * @return If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
+     * 
+     */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
+    /**
+     * @return Set to true if the entry for the name property should be evaluated based on case sensitivity
+     * 
+     */
     public Optional<Boolean> nameCaseSensitive() {
         return Optional.ofNullable(this.nameCaseSensitive);
     }
+    /**
+     * @return Set to true if the entry for the name property includes wildcards
+     * 
+     */
     public Optional<Boolean> nameHasWildcard() {
         return Optional.ofNullable(this.nameHasWildcard);
     }
+    /**
+     * @return If using the object type, use this set to list the values to match on (use only with the object type)
+     * 
+     */
     public Optional<GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptions> options() {
         return Optional.ofNullable(this.options);
     }
+    /**
+     * @return The array type, which can be one of the following: object or simple. Use the simple option when adding only an array of string-based values
+     * 
+     */
     public String type() {
         return this.type;
     }
+    /**
+     * @return The value attributes in the incoming request to match on (use only with simple type)
+     * 
+     */
     public List<String> values() {
         return this.values == null ? List.of() : this.values;
     }

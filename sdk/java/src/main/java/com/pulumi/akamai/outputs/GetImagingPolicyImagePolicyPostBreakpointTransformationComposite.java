@@ -13,57 +13,153 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyPostBreakpointTransformationComposite {
+    /**
+     * @return Compass direction indicating the corner or edge of the base image to place the applied image. Use Horizontal and Vertical Offset to adjust the applied image&#39;s gravity position
+     * 
+     */
     private @Nullable String gravity;
+    /**
+     * @return Compass direction indicating the corner or edge of the base image to place the applied image. Use Horizontal and Vertical Offset to adjust the applied image&#39;s gravity position
+     * 
+     */
     private @Nullable String gravityVar;
     private GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImage image;
+    /**
+     * @return Place applied image on top of or underneath the base image. Watermarks are usually applied over. Backgrounds are usually applied under.
+     * 
+     */
     private @Nullable String placement;
+    /**
+     * @return Place applied image on top of or underneath the base image. Watermarks are usually applied over. Backgrounds are usually applied under.
+     * 
+     */
     private @Nullable String placementVar;
+    /**
+     * @return A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image&#39;s width or height.
+     * 
+     */
     private @Nullable String scale;
+    /**
+     * @return The dimension, either `width` or `height`, of the source image to scale.
+     * 
+     */
     private @Nullable String scaleDimension;
+    /**
+     * @return The dimension, either `width` or `height`, of the source image to scale.
+     * 
+     */
     private @Nullable String scaleDimensionVar;
+    /**
+     * @return A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image&#39;s width or height.
+     * 
+     */
     private @Nullable String scaleVar;
+    /**
+     * @return The x-axis position of the image to apply.
+     * 
+     */
     private @Nullable String xPosition;
+    /**
+     * @return The x-axis position of the image to apply.
+     * 
+     */
     private @Nullable String xPositionVar;
+    /**
+     * @return The y-axis position of the image to apply.
+     * 
+     */
     private @Nullable String yPosition;
+    /**
+     * @return The y-axis position of the image to apply.
+     * 
+     */
     private @Nullable String yPositionVar;
 
     private GetImagingPolicyImagePolicyPostBreakpointTransformationComposite() {}
+    /**
+     * @return Compass direction indicating the corner or edge of the base image to place the applied image. Use Horizontal and Vertical Offset to adjust the applied image&#39;s gravity position
+     * 
+     */
     public Optional<String> gravity() {
         return Optional.ofNullable(this.gravity);
     }
+    /**
+     * @return Compass direction indicating the corner or edge of the base image to place the applied image. Use Horizontal and Vertical Offset to adjust the applied image&#39;s gravity position
+     * 
+     */
     public Optional<String> gravityVar() {
         return Optional.ofNullable(this.gravityVar);
     }
     public GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImage image() {
         return this.image;
     }
+    /**
+     * @return Place applied image on top of or underneath the base image. Watermarks are usually applied over. Backgrounds are usually applied under.
+     * 
+     */
     public Optional<String> placement() {
         return Optional.ofNullable(this.placement);
     }
+    /**
+     * @return Place applied image on top of or underneath the base image. Watermarks are usually applied over. Backgrounds are usually applied under.
+     * 
+     */
     public Optional<String> placementVar() {
         return Optional.ofNullable(this.placementVar);
     }
+    /**
+     * @return A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image&#39;s width or height.
+     * 
+     */
     public Optional<String> scale() {
         return Optional.ofNullable(this.scale);
     }
+    /**
+     * @return The dimension, either `width` or `height`, of the source image to scale.
+     * 
+     */
     public Optional<String> scaleDimension() {
         return Optional.ofNullable(this.scaleDimension);
     }
+    /**
+     * @return The dimension, either `width` or `height`, of the source image to scale.
+     * 
+     */
     public Optional<String> scaleDimensionVar() {
         return Optional.ofNullable(this.scaleDimensionVar);
     }
+    /**
+     * @return A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image&#39;s width or height.
+     * 
+     */
     public Optional<String> scaleVar() {
         return Optional.ofNullable(this.scaleVar);
     }
+    /**
+     * @return The x-axis position of the image to apply.
+     * 
+     */
     public Optional<String> xPosition() {
         return Optional.ofNullable(this.xPosition);
     }
+    /**
+     * @return The x-axis position of the image to apply.
+     * 
+     */
     public Optional<String> xPositionVar() {
         return Optional.ofNullable(this.xPositionVar);
     }
+    /**
+     * @return The y-axis position of the image to apply.
+     * 
+     */
     public Optional<String> yPosition() {
         return Optional.ofNullable(this.yPosition);
     }
+    /**
+     * @return The y-axis position of the image to apply.
+     * 
+     */
     public Optional<String> yPositionVar() {
         return Optional.ofNullable(this.yPositionVar);
     }

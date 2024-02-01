@@ -12,26 +12,48 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230105CriterionMatchResponseCodeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public bool? Locked { get; set; }
 
+        /// <summary>
+        /// Specifies the start of a range of responses. For example, `400` to match anything from `400` to `500`.
+        /// </summary>
         [Input("lowerBound")]
         public int? LowerBound { get; set; }
 
+        /// <summary>
+        /// Matches numeric range or a specified set of `values`.
+        /// </summary>
         [Input("matchOperator")]
         public string? MatchOperator { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public string? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// Specifies the end of a range of responses. For example, `500` to match anything from `400` to `500`.
+        /// </summary>
         [Input("upperBound")]
         public int? UpperBound { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public string? Uuid { get; set; }
 
         [Input("values")]
         private List<string>? _values;
+
+        /// <summary>
+        /// A set of response codes to match, for example `["404","500"]`.
+        /// </summary>
         public List<string> Values
         {
             get => _values ?? (_values = new List<string>());

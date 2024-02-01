@@ -17,25 +17,65 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCloudwrapperConfigurationMultiCdnSettings {
+    /**
+     * @return Specify diagnostic data beacons details.
+     * 
+     */
     private @Nullable GetCloudwrapperConfigurationMultiCdnSettingsBocc bocc;
+    /**
+     * @return List of CDN added for the configuration.
+     * 
+     */
     private @Nullable List<GetCloudwrapperConfigurationMultiCdnSettingsCdn> cdns;
+    /**
+     * @return Specifies data streams details.
+     * 
+     */
     private @Nullable GetCloudwrapperConfigurationMultiCdnSettingsDataStreams dataStreams;
+    /**
+     * @return Option to opt out of alerts based on soft limits of bandwidth usage.
+     * 
+     */
     private Boolean enableSoftAlerts;
+    /**
+     * @return List of origins corresponding to the properties selected in the configuration.
+     * 
+     */
     private @Nullable List<GetCloudwrapperConfigurationMultiCdnSettingsOrigin> origins;
 
     private GetCloudwrapperConfigurationMultiCdnSettings() {}
+    /**
+     * @return Specify diagnostic data beacons details.
+     * 
+     */
     public Optional<GetCloudwrapperConfigurationMultiCdnSettingsBocc> bocc() {
         return Optional.ofNullable(this.bocc);
     }
+    /**
+     * @return List of CDN added for the configuration.
+     * 
+     */
     public List<GetCloudwrapperConfigurationMultiCdnSettingsCdn> cdns() {
         return this.cdns == null ? List.of() : this.cdns;
     }
+    /**
+     * @return Specifies data streams details.
+     * 
+     */
     public Optional<GetCloudwrapperConfigurationMultiCdnSettingsDataStreams> dataStreams() {
         return Optional.ofNullable(this.dataStreams);
     }
+    /**
+     * @return Option to opt out of alerts based on soft limits of bandwidth usage.
+     * 
+     */
     public Boolean enableSoftAlerts() {
         return this.enableSoftAlerts;
     }
+    /**
+     * @return List of origins corresponding to the properties selected in the configuration.
+     * 
+     */
     public List<GetCloudwrapperConfigurationMultiCdnSettingsOrigin> origins() {
         return this.origins == null ? List.of() : this.origins;
     }

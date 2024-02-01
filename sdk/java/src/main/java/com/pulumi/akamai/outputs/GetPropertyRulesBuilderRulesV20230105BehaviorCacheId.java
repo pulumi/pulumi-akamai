@@ -13,37 +13,101 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorCacheId {
+    /**
+     * @return Specifies the names of the query parameters, cookies, or headers to include or exclude from the cache ID.
+     * 
+     */
     private @Nullable List<String> elements;
+    /**
+     * @return Includes the value of the specified elements in the cache ID. Otherwise only their names are included.
+     * 
+     */
     private @Nullable Boolean includeValue;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Requires the behavior&#39;s specified elements to be present for content to cache. When disabled, requests that lack the specified elements are still cached.
+     * 
+     */
     private @Nullable Boolean optional;
+    /**
+     * @return Specifies how to modify the cache ID.
+     * 
+     */
     private @Nullable String rule;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
+    /**
+     * @return Specifies the name of the variable you want to include in the cache key.
+     * 
+     */
     private @Nullable String variableName;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorCacheId() {}
+    /**
+     * @return Specifies the names of the query parameters, cookies, or headers to include or exclude from the cache ID.
+     * 
+     */
     public List<String> elements() {
         return this.elements == null ? List.of() : this.elements;
     }
+    /**
+     * @return Includes the value of the specified elements in the cache ID. Otherwise only their names are included.
+     * 
+     */
     public Optional<Boolean> includeValue() {
         return Optional.ofNullable(this.includeValue);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Requires the behavior&#39;s specified elements to be present for content to cache. When disabled, requests that lack the specified elements are still cached.
+     * 
+     */
     public Optional<Boolean> optional() {
         return Optional.ofNullable(this.optional);
     }
+    /**
+     * @return Specifies how to modify the cache ID.
+     * 
+     */
     public Optional<String> rule() {
         return Optional.ofNullable(this.rule);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
+    /**
+     * @return Specifies the name of the variable you want to include in the cache key.
+     * 
+     */
     public Optional<String> variableName() {
         return Optional.ofNullable(this.variableName);
     }

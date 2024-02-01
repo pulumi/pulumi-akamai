@@ -12,9 +12,15 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetImagingPolicyImagePolicyPostBreakpointTransformationGrayscaleArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The algorithm used to transform colors to grays, either `Brightness`, `Lightness`, `Rec601`, or the default `Rec709`.
+        /// </summary>
         [Input("type")]
         public string? Type { get; set; }
 
+        /// <summary>
+        /// The algorithm used to transform colors to grays, either `Brightness`, `Lightness`, `Rec601`, or the default `Rec709`.
+        /// </summary>
         [Input("typeVar")]
         public string? TypeVar { get; set; }
 

@@ -13,18 +13,57 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetDatastreamsStreamsDetailResult
     {
+        /// <summary>
+        /// Identifies the contract that the stream is associated with.
+        /// </summary>
         public readonly string ContractId;
+        /// <summary>
+        /// The username who created the stream.
+        /// </summary>
         public readonly string CreatedBy;
+        /// <summary>
+        /// The date and time when the stream was created.
+        /// </summary>
         public readonly string CreatedDate;
+        /// <summary>
+        /// Identifies the group where the stream is created.
+        /// </summary>
         public readonly int GroupId;
+        /// <summary>
+        /// Identifies the latestVersion version of the stream.
+        /// </summary>
         public readonly int LatestVersion;
+        /// <summary>
+        /// The username who activated or deactivated the stream
+        /// </summary>
         public readonly string ModifiedBy;
+        /// <summary>
+        /// The date and time when activation status was modified
+        /// </summary>
         public readonly string ModifiedDate;
+        /// <summary>
+        /// The productId.
+        /// </summary>
         public readonly string ProductId;
+        /// <summary>
+        /// List of properties associated with the stream.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetDatastreamsStreamsDetailPropertyResult> Properties;
+        /// <summary>
+        /// Identifies the stream.
+        /// </summary>
         public readonly int StreamId;
+        /// <summary>
+        /// The name of the stream.
+        /// </summary>
         public readonly string StreamName;
+        /// <summary>
+        /// The activation status of the stream.
+        /// </summary>
         public readonly string StreamStatus;
+        /// <summary>
+        /// Identifies the current version of the stream.
+        /// </summary>
         public readonly int StreamVersion;
 
         [OutputConstructor]

@@ -12,53 +12,149 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCPSEnrollmentsEnrollmentAdminContact {
+    /**
+     * @return The address of the contact
+     * 
+     */
     private String addressLineOne;
+    /**
+     * @return The address of the contact
+     * 
+     */
     private @Nullable String addressLineTwo;
+    /**
+     * @return City of residence of the contact
+     * 
+     */
     private String city;
+    /**
+     * @return Country code of the contact
+     * 
+     */
     private String countryCode;
+    /**
+     * @return E-mail address of the contact
+     * 
+     */
     private String email;
+    /**
+     * @return First name of the contact
+     * 
+     */
     private String firstName;
+    /**
+     * @return Last name of the contact
+     * 
+     */
     private String lastName;
+    /**
+     * @return Organization where contact is hired
+     * 
+     */
     private String organization;
+    /**
+     * @return Phone number of the contact
+     * 
+     */
     private String phone;
+    /**
+     * @return Postal code of the contact
+     * 
+     */
     private String postalCode;
+    /**
+     * @return The region of the contact
+     * 
+     */
     private String region;
+    /**
+     * @return Title of the the contact
+     * 
+     */
     private @Nullable String title;
 
     private GetCPSEnrollmentsEnrollmentAdminContact() {}
+    /**
+     * @return The address of the contact
+     * 
+     */
     public String addressLineOne() {
         return this.addressLineOne;
     }
+    /**
+     * @return The address of the contact
+     * 
+     */
     public Optional<String> addressLineTwo() {
         return Optional.ofNullable(this.addressLineTwo);
     }
+    /**
+     * @return City of residence of the contact
+     * 
+     */
     public String city() {
         return this.city;
     }
+    /**
+     * @return Country code of the contact
+     * 
+     */
     public String countryCode() {
         return this.countryCode;
     }
+    /**
+     * @return E-mail address of the contact
+     * 
+     */
     public String email() {
         return this.email;
     }
+    /**
+     * @return First name of the contact
+     * 
+     */
     public String firstName() {
         return this.firstName;
     }
+    /**
+     * @return Last name of the contact
+     * 
+     */
     public String lastName() {
         return this.lastName;
     }
+    /**
+     * @return Organization where contact is hired
+     * 
+     */
     public String organization() {
         return this.organization;
     }
+    /**
+     * @return Phone number of the contact
+     * 
+     */
     public String phone() {
         return this.phone;
     }
+    /**
+     * @return Postal code of the contact
+     * 
+     */
     public String postalCode() {
         return this.postalCode;
     }
+    /**
+     * @return The region of the contact
+     * 
+     */
     public String region() {
         return this.region;
     }
+    /**
+     * @return Title of the the contact
+     * 
+     */
     public Optional<String> title() {
         return Optional.ofNullable(this.title);
     }

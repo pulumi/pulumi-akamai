@@ -17,79 +17,167 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorBossBeaconingArg
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorBossBeaconingArgs Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorBossBeaconingArgs();
 
+    /**
+     * A space-separated set of error patterns that trigger beacons to conditional feeds. Each pattern can include wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `*CONNECT* *DENIED*` matches two different words as substrings.
+     * 
+     */
     @Import(name="conditionalErrorPattern")
     private @Nullable Output<String> conditionalErrorPattern;
 
+    /**
+     * @return A space-separated set of error patterns that trigger beacons to conditional feeds. Each pattern can include wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `*CONNECT* *DENIED*` matches two different words as substrings.
+     * 
+     */
     public Optional<Output<String>> conditionalErrorPattern() {
         return Optional.ofNullable(this.conditionalErrorPattern);
     }
 
+    /**
+     * Specifies the set of response status codes or ranges that trigger the beacon.
+     * 
+     */
     @Import(name="conditionalHttpStatuses")
     private @Nullable Output<List<String>> conditionalHttpStatuses;
 
+    /**
+     * @return Specifies the set of response status codes or ranges that trigger the beacon.
+     * 
+     */
     public Optional<Output<List<String>>> conditionalHttpStatuses() {
         return Optional.ofNullable(this.conditionalHttpStatuses);
     }
 
+    /**
+     * Specifies a conditional sampling frequency or disables beacons.
+     * 
+     */
     @Import(name="conditionalSamplingFrequency")
     private @Nullable Output<String> conditionalSamplingFrequency;
 
+    /**
+     * @return Specifies a conditional sampling frequency or disables beacons.
+     * 
+     */
     public Optional<Output<String>> conditionalSamplingFrequency() {
         return Optional.ofNullable(this.conditionalSamplingFrequency);
     }
 
+    /**
+     * The space-separated list of CP codes that trigger the beacons. You need to specify the same set of CP codes within BOSS.
+     * 
+     */
     @Import(name="cpcodes")
     private @Nullable Output<String> cpcodes;
 
+    /**
+     * @return The space-separated list of CP codes that trigger the beacons. You need to specify the same set of CP codes within BOSS.
+     * 
+     */
     public Optional<Output<String>> cpcodes() {
         return Optional.ofNullable(this.cpcodes);
     }
 
+    /**
+     * Enable diagnostic data beacons.
+     * 
+     */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
+    /**
+     * @return Enable diagnostic data beacons.
+     * 
+     */
     public Optional<Output<Boolean>> enabled() {
         return Optional.ofNullable(this.enabled);
     }
 
+    /**
+     * Specify when to trigger a beacon.
+     * 
+     */
     @Import(name="forwardType")
     private @Nullable Output<String> forwardType;
 
+    /**
+     * @return Specify when to trigger a beacon.
+     * 
+     */
     public Optional<Output<String>> forwardType() {
         return Optional.ofNullable(this.forwardType);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Specify when to trigger a beacon.
+     * 
+     */
     @Import(name="requestType")
     private @Nullable Output<String> requestType;
 
+    /**
+     * @return Specify when to trigger a beacon.
+     * 
+     */
     public Optional<Output<String>> requestType() {
         return Optional.ofNullable(this.requestType);
     }
 
+    /**
+     * Specifies a sampling frequency or disables beacons.
+     * 
+     */
     @Import(name="samplingFrequency")
     private @Nullable Output<String> samplingFrequency;
 
+    /**
+     * @return Specifies a sampling frequency or disables beacons.
+     * 
+     */
     public Optional<Output<String>> samplingFrequency() {
         return Optional.ofNullable(this.samplingFrequency);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -128,105 +216,243 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorBossBeaconingArg
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorBossBeaconingArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param conditionalErrorPattern A space-separated set of error patterns that trigger beacons to conditional feeds. Each pattern can include wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `*CONNECT* *DENIED*` matches two different words as substrings.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditionalErrorPattern(@Nullable Output<String> conditionalErrorPattern) {
             $.conditionalErrorPattern = conditionalErrorPattern;
             return this;
         }
 
+        /**
+         * @param conditionalErrorPattern A space-separated set of error patterns that trigger beacons to conditional feeds. Each pattern can include wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `*CONNECT* *DENIED*` matches two different words as substrings.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditionalErrorPattern(String conditionalErrorPattern) {
             return conditionalErrorPattern(Output.of(conditionalErrorPattern));
         }
 
+        /**
+         * @param conditionalHttpStatuses Specifies the set of response status codes or ranges that trigger the beacon.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditionalHttpStatuses(@Nullable Output<List<String>> conditionalHttpStatuses) {
             $.conditionalHttpStatuses = conditionalHttpStatuses;
             return this;
         }
 
+        /**
+         * @param conditionalHttpStatuses Specifies the set of response status codes or ranges that trigger the beacon.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditionalHttpStatuses(List<String> conditionalHttpStatuses) {
             return conditionalHttpStatuses(Output.of(conditionalHttpStatuses));
         }
 
+        /**
+         * @param conditionalHttpStatuses Specifies the set of response status codes or ranges that trigger the beacon.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditionalHttpStatuses(String... conditionalHttpStatuses) {
             return conditionalHttpStatuses(List.of(conditionalHttpStatuses));
         }
 
+        /**
+         * @param conditionalSamplingFrequency Specifies a conditional sampling frequency or disables beacons.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditionalSamplingFrequency(@Nullable Output<String> conditionalSamplingFrequency) {
             $.conditionalSamplingFrequency = conditionalSamplingFrequency;
             return this;
         }
 
+        /**
+         * @param conditionalSamplingFrequency Specifies a conditional sampling frequency or disables beacons.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditionalSamplingFrequency(String conditionalSamplingFrequency) {
             return conditionalSamplingFrequency(Output.of(conditionalSamplingFrequency));
         }
 
+        /**
+         * @param cpcodes The space-separated list of CP codes that trigger the beacons. You need to specify the same set of CP codes within BOSS.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cpcodes(@Nullable Output<String> cpcodes) {
             $.cpcodes = cpcodes;
             return this;
         }
 
+        /**
+         * @param cpcodes The space-separated list of CP codes that trigger the beacons. You need to specify the same set of CP codes within BOSS.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cpcodes(String cpcodes) {
             return cpcodes(Output.of(cpcodes));
         }
 
+        /**
+         * @param enabled Enable diagnostic data beacons.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(@Nullable Output<Boolean> enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param enabled Enable diagnostic data beacons.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(Boolean enabled) {
             return enabled(Output.of(enabled));
         }
 
+        /**
+         * @param forwardType Specify when to trigger a beacon.
+         * 
+         * @return builder
+         * 
+         */
         public Builder forwardType(@Nullable Output<String> forwardType) {
             $.forwardType = forwardType;
             return this;
         }
 
+        /**
+         * @param forwardType Specify when to trigger a beacon.
+         * 
+         * @return builder
+         * 
+         */
         public Builder forwardType(String forwardType) {
             return forwardType(Output.of(forwardType));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param requestType Specify when to trigger a beacon.
+         * 
+         * @return builder
+         * 
+         */
         public Builder requestType(@Nullable Output<String> requestType) {
             $.requestType = requestType;
             return this;
         }
 
+        /**
+         * @param requestType Specify when to trigger a beacon.
+         * 
+         * @return builder
+         * 
+         */
         public Builder requestType(String requestType) {
             return requestType(Output.of(requestType));
         }
 
+        /**
+         * @param samplingFrequency Specifies a sampling frequency or disables beacons.
+         * 
+         * @return builder
+         * 
+         */
         public Builder samplingFrequency(@Nullable Output<String> samplingFrequency) {
             $.samplingFrequency = samplingFrequency;
             return this;
         }
 
+        /**
+         * @param samplingFrequency Specifies a sampling frequency or disables beacons.
+         * 
+         * @return builder
+         * 
+         */
         public Builder samplingFrequency(String samplingFrequency) {
             return samplingFrequency(Output.of(samplingFrequency));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

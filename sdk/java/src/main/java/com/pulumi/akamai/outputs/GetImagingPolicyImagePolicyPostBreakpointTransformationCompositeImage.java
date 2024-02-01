@@ -14,21 +14,53 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImage {
+    /**
+     * @return A rectangular box, with a specified color and applied transformation.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxImage> boxImages;
+    /**
+     * @return A rectangular box, with a specified color and applied transformation.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageCircleImage> circleImages;
+    /**
+     * @return A snippet of text. Defines font family and size, fill color, and outline stroke width and color.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImage> textImages;
+    /**
+     * @return An image loaded from a URL.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImage> urlImages;
 
     private GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImage() {}
+    /**
+     * @return A rectangular box, with a specified color and applied transformation.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxImage> boxImages() {
         return this.boxImages == null ? List.of() : this.boxImages;
     }
+    /**
+     * @return A rectangular box, with a specified color and applied transformation.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageCircleImage> circleImages() {
         return this.circleImages == null ? List.of() : this.circleImages;
     }
+    /**
+     * @return A snippet of text. Defines font family and size, fill color, and outline stroke width and color.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImage> textImages() {
         return this.textImages == null ? List.of() : this.textImages;
     }
+    /**
+     * @return An image loaded from a URL.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImage> urlImages() {
         return this.urlImages == null ? List.of() : this.urlImages;
     }

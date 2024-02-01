@@ -13,11 +13,29 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyVideoPolicyOutputResult
     {
+        /// <summary>
+        /// The quality of derivative videos. High preserves video quality with reduced byte savings while low reduces video quality to increase byte savings.
+        /// </summary>
         public readonly string? PerceptualQuality;
+        /// <summary>
+        /// The quality of derivative videos. High preserves video quality with reduced byte savings while low reduces video quality to increase byte savings.
+        /// </summary>
         public readonly string? PerceptualQualityVar;
+        /// <summary>
+        /// Allows you to add a specific placeholder video that appears when a user first requests a video, but before Image &amp; Video Manager processes the video. If not specified the original video plays during the processing time.
+        /// </summary>
         public readonly string? PlaceholderVideoUrl;
+        /// <summary>
+        /// Allows you to add a specific placeholder video that appears when a user first requests a video, but before Image &amp; Video Manager processes the video. If not specified the original video plays during the processing time.
+        /// </summary>
         public readonly string? PlaceholderVideoUrlVar;
+        /// <summary>
+        /// Override the quality of video to serve when Image &amp; Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of videos for users with faster connections.
+        /// </summary>
         public readonly string? VideoAdaptiveQuality;
+        /// <summary>
+        /// Override the quality of video to serve when Image &amp; Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of videos for users with faster connections.
+        /// </summary>
         public readonly string? VideoAdaptiveQualityVar;
 
         [OutputConstructor]

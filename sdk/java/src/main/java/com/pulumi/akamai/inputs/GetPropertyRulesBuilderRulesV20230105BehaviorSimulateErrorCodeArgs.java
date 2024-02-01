@@ -16,37 +16,77 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorSimulateErrorCod
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorSimulateErrorCodeArgs Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorSimulateErrorCodeArgs();
 
+    /**
+     * Specifies the type of error.
+     * 
+     */
     @Import(name="errorType")
     private @Nullable Output<String> errorType;
 
+    /**
+     * @return Specifies the type of error.
+     * 
+     */
     public Optional<Output<String>> errorType() {
         return Optional.ofNullable(this.errorType);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * When the `errorType` is `ERR_CONNECT_TIMEOUT`, `ERR_DNS_TIMEOUT`, `ERR_SUREROUTE_DNS_FAIL`, or `ERR_READ_TIMEOUT`, generates an error after the specified amount of time from the initial request.
+     * 
+     */
     @Import(name="timeout")
     private @Nullable Output<String> timeout;
 
+    /**
+     * @return When the `errorType` is `ERR_CONNECT_TIMEOUT`, `ERR_DNS_TIMEOUT`, `ERR_SUREROUTE_DNS_FAIL`, or `ERR_READ_TIMEOUT`, generates an error after the specified amount of time from the initial request.
+     * 
+     */
     public Optional<Output<String>> timeout() {
         return Optional.ofNullable(this.timeout);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -79,47 +119,107 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorSimulateErrorCod
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorSimulateErrorCodeArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param errorType Specifies the type of error.
+         * 
+         * @return builder
+         * 
+         */
         public Builder errorType(@Nullable Output<String> errorType) {
             $.errorType = errorType;
             return this;
         }
 
+        /**
+         * @param errorType Specifies the type of error.
+         * 
+         * @return builder
+         * 
+         */
         public Builder errorType(String errorType) {
             return errorType(Output.of(errorType));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param timeout When the `errorType` is `ERR_CONNECT_TIMEOUT`, `ERR_DNS_TIMEOUT`, `ERR_SUREROUTE_DNS_FAIL`, or `ERR_READ_TIMEOUT`, generates an error after the specified amount of time from the initial request.
+         * 
+         * @return builder
+         * 
+         */
         public Builder timeout(@Nullable Output<String> timeout) {
             $.timeout = timeout;
             return this;
         }
 
+        /**
+         * @param timeout When the `errorType` is `ERR_CONNECT_TIMEOUT`, `ERR_DNS_TIMEOUT`, `ERR_SUREROUTE_DNS_FAIL`, or `ERR_READ_TIMEOUT`, generates an error after the specified amount of time from the initial request.
+         * 
+         * @return builder
+         * 
+         */
         public Builder timeout(String timeout) {
             return timeout(Output.of(timeout));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

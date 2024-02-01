@@ -11,13 +11,29 @@ import java.util.Objects;
 
 @CustomType
 public final class CloudwrapperConfigurationLocationCapacity {
+    /**
+     * @return Unit of capacity. Can be either &#39;GB&#39; or &#39;TB&#39;.
+     * 
+     */
     private String unit;
+    /**
+     * @return Value of capacity.
+     * 
+     */
     private Integer value;
 
     private CloudwrapperConfigurationLocationCapacity() {}
+    /**
+     * @return Unit of capacity. Can be either &#39;GB&#39; or &#39;TB&#39;.
+     * 
+     */
     public String unit() {
         return this.unit;
     }
+    /**
+     * @return Value of capacity.
+     * 
+     */
     public Integer value() {
         return this.value;
     }

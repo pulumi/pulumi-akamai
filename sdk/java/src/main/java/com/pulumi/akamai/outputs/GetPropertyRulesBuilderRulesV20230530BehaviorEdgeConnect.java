@@ -13,53 +13,149 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorEdgeConnect {
+    /**
+     * @return Specifies the maximum number of lines to include in each log.
+     * 
+     */
     private @Nullable String aggregateLines;
+    /**
+     * @return Specifies the log&#39;s maximum size.
+     * 
+     */
     private @Nullable String aggregateSize;
+    /**
+     * @return Specifies how often logs are generated.
+     * 
+     */
     private @Nullable String aggregateTime;
+    /**
+     * @return Describes the API connector type.
+     * 
+     */
     private @Nullable String apiConnector;
+    /**
+     * @return Specifies the data set to log.
+     * 
+     */
     private @Nullable List<String> apiDataElements;
+    /**
+     * @return Specifies the target hostname accepting push API requests.
+     * 
+     */
     private @Nullable String destinationHostname;
+    /**
+     * @return Specifies the push API&#39;s endpoint.
+     * 
+     */
     private @Nullable String destinationPath;
+    /**
+     * @return Enables Cloud Monitor&#39;s log-publishing behavior.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return When enabled, overrides default log settings.
+     * 
+     */
     private @Nullable Boolean overrideAggregateSettings;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorEdgeConnect() {}
+    /**
+     * @return Specifies the maximum number of lines to include in each log.
+     * 
+     */
     public Optional<String> aggregateLines() {
         return Optional.ofNullable(this.aggregateLines);
     }
+    /**
+     * @return Specifies the log&#39;s maximum size.
+     * 
+     */
     public Optional<String> aggregateSize() {
         return Optional.ofNullable(this.aggregateSize);
     }
+    /**
+     * @return Specifies how often logs are generated.
+     * 
+     */
     public Optional<String> aggregateTime() {
         return Optional.ofNullable(this.aggregateTime);
     }
+    /**
+     * @return Describes the API connector type.
+     * 
+     */
     public Optional<String> apiConnector() {
         return Optional.ofNullable(this.apiConnector);
     }
+    /**
+     * @return Specifies the data set to log.
+     * 
+     */
     public List<String> apiDataElements() {
         return this.apiDataElements == null ? List.of() : this.apiDataElements;
     }
+    /**
+     * @return Specifies the target hostname accepting push API requests.
+     * 
+     */
     public Optional<String> destinationHostname() {
         return Optional.ofNullable(this.destinationHostname);
     }
+    /**
+     * @return Specifies the push API&#39;s endpoint.
+     * 
+     */
     public Optional<String> destinationPath() {
         return Optional.ofNullable(this.destinationPath);
     }
+    /**
+     * @return Enables Cloud Monitor&#39;s log-publishing behavior.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return When enabled, overrides default log settings.
+     * 
+     */
     public Optional<Boolean> overrideAggregateSettings() {
         return Optional.ofNullable(this.overrideAggregateSettings);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

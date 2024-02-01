@@ -15,16 +15,32 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorApplicationLoadB
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorApplicationLoadBalancerFailoverOriginMap Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorApplicationLoadBalancerFailoverOriginMap();
 
+    /**
+     * Specifies the origin whose failure triggers the mapping rule.
+     * 
+     */
     @Import(name="fromOriginId")
     private @Nullable String fromOriginId;
 
+    /**
+     * @return Specifies the origin whose failure triggers the mapping rule.
+     * 
+     */
     public Optional<String> fromOriginId() {
         return Optional.ofNullable(this.fromOriginId);
     }
 
+    /**
+     * Requests stuck to the `fromOriginId` origin retry for each alternate origin `toOriginIds`, until one succeeds.
+     * 
+     */
     @Import(name="toOriginIds")
     private @Nullable List<String> toOriginIds;
 
+    /**
+     * @return Requests stuck to the `fromOriginId` origin retry for each alternate origin `toOriginIds`, until one succeeds.
+     * 
+     */
     public Optional<List<String>> toOriginIds() {
         return Optional.ofNullable(this.toOriginIds);
     }
@@ -54,16 +70,34 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorApplicationLoadB
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorApplicationLoadBalancerFailoverOriginMap(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param fromOriginId Specifies the origin whose failure triggers the mapping rule.
+         * 
+         * @return builder
+         * 
+         */
         public Builder fromOriginId(@Nullable String fromOriginId) {
             $.fromOriginId = fromOriginId;
             return this;
         }
 
+        /**
+         * @param toOriginIds Requests stuck to the `fromOriginId` origin retry for each alternate origin `toOriginIds`, until one succeeds.
+         * 
+         * @return builder
+         * 
+         */
         public Builder toOriginIds(@Nullable List<String> toOriginIds) {
             $.toOriginIds = toOriginIds;
             return this;
         }
 
+        /**
+         * @param toOriginIds Requests stuck to the `fromOriginId` origin retry for each alternate origin `toOriginIds`, until one succeeds.
+         * 
+         * @return builder
+         * 
+         */
         public Builder toOriginIds(String... toOriginIds) {
             return toOriginIds(List.of(toOriginIds));
         }

@@ -12,45 +12,125 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorMPulse {
+    /**
+     * @return This generated value uniquely identifies sections of your website for you to analyze independently. To access this value, see `Enable mPulse in Property Manager`.
+     * 
+     */
     private @Nullable String apiKey;
+    /**
+     * @return Allows you to override the browser&#39;s default (150) maximum number of reported performance timeline entries.
+     * 
+     */
     private @Nullable String bufferSize;
+    /**
+     * @return A JSON string representing a configuration object passed to the JavaScript library under which mPulse runs. It corresponds at run-time to the `window.BOOMR_config` object. For example, this turns on monitoring of Single Page App frameworks: `&#34;{\&#34;history\&#34;: {\&#34;enabled\&#34;: true, \&#34;auto\&#34;: true}}&#34;`.  See `Configuration Overrides` for more information.
+     * 
+     */
     private @Nullable String configOverride;
+    /**
+     * @return Applies performance monitoring to this behavior&#39;s set of content.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Specifies the version of the Boomerang JavaScript loader snippet. See `mPulse Loader Snippets` for more information.
+     * 
+     */
     private @Nullable String loaderVersion;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Suppresses gathering metrics for potentially sensitive end-user interactions. Enabling this omits data from some older browsers.
+     * 
+     */
     private @Nullable Boolean requirePci;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String titleOptional;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorMPulse() {}
+    /**
+     * @return This generated value uniquely identifies sections of your website for you to analyze independently. To access this value, see `Enable mPulse in Property Manager`.
+     * 
+     */
     public Optional<String> apiKey() {
         return Optional.ofNullable(this.apiKey);
     }
+    /**
+     * @return Allows you to override the browser&#39;s default (150) maximum number of reported performance timeline entries.
+     * 
+     */
     public Optional<String> bufferSize() {
         return Optional.ofNullable(this.bufferSize);
     }
+    /**
+     * @return A JSON string representing a configuration object passed to the JavaScript library under which mPulse runs. It corresponds at run-time to the `window.BOOMR_config` object. For example, this turns on monitoring of Single Page App frameworks: `&#34;{\&#34;history\&#34;: {\&#34;enabled\&#34;: true, \&#34;auto\&#34;: true}}&#34;`.  See `Configuration Overrides` for more information.
+     * 
+     */
     public Optional<String> configOverride() {
         return Optional.ofNullable(this.configOverride);
     }
+    /**
+     * @return Applies performance monitoring to this behavior&#39;s set of content.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Specifies the version of the Boomerang JavaScript loader snippet. See `mPulse Loader Snippets` for more information.
+     * 
+     */
     public Optional<String> loaderVersion() {
         return Optional.ofNullable(this.loaderVersion);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Suppresses gathering metrics for potentially sensitive end-user interactions. Enabling this omits data from some older browsers.
+     * 
+     */
     public Optional<Boolean> requirePci() {
         return Optional.ofNullable(this.requirePci);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> titleOptional() {
         return Optional.ofNullable(this.titleOptional);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

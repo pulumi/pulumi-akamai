@@ -13,8 +13,14 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorQualityResult
     {
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? AudienceSettings;
         public readonly string? CatalogSize;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? ContentSettings;
         public readonly string? ContentType;
         public readonly string? Country;
@@ -22,15 +28,27 @@ namespace Pulumi.Akamai.Outputs
         public readonly string? DeliveryType;
         public readonly string? DownloadType;
         public readonly string? EndUserLocation;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
         public readonly string? MaximumConcurrentUsers;
         public readonly string? ObjectSize;
         public readonly string? OptimizeFor;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? OriginSettings;
         public readonly string? PopularityDistribution;
         public readonly string? RefreshRate;
         public readonly int? SegmentDuration;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

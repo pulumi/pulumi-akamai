@@ -10,13 +10,29 @@ import java.util.Objects;
 
 @CustomType
 public final class GetGtmDatacenterLink {
+    /**
+     * @return A hypermedia link to the complete URL that uniquely defines a resource.
+     * 
+     */
     private String href;
+    /**
+     * @return Indicates the link relationship of the object.
+     * 
+     */
     private String rel;
 
     private GetGtmDatacenterLink() {}
+    /**
+     * @return A hypermedia link to the complete URL that uniquely defines a resource.
+     * 
+     */
     public String href() {
         return this.href;
     }
+    /**
+     * @return Indicates the link relationship of the object.
+     * 
+     */
     public String rel() {
         return this.rel;
     }

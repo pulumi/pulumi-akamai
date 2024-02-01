@@ -13,19 +13,61 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorStandardTlsMigrationResult
     {
+        /// <summary>
+        /// Allow temporary downgrade of HTTPS traffic to HTTP. This removes various `Origin`, `Referer`, `Cookie`, `Cookie2`, `sec-*` and `proxy-*` headers from the request to origin.
+        /// </summary>
         public readonly bool? AllowHttpsDowngrade;
+        /// <summary>
+        /// Allows temporary upgrade of HTTP traffic to HTTPS.
+        /// </summary>
         public readonly bool? AllowHttpsUpgrade;
+        /// <summary>
+        /// Specifies the number cache sharing days.
+        /// </summary>
         public readonly int? CacheSharingDuration;
+        /// <summary>
+        /// Specifies when to start cache sharing.
+        /// </summary>
         public readonly string? CacheSharingStartTime;
+        /// <summary>
+        /// Allows migration to Standard TLS.
+        /// </summary>
         public readonly bool? Enabled;
+        /// <summary>
+        /// Sets whether your new certificate is SNI-only.
+        /// </summary>
         public readonly bool? IsCertificateSniOnly;
+        /// <summary>
+        /// Allows you to align traffic to various `tieredDistribution` areas.
+        /// </summary>
         public readonly bool? IsTieredDistributionUsed;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// Specifies the number of days to migrate the cache.
+        /// </summary>
         public readonly int? MigrationDuration;
+        /// <summary>
+        /// What kind of traffic you're migrating from.
+        /// </summary>
         public readonly string? MigrationFrom;
+        /// <summary>
+        /// Specifies when to start migrating the cache.
+        /// </summary>
         public readonly string? MigrationStartTime;
+        /// <summary>
+        /// Specifies the `tieredDistribution` location.
+        /// </summary>
         public readonly string? TdLocation;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

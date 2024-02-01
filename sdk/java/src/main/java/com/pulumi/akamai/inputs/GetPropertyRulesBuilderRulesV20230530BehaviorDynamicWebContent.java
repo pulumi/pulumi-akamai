@@ -15,51 +15,107 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDynamicWebConten
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorDynamicWebContent Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorDynamicWebContent();
 
+    /**
+     * Enables image compression for subcustomer content.
+     * 
+     */
     @Import(name="imageCompression")
     private @Nullable Boolean imageCompression;
 
+    /**
+     * @return Enables image compression for subcustomer content.
+     * 
+     */
     public Optional<Boolean> imageCompression() {
         return Optional.ofNullable(this.imageCompression);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Allows subcustomer content to prefetch over HTTP/2.
+     * 
+     */
     @Import(name="prefetch")
     private @Nullable Boolean prefetch;
 
+    /**
+     * @return Allows subcustomer content to prefetch over HTTP/2.
+     * 
+     */
     public Optional<Boolean> prefetch() {
         return Optional.ofNullable(this.prefetch);
     }
 
+    /**
+     * Allows Real User Monitoring (RUM) to collect performance data for subcustomer content. See the `realUserMonitoring` behavior for more information.
+     * 
+     */
     @Import(name="realUserMonitoring")
     private @Nullable Boolean realUserMonitoring;
 
+    /**
+     * @return Allows Real User Monitoring (RUM) to collect performance data for subcustomer content. See the `realUserMonitoring` behavior for more information.
+     * 
+     */
     public Optional<Boolean> realUserMonitoring() {
         return Optional.ofNullable(this.realUserMonitoring);
     }
 
+    /**
+     * Optimizes how subcustomer traffic routes from origin to edge servers.  See the `sureRoute` behavior for more information.
+     * 
+     */
     @Import(name="sureRoute")
     private @Nullable Boolean sureRoute;
 
+    /**
+     * @return Optimizes how subcustomer traffic routes from origin to edge servers.  See the `sureRoute` behavior for more information.
+     * 
+     */
     public Optional<Boolean> sureRoute() {
         return Optional.ofNullable(this.sureRoute);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -94,36 +150,78 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDynamicWebConten
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorDynamicWebContent(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param imageCompression Enables image compression for subcustomer content.
+         * 
+         * @return builder
+         * 
+         */
         public Builder imageCompression(@Nullable Boolean imageCompression) {
             $.imageCompression = imageCompression;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param prefetch Allows subcustomer content to prefetch over HTTP/2.
+         * 
+         * @return builder
+         * 
+         */
         public Builder prefetch(@Nullable Boolean prefetch) {
             $.prefetch = prefetch;
             return this;
         }
 
+        /**
+         * @param realUserMonitoring Allows Real User Monitoring (RUM) to collect performance data for subcustomer content. See the `realUserMonitoring` behavior for more information.
+         * 
+         * @return builder
+         * 
+         */
         public Builder realUserMonitoring(@Nullable Boolean realUserMonitoring) {
             $.realUserMonitoring = realUserMonitoring;
             return this;
         }
 
+        /**
+         * @param sureRoute Optimizes how subcustomer traffic routes from origin to edge servers.  See the `sureRoute` behavior for more information.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sureRoute(@Nullable Boolean sureRoute) {
             $.sureRoute = sureRoute;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

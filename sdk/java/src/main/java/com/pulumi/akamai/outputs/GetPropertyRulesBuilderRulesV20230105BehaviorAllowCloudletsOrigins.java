@@ -12,29 +12,77 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorAllowCloudletsOrigins {
+    /**
+     * @return Allows you to assign custom origin definitions referenced in sub-rules by `cloudletsOrigin` labels. If disabled, all sub-rules are ignored.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Prefixes any Cloudlet-generated origin path with a path defined by an Origin Base Path behavior. If no path is defined, it has no effect. If another Cloudlet policy already prepends the same Origin Base Path, the path is not duplicated.
+     * 
+     */
     private @Nullable Boolean honorBaseDirectory;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return When purging content from a Cloudlets Origin, this specifies a query parameter name whose value is the specific named origin to purge.  Note that this only applies to content purge requests, for example when using the `Content Control Utility API`.
+     * 
+     */
     private @Nullable String purgeOriginQueryParameter;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorAllowCloudletsOrigins() {}
+    /**
+     * @return Allows you to assign custom origin definitions referenced in sub-rules by `cloudletsOrigin` labels. If disabled, all sub-rules are ignored.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Prefixes any Cloudlet-generated origin path with a path defined by an Origin Base Path behavior. If no path is defined, it has no effect. If another Cloudlet policy already prepends the same Origin Base Path, the path is not duplicated.
+     * 
+     */
     public Optional<Boolean> honorBaseDirectory() {
         return Optional.ofNullable(this.honorBaseDirectory);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return When purging content from a Cloudlets Origin, this specifies a query parameter name whose value is the specific named origin to purge.  Note that this only applies to content purge requests, for example when using the `Content Control Utility API`.
+     * 
+     */
     public Optional<String> purgeOriginQueryParameter() {
         return Optional.ofNullable(this.purgeOriginQueryParameter);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

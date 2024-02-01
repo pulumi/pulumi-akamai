@@ -12,39 +12,75 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class CpsDvEnrollmentTechContactArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The address of the contact
+        /// </summary>
         [Input("addressLineOne", required: true)]
         public Input<string> AddressLineOne { get; set; } = null!;
 
+        /// <summary>
+        /// The address of the contact
+        /// </summary>
         [Input("addressLineTwo")]
         public Input<string>? AddressLineTwo { get; set; }
 
+        /// <summary>
+        /// City of residence of the contact
+        /// </summary>
         [Input("city", required: true)]
         public Input<string> City { get; set; } = null!;
 
+        /// <summary>
+        /// Country code of the contact
+        /// </summary>
         [Input("countryCode", required: true)]
         public Input<string> CountryCode { get; set; } = null!;
 
+        /// <summary>
+        /// E-mail address of the contact
+        /// </summary>
         [Input("email", required: true)]
         public Input<string> Email { get; set; } = null!;
 
+        /// <summary>
+        /// First name of the contact
+        /// </summary>
         [Input("firstName", required: true)]
         public Input<string> FirstName { get; set; } = null!;
 
+        /// <summary>
+        /// Last name of the contact
+        /// </summary>
         [Input("lastName", required: true)]
         public Input<string> LastName { get; set; } = null!;
 
+        /// <summary>
+        /// Organization where contact is hired
+        /// </summary>
         [Input("organization", required: true)]
         public Input<string> Organization { get; set; } = null!;
 
+        /// <summary>
+        /// Phone number of the contact
+        /// </summary>
         [Input("phone", required: true)]
         public Input<string> Phone { get; set; } = null!;
 
+        /// <summary>
+        /// Postal code of the contact
+        /// </summary>
         [Input("postalCode", required: true)]
         public Input<string> PostalCode { get; set; } = null!;
 
+        /// <summary>
+        /// The region of the contact
+        /// </summary>
         [Input("region", required: true)]
         public Input<string> Region { get; set; } = null!;
 
+        /// <summary>
+        /// Title of the the contact
+        /// </summary>
         [Input("title")]
         public Input<string>? Title { get; set; }
 

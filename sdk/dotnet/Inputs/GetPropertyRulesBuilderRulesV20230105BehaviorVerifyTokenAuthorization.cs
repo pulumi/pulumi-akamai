@@ -12,42 +12,81 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorVerifyTokenAuthorizationArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Specifies the algorithm that generates the token. It needs to match the method chosen in the token generation code.
+        /// </summary>
         [Input("algorithm")]
         public string? Algorithm { get; set; }
 
+        /// <summary>
+        /// URL-escapes HMAC inputs passed in as query parameters.
+        /// </summary>
         [Input("escapeHmacInputs")]
         public bool? EscapeHmacInputs { get; set; }
 
+        /// <summary>
+        /// When enabled, sends an HTTP error when an authentication test fails.
+        /// </summary>
         [Input("failureResponse")]
         public bool? FailureResponse { get; set; }
 
+        /// <summary>
+        /// Enabling this removes the query string from the URL used to form an encryption key.
+        /// </summary>
         [Input("ignoreQueryString")]
         public bool? IgnoreQueryString { get; set; }
 
+        /// <summary>
+        /// The shared secret used to validate tokens, which needs to match the key used in the token generation code.
+        /// </summary>
         [Input("key")]
         public string? Key { get; set; }
 
+        /// <summary>
+        /// Specifies where to find the token in the incoming request.
+        /// </summary>
         [Input("location")]
         public string? Location { get; set; }
 
+        /// <summary>
+        /// When `location` is `CLIENT_REQUEST_HEADER`, specifies the name of the incoming request's header where to find the token.
+        /// </summary>
         [Input("locationId")]
         public string? LocationId { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public bool? Locked { get; set; }
 
+        /// <summary>
+        /// Specifies a salt string for input when generating the token, which needs to match the salt value used in the token generation code.
+        /// </summary>
         [Input("salt")]
         public string? Salt { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public string? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// Specifies a transition key as a hex value.
+        /// </summary>
         [Input("transitionKey")]
         public string? TransitionKey { get; set; }
 
+        /// <summary>
+        /// If enabled, allows you to specify advanced options such as `algorithm`, `escapeHmacInputs`, `ignoreQueryString`, `transitionKey`, and `salt`.
+        /// </summary>
         [Input("useAdvanced")]
         public bool? UseAdvanced { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public string? Uuid { get; set; }
 

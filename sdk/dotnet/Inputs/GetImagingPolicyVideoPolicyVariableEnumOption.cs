@@ -12,9 +12,15 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetImagingPolicyVideoPolicyVariableEnumOptionArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The unique identifier for each enum value, up to 50 alphanumeric characters.
+        /// </summary>
         [Input("id", required: true)]
         public string Id { get; set; } = null!;
 
+        /// <summary>
+        /// The value of the variable when the `id` is provided.
+        /// </summary>
         [Input("value", required: true)]
         public string Value { get; set; } = null!;
 

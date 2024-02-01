@@ -12,37 +12,101 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorDownstreamCache {
+    /**
+     * @return Specify how the edge server calculates the downstream cache by setting the value of the `Expires` header.
+     * 
+     */
     private @Nullable String allowBehavior;
+    /**
+     * @return Specify the caching instructions the edge server sends to the end user&#39;s client.
+     * 
+     */
     private @Nullable String behavior;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Specifies the HTTP headers to include in the response to the client.
+     * 
+     */
     private @Nullable String sendHeaders;
+    /**
+     * @return Adds a `Cache-Control: private` header to prevent objects from being cached in a shared caching proxy.
+     * 
+     */
     private @Nullable Boolean sendPrivate;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return Sets the duration of the cache. Setting the value to `0` equates to a `no-cache` header that forces revalidation.
+     * 
+     */
     private @Nullable String ttl;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorDownstreamCache() {}
+    /**
+     * @return Specify how the edge server calculates the downstream cache by setting the value of the `Expires` header.
+     * 
+     */
     public Optional<String> allowBehavior() {
         return Optional.ofNullable(this.allowBehavior);
     }
+    /**
+     * @return Specify the caching instructions the edge server sends to the end user&#39;s client.
+     * 
+     */
     public Optional<String> behavior() {
         return Optional.ofNullable(this.behavior);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Specifies the HTTP headers to include in the response to the client.
+     * 
+     */
     public Optional<String> sendHeaders() {
         return Optional.ofNullable(this.sendHeaders);
     }
+    /**
+     * @return Adds a `Cache-Control: private` header to prevent objects from being cached in a shared caching proxy.
+     * 
+     */
     public Optional<Boolean> sendPrivate() {
         return Optional.ofNullable(this.sendPrivate);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return Sets the duration of the cache. Setting the value to `0` equates to a `no-cache` header that forces revalidation.
+     * 
+     */
     public Optional<String> ttl() {
         return Optional.ofNullable(this.ttl);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

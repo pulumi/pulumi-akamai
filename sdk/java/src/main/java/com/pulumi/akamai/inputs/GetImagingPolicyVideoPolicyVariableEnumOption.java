@@ -13,16 +13,32 @@ public final class GetImagingPolicyVideoPolicyVariableEnumOption extends com.pul
 
     public static final GetImagingPolicyVideoPolicyVariableEnumOption Empty = new GetImagingPolicyVideoPolicyVariableEnumOption();
 
+    /**
+     * The unique identifier for each enum value, up to 50 alphanumeric characters.
+     * 
+     */
     @Import(name="id", required=true)
     private String id;
 
+    /**
+     * @return The unique identifier for each enum value, up to 50 alphanumeric characters.
+     * 
+     */
     public String id() {
         return this.id;
     }
 
+    /**
+     * The value of the variable when the `id` is provided.
+     * 
+     */
     @Import(name="value", required=true)
     private String value;
 
+    /**
+     * @return The value of the variable when the `id` is provided.
+     * 
+     */
     public String value() {
         return this.value;
     }
@@ -52,11 +68,23 @@ public final class GetImagingPolicyVideoPolicyVariableEnumOption extends com.pul
             $ = new GetImagingPolicyVideoPolicyVariableEnumOption(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param id The unique identifier for each enum value, up to 50 alphanumeric characters.
+         * 
+         * @return builder
+         * 
+         */
         public Builder id(String id) {
             $.id = id;
             return this;
         }
 
+        /**
+         * @param value The value of the variable when the `id` is provided.
+         * 
+         * @return builder
+         * 
+         */
         public Builder value(String value) {
             $.value = value;
             return this;

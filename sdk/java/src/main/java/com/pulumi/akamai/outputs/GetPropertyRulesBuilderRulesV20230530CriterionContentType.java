@@ -13,33 +13,89 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530CriterionContentType {
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Sets a case-sensitive match for all `values`.
+     * 
+     */
     private @Nullable Boolean matchCaseSensitive;
+    /**
+     * @return Matches any `Content-Type` among specified `values` when set to `IS_ONE_OF`, otherwise `IS_NOT_ONE_OF` reverses the match.
+     * 
+     */
     private @Nullable String matchOperator;
+    /**
+     * @return Allows wildcards in the `value` field, where `?` matches a single character and `*` matches zero or more characters. Specifying `text/*` matches both `text/html` and `text/css`.
+     * 
+     */
     private @Nullable Boolean matchWildcard;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
+    /**
+     * @return `Content-Type` response header value, for example `text/html`.
+     * 
+     */
     private @Nullable List<String> values;
 
     private GetPropertyRulesBuilderRulesV20230530CriterionContentType() {}
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Sets a case-sensitive match for all `values`.
+     * 
+     */
     public Optional<Boolean> matchCaseSensitive() {
         return Optional.ofNullable(this.matchCaseSensitive);
     }
+    /**
+     * @return Matches any `Content-Type` among specified `values` when set to `IS_ONE_OF`, otherwise `IS_NOT_ONE_OF` reverses the match.
+     * 
+     */
     public Optional<String> matchOperator() {
         return Optional.ofNullable(this.matchOperator);
     }
+    /**
+     * @return Allows wildcards in the `value` field, where `?` matches a single character and `*` matches zero or more characters. Specifying `text/*` matches both `text/html` and `text/css`.
+     * 
+     */
     public Optional<Boolean> matchWildcard() {
         return Optional.ofNullable(this.matchWildcard);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
+    /**
+     * @return `Content-Type` response header value, for example `text/html`.
+     * 
+     */
     public List<String> values() {
         return this.values == null ? List.of() : this.values;
     }

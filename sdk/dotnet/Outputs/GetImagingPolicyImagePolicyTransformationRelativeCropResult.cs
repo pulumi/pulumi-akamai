@@ -13,13 +13,37 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyTransformationRelativeCropResult
     {
+        /// <summary>
+        /// The number of pixels to shrink or expand the right side of the image.
+        /// </summary>
         public readonly string? East;
+        /// <summary>
+        /// The number of pixels to shrink or expand the right side of the image.
+        /// </summary>
         public readonly string? EastVar;
+        /// <summary>
+        /// The number of pixels to shrink or expand the top side of the image.
+        /// </summary>
         public readonly string? North;
+        /// <summary>
+        /// The number of pixels to shrink or expand the top side of the image.
+        /// </summary>
         public readonly string? NorthVar;
+        /// <summary>
+        /// The number of pixels to shrink or expand the bottom side of the image.
+        /// </summary>
         public readonly string? South;
+        /// <summary>
+        /// The number of pixels to shrink or expand the bottom side of the image.
+        /// </summary>
         public readonly string? SouthVar;
+        /// <summary>
+        /// The number of pixels to shrink or expand the left side of the image.
+        /// </summary>
         public readonly string? West;
+        /// <summary>
+        /// The number of pixels to shrink or expand the left side of the image.
+        /// </summary>
         public readonly string? WestVar;
 
         [OutputConstructor]

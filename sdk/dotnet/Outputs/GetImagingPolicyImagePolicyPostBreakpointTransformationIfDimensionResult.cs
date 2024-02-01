@@ -14,12 +14,24 @@ namespace Pulumi.Akamai.Outputs
     public sealed class GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionResult
     {
         public readonly Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult? Default;
+        /// <summary>
+        /// The dimension to use to select the transformation, either `height`, `width`, or `both`.
+        /// </summary>
         public readonly string? Dimension;
+        /// <summary>
+        /// The dimension to use to select the transformation, either `height`, `width`, or `both`.
+        /// </summary>
         public readonly string? DimensionVar;
         public readonly Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult? Equal;
         public readonly Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult? GreaterThan;
         public readonly Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult? LessThan;
+        /// <summary>
+        /// The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
+        /// </summary>
         public readonly string? Value;
+        /// <summary>
+        /// The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
+        /// </summary>
         public readonly string? ValueVar;
 
         [OutputConstructor]

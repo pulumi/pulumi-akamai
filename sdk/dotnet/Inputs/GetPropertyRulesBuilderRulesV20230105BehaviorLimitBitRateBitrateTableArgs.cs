@@ -12,9 +12,15 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateBitrateTableInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The unit of measurement, either `KBPS`, `MBPS`, or `GBPS`.
+        /// </summary>
         [Input("bitrateUnit")]
         public Input<string>? BitrateUnit { get; set; }
 
+        /// <summary>
+        /// The numeric indicator of the download rate.
+        /// </summary>
         [Input("bitrateValue")]
         public Input<double>? BitrateValue { get; set; }
 

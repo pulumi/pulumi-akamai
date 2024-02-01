@@ -19,107 +19,227 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizatio
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritization Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritization();
 
+    /**
+     * Specifies the alternate response&#39;s time to live in the cache, `5` minutes by default.
+     * 
+     */
     @Import(name="alternateResponseCacheTtl")
     private @Nullable Integer alternateResponseCacheTtl;
 
+    /**
+     * @return Specifies the alternate response&#39;s time to live in the cache, `5` minutes by default.
+     * 
+     */
     public Optional<Integer> alternateResponseCacheTtl() {
         return Optional.ofNullable(this.alternateResponseCacheTtl);
     }
 
+    /**
+     * Identifies the Cloudlet policy.
+     * 
+     */
     @Import(name="cloudletPolicy")
     private @Nullable GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationCloudletPolicy cloudletPolicy;
 
+    /**
+     * @return Identifies the Cloudlet policy.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationCloudletPolicy> cloudletPolicy() {
         return Optional.ofNullable(this.cloudletPolicy);
     }
 
+    /**
+     * Identifies the Cloudlet shared policy to use with this behavior. Use the `Cloudlets API` to list available shared policies.
+     * 
+     */
     @Import(name="cloudletSharedPolicy")
     private @Nullable Integer cloudletSharedPolicy;
 
+    /**
+     * @return Identifies the Cloudlet shared policy to use with this behavior. Use the `Cloudlets API` to list available shared policies.
+     * 
+     */
     public Optional<Integer> cloudletSharedPolicy() {
         return Optional.ofNullable(this.cloudletSharedPolicy);
     }
 
+    /**
+     * Activates the API Prioritization feature.
+     * 
+     */
     @Import(name="enabled")
     private @Nullable Boolean enabled;
 
+    /**
+     * @return Activates the API Prioritization feature.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
 
+    /**
+     * Whether you want to apply the Cloudlet shared policy to an unlimited number of properties within your account. Learn more about shared policies and how to create them in `Cloudlets Policy Manager`.
+     * 
+     */
     @Import(name="isSharedPolicy")
     private @Nullable Boolean isSharedPolicy;
 
+    /**
+     * @return Whether you want to apply the Cloudlet shared policy to an unlimited number of properties within your account. Learn more about shared policies and how to create them in `Cloudlets Policy Manager`.
+     * 
+     */
     public Optional<Boolean> isSharedPolicy() {
         return Optional.ofNullable(this.isSharedPolicy);
     }
 
+    /**
+     * A label to distinguish this API Prioritization policy from any others in the same property.
+     * 
+     */
     @Import(name="label")
     private @Nullable String label;
 
+    /**
+     * @return A label to distinguish this API Prioritization policy from any others in the same property.
+     * 
+     */
     public Optional<String> label() {
         return Optional.ofNullable(this.label);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Specify the NetStorage domain that contains the alternate response.
+     * 
+     */
     @Import(name="netStorage")
     private @Nullable GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationNetStorage netStorage;
 
+    /**
+     * @return Specify the NetStorage domain that contains the alternate response.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationNetStorage> netStorage() {
         return Optional.ofNullable(this.netStorage);
     }
 
+    /**
+     * Specify the full NetStorage path for the alternate response, including trailing file name.
+     * 
+     */
     @Import(name="netStoragePath")
     private @Nullable String netStoragePath;
 
+    /**
+     * @return Specify the full NetStorage path for the alternate response, including trailing file name.
+     * 
+     */
     public Optional<String> netStoragePath() {
         return Optional.ofNullable(this.netStoragePath);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * Specifies the CP code as an object.
+     * 
+     */
     @Import(name="throttledCpCode")
     private @Nullable GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationThrottledCpCode throttledCpCode;
 
+    /**
+     * @return Specifies the CP code as an object.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationThrottledCpCode> throttledCpCode() {
         return Optional.ofNullable(this.throttledCpCode);
     }
 
+    /**
+     * Specifies the HTTP response code for requests that receive the alternate response.
+     * 
+     */
     @Import(name="throttledStatusCode")
     private @Nullable Integer throttledStatusCode;
 
+    /**
+     * @return Specifies the HTTP response code for requests that receive the alternate response.
+     * 
+     */
     public Optional<Integer> throttledStatusCode() {
         return Optional.ofNullable(this.throttledStatusCode);
     }
 
+    /**
+     * Specifies whether to apply an alternative CP code for requests served the alternate response.
+     * 
+     */
     @Import(name="useThrottledCpCode")
     private @Nullable Boolean useThrottledCpCode;
 
+    /**
+     * @return Specifies whether to apply an alternative CP code for requests served the alternate response.
+     * 
+     */
     public Optional<Boolean> useThrottledCpCode() {
         return Optional.ofNullable(this.useThrottledCpCode);
     }
 
+    /**
+     * Allows you to assign a specific HTTP response code to a throttled request.
+     * 
+     */
     @Import(name="useThrottledStatusCode")
     private @Nullable Boolean useThrottledStatusCode;
 
+    /**
+     * @return Allows you to assign a specific HTTP response code to a throttled request.
+     * 
+     */
     public Optional<Boolean> useThrottledStatusCode() {
         return Optional.ofNullable(this.useThrottledStatusCode);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -162,76 +282,166 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizatio
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritization(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param alternateResponseCacheTtl Specifies the alternate response&#39;s time to live in the cache, `5` minutes by default.
+         * 
+         * @return builder
+         * 
+         */
         public Builder alternateResponseCacheTtl(@Nullable Integer alternateResponseCacheTtl) {
             $.alternateResponseCacheTtl = alternateResponseCacheTtl;
             return this;
         }
 
+        /**
+         * @param cloudletPolicy Identifies the Cloudlet policy.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cloudletPolicy(@Nullable GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationCloudletPolicy cloudletPolicy) {
             $.cloudletPolicy = cloudletPolicy;
             return this;
         }
 
+        /**
+         * @param cloudletSharedPolicy Identifies the Cloudlet shared policy to use with this behavior. Use the `Cloudlets API` to list available shared policies.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cloudletSharedPolicy(@Nullable Integer cloudletSharedPolicy) {
             $.cloudletSharedPolicy = cloudletSharedPolicy;
             return this;
         }
 
+        /**
+         * @param enabled Activates the API Prioritization feature.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(@Nullable Boolean enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param isSharedPolicy Whether you want to apply the Cloudlet shared policy to an unlimited number of properties within your account. Learn more about shared policies and how to create them in `Cloudlets Policy Manager`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder isSharedPolicy(@Nullable Boolean isSharedPolicy) {
             $.isSharedPolicy = isSharedPolicy;
             return this;
         }
 
+        /**
+         * @param label A label to distinguish this API Prioritization policy from any others in the same property.
+         * 
+         * @return builder
+         * 
+         */
         public Builder label(@Nullable String label) {
             $.label = label;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param netStorage Specify the NetStorage domain that contains the alternate response.
+         * 
+         * @return builder
+         * 
+         */
         public Builder netStorage(@Nullable GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationNetStorage netStorage) {
             $.netStorage = netStorage;
             return this;
         }
 
+        /**
+         * @param netStoragePath Specify the full NetStorage path for the alternate response, including trailing file name.
+         * 
+         * @return builder
+         * 
+         */
         public Builder netStoragePath(@Nullable String netStoragePath) {
             $.netStoragePath = netStoragePath;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param throttledCpCode Specifies the CP code as an object.
+         * 
+         * @return builder
+         * 
+         */
         public Builder throttledCpCode(@Nullable GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationThrottledCpCode throttledCpCode) {
             $.throttledCpCode = throttledCpCode;
             return this;
         }
 
+        /**
+         * @param throttledStatusCode Specifies the HTTP response code for requests that receive the alternate response.
+         * 
+         * @return builder
+         * 
+         */
         public Builder throttledStatusCode(@Nullable Integer throttledStatusCode) {
             $.throttledStatusCode = throttledStatusCode;
             return this;
         }
 
+        /**
+         * @param useThrottledCpCode Specifies whether to apply an alternative CP code for requests served the alternate response.
+         * 
+         * @return builder
+         * 
+         */
         public Builder useThrottledCpCode(@Nullable Boolean useThrottledCpCode) {
             $.useThrottledCpCode = useThrottledCpCode;
             return this;
         }
 
+        /**
+         * @param useThrottledStatusCode Allows you to assign a specific HTTP response code to a throttled request.
+         * 
+         * @return builder
+         * 
+         */
         public Builder useThrottledStatusCode(@Nullable Boolean useThrottledStatusCode) {
             $.useThrottledStatusCode = useThrottledStatusCode;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

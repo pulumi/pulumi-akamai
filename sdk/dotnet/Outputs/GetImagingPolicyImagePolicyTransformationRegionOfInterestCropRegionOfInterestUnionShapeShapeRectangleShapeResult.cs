@@ -14,9 +14,21 @@ namespace Pulumi.Akamai.Outputs
     public sealed class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShapeResult
     {
         public readonly Outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShapeAnchorResult Anchor;
+        /// <summary>
+        /// Extends the rectangle down from the `anchor` point.
+        /// </summary>
         public readonly string? Height;
+        /// <summary>
+        /// Extends the rectangle down from the `anchor` point.
+        /// </summary>
         public readonly string? HeightVar;
+        /// <summary>
+        /// Extends the rectangle right from the `anchor` point.
+        /// </summary>
         public readonly string? Width;
+        /// <summary>
+        /// Extends the rectangle right from the `anchor` point.
+        /// </summary>
         public readonly string? WidthVar;
 
         [OutputConstructor]

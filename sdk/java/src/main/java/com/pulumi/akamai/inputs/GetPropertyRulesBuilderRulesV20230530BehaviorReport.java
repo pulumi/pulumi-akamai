@@ -16,93 +16,197 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorReport extends c
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorReport Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorReport();
 
+    /**
+     * This specifies the set of cookies names whose values you want to log.
+     * 
+     */
     @Import(name="cookies")
     private @Nullable List<String> cookies;
 
+    /**
+     * @return This specifies the set of cookies names whose values you want to log.
+     * 
+     */
     public Optional<List<String>> cookies() {
         return Optional.ofNullable(this.cookies);
     }
 
+    /**
+     * Specifies an additional data field to append to each log line, maximum 1000 bytes, typically based on a dynamically generated built-in system variable. For example, `round-trip: {{builtin.AK_CLIENT_TURNAROUND_TIME}}ms` logs the total time to complete the response. See `Support for variables` for more information. If you enable the `logCustom` behavior, it overrides the `customLogField` option.
+     * 
+     */
     @Import(name="customLogField")
     private @Nullable String customLogField;
 
+    /**
+     * @return Specifies an additional data field to append to each log line, maximum 1000 bytes, typically based on a dynamically generated built-in system variable. For example, `round-trip: {{builtin.AK_CLIENT_TURNAROUND_TIME}}ms` logs the total time to complete the response. See `Support for variables` for more information. If you enable the `logCustom` behavior, it overrides the `customLogField` option.
+     * 
+     */
     public Optional<String> customLogField() {
         return Optional.ofNullable(this.customLogField);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Log the `Accept-Language` header.
+     * 
+     */
     @Import(name="logAcceptLanguage")
     private @Nullable Boolean logAcceptLanguage;
 
+    /**
+     * @return Log the `Accept-Language` header.
+     * 
+     */
     public Optional<Boolean> logAcceptLanguage() {
         return Optional.ofNullable(this.logAcceptLanguage);
     }
 
+    /**
+     * Specifies the set of cookies to log.
+     * 
+     */
     @Import(name="logCookies")
     private @Nullable String logCookies;
 
+    /**
+     * @return Specifies the set of cookies to log.
+     * 
+     */
     public Optional<String> logCookies() {
         return Optional.ofNullable(this.logCookies);
     }
 
+    /**
+     * Whether to append additional custom data to each log line.
+     * 
+     */
     @Import(name="logCustomLogField")
     private @Nullable Boolean logCustomLogField;
 
+    /**
+     * @return Whether to append additional custom data to each log line.
+     * 
+     */
     public Optional<Boolean> logCustomLogField() {
         return Optional.ofNullable(this.logCustomLogField);
     }
 
+    /**
+     * Whether to log the IP address of the Akamai edge server that served the response to the client.
+     * 
+     */
     @Import(name="logEdgeIp")
     private @Nullable Boolean logEdgeIp;
 
+    /**
+     * @return Whether to log the IP address of the Akamai edge server that served the response to the client.
+     * 
+     */
     public Optional<Boolean> logEdgeIp() {
         return Optional.ofNullable(this.logEdgeIp);
     }
 
+    /**
+     * Log the `Host` header.
+     * 
+     */
     @Import(name="logHost")
     private @Nullable Boolean logHost;
 
+    /**
+     * @return Log the `Host` header.
+     * 
+     */
     public Optional<Boolean> logHost() {
         return Optional.ofNullable(this.logHost);
     }
 
+    /**
+     * Log the `Referer` header.
+     * 
+     */
     @Import(name="logReferer")
     private @Nullable Boolean logReferer;
 
+    /**
+     * @return Log the `Referer` header.
+     * 
+     */
     public Optional<Boolean> logReferer() {
         return Optional.ofNullable(this.logReferer);
     }
 
+    /**
+     * Log the `User-Agent` header.
+     * 
+     */
     @Import(name="logUserAgent")
     private @Nullable Boolean logUserAgent;
 
+    /**
+     * @return Log the `User-Agent` header.
+     * 
+     */
     public Optional<Boolean> logUserAgent() {
         return Optional.ofNullable(this.logUserAgent);
     }
 
+    /**
+     * Log any `X-Forwarded-For` request header.
+     * 
+     */
     @Import(name="logXForwardedFor")
     private @Nullable Boolean logXForwardedFor;
 
+    /**
+     * @return Log any `X-Forwarded-For` request header.
+     * 
+     */
     public Optional<Boolean> logXForwardedFor() {
         return Optional.ofNullable(this.logXForwardedFor);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -143,70 +247,154 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorReport extends c
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorReport(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param cookies This specifies the set of cookies names whose values you want to log.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cookies(@Nullable List<String> cookies) {
             $.cookies = cookies;
             return this;
         }
 
+        /**
+         * @param cookies This specifies the set of cookies names whose values you want to log.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cookies(String... cookies) {
             return cookies(List.of(cookies));
         }
 
+        /**
+         * @param customLogField Specifies an additional data field to append to each log line, maximum 1000 bytes, typically based on a dynamically generated built-in system variable. For example, `round-trip: {{builtin.AK_CLIENT_TURNAROUND_TIME}}ms` logs the total time to complete the response. See `Support for variables` for more information. If you enable the `logCustom` behavior, it overrides the `customLogField` option.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customLogField(@Nullable String customLogField) {
             $.customLogField = customLogField;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param logAcceptLanguage Log the `Accept-Language` header.
+         * 
+         * @return builder
+         * 
+         */
         public Builder logAcceptLanguage(@Nullable Boolean logAcceptLanguage) {
             $.logAcceptLanguage = logAcceptLanguage;
             return this;
         }
 
+        /**
+         * @param logCookies Specifies the set of cookies to log.
+         * 
+         * @return builder
+         * 
+         */
         public Builder logCookies(@Nullable String logCookies) {
             $.logCookies = logCookies;
             return this;
         }
 
+        /**
+         * @param logCustomLogField Whether to append additional custom data to each log line.
+         * 
+         * @return builder
+         * 
+         */
         public Builder logCustomLogField(@Nullable Boolean logCustomLogField) {
             $.logCustomLogField = logCustomLogField;
             return this;
         }
 
+        /**
+         * @param logEdgeIp Whether to log the IP address of the Akamai edge server that served the response to the client.
+         * 
+         * @return builder
+         * 
+         */
         public Builder logEdgeIp(@Nullable Boolean logEdgeIp) {
             $.logEdgeIp = logEdgeIp;
             return this;
         }
 
+        /**
+         * @param logHost Log the `Host` header.
+         * 
+         * @return builder
+         * 
+         */
         public Builder logHost(@Nullable Boolean logHost) {
             $.logHost = logHost;
             return this;
         }
 
+        /**
+         * @param logReferer Log the `Referer` header.
+         * 
+         * @return builder
+         * 
+         */
         public Builder logReferer(@Nullable Boolean logReferer) {
             $.logReferer = logReferer;
             return this;
         }
 
+        /**
+         * @param logUserAgent Log the `User-Agent` header.
+         * 
+         * @return builder
+         * 
+         */
         public Builder logUserAgent(@Nullable Boolean logUserAgent) {
             $.logUserAgent = logUserAgent;
             return this;
         }
 
+        /**
+         * @param logXForwardedFor Log any `X-Forwarded-For` request header.
+         * 
+         * @return builder
+         * 
+         */
         public Builder logXForwardedFor(@Nullable Boolean logXForwardedFor) {
             $.logXForwardedFor = logXForwardedFor;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

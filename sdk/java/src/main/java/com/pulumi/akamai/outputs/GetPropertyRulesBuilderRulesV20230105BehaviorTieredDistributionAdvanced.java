@@ -13,21 +13,49 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionAdvanced {
     private @Nullable Boolean allowall;
+    /**
+     * @return When enabled, activates tiered distribution.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
     private @Nullable String method;
     private @Nullable String policy;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return Optionally map the tiered parent server&#39;s location close to your origin: `CHEU2` for Europe; `CHAUS` for Australia; `CHAPAC` for China and the Asian Pacific area; `CHWUS2`, `CHCUS2`, and `CHEUS2` for different parts of the United States. Choose `CH` or `CH2` for a more global map. A narrower local map minimizes the origin server&#39;s load, and increases the likelihood the requested object is cached. A wider global map reduces end-user latency, but decreases the likelihood the requested object is in any given parent server&#39;s cache.  This option cannot apply if the property is marked as secure. See `Secure property requirements` for guidance.
+     * 
+     */
     private @Nullable String tieredDistributionMap;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionAdvanced() {}
     public Optional<Boolean> allowall() {
         return Optional.ofNullable(this.allowall);
     }
+    /**
+     * @return When enabled, activates tiered distribution.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
@@ -37,12 +65,24 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributi
     public Optional<String> policy() {
         return Optional.ofNullable(this.policy);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return Optionally map the tiered parent server&#39;s location close to your origin: `CHEU2` for Europe; `CHAUS` for Australia; `CHAPAC` for China and the Asian Pacific area; `CHWUS2`, `CHCUS2`, and `CHEUS2` for different parts of the United States. Choose `CH` or `CH2` for a more global map. A narrower local map minimizes the origin server&#39;s load, and increases the likelihood the requested object is cached. A wider global map reduces end-user latency, but decreases the likelihood the requested object is in any given parent server&#39;s cache.  This option cannot apply if the property is marked as secure. See `Secure property requirements` for guidance.
+     * 
+     */
     public Optional<String> tieredDistributionMap() {
         return Optional.ofNullable(this.tieredDistributionMap);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

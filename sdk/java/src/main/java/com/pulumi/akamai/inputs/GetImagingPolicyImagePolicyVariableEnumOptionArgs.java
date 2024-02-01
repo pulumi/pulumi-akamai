@@ -14,16 +14,32 @@ public final class GetImagingPolicyImagePolicyVariableEnumOptionArgs extends com
 
     public static final GetImagingPolicyImagePolicyVariableEnumOptionArgs Empty = new GetImagingPolicyImagePolicyVariableEnumOptionArgs();
 
+    /**
+     * The unique identifier for each enum value, up to 50 alphanumeric characters.
+     * 
+     */
     @Import(name="id", required=true)
     private Output<String> id;
 
+    /**
+     * @return The unique identifier for each enum value, up to 50 alphanumeric characters.
+     * 
+     */
     public Output<String> id() {
         return this.id;
     }
 
+    /**
+     * The value of the variable when the `id` is provided.
+     * 
+     */
     @Import(name="value", required=true)
     private Output<String> value;
 
+    /**
+     * @return The value of the variable when the `id` is provided.
+     * 
+     */
     public Output<String> value() {
         return this.value;
     }
@@ -53,20 +69,44 @@ public final class GetImagingPolicyImagePolicyVariableEnumOptionArgs extends com
             $ = new GetImagingPolicyImagePolicyVariableEnumOptionArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param id The unique identifier for each enum value, up to 50 alphanumeric characters.
+         * 
+         * @return builder
+         * 
+         */
         public Builder id(Output<String> id) {
             $.id = id;
             return this;
         }
 
+        /**
+         * @param id The unique identifier for each enum value, up to 50 alphanumeric characters.
+         * 
+         * @return builder
+         * 
+         */
         public Builder id(String id) {
             return id(Output.of(id));
         }
 
+        /**
+         * @param value The value of the variable when the `id` is provided.
+         * 
+         * @return builder
+         * 
+         */
         public Builder value(Output<String> value) {
             $.value = value;
             return this;
         }
 
+        /**
+         * @param value The value of the variable when the `id` is provided.
+         * 
+         * @return builder
+         * 
+         */
         public Builder value(String value) {
             return value(Output.of(value));
         }

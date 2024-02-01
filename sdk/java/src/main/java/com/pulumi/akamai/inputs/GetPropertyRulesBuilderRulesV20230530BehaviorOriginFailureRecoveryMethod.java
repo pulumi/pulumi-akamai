@@ -15,37 +15,77 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorOriginFailureRec
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorOriginFailureRecoveryMethod Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorOriginFailureRecoveryMethod();
 
+    /**
+     * Specifies the custom status code to be sent to the client.
+     * 
+     */
     @Import(name="customStatusCode")
     private @Nullable String customStatusCode;
 
+    /**
+     * @return Specifies the custom status code to be sent to the client.
+     * 
+     */
     public Optional<String> customStatusCode() {
         return Optional.ofNullable(this.customStatusCode);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Specifies the recovery method.
+     * 
+     */
     @Import(name="recoveryMethod")
     private @Nullable String recoveryMethod;
 
+    /**
+     * @return Specifies the recovery method.
+     * 
+     */
     public Optional<String> recoveryMethod() {
         return Optional.ofNullable(this.recoveryMethod);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -78,26 +118,56 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorOriginFailureRec
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorOriginFailureRecoveryMethod(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param customStatusCode Specifies the custom status code to be sent to the client.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customStatusCode(@Nullable String customStatusCode) {
             $.customStatusCode = customStatusCode;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param recoveryMethod Specifies the recovery method.
+         * 
+         * @return builder
+         * 
+         */
         public Builder recoveryMethod(@Nullable String recoveryMethod) {
             $.recoveryMethod = recoveryMethod;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

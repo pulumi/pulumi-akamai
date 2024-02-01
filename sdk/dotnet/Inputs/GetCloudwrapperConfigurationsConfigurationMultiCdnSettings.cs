@@ -12,25 +12,42 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Specify diagnostic data beacons details.
+        /// </summary>
         [Input("bocc")]
         public Inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBoccArgs? Bocc { get; set; }
 
         [Input("cdns")]
         private List<Inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnArgs>? _cdns;
+
+        /// <summary>
+        /// List of CDN added for the configuration.
+        /// </summary>
         public List<Inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnArgs> Cdns
         {
             get => _cdns ?? (_cdns = new List<Inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnArgs>());
             set => _cdns = value;
         }
 
+        /// <summary>
+        /// Specifies data streams details.
+        /// </summary>
         [Input("dataStreams")]
         public Inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreamsArgs? DataStreams { get; set; }
 
+        /// <summary>
+        /// Option to opt out of alerts based on soft limits of bandwidth usage.
+        /// </summary>
         [Input("enableSoftAlerts", required: true)]
         public bool EnableSoftAlerts { get; set; }
 
         [Input("origins")]
         private List<Inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOriginArgs>? _origins;
+
+        /// <summary>
+        /// List of origins corresponding to the properties selected in the configuration.
+        /// </summary>
         public List<Inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOriginArgs> Origins
         {
             get => _origins ?? (_origins = new List<Inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOriginArgs>());

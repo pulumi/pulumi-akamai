@@ -15,65 +15,137 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorVerifyJsonWebTok
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorVerifyJsonWebToken Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorVerifyJsonWebToken();
 
+    /**
+     * Verifies JWTs signed with the ES256 algorithm. This signature helps ensure that the token hasn&#39;t been tampered with.
+     * 
+     */
     @Import(name="enableEs256")
     private @Nullable Boolean enableEs256;
 
+    /**
+     * @return Verifies JWTs signed with the ES256 algorithm. This signature helps ensure that the token hasn&#39;t been tampered with.
+     * 
+     */
     public Optional<Boolean> enableEs256() {
         return Optional.ofNullable(this.enableEs256);
     }
 
+    /**
+     * Verifies JWTs signed with the RS256 algorithm. This signature helps ensure that the token hasn&#39;t been tampered with.
+     * 
+     */
     @Import(name="enableRs256")
     private @Nullable Boolean enableRs256;
 
+    /**
+     * @return Verifies JWTs signed with the RS256 algorithm. This signature helps ensure that the token hasn&#39;t been tampered with.
+     * 
+     */
     public Optional<Boolean> enableRs256() {
         return Optional.ofNullable(this.enableRs256);
     }
 
+    /**
+     * Specify from where to extract the JWT value.
+     * 
+     */
     @Import(name="extractLocation")
     private @Nullable String extractLocation;
 
+    /**
+     * @return Specify from where to extract the JWT value.
+     * 
+     */
     public Optional<String> extractLocation() {
         return Optional.ofNullable(this.extractLocation);
     }
 
+    /**
+     * This specifies the name of the header from which to extract the JWT value.
+     * 
+     */
     @Import(name="headerName")
     private @Nullable String headerName;
 
+    /**
+     * @return This specifies the name of the header from which to extract the JWT value.
+     * 
+     */
     public Optional<String> headerName() {
         return Optional.ofNullable(this.headerName);
     }
 
+    /**
+     * An identifier for the JWT keys collection.
+     * 
+     */
     @Import(name="jwt")
     private @Nullable String jwt;
 
+    /**
+     * @return An identifier for the JWT keys collection.
+     * 
+     */
     public Optional<String> jwt() {
         return Optional.ofNullable(this.jwt);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * This specifies the name of the query parameter from which to extract the JWT value.
+     * 
+     */
     @Import(name="queryParameterName")
     private @Nullable String queryParameterName;
 
+    /**
+     * @return This specifies the name of the query parameter from which to extract the JWT value.
+     * 
+     */
     public Optional<String> queryParameterName() {
         return Optional.ofNullable(this.queryParameterName);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -110,46 +182,100 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorVerifyJsonWebTok
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorVerifyJsonWebToken(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param enableEs256 Verifies JWTs signed with the ES256 algorithm. This signature helps ensure that the token hasn&#39;t been tampered with.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enableEs256(@Nullable Boolean enableEs256) {
             $.enableEs256 = enableEs256;
             return this;
         }
 
+        /**
+         * @param enableRs256 Verifies JWTs signed with the RS256 algorithm. This signature helps ensure that the token hasn&#39;t been tampered with.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enableRs256(@Nullable Boolean enableRs256) {
             $.enableRs256 = enableRs256;
             return this;
         }
 
+        /**
+         * @param extractLocation Specify from where to extract the JWT value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder extractLocation(@Nullable String extractLocation) {
             $.extractLocation = extractLocation;
             return this;
         }
 
+        /**
+         * @param headerName This specifies the name of the header from which to extract the JWT value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder headerName(@Nullable String headerName) {
             $.headerName = headerName;
             return this;
         }
 
+        /**
+         * @param jwt An identifier for the JWT keys collection.
+         * 
+         * @return builder
+         * 
+         */
         public Builder jwt(@Nullable String jwt) {
             $.jwt = jwt;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param queryParameterName This specifies the name of the query parameter from which to extract the JWT value.
+         * 
+         * @return builder
+         * 
+         */
         public Builder queryParameterName(@Nullable String queryParameterName) {
             $.queryParameterName = queryParameterName;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

@@ -14,15 +14,25 @@ namespace Pulumi.Akamai.Inputs
     {
         [Input("dataStreamIds", required: true)]
         private InputList<int>? _dataStreamIds;
+
+        /// <summary>
+        /// Unique identifiers of the Data Streams.
+        /// </summary>
         public InputList<int> DataStreamIds
         {
             get => _dataStreamIds ?? (_dataStreamIds = new InputList<int>());
             set => _dataStreamIds = value;
         }
 
+        /// <summary>
+        /// Enables DataStream reporting.
+        /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
 
+        /// <summary>
+        /// Specifies the percentage of log data you want to collect for this configuration.
+        /// </summary>
         [Input("samplingRate", required: true)]
         public Input<int> SamplingRate { get; set; } = null!;
 

@@ -12,39 +12,75 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorModifyIncomingRequestHeaderArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Either `ADD`, `DELETE`, `MODIFY`, or `PASS` incoming HTTP request headers.
+        /// </summary>
         [Input("action")]
         public string? Action { get; set; }
 
+        /// <summary>
+        /// When enabled with the `action` set to `MODIFY`, prevents creation of more than one instance of a header.
+        /// </summary>
         [Input("avoidDuplicateHeaders")]
         public bool? AvoidDuplicateHeaders { get; set; }
 
+        /// <summary>
+        /// Specifies a custom field name that applies when the relevant `standard` header name is set to `OTHER`.
+        /// </summary>
         [Input("customHeaderName")]
         public string? CustomHeaderName { get; set; }
 
+        /// <summary>
+        /// Specifies the new header value.
+        /// </summary>
         [Input("headerValue")]
         public string? HeaderValue { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public bool? Locked { get; set; }
 
+        /// <summary>
+        /// Supplies an HTTP header replacement value.
+        /// </summary>
         [Input("newHeaderValue")]
         public string? NewHeaderValue { get; set; }
 
+        /// <summary>
+        /// If the value of `action` is `ADD`, this specifies the name of the field to add.
+        /// </summary>
         [Input("standardAddHeaderName")]
         public string? StandardAddHeaderName { get; set; }
 
+        /// <summary>
+        /// If the value of `action` is `DELETE`, this specifies the name of the field to remove.
+        /// </summary>
         [Input("standardDeleteHeaderName")]
         public string? StandardDeleteHeaderName { get; set; }
 
+        /// <summary>
+        /// If the value of `action` is `MODIFY`, this specifies the name of the field to modify.
+        /// </summary>
         [Input("standardModifyHeaderName")]
         public string? StandardModifyHeaderName { get; set; }
 
+        /// <summary>
+        /// If the value of `action` is `PASS`, this specifies the name of the field to pass through.
+        /// </summary>
         [Input("standardPassHeaderName")]
         public string? StandardPassHeaderName { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public string? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public string? Uuid { get; set; }
 

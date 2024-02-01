@@ -14,221 +14,653 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorMediaOriginFailover {
+    /**
+     * @return When enabled, caches the error response.
+     * 
+     */
     private @Nullable Boolean cacheErrorResponse;
+    /**
+     * @return This sets error response&#39;s TTL.
+     * 
+     */
     private @Nullable String cacheWindow;
+    /**
+     * @return Specifies the response code served to the client.
+     * 
+     */
     private @Nullable String clientResponseCode;
+    /**
+     * @return Allows you to configure failover settings when the origin has content errors.
+     * 
+     */
     private @Nullable Boolean detectObjectUnavailable;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String detectObjectUnavailableTitle;
+    /**
+     * @return Allows you to configure failover settings when the origin server responds with errors.
+     * 
+     */
     private @Nullable Boolean detectOriginUnavailable;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String detectOriginUnavailableTitle;
+    /**
+     * @return Allows you to configure what happens when the origin is unresponsive.
+     * 
+     */
     private @Nullable Boolean detectOriginUnresponsive;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String detectOriginUnresponsiveTitle;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return This specifies the redirect&#39;s destination hostname.
+     * 
+     */
     private @Nullable String objectUnavailableAlternateHost;
+    /**
+     * @return This specifies the origin hostname.
+     * 
+     */
     private @Nullable String objectUnavailableBackupHost;
+    /**
+     * @return Enabling this blacklists the origin&#39;s IP address.
+     * 
+     */
     private @Nullable Boolean objectUnavailableBlacklistOriginIp;
+    /**
+     * @return This sets the delay before blacklisting an IP address.
+     * 
+     */
     private @Nullable String objectUnavailableBlacklistWindow;
+    /**
+     * @return Changes the request protocol.
+     * 
+     */
     private @Nullable Boolean objectUnavailableChangeProtocol;
+    /**
+     * @return Specify `RESPONSE_CODES`, the only available option.
+     * 
+     */
     private @Nullable String objectUnavailableDetectionLevel;
+    /**
+     * @return Enabling this includes the original set of query parameters.
+     * 
+     */
     private @Nullable Boolean objectUnavailableIncludeQueryString;
+    /**
+     * @return This specifies the path to form the new URL.
+     * 
+     */
     private @Nullable String objectUnavailableModifiedPath;
+    /**
+     * @return Enabling this allows you to modify the request path.
+     * 
+     */
     private @Nullable Boolean objectUnavailableModifyRequestPath;
+    /**
+     * @return Specifies either the `HTTP` or `HTTPS` protocol.
+     * 
+     */
     private @Nullable String objectUnavailableProtocol;
+    /**
+     * @return This sets the recovery option.
+     * 
+     */
     private @Nullable String objectUnavailableRecovery;
+    /**
+     * @return Specifies a redirect response code.
+     * 
+     */
     private @Nullable Integer objectUnavailableRedirectMethod;
+    /**
+     * @return Specifies the set of response codes identifying when there are content errors.
+     * 
+     */
     private @Nullable List<String> objectUnavailableResponseCodes;
+    /**
+     * @return Sets how many times to retry.
+     * 
+     */
     private @Nullable String objectUnavailableRetryLimit;
+    /**
+     * @return This specifies the redirect&#39;s destination hostname.
+     * 
+     */
     private @Nullable String originUnavailableAlternateHost;
+    /**
+     * @return This specifies the origin hostname.
+     * 
+     */
     private @Nullable String originUnavailableBackupHost;
+    /**
+     * @return Enabling this blacklists the origin&#39;s IP address.
+     * 
+     */
     private @Nullable Boolean originUnavailableBlacklistOriginIp;
+    /**
+     * @return This sets the delay before blacklisting an IP address.
+     * 
+     */
     private @Nullable String originUnavailableBlacklistWindow;
+    /**
+     * @return Modifies the request protocol.
+     * 
+     */
     private @Nullable Boolean originUnavailableChangeProtocol;
+    /**
+     * @return Specify `RESPONSE_CODES`, the only available option.
+     * 
+     */
     private @Nullable String originUnavailableDetectionLevel;
+    /**
+     * @return Enabling this includes the original set of query parameters.
+     * 
+     */
     private @Nullable Boolean originUnavailableIncludeQueryString;
+    /**
+     * @return This specifies the path to form the new URL.
+     * 
+     */
     private @Nullable String originUnavailableModifiedPath;
+    /**
+     * @return Modifies the request path.
+     * 
+     */
     private @Nullable Boolean originUnavailableModifyRequestPath;
+    /**
+     * @return Specifies either the `HTTP` or `HTTPS` protocol.
+     * 
+     */
     private @Nullable String originUnavailableProtocol;
+    /**
+     * @return This sets the recovery option.
+     * 
+     */
     private @Nullable String originUnavailableRecovery;
+    /**
+     * @return Specifies either a redirect response code.
+     * 
+     */
     private @Nullable Integer originUnavailableRedirectMethod;
+    /**
+     * @return Specifies the set of response codes identifying when the origin responds with errors.
+     * 
+     */
     private @Nullable List<String> originUnavailableResponseCodes;
+    /**
+     * @return Sets how many times to retry.
+     * 
+     */
     private @Nullable String originUnavailableRetryLimit;
+    /**
+     * @return This specifies the redirect&#39;s destination hostname.
+     * 
+     */
     private @Nullable String originUnresponsiveAlternateHost;
+    /**
+     * @return This specifies the origin hostname.
+     * 
+     */
     private @Nullable String originUnresponsiveBackupHost;
+    /**
+     * @return Enabling this blacklists the origin&#39;s IP address.
+     * 
+     */
     private @Nullable Boolean originUnresponsiveBlacklistOriginIp;
+    /**
+     * @return This sets the delay before blacklisting an IP address.
+     * 
+     */
     private @Nullable String originUnresponsiveBlacklistWindow;
+    /**
+     * @return This allows you to change the request protocol.
+     * 
+     */
     private @Nullable Boolean originUnresponsiveChangeProtocol;
+    /**
+     * @return Specify the level of response to slow origin connections.
+     * 
+     */
     private @Nullable String originUnresponsiveDetectionLevel;
+    /**
+     * @return Enabling this includes the original set of query parameters.
+     * 
+     */
     private @Nullable Boolean originUnresponsiveIncludeQueryString;
+    /**
+     * @return This specifies the path to form the new URL.
+     * 
+     */
     private @Nullable String originUnresponsiveModifiedPath;
+    /**
+     * @return Modifies the request path.
+     * 
+     */
     private @Nullable Boolean originUnresponsiveModifyRequestPath;
+    /**
+     * @return Specifies which protocol to use.
+     * 
+     */
     private @Nullable String originUnresponsiveProtocol;
+    /**
+     * @return This sets the recovery option.
+     * 
+     */
     private @Nullable String originUnresponsiveRecovery;
+    /**
+     * @return Specifies the redirect response code.
+     * 
+     */
     private @Nullable Integer originUnresponsiveRedirectMethod;
+    /**
+     * @return Sets how many times to retry.
+     * 
+     */
     private @Nullable String originUnresponsiveRetryLimit;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String otherOptions;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorMediaOriginFailover() {}
+    /**
+     * @return When enabled, caches the error response.
+     * 
+     */
     public Optional<Boolean> cacheErrorResponse() {
         return Optional.ofNullable(this.cacheErrorResponse);
     }
+    /**
+     * @return This sets error response&#39;s TTL.
+     * 
+     */
     public Optional<String> cacheWindow() {
         return Optional.ofNullable(this.cacheWindow);
     }
+    /**
+     * @return Specifies the response code served to the client.
+     * 
+     */
     public Optional<String> clientResponseCode() {
         return Optional.ofNullable(this.clientResponseCode);
     }
+    /**
+     * @return Allows you to configure failover settings when the origin has content errors.
+     * 
+     */
     public Optional<Boolean> detectObjectUnavailable() {
         return Optional.ofNullable(this.detectObjectUnavailable);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> detectObjectUnavailableTitle() {
         return Optional.ofNullable(this.detectObjectUnavailableTitle);
     }
+    /**
+     * @return Allows you to configure failover settings when the origin server responds with errors.
+     * 
+     */
     public Optional<Boolean> detectOriginUnavailable() {
         return Optional.ofNullable(this.detectOriginUnavailable);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> detectOriginUnavailableTitle() {
         return Optional.ofNullable(this.detectOriginUnavailableTitle);
     }
+    /**
+     * @return Allows you to configure what happens when the origin is unresponsive.
+     * 
+     */
     public Optional<Boolean> detectOriginUnresponsive() {
         return Optional.ofNullable(this.detectOriginUnresponsive);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> detectOriginUnresponsiveTitle() {
         return Optional.ofNullable(this.detectOriginUnresponsiveTitle);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return This specifies the redirect&#39;s destination hostname.
+     * 
+     */
     public Optional<String> objectUnavailableAlternateHost() {
         return Optional.ofNullable(this.objectUnavailableAlternateHost);
     }
+    /**
+     * @return This specifies the origin hostname.
+     * 
+     */
     public Optional<String> objectUnavailableBackupHost() {
         return Optional.ofNullable(this.objectUnavailableBackupHost);
     }
+    /**
+     * @return Enabling this blacklists the origin&#39;s IP address.
+     * 
+     */
     public Optional<Boolean> objectUnavailableBlacklistOriginIp() {
         return Optional.ofNullable(this.objectUnavailableBlacklistOriginIp);
     }
+    /**
+     * @return This sets the delay before blacklisting an IP address.
+     * 
+     */
     public Optional<String> objectUnavailableBlacklistWindow() {
         return Optional.ofNullable(this.objectUnavailableBlacklistWindow);
     }
+    /**
+     * @return Changes the request protocol.
+     * 
+     */
     public Optional<Boolean> objectUnavailableChangeProtocol() {
         return Optional.ofNullable(this.objectUnavailableChangeProtocol);
     }
+    /**
+     * @return Specify `RESPONSE_CODES`, the only available option.
+     * 
+     */
     public Optional<String> objectUnavailableDetectionLevel() {
         return Optional.ofNullable(this.objectUnavailableDetectionLevel);
     }
+    /**
+     * @return Enabling this includes the original set of query parameters.
+     * 
+     */
     public Optional<Boolean> objectUnavailableIncludeQueryString() {
         return Optional.ofNullable(this.objectUnavailableIncludeQueryString);
     }
+    /**
+     * @return This specifies the path to form the new URL.
+     * 
+     */
     public Optional<String> objectUnavailableModifiedPath() {
         return Optional.ofNullable(this.objectUnavailableModifiedPath);
     }
+    /**
+     * @return Enabling this allows you to modify the request path.
+     * 
+     */
     public Optional<Boolean> objectUnavailableModifyRequestPath() {
         return Optional.ofNullable(this.objectUnavailableModifyRequestPath);
     }
+    /**
+     * @return Specifies either the `HTTP` or `HTTPS` protocol.
+     * 
+     */
     public Optional<String> objectUnavailableProtocol() {
         return Optional.ofNullable(this.objectUnavailableProtocol);
     }
+    /**
+     * @return This sets the recovery option.
+     * 
+     */
     public Optional<String> objectUnavailableRecovery() {
         return Optional.ofNullable(this.objectUnavailableRecovery);
     }
+    /**
+     * @return Specifies a redirect response code.
+     * 
+     */
     public Optional<Integer> objectUnavailableRedirectMethod() {
         return Optional.ofNullable(this.objectUnavailableRedirectMethod);
     }
+    /**
+     * @return Specifies the set of response codes identifying when there are content errors.
+     * 
+     */
     public List<String> objectUnavailableResponseCodes() {
         return this.objectUnavailableResponseCodes == null ? List.of() : this.objectUnavailableResponseCodes;
     }
+    /**
+     * @return Sets how many times to retry.
+     * 
+     */
     public Optional<String> objectUnavailableRetryLimit() {
         return Optional.ofNullable(this.objectUnavailableRetryLimit);
     }
+    /**
+     * @return This specifies the redirect&#39;s destination hostname.
+     * 
+     */
     public Optional<String> originUnavailableAlternateHost() {
         return Optional.ofNullable(this.originUnavailableAlternateHost);
     }
+    /**
+     * @return This specifies the origin hostname.
+     * 
+     */
     public Optional<String> originUnavailableBackupHost() {
         return Optional.ofNullable(this.originUnavailableBackupHost);
     }
+    /**
+     * @return Enabling this blacklists the origin&#39;s IP address.
+     * 
+     */
     public Optional<Boolean> originUnavailableBlacklistOriginIp() {
         return Optional.ofNullable(this.originUnavailableBlacklistOriginIp);
     }
+    /**
+     * @return This sets the delay before blacklisting an IP address.
+     * 
+     */
     public Optional<String> originUnavailableBlacklistWindow() {
         return Optional.ofNullable(this.originUnavailableBlacklistWindow);
     }
+    /**
+     * @return Modifies the request protocol.
+     * 
+     */
     public Optional<Boolean> originUnavailableChangeProtocol() {
         return Optional.ofNullable(this.originUnavailableChangeProtocol);
     }
+    /**
+     * @return Specify `RESPONSE_CODES`, the only available option.
+     * 
+     */
     public Optional<String> originUnavailableDetectionLevel() {
         return Optional.ofNullable(this.originUnavailableDetectionLevel);
     }
+    /**
+     * @return Enabling this includes the original set of query parameters.
+     * 
+     */
     public Optional<Boolean> originUnavailableIncludeQueryString() {
         return Optional.ofNullable(this.originUnavailableIncludeQueryString);
     }
+    /**
+     * @return This specifies the path to form the new URL.
+     * 
+     */
     public Optional<String> originUnavailableModifiedPath() {
         return Optional.ofNullable(this.originUnavailableModifiedPath);
     }
+    /**
+     * @return Modifies the request path.
+     * 
+     */
     public Optional<Boolean> originUnavailableModifyRequestPath() {
         return Optional.ofNullable(this.originUnavailableModifyRequestPath);
     }
+    /**
+     * @return Specifies either the `HTTP` or `HTTPS` protocol.
+     * 
+     */
     public Optional<String> originUnavailableProtocol() {
         return Optional.ofNullable(this.originUnavailableProtocol);
     }
+    /**
+     * @return This sets the recovery option.
+     * 
+     */
     public Optional<String> originUnavailableRecovery() {
         return Optional.ofNullable(this.originUnavailableRecovery);
     }
+    /**
+     * @return Specifies either a redirect response code.
+     * 
+     */
     public Optional<Integer> originUnavailableRedirectMethod() {
         return Optional.ofNullable(this.originUnavailableRedirectMethod);
     }
+    /**
+     * @return Specifies the set of response codes identifying when the origin responds with errors.
+     * 
+     */
     public List<String> originUnavailableResponseCodes() {
         return this.originUnavailableResponseCodes == null ? List.of() : this.originUnavailableResponseCodes;
     }
+    /**
+     * @return Sets how many times to retry.
+     * 
+     */
     public Optional<String> originUnavailableRetryLimit() {
         return Optional.ofNullable(this.originUnavailableRetryLimit);
     }
+    /**
+     * @return This specifies the redirect&#39;s destination hostname.
+     * 
+     */
     public Optional<String> originUnresponsiveAlternateHost() {
         return Optional.ofNullable(this.originUnresponsiveAlternateHost);
     }
+    /**
+     * @return This specifies the origin hostname.
+     * 
+     */
     public Optional<String> originUnresponsiveBackupHost() {
         return Optional.ofNullable(this.originUnresponsiveBackupHost);
     }
+    /**
+     * @return Enabling this blacklists the origin&#39;s IP address.
+     * 
+     */
     public Optional<Boolean> originUnresponsiveBlacklistOriginIp() {
         return Optional.ofNullable(this.originUnresponsiveBlacklistOriginIp);
     }
+    /**
+     * @return This sets the delay before blacklisting an IP address.
+     * 
+     */
     public Optional<String> originUnresponsiveBlacklistWindow() {
         return Optional.ofNullable(this.originUnresponsiveBlacklistWindow);
     }
+    /**
+     * @return This allows you to change the request protocol.
+     * 
+     */
     public Optional<Boolean> originUnresponsiveChangeProtocol() {
         return Optional.ofNullable(this.originUnresponsiveChangeProtocol);
     }
+    /**
+     * @return Specify the level of response to slow origin connections.
+     * 
+     */
     public Optional<String> originUnresponsiveDetectionLevel() {
         return Optional.ofNullable(this.originUnresponsiveDetectionLevel);
     }
+    /**
+     * @return Enabling this includes the original set of query parameters.
+     * 
+     */
     public Optional<Boolean> originUnresponsiveIncludeQueryString() {
         return Optional.ofNullable(this.originUnresponsiveIncludeQueryString);
     }
+    /**
+     * @return This specifies the path to form the new URL.
+     * 
+     */
     public Optional<String> originUnresponsiveModifiedPath() {
         return Optional.ofNullable(this.originUnresponsiveModifiedPath);
     }
+    /**
+     * @return Modifies the request path.
+     * 
+     */
     public Optional<Boolean> originUnresponsiveModifyRequestPath() {
         return Optional.ofNullable(this.originUnresponsiveModifyRequestPath);
     }
+    /**
+     * @return Specifies which protocol to use.
+     * 
+     */
     public Optional<String> originUnresponsiveProtocol() {
         return Optional.ofNullable(this.originUnresponsiveProtocol);
     }
+    /**
+     * @return This sets the recovery option.
+     * 
+     */
     public Optional<String> originUnresponsiveRecovery() {
         return Optional.ofNullable(this.originUnresponsiveRecovery);
     }
+    /**
+     * @return Specifies the redirect response code.
+     * 
+     */
     public Optional<Integer> originUnresponsiveRedirectMethod() {
         return Optional.ofNullable(this.originUnresponsiveRedirectMethod);
     }
+    /**
+     * @return Sets how many times to retry.
+     * 
+     */
     public Optional<String> originUnresponsiveRetryLimit() {
         return Optional.ofNullable(this.originUnresponsiveRetryLimit);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> otherOptions() {
         return Optional.ofNullable(this.otherOptions);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

@@ -16,30 +16,62 @@ public final class GetImagingPolicyImagePolicyTransformationAppend extends com.p
 
     public static final GetImagingPolicyImagePolicyTransformationAppend Empty = new GetImagingPolicyImagePolicyTransformationAppend();
 
+    /**
+     * Specifies where to place the `image` relative to the source image. The available values represent the eight cardinal directions (`North`, `South`, `East`, `West`, `NorthEast`, `NorthWest`, `SouthEast`, `SouthWest`) and a `Center` by default.
+     * 
+     */
     @Import(name="gravity")
     private @Nullable String gravity;
 
+    /**
+     * @return Specifies where to place the `image` relative to the source image. The available values represent the eight cardinal directions (`North`, `South`, `East`, `West`, `NorthEast`, `NorthWest`, `SouthEast`, `SouthWest`) and a `Center` by default.
+     * 
+     */
     public Optional<String> gravity() {
         return Optional.ofNullable(this.gravity);
     }
 
+    /**
+     * Determines the exact placement of the `image` when `gravity` is `Center` or a diagonal. The value is either `horizontal` or `vertical`. Use `horizontal` to append an `image` east or west of the source image. This aligns the `image` on the vertical gravity component, placing `Center` gravity east. Use `vertical` to append an `image` north or south of the source image. This aligns the `image` on the horizontal gravity component, placing `Center` gravity south.
+     * 
+     */
     @Import(name="gravityPriority")
     private @Nullable String gravityPriority;
 
+    /**
+     * @return Determines the exact placement of the `image` when `gravity` is `Center` or a diagonal. The value is either `horizontal` or `vertical`. Use `horizontal` to append an `image` east or west of the source image. This aligns the `image` on the vertical gravity component, placing `Center` gravity east. Use `vertical` to append an `image` north or south of the source image. This aligns the `image` on the horizontal gravity component, placing `Center` gravity south.
+     * 
+     */
     public Optional<String> gravityPriority() {
         return Optional.ofNullable(this.gravityPriority);
     }
 
+    /**
+     * Determines the exact placement of the `image` when `gravity` is `Center` or a diagonal. The value is either `horizontal` or `vertical`. Use `horizontal` to append an `image` east or west of the source image. This aligns the `image` on the vertical gravity component, placing `Center` gravity east. Use `vertical` to append an `image` north or south of the source image. This aligns the `image` on the horizontal gravity component, placing `Center` gravity south.
+     * 
+     */
     @Import(name="gravityPriorityVar")
     private @Nullable String gravityPriorityVar;
 
+    /**
+     * @return Determines the exact placement of the `image` when `gravity` is `Center` or a diagonal. The value is either `horizontal` or `vertical`. Use `horizontal` to append an `image` east or west of the source image. This aligns the `image` on the vertical gravity component, placing `Center` gravity east. Use `vertical` to append an `image` north or south of the source image. This aligns the `image` on the horizontal gravity component, placing `Center` gravity south.
+     * 
+     */
     public Optional<String> gravityPriorityVar() {
         return Optional.ofNullable(this.gravityPriorityVar);
     }
 
+    /**
+     * Specifies where to place the `image` relative to the source image. The available values represent the eight cardinal directions (`North`, `South`, `East`, `West`, `NorthEast`, `NorthWest`, `SouthEast`, `SouthWest`) and a `Center` by default.
+     * 
+     */
     @Import(name="gravityVar")
     private @Nullable String gravityVar;
 
+    /**
+     * @return Specifies where to place the `image` relative to the source image. The available values represent the eight cardinal directions (`North`, `South`, `East`, `West`, `NorthEast`, `NorthWest`, `SouthEast`, `SouthWest`) and a `Center` by default.
+     * 
+     */
     public Optional<String> gravityVar() {
         return Optional.ofNullable(this.gravityVar);
     }
@@ -51,16 +83,32 @@ public final class GetImagingPolicyImagePolicyTransformationAppend extends com.p
         return this.image;
     }
 
+    /**
+     * Whether to preserve the source image&#39;s minor dimension, `false` by default. The minor dimension is the dimension opposite the dimension that the appending `image` is placed. For example, the dimensions of the source image are 100 &amp;times; 100 pixels. The dimensions of the appending `image` are 50 &amp;times; 150 pixels. The `gravity` is set to `East`. This makes the major dimension horizontal and the source image&#39;s minor dimension vertical. To preserve the source image&#39;s minor dimension at 100 pixels, the `preserveMinorDimension` is set to `true`. As a result of the append, the major dimension expanded with the appended image to 150 pixels. The source image&#39;s minor dimension was maintained at 100 pixels. The total combined dimension of the image is 150 &amp;times; 100 pixels.
+     * 
+     */
     @Import(name="preserveMinorDimension")
     private @Nullable String preserveMinorDimension;
 
+    /**
+     * @return Whether to preserve the source image&#39;s minor dimension, `false` by default. The minor dimension is the dimension opposite the dimension that the appending `image` is placed. For example, the dimensions of the source image are 100 &amp;times; 100 pixels. The dimensions of the appending `image` are 50 &amp;times; 150 pixels. The `gravity` is set to `East`. This makes the major dimension horizontal and the source image&#39;s minor dimension vertical. To preserve the source image&#39;s minor dimension at 100 pixels, the `preserveMinorDimension` is set to `true`. As a result of the append, the major dimension expanded with the appended image to 150 pixels. The source image&#39;s minor dimension was maintained at 100 pixels. The total combined dimension of the image is 150 &amp;times; 100 pixels.
+     * 
+     */
     public Optional<String> preserveMinorDimension() {
         return Optional.ofNullable(this.preserveMinorDimension);
     }
 
+    /**
+     * Whether to preserve the source image&#39;s minor dimension, `false` by default. The minor dimension is the dimension opposite the dimension that the appending `image` is placed. For example, the dimensions of the source image are 100 &amp;times; 100 pixels. The dimensions of the appending `image` are 50 &amp;times; 150 pixels. The `gravity` is set to `East`. This makes the major dimension horizontal and the source image&#39;s minor dimension vertical. To preserve the source image&#39;s minor dimension at 100 pixels, the `preserveMinorDimension` is set to `true`. As a result of the append, the major dimension expanded with the appended image to 150 pixels. The source image&#39;s minor dimension was maintained at 100 pixels. The total combined dimension of the image is 150 &amp;times; 100 pixels.
+     * 
+     */
     @Import(name="preserveMinorDimensionVar")
     private @Nullable String preserveMinorDimensionVar;
 
+    /**
+     * @return Whether to preserve the source image&#39;s minor dimension, `false` by default. The minor dimension is the dimension opposite the dimension that the appending `image` is placed. For example, the dimensions of the source image are 100 &amp;times; 100 pixels. The dimensions of the appending `image` are 50 &amp;times; 150 pixels. The `gravity` is set to `East`. This makes the major dimension horizontal and the source image&#39;s minor dimension vertical. To preserve the source image&#39;s minor dimension at 100 pixels, the `preserveMinorDimension` is set to `true`. As a result of the append, the major dimension expanded with the appended image to 150 pixels. The source image&#39;s minor dimension was maintained at 100 pixels. The total combined dimension of the image is 150 &amp;times; 100 pixels.
+     * 
+     */
     public Optional<String> preserveMinorDimensionVar() {
         return Optional.ofNullable(this.preserveMinorDimensionVar);
     }
@@ -95,21 +143,45 @@ public final class GetImagingPolicyImagePolicyTransformationAppend extends com.p
             $ = new GetImagingPolicyImagePolicyTransformationAppend(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param gravity Specifies where to place the `image` relative to the source image. The available values represent the eight cardinal directions (`North`, `South`, `East`, `West`, `NorthEast`, `NorthWest`, `SouthEast`, `SouthWest`) and a `Center` by default.
+         * 
+         * @return builder
+         * 
+         */
         public Builder gravity(@Nullable String gravity) {
             $.gravity = gravity;
             return this;
         }
 
+        /**
+         * @param gravityPriority Determines the exact placement of the `image` when `gravity` is `Center` or a diagonal. The value is either `horizontal` or `vertical`. Use `horizontal` to append an `image` east or west of the source image. This aligns the `image` on the vertical gravity component, placing `Center` gravity east. Use `vertical` to append an `image` north or south of the source image. This aligns the `image` on the horizontal gravity component, placing `Center` gravity south.
+         * 
+         * @return builder
+         * 
+         */
         public Builder gravityPriority(@Nullable String gravityPriority) {
             $.gravityPriority = gravityPriority;
             return this;
         }
 
+        /**
+         * @param gravityPriorityVar Determines the exact placement of the `image` when `gravity` is `Center` or a diagonal. The value is either `horizontal` or `vertical`. Use `horizontal` to append an `image` east or west of the source image. This aligns the `image` on the vertical gravity component, placing `Center` gravity east. Use `vertical` to append an `image` north or south of the source image. This aligns the `image` on the horizontal gravity component, placing `Center` gravity south.
+         * 
+         * @return builder
+         * 
+         */
         public Builder gravityPriorityVar(@Nullable String gravityPriorityVar) {
             $.gravityPriorityVar = gravityPriorityVar;
             return this;
         }
 
+        /**
+         * @param gravityVar Specifies where to place the `image` relative to the source image. The available values represent the eight cardinal directions (`North`, `South`, `East`, `West`, `NorthEast`, `NorthWest`, `SouthEast`, `SouthWest`) and a `Center` by default.
+         * 
+         * @return builder
+         * 
+         */
         public Builder gravityVar(@Nullable String gravityVar) {
             $.gravityVar = gravityVar;
             return this;
@@ -120,11 +192,23 @@ public final class GetImagingPolicyImagePolicyTransformationAppend extends com.p
             return this;
         }
 
+        /**
+         * @param preserveMinorDimension Whether to preserve the source image&#39;s minor dimension, `false` by default. The minor dimension is the dimension opposite the dimension that the appending `image` is placed. For example, the dimensions of the source image are 100 &amp;times; 100 pixels. The dimensions of the appending `image` are 50 &amp;times; 150 pixels. The `gravity` is set to `East`. This makes the major dimension horizontal and the source image&#39;s minor dimension vertical. To preserve the source image&#39;s minor dimension at 100 pixels, the `preserveMinorDimension` is set to `true`. As a result of the append, the major dimension expanded with the appended image to 150 pixels. The source image&#39;s minor dimension was maintained at 100 pixels. The total combined dimension of the image is 150 &amp;times; 100 pixels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder preserveMinorDimension(@Nullable String preserveMinorDimension) {
             $.preserveMinorDimension = preserveMinorDimension;
             return this;
         }
 
+        /**
+         * @param preserveMinorDimensionVar Whether to preserve the source image&#39;s minor dimension, `false` by default. The minor dimension is the dimension opposite the dimension that the appending `image` is placed. For example, the dimensions of the source image are 100 &amp;times; 100 pixels. The dimensions of the appending `image` are 50 &amp;times; 150 pixels. The `gravity` is set to `East`. This makes the major dimension horizontal and the source image&#39;s minor dimension vertical. To preserve the source image&#39;s minor dimension at 100 pixels, the `preserveMinorDimension` is set to `true`. As a result of the append, the major dimension expanded with the appended image to 150 pixels. The source image&#39;s minor dimension was maintained at 100 pixels. The total combined dimension of the image is 150 &amp;times; 100 pixels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder preserveMinorDimensionVar(@Nullable String preserveMinorDimensionVar) {
             $.preserveMinorDimensionVar = preserveMinorDimensionVar;
             return this;

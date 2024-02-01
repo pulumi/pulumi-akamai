@@ -13,37 +13,101 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530CriterionServerLocation {
+    /**
+     * @return Continent codes.
+     * 
+     */
     private @Nullable List<String> continents;
+    /**
+     * @return ISO 3166-1 country codes, such as `US` or `CN`.
+     * 
+     */
     private @Nullable List<String> countries;
+    /**
+     * @return Indicates the geographic scope.
+     * 
+     */
     private @Nullable String locationType;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Matches the specified set of values when set to `IS_ONE_OF`, otherwise `IS_NOT_ONE_OF` reverses the match.
+     * 
+     */
     private @Nullable String matchOperator;
+    /**
+     * @return ISO 3166 country and region codes, for example `US:MA` for Massachusetts or `JP:13` for Tokyo.
+     * 
+     */
     private @Nullable List<String> regions;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530CriterionServerLocation() {}
+    /**
+     * @return Continent codes.
+     * 
+     */
     public List<String> continents() {
         return this.continents == null ? List.of() : this.continents;
     }
+    /**
+     * @return ISO 3166-1 country codes, such as `US` or `CN`.
+     * 
+     */
     public List<String> countries() {
         return this.countries == null ? List.of() : this.countries;
     }
+    /**
+     * @return Indicates the geographic scope.
+     * 
+     */
     public Optional<String> locationType() {
         return Optional.ofNullable(this.locationType);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Matches the specified set of values when set to `IS_ONE_OF`, otherwise `IS_NOT_ONE_OF` reverses the match.
+     * 
+     */
     public Optional<String> matchOperator() {
         return Optional.ofNullable(this.matchOperator);
     }
+    /**
+     * @return ISO 3166 country and region codes, for example `US:MA` for Massachusetts or `JP:13` for Tokyo.
+     * 
+     */
     public List<String> regions() {
         return this.regions == null ? List.of() : this.regions;
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

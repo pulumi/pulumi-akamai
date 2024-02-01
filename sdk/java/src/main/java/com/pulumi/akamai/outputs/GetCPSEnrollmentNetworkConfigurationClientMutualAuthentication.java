@@ -11,17 +11,41 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCPSEnrollmentNetworkConfigurationClientMutualAuthentication {
+    /**
+     * @return Enable the OCSP stapling
+     * 
+     */
     private Boolean ocspEnabled;
+    /**
+     * @return Enable the server to send the certificate authority (CA) list to the client
+     * 
+     */
     private Boolean sendCaListToClient;
+    /**
+     * @return The identifier of the set of trust chains, created in the Trust Chain Manager
+     * 
+     */
     private String setId;
 
     private GetCPSEnrollmentNetworkConfigurationClientMutualAuthentication() {}
+    /**
+     * @return Enable the OCSP stapling
+     * 
+     */
     public Boolean ocspEnabled() {
         return this.ocspEnabled;
     }
+    /**
+     * @return Enable the server to send the certificate authority (CA) list to the client
+     * 
+     */
     public Boolean sendCaListToClient() {
         return this.sendCaListToClient;
     }
+    /**
+     * @return The identifier of the set of trust chains, created in the Trust Chain Manager
+     * 
+     */
     public String setId() {
         return this.setId;
     }

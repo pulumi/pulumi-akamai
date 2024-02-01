@@ -15,37 +15,77 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorManifestReroutin
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorManifestRerouting Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorManifestRerouting();
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Set this value to `adobe_primetime`, which is an external technology partner that provides value added offerings, like advertisement integration, to the requested media objects.
+     * 
+     */
     @Import(name="partner")
     private @Nullable String partner;
 
+    /**
+     * @return Set this value to `adobe_primetime`, which is an external technology partner that provides value added offerings, like advertisement integration, to the requested media objects.
+     * 
+     */
     public Optional<String> partner() {
         return Optional.ofNullable(this.partner);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * The user name for your Adobe Primetime account.
+     * 
+     */
     @Import(name="username")
     private @Nullable String username;
 
+    /**
+     * @return The user name for your Adobe Primetime account.
+     * 
+     */
     public Optional<String> username() {
         return Optional.ofNullable(this.username);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -78,26 +118,56 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorManifestReroutin
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorManifestRerouting(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param partner Set this value to `adobe_primetime`, which is an external technology partner that provides value added offerings, like advertisement integration, to the requested media objects.
+         * 
+         * @return builder
+         * 
+         */
         public Builder partner(@Nullable String partner) {
             $.partner = partner;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param username The user name for your Adobe Primetime account.
+         * 
+         * @return builder
+         * 
+         */
         public Builder username(@Nullable String username) {
             $.username = username;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

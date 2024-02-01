@@ -12,33 +12,89 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorScheduleInvalidation {
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Specifies how to invalidate the content.
+     * 
+     */
     private @Nullable String refreshMethod;
+    /**
+     * @return When enabled, invalidation recurs periodically from the `start` time based on the `repeatInterval` time.
+     * 
+     */
     private @Nullable Boolean repeat;
+    /**
+     * @return Specifies how often to invalidate content from the `start` time, expressed in seconds. For example, an expiration set to midnight and an interval of `86400` seconds invalidates content once a day.  Repeating intervals of less than 5 minutes are not allowed for `NetStorage` origins.
+     * 
+     */
     private @Nullable String repeatInterval;
+    /**
+     * @return The UTC date and time when matching cached content is to expire.
+     * 
+     */
     private @Nullable String start;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorScheduleInvalidation() {}
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Specifies how to invalidate the content.
+     * 
+     */
     public Optional<String> refreshMethod() {
         return Optional.ofNullable(this.refreshMethod);
     }
+    /**
+     * @return When enabled, invalidation recurs periodically from the `start` time based on the `repeatInterval` time.
+     * 
+     */
     public Optional<Boolean> repeat() {
         return Optional.ofNullable(this.repeat);
     }
+    /**
+     * @return Specifies how often to invalidate content from the `start` time, expressed in seconds. For example, an expiration set to midnight and an interval of `86400` seconds invalidates content once a day.  Repeating intervals of less than 5 minutes are not allowed for `NetStorage` origins.
+     * 
+     */
     public Optional<String> repeatInterval() {
         return Optional.ofNullable(this.repeatInterval);
     }
+    /**
+     * @return The UTC date and time when matching cached content is to expire.
+     * 
+     */
     public Optional<String> start() {
         return Optional.ofNullable(this.start);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

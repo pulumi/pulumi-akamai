@@ -13,7 +13,13 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColorResult
     {
+        /// <summary>
+        /// The value representing the maximum number of colors to use with the source image.
+        /// </summary>
         public readonly string? Colors;
+        /// <summary>
+        /// The value representing the maximum number of colors to use with the source image.
+        /// </summary>
         public readonly string? ColorsVar;
 
         [OutputConstructor]

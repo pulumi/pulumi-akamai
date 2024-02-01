@@ -12,15 +12,27 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The name of the auth key.
+        /// </summary>
         [Input("authKeyName", required: true)]
         public Input<string> AuthKeyName { get; set; } = null!;
 
+        /// <summary>
+        /// The expirty date of an auth key.
+        /// </summary>
         [Input("expiryDate", required: true)]
         public Input<string> ExpiryDate { get; set; } = null!;
 
+        /// <summary>
+        /// The header name of an auth key.
+        /// </summary>
         [Input("headerName", required: true)]
         public Input<string> HeaderName { get; set; } = null!;
 
+        /// <summary>
+        /// The secret of an auth key.
+        /// </summary>
         [Input("secret", required: true)]
         public Input<string> Secret { get; set; } = null!;
 

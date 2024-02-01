@@ -12,15 +12,27 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class PropertyActivationComplianceRecordArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Provides an audit record when activating on a production network with noncompliance reason as `EMERGENCY`
+        /// </summary>
         [Input("noncomplianceReasonEmergency")]
         public Input<Inputs.PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs>? NoncomplianceReasonEmergency { get; set; }
 
+        /// <summary>
+        /// Provides an audit record when activating on a production network with noncompliance reason as `NO_PRODUCTION_TRAFFIC`
+        /// </summary>
         [Input("noncomplianceReasonNoProductionTraffic")]
         public Input<Inputs.PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs>? NoncomplianceReasonNoProductionTraffic { get; set; }
 
+        /// <summary>
+        /// Provides an audit record when activating on a production network with noncompliance reason as `NONE`
+        /// </summary>
         [Input("noncomplianceReasonNone")]
         public Input<Inputs.PropertyActivationComplianceRecordNoncomplianceReasonNoneArgs>? NoncomplianceReasonNone { get; set; }
 
+        /// <summary>
+        /// Provides an audit record when activating on a production network with noncompliance reason as `OTHER`
+        /// </summary>
         [Input("noncomplianceReasonOther")]
         public Input<Inputs.PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs>? NoncomplianceReasonOther { get; set; }
 

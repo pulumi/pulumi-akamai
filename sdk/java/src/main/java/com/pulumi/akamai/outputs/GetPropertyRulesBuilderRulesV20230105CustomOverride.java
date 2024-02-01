@@ -11,13 +11,29 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105CustomOverride {
+    /**
+     * @return The name of a custom override
+     * 
+     */
     private @Nullable String name;
+    /**
+     * @return The ID of a custom override
+     * 
+     */
     private @Nullable String overrideId;
 
     private GetPropertyRulesBuilderRulesV20230105CustomOverride() {}
+    /**
+     * @return The name of a custom override
+     * 
+     */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
+    /**
+     * @return The ID of a custom override
+     * 
+     */
     public Optional<String> overrideId() {
         return Optional.ofNullable(this.overrideId);
     }

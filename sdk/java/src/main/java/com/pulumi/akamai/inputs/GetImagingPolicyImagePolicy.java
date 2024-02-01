@@ -20,51 +20,107 @@ public final class GetImagingPolicyImagePolicy extends com.pulumi.resources.Invo
 
     public static final GetImagingPolicyImagePolicy Empty = new GetImagingPolicyImagePolicy();
 
+    /**
+     * The breakpoint widths (in pixels) to use to create derivative images/videos.
+     * 
+     */
     @Import(name="breakpoints")
     private @Nullable GetImagingPolicyImagePolicyBreakpoints breakpoints;
 
+    /**
+     * @return The breakpoint widths (in pixels) to use to create derivative images/videos.
+     * 
+     */
     public Optional<GetImagingPolicyImagePolicyBreakpoints> breakpoints() {
         return Optional.ofNullable(this.breakpoints);
     }
 
+    /**
+     * Hosts that are allowed for image/video URLs within transformations or variables.
+     * 
+     */
     @Import(name="hosts")
     private @Nullable List<String> hosts;
 
+    /**
+     * @return Hosts that are allowed for image/video URLs within transformations or variables.
+     * 
+     */
     public Optional<List<String>> hosts() {
         return Optional.ofNullable(this.hosts);
     }
 
+    /**
+     * Dictates the output quality (either `quality` or `perceptualQuality`) and formats that are created for each resized image. If unspecified, image formats are created to support all browsers at the default quality level (`85`), which includes formats such as WEBP, JPEG2000 and JPEG-XR for specific browsers.
+     * 
+     */
     @Import(name="output")
     private @Nullable GetImagingPolicyImagePolicyOutput output;
 
+    /**
+     * @return Dictates the output quality (either `quality` or `perceptualQuality`) and formats that are created for each resized image. If unspecified, image formats are created to support all browsers at the default quality level (`85`), which includes formats such as WEBP, JPEG2000 and JPEG-XR for specific browsers.
+     * 
+     */
     public Optional<GetImagingPolicyImagePolicyOutput> output() {
         return Optional.ofNullable(this.output);
     }
 
+    /**
+     * Post-processing Transformations are applied to the image after image and quality settings have been applied.
+     * 
+     */
     @Import(name="postBreakpointTransformations")
     private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformation> postBreakpointTransformations;
 
+    /**
+     * @return Post-processing Transformations are applied to the image after image and quality settings have been applied.
+     * 
+     */
     public Optional<List<GetImagingPolicyImagePolicyPostBreakpointTransformation>> postBreakpointTransformations() {
         return Optional.ofNullable(this.postBreakpointTransformations);
     }
 
+    /**
+     * The amount of time in seconds that the policy takes to rollout. During the rollout an increasing proportion of images/videos will begin to use the new policy instead of the cached images/videos from the previous version. This value has no effect on the staging network.
+     * 
+     */
     @Import(name="rolloutDuration")
     private @Nullable String rolloutDuration;
 
+    /**
+     * @return The amount of time in seconds that the policy takes to rollout. During the rollout an increasing proportion of images/videos will begin to use the new policy instead of the cached images/videos from the previous version. This value has no effect on the staging network.
+     * 
+     */
     public Optional<String> rolloutDuration() {
         return Optional.ofNullable(this.rolloutDuration);
     }
 
+    /**
+     * Set of image transformations to apply to the source image. If unspecified, no operations are performed.
+     * 
+     */
     @Import(name="transformations")
     private @Nullable List<GetImagingPolicyImagePolicyTransformation> transformations;
 
+    /**
+     * @return Set of image transformations to apply to the source image. If unspecified, no operations are performed.
+     * 
+     */
     public Optional<List<GetImagingPolicyImagePolicyTransformation>> transformations() {
         return Optional.ofNullable(this.transformations);
     }
 
+    /**
+     * Declares variables for use within the policy. Any variable declared here can be invoked throughout transformations as a Variable object, so that you don&#39;t have to specify values separately. You can also pass in these variable names and values dynamically as query parameters in the image&#39;s request URL.
+     * 
+     */
     @Import(name="variables")
     private @Nullable List<GetImagingPolicyImagePolicyVariable> variables;
 
+    /**
+     * @return Declares variables for use within the policy. Any variable declared here can be invoked throughout transformations as a Variable object, so that you don&#39;t have to specify values separately. You can also pass in these variable names and values dynamically as query parameters in the image&#39;s request URL.
+     * 
+     */
     public Optional<List<GetImagingPolicyImagePolicyVariable>> variables() {
         return Optional.ofNullable(this.variables);
     }
@@ -99,53 +155,119 @@ public final class GetImagingPolicyImagePolicy extends com.pulumi.resources.Invo
             $ = new GetImagingPolicyImagePolicy(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param breakpoints The breakpoint widths (in pixels) to use to create derivative images/videos.
+         * 
+         * @return builder
+         * 
+         */
         public Builder breakpoints(@Nullable GetImagingPolicyImagePolicyBreakpoints breakpoints) {
             $.breakpoints = breakpoints;
             return this;
         }
 
+        /**
+         * @param hosts Hosts that are allowed for image/video URLs within transformations or variables.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hosts(@Nullable List<String> hosts) {
             $.hosts = hosts;
             return this;
         }
 
+        /**
+         * @param hosts Hosts that are allowed for image/video URLs within transformations or variables.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hosts(String... hosts) {
             return hosts(List.of(hosts));
         }
 
+        /**
+         * @param output Dictates the output quality (either `quality` or `perceptualQuality`) and formats that are created for each resized image. If unspecified, image formats are created to support all browsers at the default quality level (`85`), which includes formats such as WEBP, JPEG2000 and JPEG-XR for specific browsers.
+         * 
+         * @return builder
+         * 
+         */
         public Builder output(@Nullable GetImagingPolicyImagePolicyOutput output) {
             $.output = output;
             return this;
         }
 
+        /**
+         * @param postBreakpointTransformations Post-processing Transformations are applied to the image after image and quality settings have been applied.
+         * 
+         * @return builder
+         * 
+         */
         public Builder postBreakpointTransformations(@Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformation> postBreakpointTransformations) {
             $.postBreakpointTransformations = postBreakpointTransformations;
             return this;
         }
 
+        /**
+         * @param postBreakpointTransformations Post-processing Transformations are applied to the image after image and quality settings have been applied.
+         * 
+         * @return builder
+         * 
+         */
         public Builder postBreakpointTransformations(GetImagingPolicyImagePolicyPostBreakpointTransformation... postBreakpointTransformations) {
             return postBreakpointTransformations(List.of(postBreakpointTransformations));
         }
 
+        /**
+         * @param rolloutDuration The amount of time in seconds that the policy takes to rollout. During the rollout an increasing proportion of images/videos will begin to use the new policy instead of the cached images/videos from the previous version. This value has no effect on the staging network.
+         * 
+         * @return builder
+         * 
+         */
         public Builder rolloutDuration(@Nullable String rolloutDuration) {
             $.rolloutDuration = rolloutDuration;
             return this;
         }
 
+        /**
+         * @param transformations Set of image transformations to apply to the source image. If unspecified, no operations are performed.
+         * 
+         * @return builder
+         * 
+         */
         public Builder transformations(@Nullable List<GetImagingPolicyImagePolicyTransformation> transformations) {
             $.transformations = transformations;
             return this;
         }
 
+        /**
+         * @param transformations Set of image transformations to apply to the source image. If unspecified, no operations are performed.
+         * 
+         * @return builder
+         * 
+         */
         public Builder transformations(GetImagingPolicyImagePolicyTransformation... transformations) {
             return transformations(List.of(transformations));
         }
 
+        /**
+         * @param variables Declares variables for use within the policy. Any variable declared here can be invoked throughout transformations as a Variable object, so that you don&#39;t have to specify values separately. You can also pass in these variable names and values dynamically as query parameters in the image&#39;s request URL.
+         * 
+         * @return builder
+         * 
+         */
         public Builder variables(@Nullable List<GetImagingPolicyImagePolicyVariable> variables) {
             $.variables = variables;
             return this;
         }
 
+        /**
+         * @param variables Declares variables for use within the policy. Any variable declared here can be invoked throughout transformations as a Variable object, so that you don&#39;t have to specify values separately. You can also pass in these variable names and values dynamically as query parameters in the image&#39;s request URL.
+         * 
+         * @return builder
+         * 
+         */
         public Builder variables(GetImagingPolicyImagePolicyVariable... variables) {
             return variables(List.of(variables));
         }

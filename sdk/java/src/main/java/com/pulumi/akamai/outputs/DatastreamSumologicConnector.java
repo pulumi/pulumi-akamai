@@ -13,33 +13,89 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DatastreamSumologicConnector {
+    /**
+     * @return The unique HTTP collector code of Sumo Logic endpoint
+     * 
+     */
     private String collectorCode;
+    /**
+     * @return Indicates whether the logs should be compressed
+     * 
+     */
     private @Nullable Boolean compressLogs;
+    /**
+     * @return Content type to pass in the log file header
+     * 
+     */
     private @Nullable String contentType;
+    /**
+     * @return The name of custom header passed with the request to the destination
+     * 
+     */
     private @Nullable String customHeaderName;
+    /**
+     * @return The custom header&#39;s contents passed with the request to the destination
+     * 
+     */
     private @Nullable String customHeaderValue;
+    /**
+     * @return The name of the connector
+     * 
+     */
     private String displayName;
+    /**
+     * @return The Sumo Logic collection endpoint where logs will be stored
+     * 
+     */
     private String endpoint;
 
     private DatastreamSumologicConnector() {}
+    /**
+     * @return The unique HTTP collector code of Sumo Logic endpoint
+     * 
+     */
     public String collectorCode() {
         return this.collectorCode;
     }
+    /**
+     * @return Indicates whether the logs should be compressed
+     * 
+     */
     public Optional<Boolean> compressLogs() {
         return Optional.ofNullable(this.compressLogs);
     }
+    /**
+     * @return Content type to pass in the log file header
+     * 
+     */
     public Optional<String> contentType() {
         return Optional.ofNullable(this.contentType);
     }
+    /**
+     * @return The name of custom header passed with the request to the destination
+     * 
+     */
     public Optional<String> customHeaderName() {
         return Optional.ofNullable(this.customHeaderName);
     }
+    /**
+     * @return The custom header&#39;s contents passed with the request to the destination
+     * 
+     */
     public Optional<String> customHeaderValue() {
         return Optional.ofNullable(this.customHeaderValue);
     }
+    /**
+     * @return The name of the connector
+     * 
+     */
     public String displayName() {
         return this.displayName;
     }
+    /**
+     * @return The Sumo Logic collection endpoint where logs will be stored
+     * 
+     */
     public String endpoint() {
         return this.endpoint;
     }

@@ -16,37 +16,77 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorMobileSdkPerform
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorMobileSdkPerformanceArgs Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorMobileSdkPerformanceArgs();
 
+    /**
+     * Enables the Mobile App Performance SDK.
+     * 
+     */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
+    /**
+     * @return Enables the Mobile App Performance SDK.
+     * 
+     */
     public Optional<Output<Boolean>> enabled() {
         return Optional.ofNullable(this.enabled);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * When enabled, sends secondary multi-path requests to the origin server.
+     * 
+     */
     @Import(name="secondaryMultipathToOrigin")
     private @Nullable Output<Boolean> secondaryMultipathToOrigin;
 
+    /**
+     * @return When enabled, sends secondary multi-path requests to the origin server.
+     * 
+     */
     public Optional<Output<Boolean>> secondaryMultipathToOrigin() {
         return Optional.ofNullable(this.secondaryMultipathToOrigin);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -79,47 +119,107 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorMobileSdkPerform
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorMobileSdkPerformanceArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param enabled Enables the Mobile App Performance SDK.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(@Nullable Output<Boolean> enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param enabled Enables the Mobile App Performance SDK.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(Boolean enabled) {
             return enabled(Output.of(enabled));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param secondaryMultipathToOrigin When enabled, sends secondary multi-path requests to the origin server.
+         * 
+         * @return builder
+         * 
+         */
         public Builder secondaryMultipathToOrigin(@Nullable Output<Boolean> secondaryMultipathToOrigin) {
             $.secondaryMultipathToOrigin = secondaryMultipathToOrigin;
             return this;
         }
 
+        /**
+         * @param secondaryMultipathToOrigin When enabled, sends secondary multi-path requests to the origin server.
+         * 
+         * @return builder
+         * 
+         */
         public Builder secondaryMultipathToOrigin(Boolean secondaryMultipathToOrigin) {
             return secondaryMultipathToOrigin(Output.of(secondaryMultipathToOrigin));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

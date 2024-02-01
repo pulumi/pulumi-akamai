@@ -13,13 +13,37 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetCloudletsAudienceSegmentationMatchRuleMatchRuleResult
     {
+        /// <summary>
+        /// If set to true, disables a rule so it is not evaluated against incoming requests.
+        /// </summary>
         public readonly bool? Disabled;
+        /// <summary>
+        /// The end time for this match (in seconds since the epoch)
+        /// </summary>
         public readonly int? End;
+        /// <summary>
+        /// This property defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, then the Edge Server returns an HTTP response from the rewritten URL
+        /// </summary>
         public readonly Outputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsResult ForwardSettings;
+        /// <summary>
+        /// If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
+        /// </summary>
         public readonly string? MatchUrl;
+        /// <summary>
+        /// Defines a set of match objects
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchResult> Matches;
+        /// <summary>
+        /// The name of the rule
+        /// </summary>
         public readonly string? Name;
+        /// <summary>
+        /// The start time for this match (in seconds since the epoch)
+        /// </summary>
         public readonly int? Start;
+        /// <summary>
+        /// The type of Cloudlet the rule is for
+        /// </summary>
         public readonly string Type;
 
         [OutputConstructor]

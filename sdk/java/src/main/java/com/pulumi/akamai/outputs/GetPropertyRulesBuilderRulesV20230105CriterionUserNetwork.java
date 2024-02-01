@@ -13,45 +13,117 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105CriterionUserNetwork {
+    /**
+     * @return Bandwidth range in bits per second, either `1`, `57`, `257`, `1000`, `2000`, or `5000`.
+     * 
+     */
     private @Nullable List<String> bandwidthValues;
+    /**
+     * @return Specifies which IP addresses determine the user&#39;s network.
+     * 
+     */
     private @Nullable String checkIps;
+    /**
+     * @return The type of information to match.
+     * 
+     */
     private @Nullable String field;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Matches the specified set of values when set to `IS_ONE_OF`, otherwise `IS_NOT_ONE_OF` reverses the match.
+     * 
+     */
     private @Nullable String matchOperator;
     private @Nullable List<String> networkTypeValues;
+    /**
+     * @return Any set of specific networks.
+     * 
+     */
     private @Nullable List<String> networkValues;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return When connecting via a proxy server as determined by the `X-Forwarded-For` header, enabling this option matches the end client specified in the header. Disabling it matches the connecting client&#39;s IP address.
+     * 
+     */
     private @Nullable Boolean useOnlyFirstXForwardedForIp;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105CriterionUserNetwork() {}
+    /**
+     * @return Bandwidth range in bits per second, either `1`, `57`, `257`, `1000`, `2000`, or `5000`.
+     * 
+     */
     public List<String> bandwidthValues() {
         return this.bandwidthValues == null ? List.of() : this.bandwidthValues;
     }
+    /**
+     * @return Specifies which IP addresses determine the user&#39;s network.
+     * 
+     */
     public Optional<String> checkIps() {
         return Optional.ofNullable(this.checkIps);
     }
+    /**
+     * @return The type of information to match.
+     * 
+     */
     public Optional<String> field() {
         return Optional.ofNullable(this.field);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Matches the specified set of values when set to `IS_ONE_OF`, otherwise `IS_NOT_ONE_OF` reverses the match.
+     * 
+     */
     public Optional<String> matchOperator() {
         return Optional.ofNullable(this.matchOperator);
     }
     public List<String> networkTypeValues() {
         return this.networkTypeValues == null ? List.of() : this.networkTypeValues;
     }
+    /**
+     * @return Any set of specific networks.
+     * 
+     */
     public List<String> networkValues() {
         return this.networkValues == null ? List.of() : this.networkValues;
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return When connecting via a proxy server as determined by the `X-Forwarded-For` header, enabling this option matches the end client specified in the header. Disabling it matches the connecting client&#39;s IP address.
+     * 
+     */
     public Optional<Boolean> useOnlyFirstXForwardedForIp() {
         return Optional.ofNullable(this.useOnlyFirstXForwardedForIp);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

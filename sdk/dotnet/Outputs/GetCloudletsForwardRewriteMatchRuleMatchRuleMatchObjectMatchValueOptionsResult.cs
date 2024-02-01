@@ -13,9 +13,21 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsResult
     {
+        /// <summary>
+        /// Set to true if the entries for the value property should be evaluated based on case sensitivity
+        /// </summary>
         public readonly bool? ValueCaseSensitive;
+        /// <summary>
+        /// Set to true if provided value should be compared in escaped form
+        /// </summary>
         public readonly bool? ValueEscaped;
+        /// <summary>
+        /// Set to true if the entries for the value property include wildcards
+        /// </summary>
         public readonly bool? ValueHasWildcard;
+        /// <summary>
+        /// The value attributes in the incoming request to match on
+        /// </summary>
         public readonly ImmutableArray<string> Values;
 
         [OutputConstructor]

@@ -13,53 +13,149 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorDatastream {
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String beaconStreamTitle;
+    /**
+     * @return If enabled, gathers midgress traffic data within the Akamai platform, such as between two edge servers, for all streams configured.
+     * 
+     */
     private @Nullable Boolean collectMidgressTraffic;
+    /**
+     * @return A set of dash-separated DataStream ID values to limit the scope of reported data. By default, all active streams report. Use the DataStream application to gather stream ID values that apply to this property configuration. Specifying IDs for any streams that don&#39;t apply to this property has no effect, and results in no data reported.
+     * 
+     */
     private @Nullable String datastreamIds;
+    /**
+     * @return Enables DataStream reporting.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Enables log collection for the property by associating it with DataStream configurations.
+     * 
+     */
     private @Nullable Boolean logEnabled;
+    /**
+     * @return Specifies the unique IDs of streams configured for the property. For properties created with the previous version of the rule format, this option contains a string instead of an array of strings. You can use the `List streams` operation to get stream IDs.
+     * 
+     */
     private @Nullable Integer logStreamName;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String logStreamTitle;
+    /**
+     * @return Specifies the percentage of log data you want to collect for this property.
+     * 
+     */
     private @Nullable Integer samplingPercentage;
+    /**
+     * @return Specify the DataStream type.
+     * 
+     */
     private @Nullable String streamType;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorDatastream() {}
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> beaconStreamTitle() {
         return Optional.ofNullable(this.beaconStreamTitle);
     }
+    /**
+     * @return If enabled, gathers midgress traffic data within the Akamai platform, such as between two edge servers, for all streams configured.
+     * 
+     */
     public Optional<Boolean> collectMidgressTraffic() {
         return Optional.ofNullable(this.collectMidgressTraffic);
     }
+    /**
+     * @return A set of dash-separated DataStream ID values to limit the scope of reported data. By default, all active streams report. Use the DataStream application to gather stream ID values that apply to this property configuration. Specifying IDs for any streams that don&#39;t apply to this property has no effect, and results in no data reported.
+     * 
+     */
     public Optional<String> datastreamIds() {
         return Optional.ofNullable(this.datastreamIds);
     }
+    /**
+     * @return Enables DataStream reporting.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Enables log collection for the property by associating it with DataStream configurations.
+     * 
+     */
     public Optional<Boolean> logEnabled() {
         return Optional.ofNullable(this.logEnabled);
     }
+    /**
+     * @return Specifies the unique IDs of streams configured for the property. For properties created with the previous version of the rule format, this option contains a string instead of an array of strings. You can use the `List streams` operation to get stream IDs.
+     * 
+     */
     public Optional<Integer> logStreamName() {
         return Optional.ofNullable(this.logStreamName);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> logStreamTitle() {
         return Optional.ofNullable(this.logStreamTitle);
     }
+    /**
+     * @return Specifies the percentage of log data you want to collect for this property.
+     * 
+     */
     public Optional<Integer> samplingPercentage() {
         return Optional.ofNullable(this.samplingPercentage);
     }
+    /**
+     * @return Specify the DataStream type.
+     * 
+     */
     public Optional<String> streamType() {
         return Optional.ofNullable(this.streamType);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

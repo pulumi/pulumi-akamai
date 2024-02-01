@@ -11,25 +11,65 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCloudwrapperConfigurationMultiCdnSettingsBocc {
+    /**
+     * @return The sampling frequency of requests and forwards for EDGE, MIDGRESS, and ORIGIN beacons.
+     * 
+     */
     private String conditionalSamplingFrequency;
+    /**
+     * @return Enable diagnostic data beacons for consumption by the Broadcast Operations Control Center.
+     * 
+     */
     private Boolean enabled;
+    /**
+     * @return Select whether to beacon diagnostics data for internal ORIGIN_ONLY, MIDGRESS_ONLY, or both ORIGIN_AND_MIDGRESS forwards.
+     * 
+     */
     private String forwardType;
+    /**
+     * @return Select whether to beacon diagnostics data for EDGE_ONLY or EDGE_AND_MIDGRESS requests.
+     * 
+     */
     private String requestType;
+    /**
+     * @return The sampling frequency of requests and forwards for EDGE, MIDGRESS, and ORIGIN beacons.
+     * 
+     */
     private String samplingFrequency;
 
     private GetCloudwrapperConfigurationMultiCdnSettingsBocc() {}
+    /**
+     * @return The sampling frequency of requests and forwards for EDGE, MIDGRESS, and ORIGIN beacons.
+     * 
+     */
     public String conditionalSamplingFrequency() {
         return this.conditionalSamplingFrequency;
     }
+    /**
+     * @return Enable diagnostic data beacons for consumption by the Broadcast Operations Control Center.
+     * 
+     */
     public Boolean enabled() {
         return this.enabled;
     }
+    /**
+     * @return Select whether to beacon diagnostics data for internal ORIGIN_ONLY, MIDGRESS_ONLY, or both ORIGIN_AND_MIDGRESS forwards.
+     * 
+     */
     public String forwardType() {
         return this.forwardType;
     }
+    /**
+     * @return Select whether to beacon diagnostics data for EDGE_ONLY or EDGE_AND_MIDGRESS requests.
+     * 
+     */
     public String requestType() {
         return this.requestType;
     }
+    /**
+     * @return The sampling frequency of requests and forwards for EDGE, MIDGRESS, and ORIGIN beacons.
+     * 
+     */
     public String samplingFrequency() {
         return this.samplingFrequency;
     }

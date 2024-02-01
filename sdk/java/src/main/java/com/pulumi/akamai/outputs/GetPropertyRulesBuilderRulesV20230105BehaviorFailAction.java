@@ -15,145 +15,417 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorFailAction {
+    /**
+     * @return Specifies the basic action to take when there is a failure to contact the origin.
+     * 
+     */
     private @Nullable String actionType;
     private @Nullable Boolean allowFcmParentOverride;
+    /**
+     * @return Specifies a custom path.
+     * 
+     */
     private @Nullable Boolean cexCustomPath;
+    /**
+     * @return Specifies a hostname.
+     * 
+     */
     private @Nullable String cexHostname;
+    /**
+     * @return Specifies a custom path.
+     * 
+     */
     private @Nullable String cexPath;
+    /**
+     * @return Specifies a custom redirect path.
+     * 
+     */
     private @Nullable Boolean contentCustomPath;
+    /**
+     * @return Specifies the static hostname for the alternate redirect.
+     * 
+     */
     private @Nullable String contentHostname;
+    /**
+     * @return Specifies a custom redirect path.
+     * 
+     */
     private @Nullable String contentPath;
+    /**
+     * @return Specifies a CP code for which to log errors for the NetStorage location.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorFailActionCpCode cpCode;
+    /**
+     * @return Allows you to modify the original requested path.
+     * 
+     */
     private @Nullable Boolean dynamicCustomPath;
+    /**
+     * @return Specifies the redirect method.
+     * 
+     */
     private @Nullable String dynamicMethod;
+    /**
+     * @return Specifies the new path.
+     * 
+     */
     private @Nullable String dynamicPath;
+    /**
+     * @return When enabled in case of a failure to contact the origin, the current behavior applies.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Modifies the redirect&#39;s protocol using the value of the `protocol` field.
+     * 
+     */
     private @Nullable Boolean modifyProtocol;
+    /**
+     * @return When the `actionType` is `RECREATED_NS`, specifies the `NetStorage` origin to serve the alternate content. Contact Akamai Professional Services for your NetStorage origin&#39;s `id`.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorFailActionNetStorageHostname netStorageHostname;
+    /**
+     * @return When the `actionType` is `RECREATED_NS`, specifies the path for the `NetStorage` request.
+     * 
+     */
     private @Nullable String netStoragePath;
+    /**
+     * @return When using either `contentCustomPath`, `cexCustomPath`, `dynamicCustomPath`, or `redirectCustomPath` to specify a custom path, enabling this passes in the original request&#39;s query string as part of the path.
+     * 
+     */
     private @Nullable Boolean preserveQueryString;
+    /**
+     * @return When the `actionType` is `REDIRECT` and `modifyProtocol` is enabled, this specifies the redirect&#39;s protocol.
+     * 
+     */
     private @Nullable String protocol;
+    /**
+     * @return Uses the `redirectPath` to customize a new path.
+     * 
+     */
     private @Nullable Boolean redirectCustomPath;
+    /**
+     * @return When the `actionType` is `REDIRECT` and the `redirectHostnameType` is `ALTERNATE`, this specifies the hostname for the redirect.
+     * 
+     */
     private @Nullable String redirectHostname;
+    /**
+     * @return Whether to preserve or customize the hostname.
+     * 
+     */
     private @Nullable String redirectHostnameType;
+    /**
+     * @return Specifies the HTTP response code.
+     * 
+     */
     private @Nullable Integer redirectMethod;
+    /**
+     * @return Specifies a new path.
+     * 
+     */
     private @Nullable String redirectPath;
+    /**
+     * @return Specifies whether to use a CNAME chain to determine the hostname for the SaaS dynamic failaction.
+     * 
+     */
     private @Nullable Boolean saasCnameEnabled;
+    /**
+     * @return Specifies the number of elements in the CNAME chain backwards from the edge hostname that determines the hostname for the SaaS dynamic failaction.
+     * 
+     */
     private @Nullable Integer saasCnameLevel;
+    /**
+     * @return Specifies the name of the cookie that identifies this SaaS dynamic failaction.
+     * 
+     */
     private @Nullable String saasCookie;
+    /**
+     * @return Specifies the name of the query parameter that identifies this SaaS dynamic failaction.
+     * 
+     */
     private @Nullable String saasQueryString;
+    /**
+     * @return Specifies the substitution pattern (a Perl-compatible regular expression) that defines the SaaS dynamic failaction.
+     * 
+     */
     private @Nullable String saasRegex;
+    /**
+     * @return Specifies the replacement pattern that defines the SaaS dynamic failaction.
+     * 
+     */
     private @Nullable String saasReplace;
+    /**
+     * @return Specifies the static portion of the SaaS dynamic failaction.
+     * 
+     */
     private @Nullable String saasSuffix;
+    /**
+     * @return Identifies the component of the request that identifies the SaaS dynamic fail action.
+     * 
+     */
     private @Nullable String saasType;
+    /**
+     * @return Assigns a new HTTP status code to the failure response.
+     * 
+     */
     private @Nullable Integer statusCode;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorFailAction() {}
+    /**
+     * @return Specifies the basic action to take when there is a failure to contact the origin.
+     * 
+     */
     public Optional<String> actionType() {
         return Optional.ofNullable(this.actionType);
     }
     public Optional<Boolean> allowFcmParentOverride() {
         return Optional.ofNullable(this.allowFcmParentOverride);
     }
+    /**
+     * @return Specifies a custom path.
+     * 
+     */
     public Optional<Boolean> cexCustomPath() {
         return Optional.ofNullable(this.cexCustomPath);
     }
+    /**
+     * @return Specifies a hostname.
+     * 
+     */
     public Optional<String> cexHostname() {
         return Optional.ofNullable(this.cexHostname);
     }
+    /**
+     * @return Specifies a custom path.
+     * 
+     */
     public Optional<String> cexPath() {
         return Optional.ofNullable(this.cexPath);
     }
+    /**
+     * @return Specifies a custom redirect path.
+     * 
+     */
     public Optional<Boolean> contentCustomPath() {
         return Optional.ofNullable(this.contentCustomPath);
     }
+    /**
+     * @return Specifies the static hostname for the alternate redirect.
+     * 
+     */
     public Optional<String> contentHostname() {
         return Optional.ofNullable(this.contentHostname);
     }
+    /**
+     * @return Specifies a custom redirect path.
+     * 
+     */
     public Optional<String> contentPath() {
         return Optional.ofNullable(this.contentPath);
     }
+    /**
+     * @return Specifies a CP code for which to log errors for the NetStorage location.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorFailActionCpCode> cpCode() {
         return Optional.ofNullable(this.cpCode);
     }
+    /**
+     * @return Allows you to modify the original requested path.
+     * 
+     */
     public Optional<Boolean> dynamicCustomPath() {
         return Optional.ofNullable(this.dynamicCustomPath);
     }
+    /**
+     * @return Specifies the redirect method.
+     * 
+     */
     public Optional<String> dynamicMethod() {
         return Optional.ofNullable(this.dynamicMethod);
     }
+    /**
+     * @return Specifies the new path.
+     * 
+     */
     public Optional<String> dynamicPath() {
         return Optional.ofNullable(this.dynamicPath);
     }
+    /**
+     * @return When enabled in case of a failure to contact the origin, the current behavior applies.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Modifies the redirect&#39;s protocol using the value of the `protocol` field.
+     * 
+     */
     public Optional<Boolean> modifyProtocol() {
         return Optional.ofNullable(this.modifyProtocol);
     }
+    /**
+     * @return When the `actionType` is `RECREATED_NS`, specifies the `NetStorage` origin to serve the alternate content. Contact Akamai Professional Services for your NetStorage origin&#39;s `id`.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorFailActionNetStorageHostname> netStorageHostname() {
         return Optional.ofNullable(this.netStorageHostname);
     }
+    /**
+     * @return When the `actionType` is `RECREATED_NS`, specifies the path for the `NetStorage` request.
+     * 
+     */
     public Optional<String> netStoragePath() {
         return Optional.ofNullable(this.netStoragePath);
     }
+    /**
+     * @return When using either `contentCustomPath`, `cexCustomPath`, `dynamicCustomPath`, or `redirectCustomPath` to specify a custom path, enabling this passes in the original request&#39;s query string as part of the path.
+     * 
+     */
     public Optional<Boolean> preserveQueryString() {
         return Optional.ofNullable(this.preserveQueryString);
     }
+    /**
+     * @return When the `actionType` is `REDIRECT` and `modifyProtocol` is enabled, this specifies the redirect&#39;s protocol.
+     * 
+     */
     public Optional<String> protocol() {
         return Optional.ofNullable(this.protocol);
     }
+    /**
+     * @return Uses the `redirectPath` to customize a new path.
+     * 
+     */
     public Optional<Boolean> redirectCustomPath() {
         return Optional.ofNullable(this.redirectCustomPath);
     }
+    /**
+     * @return When the `actionType` is `REDIRECT` and the `redirectHostnameType` is `ALTERNATE`, this specifies the hostname for the redirect.
+     * 
+     */
     public Optional<String> redirectHostname() {
         return Optional.ofNullable(this.redirectHostname);
     }
+    /**
+     * @return Whether to preserve or customize the hostname.
+     * 
+     */
     public Optional<String> redirectHostnameType() {
         return Optional.ofNullable(this.redirectHostnameType);
     }
+    /**
+     * @return Specifies the HTTP response code.
+     * 
+     */
     public Optional<Integer> redirectMethod() {
         return Optional.ofNullable(this.redirectMethod);
     }
+    /**
+     * @return Specifies a new path.
+     * 
+     */
     public Optional<String> redirectPath() {
         return Optional.ofNullable(this.redirectPath);
     }
+    /**
+     * @return Specifies whether to use a CNAME chain to determine the hostname for the SaaS dynamic failaction.
+     * 
+     */
     public Optional<Boolean> saasCnameEnabled() {
         return Optional.ofNullable(this.saasCnameEnabled);
     }
+    /**
+     * @return Specifies the number of elements in the CNAME chain backwards from the edge hostname that determines the hostname for the SaaS dynamic failaction.
+     * 
+     */
     public Optional<Integer> saasCnameLevel() {
         return Optional.ofNullable(this.saasCnameLevel);
     }
+    /**
+     * @return Specifies the name of the cookie that identifies this SaaS dynamic failaction.
+     * 
+     */
     public Optional<String> saasCookie() {
         return Optional.ofNullable(this.saasCookie);
     }
+    /**
+     * @return Specifies the name of the query parameter that identifies this SaaS dynamic failaction.
+     * 
+     */
     public Optional<String> saasQueryString() {
         return Optional.ofNullable(this.saasQueryString);
     }
+    /**
+     * @return Specifies the substitution pattern (a Perl-compatible regular expression) that defines the SaaS dynamic failaction.
+     * 
+     */
     public Optional<String> saasRegex() {
         return Optional.ofNullable(this.saasRegex);
     }
+    /**
+     * @return Specifies the replacement pattern that defines the SaaS dynamic failaction.
+     * 
+     */
     public Optional<String> saasReplace() {
         return Optional.ofNullable(this.saasReplace);
     }
+    /**
+     * @return Specifies the static portion of the SaaS dynamic failaction.
+     * 
+     */
     public Optional<String> saasSuffix() {
         return Optional.ofNullable(this.saasSuffix);
     }
+    /**
+     * @return Identifies the component of the request that identifies the SaaS dynamic fail action.
+     * 
+     */
     public Optional<String> saasType() {
         return Optional.ofNullable(this.saasType);
     }
+    /**
+     * @return Assigns a new HTTP status code to the failure response.
+     * 
+     */
     public Optional<Integer> statusCode() {
         return Optional.ofNullable(this.statusCode);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

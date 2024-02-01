@@ -12,68 +12,132 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Sets advanced configuration options for the allowed user's cookie.
+        /// </summary>
         [Input("allowedUserCookieAdvanced")]
         public bool? AllowedUserCookieAdvanced { get; set; }
 
+        /// <summary>
+        /// Sets an automatic `salt` value to verify the integrity of the cookie for an allowed user. Disable this if you want to share the cookie across properties.
+        /// </summary>
         [Input("allowedUserCookieAutomaticSalt")]
         public bool? AllowedUserCookieAutomaticSalt { get; set; }
 
+        /// <summary>
+        /// Specifies a domain for an allowed user cookie.
+        /// </summary>
         [Input("allowedUserCookieDomain")]
         public string? AllowedUserCookieDomain { get; set; }
 
+        /// <summary>
+        /// Specify with `allowedUserCookieAdvanced` enabled.
+        /// </summary>
         [Input("allowedUserCookieDomainType")]
         public string? AllowedUserCookieDomainType { get; set; }
 
+        /// <summary>
+        /// Sets the number of seconds for the allowed user's session once allowed through to the site.
+        /// </summary>
         [Input("allowedUserCookieDuration")]
         public int? AllowedUserCookieDuration { get; set; }
 
+        /// <summary>
+        /// Sets a cookie for users who have been allowed through to the site.
+        /// </summary>
         [Input("allowedUserCookieEnabled")]
         public bool? AllowedUserCookieEnabled { get; set; }
 
+        /// <summary>
+        /// Applies the `HttpOnly` flag to the allowed user's cookie to ensure it's accessed over HTTP and not manipulated by the client.
+        /// </summary>
         [Input("allowedUserCookieHttpOnly")]
         public bool? AllowedUserCookieHttpOnly { get; set; }
 
+        /// <summary>
+        /// Specifies a label to distinguish this cookie for an allowed user from others. The value appends to the cookie's name, and helps you to maintain the same user assignment across behaviors within a property, and across properties.
+        /// </summary>
         [Input("allowedUserCookieLabel")]
         public string? AllowedUserCookieLabel { get; set; }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("allowedUserCookieManagementTitle")]
         public string? AllowedUserCookieManagementTitle { get; set; }
 
+        /// <summary>
+        /// Resets the duration of an allowed cookie with each request, so that it only expires if the user doesn't make any requests for the specified duration. Do not enable this option if you want to set a fixed time for all users.
+        /// </summary>
         [Input("allowedUserCookieRefresh")]
         public bool? AllowedUserCookieRefresh { get; set; }
 
+        /// <summary>
+        /// Specifies a fixed `salt` value, which is incorporated into the cookie's value to prevent users from manipulating it. You can use the same salt string across different behaviors or properties to apply a single cookie to all allowed users.
+        /// </summary>
         [Input("allowedUserCookieSalt")]
         public string? AllowedUserCookieSalt { get; set; }
 
+        /// <summary>
+        /// Identifies the Cloudlet policy.
+        /// </summary>
         [Input("cloudletPolicy")]
         public Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationCloudletPolicyArgs? CloudletPolicy { get; set; }
 
+        /// <summary>
+        /// Enables the Visitor Prioritization behavior.
+        /// </summary>
         [Input("enabled")]
         public bool? Enabled { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public bool? Locked { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public string? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// When enabled, identifies users by the value of a cookie.
+        /// </summary>
         [Input("userIdentificationByCookie")]
         public bool? UserIdentificationByCookie { get; set; }
 
+        /// <summary>
+        /// When enabled, identifies users by the values of GET or POST request headers.
+        /// </summary>
         [Input("userIdentificationByHeaders")]
         public bool? UserIdentificationByHeaders { get; set; }
 
+        /// <summary>
+        /// Allows IP addresses to identify users.
+        /// </summary>
         [Input("userIdentificationByIp")]
         public bool? UserIdentificationByIp { get; set; }
 
+        /// <summary>
+        /// When enabled, identifies users by the values of GET or POST request parameters.
+        /// </summary>
         [Input("userIdentificationByParams")]
         public bool? UserIdentificationByParams { get; set; }
 
+        /// <summary>
+        /// Specifies the name of the cookie whose value identifies users. To match a user, the value of the cookie needs to remain constant across all requests.
+        /// </summary>
         [Input("userIdentificationKeyCookie")]
         public string? UserIdentificationKeyCookie { get; set; }
 
         [Input("userIdentificationKeyHeaders")]
         private List<string>? _userIdentificationKeyHeaders;
+
+        /// <summary>
+        /// Specifies names of request headers whose values identify users. To match a user, values for all the specified headers need to remain constant across all requests.
+        /// </summary>
         public List<string> UserIdentificationKeyHeaders
         {
             get => _userIdentificationKeyHeaders ?? (_userIdentificationKeyHeaders = new List<string>());
@@ -82,69 +146,133 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("userIdentificationKeyParams")]
         private List<string>? _userIdentificationKeyParams;
+
+        /// <summary>
+        /// Specifies names of request parameters whose values identify users. To match a user, values for all the specified parameters need to remain constant across all requests. Parameters that are absent or blank may also identify users.
+        /// </summary>
         public List<string> UserIdentificationKeyParams
         {
             get => _userIdentificationKeyParams ?? (_userIdentificationKeyParams = new List<string>());
             set => _userIdentificationKeyParams = value;
         }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("userIdentificationTitle")]
         public string? UserIdentificationTitle { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public string? Uuid { get; set; }
 
+        /// <summary>
+        /// Specifies the waiting room page's time to live in the cache, `5` minutes by default.
+        /// </summary>
         [Input("waitingRoomCacheTtl")]
         public int? WaitingRoomCacheTtl { get; set; }
 
+        /// <summary>
+        /// When enabled along with `waitingRoomCookieEnabled`, sets advanced configuration options for the waiting room cookie.
+        /// </summary>
         [Input("waitingRoomCookieAdvanced")]
         public bool? WaitingRoomCookieAdvanced { get; set; }
 
+        /// <summary>
+        /// Sets an automatic `salt` value to verify the integrity of the waiting room cookie.  Disable this if you want to share the cookie across properties.
+        /// </summary>
         [Input("waitingRoomCookieAutomaticSalt")]
         public bool? WaitingRoomCookieAutomaticSalt { get; set; }
 
+        /// <summary>
+        /// Specifies a domain for the waiting room cookie.
+        /// </summary>
         [Input("waitingRoomCookieDomain")]
         public string? WaitingRoomCookieDomain { get; set; }
 
+        /// <summary>
+        /// Specify with `waitingRoomCookieAdvanced` enabled, selects whether to use the `DYNAMIC` incoming host header, or a `CUSTOMER`-defined cookie domain.
+        /// </summary>
         [Input("waitingRoomCookieDomainType")]
         public string? WaitingRoomCookieDomainType { get; set; }
 
+        /// <summary>
+        /// Sets the number of seconds for which users remain in the waiting room. During this time, users who refresh the waiting room page remain there.
+        /// </summary>
         [Input("waitingRoomCookieDuration")]
         public int? WaitingRoomCookieDuration { get; set; }
 
+        /// <summary>
+        /// Enables a cookie to track a waiting room assignment.
+        /// </summary>
         [Input("waitingRoomCookieEnabled")]
         public bool? WaitingRoomCookieEnabled { get; set; }
 
+        /// <summary>
+        /// Applies the `HttpOnly` flag to the waiting room cookie to ensure it's accessed over HTTP and not manipulated by the client.
+        /// </summary>
         [Input("waitingRoomCookieHttpOnly")]
         public bool? WaitingRoomCookieHttpOnly { get; set; }
 
+        /// <summary>
+        /// Specifies a label to distinguish this waiting room cookie from others. The value appends to the cookie's name, and helps you to maintain the same waiting room assignment across behaviors within a property, and across properties.
+        /// </summary>
         [Input("waitingRoomCookieLabel")]
         public string? WaitingRoomCookieLabel { get; set; }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("waitingRoomCookieManagementTitle")]
         public string? WaitingRoomCookieManagementTitle { get; set; }
 
+        /// <summary>
+        /// Specifies a fixed `salt` value, which is incorporated into the cookie's value to prevent users from manipulating it. You can use the same salt string across different behaviors or properties to apply a single cookie for the waiting room session.
+        /// </summary>
         [Input("waitingRoomCookieSalt")]
         public string? WaitingRoomCookieSalt { get; set; }
 
+        /// <summary>
+        /// Enabling this option shares the same `allowedUserCookieLabel` string. If disabled, specify a different `waitingRoomCookieLabel`.
+        /// </summary>
         [Input("waitingRoomCookieShareLabel")]
         public bool? WaitingRoomCookieShareLabel { get; set; }
 
+        /// <summary>
+        /// Specifies a `cpcode` object for requests sent to the waiting room, including a numeric `id` key and a descriptive `name`.
+        /// </summary>
         [Input("waitingRoomCpCode")]
         public Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomCpCodeArgs? WaitingRoomCpCode { get; set; }
 
+        /// <summary>
+        /// Specifies the NetStorage directory that contains the static waiting room page, with no trailing slash character.
+        /// </summary>
         [Input("waitingRoomDirectory")]
         public string? WaitingRoomDirectory { get; set; }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("waitingRoomManagementTitle")]
         public string? WaitingRoomManagementTitle { get; set; }
 
+        /// <summary>
+        /// Specifies the NetStorage domain for the waiting room page.
+        /// </summary>
         [Input("waitingRoomNetStorage")]
         public Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomNetStorageArgs? WaitingRoomNetStorage { get; set; }
 
+        /// <summary>
+        /// Specifies the response code for requests sent to the waiting room.
+        /// </summary>
         [Input("waitingRoomStatusCode")]
         public int? WaitingRoomStatusCode { get; set; }
 
+        /// <summary>
+        /// Allows you to assign a different CP code that tracks any requests that are sent to the waiting room.
+        /// </summary>
         [Input("waitingRoomUseCpCode")]
         public bool? WaitingRoomUseCpCode { get; set; }
 

@@ -19,9 +19,17 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorFailActionArgs e
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorFailActionArgs Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorFailActionArgs();
 
+    /**
+     * Specifies the basic action to take when there is a failure to contact the origin.
+     * 
+     */
     @Import(name="actionType")
     private @Nullable Output<String> actionType;
 
+    /**
+     * @return Specifies the basic action to take when there is a failure to contact the origin.
+     * 
+     */
     public Optional<Output<String>> actionType() {
         return Optional.ofNullable(this.actionType);
     }
@@ -33,233 +41,497 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorFailActionArgs e
         return Optional.ofNullable(this.allowFcmParentOverride);
     }
 
+    /**
+     * Specifies a custom path.
+     * 
+     */
     @Import(name="cexCustomPath")
     private @Nullable Output<Boolean> cexCustomPath;
 
+    /**
+     * @return Specifies a custom path.
+     * 
+     */
     public Optional<Output<Boolean>> cexCustomPath() {
         return Optional.ofNullable(this.cexCustomPath);
     }
 
+    /**
+     * Specifies a hostname.
+     * 
+     */
     @Import(name="cexHostname")
     private @Nullable Output<String> cexHostname;
 
+    /**
+     * @return Specifies a hostname.
+     * 
+     */
     public Optional<Output<String>> cexHostname() {
         return Optional.ofNullable(this.cexHostname);
     }
 
+    /**
+     * Specifies a custom path.
+     * 
+     */
     @Import(name="cexPath")
     private @Nullable Output<String> cexPath;
 
+    /**
+     * @return Specifies a custom path.
+     * 
+     */
     public Optional<Output<String>> cexPath() {
         return Optional.ofNullable(this.cexPath);
     }
 
+    /**
+     * Specifies a custom redirect path.
+     * 
+     */
     @Import(name="contentCustomPath")
     private @Nullable Output<Boolean> contentCustomPath;
 
+    /**
+     * @return Specifies a custom redirect path.
+     * 
+     */
     public Optional<Output<Boolean>> contentCustomPath() {
         return Optional.ofNullable(this.contentCustomPath);
     }
 
+    /**
+     * Specifies the static hostname for the alternate redirect.
+     * 
+     */
     @Import(name="contentHostname")
     private @Nullable Output<String> contentHostname;
 
+    /**
+     * @return Specifies the static hostname for the alternate redirect.
+     * 
+     */
     public Optional<Output<String>> contentHostname() {
         return Optional.ofNullable(this.contentHostname);
     }
 
+    /**
+     * Specifies a custom redirect path.
+     * 
+     */
     @Import(name="contentPath")
     private @Nullable Output<String> contentPath;
 
+    /**
+     * @return Specifies a custom redirect path.
+     * 
+     */
     public Optional<Output<String>> contentPath() {
         return Optional.ofNullable(this.contentPath);
     }
 
+    /**
+     * Specifies a CP code for which to log errors for the NetStorage location.
+     * 
+     */
     @Import(name="cpCode")
     private @Nullable Output<GetPropertyRulesBuilderRulesV20230105BehaviorFailActionCpCodeArgs> cpCode;
 
+    /**
+     * @return Specifies a CP code for which to log errors for the NetStorage location.
+     * 
+     */
     public Optional<Output<GetPropertyRulesBuilderRulesV20230105BehaviorFailActionCpCodeArgs>> cpCode() {
         return Optional.ofNullable(this.cpCode);
     }
 
+    /**
+     * Allows you to modify the original requested path.
+     * 
+     */
     @Import(name="dynamicCustomPath")
     private @Nullable Output<Boolean> dynamicCustomPath;
 
+    /**
+     * @return Allows you to modify the original requested path.
+     * 
+     */
     public Optional<Output<Boolean>> dynamicCustomPath() {
         return Optional.ofNullable(this.dynamicCustomPath);
     }
 
+    /**
+     * Specifies the redirect method.
+     * 
+     */
     @Import(name="dynamicMethod")
     private @Nullable Output<String> dynamicMethod;
 
+    /**
+     * @return Specifies the redirect method.
+     * 
+     */
     public Optional<Output<String>> dynamicMethod() {
         return Optional.ofNullable(this.dynamicMethod);
     }
 
+    /**
+     * Specifies the new path.
+     * 
+     */
     @Import(name="dynamicPath")
     private @Nullable Output<String> dynamicPath;
 
+    /**
+     * @return Specifies the new path.
+     * 
+     */
     public Optional<Output<String>> dynamicPath() {
         return Optional.ofNullable(this.dynamicPath);
     }
 
+    /**
+     * When enabled in case of a failure to contact the origin, the current behavior applies.
+     * 
+     */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
+    /**
+     * @return When enabled in case of a failure to contact the origin, the current behavior applies.
+     * 
+     */
     public Optional<Output<Boolean>> enabled() {
         return Optional.ofNullable(this.enabled);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Modifies the redirect&#39;s protocol using the value of the `protocol` field.
+     * 
+     */
     @Import(name="modifyProtocol")
     private @Nullable Output<Boolean> modifyProtocol;
 
+    /**
+     * @return Modifies the redirect&#39;s protocol using the value of the `protocol` field.
+     * 
+     */
     public Optional<Output<Boolean>> modifyProtocol() {
         return Optional.ofNullable(this.modifyProtocol);
     }
 
+    /**
+     * When the `actionType` is `RECREATED_NS`, specifies the `NetStorage` origin to serve the alternate content. Contact Akamai Professional Services for your NetStorage origin&#39;s `id`.
+     * 
+     */
     @Import(name="netStorageHostname")
     private @Nullable Output<GetPropertyRulesBuilderRulesV20230105BehaviorFailActionNetStorageHostnameArgs> netStorageHostname;
 
+    /**
+     * @return When the `actionType` is `RECREATED_NS`, specifies the `NetStorage` origin to serve the alternate content. Contact Akamai Professional Services for your NetStorage origin&#39;s `id`.
+     * 
+     */
     public Optional<Output<GetPropertyRulesBuilderRulesV20230105BehaviorFailActionNetStorageHostnameArgs>> netStorageHostname() {
         return Optional.ofNullable(this.netStorageHostname);
     }
 
+    /**
+     * When the `actionType` is `RECREATED_NS`, specifies the path for the `NetStorage` request.
+     * 
+     */
     @Import(name="netStoragePath")
     private @Nullable Output<String> netStoragePath;
 
+    /**
+     * @return When the `actionType` is `RECREATED_NS`, specifies the path for the `NetStorage` request.
+     * 
+     */
     public Optional<Output<String>> netStoragePath() {
         return Optional.ofNullable(this.netStoragePath);
     }
 
+    /**
+     * When using either `contentCustomPath`, `cexCustomPath`, `dynamicCustomPath`, or `redirectCustomPath` to specify a custom path, enabling this passes in the original request&#39;s query string as part of the path.
+     * 
+     */
     @Import(name="preserveQueryString")
     private @Nullable Output<Boolean> preserveQueryString;
 
+    /**
+     * @return When using either `contentCustomPath`, `cexCustomPath`, `dynamicCustomPath`, or `redirectCustomPath` to specify a custom path, enabling this passes in the original request&#39;s query string as part of the path.
+     * 
+     */
     public Optional<Output<Boolean>> preserveQueryString() {
         return Optional.ofNullable(this.preserveQueryString);
     }
 
+    /**
+     * When the `actionType` is `REDIRECT` and `modifyProtocol` is enabled, this specifies the redirect&#39;s protocol.
+     * 
+     */
     @Import(name="protocol")
     private @Nullable Output<String> protocol;
 
+    /**
+     * @return When the `actionType` is `REDIRECT` and `modifyProtocol` is enabled, this specifies the redirect&#39;s protocol.
+     * 
+     */
     public Optional<Output<String>> protocol() {
         return Optional.ofNullable(this.protocol);
     }
 
+    /**
+     * Uses the `redirectPath` to customize a new path.
+     * 
+     */
     @Import(name="redirectCustomPath")
     private @Nullable Output<Boolean> redirectCustomPath;
 
+    /**
+     * @return Uses the `redirectPath` to customize a new path.
+     * 
+     */
     public Optional<Output<Boolean>> redirectCustomPath() {
         return Optional.ofNullable(this.redirectCustomPath);
     }
 
+    /**
+     * When the `actionType` is `REDIRECT` and the `redirectHostnameType` is `ALTERNATE`, this specifies the hostname for the redirect.
+     * 
+     */
     @Import(name="redirectHostname")
     private @Nullable Output<String> redirectHostname;
 
+    /**
+     * @return When the `actionType` is `REDIRECT` and the `redirectHostnameType` is `ALTERNATE`, this specifies the hostname for the redirect.
+     * 
+     */
     public Optional<Output<String>> redirectHostname() {
         return Optional.ofNullable(this.redirectHostname);
     }
 
+    /**
+     * Whether to preserve or customize the hostname.
+     * 
+     */
     @Import(name="redirectHostnameType")
     private @Nullable Output<String> redirectHostnameType;
 
+    /**
+     * @return Whether to preserve or customize the hostname.
+     * 
+     */
     public Optional<Output<String>> redirectHostnameType() {
         return Optional.ofNullable(this.redirectHostnameType);
     }
 
+    /**
+     * Specifies the HTTP response code.
+     * 
+     */
     @Import(name="redirectMethod")
     private @Nullable Output<Integer> redirectMethod;
 
+    /**
+     * @return Specifies the HTTP response code.
+     * 
+     */
     public Optional<Output<Integer>> redirectMethod() {
         return Optional.ofNullable(this.redirectMethod);
     }
 
+    /**
+     * Specifies a new path.
+     * 
+     */
     @Import(name="redirectPath")
     private @Nullable Output<String> redirectPath;
 
+    /**
+     * @return Specifies a new path.
+     * 
+     */
     public Optional<Output<String>> redirectPath() {
         return Optional.ofNullable(this.redirectPath);
     }
 
+    /**
+     * Specifies whether to use a CNAME chain to determine the hostname for the SaaS dynamic failaction.
+     * 
+     */
     @Import(name="saasCnameEnabled")
     private @Nullable Output<Boolean> saasCnameEnabled;
 
+    /**
+     * @return Specifies whether to use a CNAME chain to determine the hostname for the SaaS dynamic failaction.
+     * 
+     */
     public Optional<Output<Boolean>> saasCnameEnabled() {
         return Optional.ofNullable(this.saasCnameEnabled);
     }
 
+    /**
+     * Specifies the number of elements in the CNAME chain backwards from the edge hostname that determines the hostname for the SaaS dynamic failaction.
+     * 
+     */
     @Import(name="saasCnameLevel")
     private @Nullable Output<Integer> saasCnameLevel;
 
+    /**
+     * @return Specifies the number of elements in the CNAME chain backwards from the edge hostname that determines the hostname for the SaaS dynamic failaction.
+     * 
+     */
     public Optional<Output<Integer>> saasCnameLevel() {
         return Optional.ofNullable(this.saasCnameLevel);
     }
 
+    /**
+     * Specifies the name of the cookie that identifies this SaaS dynamic failaction.
+     * 
+     */
     @Import(name="saasCookie")
     private @Nullable Output<String> saasCookie;
 
+    /**
+     * @return Specifies the name of the cookie that identifies this SaaS dynamic failaction.
+     * 
+     */
     public Optional<Output<String>> saasCookie() {
         return Optional.ofNullable(this.saasCookie);
     }
 
+    /**
+     * Specifies the name of the query parameter that identifies this SaaS dynamic failaction.
+     * 
+     */
     @Import(name="saasQueryString")
     private @Nullable Output<String> saasQueryString;
 
+    /**
+     * @return Specifies the name of the query parameter that identifies this SaaS dynamic failaction.
+     * 
+     */
     public Optional<Output<String>> saasQueryString() {
         return Optional.ofNullable(this.saasQueryString);
     }
 
+    /**
+     * Specifies the substitution pattern (a Perl-compatible regular expression) that defines the SaaS dynamic failaction.
+     * 
+     */
     @Import(name="saasRegex")
     private @Nullable Output<String> saasRegex;
 
+    /**
+     * @return Specifies the substitution pattern (a Perl-compatible regular expression) that defines the SaaS dynamic failaction.
+     * 
+     */
     public Optional<Output<String>> saasRegex() {
         return Optional.ofNullable(this.saasRegex);
     }
 
+    /**
+     * Specifies the replacement pattern that defines the SaaS dynamic failaction.
+     * 
+     */
     @Import(name="saasReplace")
     private @Nullable Output<String> saasReplace;
 
+    /**
+     * @return Specifies the replacement pattern that defines the SaaS dynamic failaction.
+     * 
+     */
     public Optional<Output<String>> saasReplace() {
         return Optional.ofNullable(this.saasReplace);
     }
 
+    /**
+     * Specifies the static portion of the SaaS dynamic failaction.
+     * 
+     */
     @Import(name="saasSuffix")
     private @Nullable Output<String> saasSuffix;
 
+    /**
+     * @return Specifies the static portion of the SaaS dynamic failaction.
+     * 
+     */
     public Optional<Output<String>> saasSuffix() {
         return Optional.ofNullable(this.saasSuffix);
     }
 
+    /**
+     * Identifies the component of the request that identifies the SaaS dynamic fail action.
+     * 
+     */
     @Import(name="saasType")
     private @Nullable Output<String> saasType;
 
+    /**
+     * @return Identifies the component of the request that identifies the SaaS dynamic fail action.
+     * 
+     */
     public Optional<Output<String>> saasType() {
         return Optional.ofNullable(this.saasType);
     }
 
+    /**
+     * Assigns a new HTTP status code to the failure response.
+     * 
+     */
     @Import(name="statusCode")
     private @Nullable Output<Integer> statusCode;
 
+    /**
+     * @return Assigns a new HTTP status code to the failure response.
+     * 
+     */
     public Optional<Output<Integer>> statusCode() {
         return Optional.ofNullable(this.statusCode);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -322,11 +594,23 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorFailActionArgs e
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorFailActionArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param actionType Specifies the basic action to take when there is a failure to contact the origin.
+         * 
+         * @return builder
+         * 
+         */
         public Builder actionType(@Nullable Output<String> actionType) {
             $.actionType = actionType;
             return this;
         }
 
+        /**
+         * @param actionType Specifies the basic action to take when there is a failure to contact the origin.
+         * 
+         * @return builder
+         * 
+         */
         public Builder actionType(String actionType) {
             return actionType(Output.of(actionType));
         }
@@ -340,299 +624,695 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorFailActionArgs e
             return allowFcmParentOverride(Output.of(allowFcmParentOverride));
         }
 
+        /**
+         * @param cexCustomPath Specifies a custom path.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cexCustomPath(@Nullable Output<Boolean> cexCustomPath) {
             $.cexCustomPath = cexCustomPath;
             return this;
         }
 
+        /**
+         * @param cexCustomPath Specifies a custom path.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cexCustomPath(Boolean cexCustomPath) {
             return cexCustomPath(Output.of(cexCustomPath));
         }
 
+        /**
+         * @param cexHostname Specifies a hostname.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cexHostname(@Nullable Output<String> cexHostname) {
             $.cexHostname = cexHostname;
             return this;
         }
 
+        /**
+         * @param cexHostname Specifies a hostname.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cexHostname(String cexHostname) {
             return cexHostname(Output.of(cexHostname));
         }
 
+        /**
+         * @param cexPath Specifies a custom path.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cexPath(@Nullable Output<String> cexPath) {
             $.cexPath = cexPath;
             return this;
         }
 
+        /**
+         * @param cexPath Specifies a custom path.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cexPath(String cexPath) {
             return cexPath(Output.of(cexPath));
         }
 
+        /**
+         * @param contentCustomPath Specifies a custom redirect path.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contentCustomPath(@Nullable Output<Boolean> contentCustomPath) {
             $.contentCustomPath = contentCustomPath;
             return this;
         }
 
+        /**
+         * @param contentCustomPath Specifies a custom redirect path.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contentCustomPath(Boolean contentCustomPath) {
             return contentCustomPath(Output.of(contentCustomPath));
         }
 
+        /**
+         * @param contentHostname Specifies the static hostname for the alternate redirect.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contentHostname(@Nullable Output<String> contentHostname) {
             $.contentHostname = contentHostname;
             return this;
         }
 
+        /**
+         * @param contentHostname Specifies the static hostname for the alternate redirect.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contentHostname(String contentHostname) {
             return contentHostname(Output.of(contentHostname));
         }
 
+        /**
+         * @param contentPath Specifies a custom redirect path.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contentPath(@Nullable Output<String> contentPath) {
             $.contentPath = contentPath;
             return this;
         }
 
+        /**
+         * @param contentPath Specifies a custom redirect path.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contentPath(String contentPath) {
             return contentPath(Output.of(contentPath));
         }
 
+        /**
+         * @param cpCode Specifies a CP code for which to log errors for the NetStorage location.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cpCode(@Nullable Output<GetPropertyRulesBuilderRulesV20230105BehaviorFailActionCpCodeArgs> cpCode) {
             $.cpCode = cpCode;
             return this;
         }
 
+        /**
+         * @param cpCode Specifies a CP code for which to log errors for the NetStorage location.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cpCode(GetPropertyRulesBuilderRulesV20230105BehaviorFailActionCpCodeArgs cpCode) {
             return cpCode(Output.of(cpCode));
         }
 
+        /**
+         * @param dynamicCustomPath Allows you to modify the original requested path.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dynamicCustomPath(@Nullable Output<Boolean> dynamicCustomPath) {
             $.dynamicCustomPath = dynamicCustomPath;
             return this;
         }
 
+        /**
+         * @param dynamicCustomPath Allows you to modify the original requested path.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dynamicCustomPath(Boolean dynamicCustomPath) {
             return dynamicCustomPath(Output.of(dynamicCustomPath));
         }
 
+        /**
+         * @param dynamicMethod Specifies the redirect method.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dynamicMethod(@Nullable Output<String> dynamicMethod) {
             $.dynamicMethod = dynamicMethod;
             return this;
         }
 
+        /**
+         * @param dynamicMethod Specifies the redirect method.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dynamicMethod(String dynamicMethod) {
             return dynamicMethod(Output.of(dynamicMethod));
         }
 
+        /**
+         * @param dynamicPath Specifies the new path.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dynamicPath(@Nullable Output<String> dynamicPath) {
             $.dynamicPath = dynamicPath;
             return this;
         }
 
+        /**
+         * @param dynamicPath Specifies the new path.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dynamicPath(String dynamicPath) {
             return dynamicPath(Output.of(dynamicPath));
         }
 
+        /**
+         * @param enabled When enabled in case of a failure to contact the origin, the current behavior applies.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(@Nullable Output<Boolean> enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param enabled When enabled in case of a failure to contact the origin, the current behavior applies.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(Boolean enabled) {
             return enabled(Output.of(enabled));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param modifyProtocol Modifies the redirect&#39;s protocol using the value of the `protocol` field.
+         * 
+         * @return builder
+         * 
+         */
         public Builder modifyProtocol(@Nullable Output<Boolean> modifyProtocol) {
             $.modifyProtocol = modifyProtocol;
             return this;
         }
 
+        /**
+         * @param modifyProtocol Modifies the redirect&#39;s protocol using the value of the `protocol` field.
+         * 
+         * @return builder
+         * 
+         */
         public Builder modifyProtocol(Boolean modifyProtocol) {
             return modifyProtocol(Output.of(modifyProtocol));
         }
 
+        /**
+         * @param netStorageHostname When the `actionType` is `RECREATED_NS`, specifies the `NetStorage` origin to serve the alternate content. Contact Akamai Professional Services for your NetStorage origin&#39;s `id`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder netStorageHostname(@Nullable Output<GetPropertyRulesBuilderRulesV20230105BehaviorFailActionNetStorageHostnameArgs> netStorageHostname) {
             $.netStorageHostname = netStorageHostname;
             return this;
         }
 
+        /**
+         * @param netStorageHostname When the `actionType` is `RECREATED_NS`, specifies the `NetStorage` origin to serve the alternate content. Contact Akamai Professional Services for your NetStorage origin&#39;s `id`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder netStorageHostname(GetPropertyRulesBuilderRulesV20230105BehaviorFailActionNetStorageHostnameArgs netStorageHostname) {
             return netStorageHostname(Output.of(netStorageHostname));
         }
 
+        /**
+         * @param netStoragePath When the `actionType` is `RECREATED_NS`, specifies the path for the `NetStorage` request.
+         * 
+         * @return builder
+         * 
+         */
         public Builder netStoragePath(@Nullable Output<String> netStoragePath) {
             $.netStoragePath = netStoragePath;
             return this;
         }
 
+        /**
+         * @param netStoragePath When the `actionType` is `RECREATED_NS`, specifies the path for the `NetStorage` request.
+         * 
+         * @return builder
+         * 
+         */
         public Builder netStoragePath(String netStoragePath) {
             return netStoragePath(Output.of(netStoragePath));
         }
 
+        /**
+         * @param preserveQueryString When using either `contentCustomPath`, `cexCustomPath`, `dynamicCustomPath`, or `redirectCustomPath` to specify a custom path, enabling this passes in the original request&#39;s query string as part of the path.
+         * 
+         * @return builder
+         * 
+         */
         public Builder preserveQueryString(@Nullable Output<Boolean> preserveQueryString) {
             $.preserveQueryString = preserveQueryString;
             return this;
         }
 
+        /**
+         * @param preserveQueryString When using either `contentCustomPath`, `cexCustomPath`, `dynamicCustomPath`, or `redirectCustomPath` to specify a custom path, enabling this passes in the original request&#39;s query string as part of the path.
+         * 
+         * @return builder
+         * 
+         */
         public Builder preserveQueryString(Boolean preserveQueryString) {
             return preserveQueryString(Output.of(preserveQueryString));
         }
 
+        /**
+         * @param protocol When the `actionType` is `REDIRECT` and `modifyProtocol` is enabled, this specifies the redirect&#39;s protocol.
+         * 
+         * @return builder
+         * 
+         */
         public Builder protocol(@Nullable Output<String> protocol) {
             $.protocol = protocol;
             return this;
         }
 
+        /**
+         * @param protocol When the `actionType` is `REDIRECT` and `modifyProtocol` is enabled, this specifies the redirect&#39;s protocol.
+         * 
+         * @return builder
+         * 
+         */
         public Builder protocol(String protocol) {
             return protocol(Output.of(protocol));
         }
 
+        /**
+         * @param redirectCustomPath Uses the `redirectPath` to customize a new path.
+         * 
+         * @return builder
+         * 
+         */
         public Builder redirectCustomPath(@Nullable Output<Boolean> redirectCustomPath) {
             $.redirectCustomPath = redirectCustomPath;
             return this;
         }
 
+        /**
+         * @param redirectCustomPath Uses the `redirectPath` to customize a new path.
+         * 
+         * @return builder
+         * 
+         */
         public Builder redirectCustomPath(Boolean redirectCustomPath) {
             return redirectCustomPath(Output.of(redirectCustomPath));
         }
 
+        /**
+         * @param redirectHostname When the `actionType` is `REDIRECT` and the `redirectHostnameType` is `ALTERNATE`, this specifies the hostname for the redirect.
+         * 
+         * @return builder
+         * 
+         */
         public Builder redirectHostname(@Nullable Output<String> redirectHostname) {
             $.redirectHostname = redirectHostname;
             return this;
         }
 
+        /**
+         * @param redirectHostname When the `actionType` is `REDIRECT` and the `redirectHostnameType` is `ALTERNATE`, this specifies the hostname for the redirect.
+         * 
+         * @return builder
+         * 
+         */
         public Builder redirectHostname(String redirectHostname) {
             return redirectHostname(Output.of(redirectHostname));
         }
 
+        /**
+         * @param redirectHostnameType Whether to preserve or customize the hostname.
+         * 
+         * @return builder
+         * 
+         */
         public Builder redirectHostnameType(@Nullable Output<String> redirectHostnameType) {
             $.redirectHostnameType = redirectHostnameType;
             return this;
         }
 
+        /**
+         * @param redirectHostnameType Whether to preserve or customize the hostname.
+         * 
+         * @return builder
+         * 
+         */
         public Builder redirectHostnameType(String redirectHostnameType) {
             return redirectHostnameType(Output.of(redirectHostnameType));
         }
 
+        /**
+         * @param redirectMethod Specifies the HTTP response code.
+         * 
+         * @return builder
+         * 
+         */
         public Builder redirectMethod(@Nullable Output<Integer> redirectMethod) {
             $.redirectMethod = redirectMethod;
             return this;
         }
 
+        /**
+         * @param redirectMethod Specifies the HTTP response code.
+         * 
+         * @return builder
+         * 
+         */
         public Builder redirectMethod(Integer redirectMethod) {
             return redirectMethod(Output.of(redirectMethod));
         }
 
+        /**
+         * @param redirectPath Specifies a new path.
+         * 
+         * @return builder
+         * 
+         */
         public Builder redirectPath(@Nullable Output<String> redirectPath) {
             $.redirectPath = redirectPath;
             return this;
         }
 
+        /**
+         * @param redirectPath Specifies a new path.
+         * 
+         * @return builder
+         * 
+         */
         public Builder redirectPath(String redirectPath) {
             return redirectPath(Output.of(redirectPath));
         }
 
+        /**
+         * @param saasCnameEnabled Specifies whether to use a CNAME chain to determine the hostname for the SaaS dynamic failaction.
+         * 
+         * @return builder
+         * 
+         */
         public Builder saasCnameEnabled(@Nullable Output<Boolean> saasCnameEnabled) {
             $.saasCnameEnabled = saasCnameEnabled;
             return this;
         }
 
+        /**
+         * @param saasCnameEnabled Specifies whether to use a CNAME chain to determine the hostname for the SaaS dynamic failaction.
+         * 
+         * @return builder
+         * 
+         */
         public Builder saasCnameEnabled(Boolean saasCnameEnabled) {
             return saasCnameEnabled(Output.of(saasCnameEnabled));
         }
 
+        /**
+         * @param saasCnameLevel Specifies the number of elements in the CNAME chain backwards from the edge hostname that determines the hostname for the SaaS dynamic failaction.
+         * 
+         * @return builder
+         * 
+         */
         public Builder saasCnameLevel(@Nullable Output<Integer> saasCnameLevel) {
             $.saasCnameLevel = saasCnameLevel;
             return this;
         }
 
+        /**
+         * @param saasCnameLevel Specifies the number of elements in the CNAME chain backwards from the edge hostname that determines the hostname for the SaaS dynamic failaction.
+         * 
+         * @return builder
+         * 
+         */
         public Builder saasCnameLevel(Integer saasCnameLevel) {
             return saasCnameLevel(Output.of(saasCnameLevel));
         }
 
+        /**
+         * @param saasCookie Specifies the name of the cookie that identifies this SaaS dynamic failaction.
+         * 
+         * @return builder
+         * 
+         */
         public Builder saasCookie(@Nullable Output<String> saasCookie) {
             $.saasCookie = saasCookie;
             return this;
         }
 
+        /**
+         * @param saasCookie Specifies the name of the cookie that identifies this SaaS dynamic failaction.
+         * 
+         * @return builder
+         * 
+         */
         public Builder saasCookie(String saasCookie) {
             return saasCookie(Output.of(saasCookie));
         }
 
+        /**
+         * @param saasQueryString Specifies the name of the query parameter that identifies this SaaS dynamic failaction.
+         * 
+         * @return builder
+         * 
+         */
         public Builder saasQueryString(@Nullable Output<String> saasQueryString) {
             $.saasQueryString = saasQueryString;
             return this;
         }
 
+        /**
+         * @param saasQueryString Specifies the name of the query parameter that identifies this SaaS dynamic failaction.
+         * 
+         * @return builder
+         * 
+         */
         public Builder saasQueryString(String saasQueryString) {
             return saasQueryString(Output.of(saasQueryString));
         }
 
+        /**
+         * @param saasRegex Specifies the substitution pattern (a Perl-compatible regular expression) that defines the SaaS dynamic failaction.
+         * 
+         * @return builder
+         * 
+         */
         public Builder saasRegex(@Nullable Output<String> saasRegex) {
             $.saasRegex = saasRegex;
             return this;
         }
 
+        /**
+         * @param saasRegex Specifies the substitution pattern (a Perl-compatible regular expression) that defines the SaaS dynamic failaction.
+         * 
+         * @return builder
+         * 
+         */
         public Builder saasRegex(String saasRegex) {
             return saasRegex(Output.of(saasRegex));
         }
 
+        /**
+         * @param saasReplace Specifies the replacement pattern that defines the SaaS dynamic failaction.
+         * 
+         * @return builder
+         * 
+         */
         public Builder saasReplace(@Nullable Output<String> saasReplace) {
             $.saasReplace = saasReplace;
             return this;
         }
 
+        /**
+         * @param saasReplace Specifies the replacement pattern that defines the SaaS dynamic failaction.
+         * 
+         * @return builder
+         * 
+         */
         public Builder saasReplace(String saasReplace) {
             return saasReplace(Output.of(saasReplace));
         }
 
+        /**
+         * @param saasSuffix Specifies the static portion of the SaaS dynamic failaction.
+         * 
+         * @return builder
+         * 
+         */
         public Builder saasSuffix(@Nullable Output<String> saasSuffix) {
             $.saasSuffix = saasSuffix;
             return this;
         }
 
+        /**
+         * @param saasSuffix Specifies the static portion of the SaaS dynamic failaction.
+         * 
+         * @return builder
+         * 
+         */
         public Builder saasSuffix(String saasSuffix) {
             return saasSuffix(Output.of(saasSuffix));
         }
 
+        /**
+         * @param saasType Identifies the component of the request that identifies the SaaS dynamic fail action.
+         * 
+         * @return builder
+         * 
+         */
         public Builder saasType(@Nullable Output<String> saasType) {
             $.saasType = saasType;
             return this;
         }
 
+        /**
+         * @param saasType Identifies the component of the request that identifies the SaaS dynamic fail action.
+         * 
+         * @return builder
+         * 
+         */
         public Builder saasType(String saasType) {
             return saasType(Output.of(saasType));
         }
 
+        /**
+         * @param statusCode Assigns a new HTTP status code to the failure response.
+         * 
+         * @return builder
+         * 
+         */
         public Builder statusCode(@Nullable Output<Integer> statusCode) {
             $.statusCode = statusCode;
             return this;
         }
 
+        /**
+         * @param statusCode Assigns a new HTTP status code to the failure response.
+         * 
+         * @return builder
+         * 
+         */
         public Builder statusCode(Integer statusCode) {
             return statusCode(Output.of(statusCode));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

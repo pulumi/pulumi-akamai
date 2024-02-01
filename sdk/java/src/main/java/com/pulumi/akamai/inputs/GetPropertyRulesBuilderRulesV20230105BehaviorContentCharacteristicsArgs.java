@@ -16,51 +16,107 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacter
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsArgs Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsArgs();
 
+    /**
+     * Optimize based on the total size of the content library delivered.
+     * 
+     */
     @Import(name="catalogSize")
     private @Nullable Output<String> catalogSize;
 
+    /**
+     * @return Optimize based on the total size of the content library delivered.
+     * 
+     */
     public Optional<Output<String>> catalogSize() {
         return Optional.ofNullable(this.catalogSize);
     }
 
+    /**
+     * Optimize based on the type of content.
+     * 
+     */
     @Import(name="contentType")
     private @Nullable Output<String> contentType;
 
+    /**
+     * @return Optimize based on the type of content.
+     * 
+     */
     public Optional<Output<String>> contentType() {
         return Optional.ofNullable(this.contentType);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Optimize based on the size of the object retrieved from the origin.
+     * 
+     */
     @Import(name="objectSize")
     private @Nullable Output<String> objectSize;
 
+    /**
+     * @return Optimize based on the size of the object retrieved from the origin.
+     * 
+     */
     public Optional<Output<String>> objectSize() {
         return Optional.ofNullable(this.objectSize);
     }
 
+    /**
+     * Optimize based on the content&#39;s expected popularity.
+     * 
+     */
     @Import(name="popularityDistribution")
     private @Nullable Output<String> popularityDistribution;
 
+    /**
+     * @return Optimize based on the content&#39;s expected popularity.
+     * 
+     */
     public Optional<Output<String>> popularityDistribution() {
         return Optional.ofNullable(this.popularityDistribution);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -95,65 +151,149 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacter
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param catalogSize Optimize based on the total size of the content library delivered.
+         * 
+         * @return builder
+         * 
+         */
         public Builder catalogSize(@Nullable Output<String> catalogSize) {
             $.catalogSize = catalogSize;
             return this;
         }
 
+        /**
+         * @param catalogSize Optimize based on the total size of the content library delivered.
+         * 
+         * @return builder
+         * 
+         */
         public Builder catalogSize(String catalogSize) {
             return catalogSize(Output.of(catalogSize));
         }
 
+        /**
+         * @param contentType Optimize based on the type of content.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contentType(@Nullable Output<String> contentType) {
             $.contentType = contentType;
             return this;
         }
 
+        /**
+         * @param contentType Optimize based on the type of content.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contentType(String contentType) {
             return contentType(Output.of(contentType));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param objectSize Optimize based on the size of the object retrieved from the origin.
+         * 
+         * @return builder
+         * 
+         */
         public Builder objectSize(@Nullable Output<String> objectSize) {
             $.objectSize = objectSize;
             return this;
         }
 
+        /**
+         * @param objectSize Optimize based on the size of the object retrieved from the origin.
+         * 
+         * @return builder
+         * 
+         */
         public Builder objectSize(String objectSize) {
             return objectSize(Output.of(objectSize));
         }
 
+        /**
+         * @param popularityDistribution Optimize based on the content&#39;s expected popularity.
+         * 
+         * @return builder
+         * 
+         */
         public Builder popularityDistribution(@Nullable Output<String> popularityDistribution) {
             $.popularityDistribution = popularityDistribution;
             return this;
         }
 
+        /**
+         * @param popularityDistribution Optimize based on the content&#39;s expected popularity.
+         * 
+         * @return builder
+         * 
+         */
         public Builder popularityDistribution(String popularityDistribution) {
             return popularityDistribution(Output.of(popularityDistribution));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

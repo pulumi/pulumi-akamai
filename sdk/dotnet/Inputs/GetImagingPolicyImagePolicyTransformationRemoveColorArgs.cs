@@ -12,21 +12,39 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetImagingPolicyImagePolicyTransformationRemoveColorInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The hexadecimal CSS color value to remove.
+        /// </summary>
         [Input("color")]
         public Input<string>? Color { get; set; }
 
+        /// <summary>
+        /// The hexadecimal CSS color value to remove.
+        /// </summary>
         [Input("colorVar")]
         public Input<string>? ColorVar { get; set; }
 
+        /// <summary>
+        /// The RemoveColor transformation may create a hard edge around an image. To minimize these hard edges and make the removal of the color more gradual in appearance, use the Feather option. This option allows you to extend the color removal beyond the specified Tolerance. The pixels in this extended tolerance become semi-transparent - creating a softer edge.  The first realtime request for an image using the feather option may result in a slow transformation time. Subsequent requests are not impacted as they are served directly out of cache.
+        /// </summary>
         [Input("feather")]
         public Input<string>? Feather { get; set; }
 
+        /// <summary>
+        /// The RemoveColor transformation may create a hard edge around an image. To minimize these hard edges and make the removal of the color more gradual in appearance, use the Feather option. This option allows you to extend the color removal beyond the specified Tolerance. The pixels in this extended tolerance become semi-transparent - creating a softer edge.  The first realtime request for an image using the feather option may result in a slow transformation time. Subsequent requests are not impacted as they are served directly out of cache.
+        /// </summary>
         [Input("featherVar")]
         public Input<string>? FeatherVar { get; set; }
 
+        /// <summary>
+        /// The Tolerance option defines how close the color needs to be to the selected color before it's changed to fully transparent. Set the Tolerance to 0.0 to remove only the exact color specified.
+        /// </summary>
         [Input("tolerance")]
         public Input<string>? Tolerance { get; set; }
 
+        /// <summary>
+        /// The Tolerance option defines how close the color needs to be to the selected color before it's changed to fully transparent. Set the Tolerance to 0.0 to remove only the exact color specified.
+        /// </summary>
         [Input("toleranceVar")]
         public Input<string>? ToleranceVar { get; set; }
 

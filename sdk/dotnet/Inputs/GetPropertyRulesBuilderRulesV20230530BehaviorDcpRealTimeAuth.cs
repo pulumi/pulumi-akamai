@@ -12,30 +12,57 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorDcpRealTimeAuthArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Extracts a hostname from JWT.
+        /// </summary>
         [Input("extractHostname")]
         public bool? ExtractHostname { get; set; }
 
+        /// <summary>
+        /// Extracts a jurisdiction that defines a geographically distributed set of servers from JWT.
+        /// </summary>
         [Input("extractJurisdiction")]
         public bool? ExtractJurisdiction { get; set; }
 
+        /// <summary>
+        /// Extracts a namespace from JSON web tokens (JWT).
+        /// </summary>
         [Input("extractNamespace")]
         public bool? ExtractNamespace { get; set; }
 
+        /// <summary>
+        /// Specifies the claim in JWT to extract the hostname from.
+        /// </summary>
         [Input("hostnameClaim")]
         public string? HostnameClaim { get; set; }
 
+        /// <summary>
+        /// Specifies the claim in JWT to extract the jurisdiction from.
+        /// </summary>
         [Input("jurisdictionClaim")]
         public string? JurisdictionClaim { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public bool? Locked { get; set; }
 
+        /// <summary>
+        /// Specifies the claim in JWT to extract the namespace from.
+        /// </summary>
         [Input("namespaceClaim")]
         public string? NamespaceClaim { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public string? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public string? Uuid { get; set; }
 

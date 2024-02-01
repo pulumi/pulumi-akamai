@@ -14,23 +14,40 @@ namespace Pulumi.Akamai.Inputs
     {
         [Input("cdnAuthKeys")]
         private InputList<Inputs.GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyInputArgs>? _cdnAuthKeys;
+
+        /// <summary>
+        /// List of auth keys configured for the CDN.
+        /// </summary>
         public InputList<Inputs.GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyInputArgs> CdnAuthKeys
         {
             get => _cdnAuthKeys ?? (_cdnAuthKeys = new InputList<Inputs.GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyInputArgs>());
             set => _cdnAuthKeys = value;
         }
 
+        /// <summary>
+        /// Unique identifier for the CDN.
+        /// </summary>
         [Input("cdnCode", required: true)]
         public Input<string> CdnCode { get; set; } = null!;
 
+        /// <summary>
+        /// Enable CDN.
+        /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
 
+        /// <summary>
+        /// Specify whether CDN communication is HTTPS only.
+        /// </summary>
         [Input("httpsOnly", required: true)]
         public Input<bool> HttpsOnly { get; set; } = null!;
 
         [Input("ipAclCidrs", required: true)]
         private InputList<string>? _ipAclCidrs;
+
+        /// <summary>
+        /// Configure an access control list using IP addresses in CIDR notation.
+        /// </summary>
         public InputList<string> IpAclCidrs
         {
             get => _ipAclCidrs ?? (_ipAclCidrs = new InputList<string>());

@@ -19,58 +19,122 @@ public final class GetCloudletsRequestControlMatchRuleMatchRule extends com.pulu
 
     public static final GetCloudletsRequestControlMatchRuleMatchRule Empty = new GetCloudletsRequestControlMatchRuleMatchRule();
 
+    /**
+     * If set to allow, the request is sent to origin when all conditions are true. If deny, the request is denied when all conditions are true. If denybranded, the request is denied and rerouted according to the configuration of the Request Control behavior
+     * 
+     */
     @Import(name="allowDeny", required=true)
     private String allowDeny;
 
+    /**
+     * @return If set to allow, the request is sent to origin when all conditions are true. If deny, the request is denied when all conditions are true. If denybranded, the request is denied and rerouted according to the configuration of the Request Control behavior
+     * 
+     */
     public String allowDeny() {
         return this.allowDeny;
     }
 
+    /**
+     * If set to true, disables a rule so it is not evaluated against incoming requests.
+     * 
+     */
     @Import(name="disabled")
     private @Nullable Boolean disabled;
 
+    /**
+     * @return If set to true, disables a rule so it is not evaluated against incoming requests.
+     * 
+     */
     public Optional<Boolean> disabled() {
         return Optional.ofNullable(this.disabled);
     }
 
+    /**
+     * The end time for this match (in seconds since the epoch)
+     * 
+     */
     @Import(name="end")
     private @Nullable Integer end;
 
+    /**
+     * @return The end time for this match (in seconds since the epoch)
+     * 
+     */
     public Optional<Integer> end() {
         return Optional.ofNullable(this.end);
     }
 
+    /**
+     * Defines a set of match objects
+     * 
+     */
     @Import(name="matches")
     private @Nullable List<GetCloudletsRequestControlMatchRuleMatchRuleMatch> matches;
 
+    /**
+     * @return Defines a set of match objects
+     * 
+     */
     public Optional<List<GetCloudletsRequestControlMatchRuleMatchRuleMatch>> matches() {
         return Optional.ofNullable(this.matches);
     }
 
+    /**
+     * Is used in some cloudlets to support default rules (rule that is always matched)
+     * 
+     */
     @Import(name="matchesAlways")
     private @Nullable Boolean matchesAlways;
 
+    /**
+     * @return Is used in some cloudlets to support default rules (rule that is always matched)
+     * 
+     */
     public Optional<Boolean> matchesAlways() {
         return Optional.ofNullable(this.matchesAlways);
     }
 
+    /**
+     * The name of the rule
+     * 
+     */
     @Import(name="name")
     private @Nullable String name;
 
+    /**
+     * @return The name of the rule
+     * 
+     */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
 
+    /**
+     * The start time for this match (in seconds since the epoch)
+     * 
+     */
     @Import(name="start")
     private @Nullable Integer start;
 
+    /**
+     * @return The start time for this match (in seconds since the epoch)
+     * 
+     */
     public Optional<Integer> start() {
         return Optional.ofNullable(this.start);
     }
 
+    /**
+     * The type of Cloudlet the rule is for
+     * 
+     */
     @Import(name="type", required=true)
     private String type;
 
+    /**
+     * @return The type of Cloudlet the rule is for
+     * 
+     */
     public String type() {
         return this.type;
     }
@@ -106,45 +170,99 @@ public final class GetCloudletsRequestControlMatchRuleMatchRule extends com.pulu
             $ = new GetCloudletsRequestControlMatchRuleMatchRule(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param allowDeny If set to allow, the request is sent to origin when all conditions are true. If deny, the request is denied when all conditions are true. If denybranded, the request is denied and rerouted according to the configuration of the Request Control behavior
+         * 
+         * @return builder
+         * 
+         */
         public Builder allowDeny(String allowDeny) {
             $.allowDeny = allowDeny;
             return this;
         }
 
+        /**
+         * @param disabled If set to true, disables a rule so it is not evaluated against incoming requests.
+         * 
+         * @return builder
+         * 
+         */
         public Builder disabled(@Nullable Boolean disabled) {
             $.disabled = disabled;
             return this;
         }
 
+        /**
+         * @param end The end time for this match (in seconds since the epoch)
+         * 
+         * @return builder
+         * 
+         */
         public Builder end(@Nullable Integer end) {
             $.end = end;
             return this;
         }
 
+        /**
+         * @param matches Defines a set of match objects
+         * 
+         * @return builder
+         * 
+         */
         public Builder matches(@Nullable List<GetCloudletsRequestControlMatchRuleMatchRuleMatch> matches) {
             $.matches = matches;
             return this;
         }
 
+        /**
+         * @param matches Defines a set of match objects
+         * 
+         * @return builder
+         * 
+         */
         public Builder matches(GetCloudletsRequestControlMatchRuleMatchRuleMatch... matches) {
             return matches(List.of(matches));
         }
 
+        /**
+         * @param matchesAlways Is used in some cloudlets to support default rules (rule that is always matched)
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchesAlways(@Nullable Boolean matchesAlways) {
             $.matchesAlways = matchesAlways;
             return this;
         }
 
+        /**
+         * @param name The name of the rule
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(@Nullable String name) {
             $.name = name;
             return this;
         }
 
+        /**
+         * @param start The start time for this match (in seconds since the epoch)
+         * 
+         * @return builder
+         * 
+         */
         public Builder start(@Nullable Integer start) {
             $.start = start;
             return this;
         }
 
+        /**
+         * @param type The type of Cloudlet the rule is for
+         * 
+         * @return builder
+         * 
+         */
         public Builder type(String type) {
             $.type = type;
             return this;

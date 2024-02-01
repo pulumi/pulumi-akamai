@@ -12,9 +12,15 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetImagingPolicyImagePolicyTransformationRotateArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The value to rotate the image by. Positive values rotate clockwise, while negative values rotate counter-clockwise.
+        /// </summary>
         [Input("degrees")]
         public string? Degrees { get; set; }
 
+        /// <summary>
+        /// The value to rotate the image by. Positive values rotate clockwise, while negative values rotate counter-clockwise.
+        /// </summary>
         [Input("degreesVar")]
         public string? DegreesVar { get; set; }
 

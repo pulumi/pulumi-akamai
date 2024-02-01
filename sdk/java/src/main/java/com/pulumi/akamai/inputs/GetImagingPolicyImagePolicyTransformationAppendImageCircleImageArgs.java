@@ -16,30 +16,62 @@ public final class GetImagingPolicyImagePolicyTransformationAppendImageCircleIma
 
     public static final GetImagingPolicyImagePolicyTransformationAppendImageCircleImageArgs Empty = new GetImagingPolicyImagePolicyTransformationAppendImageCircleImageArgs();
 
+    /**
+     * The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
+     * 
+     */
     @Import(name="color")
     private @Nullable Output<String> color;
 
+    /**
+     * @return The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
+     * 
+     */
     public Optional<Output<String>> color() {
         return Optional.ofNullable(this.color);
     }
 
+    /**
+     * The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
+     * 
+     */
     @Import(name="colorVar")
     private @Nullable Output<String> colorVar;
 
+    /**
+     * @return The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
+     * 
+     */
     public Optional<Output<String>> colorVar() {
         return Optional.ofNullable(this.colorVar);
     }
 
+    /**
+     * The diameter of the circle. The diameter will be the width and the height of the image in pixels.
+     * 
+     */
     @Import(name="diameter")
     private @Nullable Output<String> diameter;
 
+    /**
+     * @return The diameter of the circle. The diameter will be the width and the height of the image in pixels.
+     * 
+     */
     public Optional<Output<String>> diameter() {
         return Optional.ofNullable(this.diameter);
     }
 
+    /**
+     * The diameter of the circle. The diameter will be the width and the height of the image in pixels.
+     * 
+     */
     @Import(name="diameterVar")
     private @Nullable Output<String> diameterVar;
 
+    /**
+     * @return The diameter of the circle. The diameter will be the width and the height of the image in pixels.
+     * 
+     */
     public Optional<Output<String>> diameterVar() {
         return Optional.ofNullable(this.diameterVar);
     }
@@ -51,16 +83,32 @@ public final class GetImagingPolicyImagePolicyTransformationAppendImageCircleIma
         return Optional.ofNullable(this.transformation);
     }
 
+    /**
+     * The width of the box in pixels.
+     * 
+     */
     @Import(name="width")
     private @Nullable Output<String> width;
 
+    /**
+     * @return The width of the box in pixels.
+     * 
+     */
     public Optional<Output<String>> width() {
         return Optional.ofNullable(this.width);
     }
 
+    /**
+     * The width of the box in pixels.
+     * 
+     */
     @Import(name="widthVar")
     private @Nullable Output<String> widthVar;
 
+    /**
+     * @return The width of the box in pixels.
+     * 
+     */
     public Optional<Output<String>> widthVar() {
         return Optional.ofNullable(this.widthVar);
     }
@@ -95,38 +143,86 @@ public final class GetImagingPolicyImagePolicyTransformationAppendImageCircleIma
             $ = new GetImagingPolicyImagePolicyTransformationAppendImageCircleImageArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param color The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
+         * 
+         * @return builder
+         * 
+         */
         public Builder color(@Nullable Output<String> color) {
             $.color = color;
             return this;
         }
 
+        /**
+         * @param color The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
+         * 
+         * @return builder
+         * 
+         */
         public Builder color(String color) {
             return color(Output.of(color));
         }
 
+        /**
+         * @param colorVar The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
+         * 
+         * @return builder
+         * 
+         */
         public Builder colorVar(@Nullable Output<String> colorVar) {
             $.colorVar = colorVar;
             return this;
         }
 
+        /**
+         * @param colorVar The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
+         * 
+         * @return builder
+         * 
+         */
         public Builder colorVar(String colorVar) {
             return colorVar(Output.of(colorVar));
         }
 
+        /**
+         * @param diameter The diameter of the circle. The diameter will be the width and the height of the image in pixels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder diameter(@Nullable Output<String> diameter) {
             $.diameter = diameter;
             return this;
         }
 
+        /**
+         * @param diameter The diameter of the circle. The diameter will be the width and the height of the image in pixels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder diameter(String diameter) {
             return diameter(Output.of(diameter));
         }
 
+        /**
+         * @param diameterVar The diameter of the circle. The diameter will be the width and the height of the image in pixels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder diameterVar(@Nullable Output<String> diameterVar) {
             $.diameterVar = diameterVar;
             return this;
         }
 
+        /**
+         * @param diameterVar The diameter of the circle. The diameter will be the width and the height of the image in pixels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder diameterVar(String diameterVar) {
             return diameterVar(Output.of(diameterVar));
         }
@@ -140,20 +236,44 @@ public final class GetImagingPolicyImagePolicyTransformationAppendImageCircleIma
             return transformation(Output.of(transformation));
         }
 
+        /**
+         * @param width The width of the box in pixels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder width(@Nullable Output<String> width) {
             $.width = width;
             return this;
         }
 
+        /**
+         * @param width The width of the box in pixels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder width(String width) {
             return width(Output.of(width));
         }
 
+        /**
+         * @param widthVar The width of the box in pixels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder widthVar(@Nullable Output<String> widthVar) {
             $.widthVar = widthVar;
             return this;
         }
 
+        /**
+         * @param widthVar The width of the box in pixels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder widthVar(String widthVar) {
             return widthVar(Output.of(widthVar));
         }

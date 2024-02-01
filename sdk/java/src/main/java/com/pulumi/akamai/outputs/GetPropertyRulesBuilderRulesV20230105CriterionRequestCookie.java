@@ -13,53 +13,149 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105CriterionRequestCookie {
+    /**
+     * @return The name of the cookie, for example, `visitor` in `visitor:anon`.
+     * 
+     */
     private @Nullable String cookieName;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return When the `value` is numeric, this field specifies the match&#39;s minimum value.
+     * 
+     */
     private @Nullable Integer lowerBound;
+    /**
+     * @return Sets a case-sensitive match for the `cookieName` field.
+     * 
+     */
     private @Nullable Boolean matchCaseSensitiveName;
+    /**
+     * @return Sets a case-sensitive match for the `value` field.
+     * 
+     */
     private @Nullable Boolean matchCaseSensitiveValue;
+    /**
+     * @return Narrows the match criteria.
+     * 
+     */
     private @Nullable String matchOperator;
+    /**
+     * @return Allows wildcards in the `cookieName` field, where `?` matches a single character and `*` matches zero or more characters.
+     * 
+     */
     private @Nullable Boolean matchWildcardName;
+    /**
+     * @return Allows wildcards in the `value` field, where `?` matches a single character and `*` matches zero or more characters.
+     * 
+     */
     private @Nullable Boolean matchWildcardValue;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return When the `value` is numeric, this field specifies the match&#39;s maximum value.
+     * 
+     */
     private @Nullable Integer upperBound;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
+    /**
+     * @return The cookie&#39;s value, for example, `anon` in `visitor:anon`.
+     * 
+     */
     private @Nullable String value;
 
     private GetPropertyRulesBuilderRulesV20230105CriterionRequestCookie() {}
+    /**
+     * @return The name of the cookie, for example, `visitor` in `visitor:anon`.
+     * 
+     */
     public Optional<String> cookieName() {
         return Optional.ofNullable(this.cookieName);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return When the `value` is numeric, this field specifies the match&#39;s minimum value.
+     * 
+     */
     public Optional<Integer> lowerBound() {
         return Optional.ofNullable(this.lowerBound);
     }
+    /**
+     * @return Sets a case-sensitive match for the `cookieName` field.
+     * 
+     */
     public Optional<Boolean> matchCaseSensitiveName() {
         return Optional.ofNullable(this.matchCaseSensitiveName);
     }
+    /**
+     * @return Sets a case-sensitive match for the `value` field.
+     * 
+     */
     public Optional<Boolean> matchCaseSensitiveValue() {
         return Optional.ofNullable(this.matchCaseSensitiveValue);
     }
+    /**
+     * @return Narrows the match criteria.
+     * 
+     */
     public Optional<String> matchOperator() {
         return Optional.ofNullable(this.matchOperator);
     }
+    /**
+     * @return Allows wildcards in the `cookieName` field, where `?` matches a single character and `*` matches zero or more characters.
+     * 
+     */
     public Optional<Boolean> matchWildcardName() {
         return Optional.ofNullable(this.matchWildcardName);
     }
+    /**
+     * @return Allows wildcards in the `value` field, where `?` matches a single character and `*` matches zero or more characters.
+     * 
+     */
     public Optional<Boolean> matchWildcardValue() {
         return Optional.ofNullable(this.matchWildcardValue);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return When the `value` is numeric, this field specifies the match&#39;s maximum value.
+     * 
+     */
     public Optional<Integer> upperBound() {
         return Optional.ofNullable(this.upperBound);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
+    /**
+     * @return The cookie&#39;s value, for example, `anon` in `visitor:anon`.
+     * 
+     */
     public Optional<String> value() {
         return Optional.ofNullable(this.value);
     }

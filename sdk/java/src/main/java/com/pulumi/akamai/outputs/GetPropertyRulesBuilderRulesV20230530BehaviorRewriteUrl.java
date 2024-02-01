@@ -12,53 +12,149 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorRewriteUrl {
+    /**
+     * @return The action to perform on the path.
+     * 
+     */
     private @Nullable String behavior;
+    /**
+     * @return When enabled, retains the original path&#39;s query parameters.
+     * 
+     */
     private @Nullable Boolean keepQueryString;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return When `behavior` is `REMOVE` or `REPLACE`, specifies the part of the incoming path you&#39;d like to remove or modify.
+     * 
+     */
     private @Nullable String match;
+    /**
+     * @return When enabled, replaces all potential matches rather than only the first.
+     * 
+     */
     private @Nullable Boolean matchMultiple;
+    /**
+     * @return When `behavior` is set to `REGEX_REPLACE`, specifies the Perl-compatible regular expression to replace with `targetRegex`.
+     * 
+     */
     private @Nullable String matchRegex;
+    /**
+     * @return When `behavior` is set to `REPLACE`, this path replaces whatever the `match` field matches in the incoming request&#39;s path.
+     * 
+     */
     private @Nullable String targetPath;
+    /**
+     * @return When `behavior` is set to `PREPEND`, specifies a path to prepend to the incoming request&#39;s URL.
+     * 
+     */
     private @Nullable String targetPathPrepend;
+    /**
+     * @return When `behavior` is set to `REGEX_REPLACE`, this replaces whatever the `matchRegex` field matches, along with any captured sequences from `\$1` through `\$9`.
+     * 
+     */
     private @Nullable String targetRegex;
+    /**
+     * @return When `behavior` is set to `REWRITE`, specifies the full path to request from the origin.
+     * 
+     */
     private @Nullable String targetUrl;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorRewriteUrl() {}
+    /**
+     * @return The action to perform on the path.
+     * 
+     */
     public Optional<String> behavior() {
         return Optional.ofNullable(this.behavior);
     }
+    /**
+     * @return When enabled, retains the original path&#39;s query parameters.
+     * 
+     */
     public Optional<Boolean> keepQueryString() {
         return Optional.ofNullable(this.keepQueryString);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return When `behavior` is `REMOVE` or `REPLACE`, specifies the part of the incoming path you&#39;d like to remove or modify.
+     * 
+     */
     public Optional<String> match() {
         return Optional.ofNullable(this.match);
     }
+    /**
+     * @return When enabled, replaces all potential matches rather than only the first.
+     * 
+     */
     public Optional<Boolean> matchMultiple() {
         return Optional.ofNullable(this.matchMultiple);
     }
+    /**
+     * @return When `behavior` is set to `REGEX_REPLACE`, specifies the Perl-compatible regular expression to replace with `targetRegex`.
+     * 
+     */
     public Optional<String> matchRegex() {
         return Optional.ofNullable(this.matchRegex);
     }
+    /**
+     * @return When `behavior` is set to `REPLACE`, this path replaces whatever the `match` field matches in the incoming request&#39;s path.
+     * 
+     */
     public Optional<String> targetPath() {
         return Optional.ofNullable(this.targetPath);
     }
+    /**
+     * @return When `behavior` is set to `PREPEND`, specifies a path to prepend to the incoming request&#39;s URL.
+     * 
+     */
     public Optional<String> targetPathPrepend() {
         return Optional.ofNullable(this.targetPathPrepend);
     }
+    /**
+     * @return When `behavior` is set to `REGEX_REPLACE`, this replaces whatever the `matchRegex` field matches, along with any captured sequences from `\$1` through `\$9`.
+     * 
+     */
     public Optional<String> targetRegex() {
         return Optional.ofNullable(this.targetRegex);
     }
+    /**
+     * @return When `behavior` is set to `REWRITE`, specifies the full path to request from the origin.
+     * 
+     */
     public Optional<String> targetUrl() {
         return Optional.ofNullable(this.targetUrl);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

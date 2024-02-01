@@ -11,37 +11,101 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationResize {
+    /**
+     * @return Preserves the aspect ratio. Select `fit` to make the image fit entirely within the selected width and height. When using `fit`, the resulting image has the largest possible size for the specified dimensions. Select `fill` to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise `ignore` changes the original aspect ratio to fit within an arbitrarily shaped rectangle.
+     * 
+     */
     private @Nullable String aspect;
+    /**
+     * @return Preserves the aspect ratio. Select `fit` to make the image fit entirely within the selected width and height. When using `fit`, the resulting image has the largest possible size for the specified dimensions. Select `fill` to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise `ignore` changes the original aspect ratio to fit within an arbitrarily shaped rectangle.
+     * 
+     */
     private @Nullable String aspectVar;
+    /**
+     * @return The height to resize the source image to. Must be set if height is not specified.
+     * 
+     */
     private @Nullable String height;
+    /**
+     * @return The height to resize the source image to. Must be set if height is not specified.
+     * 
+     */
     private @Nullable String heightVar;
+    /**
+     * @return Sets constraints for the image resize. Select `normal` to resize in all cases, either increasing or decreasing the dimensions. Select `downsize` to ignore this transformation if the result would be larger than the original. Select `upsize` to ignore this transformation if the result would be smaller.
+     * 
+     */
     private @Nullable String type;
+    /**
+     * @return Sets constraints for the image resize. Select `normal` to resize in all cases, either increasing or decreasing the dimensions. Select `downsize` to ignore this transformation if the result would be larger than the original. Select `upsize` to ignore this transformation if the result would be smaller.
+     * 
+     */
     private @Nullable String typeVar;
+    /**
+     * @return The width to resize the source image to. Must be set if width is not specified.
+     * 
+     */
     private @Nullable String width;
+    /**
+     * @return The width to resize the source image to. Must be set if width is not specified.
+     * 
+     */
     private @Nullable String widthVar;
 
     private GetImagingPolicyImagePolicyTransformationResize() {}
+    /**
+     * @return Preserves the aspect ratio. Select `fit` to make the image fit entirely within the selected width and height. When using `fit`, the resulting image has the largest possible size for the specified dimensions. Select `fill` to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise `ignore` changes the original aspect ratio to fit within an arbitrarily shaped rectangle.
+     * 
+     */
     public Optional<String> aspect() {
         return Optional.ofNullable(this.aspect);
     }
+    /**
+     * @return Preserves the aspect ratio. Select `fit` to make the image fit entirely within the selected width and height. When using `fit`, the resulting image has the largest possible size for the specified dimensions. Select `fill` to size the image so it both completely fills the dimensions and has the smallest possible file size. Otherwise `ignore` changes the original aspect ratio to fit within an arbitrarily shaped rectangle.
+     * 
+     */
     public Optional<String> aspectVar() {
         return Optional.ofNullable(this.aspectVar);
     }
+    /**
+     * @return The height to resize the source image to. Must be set if height is not specified.
+     * 
+     */
     public Optional<String> height() {
         return Optional.ofNullable(this.height);
     }
+    /**
+     * @return The height to resize the source image to. Must be set if height is not specified.
+     * 
+     */
     public Optional<String> heightVar() {
         return Optional.ofNullable(this.heightVar);
     }
+    /**
+     * @return Sets constraints for the image resize. Select `normal` to resize in all cases, either increasing or decreasing the dimensions. Select `downsize` to ignore this transformation if the result would be larger than the original. Select `upsize` to ignore this transformation if the result would be smaller.
+     * 
+     */
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }
+    /**
+     * @return Sets constraints for the image resize. Select `normal` to resize in all cases, either increasing or decreasing the dimensions. Select `downsize` to ignore this transformation if the result would be larger than the original. Select `upsize` to ignore this transformation if the result would be smaller.
+     * 
+     */
     public Optional<String> typeVar() {
         return Optional.ofNullable(this.typeVar);
     }
+    /**
+     * @return The width to resize the source image to. Must be set if width is not specified.
+     * 
+     */
     public Optional<String> width() {
         return Optional.ofNullable(this.width);
     }
+    /**
+     * @return The width to resize the source image to. Must be set if width is not specified.
+     * 
+     */
     public Optional<String> widthVar() {
         return Optional.ofNullable(this.widthVar);
     }

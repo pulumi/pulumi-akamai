@@ -12,9 +12,15 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHueArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Specify a hue by indicating the degree of rotation between 0 and 360 degrees around the color wheel. By default Mono Hue applies a red hue, 0.0 on the color wheel.
+        /// </summary>
         [Input("hue")]
         public string? Hue { get; set; }
 
+        /// <summary>
+        /// Specify a hue by indicating the degree of rotation between 0 and 360 degrees around the color wheel. By default Mono Hue applies a red hue, 0.0 on the color wheel.
+        /// </summary>
         [Input("hueVar")]
         public string? HueVar { get; set; }
 

@@ -15,9 +15,17 @@ public final class GetImagingPolicyImagePolicyTransformationImQueryArgs extends 
 
     public static final GetImagingPolicyImagePolicyTransformationImQueryArgs Empty = new GetImagingPolicyImagePolicyTransformationImQueryArgs();
 
+    /**
+     * Specifies the transformations that can be applied using the query string parameter.
+     * 
+     */
     @Import(name="allowedTransformations", required=true)
     private Output<List<String>> allowedTransformations;
 
+    /**
+     * @return Specifies the transformations that can be applied using the query string parameter.
+     * 
+     */
     public Output<List<String>> allowedTransformations() {
         return this.allowedTransformations;
     }
@@ -54,15 +62,33 @@ public final class GetImagingPolicyImagePolicyTransformationImQueryArgs extends 
             $ = new GetImagingPolicyImagePolicyTransformationImQueryArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param allowedTransformations Specifies the transformations that can be applied using the query string parameter.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allowedTransformations(Output<List<String>> allowedTransformations) {
             $.allowedTransformations = allowedTransformations;
             return this;
         }
 
+        /**
+         * @param allowedTransformations Specifies the transformations that can be applied using the query string parameter.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allowedTransformations(List<String> allowedTransformations) {
             return allowedTransformations(Output.of(allowedTransformations));
         }
 
+        /**
+         * @param allowedTransformations Specifies the transformations that can be applied using the query string parameter.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allowedTransformations(String... allowedTransformations) {
             return allowedTransformations(List.of(allowedTransformations));
         }

@@ -14,29 +14,69 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationWaitingRoomCpCode {
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationWaitingRoomCpCodeCpCodeLimits cpCodeLimits;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable Integer createdDate;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String description;
     private @Nullable Integer id;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String name;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable List<String> products;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationWaitingRoomCpCode() {}
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationWaitingRoomCpCodeCpCodeLimits> cpCodeLimits() {
         return Optional.ofNullable(this.cpCodeLimits);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<Integer> createdDate() {
         return Optional.ofNullable(this.createdDate);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     public Optional<Integer> id() {
         return Optional.ofNullable(this.id);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public List<String> products() {
         return this.products == null ? List.of() : this.products;
     }

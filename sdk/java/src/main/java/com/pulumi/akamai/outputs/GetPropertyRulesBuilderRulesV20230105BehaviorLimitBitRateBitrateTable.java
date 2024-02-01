@@ -12,13 +12,29 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateBitrateTable {
+    /**
+     * @return The unit of measurement, either `KBPS`, `MBPS`, or `GBPS`.
+     * 
+     */
     private @Nullable String bitrateUnit;
+    /**
+     * @return The numeric indicator of the download rate.
+     * 
+     */
     private @Nullable Double bitrateValue;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateBitrateTable() {}
+    /**
+     * @return The unit of measurement, either `KBPS`, `MBPS`, or `GBPS`.
+     * 
+     */
     public Optional<String> bitrateUnit() {
         return Optional.ofNullable(this.bitrateUnit);
     }
+    /**
+     * @return The numeric indicator of the download rate.
+     * 
+     */
     public Optional<Double> bitrateValue() {
         return Optional.ofNullable(this.bitrateValue);
     }

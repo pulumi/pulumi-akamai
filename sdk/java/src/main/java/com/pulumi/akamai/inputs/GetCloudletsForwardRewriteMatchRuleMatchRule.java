@@ -20,58 +20,122 @@ public final class GetCloudletsForwardRewriteMatchRuleMatchRule extends com.pulu
 
     public static final GetCloudletsForwardRewriteMatchRuleMatchRule Empty = new GetCloudletsForwardRewriteMatchRuleMatchRule();
 
+    /**
+     * If set to true, disables a rule so it is not evaluated against incoming requests.
+     * 
+     */
     @Import(name="disabled")
     private @Nullable Boolean disabled;
 
+    /**
+     * @return If set to true, disables a rule so it is not evaluated against incoming requests.
+     * 
+     */
     public Optional<Boolean> disabled() {
         return Optional.ofNullable(this.disabled);
     }
 
+    /**
+     * The end time for this match (in seconds since the epoch)
+     * 
+     */
     @Import(name="end")
     private @Nullable Integer end;
 
+    /**
+     * @return The end time for this match (in seconds since the epoch)
+     * 
+     */
     public Optional<Integer> end() {
         return Optional.ofNullable(this.end);
     }
 
+    /**
+     * This property defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, then the Edge Server returns an HTTP response from the rewritten URL
+     * 
+     */
     @Import(name="forwardSettings", required=true)
     private GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettings forwardSettings;
 
+    /**
+     * @return This property defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, then the Edge Server returns an HTTP response from the rewritten URL
+     * 
+     */
     public GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettings forwardSettings() {
         return this.forwardSettings;
     }
 
+    /**
+     * If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
+     * 
+     */
     @Import(name="matchUrl")
     private @Nullable String matchUrl;
 
+    /**
+     * @return If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
+     * 
+     */
     public Optional<String> matchUrl() {
         return Optional.ofNullable(this.matchUrl);
     }
 
+    /**
+     * Defines a set of match objects
+     * 
+     */
     @Import(name="matches")
     private @Nullable List<GetCloudletsForwardRewriteMatchRuleMatchRuleMatch> matches;
 
+    /**
+     * @return Defines a set of match objects
+     * 
+     */
     public Optional<List<GetCloudletsForwardRewriteMatchRuleMatchRuleMatch>> matches() {
         return Optional.ofNullable(this.matches);
     }
 
+    /**
+     * The name of the rule
+     * 
+     */
     @Import(name="name")
     private @Nullable String name;
 
+    /**
+     * @return The name of the rule
+     * 
+     */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
 
+    /**
+     * The start time for this match (in seconds since the epoch)
+     * 
+     */
     @Import(name="start")
     private @Nullable Integer start;
 
+    /**
+     * @return The start time for this match (in seconds since the epoch)
+     * 
+     */
     public Optional<Integer> start() {
         return Optional.ofNullable(this.start);
     }
 
+    /**
+     * The type of Cloudlet the rule is for
+     * 
+     */
     @Import(name="type", required=true)
     private String type;
 
+    /**
+     * @return The type of Cloudlet the rule is for
+     * 
+     */
     public String type() {
         return this.type;
     }
@@ -107,45 +171,99 @@ public final class GetCloudletsForwardRewriteMatchRuleMatchRule extends com.pulu
             $ = new GetCloudletsForwardRewriteMatchRuleMatchRule(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param disabled If set to true, disables a rule so it is not evaluated against incoming requests.
+         * 
+         * @return builder
+         * 
+         */
         public Builder disabled(@Nullable Boolean disabled) {
             $.disabled = disabled;
             return this;
         }
 
+        /**
+         * @param end The end time for this match (in seconds since the epoch)
+         * 
+         * @return builder
+         * 
+         */
         public Builder end(@Nullable Integer end) {
             $.end = end;
             return this;
         }
 
+        /**
+         * @param forwardSettings This property defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, then the Edge Server returns an HTTP response from the rewritten URL
+         * 
+         * @return builder
+         * 
+         */
         public Builder forwardSettings(GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettings forwardSettings) {
             $.forwardSettings = forwardSettings;
             return this;
         }
 
+        /**
+         * @param matchUrl If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchUrl(@Nullable String matchUrl) {
             $.matchUrl = matchUrl;
             return this;
         }
 
+        /**
+         * @param matches Defines a set of match objects
+         * 
+         * @return builder
+         * 
+         */
         public Builder matches(@Nullable List<GetCloudletsForwardRewriteMatchRuleMatchRuleMatch> matches) {
             $.matches = matches;
             return this;
         }
 
+        /**
+         * @param matches Defines a set of match objects
+         * 
+         * @return builder
+         * 
+         */
         public Builder matches(GetCloudletsForwardRewriteMatchRuleMatchRuleMatch... matches) {
             return matches(List.of(matches));
         }
 
+        /**
+         * @param name The name of the rule
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(@Nullable String name) {
             $.name = name;
             return this;
         }
 
+        /**
+         * @param start The start time for this match (in seconds since the epoch)
+         * 
+         * @return builder
+         * 
+         */
         public Builder start(@Nullable Integer start) {
             $.start = start;
             return this;
         }
 
+        /**
+         * @param type The type of Cloudlet the rule is for
+         * 
+         * @return builder
+         * 
+         */
         public Builder type(String type) {
             $.type = type;
             return this;

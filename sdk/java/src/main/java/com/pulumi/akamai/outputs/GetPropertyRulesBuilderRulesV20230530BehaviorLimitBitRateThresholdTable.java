@@ -12,13 +12,29 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorLimitBitRateThresholdTable {
+    /**
+     * @return The unit of measurement, either `SECONDS` of the elapsed download time, or `BYTES` of the file size.
+     * 
+     */
     private @Nullable String thresholdUnit;
+    /**
+     * @return The numeric indicator of the minimum file size or elapsed download time.
+     * 
+     */
     private @Nullable Integer thresholdValue;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorLimitBitRateThresholdTable() {}
+    /**
+     * @return The unit of measurement, either `SECONDS` of the elapsed download time, or `BYTES` of the file size.
+     * 
+     */
     public Optional<String> thresholdUnit() {
         return Optional.ofNullable(this.thresholdUnit);
     }
+    /**
+     * @return The numeric indicator of the minimum file size or elapsed download time.
+     * 
+     */
     public Optional<Integer> thresholdValue() {
         return Optional.ofNullable(this.thresholdValue);
     }

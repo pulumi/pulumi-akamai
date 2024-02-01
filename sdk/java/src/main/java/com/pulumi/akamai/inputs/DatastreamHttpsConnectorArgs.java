@@ -17,100 +17,212 @@ public final class DatastreamHttpsConnectorArgs extends com.pulumi.resources.Res
 
     public static final DatastreamHttpsConnectorArgs Empty = new DatastreamHttpsConnectorArgs();
 
+    /**
+     * Either NONE for no authentication, or BASIC for username and password authentication
+     * 
+     */
     @Import(name="authenticationType", required=true)
     private Output<String> authenticationType;
 
+    /**
+     * @return Either NONE for no authentication, or BASIC for username and password authentication
+     * 
+     */
     public Output<String> authenticationType() {
         return this.authenticationType;
     }
 
+    /**
+     * The certification authority (CA) certificate used to verify the origin server&#39;s certificate. If the certificate is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+     * 
+     */
     @Import(name="caCert")
     private @Nullable Output<String> caCert;
 
+    /**
+     * @return The certification authority (CA) certificate used to verify the origin server&#39;s certificate. If the certificate is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+     * 
+     */
     public Optional<Output<String>> caCert() {
         return Optional.ofNullable(this.caCert);
     }
 
+    /**
+     * The digital certificate in the PEM format you want to use to authenticate requests to your destination. If you want to use mutual authentication, you need to provide both the client certificate and the client key (in the PEM format).
+     * 
+     */
     @Import(name="clientCert")
     private @Nullable Output<String> clientCert;
 
+    /**
+     * @return The digital certificate in the PEM format you want to use to authenticate requests to your destination. If you want to use mutual authentication, you need to provide both the client certificate and the client key (in the PEM format).
+     * 
+     */
     public Optional<Output<String>> clientCert() {
         return Optional.ofNullable(this.clientCert);
     }
 
+    /**
+     * The private key in the non-encrypted PKCS8 format you want to use to authenticate with the back-end server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+     * 
+     */
     @Import(name="clientKey")
     private @Nullable Output<String> clientKey;
 
+    /**
+     * @return The private key in the non-encrypted PKCS8 format you want to use to authenticate with the back-end server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+     * 
+     */
     public Optional<Output<String>> clientKey() {
         return Optional.ofNullable(this.clientKey);
     }
 
+    /**
+     * Indicates whether the logs should be compressed
+     * 
+     */
     @Import(name="compressLogs")
     private @Nullable Output<Boolean> compressLogs;
 
+    /**
+     * @return Indicates whether the logs should be compressed
+     * 
+     */
     public Optional<Output<Boolean>> compressLogs() {
         return Optional.ofNullable(this.compressLogs);
     }
 
+    /**
+     * Content type to pass in the log file header
+     * 
+     */
     @Import(name="contentType")
     private @Nullable Output<String> contentType;
 
+    /**
+     * @return Content type to pass in the log file header
+     * 
+     */
     public Optional<Output<String>> contentType() {
         return Optional.ofNullable(this.contentType);
     }
 
+    /**
+     * The name of custom header passed with the request to the destination
+     * 
+     */
     @Import(name="customHeaderName")
     private @Nullable Output<String> customHeaderName;
 
+    /**
+     * @return The name of custom header passed with the request to the destination
+     * 
+     */
     public Optional<Output<String>> customHeaderName() {
         return Optional.ofNullable(this.customHeaderName);
     }
 
+    /**
+     * The custom header&#39;s contents passed with the request to the destination
+     * 
+     */
     @Import(name="customHeaderValue")
     private @Nullable Output<String> customHeaderValue;
 
+    /**
+     * @return The custom header&#39;s contents passed with the request to the destination
+     * 
+     */
     public Optional<Output<String>> customHeaderValue() {
         return Optional.ofNullable(this.customHeaderValue);
     }
 
+    /**
+     * The name of the connector
+     * 
+     */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
+    /**
+     * @return The name of the connector
+     * 
+     */
     public Output<String> displayName() {
         return this.displayName;
     }
 
+    /**
+     * URL where logs will be stored
+     * 
+     */
     @Import(name="endpoint", required=true)
     private Output<String> endpoint;
 
+    /**
+     * @return URL where logs will be stored
+     * 
+     */
     public Output<String> endpoint() {
         return this.endpoint;
     }
 
+    /**
+     * Indicates whether mTLS is enabled or not.
+     * 
+     */
     @Import(name="mTls")
     private @Nullable Output<Boolean> mTls;
 
+    /**
+     * @return Indicates whether mTLS is enabled or not.
+     * 
+     */
     public Optional<Output<Boolean>> mTls() {
         return Optional.ofNullable(this.mTls);
     }
 
+    /**
+     * Password set for custom HTTPS endpoint for authentication
+     * 
+     */
     @Import(name="password")
     private @Nullable Output<String> password;
 
+    /**
+     * @return Password set for custom HTTPS endpoint for authentication
+     * 
+     */
     public Optional<Output<String>> password() {
         return Optional.ofNullable(this.password);
     }
 
+    /**
+     * The hostname that verifies the server&#39;s certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+     * 
+     */
     @Import(name="tlsHostname")
     private @Nullable Output<String> tlsHostname;
 
+    /**
+     * @return The hostname that verifies the server&#39;s certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+     * 
+     */
     public Optional<Output<String>> tlsHostname() {
         return Optional.ofNullable(this.tlsHostname);
     }
 
+    /**
+     * Username used for authentication
+     * 
+     */
     @Import(name="userName")
     private @Nullable Output<String> userName;
 
+    /**
+     * @return Username used for authentication
+     * 
+     */
     public Optional<Output<String>> userName() {
         return Optional.ofNullable(this.userName);
     }
@@ -152,128 +264,296 @@ public final class DatastreamHttpsConnectorArgs extends com.pulumi.resources.Res
             $ = new DatastreamHttpsConnectorArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param authenticationType Either NONE for no authentication, or BASIC for username and password authentication
+         * 
+         * @return builder
+         * 
+         */
         public Builder authenticationType(Output<String> authenticationType) {
             $.authenticationType = authenticationType;
             return this;
         }
 
+        /**
+         * @param authenticationType Either NONE for no authentication, or BASIC for username and password authentication
+         * 
+         * @return builder
+         * 
+         */
         public Builder authenticationType(String authenticationType) {
             return authenticationType(Output.of(authenticationType));
         }
 
+        /**
+         * @param caCert The certification authority (CA) certificate used to verify the origin server&#39;s certificate. If the certificate is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+         * 
+         * @return builder
+         * 
+         */
         public Builder caCert(@Nullable Output<String> caCert) {
             $.caCert = caCert;
             return this;
         }
 
+        /**
+         * @param caCert The certification authority (CA) certificate used to verify the origin server&#39;s certificate. If the certificate is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+         * 
+         * @return builder
+         * 
+         */
         public Builder caCert(String caCert) {
             return caCert(Output.of(caCert));
         }
 
+        /**
+         * @param clientCert The digital certificate in the PEM format you want to use to authenticate requests to your destination. If you want to use mutual authentication, you need to provide both the client certificate and the client key (in the PEM format).
+         * 
+         * @return builder
+         * 
+         */
         public Builder clientCert(@Nullable Output<String> clientCert) {
             $.clientCert = clientCert;
             return this;
         }
 
+        /**
+         * @param clientCert The digital certificate in the PEM format you want to use to authenticate requests to your destination. If you want to use mutual authentication, you need to provide both the client certificate and the client key (in the PEM format).
+         * 
+         * @return builder
+         * 
+         */
         public Builder clientCert(String clientCert) {
             return clientCert(Output.of(clientCert));
         }
 
+        /**
+         * @param clientKey The private key in the non-encrypted PKCS8 format you want to use to authenticate with the back-end server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+         * 
+         * @return builder
+         * 
+         */
         public Builder clientKey(@Nullable Output<String> clientKey) {
             $.clientKey = clientKey;
             return this;
         }
 
+        /**
+         * @param clientKey The private key in the non-encrypted PKCS8 format you want to use to authenticate with the back-end server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+         * 
+         * @return builder
+         * 
+         */
         public Builder clientKey(String clientKey) {
             return clientKey(Output.of(clientKey));
         }
 
+        /**
+         * @param compressLogs Indicates whether the logs should be compressed
+         * 
+         * @return builder
+         * 
+         */
         public Builder compressLogs(@Nullable Output<Boolean> compressLogs) {
             $.compressLogs = compressLogs;
             return this;
         }
 
+        /**
+         * @param compressLogs Indicates whether the logs should be compressed
+         * 
+         * @return builder
+         * 
+         */
         public Builder compressLogs(Boolean compressLogs) {
             return compressLogs(Output.of(compressLogs));
         }
 
+        /**
+         * @param contentType Content type to pass in the log file header
+         * 
+         * @return builder
+         * 
+         */
         public Builder contentType(@Nullable Output<String> contentType) {
             $.contentType = contentType;
             return this;
         }
 
+        /**
+         * @param contentType Content type to pass in the log file header
+         * 
+         * @return builder
+         * 
+         */
         public Builder contentType(String contentType) {
             return contentType(Output.of(contentType));
         }
 
+        /**
+         * @param customHeaderName The name of custom header passed with the request to the destination
+         * 
+         * @return builder
+         * 
+         */
         public Builder customHeaderName(@Nullable Output<String> customHeaderName) {
             $.customHeaderName = customHeaderName;
             return this;
         }
 
+        /**
+         * @param customHeaderName The name of custom header passed with the request to the destination
+         * 
+         * @return builder
+         * 
+         */
         public Builder customHeaderName(String customHeaderName) {
             return customHeaderName(Output.of(customHeaderName));
         }
 
+        /**
+         * @param customHeaderValue The custom header&#39;s contents passed with the request to the destination
+         * 
+         * @return builder
+         * 
+         */
         public Builder customHeaderValue(@Nullable Output<String> customHeaderValue) {
             $.customHeaderValue = customHeaderValue;
             return this;
         }
 
+        /**
+         * @param customHeaderValue The custom header&#39;s contents passed with the request to the destination
+         * 
+         * @return builder
+         * 
+         */
         public Builder customHeaderValue(String customHeaderValue) {
             return customHeaderValue(Output.of(customHeaderValue));
         }
 
+        /**
+         * @param displayName The name of the connector
+         * 
+         * @return builder
+         * 
+         */
         public Builder displayName(Output<String> displayName) {
             $.displayName = displayName;
             return this;
         }
 
+        /**
+         * @param displayName The name of the connector
+         * 
+         * @return builder
+         * 
+         */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
         }
 
+        /**
+         * @param endpoint URL where logs will be stored
+         * 
+         * @return builder
+         * 
+         */
         public Builder endpoint(Output<String> endpoint) {
             $.endpoint = endpoint;
             return this;
         }
 
+        /**
+         * @param endpoint URL where logs will be stored
+         * 
+         * @return builder
+         * 
+         */
         public Builder endpoint(String endpoint) {
             return endpoint(Output.of(endpoint));
         }
 
+        /**
+         * @param mTls Indicates whether mTLS is enabled or not.
+         * 
+         * @return builder
+         * 
+         */
         public Builder mTls(@Nullable Output<Boolean> mTls) {
             $.mTls = mTls;
             return this;
         }
 
+        /**
+         * @param mTls Indicates whether mTLS is enabled or not.
+         * 
+         * @return builder
+         * 
+         */
         public Builder mTls(Boolean mTls) {
             return mTls(Output.of(mTls));
         }
 
+        /**
+         * @param password Password set for custom HTTPS endpoint for authentication
+         * 
+         * @return builder
+         * 
+         */
         public Builder password(@Nullable Output<String> password) {
             $.password = password;
             return this;
         }
 
+        /**
+         * @param password Password set for custom HTTPS endpoint for authentication
+         * 
+         * @return builder
+         * 
+         */
         public Builder password(String password) {
             return password(Output.of(password));
         }
 
+        /**
+         * @param tlsHostname The hostname that verifies the server&#39;s certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tlsHostname(@Nullable Output<String> tlsHostname) {
             $.tlsHostname = tlsHostname;
             return this;
         }
 
+        /**
+         * @param tlsHostname The hostname that verifies the server&#39;s certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tlsHostname(String tlsHostname) {
             return tlsHostname(Output.of(tlsHostname));
         }
 
+        /**
+         * @param userName Username used for authentication
+         * 
+         * @return builder
+         * 
+         */
         public Builder userName(@Nullable Output<String> userName) {
             $.userName = userName;
             return this;
         }
 
+        /**
+         * @param userName Username used for authentication
+         * 
+         * @return builder
+         * 
+         */
         public Builder userName(String userName) {
             return userName(Output.of(userName));
         }

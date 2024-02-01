@@ -17,30 +17,62 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorAltSvcHeaderArgs
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorAltSvcHeaderArgs Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorAltSvcHeaderArgs();
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Specifies the `max-age` value in seconds for the `Alt-Svc` header. The default `max-age` for an `Alt-Svc` header is 93600 seconds (26 hours).
+     * 
+     */
     @Import(name="maxAge")
     private @Nullable Output<Integer> maxAge;
 
+    /**
+     * @return Specifies the `max-age` value in seconds for the `Alt-Svc` header. The default `max-age` for an `Alt-Svc` header is 93600 seconds (26 hours).
+     * 
+     */
     public Optional<Output<Integer>> maxAge() {
         return Optional.ofNullable(this.maxAge);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -72,38 +104,86 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorAltSvcHeaderArgs
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorAltSvcHeaderArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param maxAge Specifies the `max-age` value in seconds for the `Alt-Svc` header. The default `max-age` for an `Alt-Svc` header is 93600 seconds (26 hours).
+         * 
+         * @return builder
+         * 
+         */
         public Builder maxAge(@Nullable Output<Integer> maxAge) {
             $.maxAge = maxAge;
             return this;
         }
 
+        /**
+         * @param maxAge Specifies the `max-age` value in seconds for the `Alt-Svc` header. The default `max-age` for an `Alt-Svc` header is 93600 seconds (26 hours).
+         * 
+         * @return builder
+         * 
+         */
         public Builder maxAge(Integer maxAge) {
             return maxAge(Output.of(maxAge));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

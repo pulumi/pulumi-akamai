@@ -14,21 +14,37 @@ namespace Pulumi.Akamai.Inputs
     {
         [Input("bandwidthValues")]
         private List<string>? _bandwidthValues;
+
+        /// <summary>
+        /// Bandwidth range in bits per second, either `1`, `57`, `257`, `1000`, `2000`, or `5000`.
+        /// </summary>
         public List<string> BandwidthValues
         {
             get => _bandwidthValues ?? (_bandwidthValues = new List<string>());
             set => _bandwidthValues = value;
         }
 
+        /// <summary>
+        /// Specifies which IP addresses determine the user's network.
+        /// </summary>
         [Input("checkIps")]
         public string? CheckIps { get; set; }
 
+        /// <summary>
+        /// The type of information to match.
+        /// </summary>
         [Input("field")]
         public string? Field { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public bool? Locked { get; set; }
 
+        /// <summary>
+        /// Matches the specified set of values when set to `IS_ONE_OF`, otherwise `IS_NOT_ONE_OF` reverses the match.
+        /// </summary>
         [Input("matchOperator")]
         public string? MatchOperator { get; set; }
 
@@ -42,18 +58,31 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("networkValues")]
         private List<string>? _networkValues;
+
+        /// <summary>
+        /// Any set of specific networks.
+        /// </summary>
         public List<string> NetworkValues
         {
             get => _networkValues ?? (_networkValues = new List<string>());
             set => _networkValues = value;
         }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public string? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// When connecting via a proxy server as determined by the `X-Forwarded-For` header, enabling this option matches the end client specified in the header. Disabling it matches the connecting client's IP address.
+        /// </summary>
         [Input("useOnlyFirstXForwardedForIp")]
         public bool? UseOnlyFirstXForwardedForIp { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public string? Uuid { get; set; }
 

@@ -13,13 +13,37 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorEcmsDatasetResult
     {
+        /// <summary>
+        /// Specifies a default data set for this property. If you don't configure a default database in the `ecmsDatabase` behavior, requests to objects in this data set follow the pattern: `&lt;hostname&gt;/datastore/&lt;database_name&gt;/&lt;object_key&gt;`.
+        /// </summary>
         public readonly string? Dataset;
+        /// <summary>
+        /// Specifies where to pass a data set name in requests. If the specified location doesn't include the data set name or the name doesn't match the regular expression pattern, the default data set is used.
+        /// </summary>
         public readonly string? ExtractLocation;
+        /// <summary>
+        /// Specifies the request header that passed the data set name. By default, it points to `X-KV-Dataset`.
+        /// </summary>
         public readonly string? HeaderName;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// Specifies the query string parameter that passed the data set name. By default, it points to `dataset`.
+        /// </summary>
         public readonly string? QueryParameterName;
+        /// <summary>
+        /// Specifies the regular expression that matches the data set name in the URL.
+        /// </summary>
         public readonly string? RegexPattern;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

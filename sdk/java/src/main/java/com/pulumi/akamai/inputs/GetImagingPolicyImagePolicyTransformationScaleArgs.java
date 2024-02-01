@@ -15,30 +15,62 @@ public final class GetImagingPolicyImagePolicyTransformationScaleArgs extends co
 
     public static final GetImagingPolicyImagePolicyTransformationScaleArgs Empty = new GetImagingPolicyImagePolicyTransformationScaleArgs();
 
+    /**
+     * Scaling factor for the input height to determine the output height of the image, where values between `0` and `1` decrease size. Image dimensions need to be non-zero positive numbers.
+     * 
+     */
     @Import(name="height")
     private @Nullable Output<String> height;
 
+    /**
+     * @return Scaling factor for the input height to determine the output height of the image, where values between `0` and `1` decrease size. Image dimensions need to be non-zero positive numbers.
+     * 
+     */
     public Optional<Output<String>> height() {
         return Optional.ofNullable(this.height);
     }
 
+    /**
+     * Scaling factor for the input height to determine the output height of the image, where values between `0` and `1` decrease size. Image dimensions need to be non-zero positive numbers.
+     * 
+     */
     @Import(name="heightVar")
     private @Nullable Output<String> heightVar;
 
+    /**
+     * @return Scaling factor for the input height to determine the output height of the image, where values between `0` and `1` decrease size. Image dimensions need to be non-zero positive numbers.
+     * 
+     */
     public Optional<Output<String>> heightVar() {
         return Optional.ofNullable(this.heightVar);
     }
 
+    /**
+     * Scaling factor for the input width to determine the output width of the image, where `1` leaves the width unchanged. Values greater than `1` increase the image size. Image dimensions need to be non-zero positive numbers.
+     * 
+     */
     @Import(name="width")
     private @Nullable Output<String> width;
 
+    /**
+     * @return Scaling factor for the input width to determine the output width of the image, where `1` leaves the width unchanged. Values greater than `1` increase the image size. Image dimensions need to be non-zero positive numbers.
+     * 
+     */
     public Optional<Output<String>> width() {
         return Optional.ofNullable(this.width);
     }
 
+    /**
+     * Scaling factor for the input width to determine the output width of the image, where `1` leaves the width unchanged. Values greater than `1` increase the image size. Image dimensions need to be non-zero positive numbers.
+     * 
+     */
     @Import(name="widthVar")
     private @Nullable Output<String> widthVar;
 
+    /**
+     * @return Scaling factor for the input width to determine the output width of the image, where `1` leaves the width unchanged. Values greater than `1` increase the image size. Image dimensions need to be non-zero positive numbers.
+     * 
+     */
     public Optional<Output<String>> widthVar() {
         return Optional.ofNullable(this.widthVar);
     }
@@ -70,38 +102,86 @@ public final class GetImagingPolicyImagePolicyTransformationScaleArgs extends co
             $ = new GetImagingPolicyImagePolicyTransformationScaleArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param height Scaling factor for the input height to determine the output height of the image, where values between `0` and `1` decrease size. Image dimensions need to be non-zero positive numbers.
+         * 
+         * @return builder
+         * 
+         */
         public Builder height(@Nullable Output<String> height) {
             $.height = height;
             return this;
         }
 
+        /**
+         * @param height Scaling factor for the input height to determine the output height of the image, where values between `0` and `1` decrease size. Image dimensions need to be non-zero positive numbers.
+         * 
+         * @return builder
+         * 
+         */
         public Builder height(String height) {
             return height(Output.of(height));
         }
 
+        /**
+         * @param heightVar Scaling factor for the input height to determine the output height of the image, where values between `0` and `1` decrease size. Image dimensions need to be non-zero positive numbers.
+         * 
+         * @return builder
+         * 
+         */
         public Builder heightVar(@Nullable Output<String> heightVar) {
             $.heightVar = heightVar;
             return this;
         }
 
+        /**
+         * @param heightVar Scaling factor for the input height to determine the output height of the image, where values between `0` and `1` decrease size. Image dimensions need to be non-zero positive numbers.
+         * 
+         * @return builder
+         * 
+         */
         public Builder heightVar(String heightVar) {
             return heightVar(Output.of(heightVar));
         }
 
+        /**
+         * @param width Scaling factor for the input width to determine the output width of the image, where `1` leaves the width unchanged. Values greater than `1` increase the image size. Image dimensions need to be non-zero positive numbers.
+         * 
+         * @return builder
+         * 
+         */
         public Builder width(@Nullable Output<String> width) {
             $.width = width;
             return this;
         }
 
+        /**
+         * @param width Scaling factor for the input width to determine the output width of the image, where `1` leaves the width unchanged. Values greater than `1` increase the image size. Image dimensions need to be non-zero positive numbers.
+         * 
+         * @return builder
+         * 
+         */
         public Builder width(String width) {
             return width(Output.of(width));
         }
 
+        /**
+         * @param widthVar Scaling factor for the input width to determine the output width of the image, where `1` leaves the width unchanged. Values greater than `1` increase the image size. Image dimensions need to be non-zero positive numbers.
+         * 
+         * @return builder
+         * 
+         */
         public Builder widthVar(@Nullable Output<String> widthVar) {
             $.widthVar = widthVar;
             return this;
         }
 
+        /**
+         * @param widthVar Scaling factor for the input width to determine the output width of the image, where `1` leaves the width unchanged. Values greater than `1` increase the image size. Image dimensions need to be non-zero positive numbers.
+         * 
+         * @return builder
+         * 
+         */
         public Builder widthVar(String widthVar) {
             return widthVar(Output.of(widthVar));
         }

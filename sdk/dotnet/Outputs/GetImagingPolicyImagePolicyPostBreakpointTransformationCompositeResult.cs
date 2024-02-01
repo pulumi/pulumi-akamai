@@ -13,18 +13,54 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeResult
     {
+        /// <summary>
+        /// Compass direction indicating the corner or edge of the base image to place the applied image. Use Horizontal and Vertical Offset to adjust the applied image's gravity position
+        /// </summary>
         public readonly string? Gravity;
+        /// <summary>
+        /// Compass direction indicating the corner or edge of the base image to place the applied image. Use Horizontal and Vertical Offset to adjust the applied image's gravity position
+        /// </summary>
         public readonly string? GravityVar;
         public readonly Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageResult Image;
+        /// <summary>
+        /// Place applied image on top of or underneath the base image. Watermarks are usually applied over. Backgrounds are usually applied under.
+        /// </summary>
         public readonly string? Placement;
+        /// <summary>
+        /// Place applied image on top of or underneath the base image. Watermarks are usually applied over. Backgrounds are usually applied under.
+        /// </summary>
         public readonly string? PlacementVar;
+        /// <summary>
+        /// A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image's width or height.
+        /// </summary>
         public readonly string? Scale;
+        /// <summary>
+        /// The dimension, either `width` or `height`, of the source image to scale.
+        /// </summary>
         public readonly string? ScaleDimension;
+        /// <summary>
+        /// The dimension, either `width` or `height`, of the source image to scale.
+        /// </summary>
         public readonly string? ScaleDimensionVar;
+        /// <summary>
+        /// A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image's width or height.
+        /// </summary>
         public readonly string? ScaleVar;
+        /// <summary>
+        /// The x-axis position of the image to apply.
+        /// </summary>
         public readonly string? XPosition;
+        /// <summary>
+        /// The x-axis position of the image to apply.
+        /// </summary>
         public readonly string? XPositionVar;
+        /// <summary>
+        /// The y-axis position of the image to apply.
+        /// </summary>
         public readonly string? YPosition;
+        /// <summary>
+        /// The y-axis position of the image to apply.
+        /// </summary>
         public readonly string? YPositionVar;
 
         [OutputConstructor]

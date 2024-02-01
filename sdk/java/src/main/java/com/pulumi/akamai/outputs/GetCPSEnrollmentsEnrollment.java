@@ -18,73 +18,209 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCPSEnrollmentsEnrollment {
+    /**
+     * @return Contact information for the certificate administrator used at organization
+     * 
+     */
     private List<GetCPSEnrollmentsEnrollmentAdminContact> adminContacts;
+    /**
+     * @return Certificate trust chain type
+     * 
+     */
     private String certificateChainType;
+    /**
+     * @return Certificate type of enrollment
+     * 
+     */
     private String certificateType;
+    /**
+     * @return Common name used for enrollment
+     * 
+     */
     private String commonName;
+    /**
+     * @return Data used for generation of Certificate Signing Request
+     * 
+     */
     private List<GetCPSEnrollmentsEnrollmentCsr> csrs;
+    /**
+     * @return Enable Dual-Stacked certificate deployment for enrollment
+     * 
+     */
     private Boolean enableMultiStackedCertificates;
+    /**
+     * @return The unique identifier of enrollment
+     * 
+     */
     private Integer enrollmentId;
+    /**
+     * @return Settings containing network information and TLS metadata used by CPS
+     * 
+     */
     private List<GetCPSEnrollmentsEnrollmentNetworkConfiguration> networkConfigurations;
+    /**
+     * @return Organization information
+     * 
+     */
     private List<GetCPSEnrollmentsEnrollmentOrganization> organizations;
+    /**
+     * @return Whether some changes are pending
+     * 
+     */
     private Boolean pendingChanges;
+    /**
+     * @return The registration authority or certificate authority (CA) used to obtain a certificate
+     * 
+     */
     private String registrationAuthority;
+    /**
+     * @return List of SANs
+     * 
+     */
     private List<String> sans;
+    /**
+     * @return Type of TLS deployment network
+     * 
+     */
     private String secureNetwork;
+    /**
+     * @return SHA algorithm type
+     * 
+     */
     private String signatureAlgorithm;
+    /**
+     * @return Whether Server Name Indication is used for enrollment
+     * 
+     */
     private Boolean sniOnly;
+    /**
+     * @return Contact information for an administrator at Akamai
+     * 
+     */
     private List<GetCPSEnrollmentsEnrollmentTechContact> techContacts;
+    /**
+     * @return Enrolment validation type
+     * 
+     */
     private String validationType;
 
     private GetCPSEnrollmentsEnrollment() {}
+    /**
+     * @return Contact information for the certificate administrator used at organization
+     * 
+     */
     public List<GetCPSEnrollmentsEnrollmentAdminContact> adminContacts() {
         return this.adminContacts;
     }
+    /**
+     * @return Certificate trust chain type
+     * 
+     */
     public String certificateChainType() {
         return this.certificateChainType;
     }
+    /**
+     * @return Certificate type of enrollment
+     * 
+     */
     public String certificateType() {
         return this.certificateType;
     }
+    /**
+     * @return Common name used for enrollment
+     * 
+     */
     public String commonName() {
         return this.commonName;
     }
+    /**
+     * @return Data used for generation of Certificate Signing Request
+     * 
+     */
     public List<GetCPSEnrollmentsEnrollmentCsr> csrs() {
         return this.csrs;
     }
+    /**
+     * @return Enable Dual-Stacked certificate deployment for enrollment
+     * 
+     */
     public Boolean enableMultiStackedCertificates() {
         return this.enableMultiStackedCertificates;
     }
+    /**
+     * @return The unique identifier of enrollment
+     * 
+     */
     public Integer enrollmentId() {
         return this.enrollmentId;
     }
+    /**
+     * @return Settings containing network information and TLS metadata used by CPS
+     * 
+     */
     public List<GetCPSEnrollmentsEnrollmentNetworkConfiguration> networkConfigurations() {
         return this.networkConfigurations;
     }
+    /**
+     * @return Organization information
+     * 
+     */
     public List<GetCPSEnrollmentsEnrollmentOrganization> organizations() {
         return this.organizations;
     }
+    /**
+     * @return Whether some changes are pending
+     * 
+     */
     public Boolean pendingChanges() {
         return this.pendingChanges;
     }
+    /**
+     * @return The registration authority or certificate authority (CA) used to obtain a certificate
+     * 
+     */
     public String registrationAuthority() {
         return this.registrationAuthority;
     }
+    /**
+     * @return List of SANs
+     * 
+     */
     public List<String> sans() {
         return this.sans;
     }
+    /**
+     * @return Type of TLS deployment network
+     * 
+     */
     public String secureNetwork() {
         return this.secureNetwork;
     }
+    /**
+     * @return SHA algorithm type
+     * 
+     */
     public String signatureAlgorithm() {
         return this.signatureAlgorithm;
     }
+    /**
+     * @return Whether Server Name Indication is used for enrollment
+     * 
+     */
     public Boolean sniOnly() {
         return this.sniOnly;
     }
+    /**
+     * @return Contact information for an administrator at Akamai
+     * 
+     */
     public List<GetCPSEnrollmentsEnrollmentTechContact> techContacts() {
         return this.techContacts;
     }
+    /**
+     * @return Enrolment validation type
+     * 
+     */
     public String validationType() {
         return this.validationType;
     }

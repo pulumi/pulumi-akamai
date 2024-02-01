@@ -11,17 +11,41 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCloudwrapperLocationsLocationTrafficType {
+    /**
+     * @return Represents the failover map.
+     * 
+     */
     private String locationId;
+    /**
+     * @return Represents the traffic type. LIVE applies to low-latency media traffic, such as live streaming. LIVE_VOD applies to redundant media traffic, like video on demand content. WEB_STANDARD_TLS or WEB_ENHANCED_TLS applies to web content using Standard TLS security or Enhanced TLS security, respectively.
+     * 
+     */
     private String trafficType;
+    /**
+     * @return Unique identifier for the location and traffic type combination.
+     * 
+     */
     private Integer trafficTypeId;
 
     private GetCloudwrapperLocationsLocationTrafficType() {}
+    /**
+     * @return Represents the failover map.
+     * 
+     */
     public String locationId() {
         return this.locationId;
     }
+    /**
+     * @return Represents the traffic type. LIVE applies to low-latency media traffic, such as live streaming. LIVE_VOD applies to redundant media traffic, like video on demand content. WEB_STANDARD_TLS or WEB_ENHANCED_TLS applies to web content using Standard TLS security or Enhanced TLS security, respectively.
+     * 
+     */
     public String trafficType() {
         return this.trafficType;
     }
+    /**
+     * @return Unique identifier for the location and traffic type combination.
+     * 
+     */
     public Integer trafficTypeId() {
         return this.trafficTypeId;
     }

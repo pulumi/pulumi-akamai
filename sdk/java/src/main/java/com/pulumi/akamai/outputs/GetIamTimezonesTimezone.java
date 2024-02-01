@@ -10,21 +10,53 @@ import java.util.Objects;
 
 @CustomType
 public final class GetIamTimezonesTimezone {
+    /**
+     * @return The description of a time zone, including the GMT +/-
+     * 
+     */
     private String description;
+    /**
+     * @return The time zone offset from GMT
+     * 
+     */
     private String offset;
+    /**
+     * @return The time zone posix
+     * 
+     */
     private String posix;
+    /**
+     * @return The time zone ID
+     * 
+     */
     private String timezone;
 
     private GetIamTimezonesTimezone() {}
+    /**
+     * @return The description of a time zone, including the GMT +/-
+     * 
+     */
     public String description() {
         return this.description;
     }
+    /**
+     * @return The time zone offset from GMT
+     * 
+     */
     public String offset() {
         return this.offset;
     }
+    /**
+     * @return The time zone posix
+     * 
+     */
     public String posix() {
         return this.posix;
     }
+    /**
+     * @return The time zone ID
+     * 
+     */
     public String timezone() {
         return this.timezone;
     }

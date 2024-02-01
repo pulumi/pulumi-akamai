@@ -13,12 +13,33 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230530CriterionUserAgentResult
     {
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// Sets a case-sensitive match for the `value` field.
+        /// </summary>
         public readonly bool? MatchCaseSensitive;
+        /// <summary>
+        /// Matches the specified set of `values` when set to `IS_ONE_OF`, otherwise `IS_NOT_ONE_OF` reverses the match.
+        /// </summary>
         public readonly string? MatchOperator;
+        /// <summary>
+        /// Allows wildcards in the `value` field, where `?` matches a single character and `*` matches zero or more characters. For example, `*Android*`, `*iPhone5*`, `*Firefox*`, or `*Chrome*` allow substring matches.
+        /// </summary>
         public readonly bool? MatchWildcard;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
+        /// <summary>
+        /// The `User-Agent` header's value. For example, `Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)`.
+        /// </summary>
         public readonly ImmutableArray<string> Values;
 
         [OutputConstructor]

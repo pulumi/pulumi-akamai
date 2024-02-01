@@ -12,27 +12,51 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetImagingPolicyImagePolicyTransformationGoopInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Specifies the greatest distance control points may move from their original position. A value of `1.0` shifts control points over as far as the next one in the original grid. A value of `0.0` leaves the image unchanged. Values under `0.5` work better for subtle distortions, otherwise control points may pass each other and cause a twisting effect.
+        /// </summary>
         [Input("chaos")]
         public Input<string>? Chaos { get; set; }
 
+        /// <summary>
+        /// Specifies the greatest distance control points may move from their original position. A value of `1.0` shifts control points over as far as the next one in the original grid. A value of `0.0` leaves the image unchanged. Values under `0.5` work better for subtle distortions, otherwise control points may pass each other and cause a twisting effect.
+        /// </summary>
         [Input("chaosVar")]
         public Input<string>? ChaosVar { get; set; }
 
+        /// <summary>
+        /// Controls the density of control points used to distort the image. The largest dimension of the input image is divided up to fit this number of control points. A grid of points is extended on the smaller dimension such that each row and column of control points is equidistant from each adjacent row or column. This parameter strongly affects transformation performance. Be careful choosing values above the default if you expect to transform medium to large size images.
+        /// </summary>
         [Input("density")]
         public Input<string>? Density { get; set; }
 
+        /// <summary>
+        /// Controls the density of control points used to distort the image. The largest dimension of the input image is divided up to fit this number of control points. A grid of points is extended on the smaller dimension such that each row and column of control points is equidistant from each adjacent row or column. This parameter strongly affects transformation performance. Be careful choosing values above the default if you expect to transform medium to large size images.
+        /// </summary>
         [Input("densityVar")]
         public Input<string>? DensityVar { get; set; }
 
+        /// <summary>
+        /// By default, the distortion algorithm relies on inverse squares to calculate distance but this allows you to change the exponent. You shouldnt need to vary the default value of `2.0`.
+        /// </summary>
         [Input("power")]
         public Input<string>? Power { get; set; }
 
+        /// <summary>
+        /// By default, the distortion algorithm relies on inverse squares to calculate distance but this allows you to change the exponent. You shouldnt need to vary the default value of `2.0`.
+        /// </summary>
         [Input("powerVar")]
         public Input<string>? PowerVar { get; set; }
 
+        /// <summary>
+        /// Specifies your own `seed` value as an alternative to the default, which is subject to variability. This allows for reproducible and deterministic distortions. If all parameters are kept equal and a constant seed is used, `Goop` distorts an input image consistently over many transformations. By default, this value is set to the current Epoch Time measured in milliseconds, which provides inconsistent transformation output.
+        /// </summary>
         [Input("seed")]
         public Input<string>? Seed { get; set; }
 
+        /// <summary>
+        /// Specifies your own `seed` value as an alternative to the default, which is subject to variability. This allows for reproducible and deterministic distortions. If all parameters are kept equal and a constant seed is used, `Goop` distorts an input image consistently over many transformations. By default, this value is set to the current Epoch Time measured in milliseconds, which provides inconsistent transformation output.
+        /// </summary>
         [Input("seedVar")]
         public Input<string>? SeedVar { get; set; }
 

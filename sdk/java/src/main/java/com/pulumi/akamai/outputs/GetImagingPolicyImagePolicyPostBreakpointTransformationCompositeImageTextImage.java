@@ -12,57 +12,153 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImage {
+    /**
+     * @return The main fill color of the text.
+     * 
+     */
     private @Nullable String fill;
+    /**
+     * @return The main fill color of the text.
+     * 
+     */
     private @Nullable String fillVar;
+    /**
+     * @return The size in pixels to render the text.
+     * 
+     */
     private @Nullable String size;
+    /**
+     * @return The size in pixels to render the text.
+     * 
+     */
     private @Nullable String sizeVar;
+    /**
+     * @return The color for the outline of the text.
+     * 
+     */
     private @Nullable String stroke;
+    /**
+     * @return The thickness in points for the outline of the text.
+     * 
+     */
     private @Nullable String strokeSize;
+    /**
+     * @return The thickness in points for the outline of the text.
+     * 
+     */
     private @Nullable String strokeSizeVar;
+    /**
+     * @return The color for the outline of the text.
+     * 
+     */
     private @Nullable String strokeVar;
+    /**
+     * @return The line of text to render.
+     * 
+     */
     private @Nullable String text;
+    /**
+     * @return The line of text to render.
+     * 
+     */
     private @Nullable String textVar;
     private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation transformation;
+    /**
+     * @return The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
+     * 
+     */
     private @Nullable String typeface;
+    /**
+     * @return The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
+     * 
+     */
     private @Nullable String typefaceVar;
 
     private GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImage() {}
+    /**
+     * @return The main fill color of the text.
+     * 
+     */
     public Optional<String> fill() {
         return Optional.ofNullable(this.fill);
     }
+    /**
+     * @return The main fill color of the text.
+     * 
+     */
     public Optional<String> fillVar() {
         return Optional.ofNullable(this.fillVar);
     }
+    /**
+     * @return The size in pixels to render the text.
+     * 
+     */
     public Optional<String> size() {
         return Optional.ofNullable(this.size);
     }
+    /**
+     * @return The size in pixels to render the text.
+     * 
+     */
     public Optional<String> sizeVar() {
         return Optional.ofNullable(this.sizeVar);
     }
+    /**
+     * @return The color for the outline of the text.
+     * 
+     */
     public Optional<String> stroke() {
         return Optional.ofNullable(this.stroke);
     }
+    /**
+     * @return The thickness in points for the outline of the text.
+     * 
+     */
     public Optional<String> strokeSize() {
         return Optional.ofNullable(this.strokeSize);
     }
+    /**
+     * @return The thickness in points for the outline of the text.
+     * 
+     */
     public Optional<String> strokeSizeVar() {
         return Optional.ofNullable(this.strokeSizeVar);
     }
+    /**
+     * @return The color for the outline of the text.
+     * 
+     */
     public Optional<String> strokeVar() {
         return Optional.ofNullable(this.strokeVar);
     }
+    /**
+     * @return The line of text to render.
+     * 
+     */
     public Optional<String> text() {
         return Optional.ofNullable(this.text);
     }
+    /**
+     * @return The line of text to render.
+     * 
+     */
     public Optional<String> textVar() {
         return Optional.ofNullable(this.textVar);
     }
     public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformation> transformation() {
         return Optional.ofNullable(this.transformation);
     }
+    /**
+     * @return The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
+     * 
+     */
     public Optional<String> typeface() {
         return Optional.ofNullable(this.typeface);
     }
+    /**
+     * @return The font family to apply to the text image. This may be a URL to a TrueType or WOFF (v1) typeface, or a string that refers to one of the standard built-in browser fonts.
+     * 
+     */
     public Optional<String> typefaceVar() {
         return Optional.ofNullable(this.typefaceVar);
     }

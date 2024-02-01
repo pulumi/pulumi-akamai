@@ -12,26 +12,48 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// If true, the match is case sensitive
+        /// </summary>
         [Input("caseSensitive")]
         public Input<bool>? CaseSensitive { get; set; }
 
+        /// <summary>
+        /// For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
+        /// </summary>
         [Input("checkIps")]
         public Input<string>? CheckIps { get; set; }
 
+        /// <summary>
+        /// Valid entries for this property: contains, exists, and equals
+        /// </summary>
         [Input("matchOperator")]
         public Input<string>? MatchOperator { get; set; }
 
+        /// <summary>
+        /// The type of match used
+        /// </summary>
         [Input("matchType")]
         public Input<string>? MatchType { get; set; }
 
+        /// <summary>
+        /// Depends on the matchType
+        /// </summary>
         [Input("matchValue")]
         public Input<string>? MatchValue { get; set; }
 
+        /// <summary>
+        /// If true, negates the match
+        /// </summary>
         [Input("negate")]
         public Input<bool>? Negate { get; set; }
 
         [Input("objectMatchValues")]
         private InputList<Inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueInputArgs>? _objectMatchValues;
+
+        /// <summary>
+        /// An object used when a rule either includes more complex match criteria, like multiple value attributes
+        /// </summary>
         public InputList<Inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueInputArgs> ObjectMatchValues
         {
             get => _objectMatchValues ?? (_objectMatchValues = new InputList<Inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueInputArgs>());

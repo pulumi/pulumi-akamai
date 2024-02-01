@@ -12,21 +12,39 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class CpsDvEnrollmentCsrArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// City where organization is located
+        /// </summary>
         [Input("city", required: true)]
         public Input<string> City { get; set; } = null!;
 
+        /// <summary>
+        /// The code of the country where organization is located
+        /// </summary>
         [Input("countryCode", required: true)]
         public Input<string> CountryCode { get; set; } = null!;
 
+        /// <summary>
+        /// Name of organization used in all legal documents
+        /// </summary>
         [Input("organization", required: true)]
         public Input<string> Organization { get; set; } = null!;
 
+        /// <summary>
+        /// Organizational unit of organization
+        /// </summary>
         [Input("organizationalUnit", required: true)]
         public Input<string> OrganizationalUnit { get; set; } = null!;
 
+        /// <summary>
+        /// For the Let's Encrypt Domain Validated (DV) SAN certificates, the preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default
+        /// </summary>
         [Input("preferredTrustChain")]
         public Input<string>? PreferredTrustChain { get; set; }
 
+        /// <summary>
+        /// State or province of organization location
+        /// </summary>
         [Input("state", required: true)]
         public Input<string> State { get; set; } = null!;
 

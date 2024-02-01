@@ -11,13 +11,29 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings {
+    /**
+     * @return The ID of the Conditional Origin requests are forwarded to
+     * 
+     */
     private String originId;
+    /**
+     * @return The percent of traffic that is sent to the data center.
+     * 
+     */
     private Integer percent;
 
     private GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings() {}
+    /**
+     * @return The ID of the Conditional Origin requests are forwarded to
+     * 
+     */
     public String originId() {
         return this.originId;
     }
+    /**
+     * @return The percent of traffic that is sent to the data center.
+     * 
+     */
     public Integer percent() {
         return this.percent;
     }

@@ -16,65 +16,137 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorHttpStrictTransp
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorHttpStrictTransportSecurity Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorHttpStrictTransportSecurity();
 
+    /**
+     * Applies HSTS to this set of requests.
+     * 
+     */
     @Import(name="enable")
     private @Nullable Boolean enable;
 
+    /**
+     * @return Applies HSTS to this set of requests.
+     * 
+     */
     public Optional<Boolean> enable() {
         return Optional.ofNullable(this.enable);
     }
 
+    /**
+     * When enabled, applies HSTS to all subdomains.
+     * 
+     */
     @Import(name="includeSubDomains")
     private @Nullable Boolean includeSubDomains;
 
+    /**
+     * @return When enabled, applies HSTS to all subdomains.
+     * 
+     */
     public Optional<Boolean> includeSubDomains() {
         return Optional.ofNullable(this.includeSubDomains);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Specifies the duration for which to apply HSTS for new browser connections.
+     * 
+     */
     @Import(name="maxAge")
     private @Nullable String maxAge;
 
+    /**
+     * @return Specifies the duration for which to apply HSTS for new browser connections.
+     * 
+     */
     public Optional<String> maxAge() {
         return Optional.ofNullable(this.maxAge);
     }
 
+    /**
+     * When enabled, adds this domain to the browser&#39;s preload list. You still need to declare the domain at `hstspreload.org`.
+     * 
+     */
     @Import(name="preload")
     private @Nullable Boolean preload;
 
+    /**
+     * @return When enabled, adds this domain to the browser&#39;s preload list. You still need to declare the domain at `hstspreload.org`.
+     * 
+     */
     public Optional<Boolean> preload() {
         return Optional.ofNullable(this.preload);
     }
 
+    /**
+     * When enabled, redirects all HTTP requests to HTTPS.
+     * 
+     */
     @Import(name="redirect")
     private @Nullable Boolean redirect;
 
+    /**
+     * @return When enabled, redirects all HTTP requests to HTTPS.
+     * 
+     */
     public Optional<Boolean> redirect() {
         return Optional.ofNullable(this.redirect);
     }
 
+    /**
+     * Specifies a response code.
+     * 
+     */
     @Import(name="redirectStatusCode")
     private @Nullable Integer redirectStatusCode;
 
+    /**
+     * @return Specifies a response code.
+     * 
+     */
     public Optional<Integer> redirectStatusCode() {
         return Optional.ofNullable(this.redirectStatusCode);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -111,46 +183,100 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorHttpStrictTransp
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorHttpStrictTransportSecurity(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param enable Applies HSTS to this set of requests.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enable(@Nullable Boolean enable) {
             $.enable = enable;
             return this;
         }
 
+        /**
+         * @param includeSubDomains When enabled, applies HSTS to all subdomains.
+         * 
+         * @return builder
+         * 
+         */
         public Builder includeSubDomains(@Nullable Boolean includeSubDomains) {
             $.includeSubDomains = includeSubDomains;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param maxAge Specifies the duration for which to apply HSTS for new browser connections.
+         * 
+         * @return builder
+         * 
+         */
         public Builder maxAge(@Nullable String maxAge) {
             $.maxAge = maxAge;
             return this;
         }
 
+        /**
+         * @param preload When enabled, adds this domain to the browser&#39;s preload list. You still need to declare the domain at `hstspreload.org`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder preload(@Nullable Boolean preload) {
             $.preload = preload;
             return this;
         }
 
+        /**
+         * @param redirect When enabled, redirects all HTTP requests to HTTPS.
+         * 
+         * @return builder
+         * 
+         */
         public Builder redirect(@Nullable Boolean redirect) {
             $.redirect = redirect;
             return this;
         }
 
+        /**
+         * @param redirectStatusCode Specifies a response code.
+         * 
+         * @return builder
+         * 
+         */
         public Builder redirectStatusCode(@Nullable Integer redirectStatusCode) {
             $.redirectStatusCode = redirectStatusCode;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

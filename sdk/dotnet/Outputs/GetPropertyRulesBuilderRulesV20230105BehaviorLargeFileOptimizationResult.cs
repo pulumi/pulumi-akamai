@@ -13,13 +13,37 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorLargeFileOptimizationResult
     {
+        /// <summary>
+        /// Specifies whether to cache partial objects.
+        /// </summary>
         public readonly string? EnablePartialObjectCaching;
+        /// <summary>
+        /// Enables the file optimization behavior.
+        /// </summary>
         public readonly bool? Enabled;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// Optimization does not apply to files larger than this, expressed as a number suffixed with a unit string such as `MB` or `GB`. The size of a file can't be greater than 323 GB. If you need to optimize a larger file, contact Akamai Professional Services for help. This option is for internal usage only.
+        /// </summary>
         public readonly string? MaximumSize;
+        /// <summary>
+        /// Optimization only applies to files larger than this, expressed as a number suffixed with a unit string such as `MB` or `GB`.
+        /// </summary>
         public readonly string? MinimumSize;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// When `enablePartialObjectCaching` is set to `PARTIAL_OBJECT_CACHING`, enabling this option signals your intention to vary filenames by version, strongly recommended to avoid serving corrupt content when chunks come from different versions of the same file.
+        /// </summary>
         public readonly bool? UseVersioning;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

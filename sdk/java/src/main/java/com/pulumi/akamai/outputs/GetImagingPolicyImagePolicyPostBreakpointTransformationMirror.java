@@ -11,21 +11,53 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyPostBreakpointTransformationMirror {
+    /**
+     * @return Flips the image horizontally.
+     * 
+     */
     private @Nullable String horizontal;
+    /**
+     * @return Flips the image horizontally.
+     * 
+     */
     private @Nullable String horizontalVar;
+    /**
+     * @return Flips the image vertically.
+     * 
+     */
     private @Nullable String vertical;
+    /**
+     * @return Flips the image vertically.
+     * 
+     */
     private @Nullable String verticalVar;
 
     private GetImagingPolicyImagePolicyPostBreakpointTransformationMirror() {}
+    /**
+     * @return Flips the image horizontally.
+     * 
+     */
     public Optional<String> horizontal() {
         return Optional.ofNullable(this.horizontal);
     }
+    /**
+     * @return Flips the image horizontally.
+     * 
+     */
     public Optional<String> horizontalVar() {
         return Optional.ofNullable(this.horizontalVar);
     }
+    /**
+     * @return Flips the image vertically.
+     * 
+     */
     public Optional<String> vertical() {
         return Optional.ofNullable(this.vertical);
     }
+    /**
+     * @return Flips the image vertically.
+     * 
+     */
     public Optional<String> verticalVar() {
         return Optional.ofNullable(this.verticalVar);
     }

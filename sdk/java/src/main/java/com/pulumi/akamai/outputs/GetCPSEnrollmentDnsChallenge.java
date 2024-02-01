@@ -10,17 +10,41 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCPSEnrollmentDnsChallenge {
+    /**
+     * @return Domain for which the challenges were completed
+     * 
+     */
     private String domain;
+    /**
+     * @return The domain name where Akamai publishes the response body to validate
+     * 
+     */
     private String fullPath;
+    /**
+     * @return The unique content of the challenge
+     * 
+     */
     private String responseBody;
 
     private GetCPSEnrollmentDnsChallenge() {}
+    /**
+     * @return Domain for which the challenges were completed
+     * 
+     */
     public String domain() {
         return this.domain;
     }
+    /**
+     * @return The domain name where Akamai publishes the response body to validate
+     * 
+     */
     public String fullPath() {
         return this.fullPath;
     }
+    /**
+     * @return The unique content of the challenge
+     * 
+     */
     public String responseBody() {
         return this.responseBody;
     }

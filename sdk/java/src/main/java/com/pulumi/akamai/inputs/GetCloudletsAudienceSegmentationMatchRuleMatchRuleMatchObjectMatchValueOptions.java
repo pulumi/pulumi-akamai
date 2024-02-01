@@ -16,30 +16,62 @@ public final class GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObject
 
     public static final GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptions Empty = new GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptions();
 
+    /**
+     * Set to true if the entries for the value property should be evaluated based on case sensitivity
+     * 
+     */
     @Import(name="valueCaseSensitive")
     private @Nullable Boolean valueCaseSensitive;
 
+    /**
+     * @return Set to true if the entries for the value property should be evaluated based on case sensitivity
+     * 
+     */
     public Optional<Boolean> valueCaseSensitive() {
         return Optional.ofNullable(this.valueCaseSensitive);
     }
 
+    /**
+     * Set to true if provided value should be compared in escaped form
+     * 
+     */
     @Import(name="valueEscaped")
     private @Nullable Boolean valueEscaped;
 
+    /**
+     * @return Set to true if provided value should be compared in escaped form
+     * 
+     */
     public Optional<Boolean> valueEscaped() {
         return Optional.ofNullable(this.valueEscaped);
     }
 
+    /**
+     * Set to true if the entries for the value property include wildcards
+     * 
+     */
     @Import(name="valueHasWildcard")
     private @Nullable Boolean valueHasWildcard;
 
+    /**
+     * @return Set to true if the entries for the value property include wildcards
+     * 
+     */
     public Optional<Boolean> valueHasWildcard() {
         return Optional.ofNullable(this.valueHasWildcard);
     }
 
+    /**
+     * The value attributes in the incoming request to match on
+     * 
+     */
     @Import(name="values")
     private @Nullable List<String> values;
 
+    /**
+     * @return The value attributes in the incoming request to match on
+     * 
+     */
     public Optional<List<String>> values() {
         return Optional.ofNullable(this.values);
     }
@@ -71,26 +103,56 @@ public final class GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObject
             $ = new GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptions(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param valueCaseSensitive Set to true if the entries for the value property should be evaluated based on case sensitivity
+         * 
+         * @return builder
+         * 
+         */
         public Builder valueCaseSensitive(@Nullable Boolean valueCaseSensitive) {
             $.valueCaseSensitive = valueCaseSensitive;
             return this;
         }
 
+        /**
+         * @param valueEscaped Set to true if provided value should be compared in escaped form
+         * 
+         * @return builder
+         * 
+         */
         public Builder valueEscaped(@Nullable Boolean valueEscaped) {
             $.valueEscaped = valueEscaped;
             return this;
         }
 
+        /**
+         * @param valueHasWildcard Set to true if the entries for the value property include wildcards
+         * 
+         * @return builder
+         * 
+         */
         public Builder valueHasWildcard(@Nullable Boolean valueHasWildcard) {
             $.valueHasWildcard = valueHasWildcard;
             return this;
         }
 
+        /**
+         * @param values The value attributes in the incoming request to match on
+         * 
+         * @return builder
+         * 
+         */
         public Builder values(@Nullable List<String> values) {
             $.values = values;
             return this;
         }
 
+        /**
+         * @param values The value attributes in the incoming request to match on
+         * 
+         * @return builder
+         * 
+         */
         public Builder values(String... values) {
             return values(List.of(values));
         }

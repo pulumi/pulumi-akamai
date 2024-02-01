@@ -12,53 +12,149 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorModifyIncomingRequestHeader {
+    /**
+     * @return Either `ADD`, `DELETE`, `MODIFY`, or `PASS` incoming HTTP request headers.
+     * 
+     */
     private @Nullable String action;
+    /**
+     * @return When enabled with the `action` set to `MODIFY`, prevents creation of more than one instance of a header.
+     * 
+     */
     private @Nullable Boolean avoidDuplicateHeaders;
+    /**
+     * @return Specifies a custom field name that applies when the relevant `standard` header name is set to `OTHER`.
+     * 
+     */
     private @Nullable String customHeaderName;
+    /**
+     * @return Specifies the new header value.
+     * 
+     */
     private @Nullable String headerValue;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Supplies an HTTP header replacement value.
+     * 
+     */
     private @Nullable String newHeaderValue;
+    /**
+     * @return If the value of `action` is `ADD`, this specifies the name of the field to add.
+     * 
+     */
     private @Nullable String standardAddHeaderName;
+    /**
+     * @return If the value of `action` is `DELETE`, this specifies the name of the field to remove.
+     * 
+     */
     private @Nullable String standardDeleteHeaderName;
+    /**
+     * @return If the value of `action` is `MODIFY`, this specifies the name of the field to modify.
+     * 
+     */
     private @Nullable String standardModifyHeaderName;
+    /**
+     * @return If the value of `action` is `PASS`, this specifies the name of the field to pass through.
+     * 
+     */
     private @Nullable String standardPassHeaderName;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorModifyIncomingRequestHeader() {}
+    /**
+     * @return Either `ADD`, `DELETE`, `MODIFY`, or `PASS` incoming HTTP request headers.
+     * 
+     */
     public Optional<String> action() {
         return Optional.ofNullable(this.action);
     }
+    /**
+     * @return When enabled with the `action` set to `MODIFY`, prevents creation of more than one instance of a header.
+     * 
+     */
     public Optional<Boolean> avoidDuplicateHeaders() {
         return Optional.ofNullable(this.avoidDuplicateHeaders);
     }
+    /**
+     * @return Specifies a custom field name that applies when the relevant `standard` header name is set to `OTHER`.
+     * 
+     */
     public Optional<String> customHeaderName() {
         return Optional.ofNullable(this.customHeaderName);
     }
+    /**
+     * @return Specifies the new header value.
+     * 
+     */
     public Optional<String> headerValue() {
         return Optional.ofNullable(this.headerValue);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Supplies an HTTP header replacement value.
+     * 
+     */
     public Optional<String> newHeaderValue() {
         return Optional.ofNullable(this.newHeaderValue);
     }
+    /**
+     * @return If the value of `action` is `ADD`, this specifies the name of the field to add.
+     * 
+     */
     public Optional<String> standardAddHeaderName() {
         return Optional.ofNullable(this.standardAddHeaderName);
     }
+    /**
+     * @return If the value of `action` is `DELETE`, this specifies the name of the field to remove.
+     * 
+     */
     public Optional<String> standardDeleteHeaderName() {
         return Optional.ofNullable(this.standardDeleteHeaderName);
     }
+    /**
+     * @return If the value of `action` is `MODIFY`, this specifies the name of the field to modify.
+     * 
+     */
     public Optional<String> standardModifyHeaderName() {
         return Optional.ofNullable(this.standardModifyHeaderName);
     }
+    /**
+     * @return If the value of `action` is `PASS`, this specifies the name of the field to pass through.
+     * 
+     */
     public Optional<String> standardPassHeaderName() {
         return Optional.ofNullable(this.standardPassHeaderName);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

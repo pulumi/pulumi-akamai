@@ -14,16 +14,32 @@ public final class GetPropertyRulesBuilderRulesV20230530CustomOverride extends c
 
     public static final GetPropertyRulesBuilderRulesV20230530CustomOverride Empty = new GetPropertyRulesBuilderRulesV20230530CustomOverride();
 
+    /**
+     * The name of a custom override
+     * 
+     */
     @Import(name="name")
     private @Nullable String name;
 
+    /**
+     * @return The name of a custom override
+     * 
+     */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
 
+    /**
+     * The ID of a custom override
+     * 
+     */
     @Import(name="overrideId")
     private @Nullable String overrideId;
 
+    /**
+     * @return The ID of a custom override
+     * 
+     */
     public Optional<String> overrideId() {
         return Optional.ofNullable(this.overrideId);
     }
@@ -53,11 +69,23 @@ public final class GetPropertyRulesBuilderRulesV20230530CustomOverride extends c
             $ = new GetPropertyRulesBuilderRulesV20230530CustomOverride(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param name The name of a custom override
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(@Nullable String name) {
             $.name = name;
             return this;
         }
 
+        /**
+         * @param overrideId The ID of a custom override
+         * 
+         * @return builder
+         * 
+         */
         public Builder overrideId(@Nullable String overrideId) {
             $.overrideId = overrideId;
             return this;

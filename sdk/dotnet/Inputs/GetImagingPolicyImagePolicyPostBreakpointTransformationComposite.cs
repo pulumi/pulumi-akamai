@@ -12,42 +12,78 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Compass direction indicating the corner or edge of the base image to place the applied image. Use Horizontal and Vertical Offset to adjust the applied image's gravity position
+        /// </summary>
         [Input("gravity")]
         public string? Gravity { get; set; }
 
+        /// <summary>
+        /// Compass direction indicating the corner or edge of the base image to place the applied image. Use Horizontal and Vertical Offset to adjust the applied image's gravity position
+        /// </summary>
         [Input("gravityVar")]
         public string? GravityVar { get; set; }
 
         [Input("image", required: true)]
         public Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageArgs Image { get; set; } = null!;
 
+        /// <summary>
+        /// Place applied image on top of or underneath the base image. Watermarks are usually applied over. Backgrounds are usually applied under.
+        /// </summary>
         [Input("placement")]
         public string? Placement { get; set; }
 
+        /// <summary>
+        /// Place applied image on top of or underneath the base image. Watermarks are usually applied over. Backgrounds are usually applied under.
+        /// </summary>
         [Input("placementVar")]
         public string? PlacementVar { get; set; }
 
+        /// <summary>
+        /// A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image's width or height.
+        /// </summary>
         [Input("scale")]
         public string? Scale { get; set; }
 
+        /// <summary>
+        /// The dimension, either `width` or `height`, of the source image to scale.
+        /// </summary>
         [Input("scaleDimension")]
         public string? ScaleDimension { get; set; }
 
+        /// <summary>
+        /// The dimension, either `width` or `height`, of the source image to scale.
+        /// </summary>
         [Input("scaleDimensionVar")]
         public string? ScaleDimensionVar { get; set; }
 
+        /// <summary>
+        /// A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image's width or height.
+        /// </summary>
         [Input("scaleVar")]
         public string? ScaleVar { get; set; }
 
+        /// <summary>
+        /// The x-axis position of the image to apply.
+        /// </summary>
         [Input("xPosition")]
         public string? XPosition { get; set; }
 
+        /// <summary>
+        /// The x-axis position of the image to apply.
+        /// </summary>
         [Input("xPositionVar")]
         public string? XPositionVar { get; set; }
 
+        /// <summary>
+        /// The y-axis position of the image to apply.
+        /// </summary>
         [Input("yPosition")]
         public string? YPosition { get; set; }
 
+        /// <summary>
+        /// The y-axis position of the image to apply.
+        /// </summary>
         [Input("yPositionVar")]
         public string? YPositionVar { get; set; }
 

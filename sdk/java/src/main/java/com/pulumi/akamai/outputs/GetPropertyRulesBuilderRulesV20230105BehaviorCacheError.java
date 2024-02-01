@@ -12,29 +12,77 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorCacheError {
+    /**
+     * @return Activates the error-caching behavior.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return When enabled, the edge server preserves stale cached objects when the origin returns `500`, `502`, `503`, and `504` error codes. This avoids re-fetching and re-caching content after transient errors.
+     * 
+     */
     private @Nullable Boolean preserveStale;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return Overrides the default caching duration of `10s`. Note that if set to `0`, it is equivalent to `no-cache`, which forces revalidation and may cause a traffic spike. This can be counterproductive when, for example, the origin is producing an error code of `500`.
+     * 
+     */
     private @Nullable String ttl;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorCacheError() {}
+    /**
+     * @return Activates the error-caching behavior.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return When enabled, the edge server preserves stale cached objects when the origin returns `500`, `502`, `503`, and `504` error codes. This avoids re-fetching and re-caching content after transient errors.
+     * 
+     */
     public Optional<Boolean> preserveStale() {
         return Optional.ofNullable(this.preserveStale);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return Overrides the default caching duration of `10s`. Note that if set to `0`, it is equivalent to `no-cache`, which forces revalidation and may cause a traffic spike. This can be counterproductive when, for example, the origin is producing an error code of `500`.
+     * 
+     */
     public Optional<String> ttl() {
         return Optional.ofNullable(this.ttl);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

@@ -14,25 +14,65 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCloudwrapperConfigurationMultiCdnSettingsCdn {
+    /**
+     * @return List of auth keys configured for the CDN.
+     * 
+     */
     private @Nullable List<GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKey> cdnAuthKeys;
+    /**
+     * @return Unique identifier for the CDN.
+     * 
+     */
     private String cdnCode;
+    /**
+     * @return Enable CDN.
+     * 
+     */
     private Boolean enabled;
+    /**
+     * @return Specify whether CDN communication is HTTPS only.
+     * 
+     */
     private Boolean httpsOnly;
+    /**
+     * @return Configure an access control list using IP addresses in CIDR notation.
+     * 
+     */
     private List<String> ipAclCidrs;
 
     private GetCloudwrapperConfigurationMultiCdnSettingsCdn() {}
+    /**
+     * @return List of auth keys configured for the CDN.
+     * 
+     */
     public List<GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKey> cdnAuthKeys() {
         return this.cdnAuthKeys == null ? List.of() : this.cdnAuthKeys;
     }
+    /**
+     * @return Unique identifier for the CDN.
+     * 
+     */
     public String cdnCode() {
         return this.cdnCode;
     }
+    /**
+     * @return Enable CDN.
+     * 
+     */
     public Boolean enabled() {
         return this.enabled;
     }
+    /**
+     * @return Specify whether CDN communication is HTTPS only.
+     * 
+     */
     public Boolean httpsOnly() {
         return this.httpsOnly;
     }
+    /**
+     * @return Configure an access control list using IP addresses in CIDR notation.
+     * 
+     */
     public List<String> ipAclCidrs() {
         return this.ipAclCidrs;
     }

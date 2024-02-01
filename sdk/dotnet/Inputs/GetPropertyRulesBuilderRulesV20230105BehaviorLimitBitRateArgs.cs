@@ -14,29 +14,49 @@ namespace Pulumi.Akamai.Inputs
     {
         [Input("bitrateTables")]
         private InputList<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateBitrateTableInputArgs>? _bitrateTables;
+
+        /// <summary>
+        /// Specifies a download rate that corresponds to a `thresholdTable` entry. The bit rate appears as a two-member object consisting of a numeric `bitrateValue` and a `bitrateUnit` string, with allowed values of `Kbps`, `Mbps`, and `Gbps`.
+        /// </summary>
         public InputList<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateBitrateTableInputArgs> BitrateTables
         {
             get => _bitrateTables ?? (_bitrateTables = new InputList<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateBitrateTableInputArgs>());
             set => _bitrateTables = value;
         }
 
+        /// <summary>
+        /// When enabled, activates the bit rate limiting behavior.
+        /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public Input<bool>? Locked { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public Input<string>? TemplateUuid { get; set; }
 
         [Input("thresholdTables")]
         private InputList<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateThresholdTableInputArgs>? _thresholdTables;
+
+        /// <summary>
+        /// Specifies the minimum size of the file or the amount of elapsed download time before applying the bit rate limit from the corresponding `bitrateTable` entry. The threshold appears as a two-member object consisting of a numeric `thresholdValue` and `thresholdUnit` string, with allowed values of `SECONDS` or `BYTES`.
+        /// </summary>
         public InputList<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateThresholdTableInputArgs> ThresholdTables
         {
             get => _thresholdTables ?? (_thresholdTables = new InputList<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateThresholdTableInputArgs>());
             set => _thresholdTables = value;
         }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public Input<string>? Uuid { get; set; }
 

@@ -16,30 +16,62 @@ public final class PropertyIncludeActivationComplianceRecordNoncomplianceReasonN
 
     public static final PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoneArgs Empty = new PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoneArgs();
 
+    /**
+     * Identifies the customer
+     * 
+     */
     @Import(name="customerEmail")
     private @Nullable Output<String> customerEmail;
 
+    /**
+     * @return Identifies the customer
+     * 
+     */
     public Optional<Output<String>> customerEmail() {
         return Optional.ofNullable(this.customerEmail);
     }
 
+    /**
+     * Identifies person who has independently approved the activation request
+     * 
+     */
     @Import(name="peerReviewedBy")
     private @Nullable Output<String> peerReviewedBy;
 
+    /**
+     * @return Identifies person who has independently approved the activation request
+     * 
+     */
     public Optional<Output<String>> peerReviewedBy() {
         return Optional.ofNullable(this.peerReviewedBy);
     }
 
+    /**
+     * Identifies the ticket that describes the need for the activation
+     * 
+     */
     @Import(name="ticketId")
     private @Nullable Output<String> ticketId;
 
+    /**
+     * @return Identifies the ticket that describes the need for the activation
+     * 
+     */
     public Optional<Output<String>> ticketId() {
         return Optional.ofNullable(this.ticketId);
     }
 
+    /**
+     * Whether the metadata to activate has been fully tested
+     * 
+     */
     @Import(name="unitTested")
     private @Nullable Output<Boolean> unitTested;
 
+    /**
+     * @return Whether the metadata to activate has been fully tested
+     * 
+     */
     public Optional<Output<Boolean>> unitTested() {
         return Optional.ofNullable(this.unitTested);
     }
@@ -71,38 +103,86 @@ public final class PropertyIncludeActivationComplianceRecordNoncomplianceReasonN
             $ = new PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoneArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param customerEmail Identifies the customer
+         * 
+         * @return builder
+         * 
+         */
         public Builder customerEmail(@Nullable Output<String> customerEmail) {
             $.customerEmail = customerEmail;
             return this;
         }
 
+        /**
+         * @param customerEmail Identifies the customer
+         * 
+         * @return builder
+         * 
+         */
         public Builder customerEmail(String customerEmail) {
             return customerEmail(Output.of(customerEmail));
         }
 
+        /**
+         * @param peerReviewedBy Identifies person who has independently approved the activation request
+         * 
+         * @return builder
+         * 
+         */
         public Builder peerReviewedBy(@Nullable Output<String> peerReviewedBy) {
             $.peerReviewedBy = peerReviewedBy;
             return this;
         }
 
+        /**
+         * @param peerReviewedBy Identifies person who has independently approved the activation request
+         * 
+         * @return builder
+         * 
+         */
         public Builder peerReviewedBy(String peerReviewedBy) {
             return peerReviewedBy(Output.of(peerReviewedBy));
         }
 
+        /**
+         * @param ticketId Identifies the ticket that describes the need for the activation
+         * 
+         * @return builder
+         * 
+         */
         public Builder ticketId(@Nullable Output<String> ticketId) {
             $.ticketId = ticketId;
             return this;
         }
 
+        /**
+         * @param ticketId Identifies the ticket that describes the need for the activation
+         * 
+         * @return builder
+         * 
+         */
         public Builder ticketId(String ticketId) {
             return ticketId(Output.of(ticketId));
         }
 
+        /**
+         * @param unitTested Whether the metadata to activate has been fully tested
+         * 
+         * @return builder
+         * 
+         */
         public Builder unitTested(@Nullable Output<Boolean> unitTested) {
             $.unitTested = unitTested;
             return this;
         }
 
+        /**
+         * @param unitTested Whether the metadata to activate has been fully tested
+         * 
+         * @return builder
+         * 
+         */
         public Builder unitTested(Boolean unitTested) {
             return unitTested(Output.of(unitTested));
         }

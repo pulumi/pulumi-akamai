@@ -13,18 +13,57 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230105CriterionDeviceCharacteristicResult
     {
+        /// <summary>
+        /// When the `characteristic` expects a boolean value, this specifies the value.
+        /// </summary>
         public readonly bool? BooleanValue;
+        /// <summary>
+        /// Aspect of the device or browser to match.
+        /// </summary>
         public readonly string? Characteristic;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// Sets a case-sensitive match for the `stringValue` field.
+        /// </summary>
         public readonly bool? MatchCaseSensitive;
+        /// <summary>
+        /// Allows wildcards in the `stringValue` field, where `?` matches a single character and `*` matches zero or more characters.
+        /// </summary>
         public readonly bool? MatchWildcard;
+        /// <summary>
+        /// When the `characteristic` expects a numeric value, compares the specified `numericValue` against the matched client.
+        /// </summary>
         public readonly string? NumericMatchOperator;
+        /// <summary>
+        /// When the `characteristic` expects a numeric value, this specifies the number.
+        /// </summary>
         public readonly int? NumericValue;
+        /// <summary>
+        /// When the `characteristic` expects a string value, set this to `MATCHES_ONE_OF` to match against the `stringValue` set, otherwise set to `DOES_NOT_MATCH_ONE_OF` to exclude that set of values.
+        /// </summary>
         public readonly string? StringMatchOperator;
+        /// <summary>
+        /// When the `characteristic` expects a string, this specifies the set of values.
+        /// </summary>
         public readonly ImmutableArray<string> StringValues;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
+        /// <summary>
+        /// When the `characteristic` expects a version string value, compares the specified `versionValue` against the matched client, using the following operators: `IS`, `IS_MORE_THAN_OR_EQUAL`, `IS_MORE_THAN`, `IS_LESS_THAN_OR_EQUAL`, `IS_LESS_THAN`, `IS_NOT`.
+        /// </summary>
         public readonly string? VersionMatchOperator;
+        /// <summary>
+        /// When the `characteristic` expects a version number, this specifies it as a string.
+        /// </summary>
         public readonly string? VersionValue;
 
         [OutputConstructor]

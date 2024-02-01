@@ -18,30 +18,62 @@ public final class PropertyActivationComplianceRecordArgs extends com.pulumi.res
 
     public static final PropertyActivationComplianceRecordArgs Empty = new PropertyActivationComplianceRecordArgs();
 
+    /**
+     * Provides an audit record when activating on a production network with noncompliance reason as `EMERGENCY`
+     * 
+     */
     @Import(name="noncomplianceReasonEmergency")
     private @Nullable Output<PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs> noncomplianceReasonEmergency;
 
+    /**
+     * @return Provides an audit record when activating on a production network with noncompliance reason as `EMERGENCY`
+     * 
+     */
     public Optional<Output<PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs>> noncomplianceReasonEmergency() {
         return Optional.ofNullable(this.noncomplianceReasonEmergency);
     }
 
+    /**
+     * Provides an audit record when activating on a production network with noncompliance reason as `NO_PRODUCTION_TRAFFIC`
+     * 
+     */
     @Import(name="noncomplianceReasonNoProductionTraffic")
     private @Nullable Output<PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs> noncomplianceReasonNoProductionTraffic;
 
+    /**
+     * @return Provides an audit record when activating on a production network with noncompliance reason as `NO_PRODUCTION_TRAFFIC`
+     * 
+     */
     public Optional<Output<PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs>> noncomplianceReasonNoProductionTraffic() {
         return Optional.ofNullable(this.noncomplianceReasonNoProductionTraffic);
     }
 
+    /**
+     * Provides an audit record when activating on a production network with noncompliance reason as `NONE`
+     * 
+     */
     @Import(name="noncomplianceReasonNone")
     private @Nullable Output<PropertyActivationComplianceRecordNoncomplianceReasonNoneArgs> noncomplianceReasonNone;
 
+    /**
+     * @return Provides an audit record when activating on a production network with noncompliance reason as `NONE`
+     * 
+     */
     public Optional<Output<PropertyActivationComplianceRecordNoncomplianceReasonNoneArgs>> noncomplianceReasonNone() {
         return Optional.ofNullable(this.noncomplianceReasonNone);
     }
 
+    /**
+     * Provides an audit record when activating on a production network with noncompliance reason as `OTHER`
+     * 
+     */
     @Import(name="noncomplianceReasonOther")
     private @Nullable Output<PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs> noncomplianceReasonOther;
 
+    /**
+     * @return Provides an audit record when activating on a production network with noncompliance reason as `OTHER`
+     * 
+     */
     public Optional<Output<PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs>> noncomplianceReasonOther() {
         return Optional.ofNullable(this.noncomplianceReasonOther);
     }
@@ -73,38 +105,86 @@ public final class PropertyActivationComplianceRecordArgs extends com.pulumi.res
             $ = new PropertyActivationComplianceRecordArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param noncomplianceReasonEmergency Provides an audit record when activating on a production network with noncompliance reason as `EMERGENCY`
+         * 
+         * @return builder
+         * 
+         */
         public Builder noncomplianceReasonEmergency(@Nullable Output<PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs> noncomplianceReasonEmergency) {
             $.noncomplianceReasonEmergency = noncomplianceReasonEmergency;
             return this;
         }
 
+        /**
+         * @param noncomplianceReasonEmergency Provides an audit record when activating on a production network with noncompliance reason as `EMERGENCY`
+         * 
+         * @return builder
+         * 
+         */
         public Builder noncomplianceReasonEmergency(PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs noncomplianceReasonEmergency) {
             return noncomplianceReasonEmergency(Output.of(noncomplianceReasonEmergency));
         }
 
+        /**
+         * @param noncomplianceReasonNoProductionTraffic Provides an audit record when activating on a production network with noncompliance reason as `NO_PRODUCTION_TRAFFIC`
+         * 
+         * @return builder
+         * 
+         */
         public Builder noncomplianceReasonNoProductionTraffic(@Nullable Output<PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs> noncomplianceReasonNoProductionTraffic) {
             $.noncomplianceReasonNoProductionTraffic = noncomplianceReasonNoProductionTraffic;
             return this;
         }
 
+        /**
+         * @param noncomplianceReasonNoProductionTraffic Provides an audit record when activating on a production network with noncompliance reason as `NO_PRODUCTION_TRAFFIC`
+         * 
+         * @return builder
+         * 
+         */
         public Builder noncomplianceReasonNoProductionTraffic(PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs noncomplianceReasonNoProductionTraffic) {
             return noncomplianceReasonNoProductionTraffic(Output.of(noncomplianceReasonNoProductionTraffic));
         }
 
+        /**
+         * @param noncomplianceReasonNone Provides an audit record when activating on a production network with noncompliance reason as `NONE`
+         * 
+         * @return builder
+         * 
+         */
         public Builder noncomplianceReasonNone(@Nullable Output<PropertyActivationComplianceRecordNoncomplianceReasonNoneArgs> noncomplianceReasonNone) {
             $.noncomplianceReasonNone = noncomplianceReasonNone;
             return this;
         }
 
+        /**
+         * @param noncomplianceReasonNone Provides an audit record when activating on a production network with noncompliance reason as `NONE`
+         * 
+         * @return builder
+         * 
+         */
         public Builder noncomplianceReasonNone(PropertyActivationComplianceRecordNoncomplianceReasonNoneArgs noncomplianceReasonNone) {
             return noncomplianceReasonNone(Output.of(noncomplianceReasonNone));
         }
 
+        /**
+         * @param noncomplianceReasonOther Provides an audit record when activating on a production network with noncompliance reason as `OTHER`
+         * 
+         * @return builder
+         * 
+         */
         public Builder noncomplianceReasonOther(@Nullable Output<PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs> noncomplianceReasonOther) {
             $.noncomplianceReasonOther = noncomplianceReasonOther;
             return this;
         }
 
+        /**
+         * @param noncomplianceReasonOther Provides an audit record when activating on a production network with noncompliance reason as `OTHER`
+         * 
+         * @return builder
+         * 
+         */
         public Builder noncomplianceReasonOther(PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs noncomplianceReasonOther) {
             return noncomplianceReasonOther(Output.of(noncomplianceReasonOther));
         }

@@ -13,7 +13,13 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyTransformationBackgroundColorResult
     {
+        /// <summary>
+        /// The hexadecimal CSS color value for the background.
+        /// </summary>
         public readonly string? Color;
+        /// <summary>
+        /// The hexadecimal CSS color value for the background.
+        /// </summary>
         public readonly string? ColorVar;
 
         [OutputConstructor]

@@ -16,30 +16,62 @@ public final class GetCloudwrapperConfigurationLocationArgs extends com.pulumi.r
 
     public static final GetCloudwrapperConfigurationLocationArgs Empty = new GetCloudwrapperConfigurationLocationArgs();
 
+    /**
+     * The capacity assigned to this configuration&#39;s location.
+     * 
+     */
     @Import(name="capacity", required=true)
     private Output<GetCloudwrapperConfigurationLocationCapacityArgs> capacity;
 
+    /**
+     * @return The capacity assigned to this configuration&#39;s location.
+     * 
+     */
     public Output<GetCloudwrapperConfigurationLocationCapacityArgs> capacity() {
         return this.capacity;
     }
 
+    /**
+     * Additional comments provided by user.
+     * 
+     */
     @Import(name="comments", required=true)
     private Output<String> comments;
 
+    /**
+     * @return Additional comments provided by user.
+     * 
+     */
     public Output<String> comments() {
         return this.comments;
     }
 
+    /**
+     * The name of the map.
+     * 
+     */
     @Import(name="mapName", required=true)
     private Output<String> mapName;
 
+    /**
+     * @return The name of the map.
+     * 
+     */
     public Output<String> mapName() {
         return this.mapName;
     }
 
+    /**
+     * Unique identifier for the location and traffic type combination.
+     * 
+     */
     @Import(name="trafficTypeId", required=true)
     private Output<Integer> trafficTypeId;
 
+    /**
+     * @return Unique identifier for the location and traffic type combination.
+     * 
+     */
     public Output<Integer> trafficTypeId() {
         return this.trafficTypeId;
     }
@@ -71,38 +103,86 @@ public final class GetCloudwrapperConfigurationLocationArgs extends com.pulumi.r
             $ = new GetCloudwrapperConfigurationLocationArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param capacity The capacity assigned to this configuration&#39;s location.
+         * 
+         * @return builder
+         * 
+         */
         public Builder capacity(Output<GetCloudwrapperConfigurationLocationCapacityArgs> capacity) {
             $.capacity = capacity;
             return this;
         }
 
+        /**
+         * @param capacity The capacity assigned to this configuration&#39;s location.
+         * 
+         * @return builder
+         * 
+         */
         public Builder capacity(GetCloudwrapperConfigurationLocationCapacityArgs capacity) {
             return capacity(Output.of(capacity));
         }
 
+        /**
+         * @param comments Additional comments provided by user.
+         * 
+         * @return builder
+         * 
+         */
         public Builder comments(Output<String> comments) {
             $.comments = comments;
             return this;
         }
 
+        /**
+         * @param comments Additional comments provided by user.
+         * 
+         * @return builder
+         * 
+         */
         public Builder comments(String comments) {
             return comments(Output.of(comments));
         }
 
+        /**
+         * @param mapName The name of the map.
+         * 
+         * @return builder
+         * 
+         */
         public Builder mapName(Output<String> mapName) {
             $.mapName = mapName;
             return this;
         }
 
+        /**
+         * @param mapName The name of the map.
+         * 
+         * @return builder
+         * 
+         */
         public Builder mapName(String mapName) {
             return mapName(Output.of(mapName));
         }
 
+        /**
+         * @param trafficTypeId Unique identifier for the location and traffic type combination.
+         * 
+         * @return builder
+         * 
+         */
         public Builder trafficTypeId(Output<Integer> trafficTypeId) {
             $.trafficTypeId = trafficTypeId;
             return this;
         }
 
+        /**
+         * @param trafficTypeId Unique identifier for the location and traffic type combination.
+         * 
+         * @return builder
+         * 
+         */
         public Builder trafficTypeId(Integer trafficTypeId) {
             return trafficTypeId(Output.of(trafficTypeId));
         }

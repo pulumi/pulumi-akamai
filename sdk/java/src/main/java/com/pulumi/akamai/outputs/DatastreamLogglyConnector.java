@@ -12,33 +12,89 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DatastreamLogglyConnector {
+    /**
+     * @return The unique HTTP code for your Loggly bulk endpoint.
+     * 
+     */
     private String authToken;
+    /**
+     * @return The type of the resource passed in the request&#39;s custom header. For details, see Additional options in the DataStream user guide.
+     * 
+     */
     private @Nullable String contentType;
+    /**
+     * @return A human-readable name for the request&#39;s custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.
+     * 
+     */
     private @Nullable String customHeaderName;
+    /**
+     * @return The custom header&#39;s contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.
+     * 
+     */
     private @Nullable String customHeaderValue;
+    /**
+     * @return The name of the connector.
+     * 
+     */
     private String displayName;
+    /**
+     * @return The Loggly bulk endpoint URL in the https://hostname.loggly.com/bulk/ format. Set the endpoint code in the authToken field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. See Stream logs to Loggly.
+     * 
+     */
     private String endpoint;
+    /**
+     * @return The tags you can use to segment and filter log events in Loggly. See Tags in the Loggly documentation.
+     * 
+     */
     private @Nullable String tags;
 
     private DatastreamLogglyConnector() {}
+    /**
+     * @return The unique HTTP code for your Loggly bulk endpoint.
+     * 
+     */
     public String authToken() {
         return this.authToken;
     }
+    /**
+     * @return The type of the resource passed in the request&#39;s custom header. For details, see Additional options in the DataStream user guide.
+     * 
+     */
     public Optional<String> contentType() {
         return Optional.ofNullable(this.contentType);
     }
+    /**
+     * @return A human-readable name for the request&#39;s custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.
+     * 
+     */
     public Optional<String> customHeaderName() {
         return Optional.ofNullable(this.customHeaderName);
     }
+    /**
+     * @return The custom header&#39;s contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.
+     * 
+     */
     public Optional<String> customHeaderValue() {
         return Optional.ofNullable(this.customHeaderValue);
     }
+    /**
+     * @return The name of the connector.
+     * 
+     */
     public String displayName() {
         return this.displayName;
     }
+    /**
+     * @return The Loggly bulk endpoint URL in the https://hostname.loggly.com/bulk/ format. Set the endpoint code in the authToken field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. See Stream logs to Loggly.
+     * 
+     */
     public String endpoint() {
         return this.endpoint;
     }
+    /**
+     * @return The tags you can use to segment and filter log events in Loggly. See Tags in the Loggly documentation.
+     * 
+     */
     public Optional<String> tags() {
         return Optional.ofNullable(this.tags);
     }

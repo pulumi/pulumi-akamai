@@ -11,21 +11,53 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationTrim {
+    /**
+     * @return The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.
+     * 
+     */
     private @Nullable String fuzz;
+    /**
+     * @return The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.
+     * 
+     */
     private @Nullable String fuzzVar;
+    /**
+     * @return The amount of padding in pixels to add to the trimmed image.
+     * 
+     */
     private @Nullable String padding;
+    /**
+     * @return The amount of padding in pixels to add to the trimmed image.
+     * 
+     */
     private @Nullable String paddingVar;
 
     private GetImagingPolicyImagePolicyTransformationTrim() {}
+    /**
+     * @return The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.
+     * 
+     */
     public Optional<String> fuzz() {
         return Optional.ofNullable(this.fuzz);
     }
+    /**
+     * @return The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.
+     * 
+     */
     public Optional<String> fuzzVar() {
         return Optional.ofNullable(this.fuzzVar);
     }
+    /**
+     * @return The amount of padding in pixels to add to the trimmed image.
+     * 
+     */
     public Optional<String> padding() {
         return Optional.ofNullable(this.padding);
     }
+    /**
+     * @return The amount of padding in pixels to add to the trimmed image.
+     * 
+     */
     public Optional<String> paddingVar() {
         return Optional.ofNullable(this.paddingVar);
     }

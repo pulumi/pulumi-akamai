@@ -12,21 +12,39 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetImagingPolicyImagePolicyTransformationUnsharpMaskArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Set how much emphasis the filter applies to details. Higher values increase apparent sharpness of details.
+        /// </summary>
         [Input("gain")]
         public string? Gain { get; set; }
 
+        /// <summary>
+        /// Set how much emphasis the filter applies to details. Higher values increase apparent sharpness of details.
+        /// </summary>
         [Input("gainVar")]
         public string? GainVar { get; set; }
 
+        /// <summary>
+        /// The standard deviation of the Gaussian distribution used in the in unsharp mask, measured in pixels, `1.0` by default. High values emphasize large details and low values emphasize small details.
+        /// </summary>
         [Input("sigma")]
         public string? Sigma { get; set; }
 
+        /// <summary>
+        /// The standard deviation of the Gaussian distribution used in the in unsharp mask, measured in pixels, `1.0` by default. High values emphasize large details and low values emphasize small details.
+        /// </summary>
         [Input("sigmaVar")]
         public string? SigmaVar { get; set; }
 
+        /// <summary>
+        /// Set the minimum change required to include a detail in the filter. Higher values discard more changes.
+        /// </summary>
         [Input("threshold")]
         public string? Threshold { get; set; }
 
+        /// <summary>
+        /// Set the minimum change required to include a detail in the filter. Higher values discard more changes.
+        /// </summary>
         [Input("thresholdVar")]
         public string? ThresholdVar { get; set; }
 

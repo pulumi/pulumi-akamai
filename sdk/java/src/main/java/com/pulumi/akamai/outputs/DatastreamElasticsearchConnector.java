@@ -13,57 +13,161 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DatastreamElasticsearchConnector {
+    /**
+     * @return The certification authority (CA) certificate used to verify the origin server&#39;s certificate. If the certificate is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+     * 
+     */
     private @Nullable String caCert;
+    /**
+     * @return The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+     * 
+     */
     private @Nullable String clientCert;
+    /**
+     * @return The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+     * 
+     */
     private @Nullable String clientKey;
+    /**
+     * @return The type of the resource passed in the request&#39;s custom header. For details, see Additional options in the DataStream user guide.
+     * 
+     */
     private @Nullable String contentType;
+    /**
+     * @return A human-readable name for the request&#39;s custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.
+     * 
+     */
     private @Nullable String customHeaderName;
+    /**
+     * @return The custom header&#39;s contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.
+     * 
+     */
     private @Nullable String customHeaderValue;
+    /**
+     * @return The name of the connector.
+     * 
+     */
     private String displayName;
+    /**
+     * @return The Elasticsearch bulk endpoint URL in the https://hostname.elastic-cloud.com:9243/_bulk/ format. Set indexName in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. See Stream logs to Elasticsearch.
+     * 
+     */
     private String endpoint;
+    /**
+     * @return The index name of the Elastic cloud where you want to store log files.
+     * 
+     */
     private String indexName;
+    /**
+     * @return Indicates whether mTLS is enabled or not.
+     * 
+     */
     private @Nullable Boolean mTls;
+    /**
+     * @return The Elasticsearch basic access authentication password.
+     * 
+     */
     private String password;
+    /**
+     * @return The hostname that verifies the server&#39;s certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+     * 
+     */
     private @Nullable String tlsHostname;
+    /**
+     * @return The Elasticsearch basic access authentication username.
+     * 
+     */
     private String userName;
 
     private DatastreamElasticsearchConnector() {}
+    /**
+     * @return The certification authority (CA) certificate used to verify the origin server&#39;s certificate. If the certificate is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+     * 
+     */
     public Optional<String> caCert() {
         return Optional.ofNullable(this.caCert);
     }
+    /**
+     * @return The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+     * 
+     */
     public Optional<String> clientCert() {
         return Optional.ofNullable(this.clientCert);
     }
+    /**
+     * @return The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+     * 
+     */
     public Optional<String> clientKey() {
         return Optional.ofNullable(this.clientKey);
     }
+    /**
+     * @return The type of the resource passed in the request&#39;s custom header. For details, see Additional options in the DataStream user guide.
+     * 
+     */
     public Optional<String> contentType() {
         return Optional.ofNullable(this.contentType);
     }
+    /**
+     * @return A human-readable name for the request&#39;s custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.
+     * 
+     */
     public Optional<String> customHeaderName() {
         return Optional.ofNullable(this.customHeaderName);
     }
+    /**
+     * @return The custom header&#39;s contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.
+     * 
+     */
     public Optional<String> customHeaderValue() {
         return Optional.ofNullable(this.customHeaderValue);
     }
+    /**
+     * @return The name of the connector.
+     * 
+     */
     public String displayName() {
         return this.displayName;
     }
+    /**
+     * @return The Elasticsearch bulk endpoint URL in the https://hostname.elastic-cloud.com:9243/_bulk/ format. Set indexName in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. See Stream logs to Elasticsearch.
+     * 
+     */
     public String endpoint() {
         return this.endpoint;
     }
+    /**
+     * @return The index name of the Elastic cloud where you want to store log files.
+     * 
+     */
     public String indexName() {
         return this.indexName;
     }
+    /**
+     * @return Indicates whether mTLS is enabled or not.
+     * 
+     */
     public Optional<Boolean> mTls() {
         return Optional.ofNullable(this.mTls);
     }
+    /**
+     * @return The Elasticsearch basic access authentication password.
+     * 
+     */
     public String password() {
         return this.password;
     }
+    /**
+     * @return The hostname that verifies the server&#39;s certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+     * 
+     */
     public Optional<String> tlsHostname() {
         return Optional.ofNullable(this.tlsHostname);
     }
+    /**
+     * @return The Elasticsearch basic access authentication username.
+     * 
+     */
     public String userName() {
         return this.userName;
     }

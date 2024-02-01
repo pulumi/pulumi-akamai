@@ -12,21 +12,53 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorDcpAuthRegexTransformation {
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Specifies a Perl-compatible regular expression with a single grouping to capture the text.  For example, a value of `^.(.{0,10})` omits the first character, but then captures up to 10 characters after that. If the regular expression does not capture a substring, authentication may fail.
+     * 
+     */
     private @Nullable String regexPattern;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorDcpAuthRegexTransformation() {}
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Specifies a Perl-compatible regular expression with a single grouping to capture the text.  For example, a value of `^.(.{0,10})` omits the first character, but then captures up to 10 characters after that. If the regular expression does not capture a substring, authentication may fail.
+     * 
+     */
     public Optional<String> regexPattern() {
         return Optional.ofNullable(this.regexPattern);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

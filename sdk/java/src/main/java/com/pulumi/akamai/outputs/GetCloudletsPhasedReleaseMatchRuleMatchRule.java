@@ -17,41 +17,113 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCloudletsPhasedReleaseMatchRuleMatchRule {
+    /**
+     * @return If set to true, disables a rule so it is not evaluated against incoming requests.
+     * 
+     */
     private @Nullable Boolean disabled;
+    /**
+     * @return The end time for this match (in seconds since the epoch)
+     * 
+     */
     private @Nullable Integer end;
+    /**
+     * @return This property defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, then the Edge Server returns an HTTP response from the rewritten URL
+     * 
+     */
     private GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings forwardSettings;
+    /**
+     * @return If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
+     * 
+     */
     private @Nullable String matchUrl;
+    /**
+     * @return Defines a set of match objects
+     * 
+     */
     private @Nullable List<GetCloudletsPhasedReleaseMatchRuleMatchRuleMatch> matches;
+    /**
+     * @return Is used in some cloudlets to support default rules (rule that is always matched)
+     * 
+     */
     private @Nullable Boolean matchesAlways;
+    /**
+     * @return The name of the rule
+     * 
+     */
     private @Nullable String name;
+    /**
+     * @return The start time for this match (in seconds since the epoch)
+     * 
+     */
     private @Nullable Integer start;
+    /**
+     * @return The type of Cloudlet the rule is for. It is known as Continuous Deployment (CD) too.
+     * 
+     */
     private String type;
 
     private GetCloudletsPhasedReleaseMatchRuleMatchRule() {}
+    /**
+     * @return If set to true, disables a rule so it is not evaluated against incoming requests.
+     * 
+     */
     public Optional<Boolean> disabled() {
         return Optional.ofNullable(this.disabled);
     }
+    /**
+     * @return The end time for this match (in seconds since the epoch)
+     * 
+     */
     public Optional<Integer> end() {
         return Optional.ofNullable(this.end);
     }
+    /**
+     * @return This property defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, then the Edge Server returns an HTTP response from the rewritten URL
+     * 
+     */
     public GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings forwardSettings() {
         return this.forwardSettings;
     }
+    /**
+     * @return If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
+     * 
+     */
     public Optional<String> matchUrl() {
         return Optional.ofNullable(this.matchUrl);
     }
+    /**
+     * @return Defines a set of match objects
+     * 
+     */
     public List<GetCloudletsPhasedReleaseMatchRuleMatchRuleMatch> matches() {
         return this.matches == null ? List.of() : this.matches;
     }
+    /**
+     * @return Is used in some cloudlets to support default rules (rule that is always matched)
+     * 
+     */
     public Optional<Boolean> matchesAlways() {
         return Optional.ofNullable(this.matchesAlways);
     }
+    /**
+     * @return The name of the rule
+     * 
+     */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
+    /**
+     * @return The start time for this match (in seconds since the epoch)
+     * 
+     */
     public Optional<Integer> start() {
         return Optional.ofNullable(this.start);
     }
+    /**
+     * @return The type of Cloudlet the rule is for. It is known as Continuous Deployment (CD) too.
+     * 
+     */
     public String type() {
         return this.type;
     }

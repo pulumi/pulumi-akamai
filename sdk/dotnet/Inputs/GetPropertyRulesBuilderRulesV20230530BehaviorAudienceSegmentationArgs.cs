@@ -12,69 +12,135 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorAudienceSegmentationInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Identifies the Cloudlet policy.
+        /// </summary>
         [Input("cloudletPolicy")]
         public Input<Inputs.GetPropertyRulesBuilderRulesV20230530BehaviorAudienceSegmentationCloudletPolicyInputArgs>? CloudletPolicy { get; set; }
 
+        /// <summary>
+        /// This identifies the Cloudlet shared policy to use with this behavior. You can list available shared policies with the `Cloudlets API`.
+        /// </summary>
         [Input("cloudletSharedPolicy")]
         public Input<int>? CloudletSharedPolicy { get; set; }
 
+        /// <summary>
+        /// Enables the Audience Segmentation cloudlet feature.
+        /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
+        /// <summary>
+        /// Whether you want to use a shared policy for a Cloudlet. Learn more about shared policies and how to create them in `Cloudlets Policy Manager`.
+        /// </summary>
         [Input("isSharedPolicy")]
         public Input<bool>? IsSharedPolicy { get; set; }
 
+        /// <summary>
+        /// Specifies a suffix to append to the cookie name. This helps distinguish this audience segmentation policy from any others within the same property.
+        /// </summary>
         [Input("label")]
         public Input<string>? Label { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public Input<bool>? Locked { get; set; }
 
+        /// <summary>
+        /// Whether to assign a `salt` value automatically to the cookie to prevent manipulation by the user. You should not enable if sharing the population cookie across more than one property.
+        /// </summary>
         [Input("populationCookieAutomaticSalt")]
         public Input<bool>? PopulationCookieAutomaticSalt { get; set; }
 
+        /// <summary>
+        /// Specifies the domain to track the population cookie.
+        /// </summary>
         [Input("populationCookieDomain")]
         public Input<string>? PopulationCookieDomain { get; set; }
 
+        /// <summary>
+        /// When enabled, includes in the session cookie the name of the rule in which this behavior appears.
+        /// </summary>
         [Input("populationCookieIncludeRuleName")]
         public Input<bool>? PopulationCookieIncludeRuleName { get; set; }
 
+        /// <summary>
+        /// Specifies the cookie's salt value. Use this option to share the cookie across many properties.
+        /// </summary>
         [Input("populationCookieSalt")]
         public Input<string>? PopulationCookieSalt { get; set; }
 
+        /// <summary>
+        /// Specifies when the segmentation cookie expires.
+        /// </summary>
         [Input("populationCookieType")]
         public Input<string>? PopulationCookieType { get; set; }
 
+        /// <summary>
+        /// Specifies the lifetime of the segmentation cookie.
+        /// </summary>
         [Input("populationDuration")]
         public Input<string>? PopulationDuration { get; set; }
 
+        /// <summary>
+        /// If disabled, sets the expiration time only if the cookie is not yet present in the request.
+        /// </summary>
         [Input("populationRefresh")]
         public Input<bool>? PopulationRefresh { get; set; }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("populationTitle")]
         public Input<string>? PopulationTitle { get; set; }
 
+        /// <summary>
+        /// This cookie name specifies the name of the segmentation rule.
+        /// </summary>
         [Input("segmentTrackingCookieName")]
         public Input<string>? SegmentTrackingCookieName { get; set; }
 
+        /// <summary>
+        /// This custom HTTP header specifies the name of the segmentation rule.
+        /// </summary>
         [Input("segmentTrackingCustomHeader")]
         public Input<string>? SegmentTrackingCustomHeader { get; set; }
 
+        /// <summary>
+        /// Specifies the method to pass segment information to the origin. The Cloudlet passes the rule applied to a given request location.
+        /// </summary>
         [Input("segmentTrackingMethod")]
         public Input<string>? SegmentTrackingMethod { get; set; }
 
+        /// <summary>
+        /// This query parameter specifies the name of the segmentation rule.
+        /// </summary>
         [Input("segmentTrackingQueryParam")]
         public Input<string>? SegmentTrackingQueryParam { get; set; }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("segmentTrackingTitle")]
         public Input<string>? SegmentTrackingTitle { get; set; }
 
+        /// <summary>
+        /// Whether to specify a cookie domain with the population cookie. It tells the browser to which domain to send the cookie.
+        /// </summary>
         [Input("specifyPopulationCookieDomain")]
         public Input<bool>? SpecifyPopulationCookieDomain { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public Input<string>? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public Input<string>? Uuid { get; set; }
 

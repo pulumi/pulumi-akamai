@@ -12,24 +12,45 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorEdgeRedirectorArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Specifies the Cloudlet policy as an object.
+        /// </summary>
         [Input("cloudletPolicy")]
         public Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorEdgeRedirectorCloudletPolicyArgs? CloudletPolicy { get; set; }
 
+        /// <summary>
+        /// Identifies the Cloudlet shared policy to use with this behavior. Use the `Cloudlets API` to list available shared policies.
+        /// </summary>
         [Input("cloudletSharedPolicy")]
         public int? CloudletSharedPolicy { get; set; }
 
+        /// <summary>
+        /// Enables the Edge Redirector Cloudlet.
+        /// </summary>
         [Input("enabled")]
         public bool? Enabled { get; set; }
 
+        /// <summary>
+        /// Whether you want to apply the Cloudlet shared policy to an unlimited number of properties within your account. Learn more about shared policies and how to create them in `Cloudlets Policy Manager`.
+        /// </summary>
         [Input("isSharedPolicy")]
         public bool? IsSharedPolicy { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public bool? Locked { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public string? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public string? Uuid { get; set; }
 

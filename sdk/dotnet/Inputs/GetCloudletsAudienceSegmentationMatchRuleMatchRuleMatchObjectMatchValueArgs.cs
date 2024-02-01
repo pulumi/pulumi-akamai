@@ -12,23 +12,42 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// Set to true if the entry for the name property should be evaluated based on case sensitivity
+        /// </summary>
         [Input("nameCaseSensitive")]
         public Input<bool>? NameCaseSensitive { get; set; }
 
+        /// <summary>
+        /// Set to true if the entry for the name property includes wildcards
+        /// </summary>
         [Input("nameHasWildcard")]
         public Input<bool>? NameHasWildcard { get; set; }
 
+        /// <summary>
+        /// If using the object type, use this set to list the values to match on (use only with the object type)
+        /// </summary>
         [Input("options")]
         public Input<Inputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsInputArgs>? Options { get; set; }
 
+        /// <summary>
+        /// The array type, which can be one of the following: object or simple or range. Use the simple option when adding only an array of string-based values
+        /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 
         [Input("values")]
         private InputList<string>? _values;
+
+        /// <summary>
+        /// The value attributes in the incoming request to match on (use only with simple or range type)
+        /// </summary>
         public InputList<string> Values
         {
             get => _values ?? (_values = new InputList<string>());

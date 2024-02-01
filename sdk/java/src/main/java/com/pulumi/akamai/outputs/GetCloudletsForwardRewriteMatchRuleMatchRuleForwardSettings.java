@@ -12,17 +12,41 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettings {
+    /**
+     * @return The ID of the Conditional Origin requests are forwarded to
+     * 
+     */
     private @Nullable String originId;
+    /**
+     * @return If a value is provided and match conditions are met, this property defines the path/resource/query string to rewrite URL for the incoming request.
+     * 
+     */
     private @Nullable String pathAndQs;
+    /**
+     * @return If set to true, the Cloudlet includes the query string from the request in the rewritten or forwarded URL.
+     * 
+     */
     private @Nullable Boolean useIncomingQueryString;
 
     private GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettings() {}
+    /**
+     * @return The ID of the Conditional Origin requests are forwarded to
+     * 
+     */
     public Optional<String> originId() {
         return Optional.ofNullable(this.originId);
     }
+    /**
+     * @return If a value is provided and match conditions are met, this property defines the path/resource/query string to rewrite URL for the incoming request.
+     * 
+     */
     public Optional<String> pathAndQs() {
         return Optional.ofNullable(this.pathAndQs);
     }
+    /**
+     * @return If set to true, the Cloudlet includes the query string from the request in the rewritten or forwarded URL.
+     * 
+     */
     public Optional<Boolean> useIncomingQueryString() {
         return Optional.ofNullable(this.useIncomingQueryString);
     }

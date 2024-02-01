@@ -14,30 +14,62 @@ public final class GetImagingPolicyImagePolicyTransformationShears extends com.p
 
     public static final GetImagingPolicyImagePolicyTransformationShears Empty = new GetImagingPolicyImagePolicyTransformationShears();
 
+    /**
+     * The amount to shear along the x-axis, measured in multiples of the image&#39;s width. Must be set if yShear is not specified.
+     * 
+     */
     @Import(name="xShear")
     private @Nullable String xShear;
 
+    /**
+     * @return The amount to shear along the x-axis, measured in multiples of the image&#39;s width. Must be set if yShear is not specified.
+     * 
+     */
     public Optional<String> xShear() {
         return Optional.ofNullable(this.xShear);
     }
 
+    /**
+     * The amount to shear along the x-axis, measured in multiples of the image&#39;s width. Must be set if yShear is not specified.
+     * 
+     */
     @Import(name="xShearVar")
     private @Nullable String xShearVar;
 
+    /**
+     * @return The amount to shear along the x-axis, measured in multiples of the image&#39;s width. Must be set if yShear is not specified.
+     * 
+     */
     public Optional<String> xShearVar() {
         return Optional.ofNullable(this.xShearVar);
     }
 
+    /**
+     * The amount to shear along the y-axis, measured in multiples of the image&#39;s height. Must be set if xShear is not specified.
+     * 
+     */
     @Import(name="yShear")
     private @Nullable String yShear;
 
+    /**
+     * @return The amount to shear along the y-axis, measured in multiples of the image&#39;s height. Must be set if xShear is not specified.
+     * 
+     */
     public Optional<String> yShear() {
         return Optional.ofNullable(this.yShear);
     }
 
+    /**
+     * The amount to shear along the y-axis, measured in multiples of the image&#39;s height. Must be set if xShear is not specified.
+     * 
+     */
     @Import(name="yShearVar")
     private @Nullable String yShearVar;
 
+    /**
+     * @return The amount to shear along the y-axis, measured in multiples of the image&#39;s height. Must be set if xShear is not specified.
+     * 
+     */
     public Optional<String> yShearVar() {
         return Optional.ofNullable(this.yShearVar);
     }
@@ -69,21 +101,45 @@ public final class GetImagingPolicyImagePolicyTransformationShears extends com.p
             $ = new GetImagingPolicyImagePolicyTransformationShears(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param xShear The amount to shear along the x-axis, measured in multiples of the image&#39;s width. Must be set if yShear is not specified.
+         * 
+         * @return builder
+         * 
+         */
         public Builder xShear(@Nullable String xShear) {
             $.xShear = xShear;
             return this;
         }
 
+        /**
+         * @param xShearVar The amount to shear along the x-axis, measured in multiples of the image&#39;s width. Must be set if yShear is not specified.
+         * 
+         * @return builder
+         * 
+         */
         public Builder xShearVar(@Nullable String xShearVar) {
             $.xShearVar = xShearVar;
             return this;
         }
 
+        /**
+         * @param yShear The amount to shear along the y-axis, measured in multiples of the image&#39;s height. Must be set if xShear is not specified.
+         * 
+         * @return builder
+         * 
+         */
         public Builder yShear(@Nullable String yShear) {
             $.yShear = yShear;
             return this;
         }
 
+        /**
+         * @param yShearVar The amount to shear along the y-axis, measured in multiples of the image&#39;s height. Must be set if xShear is not specified.
+         * 
+         * @return builder
+         * 
+         */
         public Builder yShearVar(@Nullable String yShearVar) {
             $.yShearVar = yShearVar;
             return this;

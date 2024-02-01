@@ -12,20 +12,36 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class DatastreamGcsConnectorGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The name of the storage bucket created in Google Cloud account
+        /// </summary>
         [Input("bucket", required: true)]
         public Input<string> Bucket { get; set; } = null!;
 
+        /// <summary>
+        /// Indicates whether the logs should be compressed
+        /// </summary>
         [Input("compressLogs")]
         public Input<bool>? CompressLogs { get; set; }
 
+        /// <summary>
+        /// The name of the connector
+        /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
 
+        /// <summary>
+        /// The path to the folder within Google Cloud bucket where logs will be stored
+        /// </summary>
         [Input("path")]
         public Input<string>? Path { get; set; }
 
         [Input("privateKey", required: true)]
         private Input<string>? _privateKey;
+
+        /// <summary>
+        /// The contents of the JSON private key generated and downloaded in Google Cloud Storage account
+        /// </summary>
         public Input<string>? PrivateKey
         {
             get => _privateKey;
@@ -36,9 +52,15 @@ namespace Pulumi.Akamai.Inputs
             }
         }
 
+        /// <summary>
+        /// The unique ID of Google Cloud project
+        /// </summary>
         [Input("projectId", required: true)]
         public Input<string> ProjectId { get; set; } = null!;
 
+        /// <summary>
+        /// The name of the service account with the storage.object.create permission or Storage Object Creator role
+        /// </summary>
         [Input("serviceAccountName", required: true)]
         public Input<string> ServiceAccountName { get; set; } = null!;
 

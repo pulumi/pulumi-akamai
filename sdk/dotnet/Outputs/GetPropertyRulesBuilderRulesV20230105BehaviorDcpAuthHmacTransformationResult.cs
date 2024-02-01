@@ -13,10 +13,25 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthHmacTransformationResult
     {
+        /// <summary>
+        /// Specifies the hash algorithm.
+        /// </summary>
         public readonly string? HashConversionAlgorithm;
+        /// <summary>
+        /// Specifies the key to generate the hash, ideally a long random string to ensure adequate security.
+        /// </summary>
         public readonly string? HashConversionKey;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]
