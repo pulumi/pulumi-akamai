@@ -11,13 +11,29 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationBackgroundColor {
+    /**
+     * @return The hexadecimal CSS color value for the background.
+     * 
+     */
     private @Nullable String color;
+    /**
+     * @return The hexadecimal CSS color value for the background.
+     * 
+     */
     private @Nullable String colorVar;
 
     private GetImagingPolicyImagePolicyTransformationBackgroundColor() {}
+    /**
+     * @return The hexadecimal CSS color value for the background.
+     * 
+     */
     public Optional<String> color() {
         return Optional.ofNullable(this.color);
     }
+    /**
+     * @return The hexadecimal CSS color value for the background.
+     * 
+     */
     public Optional<String> colorVar() {
         return Optional.ofNullable(this.colorVar);
     }

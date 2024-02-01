@@ -12,93 +12,261 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorSubCustomer {
+    /**
+     * @return When enabled, this allows you to deny requests to a subcustomer&#39;s content based on specific match conditions, which you use Cloud Embed to configure in each subcustomer&#39;s policy.
+     * 
+     */
     private @Nullable Boolean accessControl;
+    /**
+     * @return Allows you to set which query parameters are included in the cache key.
+     * 
+     */
     private @Nullable Boolean cacheKey;
+    /**
+     * @return Modifies content caching rules.
+     * 
+     */
     private @Nullable Boolean caching;
+    /**
+     * @return Allows compression of subcustomer content.
+     * 
+     */
     private @Nullable Boolean contentCompressor;
+    /**
+     * @return Allows you to apply the `dynamicWebContent` behavior to further modify how dynamic content behaves for subcustomers.
+     * 
+     */
     private @Nullable Boolean dynamicWebContent;
+    /**
+     * @return Allows Cloud Embed to dynamically modify your subcustomers&#39; content.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Sets subcustomers&#39; location-based whitelists or blacklists.
+     * 
+     */
     private @Nullable Boolean geoLocation;
+    /**
+     * @return Sets subcustomers&#39; IP whitelists or blacklists.
+     * 
+     */
     private @Nullable Boolean ip;
+    /**
+     * @return Enables large file delivery for subcustomers.
+     * 
+     */
     private @Nullable Boolean largeFileDelivery;
     private @Nullable Boolean liveVideoDelivery;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Modifies a subcustomer&#39;s request path.
+     * 
+     */
     private @Nullable Boolean modifyPath;
+    /**
+     * @return Enables delivery of media assets to subcustomers.
+     * 
+     */
     private @Nullable Boolean onDemandVideoDelivery;
+    /**
+     * @return Allows you to assign origin hostnames for customers.
+     * 
+     */
     private @Nullable Boolean origin;
+    /**
+     * @return This specifies the appropriate domain suffix, which you should typically match with your property hostname. It identifies the domain as trustworthy on the Akamai network, despite being defined within Cloud Embed, outside of your base property configuration. Include this domain suffix if you want to purge subcustomer URLs. For example, if you provide a value of `suffix.example.com`, then to purge `subcustomer.com/some/path`, specify `subcustomer.com.suffix.example.com/some/path` as the purge request&#39;s URL.
+     * 
+     */
     private @Nullable String partnerDomainSuffix;
+    /**
+     * @return Sets subcustomers&#39; referrer whitelists or blacklist.
+     * 
+     */
     private @Nullable Boolean referrer;
+    /**
+     * @return Allows you to reschedule when content validates for subcustomers.
+     * 
+     */
     private @Nullable Boolean refreshContent;
+    /**
+     * @return Allows you to configure unique failover sites for each subcustomer&#39;s policy.
+     * 
+     */
     private @Nullable Boolean siteFailover;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return When enabled, this allows you to configure edge servers to use tokens to control access to subcustomer content.  Use Cloud Embed to configure the token to appear in a cookie, header, or query parameter.
+     * 
+     */
     private @Nullable Boolean tokenAuthorization;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
+    /**
+     * @return Web application firewall (WAF) filters, monitors, and blocks certain HTTP traffic. Use `Akamai Cloud Embed` to add a specific behavior to a subcustomer policy and configure how WAF protection is applied.
+     * 
+     */
     private @Nullable Boolean webApplicationFirewall;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorSubCustomer() {}
+    /**
+     * @return When enabled, this allows you to deny requests to a subcustomer&#39;s content based on specific match conditions, which you use Cloud Embed to configure in each subcustomer&#39;s policy.
+     * 
+     */
     public Optional<Boolean> accessControl() {
         return Optional.ofNullable(this.accessControl);
     }
+    /**
+     * @return Allows you to set which query parameters are included in the cache key.
+     * 
+     */
     public Optional<Boolean> cacheKey() {
         return Optional.ofNullable(this.cacheKey);
     }
+    /**
+     * @return Modifies content caching rules.
+     * 
+     */
     public Optional<Boolean> caching() {
         return Optional.ofNullable(this.caching);
     }
+    /**
+     * @return Allows compression of subcustomer content.
+     * 
+     */
     public Optional<Boolean> contentCompressor() {
         return Optional.ofNullable(this.contentCompressor);
     }
+    /**
+     * @return Allows you to apply the `dynamicWebContent` behavior to further modify how dynamic content behaves for subcustomers.
+     * 
+     */
     public Optional<Boolean> dynamicWebContent() {
         return Optional.ofNullable(this.dynamicWebContent);
     }
+    /**
+     * @return Allows Cloud Embed to dynamically modify your subcustomers&#39; content.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Sets subcustomers&#39; location-based whitelists or blacklists.
+     * 
+     */
     public Optional<Boolean> geoLocation() {
         return Optional.ofNullable(this.geoLocation);
     }
+    /**
+     * @return Sets subcustomers&#39; IP whitelists or blacklists.
+     * 
+     */
     public Optional<Boolean> ip() {
         return Optional.ofNullable(this.ip);
     }
+    /**
+     * @return Enables large file delivery for subcustomers.
+     * 
+     */
     public Optional<Boolean> largeFileDelivery() {
         return Optional.ofNullable(this.largeFileDelivery);
     }
     public Optional<Boolean> liveVideoDelivery() {
         return Optional.ofNullable(this.liveVideoDelivery);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Modifies a subcustomer&#39;s request path.
+     * 
+     */
     public Optional<Boolean> modifyPath() {
         return Optional.ofNullable(this.modifyPath);
     }
+    /**
+     * @return Enables delivery of media assets to subcustomers.
+     * 
+     */
     public Optional<Boolean> onDemandVideoDelivery() {
         return Optional.ofNullable(this.onDemandVideoDelivery);
     }
+    /**
+     * @return Allows you to assign origin hostnames for customers.
+     * 
+     */
     public Optional<Boolean> origin() {
         return Optional.ofNullable(this.origin);
     }
+    /**
+     * @return This specifies the appropriate domain suffix, which you should typically match with your property hostname. It identifies the domain as trustworthy on the Akamai network, despite being defined within Cloud Embed, outside of your base property configuration. Include this domain suffix if you want to purge subcustomer URLs. For example, if you provide a value of `suffix.example.com`, then to purge `subcustomer.com/some/path`, specify `subcustomer.com.suffix.example.com/some/path` as the purge request&#39;s URL.
+     * 
+     */
     public Optional<String> partnerDomainSuffix() {
         return Optional.ofNullable(this.partnerDomainSuffix);
     }
+    /**
+     * @return Sets subcustomers&#39; referrer whitelists or blacklist.
+     * 
+     */
     public Optional<Boolean> referrer() {
         return Optional.ofNullable(this.referrer);
     }
+    /**
+     * @return Allows you to reschedule when content validates for subcustomers.
+     * 
+     */
     public Optional<Boolean> refreshContent() {
         return Optional.ofNullable(this.refreshContent);
     }
+    /**
+     * @return Allows you to configure unique failover sites for each subcustomer&#39;s policy.
+     * 
+     */
     public Optional<Boolean> siteFailover() {
         return Optional.ofNullable(this.siteFailover);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return When enabled, this allows you to configure edge servers to use tokens to control access to subcustomer content.  Use Cloud Embed to configure the token to appear in a cookie, header, or query parameter.
+     * 
+     */
     public Optional<Boolean> tokenAuthorization() {
         return Optional.ofNullable(this.tokenAuthorization);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
+    /**
+     * @return Web application firewall (WAF) filters, monitors, and blocks certain HTTP traffic. Use `Akamai Cloud Embed` to add a specific behavior to a subcustomer policy and configure how WAF protection is applied.
+     * 
+     */
     public Optional<Boolean> webApplicationFirewall() {
         return Optional.ofNullable(this.webApplicationFirewall);
     }

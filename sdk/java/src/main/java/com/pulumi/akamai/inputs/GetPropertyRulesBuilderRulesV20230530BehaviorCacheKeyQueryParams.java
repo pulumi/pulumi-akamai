@@ -16,44 +16,92 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorCacheKeyQueryPar
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorCacheKeyQueryParams Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorCacheKeyQueryParams();
 
+    /**
+     * Configures how sets of query string parameters translate to cache keys. Be careful not to ignore any parameters that result in substantially different content, as it is `not` reflected in the cached object.
+     * 
+     */
     @Import(name="behavior")
     private @Nullable String behavior;
 
+    /**
+     * @return Configures how sets of query string parameters translate to cache keys. Be careful not to ignore any parameters that result in substantially different content, as it is `not` reflected in the cached object.
+     * 
+     */
     public Optional<String> behavior() {
         return Optional.ofNullable(this.behavior);
     }
 
+    /**
+     * When enabled, `parameters` needs to match exactly. Keep disabled to match string prefixes.
+     * 
+     */
     @Import(name="exactMatch")
     private @Nullable Boolean exactMatch;
 
+    /**
+     * @return When enabled, `parameters` needs to match exactly. Keep disabled to match string prefixes.
+     * 
+     */
     public Optional<Boolean> exactMatch() {
         return Optional.ofNullable(this.exactMatch);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Specifies the set of parameter field names to include in or exclude from the cache key. By default, these match the field names as string prefixes.
+     * 
+     */
     @Import(name="parameters")
     private @Nullable List<String> parameters;
 
+    /**
+     * @return Specifies the set of parameter field names to include in or exclude from the cache key. By default, these match the field names as string prefixes.
+     * 
+     */
     public Optional<List<String>> parameters() {
         return Optional.ofNullable(this.parameters);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -87,35 +135,77 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorCacheKeyQueryPar
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorCacheKeyQueryParams(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param behavior Configures how sets of query string parameters translate to cache keys. Be careful not to ignore any parameters that result in substantially different content, as it is `not` reflected in the cached object.
+         * 
+         * @return builder
+         * 
+         */
         public Builder behavior(@Nullable String behavior) {
             $.behavior = behavior;
             return this;
         }
 
+        /**
+         * @param exactMatch When enabled, `parameters` needs to match exactly. Keep disabled to match string prefixes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder exactMatch(@Nullable Boolean exactMatch) {
             $.exactMatch = exactMatch;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param parameters Specifies the set of parameter field names to include in or exclude from the cache key. By default, these match the field names as string prefixes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder parameters(@Nullable List<String> parameters) {
             $.parameters = parameters;
             return this;
         }
 
+        /**
+         * @param parameters Specifies the set of parameter field names to include in or exclude from the cache key. By default, these match the field names as string prefixes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder parameters(String... parameters) {
             return parameters(List.of(parameters));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

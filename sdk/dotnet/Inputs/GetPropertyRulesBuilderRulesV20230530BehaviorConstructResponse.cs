@@ -12,27 +12,51 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorConstructResponseArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// HTML response of up to 2000 characters to send to the end-user client.
+        /// </summary>
         [Input("body")]
         public string? Body { get; set; }
 
+        /// <summary>
+        /// Serves the custom response.
+        /// </summary>
         [Input("enabled")]
         public bool? Enabled { get; set; }
 
+        /// <summary>
+        /// Removes the underlying object from the cache, since it is not being served.
+        /// </summary>
         [Input("forceEviction")]
         public bool? ForceEviction { get; set; }
 
+        /// <summary>
+        /// Whether to ignore the custom response when purging.
+        /// </summary>
         [Input("ignorePurge")]
         public bool? IgnorePurge { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public bool? Locked { get; set; }
 
+        /// <summary>
+        /// The HTTP response code to send to the end-user client.
+        /// </summary>
         [Input("responseCode")]
         public int? ResponseCode { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public string? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public string? Uuid { get; set; }
 

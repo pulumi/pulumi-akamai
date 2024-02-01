@@ -12,6 +12,9 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Identifies the ticket that describes the need for the activation
+        /// </summary>
         [Input("ticketId")]
         public Input<string>? TicketId { get; set; }
 

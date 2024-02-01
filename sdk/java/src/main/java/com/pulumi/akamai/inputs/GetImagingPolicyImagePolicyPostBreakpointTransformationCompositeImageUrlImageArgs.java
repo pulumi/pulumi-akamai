@@ -23,16 +23,32 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompos
         return Optional.ofNullable(this.transformation);
     }
 
+    /**
+     * The URL of the image.
+     * 
+     */
     @Import(name="url")
     private @Nullable Output<String> url;
 
+    /**
+     * @return The URL of the image.
+     * 
+     */
     public Optional<Output<String>> url() {
         return Optional.ofNullable(this.url);
     }
 
+    /**
+     * The URL of the image.
+     * 
+     */
     @Import(name="urlVar")
     private @Nullable Output<String> urlVar;
 
+    /**
+     * @return The URL of the image.
+     * 
+     */
     public Optional<Output<String>> urlVar() {
         return Optional.ofNullable(this.urlVar);
     }
@@ -72,20 +88,44 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompos
             return transformation(Output.of(transformation));
         }
 
+        /**
+         * @param url The URL of the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder url(@Nullable Output<String> url) {
             $.url = url;
             return this;
         }
 
+        /**
+         * @param url The URL of the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder url(String url) {
             return url(Output.of(url));
         }
 
+        /**
+         * @param urlVar The URL of the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder urlVar(@Nullable Output<String> urlVar) {
             $.urlVar = urlVar;
             return this;
         }
 
+        /**
+         * @param urlVar The URL of the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder urlVar(String urlVar) {
             return urlVar(Output.of(urlVar));
         }

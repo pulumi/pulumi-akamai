@@ -13,10 +13,25 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingDataCenterFailoverRuleResult
     {
+        /// <summary>
+        /// When enabled, interprets the path specified by `context_root` as an absolute server path, for example to reference a site-down page. Otherwise when disabled, the path is appended to the request.
+        /// </summary>
         public readonly bool? AbsolutePath;
+        /// <summary>
+        /// Specifies the path to use in the forwarding request, typically the root (`/`) when failing over to a different data center, or a full path such as `/static/error.html` when failing over to an error page.
+        /// </summary>
         public readonly string? ContextRoot;
+        /// <summary>
+        /// The hostname of the data center to fail over to.
+        /// </summary>
         public readonly string? FailoverHostname;
+        /// <summary>
+        /// Allows you to modify the request's hostname or path.
+        /// </summary>
         public readonly bool? ModifyRequest;
+        /// <summary>
+        /// Overrides the request's hostname with the `failover_hostname`.
+        /// </summary>
         public readonly bool? OverrideHostname;
 
         [OutputConstructor]

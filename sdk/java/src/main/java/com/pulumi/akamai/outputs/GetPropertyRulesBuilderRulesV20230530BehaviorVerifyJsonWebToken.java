@@ -12,41 +12,113 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorVerifyJsonWebToken {
+    /**
+     * @return Verifies JWTs signed with the ES256 algorithm. This signature helps ensure that the token hasn&#39;t been tampered with.
+     * 
+     */
     private @Nullable Boolean enableEs256;
+    /**
+     * @return Verifies JWTs signed with the RS256 algorithm. This signature helps ensure that the token hasn&#39;t been tampered with.
+     * 
+     */
     private @Nullable Boolean enableRs256;
+    /**
+     * @return Specify from where to extract the JWT value.
+     * 
+     */
     private @Nullable String extractLocation;
+    /**
+     * @return This specifies the name of the header from which to extract the JWT value.
+     * 
+     */
     private @Nullable String headerName;
+    /**
+     * @return An identifier for the JWT keys collection.
+     * 
+     */
     private @Nullable String jwt;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return This specifies the name of the query parameter from which to extract the JWT value.
+     * 
+     */
     private @Nullable String queryParameterName;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorVerifyJsonWebToken() {}
+    /**
+     * @return Verifies JWTs signed with the ES256 algorithm. This signature helps ensure that the token hasn&#39;t been tampered with.
+     * 
+     */
     public Optional<Boolean> enableEs256() {
         return Optional.ofNullable(this.enableEs256);
     }
+    /**
+     * @return Verifies JWTs signed with the RS256 algorithm. This signature helps ensure that the token hasn&#39;t been tampered with.
+     * 
+     */
     public Optional<Boolean> enableRs256() {
         return Optional.ofNullable(this.enableRs256);
     }
+    /**
+     * @return Specify from where to extract the JWT value.
+     * 
+     */
     public Optional<String> extractLocation() {
         return Optional.ofNullable(this.extractLocation);
     }
+    /**
+     * @return This specifies the name of the header from which to extract the JWT value.
+     * 
+     */
     public Optional<String> headerName() {
         return Optional.ofNullable(this.headerName);
     }
+    /**
+     * @return An identifier for the JWT keys collection.
+     * 
+     */
     public Optional<String> jwt() {
         return Optional.ofNullable(this.jwt);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return This specifies the name of the query parameter from which to extract the JWT value.
+     * 
+     */
     public Optional<String> queryParameterName() {
         return Optional.ofNullable(this.queryParameterName);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

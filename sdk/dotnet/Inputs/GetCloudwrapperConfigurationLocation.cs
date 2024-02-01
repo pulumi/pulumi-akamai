@@ -12,15 +12,27 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetCloudwrapperConfigurationLocationArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The capacity assigned to this configuration's location.
+        /// </summary>
         [Input("capacity", required: true)]
         public Inputs.GetCloudwrapperConfigurationLocationCapacityArgs Capacity { get; set; } = null!;
 
+        /// <summary>
+        /// Additional comments provided by user.
+        /// </summary>
         [Input("comments", required: true)]
         public string Comments { get; set; } = null!;
 
+        /// <summary>
+        /// The name of the map.
+        /// </summary>
         [Input("mapName", required: true)]
         public string MapName { get; set; } = null!;
 
+        /// <summary>
+        /// Unique identifier for the location and traffic type combination.
+        /// </summary>
         [Input("trafficTypeId", required: true)]
         public int TrafficTypeId { get; set; }
 

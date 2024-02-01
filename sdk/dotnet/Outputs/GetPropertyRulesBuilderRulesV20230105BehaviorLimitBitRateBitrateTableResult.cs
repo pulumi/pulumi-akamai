@@ -13,7 +13,13 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateBitrateTableResult
     {
+        /// <summary>
+        /// The unit of measurement, either `KBPS`, `MBPS`, or `GBPS`.
+        /// </summary>
         public readonly string? BitrateUnit;
+        /// <summary>
+        /// The numeric indicator of the download rate.
+        /// </summary>
         public readonly double? BitrateValue;
 
         [OutputConstructor]

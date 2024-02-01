@@ -14,24 +14,56 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShape {
     private GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShapeAnchor anchor;
+    /**
+     * @return Extends the rectangle down from the `anchor` point.
+     * 
+     */
     private @Nullable String height;
+    /**
+     * @return Extends the rectangle down from the `anchor` point.
+     * 
+     */
     private @Nullable String heightVar;
+    /**
+     * @return Extends the rectangle right from the `anchor` point.
+     * 
+     */
     private @Nullable String width;
+    /**
+     * @return Extends the rectangle right from the `anchor` point.
+     * 
+     */
     private @Nullable String widthVar;
 
     private GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShape() {}
     public GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShapeAnchor anchor() {
         return this.anchor;
     }
+    /**
+     * @return Extends the rectangle down from the `anchor` point.
+     * 
+     */
     public Optional<String> height() {
         return Optional.ofNullable(this.height);
     }
+    /**
+     * @return Extends the rectangle down from the `anchor` point.
+     * 
+     */
     public Optional<String> heightVar() {
         return Optional.ofNullable(this.heightVar);
     }
+    /**
+     * @return Extends the rectangle right from the `anchor` point.
+     * 
+     */
     public Optional<String> width() {
         return Optional.ofNullable(this.width);
     }
+    /**
+     * @return Extends the rectangle right from the `anchor` point.
+     * 
+     */
     public Optional<String> widthVar() {
         return Optional.ofNullable(this.widthVar);
     }

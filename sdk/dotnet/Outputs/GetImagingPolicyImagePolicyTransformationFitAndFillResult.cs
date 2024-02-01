@@ -14,9 +14,21 @@ namespace Pulumi.Akamai.Outputs
     public sealed class GetImagingPolicyImagePolicyTransformationFitAndFillResult
     {
         public readonly Outputs.GetImagingPolicyImagePolicyTransformationResult? FillTransformation;
+        /// <summary>
+        /// The height value of the resized image.
+        /// </summary>
         public readonly string? Height;
+        /// <summary>
+        /// The height value of the resized image.
+        /// </summary>
         public readonly string? HeightVar;
+        /// <summary>
+        /// The width value of the resized image.
+        /// </summary>
         public readonly string? Width;
+        /// <summary>
+        /// The width value of the resized image.
+        /// </summary>
         public readonly string? WidthVar;
 
         [OutputConstructor]

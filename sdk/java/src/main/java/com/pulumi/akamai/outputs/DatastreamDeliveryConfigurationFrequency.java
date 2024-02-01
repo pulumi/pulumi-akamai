@@ -10,9 +10,17 @@ import java.util.Objects;
 
 @CustomType
 public final class DatastreamDeliveryConfigurationFrequency {
+    /**
+     * @return The time in seconds after which the system bundles log lines into a file and sends it to a destination
+     * 
+     */
     private Integer intervalInSecs;
 
     private DatastreamDeliveryConfigurationFrequency() {}
+    /**
+     * @return The time in seconds after which the system bundles log lines into a file and sends it to a destination
+     * 
+     */
     public Integer intervalInSecs() {
         return this.intervalInSecs;
     }

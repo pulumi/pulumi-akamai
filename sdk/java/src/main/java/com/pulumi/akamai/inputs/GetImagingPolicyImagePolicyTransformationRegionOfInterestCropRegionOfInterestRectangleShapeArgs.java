@@ -24,30 +24,62 @@ public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop
         return this.anchor;
     }
 
+    /**
+     * Extends the rectangle down from the `anchor` point.
+     * 
+     */
     @Import(name="height")
     private @Nullable Output<String> height;
 
+    /**
+     * @return Extends the rectangle down from the `anchor` point.
+     * 
+     */
     public Optional<Output<String>> height() {
         return Optional.ofNullable(this.height);
     }
 
+    /**
+     * Extends the rectangle down from the `anchor` point.
+     * 
+     */
     @Import(name="heightVar")
     private @Nullable Output<String> heightVar;
 
+    /**
+     * @return Extends the rectangle down from the `anchor` point.
+     * 
+     */
     public Optional<Output<String>> heightVar() {
         return Optional.ofNullable(this.heightVar);
     }
 
+    /**
+     * Extends the rectangle right from the `anchor` point.
+     * 
+     */
     @Import(name="width")
     private @Nullable Output<String> width;
 
+    /**
+     * @return Extends the rectangle right from the `anchor` point.
+     * 
+     */
     public Optional<Output<String>> width() {
         return Optional.ofNullable(this.width);
     }
 
+    /**
+     * Extends the rectangle right from the `anchor` point.
+     * 
+     */
     @Import(name="widthVar")
     private @Nullable Output<String> widthVar;
 
+    /**
+     * @return Extends the rectangle right from the `anchor` point.
+     * 
+     */
     public Optional<Output<String>> widthVar() {
         return Optional.ofNullable(this.widthVar);
     }
@@ -89,38 +121,86 @@ public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop
             return anchor(Output.of(anchor));
         }
 
+        /**
+         * @param height Extends the rectangle down from the `anchor` point.
+         * 
+         * @return builder
+         * 
+         */
         public Builder height(@Nullable Output<String> height) {
             $.height = height;
             return this;
         }
 
+        /**
+         * @param height Extends the rectangle down from the `anchor` point.
+         * 
+         * @return builder
+         * 
+         */
         public Builder height(String height) {
             return height(Output.of(height));
         }
 
+        /**
+         * @param heightVar Extends the rectangle down from the `anchor` point.
+         * 
+         * @return builder
+         * 
+         */
         public Builder heightVar(@Nullable Output<String> heightVar) {
             $.heightVar = heightVar;
             return this;
         }
 
+        /**
+         * @param heightVar Extends the rectangle down from the `anchor` point.
+         * 
+         * @return builder
+         * 
+         */
         public Builder heightVar(String heightVar) {
             return heightVar(Output.of(heightVar));
         }
 
+        /**
+         * @param width Extends the rectangle right from the `anchor` point.
+         * 
+         * @return builder
+         * 
+         */
         public Builder width(@Nullable Output<String> width) {
             $.width = width;
             return this;
         }
 
+        /**
+         * @param width Extends the rectangle right from the `anchor` point.
+         * 
+         * @return builder
+         * 
+         */
         public Builder width(String width) {
             return width(Output.of(width));
         }
 
+        /**
+         * @param widthVar Extends the rectangle right from the `anchor` point.
+         * 
+         * @return builder
+         * 
+         */
         public Builder widthVar(@Nullable Output<String> widthVar) {
             $.widthVar = widthVar;
             return this;
         }
 
+        /**
+         * @param widthVar Extends the rectangle right from the `anchor` point.
+         * 
+         * @return builder
+         * 
+         */
         public Builder widthVar(String widthVar) {
             return widthVar(Output.of(widthVar));
         }

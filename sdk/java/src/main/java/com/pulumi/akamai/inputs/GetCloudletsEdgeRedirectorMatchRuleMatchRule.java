@@ -19,79 +19,167 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRule extends com.pulu
 
     public static final GetCloudletsEdgeRedirectorMatchRuleMatchRule Empty = new GetCloudletsEdgeRedirectorMatchRuleMatchRule();
 
+    /**
+     * If set to true, disables a rule so it is not evaluated against incoming requests.
+     * 
+     */
     @Import(name="disabled")
     private @Nullable Boolean disabled;
 
+    /**
+     * @return If set to true, disables a rule so it is not evaluated against incoming requests.
+     * 
+     */
     public Optional<Boolean> disabled() {
         return Optional.ofNullable(this.disabled);
     }
 
+    /**
+     * The end time for this match (in seconds since the epoch)
+     * 
+     */
     @Import(name="end")
     private @Nullable Integer end;
 
+    /**
+     * @return The end time for this match (in seconds since the epoch)
+     * 
+     */
     public Optional<Integer> end() {
         return Optional.ofNullable(this.end);
     }
 
+    /**
+     * If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
+     * 
+     */
     @Import(name="matchUrl")
     private @Nullable String matchUrl;
 
+    /**
+     * @return If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
+     * 
+     */
     public Optional<String> matchUrl() {
         return Optional.ofNullable(this.matchUrl);
     }
 
+    /**
+     * Defines a set of match objects
+     * 
+     */
     @Import(name="matches")
     private @Nullable List<GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatch> matches;
 
+    /**
+     * @return Defines a set of match objects
+     * 
+     */
     public Optional<List<GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatch>> matches() {
         return Optional.ofNullable(this.matches);
     }
 
+    /**
+     * The name of the rule
+     * 
+     */
     @Import(name="name")
     private @Nullable String name;
 
+    /**
+     * @return The name of the rule
+     * 
+     */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
 
+    /**
+     * The URL Edge Redirector redirects the request to. If using use_relative_url, you can enter a path for the value
+     * 
+     */
     @Import(name="redirectUrl", required=true)
     private String redirectUrl;
 
+    /**
+     * @return The URL Edge Redirector redirects the request to. If using use_relative_url, you can enter a path for the value
+     * 
+     */
     public String redirectUrl() {
         return this.redirectUrl;
     }
 
+    /**
+     * The start time for this match (in seconds since the epoch)
+     * 
+     */
     @Import(name="start")
     private @Nullable Integer start;
 
+    /**
+     * @return The start time for this match (in seconds since the epoch)
+     * 
+     */
     public Optional<Integer> start() {
         return Optional.ofNullable(this.start);
     }
 
+    /**
+     * The HTTP response status code (allowed values: 301, 302, 303, 307, 308)
+     * 
+     */
     @Import(name="statusCode", required=true)
     private Integer statusCode;
 
+    /**
+     * @return The HTTP response status code (allowed values: 301, 302, 303, 307, 308)
+     * 
+     */
     public Integer statusCode() {
         return this.statusCode;
     }
 
+    /**
+     * The type of Cloudlet the rule is for
+     * 
+     */
     @Import(name="type", required=true)
     private String type;
 
+    /**
+     * @return The type of Cloudlet the rule is for
+     * 
+     */
     public String type() {
         return this.type;
     }
 
+    /**
+     * If set to true, the Cloudlet includes the query string from the request in the rewritten or forwarded URL
+     * 
+     */
     @Import(name="useIncomingQueryString")
     private @Nullable Boolean useIncomingQueryString;
 
+    /**
+     * @return If set to true, the Cloudlet includes the query string from the request in the rewritten or forwarded URL
+     * 
+     */
     public Optional<Boolean> useIncomingQueryString() {
         return Optional.ofNullable(this.useIncomingQueryString);
     }
 
+    /**
+     * If set to relative_url, takes the path entered for the redirectUrl and sets it in the response’s Location header. If set to copy_scheme_hostname, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information entered for the redirectUrl. If this property is not included, or is set to none, then the redirect_url should be fully-qualified URL
+     * 
+     */
     @Import(name="useRelativeUrl")
     private @Nullable String useRelativeUrl;
 
+    /**
+     * @return If set to relative_url, takes the path entered for the redirectUrl and sets it in the response’s Location header. If set to copy_scheme_hostname, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information entered for the redirectUrl. If this property is not included, or is set to none, then the redirect_url should be fully-qualified URL
+     * 
+     */
     public Optional<String> useRelativeUrl() {
         return Optional.ofNullable(this.useRelativeUrl);
     }
@@ -130,60 +218,132 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRule extends com.pulu
             $ = new GetCloudletsEdgeRedirectorMatchRuleMatchRule(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param disabled If set to true, disables a rule so it is not evaluated against incoming requests.
+         * 
+         * @return builder
+         * 
+         */
         public Builder disabled(@Nullable Boolean disabled) {
             $.disabled = disabled;
             return this;
         }
 
+        /**
+         * @param end The end time for this match (in seconds since the epoch)
+         * 
+         * @return builder
+         * 
+         */
         public Builder end(@Nullable Integer end) {
             $.end = end;
             return this;
         }
 
+        /**
+         * @param matchUrl If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchUrl(@Nullable String matchUrl) {
             $.matchUrl = matchUrl;
             return this;
         }
 
+        /**
+         * @param matches Defines a set of match objects
+         * 
+         * @return builder
+         * 
+         */
         public Builder matches(@Nullable List<GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatch> matches) {
             $.matches = matches;
             return this;
         }
 
+        /**
+         * @param matches Defines a set of match objects
+         * 
+         * @return builder
+         * 
+         */
         public Builder matches(GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatch... matches) {
             return matches(List.of(matches));
         }
 
+        /**
+         * @param name The name of the rule
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(@Nullable String name) {
             $.name = name;
             return this;
         }
 
+        /**
+         * @param redirectUrl The URL Edge Redirector redirects the request to. If using use_relative_url, you can enter a path for the value
+         * 
+         * @return builder
+         * 
+         */
         public Builder redirectUrl(String redirectUrl) {
             $.redirectUrl = redirectUrl;
             return this;
         }
 
+        /**
+         * @param start The start time for this match (in seconds since the epoch)
+         * 
+         * @return builder
+         * 
+         */
         public Builder start(@Nullable Integer start) {
             $.start = start;
             return this;
         }
 
+        /**
+         * @param statusCode The HTTP response status code (allowed values: 301, 302, 303, 307, 308)
+         * 
+         * @return builder
+         * 
+         */
         public Builder statusCode(Integer statusCode) {
             $.statusCode = statusCode;
             return this;
         }
 
+        /**
+         * @param type The type of Cloudlet the rule is for
+         * 
+         * @return builder
+         * 
+         */
         public Builder type(String type) {
             $.type = type;
             return this;
         }
 
+        /**
+         * @param useIncomingQueryString If set to true, the Cloudlet includes the query string from the request in the rewritten or forwarded URL
+         * 
+         * @return builder
+         * 
+         */
         public Builder useIncomingQueryString(@Nullable Boolean useIncomingQueryString) {
             $.useIncomingQueryString = useIncomingQueryString;
             return this;
         }
 
+        /**
+         * @param useRelativeUrl If set to relative_url, takes the path entered for the redirectUrl and sets it in the response’s Location header. If set to copy_scheme_hostname, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information entered for the redirectUrl. If this property is not included, or is set to none, then the redirect_url should be fully-qualified URL
+         * 
+         * @return builder
+         * 
+         */
         public Builder useRelativeUrl(@Nullable String useRelativeUrl) {
             $.useRelativeUrl = useRelativeUrl;
             return this;

@@ -13,25 +13,65 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DatastreamDeliveryConfiguration {
+    /**
+     * @return A delimiter that you use to separate data set fields in log lines
+     * 
+     */
     private @Nullable String fieldDelimiter;
+    /**
+     * @return The format in which logs will be received
+     * 
+     */
     private String format;
+    /**
+     * @return The frequency of collecting logs from each uploader and sending these logs to a destination
+     * 
+     */
     private DatastreamDeliveryConfigurationFrequency frequency;
+    /**
+     * @return The prefix of the log file that will be send to a destination
+     * 
+     */
     private @Nullable String uploadFilePrefix;
+    /**
+     * @return The suffix of the log file that will be send to a destination
+     * 
+     */
     private @Nullable String uploadFileSuffix;
 
     private DatastreamDeliveryConfiguration() {}
+    /**
+     * @return A delimiter that you use to separate data set fields in log lines
+     * 
+     */
     public Optional<String> fieldDelimiter() {
         return Optional.ofNullable(this.fieldDelimiter);
     }
+    /**
+     * @return The format in which logs will be received
+     * 
+     */
     public String format() {
         return this.format;
     }
+    /**
+     * @return The frequency of collecting logs from each uploader and sending these logs to a destination
+     * 
+     */
     public DatastreamDeliveryConfigurationFrequency frequency() {
         return this.frequency;
     }
+    /**
+     * @return The prefix of the log file that will be send to a destination
+     * 
+     */
     public Optional<String> uploadFilePrefix() {
         return Optional.ofNullable(this.uploadFilePrefix);
     }
+    /**
+     * @return The suffix of the log file that will be send to a destination
+     * 
+     */
     public Optional<String> uploadFileSuffix() {
         return Optional.ofNullable(this.uploadFileSuffix);
     }

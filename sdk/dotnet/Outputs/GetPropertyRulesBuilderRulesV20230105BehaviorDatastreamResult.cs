@@ -13,17 +13,53 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorDatastreamResult
     {
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? BeaconStreamTitle;
+        /// <summary>
+        /// If enabled, gathers midgress traffic data within the Akamai platform, such as between two edge servers, for all streams configured.
+        /// </summary>
         public readonly bool? CollectMidgressTraffic;
+        /// <summary>
+        /// A set of dash-separated DataStream ID values to limit the scope of reported data. By default, all active streams report. Use the DataStream application to gather stream ID values that apply to this property configuration. Specifying IDs for any streams that don't apply to this property has no effect, and results in no data reported.
+        /// </summary>
         public readonly string? DatastreamIds;
+        /// <summary>
+        /// Enables DataStream reporting.
+        /// </summary>
         public readonly bool? Enabled;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// Enables log collection for the property by associating it with DataStream configurations.
+        /// </summary>
         public readonly bool? LogEnabled;
+        /// <summary>
+        /// Specifies the unique IDs of streams configured for the property. For properties created with the previous version of the rule format, this option contains a string instead of an array of strings. You can use the `List streams` operation to get stream IDs.
+        /// </summary>
         public readonly int? LogStreamName;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? LogStreamTitle;
+        /// <summary>
+        /// Specifies the percentage of log data you want to collect for this property.
+        /// </summary>
         public readonly int? SamplingPercentage;
+        /// <summary>
+        /// Specify the DataStream type.
+        /// </summary>
         public readonly string? StreamType;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

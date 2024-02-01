@@ -19,205 +19,437 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorInputValidation 
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorInputValidation Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorInputValidation();
 
+    /**
+     * Fails POST request bodies that exceed 16 KB when enabled, otherwise allows them to pass with no validation for policy compliance.
+     * 
+     */
     @Import(name="allowLargePostBody")
     private @Nullable Boolean allowLargePostBody;
 
+    /**
+     * @return Fails POST request bodies that exceed 16 KB when enabled, otherwise allows them to pass with no validation for policy compliance.
+     * 
+     */
     public Optional<Boolean> allowLargePostBody() {
         return Optional.ofNullable(this.allowLargePostBody);
     }
 
+    /**
+     * Identifies the Cloudlet policy.
+     * 
+     */
     @Import(name="cloudletPolicy")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorInputValidationCloudletPolicy cloudletPolicy;
 
+    /**
+     * @return Identifies the Cloudlet policy.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorInputValidationCloudletPolicy> cloudletPolicy() {
         return Optional.ofNullable(this.cloudletPolicy);
     }
 
+    /**
+     * Applies the Input Validation Cloudlet behavior.
+     * 
+     */
     @Import(name="enabled")
     private @Nullable Boolean enabled;
 
+    /**
+     * @return Applies the Input Validation Cloudlet behavior.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
 
+    /**
+     * Specifies the redirect link for invalid requests that have not yet triggered a penalty.
+     * 
+     */
     @Import(name="failure302Uri")
     private @Nullable String failure302Uri;
 
+    /**
+     * @return Specifies the redirect link for invalid requests that have not yet triggered a penalty.
+     * 
+     */
     public Optional<String> failure302Uri() {
         return Optional.ofNullable(this.failure302Uri);
     }
 
+    /**
+     * Distinguishes this Input Validation policy from any others within the same property.
+     * 
+     */
     @Import(name="label")
     private @Nullable String label;
 
+    /**
+     * @return Distinguishes this Input Validation policy from any others within the same property.
+     * 
+     */
     public Optional<String> label() {
         return Optional.ofNullable(this.label);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Specifies the redirect link for end users who trigger the penalty.
+     * 
+     */
     @Import(name="penalty302Uri")
     private @Nullable String penalty302Uri;
 
+    /**
+     * @return Specifies the redirect link for end users who trigger the penalty.
+     * 
+     */
     public Optional<String> penalty302Uri() {
         return Optional.ofNullable(this.penalty302Uri);
     }
 
+    /**
+     * Specifies the full path to the static 403 response content relative to the `downloadDomainName` in the `penaltyNetStorage` object.
+     * 
+     */
     @Import(name="penalty403NetStoragePath")
     private @Nullable String penalty403NetStoragePath;
 
+    /**
+     * @return Specifies the full path to the static 403 response content relative to the `downloadDomainName` in the `penaltyNetStorage` object.
+     * 
+     */
     public Optional<String> penalty403NetStoragePath() {
         return Optional.ofNullable(this.penalty403NetStoragePath);
     }
 
+    /**
+     * Once the `penaltyThreshold` of invalid requests is met, this specifies the response.
+     * 
+     */
     @Import(name="penaltyAction")
     private @Nullable String penaltyAction;
 
+    /**
+     * @return Once the `penaltyThreshold` of invalid requests is met, this specifies the response.
+     * 
+     */
     public Optional<String> penaltyAction() {
         return Optional.ofNullable(this.penaltyAction);
     }
 
+    /**
+     * Specifies the penalty response&#39;s time to live in the cache, `5` minutes by default.
+     * 
+     */
     @Import(name="penaltyBrandedDenyCacheTtl")
     private @Nullable Integer penaltyBrandedDenyCacheTtl;
 
+    /**
+     * @return Specifies the penalty response&#39;s time to live in the cache, `5` minutes by default.
+     * 
+     */
     public Optional<Integer> penaltyBrandedDenyCacheTtl() {
         return Optional.ofNullable(this.penaltyBrandedDenyCacheTtl);
     }
 
+    /**
+     * Specifies the NetStorage account that serves out the penalty&#39;s static 403 response content. Details appear in an object featuring a `downloadDomainName` string member that identifies the NetStorage hostname, and an integer `cpCode` to track the traffic.
+     * 
+     */
     @Import(name="penaltyNetStorage")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorInputValidationPenaltyNetStorage penaltyNetStorage;
 
+    /**
+     * @return Specifies the NetStorage account that serves out the penalty&#39;s static 403 response content. Details appear in an object featuring a `downloadDomainName` string member that identifies the NetStorage hostname, and an integer `cpCode` to track the traffic.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorInputValidationPenaltyNetStorage> penaltyNetStorage() {
         return Optional.ofNullable(this.penaltyNetStorage);
     }
 
+    /**
+     * Specifies the number of invalid requests permitted before executing the `penaltyAction`.
+     * 
+     */
     @Import(name="penaltyThreshold")
     private @Nullable Integer penaltyThreshold;
 
+    /**
+     * @return Specifies the number of invalid requests permitted before executing the `penaltyAction`.
+     * 
+     */
     public Optional<Integer> penaltyThreshold() {
         return Optional.ofNullable(this.penaltyThreshold);
     }
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     @Import(name="penaltyTitle")
     private @Nullable String penaltyTitle;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> penaltyTitle() {
         return Optional.ofNullable(this.penaltyTitle);
     }
 
+    /**
+     * Upon receiving a valid request, enabling this resets the `penaltyThreshold` counter to zero.  Otherwise, even those series of invalid requests that are interrupted by valid requests may trigger the `penaltyAction`.
+     * 
+     */
     @Import(name="resetOnValid")
     private @Nullable Boolean resetOnValid;
 
+    /**
+     * @return Upon receiving a valid request, enabling this resets the `penaltyThreshold` counter to zero.  Otherwise, even those series of invalid requests that are interrupted by valid requests may trigger the `penaltyAction`.
+     * 
+     */
     public Optional<Boolean> resetOnValid() {
         return Optional.ofNullable(this.resetOnValid);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * When enabled, identifies users by the value of a cookie.
+     * 
+     */
     @Import(name="userIdentificationByCookie")
     private @Nullable Boolean userIdentificationByCookie;
 
+    /**
+     * @return When enabled, identifies users by the value of a cookie.
+     * 
+     */
     public Optional<Boolean> userIdentificationByCookie() {
         return Optional.ofNullable(this.userIdentificationByCookie);
     }
 
+    /**
+     * When enabled, identifies users by specific HTTP headers on GET or POST requests.
+     * 
+     */
     @Import(name="userIdentificationByHeaders")
     private @Nullable Boolean userIdentificationByHeaders;
 
+    /**
+     * @return When enabled, identifies users by specific HTTP headers on GET or POST requests.
+     * 
+     */
     public Optional<Boolean> userIdentificationByHeaders() {
         return Optional.ofNullable(this.userIdentificationByHeaders);
     }
 
+    /**
+     * When enabled, identifies users by specific IP address. Do not enable this if you are concerned about DDoS attacks from many different IP addresses.
+     * 
+     */
     @Import(name="userIdentificationByIp")
     private @Nullable Boolean userIdentificationByIp;
 
+    /**
+     * @return When enabled, identifies users by specific IP address. Do not enable this if you are concerned about DDoS attacks from many different IP addresses.
+     * 
+     */
     public Optional<Boolean> userIdentificationByIp() {
         return Optional.ofNullable(this.userIdentificationByIp);
     }
 
+    /**
+     * When enabled, identifies users by specific query parameters on GET or POST requests.
+     * 
+     */
     @Import(name="userIdentificationByParams")
     private @Nullable Boolean userIdentificationByParams;
 
+    /**
+     * @return When enabled, identifies users by specific query parameters on GET or POST requests.
+     * 
+     */
     public Optional<Boolean> userIdentificationByParams() {
         return Optional.ofNullable(this.userIdentificationByParams);
     }
 
+    /**
+     * This specifies the cookie name whose value needs to remain constant across requests to identify a user.
+     * 
+     */
     @Import(name="userIdentificationKeyCookie")
     private @Nullable String userIdentificationKeyCookie;
 
+    /**
+     * @return This specifies the cookie name whose value needs to remain constant across requests to identify a user.
+     * 
+     */
     public Optional<String> userIdentificationKeyCookie() {
         return Optional.ofNullable(this.userIdentificationKeyCookie);
     }
 
+    /**
+     * This specifies the HTTP headers whose combined set of values identify each end user.
+     * 
+     */
     @Import(name="userIdentificationKeyHeaders")
     private @Nullable List<String> userIdentificationKeyHeaders;
 
+    /**
+     * @return This specifies the HTTP headers whose combined set of values identify each end user.
+     * 
+     */
     public Optional<List<String>> userIdentificationKeyHeaders() {
         return Optional.ofNullable(this.userIdentificationKeyHeaders);
     }
 
+    /**
+     * This specifies the query parameters whose combined set of values identify each end user.
+     * 
+     */
     @Import(name="userIdentificationKeyParams")
     private @Nullable List<String> userIdentificationKeyParams;
 
+    /**
+     * @return This specifies the query parameters whose combined set of values identify each end user.
+     * 
+     */
     public Optional<List<String>> userIdentificationKeyParams() {
         return Optional.ofNullable(this.userIdentificationKeyParams);
     }
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     @Import(name="userIdentificationTitle")
     private @Nullable String userIdentificationTitle;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> userIdentificationTitle() {
         return Optional.ofNullable(this.userIdentificationTitle);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
 
+    /**
+     * If `validateOnOriginWith` is set to `RESPONSE_CODE_AND_HEADER`, this specifies the header name for a request that the origin identifies as invalid.
+     * 
+     */
     @Import(name="validateOnOriginHeaderName")
     private @Nullable String validateOnOriginHeaderName;
 
+    /**
+     * @return If `validateOnOriginWith` is set to `RESPONSE_CODE_AND_HEADER`, this specifies the header name for a request that the origin identifies as invalid.
+     * 
+     */
     public Optional<String> validateOnOriginHeaderName() {
         return Optional.ofNullable(this.validateOnOriginHeaderName);
     }
 
+    /**
+     * If `validateOnOriginWith` is set to `RESPONSE_CODE_AND_HEADER`, this specifies an invalid request&#39;s header value that corresponds to the `validateOnOriginHeaderName`.
+     * 
+     */
     @Import(name="validateOnOriginHeaderValue")
     private @Nullable String validateOnOriginHeaderValue;
 
+    /**
+     * @return If `validateOnOriginWith` is set to `RESPONSE_CODE_AND_HEADER`, this specifies an invalid request&#39;s header value that corresponds to the `validateOnOriginHeaderName`.
+     * 
+     */
     public Optional<String> validateOnOriginHeaderValue() {
         return Optional.ofNullable(this.validateOnOriginHeaderValue);
     }
 
+    /**
+     * Unless `validateOnOriginWith` is `DISABLED`, this identifies the integer response code for requests the origin identifies as invalid.
+     * 
+     */
     @Import(name="validateOnOriginResponseCode")
     private @Nullable Integer validateOnOriginResponseCode;
 
+    /**
+     * @return Unless `validateOnOriginWith` is `DISABLED`, this identifies the integer response code for requests the origin identifies as invalid.
+     * 
+     */
     public Optional<Integer> validateOnOriginResponseCode() {
         return Optional.ofNullable(this.validateOnOriginResponseCode);
     }
 
+    /**
+     * For any validation that edge servers can&#39;t perform alone, this specifies additional validation steps based on how the origin identifies an invalid request.  If a request is invalid, the origin can indicate this to the edge server.
+     * 
+     */
     @Import(name="validateOnOriginWith")
     private @Nullable String validateOnOriginWith;
 
+    /**
+     * @return For any validation that edge servers can&#39;t perform alone, this specifies additional validation steps based on how the origin identifies an invalid request.  If a request is invalid, the origin can indicate this to the edge server.
+     * 
+     */
     public Optional<String> validateOnOriginWith() {
         return Optional.ofNullable(this.validateOnOriginWith);
     }
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     @Import(name="validationTitle")
     private @Nullable String validationTitle;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> validationTitle() {
         return Optional.ofNullable(this.validationTitle);
     }
@@ -274,154 +506,340 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorInputValidation 
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorInputValidation(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param allowLargePostBody Fails POST request bodies that exceed 16 KB when enabled, otherwise allows them to pass with no validation for policy compliance.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allowLargePostBody(@Nullable Boolean allowLargePostBody) {
             $.allowLargePostBody = allowLargePostBody;
             return this;
         }
 
+        /**
+         * @param cloudletPolicy Identifies the Cloudlet policy.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cloudletPolicy(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorInputValidationCloudletPolicy cloudletPolicy) {
             $.cloudletPolicy = cloudletPolicy;
             return this;
         }
 
+        /**
+         * @param enabled Applies the Input Validation Cloudlet behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(@Nullable Boolean enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param failure302Uri Specifies the redirect link for invalid requests that have not yet triggered a penalty.
+         * 
+         * @return builder
+         * 
+         */
         public Builder failure302Uri(@Nullable String failure302Uri) {
             $.failure302Uri = failure302Uri;
             return this;
         }
 
+        /**
+         * @param label Distinguishes this Input Validation policy from any others within the same property.
+         * 
+         * @return builder
+         * 
+         */
         public Builder label(@Nullable String label) {
             $.label = label;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param penalty302Uri Specifies the redirect link for end users who trigger the penalty.
+         * 
+         * @return builder
+         * 
+         */
         public Builder penalty302Uri(@Nullable String penalty302Uri) {
             $.penalty302Uri = penalty302Uri;
             return this;
         }
 
+        /**
+         * @param penalty403NetStoragePath Specifies the full path to the static 403 response content relative to the `downloadDomainName` in the `penaltyNetStorage` object.
+         * 
+         * @return builder
+         * 
+         */
         public Builder penalty403NetStoragePath(@Nullable String penalty403NetStoragePath) {
             $.penalty403NetStoragePath = penalty403NetStoragePath;
             return this;
         }
 
+        /**
+         * @param penaltyAction Once the `penaltyThreshold` of invalid requests is met, this specifies the response.
+         * 
+         * @return builder
+         * 
+         */
         public Builder penaltyAction(@Nullable String penaltyAction) {
             $.penaltyAction = penaltyAction;
             return this;
         }
 
+        /**
+         * @param penaltyBrandedDenyCacheTtl Specifies the penalty response&#39;s time to live in the cache, `5` minutes by default.
+         * 
+         * @return builder
+         * 
+         */
         public Builder penaltyBrandedDenyCacheTtl(@Nullable Integer penaltyBrandedDenyCacheTtl) {
             $.penaltyBrandedDenyCacheTtl = penaltyBrandedDenyCacheTtl;
             return this;
         }
 
+        /**
+         * @param penaltyNetStorage Specifies the NetStorage account that serves out the penalty&#39;s static 403 response content. Details appear in an object featuring a `downloadDomainName` string member that identifies the NetStorage hostname, and an integer `cpCode` to track the traffic.
+         * 
+         * @return builder
+         * 
+         */
         public Builder penaltyNetStorage(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorInputValidationPenaltyNetStorage penaltyNetStorage) {
             $.penaltyNetStorage = penaltyNetStorage;
             return this;
         }
 
+        /**
+         * @param penaltyThreshold Specifies the number of invalid requests permitted before executing the `penaltyAction`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder penaltyThreshold(@Nullable Integer penaltyThreshold) {
             $.penaltyThreshold = penaltyThreshold;
             return this;
         }
 
+        /**
+         * @param penaltyTitle This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder penaltyTitle(@Nullable String penaltyTitle) {
             $.penaltyTitle = penaltyTitle;
             return this;
         }
 
+        /**
+         * @param resetOnValid Upon receiving a valid request, enabling this resets the `penaltyThreshold` counter to zero.  Otherwise, even those series of invalid requests that are interrupted by valid requests may trigger the `penaltyAction`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder resetOnValid(@Nullable Boolean resetOnValid) {
             $.resetOnValid = resetOnValid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param userIdentificationByCookie When enabled, identifies users by the value of a cookie.
+         * 
+         * @return builder
+         * 
+         */
         public Builder userIdentificationByCookie(@Nullable Boolean userIdentificationByCookie) {
             $.userIdentificationByCookie = userIdentificationByCookie;
             return this;
         }
 
+        /**
+         * @param userIdentificationByHeaders When enabled, identifies users by specific HTTP headers on GET or POST requests.
+         * 
+         * @return builder
+         * 
+         */
         public Builder userIdentificationByHeaders(@Nullable Boolean userIdentificationByHeaders) {
             $.userIdentificationByHeaders = userIdentificationByHeaders;
             return this;
         }
 
+        /**
+         * @param userIdentificationByIp When enabled, identifies users by specific IP address. Do not enable this if you are concerned about DDoS attacks from many different IP addresses.
+         * 
+         * @return builder
+         * 
+         */
         public Builder userIdentificationByIp(@Nullable Boolean userIdentificationByIp) {
             $.userIdentificationByIp = userIdentificationByIp;
             return this;
         }
 
+        /**
+         * @param userIdentificationByParams When enabled, identifies users by specific query parameters on GET or POST requests.
+         * 
+         * @return builder
+         * 
+         */
         public Builder userIdentificationByParams(@Nullable Boolean userIdentificationByParams) {
             $.userIdentificationByParams = userIdentificationByParams;
             return this;
         }
 
+        /**
+         * @param userIdentificationKeyCookie This specifies the cookie name whose value needs to remain constant across requests to identify a user.
+         * 
+         * @return builder
+         * 
+         */
         public Builder userIdentificationKeyCookie(@Nullable String userIdentificationKeyCookie) {
             $.userIdentificationKeyCookie = userIdentificationKeyCookie;
             return this;
         }
 
+        /**
+         * @param userIdentificationKeyHeaders This specifies the HTTP headers whose combined set of values identify each end user.
+         * 
+         * @return builder
+         * 
+         */
         public Builder userIdentificationKeyHeaders(@Nullable List<String> userIdentificationKeyHeaders) {
             $.userIdentificationKeyHeaders = userIdentificationKeyHeaders;
             return this;
         }
 
+        /**
+         * @param userIdentificationKeyHeaders This specifies the HTTP headers whose combined set of values identify each end user.
+         * 
+         * @return builder
+         * 
+         */
         public Builder userIdentificationKeyHeaders(String... userIdentificationKeyHeaders) {
             return userIdentificationKeyHeaders(List.of(userIdentificationKeyHeaders));
         }
 
+        /**
+         * @param userIdentificationKeyParams This specifies the query parameters whose combined set of values identify each end user.
+         * 
+         * @return builder
+         * 
+         */
         public Builder userIdentificationKeyParams(@Nullable List<String> userIdentificationKeyParams) {
             $.userIdentificationKeyParams = userIdentificationKeyParams;
             return this;
         }
 
+        /**
+         * @param userIdentificationKeyParams This specifies the query parameters whose combined set of values identify each end user.
+         * 
+         * @return builder
+         * 
+         */
         public Builder userIdentificationKeyParams(String... userIdentificationKeyParams) {
             return userIdentificationKeyParams(List.of(userIdentificationKeyParams));
         }
 
+        /**
+         * @param userIdentificationTitle This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder userIdentificationTitle(@Nullable String userIdentificationTitle) {
             $.userIdentificationTitle = userIdentificationTitle;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param validateOnOriginHeaderName If `validateOnOriginWith` is set to `RESPONSE_CODE_AND_HEADER`, this specifies the header name for a request that the origin identifies as invalid.
+         * 
+         * @return builder
+         * 
+         */
         public Builder validateOnOriginHeaderName(@Nullable String validateOnOriginHeaderName) {
             $.validateOnOriginHeaderName = validateOnOriginHeaderName;
             return this;
         }
 
+        /**
+         * @param validateOnOriginHeaderValue If `validateOnOriginWith` is set to `RESPONSE_CODE_AND_HEADER`, this specifies an invalid request&#39;s header value that corresponds to the `validateOnOriginHeaderName`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder validateOnOriginHeaderValue(@Nullable String validateOnOriginHeaderValue) {
             $.validateOnOriginHeaderValue = validateOnOriginHeaderValue;
             return this;
         }
 
+        /**
+         * @param validateOnOriginResponseCode Unless `validateOnOriginWith` is `DISABLED`, this identifies the integer response code for requests the origin identifies as invalid.
+         * 
+         * @return builder
+         * 
+         */
         public Builder validateOnOriginResponseCode(@Nullable Integer validateOnOriginResponseCode) {
             $.validateOnOriginResponseCode = validateOnOriginResponseCode;
             return this;
         }
 
+        /**
+         * @param validateOnOriginWith For any validation that edge servers can&#39;t perform alone, this specifies additional validation steps based on how the origin identifies an invalid request.  If a request is invalid, the origin can indicate this to the edge server.
+         * 
+         * @return builder
+         * 
+         */
         public Builder validateOnOriginWith(@Nullable String validateOnOriginWith) {
             $.validateOnOriginWith = validateOnOriginWith;
             return this;
         }
 
+        /**
+         * @param validationTitle This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder validationTitle(@Nullable String validationTitle) {
             $.validationTitle = validationTitle;
             return this;

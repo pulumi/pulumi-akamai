@@ -14,6 +14,10 @@ namespace Pulumi.Akamai.Inputs
     {
         [Input("circleShapes")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeInputArgs>? _circleShapes;
+
+        /// <summary>
+        /// Defines a circle with a specified `radius` from its `center` point.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeInputArgs> CircleShapes
         {
             get => _circleShapes ?? (_circleShapes = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeInputArgs>());
@@ -30,6 +34,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("polygonShapes")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapeInputArgs>? _polygonShapes;
+
+        /// <summary>
+        /// Defines a polygon from a series of connected points.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapeInputArgs> PolygonShapes
         {
             get => _polygonShapes ?? (_polygonShapes = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapeInputArgs>());
@@ -38,6 +46,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("rectangleShapes")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeInputArgs>? _rectangleShapes;
+
+        /// <summary>
+        /// Defines a rectangle's `width` and `height` relative to an `anchor` point at the top left corner.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeInputArgs> RectangleShapes
         {
             get => _rectangleShapes ?? (_rectangleShapes = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeInputArgs>());
@@ -46,6 +58,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("unionShapes")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeInputArgs>? _unionShapes;
+
+        /// <summary>
+        /// Identifies a combined shape based on a set of other shapes. You can use a full JSON object to represent a union or an array of shapes that describe it.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeInputArgs> UnionShapes
         {
             get => _unionShapes ?? (_unionShapes = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeInputArgs>());

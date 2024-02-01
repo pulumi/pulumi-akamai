@@ -11,37 +11,101 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationRelativeCrop {
+    /**
+     * @return The number of pixels to shrink or expand the right side of the image.
+     * 
+     */
     private @Nullable String east;
+    /**
+     * @return The number of pixels to shrink or expand the right side of the image.
+     * 
+     */
     private @Nullable String eastVar;
+    /**
+     * @return The number of pixels to shrink or expand the top side of the image.
+     * 
+     */
     private @Nullable String north;
+    /**
+     * @return The number of pixels to shrink or expand the top side of the image.
+     * 
+     */
     private @Nullable String northVar;
+    /**
+     * @return The number of pixels to shrink or expand the bottom side of the image.
+     * 
+     */
     private @Nullable String south;
+    /**
+     * @return The number of pixels to shrink or expand the bottom side of the image.
+     * 
+     */
     private @Nullable String southVar;
+    /**
+     * @return The number of pixels to shrink or expand the left side of the image.
+     * 
+     */
     private @Nullable String west;
+    /**
+     * @return The number of pixels to shrink or expand the left side of the image.
+     * 
+     */
     private @Nullable String westVar;
 
     private GetImagingPolicyImagePolicyTransformationRelativeCrop() {}
+    /**
+     * @return The number of pixels to shrink or expand the right side of the image.
+     * 
+     */
     public Optional<String> east() {
         return Optional.ofNullable(this.east);
     }
+    /**
+     * @return The number of pixels to shrink or expand the right side of the image.
+     * 
+     */
     public Optional<String> eastVar() {
         return Optional.ofNullable(this.eastVar);
     }
+    /**
+     * @return The number of pixels to shrink or expand the top side of the image.
+     * 
+     */
     public Optional<String> north() {
         return Optional.ofNullable(this.north);
     }
+    /**
+     * @return The number of pixels to shrink or expand the top side of the image.
+     * 
+     */
     public Optional<String> northVar() {
         return Optional.ofNullable(this.northVar);
     }
+    /**
+     * @return The number of pixels to shrink or expand the bottom side of the image.
+     * 
+     */
     public Optional<String> south() {
         return Optional.ofNullable(this.south);
     }
+    /**
+     * @return The number of pixels to shrink or expand the bottom side of the image.
+     * 
+     */
     public Optional<String> southVar() {
         return Optional.ofNullable(this.southVar);
     }
+    /**
+     * @return The number of pixels to shrink or expand the left side of the image.
+     * 
+     */
     public Optional<String> west() {
         return Optional.ofNullable(this.west);
     }
+    /**
+     * @return The number of pixels to shrink or expand the left side of the image.
+     * 
+     */
     public Optional<String> westVar() {
         return Optional.ofNullable(this.westVar);
     }

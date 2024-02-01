@@ -12,15 +12,27 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetImagingPolicyImagePolicyTransformationScaleInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Scaling factor for the input height to determine the output height of the image, where values between `0` and `1` decrease size. Image dimensions need to be non-zero positive numbers.
+        /// </summary>
         [Input("height")]
         public Input<string>? Height { get; set; }
 
+        /// <summary>
+        /// Scaling factor for the input height to determine the output height of the image, where values between `0` and `1` decrease size. Image dimensions need to be non-zero positive numbers.
+        /// </summary>
         [Input("heightVar")]
         public Input<string>? HeightVar { get; set; }
 
+        /// <summary>
+        /// Scaling factor for the input width to determine the output width of the image, where `1` leaves the width unchanged. Values greater than `1` increase the image size. Image dimensions need to be non-zero positive numbers.
+        /// </summary>
         [Input("width")]
         public Input<string>? Width { get; set; }
 
+        /// <summary>
+        /// Scaling factor for the input width to determine the output width of the image, where `1` leaves the width unchanged. Values greater than `1` increase the image size. Image dimensions need to be non-zero positive numbers.
+        /// </summary>
         [Input("widthVar")]
         public Input<string>? WidthVar { get; set; }
 

@@ -18,51 +18,107 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgs extends
 
     public static final GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgs Empty = new GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgs();
 
+    /**
+     * If true, the match is case sensitive
+     * 
+     */
     @Import(name="caseSensitive")
     private @Nullable Output<Boolean> caseSensitive;
 
+    /**
+     * @return If true, the match is case sensitive
+     * 
+     */
     public Optional<Output<Boolean>> caseSensitive() {
         return Optional.ofNullable(this.caseSensitive);
     }
 
+    /**
+     * For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
+     * 
+     */
     @Import(name="checkIps")
     private @Nullable Output<String> checkIps;
 
+    /**
+     * @return For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
+     * 
+     */
     public Optional<Output<String>> checkIps() {
         return Optional.ofNullable(this.checkIps);
     }
 
+    /**
+     * Valid entries for this property: contains, exists, and equals
+     * 
+     */
     @Import(name="matchOperator")
     private @Nullable Output<String> matchOperator;
 
+    /**
+     * @return Valid entries for this property: contains, exists, and equals
+     * 
+     */
     public Optional<Output<String>> matchOperator() {
         return Optional.ofNullable(this.matchOperator);
     }
 
+    /**
+     * The type of match used
+     * 
+     */
     @Import(name="matchType")
     private @Nullable Output<String> matchType;
 
+    /**
+     * @return The type of match used
+     * 
+     */
     public Optional<Output<String>> matchType() {
         return Optional.ofNullable(this.matchType);
     }
 
+    /**
+     * Depends on the matchType
+     * 
+     */
     @Import(name="matchValue")
     private @Nullable Output<String> matchValue;
 
+    /**
+     * @return Depends on the matchType
+     * 
+     */
     public Optional<Output<String>> matchValue() {
         return Optional.ofNullable(this.matchValue);
     }
 
+    /**
+     * If true, negates the match
+     * 
+     */
     @Import(name="negate")
     private @Nullable Output<Boolean> negate;
 
+    /**
+     * @return If true, negates the match
+     * 
+     */
     public Optional<Output<Boolean>> negate() {
         return Optional.ofNullable(this.negate);
     }
 
+    /**
+     * An object used when a rule either includes more complex match criteria, like multiple value attributes
+     * 
+     */
     @Import(name="objectMatchValues")
     private @Nullable Output<List<GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueArgs>> objectMatchValues;
 
+    /**
+     * @return An object used when a rule either includes more complex match criteria, like multiple value attributes
+     * 
+     */
     public Optional<Output<List<GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueArgs>>> objectMatchValues() {
         return Optional.ofNullable(this.objectMatchValues);
     }
@@ -97,69 +153,159 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgs extends
             $ = new GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param caseSensitive If true, the match is case sensitive
+         * 
+         * @return builder
+         * 
+         */
         public Builder caseSensitive(@Nullable Output<Boolean> caseSensitive) {
             $.caseSensitive = caseSensitive;
             return this;
         }
 
+        /**
+         * @param caseSensitive If true, the match is case sensitive
+         * 
+         * @return builder
+         * 
+         */
         public Builder caseSensitive(Boolean caseSensitive) {
             return caseSensitive(Output.of(caseSensitive));
         }
 
+        /**
+         * @param checkIps For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
+         * 
+         * @return builder
+         * 
+         */
         public Builder checkIps(@Nullable Output<String> checkIps) {
             $.checkIps = checkIps;
             return this;
         }
 
+        /**
+         * @param checkIps For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
+         * 
+         * @return builder
+         * 
+         */
         public Builder checkIps(String checkIps) {
             return checkIps(Output.of(checkIps));
         }
 
+        /**
+         * @param matchOperator Valid entries for this property: contains, exists, and equals
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchOperator(@Nullable Output<String> matchOperator) {
             $.matchOperator = matchOperator;
             return this;
         }
 
+        /**
+         * @param matchOperator Valid entries for this property: contains, exists, and equals
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchOperator(String matchOperator) {
             return matchOperator(Output.of(matchOperator));
         }
 
+        /**
+         * @param matchType The type of match used
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchType(@Nullable Output<String> matchType) {
             $.matchType = matchType;
             return this;
         }
 
+        /**
+         * @param matchType The type of match used
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchType(String matchType) {
             return matchType(Output.of(matchType));
         }
 
+        /**
+         * @param matchValue Depends on the matchType
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchValue(@Nullable Output<String> matchValue) {
             $.matchValue = matchValue;
             return this;
         }
 
+        /**
+         * @param matchValue Depends on the matchType
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchValue(String matchValue) {
             return matchValue(Output.of(matchValue));
         }
 
+        /**
+         * @param negate If true, negates the match
+         * 
+         * @return builder
+         * 
+         */
         public Builder negate(@Nullable Output<Boolean> negate) {
             $.negate = negate;
             return this;
         }
 
+        /**
+         * @param negate If true, negates the match
+         * 
+         * @return builder
+         * 
+         */
         public Builder negate(Boolean negate) {
             return negate(Output.of(negate));
         }
 
+        /**
+         * @param objectMatchValues An object used when a rule either includes more complex match criteria, like multiple value attributes
+         * 
+         * @return builder
+         * 
+         */
         public Builder objectMatchValues(@Nullable Output<List<GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueArgs>> objectMatchValues) {
             $.objectMatchValues = objectMatchValues;
             return this;
         }
 
+        /**
+         * @param objectMatchValues An object used when a rule either includes more complex match criteria, like multiple value attributes
+         * 
+         * @return builder
+         * 
+         */
         public Builder objectMatchValues(List<GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueArgs> objectMatchValues) {
             return objectMatchValues(Output.of(objectMatchValues));
         }
 
+        /**
+         * @param objectMatchValues An object used when a rule either includes more complex match criteria, like multiple value attributes
+         * 
+         * @return builder
+         * 
+         */
         public Builder objectMatchValues(GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueArgs... objectMatchValues) {
             return objectMatchValues(List.of(objectMatchValues));
         }

@@ -12,26 +12,48 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// If true, the match is case sensitive
+        /// </summary>
         [Input("caseSensitive")]
         public bool? CaseSensitive { get; set; }
 
+        /// <summary>
+        /// For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
+        /// </summary>
         [Input("checkIps")]
         public string? CheckIps { get; set; }
 
+        /// <summary>
+        /// Valid entries for this property: contains, exists, and equals
+        /// </summary>
         [Input("matchOperator")]
         public string? MatchOperator { get; set; }
 
+        /// <summary>
+        /// The type of match used
+        /// </summary>
         [Input("matchType")]
         public string? MatchType { get; set; }
 
+        /// <summary>
+        /// Depends on the matchType
+        /// </summary>
         [Input("matchValue")]
         public string? MatchValue { get; set; }
 
+        /// <summary>
+        /// If true, negates the match
+        /// </summary>
         [Input("negate")]
         public bool? Negate { get; set; }
 
         [Input("objectMatchValues")]
         private List<Inputs.GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgs>? _objectMatchValues;
+
+        /// <summary>
+        /// An object used when a rule either includes more complex match criteria, like multiple value attributes
+        /// </summary>
         public List<Inputs.GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgs> ObjectMatchValues
         {
             get => _objectMatchValues ?? (_objectMatchValues = new List<Inputs.GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgs>());

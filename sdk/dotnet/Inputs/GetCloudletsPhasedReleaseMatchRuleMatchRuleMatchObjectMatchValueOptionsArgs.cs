@@ -12,17 +12,30 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Set to true if the entries for the value property should be evaluated based on case sensitivity
+        /// </summary>
         [Input("valueCaseSensitive")]
         public Input<bool>? ValueCaseSensitive { get; set; }
 
+        /// <summary>
+        /// Set to true if provided value should be compared in escaped form
+        /// </summary>
         [Input("valueEscaped")]
         public Input<bool>? ValueEscaped { get; set; }
 
+        /// <summary>
+        /// Set to true if the entries for the value property include wildcards
+        /// </summary>
         [Input("valueHasWildcard")]
         public Input<bool>? ValueHasWildcard { get; set; }
 
         [Input("values")]
         private InputList<string>? _values;
+
+        /// <summary>
+        /// The value attributes in the incoming request to match on
+        /// </summary>
         public InputList<string> Values
         {
             get => _values ?? (_values = new InputList<string>());

@@ -13,12 +13,33 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchResult
     {
+        /// <summary>
+        /// If true, the match is case sensitive
+        /// </summary>
         public readonly bool? CaseSensitive;
+        /// <summary>
+        /// For clientip, continent, countrycode, proxy, and regioncode match types, the part of the request that determines the IP address to use
+        /// </summary>
         public readonly string? CheckIps;
+        /// <summary>
+        /// Valid entries for this property: contains, exists, and equals
+        /// </summary>
         public readonly string? MatchOperator;
+        /// <summary>
+        /// The type of match used
+        /// </summary>
         public readonly string? MatchType;
+        /// <summary>
+        /// Depends on the matchType
+        /// </summary>
         public readonly string? MatchValue;
+        /// <summary>
+        /// If true, negates the match
+        /// </summary>
         public readonly bool? Negate;
+        /// <summary>
+        /// An object used when a rule either includes more complex match criteria, like multiple value attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueResult> ObjectMatchValues;
 
         [OutputConstructor]

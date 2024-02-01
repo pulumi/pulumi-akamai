@@ -13,12 +13,33 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230530CriterionContentTypeResult
     {
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// Sets a case-sensitive match for all `values`.
+        /// </summary>
         public readonly bool? MatchCaseSensitive;
+        /// <summary>
+        /// Matches any `Content-Type` among specified `values` when set to `IS_ONE_OF`, otherwise `IS_NOT_ONE_OF` reverses the match.
+        /// </summary>
         public readonly string? MatchOperator;
+        /// <summary>
+        /// Allows wildcards in the `value` field, where `?` matches a single character and `*` matches zero or more characters. Specifying `text/*` matches both `text/html` and `text/css`.
+        /// </summary>
         public readonly bool? MatchWildcard;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
+        /// <summary>
+        /// `Content-Type` response header value, for example `text/html`.
+        /// </summary>
         public readonly ImmutableArray<string> Values;
 
         [OutputConstructor]

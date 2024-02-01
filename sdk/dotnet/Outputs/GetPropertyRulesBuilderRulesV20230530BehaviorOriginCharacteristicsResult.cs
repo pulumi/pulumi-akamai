@@ -13,36 +13,129 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteristicsResult
     {
+        /// <summary>
+        /// Enables secure use of access keys defined in Cloud Access Manager. Access keys store encrypted authentication details required to sign requests to cloud origins. If you disable this option, you'll need to store the authentication details unencrypted.
+        /// </summary>
         public readonly bool? AccessKeyEncryptedStorage;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? AdcTitle;
+        /// <summary>
+        /// Specifies the authentication method.
+        /// </summary>
         public readonly string? AuthenticationMethod;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? AuthenticationMethodTitle;
+        /// <summary>
+        /// Specifies active access key ID linked to your AWS account.
+        /// </summary>
         public readonly string? AwsAccessKeyId;
+        /// <summary>
+        /// Identifies the unique `awsAccessKeyVersionGuid` access key `created` in Cloud Access Manager to sign your requests to AWS S3.
+        /// </summary>
         public readonly string? AwsAccessKeyVersionGuid;
+        /// <summary>
+        /// Specifies the AWS region code that represents the location of your AWS bucket.
+        /// </summary>
         public readonly string? AwsArRegion;
+        /// <summary>
+        /// This specifies the AWS hostname, without `http://` or `https://` prefixes. If you leave this option empty, it inherits the hostname from the `origin` behavior.
+        /// </summary>
         public readonly string? AwsHost;
+        /// <summary>
+        /// This specifies the AWS region code of the location where your bucket resides.
+        /// </summary>
         public readonly string? AwsRegion;
+        /// <summary>
+        /// Specifies the secret linked to the access key identifier that you want to use to sign requests to AWS.
+        /// </summary>
         public readonly string? AwsSecretAccessKey;
+        /// <summary>
+        /// This specifies the subdomain of your AWS service. It precedes `amazonaws.com` or the region code in the AWS hostname. For example, `s3.amazonaws.com`.
+        /// </summary>
         public readonly string? AwsService;
+        /// <summary>
+        /// Specifies the origin's geographic region.
+        /// </summary>
         public readonly string? Country;
+        /// <summary>
+        /// Specifies the data to be encrypted as a series of enumerated variable names. See `Built-in system variables` for guidance on each.
+        /// </summary>
         public readonly ImmutableArray<string> CustomSignStrings;
+        /// <summary>
+        /// Provides a region used by Akamai Direct Connection.
+        /// </summary>
         public readonly string? DirectConnectGeo;
+        /// <summary>
+        /// Specifies the version of the encryption algorithm, an integer from `1` to `5`.
+        /// </summary>
         public readonly int? EncodingVersion;
+        /// <summary>
+        /// Specifies the code of your AWS service. It precedes `.amazonaws.com` or the region code in your AWS hostname.
+        /// </summary>
         public readonly string? EndPointService;
+        /// <summary>
+        /// Identifies the unique `gcsAccessKeyVersionGuid` access key `created` in Cloud Access Manager to sign your requests to Google Cloud Storage in interoperability mode.
+        /// </summary>
         public readonly string? GcsAccessKeyVersionGuid;
+        /// <summary>
+        /// Specifies the active access ID linked to your Google account.
+        /// </summary>
         public readonly string? GcsHmacKeyAccessId;
+        /// <summary>
+        /// Specifies the secret linked to the access ID that you want to use to sign requests to Google Cloud Storage.
+        /// </summary>
         public readonly string? GcsHmacKeySecret;
+        /// <summary>
+        /// Whether to include the hostname used to access this delivery configuration as an additional identifier tag in the Assume Role verification call to AWS. You'll need to include this hostname (`AK_HOST`) in a condition in your `AWS IAM policy` for validation.
+        /// </summary>
         public readonly bool? HostnameTag;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// Specifies the access key provided by the hosting service.
+        /// </summary>
         public readonly string? Mslkey;
+        /// <summary>
+        /// Specifies the origin name provided by the hosting service.
+        /// </summary>
         public readonly string? Mslname;
+        /// <summary>
+        /// Specifies the nonce.
+        /// </summary>
         public readonly string? Nonce;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? OriginLocationTitle;
+        /// <summary>
+        /// Whether to include the property identifier for this delivery configuration as an additional identifier tag in the Assume Role verification call to AWS. You'll need to include the property identifier (`AK_ARLID`) in a condition in your `AWS IAM policy` for validation.
+        /// </summary>
         public readonly bool? PropertyIdTag;
+        /// <summary>
+        /// The Amazon Resource Name (ARN) of the `AWS IAM role` you want to use. This role needs to be configured with the proper permissions for your target resources. The `AWS IAM policy` needs to contain the trust relationships defining other users that can assume this role.
+        /// </summary>
         public readonly string? RoleArn;
+        /// <summary>
+        /// Specifies the shared secret key.
+        /// </summary>
         public readonly string? SecretKey;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// Specifies whether to customize your signed string.
+        /// </summary>
         public readonly bool? UseCustomSignString;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

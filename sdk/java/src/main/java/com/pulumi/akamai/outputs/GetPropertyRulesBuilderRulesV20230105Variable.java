@@ -11,25 +11,65 @@ import java.util.Objects;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105Variable {
+    /**
+     * @return The description for a variable
+     * 
+     */
     private String description;
+    /**
+     * @return Whether a variable should be hidden
+     * 
+     */
     private Boolean hidden;
+    /**
+     * @return The name of a variable
+     * 
+     */
     private String name;
+    /**
+     * @return States whether a variable contains sensitive information
+     * 
+     */
     private Boolean sensitive;
+    /**
+     * @return The value for a variable
+     * 
+     */
     private String value;
 
     private GetPropertyRulesBuilderRulesV20230105Variable() {}
+    /**
+     * @return The description for a variable
+     * 
+     */
     public String description() {
         return this.description;
     }
+    /**
+     * @return Whether a variable should be hidden
+     * 
+     */
     public Boolean hidden() {
         return this.hidden;
     }
+    /**
+     * @return The name of a variable
+     * 
+     */
     public String name() {
         return this.name;
     }
+    /**
+     * @return States whether a variable contains sensitive information
+     * 
+     */
     public Boolean sensitive() {
         return this.sensitive;
     }
+    /**
+     * @return The value for a variable
+     * 
+     */
     public String value() {
         return this.value;
     }

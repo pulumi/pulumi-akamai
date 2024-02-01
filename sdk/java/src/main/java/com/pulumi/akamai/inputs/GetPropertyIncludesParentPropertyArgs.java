@@ -15,16 +15,32 @@ public final class GetPropertyIncludesParentPropertyArgs extends com.pulumi.reso
 
     public static final GetPropertyIncludesParentPropertyArgs Empty = new GetPropertyIncludesParentPropertyArgs();
 
+    /**
+     * The property&#39;s unique identifier
+     * 
+     */
     @Import(name="id", required=true)
     private Output<String> id;
 
+    /**
+     * @return The property&#39;s unique identifier
+     * 
+     */
     public Output<String> id() {
         return this.id;
     }
 
+    /**
+     * The property&#39;s version for which the data is requested
+     * 
+     */
     @Import(name="version", required=true)
     private Output<Integer> version;
 
+    /**
+     * @return The property&#39;s version for which the data is requested
+     * 
+     */
     public Output<Integer> version() {
         return this.version;
     }
@@ -54,20 +70,44 @@ public final class GetPropertyIncludesParentPropertyArgs extends com.pulumi.reso
             $ = new GetPropertyIncludesParentPropertyArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param id The property&#39;s unique identifier
+         * 
+         * @return builder
+         * 
+         */
         public Builder id(Output<String> id) {
             $.id = id;
             return this;
         }
 
+        /**
+         * @param id The property&#39;s unique identifier
+         * 
+         * @return builder
+         * 
+         */
         public Builder id(String id) {
             return id(Output.of(id));
         }
 
+        /**
+         * @param version The property&#39;s version for which the data is requested
+         * 
+         * @return builder
+         * 
+         */
         public Builder version(Output<Integer> version) {
             $.version = version;
             return this;
         }
 
+        /**
+         * @param version The property&#39;s version for which the data is requested
+         * 
+         * @return builder
+         * 
+         */
         public Builder version(Integer version) {
             return version(Output.of(version));
         }

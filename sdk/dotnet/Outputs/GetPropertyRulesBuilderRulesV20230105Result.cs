@@ -13,19 +13,61 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230105Result
     {
+        /// <summary>
+        /// XML metadata of the rule
+        /// </summary>
         public readonly string? AdvancedOverride;
+        /// <summary>
+        /// The list of behaviors for a rule
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetPropertyRulesBuilderRulesV20230105BehaviorResult> Behaviors;
+        /// <summary>
+        /// A list of child rules for a particular rule in JSON format
+        /// </summary>
         public readonly ImmutableArray<string> Childrens;
+        /// <summary>
+        /// The comments for a rule
+        /// </summary>
         public readonly string? Comments;
+        /// <summary>
+        /// States whether changes to 'criterion' objects are prohibited
+        /// </summary>
         public readonly bool? CriteriaLocked;
+        /// <summary>
+        /// States whether 'all' criteria need to match or 'any'
+        /// </summary>
         public readonly string? CriteriaMustSatisfy;
+        /// <summary>
+        /// The list of criteria for a rule
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetPropertyRulesBuilderRulesV20230105CriterionResult> Criterions;
+        /// <summary>
+        /// XML metadata of the rule
+        /// </summary>
         public readonly Outputs.GetPropertyRulesBuilderRulesV20230105CustomOverrideResult? CustomOverride;
+        /// <summary>
+        /// States whether a rule is secure
+        /// </summary>
         public readonly bool? IsSecure;
+        /// <summary>
+        /// The name of a rule
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// The template link for the rule
+        /// </summary>
         public readonly string? TemplateLink;
+        /// <summary>
+        /// The UUID of a rule template
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// The UUID of the rule
+        /// </summary>
         public readonly string? Uuid;
+        /// <summary>
+        /// A list of variables for a rule
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetPropertyRulesBuilderRulesV20230105VariableResult> Variables;
 
         [OutputConstructor]

@@ -16,65 +16,137 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorGraphqlCachingAr
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorGraphqlCachingArgs Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorGraphqlCachingArgs();
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     @Import(name="advanced")
     private @Nullable Output<String> advanced;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<Output<String>> advanced() {
         return Optional.ofNullable(this.advanced);
     }
 
+    /**
+     * When enabled, caches responses that include an `error` field at the top of the response body object.  Disable this if your GraphQL server yields temporary errors with success codes in the 2xx range.
+     * 
+     */
     @Import(name="cacheResponsesWithErrors")
     private @Nullable Output<Boolean> cacheResponsesWithErrors;
 
+    /**
+     * @return When enabled, caches responses that include an `error` field at the top of the response body object.  Disable this if your GraphQL server yields temporary errors with success codes in the 2xx range.
+     * 
+     */
     public Optional<Output<Boolean>> cacheResponsesWithErrors() {
         return Optional.ofNullable(this.cacheResponsesWithErrors);
     }
 
+    /**
+     * Enables GraphQL caching.
+     * 
+     */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
+    /**
+     * @return Enables GraphQL caching.
+     * 
+     */
     public Optional<Output<Boolean>> enabled() {
         return Optional.ofNullable(this.enabled);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * The name of the JSON body parameter that identifies GraphQL POST requests.
+     * 
+     */
     @Import(name="operationsJsonBodyParameterName")
     private @Nullable Output<String> operationsJsonBodyParameterName;
 
+    /**
+     * @return The name of the JSON body parameter that identifies GraphQL POST requests.
+     * 
+     */
     public Optional<Output<String>> operationsJsonBodyParameterName() {
         return Optional.ofNullable(this.operationsJsonBodyParameterName);
     }
 
+    /**
+     * Specifies the name of a query parameter that identifies requests as GraphQL queries.
+     * 
+     */
     @Import(name="operationsUrlQueryParameterName")
     private @Nullable Output<String> operationsUrlQueryParameterName;
 
+    /**
+     * @return Specifies the name of a query parameter that identifies requests as GraphQL queries.
+     * 
+     */
     public Optional<Output<String>> operationsUrlQueryParameterName() {
         return Optional.ofNullable(this.operationsUrlQueryParameterName);
     }
 
+    /**
+     * Specify what happens if GraphQL query processing fails on POST requests.
+     * 
+     */
     @Import(name="postRequestProcessingErrorHandling")
     private @Nullable Output<String> postRequestProcessingErrorHandling;
 
+    /**
+     * @return Specify what happens if GraphQL query processing fails on POST requests.
+     * 
+     */
     public Optional<Output<String>> postRequestProcessingErrorHandling() {
         return Optional.ofNullable(this.postRequestProcessingErrorHandling);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -111,83 +183,191 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorGraphqlCachingAr
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorGraphqlCachingArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param advanced This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder advanced(@Nullable Output<String> advanced) {
             $.advanced = advanced;
             return this;
         }
 
+        /**
+         * @param advanced This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder advanced(String advanced) {
             return advanced(Output.of(advanced));
         }
 
+        /**
+         * @param cacheResponsesWithErrors When enabled, caches responses that include an `error` field at the top of the response body object.  Disable this if your GraphQL server yields temporary errors with success codes in the 2xx range.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cacheResponsesWithErrors(@Nullable Output<Boolean> cacheResponsesWithErrors) {
             $.cacheResponsesWithErrors = cacheResponsesWithErrors;
             return this;
         }
 
+        /**
+         * @param cacheResponsesWithErrors When enabled, caches responses that include an `error` field at the top of the response body object.  Disable this if your GraphQL server yields temporary errors with success codes in the 2xx range.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cacheResponsesWithErrors(Boolean cacheResponsesWithErrors) {
             return cacheResponsesWithErrors(Output.of(cacheResponsesWithErrors));
         }
 
+        /**
+         * @param enabled Enables GraphQL caching.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(@Nullable Output<Boolean> enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param enabled Enables GraphQL caching.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(Boolean enabled) {
             return enabled(Output.of(enabled));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param operationsJsonBodyParameterName The name of the JSON body parameter that identifies GraphQL POST requests.
+         * 
+         * @return builder
+         * 
+         */
         public Builder operationsJsonBodyParameterName(@Nullable Output<String> operationsJsonBodyParameterName) {
             $.operationsJsonBodyParameterName = operationsJsonBodyParameterName;
             return this;
         }
 
+        /**
+         * @param operationsJsonBodyParameterName The name of the JSON body parameter that identifies GraphQL POST requests.
+         * 
+         * @return builder
+         * 
+         */
         public Builder operationsJsonBodyParameterName(String operationsJsonBodyParameterName) {
             return operationsJsonBodyParameterName(Output.of(operationsJsonBodyParameterName));
         }
 
+        /**
+         * @param operationsUrlQueryParameterName Specifies the name of a query parameter that identifies requests as GraphQL queries.
+         * 
+         * @return builder
+         * 
+         */
         public Builder operationsUrlQueryParameterName(@Nullable Output<String> operationsUrlQueryParameterName) {
             $.operationsUrlQueryParameterName = operationsUrlQueryParameterName;
             return this;
         }
 
+        /**
+         * @param operationsUrlQueryParameterName Specifies the name of a query parameter that identifies requests as GraphQL queries.
+         * 
+         * @return builder
+         * 
+         */
         public Builder operationsUrlQueryParameterName(String operationsUrlQueryParameterName) {
             return operationsUrlQueryParameterName(Output.of(operationsUrlQueryParameterName));
         }
 
+        /**
+         * @param postRequestProcessingErrorHandling Specify what happens if GraphQL query processing fails on POST requests.
+         * 
+         * @return builder
+         * 
+         */
         public Builder postRequestProcessingErrorHandling(@Nullable Output<String> postRequestProcessingErrorHandling) {
             $.postRequestProcessingErrorHandling = postRequestProcessingErrorHandling;
             return this;
         }
 
+        /**
+         * @param postRequestProcessingErrorHandling Specify what happens if GraphQL query processing fails on POST requests.
+         * 
+         * @return builder
+         * 
+         */
         public Builder postRequestProcessingErrorHandling(String postRequestProcessingErrorHandling) {
             return postRequestProcessingErrorHandling(Output.of(postRequestProcessingErrorHandling));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

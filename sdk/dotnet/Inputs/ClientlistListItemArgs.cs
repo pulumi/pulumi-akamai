@@ -12,20 +12,33 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class ClientlistListItemArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// A description of the item.
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// The item expiration date.
+        /// </summary>
         [Input("expirationDate")]
         public Input<string>? ExpirationDate { get; set; }
 
         [Input("tags")]
         private InputList<string>? _tags;
+
+        /// <summary>
+        /// The item tags.
+        /// </summary>
         public InputList<string> Tags
         {
             get => _tags ?? (_tags = new InputList<string>());
             set => _tags = value;
         }
 
+        /// <summary>
+        /// Value of the item. (i.e. IP address, AS Number, GEO, ...etc)
+        /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;
 

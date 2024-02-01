@@ -13,17 +13,53 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyTransformationCropResult
     {
+        /// <summary>
+        /// If cropping an area outside of the existing canvas, expands the image canvas.
+        /// </summary>
         public readonly string? AllowExpansion;
+        /// <summary>
+        /// If cropping an area outside of the existing canvas, expands the image canvas.
+        /// </summary>
         public readonly string? AllowExpansionVar;
+        /// <summary>
+        /// Frame of reference for X and Y Positions.
+        /// </summary>
         public readonly string? Gravity;
+        /// <summary>
+        /// Frame of reference for X and Y Positions.
+        /// </summary>
         public readonly string? GravityVar;
+        /// <summary>
+        /// The number of pixels to crop along the y-axis.
+        /// </summary>
         public readonly string? Height;
+        /// <summary>
+        /// The number of pixels to crop along the y-axis.
+        /// </summary>
         public readonly string? HeightVar;
+        /// <summary>
+        /// The number of pixels to crop along the x-axis.
+        /// </summary>
         public readonly string? Width;
+        /// <summary>
+        /// The number of pixels to crop along the x-axis.
+        /// </summary>
         public readonly string? WidthVar;
+        /// <summary>
+        /// The x-axis position of the image to crop from.
+        /// </summary>
         public readonly string? XPosition;
+        /// <summary>
+        /// The x-axis position of the image to crop from.
+        /// </summary>
         public readonly string? XPositionVar;
+        /// <summary>
+        /// The y-axis position of the image to crop from.
+        /// </summary>
         public readonly string? YPosition;
+        /// <summary>
+        /// The y-axis position of the image to crop from.
+        /// </summary>
         public readonly string? YPositionVar;
 
         [OutputConstructor]

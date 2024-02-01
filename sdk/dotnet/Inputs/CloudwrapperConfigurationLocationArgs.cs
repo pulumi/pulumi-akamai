@@ -12,12 +12,21 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class CloudwrapperConfigurationLocationArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The capacity assigned to this configuration's location
+        /// </summary>
         [Input("capacity")]
         public Input<Inputs.CloudwrapperConfigurationLocationCapacityArgs>? Capacity { get; set; }
 
+        /// <summary>
+        /// Additional comments provided by the user.
+        /// </summary>
         [Input("comments", required: true)]
         public Input<string> Comments { get; set; } = null!;
 
+        /// <summary>
+        /// Unique identifier for the location and traffic type combination
+        /// </summary>
         [Input("trafficTypeId", required: true)]
         public Input<int> TrafficTypeId { get; set; } = null!;
 

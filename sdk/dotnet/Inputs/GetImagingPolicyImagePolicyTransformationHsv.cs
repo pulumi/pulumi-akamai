@@ -12,21 +12,39 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetImagingPolicyImagePolicyTransformationHsvArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The number of degrees to rotate colors around the color wheel, `0.0` by default.
+        /// </summary>
         [Input("hue")]
         public string? Hue { get; set; }
 
+        /// <summary>
+        /// The number of degrees to rotate colors around the color wheel, `0.0` by default.
+        /// </summary>
         [Input("hueVar")]
         public string? HueVar { get; set; }
 
+        /// <summary>
+        /// A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
+        /// </summary>
         [Input("saturation")]
         public string? Saturation { get; set; }
 
+        /// <summary>
+        /// A multiplier to adjust the saturation of colors in the image. Values less than `1.0` decrease saturation and values greater than `1.0` increase the saturation. A value of `0.0` removes all color from the image.
+        /// </summary>
         [Input("saturationVar")]
         public string? SaturationVar { get; set; }
 
+        /// <summary>
+        /// A multiplier to adjust the lightness or darkness of the images base color. Values less than 1.0 decrease the base colors in the image, making them appear darker. Values greater than 1.0 increase the base colors in the image, making them appear lighter.
+        /// </summary>
         [Input("value")]
         public string? Value { get; set; }
 
+        /// <summary>
+        /// A multiplier to adjust the lightness or darkness of the images base color. Values less than 1.0 decrease the base colors in the image, making them appear darker. Values greater than 1.0 increase the base colors in the image, making them appear lighter.
+        /// </summary>
         [Input("valueVar")]
         public string? ValueVar { get; set; }
 

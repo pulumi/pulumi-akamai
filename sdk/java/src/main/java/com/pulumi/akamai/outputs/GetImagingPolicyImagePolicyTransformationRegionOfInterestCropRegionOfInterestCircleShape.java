@@ -13,17 +13,41 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShape {
+    /**
+     * @return Defines coordinates for a single point, to help define polygons and rectangles. Each point may be an object with `x`and `y` members, or a two-element array.
+     * 
+     */
     private GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeCenter center;
+    /**
+     * @return The radius of the circle measured in pixels.
+     * 
+     */
     private @Nullable String radius;
+    /**
+     * @return The radius of the circle measured in pixels.
+     * 
+     */
     private @Nullable String radiusVar;
 
     private GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShape() {}
+    /**
+     * @return Defines coordinates for a single point, to help define polygons and rectangles. Each point may be an object with `x`and `y` members, or a two-element array.
+     * 
+     */
     public GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeCenter center() {
         return this.center;
     }
+    /**
+     * @return The radius of the circle measured in pixels.
+     * 
+     */
     public Optional<String> radius() {
         return Optional.ofNullable(this.radius);
     }
+    /**
+     * @return The radius of the circle measured in pixels.
+     * 
+     */
     public Optional<String> radiusVar() {
         return Optional.ofNullable(this.radiusVar);
     }

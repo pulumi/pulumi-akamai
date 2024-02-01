@@ -14,10 +14,25 @@ namespace Pulumi.Akamai.Outputs
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorWebApplicationFirewallFirewallConfigurationResult
     {
         public readonly int? ConfigId;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+        /// </summary>
         public readonly string? FileName;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+        /// </summary>
         public readonly string? ProductionStatus;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+        /// </summary>
         public readonly int? ProductionVersion;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+        /// </summary>
         public readonly string? StagingStatus;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+        /// </summary>
         public readonly int? StagingVersion;
 
         [OutputConstructor]

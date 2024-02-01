@@ -11,29 +11,77 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveColor {
+    /**
+     * @return The hexadecimal CSS color value to remove.
+     * 
+     */
     private @Nullable String color;
+    /**
+     * @return The hexadecimal CSS color value to remove.
+     * 
+     */
     private @Nullable String colorVar;
+    /**
+     * @return The RemoveColor transformation may create a hard edge around an image. To minimize these hard edges and make the removal of the color more gradual in appearance, use the Feather option. This option allows you to extend the color removal beyond the specified Tolerance. The pixels in this extended tolerance become semi-transparent - creating a softer edge.  The first realtime request for an image using the feather option may result in a slow transformation time. Subsequent requests are not impacted as they are served directly out of cache.
+     * 
+     */
     private @Nullable String feather;
+    /**
+     * @return The RemoveColor transformation may create a hard edge around an image. To minimize these hard edges and make the removal of the color more gradual in appearance, use the Feather option. This option allows you to extend the color removal beyond the specified Tolerance. The pixels in this extended tolerance become semi-transparent - creating a softer edge.  The first realtime request for an image using the feather option may result in a slow transformation time. Subsequent requests are not impacted as they are served directly out of cache.
+     * 
+     */
     private @Nullable String featherVar;
+    /**
+     * @return The Tolerance option defines how close the color needs to be to the selected color before it&#39;s changed to fully transparent. Set the Tolerance to 0.0 to remove only the exact color specified.
+     * 
+     */
     private @Nullable String tolerance;
+    /**
+     * @return The Tolerance option defines how close the color needs to be to the selected color before it&#39;s changed to fully transparent. Set the Tolerance to 0.0 to remove only the exact color specified.
+     * 
+     */
     private @Nullable String toleranceVar;
 
     private GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveColor() {}
+    /**
+     * @return The hexadecimal CSS color value to remove.
+     * 
+     */
     public Optional<String> color() {
         return Optional.ofNullable(this.color);
     }
+    /**
+     * @return The hexadecimal CSS color value to remove.
+     * 
+     */
     public Optional<String> colorVar() {
         return Optional.ofNullable(this.colorVar);
     }
+    /**
+     * @return The RemoveColor transformation may create a hard edge around an image. To minimize these hard edges and make the removal of the color more gradual in appearance, use the Feather option. This option allows you to extend the color removal beyond the specified Tolerance. The pixels in this extended tolerance become semi-transparent - creating a softer edge.  The first realtime request for an image using the feather option may result in a slow transformation time. Subsequent requests are not impacted as they are served directly out of cache.
+     * 
+     */
     public Optional<String> feather() {
         return Optional.ofNullable(this.feather);
     }
+    /**
+     * @return The RemoveColor transformation may create a hard edge around an image. To minimize these hard edges and make the removal of the color more gradual in appearance, use the Feather option. This option allows you to extend the color removal beyond the specified Tolerance. The pixels in this extended tolerance become semi-transparent - creating a softer edge.  The first realtime request for an image using the feather option may result in a slow transformation time. Subsequent requests are not impacted as they are served directly out of cache.
+     * 
+     */
     public Optional<String> featherVar() {
         return Optional.ofNullable(this.featherVar);
     }
+    /**
+     * @return The Tolerance option defines how close the color needs to be to the selected color before it&#39;s changed to fully transparent. Set the Tolerance to 0.0 to remove only the exact color specified.
+     * 
+     */
     public Optional<String> tolerance() {
         return Optional.ofNullable(this.tolerance);
     }
+    /**
+     * @return The Tolerance option defines how close the color needs to be to the selected color before it&#39;s changed to fully transparent. Set the Tolerance to 0.0 to remove only the exact color specified.
+     * 
+     */
     public Optional<String> toleranceVar() {
         return Optional.ofNullable(this.toleranceVar);
     }

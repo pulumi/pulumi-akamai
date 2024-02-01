@@ -232,1535 +232,3287 @@ public final class GetPropertyRulesBuilderRulesV20230105Behavior extends com.pul
 
     public static final GetPropertyRulesBuilderRulesV20230105Behavior Empty = new GetPropertyRulesBuilderRulesV20230105Behavior();
 
+    /**
+     * This behavior works with `manifestRerouting` to provide the scale and reliability of Akamai network while simultaneously allowing third party partners to modify the requested media content with value-added features. The `adScalerCircuitBreaker` behavior specifies the fallback action in case the technology partner encounters errors and can&#39;t modify the requested media object. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="adScalerCircuitBreaker")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAdScalerCircuitBreaker adScalerCircuitBreaker;
 
+    /**
+     * @return This behavior works with `manifestRerouting` to provide the scale and reliability of Akamai network while simultaneously allowing third party partners to modify the requested media content with value-added features. The `adScalerCircuitBreaker` behavior specifies the fallback action in case the technology partner encounters errors and can&#39;t modify the requested media object. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorAdScalerCircuitBreaker> adScalerCircuitBreaker() {
         return Optional.ofNullable(this.adScalerCircuitBreaker);
     }
 
+    /**
+     * Adaptive Acceleration uses HTTP/2 server push functionality with Ion properties to pre-position content and improve the performance of HTML page loading based on real user monitoring (RUM) timing data. It also helps browsers to preconnect to content that’s likely needed for upcoming requests. To use this behavior, make sure you enable the `http2` behavior. Use the `Adaptive Acceleration API` to report on the set of assets this feature optimizes. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="adaptiveAcceleration")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAdaptiveAcceleration adaptiveAcceleration;
 
+    /**
+     * @return Adaptive Acceleration uses HTTP/2 server push functionality with Ion properties to pre-position content and improve the performance of HTML page loading based on real user monitoring (RUM) timing data. It also helps browsers to preconnect to content that’s likely needed for upcoming requests. To use this behavior, make sure you enable the `http2` behavior. Use the `Adaptive Acceleration API` to report on the set of assets this feature optimizes. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorAdaptiveAcceleration> adaptiveAcceleration() {
         return Optional.ofNullable(this.adaptiveAcceleration);
     }
 
+    /**
+     * The Adaptive Image Compression feature compresses JPEG images depending on the requesting network&#39;s performance, thus improving response time. The behavior specifies three performance tiers based on round-trip tests: 1 for excellent, 2 for good, and 3 for poor. It assigns separate performance criteria for mobile (cellular) and non-mobile networks, which the `compressMobile` and `compressStandard` options enable independently. This behavior can be used in includes.
+     * 
+     */
     @Import(name="adaptiveImageCompression")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAdaptiveImageCompression adaptiveImageCompression;
 
+    /**
+     * @return The Adaptive Image Compression feature compresses JPEG images depending on the requesting network&#39;s performance, thus improving response time. The behavior specifies three performance tiers based on round-trip tests: 1 for excellent, 2 for good, and 3 for poor. It assigns separate performance criteria for mobile (cellular) and non-mobile networks, which the `compressMobile` and `compressStandard` options enable independently. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorAdaptiveImageCompression> adaptiveImageCompression() {
         return Optional.ofNullable(this.adaptiveImageCompression);
     }
 
+    /**
+     * This specifies Akamai XML metadata. It can only be configured on your behalf by Akamai Professional Services. This behavior is for internal usage only. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="advanced")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAdvanced advanced;
 
+    /**
+     * @return This specifies Akamai XML metadata. It can only be configured on your behalf by Akamai Professional Services. This behavior is for internal usage only. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorAdvanced> advanced() {
         return Optional.ofNullable(this.advanced);
     }
 
+    /**
+     * Configure a custom report that collects traffic data. The data is based on one to four variables, such as `sum`, `average`, `min`, and `max`. These aggregation attributes help compile traffic data summaries. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="aggregatedReporting")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAggregatedReporting aggregatedReporting;
 
+    /**
+     * @return Configure a custom report that collects traffic data. The data is based on one to four variables, such as `sum`, `average`, `min`, and `max`. These aggregation attributes help compile traffic data summaries. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorAggregatedReporting> aggregatedReporting() {
         return Optional.ofNullable(this.aggregatedReporting);
     }
 
+    /**
+     * This allows you to run regular expression substitutions over web pages. To apply this behavior, you need to match on a `contentType`. Contact Akamai Professional Services for help configuring the Akamaizer. See also the `akamaizerTag` behavior. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     @Import(name="akamaizer")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAkamaizer akamaizer;
 
+    /**
+     * @return This allows you to run regular expression substitutions over web pages. To apply this behavior, you need to match on a `contentType`. Contact Akamai Professional Services for help configuring the Akamaizer. See also the `akamaizerTag` behavior. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorAkamaizer> akamaizer() {
         return Optional.ofNullable(this.akamaizer);
     }
 
+    /**
+     * This specifies HTML tags and replacement rules for hostnames used in conjunction with the `akamaizer` behavior. Contact Akamai Professional Services for help configuring the Akamaizer. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     @Import(name="akamaizerTag")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAkamaizerTag akamaizerTag;
 
+    /**
+     * @return This specifies HTML tags and replacement rules for hostnames used in conjunction with the `akamaizer` behavior. Contact Akamai Professional Services for help configuring the Akamaizer. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorAkamaizerTag> akamaizerTag() {
         return Optional.ofNullable(this.akamaizerTag);
     }
 
+    /**
+     * Allow all HTTP request methods to be used for the edge&#39;s parent servers, useful to implement features such as `Site Shield`, `SureRoute`, and Tiered Distribution. (See the `siteShield`, `sureRoute`, and `tieredDistribution` behaviors.) This behavior can be used in includes.
+     * 
+     */
     @Import(name="allHttpInCacheHierarchy")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAllHttpInCacheHierarchy allHttpInCacheHierarchy;
 
+    /**
+     * @return Allow all HTTP request methods to be used for the edge&#39;s parent servers, useful to implement features such as `Site Shield`, `SureRoute`, and Tiered Distribution. (See the `siteShield`, `sureRoute`, and `tieredDistribution` behaviors.) This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorAllHttpInCacheHierarchy> allHttpInCacheHierarchy() {
         return Optional.ofNullable(this.allHttpInCacheHierarchy);
     }
 
+    /**
+     * Allows Cloudlets Origins to determine the criteria, separately from the Property Manager, under which alternate `origin` definitions are assigned. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="allowCloudletsOrigins")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAllowCloudletsOrigins allowCloudletsOrigins;
 
+    /**
+     * @return Allows Cloudlets Origins to determine the criteria, separately from the Property Manager, under which alternate `origin` definitions are assigned. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorAllowCloudletsOrigins> allowCloudletsOrigins() {
         return Optional.ofNullable(this.allowCloudletsOrigins);
     }
 
+    /**
+     * Allow HTTP requests using the DELETE method. By default, GET, HEAD, and OPTIONS requests are allowed, and all other methods result in a 501 error. Such content does not cache, and any DELETE requests pass to the origin. See also the `allowOptions`, `allowPatch`, `allowPost`, and `allowPut` behaviors. This behavior can be used in includes.
+     * 
+     */
     @Import(name="allowDelete")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAllowDelete allowDelete;
 
+    /**
+     * @return Allow HTTP requests using the DELETE method. By default, GET, HEAD, and OPTIONS requests are allowed, and all other methods result in a 501 error. Such content does not cache, and any DELETE requests pass to the origin. See also the `allowOptions`, `allowPatch`, `allowPost`, and `allowPut` behaviors. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorAllowDelete> allowDelete() {
         return Optional.ofNullable(this.allowDelete);
     }
 
+    /**
+     * HTTPS cache key sharing allows HTTP requests to be served from an HTTPS cache. This behavior can be used in includes.
+     * 
+     */
     @Import(name="allowHttpsCacheKeySharing")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAllowHttpsCacheKeySharing allowHttpsCacheKeySharing;
 
+    /**
+     * @return HTTPS cache key sharing allows HTTP requests to be served from an HTTPS cache. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorAllowHttpsCacheKeySharing> allowHttpsCacheKeySharing() {
         return Optional.ofNullable(this.allowHttpsCacheKeySharing);
     }
 
+    /**
+     * Passes HTTPS requests to origin as HTTP. This is useful when incorporating Standard TLS or Akamai&#39;s shared certificate delivery security with an origin that serves HTTP traffic. This behavior can be used in includes.
+     * 
+     */
     @Import(name="allowHttpsDowngrade")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAllowHttpsDowngrade allowHttpsDowngrade;
 
+    /**
+     * @return Passes HTTPS requests to origin as HTTP. This is useful when incorporating Standard TLS or Akamai&#39;s shared certificate delivery security with an origin that serves HTTP traffic. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorAllowHttpsDowngrade> allowHttpsDowngrade() {
         return Optional.ofNullable(this.allowHttpsDowngrade);
     }
 
+    /**
+     * GET, HEAD, and OPTIONS requests are allowed by default. All other HTTP methods result in a 501 error. For full support of Cross-Origin Resource Sharing (CORS), you need to allow requests that use the OPTIONS method. If you&#39;re using the `corsSupport` behavior, do not disable OPTIONS requests. The response to an OPTIONS request is not cached, so the request always goes through the Akamai network to your origin, unless you use the `constructResponse` behavior to send responses directly from the Akamai network. See also the `allowDelete`, `allowPatch`, `allowPost`, and `allowPut` behaviors. This behavior can be used in includes.
+     * 
+     */
     @Import(name="allowOptions")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAllowOptions allowOptions;
 
+    /**
+     * @return GET, HEAD, and OPTIONS requests are allowed by default. All other HTTP methods result in a 501 error. For full support of Cross-Origin Resource Sharing (CORS), you need to allow requests that use the OPTIONS method. If you&#39;re using the `corsSupport` behavior, do not disable OPTIONS requests. The response to an OPTIONS request is not cached, so the request always goes through the Akamai network to your origin, unless you use the `constructResponse` behavior to send responses directly from the Akamai network. See also the `allowDelete`, `allowPatch`, `allowPost`, and `allowPut` behaviors. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorAllowOptions> allowOptions() {
         return Optional.ofNullable(this.allowOptions);
     }
 
+    /**
+     * Allow HTTP requests using the PATCH method. By default, GET, HEAD, and OPTIONS requests are allowed, and all other methods result in a 501 error. Such content does not cache, and any PATCH requests pass to the origin. See also the `allowDelete`, `allowOptions`, `allowPost`, and `allowPut` behaviors. This behavior can be used in includes.
+     * 
+     */
     @Import(name="allowPatch")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAllowPatch allowPatch;
 
+    /**
+     * @return Allow HTTP requests using the PATCH method. By default, GET, HEAD, and OPTIONS requests are allowed, and all other methods result in a 501 error. Such content does not cache, and any PATCH requests pass to the origin. See also the `allowDelete`, `allowOptions`, `allowPost`, and `allowPut` behaviors. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorAllowPatch> allowPatch() {
         return Optional.ofNullable(this.allowPatch);
     }
 
+    /**
+     * Allow HTTP requests using the POST method. By default, GET, HEAD, and OPTIONS requests are allowed, and POST requests are denied with 403 error. All other methods result in a 501 error. See also the `allowDelete`, `allowOptions`, `allowPatch`, and `allowPut` behaviors. This behavior can be used in includes.
+     * 
+     */
     @Import(name="allowPost")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAllowPost allowPost;
 
+    /**
+     * @return Allow HTTP requests using the POST method. By default, GET, HEAD, and OPTIONS requests are allowed, and POST requests are denied with 403 error. All other methods result in a 501 error. See also the `allowDelete`, `allowOptions`, `allowPatch`, and `allowPut` behaviors. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorAllowPost> allowPost() {
         return Optional.ofNullable(this.allowPost);
     }
 
+    /**
+     * Allow HTTP requests using the PUT method.  By default, GET, HEAD, and OPTIONS requests are allowed, and all other methods result in a 501 error. Such content does not cache, and any PUT requests pass to the origin. See also the `allowDelete`, `allowOptions`, `allowPatch`, and `allowPost` behaviors. This behavior can be used in includes.
+     * 
+     */
     @Import(name="allowPut")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAllowPut allowPut;
 
+    /**
+     * @return Allow HTTP requests using the PUT method.  By default, GET, HEAD, and OPTIONS requests are allowed, and all other methods result in a 501 error. Such content does not cache, and any PUT requests pass to the origin. See also the `allowDelete`, `allowOptions`, `allowPatch`, and `allowPost` behaviors. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorAllowPut> allowPut() {
         return Optional.ofNullable(this.allowPut);
     }
 
+    /**
+     * Controls whether to allow or deny Chunked Transfer Encoding (CTE) requests to pass to your origin. If your origin supports CTE, you should enable this behavior. This behavior also protects against a known issue when pairing `http2` and `webdav` behaviors within the same rule tree, in which case it&#39;s required. This behavior can be used in includes.
+     * 
+     */
     @Import(name="allowTransferEncoding")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAllowTransferEncoding allowTransferEncoding;
 
+    /**
+     * @return Controls whether to allow or deny Chunked Transfer Encoding (CTE) requests to pass to your origin. If your origin supports CTE, you should enable this behavior. This behavior also protects against a known issue when pairing `http2` and `webdav` behaviors within the same rule tree, in which case it&#39;s required. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorAllowTransferEncoding> allowTransferEncoding() {
         return Optional.ofNullable(this.allowTransferEncoding);
     }
 
+    /**
+     * Sets the maximum age value for the Alternative Services (`Alt-Svc`) header. This behavior can be used in includes.
+     * 
+     */
     @Import(name="altSvcHeader")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAltSvcHeader altSvcHeader;
 
+    /**
+     * @return Sets the maximum age value for the Alternative Services (`Alt-Svc`) header. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorAltSvcHeader> altSvcHeader() {
         return Optional.ofNullable(this.altSvcHeader);
     }
 
+    /**
+     * Enables the API Prioritization Cloudlet, which maintains continuity in user experience by serving an alternate static response when load is too high. You can configure rules using either the Cloudlets Policy Manager application or the `Cloudlets API`. Use this feature serve static API content, such as fallback JSON data.  To serve non-API HTML content, use the `visitorPrioritization` behavior. This behavior can be used in includes.
+     * 
+     */
     @Import(name="apiPrioritization")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritization apiPrioritization;
 
+    /**
+     * @return Enables the API Prioritization Cloudlet, which maintains continuity in user experience by serving an alternate static response when load is too high. You can configure rules using either the Cloudlets Policy Manager application or the `Cloudlets API`. Use this feature serve static API content, such as fallback JSON data.  To serve non-API HTML content, use the `visitorPrioritization` behavior. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritization> apiPrioritization() {
         return Optional.ofNullable(this.apiPrioritization);
     }
 
+    /**
+     * Enables the Application Load Balancer Cloudlet, which automates load balancing based on configurable criteria. To configure this behavior, use either the Cloudlets Policy Manager or the `Cloudlets API` to set up a policy. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="applicationLoadBalancer")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorApplicationLoadBalancer applicationLoadBalancer;
 
+    /**
+     * @return Enables the Application Load Balancer Cloudlet, which automates load balancing based on configurable criteria. To configure this behavior, use either the Cloudlets Policy Manager or the `Cloudlets API` to set up a policy. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorApplicationLoadBalancer> applicationLoadBalancer() {
         return Optional.ofNullable(this.applicationLoadBalancer);
     }
 
+    /**
+     * Allows you to divide your users into different segments based on a persistent cookie. You can configure rules using either the Cloudlets Policy Manager application or the `Cloudlets API`. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="audienceSegmentation")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAudienceSegmentation audienceSegmentation;
 
+    /**
+     * @return Allows you to divide your users into different segments based on a persistent cookie. You can configure rules using either the Cloudlets Policy Manager application or the `Cloudlets API`. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorAudienceSegmentation> audienceSegmentation() {
         return Optional.ofNullable(this.audienceSegmentation);
     }
 
+    /**
+     * This behavior allows standard TLS domain validated certificates to renew automatically. Apply it after using the `Certificate Provisioning System` to request a certificate for a hostname.  To provision certificates programmatically, see the `Certificate Provisioning System API`. This behavior can be used in includes.
+     * 
+     */
     @Import(name="autoDomainValidation")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAutoDomainValidation autoDomainValidation;
 
+    /**
+     * @return This behavior allows standard TLS domain validated certificates to renew automatically. Apply it after using the `Certificate Provisioning System` to request a certificate for a hostname.  To provision certificates programmatically, see the `Certificate Provisioning System API`. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorAutoDomainValidation> autoDomainValidation() {
         return Optional.ofNullable(this.autoDomainValidation);
     }
 
+    /**
+     * Prefix URLs sent to the origin with a base path. This behavior can be used in includes.
+     * 
+     */
     @Import(name="baseDirectory")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorBaseDirectory baseDirectory;
 
+    /**
+     * @return Prefix URLs sent to the origin with a base path. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorBaseDirectory> baseDirectory() {
         return Optional.ofNullable(this.baseDirectory);
     }
 
+    /**
+     * Triggers diagnostic data beacons for use with BOSS, Akamai&#39;s monitoring and diagnostics system. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     @Import(name="bossBeaconing")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorBossBeaconing bossBeaconing;
 
+    /**
+     * @return Triggers diagnostic data beacons for use with BOSS, Akamai&#39;s monitoring and diagnostics system. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorBossBeaconing> bossBeaconing() {
         return Optional.ofNullable(this.bossBeaconing);
     }
 
+    /**
+     * Provides per-HTTP transaction visibility into a request for content, regardless of how deep the request goes into the Akamai platform. The `Akamai-Request-BC` response header includes various data, such as network health and the location in the Akamai network used to serve content, which simplifies log review for troubleshooting. This behavior can be used in includes.
+     * 
+     */
     @Import(name="breadcrumbs")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorBreadcrumbs breadcrumbs;
 
+    /**
+     * @return Provides per-HTTP transaction visibility into a request for content, regardless of how deep the request goes into the Akamai platform. The `Akamai-Request-BC` response header includes various data, such as network health and the location in the Akamai network used to serve content, which simplifies log review for troubleshooting. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorBreadcrumbs> breadcrumbs() {
         return Optional.ofNullable(this.breadcrumbs);
     }
 
+    /**
+     * This behavior simulates an origin connection problem, typically to test an accompanying `failAction` policy. This behavior can be used in includes.
+     * 
+     */
     @Import(name="breakConnection")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorBreakConnection breakConnection;
 
+    /**
+     * @return This behavior simulates an origin connection problem, typically to test an accompanying `failAction` policy. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorBreakConnection> breakConnection() {
         return Optional.ofNullable(this.breakConnection);
     }
 
+    /**
+     * Accesses Brotli-compressed assets from your origin and caches them on edge servers. This doesn&#39;t compress resources within the content delivery network in real time. You need to set up Brotli compression separately on your origin. If a requesting client doesn&#39;t support Brotli, edge servers deliver non-Brotli resources. This behavior can be used in includes.
+     * 
+     */
     @Import(name="brotli")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorBrotli brotli;
 
+    /**
+     * @return Accesses Brotli-compressed assets from your origin and caches them on edge servers. This doesn&#39;t compress resources within the content delivery network in real time. You need to set up Brotli compression separately on your origin. If a requesting client doesn&#39;t support Brotli, edge servers deliver non-Brotli resources. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorBrotli> brotli() {
         return Optional.ofNullable(this.brotli);
     }
 
+    /**
+     * Caches the origin&#39;s error responses to decrease server load. Applies for 10 seconds by default to the following HTTP codes: `204`, `305`, `404`, `405`, `501`, `502`, `503`, `504`, and `505`. This behavior can be used in includes.
+     * 
+     */
     @Import(name="cacheError")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCacheError cacheError;
 
+    /**
+     * @return Caches the origin&#39;s error responses to decrease server load. Applies for 10 seconds by default to the following HTTP codes: `204`, `305`, `404`, `405`, `501`, `502`, `503`, `504`, and `505`. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorCacheError> cacheError() {
         return Optional.ofNullable(this.cacheError);
     }
 
+    /**
+     * Controls which query parameters, headers, and cookies are included in or excluded from the cache key identifier. This behavior can be used in includes.
+     * 
+     */
     @Import(name="cacheId")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCacheId cacheId;
 
+    /**
+     * @return Controls which query parameters, headers, and cookies are included in or excluded from the cache key identifier. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorCacheId> cacheId() {
         return Optional.ofNullable(this.cacheId);
     }
 
+    /**
+     * By default, cache keys are generated under the assumption that path and filename components are case-sensitive, so that `File.html` and `file.html` use separate cache keys. Enabling this behavior forces URL components whose case varies to resolve to the same cache key. Enable this behavior if your origin server is already case-insensitive, such as those based on Microsoft IIS. This behavior can be used in includes.
+     * 
+     */
     @Import(name="cacheKeyIgnoreCase")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCacheKeyIgnoreCase cacheKeyIgnoreCase;
 
+    /**
+     * @return By default, cache keys are generated under the assumption that path and filename components are case-sensitive, so that `File.html` and `file.html` use separate cache keys. Enabling this behavior forces URL components whose case varies to resolve to the same cache key. Enable this behavior if your origin server is already case-insensitive, such as those based on Microsoft IIS. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorCacheKeyIgnoreCase> cacheKeyIgnoreCase() {
         return Optional.ofNullable(this.cacheKeyIgnoreCase);
     }
 
+    /**
+     * By default, cache keys are formed as URLs with full query strings. This behavior allows you to consolidate cached objects based on specified sets of query parameters. This behavior can be used in includes.
+     * 
+     */
     @Import(name="cacheKeyQueryParams")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCacheKeyQueryParams cacheKeyQueryParams;
 
+    /**
+     * @return By default, cache keys are formed as URLs with full query strings. This behavior allows you to consolidate cached objects based on specified sets of query parameters. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorCacheKeyQueryParams> cacheKeyQueryParams() {
         return Optional.ofNullable(this.cacheKeyQueryParams);
     }
 
+    /**
+     * This behavior rewrites a default cache key&#39;s path. Contact Akamai Professional Services for help configuring it. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     @Import(name="cacheKeyRewrite")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCacheKeyRewrite cacheKeyRewrite;
 
+    /**
+     * @return This behavior rewrites a default cache key&#39;s path. Contact Akamai Professional Services for help configuring it. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorCacheKeyRewrite> cacheKeyRewrite() {
         return Optional.ofNullable(this.cacheKeyRewrite);
     }
 
+    /**
+     * By default, POST requests are passed to the origin. This behavior overrides the default, and allows you to cache POST responses. This behavior can be used in includes.
+     * 
+     */
     @Import(name="cachePost")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCachePost cachePost;
 
+    /**
+     * @return By default, POST requests are passed to the origin. This behavior overrides the default, and allows you to cache POST responses. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorCachePost> cachePost() {
         return Optional.ofNullable(this.cachePost);
     }
 
+    /**
+     * Controls the caching of HTTP 302 and 307 temporary redirects. By default, Akamai edge servers don&#39;t cache them. Enabling this behavior instructs edge servers to allow these redirects to be cached the same as HTTP 200 responses. This behavior can be used in includes.
+     * 
+     */
     @Import(name="cacheRedirect")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCacheRedirect cacheRedirect;
 
+    /**
+     * @return Controls the caching of HTTP 302 and 307 temporary redirects. By default, Akamai edge servers don&#39;t cache them. Enabling this behavior instructs edge servers to allow these redirects to be cached the same as HTTP 200 responses. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorCacheRedirect> cacheRedirect() {
         return Optional.ofNullable(this.cacheRedirect);
     }
 
+    /**
+     * This adds a cache tag to the requested object. With cache tags, you can flexibly fast purge tagged segments of your cached content. You can either define these tags with an `Edge-Cache-Tag` header at the origin server level, or use this behavior to directly add a cache tag to the object as the edge server caches it. The `cacheTag` behavior can only take a single value, including a variable. If you want to specify more tags for an object, add a few instances of this behavior to your configuration. This behavior can be used in includes.
+     * 
+     */
     @Import(name="cacheTag")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCacheTag cacheTag;
 
+    /**
+     * @return This adds a cache tag to the requested object. With cache tags, you can flexibly fast purge tagged segments of your cached content. You can either define these tags with an `Edge-Cache-Tag` header at the origin server level, or use this behavior to directly add a cache tag to the object as the edge server caches it. The `cacheTag` behavior can only take a single value, including a variable. If you want to specify more tags for an object, add a few instances of this behavior to your configuration. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorCacheTag> cacheTag() {
         return Optional.ofNullable(this.cacheTag);
     }
 
+    /**
+     * Cache tags are comma-separated string values you define within an `Edge-Cache-Tag` header. You can use them to flexibly fast purge tagged segments of your cached content. You can either define these headers at the origin server level, or use the `modifyOutgoingResponseHeader` behavior to configure them at the edge.  Apply this behavior to confirm you&#39;re deploying the intended set of cache tags to your content. This behavior can be used in includes.
+     * 
+     */
     @Import(name="cacheTagVisible")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCacheTagVisible cacheTagVisible;
 
+    /**
+     * @return Cache tags are comma-separated string values you define within an `Edge-Cache-Tag` header. You can use them to flexibly fast purge tagged segments of your cached content. You can either define these headers at the origin server level, or use the `modifyOutgoingResponseHeader` behavior to configure them at the edge.  Apply this behavior to confirm you&#39;re deploying the intended set of cache tags to your content. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorCacheTagVisible> cacheTagVisible() {
         return Optional.ofNullable(this.cacheTagVisible);
     }
 
+    /**
+     * Control content caching on edge servers: whether or not to cache, whether to honor the origin&#39;s caching headers, and for how long to cache.  Note that any `NO_STORE` or `BYPASS_CACHE` HTTP headers set on the origin&#39;s content override this behavior. For more details on how caching works in Property Manager, see the `Learn about caching` section in the guide. This behavior can be used in includes.
+     * 
+     */
     @Import(name="caching")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCaching caching;
 
+    /**
+     * @return Control content caching on edge servers: whether or not to cache, whether to honor the origin&#39;s caching headers, and for how long to cache.  Note that any `NO_STORE` or `BYPASS_CACHE` HTTP headers set on the origin&#39;s content override this behavior. For more details on how caching works in Property Manager, see the `Learn about caching` section in the guide. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorCaching> caching() {
         return Optional.ofNullable(this.caching);
     }
 
+    /**
+     * Forward client requests to the origin server for authorization, along with optional `Set-Cookie` headers, useful when you need to maintain tight access control. The edge server forwards an `If-Modified-Since` header, to which the origin needs to respond with a `304` (Not-Modified) HTTP status when authorization succeeds. If so, the edge server responds to the client with the cached object, since it does not need to be re-acquired from the origin. This behavior can be used in includes.
+     * 
+     */
     @Import(name="centralAuthorization")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCentralAuthorization centralAuthorization;
 
+    /**
+     * @return Forward client requests to the origin server for authorization, along with optional `Set-Cookie` headers, useful when you need to maintain tight access control. The edge server forwards an `If-Modified-Since` header, to which the origin needs to respond with a `304` (Not-Modified) HTTP status when authorization succeeds. If so, the edge server responds to the client with the cached object, since it does not need to be re-acquired from the origin. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorCentralAuthorization> centralAuthorization() {
         return Optional.ofNullable(this.centralAuthorization);
     }
 
+    /**
+     * Controls whether the edge server chases any redirects served from the origin. This behavior can be used in includes.
+     * 
+     */
     @Import(name="chaseRedirects")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorChaseRedirects chaseRedirects;
 
+    /**
+     * @return Controls whether the edge server chases any redirects served from the origin. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorChaseRedirects> chaseRedirects() {
         return Optional.ofNullable(this.chaseRedirects);
     }
 
+    /**
+     * Specifies characteristics of the client ecosystem. Akamai uses this information to optimize your metadata configuration, which may result in better end-user performance. This behavior can be used in includes.
+     * 
+     */
     @Import(name="clientCharacteristics")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorClientCharacteristics clientCharacteristics;
 
+    /**
+     * @return Specifies characteristics of the client ecosystem. Akamai uses this information to optimize your metadata configuration, which may result in better end-user performance. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorClientCharacteristics> clientCharacteristics() {
         return Optional.ofNullable(this.clientCharacteristics);
     }
 
+    /**
+     * Cloud Interconnects forwards traffic from edge servers to your cloud origin through Private Network Interconnects (PNIs), helping to reduce the egress costs at the origin. Supports origins hosted by Google Cloud Provider (GCP). This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="cloudInterconnects")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCloudInterconnects cloudInterconnects;
 
+    /**
+     * @return Cloud Interconnects forwards traffic from edge servers to your cloud origin through Private Network Interconnects (PNIs), helping to reduce the egress costs at the origin. Supports origins hosted by Google Cloud Provider (GCP). This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorCloudInterconnects> cloudInterconnects() {
         return Optional.ofNullable(this.cloudInterconnects);
     }
 
+    /**
+     * `Cloud Wrapper` maximizes origin offload for large libraries of video, game, and software downloads by optimizing data caches in regions nearest to your origin. You can&#39;t use this behavior in conjunction with `sureRoute` or `tieredDistribution`. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="cloudWrapper")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCloudWrapper cloudWrapper;
 
+    /**
+     * @return `Cloud Wrapper` maximizes origin offload for large libraries of video, game, and software downloads by optimizing data caches in regions nearest to your origin. You can&#39;t use this behavior in conjunction with `sureRoute` or `tieredDistribution`. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorCloudWrapper> cloudWrapper() {
         return Optional.ofNullable(this.cloudWrapper);
     }
 
+    /**
+     * Your account representative uses this behavior to implement a customized failover configuration on your behalf. Use Cloud Wrapper Advanced with an enabled `cloudWrapper` behavior in the same rule. This behavior is for internal usage only. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="cloudWrapperAdvanced")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCloudWrapperAdvanced cloudWrapperAdvanced;
 
+    /**
+     * @return Your account representative uses this behavior to implement a customized failover configuration on your behalf. Use Cloud Wrapper Advanced with an enabled `cloudWrapper` behavior in the same rule. This behavior is for internal usage only. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorCloudWrapperAdvanced> cloudWrapperAdvanced() {
         return Optional.ofNullable(this.cloudWrapperAdvanced);
     }
 
+    /**
+     * This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="conditionalOrigin")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorConditionalOrigin conditionalOrigin;
 
+    /**
+     * @return This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorConditionalOrigin> conditionalOrigin() {
         return Optional.ofNullable(this.conditionalOrigin);
     }
 
+    /**
+     * This behavior constructs an HTTP response, complete with HTTP status code and body, to serve from the edge independently of your origin. It supports all request methods except for `POST`. This behavior can be used in includes.
+     * 
+     */
     @Import(name="constructResponse")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorConstructResponse constructResponse;
 
+    /**
+     * @return This behavior constructs an HTTP response, complete with HTTP status code and body, to serve from the edge independently of your origin. It supports all request methods except for `POST`. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorConstructResponse> constructResponse() {
         return Optional.ofNullable(this.constructResponse);
     }
 
+    /**
+     * Specifies characteristics of the delivered content. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior can be used in includes.
+     * 
+     */
     @Import(name="contentCharacteristics")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristics contentCharacteristics;
 
+    /**
+     * @return Specifies characteristics of the delivered content. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristics> contentCharacteristics() {
         return Optional.ofNullable(this.contentCharacteristics);
     }
 
+    /**
+     * Specifies characteristics of the delivered content. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior can be used in includes.
+     * 
+     */
     @Import(name="contentCharacteristicsAmd")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsAmd contentCharacteristicsAmd;
 
+    /**
+     * @return Specifies characteristics of the delivered content. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsAmd> contentCharacteristicsAmd() {
         return Optional.ofNullable(this.contentCharacteristicsAmd);
     }
 
+    /**
+     * Specifies characteristics of the delivered content. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior can be used in includes.
+     * 
+     */
     @Import(name="contentCharacteristicsDd")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsDd contentCharacteristicsDd;
 
+    /**
+     * @return Specifies characteristics of the delivered content. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsDd> contentCharacteristicsDd() {
         return Optional.ofNullable(this.contentCharacteristicsDd);
     }
 
+    /**
+     * Specifies characteristics of the delivered content, specifically targeted to delivering large files. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior can be used in includes.
+     * 
+     */
     @Import(name="contentCharacteristicsWsdLargeFile")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsWsdLargeFile contentCharacteristicsWsdLargeFile;
 
+    /**
+     * @return Specifies characteristics of the delivered content, specifically targeted to delivering large files. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsWsdLargeFile> contentCharacteristicsWsdLargeFile() {
         return Optional.ofNullable(this.contentCharacteristicsWsdLargeFile);
     }
 
+    /**
+     * Specifies characteristics of the delivered content, specifically targeted to delivering live video. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior can be used in includes.
+     * 
+     */
     @Import(name="contentCharacteristicsWsdLive")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsWsdLive contentCharacteristicsWsdLive;
 
+    /**
+     * @return Specifies characteristics of the delivered content, specifically targeted to delivering live video. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsWsdLive> contentCharacteristicsWsdLive() {
         return Optional.ofNullable(this.contentCharacteristicsWsdLive);
     }
 
+    /**
+     * Specifies characteristics of the delivered content, specifically targeted to delivering on-demand video. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior can be used in includes.
+     * 
+     */
     @Import(name="contentCharacteristicsWsdVod")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsWsdVod contentCharacteristicsWsdVod;
 
+    /**
+     * @return Specifies characteristics of the delivered content, specifically targeted to delivering on-demand video. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsWsdVod> contentCharacteristicsWsdVod() {
         return Optional.ofNullable(this.contentCharacteristicsWsdVod);
     }
 
+    /**
+     * Content Preposition. This behavior can be used in includes.
+     * 
+     */
     @Import(name="contentPrePosition")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorContentPrePosition contentPrePosition;
 
+    /**
+     * @return Content Preposition. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorContentPrePosition> contentPrePosition() {
         return Optional.ofNullable(this.contentPrePosition);
     }
 
+    /**
+     * Content Targeting is based on `EdgeScape`, Akamai&#39;s location-based access control system.  You can use it to allow or deny access to a set of geographic regions or IP addresses. This behavior can be used in includes.
+     * 
+     */
     @Import(name="contentTargetingProtection")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorContentTargetingProtection contentTargetingProtection;
 
+    /**
+     * @return Content Targeting is based on `EdgeScape`, Akamai&#39;s location-based access control system.  You can use it to allow or deny access to a set of geographic regions or IP addresses. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorContentTargetingProtection> contentTargetingProtection() {
         return Optional.ofNullable(this.contentTargetingProtection);
     }
 
+    /**
+     * Cross-origin resource sharing (CORS) allows web pages in one domain to access restricted resources from your domain. Specify external origin hostnames, methods, and headers that you want to accept via HTTP response headers. Full support of CORS requires allowing requests that use the OPTIONS method. See `allowOptions`. This behavior can be used in includes.
+     * 
+     */
     @Import(name="corsSupport")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCorsSupport corsSupport;
 
+    /**
+     * @return Cross-origin resource sharing (CORS) allows web pages in one domain to access restricted resources from your domain. Specify external origin hostnames, methods, and headers that you want to accept via HTTP response headers. Full support of CORS requires allowing requests that use the OPTIONS method. See `allowOptions`. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorCorsSupport> corsSupport() {
         return Optional.ofNullable(this.corsSupport);
     }
 
+    /**
+     * Content Provider Codes (CP codes) allow you to distinguish various reporting and billing segments. You receive a CP code when purchasing Akamai service, and you need it to access properties. This behavior allows you to apply any valid CP code, including additional ones you may request from Akamai Professional Services. For a CP code to be valid, it needs to belong to the same contract and be associated with the same product as the property, and the group needs access to it. This behavior can be used in includes.
+     * 
+     */
     @Import(name="cpCode")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCpCode cpCode;
 
+    /**
+     * @return Content Provider Codes (CP codes) allow you to distinguish various reporting and billing segments. You receive a CP code when purchasing Akamai service, and you need it to access properties. This behavior allows you to apply any valid CP code, including additional ones you may request from Akamai Professional Services. For a CP code to be valid, it needs to belong to the same contract and be associated with the same product as the property, and the group needs access to it. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorCpCode> cpCode() {
         return Optional.ofNullable(this.cpCode);
     }
 
+    /**
+     * Allows you to insert a customized XML metadata behavior into any property&#39;s rule tree.  Talk to your Akamai representative to implement the customized behavior. Once it&#39;s ready, run PAPI&#39;s `List custom behaviors` operation, then apply the relevant `behaviorId` value from the response within the current `customBehavior`. See `Custom behaviors and overrides` for guidance on custom metadata behaviors. This behavior can be used in includes.
+     * 
+     */
     @Import(name="customBehavior")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCustomBehavior customBehavior;
 
+    /**
+     * @return Allows you to insert a customized XML metadata behavior into any property&#39;s rule tree.  Talk to your Akamai representative to implement the customized behavior. Once it&#39;s ready, run PAPI&#39;s `List custom behaviors` operation, then apply the relevant `behaviorId` value from the response within the current `customBehavior`. See `Custom behaviors and overrides` for guidance on custom metadata behaviors. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorCustomBehavior> customBehavior() {
         return Optional.ofNullable(this.customBehavior);
     }
 
+    /**
+     * The `DataStream` reporting service provides real-time logs on application activity, including aggregated metrics on complete request and response cycles and origin response times.  Apply this behavior to report on this set of traffic.  Use the `DataStream API` to aggregate the data. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="datastream")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDatastream datastream;
 
+    /**
+     * @return The `DataStream` reporting service provides real-time logs on application activity, including aggregated metrics on complete request and response cycles and origin response times.  Apply this behavior to report on this set of traffic.  Use the `DataStream API` to aggregate the data. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorDatastream> datastream() {
         return Optional.ofNullable(this.datastream);
     }
 
+    /**
+     * The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. (The `IoT Edge Connect API` allows programmatic access.) This behavior allows you to select previously reserved namespaces and set the protocols for users to publish and receive messages within these namespaces.  Use the `verifyJsonWebTokenForDcp` behavior to control access. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="dcp")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDcp dcp;
 
+    /**
+     * @return The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. (The `IoT Edge Connect API` allows programmatic access.) This behavior allows you to select previously reserved namespaces and set the protocols for users to publish and receive messages within these namespaces.  Use the `verifyJsonWebTokenForDcp` behavior to control access. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorDcp> dcp() {
         return Optional.ofNullable(this.dcp);
     }
 
+    /**
+     * The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. In conjunction with `dcpAuthVariableExtractor`, this behavior affects how clients can authenticate themselves to edge servers, and which groups within namespaces are authorized to access topics. It transforms a source string value extracted from the client certificate and stored as a variable, then generates a hash value based on the selected algorithm, for use in authenticating the client request. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="dcpAuthHmacTransformation")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthHmacTransformation dcpAuthHmacTransformation;
 
+    /**
+     * @return The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. In conjunction with `dcpAuthVariableExtractor`, this behavior affects how clients can authenticate themselves to edge servers, and which groups within namespaces are authorized to access topics. It transforms a source string value extracted from the client certificate and stored as a variable, then generates a hash value based on the selected algorithm, for use in authenticating the client request. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthHmacTransformation> dcpAuthHmacTransformation() {
         return Optional.ofNullable(this.dcpAuthHmacTransformation);
     }
 
+    /**
+     * The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. In conjunction with `dcpAuthVariableExtractor`, this behavior affects how clients can authenticate themselves to edge servers, and which groups within namespaces are authorized to access topics. It transforms a source string value extracted from the client certificate and stored as a variable, then transforms the string based on a regular expression search pattern, for use in authenticating the client request. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="dcpAuthRegexTransformation")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthRegexTransformation dcpAuthRegexTransformation;
 
+    /**
+     * @return The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. In conjunction with `dcpAuthVariableExtractor`, this behavior affects how clients can authenticate themselves to edge servers, and which groups within namespaces are authorized to access topics. It transforms a source string value extracted from the client certificate and stored as a variable, then transforms the string based on a regular expression search pattern, for use in authenticating the client request. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthRegexTransformation> dcpAuthRegexTransformation() {
         return Optional.ofNullable(this.dcpAuthRegexTransformation);
     }
 
+    /**
+     * The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. In conjunction with `dcpAuthVariableExtractor`, this behavior affects how clients can authenticate themselves to edge servers, and which groups within namespaces are authorized to access topics. It transforms a source string value extracted from the client certificate and stored as a variable, then extracts a substring, for use in authenticating the client request. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="dcpAuthSubstringTransformation")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthSubstringTransformation dcpAuthSubstringTransformation;
 
+    /**
+     * @return The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. In conjunction with `dcpAuthVariableExtractor`, this behavior affects how clients can authenticate themselves to edge servers, and which groups within namespaces are authorized to access topics. It transforms a source string value extracted from the client certificate and stored as a variable, then extracts a substring, for use in authenticating the client request. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthSubstringTransformation> dcpAuthSubstringTransformation() {
         return Optional.ofNullable(this.dcpAuthSubstringTransformation);
     }
 
+    /**
+     * The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. This behavior affects how clients can authenticate themselves to edge servers, and which groups within namespaces are authorized to access topics. When enabled, this behavior allows end users to authenticate their requests with valid x509 client certificates. Either a client identifier or access authorization groups are required to make the request valid. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="dcpAuthVariableExtractor")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthVariableExtractor dcpAuthVariableExtractor;
 
+    /**
+     * @return The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. This behavior affects how clients can authenticate themselves to edge servers, and which groups within namespaces are authorized to access topics. When enabled, this behavior allows end users to authenticate their requests with valid x509 client certificates. Either a client identifier or access authorization groups are required to make the request valid. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthVariableExtractor> dcpAuthVariableExtractor() {
         return Optional.ofNullable(this.dcpAuthVariableExtractor);
     }
 
+    /**
+     * The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. This behavior defines a set of default authorization groups to add to each request the property configuration controls.  These groups have access regardless of the authentication method you use, either JWT using the `verifyJsonWebTokenForDcp` behavior, or mutual authentication using the `dcpAuthVariableExtractor` behavior to control where authorization groups are extracted from within certificates. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="dcpDefaultAuthzGroups")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDcpDefaultAuthzGroups dcpDefaultAuthzGroups;
 
+    /**
+     * @return The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. This behavior defines a set of default authorization groups to add to each request the property configuration controls.  These groups have access regardless of the authentication method you use, either JWT using the `verifyJsonWebTokenForDcp` behavior, or mutual authentication using the `dcpAuthVariableExtractor` behavior to control where authorization groups are extracted from within certificates. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorDcpDefaultAuthzGroups> dcpDefaultAuthzGroups() {
         return Optional.ofNullable(this.dcpDefaultAuthzGroups);
     }
 
+    /**
+     * The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. This behavior allows Akamai-external clients to use developer test accounts in a shared environment. In conjunction with `verifyJsonWebTokenForDcp`, this behavior allows you to use your own JWTs in your requests, or those generated by Akamai. It lets you either enable the default JWT server for your test configuration by setting the authentication endpoint to a default path, or specify custom settings for your JWT server and the authentication endpoint. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="dcpDevRelations")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDcpDevRelations dcpDevRelations;
 
+    /**
+     * @return The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. This behavior allows Akamai-external clients to use developer test accounts in a shared environment. In conjunction with `verifyJsonWebTokenForDcp`, this behavior allows you to use your own JWTs in your requests, or those generated by Akamai. It lets you either enable the default JWT server for your test configuration by setting the authentication endpoint to a default path, or specify custom settings for your JWT server and the authentication endpoint. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorDcpDevRelations> dcpDevRelations() {
         return Optional.ofNullable(this.dcpDevRelations);
     }
 
+    /**
+     * INTERNAL ONLY: The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. This behavior lets you configure the real time authentication to edge servers. This behavior is for internal usage only. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="dcpRealTimeAuth")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDcpRealTimeAuth dcpRealTimeAuth;
 
+    /**
+     * @return INTERNAL ONLY: The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. This behavior lets you configure the real time authentication to edge servers. This behavior is for internal usage only. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorDcpRealTimeAuth> dcpRealTimeAuth() {
         return Optional.ofNullable(this.dcpRealTimeAuth);
     }
 
+    /**
+     * A static behavior that&#39;s required when specifying the Cloud Monitor module&#39;s (`edgeConnect` behavior. You can only apply this behavior if the property is marked as secure. See `Secure property requirements` for guidance. This behavior can be used in includes.
+     * 
+     */
     @Import(name="deliveryReceipt")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDeliveryReceipt deliveryReceipt;
 
+    /**
+     * @return A static behavior that&#39;s required when specifying the Cloud Monitor module&#39;s (`edgeConnect` behavior. You can only apply this behavior if the property is marked as secure. See `Secure property requirements` for guidance. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorDeliveryReceipt> deliveryReceipt() {
         return Optional.ofNullable(this.deliveryReceipt);
     }
 
+    /**
+     * Assuming a condition in the rule matches, this denies access to the requested content. For example, a `userLocation` match paired with this behavior would deny requests from a specified part of the world. This behavior can be used in includes.
+     * 
+     */
     @Import(name="denyAccess")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDenyAccess denyAccess;
 
+    /**
+     * @return Assuming a condition in the rule matches, this denies access to the requested content. For example, a `userLocation` match paired with this behavior would deny requests from a specified part of the world. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorDenyAccess> denyAccess() {
         return Optional.ofNullable(this.denyAccess);
     }
 
+    /**
+     * A static behavior required for all properties that implement a failover under the Cloud Security Failover product. This behavior can be used in includes.
+     * 
+     */
     @Import(name="denyDirectFailoverAccess")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDenyDirectFailoverAccess denyDirectFailoverAccess;
 
+    /**
+     * @return A static behavior required for all properties that implement a failover under the Cloud Security Failover product. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorDenyDirectFailoverAccess> denyDirectFailoverAccess() {
         return Optional.ofNullable(this.denyDirectFailoverAccess);
     }
 
+    /**
+     * By default, source URLs serve as cache IDs on edge servers. Electronic Data Capture allows you to specify an additional set of device characteristics to generate separate cache keys. Use this in conjunction with the `deviceCharacteristicHeader` behavior. This behavior can be used in includes.
+     * 
+     */
     @Import(name="deviceCharacteristicCacheId")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDeviceCharacteristicCacheId deviceCharacteristicCacheId;
 
+    /**
+     * @return By default, source URLs serve as cache IDs on edge servers. Electronic Data Capture allows you to specify an additional set of device characteristics to generate separate cache keys. Use this in conjunction with the `deviceCharacteristicHeader` behavior. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorDeviceCharacteristicCacheId> deviceCharacteristicCacheId() {
         return Optional.ofNullable(this.deviceCharacteristicCacheId);
     }
 
+    /**
+     * Sends selected information about requesting devices to the origin server, in the form of an `X-Akamai-Device-Characteristics` HTTP header. Use in conjunction with the `deviceCharacteristicCacheId` behavior. This behavior can be used in includes.
+     * 
+     */
     @Import(name="deviceCharacteristicHeader")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDeviceCharacteristicHeader deviceCharacteristicHeader;
 
+    /**
+     * @return Sends selected information about requesting devices to the origin server, in the form of an `X-Akamai-Device-Characteristics` HTTP header. Use in conjunction with the `deviceCharacteristicCacheId` behavior. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorDeviceCharacteristicHeader> deviceCharacteristicHeader() {
         return Optional.ofNullable(this.deviceCharacteristicHeader);
     }
 
+    /**
+     * Allow an edge server to use an expired DNS record when forwarding a request to your origin. The `type A` DNS record refreshes `after` content is served to the end user, so there is no wait for the DNS resolution. Avoid this behavior if you want to be able to disable a server immediately after its DNS record expires. This behavior can be used in includes.
+     * 
+     */
     @Import(name="dnsAsyncRefresh")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDnsAsyncRefresh dnsAsyncRefresh;
 
+    /**
+     * @return Allow an edge server to use an expired DNS record when forwarding a request to your origin. The `type A` DNS record refreshes `after` content is served to the end user, so there is no wait for the DNS resolution. Avoid this behavior if you want to be able to disable a server immediately after its DNS record expires. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorDnsAsyncRefresh> dnsAsyncRefresh() {
         return Optional.ofNullable(this.dnsAsyncRefresh);
     }
 
+    /**
+     * Allows edge servers to refresh your origin&#39;s DNS record independently from end-user requests. The `type A` DNS record refreshes before the origin&#39;s DNS record expires. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     @Import(name="dnsPrefresh")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDnsPrefresh dnsPrefresh;
 
+    /**
+     * @return Allows edge servers to refresh your origin&#39;s DNS record independently from end-user requests. The `type A` DNS record refreshes before the origin&#39;s DNS record expires. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorDnsPrefresh> dnsPrefresh() {
         return Optional.ofNullable(this.dnsPrefresh);
     }
 
+    /**
+     * Serve static objects to the end-user client over HTTPS, but fetch them from the origin via HTTP. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="downgradeProtocol")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDowngradeProtocol downgradeProtocol;
 
+    /**
+     * @return Serve static objects to the end-user client over HTTPS, but fetch them from the origin via HTTP. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorDowngradeProtocol> downgradeProtocol() {
         return Optional.ofNullable(this.downgradeProtocol);
     }
 
+    /**
+     * The `Internet of Things: OTA Updates` product allows customers to securely distribute firmware to devices over cellular networks.  Based on match criteria that executes a rule, this behavior logs requests to the OTA servers as completed in aggregated and individual reports. This behavior can be used in includes.
+     * 
+     */
     @Import(name="downloadCompleteMarker")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDownloadCompleteMarker downloadCompleteMarker;
 
+    /**
+     * @return The `Internet of Things: OTA Updates` product allows customers to securely distribute firmware to devices over cellular networks.  Based on match criteria that executes a rule, this behavior logs requests to the OTA servers as completed in aggregated and individual reports. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorDownloadCompleteMarker> downloadCompleteMarker() {
         return Optional.ofNullable(this.downloadCompleteMarker);
     }
 
+    /**
+     * The `Internet of Things: OTA Updates` product allows customers to securely distribute firmware to devices over cellular networks. Based on match criteria that executes a rule, this behavior allows requests to the `OTA Updates API` for a list of completed downloads to individual vehicles. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="downloadNotification")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDownloadNotification downloadNotification;
 
+    /**
+     * @return The `Internet of Things: OTA Updates` product allows customers to securely distribute firmware to devices over cellular networks. Based on match criteria that executes a rule, this behavior allows requests to the `OTA Updates API` for a list of completed downloads to individual vehicles. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorDownloadNotification> downloadNotification() {
         return Optional.ofNullable(this.downloadNotification);
     }
 
+    /**
+     * Specify the caching instructions the edge server sends to the end user&#39;s client or client proxies. By default, the cache&#39;s duration is whichever is less: the remaining lifetime of the edge cache, or what the origin&#39;s header specifies. If the origin is set to `no-store` or `bypass-cache`, edge servers send `cache-busting` headers downstream to prevent downstream caching. This behavior can be used in includes.
+     * 
+     */
     @Import(name="downstreamCache")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDownstreamCache downstreamCache;
 
+    /**
+     * @return Specify the caching instructions the edge server sends to the end user&#39;s client or client proxies. By default, the cache&#39;s duration is whichever is less: the remaining lifetime of the edge cache, or what the origin&#39;s header specifies. If the origin is set to `no-store` or `bypass-cache`, edge servers send `cache-busting` headers downstream to prevent downstream caching. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorDownstreamCache> downstreamCache() {
         return Optional.ofNullable(this.downstreamCache);
     }
 
+    /**
+     * Enables `quick retry`, which detects slow forward throughput while fetching an object, and attempts a different forward connection path to avoid congestion. By default, connections under 5 mbps trigger this behavior. When the transfer rate drops below this rate during a connection attempt, quick retry is enabled and a different forward connection path is used. Contact Akamai Professional Services to override this threshold. This behavior can be used in includes.
+     * 
+     */
     @Import(name="dynamicThroughtputOptimization")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDynamicThroughtputOptimization dynamicThroughtputOptimization;
 
+    /**
+     * @return Enables `quick retry`, which detects slow forward throughput while fetching an object, and attempts a different forward connection path to avoid congestion. By default, connections under 5 mbps trigger this behavior. When the transfer rate drops below this rate during a connection attempt, quick retry is enabled and a different forward connection path is used. Contact Akamai Professional Services to override this threshold. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorDynamicThroughtputOptimization> dynamicThroughtputOptimization() {
         return Optional.ofNullable(this.dynamicThroughtputOptimization);
     }
 
+    /**
+     * This overrides the default threshold of 5 Mbps that triggers the `dynamicThroughtputOptimization` behavior, which enables the quick retry feature. Quick retry detects slow forward throughput while fetching an object, and attempts a different forward connection path to avoid congestion. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     @Import(name="dynamicThroughtputOptimizationOverride")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDynamicThroughtputOptimizationOverride dynamicThroughtputOptimizationOverride;
 
+    /**
+     * @return This overrides the default threshold of 5 Mbps that triggers the `dynamicThroughtputOptimization` behavior, which enables the quick retry feature. Quick retry detects slow forward throughput while fetching an object, and attempts a different forward connection path to avoid congestion. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorDynamicThroughtputOptimizationOverride> dynamicThroughtputOptimizationOverride() {
         return Optional.ofNullable(this.dynamicThroughtputOptimizationOverride);
     }
 
+    /**
+     * In conjunction with the `subCustomer` behavior, this optional behavior allows you to control how dynamic web content behaves for your subcustomers using `Akamai Cloud Embed`. This behavior can be used in includes.
+     * 
+     */
     @Import(name="dynamicWebContent")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDynamicWebContent dynamicWebContent;
 
+    /**
+     * @return In conjunction with the `subCustomer` behavior, this optional behavior allows you to control how dynamic web content behaves for your subcustomers using `Akamai Cloud Embed`. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorDynamicWebContent> dynamicWebContent() {
         return Optional.ofNullable(this.dynamicWebContent);
     }
 
+    /**
+     * Uploads a ZIP archive with objects to an existing data set. The target data set stores objects as key-value pairs. The path to an object in the ZIP archive is a key, and the content of an object is a value. For an overview, see `ecmsDatabase`. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="ecmsBulkUpload")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEcmsBulkUpload ecmsBulkUpload;
 
+    /**
+     * @return Uploads a ZIP archive with objects to an existing data set. The target data set stores objects as key-value pairs. The path to an object in the ZIP archive is a key, and the content of an object is a value. For an overview, see `ecmsDatabase`. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorEcmsBulkUpload> ecmsBulkUpload() {
         return Optional.ofNullable(this.ecmsBulkUpload);
     }
 
+    /**
+     * Edge Connect Message Store is available for `Internet of Things: Edge Connect` users. It lets you create databases and data sets within these databases. You can use this object store to save files smaller than 2 GB. `ecmsDatabase` specifies a default database for requests to this property, unless indicated otherwise in the URL. To access objects in the default database, you can skip its name in the URLs. To access objects in a different database, pass its name in the header, query parameter, or a regular expression matching a URL segment. You can also configure the `ecmsDataset` behavior to specify a default data set for requests. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="ecmsDatabase")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEcmsDatabase ecmsDatabase;
 
+    /**
+     * @return Edge Connect Message Store is available for `Internet of Things: Edge Connect` users. It lets you create databases and data sets within these databases. You can use this object store to save files smaller than 2 GB. `ecmsDatabase` specifies a default database for requests to this property, unless indicated otherwise in the URL. To access objects in the default database, you can skip its name in the URLs. To access objects in a different database, pass its name in the header, query parameter, or a regular expression matching a URL segment. You can also configure the `ecmsDataset` behavior to specify a default data set for requests. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorEcmsDatabase> ecmsDatabase() {
         return Optional.ofNullable(this.ecmsDatabase);
     }
 
+    /**
+     * Specifies a default data set for requests to this property unless indicated otherwise in the URL. To access objects in this data set, you can skip the data set name in the URLs. To access objects in a different data set within a database, pass the data set name in the header, query parameter, or a regular expression pattern matching a URL segment. You can also configure the `ecmsDatabase` behavior to specify a default database for requests. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="ecmsDataset")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEcmsDataset ecmsDataset;
 
+    /**
+     * @return Specifies a default data set for requests to this property unless indicated otherwise in the URL. To access objects in this data set, you can skip the data set name in the URLs. To access objects in a different data set within a database, pass the data set name in the header, query parameter, or a regular expression pattern matching a URL segment. You can also configure the `ecmsDatabase` behavior to specify a default database for requests. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorEcmsDataset> ecmsDataset() {
         return Optional.ofNullable(this.ecmsDataset);
     }
 
+    /**
+     * Defines a regular expression to match object keys in custom URLs and to access objects in a data set. You can point custom URLs to access proper values in the target data set. For an overview, see `ecmsDatabase`. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="ecmsObjectKey")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEcmsObjectKey ecmsObjectKey;
 
+    /**
+     * @return Defines a regular expression to match object keys in custom URLs and to access objects in a data set. You can point custom URLs to access proper values in the target data set. For an overview, see `ecmsDatabase`. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorEcmsObjectKey> ecmsObjectKey() {
         return Optional.ofNullable(this.ecmsObjectKey);
     }
 
+    /**
+     * Configures traffic logs for the Cloud Monitor push API. This behavior can be used in includes.
+     * 
+     */
     @Import(name="edgeConnect")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEdgeConnect edgeConnect;
 
+    /**
+     * @return Configures traffic logs for the Cloud Monitor push API. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorEdgeConnect> edgeConnect() {
         return Optional.ofNullable(this.edgeConnect);
     }
 
+    /**
+     * This behavior implements customized Edge Load Balancing features. Contact Akamai Professional Services for help configuring it. This behavior is for internal usage only. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="edgeLoadBalancingAdvanced")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingAdvanced edgeLoadBalancingAdvanced;
 
+    /**
+     * @return This behavior implements customized Edge Load Balancing features. Contact Akamai Professional Services for help configuring it. This behavior is for internal usage only. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingAdvanced> edgeLoadBalancingAdvanced() {
         return Optional.ofNullable(this.edgeLoadBalancingAdvanced);
     }
 
+    /**
+     * The Edge Load Balancing module allows you to specify groups of data centers that implement load balancing, session persistence, and real-time dynamic failover. Enabling ELB routes requests contextually based on location, device, or network, along with optional rules you specify. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="edgeLoadBalancingDataCenter")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingDataCenter edgeLoadBalancingDataCenter;
 
+    /**
+     * @return The Edge Load Balancing module allows you to specify groups of data centers that implement load balancing, session persistence, and real-time dynamic failover. Enabling ELB routes requests contextually based on location, device, or network, along with optional rules you specify. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingDataCenter> edgeLoadBalancingDataCenter() {
         return Optional.ofNullable(this.edgeLoadBalancingDataCenter);
     }
 
+    /**
+     * The Edge Load Balancing module allows you to implement groups of data centers featuring load balancing, session persistence, and real-time dynamic failover. Enabling ELB routes requests contextually based on location, device, or network, along with optional rules you specify. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="edgeLoadBalancingOrigin")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingOrigin edgeLoadBalancingOrigin;
 
+    /**
+     * @return The Edge Load Balancing module allows you to implement groups of data centers featuring load balancing, session persistence, and real-time dynamic failover. Enabling ELB routes requests contextually based on location, device, or network, along with optional rules you specify. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingOrigin> edgeLoadBalancingOrigin() {
         return Optional.ofNullable(this.edgeLoadBalancingOrigin);
     }
 
+    /**
+     * Allows the origin server to use a cookie to ensure requests from Akamai servers are genuine. This behavior can be used in includes.
+     * 
+     */
     @Import(name="edgeOriginAuthorization")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEdgeOriginAuthorization edgeOriginAuthorization;
 
+    /**
+     * @return Allows the origin server to use a cookie to ensure requests from Akamai servers are genuine. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorEdgeOriginAuthorization> edgeOriginAuthorization() {
         return Optional.ofNullable(this.edgeOriginAuthorization);
     }
 
+    /**
+     * This behavior enables the `Edge Redirector Cloudlet` application, which helps you manage large numbers of redirects. With Cloudlets available on your contract, choose `Your services` &gt; `Edge logic Cloudlets` to control the Edge Redirector within `Control Center`. Otherwise use the `Cloudlets API` to configure it programmatically. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="edgeRedirector")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEdgeRedirector edgeRedirector;
 
+    /**
+     * @return This behavior enables the `Edge Redirector Cloudlet` application, which helps you manage large numbers of redirects. With Cloudlets available on your contract, choose `Your services` &gt; `Edge logic Cloudlets` to control the Edge Redirector within `Control Center`. Otherwise use the `Cloudlets API` to configure it programmatically. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorEdgeRedirector> edgeRedirector() {
         return Optional.ofNullable(this.edgeRedirector);
     }
 
+    /**
+     * `EdgeScape` allows you to customize content based on the end user&#39;s geographic location or connection speed. When enabled, the edge server sends a special `X-Akamai-Edgescape` header to the origin server encoding relevant details about the end-user client as key-value pairs. This behavior can be used in includes.
+     * 
+     */
     @Import(name="edgeScape")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEdgeScape edgeScape;
 
+    /**
+     * @return `EdgeScape` allows you to customize content based on the end user&#39;s geographic location or connection speed. When enabled, the edge server sends a special `X-Akamai-Edgescape` header to the origin server encoding relevant details about the end-user client as key-value pairs. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorEdgeScape> edgeScape() {
         return Optional.ofNullable(this.edgeScape);
     }
 
+    /**
+     * Allows edge servers to process edge side include (ESI) code to generate dynamic content. To apply this behavior, you need to match on a `contentType`, `path`, or `filename`. Since this behavior requires more parsing time, you should not apply it to pages that lack ESI code, or to any non-HTML content. This behavior can be used in includes.
+     * 
+     */
     @Import(name="edgeSideIncludes")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEdgeSideIncludes edgeSideIncludes;
 
+    /**
+     * @return Allows edge servers to process edge side include (ESI) code to generate dynamic content. To apply this behavior, you need to match on a `contentType`, `path`, or `filename`. Since this behavior requires more parsing time, you should not apply it to pages that lack ESI code, or to any non-HTML content. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorEdgeSideIncludes> edgeSideIncludes() {
         return Optional.ofNullable(this.edgeSideIncludes);
     }
 
+    /**
+     * `EdgeWorkers` are JavaScript applications that allow you to manipulate your web traffic on edge servers outside of Property Manager behaviors, and deployed independently from your configuration&#39;s logic.  This behavior applies an EdgeWorker to a set of edge requests. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="edgeWorker")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEdgeWorker edgeWorker;
 
+    /**
+     * @return `EdgeWorkers` are JavaScript applications that allow you to manipulate your web traffic on edge servers outside of Property Manager behaviors, and deployed independently from your configuration&#39;s logic.  This behavior applies an EdgeWorker to a set of edge requests. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorEdgeWorker> edgeWorker() {
         return Optional.ofNullable(this.edgeWorker);
     }
 
+    /**
+     * Enables the Enhanced Akamai Protocol, a suite of advanced routing and transport optimizations that increase your website&#39;s performance and reliability. It is only available to specific applications, and requires a special routing from edge to origin. This behavior can be used in includes.
+     * 
+     */
     @Import(name="enhancedAkamaiProtocol")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEnhancedAkamaiProtocol enhancedAkamaiProtocol;
 
+    /**
+     * @return Enables the Enhanced Akamai Protocol, a suite of advanced routing and transport optimizations that increase your website&#39;s performance and reliability. It is only available to specific applications, and requires a special routing from edge to origin. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorEnhancedAkamaiProtocol> enhancedAkamaiProtocol() {
         return Optional.ofNullable(this.enhancedAkamaiProtocol);
     }
 
+    /**
+     * Enhanced Proxy Detection (EPD) leverages the GeoGuard service provided by GeoComply to add proxy detection and location spoofing protection. It identifies requests for your content that have been redirected from an unwanted source through a proxy. You can then allow, deny, or redirect these requests. This behavior can be used in includes.
+     * 
+     */
     @Import(name="enhancedProxyDetection")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEnhancedProxyDetection enhancedProxyDetection;
 
+    /**
+     * @return Enhanced Proxy Detection (EPD) leverages the GeoGuard service provided by GeoComply to add proxy detection and location spoofing protection. It identifies requests for your content that have been redirected from an unwanted source through a proxy. You can then allow, deny, or redirect these requests. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorEnhancedProxyDetection> enhancedProxyDetection() {
         return Optional.ofNullable(this.enhancedProxyDetection);
     }
 
+    /**
+     * This behavior identifies unwanted requests from an anonymous proxy. This and the `enhancedProxyDetection` behavior work together and need to be included either in the same rule, or in the default one. This behavior can be used in includes.
+     * 
+     */
     @Import(name="epdForwardHeaderEnrichment")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEpdForwardHeaderEnrichment epdForwardHeaderEnrichment;
 
+    /**
+     * @return This behavior identifies unwanted requests from an anonymous proxy. This and the `enhancedProxyDetection` behavior work together and need to be included either in the same rule, or in the default one. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorEpdForwardHeaderEnrichment> epdForwardHeaderEnrichment() {
         return Optional.ofNullable(this.epdForwardHeaderEnrichment);
     }
 
+    /**
+     * Specifies how to respond when the origin is not available: by serving stale content, by serving an error page, or by redirecting.  To apply this behavior, you should match on an `originTimeout` or `matchResponseCode`. This behavior can be used in includes.
+     * 
+     */
     @Import(name="failAction")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorFailAction failAction;
 
+    /**
+     * @return Specifies how to respond when the origin is not available: by serving stale content, by serving an error page, or by redirecting.  To apply this behavior, you should match on an `originTimeout` or `matchResponseCode`. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorFailAction> failAction() {
         return Optional.ofNullable(this.failAction);
     }
 
+    /**
+     * Ensures that functionality such as challenge authentication and reset protocol work with a failover product property you use to create an alternate hostname. Apply it to any properties that implement a failover under the Cloud Security Failover product. This behavior can be used in includes.
+     * 
+     */
     @Import(name="failoverBotManagerFeatureCompatibility")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorFailoverBotManagerFeatureCompatibility failoverBotManagerFeatureCompatibility;
 
+    /**
+     * @return Ensures that functionality such as challenge authentication and reset protocol work with a failover product property you use to create an alternate hostname. Apply it to any properties that implement a failover under the Cloud Security Failover product. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorFailoverBotManagerFeatureCompatibility> failoverBotManagerFeatureCompatibility() {
         return Optional.ofNullable(this.failoverBotManagerFeatureCompatibility);
     }
 
+    /**
+     * This behavior is deprecated, but you should not disable or remove it if present. This behavior can be used in includes.
+     * 
+     */
     @Import(name="fastInvalidate")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorFastInvalidate fastInvalidate;
 
+    /**
+     * @return This behavior is deprecated, but you should not disable or remove it if present. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorFastInvalidate> fastInvalidate() {
         return Optional.ofNullable(this.fastInvalidate);
     }
 
+    /**
+     * Enables the Cloud Marketing Cloudlet, which helps MediaMath customers collect usage data and place corresponding tags for use in online advertising.  You can configure tags using either the Cloudlets Policy Manager application or the `Cloudlets API`. See also the `firstPartyMarketingPlus` behavior, which integrates better with both MediaMath and its partners. Both behaviors support the same set of options. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="firstPartyMarketing")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorFirstPartyMarketing firstPartyMarketing;
 
+    /**
+     * @return Enables the Cloud Marketing Cloudlet, which helps MediaMath customers collect usage data and place corresponding tags for use in online advertising.  You can configure tags using either the Cloudlets Policy Manager application or the `Cloudlets API`. See also the `firstPartyMarketingPlus` behavior, which integrates better with both MediaMath and its partners. Both behaviors support the same set of options. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorFirstPartyMarketing> firstPartyMarketing() {
         return Optional.ofNullable(this.firstPartyMarketing);
     }
 
+    /**
+     * Enables the Cloud Marketing Plus Cloudlet, which helps MediaMath customers collect usage data and place corresponding tags for use in online advertising.  You can configure tags using either the Cloudlets Policy Manager application or the `Cloudlets API`. See also the `firstPartyMarketing` behavior, which integrates with MediaMath but not its partners. Both behaviors support the same set of options. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="firstPartyMarketingPlus")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorFirstPartyMarketingPlus firstPartyMarketingPlus;
 
+    /**
+     * @return Enables the Cloud Marketing Plus Cloudlet, which helps MediaMath customers collect usage data and place corresponding tags for use in online advertising.  You can configure tags using either the Cloudlets Policy Manager application or the `Cloudlets API`. See also the `firstPartyMarketing` behavior, which integrates with MediaMath but not its partners. Both behaviors support the same set of options. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorFirstPartyMarketingPlus> firstPartyMarketingPlus() {
         return Optional.ofNullable(this.firstPartyMarketingPlus);
     }
 
+    /**
+     * The Forward Rewrite Cloudlet allows you to conditionally modify the forward path in edge content without affecting the URL that displays in the user&#39;s address bar. If Cloudlets are available on your contract, choose `Your services` &gt; `Edge logic Cloudlets` to control how this feature works within `Control Center`, or use the `Cloudlets API` to configure it programmatically. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="forwardRewrite")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorForwardRewrite forwardRewrite;
 
+    /**
+     * @return The Forward Rewrite Cloudlet allows you to conditionally modify the forward path in edge content without affecting the URL that displays in the user&#39;s address bar. If Cloudlets are available on your contract, choose `Your services` &gt; `Edge logic Cloudlets` to control how this feature works within `Control Center`, or use the `Cloudlets API` to configure it programmatically. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorForwardRewrite> forwardRewrite() {
         return Optional.ofNullable(this.forwardRewrite);
     }
 
+    /**
+     * This behavior is deprecated, but you should not disable or remove it if present. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="frontEndOptimization")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorFrontEndOptimization frontEndOptimization;
 
+    /**
+     * @return This behavior is deprecated, but you should not disable or remove it if present. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorFrontEndOptimization> frontEndOptimization() {
         return Optional.ofNullable(this.frontEndOptimization);
     }
 
+    /**
+     * The `signature header authentication` (g2o) security feature provides header-based verification of outgoing origin requests. Edge servers encrypt request data in a pre-defined header, which the origin uses to verify that the edge server processed the request. This behavior configures the request data, header names, encryption algorithm, and shared secret to use for verification. This behavior can be used in includes.
+     * 
+     */
     @Import(name="g2oheader")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorG2oheader g2oheader;
 
+    /**
+     * @return The `signature header authentication` (g2o) security feature provides header-based verification of outgoing origin requests. Edge servers encrypt request data in a pre-defined header, which the origin uses to verify that the edge server processed the request. This behavior configures the request data, header names, encryption algorithm, and shared secret to use for verification. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorG2oheader> g2oheader() {
         return Optional.ofNullable(this.g2oheader);
     }
 
+    /**
+     * Generates a unique identifier for each request on the Akamai edge network, for use in logging and debugging. GRN identifiers follow the same format as Akamai&#39;s error reference strings, for example: `0.05313217.1567801841.1457a3`. You can use the Edge Diagnostics API&#39;s `Translate error string` operation to get low-level details about any request. This behavior can be used in includes.
+     * 
+     */
     @Import(name="globalRequestNumber")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorGlobalRequestNumber globalRequestNumber;
 
+    /**
+     * @return Generates a unique identifier for each request on the Akamai edge network, for use in logging and debugging. GRN identifiers follow the same format as Akamai&#39;s error reference strings, for example: `0.05313217.1567801841.1457a3`. You can use the Edge Diagnostics API&#39;s `Translate error string` operation to get low-level details about any request. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorGlobalRequestNumber> globalRequestNumber() {
         return Optional.ofNullable(this.globalRequestNumber);
     }
 
+    /**
+     * This behavior configures how to cache GraphQL-based API traffic.  Enable `caching` for your GraphQL API traffic, along with `allowPost` to cache POST responses.  To configure REST API traffic, use the `rapid` behavior. This behavior can be used in includes.
+     * 
+     */
     @Import(name="graphqlCaching")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorGraphqlCaching graphqlCaching;
 
+    /**
+     * @return This behavior configures how to cache GraphQL-based API traffic.  Enable `caching` for your GraphQL API traffic, along with `allowPost` to cache POST responses.  To configure REST API traffic, use the `rapid` behavior. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorGraphqlCaching> graphqlCaching() {
         return Optional.ofNullable(this.graphqlCaching);
     }
 
+    /**
+     * Apply `gzip` compression to speed transfer time. This behavior applies best to text-based content such as HTML, CSS, and JavaScript, especially once files exceed about 10KB. Do not apply it to already compressed image formats, or to small files that would add more time to uncompress. To apply this behavior, you should match on `contentType` or the content&#39;s `cacheability`. This behavior can be used in includes.
+     * 
+     */
     @Import(name="gzipResponse")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorGzipResponse gzipResponse;
 
+    /**
+     * @return Apply `gzip` compression to speed transfer time. This behavior applies best to text-based content such as HTML, CSS, and JavaScript, especially once files exceed about 10KB. Do not apply it to already compressed image formats, or to small files that would add more time to uncompress. To apply this behavior, you should match on `contentType` or the content&#39;s `cacheability`. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorGzipResponse> gzipResponse() {
         return Optional.ofNullable(this.gzipResponse);
     }
 
+    /**
+     * This behavior specifies Akamai XML metadata that can only be configured on your behalf by Akamai Professional Services.  Unlike the `advanced` behavior, this may apply a different set of overriding metadata that executes in a post-processing phase. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     @Import(name="hdDataAdvanced")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorHdDataAdvanced hdDataAdvanced;
 
+    /**
+     * @return This behavior specifies Akamai XML metadata that can only be configured on your behalf by Akamai Professional Services.  Unlike the `advanced` behavior, this may apply a different set of overriding metadata that executes in a post-processing phase. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorHdDataAdvanced> hdDataAdvanced() {
         return Optional.ofNullable(this.hdDataAdvanced);
     }
 
+    /**
+     * Monitors the health of your origin server by tracking unsuccessful attempts to contact it. Use this behavior to keep end users from having to wait several seconds before a forwarded request times out, or to reduce requests on the origin server when it is unavailable. This behavior can be used in includes.
+     * 
+     */
     @Import(name="healthDetection")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorHealthDetection healthDetection;
 
+    /**
+     * @return Monitors the health of your origin server by tracking unsuccessful attempts to contact it. Use this behavior to keep end users from having to wait several seconds before a forwarded request times out, or to reduce requests on the origin server when it is unavailable. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorHealthDetection> healthDetection() {
         return Optional.ofNullable(this.healthDetection);
     }
 
+    /**
+     * Edge IP Binding works with a limited set of static IP addresses to distribute your content, which can be limiting in large footprint environments. This behavior sets Hash Serial and Forward (HSAF) for Edge IP Binding to deal with larger footprints. It can only be configured on your behalf by Akamai Professional Services. This behavior is for internal usage only. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="hsafEipBinding")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorHsafEipBinding hsafEipBinding;
 
+    /**
+     * @return Edge IP Binding works with a limited set of static IP addresses to distribute your content, which can be limiting in large footprint environments. This behavior sets Hash Serial and Forward (HSAF) for Edge IP Binding to deal with larger footprints. It can only be configured on your behalf by Akamai Professional Services. This behavior is for internal usage only. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorHsafEipBinding> hsafEipBinding() {
         return Optional.ofNullable(this.hsafEipBinding);
     }
 
+    /**
+     * Enables the HTTP/2 protocol, which reduces latency and improves efficiency. You can only apply this behavior if the property is marked as secure.  See `Secure property requirements` for guidance. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="http2")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorHttp2 http2;
 
+    /**
+     * @return Enables the HTTP/2 protocol, which reduces latency and improves efficiency. You can only apply this behavior if the property is marked as secure.  See `Secure property requirements` for guidance. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorHttp2> http2() {
         return Optional.ofNullable(this.http2);
     }
 
+    /**
+     * This enables the HTTP/3 protocol that uses QUIC. The behavior allows for improved performance and faster connection setup. You can only apply this behavior if the property is marked as secure. See `Secure property requirements` and the `Property Manager documentation` for guidance. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="http3")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorHttp3 http3;
 
+    /**
+     * @return This enables the HTTP/3 protocol that uses QUIC. The behavior allows for improved performance and faster connection setup. You can only apply this behavior if the property is marked as secure. See `Secure property requirements` and the `Property Manager documentation` for guidance. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorHttp3> http3() {
         return Optional.ofNullable(this.http3);
     }
 
+    /**
+     * Applies HTTP Strict Transport Security (HSTS), disallowing insecure HTTP traffic. Apply this to hostnames managed with Standard TLS or Enhanced TLS certificates. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="httpStrictTransportSecurity")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorHttpStrictTransportSecurity httpStrictTransportSecurity;
 
+    /**
+     * @return Applies HTTP Strict Transport Security (HSTS), disallowing insecure HTTP traffic. Apply this to hostnames managed with Standard TLS or Enhanced TLS certificates. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorHttpStrictTransportSecurity> httpStrictTransportSecurity() {
         return Optional.ofNullable(this.httpStrictTransportSecurity);
     }
 
+    /**
+     * Upgrades an HTTP edge request to HTTPS for the remainder of the request flow. Enable this behavior only if your origin supports HTTPS, and if your `origin` behavior is configured with `originCertsToHonor` to verify SSL certificates. This behavior can be used in includes.
+     * 
+     */
     @Import(name="httpToHttpsUpgrade")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorHttpToHttpsUpgrade httpToHttpsUpgrade;
 
+    /**
+     * @return Upgrades an HTTP edge request to HTTPS for the remainder of the request flow. Enable this behavior only if your origin supports HTTPS, and if your `origin` behavior is configured with `originCertsToHonor` to verify SSL certificates. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorHttpToHttpsUpgrade> httpToHttpsUpgrade() {
         return Optional.ofNullable(this.httpToHttpsUpgrade);
     }
 
+    /**
+     * This specifies common query parameters that affect how `imageManager` transforms images, potentially overriding policy, width, format, or density request parameters. This also allows you to assign the value of one of the property&#39;s `rule tree variables` to one of Image and Video Manager&#39;s own policy variables. This behavior can be used in includes.
+     * 
+     */
     @Import(name="imOverride")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorImOverride imOverride;
 
+    /**
+     * @return This specifies common query parameters that affect how `imageManager` transforms images, potentially overriding policy, width, format, or density request parameters. This also allows you to assign the value of one of the property&#39;s `rule tree variables` to one of Image and Video Manager&#39;s own policy variables. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorImOverride> imOverride() {
         return Optional.ofNullable(this.imOverride);
     }
 
+    /**
+     * This behavior can be used in includes.
+     * 
+     */
     @Import(name="imageAndVideoManager")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorImageAndVideoManager imageAndVideoManager;
 
+    /**
+     * @return This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorImageAndVideoManager> imageAndVideoManager() {
         return Optional.ofNullable(this.imageAndVideoManager);
     }
 
+    /**
+     * Optimizes images&#39; size or file type for the requesting device.  You can also use this behavior to generate API tokens to apply your own policies to matching images using the `Image and Video Manager API`. To apply this behavior, you need to match on a `fileExtension`. Once you apply Image and Video Manager to traffic, you can add the `advancedImMatch` to ensure the behavior applies to the requests from the Image and Video Manager backend. This behavior can be used in includes.
+     * 
+     */
     @Import(name="imageManager")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorImageManager imageManager;
 
+    /**
+     * @return Optimizes images&#39; size or file type for the requesting device.  You can also use this behavior to generate API tokens to apply your own policies to matching images using the `Image and Video Manager API`. To apply this behavior, you need to match on a `fileExtension`. Once you apply Image and Video Manager to traffic, you can add the `advancedImMatch` to ensure the behavior applies to the requests from the Image and Video Manager backend. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorImageManager> imageManager() {
         return Optional.ofNullable(this.imageManager);
     }
 
+    /**
+     * Optimizes videos managed by Image and Video Manager for the requesting device.  You can also use this behavior to generate API tokens to apply your own policies to matching videos using the `Image and Video Manager API`. To apply this behavior, you need to match on a `fileExtension`. This behavior can be used in includes.
+     * 
+     */
     @Import(name="imageManagerVideo")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideo imageManagerVideo;
 
+    /**
+     * @return Optimizes videos managed by Image and Video Manager for the requesting device.  You can also use this behavior to generate API tokens to apply your own policies to matching videos using the `Image and Video Manager API`. To apply this behavior, you need to match on a `fileExtension`. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideo> imageManagerVideo() {
         return Optional.ofNullable(this.imageManagerVideo);
     }
 
+    /**
+     * Includes let you reuse chunks of a property configuration that you can manage separately from the rest of the property rule tree. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="include")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorInclude include;
 
+    /**
+     * @return Includes let you reuse chunks of a property configuration that you can manage separately from the rest of the property rule tree. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorInclude> include() {
         return Optional.ofNullable(this.include);
     }
 
+    /**
+     * This behavior is deprecated, but you should not disable or remove it if present. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="inputValidation")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorInputValidation inputValidation;
 
+    /**
+     * @return This behavior is deprecated, but you should not disable or remove it if present. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorInputValidation> inputValidation() {
         return Optional.ofNullable(this.inputValidation);
     }
 
+    /**
+     * The Instant feature allows you to prefetch content to the edge cache by adding link relation attributes to markup. For example: This behavior can be used in includes.
+     * 
+     */
     @Import(name="instant")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorInstant instant;
 
+    /**
+     * @return The Instant feature allows you to prefetch content to the edge cache by adding link relation attributes to markup. For example: This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorInstant> instant() {
         return Optional.ofNullable(this.instant);
     }
 
+    /**
+     * Multi-Domain Configuration, also known as `InstantConfig`, allows you to apply property settings to all incoming hostnames based on a DNS lookup, without explicitly listing them among the property&#39;s hostnames. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="instantConfig")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorInstantConfig instantConfig;
 
+    /**
+     * @return Multi-Domain Configuration, also known as `InstantConfig`, allows you to apply property settings to all incoming hostnames based on a DNS lookup, without explicitly listing them among the property&#39;s hostnames. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorInstantConfig> instantConfig() {
         return Optional.ofNullable(this.instantConfig);
     }
 
+    /**
+     * The `Large File Optimization` (LFO) feature improves performance and reliability when delivering large files. You need this behavior for objects larger than 1.8GB, and you should apply it to anything over 100MB. You should apply it only to the specific content to be optimized, such as a download directory&#39;s `.gz` files, and enable the `useVersioning` option while enforcing your own filename versioning policy. Make sure you meet all the `requirements and best practices` for the LFO delivery. This behavior can be used in includes.
+     * 
+     */
     @Import(name="largeFileOptimization")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorLargeFileOptimization largeFileOptimization;
 
+    /**
+     * @return The `Large File Optimization` (LFO) feature improves performance and reliability when delivering large files. You need this behavior for objects larger than 1.8GB, and you should apply it to anything over 100MB. You should apply it only to the specific content to be optimized, such as a download directory&#39;s `.gz` files, and enable the `useVersioning` option while enforcing your own filename versioning policy. Make sure you meet all the `requirements and best practices` for the LFO delivery. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorLargeFileOptimization> largeFileOptimization() {
         return Optional.ofNullable(this.largeFileOptimization);
     }
 
+    /**
+     * The `Large File Optimization` feature improves performance and reliability when delivering large files. You need this behavior for objects larger than 1.8GB, and it&#39;s recommended for anything over 100MB. You should apply it only to the specific content to be optimized, such as a download directory&#39;s `.gz` files.  Note that it is best to use `NetStorage` for objects larger than 1.8GB. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     @Import(name="largeFileOptimizationAdvanced")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorLargeFileOptimizationAdvanced largeFileOptimizationAdvanced;
 
+    /**
+     * @return The `Large File Optimization` feature improves performance and reliability when delivering large files. You need this behavior for objects larger than 1.8GB, and it&#39;s recommended for anything over 100MB. You should apply it only to the specific content to be optimized, such as a download directory&#39;s `.gz` files.  Note that it is best to use `NetStorage` for objects larger than 1.8GB. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorLargeFileOptimizationAdvanced> largeFileOptimizationAdvanced() {
         return Optional.ofNullable(this.largeFileOptimizationAdvanced);
     }
 
+    /**
+     * Control the rate at which content serves out to end users, optionally varying the speed depending on the file size or elapsed download time. Each bit rate specified in the `bitrateTable` array corresponds to a `thresholdTable` entry that activates it.  You can use this behavior to prevent media downloads from progressing faster than they are viewed, for example, or to differentiate various tiers of end-user experience. To apply this behavior, you should match on a `contentType`, `path`, or `filename`. This behavior can be used in includes.
+     * 
+     */
     @Import(name="limitBitRate")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRate limitBitRate;
 
+    /**
+     * @return Control the rate at which content serves out to end users, optionally varying the speed depending on the file size or elapsed download time. Each bit rate specified in the `bitrateTable` array corresponds to a `thresholdTable` entry that activates it.  You can use this behavior to prevent media downloads from progressing faster than they are viewed, for example, or to differentiate various tiers of end-user experience. To apply this behavior, you should match on a `contentType`, `path`, or `filename`. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRate> limitBitRate() {
         return Optional.ofNullable(this.limitBitRate);
     }
 
+    /**
+     * Logs custom details from the origin response in the `Log Delivery Service` report. This behavior can be used in includes.
+     * 
+     */
     @Import(name="logCustom")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorLogCustom logCustom;
 
+    /**
+     * @return Logs custom details from the origin response in the `Log Delivery Service` report. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorLogCustom> logCustom() {
         return Optional.ofNullable(this.logCustom);
     }
 
+    /**
+     * `mPulse` provides high-level performance analytics and predictive recommendations based on real end user data. See the `mPulse Quick Start` to set up mPulse on your website. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="mPulse")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorMPulse mPulse;
 
+    /**
+     * @return `mPulse` provides high-level performance analytics and predictive recommendations based on real end user data. See the `mPulse Quick Start` to set up mPulse on your website. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorMPulse> mPulse() {
         return Optional.ofNullable(this.mPulse);
     }
 
+    /**
+     * Allows customers who use the Adaptive Media Delivery product to enhance content based on the capabilities of each end user&#39;s device.  This behavior configures a `manifest` for both HLS Live and on-demand streaming. For more information, see `Adaptive Media Delivery`. This behavior can be used in includes.
+     * 
+     */
     @Import(name="manifestPersonalization")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorManifestPersonalization manifestPersonalization;
 
+    /**
+     * @return Allows customers who use the Adaptive Media Delivery product to enhance content based on the capabilities of each end user&#39;s device.  This behavior configures a `manifest` for both HLS Live and on-demand streaming. For more information, see `Adaptive Media Delivery`. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorManifestPersonalization> manifestPersonalization() {
         return Optional.ofNullable(this.manifestPersonalization);
     }
 
+    /**
+     * This behavior works with `adScalerCircuitBreaker`. It delegates parts of the media delivery workflow, like ad insertion, to other technology partners. Akamai reroutes manifest file requests to partner platforms for processing prior to being delivered. Rerouting simplifies the workflow and improves the media streaming experience. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="manifestRerouting")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorManifestRerouting manifestRerouting;
 
+    /**
+     * @return This behavior works with `adScalerCircuitBreaker`. It delegates parts of the media delivery workflow, like ad insertion, to other technology partners. Akamai reroutes manifest file requests to partner platforms for processing prior to being delivered. Rerouting simplifies the workflow and improves the media streaming experience. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorManifestRerouting> manifestRerouting() {
         return Optional.ofNullable(this.manifestRerouting);
     }
 
+    /**
+     * With the `http2` behavior enabled, this loads a specified set of objects into the client browser&#39;s cache. To apply this behavior, you should match on a `path` or `filename`. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="manualServerPush")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorManualServerPush manualServerPush;
 
+    /**
+     * @return With the `http2` behavior enabled, this loads a specified set of objects into the client browser&#39;s cache. To apply this behavior, you should match on a `path` or `filename`. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorManualServerPush> manualServerPush() {
         return Optional.ofNullable(this.manualServerPush);
     }
 
+    /**
+     * Enables Accelerated Media Delivery for this set of requests. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="mediaAcceleration")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorMediaAcceleration mediaAcceleration;
 
+    /**
+     * @return Enables Accelerated Media Delivery for this set of requests. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorMediaAcceleration> mediaAcceleration() {
         return Optional.ofNullable(this.mediaAcceleration);
     }
 
+    /**
+     * When enabled, disables use of QUIC protocol for this set of accelerated media content. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="mediaAccelerationQuicOptout")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorMediaAccelerationQuicOptout mediaAccelerationQuicOptout;
 
+    /**
+     * @return When enabled, disables use of QUIC protocol for this set of accelerated media content. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorMediaAccelerationQuicOptout> mediaAccelerationQuicOptout() {
         return Optional.ofNullable(this.mediaAccelerationQuicOptout);
     }
 
+    /**
+     * This behavior is deprecated, but you should not disable or remove it if present. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="mediaClient")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorMediaClient mediaClient;
 
+    /**
+     * @return This behavior is deprecated, but you should not disable or remove it if present. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorMediaClient> mediaClient() {
         return Optional.ofNullable(this.mediaClient);
     }
 
+    /**
+     * Media File Retrieval Optimization (MFRO) speeds the delivery of large media files by relying on caches of partial objects. You should use it for files larger than 100 MB. It&#39;s required for files larger than 1.8 GB, and works best with `NetStorage`. To apply this behavior, you should match on a `fileExtension`. This behavior can be used in includes.
+     * 
+     */
     @Import(name="mediaFileRetrievalOptimization")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorMediaFileRetrievalOptimization mediaFileRetrievalOptimization;
 
+    /**
+     * @return Media File Retrieval Optimization (MFRO) speeds the delivery of large media files by relying on caches of partial objects. You should use it for files larger than 100 MB. It&#39;s required for files larger than 1.8 GB, and works best with `NetStorage`. To apply this behavior, you should match on a `fileExtension`. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorMediaFileRetrievalOptimization> mediaFileRetrievalOptimization() {
         return Optional.ofNullable(this.mediaFileRetrievalOptimization);
     }
 
+    /**
+     * Specifies how edge servers respond when the origin is unresponsive, or suffers from server or content errors. You can specify how many times to retry, switch to a backup origin hostname, or configure a redirect. This behavior can be used in includes.
+     * 
+     */
     @Import(name="mediaOriginFailover")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorMediaOriginFailover mediaOriginFailover;
 
+    /**
+     * @return Specifies how edge servers respond when the origin is unresponsive, or suffers from server or content errors. You can specify how many times to retry, switch to a backup origin hostname, or configure a redirect. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorMediaOriginFailover> mediaOriginFailover() {
         return Optional.ofNullable(this.mediaOriginFailover);
     }
 
+    /**
+     * This behavior reduces time spent waiting for the initial response, also known as time to first byte, during peak traffic events. Contact Akamai Professional Services for help configuring it. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     @Import(name="metadataCaching")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorMetadataCaching metadataCaching;
 
+    /**
+     * @return This behavior reduces time spent waiting for the initial response, also known as time to first byte, during peak traffic events. Contact Akamai Professional Services for help configuring it. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorMetadataCaching> metadataCaching() {
         return Optional.ofNullable(this.metadataCaching);
     }
 
+    /**
+     * This behavior is deprecated, but you should not disable or remove it if present. This behavior can be used in includes.
+     * 
+     */
     @Import(name="mobileSdkPerformance")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorMobileSdkPerformance mobileSdkPerformance;
 
+    /**
+     * @return This behavior is deprecated, but you should not disable or remove it if present. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorMobileSdkPerformance> mobileSdkPerformance() {
         return Optional.ofNullable(this.mobileSdkPerformance);
     }
 
+    /**
+     * Modify, add, remove, or pass along specific request headers coming upstream from the client. This behavior can be used in includes.
+     * 
+     */
     @Import(name="modifyIncomingRequestHeader")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorModifyIncomingRequestHeader modifyIncomingRequestHeader;
 
+    /**
+     * @return Modify, add, remove, or pass along specific request headers coming upstream from the client. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorModifyIncomingRequestHeader> modifyIncomingRequestHeader() {
         return Optional.ofNullable(this.modifyIncomingRequestHeader);
     }
 
+    /**
+     * Modify, add, remove, or pass along specific response headers coming downstream from the origin. This behavior can be used in includes.
+     * 
+     */
     @Import(name="modifyIncomingResponseHeader")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorModifyIncomingResponseHeader modifyIncomingResponseHeader;
 
+    /**
+     * @return Modify, add, remove, or pass along specific response headers coming downstream from the origin. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorModifyIncomingResponseHeader> modifyIncomingResponseHeader() {
         return Optional.ofNullable(this.modifyIncomingResponseHeader);
     }
 
+    /**
+     * Modify, add, remove, or pass along specific request headers going upstream towards the origin. This behavior can be used in includes.
+     * 
+     */
     @Import(name="modifyOutgoingRequestHeader")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorModifyOutgoingRequestHeader modifyOutgoingRequestHeader;
 
+    /**
+     * @return Modify, add, remove, or pass along specific request headers going upstream towards the origin. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorModifyOutgoingRequestHeader> modifyOutgoingRequestHeader() {
         return Optional.ofNullable(this.modifyOutgoingRequestHeader);
     }
 
+    /**
+     * Modify, add, remove, or pass along specific response headers going downstream towards the client. This behavior can be used in includes.
+     * 
+     */
     @Import(name="modifyOutgoingResponseHeader")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorModifyOutgoingResponseHeader modifyOutgoingResponseHeader;
 
+    /**
+     * @return Modify, add, remove, or pass along specific response headers going downstream towards the client. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorModifyOutgoingResponseHeader> modifyOutgoingResponseHeader() {
         return Optional.ofNullable(this.modifyOutgoingResponseHeader);
     }
 
+    /**
+     * Removes or renames the HTTP `Via` headers used to inform the server of proxies through which the request was sent to the origin. This behavior can be used in includes.
+     * 
+     */
     @Import(name="modifyViaHeader")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorModifyViaHeader modifyViaHeader;
 
+    /**
+     * @return Removes or renames the HTTP `Via` headers used to inform the server of proxies through which the request was sent to the origin. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorModifyViaHeader> modifyViaHeader() {
         return Optional.ofNullable(this.modifyViaHeader);
     }
 
+    /**
+     * Specify the hostname and settings used to contact the origin once service begins. You can use your own origin, `NetStorage`, an Edge Load Balancing origin, or a SaaS dynamic origin. This behavior can be used in includes.
+     * 
+     */
     @Import(name="origin")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorOrigin origin;
 
+    /**
+     * @return Specify the hostname and settings used to contact the origin once service begins. You can use your own origin, `NetStorage`, an Edge Load Balancing origin, or a SaaS dynamic origin. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorOrigin> origin() {
         return Optional.ofNullable(this.origin);
     }
 
+    /**
+     * Specifies characteristics of the origin. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="originCharacteristics")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristics originCharacteristics;
 
+    /**
+     * @return Specifies characteristics of the origin. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristics> originCharacteristics() {
         return Optional.ofNullable(this.originCharacteristics);
     }
 
+    /**
+     * Specifies characteristics of the origin, for use in Akamai&#39;s Wholesale Delivery product. This behavior can be used in includes.
+     * 
+     */
     @Import(name="originCharacteristicsWsd")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristicsWsd originCharacteristicsWsd;
 
+    /**
+     * @return Specifies characteristics of the origin, for use in Akamai&#39;s Wholesale Delivery product. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristicsWsd> originCharacteristicsWsd() {
         return Optional.ofNullable(this.originCharacteristicsWsd);
     }
 
+    /**
+     * Origin Failover requires that you set up a separate rule containing origin failure recovery methods. You also need to set up the Origin Failure Recovery Policy behavior in a separate rule with a desired match criteria, and select the desired failover method. You can do this using Property Manager. Learn more about this process in `Adaptive Media Delivery Implementation Guide`. You can use the `originFailureRecoveryPolicy` member to edit existing instances of the Origin Failure Recover Policy behavior. This behavior can be used in includes.
+     * 
+     */
     @Import(name="originFailureRecoveryMethod")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorOriginFailureRecoveryMethod originFailureRecoveryMethod;
 
+    /**
+     * @return Origin Failover requires that you set up a separate rule containing origin failure recovery methods. You also need to set up the Origin Failure Recovery Policy behavior in a separate rule with a desired match criteria, and select the desired failover method. You can do this using Property Manager. Learn more about this process in `Adaptive Media Delivery Implementation Guide`. You can use the `originFailureRecoveryPolicy` member to edit existing instances of the Origin Failure Recover Policy behavior. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorOriginFailureRecoveryMethod> originFailureRecoveryMethod() {
         return Optional.ofNullable(this.originFailureRecoveryMethod);
     }
 
+    /**
+     * Configures how to detect an origin failure, in which case the `originFailureRecoveryMethod` behavior applies. You can also define up to three sets of criteria to detect origin failure based on specific response codes. Use it to apply specific retry or recovery actions. You can do this using Property Manager. Learn more about this process in `Adaptive Media Delivery Implementation Guide`. You can use the `originFailureRecoveryMethod` member to edit existing instances of the Origin Failure Recover Method behavior. This behavior can be used in includes.
+     * 
+     */
     @Import(name="originFailureRecoveryPolicy")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorOriginFailureRecoveryPolicy originFailureRecoveryPolicy;
 
+    /**
+     * @return Configures how to detect an origin failure, in which case the `originFailureRecoveryMethod` behavior applies. You can also define up to three sets of criteria to detect origin failure based on specific response codes. Use it to apply specific retry or recovery actions. You can do this using Property Manager. Learn more about this process in `Adaptive Media Delivery Implementation Guide`. You can use the `originFailureRecoveryMethod` member to edit existing instances of the Origin Failure Recover Method behavior. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorOriginFailureRecoveryPolicy> originFailureRecoveryPolicy() {
         return Optional.ofNullable(this.originFailureRecoveryPolicy);
     }
 
+    /**
+     * Origin IP Access Control List limits the traffic to your origin. It only allows requests from specific edge servers that are configured as part of a supernet defined by CIDR blocks. This behavior can be used in includes.
+     * 
+     */
     @Import(name="originIpAcl")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorOriginIpAcl originIpAcl;
 
+    /**
+     * @return Origin IP Access Control List limits the traffic to your origin. It only allows requests from specific edge servers that are configured as part of a supernet defined by CIDR blocks. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorOriginIpAcl> originIpAcl() {
         return Optional.ofNullable(this.originIpAcl);
     }
 
+    /**
+     * This behavior activates `persistent connections` between edge servers and clients, which allow for better performance and more efficient use of resources. Compare with the `persistentConnection` behavior, which configures persistent connections for the entire journey from origin to edge to client.  Contact Akamai Professional Services for help configuring either. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     @Import(name="persistentClientConnection")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorPersistentClientConnection persistentClientConnection;
 
+    /**
+     * @return This behavior activates `persistent connections` between edge servers and clients, which allow for better performance and more efficient use of resources. Compare with the `persistentConnection` behavior, which configures persistent connections for the entire journey from origin to edge to client.  Contact Akamai Professional Services for help configuring either. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorPersistentClientConnection> persistentClientConnection() {
         return Optional.ofNullable(this.persistentClientConnection);
     }
 
+    /**
+     * This behavior enables more efficient `persistent connections` from origin to edge server to client. Compare with the `persistentClientConnection` behavior, which customizes persistent connections from edge to client. Contact Akamai Professional Services for help configuring either. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     @Import(name="persistentConnection")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorPersistentConnection persistentConnection;
 
+    /**
+     * @return This behavior enables more efficient `persistent connections` from origin to edge server to client. Compare with the `persistentClientConnection` behavior, which customizes persistent connections from edge to client. Contact Akamai Professional Services for help configuring either. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorPersistentConnection> persistentConnection() {
         return Optional.ofNullable(this.persistentConnection);
     }
 
+    /**
+     * Marks content covered by the current rule as sensitive `personally identifiable information` that needs to be treated as secure and private. That includes anything involving personal information: name, social security number, date and place of birth, mother&#39;s maiden name, biometric data, or any other data linked to an individual. If you attempt to save a property with such a rule that also caches or logs sensitive content, the added behavior results in a validation error. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="personallyIdentifiableInformation")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorPersonallyIdentifiableInformation personallyIdentifiableInformation;
 
+    /**
+     * @return Marks content covered by the current rule as sensitive `personally identifiable information` that needs to be treated as secure and private. That includes anything involving personal information: name, social security number, date and place of birth, mother&#39;s maiden name, biometric data, or any other data linked to an individual. If you attempt to save a property with such a rule that also caches or logs sensitive content, the added behavior results in a validation error. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorPersonallyIdentifiableInformation> personallyIdentifiableInformation() {
         return Optional.ofNullable(this.personallyIdentifiableInformation);
     }
 
+    /**
+     * The Phased Release Cloudlet provides gradual and granular traffic management to an alternate origin in near real time.  Use the `Cloudlets API` or the Cloudlets Policy Manager application within `Control Center` to set up your Cloudlets policies. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="phasedRelease")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorPhasedRelease phasedRelease;
 
+    /**
+     * @return The Phased Release Cloudlet provides gradual and granular traffic management to an alternate origin in near real time.  Use the `Cloudlets API` or the Cloudlets Policy Manager application within `Control Center` to set up your Cloudlets policies. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorPhasedRelease> phasedRelease() {
         return Optional.ofNullable(this.phasedRelease);
     }
 
+    /**
+     * With the `http2` behavior enabled, this requests a specified set of domains that relate to your property hostname, and keeps the connection open for faster loading of content from those domains. This behavior can be used in includes.
+     * 
+     */
     @Import(name="preconnect")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorPreconnect preconnect;
 
+    /**
+     * @return With the `http2` behavior enabled, this requests a specified set of domains that relate to your property hostname, and keeps the connection open for faster loading of content from those domains. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorPreconnect> preconnect() {
         return Optional.ofNullable(this.preconnect);
     }
 
+    /**
+     * Improves user experience and reduces the cost of downloads by enabling mobile devices to predictively fetch and cache content from catalogs managed by Akamai servers. You can&#39;t use this feature if in the `segmentedMediaOptimization` behavior, the value for `behavior` is set to `LIVE`. This behavior can be used in includes.
+     * 
+     */
     @Import(name="predictiveContentDelivery")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorPredictiveContentDelivery predictiveContentDelivery;
 
+    /**
+     * @return Improves user experience and reduces the cost of downloads by enabling mobile devices to predictively fetch and cache content from catalogs managed by Akamai servers. You can&#39;t use this feature if in the `segmentedMediaOptimization` behavior, the value for `behavior` is set to `LIVE`. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorPredictiveContentDelivery> predictiveContentDelivery() {
         return Optional.ofNullable(this.predictiveContentDelivery);
     }
 
+    /**
+     * This behavior potentially reduces the client&#39;s page load time by pre-caching objects based on historical data for the page, not just its current set of referenced objects. It also detects second-level dependencies, such as objects retrieved by JavaScript. This behavior can be used in includes.
+     * 
+     */
     @Import(name="predictivePrefetching")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorPredictivePrefetching predictivePrefetching;
 
+    /**
+     * @return This behavior potentially reduces the client&#39;s page load time by pre-caching objects based on historical data for the page, not just its current set of referenced objects. It also detects second-level dependencies, such as objects retrieved by JavaScript. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorPredictivePrefetching> predictivePrefetching() {
         return Optional.ofNullable(this.predictivePrefetching);
     }
 
+    /**
+     * Instructs edge servers to retrieve content linked from requested pages as they load, rather than waiting for separate requests for the linked content. This behavior applies depending on the rule&#39;s set of matching conditions. Use in conjunction with the `prefetchable` behavior, which specifies the set of objects to prefetch. This behavior can be used in includes.
+     * 
+     */
     @Import(name="prefetch")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorPrefetch prefetch;
 
+    /**
+     * @return Instructs edge servers to retrieve content linked from requested pages as they load, rather than waiting for separate requests for the linked content. This behavior applies depending on the rule&#39;s set of matching conditions. Use in conjunction with the `prefetchable` behavior, which specifies the set of objects to prefetch. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorPrefetch> prefetch() {
         return Optional.ofNullable(this.prefetch);
     }
 
+    /**
+     * Allow matching objects to prefetch into the edge cache as the parent page that links to them loads, rather than waiting for a direct request. This behavior applies depending on the rule&#39;s set of matching conditions. Use `prefetch` to enable the overall behavior for parent pages that contain links to the object. To apply this behavior, you need to match on a `filename` or `fileExtension`. This behavior can be used in includes.
+     * 
+     */
     @Import(name="prefetchable")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorPrefetchable prefetchable;
 
+    /**
+     * @return Allow matching objects to prefetch into the edge cache as the parent page that links to them loads, rather than waiting for a direct request. This behavior applies depending on the rule&#39;s set of matching conditions. Use `prefetch` to enable the overall behavior for parent pages that contain links to the object. To apply this behavior, you need to match on a `filename` or `fileExtension`. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorPrefetchable> prefetchable() {
         return Optional.ofNullable(this.prefetchable);
     }
 
+    /**
+     * Refresh cached content before its time-to-live (TTL) expires, to keep end users from having to wait for the origin to provide fresh content. This behavior can be used in includes.
+     * 
+     */
     @Import(name="prefreshCache")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorPrefreshCache prefreshCache;
 
+    /**
+     * @return Refresh cached content before its time-to-live (TTL) expires, to keep end users from having to wait for the origin to provide fresh content. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorPrefreshCache> prefreshCache() {
         return Optional.ofNullable(this.prefreshCache);
     }
 
+    /**
+     * This behavior can be used in includes.
+     * 
+     */
     @Import(name="quality")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorQuality quality;
 
+    /**
+     * @return This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorQuality> quality() {
         return Optional.ofNullable(this.quality);
     }
 
+    /**
+     * For a share of responses, includes an `Alt-Svc` header for compatible clients to initiate subsequent sessions using the QUIC protocol. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="quicBeta")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorQuicBeta quicBeta;
 
+    /**
+     * @return For a share of responses, includes an `Alt-Svc` header for compatible clients to initiate subsequent sessions using the QUIC protocol. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorQuicBeta> quicBeta() {
         return Optional.ofNullable(this.quicBeta);
     }
 
+    /**
+     * Optimizes `.flv` and `.mp4` files to allow random jump-point navigation. This behavior can be used in includes.
+     * 
+     */
     @Import(name="randomSeek")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRandomSeek randomSeek;
 
+    /**
+     * @return Optimizes `.flv` and `.mp4` files to allow random jump-point navigation. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorRandomSeek> randomSeek() {
         return Optional.ofNullable(this.randomSeek);
     }
 
+    /**
+     * The `Akamai API Gateway` allows you to configure API traffic delivered over the Akamai network. Apply this behavior to a set of API assets, then use Akamai&#39;s `API Endpoints API` to configure how the traffic responds.  Use the `API Keys and Traffic Management API` to control access to your APIs. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="rapid")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRapid rapid;
 
+    /**
+     * @return The `Akamai API Gateway` allows you to configure API traffic delivered over the Akamai network. Apply this behavior to a set of API assets, then use Akamai&#39;s `API Endpoints API` to configure how the traffic responds.  Use the `API Keys and Traffic Management API` to control access to your APIs. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorRapid> rapid() {
         return Optional.ofNullable(this.rapid);
     }
 
+    /**
+     * This behavior specifies how long the edge server should wait for a response from the requesting forward server after a connection has already been established. Any failure to read aborts the request and sends a `504` Gateway Timeout error to the client. Contact Akamai Professional Services for help configuring this behavior. This behavior can be used in includes.
+     * 
+     */
     @Import(name="readTimeout")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorReadTimeout readTimeout;
 
+    /**
+     * @return This behavior specifies how long the edge server should wait for a response from the requesting forward server after a connection has already been established. Any failure to read aborts the request and sends a `504` Gateway Timeout error to the client. Contact Akamai Professional Services for help configuring this behavior. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorReadTimeout> readTimeout() {
         return Optional.ofNullable(this.readTimeout);
     }
 
+    /**
+     * This enables `Real-Time Reporting` for Akamai Cloud Embed customers. The behavior can only be configured on your behalf by Akamai Professional Services. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     @Import(name="realTimeReporting")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRealTimeReporting realTimeReporting;
 
+    /**
+     * @return This enables `Real-Time Reporting` for Akamai Cloud Embed customers. The behavior can only be configured on your behalf by Akamai Professional Services. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorRealTimeReporting> realTimeReporting() {
         return Optional.ofNullable(this.realTimeReporting);
     }
 
+    /**
+     * This behavior is deprecated, but you should not disable or remove it if present. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="realUserMonitoring")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRealUserMonitoring realUserMonitoring;
 
+    /**
+     * @return This behavior is deprecated, but you should not disable or remove it if present. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorRealUserMonitoring> realUserMonitoring() {
         return Optional.ofNullable(this.realUserMonitoring);
     }
 
+    /**
+     * Respond to the client request with a redirect without contacting the origin. Specify the redirect as a path expression starting with a `/` character relative to the current root, or as a fully qualified URL. This behavior relies primarily on `destinationHostname` and `destinationPath` to manipulate the hostname and path independently. This behavior can be used in includes.
+     * 
+     */
     @Import(name="redirect")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRedirect redirect;
 
+    /**
+     * @return Respond to the client request with a redirect without contacting the origin. Specify the redirect as a path expression starting with a `/` character relative to the current root, or as a fully qualified URL. This behavior relies primarily on `destinationHostname` and `destinationPath` to manipulate the hostname and path independently. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorRedirect> redirect() {
         return Optional.ofNullable(this.redirect);
     }
 
+    /**
+     * Respond to the client request with a redirect without contacting the origin. This behavior fills the same need as `redirect`, but allows you to use `variables` to express the redirect `destination`&#39;s component values more concisely. This behavior can be used in includes.
+     * 
+     */
     @Import(name="redirectplus")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRedirectplus redirectplus;
 
+    /**
+     * @return Respond to the client request with a redirect without contacting the origin. This behavior fills the same need as `redirect`, but allows you to use `variables` to express the redirect `destination`&#39;s component values more concisely. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorRedirectplus> redirectplus() {
         return Optional.ofNullable(this.redirectplus);
     }
 
+    /**
+     * Limits allowed requests to a set of domains you specify. This behavior can be used in includes.
+     * 
+     */
     @Import(name="refererChecking")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRefererChecking refererChecking;
 
+    /**
+     * @return Limits allowed requests to a set of domains you specify. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorRefererChecking> refererChecking() {
         return Optional.ofNullable(this.refererChecking);
     }
 
+    /**
+     * Remove named query parameters before forwarding the request to the origin. This behavior can be used in includes.
+     * 
+     */
     @Import(name="removeQueryParameter")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRemoveQueryParameter removeQueryParameter;
 
+    /**
+     * @return Remove named query parameters before forwarding the request to the origin. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorRemoveQueryParameter> removeQueryParameter() {
         return Optional.ofNullable(this.removeQueryParameter);
     }
 
+    /**
+     * By default, responses that feature a `Vary` header value of anything other than `Accept-Encoding` and a corresponding `Content-Encoding: gzip` header aren&#39;t cached on edge servers. `Vary` headers indicate when a URL&#39;s content varies depending on some variable, such as which `User-Agent` requests it. This behavior simply removes the `Vary` header to make responses cacheable. This behavior can be used in includes.
+     * 
+     */
     @Import(name="removeVary")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRemoveVary removeVary;
 
+    /**
+     * @return By default, responses that feature a `Vary` header value of anything other than `Accept-Encoding` and a corresponding `Content-Encoding: gzip` header aren&#39;t cached on edge servers. `Vary` headers indicate when a URL&#39;s content varies depending on some variable, such as which `User-Agent` requests it. This behavior simply removes the `Vary` header to make responses cacheable. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorRemoveVary> removeVary() {
         return Optional.ofNullable(this.removeVary);
     }
 
+    /**
+     * Specify the HTTP request headers or cookie names to log in your Log Delivery Service reports. This behavior can be used in includes.
+     * 
+     */
     @Import(name="report")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorReport report;
 
+    /**
+     * @return Specify the HTTP request headers or cookie names to log in your Log Delivery Service reports. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorReport> report() {
         return Optional.ofNullable(this.report);
     }
 
+    /**
+     * The Request Control Cloudlet allows you to control access to your web content based on the incoming request&#39;s IP or geographic location.  With Cloudlets available on your contract, choose `Your services` &gt; `Edge logic Cloudlets` to control how the feature works within `Control Center`, or use the `Cloudlets API` to configure it programmatically. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="requestControl")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRequestControl requestControl;
 
+    /**
+     * @return The Request Control Cloudlet allows you to control access to your web content based on the incoming request&#39;s IP or geographic location.  With Cloudlets available on your contract, choose `Your services` &gt; `Edge logic Cloudlets` to control how the feature works within `Control Center`, or use the `Cloudlets API` to configure it programmatically. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorRequestControl> requestControl() {
         return Optional.ofNullable(this.requestControl);
     }
 
+    /**
+     * The `Internet of Things: OTA Updates` product allows customers to securely distribute firmware to devices over cellular networks. When using the `downloadCompleteMarker` behavior to log successful downloads, this related behavior identifies download or campaign server types in aggregated and individual reports. This behavior can be used in includes.
+     * 
+     */
     @Import(name="requestTypeMarker")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRequestTypeMarker requestTypeMarker;
 
+    /**
+     * @return The `Internet of Things: OTA Updates` product allows customers to securely distribute firmware to devices over cellular networks. When using the `downloadCompleteMarker` behavior to log successful downloads, this related behavior identifies download or campaign server types in aggregated and individual reports. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorRequestTypeMarker> requestTypeMarker() {
         return Optional.ofNullable(this.requestTypeMarker);
     }
 
+    /**
+     * This behavior is deprecated, but you should not disable or remove it if present. This behavior can be used in includes.
+     * 
+     */
     @Import(name="resourceOptimizer")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorResourceOptimizer resourceOptimizer;
 
+    /**
+     * @return This behavior is deprecated, but you should not disable or remove it if present. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorResourceOptimizer> resourceOptimizer() {
         return Optional.ofNullable(this.resourceOptimizer);
     }
 
+    /**
+     * This enhances the standard version of the `resourceOptimizer` behavior to support the compression of additional file formats and address some compatibility issues. This behavior can be used in includes.
+     * 
+     */
     @Import(name="resourceOptimizerExtendedCompatibility")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorResourceOptimizerExtendedCompatibility resourceOptimizerExtendedCompatibility;
 
+    /**
+     * @return This enhances the standard version of the `resourceOptimizer` behavior to support the compression of additional file formats and address some compatibility issues. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorResourceOptimizerExtendedCompatibility> resourceOptimizerExtendedCompatibility() {
         return Optional.ofNullable(this.resourceOptimizerExtendedCompatibility);
     }
 
+    /**
+     * Change the existing response code. For example, if your origin sends a `301` permanent redirect, this behavior can change it on the edge to a temporary `302` redirect. This behavior can be used in includes.
+     * 
+     */
     @Import(name="responseCode")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorResponseCode responseCode;
 
+    /**
+     * @return Change the existing response code. For example, if your origin sends a `301` permanent redirect, this behavior can change it on the edge to a temporary `302` redirect. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorResponseCode> responseCode() {
         return Optional.ofNullable(this.responseCode);
     }
 
+    /**
+     * Set a cookie to send downstream to the client with either a fixed value or a unique stamp. This behavior can be used in includes.
+     * 
+     */
     @Import(name="responseCookie")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorResponseCookie responseCookie;
 
+    /**
+     * @return Set a cookie to send downstream to the client with either a fixed value or a unique stamp. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorResponseCookie> responseCookie() {
         return Optional.ofNullable(this.responseCookie);
     }
 
+    /**
+     * You need this behavior to deploy the Object Caching product. It disables serving HTML content and limits the maximum object size to 100MB. Contact Akamai Professional Services for help configuring it. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     @Import(name="restrictObjectCaching")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRestrictObjectCaching restrictObjectCaching;
 
+    /**
+     * @return You need this behavior to deploy the Object Caching product. It disables serving HTML content and limits the maximum object size to 100MB. Contact Akamai Professional Services for help configuring it. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorRestrictObjectCaching> restrictObjectCaching() {
         return Optional.ofNullable(this.restrictObjectCaching);
     }
 
+    /**
+     * Generates a response header with information about cache status. Among other things, this can tell you whether the response came from the Akamai cache, or from the origin. Status values report with either of these forms of syntax, depending for example on whether you&#39;re deploying traffic using `sureRoute` or `tieredDistribution`: This behavior can be used in includes.
+     * 
+     */
     @Import(name="returnCacheStatus")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorReturnCacheStatus returnCacheStatus;
 
+    /**
+     * @return Generates a response header with information about cache status. Among other things, this can tell you whether the response came from the Akamai cache, or from the origin. Status values report with either of these forms of syntax, depending for example on whether you&#39;re deploying traffic using `sureRoute` or `tieredDistribution`: This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorReturnCacheStatus> returnCacheStatus() {
         return Optional.ofNullable(this.returnCacheStatus);
     }
 
+    /**
+     * Modifies the path of incoming requests to forward to the origin. This helps you offload URL-rewriting tasks to the edge to increase the origin server&#39;s performance, allows you to redirect links to different targets without changing markup, and hides your original directory structure. This behavior can be used in includes.
+     * 
+     */
     @Import(name="rewriteUrl")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRewriteUrl rewriteUrl;
 
+    /**
+     * @return Modifies the path of incoming requests to forward to the origin. This helps you offload URL-rewriting tasks to the edge to increase the origin server&#39;s performance, allows you to redirect links to different targets without changing markup, and hides your original directory structure. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorRewriteUrl> rewriteUrl() {
         return Optional.ofNullable(this.rewriteUrl);
     }
 
+    /**
+     * This behavior is deprecated, but you should not disable or remove it if present. This behavior is for internal usage only. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="rumCustom")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRumCustom rumCustom;
 
+    /**
+     * @return This behavior is deprecated, but you should not disable or remove it if present. This behavior is for internal usage only. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorRumCustom> rumCustom() {
         return Optional.ofNullable(this.rumCustom);
     }
 
+    /**
+     * Configures how the Software as a Service feature identifies `customers`, `applications`, and `users`. A different set of options is available for each type of targeted request, each enabled with the `action`-suffixed option. In each case, you can use `PATH`, `COOKIE`, `QUERY_STRING`, or `HOSTNAME` components as identifiers, or `disable` the SaaS behavior for certain targets. If you rely on a `HOSTNAME`, you also have the option of specifying a `CNAME chain` rather than an individual hostname. The various options suffixed `regex` and `replace` subsequently remove the identifier from the request. This behavior requires a sibling `origin` behavior whose `originType` option is set to `SAAS_DYNAMIC_ORIGIN`. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="saasDefinitions")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorSaasDefinitions saasDefinitions;
 
+    /**
+     * @return Configures how the Software as a Service feature identifies `customers`, `applications`, and `users`. A different set of options is available for each type of targeted request, each enabled with the `action`-suffixed option. In each case, you can use `PATH`, `COOKIE`, `QUERY_STRING`, or `HOSTNAME` components as identifiers, or `disable` the SaaS behavior for certain targets. If you rely on a `HOSTNAME`, you also have the option of specifying a `CNAME chain` rather than an individual hostname. The various options suffixed `regex` and `replace` subsequently remove the identifier from the request. This behavior requires a sibling `origin` behavior whose `originType` option is set to `SAAS_DYNAMIC_ORIGIN`. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorSaasDefinitions> saasDefinitions() {
         return Optional.ofNullable(this.saasDefinitions);
     }
 
+    /**
+     * If you use the Salesforce Commerce Cloud platform for your origin content, this behavior allows your edge content managed by Akamai to contact directly to origin. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="salesForceCommerceCloudClient")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudClient salesForceCommerceCloudClient;
 
+    /**
+     * @return If you use the Salesforce Commerce Cloud platform for your origin content, this behavior allows your edge content managed by Akamai to contact directly to origin. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudClient> salesForceCommerceCloudClient() {
         return Optional.ofNullable(this.salesForceCommerceCloudClient);
     }
 
+    /**
+     * This manages traffic between mutual customers and the Salesforce Commerce Cloud platform. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="salesForceCommerceCloudProvider")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudProvider salesForceCommerceCloudProvider;
 
+    /**
+     * @return This manages traffic between mutual customers and the Salesforce Commerce Cloud platform. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudProvider> salesForceCommerceCloudProvider() {
         return Optional.ofNullable(this.salesForceCommerceCloudProvider);
     }
 
+    /**
+     * Manages host header values sent to the Salesforce Commerce Cloud platform. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="salesForceCommerceCloudProviderHostHeader")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudProviderHostHeader salesForceCommerceCloudProviderHostHeader;
 
+    /**
+     * @return Manages host header values sent to the Salesforce Commerce Cloud platform. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudProviderHostHeader> salesForceCommerceCloudProviderHostHeader() {
         return Optional.ofNullable(this.salesForceCommerceCloudProviderHostHeader);
     }
 
+    /**
+     * Used in conjunction with the `cachePost` behavior, this behavior allows the body of POST requests to be processed through Dynamic Content Assembly.  Contact Akamai Professional Services for help configuring it. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     @Import(name="savePostDcaProcessing")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorSavePostDcaProcessing savePostDcaProcessing;
 
+    /**
+     * @return Used in conjunction with the `cachePost` behavior, this behavior allows the body of POST requests to be processed through Dynamic Content Assembly.  Contact Akamai Professional Services for help configuring it. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorSavePostDcaProcessing> savePostDcaProcessing() {
         return Optional.ofNullable(this.savePostDcaProcessing);
     }
 
+    /**
+     * Specifies when cached content that satisfies a rule&#39;s criteria expires, optionally at repeating intervals. In addition to periodic cache flushes, you can use this behavior to minimize potential conflicts when related objects expire at different times. This behavior can be used in includes.
+     * 
+     */
     @Import(name="scheduleInvalidation")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorScheduleInvalidation scheduleInvalidation;
 
+    /**
+     * @return Specifies when cached content that satisfies a rule&#39;s criteria expires, optionally at repeating intervals. In addition to periodic cache flushes, you can use this behavior to minimize potential conflicts when related objects expire at different times. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorScheduleInvalidation> scheduleInvalidation() {
         return Optional.ofNullable(this.scheduleInvalidation);
     }
 
+    /**
+     * Ensures unresponsive linked JavaScript files do not prevent HTML pages from loading. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="scriptManagement")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorScriptManagement scriptManagement;
 
+    /**
+     * @return Ensures unresponsive linked JavaScript files do not prevent HTML pages from loading. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorScriptManagement> scriptManagement() {
         return Optional.ofNullable(this.scriptManagement);
     }
 
+    /**
+     * Validates authorization tokens at the edge server to prevent unauthorized link sharing. This behavior can be used in includes.
+     * 
+     */
     @Import(name="segmentedContentProtection")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedContentProtection segmentedContentProtection;
 
+    /**
+     * @return Validates authorization tokens at the edge server to prevent unauthorized link sharing. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedContentProtection> segmentedContentProtection() {
         return Optional.ofNullable(this.segmentedContentProtection);
     }
 
+    /**
+     * Optimizes segmented media for live or streaming delivery contexts. This behavior can be used in includes.
+     * 
+     */
     @Import(name="segmentedMediaOptimization")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaOptimization segmentedMediaOptimization;
 
+    /**
+     * @return Optimizes segmented media for live or streaming delivery contexts. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaOptimization> segmentedMediaOptimization() {
         return Optional.ofNullable(this.segmentedMediaOptimization);
     }
 
+    /**
+     * Prefetches HLS and DASH media stream manifest and segment files, accelerating delivery to end users. For prefetching to work, your origin media&#39;s response needs to specify `CDN-Origin-Assist-Prefetch-Path` headers with each URL to prefetch, expressed as either a relative or absolute path. This behavior can be used in includes.
+     * 
+     */
     @Import(name="segmentedMediaStreamingPrefetch")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaStreamingPrefetch segmentedMediaStreamingPrefetch;
 
+    /**
+     * @return Prefetches HLS and DASH media stream manifest and segment files, accelerating delivery to end users. For prefetching to work, your origin media&#39;s response needs to specify `CDN-Origin-Assist-Prefetch-Path` headers with each URL to prefetch, expressed as either a relative or absolute path. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaStreamingPrefetch> segmentedMediaStreamingPrefetch() {
         return Optional.ofNullable(this.segmentedMediaStreamingPrefetch);
     }
 
+    /**
+     * Modify a variable to insert into subsequent fields within the rule tree.  Use this behavior to specify the predeclared `variableName` and determine from where to derive its new value. Based on this `valueSource`, you can either generate the value, extract it from some part of the incoming request, assign it from another variable (including a set of built-in system variables), or directly specify its text.  Optionally choose a `transform` function to modify the value once. See `Support for variables` for more information. This behavior can be used in includes.
+     * 
+     */
     @Import(name="setVariable")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorSetVariable setVariable;
 
+    /**
+     * @return Modify a variable to insert into subsequent fields within the rule tree.  Use this behavior to specify the predeclared `variableName` and determine from where to derive its new value. Based on this `valueSource`, you can either generate the value, extract it from some part of the incoming request, assign it from another variable (including a set of built-in system variables), or directly specify its text.  Optionally choose a `transform` function to modify the value once. See `Support for variables` for more information. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorSetVariable> setVariable() {
         return Optional.ofNullable(this.setVariable);
     }
 
+    /**
+     * This behavior is deprecated, but you should not disable or remove it if present. This behavior can be used in includes.
+     * 
+     */
     @Import(name="shutr")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorShutr shutr;
 
+    /**
+     * @return This behavior is deprecated, but you should not disable or remove it if present. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorShutr> shutr() {
         return Optional.ofNullable(this.shutr);
     }
 
+    /**
+     * This behavior simulates various error response codes. Contact Akamai Professional Services for help configuring it. This behavior can be used in includes.
+     * 
+     */
     @Import(name="simulateErrorCode")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorSimulateErrorCode simulateErrorCode;
 
+    /**
+     * @return This behavior simulates various error response codes. Contact Akamai Professional Services for help configuring it. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorSimulateErrorCode> simulateErrorCode() {
         return Optional.ofNullable(this.simulateErrorCode);
     }
 
+    /**
+     * This behavior implements the `Site Shield` feature, which helps prevent non-Akamai machines from contacting your origin. You get an email with a list of Akamai servers allowed to contact your origin, with which you establish an Access Control List on your firewall to prevent any other requests. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="siteShield")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorSiteShield siteShield;
 
+    /**
+     * @return This behavior implements the `Site Shield` feature, which helps prevent non-Akamai machines from contacting your origin. You get an email with a list of Akamai servers allowed to contact your origin, with which you establish an Access Control List on your firewall to prevent any other requests. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorSiteShield> siteShield() {
         return Optional.ofNullable(this.siteShield);
     }
 
+    /**
+     * This behavior is deprecated, but you should not disable or remove it if present. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="standardTlsMigration")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorStandardTlsMigration standardTlsMigration;
 
+    /**
+     * @return This behavior is deprecated, but you should not disable or remove it if present. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorStandardTlsMigration> standardTlsMigration() {
         return Optional.ofNullable(this.standardTlsMigration);
     }
 
+    /**
+     * This behavior is deprecated, but you should not disable or remove it if present. This behavior is for internal usage only. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="standardTlsMigrationOverride")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorStandardTlsMigrationOverride standardTlsMigrationOverride;
 
+    /**
+     * @return This behavior is deprecated, but you should not disable or remove it if present. This behavior is for internal usage only. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorStandardTlsMigrationOverride> standardTlsMigrationOverride() {
         return Optional.ofNullable(this.standardTlsMigrationOverride);
     }
 
+    /**
+     * This behavior specifies how the edge servers should handle requests containing improperly formatted or invalid headers that don’t comply with `RFC 9110`. This behavior can be used in includes.
+     * 
+     */
     @Import(name="strictHeaderParsing")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorStrictHeaderParsing strictHeaderParsing;
 
+    /**
+     * @return This behavior specifies how the edge servers should handle requests containing improperly formatted or invalid headers that don’t comply with `RFC 9110`. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorStrictHeaderParsing> strictHeaderParsing() {
         return Optional.ofNullable(this.strictHeaderParsing);
     }
 
+    /**
+     * When positioned in a property&#39;s top-level default rule, enables various `Cloud Embed` features that allow you to leverage Akamai&#39;s CDN architecture for your own subcustomers.  This behavior&#39;s options allow you to use Cloud Embed to configure your subcustomers&#39; content.  Once enabled, you can use the `Akamai Cloud Embed API` (ACE) to assign subcustomers to this base configuration, and to customize policies for them.  See also the `dynamicWebContent` behavior to configure subcustomers&#39; dynamic web content. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="subCustomer")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorSubCustomer subCustomer;
 
+    /**
+     * @return When positioned in a property&#39;s top-level default rule, enables various `Cloud Embed` features that allow you to leverage Akamai&#39;s CDN architecture for your own subcustomers.  This behavior&#39;s options allow you to use Cloud Embed to configure your subcustomers&#39; content.  Once enabled, you can use the `Akamai Cloud Embed API` (ACE) to assign subcustomers to this base configuration, and to customize policies for them.  See also the `dynamicWebContent` behavior to configure subcustomers&#39; dynamic web content. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorSubCustomer> subCustomer() {
         return Optional.ofNullable(this.subCustomer);
     }
 
+    /**
+     * The `SureRoute` feature continually tests different routes between origin and edge servers to identify the optimal path. By default, it conducts `races` to identify alternative paths to use in case of a transmission failure. These races increase origin traffic slightly. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="sureRoute")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorSureRoute sureRoute;
 
+    /**
+     * @return The `SureRoute` feature continually tests different routes between origin and edge servers to identify the optimal path. By default, it conducts `races` to identify alternative paths to use in case of a transmission failure. These races increase origin traffic slightly. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorSureRoute> sureRoute() {
         return Optional.ofNullable(this.sureRoute);
     }
 
+    /**
+     * This behavior is deprecated, but you should not disable or remove it if present. This behavior can be used in includes.
+     * 
+     */
     @Import(name="tcpOptimization")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorTcpOptimization tcpOptimization;
 
+    /**
+     * @return This behavior is deprecated, but you should not disable or remove it if present. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorTcpOptimization> tcpOptimization() {
         return Optional.ofNullable(this.tcpOptimization);
     }
 
+    /**
+     * Allows IBM Tealeaf Customer Experience on Cloud to record HTTPS requests and responses for Akamai-enabled properties. Recorded data becomes available in your IBM Tealeaf account. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="teaLeaf")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorTeaLeaf teaLeaf;
 
+    /**
+     * @return Allows IBM Tealeaf Customer Experience on Cloud to record HTTPS requests and responses for Akamai-enabled properties. Recorded data becomes available in your IBM Tealeaf account. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorTeaLeaf> teaLeaf() {
         return Optional.ofNullable(this.teaLeaf);
     }
 
+    /**
+     * This behavior allows Akamai edge servers to retrieve cached content from other Akamai servers, rather than directly from the origin. These interim `parent` servers in the `cache hierarchy` (`CH`) are positioned close to the origin, and fall along the path from the origin to the edge server. Tiered Distribution typically reduces the origin server&#39;s load, and reduces the time it takes for edge servers to refresh content. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="tieredDistribution")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistribution tieredDistribution;
 
+    /**
+     * @return This behavior allows Akamai edge servers to retrieve cached content from other Akamai servers, rather than directly from the origin. These interim `parent` servers in the `cache hierarchy` (`CH`) are positioned close to the origin, and fall along the path from the origin to the edge server. Tiered Distribution typically reduces the origin server&#39;s load, and reduces the time it takes for edge servers to refresh content. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistribution> tieredDistribution() {
         return Optional.ofNullable(this.tieredDistribution);
     }
 
+    /**
+     * This behavior allows Akamai edge servers to retrieve cached content from other Akamai servers, rather than directly from the origin. These interim `parent` servers in the `cache hierarchy` (`CH`) are positioned close to the origin, and fall along the path from the origin to the edge server. Tiered Distribution typically reduces the origin server&#39;s load, and reduces the time it takes for edge servers to refresh content.  This advanced behavior provides a wider set of options than `tieredDistribution`. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     @Import(name="tieredDistributionAdvanced")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionAdvanced tieredDistributionAdvanced;
 
+    /**
+     * @return This behavior allows Akamai edge servers to retrieve cached content from other Akamai servers, rather than directly from the origin. These interim `parent` servers in the `cache hierarchy` (`CH`) are positioned close to the origin, and fall along the path from the origin to the edge server. Tiered Distribution typically reduces the origin server&#39;s load, and reduces the time it takes for edge servers to refresh content.  This advanced behavior provides a wider set of options than `tieredDistribution`. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionAdvanced> tieredDistributionAdvanced() {
         return Optional.ofNullable(this.tieredDistributionAdvanced);
     }
 
+    /**
+     * With Tiered Distribution, Akamai edge servers retrieve cached content from other Akamai servers, rather than directly from the origin. This behavior sets custom Tiered Distribution maps (TD0) and migrates TD1 maps configured with `advanced features` to Cloud Wrapper. You need to enable `cloudWrapper` within the same rule. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     @Import(name="tieredDistributionCustomization")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionCustomization tieredDistributionCustomization;
 
+    /**
+     * @return With Tiered Distribution, Akamai edge servers retrieve cached content from other Akamai servers, rather than directly from the origin. This behavior sets custom Tiered Distribution maps (TD0) and migrates TD1 maps configured with `advanced features` to Cloud Wrapper. You need to enable `cloudWrapper` within the same rule. This behavior is for internal usage only. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionCustomization> tieredDistributionCustomization() {
         return Optional.ofNullable(this.tieredDistributionCustomization);
     }
 
+    /**
+     * Sets the HTTP connect timeout. This behavior can be used in includes.
+     * 
+     */
     @Import(name="timeout")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorTimeout timeout;
 
+    /**
+     * @return Sets the HTTP connect timeout. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorTimeout> timeout() {
         return Optional.ofNullable(this.timeout);
     }
 
+    /**
+     * This behavior allows you to extract unique identifier (UID) values from live traffic, for use in OTA applications. Note that you are responsible for maintaining the security of any data that may identify individual users. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="uidConfiguration")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorUidConfiguration uidConfiguration;
 
+    /**
+     * @return This behavior allows you to extract unique identifier (UID) values from live traffic, for use in OTA applications. Note that you are responsible for maintaining the security of any data that may identify individual users. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorUidConfiguration> uidConfiguration() {
         return Optional.ofNullable(this.uidConfiguration);
     }
 
+    /**
+     * Instructs edge servers to compare the request&#39;s `ETag` header with that of the cached object. If they differ, the edge server sends a new copy of the object. This validation occurs in addition to the default validation of `Last-Modified` and `If-Modified-Since` headers. This behavior can be used in includes.
+     * 
+     */
     @Import(name="validateEntityTag")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorValidateEntityTag validateEntityTag;
 
+    /**
+     * @return Instructs edge servers to compare the request&#39;s `ETag` header with that of the cached object. If they differ, the edge server sends a new copy of the object. This validation occurs in addition to the default validation of `Last-Modified` and `If-Modified-Since` headers. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorValidateEntityTag> validateEntityTag() {
         return Optional.ofNullable(this.validateEntityTag);
     }
 
+    /**
+     * This behavior allows you to use JSON Web Tokens (JWT) to verify requests. This behavior can be used in includes.
+     * 
+     */
     @Import(name="verifyJsonWebToken")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorVerifyJsonWebToken verifyJsonWebToken;
 
+    /**
+     * @return This behavior allows you to use JSON Web Tokens (JWT) to verify requests. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorVerifyJsonWebToken> verifyJsonWebToken() {
         return Optional.ofNullable(this.verifyJsonWebToken);
     }
 
+    /**
+     * This behavior allows you to use JSON web tokens (JWT) to verify requests for use in implementing `IoT Edge Connect`, which you use the `dcp` behavior to configure. You can specify the location in a request to pass a JSON web token (JWT), collections of public keys to verify the integrity of this token, and specific claims to extract from it. Use the `verifyJsonWebToken` behavior for other JWT validation. This behavior can be used in includes.
+     * 
+     */
     @Import(name="verifyJsonWebTokenForDcp")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorVerifyJsonWebTokenForDcp verifyJsonWebTokenForDcp;
 
+    /**
+     * @return This behavior allows you to use JSON web tokens (JWT) to verify requests for use in implementing `IoT Edge Connect`, which you use the `dcp` behavior to configure. You can specify the location in a request to pass a JSON web token (JWT), collections of public keys to verify the integrity of this token, and specific claims to extract from it. Use the `verifyJsonWebToken` behavior for other JWT validation. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorVerifyJsonWebTokenForDcp> verifyJsonWebTokenForDcp() {
         return Optional.ofNullable(this.verifyJsonWebTokenForDcp);
     }
 
+    /**
+     * Verifies Auth 2.0 tokens. This behavior can be used in includes.
+     * 
+     */
     @Import(name="verifyTokenAuthorization")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorVerifyTokenAuthorization verifyTokenAuthorization;
 
+    /**
+     * @return Verifies Auth 2.0 tokens. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorVerifyTokenAuthorization> verifyTokenAuthorization() {
         return Optional.ofNullable(this.verifyTokenAuthorization);
     }
 
+    /**
+     * This behavior helps you maintain business continuity for dynamic applications in high-demand situations such as flash sales. It decreases abandonment by providing a user-friendly waiting room experience. FIFO (First-in First-out) is a request processing mechanism that prioritizes the first requests that enter the waiting room to send them first to the origin. Users can see both their estimated arrival time and position in the line. With Cloudlets available on your contract, choose `Your services` &gt; `Edge logic Cloudlets` to control Virtual Waitig Room within `Control Center`. Otherwise use the `Cloudlets API` to configure it programmatically. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="virtualWaitingRoom")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorVirtualWaitingRoom virtualWaitingRoom;
 
+    /**
+     * @return This behavior helps you maintain business continuity for dynamic applications in high-demand situations such as flash sales. It decreases abandonment by providing a user-friendly waiting room experience. FIFO (First-in First-out) is a request processing mechanism that prioritizes the first requests that enter the waiting room to send them first to the origin. Users can see both their estimated arrival time and position in the line. With Cloudlets available on your contract, choose `Your services` &gt; `Edge logic Cloudlets` to control Virtual Waitig Room within `Control Center`. Otherwise use the `Cloudlets API` to configure it programmatically. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorVirtualWaitingRoom> virtualWaitingRoom() {
         return Optional.ofNullable(this.virtualWaitingRoom);
     }
 
+    /**
+     * This behavior allows you to configure the `virtualWaitingRoom` behavior with EdgeWorkers for extended scalability and customization. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="virtualWaitingRoomWithEdgeWorkers")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorVirtualWaitingRoomWithEdgeWorkers virtualWaitingRoomWithEdgeWorkers;
 
+    /**
+     * @return This behavior allows you to configure the `virtualWaitingRoom` behavior with EdgeWorkers for extended scalability and customization. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorVirtualWaitingRoomWithEdgeWorkers> virtualWaitingRoomWithEdgeWorkers() {
         return Optional.ofNullable(this.virtualWaitingRoomWithEdgeWorkers);
     }
 
+    /**
+     * The `Visitor Prioritization Cloudlet` decreases abandonment by providing a user-friendly waiting room experience.  With Cloudlets available on your contract, choose `Your services` &gt; `Edge logic Cloudlets` to control Visitor Prioritization within `Control Center`. Otherwise use the `Cloudlets API` to configure it programmatically.  To serve non-HTML API content such as JSON blocks, see the `apiPrioritization` behavior. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="visitorPrioritization")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritization visitorPrioritization;
 
+    /**
+     * @return The `Visitor Prioritization Cloudlet` decreases abandonment by providing a user-friendly waiting room experience.  With Cloudlets available on your contract, choose `Your services` &gt; `Edge logic Cloudlets` to control Visitor Prioritization within `Control Center`. Otherwise use the `Cloudlets API` to configure it programmatically.  To serve non-HTML API content such as JSON blocks, see the `apiPrioritization` behavior. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritization> visitorPrioritization() {
         return Optional.ofNullable(this.visitorPrioritization);
     }
 
+    /**
+     * (**BETA**) The `Visitor Prioritization Cloudlet (FIFO)` decreases abandonment by providing a user-friendly waiting room experience. FIFO (First-in First-out) is a fair request processing mechanism, which prioritizes the first requests that enter the waiting room to send them first to the origin. Users can see both their estimated arrival time and position in the line. With Cloudlets available on your contract, choose `Your services` &gt; `Edge logic Cloudlets` to control Visitor Prioritization (FIFO) within `Control Center`. Otherwise use the `Cloudlets API` to configure it programmatically. To serve non-HTML API content such as JSON blocks, see the `apiPrioritization` behavior. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="visitorPrioritizationFifo")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationFifo visitorPrioritizationFifo;
 
+    /**
+     * @return (**BETA**) The `Visitor Prioritization Cloudlet (FIFO)` decreases abandonment by providing a user-friendly waiting room experience. FIFO (First-in First-out) is a fair request processing mechanism, which prioritizes the first requests that enter the waiting room to send them first to the origin. Users can see both their estimated arrival time and position in the line. With Cloudlets available on your contract, choose `Your services` &gt; `Edge logic Cloudlets` to control Visitor Prioritization (FIFO) within `Control Center`. Otherwise use the `Cloudlets API` to configure it programmatically. To serve non-HTML API content such as JSON blocks, see the `apiPrioritization` behavior. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationFifo> visitorPrioritizationFifo() {
         return Optional.ofNullable(this.visitorPrioritizationFifo);
     }
 
+    /**
+     * This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="visitorPrioritizationFifoStandalone")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationFifoStandalone visitorPrioritizationFifoStandalone;
 
+    /**
+     * @return This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationFifoStandalone> visitorPrioritizationFifoStandalone() {
         return Optional.ofNullable(this.visitorPrioritizationFifoStandalone);
     }
 
+    /**
+     * Adds watermarking for each valid user&#39;s content. Content segments are delivered from different sources using a pattern unique to each user, based on a watermarking token included in each request. If your content is pirated or redistributed, you can forensically analyze the segments to extract the pattern, and identify the user who leaked the content. This behavior can be used in includes.
+     * 
+     */
     @Import(name="watermarking")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorWatermarking watermarking;
 
+    /**
+     * @return Adds watermarking for each valid user&#39;s content. Content segments are delivered from different sources using a pattern unique to each user, based on a watermarking token included in each request. If your content is pirated or redistributed, you can forensically analyze the segments to extract the pattern, and identify the user who leaked the content. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorWatermarking> watermarking() {
         return Optional.ofNullable(this.watermarking);
     }
 
+    /**
+     * This behavior implements a suite of security features that blocks threatening HTTP and HTTPS requests. Use it as your primary firewall, or in addition to existing security measures.  Only one referenced configuration is allowed per property, so this behavior typically belongs as part of its default rule. This behavior cannot be used in includes.
+     * 
+     */
     @Import(name="webApplicationFirewall")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorWebApplicationFirewall webApplicationFirewall;
 
+    /**
+     * @return This behavior implements a suite of security features that blocks threatening HTTP and HTTPS requests. Use it as your primary firewall, or in addition to existing security measures.  Only one referenced configuration is allowed per property, so this behavior typically belongs as part of its default rule. This behavior cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorWebApplicationFirewall> webApplicationFirewall() {
         return Optional.ofNullable(this.webApplicationFirewall);
     }
 
+    /**
+     * The WebSocket protocol allows web applications real-time bidirectional communication between clients and servers. This behavior can be used in includes.
+     * 
+     */
     @Import(name="webSockets")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorWebSockets webSockets;
 
+    /**
+     * @return The WebSocket protocol allows web applications real-time bidirectional communication between clients and servers. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorWebSockets> webSockets() {
         return Optional.ofNullable(this.webSockets);
     }
 
+    /**
+     * Web-based Distributed Authoring and Versioning (WebDAV) is a set of extensions to the HTTP protocol that allows users to collaboratively edit and manage files on remote web servers. This behavior enables WebDAV, and provides support for the following additional request methods: PROPFIND, PROPPATCH, MKCOL, COPY, MOVE, LOCK, and UNLOCK. To apply this behavior, you need to match on a `requestMethod`. This behavior can be used in includes.
+     * 
+     */
     @Import(name="webdav")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorWebdav webdav;
 
+    /**
+     * @return Web-based Distributed Authoring and Versioning (WebDAV) is a set of extensions to the HTTP protocol that allows users to collaboratively edit and manage files on remote web servers. This behavior enables WebDAV, and provides support for the following additional request methods: PROPFIND, PROPPATCH, MKCOL, COPY, MOVE, LOCK, and UNLOCK. To apply this behavior, you need to match on a `requestMethod`. This behavior can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorWebdav> webdav() {
         return Optional.ofNullable(this.webdav);
     }
@@ -2007,1096 +3759,2410 @@ public final class GetPropertyRulesBuilderRulesV20230105Behavior extends com.pul
             $ = new GetPropertyRulesBuilderRulesV20230105Behavior(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param adScalerCircuitBreaker This behavior works with `manifestRerouting` to provide the scale and reliability of Akamai network while simultaneously allowing third party partners to modify the requested media content with value-added features. The `adScalerCircuitBreaker` behavior specifies the fallback action in case the technology partner encounters errors and can&#39;t modify the requested media object. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder adScalerCircuitBreaker(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAdScalerCircuitBreaker adScalerCircuitBreaker) {
             $.adScalerCircuitBreaker = adScalerCircuitBreaker;
             return this;
         }
 
+        /**
+         * @param adaptiveAcceleration Adaptive Acceleration uses HTTP/2 server push functionality with Ion properties to pre-position content and improve the performance of HTML page loading based on real user monitoring (RUM) timing data. It also helps browsers to preconnect to content that’s likely needed for upcoming requests. To use this behavior, make sure you enable the `http2` behavior. Use the `Adaptive Acceleration API` to report on the set of assets this feature optimizes. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder adaptiveAcceleration(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAdaptiveAcceleration adaptiveAcceleration) {
             $.adaptiveAcceleration = adaptiveAcceleration;
             return this;
         }
 
+        /**
+         * @param adaptiveImageCompression The Adaptive Image Compression feature compresses JPEG images depending on the requesting network&#39;s performance, thus improving response time. The behavior specifies three performance tiers based on round-trip tests: 1 for excellent, 2 for good, and 3 for poor. It assigns separate performance criteria for mobile (cellular) and non-mobile networks, which the `compressMobile` and `compressStandard` options enable independently. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder adaptiveImageCompression(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAdaptiveImageCompression adaptiveImageCompression) {
             $.adaptiveImageCompression = adaptiveImageCompression;
             return this;
         }
 
+        /**
+         * @param advanced This specifies Akamai XML metadata. It can only be configured on your behalf by Akamai Professional Services. This behavior is for internal usage only. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder advanced(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAdvanced advanced) {
             $.advanced = advanced;
             return this;
         }
 
+        /**
+         * @param aggregatedReporting Configure a custom report that collects traffic data. The data is based on one to four variables, such as `sum`, `average`, `min`, and `max`. These aggregation attributes help compile traffic data summaries. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder aggregatedReporting(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAggregatedReporting aggregatedReporting) {
             $.aggregatedReporting = aggregatedReporting;
             return this;
         }
 
+        /**
+         * @param akamaizer This allows you to run regular expression substitutions over web pages. To apply this behavior, you need to match on a `contentType`. Contact Akamai Professional Services for help configuring the Akamaizer. See also the `akamaizerTag` behavior. This behavior is for internal usage only. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder akamaizer(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAkamaizer akamaizer) {
             $.akamaizer = akamaizer;
             return this;
         }
 
+        /**
+         * @param akamaizerTag This specifies HTML tags and replacement rules for hostnames used in conjunction with the `akamaizer` behavior. Contact Akamai Professional Services for help configuring the Akamaizer. This behavior is for internal usage only. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder akamaizerTag(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAkamaizerTag akamaizerTag) {
             $.akamaizerTag = akamaizerTag;
             return this;
         }
 
+        /**
+         * @param allHttpInCacheHierarchy Allow all HTTP request methods to be used for the edge&#39;s parent servers, useful to implement features such as `Site Shield`, `SureRoute`, and Tiered Distribution. (See the `siteShield`, `sureRoute`, and `tieredDistribution` behaviors.) This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allHttpInCacheHierarchy(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAllHttpInCacheHierarchy allHttpInCacheHierarchy) {
             $.allHttpInCacheHierarchy = allHttpInCacheHierarchy;
             return this;
         }
 
+        /**
+         * @param allowCloudletsOrigins Allows Cloudlets Origins to determine the criteria, separately from the Property Manager, under which alternate `origin` definitions are assigned. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allowCloudletsOrigins(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAllowCloudletsOrigins allowCloudletsOrigins) {
             $.allowCloudletsOrigins = allowCloudletsOrigins;
             return this;
         }
 
+        /**
+         * @param allowDelete Allow HTTP requests using the DELETE method. By default, GET, HEAD, and OPTIONS requests are allowed, and all other methods result in a 501 error. Such content does not cache, and any DELETE requests pass to the origin. See also the `allowOptions`, `allowPatch`, `allowPost`, and `allowPut` behaviors. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allowDelete(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAllowDelete allowDelete) {
             $.allowDelete = allowDelete;
             return this;
         }
 
+        /**
+         * @param allowHttpsCacheKeySharing HTTPS cache key sharing allows HTTP requests to be served from an HTTPS cache. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allowHttpsCacheKeySharing(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAllowHttpsCacheKeySharing allowHttpsCacheKeySharing) {
             $.allowHttpsCacheKeySharing = allowHttpsCacheKeySharing;
             return this;
         }
 
+        /**
+         * @param allowHttpsDowngrade Passes HTTPS requests to origin as HTTP. This is useful when incorporating Standard TLS or Akamai&#39;s shared certificate delivery security with an origin that serves HTTP traffic. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allowHttpsDowngrade(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAllowHttpsDowngrade allowHttpsDowngrade) {
             $.allowHttpsDowngrade = allowHttpsDowngrade;
             return this;
         }
 
+        /**
+         * @param allowOptions GET, HEAD, and OPTIONS requests are allowed by default. All other HTTP methods result in a 501 error. For full support of Cross-Origin Resource Sharing (CORS), you need to allow requests that use the OPTIONS method. If you&#39;re using the `corsSupport` behavior, do not disable OPTIONS requests. The response to an OPTIONS request is not cached, so the request always goes through the Akamai network to your origin, unless you use the `constructResponse` behavior to send responses directly from the Akamai network. See also the `allowDelete`, `allowPatch`, `allowPost`, and `allowPut` behaviors. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allowOptions(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAllowOptions allowOptions) {
             $.allowOptions = allowOptions;
             return this;
         }
 
+        /**
+         * @param allowPatch Allow HTTP requests using the PATCH method. By default, GET, HEAD, and OPTIONS requests are allowed, and all other methods result in a 501 error. Such content does not cache, and any PATCH requests pass to the origin. See also the `allowDelete`, `allowOptions`, `allowPost`, and `allowPut` behaviors. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allowPatch(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAllowPatch allowPatch) {
             $.allowPatch = allowPatch;
             return this;
         }
 
+        /**
+         * @param allowPost Allow HTTP requests using the POST method. By default, GET, HEAD, and OPTIONS requests are allowed, and POST requests are denied with 403 error. All other methods result in a 501 error. See also the `allowDelete`, `allowOptions`, `allowPatch`, and `allowPut` behaviors. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allowPost(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAllowPost allowPost) {
             $.allowPost = allowPost;
             return this;
         }
 
+        /**
+         * @param allowPut Allow HTTP requests using the PUT method.  By default, GET, HEAD, and OPTIONS requests are allowed, and all other methods result in a 501 error. Such content does not cache, and any PUT requests pass to the origin. See also the `allowDelete`, `allowOptions`, `allowPatch`, and `allowPost` behaviors. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allowPut(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAllowPut allowPut) {
             $.allowPut = allowPut;
             return this;
         }
 
+        /**
+         * @param allowTransferEncoding Controls whether to allow or deny Chunked Transfer Encoding (CTE) requests to pass to your origin. If your origin supports CTE, you should enable this behavior. This behavior also protects against a known issue when pairing `http2` and `webdav` behaviors within the same rule tree, in which case it&#39;s required. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allowTransferEncoding(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAllowTransferEncoding allowTransferEncoding) {
             $.allowTransferEncoding = allowTransferEncoding;
             return this;
         }
 
+        /**
+         * @param altSvcHeader Sets the maximum age value for the Alternative Services (`Alt-Svc`) header. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder altSvcHeader(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAltSvcHeader altSvcHeader) {
             $.altSvcHeader = altSvcHeader;
             return this;
         }
 
+        /**
+         * @param apiPrioritization Enables the API Prioritization Cloudlet, which maintains continuity in user experience by serving an alternate static response when load is too high. You can configure rules using either the Cloudlets Policy Manager application or the `Cloudlets API`. Use this feature serve static API content, such as fallback JSON data.  To serve non-API HTML content, use the `visitorPrioritization` behavior. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder apiPrioritization(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritization apiPrioritization) {
             $.apiPrioritization = apiPrioritization;
             return this;
         }
 
+        /**
+         * @param applicationLoadBalancer Enables the Application Load Balancer Cloudlet, which automates load balancing based on configurable criteria. To configure this behavior, use either the Cloudlets Policy Manager or the `Cloudlets API` to set up a policy. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder applicationLoadBalancer(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorApplicationLoadBalancer applicationLoadBalancer) {
             $.applicationLoadBalancer = applicationLoadBalancer;
             return this;
         }
 
+        /**
+         * @param audienceSegmentation Allows you to divide your users into different segments based on a persistent cookie. You can configure rules using either the Cloudlets Policy Manager application or the `Cloudlets API`. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder audienceSegmentation(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAudienceSegmentation audienceSegmentation) {
             $.audienceSegmentation = audienceSegmentation;
             return this;
         }
 
+        /**
+         * @param autoDomainValidation This behavior allows standard TLS domain validated certificates to renew automatically. Apply it after using the `Certificate Provisioning System` to request a certificate for a hostname.  To provision certificates programmatically, see the `Certificate Provisioning System API`. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder autoDomainValidation(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorAutoDomainValidation autoDomainValidation) {
             $.autoDomainValidation = autoDomainValidation;
             return this;
         }
 
+        /**
+         * @param baseDirectory Prefix URLs sent to the origin with a base path. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder baseDirectory(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorBaseDirectory baseDirectory) {
             $.baseDirectory = baseDirectory;
             return this;
         }
 
+        /**
+         * @param bossBeaconing Triggers diagnostic data beacons for use with BOSS, Akamai&#39;s monitoring and diagnostics system. This behavior is for internal usage only. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder bossBeaconing(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorBossBeaconing bossBeaconing) {
             $.bossBeaconing = bossBeaconing;
             return this;
         }
 
+        /**
+         * @param breadcrumbs Provides per-HTTP transaction visibility into a request for content, regardless of how deep the request goes into the Akamai platform. The `Akamai-Request-BC` response header includes various data, such as network health and the location in the Akamai network used to serve content, which simplifies log review for troubleshooting. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder breadcrumbs(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorBreadcrumbs breadcrumbs) {
             $.breadcrumbs = breadcrumbs;
             return this;
         }
 
+        /**
+         * @param breakConnection This behavior simulates an origin connection problem, typically to test an accompanying `failAction` policy. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder breakConnection(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorBreakConnection breakConnection) {
             $.breakConnection = breakConnection;
             return this;
         }
 
+        /**
+         * @param brotli Accesses Brotli-compressed assets from your origin and caches them on edge servers. This doesn&#39;t compress resources within the content delivery network in real time. You need to set up Brotli compression separately on your origin. If a requesting client doesn&#39;t support Brotli, edge servers deliver non-Brotli resources. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder brotli(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorBrotli brotli) {
             $.brotli = brotli;
             return this;
         }
 
+        /**
+         * @param cacheError Caches the origin&#39;s error responses to decrease server load. Applies for 10 seconds by default to the following HTTP codes: `204`, `305`, `404`, `405`, `501`, `502`, `503`, `504`, and `505`. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cacheError(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCacheError cacheError) {
             $.cacheError = cacheError;
             return this;
         }
 
+        /**
+         * @param cacheId Controls which query parameters, headers, and cookies are included in or excluded from the cache key identifier. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cacheId(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCacheId cacheId) {
             $.cacheId = cacheId;
             return this;
         }
 
+        /**
+         * @param cacheKeyIgnoreCase By default, cache keys are generated under the assumption that path and filename components are case-sensitive, so that `File.html` and `file.html` use separate cache keys. Enabling this behavior forces URL components whose case varies to resolve to the same cache key. Enable this behavior if your origin server is already case-insensitive, such as those based on Microsoft IIS. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cacheKeyIgnoreCase(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCacheKeyIgnoreCase cacheKeyIgnoreCase) {
             $.cacheKeyIgnoreCase = cacheKeyIgnoreCase;
             return this;
         }
 
+        /**
+         * @param cacheKeyQueryParams By default, cache keys are formed as URLs with full query strings. This behavior allows you to consolidate cached objects based on specified sets of query parameters. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cacheKeyQueryParams(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCacheKeyQueryParams cacheKeyQueryParams) {
             $.cacheKeyQueryParams = cacheKeyQueryParams;
             return this;
         }
 
+        /**
+         * @param cacheKeyRewrite This behavior rewrites a default cache key&#39;s path. Contact Akamai Professional Services for help configuring it. This behavior is for internal usage only. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cacheKeyRewrite(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCacheKeyRewrite cacheKeyRewrite) {
             $.cacheKeyRewrite = cacheKeyRewrite;
             return this;
         }
 
+        /**
+         * @param cachePost By default, POST requests are passed to the origin. This behavior overrides the default, and allows you to cache POST responses. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cachePost(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCachePost cachePost) {
             $.cachePost = cachePost;
             return this;
         }
 
+        /**
+         * @param cacheRedirect Controls the caching of HTTP 302 and 307 temporary redirects. By default, Akamai edge servers don&#39;t cache them. Enabling this behavior instructs edge servers to allow these redirects to be cached the same as HTTP 200 responses. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cacheRedirect(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCacheRedirect cacheRedirect) {
             $.cacheRedirect = cacheRedirect;
             return this;
         }
 
+        /**
+         * @param cacheTag This adds a cache tag to the requested object. With cache tags, you can flexibly fast purge tagged segments of your cached content. You can either define these tags with an `Edge-Cache-Tag` header at the origin server level, or use this behavior to directly add a cache tag to the object as the edge server caches it. The `cacheTag` behavior can only take a single value, including a variable. If you want to specify more tags for an object, add a few instances of this behavior to your configuration. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cacheTag(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCacheTag cacheTag) {
             $.cacheTag = cacheTag;
             return this;
         }
 
+        /**
+         * @param cacheTagVisible Cache tags are comma-separated string values you define within an `Edge-Cache-Tag` header. You can use them to flexibly fast purge tagged segments of your cached content. You can either define these headers at the origin server level, or use the `modifyOutgoingResponseHeader` behavior to configure them at the edge.  Apply this behavior to confirm you&#39;re deploying the intended set of cache tags to your content. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cacheTagVisible(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCacheTagVisible cacheTagVisible) {
             $.cacheTagVisible = cacheTagVisible;
             return this;
         }
 
+        /**
+         * @param caching Control content caching on edge servers: whether or not to cache, whether to honor the origin&#39;s caching headers, and for how long to cache.  Note that any `NO_STORE` or `BYPASS_CACHE` HTTP headers set on the origin&#39;s content override this behavior. For more details on how caching works in Property Manager, see the `Learn about caching` section in the guide. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder caching(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCaching caching) {
             $.caching = caching;
             return this;
         }
 
+        /**
+         * @param centralAuthorization Forward client requests to the origin server for authorization, along with optional `Set-Cookie` headers, useful when you need to maintain tight access control. The edge server forwards an `If-Modified-Since` header, to which the origin needs to respond with a `304` (Not-Modified) HTTP status when authorization succeeds. If so, the edge server responds to the client with the cached object, since it does not need to be re-acquired from the origin. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder centralAuthorization(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCentralAuthorization centralAuthorization) {
             $.centralAuthorization = centralAuthorization;
             return this;
         }
 
+        /**
+         * @param chaseRedirects Controls whether the edge server chases any redirects served from the origin. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder chaseRedirects(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorChaseRedirects chaseRedirects) {
             $.chaseRedirects = chaseRedirects;
             return this;
         }
 
+        /**
+         * @param clientCharacteristics Specifies characteristics of the client ecosystem. Akamai uses this information to optimize your metadata configuration, which may result in better end-user performance. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder clientCharacteristics(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorClientCharacteristics clientCharacteristics) {
             $.clientCharacteristics = clientCharacteristics;
             return this;
         }
 
+        /**
+         * @param cloudInterconnects Cloud Interconnects forwards traffic from edge servers to your cloud origin through Private Network Interconnects (PNIs), helping to reduce the egress costs at the origin. Supports origins hosted by Google Cloud Provider (GCP). This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cloudInterconnects(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCloudInterconnects cloudInterconnects) {
             $.cloudInterconnects = cloudInterconnects;
             return this;
         }
 
+        /**
+         * @param cloudWrapper `Cloud Wrapper` maximizes origin offload for large libraries of video, game, and software downloads by optimizing data caches in regions nearest to your origin. You can&#39;t use this behavior in conjunction with `sureRoute` or `tieredDistribution`. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cloudWrapper(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCloudWrapper cloudWrapper) {
             $.cloudWrapper = cloudWrapper;
             return this;
         }
 
+        /**
+         * @param cloudWrapperAdvanced Your account representative uses this behavior to implement a customized failover configuration on your behalf. Use Cloud Wrapper Advanced with an enabled `cloudWrapper` behavior in the same rule. This behavior is for internal usage only. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cloudWrapperAdvanced(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCloudWrapperAdvanced cloudWrapperAdvanced) {
             $.cloudWrapperAdvanced = cloudWrapperAdvanced;
             return this;
         }
 
+        /**
+         * @param conditionalOrigin This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditionalOrigin(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorConditionalOrigin conditionalOrigin) {
             $.conditionalOrigin = conditionalOrigin;
             return this;
         }
 
+        /**
+         * @param constructResponse This behavior constructs an HTTP response, complete with HTTP status code and body, to serve from the edge independently of your origin. It supports all request methods except for `POST`. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder constructResponse(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorConstructResponse constructResponse) {
             $.constructResponse = constructResponse;
             return this;
         }
 
+        /**
+         * @param contentCharacteristics Specifies characteristics of the delivered content. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contentCharacteristics(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristics contentCharacteristics) {
             $.contentCharacteristics = contentCharacteristics;
             return this;
         }
 
+        /**
+         * @param contentCharacteristicsAmd Specifies characteristics of the delivered content. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contentCharacteristicsAmd(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsAmd contentCharacteristicsAmd) {
             $.contentCharacteristicsAmd = contentCharacteristicsAmd;
             return this;
         }
 
+        /**
+         * @param contentCharacteristicsDd Specifies characteristics of the delivered content. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contentCharacteristicsDd(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsDd contentCharacteristicsDd) {
             $.contentCharacteristicsDd = contentCharacteristicsDd;
             return this;
         }
 
+        /**
+         * @param contentCharacteristicsWsdLargeFile Specifies characteristics of the delivered content, specifically targeted to delivering large files. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contentCharacteristicsWsdLargeFile(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsWsdLargeFile contentCharacteristicsWsdLargeFile) {
             $.contentCharacteristicsWsdLargeFile = contentCharacteristicsWsdLargeFile;
             return this;
         }
 
+        /**
+         * @param contentCharacteristicsWsdLive Specifies characteristics of the delivered content, specifically targeted to delivering live video. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contentCharacteristicsWsdLive(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsWsdLive contentCharacteristicsWsdLive) {
             $.contentCharacteristicsWsdLive = contentCharacteristicsWsdLive;
             return this;
         }
 
+        /**
+         * @param contentCharacteristicsWsdVod Specifies characteristics of the delivered content, specifically targeted to delivering on-demand video. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contentCharacteristicsWsdVod(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsWsdVod contentCharacteristicsWsdVod) {
             $.contentCharacteristicsWsdVod = contentCharacteristicsWsdVod;
             return this;
         }
 
+        /**
+         * @param contentPrePosition Content Preposition. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contentPrePosition(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorContentPrePosition contentPrePosition) {
             $.contentPrePosition = contentPrePosition;
             return this;
         }
 
+        /**
+         * @param contentTargetingProtection Content Targeting is based on `EdgeScape`, Akamai&#39;s location-based access control system.  You can use it to allow or deny access to a set of geographic regions or IP addresses. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contentTargetingProtection(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorContentTargetingProtection contentTargetingProtection) {
             $.contentTargetingProtection = contentTargetingProtection;
             return this;
         }
 
+        /**
+         * @param corsSupport Cross-origin resource sharing (CORS) allows web pages in one domain to access restricted resources from your domain. Specify external origin hostnames, methods, and headers that you want to accept via HTTP response headers. Full support of CORS requires allowing requests that use the OPTIONS method. See `allowOptions`. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder corsSupport(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCorsSupport corsSupport) {
             $.corsSupport = corsSupport;
             return this;
         }
 
+        /**
+         * @param cpCode Content Provider Codes (CP codes) allow you to distinguish various reporting and billing segments. You receive a CP code when purchasing Akamai service, and you need it to access properties. This behavior allows you to apply any valid CP code, including additional ones you may request from Akamai Professional Services. For a CP code to be valid, it needs to belong to the same contract and be associated with the same product as the property, and the group needs access to it. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cpCode(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCpCode cpCode) {
             $.cpCode = cpCode;
             return this;
         }
 
+        /**
+         * @param customBehavior Allows you to insert a customized XML metadata behavior into any property&#39;s rule tree.  Talk to your Akamai representative to implement the customized behavior. Once it&#39;s ready, run PAPI&#39;s `List custom behaviors` operation, then apply the relevant `behaviorId` value from the response within the current `customBehavior`. See `Custom behaviors and overrides` for guidance on custom metadata behaviors. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customBehavior(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCustomBehavior customBehavior) {
             $.customBehavior = customBehavior;
             return this;
         }
 
+        /**
+         * @param datastream The `DataStream` reporting service provides real-time logs on application activity, including aggregated metrics on complete request and response cycles and origin response times.  Apply this behavior to report on this set of traffic.  Use the `DataStream API` to aggregate the data. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder datastream(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDatastream datastream) {
             $.datastream = datastream;
             return this;
         }
 
+        /**
+         * @param dcp The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. (The `IoT Edge Connect API` allows programmatic access.) This behavior allows you to select previously reserved namespaces and set the protocols for users to publish and receive messages within these namespaces.  Use the `verifyJsonWebTokenForDcp` behavior to control access. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dcp(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDcp dcp) {
             $.dcp = dcp;
             return this;
         }
 
+        /**
+         * @param dcpAuthHmacTransformation The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. In conjunction with `dcpAuthVariableExtractor`, this behavior affects how clients can authenticate themselves to edge servers, and which groups within namespaces are authorized to access topics. It transforms a source string value extracted from the client certificate and stored as a variable, then generates a hash value based on the selected algorithm, for use in authenticating the client request. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dcpAuthHmacTransformation(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthHmacTransformation dcpAuthHmacTransformation) {
             $.dcpAuthHmacTransformation = dcpAuthHmacTransformation;
             return this;
         }
 
+        /**
+         * @param dcpAuthRegexTransformation The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. In conjunction with `dcpAuthVariableExtractor`, this behavior affects how clients can authenticate themselves to edge servers, and which groups within namespaces are authorized to access topics. It transforms a source string value extracted from the client certificate and stored as a variable, then transforms the string based on a regular expression search pattern, for use in authenticating the client request. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dcpAuthRegexTransformation(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthRegexTransformation dcpAuthRegexTransformation) {
             $.dcpAuthRegexTransformation = dcpAuthRegexTransformation;
             return this;
         }
 
+        /**
+         * @param dcpAuthSubstringTransformation The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. In conjunction with `dcpAuthVariableExtractor`, this behavior affects how clients can authenticate themselves to edge servers, and which groups within namespaces are authorized to access topics. It transforms a source string value extracted from the client certificate and stored as a variable, then extracts a substring, for use in authenticating the client request. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dcpAuthSubstringTransformation(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthSubstringTransformation dcpAuthSubstringTransformation) {
             $.dcpAuthSubstringTransformation = dcpAuthSubstringTransformation;
             return this;
         }
 
+        /**
+         * @param dcpAuthVariableExtractor The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. This behavior affects how clients can authenticate themselves to edge servers, and which groups within namespaces are authorized to access topics. When enabled, this behavior allows end users to authenticate their requests with valid x509 client certificates. Either a client identifier or access authorization groups are required to make the request valid. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dcpAuthVariableExtractor(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthVariableExtractor dcpAuthVariableExtractor) {
             $.dcpAuthVariableExtractor = dcpAuthVariableExtractor;
             return this;
         }
 
+        /**
+         * @param dcpDefaultAuthzGroups The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. This behavior defines a set of default authorization groups to add to each request the property configuration controls.  These groups have access regardless of the authentication method you use, either JWT using the `verifyJsonWebTokenForDcp` behavior, or mutual authentication using the `dcpAuthVariableExtractor` behavior to control where authorization groups are extracted from within certificates. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dcpDefaultAuthzGroups(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDcpDefaultAuthzGroups dcpDefaultAuthzGroups) {
             $.dcpDefaultAuthzGroups = dcpDefaultAuthzGroups;
             return this;
         }
 
+        /**
+         * @param dcpDevRelations The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. This behavior allows Akamai-external clients to use developer test accounts in a shared environment. In conjunction with `verifyJsonWebTokenForDcp`, this behavior allows you to use your own JWTs in your requests, or those generated by Akamai. It lets you either enable the default JWT server for your test configuration by setting the authentication endpoint to a default path, or specify custom settings for your JWT server and the authentication endpoint. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dcpDevRelations(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDcpDevRelations dcpDevRelations) {
             $.dcpDevRelations = dcpDevRelations;
             return this;
         }
 
+        /**
+         * @param dcpRealTimeAuth INTERNAL ONLY: The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. This behavior lets you configure the real time authentication to edge servers. This behavior is for internal usage only. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dcpRealTimeAuth(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDcpRealTimeAuth dcpRealTimeAuth) {
             $.dcpRealTimeAuth = dcpRealTimeAuth;
             return this;
         }
 
+        /**
+         * @param deliveryReceipt A static behavior that&#39;s required when specifying the Cloud Monitor module&#39;s (`edgeConnect` behavior. You can only apply this behavior if the property is marked as secure. See `Secure property requirements` for guidance. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder deliveryReceipt(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDeliveryReceipt deliveryReceipt) {
             $.deliveryReceipt = deliveryReceipt;
             return this;
         }
 
+        /**
+         * @param denyAccess Assuming a condition in the rule matches, this denies access to the requested content. For example, a `userLocation` match paired with this behavior would deny requests from a specified part of the world. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder denyAccess(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDenyAccess denyAccess) {
             $.denyAccess = denyAccess;
             return this;
         }
 
+        /**
+         * @param denyDirectFailoverAccess A static behavior required for all properties that implement a failover under the Cloud Security Failover product. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder denyDirectFailoverAccess(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDenyDirectFailoverAccess denyDirectFailoverAccess) {
             $.denyDirectFailoverAccess = denyDirectFailoverAccess;
             return this;
         }
 
+        /**
+         * @param deviceCharacteristicCacheId By default, source URLs serve as cache IDs on edge servers. Electronic Data Capture allows you to specify an additional set of device characteristics to generate separate cache keys. Use this in conjunction with the `deviceCharacteristicHeader` behavior. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder deviceCharacteristicCacheId(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDeviceCharacteristicCacheId deviceCharacteristicCacheId) {
             $.deviceCharacteristicCacheId = deviceCharacteristicCacheId;
             return this;
         }
 
+        /**
+         * @param deviceCharacteristicHeader Sends selected information about requesting devices to the origin server, in the form of an `X-Akamai-Device-Characteristics` HTTP header. Use in conjunction with the `deviceCharacteristicCacheId` behavior. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder deviceCharacteristicHeader(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDeviceCharacteristicHeader deviceCharacteristicHeader) {
             $.deviceCharacteristicHeader = deviceCharacteristicHeader;
             return this;
         }
 
+        /**
+         * @param dnsAsyncRefresh Allow an edge server to use an expired DNS record when forwarding a request to your origin. The `type A` DNS record refreshes `after` content is served to the end user, so there is no wait for the DNS resolution. Avoid this behavior if you want to be able to disable a server immediately after its DNS record expires. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dnsAsyncRefresh(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDnsAsyncRefresh dnsAsyncRefresh) {
             $.dnsAsyncRefresh = dnsAsyncRefresh;
             return this;
         }
 
+        /**
+         * @param dnsPrefresh Allows edge servers to refresh your origin&#39;s DNS record independently from end-user requests. The `type A` DNS record refreshes before the origin&#39;s DNS record expires. This behavior is for internal usage only. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dnsPrefresh(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDnsPrefresh dnsPrefresh) {
             $.dnsPrefresh = dnsPrefresh;
             return this;
         }
 
+        /**
+         * @param downgradeProtocol Serve static objects to the end-user client over HTTPS, but fetch them from the origin via HTTP. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder downgradeProtocol(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDowngradeProtocol downgradeProtocol) {
             $.downgradeProtocol = downgradeProtocol;
             return this;
         }
 
+        /**
+         * @param downloadCompleteMarker The `Internet of Things: OTA Updates` product allows customers to securely distribute firmware to devices over cellular networks.  Based on match criteria that executes a rule, this behavior logs requests to the OTA servers as completed in aggregated and individual reports. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder downloadCompleteMarker(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDownloadCompleteMarker downloadCompleteMarker) {
             $.downloadCompleteMarker = downloadCompleteMarker;
             return this;
         }
 
+        /**
+         * @param downloadNotification The `Internet of Things: OTA Updates` product allows customers to securely distribute firmware to devices over cellular networks. Based on match criteria that executes a rule, this behavior allows requests to the `OTA Updates API` for a list of completed downloads to individual vehicles. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder downloadNotification(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDownloadNotification downloadNotification) {
             $.downloadNotification = downloadNotification;
             return this;
         }
 
+        /**
+         * @param downstreamCache Specify the caching instructions the edge server sends to the end user&#39;s client or client proxies. By default, the cache&#39;s duration is whichever is less: the remaining lifetime of the edge cache, or what the origin&#39;s header specifies. If the origin is set to `no-store` or `bypass-cache`, edge servers send `cache-busting` headers downstream to prevent downstream caching. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder downstreamCache(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDownstreamCache downstreamCache) {
             $.downstreamCache = downstreamCache;
             return this;
         }
 
+        /**
+         * @param dynamicThroughtputOptimization Enables `quick retry`, which detects slow forward throughput while fetching an object, and attempts a different forward connection path to avoid congestion. By default, connections under 5 mbps trigger this behavior. When the transfer rate drops below this rate during a connection attempt, quick retry is enabled and a different forward connection path is used. Contact Akamai Professional Services to override this threshold. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dynamicThroughtputOptimization(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDynamicThroughtputOptimization dynamicThroughtputOptimization) {
             $.dynamicThroughtputOptimization = dynamicThroughtputOptimization;
             return this;
         }
 
+        /**
+         * @param dynamicThroughtputOptimizationOverride This overrides the default threshold of 5 Mbps that triggers the `dynamicThroughtputOptimization` behavior, which enables the quick retry feature. Quick retry detects slow forward throughput while fetching an object, and attempts a different forward connection path to avoid congestion. This behavior is for internal usage only. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dynamicThroughtputOptimizationOverride(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDynamicThroughtputOptimizationOverride dynamicThroughtputOptimizationOverride) {
             $.dynamicThroughtputOptimizationOverride = dynamicThroughtputOptimizationOverride;
             return this;
         }
 
+        /**
+         * @param dynamicWebContent In conjunction with the `subCustomer` behavior, this optional behavior allows you to control how dynamic web content behaves for your subcustomers using `Akamai Cloud Embed`. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dynamicWebContent(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorDynamicWebContent dynamicWebContent) {
             $.dynamicWebContent = dynamicWebContent;
             return this;
         }
 
+        /**
+         * @param ecmsBulkUpload Uploads a ZIP archive with objects to an existing data set. The target data set stores objects as key-value pairs. The path to an object in the ZIP archive is a key, and the content of an object is a value. For an overview, see `ecmsDatabase`. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ecmsBulkUpload(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEcmsBulkUpload ecmsBulkUpload) {
             $.ecmsBulkUpload = ecmsBulkUpload;
             return this;
         }
 
+        /**
+         * @param ecmsDatabase Edge Connect Message Store is available for `Internet of Things: Edge Connect` users. It lets you create databases and data sets within these databases. You can use this object store to save files smaller than 2 GB. `ecmsDatabase` specifies a default database for requests to this property, unless indicated otherwise in the URL. To access objects in the default database, you can skip its name in the URLs. To access objects in a different database, pass its name in the header, query parameter, or a regular expression matching a URL segment. You can also configure the `ecmsDataset` behavior to specify a default data set for requests. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ecmsDatabase(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEcmsDatabase ecmsDatabase) {
             $.ecmsDatabase = ecmsDatabase;
             return this;
         }
 
+        /**
+         * @param ecmsDataset Specifies a default data set for requests to this property unless indicated otherwise in the URL. To access objects in this data set, you can skip the data set name in the URLs. To access objects in a different data set within a database, pass the data set name in the header, query parameter, or a regular expression pattern matching a URL segment. You can also configure the `ecmsDatabase` behavior to specify a default database for requests. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ecmsDataset(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEcmsDataset ecmsDataset) {
             $.ecmsDataset = ecmsDataset;
             return this;
         }
 
+        /**
+         * @param ecmsObjectKey Defines a regular expression to match object keys in custom URLs and to access objects in a data set. You can point custom URLs to access proper values in the target data set. For an overview, see `ecmsDatabase`. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ecmsObjectKey(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEcmsObjectKey ecmsObjectKey) {
             $.ecmsObjectKey = ecmsObjectKey;
             return this;
         }
 
+        /**
+         * @param edgeConnect Configures traffic logs for the Cloud Monitor push API. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder edgeConnect(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEdgeConnect edgeConnect) {
             $.edgeConnect = edgeConnect;
             return this;
         }
 
+        /**
+         * @param edgeLoadBalancingAdvanced This behavior implements customized Edge Load Balancing features. Contact Akamai Professional Services for help configuring it. This behavior is for internal usage only. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder edgeLoadBalancingAdvanced(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingAdvanced edgeLoadBalancingAdvanced) {
             $.edgeLoadBalancingAdvanced = edgeLoadBalancingAdvanced;
             return this;
         }
 
+        /**
+         * @param edgeLoadBalancingDataCenter The Edge Load Balancing module allows you to specify groups of data centers that implement load balancing, session persistence, and real-time dynamic failover. Enabling ELB routes requests contextually based on location, device, or network, along with optional rules you specify. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder edgeLoadBalancingDataCenter(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingDataCenter edgeLoadBalancingDataCenter) {
             $.edgeLoadBalancingDataCenter = edgeLoadBalancingDataCenter;
             return this;
         }
 
+        /**
+         * @param edgeLoadBalancingOrigin The Edge Load Balancing module allows you to implement groups of data centers featuring load balancing, session persistence, and real-time dynamic failover. Enabling ELB routes requests contextually based on location, device, or network, along with optional rules you specify. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder edgeLoadBalancingOrigin(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingOrigin edgeLoadBalancingOrigin) {
             $.edgeLoadBalancingOrigin = edgeLoadBalancingOrigin;
             return this;
         }
 
+        /**
+         * @param edgeOriginAuthorization Allows the origin server to use a cookie to ensure requests from Akamai servers are genuine. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder edgeOriginAuthorization(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEdgeOriginAuthorization edgeOriginAuthorization) {
             $.edgeOriginAuthorization = edgeOriginAuthorization;
             return this;
         }
 
+        /**
+         * @param edgeRedirector This behavior enables the `Edge Redirector Cloudlet` application, which helps you manage large numbers of redirects. With Cloudlets available on your contract, choose `Your services` &gt; `Edge logic Cloudlets` to control the Edge Redirector within `Control Center`. Otherwise use the `Cloudlets API` to configure it programmatically. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder edgeRedirector(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEdgeRedirector edgeRedirector) {
             $.edgeRedirector = edgeRedirector;
             return this;
         }
 
+        /**
+         * @param edgeScape `EdgeScape` allows you to customize content based on the end user&#39;s geographic location or connection speed. When enabled, the edge server sends a special `X-Akamai-Edgescape` header to the origin server encoding relevant details about the end-user client as key-value pairs. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder edgeScape(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEdgeScape edgeScape) {
             $.edgeScape = edgeScape;
             return this;
         }
 
+        /**
+         * @param edgeSideIncludes Allows edge servers to process edge side include (ESI) code to generate dynamic content. To apply this behavior, you need to match on a `contentType`, `path`, or `filename`. Since this behavior requires more parsing time, you should not apply it to pages that lack ESI code, or to any non-HTML content. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder edgeSideIncludes(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEdgeSideIncludes edgeSideIncludes) {
             $.edgeSideIncludes = edgeSideIncludes;
             return this;
         }
 
+        /**
+         * @param edgeWorker `EdgeWorkers` are JavaScript applications that allow you to manipulate your web traffic on edge servers outside of Property Manager behaviors, and deployed independently from your configuration&#39;s logic.  This behavior applies an EdgeWorker to a set of edge requests. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder edgeWorker(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEdgeWorker edgeWorker) {
             $.edgeWorker = edgeWorker;
             return this;
         }
 
+        /**
+         * @param enhancedAkamaiProtocol Enables the Enhanced Akamai Protocol, a suite of advanced routing and transport optimizations that increase your website&#39;s performance and reliability. It is only available to specific applications, and requires a special routing from edge to origin. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enhancedAkamaiProtocol(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEnhancedAkamaiProtocol enhancedAkamaiProtocol) {
             $.enhancedAkamaiProtocol = enhancedAkamaiProtocol;
             return this;
         }
 
+        /**
+         * @param enhancedProxyDetection Enhanced Proxy Detection (EPD) leverages the GeoGuard service provided by GeoComply to add proxy detection and location spoofing protection. It identifies requests for your content that have been redirected from an unwanted source through a proxy. You can then allow, deny, or redirect these requests. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enhancedProxyDetection(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEnhancedProxyDetection enhancedProxyDetection) {
             $.enhancedProxyDetection = enhancedProxyDetection;
             return this;
         }
 
+        /**
+         * @param epdForwardHeaderEnrichment This behavior identifies unwanted requests from an anonymous proxy. This and the `enhancedProxyDetection` behavior work together and need to be included either in the same rule, or in the default one. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder epdForwardHeaderEnrichment(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorEpdForwardHeaderEnrichment epdForwardHeaderEnrichment) {
             $.epdForwardHeaderEnrichment = epdForwardHeaderEnrichment;
             return this;
         }
 
+        /**
+         * @param failAction Specifies how to respond when the origin is not available: by serving stale content, by serving an error page, or by redirecting.  To apply this behavior, you should match on an `originTimeout` or `matchResponseCode`. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder failAction(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorFailAction failAction) {
             $.failAction = failAction;
             return this;
         }
 
+        /**
+         * @param failoverBotManagerFeatureCompatibility Ensures that functionality such as challenge authentication and reset protocol work with a failover product property you use to create an alternate hostname. Apply it to any properties that implement a failover under the Cloud Security Failover product. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder failoverBotManagerFeatureCompatibility(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorFailoverBotManagerFeatureCompatibility failoverBotManagerFeatureCompatibility) {
             $.failoverBotManagerFeatureCompatibility = failoverBotManagerFeatureCompatibility;
             return this;
         }
 
+        /**
+         * @param fastInvalidate This behavior is deprecated, but you should not disable or remove it if present. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder fastInvalidate(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorFastInvalidate fastInvalidate) {
             $.fastInvalidate = fastInvalidate;
             return this;
         }
 
+        /**
+         * @param firstPartyMarketing Enables the Cloud Marketing Cloudlet, which helps MediaMath customers collect usage data and place corresponding tags for use in online advertising.  You can configure tags using either the Cloudlets Policy Manager application or the `Cloudlets API`. See also the `firstPartyMarketingPlus` behavior, which integrates better with both MediaMath and its partners. Both behaviors support the same set of options. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder firstPartyMarketing(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorFirstPartyMarketing firstPartyMarketing) {
             $.firstPartyMarketing = firstPartyMarketing;
             return this;
         }
 
+        /**
+         * @param firstPartyMarketingPlus Enables the Cloud Marketing Plus Cloudlet, which helps MediaMath customers collect usage data and place corresponding tags for use in online advertising.  You can configure tags using either the Cloudlets Policy Manager application or the `Cloudlets API`. See also the `firstPartyMarketing` behavior, which integrates with MediaMath but not its partners. Both behaviors support the same set of options. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder firstPartyMarketingPlus(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorFirstPartyMarketingPlus firstPartyMarketingPlus) {
             $.firstPartyMarketingPlus = firstPartyMarketingPlus;
             return this;
         }
 
+        /**
+         * @param forwardRewrite The Forward Rewrite Cloudlet allows you to conditionally modify the forward path in edge content without affecting the URL that displays in the user&#39;s address bar. If Cloudlets are available on your contract, choose `Your services` &gt; `Edge logic Cloudlets` to control how this feature works within `Control Center`, or use the `Cloudlets API` to configure it programmatically. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder forwardRewrite(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorForwardRewrite forwardRewrite) {
             $.forwardRewrite = forwardRewrite;
             return this;
         }
 
+        /**
+         * @param frontEndOptimization This behavior is deprecated, but you should not disable or remove it if present. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder frontEndOptimization(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorFrontEndOptimization frontEndOptimization) {
             $.frontEndOptimization = frontEndOptimization;
             return this;
         }
 
+        /**
+         * @param g2oheader The `signature header authentication` (g2o) security feature provides header-based verification of outgoing origin requests. Edge servers encrypt request data in a pre-defined header, which the origin uses to verify that the edge server processed the request. This behavior configures the request data, header names, encryption algorithm, and shared secret to use for verification. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder g2oheader(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorG2oheader g2oheader) {
             $.g2oheader = g2oheader;
             return this;
         }
 
+        /**
+         * @param globalRequestNumber Generates a unique identifier for each request on the Akamai edge network, for use in logging and debugging. GRN identifiers follow the same format as Akamai&#39;s error reference strings, for example: `0.05313217.1567801841.1457a3`. You can use the Edge Diagnostics API&#39;s `Translate error string` operation to get low-level details about any request. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder globalRequestNumber(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorGlobalRequestNumber globalRequestNumber) {
             $.globalRequestNumber = globalRequestNumber;
             return this;
         }
 
+        /**
+         * @param graphqlCaching This behavior configures how to cache GraphQL-based API traffic.  Enable `caching` for your GraphQL API traffic, along with `allowPost` to cache POST responses.  To configure REST API traffic, use the `rapid` behavior. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder graphqlCaching(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorGraphqlCaching graphqlCaching) {
             $.graphqlCaching = graphqlCaching;
             return this;
         }
 
+        /**
+         * @param gzipResponse Apply `gzip` compression to speed transfer time. This behavior applies best to text-based content such as HTML, CSS, and JavaScript, especially once files exceed about 10KB. Do not apply it to already compressed image formats, or to small files that would add more time to uncompress. To apply this behavior, you should match on `contentType` or the content&#39;s `cacheability`. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder gzipResponse(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorGzipResponse gzipResponse) {
             $.gzipResponse = gzipResponse;
             return this;
         }
 
+        /**
+         * @param hdDataAdvanced This behavior specifies Akamai XML metadata that can only be configured on your behalf by Akamai Professional Services.  Unlike the `advanced` behavior, this may apply a different set of overriding metadata that executes in a post-processing phase. This behavior is for internal usage only. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hdDataAdvanced(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorHdDataAdvanced hdDataAdvanced) {
             $.hdDataAdvanced = hdDataAdvanced;
             return this;
         }
 
+        /**
+         * @param healthDetection Monitors the health of your origin server by tracking unsuccessful attempts to contact it. Use this behavior to keep end users from having to wait several seconds before a forwarded request times out, or to reduce requests on the origin server when it is unavailable. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder healthDetection(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorHealthDetection healthDetection) {
             $.healthDetection = healthDetection;
             return this;
         }
 
+        /**
+         * @param hsafEipBinding Edge IP Binding works with a limited set of static IP addresses to distribute your content, which can be limiting in large footprint environments. This behavior sets Hash Serial and Forward (HSAF) for Edge IP Binding to deal with larger footprints. It can only be configured on your behalf by Akamai Professional Services. This behavior is for internal usage only. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hsafEipBinding(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorHsafEipBinding hsafEipBinding) {
             $.hsafEipBinding = hsafEipBinding;
             return this;
         }
 
+        /**
+         * @param http2 Enables the HTTP/2 protocol, which reduces latency and improves efficiency. You can only apply this behavior if the property is marked as secure.  See `Secure property requirements` for guidance. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder http2(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorHttp2 http2) {
             $.http2 = http2;
             return this;
         }
 
+        /**
+         * @param http3 This enables the HTTP/3 protocol that uses QUIC. The behavior allows for improved performance and faster connection setup. You can only apply this behavior if the property is marked as secure. See `Secure property requirements` and the `Property Manager documentation` for guidance. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder http3(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorHttp3 http3) {
             $.http3 = http3;
             return this;
         }
 
+        /**
+         * @param httpStrictTransportSecurity Applies HTTP Strict Transport Security (HSTS), disallowing insecure HTTP traffic. Apply this to hostnames managed with Standard TLS or Enhanced TLS certificates. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder httpStrictTransportSecurity(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorHttpStrictTransportSecurity httpStrictTransportSecurity) {
             $.httpStrictTransportSecurity = httpStrictTransportSecurity;
             return this;
         }
 
+        /**
+         * @param httpToHttpsUpgrade Upgrades an HTTP edge request to HTTPS for the remainder of the request flow. Enable this behavior only if your origin supports HTTPS, and if your `origin` behavior is configured with `originCertsToHonor` to verify SSL certificates. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder httpToHttpsUpgrade(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorHttpToHttpsUpgrade httpToHttpsUpgrade) {
             $.httpToHttpsUpgrade = httpToHttpsUpgrade;
             return this;
         }
 
+        /**
+         * @param imOverride This specifies common query parameters that affect how `imageManager` transforms images, potentially overriding policy, width, format, or density request parameters. This also allows you to assign the value of one of the property&#39;s `rule tree variables` to one of Image and Video Manager&#39;s own policy variables. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder imOverride(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorImOverride imOverride) {
             $.imOverride = imOverride;
             return this;
         }
 
+        /**
+         * @param imageAndVideoManager This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder imageAndVideoManager(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorImageAndVideoManager imageAndVideoManager) {
             $.imageAndVideoManager = imageAndVideoManager;
             return this;
         }
 
+        /**
+         * @param imageManager Optimizes images&#39; size or file type for the requesting device.  You can also use this behavior to generate API tokens to apply your own policies to matching images using the `Image and Video Manager API`. To apply this behavior, you need to match on a `fileExtension`. Once you apply Image and Video Manager to traffic, you can add the `advancedImMatch` to ensure the behavior applies to the requests from the Image and Video Manager backend. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder imageManager(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorImageManager imageManager) {
             $.imageManager = imageManager;
             return this;
         }
 
+        /**
+         * @param imageManagerVideo Optimizes videos managed by Image and Video Manager for the requesting device.  You can also use this behavior to generate API tokens to apply your own policies to matching videos using the `Image and Video Manager API`. To apply this behavior, you need to match on a `fileExtension`. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder imageManagerVideo(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideo imageManagerVideo) {
             $.imageManagerVideo = imageManagerVideo;
             return this;
         }
 
+        /**
+         * @param include Includes let you reuse chunks of a property configuration that you can manage separately from the rest of the property rule tree. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder include(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorInclude include) {
             $.include = include;
             return this;
         }
 
+        /**
+         * @param inputValidation This behavior is deprecated, but you should not disable or remove it if present. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder inputValidation(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorInputValidation inputValidation) {
             $.inputValidation = inputValidation;
             return this;
         }
 
+        /**
+         * @param instant The Instant feature allows you to prefetch content to the edge cache by adding link relation attributes to markup. For example: This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder instant(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorInstant instant) {
             $.instant = instant;
             return this;
         }
 
+        /**
+         * @param instantConfig Multi-Domain Configuration, also known as `InstantConfig`, allows you to apply property settings to all incoming hostnames based on a DNS lookup, without explicitly listing them among the property&#39;s hostnames. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder instantConfig(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorInstantConfig instantConfig) {
             $.instantConfig = instantConfig;
             return this;
         }
 
+        /**
+         * @param largeFileOptimization The `Large File Optimization` (LFO) feature improves performance and reliability when delivering large files. You need this behavior for objects larger than 1.8GB, and you should apply it to anything over 100MB. You should apply it only to the specific content to be optimized, such as a download directory&#39;s `.gz` files, and enable the `useVersioning` option while enforcing your own filename versioning policy. Make sure you meet all the `requirements and best practices` for the LFO delivery. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder largeFileOptimization(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorLargeFileOptimization largeFileOptimization) {
             $.largeFileOptimization = largeFileOptimization;
             return this;
         }
 
+        /**
+         * @param largeFileOptimizationAdvanced The `Large File Optimization` feature improves performance and reliability when delivering large files. You need this behavior for objects larger than 1.8GB, and it&#39;s recommended for anything over 100MB. You should apply it only to the specific content to be optimized, such as a download directory&#39;s `.gz` files.  Note that it is best to use `NetStorage` for objects larger than 1.8GB. This behavior is for internal usage only. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder largeFileOptimizationAdvanced(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorLargeFileOptimizationAdvanced largeFileOptimizationAdvanced) {
             $.largeFileOptimizationAdvanced = largeFileOptimizationAdvanced;
             return this;
         }
 
+        /**
+         * @param limitBitRate Control the rate at which content serves out to end users, optionally varying the speed depending on the file size or elapsed download time. Each bit rate specified in the `bitrateTable` array corresponds to a `thresholdTable` entry that activates it.  You can use this behavior to prevent media downloads from progressing faster than they are viewed, for example, or to differentiate various tiers of end-user experience. To apply this behavior, you should match on a `contentType`, `path`, or `filename`. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder limitBitRate(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRate limitBitRate) {
             $.limitBitRate = limitBitRate;
             return this;
         }
 
+        /**
+         * @param logCustom Logs custom details from the origin response in the `Log Delivery Service` report. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder logCustom(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorLogCustom logCustom) {
             $.logCustom = logCustom;
             return this;
         }
 
+        /**
+         * @param mPulse `mPulse` provides high-level performance analytics and predictive recommendations based on real end user data. See the `mPulse Quick Start` to set up mPulse on your website. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder mPulse(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorMPulse mPulse) {
             $.mPulse = mPulse;
             return this;
         }
 
+        /**
+         * @param manifestPersonalization Allows customers who use the Adaptive Media Delivery product to enhance content based on the capabilities of each end user&#39;s device.  This behavior configures a `manifest` for both HLS Live and on-demand streaming. For more information, see `Adaptive Media Delivery`. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder manifestPersonalization(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorManifestPersonalization manifestPersonalization) {
             $.manifestPersonalization = manifestPersonalization;
             return this;
         }
 
+        /**
+         * @param manifestRerouting This behavior works with `adScalerCircuitBreaker`. It delegates parts of the media delivery workflow, like ad insertion, to other technology partners. Akamai reroutes manifest file requests to partner platforms for processing prior to being delivered. Rerouting simplifies the workflow and improves the media streaming experience. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder manifestRerouting(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorManifestRerouting manifestRerouting) {
             $.manifestRerouting = manifestRerouting;
             return this;
         }
 
+        /**
+         * @param manualServerPush With the `http2` behavior enabled, this loads a specified set of objects into the client browser&#39;s cache. To apply this behavior, you should match on a `path` or `filename`. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder manualServerPush(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorManualServerPush manualServerPush) {
             $.manualServerPush = manualServerPush;
             return this;
         }
 
+        /**
+         * @param mediaAcceleration Enables Accelerated Media Delivery for this set of requests. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder mediaAcceleration(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorMediaAcceleration mediaAcceleration) {
             $.mediaAcceleration = mediaAcceleration;
             return this;
         }
 
+        /**
+         * @param mediaAccelerationQuicOptout When enabled, disables use of QUIC protocol for this set of accelerated media content. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder mediaAccelerationQuicOptout(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorMediaAccelerationQuicOptout mediaAccelerationQuicOptout) {
             $.mediaAccelerationQuicOptout = mediaAccelerationQuicOptout;
             return this;
         }
 
+        /**
+         * @param mediaClient This behavior is deprecated, but you should not disable or remove it if present. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder mediaClient(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorMediaClient mediaClient) {
             $.mediaClient = mediaClient;
             return this;
         }
 
+        /**
+         * @param mediaFileRetrievalOptimization Media File Retrieval Optimization (MFRO) speeds the delivery of large media files by relying on caches of partial objects. You should use it for files larger than 100 MB. It&#39;s required for files larger than 1.8 GB, and works best with `NetStorage`. To apply this behavior, you should match on a `fileExtension`. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder mediaFileRetrievalOptimization(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorMediaFileRetrievalOptimization mediaFileRetrievalOptimization) {
             $.mediaFileRetrievalOptimization = mediaFileRetrievalOptimization;
             return this;
         }
 
+        /**
+         * @param mediaOriginFailover Specifies how edge servers respond when the origin is unresponsive, or suffers from server or content errors. You can specify how many times to retry, switch to a backup origin hostname, or configure a redirect. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder mediaOriginFailover(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorMediaOriginFailover mediaOriginFailover) {
             $.mediaOriginFailover = mediaOriginFailover;
             return this;
         }
 
+        /**
+         * @param metadataCaching This behavior reduces time spent waiting for the initial response, also known as time to first byte, during peak traffic events. Contact Akamai Professional Services for help configuring it. This behavior is for internal usage only. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder metadataCaching(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorMetadataCaching metadataCaching) {
             $.metadataCaching = metadataCaching;
             return this;
         }
 
+        /**
+         * @param mobileSdkPerformance This behavior is deprecated, but you should not disable or remove it if present. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder mobileSdkPerformance(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorMobileSdkPerformance mobileSdkPerformance) {
             $.mobileSdkPerformance = mobileSdkPerformance;
             return this;
         }
 
+        /**
+         * @param modifyIncomingRequestHeader Modify, add, remove, or pass along specific request headers coming upstream from the client. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder modifyIncomingRequestHeader(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorModifyIncomingRequestHeader modifyIncomingRequestHeader) {
             $.modifyIncomingRequestHeader = modifyIncomingRequestHeader;
             return this;
         }
 
+        /**
+         * @param modifyIncomingResponseHeader Modify, add, remove, or pass along specific response headers coming downstream from the origin. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder modifyIncomingResponseHeader(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorModifyIncomingResponseHeader modifyIncomingResponseHeader) {
             $.modifyIncomingResponseHeader = modifyIncomingResponseHeader;
             return this;
         }
 
+        /**
+         * @param modifyOutgoingRequestHeader Modify, add, remove, or pass along specific request headers going upstream towards the origin. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder modifyOutgoingRequestHeader(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorModifyOutgoingRequestHeader modifyOutgoingRequestHeader) {
             $.modifyOutgoingRequestHeader = modifyOutgoingRequestHeader;
             return this;
         }
 
+        /**
+         * @param modifyOutgoingResponseHeader Modify, add, remove, or pass along specific response headers going downstream towards the client. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder modifyOutgoingResponseHeader(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorModifyOutgoingResponseHeader modifyOutgoingResponseHeader) {
             $.modifyOutgoingResponseHeader = modifyOutgoingResponseHeader;
             return this;
         }
 
+        /**
+         * @param modifyViaHeader Removes or renames the HTTP `Via` headers used to inform the server of proxies through which the request was sent to the origin. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder modifyViaHeader(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorModifyViaHeader modifyViaHeader) {
             $.modifyViaHeader = modifyViaHeader;
             return this;
         }
 
+        /**
+         * @param origin Specify the hostname and settings used to contact the origin once service begins. You can use your own origin, `NetStorage`, an Edge Load Balancing origin, or a SaaS dynamic origin. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder origin(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorOrigin origin) {
             $.origin = origin;
             return this;
         }
 
+        /**
+         * @param originCharacteristics Specifies characteristics of the origin. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder originCharacteristics(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristics originCharacteristics) {
             $.originCharacteristics = originCharacteristics;
             return this;
         }
 
+        /**
+         * @param originCharacteristicsWsd Specifies characteristics of the origin, for use in Akamai&#39;s Wholesale Delivery product. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder originCharacteristicsWsd(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristicsWsd originCharacteristicsWsd) {
             $.originCharacteristicsWsd = originCharacteristicsWsd;
             return this;
         }
 
+        /**
+         * @param originFailureRecoveryMethod Origin Failover requires that you set up a separate rule containing origin failure recovery methods. You also need to set up the Origin Failure Recovery Policy behavior in a separate rule with a desired match criteria, and select the desired failover method. You can do this using Property Manager. Learn more about this process in `Adaptive Media Delivery Implementation Guide`. You can use the `originFailureRecoveryPolicy` member to edit existing instances of the Origin Failure Recover Policy behavior. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder originFailureRecoveryMethod(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorOriginFailureRecoveryMethod originFailureRecoveryMethod) {
             $.originFailureRecoveryMethod = originFailureRecoveryMethod;
             return this;
         }
 
+        /**
+         * @param originFailureRecoveryPolicy Configures how to detect an origin failure, in which case the `originFailureRecoveryMethod` behavior applies. You can also define up to three sets of criteria to detect origin failure based on specific response codes. Use it to apply specific retry or recovery actions. You can do this using Property Manager. Learn more about this process in `Adaptive Media Delivery Implementation Guide`. You can use the `originFailureRecoveryMethod` member to edit existing instances of the Origin Failure Recover Method behavior. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder originFailureRecoveryPolicy(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorOriginFailureRecoveryPolicy originFailureRecoveryPolicy) {
             $.originFailureRecoveryPolicy = originFailureRecoveryPolicy;
             return this;
         }
 
+        /**
+         * @param originIpAcl Origin IP Access Control List limits the traffic to your origin. It only allows requests from specific edge servers that are configured as part of a supernet defined by CIDR blocks. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder originIpAcl(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorOriginIpAcl originIpAcl) {
             $.originIpAcl = originIpAcl;
             return this;
         }
 
+        /**
+         * @param persistentClientConnection This behavior activates `persistent connections` between edge servers and clients, which allow for better performance and more efficient use of resources. Compare with the `persistentConnection` behavior, which configures persistent connections for the entire journey from origin to edge to client.  Contact Akamai Professional Services for help configuring either. This behavior is for internal usage only. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder persistentClientConnection(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorPersistentClientConnection persistentClientConnection) {
             $.persistentClientConnection = persistentClientConnection;
             return this;
         }
 
+        /**
+         * @param persistentConnection This behavior enables more efficient `persistent connections` from origin to edge server to client. Compare with the `persistentClientConnection` behavior, which customizes persistent connections from edge to client. Contact Akamai Professional Services for help configuring either. This behavior is for internal usage only. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder persistentConnection(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorPersistentConnection persistentConnection) {
             $.persistentConnection = persistentConnection;
             return this;
         }
 
+        /**
+         * @param personallyIdentifiableInformation Marks content covered by the current rule as sensitive `personally identifiable information` that needs to be treated as secure and private. That includes anything involving personal information: name, social security number, date and place of birth, mother&#39;s maiden name, biometric data, or any other data linked to an individual. If you attempt to save a property with such a rule that also caches or logs sensitive content, the added behavior results in a validation error. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder personallyIdentifiableInformation(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorPersonallyIdentifiableInformation personallyIdentifiableInformation) {
             $.personallyIdentifiableInformation = personallyIdentifiableInformation;
             return this;
         }
 
+        /**
+         * @param phasedRelease The Phased Release Cloudlet provides gradual and granular traffic management to an alternate origin in near real time.  Use the `Cloudlets API` or the Cloudlets Policy Manager application within `Control Center` to set up your Cloudlets policies. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder phasedRelease(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorPhasedRelease phasedRelease) {
             $.phasedRelease = phasedRelease;
             return this;
         }
 
+        /**
+         * @param preconnect With the `http2` behavior enabled, this requests a specified set of domains that relate to your property hostname, and keeps the connection open for faster loading of content from those domains. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder preconnect(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorPreconnect preconnect) {
             $.preconnect = preconnect;
             return this;
         }
 
+        /**
+         * @param predictiveContentDelivery Improves user experience and reduces the cost of downloads by enabling mobile devices to predictively fetch and cache content from catalogs managed by Akamai servers. You can&#39;t use this feature if in the `segmentedMediaOptimization` behavior, the value for `behavior` is set to `LIVE`. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder predictiveContentDelivery(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorPredictiveContentDelivery predictiveContentDelivery) {
             $.predictiveContentDelivery = predictiveContentDelivery;
             return this;
         }
 
+        /**
+         * @param predictivePrefetching This behavior potentially reduces the client&#39;s page load time by pre-caching objects based on historical data for the page, not just its current set of referenced objects. It also detects second-level dependencies, such as objects retrieved by JavaScript. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder predictivePrefetching(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorPredictivePrefetching predictivePrefetching) {
             $.predictivePrefetching = predictivePrefetching;
             return this;
         }
 
+        /**
+         * @param prefetch Instructs edge servers to retrieve content linked from requested pages as they load, rather than waiting for separate requests for the linked content. This behavior applies depending on the rule&#39;s set of matching conditions. Use in conjunction with the `prefetchable` behavior, which specifies the set of objects to prefetch. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder prefetch(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorPrefetch prefetch) {
             $.prefetch = prefetch;
             return this;
         }
 
+        /**
+         * @param prefetchable Allow matching objects to prefetch into the edge cache as the parent page that links to them loads, rather than waiting for a direct request. This behavior applies depending on the rule&#39;s set of matching conditions. Use `prefetch` to enable the overall behavior for parent pages that contain links to the object. To apply this behavior, you need to match on a `filename` or `fileExtension`. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder prefetchable(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorPrefetchable prefetchable) {
             $.prefetchable = prefetchable;
             return this;
         }
 
+        /**
+         * @param prefreshCache Refresh cached content before its time-to-live (TTL) expires, to keep end users from having to wait for the origin to provide fresh content. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder prefreshCache(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorPrefreshCache prefreshCache) {
             $.prefreshCache = prefreshCache;
             return this;
         }
 
+        /**
+         * @param quality This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder quality(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorQuality quality) {
             $.quality = quality;
             return this;
         }
 
+        /**
+         * @param quicBeta For a share of responses, includes an `Alt-Svc` header for compatible clients to initiate subsequent sessions using the QUIC protocol. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder quicBeta(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorQuicBeta quicBeta) {
             $.quicBeta = quicBeta;
             return this;
         }
 
+        /**
+         * @param randomSeek Optimizes `.flv` and `.mp4` files to allow random jump-point navigation. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder randomSeek(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRandomSeek randomSeek) {
             $.randomSeek = randomSeek;
             return this;
         }
 
+        /**
+         * @param rapid The `Akamai API Gateway` allows you to configure API traffic delivered over the Akamai network. Apply this behavior to a set of API assets, then use Akamai&#39;s `API Endpoints API` to configure how the traffic responds.  Use the `API Keys and Traffic Management API` to control access to your APIs. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder rapid(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRapid rapid) {
             $.rapid = rapid;
             return this;
         }
 
+        /**
+         * @param readTimeout This behavior specifies how long the edge server should wait for a response from the requesting forward server after a connection has already been established. Any failure to read aborts the request and sends a `504` Gateway Timeout error to the client. Contact Akamai Professional Services for help configuring this behavior. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder readTimeout(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorReadTimeout readTimeout) {
             $.readTimeout = readTimeout;
             return this;
         }
 
+        /**
+         * @param realTimeReporting This enables `Real-Time Reporting` for Akamai Cloud Embed customers. The behavior can only be configured on your behalf by Akamai Professional Services. This behavior is for internal usage only. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder realTimeReporting(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRealTimeReporting realTimeReporting) {
             $.realTimeReporting = realTimeReporting;
             return this;
         }
 
+        /**
+         * @param realUserMonitoring This behavior is deprecated, but you should not disable or remove it if present. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder realUserMonitoring(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRealUserMonitoring realUserMonitoring) {
             $.realUserMonitoring = realUserMonitoring;
             return this;
         }
 
+        /**
+         * @param redirect Respond to the client request with a redirect without contacting the origin. Specify the redirect as a path expression starting with a `/` character relative to the current root, or as a fully qualified URL. This behavior relies primarily on `destinationHostname` and `destinationPath` to manipulate the hostname and path independently. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder redirect(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRedirect redirect) {
             $.redirect = redirect;
             return this;
         }
 
+        /**
+         * @param redirectplus Respond to the client request with a redirect without contacting the origin. This behavior fills the same need as `redirect`, but allows you to use `variables` to express the redirect `destination`&#39;s component values more concisely. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder redirectplus(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRedirectplus redirectplus) {
             $.redirectplus = redirectplus;
             return this;
         }
 
+        /**
+         * @param refererChecking Limits allowed requests to a set of domains you specify. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder refererChecking(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRefererChecking refererChecking) {
             $.refererChecking = refererChecking;
             return this;
         }
 
+        /**
+         * @param removeQueryParameter Remove named query parameters before forwarding the request to the origin. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder removeQueryParameter(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRemoveQueryParameter removeQueryParameter) {
             $.removeQueryParameter = removeQueryParameter;
             return this;
         }
 
+        /**
+         * @param removeVary By default, responses that feature a `Vary` header value of anything other than `Accept-Encoding` and a corresponding `Content-Encoding: gzip` header aren&#39;t cached on edge servers. `Vary` headers indicate when a URL&#39;s content varies depending on some variable, such as which `User-Agent` requests it. This behavior simply removes the `Vary` header to make responses cacheable. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder removeVary(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRemoveVary removeVary) {
             $.removeVary = removeVary;
             return this;
         }
 
+        /**
+         * @param report Specify the HTTP request headers or cookie names to log in your Log Delivery Service reports. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder report(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorReport report) {
             $.report = report;
             return this;
         }
 
+        /**
+         * @param requestControl The Request Control Cloudlet allows you to control access to your web content based on the incoming request&#39;s IP or geographic location.  With Cloudlets available on your contract, choose `Your services` &gt; `Edge logic Cloudlets` to control how the feature works within `Control Center`, or use the `Cloudlets API` to configure it programmatically. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder requestControl(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRequestControl requestControl) {
             $.requestControl = requestControl;
             return this;
         }
 
+        /**
+         * @param requestTypeMarker The `Internet of Things: OTA Updates` product allows customers to securely distribute firmware to devices over cellular networks. When using the `downloadCompleteMarker` behavior to log successful downloads, this related behavior identifies download or campaign server types in aggregated and individual reports. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder requestTypeMarker(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRequestTypeMarker requestTypeMarker) {
             $.requestTypeMarker = requestTypeMarker;
             return this;
         }
 
+        /**
+         * @param resourceOptimizer This behavior is deprecated, but you should not disable or remove it if present. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder resourceOptimizer(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorResourceOptimizer resourceOptimizer) {
             $.resourceOptimizer = resourceOptimizer;
             return this;
         }
 
+        /**
+         * @param resourceOptimizerExtendedCompatibility This enhances the standard version of the `resourceOptimizer` behavior to support the compression of additional file formats and address some compatibility issues. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder resourceOptimizerExtendedCompatibility(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorResourceOptimizerExtendedCompatibility resourceOptimizerExtendedCompatibility) {
             $.resourceOptimizerExtendedCompatibility = resourceOptimizerExtendedCompatibility;
             return this;
         }
 
+        /**
+         * @param responseCode Change the existing response code. For example, if your origin sends a `301` permanent redirect, this behavior can change it on the edge to a temporary `302` redirect. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder responseCode(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorResponseCode responseCode) {
             $.responseCode = responseCode;
             return this;
         }
 
+        /**
+         * @param responseCookie Set a cookie to send downstream to the client with either a fixed value or a unique stamp. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder responseCookie(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorResponseCookie responseCookie) {
             $.responseCookie = responseCookie;
             return this;
         }
 
+        /**
+         * @param restrictObjectCaching You need this behavior to deploy the Object Caching product. It disables serving HTML content and limits the maximum object size to 100MB. Contact Akamai Professional Services for help configuring it. This behavior is for internal usage only. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder restrictObjectCaching(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRestrictObjectCaching restrictObjectCaching) {
             $.restrictObjectCaching = restrictObjectCaching;
             return this;
         }
 
+        /**
+         * @param returnCacheStatus Generates a response header with information about cache status. Among other things, this can tell you whether the response came from the Akamai cache, or from the origin. Status values report with either of these forms of syntax, depending for example on whether you&#39;re deploying traffic using `sureRoute` or `tieredDistribution`: This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder returnCacheStatus(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorReturnCacheStatus returnCacheStatus) {
             $.returnCacheStatus = returnCacheStatus;
             return this;
         }
 
+        /**
+         * @param rewriteUrl Modifies the path of incoming requests to forward to the origin. This helps you offload URL-rewriting tasks to the edge to increase the origin server&#39;s performance, allows you to redirect links to different targets without changing markup, and hides your original directory structure. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder rewriteUrl(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRewriteUrl rewriteUrl) {
             $.rewriteUrl = rewriteUrl;
             return this;
         }
 
+        /**
+         * @param rumCustom This behavior is deprecated, but you should not disable or remove it if present. This behavior is for internal usage only. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder rumCustom(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRumCustom rumCustom) {
             $.rumCustom = rumCustom;
             return this;
         }
 
+        /**
+         * @param saasDefinitions Configures how the Software as a Service feature identifies `customers`, `applications`, and `users`. A different set of options is available for each type of targeted request, each enabled with the `action`-suffixed option. In each case, you can use `PATH`, `COOKIE`, `QUERY_STRING`, or `HOSTNAME` components as identifiers, or `disable` the SaaS behavior for certain targets. If you rely on a `HOSTNAME`, you also have the option of specifying a `CNAME chain` rather than an individual hostname. The various options suffixed `regex` and `replace` subsequently remove the identifier from the request. This behavior requires a sibling `origin` behavior whose `originType` option is set to `SAAS_DYNAMIC_ORIGIN`. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder saasDefinitions(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorSaasDefinitions saasDefinitions) {
             $.saasDefinitions = saasDefinitions;
             return this;
         }
 
+        /**
+         * @param salesForceCommerceCloudClient If you use the Salesforce Commerce Cloud platform for your origin content, this behavior allows your edge content managed by Akamai to contact directly to origin. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder salesForceCommerceCloudClient(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudClient salesForceCommerceCloudClient) {
             $.salesForceCommerceCloudClient = salesForceCommerceCloudClient;
             return this;
         }
 
+        /**
+         * @param salesForceCommerceCloudProvider This manages traffic between mutual customers and the Salesforce Commerce Cloud platform. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder salesForceCommerceCloudProvider(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudProvider salesForceCommerceCloudProvider) {
             $.salesForceCommerceCloudProvider = salesForceCommerceCloudProvider;
             return this;
         }
 
+        /**
+         * @param salesForceCommerceCloudProviderHostHeader Manages host header values sent to the Salesforce Commerce Cloud platform. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder salesForceCommerceCloudProviderHostHeader(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudProviderHostHeader salesForceCommerceCloudProviderHostHeader) {
             $.salesForceCommerceCloudProviderHostHeader = salesForceCommerceCloudProviderHostHeader;
             return this;
         }
 
+        /**
+         * @param savePostDcaProcessing Used in conjunction with the `cachePost` behavior, this behavior allows the body of POST requests to be processed through Dynamic Content Assembly.  Contact Akamai Professional Services for help configuring it. This behavior is for internal usage only. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder savePostDcaProcessing(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorSavePostDcaProcessing savePostDcaProcessing) {
             $.savePostDcaProcessing = savePostDcaProcessing;
             return this;
         }
 
+        /**
+         * @param scheduleInvalidation Specifies when cached content that satisfies a rule&#39;s criteria expires, optionally at repeating intervals. In addition to periodic cache flushes, you can use this behavior to minimize potential conflicts when related objects expire at different times. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder scheduleInvalidation(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorScheduleInvalidation scheduleInvalidation) {
             $.scheduleInvalidation = scheduleInvalidation;
             return this;
         }
 
+        /**
+         * @param scriptManagement Ensures unresponsive linked JavaScript files do not prevent HTML pages from loading. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder scriptManagement(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorScriptManagement scriptManagement) {
             $.scriptManagement = scriptManagement;
             return this;
         }
 
+        /**
+         * @param segmentedContentProtection Validates authorization tokens at the edge server to prevent unauthorized link sharing. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder segmentedContentProtection(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedContentProtection segmentedContentProtection) {
             $.segmentedContentProtection = segmentedContentProtection;
             return this;
         }
 
+        /**
+         * @param segmentedMediaOptimization Optimizes segmented media for live or streaming delivery contexts. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder segmentedMediaOptimization(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaOptimization segmentedMediaOptimization) {
             $.segmentedMediaOptimization = segmentedMediaOptimization;
             return this;
         }
 
+        /**
+         * @param segmentedMediaStreamingPrefetch Prefetches HLS and DASH media stream manifest and segment files, accelerating delivery to end users. For prefetching to work, your origin media&#39;s response needs to specify `CDN-Origin-Assist-Prefetch-Path` headers with each URL to prefetch, expressed as either a relative or absolute path. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder segmentedMediaStreamingPrefetch(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaStreamingPrefetch segmentedMediaStreamingPrefetch) {
             $.segmentedMediaStreamingPrefetch = segmentedMediaStreamingPrefetch;
             return this;
         }
 
+        /**
+         * @param setVariable Modify a variable to insert into subsequent fields within the rule tree.  Use this behavior to specify the predeclared `variableName` and determine from where to derive its new value. Based on this `valueSource`, you can either generate the value, extract it from some part of the incoming request, assign it from another variable (including a set of built-in system variables), or directly specify its text.  Optionally choose a `transform` function to modify the value once. See `Support for variables` for more information. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder setVariable(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorSetVariable setVariable) {
             $.setVariable = setVariable;
             return this;
         }
 
+        /**
+         * @param shutr This behavior is deprecated, but you should not disable or remove it if present. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder shutr(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorShutr shutr) {
             $.shutr = shutr;
             return this;
         }
 
+        /**
+         * @param simulateErrorCode This behavior simulates various error response codes. Contact Akamai Professional Services for help configuring it. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder simulateErrorCode(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorSimulateErrorCode simulateErrorCode) {
             $.simulateErrorCode = simulateErrorCode;
             return this;
         }
 
+        /**
+         * @param siteShield This behavior implements the `Site Shield` feature, which helps prevent non-Akamai machines from contacting your origin. You get an email with a list of Akamai servers allowed to contact your origin, with which you establish an Access Control List on your firewall to prevent any other requests. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder siteShield(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorSiteShield siteShield) {
             $.siteShield = siteShield;
             return this;
         }
 
+        /**
+         * @param standardTlsMigration This behavior is deprecated, but you should not disable or remove it if present. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder standardTlsMigration(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorStandardTlsMigration standardTlsMigration) {
             $.standardTlsMigration = standardTlsMigration;
             return this;
         }
 
+        /**
+         * @param standardTlsMigrationOverride This behavior is deprecated, but you should not disable or remove it if present. This behavior is for internal usage only. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder standardTlsMigrationOverride(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorStandardTlsMigrationOverride standardTlsMigrationOverride) {
             $.standardTlsMigrationOverride = standardTlsMigrationOverride;
             return this;
         }
 
+        /**
+         * @param strictHeaderParsing This behavior specifies how the edge servers should handle requests containing improperly formatted or invalid headers that don’t comply with `RFC 9110`. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder strictHeaderParsing(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorStrictHeaderParsing strictHeaderParsing) {
             $.strictHeaderParsing = strictHeaderParsing;
             return this;
         }
 
+        /**
+         * @param subCustomer When positioned in a property&#39;s top-level default rule, enables various `Cloud Embed` features that allow you to leverage Akamai&#39;s CDN architecture for your own subcustomers.  This behavior&#39;s options allow you to use Cloud Embed to configure your subcustomers&#39; content.  Once enabled, you can use the `Akamai Cloud Embed API` (ACE) to assign subcustomers to this base configuration, and to customize policies for them.  See also the `dynamicWebContent` behavior to configure subcustomers&#39; dynamic web content. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder subCustomer(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorSubCustomer subCustomer) {
             $.subCustomer = subCustomer;
             return this;
         }
 
+        /**
+         * @param sureRoute The `SureRoute` feature continually tests different routes between origin and edge servers to identify the optimal path. By default, it conducts `races` to identify alternative paths to use in case of a transmission failure. These races increase origin traffic slightly. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sureRoute(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorSureRoute sureRoute) {
             $.sureRoute = sureRoute;
             return this;
         }
 
+        /**
+         * @param tcpOptimization This behavior is deprecated, but you should not disable or remove it if present. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tcpOptimization(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorTcpOptimization tcpOptimization) {
             $.tcpOptimization = tcpOptimization;
             return this;
         }
 
+        /**
+         * @param teaLeaf Allows IBM Tealeaf Customer Experience on Cloud to record HTTPS requests and responses for Akamai-enabled properties. Recorded data becomes available in your IBM Tealeaf account. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder teaLeaf(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorTeaLeaf teaLeaf) {
             $.teaLeaf = teaLeaf;
             return this;
         }
 
+        /**
+         * @param tieredDistribution This behavior allows Akamai edge servers to retrieve cached content from other Akamai servers, rather than directly from the origin. These interim `parent` servers in the `cache hierarchy` (`CH`) are positioned close to the origin, and fall along the path from the origin to the edge server. Tiered Distribution typically reduces the origin server&#39;s load, and reduces the time it takes for edge servers to refresh content. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tieredDistribution(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistribution tieredDistribution) {
             $.tieredDistribution = tieredDistribution;
             return this;
         }
 
+        /**
+         * @param tieredDistributionAdvanced This behavior allows Akamai edge servers to retrieve cached content from other Akamai servers, rather than directly from the origin. These interim `parent` servers in the `cache hierarchy` (`CH`) are positioned close to the origin, and fall along the path from the origin to the edge server. Tiered Distribution typically reduces the origin server&#39;s load, and reduces the time it takes for edge servers to refresh content.  This advanced behavior provides a wider set of options than `tieredDistribution`. This behavior is for internal usage only. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tieredDistributionAdvanced(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionAdvanced tieredDistributionAdvanced) {
             $.tieredDistributionAdvanced = tieredDistributionAdvanced;
             return this;
         }
 
+        /**
+         * @param tieredDistributionCustomization With Tiered Distribution, Akamai edge servers retrieve cached content from other Akamai servers, rather than directly from the origin. This behavior sets custom Tiered Distribution maps (TD0) and migrates TD1 maps configured with `advanced features` to Cloud Wrapper. You need to enable `cloudWrapper` within the same rule. This behavior is for internal usage only. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tieredDistributionCustomization(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionCustomization tieredDistributionCustomization) {
             $.tieredDistributionCustomization = tieredDistributionCustomization;
             return this;
         }
 
+        /**
+         * @param timeout Sets the HTTP connect timeout. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder timeout(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorTimeout timeout) {
             $.timeout = timeout;
             return this;
         }
 
+        /**
+         * @param uidConfiguration This behavior allows you to extract unique identifier (UID) values from live traffic, for use in OTA applications. Note that you are responsible for maintaining the security of any data that may identify individual users. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uidConfiguration(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorUidConfiguration uidConfiguration) {
             $.uidConfiguration = uidConfiguration;
             return this;
         }
 
+        /**
+         * @param validateEntityTag Instructs edge servers to compare the request&#39;s `ETag` header with that of the cached object. If they differ, the edge server sends a new copy of the object. This validation occurs in addition to the default validation of `Last-Modified` and `If-Modified-Since` headers. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder validateEntityTag(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorValidateEntityTag validateEntityTag) {
             $.validateEntityTag = validateEntityTag;
             return this;
         }
 
+        /**
+         * @param verifyJsonWebToken This behavior allows you to use JSON Web Tokens (JWT) to verify requests. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder verifyJsonWebToken(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorVerifyJsonWebToken verifyJsonWebToken) {
             $.verifyJsonWebToken = verifyJsonWebToken;
             return this;
         }
 
+        /**
+         * @param verifyJsonWebTokenForDcp This behavior allows you to use JSON web tokens (JWT) to verify requests for use in implementing `IoT Edge Connect`, which you use the `dcp` behavior to configure. You can specify the location in a request to pass a JSON web token (JWT), collections of public keys to verify the integrity of this token, and specific claims to extract from it. Use the `verifyJsonWebToken` behavior for other JWT validation. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder verifyJsonWebTokenForDcp(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorVerifyJsonWebTokenForDcp verifyJsonWebTokenForDcp) {
             $.verifyJsonWebTokenForDcp = verifyJsonWebTokenForDcp;
             return this;
         }
 
+        /**
+         * @param verifyTokenAuthorization Verifies Auth 2.0 tokens. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder verifyTokenAuthorization(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorVerifyTokenAuthorization verifyTokenAuthorization) {
             $.verifyTokenAuthorization = verifyTokenAuthorization;
             return this;
         }
 
+        /**
+         * @param virtualWaitingRoom This behavior helps you maintain business continuity for dynamic applications in high-demand situations such as flash sales. It decreases abandonment by providing a user-friendly waiting room experience. FIFO (First-in First-out) is a request processing mechanism that prioritizes the first requests that enter the waiting room to send them first to the origin. Users can see both their estimated arrival time and position in the line. With Cloudlets available on your contract, choose `Your services` &gt; `Edge logic Cloudlets` to control Virtual Waitig Room within `Control Center`. Otherwise use the `Cloudlets API` to configure it programmatically. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder virtualWaitingRoom(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorVirtualWaitingRoom virtualWaitingRoom) {
             $.virtualWaitingRoom = virtualWaitingRoom;
             return this;
         }
 
+        /**
+         * @param virtualWaitingRoomWithEdgeWorkers This behavior allows you to configure the `virtualWaitingRoom` behavior with EdgeWorkers for extended scalability and customization. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder virtualWaitingRoomWithEdgeWorkers(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorVirtualWaitingRoomWithEdgeWorkers virtualWaitingRoomWithEdgeWorkers) {
             $.virtualWaitingRoomWithEdgeWorkers = virtualWaitingRoomWithEdgeWorkers;
             return this;
         }
 
+        /**
+         * @param visitorPrioritization The `Visitor Prioritization Cloudlet` decreases abandonment by providing a user-friendly waiting room experience.  With Cloudlets available on your contract, choose `Your services` &gt; `Edge logic Cloudlets` to control Visitor Prioritization within `Control Center`. Otherwise use the `Cloudlets API` to configure it programmatically.  To serve non-HTML API content such as JSON blocks, see the `apiPrioritization` behavior. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder visitorPrioritization(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritization visitorPrioritization) {
             $.visitorPrioritization = visitorPrioritization;
             return this;
         }
 
+        /**
+         * @param visitorPrioritizationFifo (**BETA**) The `Visitor Prioritization Cloudlet (FIFO)` decreases abandonment by providing a user-friendly waiting room experience. FIFO (First-in First-out) is a fair request processing mechanism, which prioritizes the first requests that enter the waiting room to send them first to the origin. Users can see both their estimated arrival time and position in the line. With Cloudlets available on your contract, choose `Your services` &gt; `Edge logic Cloudlets` to control Visitor Prioritization (FIFO) within `Control Center`. Otherwise use the `Cloudlets API` to configure it programmatically. To serve non-HTML API content such as JSON blocks, see the `apiPrioritization` behavior. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder visitorPrioritizationFifo(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationFifo visitorPrioritizationFifo) {
             $.visitorPrioritizationFifo = visitorPrioritizationFifo;
             return this;
         }
 
+        /**
+         * @param visitorPrioritizationFifoStandalone This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder visitorPrioritizationFifoStandalone(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationFifoStandalone visitorPrioritizationFifoStandalone) {
             $.visitorPrioritizationFifoStandalone = visitorPrioritizationFifoStandalone;
             return this;
         }
 
+        /**
+         * @param watermarking Adds watermarking for each valid user&#39;s content. Content segments are delivered from different sources using a pattern unique to each user, based on a watermarking token included in each request. If your content is pirated or redistributed, you can forensically analyze the segments to extract the pattern, and identify the user who leaked the content. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder watermarking(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorWatermarking watermarking) {
             $.watermarking = watermarking;
             return this;
         }
 
+        /**
+         * @param webApplicationFirewall This behavior implements a suite of security features that blocks threatening HTTP and HTTPS requests. Use it as your primary firewall, or in addition to existing security measures.  Only one referenced configuration is allowed per property, so this behavior typically belongs as part of its default rule. This behavior cannot be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder webApplicationFirewall(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorWebApplicationFirewall webApplicationFirewall) {
             $.webApplicationFirewall = webApplicationFirewall;
             return this;
         }
 
+        /**
+         * @param webSockets The WebSocket protocol allows web applications real-time bidirectional communication between clients and servers. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder webSockets(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorWebSockets webSockets) {
             $.webSockets = webSockets;
             return this;
         }
 
+        /**
+         * @param webdav Web-based Distributed Authoring and Versioning (WebDAV) is a set of extensions to the HTTP protocol that allows users to collaboratively edit and manage files on remote web servers. This behavior enables WebDAV, and provides support for the following additional request methods: PROPFIND, PROPPATCH, MKCOL, COPY, MOVE, LOCK, and UNLOCK. To apply this behavior, you need to match on a `requestMethod`. This behavior can be used in includes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder webdav(@Nullable GetPropertyRulesBuilderRulesV20230105BehaviorWebdav webdav) {
             $.webdav = webdav;
             return this;

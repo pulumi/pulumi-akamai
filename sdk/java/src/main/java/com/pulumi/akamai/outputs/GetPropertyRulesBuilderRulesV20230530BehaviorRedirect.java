@@ -13,69 +13,197 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorRedirect {
+    /**
+     * @return Specify how to change the requested hostname, independently from the pathname.
+     * 
+     */
     private @Nullable String destinationHostname;
+    /**
+     * @return Specifies the full hostname with which to replace the current hostname.
+     * 
+     */
     private @Nullable String destinationHostnameOther;
+    /**
+     * @return Specifies the subdomain with which to replace to the current hostname&#39;s leftmost subdomain. For example, a value of `m` changes `www.example.com` to `m.example.com`.
+     * 
+     */
     private @Nullable String destinationHostnameSibling;
+    /**
+     * @return Specifies a subdomain to prepend to the current hostname. For example, a value of `m` changes `www.example.com` to `m.www.example.com`.
+     * 
+     */
     private @Nullable String destinationHostnameSubdomain;
+    /**
+     * @return Specify how to change the requested pathname, independently from the hostname.
+     * 
+     */
     private @Nullable String destinationPath;
+    /**
+     * @return When `destinationPath` is set to `PREFIX_REQUEST`, this replaces the current path.
+     * 
+     */
     private @Nullable String destinationPathOther;
+    /**
+     * @return When `destinationPath` is set to `PREFIX_REQUEST`, this prepends the current path. For example, a value of `/prefix/path` changes `/example/index.html` to `/prefix/path/example/index.html`.
+     * 
+     */
     private @Nullable String destinationPathPrefix;
+    /**
+     * @return When `destinationPath` is set to `PREFIX_REQUEST` and `destinationPathSuffixStatus` is set to `SUFFIX`, this specifies the suffix to append to the path.
+     * 
+     */
     private @Nullable String destinationPathSuffix;
+    /**
+     * @return When `destinationPath` is set to `PREFIX_REQUEST`, this gives you the option of adding a suffix.
+     * 
+     */
     private @Nullable String destinationPathSuffixStatus;
+    /**
+     * @return Choose the protocol for the redirect URL.
+     * 
+     */
     private @Nullable String destinationProtocol;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Either specify a default response for mobile browsers, or customize your own.
+     * 
+     */
     private @Nullable String mobileDefaultChoice;
+    /**
+     * @return When set to `APPEND`, passes incoming query string parameters as part of the redirect URL. Otherwise set this to `IGNORE`.
+     * 
+     */
     private @Nullable String queryString;
+    /**
+     * @return Specify the redirect&#39;s response code.
+     * 
+     */
     private @Nullable Integer responseCode;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorRedirect() {}
+    /**
+     * @return Specify how to change the requested hostname, independently from the pathname.
+     * 
+     */
     public Optional<String> destinationHostname() {
         return Optional.ofNullable(this.destinationHostname);
     }
+    /**
+     * @return Specifies the full hostname with which to replace the current hostname.
+     * 
+     */
     public Optional<String> destinationHostnameOther() {
         return Optional.ofNullable(this.destinationHostnameOther);
     }
+    /**
+     * @return Specifies the subdomain with which to replace to the current hostname&#39;s leftmost subdomain. For example, a value of `m` changes `www.example.com` to `m.example.com`.
+     * 
+     */
     public Optional<String> destinationHostnameSibling() {
         return Optional.ofNullable(this.destinationHostnameSibling);
     }
+    /**
+     * @return Specifies a subdomain to prepend to the current hostname. For example, a value of `m` changes `www.example.com` to `m.www.example.com`.
+     * 
+     */
     public Optional<String> destinationHostnameSubdomain() {
         return Optional.ofNullable(this.destinationHostnameSubdomain);
     }
+    /**
+     * @return Specify how to change the requested pathname, independently from the hostname.
+     * 
+     */
     public Optional<String> destinationPath() {
         return Optional.ofNullable(this.destinationPath);
     }
+    /**
+     * @return When `destinationPath` is set to `PREFIX_REQUEST`, this replaces the current path.
+     * 
+     */
     public Optional<String> destinationPathOther() {
         return Optional.ofNullable(this.destinationPathOther);
     }
+    /**
+     * @return When `destinationPath` is set to `PREFIX_REQUEST`, this prepends the current path. For example, a value of `/prefix/path` changes `/example/index.html` to `/prefix/path/example/index.html`.
+     * 
+     */
     public Optional<String> destinationPathPrefix() {
         return Optional.ofNullable(this.destinationPathPrefix);
     }
+    /**
+     * @return When `destinationPath` is set to `PREFIX_REQUEST` and `destinationPathSuffixStatus` is set to `SUFFIX`, this specifies the suffix to append to the path.
+     * 
+     */
     public Optional<String> destinationPathSuffix() {
         return Optional.ofNullable(this.destinationPathSuffix);
     }
+    /**
+     * @return When `destinationPath` is set to `PREFIX_REQUEST`, this gives you the option of adding a suffix.
+     * 
+     */
     public Optional<String> destinationPathSuffixStatus() {
         return Optional.ofNullable(this.destinationPathSuffixStatus);
     }
+    /**
+     * @return Choose the protocol for the redirect URL.
+     * 
+     */
     public Optional<String> destinationProtocol() {
         return Optional.ofNullable(this.destinationProtocol);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Either specify a default response for mobile browsers, or customize your own.
+     * 
+     */
     public Optional<String> mobileDefaultChoice() {
         return Optional.ofNullable(this.mobileDefaultChoice);
     }
+    /**
+     * @return When set to `APPEND`, passes incoming query string parameters as part of the redirect URL. Otherwise set this to `IGNORE`.
+     * 
+     */
     public Optional<String> queryString() {
         return Optional.ofNullable(this.queryString);
     }
+    /**
+     * @return Specify the redirect&#39;s response code.
+     * 
+     */
     public Optional<Integer> responseCode() {
         return Optional.ofNullable(this.responseCode);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

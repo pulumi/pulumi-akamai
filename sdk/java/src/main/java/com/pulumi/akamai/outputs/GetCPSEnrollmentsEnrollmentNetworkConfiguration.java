@@ -13,37 +13,101 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCPSEnrollmentsEnrollmentNetworkConfiguration {
+    /**
+     * @return The trust chain configuration used for client mutual authentication
+     * 
+     */
     private List<GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthentication> clientMutualAuthentications;
+    /**
+     * @return Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created
+     * 
+     */
     private Boolean cloneDnsNames;
+    /**
+     * @return TLS versions which are disallowed
+     * 
+     */
     private List<String> disallowedTlsVersions;
+    /**
+     * @return Geography type used for enrollment
+     * 
+     */
     private String geography;
+    /**
+     * @return Mandatory Ciphers which are included for enrollment
+     * 
+     */
     private String mustHaveCiphers;
+    /**
+     * @return Enable OCSP stapling
+     * 
+     */
     private String ocspStapling;
+    /**
+     * @return Preferred Ciphers which are included for enrollment
+     * 
+     */
     private String preferredCiphers;
+    /**
+     * @return Enable QUIC protocol
+     * 
+     */
     private Boolean quicEnabled;
 
     private GetCPSEnrollmentsEnrollmentNetworkConfiguration() {}
+    /**
+     * @return The trust chain configuration used for client mutual authentication
+     * 
+     */
     public List<GetCPSEnrollmentsEnrollmentNetworkConfigurationClientMutualAuthentication> clientMutualAuthentications() {
         return this.clientMutualAuthentications;
     }
+    /**
+     * @return Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created
+     * 
+     */
     public Boolean cloneDnsNames() {
         return this.cloneDnsNames;
     }
+    /**
+     * @return TLS versions which are disallowed
+     * 
+     */
     public List<String> disallowedTlsVersions() {
         return this.disallowedTlsVersions;
     }
+    /**
+     * @return Geography type used for enrollment
+     * 
+     */
     public String geography() {
         return this.geography;
     }
+    /**
+     * @return Mandatory Ciphers which are included for enrollment
+     * 
+     */
     public String mustHaveCiphers() {
         return this.mustHaveCiphers;
     }
+    /**
+     * @return Enable OCSP stapling
+     * 
+     */
     public String ocspStapling() {
         return this.ocspStapling;
     }
+    /**
+     * @return Preferred Ciphers which are included for enrollment
+     * 
+     */
     public String preferredCiphers() {
         return this.preferredCiphers;
     }
+    /**
+     * @return Enable QUIC protocol
+     * 
+     */
     public Boolean quicEnabled() {
         return this.quicEnabled;
     }

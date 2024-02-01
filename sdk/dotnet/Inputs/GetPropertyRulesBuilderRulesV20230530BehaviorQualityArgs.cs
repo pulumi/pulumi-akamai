@@ -12,12 +12,18 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorQualityInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("audienceSettings")]
         public Input<string>? AudienceSettings { get; set; }
 
         [Input("catalogSize")]
         public Input<string>? CatalogSize { get; set; }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("contentSettings")]
         public Input<string>? ContentSettings { get; set; }
 
@@ -39,6 +45,9 @@ namespace Pulumi.Akamai.Inputs
         [Input("endUserLocation")]
         public Input<string>? EndUserLocation { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public Input<bool>? Locked { get; set; }
 
@@ -51,6 +60,9 @@ namespace Pulumi.Akamai.Inputs
         [Input("optimizeFor")]
         public Input<string>? OptimizeFor { get; set; }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("originSettings")]
         public Input<string>? OriginSettings { get; set; }
 
@@ -63,9 +75,15 @@ namespace Pulumi.Akamai.Inputs
         [Input("segmentDuration")]
         public Input<int>? SegmentDuration { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public Input<string>? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public Input<string>? Uuid { get; set; }
 

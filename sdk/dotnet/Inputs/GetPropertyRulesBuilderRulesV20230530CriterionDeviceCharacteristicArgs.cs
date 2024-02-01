@@ -12,47 +12,87 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230530CriterionDeviceCharacteristicInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// When the `characteristic` expects a boolean value, this specifies the value.
+        /// </summary>
         [Input("booleanValue")]
         public Input<bool>? BooleanValue { get; set; }
 
+        /// <summary>
+        /// Aspect of the device or browser to match.
+        /// </summary>
         [Input("characteristic")]
         public Input<string>? Characteristic { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public Input<bool>? Locked { get; set; }
 
+        /// <summary>
+        /// Sets a case-sensitive match for the `stringValue` field.
+        /// </summary>
         [Input("matchCaseSensitive")]
         public Input<bool>? MatchCaseSensitive { get; set; }
 
+        /// <summary>
+        /// Allows wildcards in the `stringValue` field, where `?` matches a single character and `*` matches zero or more characters.
+        /// </summary>
         [Input("matchWildcard")]
         public Input<bool>? MatchWildcard { get; set; }
 
+        /// <summary>
+        /// When the `characteristic` expects a numeric value, compares the specified `numericValue` against the matched client.
+        /// </summary>
         [Input("numericMatchOperator")]
         public Input<string>? NumericMatchOperator { get; set; }
 
+        /// <summary>
+        /// When the `characteristic` expects a numeric value, this specifies the number.
+        /// </summary>
         [Input("numericValue")]
         public Input<int>? NumericValue { get; set; }
 
+        /// <summary>
+        /// When the `characteristic` expects a string value, set this to `MATCHES_ONE_OF` to match against the `stringValue` set, otherwise set to `DOES_NOT_MATCH_ONE_OF` to exclude that set of values.
+        /// </summary>
         [Input("stringMatchOperator")]
         public Input<string>? StringMatchOperator { get; set; }
 
         [Input("stringValues")]
         private InputList<string>? _stringValues;
+
+        /// <summary>
+        /// When the `characteristic` expects a string, this specifies the set of values.
+        /// </summary>
         public InputList<string> StringValues
         {
             get => _stringValues ?? (_stringValues = new InputList<string>());
             set => _stringValues = value;
         }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public Input<string>? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public Input<string>? Uuid { get; set; }
 
+        /// <summary>
+        /// When the `characteristic` expects a version string value, compares the specified `versionValue` against the matched client, using the following operators: `IS`, `IS_MORE_THAN_OR_EQUAL`, `IS_MORE_THAN`, `IS_LESS_THAN_OR_EQUAL`, `IS_LESS_THAN`, `IS_NOT`.
+        /// </summary>
         [Input("versionMatchOperator")]
         public Input<string>? VersionMatchOperator { get; set; }
 
+        /// <summary>
+        /// When the `characteristic` expects a version number, this specifies it as a string.
+        /// </summary>
         [Input("versionValue")]
         public Input<string>? VersionValue { get; set; }
 

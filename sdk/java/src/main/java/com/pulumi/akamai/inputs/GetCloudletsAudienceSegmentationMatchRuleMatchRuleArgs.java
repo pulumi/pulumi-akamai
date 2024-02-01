@@ -21,58 +21,122 @@ public final class GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs extend
 
     public static final GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs Empty = new GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs();
 
+    /**
+     * If set to true, disables a rule so it is not evaluated against incoming requests.
+     * 
+     */
     @Import(name="disabled")
     private @Nullable Output<Boolean> disabled;
 
+    /**
+     * @return If set to true, disables a rule so it is not evaluated against incoming requests.
+     * 
+     */
     public Optional<Output<Boolean>> disabled() {
         return Optional.ofNullable(this.disabled);
     }
 
+    /**
+     * The end time for this match (in seconds since the epoch)
+     * 
+     */
     @Import(name="end")
     private @Nullable Output<Integer> end;
 
+    /**
+     * @return The end time for this match (in seconds since the epoch)
+     * 
+     */
     public Optional<Output<Integer>> end() {
         return Optional.ofNullable(this.end);
     }
 
+    /**
+     * This property defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, then the Edge Server returns an HTTP response from the rewritten URL
+     * 
+     */
     @Import(name="forwardSettings", required=true)
     private Output<GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsArgs> forwardSettings;
 
+    /**
+     * @return This property defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, then the Edge Server returns an HTTP response from the rewritten URL
+     * 
+     */
     public Output<GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsArgs> forwardSettings() {
         return this.forwardSettings;
     }
 
+    /**
+     * If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
+     * 
+     */
     @Import(name="matchUrl")
     private @Nullable Output<String> matchUrl;
 
+    /**
+     * @return If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
+     * 
+     */
     public Optional<Output<String>> matchUrl() {
         return Optional.ofNullable(this.matchUrl);
     }
 
+    /**
+     * Defines a set of match objects
+     * 
+     */
     @Import(name="matches")
     private @Nullable Output<List<GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArgs>> matches;
 
+    /**
+     * @return Defines a set of match objects
+     * 
+     */
     public Optional<Output<List<GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArgs>>> matches() {
         return Optional.ofNullable(this.matches);
     }
 
+    /**
+     * The name of the rule
+     * 
+     */
     @Import(name="name")
     private @Nullable Output<String> name;
 
+    /**
+     * @return The name of the rule
+     * 
+     */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
     }
 
+    /**
+     * The start time for this match (in seconds since the epoch)
+     * 
+     */
     @Import(name="start")
     private @Nullable Output<Integer> start;
 
+    /**
+     * @return The start time for this match (in seconds since the epoch)
+     * 
+     */
     public Optional<Output<Integer>> start() {
         return Optional.ofNullable(this.start);
     }
 
+    /**
+     * The type of Cloudlet the rule is for
+     * 
+     */
     @Import(name="type", required=true)
     private Output<String> type;
 
+    /**
+     * @return The type of Cloudlet the rule is for
+     * 
+     */
     public Output<String> type() {
         return this.type;
     }
@@ -108,78 +172,180 @@ public final class GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs extend
             $ = new GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param disabled If set to true, disables a rule so it is not evaluated against incoming requests.
+         * 
+         * @return builder
+         * 
+         */
         public Builder disabled(@Nullable Output<Boolean> disabled) {
             $.disabled = disabled;
             return this;
         }
 
+        /**
+         * @param disabled If set to true, disables a rule so it is not evaluated against incoming requests.
+         * 
+         * @return builder
+         * 
+         */
         public Builder disabled(Boolean disabled) {
             return disabled(Output.of(disabled));
         }
 
+        /**
+         * @param end The end time for this match (in seconds since the epoch)
+         * 
+         * @return builder
+         * 
+         */
         public Builder end(@Nullable Output<Integer> end) {
             $.end = end;
             return this;
         }
 
+        /**
+         * @param end The end time for this match (in seconds since the epoch)
+         * 
+         * @return builder
+         * 
+         */
         public Builder end(Integer end) {
             return end(Output.of(end));
         }
 
+        /**
+         * @param forwardSettings This property defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, then the Edge Server returns an HTTP response from the rewritten URL
+         * 
+         * @return builder
+         * 
+         */
         public Builder forwardSettings(Output<GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsArgs> forwardSettings) {
             $.forwardSettings = forwardSettings;
             return this;
         }
 
+        /**
+         * @param forwardSettings This property defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, then the Edge Server returns an HTTP response from the rewritten URL
+         * 
+         * @return builder
+         * 
+         */
         public Builder forwardSettings(GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsArgs forwardSettings) {
             return forwardSettings(Output.of(forwardSettings));
         }
 
+        /**
+         * @param matchUrl If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchUrl(@Nullable Output<String> matchUrl) {
             $.matchUrl = matchUrl;
             return this;
         }
 
+        /**
+         * @param matchUrl If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchUrl(String matchUrl) {
             return matchUrl(Output.of(matchUrl));
         }
 
+        /**
+         * @param matches Defines a set of match objects
+         * 
+         * @return builder
+         * 
+         */
         public Builder matches(@Nullable Output<List<GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArgs>> matches) {
             $.matches = matches;
             return this;
         }
 
+        /**
+         * @param matches Defines a set of match objects
+         * 
+         * @return builder
+         * 
+         */
         public Builder matches(List<GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArgs> matches) {
             return matches(Output.of(matches));
         }
 
+        /**
+         * @param matches Defines a set of match objects
+         * 
+         * @return builder
+         * 
+         */
         public Builder matches(GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchArgs... matches) {
             return matches(List.of(matches));
         }
 
+        /**
+         * @param name The name of the rule
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
             return this;
         }
 
+        /**
+         * @param name The name of the rule
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(String name) {
             return name(Output.of(name));
         }
 
+        /**
+         * @param start The start time for this match (in seconds since the epoch)
+         * 
+         * @return builder
+         * 
+         */
         public Builder start(@Nullable Output<Integer> start) {
             $.start = start;
             return this;
         }
 
+        /**
+         * @param start The start time for this match (in seconds since the epoch)
+         * 
+         * @return builder
+         * 
+         */
         public Builder start(Integer start) {
             return start(Output.of(start));
         }
 
+        /**
+         * @param type The type of Cloudlet the rule is for
+         * 
+         * @return builder
+         * 
+         */
         public Builder type(Output<String> type) {
             $.type = type;
             return this;
         }
 
+        /**
+         * @param type The type of Cloudlet the rule is for
+         * 
+         * @return builder
+         * 
+         */
         public Builder type(String type) {
             return type(Output.of(type));
         }

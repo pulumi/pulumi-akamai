@@ -19,30 +19,62 @@ public final class GetImagingPolicyImagePolicyTransformationAppendImageArgs exte
 
     public static final GetImagingPolicyImagePolicyTransformationAppendImageArgs Empty = new GetImagingPolicyImagePolicyTransformationAppendImageArgs();
 
+    /**
+     * A rectangular box, with a specified color and applied transformation.
+     * 
+     */
     @Import(name="boxImages")
     private @Nullable Output<List<GetImagingPolicyImagePolicyTransformationAppendImageBoxImageArgs>> boxImages;
 
+    /**
+     * @return A rectangular box, with a specified color and applied transformation.
+     * 
+     */
     public Optional<Output<List<GetImagingPolicyImagePolicyTransformationAppendImageBoxImageArgs>>> boxImages() {
         return Optional.ofNullable(this.boxImages);
     }
 
+    /**
+     * A rectangular box, with a specified color and applied transformation.
+     * 
+     */
     @Import(name="circleImages")
     private @Nullable Output<List<GetImagingPolicyImagePolicyTransformationAppendImageCircleImageArgs>> circleImages;
 
+    /**
+     * @return A rectangular box, with a specified color and applied transformation.
+     * 
+     */
     public Optional<Output<List<GetImagingPolicyImagePolicyTransformationAppendImageCircleImageArgs>>> circleImages() {
         return Optional.ofNullable(this.circleImages);
     }
 
+    /**
+     * A snippet of text. Defines font family and size, fill color, and outline stroke width and color.
+     * 
+     */
     @Import(name="textImages")
     private @Nullable Output<List<GetImagingPolicyImagePolicyTransformationAppendImageTextImageArgs>> textImages;
 
+    /**
+     * @return A snippet of text. Defines font family and size, fill color, and outline stroke width and color.
+     * 
+     */
     public Optional<Output<List<GetImagingPolicyImagePolicyTransformationAppendImageTextImageArgs>>> textImages() {
         return Optional.ofNullable(this.textImages);
     }
 
+    /**
+     * An image loaded from a URL.
+     * 
+     */
     @Import(name="urlImages")
     private @Nullable Output<List<GetImagingPolicyImagePolicyTransformationAppendImageUrlImageArgs>> urlImages;
 
+    /**
+     * @return An image loaded from a URL.
+     * 
+     */
     public Optional<Output<List<GetImagingPolicyImagePolicyTransformationAppendImageUrlImageArgs>>> urlImages() {
         return Optional.ofNullable(this.urlImages);
     }
@@ -74,54 +106,126 @@ public final class GetImagingPolicyImagePolicyTransformationAppendImageArgs exte
             $ = new GetImagingPolicyImagePolicyTransformationAppendImageArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param boxImages A rectangular box, with a specified color and applied transformation.
+         * 
+         * @return builder
+         * 
+         */
         public Builder boxImages(@Nullable Output<List<GetImagingPolicyImagePolicyTransformationAppendImageBoxImageArgs>> boxImages) {
             $.boxImages = boxImages;
             return this;
         }
 
+        /**
+         * @param boxImages A rectangular box, with a specified color and applied transformation.
+         * 
+         * @return builder
+         * 
+         */
         public Builder boxImages(List<GetImagingPolicyImagePolicyTransformationAppendImageBoxImageArgs> boxImages) {
             return boxImages(Output.of(boxImages));
         }
 
+        /**
+         * @param boxImages A rectangular box, with a specified color and applied transformation.
+         * 
+         * @return builder
+         * 
+         */
         public Builder boxImages(GetImagingPolicyImagePolicyTransformationAppendImageBoxImageArgs... boxImages) {
             return boxImages(List.of(boxImages));
         }
 
+        /**
+         * @param circleImages A rectangular box, with a specified color and applied transformation.
+         * 
+         * @return builder
+         * 
+         */
         public Builder circleImages(@Nullable Output<List<GetImagingPolicyImagePolicyTransformationAppendImageCircleImageArgs>> circleImages) {
             $.circleImages = circleImages;
             return this;
         }
 
+        /**
+         * @param circleImages A rectangular box, with a specified color and applied transformation.
+         * 
+         * @return builder
+         * 
+         */
         public Builder circleImages(List<GetImagingPolicyImagePolicyTransformationAppendImageCircleImageArgs> circleImages) {
             return circleImages(Output.of(circleImages));
         }
 
+        /**
+         * @param circleImages A rectangular box, with a specified color and applied transformation.
+         * 
+         * @return builder
+         * 
+         */
         public Builder circleImages(GetImagingPolicyImagePolicyTransformationAppendImageCircleImageArgs... circleImages) {
             return circleImages(List.of(circleImages));
         }
 
+        /**
+         * @param textImages A snippet of text. Defines font family and size, fill color, and outline stroke width and color.
+         * 
+         * @return builder
+         * 
+         */
         public Builder textImages(@Nullable Output<List<GetImagingPolicyImagePolicyTransformationAppendImageTextImageArgs>> textImages) {
             $.textImages = textImages;
             return this;
         }
 
+        /**
+         * @param textImages A snippet of text. Defines font family and size, fill color, and outline stroke width and color.
+         * 
+         * @return builder
+         * 
+         */
         public Builder textImages(List<GetImagingPolicyImagePolicyTransformationAppendImageTextImageArgs> textImages) {
             return textImages(Output.of(textImages));
         }
 
+        /**
+         * @param textImages A snippet of text. Defines font family and size, fill color, and outline stroke width and color.
+         * 
+         * @return builder
+         * 
+         */
         public Builder textImages(GetImagingPolicyImagePolicyTransformationAppendImageTextImageArgs... textImages) {
             return textImages(List.of(textImages));
         }
 
+        /**
+         * @param urlImages An image loaded from a URL.
+         * 
+         * @return builder
+         * 
+         */
         public Builder urlImages(@Nullable Output<List<GetImagingPolicyImagePolicyTransformationAppendImageUrlImageArgs>> urlImages) {
             $.urlImages = urlImages;
             return this;
         }
 
+        /**
+         * @param urlImages An image loaded from a URL.
+         * 
+         * @return builder
+         * 
+         */
         public Builder urlImages(List<GetImagingPolicyImagePolicyTransformationAppendImageUrlImageArgs> urlImages) {
             return urlImages(Output.of(urlImages));
         }
 
+        /**
+         * @param urlImages An image loaded from a URL.
+         * 
+         * @return builder
+         * 
+         */
         public Builder urlImages(GetImagingPolicyImagePolicyTransformationAppendImageUrlImageArgs... urlImages) {
             return urlImages(List.of(urlImages));
         }

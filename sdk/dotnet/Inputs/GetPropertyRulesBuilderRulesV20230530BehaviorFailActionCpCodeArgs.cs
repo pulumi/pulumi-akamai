@@ -12,23 +12,39 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorFailActionCpCodeInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("cpCodeLimits")]
         public Input<Inputs.GetPropertyRulesBuilderRulesV20230530BehaviorFailActionCpCodeCpCodeLimitsInputArgs>? CpCodeLimits { get; set; }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("createdDate")]
         public Input<int>? CreatedDate { get; set; }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         [Input("id")]
         public Input<int>? Id { get; set; }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("products")]
         private InputList<string>? _products;
+
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public InputList<string> Products
         {
             get => _products ?? (_products = new InputList<string>());

@@ -13,7 +13,13 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class CloudwrapperConfigurationLocationCapacity
     {
+        /// <summary>
+        /// Unit of capacity. Can be either 'GB' or 'TB'.
+        /// </summary>
         public readonly string Unit;
+        /// <summary>
+        /// Value of capacity.
+        /// </summary>
         public readonly int Value;
 
         [OutputConstructor]

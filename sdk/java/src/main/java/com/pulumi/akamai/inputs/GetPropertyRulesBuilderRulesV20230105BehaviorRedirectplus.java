@@ -16,44 +16,92 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorRedirectplus ext
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorRedirectplus Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorRedirectplus();
 
+    /**
+     * Specifies the redirect as a path expression starting with a `/` character relative to the current root, or as a fully qualified URL. Optionally inject variables, as in this example that refers to the original request&#39;s filename: `/path/to/{{builtin.AK_FILENAME}}`.
+     * 
+     */
     @Import(name="destination")
     private @Nullable String destination;
 
+    /**
+     * @return Specifies the redirect as a path expression starting with a `/` character relative to the current root, or as a fully qualified URL. Optionally inject variables, as in this example that refers to the original request&#39;s filename: `/path/to/{{builtin.AK_FILENAME}}`.
+     * 
+     */
     public Optional<String> destination() {
         return Optional.ofNullable(this.destination);
     }
 
+    /**
+     * Enables the redirect feature.
+     * 
+     */
     @Import(name="enabled")
     private @Nullable Boolean enabled;
 
+    /**
+     * @return Enables the redirect feature.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Assigns the status code for the redirect response.
+     * 
+     */
     @Import(name="responseCode")
     private @Nullable Integer responseCode;
 
+    /**
+     * @return Assigns the status code for the redirect response.
+     * 
+     */
     public Optional<Integer> responseCode() {
         return Optional.ofNullable(this.responseCode);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -87,31 +135,67 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorRedirectplus ext
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorRedirectplus(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param destination Specifies the redirect as a path expression starting with a `/` character relative to the current root, or as a fully qualified URL. Optionally inject variables, as in this example that refers to the original request&#39;s filename: `/path/to/{{builtin.AK_FILENAME}}`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder destination(@Nullable String destination) {
             $.destination = destination;
             return this;
         }
 
+        /**
+         * @param enabled Enables the redirect feature.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(@Nullable Boolean enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param responseCode Assigns the status code for the redirect response.
+         * 
+         * @return builder
+         * 
+         */
         public Builder responseCode(@Nullable Integer responseCode) {
             $.responseCode = responseCode;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

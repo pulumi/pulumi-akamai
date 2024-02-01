@@ -12,37 +12,101 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorEcmsDataset {
+    /**
+     * @return Specifies a default data set for this property. If you don&#39;t configure a default database in the `ecmsDatabase` behavior, requests to objects in this data set follow the pattern: `&lt;hostname&gt;/datastore/&lt;database_name&gt;/&lt;object_key&gt;`.
+     * 
+     */
     private @Nullable String dataset;
+    /**
+     * @return Specifies where to pass a data set name in requests. If the specified location doesn&#39;t include the data set name or the name doesn&#39;t match the regular expression pattern, the default data set is used.
+     * 
+     */
     private @Nullable String extractLocation;
+    /**
+     * @return Specifies the request header that passed the data set name. By default, it points to `X-KV-Dataset`.
+     * 
+     */
     private @Nullable String headerName;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Specifies the query string parameter that passed the data set name. By default, it points to `dataset`.
+     * 
+     */
     private @Nullable String queryParameterName;
+    /**
+     * @return Specifies the regular expression that matches the data set name in the URL.
+     * 
+     */
     private @Nullable String regexPattern;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorEcmsDataset() {}
+    /**
+     * @return Specifies a default data set for this property. If you don&#39;t configure a default database in the `ecmsDatabase` behavior, requests to objects in this data set follow the pattern: `&lt;hostname&gt;/datastore/&lt;database_name&gt;/&lt;object_key&gt;`.
+     * 
+     */
     public Optional<String> dataset() {
         return Optional.ofNullable(this.dataset);
     }
+    /**
+     * @return Specifies where to pass a data set name in requests. If the specified location doesn&#39;t include the data set name or the name doesn&#39;t match the regular expression pattern, the default data set is used.
+     * 
+     */
     public Optional<String> extractLocation() {
         return Optional.ofNullable(this.extractLocation);
     }
+    /**
+     * @return Specifies the request header that passed the data set name. By default, it points to `X-KV-Dataset`.
+     * 
+     */
     public Optional<String> headerName() {
         return Optional.ofNullable(this.headerName);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Specifies the query string parameter that passed the data set name. By default, it points to `dataset`.
+     * 
+     */
     public Optional<String> queryParameterName() {
         return Optional.ofNullable(this.queryParameterName);
     }
+    /**
+     * @return Specifies the regular expression that matches the data set name in the URL.
+     * 
+     */
     public Optional<String> regexPattern() {
         return Optional.ofNullable(this.regexPattern);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

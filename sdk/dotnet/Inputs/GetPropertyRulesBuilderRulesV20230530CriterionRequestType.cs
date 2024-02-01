@@ -12,18 +12,33 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230530CriterionRequestTypeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public bool? Locked { get; set; }
 
+        /// <summary>
+        /// Specifies whether the request `IS` or `IS_NOT` the type of specified `value`.
+        /// </summary>
         [Input("matchOperator")]
         public string? MatchOperator { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public string? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public string? Uuid { get; set; }
 
+        /// <summary>
+        /// Specifies the type of request, either a standard `CLIENT_REQ`, an `ESI_FRAGMENT`, or an `EW_SUBREQUEST`.
+        /// </summary>
         [Input("value")]
         public string? Value { get; set; }
 

@@ -16,44 +16,92 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionMatchAdvancedAr
 
     public static final GetPropertyRulesBuilderRulesV20230105CriterionMatchAdvancedArgs Empty = new GetPropertyRulesBuilderRulesV20230105CriterionMatchAdvancedArgs();
 
+    /**
+     * An XML string that closes the relevant block.
+     * 
+     */
     @Import(name="closeXml")
     private @Nullable Output<String> closeXml;
 
+    /**
+     * @return An XML string that closes the relevant block.
+     * 
+     */
     public Optional<Output<String>> closeXml() {
         return Optional.ofNullable(this.closeXml);
     }
 
+    /**
+     * A human-readable description of what the XML block does.
+     * 
+     */
     @Import(name="description")
     private @Nullable Output<String> description;
 
+    /**
+     * @return A human-readable description of what the XML block does.
+     * 
+     */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * An XML string that opens the relevant block.
+     * 
+     */
     @Import(name="openXml")
     private @Nullable Output<String> openXml;
 
+    /**
+     * @return An XML string that opens the relevant block.
+     * 
+     */
     public Optional<Output<String>> openXml() {
         return Optional.ofNullable(this.openXml);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -87,56 +135,128 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionMatchAdvancedAr
             $ = new GetPropertyRulesBuilderRulesV20230105CriterionMatchAdvancedArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param closeXml An XML string that closes the relevant block.
+         * 
+         * @return builder
+         * 
+         */
         public Builder closeXml(@Nullable Output<String> closeXml) {
             $.closeXml = closeXml;
             return this;
         }
 
+        /**
+         * @param closeXml An XML string that closes the relevant block.
+         * 
+         * @return builder
+         * 
+         */
         public Builder closeXml(String closeXml) {
             return closeXml(Output.of(closeXml));
         }
 
+        /**
+         * @param description A human-readable description of what the XML block does.
+         * 
+         * @return builder
+         * 
+         */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
             return this;
         }
 
+        /**
+         * @param description A human-readable description of what the XML block does.
+         * 
+         * @return builder
+         * 
+         */
         public Builder description(String description) {
             return description(Output.of(description));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param openXml An XML string that opens the relevant block.
+         * 
+         * @return builder
+         * 
+         */
         public Builder openXml(@Nullable Output<String> openXml) {
             $.openXml = openXml;
             return this;
         }
 
+        /**
+         * @param openXml An XML string that opens the relevant block.
+         * 
+         * @return builder
+         * 
+         */
         public Builder openXml(String openXml) {
             return openXml(Output.of(openXml));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

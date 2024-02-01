@@ -16,49 +16,137 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCloudletsEdgeRedirectorMatchRuleMatchRule {
+    /**
+     * @return If set to true, disables a rule so it is not evaluated against incoming requests.
+     * 
+     */
     private @Nullable Boolean disabled;
+    /**
+     * @return The end time for this match (in seconds since the epoch)
+     * 
+     */
     private @Nullable Integer end;
+    /**
+     * @return If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
+     * 
+     */
     private @Nullable String matchUrl;
+    /**
+     * @return Defines a set of match objects
+     * 
+     */
     private @Nullable List<GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatch> matches;
+    /**
+     * @return The name of the rule
+     * 
+     */
     private @Nullable String name;
+    /**
+     * @return The URL Edge Redirector redirects the request to. If using use_relative_url, you can enter a path for the value
+     * 
+     */
     private String redirectUrl;
+    /**
+     * @return The start time for this match (in seconds since the epoch)
+     * 
+     */
     private @Nullable Integer start;
+    /**
+     * @return The HTTP response status code (allowed values: 301, 302, 303, 307, 308)
+     * 
+     */
     private Integer statusCode;
+    /**
+     * @return The type of Cloudlet the rule is for
+     * 
+     */
     private String type;
+    /**
+     * @return If set to true, the Cloudlet includes the query string from the request in the rewritten or forwarded URL
+     * 
+     */
     private @Nullable Boolean useIncomingQueryString;
+    /**
+     * @return If set to relative_url, takes the path entered for the redirectUrl and sets it in the response’s Location header. If set to copy_scheme_hostname, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information entered for the redirectUrl. If this property is not included, or is set to none, then the redirect_url should be fully-qualified URL
+     * 
+     */
     private @Nullable String useRelativeUrl;
 
     private GetCloudletsEdgeRedirectorMatchRuleMatchRule() {}
+    /**
+     * @return If set to true, disables a rule so it is not evaluated against incoming requests.
+     * 
+     */
     public Optional<Boolean> disabled() {
         return Optional.ofNullable(this.disabled);
     }
+    /**
+     * @return The end time for this match (in seconds since the epoch)
+     * 
+     */
     public Optional<Integer> end() {
         return Optional.ofNullable(this.end);
     }
+    /**
+     * @return If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
+     * 
+     */
     public Optional<String> matchUrl() {
         return Optional.ofNullable(this.matchUrl);
     }
+    /**
+     * @return Defines a set of match objects
+     * 
+     */
     public List<GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatch> matches() {
         return this.matches == null ? List.of() : this.matches;
     }
+    /**
+     * @return The name of the rule
+     * 
+     */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
+    /**
+     * @return The URL Edge Redirector redirects the request to. If using use_relative_url, you can enter a path for the value
+     * 
+     */
     public String redirectUrl() {
         return this.redirectUrl;
     }
+    /**
+     * @return The start time for this match (in seconds since the epoch)
+     * 
+     */
     public Optional<Integer> start() {
         return Optional.ofNullable(this.start);
     }
+    /**
+     * @return The HTTP response status code (allowed values: 301, 302, 303, 307, 308)
+     * 
+     */
     public Integer statusCode() {
         return this.statusCode;
     }
+    /**
+     * @return The type of Cloudlet the rule is for
+     * 
+     */
     public String type() {
         return this.type;
     }
+    /**
+     * @return If set to true, the Cloudlet includes the query string from the request in the rewritten or forwarded URL
+     * 
+     */
     public Optional<Boolean> useIncomingQueryString() {
         return Optional.ofNullable(this.useIncomingQueryString);
     }
+    /**
+     * @return If set to relative_url, takes the path entered for the redirectUrl and sets it in the response’s Location header. If set to copy_scheme_hostname, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information entered for the redirectUrl. If this property is not included, or is set to none, then the redirect_url should be fully-qualified URL
+     * 
+     */
     public Optional<String> useRelativeUrl() {
         return Optional.ofNullable(this.useRelativeUrl);
     }

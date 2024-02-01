@@ -17,93 +17,197 @@ public final class DatastreamElasticsearchConnectorArgs extends com.pulumi.resou
 
     public static final DatastreamElasticsearchConnectorArgs Empty = new DatastreamElasticsearchConnectorArgs();
 
+    /**
+     * The certification authority (CA) certificate used to verify the origin server&#39;s certificate. If the certificate is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+     * 
+     */
     @Import(name="caCert")
     private @Nullable Output<String> caCert;
 
+    /**
+     * @return The certification authority (CA) certificate used to verify the origin server&#39;s certificate. If the certificate is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+     * 
+     */
     public Optional<Output<String>> caCert() {
         return Optional.ofNullable(this.caCert);
     }
 
+    /**
+     * The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+     * 
+     */
     @Import(name="clientCert")
     private @Nullable Output<String> clientCert;
 
+    /**
+     * @return The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+     * 
+     */
     public Optional<Output<String>> clientCert() {
         return Optional.ofNullable(this.clientCert);
     }
 
+    /**
+     * The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+     * 
+     */
     @Import(name="clientKey")
     private @Nullable Output<String> clientKey;
 
+    /**
+     * @return The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+     * 
+     */
     public Optional<Output<String>> clientKey() {
         return Optional.ofNullable(this.clientKey);
     }
 
+    /**
+     * The type of the resource passed in the request&#39;s custom header. For details, see Additional options in the DataStream user guide.
+     * 
+     */
     @Import(name="contentType")
     private @Nullable Output<String> contentType;
 
+    /**
+     * @return The type of the resource passed in the request&#39;s custom header. For details, see Additional options in the DataStream user guide.
+     * 
+     */
     public Optional<Output<String>> contentType() {
         return Optional.ofNullable(this.contentType);
     }
 
+    /**
+     * A human-readable name for the request&#39;s custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.
+     * 
+     */
     @Import(name="customHeaderName")
     private @Nullable Output<String> customHeaderName;
 
+    /**
+     * @return A human-readable name for the request&#39;s custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.
+     * 
+     */
     public Optional<Output<String>> customHeaderName() {
         return Optional.ofNullable(this.customHeaderName);
     }
 
+    /**
+     * The custom header&#39;s contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.
+     * 
+     */
     @Import(name="customHeaderValue")
     private @Nullable Output<String> customHeaderValue;
 
+    /**
+     * @return The custom header&#39;s contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.
+     * 
+     */
     public Optional<Output<String>> customHeaderValue() {
         return Optional.ofNullable(this.customHeaderValue);
     }
 
+    /**
+     * The name of the connector.
+     * 
+     */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
+    /**
+     * @return The name of the connector.
+     * 
+     */
     public Output<String> displayName() {
         return this.displayName;
     }
 
+    /**
+     * The Elasticsearch bulk endpoint URL in the https://hostname.elastic-cloud.com:9243/_bulk/ format. Set indexName in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. See Stream logs to Elasticsearch.
+     * 
+     */
     @Import(name="endpoint", required=true)
     private Output<String> endpoint;
 
+    /**
+     * @return The Elasticsearch bulk endpoint URL in the https://hostname.elastic-cloud.com:9243/_bulk/ format. Set indexName in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. See Stream logs to Elasticsearch.
+     * 
+     */
     public Output<String> endpoint() {
         return this.endpoint;
     }
 
+    /**
+     * The index name of the Elastic cloud where you want to store log files.
+     * 
+     */
     @Import(name="indexName", required=true)
     private Output<String> indexName;
 
+    /**
+     * @return The index name of the Elastic cloud where you want to store log files.
+     * 
+     */
     public Output<String> indexName() {
         return this.indexName;
     }
 
+    /**
+     * Indicates whether mTLS is enabled or not.
+     * 
+     */
     @Import(name="mTls")
     private @Nullable Output<Boolean> mTls;
 
+    /**
+     * @return Indicates whether mTLS is enabled or not.
+     * 
+     */
     public Optional<Output<Boolean>> mTls() {
         return Optional.ofNullable(this.mTls);
     }
 
+    /**
+     * The Elasticsearch basic access authentication password.
+     * 
+     */
     @Import(name="password", required=true)
     private Output<String> password;
 
+    /**
+     * @return The Elasticsearch basic access authentication password.
+     * 
+     */
     public Output<String> password() {
         return this.password;
     }
 
+    /**
+     * The hostname that verifies the server&#39;s certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+     * 
+     */
     @Import(name="tlsHostname")
     private @Nullable Output<String> tlsHostname;
 
+    /**
+     * @return The hostname that verifies the server&#39;s certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+     * 
+     */
     public Optional<Output<String>> tlsHostname() {
         return Optional.ofNullable(this.tlsHostname);
     }
 
+    /**
+     * The Elasticsearch basic access authentication username.
+     * 
+     */
     @Import(name="userName", required=true)
     private Output<String> userName;
 
+    /**
+     * @return The Elasticsearch basic access authentication username.
+     * 
+     */
     public Output<String> userName() {
         return this.userName;
     }
@@ -144,119 +248,275 @@ public final class DatastreamElasticsearchConnectorArgs extends com.pulumi.resou
             $ = new DatastreamElasticsearchConnectorArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param caCert The certification authority (CA) certificate used to verify the origin server&#39;s certificate. If the certificate is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+         * 
+         * @return builder
+         * 
+         */
         public Builder caCert(@Nullable Output<String> caCert) {
             $.caCert = caCert;
             return this;
         }
 
+        /**
+         * @param caCert The certification authority (CA) certificate used to verify the origin server&#39;s certificate. If the certificate is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+         * 
+         * @return builder
+         * 
+         */
         public Builder caCert(String caCert) {
             return caCert(Output.of(caCert));
         }
 
+        /**
+         * @param clientCert The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+         * 
+         * @return builder
+         * 
+         */
         public Builder clientCert(@Nullable Output<String> clientCert) {
             $.clientCert = clientCert;
             return this;
         }
 
+        /**
+         * @param clientCert The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+         * 
+         * @return builder
+         * 
+         */
         public Builder clientCert(String clientCert) {
             return clientCert(Output.of(clientCert));
         }
 
+        /**
+         * @param clientKey The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+         * 
+         * @return builder
+         * 
+         */
         public Builder clientKey(@Nullable Output<String> clientKey) {
             $.clientKey = clientKey;
             return this;
         }
 
+        /**
+         * @param clientKey The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+         * 
+         * @return builder
+         * 
+         */
         public Builder clientKey(String clientKey) {
             return clientKey(Output.of(clientKey));
         }
 
+        /**
+         * @param contentType The type of the resource passed in the request&#39;s custom header. For details, see Additional options in the DataStream user guide.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contentType(@Nullable Output<String> contentType) {
             $.contentType = contentType;
             return this;
         }
 
+        /**
+         * @param contentType The type of the resource passed in the request&#39;s custom header. For details, see Additional options in the DataStream user guide.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contentType(String contentType) {
             return contentType(Output.of(contentType));
         }
 
+        /**
+         * @param customHeaderName A human-readable name for the request&#39;s custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customHeaderName(@Nullable Output<String> customHeaderName) {
             $.customHeaderName = customHeaderName;
             return this;
         }
 
+        /**
+         * @param customHeaderName A human-readable name for the request&#39;s custom header, containing only alphanumeric, dash, and underscore characters. For details, see Additional options in the DataStream user guide.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customHeaderName(String customHeaderName) {
             return customHeaderName(Output.of(customHeaderName));
         }
 
+        /**
+         * @param customHeaderValue The custom header&#39;s contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customHeaderValue(@Nullable Output<String> customHeaderValue) {
             $.customHeaderValue = customHeaderValue;
             return this;
         }
 
+        /**
+         * @param customHeaderValue The custom header&#39;s contents passed with the request that contains information about the client connection. For details, see Additional options in the DataStream user guide.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customHeaderValue(String customHeaderValue) {
             return customHeaderValue(Output.of(customHeaderValue));
         }
 
+        /**
+         * @param displayName The name of the connector.
+         * 
+         * @return builder
+         * 
+         */
         public Builder displayName(Output<String> displayName) {
             $.displayName = displayName;
             return this;
         }
 
+        /**
+         * @param displayName The name of the connector.
+         * 
+         * @return builder
+         * 
+         */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
         }
 
+        /**
+         * @param endpoint The Elasticsearch bulk endpoint URL in the https://hostname.elastic-cloud.com:9243/_bulk/ format. Set indexName in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. See Stream logs to Elasticsearch.
+         * 
+         * @return builder
+         * 
+         */
         public Builder endpoint(Output<String> endpoint) {
             $.endpoint = endpoint;
             return this;
         }
 
+        /**
+         * @param endpoint The Elasticsearch bulk endpoint URL in the https://hostname.elastic-cloud.com:9243/_bulk/ format. Set indexName in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. See Stream logs to Elasticsearch.
+         * 
+         * @return builder
+         * 
+         */
         public Builder endpoint(String endpoint) {
             return endpoint(Output.of(endpoint));
         }
 
+        /**
+         * @param indexName The index name of the Elastic cloud where you want to store log files.
+         * 
+         * @return builder
+         * 
+         */
         public Builder indexName(Output<String> indexName) {
             $.indexName = indexName;
             return this;
         }
 
+        /**
+         * @param indexName The index name of the Elastic cloud where you want to store log files.
+         * 
+         * @return builder
+         * 
+         */
         public Builder indexName(String indexName) {
             return indexName(Output.of(indexName));
         }
 
+        /**
+         * @param mTls Indicates whether mTLS is enabled or not.
+         * 
+         * @return builder
+         * 
+         */
         public Builder mTls(@Nullable Output<Boolean> mTls) {
             $.mTls = mTls;
             return this;
         }
 
+        /**
+         * @param mTls Indicates whether mTLS is enabled or not.
+         * 
+         * @return builder
+         * 
+         */
         public Builder mTls(Boolean mTls) {
             return mTls(Output.of(mTls));
         }
 
+        /**
+         * @param password The Elasticsearch basic access authentication password.
+         * 
+         * @return builder
+         * 
+         */
         public Builder password(Output<String> password) {
             $.password = password;
             return this;
         }
 
+        /**
+         * @param password The Elasticsearch basic access authentication password.
+         * 
+         * @return builder
+         * 
+         */
         public Builder password(String password) {
             return password(Output.of(password));
         }
 
+        /**
+         * @param tlsHostname The hostname that verifies the server&#39;s certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tlsHostname(@Nullable Output<String> tlsHostname) {
             $.tlsHostname = tlsHostname;
             return this;
         }
 
+        /**
+         * @param tlsHostname The hostname that verifies the server&#39;s certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tlsHostname(String tlsHostname) {
             return tlsHostname(Output.of(tlsHostname));
         }
 
+        /**
+         * @param userName The Elasticsearch basic access authentication username.
+         * 
+         * @return builder
+         * 
+         */
         public Builder userName(Output<String> userName) {
             $.userName = userName;
             return this;
         }
 
+        /**
+         * @param userName The Elasticsearch basic access authentication username.
+         * 
+         * @return builder
+         * 
+         */
         public Builder userName(String userName) {
             return userName(Output.of(userName));
         }

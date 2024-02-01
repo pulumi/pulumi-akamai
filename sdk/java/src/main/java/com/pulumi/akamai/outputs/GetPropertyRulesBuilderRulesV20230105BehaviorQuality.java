@@ -13,8 +13,16 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorQuality {
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String audienceSettings;
     private @Nullable String catalogSize;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String contentSettings;
     private @Nullable String contentType;
     private @Nullable String country;
@@ -22,24 +30,48 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorQuality {
     private @Nullable String deliveryType;
     private @Nullable String downloadType;
     private @Nullable String endUserLocation;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
     private @Nullable String maximumConcurrentUsers;
     private @Nullable String objectSize;
     private @Nullable String optimizeFor;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String originSettings;
     private @Nullable String popularityDistribution;
     private @Nullable String refreshRate;
     private @Nullable Integer segmentDuration;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorQuality() {}
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> audienceSettings() {
         return Optional.ofNullable(this.audienceSettings);
     }
     public Optional<String> catalogSize() {
         return Optional.ofNullable(this.catalogSize);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> contentSettings() {
         return Optional.ofNullable(this.contentSettings);
     }
@@ -61,6 +93,10 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorQuality {
     public Optional<String> endUserLocation() {
         return Optional.ofNullable(this.endUserLocation);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
@@ -73,6 +109,10 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorQuality {
     public Optional<String> optimizeFor() {
         return Optional.ofNullable(this.optimizeFor);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> originSettings() {
         return Optional.ofNullable(this.originSettings);
     }
@@ -85,9 +125,17 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorQuality {
     public Optional<Integer> segmentDuration() {
         return Optional.ofNullable(this.segmentDuration);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

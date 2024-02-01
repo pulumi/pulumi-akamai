@@ -14,9 +14,17 @@ public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop
 
     public static final GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShape Empty = new GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShape();
 
+    /**
+     * Series of PointShapeType objects. The last and first points connect to close the shape automatically.
+     * 
+     */
     @Import(name="points", required=true)
     private List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShapePoint> points;
 
+    /**
+     * @return Series of PointShapeType objects. The last and first points connect to close the shape automatically.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShapePoint> points() {
         return this.points;
     }
@@ -45,11 +53,23 @@ public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop
             $ = new GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShape(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param points Series of PointShapeType objects. The last and first points connect to close the shape automatically.
+         * 
+         * @return builder
+         * 
+         */
         public Builder points(List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShapePoint> points) {
             $.points = points;
             return this;
         }
 
+        /**
+         * @param points Series of PointShapeType objects. The last and first points connect to close the shape automatically.
+         * 
+         * @return builder
+         * 
+         */
         public Builder points(GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShapePoint... points) {
             return points(List.of(points));
         }

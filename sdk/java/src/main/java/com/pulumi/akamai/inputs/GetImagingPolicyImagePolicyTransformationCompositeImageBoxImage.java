@@ -15,30 +15,62 @@ public final class GetImagingPolicyImagePolicyTransformationCompositeImageBoxIma
 
     public static final GetImagingPolicyImagePolicyTransformationCompositeImageBoxImage Empty = new GetImagingPolicyImagePolicyTransformationCompositeImageBoxImage();
 
+    /**
+     * The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
+     * 
+     */
     @Import(name="color")
     private @Nullable String color;
 
+    /**
+     * @return The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
+     * 
+     */
     public Optional<String> color() {
         return Optional.ofNullable(this.color);
     }
 
+    /**
+     * The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
+     * 
+     */
     @Import(name="colorVar")
     private @Nullable String colorVar;
 
+    /**
+     * @return The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
+     * 
+     */
     public Optional<String> colorVar() {
         return Optional.ofNullable(this.colorVar);
     }
 
+    /**
+     * The height of the box in pixels.
+     * 
+     */
     @Import(name="height")
     private @Nullable String height;
 
+    /**
+     * @return The height of the box in pixels.
+     * 
+     */
     public Optional<String> height() {
         return Optional.ofNullable(this.height);
     }
 
+    /**
+     * The height of the box in pixels.
+     * 
+     */
     @Import(name="heightVar")
     private @Nullable String heightVar;
 
+    /**
+     * @return The height of the box in pixels.
+     * 
+     */
     public Optional<String> heightVar() {
         return Optional.ofNullable(this.heightVar);
     }
@@ -50,16 +82,32 @@ public final class GetImagingPolicyImagePolicyTransformationCompositeImageBoxIma
         return Optional.ofNullable(this.transformation);
     }
 
+    /**
+     * The width of the box in pixels.
+     * 
+     */
     @Import(name="width")
     private @Nullable String width;
 
+    /**
+     * @return The width of the box in pixels.
+     * 
+     */
     public Optional<String> width() {
         return Optional.ofNullable(this.width);
     }
 
+    /**
+     * The width of the box in pixels.
+     * 
+     */
     @Import(name="widthVar")
     private @Nullable String widthVar;
 
+    /**
+     * @return The width of the box in pixels.
+     * 
+     */
     public Optional<String> widthVar() {
         return Optional.ofNullable(this.widthVar);
     }
@@ -94,21 +142,45 @@ public final class GetImagingPolicyImagePolicyTransformationCompositeImageBoxIma
             $ = new GetImagingPolicyImagePolicyTransformationCompositeImageBoxImage(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param color The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
+         * 
+         * @return builder
+         * 
+         */
         public Builder color(@Nullable String color) {
             $.color = color;
             return this;
         }
 
+        /**
+         * @param colorVar The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
+         * 
+         * @return builder
+         * 
+         */
         public Builder colorVar(@Nullable String colorVar) {
             $.colorVar = colorVar;
             return this;
         }
 
+        /**
+         * @param height The height of the box in pixels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder height(@Nullable String height) {
             $.height = height;
             return this;
         }
 
+        /**
+         * @param heightVar The height of the box in pixels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder heightVar(@Nullable String heightVar) {
             $.heightVar = heightVar;
             return this;
@@ -119,11 +191,23 @@ public final class GetImagingPolicyImagePolicyTransformationCompositeImageBoxIma
             return this;
         }
 
+        /**
+         * @param width The width of the box in pixels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder width(@Nullable String width) {
             $.width = width;
             return this;
         }
 
+        /**
+         * @param widthVar The width of the box in pixels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder widthVar(@Nullable String widthVar) {
             $.widthVar = widthVar;
             return this;

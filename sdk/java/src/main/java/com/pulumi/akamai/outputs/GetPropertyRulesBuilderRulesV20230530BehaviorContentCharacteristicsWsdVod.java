@@ -12,77 +12,221 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacteristicsWsdVod {
+    /**
+     * @return Optimize based on the total size of the content library delivered.
+     * 
+     */
     private @Nullable String catalogSize;
+    /**
+     * @return Optimize based on the quality of media content.
+     * 
+     */
     private @Nullable String contentType;
+    /**
+     * @return Enable delivery of DASH media.
+     * 
+     */
     private @Nullable Boolean dash;
+    /**
+     * @return Enable delivery of HDS media.
+     * 
+     */
     private @Nullable Boolean hds;
+    /**
+     * @return Enable delivery of HLS media.
+     * 
+     */
     private @Nullable Boolean hls;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Optimize based on the content&#39;s expected popularity.
+     * 
+     */
     private @Nullable String popularityDistribution;
+    /**
+     * @return Specifies the duration of individual segments.
+     * 
+     */
     private @Nullable String segmentDurationDash;
+    /**
+     * @return Specifies the duration of individual fragments.
+     * 
+     */
     private @Nullable String segmentDurationHds;
+    /**
+     * @return Specifies the duration of individual segments.
+     * 
+     */
     private @Nullable String segmentDurationHls;
+    /**
+     * @return Specifies the duration of individual fragments.
+     * 
+     */
     private @Nullable String segmentDurationSmooth;
+    /**
+     * @return Specifies the size of the media object retrieved from the origin.
+     * 
+     */
     private @Nullable String segmentSizeDash;
+    /**
+     * @return Specifies the size of the media object retrieved from the origin.
+     * 
+     */
     private @Nullable String segmentSizeHds;
+    /**
+     * @return Specifies the size of the media object retrieved from the origin.
+     * 
+     */
     private @Nullable String segmentSizeHls;
+    /**
+     * @return Specifies the size of the media object retrieved from the origin.
+     * 
+     */
     private @Nullable String segmentSizeSmooth;
+    /**
+     * @return Enable delivery of Smooth media.
+     * 
+     */
     private @Nullable Boolean smooth;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacteristicsWsdVod() {}
+    /**
+     * @return Optimize based on the total size of the content library delivered.
+     * 
+     */
     public Optional<String> catalogSize() {
         return Optional.ofNullable(this.catalogSize);
     }
+    /**
+     * @return Optimize based on the quality of media content.
+     * 
+     */
     public Optional<String> contentType() {
         return Optional.ofNullable(this.contentType);
     }
+    /**
+     * @return Enable delivery of DASH media.
+     * 
+     */
     public Optional<Boolean> dash() {
         return Optional.ofNullable(this.dash);
     }
+    /**
+     * @return Enable delivery of HDS media.
+     * 
+     */
     public Optional<Boolean> hds() {
         return Optional.ofNullable(this.hds);
     }
+    /**
+     * @return Enable delivery of HLS media.
+     * 
+     */
     public Optional<Boolean> hls() {
         return Optional.ofNullable(this.hls);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Optimize based on the content&#39;s expected popularity.
+     * 
+     */
     public Optional<String> popularityDistribution() {
         return Optional.ofNullable(this.popularityDistribution);
     }
+    /**
+     * @return Specifies the duration of individual segments.
+     * 
+     */
     public Optional<String> segmentDurationDash() {
         return Optional.ofNullable(this.segmentDurationDash);
     }
+    /**
+     * @return Specifies the duration of individual fragments.
+     * 
+     */
     public Optional<String> segmentDurationHds() {
         return Optional.ofNullable(this.segmentDurationHds);
     }
+    /**
+     * @return Specifies the duration of individual segments.
+     * 
+     */
     public Optional<String> segmentDurationHls() {
         return Optional.ofNullable(this.segmentDurationHls);
     }
+    /**
+     * @return Specifies the duration of individual fragments.
+     * 
+     */
     public Optional<String> segmentDurationSmooth() {
         return Optional.ofNullable(this.segmentDurationSmooth);
     }
+    /**
+     * @return Specifies the size of the media object retrieved from the origin.
+     * 
+     */
     public Optional<String> segmentSizeDash() {
         return Optional.ofNullable(this.segmentSizeDash);
     }
+    /**
+     * @return Specifies the size of the media object retrieved from the origin.
+     * 
+     */
     public Optional<String> segmentSizeHds() {
         return Optional.ofNullable(this.segmentSizeHds);
     }
+    /**
+     * @return Specifies the size of the media object retrieved from the origin.
+     * 
+     */
     public Optional<String> segmentSizeHls() {
         return Optional.ofNullable(this.segmentSizeHls);
     }
+    /**
+     * @return Specifies the size of the media object retrieved from the origin.
+     * 
+     */
     public Optional<String> segmentSizeSmooth() {
         return Optional.ofNullable(this.segmentSizeSmooth);
     }
+    /**
+     * @return Enable delivery of Smooth media.
+     * 
+     */
     public Optional<Boolean> smooth() {
         return Optional.ofNullable(this.smooth);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

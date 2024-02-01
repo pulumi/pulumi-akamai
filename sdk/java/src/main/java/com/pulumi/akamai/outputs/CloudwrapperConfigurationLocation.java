@@ -14,17 +14,41 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class CloudwrapperConfigurationLocation {
+    /**
+     * @return The capacity assigned to this configuration&#39;s location
+     * 
+     */
     private @Nullable CloudwrapperConfigurationLocationCapacity capacity;
+    /**
+     * @return Additional comments provided by the user.
+     * 
+     */
     private String comments;
+    /**
+     * @return Unique identifier for the location and traffic type combination
+     * 
+     */
     private Integer trafficTypeId;
 
     private CloudwrapperConfigurationLocation() {}
+    /**
+     * @return The capacity assigned to this configuration&#39;s location
+     * 
+     */
     public Optional<CloudwrapperConfigurationLocationCapacity> capacity() {
         return Optional.ofNullable(this.capacity);
     }
+    /**
+     * @return Additional comments provided by the user.
+     * 
+     */
     public String comments() {
         return this.comments;
     }
+    /**
+     * @return Unique identifier for the location and traffic type combination
+     * 
+     */
     public Integer trafficTypeId() {
         return this.trafficTypeId;
     }

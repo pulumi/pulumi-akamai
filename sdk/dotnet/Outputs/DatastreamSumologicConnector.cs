@@ -13,12 +13,33 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class DatastreamSumologicConnector
     {
+        /// <summary>
+        /// The unique HTTP collector code of Sumo Logic endpoint
+        /// </summary>
         public readonly string CollectorCode;
+        /// <summary>
+        /// Indicates whether the logs should be compressed
+        /// </summary>
         public readonly bool? CompressLogs;
+        /// <summary>
+        /// Content type to pass in the log file header
+        /// </summary>
         public readonly string? ContentType;
+        /// <summary>
+        /// The name of custom header passed with the request to the destination
+        /// </summary>
         public readonly string? CustomHeaderName;
+        /// <summary>
+        /// The custom header's contents passed with the request to the destination
+        /// </summary>
         public readonly string? CustomHeaderValue;
+        /// <summary>
+        /// The name of the connector
+        /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// The Sumo Logic collection endpoint where logs will be stored
+        /// </summary>
         public readonly string Endpoint;
 
         [OutputConstructor]

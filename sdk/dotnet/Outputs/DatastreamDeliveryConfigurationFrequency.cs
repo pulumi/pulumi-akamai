@@ -13,6 +13,9 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class DatastreamDeliveryConfigurationFrequency
     {
+        /// <summary>
+        /// The time in seconds after which the system bundles log lines into a file and sends it to a destination
+        /// </summary>
         public readonly int IntervalInSecs;
 
         [OutputConstructor]

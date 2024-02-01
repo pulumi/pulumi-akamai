@@ -12,29 +12,77 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorRandomSeek {
+    /**
+     * @return Enables random seek optimization in FLV files.
+     * 
+     */
     private @Nullable Boolean flv;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Sets the maximum size of the MP4 file to optimize, expressed as a number suffixed with a unit string such as `MB` or `GB`.
+     * 
+     */
     private @Nullable String maximumSize;
+    /**
+     * @return Enables random seek optimization in MP4 files.
+     * 
+     */
     private @Nullable Boolean mp4;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorRandomSeek() {}
+    /**
+     * @return Enables random seek optimization in FLV files.
+     * 
+     */
     public Optional<Boolean> flv() {
         return Optional.ofNullable(this.flv);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Sets the maximum size of the MP4 file to optimize, expressed as a number suffixed with a unit string such as `MB` or `GB`.
+     * 
+     */
     public Optional<String> maximumSize() {
         return Optional.ofNullable(this.maximumSize);
     }
+    /**
+     * @return Enables random seek optimization in MP4 files.
+     * 
+     */
     public Optional<Boolean> mp4() {
         return Optional.ofNullable(this.mp4);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

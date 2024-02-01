@@ -13,12 +13,33 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class DatastreamGcsConnector
     {
+        /// <summary>
+        /// The name of the storage bucket created in Google Cloud account
+        /// </summary>
         public readonly string Bucket;
+        /// <summary>
+        /// Indicates whether the logs should be compressed
+        /// </summary>
         public readonly bool? CompressLogs;
+        /// <summary>
+        /// The name of the connector
+        /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// The path to the folder within Google Cloud bucket where logs will be stored
+        /// </summary>
         public readonly string? Path;
+        /// <summary>
+        /// The contents of the JSON private key generated and downloaded in Google Cloud Storage account
+        /// </summary>
         public readonly string PrivateKey;
+        /// <summary>
+        /// The unique ID of Google Cloud project
+        /// </summary>
         public readonly string ProjectId;
+        /// <summary>
+        /// The name of the service account with the storage.object.create permission or Storage Object Creator role
+        /// </summary>
         public readonly string ServiceAccountName;
 
         [OutputConstructor]

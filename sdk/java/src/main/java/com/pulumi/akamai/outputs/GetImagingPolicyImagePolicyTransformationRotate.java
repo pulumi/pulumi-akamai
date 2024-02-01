@@ -11,13 +11,29 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationRotate {
+    /**
+     * @return The value to rotate the image by. Positive values rotate clockwise, while negative values rotate counter-clockwise.
+     * 
+     */
     private @Nullable String degrees;
+    /**
+     * @return The value to rotate the image by. Positive values rotate clockwise, while negative values rotate counter-clockwise.
+     * 
+     */
     private @Nullable String degreesVar;
 
     private GetImagingPolicyImagePolicyTransformationRotate() {}
+    /**
+     * @return The value to rotate the image by. Positive values rotate clockwise, while negative values rotate counter-clockwise.
+     * 
+     */
     public Optional<String> degrees() {
         return Optional.ofNullable(this.degrees);
     }
+    /**
+     * @return The value to rotate the image by. Positive values rotate clockwise, while negative values rotate counter-clockwise.
+     * 
+     */
     public Optional<String> degreesVar() {
         return Optional.ofNullable(this.degreesVar);
     }

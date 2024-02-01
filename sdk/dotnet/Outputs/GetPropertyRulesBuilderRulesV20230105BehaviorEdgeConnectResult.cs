@@ -13,17 +13,53 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorEdgeConnectResult
     {
+        /// <summary>
+        /// Specifies the maximum number of lines to include in each log.
+        /// </summary>
         public readonly string? AggregateLines;
+        /// <summary>
+        /// Specifies the log's maximum size.
+        /// </summary>
         public readonly string? AggregateSize;
+        /// <summary>
+        /// Specifies how often logs are generated.
+        /// </summary>
         public readonly string? AggregateTime;
+        /// <summary>
+        /// Describes the API connector type.
+        /// </summary>
         public readonly string? ApiConnector;
+        /// <summary>
+        /// Specifies the data set to log.
+        /// </summary>
         public readonly ImmutableArray<string> ApiDataElements;
+        /// <summary>
+        /// Specifies the target hostname accepting push API requests.
+        /// </summary>
         public readonly string? DestinationHostname;
+        /// <summary>
+        /// Specifies the push API's endpoint.
+        /// </summary>
         public readonly string? DestinationPath;
+        /// <summary>
+        /// Enables Cloud Monitor's log-publishing behavior.
+        /// </summary>
         public readonly bool? Enabled;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// When enabled, overrides default log settings.
+        /// </summary>
         public readonly bool? OverrideAggregateSettings;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

@@ -13,24 +13,81 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorCachingResult
     {
+        /// <summary>
+        /// Specify the caching option.
+        /// </summary>
         public readonly string? Behavior;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? CacheControlDirectives;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? CacheabilitySettings;
+        /// <summary>
+        /// Set the `MAX_AGE` header for the cached content.
+        /// </summary>
         public readonly string? DefaultTtl;
+        /// <summary>
+        /// This enables honoring particular `Cache-Control` header directives from the origin. Supports all official `RFC 7234` directives except for `no-transform`.
+        /// </summary>
         public readonly bool? EnhancedRfcSupport;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? ExpirationSettings;
+        /// <summary>
+        /// This instructs edge servers to cache the object for a length of time set by the `max-age` directive in the response. When present in the origin response, this directive takes precedence over the `max-age` directive and the `defaultTtl` setting.
+        /// </summary>
         public readonly bool? HonorMaxAge;
+        /// <summary>
+        /// This instructs edge servers to successfully revalidate with the origin server before using stale objects in the cache to satisfy new requests.
+        /// </summary>
         public readonly bool? HonorMustRevalidate;
+        /// <summary>
+        /// With the `no-cache` directive present in the response, this instructs edge servers to validate or refetch the response for each request. Effectively, set the time to live `ttl` to zero seconds.
+        /// </summary>
         public readonly bool? HonorNoCache;
+        /// <summary>
+        /// Instructs edge servers not to cache the response when the origin response includes the `no-store` directive.
+        /// </summary>
         public readonly bool? HonorNoStore;
+        /// <summary>
+        /// Instructs edge servers not to cache the response when the origin response includes the `private` directive.
+        /// </summary>
         public readonly bool? HonorPrivate;
+        /// <summary>
+        /// With the `proxy-revalidate` directive present in the response, this instructs edge servers to successfully revalidate with the origin server before using stale objects in the cache to satisfy new requests.
+        /// </summary>
         public readonly bool? HonorProxyRevalidate;
+        /// <summary>
+        /// Instructs edge servers to cache the object for a length of time set by the `s-maxage` directive in the response. When present in the origin response, this directive takes precedence over the `max-age` directive and the `defaultTtl` setting.
+        /// </summary>
         public readonly bool? HonorSMaxage;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// Determines what to do once the cached content has expired, by which time the Akamai platform should have re-fetched and validated content from the origin. If enabled, only allows the re-fetched content to be served. If disabled, may serve stale content if the origin is unavailable.
+        /// </summary>
         public readonly bool? MustRevalidate;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? RevalidationSettings;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// The maximum time content may remain cached. Setting the value to `0` is the same as setting a `no-cache` header, which forces content to revalidate.
+        /// </summary>
         public readonly string? Ttl;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

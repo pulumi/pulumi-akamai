@@ -13,30 +13,105 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorContentTargetingProtectionResult
     {
+        /// <summary>
+        /// Specifies a set of two-character ISO 3166 country codes from which to allow or deny traffic. See `EdgeScape Data Codes` for a list.
+        /// </summary>
         public readonly ImmutableArray<string> Countries;
+        /// <summary>
+        /// Specifies the set of Designated Market Area codes from which to allow or deny traffic.  See `EdgeScape Data Codes` for a list.
+        /// </summary>
         public readonly ImmutableArray<string> Dmas;
+        /// <summary>
+        /// When enabled, verifies IP addresses are unique to specific geographic regions.
+        /// </summary>
         public readonly bool? EnableGeoProtection;
+        /// <summary>
+        /// When enabled, redirects denied requests rather than responding with an error code.
+        /// </summary>
         public readonly bool? EnableGeoRedirectOnDeny;
+        /// <summary>
+        /// Allows you to control access to your content from specific sets of IP addresses and CIDR blocks.
+        /// </summary>
         public readonly bool? EnableIpProtection;
+        /// <summary>
+        /// When enabled, redirects denied requests rather than responding with an error code.
+        /// </summary>
         public readonly bool? EnableIpRedirectOnDeny;
+        /// <summary>
+        /// Allows you allow traffic from certain referring websites, and disallow traffic from unauthorized sites that hijack those links.
+        /// </summary>
         public readonly bool? EnableReferrerProtection;
+        /// <summary>
+        /// When enabled, redirects denied requests rather than responding with an error code.
+        /// </summary>
         public readonly bool? EnableReferrerRedirectOnDeny;
+        /// <summary>
+        /// Enables the Content Targeting feature.
+        /// </summary>
         public readonly bool? Enabled;
+        /// <summary>
+        /// Specifies how to handle requests.
+        /// </summary>
         public readonly string? GeoProtectionMode;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? GeoProtectionTitle;
+        /// <summary>
+        /// This specifies the full URL to the redirect page for denied requests.
+        /// </summary>
         public readonly string? GeoRedirectUrl;
+        /// <summary>
+        /// Specify a set of IP addresses or CIDR blocks to allow or deny.
+        /// </summary>
         public readonly ImmutableArray<string> IpAddresses;
+        /// <summary>
+        /// Specifies how to handle requests.
+        /// </summary>
         public readonly string? IpProtectionMode;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? IpProtectionTitle;
+        /// <summary>
+        /// This specifies the full URL to the redirect page for denied requests.
+        /// </summary>
         public readonly string? IpRedirectUrl;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// Specify a set of IP addresses or CIDR blocks that exceptions to the set of included or excluded areas.
+        /// </summary>
         public readonly ImmutableArray<string> OverrideIpAddresses;
+        /// <summary>
+        /// Specifies the set of domains from which to allow or deny traffic.
+        /// </summary>
         public readonly ImmutableArray<string> ReferrerDomains;
+        /// <summary>
+        /// Specify the action to take.
+        /// </summary>
         public readonly string? ReferrerProtectionMode;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? ReferrerProtectionTitle;
+        /// <summary>
+        /// This specifies the full URL to the redirect page for denied requests.
+        /// </summary>
         public readonly string? ReferrerRedirectUrl;
+        /// <summary>
+        /// Specifies a set of ISO 3166-2 regional codes from which to allow or deny traffic. See `EdgeScape Data Codes` for a list.
+        /// </summary>
         public readonly ImmutableArray<string> Regions;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

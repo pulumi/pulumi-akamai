@@ -13,41 +13,105 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop {
+    /**
+     * @return The placement of the crop area relative to the specified area of interest.
+     * 
+     */
     private @Nullable String gravity;
+    /**
+     * @return The placement of the crop area relative to the specified area of interest.
+     * 
+     */
     private @Nullable String gravityVar;
+    /**
+     * @return The height in pixels of the output image relative to the specified `style` value.
+     * 
+     */
     private @Nullable String height;
+    /**
+     * @return The height in pixels of the output image relative to the specified `style` value.
+     * 
+     */
     private @Nullable String heightVar;
     private GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterest regionOfInterest;
+    /**
+     * @return Specifies how to crop or scale a crop area for the specified area of interest in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.
+     * 
+     */
     private @Nullable String style;
+    /**
+     * @return Specifies how to crop or scale a crop area for the specified area of interest in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.
+     * 
+     */
     private @Nullable String styleVar;
+    /**
+     * @return The width in pixels of the output image relative to the specified `style` value.
+     * 
+     */
     private @Nullable String width;
+    /**
+     * @return The width in pixels of the output image relative to the specified `style` value.
+     * 
+     */
     private @Nullable String widthVar;
 
     private GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop() {}
+    /**
+     * @return The placement of the crop area relative to the specified area of interest.
+     * 
+     */
     public Optional<String> gravity() {
         return Optional.ofNullable(this.gravity);
     }
+    /**
+     * @return The placement of the crop area relative to the specified area of interest.
+     * 
+     */
     public Optional<String> gravityVar() {
         return Optional.ofNullable(this.gravityVar);
     }
+    /**
+     * @return The height in pixels of the output image relative to the specified `style` value.
+     * 
+     */
     public Optional<String> height() {
         return Optional.ofNullable(this.height);
     }
+    /**
+     * @return The height in pixels of the output image relative to the specified `style` value.
+     * 
+     */
     public Optional<String> heightVar() {
         return Optional.ofNullable(this.heightVar);
     }
     public GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterest regionOfInterest() {
         return this.regionOfInterest;
     }
+    /**
+     * @return Specifies how to crop or scale a crop area for the specified area of interest in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.
+     * 
+     */
     public Optional<String> style() {
         return Optional.ofNullable(this.style);
     }
+    /**
+     * @return Specifies how to crop or scale a crop area for the specified area of interest in the source image, `zoom` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` places raw crop around the point of interest, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and point of interest as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the point of interest, relative to the specified `width` and `height` values.
+     * 
+     */
     public Optional<String> styleVar() {
         return Optional.ofNullable(this.styleVar);
     }
+    /**
+     * @return The width in pixels of the output image relative to the specified `style` value.
+     * 
+     */
     public Optional<String> width() {
         return Optional.ofNullable(this.width);
     }
+    /**
+     * @return The width in pixels of the output image relative to the specified `style` value.
+     * 
+     */
     public Optional<String> widthVar() {
         return Optional.ofNullable(this.widthVar);
     }

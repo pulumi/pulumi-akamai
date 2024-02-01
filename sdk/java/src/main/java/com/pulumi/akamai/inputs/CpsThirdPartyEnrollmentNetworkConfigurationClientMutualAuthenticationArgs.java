@@ -16,23 +16,47 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthen
 
     public static final CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgs Empty = new CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgs();
 
+    /**
+     * Enable OCSP stapling
+     * 
+     */
     @Import(name="ocspEnabled")
     private @Nullable Output<Boolean> ocspEnabled;
 
+    /**
+     * @return Enable OCSP stapling
+     * 
+     */
     public Optional<Output<Boolean>> ocspEnabled() {
         return Optional.ofNullable(this.ocspEnabled);
     }
 
+    /**
+     * Enable the server to send the certificate authority (CA) list to the client
+     * 
+     */
     @Import(name="sendCaListToClient")
     private @Nullable Output<Boolean> sendCaListToClient;
 
+    /**
+     * @return Enable the server to send the certificate authority (CA) list to the client
+     * 
+     */
     public Optional<Output<Boolean>> sendCaListToClient() {
         return Optional.ofNullable(this.sendCaListToClient);
     }
 
+    /**
+     * The identifier of the set of trust chains, created in the Trust Chain Manager
+     * 
+     */
     @Import(name="setId")
     private @Nullable Output<String> setId;
 
+    /**
+     * @return The identifier of the set of trust chains, created in the Trust Chain Manager
+     * 
+     */
     public Optional<Output<String>> setId() {
         return Optional.ofNullable(this.setId);
     }
@@ -63,29 +87,65 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthen
             $ = new CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param ocspEnabled Enable OCSP stapling
+         * 
+         * @return builder
+         * 
+         */
         public Builder ocspEnabled(@Nullable Output<Boolean> ocspEnabled) {
             $.ocspEnabled = ocspEnabled;
             return this;
         }
 
+        /**
+         * @param ocspEnabled Enable OCSP stapling
+         * 
+         * @return builder
+         * 
+         */
         public Builder ocspEnabled(Boolean ocspEnabled) {
             return ocspEnabled(Output.of(ocspEnabled));
         }
 
+        /**
+         * @param sendCaListToClient Enable the server to send the certificate authority (CA) list to the client
+         * 
+         * @return builder
+         * 
+         */
         public Builder sendCaListToClient(@Nullable Output<Boolean> sendCaListToClient) {
             $.sendCaListToClient = sendCaListToClient;
             return this;
         }
 
+        /**
+         * @param sendCaListToClient Enable the server to send the certificate authority (CA) list to the client
+         * 
+         * @return builder
+         * 
+         */
         public Builder sendCaListToClient(Boolean sendCaListToClient) {
             return sendCaListToClient(Output.of(sendCaListToClient));
         }
 
+        /**
+         * @param setId The identifier of the set of trust chains, created in the Trust Chain Manager
+         * 
+         * @return builder
+         * 
+         */
         public Builder setId(@Nullable Output<String> setId) {
             $.setId = setId;
             return this;
         }
 
+        /**
+         * @param setId The identifier of the set of trust chains, created in the Trust Chain Manager
+         * 
+         * @return builder
+         * 
+         */
         public Builder setId(String setId) {
             return setId(Output.of(setId));
         }

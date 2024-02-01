@@ -13,64 +13,176 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorSureRoute {
     private @Nullable Boolean allowFcmParentOverride;
+    /**
+     * @return If `type` is `CUSTOM_MAP`, this specifies the map string provided to you by Akamai Professional Services, or included as part of the `Site Shield` product.
+     * 
+     */
     private @Nullable String customMap;
+    /**
+     * @return This specifies a hostname under which to cache race results. This may be useful when a property corresponds to many origin hostnames. By default, SureRoute would launch races for each origin, but consolidating under a single hostname runs only one race.
+     * 
+     */
     private @Nullable String customStatKey;
+    /**
+     * @return When disabled, caches race results under the race destination&#39;s hostname. If enabled, use `customStatKey` to specify a custom hostname.
+     * 
+     */
     private @Nullable Boolean enableCustomKey;
+    /**
+     * @return Enables the SureRoute behavior, to optimize delivery of non-cached content.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Forces SureRoute to use SSL when requesting the origin&#39;s test object, appropriate if your origin does not respond to HTTP requests, or responds with a redirect to HTTPS.
+     * 
+     */
     private @Nullable Boolean forceSslForward;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Specifies the time-to-live to preserve SureRoute race results, typically `30m`. If traffic exceeds a certain threshold after TTL expires, the overflow is routed directly to the origin, not necessarily optimally. If traffic remains under the threshold, the route is determined by the winner of the most recent race.
+     * 
+     */
     private @Nullable String raceStatTtl;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String srDownloadLinkTitle;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return Specifies the path and filename for your origin&#39;s test object to use in races to test routes.
+     * 
+     */
     private @Nullable String testObjectUrl;
+    /**
+     * @return If `toHostStatus` is `OTHER`, this specifies the custom `Host` header to use when requesting the SureRoute test object.
+     * 
+     */
     private @Nullable String toHost;
+    /**
+     * @return Specifies which hostname to use.
+     * 
+     */
     private @Nullable String toHostStatus;
+    /**
+     * @return Specifies the set of edge servers used to test routes.
+     * 
+     */
     private @Nullable String type;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorSureRoute() {}
     public Optional<Boolean> allowFcmParentOverride() {
         return Optional.ofNullable(this.allowFcmParentOverride);
     }
+    /**
+     * @return If `type` is `CUSTOM_MAP`, this specifies the map string provided to you by Akamai Professional Services, or included as part of the `Site Shield` product.
+     * 
+     */
     public Optional<String> customMap() {
         return Optional.ofNullable(this.customMap);
     }
+    /**
+     * @return This specifies a hostname under which to cache race results. This may be useful when a property corresponds to many origin hostnames. By default, SureRoute would launch races for each origin, but consolidating under a single hostname runs only one race.
+     * 
+     */
     public Optional<String> customStatKey() {
         return Optional.ofNullable(this.customStatKey);
     }
+    /**
+     * @return When disabled, caches race results under the race destination&#39;s hostname. If enabled, use `customStatKey` to specify a custom hostname.
+     * 
+     */
     public Optional<Boolean> enableCustomKey() {
         return Optional.ofNullable(this.enableCustomKey);
     }
+    /**
+     * @return Enables the SureRoute behavior, to optimize delivery of non-cached content.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Forces SureRoute to use SSL when requesting the origin&#39;s test object, appropriate if your origin does not respond to HTTP requests, or responds with a redirect to HTTPS.
+     * 
+     */
     public Optional<Boolean> forceSslForward() {
         return Optional.ofNullable(this.forceSslForward);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Specifies the time-to-live to preserve SureRoute race results, typically `30m`. If traffic exceeds a certain threshold after TTL expires, the overflow is routed directly to the origin, not necessarily optimally. If traffic remains under the threshold, the route is determined by the winner of the most recent race.
+     * 
+     */
     public Optional<String> raceStatTtl() {
         return Optional.ofNullable(this.raceStatTtl);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> srDownloadLinkTitle() {
         return Optional.ofNullable(this.srDownloadLinkTitle);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return Specifies the path and filename for your origin&#39;s test object to use in races to test routes.
+     * 
+     */
     public Optional<String> testObjectUrl() {
         return Optional.ofNullable(this.testObjectUrl);
     }
+    /**
+     * @return If `toHostStatus` is `OTHER`, this specifies the custom `Host` header to use when requesting the SureRoute test object.
+     * 
+     */
     public Optional<String> toHost() {
         return Optional.ofNullable(this.toHost);
     }
+    /**
+     * @return Specifies which hostname to use.
+     * 
+     */
     public Optional<String> toHostStatus() {
         return Optional.ofNullable(this.toHostStatus);
     }
+    /**
+     * @return Specifies the set of edge servers used to test routes.
+     * 
+     */
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

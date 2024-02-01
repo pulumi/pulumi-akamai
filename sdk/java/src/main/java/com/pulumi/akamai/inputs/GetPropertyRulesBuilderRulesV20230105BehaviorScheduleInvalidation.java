@@ -15,51 +15,107 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorScheduleInvalida
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorScheduleInvalidation Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorScheduleInvalidation();
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Specifies how to invalidate the content.
+     * 
+     */
     @Import(name="refreshMethod")
     private @Nullable String refreshMethod;
 
+    /**
+     * @return Specifies how to invalidate the content.
+     * 
+     */
     public Optional<String> refreshMethod() {
         return Optional.ofNullable(this.refreshMethod);
     }
 
+    /**
+     * When enabled, invalidation recurs periodically from the `start` time based on the `repeatInterval` time.
+     * 
+     */
     @Import(name="repeat")
     private @Nullable Boolean repeat;
 
+    /**
+     * @return When enabled, invalidation recurs periodically from the `start` time based on the `repeatInterval` time.
+     * 
+     */
     public Optional<Boolean> repeat() {
         return Optional.ofNullable(this.repeat);
     }
 
+    /**
+     * Specifies how often to invalidate content from the `start` time, expressed in seconds. For example, an expiration set to midnight and an interval of `86400` seconds invalidates content once a day.  Repeating intervals of less than 5 minutes are not allowed for `NetStorage` origins.
+     * 
+     */
     @Import(name="repeatInterval")
     private @Nullable String repeatInterval;
 
+    /**
+     * @return Specifies how often to invalidate content from the `start` time, expressed in seconds. For example, an expiration set to midnight and an interval of `86400` seconds invalidates content once a day.  Repeating intervals of less than 5 minutes are not allowed for `NetStorage` origins.
+     * 
+     */
     public Optional<String> repeatInterval() {
         return Optional.ofNullable(this.repeatInterval);
     }
 
+    /**
+     * The UTC date and time when matching cached content is to expire.
+     * 
+     */
     @Import(name="start")
     private @Nullable String start;
 
+    /**
+     * @return The UTC date and time when matching cached content is to expire.
+     * 
+     */
     public Optional<String> start() {
         return Optional.ofNullable(this.start);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -94,36 +150,78 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorScheduleInvalida
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorScheduleInvalidation(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param refreshMethod Specifies how to invalidate the content.
+         * 
+         * @return builder
+         * 
+         */
         public Builder refreshMethod(@Nullable String refreshMethod) {
             $.refreshMethod = refreshMethod;
             return this;
         }
 
+        /**
+         * @param repeat When enabled, invalidation recurs periodically from the `start` time based on the `repeatInterval` time.
+         * 
+         * @return builder
+         * 
+         */
         public Builder repeat(@Nullable Boolean repeat) {
             $.repeat = repeat;
             return this;
         }
 
+        /**
+         * @param repeatInterval Specifies how often to invalidate content from the `start` time, expressed in seconds. For example, an expiration set to midnight and an interval of `86400` seconds invalidates content once a day.  Repeating intervals of less than 5 minutes are not allowed for `NetStorage` origins.
+         * 
+         * @return builder
+         * 
+         */
         public Builder repeatInterval(@Nullable String repeatInterval) {
             $.repeatInterval = repeatInterval;
             return this;
         }
 
+        /**
+         * @param start The UTC date and time when matching cached content is to expire.
+         * 
+         * @return builder
+         * 
+         */
         public Builder start(@Nullable String start) {
             $.start = start;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

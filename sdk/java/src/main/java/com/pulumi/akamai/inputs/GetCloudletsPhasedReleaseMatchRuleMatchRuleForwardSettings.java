@@ -14,16 +14,32 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings ex
 
     public static final GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings Empty = new GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings();
 
+    /**
+     * The ID of the Conditional Origin requests are forwarded to
+     * 
+     */
     @Import(name="originId", required=true)
     private String originId;
 
+    /**
+     * @return The ID of the Conditional Origin requests are forwarded to
+     * 
+     */
     public String originId() {
         return this.originId;
     }
 
+    /**
+     * The percent of traffic that is sent to the data center.
+     * 
+     */
     @Import(name="percent", required=true)
     private Integer percent;
 
+    /**
+     * @return The percent of traffic that is sent to the data center.
+     * 
+     */
     public Integer percent() {
         return this.percent;
     }
@@ -53,11 +69,23 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings ex
             $ = new GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param originId The ID of the Conditional Origin requests are forwarded to
+         * 
+         * @return builder
+         * 
+         */
         public Builder originId(String originId) {
             $.originId = originId;
             return this;
         }
 
+        /**
+         * @param percent The percent of traffic that is sent to the data center.
+         * 
+         * @return builder
+         * 
+         */
         public Builder percent(Integer percent) {
             $.percent = percent;
             return this;

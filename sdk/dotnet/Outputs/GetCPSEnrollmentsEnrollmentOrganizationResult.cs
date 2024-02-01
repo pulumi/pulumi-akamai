@@ -13,13 +13,37 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetCPSEnrollmentsEnrollmentOrganizationResult
     {
+        /// <summary>
+        /// The address of organization
+        /// </summary>
         public readonly string AddressLineOne;
+        /// <summary>
+        /// The address of organization
+        /// </summary>
         public readonly string AddressLineTwo;
+        /// <summary>
+        /// City where organization is located
+        /// </summary>
         public readonly string City;
+        /// <summary>
+        /// Country code of country where organization is located
+        /// </summary>
         public readonly string CountryCode;
+        /// <summary>
+        /// Name of organization
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// The phone number of the administrator who is organization contact
+        /// </summary>
         public readonly string Phone;
+        /// <summary>
+        /// The postal code of organization
+        /// </summary>
         public readonly string PostalCode;
+        /// <summary>
+        /// The region where organization resides
+        /// </summary>
         public readonly string Region;
 
         [OutputConstructor]

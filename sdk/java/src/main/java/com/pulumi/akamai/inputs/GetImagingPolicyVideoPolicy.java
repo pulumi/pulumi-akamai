@@ -18,37 +18,77 @@ public final class GetImagingPolicyVideoPolicy extends com.pulumi.resources.Invo
 
     public static final GetImagingPolicyVideoPolicy Empty = new GetImagingPolicyVideoPolicy();
 
+    /**
+     * The breakpoint widths (in pixels) to use to create derivative images/videos.
+     * 
+     */
     @Import(name="breakpoints")
     private @Nullable GetImagingPolicyVideoPolicyBreakpoints breakpoints;
 
+    /**
+     * @return The breakpoint widths (in pixels) to use to create derivative images/videos.
+     * 
+     */
     public Optional<GetImagingPolicyVideoPolicyBreakpoints> breakpoints() {
         return Optional.ofNullable(this.breakpoints);
     }
 
+    /**
+     * Hosts that are allowed for image/video URLs within transformations or variables.
+     * 
+     */
     @Import(name="hosts")
     private @Nullable List<String> hosts;
 
+    /**
+     * @return Hosts that are allowed for image/video URLs within transformations or variables.
+     * 
+     */
     public Optional<List<String>> hosts() {
         return Optional.ofNullable(this.hosts);
     }
 
+    /**
+     * Dictates the output quality that are created for each resized video.
+     * 
+     */
     @Import(name="output")
     private @Nullable GetImagingPolicyVideoPolicyOutput output;
 
+    /**
+     * @return Dictates the output quality that are created for each resized video.
+     * 
+     */
     public Optional<GetImagingPolicyVideoPolicyOutput> output() {
         return Optional.ofNullable(this.output);
     }
 
+    /**
+     * The amount of time in seconds that the policy takes to rollout. During the rollout an increasing proportion of images/videos will begin to use the new policy instead of the cached images/videos from the previous version. This value has no effect on the staging network.
+     * 
+     */
     @Import(name="rolloutDuration")
     private @Nullable String rolloutDuration;
 
+    /**
+     * @return The amount of time in seconds that the policy takes to rollout. During the rollout an increasing proportion of images/videos will begin to use the new policy instead of the cached images/videos from the previous version. This value has no effect on the staging network.
+     * 
+     */
     public Optional<String> rolloutDuration() {
         return Optional.ofNullable(this.rolloutDuration);
     }
 
+    /**
+     * Declares variables for use within the policy. Any variable declared here can be invoked throughout transformations as a Variable object, so that you don&#39;t have to specify values separately. You can also pass in these variable names and values dynamically as query parameters in the image&#39;s request URL.
+     * 
+     */
     @Import(name="variables")
     private @Nullable List<GetImagingPolicyVideoPolicyVariable> variables;
 
+    /**
+     * @return Declares variables for use within the policy. Any variable declared here can be invoked throughout transformations as a Variable object, so that you don&#39;t have to specify values separately. You can also pass in these variable names and values dynamically as query parameters in the image&#39;s request URL.
+     * 
+     */
     public Optional<List<GetImagingPolicyVideoPolicyVariable>> variables() {
         return Optional.ofNullable(this.variables);
     }
@@ -81,35 +121,77 @@ public final class GetImagingPolicyVideoPolicy extends com.pulumi.resources.Invo
             $ = new GetImagingPolicyVideoPolicy(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param breakpoints The breakpoint widths (in pixels) to use to create derivative images/videos.
+         * 
+         * @return builder
+         * 
+         */
         public Builder breakpoints(@Nullable GetImagingPolicyVideoPolicyBreakpoints breakpoints) {
             $.breakpoints = breakpoints;
             return this;
         }
 
+        /**
+         * @param hosts Hosts that are allowed for image/video URLs within transformations or variables.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hosts(@Nullable List<String> hosts) {
             $.hosts = hosts;
             return this;
         }
 
+        /**
+         * @param hosts Hosts that are allowed for image/video URLs within transformations or variables.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hosts(String... hosts) {
             return hosts(List.of(hosts));
         }
 
+        /**
+         * @param output Dictates the output quality that are created for each resized video.
+         * 
+         * @return builder
+         * 
+         */
         public Builder output(@Nullable GetImagingPolicyVideoPolicyOutput output) {
             $.output = output;
             return this;
         }
 
+        /**
+         * @param rolloutDuration The amount of time in seconds that the policy takes to rollout. During the rollout an increasing proportion of images/videos will begin to use the new policy instead of the cached images/videos from the previous version. This value has no effect on the staging network.
+         * 
+         * @return builder
+         * 
+         */
         public Builder rolloutDuration(@Nullable String rolloutDuration) {
             $.rolloutDuration = rolloutDuration;
             return this;
         }
 
+        /**
+         * @param variables Declares variables for use within the policy. Any variable declared here can be invoked throughout transformations as a Variable object, so that you don&#39;t have to specify values separately. You can also pass in these variable names and values dynamically as query parameters in the image&#39;s request URL.
+         * 
+         * @return builder
+         * 
+         */
         public Builder variables(@Nullable List<GetImagingPolicyVideoPolicyVariable> variables) {
             $.variables = variables;
             return this;
         }
 
+        /**
+         * @param variables Declares variables for use within the policy. Any variable declared here can be invoked throughout transformations as a Variable object, so that you don&#39;t have to specify values separately. You can also pass in these variable names and values dynamically as query parameters in the image&#39;s request URL.
+         * 
+         * @return builder
+         * 
+         */
         public Builder variables(GetImagingPolicyVideoPolicyVariable... variables) {
             return variables(List.of(variables));
         }

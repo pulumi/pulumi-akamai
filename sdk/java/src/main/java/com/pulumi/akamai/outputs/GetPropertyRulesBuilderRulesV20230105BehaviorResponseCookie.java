@@ -12,77 +12,221 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorResponseCookie {
+    /**
+     * @return Specifies the name of the cookie, which serves as a key to determine if the cookie is set.
+     * 
+     */
     private @Nullable String cookieName;
+    /**
+     * @return When enabled, uses the default domain value, otherwise the set specified in the `domain` field.
+     * 
+     */
     private @Nullable Boolean defaultDomain;
+    /**
+     * @return When enabled, uses the default path value, otherwise the set specified in the `path` field.
+     * 
+     */
     private @Nullable Boolean defaultPath;
+    /**
+     * @return If the `defaultDomain` is disabled, this sets the domain for which the cookie is valid. For example, `example.com` makes the cookie valid for that hostname and all subdomains.
+     * 
+     */
     private @Nullable String domain;
+    /**
+     * @return If `expires` is set to `DURATION`, this sets the cookie&#39;s lifetime.
+     * 
+     */
     private @Nullable String duration;
+    /**
+     * @return Allows you to set a response cookie.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return If `expires` is set to `FIXED_DATE`, this sets when the cookie expires as a UTC date and time.
+     * 
+     */
     private @Nullable String expirationDate;
+    /**
+     * @return Sets various ways to specify when the cookie expires.
+     * 
+     */
     private @Nullable String expires;
+    /**
+     * @return When the `type` of cookie is set to `UNIQUE`, this sets the date format.
+     * 
+     */
     private @Nullable String format;
+    /**
+     * @return When enabled, includes the `HttpOnly` attribute in the `Set-Cookie` response header to mitigate the risk of client-side scripts accessing the protected cookie, if the browser supports it.
+     * 
+     */
     private @Nullable Boolean httpOnly;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return If the `defaultPath` is disabled, sets the path component for which the cookie is valid.
+     * 
+     */
     private @Nullable String path;
+    /**
+     * @return This option controls the `SameSite` cookie attribute that reduces the risk of cross-site request forgery attacks.
+     * 
+     */
     private @Nullable String sameSite;
+    /**
+     * @return When enabled, sets the cookie&#39;s `Secure` flag to transmit it with `HTTPS`.
+     * 
+     */
     private @Nullable Boolean secure;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return What type of value to assign.
+     * 
+     */
     private @Nullable String type;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
+    /**
+     * @return If the cookie `type` is `FIXED`, this specifies the cookie value.
+     * 
+     */
     private @Nullable String value;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorResponseCookie() {}
+    /**
+     * @return Specifies the name of the cookie, which serves as a key to determine if the cookie is set.
+     * 
+     */
     public Optional<String> cookieName() {
         return Optional.ofNullable(this.cookieName);
     }
+    /**
+     * @return When enabled, uses the default domain value, otherwise the set specified in the `domain` field.
+     * 
+     */
     public Optional<Boolean> defaultDomain() {
         return Optional.ofNullable(this.defaultDomain);
     }
+    /**
+     * @return When enabled, uses the default path value, otherwise the set specified in the `path` field.
+     * 
+     */
     public Optional<Boolean> defaultPath() {
         return Optional.ofNullable(this.defaultPath);
     }
+    /**
+     * @return If the `defaultDomain` is disabled, this sets the domain for which the cookie is valid. For example, `example.com` makes the cookie valid for that hostname and all subdomains.
+     * 
+     */
     public Optional<String> domain() {
         return Optional.ofNullable(this.domain);
     }
+    /**
+     * @return If `expires` is set to `DURATION`, this sets the cookie&#39;s lifetime.
+     * 
+     */
     public Optional<String> duration() {
         return Optional.ofNullable(this.duration);
     }
+    /**
+     * @return Allows you to set a response cookie.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return If `expires` is set to `FIXED_DATE`, this sets when the cookie expires as a UTC date and time.
+     * 
+     */
     public Optional<String> expirationDate() {
         return Optional.ofNullable(this.expirationDate);
     }
+    /**
+     * @return Sets various ways to specify when the cookie expires.
+     * 
+     */
     public Optional<String> expires() {
         return Optional.ofNullable(this.expires);
     }
+    /**
+     * @return When the `type` of cookie is set to `UNIQUE`, this sets the date format.
+     * 
+     */
     public Optional<String> format() {
         return Optional.ofNullable(this.format);
     }
+    /**
+     * @return When enabled, includes the `HttpOnly` attribute in the `Set-Cookie` response header to mitigate the risk of client-side scripts accessing the protected cookie, if the browser supports it.
+     * 
+     */
     public Optional<Boolean> httpOnly() {
         return Optional.ofNullable(this.httpOnly);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return If the `defaultPath` is disabled, sets the path component for which the cookie is valid.
+     * 
+     */
     public Optional<String> path() {
         return Optional.ofNullable(this.path);
     }
+    /**
+     * @return This option controls the `SameSite` cookie attribute that reduces the risk of cross-site request forgery attacks.
+     * 
+     */
     public Optional<String> sameSite() {
         return Optional.ofNullable(this.sameSite);
     }
+    /**
+     * @return When enabled, sets the cookie&#39;s `Secure` flag to transmit it with `HTTPS`.
+     * 
+     */
     public Optional<Boolean> secure() {
         return Optional.ofNullable(this.secure);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return What type of value to assign.
+     * 
+     */
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
+    /**
+     * @return If the cookie `type` is `FIXED`, this specifies the cookie value.
+     * 
+     */
     public Optional<String> value() {
         return Optional.ofNullable(this.value);
     }

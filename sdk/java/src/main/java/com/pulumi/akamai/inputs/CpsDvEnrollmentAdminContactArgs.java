@@ -16,86 +16,182 @@ public final class CpsDvEnrollmentAdminContactArgs extends com.pulumi.resources.
 
     public static final CpsDvEnrollmentAdminContactArgs Empty = new CpsDvEnrollmentAdminContactArgs();
 
+    /**
+     * The address of the contact
+     * 
+     */
     @Import(name="addressLineOne", required=true)
     private Output<String> addressLineOne;
 
+    /**
+     * @return The address of the contact
+     * 
+     */
     public Output<String> addressLineOne() {
         return this.addressLineOne;
     }
 
+    /**
+     * The address of the contact
+     * 
+     */
     @Import(name="addressLineTwo")
     private @Nullable Output<String> addressLineTwo;
 
+    /**
+     * @return The address of the contact
+     * 
+     */
     public Optional<Output<String>> addressLineTwo() {
         return Optional.ofNullable(this.addressLineTwo);
     }
 
+    /**
+     * City of residence of the contact
+     * 
+     */
     @Import(name="city", required=true)
     private Output<String> city;
 
+    /**
+     * @return City of residence of the contact
+     * 
+     */
     public Output<String> city() {
         return this.city;
     }
 
+    /**
+     * Country code of the contact
+     * 
+     */
     @Import(name="countryCode", required=true)
     private Output<String> countryCode;
 
+    /**
+     * @return Country code of the contact
+     * 
+     */
     public Output<String> countryCode() {
         return this.countryCode;
     }
 
+    /**
+     * E-mail address of the contact
+     * 
+     */
     @Import(name="email", required=true)
     private Output<String> email;
 
+    /**
+     * @return E-mail address of the contact
+     * 
+     */
     public Output<String> email() {
         return this.email;
     }
 
+    /**
+     * First name of the contact
+     * 
+     */
     @Import(name="firstName", required=true)
     private Output<String> firstName;
 
+    /**
+     * @return First name of the contact
+     * 
+     */
     public Output<String> firstName() {
         return this.firstName;
     }
 
+    /**
+     * Last name of the contact
+     * 
+     */
     @Import(name="lastName", required=true)
     private Output<String> lastName;
 
+    /**
+     * @return Last name of the contact
+     * 
+     */
     public Output<String> lastName() {
         return this.lastName;
     }
 
+    /**
+     * Organization where contact is hired
+     * 
+     */
     @Import(name="organization", required=true)
     private Output<String> organization;
 
+    /**
+     * @return Organization where contact is hired
+     * 
+     */
     public Output<String> organization() {
         return this.organization;
     }
 
+    /**
+     * Phone number of the contact
+     * 
+     */
     @Import(name="phone", required=true)
     private Output<String> phone;
 
+    /**
+     * @return Phone number of the contact
+     * 
+     */
     public Output<String> phone() {
         return this.phone;
     }
 
+    /**
+     * Postal code of the contact
+     * 
+     */
     @Import(name="postalCode", required=true)
     private Output<String> postalCode;
 
+    /**
+     * @return Postal code of the contact
+     * 
+     */
     public Output<String> postalCode() {
         return this.postalCode;
     }
 
+    /**
+     * The region of the contact
+     * 
+     */
     @Import(name="region", required=true)
     private Output<String> region;
 
+    /**
+     * @return The region of the contact
+     * 
+     */
     public Output<String> region() {
         return this.region;
     }
 
+    /**
+     * Title of the the contact
+     * 
+     */
     @Import(name="title")
     private @Nullable Output<String> title;
 
+    /**
+     * @return Title of the the contact
+     * 
+     */
     public Optional<Output<String>> title() {
         return Optional.ofNullable(this.title);
     }
@@ -135,110 +231,254 @@ public final class CpsDvEnrollmentAdminContactArgs extends com.pulumi.resources.
             $ = new CpsDvEnrollmentAdminContactArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param addressLineOne The address of the contact
+         * 
+         * @return builder
+         * 
+         */
         public Builder addressLineOne(Output<String> addressLineOne) {
             $.addressLineOne = addressLineOne;
             return this;
         }
 
+        /**
+         * @param addressLineOne The address of the contact
+         * 
+         * @return builder
+         * 
+         */
         public Builder addressLineOne(String addressLineOne) {
             return addressLineOne(Output.of(addressLineOne));
         }
 
+        /**
+         * @param addressLineTwo The address of the contact
+         * 
+         * @return builder
+         * 
+         */
         public Builder addressLineTwo(@Nullable Output<String> addressLineTwo) {
             $.addressLineTwo = addressLineTwo;
             return this;
         }
 
+        /**
+         * @param addressLineTwo The address of the contact
+         * 
+         * @return builder
+         * 
+         */
         public Builder addressLineTwo(String addressLineTwo) {
             return addressLineTwo(Output.of(addressLineTwo));
         }
 
+        /**
+         * @param city City of residence of the contact
+         * 
+         * @return builder
+         * 
+         */
         public Builder city(Output<String> city) {
             $.city = city;
             return this;
         }
 
+        /**
+         * @param city City of residence of the contact
+         * 
+         * @return builder
+         * 
+         */
         public Builder city(String city) {
             return city(Output.of(city));
         }
 
+        /**
+         * @param countryCode Country code of the contact
+         * 
+         * @return builder
+         * 
+         */
         public Builder countryCode(Output<String> countryCode) {
             $.countryCode = countryCode;
             return this;
         }
 
+        /**
+         * @param countryCode Country code of the contact
+         * 
+         * @return builder
+         * 
+         */
         public Builder countryCode(String countryCode) {
             return countryCode(Output.of(countryCode));
         }
 
+        /**
+         * @param email E-mail address of the contact
+         * 
+         * @return builder
+         * 
+         */
         public Builder email(Output<String> email) {
             $.email = email;
             return this;
         }
 
+        /**
+         * @param email E-mail address of the contact
+         * 
+         * @return builder
+         * 
+         */
         public Builder email(String email) {
             return email(Output.of(email));
         }
 
+        /**
+         * @param firstName First name of the contact
+         * 
+         * @return builder
+         * 
+         */
         public Builder firstName(Output<String> firstName) {
             $.firstName = firstName;
             return this;
         }
 
+        /**
+         * @param firstName First name of the contact
+         * 
+         * @return builder
+         * 
+         */
         public Builder firstName(String firstName) {
             return firstName(Output.of(firstName));
         }
 
+        /**
+         * @param lastName Last name of the contact
+         * 
+         * @return builder
+         * 
+         */
         public Builder lastName(Output<String> lastName) {
             $.lastName = lastName;
             return this;
         }
 
+        /**
+         * @param lastName Last name of the contact
+         * 
+         * @return builder
+         * 
+         */
         public Builder lastName(String lastName) {
             return lastName(Output.of(lastName));
         }
 
+        /**
+         * @param organization Organization where contact is hired
+         * 
+         * @return builder
+         * 
+         */
         public Builder organization(Output<String> organization) {
             $.organization = organization;
             return this;
         }
 
+        /**
+         * @param organization Organization where contact is hired
+         * 
+         * @return builder
+         * 
+         */
         public Builder organization(String organization) {
             return organization(Output.of(organization));
         }
 
+        /**
+         * @param phone Phone number of the contact
+         * 
+         * @return builder
+         * 
+         */
         public Builder phone(Output<String> phone) {
             $.phone = phone;
             return this;
         }
 
+        /**
+         * @param phone Phone number of the contact
+         * 
+         * @return builder
+         * 
+         */
         public Builder phone(String phone) {
             return phone(Output.of(phone));
         }
 
+        /**
+         * @param postalCode Postal code of the contact
+         * 
+         * @return builder
+         * 
+         */
         public Builder postalCode(Output<String> postalCode) {
             $.postalCode = postalCode;
             return this;
         }
 
+        /**
+         * @param postalCode Postal code of the contact
+         * 
+         * @return builder
+         * 
+         */
         public Builder postalCode(String postalCode) {
             return postalCode(Output.of(postalCode));
         }
 
+        /**
+         * @param region The region of the contact
+         * 
+         * @return builder
+         * 
+         */
         public Builder region(Output<String> region) {
             $.region = region;
             return this;
         }
 
+        /**
+         * @param region The region of the contact
+         * 
+         * @return builder
+         * 
+         */
         public Builder region(String region) {
             return region(Output.of(region));
         }
 
+        /**
+         * @param title Title of the the contact
+         * 
+         * @return builder
+         * 
+         */
         public Builder title(@Nullable Output<String> title) {
             $.title = title;
             return this;
         }
 
+        /**
+         * @param title Title of the the contact
+         * 
+         * @return builder
+         * 
+         */
         public Builder title(String title) {
             return title(Output.of(title));
         }

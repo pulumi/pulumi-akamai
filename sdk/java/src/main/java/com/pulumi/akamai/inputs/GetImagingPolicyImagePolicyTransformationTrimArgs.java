@@ -15,30 +15,62 @@ public final class GetImagingPolicyImagePolicyTransformationTrimArgs extends com
 
     public static final GetImagingPolicyImagePolicyTransformationTrimArgs Empty = new GetImagingPolicyImagePolicyTransformationTrimArgs();
 
+    /**
+     * The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.
+     * 
+     */
     @Import(name="fuzz")
     private @Nullable Output<String> fuzz;
 
+    /**
+     * @return The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.
+     * 
+     */
     public Optional<Output<String>> fuzz() {
         return Optional.ofNullable(this.fuzz);
     }
 
+    /**
+     * The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.
+     * 
+     */
     @Import(name="fuzzVar")
     private @Nullable Output<String> fuzzVar;
 
+    /**
+     * @return The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.
+     * 
+     */
     public Optional<Output<String>> fuzzVar() {
         return Optional.ofNullable(this.fuzzVar);
     }
 
+    /**
+     * The amount of padding in pixels to add to the trimmed image.
+     * 
+     */
     @Import(name="padding")
     private @Nullable Output<String> padding;
 
+    /**
+     * @return The amount of padding in pixels to add to the trimmed image.
+     * 
+     */
     public Optional<Output<String>> padding() {
         return Optional.ofNullable(this.padding);
     }
 
+    /**
+     * The amount of padding in pixels to add to the trimmed image.
+     * 
+     */
     @Import(name="paddingVar")
     private @Nullable Output<String> paddingVar;
 
+    /**
+     * @return The amount of padding in pixels to add to the trimmed image.
+     * 
+     */
     public Optional<Output<String>> paddingVar() {
         return Optional.ofNullable(this.paddingVar);
     }
@@ -70,38 +102,86 @@ public final class GetImagingPolicyImagePolicyTransformationTrimArgs extends com
             $ = new GetImagingPolicyImagePolicyTransformationTrimArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param fuzz The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.
+         * 
+         * @return builder
+         * 
+         */
         public Builder fuzz(@Nullable Output<String> fuzz) {
             $.fuzz = fuzz;
             return this;
         }
 
+        /**
+         * @param fuzz The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.
+         * 
+         * @return builder
+         * 
+         */
         public Builder fuzz(String fuzz) {
             return fuzz(Output.of(fuzz));
         }
 
+        /**
+         * @param fuzzVar The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.
+         * 
+         * @return builder
+         * 
+         */
         public Builder fuzzVar(@Nullable Output<String> fuzzVar) {
             $.fuzzVar = fuzzVar;
             return this;
         }
 
+        /**
+         * @param fuzzVar The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.
+         * 
+         * @return builder
+         * 
+         */
         public Builder fuzzVar(String fuzzVar) {
             return fuzzVar(Output.of(fuzzVar));
         }
 
+        /**
+         * @param padding The amount of padding in pixels to add to the trimmed image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder padding(@Nullable Output<String> padding) {
             $.padding = padding;
             return this;
         }
 
+        /**
+         * @param padding The amount of padding in pixels to add to the trimmed image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder padding(String padding) {
             return padding(Output.of(padding));
         }
 
+        /**
+         * @param paddingVar The amount of padding in pixels to add to the trimmed image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder paddingVar(@Nullable Output<String> paddingVar) {
             $.paddingVar = paddingVar;
             return this;
         }
 
+        /**
+         * @param paddingVar The amount of padding in pixels to add to the trimmed image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder paddingVar(String paddingVar) {
             return paddingVar(Output.of(paddingVar));
         }

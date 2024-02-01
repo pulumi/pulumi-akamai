@@ -13,20 +13,65 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationResult
     {
+        /// <summary>
+        /// Specifies the alternate response's time to live in the cache, `5` minutes by default.
+        /// </summary>
         public readonly int? AlternateResponseCacheTtl;
+        /// <summary>
+        /// Identifies the Cloudlet policy.
+        /// </summary>
         public readonly Outputs.GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationCloudletPolicyResult? CloudletPolicy;
+        /// <summary>
+        /// Identifies the Cloudlet shared policy to use with this behavior. Use the `Cloudlets API` to list available shared policies.
+        /// </summary>
         public readonly int? CloudletSharedPolicy;
+        /// <summary>
+        /// Activates the API Prioritization feature.
+        /// </summary>
         public readonly bool? Enabled;
+        /// <summary>
+        /// Whether you want to apply the Cloudlet shared policy to an unlimited number of properties within your account. Learn more about shared policies and how to create them in `Cloudlets Policy Manager`.
+        /// </summary>
         public readonly bool? IsSharedPolicy;
+        /// <summary>
+        /// A label to distinguish this API Prioritization policy from any others in the same property.
+        /// </summary>
         public readonly string? Label;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// Specify the NetStorage domain that contains the alternate response.
+        /// </summary>
         public readonly Outputs.GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationNetStorageResult? NetStorage;
+        /// <summary>
+        /// Specify the full NetStorage path for the alternate response, including trailing file name.
+        /// </summary>
         public readonly string? NetStoragePath;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// Specifies the CP code as an object.
+        /// </summary>
         public readonly Outputs.GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationThrottledCpCodeResult? ThrottledCpCode;
+        /// <summary>
+        /// Specifies the HTTP response code for requests that receive the alternate response.
+        /// </summary>
         public readonly int? ThrottledStatusCode;
+        /// <summary>
+        /// Specifies whether to apply an alternative CP code for requests served the alternate response.
+        /// </summary>
         public readonly bool? UseThrottledCpCode;
+        /// <summary>
+        /// Allows you to assign a specific HTTP response code to a throttled request.
+        /// </summary>
         public readonly bool? UseThrottledStatusCode;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

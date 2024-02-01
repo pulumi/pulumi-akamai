@@ -16,58 +16,122 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDownstreamCacheA
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorDownstreamCacheArgs Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorDownstreamCacheArgs();
 
+    /**
+     * Specify how the edge server calculates the downstream cache by setting the value of the `Expires` header.
+     * 
+     */
     @Import(name="allowBehavior")
     private @Nullable Output<String> allowBehavior;
 
+    /**
+     * @return Specify how the edge server calculates the downstream cache by setting the value of the `Expires` header.
+     * 
+     */
     public Optional<Output<String>> allowBehavior() {
         return Optional.ofNullable(this.allowBehavior);
     }
 
+    /**
+     * Specify the caching instructions the edge server sends to the end user&#39;s client.
+     * 
+     */
     @Import(name="behavior")
     private @Nullable Output<String> behavior;
 
+    /**
+     * @return Specify the caching instructions the edge server sends to the end user&#39;s client.
+     * 
+     */
     public Optional<Output<String>> behavior() {
         return Optional.ofNullable(this.behavior);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Specifies the HTTP headers to include in the response to the client.
+     * 
+     */
     @Import(name="sendHeaders")
     private @Nullable Output<String> sendHeaders;
 
+    /**
+     * @return Specifies the HTTP headers to include in the response to the client.
+     * 
+     */
     public Optional<Output<String>> sendHeaders() {
         return Optional.ofNullable(this.sendHeaders);
     }
 
+    /**
+     * Adds a `Cache-Control: private` header to prevent objects from being cached in a shared caching proxy.
+     * 
+     */
     @Import(name="sendPrivate")
     private @Nullable Output<Boolean> sendPrivate;
 
+    /**
+     * @return Adds a `Cache-Control: private` header to prevent objects from being cached in a shared caching proxy.
+     * 
+     */
     public Optional<Output<Boolean>> sendPrivate() {
         return Optional.ofNullable(this.sendPrivate);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * Sets the duration of the cache. Setting the value to `0` equates to a `no-cache` header that forces revalidation.
+     * 
+     */
     @Import(name="ttl")
     private @Nullable Output<String> ttl;
 
+    /**
+     * @return Sets the duration of the cache. Setting the value to `0` equates to a `no-cache` header that forces revalidation.
+     * 
+     */
     public Optional<Output<String>> ttl() {
         return Optional.ofNullable(this.ttl);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -103,74 +167,170 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDownstreamCacheA
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorDownstreamCacheArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param allowBehavior Specify how the edge server calculates the downstream cache by setting the value of the `Expires` header.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allowBehavior(@Nullable Output<String> allowBehavior) {
             $.allowBehavior = allowBehavior;
             return this;
         }
 
+        /**
+         * @param allowBehavior Specify how the edge server calculates the downstream cache by setting the value of the `Expires` header.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allowBehavior(String allowBehavior) {
             return allowBehavior(Output.of(allowBehavior));
         }
 
+        /**
+         * @param behavior Specify the caching instructions the edge server sends to the end user&#39;s client.
+         * 
+         * @return builder
+         * 
+         */
         public Builder behavior(@Nullable Output<String> behavior) {
             $.behavior = behavior;
             return this;
         }
 
+        /**
+         * @param behavior Specify the caching instructions the edge server sends to the end user&#39;s client.
+         * 
+         * @return builder
+         * 
+         */
         public Builder behavior(String behavior) {
             return behavior(Output.of(behavior));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param sendHeaders Specifies the HTTP headers to include in the response to the client.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sendHeaders(@Nullable Output<String> sendHeaders) {
             $.sendHeaders = sendHeaders;
             return this;
         }
 
+        /**
+         * @param sendHeaders Specifies the HTTP headers to include in the response to the client.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sendHeaders(String sendHeaders) {
             return sendHeaders(Output.of(sendHeaders));
         }
 
+        /**
+         * @param sendPrivate Adds a `Cache-Control: private` header to prevent objects from being cached in a shared caching proxy.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sendPrivate(@Nullable Output<Boolean> sendPrivate) {
             $.sendPrivate = sendPrivate;
             return this;
         }
 
+        /**
+         * @param sendPrivate Adds a `Cache-Control: private` header to prevent objects from being cached in a shared caching proxy.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sendPrivate(Boolean sendPrivate) {
             return sendPrivate(Output.of(sendPrivate));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param ttl Sets the duration of the cache. Setting the value to `0` equates to a `no-cache` header that forces revalidation.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ttl(@Nullable Output<String> ttl) {
             $.ttl = ttl;
             return this;
         }
 
+        /**
+         * @param ttl Sets the duration of the cache. Setting the value to `0` equates to a `no-cache` header that forces revalidation.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ttl(String ttl) {
             return ttl(Output.of(ttl));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

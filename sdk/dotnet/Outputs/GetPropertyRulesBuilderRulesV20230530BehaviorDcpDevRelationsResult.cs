@@ -13,12 +13,33 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorDcpDevRelationsResult
     {
+        /// <summary>
+        /// Allows you to specify custom JWT server connection values.
+        /// </summary>
         public readonly bool? CustomValues;
+        /// <summary>
+        /// Enables the default JWT server and sets the authentication endpoint to a default path.
+        /// </summary>
         public readonly bool? Enabled;
+        /// <summary>
+        /// Specifies the JWT server's hostname.
+        /// </summary>
         public readonly string? Hostname;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// Specifies the path to your JWT server's authentication endpoint. This lets you generate JWTs to sign your requests.
+        /// </summary>
         public readonly string? Path;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

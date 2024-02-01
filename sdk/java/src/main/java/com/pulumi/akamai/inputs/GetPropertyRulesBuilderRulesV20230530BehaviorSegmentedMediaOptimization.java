@@ -15,79 +15,167 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedMediaOp
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedMediaOptimization Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedMediaOptimization();
 
+    /**
+     * Sets the type of media content to optimize.
+     * 
+     */
     @Import(name="behavior")
     private @Nullable String behavior;
 
+    /**
+     * @return Sets the type of media content to optimize.
+     * 
+     */
     public Optional<String> behavior() {
         return Optional.ofNullable(this.behavior);
     }
 
+    /**
+     * The type of DVR.
+     * 
+     */
     @Import(name="dvrType")
     private @Nullable String dvrType;
 
+    /**
+     * @return The type of DVR.
+     * 
+     */
     public Optional<String> dvrType() {
         return Optional.ofNullable(this.dvrType);
     }
 
+    /**
+     * Set the duration for your media, or `0m` if a DVR is not required.
+     * 
+     */
     @Import(name="dvrWindow")
     private @Nullable String dvrWindow;
 
+    /**
+     * @return Set the duration for your media, or `0m` if a DVR is not required.
+     * 
+     */
     public Optional<String> dvrWindow() {
         return Optional.ofNullable(this.dvrWindow);
     }
 
+    /**
+     * Enables ultra low latency (ULL) streaming. ULL reduces latency and decreases overall transfer time of live streams.
+     * 
+     */
     @Import(name="enableUllStreaming")
     private @Nullable Boolean enableUllStreaming;
 
+    /**
+     * @return Enables ultra low latency (ULL) streaming. ULL reduces latency and decreases overall transfer time of live streams.
+     * 
+     */
     public Optional<Boolean> enableUllStreaming() {
         return Optional.ofNullable(this.enableUllStreaming);
     }
 
+    /**
+     * This specifies when the live media event ends.
+     * 
+     */
     @Import(name="endTime")
     private @Nullable String endTime;
 
+    /**
+     * @return This specifies when the live media event ends.
+     * 
+     */
     public Optional<String> endTime() {
         return Optional.ofNullable(this.endTime);
     }
 
+    /**
+     * The type of live media.
+     * 
+     */
     @Import(name="liveType")
     private @Nullable String liveType;
 
+    /**
+     * @return The type of live media.
+     * 
+     */
     public Optional<String> liveType() {
         return Optional.ofNullable(this.liveType);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Allows you to configure advanced media options.
+     * 
+     */
     @Import(name="showAdvanced")
     private @Nullable Boolean showAdvanced;
 
+    /**
+     * @return Allows you to configure advanced media options.
+     * 
+     */
     public Optional<Boolean> showAdvanced() {
         return Optional.ofNullable(this.showAdvanced);
     }
 
+    /**
+     * This specifies when the live media event begins.
+     * 
+     */
     @Import(name="startTime")
     private @Nullable String startTime;
 
+    /**
+     * @return This specifies when the live media event begins.
+     * 
+     */
     public Optional<String> startTime() {
         return Optional.ofNullable(this.startTime);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -126,56 +214,122 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedMediaOp
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedMediaOptimization(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param behavior Sets the type of media content to optimize.
+         * 
+         * @return builder
+         * 
+         */
         public Builder behavior(@Nullable String behavior) {
             $.behavior = behavior;
             return this;
         }
 
+        /**
+         * @param dvrType The type of DVR.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dvrType(@Nullable String dvrType) {
             $.dvrType = dvrType;
             return this;
         }
 
+        /**
+         * @param dvrWindow Set the duration for your media, or `0m` if a DVR is not required.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dvrWindow(@Nullable String dvrWindow) {
             $.dvrWindow = dvrWindow;
             return this;
         }
 
+        /**
+         * @param enableUllStreaming Enables ultra low latency (ULL) streaming. ULL reduces latency and decreases overall transfer time of live streams.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enableUllStreaming(@Nullable Boolean enableUllStreaming) {
             $.enableUllStreaming = enableUllStreaming;
             return this;
         }
 
+        /**
+         * @param endTime This specifies when the live media event ends.
+         * 
+         * @return builder
+         * 
+         */
         public Builder endTime(@Nullable String endTime) {
             $.endTime = endTime;
             return this;
         }
 
+        /**
+         * @param liveType The type of live media.
+         * 
+         * @return builder
+         * 
+         */
         public Builder liveType(@Nullable String liveType) {
             $.liveType = liveType;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param showAdvanced Allows you to configure advanced media options.
+         * 
+         * @return builder
+         * 
+         */
         public Builder showAdvanced(@Nullable Boolean showAdvanced) {
             $.showAdvanced = showAdvanced;
             return this;
         }
 
+        /**
+         * @param startTime This specifies when the live media event begins.
+         * 
+         * @return builder
+         * 
+         */
         public Builder startTime(@Nullable String startTime) {
             $.startTime = startTime;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

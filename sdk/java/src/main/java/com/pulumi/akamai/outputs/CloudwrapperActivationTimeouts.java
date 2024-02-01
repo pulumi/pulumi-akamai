@@ -11,13 +11,29 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class CloudwrapperActivationTimeouts {
+    /**
+     * @return Optional configurable activation timeout to be used on resource create. By default it&#39;s 4h with 1s pooling interval.
+     * 
+     */
     private @Nullable String create;
+    /**
+     * @return Optional configurable activation timeout to be used on resource update. By default it&#39;s 4h with 1s pooling interval.
+     * 
+     */
     private @Nullable String update;
 
     private CloudwrapperActivationTimeouts() {}
+    /**
+     * @return Optional configurable activation timeout to be used on resource create. By default it&#39;s 4h with 1s pooling interval.
+     * 
+     */
     public Optional<String> create() {
         return Optional.ofNullable(this.create);
     }
+    /**
+     * @return Optional configurable activation timeout to be used on resource update. By default it&#39;s 4h with 1s pooling interval.
+     * 
+     */
     public Optional<String> update() {
         return Optional.ofNullable(this.update);
     }

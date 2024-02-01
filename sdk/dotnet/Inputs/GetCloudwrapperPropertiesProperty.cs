@@ -12,18 +12,33 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetCloudwrapperPropertiesPropertyArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Contract ID having Cloud Wrapper entitlement.
+        /// </summary>
         [Input("contractId", required: true)]
         public string ContractId { get; set; } = null!;
 
+        /// <summary>
+        /// ID of the group which the property belongs to.
+        /// </summary>
         [Input("groupId", required: true)]
         public int GroupId { get; set; }
 
+        /// <summary>
+        /// Property ID of the property.
+        /// </summary>
         [Input("propertyId", required: true)]
         public int PropertyId { get; set; }
 
+        /// <summary>
+        /// Name of the property belonging to the origin.
+        /// </summary>
         [Input("propertyName", required: true)]
         public string PropertyName { get; set; } = null!;
 
+        /// <summary>
+        /// The type of property. MEDIA applies to live or video on demand content. WEB applies to website or app content.
+        /// </summary>
         [Input("type", required: true)]
         public string Type { get; set; } = null!;
 

@@ -13,13 +13,37 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230530CriterionServerLocationResult
     {
+        /// <summary>
+        /// Continent codes.
+        /// </summary>
         public readonly ImmutableArray<string> Continents;
+        /// <summary>
+        /// ISO 3166-1 country codes, such as `US` or `CN`.
+        /// </summary>
         public readonly ImmutableArray<string> Countries;
+        /// <summary>
+        /// Indicates the geographic scope.
+        /// </summary>
         public readonly string? LocationType;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// Matches the specified set of values when set to `IS_ONE_OF`, otherwise `IS_NOT_ONE_OF` reverses the match.
+        /// </summary>
         public readonly string? MatchOperator;
+        /// <summary>
+        /// ISO 3166 country and region codes, for example `US:MA` for Massachusetts or `JP:13` for Tokyo.
+        /// </summary>
         public readonly ImmutableArray<string> Regions;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

@@ -13,24 +13,56 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationFitAndFill {
     private @Nullable GetImagingPolicyImagePolicyTransformation fillTransformation;
+    /**
+     * @return The height value of the resized image.
+     * 
+     */
     private @Nullable String height;
+    /**
+     * @return The height value of the resized image.
+     * 
+     */
     private @Nullable String heightVar;
+    /**
+     * @return The width value of the resized image.
+     * 
+     */
     private @Nullable String width;
+    /**
+     * @return The width value of the resized image.
+     * 
+     */
     private @Nullable String widthVar;
 
     private GetImagingPolicyImagePolicyTransformationFitAndFill() {}
     public Optional<GetImagingPolicyImagePolicyTransformation> fillTransformation() {
         return Optional.ofNullable(this.fillTransformation);
     }
+    /**
+     * @return The height value of the resized image.
+     * 
+     */
     public Optional<String> height() {
         return Optional.ofNullable(this.height);
     }
+    /**
+     * @return The height value of the resized image.
+     * 
+     */
     public Optional<String> heightVar() {
         return Optional.ofNullable(this.heightVar);
     }
+    /**
+     * @return The width value of the resized image.
+     * 
+     */
     public Optional<String> width() {
         return Optional.ofNullable(this.width);
     }
+    /**
+     * @return The width value of the resized image.
+     * 
+     */
     public Optional<String> widthVar() {
         return Optional.ofNullable(this.widthVar);
     }

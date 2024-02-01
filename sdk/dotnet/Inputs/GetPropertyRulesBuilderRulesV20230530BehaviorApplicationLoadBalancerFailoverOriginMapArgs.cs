@@ -12,11 +12,18 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorApplicationLoadBalancerFailoverOriginMapInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Specifies the origin whose failure triggers the mapping rule.
+        /// </summary>
         [Input("fromOriginId")]
         public Input<string>? FromOriginId { get; set; }
 
         [Input("toOriginIds")]
         private InputList<string>? _toOriginIds;
+
+        /// <summary>
+        /// Requests stuck to the `fromOriginId` origin retry for each alternate origin `toOriginIds`, until one succeeds.
+        /// </summary>
         public InputList<string> ToOriginIds
         {
             get => _toOriginIds ?? (_toOriginIds = new InputList<string>());

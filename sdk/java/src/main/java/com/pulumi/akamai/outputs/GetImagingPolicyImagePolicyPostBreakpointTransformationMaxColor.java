@@ -11,13 +11,29 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColor {
+    /**
+     * @return The value representing the maximum number of colors to use with the source image.
+     * 
+     */
     private @Nullable String colors;
+    /**
+     * @return The value representing the maximum number of colors to use with the source image.
+     * 
+     */
     private @Nullable String colorsVar;
 
     private GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColor() {}
+    /**
+     * @return The value representing the maximum number of colors to use with the source image.
+     * 
+     */
     public Optional<String> colors() {
         return Optional.ofNullable(this.colors);
     }
+    /**
+     * @return The value representing the maximum number of colors to use with the source image.
+     * 
+     */
     public Optional<String> colorsVar() {
         return Optional.ofNullable(this.colorsVar);
     }

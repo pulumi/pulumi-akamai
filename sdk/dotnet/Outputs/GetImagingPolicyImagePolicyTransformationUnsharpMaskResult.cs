@@ -13,11 +13,29 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyTransformationUnsharpMaskResult
     {
+        /// <summary>
+        /// Set how much emphasis the filter applies to details. Higher values increase apparent sharpness of details.
+        /// </summary>
         public readonly string? Gain;
+        /// <summary>
+        /// Set how much emphasis the filter applies to details. Higher values increase apparent sharpness of details.
+        /// </summary>
         public readonly string? GainVar;
+        /// <summary>
+        /// The standard deviation of the Gaussian distribution used in the in unsharp mask, measured in pixels, `1.0` by default. High values emphasize large details and low values emphasize small details.
+        /// </summary>
         public readonly string? Sigma;
+        /// <summary>
+        /// The standard deviation of the Gaussian distribution used in the in unsharp mask, measured in pixels, `1.0` by default. High values emphasize large details and low values emphasize small details.
+        /// </summary>
         public readonly string? SigmaVar;
+        /// <summary>
+        /// Set the minimum change required to include a detail in the filter. Higher values discard more changes.
+        /// </summary>
         public readonly string? Threshold;
+        /// <summary>
+        /// Set the minimum change required to include a detail in the filter. Higher values discard more changes.
+        /// </summary>
         public readonly string? ThresholdVar;
 
         [OutputConstructor]

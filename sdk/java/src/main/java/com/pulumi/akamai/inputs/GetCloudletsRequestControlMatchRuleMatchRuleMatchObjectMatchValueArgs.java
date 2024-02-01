@@ -19,44 +19,92 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchV
 
     public static final GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgs Empty = new GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgs();
 
+    /**
+     * If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
+     * 
+     */
     @Import(name="name")
     private @Nullable Output<String> name;
 
+    /**
+     * @return If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
+     * 
+     */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
     }
 
+    /**
+     * Set to true if the entry for the name property should be evaluated based on case sensitivity
+     * 
+     */
     @Import(name="nameCaseSensitive")
     private @Nullable Output<Boolean> nameCaseSensitive;
 
+    /**
+     * @return Set to true if the entry for the name property should be evaluated based on case sensitivity
+     * 
+     */
     public Optional<Output<Boolean>> nameCaseSensitive() {
         return Optional.ofNullable(this.nameCaseSensitive);
     }
 
+    /**
+     * Set to true if the entry for the name property includes wildcards
+     * 
+     */
     @Import(name="nameHasWildcard")
     private @Nullable Output<Boolean> nameHasWildcard;
 
+    /**
+     * @return Set to true if the entry for the name property includes wildcards
+     * 
+     */
     public Optional<Output<Boolean>> nameHasWildcard() {
         return Optional.ofNullable(this.nameHasWildcard);
     }
 
+    /**
+     * If using the object type, use this set to list the values to match on (use only with the object type)
+     * 
+     */
     @Import(name="options")
     private @Nullable Output<GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs> options;
 
+    /**
+     * @return If using the object type, use this set to list the values to match on (use only with the object type)
+     * 
+     */
     public Optional<Output<GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs>> options() {
         return Optional.ofNullable(this.options);
     }
 
+    /**
+     * The array type, which can be one of the following: object or simple. Use the simple option when adding only an array of string-based values
+     * 
+     */
     @Import(name="type", required=true)
     private Output<String> type;
 
+    /**
+     * @return The array type, which can be one of the following: object or simple. Use the simple option when adding only an array of string-based values
+     * 
+     */
     public Output<String> type() {
         return this.type;
     }
 
+    /**
+     * The value attributes in the incoming request to match on (use only with simple type)
+     * 
+     */
     @Import(name="values")
     private @Nullable Output<List<String>> values;
 
+    /**
+     * @return The value attributes in the incoming request to match on (use only with simple type)
+     * 
+     */
     public Optional<Output<List<String>>> values() {
         return Optional.ofNullable(this.values);
     }
@@ -90,60 +138,138 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchV
             $ = new GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param name If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
             return this;
         }
 
+        /**
+         * @param name If using a match type that supports name attributes, enter the value in the incoming request to match on. The following match types support this property: cookie, header, parameter, and query
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(String name) {
             return name(Output.of(name));
         }
 
+        /**
+         * @param nameCaseSensitive Set to true if the entry for the name property should be evaluated based on case sensitivity
+         * 
+         * @return builder
+         * 
+         */
         public Builder nameCaseSensitive(@Nullable Output<Boolean> nameCaseSensitive) {
             $.nameCaseSensitive = nameCaseSensitive;
             return this;
         }
 
+        /**
+         * @param nameCaseSensitive Set to true if the entry for the name property should be evaluated based on case sensitivity
+         * 
+         * @return builder
+         * 
+         */
         public Builder nameCaseSensitive(Boolean nameCaseSensitive) {
             return nameCaseSensitive(Output.of(nameCaseSensitive));
         }
 
+        /**
+         * @param nameHasWildcard Set to true if the entry for the name property includes wildcards
+         * 
+         * @return builder
+         * 
+         */
         public Builder nameHasWildcard(@Nullable Output<Boolean> nameHasWildcard) {
             $.nameHasWildcard = nameHasWildcard;
             return this;
         }
 
+        /**
+         * @param nameHasWildcard Set to true if the entry for the name property includes wildcards
+         * 
+         * @return builder
+         * 
+         */
         public Builder nameHasWildcard(Boolean nameHasWildcard) {
             return nameHasWildcard(Output.of(nameHasWildcard));
         }
 
+        /**
+         * @param options If using the object type, use this set to list the values to match on (use only with the object type)
+         * 
+         * @return builder
+         * 
+         */
         public Builder options(@Nullable Output<GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs> options) {
             $.options = options;
             return this;
         }
 
+        /**
+         * @param options If using the object type, use this set to list the values to match on (use only with the object type)
+         * 
+         * @return builder
+         * 
+         */
         public Builder options(GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs options) {
             return options(Output.of(options));
         }
 
+        /**
+         * @param type The array type, which can be one of the following: object or simple. Use the simple option when adding only an array of string-based values
+         * 
+         * @return builder
+         * 
+         */
         public Builder type(Output<String> type) {
             $.type = type;
             return this;
         }
 
+        /**
+         * @param type The array type, which can be one of the following: object or simple. Use the simple option when adding only an array of string-based values
+         * 
+         * @return builder
+         * 
+         */
         public Builder type(String type) {
             return type(Output.of(type));
         }
 
+        /**
+         * @param values The value attributes in the incoming request to match on (use only with simple type)
+         * 
+         * @return builder
+         * 
+         */
         public Builder values(@Nullable Output<List<String>> values) {
             $.values = values;
             return this;
         }
 
+        /**
+         * @param values The value attributes in the incoming request to match on (use only with simple type)
+         * 
+         * @return builder
+         * 
+         */
         public Builder values(List<String> values) {
             return values(Output.of(values));
         }
 
+        /**
+         * @param values The value attributes in the incoming request to match on (use only with simple type)
+         * 
+         * @return builder
+         * 
+         */
         public Builder values(String... values) {
             return values(List.of(values));
         }

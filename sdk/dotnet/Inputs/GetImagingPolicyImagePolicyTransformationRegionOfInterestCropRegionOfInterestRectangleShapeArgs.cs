@@ -15,15 +15,27 @@ namespace Pulumi.Akamai.Inputs
         [Input("anchor", required: true)]
         public Input<Inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeAnchorInputArgs> Anchor { get; set; } = null!;
 
+        /// <summary>
+        /// Extends the rectangle down from the `anchor` point.
+        /// </summary>
         [Input("height")]
         public Input<string>? Height { get; set; }
 
+        /// <summary>
+        /// Extends the rectangle down from the `anchor` point.
+        /// </summary>
         [Input("heightVar")]
         public Input<string>? HeightVar { get; set; }
 
+        /// <summary>
+        /// Extends the rectangle right from the `anchor` point.
+        /// </summary>
         [Input("width")]
         public Input<string>? Width { get; set; }
 
+        /// <summary>
+        /// Extends the rectangle right from the `anchor` point.
+        /// </summary>
         [Input("widthVar")]
         public Input<string>? WidthVar { get; set; }
 

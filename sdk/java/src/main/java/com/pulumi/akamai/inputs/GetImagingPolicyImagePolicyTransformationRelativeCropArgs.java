@@ -15,58 +15,122 @@ public final class GetImagingPolicyImagePolicyTransformationRelativeCropArgs ext
 
     public static final GetImagingPolicyImagePolicyTransformationRelativeCropArgs Empty = new GetImagingPolicyImagePolicyTransformationRelativeCropArgs();
 
+    /**
+     * The number of pixels to shrink or expand the right side of the image.
+     * 
+     */
     @Import(name="east")
     private @Nullable Output<String> east;
 
+    /**
+     * @return The number of pixels to shrink or expand the right side of the image.
+     * 
+     */
     public Optional<Output<String>> east() {
         return Optional.ofNullable(this.east);
     }
 
+    /**
+     * The number of pixels to shrink or expand the right side of the image.
+     * 
+     */
     @Import(name="eastVar")
     private @Nullable Output<String> eastVar;
 
+    /**
+     * @return The number of pixels to shrink or expand the right side of the image.
+     * 
+     */
     public Optional<Output<String>> eastVar() {
         return Optional.ofNullable(this.eastVar);
     }
 
+    /**
+     * The number of pixels to shrink or expand the top side of the image.
+     * 
+     */
     @Import(name="north")
     private @Nullable Output<String> north;
 
+    /**
+     * @return The number of pixels to shrink or expand the top side of the image.
+     * 
+     */
     public Optional<Output<String>> north() {
         return Optional.ofNullable(this.north);
     }
 
+    /**
+     * The number of pixels to shrink or expand the top side of the image.
+     * 
+     */
     @Import(name="northVar")
     private @Nullable Output<String> northVar;
 
+    /**
+     * @return The number of pixels to shrink or expand the top side of the image.
+     * 
+     */
     public Optional<Output<String>> northVar() {
         return Optional.ofNullable(this.northVar);
     }
 
+    /**
+     * The number of pixels to shrink or expand the bottom side of the image.
+     * 
+     */
     @Import(name="south")
     private @Nullable Output<String> south;
 
+    /**
+     * @return The number of pixels to shrink or expand the bottom side of the image.
+     * 
+     */
     public Optional<Output<String>> south() {
         return Optional.ofNullable(this.south);
     }
 
+    /**
+     * The number of pixels to shrink or expand the bottom side of the image.
+     * 
+     */
     @Import(name="southVar")
     private @Nullable Output<String> southVar;
 
+    /**
+     * @return The number of pixels to shrink or expand the bottom side of the image.
+     * 
+     */
     public Optional<Output<String>> southVar() {
         return Optional.ofNullable(this.southVar);
     }
 
+    /**
+     * The number of pixels to shrink or expand the left side of the image.
+     * 
+     */
     @Import(name="west")
     private @Nullable Output<String> west;
 
+    /**
+     * @return The number of pixels to shrink or expand the left side of the image.
+     * 
+     */
     public Optional<Output<String>> west() {
         return Optional.ofNullable(this.west);
     }
 
+    /**
+     * The number of pixels to shrink or expand the left side of the image.
+     * 
+     */
     @Import(name="westVar")
     private @Nullable Output<String> westVar;
 
+    /**
+     * @return The number of pixels to shrink or expand the left side of the image.
+     * 
+     */
     public Optional<Output<String>> westVar() {
         return Optional.ofNullable(this.westVar);
     }
@@ -102,74 +166,170 @@ public final class GetImagingPolicyImagePolicyTransformationRelativeCropArgs ext
             $ = new GetImagingPolicyImagePolicyTransformationRelativeCropArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param east The number of pixels to shrink or expand the right side of the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder east(@Nullable Output<String> east) {
             $.east = east;
             return this;
         }
 
+        /**
+         * @param east The number of pixels to shrink or expand the right side of the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder east(String east) {
             return east(Output.of(east));
         }
 
+        /**
+         * @param eastVar The number of pixels to shrink or expand the right side of the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder eastVar(@Nullable Output<String> eastVar) {
             $.eastVar = eastVar;
             return this;
         }
 
+        /**
+         * @param eastVar The number of pixels to shrink or expand the right side of the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder eastVar(String eastVar) {
             return eastVar(Output.of(eastVar));
         }
 
+        /**
+         * @param north The number of pixels to shrink or expand the top side of the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder north(@Nullable Output<String> north) {
             $.north = north;
             return this;
         }
 
+        /**
+         * @param north The number of pixels to shrink or expand the top side of the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder north(String north) {
             return north(Output.of(north));
         }
 
+        /**
+         * @param northVar The number of pixels to shrink or expand the top side of the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder northVar(@Nullable Output<String> northVar) {
             $.northVar = northVar;
             return this;
         }
 
+        /**
+         * @param northVar The number of pixels to shrink or expand the top side of the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder northVar(String northVar) {
             return northVar(Output.of(northVar));
         }
 
+        /**
+         * @param south The number of pixels to shrink or expand the bottom side of the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder south(@Nullable Output<String> south) {
             $.south = south;
             return this;
         }
 
+        /**
+         * @param south The number of pixels to shrink or expand the bottom side of the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder south(String south) {
             return south(Output.of(south));
         }
 
+        /**
+         * @param southVar The number of pixels to shrink or expand the bottom side of the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder southVar(@Nullable Output<String> southVar) {
             $.southVar = southVar;
             return this;
         }
 
+        /**
+         * @param southVar The number of pixels to shrink or expand the bottom side of the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder southVar(String southVar) {
             return southVar(Output.of(southVar));
         }
 
+        /**
+         * @param west The number of pixels to shrink or expand the left side of the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder west(@Nullable Output<String> west) {
             $.west = west;
             return this;
         }
 
+        /**
+         * @param west The number of pixels to shrink or expand the left side of the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder west(String west) {
             return west(Output.of(west));
         }
 
+        /**
+         * @param westVar The number of pixels to shrink or expand the left side of the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder westVar(@Nullable Output<String> westVar) {
             $.westVar = westVar;
             return this;
         }
 
+        /**
+         * @param westVar The number of pixels to shrink or expand the left side of the image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder westVar(String westVar) {
             return westVar(Output.of(westVar));
         }

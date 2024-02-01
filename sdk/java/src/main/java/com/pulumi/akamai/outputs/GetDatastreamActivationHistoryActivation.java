@@ -11,25 +11,65 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDatastreamActivationHistoryActivation {
+    /**
+     * @return The username who activated or deactivated the stream
+     * 
+     */
     private String modifiedBy;
+    /**
+     * @return The date and time when activation status was modified
+     * 
+     */
     private String modifiedDate;
+    /**
+     * @return Stream Status
+     * 
+     */
     private String status;
+    /**
+     * @return Identifies the stream
+     * 
+     */
     private Integer streamId;
+    /**
+     * @return Identifies the version of the stream
+     * 
+     */
     private Integer streamVersion;
 
     private GetDatastreamActivationHistoryActivation() {}
+    /**
+     * @return The username who activated or deactivated the stream
+     * 
+     */
     public String modifiedBy() {
         return this.modifiedBy;
     }
+    /**
+     * @return The date and time when activation status was modified
+     * 
+     */
     public String modifiedDate() {
         return this.modifiedDate;
     }
+    /**
+     * @return Stream Status
+     * 
+     */
     public String status() {
         return this.status;
     }
+    /**
+     * @return Identifies the stream
+     * 
+     */
     public Integer streamId() {
         return this.streamId;
     }
+    /**
+     * @return Identifies the version of the stream
+     * 
+     */
     public Integer streamVersion() {
         return this.streamVersion;
     }

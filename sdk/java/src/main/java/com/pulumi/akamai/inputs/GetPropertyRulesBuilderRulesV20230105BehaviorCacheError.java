@@ -15,44 +15,92 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorCacheError exten
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorCacheError Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorCacheError();
 
+    /**
+     * Activates the error-caching behavior.
+     * 
+     */
     @Import(name="enabled")
     private @Nullable Boolean enabled;
 
+    /**
+     * @return Activates the error-caching behavior.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * When enabled, the edge server preserves stale cached objects when the origin returns `500`, `502`, `503`, and `504` error codes. This avoids re-fetching and re-caching content after transient errors.
+     * 
+     */
     @Import(name="preserveStale")
     private @Nullable Boolean preserveStale;
 
+    /**
+     * @return When enabled, the edge server preserves stale cached objects when the origin returns `500`, `502`, `503`, and `504` error codes. This avoids re-fetching and re-caching content after transient errors.
+     * 
+     */
     public Optional<Boolean> preserveStale() {
         return Optional.ofNullable(this.preserveStale);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * Overrides the default caching duration of `10s`. Note that if set to `0`, it is equivalent to `no-cache`, which forces revalidation and may cause a traffic spike. This can be counterproductive when, for example, the origin is producing an error code of `500`.
+     * 
+     */
     @Import(name="ttl")
     private @Nullable String ttl;
 
+    /**
+     * @return Overrides the default caching duration of `10s`. Note that if set to `0`, it is equivalent to `no-cache`, which forces revalidation and may cause a traffic spike. This can be counterproductive when, for example, the origin is producing an error code of `500`.
+     * 
+     */
     public Optional<String> ttl() {
         return Optional.ofNullable(this.ttl);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -86,31 +134,67 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorCacheError exten
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorCacheError(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param enabled Activates the error-caching behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(@Nullable Boolean enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param preserveStale When enabled, the edge server preserves stale cached objects when the origin returns `500`, `502`, `503`, and `504` error codes. This avoids re-fetching and re-caching content after transient errors.
+         * 
+         * @return builder
+         * 
+         */
         public Builder preserveStale(@Nullable Boolean preserveStale) {
             $.preserveStale = preserveStale;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param ttl Overrides the default caching duration of `10s`. Note that if set to `0`, it is equivalent to `no-cache`, which forces revalidation and may cause a traffic spike. This can be counterproductive when, for example, the origin is producing an error code of `500`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ttl(@Nullable String ttl) {
             $.ttl = ttl;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

@@ -17,37 +17,77 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldArgs e
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldArgs Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldArgs();
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     @Import(name="nossmap")
     private @Nullable Output<String> nossmap;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<Output<String>> nossmap() {
         return Optional.ofNullable(this.nossmap);
     }
 
+    /**
+     * Identifies the hostname for the Site Shield map. See `Create a Site Shield map` for more details. Form an object with a `value` key that references the hostname, for example: `&#34;ssmap&#34;:{&#34;value&#34;:&#34;ss.akamai.net&#34;}`.
+     * 
+     */
     @Import(name="ssmap")
     private @Nullable Output<GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmapArgs> ssmap;
 
+    /**
+     * @return Identifies the hostname for the Site Shield map. See `Create a Site Shield map` for more details. Form an object with a `value` key that references the hostname, for example: `&#34;ssmap&#34;:{&#34;value&#34;:&#34;ss.akamai.net&#34;}`.
+     * 
+     */
     public Optional<Output<GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmapArgs>> ssmap() {
         return Optional.ofNullable(this.ssmap);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -80,47 +120,107 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldArgs e
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param nossmap This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder nossmap(@Nullable Output<String> nossmap) {
             $.nossmap = nossmap;
             return this;
         }
 
+        /**
+         * @param nossmap This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder nossmap(String nossmap) {
             return nossmap(Output.of(nossmap));
         }
 
+        /**
+         * @param ssmap Identifies the hostname for the Site Shield map. See `Create a Site Shield map` for more details. Form an object with a `value` key that references the hostname, for example: `&#34;ssmap&#34;:{&#34;value&#34;:&#34;ss.akamai.net&#34;}`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ssmap(@Nullable Output<GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmapArgs> ssmap) {
             $.ssmap = ssmap;
             return this;
         }
 
+        /**
+         * @param ssmap Identifies the hostname for the Site Shield map. See `Create a Site Shield map` for more details. Form an object with a `value` key that references the hostname, for example: `&#34;ssmap&#34;:{&#34;value&#34;:&#34;ss.akamai.net&#34;}`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ssmap(GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmapArgs ssmap) {
             return ssmap(Output.of(ssmap));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

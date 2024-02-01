@@ -14,30 +14,62 @@ public final class GetImagingPolicyImagePolicyTransformationTrim extends com.pul
 
     public static final GetImagingPolicyImagePolicyTransformationTrim Empty = new GetImagingPolicyImagePolicyTransformationTrim();
 
+    /**
+     * The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.
+     * 
+     */
     @Import(name="fuzz")
     private @Nullable String fuzz;
 
+    /**
+     * @return The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.
+     * 
+     */
     public Optional<String> fuzz() {
         return Optional.ofNullable(this.fuzz);
     }
 
+    /**
+     * The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.
+     * 
+     */
     @Import(name="fuzzVar")
     private @Nullable String fuzzVar;
 
+    /**
+     * @return The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.
+     * 
+     */
     public Optional<String> fuzzVar() {
         return Optional.ofNullable(this.fuzzVar);
     }
 
+    /**
+     * The amount of padding in pixels to add to the trimmed image.
+     * 
+     */
     @Import(name="padding")
     private @Nullable String padding;
 
+    /**
+     * @return The amount of padding in pixels to add to the trimmed image.
+     * 
+     */
     public Optional<String> padding() {
         return Optional.ofNullable(this.padding);
     }
 
+    /**
+     * The amount of padding in pixels to add to the trimmed image.
+     * 
+     */
     @Import(name="paddingVar")
     private @Nullable String paddingVar;
 
+    /**
+     * @return The amount of padding in pixels to add to the trimmed image.
+     * 
+     */
     public Optional<String> paddingVar() {
         return Optional.ofNullable(this.paddingVar);
     }
@@ -69,21 +101,45 @@ public final class GetImagingPolicyImagePolicyTransformationTrim extends com.pul
             $ = new GetImagingPolicyImagePolicyTransformationTrim(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param fuzz The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.
+         * 
+         * @return builder
+         * 
+         */
         public Builder fuzz(@Nullable String fuzz) {
             $.fuzz = fuzz;
             return this;
         }
 
+        /**
+         * @param fuzzVar The fuzz tolerance of the trim, a value between `0` and `1` that determines the acceptable amount of background variation before trimming stops.
+         * 
+         * @return builder
+         * 
+         */
         public Builder fuzzVar(@Nullable String fuzzVar) {
             $.fuzzVar = fuzzVar;
             return this;
         }
 
+        /**
+         * @param padding The amount of padding in pixels to add to the trimmed image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder padding(@Nullable String padding) {
             $.padding = padding;
             return this;
         }
 
+        /**
+         * @param paddingVar The amount of padding in pixels to add to the trimmed image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder paddingVar(@Nullable String paddingVar) {
             $.paddingVar = paddingVar;
             return this;

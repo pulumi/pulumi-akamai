@@ -12,24 +12,45 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorForwardRewriteInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Identifies the Cloudlet policy.
+        /// </summary>
         [Input("cloudletPolicy")]
         public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorForwardRewriteCloudletPolicyInputArgs>? CloudletPolicy { get; set; }
 
+        /// <summary>
+        /// This identifies the Cloudlet shared policy to use with this behavior. You can list available shared policies with the `Cloudlets API`.
+        /// </summary>
         [Input("cloudletSharedPolicy")]
         public Input<int>? CloudletSharedPolicy { get; set; }
 
+        /// <summary>
+        /// Enables the Forward Rewrite Cloudlet behavior.
+        /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
+        /// <summary>
+        /// Whether you want to use a shared policy for a Cloudlet. Learn more about shared policies and how to create them in `Cloudlets Policy Manager`.
+        /// </summary>
         [Input("isSharedPolicy")]
         public Input<bool>? IsSharedPolicy { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public Input<bool>? Locked { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public Input<string>? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public Input<string>? Uuid { get; set; }
 

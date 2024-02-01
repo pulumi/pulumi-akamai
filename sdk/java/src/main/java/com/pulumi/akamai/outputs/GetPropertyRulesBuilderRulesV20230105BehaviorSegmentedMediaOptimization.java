@@ -12,49 +12,137 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaOptimization {
+    /**
+     * @return Sets the type of media content to optimize.
+     * 
+     */
     private @Nullable String behavior;
+    /**
+     * @return The type of DVR.
+     * 
+     */
     private @Nullable String dvrType;
+    /**
+     * @return Set the duration for your media, or `0m` if a DVR is not required.
+     * 
+     */
     private @Nullable String dvrWindow;
+    /**
+     * @return Enables ultra low latency (ULL) streaming. ULL reduces latency and decreases overall transfer time of live streams.
+     * 
+     */
     private @Nullable Boolean enableUllStreaming;
+    /**
+     * @return This specifies when the live media event ends.
+     * 
+     */
     private @Nullable String endTime;
+    /**
+     * @return The type of live media.
+     * 
+     */
     private @Nullable String liveType;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Allows you to configure advanced media options.
+     * 
+     */
     private @Nullable Boolean showAdvanced;
+    /**
+     * @return This specifies when the live media event begins.
+     * 
+     */
     private @Nullable String startTime;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaOptimization() {}
+    /**
+     * @return Sets the type of media content to optimize.
+     * 
+     */
     public Optional<String> behavior() {
         return Optional.ofNullable(this.behavior);
     }
+    /**
+     * @return The type of DVR.
+     * 
+     */
     public Optional<String> dvrType() {
         return Optional.ofNullable(this.dvrType);
     }
+    /**
+     * @return Set the duration for your media, or `0m` if a DVR is not required.
+     * 
+     */
     public Optional<String> dvrWindow() {
         return Optional.ofNullable(this.dvrWindow);
     }
+    /**
+     * @return Enables ultra low latency (ULL) streaming. ULL reduces latency and decreases overall transfer time of live streams.
+     * 
+     */
     public Optional<Boolean> enableUllStreaming() {
         return Optional.ofNullable(this.enableUllStreaming);
     }
+    /**
+     * @return This specifies when the live media event ends.
+     * 
+     */
     public Optional<String> endTime() {
         return Optional.ofNullable(this.endTime);
     }
+    /**
+     * @return The type of live media.
+     * 
+     */
     public Optional<String> liveType() {
         return Optional.ofNullable(this.liveType);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Allows you to configure advanced media options.
+     * 
+     */
     public Optional<Boolean> showAdvanced() {
         return Optional.ofNullable(this.showAdvanced);
     }
+    /**
+     * @return This specifies when the live media event begins.
+     * 
+     */
     public Optional<String> startTime() {
         return Optional.ofNullable(this.startTime);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

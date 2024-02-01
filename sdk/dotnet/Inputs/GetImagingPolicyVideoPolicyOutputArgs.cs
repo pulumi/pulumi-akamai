@@ -12,21 +12,39 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetImagingPolicyVideoPolicyOutputInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The quality of derivative videos. High preserves video quality with reduced byte savings while low reduces video quality to increase byte savings.
+        /// </summary>
         [Input("perceptualQuality")]
         public Input<string>? PerceptualQuality { get; set; }
 
+        /// <summary>
+        /// The quality of derivative videos. High preserves video quality with reduced byte savings while low reduces video quality to increase byte savings.
+        /// </summary>
         [Input("perceptualQualityVar")]
         public Input<string>? PerceptualQualityVar { get; set; }
 
+        /// <summary>
+        /// Allows you to add a specific placeholder video that appears when a user first requests a video, but before Image &amp; Video Manager processes the video. If not specified the original video plays during the processing time.
+        /// </summary>
         [Input("placeholderVideoUrl")]
         public Input<string>? PlaceholderVideoUrl { get; set; }
 
+        /// <summary>
+        /// Allows you to add a specific placeholder video that appears when a user first requests a video, but before Image &amp; Video Manager processes the video. If not specified the original video plays during the processing time.
+        /// </summary>
         [Input("placeholderVideoUrlVar")]
         public Input<string>? PlaceholderVideoUrlVar { get; set; }
 
+        /// <summary>
+        /// Override the quality of video to serve when Image &amp; Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of videos for users with faster connections.
+        /// </summary>
         [Input("videoAdaptiveQuality")]
         public Input<string>? VideoAdaptiveQuality { get; set; }
 
+        /// <summary>
+        /// Override the quality of video to serve when Image &amp; Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of videos for users with faster connections.
+        /// </summary>
         [Input("videoAdaptiveQualityVar")]
         public Input<string>? VideoAdaptiveQualityVar { get; set; }
 

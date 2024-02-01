@@ -13,11 +13,29 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorTeaLeafResult
     {
+        /// <summary>
+        /// When enabled, capture HTTPS requests and responses, and send the data to your IBM Tealeaf account.
+        /// </summary>
         public readonly bool? Enabled;
+        /// <summary>
+        /// The integer identifier for the IBM Tealeaf Connector account.
+        /// </summary>
         public readonly int? IbmCustomerId;
+        /// <summary>
+        /// Limit traffic to dynamic, uncached (`No-Store`) content.
+        /// </summary>
         public readonly bool? LimitToDynamic;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

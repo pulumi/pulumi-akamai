@@ -13,19 +13,61 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorModifyOutgoingResponseHeaderResult
     {
+        /// <summary>
+        /// Either `ADD` or `DELETE` outgoing HTTP response headers, `MODIFY` their fixed values, or specify a `REGEX` pattern to transform them.
+        /// </summary>
         public readonly string? Action;
+        /// <summary>
+        /// When enabled with the `action` set to `MODIFY`, prevents creation of more than one instance of a header. The last header clobbers others with the same name. This option affects the entire set of outgoing headers, and is not confined to the subset of regular expression matches.
+        /// </summary>
         public readonly bool? AvoidDuplicateHeaders;
+        /// <summary>
+        /// Specifies a custom field name that applies when the relevant `standard` header name is set to `OTHER`.
+        /// </summary>
         public readonly string? CustomHeaderName;
+        /// <summary>
+        /// Specifies the existing value of the header to match.
+        /// </summary>
         public readonly string? HeaderValue;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// When enabled with the `action` set to `REGEX`, replaces all occurrences of the matched regular expression, otherwise only the first match if disabled.
+        /// </summary>
         public readonly bool? MatchMultiple;
+        /// <summary>
+        /// Specifies the new HTTP header replacement value.
+        /// </summary>
         public readonly string? NewHeaderValue;
+        /// <summary>
+        /// Specifies a Perl-compatible regular expression to match within the header value.
+        /// </summary>
         public readonly string? RegexHeaderMatch;
+        /// <summary>
+        /// Specifies text that replaces the `regexHeaderMatch` pattern within the header value.
+        /// </summary>
         public readonly string? RegexHeaderReplace;
+        /// <summary>
+        /// If the value of `action` is `ADD`, this specifies the name of the field to add.
+        /// </summary>
         public readonly string? StandardAddHeaderName;
+        /// <summary>
+        /// If the value of `action` is `DELETE`, this specifies the name of the field to remove.
+        /// </summary>
         public readonly string? StandardDeleteHeaderName;
+        /// <summary>
+        /// If the value of `action` is `MODIFY` or `REGEX`, this specifies the name of the field to modify.
+        /// </summary>
         public readonly string? StandardModifyHeaderName;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

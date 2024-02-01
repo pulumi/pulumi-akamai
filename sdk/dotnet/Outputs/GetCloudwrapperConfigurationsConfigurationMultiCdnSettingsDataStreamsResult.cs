@@ -13,8 +13,17 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreamsResult
     {
+        /// <summary>
+        /// Unique identifiers of the Data Streams.
+        /// </summary>
         public readonly ImmutableArray<int> DataStreamIds;
+        /// <summary>
+        /// Enables DataStream reporting.
+        /// </summary>
         public readonly bool Enabled;
+        /// <summary>
+        /// Specifies the percentage of log data you want to collect for this configuration.
+        /// </summary>
         public readonly int SamplingRate;
 
         [OutputConstructor]

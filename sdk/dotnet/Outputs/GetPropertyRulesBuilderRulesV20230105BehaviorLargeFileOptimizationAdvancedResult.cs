@@ -13,13 +13,37 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorLargeFileOptimizationAdvancedResult
     {
+        /// <summary>
+        /// Enables the file optimization behavior.
+        /// </summary>
         public readonly bool? Enabled;
+        /// <summary>
+        /// Specifies the size of each fragment used for partial object caching.
+        /// </summary>
         public readonly string? FragmentSize;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// Specifies the size of the file at which point to apply partial object (POC) caching. Append a numeric value with a `MB` or `GB` suffix.
+        /// </summary>
         public readonly string? ObjectSize;
+        /// <summary>
+        /// The number of POC fragments to prefetch after the request.
+        /// </summary>
         public readonly int? PrefetchAfterRequest;
+        /// <summary>
+        /// The number of POC fragments to prefetch during the request.
+        /// </summary>
         public readonly int? PrefetchDuringRequest;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

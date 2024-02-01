@@ -14,49 +14,137 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancingDataCenter {
+    /**
+     * @return If using session persistence, this specifies the value of the cookie named in the corresponding `edgeLoadBalancingOrigin` behavior&#39;s `cookie_name` option.
+     * 
+     */
     private @Nullable String cookieName;
+    /**
+     * @return Provides a description for the ELB data center, for your own reference.
+     * 
+     */
     private @Nullable String description;
+    /**
+     * @return Allows you to specify failover rules.
+     * 
+     */
     private @Nullable Boolean enableFailover;
+    /**
+     * @return Provides up to four failover rules to apply in the specified order.
+     * 
+     */
     private @Nullable List<GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancingDataCenterFailoverRule> failoverRules;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String failoverTitle;
+    /**
+     * @return Specifies the data center&#39;s hostname.
+     * 
+     */
     private @Nullable String hostname;
+    /**
+     * @return Specifies this data center&#39;s IP address.
+     * 
+     */
     private @Nullable String ip;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Corresponds to the `id` specified by the `edgeLoadBalancingOrigin` behavior associated with this data center.
+     * 
+     */
     private @Nullable String originId;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancingDataCenter() {}
+    /**
+     * @return If using session persistence, this specifies the value of the cookie named in the corresponding `edgeLoadBalancingOrigin` behavior&#39;s `cookie_name` option.
+     * 
+     */
     public Optional<String> cookieName() {
         return Optional.ofNullable(this.cookieName);
     }
+    /**
+     * @return Provides a description for the ELB data center, for your own reference.
+     * 
+     */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
+    /**
+     * @return Allows you to specify failover rules.
+     * 
+     */
     public Optional<Boolean> enableFailover() {
         return Optional.ofNullable(this.enableFailover);
     }
+    /**
+     * @return Provides up to four failover rules to apply in the specified order.
+     * 
+     */
     public List<GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancingDataCenterFailoverRule> failoverRules() {
         return this.failoverRules == null ? List.of() : this.failoverRules;
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> failoverTitle() {
         return Optional.ofNullable(this.failoverTitle);
     }
+    /**
+     * @return Specifies the data center&#39;s hostname.
+     * 
+     */
     public Optional<String> hostname() {
         return Optional.ofNullable(this.hostname);
     }
+    /**
+     * @return Specifies this data center&#39;s IP address.
+     * 
+     */
     public Optional<String> ip() {
         return Optional.ofNullable(this.ip);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Corresponds to the `id` specified by the `edgeLoadBalancingOrigin` behavior associated with this data center.
+     * 
+     */
     public Optional<String> originId() {
         return Optional.ofNullable(this.originId);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

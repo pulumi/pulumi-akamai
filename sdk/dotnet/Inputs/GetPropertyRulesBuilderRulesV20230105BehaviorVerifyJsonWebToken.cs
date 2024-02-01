@@ -12,30 +12,57 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorVerifyJsonWebTokenArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Verifies JWTs signed with the ES256 algorithm. This signature helps ensure that the token hasn't been tampered with.
+        /// </summary>
         [Input("enableEs256")]
         public bool? EnableEs256 { get; set; }
 
+        /// <summary>
+        /// Verifies JWTs signed with the RS256 algorithm. This signature helps ensure that the token hasn't been tampered with.
+        /// </summary>
         [Input("enableRs256")]
         public bool? EnableRs256 { get; set; }
 
+        /// <summary>
+        /// Specify from where to extract the JWT value.
+        /// </summary>
         [Input("extractLocation")]
         public string? ExtractLocation { get; set; }
 
+        /// <summary>
+        /// This specifies the name of the header from which to extract the JWT value.
+        /// </summary>
         [Input("headerName")]
         public string? HeaderName { get; set; }
 
+        /// <summary>
+        /// An identifier for the JWT keys collection.
+        /// </summary>
         [Input("jwt")]
         public string? Jwt { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public bool? Locked { get; set; }
 
+        /// <summary>
+        /// This specifies the name of the query parameter from which to extract the JWT value.
+        /// </summary>
         [Input("queryParameterName")]
         public string? QueryParameterName { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public string? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public string? Uuid { get; set; }
 

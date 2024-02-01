@@ -14,37 +14,77 @@ public final class GetCloudwrapperPropertiesProperty extends com.pulumi.resource
 
     public static final GetCloudwrapperPropertiesProperty Empty = new GetCloudwrapperPropertiesProperty();
 
+    /**
+     * Contract ID having Cloud Wrapper entitlement.
+     * 
+     */
     @Import(name="contractId", required=true)
     private String contractId;
 
+    /**
+     * @return Contract ID having Cloud Wrapper entitlement.
+     * 
+     */
     public String contractId() {
         return this.contractId;
     }
 
+    /**
+     * ID of the group which the property belongs to.
+     * 
+     */
     @Import(name="groupId", required=true)
     private Integer groupId;
 
+    /**
+     * @return ID of the group which the property belongs to.
+     * 
+     */
     public Integer groupId() {
         return this.groupId;
     }
 
+    /**
+     * Property ID of the property.
+     * 
+     */
     @Import(name="propertyId", required=true)
     private Integer propertyId;
 
+    /**
+     * @return Property ID of the property.
+     * 
+     */
     public Integer propertyId() {
         return this.propertyId;
     }
 
+    /**
+     * Name of the property belonging to the origin.
+     * 
+     */
     @Import(name="propertyName", required=true)
     private String propertyName;
 
+    /**
+     * @return Name of the property belonging to the origin.
+     * 
+     */
     public String propertyName() {
         return this.propertyName;
     }
 
+    /**
+     * The type of property. MEDIA applies to live or video on demand content. WEB applies to website or app content.
+     * 
+     */
     @Import(name="type", required=true)
     private String type;
 
+    /**
+     * @return The type of property. MEDIA applies to live or video on demand content. WEB applies to website or app content.
+     * 
+     */
     public String type() {
         return this.type;
     }
@@ -77,26 +117,56 @@ public final class GetCloudwrapperPropertiesProperty extends com.pulumi.resource
             $ = new GetCloudwrapperPropertiesProperty(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param contractId Contract ID having Cloud Wrapper entitlement.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contractId(String contractId) {
             $.contractId = contractId;
             return this;
         }
 
+        /**
+         * @param groupId ID of the group which the property belongs to.
+         * 
+         * @return builder
+         * 
+         */
         public Builder groupId(Integer groupId) {
             $.groupId = groupId;
             return this;
         }
 
+        /**
+         * @param propertyId Property ID of the property.
+         * 
+         * @return builder
+         * 
+         */
         public Builder propertyId(Integer propertyId) {
             $.propertyId = propertyId;
             return this;
         }
 
+        /**
+         * @param propertyName Name of the property belonging to the origin.
+         * 
+         * @return builder
+         * 
+         */
         public Builder propertyName(String propertyName) {
             $.propertyName = propertyName;
             return this;
         }
 
+        /**
+         * @param type The type of property. MEDIA applies to live or video on demand content. WEB applies to website or app content.
+         * 
+         * @return builder
+         * 
+         */
         public Builder type(String type) {
             $.type = type;
             return this;

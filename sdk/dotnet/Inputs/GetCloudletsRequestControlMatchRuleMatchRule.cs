@@ -12,32 +12,57 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetCloudletsRequestControlMatchRuleMatchRuleArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// If set to allow, the request is sent to origin when all conditions are true. If deny, the request is denied when all conditions are true. If denybranded, the request is denied and rerouted according to the configuration of the Request Control behavior
+        /// </summary>
         [Input("allowDeny", required: true)]
         public string AllowDeny { get; set; } = null!;
 
+        /// <summary>
+        /// If set to true, disables a rule so it is not evaluated against incoming requests.
+        /// </summary>
         [Input("disabled")]
         public bool? Disabled { get; set; }
 
+        /// <summary>
+        /// The end time for this match (in seconds since the epoch)
+        /// </summary>
         [Input("end")]
         public int? End { get; set; }
 
         [Input("matches")]
         private List<Inputs.GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs>? _matches;
+
+        /// <summary>
+        /// Defines a set of match objects
+        /// </summary>
         public List<Inputs.GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs> Matches
         {
             get => _matches ?? (_matches = new List<Inputs.GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs>());
             set => _matches = value;
         }
 
+        /// <summary>
+        /// Is used in some cloudlets to support default rules (rule that is always matched)
+        /// </summary>
         [Input("matchesAlways")]
         public bool? MatchesAlways { get; set; }
 
+        /// <summary>
+        /// The name of the rule
+        /// </summary>
         [Input("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// The start time for this match (in seconds since the epoch)
+        /// </summary>
         [Input("start")]
         public int? Start { get; set; }
 
+        /// <summary>
+        /// The type of Cloudlet the rule is for
+        /// </summary>
         [Input("type", required: true)]
         public string Type { get; set; } = null!;
 

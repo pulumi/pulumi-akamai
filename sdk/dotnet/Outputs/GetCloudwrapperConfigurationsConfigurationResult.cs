@@ -13,20 +13,65 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetCloudwrapperConfigurationsConfigurationResult
     {
+        /// <summary>
+        /// Represents the threshold for sending alerts.
+        /// </summary>
         public readonly int CapacityAlertsThreshold;
+        /// <summary>
+        /// Additional information provided by user which can help to differentiate or track changes of the configuration.
+        /// </summary>
         public readonly string Comments;
+        /// <summary>
+        /// Name of the configuration.
+        /// </summary>
         public readonly string ConfigName;
+        /// <summary>
+        /// Contract ID with Cloud Wrapper entitlement.
+        /// </summary>
         public readonly string ContractId;
+        /// <summary>
+        /// Unique identifier of a Cloud Wrapper configuration.
+        /// </summary>
         public readonly int Id;
+        /// <summary>
+        /// User to last activate the configuration.
+        /// </summary>
         public readonly string LastActivatedBy;
+        /// <summary>
+        /// ISO format date that represents when the configuration was last activated successfully.
+        /// </summary>
         public readonly string LastActivatedDate;
+        /// <summary>
+        /// User to last modify the configuration.
+        /// </summary>
         public readonly string LastUpdatedBy;
+        /// <summary>
+        /// ISO format date that represents when the configuration was last edited.
+        /// </summary>
         public readonly string LastUpdatedDate;
+        /// <summary>
+        /// List of all unused properties.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetCloudwrapperConfigurationsConfigurationLocationResult> Locations;
+        /// <summary>
+        /// Specify details about the Multi CDN settings.
+        /// </summary>
         public readonly Outputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsResult? MultiCdnSettings;
+        /// <summary>
+        /// Email addresses to receive notifications.
+        /// </summary>
         public readonly ImmutableArray<string> NotificationEmails;
+        /// <summary>
+        /// List of properties belonging to media delivery products. Properties need to be unique across configurations.
+        /// </summary>
         public readonly ImmutableArray<string> PropertyIds;
+        /// <summary>
+        /// Retain idle objects beyond their max idle lifetime.
+        /// </summary>
         public readonly bool RetainIdleObjects;
+        /// <summary>
+        /// Current state of the provisioning of the configuration, either SAVED, IN_PROGRESS, ACTIVE, DELETE_IN_PROGRESS, or FAILED.
+        /// </summary>
         public readonly string Status;
 
         [OutputConstructor]

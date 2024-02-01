@@ -18,37 +18,77 @@ public final class GetCloudwrapperConfigurationMultiCdnSettingsCdn extends com.p
 
     public static final GetCloudwrapperConfigurationMultiCdnSettingsCdn Empty = new GetCloudwrapperConfigurationMultiCdnSettingsCdn();
 
+    /**
+     * List of auth keys configured for the CDN.
+     * 
+     */
     @Import(name="cdnAuthKeys")
     private @Nullable List<GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKey> cdnAuthKeys;
 
+    /**
+     * @return List of auth keys configured for the CDN.
+     * 
+     */
     public Optional<List<GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKey>> cdnAuthKeys() {
         return Optional.ofNullable(this.cdnAuthKeys);
     }
 
+    /**
+     * Unique identifier for the CDN.
+     * 
+     */
     @Import(name="cdnCode", required=true)
     private String cdnCode;
 
+    /**
+     * @return Unique identifier for the CDN.
+     * 
+     */
     public String cdnCode() {
         return this.cdnCode;
     }
 
+    /**
+     * Enable CDN.
+     * 
+     */
     @Import(name="enabled", required=true)
     private Boolean enabled;
 
+    /**
+     * @return Enable CDN.
+     * 
+     */
     public Boolean enabled() {
         return this.enabled;
     }
 
+    /**
+     * Specify whether CDN communication is HTTPS only.
+     * 
+     */
     @Import(name="httpsOnly", required=true)
     private Boolean httpsOnly;
 
+    /**
+     * @return Specify whether CDN communication is HTTPS only.
+     * 
+     */
     public Boolean httpsOnly() {
         return this.httpsOnly;
     }
 
+    /**
+     * Configure an access control list using IP addresses in CIDR notation.
+     * 
+     */
     @Import(name="ipAclCidrs", required=true)
     private List<String> ipAclCidrs;
 
+    /**
+     * @return Configure an access control list using IP addresses in CIDR notation.
+     * 
+     */
     public List<String> ipAclCidrs() {
         return this.ipAclCidrs;
     }
@@ -81,35 +121,77 @@ public final class GetCloudwrapperConfigurationMultiCdnSettingsCdn extends com.p
             $ = new GetCloudwrapperConfigurationMultiCdnSettingsCdn(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param cdnAuthKeys List of auth keys configured for the CDN.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cdnAuthKeys(@Nullable List<GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKey> cdnAuthKeys) {
             $.cdnAuthKeys = cdnAuthKeys;
             return this;
         }
 
+        /**
+         * @param cdnAuthKeys List of auth keys configured for the CDN.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cdnAuthKeys(GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKey... cdnAuthKeys) {
             return cdnAuthKeys(List.of(cdnAuthKeys));
         }
 
+        /**
+         * @param cdnCode Unique identifier for the CDN.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cdnCode(String cdnCode) {
             $.cdnCode = cdnCode;
             return this;
         }
 
+        /**
+         * @param enabled Enable CDN.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(Boolean enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param httpsOnly Specify whether CDN communication is HTTPS only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder httpsOnly(Boolean httpsOnly) {
             $.httpsOnly = httpsOnly;
             return this;
         }
 
+        /**
+         * @param ipAclCidrs Configure an access control list using IP addresses in CIDR notation.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ipAclCidrs(List<String> ipAclCidrs) {
             $.ipAclCidrs = ipAclCidrs;
             return this;
         }
 
+        /**
+         * @param ipAclCidrs Configure an access control list using IP addresses in CIDR notation.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ipAclCidrs(String... ipAclCidrs) {
             return ipAclCidrs(List.of(ipAclCidrs));
         }

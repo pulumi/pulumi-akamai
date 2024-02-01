@@ -15,16 +15,32 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsArg
 
     public static final GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsArgs Empty = new GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsArgs();
 
+    /**
+     * The ID of the Conditional Origin requests are forwarded to
+     * 
+     */
     @Import(name="originId", required=true)
     private Output<String> originId;
 
+    /**
+     * @return The ID of the Conditional Origin requests are forwarded to
+     * 
+     */
     public Output<String> originId() {
         return this.originId;
     }
 
+    /**
+     * The percent of traffic that is sent to the data center.
+     * 
+     */
     @Import(name="percent", required=true)
     private Output<Integer> percent;
 
+    /**
+     * @return The percent of traffic that is sent to the data center.
+     * 
+     */
     public Output<Integer> percent() {
         return this.percent;
     }
@@ -54,20 +70,44 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsArg
             $ = new GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param originId The ID of the Conditional Origin requests are forwarded to
+         * 
+         * @return builder
+         * 
+         */
         public Builder originId(Output<String> originId) {
             $.originId = originId;
             return this;
         }
 
+        /**
+         * @param originId The ID of the Conditional Origin requests are forwarded to
+         * 
+         * @return builder
+         * 
+         */
         public Builder originId(String originId) {
             return originId(Output.of(originId));
         }
 
+        /**
+         * @param percent The percent of traffic that is sent to the data center.
+         * 
+         * @return builder
+         * 
+         */
         public Builder percent(Output<Integer> percent) {
             $.percent = percent;
             return this;
         }
 
+        /**
+         * @param percent The percent of traffic that is sent to the data center.
+         * 
+         * @return builder
+         * 
+         */
         public Builder percent(Integer percent) {
             return percent(Output.of(percent));
         }

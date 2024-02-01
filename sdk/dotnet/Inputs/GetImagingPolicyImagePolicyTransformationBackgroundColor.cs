@@ -12,9 +12,15 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetImagingPolicyImagePolicyTransformationBackgroundColorArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The hexadecimal CSS color value for the background.
+        /// </summary>
         [Input("color")]
         public string? Color { get; set; }
 
+        /// <summary>
+        /// The hexadecimal CSS color value for the background.
+        /// </summary>
         [Input("colorVar")]
         public string? ColorVar { get; set; }
 

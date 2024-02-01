@@ -14,37 +14,77 @@ public final class GetPropertyRulesBuilderRulesV20230530Variable extends com.pul
 
     public static final GetPropertyRulesBuilderRulesV20230530Variable Empty = new GetPropertyRulesBuilderRulesV20230530Variable();
 
+    /**
+     * The description for a variable
+     * 
+     */
     @Import(name="description", required=true)
     private String description;
 
+    /**
+     * @return The description for a variable
+     * 
+     */
     public String description() {
         return this.description;
     }
 
+    /**
+     * Whether a variable should be hidden
+     * 
+     */
     @Import(name="hidden", required=true)
     private Boolean hidden;
 
+    /**
+     * @return Whether a variable should be hidden
+     * 
+     */
     public Boolean hidden() {
         return this.hidden;
     }
 
+    /**
+     * The name of a variable
+     * 
+     */
     @Import(name="name", required=true)
     private String name;
 
+    /**
+     * @return The name of a variable
+     * 
+     */
     public String name() {
         return this.name;
     }
 
+    /**
+     * States whether a variable contains sensitive information
+     * 
+     */
     @Import(name="sensitive", required=true)
     private Boolean sensitive;
 
+    /**
+     * @return States whether a variable contains sensitive information
+     * 
+     */
     public Boolean sensitive() {
         return this.sensitive;
     }
 
+    /**
+     * The value for a variable
+     * 
+     */
     @Import(name="value", required=true)
     private String value;
 
+    /**
+     * @return The value for a variable
+     * 
+     */
     public String value() {
         return this.value;
     }
@@ -77,26 +117,56 @@ public final class GetPropertyRulesBuilderRulesV20230530Variable extends com.pul
             $ = new GetPropertyRulesBuilderRulesV20230530Variable(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param description The description for a variable
+         * 
+         * @return builder
+         * 
+         */
         public Builder description(String description) {
             $.description = description;
             return this;
         }
 
+        /**
+         * @param hidden Whether a variable should be hidden
+         * 
+         * @return builder
+         * 
+         */
         public Builder hidden(Boolean hidden) {
             $.hidden = hidden;
             return this;
         }
 
+        /**
+         * @param name The name of a variable
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(String name) {
             $.name = name;
             return this;
         }
 
+        /**
+         * @param sensitive States whether a variable contains sensitive information
+         * 
+         * @return builder
+         * 
+         */
         public Builder sensitive(Boolean sensitive) {
             $.sensitive = sensitive;
             return this;
         }
 
+        /**
+         * @param value The value for a variable
+         * 
+         * @return builder
+         * 
+         */
         public Builder value(String value) {
             $.value = value;
             return this;

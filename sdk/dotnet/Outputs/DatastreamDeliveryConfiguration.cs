@@ -13,10 +13,25 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class DatastreamDeliveryConfiguration
     {
+        /// <summary>
+        /// A delimiter that you use to separate data set fields in log lines
+        /// </summary>
         public readonly string? FieldDelimiter;
+        /// <summary>
+        /// The format in which logs will be received
+        /// </summary>
         public readonly string Format;
+        /// <summary>
+        /// The frequency of collecting logs from each uploader and sending these logs to a destination
+        /// </summary>
         public readonly Outputs.DatastreamDeliveryConfigurationFrequency Frequency;
+        /// <summary>
+        /// The prefix of the log file that will be send to a destination
+        /// </summary>
         public readonly string? UploadFilePrefix;
+        /// <summary>
+        /// The suffix of the log file that will be send to a destination
+        /// </summary>
         public readonly string? UploadFileSuffix;
 
         [OutputConstructor]

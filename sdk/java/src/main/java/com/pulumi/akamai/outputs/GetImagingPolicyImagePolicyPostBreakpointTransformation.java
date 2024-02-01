@@ -28,53 +28,149 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyPostBreakpointTransformation {
+    /**
+     * @return Places a transparent image on a set background color. Color is specified in the typical CSS hexadecimal format.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformationBackgroundColor> backgroundColors;
+    /**
+     * @return Applies a Gaussian blur to the image.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformationBlur> blurs;
+    /**
+     * @return Changes any color in an image within the specified volume of the HSL colorspace to transparent or semitransparent. This transformation applies a &#39;green screen&#39; technique commonly used to isolate and remove background colors.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformationChromaKey> chromaKeys;
+    /**
+     * @return Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformationComposite> composites;
     private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformationCompound> compounds;
+    /**
+     * @return Adjusts both the contrast and brightness of an image.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformationContrast> contrasts;
+    /**
+     * @return Distorts an image by randomly repositioning a set of control points along a specified grid. The transformed image appears _goopy_. Adjust the density of the grid and the degree of randomity. You can use this transformation to create watermarks for use in security.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformationGoop> goops;
+    /**
+     * @return Restricts image color to shades of gray only.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformationGrayscale> grayscales;
+    /**
+     * @return Adjusts the hue, saturation, and lightness (HSL) of an image. Hue is the number of degrees that colors rotate around the color wheel. Saturation is a multiplier to increase or decrease color saturation. Lightness is a multiplier to increase or decrease the lightness of an image. Other transformations can also affect color, such as `Grayscale` and `MaxColors`. If youre using more than one, consider the order to apply them for the desired results.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformationHsl> hsls;
+    /**
+     * @return Identical to HSL except it replaces `lightness` with `value`. For example, if you reduce the `lightness` of a light green, almost white, image, the color turns a vibrant green. Reducing the `value` turns the image a darker color, close to grey. This happens because the original image color is very close to white.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformationHsv> hsvs;
     private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimension> ifDimensions;
     private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientation> ifOrientations;
+    /**
+     * @return Set the maximum number of colors in the images palette. Reducing the number of colors in an image can help to reduce file size.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColor> maxColors;
+    /**
+     * @return Flips an image horizontally, vertically, or both.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformationMirror> mirrors;
+    /**
+     * @return Allows you to set all hues in an image to a single specified hue of your choosing. Mono Hue maintains the original color’s lightness and saturation but sets the hue to that of the specified value. This has the effect of making the image shades of the specified hue.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHue> monoHues;
+    /**
+     * @return Adjusts the level of transparency of an image. Use this transformation to make an image more or less transparent.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformationOpacity> opacities;
+    /**
+     * @return Removes a specified color from an image and replaces it with transparent pixels. This transformation is ideal for removing solid background colors from product images photographed on clean, consistent backgrounds without any shadows.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveColor> removeColors;
+    /**
+     * @return Emphasizes edges and details in source images without distorting the colors. Although this effect is often referred to as _sharpening_ an image, it actually creates a blurred, inverted copy of the image known as an unsharp mask. Image and Video Manager combines the unsharp mask with the source image to create an image perceived as clearer.
+     * 
+     */
     private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformationUnsharpMask> unsharpMasks;
 
     private GetImagingPolicyImagePolicyPostBreakpointTransformation() {}
+    /**
+     * @return Places a transparent image on a set background color. Color is specified in the typical CSS hexadecimal format.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyPostBreakpointTransformationBackgroundColor> backgroundColors() {
         return this.backgroundColors == null ? List.of() : this.backgroundColors;
     }
+    /**
+     * @return Applies a Gaussian blur to the image.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyPostBreakpointTransformationBlur> blurs() {
         return this.blurs == null ? List.of() : this.blurs;
     }
+    /**
+     * @return Changes any color in an image within the specified volume of the HSL colorspace to transparent or semitransparent. This transformation applies a &#39;green screen&#39; technique commonly used to isolate and remove background colors.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyPostBreakpointTransformationChromaKey> chromaKeys() {
         return this.chromaKeys == null ? List.of() : this.chromaKeys;
     }
+    /**
+     * @return Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyPostBreakpointTransformationComposite> composites() {
         return this.composites == null ? List.of() : this.composites;
     }
     public List<GetImagingPolicyImagePolicyPostBreakpointTransformationCompound> compounds() {
         return this.compounds == null ? List.of() : this.compounds;
     }
+    /**
+     * @return Adjusts both the contrast and brightness of an image.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyPostBreakpointTransformationContrast> contrasts() {
         return this.contrasts == null ? List.of() : this.contrasts;
     }
+    /**
+     * @return Distorts an image by randomly repositioning a set of control points along a specified grid. The transformed image appears _goopy_. Adjust the density of the grid and the degree of randomity. You can use this transformation to create watermarks for use in security.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyPostBreakpointTransformationGoop> goops() {
         return this.goops == null ? List.of() : this.goops;
     }
+    /**
+     * @return Restricts image color to shades of gray only.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyPostBreakpointTransformationGrayscale> grayscales() {
         return this.grayscales == null ? List.of() : this.grayscales;
     }
+    /**
+     * @return Adjusts the hue, saturation, and lightness (HSL) of an image. Hue is the number of degrees that colors rotate around the color wheel. Saturation is a multiplier to increase or decrease color saturation. Lightness is a multiplier to increase or decrease the lightness of an image. Other transformations can also affect color, such as `Grayscale` and `MaxColors`. If youre using more than one, consider the order to apply them for the desired results.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyPostBreakpointTransformationHsl> hsls() {
         return this.hsls == null ? List.of() : this.hsls;
     }
+    /**
+     * @return Identical to HSL except it replaces `lightness` with `value`. For example, if you reduce the `lightness` of a light green, almost white, image, the color turns a vibrant green. Reducing the `value` turns the image a darker color, close to grey. This happens because the original image color is very close to white.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyPostBreakpointTransformationHsv> hsvs() {
         return this.hsvs == null ? List.of() : this.hsvs;
     }
@@ -84,21 +180,45 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformation {
     public List<GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientation> ifOrientations() {
         return this.ifOrientations == null ? List.of() : this.ifOrientations;
     }
+    /**
+     * @return Set the maximum number of colors in the images palette. Reducing the number of colors in an image can help to reduce file size.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColor> maxColors() {
         return this.maxColors == null ? List.of() : this.maxColors;
     }
+    /**
+     * @return Flips an image horizontally, vertically, or both.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyPostBreakpointTransformationMirror> mirrors() {
         return this.mirrors == null ? List.of() : this.mirrors;
     }
+    /**
+     * @return Allows you to set all hues in an image to a single specified hue of your choosing. Mono Hue maintains the original color’s lightness and saturation but sets the hue to that of the specified value. This has the effect of making the image shades of the specified hue.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHue> monoHues() {
         return this.monoHues == null ? List.of() : this.monoHues;
     }
+    /**
+     * @return Adjusts the level of transparency of an image. Use this transformation to make an image more or less transparent.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyPostBreakpointTransformationOpacity> opacities() {
         return this.opacities == null ? List.of() : this.opacities;
     }
+    /**
+     * @return Removes a specified color from an image and replaces it with transparent pixels. This transformation is ideal for removing solid background colors from product images photographed on clean, consistent backgrounds without any shadows.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveColor> removeColors() {
         return this.removeColors == null ? List.of() : this.removeColors;
     }
+    /**
+     * @return Emphasizes edges and details in source images without distorting the colors. Although this effect is often referred to as _sharpening_ an image, it actually creates a blurred, inverted copy of the image known as an unsharp mask. Image and Video Manager combines the unsharp mask with the source image to create an image perceived as clearer.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyPostBreakpointTransformationUnsharpMask> unsharpMasks() {
         return this.unsharpMasks == null ? List.of() : this.unsharpMasks;
     }

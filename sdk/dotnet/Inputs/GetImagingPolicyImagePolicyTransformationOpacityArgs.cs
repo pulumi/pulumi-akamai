@@ -12,9 +12,15 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetImagingPolicyImagePolicyTransformationOpacityInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Represents alpha values on a scale of `0` to `1`. Values below `1` increase transparency, and `0` is invisible. For images that have some transparency, values above `1` increase the opacity of the transparent portions.
+        /// </summary>
         [Input("opacity")]
         public Input<string>? Opacity { get; set; }
 
+        /// <summary>
+        /// Represents alpha values on a scale of `0` to `1`. Values below `1` increase transparency, and `0` is invisible. For images that have some transparency, values above `1` increase the opacity of the transparent portions.
+        /// </summary>
         [Input("opacityVar")]
         public Input<string>? OpacityVar { get; set; }
 

@@ -15,9 +15,17 @@ public final class PropertyActivationComplianceRecordNoncomplianceReasonEmergenc
 
     public static final PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs Empty = new PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs();
 
+    /**
+     * Identifies the ticket that describes the need for the activation
+     * 
+     */
     @Import(name="ticketId")
     private @Nullable Output<String> ticketId;
 
+    /**
+     * @return Identifies the ticket that describes the need for the activation
+     * 
+     */
     public Optional<Output<String>> ticketId() {
         return Optional.ofNullable(this.ticketId);
     }
@@ -46,11 +54,23 @@ public final class PropertyActivationComplianceRecordNoncomplianceReasonEmergenc
             $ = new PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param ticketId Identifies the ticket that describes the need for the activation
+         * 
+         * @return builder
+         * 
+         */
         public Builder ticketId(@Nullable Output<String> ticketId) {
             $.ticketId = ticketId;
             return this;
         }
 
+        /**
+         * @param ticketId Identifies the ticket that describes the need for the activation
+         * 
+         * @return builder
+         * 
+         */
         public Builder ticketId(String ticketId) {
             return ticketId(Output.of(ticketId));
         }

@@ -11,9 +11,17 @@ import java.util.Objects;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShape {
+    /**
+     * @return Series of PointShapeType objects. The last and first points connect to close the shape automatically.
+     * 
+     */
     private List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapePoint> points;
 
     private GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShape() {}
+    /**
+     * @return Series of PointShapeType objects. The last and first points connect to close the shape automatically.
+     * 
+     */
     public List<GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapePoint> points() {
         return this.points;
     }

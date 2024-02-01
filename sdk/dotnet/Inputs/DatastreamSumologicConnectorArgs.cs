@@ -14,6 +14,10 @@ namespace Pulumi.Akamai.Inputs
     {
         [Input("collectorCode", required: true)]
         private Input<string>? _collectorCode;
+
+        /// <summary>
+        /// The unique HTTP collector code of Sumo Logic endpoint
+        /// </summary>
         public Input<string>? CollectorCode
         {
             get => _collectorCode;
@@ -24,21 +28,39 @@ namespace Pulumi.Akamai.Inputs
             }
         }
 
+        /// <summary>
+        /// Indicates whether the logs should be compressed
+        /// </summary>
         [Input("compressLogs")]
         public Input<bool>? CompressLogs { get; set; }
 
+        /// <summary>
+        /// Content type to pass in the log file header
+        /// </summary>
         [Input("contentType")]
         public Input<string>? ContentType { get; set; }
 
+        /// <summary>
+        /// The name of custom header passed with the request to the destination
+        /// </summary>
         [Input("customHeaderName")]
         public Input<string>? CustomHeaderName { get; set; }
 
+        /// <summary>
+        /// The custom header's contents passed with the request to the destination
+        /// </summary>
         [Input("customHeaderValue")]
         public Input<string>? CustomHeaderValue { get; set; }
 
+        /// <summary>
+        /// The name of the connector
+        /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
 
+        /// <summary>
+        /// The Sumo Logic collection endpoint where logs will be stored
+        /// </summary>
         [Input("endpoint", required: true)]
         public Input<string> Endpoint { get; set; } = null!;
 

@@ -18,79 +18,167 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorG2oheaderArgs ex
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorG2oheaderArgs Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorG2oheaderArgs();
 
+    /**
+     * Specifies the set of data to be encrypted as a combination of concatenated strings.
+     * 
+     */
     @Import(name="customSignStrings")
     private @Nullable Output<List<String>> customSignStrings;
 
+    /**
+     * @return Specifies the set of data to be encrypted as a combination of concatenated strings.
+     * 
+     */
     public Optional<Output<List<String>>> customSignStrings() {
         return Optional.ofNullable(this.customSignStrings);
     }
 
+    /**
+     * Specifies the name of the header that contains the request data that needs to be encrypted.
+     * 
+     */
     @Import(name="dataHeader")
     private @Nullable Output<String> dataHeader;
 
+    /**
+     * @return Specifies the name of the header that contains the request data that needs to be encrypted.
+     * 
+     */
     public Optional<Output<String>> dataHeader() {
         return Optional.ofNullable(this.dataHeader);
     }
 
+    /**
+     * Enables the g2o verification behavior.
+     * 
+     */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
+    /**
+     * @return Enables the g2o verification behavior.
+     * 
+     */
     public Optional<Output<Boolean>> enabled() {
         return Optional.ofNullable(this.enabled);
     }
 
+    /**
+     * Specifies the version of the encryption algorithm as an integer from `1` through `5`.
+     * 
+     */
     @Import(name="encodingVersion")
     private @Nullable Output<Integer> encodingVersion;
 
+    /**
+     * @return Specifies the version of the encryption algorithm as an integer from `1` through `5`.
+     * 
+     */
     public Optional<Output<Integer>> encodingVersion() {
         return Optional.ofNullable(this.encodingVersion);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Specifies the cryptographic `nonce` string.
+     * 
+     */
     @Import(name="nonce")
     private @Nullable Output<String> nonce;
 
+    /**
+     * @return Specifies the cryptographic `nonce` string.
+     * 
+     */
     public Optional<Output<String>> nonce() {
         return Optional.ofNullable(this.nonce);
     }
 
+    /**
+     * Specifies the shared secret key.
+     * 
+     */
     @Import(name="secretKey")
     private @Nullable Output<String> secretKey;
 
+    /**
+     * @return Specifies the shared secret key.
+     * 
+     */
     public Optional<Output<String>> secretKey() {
         return Optional.ofNullable(this.secretKey);
     }
 
+    /**
+     * Specifies the name of the header containing encrypted request data.
+     * 
+     */
     @Import(name="signedHeader")
     private @Nullable Output<String> signedHeader;
 
+    /**
+     * @return Specifies the name of the header containing encrypted request data.
+     * 
+     */
     public Optional<Output<String>> signedHeader() {
         return Optional.ofNullable(this.signedHeader);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * When disabled, the encrypted string is based on the forwarded URL. If enabled, you can use `customSignString` to customize the set of data to encrypt.
+     * 
+     */
     @Import(name="useCustomSignString")
     private @Nullable Output<Boolean> useCustomSignString;
 
+    /**
+     * @return When disabled, the encrypted string is based on the forwarded URL. If enabled, you can use `customSignString` to customize the set of data to encrypt.
+     * 
+     */
     public Optional<Output<Boolean>> useCustomSignString() {
         return Optional.ofNullable(this.useCustomSignString);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -129,105 +217,243 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorG2oheaderArgs ex
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorG2oheaderArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param customSignStrings Specifies the set of data to be encrypted as a combination of concatenated strings.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customSignStrings(@Nullable Output<List<String>> customSignStrings) {
             $.customSignStrings = customSignStrings;
             return this;
         }
 
+        /**
+         * @param customSignStrings Specifies the set of data to be encrypted as a combination of concatenated strings.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customSignStrings(List<String> customSignStrings) {
             return customSignStrings(Output.of(customSignStrings));
         }
 
+        /**
+         * @param customSignStrings Specifies the set of data to be encrypted as a combination of concatenated strings.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customSignStrings(String... customSignStrings) {
             return customSignStrings(List.of(customSignStrings));
         }
 
+        /**
+         * @param dataHeader Specifies the name of the header that contains the request data that needs to be encrypted.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dataHeader(@Nullable Output<String> dataHeader) {
             $.dataHeader = dataHeader;
             return this;
         }
 
+        /**
+         * @param dataHeader Specifies the name of the header that contains the request data that needs to be encrypted.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dataHeader(String dataHeader) {
             return dataHeader(Output.of(dataHeader));
         }
 
+        /**
+         * @param enabled Enables the g2o verification behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(@Nullable Output<Boolean> enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param enabled Enables the g2o verification behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(Boolean enabled) {
             return enabled(Output.of(enabled));
         }
 
+        /**
+         * @param encodingVersion Specifies the version of the encryption algorithm as an integer from `1` through `5`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder encodingVersion(@Nullable Output<Integer> encodingVersion) {
             $.encodingVersion = encodingVersion;
             return this;
         }
 
+        /**
+         * @param encodingVersion Specifies the version of the encryption algorithm as an integer from `1` through `5`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder encodingVersion(Integer encodingVersion) {
             return encodingVersion(Output.of(encodingVersion));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param nonce Specifies the cryptographic `nonce` string.
+         * 
+         * @return builder
+         * 
+         */
         public Builder nonce(@Nullable Output<String> nonce) {
             $.nonce = nonce;
             return this;
         }
 
+        /**
+         * @param nonce Specifies the cryptographic `nonce` string.
+         * 
+         * @return builder
+         * 
+         */
         public Builder nonce(String nonce) {
             return nonce(Output.of(nonce));
         }
 
+        /**
+         * @param secretKey Specifies the shared secret key.
+         * 
+         * @return builder
+         * 
+         */
         public Builder secretKey(@Nullable Output<String> secretKey) {
             $.secretKey = secretKey;
             return this;
         }
 
+        /**
+         * @param secretKey Specifies the shared secret key.
+         * 
+         * @return builder
+         * 
+         */
         public Builder secretKey(String secretKey) {
             return secretKey(Output.of(secretKey));
         }
 
+        /**
+         * @param signedHeader Specifies the name of the header containing encrypted request data.
+         * 
+         * @return builder
+         * 
+         */
         public Builder signedHeader(@Nullable Output<String> signedHeader) {
             $.signedHeader = signedHeader;
             return this;
         }
 
+        /**
+         * @param signedHeader Specifies the name of the header containing encrypted request data.
+         * 
+         * @return builder
+         * 
+         */
         public Builder signedHeader(String signedHeader) {
             return signedHeader(Output.of(signedHeader));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param useCustomSignString When disabled, the encrypted string is based on the forwarded URL. If enabled, you can use `customSignString` to customize the set of data to encrypt.
+         * 
+         * @return builder
+         * 
+         */
         public Builder useCustomSignString(@Nullable Output<Boolean> useCustomSignString) {
             $.useCustomSignString = useCustomSignString;
             return this;
         }
 
+        /**
+         * @param useCustomSignString When disabled, the encrypted string is based on the forwarded URL. If enabled, you can use `customSignString` to customize the set of data to encrypt.
+         * 
+         * @return builder
+         * 
+         */
         public Builder useCustomSignString(Boolean useCustomSignString) {
             return useCustomSignString(Output.of(useCustomSignString));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

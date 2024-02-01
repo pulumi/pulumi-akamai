@@ -12,9 +12,15 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesTemplateTemplateInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Content of the template as string
+        /// </summary>
         [Input("templateData", required: true)]
         public Input<string> TemplateData { get; set; } = null!;
 
+        /// <summary>
+        /// Directory points to a folder, which contains snippets to include into template.
+        /// </summary>
         [Input("templateDir", required: true)]
         public Input<string> TemplateDir { get; set; } = null!;
 

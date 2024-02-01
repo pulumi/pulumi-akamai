@@ -11,17 +11,41 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOrigin {
+    /**
+     * @return Origins hostname corresponding to the Akamai Delivery Property.
+     * 
+     */
     private String hostname;
+    /**
+     * @return Origin identifier and will be used to generated Multi CDN host names.
+     * 
+     */
     private String originId;
+    /**
+     * @return Property ID of the property that origin belongs to.
+     * 
+     */
     private Integer propertyId;
 
     private GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOrigin() {}
+    /**
+     * @return Origins hostname corresponding to the Akamai Delivery Property.
+     * 
+     */
     public String hostname() {
         return this.hostname;
     }
+    /**
+     * @return Origin identifier and will be used to generated Multi CDN host names.
+     * 
+     */
     public String originId() {
         return this.originId;
     }
+    /**
+     * @return Property ID of the property that origin belongs to.
+     * 
+     */
     public Integer propertyId() {
         return this.propertyId;
     }

@@ -15,30 +15,62 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationMirror
 
     public static final GetImagingPolicyImagePolicyPostBreakpointTransformationMirrorArgs Empty = new GetImagingPolicyImagePolicyPostBreakpointTransformationMirrorArgs();
 
+    /**
+     * Flips the image horizontally.
+     * 
+     */
     @Import(name="horizontal")
     private @Nullable Output<String> horizontal;
 
+    /**
+     * @return Flips the image horizontally.
+     * 
+     */
     public Optional<Output<String>> horizontal() {
         return Optional.ofNullable(this.horizontal);
     }
 
+    /**
+     * Flips the image horizontally.
+     * 
+     */
     @Import(name="horizontalVar")
     private @Nullable Output<String> horizontalVar;
 
+    /**
+     * @return Flips the image horizontally.
+     * 
+     */
     public Optional<Output<String>> horizontalVar() {
         return Optional.ofNullable(this.horizontalVar);
     }
 
+    /**
+     * Flips the image vertically.
+     * 
+     */
     @Import(name="vertical")
     private @Nullable Output<String> vertical;
 
+    /**
+     * @return Flips the image vertically.
+     * 
+     */
     public Optional<Output<String>> vertical() {
         return Optional.ofNullable(this.vertical);
     }
 
+    /**
+     * Flips the image vertically.
+     * 
+     */
     @Import(name="verticalVar")
     private @Nullable Output<String> verticalVar;
 
+    /**
+     * @return Flips the image vertically.
+     * 
+     */
     public Optional<Output<String>> verticalVar() {
         return Optional.ofNullable(this.verticalVar);
     }
@@ -70,38 +102,86 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationMirror
             $ = new GetImagingPolicyImagePolicyPostBreakpointTransformationMirrorArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param horizontal Flips the image horizontally.
+         * 
+         * @return builder
+         * 
+         */
         public Builder horizontal(@Nullable Output<String> horizontal) {
             $.horizontal = horizontal;
             return this;
         }
 
+        /**
+         * @param horizontal Flips the image horizontally.
+         * 
+         * @return builder
+         * 
+         */
         public Builder horizontal(String horizontal) {
             return horizontal(Output.of(horizontal));
         }
 
+        /**
+         * @param horizontalVar Flips the image horizontally.
+         * 
+         * @return builder
+         * 
+         */
         public Builder horizontalVar(@Nullable Output<String> horizontalVar) {
             $.horizontalVar = horizontalVar;
             return this;
         }
 
+        /**
+         * @param horizontalVar Flips the image horizontally.
+         * 
+         * @return builder
+         * 
+         */
         public Builder horizontalVar(String horizontalVar) {
             return horizontalVar(Output.of(horizontalVar));
         }
 
+        /**
+         * @param vertical Flips the image vertically.
+         * 
+         * @return builder
+         * 
+         */
         public Builder vertical(@Nullable Output<String> vertical) {
             $.vertical = vertical;
             return this;
         }
 
+        /**
+         * @param vertical Flips the image vertically.
+         * 
+         * @return builder
+         * 
+         */
         public Builder vertical(String vertical) {
             return vertical(Output.of(vertical));
         }
 
+        /**
+         * @param verticalVar Flips the image vertically.
+         * 
+         * @return builder
+         * 
+         */
         public Builder verticalVar(@Nullable Output<String> verticalVar) {
             $.verticalVar = verticalVar;
             return this;
         }
 
+        /**
+         * @param verticalVar Flips the image vertically.
+         * 
+         * @return builder
+         * 
+         */
         public Builder verticalVar(String verticalVar) {
             return verticalVar(Output.of(verticalVar));
         }

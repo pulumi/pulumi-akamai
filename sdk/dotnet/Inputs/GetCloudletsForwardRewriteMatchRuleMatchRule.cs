@@ -12,32 +12,57 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetCloudletsForwardRewriteMatchRuleMatchRuleArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// If set to true, disables a rule so it is not evaluated against incoming requests.
+        /// </summary>
         [Input("disabled")]
         public bool? Disabled { get; set; }
 
+        /// <summary>
+        /// The end time for this match (in seconds since the epoch)
+        /// </summary>
         [Input("end")]
         public int? End { get; set; }
 
+        /// <summary>
+        /// This property defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, then the Edge Server returns an HTTP response from the rewritten URL
+        /// </summary>
         [Input("forwardSettings", required: true)]
         public Inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsArgs ForwardSettings { get; set; } = null!;
 
+        /// <summary>
+        /// If using a URL match, this property is the URL that the Cloudlet uses to match the incoming request
+        /// </summary>
         [Input("matchUrl")]
         public string? MatchUrl { get; set; }
 
         [Input("matches")]
         private List<Inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArgs>? _matches;
+
+        /// <summary>
+        /// Defines a set of match objects
+        /// </summary>
         public List<Inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArgs> Matches
         {
             get => _matches ?? (_matches = new List<Inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArgs>());
             set => _matches = value;
         }
 
+        /// <summary>
+        /// The name of the rule
+        /// </summary>
         [Input("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// The start time for this match (in seconds since the epoch)
+        /// </summary>
         [Input("start")]
         public int? Start { get; set; }
 
+        /// <summary>
+        /// The type of Cloudlet the rule is for
+        /// </summary>
         [Input("type", required: true)]
         public string Type { get; set; } = null!;
 

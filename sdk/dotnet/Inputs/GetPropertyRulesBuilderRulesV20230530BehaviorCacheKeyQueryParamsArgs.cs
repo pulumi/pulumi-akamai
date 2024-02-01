@@ -12,26 +12,45 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorCacheKeyQueryParamsInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Configures how sets of query string parameters translate to cache keys. Be careful not to ignore any parameters that result in substantially different content, as it is `not` reflected in the cached object.
+        /// </summary>
         [Input("behavior")]
         public Input<string>? Behavior { get; set; }
 
+        /// <summary>
+        /// When enabled, `parameters` needs to match exactly. Keep disabled to match string prefixes.
+        /// </summary>
         [Input("exactMatch")]
         public Input<bool>? ExactMatch { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public Input<bool>? Locked { get; set; }
 
         [Input("parameters")]
         private InputList<string>? _parameters;
+
+        /// <summary>
+        /// Specifies the set of parameter field names to include in or exclude from the cache key. By default, these match the field names as string prefixes.
+        /// </summary>
         public InputList<string> Parameters
         {
             get => _parameters ?? (_parameters = new InputList<string>());
             set => _parameters = value;
         }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public Input<string>? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public Input<string>? Uuid { get; set; }
 

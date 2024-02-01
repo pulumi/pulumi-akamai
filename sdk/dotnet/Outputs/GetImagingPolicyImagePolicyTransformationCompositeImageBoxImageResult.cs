@@ -13,12 +13,30 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyTransformationCompositeImageBoxImageResult
     {
+        /// <summary>
+        /// The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
+        /// </summary>
         public readonly string? Color;
+        /// <summary>
+        /// The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
+        /// </summary>
         public readonly string? ColorVar;
+        /// <summary>
+        /// The height of the box in pixels.
+        /// </summary>
         public readonly string? Height;
+        /// <summary>
+        /// The height of the box in pixels.
+        /// </summary>
         public readonly string? HeightVar;
         public readonly Outputs.GetImagingPolicyImagePolicyTransformationResult? Transformation;
+        /// <summary>
+        /// The width of the box in pixels.
+        /// </summary>
         public readonly string? Width;
+        /// <summary>
+        /// The width of the box in pixels.
+        /// </summary>
         public readonly string? WidthVar;
 
         [OutputConstructor]

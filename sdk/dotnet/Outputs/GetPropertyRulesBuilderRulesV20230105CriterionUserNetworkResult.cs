@@ -13,15 +13,42 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230105CriterionUserNetworkResult
     {
+        /// <summary>
+        /// Bandwidth range in bits per second, either `1`, `57`, `257`, `1000`, `2000`, or `5000`.
+        /// </summary>
         public readonly ImmutableArray<string> BandwidthValues;
+        /// <summary>
+        /// Specifies which IP addresses determine the user's network.
+        /// </summary>
         public readonly string? CheckIps;
+        /// <summary>
+        /// The type of information to match.
+        /// </summary>
         public readonly string? Field;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// Matches the specified set of values when set to `IS_ONE_OF`, otherwise `IS_NOT_ONE_OF` reverses the match.
+        /// </summary>
         public readonly string? MatchOperator;
         public readonly ImmutableArray<string> NetworkTypeValues;
+        /// <summary>
+        /// Any set of specific networks.
+        /// </summary>
         public readonly ImmutableArray<string> NetworkValues;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// When connecting via a proxy server as determined by the `X-Forwarded-For` header, enabling this option matches the end client specified in the header. Disabling it matches the connecting client's IP address.
+        /// </summary>
         public readonly bool? UseOnlyFirstXForwardedForIp;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

@@ -23,37 +23,77 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorWebApplicationFi
         return Optional.ofNullable(this.configId);
     }
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+     * 
+     */
     @Import(name="fileName")
     private @Nullable Output<String> fileName;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+     * 
+     */
     public Optional<Output<String>> fileName() {
         return Optional.ofNullable(this.fileName);
     }
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+     * 
+     */
     @Import(name="productionStatus")
     private @Nullable Output<String> productionStatus;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+     * 
+     */
     public Optional<Output<String>> productionStatus() {
         return Optional.ofNullable(this.productionStatus);
     }
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+     * 
+     */
     @Import(name="productionVersion")
     private @Nullable Output<Integer> productionVersion;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+     * 
+     */
     public Optional<Output<Integer>> productionVersion() {
         return Optional.ofNullable(this.productionVersion);
     }
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+     * 
+     */
     @Import(name="stagingStatus")
     private @Nullable Output<String> stagingStatus;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+     * 
+     */
     public Optional<Output<String>> stagingStatus() {
         return Optional.ofNullable(this.stagingStatus);
     }
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+     * 
+     */
     @Import(name="stagingVersion")
     private @Nullable Output<Integer> stagingVersion;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+     * 
+     */
     public Optional<Output<Integer>> stagingVersion() {
         return Optional.ofNullable(this.stagingVersion);
     }
@@ -96,47 +136,107 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorWebApplicationFi
             return configId(Output.of(configId));
         }
 
+        /**
+         * @param fileName This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+         * 
+         * @return builder
+         * 
+         */
         public Builder fileName(@Nullable Output<String> fileName) {
             $.fileName = fileName;
             return this;
         }
 
+        /**
+         * @param fileName This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+         * 
+         * @return builder
+         * 
+         */
         public Builder fileName(String fileName) {
             return fileName(Output.of(fileName));
         }
 
+        /**
+         * @param productionStatus This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+         * 
+         * @return builder
+         * 
+         */
         public Builder productionStatus(@Nullable Output<String> productionStatus) {
             $.productionStatus = productionStatus;
             return this;
         }
 
+        /**
+         * @param productionStatus This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+         * 
+         * @return builder
+         * 
+         */
         public Builder productionStatus(String productionStatus) {
             return productionStatus(Output.of(productionStatus));
         }
 
+        /**
+         * @param productionVersion This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+         * 
+         * @return builder
+         * 
+         */
         public Builder productionVersion(@Nullable Output<Integer> productionVersion) {
             $.productionVersion = productionVersion;
             return this;
         }
 
+        /**
+         * @param productionVersion This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+         * 
+         * @return builder
+         * 
+         */
         public Builder productionVersion(Integer productionVersion) {
             return productionVersion(Output.of(productionVersion));
         }
 
+        /**
+         * @param stagingStatus This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+         * 
+         * @return builder
+         * 
+         */
         public Builder stagingStatus(@Nullable Output<String> stagingStatus) {
             $.stagingStatus = stagingStatus;
             return this;
         }
 
+        /**
+         * @param stagingStatus This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+         * 
+         * @return builder
+         * 
+         */
         public Builder stagingStatus(String stagingStatus) {
             return stagingStatus(Output.of(stagingStatus));
         }
 
+        /**
+         * @param stagingVersion This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+         * 
+         * @return builder
+         * 
+         */
         public Builder stagingVersion(@Nullable Output<Integer> stagingVersion) {
             $.stagingVersion = stagingVersion;
             return this;
         }
 
+        /**
+         * @param stagingVersion This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+         * 
+         * @return builder
+         * 
+         */
         public Builder stagingVersion(Integer stagingVersion) {
             return stagingVersion(Output.of(stagingVersion));
         }

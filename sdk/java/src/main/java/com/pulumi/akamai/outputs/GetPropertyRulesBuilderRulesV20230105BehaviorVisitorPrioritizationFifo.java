@@ -14,53 +14,149 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationFifo {
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String accessTitle;
+    /**
+     * @return This identifies the Visitor Prioritization FIFO shared policy to use with this behavior. You can list available shared policies with the `Cloudlets API`.
+     * 
+     */
     private @Nullable Integer cloudletSharedPolicy;
+    /**
+     * @return This specifies a domain for all session cookies. In case you configure many property hostnames, this may be their common domain. Make sure the user agent accepts the custom domain for any request matching the `visitorPrioritizationFifo` behavior. Don&#39;t use top level domains (TLDs).
+     * 
+     */
     private @Nullable String customCookieDomain;
+    /**
+     * @return This specifies how to set the domain used to establish a session with the visitor.
+     * 
+     */
     private @Nullable String domainConfig;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Whether the queue session should prolong automatically when the `sessionDuration` expires  and the visitor remains active.
+     * 
+     */
     private @Nullable Boolean sessionAutoProlong;
+    /**
+     * @return Specifies the number of seconds users remain in the waiting room queue.
+     * 
+     */
     private @Nullable Integer sessionDuration;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
+    /**
+     * @return This specifies the base paths to static resources such as `JavaScript`, `CSS`, or image files for the `Waiting Room Main Page` requests. The option supports the `*` wildcard wildcard that matches zero or more characters. Requests matching any of these paths aren&#39;t blocked, but marked as Waiting Room Assets and passed through to the origin. See the `visitorPrioritizationRequest` match criteria to further customize these requests.
+     * 
+     */
     private @Nullable List<String> waitingRoomAssetsPaths;
+    /**
+     * @return This specifies the path to the waiting room main page on the origin server, for example `/vp/waiting-room.html`. When the request is marked as `Waiting Room Main Page` and blocked, the visitor enters the waiting room. The behavior sets the outgoing request path to the `waitingRoomPath` and modifies the cache key accordingly. See the `visitorPrioritizationRequest` match criteria to further customize these requests.
+     * 
+     */
     private @Nullable String waitingRoomPath;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String waitingRoomTitle;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationFifo() {}
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> accessTitle() {
         return Optional.ofNullable(this.accessTitle);
     }
+    /**
+     * @return This identifies the Visitor Prioritization FIFO shared policy to use with this behavior. You can list available shared policies with the `Cloudlets API`.
+     * 
+     */
     public Optional<Integer> cloudletSharedPolicy() {
         return Optional.ofNullable(this.cloudletSharedPolicy);
     }
+    /**
+     * @return This specifies a domain for all session cookies. In case you configure many property hostnames, this may be their common domain. Make sure the user agent accepts the custom domain for any request matching the `visitorPrioritizationFifo` behavior. Don&#39;t use top level domains (TLDs).
+     * 
+     */
     public Optional<String> customCookieDomain() {
         return Optional.ofNullable(this.customCookieDomain);
     }
+    /**
+     * @return This specifies how to set the domain used to establish a session with the visitor.
+     * 
+     */
     public Optional<String> domainConfig() {
         return Optional.ofNullable(this.domainConfig);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Whether the queue session should prolong automatically when the `sessionDuration` expires  and the visitor remains active.
+     * 
+     */
     public Optional<Boolean> sessionAutoProlong() {
         return Optional.ofNullable(this.sessionAutoProlong);
     }
+    /**
+     * @return Specifies the number of seconds users remain in the waiting room queue.
+     * 
+     */
     public Optional<Integer> sessionDuration() {
         return Optional.ofNullable(this.sessionDuration);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
+    /**
+     * @return This specifies the base paths to static resources such as `JavaScript`, `CSS`, or image files for the `Waiting Room Main Page` requests. The option supports the `*` wildcard wildcard that matches zero or more characters. Requests matching any of these paths aren&#39;t blocked, but marked as Waiting Room Assets and passed through to the origin. See the `visitorPrioritizationRequest` match criteria to further customize these requests.
+     * 
+     */
     public List<String> waitingRoomAssetsPaths() {
         return this.waitingRoomAssetsPaths == null ? List.of() : this.waitingRoomAssetsPaths;
     }
+    /**
+     * @return This specifies the path to the waiting room main page on the origin server, for example `/vp/waiting-room.html`. When the request is marked as `Waiting Room Main Page` and blocked, the visitor enters the waiting room. The behavior sets the outgoing request path to the `waitingRoomPath` and modifies the cache key accordingly. See the `visitorPrioritizationRequest` match criteria to further customize these requests.
+     * 
+     */
     public Optional<String> waitingRoomPath() {
         return Optional.ofNullable(this.waitingRoomPath);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> waitingRoomTitle() {
         return Optional.ofNullable(this.waitingRoomTitle);
     }

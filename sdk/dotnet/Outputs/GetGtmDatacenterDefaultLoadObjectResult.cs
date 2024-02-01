@@ -13,8 +13,17 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetGtmDatacenterDefaultLoadObjectResult
     {
+        /// <summary>
+        /// Specifies the load object that GTM requests.
+        /// </summary>
         public readonly string LoadObject;
+        /// <summary>
+        /// Specifies the TCP port to connect to when requesting the load object.
+        /// </summary>
         public readonly int LoadObjectPort;
+        /// <summary>
+        /// Specifies the list of servers to requests the load object from.
+        /// </summary>
         public readonly ImmutableArray<string> LoadServers;
 
         [OutputConstructor]

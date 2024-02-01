@@ -13,12 +13,33 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsResult
     {
+        /// <summary>
+        /// Optimize based on the total size of the content library delivered.
+        /// </summary>
         public readonly string? CatalogSize;
+        /// <summary>
+        /// Optimize based on the type of content.
+        /// </summary>
         public readonly string? ContentType;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// Optimize based on the size of the object retrieved from the origin.
+        /// </summary>
         public readonly string? ObjectSize;
+        /// <summary>
+        /// Optimize based on the content's expected popularity.
+        /// </summary>
         public readonly string? PopularityDistribution;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

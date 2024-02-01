@@ -16,37 +16,77 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionUserNetwork ext
 
     public static final GetPropertyRulesBuilderRulesV20230530CriterionUserNetwork Empty = new GetPropertyRulesBuilderRulesV20230530CriterionUserNetwork();
 
+    /**
+     * Bandwidth range in bits per second, either `1`, `57`, `257`, `1000`, `2000`, or `5000`.
+     * 
+     */
     @Import(name="bandwidthValues")
     private @Nullable List<String> bandwidthValues;
 
+    /**
+     * @return Bandwidth range in bits per second, either `1`, `57`, `257`, `1000`, `2000`, or `5000`.
+     * 
+     */
     public Optional<List<String>> bandwidthValues() {
         return Optional.ofNullable(this.bandwidthValues);
     }
 
+    /**
+     * Specifies which IP addresses determine the user&#39;s network.
+     * 
+     */
     @Import(name="checkIps")
     private @Nullable String checkIps;
 
+    /**
+     * @return Specifies which IP addresses determine the user&#39;s network.
+     * 
+     */
     public Optional<String> checkIps() {
         return Optional.ofNullable(this.checkIps);
     }
 
+    /**
+     * The type of information to match.
+     * 
+     */
     @Import(name="field")
     private @Nullable String field;
 
+    /**
+     * @return The type of information to match.
+     * 
+     */
     public Optional<String> field() {
         return Optional.ofNullable(this.field);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Matches the specified set of values when set to `IS_ONE_OF`, otherwise `IS_NOT_ONE_OF` reverses the match.
+     * 
+     */
     @Import(name="matchOperator")
     private @Nullable String matchOperator;
 
+    /**
+     * @return Matches the specified set of values when set to `IS_ONE_OF`, otherwise `IS_NOT_ONE_OF` reverses the match.
+     * 
+     */
     public Optional<String> matchOperator() {
         return Optional.ofNullable(this.matchOperator);
     }
@@ -58,30 +98,62 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionUserNetwork ext
         return Optional.ofNullable(this.networkTypeValues);
     }
 
+    /**
+     * Any set of specific networks.
+     * 
+     */
     @Import(name="networkValues")
     private @Nullable List<String> networkValues;
 
+    /**
+     * @return Any set of specific networks.
+     * 
+     */
     public Optional<List<String>> networkValues() {
         return Optional.ofNullable(this.networkValues);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * When connecting via a proxy server as determined by the `X-Forwarded-For` header, enabling this option matches the end client specified in the header. Disabling it matches the connecting client&#39;s IP address.
+     * 
+     */
     @Import(name="useOnlyFirstXForwardedForIp")
     private @Nullable Boolean useOnlyFirstXForwardedForIp;
 
+    /**
+     * @return When connecting via a proxy server as determined by the `X-Forwarded-For` header, enabling this option matches the end client specified in the header. Disabling it matches the connecting client&#39;s IP address.
+     * 
+     */
     public Optional<Boolean> useOnlyFirstXForwardedForIp() {
         return Optional.ofNullable(this.useOnlyFirstXForwardedForIp);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -119,30 +191,66 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionUserNetwork ext
             $ = new GetPropertyRulesBuilderRulesV20230530CriterionUserNetwork(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param bandwidthValues Bandwidth range in bits per second, either `1`, `57`, `257`, `1000`, `2000`, or `5000`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder bandwidthValues(@Nullable List<String> bandwidthValues) {
             $.bandwidthValues = bandwidthValues;
             return this;
         }
 
+        /**
+         * @param bandwidthValues Bandwidth range in bits per second, either `1`, `57`, `257`, `1000`, `2000`, or `5000`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder bandwidthValues(String... bandwidthValues) {
             return bandwidthValues(List.of(bandwidthValues));
         }
 
+        /**
+         * @param checkIps Specifies which IP addresses determine the user&#39;s network.
+         * 
+         * @return builder
+         * 
+         */
         public Builder checkIps(@Nullable String checkIps) {
             $.checkIps = checkIps;
             return this;
         }
 
+        /**
+         * @param field The type of information to match.
+         * 
+         * @return builder
+         * 
+         */
         public Builder field(@Nullable String field) {
             $.field = field;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param matchOperator Matches the specified set of values when set to `IS_ONE_OF`, otherwise `IS_NOT_ONE_OF` reverses the match.
+         * 
+         * @return builder
+         * 
+         */
         public Builder matchOperator(@Nullable String matchOperator) {
             $.matchOperator = matchOperator;
             return this;
@@ -157,25 +265,55 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionUserNetwork ext
             return networkTypeValues(List.of(networkTypeValues));
         }
 
+        /**
+         * @param networkValues Any set of specific networks.
+         * 
+         * @return builder
+         * 
+         */
         public Builder networkValues(@Nullable List<String> networkValues) {
             $.networkValues = networkValues;
             return this;
         }
 
+        /**
+         * @param networkValues Any set of specific networks.
+         * 
+         * @return builder
+         * 
+         */
         public Builder networkValues(String... networkValues) {
             return networkValues(List.of(networkValues));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param useOnlyFirstXForwardedForIp When connecting via a proxy server as determined by the `X-Forwarded-For` header, enabling this option matches the end client specified in the header. Disabling it matches the connecting client&#39;s IP address.
+         * 
+         * @return builder
+         * 
+         */
         public Builder useOnlyFirstXForwardedForIp(@Nullable Boolean useOnlyFirstXForwardedForIp) {
             $.useOnlyFirstXForwardedForIp = useOnlyFirstXForwardedForIp;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

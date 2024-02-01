@@ -14,6 +14,10 @@ namespace Pulumi.Akamai.Inputs
     {
         [Input("points", required: true)]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShapePointInputArgs>? _points;
+
+        /// <summary>
+        /// Series of PointShapeType objects. The last and first points connect to close the shape automatically.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShapePointInputArgs> Points
         {
             get => _points ?? (_points = new InputList<Inputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShapePointInputArgs>());

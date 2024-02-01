@@ -13,7 +13,13 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorLimitBitRateThresholdTableResult
     {
+        /// <summary>
+        /// The unit of measurement, either `SECONDS` of the elapsed download time, or `BYTES` of the file size.
+        /// </summary>
         public readonly string? ThresholdUnit;
+        /// <summary>
+        /// The numeric indicator of the minimum file size or elapsed download time.
+        /// </summary>
         public readonly int? ThresholdValue;
 
         [OutputConstructor]

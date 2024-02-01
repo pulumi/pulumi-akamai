@@ -12,41 +12,113 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorDcp {
+    /**
+     * @return When enabled, you don&#39;t need to pass the JWT token with the mqtt request, and JWT validation is skipped.
+     * 
+     */
     private @Nullable Boolean anonymous;
+    /**
+     * @return Enables IoT Edge Connect.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return When enabled, you can publish and receive messages over a secured HTTP connection on port 443.
+     * 
+     */
     private @Nullable Boolean gwenabled;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Specifies the globally reserved name for a specific configuration. It includes authorization rules over publishing and subscribing to logical categories known as `topics`. This provides a root path for all topics defined within a namespace configuration.  You can use the `IoT Edge Connect API` to configure access control lists for your namespace configuration.
+     * 
+     */
     private @Nullable String namespaceId;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return When enabled, you can publish and receive messages over a secured MQTT connection on port 8883.
+     * 
+     */
     private @Nullable Boolean tlsenabled;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
+    /**
+     * @return When enabled, you can publish and receive messages through a secured MQTT connection over WebSockets on port 443.
+     * 
+     */
     private @Nullable Boolean wsenabled;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorDcp() {}
+    /**
+     * @return When enabled, you don&#39;t need to pass the JWT token with the mqtt request, and JWT validation is skipped.
+     * 
+     */
     public Optional<Boolean> anonymous() {
         return Optional.ofNullable(this.anonymous);
     }
+    /**
+     * @return Enables IoT Edge Connect.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return When enabled, you can publish and receive messages over a secured HTTP connection on port 443.
+     * 
+     */
     public Optional<Boolean> gwenabled() {
         return Optional.ofNullable(this.gwenabled);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Specifies the globally reserved name for a specific configuration. It includes authorization rules over publishing and subscribing to logical categories known as `topics`. This provides a root path for all topics defined within a namespace configuration.  You can use the `IoT Edge Connect API` to configure access control lists for your namespace configuration.
+     * 
+     */
     public Optional<String> namespaceId() {
         return Optional.ofNullable(this.namespaceId);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return When enabled, you can publish and receive messages over a secured MQTT connection on port 8883.
+     * 
+     */
     public Optional<Boolean> tlsenabled() {
         return Optional.ofNullable(this.tlsenabled);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
+    /**
+     * @return When enabled, you can publish and receive messages through a secured MQTT connection over WebSockets on port 443.
+     * 
+     */
     public Optional<Boolean> wsenabled() {
         return Optional.ofNullable(this.wsenabled);
     }

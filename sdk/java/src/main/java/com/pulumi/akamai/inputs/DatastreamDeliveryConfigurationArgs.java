@@ -17,37 +17,77 @@ public final class DatastreamDeliveryConfigurationArgs extends com.pulumi.resour
 
     public static final DatastreamDeliveryConfigurationArgs Empty = new DatastreamDeliveryConfigurationArgs();
 
+    /**
+     * A delimiter that you use to separate data set fields in log lines
+     * 
+     */
     @Import(name="fieldDelimiter")
     private @Nullable Output<String> fieldDelimiter;
 
+    /**
+     * @return A delimiter that you use to separate data set fields in log lines
+     * 
+     */
     public Optional<Output<String>> fieldDelimiter() {
         return Optional.ofNullable(this.fieldDelimiter);
     }
 
+    /**
+     * The format in which logs will be received
+     * 
+     */
     @Import(name="format", required=true)
     private Output<String> format;
 
+    /**
+     * @return The format in which logs will be received
+     * 
+     */
     public Output<String> format() {
         return this.format;
     }
 
+    /**
+     * The frequency of collecting logs from each uploader and sending these logs to a destination
+     * 
+     */
     @Import(name="frequency", required=true)
     private Output<DatastreamDeliveryConfigurationFrequencyArgs> frequency;
 
+    /**
+     * @return The frequency of collecting logs from each uploader and sending these logs to a destination
+     * 
+     */
     public Output<DatastreamDeliveryConfigurationFrequencyArgs> frequency() {
         return this.frequency;
     }
 
+    /**
+     * The prefix of the log file that will be send to a destination
+     * 
+     */
     @Import(name="uploadFilePrefix")
     private @Nullable Output<String> uploadFilePrefix;
 
+    /**
+     * @return The prefix of the log file that will be send to a destination
+     * 
+     */
     public Optional<Output<String>> uploadFilePrefix() {
         return Optional.ofNullable(this.uploadFilePrefix);
     }
 
+    /**
+     * The suffix of the log file that will be send to a destination
+     * 
+     */
     @Import(name="uploadFileSuffix")
     private @Nullable Output<String> uploadFileSuffix;
 
+    /**
+     * @return The suffix of the log file that will be send to a destination
+     * 
+     */
     public Optional<Output<String>> uploadFileSuffix() {
         return Optional.ofNullable(this.uploadFileSuffix);
     }
@@ -80,47 +120,107 @@ public final class DatastreamDeliveryConfigurationArgs extends com.pulumi.resour
             $ = new DatastreamDeliveryConfigurationArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param fieldDelimiter A delimiter that you use to separate data set fields in log lines
+         * 
+         * @return builder
+         * 
+         */
         public Builder fieldDelimiter(@Nullable Output<String> fieldDelimiter) {
             $.fieldDelimiter = fieldDelimiter;
             return this;
         }
 
+        /**
+         * @param fieldDelimiter A delimiter that you use to separate data set fields in log lines
+         * 
+         * @return builder
+         * 
+         */
         public Builder fieldDelimiter(String fieldDelimiter) {
             return fieldDelimiter(Output.of(fieldDelimiter));
         }
 
+        /**
+         * @param format The format in which logs will be received
+         * 
+         * @return builder
+         * 
+         */
         public Builder format(Output<String> format) {
             $.format = format;
             return this;
         }
 
+        /**
+         * @param format The format in which logs will be received
+         * 
+         * @return builder
+         * 
+         */
         public Builder format(String format) {
             return format(Output.of(format));
         }
 
+        /**
+         * @param frequency The frequency of collecting logs from each uploader and sending these logs to a destination
+         * 
+         * @return builder
+         * 
+         */
         public Builder frequency(Output<DatastreamDeliveryConfigurationFrequencyArgs> frequency) {
             $.frequency = frequency;
             return this;
         }
 
+        /**
+         * @param frequency The frequency of collecting logs from each uploader and sending these logs to a destination
+         * 
+         * @return builder
+         * 
+         */
         public Builder frequency(DatastreamDeliveryConfigurationFrequencyArgs frequency) {
             return frequency(Output.of(frequency));
         }
 
+        /**
+         * @param uploadFilePrefix The prefix of the log file that will be send to a destination
+         * 
+         * @return builder
+         * 
+         */
         public Builder uploadFilePrefix(@Nullable Output<String> uploadFilePrefix) {
             $.uploadFilePrefix = uploadFilePrefix;
             return this;
         }
 
+        /**
+         * @param uploadFilePrefix The prefix of the log file that will be send to a destination
+         * 
+         * @return builder
+         * 
+         */
         public Builder uploadFilePrefix(String uploadFilePrefix) {
             return uploadFilePrefix(Output.of(uploadFilePrefix));
         }
 
+        /**
+         * @param uploadFileSuffix The suffix of the log file that will be send to a destination
+         * 
+         * @return builder
+         * 
+         */
         public Builder uploadFileSuffix(@Nullable Output<String> uploadFileSuffix) {
             $.uploadFileSuffix = uploadFileSuffix;
             return this;
         }
 
+        /**
+         * @param uploadFileSuffix The suffix of the log file that will be send to a destination
+         * 
+         * @return builder
+         * 
+         */
         public Builder uploadFileSuffix(String uploadFileSuffix) {
             return uploadFileSuffix(Output.of(uploadFileSuffix));
         }

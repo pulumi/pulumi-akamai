@@ -14,29 +14,69 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyVariable {
+    /**
+     * @return The default value of the variable if no query parameter is provided. It needs to be one of the `enumOptions` if any are provided.
+     * 
+     */
     private String defaultValue;
     private @Nullable List<GetImagingPolicyImagePolicyVariableEnumOption> enumOptions;
+    /**
+     * @return The name of the variable, also available as the query parameter name to set the variable&#39;s value dynamically. Use up to 50 alphanumeric characters.
+     * 
+     */
     private String name;
+    /**
+     * @return A postfix added to the value provided for the variable, or to the default value.
+     * 
+     */
     private @Nullable String postfix;
+    /**
+     * @return A prefix added to the value provided for the variable, or to the default value.
+     * 
+     */
     private @Nullable String prefix;
+    /**
+     * @return The type of value for the variable.
+     * 
+     */
     private String type;
 
     private GetImagingPolicyImagePolicyVariable() {}
+    /**
+     * @return The default value of the variable if no query parameter is provided. It needs to be one of the `enumOptions` if any are provided.
+     * 
+     */
     public String defaultValue() {
         return this.defaultValue;
     }
     public List<GetImagingPolicyImagePolicyVariableEnumOption> enumOptions() {
         return this.enumOptions == null ? List.of() : this.enumOptions;
     }
+    /**
+     * @return The name of the variable, also available as the query parameter name to set the variable&#39;s value dynamically. Use up to 50 alphanumeric characters.
+     * 
+     */
     public String name() {
         return this.name;
     }
+    /**
+     * @return A postfix added to the value provided for the variable, or to the default value.
+     * 
+     */
     public Optional<String> postfix() {
         return Optional.ofNullable(this.postfix);
     }
+    /**
+     * @return A prefix added to the value provided for the variable, or to the default value.
+     * 
+     */
     public Optional<String> prefix() {
         return Optional.ofNullable(this.prefix);
     }
+    /**
+     * @return The type of value for the variable.
+     * 
+     */
     public String type() {
         return this.type;
     }

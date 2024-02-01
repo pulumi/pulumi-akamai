@@ -18,51 +18,107 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorEdgeRedirectorAr
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorEdgeRedirectorArgs Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorEdgeRedirectorArgs();
 
+    /**
+     * Specifies the Cloudlet policy as an object.
+     * 
+     */
     @Import(name="cloudletPolicy")
     private @Nullable Output<GetPropertyRulesBuilderRulesV20230105BehaviorEdgeRedirectorCloudletPolicyArgs> cloudletPolicy;
 
+    /**
+     * @return Specifies the Cloudlet policy as an object.
+     * 
+     */
     public Optional<Output<GetPropertyRulesBuilderRulesV20230105BehaviorEdgeRedirectorCloudletPolicyArgs>> cloudletPolicy() {
         return Optional.ofNullable(this.cloudletPolicy);
     }
 
+    /**
+     * Identifies the Cloudlet shared policy to use with this behavior. Use the `Cloudlets API` to list available shared policies.
+     * 
+     */
     @Import(name="cloudletSharedPolicy")
     private @Nullable Output<Integer> cloudletSharedPolicy;
 
+    /**
+     * @return Identifies the Cloudlet shared policy to use with this behavior. Use the `Cloudlets API` to list available shared policies.
+     * 
+     */
     public Optional<Output<Integer>> cloudletSharedPolicy() {
         return Optional.ofNullable(this.cloudletSharedPolicy);
     }
 
+    /**
+     * Enables the Edge Redirector Cloudlet.
+     * 
+     */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
+    /**
+     * @return Enables the Edge Redirector Cloudlet.
+     * 
+     */
     public Optional<Output<Boolean>> enabled() {
         return Optional.ofNullable(this.enabled);
     }
 
+    /**
+     * Whether you want to apply the Cloudlet shared policy to an unlimited number of properties within your account. Learn more about shared policies and how to create them in `Cloudlets Policy Manager`.
+     * 
+     */
     @Import(name="isSharedPolicy")
     private @Nullable Output<Boolean> isSharedPolicy;
 
+    /**
+     * @return Whether you want to apply the Cloudlet shared policy to an unlimited number of properties within your account. Learn more about shared policies and how to create them in `Cloudlets Policy Manager`.
+     * 
+     */
     public Optional<Output<Boolean>> isSharedPolicy() {
         return Optional.ofNullable(this.isSharedPolicy);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -97,65 +153,149 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorEdgeRedirectorAr
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorEdgeRedirectorArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param cloudletPolicy Specifies the Cloudlet policy as an object.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cloudletPolicy(@Nullable Output<GetPropertyRulesBuilderRulesV20230105BehaviorEdgeRedirectorCloudletPolicyArgs> cloudletPolicy) {
             $.cloudletPolicy = cloudletPolicy;
             return this;
         }
 
+        /**
+         * @param cloudletPolicy Specifies the Cloudlet policy as an object.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cloudletPolicy(GetPropertyRulesBuilderRulesV20230105BehaviorEdgeRedirectorCloudletPolicyArgs cloudletPolicy) {
             return cloudletPolicy(Output.of(cloudletPolicy));
         }
 
+        /**
+         * @param cloudletSharedPolicy Identifies the Cloudlet shared policy to use with this behavior. Use the `Cloudlets API` to list available shared policies.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cloudletSharedPolicy(@Nullable Output<Integer> cloudletSharedPolicy) {
             $.cloudletSharedPolicy = cloudletSharedPolicy;
             return this;
         }
 
+        /**
+         * @param cloudletSharedPolicy Identifies the Cloudlet shared policy to use with this behavior. Use the `Cloudlets API` to list available shared policies.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cloudletSharedPolicy(Integer cloudletSharedPolicy) {
             return cloudletSharedPolicy(Output.of(cloudletSharedPolicy));
         }
 
+        /**
+         * @param enabled Enables the Edge Redirector Cloudlet.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(@Nullable Output<Boolean> enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param enabled Enables the Edge Redirector Cloudlet.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(Boolean enabled) {
             return enabled(Output.of(enabled));
         }
 
+        /**
+         * @param isSharedPolicy Whether you want to apply the Cloudlet shared policy to an unlimited number of properties within your account. Learn more about shared policies and how to create them in `Cloudlets Policy Manager`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder isSharedPolicy(@Nullable Output<Boolean> isSharedPolicy) {
             $.isSharedPolicy = isSharedPolicy;
             return this;
         }
 
+        /**
+         * @param isSharedPolicy Whether you want to apply the Cloudlet shared policy to an unlimited number of properties within your account. Learn more about shared policies and how to create them in `Cloudlets Policy Manager`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder isSharedPolicy(Boolean isSharedPolicy) {
             return isSharedPolicy(Output.of(isSharedPolicy));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

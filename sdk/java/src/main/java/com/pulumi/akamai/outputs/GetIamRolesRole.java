@@ -10,37 +10,101 @@ import java.util.Objects;
 
 @CustomType
 public final class GetIamRolesRole {
+    /**
+     * @return The user name or email of the person who created the role
+     * 
+     */
     private String createdBy;
+    /**
+     * @return The role&#39;s description
+     * 
+     */
     private String description;
+    /**
+     * @return The username or email of the last person to edit the role
+     * 
+     */
     private String modifiedBy;
+    /**
+     * @return The role&#39;s name
+     * 
+     */
     private String name;
+    /**
+     * @return A unique identifier for each role
+     * 
+     */
     private String roleId;
+    /**
+     * @return ISO 8601 timestamp indicating when the role was originally created
+     * 
+     */
     private String timeCreated;
+    /**
+     * @return ISO 8601 timestamp indicating when the role was last updated
+     * 
+     */
     private String timeModified;
+    /**
+     * @return Whether the role is a standard role or a custom role
+     * 
+     */
     private String type;
 
     private GetIamRolesRole() {}
+    /**
+     * @return The user name or email of the person who created the role
+     * 
+     */
     public String createdBy() {
         return this.createdBy;
     }
+    /**
+     * @return The role&#39;s description
+     * 
+     */
     public String description() {
         return this.description;
     }
+    /**
+     * @return The username or email of the last person to edit the role
+     * 
+     */
     public String modifiedBy() {
         return this.modifiedBy;
     }
+    /**
+     * @return The role&#39;s name
+     * 
+     */
     public String name() {
         return this.name;
     }
+    /**
+     * @return A unique identifier for each role
+     * 
+     */
     public String roleId() {
         return this.roleId;
     }
+    /**
+     * @return ISO 8601 timestamp indicating when the role was originally created
+     * 
+     */
     public String timeCreated() {
         return this.timeCreated;
     }
+    /**
+     * @return ISO 8601 timestamp indicating when the role was last updated
+     * 
+     */
     public String timeModified() {
         return this.timeModified;
     }
+    /**
+     * @return Whether the role is a standard role or a custom role
+     * 
+     */
     public String type() {
         return this.type;
     }

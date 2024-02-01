@@ -14,6 +14,10 @@ namespace Pulumi.Akamai.Inputs
     {
         [Input("boxImages")]
         private List<Inputs.GetImagingPolicyImagePolicyTransformationAppendImageBoxImageArgs>? _boxImages;
+
+        /// <summary>
+        /// A rectangular box, with a specified color and applied transformation.
+        /// </summary>
         public List<Inputs.GetImagingPolicyImagePolicyTransformationAppendImageBoxImageArgs> BoxImages
         {
             get => _boxImages ?? (_boxImages = new List<Inputs.GetImagingPolicyImagePolicyTransformationAppendImageBoxImageArgs>());
@@ -22,6 +26,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("circleImages")]
         private List<Inputs.GetImagingPolicyImagePolicyTransformationAppendImageCircleImageArgs>? _circleImages;
+
+        /// <summary>
+        /// A rectangular box, with a specified color and applied transformation.
+        /// </summary>
         public List<Inputs.GetImagingPolicyImagePolicyTransformationAppendImageCircleImageArgs> CircleImages
         {
             get => _circleImages ?? (_circleImages = new List<Inputs.GetImagingPolicyImagePolicyTransformationAppendImageCircleImageArgs>());
@@ -30,6 +38,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("textImages")]
         private List<Inputs.GetImagingPolicyImagePolicyTransformationAppendImageTextImageArgs>? _textImages;
+
+        /// <summary>
+        /// A snippet of text. Defines font family and size, fill color, and outline stroke width and color.
+        /// </summary>
         public List<Inputs.GetImagingPolicyImagePolicyTransformationAppendImageTextImageArgs> TextImages
         {
             get => _textImages ?? (_textImages = new List<Inputs.GetImagingPolicyImagePolicyTransformationAppendImageTextImageArgs>());
@@ -38,6 +50,10 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("urlImages")]
         private List<Inputs.GetImagingPolicyImagePolicyTransformationAppendImageUrlImageArgs>? _urlImages;
+
+        /// <summary>
+        /// An image loaded from a URL.
+        /// </summary>
         public List<Inputs.GetImagingPolicyImagePolicyTransformationAppendImageUrlImageArgs> UrlImages
         {
             get => _urlImages ?? (_urlImages = new List<Inputs.GetImagingPolicyImagePolicyTransformationAppendImageUrlImageArgs>());

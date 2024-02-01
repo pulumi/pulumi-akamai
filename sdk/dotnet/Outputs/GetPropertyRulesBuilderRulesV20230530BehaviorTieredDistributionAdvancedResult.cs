@@ -14,12 +14,27 @@ namespace Pulumi.Akamai.Outputs
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorTieredDistributionAdvancedResult
     {
         public readonly bool? Allowall;
+        /// <summary>
+        /// When enabled, activates tiered distribution.
+        /// </summary>
         public readonly bool? Enabled;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
         public readonly string? Method;
         public readonly string? Policy;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// Optionally map the tiered parent server's location close to your origin: `CHEU2` for Europe; `CHAUS` for Australia; `CHAPAC` for China and the Asian Pacific area; `CHWUS2`, `CHCUS2`, and `CHEUS2` for different parts of the United States. Choose `CH` or `CH2` for a more global map. A narrower local map minimizes the origin server's load, and increases the likelihood the requested object is cached. A wider global map reduces end-user latency, but decreases the likelihood the requested object is in any given parent server's cache.  This option cannot apply if the property is marked as secure. See `Secure property requirements` for guidance.
+        /// </summary>
         public readonly string? TieredDistributionMap;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

@@ -17,30 +17,62 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchVa
 
     public static final GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs Empty = new GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs();
 
+    /**
+     * Set to true if the entries for the value property should be evaluated based on case sensitivity
+     * 
+     */
     @Import(name="valueCaseSensitive")
     private @Nullable Output<Boolean> valueCaseSensitive;
 
+    /**
+     * @return Set to true if the entries for the value property should be evaluated based on case sensitivity
+     * 
+     */
     public Optional<Output<Boolean>> valueCaseSensitive() {
         return Optional.ofNullable(this.valueCaseSensitive);
     }
 
+    /**
+     * Set to true if provided value should be compared in escaped form
+     * 
+     */
     @Import(name="valueEscaped")
     private @Nullable Output<Boolean> valueEscaped;
 
+    /**
+     * @return Set to true if provided value should be compared in escaped form
+     * 
+     */
     public Optional<Output<Boolean>> valueEscaped() {
         return Optional.ofNullable(this.valueEscaped);
     }
 
+    /**
+     * Set to true if the entries for the value property include wildcards
+     * 
+     */
     @Import(name="valueHasWildcard")
     private @Nullable Output<Boolean> valueHasWildcard;
 
+    /**
+     * @return Set to true if the entries for the value property include wildcards
+     * 
+     */
     public Optional<Output<Boolean>> valueHasWildcard() {
         return Optional.ofNullable(this.valueHasWildcard);
     }
 
+    /**
+     * The value attributes in the incoming request to match on
+     * 
+     */
     @Import(name="values")
     private @Nullable Output<List<String>> values;
 
+    /**
+     * @return The value attributes in the incoming request to match on
+     * 
+     */
     public Optional<Output<List<String>>> values() {
         return Optional.ofNullable(this.values);
     }
@@ -72,42 +104,96 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchVa
             $ = new GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param valueCaseSensitive Set to true if the entries for the value property should be evaluated based on case sensitivity
+         * 
+         * @return builder
+         * 
+         */
         public Builder valueCaseSensitive(@Nullable Output<Boolean> valueCaseSensitive) {
             $.valueCaseSensitive = valueCaseSensitive;
             return this;
         }
 
+        /**
+         * @param valueCaseSensitive Set to true if the entries for the value property should be evaluated based on case sensitivity
+         * 
+         * @return builder
+         * 
+         */
         public Builder valueCaseSensitive(Boolean valueCaseSensitive) {
             return valueCaseSensitive(Output.of(valueCaseSensitive));
         }
 
+        /**
+         * @param valueEscaped Set to true if provided value should be compared in escaped form
+         * 
+         * @return builder
+         * 
+         */
         public Builder valueEscaped(@Nullable Output<Boolean> valueEscaped) {
             $.valueEscaped = valueEscaped;
             return this;
         }
 
+        /**
+         * @param valueEscaped Set to true if provided value should be compared in escaped form
+         * 
+         * @return builder
+         * 
+         */
         public Builder valueEscaped(Boolean valueEscaped) {
             return valueEscaped(Output.of(valueEscaped));
         }
 
+        /**
+         * @param valueHasWildcard Set to true if the entries for the value property include wildcards
+         * 
+         * @return builder
+         * 
+         */
         public Builder valueHasWildcard(@Nullable Output<Boolean> valueHasWildcard) {
             $.valueHasWildcard = valueHasWildcard;
             return this;
         }
 
+        /**
+         * @param valueHasWildcard Set to true if the entries for the value property include wildcards
+         * 
+         * @return builder
+         * 
+         */
         public Builder valueHasWildcard(Boolean valueHasWildcard) {
             return valueHasWildcard(Output.of(valueHasWildcard));
         }
 
+        /**
+         * @param values The value attributes in the incoming request to match on
+         * 
+         * @return builder
+         * 
+         */
         public Builder values(@Nullable Output<List<String>> values) {
             $.values = values;
             return this;
         }
 
+        /**
+         * @param values The value attributes in the incoming request to match on
+         * 
+         * @return builder
+         * 
+         */
         public Builder values(List<String> values) {
             return values(Output.of(values));
         }
 
+        /**
+         * @param values The value attributes in the incoming request to match on
+         * 
+         * @return builder
+         * 
+         */
         public Builder values(String... values) {
             return values(List.of(values));
         }

@@ -18,177 +18,377 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteri
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristicsArgs Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristicsArgs();
 
+    /**
+     * Enables secure use of access keys defined in Cloud Access Manager. Access keys store encrypted authentication details required to sign requests to cloud origins. If you disable this option, you&#39;ll need to store the authentication details unencrypted.
+     * 
+     */
     @Import(name="accessKeyEncryptedStorage")
     private @Nullable Output<Boolean> accessKeyEncryptedStorage;
 
+    /**
+     * @return Enables secure use of access keys defined in Cloud Access Manager. Access keys store encrypted authentication details required to sign requests to cloud origins. If you disable this option, you&#39;ll need to store the authentication details unencrypted.
+     * 
+     */
     public Optional<Output<Boolean>> accessKeyEncryptedStorage() {
         return Optional.ofNullable(this.accessKeyEncryptedStorage);
     }
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     @Import(name="adcTitle")
     private @Nullable Output<String> adcTitle;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<Output<String>> adcTitle() {
         return Optional.ofNullable(this.adcTitle);
     }
 
+    /**
+     * Specifies the authentication method.
+     * 
+     */
     @Import(name="authenticationMethod")
     private @Nullable Output<String> authenticationMethod;
 
+    /**
+     * @return Specifies the authentication method.
+     * 
+     */
     public Optional<Output<String>> authenticationMethod() {
         return Optional.ofNullable(this.authenticationMethod);
     }
 
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     @Import(name="authenticationMethodTitle")
     private @Nullable Output<String> authenticationMethodTitle;
 
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<Output<String>> authenticationMethodTitle() {
         return Optional.ofNullable(this.authenticationMethodTitle);
     }
 
+    /**
+     * Specifies active access key ID linked to your AWS account.
+     * 
+     */
     @Import(name="awsAccessKeyId")
     private @Nullable Output<String> awsAccessKeyId;
 
+    /**
+     * @return Specifies active access key ID linked to your AWS account.
+     * 
+     */
     public Optional<Output<String>> awsAccessKeyId() {
         return Optional.ofNullable(this.awsAccessKeyId);
     }
 
+    /**
+     * Identifies the unique `awsAccessKeyVersionGuid` access key `created` in Cloud Access Manager to sign your requests to AWS S3.
+     * 
+     */
     @Import(name="awsAccessKeyVersionGuid")
     private @Nullable Output<String> awsAccessKeyVersionGuid;
 
+    /**
+     * @return Identifies the unique `awsAccessKeyVersionGuid` access key `created` in Cloud Access Manager to sign your requests to AWS S3.
+     * 
+     */
     public Optional<Output<String>> awsAccessKeyVersionGuid() {
         return Optional.ofNullable(this.awsAccessKeyVersionGuid);
     }
 
+    /**
+     * This specifies the AWS hostname, without `http://` or `https://` prefixes. If you leave this option empty, it inherits the hostname from the `origin` behavior.
+     * 
+     */
     @Import(name="awsHost")
     private @Nullable Output<String> awsHost;
 
+    /**
+     * @return This specifies the AWS hostname, without `http://` or `https://` prefixes. If you leave this option empty, it inherits the hostname from the `origin` behavior.
+     * 
+     */
     public Optional<Output<String>> awsHost() {
         return Optional.ofNullable(this.awsHost);
     }
 
+    /**
+     * This specifies the AWS region code of the location where your bucket resides.
+     * 
+     */
     @Import(name="awsRegion")
     private @Nullable Output<String> awsRegion;
 
+    /**
+     * @return This specifies the AWS region code of the location where your bucket resides.
+     * 
+     */
     public Optional<Output<String>> awsRegion() {
         return Optional.ofNullable(this.awsRegion);
     }
 
+    /**
+     * Specifies the secret linked to the access key identifier that you want to use to sign requests to AWS.
+     * 
+     */
     @Import(name="awsSecretAccessKey")
     private @Nullable Output<String> awsSecretAccessKey;
 
+    /**
+     * @return Specifies the secret linked to the access key identifier that you want to use to sign requests to AWS.
+     * 
+     */
     public Optional<Output<String>> awsSecretAccessKey() {
         return Optional.ofNullable(this.awsSecretAccessKey);
     }
 
+    /**
+     * This specifies the subdomain of your AWS service. It precedes `amazonaws.com` or the region code in the AWS hostname. For example, `s3.amazonaws.com`.
+     * 
+     */
     @Import(name="awsService")
     private @Nullable Output<String> awsService;
 
+    /**
+     * @return This specifies the subdomain of your AWS service. It precedes `amazonaws.com` or the region code in the AWS hostname. For example, `s3.amazonaws.com`.
+     * 
+     */
     public Optional<Output<String>> awsService() {
         return Optional.ofNullable(this.awsService);
     }
 
+    /**
+     * Specifies the origin&#39;s geographic region.
+     * 
+     */
     @Import(name="country")
     private @Nullable Output<String> country;
 
+    /**
+     * @return Specifies the origin&#39;s geographic region.
+     * 
+     */
     public Optional<Output<String>> country() {
         return Optional.ofNullable(this.country);
     }
 
+    /**
+     * Specifies the data to be encrypted as a series of enumerated variable names. See `Built-in system variables` for guidance on each.
+     * 
+     */
     @Import(name="customSignStrings")
     private @Nullable Output<List<String>> customSignStrings;
 
+    /**
+     * @return Specifies the data to be encrypted as a series of enumerated variable names. See `Built-in system variables` for guidance on each.
+     * 
+     */
     public Optional<Output<List<String>>> customSignStrings() {
         return Optional.ofNullable(this.customSignStrings);
     }
 
+    /**
+     * Provides a region used by Akamai Direct Connection.
+     * 
+     */
     @Import(name="directConnectGeo")
     private @Nullable Output<String> directConnectGeo;
 
+    /**
+     * @return Provides a region used by Akamai Direct Connection.
+     * 
+     */
     public Optional<Output<String>> directConnectGeo() {
         return Optional.ofNullable(this.directConnectGeo);
     }
 
+    /**
+     * Specifies the version of the encryption algorithm, an integer from `1` to `5`.
+     * 
+     */
     @Import(name="encodingVersion")
     private @Nullable Output<Integer> encodingVersion;
 
+    /**
+     * @return Specifies the version of the encryption algorithm, an integer from `1` to `5`.
+     * 
+     */
     public Optional<Output<Integer>> encodingVersion() {
         return Optional.ofNullable(this.encodingVersion);
     }
 
+    /**
+     * Identifies the unique `gcsAccessKeyVersionGuid` access key `created` in Cloud Access Manager to sign your requests to Google Cloud Storage in interoperability mode.
+     * 
+     */
     @Import(name="gcsAccessKeyVersionGuid")
     private @Nullable Output<String> gcsAccessKeyVersionGuid;
 
+    /**
+     * @return Identifies the unique `gcsAccessKeyVersionGuid` access key `created` in Cloud Access Manager to sign your requests to Google Cloud Storage in interoperability mode.
+     * 
+     */
     public Optional<Output<String>> gcsAccessKeyVersionGuid() {
         return Optional.ofNullable(this.gcsAccessKeyVersionGuid);
     }
 
+    /**
+     * Specifies the active access ID linked to your Google account.
+     * 
+     */
     @Import(name="gcsHmacKeyAccessId")
     private @Nullable Output<String> gcsHmacKeyAccessId;
 
+    /**
+     * @return Specifies the active access ID linked to your Google account.
+     * 
+     */
     public Optional<Output<String>> gcsHmacKeyAccessId() {
         return Optional.ofNullable(this.gcsHmacKeyAccessId);
     }
 
+    /**
+     * Specifies the secret linked to the access ID that you want to use to sign requests to Google Cloud Storage.
+     * 
+     */
     @Import(name="gcsHmacKeySecret")
     private @Nullable Output<String> gcsHmacKeySecret;
 
+    /**
+     * @return Specifies the secret linked to the access ID that you want to use to sign requests to Google Cloud Storage.
+     * 
+     */
     public Optional<Output<String>> gcsHmacKeySecret() {
         return Optional.ofNullable(this.gcsHmacKeySecret);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Specifies the access key provided by the hosting service.
+     * 
+     */
     @Import(name="mslkey")
     private @Nullable Output<String> mslkey;
 
+    /**
+     * @return Specifies the access key provided by the hosting service.
+     * 
+     */
     public Optional<Output<String>> mslkey() {
         return Optional.ofNullable(this.mslkey);
     }
 
+    /**
+     * Specifies the origin name provided by the hosting service.
+     * 
+     */
     @Import(name="mslname")
     private @Nullable Output<String> mslname;
 
+    /**
+     * @return Specifies the origin name provided by the hosting service.
+     * 
+     */
     public Optional<Output<String>> mslname() {
         return Optional.ofNullable(this.mslname);
     }
 
+    /**
+     * Specifies the nonce.
+     * 
+     */
     @Import(name="nonce")
     private @Nullable Output<String> nonce;
 
+    /**
+     * @return Specifies the nonce.
+     * 
+     */
     public Optional<Output<String>> nonce() {
         return Optional.ofNullable(this.nonce);
     }
 
+    /**
+     * Specifies the shared secret key.
+     * 
+     */
     @Import(name="secretKey")
     private @Nullable Output<String> secretKey;
 
+    /**
+     * @return Specifies the shared secret key.
+     * 
+     */
     public Optional<Output<String>> secretKey() {
         return Optional.ofNullable(this.secretKey);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * Specifies whether to customize your signed string.
+     * 
+     */
     @Import(name="useCustomSignString")
     private @Nullable Output<Boolean> useCustomSignString;
 
+    /**
+     * @return Specifies whether to customize your signed string.
+     * 
+     */
     public Optional<Output<Boolean>> useCustomSignString() {
         return Optional.ofNullable(this.useCustomSignString);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -241,231 +441,537 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteri
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristicsArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param accessKeyEncryptedStorage Enables secure use of access keys defined in Cloud Access Manager. Access keys store encrypted authentication details required to sign requests to cloud origins. If you disable this option, you&#39;ll need to store the authentication details unencrypted.
+         * 
+         * @return builder
+         * 
+         */
         public Builder accessKeyEncryptedStorage(@Nullable Output<Boolean> accessKeyEncryptedStorage) {
             $.accessKeyEncryptedStorage = accessKeyEncryptedStorage;
             return this;
         }
 
+        /**
+         * @param accessKeyEncryptedStorage Enables secure use of access keys defined in Cloud Access Manager. Access keys store encrypted authentication details required to sign requests to cloud origins. If you disable this option, you&#39;ll need to store the authentication details unencrypted.
+         * 
+         * @return builder
+         * 
+         */
         public Builder accessKeyEncryptedStorage(Boolean accessKeyEncryptedStorage) {
             return accessKeyEncryptedStorage(Output.of(accessKeyEncryptedStorage));
         }
 
+        /**
+         * @param adcTitle This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder adcTitle(@Nullable Output<String> adcTitle) {
             $.adcTitle = adcTitle;
             return this;
         }
 
+        /**
+         * @param adcTitle This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder adcTitle(String adcTitle) {
             return adcTitle(Output.of(adcTitle));
         }
 
+        /**
+         * @param authenticationMethod Specifies the authentication method.
+         * 
+         * @return builder
+         * 
+         */
         public Builder authenticationMethod(@Nullable Output<String> authenticationMethod) {
             $.authenticationMethod = authenticationMethod;
             return this;
         }
 
+        /**
+         * @param authenticationMethod Specifies the authentication method.
+         * 
+         * @return builder
+         * 
+         */
         public Builder authenticationMethod(String authenticationMethod) {
             return authenticationMethod(Output.of(authenticationMethod));
         }
 
+        /**
+         * @param authenticationMethodTitle This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder authenticationMethodTitle(@Nullable Output<String> authenticationMethodTitle) {
             $.authenticationMethodTitle = authenticationMethodTitle;
             return this;
         }
 
+        /**
+         * @param authenticationMethodTitle This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder authenticationMethodTitle(String authenticationMethodTitle) {
             return authenticationMethodTitle(Output.of(authenticationMethodTitle));
         }
 
+        /**
+         * @param awsAccessKeyId Specifies active access key ID linked to your AWS account.
+         * 
+         * @return builder
+         * 
+         */
         public Builder awsAccessKeyId(@Nullable Output<String> awsAccessKeyId) {
             $.awsAccessKeyId = awsAccessKeyId;
             return this;
         }
 
+        /**
+         * @param awsAccessKeyId Specifies active access key ID linked to your AWS account.
+         * 
+         * @return builder
+         * 
+         */
         public Builder awsAccessKeyId(String awsAccessKeyId) {
             return awsAccessKeyId(Output.of(awsAccessKeyId));
         }
 
+        /**
+         * @param awsAccessKeyVersionGuid Identifies the unique `awsAccessKeyVersionGuid` access key `created` in Cloud Access Manager to sign your requests to AWS S3.
+         * 
+         * @return builder
+         * 
+         */
         public Builder awsAccessKeyVersionGuid(@Nullable Output<String> awsAccessKeyVersionGuid) {
             $.awsAccessKeyVersionGuid = awsAccessKeyVersionGuid;
             return this;
         }
 
+        /**
+         * @param awsAccessKeyVersionGuid Identifies the unique `awsAccessKeyVersionGuid` access key `created` in Cloud Access Manager to sign your requests to AWS S3.
+         * 
+         * @return builder
+         * 
+         */
         public Builder awsAccessKeyVersionGuid(String awsAccessKeyVersionGuid) {
             return awsAccessKeyVersionGuid(Output.of(awsAccessKeyVersionGuid));
         }
 
+        /**
+         * @param awsHost This specifies the AWS hostname, without `http://` or `https://` prefixes. If you leave this option empty, it inherits the hostname from the `origin` behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder awsHost(@Nullable Output<String> awsHost) {
             $.awsHost = awsHost;
             return this;
         }
 
+        /**
+         * @param awsHost This specifies the AWS hostname, without `http://` or `https://` prefixes. If you leave this option empty, it inherits the hostname from the `origin` behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder awsHost(String awsHost) {
             return awsHost(Output.of(awsHost));
         }
 
+        /**
+         * @param awsRegion This specifies the AWS region code of the location where your bucket resides.
+         * 
+         * @return builder
+         * 
+         */
         public Builder awsRegion(@Nullable Output<String> awsRegion) {
             $.awsRegion = awsRegion;
             return this;
         }
 
+        /**
+         * @param awsRegion This specifies the AWS region code of the location where your bucket resides.
+         * 
+         * @return builder
+         * 
+         */
         public Builder awsRegion(String awsRegion) {
             return awsRegion(Output.of(awsRegion));
         }
 
+        /**
+         * @param awsSecretAccessKey Specifies the secret linked to the access key identifier that you want to use to sign requests to AWS.
+         * 
+         * @return builder
+         * 
+         */
         public Builder awsSecretAccessKey(@Nullable Output<String> awsSecretAccessKey) {
             $.awsSecretAccessKey = awsSecretAccessKey;
             return this;
         }
 
+        /**
+         * @param awsSecretAccessKey Specifies the secret linked to the access key identifier that you want to use to sign requests to AWS.
+         * 
+         * @return builder
+         * 
+         */
         public Builder awsSecretAccessKey(String awsSecretAccessKey) {
             return awsSecretAccessKey(Output.of(awsSecretAccessKey));
         }
 
+        /**
+         * @param awsService This specifies the subdomain of your AWS service. It precedes `amazonaws.com` or the region code in the AWS hostname. For example, `s3.amazonaws.com`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder awsService(@Nullable Output<String> awsService) {
             $.awsService = awsService;
             return this;
         }
 
+        /**
+         * @param awsService This specifies the subdomain of your AWS service. It precedes `amazonaws.com` or the region code in the AWS hostname. For example, `s3.amazonaws.com`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder awsService(String awsService) {
             return awsService(Output.of(awsService));
         }
 
+        /**
+         * @param country Specifies the origin&#39;s geographic region.
+         * 
+         * @return builder
+         * 
+         */
         public Builder country(@Nullable Output<String> country) {
             $.country = country;
             return this;
         }
 
+        /**
+         * @param country Specifies the origin&#39;s geographic region.
+         * 
+         * @return builder
+         * 
+         */
         public Builder country(String country) {
             return country(Output.of(country));
         }
 
+        /**
+         * @param customSignStrings Specifies the data to be encrypted as a series of enumerated variable names. See `Built-in system variables` for guidance on each.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customSignStrings(@Nullable Output<List<String>> customSignStrings) {
             $.customSignStrings = customSignStrings;
             return this;
         }
 
+        /**
+         * @param customSignStrings Specifies the data to be encrypted as a series of enumerated variable names. See `Built-in system variables` for guidance on each.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customSignStrings(List<String> customSignStrings) {
             return customSignStrings(Output.of(customSignStrings));
         }
 
+        /**
+         * @param customSignStrings Specifies the data to be encrypted as a series of enumerated variable names. See `Built-in system variables` for guidance on each.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customSignStrings(String... customSignStrings) {
             return customSignStrings(List.of(customSignStrings));
         }
 
+        /**
+         * @param directConnectGeo Provides a region used by Akamai Direct Connection.
+         * 
+         * @return builder
+         * 
+         */
         public Builder directConnectGeo(@Nullable Output<String> directConnectGeo) {
             $.directConnectGeo = directConnectGeo;
             return this;
         }
 
+        /**
+         * @param directConnectGeo Provides a region used by Akamai Direct Connection.
+         * 
+         * @return builder
+         * 
+         */
         public Builder directConnectGeo(String directConnectGeo) {
             return directConnectGeo(Output.of(directConnectGeo));
         }
 
+        /**
+         * @param encodingVersion Specifies the version of the encryption algorithm, an integer from `1` to `5`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder encodingVersion(@Nullable Output<Integer> encodingVersion) {
             $.encodingVersion = encodingVersion;
             return this;
         }
 
+        /**
+         * @param encodingVersion Specifies the version of the encryption algorithm, an integer from `1` to `5`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder encodingVersion(Integer encodingVersion) {
             return encodingVersion(Output.of(encodingVersion));
         }
 
+        /**
+         * @param gcsAccessKeyVersionGuid Identifies the unique `gcsAccessKeyVersionGuid` access key `created` in Cloud Access Manager to sign your requests to Google Cloud Storage in interoperability mode.
+         * 
+         * @return builder
+         * 
+         */
         public Builder gcsAccessKeyVersionGuid(@Nullable Output<String> gcsAccessKeyVersionGuid) {
             $.gcsAccessKeyVersionGuid = gcsAccessKeyVersionGuid;
             return this;
         }
 
+        /**
+         * @param gcsAccessKeyVersionGuid Identifies the unique `gcsAccessKeyVersionGuid` access key `created` in Cloud Access Manager to sign your requests to Google Cloud Storage in interoperability mode.
+         * 
+         * @return builder
+         * 
+         */
         public Builder gcsAccessKeyVersionGuid(String gcsAccessKeyVersionGuid) {
             return gcsAccessKeyVersionGuid(Output.of(gcsAccessKeyVersionGuid));
         }
 
+        /**
+         * @param gcsHmacKeyAccessId Specifies the active access ID linked to your Google account.
+         * 
+         * @return builder
+         * 
+         */
         public Builder gcsHmacKeyAccessId(@Nullable Output<String> gcsHmacKeyAccessId) {
             $.gcsHmacKeyAccessId = gcsHmacKeyAccessId;
             return this;
         }
 
+        /**
+         * @param gcsHmacKeyAccessId Specifies the active access ID linked to your Google account.
+         * 
+         * @return builder
+         * 
+         */
         public Builder gcsHmacKeyAccessId(String gcsHmacKeyAccessId) {
             return gcsHmacKeyAccessId(Output.of(gcsHmacKeyAccessId));
         }
 
+        /**
+         * @param gcsHmacKeySecret Specifies the secret linked to the access ID that you want to use to sign requests to Google Cloud Storage.
+         * 
+         * @return builder
+         * 
+         */
         public Builder gcsHmacKeySecret(@Nullable Output<String> gcsHmacKeySecret) {
             $.gcsHmacKeySecret = gcsHmacKeySecret;
             return this;
         }
 
+        /**
+         * @param gcsHmacKeySecret Specifies the secret linked to the access ID that you want to use to sign requests to Google Cloud Storage.
+         * 
+         * @return builder
+         * 
+         */
         public Builder gcsHmacKeySecret(String gcsHmacKeySecret) {
             return gcsHmacKeySecret(Output.of(gcsHmacKeySecret));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param mslkey Specifies the access key provided by the hosting service.
+         * 
+         * @return builder
+         * 
+         */
         public Builder mslkey(@Nullable Output<String> mslkey) {
             $.mslkey = mslkey;
             return this;
         }
 
+        /**
+         * @param mslkey Specifies the access key provided by the hosting service.
+         * 
+         * @return builder
+         * 
+         */
         public Builder mslkey(String mslkey) {
             return mslkey(Output.of(mslkey));
         }
 
+        /**
+         * @param mslname Specifies the origin name provided by the hosting service.
+         * 
+         * @return builder
+         * 
+         */
         public Builder mslname(@Nullable Output<String> mslname) {
             $.mslname = mslname;
             return this;
         }
 
+        /**
+         * @param mslname Specifies the origin name provided by the hosting service.
+         * 
+         * @return builder
+         * 
+         */
         public Builder mslname(String mslname) {
             return mslname(Output.of(mslname));
         }
 
+        /**
+         * @param nonce Specifies the nonce.
+         * 
+         * @return builder
+         * 
+         */
         public Builder nonce(@Nullable Output<String> nonce) {
             $.nonce = nonce;
             return this;
         }
 
+        /**
+         * @param nonce Specifies the nonce.
+         * 
+         * @return builder
+         * 
+         */
         public Builder nonce(String nonce) {
             return nonce(Output.of(nonce));
         }
 
+        /**
+         * @param secretKey Specifies the shared secret key.
+         * 
+         * @return builder
+         * 
+         */
         public Builder secretKey(@Nullable Output<String> secretKey) {
             $.secretKey = secretKey;
             return this;
         }
 
+        /**
+         * @param secretKey Specifies the shared secret key.
+         * 
+         * @return builder
+         * 
+         */
         public Builder secretKey(String secretKey) {
             return secretKey(Output.of(secretKey));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param useCustomSignString Specifies whether to customize your signed string.
+         * 
+         * @return builder
+         * 
+         */
         public Builder useCustomSignString(@Nullable Output<Boolean> useCustomSignString) {
             $.useCustomSignString = useCustomSignString;
             return this;
         }
 
+        /**
+         * @param useCustomSignString Specifies whether to customize your signed string.
+         * 
+         * @return builder
+         * 
+         */
         public Builder useCustomSignString(Boolean useCustomSignString) {
             return useCustomSignString(Output.of(useCustomSignString));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

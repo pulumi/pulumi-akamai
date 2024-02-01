@@ -14,16 +14,32 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationMaxCol
 
     public static final GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColor Empty = new GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColor();
 
+    /**
+     * The value representing the maximum number of colors to use with the source image.
+     * 
+     */
     @Import(name="colors")
     private @Nullable String colors;
 
+    /**
+     * @return The value representing the maximum number of colors to use with the source image.
+     * 
+     */
     public Optional<String> colors() {
         return Optional.ofNullable(this.colors);
     }
 
+    /**
+     * The value representing the maximum number of colors to use with the source image.
+     * 
+     */
     @Import(name="colorsVar")
     private @Nullable String colorsVar;
 
+    /**
+     * @return The value representing the maximum number of colors to use with the source image.
+     * 
+     */
     public Optional<String> colorsVar() {
         return Optional.ofNullable(this.colorsVar);
     }
@@ -53,11 +69,23 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationMaxCol
             $ = new GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColor(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param colors The value representing the maximum number of colors to use with the source image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder colors(@Nullable String colors) {
             $.colors = colors;
             return this;
         }
 
+        /**
+         * @param colorsVar The value representing the maximum number of colors to use with the source image.
+         * 
+         * @return builder
+         * 
+         */
         public Builder colorsVar(@Nullable String colorsVar) {
             $.colorsVar = colorsVar;
             return this;

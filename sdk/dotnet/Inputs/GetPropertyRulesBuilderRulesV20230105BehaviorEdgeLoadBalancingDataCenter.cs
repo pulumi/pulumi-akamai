@@ -12,41 +12,75 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingDataCenterArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// If using session persistence, this specifies the value of the cookie named in the corresponding `edgeLoadBalancingOrigin` behavior's `cookie_name` option.
+        /// </summary>
         [Input("cookieName")]
         public string? CookieName { get; set; }
 
+        /// <summary>
+        /// Provides a description for the ELB data center, for your own reference.
+        /// </summary>
         [Input("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// Allows you to specify failover rules.
+        /// </summary>
         [Input("enableFailover")]
         public bool? EnableFailover { get; set; }
 
         [Input("failoverRules")]
         private List<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingDataCenterFailoverRuleArgs>? _failoverRules;
+
+        /// <summary>
+        /// Provides up to four failover rules to apply in the specified order.
+        /// </summary>
         public List<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingDataCenterFailoverRuleArgs> FailoverRules
         {
             get => _failoverRules ?? (_failoverRules = new List<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingDataCenterFailoverRuleArgs>());
             set => _failoverRules = value;
         }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("failoverTitle")]
         public string? FailoverTitle { get; set; }
 
+        /// <summary>
+        /// Specifies the data center's hostname.
+        /// </summary>
         [Input("hostname")]
         public string? Hostname { get; set; }
 
+        /// <summary>
+        /// Specifies this data center's IP address.
+        /// </summary>
         [Input("ip")]
         public string? Ip { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public bool? Locked { get; set; }
 
+        /// <summary>
+        /// Corresponds to the `id` specified by the `edgeLoadBalancingOrigin` behavior associated with this data center.
+        /// </summary>
         [Input("originId")]
         public string? OriginId { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public string? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public string? Uuid { get; set; }
 

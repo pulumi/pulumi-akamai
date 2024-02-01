@@ -12,45 +12,125 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorAdScalerCircuitBreaker {
+    /**
+     * @return Specifies the fallback action.
+     * 
+     */
     private @Nullable String fallbackActionResponseCodeBased;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Triggers a fallback action based on the response code from the technology partner&#39;s server.
+     * 
+     */
     private @Nullable Boolean responseCodeBased;
+    /**
+     * @return Specifies the codes in the partner&#39;s response that trigger the fallback action,  either `408`, `500`, `502`, `504`, `SAME_AS_RECEIEVED`, or `SPECIFY_YOUR_OWN` for a custom code.
+     * 
+     */
     private @Nullable String responseCodes;
+    /**
+     * @return Triggers a fallback action based on the delayed response from the technology partner&#39;s server.
+     * 
+     */
     private @Nullable Boolean responseDelayBased;
+    /**
+     * @return Specifies the maximum response delay that, if exceeded, triggers the fallback action.
+     * 
+     */
     private @Nullable String responseDelayThreshold;
+    /**
+     * @return Specifies the error to include in the response to the client.
+     * 
+     */
     private @Nullable String returnErrorResponseCodeBased;
+    /**
+     * @return Defines a custom error response.
+     * 
+     */
     private @Nullable String specifyYourOwnResponseCodeBased;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorAdScalerCircuitBreaker() {}
+    /**
+     * @return Specifies the fallback action.
+     * 
+     */
     public Optional<String> fallbackActionResponseCodeBased() {
         return Optional.ofNullable(this.fallbackActionResponseCodeBased);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Triggers a fallback action based on the response code from the technology partner&#39;s server.
+     * 
+     */
     public Optional<Boolean> responseCodeBased() {
         return Optional.ofNullable(this.responseCodeBased);
     }
+    /**
+     * @return Specifies the codes in the partner&#39;s response that trigger the fallback action,  either `408`, `500`, `502`, `504`, `SAME_AS_RECEIEVED`, or `SPECIFY_YOUR_OWN` for a custom code.
+     * 
+     */
     public Optional<String> responseCodes() {
         return Optional.ofNullable(this.responseCodes);
     }
+    /**
+     * @return Triggers a fallback action based on the delayed response from the technology partner&#39;s server.
+     * 
+     */
     public Optional<Boolean> responseDelayBased() {
         return Optional.ofNullable(this.responseDelayBased);
     }
+    /**
+     * @return Specifies the maximum response delay that, if exceeded, triggers the fallback action.
+     * 
+     */
     public Optional<String> responseDelayThreshold() {
         return Optional.ofNullable(this.responseDelayThreshold);
     }
+    /**
+     * @return Specifies the error to include in the response to the client.
+     * 
+     */
     public Optional<String> returnErrorResponseCodeBased() {
         return Optional.ofNullable(this.returnErrorResponseCodeBased);
     }
+    /**
+     * @return Defines a custom error response.
+     * 
+     */
     public Optional<String> specifyYourOwnResponseCodeBased() {
         return Optional.ofNullable(this.specifyYourOwnResponseCodeBased);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

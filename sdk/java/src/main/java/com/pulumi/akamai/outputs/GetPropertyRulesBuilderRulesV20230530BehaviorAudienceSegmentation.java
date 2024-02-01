@@ -14,93 +14,269 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorAudienceSegmentation {
+    /**
+     * @return Identifies the Cloudlet policy.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530BehaviorAudienceSegmentationCloudletPolicy cloudletPolicy;
+    /**
+     * @return This identifies the Cloudlet shared policy to use with this behavior. You can list available shared policies with the `Cloudlets API`.
+     * 
+     */
     private @Nullable Integer cloudletSharedPolicy;
+    /**
+     * @return Enables the Audience Segmentation cloudlet feature.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Whether you want to use a shared policy for a Cloudlet. Learn more about shared policies and how to create them in `Cloudlets Policy Manager`.
+     * 
+     */
     private @Nullable Boolean isSharedPolicy;
+    /**
+     * @return Specifies a suffix to append to the cookie name. This helps distinguish this audience segmentation policy from any others within the same property.
+     * 
+     */
     private @Nullable String label;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Whether to assign a `salt` value automatically to the cookie to prevent manipulation by the user. You should not enable if sharing the population cookie across more than one property.
+     * 
+     */
     private @Nullable Boolean populationCookieAutomaticSalt;
+    /**
+     * @return Specifies the domain to track the population cookie.
+     * 
+     */
     private @Nullable String populationCookieDomain;
+    /**
+     * @return When enabled, includes in the session cookie the name of the rule in which this behavior appears.
+     * 
+     */
     private @Nullable Boolean populationCookieIncludeRuleName;
+    /**
+     * @return Specifies the cookie&#39;s salt value. Use this option to share the cookie across many properties.
+     * 
+     */
     private @Nullable String populationCookieSalt;
+    /**
+     * @return Specifies when the segmentation cookie expires.
+     * 
+     */
     private @Nullable String populationCookieType;
+    /**
+     * @return Specifies the lifetime of the segmentation cookie.
+     * 
+     */
     private @Nullable String populationDuration;
+    /**
+     * @return If disabled, sets the expiration time only if the cookie is not yet present in the request.
+     * 
+     */
     private @Nullable Boolean populationRefresh;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String populationTitle;
+    /**
+     * @return This cookie name specifies the name of the segmentation rule.
+     * 
+     */
     private @Nullable String segmentTrackingCookieName;
+    /**
+     * @return This custom HTTP header specifies the name of the segmentation rule.
+     * 
+     */
     private @Nullable String segmentTrackingCustomHeader;
+    /**
+     * @return Specifies the method to pass segment information to the origin. The Cloudlet passes the rule applied to a given request location.
+     * 
+     */
     private @Nullable String segmentTrackingMethod;
+    /**
+     * @return This query parameter specifies the name of the segmentation rule.
+     * 
+     */
     private @Nullable String segmentTrackingQueryParam;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String segmentTrackingTitle;
+    /**
+     * @return Whether to specify a cookie domain with the population cookie. It tells the browser to which domain to send the cookie.
+     * 
+     */
     private @Nullable Boolean specifyPopulationCookieDomain;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorAudienceSegmentation() {}
+    /**
+     * @return Identifies the Cloudlet policy.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530BehaviorAudienceSegmentationCloudletPolicy> cloudletPolicy() {
         return Optional.ofNullable(this.cloudletPolicy);
     }
+    /**
+     * @return This identifies the Cloudlet shared policy to use with this behavior. You can list available shared policies with the `Cloudlets API`.
+     * 
+     */
     public Optional<Integer> cloudletSharedPolicy() {
         return Optional.ofNullable(this.cloudletSharedPolicy);
     }
+    /**
+     * @return Enables the Audience Segmentation cloudlet feature.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Whether you want to use a shared policy for a Cloudlet. Learn more about shared policies and how to create them in `Cloudlets Policy Manager`.
+     * 
+     */
     public Optional<Boolean> isSharedPolicy() {
         return Optional.ofNullable(this.isSharedPolicy);
     }
+    /**
+     * @return Specifies a suffix to append to the cookie name. This helps distinguish this audience segmentation policy from any others within the same property.
+     * 
+     */
     public Optional<String> label() {
         return Optional.ofNullable(this.label);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Whether to assign a `salt` value automatically to the cookie to prevent manipulation by the user. You should not enable if sharing the population cookie across more than one property.
+     * 
+     */
     public Optional<Boolean> populationCookieAutomaticSalt() {
         return Optional.ofNullable(this.populationCookieAutomaticSalt);
     }
+    /**
+     * @return Specifies the domain to track the population cookie.
+     * 
+     */
     public Optional<String> populationCookieDomain() {
         return Optional.ofNullable(this.populationCookieDomain);
     }
+    /**
+     * @return When enabled, includes in the session cookie the name of the rule in which this behavior appears.
+     * 
+     */
     public Optional<Boolean> populationCookieIncludeRuleName() {
         return Optional.ofNullable(this.populationCookieIncludeRuleName);
     }
+    /**
+     * @return Specifies the cookie&#39;s salt value. Use this option to share the cookie across many properties.
+     * 
+     */
     public Optional<String> populationCookieSalt() {
         return Optional.ofNullable(this.populationCookieSalt);
     }
+    /**
+     * @return Specifies when the segmentation cookie expires.
+     * 
+     */
     public Optional<String> populationCookieType() {
         return Optional.ofNullable(this.populationCookieType);
     }
+    /**
+     * @return Specifies the lifetime of the segmentation cookie.
+     * 
+     */
     public Optional<String> populationDuration() {
         return Optional.ofNullable(this.populationDuration);
     }
+    /**
+     * @return If disabled, sets the expiration time only if the cookie is not yet present in the request.
+     * 
+     */
     public Optional<Boolean> populationRefresh() {
         return Optional.ofNullable(this.populationRefresh);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> populationTitle() {
         return Optional.ofNullable(this.populationTitle);
     }
+    /**
+     * @return This cookie name specifies the name of the segmentation rule.
+     * 
+     */
     public Optional<String> segmentTrackingCookieName() {
         return Optional.ofNullable(this.segmentTrackingCookieName);
     }
+    /**
+     * @return This custom HTTP header specifies the name of the segmentation rule.
+     * 
+     */
     public Optional<String> segmentTrackingCustomHeader() {
         return Optional.ofNullable(this.segmentTrackingCustomHeader);
     }
+    /**
+     * @return Specifies the method to pass segment information to the origin. The Cloudlet passes the rule applied to a given request location.
+     * 
+     */
     public Optional<String> segmentTrackingMethod() {
         return Optional.ofNullable(this.segmentTrackingMethod);
     }
+    /**
+     * @return This query parameter specifies the name of the segmentation rule.
+     * 
+     */
     public Optional<String> segmentTrackingQueryParam() {
         return Optional.ofNullable(this.segmentTrackingQueryParam);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> segmentTrackingTitle() {
         return Optional.ofNullable(this.segmentTrackingTitle);
     }
+    /**
+     * @return Whether to specify a cookie domain with the population cookie. It tells the browser to which domain to send the cookie.
+     * 
+     */
     public Optional<Boolean> specifyPopulationCookieDomain() {
         return Optional.ofNullable(this.specifyPopulationCookieDomain);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

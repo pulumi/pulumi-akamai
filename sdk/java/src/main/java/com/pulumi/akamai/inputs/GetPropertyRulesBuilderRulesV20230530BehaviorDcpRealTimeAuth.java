@@ -15,65 +15,137 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDcpRealTimeAuth 
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorDcpRealTimeAuth Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorDcpRealTimeAuth();
 
+    /**
+     * Extracts a hostname from JWT.
+     * 
+     */
     @Import(name="extractHostname")
     private @Nullable Boolean extractHostname;
 
+    /**
+     * @return Extracts a hostname from JWT.
+     * 
+     */
     public Optional<Boolean> extractHostname() {
         return Optional.ofNullable(this.extractHostname);
     }
 
+    /**
+     * Extracts a jurisdiction that defines a geographically distributed set of servers from JWT.
+     * 
+     */
     @Import(name="extractJurisdiction")
     private @Nullable Boolean extractJurisdiction;
 
+    /**
+     * @return Extracts a jurisdiction that defines a geographically distributed set of servers from JWT.
+     * 
+     */
     public Optional<Boolean> extractJurisdiction() {
         return Optional.ofNullable(this.extractJurisdiction);
     }
 
+    /**
+     * Extracts a namespace from JSON web tokens (JWT).
+     * 
+     */
     @Import(name="extractNamespace")
     private @Nullable Boolean extractNamespace;
 
+    /**
+     * @return Extracts a namespace from JSON web tokens (JWT).
+     * 
+     */
     public Optional<Boolean> extractNamespace() {
         return Optional.ofNullable(this.extractNamespace);
     }
 
+    /**
+     * Specifies the claim in JWT to extract the hostname from.
+     * 
+     */
     @Import(name="hostnameClaim")
     private @Nullable String hostnameClaim;
 
+    /**
+     * @return Specifies the claim in JWT to extract the hostname from.
+     * 
+     */
     public Optional<String> hostnameClaim() {
         return Optional.ofNullable(this.hostnameClaim);
     }
 
+    /**
+     * Specifies the claim in JWT to extract the jurisdiction from.
+     * 
+     */
     @Import(name="jurisdictionClaim")
     private @Nullable String jurisdictionClaim;
 
+    /**
+     * @return Specifies the claim in JWT to extract the jurisdiction from.
+     * 
+     */
     public Optional<String> jurisdictionClaim() {
         return Optional.ofNullable(this.jurisdictionClaim);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Specifies the claim in JWT to extract the namespace from.
+     * 
+     */
     @Import(name="namespaceClaim")
     private @Nullable String namespaceClaim;
 
+    /**
+     * @return Specifies the claim in JWT to extract the namespace from.
+     * 
+     */
     public Optional<String> namespaceClaim() {
         return Optional.ofNullable(this.namespaceClaim);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -110,46 +182,100 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDcpRealTimeAuth 
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorDcpRealTimeAuth(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param extractHostname Extracts a hostname from JWT.
+         * 
+         * @return builder
+         * 
+         */
         public Builder extractHostname(@Nullable Boolean extractHostname) {
             $.extractHostname = extractHostname;
             return this;
         }
 
+        /**
+         * @param extractJurisdiction Extracts a jurisdiction that defines a geographically distributed set of servers from JWT.
+         * 
+         * @return builder
+         * 
+         */
         public Builder extractJurisdiction(@Nullable Boolean extractJurisdiction) {
             $.extractJurisdiction = extractJurisdiction;
             return this;
         }
 
+        /**
+         * @param extractNamespace Extracts a namespace from JSON web tokens (JWT).
+         * 
+         * @return builder
+         * 
+         */
         public Builder extractNamespace(@Nullable Boolean extractNamespace) {
             $.extractNamespace = extractNamespace;
             return this;
         }
 
+        /**
+         * @param hostnameClaim Specifies the claim in JWT to extract the hostname from.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hostnameClaim(@Nullable String hostnameClaim) {
             $.hostnameClaim = hostnameClaim;
             return this;
         }
 
+        /**
+         * @param jurisdictionClaim Specifies the claim in JWT to extract the jurisdiction from.
+         * 
+         * @return builder
+         * 
+         */
         public Builder jurisdictionClaim(@Nullable String jurisdictionClaim) {
             $.jurisdictionClaim = jurisdictionClaim;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param namespaceClaim Specifies the claim in JWT to extract the namespace from.
+         * 
+         * @return builder
+         * 
+         */
         public Builder namespaceClaim(@Nullable String namespaceClaim) {
             $.namespaceClaim = namespaceClaim;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

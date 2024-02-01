@@ -23,16 +23,32 @@ public final class GetImagingPolicyImagePolicyTransformationIfDimensionArgs exte
         return Optional.ofNullable(this.default_);
     }
 
+    /**
+     * The dimension to use to select the transformation, either `height`, `width`, or `both`.
+     * 
+     */
     @Import(name="dimension")
     private @Nullable Output<String> dimension;
 
+    /**
+     * @return The dimension to use to select the transformation, either `height`, `width`, or `both`.
+     * 
+     */
     public Optional<Output<String>> dimension() {
         return Optional.ofNullable(this.dimension);
     }
 
+    /**
+     * The dimension to use to select the transformation, either `height`, `width`, or `both`.
+     * 
+     */
     @Import(name="dimensionVar")
     private @Nullable Output<String> dimensionVar;
 
+    /**
+     * @return The dimension to use to select the transformation, either `height`, `width`, or `both`.
+     * 
+     */
     public Optional<Output<String>> dimensionVar() {
         return Optional.ofNullable(this.dimensionVar);
     }
@@ -58,16 +74,32 @@ public final class GetImagingPolicyImagePolicyTransformationIfDimensionArgs exte
         return Optional.ofNullable(this.lessThan);
     }
 
+    /**
+     * The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
+     * 
+     */
     @Import(name="value")
     private @Nullable Output<String> value;
 
+    /**
+     * @return The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
+     * 
+     */
     public Optional<Output<String>> value() {
         return Optional.ofNullable(this.value);
     }
 
+    /**
+     * The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
+     * 
+     */
     @Import(name="valueVar")
     private @Nullable Output<String> valueVar;
 
+    /**
+     * @return The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
+     * 
+     */
     public Optional<Output<String>> valueVar() {
         return Optional.ofNullable(this.valueVar);
     }
@@ -112,20 +144,44 @@ public final class GetImagingPolicyImagePolicyTransformationIfDimensionArgs exte
             return default_(Output.of(default_));
         }
 
+        /**
+         * @param dimension The dimension to use to select the transformation, either `height`, `width`, or `both`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dimension(@Nullable Output<String> dimension) {
             $.dimension = dimension;
             return this;
         }
 
+        /**
+         * @param dimension The dimension to use to select the transformation, either `height`, `width`, or `both`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dimension(String dimension) {
             return dimension(Output.of(dimension));
         }
 
+        /**
+         * @param dimensionVar The dimension to use to select the transformation, either `height`, `width`, or `both`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dimensionVar(@Nullable Output<String> dimensionVar) {
             $.dimensionVar = dimensionVar;
             return this;
         }
 
+        /**
+         * @param dimensionVar The dimension to use to select the transformation, either `height`, `width`, or `both`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dimensionVar(String dimensionVar) {
             return dimensionVar(Output.of(dimensionVar));
         }
@@ -157,20 +213,44 @@ public final class GetImagingPolicyImagePolicyTransformationIfDimensionArgs exte
             return lessThan(Output.of(lessThan));
         }
 
+        /**
+         * @param value The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
+         * 
+         * @return builder
+         * 
+         */
         public Builder value(@Nullable Output<String> value) {
             $.value = value;
             return this;
         }
 
+        /**
+         * @param value The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
+         * 
+         * @return builder
+         * 
+         */
         public Builder value(String value) {
             return value(Output.of(value));
         }
 
+        /**
+         * @param valueVar The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
+         * 
+         * @return builder
+         * 
+         */
         public Builder valueVar(@Nullable Output<String> valueVar) {
             $.valueVar = valueVar;
             return this;
         }
 
+        /**
+         * @param valueVar The value to compare against the source image dimension. For example, if the image dimension is less than the value the lessThan transformation is applied.
+         * 
+         * @return builder
+         * 
+         */
         public Builder valueVar(String valueVar) {
             return valueVar(Output.of(valueVar));
         }

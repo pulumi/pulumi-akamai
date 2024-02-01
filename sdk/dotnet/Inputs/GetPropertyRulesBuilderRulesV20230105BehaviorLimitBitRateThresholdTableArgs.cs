@@ -12,9 +12,15 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateThresholdTableInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The unit of measurement, either `SECONDS` of the elapsed download time, or `BYTES` of the file size.
+        /// </summary>
         [Input("thresholdUnit")]
         public Input<string>? ThresholdUnit { get; set; }
 
+        /// <summary>
+        /// The numeric indicator of the minimum file size or elapsed download time.
+        /// </summary>
         [Input("thresholdValue")]
         public Input<int>? ThresholdValue { get; set; }
 

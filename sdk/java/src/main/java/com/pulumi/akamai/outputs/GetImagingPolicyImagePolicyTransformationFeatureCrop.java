@@ -11,77 +11,221 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationFeatureCrop {
+    /**
+     * @return Controls placement of the crop if Image and Video Manager does not detect any features in the image. Directions are relative to the edges of the image being transformed.
+     * 
+     */
     private @Nullable String failGravity;
+    /**
+     * @return Controls placement of the crop if Image and Video Manager does not detect any features in the image. Directions are relative to the edges of the image being transformed.
+     * 
+     */
     private @Nullable String failGravityVar;
+    /**
+     * @return The size in pixels of the important features to search for. If identified, two features never appear closer together than this value, `8.0` by default.
+     * 
+     */
     private @Nullable String featureRadius;
+    /**
+     * @return The size in pixels of the important features to search for. If identified, two features never appear closer together than this value, `8.0` by default.
+     * 
+     */
     private @Nullable String featureRadiusVar;
+    /**
+     * @return Controls placement of the crop. Directions are relative to the region of interest plus padding.
+     * 
+     */
     private @Nullable String gravity;
+    /**
+     * @return Controls placement of the crop. Directions are relative to the region of interest plus padding.
+     * 
+     */
     private @Nullable String gravityVar;
+    /**
+     * @return The height in pixels of the output image relative to the specified `style` value.
+     * 
+     */
     private @Nullable String height;
+    /**
+     * @return The height in pixels of the output image relative to the specified `style` value.
+     * 
+     */
     private @Nullable String heightVar;
+    /**
+     * @return The maximum number of features to identify as important features, `32` by default. The strongest features are always chosen.
+     * 
+     */
     private @Nullable String maxFeatures;
+    /**
+     * @return The maximum number of features to identify as important features, `32` by default. The strongest features are always chosen.
+     * 
+     */
     private @Nullable String maxFeaturesVar;
+    /**
+     * @return Determines the minimum quality level of the feature identified. To consider a feature important, the feature needs to surpass this value.  Image and Video Manager measures quality on a scale from `0` for the lowest quality to `1` for the highest quality, `.1` by default.
+     * 
+     */
     private @Nullable String minFeatureQuality;
+    /**
+     * @return Determines the minimum quality level of the feature identified. To consider a feature important, the feature needs to surpass this value.  Image and Video Manager measures quality on a scale from `0` for the lowest quality to `1` for the highest quality, `.1` by default.
+     * 
+     */
     private @Nullable String minFeatureQualityVar;
+    /**
+     * @return Adds space around the region of interest. The amount of padding added is directly related to the size of the bounding box of the selected features. Specifically, the region of interest is expanded in all directions by the largest dimension of the bounding box of the selected features multiplied by this value.
+     * 
+     */
     private @Nullable String padding;
+    /**
+     * @return Adds space around the region of interest. The amount of padding added is directly related to the size of the bounding box of the selected features. Specifically, the region of interest is expanded in all directions by the largest dimension of the bounding box of the selected features multiplied by this value.
+     * 
+     */
     private @Nullable String paddingVar;
+    /**
+     * @return Specifies how to crop or scale a crop area for the features identified in the source image, `fill` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` performs a raw crop around the features, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and features as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the features, relative to the specified `width` and `height` values. Allows Variable substitution.
+     * 
+     */
     private @Nullable String style;
+    /**
+     * @return Specifies how to crop or scale a crop area for the features identified in the source image, `fill` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` performs a raw crop around the features, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and features as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the features, relative to the specified `width` and `height` values. Allows Variable substitution.
+     * 
+     */
     private @Nullable String styleVar;
+    /**
+     * @return The width in pixels of the output image relative to the specified `style` value.
+     * 
+     */
     private @Nullable String width;
+    /**
+     * @return The width in pixels of the output image relative to the specified `style` value.
+     * 
+     */
     private @Nullable String widthVar;
 
     private GetImagingPolicyImagePolicyTransformationFeatureCrop() {}
+    /**
+     * @return Controls placement of the crop if Image and Video Manager does not detect any features in the image. Directions are relative to the edges of the image being transformed.
+     * 
+     */
     public Optional<String> failGravity() {
         return Optional.ofNullable(this.failGravity);
     }
+    /**
+     * @return Controls placement of the crop if Image and Video Manager does not detect any features in the image. Directions are relative to the edges of the image being transformed.
+     * 
+     */
     public Optional<String> failGravityVar() {
         return Optional.ofNullable(this.failGravityVar);
     }
+    /**
+     * @return The size in pixels of the important features to search for. If identified, two features never appear closer together than this value, `8.0` by default.
+     * 
+     */
     public Optional<String> featureRadius() {
         return Optional.ofNullable(this.featureRadius);
     }
+    /**
+     * @return The size in pixels of the important features to search for. If identified, two features never appear closer together than this value, `8.0` by default.
+     * 
+     */
     public Optional<String> featureRadiusVar() {
         return Optional.ofNullable(this.featureRadiusVar);
     }
+    /**
+     * @return Controls placement of the crop. Directions are relative to the region of interest plus padding.
+     * 
+     */
     public Optional<String> gravity() {
         return Optional.ofNullable(this.gravity);
     }
+    /**
+     * @return Controls placement of the crop. Directions are relative to the region of interest plus padding.
+     * 
+     */
     public Optional<String> gravityVar() {
         return Optional.ofNullable(this.gravityVar);
     }
+    /**
+     * @return The height in pixels of the output image relative to the specified `style` value.
+     * 
+     */
     public Optional<String> height() {
         return Optional.ofNullable(this.height);
     }
+    /**
+     * @return The height in pixels of the output image relative to the specified `style` value.
+     * 
+     */
     public Optional<String> heightVar() {
         return Optional.ofNullable(this.heightVar);
     }
+    /**
+     * @return The maximum number of features to identify as important features, `32` by default. The strongest features are always chosen.
+     * 
+     */
     public Optional<String> maxFeatures() {
         return Optional.ofNullable(this.maxFeatures);
     }
+    /**
+     * @return The maximum number of features to identify as important features, `32` by default. The strongest features are always chosen.
+     * 
+     */
     public Optional<String> maxFeaturesVar() {
         return Optional.ofNullable(this.maxFeaturesVar);
     }
+    /**
+     * @return Determines the minimum quality level of the feature identified. To consider a feature important, the feature needs to surpass this value.  Image and Video Manager measures quality on a scale from `0` for the lowest quality to `1` for the highest quality, `.1` by default.
+     * 
+     */
     public Optional<String> minFeatureQuality() {
         return Optional.ofNullable(this.minFeatureQuality);
     }
+    /**
+     * @return Determines the minimum quality level of the feature identified. To consider a feature important, the feature needs to surpass this value.  Image and Video Manager measures quality on a scale from `0` for the lowest quality to `1` for the highest quality, `.1` by default.
+     * 
+     */
     public Optional<String> minFeatureQualityVar() {
         return Optional.ofNullable(this.minFeatureQualityVar);
     }
+    /**
+     * @return Adds space around the region of interest. The amount of padding added is directly related to the size of the bounding box of the selected features. Specifically, the region of interest is expanded in all directions by the largest dimension of the bounding box of the selected features multiplied by this value.
+     * 
+     */
     public Optional<String> padding() {
         return Optional.ofNullable(this.padding);
     }
+    /**
+     * @return Adds space around the region of interest. The amount of padding added is directly related to the size of the bounding box of the selected features. Specifically, the region of interest is expanded in all directions by the largest dimension of the bounding box of the selected features multiplied by this value.
+     * 
+     */
     public Optional<String> paddingVar() {
         return Optional.ofNullable(this.paddingVar);
     }
+    /**
+     * @return Specifies how to crop or scale a crop area for the features identified in the source image, `fill` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` performs a raw crop around the features, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and features as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the features, relative to the specified `width` and `height` values. Allows Variable substitution.
+     * 
+     */
     public Optional<String> style() {
         return Optional.ofNullable(this.style);
     }
+    /**
+     * @return Specifies how to crop or scale a crop area for the features identified in the source image, `fill` by default. The output image resizes to the specified `width` and `height` values. A value of `crop` performs a raw crop around the features, relative to the specified `gravity` value.  A value of `fill` scales the crop area to include as much of the image and features as possible, relative to the specified `width` and `height` values. A value of `zoom` scales the crop area as small as possible to fit the features, relative to the specified `width` and `height` values. Allows Variable substitution.
+     * 
+     */
     public Optional<String> styleVar() {
         return Optional.ofNullable(this.styleVar);
     }
+    /**
+     * @return The width in pixels of the output image relative to the specified `style` value.
+     * 
+     */
     public Optional<String> width() {
         return Optional.ofNullable(this.width);
     }
+    /**
+     * @return The width in pixels of the output image relative to the specified `style` value.
+     * 
+     */
     public Optional<String> widthVar() {
         return Optional.ofNullable(this.widthVar);
     }

@@ -15,49 +15,137 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorRequestControl {
+    /**
+     * @return Specifies the full path of the branded 403 page, including the filename, but excluding the NetStorage CP code path component.
+     * 
+     */
     private @Nullable String branded403File;
+    /**
+     * @return Specifies the response status code for the branded deny action.
+     * 
+     */
     private @Nullable Integer branded403StatusCode;
+    /**
+     * @return Specifies the redirect URL for the branded deny action.
+     * 
+     */
     private @Nullable String branded403Url;
+    /**
+     * @return Specifies the branded response page&#39;s time to live in the cache, `5` minutes by default.
+     * 
+     */
     private @Nullable Integer brandedDenyCacheTtl;
+    /**
+     * @return Identifies the Cloudlet policy.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlCloudletPolicy cloudletPolicy;
+    /**
+     * @return If enabled, serves a branded 403 page for this Cloudlet instance.
+     * 
+     */
     private @Nullable Boolean enableBranded403;
+    /**
+     * @return Enables the Request Control Cloudlet.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Specifies the NetStorage domain that contains the branded 403 page.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlNetStorage netStorage;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorRequestControl() {}
+    /**
+     * @return Specifies the full path of the branded 403 page, including the filename, but excluding the NetStorage CP code path component.
+     * 
+     */
     public Optional<String> branded403File() {
         return Optional.ofNullable(this.branded403File);
     }
+    /**
+     * @return Specifies the response status code for the branded deny action.
+     * 
+     */
     public Optional<Integer> branded403StatusCode() {
         return Optional.ofNullable(this.branded403StatusCode);
     }
+    /**
+     * @return Specifies the redirect URL for the branded deny action.
+     * 
+     */
     public Optional<String> branded403Url() {
         return Optional.ofNullable(this.branded403Url);
     }
+    /**
+     * @return Specifies the branded response page&#39;s time to live in the cache, `5` minutes by default.
+     * 
+     */
     public Optional<Integer> brandedDenyCacheTtl() {
         return Optional.ofNullable(this.brandedDenyCacheTtl);
     }
+    /**
+     * @return Identifies the Cloudlet policy.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlCloudletPolicy> cloudletPolicy() {
         return Optional.ofNullable(this.cloudletPolicy);
     }
+    /**
+     * @return If enabled, serves a branded 403 page for this Cloudlet instance.
+     * 
+     */
     public Optional<Boolean> enableBranded403() {
         return Optional.ofNullable(this.enableBranded403);
     }
+    /**
+     * @return Enables the Request Control Cloudlet.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Specifies the NetStorage domain that contains the branded 403 page.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlNetStorage> netStorage() {
         return Optional.ofNullable(this.netStorage);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

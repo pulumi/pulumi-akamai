@@ -12,33 +12,81 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxImage {
+    /**
+     * @return The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
+     * 
+     */
     private @Nullable String color;
+    /**
+     * @return The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
+     * 
+     */
     private @Nullable String colorVar;
+    /**
+     * @return The height of the box in pixels.
+     * 
+     */
     private @Nullable String height;
+    /**
+     * @return The height of the box in pixels.
+     * 
+     */
     private @Nullable String heightVar;
     private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation transformation;
+    /**
+     * @return The width of the box in pixels.
+     * 
+     */
     private @Nullable String width;
+    /**
+     * @return The width of the box in pixels.
+     * 
+     */
     private @Nullable String widthVar;
 
     private GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxImage() {}
+    /**
+     * @return The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
+     * 
+     */
     public Optional<String> color() {
         return Optional.ofNullable(this.color);
     }
+    /**
+     * @return The fill color of the box, not the edge of the box. The API supports hexadecimal representation and CSS hexadecimal color values.
+     * 
+     */
     public Optional<String> colorVar() {
         return Optional.ofNullable(this.colorVar);
     }
+    /**
+     * @return The height of the box in pixels.
+     * 
+     */
     public Optional<String> height() {
         return Optional.ofNullable(this.height);
     }
+    /**
+     * @return The height of the box in pixels.
+     * 
+     */
     public Optional<String> heightVar() {
         return Optional.ofNullable(this.heightVar);
     }
     public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformation> transformation() {
         return Optional.ofNullable(this.transformation);
     }
+    /**
+     * @return The width of the box in pixels.
+     * 
+     */
     public Optional<String> width() {
         return Optional.ofNullable(this.width);
     }
+    /**
+     * @return The width of the box in pixels.
+     * 
+     */
     public Optional<String> widthVar() {
         return Optional.ofNullable(this.widthVar);
     }

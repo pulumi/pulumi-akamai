@@ -15,23 +15,47 @@ public final class CpsDvEnrollmentDnsChallengeArgs extends com.pulumi.resources.
 
     public static final CpsDvEnrollmentDnsChallengeArgs Empty = new CpsDvEnrollmentDnsChallengeArgs();
 
+    /**
+     * Domain for which the challenges were completed
+     * 
+     */
     @Import(name="domain")
     private @Nullable Output<String> domain;
 
+    /**
+     * @return Domain for which the challenges were completed
+     * 
+     */
     public Optional<Output<String>> domain() {
         return Optional.ofNullable(this.domain);
     }
 
+    /**
+     * The domain name where Akamai publishes the response body to validate
+     * 
+     */
     @Import(name="fullPath")
     private @Nullable Output<String> fullPath;
 
+    /**
+     * @return The domain name where Akamai publishes the response body to validate
+     * 
+     */
     public Optional<Output<String>> fullPath() {
         return Optional.ofNullable(this.fullPath);
     }
 
+    /**
+     * The unique content of the challenge
+     * 
+     */
     @Import(name="responseBody")
     private @Nullable Output<String> responseBody;
 
+    /**
+     * @return The unique content of the challenge
+     * 
+     */
     public Optional<Output<String>> responseBody() {
         return Optional.ofNullable(this.responseBody);
     }
@@ -62,29 +86,65 @@ public final class CpsDvEnrollmentDnsChallengeArgs extends com.pulumi.resources.
             $ = new CpsDvEnrollmentDnsChallengeArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param domain Domain for which the challenges were completed
+         * 
+         * @return builder
+         * 
+         */
         public Builder domain(@Nullable Output<String> domain) {
             $.domain = domain;
             return this;
         }
 
+        /**
+         * @param domain Domain for which the challenges were completed
+         * 
+         * @return builder
+         * 
+         */
         public Builder domain(String domain) {
             return domain(Output.of(domain));
         }
 
+        /**
+         * @param fullPath The domain name where Akamai publishes the response body to validate
+         * 
+         * @return builder
+         * 
+         */
         public Builder fullPath(@Nullable Output<String> fullPath) {
             $.fullPath = fullPath;
             return this;
         }
 
+        /**
+         * @param fullPath The domain name where Akamai publishes the response body to validate
+         * 
+         * @return builder
+         * 
+         */
         public Builder fullPath(String fullPath) {
             return fullPath(Output.of(fullPath));
         }
 
+        /**
+         * @param responseBody The unique content of the challenge
+         * 
+         * @return builder
+         * 
+         */
         public Builder responseBody(@Nullable Output<String> responseBody) {
             $.responseBody = responseBody;
             return this;
         }
 
+        /**
+         * @param responseBody The unique content of the challenge
+         * 
+         * @return builder
+         * 
+         */
         public Builder responseBody(String responseBody) {
             return responseBody(Output.of(responseBody));
         }

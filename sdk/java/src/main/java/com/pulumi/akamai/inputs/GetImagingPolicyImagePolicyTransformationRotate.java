@@ -14,16 +14,32 @@ public final class GetImagingPolicyImagePolicyTransformationRotate extends com.p
 
     public static final GetImagingPolicyImagePolicyTransformationRotate Empty = new GetImagingPolicyImagePolicyTransformationRotate();
 
+    /**
+     * The value to rotate the image by. Positive values rotate clockwise, while negative values rotate counter-clockwise.
+     * 
+     */
     @Import(name="degrees")
     private @Nullable String degrees;
 
+    /**
+     * @return The value to rotate the image by. Positive values rotate clockwise, while negative values rotate counter-clockwise.
+     * 
+     */
     public Optional<String> degrees() {
         return Optional.ofNullable(this.degrees);
     }
 
+    /**
+     * The value to rotate the image by. Positive values rotate clockwise, while negative values rotate counter-clockwise.
+     * 
+     */
     @Import(name="degreesVar")
     private @Nullable String degreesVar;
 
+    /**
+     * @return The value to rotate the image by. Positive values rotate clockwise, while negative values rotate counter-clockwise.
+     * 
+     */
     public Optional<String> degreesVar() {
         return Optional.ofNullable(this.degreesVar);
     }
@@ -53,11 +69,23 @@ public final class GetImagingPolicyImagePolicyTransformationRotate extends com.p
             $ = new GetImagingPolicyImagePolicyTransformationRotate(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param degrees The value to rotate the image by. Positive values rotate clockwise, while negative values rotate counter-clockwise.
+         * 
+         * @return builder
+         * 
+         */
         public Builder degrees(@Nullable String degrees) {
             $.degrees = degrees;
             return this;
         }
 
+        /**
+         * @param degreesVar The value to rotate the image by. Positive values rotate clockwise, while negative values rotate counter-clockwise.
+         * 
+         * @return builder
+         * 
+         */
         public Builder degreesVar(@Nullable String degreesVar) {
             $.degreesVar = degreesVar;
             return this;

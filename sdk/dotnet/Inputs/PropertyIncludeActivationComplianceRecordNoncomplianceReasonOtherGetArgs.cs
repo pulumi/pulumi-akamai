@@ -12,9 +12,15 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class PropertyIncludeActivationComplianceRecordNoncomplianceReasonOtherGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Describes the reason why the activation must occur immediately, out of compliance with the standard procedure
+        /// </summary>
         [Input("otherNoncomplianceReason")]
         public Input<string>? OtherNoncomplianceReason { get; set; }
 
+        /// <summary>
+        /// Identifies the ticket that describes the need for the activation
+        /// </summary>
         [Input("ticketId")]
         public Input<string>? TicketId { get; set; }
 

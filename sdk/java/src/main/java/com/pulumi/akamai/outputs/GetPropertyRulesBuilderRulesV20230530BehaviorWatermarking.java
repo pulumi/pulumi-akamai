@@ -12,81 +12,233 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorWatermarking {
+    /**
+     * @return When you work with your watermarking vendor, you can apply several preprocessing methods to your content. See the `AMD help` for more information. Use this option to specify the location of the `A` and `B` variant segments.
+     * 
+     */
     private @Nullable String abVariantLocation;
+    /**
+     * @return Provides the primary password used to encrypt patterns in your watermarking tokens.
+     * 
+     */
     private @Nullable String decryptionPassword1;
+    /**
+     * @return Provides the secondary password you can use to rotate passwords.
+     * 
+     */
     private @Nullable String decryptionPassword2;
+    /**
+     * @return Specifies a label that corresponds to the primary password.
+     * 
+     */
     private @Nullable String decryptionPasswordId1;
+    /**
+     * @return Specifies a label for the secondary password, used in rotation scenarios to identify which password to use for decryption.
+     * 
+     */
     private @Nullable String decryptionPasswordId2;
+    /**
+     * @return Enables the watermarking behavior.
+     * 
+     */
     private @Nullable Boolean enable;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String miscellaneousSettingsTitle;
+    /**
+     * @return If patterns in your watermarking tokens have been encrypted, enabling this allows you to provide values to decrypt them.
+     * 
+     */
     private @Nullable Boolean patternDecryptionEnable;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String patternEncryptionTitle;
+    /**
+     * @return When enabled, you can verify the signature in your watermarking token.
+     * 
+     */
     private @Nullable Boolean signatureVerificationEnable;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String tokenSigningTitle;
+    /**
+     * @return When you work with your watermarking vendor, you can apply several preprocessing methods to your content. See the `AMD help` for more information. With the standard `filename-prefix AB naming` preprocessing method, the watermarking vendor creates two variants of the original segment content and labels them as an `A` and `B` segment in the filename. If you selected the `unlabeled A variant` preprocessing method, enabling this option tells your configuration to use the original filename segment content as your `A` variant.
+     * 
+     */
     private @Nullable Boolean useOriginalAsA;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
+    /**
+     * @return Specifies a unique identifier for the first public key.
+     * 
+     */
     private @Nullable String verificationKeyId1;
+    /**
+     * @return Specifies a unique identifier for the optional second public key.
+     * 
+     */
     private @Nullable String verificationKeyId2;
+    /**
+     * @return Specifies the first public key in its entirety.
+     * 
+     */
     private @Nullable String verificationPublicKey1;
+    /**
+     * @return Specifies the optional second public key in its entirety. Specify a second key to enable rotation.
+     * 
+     */
     private @Nullable String verificationPublicKey2;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorWatermarking() {}
+    /**
+     * @return When you work with your watermarking vendor, you can apply several preprocessing methods to your content. See the `AMD help` for more information. Use this option to specify the location of the `A` and `B` variant segments.
+     * 
+     */
     public Optional<String> abVariantLocation() {
         return Optional.ofNullable(this.abVariantLocation);
     }
+    /**
+     * @return Provides the primary password used to encrypt patterns in your watermarking tokens.
+     * 
+     */
     public Optional<String> decryptionPassword1() {
         return Optional.ofNullable(this.decryptionPassword1);
     }
+    /**
+     * @return Provides the secondary password you can use to rotate passwords.
+     * 
+     */
     public Optional<String> decryptionPassword2() {
         return Optional.ofNullable(this.decryptionPassword2);
     }
+    /**
+     * @return Specifies a label that corresponds to the primary password.
+     * 
+     */
     public Optional<String> decryptionPasswordId1() {
         return Optional.ofNullable(this.decryptionPasswordId1);
     }
+    /**
+     * @return Specifies a label for the secondary password, used in rotation scenarios to identify which password to use for decryption.
+     * 
+     */
     public Optional<String> decryptionPasswordId2() {
         return Optional.ofNullable(this.decryptionPasswordId2);
     }
+    /**
+     * @return Enables the watermarking behavior.
+     * 
+     */
     public Optional<Boolean> enable() {
         return Optional.ofNullable(this.enable);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> miscellaneousSettingsTitle() {
         return Optional.ofNullable(this.miscellaneousSettingsTitle);
     }
+    /**
+     * @return If patterns in your watermarking tokens have been encrypted, enabling this allows you to provide values to decrypt them.
+     * 
+     */
     public Optional<Boolean> patternDecryptionEnable() {
         return Optional.ofNullable(this.patternDecryptionEnable);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> patternEncryptionTitle() {
         return Optional.ofNullable(this.patternEncryptionTitle);
     }
+    /**
+     * @return When enabled, you can verify the signature in your watermarking token.
+     * 
+     */
     public Optional<Boolean> signatureVerificationEnable() {
         return Optional.ofNullable(this.signatureVerificationEnable);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> tokenSigningTitle() {
         return Optional.ofNullable(this.tokenSigningTitle);
     }
+    /**
+     * @return When you work with your watermarking vendor, you can apply several preprocessing methods to your content. See the `AMD help` for more information. With the standard `filename-prefix AB naming` preprocessing method, the watermarking vendor creates two variants of the original segment content and labels them as an `A` and `B` segment in the filename. If you selected the `unlabeled A variant` preprocessing method, enabling this option tells your configuration to use the original filename segment content as your `A` variant.
+     * 
+     */
     public Optional<Boolean> useOriginalAsA() {
         return Optional.ofNullable(this.useOriginalAsA);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
+    /**
+     * @return Specifies a unique identifier for the first public key.
+     * 
+     */
     public Optional<String> verificationKeyId1() {
         return Optional.ofNullable(this.verificationKeyId1);
     }
+    /**
+     * @return Specifies a unique identifier for the optional second public key.
+     * 
+     */
     public Optional<String> verificationKeyId2() {
         return Optional.ofNullable(this.verificationKeyId2);
     }
+    /**
+     * @return Specifies the first public key in its entirety.
+     * 
+     */
     public Optional<String> verificationPublicKey1() {
         return Optional.ofNullable(this.verificationPublicKey1);
     }
+    /**
+     * @return Specifies the optional second public key in its entirety. Specify a second key to enable rotation.
+     * 
+     */
     public Optional<String> verificationPublicKey2() {
         return Optional.ofNullable(this.verificationPublicKey2);
     }

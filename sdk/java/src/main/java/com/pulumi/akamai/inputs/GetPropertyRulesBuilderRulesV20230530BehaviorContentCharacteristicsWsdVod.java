@@ -15,128 +15,272 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacter
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacteristicsWsdVod Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacteristicsWsdVod();
 
+    /**
+     * Optimize based on the total size of the content library delivered.
+     * 
+     */
     @Import(name="catalogSize")
     private @Nullable String catalogSize;
 
+    /**
+     * @return Optimize based on the total size of the content library delivered.
+     * 
+     */
     public Optional<String> catalogSize() {
         return Optional.ofNullable(this.catalogSize);
     }
 
+    /**
+     * Optimize based on the quality of media content.
+     * 
+     */
     @Import(name="contentType")
     private @Nullable String contentType;
 
+    /**
+     * @return Optimize based on the quality of media content.
+     * 
+     */
     public Optional<String> contentType() {
         return Optional.ofNullable(this.contentType);
     }
 
+    /**
+     * Enable delivery of DASH media.
+     * 
+     */
     @Import(name="dash")
     private @Nullable Boolean dash;
 
+    /**
+     * @return Enable delivery of DASH media.
+     * 
+     */
     public Optional<Boolean> dash() {
         return Optional.ofNullable(this.dash);
     }
 
+    /**
+     * Enable delivery of HDS media.
+     * 
+     */
     @Import(name="hds")
     private @Nullable Boolean hds;
 
+    /**
+     * @return Enable delivery of HDS media.
+     * 
+     */
     public Optional<Boolean> hds() {
         return Optional.ofNullable(this.hds);
     }
 
+    /**
+     * Enable delivery of HLS media.
+     * 
+     */
     @Import(name="hls")
     private @Nullable Boolean hls;
 
+    /**
+     * @return Enable delivery of HLS media.
+     * 
+     */
     public Optional<Boolean> hls() {
         return Optional.ofNullable(this.hls);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Optimize based on the content&#39;s expected popularity.
+     * 
+     */
     @Import(name="popularityDistribution")
     private @Nullable String popularityDistribution;
 
+    /**
+     * @return Optimize based on the content&#39;s expected popularity.
+     * 
+     */
     public Optional<String> popularityDistribution() {
         return Optional.ofNullable(this.popularityDistribution);
     }
 
+    /**
+     * Specifies the duration of individual segments.
+     * 
+     */
     @Import(name="segmentDurationDash")
     private @Nullable String segmentDurationDash;
 
+    /**
+     * @return Specifies the duration of individual segments.
+     * 
+     */
     public Optional<String> segmentDurationDash() {
         return Optional.ofNullable(this.segmentDurationDash);
     }
 
+    /**
+     * Specifies the duration of individual fragments.
+     * 
+     */
     @Import(name="segmentDurationHds")
     private @Nullable String segmentDurationHds;
 
+    /**
+     * @return Specifies the duration of individual fragments.
+     * 
+     */
     public Optional<String> segmentDurationHds() {
         return Optional.ofNullable(this.segmentDurationHds);
     }
 
+    /**
+     * Specifies the duration of individual segments.
+     * 
+     */
     @Import(name="segmentDurationHls")
     private @Nullable String segmentDurationHls;
 
+    /**
+     * @return Specifies the duration of individual segments.
+     * 
+     */
     public Optional<String> segmentDurationHls() {
         return Optional.ofNullable(this.segmentDurationHls);
     }
 
+    /**
+     * Specifies the duration of individual fragments.
+     * 
+     */
     @Import(name="segmentDurationSmooth")
     private @Nullable String segmentDurationSmooth;
 
+    /**
+     * @return Specifies the duration of individual fragments.
+     * 
+     */
     public Optional<String> segmentDurationSmooth() {
         return Optional.ofNullable(this.segmentDurationSmooth);
     }
 
+    /**
+     * Specifies the size of the media object retrieved from the origin.
+     * 
+     */
     @Import(name="segmentSizeDash")
     private @Nullable String segmentSizeDash;
 
+    /**
+     * @return Specifies the size of the media object retrieved from the origin.
+     * 
+     */
     public Optional<String> segmentSizeDash() {
         return Optional.ofNullable(this.segmentSizeDash);
     }
 
+    /**
+     * Specifies the size of the media object retrieved from the origin.
+     * 
+     */
     @Import(name="segmentSizeHds")
     private @Nullable String segmentSizeHds;
 
+    /**
+     * @return Specifies the size of the media object retrieved from the origin.
+     * 
+     */
     public Optional<String> segmentSizeHds() {
         return Optional.ofNullable(this.segmentSizeHds);
     }
 
+    /**
+     * Specifies the size of the media object retrieved from the origin.
+     * 
+     */
     @Import(name="segmentSizeHls")
     private @Nullable String segmentSizeHls;
 
+    /**
+     * @return Specifies the size of the media object retrieved from the origin.
+     * 
+     */
     public Optional<String> segmentSizeHls() {
         return Optional.ofNullable(this.segmentSizeHls);
     }
 
+    /**
+     * Specifies the size of the media object retrieved from the origin.
+     * 
+     */
     @Import(name="segmentSizeSmooth")
     private @Nullable String segmentSizeSmooth;
 
+    /**
+     * @return Specifies the size of the media object retrieved from the origin.
+     * 
+     */
     public Optional<String> segmentSizeSmooth() {
         return Optional.ofNullable(this.segmentSizeSmooth);
     }
 
+    /**
+     * Enable delivery of Smooth media.
+     * 
+     */
     @Import(name="smooth")
     private @Nullable Boolean smooth;
 
+    /**
+     * @return Enable delivery of Smooth media.
+     * 
+     */
     public Optional<Boolean> smooth() {
         return Optional.ofNullable(this.smooth);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -182,91 +326,199 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacter
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacteristicsWsdVod(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param catalogSize Optimize based on the total size of the content library delivered.
+         * 
+         * @return builder
+         * 
+         */
         public Builder catalogSize(@Nullable String catalogSize) {
             $.catalogSize = catalogSize;
             return this;
         }
 
+        /**
+         * @param contentType Optimize based on the quality of media content.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contentType(@Nullable String contentType) {
             $.contentType = contentType;
             return this;
         }
 
+        /**
+         * @param dash Enable delivery of DASH media.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dash(@Nullable Boolean dash) {
             $.dash = dash;
             return this;
         }
 
+        /**
+         * @param hds Enable delivery of HDS media.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hds(@Nullable Boolean hds) {
             $.hds = hds;
             return this;
         }
 
+        /**
+         * @param hls Enable delivery of HLS media.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hls(@Nullable Boolean hls) {
             $.hls = hls;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param popularityDistribution Optimize based on the content&#39;s expected popularity.
+         * 
+         * @return builder
+         * 
+         */
         public Builder popularityDistribution(@Nullable String popularityDistribution) {
             $.popularityDistribution = popularityDistribution;
             return this;
         }
 
+        /**
+         * @param segmentDurationDash Specifies the duration of individual segments.
+         * 
+         * @return builder
+         * 
+         */
         public Builder segmentDurationDash(@Nullable String segmentDurationDash) {
             $.segmentDurationDash = segmentDurationDash;
             return this;
         }
 
+        /**
+         * @param segmentDurationHds Specifies the duration of individual fragments.
+         * 
+         * @return builder
+         * 
+         */
         public Builder segmentDurationHds(@Nullable String segmentDurationHds) {
             $.segmentDurationHds = segmentDurationHds;
             return this;
         }
 
+        /**
+         * @param segmentDurationHls Specifies the duration of individual segments.
+         * 
+         * @return builder
+         * 
+         */
         public Builder segmentDurationHls(@Nullable String segmentDurationHls) {
             $.segmentDurationHls = segmentDurationHls;
             return this;
         }
 
+        /**
+         * @param segmentDurationSmooth Specifies the duration of individual fragments.
+         * 
+         * @return builder
+         * 
+         */
         public Builder segmentDurationSmooth(@Nullable String segmentDurationSmooth) {
             $.segmentDurationSmooth = segmentDurationSmooth;
             return this;
         }
 
+        /**
+         * @param segmentSizeDash Specifies the size of the media object retrieved from the origin.
+         * 
+         * @return builder
+         * 
+         */
         public Builder segmentSizeDash(@Nullable String segmentSizeDash) {
             $.segmentSizeDash = segmentSizeDash;
             return this;
         }
 
+        /**
+         * @param segmentSizeHds Specifies the size of the media object retrieved from the origin.
+         * 
+         * @return builder
+         * 
+         */
         public Builder segmentSizeHds(@Nullable String segmentSizeHds) {
             $.segmentSizeHds = segmentSizeHds;
             return this;
         }
 
+        /**
+         * @param segmentSizeHls Specifies the size of the media object retrieved from the origin.
+         * 
+         * @return builder
+         * 
+         */
         public Builder segmentSizeHls(@Nullable String segmentSizeHls) {
             $.segmentSizeHls = segmentSizeHls;
             return this;
         }
 
+        /**
+         * @param segmentSizeSmooth Specifies the size of the media object retrieved from the origin.
+         * 
+         * @return builder
+         * 
+         */
         public Builder segmentSizeSmooth(@Nullable String segmentSizeSmooth) {
             $.segmentSizeSmooth = segmentSizeSmooth;
             return this;
         }
 
+        /**
+         * @param smooth Enable delivery of Smooth media.
+         * 
+         * @return builder
+         * 
+         */
         public Builder smooth(@Nullable Boolean smooth) {
             $.smooth = smooth;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

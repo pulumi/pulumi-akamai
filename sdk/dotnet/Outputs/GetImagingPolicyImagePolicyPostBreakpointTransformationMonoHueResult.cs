@@ -13,7 +13,13 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHueResult
     {
+        /// <summary>
+        /// Specify a hue by indicating the degree of rotation between 0 and 360 degrees around the color wheel. By default Mono Hue applies a red hue, 0.0 on the color wheel.
+        /// </summary>
         public readonly string? Hue;
+        /// <summary>
+        /// Specify a hue by indicating the degree of rotation between 0 and 360 degrees around the color wheel. By default Mono Hue applies a red hue, 0.0 on the color wheel.
+        /// </summary>
         public readonly string? HueVar;
 
         [OutputConstructor]

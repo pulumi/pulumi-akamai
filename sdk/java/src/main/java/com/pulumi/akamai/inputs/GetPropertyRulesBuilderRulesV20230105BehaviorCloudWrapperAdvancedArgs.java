@@ -16,44 +16,92 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorCloudWrapperAdva
 
     public static final GetPropertyRulesBuilderRulesV20230105BehaviorCloudWrapperAdvancedArgs Empty = new GetPropertyRulesBuilderRulesV20230105BehaviorCloudWrapperAdvancedArgs();
 
+    /**
+     * Specifies the custom failover map to handle Cloud Wrapper failures. Contact your account representative for more information.
+     * 
+     */
     @Import(name="customFailoverMap")
     private @Nullable Output<String> customFailoverMap;
 
+    /**
+     * @return Specifies the custom failover map to handle Cloud Wrapper failures. Contact your account representative for more information.
+     * 
+     */
     public Optional<Output<String>> customFailoverMap() {
         return Optional.ofNullable(this.customFailoverMap);
     }
 
+    /**
+     * Enables failover for Cloud Wrapper.
+     * 
+     */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
+    /**
+     * @return Enables failover for Cloud Wrapper.
+     * 
+     */
     public Optional<Output<Boolean>> enabled() {
         return Optional.ofNullable(this.enabled);
     }
 
+    /**
+     * Specifies the failover map to handle Cloud Wrapper failures. Contact your account representative for more information.
+     * 
+     */
     @Import(name="failoverMap")
     private @Nullable Output<String> failoverMap;
 
+    /**
+     * @return Specifies the failover map to handle Cloud Wrapper failures. Contact your account representative for more information.
+     * 
+     */
     public Optional<Output<String>> failoverMap() {
         return Optional.ofNullable(this.failoverMap);
     }
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Output<Boolean> locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<Boolean>> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable Output<String> templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable Output<String> uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<Output<String>> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -87,56 +135,128 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorCloudWrapperAdva
             $ = new GetPropertyRulesBuilderRulesV20230105BehaviorCloudWrapperAdvancedArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param customFailoverMap Specifies the custom failover map to handle Cloud Wrapper failures. Contact your account representative for more information.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customFailoverMap(@Nullable Output<String> customFailoverMap) {
             $.customFailoverMap = customFailoverMap;
             return this;
         }
 
+        /**
+         * @param customFailoverMap Specifies the custom failover map to handle Cloud Wrapper failures. Contact your account representative for more information.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customFailoverMap(String customFailoverMap) {
             return customFailoverMap(Output.of(customFailoverMap));
         }
 
+        /**
+         * @param enabled Enables failover for Cloud Wrapper.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(@Nullable Output<Boolean> enabled) {
             $.enabled = enabled;
             return this;
         }
 
+        /**
+         * @param enabled Enables failover for Cloud Wrapper.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enabled(Boolean enabled) {
             return enabled(Output.of(enabled));
         }
 
+        /**
+         * @param failoverMap Specifies the failover map to handle Cloud Wrapper failures. Contact your account representative for more information.
+         * 
+         * @return builder
+         * 
+         */
         public Builder failoverMap(@Nullable Output<String> failoverMap) {
             $.failoverMap = failoverMap;
             return this;
         }
 
+        /**
+         * @param failoverMap Specifies the failover map to handle Cloud Wrapper failures. Contact your account representative for more information.
+         * 
+         * @return builder
+         * 
+         */
         public Builder failoverMap(String failoverMap) {
             return failoverMap(Output.of(failoverMap));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Output<Boolean> locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(Boolean locked) {
             return locked(Output.of(locked));
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable Output<String> templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(String templateUuid) {
             return templateUuid(Output.of(templateUuid));
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable Output<String> uuid) {
             $.uuid = uuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(String uuid) {
             return uuid(Output.of(uuid));
         }

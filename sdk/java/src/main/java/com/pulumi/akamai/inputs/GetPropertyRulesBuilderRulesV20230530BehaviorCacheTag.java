@@ -15,30 +15,62 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorCacheTag extends
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorCacheTag Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorCacheTag();
 
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     @Import(name="locked")
     private @Nullable Boolean locked;
 
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
 
+    /**
+     * Specifies the cache tag you want to add to your cached content. A cache tag is only added when the object is first added to cache. A single cache tag can&#39;t exceed 128 characters and can only include alphanumeric characters, plus this class of characters: ```[!#$%&#39;+./^_`|~-]```
+     * 
+     */
     @Import(name="tag")
     private @Nullable String tag;
 
+    /**
+     * @return Specifies the cache tag you want to add to your cached content. A cache tag is only added when the object is first added to cache. A single cache tag can&#39;t exceed 128 characters and can only include alphanumeric characters, plus this class of characters: ```[!#$%&#39;+./^_`|~-]```
+     * 
+     */
     public Optional<String> tag() {
         return Optional.ofNullable(this.tag);
     }
 
+    /**
+     * This option is for internal usage only.
+     * 
+     */
     @Import(name="templateUuid")
     private @Nullable String templateUuid;
 
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
 
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     @Import(name="uuid")
     private @Nullable String uuid;
 
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
@@ -70,21 +102,45 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorCacheTag extends
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorCacheTag(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param locked Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locked(@Nullable Boolean locked) {
             $.locked = locked;
             return this;
         }
 
+        /**
+         * @param tag Specifies the cache tag you want to add to your cached content. A cache tag is only added when the object is first added to cache. A single cache tag can&#39;t exceed 128 characters and can only include alphanumeric characters, plus this class of characters: ```[!#$%&#39;+./^_`|~-]```
+         * 
+         * @return builder
+         * 
+         */
         public Builder tag(@Nullable String tag) {
             $.tag = tag;
             return this;
         }
 
+        /**
+         * @param templateUuid This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateUuid(@Nullable String templateUuid) {
             $.templateUuid = templateUuid;
             return this;
         }
 
+        /**
+         * @param uuid A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+         * 
+         * @return builder
+         * 
+         */
         public Builder uuid(@Nullable String uuid) {
             $.uuid = uuid;
             return this;

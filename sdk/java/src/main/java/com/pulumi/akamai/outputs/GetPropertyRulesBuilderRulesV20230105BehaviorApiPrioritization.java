@@ -16,57 +16,161 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritization {
+    /**
+     * @return Specifies the alternate response&#39;s time to live in the cache, `5` minutes by default.
+     * 
+     */
     private @Nullable Integer alternateResponseCacheTtl;
+    /**
+     * @return Identifies the Cloudlet policy.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritizationCloudletPolicy cloudletPolicy;
+    /**
+     * @return Activates the API Prioritization feature.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return A label to distinguish this API Prioritization policy from any others in the same property.
+     * 
+     */
     private @Nullable String label;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Specify the NetStorage domain that contains the alternate response.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritizationNetStorage netStorage;
+    /**
+     * @return Specify the full NetStorage path for the alternate response, including trailing file name.
+     * 
+     */
     private @Nullable String netStoragePath;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return Specifies the CP code as an object.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritizationThrottledCpCode throttledCpCode;
+    /**
+     * @return Specifies the HTTP response code for requests that receive the alternate response.
+     * 
+     */
     private @Nullable Integer throttledStatusCode;
+    /**
+     * @return Specifies whether to apply an alternative CP code for requests served the alternate response.
+     * 
+     */
     private @Nullable Boolean useThrottledCpCode;
+    /**
+     * @return Allows you to assign a specific HTTP response code to a throttled request.
+     * 
+     */
     private @Nullable Boolean useThrottledStatusCode;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritization() {}
+    /**
+     * @return Specifies the alternate response&#39;s time to live in the cache, `5` minutes by default.
+     * 
+     */
     public Optional<Integer> alternateResponseCacheTtl() {
         return Optional.ofNullable(this.alternateResponseCacheTtl);
     }
+    /**
+     * @return Identifies the Cloudlet policy.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritizationCloudletPolicy> cloudletPolicy() {
         return Optional.ofNullable(this.cloudletPolicy);
     }
+    /**
+     * @return Activates the API Prioritization feature.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return A label to distinguish this API Prioritization policy from any others in the same property.
+     * 
+     */
     public Optional<String> label() {
         return Optional.ofNullable(this.label);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Specify the NetStorage domain that contains the alternate response.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritizationNetStorage> netStorage() {
         return Optional.ofNullable(this.netStorage);
     }
+    /**
+     * @return Specify the full NetStorage path for the alternate response, including trailing file name.
+     * 
+     */
     public Optional<String> netStoragePath() {
         return Optional.ofNullable(this.netStoragePath);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return Specifies the CP code as an object.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritizationThrottledCpCode> throttledCpCode() {
         return Optional.ofNullable(this.throttledCpCode);
     }
+    /**
+     * @return Specifies the HTTP response code for requests that receive the alternate response.
+     * 
+     */
     public Optional<Integer> throttledStatusCode() {
         return Optional.ofNullable(this.throttledStatusCode);
     }
+    /**
+     * @return Specifies whether to apply an alternative CP code for requests served the alternate response.
+     * 
+     */
     public Optional<Boolean> useThrottledCpCode() {
         return Optional.ofNullable(this.useThrottledCpCode);
     }
+    /**
+     * @return Allows you to assign a specific HTTP response code to a throttled request.
+     * 
+     */
     public Optional<Boolean> useThrottledStatusCode() {
         return Optional.ofNullable(this.useThrottledStatusCode);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

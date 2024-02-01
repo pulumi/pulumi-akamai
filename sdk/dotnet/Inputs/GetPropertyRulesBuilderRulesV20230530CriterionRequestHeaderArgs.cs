@@ -12,32 +12,60 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230530CriterionRequestHeaderInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The name of the request header, for example `Accept-Language`.
+        /// </summary>
         [Input("headerName")]
         public Input<string>? HeaderName { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public Input<bool>? Locked { get; set; }
 
+        /// <summary>
+        /// Sets a case-sensitive match for the `value` field.
+        /// </summary>
         [Input("matchCaseSensitiveValue")]
         public Input<bool>? MatchCaseSensitiveValue { get; set; }
 
+        /// <summary>
+        /// Narrows the match criteria.
+        /// </summary>
         [Input("matchOperator")]
         public Input<string>? MatchOperator { get; set; }
 
+        /// <summary>
+        /// Allows wildcards in the `headerName` field, where `?` matches a single character and `*` matches zero or more characters.
+        /// </summary>
         [Input("matchWildcardName")]
         public Input<bool>? MatchWildcardName { get; set; }
 
+        /// <summary>
+        /// Allows wildcards in the `value` field, where `?` matches a single character and `*` matches zero or more characters.
+        /// </summary>
         [Input("matchWildcardValue")]
         public Input<bool>? MatchWildcardValue { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public Input<string>? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public Input<string>? Uuid { get; set; }
 
         [Input("values")]
         private InputList<string>? _values;
+
+        /// <summary>
+        /// The request header's value, for example `en-US` when the header `headerName` is `Accept-Language`.
+        /// </summary>
         public InputList<string> Values
         {
             get => _values ?? (_values = new InputList<string>());

@@ -12,68 +12,132 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorInputValidationInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Fails POST request bodies that exceed 16 KB when enabled, otherwise allows them to pass with no validation for policy compliance.
+        /// </summary>
         [Input("allowLargePostBody")]
         public Input<bool>? AllowLargePostBody { get; set; }
 
+        /// <summary>
+        /// Identifies the Cloudlet policy.
+        /// </summary>
         [Input("cloudletPolicy")]
         public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorInputValidationCloudletPolicyInputArgs>? CloudletPolicy { get; set; }
 
+        /// <summary>
+        /// Applies the Input Validation Cloudlet behavior.
+        /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
+        /// <summary>
+        /// Specifies the redirect link for invalid requests that have not yet triggered a penalty.
+        /// </summary>
         [Input("failure302Uri")]
         public Input<string>? Failure302Uri { get; set; }
 
+        /// <summary>
+        /// Distinguishes this Input Validation policy from any others within the same property.
+        /// </summary>
         [Input("label")]
         public Input<string>? Label { get; set; }
 
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         [Input("locked")]
         public Input<bool>? Locked { get; set; }
 
+        /// <summary>
+        /// Specifies the redirect link for end users who trigger the penalty.
+        /// </summary>
         [Input("penalty302Uri")]
         public Input<string>? Penalty302Uri { get; set; }
 
+        /// <summary>
+        /// Specifies the full path to the static 403 response content relative to the `downloadDomainName` in the `penaltyNetStorage` object.
+        /// </summary>
         [Input("penalty403NetStoragePath")]
         public Input<string>? Penalty403NetStoragePath { get; set; }
 
+        /// <summary>
+        /// Once the `penaltyThreshold` of invalid requests is met, this specifies the response.
+        /// </summary>
         [Input("penaltyAction")]
         public Input<string>? PenaltyAction { get; set; }
 
+        /// <summary>
+        /// Specifies the penalty response's time to live in the cache, `5` minutes by default.
+        /// </summary>
         [Input("penaltyBrandedDenyCacheTtl")]
         public Input<int>? PenaltyBrandedDenyCacheTtl { get; set; }
 
+        /// <summary>
+        /// Specifies the NetStorage account that serves out the penalty's static 403 response content. Details appear in an object featuring a `downloadDomainName` string member that identifies the NetStorage hostname, and an integer `cpCode` to track the traffic.
+        /// </summary>
         [Input("penaltyNetStorage")]
         public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorInputValidationPenaltyNetStorageInputArgs>? PenaltyNetStorage { get; set; }
 
+        /// <summary>
+        /// Specifies the number of invalid requests permitted before executing the `penaltyAction`.
+        /// </summary>
         [Input("penaltyThreshold")]
         public Input<int>? PenaltyThreshold { get; set; }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("penaltyTitle")]
         public Input<string>? PenaltyTitle { get; set; }
 
+        /// <summary>
+        /// Upon receiving a valid request, enabling this resets the `penaltyThreshold` counter to zero.  Otherwise, even those series of invalid requests that are interrupted by valid requests may trigger the `penaltyAction`.
+        /// </summary>
         [Input("resetOnValid")]
         public Input<bool>? ResetOnValid { get; set; }
 
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         [Input("templateUuid")]
         public Input<string>? TemplateUuid { get; set; }
 
+        /// <summary>
+        /// When enabled, identifies users by the value of a cookie.
+        /// </summary>
         [Input("userIdentificationByCookie")]
         public Input<bool>? UserIdentificationByCookie { get; set; }
 
+        /// <summary>
+        /// When enabled, identifies users by specific HTTP headers on GET or POST requests.
+        /// </summary>
         [Input("userIdentificationByHeaders")]
         public Input<bool>? UserIdentificationByHeaders { get; set; }
 
+        /// <summary>
+        /// When enabled, identifies users by specific IP address. Do not enable this if you are concerned about DDoS attacks from many different IP addresses.
+        /// </summary>
         [Input("userIdentificationByIp")]
         public Input<bool>? UserIdentificationByIp { get; set; }
 
+        /// <summary>
+        /// When enabled, identifies users by specific query parameters on GET or POST requests.
+        /// </summary>
         [Input("userIdentificationByParams")]
         public Input<bool>? UserIdentificationByParams { get; set; }
 
+        /// <summary>
+        /// This specifies the cookie name whose value needs to remain constant across requests to identify a user.
+        /// </summary>
         [Input("userIdentificationKeyCookie")]
         public Input<string>? UserIdentificationKeyCookie { get; set; }
 
         [Input("userIdentificationKeyHeaders")]
         private InputList<string>? _userIdentificationKeyHeaders;
+
+        /// <summary>
+        /// This specifies the HTTP headers whose combined set of values identify each end user.
+        /// </summary>
         public InputList<string> UserIdentificationKeyHeaders
         {
             get => _userIdentificationKeyHeaders ?? (_userIdentificationKeyHeaders = new InputList<string>());
@@ -82,30 +146,55 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("userIdentificationKeyParams")]
         private InputList<string>? _userIdentificationKeyParams;
+
+        /// <summary>
+        /// This specifies the query parameters whose combined set of values identify each end user.
+        /// </summary>
         public InputList<string> UserIdentificationKeyParams
         {
             get => _userIdentificationKeyParams ?? (_userIdentificationKeyParams = new InputList<string>());
             set => _userIdentificationKeyParams = value;
         }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("userIdentificationTitle")]
         public Input<string>? UserIdentificationTitle { get; set; }
 
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         [Input("uuid")]
         public Input<string>? Uuid { get; set; }
 
+        /// <summary>
+        /// If `validateOnOriginWith` is set to `RESPONSE_CODE_AND_HEADER`, this specifies the header name for a request that the origin identifies as invalid.
+        /// </summary>
         [Input("validateOnOriginHeaderName")]
         public Input<string>? ValidateOnOriginHeaderName { get; set; }
 
+        /// <summary>
+        /// If `validateOnOriginWith` is set to `RESPONSE_CODE_AND_HEADER`, this specifies an invalid request's header value that corresponds to the `validateOnOriginHeaderName`.
+        /// </summary>
         [Input("validateOnOriginHeaderValue")]
         public Input<string>? ValidateOnOriginHeaderValue { get; set; }
 
+        /// <summary>
+        /// Unless `validateOnOriginWith` is `DISABLED`, this identifies the integer response code for requests the origin identifies as invalid.
+        /// </summary>
         [Input("validateOnOriginResponseCode")]
         public Input<int>? ValidateOnOriginResponseCode { get; set; }
 
+        /// <summary>
+        /// For any validation that edge servers can't perform alone, this specifies additional validation steps based on how the origin identifies an invalid request.  If a request is invalid, the origin can indicate this to the edge server.
+        /// </summary>
         [Input("validateOnOriginWith")]
         public Input<string>? ValidateOnOriginWith { get; set; }
 
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         [Input("validationTitle")]
         public Input<string>? ValidationTitle { get; set; }
 

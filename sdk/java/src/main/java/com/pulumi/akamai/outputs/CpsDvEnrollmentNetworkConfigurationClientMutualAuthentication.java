@@ -12,17 +12,41 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication {
+    /**
+     * @return Enable OCSP stapling
+     * 
+     */
     private @Nullable Boolean ocspEnabled;
+    /**
+     * @return Enable the server to send the certificate authority (CA) list to the client
+     * 
+     */
     private @Nullable Boolean sendCaListToClient;
+    /**
+     * @return The identifier of the set of trust chains, created in the Trust Chain Manager
+     * 
+     */
     private @Nullable String setId;
 
     private CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication() {}
+    /**
+     * @return Enable OCSP stapling
+     * 
+     */
     public Optional<Boolean> ocspEnabled() {
         return Optional.ofNullable(this.ocspEnabled);
     }
+    /**
+     * @return Enable the server to send the certificate authority (CA) list to the client
+     * 
+     */
     public Optional<Boolean> sendCaListToClient() {
         return Optional.ofNullable(this.sendCaListToClient);
     }
+    /**
+     * @return The identifier of the set of trust chains, created in the Trust Chain Manager
+     * 
+     */
     public Optional<String> setId() {
         return Optional.ofNullable(this.setId);
     }

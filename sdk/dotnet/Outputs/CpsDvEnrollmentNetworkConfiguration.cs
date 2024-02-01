@@ -13,13 +13,37 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class CpsDvEnrollmentNetworkConfiguration
     {
+        /// <summary>
+        /// The trust chain configuration used for client mutual authentication
+        /// </summary>
         public readonly Outputs.CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication? ClientMutualAuthentication;
+        /// <summary>
+        /// Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created
+        /// </summary>
         public readonly bool? CloneDnsNames;
+        /// <summary>
+        /// TLS versions which are disallowed
+        /// </summary>
         public readonly ImmutableArray<string> DisallowedTlsVersions;
+        /// <summary>
+        /// Geography type used for enrollment
+        /// </summary>
         public readonly string Geography;
+        /// <summary>
+        /// Mandatory Ciphers which are included for enrollment
+        /// </summary>
         public readonly string? MustHaveCiphers;
+        /// <summary>
+        /// Enable OCSP stapling
+        /// </summary>
         public readonly string? OcspStapling;
+        /// <summary>
+        /// Preferred Ciphers which are included for enrollment
+        /// </summary>
         public readonly string? PreferredCiphers;
+        /// <summary>
+        /// Enable QUIC protocol
+        /// </summary>
         public readonly bool? QuicEnabled;
 
         [OutputConstructor]

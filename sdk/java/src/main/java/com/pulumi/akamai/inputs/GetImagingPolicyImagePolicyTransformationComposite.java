@@ -16,16 +16,32 @@ public final class GetImagingPolicyImagePolicyTransformationComposite extends co
 
     public static final GetImagingPolicyImagePolicyTransformationComposite Empty = new GetImagingPolicyImagePolicyTransformationComposite();
 
+    /**
+     * Compass direction indicating the corner or edge of the base image to place the applied image. Use Horizontal and Vertical Offset to adjust the applied image&#39;s gravity position
+     * 
+     */
     @Import(name="gravity")
     private @Nullable String gravity;
 
+    /**
+     * @return Compass direction indicating the corner or edge of the base image to place the applied image. Use Horizontal and Vertical Offset to adjust the applied image&#39;s gravity position
+     * 
+     */
     public Optional<String> gravity() {
         return Optional.ofNullable(this.gravity);
     }
 
+    /**
+     * Compass direction indicating the corner or edge of the base image to place the applied image. Use Horizontal and Vertical Offset to adjust the applied image&#39;s gravity position
+     * 
+     */
     @Import(name="gravityVar")
     private @Nullable String gravityVar;
 
+    /**
+     * @return Compass direction indicating the corner or edge of the base image to place the applied image. Use Horizontal and Vertical Offset to adjust the applied image&#39;s gravity position
+     * 
+     */
     public Optional<String> gravityVar() {
         return Optional.ofNullable(this.gravityVar);
     }
@@ -37,72 +53,152 @@ public final class GetImagingPolicyImagePolicyTransformationComposite extends co
         return this.image;
     }
 
+    /**
+     * Place applied image on top of or underneath the base image. Watermarks are usually applied over. Backgrounds are usually applied under.
+     * 
+     */
     @Import(name="placement")
     private @Nullable String placement;
 
+    /**
+     * @return Place applied image on top of or underneath the base image. Watermarks are usually applied over. Backgrounds are usually applied under.
+     * 
+     */
     public Optional<String> placement() {
         return Optional.ofNullable(this.placement);
     }
 
+    /**
+     * Place applied image on top of or underneath the base image. Watermarks are usually applied over. Backgrounds are usually applied under.
+     * 
+     */
     @Import(name="placementVar")
     private @Nullable String placementVar;
 
+    /**
+     * @return Place applied image on top of or underneath the base image. Watermarks are usually applied over. Backgrounds are usually applied under.
+     * 
+     */
     public Optional<String> placementVar() {
         return Optional.ofNullable(this.placementVar);
     }
 
+    /**
+     * A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image&#39;s width or height.
+     * 
+     */
     @Import(name="scale")
     private @Nullable String scale;
 
+    /**
+     * @return A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image&#39;s width or height.
+     * 
+     */
     public Optional<String> scale() {
         return Optional.ofNullable(this.scale);
     }
 
+    /**
+     * The dimension, either `width` or `height`, of the source image to scale.
+     * 
+     */
     @Import(name="scaleDimension")
     private @Nullable String scaleDimension;
 
+    /**
+     * @return The dimension, either `width` or `height`, of the source image to scale.
+     * 
+     */
     public Optional<String> scaleDimension() {
         return Optional.ofNullable(this.scaleDimension);
     }
 
+    /**
+     * The dimension, either `width` or `height`, of the source image to scale.
+     * 
+     */
     @Import(name="scaleDimensionVar")
     private @Nullable String scaleDimensionVar;
 
+    /**
+     * @return The dimension, either `width` or `height`, of the source image to scale.
+     * 
+     */
     public Optional<String> scaleDimensionVar() {
         return Optional.ofNullable(this.scaleDimensionVar);
     }
 
+    /**
+     * A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image&#39;s width or height.
+     * 
+     */
     @Import(name="scaleVar")
     private @Nullable String scaleVar;
 
+    /**
+     * @return A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image&#39;s width or height.
+     * 
+     */
     public Optional<String> scaleVar() {
         return Optional.ofNullable(this.scaleVar);
     }
 
+    /**
+     * The x-axis position of the image to apply.
+     * 
+     */
     @Import(name="xPosition")
     private @Nullable String xPosition;
 
+    /**
+     * @return The x-axis position of the image to apply.
+     * 
+     */
     public Optional<String> xPosition() {
         return Optional.ofNullable(this.xPosition);
     }
 
+    /**
+     * The x-axis position of the image to apply.
+     * 
+     */
     @Import(name="xPositionVar")
     private @Nullable String xPositionVar;
 
+    /**
+     * @return The x-axis position of the image to apply.
+     * 
+     */
     public Optional<String> xPositionVar() {
         return Optional.ofNullable(this.xPositionVar);
     }
 
+    /**
+     * The y-axis position of the image to apply.
+     * 
+     */
     @Import(name="yPosition")
     private @Nullable String yPosition;
 
+    /**
+     * @return The y-axis position of the image to apply.
+     * 
+     */
     public Optional<String> yPosition() {
         return Optional.ofNullable(this.yPosition);
     }
 
+    /**
+     * The y-axis position of the image to apply.
+     * 
+     */
     @Import(name="yPositionVar")
     private @Nullable String yPositionVar;
 
+    /**
+     * @return The y-axis position of the image to apply.
+     * 
+     */
     public Optional<String> yPositionVar() {
         return Optional.ofNullable(this.yPositionVar);
     }
@@ -143,11 +239,23 @@ public final class GetImagingPolicyImagePolicyTransformationComposite extends co
             $ = new GetImagingPolicyImagePolicyTransformationComposite(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param gravity Compass direction indicating the corner or edge of the base image to place the applied image. Use Horizontal and Vertical Offset to adjust the applied image&#39;s gravity position
+         * 
+         * @return builder
+         * 
+         */
         public Builder gravity(@Nullable String gravity) {
             $.gravity = gravity;
             return this;
         }
 
+        /**
+         * @param gravityVar Compass direction indicating the corner or edge of the base image to place the applied image. Use Horizontal and Vertical Offset to adjust the applied image&#39;s gravity position
+         * 
+         * @return builder
+         * 
+         */
         public Builder gravityVar(@Nullable String gravityVar) {
             $.gravityVar = gravityVar;
             return this;
@@ -158,51 +266,111 @@ public final class GetImagingPolicyImagePolicyTransformationComposite extends co
             return this;
         }
 
+        /**
+         * @param placement Place applied image on top of or underneath the base image. Watermarks are usually applied over. Backgrounds are usually applied under.
+         * 
+         * @return builder
+         * 
+         */
         public Builder placement(@Nullable String placement) {
             $.placement = placement;
             return this;
         }
 
+        /**
+         * @param placementVar Place applied image on top of or underneath the base image. Watermarks are usually applied over. Backgrounds are usually applied under.
+         * 
+         * @return builder
+         * 
+         */
         public Builder placementVar(@Nullable String placementVar) {
             $.placementVar = placementVar;
             return this;
         }
 
+        /**
+         * @param scale A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image&#39;s width or height.
+         * 
+         * @return builder
+         * 
+         */
         public Builder scale(@Nullable String scale) {
             $.scale = scale;
             return this;
         }
 
+        /**
+         * @param scaleDimension The dimension, either `width` or `height`, of the source image to scale.
+         * 
+         * @return builder
+         * 
+         */
         public Builder scaleDimension(@Nullable String scaleDimension) {
             $.scaleDimension = scaleDimension;
             return this;
         }
 
+        /**
+         * @param scaleDimensionVar The dimension, either `width` or `height`, of the source image to scale.
+         * 
+         * @return builder
+         * 
+         */
         public Builder scaleDimensionVar(@Nullable String scaleDimensionVar) {
             $.scaleDimensionVar = scaleDimensionVar;
             return this;
         }
 
+        /**
+         * @param scaleVar A multiplier to resize the applied image relative to the source image and preserve aspect ratio, 1 by default. Set the `scaleDimension` to calculate the `scale` from the source image&#39;s width or height.
+         * 
+         * @return builder
+         * 
+         */
         public Builder scaleVar(@Nullable String scaleVar) {
             $.scaleVar = scaleVar;
             return this;
         }
 
+        /**
+         * @param xPosition The x-axis position of the image to apply.
+         * 
+         * @return builder
+         * 
+         */
         public Builder xPosition(@Nullable String xPosition) {
             $.xPosition = xPosition;
             return this;
         }
 
+        /**
+         * @param xPositionVar The x-axis position of the image to apply.
+         * 
+         * @return builder
+         * 
+         */
         public Builder xPositionVar(@Nullable String xPositionVar) {
             $.xPositionVar = xPositionVar;
             return this;
         }
 
+        /**
+         * @param yPosition The y-axis position of the image to apply.
+         * 
+         * @return builder
+         * 
+         */
         public Builder yPosition(@Nullable String yPosition) {
             $.yPosition = yPosition;
             return this;
         }
 
+        /**
+         * @param yPositionVar The y-axis position of the image to apply.
+         * 
+         * @return builder
+         * 
+         */
         public Builder yPositionVar(@Nullable String yPositionVar) {
             $.yPositionVar = yPositionVar;
             return this;

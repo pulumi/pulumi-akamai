@@ -15,16 +15,32 @@ public final class GetImagingPolicyImagePolicyTransformationRotateArgs extends c
 
     public static final GetImagingPolicyImagePolicyTransformationRotateArgs Empty = new GetImagingPolicyImagePolicyTransformationRotateArgs();
 
+    /**
+     * The value to rotate the image by. Positive values rotate clockwise, while negative values rotate counter-clockwise.
+     * 
+     */
     @Import(name="degrees")
     private @Nullable Output<String> degrees;
 
+    /**
+     * @return The value to rotate the image by. Positive values rotate clockwise, while negative values rotate counter-clockwise.
+     * 
+     */
     public Optional<Output<String>> degrees() {
         return Optional.ofNullable(this.degrees);
     }
 
+    /**
+     * The value to rotate the image by. Positive values rotate clockwise, while negative values rotate counter-clockwise.
+     * 
+     */
     @Import(name="degreesVar")
     private @Nullable Output<String> degreesVar;
 
+    /**
+     * @return The value to rotate the image by. Positive values rotate clockwise, while negative values rotate counter-clockwise.
+     * 
+     */
     public Optional<Output<String>> degreesVar() {
         return Optional.ofNullable(this.degreesVar);
     }
@@ -54,20 +70,44 @@ public final class GetImagingPolicyImagePolicyTransformationRotateArgs extends c
             $ = new GetImagingPolicyImagePolicyTransformationRotateArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param degrees The value to rotate the image by. Positive values rotate clockwise, while negative values rotate counter-clockwise.
+         * 
+         * @return builder
+         * 
+         */
         public Builder degrees(@Nullable Output<String> degrees) {
             $.degrees = degrees;
             return this;
         }
 
+        /**
+         * @param degrees The value to rotate the image by. Positive values rotate clockwise, while negative values rotate counter-clockwise.
+         * 
+         * @return builder
+         * 
+         */
         public Builder degrees(String degrees) {
             return degrees(Output.of(degrees));
         }
 
+        /**
+         * @param degreesVar The value to rotate the image by. Positive values rotate clockwise, while negative values rotate counter-clockwise.
+         * 
+         * @return builder
+         * 
+         */
         public Builder degreesVar(@Nullable Output<String> degreesVar) {
             $.degreesVar = degreesVar;
             return this;
         }
 
+        /**
+         * @param degreesVar The value to rotate the image by. Positive values rotate clockwise, while negative values rotate counter-clockwise.
+         * 
+         * @return builder
+         * 
+         */
         public Builder degreesVar(String degreesVar) {
             return degreesVar(Output.of(degreesVar));
         }

@@ -13,12 +13,30 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyTransformationCompositeImageCircleImageResult
     {
+        /// <summary>
+        /// The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
+        /// </summary>
         public readonly string? Color;
+        /// <summary>
+        /// The fill color of the circle. The API supports hexadecimal representation and CSS hexadecimal color values.
+        /// </summary>
         public readonly string? ColorVar;
+        /// <summary>
+        /// The diameter of the circle. The diameter will be the width and the height of the image in pixels.
+        /// </summary>
         public readonly string? Diameter;
+        /// <summary>
+        /// The diameter of the circle. The diameter will be the width and the height of the image in pixels.
+        /// </summary>
         public readonly string? DiameterVar;
         public readonly Outputs.GetImagingPolicyImagePolicyTransformationResult? Transformation;
+        /// <summary>
+        /// The width of the box in pixels.
+        /// </summary>
         public readonly string? Width;
+        /// <summary>
+        /// The width of the box in pixels.
+        /// </summary>
         public readonly string? WidthVar;
 
         [OutputConstructor]

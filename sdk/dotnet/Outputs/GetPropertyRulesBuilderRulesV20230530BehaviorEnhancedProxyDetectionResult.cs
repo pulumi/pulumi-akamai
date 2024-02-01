@@ -13,41 +13,149 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorEnhancedProxyDetectionResult
     {
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? AnonymousVpn;
+        /// <summary>
+        /// Specifies how to field the proxy request.
+        /// </summary>
         public readonly string? BestPracticeAction;
+        /// <summary>
+        /// This specifies the URL to which to redirect requests.
+        /// </summary>
         public readonly string? BestPracticeRedirecturl;
+        /// <summary>
+        /// This enables detection of requests from anonymous VPNs.
+        /// </summary>
         public readonly bool? DetectAnonymousVpn;
+        /// <summary>
+        /// Specifies how to field anonymous VPN requests.
+        /// </summary>
         public readonly string? DetectAnonymousVpnAction;
+        /// <summary>
+        /// This specifies the URL to which to redirect anonymous VPN requests.
+        /// </summary>
         public readonly string? DetectAnonymousVpnRedirecturl;
+        /// <summary>
+        /// This detects requests from a hosting provider.
+        /// </summary>
         public readonly bool? DetectHostingProvider;
+        /// <summary>
+        /// This specifies whether to `DENY`, `ALLOW`, or `REDIRECT` requests from hosting providers.
+        /// </summary>
         public readonly string? DetectHostingProviderAction;
+        /// <summary>
+        /// This specifies the absolute URL to which to redirect requests from hosting providers.
+        /// </summary>
         public readonly string? DetectHostingProviderRedirecturl;
+        /// <summary>
+        /// This enables detection of requests from public proxies.
+        /// </summary>
         public readonly bool? DetectPublicProxy;
+        /// <summary>
+        /// Specifies how to field public proxy requests.
+        /// </summary>
         public readonly string? DetectPublicProxyAction;
+        /// <summary>
+        /// This specifies the URL to which to redirect public proxy requests.
+        /// </summary>
         public readonly string? DetectPublicProxyRedirecturl;
+        /// <summary>
+        /// This enables detection of requests from a residential proxy. See `Enhanced Proxy Detection with GeoGuard` and learn more about this GeoGuard category before enabling it.
+        /// </summary>
         public readonly bool? DetectResidentialProxy;
+        /// <summary>
+        /// This specifies whether to `DENY`, `ALLOW`, or `REDIRECT` requests from residential proxies.
+        /// </summary>
         public readonly string? DetectResidentialProxyAction;
+        /// <summary>
+        /// This specifies the URL to which to redirect requests.
+        /// </summary>
         public readonly string? DetectResidentialProxyRedirecturl;
+        /// <summary>
+        /// This enables detection of requests from smart DNS proxies.
+        /// </summary>
         public readonly bool? DetectSmartDnsProxy;
+        /// <summary>
+        /// Specifies whether to `DENY`, `ALLOW`, or `REDIRECT` smart DNS proxy requests.
+        /// </summary>
         public readonly string? DetectSmartDnsProxyAction;
+        /// <summary>
+        /// This specifies the URL to which to redirect DNS proxy requests.
+        /// </summary>
         public readonly string? DetectSmartDnsProxyRedirecturl;
+        /// <summary>
+        /// This enables detection of requests from Tor exit nodes.
+        /// </summary>
         public readonly bool? DetectTorExitNode;
+        /// <summary>
+        /// This specifies whether to `DENY`, `ALLOW`, or `REDIRECT` requests from Tor exit nodes.
+        /// </summary>
         public readonly string? DetectTorExitNodeAction;
+        /// <summary>
+        /// This specifies the URL to which to redirect requests from Tor exit nodes.
+        /// </summary>
         public readonly string? DetectTorExitNodeRedirecturl;
+        /// <summary>
+        /// This enables detection of requests from VPN data centers.
+        /// </summary>
         public readonly bool? DetectVpnDataCenter;
+        /// <summary>
+        /// This specifies whether to `DENY`, `ALLOW`, or `REDIRECT` requests from VPN data centers.
+        /// </summary>
         public readonly string? DetectVpnDataCenterAction;
+        /// <summary>
+        /// This specifies the URL to which to redirect requests from VPN data centers.
+        /// </summary>
         public readonly string? DetectVpnDataCenterRedirecturl;
+        /// <summary>
+        /// Specifies how to field the proxy request.
+        /// </summary>
         public readonly string? EnableConfigurationMode;
+        /// <summary>
+        /// Applies GeoGuard proxy detection.
+        /// </summary>
         public readonly bool? Enabled;
+        /// <summary>
+        /// Whether the Enhanced Proxy Detection (Akamai-EPD) header is included in the forward request to mark a connecting IP address as an anonymous proxy, with a two-letter designation. See the `epdForwardHeaderEnrichment` behavior for details.
+        /// </summary>
         public readonly bool? ForwardHeaderEnrichment;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? HostingProvider;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? PublicProxy;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? ResidentialProxy;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? SmartDnsProxy;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? TorExitNode;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
+        /// <summary>
+        /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+        /// </summary>
         public readonly string? VpnDataCenter;
 
         [OutputConstructor]

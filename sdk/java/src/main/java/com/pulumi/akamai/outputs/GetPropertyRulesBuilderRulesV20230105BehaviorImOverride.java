@@ -14,73 +14,209 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorImOverride {
+    /**
+     * @return Directly specifies the pixel density. The numeric value is a scaling factor of 1, representing normal density.
+     * 
+     */
     private @Nullable Double dpr;
+    /**
+     * @return This selects the variable with the desired pixel density. The variable specifies the same type of data as the `dpr` option below.
+     * 
+     */
     private @Nullable String dprvar;
+    /**
+     * @return Whether to exclude all query parameters from the Image and Video Manager cache key.
+     * 
+     */
     private @Nullable Boolean excludeAllQueryParameters;
+    /**
+     * @return Specifies individual query parameters to exclude from the Image and Video Manager cache key.
+     * 
+     */
     private @Nullable List<String> excludedQueryParameters;
+    /**
+     * @return Specifies the type of the browser, or the encodings passed in the `Accept` header, that you want to optimize images for.
+     * 
+     */
     private @Nullable String format;
+    /**
+     * @return This selects the variable with the name of the browser you want to optimize images for. The variable specifies the same type of data as the `format` option below.
+     * 
+     */
     private @Nullable String formatvar;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Selects the type of query parameter you want to set.
+     * 
+     */
     private @Nullable String override;
+    /**
+     * @return This selects the desired Image and Video Manager policy name directly. If there is no policy by that name, Image and Video Manager serves the image unmodified.
+     * 
+     */
     private @Nullable String policy;
+    /**
+     * @return This selects the variable with the desired Image and Video Manager policy name to apply to image requests. If there is no policy by that name, Image and Video Manager serves the image unmodified.
+     * 
+     */
     private @Nullable String policyvar;
+    /**
+     * @return This selects one of the property&#39;s rule tree variables to assign to the `policyvarName` variable within Image and Video Manager.
+     * 
+     */
     private @Nullable String policyvarIMvar;
+    /**
+     * @return This selects the name of one of the variables defined in an Image and Video Manager policy that you want to replace with the property&#39;s rule tree variable.
+     * 
+     */
     private @Nullable String policyvarName;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return Specifies how to set a query parameter.
+     * 
+     */
     private @Nullable String typesel;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
+    /**
+     * @return Sets the image&#39;s desired pixel width directly. If the Image Manager policy doesn&#39;t define that width, it serves the next largest width.
+     * 
+     */
     private @Nullable Double width;
+    /**
+     * @return Selects the variable with the desired width.  If the Image and Video Manager policy doesn&#39;t define that width, it serves the next largest width.
+     * 
+     */
     private @Nullable String widthvar;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorImOverride() {}
+    /**
+     * @return Directly specifies the pixel density. The numeric value is a scaling factor of 1, representing normal density.
+     * 
+     */
     public Optional<Double> dpr() {
         return Optional.ofNullable(this.dpr);
     }
+    /**
+     * @return This selects the variable with the desired pixel density. The variable specifies the same type of data as the `dpr` option below.
+     * 
+     */
     public Optional<String> dprvar() {
         return Optional.ofNullable(this.dprvar);
     }
+    /**
+     * @return Whether to exclude all query parameters from the Image and Video Manager cache key.
+     * 
+     */
     public Optional<Boolean> excludeAllQueryParameters() {
         return Optional.ofNullable(this.excludeAllQueryParameters);
     }
+    /**
+     * @return Specifies individual query parameters to exclude from the Image and Video Manager cache key.
+     * 
+     */
     public List<String> excludedQueryParameters() {
         return this.excludedQueryParameters == null ? List.of() : this.excludedQueryParameters;
     }
+    /**
+     * @return Specifies the type of the browser, or the encodings passed in the `Accept` header, that you want to optimize images for.
+     * 
+     */
     public Optional<String> format() {
         return Optional.ofNullable(this.format);
     }
+    /**
+     * @return This selects the variable with the name of the browser you want to optimize images for. The variable specifies the same type of data as the `format` option below.
+     * 
+     */
     public Optional<String> formatvar() {
         return Optional.ofNullable(this.formatvar);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Selects the type of query parameter you want to set.
+     * 
+     */
     public Optional<String> override() {
         return Optional.ofNullable(this.override);
     }
+    /**
+     * @return This selects the desired Image and Video Manager policy name directly. If there is no policy by that name, Image and Video Manager serves the image unmodified.
+     * 
+     */
     public Optional<String> policy() {
         return Optional.ofNullable(this.policy);
     }
+    /**
+     * @return This selects the variable with the desired Image and Video Manager policy name to apply to image requests. If there is no policy by that name, Image and Video Manager serves the image unmodified.
+     * 
+     */
     public Optional<String> policyvar() {
         return Optional.ofNullable(this.policyvar);
     }
+    /**
+     * @return This selects one of the property&#39;s rule tree variables to assign to the `policyvarName` variable within Image and Video Manager.
+     * 
+     */
     public Optional<String> policyvarIMvar() {
         return Optional.ofNullable(this.policyvarIMvar);
     }
+    /**
+     * @return This selects the name of one of the variables defined in an Image and Video Manager policy that you want to replace with the property&#39;s rule tree variable.
+     * 
+     */
     public Optional<String> policyvarName() {
         return Optional.ofNullable(this.policyvarName);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return Specifies how to set a query parameter.
+     * 
+     */
     public Optional<String> typesel() {
         return Optional.ofNullable(this.typesel);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
+    /**
+     * @return Sets the image&#39;s desired pixel width directly. If the Image Manager policy doesn&#39;t define that width, it serves the next largest width.
+     * 
+     */
     public Optional<Double> width() {
         return Optional.ofNullable(this.width);
     }
+    /**
+     * @return Selects the variable with the desired width.  If the Image and Video Manager policy doesn&#39;t define that width, it serves the next largest width.
+     * 
+     */
     public Optional<String> widthvar() {
         return Optional.ofNullable(this.widthvar);
     }

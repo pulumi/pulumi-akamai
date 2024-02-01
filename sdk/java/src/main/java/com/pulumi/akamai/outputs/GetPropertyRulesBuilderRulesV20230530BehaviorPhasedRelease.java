@@ -15,73 +15,209 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorPhasedRelease {
+    /**
+     * @return Specifies the Cloudlet policy as an object.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530BehaviorPhasedReleaseCloudletPolicy cloudletPolicy;
+    /**
+     * @return Identifies the Cloudlet shared policy to use with this behavior. Use the `Cloudlets API` to list available shared policies.
+     * 
+     */
     private @Nullable Integer cloudletSharedPolicy;
+    /**
+     * @return Enables the Phased Release Cloudlet.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Specifies the number of seconds to wait until the client tries to access the failover origin after the initial failure is detected. Set the value to `0` to immediately request the alternate origin upon failure.
+     * 
+     */
     private @Nullable Integer failoverDuration;
+    /**
+     * @return Allows failure responses at the origin defined by the Cloudlet to fail over to the prevailing origin defined by the property.
+     * 
+     */
     private @Nullable Boolean failoverEnabled;
+    /**
+     * @return Defines the set of failure codes that initiate the failover response.
+     * 
+     */
     private @Nullable List<String> failoverResponseCodes;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String failoverTitle;
+    /**
+     * @return Whether you want to apply the Cloudlet shared policy to an unlimited number of properties within your account. Learn more about shared policies and how to create them in `Cloudlets Policy Manager`.
+     * 
+     */
     private @Nullable Boolean isSharedPolicy;
+    /**
+     * @return A label to distinguish this Phased Release policy from any others within the same property.
+     * 
+     */
     private @Nullable String label;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Select when to assign a cookie to the population of users the Cloudlet defines. If you select the Cloudlet&#39;s `random` membership option, it overrides this option&#39;s value so that it is effectively `NONE`.
+     * 
+     */
     private @Nullable String populationCookieType;
+    /**
+     * @return Sets the lifetime of the cookie from the initial request. Subsequent requests re-evaluate based on current membership settings.
+     * 
+     */
     private @Nullable String populationDuration;
+    /**
+     * @return Specifies the date and time when membership expires, and the browser no longer sends the cookie. Subsequent requests re-evaluate based on current membership settings.
+     * 
+     */
     private @Nullable String populationExpirationDate;
+    /**
+     * @return Enabling this option resets the original duration of the cookie if the browser refreshes before the cookie expires.
+     * 
+     */
     private @Nullable Boolean populationRefresh;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String populationTitle;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorPhasedRelease() {}
+    /**
+     * @return Specifies the Cloudlet policy as an object.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530BehaviorPhasedReleaseCloudletPolicy> cloudletPolicy() {
         return Optional.ofNullable(this.cloudletPolicy);
     }
+    /**
+     * @return Identifies the Cloudlet shared policy to use with this behavior. Use the `Cloudlets API` to list available shared policies.
+     * 
+     */
     public Optional<Integer> cloudletSharedPolicy() {
         return Optional.ofNullable(this.cloudletSharedPolicy);
     }
+    /**
+     * @return Enables the Phased Release Cloudlet.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Specifies the number of seconds to wait until the client tries to access the failover origin after the initial failure is detected. Set the value to `0` to immediately request the alternate origin upon failure.
+     * 
+     */
     public Optional<Integer> failoverDuration() {
         return Optional.ofNullable(this.failoverDuration);
     }
+    /**
+     * @return Allows failure responses at the origin defined by the Cloudlet to fail over to the prevailing origin defined by the property.
+     * 
+     */
     public Optional<Boolean> failoverEnabled() {
         return Optional.ofNullable(this.failoverEnabled);
     }
+    /**
+     * @return Defines the set of failure codes that initiate the failover response.
+     * 
+     */
     public List<String> failoverResponseCodes() {
         return this.failoverResponseCodes == null ? List.of() : this.failoverResponseCodes;
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> failoverTitle() {
         return Optional.ofNullable(this.failoverTitle);
     }
+    /**
+     * @return Whether you want to apply the Cloudlet shared policy to an unlimited number of properties within your account. Learn more about shared policies and how to create them in `Cloudlets Policy Manager`.
+     * 
+     */
     public Optional<Boolean> isSharedPolicy() {
         return Optional.ofNullable(this.isSharedPolicy);
     }
+    /**
+     * @return A label to distinguish this Phased Release policy from any others within the same property.
+     * 
+     */
     public Optional<String> label() {
         return Optional.ofNullable(this.label);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Select when to assign a cookie to the population of users the Cloudlet defines. If you select the Cloudlet&#39;s `random` membership option, it overrides this option&#39;s value so that it is effectively `NONE`.
+     * 
+     */
     public Optional<String> populationCookieType() {
         return Optional.ofNullable(this.populationCookieType);
     }
+    /**
+     * @return Sets the lifetime of the cookie from the initial request. Subsequent requests re-evaluate based on current membership settings.
+     * 
+     */
     public Optional<String> populationDuration() {
         return Optional.ofNullable(this.populationDuration);
     }
+    /**
+     * @return Specifies the date and time when membership expires, and the browser no longer sends the cookie. Subsequent requests re-evaluate based on current membership settings.
+     * 
+     */
     public Optional<String> populationExpirationDate() {
         return Optional.ofNullable(this.populationExpirationDate);
     }
+    /**
+     * @return Enabling this option resets the original duration of the cookie if the browser refreshes before the cookie expires.
+     * 
+     */
     public Optional<Boolean> populationRefresh() {
         return Optional.ofNullable(this.populationRefresh);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> populationTitle() {
         return Optional.ofNullable(this.populationTitle);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }

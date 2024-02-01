@@ -16,121 +16,353 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230105BehaviorInputValidation {
+    /**
+     * @return Fails POST request bodies that exceed 16 KB when enabled, otherwise allows them to pass with no validation for policy compliance.
+     * 
+     */
     private @Nullable Boolean allowLargePostBody;
+    /**
+     * @return Identifies the Cloudlet policy.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorInputValidationCloudletPolicy cloudletPolicy;
+    /**
+     * @return Applies the Input Validation Cloudlet behavior.
+     * 
+     */
     private @Nullable Boolean enabled;
+    /**
+     * @return Specifies the redirect link for invalid requests that have not yet triggered a penalty.
+     * 
+     */
     private @Nullable String failure302Uri;
+    /**
+     * @return Distinguishes this Input Validation policy from any others within the same property.
+     * 
+     */
     private @Nullable String label;
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     private @Nullable Boolean locked;
+    /**
+     * @return Specifies the redirect link for end users who trigger the penalty.
+     * 
+     */
     private @Nullable String penalty302Uri;
+    /**
+     * @return Specifies the full path to the static 403 response content relative to the `downloadDomainName` in the `penaltyNetStorage` object.
+     * 
+     */
     private @Nullable String penalty403NetStoragePath;
+    /**
+     * @return Once the `penaltyThreshold` of invalid requests is met, this specifies the response.
+     * 
+     */
     private @Nullable String penaltyAction;
+    /**
+     * @return Specifies the penalty response&#39;s time to live in the cache, `5` minutes by default.
+     * 
+     */
     private @Nullable Integer penaltyBrandedDenyCacheTtl;
+    /**
+     * @return Specifies the NetStorage account that serves out the penalty&#39;s static 403 response content. Details appear in an object featuring a `downloadDomainName` string member that identifies the NetStorage hostname, and an integer `cpCode` to track the traffic.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorInputValidationPenaltyNetStorage penaltyNetStorage;
+    /**
+     * @return Specifies the number of invalid requests permitted before executing the `penaltyAction`.
+     * 
+     */
     private @Nullable Integer penaltyThreshold;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String penaltyTitle;
+    /**
+     * @return Upon receiving a valid request, enabling this resets the `penaltyThreshold` counter to zero.  Otherwise, even those series of invalid requests that are interrupted by valid requests may trigger the `penaltyAction`.
+     * 
+     */
     private @Nullable Boolean resetOnValid;
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     private @Nullable String templateUuid;
+    /**
+     * @return When enabled, identifies users by the value of a cookie.
+     * 
+     */
     private @Nullable Boolean userIdentificationByCookie;
+    /**
+     * @return When enabled, identifies users by specific HTTP headers on GET or POST requests.
+     * 
+     */
     private @Nullable Boolean userIdentificationByHeaders;
+    /**
+     * @return When enabled, identifies users by specific IP address. Do not enable this if you are concerned about DDoS attacks from many different IP addresses.
+     * 
+     */
     private @Nullable Boolean userIdentificationByIp;
+    /**
+     * @return When enabled, identifies users by specific query parameters on GET or POST requests.
+     * 
+     */
     private @Nullable Boolean userIdentificationByParams;
+    /**
+     * @return This specifies the cookie name whose value needs to remain constant across requests to identify a user.
+     * 
+     */
     private @Nullable String userIdentificationKeyCookie;
+    /**
+     * @return This specifies the HTTP headers whose combined set of values identify each end user.
+     * 
+     */
     private @Nullable List<String> userIdentificationKeyHeaders;
+    /**
+     * @return This specifies the query parameters whose combined set of values identify each end user.
+     * 
+     */
     private @Nullable List<String> userIdentificationKeyParams;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String userIdentificationTitle;
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     private @Nullable String uuid;
+    /**
+     * @return If `validateOnOriginWith` is set to `RESPONSE_CODE_AND_HEADER`, this specifies the header name for a request that the origin identifies as invalid.
+     * 
+     */
     private @Nullable String validateOnOriginHeaderName;
+    /**
+     * @return If `validateOnOriginWith` is set to `RESPONSE_CODE_AND_HEADER`, this specifies an invalid request&#39;s header value that corresponds to the `validateOnOriginHeaderName`.
+     * 
+     */
     private @Nullable String validateOnOriginHeaderValue;
+    /**
+     * @return Unless `validateOnOriginWith` is `DISABLED`, this identifies the integer response code for requests the origin identifies as invalid.
+     * 
+     */
     private @Nullable Integer validateOnOriginResponseCode;
+    /**
+     * @return For any validation that edge servers can&#39;t perform alone, this specifies additional validation steps based on how the origin identifies an invalid request.  If a request is invalid, the origin can indicate this to the edge server.
+     * 
+     */
     private @Nullable String validateOnOriginWith;
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     private @Nullable String validationTitle;
 
     private GetPropertyRulesBuilderRulesV20230105BehaviorInputValidation() {}
+    /**
+     * @return Fails POST request bodies that exceed 16 KB when enabled, otherwise allows them to pass with no validation for policy compliance.
+     * 
+     */
     public Optional<Boolean> allowLargePostBody() {
         return Optional.ofNullable(this.allowLargePostBody);
     }
+    /**
+     * @return Identifies the Cloudlet policy.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorInputValidationCloudletPolicy> cloudletPolicy() {
         return Optional.ofNullable(this.cloudletPolicy);
     }
+    /**
+     * @return Applies the Input Validation Cloudlet behavior.
+     * 
+     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
+    /**
+     * @return Specifies the redirect link for invalid requests that have not yet triggered a penalty.
+     * 
+     */
     public Optional<String> failure302Uri() {
         return Optional.ofNullable(this.failure302Uri);
     }
+    /**
+     * @return Distinguishes this Input Validation policy from any others within the same property.
+     * 
+     */
     public Optional<String> label() {
         return Optional.ofNullable(this.label);
     }
+    /**
+     * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
+     * 
+     */
     public Optional<Boolean> locked() {
         return Optional.ofNullable(this.locked);
     }
+    /**
+     * @return Specifies the redirect link for end users who trigger the penalty.
+     * 
+     */
     public Optional<String> penalty302Uri() {
         return Optional.ofNullable(this.penalty302Uri);
     }
+    /**
+     * @return Specifies the full path to the static 403 response content relative to the `downloadDomainName` in the `penaltyNetStorage` object.
+     * 
+     */
     public Optional<String> penalty403NetStoragePath() {
         return Optional.ofNullable(this.penalty403NetStoragePath);
     }
+    /**
+     * @return Once the `penaltyThreshold` of invalid requests is met, this specifies the response.
+     * 
+     */
     public Optional<String> penaltyAction() {
         return Optional.ofNullable(this.penaltyAction);
     }
+    /**
+     * @return Specifies the penalty response&#39;s time to live in the cache, `5` minutes by default.
+     * 
+     */
     public Optional<Integer> penaltyBrandedDenyCacheTtl() {
         return Optional.ofNullable(this.penaltyBrandedDenyCacheTtl);
     }
+    /**
+     * @return Specifies the NetStorage account that serves out the penalty&#39;s static 403 response content. Details appear in an object featuring a `downloadDomainName` string member that identifies the NetStorage hostname, and an integer `cpCode` to track the traffic.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorInputValidationPenaltyNetStorage> penaltyNetStorage() {
         return Optional.ofNullable(this.penaltyNetStorage);
     }
+    /**
+     * @return Specifies the number of invalid requests permitted before executing the `penaltyAction`.
+     * 
+     */
     public Optional<Integer> penaltyThreshold() {
         return Optional.ofNullable(this.penaltyThreshold);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> penaltyTitle() {
         return Optional.ofNullable(this.penaltyTitle);
     }
+    /**
+     * @return Upon receiving a valid request, enabling this resets the `penaltyThreshold` counter to zero.  Otherwise, even those series of invalid requests that are interrupted by valid requests may trigger the `penaltyAction`.
+     * 
+     */
     public Optional<Boolean> resetOnValid() {
         return Optional.ofNullable(this.resetOnValid);
     }
+    /**
+     * @return This option is for internal usage only.
+     * 
+     */
     public Optional<String> templateUuid() {
         return Optional.ofNullable(this.templateUuid);
     }
+    /**
+     * @return When enabled, identifies users by the value of a cookie.
+     * 
+     */
     public Optional<Boolean> userIdentificationByCookie() {
         return Optional.ofNullable(this.userIdentificationByCookie);
     }
+    /**
+     * @return When enabled, identifies users by specific HTTP headers on GET or POST requests.
+     * 
+     */
     public Optional<Boolean> userIdentificationByHeaders() {
         return Optional.ofNullable(this.userIdentificationByHeaders);
     }
+    /**
+     * @return When enabled, identifies users by specific IP address. Do not enable this if you are concerned about DDoS attacks from many different IP addresses.
+     * 
+     */
     public Optional<Boolean> userIdentificationByIp() {
         return Optional.ofNullable(this.userIdentificationByIp);
     }
+    /**
+     * @return When enabled, identifies users by specific query parameters on GET or POST requests.
+     * 
+     */
     public Optional<Boolean> userIdentificationByParams() {
         return Optional.ofNullable(this.userIdentificationByParams);
     }
+    /**
+     * @return This specifies the cookie name whose value needs to remain constant across requests to identify a user.
+     * 
+     */
     public Optional<String> userIdentificationKeyCookie() {
         return Optional.ofNullable(this.userIdentificationKeyCookie);
     }
+    /**
+     * @return This specifies the HTTP headers whose combined set of values identify each end user.
+     * 
+     */
     public List<String> userIdentificationKeyHeaders() {
         return this.userIdentificationKeyHeaders == null ? List.of() : this.userIdentificationKeyHeaders;
     }
+    /**
+     * @return This specifies the query parameters whose combined set of values identify each end user.
+     * 
+     */
     public List<String> userIdentificationKeyParams() {
         return this.userIdentificationKeyParams == null ? List.of() : this.userIdentificationKeyParams;
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> userIdentificationTitle() {
         return Optional.ofNullable(this.userIdentificationTitle);
     }
+    /**
+     * @return A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     * 
+     */
     public Optional<String> uuid() {
         return Optional.ofNullable(this.uuid);
     }
+    /**
+     * @return If `validateOnOriginWith` is set to `RESPONSE_CODE_AND_HEADER`, this specifies the header name for a request that the origin identifies as invalid.
+     * 
+     */
     public Optional<String> validateOnOriginHeaderName() {
         return Optional.ofNullable(this.validateOnOriginHeaderName);
     }
+    /**
+     * @return If `validateOnOriginWith` is set to `RESPONSE_CODE_AND_HEADER`, this specifies an invalid request&#39;s header value that corresponds to the `validateOnOriginHeaderName`.
+     * 
+     */
     public Optional<String> validateOnOriginHeaderValue() {
         return Optional.ofNullable(this.validateOnOriginHeaderValue);
     }
+    /**
+     * @return Unless `validateOnOriginWith` is `DISABLED`, this identifies the integer response code for requests the origin identifies as invalid.
+     * 
+     */
     public Optional<Integer> validateOnOriginResponseCode() {
         return Optional.ofNullable(this.validateOnOriginResponseCode);
     }
+    /**
+     * @return For any validation that edge servers can&#39;t perform alone, this specifies additional validation steps based on how the origin identifies an invalid request.  If a request is invalid, the origin can indicate this to the edge server.
+     * 
+     */
     public Optional<String> validateOnOriginWith() {
         return Optional.ofNullable(this.validateOnOriginWith);
     }
+    /**
+     * @return This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     * 
+     */
     public Optional<String> validationTitle() {
         return Optional.ofNullable(this.validationTitle);
     }

@@ -11,29 +11,77 @@ import java.util.Objects;
 
 @CustomType
 public final class GetPropertyIncludesInclude {
+    /**
+     * @return The include&#39;s unique identifier
+     * 
+     */
     private String id;
+    /**
+     * @return Specifies the most recent version of the include
+     * 
+     */
     private Integer latestVersion;
+    /**
+     * @return A descriptive name for the include
+     * 
+     */
     private String name;
+    /**
+     * @return The most recent version to be activated to the production network
+     * 
+     */
     private String productionVersion;
+    /**
+     * @return The most recent version to be activated to the staging network
+     * 
+     */
     private String stagingVersion;
+    /**
+     * @return Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`
+     * 
+     */
     private String type;
 
     private GetPropertyIncludesInclude() {}
+    /**
+     * @return The include&#39;s unique identifier
+     * 
+     */
     public String id() {
         return this.id;
     }
+    /**
+     * @return Specifies the most recent version of the include
+     * 
+     */
     public Integer latestVersion() {
         return this.latestVersion;
     }
+    /**
+     * @return A descriptive name for the include
+     * 
+     */
     public String name() {
         return this.name;
     }
+    /**
+     * @return The most recent version to be activated to the production network
+     * 
+     */
     public String productionVersion() {
         return this.productionVersion;
     }
+    /**
+     * @return The most recent version to be activated to the staging network
+     * 
+     */
     public String stagingVersion() {
         return this.stagingVersion;
     }
+    /**
+     * @return Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`
+     * 
+     */
     public String type() {
         return this.type;
     }

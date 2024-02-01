@@ -14,16 +14,32 @@ public final class GetImagingPolicyImagePolicyTransformationOpacity extends com.
 
     public static final GetImagingPolicyImagePolicyTransformationOpacity Empty = new GetImagingPolicyImagePolicyTransformationOpacity();
 
+    /**
+     * Represents alpha values on a scale of `0` to `1`. Values below `1` increase transparency, and `0` is invisible. For images that have some transparency, values above `1` increase the opacity of the transparent portions.
+     * 
+     */
     @Import(name="opacity")
     private @Nullable String opacity;
 
+    /**
+     * @return Represents alpha values on a scale of `0` to `1`. Values below `1` increase transparency, and `0` is invisible. For images that have some transparency, values above `1` increase the opacity of the transparent portions.
+     * 
+     */
     public Optional<String> opacity() {
         return Optional.ofNullable(this.opacity);
     }
 
+    /**
+     * Represents alpha values on a scale of `0` to `1`. Values below `1` increase transparency, and `0` is invisible. For images that have some transparency, values above `1` increase the opacity of the transparent portions.
+     * 
+     */
     @Import(name="opacityVar")
     private @Nullable String opacityVar;
 
+    /**
+     * @return Represents alpha values on a scale of `0` to `1`. Values below `1` increase transparency, and `0` is invisible. For images that have some transparency, values above `1` increase the opacity of the transparent portions.
+     * 
+     */
     public Optional<String> opacityVar() {
         return Optional.ofNullable(this.opacityVar);
     }
@@ -53,11 +69,23 @@ public final class GetImagingPolicyImagePolicyTransformationOpacity extends com.
             $ = new GetImagingPolicyImagePolicyTransformationOpacity(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param opacity Represents alpha values on a scale of `0` to `1`. Values below `1` increase transparency, and `0` is invisible. For images that have some transparency, values above `1` increase the opacity of the transparent portions.
+         * 
+         * @return builder
+         * 
+         */
         public Builder opacity(@Nullable String opacity) {
             $.opacity = opacity;
             return this;
         }
 
+        /**
+         * @param opacityVar Represents alpha values on a scale of `0` to `1`. Values below `1` increase transparency, and `0` is invisible. For images that have some transparency, values above `1` increase the opacity of the transparent portions.
+         * 
+         * @return builder
+         * 
+         */
         public Builder opacityVar(@Nullable String opacityVar) {
             $.opacityVar = opacityVar;
             return this;

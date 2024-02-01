@@ -12,25 +12,42 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetImagingPolicyVideoPolicyInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The breakpoint widths (in pixels) to use to create derivative images/videos.
+        /// </summary>
         [Input("breakpoints")]
         public Input<Inputs.GetImagingPolicyVideoPolicyBreakpointsInputArgs>? Breakpoints { get; set; }
 
         [Input("hosts")]
         private InputList<string>? _hosts;
+
+        /// <summary>
+        /// Hosts that are allowed for image/video URLs within transformations or variables.
+        /// </summary>
         public InputList<string> Hosts
         {
             get => _hosts ?? (_hosts = new InputList<string>());
             set => _hosts = value;
         }
 
+        /// <summary>
+        /// Dictates the output quality that are created for each resized video.
+        /// </summary>
         [Input("output")]
         public Input<Inputs.GetImagingPolicyVideoPolicyOutputInputArgs>? Output { get; set; }
 
+        /// <summary>
+        /// The amount of time in seconds that the policy takes to rollout. During the rollout an increasing proportion of images/videos will begin to use the new policy instead of the cached images/videos from the previous version. This value has no effect on the staging network.
+        /// </summary>
         [Input("rolloutDuration")]
         public Input<string>? RolloutDuration { get; set; }
 
         [Input("variables")]
         private InputList<Inputs.GetImagingPolicyVideoPolicyVariableInputArgs>? _variables;
+
+        /// <summary>
+        /// Declares variables for use within the policy. Any variable declared here can be invoked throughout transformations as a Variable object, so that you don't have to specify values separately. You can also pass in these variable names and values dynamically as query parameters in the image's request URL.
+        /// </summary>
         public InputList<Inputs.GetImagingPolicyVideoPolicyVariableInputArgs> Variables
         {
             get => _variables ?? (_variables = new InputList<Inputs.GetImagingPolicyVideoPolicyVariableInputArgs>());

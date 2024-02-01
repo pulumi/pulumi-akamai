@@ -13,8 +13,17 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetCloudwrapperLocationsLocationTrafficTypeResult
     {
+        /// <summary>
+        /// Represents the failover map.
+        /// </summary>
         public readonly string LocationId;
+        /// <summary>
+        /// Represents the traffic type. LIVE applies to low-latency media traffic, such as live streaming. LIVE_VOD applies to redundant media traffic, like video on demand content. WEB_STANDARD_TLS or WEB_ENHANCED_TLS applies to web content using Standard TLS security or Enhanced TLS security, respectively.
+        /// </summary>
         public readonly string TrafficType;
+        /// <summary>
+        /// Unique identifier for the location and traffic type combination.
+        /// </summary>
         public readonly int TrafficTypeId;
 
         [OutputConstructor]

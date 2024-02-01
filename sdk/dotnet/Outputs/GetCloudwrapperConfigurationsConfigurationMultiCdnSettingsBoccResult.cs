@@ -13,10 +13,25 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBoccResult
     {
+        /// <summary>
+        /// The sampling frequency of requests and forwards for EDGE, MIDGRESS, and ORIGIN beacons.
+        /// </summary>
         public readonly string ConditionalSamplingFrequency;
+        /// <summary>
+        /// Enable diagnostic data beacons for consumption by the Broadcast Operations Control Center.
+        /// </summary>
         public readonly bool Enabled;
+        /// <summary>
+        /// Select whether to beacon diagnostics data for internal ORIGIN_ONLY, MIDGRESS_ONLY, or both ORIGIN_AND_MIDGRESS forwards.
+        /// </summary>
         public readonly string ForwardType;
+        /// <summary>
+        /// Select whether to beacon diagnostics data for EDGE_ONLY or EDGE_AND_MIDGRESS requests.
+        /// </summary>
         public readonly string RequestType;
+        /// <summary>
+        /// The sampling frequency of requests and forwards for EDGE, MIDGRESS, and ORIGIN beacons.
+        /// </summary>
         public readonly string SamplingFrequency;
 
         [OutputConstructor]

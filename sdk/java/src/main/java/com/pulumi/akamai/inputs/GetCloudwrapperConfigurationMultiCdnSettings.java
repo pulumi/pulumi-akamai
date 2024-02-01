@@ -20,37 +20,77 @@ public final class GetCloudwrapperConfigurationMultiCdnSettings extends com.pulu
 
     public static final GetCloudwrapperConfigurationMultiCdnSettings Empty = new GetCloudwrapperConfigurationMultiCdnSettings();
 
+    /**
+     * Specify diagnostic data beacons details.
+     * 
+     */
     @Import(name="bocc")
     private @Nullable GetCloudwrapperConfigurationMultiCdnSettingsBocc bocc;
 
+    /**
+     * @return Specify diagnostic data beacons details.
+     * 
+     */
     public Optional<GetCloudwrapperConfigurationMultiCdnSettingsBocc> bocc() {
         return Optional.ofNullable(this.bocc);
     }
 
+    /**
+     * List of CDN added for the configuration.
+     * 
+     */
     @Import(name="cdns")
     private @Nullable List<GetCloudwrapperConfigurationMultiCdnSettingsCdn> cdns;
 
+    /**
+     * @return List of CDN added for the configuration.
+     * 
+     */
     public Optional<List<GetCloudwrapperConfigurationMultiCdnSettingsCdn>> cdns() {
         return Optional.ofNullable(this.cdns);
     }
 
+    /**
+     * Specifies data streams details.
+     * 
+     */
     @Import(name="dataStreams")
     private @Nullable GetCloudwrapperConfigurationMultiCdnSettingsDataStreams dataStreams;
 
+    /**
+     * @return Specifies data streams details.
+     * 
+     */
     public Optional<GetCloudwrapperConfigurationMultiCdnSettingsDataStreams> dataStreams() {
         return Optional.ofNullable(this.dataStreams);
     }
 
+    /**
+     * Option to opt out of alerts based on soft limits of bandwidth usage.
+     * 
+     */
     @Import(name="enableSoftAlerts", required=true)
     private Boolean enableSoftAlerts;
 
+    /**
+     * @return Option to opt out of alerts based on soft limits of bandwidth usage.
+     * 
+     */
     public Boolean enableSoftAlerts() {
         return this.enableSoftAlerts;
     }
 
+    /**
+     * List of origins corresponding to the properties selected in the configuration.
+     * 
+     */
     @Import(name="origins")
     private @Nullable List<GetCloudwrapperConfigurationMultiCdnSettingsOrigin> origins;
 
+    /**
+     * @return List of origins corresponding to the properties selected in the configuration.
+     * 
+     */
     public Optional<List<GetCloudwrapperConfigurationMultiCdnSettingsOrigin>> origins() {
         return Optional.ofNullable(this.origins);
     }
@@ -83,35 +123,77 @@ public final class GetCloudwrapperConfigurationMultiCdnSettings extends com.pulu
             $ = new GetCloudwrapperConfigurationMultiCdnSettings(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param bocc Specify diagnostic data beacons details.
+         * 
+         * @return builder
+         * 
+         */
         public Builder bocc(@Nullable GetCloudwrapperConfigurationMultiCdnSettingsBocc bocc) {
             $.bocc = bocc;
             return this;
         }
 
+        /**
+         * @param cdns List of CDN added for the configuration.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cdns(@Nullable List<GetCloudwrapperConfigurationMultiCdnSettingsCdn> cdns) {
             $.cdns = cdns;
             return this;
         }
 
+        /**
+         * @param cdns List of CDN added for the configuration.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cdns(GetCloudwrapperConfigurationMultiCdnSettingsCdn... cdns) {
             return cdns(List.of(cdns));
         }
 
+        /**
+         * @param dataStreams Specifies data streams details.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dataStreams(@Nullable GetCloudwrapperConfigurationMultiCdnSettingsDataStreams dataStreams) {
             $.dataStreams = dataStreams;
             return this;
         }
 
+        /**
+         * @param enableSoftAlerts Option to opt out of alerts based on soft limits of bandwidth usage.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enableSoftAlerts(Boolean enableSoftAlerts) {
             $.enableSoftAlerts = enableSoftAlerts;
             return this;
         }
 
+        /**
+         * @param origins List of origins corresponding to the properties selected in the configuration.
+         * 
+         * @return builder
+         * 
+         */
         public Builder origins(@Nullable List<GetCloudwrapperConfigurationMultiCdnSettingsOrigin> origins) {
             $.origins = origins;
             return this;
         }
 
+        /**
+         * @param origins List of origins corresponding to the properties selected in the configuration.
+         * 
+         * @return builder
+         * 
+         */
         public Builder origins(GetCloudwrapperConfigurationMultiCdnSettingsOrigin... origins) {
             return origins(List.of(origins));
         }

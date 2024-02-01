@@ -11,25 +11,65 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCloudwrapperPropertiesProperty {
+    /**
+     * @return Contract ID having Cloud Wrapper entitlement.
+     * 
+     */
     private String contractId;
+    /**
+     * @return ID of the group which the property belongs to.
+     * 
+     */
     private Integer groupId;
+    /**
+     * @return Property ID of the property.
+     * 
+     */
     private Integer propertyId;
+    /**
+     * @return Name of the property belonging to the origin.
+     * 
+     */
     private String propertyName;
+    /**
+     * @return The type of property. MEDIA applies to live or video on demand content. WEB applies to website or app content.
+     * 
+     */
     private String type;
 
     private GetCloudwrapperPropertiesProperty() {}
+    /**
+     * @return Contract ID having Cloud Wrapper entitlement.
+     * 
+     */
     public String contractId() {
         return this.contractId;
     }
+    /**
+     * @return ID of the group which the property belongs to.
+     * 
+     */
     public Integer groupId() {
         return this.groupId;
     }
+    /**
+     * @return Property ID of the property.
+     * 
+     */
     public Integer propertyId() {
         return this.propertyId;
     }
+    /**
+     * @return Name of the property belonging to the origin.
+     * 
+     */
     public String propertyName() {
         return this.propertyName;
     }
+    /**
+     * @return The type of property. MEDIA applies to live or video on demand content. WEB applies to website or app content.
+     * 
+     */
     public String type() {
         return this.type;
     }

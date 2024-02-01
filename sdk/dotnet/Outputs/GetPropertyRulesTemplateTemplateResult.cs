@@ -13,7 +13,13 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesTemplateTemplateResult
     {
+        /// <summary>
+        /// Content of the template as string
+        /// </summary>
         public readonly string TemplateData;
+        /// <summary>
+        /// Directory points to a folder, which contains snippets to include into template.
+        /// </summary>
         public readonly string TemplateDir;
 
         [OutputConstructor]

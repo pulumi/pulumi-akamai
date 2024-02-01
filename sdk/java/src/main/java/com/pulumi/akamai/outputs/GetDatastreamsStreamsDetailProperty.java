@@ -11,13 +11,29 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDatastreamsStreamsDetailProperty {
+    /**
+     * @return The identifier of the property.
+     * 
+     */
     private Integer propertyId;
+    /**
+     * @return The descriptive label for the property.
+     * 
+     */
     private String propertyName;
 
     private GetDatastreamsStreamsDetailProperty() {}
+    /**
+     * @return The identifier of the property.
+     * 
+     */
     public Integer propertyId() {
         return this.propertyId;
     }
+    /**
+     * @return The descriptive label for the property.
+     * 
+     */
     public String propertyName() {
         return this.propertyName;
     }

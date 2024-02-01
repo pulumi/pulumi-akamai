@@ -13,12 +13,33 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230105BehaviorForwardRewriteResult
     {
+        /// <summary>
+        /// Identifies the Cloudlet policy.
+        /// </summary>
         public readonly Outputs.GetPropertyRulesBuilderRulesV20230105BehaviorForwardRewriteCloudletPolicyResult? CloudletPolicy;
+        /// <summary>
+        /// This identifies the Cloudlet shared policy to use with this behavior. You can list available shared policies with the `Cloudlets API`.
+        /// </summary>
         public readonly int? CloudletSharedPolicy;
+        /// <summary>
+        /// Enables the Forward Rewrite Cloudlet behavior.
+        /// </summary>
         public readonly bool? Enabled;
+        /// <summary>
+        /// Whether you want to use a shared policy for a Cloudlet. Learn more about shared policies and how to create them in `Cloudlets Policy Manager`.
+        /// </summary>
         public readonly bool? IsSharedPolicy;
+        /// <summary>
+        /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+        /// </summary>
         public readonly bool? Locked;
+        /// <summary>
+        /// This option is for internal usage only.
+        /// </summary>
         public readonly string? TemplateUuid;
+        /// <summary>
+        /// A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

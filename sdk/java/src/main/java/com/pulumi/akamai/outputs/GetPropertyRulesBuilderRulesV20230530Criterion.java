@@ -55,185 +55,545 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530Criterion {
+    /**
+     * @return Matches whether the `imageManager` behavior already applies to the current set of requests. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionAdvancedImMatch advancedImMatch;
+    /**
+     * @return This matches a specified percentage of requests when used with the accompanying behavior. Contact Akamai Professional Services for help configuring it. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionBucket bucket;
+    /**
+     * @return Matches the current cache state.  Note that any `NO_STORE` or `BYPASS_CACHE` HTTP headers set on the origin&#39;s content overrides properties&#39; `caching` instructions, in which case this criteria does not apply. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionCacheability cacheability;
+    /**
+     * @return Identifies traffic deployed over Akamai&#39;s regional ChinaCDN infrastructure. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionChinaCdnRegion chinaCdnRegion;
+    /**
+     * @return Matches whether you have configured a client certificate to authenticate requests to edge servers. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionClientCertificate clientCertificate;
+    /**
+     * @return Matches the IP number of the requesting client. To use this condition to match end-user IP addresses, apply it together with the `requestType` matching on the `CLIENT_REQ` value. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionClientIp clientIp;
+    /**
+     * @return Matches the version of the IP protocol used by the requesting client. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionClientIpVersion clientIpVersion;
+    /**
+     * @return Allows Cloudlets Origins, referenced by label, to define their own criteria to assign custom origin definitions. The criteria may match, for example, for a specified percentage of requests defined by the cloudlet to use an alternative version of a website. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionCloudletsOrigin cloudletsOrigin;
+    /**
+     * @return Specifies the type of Akamai network handling the request. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionContentDeliveryNetwork contentDeliveryNetwork;
+    /**
+     * @return Matches the HTTP response header&#39;s `Content-Type`. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionContentType contentType;
+    /**
+     * @return Match various aspects of the device or browser making the request. Based on the value of the `characteristic` option, the expected value is either a boolean, a number, or a string, possibly representing a version number. Each type of value requires a different field. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionDeviceCharacteristic deviceCharacteristic;
+    /**
+     * @return This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionEcmdAuthGroups ecmdAuthGroups;
+    /**
+     * @return This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionEcmdAuthScheme ecmdAuthScheme;
+    /**
+     * @return This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionEcmdIsAuthenticated ecmdIsAuthenticated;
+    /**
+     * @return This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionEcmdUsername ecmdUsername;
+    /**
+     * @return Checks the EdgeWorkers execution status and detects whether a customer&#39;s JavaScript failed on edge servers. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionEdgeWorkersFailure edgeWorkersFailure;
+    /**
+     * @return Matches the requested filename&#39;s extension, if present. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionFileExtension fileExtension;
+    /**
+     * @return Matches the requested filename, or test whether it is present. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionFilename filename;
+    /**
+     * @return Matches the requested hostname. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionHostname hostname;
+    /**
+     * @return This specifies match criteria using Akamai XML metadata. It can only be configured on your behalf by Akamai Professional Services. This criterion is for internal usage only. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionMatchAdvanced matchAdvanced;
+    /**
+     * @return Match the assigned content provider code. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionMatchCpCode matchCpCode;
+    /**
+     * @return Match a set or range of HTTP response codes. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionMatchResponseCode matchResponseCode;
+    /**
+     * @return Matches a built-in variable, or a custom variable pre-declared within the rule tree by the `setVariable` behavior.  See `Support for variables` for more information on this feature. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionMatchVariable matchVariable;
+    /**
+     * @return Matches how the current rule corresponds to low-level syntax elements in translated XML metadata, indicating progressive stages as each edge server handles the request and response.  To use this match, you need to be thoroughly familiar with how Akamai edge servers process requests. Contact your Akamai Technical representative if you need help, and test thoroughly on staging before activating on production. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionMetadataStage metadataStage;
+    /**
+     * @return Matches when the origin responds with a timeout error. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionOriginTimeout originTimeout;
+    /**
+     * @return Matches the URL&#39;s non-hostname path component. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionPath path;
+    /**
+     * @return Matches query string field names or values. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionQueryStringParameter queryStringParameter;
+    /**
+     * @return Matches a specified percentage of requests. Use this match to apply behaviors to a percentage of your incoming requests that differ from the remainder, useful for A/b testing, or to offload traffic onto different servers. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionRandom random;
+    /**
+     * @return Matches on specified origin recovery scenarios. The `originFailureRecoveryPolicy` behavior defines the scenarios that trigger the recovery or retry methods you set in the `originFailureRecoveryMethod` rule. If the origin fails, the system checks the name of the recovery method applied to your policy. It then either redirects the requesting client to a backup origin or returns predefined HTTP response codes. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionRecoveryConfig recoveryConfig;
+    /**
+     * @return Matches a regular expression against a string, especially to apply behaviors flexibly based on the contents of dynamic `variables`. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionRegularExpression regularExpression;
+    /**
+     * @return Match the cookie name or value passed with the request. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionRequestCookie requestCookie;
+    /**
+     * @return Match HTTP header names or values. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionRequestHeader requestHeader;
+    /**
+     * @return Specify the request&#39;s HTTP verb. Also supports WebDAV methods and common Akamai operations. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionRequestMethod requestMethod;
+    /**
+     * @return Matches whether the request uses the HTTP or HTTPS protocol. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionRequestProtocol requestProtocol;
+    /**
+     * @return Matches the basic type of request. To use this match, you need to be thoroughly familiar with how Akamai edge servers process requests. Contact your Akamai Technical representative if you need help, and test thoroughly on staging before activating on production. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionRequestType requestType;
+    /**
+     * @return Match HTTP header names or values. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionResponseHeader responseHeader;
+    /**
+     * @return The location of the Akamai server handling the request. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionServerLocation serverLocation;
+    /**
+     * @return Specifies ranges of times during which the request occurred. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionTime time;
+    /**
+     * @return Match on Auth Token 2.0 verification results. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionTokenAuthorization tokenAuthorization;
+    /**
+     * @return Matches the user agent string that helps identify the client browser and device. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionUserAgent userAgent;
+    /**
+     * @return The client browser&#39;s approximate geographic location, determined by looking up the IP address in a database. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionUserLocation userLocation;
+    /**
+     * @return Matches details of the network over which the request was made, determined by looking up the IP address in a database. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionUserNetwork userNetwork;
+    /**
+     * @return Matches any runtime errors that occur on edge servers based on the configuration of a `setVariable` behavior. See `Support for variables` section for more information on this feature. This criterion can be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionVariableError variableError;
+    /**
+     * @return Helps to customize the requests identified by the `virtualWaitingRoom` behavior. Use this match criteria to define the `originServer` behavior for the waiting room. This criterion cannot be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionVirtualWaitingRoomRequest virtualWaitingRoomRequest;
+    /**
+     * @return Helps to customize the requests identified by the `visitorPrioritizationFifo` behavior. The basic use case for this match criteria is to define the `originServer` behavior for the waiting room. This criterion cannot be used in includes.
+     * 
+     */
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionVisitorPrioritizationRequest visitorPrioritizationRequest;
 
     private GetPropertyRulesBuilderRulesV20230530Criterion() {}
+    /**
+     * @return Matches whether the `imageManager` behavior already applies to the current set of requests. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionAdvancedImMatch> advancedImMatch() {
         return Optional.ofNullable(this.advancedImMatch);
     }
+    /**
+     * @return This matches a specified percentage of requests when used with the accompanying behavior. Contact Akamai Professional Services for help configuring it. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionBucket> bucket() {
         return Optional.ofNullable(this.bucket);
     }
+    /**
+     * @return Matches the current cache state.  Note that any `NO_STORE` or `BYPASS_CACHE` HTTP headers set on the origin&#39;s content overrides properties&#39; `caching` instructions, in which case this criteria does not apply. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionCacheability> cacheability() {
         return Optional.ofNullable(this.cacheability);
     }
+    /**
+     * @return Identifies traffic deployed over Akamai&#39;s regional ChinaCDN infrastructure. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionChinaCdnRegion> chinaCdnRegion() {
         return Optional.ofNullable(this.chinaCdnRegion);
     }
+    /**
+     * @return Matches whether you have configured a client certificate to authenticate requests to edge servers. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionClientCertificate> clientCertificate() {
         return Optional.ofNullable(this.clientCertificate);
     }
+    /**
+     * @return Matches the IP number of the requesting client. To use this condition to match end-user IP addresses, apply it together with the `requestType` matching on the `CLIENT_REQ` value. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionClientIp> clientIp() {
         return Optional.ofNullable(this.clientIp);
     }
+    /**
+     * @return Matches the version of the IP protocol used by the requesting client. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionClientIpVersion> clientIpVersion() {
         return Optional.ofNullable(this.clientIpVersion);
     }
+    /**
+     * @return Allows Cloudlets Origins, referenced by label, to define their own criteria to assign custom origin definitions. The criteria may match, for example, for a specified percentage of requests defined by the cloudlet to use an alternative version of a website. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionCloudletsOrigin> cloudletsOrigin() {
         return Optional.ofNullable(this.cloudletsOrigin);
     }
+    /**
+     * @return Specifies the type of Akamai network handling the request. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionContentDeliveryNetwork> contentDeliveryNetwork() {
         return Optional.ofNullable(this.contentDeliveryNetwork);
     }
+    /**
+     * @return Matches the HTTP response header&#39;s `Content-Type`. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionContentType> contentType() {
         return Optional.ofNullable(this.contentType);
     }
+    /**
+     * @return Match various aspects of the device or browser making the request. Based on the value of the `characteristic` option, the expected value is either a boolean, a number, or a string, possibly representing a version number. Each type of value requires a different field. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionDeviceCharacteristic> deviceCharacteristic() {
         return Optional.ofNullable(this.deviceCharacteristic);
     }
+    /**
+     * @return This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionEcmdAuthGroups> ecmdAuthGroups() {
         return Optional.ofNullable(this.ecmdAuthGroups);
     }
+    /**
+     * @return This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionEcmdAuthScheme> ecmdAuthScheme() {
         return Optional.ofNullable(this.ecmdAuthScheme);
     }
+    /**
+     * @return This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionEcmdIsAuthenticated> ecmdIsAuthenticated() {
         return Optional.ofNullable(this.ecmdIsAuthenticated);
     }
+    /**
+     * @return This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionEcmdUsername> ecmdUsername() {
         return Optional.ofNullable(this.ecmdUsername);
     }
+    /**
+     * @return Checks the EdgeWorkers execution status and detects whether a customer&#39;s JavaScript failed on edge servers. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionEdgeWorkersFailure> edgeWorkersFailure() {
         return Optional.ofNullable(this.edgeWorkersFailure);
     }
+    /**
+     * @return Matches the requested filename&#39;s extension, if present. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionFileExtension> fileExtension() {
         return Optional.ofNullable(this.fileExtension);
     }
+    /**
+     * @return Matches the requested filename, or test whether it is present. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionFilename> filename() {
         return Optional.ofNullable(this.filename);
     }
+    /**
+     * @return Matches the requested hostname. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionHostname> hostname() {
         return Optional.ofNullable(this.hostname);
     }
+    /**
+     * @return This specifies match criteria using Akamai XML metadata. It can only be configured on your behalf by Akamai Professional Services. This criterion is for internal usage only. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionMatchAdvanced> matchAdvanced() {
         return Optional.ofNullable(this.matchAdvanced);
     }
+    /**
+     * @return Match the assigned content provider code. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionMatchCpCode> matchCpCode() {
         return Optional.ofNullable(this.matchCpCode);
     }
+    /**
+     * @return Match a set or range of HTTP response codes. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionMatchResponseCode> matchResponseCode() {
         return Optional.ofNullable(this.matchResponseCode);
     }
+    /**
+     * @return Matches a built-in variable, or a custom variable pre-declared within the rule tree by the `setVariable` behavior.  See `Support for variables` for more information on this feature. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionMatchVariable> matchVariable() {
         return Optional.ofNullable(this.matchVariable);
     }
+    /**
+     * @return Matches how the current rule corresponds to low-level syntax elements in translated XML metadata, indicating progressive stages as each edge server handles the request and response.  To use this match, you need to be thoroughly familiar with how Akamai edge servers process requests. Contact your Akamai Technical representative if you need help, and test thoroughly on staging before activating on production. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionMetadataStage> metadataStage() {
         return Optional.ofNullable(this.metadataStage);
     }
+    /**
+     * @return Matches when the origin responds with a timeout error. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionOriginTimeout> originTimeout() {
         return Optional.ofNullable(this.originTimeout);
     }
+    /**
+     * @return Matches the URL&#39;s non-hostname path component. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionPath> path() {
         return Optional.ofNullable(this.path);
     }
+    /**
+     * @return Matches query string field names or values. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionQueryStringParameter> queryStringParameter() {
         return Optional.ofNullable(this.queryStringParameter);
     }
+    /**
+     * @return Matches a specified percentage of requests. Use this match to apply behaviors to a percentage of your incoming requests that differ from the remainder, useful for A/b testing, or to offload traffic onto different servers. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionRandom> random() {
         return Optional.ofNullable(this.random);
     }
+    /**
+     * @return Matches on specified origin recovery scenarios. The `originFailureRecoveryPolicy` behavior defines the scenarios that trigger the recovery or retry methods you set in the `originFailureRecoveryMethod` rule. If the origin fails, the system checks the name of the recovery method applied to your policy. It then either redirects the requesting client to a backup origin or returns predefined HTTP response codes. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionRecoveryConfig> recoveryConfig() {
         return Optional.ofNullable(this.recoveryConfig);
     }
+    /**
+     * @return Matches a regular expression against a string, especially to apply behaviors flexibly based on the contents of dynamic `variables`. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionRegularExpression> regularExpression() {
         return Optional.ofNullable(this.regularExpression);
     }
+    /**
+     * @return Match the cookie name or value passed with the request. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionRequestCookie> requestCookie() {
         return Optional.ofNullable(this.requestCookie);
     }
+    /**
+     * @return Match HTTP header names or values. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionRequestHeader> requestHeader() {
         return Optional.ofNullable(this.requestHeader);
     }
+    /**
+     * @return Specify the request&#39;s HTTP verb. Also supports WebDAV methods and common Akamai operations. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionRequestMethod> requestMethod() {
         return Optional.ofNullable(this.requestMethod);
     }
+    /**
+     * @return Matches whether the request uses the HTTP or HTTPS protocol. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionRequestProtocol> requestProtocol() {
         return Optional.ofNullable(this.requestProtocol);
     }
+    /**
+     * @return Matches the basic type of request. To use this match, you need to be thoroughly familiar with how Akamai edge servers process requests. Contact your Akamai Technical representative if you need help, and test thoroughly on staging before activating on production. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionRequestType> requestType() {
         return Optional.ofNullable(this.requestType);
     }
+    /**
+     * @return Match HTTP header names or values. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionResponseHeader> responseHeader() {
         return Optional.ofNullable(this.responseHeader);
     }
+    /**
+     * @return The location of the Akamai server handling the request. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionServerLocation> serverLocation() {
         return Optional.ofNullable(this.serverLocation);
     }
+    /**
+     * @return Specifies ranges of times during which the request occurred. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionTime> time() {
         return Optional.ofNullable(this.time);
     }
+    /**
+     * @return Match on Auth Token 2.0 verification results. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionTokenAuthorization> tokenAuthorization() {
         return Optional.ofNullable(this.tokenAuthorization);
     }
+    /**
+     * @return Matches the user agent string that helps identify the client browser and device. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionUserAgent> userAgent() {
         return Optional.ofNullable(this.userAgent);
     }
+    /**
+     * @return The client browser&#39;s approximate geographic location, determined by looking up the IP address in a database. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionUserLocation> userLocation() {
         return Optional.ofNullable(this.userLocation);
     }
+    /**
+     * @return Matches details of the network over which the request was made, determined by looking up the IP address in a database. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionUserNetwork> userNetwork() {
         return Optional.ofNullable(this.userNetwork);
     }
+    /**
+     * @return Matches any runtime errors that occur on edge servers based on the configuration of a `setVariable` behavior. See `Support for variables` section for more information on this feature. This criterion can be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionVariableError> variableError() {
         return Optional.ofNullable(this.variableError);
     }
+    /**
+     * @return Helps to customize the requests identified by the `virtualWaitingRoom` behavior. Use this match criteria to define the `originServer` behavior for the waiting room. This criterion cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionVirtualWaitingRoomRequest> virtualWaitingRoomRequest() {
         return Optional.ofNullable(this.virtualWaitingRoomRequest);
     }
+    /**
+     * @return Helps to customize the requests identified by the `visitorPrioritizationFifo` behavior. The basic use case for this match criteria is to define the `originServer` behavior for the waiting room. This criterion cannot be used in includes.
+     * 
+     */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionVisitorPrioritizationRequest> visitorPrioritizationRequest() {
         return Optional.ofNullable(this.visitorPrioritizationRequest);
     }
