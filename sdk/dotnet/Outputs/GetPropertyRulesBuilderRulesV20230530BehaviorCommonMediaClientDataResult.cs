@@ -13,6 +13,9 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorCommonMediaClientDataResult
     {
+        /// <summary>
+        /// Uses Common Media Client Data (CMCD) metadata to determine the segment URLs your origin server prefetches to speed up content delivery.
+        /// </summary>
         public readonly bool? EnableCmcdSegmentPrefetch;
         /// <summary>
         /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.

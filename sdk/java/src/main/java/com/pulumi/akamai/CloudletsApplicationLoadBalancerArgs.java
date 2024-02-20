@@ -54,14 +54,14 @@ public final class CloudletsApplicationLoadBalancerArgs extends com.pulumi.resou
     }
 
     /**
-     * The load balancer configuration description
+     * The load balancer configuration version description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return The load balancer configuration description
+     * @return The load balancer configuration version description
      * 
      */
     public Optional<Output<String>> description() {
@@ -76,14 +76,29 @@ public final class CloudletsApplicationLoadBalancerArgs extends com.pulumi.resou
     }
 
     /**
-     * The conditional origin’s unique identifier
+     * The load balancer configuration description
+     * 
+     */
+    @Import(name="originDescription")
+    private @Nullable Output<String> originDescription;
+
+    /**
+     * @return The load balancer configuration description
+     * 
+     */
+    public Optional<Output<String>> originDescription() {
+        return Optional.ofNullable(this.originDescription);
+    }
+
+    /**
+     * The conditional origin&#39;s unique identifier
      * 
      */
     @Import(name="originId", required=true)
     private Output<String> originId;
 
     /**
-     * @return The conditional origin’s unique identifier
+     * @return The conditional origin&#39;s unique identifier
      * 
      */
     public Output<String> originId() {
@@ -97,6 +112,7 @@ public final class CloudletsApplicationLoadBalancerArgs extends com.pulumi.resou
         this.dataCenters = $.dataCenters;
         this.description = $.description;
         this.livenessSettings = $.livenessSettings;
+        this.originDescription = $.originDescription;
         this.originId = $.originId;
     }
 
@@ -177,7 +193,7 @@ public final class CloudletsApplicationLoadBalancerArgs extends com.pulumi.resou
         }
 
         /**
-         * @param description The load balancer configuration description
+         * @param description The load balancer configuration version description
          * 
          * @return builder
          * 
@@ -188,7 +204,7 @@ public final class CloudletsApplicationLoadBalancerArgs extends com.pulumi.resou
         }
 
         /**
-         * @param description The load balancer configuration description
+         * @param description The load balancer configuration version description
          * 
          * @return builder
          * 
@@ -207,7 +223,28 @@ public final class CloudletsApplicationLoadBalancerArgs extends com.pulumi.resou
         }
 
         /**
-         * @param originId The conditional origin’s unique identifier
+         * @param originDescription The load balancer configuration description
+         * 
+         * @return builder
+         * 
+         */
+        public Builder originDescription(@Nullable Output<String> originDescription) {
+            $.originDescription = originDescription;
+            return this;
+        }
+
+        /**
+         * @param originDescription The load balancer configuration description
+         * 
+         * @return builder
+         * 
+         */
+        public Builder originDescription(String originDescription) {
+            return originDescription(Output.of(originDescription));
+        }
+
+        /**
+         * @param originId The conditional origin&#39;s unique identifier
          * 
          * @return builder
          * 
@@ -218,7 +255,7 @@ public final class CloudletsApplicationLoadBalancerArgs extends com.pulumi.resou
         }
 
         /**
-         * @param originId The conditional origin’s unique identifier
+         * @param originId The conditional origin&#39;s unique identifier
          * 
          * @return builder
          * 

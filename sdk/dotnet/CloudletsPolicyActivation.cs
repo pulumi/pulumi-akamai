@@ -13,10 +13,16 @@ namespace Pulumi.Akamai
     public partial class CloudletsPolicyActivation : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Set of property IDs to link to this Cloudlets policy
+        /// Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
         /// </summary>
         [Output("associatedProperties")]
         public Output<ImmutableArray<string>> AssociatedProperties { get; private set; } = null!;
+
+        /// <summary>
+        /// Indicates if policy that is being activated is a shared policy
+        /// </summary>
+        [Output("isShared")]
+        public Output<bool> IsShared { get; private set; } = null!;
 
         /// <summary>
         /// The network you want to activate the policy version on (options are Staging and Production)
@@ -35,6 +41,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
+
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Output("timeouts")]
+        public Output<Outputs.CloudletsPolicyActivationTimeouts?> Timeouts { get; private set; } = null!;
 
         /// <summary>
         /// Cloudlets policy version you want to activate
@@ -88,11 +100,11 @@ namespace Pulumi.Akamai
 
     public sealed class CloudletsPolicyActivationArgs : global::Pulumi.ResourceArgs
     {
-        [Input("associatedProperties", required: true)]
+        [Input("associatedProperties")]
         private InputList<string>? _associatedProperties;
 
         /// <summary>
-        /// Set of property IDs to link to this Cloudlets policy
+        /// Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
         /// </summary>
         public InputList<string> AssociatedProperties
         {
@@ -113,6 +125,12 @@ namespace Pulumi.Akamai
         public Input<int> PolicyId { get; set; } = null!;
 
         /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.CloudletsPolicyActivationTimeoutsArgs>? Timeouts { get; set; }
+
+        /// <summary>
         /// Cloudlets policy version you want to activate
         /// </summary>
         [Input("version", required: true)]
@@ -130,13 +148,19 @@ namespace Pulumi.Akamai
         private InputList<string>? _associatedProperties;
 
         /// <summary>
-        /// Set of property IDs to link to this Cloudlets policy
+        /// Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
         /// </summary>
         public InputList<string> AssociatedProperties
         {
             get => _associatedProperties ?? (_associatedProperties = new InputList<string>());
             set => _associatedProperties = value;
         }
+
+        /// <summary>
+        /// Indicates if policy that is being activated is a shared policy
+        /// </summary>
+        [Input("isShared")]
+        public Input<bool>? IsShared { get; set; }
 
         /// <summary>
         /// The network you want to activate the policy version on (options are Staging and Production)
@@ -155,6 +179,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
+
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.CloudletsPolicyActivationTimeoutsGetArgs>? Timeouts { get; set; }
 
         /// <summary>
         /// Cloudlets policy version you want to activate

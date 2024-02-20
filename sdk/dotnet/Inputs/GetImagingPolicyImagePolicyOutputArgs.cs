@@ -18,6 +18,12 @@ namespace Pulumi.Akamai.Inputs
         [Input("adaptiveQuality")]
         public Input<string>? AdaptiveQuality { get; set; }
 
+        /// <summary>
+        /// Whether a pristine image wider than the requested breakpoint is allowed as a derivative image if it has the fewest bytes. This will not have an affect if transformations are present.
+        /// </summary>
+        [Input("allowPristineOnDownsize")]
+        public Input<string>? AllowPristineOnDownsize { get; set; }
+
         [Input("allowedFormats")]
         private InputList<string>? _allowedFormats;
 
@@ -59,6 +65,12 @@ namespace Pulumi.Akamai.Inputs
         /// </summary>
         [Input("perceptualQualityVar")]
         public Input<string>? PerceptualQualityVar { get; set; }
+
+        /// <summary>
+        /// Whether derivative image formats should be selected with a preference for modern formats (such as WebP and Avif) instead the format that results in the fewest bytes.
+        /// </summary>
+        [Input("preferModernFormats")]
+        public Input<string>? PreferModernFormats { get; set; }
 
         /// <summary>
         /// Mutually exclusive with perceptualQuality, used by default if neither is specified. The chosen quality of the output images. Using a quality value from 1-100 resembles JPEG quality across output formats.

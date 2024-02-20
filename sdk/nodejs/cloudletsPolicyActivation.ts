@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export class CloudletsPolicyActivation extends pulumi.CustomResource {
@@ -33,9 +35,13 @@ export class CloudletsPolicyActivation extends pulumi.CustomResource {
     }
 
     /**
-     * Set of property IDs to link to this Cloudlets policy
+     * Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
      */
-    public readonly associatedProperties!: pulumi.Output<string[]>;
+    public readonly associatedProperties!: pulumi.Output<string[] | undefined>;
+    /**
+     * Indicates if policy that is being activated is a shared policy
+     */
+    public /*out*/ readonly isShared!: pulumi.Output<boolean>;
     /**
      * The network you want to activate the policy version on (options are Staging and Production)
      */
@@ -48,6 +54,10 @@ export class CloudletsPolicyActivation extends pulumi.CustomResource {
      * Activation status for this Cloudlets policy
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
+    /**
+     * Enables to set timeout for processing
+     */
+    public readonly timeouts!: pulumi.Output<outputs.CloudletsPolicyActivationTimeouts | undefined>;
     /**
      * Cloudlets policy version you want to activate
      */
@@ -67,15 +77,14 @@ export class CloudletsPolicyActivation extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as CloudletsPolicyActivationState | undefined;
             resourceInputs["associatedProperties"] = state ? state.associatedProperties : undefined;
+            resourceInputs["isShared"] = state ? state.isShared : undefined;
             resourceInputs["network"] = state ? state.network : undefined;
             resourceInputs["policyId"] = state ? state.policyId : undefined;
             resourceInputs["status"] = state ? state.status : undefined;
+            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
             resourceInputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as CloudletsPolicyActivationArgs | undefined;
-            if ((!args || args.associatedProperties === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'associatedProperties'");
-            }
             if ((!args || args.network === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'network'");
             }
@@ -88,7 +97,9 @@ export class CloudletsPolicyActivation extends pulumi.CustomResource {
             resourceInputs["associatedProperties"] = args ? args.associatedProperties : undefined;
             resourceInputs["network"] = args ? args.network : undefined;
             resourceInputs["policyId"] = args ? args.policyId : undefined;
+            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
             resourceInputs["version"] = args ? args.version : undefined;
+            resourceInputs["isShared"] = undefined /*out*/;
             resourceInputs["status"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -101,9 +112,13 @@ export class CloudletsPolicyActivation extends pulumi.CustomResource {
  */
 export interface CloudletsPolicyActivationState {
     /**
-     * Set of property IDs to link to this Cloudlets policy
+     * Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
      */
     associatedProperties?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates if policy that is being activated is a shared policy
+     */
+    isShared?: pulumi.Input<boolean>;
     /**
      * The network you want to activate the policy version on (options are Staging and Production)
      */
@@ -117,6 +132,10 @@ export interface CloudletsPolicyActivationState {
      */
     status?: pulumi.Input<string>;
     /**
+     * Enables to set timeout for processing
+     */
+    timeouts?: pulumi.Input<inputs.CloudletsPolicyActivationTimeouts>;
+    /**
      * Cloudlets policy version you want to activate
      */
     version?: pulumi.Input<number>;
@@ -127,9 +146,9 @@ export interface CloudletsPolicyActivationState {
  */
 export interface CloudletsPolicyActivationArgs {
     /**
-     * Set of property IDs to link to this Cloudlets policy
+     * Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
      */
-    associatedProperties: pulumi.Input<pulumi.Input<string>[]>;
+    associatedProperties?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The network you want to activate the policy version on (options are Staging and Production)
      */
@@ -138,6 +157,10 @@ export interface CloudletsPolicyActivationArgs {
      * ID of the Cloudlets policy you want to activate
      */
     policyId: pulumi.Input<number>;
+    /**
+     * Enables to set timeout for processing
+     */
+    timeouts?: pulumi.Input<inputs.CloudletsPolicyActivationTimeouts>;
     /**
      * Cloudlets policy version you want to activate
      */

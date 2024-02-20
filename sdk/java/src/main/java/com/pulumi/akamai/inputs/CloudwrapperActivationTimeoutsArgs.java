@@ -16,14 +16,14 @@ public final class CloudwrapperActivationTimeoutsArgs extends com.pulumi.resourc
     public static final CloudwrapperActivationTimeoutsArgs Empty = new CloudwrapperActivationTimeoutsArgs();
 
     /**
-     * Optional configurable activation timeout to be used on resource create. By default it&#39;s 4h with 1s pooling interval.
+     * Optional configurable activation timeout to be used on resource create. By default it&#39;s 4h with 1m pooling interval.
      * 
      */
     @Import(name="create")
     private @Nullable Output<String> create;
 
     /**
-     * @return Optional configurable activation timeout to be used on resource create. By default it&#39;s 4h with 1s pooling interval.
+     * @return Optional configurable activation timeout to be used on resource create. By default it&#39;s 4h with 1m pooling interval.
      * 
      */
     public Optional<Output<String>> create() {
@@ -31,14 +31,14 @@ public final class CloudwrapperActivationTimeoutsArgs extends com.pulumi.resourc
     }
 
     /**
-     * Optional configurable activation timeout to be used on resource update. By default it&#39;s 4h with 1s pooling interval.
+     * Optional configurable activation timeout to be used on resource update. By default it&#39;s 4h with 1m pooling interval.
      * 
      */
     @Import(name="update")
     private @Nullable Output<String> update;
 
     /**
-     * @return Optional configurable activation timeout to be used on resource update. By default it&#39;s 4h with 1s pooling interval.
+     * @return Optional configurable activation timeout to be used on resource update. By default it&#39;s 4h with 1m pooling interval.
      * 
      */
     public Optional<Output<String>> update() {
@@ -71,7 +71,7 @@ public final class CloudwrapperActivationTimeoutsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param create Optional configurable activation timeout to be used on resource create. By default it&#39;s 4h with 1s pooling interval.
+         * @param create Optional configurable activation timeout to be used on resource create. By default it&#39;s 4h with 1m pooling interval.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class CloudwrapperActivationTimeoutsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param create Optional configurable activation timeout to be used on resource create. By default it&#39;s 4h with 1s pooling interval.
+         * @param create Optional configurable activation timeout to be used on resource create. By default it&#39;s 4h with 1m pooling interval.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class CloudwrapperActivationTimeoutsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param update Optional configurable activation timeout to be used on resource update. By default it&#39;s 4h with 1s pooling interval.
+         * @param update Optional configurable activation timeout to be used on resource update. By default it&#39;s 4h with 1m pooling interval.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class CloudwrapperActivationTimeoutsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param update Optional configurable activation timeout to be used on resource update. By default it&#39;s 4h with 1s pooling interval.
+         * @param update Optional configurable activation timeout to be used on resource update. By default it&#39;s 4h with 1m pooling interval.
          * 
          * @return builder
          * 

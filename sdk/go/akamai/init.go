@@ -153,6 +153,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &BotmanCustomClient{}
 	case "akamai:index/botmanCustomClientSequence:BotmanCustomClientSequence":
 		r = &BotmanCustomClientSequence{}
+	case "akamai:index/botmanCustomCode:BotmanCustomCode":
+		r = &BotmanCustomCode{}
 	case "akamai:index/botmanCustomDefinedBot:BotmanCustomDefinedBot":
 		r = &BotmanCustomDefinedBot{}
 	case "akamai:index/botmanCustomDenyAction:BotmanCustomDenyAction":
@@ -249,6 +251,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Property{}
 	case "akamai:index/propertyActivation:PropertyActivation":
 		r = &PropertyActivation{}
+	case "akamai:index/propertyBootstrap:PropertyBootstrap":
+		r = &PropertyBootstrap{}
 	case "akamai:index/propertyInclude:PropertyInclude":
 		r = &PropertyInclude{}
 	case "akamai:index/propertyIncludeActivation:PropertyIncludeActivation":
@@ -616,6 +620,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"akamai",
+		"index/botmanCustomCode",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
 		"index/botmanCustomDefinedBot",
 		&module{version},
 	)
@@ -852,6 +861,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/propertyActivation",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/propertyBootstrap",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

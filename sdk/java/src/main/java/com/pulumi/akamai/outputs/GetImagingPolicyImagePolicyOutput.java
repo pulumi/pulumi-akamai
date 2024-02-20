@@ -18,6 +18,11 @@ public final class GetImagingPolicyImagePolicyOutput {
      */
     private @Nullable String adaptiveQuality;
     /**
+     * @return Whether a pristine image wider than the requested breakpoint is allowed as a derivative image if it has the fewest bytes. This will not have an affect if transformations are present.
+     * 
+     */
+    private @Nullable String allowPristineOnDownsize;
+    /**
      * @return The graphics file formats allowed for browser specific results.
      * 
      */
@@ -43,6 +48,11 @@ public final class GetImagingPolicyImagePolicyOutput {
      */
     private @Nullable String perceptualQualityVar;
     /**
+     * @return Whether derivative image formats should be selected with a preference for modern formats (such as WebP and Avif) instead the format that results in the fewest bytes.
+     * 
+     */
+    private @Nullable String preferModernFormats;
+    /**
      * @return Mutually exclusive with perceptualQuality, used by default if neither is specified. The chosen quality of the output images. Using a quality value from 1-100 resembles JPEG quality across output formats.
      * 
      */
@@ -60,6 +70,13 @@ public final class GetImagingPolicyImagePolicyOutput {
      */
     public Optional<String> adaptiveQuality() {
         return Optional.ofNullable(this.adaptiveQuality);
+    }
+    /**
+     * @return Whether a pristine image wider than the requested breakpoint is allowed as a derivative image if it has the fewest bytes. This will not have an affect if transformations are present.
+     * 
+     */
+    public Optional<String> allowPristineOnDownsize() {
+        return Optional.ofNullable(this.allowPristineOnDownsize);
     }
     /**
      * @return The graphics file formats allowed for browser specific results.
@@ -97,6 +114,13 @@ public final class GetImagingPolicyImagePolicyOutput {
         return Optional.ofNullable(this.perceptualQualityVar);
     }
     /**
+     * @return Whether derivative image formats should be selected with a preference for modern formats (such as WebP and Avif) instead the format that results in the fewest bytes.
+     * 
+     */
+    public Optional<String> preferModernFormats() {
+        return Optional.ofNullable(this.preferModernFormats);
+    }
+    /**
      * @return Mutually exclusive with perceptualQuality, used by default if neither is specified. The chosen quality of the output images. Using a quality value from 1-100 resembles JPEG quality across output formats.
      * 
      */
@@ -121,22 +145,26 @@ public final class GetImagingPolicyImagePolicyOutput {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String adaptiveQuality;
+        private @Nullable String allowPristineOnDownsize;
         private @Nullable List<String> allowedFormats;
         private @Nullable List<String> forcedFormats;
         private @Nullable String perceptualQuality;
         private @Nullable String perceptualQualityFloor;
         private @Nullable String perceptualQualityVar;
+        private @Nullable String preferModernFormats;
         private @Nullable String quality;
         private @Nullable String qualityVar;
         public Builder() {}
         public Builder(GetImagingPolicyImagePolicyOutput defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adaptiveQuality = defaults.adaptiveQuality;
+    	      this.allowPristineOnDownsize = defaults.allowPristineOnDownsize;
     	      this.allowedFormats = defaults.allowedFormats;
     	      this.forcedFormats = defaults.forcedFormats;
     	      this.perceptualQuality = defaults.perceptualQuality;
     	      this.perceptualQualityFloor = defaults.perceptualQualityFloor;
     	      this.perceptualQualityVar = defaults.perceptualQualityVar;
+    	      this.preferModernFormats = defaults.preferModernFormats;
     	      this.quality = defaults.quality;
     	      this.qualityVar = defaults.qualityVar;
         }
@@ -145,6 +173,12 @@ public final class GetImagingPolicyImagePolicyOutput {
         public Builder adaptiveQuality(@Nullable String adaptiveQuality) {
 
             this.adaptiveQuality = adaptiveQuality;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder allowPristineOnDownsize(@Nullable String allowPristineOnDownsize) {
+
+            this.allowPristineOnDownsize = allowPristineOnDownsize;
             return this;
         }
         @CustomType.Setter
@@ -184,6 +218,12 @@ public final class GetImagingPolicyImagePolicyOutput {
             return this;
         }
         @CustomType.Setter
+        public Builder preferModernFormats(@Nullable String preferModernFormats) {
+
+            this.preferModernFormats = preferModernFormats;
+            return this;
+        }
+        @CustomType.Setter
         public Builder quality(@Nullable String quality) {
 
             this.quality = quality;
@@ -198,11 +238,13 @@ public final class GetImagingPolicyImagePolicyOutput {
         public GetImagingPolicyImagePolicyOutput build() {
             final var _resultValue = new GetImagingPolicyImagePolicyOutput();
             _resultValue.adaptiveQuality = adaptiveQuality;
+            _resultValue.allowPristineOnDownsize = allowPristineOnDownsize;
             _resultValue.allowedFormats = allowedFormats;
             _resultValue.forcedFormats = forcedFormats;
             _resultValue.perceptualQuality = perceptualQuality;
             _resultValue.perceptualQualityFloor = perceptualQualityFloor;
             _resultValue.perceptualQualityVar = perceptualQualityVar;
+            _resultValue.preferModernFormats = preferModernFormats;
             _resultValue.quality = quality;
             _resultValue.qualityVar = qualityVar;
             return _resultValue;

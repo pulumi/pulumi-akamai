@@ -80,6 +80,21 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRule extends com.pulu
     }
 
     /**
+     * Is used in some cloudlets to support default rules (rule that is always matched)
+     * 
+     */
+    @Import(name="matchesAlways")
+    private @Nullable Boolean matchesAlways;
+
+    /**
+     * @return Is used in some cloudlets to support default rules (rule that is always matched)
+     * 
+     */
+    public Optional<Boolean> matchesAlways() {
+        return Optional.ofNullable(this.matchesAlways);
+    }
+
+    /**
      * The name of the rule
      * 
      */
@@ -191,6 +206,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRule extends com.pulu
         this.end = $.end;
         this.matchUrl = $.matchUrl;
         this.matches = $.matches;
+        this.matchesAlways = $.matchesAlways;
         this.name = $.name;
         this.redirectUrl = $.redirectUrl;
         this.start = $.start;
@@ -270,6 +286,17 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRule extends com.pulu
          */
         public Builder matches(GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatch... matches) {
             return matches(List.of(matches));
+        }
+
+        /**
+         * @param matchesAlways Is used in some cloudlets to support default rules (rule that is always matched)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder matchesAlways(@Nullable Boolean matchesAlways) {
+            $.matchesAlways = matchesAlways;
+            return this;
         }
 
         /**

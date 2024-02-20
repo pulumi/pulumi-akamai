@@ -131,14 +131,14 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorFailAction exten
     }
 
     /**
-     * Specifies a CP code for which to log errors for the NetStorage location.
+     * Specifies a CP code for which to log errors for the NetStorage location. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     @Import(name="cpCode")
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorFailActionCpCode cpCode;
 
     /**
-     * @return Specifies a CP code for which to log errors for the NetStorage location.
+     * @return Specifies a CP code for which to log errors for the NetStorage location. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorFailActionCpCode> cpCode() {
@@ -676,7 +676,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorFailAction exten
         }
 
         /**
-         * @param cpCode Specifies a CP code for which to log errors for the NetStorage location.
+         * @param cpCode Specifies a CP code for which to log errors for the NetStorage location. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
          * 
          * @return builder
          * 

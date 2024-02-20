@@ -34,6 +34,10 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string? RolloutDuration;
         /// <summary>
+        /// The amount of time in seconds that the policy will serve stale images. During the serve stale period realtime images will attempt to use the offline image from the previous policy version first if possible.
+        /// </summary>
+        public readonly string? ServeStaleDuration;
+        /// <summary>
         /// Set of image transformations to apply to the source image. If unspecified, no operations are performed.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationResult> Transformations;
@@ -54,6 +58,8 @@ namespace Pulumi.Akamai.Outputs
 
             string? rolloutDuration,
 
+            string? serveStaleDuration,
+
             ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationResult> transformations,
 
             ImmutableArray<Outputs.GetImagingPolicyImagePolicyVariableResult> variables)
@@ -63,6 +69,7 @@ namespace Pulumi.Akamai.Outputs
             Output = output;
             PostBreakpointTransformations = postBreakpointTransformations;
             RolloutDuration = rolloutDuration;
+            ServeStaleDuration = serveStaleDuration;
             Transformations = transformations;
             Variables = variables;
         }

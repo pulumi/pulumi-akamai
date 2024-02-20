@@ -13,6 +13,7 @@ export function getPropertyHostnames(args: GetPropertyHostnamesArgs, opts?: pulu
         "contractId": args.contractId,
         "groupId": args.groupId,
         "propertyId": args.propertyId,
+        "version": args.version,
     }, opts);
 }
 
@@ -23,6 +24,7 @@ export interface GetPropertyHostnamesArgs {
     contractId: string;
     groupId: string;
     propertyId: string;
+    version?: number;
 }
 
 /**
@@ -50,4 +52,5 @@ export interface GetPropertyHostnamesOutputArgs {
     contractId: pulumi.Input<string>;
     groupId: pulumi.Input<string>;
     propertyId: pulumi.Input<string>;
+    version?: pulumi.Input<number>;
 }

@@ -894,14 +894,14 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorArgs extends com
     }
 
     /**
-     * This behavior constructs an HTTP response, complete with HTTP status code and body, to serve from the edge independently of your origin. It supports all request methods except for `POST`. This behavior can be used in includes.
+     * This behavior constructs an HTTP response, complete with HTTP status code and body, to serve from the edge independently of your origin. For example, you might want to send a customized response if the URL doesn&#39;t point to an object on the origin server, or if the end user is not authorized to view the requested content. You can use it with all request methods you allow for your property, including POST. For more details, see the `allowOptions`, `allowPatch`, `allowPost`, `allowPut`, and `allowDelete` behaviors. This behavior can be used in includes.
      * 
      */
     @Import(name="constructResponse")
     private @Nullable Output<GetPropertyRulesBuilderRulesV20230105BehaviorConstructResponseArgs> constructResponse;
 
     /**
-     * @return This behavior constructs an HTTP response, complete with HTTP status code and body, to serve from the edge independently of your origin. It supports all request methods except for `POST`. This behavior can be used in includes.
+     * @return This behavior constructs an HTTP response, complete with HTTP status code and body, to serve from the edge independently of your origin. For example, you might want to send a customized response if the URL doesn&#39;t point to an object on the origin server, or if the end user is not authorized to view the requested content. You can use it with all request methods you allow for your property, including POST. For more details, see the `allowOptions`, `allowPatch`, `allowPost`, `allowPut`, and `allowDelete` behaviors. This behavior can be used in includes.
      * 
      */
     public Optional<Output<GetPropertyRulesBuilderRulesV20230105BehaviorConstructResponseArgs>> constructResponse() {
@@ -1044,14 +1044,14 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorArgs extends com
     }
 
     /**
-     * Content Provider Codes (CP codes) allow you to distinguish various reporting and billing segments. You receive a CP code when purchasing Akamai service, and you need it to access properties. This behavior allows you to apply any valid CP code, including additional ones you may request from Akamai Professional Services. For a CP code to be valid, it needs to belong to the same contract and be associated with the same product as the property, and the group needs access to it. This behavior can be used in includes.
+     * Content Provider Codes (CP codes) allow you to distinguish various reporting and billing traffic segments, and you need them to access properties. You receive an initial CP code when purchasing Akamai, and you can run the `Create a new CP code` operation to generate more. This behavior applies any valid CP code, either as required as a default at the top of the rule tree, or subsequently to override the default. For a CP code to be valid, it needs to be assigned the same contract and product as the property, and the group needs access to it.  For available values, run the `List CP codes` operation. This behavior can be used in includes.
      * 
      */
     @Import(name="cpCode")
     private @Nullable Output<GetPropertyRulesBuilderRulesV20230105BehaviorCpCodeArgs> cpCode;
 
     /**
-     * @return Content Provider Codes (CP codes) allow you to distinguish various reporting and billing segments. You receive a CP code when purchasing Akamai service, and you need it to access properties. This behavior allows you to apply any valid CP code, including additional ones you may request from Akamai Professional Services. For a CP code to be valid, it needs to belong to the same contract and be associated with the same product as the property, and the group needs access to it. This behavior can be used in includes.
+     * @return Content Provider Codes (CP codes) allow you to distinguish various reporting and billing traffic segments, and you need them to access properties. You receive an initial CP code when purchasing Akamai, and you can run the `Create a new CP code` operation to generate more. This behavior applies any valid CP code, either as required as a default at the top of the rule tree, or subsequently to override the default. For a CP code to be valid, it needs to be assigned the same contract and product as the property, and the group needs access to it.  For available values, run the `List CP codes` operation. This behavior can be used in includes.
      * 
      */
     public Optional<Output<GetPropertyRulesBuilderRulesV20230105BehaviorCpCodeArgs>> cpCode() {
@@ -1749,14 +1749,14 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorArgs extends com
     }
 
     /**
-     * This behavior is deprecated, but you should not disable or remove it if present. This behavior cannot be used in includes.
+     * This behavior is deprecated, but you shouldn&#39;t disable or remove it if present. This behavior cannot be used in includes.
      * 
      */
     @Import(name="frontEndOptimization")
     private @Nullable Output<GetPropertyRulesBuilderRulesV20230105BehaviorFrontEndOptimizationArgs> frontEndOptimization;
 
     /**
-     * @return This behavior is deprecated, but you should not disable or remove it if present. This behavior cannot be used in includes.
+     * @return This behavior is deprecated, but you shouldn&#39;t disable or remove it if present. This behavior cannot be used in includes.
      * 
      */
     public Optional<Output<GetPropertyRulesBuilderRulesV20230105BehaviorFrontEndOptimizationArgs>> frontEndOptimization() {
@@ -2874,14 +2874,14 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorArgs extends com
     }
 
     /**
-     * You need this behavior to deploy the Object Caching product. It disables serving HTML content and limits the maximum object size to 100MB. Contact Akamai Professional Services for help configuring it. This behavior is for internal usage only. This behavior can be used in includes.
+     * You need this behavior to deploy the Object Caching product. It disables serving HTML content and limits the maximum object size to 100MB. Contact Akamai Professional Services for help configuring it. This behavior can be used in includes.
      * 
      */
     @Import(name="restrictObjectCaching")
     private @Nullable Output<GetPropertyRulesBuilderRulesV20230105BehaviorRestrictObjectCachingArgs> restrictObjectCaching;
 
     /**
-     * @return You need this behavior to deploy the Object Caching product. It disables serving HTML content and limits the maximum object size to 100MB. Contact Akamai Professional Services for help configuring it. This behavior is for internal usage only. This behavior can be used in includes.
+     * @return You need this behavior to deploy the Object Caching product. It disables serving HTML content and limits the maximum object size to 100MB. Contact Akamai Professional Services for help configuring it. This behavior can be used in includes.
      * 
      */
     public Optional<Output<GetPropertyRulesBuilderRulesV20230105BehaviorRestrictObjectCachingArgs>> restrictObjectCaching() {
@@ -4685,7 +4685,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorArgs extends com
         }
 
         /**
-         * @param constructResponse This behavior constructs an HTTP response, complete with HTTP status code and body, to serve from the edge independently of your origin. It supports all request methods except for `POST`. This behavior can be used in includes.
+         * @param constructResponse This behavior constructs an HTTP response, complete with HTTP status code and body, to serve from the edge independently of your origin. For example, you might want to send a customized response if the URL doesn&#39;t point to an object on the origin server, or if the end user is not authorized to view the requested content. You can use it with all request methods you allow for your property, including POST. For more details, see the `allowOptions`, `allowPatch`, `allowPost`, `allowPut`, and `allowDelete` behaviors. This behavior can be used in includes.
          * 
          * @return builder
          * 
@@ -4696,7 +4696,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorArgs extends com
         }
 
         /**
-         * @param constructResponse This behavior constructs an HTTP response, complete with HTTP status code and body, to serve from the edge independently of your origin. It supports all request methods except for `POST`. This behavior can be used in includes.
+         * @param constructResponse This behavior constructs an HTTP response, complete with HTTP status code and body, to serve from the edge independently of your origin. For example, you might want to send a customized response if the URL doesn&#39;t point to an object on the origin server, or if the end user is not authorized to view the requested content. You can use it with all request methods you allow for your property, including POST. For more details, see the `allowOptions`, `allowPatch`, `allowPost`, `allowPut`, and `allowDelete` behaviors. This behavior can be used in includes.
          * 
          * @return builder
          * 
@@ -4895,7 +4895,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorArgs extends com
         }
 
         /**
-         * @param cpCode Content Provider Codes (CP codes) allow you to distinguish various reporting and billing segments. You receive a CP code when purchasing Akamai service, and you need it to access properties. This behavior allows you to apply any valid CP code, including additional ones you may request from Akamai Professional Services. For a CP code to be valid, it needs to belong to the same contract and be associated with the same product as the property, and the group needs access to it. This behavior can be used in includes.
+         * @param cpCode Content Provider Codes (CP codes) allow you to distinguish various reporting and billing traffic segments, and you need them to access properties. You receive an initial CP code when purchasing Akamai, and you can run the `Create a new CP code` operation to generate more. This behavior applies any valid CP code, either as required as a default at the top of the rule tree, or subsequently to override the default. For a CP code to be valid, it needs to be assigned the same contract and product as the property, and the group needs access to it.  For available values, run the `List CP codes` operation. This behavior can be used in includes.
          * 
          * @return builder
          * 
@@ -4906,7 +4906,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorArgs extends com
         }
 
         /**
-         * @param cpCode Content Provider Codes (CP codes) allow you to distinguish various reporting and billing segments. You receive a CP code when purchasing Akamai service, and you need it to access properties. This behavior allows you to apply any valid CP code, including additional ones you may request from Akamai Professional Services. For a CP code to be valid, it needs to belong to the same contract and be associated with the same product as the property, and the group needs access to it. This behavior can be used in includes.
+         * @param cpCode Content Provider Codes (CP codes) allow you to distinguish various reporting and billing traffic segments, and you need them to access properties. You receive an initial CP code when purchasing Akamai, and you can run the `Create a new CP code` operation to generate more. This behavior applies any valid CP code, either as required as a default at the top of the rule tree, or subsequently to override the default. For a CP code to be valid, it needs to be assigned the same contract and product as the property, and the group needs access to it.  For available values, run the `List CP codes` operation. This behavior can be used in includes.
          * 
          * @return builder
          * 
@@ -5882,7 +5882,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorArgs extends com
         }
 
         /**
-         * @param frontEndOptimization This behavior is deprecated, but you should not disable or remove it if present. This behavior cannot be used in includes.
+         * @param frontEndOptimization This behavior is deprecated, but you shouldn&#39;t disable or remove it if present. This behavior cannot be used in includes.
          * 
          * @return builder
          * 
@@ -5893,7 +5893,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorArgs extends com
         }
 
         /**
-         * @param frontEndOptimization This behavior is deprecated, but you should not disable or remove it if present. This behavior cannot be used in includes.
+         * @param frontEndOptimization This behavior is deprecated, but you shouldn&#39;t disable or remove it if present. This behavior cannot be used in includes.
          * 
          * @return builder
          * 
@@ -7457,7 +7457,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorArgs extends com
         }
 
         /**
-         * @param restrictObjectCaching You need this behavior to deploy the Object Caching product. It disables serving HTML content and limits the maximum object size to 100MB. Contact Akamai Professional Services for help configuring it. This behavior is for internal usage only. This behavior can be used in includes.
+         * @param restrictObjectCaching You need this behavior to deploy the Object Caching product. It disables serving HTML content and limits the maximum object size to 100MB. Contact Akamai Professional Services for help configuring it. This behavior can be used in includes.
          * 
          * @return builder
          * 
@@ -7468,7 +7468,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorArgs extends com
         }
 
         /**
-         * @param restrictObjectCaching You need this behavior to deploy the Object Caching product. It disables serving HTML content and limits the maximum object size to 100MB. Contact Akamai Professional Services for help configuring it. This behavior is for internal usage only. This behavior can be used in includes.
+         * @param restrictObjectCaching You need this behavior to deploy the Object Caching product. It disables serving HTML content and limits the maximum object size to 100MB. Contact Akamai Professional Services for help configuring it. This behavior can be used in includes.
          * 
          * @return builder
          * 

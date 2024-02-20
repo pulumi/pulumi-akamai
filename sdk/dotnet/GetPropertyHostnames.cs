@@ -30,6 +30,9 @@ namespace Pulumi.Akamai
         [Input("propertyId", required: true)]
         public string PropertyId { get; set; } = null!;
 
+        [Input("version")]
+        public int? Version { get; set; }
+
         public GetPropertyHostnamesArgs()
         {
         }
@@ -46,6 +49,9 @@ namespace Pulumi.Akamai
 
         [Input("propertyId", required: true)]
         public Input<string> PropertyId { get; set; } = null!;
+
+        [Input("version")]
+        public Input<int>? Version { get; set; }
 
         public GetPropertyHostnamesInvokeArgs()
         {

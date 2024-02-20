@@ -65,15 +65,15 @@ public final class CpsThirdPartyEnrollmentCsrArgs extends com.pulumi.resources.R
      * Organizational unit of organization
      * 
      */
-    @Import(name="organizationalUnit", required=true)
-    private Output<String> organizationalUnit;
+    @Import(name="organizationalUnit")
+    private @Nullable Output<String> organizationalUnit;
 
     /**
      * @return Organizational unit of organization
      * 
      */
-    public Output<String> organizationalUnit() {
-        return this.organizationalUnit;
+    public Optional<Output<String>> organizationalUnit() {
+        return Optional.ofNullable(this.organizationalUnit);
     }
 
     /**
@@ -95,15 +95,15 @@ public final class CpsThirdPartyEnrollmentCsrArgs extends com.pulumi.resources.R
      * State or province of organization location
      * 
      */
-    @Import(name="state", required=true)
-    private Output<String> state;
+    @Import(name="state")
+    private @Nullable Output<String> state;
 
     /**
      * @return State or province of organization location
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Optional<Output<String>> state() {
+        return Optional.ofNullable(this.state);
     }
 
     private CpsThirdPartyEnrollmentCsrArgs() {}
@@ -204,7 +204,7 @@ public final class CpsThirdPartyEnrollmentCsrArgs extends com.pulumi.resources.R
          * @return builder
          * 
          */
-        public Builder organizationalUnit(Output<String> organizationalUnit) {
+        public Builder organizationalUnit(@Nullable Output<String> organizationalUnit) {
             $.organizationalUnit = organizationalUnit;
             return this;
         }
@@ -246,7 +246,7 @@ public final class CpsThirdPartyEnrollmentCsrArgs extends com.pulumi.resources.R
          * @return builder
          * 
          */
-        public Builder state(Output<String> state) {
+        public Builder state(@Nullable Output<String> state) {
             $.state = state;
             return this;
         }
@@ -270,12 +270,6 @@ public final class CpsThirdPartyEnrollmentCsrArgs extends com.pulumi.resources.R
             }
             if ($.organization == null) {
                 throw new MissingRequiredPropertyException("CpsThirdPartyEnrollmentCsrArgs", "organization");
-            }
-            if ($.organizationalUnit == null) {
-                throw new MissingRequiredPropertyException("CpsThirdPartyEnrollmentCsrArgs", "organizationalUnit");
-            }
-            if ($.state == null) {
-                throw new MissingRequiredPropertyException("CpsThirdPartyEnrollmentCsrArgs", "state");
             }
             return $;
         }

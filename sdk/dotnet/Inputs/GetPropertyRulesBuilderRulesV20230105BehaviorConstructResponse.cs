@@ -25,7 +25,7 @@ namespace Pulumi.Akamai.Inputs
         public bool? Enabled { get; set; }
 
         /// <summary>
-        /// Removes the underlying object from the cache, since it is not being served.
+        /// For GET requests from clients, this forces edge servers to evict the underlying object from cache. Defaults to `false`.
         /// </summary>
         [Input("forceEviction")]
         public bool? ForceEviction { get; set; }

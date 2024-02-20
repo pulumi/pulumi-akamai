@@ -26,11 +26,11 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly bool? ApplyBestFileType;
         /// <summary>
-        /// Select the CP code for which to track Image and Video Manager video traffic. Use this along with `cpCodeTransformed` to track traffic to derivative video content.
+        /// Specifies the CP code for which to track Image and Video Manager video traffic. Use this along with `cpCodeTransformed` to track traffic to derivative video content. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
         /// </summary>
         public readonly Outputs.GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideoCpCodeOriginalResult? CpCodeOriginal;
         /// <summary>
-        /// Select the CP code to identify derivative transformed video content.
+        /// Specifies the CP code to identify derivative transformed video content. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
         /// </summary>
         public readonly Outputs.GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideoCpCodeTransformedResult? CpCodeTransformed;
         /// <summary>
@@ -50,7 +50,7 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string? PolicyToken;
         /// <summary>
-        /// Specify the default policy identifier, which is registered with the `Image and Video Manager API` once you activate this property.
+        /// Specifies the default policy identifier, which is registered with the `Image and Video Manager API` once you activate this property.
         /// </summary>
         public readonly string? PolicyTokenDefault;
         /// <summary>

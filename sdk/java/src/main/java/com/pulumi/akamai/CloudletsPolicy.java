@@ -6,10 +6,12 @@ package com.pulumi.akamai;
 import com.pulumi.akamai.CloudletsPolicyArgs;
 import com.pulumi.akamai.Utilities;
 import com.pulumi.akamai.inputs.CloudletsPolicyState;
+import com.pulumi.akamai.outputs.CloudletsPolicyTimeouts;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Optional;
@@ -32,14 +34,14 @@ public class CloudletsPolicy extends com.pulumi.resources.CustomResource {
         return this.cloudletCode;
     }
     /**
-     * An integer that corresponds to a Cloudlets policy type (0 or 9)
+     * An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies
      * 
      */
     @Export(name="cloudletId", refs={Integer.class}, tree="[0]")
     private Output<Integer> cloudletId;
 
     /**
-     * @return An integer that corresponds to a Cloudlets policy type (0 or 9)
+     * @return An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies
      * 
      */
     public Output<Integer> cloudletId() {
@@ -72,6 +74,20 @@ public class CloudletsPolicy extends com.pulumi.resources.CustomResource {
      */
     public Output<String> groupId() {
         return this.groupId;
+    }
+    /**
+     * The type of policy that you want to create
+     * 
+     */
+    @Export(name="isShared", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> isShared;
+
+    /**
+     * @return The type of policy that you want to create
+     * 
+     */
+    public Output<Optional<Boolean>> isShared() {
+        return Codegen.optional(this.isShared);
     }
     /**
      * The version of the Cloudlet specific matchRules
@@ -114,6 +130,20 @@ public class CloudletsPolicy extends com.pulumi.resources.CustomResource {
      */
     public Output<String> name() {
         return this.name;
+    }
+    /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Export(name="timeouts", refs={CloudletsPolicyTimeouts.class}, tree="[0]")
+    private Output</* @Nullable */ CloudletsPolicyTimeouts> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Output<Optional<CloudletsPolicyTimeouts>> timeouts() {
+        return Codegen.optional(this.timeouts);
     }
     /**
      * The version number of the policy

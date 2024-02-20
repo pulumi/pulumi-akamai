@@ -21,6 +21,10 @@ type EdgeWorkersActivation struct {
 	EdgeworkerId pulumi.IntOutput `pulumi:"edgeworkerId"`
 	// The network on which the version will be activated
 	Network pulumi.StringOutput `pulumi:"network"`
+	// Assigns a log message to the activation request
+	Note pulumi.StringPtrOutput `pulumi:"note"`
+	// Enables to set timeout for processing
+	Timeouts EdgeWorkersActivationTimeoutsPtrOutput `pulumi:"timeouts"`
 	// The version of EdgeWorker to activate
 	Version pulumi.StringOutput `pulumi:"version"`
 }
@@ -70,6 +74,10 @@ type edgeWorkersActivationState struct {
 	EdgeworkerId *int `pulumi:"edgeworkerId"`
 	// The network on which the version will be activated
 	Network *string `pulumi:"network"`
+	// Assigns a log message to the activation request
+	Note *string `pulumi:"note"`
+	// Enables to set timeout for processing
+	Timeouts *EdgeWorkersActivationTimeouts `pulumi:"timeouts"`
 	// The version of EdgeWorker to activate
 	Version *string `pulumi:"version"`
 }
@@ -81,6 +89,10 @@ type EdgeWorkersActivationState struct {
 	EdgeworkerId pulumi.IntPtrInput
 	// The network on which the version will be activated
 	Network pulumi.StringPtrInput
+	// Assigns a log message to the activation request
+	Note pulumi.StringPtrInput
+	// Enables to set timeout for processing
+	Timeouts EdgeWorkersActivationTimeoutsPtrInput
 	// The version of EdgeWorker to activate
 	Version pulumi.StringPtrInput
 }
@@ -94,6 +106,10 @@ type edgeWorkersActivationArgs struct {
 	EdgeworkerId int `pulumi:"edgeworkerId"`
 	// The network on which the version will be activated
 	Network string `pulumi:"network"`
+	// Assigns a log message to the activation request
+	Note *string `pulumi:"note"`
+	// Enables to set timeout for processing
+	Timeouts *EdgeWorkersActivationTimeouts `pulumi:"timeouts"`
 	// The version of EdgeWorker to activate
 	Version string `pulumi:"version"`
 }
@@ -104,6 +120,10 @@ type EdgeWorkersActivationArgs struct {
 	EdgeworkerId pulumi.IntInput
 	// The network on which the version will be activated
 	Network pulumi.StringInput
+	// Assigns a log message to the activation request
+	Note pulumi.StringPtrInput
+	// Enables to set timeout for processing
+	Timeouts EdgeWorkersActivationTimeoutsPtrInput
 	// The version of EdgeWorker to activate
 	Version pulumi.StringInput
 }
@@ -208,6 +228,16 @@ func (o EdgeWorkersActivationOutput) EdgeworkerId() pulumi.IntOutput {
 // The network on which the version will be activated
 func (o EdgeWorkersActivationOutput) Network() pulumi.StringOutput {
 	return o.ApplyT(func(v *EdgeWorkersActivation) pulumi.StringOutput { return v.Network }).(pulumi.StringOutput)
+}
+
+// Assigns a log message to the activation request
+func (o EdgeWorkersActivationOutput) Note() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EdgeWorkersActivation) pulumi.StringPtrOutput { return v.Note }).(pulumi.StringPtrOutput)
+}
+
+// Enables to set timeout for processing
+func (o EdgeWorkersActivationOutput) Timeouts() EdgeWorkersActivationTimeoutsPtrOutput {
+	return o.ApplyT(func(v *EdgeWorkersActivation) EdgeWorkersActivationTimeoutsPtrOutput { return v.Timeouts }).(EdgeWorkersActivationTimeoutsPtrOutput)
 }
 
 // The version of EdgeWorker to activate

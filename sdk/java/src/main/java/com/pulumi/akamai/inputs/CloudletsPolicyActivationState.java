@@ -3,8 +3,10 @@
 
 package com.pulumi.akamai.inputs;
 
+import com.pulumi.akamai.inputs.CloudletsPolicyActivationTimeoutsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -18,18 +20,33 @@ public final class CloudletsPolicyActivationState extends com.pulumi.resources.R
     public static final CloudletsPolicyActivationState Empty = new CloudletsPolicyActivationState();
 
     /**
-     * Set of property IDs to link to this Cloudlets policy
+     * Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
      * 
      */
     @Import(name="associatedProperties")
     private @Nullable Output<List<String>> associatedProperties;
 
     /**
-     * @return Set of property IDs to link to this Cloudlets policy
+     * @return Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
      * 
      */
     public Optional<Output<List<String>>> associatedProperties() {
         return Optional.ofNullable(this.associatedProperties);
+    }
+
+    /**
+     * Indicates if policy that is being activated is a shared policy
+     * 
+     */
+    @Import(name="isShared")
+    private @Nullable Output<Boolean> isShared;
+
+    /**
+     * @return Indicates if policy that is being activated is a shared policy
+     * 
+     */
+    public Optional<Output<Boolean>> isShared() {
+        return Optional.ofNullable(this.isShared);
     }
 
     /**
@@ -78,6 +95,21 @@ public final class CloudletsPolicyActivationState extends com.pulumi.resources.R
     }
 
     /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Import(name="timeouts")
+    private @Nullable Output<CloudletsPolicyActivationTimeoutsArgs> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Optional<Output<CloudletsPolicyActivationTimeoutsArgs>> timeouts() {
+        return Optional.ofNullable(this.timeouts);
+    }
+
+    /**
      * Cloudlets policy version you want to activate
      * 
      */
@@ -96,9 +128,11 @@ public final class CloudletsPolicyActivationState extends com.pulumi.resources.R
 
     private CloudletsPolicyActivationState(CloudletsPolicyActivationState $) {
         this.associatedProperties = $.associatedProperties;
+        this.isShared = $.isShared;
         this.network = $.network;
         this.policyId = $.policyId;
         this.status = $.status;
+        this.timeouts = $.timeouts;
         this.version = $.version;
     }
 
@@ -121,7 +155,7 @@ public final class CloudletsPolicyActivationState extends com.pulumi.resources.R
         }
 
         /**
-         * @param associatedProperties Set of property IDs to link to this Cloudlets policy
+         * @param associatedProperties Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
          * 
          * @return builder
          * 
@@ -132,7 +166,7 @@ public final class CloudletsPolicyActivationState extends com.pulumi.resources.R
         }
 
         /**
-         * @param associatedProperties Set of property IDs to link to this Cloudlets policy
+         * @param associatedProperties Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
          * 
          * @return builder
          * 
@@ -142,13 +176,34 @@ public final class CloudletsPolicyActivationState extends com.pulumi.resources.R
         }
 
         /**
-         * @param associatedProperties Set of property IDs to link to this Cloudlets policy
+         * @param associatedProperties Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
          * 
          * @return builder
          * 
          */
         public Builder associatedProperties(String... associatedProperties) {
             return associatedProperties(List.of(associatedProperties));
+        }
+
+        /**
+         * @param isShared Indicates if policy that is being activated is a shared policy
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isShared(@Nullable Output<Boolean> isShared) {
+            $.isShared = isShared;
+            return this;
+        }
+
+        /**
+         * @param isShared Indicates if policy that is being activated is a shared policy
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isShared(Boolean isShared) {
+            return isShared(Output.of(isShared));
         }
 
         /**
@@ -212,6 +267,27 @@ public final class CloudletsPolicyActivationState extends com.pulumi.resources.R
          */
         public Builder status(String status) {
             return status(Output.of(status));
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(@Nullable Output<CloudletsPolicyActivationTimeoutsArgs> timeouts) {
+            $.timeouts = timeouts;
+            return this;
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(CloudletsPolicyActivationTimeoutsArgs timeouts) {
+            return timeouts(Output.of(timeouts));
         }
 
         /**

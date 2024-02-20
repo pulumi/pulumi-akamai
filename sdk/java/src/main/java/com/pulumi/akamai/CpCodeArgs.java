@@ -3,6 +3,7 @@
 
 package com.pulumi.akamai;
 
+import com.pulumi.akamai.inputs.CpCodeTimeoutsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
@@ -44,6 +45,21 @@ public final class CpCodeArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.productId);
     }
 
+    /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Import(name="timeouts")
+    private @Nullable Output<CpCodeTimeoutsArgs> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Optional<Output<CpCodeTimeoutsArgs>> timeouts() {
+        return Optional.ofNullable(this.timeouts);
+    }
+
     private CpCodeArgs() {}
 
     private CpCodeArgs(CpCodeArgs $) {
@@ -51,6 +67,7 @@ public final class CpCodeArgs extends com.pulumi.resources.ResourceArgs {
         this.groupId = $.groupId;
         this.name = $.name;
         this.productId = $.productId;
+        this.timeouts = $.timeouts;
     }
 
     public static Builder builder() {
@@ -105,6 +122,27 @@ public final class CpCodeArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder productId(String productId) {
             return productId(Output.of(productId));
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(@Nullable Output<CpCodeTimeoutsArgs> timeouts) {
+            $.timeouts = timeouts;
+            return this;
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(CpCodeTimeoutsArgs timeouts) {
+            return timeouts(Output.of(timeouts));
         }
 
         public CpCodeArgs build() {

@@ -86,6 +86,21 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Property ID
+     * 
+     */
+    @Import(name="propertyId")
+    private @Nullable Output<String> propertyId;
+
+    /**
+     * @return Property ID
+     * 
+     */
+    public Optional<Output<String>> propertyId() {
+        return Optional.ofNullable(this.propertyId);
+    }
+
+    /**
      * Specify the rule format version (defaults to latest version available when created)
      * 
      */
@@ -115,6 +130,21 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.rules);
     }
 
+    /**
+     * Property version notes
+     * 
+     */
+    @Import(name="versionNotes")
+    private @Nullable Output<String> versionNotes;
+
+    /**
+     * @return Property version notes
+     * 
+     */
+    public Optional<Output<String>> versionNotes() {
+        return Optional.ofNullable(this.versionNotes);
+    }
+
     private PropertyArgs() {}
 
     private PropertyArgs(PropertyArgs $) {
@@ -123,8 +153,10 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         this.hostnames = $.hostnames;
         this.name = $.name;
         this.productId = $.productId;
+        this.propertyId = $.propertyId;
         this.ruleFormat = $.ruleFormat;
         this.rules = $.rules;
+        this.versionNotes = $.versionNotes;
     }
 
     public static Builder builder() {
@@ -243,6 +275,27 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param propertyId Property ID
+         * 
+         * @return builder
+         * 
+         */
+        public Builder propertyId(@Nullable Output<String> propertyId) {
+            $.propertyId = propertyId;
+            return this;
+        }
+
+        /**
+         * @param propertyId Property ID
+         * 
+         * @return builder
+         * 
+         */
+        public Builder propertyId(String propertyId) {
+            return propertyId(Output.of(propertyId));
+        }
+
+        /**
          * @param ruleFormat Specify the rule format version (defaults to latest version available when created)
          * 
          * @return builder
@@ -282,6 +335,27 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder rules(String rules) {
             return rules(Output.of(rules));
+        }
+
+        /**
+         * @param versionNotes Property version notes
+         * 
+         * @return builder
+         * 
+         */
+        public Builder versionNotes(@Nullable Output<String> versionNotes) {
+            $.versionNotes = versionNotes;
+            return this;
+        }
+
+        /**
+         * @param versionNotes Property version notes
+         * 
+         * @return builder
+         * 
+         */
+        public Builder versionNotes(String versionNotes) {
+            return versionNotes(Output.of(versionNotes));
         }
 
         public PropertyArgs build() {

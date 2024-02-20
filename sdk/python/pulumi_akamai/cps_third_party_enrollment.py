@@ -32,7 +32,8 @@ class CpsThirdPartyEnrollmentArgs:
                  change_management: Optional[pulumi.Input[bool]] = None,
                  exclude_sans: Optional[pulumi.Input[bool]] = None,
                  sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 signature_algorithm: Optional[pulumi.Input[str]] = None):
+                 signature_algorithm: Optional[pulumi.Input[str]] = None,
+                 timeouts: Optional[pulumi.Input['CpsThirdPartyEnrollmentTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a CpsThirdPartyEnrollment resource.
         :param pulumi.Input['CpsThirdPartyEnrollmentAdminContactArgs'] admin_contact: Contact information for the certificate administrator to use at organization
@@ -52,6 +53,7 @@ class CpsThirdPartyEnrollmentArgs:
         :param pulumi.Input[bool] exclude_sans: When true, SANs are excluded from the CSR
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: List of SANs
         :param pulumi.Input[str] signature_algorithm: The SHA function. Changing this value may require running terraform destroy, terraform apply
+        :param pulumi.Input['CpsThirdPartyEnrollmentTimeoutsArgs'] timeouts: Enables to set timeout for processing
         """
         pulumi.set(__self__, "admin_contact", admin_contact)
         pulumi.set(__self__, "common_name", common_name)
@@ -78,6 +80,8 @@ class CpsThirdPartyEnrollmentArgs:
             pulumi.set(__self__, "sans", sans)
         if signature_algorithm is not None:
             pulumi.set(__self__, "signature_algorithm", signature_algorithm)
+        if timeouts is not None:
+            pulumi.set(__self__, "timeouts", timeouts)
 
     @property
     @pulumi.getter(name="adminContact")
@@ -283,6 +287,18 @@ class CpsThirdPartyEnrollmentArgs:
     def signature_algorithm(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "signature_algorithm", value)
 
+    @property
+    @pulumi.getter
+    def timeouts(self) -> Optional[pulumi.Input['CpsThirdPartyEnrollmentTimeoutsArgs']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
+
+    @timeouts.setter
+    def timeouts(self, value: Optional[pulumi.Input['CpsThirdPartyEnrollmentTimeoutsArgs']]):
+        pulumi.set(self, "timeouts", value)
+
 
 @pulumi.input_type
 class _CpsThirdPartyEnrollmentState:
@@ -303,7 +319,8 @@ class _CpsThirdPartyEnrollmentState:
                  secure_network: Optional[pulumi.Input[str]] = None,
                  signature_algorithm: Optional[pulumi.Input[str]] = None,
                  sni_only: Optional[pulumi.Input[bool]] = None,
-                 tech_contact: Optional[pulumi.Input['CpsThirdPartyEnrollmentTechContactArgs']] = None):
+                 tech_contact: Optional[pulumi.Input['CpsThirdPartyEnrollmentTechContactArgs']] = None,
+                 timeouts: Optional[pulumi.Input['CpsThirdPartyEnrollmentTimeoutsArgs']] = None):
         """
         Input properties used for looking up and filtering CpsThirdPartyEnrollment resources.
         :param pulumi.Input[bool] acknowledge_pre_verification_warnings: Whether acknowledge warnings before certificate verification
@@ -323,6 +340,7 @@ class _CpsThirdPartyEnrollmentState:
         :param pulumi.Input[str] signature_algorithm: The SHA function. Changing this value may require running terraform destroy, terraform apply
         :param pulumi.Input[bool] sni_only: Whether Server Name Indication is used for enrollment
         :param pulumi.Input['CpsThirdPartyEnrollmentTechContactArgs'] tech_contact: Contact information for an administrator at Akamai
+        :param pulumi.Input['CpsThirdPartyEnrollmentTimeoutsArgs'] timeouts: Enables to set timeout for processing
         """
         if acknowledge_pre_verification_warnings is not None:
             pulumi.set(__self__, "acknowledge_pre_verification_warnings", acknowledge_pre_verification_warnings)
@@ -358,6 +376,8 @@ class _CpsThirdPartyEnrollmentState:
             pulumi.set(__self__, "sni_only", sni_only)
         if tech_contact is not None:
             pulumi.set(__self__, "tech_contact", tech_contact)
+        if timeouts is not None:
+            pulumi.set(__self__, "timeouts", timeouts)
 
     @property
     @pulumi.getter(name="acknowledgePreVerificationWarnings")
@@ -563,6 +583,18 @@ class _CpsThirdPartyEnrollmentState:
     def tech_contact(self, value: Optional[pulumi.Input['CpsThirdPartyEnrollmentTechContactArgs']]):
         pulumi.set(self, "tech_contact", value)
 
+    @property
+    @pulumi.getter
+    def timeouts(self) -> Optional[pulumi.Input['CpsThirdPartyEnrollmentTimeoutsArgs']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
+
+    @timeouts.setter
+    def timeouts(self, value: Optional[pulumi.Input['CpsThirdPartyEnrollmentTimeoutsArgs']]):
+        pulumi.set(self, "timeouts", value)
+
 
 class CpsThirdPartyEnrollment(pulumi.CustomResource):
     @overload
@@ -586,6 +618,7 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
                  signature_algorithm: Optional[pulumi.Input[str]] = None,
                  sni_only: Optional[pulumi.Input[bool]] = None,
                  tech_contact: Optional[pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentTechContactArgs']]] = None,
+                 timeouts: Optional[pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentTimeoutsArgs']]] = None,
                  __props__=None):
         """
         Create a CpsThirdPartyEnrollment resource with the given unique name, props, and options.
@@ -608,6 +641,7 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
         :param pulumi.Input[str] signature_algorithm: The SHA function. Changing this value may require running terraform destroy, terraform apply
         :param pulumi.Input[bool] sni_only: Whether Server Name Indication is used for enrollment
         :param pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentTechContactArgs']] tech_contact: Contact information for an administrator at Akamai
+        :param pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentTimeoutsArgs']] timeouts: Enables to set timeout for processing
         """
         ...
     @overload
@@ -649,6 +683,7 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
                  signature_algorithm: Optional[pulumi.Input[str]] = None,
                  sni_only: Optional[pulumi.Input[bool]] = None,
                  tech_contact: Optional[pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentTechContactArgs']]] = None,
+                 timeouts: Optional[pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentTimeoutsArgs']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -693,6 +728,7 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
             if tech_contact is None and not opts.urn:
                 raise TypeError("Missing required property 'tech_contact'")
             __props__.__dict__["tech_contact"] = tech_contact
+            __props__.__dict__["timeouts"] = timeouts
         super(CpsThirdPartyEnrollment, __self__).__init__(
             'akamai:index/cpsThirdPartyEnrollment:CpsThirdPartyEnrollment',
             resource_name,
@@ -719,7 +755,8 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
             secure_network: Optional[pulumi.Input[str]] = None,
             signature_algorithm: Optional[pulumi.Input[str]] = None,
             sni_only: Optional[pulumi.Input[bool]] = None,
-            tech_contact: Optional[pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentTechContactArgs']]] = None) -> 'CpsThirdPartyEnrollment':
+            tech_contact: Optional[pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentTechContactArgs']]] = None,
+            timeouts: Optional[pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentTimeoutsArgs']]] = None) -> 'CpsThirdPartyEnrollment':
         """
         Get an existing CpsThirdPartyEnrollment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -744,6 +781,7 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
         :param pulumi.Input[str] signature_algorithm: The SHA function. Changing this value may require running terraform destroy, terraform apply
         :param pulumi.Input[bool] sni_only: Whether Server Name Indication is used for enrollment
         :param pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentTechContactArgs']] tech_contact: Contact information for an administrator at Akamai
+        :param pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentTimeoutsArgs']] timeouts: Enables to set timeout for processing
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -766,6 +804,7 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
         __props__.__dict__["signature_algorithm"] = signature_algorithm
         __props__.__dict__["sni_only"] = sni_only
         __props__.__dict__["tech_contact"] = tech_contact
+        __props__.__dict__["timeouts"] = timeouts
         return CpsThirdPartyEnrollment(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -903,4 +942,12 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
         Contact information for an administrator at Akamai
         """
         return pulumi.get(self, "tech_contact")
+
+    @property
+    @pulumi.getter
+    def timeouts(self) -> pulumi.Output[Optional['outputs.CpsThirdPartyEnrollmentTimeouts']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
 

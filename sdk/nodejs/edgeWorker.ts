@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export class EdgeWorker extends pulumi.CustomResource {
@@ -57,6 +59,10 @@ export class EdgeWorker extends pulumi.CustomResource {
      */
     public readonly resourceTierId!: pulumi.Output<number>;
     /**
+     * Enables to set timeout for processing
+     */
+    public readonly timeouts!: pulumi.Output<outputs.EdgeWorkerTimeouts | undefined>;
+    /**
      * The bundle version
      */
     public /*out*/ readonly version!: pulumi.Output<string>;
@@ -84,6 +90,7 @@ export class EdgeWorker extends pulumi.CustomResource {
             resourceInputs["localBundleHash"] = state ? state.localBundleHash : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["resourceTierId"] = state ? state.resourceTierId : undefined;
+            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
             resourceInputs["version"] = state ? state.version : undefined;
             resourceInputs["warnings"] = state ? state.warnings : undefined;
         } else {
@@ -98,6 +105,7 @@ export class EdgeWorker extends pulumi.CustomResource {
             resourceInputs["localBundle"] = args ? args.localBundle : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["resourceTierId"] = args ? args.resourceTierId : undefined;
+            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
             resourceInputs["edgeworkerId"] = undefined /*out*/;
             resourceInputs["localBundleHash"] = undefined /*out*/;
             resourceInputs["version"] = undefined /*out*/;
@@ -137,6 +145,10 @@ export interface EdgeWorkerState {
      */
     resourceTierId?: pulumi.Input<number>;
     /**
+     * Enables to set timeout for processing
+     */
+    timeouts?: pulumi.Input<inputs.EdgeWorkerTimeouts>;
+    /**
      * The bundle version
      */
     version?: pulumi.Input<string>;
@@ -166,4 +178,8 @@ export interface EdgeWorkerArgs {
      * The unique identifier of a resource tier
      */
     resourceTierId: pulumi.Input<number>;
+    /**
+     * Enables to set timeout for processing
+     */
+    timeouts?: pulumi.Input<inputs.EdgeWorkerTimeouts>;
 }

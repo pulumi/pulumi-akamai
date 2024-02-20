@@ -8,6 +8,8 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['CpsUploadCertificateArgs', 'CpsUploadCertificate']
 
@@ -20,6 +22,7 @@ class CpsUploadCertificateArgs:
                  auto_approve_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  certificate_ecdsa_pem: Optional[pulumi.Input[str]] = None,
                  certificate_rsa_pem: Optional[pulumi.Input[str]] = None,
+                 timeouts: Optional[pulumi.Input['CpsUploadCertificateTimeoutsArgs']] = None,
                  trust_chain_ecdsa_pem: Optional[pulumi.Input[str]] = None,
                  trust_chain_rsa_pem: Optional[pulumi.Input[str]] = None,
                  wait_for_deployment: Optional[pulumi.Input[bool]] = None):
@@ -31,6 +34,7 @@ class CpsUploadCertificateArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] auto_approve_warnings: List of post-verification warnings to be automatically acknowledged
         :param pulumi.Input[str] certificate_ecdsa_pem: ECDSA certificate in pem format to be uploaded
         :param pulumi.Input[str] certificate_rsa_pem: RSA certificate in pem format to be uploaded
+        :param pulumi.Input['CpsUploadCertificateTimeoutsArgs'] timeouts: Enables to set timeout for processing
         :param pulumi.Input[str] trust_chain_ecdsa_pem: Trust chain in pem format for provided ECDSA certificate
         :param pulumi.Input[str] trust_chain_rsa_pem: Trust chain in pem format for provided RSA certificate
         :param pulumi.Input[bool] wait_for_deployment: Whether to wait for certificate to be deployed
@@ -46,6 +50,8 @@ class CpsUploadCertificateArgs:
             pulumi.set(__self__, "certificate_ecdsa_pem", certificate_ecdsa_pem)
         if certificate_rsa_pem is not None:
             pulumi.set(__self__, "certificate_rsa_pem", certificate_rsa_pem)
+        if timeouts is not None:
+            pulumi.set(__self__, "timeouts", timeouts)
         if trust_chain_ecdsa_pem is not None:
             pulumi.set(__self__, "trust_chain_ecdsa_pem", trust_chain_ecdsa_pem)
         if trust_chain_rsa_pem is not None:
@@ -126,6 +132,18 @@ class CpsUploadCertificateArgs:
         pulumi.set(self, "certificate_rsa_pem", value)
 
     @property
+    @pulumi.getter
+    def timeouts(self) -> Optional[pulumi.Input['CpsUploadCertificateTimeoutsArgs']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
+
+    @timeouts.setter
+    def timeouts(self, value: Optional[pulumi.Input['CpsUploadCertificateTimeoutsArgs']]):
+        pulumi.set(self, "timeouts", value)
+
+    @property
     @pulumi.getter(name="trustChainEcdsaPem")
     def trust_chain_ecdsa_pem(self) -> Optional[pulumi.Input[str]]:
         """
@@ -171,6 +189,7 @@ class _CpsUploadCertificateState:
                  certificate_ecdsa_pem: Optional[pulumi.Input[str]] = None,
                  certificate_rsa_pem: Optional[pulumi.Input[str]] = None,
                  enrollment_id: Optional[pulumi.Input[int]] = None,
+                 timeouts: Optional[pulumi.Input['CpsUploadCertificateTimeoutsArgs']] = None,
                  trust_chain_ecdsa_pem: Optional[pulumi.Input[str]] = None,
                  trust_chain_rsa_pem: Optional[pulumi.Input[str]] = None,
                  unacknowledged_warnings: Optional[pulumi.Input[bool]] = None,
@@ -183,6 +202,7 @@ class _CpsUploadCertificateState:
         :param pulumi.Input[str] certificate_ecdsa_pem: ECDSA certificate in pem format to be uploaded
         :param pulumi.Input[str] certificate_rsa_pem: RSA certificate in pem format to be uploaded
         :param pulumi.Input[int] enrollment_id: The unique identifier of the enrollment
+        :param pulumi.Input['CpsUploadCertificateTimeoutsArgs'] timeouts: Enables to set timeout for processing
         :param pulumi.Input[str] trust_chain_ecdsa_pem: Trust chain in pem format for provided ECDSA certificate
         :param pulumi.Input[str] trust_chain_rsa_pem: Trust chain in pem format for provided RSA certificate
         :param pulumi.Input[bool] unacknowledged_warnings: Used to distinguish whether there are unacknowledged warnings for a certificate
@@ -200,6 +220,8 @@ class _CpsUploadCertificateState:
             pulumi.set(__self__, "certificate_rsa_pem", certificate_rsa_pem)
         if enrollment_id is not None:
             pulumi.set(__self__, "enrollment_id", enrollment_id)
+        if timeouts is not None:
+            pulumi.set(__self__, "timeouts", timeouts)
         if trust_chain_ecdsa_pem is not None:
             pulumi.set(__self__, "trust_chain_ecdsa_pem", trust_chain_ecdsa_pem)
         if trust_chain_rsa_pem is not None:
@@ -282,6 +304,18 @@ class _CpsUploadCertificateState:
         pulumi.set(self, "enrollment_id", value)
 
     @property
+    @pulumi.getter
+    def timeouts(self) -> Optional[pulumi.Input['CpsUploadCertificateTimeoutsArgs']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
+
+    @timeouts.setter
+    def timeouts(self, value: Optional[pulumi.Input['CpsUploadCertificateTimeoutsArgs']]):
+        pulumi.set(self, "timeouts", value)
+
+    @property
     @pulumi.getter(name="trustChainEcdsaPem")
     def trust_chain_ecdsa_pem(self) -> Optional[pulumi.Input[str]]:
         """
@@ -341,6 +375,7 @@ class CpsUploadCertificate(pulumi.CustomResource):
                  certificate_ecdsa_pem: Optional[pulumi.Input[str]] = None,
                  certificate_rsa_pem: Optional[pulumi.Input[str]] = None,
                  enrollment_id: Optional[pulumi.Input[int]] = None,
+                 timeouts: Optional[pulumi.Input[pulumi.InputType['CpsUploadCertificateTimeoutsArgs']]] = None,
                  trust_chain_ecdsa_pem: Optional[pulumi.Input[str]] = None,
                  trust_chain_rsa_pem: Optional[pulumi.Input[str]] = None,
                  wait_for_deployment: Optional[pulumi.Input[bool]] = None,
@@ -355,6 +390,7 @@ class CpsUploadCertificate(pulumi.CustomResource):
         :param pulumi.Input[str] certificate_ecdsa_pem: ECDSA certificate in pem format to be uploaded
         :param pulumi.Input[str] certificate_rsa_pem: RSA certificate in pem format to be uploaded
         :param pulumi.Input[int] enrollment_id: The unique identifier of the enrollment
+        :param pulumi.Input[pulumi.InputType['CpsUploadCertificateTimeoutsArgs']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[str] trust_chain_ecdsa_pem: Trust chain in pem format for provided ECDSA certificate
         :param pulumi.Input[str] trust_chain_rsa_pem: Trust chain in pem format for provided RSA certificate
         :param pulumi.Input[bool] wait_for_deployment: Whether to wait for certificate to be deployed
@@ -388,6 +424,7 @@ class CpsUploadCertificate(pulumi.CustomResource):
                  certificate_ecdsa_pem: Optional[pulumi.Input[str]] = None,
                  certificate_rsa_pem: Optional[pulumi.Input[str]] = None,
                  enrollment_id: Optional[pulumi.Input[int]] = None,
+                 timeouts: Optional[pulumi.Input[pulumi.InputType['CpsUploadCertificateTimeoutsArgs']]] = None,
                  trust_chain_ecdsa_pem: Optional[pulumi.Input[str]] = None,
                  trust_chain_rsa_pem: Optional[pulumi.Input[str]] = None,
                  wait_for_deployment: Optional[pulumi.Input[bool]] = None,
@@ -408,6 +445,7 @@ class CpsUploadCertificate(pulumi.CustomResource):
             if enrollment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'enrollment_id'")
             __props__.__dict__["enrollment_id"] = enrollment_id
+            __props__.__dict__["timeouts"] = timeouts
             __props__.__dict__["trust_chain_ecdsa_pem"] = trust_chain_ecdsa_pem
             __props__.__dict__["trust_chain_rsa_pem"] = trust_chain_rsa_pem
             __props__.__dict__["wait_for_deployment"] = wait_for_deployment
@@ -428,6 +466,7 @@ class CpsUploadCertificate(pulumi.CustomResource):
             certificate_ecdsa_pem: Optional[pulumi.Input[str]] = None,
             certificate_rsa_pem: Optional[pulumi.Input[str]] = None,
             enrollment_id: Optional[pulumi.Input[int]] = None,
+            timeouts: Optional[pulumi.Input[pulumi.InputType['CpsUploadCertificateTimeoutsArgs']]] = None,
             trust_chain_ecdsa_pem: Optional[pulumi.Input[str]] = None,
             trust_chain_rsa_pem: Optional[pulumi.Input[str]] = None,
             unacknowledged_warnings: Optional[pulumi.Input[bool]] = None,
@@ -445,6 +484,7 @@ class CpsUploadCertificate(pulumi.CustomResource):
         :param pulumi.Input[str] certificate_ecdsa_pem: ECDSA certificate in pem format to be uploaded
         :param pulumi.Input[str] certificate_rsa_pem: RSA certificate in pem format to be uploaded
         :param pulumi.Input[int] enrollment_id: The unique identifier of the enrollment
+        :param pulumi.Input[pulumi.InputType['CpsUploadCertificateTimeoutsArgs']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[str] trust_chain_ecdsa_pem: Trust chain in pem format for provided ECDSA certificate
         :param pulumi.Input[str] trust_chain_rsa_pem: Trust chain in pem format for provided RSA certificate
         :param pulumi.Input[bool] unacknowledged_warnings: Used to distinguish whether there are unacknowledged warnings for a certificate
@@ -460,6 +500,7 @@ class CpsUploadCertificate(pulumi.CustomResource):
         __props__.__dict__["certificate_ecdsa_pem"] = certificate_ecdsa_pem
         __props__.__dict__["certificate_rsa_pem"] = certificate_rsa_pem
         __props__.__dict__["enrollment_id"] = enrollment_id
+        __props__.__dict__["timeouts"] = timeouts
         __props__.__dict__["trust_chain_ecdsa_pem"] = trust_chain_ecdsa_pem
         __props__.__dict__["trust_chain_rsa_pem"] = trust_chain_rsa_pem
         __props__.__dict__["unacknowledged_warnings"] = unacknowledged_warnings
@@ -513,6 +554,14 @@ class CpsUploadCertificate(pulumi.CustomResource):
         The unique identifier of the enrollment
         """
         return pulumi.get(self, "enrollment_id")
+
+    @property
+    @pulumi.getter
+    def timeouts(self) -> pulumi.Output[Optional['outputs.CpsUploadCertificateTimeouts']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
 
     @property
     @pulumi.getter(name="trustChainEcdsaPem")

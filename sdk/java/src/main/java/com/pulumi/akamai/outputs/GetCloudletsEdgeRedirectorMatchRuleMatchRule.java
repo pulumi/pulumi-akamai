@@ -37,6 +37,11 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRule {
      */
     private @Nullable List<GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatch> matches;
     /**
+     * @return Is used in some cloudlets to support default rules (rule that is always matched)
+     * 
+     */
+    private @Nullable Boolean matchesAlways;
+    /**
      * @return The name of the rule
      * 
      */
@@ -102,6 +107,13 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRule {
         return this.matches == null ? List.of() : this.matches;
     }
     /**
+     * @return Is used in some cloudlets to support default rules (rule that is always matched)
+     * 
+     */
+    public Optional<Boolean> matchesAlways() {
+        return Optional.ofNullable(this.matchesAlways);
+    }
+    /**
      * @return The name of the rule
      * 
      */
@@ -164,6 +176,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRule {
         private @Nullable Integer end;
         private @Nullable String matchUrl;
         private @Nullable List<GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatch> matches;
+        private @Nullable Boolean matchesAlways;
         private @Nullable String name;
         private String redirectUrl;
         private @Nullable Integer start;
@@ -178,6 +191,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRule {
     	      this.end = defaults.end;
     	      this.matchUrl = defaults.matchUrl;
     	      this.matches = defaults.matches;
+    	      this.matchesAlways = defaults.matchesAlways;
     	      this.name = defaults.name;
     	      this.redirectUrl = defaults.redirectUrl;
     	      this.start = defaults.start;
@@ -213,6 +227,12 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRule {
         }
         public Builder matches(GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatch... matches) {
             return matches(List.of(matches));
+        }
+        @CustomType.Setter
+        public Builder matchesAlways(@Nullable Boolean matchesAlways) {
+
+            this.matchesAlways = matchesAlways;
+            return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
@@ -268,6 +288,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRule {
             _resultValue.end = end;
             _resultValue.matchUrl = matchUrl;
             _resultValue.matches = matches;
+            _resultValue.matchesAlways = matchesAlways;
             _resultValue.name = name;
             _resultValue.redirectUrl = redirectUrl;
             _resultValue.start = start;

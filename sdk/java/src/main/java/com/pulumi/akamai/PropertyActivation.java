@@ -8,6 +8,7 @@ import com.pulumi.akamai.Utilities;
 import com.pulumi.akamai.inputs.PropertyActivationState;
 import com.pulumi.akamai.outputs.PropertyActivationComplianceRecord;
 import com.pulumi.akamai.outputs.PropertyActivationRuleError;
+import com.pulumi.akamai.outputs.PropertyActivationTimeouts;
 import com.pulumi.core.Alias;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
@@ -105,6 +106,20 @@ public class PropertyActivation extends com.pulumi.resources.CustomResource {
 
     public Output<String> status() {
         return this.status;
+    }
+    /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Export(name="timeouts", refs={PropertyActivationTimeouts.class}, tree="[0]")
+    private Output</* @Nullable */ PropertyActivationTimeouts> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Output<Optional<PropertyActivationTimeouts>> timeouts() {
+        return Codegen.optional(this.timeouts);
     }
     @Export(name="version", refs={Integer.class}, tree="[0]")
     private Output<Integer> version;

@@ -67,7 +67,7 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizatio
      */
     private @Nullable String templateUuid;
     /**
-     * @return Specifies the CP code as an object.
+     * @return Specifies the CP code as an object. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     private @Nullable GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationThrottledCpCode throttledCpCode;
@@ -164,7 +164,7 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizatio
         return Optional.ofNullable(this.templateUuid);
     }
     /**
-     * @return Specifies the CP code as an object.
+     * @return Specifies the CP code as an object. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     public Optional<GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationThrottledCpCode> throttledCpCode() {

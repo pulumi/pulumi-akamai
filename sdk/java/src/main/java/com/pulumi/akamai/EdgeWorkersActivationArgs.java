@@ -3,12 +3,15 @@
 
 package com.pulumi.akamai;
 
+import com.pulumi.akamai.inputs.EdgeWorkersActivationTimeoutsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class EdgeWorkersActivationArgs extends com.pulumi.resources.ResourceArgs {
@@ -46,6 +49,36 @@ public final class EdgeWorkersActivationArgs extends com.pulumi.resources.Resour
     }
 
     /**
+     * Assigns a log message to the activation request
+     * 
+     */
+    @Import(name="note")
+    private @Nullable Output<String> note;
+
+    /**
+     * @return Assigns a log message to the activation request
+     * 
+     */
+    public Optional<Output<String>> note() {
+        return Optional.ofNullable(this.note);
+    }
+
+    /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Import(name="timeouts")
+    private @Nullable Output<EdgeWorkersActivationTimeoutsArgs> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Optional<Output<EdgeWorkersActivationTimeoutsArgs>> timeouts() {
+        return Optional.ofNullable(this.timeouts);
+    }
+
+    /**
      * The version of EdgeWorker to activate
      * 
      */
@@ -65,6 +98,8 @@ public final class EdgeWorkersActivationArgs extends com.pulumi.resources.Resour
     private EdgeWorkersActivationArgs(EdgeWorkersActivationArgs $) {
         this.edgeworkerId = $.edgeworkerId;
         this.network = $.network;
+        this.note = $.note;
+        this.timeouts = $.timeouts;
         this.version = $.version;
     }
 
@@ -126,6 +161,48 @@ public final class EdgeWorkersActivationArgs extends com.pulumi.resources.Resour
          */
         public Builder network(String network) {
             return network(Output.of(network));
+        }
+
+        /**
+         * @param note Assigns a log message to the activation request
+         * 
+         * @return builder
+         * 
+         */
+        public Builder note(@Nullable Output<String> note) {
+            $.note = note;
+            return this;
+        }
+
+        /**
+         * @param note Assigns a log message to the activation request
+         * 
+         * @return builder
+         * 
+         */
+        public Builder note(String note) {
+            return note(Output.of(note));
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(@Nullable Output<EdgeWorkersActivationTimeoutsArgs> timeouts) {
+            $.timeouts = timeouts;
+            return this;
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(EdgeWorkersActivationTimeoutsArgs timeouts) {
+            return timeouts(Output.of(timeouts));
         }
 
         /**

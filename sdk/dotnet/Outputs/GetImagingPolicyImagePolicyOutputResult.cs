@@ -18,6 +18,10 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string? AdaptiveQuality;
         /// <summary>
+        /// Whether a pristine image wider than the requested breakpoint is allowed as a derivative image if it has the fewest bytes. This will not have an affect if transformations are present.
+        /// </summary>
+        public readonly string? AllowPristineOnDownsize;
+        /// <summary>
         /// The graphics file formats allowed for browser specific results.
         /// </summary>
         public readonly ImmutableArray<string> AllowedFormats;
@@ -38,6 +42,10 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string? PerceptualQualityVar;
         /// <summary>
+        /// Whether derivative image formats should be selected with a preference for modern formats (such as WebP and Avif) instead the format that results in the fewest bytes.
+        /// </summary>
+        public readonly string? PreferModernFormats;
+        /// <summary>
         /// Mutually exclusive with perceptualQuality, used by default if neither is specified. The chosen quality of the output images. Using a quality value from 1-100 resembles JPEG quality across output formats.
         /// </summary>
         public readonly string? Quality;
@@ -50,6 +58,8 @@ namespace Pulumi.Akamai.Outputs
         private GetImagingPolicyImagePolicyOutputResult(
             string? adaptiveQuality,
 
+            string? allowPristineOnDownsize,
+
             ImmutableArray<string> allowedFormats,
 
             ImmutableArray<string> forcedFormats,
@@ -60,16 +70,20 @@ namespace Pulumi.Akamai.Outputs
 
             string? perceptualQualityVar,
 
+            string? preferModernFormats,
+
             string? quality,
 
             string? qualityVar)
         {
             AdaptiveQuality = adaptiveQuality;
+            AllowPristineOnDownsize = allowPristineOnDownsize;
             AllowedFormats = allowedFormats;
             ForcedFormats = forcedFormats;
             PerceptualQuality = perceptualQuality;
             PerceptualQualityFloor = perceptualQualityFloor;
             PerceptualQualityVar = perceptualQualityVar;
+            PreferModernFormats = preferModernFormats;
             Quality = quality;
             QualityVar = qualityVar;
         }

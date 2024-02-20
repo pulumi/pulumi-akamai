@@ -5,6 +5,9 @@ package com.pulumi.akamai.inputs;
 
 import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20230105Args;
 import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20230530Args;
+import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20230920Args;
+import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030Args;
+import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20240109Args;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.util.Objects;
@@ -30,11 +33,35 @@ public final class GetPropertyRulesBuilderArgs extends com.pulumi.resources.Invo
         return Optional.ofNullable(this.rulesV20230530);
     }
 
+    @Import(name="rulesV20230920")
+    private @Nullable Output<GetPropertyRulesBuilderRulesV20230920Args> rulesV20230920;
+
+    public Optional<Output<GetPropertyRulesBuilderRulesV20230920Args>> rulesV20230920() {
+        return Optional.ofNullable(this.rulesV20230920);
+    }
+
+    @Import(name="rulesV20231030")
+    private @Nullable Output<GetPropertyRulesBuilderRulesV20231030Args> rulesV20231030;
+
+    public Optional<Output<GetPropertyRulesBuilderRulesV20231030Args>> rulesV20231030() {
+        return Optional.ofNullable(this.rulesV20231030);
+    }
+
+    @Import(name="rulesV20240109")
+    private @Nullable Output<GetPropertyRulesBuilderRulesV20240109Args> rulesV20240109;
+
+    public Optional<Output<GetPropertyRulesBuilderRulesV20240109Args>> rulesV20240109() {
+        return Optional.ofNullable(this.rulesV20240109);
+    }
+
     private GetPropertyRulesBuilderArgs() {}
 
     private GetPropertyRulesBuilderArgs(GetPropertyRulesBuilderArgs $) {
         this.rulesV20230105 = $.rulesV20230105;
         this.rulesV20230530 = $.rulesV20230530;
+        this.rulesV20230920 = $.rulesV20230920;
+        this.rulesV20231030 = $.rulesV20231030;
+        this.rulesV20240109 = $.rulesV20240109;
     }
 
     public static Builder builder() {
@@ -71,6 +98,33 @@ public final class GetPropertyRulesBuilderArgs extends com.pulumi.resources.Invo
 
         public Builder rulesV20230530(GetPropertyRulesBuilderRulesV20230530Args rulesV20230530) {
             return rulesV20230530(Output.of(rulesV20230530));
+        }
+
+        public Builder rulesV20230920(@Nullable Output<GetPropertyRulesBuilderRulesV20230920Args> rulesV20230920) {
+            $.rulesV20230920 = rulesV20230920;
+            return this;
+        }
+
+        public Builder rulesV20230920(GetPropertyRulesBuilderRulesV20230920Args rulesV20230920) {
+            return rulesV20230920(Output.of(rulesV20230920));
+        }
+
+        public Builder rulesV20231030(@Nullable Output<GetPropertyRulesBuilderRulesV20231030Args> rulesV20231030) {
+            $.rulesV20231030 = rulesV20231030;
+            return this;
+        }
+
+        public Builder rulesV20231030(GetPropertyRulesBuilderRulesV20231030Args rulesV20231030) {
+            return rulesV20231030(Output.of(rulesV20231030));
+        }
+
+        public Builder rulesV20240109(@Nullable Output<GetPropertyRulesBuilderRulesV20240109Args> rulesV20240109) {
+            $.rulesV20240109 = rulesV20240109;
+            return this;
+        }
+
+        public Builder rulesV20240109(GetPropertyRulesBuilderRulesV20240109Args rulesV20240109) {
+            return rulesV20240109(Output.of(rulesV20240109));
         }
 
         public GetPropertyRulesBuilderArgs build() {

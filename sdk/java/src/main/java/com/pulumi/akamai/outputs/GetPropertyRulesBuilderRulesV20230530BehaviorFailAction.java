@@ -52,7 +52,7 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorFailAction {
      */
     private @Nullable String contentPath;
     /**
-     * @return Specifies a CP code for which to log errors for the NetStorage location.
+     * @return Specifies a CP code for which to log errors for the NetStorage location. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     private @Nullable GetPropertyRulesBuilderRulesV20230530BehaviorFailActionCpCode cpCode;
@@ -241,7 +241,7 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorFailAction {
         return Optional.ofNullable(this.contentPath);
     }
     /**
-     * @return Specifies a CP code for which to log errors for the NetStorage location.
+     * @return Specifies a CP code for which to log errors for the NetStorage location. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     public Optional<GetPropertyRulesBuilderRulesV20230530BehaviorFailActionCpCode> cpCode() {

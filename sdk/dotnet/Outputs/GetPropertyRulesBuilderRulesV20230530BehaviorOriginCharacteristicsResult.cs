@@ -37,9 +37,6 @@ namespace Pulumi.Akamai.Outputs
         /// Identifies the unique `awsAccessKeyVersionGuid` access key `created` in Cloud Access Manager to sign your requests to AWS S3.
         /// </summary>
         public readonly string? AwsAccessKeyVersionGuid;
-        /// <summary>
-        /// Specifies the AWS region code that represents the location of your AWS bucket.
-        /// </summary>
         public readonly string? AwsArRegion;
         /// <summary>
         /// This specifies the AWS hostname, without `http://` or `https://` prefixes. If you leave this option empty, it inherits the hostname from the `origin` behavior.
@@ -73,9 +70,6 @@ namespace Pulumi.Akamai.Outputs
         /// Specifies the version of the encryption algorithm, an integer from `1` to `5`.
         /// </summary>
         public readonly int? EncodingVersion;
-        /// <summary>
-        /// Specifies the code of your AWS service. It precedes `.amazonaws.com` or the region code in your AWS hostname.
-        /// </summary>
         public readonly string? EndPointService;
         /// <summary>
         /// Identifies the unique `gcsAccessKeyVersionGuid` access key `created` in Cloud Access Manager to sign your requests to Google Cloud Storage in interoperability mode.
@@ -89,9 +83,6 @@ namespace Pulumi.Akamai.Outputs
         /// Specifies the secret linked to the access ID that you want to use to sign requests to Google Cloud Storage.
         /// </summary>
         public readonly string? GcsHmacKeySecret;
-        /// <summary>
-        /// Whether to include the hostname used to access this delivery configuration as an additional identifier tag in the Assume Role verification call to AWS. You'll need to include this hostname (`AK_HOST`) in a condition in your `AWS IAM policy` for validation.
-        /// </summary>
         public readonly bool? HostnameTag;
         /// <summary>
         /// Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
@@ -113,13 +104,7 @@ namespace Pulumi.Akamai.Outputs
         /// This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
         /// </summary>
         public readonly string? OriginLocationTitle;
-        /// <summary>
-        /// Whether to include the property identifier for this delivery configuration as an additional identifier tag in the Assume Role verification call to AWS. You'll need to include the property identifier (`AK_ARLID`) in a condition in your `AWS IAM policy` for validation.
-        /// </summary>
         public readonly bool? PropertyIdTag;
-        /// <summary>
-        /// The Amazon Resource Name (ARN) of the `AWS IAM role` you want to use. This role needs to be configured with the proper permissions for your target resources. The `AWS IAM policy` needs to contain the trust relationships defining other users that can assume this role.
-        /// </summary>
         public readonly string? RoleArn;
         /// <summary>
         /// Specifies the shared secret key.

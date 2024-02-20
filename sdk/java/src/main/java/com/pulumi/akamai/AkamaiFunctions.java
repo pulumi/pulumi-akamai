@@ -144,6 +144,8 @@ import com.pulumi.akamai.inputs.GetBotmanCustomClientArgs;
 import com.pulumi.akamai.inputs.GetBotmanCustomClientPlainArgs;
 import com.pulumi.akamai.inputs.GetBotmanCustomClientSequenceArgs;
 import com.pulumi.akamai.inputs.GetBotmanCustomClientSequencePlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanCustomCodeArgs;
+import com.pulumi.akamai.inputs.GetBotmanCustomCodePlainArgs;
 import com.pulumi.akamai.inputs.GetBotmanCustomDefinedBotArgs;
 import com.pulumi.akamai.inputs.GetBotmanCustomDefinedBotPlainArgs;
 import com.pulumi.akamai.inputs.GetBotmanCustomDenyActionArgs;
@@ -180,10 +182,14 @@ import com.pulumi.akamai.inputs.GetCloudletsForwardRewriteMatchRuleArgs;
 import com.pulumi.akamai.inputs.GetCloudletsForwardRewriteMatchRulePlainArgs;
 import com.pulumi.akamai.inputs.GetCloudletsPhasedReleaseMatchRuleArgs;
 import com.pulumi.akamai.inputs.GetCloudletsPhasedReleaseMatchRulePlainArgs;
+import com.pulumi.akamai.inputs.GetCloudletsPolicyActivationArgs;
+import com.pulumi.akamai.inputs.GetCloudletsPolicyActivationPlainArgs;
 import com.pulumi.akamai.inputs.GetCloudletsPolicyArgs;
 import com.pulumi.akamai.inputs.GetCloudletsPolicyPlainArgs;
 import com.pulumi.akamai.inputs.GetCloudletsRequestControlMatchRuleArgs;
 import com.pulumi.akamai.inputs.GetCloudletsRequestControlMatchRulePlainArgs;
+import com.pulumi.akamai.inputs.GetCloudletsSharedPolicyArgs;
+import com.pulumi.akamai.inputs.GetCloudletsSharedPolicyPlainArgs;
 import com.pulumi.akamai.inputs.GetCloudletsVisitorPrioritizationMatchRuleArgs;
 import com.pulumi.akamai.inputs.GetCloudletsVisitorPrioritizationMatchRulePlainArgs;
 import com.pulumi.akamai.inputs.GetCloudwrapperCapacitiesArgs;
@@ -228,12 +234,24 @@ import com.pulumi.akamai.inputs.GetEdgekvGroupsArgs;
 import com.pulumi.akamai.inputs.GetEdgekvGroupsPlainArgs;
 import com.pulumi.akamai.inputs.GetGroupArgs;
 import com.pulumi.akamai.inputs.GetGroupPlainArgs;
+import com.pulumi.akamai.inputs.GetGtmAsmapArgs;
+import com.pulumi.akamai.inputs.GetGtmAsmapPlainArgs;
+import com.pulumi.akamai.inputs.GetGtmCidrmapArgs;
+import com.pulumi.akamai.inputs.GetGtmCidrmapPlainArgs;
 import com.pulumi.akamai.inputs.GetGtmDatacenterArgs;
 import com.pulumi.akamai.inputs.GetGtmDatacenterPlainArgs;
 import com.pulumi.akamai.inputs.GetGtmDatacentersArgs;
 import com.pulumi.akamai.inputs.GetGtmDatacentersPlainArgs;
 import com.pulumi.akamai.inputs.GetGtmDefaultDatacenterArgs;
 import com.pulumi.akamai.inputs.GetGtmDefaultDatacenterPlainArgs;
+import com.pulumi.akamai.inputs.GetGtmDomainArgs;
+import com.pulumi.akamai.inputs.GetGtmDomainPlainArgs;
+import com.pulumi.akamai.inputs.GetGtmDomainsArgs;
+import com.pulumi.akamai.inputs.GetGtmDomainsPlainArgs;
+import com.pulumi.akamai.inputs.GetGtmResourceArgs;
+import com.pulumi.akamai.inputs.GetGtmResourcePlainArgs;
+import com.pulumi.akamai.inputs.GetGtmResourcesArgs;
+import com.pulumi.akamai.inputs.GetGtmResourcesPlainArgs;
 import com.pulumi.akamai.inputs.GetIamStatesArgs;
 import com.pulumi.akamai.inputs.GetIamStatesPlainArgs;
 import com.pulumi.akamai.inputs.GetImagingPolicyImageArgs;
@@ -342,6 +360,7 @@ import com.pulumi.akamai.outputs.GetBotmanCustomBotCategoryResult;
 import com.pulumi.akamai.outputs.GetBotmanCustomBotCategorySequenceResult;
 import com.pulumi.akamai.outputs.GetBotmanCustomClientResult;
 import com.pulumi.akamai.outputs.GetBotmanCustomClientSequenceResult;
+import com.pulumi.akamai.outputs.GetBotmanCustomCodeResult;
 import com.pulumi.akamai.outputs.GetBotmanCustomDefinedBotResult;
 import com.pulumi.akamai.outputs.GetBotmanCustomDenyActionResult;
 import com.pulumi.akamai.outputs.GetBotmanJavascriptInjectionResult;
@@ -360,8 +379,10 @@ import com.pulumi.akamai.outputs.GetCloudletsAudienceSegmentationMatchRuleResult
 import com.pulumi.akamai.outputs.GetCloudletsEdgeRedirectorMatchRuleResult;
 import com.pulumi.akamai.outputs.GetCloudletsForwardRewriteMatchRuleResult;
 import com.pulumi.akamai.outputs.GetCloudletsPhasedReleaseMatchRuleResult;
+import com.pulumi.akamai.outputs.GetCloudletsPolicyActivationResult;
 import com.pulumi.akamai.outputs.GetCloudletsPolicyResult;
 import com.pulumi.akamai.outputs.GetCloudletsRequestControlMatchRuleResult;
+import com.pulumi.akamai.outputs.GetCloudletsSharedPolicyResult;
 import com.pulumi.akamai.outputs.GetCloudletsVisitorPrioritizationMatchRuleResult;
 import com.pulumi.akamai.outputs.GetCloudwrapperCapacitiesResult;
 import com.pulumi.akamai.outputs.GetCloudwrapperConfigurationResult;
@@ -387,9 +408,15 @@ import com.pulumi.akamai.outputs.GetEdgekvGroupItemsResult;
 import com.pulumi.akamai.outputs.GetEdgekvGroupsResult;
 import com.pulumi.akamai.outputs.GetGroupResult;
 import com.pulumi.akamai.outputs.GetGroupsResult;
+import com.pulumi.akamai.outputs.GetGtmAsmapResult;
+import com.pulumi.akamai.outputs.GetGtmCidrmapResult;
 import com.pulumi.akamai.outputs.GetGtmDatacenterResult;
 import com.pulumi.akamai.outputs.GetGtmDatacentersResult;
 import com.pulumi.akamai.outputs.GetGtmDefaultDatacenterResult;
+import com.pulumi.akamai.outputs.GetGtmDomainResult;
+import com.pulumi.akamai.outputs.GetGtmDomainsResult;
+import com.pulumi.akamai.outputs.GetGtmResourceResult;
+import com.pulumi.akamai.outputs.GetGtmResourcesResult;
 import com.pulumi.akamai.outputs.GetIamContactTypesResult;
 import com.pulumi.akamai.outputs.GetIamCountriesResult;
 import com.pulumi.akamai.outputs.GetIamGrantableRolesResult;
@@ -1348,6 +1375,18 @@ public final class AkamaiFunctions {
     public static CompletableFuture<GetBotmanCustomClientSequenceResult> getBotmanCustomClientSequencePlain(GetBotmanCustomClientSequencePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getBotmanCustomClientSequence:getBotmanCustomClientSequence", TypeShape.of(GetBotmanCustomClientSequenceResult.class), args, Utilities.withVersion(options));
     }
+    public static Output<GetBotmanCustomCodeResult> getBotmanCustomCode(GetBotmanCustomCodeArgs args) {
+        return getBotmanCustomCode(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanCustomCodeResult> getBotmanCustomCodePlain(GetBotmanCustomCodePlainArgs args) {
+        return getBotmanCustomCodePlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanCustomCodeResult> getBotmanCustomCode(GetBotmanCustomCodeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanCustomCode:getBotmanCustomCode", TypeShape.of(GetBotmanCustomCodeResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanCustomCodeResult> getBotmanCustomCodePlain(GetBotmanCustomCodePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanCustomCode:getBotmanCustomCode", TypeShape.of(GetBotmanCustomCodeResult.class), args, Utilities.withVersion(options));
+    }
     public static Output<GetBotmanCustomDefinedBotResult> getBotmanCustomDefinedBot(GetBotmanCustomDefinedBotArgs args) {
         return getBotmanCustomDefinedBot(args, InvokeOptions.Empty);
     }
@@ -1618,6 +1657,18 @@ public final class AkamaiFunctions {
     public static CompletableFuture<GetCloudletsPolicyResult> getCloudletsPolicyPlain(GetCloudletsPolicyPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getCloudletsPolicy:getCloudletsPolicy", TypeShape.of(GetCloudletsPolicyResult.class), args, Utilities.withVersion(options));
     }
+    public static Output<GetCloudletsPolicyActivationResult> getCloudletsPolicyActivation(GetCloudletsPolicyActivationArgs args) {
+        return getCloudletsPolicyActivation(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetCloudletsPolicyActivationResult> getCloudletsPolicyActivationPlain(GetCloudletsPolicyActivationPlainArgs args) {
+        return getCloudletsPolicyActivationPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetCloudletsPolicyActivationResult> getCloudletsPolicyActivation(GetCloudletsPolicyActivationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudletsPolicyActivation:getCloudletsPolicyActivation", TypeShape.of(GetCloudletsPolicyActivationResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetCloudletsPolicyActivationResult> getCloudletsPolicyActivationPlain(GetCloudletsPolicyActivationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getCloudletsPolicyActivation:getCloudletsPolicyActivation", TypeShape.of(GetCloudletsPolicyActivationResult.class), args, Utilities.withVersion(options));
+    }
     public static Output<GetCloudletsRequestControlMatchRuleResult> getCloudletsRequestControlMatchRule() {
         return getCloudletsRequestControlMatchRule(GetCloudletsRequestControlMatchRuleArgs.Empty, InvokeOptions.Empty);
     }
@@ -1635,6 +1686,18 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetCloudletsRequestControlMatchRuleResult> getCloudletsRequestControlMatchRulePlain(GetCloudletsRequestControlMatchRulePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getCloudletsRequestControlMatchRule:getCloudletsRequestControlMatchRule", TypeShape.of(GetCloudletsRequestControlMatchRuleResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetCloudletsSharedPolicyResult> getCloudletsSharedPolicy(GetCloudletsSharedPolicyArgs args) {
+        return getCloudletsSharedPolicy(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetCloudletsSharedPolicyResult> getCloudletsSharedPolicyPlain(GetCloudletsSharedPolicyPlainArgs args) {
+        return getCloudletsSharedPolicyPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetCloudletsSharedPolicyResult> getCloudletsSharedPolicy(GetCloudletsSharedPolicyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudletsSharedPolicy:getCloudletsSharedPolicy", TypeShape.of(GetCloudletsSharedPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetCloudletsSharedPolicyResult> getCloudletsSharedPolicyPlain(GetCloudletsSharedPolicyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getCloudletsSharedPolicy:getCloudletsSharedPolicy", TypeShape.of(GetCloudletsSharedPolicyResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetCloudletsVisitorPrioritizationMatchRuleResult> getCloudletsVisitorPrioritizationMatchRule() {
         return getCloudletsVisitorPrioritizationMatchRule(GetCloudletsVisitorPrioritizationMatchRuleArgs.Empty, InvokeOptions.Empty);
@@ -2002,6 +2065,30 @@ public final class AkamaiFunctions {
     public static CompletableFuture<GetGroupsResult> getGroupsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getGroups:getGroups", TypeShape.of(GetGroupsResult.class), args, Utilities.withVersion(options));
     }
+    public static Output<GetGtmAsmapResult> getGtmAsmap(GetGtmAsmapArgs args) {
+        return getGtmAsmap(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetGtmAsmapResult> getGtmAsmapPlain(GetGtmAsmapPlainArgs args) {
+        return getGtmAsmapPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetGtmAsmapResult> getGtmAsmap(GetGtmAsmapArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getGtmAsmap:getGtmAsmap", TypeShape.of(GetGtmAsmapResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetGtmAsmapResult> getGtmAsmapPlain(GetGtmAsmapPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getGtmAsmap:getGtmAsmap", TypeShape.of(GetGtmAsmapResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetGtmCidrmapResult> getGtmCidrmap(GetGtmCidrmapArgs args) {
+        return getGtmCidrmap(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetGtmCidrmapResult> getGtmCidrmapPlain(GetGtmCidrmapPlainArgs args) {
+        return getGtmCidrmapPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetGtmCidrmapResult> getGtmCidrmap(GetGtmCidrmapArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getGtmCidrmap:getGtmCidrmap", TypeShape.of(GetGtmCidrmapResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetGtmCidrmapResult> getGtmCidrmapPlain(GetGtmCidrmapPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getGtmCidrmap:getGtmCidrmap", TypeShape.of(GetGtmCidrmapResult.class), args, Utilities.withVersion(options));
+    }
     public static Output<GetGtmDatacenterResult> getGtmDatacenter(GetGtmDatacenterArgs args) {
         return getGtmDatacenter(args, InvokeOptions.Empty);
     }
@@ -2037,6 +2124,60 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetGtmDefaultDatacenterResult> getGtmDefaultDatacenterPlain(GetGtmDefaultDatacenterPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getGtmDefaultDatacenter:getGtmDefaultDatacenter", TypeShape.of(GetGtmDefaultDatacenterResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetGtmDomainResult> getGtmDomain(GetGtmDomainArgs args) {
+        return getGtmDomain(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetGtmDomainResult> getGtmDomainPlain(GetGtmDomainPlainArgs args) {
+        return getGtmDomainPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetGtmDomainResult> getGtmDomain(GetGtmDomainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getGtmDomain:getGtmDomain", TypeShape.of(GetGtmDomainResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetGtmDomainResult> getGtmDomainPlain(GetGtmDomainPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getGtmDomain:getGtmDomain", TypeShape.of(GetGtmDomainResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetGtmDomainsResult> getGtmDomains() {
+        return getGtmDomains(GetGtmDomainsArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetGtmDomainsResult> getGtmDomainsPlain() {
+        return getGtmDomainsPlain(GetGtmDomainsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetGtmDomainsResult> getGtmDomains(GetGtmDomainsArgs args) {
+        return getGtmDomains(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetGtmDomainsResult> getGtmDomainsPlain(GetGtmDomainsPlainArgs args) {
+        return getGtmDomainsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetGtmDomainsResult> getGtmDomains(GetGtmDomainsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getGtmDomains:getGtmDomains", TypeShape.of(GetGtmDomainsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetGtmDomainsResult> getGtmDomainsPlain(GetGtmDomainsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getGtmDomains:getGtmDomains", TypeShape.of(GetGtmDomainsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetGtmResourceResult> getGtmResource(GetGtmResourceArgs args) {
+        return getGtmResource(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetGtmResourceResult> getGtmResourcePlain(GetGtmResourcePlainArgs args) {
+        return getGtmResourcePlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetGtmResourceResult> getGtmResource(GetGtmResourceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getGtmResource:getGtmResource", TypeShape.of(GetGtmResourceResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetGtmResourceResult> getGtmResourcePlain(GetGtmResourcePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getGtmResource:getGtmResource", TypeShape.of(GetGtmResourceResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetGtmResourcesResult> getGtmResources(GetGtmResourcesArgs args) {
+        return getGtmResources(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetGtmResourcesResult> getGtmResourcesPlain(GetGtmResourcesPlainArgs args) {
+        return getGtmResourcesPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetGtmResourcesResult> getGtmResources(GetGtmResourcesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getGtmResources:getGtmResources", TypeShape.of(GetGtmResourcesResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetGtmResourcesResult> getGtmResourcesPlain(GetGtmResourcesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getGtmResources:getGtmResources", TypeShape.of(GetGtmResourcesResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetIamContactTypesResult> getIamContactTypes() {
         return getIamContactTypes(InvokeArgs.Empty, InvokeOptions.Empty);

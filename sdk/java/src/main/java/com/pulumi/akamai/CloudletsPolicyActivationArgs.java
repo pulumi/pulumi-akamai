@@ -3,6 +3,7 @@
 
 package com.pulumi.akamai;
 
+import com.pulumi.akamai.inputs.CloudletsPolicyActivationTimeoutsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
@@ -10,6 +11,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class CloudletsPolicyActivationArgs extends com.pulumi.resources.ResourceArgs {
@@ -17,18 +20,18 @@ public final class CloudletsPolicyActivationArgs extends com.pulumi.resources.Re
     public static final CloudletsPolicyActivationArgs Empty = new CloudletsPolicyActivationArgs();
 
     /**
-     * Set of property IDs to link to this Cloudlets policy
+     * Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
      * 
      */
-    @Import(name="associatedProperties", required=true)
-    private Output<List<String>> associatedProperties;
+    @Import(name="associatedProperties")
+    private @Nullable Output<List<String>> associatedProperties;
 
     /**
-     * @return Set of property IDs to link to this Cloudlets policy
+     * @return Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
      * 
      */
-    public Output<List<String>> associatedProperties() {
-        return this.associatedProperties;
+    public Optional<Output<List<String>>> associatedProperties() {
+        return Optional.ofNullable(this.associatedProperties);
     }
 
     /**
@@ -62,6 +65,21 @@ public final class CloudletsPolicyActivationArgs extends com.pulumi.resources.Re
     }
 
     /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Import(name="timeouts")
+    private @Nullable Output<CloudletsPolicyActivationTimeoutsArgs> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Optional<Output<CloudletsPolicyActivationTimeoutsArgs>> timeouts() {
+        return Optional.ofNullable(this.timeouts);
+    }
+
+    /**
      * Cloudlets policy version you want to activate
      * 
      */
@@ -82,6 +100,7 @@ public final class CloudletsPolicyActivationArgs extends com.pulumi.resources.Re
         this.associatedProperties = $.associatedProperties;
         this.network = $.network;
         this.policyId = $.policyId;
+        this.timeouts = $.timeouts;
         this.version = $.version;
     }
 
@@ -104,18 +123,18 @@ public final class CloudletsPolicyActivationArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param associatedProperties Set of property IDs to link to this Cloudlets policy
+         * @param associatedProperties Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
          * 
          * @return builder
          * 
          */
-        public Builder associatedProperties(Output<List<String>> associatedProperties) {
+        public Builder associatedProperties(@Nullable Output<List<String>> associatedProperties) {
             $.associatedProperties = associatedProperties;
             return this;
         }
 
         /**
-         * @param associatedProperties Set of property IDs to link to this Cloudlets policy
+         * @param associatedProperties Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
          * 
          * @return builder
          * 
@@ -125,7 +144,7 @@ public final class CloudletsPolicyActivationArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param associatedProperties Set of property IDs to link to this Cloudlets policy
+         * @param associatedProperties Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
          * 
          * @return builder
          * 
@@ -177,6 +196,27 @@ public final class CloudletsPolicyActivationArgs extends com.pulumi.resources.Re
         }
 
         /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(@Nullable Output<CloudletsPolicyActivationTimeoutsArgs> timeouts) {
+            $.timeouts = timeouts;
+            return this;
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(CloudletsPolicyActivationTimeoutsArgs timeouts) {
+            return timeouts(Output.of(timeouts));
+        }
+
+        /**
          * @param version Cloudlets policy version you want to activate
          * 
          * @return builder
@@ -198,9 +238,6 @@ public final class CloudletsPolicyActivationArgs extends com.pulumi.resources.Re
         }
 
         public CloudletsPolicyActivationArgs build() {
-            if ($.associatedProperties == null) {
-                throw new MissingRequiredPropertyException("CloudletsPolicyActivationArgs", "associatedProperties");
-            }
             if ($.network == null) {
                 throw new MissingRequiredPropertyException("CloudletsPolicyActivationArgs", "network");
             }

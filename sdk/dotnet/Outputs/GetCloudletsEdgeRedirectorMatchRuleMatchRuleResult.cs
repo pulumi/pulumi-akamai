@@ -30,6 +30,10 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchResult> Matches;
         /// <summary>
+        /// Is used in some cloudlets to support default rules (rule that is always matched)
+        /// </summary>
+        public readonly bool? MatchesAlways;
+        /// <summary>
         /// The name of the rule
         /// </summary>
         public readonly string? Name;
@@ -68,6 +72,8 @@ namespace Pulumi.Akamai.Outputs
 
             ImmutableArray<Outputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchResult> matches,
 
+            bool? matchesAlways,
+
             string? name,
 
             string redirectUrl,
@@ -86,6 +92,7 @@ namespace Pulumi.Akamai.Outputs
             End = end;
             MatchUrl = matchUrl;
             Matches = matches;
+            MatchesAlways = matchesAlways;
             Name = name;
             RedirectUrl = redirectUrl;
             Start = start;

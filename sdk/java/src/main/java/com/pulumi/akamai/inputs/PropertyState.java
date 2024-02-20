@@ -5,6 +5,7 @@ package com.pulumi.akamai.inputs;
 
 import com.pulumi.akamai.inputs.PropertyHostnameArgs;
 import com.pulumi.akamai.inputs.PropertyRuleErrorArgs;
+import com.pulumi.akamai.inputs.PropertyRuleWarningArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Integer;
@@ -117,6 +118,21 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Property ID
+     * 
+     */
+    @Import(name="propertyId")
+    private @Nullable Output<String> propertyId;
+
+    /**
+     * @return Property ID
+     * 
+     */
+    public Optional<Output<String>> propertyId() {
+        return Optional.ofNullable(this.propertyId);
+    }
+
+    /**
      * Required property&#39;s version to be read
      * 
      */
@@ -154,6 +170,21 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Rule validation warnings
+     * 
+     */
+    @Import(name="ruleWarnings")
+    private @Nullable Output<List<PropertyRuleWarningArgs>> ruleWarnings;
+
+    /**
+     * @return Rule validation warnings
+     * 
+     */
+    public Optional<Output<List<PropertyRuleWarningArgs>>> ruleWarnings() {
+        return Optional.ofNullable(this.ruleWarnings);
+    }
+
+    /**
      * Property Rules as JSON
      * 
      */
@@ -183,6 +214,21 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.stagingVersion);
     }
 
+    /**
+     * Property version notes
+     * 
+     */
+    @Import(name="versionNotes")
+    private @Nullable Output<String> versionNotes;
+
+    /**
+     * @return Property version notes
+     * 
+     */
+    public Optional<Output<String>> versionNotes() {
+        return Optional.ofNullable(this.versionNotes);
+    }
+
     private PropertyState() {}
 
     private PropertyState(PropertyState $) {
@@ -193,11 +239,14 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
         this.name = $.name;
         this.productId = $.productId;
         this.productionVersion = $.productionVersion;
+        this.propertyId = $.propertyId;
         this.readVersion = $.readVersion;
         this.ruleErrors = $.ruleErrors;
         this.ruleFormat = $.ruleFormat;
+        this.ruleWarnings = $.ruleWarnings;
         this.rules = $.rules;
         this.stagingVersion = $.stagingVersion;
+        this.versionNotes = $.versionNotes;
     }
 
     public static Builder builder() {
@@ -358,6 +407,27 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param propertyId Property ID
+         * 
+         * @return builder
+         * 
+         */
+        public Builder propertyId(@Nullable Output<String> propertyId) {
+            $.propertyId = propertyId;
+            return this;
+        }
+
+        /**
+         * @param propertyId Property ID
+         * 
+         * @return builder
+         * 
+         */
+        public Builder propertyId(String propertyId) {
+            return propertyId(Output.of(propertyId));
+        }
+
+        /**
          * @param readVersion Required property&#39;s version to be read
          * 
          * @return builder
@@ -413,6 +483,37 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param ruleWarnings Rule validation warnings
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ruleWarnings(@Nullable Output<List<PropertyRuleWarningArgs>> ruleWarnings) {
+            $.ruleWarnings = ruleWarnings;
+            return this;
+        }
+
+        /**
+         * @param ruleWarnings Rule validation warnings
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ruleWarnings(List<PropertyRuleWarningArgs> ruleWarnings) {
+            return ruleWarnings(Output.of(ruleWarnings));
+        }
+
+        /**
+         * @param ruleWarnings Rule validation warnings
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ruleWarnings(PropertyRuleWarningArgs... ruleWarnings) {
+            return ruleWarnings(List.of(ruleWarnings));
+        }
+
+        /**
          * @param rules Property Rules as JSON
          * 
          * @return builder
@@ -452,6 +553,27 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder stagingVersion(Integer stagingVersion) {
             return stagingVersion(Output.of(stagingVersion));
+        }
+
+        /**
+         * @param versionNotes Property version notes
+         * 
+         * @return builder
+         * 
+         */
+        public Builder versionNotes(@Nullable Output<String> versionNotes) {
+            $.versionNotes = versionNotes;
+            return this;
+        }
+
+        /**
+         * @param versionNotes Property version notes
+         * 
+         * @return builder
+         * 
+         */
+        public Builder versionNotes(String versionNotes) {
+            return versionNotes(Output.of(versionNotes));
         }
 
         public PropertyState build() {

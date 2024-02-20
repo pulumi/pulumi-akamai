@@ -3,12 +3,15 @@
 
 package com.pulumi.akamai;
 
+import com.pulumi.akamai.inputs.CloudletsApplicationLoadBalancerActivationTimeoutsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class CloudletsApplicationLoadBalancerActivationArgs extends com.pulumi.resources.ResourceArgs {
@@ -46,6 +49,21 @@ public final class CloudletsApplicationLoadBalancerActivationArgs extends com.pu
     }
 
     /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Import(name="timeouts")
+    private @Nullable Output<CloudletsApplicationLoadBalancerActivationTimeoutsArgs> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Optional<Output<CloudletsApplicationLoadBalancerActivationTimeoutsArgs>> timeouts() {
+        return Optional.ofNullable(this.timeouts);
+    }
+
+    /**
      * Cloudlets application load balancer version you want to activate
      * 
      */
@@ -65,6 +83,7 @@ public final class CloudletsApplicationLoadBalancerActivationArgs extends com.pu
     private CloudletsApplicationLoadBalancerActivationArgs(CloudletsApplicationLoadBalancerActivationArgs $) {
         this.network = $.network;
         this.originId = $.originId;
+        this.timeouts = $.timeouts;
         this.version = $.version;
     }
 
@@ -126,6 +145,27 @@ public final class CloudletsApplicationLoadBalancerActivationArgs extends com.pu
          */
         public Builder originId(String originId) {
             return originId(Output.of(originId));
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(@Nullable Output<CloudletsApplicationLoadBalancerActivationTimeoutsArgs> timeouts) {
+            $.timeouts = timeouts;
+            return this;
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(CloudletsApplicationLoadBalancerActivationTimeoutsArgs timeouts) {
+            return timeouts(Output.of(timeouts));
         }
 
         /**

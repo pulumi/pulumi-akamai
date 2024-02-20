@@ -22,7 +22,7 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly bool? Enabled;
         /// <summary>
-        /// Removes the underlying object from the cache, since it is not being served.
+        /// For GET requests from clients, this forces edge servers to evict the underlying object from cache. Defaults to `false`.
         /// </summary>
         public readonly bool? ForceEviction;
         /// <summary>

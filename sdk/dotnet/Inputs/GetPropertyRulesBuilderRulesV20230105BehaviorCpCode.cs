@@ -31,7 +31,7 @@ namespace Pulumi.Akamai.Inputs
         public string? Uuid { get; set; }
 
         /// <summary>
-        /// Specifies a `value` object, which includes an `id` key and a descriptive `name`.
+        /// Specifies the CP code as an object. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
         /// </summary>
         [Input("value")]
         public Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorCpCodeValueArgs? Value { get; set; }

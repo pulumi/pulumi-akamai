@@ -81,6 +81,21 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
     }
 
     /**
+     * Is used in some cloudlets to support default rules (rule that is always matched)
+     * 
+     */
+    @Import(name="matchesAlways")
+    private @Nullable Output<Boolean> matchesAlways;
+
+    /**
+     * @return Is used in some cloudlets to support default rules (rule that is always matched)
+     * 
+     */
+    public Optional<Output<Boolean>> matchesAlways() {
+        return Optional.ofNullable(this.matchesAlways);
+    }
+
+    /**
      * The name of the rule
      * 
      */
@@ -192,6 +207,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
         this.end = $.end;
         this.matchUrl = $.matchUrl;
         this.matches = $.matches;
+        this.matchesAlways = $.matchesAlways;
         this.name = $.name;
         this.redirectUrl = $.redirectUrl;
         this.start = $.start;
@@ -311,6 +327,27 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
          */
         public Builder matches(GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgs... matches) {
             return matches(List.of(matches));
+        }
+
+        /**
+         * @param matchesAlways Is used in some cloudlets to support default rules (rule that is always matched)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder matchesAlways(@Nullable Output<Boolean> matchesAlways) {
+            $.matchesAlways = matchesAlways;
+            return this;
+        }
+
+        /**
+         * @param matchesAlways Is used in some cloudlets to support default rules (rule that is always matched)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder matchesAlways(Boolean matchesAlways) {
+            return matchesAlways(Output.of(matchesAlways));
         }
 
         /**

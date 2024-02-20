@@ -20,13 +20,13 @@ class IamUserArgs:
                  enable_tfa: pulumi.Input[bool],
                  first_name: pulumi.Input[str],
                  last_name: pulumi.Input[str],
-                 phone: pulumi.Input[str],
                  address: Optional[pulumi.Input[str]] = None,
                  city: Optional[pulumi.Input[str]] = None,
                  contact_type: Optional[pulumi.Input[str]] = None,
                  job_title: Optional[pulumi.Input[str]] = None,
                  lock: Optional[pulumi.Input[bool]] = None,
                  mobile_phone: Optional[pulumi.Input[str]] = None,
+                 phone: Optional[pulumi.Input[str]] = None,
                  preferred_language: Optional[pulumi.Input[str]] = None,
                  secondary_email: Optional[pulumi.Input[str]] = None,
                  session_timeout: Optional[pulumi.Input[int]] = None,
@@ -41,13 +41,13 @@ class IamUserArgs:
         :param pulumi.Input[bool] enable_tfa: Indicates whether two-factor authentication is allowed
         :param pulumi.Input[str] first_name: The user's first name
         :param pulumi.Input[str] last_name: The user's surname
-        :param pulumi.Input[str] phone: The user's main phone number
         :param pulumi.Input[str] address: The user's street address
         :param pulumi.Input[str] city: The user's city
         :param pulumi.Input[str] contact_type: To help characterize the user, the value can be any that are available from the view-contact-types operation
         :param pulumi.Input[str] job_title: The user's position at your company
         :param pulumi.Input[bool] lock: Flag to block a user account
         :param pulumi.Input[str] mobile_phone: The user's mobile phone number
+        :param pulumi.Input[str] phone: The user's main phone number
         :param pulumi.Input[str] preferred_language: The value can be any that are available from the view-languages operation
         :param pulumi.Input[str] secondary_email: The user's secondary email address
         :param pulumi.Input[int] session_timeout: The number of seconds it takes for the user's Control Center session to time out if there hasn't been any activity
@@ -61,7 +61,6 @@ class IamUserArgs:
         pulumi.set(__self__, "enable_tfa", enable_tfa)
         pulumi.set(__self__, "first_name", first_name)
         pulumi.set(__self__, "last_name", last_name)
-        pulumi.set(__self__, "phone", phone)
         if address is not None:
             pulumi.set(__self__, "address", address)
         if city is not None:
@@ -74,6 +73,8 @@ class IamUserArgs:
             pulumi.set(__self__, "lock", lock)
         if mobile_phone is not None:
             pulumi.set(__self__, "mobile_phone", mobile_phone)
+        if phone is not None:
+            pulumi.set(__self__, "phone", phone)
         if preferred_language is not None:
             pulumi.set(__self__, "preferred_language", preferred_language)
         if secondary_email is not None:
@@ -161,18 +162,6 @@ class IamUserArgs:
 
     @property
     @pulumi.getter
-    def phone(self) -> pulumi.Input[str]:
-        """
-        The user's main phone number
-        """
-        return pulumi.get(self, "phone")
-
-    @phone.setter
-    def phone(self, value: pulumi.Input[str]):
-        pulumi.set(self, "phone", value)
-
-    @property
-    @pulumi.getter
     def address(self) -> Optional[pulumi.Input[str]]:
         """
         The user's street address
@@ -242,6 +231,18 @@ class IamUserArgs:
     @mobile_phone.setter
     def mobile_phone(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "mobile_phone", value)
+
+    @property
+    @pulumi.getter
+    def phone(self) -> Optional[pulumi.Input[str]]:
+        """
+        The user's main phone number
+        """
+        return pulumi.get(self, "phone")
+
+    @phone.setter
+    def phone(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "phone", value)
 
     @property
     @pulumi.getter(name="preferredLanguage")
@@ -832,8 +833,6 @@ class IamUser(pulumi.CustomResource):
             __props__.__dict__["last_name"] = last_name
             __props__.__dict__["lock"] = lock
             __props__.__dict__["mobile_phone"] = mobile_phone
-            if phone is None and not opts.urn:
-                raise TypeError("Missing required property 'phone'")
             __props__.__dict__["phone"] = phone
             __props__.__dict__["preferred_language"] = preferred_language
             __props__.__dict__["secondary_email"] = secondary_email
@@ -1064,7 +1063,7 @@ class IamUser(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def phone(self) -> pulumi.Output[str]:
+    def phone(self) -> pulumi.Output[Optional[str]]:
         """
         The user's main phone number
         """

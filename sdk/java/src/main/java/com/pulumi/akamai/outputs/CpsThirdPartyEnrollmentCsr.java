@@ -31,7 +31,7 @@ public final class CpsThirdPartyEnrollmentCsr {
      * @return Organizational unit of organization
      * 
      */
-    private String organizationalUnit;
+    private @Nullable String organizationalUnit;
     /**
      * @return For the Let&#39;s Encrypt Domain Validated (DV) SAN certificates, the preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default
      * 
@@ -41,7 +41,7 @@ public final class CpsThirdPartyEnrollmentCsr {
      * @return State or province of organization location
      * 
      */
-    private String state;
+    private @Nullable String state;
 
     private CpsThirdPartyEnrollmentCsr() {}
     /**
@@ -69,8 +69,8 @@ public final class CpsThirdPartyEnrollmentCsr {
      * @return Organizational unit of organization
      * 
      */
-    public String organizationalUnit() {
-        return this.organizationalUnit;
+    public Optional<String> organizationalUnit() {
+        return Optional.ofNullable(this.organizationalUnit);
     }
     /**
      * @return For the Let&#39;s Encrypt Domain Validated (DV) SAN certificates, the preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default
@@ -83,8 +83,8 @@ public final class CpsThirdPartyEnrollmentCsr {
      * @return State or province of organization location
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
 
     public static Builder builder() {
@@ -99,9 +99,9 @@ public final class CpsThirdPartyEnrollmentCsr {
         private String city;
         private String countryCode;
         private String organization;
-        private String organizationalUnit;
+        private @Nullable String organizationalUnit;
         private @Nullable String preferredTrustChain;
-        private String state;
+        private @Nullable String state;
         public Builder() {}
         public Builder(CpsThirdPartyEnrollmentCsr defaults) {
     	      Objects.requireNonNull(defaults);
@@ -138,10 +138,8 @@ public final class CpsThirdPartyEnrollmentCsr {
             return this;
         }
         @CustomType.Setter
-        public Builder organizationalUnit(String organizationalUnit) {
-            if (organizationalUnit == null) {
-              throw new MissingRequiredPropertyException("CpsThirdPartyEnrollmentCsr", "organizationalUnit");
-            }
+        public Builder organizationalUnit(@Nullable String organizationalUnit) {
+
             this.organizationalUnit = organizationalUnit;
             return this;
         }
@@ -152,10 +150,8 @@ public final class CpsThirdPartyEnrollmentCsr {
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            if (state == null) {
-              throw new MissingRequiredPropertyException("CpsThirdPartyEnrollmentCsr", "state");
-            }
+        public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

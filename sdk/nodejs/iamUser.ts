@@ -95,7 +95,7 @@ export class IamUser extends pulumi.CustomResource {
     /**
      * The user's main phone number
      */
-    public readonly phone!: pulumi.Output<string>;
+    public readonly phone!: pulumi.Output<string | undefined>;
     /**
      * The value can be any that are available from the view-languages operation
      */
@@ -185,9 +185,6 @@ export class IamUser extends pulumi.CustomResource {
             }
             if ((!args || args.lastName === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'lastName'");
-            }
-            if ((!args || args.phone === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'phone'");
             }
             resourceInputs["address"] = args ? args.address : undefined;
             resourceInputs["authGrantsJson"] = args ? args.authGrantsJson : undefined;
@@ -376,7 +373,7 @@ export interface IamUserArgs {
     /**
      * The user's main phone number
      */
-    phone: pulumi.Input<string>;
+    phone?: pulumi.Input<string>;
     /**
      * The value can be any that are available from the view-languages operation
      */

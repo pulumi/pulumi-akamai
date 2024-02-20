@@ -19,7 +19,7 @@ namespace Pulumi.Akamai
         public Output<string> CloudletCode { get; private set; } = null!;
 
         /// <summary>
-        /// An integer that corresponds to a Cloudlets policy type (0 or 9)
+        /// An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies
         /// </summary>
         [Output("cloudletId")]
         public Output<int> CloudletId { get; private set; } = null!;
@@ -35,6 +35,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Output("groupId")]
         public Output<string> GroupId { get; private set; } = null!;
+
+        /// <summary>
+        /// The type of policy that you want to create
+        /// </summary>
+        [Output("isShared")]
+        public Output<bool?> IsShared { get; private set; } = null!;
 
         /// <summary>
         /// The version of the Cloudlet specific matchRules
@@ -53,6 +59,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
+
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Output("timeouts")]
+        public Output<Outputs.CloudletsPolicyTimeouts?> Timeouts { get; private set; } = null!;
 
         /// <summary>
         /// The version number of the policy
@@ -131,6 +143,12 @@ namespace Pulumi.Akamai
         public Input<string> GroupId { get; set; } = null!;
 
         /// <summary>
+        /// The type of policy that you want to create
+        /// </summary>
+        [Input("isShared")]
+        public Input<bool>? IsShared { get; set; }
+
+        /// <summary>
         /// The version of the Cloudlet specific matchRules
         /// </summary>
         [Input("matchRuleFormat")]
@@ -148,6 +166,12 @@ namespace Pulumi.Akamai
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.CloudletsPolicyTimeoutsArgs>? Timeouts { get; set; }
+
         public CloudletsPolicyArgs()
         {
         }
@@ -163,7 +187,7 @@ namespace Pulumi.Akamai
         public Input<string>? CloudletCode { get; set; }
 
         /// <summary>
-        /// An integer that corresponds to a Cloudlets policy type (0 or 9)
+        /// An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies
         /// </summary>
         [Input("cloudletId")]
         public Input<int>? CloudletId { get; set; }
@@ -181,6 +205,12 @@ namespace Pulumi.Akamai
         public Input<string>? GroupId { get; set; }
 
         /// <summary>
+        /// The type of policy that you want to create
+        /// </summary>
+        [Input("isShared")]
+        public Input<bool>? IsShared { get; set; }
+
+        /// <summary>
         /// The version of the Cloudlet specific matchRules
         /// </summary>
         [Input("matchRuleFormat")]
@@ -197,6 +227,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
+
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.CloudletsPolicyTimeoutsGetArgs>? Timeouts { get; set; }
 
         /// <summary>
         /// The version number of the policy

@@ -12,6 +12,9 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesBuilderRulesV20230530BehaviorCommonMediaClientDataArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Uses Common Media Client Data (CMCD) metadata to determine the segment URLs your origin server prefetches to speed up content delivery.
+        /// </summary>
         [Input("enableCmcdSegmentPrefetch")]
         public bool? EnableCmcdSegmentPrefetch { get; set; }
 

@@ -8,39 +8,34 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['CloudletsPolicyActivationArgs', 'CloudletsPolicyActivation']
 
 @pulumi.input_type
 class CloudletsPolicyActivationArgs:
     def __init__(__self__, *,
-                 associated_properties: pulumi.Input[Sequence[pulumi.Input[str]]],
                  network: pulumi.Input[str],
                  policy_id: pulumi.Input[int],
-                 version: pulumi.Input[int]):
+                 version: pulumi.Input[int],
+                 associated_properties: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 timeouts: Optional[pulumi.Input['CloudletsPolicyActivationTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a CloudletsPolicyActivation resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] associated_properties: Set of property IDs to link to this Cloudlets policy
         :param pulumi.Input[str] network: The network you want to activate the policy version on (options are Staging and Production)
         :param pulumi.Input[int] policy_id: ID of the Cloudlets policy you want to activate
         :param pulumi.Input[int] version: Cloudlets policy version you want to activate
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] associated_properties: Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
+        :param pulumi.Input['CloudletsPolicyActivationTimeoutsArgs'] timeouts: Enables to set timeout for processing
         """
-        pulumi.set(__self__, "associated_properties", associated_properties)
         pulumi.set(__self__, "network", network)
         pulumi.set(__self__, "policy_id", policy_id)
         pulumi.set(__self__, "version", version)
-
-    @property
-    @pulumi.getter(name="associatedProperties")
-    def associated_properties(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        Set of property IDs to link to this Cloudlets policy
-        """
-        return pulumi.get(self, "associated_properties")
-
-    @associated_properties.setter
-    def associated_properties(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
-        pulumi.set(self, "associated_properties", value)
+        if associated_properties is not None:
+            pulumi.set(__self__, "associated_properties", associated_properties)
+        if timeouts is not None:
+            pulumi.set(__self__, "timeouts", timeouts)
 
     @property
     @pulumi.getter
@@ -78,31 +73,63 @@ class CloudletsPolicyActivationArgs:
     def version(self, value: pulumi.Input[int]):
         pulumi.set(self, "version", value)
 
+    @property
+    @pulumi.getter(name="associatedProperties")
+    def associated_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
+        """
+        return pulumi.get(self, "associated_properties")
+
+    @associated_properties.setter
+    def associated_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "associated_properties", value)
+
+    @property
+    @pulumi.getter
+    def timeouts(self) -> Optional[pulumi.Input['CloudletsPolicyActivationTimeoutsArgs']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
+
+    @timeouts.setter
+    def timeouts(self, value: Optional[pulumi.Input['CloudletsPolicyActivationTimeoutsArgs']]):
+        pulumi.set(self, "timeouts", value)
+
 
 @pulumi.input_type
 class _CloudletsPolicyActivationState:
     def __init__(__self__, *,
                  associated_properties: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 is_shared: Optional[pulumi.Input[bool]] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  policy_id: Optional[pulumi.Input[int]] = None,
                  status: Optional[pulumi.Input[str]] = None,
+                 timeouts: Optional[pulumi.Input['CloudletsPolicyActivationTimeoutsArgs']] = None,
                  version: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering CloudletsPolicyActivation resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] associated_properties: Set of property IDs to link to this Cloudlets policy
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] associated_properties: Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
+        :param pulumi.Input[bool] is_shared: Indicates if policy that is being activated is a shared policy
         :param pulumi.Input[str] network: The network you want to activate the policy version on (options are Staging and Production)
         :param pulumi.Input[int] policy_id: ID of the Cloudlets policy you want to activate
         :param pulumi.Input[str] status: Activation status for this Cloudlets policy
+        :param pulumi.Input['CloudletsPolicyActivationTimeoutsArgs'] timeouts: Enables to set timeout for processing
         :param pulumi.Input[int] version: Cloudlets policy version you want to activate
         """
         if associated_properties is not None:
             pulumi.set(__self__, "associated_properties", associated_properties)
+        if is_shared is not None:
+            pulumi.set(__self__, "is_shared", is_shared)
         if network is not None:
             pulumi.set(__self__, "network", network)
         if policy_id is not None:
             pulumi.set(__self__, "policy_id", policy_id)
         if status is not None:
             pulumi.set(__self__, "status", status)
+        if timeouts is not None:
+            pulumi.set(__self__, "timeouts", timeouts)
         if version is not None:
             pulumi.set(__self__, "version", version)
 
@@ -110,13 +137,25 @@ class _CloudletsPolicyActivationState:
     @pulumi.getter(name="associatedProperties")
     def associated_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        Set of property IDs to link to this Cloudlets policy
+        Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
         """
         return pulumi.get(self, "associated_properties")
 
     @associated_properties.setter
     def associated_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "associated_properties", value)
+
+    @property
+    @pulumi.getter(name="isShared")
+    def is_shared(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if policy that is being activated is a shared policy
+        """
+        return pulumi.get(self, "is_shared")
+
+    @is_shared.setter
+    def is_shared(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_shared", value)
 
     @property
     @pulumi.getter
@@ -156,6 +195,18 @@ class _CloudletsPolicyActivationState:
 
     @property
     @pulumi.getter
+    def timeouts(self) -> Optional[pulumi.Input['CloudletsPolicyActivationTimeoutsArgs']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
+
+    @timeouts.setter
+    def timeouts(self, value: Optional[pulumi.Input['CloudletsPolicyActivationTimeoutsArgs']]):
+        pulumi.set(self, "timeouts", value)
+
+    @property
+    @pulumi.getter
     def version(self) -> Optional[pulumi.Input[int]]:
         """
         Cloudlets policy version you want to activate
@@ -175,15 +226,17 @@ class CloudletsPolicyActivation(pulumi.CustomResource):
                  associated_properties: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  policy_id: Optional[pulumi.Input[int]] = None,
+                 timeouts: Optional[pulumi.Input[pulumi.InputType['CloudletsPolicyActivationTimeoutsArgs']]] = None,
                  version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
         Create a CloudletsPolicyActivation resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] associated_properties: Set of property IDs to link to this Cloudlets policy
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] associated_properties: Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
         :param pulumi.Input[str] network: The network you want to activate the policy version on (options are Staging and Production)
         :param pulumi.Input[int] policy_id: ID of the Cloudlets policy you want to activate
+        :param pulumi.Input[pulumi.InputType['CloudletsPolicyActivationTimeoutsArgs']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[int] version: Cloudlets policy version you want to activate
         """
         ...
@@ -212,6 +265,7 @@ class CloudletsPolicyActivation(pulumi.CustomResource):
                  associated_properties: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  policy_id: Optional[pulumi.Input[int]] = None,
+                 timeouts: Optional[pulumi.Input[pulumi.InputType['CloudletsPolicyActivationTimeoutsArgs']]] = None,
                  version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -222,8 +276,6 @@ class CloudletsPolicyActivation(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = CloudletsPolicyActivationArgs.__new__(CloudletsPolicyActivationArgs)
 
-            if associated_properties is None and not opts.urn:
-                raise TypeError("Missing required property 'associated_properties'")
             __props__.__dict__["associated_properties"] = associated_properties
             if network is None and not opts.urn:
                 raise TypeError("Missing required property 'network'")
@@ -231,9 +283,11 @@ class CloudletsPolicyActivation(pulumi.CustomResource):
             if policy_id is None and not opts.urn:
                 raise TypeError("Missing required property 'policy_id'")
             __props__.__dict__["policy_id"] = policy_id
+            __props__.__dict__["timeouts"] = timeouts
             if version is None and not opts.urn:
                 raise TypeError("Missing required property 'version'")
             __props__.__dict__["version"] = version
+            __props__.__dict__["is_shared"] = None
             __props__.__dict__["status"] = None
         super(CloudletsPolicyActivation, __self__).__init__(
             'akamai:index/cloudletsPolicyActivation:CloudletsPolicyActivation',
@@ -246,9 +300,11 @@ class CloudletsPolicyActivation(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             associated_properties: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            is_shared: Optional[pulumi.Input[bool]] = None,
             network: Optional[pulumi.Input[str]] = None,
             policy_id: Optional[pulumi.Input[int]] = None,
             status: Optional[pulumi.Input[str]] = None,
+            timeouts: Optional[pulumi.Input[pulumi.InputType['CloudletsPolicyActivationTimeoutsArgs']]] = None,
             version: Optional[pulumi.Input[int]] = None) -> 'CloudletsPolicyActivation':
         """
         Get an existing CloudletsPolicyActivation resource's state with the given name, id, and optional extra
@@ -257,10 +313,12 @@ class CloudletsPolicyActivation(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] associated_properties: Set of property IDs to link to this Cloudlets policy
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] associated_properties: Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
+        :param pulumi.Input[bool] is_shared: Indicates if policy that is being activated is a shared policy
         :param pulumi.Input[str] network: The network you want to activate the policy version on (options are Staging and Production)
         :param pulumi.Input[int] policy_id: ID of the Cloudlets policy you want to activate
         :param pulumi.Input[str] status: Activation status for this Cloudlets policy
+        :param pulumi.Input[pulumi.InputType['CloudletsPolicyActivationTimeoutsArgs']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[int] version: Cloudlets policy version you want to activate
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -268,19 +326,29 @@ class CloudletsPolicyActivation(pulumi.CustomResource):
         __props__ = _CloudletsPolicyActivationState.__new__(_CloudletsPolicyActivationState)
 
         __props__.__dict__["associated_properties"] = associated_properties
+        __props__.__dict__["is_shared"] = is_shared
         __props__.__dict__["network"] = network
         __props__.__dict__["policy_id"] = policy_id
         __props__.__dict__["status"] = status
+        __props__.__dict__["timeouts"] = timeouts
         __props__.__dict__["version"] = version
         return CloudletsPolicyActivation(resource_name, opts=opts, __props__=__props__)
 
     @property
     @pulumi.getter(name="associatedProperties")
-    def associated_properties(self) -> pulumi.Output[Sequence[str]]:
+    def associated_properties(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
-        Set of property IDs to link to this Cloudlets policy
+        Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
         """
         return pulumi.get(self, "associated_properties")
+
+    @property
+    @pulumi.getter(name="isShared")
+    def is_shared(self) -> pulumi.Output[bool]:
+        """
+        Indicates if policy that is being activated is a shared policy
+        """
+        return pulumi.get(self, "is_shared")
 
     @property
     @pulumi.getter
@@ -305,6 +373,14 @@ class CloudletsPolicyActivation(pulumi.CustomResource):
         Activation status for this Cloudlets policy
         """
         return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter
+    def timeouts(self) -> pulumi.Output[Optional['outputs.CloudletsPolicyActivationTimeouts']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
 
     @property
     @pulumi.getter

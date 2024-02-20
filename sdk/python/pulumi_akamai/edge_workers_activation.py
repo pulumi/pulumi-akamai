@@ -8,6 +8,8 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['EdgeWorkersActivationArgs', 'EdgeWorkersActivation']
 
@@ -16,16 +18,24 @@ class EdgeWorkersActivationArgs:
     def __init__(__self__, *,
                  edgeworker_id: pulumi.Input[int],
                  network: pulumi.Input[str],
-                 version: pulumi.Input[str]):
+                 version: pulumi.Input[str],
+                 note: Optional[pulumi.Input[str]] = None,
+                 timeouts: Optional[pulumi.Input['EdgeWorkersActivationTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a EdgeWorkersActivation resource.
         :param pulumi.Input[int] edgeworker_id: Id of the EdgeWorker to activate
         :param pulumi.Input[str] network: The network on which the version will be activated
         :param pulumi.Input[str] version: The version of EdgeWorker to activate
+        :param pulumi.Input[str] note: Assigns a log message to the activation request
+        :param pulumi.Input['EdgeWorkersActivationTimeoutsArgs'] timeouts: Enables to set timeout for processing
         """
         pulumi.set(__self__, "edgeworker_id", edgeworker_id)
         pulumi.set(__self__, "network", network)
         pulumi.set(__self__, "version", version)
+        if note is not None:
+            pulumi.set(__self__, "note", note)
+        if timeouts is not None:
+            pulumi.set(__self__, "timeouts", timeouts)
 
     @property
     @pulumi.getter(name="edgeworkerId")
@@ -63,6 +73,30 @@ class EdgeWorkersActivationArgs:
     def version(self, value: pulumi.Input[str]):
         pulumi.set(self, "version", value)
 
+    @property
+    @pulumi.getter
+    def note(self) -> Optional[pulumi.Input[str]]:
+        """
+        Assigns a log message to the activation request
+        """
+        return pulumi.get(self, "note")
+
+    @note.setter
+    def note(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "note", value)
+
+    @property
+    @pulumi.getter
+    def timeouts(self) -> Optional[pulumi.Input['EdgeWorkersActivationTimeoutsArgs']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
+
+    @timeouts.setter
+    def timeouts(self, value: Optional[pulumi.Input['EdgeWorkersActivationTimeoutsArgs']]):
+        pulumi.set(self, "timeouts", value)
+
 
 @pulumi.input_type
 class _EdgeWorkersActivationState:
@@ -70,12 +104,16 @@ class _EdgeWorkersActivationState:
                  activation_id: Optional[pulumi.Input[int]] = None,
                  edgeworker_id: Optional[pulumi.Input[int]] = None,
                  network: Optional[pulumi.Input[str]] = None,
+                 note: Optional[pulumi.Input[str]] = None,
+                 timeouts: Optional[pulumi.Input['EdgeWorkersActivationTimeoutsArgs']] = None,
                  version: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering EdgeWorkersActivation resources.
         :param pulumi.Input[int] activation_id: A unique identifier of the activation
         :param pulumi.Input[int] edgeworker_id: Id of the EdgeWorker to activate
         :param pulumi.Input[str] network: The network on which the version will be activated
+        :param pulumi.Input[str] note: Assigns a log message to the activation request
+        :param pulumi.Input['EdgeWorkersActivationTimeoutsArgs'] timeouts: Enables to set timeout for processing
         :param pulumi.Input[str] version: The version of EdgeWorker to activate
         """
         if activation_id is not None:
@@ -84,6 +122,10 @@ class _EdgeWorkersActivationState:
             pulumi.set(__self__, "edgeworker_id", edgeworker_id)
         if network is not None:
             pulumi.set(__self__, "network", network)
+        if note is not None:
+            pulumi.set(__self__, "note", note)
+        if timeouts is not None:
+            pulumi.set(__self__, "timeouts", timeouts)
         if version is not None:
             pulumi.set(__self__, "version", version)
 
@@ -125,6 +167,30 @@ class _EdgeWorkersActivationState:
 
     @property
     @pulumi.getter
+    def note(self) -> Optional[pulumi.Input[str]]:
+        """
+        Assigns a log message to the activation request
+        """
+        return pulumi.get(self, "note")
+
+    @note.setter
+    def note(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "note", value)
+
+    @property
+    @pulumi.getter
+    def timeouts(self) -> Optional[pulumi.Input['EdgeWorkersActivationTimeoutsArgs']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
+
+    @timeouts.setter
+    def timeouts(self, value: Optional[pulumi.Input['EdgeWorkersActivationTimeoutsArgs']]):
+        pulumi.set(self, "timeouts", value)
+
+    @property
+    @pulumi.getter
     def version(self) -> Optional[pulumi.Input[str]]:
         """
         The version of EdgeWorker to activate
@@ -143,6 +209,8 @@ class EdgeWorkersActivation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  edgeworker_id: Optional[pulumi.Input[int]] = None,
                  network: Optional[pulumi.Input[str]] = None,
+                 note: Optional[pulumi.Input[str]] = None,
+                 timeouts: Optional[pulumi.Input[pulumi.InputType['EdgeWorkersActivationTimeoutsArgs']]] = None,
                  version: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -151,6 +219,8 @@ class EdgeWorkersActivation(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] edgeworker_id: Id of the EdgeWorker to activate
         :param pulumi.Input[str] network: The network on which the version will be activated
+        :param pulumi.Input[str] note: Assigns a log message to the activation request
+        :param pulumi.Input[pulumi.InputType['EdgeWorkersActivationTimeoutsArgs']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[str] version: The version of EdgeWorker to activate
         """
         ...
@@ -178,6 +248,8 @@ class EdgeWorkersActivation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  edgeworker_id: Optional[pulumi.Input[int]] = None,
                  network: Optional[pulumi.Input[str]] = None,
+                 note: Optional[pulumi.Input[str]] = None,
+                 timeouts: Optional[pulumi.Input[pulumi.InputType['EdgeWorkersActivationTimeoutsArgs']]] = None,
                  version: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -194,6 +266,8 @@ class EdgeWorkersActivation(pulumi.CustomResource):
             if network is None and not opts.urn:
                 raise TypeError("Missing required property 'network'")
             __props__.__dict__["network"] = network
+            __props__.__dict__["note"] = note
+            __props__.__dict__["timeouts"] = timeouts
             if version is None and not opts.urn:
                 raise TypeError("Missing required property 'version'")
             __props__.__dict__["version"] = version
@@ -211,6 +285,8 @@ class EdgeWorkersActivation(pulumi.CustomResource):
             activation_id: Optional[pulumi.Input[int]] = None,
             edgeworker_id: Optional[pulumi.Input[int]] = None,
             network: Optional[pulumi.Input[str]] = None,
+            note: Optional[pulumi.Input[str]] = None,
+            timeouts: Optional[pulumi.Input[pulumi.InputType['EdgeWorkersActivationTimeoutsArgs']]] = None,
             version: Optional[pulumi.Input[str]] = None) -> 'EdgeWorkersActivation':
         """
         Get an existing EdgeWorkersActivation resource's state with the given name, id, and optional extra
@@ -222,6 +298,8 @@ class EdgeWorkersActivation(pulumi.CustomResource):
         :param pulumi.Input[int] activation_id: A unique identifier of the activation
         :param pulumi.Input[int] edgeworker_id: Id of the EdgeWorker to activate
         :param pulumi.Input[str] network: The network on which the version will be activated
+        :param pulumi.Input[str] note: Assigns a log message to the activation request
+        :param pulumi.Input[pulumi.InputType['EdgeWorkersActivationTimeoutsArgs']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[str] version: The version of EdgeWorker to activate
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -231,6 +309,8 @@ class EdgeWorkersActivation(pulumi.CustomResource):
         __props__.__dict__["activation_id"] = activation_id
         __props__.__dict__["edgeworker_id"] = edgeworker_id
         __props__.__dict__["network"] = network
+        __props__.__dict__["note"] = note
+        __props__.__dict__["timeouts"] = timeouts
         __props__.__dict__["version"] = version
         return EdgeWorkersActivation(resource_name, opts=opts, __props__=__props__)
 
@@ -257,6 +337,22 @@ class EdgeWorkersActivation(pulumi.CustomResource):
         The network on which the version will be activated
         """
         return pulumi.get(self, "network")
+
+    @property
+    @pulumi.getter
+    def note(self) -> pulumi.Output[Optional[str]]:
+        """
+        Assigns a log message to the activation request
+        """
+        return pulumi.get(self, "note")
+
+    @property
+    @pulumi.getter
+    def timeouts(self) -> pulumi.Output[Optional['outputs.EdgeWorkersActivationTimeouts']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
 
     @property
     @pulumi.getter

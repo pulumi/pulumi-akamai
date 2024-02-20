@@ -3,9 +3,11 @@
 
 package com.pulumi.akamai;
 
+import com.pulumi.akamai.inputs.CloudletsPolicyTimeoutsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -62,6 +64,21 @@ public final class CloudletsPolicyArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * The type of policy that you want to create
+     * 
+     */
+    @Import(name="isShared")
+    private @Nullable Output<Boolean> isShared;
+
+    /**
+     * @return The type of policy that you want to create
+     * 
+     */
+    public Optional<Output<Boolean>> isShared() {
+        return Optional.ofNullable(this.isShared);
+    }
+
+    /**
      * The version of the Cloudlet specific matchRules
      * 
      */
@@ -106,15 +123,32 @@ public final class CloudletsPolicyArgs extends com.pulumi.resources.ResourceArgs
         return Optional.ofNullable(this.name);
     }
 
+    /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Import(name="timeouts")
+    private @Nullable Output<CloudletsPolicyTimeoutsArgs> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Optional<Output<CloudletsPolicyTimeoutsArgs>> timeouts() {
+        return Optional.ofNullable(this.timeouts);
+    }
+
     private CloudletsPolicyArgs() {}
 
     private CloudletsPolicyArgs(CloudletsPolicyArgs $) {
         this.cloudletCode = $.cloudletCode;
         this.description = $.description;
         this.groupId = $.groupId;
+        this.isShared = $.isShared;
         this.matchRuleFormat = $.matchRuleFormat;
         this.matchRules = $.matchRules;
         this.name = $.name;
+        this.timeouts = $.timeouts;
     }
 
     public static Builder builder() {
@@ -199,6 +233,27 @@ public final class CloudletsPolicyArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
+         * @param isShared The type of policy that you want to create
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isShared(@Nullable Output<Boolean> isShared) {
+            $.isShared = isShared;
+            return this;
+        }
+
+        /**
+         * @param isShared The type of policy that you want to create
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isShared(Boolean isShared) {
+            return isShared(Output.of(isShared));
+        }
+
+        /**
          * @param matchRuleFormat The version of the Cloudlet specific matchRules
          * 
          * @return builder
@@ -259,6 +314,27 @@ public final class CloudletsPolicyArgs extends com.pulumi.resources.ResourceArgs
          */
         public Builder name(String name) {
             return name(Output.of(name));
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(@Nullable Output<CloudletsPolicyTimeoutsArgs> timeouts) {
+            $.timeouts = timeouts;
+            return this;
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(CloudletsPolicyTimeoutsArgs timeouts) {
+            return timeouts(Output.of(timeouts));
         }
 
         public CloudletsPolicyArgs build() {

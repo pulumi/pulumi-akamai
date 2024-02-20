@@ -53,14 +53,14 @@ public class CloudletsApplicationLoadBalancer extends com.pulumi.resources.Custo
         return this.dataCenters;
     }
     /**
-     * The load balancer configuration description
+     * The load balancer configuration version description
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> description;
 
     /**
-     * @return The load balancer configuration description
+     * @return The load balancer configuration version description
      * 
      */
     public Output<Optional<String>> description() {
@@ -73,14 +73,28 @@ public class CloudletsApplicationLoadBalancer extends com.pulumi.resources.Custo
         return Codegen.optional(this.livenessSettings);
     }
     /**
-     * The conditional origin’s unique identifier
+     * The load balancer configuration description
+     * 
+     */
+    @Export(name="originDescription", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> originDescription;
+
+    /**
+     * @return The load balancer configuration description
+     * 
+     */
+    public Output<Optional<String>> originDescription() {
+        return Codegen.optional(this.originDescription);
+    }
+    /**
+     * The conditional origin&#39;s unique identifier
      * 
      */
     @Export(name="originId", refs={String.class}, tree="[0]")
     private Output<String> originId;
 
     /**
-     * @return The conditional origin’s unique identifier
+     * @return The conditional origin&#39;s unique identifier
      * 
      */
     public Output<String> originId() {

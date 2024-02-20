@@ -3,6 +3,7 @@
 
 package com.pulumi.akamai.inputs;
 
+import com.pulumi.akamai.inputs.CpsDvValidationTimeoutsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Integer;
@@ -62,12 +63,28 @@ public final class CpsDvValidationState extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Import(name="timeouts")
+    private @Nullable Output<CpsDvValidationTimeoutsArgs> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Optional<Output<CpsDvValidationTimeoutsArgs>> timeouts() {
+        return Optional.ofNullable(this.timeouts);
+    }
+
     private CpsDvValidationState() {}
 
     private CpsDvValidationState(CpsDvValidationState $) {
         this.enrollmentId = $.enrollmentId;
         this.sans = $.sans;
         this.status = $.status;
+        this.timeouts = $.timeouts;
     }
 
     public static Builder builder() {
@@ -159,6 +176,27 @@ public final class CpsDvValidationState extends com.pulumi.resources.ResourceArg
          */
         public Builder status(String status) {
             return status(Output.of(status));
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(@Nullable Output<CpsDvValidationTimeoutsArgs> timeouts) {
+            $.timeouts = timeouts;
+            return this;
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(CpsDvValidationTimeoutsArgs timeouts) {
+            return timeouts(Output.of(timeouts));
         }
 
         public CpsDvValidationState build() {

@@ -25,6 +25,7 @@ export interface GetAppSecIPGeoArgs {
  * A collection of values returned by getAppSecIPGeo.
  */
 export interface GetAppSecIPGeoResult {
+    readonly asnNetworkLists: string[];
     readonly configId: number;
     readonly exceptionIpNetworkLists: string[];
     readonly geoNetworkLists: string[];

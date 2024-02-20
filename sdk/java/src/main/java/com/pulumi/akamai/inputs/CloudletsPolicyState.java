@@ -3,8 +3,10 @@
 
 package com.pulumi.akamai.inputs;
 
+import com.pulumi.akamai.inputs.CloudletsPolicyTimeoutsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -32,14 +34,14 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * An integer that corresponds to a Cloudlets policy type (0 or 9)
+     * An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies
      * 
      */
     @Import(name="cloudletId")
     private @Nullable Output<Integer> cloudletId;
 
     /**
-     * @return An integer that corresponds to a Cloudlets policy type (0 or 9)
+     * @return An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies
      * 
      */
     public Optional<Output<Integer>> cloudletId() {
@@ -74,6 +76,21 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
      */
     public Optional<Output<String>> groupId() {
         return Optional.ofNullable(this.groupId);
+    }
+
+    /**
+     * The type of policy that you want to create
+     * 
+     */
+    @Import(name="isShared")
+    private @Nullable Output<Boolean> isShared;
+
+    /**
+     * @return The type of policy that you want to create
+     * 
+     */
+    public Optional<Output<Boolean>> isShared() {
+        return Optional.ofNullable(this.isShared);
     }
 
     /**
@@ -122,6 +139,21 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Import(name="timeouts")
+    private @Nullable Output<CloudletsPolicyTimeoutsArgs> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Optional<Output<CloudletsPolicyTimeoutsArgs>> timeouts() {
+        return Optional.ofNullable(this.timeouts);
+    }
+
+    /**
      * The version number of the policy
      * 
      */
@@ -158,9 +190,11 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         this.cloudletId = $.cloudletId;
         this.description = $.description;
         this.groupId = $.groupId;
+        this.isShared = $.isShared;
         this.matchRuleFormat = $.matchRuleFormat;
         this.matchRules = $.matchRules;
         this.name = $.name;
+        this.timeouts = $.timeouts;
         this.version = $.version;
         this.warnings = $.warnings;
     }
@@ -205,7 +239,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param cloudletId An integer that corresponds to a Cloudlets policy type (0 or 9)
+         * @param cloudletId An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies
          * 
          * @return builder
          * 
@@ -216,7 +250,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param cloudletId An integer that corresponds to a Cloudlets policy type (0 or 9)
+         * @param cloudletId An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies
          * 
          * @return builder
          * 
@@ -265,6 +299,27 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
          */
         public Builder groupId(String groupId) {
             return groupId(Output.of(groupId));
+        }
+
+        /**
+         * @param isShared The type of policy that you want to create
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isShared(@Nullable Output<Boolean> isShared) {
+            $.isShared = isShared;
+            return this;
+        }
+
+        /**
+         * @param isShared The type of policy that you want to create
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isShared(Boolean isShared) {
+            return isShared(Output.of(isShared));
         }
 
         /**
@@ -328,6 +383,27 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
          */
         public Builder name(String name) {
             return name(Output.of(name));
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(@Nullable Output<CloudletsPolicyTimeoutsArgs> timeouts) {
+            $.timeouts = timeouts;
+            return this;
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(CloudletsPolicyTimeoutsArgs timeouts) {
+            return timeouts(Output.of(timeouts));
         }
 
         /**

@@ -45,12 +45,16 @@ export class CloudletsApplicationLoadBalancer extends pulumi.CustomResource {
      */
     public readonly dataCenters!: pulumi.Output<outputs.CloudletsApplicationLoadBalancerDataCenter[]>;
     /**
-     * The load balancer configuration description
+     * The load balancer configuration version description
      */
     public readonly description!: pulumi.Output<string | undefined>;
     public readonly livenessSettings!: pulumi.Output<outputs.CloudletsApplicationLoadBalancerLivenessSettings | undefined>;
     /**
-     * The conditional origin’s unique identifier
+     * The load balancer configuration description
+     */
+    public readonly originDescription!: pulumi.Output<string | undefined>;
+    /**
+     * The conditional origin's unique identifier
      */
     public readonly originId!: pulumi.Output<string>;
     /**
@@ -79,6 +83,7 @@ export class CloudletsApplicationLoadBalancer extends pulumi.CustomResource {
             resourceInputs["dataCenters"] = state ? state.dataCenters : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["livenessSettings"] = state ? state.livenessSettings : undefined;
+            resourceInputs["originDescription"] = state ? state.originDescription : undefined;
             resourceInputs["originId"] = state ? state.originId : undefined;
             resourceInputs["version"] = state ? state.version : undefined;
             resourceInputs["warnings"] = state ? state.warnings : undefined;
@@ -94,6 +99,7 @@ export class CloudletsApplicationLoadBalancer extends pulumi.CustomResource {
             resourceInputs["dataCenters"] = args ? args.dataCenters : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["livenessSettings"] = args ? args.livenessSettings : undefined;
+            resourceInputs["originDescription"] = args ? args.originDescription : undefined;
             resourceInputs["originId"] = args ? args.originId : undefined;
             resourceInputs["version"] = undefined /*out*/;
             resourceInputs["warnings"] = undefined /*out*/;
@@ -118,12 +124,16 @@ export interface CloudletsApplicationLoadBalancerState {
      */
     dataCenters?: pulumi.Input<pulumi.Input<inputs.CloudletsApplicationLoadBalancerDataCenter>[]>;
     /**
-     * The load balancer configuration description
+     * The load balancer configuration version description
      */
     description?: pulumi.Input<string>;
     livenessSettings?: pulumi.Input<inputs.CloudletsApplicationLoadBalancerLivenessSettings>;
     /**
-     * The conditional origin’s unique identifier
+     * The load balancer configuration description
+     */
+    originDescription?: pulumi.Input<string>;
+    /**
+     * The conditional origin's unique identifier
      */
     originId?: pulumi.Input<string>;
     /**
@@ -151,12 +161,16 @@ export interface CloudletsApplicationLoadBalancerArgs {
      */
     dataCenters: pulumi.Input<pulumi.Input<inputs.CloudletsApplicationLoadBalancerDataCenter>[]>;
     /**
-     * The load balancer configuration description
+     * The load balancer configuration version description
      */
     description?: pulumi.Input<string>;
     livenessSettings?: pulumi.Input<inputs.CloudletsApplicationLoadBalancerLivenessSettings>;
     /**
-     * The conditional origin’s unique identifier
+     * The load balancer configuration description
+     */
+    originDescription?: pulumi.Input<string>;
+    /**
+     * The conditional origin's unique identifier
      */
     originId: pulumi.Input<string>;
 }

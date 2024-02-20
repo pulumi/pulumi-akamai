@@ -97,6 +97,21 @@ public final class GetImagingPolicyImagePolicyArgs extends com.pulumi.resources.
     }
 
     /**
+     * The amount of time in seconds that the policy will serve stale images. During the serve stale period realtime images will attempt to use the offline image from the previous policy version first if possible.
+     * 
+     */
+    @Import(name="serveStaleDuration")
+    private @Nullable Output<String> serveStaleDuration;
+
+    /**
+     * @return The amount of time in seconds that the policy will serve stale images. During the serve stale period realtime images will attempt to use the offline image from the previous policy version first if possible.
+     * 
+     */
+    public Optional<Output<String>> serveStaleDuration() {
+        return Optional.ofNullable(this.serveStaleDuration);
+    }
+
+    /**
      * Set of image transformations to apply to the source image. If unspecified, no operations are performed.
      * 
      */
@@ -134,6 +149,7 @@ public final class GetImagingPolicyImagePolicyArgs extends com.pulumi.resources.
         this.output = $.output;
         this.postBreakpointTransformations = $.postBreakpointTransformations;
         this.rolloutDuration = $.rolloutDuration;
+        this.serveStaleDuration = $.serveStaleDuration;
         this.transformations = $.transformations;
         this.variables = $.variables;
     }
@@ -279,6 +295,27 @@ public final class GetImagingPolicyImagePolicyArgs extends com.pulumi.resources.
          */
         public Builder rolloutDuration(String rolloutDuration) {
             return rolloutDuration(Output.of(rolloutDuration));
+        }
+
+        /**
+         * @param serveStaleDuration The amount of time in seconds that the policy will serve stale images. During the serve stale period realtime images will attempt to use the offline image from the previous policy version first if possible.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serveStaleDuration(@Nullable Output<String> serveStaleDuration) {
+            $.serveStaleDuration = serveStaleDuration;
+            return this;
+        }
+
+        /**
+         * @param serveStaleDuration The amount of time in seconds that the policy will serve stale images. During the serve stale period realtime images will attempt to use the offline image from the previous policy version first if possible.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serveStaleDuration(String serveStaleDuration) {
+            return serveStaleDuration(Output.of(serveStaleDuration));
         }
 
         /**

@@ -335,6 +335,11 @@ export type BotmanCustomClientSequence = import("./botmanCustomClientSequence").
 export const BotmanCustomClientSequence: typeof import("./botmanCustomClientSequence").BotmanCustomClientSequence = null as any;
 utilities.lazyLoad(exports, ["BotmanCustomClientSequence"], () => require("./botmanCustomClientSequence"));
 
+export { BotmanCustomCodeArgs, BotmanCustomCodeState } from "./botmanCustomCode";
+export type BotmanCustomCode = import("./botmanCustomCode").BotmanCustomCode;
+export const BotmanCustomCode: typeof import("./botmanCustomCode").BotmanCustomCode = null as any;
+utilities.lazyLoad(exports, ["BotmanCustomCode"], () => require("./botmanCustomCode"));
+
 export { BotmanCustomDefinedBotArgs, BotmanCustomDefinedBotState } from "./botmanCustomDefinedBot";
 export type BotmanCustomDefinedBot = import("./botmanCustomDefinedBot").BotmanCustomDefinedBot;
 export const BotmanCustomDefinedBot: typeof import("./botmanCustomDefinedBot").BotmanCustomDefinedBot = null as any;
@@ -835,6 +840,11 @@ export const getBotmanCustomClientSequence: typeof import("./getBotmanCustomClie
 export const getBotmanCustomClientSequenceOutput: typeof import("./getBotmanCustomClientSequence").getBotmanCustomClientSequenceOutput = null as any;
 utilities.lazyLoad(exports, ["getBotmanCustomClientSequence","getBotmanCustomClientSequenceOutput"], () => require("./getBotmanCustomClientSequence"));
 
+export { GetBotmanCustomCodeArgs, GetBotmanCustomCodeResult, GetBotmanCustomCodeOutputArgs } from "./getBotmanCustomCode";
+export const getBotmanCustomCode: typeof import("./getBotmanCustomCode").getBotmanCustomCode = null as any;
+export const getBotmanCustomCodeOutput: typeof import("./getBotmanCustomCode").getBotmanCustomCodeOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanCustomCode","getBotmanCustomCodeOutput"], () => require("./getBotmanCustomCode"));
+
 export { GetBotmanCustomDefinedBotArgs, GetBotmanCustomDefinedBotResult, GetBotmanCustomDefinedBotOutputArgs } from "./getBotmanCustomDefinedBot";
 export const getBotmanCustomDefinedBot: typeof import("./getBotmanCustomDefinedBot").getBotmanCustomDefinedBot = null as any;
 export const getBotmanCustomDefinedBotOutput: typeof import("./getBotmanCustomDefinedBot").getBotmanCustomDefinedBotOutput = null as any;
@@ -930,10 +940,20 @@ export const getCloudletsPolicy: typeof import("./getCloudletsPolicy").getCloudl
 export const getCloudletsPolicyOutput: typeof import("./getCloudletsPolicy").getCloudletsPolicyOutput = null as any;
 utilities.lazyLoad(exports, ["getCloudletsPolicy","getCloudletsPolicyOutput"], () => require("./getCloudletsPolicy"));
 
+export { GetCloudletsPolicyActivationArgs, GetCloudletsPolicyActivationResult, GetCloudletsPolicyActivationOutputArgs } from "./getCloudletsPolicyActivation";
+export const getCloudletsPolicyActivation: typeof import("./getCloudletsPolicyActivation").getCloudletsPolicyActivation = null as any;
+export const getCloudletsPolicyActivationOutput: typeof import("./getCloudletsPolicyActivation").getCloudletsPolicyActivationOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudletsPolicyActivation","getCloudletsPolicyActivationOutput"], () => require("./getCloudletsPolicyActivation"));
+
 export { GetCloudletsRequestControlMatchRuleArgs, GetCloudletsRequestControlMatchRuleResult, GetCloudletsRequestControlMatchRuleOutputArgs } from "./getCloudletsRequestControlMatchRule";
 export const getCloudletsRequestControlMatchRule: typeof import("./getCloudletsRequestControlMatchRule").getCloudletsRequestControlMatchRule = null as any;
 export const getCloudletsRequestControlMatchRuleOutput: typeof import("./getCloudletsRequestControlMatchRule").getCloudletsRequestControlMatchRuleOutput = null as any;
 utilities.lazyLoad(exports, ["getCloudletsRequestControlMatchRule","getCloudletsRequestControlMatchRuleOutput"], () => require("./getCloudletsRequestControlMatchRule"));
+
+export { GetCloudletsSharedPolicyArgs, GetCloudletsSharedPolicyResult, GetCloudletsSharedPolicyOutputArgs } from "./getCloudletsSharedPolicy";
+export const getCloudletsSharedPolicy: typeof import("./getCloudletsSharedPolicy").getCloudletsSharedPolicy = null as any;
+export const getCloudletsSharedPolicyOutput: typeof import("./getCloudletsSharedPolicy").getCloudletsSharedPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudletsSharedPolicy","getCloudletsSharedPolicyOutput"], () => require("./getCloudletsSharedPolicy"));
 
 export { GetCloudletsVisitorPrioritizationMatchRuleArgs, GetCloudletsVisitorPrioritizationMatchRuleResult, GetCloudletsVisitorPrioritizationMatchRuleOutputArgs } from "./getCloudletsVisitorPrioritizationMatchRule";
 export const getCloudletsVisitorPrioritizationMatchRule: typeof import("./getCloudletsVisitorPrioritizationMatchRule").getCloudletsVisitorPrioritizationMatchRule = null as any;
@@ -1060,6 +1080,16 @@ export const getGroups: typeof import("./getGroups").getGroups = null as any;
 export const getGroupsOutput: typeof import("./getGroups").getGroupsOutput = null as any;
 utilities.lazyLoad(exports, ["getGroups","getGroupsOutput"], () => require("./getGroups"));
 
+export { GetGtmAsmapArgs, GetGtmAsmapResult, GetGtmAsmapOutputArgs } from "./getGtmAsmap";
+export const getGtmAsmap: typeof import("./getGtmAsmap").getGtmAsmap = null as any;
+export const getGtmAsmapOutput: typeof import("./getGtmAsmap").getGtmAsmapOutput = null as any;
+utilities.lazyLoad(exports, ["getGtmAsmap","getGtmAsmapOutput"], () => require("./getGtmAsmap"));
+
+export { GetGtmCidrmapArgs, GetGtmCidrmapResult, GetGtmCidrmapOutputArgs } from "./getGtmCidrmap";
+export const getGtmCidrmap: typeof import("./getGtmCidrmap").getGtmCidrmap = null as any;
+export const getGtmCidrmapOutput: typeof import("./getGtmCidrmap").getGtmCidrmapOutput = null as any;
+utilities.lazyLoad(exports, ["getGtmCidrmap","getGtmCidrmapOutput"], () => require("./getGtmCidrmap"));
+
 export { GetGtmDatacenterArgs, GetGtmDatacenterResult, GetGtmDatacenterOutputArgs } from "./getGtmDatacenter";
 export const getGtmDatacenter: typeof import("./getGtmDatacenter").getGtmDatacenter = null as any;
 export const getGtmDatacenterOutput: typeof import("./getGtmDatacenter").getGtmDatacenterOutput = null as any;
@@ -1074,6 +1104,26 @@ export { GetGtmDefaultDatacenterArgs, GetGtmDefaultDatacenterResult, GetGtmDefau
 export const getGtmDefaultDatacenter: typeof import("./getGtmDefaultDatacenter").getGtmDefaultDatacenter = null as any;
 export const getGtmDefaultDatacenterOutput: typeof import("./getGtmDefaultDatacenter").getGtmDefaultDatacenterOutput = null as any;
 utilities.lazyLoad(exports, ["getGtmDefaultDatacenter","getGtmDefaultDatacenterOutput"], () => require("./getGtmDefaultDatacenter"));
+
+export { GetGtmDomainArgs, GetGtmDomainResult, GetGtmDomainOutputArgs } from "./getGtmDomain";
+export const getGtmDomain: typeof import("./getGtmDomain").getGtmDomain = null as any;
+export const getGtmDomainOutput: typeof import("./getGtmDomain").getGtmDomainOutput = null as any;
+utilities.lazyLoad(exports, ["getGtmDomain","getGtmDomainOutput"], () => require("./getGtmDomain"));
+
+export { GetGtmDomainsArgs, GetGtmDomainsResult, GetGtmDomainsOutputArgs } from "./getGtmDomains";
+export const getGtmDomains: typeof import("./getGtmDomains").getGtmDomains = null as any;
+export const getGtmDomainsOutput: typeof import("./getGtmDomains").getGtmDomainsOutput = null as any;
+utilities.lazyLoad(exports, ["getGtmDomains","getGtmDomainsOutput"], () => require("./getGtmDomains"));
+
+export { GetGtmResourceArgs, GetGtmResourceResult, GetGtmResourceOutputArgs } from "./getGtmResource";
+export const getGtmResource: typeof import("./getGtmResource").getGtmResource = null as any;
+export const getGtmResourceOutput: typeof import("./getGtmResource").getGtmResourceOutput = null as any;
+utilities.lazyLoad(exports, ["getGtmResource","getGtmResourceOutput"], () => require("./getGtmResource"));
+
+export { GetGtmResourcesArgs, GetGtmResourcesResult, GetGtmResourcesOutputArgs } from "./getGtmResources";
+export const getGtmResources: typeof import("./getGtmResources").getGtmResources = null as any;
+export const getGtmResourcesOutput: typeof import("./getGtmResources").getGtmResourcesOutput = null as any;
+utilities.lazyLoad(exports, ["getGtmResources","getGtmResourcesOutput"], () => require("./getGtmResources"));
 
 export { GetIamContactTypesResult } from "./getIamContactTypes";
 export const getIamContactTypes: typeof import("./getIamContactTypes").getIamContactTypes = null as any;
@@ -1305,6 +1355,11 @@ export type PropertyActivation = import("./propertyActivation").PropertyActivati
 export const PropertyActivation: typeof import("./propertyActivation").PropertyActivation = null as any;
 utilities.lazyLoad(exports, ["PropertyActivation"], () => require("./propertyActivation"));
 
+export { PropertyBootstrapArgs, PropertyBootstrapState } from "./propertyBootstrap";
+export type PropertyBootstrap = import("./propertyBootstrap").PropertyBootstrap;
+export const PropertyBootstrap: typeof import("./propertyBootstrap").PropertyBootstrap = null as any;
+utilities.lazyLoad(exports, ["PropertyBootstrap"], () => require("./propertyBootstrap"));
+
 export { PropertyIncludeArgs, PropertyIncludeState } from "./propertyInclude";
 export type PropertyInclude = import("./propertyInclude").PropertyInclude;
 export const PropertyInclude: typeof import("./propertyInclude").PropertyInclude = null as any;
@@ -1472,6 +1527,8 @@ const _module = {
                 return new BotmanCustomClient(name, <any>undefined, { urn })
             case "akamai:index/botmanCustomClientSequence:BotmanCustomClientSequence":
                 return new BotmanCustomClientSequence(name, <any>undefined, { urn })
+            case "akamai:index/botmanCustomCode:BotmanCustomCode":
+                return new BotmanCustomCode(name, <any>undefined, { urn })
             case "akamai:index/botmanCustomDefinedBot:BotmanCustomDefinedBot":
                 return new BotmanCustomDefinedBot(name, <any>undefined, { urn })
             case "akamai:index/botmanCustomDenyAction:BotmanCustomDenyAction":
@@ -1568,6 +1625,8 @@ const _module = {
                 return new Property(name, <any>undefined, { urn })
             case "akamai:index/propertyActivation:PropertyActivation":
                 return new PropertyActivation(name, <any>undefined, { urn })
+            case "akamai:index/propertyBootstrap:PropertyBootstrap":
+                return new PropertyBootstrap(name, <any>undefined, { urn })
             case "akamai:index/propertyInclude:PropertyInclude":
                 return new PropertyInclude(name, <any>undefined, { urn })
             case "akamai:index/propertyIncludeActivation:PropertyIncludeActivation":
@@ -1643,6 +1702,7 @@ pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomBotCategoryAc
 pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomBotCategorySequence", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomClient", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomClientSequence", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomCode", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomDefinedBot", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomDenyAction", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanJavascriptInjection", _module)
@@ -1691,6 +1751,7 @@ pulumi.runtime.registerResourceModule("akamai", "index/networkListDescription", 
 pulumi.runtime.registerResourceModule("akamai", "index/networkListSubscription", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/property", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/propertyActivation", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/propertyBootstrap", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/propertyInclude", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/propertyIncludeActivation", _module)
 pulumi.runtime.registerResourcePackage("akamai", {
