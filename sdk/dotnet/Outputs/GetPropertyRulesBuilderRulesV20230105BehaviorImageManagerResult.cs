@@ -26,11 +26,11 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly bool? ApplyBestFileType;
         /// <summary>
-        /// Assigns a CP code to track traffic and billing for original images that the Image and Video Manager has not modified.
+        /// Assigns a CP code to track traffic and billing for original images that the Image and Video Manager has not modified. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
         /// </summary>
         public readonly Outputs.GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerCpCodeOriginalResult? CpCodeOriginal;
         /// <summary>
-        /// Assigns a separate CP code to track traffic and billing for derived images.
+        /// Assigns a separate CP code to track traffic and billing for derived images. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
         /// </summary>
         public readonly Outputs.GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerCpCodeTransformedResult? CpCodeTransformed;
         /// <summary>

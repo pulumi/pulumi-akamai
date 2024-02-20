@@ -14,11 +14,11 @@ namespace Pulumi.Akamai.Outputs
     public sealed class CloudwrapperActivationTimeouts
     {
         /// <summary>
-        /// Optional configurable activation timeout to be used on resource create. By default it's 4h with 1s pooling interval.
+        /// Optional configurable activation timeout to be used on resource create. By default it's 4h with 1m pooling interval.
         /// </summary>
         public readonly string? Create;
         /// <summary>
-        /// Optional configurable activation timeout to be used on resource update. By default it's 4h with 1s pooling interval.
+        /// Optional configurable activation timeout to be used on resource update. By default it's 4h with 1m pooling interval.
         /// </summary>
         public readonly string? Update;
 

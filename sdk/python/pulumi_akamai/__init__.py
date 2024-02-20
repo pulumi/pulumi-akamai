@@ -71,6 +71,7 @@ from .botman_custom_bot_category_action import *
 from .botman_custom_bot_category_sequence import *
 from .botman_custom_client import *
 from .botman_custom_client_sequence import *
+from .botman_custom_code import *
 from .botman_custom_defined_bot import *
 from .botman_custom_deny_action import *
 from .botman_javascript_injection import *
@@ -171,6 +172,7 @@ from .get_botman_custom_bot_category_action import *
 from .get_botman_custom_bot_category_sequence import *
 from .get_botman_custom_client import *
 from .get_botman_custom_client_sequence import *
+from .get_botman_custom_code import *
 from .get_botman_custom_defined_bot import *
 from .get_botman_custom_deny_action import *
 from .get_botman_javascript_injection import *
@@ -188,7 +190,9 @@ from .get_cloudlets_edge_redirector_match_rule import *
 from .get_cloudlets_forward_rewrite_match_rule import *
 from .get_cloudlets_phased_release_match_rule import *
 from .get_cloudlets_policy import *
+from .get_cloudlets_policy_activation import *
 from .get_cloudlets_request_control_match_rule import *
+from .get_cloudlets_shared_policy import *
 from .get_cloudlets_visitor_prioritization_match_rule import *
 from .get_cloudwrapper_capacities import *
 from .get_cloudwrapper_configuration import *
@@ -216,9 +220,15 @@ from .get_edgekv_group_items import *
 from .get_edgekv_groups import *
 from .get_group import *
 from .get_groups import *
+from .get_gtm_asmap import *
+from .get_gtm_cidrmap import *
 from .get_gtm_datacenter import *
 from .get_gtm_datacenters import *
 from .get_gtm_default_datacenter import *
+from .get_gtm_domain import *
+from .get_gtm_domains import *
+from .get_gtm_resource import *
+from .get_gtm_resources import *
 from .get_iam_contact_types import *
 from .get_iam_countries import *
 from .get_iam_grantable_roles import *
@@ -265,6 +275,7 @@ from .network_list_description import *
 from .network_list_subscription import *
 from .property import *
 from .property_activation import *
+from .property_bootstrap import *
 from .property_include import *
 from .property_include_activation import *
 from .provider import *
@@ -820,6 +831,14 @@ _utilities.register(
  },
  {
   "pkg": "akamai",
+  "mod": "index/botmanCustomCode",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/botmanCustomCode:BotmanCustomCode": "BotmanCustomCode"
+  }
+ },
+ {
+  "pkg": "akamai",
   "mod": "index/botmanCustomDefinedBot",
   "fqn": "pulumi_akamai",
   "classes": {
@@ -1200,6 +1219,14 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/propertyActivation:PropertyActivation": "PropertyActivation"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/propertyBootstrap",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/propertyBootstrap:PropertyBootstrap": "PropertyBootstrap"
   }
  },
  {

@@ -21,16 +21,20 @@ class PropertyArgs:
                  product_id: pulumi.Input[str],
                  hostnames: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 property_id: Optional[pulumi.Input[str]] = None,
                  rule_format: Optional[pulumi.Input[str]] = None,
-                 rules: Optional[pulumi.Input[str]] = None):
+                 rules: Optional[pulumi.Input[str]] = None,
+                 version_notes: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Property resource.
         :param pulumi.Input[str] contract_id: Contract ID to be assigned to the Property
         :param pulumi.Input[str] group_id: Group ID to be assigned to the Property
         :param pulumi.Input[str] product_id: Product ID to be assigned to the Property
         :param pulumi.Input[str] name: Name to give to the Property (must be unique)
+        :param pulumi.Input[str] property_id: Property ID
         :param pulumi.Input[str] rule_format: Specify the rule format version (defaults to latest version available when created)
         :param pulumi.Input[str] rules: Property Rules as JSON
+        :param pulumi.Input[str] version_notes: Property version notes
         """
         pulumi.set(__self__, "contract_id", contract_id)
         pulumi.set(__self__, "group_id", group_id)
@@ -39,10 +43,14 @@ class PropertyArgs:
             pulumi.set(__self__, "hostnames", hostnames)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if property_id is not None:
+            pulumi.set(__self__, "property_id", property_id)
         if rule_format is not None:
             pulumi.set(__self__, "rule_format", rule_format)
         if rules is not None:
             pulumi.set(__self__, "rules", rules)
+        if version_notes is not None:
+            pulumi.set(__self__, "version_notes", version_notes)
 
     @property
     @pulumi.getter(name="contractId")
@@ -102,6 +110,18 @@ class PropertyArgs:
         pulumi.set(self, "name", value)
 
     @property
+    @pulumi.getter(name="propertyId")
+    def property_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Property ID
+        """
+        return pulumi.get(self, "property_id")
+
+    @property_id.setter
+    def property_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "property_id", value)
+
+    @property
     @pulumi.getter(name="ruleFormat")
     def rule_format(self) -> Optional[pulumi.Input[str]]:
         """
@@ -125,6 +145,18 @@ class PropertyArgs:
     def rules(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "rules", value)
 
+    @property
+    @pulumi.getter(name="versionNotes")
+    def version_notes(self) -> Optional[pulumi.Input[str]]:
+        """
+        Property version notes
+        """
+        return pulumi.get(self, "version_notes")
+
+    @version_notes.setter
+    def version_notes(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version_notes", value)
+
 
 @pulumi.input_type
 class _PropertyState:
@@ -136,11 +168,14 @@ class _PropertyState:
                  name: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
                  production_version: Optional[pulumi.Input[int]] = None,
+                 property_id: Optional[pulumi.Input[str]] = None,
                  read_version: Optional[pulumi.Input[int]] = None,
                  rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRuleErrorArgs']]]] = None,
                  rule_format: Optional[pulumi.Input[str]] = None,
+                 rule_warnings: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRuleWarningArgs']]]] = None,
                  rules: Optional[pulumi.Input[str]] = None,
-                 staging_version: Optional[pulumi.Input[int]] = None):
+                 staging_version: Optional[pulumi.Input[int]] = None,
+                 version_notes: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Property resources.
         :param pulumi.Input[str] contract_id: Contract ID to be assigned to the Property
@@ -149,10 +184,13 @@ class _PropertyState:
         :param pulumi.Input[str] name: Name to give to the Property (must be unique)
         :param pulumi.Input[str] product_id: Product ID to be assigned to the Property
         :param pulumi.Input[int] production_version: Property's version currently activated in production (zero when not active in production)
+        :param pulumi.Input[str] property_id: Property ID
         :param pulumi.Input[int] read_version: Required property's version to be read
         :param pulumi.Input[str] rule_format: Specify the rule format version (defaults to latest version available when created)
+        :param pulumi.Input[Sequence[pulumi.Input['PropertyRuleWarningArgs']]] rule_warnings: Rule validation warnings
         :param pulumi.Input[str] rules: Property Rules as JSON
         :param pulumi.Input[int] staging_version: Property's version currently activated in staging (zero when not active in staging)
+        :param pulumi.Input[str] version_notes: Property version notes
         """
         if contract_id is not None:
             pulumi.set(__self__, "contract_id", contract_id)
@@ -168,16 +206,22 @@ class _PropertyState:
             pulumi.set(__self__, "product_id", product_id)
         if production_version is not None:
             pulumi.set(__self__, "production_version", production_version)
+        if property_id is not None:
+            pulumi.set(__self__, "property_id", property_id)
         if read_version is not None:
             pulumi.set(__self__, "read_version", read_version)
         if rule_errors is not None:
             pulumi.set(__self__, "rule_errors", rule_errors)
         if rule_format is not None:
             pulumi.set(__self__, "rule_format", rule_format)
+        if rule_warnings is not None:
+            pulumi.set(__self__, "rule_warnings", rule_warnings)
         if rules is not None:
             pulumi.set(__self__, "rules", rules)
         if staging_version is not None:
             pulumi.set(__self__, "staging_version", staging_version)
+        if version_notes is not None:
+            pulumi.set(__self__, "version_notes", version_notes)
 
     @property
     @pulumi.getter(name="contractId")
@@ -261,6 +305,18 @@ class _PropertyState:
         pulumi.set(self, "production_version", value)
 
     @property
+    @pulumi.getter(name="propertyId")
+    def property_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Property ID
+        """
+        return pulumi.get(self, "property_id")
+
+    @property_id.setter
+    def property_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "property_id", value)
+
+    @property
     @pulumi.getter(name="readVersion")
     def read_version(self) -> Optional[pulumi.Input[int]]:
         """
@@ -294,6 +350,18 @@ class _PropertyState:
         pulumi.set(self, "rule_format", value)
 
     @property
+    @pulumi.getter(name="ruleWarnings")
+    def rule_warnings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRuleWarningArgs']]]]:
+        """
+        Rule validation warnings
+        """
+        return pulumi.get(self, "rule_warnings")
+
+    @rule_warnings.setter
+    def rule_warnings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRuleWarningArgs']]]]):
+        pulumi.set(self, "rule_warnings", value)
+
+    @property
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[str]]:
         """
@@ -317,6 +385,18 @@ class _PropertyState:
     def staging_version(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "staging_version", value)
 
+    @property
+    @pulumi.getter(name="versionNotes")
+    def version_notes(self) -> Optional[pulumi.Input[str]]:
+        """
+        Property version notes
+        """
+        return pulumi.get(self, "version_notes")
+
+    @version_notes.setter
+    def version_notes(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version_notes", value)
+
 
 class Property(pulumi.CustomResource):
     @overload
@@ -328,8 +408,10 @@ class Property(pulumi.CustomResource):
                  hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyHostnameArgs']]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
+                 property_id: Optional[pulumi.Input[str]] = None,
                  rule_format: Optional[pulumi.Input[str]] = None,
                  rules: Optional[pulumi.Input[str]] = None,
+                 version_notes: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         Create a Property resource with the given unique name, props, and options.
@@ -339,8 +421,10 @@ class Property(pulumi.CustomResource):
         :param pulumi.Input[str] group_id: Group ID to be assigned to the Property
         :param pulumi.Input[str] name: Name to give to the Property (must be unique)
         :param pulumi.Input[str] product_id: Product ID to be assigned to the Property
+        :param pulumi.Input[str] property_id: Property ID
         :param pulumi.Input[str] rule_format: Specify the rule format version (defaults to latest version available when created)
         :param pulumi.Input[str] rules: Property Rules as JSON
+        :param pulumi.Input[str] version_notes: Property version notes
         """
         ...
     @overload
@@ -370,8 +454,10 @@ class Property(pulumi.CustomResource):
                  hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyHostnameArgs']]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
+                 property_id: Optional[pulumi.Input[str]] = None,
                  rule_format: Optional[pulumi.Input[str]] = None,
                  rules: Optional[pulumi.Input[str]] = None,
+                 version_notes: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -392,12 +478,15 @@ class Property(pulumi.CustomResource):
             if product_id is None and not opts.urn:
                 raise TypeError("Missing required property 'product_id'")
             __props__.__dict__["product_id"] = product_id
+            __props__.__dict__["property_id"] = property_id
             __props__.__dict__["rule_format"] = rule_format
             __props__.__dict__["rules"] = rules
+            __props__.__dict__["version_notes"] = version_notes
             __props__.__dict__["latest_version"] = None
             __props__.__dict__["production_version"] = None
             __props__.__dict__["read_version"] = None
             __props__.__dict__["rule_errors"] = None
+            __props__.__dict__["rule_warnings"] = None
             __props__.__dict__["staging_version"] = None
         alias_opts = pulumi.ResourceOptions(aliases=[pulumi.Alias(type_="akamai:properties/property:Property")])
         opts = pulumi.ResourceOptions.merge(opts, alias_opts)
@@ -418,11 +507,14 @@ class Property(pulumi.CustomResource):
             name: Optional[pulumi.Input[str]] = None,
             product_id: Optional[pulumi.Input[str]] = None,
             production_version: Optional[pulumi.Input[int]] = None,
+            property_id: Optional[pulumi.Input[str]] = None,
             read_version: Optional[pulumi.Input[int]] = None,
             rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyRuleErrorArgs']]]]] = None,
             rule_format: Optional[pulumi.Input[str]] = None,
+            rule_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyRuleWarningArgs']]]]] = None,
             rules: Optional[pulumi.Input[str]] = None,
-            staging_version: Optional[pulumi.Input[int]] = None) -> 'Property':
+            staging_version: Optional[pulumi.Input[int]] = None,
+            version_notes: Optional[pulumi.Input[str]] = None) -> 'Property':
         """
         Get an existing Property resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -436,10 +528,13 @@ class Property(pulumi.CustomResource):
         :param pulumi.Input[str] name: Name to give to the Property (must be unique)
         :param pulumi.Input[str] product_id: Product ID to be assigned to the Property
         :param pulumi.Input[int] production_version: Property's version currently activated in production (zero when not active in production)
+        :param pulumi.Input[str] property_id: Property ID
         :param pulumi.Input[int] read_version: Required property's version to be read
         :param pulumi.Input[str] rule_format: Specify the rule format version (defaults to latest version available when created)
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyRuleWarningArgs']]]] rule_warnings: Rule validation warnings
         :param pulumi.Input[str] rules: Property Rules as JSON
         :param pulumi.Input[int] staging_version: Property's version currently activated in staging (zero when not active in staging)
+        :param pulumi.Input[str] version_notes: Property version notes
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -452,11 +547,14 @@ class Property(pulumi.CustomResource):
         __props__.__dict__["name"] = name
         __props__.__dict__["product_id"] = product_id
         __props__.__dict__["production_version"] = production_version
+        __props__.__dict__["property_id"] = property_id
         __props__.__dict__["read_version"] = read_version
         __props__.__dict__["rule_errors"] = rule_errors
         __props__.__dict__["rule_format"] = rule_format
+        __props__.__dict__["rule_warnings"] = rule_warnings
         __props__.__dict__["rules"] = rules
         __props__.__dict__["staging_version"] = staging_version
+        __props__.__dict__["version_notes"] = version_notes
         return Property(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -513,6 +611,14 @@ class Property(pulumi.CustomResource):
         return pulumi.get(self, "production_version")
 
     @property
+    @pulumi.getter(name="propertyId")
+    def property_id(self) -> pulumi.Output[Optional[str]]:
+        """
+        Property ID
+        """
+        return pulumi.get(self, "property_id")
+
+    @property
     @pulumi.getter(name="readVersion")
     def read_version(self) -> pulumi.Output[int]:
         """
@@ -534,6 +640,14 @@ class Property(pulumi.CustomResource):
         return pulumi.get(self, "rule_format")
 
     @property
+    @pulumi.getter(name="ruleWarnings")
+    def rule_warnings(self) -> pulumi.Output[Sequence['outputs.PropertyRuleWarning']]:
+        """
+        Rule validation warnings
+        """
+        return pulumi.get(self, "rule_warnings")
+
+    @property
     @pulumi.getter
     def rules(self) -> pulumi.Output[str]:
         """
@@ -548,4 +662,12 @@ class Property(pulumi.CustomResource):
         Property's version currently activated in staging (zero when not active in staging)
         """
         return pulumi.get(self, "staging_version")
+
+    @property
+    @pulumi.getter(name="versionNotes")
+    def version_notes(self) -> pulumi.Output[str]:
+        """
+        Property version notes
+        """
+        return pulumi.get(self, "version_notes")
 

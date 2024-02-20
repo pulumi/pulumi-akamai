@@ -271,7 +271,7 @@ namespace Pulumi.Akamai.Inputs
         public Inputs.GetPropertyRulesBuilderRulesV20230530BehaviorCloudWrapperAdvancedArgs? CloudWrapperAdvanced { get; set; }
 
         /// <summary>
-        /// This behavior can be used in includes.
+        /// Use this behavior to send expanded playback information as CMCD metadata in requests from a media player. Edge servers may use this metadata for segment prefetching to optimize your content's delivery, or for logging. For more details and additional property requirements, see the `Adaptive Media Delivery` documentation. This behavior can be used in includes.
         /// </summary>
         [Input("commonMediaClientData")]
         public Inputs.GetPropertyRulesBuilderRulesV20230530BehaviorCommonMediaClientDataArgs? CommonMediaClientData { get; set; }
@@ -283,7 +283,7 @@ namespace Pulumi.Akamai.Inputs
         public Inputs.GetPropertyRulesBuilderRulesV20230530BehaviorConditionalOriginArgs? ConditionalOrigin { get; set; }
 
         /// <summary>
-        /// This behavior constructs an HTTP response, complete with HTTP status code and body, to serve from the edge independently of your origin. It supports all request methods except for `POST`. This behavior can be used in includes.
+        /// This behavior constructs an HTTP response, complete with HTTP status code and body, to serve from the edge independently of your origin. For example, you might want to send a customized response if the URL doesn't point to an object on the origin server, or if the end user is not authorized to view the requested content. You can use it with all request methods you allow for your property, including POST. For more details, see the `allowOptions`, `allowPatch`, `allowPost`, `allowPut`, and `allowDelete` behaviors. This behavior can be used in includes.
         /// </summary>
         [Input("constructResponse")]
         public Inputs.GetPropertyRulesBuilderRulesV20230530BehaviorConstructResponseArgs? ConstructResponse { get; set; }
@@ -343,7 +343,7 @@ namespace Pulumi.Akamai.Inputs
         public Inputs.GetPropertyRulesBuilderRulesV20230530BehaviorCorsSupportArgs? CorsSupport { get; set; }
 
         /// <summary>
-        /// Content Provider Codes (CP codes) allow you to distinguish various reporting and billing segments. You receive a CP code when purchasing Akamai service, and you need it to access properties. This behavior allows you to apply any valid CP code, including additional ones you may request from Akamai Professional Services. For a CP code to be valid, it needs to belong to the same contract and be associated with the same product as the property, and the group needs access to it. This behavior can be used in includes.
+        /// Content Provider Codes (CP codes) allow you to distinguish various reporting and billing traffic segments, and you need them to access properties. You receive an initial CP code when purchasing Akamai, and you can run the `Create a new CP code` operation to generate more. This behavior applies any valid CP code, either as required as a default at the top of the rule tree, or subsequently to override the default. For a CP code to be valid, it needs to be assigned the same contract and product as the property, and the group needs access to it.  For available values, run the `List CP codes` operation. This behavior can be used in includes.
         /// </summary>
         [Input("cpCode")]
         public Inputs.GetPropertyRulesBuilderRulesV20230530BehaviorCpCodeArgs? CpCode { get; set; }
@@ -1063,7 +1063,7 @@ namespace Pulumi.Akamai.Inputs
         public Inputs.GetPropertyRulesBuilderRulesV20230530BehaviorResponseCookieArgs? ResponseCookie { get; set; }
 
         /// <summary>
-        /// You need this behavior to deploy the Object Caching product. It disables serving HTML content and limits the maximum object size to 100MB. Contact Akamai Professional Services for help configuring it. This behavior is for internal usage only. This behavior can be used in includes.
+        /// You need this behavior to deploy the Object Caching product. It disables serving HTML content and limits the maximum object size to 100MB. Contact Akamai Professional Services for help configuring it. This behavior can be used in includes.
         /// </summary>
         [Input("restrictObjectCaching")]
         public Inputs.GetPropertyRulesBuilderRulesV20230530BehaviorRestrictObjectCachingArgs? RestrictObjectCaching { get; set; }

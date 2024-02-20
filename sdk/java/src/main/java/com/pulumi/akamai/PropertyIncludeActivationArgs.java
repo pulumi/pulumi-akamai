@@ -4,6 +4,7 @@
 package com.pulumi.akamai;
 
 import com.pulumi.akamai.inputs.PropertyIncludeActivationComplianceRecordArgs;
+import com.pulumi.akamai.inputs.PropertyIncludeActivationTimeoutsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
@@ -141,6 +142,21 @@ public final class PropertyIncludeActivationArgs extends com.pulumi.resources.Re
     }
 
     /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Import(name="timeouts")
+    private @Nullable Output<PropertyIncludeActivationTimeoutsArgs> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Optional<Output<PropertyIncludeActivationTimeoutsArgs>> timeouts() {
+        return Optional.ofNullable(this.timeouts);
+    }
+
+    /**
      * The unique identifier of the include
      * 
      */
@@ -166,6 +182,7 @@ public final class PropertyIncludeActivationArgs extends com.pulumi.resources.Re
         this.network = $.network;
         this.note = $.note;
         this.notifyEmails = $.notifyEmails;
+        this.timeouts = $.timeouts;
         this.version = $.version;
     }
 
@@ -363,6 +380,27 @@ public final class PropertyIncludeActivationArgs extends com.pulumi.resources.Re
          */
         public Builder notifyEmails(String... notifyEmails) {
             return notifyEmails(List.of(notifyEmails));
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(@Nullable Output<PropertyIncludeActivationTimeoutsArgs> timeouts) {
+            $.timeouts = timeouts;
+            return this;
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(PropertyIncludeActivationTimeoutsArgs timeouts) {
+            return timeouts(Output.of(timeouts));
         }
 
         /**

@@ -6,30 +6,47 @@ package com.pulumi.akamai;
 import com.pulumi.akamai.CloudletsPolicyActivationArgs;
 import com.pulumi.akamai.Utilities;
 import com.pulumi.akamai.inputs.CloudletsPolicyActivationState;
+import com.pulumi.akamai.outputs.CloudletsPolicyActivationTimeouts;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @ResourceType(type="akamai:index/cloudletsPolicyActivation:CloudletsPolicyActivation")
 public class CloudletsPolicyActivation extends com.pulumi.resources.CustomResource {
     /**
-     * Set of property IDs to link to this Cloudlets policy
+     * Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
      * 
      */
     @Export(name="associatedProperties", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> associatedProperties;
+    private Output</* @Nullable */ List<String>> associatedProperties;
 
     /**
-     * @return Set of property IDs to link to this Cloudlets policy
+     * @return Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
      * 
      */
-    public Output<List<String>> associatedProperties() {
-        return this.associatedProperties;
+    public Output<Optional<List<String>>> associatedProperties() {
+        return Codegen.optional(this.associatedProperties);
+    }
+    /**
+     * Indicates if policy that is being activated is a shared policy
+     * 
+     */
+    @Export(name="isShared", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isShared;
+
+    /**
+     * @return Indicates if policy that is being activated is a shared policy
+     * 
+     */
+    public Output<Boolean> isShared() {
+        return this.isShared;
     }
     /**
      * The network you want to activate the policy version on (options are Staging and Production)
@@ -72,6 +89,20 @@ public class CloudletsPolicyActivation extends com.pulumi.resources.CustomResour
      */
     public Output<String> status() {
         return this.status;
+    }
+    /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Export(name="timeouts", refs={CloudletsPolicyActivationTimeouts.class}, tree="[0]")
+    private Output</* @Nullable */ CloudletsPolicyActivationTimeouts> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Output<Optional<CloudletsPolicyActivationTimeouts>> timeouts() {
+        return Codegen.optional(this.timeouts);
     }
     /**
      * Cloudlets policy version you want to activate

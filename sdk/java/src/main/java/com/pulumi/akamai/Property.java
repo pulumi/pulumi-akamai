@@ -8,6 +8,7 @@ import com.pulumi.akamai.Utilities;
 import com.pulumi.akamai.inputs.PropertyState;
 import com.pulumi.akamai.outputs.PropertyHostname;
 import com.pulumi.akamai.outputs.PropertyRuleError;
+import com.pulumi.akamai.outputs.PropertyRuleWarning;
 import com.pulumi.core.Alias;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
@@ -112,6 +113,20 @@ public class Property extends com.pulumi.resources.CustomResource {
         return this.productionVersion;
     }
     /**
+     * Property ID
+     * 
+     */
+    @Export(name="propertyId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> propertyId;
+
+    /**
+     * @return Property ID
+     * 
+     */
+    public Output<Optional<String>> propertyId() {
+        return Codegen.optional(this.propertyId);
+    }
+    /**
      * Required property&#39;s version to be read
      * 
      */
@@ -146,6 +161,20 @@ public class Property extends com.pulumi.resources.CustomResource {
         return this.ruleFormat;
     }
     /**
+     * Rule validation warnings
+     * 
+     */
+    @Export(name="ruleWarnings", refs={List.class,PropertyRuleWarning.class}, tree="[0,1]")
+    private Output<List<PropertyRuleWarning>> ruleWarnings;
+
+    /**
+     * @return Rule validation warnings
+     * 
+     */
+    public Output<List<PropertyRuleWarning>> ruleWarnings() {
+        return this.ruleWarnings;
+    }
+    /**
      * Property Rules as JSON
      * 
      */
@@ -172,6 +201,20 @@ public class Property extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> stagingVersion() {
         return this.stagingVersion;
+    }
+    /**
+     * Property version notes
+     * 
+     */
+    @Export(name="versionNotes", refs={String.class}, tree="[0]")
+    private Output<String> versionNotes;
+
+    /**
+     * @return Property version notes
+     * 
+     */
+    public Output<String> versionNotes() {
+        return this.versionNotes;
     }
 
     /**

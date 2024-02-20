@@ -48,14 +48,14 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorConstructRespons
     }
 
     /**
-     * Removes the underlying object from the cache, since it is not being served.
+     * For GET requests from clients, this forces edge servers to evict the underlying object from cache. Defaults to `false`.
      * 
      */
     @Import(name="forceEviction")
     private @Nullable Output<Boolean> forceEviction;
 
     /**
-     * @return Removes the underlying object from the cache, since it is not being served.
+     * @return For GET requests from clients, this forces edge servers to evict the underlying object from cache. Defaults to `false`.
      * 
      */
     public Optional<Output<Boolean>> forceEviction() {
@@ -211,7 +211,7 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorConstructRespons
         }
 
         /**
-         * @param forceEviction Removes the underlying object from the cache, since it is not being served.
+         * @param forceEviction For GET requests from clients, this forces edge servers to evict the underlying object from cache. Defaults to `false`.
          * 
          * @return builder
          * 
@@ -222,7 +222,7 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorConstructRespons
         }
 
         /**
-         * @param forceEviction Removes the underlying object from the cache, since it is not being served.
+         * @param forceEviction For GET requests from clients, this forces edge servers to evict the underlying object from cache. Defaults to `false`.
          * 
          * @return builder
          * 

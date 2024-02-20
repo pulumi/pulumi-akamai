@@ -54,6 +54,12 @@ namespace Pulumi.Akamai.Inputs
         [Input("rolloutDuration")]
         public Input<string>? RolloutDuration { get; set; }
 
+        /// <summary>
+        /// The amount of time in seconds that the policy will serve stale images. During the serve stale period realtime images will attempt to use the offline image from the previous policy version first if possible.
+        /// </summary>
+        [Input("serveStaleDuration")]
+        public Input<string>? ServeStaleDuration { get; set; }
+
         [Input("transformations")]
         private InputList<Inputs.GetImagingPolicyImagePolicyTransformationInputArgs>? _transformations;
 

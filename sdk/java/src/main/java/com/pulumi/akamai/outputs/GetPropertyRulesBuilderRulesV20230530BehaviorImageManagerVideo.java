@@ -30,12 +30,12 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerVide
      */
     private @Nullable Boolean applyBestFileType;
     /**
-     * @return Select the CP code for which to track Image and Video Manager video traffic. Use this along with `cpCodeTransformed` to track traffic to derivative video content.
+     * @return Specifies the CP code for which to track Image and Video Manager video traffic. Use this along with `cpCodeTransformed` to track traffic to derivative video content. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     private @Nullable GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerVideoCpCodeOriginal cpCodeOriginal;
     /**
-     * @return Select the CP code to identify derivative transformed video content.
+     * @return Specifies the CP code to identify derivative transformed video content. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     private @Nullable GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerVideoCpCodeTransformed cpCodeTransformed;
@@ -60,7 +60,7 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerVide
      */
     private @Nullable String policyToken;
     /**
-     * @return Specify the default policy identifier, which is registered with the `Image and Video Manager API` once you activate this property.
+     * @return Specifies the default policy identifier, which is registered with the `Image and Video Manager API` once you activate this property.
      * 
      */
     private @Nullable String policyTokenDefault;
@@ -123,14 +123,14 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerVide
         return Optional.ofNullable(this.applyBestFileType);
     }
     /**
-     * @return Select the CP code for which to track Image and Video Manager video traffic. Use this along with `cpCodeTransformed` to track traffic to derivative video content.
+     * @return Specifies the CP code for which to track Image and Video Manager video traffic. Use this along with `cpCodeTransformed` to track traffic to derivative video content. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     public Optional<GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerVideoCpCodeOriginal> cpCodeOriginal() {
         return Optional.ofNullable(this.cpCodeOriginal);
     }
     /**
-     * @return Select the CP code to identify derivative transformed video content.
+     * @return Specifies the CP code to identify derivative transformed video content. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     public Optional<GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerVideoCpCodeTransformed> cpCodeTransformed() {
@@ -165,7 +165,7 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerVide
         return Optional.ofNullable(this.policyToken);
     }
     /**
-     * @return Specify the default policy identifier, which is registered with the `Image and Video Manager API` once you activate this property.
+     * @return Specifies the default policy identifier, which is registered with the `Image and Video Manager API` once you activate this property.
      * 
      */
     public Optional<String> policyTokenDefault() {

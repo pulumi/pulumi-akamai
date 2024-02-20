@@ -28,7 +28,7 @@ namespace Pulumi.Akamai.Outputs
         /// <summary>
         /// Organizational unit of organization
         /// </summary>
-        public readonly string OrganizationalUnit;
+        public readonly string? OrganizationalUnit;
         /// <summary>
         /// For the Let's Encrypt Domain Validated (DV) SAN certificates, the preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default
         /// </summary>
@@ -36,7 +36,7 @@ namespace Pulumi.Akamai.Outputs
         /// <summary>
         /// State or province of organization location
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
 
         [OutputConstructor]
         private CpsThirdPartyEnrollmentCsr(
@@ -46,11 +46,11 @@ namespace Pulumi.Akamai.Outputs
 
             string organization,
 
-            string organizationalUnit,
+            string? organizationalUnit,
 
             string? preferredTrustChain,
 
-            string state)
+            string? state)
         {
             City = city;
             CountryCode = countryCode;

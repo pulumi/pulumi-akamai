@@ -158,7 +158,7 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly bool? WaitingRoomCookieShareLabel;
         /// <summary>
-        /// Specifies a `cpcode` object for requests sent to the waiting room, including a numeric `id` key and a descriptive `name`.
+        /// Specifies a CP code for requests sent to the waiting room. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
         /// </summary>
         public readonly Outputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomCpCodeResult? WaitingRoomCpCode;
         /// <summary>

@@ -48,9 +48,6 @@ namespace Pulumi.Akamai.Inputs
         [Input("awsAccessKeyVersionGuid")]
         public Input<string>? AwsAccessKeyVersionGuid { get; set; }
 
-        /// <summary>
-        /// Specifies the AWS region code that represents the location of your AWS bucket.
-        /// </summary>
         [Input("awsArRegion")]
         public Input<string>? AwsArRegion { get; set; }
 
@@ -108,9 +105,6 @@ namespace Pulumi.Akamai.Inputs
         [Input("encodingVersion")]
         public Input<int>? EncodingVersion { get; set; }
 
-        /// <summary>
-        /// Specifies the code of your AWS service. It precedes `.amazonaws.com` or the region code in your AWS hostname.
-        /// </summary>
         [Input("endPointService")]
         public Input<string>? EndPointService { get; set; }
 
@@ -132,9 +126,6 @@ namespace Pulumi.Akamai.Inputs
         [Input("gcsHmacKeySecret")]
         public Input<string>? GcsHmacKeySecret { get; set; }
 
-        /// <summary>
-        /// Whether to include the hostname used to access this delivery configuration as an additional identifier tag in the Assume Role verification call to AWS. You'll need to include this hostname (`AK_HOST`) in a condition in your `AWS IAM policy` for validation.
-        /// </summary>
         [Input("hostnameTag")]
         public Input<bool>? HostnameTag { get; set; }
 
@@ -168,15 +159,9 @@ namespace Pulumi.Akamai.Inputs
         [Input("originLocationTitle")]
         public Input<string>? OriginLocationTitle { get; set; }
 
-        /// <summary>
-        /// Whether to include the property identifier for this delivery configuration as an additional identifier tag in the Assume Role verification call to AWS. You'll need to include the property identifier (`AK_ARLID`) in a condition in your `AWS IAM policy` for validation.
-        /// </summary>
         [Input("propertyIdTag")]
         public Input<bool>? PropertyIdTag { get; set; }
 
-        /// <summary>
-        /// The Amazon Resource Name (ARN) of the `AWS IAM role` you want to use. This role needs to be configured with the proper permissions for your target resources. The `AWS IAM policy` needs to contain the trust relationships defining other users that can assume this role.
-        /// </summary>
         [Input("roleArn")]
         public Input<string>? RoleArn { get; set; }
 

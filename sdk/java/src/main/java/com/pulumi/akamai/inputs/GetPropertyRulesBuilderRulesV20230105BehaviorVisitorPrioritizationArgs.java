@@ -562,14 +562,14 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritiz
     }
 
     /**
-     * Specifies a `cpcode` object for requests sent to the waiting room, including a numeric `id` key and a descriptive `name`.
+     * Specifies a CP code for requests sent to the waiting room. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     @Import(name="waitingRoomCpCode")
     private @Nullable Output<GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomCpCodeArgs> waitingRoomCpCode;
 
     /**
-     * @return Specifies a `cpcode` object for requests sent to the waiting room, including a numeric `id` key and a descriptive `name`.
+     * @return Specifies a CP code for requests sent to the waiting room. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     public Optional<Output<GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomCpCodeArgs>> waitingRoomCpCode() {
@@ -1493,7 +1493,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritiz
         }
 
         /**
-         * @param waitingRoomCpCode Specifies a `cpcode` object for requests sent to the waiting room, including a numeric `id` key and a descriptive `name`.
+         * @param waitingRoomCpCode Specifies a CP code for requests sent to the waiting room. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
          * 
          * @return builder
          * 
@@ -1504,7 +1504,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritiz
         }
 
         /**
-         * @param waitingRoomCpCode Specifies a `cpcode` object for requests sent to the waiting room, including a numeric `id` key and a descriptive `name`.
+         * @param waitingRoomCpCode Specifies a CP code for requests sent to the waiting room. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
          * 
          * @return builder
          * 

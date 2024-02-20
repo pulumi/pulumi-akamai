@@ -6,8 +6,11 @@ package com.pulumi.akamai.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetPropertyHostnamesArgs extends com.pulumi.resources.InvokeArgs {
@@ -35,12 +38,20 @@ public final class GetPropertyHostnamesArgs extends com.pulumi.resources.InvokeA
         return this.propertyId;
     }
 
+    @Import(name="version")
+    private @Nullable Output<Integer> version;
+
+    public Optional<Output<Integer>> version() {
+        return Optional.ofNullable(this.version);
+    }
+
     private GetPropertyHostnamesArgs() {}
 
     private GetPropertyHostnamesArgs(GetPropertyHostnamesArgs $) {
         this.contractId = $.contractId;
         this.groupId = $.groupId;
         this.propertyId = $.propertyId;
+        this.version = $.version;
     }
 
     public static Builder builder() {
@@ -86,6 +97,15 @@ public final class GetPropertyHostnamesArgs extends com.pulumi.resources.InvokeA
 
         public Builder propertyId(String propertyId) {
             return propertyId(Output.of(propertyId));
+        }
+
+        public Builder version(@Nullable Output<Integer> version) {
+            $.version = version;
+            return this;
+        }
+
+        public Builder version(Integer version) {
+            return version(Output.of(version));
         }
 
         public GetPropertyHostnamesArgs build() {

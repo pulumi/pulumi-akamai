@@ -30,11 +30,11 @@ public final class GetPropertyActivationPlainArgs extends com.pulumi.resources.I
         return this.propertyId;
     }
 
-    @Import(name="version", required=true)
-    private Integer version;
+    @Import(name="version")
+    private @Nullable Integer version;
 
-    public Integer version() {
-        return this.version;
+    public Optional<Integer> version() {
+        return Optional.ofNullable(this.version);
     }
 
     private GetPropertyActivationPlainArgs() {}
@@ -73,7 +73,7 @@ public final class GetPropertyActivationPlainArgs extends com.pulumi.resources.I
             return this;
         }
 
-        public Builder version(Integer version) {
+        public Builder version(@Nullable Integer version) {
             $.version = version;
             return this;
         }
@@ -81,9 +81,6 @@ public final class GetPropertyActivationPlainArgs extends com.pulumi.resources.I
         public GetPropertyActivationPlainArgs build() {
             if ($.propertyId == null) {
                 throw new MissingRequiredPropertyException("GetPropertyActivationPlainArgs", "propertyId");
-            }
-            if ($.version == null) {
-                throw new MissingRequiredPropertyException("GetPropertyActivationPlainArgs", "version");
             }
             return $;
         }

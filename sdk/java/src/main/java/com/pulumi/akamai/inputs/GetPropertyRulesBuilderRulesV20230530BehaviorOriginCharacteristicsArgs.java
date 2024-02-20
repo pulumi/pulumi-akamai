@@ -108,17 +108,9 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteri
         return Optional.ofNullable(this.awsAccessKeyVersionGuid);
     }
 
-    /**
-     * Specifies the AWS region code that represents the location of your AWS bucket.
-     * 
-     */
     @Import(name="awsArRegion")
     private @Nullable Output<String> awsArRegion;
 
-    /**
-     * @return Specifies the AWS region code that represents the location of your AWS bucket.
-     * 
-     */
     public Optional<Output<String>> awsArRegion() {
         return Optional.ofNullable(this.awsArRegion);
     }
@@ -243,17 +235,9 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteri
         return Optional.ofNullable(this.encodingVersion);
     }
 
-    /**
-     * Specifies the code of your AWS service. It precedes `.amazonaws.com` or the region code in your AWS hostname.
-     * 
-     */
     @Import(name="endPointService")
     private @Nullable Output<String> endPointService;
 
-    /**
-     * @return Specifies the code of your AWS service. It precedes `.amazonaws.com` or the region code in your AWS hostname.
-     * 
-     */
     public Optional<Output<String>> endPointService() {
         return Optional.ofNullable(this.endPointService);
     }
@@ -303,17 +287,9 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteri
         return Optional.ofNullable(this.gcsHmacKeySecret);
     }
 
-    /**
-     * Whether to include the hostname used to access this delivery configuration as an additional identifier tag in the Assume Role verification call to AWS. You&#39;ll need to include this hostname (`AK_HOST`) in a condition in your `AWS IAM policy` for validation.
-     * 
-     */
     @Import(name="hostnameTag")
     private @Nullable Output<Boolean> hostnameTag;
 
-    /**
-     * @return Whether to include the hostname used to access this delivery configuration as an additional identifier tag in the Assume Role verification call to AWS. You&#39;ll need to include this hostname (`AK_HOST`) in a condition in your `AWS IAM policy` for validation.
-     * 
-     */
     public Optional<Output<Boolean>> hostnameTag() {
         return Optional.ofNullable(this.hostnameTag);
     }
@@ -393,32 +369,16 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteri
         return Optional.ofNullable(this.originLocationTitle);
     }
 
-    /**
-     * Whether to include the property identifier for this delivery configuration as an additional identifier tag in the Assume Role verification call to AWS. You&#39;ll need to include the property identifier (`AK_ARLID`) in a condition in your `AWS IAM policy` for validation.
-     * 
-     */
     @Import(name="propertyIdTag")
     private @Nullable Output<Boolean> propertyIdTag;
 
-    /**
-     * @return Whether to include the property identifier for this delivery configuration as an additional identifier tag in the Assume Role verification call to AWS. You&#39;ll need to include the property identifier (`AK_ARLID`) in a condition in your `AWS IAM policy` for validation.
-     * 
-     */
     public Optional<Output<Boolean>> propertyIdTag() {
         return Optional.ofNullable(this.propertyIdTag);
     }
 
-    /**
-     * The Amazon Resource Name (ARN) of the `AWS IAM role` you want to use. This role needs to be configured with the proper permissions for your target resources. The `AWS IAM policy` needs to contain the trust relationships defining other users that can assume this role.
-     * 
-     */
     @Import(name="roleArn")
     private @Nullable Output<String> roleArn;
 
-    /**
-     * @return The Amazon Resource Name (ARN) of the `AWS IAM role` you want to use. This role needs to be configured with the proper permissions for your target resources. The `AWS IAM policy` needs to contain the trust relationships defining other users that can assume this role.
-     * 
-     */
     public Optional<Output<String>> roleArn() {
         return Optional.ofNullable(this.roleArn);
     }
@@ -663,23 +623,11 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteri
             return awsAccessKeyVersionGuid(Output.of(awsAccessKeyVersionGuid));
         }
 
-        /**
-         * @param awsArRegion Specifies the AWS region code that represents the location of your AWS bucket.
-         * 
-         * @return builder
-         * 
-         */
         public Builder awsArRegion(@Nullable Output<String> awsArRegion) {
             $.awsArRegion = awsArRegion;
             return this;
         }
 
-        /**
-         * @param awsArRegion Specifies the AWS region code that represents the location of your AWS bucket.
-         * 
-         * @return builder
-         * 
-         */
         public Builder awsArRegion(String awsArRegion) {
             return awsArRegion(Output.of(awsArRegion));
         }
@@ -862,23 +810,11 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteri
             return encodingVersion(Output.of(encodingVersion));
         }
 
-        /**
-         * @param endPointService Specifies the code of your AWS service. It precedes `.amazonaws.com` or the region code in your AWS hostname.
-         * 
-         * @return builder
-         * 
-         */
         public Builder endPointService(@Nullable Output<String> endPointService) {
             $.endPointService = endPointService;
             return this;
         }
 
-        /**
-         * @param endPointService Specifies the code of your AWS service. It precedes `.amazonaws.com` or the region code in your AWS hostname.
-         * 
-         * @return builder
-         * 
-         */
         public Builder endPointService(String endPointService) {
             return endPointService(Output.of(endPointService));
         }
@@ -946,23 +882,11 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteri
             return gcsHmacKeySecret(Output.of(gcsHmacKeySecret));
         }
 
-        /**
-         * @param hostnameTag Whether to include the hostname used to access this delivery configuration as an additional identifier tag in the Assume Role verification call to AWS. You&#39;ll need to include this hostname (`AK_HOST`) in a condition in your `AWS IAM policy` for validation.
-         * 
-         * @return builder
-         * 
-         */
         public Builder hostnameTag(@Nullable Output<Boolean> hostnameTag) {
             $.hostnameTag = hostnameTag;
             return this;
         }
 
-        /**
-         * @param hostnameTag Whether to include the hostname used to access this delivery configuration as an additional identifier tag in the Assume Role verification call to AWS. You&#39;ll need to include this hostname (`AK_HOST`) in a condition in your `AWS IAM policy` for validation.
-         * 
-         * @return builder
-         * 
-         */
         public Builder hostnameTag(Boolean hostnameTag) {
             return hostnameTag(Output.of(hostnameTag));
         }
@@ -1072,44 +996,20 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteri
             return originLocationTitle(Output.of(originLocationTitle));
         }
 
-        /**
-         * @param propertyIdTag Whether to include the property identifier for this delivery configuration as an additional identifier tag in the Assume Role verification call to AWS. You&#39;ll need to include the property identifier (`AK_ARLID`) in a condition in your `AWS IAM policy` for validation.
-         * 
-         * @return builder
-         * 
-         */
         public Builder propertyIdTag(@Nullable Output<Boolean> propertyIdTag) {
             $.propertyIdTag = propertyIdTag;
             return this;
         }
 
-        /**
-         * @param propertyIdTag Whether to include the property identifier for this delivery configuration as an additional identifier tag in the Assume Role verification call to AWS. You&#39;ll need to include the property identifier (`AK_ARLID`) in a condition in your `AWS IAM policy` for validation.
-         * 
-         * @return builder
-         * 
-         */
         public Builder propertyIdTag(Boolean propertyIdTag) {
             return propertyIdTag(Output.of(propertyIdTag));
         }
 
-        /**
-         * @param roleArn The Amazon Resource Name (ARN) of the `AWS IAM role` you want to use. This role needs to be configured with the proper permissions for your target resources. The `AWS IAM policy` needs to contain the trust relationships defining other users that can assume this role.
-         * 
-         * @return builder
-         * 
-         */
         public Builder roleArn(@Nullable Output<String> roleArn) {
             $.roleArn = roleArn;
             return this;
         }
 
-        /**
-         * @param roleArn The Amazon Resource Name (ARN) of the `AWS IAM role` you want to use. This role needs to be configured with the proper permissions for your target resources. The `AWS IAM policy` needs to contain the trust relationships defining other users that can assume this role.
-         * 
-         * @return builder
-         * 
-         */
         public Builder roleArn(String roleArn) {
             return roleArn(Output.of(roleArn));
         }

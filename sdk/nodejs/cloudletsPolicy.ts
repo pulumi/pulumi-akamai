@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export class CloudletsPolicy extends pulumi.CustomResource {
@@ -37,7 +39,7 @@ export class CloudletsPolicy extends pulumi.CustomResource {
      */
     public readonly cloudletCode!: pulumi.Output<string>;
     /**
-     * An integer that corresponds to a Cloudlets policy type (0 or 9)
+     * An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies
      */
     public /*out*/ readonly cloudletId!: pulumi.Output<number>;
     /**
@@ -48,6 +50,10 @@ export class CloudletsPolicy extends pulumi.CustomResource {
      * Defines the group association for the policy. You must have edit privileges for the group
      */
     public readonly groupId!: pulumi.Output<string>;
+    /**
+     * The type of policy that you want to create
+     */
+    public readonly isShared!: pulumi.Output<boolean | undefined>;
     /**
      * The version of the Cloudlet specific matchRules
      */
@@ -60,6 +66,10 @@ export class CloudletsPolicy extends pulumi.CustomResource {
      * The name of the policy. The name must be unique
      */
     public readonly name!: pulumi.Output<string>;
+    /**
+     * Enables to set timeout for processing
+     */
+    public readonly timeouts!: pulumi.Output<outputs.CloudletsPolicyTimeouts | undefined>;
     /**
      * The version number of the policy
      */
@@ -86,9 +96,11 @@ export class CloudletsPolicy extends pulumi.CustomResource {
             resourceInputs["cloudletId"] = state ? state.cloudletId : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["groupId"] = state ? state.groupId : undefined;
+            resourceInputs["isShared"] = state ? state.isShared : undefined;
             resourceInputs["matchRuleFormat"] = state ? state.matchRuleFormat : undefined;
             resourceInputs["matchRules"] = state ? state.matchRules : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
             resourceInputs["version"] = state ? state.version : undefined;
             resourceInputs["warnings"] = state ? state.warnings : undefined;
         } else {
@@ -102,9 +114,11 @@ export class CloudletsPolicy extends pulumi.CustomResource {
             resourceInputs["cloudletCode"] = args ? args.cloudletCode : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["groupId"] = args ? args.groupId : undefined;
+            resourceInputs["isShared"] = args ? args.isShared : undefined;
             resourceInputs["matchRuleFormat"] = args ? args.matchRuleFormat : undefined;
             resourceInputs["matchRules"] = args ? args.matchRules : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
             resourceInputs["cloudletId"] = undefined /*out*/;
             resourceInputs["version"] = undefined /*out*/;
             resourceInputs["warnings"] = undefined /*out*/;
@@ -123,7 +137,7 @@ export interface CloudletsPolicyState {
      */
     cloudletCode?: pulumi.Input<string>;
     /**
-     * An integer that corresponds to a Cloudlets policy type (0 or 9)
+     * An integer that corresponds to a non-shared Cloudlets policy type (0 to 9). Not used for shared policies
      */
     cloudletId?: pulumi.Input<number>;
     /**
@@ -134,6 +148,10 @@ export interface CloudletsPolicyState {
      * Defines the group association for the policy. You must have edit privileges for the group
      */
     groupId?: pulumi.Input<string>;
+    /**
+     * The type of policy that you want to create
+     */
+    isShared?: pulumi.Input<boolean>;
     /**
      * The version of the Cloudlet specific matchRules
      */
@@ -146,6 +164,10 @@ export interface CloudletsPolicyState {
      * The name of the policy. The name must be unique
      */
     name?: pulumi.Input<string>;
+    /**
+     * Enables to set timeout for processing
+     */
+    timeouts?: pulumi.Input<inputs.CloudletsPolicyTimeouts>;
     /**
      * The version number of the policy
      */
@@ -173,6 +195,10 @@ export interface CloudletsPolicyArgs {
      */
     groupId: pulumi.Input<string>;
     /**
+     * The type of policy that you want to create
+     */
+    isShared?: pulumi.Input<boolean>;
+    /**
      * The version of the Cloudlet specific matchRules
      */
     matchRuleFormat?: pulumi.Input<string>;
@@ -184,4 +210,8 @@ export interface CloudletsPolicyArgs {
      * The name of the policy. The name must be unique
      */
     name?: pulumi.Input<string>;
+    /**
+     * Enables to set timeout for processing
+     */
+    timeouts?: pulumi.Input<inputs.CloudletsPolicyTimeouts>;
 }

@@ -3,6 +3,7 @@
 
 package com.pulumi.akamai;
 
+import com.pulumi.akamai.inputs.EdgeHostNameTimeoutsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
@@ -61,18 +62,33 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Email address that should receive updates on the IP behavior update request. Required for update operation.
+     * Email address that should receive updates on the IP behavior update request.
      * 
      */
     @Import(name="statusUpdateEmails")
     private @Nullable Output<List<String>> statusUpdateEmails;
 
     /**
-     * @return Email address that should receive updates on the IP behavior update request. Required for update operation.
+     * @return Email address that should receive updates on the IP behavior update request.
      * 
      */
     public Optional<Output<List<String>>> statusUpdateEmails() {
         return Optional.ofNullable(this.statusUpdateEmails);
+    }
+
+    /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Import(name="timeouts")
+    private @Nullable Output<EdgeHostNameTimeoutsArgs> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Optional<Output<EdgeHostNameTimeoutsArgs>> timeouts() {
+        return Optional.ofNullable(this.timeouts);
     }
 
     /**
@@ -100,6 +116,7 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
         this.ipBehavior = $.ipBehavior;
         this.productId = $.productId;
         this.statusUpdateEmails = $.statusUpdateEmails;
+        this.timeouts = $.timeouts;
         this.useCases = $.useCases;
     }
 
@@ -176,7 +193,7 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param statusUpdateEmails Email address that should receive updates on the IP behavior update request. Required for update operation.
+         * @param statusUpdateEmails Email address that should receive updates on the IP behavior update request.
          * 
          * @return builder
          * 
@@ -187,7 +204,7 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param statusUpdateEmails Email address that should receive updates on the IP behavior update request. Required for update operation.
+         * @param statusUpdateEmails Email address that should receive updates on the IP behavior update request.
          * 
          * @return builder
          * 
@@ -197,13 +214,34 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param statusUpdateEmails Email address that should receive updates on the IP behavior update request. Required for update operation.
+         * @param statusUpdateEmails Email address that should receive updates on the IP behavior update request.
          * 
          * @return builder
          * 
          */
         public Builder statusUpdateEmails(String... statusUpdateEmails) {
             return statusUpdateEmails(List.of(statusUpdateEmails));
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(@Nullable Output<EdgeHostNameTimeoutsArgs> timeouts) {
+            $.timeouts = timeouts;
+            return this;
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(EdgeHostNameTimeoutsArgs timeouts) {
+            return timeouts(Output.of(timeouts));
         }
 
         /**

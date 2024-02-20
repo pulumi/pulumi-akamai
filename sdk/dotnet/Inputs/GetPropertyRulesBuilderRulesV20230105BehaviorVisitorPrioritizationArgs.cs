@@ -241,7 +241,7 @@ namespace Pulumi.Akamai.Inputs
         public Input<bool>? WaitingRoomCookieShareLabel { get; set; }
 
         /// <summary>
-        /// Specifies a `cpcode` object for requests sent to the waiting room, including a numeric `id` key and a descriptive `name`.
+        /// Specifies a CP code for requests sent to the waiting room. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
         /// </summary>
         [Input("waitingRoomCpCode")]
         public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomCpCodeInputArgs>? WaitingRoomCpCode { get; set; }

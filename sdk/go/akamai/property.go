@@ -28,15 +28,21 @@ type Property struct {
 	ProductId pulumi.StringOutput `pulumi:"productId"`
 	// Property's version currently activated in production (zero when not active in production)
 	ProductionVersion pulumi.IntOutput `pulumi:"productionVersion"`
+	// Property ID
+	PropertyId pulumi.StringPtrOutput `pulumi:"propertyId"`
 	// Required property's version to be read
 	ReadVersion pulumi.IntOutput             `pulumi:"readVersion"`
 	RuleErrors  PropertyRuleErrorArrayOutput `pulumi:"ruleErrors"`
 	// Specify the rule format version (defaults to latest version available when created)
 	RuleFormat pulumi.StringOutput `pulumi:"ruleFormat"`
+	// Rule validation warnings
+	RuleWarnings PropertyRuleWarningArrayOutput `pulumi:"ruleWarnings"`
 	// Property Rules as JSON
 	Rules pulumi.StringOutput `pulumi:"rules"`
 	// Property's version currently activated in staging (zero when not active in staging)
 	StagingVersion pulumi.IntOutput `pulumi:"stagingVersion"`
+	// Property version notes
+	VersionNotes pulumi.StringOutput `pulumi:"versionNotes"`
 }
 
 // NewProperty registers a new resource with the given unique name, arguments, and options.
@@ -97,15 +103,21 @@ type propertyState struct {
 	ProductId *string `pulumi:"productId"`
 	// Property's version currently activated in production (zero when not active in production)
 	ProductionVersion *int `pulumi:"productionVersion"`
+	// Property ID
+	PropertyId *string `pulumi:"propertyId"`
 	// Required property's version to be read
 	ReadVersion *int                `pulumi:"readVersion"`
 	RuleErrors  []PropertyRuleError `pulumi:"ruleErrors"`
 	// Specify the rule format version (defaults to latest version available when created)
 	RuleFormat *string `pulumi:"ruleFormat"`
+	// Rule validation warnings
+	RuleWarnings []PropertyRuleWarning `pulumi:"ruleWarnings"`
 	// Property Rules as JSON
 	Rules *string `pulumi:"rules"`
 	// Property's version currently activated in staging (zero when not active in staging)
 	StagingVersion *int `pulumi:"stagingVersion"`
+	// Property version notes
+	VersionNotes *string `pulumi:"versionNotes"`
 }
 
 type PropertyState struct {
@@ -122,15 +134,21 @@ type PropertyState struct {
 	ProductId pulumi.StringPtrInput
 	// Property's version currently activated in production (zero when not active in production)
 	ProductionVersion pulumi.IntPtrInput
+	// Property ID
+	PropertyId pulumi.StringPtrInput
 	// Required property's version to be read
 	ReadVersion pulumi.IntPtrInput
 	RuleErrors  PropertyRuleErrorArrayInput
 	// Specify the rule format version (defaults to latest version available when created)
 	RuleFormat pulumi.StringPtrInput
+	// Rule validation warnings
+	RuleWarnings PropertyRuleWarningArrayInput
 	// Property Rules as JSON
 	Rules pulumi.StringPtrInput
 	// Property's version currently activated in staging (zero when not active in staging)
 	StagingVersion pulumi.IntPtrInput
+	// Property version notes
+	VersionNotes pulumi.StringPtrInput
 }
 
 func (PropertyState) ElementType() reflect.Type {
@@ -147,10 +165,14 @@ type propertyArgs struct {
 	Name *string `pulumi:"name"`
 	// Product ID to be assigned to the Property
 	ProductId string `pulumi:"productId"`
+	// Property ID
+	PropertyId *string `pulumi:"propertyId"`
 	// Specify the rule format version (defaults to latest version available when created)
 	RuleFormat *string `pulumi:"ruleFormat"`
 	// Property Rules as JSON
 	Rules *string `pulumi:"rules"`
+	// Property version notes
+	VersionNotes *string `pulumi:"versionNotes"`
 }
 
 // The set of arguments for constructing a Property resource.
@@ -164,10 +186,14 @@ type PropertyArgs struct {
 	Name pulumi.StringPtrInput
 	// Product ID to be assigned to the Property
 	ProductId pulumi.StringInput
+	// Property ID
+	PropertyId pulumi.StringPtrInput
 	// Specify the rule format version (defaults to latest version available when created)
 	RuleFormat pulumi.StringPtrInput
 	// Property Rules as JSON
 	Rules pulumi.StringPtrInput
+	// Property version notes
+	VersionNotes pulumi.StringPtrInput
 }
 
 func (PropertyArgs) ElementType() reflect.Type {
@@ -291,6 +317,11 @@ func (o PropertyOutput) ProductionVersion() pulumi.IntOutput {
 	return o.ApplyT(func(v *Property) pulumi.IntOutput { return v.ProductionVersion }).(pulumi.IntOutput)
 }
 
+// Property ID
+func (o PropertyOutput) PropertyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Property) pulumi.StringPtrOutput { return v.PropertyId }).(pulumi.StringPtrOutput)
+}
+
 // Required property's version to be read
 func (o PropertyOutput) ReadVersion() pulumi.IntOutput {
 	return o.ApplyT(func(v *Property) pulumi.IntOutput { return v.ReadVersion }).(pulumi.IntOutput)
@@ -305,6 +336,11 @@ func (o PropertyOutput) RuleFormat() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.RuleFormat }).(pulumi.StringOutput)
 }
 
+// Rule validation warnings
+func (o PropertyOutput) RuleWarnings() PropertyRuleWarningArrayOutput {
+	return o.ApplyT(func(v *Property) PropertyRuleWarningArrayOutput { return v.RuleWarnings }).(PropertyRuleWarningArrayOutput)
+}
+
 // Property Rules as JSON
 func (o PropertyOutput) Rules() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.Rules }).(pulumi.StringOutput)
@@ -313,6 +349,11 @@ func (o PropertyOutput) Rules() pulumi.StringOutput {
 // Property's version currently activated in staging (zero when not active in staging)
 func (o PropertyOutput) StagingVersion() pulumi.IntOutput {
 	return o.ApplyT(func(v *Property) pulumi.IntOutput { return v.StagingVersion }).(pulumi.IntOutput)
+}
+
+// Property version notes
+func (o PropertyOutput) VersionNotes() pulumi.StringOutput {
+	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.VersionNotes }).(pulumi.StringOutput)
 }
 
 type PropertyArrayOutput struct{ *pulumi.OutputState }

@@ -114,6 +114,12 @@ namespace Pulumi.Akamai
         [Output("techContact")]
         public Output<Outputs.CpsThirdPartyEnrollmentTechContact> TechContact { get; private set; } = null!;
 
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Output("timeouts")]
+        public Output<Outputs.CpsThirdPartyEnrollmentTimeouts?> Timeouts { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a CpsThirdPartyEnrollment resource with the given unique name, arguments, and options.
@@ -274,6 +280,12 @@ namespace Pulumi.Akamai
         [Input("techContact", required: true)]
         public Input<Inputs.CpsThirdPartyEnrollmentTechContactArgs> TechContact { get; set; } = null!;
 
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.CpsThirdPartyEnrollmentTimeoutsArgs>? Timeouts { get; set; }
+
         public CpsThirdPartyEnrollmentArgs()
         {
         }
@@ -395,6 +407,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("techContact")]
         public Input<Inputs.CpsThirdPartyEnrollmentTechContactGetArgs>? TechContact { get; set; }
+
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.CpsThirdPartyEnrollmentTimeoutsGetArgs>? Timeouts { get; set; }
 
         public CpsThirdPartyEnrollmentState()
         {

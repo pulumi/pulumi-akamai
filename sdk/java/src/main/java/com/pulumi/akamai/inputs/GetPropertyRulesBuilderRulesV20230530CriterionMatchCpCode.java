@@ -62,14 +62,14 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionMatchCpCode ext
     }
 
     /**
-     * Specifies an object that encodes the matching `value`, including an `id` key and a descriptive `name`.
+     * Specifies the CP code as an object. You only need to provide the initial `id` to match the CP code, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     @Import(name="value")
     private @Nullable GetPropertyRulesBuilderRulesV20230530CriterionMatchCpCodeValue value;
 
     /**
-     * @return Specifies an object that encodes the matching `value`, including an `id` key and a descriptive `name`.
+     * @return Specifies the CP code as an object. You only need to provide the initial `id` to match the CP code, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     public Optional<GetPropertyRulesBuilderRulesV20230530CriterionMatchCpCodeValue> value() {
@@ -137,7 +137,7 @@ public final class GetPropertyRulesBuilderRulesV20230530CriterionMatchCpCode ext
         }
 
         /**
-         * @param value Specifies an object that encodes the matching `value`, including an `id` key and a descriptive `name`.
+         * @param value Specifies the CP code as an object. You only need to provide the initial `id` to match the CP code, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
          * 
          * @return builder
          * 

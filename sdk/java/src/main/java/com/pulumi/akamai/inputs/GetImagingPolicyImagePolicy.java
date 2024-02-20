@@ -96,6 +96,21 @@ public final class GetImagingPolicyImagePolicy extends com.pulumi.resources.Invo
     }
 
     /**
+     * The amount of time in seconds that the policy will serve stale images. During the serve stale period realtime images will attempt to use the offline image from the previous policy version first if possible.
+     * 
+     */
+    @Import(name="serveStaleDuration")
+    private @Nullable String serveStaleDuration;
+
+    /**
+     * @return The amount of time in seconds that the policy will serve stale images. During the serve stale period realtime images will attempt to use the offline image from the previous policy version first if possible.
+     * 
+     */
+    public Optional<String> serveStaleDuration() {
+        return Optional.ofNullable(this.serveStaleDuration);
+    }
+
+    /**
      * Set of image transformations to apply to the source image. If unspecified, no operations are performed.
      * 
      */
@@ -133,6 +148,7 @@ public final class GetImagingPolicyImagePolicy extends com.pulumi.resources.Invo
         this.output = $.output;
         this.postBreakpointTransformations = $.postBreakpointTransformations;
         this.rolloutDuration = $.rolloutDuration;
+        this.serveStaleDuration = $.serveStaleDuration;
         this.transformations = $.transformations;
         this.variables = $.variables;
     }
@@ -227,6 +243,17 @@ public final class GetImagingPolicyImagePolicy extends com.pulumi.resources.Invo
          */
         public Builder rolloutDuration(@Nullable String rolloutDuration) {
             $.rolloutDuration = rolloutDuration;
+            return this;
+        }
+
+        /**
+         * @param serveStaleDuration The amount of time in seconds that the policy will serve stale images. During the serve stale period realtime images will attempt to use the offline image from the previous policy version first if possible.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serveStaleDuration(@Nullable String serveStaleDuration) {
+            $.serveStaleDuration = serveStaleDuration;
             return this;
         }
 

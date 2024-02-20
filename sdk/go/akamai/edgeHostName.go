@@ -21,8 +21,10 @@ type EdgeHostName struct {
 	GroupId      pulumi.StringOutput `pulumi:"groupId"`
 	IpBehavior   pulumi.StringOutput `pulumi:"ipBehavior"`
 	ProductId    pulumi.StringOutput `pulumi:"productId"`
-	// Email address that should receive updates on the IP behavior update request. Required for update operation.
+	// Email address that should receive updates on the IP behavior update request.
 	StatusUpdateEmails pulumi.StringArrayOutput `pulumi:"statusUpdateEmails"`
+	// Enables to set timeout for processing
+	Timeouts EdgeHostNameTimeoutsPtrOutput `pulumi:"timeouts"`
 	// A JSON encoded list of use cases
 	UseCases pulumi.StringPtrOutput `pulumi:"useCases"`
 }
@@ -81,8 +83,10 @@ type edgeHostNameState struct {
 	GroupId      *string `pulumi:"groupId"`
 	IpBehavior   *string `pulumi:"ipBehavior"`
 	ProductId    *string `pulumi:"productId"`
-	// Email address that should receive updates on the IP behavior update request. Required for update operation.
+	// Email address that should receive updates on the IP behavior update request.
 	StatusUpdateEmails []string `pulumi:"statusUpdateEmails"`
+	// Enables to set timeout for processing
+	Timeouts *EdgeHostNameTimeouts `pulumi:"timeouts"`
 	// A JSON encoded list of use cases
 	UseCases *string `pulumi:"useCases"`
 }
@@ -94,8 +98,10 @@ type EdgeHostNameState struct {
 	GroupId      pulumi.StringPtrInput
 	IpBehavior   pulumi.StringPtrInput
 	ProductId    pulumi.StringPtrInput
-	// Email address that should receive updates on the IP behavior update request. Required for update operation.
+	// Email address that should receive updates on the IP behavior update request.
 	StatusUpdateEmails pulumi.StringArrayInput
+	// Enables to set timeout for processing
+	Timeouts EdgeHostNameTimeoutsPtrInput
 	// A JSON encoded list of use cases
 	UseCases pulumi.StringPtrInput
 }
@@ -111,8 +117,10 @@ type edgeHostNameArgs struct {
 	GroupId      string  `pulumi:"groupId"`
 	IpBehavior   string  `pulumi:"ipBehavior"`
 	ProductId    *string `pulumi:"productId"`
-	// Email address that should receive updates on the IP behavior update request. Required for update operation.
+	// Email address that should receive updates on the IP behavior update request.
 	StatusUpdateEmails []string `pulumi:"statusUpdateEmails"`
+	// Enables to set timeout for processing
+	Timeouts *EdgeHostNameTimeouts `pulumi:"timeouts"`
 	// A JSON encoded list of use cases
 	UseCases *string `pulumi:"useCases"`
 }
@@ -125,8 +133,10 @@ type EdgeHostNameArgs struct {
 	GroupId      pulumi.StringInput
 	IpBehavior   pulumi.StringInput
 	ProductId    pulumi.StringPtrInput
-	// Email address that should receive updates on the IP behavior update request. Required for update operation.
+	// Email address that should receive updates on the IP behavior update request.
 	StatusUpdateEmails pulumi.StringArrayInput
+	// Enables to set timeout for processing
+	Timeouts EdgeHostNameTimeoutsPtrInput
 	// A JSON encoded list of use cases
 	UseCases pulumi.StringPtrInput
 }
@@ -242,9 +252,14 @@ func (o EdgeHostNameOutput) ProductId() pulumi.StringOutput {
 	return o.ApplyT(func(v *EdgeHostName) pulumi.StringOutput { return v.ProductId }).(pulumi.StringOutput)
 }
 
-// Email address that should receive updates on the IP behavior update request. Required for update operation.
+// Email address that should receive updates on the IP behavior update request.
 func (o EdgeHostNameOutput) StatusUpdateEmails() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *EdgeHostName) pulumi.StringArrayOutput { return v.StatusUpdateEmails }).(pulumi.StringArrayOutput)
+}
+
+// Enables to set timeout for processing
+func (o EdgeHostNameOutput) Timeouts() EdgeHostNameTimeoutsPtrOutput {
+	return o.ApplyT(func(v *EdgeHostName) EdgeHostNameTimeoutsPtrOutput { return v.Timeouts }).(EdgeHostNameTimeoutsPtrOutput)
 }
 
 // A JSON encoded list of use cases

@@ -3,6 +3,7 @@
 
 package com.pulumi.akamai;
 
+import com.pulumi.akamai.inputs.EdgeWorkerTimeoutsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
@@ -77,6 +78,21 @@ public final class EdgeWorkerArgs extends com.pulumi.resources.ResourceArgs {
         return this.resourceTierId;
     }
 
+    /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Import(name="timeouts")
+    private @Nullable Output<EdgeWorkerTimeoutsArgs> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Optional<Output<EdgeWorkerTimeoutsArgs>> timeouts() {
+        return Optional.ofNullable(this.timeouts);
+    }
+
     private EdgeWorkerArgs() {}
 
     private EdgeWorkerArgs(EdgeWorkerArgs $) {
@@ -84,6 +100,7 @@ public final class EdgeWorkerArgs extends com.pulumi.resources.ResourceArgs {
         this.localBundle = $.localBundle;
         this.name = $.name;
         this.resourceTierId = $.resourceTierId;
+        this.timeouts = $.timeouts;
     }
 
     public static Builder builder() {
@@ -186,6 +203,27 @@ public final class EdgeWorkerArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder resourceTierId(Integer resourceTierId) {
             return resourceTierId(Output.of(resourceTierId));
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(@Nullable Output<EdgeWorkerTimeoutsArgs> timeouts) {
+            $.timeouts = timeouts;
+            return this;
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(EdgeWorkerTimeoutsArgs timeouts) {
+            return timeouts(Output.of(timeouts));
         }
 
         public EdgeWorkerArgs build() {

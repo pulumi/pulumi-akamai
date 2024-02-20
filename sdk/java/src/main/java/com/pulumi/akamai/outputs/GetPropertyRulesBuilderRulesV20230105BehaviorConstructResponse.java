@@ -24,7 +24,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorConstructRespons
      */
     private @Nullable Boolean enabled;
     /**
-     * @return Removes the underlying object from the cache, since it is not being served.
+     * @return For GET requests from clients, this forces edge servers to evict the underlying object from cache. Defaults to `false`.
      * 
      */
     private @Nullable Boolean forceEviction;
@@ -70,7 +70,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorConstructRespons
         return Optional.ofNullable(this.enabled);
     }
     /**
-     * @return Removes the underlying object from the cache, since it is not being served.
+     * @return For GET requests from clients, this forces edge servers to evict the underlying object from cache. Defaults to `false`.
      * 
      */
     public Optional<Boolean> forceEviction() {

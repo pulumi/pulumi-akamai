@@ -15,14 +15,18 @@ import (
 type CloudletsPolicyActivation struct {
 	pulumi.CustomResourceState
 
-	// Set of property IDs to link to this Cloudlets policy
+	// Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
 	AssociatedProperties pulumi.StringArrayOutput `pulumi:"associatedProperties"`
+	// Indicates if policy that is being activated is a shared policy
+	IsShared pulumi.BoolOutput `pulumi:"isShared"`
 	// The network you want to activate the policy version on (options are Staging and Production)
 	Network pulumi.StringOutput `pulumi:"network"`
 	// ID of the Cloudlets policy you want to activate
 	PolicyId pulumi.IntOutput `pulumi:"policyId"`
 	// Activation status for this Cloudlets policy
 	Status pulumi.StringOutput `pulumi:"status"`
+	// Enables to set timeout for processing
+	Timeouts CloudletsPolicyActivationTimeoutsPtrOutput `pulumi:"timeouts"`
 	// Cloudlets policy version you want to activate
 	Version pulumi.IntOutput `pulumi:"version"`
 }
@@ -34,9 +38,6 @@ func NewCloudletsPolicyActivation(ctx *pulumi.Context,
 		return nil, errors.New("missing one or more required arguments")
 	}
 
-	if args.AssociatedProperties == nil {
-		return nil, errors.New("invalid value for required argument 'AssociatedProperties'")
-	}
 	if args.Network == nil {
 		return nil, errors.New("invalid value for required argument 'Network'")
 	}
@@ -69,27 +70,35 @@ func GetCloudletsPolicyActivation(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CloudletsPolicyActivation resources.
 type cloudletsPolicyActivationState struct {
-	// Set of property IDs to link to this Cloudlets policy
+	// Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
 	AssociatedProperties []string `pulumi:"associatedProperties"`
+	// Indicates if policy that is being activated is a shared policy
+	IsShared *bool `pulumi:"isShared"`
 	// The network you want to activate the policy version on (options are Staging and Production)
 	Network *string `pulumi:"network"`
 	// ID of the Cloudlets policy you want to activate
 	PolicyId *int `pulumi:"policyId"`
 	// Activation status for this Cloudlets policy
 	Status *string `pulumi:"status"`
+	// Enables to set timeout for processing
+	Timeouts *CloudletsPolicyActivationTimeouts `pulumi:"timeouts"`
 	// Cloudlets policy version you want to activate
 	Version *int `pulumi:"version"`
 }
 
 type CloudletsPolicyActivationState struct {
-	// Set of property IDs to link to this Cloudlets policy
+	// Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
 	AssociatedProperties pulumi.StringArrayInput
+	// Indicates if policy that is being activated is a shared policy
+	IsShared pulumi.BoolPtrInput
 	// The network you want to activate the policy version on (options are Staging and Production)
 	Network pulumi.StringPtrInput
 	// ID of the Cloudlets policy you want to activate
 	PolicyId pulumi.IntPtrInput
 	// Activation status for this Cloudlets policy
 	Status pulumi.StringPtrInput
+	// Enables to set timeout for processing
+	Timeouts CloudletsPolicyActivationTimeoutsPtrInput
 	// Cloudlets policy version you want to activate
 	Version pulumi.IntPtrInput
 }
@@ -99,24 +108,28 @@ func (CloudletsPolicyActivationState) ElementType() reflect.Type {
 }
 
 type cloudletsPolicyActivationArgs struct {
-	// Set of property IDs to link to this Cloudlets policy
+	// Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
 	AssociatedProperties []string `pulumi:"associatedProperties"`
 	// The network you want to activate the policy version on (options are Staging and Production)
 	Network string `pulumi:"network"`
 	// ID of the Cloudlets policy you want to activate
 	PolicyId int `pulumi:"policyId"`
+	// Enables to set timeout for processing
+	Timeouts *CloudletsPolicyActivationTimeouts `pulumi:"timeouts"`
 	// Cloudlets policy version you want to activate
 	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a CloudletsPolicyActivation resource.
 type CloudletsPolicyActivationArgs struct {
-	// Set of property IDs to link to this Cloudlets policy
+	// Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
 	AssociatedProperties pulumi.StringArrayInput
 	// The network you want to activate the policy version on (options are Staging and Production)
 	Network pulumi.StringInput
 	// ID of the Cloudlets policy you want to activate
 	PolicyId pulumi.IntInput
+	// Enables to set timeout for processing
+	Timeouts CloudletsPolicyActivationTimeoutsPtrInput
 	// Cloudlets policy version you want to activate
 	Version pulumi.IntInput
 }
@@ -208,9 +221,14 @@ func (o CloudletsPolicyActivationOutput) ToCloudletsPolicyActivationOutputWithCo
 	return o
 }
 
-// Set of property IDs to link to this Cloudlets policy
+// Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
 func (o CloudletsPolicyActivationOutput) AssociatedProperties() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *CloudletsPolicyActivation) pulumi.StringArrayOutput { return v.AssociatedProperties }).(pulumi.StringArrayOutput)
+}
+
+// Indicates if policy that is being activated is a shared policy
+func (o CloudletsPolicyActivationOutput) IsShared() pulumi.BoolOutput {
+	return o.ApplyT(func(v *CloudletsPolicyActivation) pulumi.BoolOutput { return v.IsShared }).(pulumi.BoolOutput)
 }
 
 // The network you want to activate the policy version on (options are Staging and Production)
@@ -226,6 +244,11 @@ func (o CloudletsPolicyActivationOutput) PolicyId() pulumi.IntOutput {
 // Activation status for this Cloudlets policy
 func (o CloudletsPolicyActivationOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudletsPolicyActivation) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+}
+
+// Enables to set timeout for processing
+func (o CloudletsPolicyActivationOutput) Timeouts() CloudletsPolicyActivationTimeoutsPtrOutput {
+	return o.ApplyT(func(v *CloudletsPolicyActivation) CloudletsPolicyActivationTimeoutsPtrOutput { return v.Timeouts }).(CloudletsPolicyActivationTimeoutsPtrOutput)
 }
 
 // Cloudlets policy version you want to activate

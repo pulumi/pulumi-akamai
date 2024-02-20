@@ -61,7 +61,7 @@ namespace Pulumi.Akamai.Inputs
         public Input<string>? TemplateUuid { get; set; }
 
         /// <summary>
-        /// Specifies the CP code as an object.
+        /// Specifies the CP code as an object. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
         /// </summary>
         [Input("throttledCpCode")]
         public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritizationThrottledCpCodeInputArgs>? ThrottledCpCode { get; set; }

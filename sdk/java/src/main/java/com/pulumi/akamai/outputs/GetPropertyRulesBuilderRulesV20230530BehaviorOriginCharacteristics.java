@@ -44,10 +44,6 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteri
      * 
      */
     private @Nullable String awsAccessKeyVersionGuid;
-    /**
-     * @return Specifies the AWS region code that represents the location of your AWS bucket.
-     * 
-     */
     private @Nullable String awsArRegion;
     /**
      * @return This specifies the AWS hostname, without `http://` or `https://` prefixes. If you leave this option empty, it inherits the hostname from the `origin` behavior.
@@ -89,10 +85,6 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteri
      * 
      */
     private @Nullable Integer encodingVersion;
-    /**
-     * @return Specifies the code of your AWS service. It precedes `.amazonaws.com` or the region code in your AWS hostname.
-     * 
-     */
     private @Nullable String endPointService;
     /**
      * @return Identifies the unique `gcsAccessKeyVersionGuid` access key `created` in Cloud Access Manager to sign your requests to Google Cloud Storage in interoperability mode.
@@ -109,10 +101,6 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteri
      * 
      */
     private @Nullable String gcsHmacKeySecret;
-    /**
-     * @return Whether to include the hostname used to access this delivery configuration as an additional identifier tag in the Assume Role verification call to AWS. You&#39;ll need to include this hostname (`AK_HOST`) in a condition in your `AWS IAM policy` for validation.
-     * 
-     */
     private @Nullable Boolean hostnameTag;
     /**
      * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
@@ -139,15 +127,7 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteri
      * 
      */
     private @Nullable String originLocationTitle;
-    /**
-     * @return Whether to include the property identifier for this delivery configuration as an additional identifier tag in the Assume Role verification call to AWS. You&#39;ll need to include the property identifier (`AK_ARLID`) in a condition in your `AWS IAM policy` for validation.
-     * 
-     */
     private @Nullable Boolean propertyIdTag;
-    /**
-     * @return The Amazon Resource Name (ARN) of the `AWS IAM role` you want to use. This role needs to be configured with the proper permissions for your target resources. The `AWS IAM policy` needs to contain the trust relationships defining other users that can assume this role.
-     * 
-     */
     private @Nullable String roleArn;
     /**
      * @return Specifies the shared secret key.
@@ -213,10 +193,6 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteri
     public Optional<String> awsAccessKeyVersionGuid() {
         return Optional.ofNullable(this.awsAccessKeyVersionGuid);
     }
-    /**
-     * @return Specifies the AWS region code that represents the location of your AWS bucket.
-     * 
-     */
     public Optional<String> awsArRegion() {
         return Optional.ofNullable(this.awsArRegion);
     }
@@ -276,10 +252,6 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteri
     public Optional<Integer> encodingVersion() {
         return Optional.ofNullable(this.encodingVersion);
     }
-    /**
-     * @return Specifies the code of your AWS service. It precedes `.amazonaws.com` or the region code in your AWS hostname.
-     * 
-     */
     public Optional<String> endPointService() {
         return Optional.ofNullable(this.endPointService);
     }
@@ -304,10 +276,6 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteri
     public Optional<String> gcsHmacKeySecret() {
         return Optional.ofNullable(this.gcsHmacKeySecret);
     }
-    /**
-     * @return Whether to include the hostname used to access this delivery configuration as an additional identifier tag in the Assume Role verification call to AWS. You&#39;ll need to include this hostname (`AK_HOST`) in a condition in your `AWS IAM policy` for validation.
-     * 
-     */
     public Optional<Boolean> hostnameTag() {
         return Optional.ofNullable(this.hostnameTag);
     }
@@ -346,17 +314,9 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteri
     public Optional<String> originLocationTitle() {
         return Optional.ofNullable(this.originLocationTitle);
     }
-    /**
-     * @return Whether to include the property identifier for this delivery configuration as an additional identifier tag in the Assume Role verification call to AWS. You&#39;ll need to include the property identifier (`AK_ARLID`) in a condition in your `AWS IAM policy` for validation.
-     * 
-     */
     public Optional<Boolean> propertyIdTag() {
         return Optional.ofNullable(this.propertyIdTag);
     }
-    /**
-     * @return The Amazon Resource Name (ARN) of the `AWS IAM role` you want to use. This role needs to be configured with the proper permissions for your target resources. The `AWS IAM policy` needs to contain the trust relationships defining other users that can assume this role.
-     * 
-     */
     public Optional<String> roleArn() {
         return Optional.ofNullable(this.roleArn);
     }

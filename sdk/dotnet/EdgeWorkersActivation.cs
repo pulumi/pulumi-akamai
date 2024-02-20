@@ -31,6 +31,18 @@ namespace Pulumi.Akamai
         public Output<string> Network { get; private set; } = null!;
 
         /// <summary>
+        /// Assigns a log message to the activation request
+        /// </summary>
+        [Output("note")]
+        public Output<string?> Note { get; private set; } = null!;
+
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Output("timeouts")]
+        public Output<Outputs.EdgeWorkersActivationTimeouts?> Timeouts { get; private set; } = null!;
+
+        /// <summary>
         /// The version of EdgeWorker to activate
         /// </summary>
         [Output("version")]
@@ -95,6 +107,18 @@ namespace Pulumi.Akamai
         public Input<string> Network { get; set; } = null!;
 
         /// <summary>
+        /// Assigns a log message to the activation request
+        /// </summary>
+        [Input("note")]
+        public Input<string>? Note { get; set; }
+
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.EdgeWorkersActivationTimeoutsArgs>? Timeouts { get; set; }
+
+        /// <summary>
         /// The version of EdgeWorker to activate
         /// </summary>
         [Input("version", required: true)]
@@ -125,6 +149,18 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("network")]
         public Input<string>? Network { get; set; }
+
+        /// <summary>
+        /// Assigns a log message to the activation request
+        /// </summary>
+        [Input("note")]
+        public Input<string>? Note { get; set; }
+
+        /// <summary>
+        /// Enables to set timeout for processing
+        /// </summary>
+        [Input("timeouts")]
+        public Input<Inputs.EdgeWorkersActivationTimeoutsGetArgs>? Timeouts { get; set; }
 
         /// <summary>
         /// The version of EdgeWorker to activate

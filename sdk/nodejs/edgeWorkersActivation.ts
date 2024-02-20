@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export class EdgeWorkersActivation extends pulumi.CustomResource {
@@ -45,6 +47,14 @@ export class EdgeWorkersActivation extends pulumi.CustomResource {
      */
     public readonly network!: pulumi.Output<string>;
     /**
+     * Assigns a log message to the activation request
+     */
+    public readonly note!: pulumi.Output<string | undefined>;
+    /**
+     * Enables to set timeout for processing
+     */
+    public readonly timeouts!: pulumi.Output<outputs.EdgeWorkersActivationTimeouts | undefined>;
+    /**
      * The version of EdgeWorker to activate
      */
     public readonly version!: pulumi.Output<string>;
@@ -65,6 +75,8 @@ export class EdgeWorkersActivation extends pulumi.CustomResource {
             resourceInputs["activationId"] = state ? state.activationId : undefined;
             resourceInputs["edgeworkerId"] = state ? state.edgeworkerId : undefined;
             resourceInputs["network"] = state ? state.network : undefined;
+            resourceInputs["note"] = state ? state.note : undefined;
+            resourceInputs["timeouts"] = state ? state.timeouts : undefined;
             resourceInputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as EdgeWorkersActivationArgs | undefined;
@@ -79,6 +91,8 @@ export class EdgeWorkersActivation extends pulumi.CustomResource {
             }
             resourceInputs["edgeworkerId"] = args ? args.edgeworkerId : undefined;
             resourceInputs["network"] = args ? args.network : undefined;
+            resourceInputs["note"] = args ? args.note : undefined;
+            resourceInputs["timeouts"] = args ? args.timeouts : undefined;
             resourceInputs["version"] = args ? args.version : undefined;
             resourceInputs["activationId"] = undefined /*out*/;
         }
@@ -104,6 +118,14 @@ export interface EdgeWorkersActivationState {
      */
     network?: pulumi.Input<string>;
     /**
+     * Assigns a log message to the activation request
+     */
+    note?: pulumi.Input<string>;
+    /**
+     * Enables to set timeout for processing
+     */
+    timeouts?: pulumi.Input<inputs.EdgeWorkersActivationTimeouts>;
+    /**
      * The version of EdgeWorker to activate
      */
     version?: pulumi.Input<string>;
@@ -121,6 +143,14 @@ export interface EdgeWorkersActivationArgs {
      * The network on which the version will be activated
      */
     network: pulumi.Input<string>;
+    /**
+     * Assigns a log message to the activation request
+     */
+    note?: pulumi.Input<string>;
+    /**
+     * Enables to set timeout for processing
+     */
+    timeouts?: pulumi.Input<inputs.EdgeWorkersActivationTimeouts>;
     /**
      * The version of EdgeWorker to activate
      */

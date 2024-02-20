@@ -52,6 +52,12 @@ namespace Pulumi.Akamai
         public Output<int> ProductionVersion { get; private set; } = null!;
 
         /// <summary>
+        /// Property ID
+        /// </summary>
+        [Output("propertyId")]
+        public Output<string?> PropertyId { get; private set; } = null!;
+
+        /// <summary>
         /// Required property's version to be read
         /// </summary>
         [Output("readVersion")]
@@ -67,6 +73,12 @@ namespace Pulumi.Akamai
         public Output<string> RuleFormat { get; private set; } = null!;
 
         /// <summary>
+        /// Rule validation warnings
+        /// </summary>
+        [Output("ruleWarnings")]
+        public Output<ImmutableArray<Outputs.PropertyRuleWarning>> RuleWarnings { get; private set; } = null!;
+
+        /// <summary>
         /// Property Rules as JSON
         /// </summary>
         [Output("rules")]
@@ -77,6 +89,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Output("stagingVersion")]
         public Output<int> StagingVersion { get; private set; } = null!;
+
+        /// <summary>
+        /// Property version notes
+        /// </summary>
+        [Output("versionNotes")]
+        public Output<string> VersionNotes { get; private set; } = null!;
 
 
         /// <summary>
@@ -161,6 +179,12 @@ namespace Pulumi.Akamai
         public Input<string> ProductId { get; set; } = null!;
 
         /// <summary>
+        /// Property ID
+        /// </summary>
+        [Input("propertyId")]
+        public Input<string>? PropertyId { get; set; }
+
+        /// <summary>
         /// Specify the rule format version (defaults to latest version available when created)
         /// </summary>
         [Input("ruleFormat")]
@@ -171,6 +195,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("rules")]
         public Input<string>? Rules { get; set; }
+
+        /// <summary>
+        /// Property version notes
+        /// </summary>
+        [Input("versionNotes")]
+        public Input<string>? VersionNotes { get; set; }
 
         public PropertyArgs()
         {
@@ -225,6 +255,12 @@ namespace Pulumi.Akamai
         public Input<int>? ProductionVersion { get; set; }
 
         /// <summary>
+        /// Property ID
+        /// </summary>
+        [Input("propertyId")]
+        public Input<string>? PropertyId { get; set; }
+
+        /// <summary>
         /// Required property's version to be read
         /// </summary>
         [Input("readVersion")]
@@ -244,6 +280,18 @@ namespace Pulumi.Akamai
         [Input("ruleFormat")]
         public Input<string>? RuleFormat { get; set; }
 
+        [Input("ruleWarnings")]
+        private InputList<Inputs.PropertyRuleWarningGetArgs>? _ruleWarnings;
+
+        /// <summary>
+        /// Rule validation warnings
+        /// </summary>
+        public InputList<Inputs.PropertyRuleWarningGetArgs> RuleWarnings
+        {
+            get => _ruleWarnings ?? (_ruleWarnings = new InputList<Inputs.PropertyRuleWarningGetArgs>());
+            set => _ruleWarnings = value;
+        }
+
         /// <summary>
         /// Property Rules as JSON
         /// </summary>
@@ -255,6 +303,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("stagingVersion")]
         public Input<int>? StagingVersion { get; set; }
+
+        /// <summary>
+        /// Property version notes
+        /// </summary>
+        [Input("versionNotes")]
+        public Input<string>? VersionNotes { get; set; }
 
         public PropertyState()
         {

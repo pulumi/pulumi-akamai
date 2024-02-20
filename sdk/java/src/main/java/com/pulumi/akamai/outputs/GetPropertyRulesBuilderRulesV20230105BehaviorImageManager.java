@@ -30,12 +30,12 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorImageManager {
      */
     private @Nullable Boolean applyBestFileType;
     /**
-     * @return Assigns a CP code to track traffic and billing for original images that the Image and Video Manager has not modified.
+     * @return Assigns a CP code to track traffic and billing for original images that the Image and Video Manager has not modified. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerCpCodeOriginal cpCodeOriginal;
     /**
-     * @return Assigns a separate CP code to track traffic and billing for derived images.
+     * @return Assigns a separate CP code to track traffic and billing for derived images. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerCpCodeTransformed cpCodeTransformed;
@@ -123,14 +123,14 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorImageManager {
         return Optional.ofNullable(this.applyBestFileType);
     }
     /**
-     * @return Assigns a CP code to track traffic and billing for original images that the Image and Video Manager has not modified.
+     * @return Assigns a CP code to track traffic and billing for original images that the Image and Video Manager has not modified. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerCpCodeOriginal> cpCodeOriginal() {
         return Optional.ofNullable(this.cpCodeOriginal);
     }
     /**
-     * @return Assigns a separate CP code to track traffic and billing for derived images.
+     * @return Assigns a separate CP code to track traffic and billing for derived images. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerCpCodeTransformed> cpCodeTransformed() {

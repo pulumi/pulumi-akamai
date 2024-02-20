@@ -8,6 +8,8 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['CpCodeArgs', 'CpCode']
 
@@ -17,9 +19,11 @@ class CpCodeArgs:
                  contract_id: pulumi.Input[str],
                  group_id: pulumi.Input[str],
                  name: Optional[pulumi.Input[str]] = None,
-                 product_id: Optional[pulumi.Input[str]] = None):
+                 product_id: Optional[pulumi.Input[str]] = None,
+                 timeouts: Optional[pulumi.Input['CpCodeTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a CpCode resource.
+        :param pulumi.Input['CpCodeTimeoutsArgs'] timeouts: Enables to set timeout for processing
         """
         pulumi.set(__self__, "contract_id", contract_id)
         pulumi.set(__self__, "group_id", group_id)
@@ -27,6 +31,8 @@ class CpCodeArgs:
             pulumi.set(__self__, "name", name)
         if product_id is not None:
             pulumi.set(__self__, "product_id", product_id)
+        if timeouts is not None:
+            pulumi.set(__self__, "timeouts", timeouts)
 
     @property
     @pulumi.getter(name="contractId")
@@ -64,6 +70,18 @@ class CpCodeArgs:
     def product_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "product_id", value)
 
+    @property
+    @pulumi.getter
+    def timeouts(self) -> Optional[pulumi.Input['CpCodeTimeoutsArgs']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
+
+    @timeouts.setter
+    def timeouts(self, value: Optional[pulumi.Input['CpCodeTimeoutsArgs']]):
+        pulumi.set(self, "timeouts", value)
+
 
 @pulumi.input_type
 class _CpCodeState:
@@ -71,9 +89,11 @@ class _CpCodeState:
                  contract_id: Optional[pulumi.Input[str]] = None,
                  group_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 product_id: Optional[pulumi.Input[str]] = None):
+                 product_id: Optional[pulumi.Input[str]] = None,
+                 timeouts: Optional[pulumi.Input['CpCodeTimeoutsArgs']] = None):
         """
         Input properties used for looking up and filtering CpCode resources.
+        :param pulumi.Input['CpCodeTimeoutsArgs'] timeouts: Enables to set timeout for processing
         """
         if contract_id is not None:
             pulumi.set(__self__, "contract_id", contract_id)
@@ -83,6 +103,8 @@ class _CpCodeState:
             pulumi.set(__self__, "name", name)
         if product_id is not None:
             pulumi.set(__self__, "product_id", product_id)
+        if timeouts is not None:
+            pulumi.set(__self__, "timeouts", timeouts)
 
     @property
     @pulumi.getter(name="contractId")
@@ -120,6 +142,18 @@ class _CpCodeState:
     def product_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "product_id", value)
 
+    @property
+    @pulumi.getter
+    def timeouts(self) -> Optional[pulumi.Input['CpCodeTimeoutsArgs']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
+
+    @timeouts.setter
+    def timeouts(self, value: Optional[pulumi.Input['CpCodeTimeoutsArgs']]):
+        pulumi.set(self, "timeouts", value)
+
 
 class CpCode(pulumi.CustomResource):
     @overload
@@ -130,11 +164,13 @@ class CpCode(pulumi.CustomResource):
                  group_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
+                 timeouts: Optional[pulumi.Input[pulumi.InputType['CpCodeTimeoutsArgs']]] = None,
                  __props__=None):
         """
         Create a CpCode resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[pulumi.InputType['CpCodeTimeoutsArgs']] timeouts: Enables to set timeout for processing
         """
         ...
     @overload
@@ -163,6 +199,7 @@ class CpCode(pulumi.CustomResource):
                  group_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
+                 timeouts: Optional[pulumi.Input[pulumi.InputType['CpCodeTimeoutsArgs']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -180,6 +217,7 @@ class CpCode(pulumi.CustomResource):
             __props__.__dict__["group_id"] = group_id
             __props__.__dict__["name"] = name
             __props__.__dict__["product_id"] = product_id
+            __props__.__dict__["timeouts"] = timeouts
         alias_opts = pulumi.ResourceOptions(aliases=[pulumi.Alias(type_="akamai:properties/cpCode:CpCode")])
         opts = pulumi.ResourceOptions.merge(opts, alias_opts)
         super(CpCode, __self__).__init__(
@@ -195,7 +233,8 @@ class CpCode(pulumi.CustomResource):
             contract_id: Optional[pulumi.Input[str]] = None,
             group_id: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            product_id: Optional[pulumi.Input[str]] = None) -> 'CpCode':
+            product_id: Optional[pulumi.Input[str]] = None,
+            timeouts: Optional[pulumi.Input[pulumi.InputType['CpCodeTimeoutsArgs']]] = None) -> 'CpCode':
         """
         Get an existing CpCode resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -203,6 +242,7 @@ class CpCode(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[pulumi.InputType['CpCodeTimeoutsArgs']] timeouts: Enables to set timeout for processing
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -212,6 +252,7 @@ class CpCode(pulumi.CustomResource):
         __props__.__dict__["group_id"] = group_id
         __props__.__dict__["name"] = name
         __props__.__dict__["product_id"] = product_id
+        __props__.__dict__["timeouts"] = timeouts
         return CpCode(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -233,4 +274,12 @@ class CpCode(pulumi.CustomResource):
     @pulumi.getter(name="productId")
     def product_id(self) -> pulumi.Output[str]:
         return pulumi.get(self, "product_id")
+
+    @property
+    @pulumi.getter
+    def timeouts(self) -> pulumi.Output[Optional['outputs.CpCodeTimeouts']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
 

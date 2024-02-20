@@ -29,7 +29,7 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionMatchCpCode {
      */
     private @Nullable String uuid;
     /**
-     * @return Specifies an object that encodes the matching `value`, including an `id` key and a descriptive `name`.
+     * @return Specifies the CP code as an object. You only need to provide the initial `id` to match the CP code, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     private @Nullable GetPropertyRulesBuilderRulesV20230105CriterionMatchCpCodeValue value;
@@ -57,7 +57,7 @@ public final class GetPropertyRulesBuilderRulesV20230105CriterionMatchCpCode {
         return Optional.ofNullable(this.uuid);
     }
     /**
-     * @return Specifies an object that encodes the matching `value`, including an `id` key and a descriptive `name`.
+     * @return Specifies the CP code as an object. You only need to provide the initial `id` to match the CP code, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     public Optional<GetPropertyRulesBuilderRulesV20230105CriterionMatchCpCodeValue> value() {

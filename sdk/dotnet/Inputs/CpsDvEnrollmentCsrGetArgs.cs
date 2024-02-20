@@ -33,8 +33,8 @@ namespace Pulumi.Akamai.Inputs
         /// <summary>
         /// Organizational unit of organization
         /// </summary>
-        [Input("organizationalUnit", required: true)]
-        public Input<string> OrganizationalUnit { get; set; } = null!;
+        [Input("organizationalUnit")]
+        public Input<string>? OrganizationalUnit { get; set; }
 
         /// <summary>
         /// For the Let's Encrypt Domain Validated (DV) SAN certificates, the preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default
@@ -45,8 +45,8 @@ namespace Pulumi.Akamai.Inputs
         /// <summary>
         /// State or province of organization location
         /// </summary>
-        [Input("state", required: true)]
-        public Input<string> State { get; set; } = null!;
+        [Input("state")]
+        public Input<string>? State { get; set; }
 
         public CpsDvEnrollmentCsrGetArgs()
         {

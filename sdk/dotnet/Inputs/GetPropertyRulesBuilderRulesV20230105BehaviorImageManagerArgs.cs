@@ -31,13 +31,13 @@ namespace Pulumi.Akamai.Inputs
         public Input<bool>? ApplyBestFileType { get; set; }
 
         /// <summary>
-        /// Assigns a CP code to track traffic and billing for original images that the Image and Video Manager has not modified.
+        /// Assigns a CP code to track traffic and billing for original images that the Image and Video Manager has not modified. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
         /// </summary>
         [Input("cpCodeOriginal")]
         public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerCpCodeOriginalInputArgs>? CpCodeOriginal { get; set; }
 
         /// <summary>
-        /// Assigns a separate CP code to track traffic and billing for derived images.
+        /// Assigns a separate CP code to track traffic and billing for derived images. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
         /// </summary>
         [Input("cpCodeTransformed")]
         public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerCpCodeTransformedInputArgs>? CpCodeTransformed { get; set; }

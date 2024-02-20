@@ -3,12 +3,15 @@
 
 package com.pulumi.akamai;
 
+import com.pulumi.akamai.inputs.EdgekvGroupItemsTimeoutsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class EdgekvGroupItemsArgs extends com.pulumi.resources.ResourceArgs {
@@ -75,6 +78,21 @@ public final class EdgekvGroupItemsArgs extends com.pulumi.resources.ResourceArg
         return this.network;
     }
 
+    /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Import(name="timeouts")
+    private @Nullable Output<EdgekvGroupItemsTimeoutsArgs> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Optional<Output<EdgekvGroupItemsTimeoutsArgs>> timeouts() {
+        return Optional.ofNullable(this.timeouts);
+    }
+
     private EdgekvGroupItemsArgs() {}
 
     private EdgekvGroupItemsArgs(EdgekvGroupItemsArgs $) {
@@ -82,6 +100,7 @@ public final class EdgekvGroupItemsArgs extends com.pulumi.resources.ResourceArg
         this.items = $.items;
         this.namespaceName = $.namespaceName;
         this.network = $.network;
+        this.timeouts = $.timeouts;
     }
 
     public static Builder builder() {
@@ -184,6 +203,27 @@ public final class EdgekvGroupItemsArgs extends com.pulumi.resources.ResourceArg
          */
         public Builder network(String network) {
             return network(Output.of(network));
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(@Nullable Output<EdgekvGroupItemsTimeoutsArgs> timeouts) {
+            $.timeouts = timeouts;
+            return this;
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(EdgekvGroupItemsTimeoutsArgs timeouts) {
+            return timeouts(Output.of(timeouts));
         }
 
         public EdgekvGroupItemsArgs build() {

@@ -32,6 +32,21 @@ public final class GetImagingPolicyImagePolicyOutputArgs extends com.pulumi.reso
     }
 
     /**
+     * Whether a pristine image wider than the requested breakpoint is allowed as a derivative image if it has the fewest bytes. This will not have an affect if transformations are present.
+     * 
+     */
+    @Import(name="allowPristineOnDownsize")
+    private @Nullable Output<String> allowPristineOnDownsize;
+
+    /**
+     * @return Whether a pristine image wider than the requested breakpoint is allowed as a derivative image if it has the fewest bytes. This will not have an affect if transformations are present.
+     * 
+     */
+    public Optional<Output<String>> allowPristineOnDownsize() {
+        return Optional.ofNullable(this.allowPristineOnDownsize);
+    }
+
+    /**
      * The graphics file formats allowed for browser specific results.
      * 
      */
@@ -107,6 +122,21 @@ public final class GetImagingPolicyImagePolicyOutputArgs extends com.pulumi.reso
     }
 
     /**
+     * Whether derivative image formats should be selected with a preference for modern formats (such as WebP and Avif) instead the format that results in the fewest bytes.
+     * 
+     */
+    @Import(name="preferModernFormats")
+    private @Nullable Output<String> preferModernFormats;
+
+    /**
+     * @return Whether derivative image formats should be selected with a preference for modern formats (such as WebP and Avif) instead the format that results in the fewest bytes.
+     * 
+     */
+    public Optional<Output<String>> preferModernFormats() {
+        return Optional.ofNullable(this.preferModernFormats);
+    }
+
+    /**
      * Mutually exclusive with perceptualQuality, used by default if neither is specified. The chosen quality of the output images. Using a quality value from 1-100 resembles JPEG quality across output formats.
      * 
      */
@@ -140,11 +170,13 @@ public final class GetImagingPolicyImagePolicyOutputArgs extends com.pulumi.reso
 
     private GetImagingPolicyImagePolicyOutputArgs(GetImagingPolicyImagePolicyOutputArgs $) {
         this.adaptiveQuality = $.adaptiveQuality;
+        this.allowPristineOnDownsize = $.allowPristineOnDownsize;
         this.allowedFormats = $.allowedFormats;
         this.forcedFormats = $.forcedFormats;
         this.perceptualQuality = $.perceptualQuality;
         this.perceptualQualityFloor = $.perceptualQualityFloor;
         this.perceptualQualityVar = $.perceptualQualityVar;
+        this.preferModernFormats = $.preferModernFormats;
         this.quality = $.quality;
         this.qualityVar = $.qualityVar;
     }
@@ -186,6 +218,27 @@ public final class GetImagingPolicyImagePolicyOutputArgs extends com.pulumi.reso
          */
         public Builder adaptiveQuality(String adaptiveQuality) {
             return adaptiveQuality(Output.of(adaptiveQuality));
+        }
+
+        /**
+         * @param allowPristineOnDownsize Whether a pristine image wider than the requested breakpoint is allowed as a derivative image if it has the fewest bytes. This will not have an affect if transformations are present.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder allowPristineOnDownsize(@Nullable Output<String> allowPristineOnDownsize) {
+            $.allowPristineOnDownsize = allowPristineOnDownsize;
+            return this;
+        }
+
+        /**
+         * @param allowPristineOnDownsize Whether a pristine image wider than the requested breakpoint is allowed as a derivative image if it has the fewest bytes. This will not have an affect if transformations are present.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder allowPristineOnDownsize(String allowPristineOnDownsize) {
+            return allowPristineOnDownsize(Output.of(allowPristineOnDownsize));
         }
 
         /**
@@ -311,6 +364,27 @@ public final class GetImagingPolicyImagePolicyOutputArgs extends com.pulumi.reso
          */
         public Builder perceptualQualityVar(String perceptualQualityVar) {
             return perceptualQualityVar(Output.of(perceptualQualityVar));
+        }
+
+        /**
+         * @param preferModernFormats Whether derivative image formats should be selected with a preference for modern formats (such as WebP and Avif) instead the format that results in the fewest bytes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder preferModernFormats(@Nullable Output<String> preferModernFormats) {
+            $.preferModernFormats = preferModernFormats;
+            return this;
+        }
+
+        /**
+         * @param preferModernFormats Whether derivative image formats should be selected with a preference for modern formats (such as WebP and Avif) instead the format that results in the fewest bytes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder preferModernFormats(String preferModernFormats) {
+            return preferModernFormats(Output.of(preferModernFormats));
         }
 
         /**

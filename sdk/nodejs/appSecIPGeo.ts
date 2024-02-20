@@ -33,6 +33,10 @@ export class AppSecIPGeo extends pulumi.CustomResource {
     }
 
     /**
+     * List of IDs of ASN network list to be blocked
+     */
+    public readonly asnNetworkLists!: pulumi.Output<string[] | undefined>;
+    /**
      * Unique identifier of the security configuration
      */
     public readonly configId!: pulumi.Output<number>;
@@ -74,6 +78,7 @@ export class AppSecIPGeo extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecIPGeoState | undefined;
+            resourceInputs["asnNetworkLists"] = state ? state.asnNetworkLists : undefined;
             resourceInputs["configId"] = state ? state.configId : undefined;
             resourceInputs["exceptionIpNetworkLists"] = state ? state.exceptionIpNetworkLists : undefined;
             resourceInputs["geoNetworkLists"] = state ? state.geoNetworkLists : undefined;
@@ -92,6 +97,7 @@ export class AppSecIPGeo extends pulumi.CustomResource {
             if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
+            resourceInputs["asnNetworkLists"] = args ? args.asnNetworkLists : undefined;
             resourceInputs["configId"] = args ? args.configId : undefined;
             resourceInputs["exceptionIpNetworkLists"] = args ? args.exceptionIpNetworkLists : undefined;
             resourceInputs["geoNetworkLists"] = args ? args.geoNetworkLists : undefined;
@@ -109,6 +115,10 @@ export class AppSecIPGeo extends pulumi.CustomResource {
  * Input properties used for looking up and filtering AppSecIPGeo resources.
  */
 export interface AppSecIPGeoState {
+    /**
+     * List of IDs of ASN network list to be blocked
+     */
+    asnNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * Unique identifier of the security configuration
      */
@@ -143,6 +153,10 @@ export interface AppSecIPGeoState {
  * The set of arguments for constructing a AppSecIPGeo resource.
  */
 export interface AppSecIPGeoArgs {
+    /**
+     * List of IDs of ASN network list to be blocked
+     */
+    asnNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * Unique identifier of the security configuration
      */

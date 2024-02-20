@@ -29,7 +29,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorCpCode {
      */
     private @Nullable String uuid;
     /**
-     * @return Specifies a `value` object, which includes an `id` key and a descriptive `name`.
+     * @return Specifies the CP code as an object. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     private @Nullable GetPropertyRulesBuilderRulesV20230105BehaviorCpCodeValue value;
@@ -57,7 +57,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorCpCode {
         return Optional.ofNullable(this.uuid);
     }
     /**
-     * @return Specifies a `value` object, which includes an `id` key and a descriptive `name`.
+     * @return Specifies the CP code as an object. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     public Optional<GetPropertyRulesBuilderRulesV20230105BehaviorCpCodeValue> value() {

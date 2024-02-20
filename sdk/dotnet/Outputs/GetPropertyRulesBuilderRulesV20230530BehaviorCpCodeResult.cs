@@ -26,7 +26,7 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string? Uuid;
         /// <summary>
-        /// Specifies a `value` object, which includes an `id` key and a descriptive `name`.
+        /// Specifies the CP code as an object. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
         /// </summary>
         public readonly Outputs.GetPropertyRulesBuilderRulesV20230530BehaviorCpCodeValueResult? Value;
 

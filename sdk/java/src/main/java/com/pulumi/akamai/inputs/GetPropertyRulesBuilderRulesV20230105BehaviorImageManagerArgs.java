@@ -64,14 +64,14 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerArgs
     }
 
     /**
-     * Assigns a CP code to track traffic and billing for original images that the Image and Video Manager has not modified.
+     * Assigns a CP code to track traffic and billing for original images that the Image and Video Manager has not modified. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     @Import(name="cpCodeOriginal")
     private @Nullable Output<GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerCpCodeOriginalArgs> cpCodeOriginal;
 
     /**
-     * @return Assigns a CP code to track traffic and billing for original images that the Image and Video Manager has not modified.
+     * @return Assigns a CP code to track traffic and billing for original images that the Image and Video Manager has not modified. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     public Optional<Output<GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerCpCodeOriginalArgs>> cpCodeOriginal() {
@@ -79,14 +79,14 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerArgs
     }
 
     /**
-     * Assigns a separate CP code to track traffic and billing for derived images.
+     * Assigns a separate CP code to track traffic and billing for derived images. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     @Import(name="cpCodeTransformed")
     private @Nullable Output<GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerCpCodeTransformedArgs> cpCodeTransformed;
 
     /**
-     * @return Assigns a separate CP code to track traffic and billing for derived images.
+     * @return Assigns a separate CP code to track traffic and billing for derived images. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     public Optional<Output<GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerCpCodeTransformedArgs>> cpCodeTransformed() {
@@ -377,7 +377,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerArgs
         }
 
         /**
-         * @param cpCodeOriginal Assigns a CP code to track traffic and billing for original images that the Image and Video Manager has not modified.
+         * @param cpCodeOriginal Assigns a CP code to track traffic and billing for original images that the Image and Video Manager has not modified. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
          * 
          * @return builder
          * 
@@ -388,7 +388,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerArgs
         }
 
         /**
-         * @param cpCodeOriginal Assigns a CP code to track traffic and billing for original images that the Image and Video Manager has not modified.
+         * @param cpCodeOriginal Assigns a CP code to track traffic and billing for original images that the Image and Video Manager has not modified. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
          * 
          * @return builder
          * 
@@ -398,7 +398,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerArgs
         }
 
         /**
-         * @param cpCodeTransformed Assigns a separate CP code to track traffic and billing for derived images.
+         * @param cpCodeTransformed Assigns a separate CP code to track traffic and billing for derived images. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
          * 
          * @return builder
          * 
@@ -409,7 +409,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerArgs
         }
 
         /**
-         * @param cpCodeTransformed Assigns a separate CP code to track traffic and billing for derived images.
+         * @param cpCodeTransformed Assigns a separate CP code to track traffic and billing for derived images. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
          * 
          * @return builder
          * 

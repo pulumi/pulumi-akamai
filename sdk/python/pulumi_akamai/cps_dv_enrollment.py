@@ -29,7 +29,8 @@ class CpsDvEnrollmentArgs:
                  acknowledge_pre_verification_warnings: Optional[pulumi.Input[bool]] = None,
                  allow_duplicate_common_name: Optional[pulumi.Input[bool]] = None,
                  certificate_chain_type: Optional[pulumi.Input[str]] = None,
-                 sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+                 sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 timeouts: Optional[pulumi.Input['CpsDvEnrollmentTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a CpsDvEnrollment resource.
         :param pulumi.Input['CpsDvEnrollmentAdminContactArgs'] admin_contact: Contact information for the certificate administrator to use at organization
@@ -46,6 +47,7 @@ class CpsDvEnrollmentArgs:
         :param pulumi.Input[bool] allow_duplicate_common_name: Allow to duplicate common name
         :param pulumi.Input[str] certificate_chain_type: Certificate trust chain type
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: List of SANs
+        :param pulumi.Input['CpsDvEnrollmentTimeoutsArgs'] timeouts: Enables to set timeout for processing
         """
         pulumi.set(__self__, "admin_contact", admin_contact)
         pulumi.set(__self__, "common_name", common_name)
@@ -65,6 +67,8 @@ class CpsDvEnrollmentArgs:
             pulumi.set(__self__, "certificate_chain_type", certificate_chain_type)
         if sans is not None:
             pulumi.set(__self__, "sans", sans)
+        if timeouts is not None:
+            pulumi.set(__self__, "timeouts", timeouts)
 
     @property
     @pulumi.getter(name="adminContact")
@@ -234,6 +238,18 @@ class CpsDvEnrollmentArgs:
     def sans(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "sans", value)
 
+    @property
+    @pulumi.getter
+    def timeouts(self) -> Optional[pulumi.Input['CpsDvEnrollmentTimeoutsArgs']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
+
+    @timeouts.setter
+    def timeouts(self, value: Optional[pulumi.Input['CpsDvEnrollmentTimeoutsArgs']]):
+        pulumi.set(self, "timeouts", value)
+
 
 @pulumi.input_type
 class _CpsDvEnrollmentState:
@@ -256,6 +272,7 @@ class _CpsDvEnrollmentState:
                  signature_algorithm: Optional[pulumi.Input[str]] = None,
                  sni_only: Optional[pulumi.Input[bool]] = None,
                  tech_contact: Optional[pulumi.Input['CpsDvEnrollmentTechContactArgs']] = None,
+                 timeouts: Optional[pulumi.Input['CpsDvEnrollmentTimeoutsArgs']] = None,
                  validation_type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering CpsDvEnrollment resources.
@@ -277,6 +294,7 @@ class _CpsDvEnrollmentState:
         :param pulumi.Input[str] signature_algorithm: SHA algorithm type
         :param pulumi.Input[bool] sni_only: Whether Server Name Indication is used for enrollment
         :param pulumi.Input['CpsDvEnrollmentTechContactArgs'] tech_contact: Contact information for an administrator at Akamai
+        :param pulumi.Input['CpsDvEnrollmentTimeoutsArgs'] timeouts: Enables to set timeout for processing
         :param pulumi.Input[str] validation_type: Enrolment validation type
         """
         if acknowledge_pre_verification_warnings is not None:
@@ -315,6 +333,8 @@ class _CpsDvEnrollmentState:
             pulumi.set(__self__, "sni_only", sni_only)
         if tech_contact is not None:
             pulumi.set(__self__, "tech_contact", tech_contact)
+        if timeouts is not None:
+            pulumi.set(__self__, "timeouts", timeouts)
         if validation_type is not None:
             pulumi.set(__self__, "validation_type", validation_type)
 
@@ -535,6 +555,18 @@ class _CpsDvEnrollmentState:
         pulumi.set(self, "tech_contact", value)
 
     @property
+    @pulumi.getter
+    def timeouts(self) -> Optional[pulumi.Input['CpsDvEnrollmentTimeoutsArgs']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
+
+    @timeouts.setter
+    def timeouts(self, value: Optional[pulumi.Input['CpsDvEnrollmentTimeoutsArgs']]):
+        pulumi.set(self, "timeouts", value)
+
+    @property
     @pulumi.getter(name="validationType")
     def validation_type(self) -> Optional[pulumi.Input[str]]:
         """
@@ -566,6 +598,7 @@ class CpsDvEnrollment(pulumi.CustomResource):
                  signature_algorithm: Optional[pulumi.Input[str]] = None,
                  sni_only: Optional[pulumi.Input[bool]] = None,
                  tech_contact: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentTechContactArgs']]] = None,
+                 timeouts: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentTimeoutsArgs']]] = None,
                  __props__=None):
         """
         Create a CpsDvEnrollment resource with the given unique name, props, and options.
@@ -585,6 +618,7 @@ class CpsDvEnrollment(pulumi.CustomResource):
         :param pulumi.Input[str] signature_algorithm: SHA algorithm type
         :param pulumi.Input[bool] sni_only: Whether Server Name Indication is used for enrollment
         :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentTechContactArgs']] tech_contact: Contact information for an administrator at Akamai
+        :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentTimeoutsArgs']] timeouts: Enables to set timeout for processing
         """
         ...
     @overload
@@ -623,6 +657,7 @@ class CpsDvEnrollment(pulumi.CustomResource):
                  signature_algorithm: Optional[pulumi.Input[str]] = None,
                  sni_only: Optional[pulumi.Input[bool]] = None,
                  tech_contact: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentTechContactArgs']]] = None,
+                 timeouts: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentTimeoutsArgs']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -666,6 +701,7 @@ class CpsDvEnrollment(pulumi.CustomResource):
             if tech_contact is None and not opts.urn:
                 raise TypeError("Missing required property 'tech_contact'")
             __props__.__dict__["tech_contact"] = tech_contact
+            __props__.__dict__["timeouts"] = timeouts
             __props__.__dict__["certificate_type"] = None
             __props__.__dict__["dns_challenges"] = None
             __props__.__dict__["http_challenges"] = None
@@ -699,6 +735,7 @@ class CpsDvEnrollment(pulumi.CustomResource):
             signature_algorithm: Optional[pulumi.Input[str]] = None,
             sni_only: Optional[pulumi.Input[bool]] = None,
             tech_contact: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentTechContactArgs']]] = None,
+            timeouts: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentTimeoutsArgs']]] = None,
             validation_type: Optional[pulumi.Input[str]] = None) -> 'CpsDvEnrollment':
         """
         Get an existing CpsDvEnrollment resource's state with the given name, id, and optional extra
@@ -725,6 +762,7 @@ class CpsDvEnrollment(pulumi.CustomResource):
         :param pulumi.Input[str] signature_algorithm: SHA algorithm type
         :param pulumi.Input[bool] sni_only: Whether Server Name Indication is used for enrollment
         :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentTechContactArgs']] tech_contact: Contact information for an administrator at Akamai
+        :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentTimeoutsArgs']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[str] validation_type: Enrolment validation type
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -749,6 +787,7 @@ class CpsDvEnrollment(pulumi.CustomResource):
         __props__.__dict__["signature_algorithm"] = signature_algorithm
         __props__.__dict__["sni_only"] = sni_only
         __props__.__dict__["tech_contact"] = tech_contact
+        __props__.__dict__["timeouts"] = timeouts
         __props__.__dict__["validation_type"] = validation_type
         return CpsDvEnrollment(resource_name, opts=opts, __props__=__props__)
 
@@ -895,6 +934,14 @@ class CpsDvEnrollment(pulumi.CustomResource):
         Contact information for an administrator at Akamai
         """
         return pulumi.get(self, "tech_contact")
+
+    @property
+    @pulumi.getter
+    def timeouts(self) -> pulumi.Output[Optional['outputs.CpsDvEnrollmentTimeouts']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
 
     @property
     @pulumi.getter(name="validationType")

@@ -8,6 +8,8 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['EdgeWorkerArgs', 'EdgeWorker']
 
@@ -17,13 +19,15 @@ class EdgeWorkerArgs:
                  group_id: pulumi.Input[int],
                  resource_tier_id: pulumi.Input[int],
                  local_bundle: Optional[pulumi.Input[str]] = None,
-                 name: Optional[pulumi.Input[str]] = None):
+                 name: Optional[pulumi.Input[str]] = None,
+                 timeouts: Optional[pulumi.Input['EdgeWorkerTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a EdgeWorker resource.
         :param pulumi.Input[int] group_id: Defines the group association for the EdgeWorker
         :param pulumi.Input[int] resource_tier_id: The unique identifier of a resource tier
         :param pulumi.Input[str] local_bundle: The path to the EdgeWorkers tgz code bundle
         :param pulumi.Input[str] name: The EdgeWorker name
+        :param pulumi.Input['EdgeWorkerTimeoutsArgs'] timeouts: Enables to set timeout for processing
         """
         pulumi.set(__self__, "group_id", group_id)
         pulumi.set(__self__, "resource_tier_id", resource_tier_id)
@@ -31,6 +35,8 @@ class EdgeWorkerArgs:
             pulumi.set(__self__, "local_bundle", local_bundle)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if timeouts is not None:
+            pulumi.set(__self__, "timeouts", timeouts)
 
     @property
     @pulumi.getter(name="groupId")
@@ -80,6 +86,18 @@ class EdgeWorkerArgs:
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
+    @property
+    @pulumi.getter
+    def timeouts(self) -> Optional[pulumi.Input['EdgeWorkerTimeoutsArgs']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
+
+    @timeouts.setter
+    def timeouts(self, value: Optional[pulumi.Input['EdgeWorkerTimeoutsArgs']]):
+        pulumi.set(self, "timeouts", value)
+
 
 @pulumi.input_type
 class _EdgeWorkerState:
@@ -90,6 +108,7 @@ class _EdgeWorkerState:
                  local_bundle_hash: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  resource_tier_id: Optional[pulumi.Input[int]] = None,
+                 timeouts: Optional[pulumi.Input['EdgeWorkerTimeoutsArgs']] = None,
                  version: Optional[pulumi.Input[str]] = None,
                  warnings: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
@@ -100,6 +119,7 @@ class _EdgeWorkerState:
         :param pulumi.Input[str] local_bundle_hash: The local bundle hash for the EdgeWorker
         :param pulumi.Input[str] name: The EdgeWorker name
         :param pulumi.Input[int] resource_tier_id: The unique identifier of a resource tier
+        :param pulumi.Input['EdgeWorkerTimeoutsArgs'] timeouts: Enables to set timeout for processing
         :param pulumi.Input[str] version: The bundle version
         :param pulumi.Input[Sequence[pulumi.Input[str]]] warnings: The list of warnings returned by EdgeWorker validation
         """
@@ -115,6 +135,8 @@ class _EdgeWorkerState:
             pulumi.set(__self__, "name", name)
         if resource_tier_id is not None:
             pulumi.set(__self__, "resource_tier_id", resource_tier_id)
+        if timeouts is not None:
+            pulumi.set(__self__, "timeouts", timeouts)
         if version is not None:
             pulumi.set(__self__, "version", version)
         if warnings is not None:
@@ -194,6 +216,18 @@ class _EdgeWorkerState:
 
     @property
     @pulumi.getter
+    def timeouts(self) -> Optional[pulumi.Input['EdgeWorkerTimeoutsArgs']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
+
+    @timeouts.setter
+    def timeouts(self, value: Optional[pulumi.Input['EdgeWorkerTimeoutsArgs']]):
+        pulumi.set(self, "timeouts", value)
+
+    @property
+    @pulumi.getter
     def version(self) -> Optional[pulumi.Input[str]]:
         """
         The bundle version
@@ -226,6 +260,7 @@ class EdgeWorker(pulumi.CustomResource):
                  local_bundle: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  resource_tier_id: Optional[pulumi.Input[int]] = None,
+                 timeouts: Optional[pulumi.Input[pulumi.InputType['EdgeWorkerTimeoutsArgs']]] = None,
                  __props__=None):
         """
         Create a EdgeWorker resource with the given unique name, props, and options.
@@ -235,6 +270,7 @@ class EdgeWorker(pulumi.CustomResource):
         :param pulumi.Input[str] local_bundle: The path to the EdgeWorkers tgz code bundle
         :param pulumi.Input[str] name: The EdgeWorker name
         :param pulumi.Input[int] resource_tier_id: The unique identifier of a resource tier
+        :param pulumi.Input[pulumi.InputType['EdgeWorkerTimeoutsArgs']] timeouts: Enables to set timeout for processing
         """
         ...
     @overload
@@ -263,6 +299,7 @@ class EdgeWorker(pulumi.CustomResource):
                  local_bundle: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  resource_tier_id: Optional[pulumi.Input[int]] = None,
+                 timeouts: Optional[pulumi.Input[pulumi.InputType['EdgeWorkerTimeoutsArgs']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -280,6 +317,7 @@ class EdgeWorker(pulumi.CustomResource):
             if resource_tier_id is None and not opts.urn:
                 raise TypeError("Missing required property 'resource_tier_id'")
             __props__.__dict__["resource_tier_id"] = resource_tier_id
+            __props__.__dict__["timeouts"] = timeouts
             __props__.__dict__["edgeworker_id"] = None
             __props__.__dict__["local_bundle_hash"] = None
             __props__.__dict__["version"] = None
@@ -300,6 +338,7 @@ class EdgeWorker(pulumi.CustomResource):
             local_bundle_hash: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             resource_tier_id: Optional[pulumi.Input[int]] = None,
+            timeouts: Optional[pulumi.Input[pulumi.InputType['EdgeWorkerTimeoutsArgs']]] = None,
             version: Optional[pulumi.Input[str]] = None,
             warnings: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None) -> 'EdgeWorker':
         """
@@ -315,6 +354,7 @@ class EdgeWorker(pulumi.CustomResource):
         :param pulumi.Input[str] local_bundle_hash: The local bundle hash for the EdgeWorker
         :param pulumi.Input[str] name: The EdgeWorker name
         :param pulumi.Input[int] resource_tier_id: The unique identifier of a resource tier
+        :param pulumi.Input[pulumi.InputType['EdgeWorkerTimeoutsArgs']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[str] version: The bundle version
         :param pulumi.Input[Sequence[pulumi.Input[str]]] warnings: The list of warnings returned by EdgeWorker validation
         """
@@ -328,6 +368,7 @@ class EdgeWorker(pulumi.CustomResource):
         __props__.__dict__["local_bundle_hash"] = local_bundle_hash
         __props__.__dict__["name"] = name
         __props__.__dict__["resource_tier_id"] = resource_tier_id
+        __props__.__dict__["timeouts"] = timeouts
         __props__.__dict__["version"] = version
         __props__.__dict__["warnings"] = warnings
         return EdgeWorker(resource_name, opts=opts, __props__=__props__)
@@ -379,6 +420,14 @@ class EdgeWorker(pulumi.CustomResource):
         The unique identifier of a resource tier
         """
         return pulumi.get(self, "resource_tier_id")
+
+    @property
+    @pulumi.getter
+    def timeouts(self) -> pulumi.Output[Optional['outputs.EdgeWorkerTimeouts']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
 
     @property
     @pulumi.getter

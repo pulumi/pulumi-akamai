@@ -12,6 +12,10 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesBuilderRulesV20230530BehaviorCommonMediaClientData {
+    /**
+     * @return Uses Common Media Client Data (CMCD) metadata to determine the segment URLs your origin server prefetches to speed up content delivery.
+     * 
+     */
     private @Nullable Boolean enableCmcdSegmentPrefetch;
     /**
      * @return Indicates that your Akamai representative has locked this behavior or criteria so that you can&#39;t modify it. This option is for internal usage only.
@@ -30,6 +34,10 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorCommonMediaClien
     private @Nullable String uuid;
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorCommonMediaClientData() {}
+    /**
+     * @return Uses Common Media Client Data (CMCD) metadata to determine the segment URLs your origin server prefetches to speed up content delivery.
+     * 
+     */
     public Optional<Boolean> enableCmcdSegmentPrefetch() {
         return Optional.ofNullable(this.enableCmcdSegmentPrefetch);
     }

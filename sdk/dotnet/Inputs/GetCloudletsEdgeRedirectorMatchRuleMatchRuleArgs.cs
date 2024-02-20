@@ -43,6 +43,12 @@ namespace Pulumi.Akamai.Inputs
         }
 
         /// <summary>
+        /// Is used in some cloudlets to support default rules (rule that is always matched)
+        /// </summary>
+        [Input("matchesAlways")]
+        public Input<bool>? MatchesAlways { get; set; }
+
+        /// <summary>
         /// The name of the rule
         /// </summary>
         [Input("name")]

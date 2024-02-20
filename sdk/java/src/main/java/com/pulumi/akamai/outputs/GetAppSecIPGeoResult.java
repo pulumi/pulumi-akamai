@@ -12,6 +12,7 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAppSecIPGeoResult {
+    private List<String> asnNetworkLists;
     private Integer configId;
     private List<String> exceptionIpNetworkLists;
     private List<String> geoNetworkLists;
@@ -27,6 +28,9 @@ public final class GetAppSecIPGeoResult {
     private String ukraineGeoControlAction;
 
     private GetAppSecIPGeoResult() {}
+    public List<String> asnNetworkLists() {
+        return this.asnNetworkLists;
+    }
     public Integer configId() {
         return this.configId;
     }
@@ -68,6 +72,7 @@ public final class GetAppSecIPGeoResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<String> asnNetworkLists;
         private Integer configId;
         private List<String> exceptionIpNetworkLists;
         private List<String> geoNetworkLists;
@@ -80,6 +85,7 @@ public final class GetAppSecIPGeoResult {
         public Builder() {}
         public Builder(GetAppSecIPGeoResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.asnNetworkLists = defaults.asnNetworkLists;
     	      this.configId = defaults.configId;
     	      this.exceptionIpNetworkLists = defaults.exceptionIpNetworkLists;
     	      this.geoNetworkLists = defaults.geoNetworkLists;
@@ -91,6 +97,17 @@ public final class GetAppSecIPGeoResult {
     	      this.ukraineGeoControlAction = defaults.ukraineGeoControlAction;
         }
 
+        @CustomType.Setter
+        public Builder asnNetworkLists(List<String> asnNetworkLists) {
+            if (asnNetworkLists == null) {
+              throw new MissingRequiredPropertyException("GetAppSecIPGeoResult", "asnNetworkLists");
+            }
+            this.asnNetworkLists = asnNetworkLists;
+            return this;
+        }
+        public Builder asnNetworkLists(String... asnNetworkLists) {
+            return asnNetworkLists(List.of(asnNetworkLists));
+        }
         @CustomType.Setter
         public Builder configId(Integer configId) {
             if (configId == null) {
@@ -174,6 +191,7 @@ public final class GetAppSecIPGeoResult {
         }
         public GetAppSecIPGeoResult build() {
             final var _resultValue = new GetAppSecIPGeoResult();
+            _resultValue.asnNetworkLists = asnNetworkLists;
             _resultValue.configId = configId;
             _resultValue.exceptionIpNetworkLists = exceptionIpNetworkLists;
             _resultValue.geoNetworkLists = geoNetworkLists;

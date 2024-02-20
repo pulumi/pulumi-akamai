@@ -132,14 +132,14 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorFailActionArgs e
     }
 
     /**
-     * Specifies a CP code for which to log errors for the NetStorage location.
+     * Specifies a CP code for which to log errors for the NetStorage location. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     @Import(name="cpCode")
     private @Nullable Output<GetPropertyRulesBuilderRulesV20230105BehaviorFailActionCpCodeArgs> cpCode;
 
     /**
-     * @return Specifies a CP code for which to log errors for the NetStorage location.
+     * @return Specifies a CP code for which to log errors for the NetStorage location. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     public Optional<Output<GetPropertyRulesBuilderRulesV20230105BehaviorFailActionCpCodeArgs>> cpCode() {
@@ -751,7 +751,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorFailActionArgs e
         }
 
         /**
-         * @param cpCode Specifies a CP code for which to log errors for the NetStorage location.
+         * @param cpCode Specifies a CP code for which to log errors for the NetStorage location. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
          * 
          * @return builder
          * 
@@ -762,7 +762,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorFailActionArgs e
         }
 
         /**
-         * @param cpCode Specifies a CP code for which to log errors for the NetStorage location.
+         * @param cpCode Specifies a CP code for which to log errors for the NetStorage location. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
          * 
          * @return builder
          * 

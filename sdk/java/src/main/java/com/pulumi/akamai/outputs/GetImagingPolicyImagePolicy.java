@@ -43,6 +43,11 @@ public final class GetImagingPolicyImagePolicy {
      */
     private @Nullable String rolloutDuration;
     /**
+     * @return The amount of time in seconds that the policy will serve stale images. During the serve stale period realtime images will attempt to use the offline image from the previous policy version first if possible.
+     * 
+     */
+    private @Nullable String serveStaleDuration;
+    /**
      * @return Set of image transformations to apply to the source image. If unspecified, no operations are performed.
      * 
      */
@@ -90,6 +95,13 @@ public final class GetImagingPolicyImagePolicy {
         return Optional.ofNullable(this.rolloutDuration);
     }
     /**
+     * @return The amount of time in seconds that the policy will serve stale images. During the serve stale period realtime images will attempt to use the offline image from the previous policy version first if possible.
+     * 
+     */
+    public Optional<String> serveStaleDuration() {
+        return Optional.ofNullable(this.serveStaleDuration);
+    }
+    /**
      * @return Set of image transformations to apply to the source image. If unspecified, no operations are performed.
      * 
      */
@@ -118,6 +130,7 @@ public final class GetImagingPolicyImagePolicy {
         private @Nullable GetImagingPolicyImagePolicyOutput output;
         private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformation> postBreakpointTransformations;
         private @Nullable String rolloutDuration;
+        private @Nullable String serveStaleDuration;
         private @Nullable List<GetImagingPolicyImagePolicyTransformation> transformations;
         private @Nullable List<GetImagingPolicyImagePolicyVariable> variables;
         public Builder() {}
@@ -128,6 +141,7 @@ public final class GetImagingPolicyImagePolicy {
     	      this.output = defaults.output;
     	      this.postBreakpointTransformations = defaults.postBreakpointTransformations;
     	      this.rolloutDuration = defaults.rolloutDuration;
+    	      this.serveStaleDuration = defaults.serveStaleDuration;
     	      this.transformations = defaults.transformations;
     	      this.variables = defaults.variables;
         }
@@ -169,6 +183,12 @@ public final class GetImagingPolicyImagePolicy {
             return this;
         }
         @CustomType.Setter
+        public Builder serveStaleDuration(@Nullable String serveStaleDuration) {
+
+            this.serveStaleDuration = serveStaleDuration;
+            return this;
+        }
+        @CustomType.Setter
         public Builder transformations(@Nullable List<GetImagingPolicyImagePolicyTransformation> transformations) {
 
             this.transformations = transformations;
@@ -193,6 +213,7 @@ public final class GetImagingPolicyImagePolicy {
             _resultValue.output = output;
             _resultValue.postBreakpointTransformations = postBreakpointTransformations;
             _resultValue.rolloutDuration = rolloutDuration;
+            _resultValue.serveStaleDuration = serveStaleDuration;
             _resultValue.transformations = transformations;
             _resultValue.variables = variables;
             return _resultValue;

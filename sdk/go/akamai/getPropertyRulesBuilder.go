@@ -25,6 +25,9 @@ func GetPropertyRulesBuilder(ctx *pulumi.Context, args *GetPropertyRulesBuilderA
 type GetPropertyRulesBuilderArgs struct {
 	RulesV20230105 *GetPropertyRulesBuilderRulesV20230105 `pulumi:"rulesV20230105"`
 	RulesV20230530 *GetPropertyRulesBuilderRulesV20230530 `pulumi:"rulesV20230530"`
+	RulesV20230920 *GetPropertyRulesBuilderRulesV20230920 `pulumi:"rulesV20230920"`
+	RulesV20231030 *GetPropertyRulesBuilderRulesV20231030 `pulumi:"rulesV20231030"`
+	RulesV20240109 *GetPropertyRulesBuilderRulesV20240109 `pulumi:"rulesV20240109"`
 }
 
 // A collection of values returned by getPropertyRulesBuilder.
@@ -35,6 +38,9 @@ type GetPropertyRulesBuilderResult struct {
 	RuleFormat     string                                 `pulumi:"ruleFormat"`
 	RulesV20230105 *GetPropertyRulesBuilderRulesV20230105 `pulumi:"rulesV20230105"`
 	RulesV20230530 *GetPropertyRulesBuilderRulesV20230530 `pulumi:"rulesV20230530"`
+	RulesV20230920 *GetPropertyRulesBuilderRulesV20230920 `pulumi:"rulesV20230920"`
+	RulesV20231030 *GetPropertyRulesBuilderRulesV20231030 `pulumi:"rulesV20231030"`
+	RulesV20240109 *GetPropertyRulesBuilderRulesV20240109 `pulumi:"rulesV20240109"`
 }
 
 func GetPropertyRulesBuilderOutput(ctx *pulumi.Context, args GetPropertyRulesBuilderOutputArgs, opts ...pulumi.InvokeOption) GetPropertyRulesBuilderResultOutput {
@@ -54,6 +60,9 @@ func GetPropertyRulesBuilderOutput(ctx *pulumi.Context, args GetPropertyRulesBui
 type GetPropertyRulesBuilderOutputArgs struct {
 	RulesV20230105 GetPropertyRulesBuilderRulesV20230105PtrInput `pulumi:"rulesV20230105"`
 	RulesV20230530 GetPropertyRulesBuilderRulesV20230530PtrInput `pulumi:"rulesV20230530"`
+	RulesV20230920 GetPropertyRulesBuilderRulesV20230920PtrInput `pulumi:"rulesV20230920"`
+	RulesV20231030 GetPropertyRulesBuilderRulesV20231030PtrInput `pulumi:"rulesV20231030"`
+	RulesV20240109 GetPropertyRulesBuilderRulesV20240109PtrInput `pulumi:"rulesV20240109"`
 }
 
 func (GetPropertyRulesBuilderOutputArgs) ElementType() reflect.Type {
@@ -94,6 +103,18 @@ func (o GetPropertyRulesBuilderResultOutput) RulesV20230105() GetPropertyRulesBu
 
 func (o GetPropertyRulesBuilderResultOutput) RulesV20230530() GetPropertyRulesBuilderRulesV20230530PtrOutput {
 	return o.ApplyT(func(v GetPropertyRulesBuilderResult) *GetPropertyRulesBuilderRulesV20230530 { return v.RulesV20230530 }).(GetPropertyRulesBuilderRulesV20230530PtrOutput)
+}
+
+func (o GetPropertyRulesBuilderResultOutput) RulesV20230920() GetPropertyRulesBuilderRulesV20230920PtrOutput {
+	return o.ApplyT(func(v GetPropertyRulesBuilderResult) *GetPropertyRulesBuilderRulesV20230920 { return v.RulesV20230920 }).(GetPropertyRulesBuilderRulesV20230920PtrOutput)
+}
+
+func (o GetPropertyRulesBuilderResultOutput) RulesV20231030() GetPropertyRulesBuilderRulesV20231030PtrOutput {
+	return o.ApplyT(func(v GetPropertyRulesBuilderResult) *GetPropertyRulesBuilderRulesV20231030 { return v.RulesV20231030 }).(GetPropertyRulesBuilderRulesV20231030PtrOutput)
+}
+
+func (o GetPropertyRulesBuilderResultOutput) RulesV20240109() GetPropertyRulesBuilderRulesV20240109PtrOutput {
+	return o.ApplyT(func(v GetPropertyRulesBuilderResult) *GetPropertyRulesBuilderRulesV20240109 { return v.RulesV20240109 }).(GetPropertyRulesBuilderRulesV20240109PtrOutput)
 }
 
 func init() {

@@ -60,6 +60,10 @@ export class Property extends pulumi.CustomResource {
      */
     public /*out*/ readonly productionVersion!: pulumi.Output<number>;
     /**
+     * Property ID
+     */
+    public readonly propertyId!: pulumi.Output<string | undefined>;
+    /**
      * Required property's version to be read
      */
     public /*out*/ readonly readVersion!: pulumi.Output<number>;
@@ -69,6 +73,10 @@ export class Property extends pulumi.CustomResource {
      */
     public readonly ruleFormat!: pulumi.Output<string>;
     /**
+     * Rule validation warnings
+     */
+    public /*out*/ readonly ruleWarnings!: pulumi.Output<outputs.PropertyRuleWarning[]>;
+    /**
      * Property Rules as JSON
      */
     public readonly rules!: pulumi.Output<string>;
@@ -76,6 +84,10 @@ export class Property extends pulumi.CustomResource {
      * Property's version currently activated in staging (zero when not active in staging)
      */
     public /*out*/ readonly stagingVersion!: pulumi.Output<number>;
+    /**
+     * Property version notes
+     */
+    public readonly versionNotes!: pulumi.Output<string>;
 
     /**
      * Create a Property resource with the given unique name, arguments, and options.
@@ -97,11 +109,14 @@ export class Property extends pulumi.CustomResource {
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["productId"] = state ? state.productId : undefined;
             resourceInputs["productionVersion"] = state ? state.productionVersion : undefined;
+            resourceInputs["propertyId"] = state ? state.propertyId : undefined;
             resourceInputs["readVersion"] = state ? state.readVersion : undefined;
             resourceInputs["ruleErrors"] = state ? state.ruleErrors : undefined;
             resourceInputs["ruleFormat"] = state ? state.ruleFormat : undefined;
+            resourceInputs["ruleWarnings"] = state ? state.ruleWarnings : undefined;
             resourceInputs["rules"] = state ? state.rules : undefined;
             resourceInputs["stagingVersion"] = state ? state.stagingVersion : undefined;
+            resourceInputs["versionNotes"] = state ? state.versionNotes : undefined;
         } else {
             const args = argsOrState as PropertyArgs | undefined;
             if ((!args || args.contractId === undefined) && !opts.urn) {
@@ -118,12 +133,15 @@ export class Property extends pulumi.CustomResource {
             resourceInputs["hostnames"] = args ? args.hostnames : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["productId"] = args ? args.productId : undefined;
+            resourceInputs["propertyId"] = args ? args.propertyId : undefined;
             resourceInputs["ruleFormat"] = args ? args.ruleFormat : undefined;
             resourceInputs["rules"] = args ? args.rules : undefined;
+            resourceInputs["versionNotes"] = args ? args.versionNotes : undefined;
             resourceInputs["latestVersion"] = undefined /*out*/;
             resourceInputs["productionVersion"] = undefined /*out*/;
             resourceInputs["readVersion"] = undefined /*out*/;
             resourceInputs["ruleErrors"] = undefined /*out*/;
+            resourceInputs["ruleWarnings"] = undefined /*out*/;
             resourceInputs["stagingVersion"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -163,6 +181,10 @@ export interface PropertyState {
      */
     productionVersion?: pulumi.Input<number>;
     /**
+     * Property ID
+     */
+    propertyId?: pulumi.Input<string>;
+    /**
      * Required property's version to be read
      */
     readVersion?: pulumi.Input<number>;
@@ -172,6 +194,10 @@ export interface PropertyState {
      */
     ruleFormat?: pulumi.Input<string>;
     /**
+     * Rule validation warnings
+     */
+    ruleWarnings?: pulumi.Input<pulumi.Input<inputs.PropertyRuleWarning>[]>;
+    /**
      * Property Rules as JSON
      */
     rules?: pulumi.Input<string>;
@@ -179,6 +205,10 @@ export interface PropertyState {
      * Property's version currently activated in staging (zero when not active in staging)
      */
     stagingVersion?: pulumi.Input<number>;
+    /**
+     * Property version notes
+     */
+    versionNotes?: pulumi.Input<string>;
 }
 
 /**
@@ -203,6 +233,10 @@ export interface PropertyArgs {
      */
     productId: pulumi.Input<string>;
     /**
+     * Property ID
+     */
+    propertyId?: pulumi.Input<string>;
+    /**
      * Specify the rule format version (defaults to latest version available when created)
      */
     ruleFormat?: pulumi.Input<string>;
@@ -210,4 +244,8 @@ export interface PropertyArgs {
      * Property Rules as JSON
      */
     rules?: pulumi.Input<string>;
+    /**
+     * Property version notes
+     */
+    versionNotes?: pulumi.Input<string>;
 }

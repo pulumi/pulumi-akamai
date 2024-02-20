@@ -3,6 +3,7 @@
 
 package com.pulumi.akamai.inputs;
 
+import com.pulumi.akamai.inputs.EdgekvGroupItemsTimeoutsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
@@ -76,6 +77,21 @@ public final class EdgekvGroupItemsState extends com.pulumi.resources.ResourceAr
         return Optional.ofNullable(this.network);
     }
 
+    /**
+     * Enables to set timeout for processing
+     * 
+     */
+    @Import(name="timeouts")
+    private @Nullable Output<EdgekvGroupItemsTimeoutsArgs> timeouts;
+
+    /**
+     * @return Enables to set timeout for processing
+     * 
+     */
+    public Optional<Output<EdgekvGroupItemsTimeoutsArgs>> timeouts() {
+        return Optional.ofNullable(this.timeouts);
+    }
+
     private EdgekvGroupItemsState() {}
 
     private EdgekvGroupItemsState(EdgekvGroupItemsState $) {
@@ -83,6 +99,7 @@ public final class EdgekvGroupItemsState extends com.pulumi.resources.ResourceAr
         this.items = $.items;
         this.namespaceName = $.namespaceName;
         this.network = $.network;
+        this.timeouts = $.timeouts;
     }
 
     public static Builder builder() {
@@ -185,6 +202,27 @@ public final class EdgekvGroupItemsState extends com.pulumi.resources.ResourceAr
          */
         public Builder network(String network) {
             return network(Output.of(network));
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(@Nullable Output<EdgekvGroupItemsTimeoutsArgs> timeouts) {
+            $.timeouts = timeouts;
+            return this;
+        }
+
+        /**
+         * @param timeouts Enables to set timeout for processing
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeouts(EdgekvGroupItemsTimeoutsArgs timeouts) {
+            return timeouts(Output.of(timeouts));
         }
 
         public EdgekvGroupItemsState build() {

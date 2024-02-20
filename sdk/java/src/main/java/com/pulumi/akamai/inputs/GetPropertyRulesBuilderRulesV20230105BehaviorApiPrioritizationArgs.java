@@ -141,14 +141,14 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritizatio
     }
 
     /**
-     * Specifies the CP code as an object.
+     * Specifies the CP code as an object. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     @Import(name="throttledCpCode")
     private @Nullable Output<GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritizationThrottledCpCodeArgs> throttledCpCode;
 
     /**
-     * @return Specifies the CP code as an object.
+     * @return Specifies the CP code as an object. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     public Optional<Output<GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritizationThrottledCpCodeArgs>> throttledCpCode() {
@@ -420,7 +420,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritizatio
         }
 
         /**
-         * @param throttledCpCode Specifies the CP code as an object.
+         * @param throttledCpCode Specifies the CP code as an object. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
          * 
          * @return builder
          * 
@@ -431,7 +431,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritizatio
         }
 
         /**
-         * @param throttledCpCode Specifies the CP code as an object.
+         * @param throttledCpCode Specifies the CP code as an object. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
          * 
          * @return builder
          * 

@@ -8,6 +8,8 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['CloudletsApplicationLoadBalancerActivationArgs', 'CloudletsApplicationLoadBalancerActivation']
 
@@ -16,16 +18,20 @@ class CloudletsApplicationLoadBalancerActivationArgs:
     def __init__(__self__, *,
                  network: pulumi.Input[str],
                  origin_id: pulumi.Input[str],
-                 version: pulumi.Input[int]):
+                 version: pulumi.Input[int],
+                 timeouts: Optional[pulumi.Input['CloudletsApplicationLoadBalancerActivationTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a CloudletsApplicationLoadBalancerActivation resource.
         :param pulumi.Input[str] network: The network you want to activate the application load balancer version on (options are Staging and Production)
         :param pulumi.Input[str] origin_id: The conditional origin’s unique identifier
         :param pulumi.Input[int] version: Cloudlets application load balancer version you want to activate
+        :param pulumi.Input['CloudletsApplicationLoadBalancerActivationTimeoutsArgs'] timeouts: Enables to set timeout for processing
         """
         pulumi.set(__self__, "network", network)
         pulumi.set(__self__, "origin_id", origin_id)
         pulumi.set(__self__, "version", version)
+        if timeouts is not None:
+            pulumi.set(__self__, "timeouts", timeouts)
 
     @property
     @pulumi.getter
@@ -63,6 +69,18 @@ class CloudletsApplicationLoadBalancerActivationArgs:
     def version(self, value: pulumi.Input[int]):
         pulumi.set(self, "version", value)
 
+    @property
+    @pulumi.getter
+    def timeouts(self) -> Optional[pulumi.Input['CloudletsApplicationLoadBalancerActivationTimeoutsArgs']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
+
+    @timeouts.setter
+    def timeouts(self, value: Optional[pulumi.Input['CloudletsApplicationLoadBalancerActivationTimeoutsArgs']]):
+        pulumi.set(self, "timeouts", value)
+
 
 @pulumi.input_type
 class _CloudletsApplicationLoadBalancerActivationState:
@@ -70,12 +88,14 @@ class _CloudletsApplicationLoadBalancerActivationState:
                  network: Optional[pulumi.Input[str]] = None,
                  origin_id: Optional[pulumi.Input[str]] = None,
                  status: Optional[pulumi.Input[str]] = None,
+                 timeouts: Optional[pulumi.Input['CloudletsApplicationLoadBalancerActivationTimeoutsArgs']] = None,
                  version: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering CloudletsApplicationLoadBalancerActivation resources.
         :param pulumi.Input[str] network: The network you want to activate the application load balancer version on (options are Staging and Production)
         :param pulumi.Input[str] origin_id: The conditional origin’s unique identifier
         :param pulumi.Input[str] status: Activation status for this application load balancer
+        :param pulumi.Input['CloudletsApplicationLoadBalancerActivationTimeoutsArgs'] timeouts: Enables to set timeout for processing
         :param pulumi.Input[int] version: Cloudlets application load balancer version you want to activate
         """
         if network is not None:
@@ -84,6 +104,8 @@ class _CloudletsApplicationLoadBalancerActivationState:
             pulumi.set(__self__, "origin_id", origin_id)
         if status is not None:
             pulumi.set(__self__, "status", status)
+        if timeouts is not None:
+            pulumi.set(__self__, "timeouts", timeouts)
         if version is not None:
             pulumi.set(__self__, "version", version)
 
@@ -125,6 +147,18 @@ class _CloudletsApplicationLoadBalancerActivationState:
 
     @property
     @pulumi.getter
+    def timeouts(self) -> Optional[pulumi.Input['CloudletsApplicationLoadBalancerActivationTimeoutsArgs']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
+
+    @timeouts.setter
+    def timeouts(self, value: Optional[pulumi.Input['CloudletsApplicationLoadBalancerActivationTimeoutsArgs']]):
+        pulumi.set(self, "timeouts", value)
+
+    @property
+    @pulumi.getter
     def version(self) -> Optional[pulumi.Input[int]]:
         """
         Cloudlets application load balancer version you want to activate
@@ -143,6 +177,7 @@ class CloudletsApplicationLoadBalancerActivation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  origin_id: Optional[pulumi.Input[str]] = None,
+                 timeouts: Optional[pulumi.Input[pulumi.InputType['CloudletsApplicationLoadBalancerActivationTimeoutsArgs']]] = None,
                  version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
@@ -151,6 +186,7 @@ class CloudletsApplicationLoadBalancerActivation(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] network: The network you want to activate the application load balancer version on (options are Staging and Production)
         :param pulumi.Input[str] origin_id: The conditional origin’s unique identifier
+        :param pulumi.Input[pulumi.InputType['CloudletsApplicationLoadBalancerActivationTimeoutsArgs']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[int] version: Cloudlets application load balancer version you want to activate
         """
         ...
@@ -178,6 +214,7 @@ class CloudletsApplicationLoadBalancerActivation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  origin_id: Optional[pulumi.Input[str]] = None,
+                 timeouts: Optional[pulumi.Input[pulumi.InputType['CloudletsApplicationLoadBalancerActivationTimeoutsArgs']]] = None,
                  version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -194,6 +231,7 @@ class CloudletsApplicationLoadBalancerActivation(pulumi.CustomResource):
             if origin_id is None and not opts.urn:
                 raise TypeError("Missing required property 'origin_id'")
             __props__.__dict__["origin_id"] = origin_id
+            __props__.__dict__["timeouts"] = timeouts
             if version is None and not opts.urn:
                 raise TypeError("Missing required property 'version'")
             __props__.__dict__["version"] = version
@@ -211,6 +249,7 @@ class CloudletsApplicationLoadBalancerActivation(pulumi.CustomResource):
             network: Optional[pulumi.Input[str]] = None,
             origin_id: Optional[pulumi.Input[str]] = None,
             status: Optional[pulumi.Input[str]] = None,
+            timeouts: Optional[pulumi.Input[pulumi.InputType['CloudletsApplicationLoadBalancerActivationTimeoutsArgs']]] = None,
             version: Optional[pulumi.Input[int]] = None) -> 'CloudletsApplicationLoadBalancerActivation':
         """
         Get an existing CloudletsApplicationLoadBalancerActivation resource's state with the given name, id, and optional extra
@@ -222,6 +261,7 @@ class CloudletsApplicationLoadBalancerActivation(pulumi.CustomResource):
         :param pulumi.Input[str] network: The network you want to activate the application load balancer version on (options are Staging and Production)
         :param pulumi.Input[str] origin_id: The conditional origin’s unique identifier
         :param pulumi.Input[str] status: Activation status for this application load balancer
+        :param pulumi.Input[pulumi.InputType['CloudletsApplicationLoadBalancerActivationTimeoutsArgs']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[int] version: Cloudlets application load balancer version you want to activate
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -231,6 +271,7 @@ class CloudletsApplicationLoadBalancerActivation(pulumi.CustomResource):
         __props__.__dict__["network"] = network
         __props__.__dict__["origin_id"] = origin_id
         __props__.__dict__["status"] = status
+        __props__.__dict__["timeouts"] = timeouts
         __props__.__dict__["version"] = version
         return CloudletsApplicationLoadBalancerActivation(resource_name, opts=opts, __props__=__props__)
 
@@ -257,6 +298,14 @@ class CloudletsApplicationLoadBalancerActivation(pulumi.CustomResource):
         Activation status for this application load balancer
         """
         return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter
+    def timeouts(self) -> pulumi.Output[Optional['outputs.CloudletsApplicationLoadBalancerActivationTimeouts']]:
+        """
+        Enables to set timeout for processing
+        """
+        return pulumi.get(self, "timeouts")
 
     @property
     @pulumi.getter

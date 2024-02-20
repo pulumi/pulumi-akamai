@@ -64,14 +64,14 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVide
     }
 
     /**
-     * Select the CP code for which to track Image and Video Manager video traffic. Use this along with `cpCodeTransformed` to track traffic to derivative video content.
+     * Specifies the CP code for which to track Image and Video Manager video traffic. Use this along with `cpCodeTransformed` to track traffic to derivative video content. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     @Import(name="cpCodeOriginal")
     private @Nullable Output<GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideoCpCodeOriginalArgs> cpCodeOriginal;
 
     /**
-     * @return Select the CP code for which to track Image and Video Manager video traffic. Use this along with `cpCodeTransformed` to track traffic to derivative video content.
+     * @return Specifies the CP code for which to track Image and Video Manager video traffic. Use this along with `cpCodeTransformed` to track traffic to derivative video content. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     public Optional<Output<GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideoCpCodeOriginalArgs>> cpCodeOriginal() {
@@ -79,14 +79,14 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVide
     }
 
     /**
-     * Select the CP code to identify derivative transformed video content.
+     * Specifies the CP code to identify derivative transformed video content. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     @Import(name="cpCodeTransformed")
     private @Nullable Output<GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideoCpCodeTransformedArgs> cpCodeTransformed;
 
     /**
-     * @return Select the CP code to identify derivative transformed video content.
+     * @return Specifies the CP code to identify derivative transformed video content. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
      * 
      */
     public Optional<Output<GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideoCpCodeTransformedArgs>> cpCodeTransformed() {
@@ -154,14 +154,14 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVide
     }
 
     /**
-     * Specify the default policy identifier, which is registered with the `Image and Video Manager API` once you activate this property.
+     * Specifies the default policy identifier, which is registered with the `Image and Video Manager API` once you activate this property.
      * 
      */
     @Import(name="policyTokenDefault")
     private @Nullable Output<String> policyTokenDefault;
 
     /**
-     * @return Specify the default policy identifier, which is registered with the `Image and Video Manager API` once you activate this property.
+     * @return Specifies the default policy identifier, which is registered with the `Image and Video Manager API` once you activate this property.
      * 
      */
     public Optional<Output<String>> policyTokenDefault() {
@@ -377,7 +377,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVide
         }
 
         /**
-         * @param cpCodeOriginal Select the CP code for which to track Image and Video Manager video traffic. Use this along with `cpCodeTransformed` to track traffic to derivative video content.
+         * @param cpCodeOriginal Specifies the CP code for which to track Image and Video Manager video traffic. Use this along with `cpCodeTransformed` to track traffic to derivative video content. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
          * 
          * @return builder
          * 
@@ -388,7 +388,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVide
         }
 
         /**
-         * @param cpCodeOriginal Select the CP code for which to track Image and Video Manager video traffic. Use this along with `cpCodeTransformed` to track traffic to derivative video content.
+         * @param cpCodeOriginal Specifies the CP code for which to track Image and Video Manager video traffic. Use this along with `cpCodeTransformed` to track traffic to derivative video content. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
          * 
          * @return builder
          * 
@@ -398,7 +398,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVide
         }
 
         /**
-         * @param cpCodeTransformed Select the CP code to identify derivative transformed video content.
+         * @param cpCodeTransformed Specifies the CP code to identify derivative transformed video content. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
          * 
          * @return builder
          * 
@@ -409,7 +409,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVide
         }
 
         /**
-         * @param cpCodeTransformed Select the CP code to identify derivative transformed video content.
+         * @param cpCodeTransformed Specifies the CP code to identify derivative transformed video content. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
          * 
          * @return builder
          * 
@@ -503,7 +503,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVide
         }
 
         /**
-         * @param policyTokenDefault Specify the default policy identifier, which is registered with the `Image and Video Manager API` once you activate this property.
+         * @param policyTokenDefault Specifies the default policy identifier, which is registered with the `Image and Video Manager API` once you activate this property.
          * 
          * @return builder
          * 
@@ -514,7 +514,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVide
         }
 
         /**
-         * @param policyTokenDefault Specify the default policy identifier, which is registered with the `Image and Video Manager API` once you activate this property.
+         * @param policyTokenDefault Specifies the default policy identifier, which is registered with the `Image and Video Manager API` once you activate this property.
          * 
          * @return builder
          * 

@@ -15,9 +15,17 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorCommonMediaClien
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorCommonMediaClientData Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorCommonMediaClientData();
 
+    /**
+     * Uses Common Media Client Data (CMCD) metadata to determine the segment URLs your origin server prefetches to speed up content delivery.
+     * 
+     */
     @Import(name="enableCmcdSegmentPrefetch")
     private @Nullable Boolean enableCmcdSegmentPrefetch;
 
+    /**
+     * @return Uses Common Media Client Data (CMCD) metadata to determine the segment URLs your origin server prefetches to speed up content delivery.
+     * 
+     */
     public Optional<Boolean> enableCmcdSegmentPrefetch() {
         return Optional.ofNullable(this.enableCmcdSegmentPrefetch);
     }
@@ -94,6 +102,12 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorCommonMediaClien
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorCommonMediaClientData(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param enableCmcdSegmentPrefetch Uses Common Media Client Data (CMCD) metadata to determine the segment URLs your origin server prefetches to speed up content delivery.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enableCmcdSegmentPrefetch(@Nullable Boolean enableCmcdSegmentPrefetch) {
             $.enableCmcdSegmentPrefetch = enableCmcdSegmentPrefetch;
             return this;
