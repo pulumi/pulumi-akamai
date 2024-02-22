@@ -8,6 +8,3 @@ env:
   AKAMAI_CLIENT_SECRET: ${{ secrets.AKAMAI_CLIENT_SECRET }}
 makeTemplate: bridged
 team: ecosystem
-runner:
-  publish: pulumi-ubuntu-8core
-  buildSdk: pulumi-ubuntu-8core
