@@ -79,7 +79,8 @@ namespace Pulumi.Akamai.Inputs
         public Input<string> OriginId { get; set; } = null!;
 
         /// <summary>
-        /// The percent of traffic that is sent to the data center. The total for all data centers must equal 100%.
+        /// The percent of traffic that is sent to the data center. The total for all data centers must equal 100%!
+        /// (MISSING)
         /// </summary>
         [Input("percent", required: true)]
         public Input<double> Percent { get; set; } = null!;

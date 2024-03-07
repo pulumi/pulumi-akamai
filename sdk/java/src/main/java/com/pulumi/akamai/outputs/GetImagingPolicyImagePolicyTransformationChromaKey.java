@@ -27,12 +27,12 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKey {
      */
     private @Nullable String hueFeatherVar;
     /**
-     * @return How close a color&#39;s hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
+     * @return How close a color&#39;s hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3%!o(MISSING)f the color wheel. This value corresponds to 30° around the specified hue.
      * 
      */
     private @Nullable String hueTolerance;
     /**
-     * @return How close a color&#39;s hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
+     * @return How close a color&#39;s hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3%!o(MISSING)f the color wheel. This value corresponds to 30° around the specified hue.
      * 
      */
     private @Nullable String hueToleranceVar;
@@ -42,42 +42,42 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKey {
      */
     private @Nullable String hueVar;
     /**
-     * @return How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
+     * @return How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10%!a(MISSING)way from the tolerated lightness towards full black or full white.
      * 
      */
     private @Nullable String lightnessFeather;
     /**
-     * @return How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
+     * @return How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10%!a(MISSING)way from the tolerated lightness towards full black or full white.
      * 
      */
     private @Nullable String lightnessFeatherVar;
     /**
-     * @return How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
+     * @return How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75%!o(MISSING)f the full color to full white or full black for full removal.
      * 
      */
     private @Nullable String lightnessTolerance;
     /**
-     * @return How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
+     * @return How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75%!o(MISSING)f the full color to full white or full black for full removal.
      * 
      */
     private @Nullable String lightnessToleranceVar;
     /**
-     * @return How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
+     * @return How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10%!b(MISSING)elow the saturationTolerance.
      * 
      */
     private @Nullable String saturationFeather;
     /**
-     * @return How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
+     * @return How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10%!b(MISSING)elow the saturationTolerance.
      * 
      */
     private @Nullable String saturationFeatherVar;
     /**
-     * @return How close a color&#39;s saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
+     * @return How close a color&#39;s saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75%!o(MISSING)f full saturation in order to be made fully transparent.
      * 
      */
     private @Nullable String saturationTolerance;
     /**
-     * @return How close a color&#39;s saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
+     * @return How close a color&#39;s saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75%!o(MISSING)f full saturation in order to be made fully transparent.
      * 
      */
     private @Nullable String saturationToleranceVar;
@@ -105,14 +105,14 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKey {
         return Optional.ofNullable(this.hueFeatherVar);
     }
     /**
-     * @return How close a color&#39;s hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
+     * @return How close a color&#39;s hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3%!o(MISSING)f the color wheel. This value corresponds to 30° around the specified hue.
      * 
      */
     public Optional<String> hueTolerance() {
         return Optional.ofNullable(this.hueTolerance);
     }
     /**
-     * @return How close a color&#39;s hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
+     * @return How close a color&#39;s hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3%!o(MISSING)f the color wheel. This value corresponds to 30° around the specified hue.
      * 
      */
     public Optional<String> hueToleranceVar() {
@@ -126,56 +126,56 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKey {
         return Optional.ofNullable(this.hueVar);
     }
     /**
-     * @return How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
+     * @return How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10%!a(MISSING)way from the tolerated lightness towards full black or full white.
      * 
      */
     public Optional<String> lightnessFeather() {
         return Optional.ofNullable(this.lightnessFeather);
     }
     /**
-     * @return How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
+     * @return How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10%!a(MISSING)way from the tolerated lightness towards full black or full white.
      * 
      */
     public Optional<String> lightnessFeatherVar() {
         return Optional.ofNullable(this.lightnessFeatherVar);
     }
     /**
-     * @return How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
+     * @return How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75%!o(MISSING)f the full color to full white or full black for full removal.
      * 
      */
     public Optional<String> lightnessTolerance() {
         return Optional.ofNullable(this.lightnessTolerance);
     }
     /**
-     * @return How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
+     * @return How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75%!o(MISSING)f the full color to full white or full black for full removal.
      * 
      */
     public Optional<String> lightnessToleranceVar() {
         return Optional.ofNullable(this.lightnessToleranceVar);
     }
     /**
-     * @return How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
+     * @return How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10%!b(MISSING)elow the saturationTolerance.
      * 
      */
     public Optional<String> saturationFeather() {
         return Optional.ofNullable(this.saturationFeather);
     }
     /**
-     * @return How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
+     * @return How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10%!b(MISSING)elow the saturationTolerance.
      * 
      */
     public Optional<String> saturationFeatherVar() {
         return Optional.ofNullable(this.saturationFeatherVar);
     }
     /**
-     * @return How close a color&#39;s saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
+     * @return How close a color&#39;s saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75%!o(MISSING)f full saturation in order to be made fully transparent.
      * 
      */
     public Optional<String> saturationTolerance() {
         return Optional.ofNullable(this.saturationTolerance);
     }
     /**
-     * @return How close a color&#39;s saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
+     * @return How close a color&#39;s saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75%!o(MISSING)f full saturation in order to be made fully transparent.
      * 
      */
     public Optional<String> saturationToleranceVar() {

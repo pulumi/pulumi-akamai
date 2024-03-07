@@ -58,7 +58,7 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string? ForceChars;
         /// <summary>
-        /// Specifies an optional format string for the conversion, using format codes such as `%m/%d/%y` as specified by `strftime`. A blank value defaults to RFC-2616 format.
+        /// Specifies an optional format string for the conversion, using format codes such as `%!m(MISSING)/%!d(MISSING)/%!y(MISSING)` as specified by `strftime`. A blank value defaults to RFC-2616 format.
         /// </summary>
         public readonly string? FormatString;
         /// <summary>
@@ -194,7 +194,7 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string? ValueSource;
         /// <summary>
-        /// Specifies the predeclared root name of the variable to modify.  When you declare a variable name such as `VAR`, its name is preprended with `PMUSER_` and accessible in a `user` namespace, so that you invoke it in subsequent text fields within the rule tree as `{{user.PMUSER_VAR}}`. In deployed `XML metadata`, it appears as `%(PMUSER_VAR)`.
+        /// Specifies the predeclared root name of the variable to modify.  When you declare a variable name such as `VAR`, its name is preprended with `PMUSER_` and accessible in a `user` namespace, so that you invoke it in subsequent text fields within the rule tree as `{{user.PMUSER_VAR}}`. In deployed `XML metadata`, it appears as `%!((MISSING)PMUSER_VAR)`.
         /// </summary>
         public readonly string? VariableName;
         /// <summary>

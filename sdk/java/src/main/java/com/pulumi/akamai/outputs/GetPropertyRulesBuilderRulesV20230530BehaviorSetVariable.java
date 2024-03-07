@@ -69,7 +69,7 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorSetVariable {
      */
     private @Nullable String forceChars;
     /**
-     * @return Specifies an optional format string for the conversion, using format codes such as `%m/%d/%y` as specified by `strftime`. A blank value defaults to RFC-2616 format.
+     * @return Specifies an optional format string for the conversion, using format codes such as `%!m(MISSING)/%!d(MISSING)/%!y(MISSING)` as specified by `strftime`. A blank value defaults to RFC-2616 format.
      * 
      */
     private @Nullable String formatString;
@@ -239,7 +239,7 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorSetVariable {
      */
     private @Nullable String valueSource;
     /**
-     * @return Specifies the predeclared root name of the variable to modify.  When you declare a variable name such as `VAR`, its name is preprended with `PMUSER_` and accessible in a `user` namespace, so that you invoke it in subsequent text fields within the rule tree as `{{user.PMUSER_VAR}}`. In deployed `XML metadata`, it appears as `%(PMUSER_VAR)`.
+     * @return Specifies the predeclared root name of the variable to modify.  When you declare a variable name such as `VAR`, its name is preprended with `PMUSER_` and accessible in a `user` namespace, so that you invoke it in subsequent text fields within the rule tree as `{{user.PMUSER_VAR}}`. In deployed `XML metadata`, it appears as `%!((MISSING)PMUSER_VAR)`.
      * 
      */
     private @Nullable String variableName;
@@ -328,7 +328,7 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorSetVariable {
         return Optional.ofNullable(this.forceChars);
     }
     /**
-     * @return Specifies an optional format string for the conversion, using format codes such as `%m/%d/%y` as specified by `strftime`. A blank value defaults to RFC-2616 format.
+     * @return Specifies an optional format string for the conversion, using format codes such as `%!m(MISSING)/%!d(MISSING)/%!y(MISSING)` as specified by `strftime`. A blank value defaults to RFC-2616 format.
      * 
      */
     public Optional<String> formatString() {
@@ -566,7 +566,7 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorSetVariable {
         return Optional.ofNullable(this.valueSource);
     }
     /**
-     * @return Specifies the predeclared root name of the variable to modify.  When you declare a variable name such as `VAR`, its name is preprended with `PMUSER_` and accessible in a `user` namespace, so that you invoke it in subsequent text fields within the rule tree as `{{user.PMUSER_VAR}}`. In deployed `XML metadata`, it appears as `%(PMUSER_VAR)`.
+     * @return Specifies the predeclared root name of the variable to modify.  When you declare a variable name such as `VAR`, its name is preprended with `PMUSER_` and accessible in a `user` namespace, so that you invoke it in subsequent text fields within the rule tree as `{{user.PMUSER_VAR}}`. In deployed `XML metadata`, it appears as `%!((MISSING)PMUSER_VAR)`.
      * 
      */
     public Optional<String> variableName() {

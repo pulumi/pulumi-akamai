@@ -18,7 +18,7 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly bool? Locked;
         /// <summary>
-        /// Specifies the cache tag you want to add to your cached content. A cache tag is only added when the object is first added to cache. A single cache tag can't exceed 128 characters and can only include alphanumeric characters, plus this class of characters: ```[!#$%'+./^_`|~-]```
+        /// Specifies the cache tag you want to add to your cached content. A cache tag is only added when the object is first added to cache. A single cache tag can't exceed 128 characters and can only include alphanumeric characters, plus this class of characters: ```[!#$%!'(MISSING)+./^_`|~-]```
         /// </summary>
         public readonly string? Tag;
         /// <summary>
