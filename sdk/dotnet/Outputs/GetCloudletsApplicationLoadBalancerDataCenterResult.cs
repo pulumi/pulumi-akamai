@@ -54,7 +54,8 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string OriginId;
         /// <summary>
-        /// The percent of traffic that is sent to the data center. The total for all data centers must equal 100%.
+        /// The percent of traffic that is sent to the data center. The total for all data centers must equal 100%!
+        /// (MISSING)
         /// </summary>
         public readonly double Percent;
         /// <summary>

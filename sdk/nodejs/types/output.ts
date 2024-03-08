@@ -70,7 +70,8 @@ export interface CloudletsApplicationLoadBalancerDataCenter {
      */
     originId: string;
     /**
-     * The percent of traffic that is sent to the data center. The total for all data centers must equal 100%.
+     * The percent of traffic that is sent to the data center. The total for all data centers must equal 100%!
+     * (MISSING)
      */
     percent: number;
     /**
@@ -1879,7 +1880,8 @@ export interface GetCloudletsApplicationLoadBalancerDataCenter {
      */
     originId: string;
     /**
-     * The percent of traffic that is sent to the data center. The total for all data centers must equal 100%.
+     * The percent of traffic that is sent to the data center. The total for all data centers must equal 100%!
+     * (MISSING)
      */
     percent: number;
     /**
@@ -4911,7 +4913,7 @@ export interface GetImagingPolicyImagePolicyPostBreakpointTransformation {
      */
     chromaKeys?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationChromaKey[];
     /**
-     * Applies another image to the source image, either as an overlay or an underlay. The image that's underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
+     * Applies another image to the source image, either as an overlay or an underlay. The image that's underneath is visible in areas that are beyond the edges of the top image or that are less than 100%!o(MISSING)paque. A common use of an overlay composite is to add a watermark.
      */
     composites?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationComposite[];
     compounds?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompound[];
@@ -4999,11 +5001,11 @@ export interface GetImagingPolicyImagePolicyPostBreakpointTransformationChromaKe
      */
     hueFeatherVar?: string;
     /**
-     * How close a color's hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
+     * How close a color's hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3%!o(MISSING)f the color wheel. This value corresponds to 30° around the specified hue.
      */
     hueTolerance?: string;
     /**
-     * How close a color's hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
+     * How close a color's hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3%!o(MISSING)f the color wheel. This value corresponds to 30° around the specified hue.
      */
     hueToleranceVar?: string;
     /**
@@ -5011,35 +5013,35 @@ export interface GetImagingPolicyImagePolicyPostBreakpointTransformationChromaKe
      */
     hueVar?: string;
     /**
-     * How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
+     * How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10%!a(MISSING)way from the tolerated lightness towards full black or full white.
      */
     lightnessFeather?: string;
     /**
-     * How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
+     * How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10%!a(MISSING)way from the tolerated lightness towards full black or full white.
      */
     lightnessFeatherVar?: string;
     /**
-     * How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
+     * How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75%!o(MISSING)f the full color to full white or full black for full removal.
      */
     lightnessTolerance?: string;
     /**
-     * How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
+     * How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75%!o(MISSING)f the full color to full white or full black for full removal.
      */
     lightnessToleranceVar?: string;
     /**
-     * How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
+     * How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10%!b(MISSING)elow the saturationTolerance.
      */
     saturationFeather?: string;
     /**
-     * How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
+     * How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10%!b(MISSING)elow the saturationTolerance.
      */
     saturationFeatherVar?: string;
     /**
-     * How close a color's saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
+     * How close a color's saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75%!o(MISSING)f full saturation in order to be made fully transparent.
      */
     saturationTolerance?: string;
     /**
-     * How close a color's saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
+     * How close a color's saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75%!o(MISSING)f full saturation in order to be made fully transparent.
      */
     saturationToleranceVar?: string;
 }
@@ -5516,7 +5518,7 @@ export interface GetImagingPolicyImagePolicyTransformation {
      */
     chromaKeys?: outputs.GetImagingPolicyImagePolicyTransformationChromaKey[];
     /**
-     * Applies another image to the source image, either as an overlay or an underlay. The image that's underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
+     * Applies another image to the source image, either as an overlay or an underlay. The image that's underneath is visible in areas that are beyond the edges of the top image or that are less than 100%!o(MISSING)paque. A common use of an overlay composite is to add a watermark.
      */
     composites?: outputs.GetImagingPolicyImagePolicyTransformationComposite[];
     compounds?: outputs.GetImagingPolicyImagePolicyTransformationCompound[];
@@ -5862,11 +5864,11 @@ export interface GetImagingPolicyImagePolicyTransformationChromaKey {
      */
     hueFeatherVar?: string;
     /**
-     * How close a color's hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
+     * How close a color's hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3%!o(MISSING)f the color wheel. This value corresponds to 30° around the specified hue.
      */
     hueTolerance?: string;
     /**
-     * How close a color's hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
+     * How close a color's hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3%!o(MISSING)f the color wheel. This value corresponds to 30° around the specified hue.
      */
     hueToleranceVar?: string;
     /**
@@ -5874,35 +5876,35 @@ export interface GetImagingPolicyImagePolicyTransformationChromaKey {
      */
     hueVar?: string;
     /**
-     * How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
+     * How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10%!a(MISSING)way from the tolerated lightness towards full black or full white.
      */
     lightnessFeather?: string;
     /**
-     * How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
+     * How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10%!a(MISSING)way from the tolerated lightness towards full black or full white.
      */
     lightnessFeatherVar?: string;
     /**
-     * How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
+     * How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75%!o(MISSING)f the full color to full white or full black for full removal.
      */
     lightnessTolerance?: string;
     /**
-     * How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
+     * How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75%!o(MISSING)f the full color to full white or full black for full removal.
      */
     lightnessToleranceVar?: string;
     /**
-     * How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
+     * How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10%!b(MISSING)elow the saturationTolerance.
      */
     saturationFeather?: string;
     /**
-     * How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
+     * How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10%!b(MISSING)elow the saturationTolerance.
      */
     saturationFeatherVar?: string;
     /**
-     * How close a color's saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
+     * How close a color's saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75%!o(MISSING)f full saturation in order to be made fully transparent.
      */
     saturationTolerance?: string;
     /**
-     * How close a color's saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
+     * How close a color's saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75%!o(MISSING)f full saturation in order to be made fully transparent.
      */
     saturationToleranceVar?: string;
 }
@@ -9437,7 +9439,7 @@ export interface GetPropertyRulesBuilderRulesV20230105BehaviorCacheTag {
      */
     locked?: boolean;
     /**
-     * Specifies the cache tag you want to add to your cached content. A cache tag is only added when the object is first added to cache. A single cache tag can't exceed 128 characters and can only include alphanumeric characters, plus this class of characters: ```[!#$%'+./^_`|~-]```
+     * Specifies the cache tag you want to add to your cached content. A cache tag is only added when the object is first added to cache. A single cache tag can't exceed 128 characters and can only include alphanumeric characters, plus this class of characters: ```[!#$%!'(MISSING)+./^_`|~-]```
      */
     tag?: string;
     /**
@@ -15745,7 +15747,7 @@ export interface GetPropertyRulesBuilderRulesV20230105BehaviorSetVariable {
      */
     forceChars?: string;
     /**
-     * Specifies an optional format string for the conversion, using format codes such as `%m/%d/%y` as specified by `strftime`. A blank value defaults to RFC-2616 format.
+     * Specifies an optional format string for the conversion, using format codes such as `%!m(MISSING)/%!d(MISSING)/%!y(MISSING)` as specified by `strftime`. A blank value defaults to RFC-2616 format.
      */
     formatString?: string;
     /**
@@ -15881,7 +15883,7 @@ export interface GetPropertyRulesBuilderRulesV20230105BehaviorSetVariable {
      */
     valueSource?: string;
     /**
-     * Specifies the predeclared root name of the variable to modify.  When you declare a variable name such as `VAR`, its name is preprended with `PMUSER_` and accessible in a `user` namespace, so that you invoke it in subsequent text fields within the rule tree as `{{user.PMUSER_VAR}}`. In deployed `XML metadata`, it appears as `%(PMUSER_VAR)`.
+     * Specifies the predeclared root name of the variable to modify.  When you declare a variable name such as `VAR`, its name is preprended with `PMUSER_` and accessible in a `user` namespace, so that you invoke it in subsequent text fields within the rule tree as `{{user.PMUSER_VAR}}`. In deployed `XML metadata`, it appears as `%!((MISSING)PMUSER_VAR)`.
      */
     variableName?: string;
     /**
@@ -20750,7 +20752,7 @@ export interface GetPropertyRulesBuilderRulesV20230530BehaviorCacheTag {
      */
     locked?: boolean;
     /**
-     * Specifies the cache tag you want to add to your cached content. A cache tag is only added when the object is first added to cache. A single cache tag can't exceed 128 characters and can only include alphanumeric characters, plus this class of characters: ```[!#$%'+./^_`|~-]```
+     * Specifies the cache tag you want to add to your cached content. A cache tag is only added when the object is first added to cache. A single cache tag can't exceed 128 characters and can only include alphanumeric characters, plus this class of characters: ```[!#$%!'(MISSING)+./^_`|~-]```
      */
     tag?: string;
     /**
@@ -26953,7 +26955,7 @@ export interface GetPropertyRulesBuilderRulesV20230530BehaviorSetVariable {
      */
     forceChars?: string;
     /**
-     * Specifies an optional format string for the conversion, using format codes such as `%m/%d/%y` as specified by `strftime`. A blank value defaults to RFC-2616 format.
+     * Specifies an optional format string for the conversion, using format codes such as `%!m(MISSING)/%!d(MISSING)/%!y(MISSING)` as specified by `strftime`. A blank value defaults to RFC-2616 format.
      */
     formatString?: string;
     /**
@@ -27089,7 +27091,7 @@ export interface GetPropertyRulesBuilderRulesV20230530BehaviorSetVariable {
      */
     valueSource?: string;
     /**
-     * Specifies the predeclared root name of the variable to modify.  When you declare a variable name such as `VAR`, its name is preprended with `PMUSER_` and accessible in a `user` namespace, so that you invoke it in subsequent text fields within the rule tree as `{{user.PMUSER_VAR}}`. In deployed `XML metadata`, it appears as `%(PMUSER_VAR)`.
+     * Specifies the predeclared root name of the variable to modify.  When you declare a variable name such as `VAR`, its name is preprended with `PMUSER_` and accessible in a `user` namespace, so that you invoke it in subsequent text fields within the rule tree as `{{user.PMUSER_VAR}}`. In deployed `XML metadata`, it appears as `%!((MISSING)PMUSER_VAR)`.
      */
     variableName?: string;
     /**
@@ -31998,7 +32000,7 @@ export interface GetPropertyRulesBuilderRulesV20230920BehaviorCacheTag {
      */
     locked?: boolean;
     /**
-     * Specifies the cache tag you want to add to your cached content. A cache tag is only added when the object is first added to cache. A single cache tag can't exceed 128 characters and can only include alphanumeric characters, plus this class of characters: ```[!#$%'+./^_`|~-]```
+     * Specifies the cache tag you want to add to your cached content. A cache tag is only added when the object is first added to cache. A single cache tag can't exceed 128 characters and can only include alphanumeric characters, plus this class of characters: ```[!#$%!'(MISSING)+./^_`|~-]```
      */
     tag?: string;
     /**
@@ -38356,7 +38358,7 @@ export interface GetPropertyRulesBuilderRulesV20230920BehaviorSetVariable {
      */
     forceChars?: string;
     /**
-     * Specifies an optional format string for the conversion, using format codes such as `%m/%d/%y` as specified by `strftime`. A blank value defaults to RFC-2616 format.
+     * Specifies an optional format string for the conversion, using format codes such as `%!m(MISSING)/%!d(MISSING)/%!y(MISSING)` as specified by `strftime`. A blank value defaults to RFC-2616 format.
      */
     formatString?: string;
     /**
@@ -38492,7 +38494,7 @@ export interface GetPropertyRulesBuilderRulesV20230920BehaviorSetVariable {
      */
     valueSource?: string;
     /**
-     * Specifies the predeclared root name of the variable to modify.  When you declare a variable name such as `VAR`, its name is preprended with `PMUSER_` and accessible in a `user` namespace, so that you invoke it in subsequent text fields within the rule tree as `{{user.PMUSER_VAR}}`. In deployed `XML metadata`, it appears as `%(PMUSER_VAR)`.
+     * Specifies the predeclared root name of the variable to modify.  When you declare a variable name such as `VAR`, its name is preprended with `PMUSER_` and accessible in a `user` namespace, so that you invoke it in subsequent text fields within the rule tree as `{{user.PMUSER_VAR}}`. In deployed `XML metadata`, it appears as `%!((MISSING)PMUSER_VAR)`.
      */
     variableName?: string;
     /**
@@ -43405,7 +43407,7 @@ export interface GetPropertyRulesBuilderRulesV20231030BehaviorCacheTag {
      */
     locked?: boolean;
     /**
-     * Specifies the cache tag you want to add to your cached content. A cache tag is only added when the object is first added to cache. A single cache tag can't exceed 128 characters and can only include alphanumeric characters, plus this class of characters: ```[!#$%'+./^_`|~-]```
+     * Specifies the cache tag you want to add to your cached content. A cache tag is only added when the object is first added to cache. A single cache tag can't exceed 128 characters and can only include alphanumeric characters, plus this class of characters: ```[!#$%!'(MISSING)+./^_`|~-]```
      */
     tag?: string;
     /**
@@ -49763,7 +49765,7 @@ export interface GetPropertyRulesBuilderRulesV20231030BehaviorSetVariable {
      */
     forceChars?: string;
     /**
-     * Specifies an optional format string for the conversion, using format codes such as `%m/%d/%y` as specified by `strftime`. A blank value defaults to RFC-2616 format.
+     * Specifies an optional format string for the conversion, using format codes such as `%!m(MISSING)/%!d(MISSING)/%!y(MISSING)` as specified by `strftime`. A blank value defaults to RFC-2616 format.
      */
     formatString?: string;
     /**
@@ -49899,7 +49901,7 @@ export interface GetPropertyRulesBuilderRulesV20231030BehaviorSetVariable {
      */
     valueSource?: string;
     /**
-     * Specifies the predeclared root name of the variable to modify.  When you declare a variable name such as `VAR`, its name is preprended with `PMUSER_` and accessible in a `user` namespace, so that you invoke it in subsequent text fields within the rule tree as `{{user.PMUSER_VAR}}`. In deployed `XML metadata`, it appears as `%(PMUSER_VAR)`.
+     * Specifies the predeclared root name of the variable to modify.  When you declare a variable name such as `VAR`, its name is preprended with `PMUSER_` and accessible in a `user` namespace, so that you invoke it in subsequent text fields within the rule tree as `{{user.PMUSER_VAR}}`. In deployed `XML metadata`, it appears as `%!((MISSING)PMUSER_VAR)`.
      */
     variableName?: string;
     /**
@@ -54812,7 +54814,7 @@ export interface GetPropertyRulesBuilderRulesV20240109BehaviorCacheTag {
      */
     locked?: boolean;
     /**
-     * Specifies the cache tag you want to add to your cached content. A cache tag is only added when the object is first added to cache. A single cache tag can't exceed 128 characters and can only include alphanumeric characters, plus this class of characters: ```[!#$%'+./^_`|~-]```
+     * Specifies the cache tag you want to add to your cached content. A cache tag is only added when the object is first added to cache. A single cache tag can't exceed 128 characters and can only include alphanumeric characters, plus this class of characters: ```[!#$%!'(MISSING)+./^_`|~-]```
      */
     tag?: string;
     /**
@@ -61170,7 +61172,7 @@ export interface GetPropertyRulesBuilderRulesV20240109BehaviorSetVariable {
      */
     forceChars?: string;
     /**
-     * Specifies an optional format string for the conversion, using format codes such as `%m/%d/%y` as specified by `strftime`. A blank value defaults to RFC-2616 format.
+     * Specifies an optional format string for the conversion, using format codes such as `%!m(MISSING)/%!d(MISSING)/%!y(MISSING)` as specified by `strftime`. A blank value defaults to RFC-2616 format.
      */
     formatString?: string;
     /**
@@ -61306,7 +61308,7 @@ export interface GetPropertyRulesBuilderRulesV20240109BehaviorSetVariable {
      */
     valueSource?: string;
     /**
-     * Specifies the predeclared root name of the variable to modify.  When you declare a variable name such as `VAR`, its name is preprended with `PMUSER_` and accessible in a `user` namespace, so that you invoke it in subsequent text fields within the rule tree as `{{user.PMUSER_VAR}}`. In deployed `XML metadata`, it appears as `%(PMUSER_VAR)`.
+     * Specifies the predeclared root name of the variable to modify.  When you declare a variable name such as `VAR`, its name is preprended with `PMUSER_` and accessible in a `user` namespace, so that you invoke it in subsequent text fields within the rule tree as `{{user.PMUSER_VAR}}`. In deployed `XML metadata`, it appears as `%!((MISSING)PMUSER_VAR)`.
      */
     variableName?: string;
     /**
