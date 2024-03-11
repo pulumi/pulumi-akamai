@@ -34,7 +34,7 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationChromaKeyResult> ChromaKeys;
         /// <summary>
-        /// Applies another image to the source image, either as an overlay or an underlay. The image that's underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
+        /// Applies another image to the source image, either as an overlay or an underlay. The image that's underneath is visible in areas that are beyond the edges of the top image or that are less than 100%!o(MISSING)paque. A common use of an overlay composite is to add a watermark.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationCompositeResult> Composites;
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationCompoundResult> Compounds;

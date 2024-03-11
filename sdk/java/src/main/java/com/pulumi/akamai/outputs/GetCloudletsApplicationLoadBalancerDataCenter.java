@@ -64,7 +64,8 @@ public final class GetCloudletsApplicationLoadBalancerDataCenter {
      */
     private String originId;
     /**
-     * @return The percent of traffic that is sent to the data center. The total for all data centers must equal 100%.
+     * @return The percent of traffic that is sent to the data center. The total for all data centers must equal 100%!
+     * (MISSING)
      * 
      */
     private Double percent;
@@ -146,7 +147,8 @@ public final class GetCloudletsApplicationLoadBalancerDataCenter {
         return this.originId;
     }
     /**
-     * @return The percent of traffic that is sent to the data center. The total for all data centers must equal 100%.
+     * @return The percent of traffic that is sent to the data center. The total for all data centers must equal 100%!
+     * (MISSING)
      * 
      */
     public Double percent() {

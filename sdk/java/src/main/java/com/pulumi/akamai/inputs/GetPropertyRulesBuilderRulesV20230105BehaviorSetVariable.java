@@ -182,14 +182,14 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorSetVariable exte
     }
 
     /**
-     * Specifies an optional format string for the conversion, using format codes such as `%m/%d/%y` as specified by `strftime`. A blank value defaults to RFC-2616 format.
+     * Specifies an optional format string for the conversion, using format codes such as `%!m(MISSING)/%!d(MISSING)/%!y(MISSING)` as specified by `strftime`. A blank value defaults to RFC-2616 format.
      * 
      */
     @Import(name="formatString")
     private @Nullable String formatString;
 
     /**
-     * @return Specifies an optional format string for the conversion, using format codes such as `%m/%d/%y` as specified by `strftime`. A blank value defaults to RFC-2616 format.
+     * @return Specifies an optional format string for the conversion, using format codes such as `%!m(MISSING)/%!d(MISSING)/%!y(MISSING)` as specified by `strftime`. A blank value defaults to RFC-2616 format.
      * 
      */
     public Optional<String> formatString() {
@@ -692,14 +692,14 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorSetVariable exte
     }
 
     /**
-     * Specifies the predeclared root name of the variable to modify.  When you declare a variable name such as `VAR`, its name is preprended with `PMUSER_` and accessible in a `user` namespace, so that you invoke it in subsequent text fields within the rule tree as `{{user.PMUSER_VAR}}`. In deployed `XML metadata`, it appears as `%(PMUSER_VAR)`.
+     * Specifies the predeclared root name of the variable to modify.  When you declare a variable name such as `VAR`, its name is preprended with `PMUSER_` and accessible in a `user` namespace, so that you invoke it in subsequent text fields within the rule tree as `{{user.PMUSER_VAR}}`. In deployed `XML metadata`, it appears as `%!((MISSING)PMUSER_VAR)`.
      * 
      */
     @Import(name="variableName")
     private @Nullable String variableName;
 
     /**
-     * @return Specifies the predeclared root name of the variable to modify.  When you declare a variable name such as `VAR`, its name is preprended with `PMUSER_` and accessible in a `user` namespace, so that you invoke it in subsequent text fields within the rule tree as `{{user.PMUSER_VAR}}`. In deployed `XML metadata`, it appears as `%(PMUSER_VAR)`.
+     * @return Specifies the predeclared root name of the variable to modify.  When you declare a variable name such as `VAR`, its name is preprended with `PMUSER_` and accessible in a `user` namespace, so that you invoke it in subsequent text fields within the rule tree as `{{user.PMUSER_VAR}}`. In deployed `XML metadata`, it appears as `%!((MISSING)PMUSER_VAR)`.
      * 
      */
     public Optional<String> variableName() {
@@ -913,7 +913,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorSetVariable exte
         }
 
         /**
-         * @param formatString Specifies an optional format string for the conversion, using format codes such as `%m/%d/%y` as specified by `strftime`. A blank value defaults to RFC-2616 format.
+         * @param formatString Specifies an optional format string for the conversion, using format codes such as `%!m(MISSING)/%!d(MISSING)/%!y(MISSING)` as specified by `strftime`. A blank value defaults to RFC-2616 format.
          * 
          * @return builder
          * 
@@ -1287,7 +1287,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorSetVariable exte
         }
 
         /**
-         * @param variableName Specifies the predeclared root name of the variable to modify.  When you declare a variable name such as `VAR`, its name is preprended with `PMUSER_` and accessible in a `user` namespace, so that you invoke it in subsequent text fields within the rule tree as `{{user.PMUSER_VAR}}`. In deployed `XML metadata`, it appears as `%(PMUSER_VAR)`.
+         * @param variableName Specifies the predeclared root name of the variable to modify.  When you declare a variable name such as `VAR`, its name is preprended with `PMUSER_` and accessible in a `user` namespace, so that you invoke it in subsequent text fields within the rule tree as `{{user.PMUSER_VAR}}`. In deployed `XML metadata`, it appears as `%!((MISSING)PMUSER_VAR)`.
          * 
          * @return builder
          * 

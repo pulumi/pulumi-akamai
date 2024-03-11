@@ -170,14 +170,16 @@ public final class CloudletsApplicationLoadBalancerDataCenterArgs extends com.pu
     }
 
     /**
-     * The percent of traffic that is sent to the data center. The total for all data centers must equal 100%.
+     * The percent of traffic that is sent to the data center. The total for all data centers must equal 100%!
+     * (MISSING)
      * 
      */
     @Import(name="percent", required=true)
     private Output<Double> percent;
 
     /**
-     * @return The percent of traffic that is sent to the data center. The total for all data centers must equal 100%.
+     * @return The percent of traffic that is sent to the data center. The total for all data centers must equal 100%!
+     * (MISSING)
      * 
      */
     public Output<Double> percent() {
@@ -455,7 +457,8 @@ public final class CloudletsApplicationLoadBalancerDataCenterArgs extends com.pu
         }
 
         /**
-         * @param percent The percent of traffic that is sent to the data center. The total for all data centers must equal 100%.
+         * @param percent The percent of traffic that is sent to the data center. The total for all data centers must equal 100%!
+         * (MISSING)
          * 
          * @return builder
          * 
@@ -466,7 +469,8 @@ public final class CloudletsApplicationLoadBalancerDataCenterArgs extends com.pu
         }
 
         /**
-         * @param percent The percent of traffic that is sent to the data center. The total for all data centers must equal 100%.
+         * @param percent The percent of traffic that is sent to the data center. The total for all data centers must equal 100%!
+         * (MISSING)
          * 
          * @return builder
          * 
