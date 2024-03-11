@@ -18,7 +18,7 @@ public final class GetPropertyRulesBuilderRulesV20240109BehaviorCacheTag {
      */
     private @Nullable Boolean locked;
     /**
-     * @return Specifies the cache tag you want to add to your cached content. A cache tag is only added when the object is first added to cache. A single cache tag can&#39;t exceed 128 characters and can only include alphanumeric characters, plus this class of characters: ```[!#$%&#39;+./^_`|~-]```
+     * @return Specifies the cache tag you want to add to your cached content. A cache tag is only added when the object is first added to cache. A single cache tag can&#39;t exceed 128 characters and can only include alphanumeric characters, plus this class of characters: ```[!#$%!&#39;(MISSING)+./^_`|~-]```
      * 
      */
     private @Nullable String tag;
@@ -42,7 +42,7 @@ public final class GetPropertyRulesBuilderRulesV20240109BehaviorCacheTag {
         return Optional.ofNullable(this.locked);
     }
     /**
-     * @return Specifies the cache tag you want to add to your cached content. A cache tag is only added when the object is first added to cache. A single cache tag can&#39;t exceed 128 characters and can only include alphanumeric characters, plus this class of characters: ```[!#$%&#39;+./^_`|~-]```
+     * @return Specifies the cache tag you want to add to your cached content. A cache tag is only added when the object is first added to cache. A single cache tag can&#39;t exceed 128 characters and can only include alphanumeric characters, plus this class of characters: ```[!#$%!&#39;(MISSING)+./^_`|~-]```
      * 
      */
     public Optional<String> tag() {
