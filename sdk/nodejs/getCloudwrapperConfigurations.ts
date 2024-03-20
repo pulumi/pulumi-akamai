@@ -28,7 +28,7 @@ export interface GetCloudwrapperConfigurationsArgs {
 export interface GetCloudwrapperConfigurationsResult {
     readonly configurations?: outputs.GetCloudwrapperConfigurationsConfiguration[];
     /**
-     * @deprecated Required by the terraform plugin testing framework, always set to `akamai_cloudwrapper_configurations`.
+     * @deprecated Required by the terraform plugin testing framework, always set to `akamai.getCloudwrapperConfigurations`.
      */
     readonly id: string;
 }
