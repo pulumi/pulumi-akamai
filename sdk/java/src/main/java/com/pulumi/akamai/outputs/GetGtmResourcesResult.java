@@ -16,10 +16,10 @@ public final class GetGtmResourcesResult {
     private String domain;
     /**
      * @deprecated
-     * Required by the terraform plugin testing framework, always set to `akamai_gtm_resources`.
+     * Required by the terraform plugin testing framework, always set to `akamai.getGtmResources`.
      * 
      */
-    @Deprecated /* Required by the terraform plugin testing framework, always set to `akamai_gtm_resources`. */
+    @Deprecated /* Required by the terraform plugin testing framework, always set to `akamai.getGtmResources`. */
     private String id;
     private @Nullable List<GetGtmResourcesResource> resources;
 
@@ -29,10 +29,10 @@ public final class GetGtmResourcesResult {
     }
     /**
      * @deprecated
-     * Required by the terraform plugin testing framework, always set to `akamai_gtm_resources`.
+     * Required by the terraform plugin testing framework, always set to `akamai.getGtmResources`.
      * 
      */
-    @Deprecated /* Required by the terraform plugin testing framework, always set to `akamai_gtm_resources`. */
+    @Deprecated /* Required by the terraform plugin testing framework, always set to `akamai.getGtmResources`. */
     public String id() {
         return this.id;
     }

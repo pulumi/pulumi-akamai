@@ -30,7 +30,7 @@ type GetGtmResourcesArgs struct {
 // A collection of values returned by getGtmResources.
 type GetGtmResourcesResult struct {
 	Domain string `pulumi:"domain"`
-	// Deprecated: Required by the terraform plugin testing framework, always set to `akamai_gtm_resources`.
+	// Deprecated: Required by the terraform plugin testing framework, always set to `getGtmResources`.
 	Id        string                    `pulumi:"id"`
 	Resources []GetGtmResourcesResource `pulumi:"resources"`
 }
@@ -77,7 +77,7 @@ func (o GetGtmResourcesResultOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGtmResourcesResult) string { return v.Domain }).(pulumi.StringOutput)
 }
 
-// Deprecated: Required by the terraform plugin testing framework, always set to `akamai_gtm_resources`.
+// Deprecated: Required by the terraform plugin testing framework, always set to `getGtmResources`.
 func (o GetGtmResourcesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGtmResourcesResult) string { return v.Id }).(pulumi.StringOutput)
 }

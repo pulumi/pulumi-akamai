@@ -29,7 +29,7 @@ type GetGtmDomainsArgs struct {
 // A collection of values returned by getGtmDomains.
 type GetGtmDomainsResult struct {
 	Domains []GetGtmDomainsDomain `pulumi:"domains"`
-	// Deprecated: Required by the terraform plugin testing framework, always set to `akamai_gtm_domains`.
+	// Deprecated: Required by the terraform plugin testing framework, always set to `getGtmDomains`.
 	Id string `pulumi:"id"`
 }
 
@@ -74,7 +74,7 @@ func (o GetGtmDomainsResultOutput) Domains() GetGtmDomainsDomainArrayOutput {
 	return o.ApplyT(func(v GetGtmDomainsResult) []GetGtmDomainsDomain { return v.Domains }).(GetGtmDomainsDomainArrayOutput)
 }
 
-// Deprecated: Required by the terraform plugin testing framework, always set to `akamai_gtm_domains`.
+// Deprecated: Required by the terraform plugin testing framework, always set to `getGtmDomains`.
 func (o GetGtmDomainsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGtmDomainsResult) string { return v.Id }).(pulumi.StringOutput)
 }
