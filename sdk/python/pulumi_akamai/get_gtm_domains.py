@@ -39,8 +39,8 @@ class GetGtmDomainsResult:
     @property
     @pulumi.getter
     def id(self) -> str:
-        warnings.warn("""Required by the terraform plugin testing framework, always set to `akamai_gtm_domains`.""", DeprecationWarning)
-        pulumi.log.warn("""id is deprecated: Required by the terraform plugin testing framework, always set to `akamai_gtm_domains`.""")
+        warnings.warn("""Required by the terraform plugin testing framework, always set to `get_gtm_domains`.""", DeprecationWarning)
+        pulumi.log.warn("""id is deprecated: Required by the terraform plugin testing framework, always set to `get_gtm_domains`.""")
 
         return pulumi.get(self, "id")
 

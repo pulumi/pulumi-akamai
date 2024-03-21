@@ -45,8 +45,8 @@ class GetCloudwrapperPropertiesResult:
     @property
     @pulumi.getter
     def id(self) -> str:
-        warnings.warn("""Required by the terraform plugin testing framework, always set to `akamai_cloudwrapper_properties`""", DeprecationWarning)
-        pulumi.log.warn("""id is deprecated: Required by the terraform plugin testing framework, always set to `akamai_cloudwrapper_properties`""")
+        warnings.warn("""Required by the terraform plugin testing framework, always set to `get_cloudwrapper_properties`""", DeprecationWarning)
+        pulumi.log.warn("""id is deprecated: Required by the terraform plugin testing framework, always set to `get_cloudwrapper_properties`""")
 
         return pulumi.get(self, "id")
 

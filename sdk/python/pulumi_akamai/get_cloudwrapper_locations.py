@@ -34,8 +34,8 @@ class GetCloudwrapperLocationsResult:
     @property
     @pulumi.getter
     def id(self) -> str:
-        warnings.warn("""Required by the terraform plugin testing framework, always set to `akamai_cloudwrapper_locations`""", DeprecationWarning)
-        pulumi.log.warn("""id is deprecated: Required by the terraform plugin testing framework, always set to `akamai_cloudwrapper_locations`""")
+        warnings.warn("""Required by the terraform plugin testing framework, always set to `get_cloudwrapper_locations`""", DeprecationWarning)
+        pulumi.log.warn("""id is deprecated: Required by the terraform plugin testing framework, always set to `get_cloudwrapper_locations`""")
 
         return pulumi.get(self, "id")
 

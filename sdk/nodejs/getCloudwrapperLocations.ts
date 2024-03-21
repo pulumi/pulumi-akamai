@@ -27,7 +27,7 @@ export interface GetCloudwrapperLocationsArgs {
  */
 export interface GetCloudwrapperLocationsResult {
     /**
-     * @deprecated Required by the terraform plugin testing framework, always set to `akamai_cloudwrapper_locations`
+     * @deprecated Required by the terraform plugin testing framework, always set to `akamai.getCloudwrapperLocations`
      */
     readonly id: string;
     readonly locations?: outputs.GetCloudwrapperLocationsLocation[];
