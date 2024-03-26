@@ -13,10 +13,10 @@ import java.util.Objects;
 public final class GetCloudwrapperLocationResult {
     /**
      * @deprecated
-     * Required by the terraform plugin testing framework, always set to `akamai.getCloudwrapperLocation`
+     * Required by the terraform plugin testing framework, always set to `akamai_cloudwrapper_location`
      * 
      */
-    @Deprecated /* Required by the terraform plugin testing framework, always set to `akamai.getCloudwrapperLocation` */
+    @Deprecated /* Required by the terraform plugin testing framework, always set to `akamai_cloudwrapper_location` */
     private String id;
     private String locationId;
     private String locationName;
@@ -26,10 +26,10 @@ public final class GetCloudwrapperLocationResult {
     private GetCloudwrapperLocationResult() {}
     /**
      * @deprecated
-     * Required by the terraform plugin testing framework, always set to `akamai.getCloudwrapperLocation`
+     * Required by the terraform plugin testing framework, always set to `akamai_cloudwrapper_location`
      * 
      */
-    @Deprecated /* Required by the terraform plugin testing framework, always set to `akamai.getCloudwrapperLocation` */
+    @Deprecated /* Required by the terraform plugin testing framework, always set to `akamai_cloudwrapper_location` */
     public String id() {
         return this.id;
     }

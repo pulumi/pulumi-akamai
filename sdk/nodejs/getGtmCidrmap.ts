@@ -37,7 +37,7 @@ export interface GetGtmCidrmapResult {
     readonly defaultDatacenter?: outputs.GetGtmCidrmapDefaultDatacenter;
     readonly domain: string;
     /**
-     * @deprecated Required by the terraform plugin testing framework, always set to `gtmCidrmap`.
+     * @deprecated Required by the terraform plugin testing framework, always set to `gtm_cidrmap`.
      */
     readonly id: string;
     readonly links?: outputs.GetGtmCidrmapLink[];

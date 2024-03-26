@@ -31,7 +31,7 @@ type GetCloudwrapperPropertiesArgs struct {
 // A collection of values returned by getCloudwrapperProperties.
 type GetCloudwrapperPropertiesResult struct {
 	ContractIds []string `pulumi:"contractIds"`
-	// Deprecated: Required by the terraform plugin testing framework, always set to `getCloudwrapperProperties`
+	// Deprecated: Required by the terraform plugin testing framework, always set to `akamai_cloudwrapper_properties`
 	Id         string                              `pulumi:"id"`
 	Properties []GetCloudwrapperPropertiesProperty `pulumi:"properties"`
 	Unused     *bool                               `pulumi:"unused"`
@@ -80,7 +80,7 @@ func (o GetCloudwrapperPropertiesResultOutput) ContractIds() pulumi.StringArrayO
 	return o.ApplyT(func(v GetCloudwrapperPropertiesResult) []string { return v.ContractIds }).(pulumi.StringArrayOutput)
 }
 
-// Deprecated: Required by the terraform plugin testing framework, always set to `getCloudwrapperProperties`
+// Deprecated: Required by the terraform plugin testing framework, always set to `akamai_cloudwrapper_properties`
 func (o GetCloudwrapperPropertiesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCloudwrapperPropertiesResult) string { return v.Id }).(pulumi.StringOutput)
 }

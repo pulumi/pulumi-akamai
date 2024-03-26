@@ -18,10 +18,10 @@ public final class GetCloudwrapperPropertiesResult {
     private @Nullable List<String> contractIds;
     /**
      * @deprecated
-     * Required by the terraform plugin testing framework, always set to `akamai.getCloudwrapperProperties`
+     * Required by the terraform plugin testing framework, always set to `akamai_cloudwrapper_properties`
      * 
      */
-    @Deprecated /* Required by the terraform plugin testing framework, always set to `akamai.getCloudwrapperProperties` */
+    @Deprecated /* Required by the terraform plugin testing framework, always set to `akamai_cloudwrapper_properties` */
     private String id;
     private @Nullable List<GetCloudwrapperPropertiesProperty> properties;
     private @Nullable Boolean unused;
@@ -32,10 +32,10 @@ public final class GetCloudwrapperPropertiesResult {
     }
     /**
      * @deprecated
-     * Required by the terraform plugin testing framework, always set to `akamai.getCloudwrapperProperties`
+     * Required by the terraform plugin testing framework, always set to `akamai_cloudwrapper_properties`
      * 
      */
-    @Deprecated /* Required by the terraform plugin testing framework, always set to `akamai.getCloudwrapperProperties` */
+    @Deprecated /* Required by the terraform plugin testing framework, always set to `akamai_cloudwrapper_properties` */
     public String id() {
         return this.id;
     }

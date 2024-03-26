@@ -16,10 +16,10 @@ public final class GetCloudwrapperConfigurationsResult {
     private @Nullable List<GetCloudwrapperConfigurationsConfiguration> configurations;
     /**
      * @deprecated
-     * Required by the terraform plugin testing framework, always set to `akamai.getCloudwrapperConfigurations`.
+     * Required by the terraform plugin testing framework, always set to `akamai_cloudwrapper_configurations`.
      * 
      */
-    @Deprecated /* Required by the terraform plugin testing framework, always set to `akamai.getCloudwrapperConfigurations`. */
+    @Deprecated /* Required by the terraform plugin testing framework, always set to `akamai_cloudwrapper_configurations`. */
     private String id;
 
     private GetCloudwrapperConfigurationsResult() {}
@@ -28,10 +28,10 @@ public final class GetCloudwrapperConfigurationsResult {
     }
     /**
      * @deprecated
-     * Required by the terraform plugin testing framework, always set to `akamai.getCloudwrapperConfigurations`.
+     * Required by the terraform plugin testing framework, always set to `akamai_cloudwrapper_configurations`.
      * 
      */
-    @Deprecated /* Required by the terraform plugin testing framework, always set to `akamai.getCloudwrapperConfigurations`. */
+    @Deprecated /* Required by the terraform plugin testing framework, always set to `akamai_cloudwrapper_configurations`. */
     public String id() {
         return this.id;
     }

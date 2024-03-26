@@ -81,8 +81,8 @@ class GetCloudletsSharedPolicyResult:
     @property
     @pulumi.getter
     def id(self) -> str:
-        warnings.warn("""Required by the terraform plugin testing framework, always set to `get_cloudlets_shared_policy`.""", DeprecationWarning)
-        pulumi.log.warn("""id is deprecated: Required by the terraform plugin testing framework, always set to `get_cloudlets_shared_policy`.""")
+        warnings.warn("""Required by the terraform plugin testing framework, always set to `akamai_cloudlets_shared_policy`.""", DeprecationWarning)
+        pulumi.log.warn("""id is deprecated: Required by the terraform plugin testing framework, always set to `akamai_cloudlets_shared_policy`.""")
 
         return pulumi.get(self, "id")
 

@@ -34,7 +34,7 @@ type GetCloudletsSharedPolicyResult struct {
 	CloudletType string                               `pulumi:"cloudletType"`
 	Description  string                               `pulumi:"description"`
 	GroupId      int                                  `pulumi:"groupId"`
-	// Deprecated: Required by the terraform plugin testing framework, always set to `getCloudletsSharedPolicy`.
+	// Deprecated: Required by the terraform plugin testing framework, always set to `akamai_cloudlets_shared_policy`.
 	Id                 string `pulumi:"id"`
 	MatchRules         string `pulumi:"matchRules"`
 	Name               string `pulumi:"name"`
@@ -99,7 +99,7 @@ func (o GetCloudletsSharedPolicyResultOutput) GroupId() pulumi.IntOutput {
 	return o.ApplyT(func(v GetCloudletsSharedPolicyResult) int { return v.GroupId }).(pulumi.IntOutput)
 }
 
-// Deprecated: Required by the terraform plugin testing framework, always set to `getCloudletsSharedPolicy`.
+// Deprecated: Required by the terraform plugin testing framework, always set to `akamai_cloudlets_shared_policy`.
 func (o GetCloudletsSharedPolicyResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCloudletsSharedPolicyResult) string { return v.Id }).(pulumi.StringOutput)
 }

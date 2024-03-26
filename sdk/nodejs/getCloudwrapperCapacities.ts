@@ -31,7 +31,7 @@ export interface GetCloudwrapperCapacitiesResult {
     readonly capacities?: outputs.GetCloudwrapperCapacitiesCapacity[];
     readonly contractIds?: string[];
     /**
-     * @deprecated Required by the terraform plugin testing framework, always set to `akamai.getCloudwrapperCapacities`.
+     * @deprecated Required by the terraform plugin testing framework, always set to `akamai_cloudwrapper_capacities`.
      */
     readonly id: string;
 }
