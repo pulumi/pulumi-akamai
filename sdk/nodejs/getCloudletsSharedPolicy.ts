@@ -34,7 +34,7 @@ export interface GetCloudletsSharedPolicyResult {
     readonly description: string;
     readonly groupId: number;
     /**
-     * @deprecated Required by the terraform plugin testing framework, always set to `akamai.getCloudletsSharedPolicy`.
+     * @deprecated Required by the terraform plugin testing framework, always set to `akamai_cloudlets_shared_policy`.
      */
     readonly id: string;
     readonly matchRules: string;

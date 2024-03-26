@@ -28,7 +28,7 @@ export interface GetGtmDomainsArgs {
 export interface GetGtmDomainsResult {
     readonly domains?: outputs.GetGtmDomainsDomain[];
     /**
-     * @deprecated Required by the terraform plugin testing framework, always set to `akamai.getGtmDomains`.
+     * @deprecated Required by the terraform plugin testing framework, always set to `akamai_gtm_domains`.
      */
     readonly id: string;
 }

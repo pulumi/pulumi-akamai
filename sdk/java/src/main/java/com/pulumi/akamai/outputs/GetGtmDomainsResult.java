@@ -16,10 +16,10 @@ public final class GetGtmDomainsResult {
     private @Nullable List<GetGtmDomainsDomain> domains;
     /**
      * @deprecated
-     * Required by the terraform plugin testing framework, always set to `akamai.getGtmDomains`.
+     * Required by the terraform plugin testing framework, always set to `akamai_gtm_domains`.
      * 
      */
-    @Deprecated /* Required by the terraform plugin testing framework, always set to `akamai.getGtmDomains`. */
+    @Deprecated /* Required by the terraform plugin testing framework, always set to `akamai_gtm_domains`. */
     private String id;
 
     private GetGtmDomainsResult() {}
@@ -28,10 +28,10 @@ public final class GetGtmDomainsResult {
     }
     /**
      * @deprecated
-     * Required by the terraform plugin testing framework, always set to `akamai.getGtmDomains`.
+     * Required by the terraform plugin testing framework, always set to `akamai_gtm_domains`.
      * 
      */
-    @Deprecated /* Required by the terraform plugin testing framework, always set to `akamai.getGtmDomains`. */
+    @Deprecated /* Required by the terraform plugin testing framework, always set to `akamai_gtm_domains`. */
     public String id() {
         return this.id;
     }
