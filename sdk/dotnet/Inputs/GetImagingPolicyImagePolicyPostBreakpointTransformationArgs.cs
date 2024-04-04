@@ -52,7 +52,7 @@ namespace Pulumi.Akamai.Inputs
         private InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeInputArgs>? _composites;
 
         /// <summary>
-        /// Applies another image to the source image, either as an overlay or an underlay. The image that's underneath is visible in areas that are beyond the edges of the top image or that are less than 100%!o(MISSING)paque. A common use of an overlay composite is to add a watermark.
+        /// Applies another image to the source image, either as an overlay or an underlay. The image that's underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
         /// </summary>
         public InputList<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeInputArgs> Composites
         {

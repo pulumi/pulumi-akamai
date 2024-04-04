@@ -61,14 +61,14 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
     }
 
     /**
-     * How close a color&#39;s hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3%!o(MISSING)f the color wheel. This value corresponds to 30° around the specified hue.
+     * How close a color&#39;s hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
      * 
      */
     @Import(name="hueTolerance")
     private @Nullable Output<String> hueTolerance;
 
     /**
-     * @return How close a color&#39;s hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3%!o(MISSING)f the color wheel. This value corresponds to 30° around the specified hue.
+     * @return How close a color&#39;s hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
      * 
      */
     public Optional<Output<String>> hueTolerance() {
@@ -76,14 +76,14 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
     }
 
     /**
-     * How close a color&#39;s hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3%!o(MISSING)f the color wheel. This value corresponds to 30° around the specified hue.
+     * How close a color&#39;s hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
      * 
      */
     @Import(name="hueToleranceVar")
     private @Nullable Output<String> hueToleranceVar;
 
     /**
-     * @return How close a color&#39;s hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3%!o(MISSING)f the color wheel. This value corresponds to 30° around the specified hue.
+     * @return How close a color&#39;s hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
      * 
      */
     public Optional<Output<String>> hueToleranceVar() {
@@ -106,14 +106,14 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
     }
 
     /**
-     * How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10%!a(MISSING)way from the tolerated lightness towards full black or full white.
+     * How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
      * 
      */
     @Import(name="lightnessFeather")
     private @Nullable Output<String> lightnessFeather;
 
     /**
-     * @return How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10%!a(MISSING)way from the tolerated lightness towards full black or full white.
+     * @return How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
      * 
      */
     public Optional<Output<String>> lightnessFeather() {
@@ -121,14 +121,14 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
     }
 
     /**
-     * How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10%!a(MISSING)way from the tolerated lightness towards full black or full white.
+     * How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
      * 
      */
     @Import(name="lightnessFeatherVar")
     private @Nullable Output<String> lightnessFeatherVar;
 
     /**
-     * @return How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10%!a(MISSING)way from the tolerated lightness towards full black or full white.
+     * @return How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
      * 
      */
     public Optional<Output<String>> lightnessFeatherVar() {
@@ -136,14 +136,14 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
     }
 
     /**
-     * How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75%!o(MISSING)f the full color to full white or full black for full removal.
+     * How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
      * 
      */
     @Import(name="lightnessTolerance")
     private @Nullable Output<String> lightnessTolerance;
 
     /**
-     * @return How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75%!o(MISSING)f the full color to full white or full black for full removal.
+     * @return How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
      * 
      */
     public Optional<Output<String>> lightnessTolerance() {
@@ -151,14 +151,14 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
     }
 
     /**
-     * How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75%!o(MISSING)f the full color to full white or full black for full removal.
+     * How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
      * 
      */
     @Import(name="lightnessToleranceVar")
     private @Nullable Output<String> lightnessToleranceVar;
 
     /**
-     * @return How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75%!o(MISSING)f the full color to full white or full black for full removal.
+     * @return How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
      * 
      */
     public Optional<Output<String>> lightnessToleranceVar() {
@@ -166,14 +166,14 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
     }
 
     /**
-     * How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10%!b(MISSING)elow the saturationTolerance.
+     * How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
      * 
      */
     @Import(name="saturationFeather")
     private @Nullable Output<String> saturationFeather;
 
     /**
-     * @return How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10%!b(MISSING)elow the saturationTolerance.
+     * @return How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
      * 
      */
     public Optional<Output<String>> saturationFeather() {
@@ -181,14 +181,14 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
     }
 
     /**
-     * How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10%!b(MISSING)elow the saturationTolerance.
+     * How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
      * 
      */
     @Import(name="saturationFeatherVar")
     private @Nullable Output<String> saturationFeatherVar;
 
     /**
-     * @return How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10%!b(MISSING)elow the saturationTolerance.
+     * @return How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
      * 
      */
     public Optional<Output<String>> saturationFeatherVar() {
@@ -196,14 +196,14 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
     }
 
     /**
-     * How close a color&#39;s saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75%!o(MISSING)f full saturation in order to be made fully transparent.
+     * How close a color&#39;s saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
      * 
      */
     @Import(name="saturationTolerance")
     private @Nullable Output<String> saturationTolerance;
 
     /**
-     * @return How close a color&#39;s saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75%!o(MISSING)f full saturation in order to be made fully transparent.
+     * @return How close a color&#39;s saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
      * 
      */
     public Optional<Output<String>> saturationTolerance() {
@@ -211,14 +211,14 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
     }
 
     /**
-     * How close a color&#39;s saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75%!o(MISSING)f full saturation in order to be made fully transparent.
+     * How close a color&#39;s saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
      * 
      */
     @Import(name="saturationToleranceVar")
     private @Nullable Output<String> saturationToleranceVar;
 
     /**
-     * @return How close a color&#39;s saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75%!o(MISSING)f full saturation in order to be made fully transparent.
+     * @return How close a color&#39;s saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
      * 
      */
     public Optional<Output<String>> saturationToleranceVar() {
@@ -326,7 +326,7 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
         }
 
         /**
-         * @param hueTolerance How close a color&#39;s hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3%!o(MISSING)f the color wheel. This value corresponds to 30° around the specified hue.
+         * @param hueTolerance How close a color&#39;s hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
          * 
          * @return builder
          * 
@@ -337,7 +337,7 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
         }
 
         /**
-         * @param hueTolerance How close a color&#39;s hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3%!o(MISSING)f the color wheel. This value corresponds to 30° around the specified hue.
+         * @param hueTolerance How close a color&#39;s hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
          * 
          * @return builder
          * 
@@ -347,7 +347,7 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
         }
 
         /**
-         * @param hueToleranceVar How close a color&#39;s hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3%!o(MISSING)f the color wheel. This value corresponds to 30° around the specified hue.
+         * @param hueToleranceVar How close a color&#39;s hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
          * 
          * @return builder
          * 
@@ -358,7 +358,7 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
         }
 
         /**
-         * @param hueToleranceVar How close a color&#39;s hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3%!o(MISSING)f the color wheel. This value corresponds to 30° around the specified hue.
+         * @param hueToleranceVar How close a color&#39;s hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
          * 
          * @return builder
          * 
@@ -389,7 +389,7 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
         }
 
         /**
-         * @param lightnessFeather How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10%!a(MISSING)way from the tolerated lightness towards full black or full white.
+         * @param lightnessFeather How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
          * 
          * @return builder
          * 
@@ -400,7 +400,7 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
         }
 
         /**
-         * @param lightnessFeather How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10%!a(MISSING)way from the tolerated lightness towards full black or full white.
+         * @param lightnessFeather How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
          * 
          * @return builder
          * 
@@ -410,7 +410,7 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
         }
 
         /**
-         * @param lightnessFeatherVar How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10%!a(MISSING)way from the tolerated lightness towards full black or full white.
+         * @param lightnessFeatherVar How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
          * 
          * @return builder
          * 
@@ -421,7 +421,7 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
         }
 
         /**
-         * @param lightnessFeatherVar How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10%!a(MISSING)way from the tolerated lightness towards full black or full white.
+         * @param lightnessFeatherVar How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
          * 
          * @return builder
          * 
@@ -431,7 +431,7 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
         }
 
         /**
-         * @param lightnessTolerance How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75%!o(MISSING)f the full color to full white or full black for full removal.
+         * @param lightnessTolerance How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
          * 
          * @return builder
          * 
@@ -442,7 +442,7 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
         }
 
         /**
-         * @param lightnessTolerance How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75%!o(MISSING)f the full color to full white or full black for full removal.
+         * @param lightnessTolerance How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
          * 
          * @return builder
          * 
@@ -452,7 +452,7 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
         }
 
         /**
-         * @param lightnessToleranceVar How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75%!o(MISSING)f the full color to full white or full black for full removal.
+         * @param lightnessToleranceVar How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
          * 
          * @return builder
          * 
@@ -463,7 +463,7 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
         }
 
         /**
-         * @param lightnessToleranceVar How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75%!o(MISSING)f the full color to full white or full black for full removal.
+         * @param lightnessToleranceVar How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
          * 
          * @return builder
          * 
@@ -473,7 +473,7 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
         }
 
         /**
-         * @param saturationFeather How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10%!b(MISSING)elow the saturationTolerance.
+         * @param saturationFeather How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
          * 
          * @return builder
          * 
@@ -484,7 +484,7 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
         }
 
         /**
-         * @param saturationFeather How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10%!b(MISSING)elow the saturationTolerance.
+         * @param saturationFeather How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
          * 
          * @return builder
          * 
@@ -494,7 +494,7 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
         }
 
         /**
-         * @param saturationFeatherVar How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10%!b(MISSING)elow the saturationTolerance.
+         * @param saturationFeatherVar How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
          * 
          * @return builder
          * 
@@ -505,7 +505,7 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
         }
 
         /**
-         * @param saturationFeatherVar How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10%!b(MISSING)elow the saturationTolerance.
+         * @param saturationFeatherVar How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
          * 
          * @return builder
          * 
@@ -515,7 +515,7 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
         }
 
         /**
-         * @param saturationTolerance How close a color&#39;s saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75%!o(MISSING)f full saturation in order to be made fully transparent.
+         * @param saturationTolerance How close a color&#39;s saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
          * 
          * @return builder
          * 
@@ -526,7 +526,7 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
         }
 
         /**
-         * @param saturationTolerance How close a color&#39;s saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75%!o(MISSING)f full saturation in order to be made fully transparent.
+         * @param saturationTolerance How close a color&#39;s saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
          * 
          * @return builder
          * 
@@ -536,7 +536,7 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
         }
 
         /**
-         * @param saturationToleranceVar How close a color&#39;s saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75%!o(MISSING)f full saturation in order to be made fully transparent.
+         * @param saturationToleranceVar How close a color&#39;s saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
          * 
          * @return builder
          * 
@@ -547,7 +547,7 @@ public final class GetImagingPolicyImagePolicyTransformationChromaKeyArgs extend
         }
 
         /**
-         * @param saturationToleranceVar How close a color&#39;s saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75%!o(MISSING)f full saturation in order to be made fully transparent.
+         * @param saturationToleranceVar How close a color&#39;s saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
          * 
          * @return builder
          * 

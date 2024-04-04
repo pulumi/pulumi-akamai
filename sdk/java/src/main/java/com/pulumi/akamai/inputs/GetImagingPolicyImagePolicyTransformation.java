@@ -122,14 +122,14 @@ public final class GetImagingPolicyImagePolicyTransformation extends com.pulumi.
     }
 
     /**
-     * Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100%!o(MISSING)paque. A common use of an overlay composite is to add a watermark.
+     * Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
      * 
      */
     @Import(name="composites")
     private @Nullable List<GetImagingPolicyImagePolicyTransformationComposite> composites;
 
     /**
-     * @return Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100%!o(MISSING)paque. A common use of an overlay composite is to add a watermark.
+     * @return Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
      * 
      */
     public Optional<List<GetImagingPolicyImagePolicyTransformationComposite>> composites() {
@@ -663,7 +663,7 @@ public final class GetImagingPolicyImagePolicyTransformation extends com.pulumi.
         }
 
         /**
-         * @param composites Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100%!o(MISSING)paque. A common use of an overlay composite is to add a watermark.
+         * @param composites Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
          * 
          * @return builder
          * 
@@ -674,7 +674,7 @@ public final class GetImagingPolicyImagePolicyTransformation extends com.pulumi.
         }
 
         /**
-         * @param composites Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100%!o(MISSING)paque. A common use of an overlay composite is to add a watermark.
+         * @param composites Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
          * 
          * @return builder
          * 
