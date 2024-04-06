@@ -26,11 +26,11 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string? HueFeatherVar;
         /// <summary>
-        /// How close a color's hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3%!o(MISSING)f the color wheel. This value corresponds to 30° around the specified hue.
+        /// How close a color's hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
         /// </summary>
         public readonly string? HueTolerance;
         /// <summary>
-        /// How close a color's hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3%!o(MISSING)f the color wheel. This value corresponds to 30° around the specified hue.
+        /// How close a color's hue needs to be to the selected hue for it to be changed to fully transparent. If you enter the maximum value of 1.0 the entire image is made transparent. By default Hue Tolerance is approximately 0.083 or 8.3% of the color wheel. This value corresponds to 30° around the specified hue.
         /// </summary>
         public readonly string? HueToleranceVar;
         /// <summary>
@@ -38,35 +38,35 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string? HueVar;
         /// <summary>
-        /// How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10%!a(MISSING)way from the tolerated lightness towards full black or full white.
+        /// How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
         /// </summary>
         public readonly string? LightnessFeather;
         /// <summary>
-        /// How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10%!a(MISSING)way from the tolerated lightness towards full black or full white.
+        /// How much additional lightness to make semi-transparent beyond the Lightness Tolerance. The default value of 0.1 corresponds to 10% away from the tolerated lightness towards full black or full white.
         /// </summary>
         public readonly string? LightnessFeatherVar;
         /// <summary>
-        /// How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75%!o(MISSING)f the full color to full white or full black for full removal.
+        /// How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
         /// </summary>
         public readonly string? LightnessTolerance;
         /// <summary>
-        /// How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75%!o(MISSING)f the full color to full white or full black for full removal.
+        /// How much of the lightest part and darkest part of a color to preserve. For example, you can space this value out from the middle (i.e. 0.5 lightness or full color) to help preserve the splash lighting impact in the image. You can define how close the color needs to be to the full color to remove it from your image. The default value of 0.75 means that a colour must be within 75% of the full color to full white or full black for full removal.
         /// </summary>
         public readonly string? LightnessToleranceVar;
         /// <summary>
-        /// How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10%!b(MISSING)elow the saturationTolerance.
+        /// How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
         /// </summary>
         public readonly string? SaturationFeather;
         /// <summary>
-        /// How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10%!b(MISSING)elow the saturationTolerance.
+        /// How much additional saturation to make semi-transparent beyond the Saturation Tolerance. By default Saturation Feather is 0.1 which applies semi-transparency to hues 10% below the saturationTolerance.
         /// </summary>
         public readonly string? SaturationFeatherVar;
         /// <summary>
-        /// How close a color's saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75%!o(MISSING)f full saturation in order to be made fully transparent.
+        /// How close a color's saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
         /// </summary>
         public readonly string? SaturationTolerance;
         /// <summary>
-        /// How close a color's saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75%!o(MISSING)f full saturation in order to be made fully transparent.
+        /// How close a color's saturation needs to be to full saturation for it to be changed to fully transparent. For example, you can define how green the color needs to be to remove it from your image. The default value of 0.75 means that a color must be within 75% of full saturation in order to be made fully transparent.
         /// </summary>
         public readonly string? SaturationToleranceVar;
 

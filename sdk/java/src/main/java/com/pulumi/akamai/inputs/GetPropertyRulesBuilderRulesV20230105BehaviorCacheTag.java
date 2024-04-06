@@ -31,14 +31,14 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorCacheTag extends
     }
 
     /**
-     * Specifies the cache tag you want to add to your cached content. A cache tag is only added when the object is first added to cache. A single cache tag can&#39;t exceed 128 characters and can only include alphanumeric characters, plus this class of characters: ```[!#$%!&#39;(MISSING)+./^_`|~-]```
+     * Specifies the cache tag you want to add to your cached content. A cache tag is only added when the object is first added to cache. A single cache tag can&#39;t exceed 128 characters and can only include alphanumeric characters, plus this class of characters: ```[!#$%&#39;+./^_`|~-]```
      * 
      */
     @Import(name="tag")
     private @Nullable String tag;
 
     /**
-     * @return Specifies the cache tag you want to add to your cached content. A cache tag is only added when the object is first added to cache. A single cache tag can&#39;t exceed 128 characters and can only include alphanumeric characters, plus this class of characters: ```[!#$%!&#39;(MISSING)+./^_`|~-]```
+     * @return Specifies the cache tag you want to add to your cached content. A cache tag is only added when the object is first added to cache. A single cache tag can&#39;t exceed 128 characters and can only include alphanumeric characters, plus this class of characters: ```[!#$%&#39;+./^_`|~-]```
      * 
      */
     public Optional<String> tag() {
@@ -114,7 +114,7 @@ public final class GetPropertyRulesBuilderRulesV20230105BehaviorCacheTag extends
         }
 
         /**
-         * @param tag Specifies the cache tag you want to add to your cached content. A cache tag is only added when the object is first added to cache. A single cache tag can&#39;t exceed 128 characters and can only include alphanumeric characters, plus this class of characters: ```[!#$%!&#39;(MISSING)+./^_`|~-]```
+         * @param tag Specifies the cache tag you want to add to your cached content. A cache tag is only added when the object is first added to cache. A single cache tag can&#39;t exceed 128 characters and can only include alphanumeric characters, plus this class of characters: ```[!#$%&#39;+./^_`|~-]```
          * 
          * @return builder
          * 
