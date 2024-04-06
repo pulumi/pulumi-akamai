@@ -44,7 +44,7 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformation {
      */
     private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformationChromaKey> chromaKeys;
     /**
-     * @return Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100%!o(MISSING)paque. A common use of an overlay composite is to add a watermark.
+     * @return Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
      * 
      */
     private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformationComposite> composites;
@@ -130,7 +130,7 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformation {
         return this.chromaKeys == null ? List.of() : this.chromaKeys;
     }
     /**
-     * @return Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100%!o(MISSING)paque. A common use of an overlay composite is to add a watermark.
+     * @return Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
      * 
      */
     public List<GetImagingPolicyImagePolicyPostBreakpointTransformationComposite> composites() {

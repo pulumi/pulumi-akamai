@@ -19,7 +19,7 @@ namespace Pulumi.Akamai.Inputs
         public bool? Locked { get; set; }
 
         /// <summary>
-        /// Specifies the cache tag you want to add to your cached content. A cache tag is only added when the object is first added to cache. A single cache tag can't exceed 128 characters and can only include alphanumeric characters, plus this class of characters: ```[!#$%!'(MISSING)+./^_`|~-]```
+        /// Specifies the cache tag you want to add to your cached content. A cache tag is only added when the object is first added to cache. A single cache tag can't exceed 128 characters and can only include alphanumeric characters, plus this class of characters: ```[!#$%'+./^_`|~-]```
         /// </summary>
         [Input("tag")]
         public string? Tag { get; set; }

@@ -79,14 +79,14 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationArgs e
     }
 
     /**
-     * Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100%!o(MISSING)paque. A common use of an overlay composite is to add a watermark.
+     * Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
      * 
      */
     @Import(name="composites")
     private @Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeArgs>> composites;
 
     /**
-     * @return Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100%!o(MISSING)paque. A common use of an overlay composite is to add a watermark.
+     * @return Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
      * 
      */
     public Optional<Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeArgs>>> composites() {
@@ -414,7 +414,7 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationArgs e
         }
 
         /**
-         * @param composites Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100%!o(MISSING)paque. A common use of an overlay composite is to add a watermark.
+         * @param composites Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
          * 
          * @return builder
          * 
@@ -425,7 +425,7 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationArgs e
         }
 
         /**
-         * @param composites Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100%!o(MISSING)paque. A common use of an overlay composite is to add a watermark.
+         * @param composites Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
          * 
          * @return builder
          * 
@@ -435,7 +435,7 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationArgs e
         }
 
         /**
-         * @param composites Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100%!o(MISSING)paque. A common use of an overlay composite is to add a watermark.
+         * @param composites Applies another image to the source image, either as an overlay or an underlay. The image that&#39;s underneath is visible in areas that are beyond the edges of the top image or that are less than 100% opaque. A common use of an overlay composite is to add a watermark.
          * 
          * @return builder
          * 
