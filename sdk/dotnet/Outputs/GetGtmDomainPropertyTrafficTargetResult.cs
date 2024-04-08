@@ -30,6 +30,10 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
+        /// Non-negative integer that ranks the order of the backups that GTM will hand out in the event that the primary Traffic Target has been declared down
+        /// </summary>
+        public readonly int Precedence;
+        /// <summary>
         /// Identifies the IP address or the hostnames of the servers.
         /// </summary>
         public readonly ImmutableArray<string> Servers;
@@ -48,6 +52,8 @@ namespace Pulumi.Akamai.Outputs
 
             string name,
 
+            int precedence,
+
             ImmutableArray<string> servers,
 
             double weight)
@@ -56,6 +62,7 @@ namespace Pulumi.Akamai.Outputs
             Enabled = enabled;
             HandoutCname = handoutCname;
             Name = name;
+            Precedence = precedence;
             Servers = servers;
             Weight = weight;
         }

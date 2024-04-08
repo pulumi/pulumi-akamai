@@ -46,6 +46,7 @@ namespace Pulumi.Akamai
     public sealed class GetCPSEnrollmentResult
     {
         public readonly ImmutableArray<Outputs.GetCPSEnrollmentAdminContactResult> AdminContacts;
+        public readonly ImmutableArray<int> AssignedSlots;
         public readonly string CertificateChainType;
         public readonly string CertificateType;
         public readonly string CommonName;
@@ -60,19 +61,24 @@ namespace Pulumi.Akamai
         /// </summary>
         public readonly string Id;
         public readonly ImmutableArray<Outputs.GetCPSEnrollmentNetworkConfigurationResult> NetworkConfigurations;
+        public readonly int OrgId;
         public readonly ImmutableArray<Outputs.GetCPSEnrollmentOrganizationResult> Organizations;
         public readonly bool PendingChanges;
+        public readonly ImmutableArray<int> ProductionSlots;
         public readonly string RegistrationAuthority;
         public readonly ImmutableArray<string> Sans;
         public readonly string SecureNetwork;
         public readonly string SignatureAlgorithm;
         public readonly bool SniOnly;
+        public readonly ImmutableArray<int> StagingSlots;
         public readonly ImmutableArray<Outputs.GetCPSEnrollmentTechContactResult> TechContacts;
         public readonly string ValidationType;
 
         [OutputConstructor]
         private GetCPSEnrollmentResult(
             ImmutableArray<Outputs.GetCPSEnrollmentAdminContactResult> adminContacts,
+
+            ImmutableArray<int> assignedSlots,
 
             string certificateChainType,
 
@@ -96,9 +102,13 @@ namespace Pulumi.Akamai
 
             ImmutableArray<Outputs.GetCPSEnrollmentNetworkConfigurationResult> networkConfigurations,
 
+            int orgId,
+
             ImmutableArray<Outputs.GetCPSEnrollmentOrganizationResult> organizations,
 
             bool pendingChanges,
+
+            ImmutableArray<int> productionSlots,
 
             string registrationAuthority,
 
@@ -110,11 +120,14 @@ namespace Pulumi.Akamai
 
             bool sniOnly,
 
+            ImmutableArray<int> stagingSlots,
+
             ImmutableArray<Outputs.GetCPSEnrollmentTechContactResult> techContacts,
 
             string validationType)
         {
             AdminContacts = adminContacts;
+            AssignedSlots = assignedSlots;
             CertificateChainType = certificateChainType;
             CertificateType = certificateType;
             CommonName = commonName;
@@ -126,13 +139,16 @@ namespace Pulumi.Akamai
             HttpChallenges = httpChallenges;
             Id = id;
             NetworkConfigurations = networkConfigurations;
+            OrgId = orgId;
             Organizations = organizations;
             PendingChanges = pendingChanges;
+            ProductionSlots = productionSlots;
             RegistrationAuthority = registrationAuthority;
             Sans = sans;
             SecureNetwork = secureNetwork;
             SignatureAlgorithm = signatureAlgorithm;
             SniOnly = sniOnly;
+            StagingSlots = stagingSlots;
             TechContacts = techContacts;
             ValidationType = validationType;
         }

@@ -213,6 +213,36 @@ public class GtmDomain extends com.pulumi.resources.CustomResource {
     public Output<String> servermonitorPool() {
         return this.servermonitorPool;
     }
+    /**
+     * If set (true) we will sign the domain&#39;s resource records so that they can be validated by a validating resolver.
+     * 
+     */
+    @Export(name="signAndServe", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> signAndServe;
+
+    /**
+     * @return If set (true) we will sign the domain&#39;s resource records so that they can be validated by a validating resolver.
+     * 
+     */
+    public Output<Optional<Boolean>> signAndServe() {
+        return Codegen.optional(this.signAndServe);
+    }
+    /**
+     * The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
+     * ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+     * 
+     */
+    @Export(name="signAndServeAlgorithm", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> signAndServeAlgorithm;
+
+    /**
+     * @return The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
+     * ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+     * 
+     */
+    public Output<Optional<String>> signAndServeAlgorithm() {
+        return Codegen.optional(this.signAndServeAlgorithm);
+    }
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 

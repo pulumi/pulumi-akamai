@@ -25,12 +25,21 @@ export interface GetPropertyArgs {
  * A collection of values returned by getProperty.
  */
 export interface GetPropertyResult {
+    readonly contractId: string;
+    readonly groupId: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly latestVersion: number;
     readonly name: string;
+    readonly note: string;
+    readonly productId: string;
+    readonly productionVersion: number;
+    readonly propertyId: string;
+    readonly ruleFormat: string;
     readonly rules: string;
+    readonly stagingVersion: number;
     readonly version?: number;
 }
 export function getPropertyOutput(args: GetPropertyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyResult> {

@@ -24,6 +24,11 @@ public final class GetCPSEnrollmentsEnrollment {
      */
     private List<GetCPSEnrollmentsEnrollmentAdminContact> adminContacts;
     /**
+     * @return Slots where the certificate either will be deployed or is already deployed
+     * 
+     */
+    private List<Integer> assignedSlots;
+    /**
      * @return Certificate trust chain type
      * 
      */
@@ -59,6 +64,11 @@ public final class GetCPSEnrollmentsEnrollment {
      */
     private List<GetCPSEnrollmentsEnrollmentNetworkConfiguration> networkConfigurations;
     /**
+     * @return The Digicert unique identifier for the organization
+     * 
+     */
+    private Integer orgId;
+    /**
      * @return Organization information
      * 
      */
@@ -68,6 +78,11 @@ public final class GetCPSEnrollmentsEnrollment {
      * 
      */
     private Boolean pendingChanges;
+    /**
+     * @return Slots where the certificate is deployed on the production network
+     * 
+     */
+    private List<Integer> productionSlots;
     /**
      * @return The registration authority or certificate authority (CA) used to obtain a certificate
      * 
@@ -94,6 +109,11 @@ public final class GetCPSEnrollmentsEnrollment {
      */
     private Boolean sniOnly;
     /**
+     * @return Slots where the certificate is deployed on the staging network
+     * 
+     */
+    private List<Integer> stagingSlots;
+    /**
      * @return Contact information for an administrator at Akamai
      * 
      */
@@ -111,6 +131,13 @@ public final class GetCPSEnrollmentsEnrollment {
      */
     public List<GetCPSEnrollmentsEnrollmentAdminContact> adminContacts() {
         return this.adminContacts;
+    }
+    /**
+     * @return Slots where the certificate either will be deployed or is already deployed
+     * 
+     */
+    public List<Integer> assignedSlots() {
+        return this.assignedSlots;
     }
     /**
      * @return Certificate trust chain type
@@ -162,6 +189,13 @@ public final class GetCPSEnrollmentsEnrollment {
         return this.networkConfigurations;
     }
     /**
+     * @return The Digicert unique identifier for the organization
+     * 
+     */
+    public Integer orgId() {
+        return this.orgId;
+    }
+    /**
      * @return Organization information
      * 
      */
@@ -174,6 +208,13 @@ public final class GetCPSEnrollmentsEnrollment {
      */
     public Boolean pendingChanges() {
         return this.pendingChanges;
+    }
+    /**
+     * @return Slots where the certificate is deployed on the production network
+     * 
+     */
+    public List<Integer> productionSlots() {
+        return this.productionSlots;
     }
     /**
      * @return The registration authority or certificate authority (CA) used to obtain a certificate
@@ -211,6 +252,13 @@ public final class GetCPSEnrollmentsEnrollment {
         return this.sniOnly;
     }
     /**
+     * @return Slots where the certificate is deployed on the staging network
+     * 
+     */
+    public List<Integer> stagingSlots() {
+        return this.stagingSlots;
+    }
+    /**
      * @return Contact information for an administrator at Akamai
      * 
      */
@@ -235,6 +283,7 @@ public final class GetCPSEnrollmentsEnrollment {
     @CustomType.Builder
     public static final class Builder {
         private List<GetCPSEnrollmentsEnrollmentAdminContact> adminContacts;
+        private List<Integer> assignedSlots;
         private String certificateChainType;
         private String certificateType;
         private String commonName;
@@ -242,19 +291,23 @@ public final class GetCPSEnrollmentsEnrollment {
         private Boolean enableMultiStackedCertificates;
         private Integer enrollmentId;
         private List<GetCPSEnrollmentsEnrollmentNetworkConfiguration> networkConfigurations;
+        private Integer orgId;
         private List<GetCPSEnrollmentsEnrollmentOrganization> organizations;
         private Boolean pendingChanges;
+        private List<Integer> productionSlots;
         private String registrationAuthority;
         private List<String> sans;
         private String secureNetwork;
         private String signatureAlgorithm;
         private Boolean sniOnly;
+        private List<Integer> stagingSlots;
         private List<GetCPSEnrollmentsEnrollmentTechContact> techContacts;
         private String validationType;
         public Builder() {}
         public Builder(GetCPSEnrollmentsEnrollment defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adminContacts = defaults.adminContacts;
+    	      this.assignedSlots = defaults.assignedSlots;
     	      this.certificateChainType = defaults.certificateChainType;
     	      this.certificateType = defaults.certificateType;
     	      this.commonName = defaults.commonName;
@@ -262,13 +315,16 @@ public final class GetCPSEnrollmentsEnrollment {
     	      this.enableMultiStackedCertificates = defaults.enableMultiStackedCertificates;
     	      this.enrollmentId = defaults.enrollmentId;
     	      this.networkConfigurations = defaults.networkConfigurations;
+    	      this.orgId = defaults.orgId;
     	      this.organizations = defaults.organizations;
     	      this.pendingChanges = defaults.pendingChanges;
+    	      this.productionSlots = defaults.productionSlots;
     	      this.registrationAuthority = defaults.registrationAuthority;
     	      this.sans = defaults.sans;
     	      this.secureNetwork = defaults.secureNetwork;
     	      this.signatureAlgorithm = defaults.signatureAlgorithm;
     	      this.sniOnly = defaults.sniOnly;
+    	      this.stagingSlots = defaults.stagingSlots;
     	      this.techContacts = defaults.techContacts;
     	      this.validationType = defaults.validationType;
         }
@@ -283,6 +339,17 @@ public final class GetCPSEnrollmentsEnrollment {
         }
         public Builder adminContacts(GetCPSEnrollmentsEnrollmentAdminContact... adminContacts) {
             return adminContacts(List.of(adminContacts));
+        }
+        @CustomType.Setter
+        public Builder assignedSlots(List<Integer> assignedSlots) {
+            if (assignedSlots == null) {
+              throw new MissingRequiredPropertyException("GetCPSEnrollmentsEnrollment", "assignedSlots");
+            }
+            this.assignedSlots = assignedSlots;
+            return this;
+        }
+        public Builder assignedSlots(Integer... assignedSlots) {
+            return assignedSlots(List.of(assignedSlots));
         }
         @CustomType.Setter
         public Builder certificateChainType(String certificateChainType) {
@@ -347,6 +414,14 @@ public final class GetCPSEnrollmentsEnrollment {
             return networkConfigurations(List.of(networkConfigurations));
         }
         @CustomType.Setter
+        public Builder orgId(Integer orgId) {
+            if (orgId == null) {
+              throw new MissingRequiredPropertyException("GetCPSEnrollmentsEnrollment", "orgId");
+            }
+            this.orgId = orgId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder organizations(List<GetCPSEnrollmentsEnrollmentOrganization> organizations) {
             if (organizations == null) {
               throw new MissingRequiredPropertyException("GetCPSEnrollmentsEnrollment", "organizations");
@@ -364,6 +439,17 @@ public final class GetCPSEnrollmentsEnrollment {
             }
             this.pendingChanges = pendingChanges;
             return this;
+        }
+        @CustomType.Setter
+        public Builder productionSlots(List<Integer> productionSlots) {
+            if (productionSlots == null) {
+              throw new MissingRequiredPropertyException("GetCPSEnrollmentsEnrollment", "productionSlots");
+            }
+            this.productionSlots = productionSlots;
+            return this;
+        }
+        public Builder productionSlots(Integer... productionSlots) {
+            return productionSlots(List.of(productionSlots));
         }
         @CustomType.Setter
         public Builder registrationAuthority(String registrationAuthority) {
@@ -409,6 +495,17 @@ public final class GetCPSEnrollmentsEnrollment {
             return this;
         }
         @CustomType.Setter
+        public Builder stagingSlots(List<Integer> stagingSlots) {
+            if (stagingSlots == null) {
+              throw new MissingRequiredPropertyException("GetCPSEnrollmentsEnrollment", "stagingSlots");
+            }
+            this.stagingSlots = stagingSlots;
+            return this;
+        }
+        public Builder stagingSlots(Integer... stagingSlots) {
+            return stagingSlots(List.of(stagingSlots));
+        }
+        @CustomType.Setter
         public Builder techContacts(List<GetCPSEnrollmentsEnrollmentTechContact> techContacts) {
             if (techContacts == null) {
               throw new MissingRequiredPropertyException("GetCPSEnrollmentsEnrollment", "techContacts");
@@ -430,6 +527,7 @@ public final class GetCPSEnrollmentsEnrollment {
         public GetCPSEnrollmentsEnrollment build() {
             final var _resultValue = new GetCPSEnrollmentsEnrollment();
             _resultValue.adminContacts = adminContacts;
+            _resultValue.assignedSlots = assignedSlots;
             _resultValue.certificateChainType = certificateChainType;
             _resultValue.certificateType = certificateType;
             _resultValue.commonName = commonName;
@@ -437,13 +535,16 @@ public final class GetCPSEnrollmentsEnrollment {
             _resultValue.enableMultiStackedCertificates = enableMultiStackedCertificates;
             _resultValue.enrollmentId = enrollmentId;
             _resultValue.networkConfigurations = networkConfigurations;
+            _resultValue.orgId = orgId;
             _resultValue.organizations = organizations;
             _resultValue.pendingChanges = pendingChanges;
+            _resultValue.productionSlots = productionSlots;
             _resultValue.registrationAuthority = registrationAuthority;
             _resultValue.sans = sans;
             _resultValue.secureNetwork = secureNetwork;
             _resultValue.signatureAlgorithm = signatureAlgorithm;
             _resultValue.sniOnly = sniOnly;
+            _resultValue.stagingSlots = stagingSlots;
             _resultValue.techContacts = techContacts;
             _resultValue.validationType = validationType;
             return _resultValue;

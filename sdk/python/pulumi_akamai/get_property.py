@@ -21,19 +21,56 @@ class GetPropertyResult:
     """
     A collection of values returned by getProperty.
     """
-    def __init__(__self__, id=None, name=None, rules=None, version=None):
+    def __init__(__self__, contract_id=None, group_id=None, id=None, latest_version=None, name=None, note=None, product_id=None, production_version=None, property_id=None, rule_format=None, rules=None, staging_version=None, version=None):
+        if contract_id and not isinstance(contract_id, str):
+            raise TypeError("Expected argument 'contract_id' to be a str")
+        pulumi.set(__self__, "contract_id", contract_id)
+        if group_id and not isinstance(group_id, str):
+            raise TypeError("Expected argument 'group_id' to be a str")
+        pulumi.set(__self__, "group_id", group_id)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if latest_version and not isinstance(latest_version, int):
+            raise TypeError("Expected argument 'latest_version' to be a int")
+        pulumi.set(__self__, "latest_version", latest_version)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
+        if note and not isinstance(note, str):
+            raise TypeError("Expected argument 'note' to be a str")
+        pulumi.set(__self__, "note", note)
+        if product_id and not isinstance(product_id, str):
+            raise TypeError("Expected argument 'product_id' to be a str")
+        pulumi.set(__self__, "product_id", product_id)
+        if production_version and not isinstance(production_version, int):
+            raise TypeError("Expected argument 'production_version' to be a int")
+        pulumi.set(__self__, "production_version", production_version)
+        if property_id and not isinstance(property_id, str):
+            raise TypeError("Expected argument 'property_id' to be a str")
+        pulumi.set(__self__, "property_id", property_id)
+        if rule_format and not isinstance(rule_format, str):
+            raise TypeError("Expected argument 'rule_format' to be a str")
+        pulumi.set(__self__, "rule_format", rule_format)
         if rules and not isinstance(rules, str):
             raise TypeError("Expected argument 'rules' to be a str")
         pulumi.set(__self__, "rules", rules)
+        if staging_version and not isinstance(staging_version, int):
+            raise TypeError("Expected argument 'staging_version' to be a int")
+        pulumi.set(__self__, "staging_version", staging_version)
         if version and not isinstance(version, int):
             raise TypeError("Expected argument 'version' to be a int")
         pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> str:
+        return pulumi.get(self, "contract_id")
+
+    @property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> str:
+        return pulumi.get(self, "group_id")
 
     @property
     @pulumi.getter
@@ -44,14 +81,49 @@ class GetPropertyResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="latestVersion")
+    def latest_version(self) -> int:
+        return pulumi.get(self, "latest_version")
+
+    @property
     @pulumi.getter
     def name(self) -> str:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
+    def note(self) -> str:
+        return pulumi.get(self, "note")
+
+    @property
+    @pulumi.getter(name="productId")
+    def product_id(self) -> str:
+        return pulumi.get(self, "product_id")
+
+    @property
+    @pulumi.getter(name="productionVersion")
+    def production_version(self) -> int:
+        return pulumi.get(self, "production_version")
+
+    @property
+    @pulumi.getter(name="propertyId")
+    def property_id(self) -> str:
+        return pulumi.get(self, "property_id")
+
+    @property
+    @pulumi.getter(name="ruleFormat")
+    def rule_format(self) -> str:
+        return pulumi.get(self, "rule_format")
+
+    @property
+    @pulumi.getter
     def rules(self) -> str:
         return pulumi.get(self, "rules")
+
+    @property
+    @pulumi.getter(name="stagingVersion")
+    def staging_version(self) -> int:
+        return pulumi.get(self, "staging_version")
 
     @property
     @pulumi.getter
@@ -65,9 +137,18 @@ class AwaitableGetPropertyResult(GetPropertyResult):
         if False:
             yield self
         return GetPropertyResult(
+            contract_id=self.contract_id,
+            group_id=self.group_id,
             id=self.id,
+            latest_version=self.latest_version,
             name=self.name,
+            note=self.note,
+            product_id=self.product_id,
+            production_version=self.production_version,
+            property_id=self.property_id,
+            rule_format=self.rule_format,
             rules=self.rules,
+            staging_version=self.staging_version,
             version=self.version)
 
 
@@ -84,9 +165,18 @@ def get_property(name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getProperty:getProperty', __args__, opts=opts, typ=GetPropertyResult).value
 
     return AwaitableGetPropertyResult(
+        contract_id=pulumi.get(__ret__, 'contract_id'),
+        group_id=pulumi.get(__ret__, 'group_id'),
         id=pulumi.get(__ret__, 'id'),
+        latest_version=pulumi.get(__ret__, 'latest_version'),
         name=pulumi.get(__ret__, 'name'),
+        note=pulumi.get(__ret__, 'note'),
+        product_id=pulumi.get(__ret__, 'product_id'),
+        production_version=pulumi.get(__ret__, 'production_version'),
+        property_id=pulumi.get(__ret__, 'property_id'),
+        rule_format=pulumi.get(__ret__, 'rule_format'),
         rules=pulumi.get(__ret__, 'rules'),
+        staging_version=pulumi.get(__ret__, 'staging_version'),
         version=pulumi.get(__ret__, 'version'))
 
 

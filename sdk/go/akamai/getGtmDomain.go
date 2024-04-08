@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v7/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -72,6 +72,8 @@ type LookupGtmDomainResult struct {
 	Resources                    []GetGtmDomainResource      `pulumi:"resources"`
 	RoundRobinPrefix             string                      `pulumi:"roundRobinPrefix"`
 	ServerMonitorPool            string                      `pulumi:"serverMonitorPool"`
+	SignAndServe                 bool                        `pulumi:"signAndServe"`
+	SignAndServeAlgorithm        string                      `pulumi:"signAndServeAlgorithm"`
 	Status                       *GetGtmDomainStatus         `pulumi:"status"`
 	Type                         string                      `pulumi:"type"`
 }
@@ -263,6 +265,14 @@ func (o LookupGtmDomainResultOutput) RoundRobinPrefix() pulumi.StringOutput {
 
 func (o LookupGtmDomainResultOutput) ServerMonitorPool() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGtmDomainResult) string { return v.ServerMonitorPool }).(pulumi.StringOutput)
+}
+
+func (o LookupGtmDomainResultOutput) SignAndServe() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupGtmDomainResult) bool { return v.SignAndServe }).(pulumi.BoolOutput)
+}
+
+func (o LookupGtmDomainResultOutput) SignAndServeAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupGtmDomainResult) string { return v.SignAndServeAlgorithm }).(pulumi.StringOutput)
 }
 
 func (o LookupGtmDomainResultOutput) Status() GetGtmDomainStatusPtrOutput {

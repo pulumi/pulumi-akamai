@@ -16,7 +16,7 @@ public final class GetCPSEnrollmentTechContact {
      * @return The address of the contact
      * 
      */
-    private String addressLineOne;
+    private @Nullable String addressLineOne;
     /**
      * @return The address of the contact
      * 
@@ -26,12 +26,12 @@ public final class GetCPSEnrollmentTechContact {
      * @return City of residence of the contact
      * 
      */
-    private String city;
+    private @Nullable String city;
     /**
      * @return Country code of the contact
      * 
      */
-    private String countryCode;
+    private @Nullable String countryCode;
     /**
      * @return E-mail address of the contact
      * 
@@ -51,7 +51,7 @@ public final class GetCPSEnrollmentTechContact {
      * @return Organization where contact is hired
      * 
      */
-    private String organization;
+    private @Nullable String organization;
     /**
      * @return Phone number of the contact
      * 
@@ -61,12 +61,12 @@ public final class GetCPSEnrollmentTechContact {
      * @return Postal code of the contact
      * 
      */
-    private String postalCode;
+    private @Nullable String postalCode;
     /**
      * @return The region of the contact
      * 
      */
-    private String region;
+    private @Nullable String region;
     /**
      * @return Title of the the contact
      * 
@@ -78,8 +78,8 @@ public final class GetCPSEnrollmentTechContact {
      * @return The address of the contact
      * 
      */
-    public String addressLineOne() {
-        return this.addressLineOne;
+    public Optional<String> addressLineOne() {
+        return Optional.ofNullable(this.addressLineOne);
     }
     /**
      * @return The address of the contact
@@ -92,15 +92,15 @@ public final class GetCPSEnrollmentTechContact {
      * @return City of residence of the contact
      * 
      */
-    public String city() {
-        return this.city;
+    public Optional<String> city() {
+        return Optional.ofNullable(this.city);
     }
     /**
      * @return Country code of the contact
      * 
      */
-    public String countryCode() {
-        return this.countryCode;
+    public Optional<String> countryCode() {
+        return Optional.ofNullable(this.countryCode);
     }
     /**
      * @return E-mail address of the contact
@@ -127,8 +127,8 @@ public final class GetCPSEnrollmentTechContact {
      * @return Organization where contact is hired
      * 
      */
-    public String organization() {
-        return this.organization;
+    public Optional<String> organization() {
+        return Optional.ofNullable(this.organization);
     }
     /**
      * @return Phone number of the contact
@@ -141,15 +141,15 @@ public final class GetCPSEnrollmentTechContact {
      * @return Postal code of the contact
      * 
      */
-    public String postalCode() {
-        return this.postalCode;
+    public Optional<String> postalCode() {
+        return Optional.ofNullable(this.postalCode);
     }
     /**
      * @return The region of the contact
      * 
      */
-    public String region() {
-        return this.region;
+    public Optional<String> region() {
+        return Optional.ofNullable(this.region);
     }
     /**
      * @return Title of the the contact
@@ -168,17 +168,17 @@ public final class GetCPSEnrollmentTechContact {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String addressLineOne;
+        private @Nullable String addressLineOne;
         private @Nullable String addressLineTwo;
-        private String city;
-        private String countryCode;
+        private @Nullable String city;
+        private @Nullable String countryCode;
         private String email;
         private String firstName;
         private String lastName;
-        private String organization;
+        private @Nullable String organization;
         private String phone;
-        private String postalCode;
-        private String region;
+        private @Nullable String postalCode;
+        private @Nullable String region;
         private @Nullable String title;
         public Builder() {}
         public Builder(GetCPSEnrollmentTechContact defaults) {
@@ -198,10 +198,8 @@ public final class GetCPSEnrollmentTechContact {
         }
 
         @CustomType.Setter
-        public Builder addressLineOne(String addressLineOne) {
-            if (addressLineOne == null) {
-              throw new MissingRequiredPropertyException("GetCPSEnrollmentTechContact", "addressLineOne");
-            }
+        public Builder addressLineOne(@Nullable String addressLineOne) {
+
             this.addressLineOne = addressLineOne;
             return this;
         }
@@ -212,18 +210,14 @@ public final class GetCPSEnrollmentTechContact {
             return this;
         }
         @CustomType.Setter
-        public Builder city(String city) {
-            if (city == null) {
-              throw new MissingRequiredPropertyException("GetCPSEnrollmentTechContact", "city");
-            }
+        public Builder city(@Nullable String city) {
+
             this.city = city;
             return this;
         }
         @CustomType.Setter
-        public Builder countryCode(String countryCode) {
-            if (countryCode == null) {
-              throw new MissingRequiredPropertyException("GetCPSEnrollmentTechContact", "countryCode");
-            }
+        public Builder countryCode(@Nullable String countryCode) {
+
             this.countryCode = countryCode;
             return this;
         }
@@ -252,10 +246,8 @@ public final class GetCPSEnrollmentTechContact {
             return this;
         }
         @CustomType.Setter
-        public Builder organization(String organization) {
-            if (organization == null) {
-              throw new MissingRequiredPropertyException("GetCPSEnrollmentTechContact", "organization");
-            }
+        public Builder organization(@Nullable String organization) {
+
             this.organization = organization;
             return this;
         }
@@ -268,18 +260,14 @@ public final class GetCPSEnrollmentTechContact {
             return this;
         }
         @CustomType.Setter
-        public Builder postalCode(String postalCode) {
-            if (postalCode == null) {
-              throw new MissingRequiredPropertyException("GetCPSEnrollmentTechContact", "postalCode");
-            }
+        public Builder postalCode(@Nullable String postalCode) {
+
             this.postalCode = postalCode;
             return this;
         }
         @CustomType.Setter
-        public Builder region(String region) {
-            if (region == null) {
-              throw new MissingRequiredPropertyException("GetCPSEnrollmentTechContact", "region");
-            }
+        public Builder region(@Nullable String region) {
+
             this.region = region;
             return this;
         }

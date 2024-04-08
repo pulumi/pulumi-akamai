@@ -13,6 +13,7 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GtmPropertyLivenessTest
     {
+        public readonly ImmutableArray<string> AlternateCaCertificates;
         public readonly bool? AnswersRequired;
         public readonly bool? DisableNonstandardPortWarning;
         public readonly bool? Disabled;
@@ -21,8 +22,14 @@ namespace Pulumi.Akamai.Outputs
         public readonly bool? HttpError4xx;
         public readonly bool? HttpError5xx;
         public readonly ImmutableArray<Outputs.GtmPropertyLivenessTestHttpHeader> HttpHeaders;
+        public readonly string? HttpMethod;
+        public readonly string? HttpRequestBody;
         public readonly string Name;
         public readonly bool? PeerCertificateVerification;
+        /// <summary>
+        /// Whether to enable backwards compatibility for liveness endpoints that use older TLS protocols
+        /// </summary>
+        public readonly bool? Pre2023SecurityPosture;
         public readonly bool? RecursionRequested;
         public readonly string? RequestString;
         public readonly string? ResourceType;
@@ -40,6 +47,8 @@ namespace Pulumi.Akamai.Outputs
 
         [OutputConstructor]
         private GtmPropertyLivenessTest(
+            ImmutableArray<string> alternateCaCertificates,
+
             bool? answersRequired,
 
             bool? disableNonstandardPortWarning,
@@ -56,9 +65,15 @@ namespace Pulumi.Akamai.Outputs
 
             ImmutableArray<Outputs.GtmPropertyLivenessTestHttpHeader> httpHeaders,
 
+            string? httpMethod,
+
+            string? httpRequestBody,
+
             string name,
 
             bool? peerCertificateVerification,
+
+            bool? pre2023SecurityPosture,
 
             bool? recursionRequested,
 
@@ -88,6 +103,7 @@ namespace Pulumi.Akamai.Outputs
 
             double? timeoutPenalty)
         {
+            AlternateCaCertificates = alternateCaCertificates;
             AnswersRequired = answersRequired;
             DisableNonstandardPortWarning = disableNonstandardPortWarning;
             Disabled = disabled;
@@ -96,8 +112,11 @@ namespace Pulumi.Akamai.Outputs
             HttpError4xx = httpError4xx;
             HttpError5xx = httpError5xx;
             HttpHeaders = httpHeaders;
+            HttpMethod = httpMethod;
+            HttpRequestBody = httpRequestBody;
             Name = name;
             PeerCertificateVerification = peerCertificateVerification;
+            Pre2023SecurityPosture = pre2023SecurityPosture;
             RecursionRequested = recursionRequested;
             RequestString = requestString;
             ResourceType = resourceType;

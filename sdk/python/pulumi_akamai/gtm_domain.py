@@ -28,9 +28,14 @@ class GtmDomainArgs:
                  load_feedback: Optional[pulumi.Input[bool]] = None,
                  load_imbalance_percentage: Optional[pulumi.Input[float]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 sign_and_serve: Optional[pulumi.Input[bool]] = None,
+                 sign_and_serve_algorithm: Optional[pulumi.Input[str]] = None,
                  wait_on_complete: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a GtmDomain resource.
+        :param pulumi.Input[bool] sign_and_serve: If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
+        :param pulumi.Input[str] sign_and_serve_algorithm: The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
+               ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
         """
         pulumi.set(__self__, "type", type)
         if cname_coalescing_enabled is not None:
@@ -59,6 +64,10 @@ class GtmDomainArgs:
             pulumi.set(__self__, "load_imbalance_percentage", load_imbalance_percentage)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if sign_and_serve is not None:
+            pulumi.set(__self__, "sign_and_serve", sign_and_serve)
+        if sign_and_serve_algorithm is not None:
+            pulumi.set(__self__, "sign_and_serve_algorithm", sign_and_serve_algorithm)
         if wait_on_complete is not None:
             pulumi.set(__self__, "wait_on_complete", wait_on_complete)
 
@@ -189,6 +198,31 @@ class GtmDomainArgs:
         pulumi.set(self, "name", value)
 
     @property
+    @pulumi.getter(name="signAndServe")
+    def sign_and_serve(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
+        """
+        return pulumi.get(self, "sign_and_serve")
+
+    @sign_and_serve.setter
+    def sign_and_serve(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "sign_and_serve", value)
+
+    @property
+    @pulumi.getter(name="signAndServeAlgorithm")
+    def sign_and_serve_algorithm(self) -> Optional[pulumi.Input[str]]:
+        """
+        The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
+        ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+        """
+        return pulumi.get(self, "sign_and_serve_algorithm")
+
+    @sign_and_serve_algorithm.setter
+    def sign_and_serve_algorithm(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "sign_and_serve_algorithm", value)
+
+    @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
         return pulumi.get(self, "wait_on_complete")
@@ -233,10 +267,15 @@ class _GtmDomainState:
                  servermonitor_liveness_count: Optional[pulumi.Input[int]] = None,
                  servermonitor_load_count: Optional[pulumi.Input[int]] = None,
                  servermonitor_pool: Optional[pulumi.Input[str]] = None,
+                 sign_and_serve: Optional[pulumi.Input[bool]] = None,
+                 sign_and_serve_algorithm: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  wait_on_complete: Optional[pulumi.Input[bool]] = None):
         """
         Input properties used for looking up and filtering GtmDomain resources.
+        :param pulumi.Input[bool] sign_and_serve: If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
+        :param pulumi.Input[str] sign_and_serve_algorithm: The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
+               ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
         """
         if cname_coalescing_enabled is not None:
             pulumi.set(__self__, "cname_coalescing_enabled", cname_coalescing_enabled)
@@ -302,6 +341,10 @@ class _GtmDomainState:
             pulumi.set(__self__, "servermonitor_load_count", servermonitor_load_count)
         if servermonitor_pool is not None:
             pulumi.set(__self__, "servermonitor_pool", servermonitor_pool)
+        if sign_and_serve is not None:
+            pulumi.set(__self__, "sign_and_serve", sign_and_serve)
+        if sign_and_serve_algorithm is not None:
+            pulumi.set(__self__, "sign_and_serve_algorithm", sign_and_serve_algorithm)
         if type is not None:
             pulumi.set(__self__, "type", type)
         if wait_on_complete is not None:
@@ -596,6 +639,31 @@ class _GtmDomainState:
         pulumi.set(self, "servermonitor_pool", value)
 
     @property
+    @pulumi.getter(name="signAndServe")
+    def sign_and_serve(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
+        """
+        return pulumi.get(self, "sign_and_serve")
+
+    @sign_and_serve.setter
+    def sign_and_serve(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "sign_and_serve", value)
+
+    @property
+    @pulumi.getter(name="signAndServeAlgorithm")
+    def sign_and_serve_algorithm(self) -> Optional[pulumi.Input[str]]:
+        """
+        The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
+        ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+        """
+        return pulumi.get(self, "sign_and_serve_algorithm")
+
+    @sign_and_serve_algorithm.setter
+    def sign_and_serve_algorithm(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "sign_and_serve_algorithm", value)
+
+    @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         return pulumi.get(self, "type")
@@ -632,6 +700,8 @@ class GtmDomain(pulumi.CustomResource):
                  load_feedback: Optional[pulumi.Input[bool]] = None,
                  load_imbalance_percentage: Optional[pulumi.Input[float]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 sign_and_serve: Optional[pulumi.Input[bool]] = None,
+                 sign_and_serve_algorithm: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  wait_on_complete: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
@@ -639,6 +709,9 @@ class GtmDomain(pulumi.CustomResource):
         Create a GtmDomain resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[bool] sign_and_serve: If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
+        :param pulumi.Input[str] sign_and_serve_algorithm: The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
+               ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
         """
         ...
     @overload
@@ -676,6 +749,8 @@ class GtmDomain(pulumi.CustomResource):
                  load_feedback: Optional[pulumi.Input[bool]] = None,
                  load_imbalance_percentage: Optional[pulumi.Input[float]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 sign_and_serve: Optional[pulumi.Input[bool]] = None,
+                 sign_and_serve_algorithm: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  wait_on_complete: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
@@ -700,6 +775,8 @@ class GtmDomain(pulumi.CustomResource):
             __props__.__dict__["load_feedback"] = load_feedback
             __props__.__dict__["load_imbalance_percentage"] = load_imbalance_percentage
             __props__.__dict__["name"] = name
+            __props__.__dict__["sign_and_serve"] = sign_and_serve
+            __props__.__dict__["sign_and_serve_algorithm"] = sign_and_serve_algorithm
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")
             __props__.__dict__["type"] = type
@@ -767,6 +844,8 @@ class GtmDomain(pulumi.CustomResource):
             servermonitor_liveness_count: Optional[pulumi.Input[int]] = None,
             servermonitor_load_count: Optional[pulumi.Input[int]] = None,
             servermonitor_pool: Optional[pulumi.Input[str]] = None,
+            sign_and_serve: Optional[pulumi.Input[bool]] = None,
+            sign_and_serve_algorithm: Optional[pulumi.Input[str]] = None,
             type: Optional[pulumi.Input[str]] = None,
             wait_on_complete: Optional[pulumi.Input[bool]] = None) -> 'GtmDomain':
         """
@@ -776,6 +855,9 @@ class GtmDomain(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[bool] sign_and_serve: If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
+        :param pulumi.Input[str] sign_and_serve_algorithm: The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
+               ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -813,6 +895,8 @@ class GtmDomain(pulumi.CustomResource):
         __props__.__dict__["servermonitor_liveness_count"] = servermonitor_liveness_count
         __props__.__dict__["servermonitor_load_count"] = servermonitor_load_count
         __props__.__dict__["servermonitor_pool"] = servermonitor_pool
+        __props__.__dict__["sign_and_serve"] = sign_and_serve
+        __props__.__dict__["sign_and_serve_algorithm"] = sign_and_serve_algorithm
         __props__.__dict__["type"] = type
         __props__.__dict__["wait_on_complete"] = wait_on_complete
         return GtmDomain(resource_name, opts=opts, __props__=__props__)
@@ -976,6 +1060,23 @@ class GtmDomain(pulumi.CustomResource):
     @pulumi.getter(name="servermonitorPool")
     def servermonitor_pool(self) -> pulumi.Output[str]:
         return pulumi.get(self, "servermonitor_pool")
+
+    @property
+    @pulumi.getter(name="signAndServe")
+    def sign_and_serve(self) -> pulumi.Output[Optional[bool]]:
+        """
+        If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
+        """
+        return pulumi.get(self, "sign_and_serve")
+
+    @property
+    @pulumi.getter(name="signAndServeAlgorithm")
+    def sign_and_serve_algorithm(self) -> pulumi.Output[Optional[str]]:
+        """
+        The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
+        ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+        """
+        return pulumi.get(self, "sign_and_serve_algorithm")
 
     @property
     @pulumi.getter

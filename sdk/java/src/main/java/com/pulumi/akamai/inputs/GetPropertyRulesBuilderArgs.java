@@ -8,6 +8,7 @@ import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20230530Args;
 import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20230920Args;
 import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030Args;
 import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20240109Args;
+import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20240212Args;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.util.Objects;
@@ -54,6 +55,13 @@ public final class GetPropertyRulesBuilderArgs extends com.pulumi.resources.Invo
         return Optional.ofNullable(this.rulesV20240109);
     }
 
+    @Import(name="rulesV20240212")
+    private @Nullable Output<GetPropertyRulesBuilderRulesV20240212Args> rulesV20240212;
+
+    public Optional<Output<GetPropertyRulesBuilderRulesV20240212Args>> rulesV20240212() {
+        return Optional.ofNullable(this.rulesV20240212);
+    }
+
     private GetPropertyRulesBuilderArgs() {}
 
     private GetPropertyRulesBuilderArgs(GetPropertyRulesBuilderArgs $) {
@@ -62,6 +70,7 @@ public final class GetPropertyRulesBuilderArgs extends com.pulumi.resources.Invo
         this.rulesV20230920 = $.rulesV20230920;
         this.rulesV20231030 = $.rulesV20231030;
         this.rulesV20240109 = $.rulesV20240109;
+        this.rulesV20240212 = $.rulesV20240212;
     }
 
     public static Builder builder() {
@@ -125,6 +134,15 @@ public final class GetPropertyRulesBuilderArgs extends com.pulumi.resources.Invo
 
         public Builder rulesV20240109(GetPropertyRulesBuilderRulesV20240109Args rulesV20240109) {
             return rulesV20240109(Output.of(rulesV20240109));
+        }
+
+        public Builder rulesV20240212(@Nullable Output<GetPropertyRulesBuilderRulesV20240212Args> rulesV20240212) {
+            $.rulesV20240212 = rulesV20240212;
+            return this;
+        }
+
+        public Builder rulesV20240212(GetPropertyRulesBuilderRulesV20240212Args rulesV20240212) {
+            return rulesV20240212(Output.of(rulesV20240212));
         }
 
         public GetPropertyRulesBuilderArgs build() {

@@ -199,6 +199,8 @@ namespace Pulumi.Akamai
         public readonly ImmutableArray<Outputs.GetGtmDomainResourceResult> Resources;
         public readonly string RoundRobinPrefix;
         public readonly string ServerMonitorPool;
+        public readonly bool SignAndServe;
+        public readonly string SignAndServeAlgorithm;
         public readonly Outputs.GetGtmDomainStatusResult? Status;
         public readonly string Type;
 
@@ -276,6 +278,10 @@ namespace Pulumi.Akamai
 
             string serverMonitorPool,
 
+            bool signAndServe,
+
+            string signAndServeAlgorithm,
+
             Outputs.GetGtmDomainStatusResult? status,
 
             string type)
@@ -316,6 +322,8 @@ namespace Pulumi.Akamai
             Resources = resources;
             RoundRobinPrefix = roundRobinPrefix;
             ServerMonitorPool = serverMonitorPool;
+            SignAndServe = signAndServe;
+            SignAndServeAlgorithm = signAndServeAlgorithm;
             Status = status;
             Type = type;
         }

@@ -16,7 +16,7 @@ namespace Pulumi.Akamai.Outputs
         /// <summary>
         /// The address of the contact
         /// </summary>
-        public readonly string AddressLineOne;
+        public readonly string? AddressLineOne;
         /// <summary>
         /// The address of the contact
         /// </summary>
@@ -24,11 +24,11 @@ namespace Pulumi.Akamai.Outputs
         /// <summary>
         /// City of residence of the contact
         /// </summary>
-        public readonly string City;
+        public readonly string? City;
         /// <summary>
         /// Country code of the contact
         /// </summary>
-        public readonly string CountryCode;
+        public readonly string? CountryCode;
         /// <summary>
         /// E-mail address of the contact
         /// </summary>
@@ -44,7 +44,7 @@ namespace Pulumi.Akamai.Outputs
         /// <summary>
         /// Organization where contact is hired
         /// </summary>
-        public readonly string Organization;
+        public readonly string? Organization;
         /// <summary>
         /// Phone number of the contact
         /// </summary>
@@ -52,11 +52,11 @@ namespace Pulumi.Akamai.Outputs
         /// <summary>
         /// Postal code of the contact
         /// </summary>
-        public readonly string PostalCode;
+        public readonly string? PostalCode;
         /// <summary>
         /// The region of the contact
         /// </summary>
-        public readonly string Region;
+        public readonly string? Region;
         /// <summary>
         /// Title of the the contact
         /// </summary>
@@ -64,13 +64,13 @@ namespace Pulumi.Akamai.Outputs
 
         [OutputConstructor]
         private GetCPSEnrollmentTechContactResult(
-            string addressLineOne,
+            string? addressLineOne,
 
             string? addressLineTwo,
 
-            string city,
+            string? city,
 
-            string countryCode,
+            string? countryCode,
 
             string email,
 
@@ -78,13 +78,13 @@ namespace Pulumi.Akamai.Outputs
 
             string lastName,
 
-            string organization,
+            string? organization,
 
             string phone,
 
-            string postalCode,
+            string? postalCode,
 
-            string region,
+            string? region,
 
             string? title)
         {

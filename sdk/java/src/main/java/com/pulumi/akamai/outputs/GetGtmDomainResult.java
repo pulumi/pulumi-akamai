@@ -60,6 +60,8 @@ public final class GetGtmDomainResult {
     private @Nullable List<GetGtmDomainResource> resources;
     private String roundRobinPrefix;
     private String serverMonitorPool;
+    private Boolean signAndServe;
+    private String signAndServeAlgorithm;
     private @Nullable GetGtmDomainStatus status;
     private String type;
 
@@ -172,6 +174,12 @@ public final class GetGtmDomainResult {
     public String serverMonitorPool() {
         return this.serverMonitorPool;
     }
+    public Boolean signAndServe() {
+        return this.signAndServe;
+    }
+    public String signAndServeAlgorithm() {
+        return this.signAndServeAlgorithm;
+    }
     public Optional<GetGtmDomainStatus> status() {
         return Optional.ofNullable(this.status);
     }
@@ -224,6 +232,8 @@ public final class GetGtmDomainResult {
         private @Nullable List<GetGtmDomainResource> resources;
         private String roundRobinPrefix;
         private String serverMonitorPool;
+        private Boolean signAndServe;
+        private String signAndServeAlgorithm;
         private @Nullable GetGtmDomainStatus status;
         private String type;
         public Builder() {}
@@ -265,6 +275,8 @@ public final class GetGtmDomainResult {
     	      this.resources = defaults.resources;
     	      this.roundRobinPrefix = defaults.roundRobinPrefix;
     	      this.serverMonitorPool = defaults.serverMonitorPool;
+    	      this.signAndServe = defaults.signAndServe;
+    	      this.signAndServeAlgorithm = defaults.signAndServeAlgorithm;
     	      this.status = defaults.status;
     	      this.type = defaults.type;
         }
@@ -568,6 +580,22 @@ public final class GetGtmDomainResult {
             return this;
         }
         @CustomType.Setter
+        public Builder signAndServe(Boolean signAndServe) {
+            if (signAndServe == null) {
+              throw new MissingRequiredPropertyException("GetGtmDomainResult", "signAndServe");
+            }
+            this.signAndServe = signAndServe;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder signAndServeAlgorithm(String signAndServeAlgorithm) {
+            if (signAndServeAlgorithm == null) {
+              throw new MissingRequiredPropertyException("GetGtmDomainResult", "signAndServeAlgorithm");
+            }
+            this.signAndServeAlgorithm = signAndServeAlgorithm;
+            return this;
+        }
+        @CustomType.Setter
         public Builder status(@Nullable GetGtmDomainStatus status) {
 
             this.status = status;
@@ -619,6 +647,8 @@ public final class GetGtmDomainResult {
             _resultValue.resources = resources;
             _resultValue.roundRobinPrefix = roundRobinPrefix;
             _resultValue.serverMonitorPool = serverMonitorPool;
+            _resultValue.signAndServe = signAndServe;
+            _resultValue.signAndServeAlgorithm = signAndServeAlgorithm;
             _resultValue.status = status;
             _resultValue.type = type;
             return _resultValue;

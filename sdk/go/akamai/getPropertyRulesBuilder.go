@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v7/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -28,6 +28,7 @@ type GetPropertyRulesBuilderArgs struct {
 	RulesV20230920 *GetPropertyRulesBuilderRulesV20230920 `pulumi:"rulesV20230920"`
 	RulesV20231030 *GetPropertyRulesBuilderRulesV20231030 `pulumi:"rulesV20231030"`
 	RulesV20240109 *GetPropertyRulesBuilderRulesV20240109 `pulumi:"rulesV20240109"`
+	RulesV20240212 *GetPropertyRulesBuilderRulesV20240212 `pulumi:"rulesV20240212"`
 }
 
 // A collection of values returned by getPropertyRulesBuilder.
@@ -41,6 +42,7 @@ type GetPropertyRulesBuilderResult struct {
 	RulesV20230920 *GetPropertyRulesBuilderRulesV20230920 `pulumi:"rulesV20230920"`
 	RulesV20231030 *GetPropertyRulesBuilderRulesV20231030 `pulumi:"rulesV20231030"`
 	RulesV20240109 *GetPropertyRulesBuilderRulesV20240109 `pulumi:"rulesV20240109"`
+	RulesV20240212 *GetPropertyRulesBuilderRulesV20240212 `pulumi:"rulesV20240212"`
 }
 
 func GetPropertyRulesBuilderOutput(ctx *pulumi.Context, args GetPropertyRulesBuilderOutputArgs, opts ...pulumi.InvokeOption) GetPropertyRulesBuilderResultOutput {
@@ -63,6 +65,7 @@ type GetPropertyRulesBuilderOutputArgs struct {
 	RulesV20230920 GetPropertyRulesBuilderRulesV20230920PtrInput `pulumi:"rulesV20230920"`
 	RulesV20231030 GetPropertyRulesBuilderRulesV20231030PtrInput `pulumi:"rulesV20231030"`
 	RulesV20240109 GetPropertyRulesBuilderRulesV20240109PtrInput `pulumi:"rulesV20240109"`
+	RulesV20240212 GetPropertyRulesBuilderRulesV20240212PtrInput `pulumi:"rulesV20240212"`
 }
 
 func (GetPropertyRulesBuilderOutputArgs) ElementType() reflect.Type {
@@ -115,6 +118,10 @@ func (o GetPropertyRulesBuilderResultOutput) RulesV20231030() GetPropertyRulesBu
 
 func (o GetPropertyRulesBuilderResultOutput) RulesV20240109() GetPropertyRulesBuilderRulesV20240109PtrOutput {
 	return o.ApplyT(func(v GetPropertyRulesBuilderResult) *GetPropertyRulesBuilderRulesV20240109 { return v.RulesV20240109 }).(GetPropertyRulesBuilderRulesV20240109PtrOutput)
+}
+
+func (o GetPropertyRulesBuilderResultOutput) RulesV20240212() GetPropertyRulesBuilderRulesV20240212PtrOutput {
+	return o.ApplyT(func(v GetPropertyRulesBuilderResult) *GetPropertyRulesBuilderRulesV20240212 { return v.RulesV20240212 }).(GetPropertyRulesBuilderRulesV20240212PtrOutput)
 }
 
 func init() {

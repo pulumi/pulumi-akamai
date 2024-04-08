@@ -12,6 +12,14 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GtmPropertyLivenessTestGetArgs : global::Pulumi.ResourceArgs
     {
+        [Input("alternateCaCertificates")]
+        private InputList<string>? _alternateCaCertificates;
+        public InputList<string> AlternateCaCertificates
+        {
+            get => _alternateCaCertificates ?? (_alternateCaCertificates = new InputList<string>());
+            set => _alternateCaCertificates = value;
+        }
+
         [Input("answersRequired")]
         public Input<bool>? AnswersRequired { get; set; }
 
@@ -41,11 +49,23 @@ namespace Pulumi.Akamai.Inputs
             set => _httpHeaders = value;
         }
 
+        [Input("httpMethod")]
+        public Input<string>? HttpMethod { get; set; }
+
+        [Input("httpRequestBody")]
+        public Input<string>? HttpRequestBody { get; set; }
+
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         [Input("peerCertificateVerification")]
         public Input<bool>? PeerCertificateVerification { get; set; }
+
+        /// <summary>
+        /// Whether to enable backwards compatibility for liveness endpoints that use older TLS protocols
+        /// </summary>
+        [Input("pre2023SecurityPosture")]
+        public Input<bool>? Pre2023SecurityPosture { get; set; }
 
         [Input("recursionRequested")]
         public Input<bool>? RecursionRequested { get; set; }

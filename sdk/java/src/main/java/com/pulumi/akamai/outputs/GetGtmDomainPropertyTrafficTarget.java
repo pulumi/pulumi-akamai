@@ -35,6 +35,11 @@ public final class GetGtmDomainPropertyTrafficTarget {
      */
     private String name;
     /**
+     * @return Non-negative integer that ranks the order of the backups that GTM will hand out in the event that the primary Traffic Target has been declared down
+     * 
+     */
+    private Integer precedence;
+    /**
      * @return Identifies the IP address or the hostnames of the servers.
      * 
      */
@@ -75,6 +80,13 @@ public final class GetGtmDomainPropertyTrafficTarget {
         return this.name;
     }
     /**
+     * @return Non-negative integer that ranks the order of the backups that GTM will hand out in the event that the primary Traffic Target has been declared down
+     * 
+     */
+    public Integer precedence() {
+        return this.precedence;
+    }
+    /**
      * @return Identifies the IP address or the hostnames of the servers.
      * 
      */
@@ -102,6 +114,7 @@ public final class GetGtmDomainPropertyTrafficTarget {
         private Boolean enabled;
         private String handoutCname;
         private String name;
+        private Integer precedence;
         private List<String> servers;
         private Double weight;
         public Builder() {}
@@ -111,6 +124,7 @@ public final class GetGtmDomainPropertyTrafficTarget {
     	      this.enabled = defaults.enabled;
     	      this.handoutCname = defaults.handoutCname;
     	      this.name = defaults.name;
+    	      this.precedence = defaults.precedence;
     	      this.servers = defaults.servers;
     	      this.weight = defaults.weight;
         }
@@ -148,6 +162,14 @@ public final class GetGtmDomainPropertyTrafficTarget {
             return this;
         }
         @CustomType.Setter
+        public Builder precedence(Integer precedence) {
+            if (precedence == null) {
+              throw new MissingRequiredPropertyException("GetGtmDomainPropertyTrafficTarget", "precedence");
+            }
+            this.precedence = precedence;
+            return this;
+        }
+        @CustomType.Setter
         public Builder servers(List<String> servers) {
             if (servers == null) {
               throw new MissingRequiredPropertyException("GetGtmDomainPropertyTrafficTarget", "servers");
@@ -172,6 +194,7 @@ public final class GetGtmDomainPropertyTrafficTarget {
             _resultValue.enabled = enabled;
             _resultValue.handoutCname = handoutCname;
             _resultValue.name = name;
+            _resultValue.precedence = precedence;
             _resultValue.servers = servers;
             _resultValue.weight = weight;
             return _resultValue;

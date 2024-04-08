@@ -42,3 +42,31 @@ class _ExportableConfig(types.ModuleType):
         """
         return __config__.get_int('requestLimit')
 
+    @property
+    def retry_disabled(self) -> Optional[bool]:
+        """
+        Should the retries of API requests be disabled, default false
+        """
+        return __config__.get_bool('retryDisabled')
+
+    @property
+    def retry_max(self) -> Optional[int]:
+        """
+        The maximum number retires of API requests, default 10
+        """
+        return __config__.get_int('retryMax')
+
+    @property
+    def retry_wait_max(self) -> Optional[int]:
+        """
+        The maximum wait time in seconds between API requests retries, default is 30 sec
+        """
+        return __config__.get_int('retryWaitMax')
+
+    @property
+    def retry_wait_min(self) -> Optional[int]:
+        """
+        The minimum wait time in seconds between API requests retries, default is 1 sec
+        """
+        return __config__.get_int('retryWaitMin')
+

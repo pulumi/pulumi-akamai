@@ -51,27 +51,63 @@ namespace Pulumi.Akamai
     [OutputType]
     public sealed class GetPropertyResult
     {
+        public readonly string ContractId;
+        public readonly string GroupId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly int LatestVersion;
         public readonly string Name;
+        public readonly string Note;
+        public readonly string ProductId;
+        public readonly int ProductionVersion;
+        public readonly string PropertyId;
+        public readonly string RuleFormat;
         public readonly string Rules;
+        public readonly int StagingVersion;
         public readonly int? Version;
 
         [OutputConstructor]
         private GetPropertyResult(
+            string contractId,
+
+            string groupId,
+
             string id,
+
+            int latestVersion,
 
             string name,
 
+            string note,
+
+            string productId,
+
+            int productionVersion,
+
+            string propertyId,
+
+            string ruleFormat,
+
             string rules,
+
+            int stagingVersion,
 
             int? version)
         {
+            ContractId = contractId;
+            GroupId = groupId;
             Id = id;
+            LatestVersion = latestVersion;
             Name = name;
+            Note = note;
+            ProductId = productId;
+            ProductionVersion = productionVersion;
+            PropertyId = propertyId;
+            RuleFormat = ruleFormat;
             Rules = rules;
+            StagingVersion = stagingVersion;
             Version = version;
         }
     }

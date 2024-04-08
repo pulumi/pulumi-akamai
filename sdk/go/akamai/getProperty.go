@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v7/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -29,11 +29,20 @@ type LookupPropertyArgs struct {
 
 // A collection of values returned by getProperty.
 type LookupPropertyResult struct {
+	ContractId string `pulumi:"contractId"`
+	GroupId    string `pulumi:"groupId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id      string `pulumi:"id"`
-	Name    string `pulumi:"name"`
-	Rules   string `pulumi:"rules"`
-	Version *int   `pulumi:"version"`
+	Id                string `pulumi:"id"`
+	LatestVersion     int    `pulumi:"latestVersion"`
+	Name              string `pulumi:"name"`
+	Note              string `pulumi:"note"`
+	ProductId         string `pulumi:"productId"`
+	ProductionVersion int    `pulumi:"productionVersion"`
+	PropertyId        string `pulumi:"propertyId"`
+	RuleFormat        string `pulumi:"ruleFormat"`
+	Rules             string `pulumi:"rules"`
+	StagingVersion    int    `pulumi:"stagingVersion"`
+	Version           *int   `pulumi:"version"`
 }
 
 func LookupPropertyOutput(ctx *pulumi.Context, args LookupPropertyOutputArgs, opts ...pulumi.InvokeOption) LookupPropertyResultOutput {
@@ -74,17 +83,53 @@ func (o LookupPropertyResultOutput) ToLookupPropertyResultOutputWithContext(ctx 
 	return o
 }
 
+func (o LookupPropertyResultOutput) ContractId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupPropertyResult) string { return v.ContractId }).(pulumi.StringOutput)
+}
+
+func (o LookupPropertyResultOutput) GroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupPropertyResult) string { return v.GroupId }).(pulumi.StringOutput)
+}
+
 // The provider-assigned unique ID for this managed resource.
 func (o LookupPropertyResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPropertyResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o LookupPropertyResultOutput) LatestVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupPropertyResult) int { return v.LatestVersion }).(pulumi.IntOutput)
 }
 
 func (o LookupPropertyResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPropertyResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
+func (o LookupPropertyResultOutput) Note() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupPropertyResult) string { return v.Note }).(pulumi.StringOutput)
+}
+
+func (o LookupPropertyResultOutput) ProductId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupPropertyResult) string { return v.ProductId }).(pulumi.StringOutput)
+}
+
+func (o LookupPropertyResultOutput) ProductionVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupPropertyResult) int { return v.ProductionVersion }).(pulumi.IntOutput)
+}
+
+func (o LookupPropertyResultOutput) PropertyId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupPropertyResult) string { return v.PropertyId }).(pulumi.StringOutput)
+}
+
+func (o LookupPropertyResultOutput) RuleFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupPropertyResult) string { return v.RuleFormat }).(pulumi.StringOutput)
+}
+
 func (o LookupPropertyResultOutput) Rules() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPropertyResult) string { return v.Rules }).(pulumi.StringOutput)
+}
+
+func (o LookupPropertyResultOutput) StagingVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupPropertyResult) int { return v.StagingVersion }).(pulumi.IntOutput)
 }
 
 func (o LookupPropertyResultOutput) Version() pulumi.IntPtrOutput {

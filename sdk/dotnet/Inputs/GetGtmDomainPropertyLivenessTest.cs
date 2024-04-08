@@ -12,6 +12,18 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetGtmDomainPropertyLivenessTestArgs : global::Pulumi.InvokeArgs
     {
+        [Input("alternateCaCertificates", required: true)]
+        private List<string>? _alternateCaCertificates;
+
+        /// <summary>
+        /// List of alternate trust anchors (CA certificates)
+        /// </summary>
+        public List<string> AlternateCaCertificates
+        {
+            get => _alternateCaCertificates ?? (_alternateCaCertificates = new List<string>());
+            set => _alternateCaCertificates = value;
+        }
+
         /// <summary>
         /// If testObjectProtocol is DNS, DOH or DOT, requires an answer to the DNS query to be considered a success.
         /// </summary>
@@ -67,6 +79,18 @@ namespace Pulumi.Akamai.Inputs
         }
 
         /// <summary>
+        /// Contains HTTP method to send if the `testObjectProtocol` is `http` or `https`. Supported values are `TRACE`, `HEAD`, `OPTIONS`, `GET`, `PUT`, `POST`, `PATCH`, `DELETE`. When omitted or `null`, this value defaults to `GET`.
+        /// </summary>
+        [Input("httpMethod", required: true)]
+        public string HttpMethod { get; set; } = null!;
+
+        /// <summary>
+        /// Contains Base64-encoded HTTP request body to send if the `testObjectProtocol` is `http` or `https`. When omitted or `null`, omits the request body from the request.
+        /// </summary>
+        [Input("httpRequestBody", required: true)]
+        public string HttpRequestBody { get; set; } = null!;
+
+        /// <summary>
         /// A descriptive name for the liveness test.
         /// </summary>
         [Input("name", required: true)]
@@ -77,6 +101,12 @@ namespace Pulumi.Akamai.Inputs
         /// </summary>
         [Input("peerCertificateVerification", required: true)]
         public bool PeerCertificateVerification { get; set; }
+
+        /// <summary>
+        /// Whether to enable backwards compatibility for liveness endpoints that use older TLS protocols
+        /// </summary>
+        [Input("pre2023SecurityPosture", required: true)]
+        public bool Pre2023SecurityPosture { get; set; }
 
         /// <summary>
         /// Indicates that if testObjectProtocol is DNS, DOH or DOT, the DNS query is recursive.

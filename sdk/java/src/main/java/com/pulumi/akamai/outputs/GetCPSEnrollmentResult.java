@@ -21,6 +21,7 @@ import java.util.Objects;
 @CustomType
 public final class GetCPSEnrollmentResult {
     private List<GetCPSEnrollmentAdminContact> adminContacts;
+    private List<Integer> assignedSlots;
     private String certificateChainType;
     private String certificateType;
     private String commonName;
@@ -36,19 +37,25 @@ public final class GetCPSEnrollmentResult {
      */
     private String id;
     private List<GetCPSEnrollmentNetworkConfiguration> networkConfigurations;
+    private Integer orgId;
     private List<GetCPSEnrollmentOrganization> organizations;
     private Boolean pendingChanges;
+    private List<Integer> productionSlots;
     private String registrationAuthority;
     private List<String> sans;
     private String secureNetwork;
     private String signatureAlgorithm;
     private Boolean sniOnly;
+    private List<Integer> stagingSlots;
     private List<GetCPSEnrollmentTechContact> techContacts;
     private String validationType;
 
     private GetCPSEnrollmentResult() {}
     public List<GetCPSEnrollmentAdminContact> adminContacts() {
         return this.adminContacts;
+    }
+    public List<Integer> assignedSlots() {
+        return this.assignedSlots;
     }
     public String certificateChainType() {
         return this.certificateChainType;
@@ -87,11 +94,17 @@ public final class GetCPSEnrollmentResult {
     public List<GetCPSEnrollmentNetworkConfiguration> networkConfigurations() {
         return this.networkConfigurations;
     }
+    public Integer orgId() {
+        return this.orgId;
+    }
     public List<GetCPSEnrollmentOrganization> organizations() {
         return this.organizations;
     }
     public Boolean pendingChanges() {
         return this.pendingChanges;
+    }
+    public List<Integer> productionSlots() {
+        return this.productionSlots;
     }
     public String registrationAuthority() {
         return this.registrationAuthority;
@@ -107,6 +120,9 @@ public final class GetCPSEnrollmentResult {
     }
     public Boolean sniOnly() {
         return this.sniOnly;
+    }
+    public List<Integer> stagingSlots() {
+        return this.stagingSlots;
     }
     public List<GetCPSEnrollmentTechContact> techContacts() {
         return this.techContacts;
@@ -125,6 +141,7 @@ public final class GetCPSEnrollmentResult {
     @CustomType.Builder
     public static final class Builder {
         private List<GetCPSEnrollmentAdminContact> adminContacts;
+        private List<Integer> assignedSlots;
         private String certificateChainType;
         private String certificateType;
         private String commonName;
@@ -136,19 +153,23 @@ public final class GetCPSEnrollmentResult {
         private List<GetCPSEnrollmentHttpChallenge> httpChallenges;
         private String id;
         private List<GetCPSEnrollmentNetworkConfiguration> networkConfigurations;
+        private Integer orgId;
         private List<GetCPSEnrollmentOrganization> organizations;
         private Boolean pendingChanges;
+        private List<Integer> productionSlots;
         private String registrationAuthority;
         private List<String> sans;
         private String secureNetwork;
         private String signatureAlgorithm;
         private Boolean sniOnly;
+        private List<Integer> stagingSlots;
         private List<GetCPSEnrollmentTechContact> techContacts;
         private String validationType;
         public Builder() {}
         public Builder(GetCPSEnrollmentResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adminContacts = defaults.adminContacts;
+    	      this.assignedSlots = defaults.assignedSlots;
     	      this.certificateChainType = defaults.certificateChainType;
     	      this.certificateType = defaults.certificateType;
     	      this.commonName = defaults.commonName;
@@ -160,13 +181,16 @@ public final class GetCPSEnrollmentResult {
     	      this.httpChallenges = defaults.httpChallenges;
     	      this.id = defaults.id;
     	      this.networkConfigurations = defaults.networkConfigurations;
+    	      this.orgId = defaults.orgId;
     	      this.organizations = defaults.organizations;
     	      this.pendingChanges = defaults.pendingChanges;
+    	      this.productionSlots = defaults.productionSlots;
     	      this.registrationAuthority = defaults.registrationAuthority;
     	      this.sans = defaults.sans;
     	      this.secureNetwork = defaults.secureNetwork;
     	      this.signatureAlgorithm = defaults.signatureAlgorithm;
     	      this.sniOnly = defaults.sniOnly;
+    	      this.stagingSlots = defaults.stagingSlots;
     	      this.techContacts = defaults.techContacts;
     	      this.validationType = defaults.validationType;
         }
@@ -181,6 +205,17 @@ public final class GetCPSEnrollmentResult {
         }
         public Builder adminContacts(GetCPSEnrollmentAdminContact... adminContacts) {
             return adminContacts(List.of(adminContacts));
+        }
+        @CustomType.Setter
+        public Builder assignedSlots(List<Integer> assignedSlots) {
+            if (assignedSlots == null) {
+              throw new MissingRequiredPropertyException("GetCPSEnrollmentResult", "assignedSlots");
+            }
+            this.assignedSlots = assignedSlots;
+            return this;
+        }
+        public Builder assignedSlots(Integer... assignedSlots) {
+            return assignedSlots(List.of(assignedSlots));
         }
         @CustomType.Setter
         public Builder certificateChainType(String certificateChainType) {
@@ -283,6 +318,14 @@ public final class GetCPSEnrollmentResult {
             return networkConfigurations(List.of(networkConfigurations));
         }
         @CustomType.Setter
+        public Builder orgId(Integer orgId) {
+            if (orgId == null) {
+              throw new MissingRequiredPropertyException("GetCPSEnrollmentResult", "orgId");
+            }
+            this.orgId = orgId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder organizations(List<GetCPSEnrollmentOrganization> organizations) {
             if (organizations == null) {
               throw new MissingRequiredPropertyException("GetCPSEnrollmentResult", "organizations");
@@ -300,6 +343,17 @@ public final class GetCPSEnrollmentResult {
             }
             this.pendingChanges = pendingChanges;
             return this;
+        }
+        @CustomType.Setter
+        public Builder productionSlots(List<Integer> productionSlots) {
+            if (productionSlots == null) {
+              throw new MissingRequiredPropertyException("GetCPSEnrollmentResult", "productionSlots");
+            }
+            this.productionSlots = productionSlots;
+            return this;
+        }
+        public Builder productionSlots(Integer... productionSlots) {
+            return productionSlots(List.of(productionSlots));
         }
         @CustomType.Setter
         public Builder registrationAuthority(String registrationAuthority) {
@@ -345,6 +399,17 @@ public final class GetCPSEnrollmentResult {
             return this;
         }
         @CustomType.Setter
+        public Builder stagingSlots(List<Integer> stagingSlots) {
+            if (stagingSlots == null) {
+              throw new MissingRequiredPropertyException("GetCPSEnrollmentResult", "stagingSlots");
+            }
+            this.stagingSlots = stagingSlots;
+            return this;
+        }
+        public Builder stagingSlots(Integer... stagingSlots) {
+            return stagingSlots(List.of(stagingSlots));
+        }
+        @CustomType.Setter
         public Builder techContacts(List<GetCPSEnrollmentTechContact> techContacts) {
             if (techContacts == null) {
               throw new MissingRequiredPropertyException("GetCPSEnrollmentResult", "techContacts");
@@ -366,6 +431,7 @@ public final class GetCPSEnrollmentResult {
         public GetCPSEnrollmentResult build() {
             final var _resultValue = new GetCPSEnrollmentResult();
             _resultValue.adminContacts = adminContacts;
+            _resultValue.assignedSlots = assignedSlots;
             _resultValue.certificateChainType = certificateChainType;
             _resultValue.certificateType = certificateType;
             _resultValue.commonName = commonName;
@@ -377,13 +443,16 @@ public final class GetCPSEnrollmentResult {
             _resultValue.httpChallenges = httpChallenges;
             _resultValue.id = id;
             _resultValue.networkConfigurations = networkConfigurations;
+            _resultValue.orgId = orgId;
             _resultValue.organizations = organizations;
             _resultValue.pendingChanges = pendingChanges;
+            _resultValue.productionSlots = productionSlots;
             _resultValue.registrationAuthority = registrationAuthority;
             _resultValue.sans = sans;
             _resultValue.secureNetwork = secureNetwork;
             _resultValue.signatureAlgorithm = signatureAlgorithm;
             _resultValue.sniOnly = sniOnly;
+            _resultValue.stagingSlots = stagingSlots;
             _resultValue.techContacts = techContacts;
             _resultValue.validationType = validationType;
             return _resultValue;

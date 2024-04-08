@@ -17,6 +17,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetGtmDomainPropertyLivenessTest {
     /**
+     * @return List of alternate trust anchors (CA certificates)
+     * 
+     */
+    private List<String> alternateCaCertificates;
+    /**
      * @return If testObjectProtocol is DNS, DOH or DOT, requires an answer to the DNS query to be considered a success.
      * 
      */
@@ -57,6 +62,16 @@ public final class GetGtmDomainPropertyLivenessTest {
      */
     private @Nullable List<GetGtmDomainPropertyLivenessTestHttpHeader> httpHeaders;
     /**
+     * @return Contains HTTP method to send if the `testObjectProtocol` is `http` or `https`. Supported values are `TRACE`, `HEAD`, `OPTIONS`, `GET`, `PUT`, `POST`, `PATCH`, `DELETE`. When omitted or `null`, this value defaults to `GET`.
+     * 
+     */
+    private String httpMethod;
+    /**
+     * @return Contains Base64-encoded HTTP request body to send if the `testObjectProtocol` is `http` or `https`. When omitted or `null`, omits the request body from the request.
+     * 
+     */
+    private String httpRequestBody;
+    /**
      * @return A descriptive name for the liveness test.
      * 
      */
@@ -66,6 +81,11 @@ public final class GetGtmDomainPropertyLivenessTest {
      * 
      */
     private Boolean peerCertificateVerification;
+    /**
+     * @return Whether to enable backwards compatibility for liveness endpoints that use older TLS protocols
+     * 
+     */
+    private Boolean pre2023SecurityPosture;
     /**
      * @return Indicates that if testObjectProtocol is DNS, DOH or DOT, the DNS query is recursive.
      * 
@@ -139,6 +159,13 @@ public final class GetGtmDomainPropertyLivenessTest {
 
     private GetGtmDomainPropertyLivenessTest() {}
     /**
+     * @return List of alternate trust anchors (CA certificates)
+     * 
+     */
+    public List<String> alternateCaCertificates() {
+        return this.alternateCaCertificates;
+    }
+    /**
      * @return If testObjectProtocol is DNS, DOH or DOT, requires an answer to the DNS query to be considered a success.
      * 
      */
@@ -195,6 +222,20 @@ public final class GetGtmDomainPropertyLivenessTest {
         return this.httpHeaders == null ? List.of() : this.httpHeaders;
     }
     /**
+     * @return Contains HTTP method to send if the `testObjectProtocol` is `http` or `https`. Supported values are `TRACE`, `HEAD`, `OPTIONS`, `GET`, `PUT`, `POST`, `PATCH`, `DELETE`. When omitted or `null`, this value defaults to `GET`.
+     * 
+     */
+    public String httpMethod() {
+        return this.httpMethod;
+    }
+    /**
+     * @return Contains Base64-encoded HTTP request body to send if the `testObjectProtocol` is `http` or `https`. When omitted or `null`, omits the request body from the request.
+     * 
+     */
+    public String httpRequestBody() {
+        return this.httpRequestBody;
+    }
+    /**
      * @return A descriptive name for the liveness test.
      * 
      */
@@ -207,6 +248,13 @@ public final class GetGtmDomainPropertyLivenessTest {
      */
     public Boolean peerCertificateVerification() {
         return this.peerCertificateVerification;
+    }
+    /**
+     * @return Whether to enable backwards compatibility for liveness endpoints that use older TLS protocols
+     * 
+     */
+    public Boolean pre2023SecurityPosture() {
+        return this.pre2023SecurityPosture;
     }
     /**
      * @return Indicates that if testObjectProtocol is DNS, DOH or DOT, the DNS query is recursive.
@@ -316,6 +364,7 @@ public final class GetGtmDomainPropertyLivenessTest {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<String> alternateCaCertificates;
         private Boolean answersRequired;
         private Boolean disableNonstandardPortWarning;
         private Boolean disabled;
@@ -324,8 +373,11 @@ public final class GetGtmDomainPropertyLivenessTest {
         private Boolean httpError4xx;
         private Boolean httpError5xx;
         private @Nullable List<GetGtmDomainPropertyLivenessTestHttpHeader> httpHeaders;
+        private String httpMethod;
+        private String httpRequestBody;
         private String name;
         private Boolean peerCertificateVerification;
+        private Boolean pre2023SecurityPosture;
         private Boolean recursionRequested;
         private String requestString;
         private String resourceType;
@@ -343,6 +395,7 @@ public final class GetGtmDomainPropertyLivenessTest {
         public Builder() {}
         public Builder(GetGtmDomainPropertyLivenessTest defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.alternateCaCertificates = defaults.alternateCaCertificates;
     	      this.answersRequired = defaults.answersRequired;
     	      this.disableNonstandardPortWarning = defaults.disableNonstandardPortWarning;
     	      this.disabled = defaults.disabled;
@@ -351,8 +404,11 @@ public final class GetGtmDomainPropertyLivenessTest {
     	      this.httpError4xx = defaults.httpError4xx;
     	      this.httpError5xx = defaults.httpError5xx;
     	      this.httpHeaders = defaults.httpHeaders;
+    	      this.httpMethod = defaults.httpMethod;
+    	      this.httpRequestBody = defaults.httpRequestBody;
     	      this.name = defaults.name;
     	      this.peerCertificateVerification = defaults.peerCertificateVerification;
+    	      this.pre2023SecurityPosture = defaults.pre2023SecurityPosture;
     	      this.recursionRequested = defaults.recursionRequested;
     	      this.requestString = defaults.requestString;
     	      this.resourceType = defaults.resourceType;
@@ -369,6 +425,17 @@ public final class GetGtmDomainPropertyLivenessTest {
     	      this.timeoutPenalty = defaults.timeoutPenalty;
         }
 
+        @CustomType.Setter
+        public Builder alternateCaCertificates(List<String> alternateCaCertificates) {
+            if (alternateCaCertificates == null) {
+              throw new MissingRequiredPropertyException("GetGtmDomainPropertyLivenessTest", "alternateCaCertificates");
+            }
+            this.alternateCaCertificates = alternateCaCertificates;
+            return this;
+        }
+        public Builder alternateCaCertificates(String... alternateCaCertificates) {
+            return alternateCaCertificates(List.of(alternateCaCertificates));
+        }
         @CustomType.Setter
         public Builder answersRequired(Boolean answersRequired) {
             if (answersRequired == null) {
@@ -435,6 +502,22 @@ public final class GetGtmDomainPropertyLivenessTest {
             return httpHeaders(List.of(httpHeaders));
         }
         @CustomType.Setter
+        public Builder httpMethod(String httpMethod) {
+            if (httpMethod == null) {
+              throw new MissingRequiredPropertyException("GetGtmDomainPropertyLivenessTest", "httpMethod");
+            }
+            this.httpMethod = httpMethod;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder httpRequestBody(String httpRequestBody) {
+            if (httpRequestBody == null) {
+              throw new MissingRequiredPropertyException("GetGtmDomainPropertyLivenessTest", "httpRequestBody");
+            }
+            this.httpRequestBody = httpRequestBody;
+            return this;
+        }
+        @CustomType.Setter
         public Builder name(String name) {
             if (name == null) {
               throw new MissingRequiredPropertyException("GetGtmDomainPropertyLivenessTest", "name");
@@ -448,6 +531,14 @@ public final class GetGtmDomainPropertyLivenessTest {
               throw new MissingRequiredPropertyException("GetGtmDomainPropertyLivenessTest", "peerCertificateVerification");
             }
             this.peerCertificateVerification = peerCertificateVerification;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder pre2023SecurityPosture(Boolean pre2023SecurityPosture) {
+            if (pre2023SecurityPosture == null) {
+              throw new MissingRequiredPropertyException("GetGtmDomainPropertyLivenessTest", "pre2023SecurityPosture");
+            }
+            this.pre2023SecurityPosture = pre2023SecurityPosture;
             return this;
         }
         @CustomType.Setter
@@ -564,6 +655,7 @@ public final class GetGtmDomainPropertyLivenessTest {
         }
         public GetGtmDomainPropertyLivenessTest build() {
             final var _resultValue = new GetGtmDomainPropertyLivenessTest();
+            _resultValue.alternateCaCertificates = alternateCaCertificates;
             _resultValue.answersRequired = answersRequired;
             _resultValue.disableNonstandardPortWarning = disableNonstandardPortWarning;
             _resultValue.disabled = disabled;
@@ -572,8 +664,11 @@ public final class GetGtmDomainPropertyLivenessTest {
             _resultValue.httpError4xx = httpError4xx;
             _resultValue.httpError5xx = httpError5xx;
             _resultValue.httpHeaders = httpHeaders;
+            _resultValue.httpMethod = httpMethod;
+            _resultValue.httpRequestBody = httpRequestBody;
             _resultValue.name = name;
             _resultValue.peerCertificateVerification = peerCertificateVerification;
+            _resultValue.pre2023SecurityPosture = pre2023SecurityPosture;
             _resultValue.recursionRequested = recursionRequested;
             _resultValue.requestString = requestString;
             _resultValue.resourceType = resourceType;

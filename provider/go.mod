@@ -1,4 +1,4 @@
-module github.com/pulumi/pulumi-akamai/provider/v6
+module github.com/pulumi/pulumi-akamai/provider/v7
 
 go 1.21
 
@@ -43,7 +43,8 @@ require (
 	github.com/ProtonMail/go-crypto v1.1.0-alpha.0 // indirect
 	github.com/aead/chacha20 v0.0.0-20180709150244-8b13a72661da // indirect
 	github.com/agext/levenshtein v1.2.3 // indirect
-	github.com/akamai/AkamaiOPEN-edgegrid-golang/v7 v7.6.1 // indirect
+	github.com/akamai/AkamaiOPEN-edgegrid-golang/v8 v8.0.0 // indirect
+	github.com/akamai/terraform-provider-akamai/v6 v6.0.0 // indirect
 	github.com/allegro/bigcache/v2 v2.2.5 // indirect
 	github.com/andres-erbsen/clock v0.0.0-20160526145045-9e14626cd129 // indirect
 	github.com/apex/log v1.9.0 // indirect

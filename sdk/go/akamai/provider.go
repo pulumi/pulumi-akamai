@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v7/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -47,6 +47,14 @@ type providerArgs struct {
 	Edgerc        *string `pulumi:"edgerc"`
 	// The maximum number of API requests to be made per second (0 for no limit)
 	RequestLimit *int `pulumi:"requestLimit"`
+	// Should the retries of API requests be disabled, default false
+	RetryDisabled *bool `pulumi:"retryDisabled"`
+	// The maximum number retires of API requests, default 10
+	RetryMax *int `pulumi:"retryMax"`
+	// The maximum wait time in seconds between API requests retries, default is 30 sec
+	RetryWaitMax *int `pulumi:"retryWaitMax"`
+	// The minimum wait time in seconds between API requests retries, default is 1 sec
+	RetryWaitMin *int `pulumi:"retryWaitMin"`
 }
 
 // The set of arguments for constructing a Provider resource.
@@ -58,6 +66,14 @@ type ProviderArgs struct {
 	Edgerc        pulumi.StringPtrInput
 	// The maximum number of API requests to be made per second (0 for no limit)
 	RequestLimit pulumi.IntPtrInput
+	// Should the retries of API requests be disabled, default false
+	RetryDisabled pulumi.BoolPtrInput
+	// The maximum number retires of API requests, default 10
+	RetryMax pulumi.IntPtrInput
+	// The maximum wait time in seconds between API requests retries, default is 30 sec
+	RetryWaitMax pulumi.IntPtrInput
+	// The minimum wait time in seconds between API requests retries, default is 1 sec
+	RetryWaitMin pulumi.IntPtrInput
 }
 
 func (ProviderArgs) ElementType() reflect.Type {

@@ -35,4 +35,32 @@ public final class Config {
     public Optional<Integer> requestLimit() {
         return Codegen.integerProp("requestLimit").config(config).get();
     }
+/**
+ * Should the retries of API requests be disabled, default false
+ * 
+ */
+    public Optional<Boolean> retryDisabled() {
+        return Codegen.booleanProp("retryDisabled").config(config).get();
+    }
+/**
+ * The maximum number retires of API requests, default 10
+ * 
+ */
+    public Optional<Integer> retryMax() {
+        return Codegen.integerProp("retryMax").config(config).get();
+    }
+/**
+ * The maximum wait time in seconds between API requests retries, default is 30 sec
+ * 
+ */
+    public Optional<Integer> retryWaitMax() {
+        return Codegen.integerProp("retryWaitMax").config(config).get();
+    }
+/**
+ * The minimum wait time in seconds between API requests retries, default is 1 sec
+ * 
+ */
+    public Optional<Integer> retryWaitMin() {
+        return Codegen.integerProp("retryWaitMin").config(config).get();
+    }
 }

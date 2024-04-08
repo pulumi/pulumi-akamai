@@ -1,4 +1,4 @@
-// Copyright 2016-2018, Pulumi Corporation.
+// Copyright 2016-2024, Pulumi Corporation.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -22,11 +22,10 @@ import (
 	"unicode"
 
 	_ "embed"
-	// Load the providers
-	_ "github.com/akamai/terraform-provider-akamai/v5/pkg/providers"
+	_ "github.com/akamai/terraform-provider-akamai/v6/pkg/providers" // Load the providers
 
-	"github.com/akamai/terraform-provider-akamai/v5/pkg/akamai"
-	"github.com/akamai/terraform-provider-akamai/v5/pkg/providers/registry"
+	"github.com/akamai/terraform-provider-akamai/v6/pkg/akamai"
+	"github.com/akamai/terraform-provider-akamai/v6/pkg/providers/registry"
 
 	pf "github.com/pulumi/pulumi-terraform-bridge/pf/tfbridge"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
@@ -35,7 +34,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/common/resource"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/tokens"
 
-	"github.com/pulumi/pulumi-akamai/provider/v6/pkg/version"
+	"github.com/pulumi/pulumi-akamai/provider/v7/pkg/version"
 )
 
 // all of the token components used below.
@@ -76,9 +75,8 @@ func makeResource(mod string, res string) tokens.Type {
 func Provider() tfbridge.ProviderInfo {
 
 	p := pf.MuxShimWithPF(context.Background(),
-		shimv2.NewProvider(
-			akamai.NewPluginProvider(registry.PluginSubproviders()...)()),
-		akamai.NewFrameworkProvider(registry.FrameworkSubproviders()...)(),
+		shimv2.NewProvider(akamai.NewSDKProvider(registry.Subproviders()...)()),
+		akamai.NewFrameworkProvider(registry.Subproviders()...)(),
 	)
 
 	// Instantiate the Terraform provider
@@ -93,7 +91,7 @@ func Provider() tfbridge.ProviderInfo {
 		Homepage:                "https://pulumi.io",
 		Repository:              "https://github.com/pulumi/pulumi-akamai",
 		GitHubOrg:               "akamai",
-		TFProviderModuleVersion: "v5",
+		TFProviderModuleVersion: "v6",
 		Version:                 version.Version,
 		UpstreamRepoPath:        "./upstream",
 		Config: map[string]*tfbridge.SchemaInfo{
@@ -327,16 +325,12 @@ func Provider() tfbridge.ProviderInfo {
 				"@types/mime": "^2.0.0",
 			},
 		},
-		Python: (func() *tfbridge.PythonInfo {
-			i := &tfbridge.PythonInfo{
-
-				Requires: map[string]string{
-					"pulumi": ">=3.0.0,<4.0.0",
-				}}
-			i.PyProject.Enabled = true
-			return i
-		})(),
-
+		Python: &tfbridge.PythonInfo{
+			Requires: map[string]string{
+				"pulumi": ">=3.0.0,<4.0.0",
+			},
+			PyProject: struct{ Enabled bool }{true},
+		},
 		Golang: &tfbridge.GolangInfo{
 			ImportBasePath: filepath.Join(
 				fmt.Sprintf("github.com/pulumi/pulumi-%[1]s/sdk/", mainPkg),

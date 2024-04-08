@@ -64,6 +64,15 @@ export class GtmDomain extends pulumi.CustomResource {
     public /*out*/ readonly servermonitorLivenessCount!: pulumi.Output<number>;
     public /*out*/ readonly servermonitorLoadCount!: pulumi.Output<number>;
     public /*out*/ readonly servermonitorPool!: pulumi.Output<string>;
+    /**
+     * If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
+     */
+    public readonly signAndServe!: pulumi.Output<boolean | undefined>;
+    /**
+     * The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
+     * ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+     */
+    public readonly signAndServeAlgorithm!: pulumi.Output<string | undefined>;
     public readonly type!: pulumi.Output<string>;
     public readonly waitOnComplete!: pulumi.Output<boolean | undefined>;
 
@@ -112,6 +121,8 @@ export class GtmDomain extends pulumi.CustomResource {
             resourceInputs["servermonitorLivenessCount"] = state ? state.servermonitorLivenessCount : undefined;
             resourceInputs["servermonitorLoadCount"] = state ? state.servermonitorLoadCount : undefined;
             resourceInputs["servermonitorPool"] = state ? state.servermonitorPool : undefined;
+            resourceInputs["signAndServe"] = state ? state.signAndServe : undefined;
+            resourceInputs["signAndServeAlgorithm"] = state ? state.signAndServeAlgorithm : undefined;
             resourceInputs["type"] = state ? state.type : undefined;
             resourceInputs["waitOnComplete"] = state ? state.waitOnComplete : undefined;
         } else {
@@ -132,6 +143,8 @@ export class GtmDomain extends pulumi.CustomResource {
             resourceInputs["loadFeedback"] = args ? args.loadFeedback : undefined;
             resourceInputs["loadImbalancePercentage"] = args ? args.loadImbalancePercentage : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["signAndServe"] = args ? args.signAndServe : undefined;
+            resourceInputs["signAndServeAlgorithm"] = args ? args.signAndServeAlgorithm : undefined;
             resourceInputs["type"] = args ? args.type : undefined;
             resourceInputs["waitOnComplete"] = args ? args.waitOnComplete : undefined;
             resourceInputs["defaultHealthMax"] = undefined /*out*/;
@@ -197,6 +210,15 @@ export interface GtmDomainState {
     servermonitorLivenessCount?: pulumi.Input<number>;
     servermonitorLoadCount?: pulumi.Input<number>;
     servermonitorPool?: pulumi.Input<string>;
+    /**
+     * If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
+     */
+    signAndServe?: pulumi.Input<boolean>;
+    /**
+     * The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
+     * ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+     */
+    signAndServeAlgorithm?: pulumi.Input<string>;
     type?: pulumi.Input<string>;
     waitOnComplete?: pulumi.Input<boolean>;
 }
@@ -218,6 +240,15 @@ export interface GtmDomainArgs {
     loadFeedback?: pulumi.Input<boolean>;
     loadImbalancePercentage?: pulumi.Input<number>;
     name?: pulumi.Input<string>;
+    /**
+     * If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
+     */
+    signAndServe?: pulumi.Input<boolean>;
+    /**
+     * The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
+     * ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+     */
+    signAndServeAlgorithm?: pulumi.Input<string>;
     type: pulumi.Input<string>;
     waitOnComplete?: pulumi.Input<boolean>;
 }

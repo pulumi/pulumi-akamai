@@ -69,6 +69,66 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.requestLimit);
     }
 
+    /**
+     * Should the retries of API requests be disabled, default false
+     * 
+     */
+    @Import(name="retryDisabled", json=true)
+    private @Nullable Output<Boolean> retryDisabled;
+
+    /**
+     * @return Should the retries of API requests be disabled, default false
+     * 
+     */
+    public Optional<Output<Boolean>> retryDisabled() {
+        return Optional.ofNullable(this.retryDisabled);
+    }
+
+    /**
+     * The maximum number retires of API requests, default 10
+     * 
+     */
+    @Import(name="retryMax", json=true)
+    private @Nullable Output<Integer> retryMax;
+
+    /**
+     * @return The maximum number retires of API requests, default 10
+     * 
+     */
+    public Optional<Output<Integer>> retryMax() {
+        return Optional.ofNullable(this.retryMax);
+    }
+
+    /**
+     * The maximum wait time in seconds between API requests retries, default is 30 sec
+     * 
+     */
+    @Import(name="retryWaitMax", json=true)
+    private @Nullable Output<Integer> retryWaitMax;
+
+    /**
+     * @return The maximum wait time in seconds between API requests retries, default is 30 sec
+     * 
+     */
+    public Optional<Output<Integer>> retryWaitMax() {
+        return Optional.ofNullable(this.retryWaitMax);
+    }
+
+    /**
+     * The minimum wait time in seconds between API requests retries, default is 1 sec
+     * 
+     */
+    @Import(name="retryWaitMin", json=true)
+    private @Nullable Output<Integer> retryWaitMin;
+
+    /**
+     * @return The minimum wait time in seconds between API requests retries, default is 1 sec
+     * 
+     */
+    public Optional<Output<Integer>> retryWaitMin() {
+        return Optional.ofNullable(this.retryWaitMin);
+    }
+
     private ProviderArgs() {}
 
     private ProviderArgs(ProviderArgs $) {
@@ -77,6 +137,10 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         this.configSection = $.configSection;
         this.edgerc = $.edgerc;
         this.requestLimit = $.requestLimit;
+        this.retryDisabled = $.retryDisabled;
+        this.retryMax = $.retryMax;
+        this.retryWaitMax = $.retryWaitMax;
+        this.retryWaitMin = $.retryWaitMin;
     }
 
     public static Builder builder() {
@@ -164,6 +228,90 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder requestLimit(Integer requestLimit) {
             return requestLimit(Output.of(requestLimit));
+        }
+
+        /**
+         * @param retryDisabled Should the retries of API requests be disabled, default false
+         * 
+         * @return builder
+         * 
+         */
+        public Builder retryDisabled(@Nullable Output<Boolean> retryDisabled) {
+            $.retryDisabled = retryDisabled;
+            return this;
+        }
+
+        /**
+         * @param retryDisabled Should the retries of API requests be disabled, default false
+         * 
+         * @return builder
+         * 
+         */
+        public Builder retryDisabled(Boolean retryDisabled) {
+            return retryDisabled(Output.of(retryDisabled));
+        }
+
+        /**
+         * @param retryMax The maximum number retires of API requests, default 10
+         * 
+         * @return builder
+         * 
+         */
+        public Builder retryMax(@Nullable Output<Integer> retryMax) {
+            $.retryMax = retryMax;
+            return this;
+        }
+
+        /**
+         * @param retryMax The maximum number retires of API requests, default 10
+         * 
+         * @return builder
+         * 
+         */
+        public Builder retryMax(Integer retryMax) {
+            return retryMax(Output.of(retryMax));
+        }
+
+        /**
+         * @param retryWaitMax The maximum wait time in seconds between API requests retries, default is 30 sec
+         * 
+         * @return builder
+         * 
+         */
+        public Builder retryWaitMax(@Nullable Output<Integer> retryWaitMax) {
+            $.retryWaitMax = retryWaitMax;
+            return this;
+        }
+
+        /**
+         * @param retryWaitMax The maximum wait time in seconds between API requests retries, default is 30 sec
+         * 
+         * @return builder
+         * 
+         */
+        public Builder retryWaitMax(Integer retryWaitMax) {
+            return retryWaitMax(Output.of(retryWaitMax));
+        }
+
+        /**
+         * @param retryWaitMin The minimum wait time in seconds between API requests retries, default is 1 sec
+         * 
+         * @return builder
+         * 
+         */
+        public Builder retryWaitMin(@Nullable Output<Integer> retryWaitMin) {
+            $.retryWaitMin = retryWaitMin;
+            return this;
+        }
+
+        /**
+         * @param retryWaitMin The minimum wait time in seconds between API requests retries, default is 1 sec
+         * 
+         * @return builder
+         * 
+         */
+        public Builder retryWaitMin(Integer retryWaitMin) {
+            return retryWaitMin(Output.of(retryWaitMin));
         }
 
         public ProviderArgs build() {
