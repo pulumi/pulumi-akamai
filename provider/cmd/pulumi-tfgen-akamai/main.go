@@ -18,7 +18,7 @@ import (
 	"github.com/pulumi/pulumi-terraform-bridge/pf/tfgen"
 	"github.com/pulumi/pulumi/pkg/v3/codegen/schema"
 
-	akamai "github.com/pulumi/pulumi-akamai/provider/v6"
+	akamai "github.com/pulumi/pulumi-akamai/provider/v7"
 )
 
 func main() {

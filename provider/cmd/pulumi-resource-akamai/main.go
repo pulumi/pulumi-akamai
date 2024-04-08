@@ -23,7 +23,7 @@ import (
 
 	"github.com/pulumi/pulumi-terraform-bridge/pf/tfbridge"
 
-	akamai "github.com/pulumi/pulumi-akamai/provider/v6"
+	akamai "github.com/pulumi/pulumi-akamai/provider/v7"
 )
 
 //go:embed schema-embed.json
