@@ -104,6 +104,10 @@ import com.pulumi.akamai.inputs.GetAppsecAdvancedSettingsPiiLearningArgs;
 import com.pulumi.akamai.inputs.GetAppsecAdvancedSettingsPiiLearningPlainArgs;
 import com.pulumi.akamai.inputs.GetAppsecAdvancedSettingsRequestBodyArgs;
 import com.pulumi.akamai.inputs.GetAppsecAdvancedSettingsRequestBodyPlainArgs;
+import com.pulumi.akamai.inputs.GetAppsecEvalPenaltyBoxConditionsArgs;
+import com.pulumi.akamai.inputs.GetAppsecEvalPenaltyBoxConditionsPlainArgs;
+import com.pulumi.akamai.inputs.GetAppsecPenaltyBoxConditionsArgs;
+import com.pulumi.akamai.inputs.GetAppsecPenaltyBoxConditionsPlainArgs;
 import com.pulumi.akamai.inputs.GetAuthoritiesSetArgs;
 import com.pulumi.akamai.inputs.GetAuthoritiesSetPlainArgs;
 import com.pulumi.akamai.inputs.GetBotmanAkamaiBotCategoryActionArgs;
@@ -339,6 +343,8 @@ import com.pulumi.akamai.outputs.GetAppSecWapSelectedHostnamesResult;
 import com.pulumi.akamai.outputs.GetAppsecAdvancedSettingsAttackPayloadLoggingResult;
 import com.pulumi.akamai.outputs.GetAppsecAdvancedSettingsPiiLearningResult;
 import com.pulumi.akamai.outputs.GetAppsecAdvancedSettingsRequestBodyResult;
+import com.pulumi.akamai.outputs.GetAppsecEvalPenaltyBoxConditionsResult;
+import com.pulumi.akamai.outputs.GetAppsecPenaltyBoxConditionsResult;
 import com.pulumi.akamai.outputs.GetAuthoritiesSetResult;
 import com.pulumi.akamai.outputs.GetBotmanAkamaiBotCategoryActionResult;
 import com.pulumi.akamai.outputs.GetBotmanAkamaiBotCategoryResult;
@@ -1092,6 +1098,30 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetAppsecAdvancedSettingsRequestBodyResult> getAppsecAdvancedSettingsRequestBodyPlain(GetAppsecAdvancedSettingsRequestBodyPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getAppsecAdvancedSettingsRequestBody:getAppsecAdvancedSettingsRequestBody", TypeShape.of(GetAppsecAdvancedSettingsRequestBodyResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetAppsecEvalPenaltyBoxConditionsResult> getAppsecEvalPenaltyBoxConditions(GetAppsecEvalPenaltyBoxConditionsArgs args) {
+        return getAppsecEvalPenaltyBoxConditions(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetAppsecEvalPenaltyBoxConditionsResult> getAppsecEvalPenaltyBoxConditionsPlain(GetAppsecEvalPenaltyBoxConditionsPlainArgs args) {
+        return getAppsecEvalPenaltyBoxConditionsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetAppsecEvalPenaltyBoxConditionsResult> getAppsecEvalPenaltyBoxConditions(GetAppsecEvalPenaltyBoxConditionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAppsecEvalPenaltyBoxConditions:getAppsecEvalPenaltyBoxConditions", TypeShape.of(GetAppsecEvalPenaltyBoxConditionsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetAppsecEvalPenaltyBoxConditionsResult> getAppsecEvalPenaltyBoxConditionsPlain(GetAppsecEvalPenaltyBoxConditionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getAppsecEvalPenaltyBoxConditions:getAppsecEvalPenaltyBoxConditions", TypeShape.of(GetAppsecEvalPenaltyBoxConditionsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetAppsecPenaltyBoxConditionsResult> getAppsecPenaltyBoxConditions(GetAppsecPenaltyBoxConditionsArgs args) {
+        return getAppsecPenaltyBoxConditions(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetAppsecPenaltyBoxConditionsResult> getAppsecPenaltyBoxConditionsPlain(GetAppsecPenaltyBoxConditionsPlainArgs args) {
+        return getAppsecPenaltyBoxConditionsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetAppsecPenaltyBoxConditionsResult> getAppsecPenaltyBoxConditions(GetAppsecPenaltyBoxConditionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAppsecPenaltyBoxConditions:getAppsecPenaltyBoxConditions", TypeShape.of(GetAppsecPenaltyBoxConditionsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetAppsecPenaltyBoxConditionsResult> getAppsecPenaltyBoxConditionsPlain(GetAppsecPenaltyBoxConditionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getAppsecPenaltyBoxConditions:getAppsecPenaltyBoxConditions", TypeShape.of(GetAppsecPenaltyBoxConditionsResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetAuthoritiesSetResult> getAuthoritiesSet(GetAuthoritiesSetArgs args) {
         return getAuthoritiesSet(args, InvokeOptions.Empty);

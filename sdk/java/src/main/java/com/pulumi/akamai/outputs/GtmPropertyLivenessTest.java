@@ -17,6 +17,7 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GtmPropertyLivenessTest {
+    private @Nullable List<String> alternateCaCertificates;
     private @Nullable Boolean answersRequired;
     private @Nullable Boolean disableNonstandardPortWarning;
     private @Nullable Boolean disabled;
@@ -25,8 +26,15 @@ public final class GtmPropertyLivenessTest {
     private @Nullable Boolean httpError4xx;
     private @Nullable Boolean httpError5xx;
     private @Nullable List<GtmPropertyLivenessTestHttpHeader> httpHeaders;
+    private @Nullable String httpMethod;
+    private @Nullable String httpRequestBody;
     private String name;
     private @Nullable Boolean peerCertificateVerification;
+    /**
+     * @return Whether to enable backwards compatibility for liveness endpoints that use older TLS protocols
+     * 
+     */
+    private @Nullable Boolean pre2023SecurityPosture;
     private @Nullable Boolean recursionRequested;
     private @Nullable String requestString;
     private @Nullable String resourceType;
@@ -43,6 +51,9 @@ public final class GtmPropertyLivenessTest {
     private @Nullable Double timeoutPenalty;
 
     private GtmPropertyLivenessTest() {}
+    public List<String> alternateCaCertificates() {
+        return this.alternateCaCertificates == null ? List.of() : this.alternateCaCertificates;
+    }
     public Optional<Boolean> answersRequired() {
         return Optional.ofNullable(this.answersRequired);
     }
@@ -67,11 +78,24 @@ public final class GtmPropertyLivenessTest {
     public List<GtmPropertyLivenessTestHttpHeader> httpHeaders() {
         return this.httpHeaders == null ? List.of() : this.httpHeaders;
     }
+    public Optional<String> httpMethod() {
+        return Optional.ofNullable(this.httpMethod);
+    }
+    public Optional<String> httpRequestBody() {
+        return Optional.ofNullable(this.httpRequestBody);
+    }
     public String name() {
         return this.name;
     }
     public Optional<Boolean> peerCertificateVerification() {
         return Optional.ofNullable(this.peerCertificateVerification);
+    }
+    /**
+     * @return Whether to enable backwards compatibility for liveness endpoints that use older TLS protocols
+     * 
+     */
+    public Optional<Boolean> pre2023SecurityPosture() {
+        return Optional.ofNullable(this.pre2023SecurityPosture);
     }
     public Optional<Boolean> recursionRequested() {
         return Optional.ofNullable(this.recursionRequested);
@@ -125,6 +149,7 @@ public final class GtmPropertyLivenessTest {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable List<String> alternateCaCertificates;
         private @Nullable Boolean answersRequired;
         private @Nullable Boolean disableNonstandardPortWarning;
         private @Nullable Boolean disabled;
@@ -133,8 +158,11 @@ public final class GtmPropertyLivenessTest {
         private @Nullable Boolean httpError4xx;
         private @Nullable Boolean httpError5xx;
         private @Nullable List<GtmPropertyLivenessTestHttpHeader> httpHeaders;
+        private @Nullable String httpMethod;
+        private @Nullable String httpRequestBody;
         private String name;
         private @Nullable Boolean peerCertificateVerification;
+        private @Nullable Boolean pre2023SecurityPosture;
         private @Nullable Boolean recursionRequested;
         private @Nullable String requestString;
         private @Nullable String resourceType;
@@ -152,6 +180,7 @@ public final class GtmPropertyLivenessTest {
         public Builder() {}
         public Builder(GtmPropertyLivenessTest defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.alternateCaCertificates = defaults.alternateCaCertificates;
     	      this.answersRequired = defaults.answersRequired;
     	      this.disableNonstandardPortWarning = defaults.disableNonstandardPortWarning;
     	      this.disabled = defaults.disabled;
@@ -160,8 +189,11 @@ public final class GtmPropertyLivenessTest {
     	      this.httpError4xx = defaults.httpError4xx;
     	      this.httpError5xx = defaults.httpError5xx;
     	      this.httpHeaders = defaults.httpHeaders;
+    	      this.httpMethod = defaults.httpMethod;
+    	      this.httpRequestBody = defaults.httpRequestBody;
     	      this.name = defaults.name;
     	      this.peerCertificateVerification = defaults.peerCertificateVerification;
+    	      this.pre2023SecurityPosture = defaults.pre2023SecurityPosture;
     	      this.recursionRequested = defaults.recursionRequested;
     	      this.requestString = defaults.requestString;
     	      this.resourceType = defaults.resourceType;
@@ -178,6 +210,15 @@ public final class GtmPropertyLivenessTest {
     	      this.timeoutPenalty = defaults.timeoutPenalty;
         }
 
+        @CustomType.Setter
+        public Builder alternateCaCertificates(@Nullable List<String> alternateCaCertificates) {
+
+            this.alternateCaCertificates = alternateCaCertificates;
+            return this;
+        }
+        public Builder alternateCaCertificates(String... alternateCaCertificates) {
+            return alternateCaCertificates(List.of(alternateCaCertificates));
+        }
         @CustomType.Setter
         public Builder answersRequired(@Nullable Boolean answersRequired) {
 
@@ -230,6 +271,18 @@ public final class GtmPropertyLivenessTest {
             return httpHeaders(List.of(httpHeaders));
         }
         @CustomType.Setter
+        public Builder httpMethod(@Nullable String httpMethod) {
+
+            this.httpMethod = httpMethod;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder httpRequestBody(@Nullable String httpRequestBody) {
+
+            this.httpRequestBody = httpRequestBody;
+            return this;
+        }
+        @CustomType.Setter
         public Builder name(String name) {
             if (name == null) {
               throw new MissingRequiredPropertyException("GtmPropertyLivenessTest", "name");
@@ -241,6 +294,12 @@ public final class GtmPropertyLivenessTest {
         public Builder peerCertificateVerification(@Nullable Boolean peerCertificateVerification) {
 
             this.peerCertificateVerification = peerCertificateVerification;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder pre2023SecurityPosture(@Nullable Boolean pre2023SecurityPosture) {
+
+            this.pre2023SecurityPosture = pre2023SecurityPosture;
             return this;
         }
         @CustomType.Setter
@@ -335,6 +394,7 @@ public final class GtmPropertyLivenessTest {
         }
         public GtmPropertyLivenessTest build() {
             final var _resultValue = new GtmPropertyLivenessTest();
+            _resultValue.alternateCaCertificates = alternateCaCertificates;
             _resultValue.answersRequired = answersRequired;
             _resultValue.disableNonstandardPortWarning = disableNonstandardPortWarning;
             _resultValue.disabled = disabled;
@@ -343,8 +403,11 @@ public final class GtmPropertyLivenessTest {
             _resultValue.httpError4xx = httpError4xx;
             _resultValue.httpError5xx = httpError5xx;
             _resultValue.httpHeaders = httpHeaders;
+            _resultValue.httpMethod = httpMethod;
+            _resultValue.httpRequestBody = httpRequestBody;
             _resultValue.name = name;
             _resultValue.peerCertificateVerification = peerCertificateVerification;
+            _resultValue.pre2023SecurityPosture = pre2023SecurityPosture;
             _resultValue.recursionRequested = recursionRequested;
             _resultValue.requestString = requestString;
             _resultValue.resourceType = resourceType;

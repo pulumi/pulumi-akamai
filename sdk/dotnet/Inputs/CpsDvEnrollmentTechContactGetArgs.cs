@@ -15,8 +15,8 @@ namespace Pulumi.Akamai.Inputs
         /// <summary>
         /// The address of the contact
         /// </summary>
-        [Input("addressLineOne", required: true)]
-        public Input<string> AddressLineOne { get; set; } = null!;
+        [Input("addressLineOne")]
+        public Input<string>? AddressLineOne { get; set; }
 
         /// <summary>
         /// The address of the contact
@@ -27,14 +27,14 @@ namespace Pulumi.Akamai.Inputs
         /// <summary>
         /// City of residence of the contact
         /// </summary>
-        [Input("city", required: true)]
-        public Input<string> City { get; set; } = null!;
+        [Input("city")]
+        public Input<string>? City { get; set; }
 
         /// <summary>
         /// Country code of the contact
         /// </summary>
-        [Input("countryCode", required: true)]
-        public Input<string> CountryCode { get; set; } = null!;
+        [Input("countryCode")]
+        public Input<string>? CountryCode { get; set; }
 
         /// <summary>
         /// E-mail address of the contact
@@ -57,8 +57,8 @@ namespace Pulumi.Akamai.Inputs
         /// <summary>
         /// Organization where contact is hired
         /// </summary>
-        [Input("organization", required: true)]
-        public Input<string> Organization { get; set; } = null!;
+        [Input("organization")]
+        public Input<string>? Organization { get; set; }
 
         /// <summary>
         /// Phone number of the contact
@@ -69,14 +69,14 @@ namespace Pulumi.Akamai.Inputs
         /// <summary>
         /// Postal code of the contact
         /// </summary>
-        [Input("postalCode", required: true)]
-        public Input<string> PostalCode { get; set; } = null!;
+        [Input("postalCode")]
+        public Input<string>? PostalCode { get; set; }
 
         /// <summary>
         /// The region of the contact
         /// </summary>
-        [Input("region", required: true)]
-        public Input<string> Region { get; set; } = null!;
+        [Input("region")]
+        public Input<string>? Region { get; set; }
 
         /// <summary>
         /// Title of the the contact

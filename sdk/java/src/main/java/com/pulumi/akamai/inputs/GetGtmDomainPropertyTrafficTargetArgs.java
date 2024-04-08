@@ -79,6 +79,21 @@ public final class GetGtmDomainPropertyTrafficTargetArgs extends com.pulumi.reso
     }
 
     /**
+     * Non-negative integer that ranks the order of the backups that GTM will hand out in the event that the primary Traffic Target has been declared down
+     * 
+     */
+    @Import(name="precedence", required=true)
+    private Output<Integer> precedence;
+
+    /**
+     * @return Non-negative integer that ranks the order of the backups that GTM will hand out in the event that the primary Traffic Target has been declared down
+     * 
+     */
+    public Output<Integer> precedence() {
+        return this.precedence;
+    }
+
+    /**
      * Identifies the IP address or the hostnames of the servers.
      * 
      */
@@ -115,6 +130,7 @@ public final class GetGtmDomainPropertyTrafficTargetArgs extends com.pulumi.reso
         this.enabled = $.enabled;
         this.handoutCname = $.handoutCname;
         this.name = $.name;
+        this.precedence = $.precedence;
         this.servers = $.servers;
         this.weight = $.weight;
     }
@@ -222,6 +238,27 @@ public final class GetGtmDomainPropertyTrafficTargetArgs extends com.pulumi.reso
         }
 
         /**
+         * @param precedence Non-negative integer that ranks the order of the backups that GTM will hand out in the event that the primary Traffic Target has been declared down
+         * 
+         * @return builder
+         * 
+         */
+        public Builder precedence(Output<Integer> precedence) {
+            $.precedence = precedence;
+            return this;
+        }
+
+        /**
+         * @param precedence Non-negative integer that ranks the order of the backups that GTM will hand out in the event that the primary Traffic Target has been declared down
+         * 
+         * @return builder
+         * 
+         */
+        public Builder precedence(Integer precedence) {
+            return precedence(Output.of(precedence));
+        }
+
+        /**
          * @param servers Identifies the IP address or the hostnames of the servers.
          * 
          * @return builder
@@ -285,6 +322,9 @@ public final class GetGtmDomainPropertyTrafficTargetArgs extends com.pulumi.reso
             }
             if ($.name == null) {
                 throw new MissingRequiredPropertyException("GetGtmDomainPropertyTrafficTargetArgs", "name");
+            }
+            if ($.precedence == null) {
+                throw new MissingRequiredPropertyException("GetGtmDomainPropertyTrafficTargetArgs", "precedence");
             }
             if ($.servers == null) {
                 throw new MissingRequiredPropertyException("GetGtmDomainPropertyTrafficTargetArgs", "servers");

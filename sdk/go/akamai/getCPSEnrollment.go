@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v7/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -29,6 +29,7 @@ type GetCPSEnrollmentArgs struct {
 // A collection of values returned by getCPSEnrollment.
 type GetCPSEnrollmentResult struct {
 	AdminContacts                  []GetCPSEnrollmentAdminContact  `pulumi:"adminContacts"`
+	AssignedSlots                  []int                           `pulumi:"assignedSlots"`
 	CertificateChainType           string                          `pulumi:"certificateChainType"`
 	CertificateType                string                          `pulumi:"certificateType"`
 	CommonName                     string                          `pulumi:"commonName"`
@@ -41,13 +42,16 @@ type GetCPSEnrollmentResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id                    string                                 `pulumi:"id"`
 	NetworkConfigurations []GetCPSEnrollmentNetworkConfiguration `pulumi:"networkConfigurations"`
+	OrgId                 int                                    `pulumi:"orgId"`
 	Organizations         []GetCPSEnrollmentOrganization         `pulumi:"organizations"`
 	PendingChanges        bool                                   `pulumi:"pendingChanges"`
+	ProductionSlots       []int                                  `pulumi:"productionSlots"`
 	RegistrationAuthority string                                 `pulumi:"registrationAuthority"`
 	Sans                  []string                               `pulumi:"sans"`
 	SecureNetwork         string                                 `pulumi:"secureNetwork"`
 	SignatureAlgorithm    string                                 `pulumi:"signatureAlgorithm"`
 	SniOnly               bool                                   `pulumi:"sniOnly"`
+	StagingSlots          []int                                  `pulumi:"stagingSlots"`
 	TechContacts          []GetCPSEnrollmentTechContact          `pulumi:"techContacts"`
 	ValidationType        string                                 `pulumi:"validationType"`
 }
@@ -91,6 +95,10 @@ func (o GetCPSEnrollmentResultOutput) ToGetCPSEnrollmentResultOutputWithContext(
 
 func (o GetCPSEnrollmentResultOutput) AdminContacts() GetCPSEnrollmentAdminContactArrayOutput {
 	return o.ApplyT(func(v GetCPSEnrollmentResult) []GetCPSEnrollmentAdminContact { return v.AdminContacts }).(GetCPSEnrollmentAdminContactArrayOutput)
+}
+
+func (o GetCPSEnrollmentResultOutput) AssignedSlots() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentResult) []int { return v.AssignedSlots }).(pulumi.IntArrayOutput)
 }
 
 func (o GetCPSEnrollmentResultOutput) CertificateChainType() pulumi.StringOutput {
@@ -138,12 +146,20 @@ func (o GetCPSEnrollmentResultOutput) NetworkConfigurations() GetCPSEnrollmentNe
 	return o.ApplyT(func(v GetCPSEnrollmentResult) []GetCPSEnrollmentNetworkConfiguration { return v.NetworkConfigurations }).(GetCPSEnrollmentNetworkConfigurationArrayOutput)
 }
 
+func (o GetCPSEnrollmentResultOutput) OrgId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentResult) int { return v.OrgId }).(pulumi.IntOutput)
+}
+
 func (o GetCPSEnrollmentResultOutput) Organizations() GetCPSEnrollmentOrganizationArrayOutput {
 	return o.ApplyT(func(v GetCPSEnrollmentResult) []GetCPSEnrollmentOrganization { return v.Organizations }).(GetCPSEnrollmentOrganizationArrayOutput)
 }
 
 func (o GetCPSEnrollmentResultOutput) PendingChanges() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetCPSEnrollmentResult) bool { return v.PendingChanges }).(pulumi.BoolOutput)
+}
+
+func (o GetCPSEnrollmentResultOutput) ProductionSlots() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentResult) []int { return v.ProductionSlots }).(pulumi.IntArrayOutput)
 }
 
 func (o GetCPSEnrollmentResultOutput) RegistrationAuthority() pulumi.StringOutput {
@@ -164,6 +180,10 @@ func (o GetCPSEnrollmentResultOutput) SignatureAlgorithm() pulumi.StringOutput {
 
 func (o GetCPSEnrollmentResultOutput) SniOnly() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetCPSEnrollmentResult) bool { return v.SniOnly }).(pulumi.BoolOutput)
+}
+
+func (o GetCPSEnrollmentResultOutput) StagingSlots() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentResult) []int { return v.StagingSlots }).(pulumi.IntArrayOutput)
 }
 
 func (o GetCPSEnrollmentResultOutput) TechContacts() GetCPSEnrollmentTechContactArrayOutput {

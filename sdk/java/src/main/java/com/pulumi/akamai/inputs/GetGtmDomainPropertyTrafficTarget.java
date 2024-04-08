@@ -78,6 +78,21 @@ public final class GetGtmDomainPropertyTrafficTarget extends com.pulumi.resource
     }
 
     /**
+     * Non-negative integer that ranks the order of the backups that GTM will hand out in the event that the primary Traffic Target has been declared down
+     * 
+     */
+    @Import(name="precedence", required=true)
+    private Integer precedence;
+
+    /**
+     * @return Non-negative integer that ranks the order of the backups that GTM will hand out in the event that the primary Traffic Target has been declared down
+     * 
+     */
+    public Integer precedence() {
+        return this.precedence;
+    }
+
+    /**
      * Identifies the IP address or the hostnames of the servers.
      * 
      */
@@ -114,6 +129,7 @@ public final class GetGtmDomainPropertyTrafficTarget extends com.pulumi.resource
         this.enabled = $.enabled;
         this.handoutCname = $.handoutCname;
         this.name = $.name;
+        this.precedence = $.precedence;
         this.servers = $.servers;
         this.weight = $.weight;
     }
@@ -181,6 +197,17 @@ public final class GetGtmDomainPropertyTrafficTarget extends com.pulumi.resource
         }
 
         /**
+         * @param precedence Non-negative integer that ranks the order of the backups that GTM will hand out in the event that the primary Traffic Target has been declared down
+         * 
+         * @return builder
+         * 
+         */
+        public Builder precedence(Integer precedence) {
+            $.precedence = precedence;
+            return this;
+        }
+
+        /**
          * @param servers Identifies the IP address or the hostnames of the servers.
          * 
          * @return builder
@@ -224,6 +251,9 @@ public final class GetGtmDomainPropertyTrafficTarget extends com.pulumi.resource
             }
             if ($.name == null) {
                 throw new MissingRequiredPropertyException("GetGtmDomainPropertyTrafficTarget", "name");
+            }
+            if ($.precedence == null) {
+                throw new MissingRequiredPropertyException("GetGtmDomainPropertyTrafficTarget", "precedence");
             }
             if ($.servers == null) {
                 throw new MissingRequiredPropertyException("GetGtmDomainPropertyTrafficTarget", "servers");

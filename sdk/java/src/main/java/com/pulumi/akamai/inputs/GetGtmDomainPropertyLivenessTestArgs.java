@@ -22,6 +22,21 @@ public final class GetGtmDomainPropertyLivenessTestArgs extends com.pulumi.resou
     public static final GetGtmDomainPropertyLivenessTestArgs Empty = new GetGtmDomainPropertyLivenessTestArgs();
 
     /**
+     * List of alternate trust anchors (CA certificates)
+     * 
+     */
+    @Import(name="alternateCaCertificates", required=true)
+    private Output<List<String>> alternateCaCertificates;
+
+    /**
+     * @return List of alternate trust anchors (CA certificates)
+     * 
+     */
+    public Output<List<String>> alternateCaCertificates() {
+        return this.alternateCaCertificates;
+    }
+
+    /**
      * If testObjectProtocol is DNS, DOH or DOT, requires an answer to the DNS query to be considered a success.
      * 
      */
@@ -142,6 +157,36 @@ public final class GetGtmDomainPropertyLivenessTestArgs extends com.pulumi.resou
     }
 
     /**
+     * Contains HTTP method to send if the `testObjectProtocol` is `http` or `https`. Supported values are `TRACE`, `HEAD`, `OPTIONS`, `GET`, `PUT`, `POST`, `PATCH`, `DELETE`. When omitted or `null`, this value defaults to `GET`.
+     * 
+     */
+    @Import(name="httpMethod", required=true)
+    private Output<String> httpMethod;
+
+    /**
+     * @return Contains HTTP method to send if the `testObjectProtocol` is `http` or `https`. Supported values are `TRACE`, `HEAD`, `OPTIONS`, `GET`, `PUT`, `POST`, `PATCH`, `DELETE`. When omitted or `null`, this value defaults to `GET`.
+     * 
+     */
+    public Output<String> httpMethod() {
+        return this.httpMethod;
+    }
+
+    /**
+     * Contains Base64-encoded HTTP request body to send if the `testObjectProtocol` is `http` or `https`. When omitted or `null`, omits the request body from the request.
+     * 
+     */
+    @Import(name="httpRequestBody", required=true)
+    private Output<String> httpRequestBody;
+
+    /**
+     * @return Contains Base64-encoded HTTP request body to send if the `testObjectProtocol` is `http` or `https`. When omitted or `null`, omits the request body from the request.
+     * 
+     */
+    public Output<String> httpRequestBody() {
+        return this.httpRequestBody;
+    }
+
+    /**
      * A descriptive name for the liveness test.
      * 
      */
@@ -169,6 +214,21 @@ public final class GetGtmDomainPropertyLivenessTestArgs extends com.pulumi.resou
      */
     public Output<Boolean> peerCertificateVerification() {
         return this.peerCertificateVerification;
+    }
+
+    /**
+     * Whether to enable backwards compatibility for liveness endpoints that use older TLS protocols
+     * 
+     */
+    @Import(name="pre2023SecurityPosture", required=true)
+    private Output<Boolean> pre2023SecurityPosture;
+
+    /**
+     * @return Whether to enable backwards compatibility for liveness endpoints that use older TLS protocols
+     * 
+     */
+    public Output<Boolean> pre2023SecurityPosture() {
+        return this.pre2023SecurityPosture;
     }
 
     /**
@@ -384,6 +444,7 @@ public final class GetGtmDomainPropertyLivenessTestArgs extends com.pulumi.resou
     private GetGtmDomainPropertyLivenessTestArgs() {}
 
     private GetGtmDomainPropertyLivenessTestArgs(GetGtmDomainPropertyLivenessTestArgs $) {
+        this.alternateCaCertificates = $.alternateCaCertificates;
         this.answersRequired = $.answersRequired;
         this.disableNonstandardPortWarning = $.disableNonstandardPortWarning;
         this.disabled = $.disabled;
@@ -392,8 +453,11 @@ public final class GetGtmDomainPropertyLivenessTestArgs extends com.pulumi.resou
         this.httpError4xx = $.httpError4xx;
         this.httpError5xx = $.httpError5xx;
         this.httpHeaders = $.httpHeaders;
+        this.httpMethod = $.httpMethod;
+        this.httpRequestBody = $.httpRequestBody;
         this.name = $.name;
         this.peerCertificateVerification = $.peerCertificateVerification;
+        this.pre2023SecurityPosture = $.pre2023SecurityPosture;
         this.recursionRequested = $.recursionRequested;
         this.requestString = $.requestString;
         this.resourceType = $.resourceType;
@@ -426,6 +490,37 @@ public final class GetGtmDomainPropertyLivenessTestArgs extends com.pulumi.resou
 
         public Builder(GetGtmDomainPropertyLivenessTestArgs defaults) {
             $ = new GetGtmDomainPropertyLivenessTestArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param alternateCaCertificates List of alternate trust anchors (CA certificates)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder alternateCaCertificates(Output<List<String>> alternateCaCertificates) {
+            $.alternateCaCertificates = alternateCaCertificates;
+            return this;
+        }
+
+        /**
+         * @param alternateCaCertificates List of alternate trust anchors (CA certificates)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder alternateCaCertificates(List<String> alternateCaCertificates) {
+            return alternateCaCertificates(Output.of(alternateCaCertificates));
+        }
+
+        /**
+         * @param alternateCaCertificates List of alternate trust anchors (CA certificates)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder alternateCaCertificates(String... alternateCaCertificates) {
+            return alternateCaCertificates(List.of(alternateCaCertificates));
         }
 
         /**
@@ -607,6 +702,48 @@ public final class GetGtmDomainPropertyLivenessTestArgs extends com.pulumi.resou
         }
 
         /**
+         * @param httpMethod Contains HTTP method to send if the `testObjectProtocol` is `http` or `https`. Supported values are `TRACE`, `HEAD`, `OPTIONS`, `GET`, `PUT`, `POST`, `PATCH`, `DELETE`. When omitted or `null`, this value defaults to `GET`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder httpMethod(Output<String> httpMethod) {
+            $.httpMethod = httpMethod;
+            return this;
+        }
+
+        /**
+         * @param httpMethod Contains HTTP method to send if the `testObjectProtocol` is `http` or `https`. Supported values are `TRACE`, `HEAD`, `OPTIONS`, `GET`, `PUT`, `POST`, `PATCH`, `DELETE`. When omitted or `null`, this value defaults to `GET`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder httpMethod(String httpMethod) {
+            return httpMethod(Output.of(httpMethod));
+        }
+
+        /**
+         * @param httpRequestBody Contains Base64-encoded HTTP request body to send if the `testObjectProtocol` is `http` or `https`. When omitted or `null`, omits the request body from the request.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder httpRequestBody(Output<String> httpRequestBody) {
+            $.httpRequestBody = httpRequestBody;
+            return this;
+        }
+
+        /**
+         * @param httpRequestBody Contains Base64-encoded HTTP request body to send if the `testObjectProtocol` is `http` or `https`. When omitted or `null`, omits the request body from the request.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder httpRequestBody(String httpRequestBody) {
+            return httpRequestBody(Output.of(httpRequestBody));
+        }
+
+        /**
          * @param name A descriptive name for the liveness test.
          * 
          * @return builder
@@ -646,6 +783,27 @@ public final class GetGtmDomainPropertyLivenessTestArgs extends com.pulumi.resou
          */
         public Builder peerCertificateVerification(Boolean peerCertificateVerification) {
             return peerCertificateVerification(Output.of(peerCertificateVerification));
+        }
+
+        /**
+         * @param pre2023SecurityPosture Whether to enable backwards compatibility for liveness endpoints that use older TLS protocols
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pre2023SecurityPosture(Output<Boolean> pre2023SecurityPosture) {
+            $.pre2023SecurityPosture = pre2023SecurityPosture;
+            return this;
+        }
+
+        /**
+         * @param pre2023SecurityPosture Whether to enable backwards compatibility for liveness endpoints that use older TLS protocols
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pre2023SecurityPosture(Boolean pre2023SecurityPosture) {
+            return pre2023SecurityPosture(Output.of(pre2023SecurityPosture));
         }
 
         /**
@@ -943,6 +1101,9 @@ public final class GetGtmDomainPropertyLivenessTestArgs extends com.pulumi.resou
         }
 
         public GetGtmDomainPropertyLivenessTestArgs build() {
+            if ($.alternateCaCertificates == null) {
+                throw new MissingRequiredPropertyException("GetGtmDomainPropertyLivenessTestArgs", "alternateCaCertificates");
+            }
             if ($.answersRequired == null) {
                 throw new MissingRequiredPropertyException("GetGtmDomainPropertyLivenessTestArgs", "answersRequired");
             }
@@ -964,11 +1125,20 @@ public final class GetGtmDomainPropertyLivenessTestArgs extends com.pulumi.resou
             if ($.httpError5xx == null) {
                 throw new MissingRequiredPropertyException("GetGtmDomainPropertyLivenessTestArgs", "httpError5xx");
             }
+            if ($.httpMethod == null) {
+                throw new MissingRequiredPropertyException("GetGtmDomainPropertyLivenessTestArgs", "httpMethod");
+            }
+            if ($.httpRequestBody == null) {
+                throw new MissingRequiredPropertyException("GetGtmDomainPropertyLivenessTestArgs", "httpRequestBody");
+            }
             if ($.name == null) {
                 throw new MissingRequiredPropertyException("GetGtmDomainPropertyLivenessTestArgs", "name");
             }
             if ($.peerCertificateVerification == null) {
                 throw new MissingRequiredPropertyException("GetGtmDomainPropertyLivenessTestArgs", "peerCertificateVerification");
+            }
+            if ($.pre2023SecurityPosture == null) {
+                throw new MissingRequiredPropertyException("GetGtmDomainPropertyLivenessTestArgs", "pre2023SecurityPosture");
             }
             if ($.recursionRequested == null) {
                 throw new MissingRequiredPropertyException("GetGtmDomainPropertyLivenessTestArgs", "recursionRequested");

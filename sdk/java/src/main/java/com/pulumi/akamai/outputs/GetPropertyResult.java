@@ -13,16 +13,31 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyResult {
+    private String contractId;
+    private String groupId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
     private String id;
+    private Integer latestVersion;
     private String name;
+    private String note;
+    private String productId;
+    private Integer productionVersion;
+    private String propertyId;
+    private String ruleFormat;
     private String rules;
+    private Integer stagingVersion;
     private @Nullable Integer version;
 
     private GetPropertyResult() {}
+    public String contractId() {
+        return this.contractId;
+    }
+    public String groupId() {
+        return this.groupId;
+    }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -30,11 +45,32 @@ public final class GetPropertyResult {
     public String id() {
         return this.id;
     }
+    public Integer latestVersion() {
+        return this.latestVersion;
+    }
     public String name() {
         return this.name;
     }
+    public String note() {
+        return this.note;
+    }
+    public String productId() {
+        return this.productId;
+    }
+    public Integer productionVersion() {
+        return this.productionVersion;
+    }
+    public String propertyId() {
+        return this.propertyId;
+    }
+    public String ruleFormat() {
+        return this.ruleFormat;
+    }
     public String rules() {
         return this.rules;
+    }
+    public Integer stagingVersion() {
+        return this.stagingVersion;
     }
     public Optional<Integer> version() {
         return Optional.ofNullable(this.version);
@@ -49,25 +85,67 @@ public final class GetPropertyResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String contractId;
+        private String groupId;
         private String id;
+        private Integer latestVersion;
         private String name;
+        private String note;
+        private String productId;
+        private Integer productionVersion;
+        private String propertyId;
+        private String ruleFormat;
         private String rules;
+        private Integer stagingVersion;
         private @Nullable Integer version;
         public Builder() {}
         public Builder(GetPropertyResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.contractId = defaults.contractId;
+    	      this.groupId = defaults.groupId;
     	      this.id = defaults.id;
+    	      this.latestVersion = defaults.latestVersion;
     	      this.name = defaults.name;
+    	      this.note = defaults.note;
+    	      this.productId = defaults.productId;
+    	      this.productionVersion = defaults.productionVersion;
+    	      this.propertyId = defaults.propertyId;
+    	      this.ruleFormat = defaults.ruleFormat;
     	      this.rules = defaults.rules;
+    	      this.stagingVersion = defaults.stagingVersion;
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
+        public Builder contractId(String contractId) {
+            if (contractId == null) {
+              throw new MissingRequiredPropertyException("GetPropertyResult", "contractId");
+            }
+            this.contractId = contractId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder groupId(String groupId) {
+            if (groupId == null) {
+              throw new MissingRequiredPropertyException("GetPropertyResult", "groupId");
+            }
+            this.groupId = groupId;
+            return this;
+        }
         @CustomType.Setter
         public Builder id(String id) {
             if (id == null) {
               throw new MissingRequiredPropertyException("GetPropertyResult", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder latestVersion(Integer latestVersion) {
+            if (latestVersion == null) {
+              throw new MissingRequiredPropertyException("GetPropertyResult", "latestVersion");
+            }
+            this.latestVersion = latestVersion;
             return this;
         }
         @CustomType.Setter
@@ -79,11 +157,59 @@ public final class GetPropertyResult {
             return this;
         }
         @CustomType.Setter
+        public Builder note(String note) {
+            if (note == null) {
+              throw new MissingRequiredPropertyException("GetPropertyResult", "note");
+            }
+            this.note = note;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder productId(String productId) {
+            if (productId == null) {
+              throw new MissingRequiredPropertyException("GetPropertyResult", "productId");
+            }
+            this.productId = productId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder productionVersion(Integer productionVersion) {
+            if (productionVersion == null) {
+              throw new MissingRequiredPropertyException("GetPropertyResult", "productionVersion");
+            }
+            this.productionVersion = productionVersion;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder propertyId(String propertyId) {
+            if (propertyId == null) {
+              throw new MissingRequiredPropertyException("GetPropertyResult", "propertyId");
+            }
+            this.propertyId = propertyId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ruleFormat(String ruleFormat) {
+            if (ruleFormat == null) {
+              throw new MissingRequiredPropertyException("GetPropertyResult", "ruleFormat");
+            }
+            this.ruleFormat = ruleFormat;
+            return this;
+        }
+        @CustomType.Setter
         public Builder rules(String rules) {
             if (rules == null) {
               throw new MissingRequiredPropertyException("GetPropertyResult", "rules");
             }
             this.rules = rules;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder stagingVersion(Integer stagingVersion) {
+            if (stagingVersion == null) {
+              throw new MissingRequiredPropertyException("GetPropertyResult", "stagingVersion");
+            }
+            this.stagingVersion = stagingVersion;
             return this;
         }
         @CustomType.Setter
@@ -94,9 +220,18 @@ public final class GetPropertyResult {
         }
         public GetPropertyResult build() {
             final var _resultValue = new GetPropertyResult();
+            _resultValue.contractId = contractId;
+            _resultValue.groupId = groupId;
             _resultValue.id = id;
+            _resultValue.latestVersion = latestVersion;
             _resultValue.name = name;
+            _resultValue.note = note;
+            _resultValue.productId = productId;
+            _resultValue.productionVersion = productionVersion;
+            _resultValue.propertyId = propertyId;
+            _resultValue.ruleFormat = ruleFormat;
             _resultValue.rules = rules;
+            _resultValue.stagingVersion = stagingVersion;
             _resultValue.version = version;
             return _resultValue;
         }

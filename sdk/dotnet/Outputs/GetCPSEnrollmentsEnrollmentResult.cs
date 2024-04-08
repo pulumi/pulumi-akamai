@@ -18,6 +18,10 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetCPSEnrollmentsEnrollmentAdminContactResult> AdminContacts;
         /// <summary>
+        /// Slots where the certificate either will be deployed or is already deployed
+        /// </summary>
+        public readonly ImmutableArray<int> AssignedSlots;
+        /// <summary>
         /// Certificate trust chain type
         /// </summary>
         public readonly string CertificateChainType;
@@ -46,6 +50,10 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetCPSEnrollmentsEnrollmentNetworkConfigurationResult> NetworkConfigurations;
         /// <summary>
+        /// The Digicert unique identifier for the organization
+        /// </summary>
+        public readonly int OrgId;
+        /// <summary>
         /// Organization information
         /// </summary>
         public readonly ImmutableArray<Outputs.GetCPSEnrollmentsEnrollmentOrganizationResult> Organizations;
@@ -53,6 +61,10 @@ namespace Pulumi.Akamai.Outputs
         /// Whether some changes are pending
         /// </summary>
         public readonly bool PendingChanges;
+        /// <summary>
+        /// Slots where the certificate is deployed on the production network
+        /// </summary>
+        public readonly ImmutableArray<int> ProductionSlots;
         /// <summary>
         /// The registration authority or certificate authority (CA) used to obtain a certificate
         /// </summary>
@@ -74,6 +86,10 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly bool SniOnly;
         /// <summary>
+        /// Slots where the certificate is deployed on the staging network
+        /// </summary>
+        public readonly ImmutableArray<int> StagingSlots;
+        /// <summary>
         /// Contact information for an administrator at Akamai
         /// </summary>
         public readonly ImmutableArray<Outputs.GetCPSEnrollmentsEnrollmentTechContactResult> TechContacts;
@@ -85,6 +101,8 @@ namespace Pulumi.Akamai.Outputs
         [OutputConstructor]
         private GetCPSEnrollmentsEnrollmentResult(
             ImmutableArray<Outputs.GetCPSEnrollmentsEnrollmentAdminContactResult> adminContacts,
+
+            ImmutableArray<int> assignedSlots,
 
             string certificateChainType,
 
@@ -100,9 +118,13 @@ namespace Pulumi.Akamai.Outputs
 
             ImmutableArray<Outputs.GetCPSEnrollmentsEnrollmentNetworkConfigurationResult> networkConfigurations,
 
+            int orgId,
+
             ImmutableArray<Outputs.GetCPSEnrollmentsEnrollmentOrganizationResult> organizations,
 
             bool pendingChanges,
+
+            ImmutableArray<int> productionSlots,
 
             string registrationAuthority,
 
@@ -114,11 +136,14 @@ namespace Pulumi.Akamai.Outputs
 
             bool sniOnly,
 
+            ImmutableArray<int> stagingSlots,
+
             ImmutableArray<Outputs.GetCPSEnrollmentsEnrollmentTechContactResult> techContacts,
 
             string validationType)
         {
             AdminContacts = adminContacts;
+            AssignedSlots = assignedSlots;
             CertificateChainType = certificateChainType;
             CertificateType = certificateType;
             CommonName = commonName;
@@ -126,13 +151,16 @@ namespace Pulumi.Akamai.Outputs
             EnableMultiStackedCertificates = enableMultiStackedCertificates;
             EnrollmentId = enrollmentId;
             NetworkConfigurations = networkConfigurations;
+            OrgId = orgId;
             Organizations = organizations;
             PendingChanges = pendingChanges;
+            ProductionSlots = productionSlots;
             RegistrationAuthority = registrationAuthority;
             Sans = sans;
             SecureNetwork = secureNetwork;
             SignatureAlgorithm = signatureAlgorithm;
             SniOnly = sniOnly;
+            StagingSlots = stagingSlots;
             TechContacts = techContacts;
             ValidationType = validationType;
         }

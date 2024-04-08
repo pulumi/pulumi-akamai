@@ -108,6 +108,19 @@ namespace Pulumi.Akamai
         [Output("servermonitorPool")]
         public Output<string> ServermonitorPool { get; private set; } = null!;
 
+        /// <summary>
+        /// If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
+        /// </summary>
+        [Output("signAndServe")]
+        public Output<bool?> SignAndServe { get; private set; } = null!;
+
+        /// <summary>
+        /// The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
+        /// ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+        /// </summary>
+        [Output("signAndServeAlgorithm")]
+        public Output<string?> SignAndServeAlgorithm { get; private set; } = null!;
+
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
 
@@ -207,6 +220,19 @@ namespace Pulumi.Akamai
 
         [Input("name")]
         public Input<string>? Name { get; set; }
+
+        /// <summary>
+        /// If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
+        /// </summary>
+        [Input("signAndServe")]
+        public Input<bool>? SignAndServe { get; set; }
+
+        /// <summary>
+        /// The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
+        /// ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+        /// </summary>
+        [Input("signAndServeAlgorithm")]
+        public Input<string>? SignAndServeAlgorithm { get; set; }
 
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
@@ -322,6 +348,19 @@ namespace Pulumi.Akamai
 
         [Input("servermonitorPool")]
         public Input<string>? ServermonitorPool { get; set; }
+
+        /// <summary>
+        /// If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
+        /// </summary>
+        [Input("signAndServe")]
+        public Input<bool>? SignAndServe { get; set; }
+
+        /// <summary>
+        /// The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
+        /// ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+        /// </summary>
+        [Input("signAndServeAlgorithm")]
+        public Input<string>? SignAndServeAlgorithm { get; set; }
 
         [Input("type")]
         public Input<string>? Type { get; set; }

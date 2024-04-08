@@ -77,6 +77,8 @@ export interface GetGtmDomainResult {
     readonly resources?: outputs.GetGtmDomainResource[];
     readonly roundRobinPrefix: string;
     readonly serverMonitorPool: string;
+    readonly signAndServe: boolean;
+    readonly signAndServeAlgorithm: string;
     readonly status?: outputs.GetGtmDomainStatus;
     readonly type: string;
 }

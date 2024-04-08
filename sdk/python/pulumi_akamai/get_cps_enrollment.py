@@ -22,10 +22,13 @@ class GetCPSEnrollmentResult:
     """
     A collection of values returned by getCPSEnrollment.
     """
-    def __init__(__self__, admin_contacts=None, certificate_chain_type=None, certificate_type=None, common_name=None, contract_id=None, csrs=None, dns_challenges=None, enable_multi_stacked_certificates=None, enrollment_id=None, http_challenges=None, id=None, network_configurations=None, organizations=None, pending_changes=None, registration_authority=None, sans=None, secure_network=None, signature_algorithm=None, sni_only=None, tech_contacts=None, validation_type=None):
+    def __init__(__self__, admin_contacts=None, assigned_slots=None, certificate_chain_type=None, certificate_type=None, common_name=None, contract_id=None, csrs=None, dns_challenges=None, enable_multi_stacked_certificates=None, enrollment_id=None, http_challenges=None, id=None, network_configurations=None, org_id=None, organizations=None, pending_changes=None, production_slots=None, registration_authority=None, sans=None, secure_network=None, signature_algorithm=None, sni_only=None, staging_slots=None, tech_contacts=None, validation_type=None):
         if admin_contacts and not isinstance(admin_contacts, list):
             raise TypeError("Expected argument 'admin_contacts' to be a list")
         pulumi.set(__self__, "admin_contacts", admin_contacts)
+        if assigned_slots and not isinstance(assigned_slots, list):
+            raise TypeError("Expected argument 'assigned_slots' to be a list")
+        pulumi.set(__self__, "assigned_slots", assigned_slots)
         if certificate_chain_type and not isinstance(certificate_chain_type, str):
             raise TypeError("Expected argument 'certificate_chain_type' to be a str")
         pulumi.set(__self__, "certificate_chain_type", certificate_chain_type)
@@ -59,12 +62,18 @@ class GetCPSEnrollmentResult:
         if network_configurations and not isinstance(network_configurations, list):
             raise TypeError("Expected argument 'network_configurations' to be a list")
         pulumi.set(__self__, "network_configurations", network_configurations)
+        if org_id and not isinstance(org_id, int):
+            raise TypeError("Expected argument 'org_id' to be a int")
+        pulumi.set(__self__, "org_id", org_id)
         if organizations and not isinstance(organizations, list):
             raise TypeError("Expected argument 'organizations' to be a list")
         pulumi.set(__self__, "organizations", organizations)
         if pending_changes and not isinstance(pending_changes, bool):
             raise TypeError("Expected argument 'pending_changes' to be a bool")
         pulumi.set(__self__, "pending_changes", pending_changes)
+        if production_slots and not isinstance(production_slots, list):
+            raise TypeError("Expected argument 'production_slots' to be a list")
+        pulumi.set(__self__, "production_slots", production_slots)
         if registration_authority and not isinstance(registration_authority, str):
             raise TypeError("Expected argument 'registration_authority' to be a str")
         pulumi.set(__self__, "registration_authority", registration_authority)
@@ -80,6 +89,9 @@ class GetCPSEnrollmentResult:
         if sni_only and not isinstance(sni_only, bool):
             raise TypeError("Expected argument 'sni_only' to be a bool")
         pulumi.set(__self__, "sni_only", sni_only)
+        if staging_slots and not isinstance(staging_slots, list):
+            raise TypeError("Expected argument 'staging_slots' to be a list")
+        pulumi.set(__self__, "staging_slots", staging_slots)
         if tech_contacts and not isinstance(tech_contacts, list):
             raise TypeError("Expected argument 'tech_contacts' to be a list")
         pulumi.set(__self__, "tech_contacts", tech_contacts)
@@ -91,6 +103,11 @@ class GetCPSEnrollmentResult:
     @pulumi.getter(name="adminContacts")
     def admin_contacts(self) -> Sequence['outputs.GetCPSEnrollmentAdminContactResult']:
         return pulumi.get(self, "admin_contacts")
+
+    @property
+    @pulumi.getter(name="assignedSlots")
+    def assigned_slots(self) -> Sequence[int]:
+        return pulumi.get(self, "assigned_slots")
 
     @property
     @pulumi.getter(name="certificateChainType")
@@ -151,6 +168,11 @@ class GetCPSEnrollmentResult:
         return pulumi.get(self, "network_configurations")
 
     @property
+    @pulumi.getter(name="orgId")
+    def org_id(self) -> int:
+        return pulumi.get(self, "org_id")
+
+    @property
     @pulumi.getter
     def organizations(self) -> Sequence['outputs.GetCPSEnrollmentOrganizationResult']:
         return pulumi.get(self, "organizations")
@@ -159,6 +181,11 @@ class GetCPSEnrollmentResult:
     @pulumi.getter(name="pendingChanges")
     def pending_changes(self) -> bool:
         return pulumi.get(self, "pending_changes")
+
+    @property
+    @pulumi.getter(name="productionSlots")
+    def production_slots(self) -> Sequence[int]:
+        return pulumi.get(self, "production_slots")
 
     @property
     @pulumi.getter(name="registrationAuthority")
@@ -186,6 +213,11 @@ class GetCPSEnrollmentResult:
         return pulumi.get(self, "sni_only")
 
     @property
+    @pulumi.getter(name="stagingSlots")
+    def staging_slots(self) -> Sequence[int]:
+        return pulumi.get(self, "staging_slots")
+
+    @property
     @pulumi.getter(name="techContacts")
     def tech_contacts(self) -> Sequence['outputs.GetCPSEnrollmentTechContactResult']:
         return pulumi.get(self, "tech_contacts")
@@ -203,6 +235,7 @@ class AwaitableGetCPSEnrollmentResult(GetCPSEnrollmentResult):
             yield self
         return GetCPSEnrollmentResult(
             admin_contacts=self.admin_contacts,
+            assigned_slots=self.assigned_slots,
             certificate_chain_type=self.certificate_chain_type,
             certificate_type=self.certificate_type,
             common_name=self.common_name,
@@ -214,13 +247,16 @@ class AwaitableGetCPSEnrollmentResult(GetCPSEnrollmentResult):
             http_challenges=self.http_challenges,
             id=self.id,
             network_configurations=self.network_configurations,
+            org_id=self.org_id,
             organizations=self.organizations,
             pending_changes=self.pending_changes,
+            production_slots=self.production_slots,
             registration_authority=self.registration_authority,
             sans=self.sans,
             secure_network=self.secure_network,
             signature_algorithm=self.signature_algorithm,
             sni_only=self.sni_only,
+            staging_slots=self.staging_slots,
             tech_contacts=self.tech_contacts,
             validation_type=self.validation_type)
 
@@ -237,6 +273,7 @@ def get_cps_enrollment(enrollment_id: Optional[int] = None,
 
     return AwaitableGetCPSEnrollmentResult(
         admin_contacts=pulumi.get(__ret__, 'admin_contacts'),
+        assigned_slots=pulumi.get(__ret__, 'assigned_slots'),
         certificate_chain_type=pulumi.get(__ret__, 'certificate_chain_type'),
         certificate_type=pulumi.get(__ret__, 'certificate_type'),
         common_name=pulumi.get(__ret__, 'common_name'),
@@ -248,13 +285,16 @@ def get_cps_enrollment(enrollment_id: Optional[int] = None,
         http_challenges=pulumi.get(__ret__, 'http_challenges'),
         id=pulumi.get(__ret__, 'id'),
         network_configurations=pulumi.get(__ret__, 'network_configurations'),
+        org_id=pulumi.get(__ret__, 'org_id'),
         organizations=pulumi.get(__ret__, 'organizations'),
         pending_changes=pulumi.get(__ret__, 'pending_changes'),
+        production_slots=pulumi.get(__ret__, 'production_slots'),
         registration_authority=pulumi.get(__ret__, 'registration_authority'),
         sans=pulumi.get(__ret__, 'sans'),
         secure_network=pulumi.get(__ret__, 'secure_network'),
         signature_algorithm=pulumi.get(__ret__, 'signature_algorithm'),
         sni_only=pulumi.get(__ret__, 'sni_only'),
+        staging_slots=pulumi.get(__ret__, 'staging_slots'),
         tech_contacts=pulumi.get(__ret__, 'tech_contacts'),
         validation_type=pulumi.get(__ret__, 'validation_type'))
 

@@ -55,6 +55,8 @@ from .app_sec_wap_selected_hostnames import *
 from .appsec_advanced_settings_attack_payload_logging import *
 from .appsec_advanced_settings_pii_learning import *
 from .appsec_advanced_settings_request_body import *
+from .appsec_eval_penalty_box_conditions import *
+from .appsec_penalty_box_conditions import *
 from .appsec_security_policy_default_protections import *
 from .botman_akamai_bot_category_action import *
 from .botman_bot_analytics_cookie import *
@@ -151,6 +153,8 @@ from .get_app_sec_wap_selected_hostnames import *
 from .get_appsec_advanced_settings_attack_payload_logging import *
 from .get_appsec_advanced_settings_pii_learning import *
 from .get_appsec_advanced_settings_request_body import *
+from .get_appsec_eval_penalty_box_conditions import *
+from .get_appsec_penalty_box_conditions import *
 from .get_authorities_set import *
 from .get_botman_akamai_bot_category import *
 from .get_botman_akamai_bot_category_action import *
@@ -286,17 +290,8 @@ from . import outputs
 if typing.TYPE_CHECKING:
     import pulumi_akamai.config as __config
     config = __config
-    import pulumi_akamai.edgedns as __edgedns
-    edgedns = __edgedns
-    import pulumi_akamai.properties as __properties
-    properties = __properties
-    import pulumi_akamai.trafficmanagement as __trafficmanagement
-    trafficmanagement = __trafficmanagement
 else:
     config = _utilities.lazy_import('pulumi_akamai.config')
-    edgedns = _utilities.lazy_import('pulumi_akamai.edgedns')
-    properties = _utilities.lazy_import('pulumi_akamai.properties')
-    trafficmanagement = _utilities.lazy_import('pulumi_akamai.trafficmanagement')
 
 _utilities.register(
     resource_modules="""
@@ -699,6 +694,22 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/appsecAdvancedSettingsRequestBody:AppsecAdvancedSettingsRequestBody": "AppsecAdvancedSettingsRequestBody"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/appsecEvalPenaltyBoxConditions",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/appsecEvalPenaltyBoxConditions:AppsecEvalPenaltyBoxConditions": "AppsecEvalPenaltyBoxConditions"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/appsecPenaltyBoxConditions",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/appsecPenaltyBoxConditions:AppsecPenaltyBoxConditions": "AppsecPenaltyBoxConditions"
   }
  },
  {

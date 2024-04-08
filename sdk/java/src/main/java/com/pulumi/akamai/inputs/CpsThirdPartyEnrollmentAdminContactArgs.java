@@ -20,15 +20,15 @@ public final class CpsThirdPartyEnrollmentAdminContactArgs extends com.pulumi.re
      * The address of the contact
      * 
      */
-    @Import(name="addressLineOne", required=true)
-    private Output<String> addressLineOne;
+    @Import(name="addressLineOne")
+    private @Nullable Output<String> addressLineOne;
 
     /**
      * @return The address of the contact
      * 
      */
-    public Output<String> addressLineOne() {
-        return this.addressLineOne;
+    public Optional<Output<String>> addressLineOne() {
+        return Optional.ofNullable(this.addressLineOne);
     }
 
     /**
@@ -50,30 +50,30 @@ public final class CpsThirdPartyEnrollmentAdminContactArgs extends com.pulumi.re
      * City of residence of the contact
      * 
      */
-    @Import(name="city", required=true)
-    private Output<String> city;
+    @Import(name="city")
+    private @Nullable Output<String> city;
 
     /**
      * @return City of residence of the contact
      * 
      */
-    public Output<String> city() {
-        return this.city;
+    public Optional<Output<String>> city() {
+        return Optional.ofNullable(this.city);
     }
 
     /**
      * Country code of the contact
      * 
      */
-    @Import(name="countryCode", required=true)
-    private Output<String> countryCode;
+    @Import(name="countryCode")
+    private @Nullable Output<String> countryCode;
 
     /**
      * @return Country code of the contact
      * 
      */
-    public Output<String> countryCode() {
-        return this.countryCode;
+    public Optional<Output<String>> countryCode() {
+        return Optional.ofNullable(this.countryCode);
     }
 
     /**
@@ -125,15 +125,15 @@ public final class CpsThirdPartyEnrollmentAdminContactArgs extends com.pulumi.re
      * Organization where contact is hired
      * 
      */
-    @Import(name="organization", required=true)
-    private Output<String> organization;
+    @Import(name="organization")
+    private @Nullable Output<String> organization;
 
     /**
      * @return Organization where contact is hired
      * 
      */
-    public Output<String> organization() {
-        return this.organization;
+    public Optional<Output<String>> organization() {
+        return Optional.ofNullable(this.organization);
     }
 
     /**
@@ -155,30 +155,30 @@ public final class CpsThirdPartyEnrollmentAdminContactArgs extends com.pulumi.re
      * Postal code of the contact
      * 
      */
-    @Import(name="postalCode", required=true)
-    private Output<String> postalCode;
+    @Import(name="postalCode")
+    private @Nullable Output<String> postalCode;
 
     /**
      * @return Postal code of the contact
      * 
      */
-    public Output<String> postalCode() {
-        return this.postalCode;
+    public Optional<Output<String>> postalCode() {
+        return Optional.ofNullable(this.postalCode);
     }
 
     /**
      * The region of the contact
      * 
      */
-    @Import(name="region", required=true)
-    private Output<String> region;
+    @Import(name="region")
+    private @Nullable Output<String> region;
 
     /**
      * @return The region of the contact
      * 
      */
-    public Output<String> region() {
-        return this.region;
+    public Optional<Output<String>> region() {
+        return Optional.ofNullable(this.region);
     }
 
     /**
@@ -237,7 +237,7 @@ public final class CpsThirdPartyEnrollmentAdminContactArgs extends com.pulumi.re
          * @return builder
          * 
          */
-        public Builder addressLineOne(Output<String> addressLineOne) {
+        public Builder addressLineOne(@Nullable Output<String> addressLineOne) {
             $.addressLineOne = addressLineOne;
             return this;
         }
@@ -279,7 +279,7 @@ public final class CpsThirdPartyEnrollmentAdminContactArgs extends com.pulumi.re
          * @return builder
          * 
          */
-        public Builder city(Output<String> city) {
+        public Builder city(@Nullable Output<String> city) {
             $.city = city;
             return this;
         }
@@ -300,7 +300,7 @@ public final class CpsThirdPartyEnrollmentAdminContactArgs extends com.pulumi.re
          * @return builder
          * 
          */
-        public Builder countryCode(Output<String> countryCode) {
+        public Builder countryCode(@Nullable Output<String> countryCode) {
             $.countryCode = countryCode;
             return this;
         }
@@ -384,7 +384,7 @@ public final class CpsThirdPartyEnrollmentAdminContactArgs extends com.pulumi.re
          * @return builder
          * 
          */
-        public Builder organization(Output<String> organization) {
+        public Builder organization(@Nullable Output<String> organization) {
             $.organization = organization;
             return this;
         }
@@ -426,7 +426,7 @@ public final class CpsThirdPartyEnrollmentAdminContactArgs extends com.pulumi.re
          * @return builder
          * 
          */
-        public Builder postalCode(Output<String> postalCode) {
+        public Builder postalCode(@Nullable Output<String> postalCode) {
             $.postalCode = postalCode;
             return this;
         }
@@ -447,7 +447,7 @@ public final class CpsThirdPartyEnrollmentAdminContactArgs extends com.pulumi.re
          * @return builder
          * 
          */
-        public Builder region(Output<String> region) {
+        public Builder region(@Nullable Output<String> region) {
             $.region = region;
             return this;
         }
@@ -484,15 +484,6 @@ public final class CpsThirdPartyEnrollmentAdminContactArgs extends com.pulumi.re
         }
 
         public CpsThirdPartyEnrollmentAdminContactArgs build() {
-            if ($.addressLineOne == null) {
-                throw new MissingRequiredPropertyException("CpsThirdPartyEnrollmentAdminContactArgs", "addressLineOne");
-            }
-            if ($.city == null) {
-                throw new MissingRequiredPropertyException("CpsThirdPartyEnrollmentAdminContactArgs", "city");
-            }
-            if ($.countryCode == null) {
-                throw new MissingRequiredPropertyException("CpsThirdPartyEnrollmentAdminContactArgs", "countryCode");
-            }
             if ($.email == null) {
                 throw new MissingRequiredPropertyException("CpsThirdPartyEnrollmentAdminContactArgs", "email");
             }
@@ -502,17 +493,8 @@ public final class CpsThirdPartyEnrollmentAdminContactArgs extends com.pulumi.re
             if ($.lastName == null) {
                 throw new MissingRequiredPropertyException("CpsThirdPartyEnrollmentAdminContactArgs", "lastName");
             }
-            if ($.organization == null) {
-                throw new MissingRequiredPropertyException("CpsThirdPartyEnrollmentAdminContactArgs", "organization");
-            }
             if ($.phone == null) {
                 throw new MissingRequiredPropertyException("CpsThirdPartyEnrollmentAdminContactArgs", "phone");
-            }
-            if ($.postalCode == null) {
-                throw new MissingRequiredPropertyException("CpsThirdPartyEnrollmentAdminContactArgs", "postalCode");
-            }
-            if ($.region == null) {
-                throw new MissingRequiredPropertyException("CpsThirdPartyEnrollmentAdminContactArgs", "region");
             }
             return $;
         }

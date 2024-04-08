@@ -4,7 +4,7 @@
 package config
 
 import (
-	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v7/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi/config"
 )
@@ -29,4 +29,24 @@ func GetEdgerc(ctx *pulumi.Context) string {
 // The maximum number of API requests to be made per second (0 for no limit)
 func GetRequestLimit(ctx *pulumi.Context) int {
 	return config.GetInt(ctx, "akamai:requestLimit")
+}
+
+// Should the retries of API requests be disabled, default false
+func GetRetryDisabled(ctx *pulumi.Context) bool {
+	return config.GetBool(ctx, "akamai:retryDisabled")
+}
+
+// The maximum number retires of API requests, default 10
+func GetRetryMax(ctx *pulumi.Context) int {
+	return config.GetInt(ctx, "akamai:retryMax")
+}
+
+// The maximum wait time in seconds between API requests retries, default is 30 sec
+func GetRetryWaitMax(ctx *pulumi.Context) int {
+	return config.GetInt(ctx, "akamai:retryWaitMax")
+}
+
+// The minimum wait time in seconds between API requests retries, default is 1 sec
+func GetRetryWaitMin(ctx *pulumi.Context) int {
+	return config.GetInt(ctx, "akamai:retryWaitMin")
 }

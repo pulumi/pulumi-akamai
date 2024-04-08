@@ -49,6 +49,10 @@ export class Provider extends pulumi.ProviderResource {
             resourceInputs["configSection"] = args ? args.configSection : undefined;
             resourceInputs["edgerc"] = args ? args.edgerc : undefined;
             resourceInputs["requestLimit"] = pulumi.output(args ? args.requestLimit : undefined).apply(JSON.stringify);
+            resourceInputs["retryDisabled"] = pulumi.output(args ? args.retryDisabled : undefined).apply(JSON.stringify);
+            resourceInputs["retryMax"] = pulumi.output(args ? args.retryMax : undefined).apply(JSON.stringify);
+            resourceInputs["retryWaitMax"] = pulumi.output(args ? args.retryWaitMax : undefined).apply(JSON.stringify);
+            resourceInputs["retryWaitMin"] = pulumi.output(args ? args.retryWaitMin : undefined).apply(JSON.stringify);
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Provider.__pulumiType, name, resourceInputs, opts);
@@ -70,4 +74,20 @@ export interface ProviderArgs {
      * The maximum number of API requests to be made per second (0 for no limit)
      */
     requestLimit?: pulumi.Input<number>;
+    /**
+     * Should the retries of API requests be disabled, default false
+     */
+    retryDisabled?: pulumi.Input<boolean>;
+    /**
+     * The maximum number retires of API requests, default 10
+     */
+    retryMax?: pulumi.Input<number>;
+    /**
+     * The maximum wait time in seconds between API requests retries, default is 30 sec
+     */
+    retryWaitMax?: pulumi.Input<number>;
+    /**
+     * The minimum wait time in seconds between API requests retries, default is 1 sec
+     */
+    retryWaitMin?: pulumi.Input<number>;
 }

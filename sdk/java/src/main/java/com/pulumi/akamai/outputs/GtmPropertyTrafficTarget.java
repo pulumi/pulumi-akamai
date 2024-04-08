@@ -25,6 +25,7 @@ public final class GtmPropertyTrafficTarget {
      */
     @Deprecated /* The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored */
     private @Nullable String name;
+    private @Nullable Integer precedence;
     private @Nullable List<String> servers;
     private @Nullable Double weight;
 
@@ -47,6 +48,9 @@ public final class GtmPropertyTrafficTarget {
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
+    public Optional<Integer> precedence() {
+        return Optional.ofNullable(this.precedence);
+    }
     public List<String> servers() {
         return this.servers == null ? List.of() : this.servers;
     }
@@ -67,6 +71,7 @@ public final class GtmPropertyTrafficTarget {
         private @Nullable Boolean enabled;
         private @Nullable String handoutCname;
         private @Nullable String name;
+        private @Nullable Integer precedence;
         private @Nullable List<String> servers;
         private @Nullable Double weight;
         public Builder() {}
@@ -76,6 +81,7 @@ public final class GtmPropertyTrafficTarget {
     	      this.enabled = defaults.enabled;
     	      this.handoutCname = defaults.handoutCname;
     	      this.name = defaults.name;
+    	      this.precedence = defaults.precedence;
     	      this.servers = defaults.servers;
     	      this.weight = defaults.weight;
         }
@@ -105,6 +111,12 @@ public final class GtmPropertyTrafficTarget {
             return this;
         }
         @CustomType.Setter
+        public Builder precedence(@Nullable Integer precedence) {
+
+            this.precedence = precedence;
+            return this;
+        }
+        @CustomType.Setter
         public Builder servers(@Nullable List<String> servers) {
 
             this.servers = servers;
@@ -125,6 +137,7 @@ public final class GtmPropertyTrafficTarget {
             _resultValue.enabled = enabled;
             _resultValue.handoutCname = handoutCname;
             _resultValue.name = name;
+            _resultValue.precedence = precedence;
             _resultValue.servers = servers;
             _resultValue.weight = weight;
             return _resultValue;

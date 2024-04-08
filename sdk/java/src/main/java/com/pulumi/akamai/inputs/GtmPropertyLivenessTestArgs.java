@@ -21,6 +21,13 @@ public final class GtmPropertyLivenessTestArgs extends com.pulumi.resources.Reso
 
     public static final GtmPropertyLivenessTestArgs Empty = new GtmPropertyLivenessTestArgs();
 
+    @Import(name="alternateCaCertificates")
+    private @Nullable Output<List<String>> alternateCaCertificates;
+
+    public Optional<Output<List<String>>> alternateCaCertificates() {
+        return Optional.ofNullable(this.alternateCaCertificates);
+    }
+
     @Import(name="answersRequired")
     private @Nullable Output<Boolean> answersRequired;
 
@@ -77,6 +84,20 @@ public final class GtmPropertyLivenessTestArgs extends com.pulumi.resources.Reso
         return Optional.ofNullable(this.httpHeaders);
     }
 
+    @Import(name="httpMethod")
+    private @Nullable Output<String> httpMethod;
+
+    public Optional<Output<String>> httpMethod() {
+        return Optional.ofNullable(this.httpMethod);
+    }
+
+    @Import(name="httpRequestBody")
+    private @Nullable Output<String> httpRequestBody;
+
+    public Optional<Output<String>> httpRequestBody() {
+        return Optional.ofNullable(this.httpRequestBody);
+    }
+
     @Import(name="name", required=true)
     private Output<String> name;
 
@@ -89,6 +110,21 @@ public final class GtmPropertyLivenessTestArgs extends com.pulumi.resources.Reso
 
     public Optional<Output<Boolean>> peerCertificateVerification() {
         return Optional.ofNullable(this.peerCertificateVerification);
+    }
+
+    /**
+     * Whether to enable backwards compatibility for liveness endpoints that use older TLS protocols
+     * 
+     */
+    @Import(name="pre2023SecurityPosture")
+    private @Nullable Output<Boolean> pre2023SecurityPosture;
+
+    /**
+     * @return Whether to enable backwards compatibility for liveness endpoints that use older TLS protocols
+     * 
+     */
+    public Optional<Output<Boolean>> pre2023SecurityPosture() {
+        return Optional.ofNullable(this.pre2023SecurityPosture);
     }
 
     @Import(name="recursionRequested")
@@ -192,6 +228,7 @@ public final class GtmPropertyLivenessTestArgs extends com.pulumi.resources.Reso
     private GtmPropertyLivenessTestArgs() {}
 
     private GtmPropertyLivenessTestArgs(GtmPropertyLivenessTestArgs $) {
+        this.alternateCaCertificates = $.alternateCaCertificates;
         this.answersRequired = $.answersRequired;
         this.disableNonstandardPortWarning = $.disableNonstandardPortWarning;
         this.disabled = $.disabled;
@@ -200,8 +237,11 @@ public final class GtmPropertyLivenessTestArgs extends com.pulumi.resources.Reso
         this.httpError4xx = $.httpError4xx;
         this.httpError5xx = $.httpError5xx;
         this.httpHeaders = $.httpHeaders;
+        this.httpMethod = $.httpMethod;
+        this.httpRequestBody = $.httpRequestBody;
         this.name = $.name;
         this.peerCertificateVerification = $.peerCertificateVerification;
+        this.pre2023SecurityPosture = $.pre2023SecurityPosture;
         this.recursionRequested = $.recursionRequested;
         this.requestString = $.requestString;
         this.resourceType = $.resourceType;
@@ -234,6 +274,19 @@ public final class GtmPropertyLivenessTestArgs extends com.pulumi.resources.Reso
 
         public Builder(GtmPropertyLivenessTestArgs defaults) {
             $ = new GtmPropertyLivenessTestArgs(Objects.requireNonNull(defaults));
+        }
+
+        public Builder alternateCaCertificates(@Nullable Output<List<String>> alternateCaCertificates) {
+            $.alternateCaCertificates = alternateCaCertificates;
+            return this;
+        }
+
+        public Builder alternateCaCertificates(List<String> alternateCaCertificates) {
+            return alternateCaCertificates(Output.of(alternateCaCertificates));
+        }
+
+        public Builder alternateCaCertificates(String... alternateCaCertificates) {
+            return alternateCaCertificates(List.of(alternateCaCertificates));
         }
 
         public Builder answersRequired(@Nullable Output<Boolean> answersRequired) {
@@ -312,6 +365,24 @@ public final class GtmPropertyLivenessTestArgs extends com.pulumi.resources.Reso
             return httpHeaders(List.of(httpHeaders));
         }
 
+        public Builder httpMethod(@Nullable Output<String> httpMethod) {
+            $.httpMethod = httpMethod;
+            return this;
+        }
+
+        public Builder httpMethod(String httpMethod) {
+            return httpMethod(Output.of(httpMethod));
+        }
+
+        public Builder httpRequestBody(@Nullable Output<String> httpRequestBody) {
+            $.httpRequestBody = httpRequestBody;
+            return this;
+        }
+
+        public Builder httpRequestBody(String httpRequestBody) {
+            return httpRequestBody(Output.of(httpRequestBody));
+        }
+
         public Builder name(Output<String> name) {
             $.name = name;
             return this;
@@ -328,6 +399,27 @@ public final class GtmPropertyLivenessTestArgs extends com.pulumi.resources.Reso
 
         public Builder peerCertificateVerification(Boolean peerCertificateVerification) {
             return peerCertificateVerification(Output.of(peerCertificateVerification));
+        }
+
+        /**
+         * @param pre2023SecurityPosture Whether to enable backwards compatibility for liveness endpoints that use older TLS protocols
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pre2023SecurityPosture(@Nullable Output<Boolean> pre2023SecurityPosture) {
+            $.pre2023SecurityPosture = pre2023SecurityPosture;
+            return this;
+        }
+
+        /**
+         * @param pre2023SecurityPosture Whether to enable backwards compatibility for liveness endpoints that use older TLS protocols
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pre2023SecurityPosture(Boolean pre2023SecurityPosture) {
+            return pre2023SecurityPosture(Output.of(pre2023SecurityPosture));
         }
 
         public Builder recursionRequested(@Nullable Output<Boolean> recursionRequested) {

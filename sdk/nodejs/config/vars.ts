@@ -55,3 +55,47 @@ Object.defineProperty(exports, "requestLimit", {
     enumerable: true,
 });
 
+/**
+ * Should the retries of API requests be disabled, default false
+ */
+export declare const retryDisabled: boolean | undefined;
+Object.defineProperty(exports, "retryDisabled", {
+    get() {
+        return __config.getObject<boolean>("retryDisabled");
+    },
+    enumerable: true,
+});
+
+/**
+ * The maximum number retires of API requests, default 10
+ */
+export declare const retryMax: number | undefined;
+Object.defineProperty(exports, "retryMax", {
+    get() {
+        return __config.getObject<number>("retryMax");
+    },
+    enumerable: true,
+});
+
+/**
+ * The maximum wait time in seconds between API requests retries, default is 30 sec
+ */
+export declare const retryWaitMax: number | undefined;
+Object.defineProperty(exports, "retryWaitMax", {
+    get() {
+        return __config.getObject<number>("retryWaitMax");
+    },
+    enumerable: true,
+});
+
+/**
+ * The minimum wait time in seconds between API requests retries, default is 1 sec
+ */
+export declare const retryWaitMin: number | undefined;
+Object.defineProperty(exports, "retryWaitMin", {
+    get() {
+        return __config.getObject<number>("retryWaitMin");
+    },
+    enumerable: true,
+});
+

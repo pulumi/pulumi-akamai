@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v7/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -47,8 +47,13 @@ type GtmDomain struct {
 	ServermonitorLivenessCount   pulumi.IntOutput         `pulumi:"servermonitorLivenessCount"`
 	ServermonitorLoadCount       pulumi.IntOutput         `pulumi:"servermonitorLoadCount"`
 	ServermonitorPool            pulumi.StringOutput      `pulumi:"servermonitorPool"`
-	Type                         pulumi.StringOutput      `pulumi:"type"`
-	WaitOnComplete               pulumi.BoolPtrOutput     `pulumi:"waitOnComplete"`
+	// If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
+	SignAndServe pulumi.BoolPtrOutput `pulumi:"signAndServe"`
+	// The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
+	// ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+	SignAndServeAlgorithm pulumi.StringPtrOutput `pulumi:"signAndServeAlgorithm"`
+	Type                  pulumi.StringOutput    `pulumi:"type"`
+	WaitOnComplete        pulumi.BoolPtrOutput   `pulumi:"waitOnComplete"`
 }
 
 // NewGtmDomain registers a new resource with the given unique name, arguments, and options.
@@ -122,8 +127,13 @@ type gtmDomainState struct {
 	ServermonitorLivenessCount   *int     `pulumi:"servermonitorLivenessCount"`
 	ServermonitorLoadCount       *int     `pulumi:"servermonitorLoadCount"`
 	ServermonitorPool            *string  `pulumi:"servermonitorPool"`
-	Type                         *string  `pulumi:"type"`
-	WaitOnComplete               *bool    `pulumi:"waitOnComplete"`
+	// If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
+	SignAndServe *bool `pulumi:"signAndServe"`
+	// The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
+	// ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+	SignAndServeAlgorithm *string `pulumi:"signAndServeAlgorithm"`
+	Type                  *string `pulumi:"type"`
+	WaitOnComplete        *bool   `pulumi:"waitOnComplete"`
 }
 
 type GtmDomainState struct {
@@ -159,8 +169,13 @@ type GtmDomainState struct {
 	ServermonitorLivenessCount   pulumi.IntPtrInput
 	ServermonitorLoadCount       pulumi.IntPtrInput
 	ServermonitorPool            pulumi.StringPtrInput
-	Type                         pulumi.StringPtrInput
-	WaitOnComplete               pulumi.BoolPtrInput
+	// If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
+	SignAndServe pulumi.BoolPtrInput
+	// The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
+	// ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+	SignAndServeAlgorithm pulumi.StringPtrInput
+	Type                  pulumi.StringPtrInput
+	WaitOnComplete        pulumi.BoolPtrInput
 }
 
 func (GtmDomainState) ElementType() reflect.Type {
@@ -181,8 +196,13 @@ type gtmDomainArgs struct {
 	LoadFeedback                *bool    `pulumi:"loadFeedback"`
 	LoadImbalancePercentage     *float64 `pulumi:"loadImbalancePercentage"`
 	Name                        *string  `pulumi:"name"`
-	Type                        string   `pulumi:"type"`
-	WaitOnComplete              *bool    `pulumi:"waitOnComplete"`
+	// If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
+	SignAndServe *bool `pulumi:"signAndServe"`
+	// The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
+	// ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+	SignAndServeAlgorithm *string `pulumi:"signAndServeAlgorithm"`
+	Type                  string  `pulumi:"type"`
+	WaitOnComplete        *bool   `pulumi:"waitOnComplete"`
 }
 
 // The set of arguments for constructing a GtmDomain resource.
@@ -200,8 +220,13 @@ type GtmDomainArgs struct {
 	LoadFeedback                pulumi.BoolPtrInput
 	LoadImbalancePercentage     pulumi.Float64PtrInput
 	Name                        pulumi.StringPtrInput
-	Type                        pulumi.StringInput
-	WaitOnComplete              pulumi.BoolPtrInput
+	// If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
+	SignAndServe pulumi.BoolPtrInput
+	// The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
+	// ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+	SignAndServeAlgorithm pulumi.StringPtrInput
+	Type                  pulumi.StringInput
+	WaitOnComplete        pulumi.BoolPtrInput
 }
 
 func (GtmDomainArgs) ElementType() reflect.Type {
@@ -417,6 +442,17 @@ func (o GtmDomainOutput) ServermonitorLoadCount() pulumi.IntOutput {
 
 func (o GtmDomainOutput) ServermonitorPool() pulumi.StringOutput {
 	return o.ApplyT(func(v *GtmDomain) pulumi.StringOutput { return v.ServermonitorPool }).(pulumi.StringOutput)
+}
+
+// If set (true) we will sign the domain's resource records so that they can be validated by a validating resolver.
+func (o GtmDomainOutput) SignAndServe() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.BoolPtrOutput { return v.SignAndServe }).(pulumi.BoolPtrOutput)
+}
+
+// The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
+// ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+func (o GtmDomainOutput) SignAndServeAlgorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmDomain) pulumi.StringPtrOutput { return v.SignAndServeAlgorithm }).(pulumi.StringPtrOutput)
 }
 
 func (o GtmDomainOutput) Type() pulumi.StringOutput {

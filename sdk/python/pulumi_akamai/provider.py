@@ -19,11 +19,19 @@ class ProviderArgs:
                  config: Optional[pulumi.Input['ProviderConfigArgs']] = None,
                  config_section: Optional[pulumi.Input[str]] = None,
                  edgerc: Optional[pulumi.Input[str]] = None,
-                 request_limit: Optional[pulumi.Input[int]] = None):
+                 request_limit: Optional[pulumi.Input[int]] = None,
+                 retry_disabled: Optional[pulumi.Input[bool]] = None,
+                 retry_max: Optional[pulumi.Input[int]] = None,
+                 retry_wait_max: Optional[pulumi.Input[int]] = None,
+                 retry_wait_min: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a Provider resource.
         :param pulumi.Input[str] config_section: The section of the edgerc file to use for configuration
         :param pulumi.Input[int] request_limit: The maximum number of API requests to be made per second (0 for no limit)
+        :param pulumi.Input[bool] retry_disabled: Should the retries of API requests be disabled, default false
+        :param pulumi.Input[int] retry_max: The maximum number retires of API requests, default 10
+        :param pulumi.Input[int] retry_wait_max: The maximum wait time in seconds between API requests retries, default is 30 sec
+        :param pulumi.Input[int] retry_wait_min: The minimum wait time in seconds between API requests retries, default is 1 sec
         """
         if cache_enabled is not None:
             pulumi.set(__self__, "cache_enabled", cache_enabled)
@@ -35,6 +43,14 @@ class ProviderArgs:
             pulumi.set(__self__, "edgerc", edgerc)
         if request_limit is not None:
             pulumi.set(__self__, "request_limit", request_limit)
+        if retry_disabled is not None:
+            pulumi.set(__self__, "retry_disabled", retry_disabled)
+        if retry_max is not None:
+            pulumi.set(__self__, "retry_max", retry_max)
+        if retry_wait_max is not None:
+            pulumi.set(__self__, "retry_wait_max", retry_wait_max)
+        if retry_wait_min is not None:
+            pulumi.set(__self__, "retry_wait_min", retry_wait_min)
 
     @property
     @pulumi.getter(name="cacheEnabled")
@@ -87,6 +103,54 @@ class ProviderArgs:
     def request_limit(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "request_limit", value)
 
+    @property
+    @pulumi.getter(name="retryDisabled")
+    def retry_disabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Should the retries of API requests be disabled, default false
+        """
+        return pulumi.get(self, "retry_disabled")
+
+    @retry_disabled.setter
+    def retry_disabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "retry_disabled", value)
+
+    @property
+    @pulumi.getter(name="retryMax")
+    def retry_max(self) -> Optional[pulumi.Input[int]]:
+        """
+        The maximum number retires of API requests, default 10
+        """
+        return pulumi.get(self, "retry_max")
+
+    @retry_max.setter
+    def retry_max(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "retry_max", value)
+
+    @property
+    @pulumi.getter(name="retryWaitMax")
+    def retry_wait_max(self) -> Optional[pulumi.Input[int]]:
+        """
+        The maximum wait time in seconds between API requests retries, default is 30 sec
+        """
+        return pulumi.get(self, "retry_wait_max")
+
+    @retry_wait_max.setter
+    def retry_wait_max(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "retry_wait_max", value)
+
+    @property
+    @pulumi.getter(name="retryWaitMin")
+    def retry_wait_min(self) -> Optional[pulumi.Input[int]]:
+        """
+        The minimum wait time in seconds between API requests retries, default is 1 sec
+        """
+        return pulumi.get(self, "retry_wait_min")
+
+    @retry_wait_min.setter
+    def retry_wait_min(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "retry_wait_min", value)
+
 
 class Provider(pulumi.ProviderResource):
     @overload
@@ -98,6 +162,10 @@ class Provider(pulumi.ProviderResource):
                  config_section: Optional[pulumi.Input[str]] = None,
                  edgerc: Optional[pulumi.Input[str]] = None,
                  request_limit: Optional[pulumi.Input[int]] = None,
+                 retry_disabled: Optional[pulumi.Input[bool]] = None,
+                 retry_max: Optional[pulumi.Input[int]] = None,
+                 retry_wait_max: Optional[pulumi.Input[int]] = None,
+                 retry_wait_min: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
         The provider type for the akamai package. By default, resources use package-wide configuration
@@ -109,6 +177,10 @@ class Provider(pulumi.ProviderResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] config_section: The section of the edgerc file to use for configuration
         :param pulumi.Input[int] request_limit: The maximum number of API requests to be made per second (0 for no limit)
+        :param pulumi.Input[bool] retry_disabled: Should the retries of API requests be disabled, default false
+        :param pulumi.Input[int] retry_max: The maximum number retires of API requests, default 10
+        :param pulumi.Input[int] retry_wait_max: The maximum wait time in seconds between API requests retries, default is 30 sec
+        :param pulumi.Input[int] retry_wait_min: The minimum wait time in seconds between API requests retries, default is 1 sec
         """
         ...
     @overload
@@ -142,6 +214,10 @@ class Provider(pulumi.ProviderResource):
                  config_section: Optional[pulumi.Input[str]] = None,
                  edgerc: Optional[pulumi.Input[str]] = None,
                  request_limit: Optional[pulumi.Input[int]] = None,
+                 retry_disabled: Optional[pulumi.Input[bool]] = None,
+                 retry_max: Optional[pulumi.Input[int]] = None,
+                 retry_wait_max: Optional[pulumi.Input[int]] = None,
+                 retry_wait_min: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -156,6 +232,10 @@ class Provider(pulumi.ProviderResource):
             __props__.__dict__["config_section"] = config_section
             __props__.__dict__["edgerc"] = edgerc
             __props__.__dict__["request_limit"] = pulumi.Output.from_input(request_limit).apply(pulumi.runtime.to_json) if request_limit is not None else None
+            __props__.__dict__["retry_disabled"] = pulumi.Output.from_input(retry_disabled).apply(pulumi.runtime.to_json) if retry_disabled is not None else None
+            __props__.__dict__["retry_max"] = pulumi.Output.from_input(retry_max).apply(pulumi.runtime.to_json) if retry_max is not None else None
+            __props__.__dict__["retry_wait_max"] = pulumi.Output.from_input(retry_wait_max).apply(pulumi.runtime.to_json) if retry_wait_max is not None else None
+            __props__.__dict__["retry_wait_min"] = pulumi.Output.from_input(retry_wait_min).apply(pulumi.runtime.to_json) if retry_wait_min is not None else None
         super(Provider, __self__).__init__(
             'akamai',
             resource_name,

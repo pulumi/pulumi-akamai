@@ -255,6 +255,16 @@ export type AppsecAdvancedSettingsRequestBody = import("./appsecAdvancedSettings
 export const AppsecAdvancedSettingsRequestBody: typeof import("./appsecAdvancedSettingsRequestBody").AppsecAdvancedSettingsRequestBody = null as any;
 utilities.lazyLoad(exports, ["AppsecAdvancedSettingsRequestBody"], () => require("./appsecAdvancedSettingsRequestBody"));
 
+export { AppsecEvalPenaltyBoxConditionsArgs, AppsecEvalPenaltyBoxConditionsState } from "./appsecEvalPenaltyBoxConditions";
+export type AppsecEvalPenaltyBoxConditions = import("./appsecEvalPenaltyBoxConditions").AppsecEvalPenaltyBoxConditions;
+export const AppsecEvalPenaltyBoxConditions: typeof import("./appsecEvalPenaltyBoxConditions").AppsecEvalPenaltyBoxConditions = null as any;
+utilities.lazyLoad(exports, ["AppsecEvalPenaltyBoxConditions"], () => require("./appsecEvalPenaltyBoxConditions"));
+
+export { AppsecPenaltyBoxConditionsArgs, AppsecPenaltyBoxConditionsState } from "./appsecPenaltyBoxConditions";
+export type AppsecPenaltyBoxConditions = import("./appsecPenaltyBoxConditions").AppsecPenaltyBoxConditions;
+export const AppsecPenaltyBoxConditions: typeof import("./appsecPenaltyBoxConditions").AppsecPenaltyBoxConditions = null as any;
+utilities.lazyLoad(exports, ["AppsecPenaltyBoxConditions"], () => require("./appsecPenaltyBoxConditions"));
+
 export { AppsecSecurityPolicyDefaultProtectionsArgs, AppsecSecurityPolicyDefaultProtectionsState } from "./appsecSecurityPolicyDefaultProtections";
 export type AppsecSecurityPolicyDefaultProtections = import("./appsecSecurityPolicyDefaultProtections").AppsecSecurityPolicyDefaultProtections;
 export const AppsecSecurityPolicyDefaultProtections: typeof import("./appsecSecurityPolicyDefaultProtections").AppsecSecurityPolicyDefaultProtections = null as any;
@@ -734,6 +744,16 @@ export { GetAppsecAdvancedSettingsRequestBodyArgs, GetAppsecAdvancedSettingsRequ
 export const getAppsecAdvancedSettingsRequestBody: typeof import("./getAppsecAdvancedSettingsRequestBody").getAppsecAdvancedSettingsRequestBody = null as any;
 export const getAppsecAdvancedSettingsRequestBodyOutput: typeof import("./getAppsecAdvancedSettingsRequestBody").getAppsecAdvancedSettingsRequestBodyOutput = null as any;
 utilities.lazyLoad(exports, ["getAppsecAdvancedSettingsRequestBody","getAppsecAdvancedSettingsRequestBodyOutput"], () => require("./getAppsecAdvancedSettingsRequestBody"));
+
+export { GetAppsecEvalPenaltyBoxConditionsArgs, GetAppsecEvalPenaltyBoxConditionsResult, GetAppsecEvalPenaltyBoxConditionsOutputArgs } from "./getAppsecEvalPenaltyBoxConditions";
+export const getAppsecEvalPenaltyBoxConditions: typeof import("./getAppsecEvalPenaltyBoxConditions").getAppsecEvalPenaltyBoxConditions = null as any;
+export const getAppsecEvalPenaltyBoxConditionsOutput: typeof import("./getAppsecEvalPenaltyBoxConditions").getAppsecEvalPenaltyBoxConditionsOutput = null as any;
+utilities.lazyLoad(exports, ["getAppsecEvalPenaltyBoxConditions","getAppsecEvalPenaltyBoxConditionsOutput"], () => require("./getAppsecEvalPenaltyBoxConditions"));
+
+export { GetAppsecPenaltyBoxConditionsArgs, GetAppsecPenaltyBoxConditionsResult, GetAppsecPenaltyBoxConditionsOutputArgs } from "./getAppsecPenaltyBoxConditions";
+export const getAppsecPenaltyBoxConditions: typeof import("./getAppsecPenaltyBoxConditions").getAppsecPenaltyBoxConditions = null as any;
+export const getAppsecPenaltyBoxConditionsOutput: typeof import("./getAppsecPenaltyBoxConditions").getAppsecPenaltyBoxConditionsOutput = null as any;
+utilities.lazyLoad(exports, ["getAppsecPenaltyBoxConditions","getAppsecPenaltyBoxConditionsOutput"], () => require("./getAppsecPenaltyBoxConditions"));
 
 export { GetAuthoritiesSetArgs, GetAuthoritiesSetResult, GetAuthoritiesSetOutputArgs } from "./getAuthoritiesSet";
 export const getAuthoritiesSet: typeof import("./getAuthoritiesSet").getAuthoritiesSet = null as any;
@@ -1378,16 +1398,10 @@ utilities.lazyLoad(exports, ["Provider"], () => require("./provider"));
 
 // Export sub-modules:
 import * as config from "./config";
-import * as edgedns from "./edgedns";
-import * as properties from "./properties";
-import * as trafficmanagement from "./trafficmanagement";
 import * as types from "./types";
 
 export {
     config,
-    edgedns,
-    properties,
-    trafficmanagement,
     types,
 };
 
@@ -1495,6 +1509,10 @@ const _module = {
                 return new AppsecAdvancedSettingsPiiLearning(name, <any>undefined, { urn })
             case "akamai:index/appsecAdvancedSettingsRequestBody:AppsecAdvancedSettingsRequestBody":
                 return new AppsecAdvancedSettingsRequestBody(name, <any>undefined, { urn })
+            case "akamai:index/appsecEvalPenaltyBoxConditions:AppsecEvalPenaltyBoxConditions":
+                return new AppsecEvalPenaltyBoxConditions(name, <any>undefined, { urn })
+            case "akamai:index/appsecPenaltyBoxConditions:AppsecPenaltyBoxConditions":
+                return new AppsecPenaltyBoxConditions(name, <any>undefined, { urn })
             case "akamai:index/appsecSecurityPolicyDefaultProtections:AppsecSecurityPolicyDefaultProtections":
                 return new AppsecSecurityPolicyDefaultProtections(name, <any>undefined, { urn })
             case "akamai:index/botmanAkamaiBotCategoryAction:BotmanAkamaiBotCategoryAction":
@@ -1686,6 +1704,8 @@ pulumi.runtime.registerResourceModule("akamai", "index/appSecWapSelectedHostname
 pulumi.runtime.registerResourceModule("akamai", "index/appsecAdvancedSettingsAttackPayloadLogging", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecAdvancedSettingsPiiLearning", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecAdvancedSettingsRequestBody", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/appsecEvalPenaltyBoxConditions", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/appsecPenaltyBoxConditions", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecSecurityPolicyDefaultProtections", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanAkamaiBotCategoryAction", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanBotAnalyticsCookie", _module)

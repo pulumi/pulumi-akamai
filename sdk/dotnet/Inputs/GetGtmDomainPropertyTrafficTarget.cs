@@ -36,6 +36,12 @@ namespace Pulumi.Akamai.Inputs
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
 
+        /// <summary>
+        /// Non-negative integer that ranks the order of the backups that GTM will hand out in the event that the primary Traffic Target has been declared down
+        /// </summary>
+        [Input("precedence", required: true)]
+        public int Precedence { get; set; }
+
         [Input("servers", required: true)]
         private List<string>? _servers;
 

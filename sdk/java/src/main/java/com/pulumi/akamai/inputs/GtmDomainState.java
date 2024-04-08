@@ -243,6 +243,38 @@ public final class GtmDomainState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.servermonitorPool);
     }
 
+    /**
+     * If set (true) we will sign the domain&#39;s resource records so that they can be validated by a validating resolver.
+     * 
+     */
+    @Import(name="signAndServe")
+    private @Nullable Output<Boolean> signAndServe;
+
+    /**
+     * @return If set (true) we will sign the domain&#39;s resource records so that they can be validated by a validating resolver.
+     * 
+     */
+    public Optional<Output<Boolean>> signAndServe() {
+        return Optional.ofNullable(this.signAndServe);
+    }
+
+    /**
+     * The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
+     * ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+     * 
+     */
+    @Import(name="signAndServeAlgorithm")
+    private @Nullable Output<String> signAndServeAlgorithm;
+
+    /**
+     * @return The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
+     * ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+     * 
+     */
+    public Optional<Output<String>> signAndServeAlgorithm() {
+        return Optional.ofNullable(this.signAndServeAlgorithm);
+    }
+
     @Import(name="type")
     private @Nullable Output<String> type;
 
@@ -292,6 +324,8 @@ public final class GtmDomainState extends com.pulumi.resources.ResourceArgs {
         this.servermonitorLivenessCount = $.servermonitorLivenessCount;
         this.servermonitorLoadCount = $.servermonitorLoadCount;
         this.servermonitorPool = $.servermonitorPool;
+        this.signAndServe = $.signAndServe;
+        this.signAndServeAlgorithm = $.signAndServeAlgorithm;
         this.type = $.type;
         this.waitOnComplete = $.waitOnComplete;
     }
@@ -604,6 +638,50 @@ public final class GtmDomainState extends com.pulumi.resources.ResourceArgs {
 
         public Builder servermonitorPool(String servermonitorPool) {
             return servermonitorPool(Output.of(servermonitorPool));
+        }
+
+        /**
+         * @param signAndServe If set (true) we will sign the domain&#39;s resource records so that they can be validated by a validating resolver.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder signAndServe(@Nullable Output<Boolean> signAndServe) {
+            $.signAndServe = signAndServe;
+            return this;
+        }
+
+        /**
+         * @param signAndServe If set (true) we will sign the domain&#39;s resource records so that they can be validated by a validating resolver.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder signAndServe(Boolean signAndServe) {
+            return signAndServe(Output.of(signAndServe));
+        }
+
+        /**
+         * @param signAndServeAlgorithm The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
+         * ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder signAndServeAlgorithm(@Nullable Output<String> signAndServeAlgorithm) {
+            $.signAndServeAlgorithm = signAndServeAlgorithm;
+            return this;
+        }
+
+        /**
+         * @param signAndServeAlgorithm The signing algorithm to use for signAndServe. One of the following values: RSA_SHA1, RSA_SHA256, RSA_SHA512,
+         * ECDSA_P256_SHA256, ECDSA_P384_SHA384, ED25519, ED448.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder signAndServeAlgorithm(String signAndServeAlgorithm) {
+            return signAndServeAlgorithm(Output.of(signAndServeAlgorithm));
         }
 
         public Builder type(@Nullable Output<String> type) {

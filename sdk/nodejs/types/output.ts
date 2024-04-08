@@ -191,7 +191,7 @@ export interface CpsDvEnrollmentAdminContact {
     /**
      * The address of the contact
      */
-    addressLineOne: string;
+    addressLineOne?: string;
     /**
      * The address of the contact
      */
@@ -199,11 +199,11 @@ export interface CpsDvEnrollmentAdminContact {
     /**
      * City of residence of the contact
      */
-    city: string;
+    city?: string;
     /**
      * Country code of the contact
      */
-    countryCode: string;
+    countryCode?: string;
     /**
      * E-mail address of the contact
      */
@@ -219,7 +219,7 @@ export interface CpsDvEnrollmentAdminContact {
     /**
      * Organization where contact is hired
      */
-    organization: string;
+    organization?: string;
     /**
      * Phone number of the contact
      */
@@ -227,11 +227,11 @@ export interface CpsDvEnrollmentAdminContact {
     /**
      * Postal code of the contact
      */
-    postalCode: string;
+    postalCode?: string;
     /**
      * The region of the contact
      */
-    region: string;
+    region?: string;
     /**
      * Title of the the contact
      */
@@ -384,7 +384,7 @@ export interface CpsDvEnrollmentTechContact {
     /**
      * The address of the contact
      */
-    addressLineOne: string;
+    addressLineOne?: string;
     /**
      * The address of the contact
      */
@@ -392,11 +392,11 @@ export interface CpsDvEnrollmentTechContact {
     /**
      * City of residence of the contact
      */
-    city: string;
+    city?: string;
     /**
      * Country code of the contact
      */
-    countryCode: string;
+    countryCode?: string;
     /**
      * E-mail address of the contact
      */
@@ -412,7 +412,7 @@ export interface CpsDvEnrollmentTechContact {
     /**
      * Organization where contact is hired
      */
-    organization: string;
+    organization?: string;
     /**
      * Phone number of the contact
      */
@@ -420,11 +420,11 @@ export interface CpsDvEnrollmentTechContact {
     /**
      * Postal code of the contact
      */
-    postalCode: string;
+    postalCode?: string;
     /**
      * The region of the contact
      */
-    region: string;
+    region?: string;
     /**
      * Title of the the contact
      */
@@ -443,7 +443,7 @@ export interface CpsThirdPartyEnrollmentAdminContact {
     /**
      * The address of the contact
      */
-    addressLineOne: string;
+    addressLineOne?: string;
     /**
      * The address of the contact
      */
@@ -451,11 +451,11 @@ export interface CpsThirdPartyEnrollmentAdminContact {
     /**
      * City of residence of the contact
      */
-    city: string;
+    city?: string;
     /**
      * Country code of the contact
      */
-    countryCode: string;
+    countryCode?: string;
     /**
      * E-mail address of the contact
      */
@@ -471,7 +471,7 @@ export interface CpsThirdPartyEnrollmentAdminContact {
     /**
      * Organization where contact is hired
      */
-    organization: string;
+    organization?: string;
     /**
      * Phone number of the contact
      */
@@ -479,11 +479,11 @@ export interface CpsThirdPartyEnrollmentAdminContact {
     /**
      * Postal code of the contact
      */
-    postalCode: string;
+    postalCode?: string;
     /**
      * The region of the contact
      */
-    region: string;
+    region?: string;
     /**
      * Title of the the contact
      */
@@ -606,7 +606,7 @@ export interface CpsThirdPartyEnrollmentTechContact {
     /**
      * The address of the contact
      */
-    addressLineOne: string;
+    addressLineOne?: string;
     /**
      * The address of the contact
      */
@@ -614,11 +614,11 @@ export interface CpsThirdPartyEnrollmentTechContact {
     /**
      * City of residence of the contact
      */
-    city: string;
+    city?: string;
     /**
      * Country code of the contact
      */
-    countryCode: string;
+    countryCode?: string;
     /**
      * E-mail address of the contact
      */
@@ -634,7 +634,7 @@ export interface CpsThirdPartyEnrollmentTechContact {
     /**
      * Organization where contact is hired
      */
-    organization: string;
+    organization?: string;
     /**
      * Phone number of the contact
      */
@@ -642,11 +642,11 @@ export interface CpsThirdPartyEnrollmentTechContact {
     /**
      * Postal code of the contact
      */
-    postalCode: string;
+    postalCode?: string;
     /**
      * The region of the contact
      */
-    region: string;
+    region?: string;
     /**
      * Title of the the contact
      */
@@ -1129,7 +1129,7 @@ export interface GetCPSEnrollmentAdminContact {
     /**
      * The address of the contact
      */
-    addressLineOne: string;
+    addressLineOne?: string;
     /**
      * The address of the contact
      */
@@ -1137,11 +1137,11 @@ export interface GetCPSEnrollmentAdminContact {
     /**
      * City of residence of the contact
      */
-    city: string;
+    city?: string;
     /**
      * Country code of the contact
      */
-    countryCode: string;
+    countryCode?: string;
     /**
      * E-mail address of the contact
      */
@@ -1157,7 +1157,7 @@ export interface GetCPSEnrollmentAdminContact {
     /**
      * Organization where contact is hired
      */
-    organization: string;
+    organization?: string;
     /**
      * Phone number of the contact
      */
@@ -1165,11 +1165,11 @@ export interface GetCPSEnrollmentAdminContact {
     /**
      * Postal code of the contact
      */
-    postalCode: string;
+    postalCode?: string;
     /**
      * The region of the contact
      */
-    region: string;
+    region?: string;
     /**
      * Title of the the contact
      */
@@ -1322,7 +1322,7 @@ export interface GetCPSEnrollmentTechContact {
     /**
      * The address of the contact
      */
-    addressLineOne: string;
+    addressLineOne?: string;
     /**
      * The address of the contact
      */
@@ -1330,11 +1330,11 @@ export interface GetCPSEnrollmentTechContact {
     /**
      * City of residence of the contact
      */
-    city: string;
+    city?: string;
     /**
      * Country code of the contact
      */
-    countryCode: string;
+    countryCode?: string;
     /**
      * E-mail address of the contact
      */
@@ -1350,7 +1350,7 @@ export interface GetCPSEnrollmentTechContact {
     /**
      * Organization where contact is hired
      */
-    organization: string;
+    organization?: string;
     /**
      * Phone number of the contact
      */
@@ -1358,11 +1358,11 @@ export interface GetCPSEnrollmentTechContact {
     /**
      * Postal code of the contact
      */
-    postalCode: string;
+    postalCode?: string;
     /**
      * The region of the contact
      */
-    region: string;
+    region?: string;
     /**
      * Title of the the contact
      */
@@ -1374,6 +1374,10 @@ export interface GetCPSEnrollmentsEnrollment {
      * Contact information for the certificate administrator used at organization
      */
     adminContacts: outputs.GetCPSEnrollmentsEnrollmentAdminContact[];
+    /**
+     * Slots where the certificate either will be deployed or is already deployed
+     */
+    assignedSlots: number[];
     /**
      * Certificate trust chain type
      */
@@ -1403,6 +1407,10 @@ export interface GetCPSEnrollmentsEnrollment {
      */
     networkConfigurations: outputs.GetCPSEnrollmentsEnrollmentNetworkConfiguration[];
     /**
+     * The Digicert unique identifier for the organization
+     */
+    orgId: number;
+    /**
      * Organization information
      */
     organizations: outputs.GetCPSEnrollmentsEnrollmentOrganization[];
@@ -1410,6 +1418,10 @@ export interface GetCPSEnrollmentsEnrollment {
      * Whether some changes are pending
      */
     pendingChanges: boolean;
+    /**
+     * Slots where the certificate is deployed on the production network
+     */
+    productionSlots: number[];
     /**
      * The registration authority or certificate authority (CA) used to obtain a certificate
      */
@@ -1431,6 +1443,10 @@ export interface GetCPSEnrollmentsEnrollment {
      */
     sniOnly: boolean;
     /**
+     * Slots where the certificate is deployed on the staging network
+     */
+    stagingSlots: number[];
+    /**
      * Contact information for an administrator at Akamai
      */
     techContacts: outputs.GetCPSEnrollmentsEnrollmentTechContact[];
@@ -1444,7 +1460,7 @@ export interface GetCPSEnrollmentsEnrollmentAdminContact {
     /**
      * The address of the contact
      */
-    addressLineOne: string;
+    addressLineOne?: string;
     /**
      * The address of the contact
      */
@@ -1452,11 +1468,11 @@ export interface GetCPSEnrollmentsEnrollmentAdminContact {
     /**
      * City of residence of the contact
      */
-    city: string;
+    city?: string;
     /**
      * Country code of the contact
      */
-    countryCode: string;
+    countryCode?: string;
     /**
      * E-mail address of the contact
      */
@@ -1472,7 +1488,7 @@ export interface GetCPSEnrollmentsEnrollmentAdminContact {
     /**
      * Organization where contact is hired
      */
-    organization: string;
+    organization?: string;
     /**
      * Phone number of the contact
      */
@@ -1480,11 +1496,11 @@ export interface GetCPSEnrollmentsEnrollmentAdminContact {
     /**
      * Postal code of the contact
      */
-    postalCode: string;
+    postalCode?: string;
     /**
      * The region of the contact
      */
-    region: string;
+    region?: string;
     /**
      * Title of the the contact
      */
@@ -1607,7 +1623,7 @@ export interface GetCPSEnrollmentsEnrollmentTechContact {
     /**
      * The address of the contact
      */
-    addressLineOne: string;
+    addressLineOne?: string;
     /**
      * The address of the contact
      */
@@ -1615,11 +1631,11 @@ export interface GetCPSEnrollmentsEnrollmentTechContact {
     /**
      * City of residence of the contact
      */
-    city: string;
+    city?: string;
     /**
      * Country code of the contact
      */
-    countryCode: string;
+    countryCode?: string;
     /**
      * E-mail address of the contact
      */
@@ -1635,7 +1651,7 @@ export interface GetCPSEnrollmentsEnrollmentTechContact {
     /**
      * Organization where contact is hired
      */
-    organization: string;
+    organization?: string;
     /**
      * Phone number of the contact
      */
@@ -1643,11 +1659,11 @@ export interface GetCPSEnrollmentsEnrollmentTechContact {
     /**
      * Postal code of the contact
      */
-    postalCode: string;
+    postalCode?: string;
     /**
      * The region of the contact
      */
-    region: string;
+    region?: string;
     /**
      * Title of the the contact
      */
@@ -4276,6 +4292,10 @@ export interface GetGtmDomainPropertyLink {
 
 export interface GetGtmDomainPropertyLivenessTest {
     /**
+     * List of alternate trust anchors (CA certificates)
+     */
+    alternateCaCertificates: string[];
+    /**
      * If testObjectProtocol is DNS, DOH or DOT, requires an answer to the DNS query to be considered a success.
      */
     answersRequired: boolean;
@@ -4308,6 +4328,14 @@ export interface GetGtmDomainPropertyLivenessTest {
      */
     httpHeaders?: outputs.GetGtmDomainPropertyLivenessTestHttpHeader[];
     /**
+     * Contains HTTP method to send if the `testObjectProtocol` is `http` or `https`. Supported values are `TRACE`, `HEAD`, `OPTIONS`, `GET`, `PUT`, `POST`, `PATCH`, `DELETE`. When omitted or `null`, this value defaults to `GET`.
+     */
+    httpMethod: string;
+    /**
+     * Contains Base64-encoded HTTP request body to send if the `testObjectProtocol` is `http` or `https`. When omitted or `null`, omits the request body from the request.
+     */
+    httpRequestBody: string;
+    /**
      * A descriptive name for the liveness test.
      */
     name: string;
@@ -4315,6 +4343,10 @@ export interface GetGtmDomainPropertyLivenessTest {
      * Validates the origin certificate. Applies only to tests with testObjectProtocol of https.
      */
     peerCertificateVerification: boolean;
+    /**
+     * Whether to enable backwards compatibility for liveness endpoints that use older TLS protocols
+     */
+    pre2023SecurityPosture: boolean;
     /**
      * Indicates that if testObjectProtocol is DNS, DOH or DOT, the DNS query is recursive.
      */
@@ -4416,6 +4448,10 @@ export interface GetGtmDomainPropertyTrafficTarget {
      * An alternative label for the traffic target.
      */
     name: string;
+    /**
+     * Non-negative integer that ranks the order of the backups that GTM will hand out in the event that the primary Traffic Target has been declared down
+     */
+    precedence: number;
     /**
      * Identifies the IP address or the hostnames of the servers.
      */
@@ -64048,6 +64084,11413 @@ export interface GetPropertyRulesBuilderRulesV20240109Variable {
     value: string;
 }
 
+export interface GetPropertyRulesBuilderRulesV20240212 {
+    /**
+     * XML metadata of the rule
+     */
+    advancedOverride?: string;
+    /**
+     * The list of behaviors for a rule
+     */
+    behaviors?: outputs.GetPropertyRulesBuilderRulesV20240212Behavior[];
+    /**
+     * A list of child rules for a particular rule in JSON format
+     */
+    childrens?: string[];
+    /**
+     * The comments for a rule
+     */
+    comments?: string;
+    /**
+     * States whether changes to 'criterion' objects are prohibited
+     */
+    criteriaLocked?: boolean;
+    /**
+     * States whether 'all' criteria need to match or 'any'
+     */
+    criteriaMustSatisfy?: string;
+    /**
+     * The list of criteria for a rule
+     */
+    criterions?: outputs.GetPropertyRulesBuilderRulesV20240212Criterion[];
+    /**
+     * XML metadata of the rule
+     */
+    customOverride?: outputs.GetPropertyRulesBuilderRulesV20240212CustomOverride;
+    /**
+     * States whether a rule is secure
+     */
+    isSecure?: boolean;
+    /**
+     * The name of a rule
+     */
+    name: string;
+    /**
+     * The template link for the rule
+     */
+    templateLink?: string;
+    /**
+     * The UUID of a rule template
+     */
+    templateUuid?: string;
+    /**
+     * The UUID of the rule
+     */
+    uuid?: string;
+    /**
+     * A list of variables for a rule
+     */
+    variables?: outputs.GetPropertyRulesBuilderRulesV20240212Variable[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212Behavior {
+    /**
+     * This behavior works with `manifestRerouting` to provide the scale and reliability of Akamai network while simultaneously allowing third party partners to modify the requested media content with value-added features. The `adScalerCircuitBreaker` behavior specifies the fallback action in case the technology partner encounters errors and can't modify the requested media object. This behavior cannot be used in includes.
+     */
+    adScalerCircuitBreaker?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorAdScalerCircuitBreaker;
+    /**
+     * Adaptive Acceleration uses HTTP/2 server push functionality with Ion properties to pre-position content and improve the performance of HTML page loading based on real user monitoring (RUM) timing data. It also helps browsers to preconnect to content that’s likely needed for upcoming requests. To use this behavior, make sure you enable the `http2` behavior. Use the `Adaptive Acceleration API` to report on the set of assets this feature optimizes. This behavior cannot be used in includes.
+     */
+    adaptiveAcceleration?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorAdaptiveAcceleration;
+    /**
+     * The Adaptive Image Compression feature compresses JPEG images depending on the requesting network's performance, thus improving response time. The behavior specifies three performance tiers based on round-trip tests: 1 for excellent, 2 for good, and 3 for poor. It assigns separate performance criteria for mobile (cellular) and non-mobile networks, which the `compressMobile` and `compressStandard` options enable independently. This behavior can be used in includes.
+     */
+    adaptiveImageCompression?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorAdaptiveImageCompression;
+    /**
+     * This specifies Akamai XML metadata. It can only be configured on your behalf by Akamai Professional Services. This behavior is for internal usage only. This behavior cannot be used in includes.
+     */
+    advanced?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorAdvanced;
+    /**
+     * Configure a custom report that collects traffic data. The data is based on one to four variables, such as `sum`, `average`, `min`, and `max`. These aggregation attributes help compile traffic data summaries. This behavior cannot be used in includes.
+     */
+    aggregatedReporting?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorAggregatedReporting;
+    /**
+     * This allows you to run regular expression substitutions over web pages. To apply this behavior, you need to match on a `contentType`. Contact Akamai Professional Services for help configuring the Akamaizer. See also the `akamaizerTag` behavior. This behavior is for internal usage only. This behavior can be used in includes.
+     */
+    akamaizer?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorAkamaizer;
+    /**
+     * This specifies HTML tags and replacement rules for hostnames used in conjunction with the `akamaizer` behavior. Contact Akamai Professional Services for help configuring the Akamaizer. This behavior is for internal usage only. This behavior can be used in includes.
+     */
+    akamaizerTag?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorAkamaizerTag;
+    /**
+     * Allow all HTTP request methods to be used for the edge's parent servers, useful to implement features such as `Site Shield`, `SureRoute`, and Tiered Distribution. (See the `siteShield`, `sureRoute`, and `tieredDistribution` behaviors.) This behavior can be used in includes.
+     */
+    allHttpInCacheHierarchy?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorAllHttpInCacheHierarchy;
+    /**
+     * Allows Cloudlets Origins to determine the criteria, separately from the Property Manager, under which alternate `origin` definitions are assigned. This behavior cannot be used in includes.
+     */
+    allowCloudletsOrigins?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorAllowCloudletsOrigins;
+    /**
+     * Allow HTTP requests using the DELETE method. By default, GET, HEAD, and OPTIONS requests are allowed, and all other methods result in a 501 error. Such content does not cache, and any DELETE requests pass to the origin. See also the `allowOptions`, `allowPatch`, `allowPost`, and `allowPut` behaviors. This behavior can be used in includes.
+     */
+    allowDelete?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorAllowDelete;
+    /**
+     * HTTPS cache key sharing allows HTTP requests to be served from an HTTPS cache. This behavior can be used in includes.
+     */
+    allowHttpsCacheKeySharing?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorAllowHttpsCacheKeySharing;
+    /**
+     * Passes HTTPS requests to origin as HTTP. This is useful when incorporating Standard TLS or Akamai's shared certificate delivery security with an origin that serves HTTP traffic. This behavior can be used in includes.
+     */
+    allowHttpsDowngrade?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorAllowHttpsDowngrade;
+    /**
+     * GET, HEAD, and OPTIONS requests are allowed by default. All other HTTP methods result in a 501 error. For full support of Cross-Origin Resource Sharing (CORS), you need to allow requests that use the OPTIONS method. If you're using the `corsSupport` behavior, do not disable OPTIONS requests. The response to an OPTIONS request is not cached, so the request always goes through the Akamai network to your origin, unless you use the `constructResponse` behavior to send responses directly from the Akamai network. See also the `allowDelete`, `allowPatch`, `allowPost`, and `allowPut` behaviors. This behavior can be used in includes.
+     */
+    allowOptions?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorAllowOptions;
+    /**
+     * Allow HTTP requests using the PATCH method. By default, GET, HEAD, and OPTIONS requests are allowed, and all other methods result in a 501 error. Such content does not cache, and any PATCH requests pass to the origin. See also the `allowDelete`, `allowOptions`, `allowPost`, and `allowPut` behaviors. This behavior can be used in includes.
+     */
+    allowPatch?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorAllowPatch;
+    /**
+     * Allow HTTP requests using the POST method. By default, GET, HEAD, and OPTIONS requests are allowed, and POST requests are denied with 403 error. All other methods result in a 501 error. See also the `allowDelete`, `allowOptions`, `allowPatch`, and `allowPut` behaviors. This behavior can be used in includes.
+     */
+    allowPost?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorAllowPost;
+    /**
+     * Allow HTTP requests using the PUT method.  By default, GET, HEAD, and OPTIONS requests are allowed, and all other methods result in a 501 error. Such content does not cache, and any PUT requests pass to the origin. See also the `allowDelete`, `allowOptions`, `allowPatch`, and `allowPost` behaviors. This behavior can be used in includes.
+     */
+    allowPut?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorAllowPut;
+    /**
+     * Controls whether to allow or deny Chunked Transfer Encoding (CTE) requests to pass to your origin. If your origin supports CTE, you should enable this behavior. This behavior also protects against a known issue when pairing `http2` and `webdav` behaviors within the same rule tree, in which case it's required. This behavior can be used in includes.
+     */
+    allowTransferEncoding?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorAllowTransferEncoding;
+    /**
+     * Sets the maximum age value for the Alternative Services (`Alt-Svc`) header. This behavior can be used in includes.
+     */
+    altSvcHeader?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorAltSvcHeader;
+    /**
+     * Enables the API Prioritization Cloudlet, which maintains continuity in user experience by serving an alternate static response when load is too high. You can configure rules using either the Cloudlets Policy Manager application or the `Cloudlets API`. Use this feature serve static API content, such as fallback JSON data.  To serve non-API HTML content, use the `visitorPrioritization` behavior. This behavior can be used in includes.
+     */
+    apiPrioritization?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorApiPrioritization;
+    /**
+     * Enables the Application Load Balancer Cloudlet, which automates load balancing based on configurable criteria. To configure this behavior, use either the Cloudlets Policy Manager or the `Cloudlets API` to set up a policy. This behavior cannot be used in includes.
+     */
+    applicationLoadBalancer?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorApplicationLoadBalancer;
+    /**
+     * Allows you to divide your users into different segments based on a persistent cookie. You can configure rules using either the Cloudlets Policy Manager application or the `Cloudlets API`. This behavior cannot be used in includes.
+     */
+    audienceSegmentation?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorAudienceSegmentation;
+    /**
+     * This behavior allows standard TLS domain validated certificates to renew automatically. Apply it after using the `Certificate Provisioning System` to request a certificate for a hostname.  To provision certificates programmatically, see the `Certificate Provisioning System API`. This behavior can be used in includes.
+     */
+    autoDomainValidation?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorAutoDomainValidation;
+    /**
+     * Prefix URLs sent to the origin with a base path. This behavior can be used in includes.
+     */
+    baseDirectory?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorBaseDirectory;
+    /**
+     * Triggers diagnostic data beacons for use with BOSS, Akamai's monitoring and diagnostics system. This behavior is for internal usage only. This behavior can be used in includes.
+     */
+    bossBeaconing?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorBossBeaconing;
+    /**
+     * Provides per-HTTP transaction visibility into a request for content, regardless of how deep the request goes into the Akamai platform. The `Akamai-Request-BC` response header includes various data, such as network health and the location in the Akamai network used to serve content, which simplifies log review for troubleshooting. This behavior can be used in includes.
+     */
+    breadcrumbs?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorBreadcrumbs;
+    /**
+     * This behavior simulates an origin connection problem, typically to test an accompanying `failAction` policy. This behavior can be used in includes.
+     */
+    breakConnection?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorBreakConnection;
+    /**
+     * Accesses Brotli-compressed assets from your origin and caches them on edge servers. This doesn't compress resources within the content delivery network in real time. You need to set up Brotli compression separately on your origin. If a requesting client doesn't support Brotli, edge servers deliver non-Brotli resources. This behavior can be used in includes.
+     */
+    brotli?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorBrotli;
+    /**
+     * Caches the origin's error responses to decrease server load. Applies for 10 seconds by default to the following HTTP codes: `204`, `305`, `404`, `405`, `501`, `502`, `503`, `504`, and `505`. This behavior can be used in includes.
+     */
+    cacheError?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorCacheError;
+    /**
+     * Controls which query parameters, headers, and cookies are included in or excluded from the cache key identifier. This behavior can be used in includes.
+     */
+    cacheId?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorCacheId;
+    /**
+     * By default, cache keys are generated under the assumption that path and filename components are case-sensitive, so that `File.html` and `file.html` use separate cache keys. Enabling this behavior forces URL components whose case varies to resolve to the same cache key. Enable this behavior if your origin server is already case-insensitive, such as those based on Microsoft IIS. This behavior can be used in includes.
+     */
+    cacheKeyIgnoreCase?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorCacheKeyIgnoreCase;
+    /**
+     * By default, cache keys are formed as URLs with full query strings. This behavior allows you to consolidate cached objects based on specified sets of query parameters. This behavior can be used in includes.
+     */
+    cacheKeyQueryParams?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorCacheKeyQueryParams;
+    /**
+     * This behavior rewrites a default cache key's path. Contact Akamai Professional Services for help configuring it. This behavior is for internal usage only. This behavior can be used in includes.
+     */
+    cacheKeyRewrite?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorCacheKeyRewrite;
+    /**
+     * By default, POST requests are passed to the origin. This behavior overrides the default, and allows you to cache POST responses. This behavior can be used in includes.
+     */
+    cachePost?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorCachePost;
+    /**
+     * Controls the caching of HTTP 302 and 307 temporary redirects. By default, Akamai edge servers don't cache them. Enabling this behavior instructs edge servers to allow these redirects to be cached the same as HTTP 200 responses. This behavior can be used in includes.
+     */
+    cacheRedirect?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorCacheRedirect;
+    /**
+     * This adds a cache tag to the requested object. With cache tags, you can flexibly fast purge tagged segments of your cached content. You can either define these tags with an `Edge-Cache-Tag` header at the origin server level, or use this behavior to directly add a cache tag to the object as the edge server caches it. The `cacheTag` behavior can only take a single value, including a variable. If you want to specify more tags for an object, add a few instances of this behavior to your configuration. This behavior can be used in includes.
+     */
+    cacheTag?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorCacheTag;
+    /**
+     * Cache tags are comma-separated string values you define within an `Edge-Cache-Tag` header. You can use them to flexibly fast purge tagged segments of your cached content. You can either define these headers at the origin server level, or use the `modifyOutgoingResponseHeader` behavior to configure them at the edge.  Apply this behavior to confirm you're deploying the intended set of cache tags to your content. This behavior can be used in includes.
+     */
+    cacheTagVisible?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorCacheTagVisible;
+    /**
+     * Control content caching on edge servers: whether or not to cache, whether to honor the origin's caching headers, and for how long to cache.  Note that any `NO_STORE` or `BYPASS_CACHE` HTTP headers set on the origin's content override this behavior. For more details on how caching works in Property Manager, see the `Learn about caching` section in the guide. This behavior can be used in includes.
+     */
+    caching?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorCaching;
+    /**
+     * Forward client requests to the origin server for authorization, along with optional `Set-Cookie` headers, useful when you need to maintain tight access control. The edge server forwards an `If-Modified-Since` header, to which the origin needs to respond with a `304` (Not-Modified) HTTP status when authorization succeeds. If so, the edge server responds to the client with the cached object, since it does not need to be re-acquired from the origin. This behavior can be used in includes.
+     */
+    centralAuthorization?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorCentralAuthorization;
+    /**
+     * Controls whether the edge server chases any redirects served from the origin. This behavior can be used in includes.
+     */
+    chaseRedirects?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorChaseRedirects;
+    /**
+     * Sends a `Client-To-Edge` header to your origin server with details from the mutual TLS certificate sent from the requesting client to the edge network. This establishes transitive trust between the client and your origin server. This behavior can be used in includes.
+     */
+    clientCertificateAuth?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorClientCertificateAuth;
+    /**
+     * Specifies characteristics of the client ecosystem. Akamai uses this information to optimize your metadata configuration, which may result in better end-user performance. This behavior can be used in includes.
+     */
+    clientCharacteristics?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorClientCharacteristics;
+    /**
+     * Cloud Interconnects forwards traffic from edge servers to your cloud origin through Private Network Interconnects (PNIs), helping to reduce the egress costs at the origin. Supports origins hosted by Google Cloud Provider (GCP). This behavior cannot be used in includes.
+     */
+    cloudInterconnects?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorCloudInterconnects;
+    /**
+     * `Cloud Wrapper` maximizes origin offload for large libraries of video, game, and software downloads by optimizing data caches in regions nearest to your origin. You can't use this behavior in conjunction with `sureRoute` or `tieredDistribution`. This behavior cannot be used in includes.
+     */
+    cloudWrapper?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorCloudWrapper;
+    /**
+     * Your account representative uses this behavior to implement a customized failover configuration on your behalf. Use Cloud Wrapper Advanced with an enabled `cloudWrapper` behavior in the same rule. This behavior is for internal usage only. This behavior cannot be used in includes.
+     */
+    cloudWrapperAdvanced?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorCloudWrapperAdvanced;
+    /**
+     * Use this behavior to send expanded playback information as CMCD metadata in requests from a media player. Edge servers may use this metadata for segment prefetching to optimize your content's delivery, or for logging. For more details and additional property requirements, see the `Adaptive Media Delivery` documentation. This behavior can be used in includes.
+     */
+    commonMediaClientData?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorCommonMediaClientData;
+    /**
+     * This behavior cannot be used in includes.
+     */
+    conditionalOrigin?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorConditionalOrigin;
+    /**
+     * This behavior constructs an HTTP response, complete with HTTP status code and body, to serve from the edge independently of your origin. For example, you might want to send a customized response if the URL doesn't point to an object on the origin server, or if the end user is not authorized to view the requested content. You can use it with all request methods you allow for your property, including POST. For more details, see the `allowOptions`, `allowPatch`, `allowPost`, `allowPut`, and `allowDelete` behaviors. This behavior can be used in includes.
+     */
+    constructResponse?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorConstructResponse;
+    /**
+     * Specifies characteristics of the delivered content. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior can be used in includes.
+     */
+    contentCharacteristics?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorContentCharacteristics;
+    /**
+     * Specifies characteristics of the delivered content. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior can be used in includes.
+     */
+    contentCharacteristicsAmd?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorContentCharacteristicsAmd;
+    /**
+     * Specifies characteristics of the delivered content. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior can be used in includes.
+     */
+    contentCharacteristicsDd?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorContentCharacteristicsDd;
+    /**
+     * Specifies characteristics of the delivered content, specifically targeted to delivering large files. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior can be used in includes.
+     */
+    contentCharacteristicsWsdLargeFile?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorContentCharacteristicsWsdLargeFile;
+    /**
+     * Specifies characteristics of the delivered content, specifically targeted to delivering live video. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior can be used in includes.
+     */
+    contentCharacteristicsWsdLive?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorContentCharacteristicsWsdLive;
+    /**
+     * Specifies characteristics of the delivered content, specifically targeted to delivering on-demand video. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior can be used in includes.
+     */
+    contentCharacteristicsWsdVod?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorContentCharacteristicsWsdVod;
+    /**
+     * Content Preposition. This behavior can be used in includes.
+     */
+    contentPrePosition?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorContentPrePosition;
+    /**
+     * Content Targeting is based on `EdgeScape`, Akamai's location-based access control system.  You can use it to allow or deny access to a set of geographic regions or IP addresses. This behavior can be used in includes.
+     */
+    contentTargetingProtection?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorContentTargetingProtection;
+    /**
+     * Cross-origin resource sharing (CORS) allows web pages in one domain to access restricted resources from your domain. Specify external origin hostnames, methods, and headers that you want to accept via HTTP response headers. Full support of CORS requires allowing requests that use the OPTIONS method. See `allowOptions`. This behavior can be used in includes.
+     */
+    corsSupport?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorCorsSupport;
+    /**
+     * Content Provider Codes (CP codes) allow you to distinguish various reporting and billing traffic segments, and you need them to access properties. You receive an initial CP code when purchasing Akamai, and you can run the `Create a new CP code` operation to generate more. This behavior applies any valid CP code, either as required as a default at the top of the rule tree, or subsequently to override the default. For a CP code to be valid, it needs to be assigned the same contract and product as the property, and the group needs access to it.  For available values, run the `List CP codes` operation. This behavior can be used in includes.
+     */
+    cpCode?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorCpCode;
+    /**
+     * Allows you to insert a customized XML metadata behavior into any property's rule tree.  Talk to your Akamai representative to implement the customized behavior. Once it's ready, run PAPI's `List custom behaviors` operation, then apply the relevant `behaviorId` value from the response within the current `customBehavior`. See `Custom behaviors and overrides` for guidance on custom metadata behaviors. This behavior can be used in includes.
+     */
+    customBehavior?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorCustomBehavior;
+    /**
+     * The `DataStream` reporting service provides real-time logs on application activity, including aggregated metrics on complete request and response cycles and origin response times.  Apply this behavior to report on this set of traffic.  Use the `DataStream API` to aggregate the data. This behavior cannot be used in includes.
+     */
+    datastream?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorDatastream;
+    /**
+     * The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. (The `IoT Edge Connect API` allows programmatic access.) This behavior allows you to select previously reserved namespaces and set the protocols for users to publish and receive messages within these namespaces.  Use the `verifyJsonWebTokenForDcp` behavior to control access. This behavior cannot be used in includes.
+     */
+    dcp?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorDcp;
+    /**
+     * The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. In conjunction with `dcpAuthVariableExtractor`, this behavior affects how clients can authenticate themselves to edge servers, and which groups within namespaces are authorized to access topics. It transforms a source string value extracted from the client certificate and stored as a variable, then generates a hash value based on the selected algorithm, for use in authenticating the client request. This behavior cannot be used in includes.
+     */
+    dcpAuthHmacTransformation?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorDcpAuthHmacTransformation;
+    /**
+     * The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. In conjunction with `dcpAuthVariableExtractor`, this behavior affects how clients can authenticate themselves to edge servers, and which groups within namespaces are authorized to access topics. It transforms a source string value extracted from the client certificate and stored as a variable, then transforms the string based on a regular expression search pattern, for use in authenticating the client request. This behavior cannot be used in includes.
+     */
+    dcpAuthRegexTransformation?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorDcpAuthRegexTransformation;
+    /**
+     * The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. In conjunction with `dcpAuthVariableExtractor`, this behavior affects how clients can authenticate themselves to edge servers, and which groups within namespaces are authorized to access topics. It transforms a source string value extracted from the client certificate and stored as a variable, then extracts a substring, for use in authenticating the client request. This behavior cannot be used in includes.
+     */
+    dcpAuthSubstringTransformation?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorDcpAuthSubstringTransformation;
+    /**
+     * The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. This behavior affects how clients can authenticate themselves to edge servers, and which groups within namespaces are authorized to access topics. When enabled, this behavior allows end users to authenticate their requests with valid x509 client certificates. Either a client identifier or access authorization groups are required to make the request valid. This behavior cannot be used in includes.
+     */
+    dcpAuthVariableExtractor?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorDcpAuthVariableExtractor;
+    /**
+     * The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. This behavior defines a set of default authorization groups to add to each request the property configuration controls.  These groups have access regardless of the authentication method you use, either JWT using the `verifyJsonWebTokenForDcp` behavior, or mutual authentication using the `dcpAuthVariableExtractor` behavior to control where authorization groups are extracted from within certificates. This behavior cannot be used in includes.
+     */
+    dcpDefaultAuthzGroups?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorDcpDefaultAuthzGroups;
+    /**
+     * The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. This behavior allows Akamai-external clients to use developer test accounts in a shared environment. In conjunction with `verifyJsonWebTokenForDcp`, this behavior allows you to use your own JWTs in your requests, or those generated by Akamai. It lets you either enable the default JWT server for your test configuration by setting the authentication endpoint to a default path, or specify custom settings for your JWT server and the authentication endpoint. This behavior cannot be used in includes.
+     */
+    dcpDevRelations?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorDcpDevRelations;
+    /**
+     * INTERNAL ONLY: The `Internet of Things: Edge Connect` product allows connected users and devices to communicate on a publish-subscribe basis within reserved namespaces. This behavior lets you configure the real time authentication to edge servers. This behavior is for internal usage only. This behavior cannot be used in includes.
+     */
+    dcpRealTimeAuth?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorDcpRealTimeAuth;
+    /**
+     * A static behavior that's required when specifying the Cloud Monitor module's (`edgeConnect` behavior. You can only apply this behavior if the property is marked as secure. See `Secure property requirements` for guidance. This behavior can be used in includes.
+     */
+    deliveryReceipt?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorDeliveryReceipt;
+    /**
+     * Assuming a condition in the rule matches, this denies access to the requested content. For example, a `userLocation` match paired with this behavior would deny requests from a specified part of the world. This behavior can be used in includes.
+     */
+    denyAccess?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorDenyAccess;
+    /**
+     * A static behavior required for all properties that implement a failover under the Cloud Security Failover product. This behavior can be used in includes.
+     */
+    denyDirectFailoverAccess?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorDenyDirectFailoverAccess;
+    /**
+     * By default, source URLs serve as cache IDs on edge servers. Electronic Data Capture allows you to specify an additional set of device characteristics to generate separate cache keys. Use this in conjunction with the `deviceCharacteristicHeader` behavior. This behavior can be used in includes.
+     */
+    deviceCharacteristicCacheId?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorDeviceCharacteristicCacheId;
+    /**
+     * Sends selected information about requesting devices to the origin server, in the form of an `X-Akamai-Device-Characteristics` HTTP header. Use in conjunction with the `deviceCharacteristicCacheId` behavior. This behavior can be used in includes.
+     */
+    deviceCharacteristicHeader?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorDeviceCharacteristicHeader;
+    /**
+     * Allow an edge server to use an expired DNS record when forwarding a request to your origin. The `type A` DNS record refreshes `after` content is served to the end user, so there is no wait for the DNS resolution. Avoid this behavior if you want to be able to disable a server immediately after its DNS record expires. This behavior can be used in includes.
+     */
+    dnsAsyncRefresh?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorDnsAsyncRefresh;
+    /**
+     * Allows edge servers to refresh your origin's DNS record independently from end-user requests. The `type A` DNS record refreshes before the origin's DNS record expires. This behavior is for internal usage only. This behavior can be used in includes.
+     */
+    dnsPrefresh?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorDnsPrefresh;
+    /**
+     * Serve static objects to the end-user client over HTTPS, but fetch them from the origin via HTTP. This behavior cannot be used in includes.
+     */
+    downgradeProtocol?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorDowngradeProtocol;
+    /**
+     * The `Internet of Things: OTA Updates` product allows customers to securely distribute firmware to devices over cellular networks.  Based on match criteria that executes a rule, this behavior logs requests to the OTA servers as completed in aggregated and individual reports. This behavior can be used in includes.
+     */
+    downloadCompleteMarker?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorDownloadCompleteMarker;
+    /**
+     * The `Internet of Things: OTA Updates` product allows customers to securely distribute firmware to devices over cellular networks. Based on match criteria that executes a rule, this behavior allows requests to the `OTA Updates API` for a list of completed downloads to individual vehicles. This behavior cannot be used in includes.
+     */
+    downloadNotification?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorDownloadNotification;
+    /**
+     * Specify the caching instructions the edge server sends to the end user's client or client proxies. By default, the cache's duration is whichever is less: the remaining lifetime of the edge cache, or what the origin's header specifies. If the origin is set to `no-store` or `bypass-cache`, edge servers send `cache-busting` headers downstream to prevent downstream caching. This behavior can be used in includes.
+     */
+    downstreamCache?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorDownstreamCache;
+    /**
+     * Enables `quick retry`, which detects slow forward throughput while fetching an object, and attempts a different forward connection path to avoid congestion. By default, connections under 5 mbps trigger this behavior. When the transfer rate drops below this rate during a connection attempt, quick retry is enabled and a different forward connection path is used. Contact Akamai Professional Services to override this threshold. This behavior can be used in includes.
+     */
+    dynamicThroughtputOptimization?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorDynamicThroughtputOptimization;
+    /**
+     * This overrides the default threshold of 5 Mbps that triggers the `dynamicThroughtputOptimization` behavior, which enables the quick retry feature. Quick retry detects slow forward throughput while fetching an object, and attempts a different forward connection path to avoid congestion. This behavior is for internal usage only. This behavior can be used in includes.
+     */
+    dynamicThroughtputOptimizationOverride?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorDynamicThroughtputOptimizationOverride;
+    /**
+     * In conjunction with the `subCustomer` behavior, this optional behavior allows you to control how dynamic web content behaves for your subcustomers using `Akamai Cloud Embed`. This behavior can be used in includes.
+     */
+    dynamicWebContent?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorDynamicWebContent;
+    /**
+     * Uploads a ZIP archive with objects to an existing data set. The target data set stores objects as key-value pairs. The path to an object in the ZIP archive is a key, and the content of an object is a value. For an overview, see `ecmsDatabase`. This behavior cannot be used in includes.
+     */
+    ecmsBulkUpload?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorEcmsBulkUpload;
+    /**
+     * Edge Connect Message Store is available for `Internet of Things: Edge Connect` users. It lets you create databases and data sets within these databases. You can use this object store to save files smaller than 2 GB. `ecmsDatabase` specifies a default database for requests to this property, unless indicated otherwise in the URL. To access objects in the default database, you can skip its name in the URLs. To access objects in a different database, pass its name in the header, query parameter, or a regular expression matching a URL segment. You can also configure the `ecmsDataset` behavior to specify a default data set for requests. This behavior cannot be used in includes.
+     */
+    ecmsDatabase?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorEcmsDatabase;
+    /**
+     * Specifies a default data set for requests to this property unless indicated otherwise in the URL. To access objects in this data set, you can skip the data set name in the URLs. To access objects in a different data set within a database, pass the data set name in the header, query parameter, or a regular expression pattern matching a URL segment. You can also configure the `ecmsDatabase` behavior to specify a default database for requests. This behavior cannot be used in includes.
+     */
+    ecmsDataset?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorEcmsDataset;
+    /**
+     * Defines a regular expression to match object keys in custom URLs and to access objects in a data set. You can point custom URLs to access proper values in the target data set. For an overview, see `ecmsDatabase`. This behavior cannot be used in includes.
+     */
+    ecmsObjectKey?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorEcmsObjectKey;
+    /**
+     * Configures traffic logs for the Cloud Monitor push API. This behavior can be used in includes.
+     */
+    edgeConnect?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorEdgeConnect;
+    /**
+     * This behavior implements customized Edge Load Balancing features. Contact Akamai Professional Services for help configuring it. This behavior is for internal usage only. This behavior cannot be used in includes.
+     */
+    edgeLoadBalancingAdvanced?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorEdgeLoadBalancingAdvanced;
+    /**
+     * The Edge Load Balancing module allows you to specify groups of data centers that implement load balancing, session persistence, and real-time dynamic failover. Enabling ELB routes requests contextually based on location, device, or network, along with optional rules you specify. This behavior cannot be used in includes.
+     */
+    edgeLoadBalancingDataCenter?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorEdgeLoadBalancingDataCenter;
+    /**
+     * The Edge Load Balancing module allows you to implement groups of data centers featuring load balancing, session persistence, and real-time dynamic failover. Enabling ELB routes requests contextually based on location, device, or network, along with optional rules you specify. This behavior cannot be used in includes.
+     */
+    edgeLoadBalancingOrigin?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorEdgeLoadBalancingOrigin;
+    /**
+     * Allows the origin server to use a cookie to ensure requests from Akamai servers are genuine. This behavior can be used in includes.
+     */
+    edgeOriginAuthorization?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorEdgeOriginAuthorization;
+    /**
+     * This behavior enables the `Edge Redirector Cloudlet` application, which helps you manage large numbers of redirects. With Cloudlets available on your contract, choose `Your services` > `Edge logic Cloudlets` to control the Edge Redirector within `Control Center`. Otherwise use the `Cloudlets API` to configure it programmatically. This behavior cannot be used in includes.
+     */
+    edgeRedirector?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorEdgeRedirector;
+    /**
+     * `EdgeScape` allows you to customize content based on the end user's geographic location or connection speed. When enabled, the edge server sends a special `X-Akamai-Edgescape` header to the origin server encoding relevant details about the end-user client as key-value pairs. This behavior can be used in includes.
+     */
+    edgeScape?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorEdgeScape;
+    /**
+     * Allows edge servers to process edge side include (ESI) code to generate dynamic content. To apply this behavior, you need to match on a `contentType`, `path`, or `filename`. Since this behavior requires more parsing time, you should not apply it to pages that lack ESI code, or to any non-HTML content. This behavior can be used in includes.
+     */
+    edgeSideIncludes?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorEdgeSideIncludes;
+    /**
+     * `EdgeWorkers` are JavaScript applications that allow you to manipulate your web traffic on edge servers outside of Property Manager behaviors, and deployed independently from your configuration's logic.  This behavior applies an EdgeWorker to a set of edge requests. This behavior cannot be used in includes.
+     */
+    edgeWorker?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorEdgeWorker;
+    /**
+     * This behavior repeats mTLS validation checks between a requesting client and the edge network. If the checks fail, you can deny the request or apply custom error handling. To use this behavior, you need to add either the `hostname` or `clientCertificate` criteria to the same rule. This behavior can be used in includes.
+     */
+    enforceMtlsSettings?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorEnforceMtlsSettings;
+    /**
+     * Enables the Enhanced Akamai Protocol, a suite of advanced routing and transport optimizations that increase your website's performance and reliability. It is only available to specific applications, and requires a special routing from edge to origin. This behavior can be used in includes.
+     */
+    enhancedAkamaiProtocol?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorEnhancedAkamaiProtocol;
+    /**
+     * Enhanced Proxy Detection (EPD) leverages the GeoGuard service provided by GeoComply to add proxy detection and location spoofing protection. It identifies requests for your content that have been redirected from an unwanted source through a proxy. You can then allow, deny, or redirect these requests. This behavior can be used in includes.
+     */
+    enhancedProxyDetection?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorEnhancedProxyDetection;
+    /**
+     * This behavior identifies unwanted requests from an anonymous proxy. This and the `enhancedProxyDetection` behavior work together and need to be included either in the same rule, or in the default one. This behavior can be used in includes.
+     */
+    epdForwardHeaderEnrichment?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorEpdForwardHeaderEnrichment;
+    /**
+     * Specifies how to respond when the origin is not available: by serving stale content, by serving an error page, or by redirecting.  To apply this behavior, you should match on an `originTimeout` or `matchResponseCode`. This behavior can be used in includes.
+     */
+    failAction?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorFailAction;
+    /**
+     * Ensures that functionality such as challenge authentication and reset protocol work with a failover product property you use to create an alternate hostname. Apply it to any properties that implement a failover under the Cloud Security Failover product. This behavior can be used in includes.
+     */
+    failoverBotManagerFeatureCompatibility?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorFailoverBotManagerFeatureCompatibility;
+    /**
+     * This behavior is deprecated, but you should not disable or remove it if present. This behavior can be used in includes.
+     */
+    fastInvalidate?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorFastInvalidate;
+    /**
+     * Ensures `Federal Information Process Standards (FIPS) 140-2` compliance for a connection to an origin server. For this behavior to work properly, verify that your origin's secure certificate supports Enhanced TLS and is FIPS-compliant. This behavior can be used in includes.
+     */
+    fips?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorFips;
+    /**
+     * Enables the Cloud Marketing Cloudlet, which helps MediaMath customers collect usage data and place corresponding tags for use in online advertising.  You can configure tags using either the Cloudlets Policy Manager application or the `Cloudlets API`. See also the `firstPartyMarketingPlus` behavior, which integrates better with both MediaMath and its partners. Both behaviors support the same set of options. This behavior cannot be used in includes.
+     */
+    firstPartyMarketing?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorFirstPartyMarketing;
+    /**
+     * Enables the Cloud Marketing Plus Cloudlet, which helps MediaMath customers collect usage data and place corresponding tags for use in online advertising.  You can configure tags using either the Cloudlets Policy Manager application or the `Cloudlets API`. See also the `firstPartyMarketing` behavior, which integrates with MediaMath but not its partners. Both behaviors support the same set of options. This behavior cannot be used in includes.
+     */
+    firstPartyMarketingPlus?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorFirstPartyMarketingPlus;
+    /**
+     * The Forward Rewrite Cloudlet allows you to conditionally modify the forward path in edge content without affecting the URL that displays in the user's address bar. If Cloudlets are available on your contract, choose `Your services` > `Edge logic Cloudlets` to control how this feature works within `Control Center`, or use the `Cloudlets API` to configure it programmatically. This behavior cannot be used in includes.
+     */
+    forwardRewrite?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorForwardRewrite;
+    /**
+     * The `signature header authentication` (g2o) security feature provides header-based verification of outgoing origin requests. Edge servers encrypt request data in a pre-defined header, which the origin uses to verify that the edge server processed the request. This behavior configures the request data, header names, encryption algorithm, and shared secret to use for verification. This behavior can be used in includes.
+     */
+    g2oheader?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorG2oheader;
+    /**
+     * Generates a unique identifier for each request on the Akamai edge network, for use in logging and debugging. GRN identifiers follow the same format as Akamai's error reference strings, for example: `0.05313217.1567801841.1457a3`. You can use the Edge Diagnostics API's `Translate error string` operation to get low-level details about any request. This behavior can be used in includes.
+     */
+    globalRequestNumber?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorGlobalRequestNumber;
+    /**
+     * This behavior configures how to cache GraphQL-based API traffic.  Enable `caching` for your GraphQL API traffic, along with `allowPost` to cache POST responses.  To configure REST API traffic, use the `rapid` behavior. This behavior can be used in includes.
+     */
+    graphqlCaching?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorGraphqlCaching;
+    /**
+     * Apply `gzip` compression to speed transfer time. This behavior applies best to text-based content such as HTML, CSS, and JavaScript, especially once files exceed about 10KB. Do not apply it to already compressed image formats, or to small files that would add more time to uncompress. To apply this behavior, you should match on `contentType` or the content's `cacheability`. This behavior can be used in includes.
+     */
+    gzipResponse?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorGzipResponse;
+    /**
+     * This behavior specifies Akamai XML metadata that can only be configured on your behalf by Akamai Professional Services.  Unlike the `advanced` behavior, this may apply a different set of overriding metadata that executes in a post-processing phase. This behavior is for internal usage only. This behavior can be used in includes.
+     */
+    hdDataAdvanced?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorHdDataAdvanced;
+    /**
+     * Monitors the health of your origin server by tracking unsuccessful attempts to contact it. Use this behavior to keep end users from having to wait several seconds before a forwarded request times out, or to reduce requests on the origin server when it is unavailable. This behavior can be used in includes.
+     */
+    healthDetection?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorHealthDetection;
+    /**
+     * Edge IP Binding works with a limited set of static IP addresses to distribute your content, which can be limiting in large footprint environments. This behavior sets Hash Serial and Forward (HSAF) for Edge IP Binding to deal with larger footprints. It can only be configured on your behalf by Akamai Professional Services. This behavior is for internal usage only. This behavior cannot be used in includes.
+     */
+    hsafEipBinding?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorHsafEipBinding;
+    /**
+     * Enables the HTTP/2 protocol, which reduces latency and improves efficiency. You can only apply this behavior if the property is marked as secure.  See `Secure property requirements` for guidance. This behavior cannot be used in includes.
+     */
+    http2?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorHttp2;
+    /**
+     * This enables the HTTP/3 protocol that uses QUIC. The behavior allows for improved performance and faster connection setup. You can only apply this behavior if the property is marked as secure. See `Secure property requirements` and the `Property Manager documentation` for guidance. This behavior cannot be used in includes.
+     */
+    http3?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorHttp3;
+    /**
+     * Applies HTTP Strict Transport Security (HSTS), disallowing insecure HTTP traffic. Apply this to hostnames managed with Standard TLS or Enhanced TLS certificates. This behavior cannot be used in includes.
+     */
+    httpStrictTransportSecurity?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorHttpStrictTransportSecurity;
+    /**
+     * Upgrades an HTTP edge request to HTTPS for the remainder of the request flow. Enable this behavior only if your origin supports HTTPS, and if your `origin` behavior is configured with `originCertsToHonor` to verify SSL certificates. This behavior can be used in includes.
+     */
+    httpToHttpsUpgrade?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorHttpToHttpsUpgrade;
+    /**
+     * This specifies common query parameters that affect how `imageManager` transforms images, potentially overriding policy, width, format, or density request parameters. This also allows you to assign the value of one of the property's `rule tree variables` to one of Image and Video Manager's own policy variables. This behavior can be used in includes.
+     */
+    imOverride?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorImOverride;
+    /**
+     * This behavior can be used in includes.
+     */
+    imageAndVideoManager?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorImageAndVideoManager;
+    /**
+     * Optimizes images' size or file type for the requesting device.  You can also use this behavior to generate API tokens to apply your own policies to matching images using the `Image and Video Manager API`. To apply this behavior, you need to match on a `fileExtension`. Once you apply Image and Video Manager to traffic, you can add the `advancedImMatch` to ensure the behavior applies to the requests from the Image and Video Manager backend. This behavior can be used in includes.
+     */
+    imageManager?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorImageManager;
+    /**
+     * Optimizes videos managed by Image and Video Manager for the requesting device.  You can also use this behavior to generate API tokens to apply your own policies to matching videos using the `Image and Video Manager API`. To apply this behavior, you need to match on a `fileExtension`. This behavior can be used in includes.
+     */
+    imageManagerVideo?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorImageManagerVideo;
+    /**
+     * Includes let you reuse chunks of a property configuration that you can manage separately from the rest of the property rule tree. This behavior cannot be used in includes.
+     */
+    include?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorInclude;
+    /**
+     * The Instant feature allows you to prefetch content to the edge cache by adding link relation attributes to markup. For example: This behavior can be used in includes.
+     */
+    instant?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorInstant;
+    /**
+     * Multi-Domain Configuration, also known as `InstantConfig`, allows you to apply property settings to all incoming hostnames based on a DNS lookup, without explicitly listing them among the property's hostnames. This behavior cannot be used in includes.
+     */
+    instantConfig?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorInstantConfig;
+    /**
+     * The `Large File Optimization` (LFO) feature improves performance and reliability when delivering large files. You need this behavior for objects larger than 1.8GB, and you should apply it to anything over 100MB. You should apply it only to the specific content to be optimized, such as a download directory's `.gz` files, and enable the `useVersioning` option while enforcing your own filename versioning policy. Make sure you meet all the `requirements and best practices` for the LFO delivery. This behavior can be used in includes.
+     */
+    largeFileOptimization?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorLargeFileOptimization;
+    /**
+     * The `Large File Optimization` feature improves performance and reliability when delivering large files. You need this behavior for objects larger than 1.8GB, and it's recommended for anything over 100MB. You should apply it only to the specific content to be optimized, such as a download directory's `.gz` files.  Note that it is best to use `NetStorage` for objects larger than 1.8GB. This behavior is for internal usage only. This behavior can be used in includes.
+     */
+    largeFileOptimizationAdvanced?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorLargeFileOptimizationAdvanced;
+    /**
+     * Control the rate at which content serves out to end users, optionally varying the speed depending on the file size or elapsed download time. Each bit rate specified in the `bitrateTable` array corresponds to a `thresholdTable` entry that activates it.  You can use this behavior to prevent media downloads from progressing faster than they are viewed, for example, or to differentiate various tiers of end-user experience. To apply this behavior, you should match on a `contentType`, `path`, or `filename`. This behavior can be used in includes.
+     */
+    limitBitRate?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorLimitBitRate;
+    /**
+     * Logs custom details from the origin response in the `Log Delivery Service` report. This behavior can be used in includes.
+     */
+    logCustom?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorLogCustom;
+    /**
+     * `mPulse` provides high-level performance analytics and predictive recommendations based on real end user data. See the `mPulse Quick Start` to set up mPulse on your website. This behavior cannot be used in includes.
+     */
+    mPulse?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorMPulse;
+    /**
+     * Allows customers who use the Adaptive Media Delivery product to enhance content based on the capabilities of each end user's device.  This behavior configures a `manifest` for both HLS Live and on-demand streaming. For more information, see `Adaptive Media Delivery`. This behavior can be used in includes.
+     */
+    manifestPersonalization?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorManifestPersonalization;
+    /**
+     * This behavior works with `adScalerCircuitBreaker`. It delegates parts of the media delivery workflow, like ad insertion, to other technology partners. Akamai reroutes manifest file requests to partner platforms for processing prior to being delivered. Rerouting simplifies the workflow and improves the media streaming experience. This behavior cannot be used in includes.
+     */
+    manifestRerouting?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorManifestRerouting;
+    /**
+     * With the `http2` behavior enabled, this loads a specified set of objects into the client browser's cache. To apply this behavior, you should match on a `path` or `filename`. This behavior cannot be used in includes.
+     */
+    manualServerPush?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorManualServerPush;
+    /**
+     * Enables Accelerated Media Delivery for this set of requests. This behavior cannot be used in includes.
+     */
+    mediaAcceleration?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorMediaAcceleration;
+    /**
+     * When enabled, disables use of QUIC protocol for this set of accelerated media content. This behavior cannot be used in includes.
+     */
+    mediaAccelerationQuicOptout?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorMediaAccelerationQuicOptout;
+    /**
+     * This behavior is deprecated, but you should not disable or remove it if present. This behavior cannot be used in includes.
+     */
+    mediaClient?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorMediaClient;
+    /**
+     * Media File Retrieval Optimization (MFRO) speeds the delivery of large media files by relying on caches of partial objects. You should use it for files larger than 100 MB. It's required for files larger than 1.8 GB, and works best with `NetStorage`. To apply this behavior, you should match on a `fileExtension`. This behavior can be used in includes.
+     */
+    mediaFileRetrievalOptimization?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorMediaFileRetrievalOptimization;
+    /**
+     * Specifies how edge servers respond when the origin is unresponsive, or suffers from server or content errors. You can specify how many times to retry, switch to a backup origin hostname, or configure a redirect. This behavior can be used in includes.
+     */
+    mediaOriginFailover?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorMediaOriginFailover;
+    /**
+     * This behavior reduces time spent waiting for the initial response, also known as time to first byte, during peak traffic events. Contact Akamai Professional Services for help configuring it. This behavior is for internal usage only. This behavior can be used in includes.
+     */
+    metadataCaching?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorMetadataCaching;
+    /**
+     * This behavior is deprecated, but you should not disable or remove it if present. This behavior can be used in includes.
+     */
+    mobileSdkPerformance?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorMobileSdkPerformance;
+    /**
+     * Modify, add, remove, or pass along specific request headers coming upstream from the client. This behavior can be used in includes.
+     */
+    modifyIncomingRequestHeader?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorModifyIncomingRequestHeader;
+    /**
+     * Modify, add, remove, or pass along specific response headers coming downstream from the origin. This behavior can be used in includes.
+     */
+    modifyIncomingResponseHeader?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorModifyIncomingResponseHeader;
+    /**
+     * Modify, add, remove, or pass along specific request headers going upstream towards the origin. This behavior can be used in includes.
+     */
+    modifyOutgoingRequestHeader?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorModifyOutgoingRequestHeader;
+    /**
+     * Modify, add, remove, or pass along specific response headers going downstream towards the client. This behavior can be used in includes.
+     */
+    modifyOutgoingResponseHeader?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorModifyOutgoingResponseHeader;
+    /**
+     * Removes or renames the HTTP `Via` headers used to inform the server of proxies through which the request was sent to the origin. This behavior can be used in includes.
+     */
+    modifyViaHeader?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorModifyViaHeader;
+    /**
+     * Specify the hostname and settings used to contact the origin once service begins. You can use your own origin, `NetStorage`, an Edge Load Balancing origin, or a SaaS dynamic origin. This behavior can be used in includes.
+     */
+    origin?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorOrigin;
+    /**
+     * Specifies characteristics of the origin. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior cannot be used in includes.
+     */
+    originCharacteristics?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorOriginCharacteristics;
+    /**
+     * Specifies characteristics of the origin, for use in Akamai's Wholesale Delivery product. This behavior can be used in includes.
+     */
+    originCharacteristicsWsd?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorOriginCharacteristicsWsd;
+    /**
+     * Origin Failover requires that you set up a separate rule containing origin failure recovery methods. You also need to set up the Origin Failure Recovery Policy behavior in a separate rule with a desired match criteria, and select the desired failover method. You can do this using Property Manager. Learn more about this process in `Adaptive Media Delivery Implementation Guide`. You can use the `originFailureRecoveryPolicy` member to edit existing instances of the Origin Failure Recover Policy behavior. This behavior can be used in includes.
+     */
+    originFailureRecoveryMethod?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorOriginFailureRecoveryMethod;
+    /**
+     * Configures how to detect an origin failure, in which case the `originFailureRecoveryMethod` behavior applies. You can also define up to three sets of criteria to detect origin failure based on specific response codes. Use it to apply specific retry or recovery actions. You can do this using Property Manager. Learn more about this process in `Adaptive Media Delivery Implementation Guide`. You can use the `originFailureRecoveryMethod` member to edit existing instances of the Origin Failure Recover Method behavior. This behavior can be used in includes.
+     */
+    originFailureRecoveryPolicy?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorOriginFailureRecoveryPolicy;
+    /**
+     * Origin IP Access Control List limits the traffic to your origin. It only allows requests from specific edge servers that are configured as part of a supernet defined by CIDR blocks. This behavior can be used in includes.
+     */
+    originIpAcl?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorOriginIpAcl;
+    /**
+     * Manages whether your page and its embedded iframes can access various browser features that affect end-user privacy, security, and performance. This behavior can be used in includes.
+     */
+    permissionsPolicy?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorPermissionsPolicy;
+    /**
+     * This behavior activates `persistent connections` between edge servers and clients, which allow for better performance and more efficient use of resources. Compare with the `persistentConnection` behavior, which configures persistent connections for the entire journey from origin to edge to client.  Contact Akamai Professional Services for help configuring either. This behavior is for internal usage only. This behavior can be used in includes.
+     */
+    persistentClientConnection?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorPersistentClientConnection;
+    /**
+     * This behavior enables more efficient `persistent connections` from origin to edge server to client. Compare with the `persistentClientConnection` behavior, which customizes persistent connections from edge to client. Contact Akamai Professional Services for help configuring either. This behavior is for internal usage only. This behavior can be used in includes.
+     */
+    persistentConnection?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorPersistentConnection;
+    /**
+     * Marks content covered by the current rule as sensitive `personally identifiable information` that needs to be treated as secure and private. That includes anything involving personal information: name, social security number, date and place of birth, mother's maiden name, biometric data, or any other data linked to an individual. If you attempt to save a property with such a rule that also caches or logs sensitive content, the added behavior results in a validation error. This behavior cannot be used in includes.
+     */
+    personallyIdentifiableInformation?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorPersonallyIdentifiableInformation;
+    /**
+     * The Phased Release Cloudlet provides gradual and granular traffic management to an alternate origin in near real time.  Use the `Cloudlets API` or the Cloudlets Policy Manager application within `Control Center` to set up your Cloudlets policies. This behavior cannot be used in includes.
+     */
+    phasedRelease?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorPhasedRelease;
+    /**
+     * With the `http2` behavior enabled, this requests a specified set of domains that relate to your property hostname, and keeps the connection open for faster loading of content from those domains. This behavior can be used in includes.
+     */
+    preconnect?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorPreconnect;
+    /**
+     * Improves user experience and reduces the cost of downloads by enabling mobile devices to predictively fetch and cache content from catalogs managed by Akamai servers. You can't use this feature if in the `segmentedMediaOptimization` behavior, the value for `behavior` is set to `LIVE`. This behavior can be used in includes.
+     */
+    predictiveContentDelivery?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorPredictiveContentDelivery;
+    /**
+     * This behavior potentially reduces the client's page load time by pre-caching objects based on historical data for the page, not just its current set of referenced objects. It also detects second-level dependencies, such as objects retrieved by JavaScript. This behavior can be used in includes.
+     */
+    predictivePrefetching?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorPredictivePrefetching;
+    /**
+     * Instructs edge servers to retrieve content linked from requested pages as they load, rather than waiting for separate requests for the linked content. This behavior applies depending on the rule's set of matching conditions. Use in conjunction with the `prefetchable` behavior, which specifies the set of objects to prefetch. This behavior can be used in includes.
+     */
+    prefetch?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorPrefetch;
+    /**
+     * Allow matching objects to prefetch into the edge cache as the parent page that links to them loads, rather than waiting for a direct request. This behavior applies depending on the rule's set of matching conditions. Use `prefetch` to enable the overall behavior for parent pages that contain links to the object. To apply this behavior, you need to match on a `filename` or `fileExtension`. This behavior can be used in includes.
+     */
+    prefetchable?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorPrefetchable;
+    /**
+     * Refresh cached content before its time-to-live (TTL) expires, to keep end users from having to wait for the origin to provide fresh content. This behavior can be used in includes.
+     */
+    prefreshCache?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorPrefreshCache;
+    /**
+     * This behavior can be used in includes.
+     */
+    quality?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorQuality;
+    /**
+     * For a share of responses, includes an `Alt-Svc` header for compatible clients to initiate subsequent sessions using the QUIC protocol. This behavior cannot be used in includes.
+     */
+    quicBeta?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorQuicBeta;
+    /**
+     * Optimizes `.flv` and `.mp4` files to allow random jump-point navigation. This behavior can be used in includes.
+     */
+    randomSeek?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorRandomSeek;
+    /**
+     * The `Akamai API Gateway` allows you to configure API traffic delivered over the Akamai network. Apply this behavior to a set of API assets, then use Akamai's `API Endpoints API` to configure how the traffic responds.  Use the `API Keys and Traffic Management API` to control access to your APIs. This behavior cannot be used in includes.
+     */
+    rapid?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorRapid;
+    /**
+     * This behavior specifies how long the edge server should wait for a response from the requesting forward server after a connection has already been established. Any failure to read aborts the request and sends a `504` Gateway Timeout error to the client. Contact Akamai Professional Services for help configuring this behavior. This behavior can be used in includes.
+     */
+    readTimeout?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorReadTimeout;
+    /**
+     * This enables `Real-Time Reporting` for Akamai Cloud Embed customers. The behavior can only be configured on your behalf by Akamai Professional Services. This behavior is for internal usage only. This behavior can be used in includes.
+     */
+    realTimeReporting?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorRealTimeReporting;
+    /**
+     * This behavior is deprecated, but you should not disable or remove it if present. This behavior cannot be used in includes.
+     */
+    realUserMonitoring?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorRealUserMonitoring;
+    /**
+     * Respond to the client request with a redirect without contacting the origin. Specify the redirect as a path expression starting with a `/` character relative to the current root, or as a fully qualified URL. This behavior relies primarily on `destinationHostname` and `destinationPath` to manipulate the hostname and path independently. This behavior can be used in includes.
+     */
+    redirect?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorRedirect;
+    /**
+     * Respond to the client request with a redirect without contacting the origin. This behavior fills the same need as `redirect`, but allows you to use `variables` to express the redirect `destination`'s component values more concisely. This behavior can be used in includes.
+     */
+    redirectplus?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorRedirectplus;
+    /**
+     * Limits allowed requests to a set of domains you specify. This behavior can be used in includes.
+     */
+    refererChecking?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorRefererChecking;
+    /**
+     * Remove named query parameters before forwarding the request to the origin. This behavior can be used in includes.
+     */
+    removeQueryParameter?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorRemoveQueryParameter;
+    /**
+     * By default, responses that feature a `Vary` header value of anything other than `Accept-Encoding` and a corresponding `Content-Encoding: gzip` header aren't cached on edge servers. `Vary` headers indicate when a URL's content varies depending on some variable, such as which `User-Agent` requests it. This behavior simply removes the `Vary` header to make responses cacheable. This behavior can be used in includes.
+     */
+    removeVary?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorRemoveVary;
+    /**
+     * Specify the HTTP request headers or cookie names to log in your Log Delivery Service reports. This behavior can be used in includes.
+     */
+    report?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorReport;
+    /**
+     * Client hints are HTTP request header fields that determine which resources the browser should include in the response. This behavior configures and prioritizes the client hints you want to send to request specific client and device information. This behavior can be used in includes.
+     */
+    requestClientHints?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorRequestClientHints;
+    /**
+     * The Request Control Cloudlet allows you to control access to your web content based on the incoming request's IP or geographic location.  With Cloudlets available on your contract, choose `Your services` > `Edge logic Cloudlets` to control how the feature works within `Control Center`, or use the `Cloudlets API` to configure it programmatically. This behavior cannot be used in includes.
+     */
+    requestControl?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorRequestControl;
+    /**
+     * The `Internet of Things: OTA Updates` product allows customers to securely distribute firmware to devices over cellular networks. When using the `downloadCompleteMarker` behavior to log successful downloads, this related behavior identifies download or campaign server types in aggregated and individual reports. This behavior can be used in includes.
+     */
+    requestTypeMarker?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorRequestTypeMarker;
+    /**
+     * This behavior is deprecated, but you should not disable or remove it if present. This behavior can be used in includes.
+     */
+    resourceOptimizer?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorResourceOptimizer;
+    /**
+     * This enhances the standard version of the `resourceOptimizer` behavior to support the compression of additional file formats and address some compatibility issues. This behavior can be used in includes.
+     */
+    resourceOptimizerExtendedCompatibility?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorResourceOptimizerExtendedCompatibility;
+    /**
+     * Change the existing response code. For example, if your origin sends a `301` permanent redirect, this behavior can change it on the edge to a temporary `302` redirect. This behavior can be used in includes.
+     */
+    responseCode?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorResponseCode;
+    /**
+     * Set a cookie to send downstream to the client with either a fixed value or a unique stamp. This behavior can be used in includes.
+     */
+    responseCookie?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorResponseCookie;
+    /**
+     * You need this behavior to deploy the Object Caching product. It disables serving HTML content and limits the maximum object size to 100MB. Contact Akamai Professional Services for help configuring it. This behavior can be used in includes.
+     */
+    restrictObjectCaching?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorRestrictObjectCaching;
+    /**
+     * Generates a response header with information about cache status. Among other things, this can tell you whether the response came from the Akamai cache, or from the origin. Status values report with either of these forms of syntax, depending for example on whether you're deploying traffic using `sureRoute` or `tieredDistribution`: This behavior can be used in includes.
+     */
+    returnCacheStatus?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorReturnCacheStatus;
+    /**
+     * Modifies the path of incoming requests to forward to the origin. This helps you offload URL-rewriting tasks to the edge to increase the origin server's performance, allows you to redirect links to different targets without changing markup, and hides your original directory structure. This behavior can be used in includes.
+     */
+    rewriteUrl?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorRewriteUrl;
+    /**
+     * This behavior is deprecated, but you should not disable or remove it if present. This behavior is for internal usage only. This behavior cannot be used in includes.
+     */
+    rumCustom?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorRumCustom;
+    /**
+     * Configures how the Software as a Service feature identifies `customers`, `applications`, and `users`. A different set of options is available for each type of targeted request, each enabled with the `action`-suffixed option. In each case, you can use `PATH`, `COOKIE`, `QUERY_STRING`, or `HOSTNAME` components as identifiers, or `disable` the SaaS behavior for certain targets. If you rely on a `HOSTNAME`, you also have the option of specifying a `CNAME chain` rather than an individual hostname. The various options suffixed `regex` and `replace` subsequently remove the identifier from the request. This behavior requires a sibling `origin` behavior whose `originType` option is set to `SAAS_DYNAMIC_ORIGIN`. This behavior cannot be used in includes.
+     */
+    saasDefinitions?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorSaasDefinitions;
+    /**
+     * If you use the Salesforce Commerce Cloud platform for your origin content, this behavior allows your edge content managed by Akamai to contact directly to origin. This behavior cannot be used in includes.
+     */
+    salesForceCommerceCloudClient?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorSalesForceCommerceCloudClient;
+    /**
+     * This manages traffic between mutual customers and the Salesforce Commerce Cloud platform. This behavior cannot be used in includes.
+     */
+    salesForceCommerceCloudProvider?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorSalesForceCommerceCloudProvider;
+    /**
+     * Manages host header values sent to the Salesforce Commerce Cloud platform. This behavior cannot be used in includes.
+     */
+    salesForceCommerceCloudProviderHostHeader?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorSalesForceCommerceCloudProviderHostHeader;
+    /**
+     * Used in conjunction with the `cachePost` behavior, this behavior allows the body of POST requests to be processed through Dynamic Content Assembly.  Contact Akamai Professional Services for help configuring it. This behavior is for internal usage only. This behavior can be used in includes.
+     */
+    savePostDcaProcessing?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorSavePostDcaProcessing;
+    /**
+     * Specifies when cached content that satisfies a rule's criteria expires, optionally at repeating intervals. In addition to periodic cache flushes, you can use this behavior to minimize potential conflicts when related objects expire at different times. This behavior can be used in includes.
+     */
+    scheduleInvalidation?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorScheduleInvalidation;
+    /**
+     * Ensures unresponsive linked JavaScript files do not prevent HTML pages from loading. This behavior cannot be used in includes.
+     */
+    scriptManagement?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorScriptManagement;
+    /**
+     * Validates authorization tokens at the edge server to prevent unauthorized link sharing. This behavior can be used in includes.
+     */
+    segmentedContentProtection?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorSegmentedContentProtection;
+    /**
+     * Optimizes segmented media for live or streaming delivery contexts. This behavior can be used in includes.
+     */
+    segmentedMediaOptimization?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorSegmentedMediaOptimization;
+    /**
+     * Prefetches HLS and DASH media stream manifest and segment files, accelerating delivery to end users. For prefetching to work, your origin media's response needs to specify `CDN-Origin-Assist-Prefetch-Path` headers with each URL to prefetch, expressed as either a relative or absolute path. This behavior can be used in includes.
+     */
+    segmentedMediaStreamingPrefetch?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorSegmentedMediaStreamingPrefetch;
+    /**
+     * Modify a variable to insert into subsequent fields within the rule tree.  Use this behavior to specify the predeclared `variableName` and determine from where to derive its new value. Based on this `valueSource`, you can either generate the value, extract it from some part of the incoming request, assign it from another variable (including a set of built-in system variables), or directly specify its text.  Optionally choose a `transform` function to modify the value once. See `Support for variables` for more information. This behavior can be used in includes.
+     */
+    setVariable?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorSetVariable;
+    /**
+     * This behavior simulates various error response codes. Contact Akamai Professional Services for help configuring it. This behavior can be used in includes.
+     */
+    simulateErrorCode?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorSimulateErrorCode;
+    /**
+     * This behavior implements the `Site Shield` feature, which helps prevent non-Akamai machines from contacting your origin. You get an email with a list of Akamai servers allowed to contact your origin, with which you establish an Access Control List on your firewall to prevent any other requests. This behavior cannot be used in includes.
+     */
+    siteShield?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorSiteShield;
+    /**
+     * This behavior is deprecated, but you should not disable or remove it if present. This behavior cannot be used in includes.
+     */
+    standardTlsMigration?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorStandardTlsMigration;
+    /**
+     * This behavior is deprecated, but you should not disable or remove it if present. This behavior is for internal usage only. This behavior cannot be used in includes.
+     */
+    standardTlsMigrationOverride?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorStandardTlsMigrationOverride;
+    /**
+     * This behavior specifies how the edge servers should handle requests containing improperly formatted or invalid headers that don’t comply with `RFC 9110`. This behavior can be used in includes.
+     */
+    strictHeaderParsing?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorStrictHeaderParsing;
+    /**
+     * When positioned in a property's top-level default rule, enables various `Cloud Embed` features that allow you to leverage Akamai's CDN architecture for your own subcustomers.  This behavior's options allow you to use Cloud Embed to configure your subcustomers' content.  Once enabled, you can use the `Akamai Cloud Embed API` (ACE) to assign subcustomers to this base configuration, and to customize policies for them.  See also the `dynamicWebContent` behavior to configure subcustomers' dynamic web content. This behavior cannot be used in includes.
+     */
+    subCustomer?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorSubCustomer;
+    /**
+     * The `SureRoute` feature continually tests different routes between origin and edge servers to identify the optimal path. By default, it conducts `races` to identify alternative paths to use in case of a transmission failure. These races increase origin traffic slightly. This behavior cannot be used in includes.
+     */
+    sureRoute?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorSureRoute;
+    /**
+     * This behavior is deprecated, but you should not disable or remove it if present. This behavior can be used in includes.
+     */
+    tcpOptimization?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorTcpOptimization;
+    /**
+     * Allows IBM Tealeaf Customer Experience on Cloud to record HTTPS requests and responses for Akamai-enabled properties. Recorded data becomes available in your IBM Tealeaf account. This behavior cannot be used in includes.
+     */
+    teaLeaf?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorTeaLeaf;
+    /**
+     * This behavior allows Akamai edge servers to retrieve cached content from other Akamai servers, rather than directly from the origin. These interim `parent` servers in the `cache hierarchy` (`CH`) are positioned close to the origin, and fall along the path from the origin to the edge server. Tiered Distribution typically reduces the origin server's load, and reduces the time it takes for edge servers to refresh content. This behavior cannot be used in includes.
+     */
+    tieredDistribution?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorTieredDistribution;
+    /**
+     * This behavior allows Akamai edge servers to retrieve cached content from other Akamai servers, rather than directly from the origin. These interim `parent` servers in the `cache hierarchy` (`CH`) are positioned close to the origin, and fall along the path from the origin to the edge server. Tiered Distribution typically reduces the origin server's load, and reduces the time it takes for edge servers to refresh content.  This advanced behavior provides a wider set of options than `tieredDistribution`. This behavior is for internal usage only. This behavior can be used in includes.
+     */
+    tieredDistributionAdvanced?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorTieredDistributionAdvanced;
+    /**
+     * With Tiered Distribution, Akamai edge servers retrieve cached content from other Akamai servers, rather than directly from the origin. This behavior sets custom Tiered Distribution maps (TD0) and migrates TD1 maps configured with `advanced features` to Cloud Wrapper. You need to enable `cloudWrapper` within the same rule. This behavior is for internal usage only. This behavior can be used in includes.
+     */
+    tieredDistributionCustomization?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorTieredDistributionCustomization;
+    /**
+     * Sets the HTTP connect timeout. This behavior can be used in includes.
+     */
+    timeout?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorTimeout;
+    /**
+     * This behavior allows you to extract unique identifier (UID) values from live traffic, for use in OTA applications. Note that you are responsible for maintaining the security of any data that may identify individual users. This behavior cannot be used in includes.
+     */
+    uidConfiguration?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorUidConfiguration;
+    /**
+     * Instructs edge servers to compare the request's `ETag` header with that of the cached object. If they differ, the edge server sends a new copy of the object. This validation occurs in addition to the default validation of `Last-Modified` and `If-Modified-Since` headers. This behavior can be used in includes.
+     */
+    validateEntityTag?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorValidateEntityTag;
+    /**
+     * This behavior allows you to use JSON Web Tokens (JWT) to verify requests. This behavior can be used in includes.
+     */
+    verifyJsonWebToken?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorVerifyJsonWebToken;
+    /**
+     * This behavior allows you to use JSON web tokens (JWT) to verify requests for use in implementing `IoT Edge Connect`, which you use the `dcp` behavior to configure. You can specify the location in a request to pass a JSON web token (JWT), collections of public keys to verify the integrity of this token, and specific claims to extract from it. Use the `verifyJsonWebToken` behavior for other JWT validation. This behavior can be used in includes.
+     */
+    verifyJsonWebTokenForDcp?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorVerifyJsonWebTokenForDcp;
+    /**
+     * Verifies Auth 2.0 tokens. This behavior can be used in includes.
+     */
+    verifyTokenAuthorization?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorVerifyTokenAuthorization;
+    /**
+     * This behavior helps you maintain business continuity for dynamic applications in high-demand situations such as flash sales. It decreases abandonment by providing a user-friendly waiting room experience. FIFO (First-in First-out) is a request processing mechanism that prioritizes the first requests that enter the waiting room to send them first to the origin. Users can see both their estimated arrival time and position in the line. With Cloudlets available on your contract, choose `Your services` > `Edge logic Cloudlets` to control Virtual Waitig Room within `Control Center`. Otherwise use the `Cloudlets API` to configure it programmatically. This behavior cannot be used in includes.
+     */
+    virtualWaitingRoom?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorVirtualWaitingRoom;
+    /**
+     * This behavior allows you to configure the `virtualWaitingRoom` behavior with EdgeWorkers for extended scalability and customization. This behavior cannot be used in includes.
+     */
+    virtualWaitingRoomWithEdgeWorkers?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorVirtualWaitingRoomWithEdgeWorkers;
+    /**
+     * The `Visitor Prioritization Cloudlet` decreases abandonment by providing a user-friendly waiting room experience.  With Cloudlets available on your contract, choose `Your services` > `Edge logic Cloudlets` to control Visitor Prioritization within `Control Center`. Otherwise use the `Cloudlets API` to configure it programmatically.  To serve non-HTML API content such as JSON blocks, see the `apiPrioritization` behavior. This behavior cannot be used in includes.
+     */
+    visitorPrioritization?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorVisitorPrioritization;
+    /**
+     * (**BETA**) The `Visitor Prioritization Cloudlet (FIFO)` decreases abandonment by providing a user-friendly waiting room experience. FIFO (First-in First-out) is a fair request processing mechanism, which prioritizes the first requests that enter the waiting room to send them first to the origin. Users can see both their estimated arrival time and position in the line. With Cloudlets available on your contract, choose `Your services` > `Edge logic Cloudlets` to control Visitor Prioritization (FIFO) within `Control Center`. Otherwise use the `Cloudlets API` to configure it programmatically. To serve non-HTML API content such as JSON blocks, see the `apiPrioritization` behavior. This behavior cannot be used in includes.
+     */
+    visitorPrioritizationFifo?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorVisitorPrioritizationFifo;
+    /**
+     * This behavior cannot be used in includes.
+     */
+    visitorPrioritizationFifoStandalone?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorVisitorPrioritizationFifoStandalone;
+    /**
+     * Adds watermarking for each valid user's content. Content segments are delivered from different sources using a pattern unique to each user, based on a watermarking token included in each request. If your content is pirated or redistributed, you can forensically analyze the segments to extract the pattern, and identify the user who leaked the content. This behavior can be used in includes.
+     */
+    watermarking?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorWatermarking;
+    /**
+     * This behavior implements a suite of security features that blocks threatening HTTP and HTTPS requests. Use it as your primary firewall, or in addition to existing security measures.  Only one referenced configuration is allowed per property, so this behavior typically belongs as part of its default rule. This behavior cannot be used in includes.
+     */
+    webApplicationFirewall?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorWebApplicationFirewall;
+    /**
+     * The WebSocket protocol allows web applications real-time bidirectional communication between clients and servers. This behavior can be used in includes.
+     */
+    webSockets?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorWebSockets;
+    /**
+     * Web-based Distributed Authoring and Versioning (WebDAV) is a set of extensions to the HTTP protocol that allows users to collaboratively edit and manage files on remote web servers. This behavior enables WebDAV, and provides support for the following additional request methods: PROPFIND, PROPPATCH, MKCOL, COPY, MOVE, LOCK, and UNLOCK. To apply this behavior, you need to match on a `requestMethod`. This behavior can be used in includes.
+     */
+    webdav?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorWebdav;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorAdScalerCircuitBreaker {
+    /**
+     * Specifies the fallback action.
+     */
+    fallbackActionResponseCodeBased?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Triggers a fallback action based on the response code from the technology partner's server.
+     */
+    responseCodeBased?: boolean;
+    /**
+     * Specifies the codes in the partner's response that trigger the fallback action,  either `408`, `500`, `502`, `504`, `SAME_AS_RECEIEVED`, or `SPECIFY_YOUR_OWN` for a custom code.
+     */
+    responseCodes?: string;
+    /**
+     * Triggers a fallback action based on the delayed response from the technology partner's server.
+     */
+    responseDelayBased?: boolean;
+    /**
+     * Specifies the maximum response delay that, if exceeded, triggers the fallback action.
+     */
+    responseDelayThreshold?: string;
+    /**
+     * Specifies the error to include in the response to the client.
+     */
+    returnErrorResponseCodeBased?: string;
+    /**
+     * Defines a custom error response.
+     */
+    specifyYourOwnResponseCodeBased?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorAdaptiveAcceleration {
+    /**
+     * Specifies whether to use Adaptive Acceleration in an A/B testing environment. To include Adaptive Acceleration data in your A/B testing, specify the mode you want to apply. Otherwise, `DISABLED` by default. See `Add A/B testing to A2` for details.
+     */
+    abLogic?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    abTesting?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    compression?: string;
+    /**
+     * This specifies the name of the cookie file used for redirecting the requests in the A/B testing environment.
+     */
+    cookieName?: string;
+    /**
+     * Applies Brotli compression, converting your origin content to cache on edge servers.
+     */
+    enableBrotliCompression?: boolean;
+    /**
+     * Applies Brotli compression to non-cacheable content.
+     */
+    enableForNoncacheable?: boolean;
+    /**
+     * Allows browsers to anticipate what connections your site needs, and establishes those connections ahead of time. See `Automatic Preconnect` for more information.
+     */
+    enablePreconnect?: boolean;
+    /**
+     * Recognizes resources like JavaScript, CSS, and images  based on gathered timing data and sends these resources to a browser as it's waiting for a response to the initial request for your website or app. See `Automatic Server Push` for more information.
+     */
+    enablePush?: boolean;
+    /**
+     * Enables the Resource Optimizer, which automates the compression and delivery of your `.css`, `.js`, and `.svg` content using a combination of Brotli and Zopfli compressions. The compression is performed offline, during a time to live that the feature automatically sets. See the `resourceOptimizer` and `resourceOptimizerExtendedCompatibility` behaviors for more details.
+     */
+    enableRo?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Allows browsers to preload necessary fonts before they fetch and process other resources. See `Automatic Font Preload` for more information.
+     */
+    preloadEnable?: boolean;
+    /**
+     * The source Adaptive Acceleration uses to gather the real user monitoring timing data, either `mPulse` or `realUserMonitoring`. The recommended `mPulse` option supports all optimizations and requires the `mPulse` behavior added by default to new Ion properties. The classic `realUserMonitoring` method has been deprecated. If you set it as the data source, make sure you use it with the `realUserMonitoring` behavior.
+     */
+    source?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    titleBrotli?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    titleHttp2ServerPush?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    titlePreconnect?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    titlePreload?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    titleRo?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorAdaptiveImageCompression {
+    /**
+     * Adapts images served over cellular mobile networks.
+     */
+    compressMobile?: boolean;
+    /**
+     * Adapts images served over non-cellular networks.
+     */
+    compressStandard?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * Specifies tier-1 behavior.
+     */
+    tier1MobileCompressionMethod?: string;
+    /**
+     * Specifies the compression percentage.
+     */
+    tier1MobileCompressionValue?: number;
+    /**
+     * Specifies tier-1 non-cellular network behavior.
+     */
+    tier1StandardCompressionMethod?: string;
+    /**
+     * Specifies the compression percentage.
+     */
+    tier1StandardCompressionValue?: number;
+    /**
+     * Specifies tier-2 cellular-network behavior.
+     */
+    tier2MobileCompressionMethod?: string;
+    /**
+     * Specifies the compression percentage.
+     */
+    tier2MobileCompressionValue?: number;
+    /**
+     * Specifies tier-2 non-cellular network behavior.
+     */
+    tier2StandardCompressionMethod?: string;
+    /**
+     * Specifies the compression percentage.
+     */
+    tier2StandardCompressionValue?: number;
+    /**
+     * Specifies tier-3 cellular-network behavior.
+     */
+    tier3MobileCompressionMethod?: string;
+    /**
+     * Specifies the compression percentage.
+     */
+    tier3MobileCompressionValue?: number;
+    /**
+     * Specifies tier-3 non-cellular network behavior.
+     */
+    tier3StandardCompressionMethod?: string;
+    /**
+     * Specifies the compression percentage.
+     */
+    tier3StandardCompressionValue?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    titleAicMobile?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    titleAicNonmobile?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorAdvanced {
+    /**
+     * Human-readable description of what the XML block does.
+     */
+    description?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * Akamai XML metadata.
+     */
+    xml?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorAggregatedReporting {
+    /**
+     * Specify a previously user-defined variable name as a report attribute. The values extracted for all attributes range from 0 to 20 characters.
+     */
+    attribute1?: string;
+    /**
+     * Specify a previously user-defined variable name as a report attribute. The values extracted for all attributes range from 0 to 20 characters.
+     */
+    attribute2?: string;
+    /**
+     * Specify a previously user-defined variable name as a report attribute. The values extracted for all attributes range from 0 to 20 characters.
+     */
+    attribute3?: string;
+    /**
+     * Specify a previously user-defined variable name as a report attribute. The values extracted for all attributes range from 0 to 20 characters.
+     */
+    attribute4?: string;
+    /**
+     * The number of attributes to include in the report, ranging from 1 to 4.
+     */
+    attributesCount?: number;
+    /**
+     * Enables aggregated reporting.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * The unique name of the aggregated report within the property. If you reconfigure any attributes or variables in the aggregated reporting behavior, update this field to a unique value to enable logging data in a new instance of the report.
+     */
+    reportName?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorAkamaizer {
+    /**
+     * Enables the Akamaizer behavior.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorAkamaizerTag {
+    /**
+     * Whether to include the `tagsAttribute` value.
+     */
+    includeTagsAttribute?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the hostname to match on as a Perl-compatible regular expression.
+     */
+    matchHostname?: string;
+    /**
+     * Replaces all matches when enabled, otherwise replaces only the first match.
+     */
+    replaceAll?: boolean;
+    /**
+     * Specifies the replacement hostname for the tag to use.
+     */
+    replacementHostname?: string;
+    /**
+     * Specifies the part of HTML content the `tagsAttribute` refers to.
+     */
+    scope?: string;
+    /**
+     * Specifies the tag or tag/attribute combination to operate on.
+     */
+    tagsAttribute?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorAllHttpInCacheHierarchy {
+    /**
+     * Enables all HTTP requests for parent servers in the cache hierarchy.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorAllowCloudletsOrigins {
+    /**
+     * Allows you to assign custom origin definitions referenced in sub-rules by `cloudletsOrigin` labels. If disabled, all sub-rules are ignored.
+     */
+    enabled?: boolean;
+    /**
+     * Prefixes any Cloudlet-generated origin path with a path defined by an Origin Base Path behavior. If no path is defined, it has no effect. If another Cloudlet policy already prepends the same Origin Base Path, the path is not duplicated.
+     */
+    honorBaseDirectory?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * When purging content from a Cloudlets Origin, this specifies a query parameter name whose value is the specific named origin to purge.  Note that this only applies to content purge requests, for example when using the `Content Control Utility API`.
+     */
+    purgeOriginQueryParameter?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorAllowDelete {
+    /**
+     * Allows data in the body of the DELETE request.
+     */
+    allowBody?: boolean;
+    /**
+     * Allows DELETE requests. Content does `not` cache.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorAllowHttpsCacheKeySharing {
+    /**
+     * Enables HTTPS cache key sharing.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorAllowHttpsDowngrade {
+    /**
+     * Downgrades to HTTP protocol for the origin server.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorAllowOptions {
+    /**
+     * Set this to `true` to reflect the default policy where edge servers allow the OPTIONS method, without caching the response. Set this to `false` to deny OPTIONS requests and respond with a 501 error.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorAllowPatch {
+    /**
+     * Allows PATCH requests. Content does `not` cache.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorAllowPost {
+    /**
+     * By default, POST requests also require a `Content-Length` header, or they result in a 411 error. With this option enabled with no specified `Content-Length`, the edge server relies on a `Transfer-Encoding` header to chunk the data. If neither header is present, it assumes the request has no body, and it adds a header with a `0` value to the forward request.
+     */
+    allowWithoutContentLength?: boolean;
+    /**
+     * Allows POST requests.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorAllowPut {
+    /**
+     * Allows PUT requests. Content does `not` cache.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorAllowTransferEncoding {
+    /**
+     * Allows Chunked Transfer Encoding requests.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorAltSvcHeader {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the `max-age` value in seconds for the `Alt-Svc` header. The default `max-age` for an `Alt-Svc` header is 93600 seconds (26 hours).
+     */
+    maxAge?: number;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorApiPrioritization {
+    /**
+     * Specifies the alternate response's time to live in the cache, `5` minutes by default.
+     */
+    alternateResponseCacheTtl?: number;
+    /**
+     * Identifies the Cloudlet policy.
+     */
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorApiPrioritizationCloudletPolicy;
+    /**
+     * Identifies the Cloudlet shared policy to use with this behavior. Use the `Cloudlets API` to list available shared policies.
+     */
+    cloudletSharedPolicy?: number;
+    /**
+     * Activates the API Prioritization feature.
+     */
+    enabled?: boolean;
+    /**
+     * Whether you want to apply the Cloudlet shared policy to an unlimited number of properties within your account. Learn more about shared policies and how to create them in `Cloudlets Policy Manager`.
+     */
+    isSharedPolicy?: boolean;
+    /**
+     * A label to distinguish this API Prioritization policy from any others in the same property.
+     */
+    label?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specify the NetStorage domain that contains the alternate response.
+     */
+    netStorage?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorApiPrioritizationNetStorage;
+    /**
+     * Specify the full NetStorage path for the alternate response, including trailing file name.
+     */
+    netStoragePath?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * Specifies the CP code as an object. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
+     */
+    throttledCpCode?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorApiPrioritizationThrottledCpCode;
+    /**
+     * Specifies the HTTP response code for requests that receive the alternate response.
+     */
+    throttledStatusCode?: number;
+    /**
+     * Specifies whether to apply an alternative CP code for requests served the alternate response.
+     */
+    useThrottledCpCode?: boolean;
+    /**
+     * Allows you to assign a specific HTTP response code to a throttled request.
+     */
+    useThrottledStatusCode?: boolean;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorApiPrioritizationCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorApiPrioritizationNetStorage {
+    cpCode?: number;
+    downloadDomainName?: string;
+    g2oToken?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorApiPrioritizationThrottledCpCode {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorApiPrioritizationThrottledCpCodeCpCodeLimits;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    createdDate?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    description?: string;
+    id?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    name?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorApiPrioritizationThrottledCpCodeCpCodeLimits {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    currentCapacity?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    limit?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorApplicationLoadBalancer {
+    /**
+     * Specifies a NetStorage account for a static maintenance page as a fallback when no origins are available.
+     */
+    allDownNetStorage?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorApplicationLoadBalancerAllDownNetStorage;
+    /**
+     * Specifies the fallback maintenance page's filename, expressed as a full path from the root of the NetStorage server.
+     */
+    allDownNetStorageFile?: string;
+    /**
+     * Specifies the HTTP response code when all load-balancing origins are unavailable.
+     */
+    allDownStatusCode?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    allDownTitle?: string;
+    /**
+     * Allows the cache to prefresh.  Only appropriate if all origins serve the same content for the same URL.
+     */
+    allowCachePrefresh?: boolean;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    cachedContentTitle?: string;
+    /**
+     * Identifies the Cloudlet policy.
+     */
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorApplicationLoadBalancerCloudletPolicy;
+    /**
+     * Activates the Application Load Balancer Cloudlet.
+     */
+    enabled?: boolean;
+    /**
+     * Sets the number of failed requests that would trigger the failover process.
+     */
+    failoverAttemptsThreshold?: number;
+    /**
+     * Determines what to do if an origin fails.
+     */
+    failoverMode?: string;
+    /**
+     * Specifies a fixed set of failover mapping rules.
+     */
+    failoverOriginMaps?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorApplicationLoadBalancerFailoverOriginMap[];
+    /**
+     * Specifies a set of HTTP status codes that signal a failure on the origin, in which case the cookie that binds the client to that origin is invalidated and the client is rerouted to another available origin.
+     */
+    failoverStatusCodes?: string[];
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    failoverTitle?: string;
+    /**
+     * A label to distinguish this Application Load Balancer policy from any others within the same property.
+     */
+    label?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the name for your session cookie.
+     */
+    originCookieName?: string;
+    /**
+     * Specifies whether to use a cookie domain with the stickiness cookie, to tell the browser to which domain to send the cookie.
+     */
+    specifyStickinessCookieDomain?: boolean;
+    /**
+     * Sets whether to assign a `salt` value automatically to the cookie to prevent manipulation by the user. You should not enable this if sharing the population cookie across more than one property.
+     */
+    stickinessCookieAutomaticSalt?: boolean;
+    /**
+     * Specifies the domain to track the stickiness cookie.
+     */
+    stickinessCookieDomain?: string;
+    /**
+     * Specifies the stickiness cookie's salt value. Use this option to share the cookie across many properties.
+     */
+    stickinessCookieSalt?: string;
+    /**
+     * Ensures the cookie is transmitted only over HTTP.
+     */
+    stickinessCookieSetHttpOnlyFlag?: boolean;
+    /**
+     * Determines how a cookie persistently associates the client with a load-balanced origin.
+     */
+    stickinessCookieType?: string;
+    /**
+     * Sets how long it is before the cookie expires.
+     */
+    stickinessDuration?: string;
+    /**
+     * Specifies when the cookie expires.
+     */
+    stickinessExpirationDate?: string;
+    /**
+     * Extends the duration of the cookie with each new request. When enabled, the `DURATION` thus specifies the latency between requests that would cause the cookie to expire.
+     */
+    stickinessRefresh?: boolean;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    stickinessTitle?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorApplicationLoadBalancerAllDownNetStorage {
+    cpCode?: number;
+    downloadDomainName?: string;
+    g2oToken?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorApplicationLoadBalancerCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorApplicationLoadBalancerFailoverOriginMap {
+    /**
+     * Specifies the origin whose failure triggers the mapping rule.
+     */
+    fromOriginId?: string;
+    /**
+     * Requests stuck to the `fromOriginId` origin retry for each alternate origin `toOriginIds`, until one succeeds.
+     */
+    toOriginIds?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorAudienceSegmentation {
+    /**
+     * Identifies the Cloudlet policy.
+     */
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorAudienceSegmentationCloudletPolicy;
+    /**
+     * This identifies the Cloudlet shared policy to use with this behavior. You can list available shared policies with the `Cloudlets API`.
+     */
+    cloudletSharedPolicy?: number;
+    /**
+     * Enables the Audience Segmentation cloudlet feature.
+     */
+    enabled?: boolean;
+    /**
+     * Whether you want to use a shared policy for a Cloudlet. Learn more about shared policies and how to create them in `Cloudlets Policy Manager`.
+     */
+    isSharedPolicy?: boolean;
+    /**
+     * Specifies a suffix to append to the cookie name. This helps distinguish this audience segmentation policy from any others within the same property.
+     */
+    label?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Whether to assign a `salt` value automatically to the cookie to prevent manipulation by the user. You should not enable if sharing the population cookie across more than one property.
+     */
+    populationCookieAutomaticSalt?: boolean;
+    /**
+     * Specifies the domain to track the population cookie.
+     */
+    populationCookieDomain?: string;
+    /**
+     * When enabled, includes in the session cookie the name of the rule in which this behavior appears.
+     */
+    populationCookieIncludeRuleName?: boolean;
+    /**
+     * Specifies the cookie's salt value. Use this option to share the cookie across many properties.
+     */
+    populationCookieSalt?: string;
+    /**
+     * Specifies when the segmentation cookie expires.
+     */
+    populationCookieType?: string;
+    /**
+     * Specifies the lifetime of the segmentation cookie.
+     */
+    populationDuration?: string;
+    /**
+     * If disabled, sets the expiration time only if the cookie is not yet present in the request.
+     */
+    populationRefresh?: boolean;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    populationTitle?: string;
+    /**
+     * This cookie name specifies the name of the segmentation rule.
+     */
+    segmentTrackingCookieName?: string;
+    /**
+     * This custom HTTP header specifies the name of the segmentation rule.
+     */
+    segmentTrackingCustomHeader?: string;
+    /**
+     * Specifies the method to pass segment information to the origin. The Cloudlet passes the rule applied to a given request location.
+     */
+    segmentTrackingMethod?: string;
+    /**
+     * This query parameter specifies the name of the segmentation rule.
+     */
+    segmentTrackingQueryParam?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    segmentTrackingTitle?: string;
+    /**
+     * Whether to specify a cookie domain with the population cookie. It tells the browser to which domain to send the cookie.
+     */
+    specifyPopulationCookieDomain?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorAudienceSegmentationCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorAutoDomainValidation {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    autodv?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorBaseDirectory {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * Specifies the base path of content on your origin server. The value needs to begin and end with a slash (`/`) character, for example `/parent/child/`.
+     */
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorBossBeaconing {
+    /**
+     * A space-separated set of error patterns that trigger beacons to conditional feeds. Each pattern can include wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `*CONNECT* *DENIED*` matches two different words as substrings.
+     */
+    conditionalErrorPattern?: string;
+    /**
+     * Specifies the set of response status codes or ranges that trigger the beacon.
+     */
+    conditionalHttpStatuses?: string[];
+    /**
+     * Specifies a conditional sampling frequency or disables beacons.
+     */
+    conditionalSamplingFrequency?: string;
+    /**
+     * The space-separated list of CP codes that trigger the beacons. You need to specify the same set of CP codes within BOSS.
+     */
+    cpcodes?: string;
+    /**
+     * Enable diagnostic data beacons.
+     */
+    enabled?: boolean;
+    /**
+     * Specify when to trigger a beacon.
+     */
+    forwardType?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specify when to trigger a beacon.
+     */
+    requestType?: string;
+    /**
+     * Specifies a sampling frequency or disables beacons.
+     */
+    samplingFrequency?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorBreadcrumbs {
+    /**
+     * Enables the Breadcrumbs feature.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Whether to collect all Breadcrumbs data in logs, including the response headers sent a requesting client. This can also be helpful if you're using `DataStream 2` to retrieve log data. This way, all Breadcrumbs data is carried in the logs it uses.
+     */
+    loggingEnabled?: boolean;
+    /**
+     * Specifies whether to include Breadcrumbs data in the response header. To bypass the current `optMode`, append the opposite `ak-bc` query string to each request from your player.
+     */
+    optMode?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorBreakConnection {
+    /**
+     * Enables the break connection behavior.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorBrotli {
+    /**
+     * Fetches Brotli-compressed assets from your origin and caches them on edge servers.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorCacheError {
+    /**
+     * Activates the error-caching behavior.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * When enabled, the edge server preserves stale cached objects when the origin returns `500`, `502`, `503`, and `504` error codes. This avoids re-fetching and re-caching content after transient errors.
+     */
+    preserveStale?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * Overrides the default caching duration of `10s`. Note that if set to `0`, it is equivalent to `no-cache`, which forces revalidation and may cause a traffic spike. This can be counterproductive when, for example, the origin is producing an error code of `500`.
+     */
+    ttl?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorCacheId {
+    /**
+     * Specifies the names of the query parameters, cookies, or headers to include or exclude from the cache ID.
+     */
+    elements?: string[];
+    /**
+     * Includes the value of the specified elements in the cache ID. Otherwise only their names are included.
+     */
+    includeValue?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Requires the behavior's specified elements to be present for content to cache. When disabled, requests that lack the specified elements are still cached.
+     */
+    optional?: boolean;
+    /**
+     * Specifies how to modify the cache ID.
+     */
+    rule?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * Specifies the name of the variable you want to include in the cache key.
+     */
+    variableName?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorCacheKeyIgnoreCase {
+    /**
+     * Ignores case when forming cache keys.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorCacheKeyQueryParams {
+    /**
+     * Configures how sets of query string parameters translate to cache keys. Be careful not to ignore any parameters that result in substantially different content, as it is `not` reflected in the cached object.
+     */
+    behavior?: string;
+    /**
+     * When enabled, `parameters` needs to match exactly. Keep disabled to match string prefixes.
+     */
+    exactMatch?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the set of parameter field names to include in or exclude from the cache key. By default, these match the field names as string prefixes.
+     */
+    parameters?: string[];
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorCacheKeyRewrite {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the new cache key path as an alphanumeric value.
+     */
+    purgeKey?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorCachePost {
+    /**
+     * Enables caching of POST responses.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * Define how and whether to use the POST message body as a cache key.
+     */
+    useBody?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorCacheRedirect {
+    /**
+     * Enables the redirect caching behavior.
+     */
+    enabled?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorCacheTag {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the cache tag you want to add to your cached content. A cache tag is only added when the object is first added to cache. A single cache tag can't exceed 128 characters and can only include alphanumeric characters, plus this class of characters: ```[!#$%'+./^_`|~-]```
+     */
+    tag?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorCacheTagVisible {
+    /**
+     * Specifies when to include the `Edge-Cache-Tag` in responses.
+     */
+    behavior?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorCaching {
+    /**
+     * Specify the caching option.
+     */
+    behavior?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    cacheControlDirectives?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    cacheabilitySettings?: string;
+    /**
+     * Set the `MAX_AGE` header for the cached content.
+     */
+    defaultTtl?: string;
+    /**
+     * This enables honoring particular `Cache-Control` header directives from the origin. Supports all official `RFC 7234` directives except for `no-transform`.
+     */
+    enhancedRfcSupport?: boolean;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    expirationSettings?: string;
+    /**
+     * This instructs edge servers to cache the object for a length of time set by the `max-age` directive in the response. When present in the origin response, this directive takes precedence over the `max-age` directive and the `defaultTtl` setting.
+     */
+    honorMaxAge?: boolean;
+    /**
+     * This instructs edge servers to successfully revalidate with the origin server before using stale objects in the cache to satisfy new requests.
+     */
+    honorMustRevalidate?: boolean;
+    /**
+     * With the `no-cache` directive present in the response, this instructs edge servers to validate or refetch the response for each request. Effectively, set the time to live `ttl` to zero seconds.
+     */
+    honorNoCache?: boolean;
+    /**
+     * Instructs edge servers not to cache the response when the origin response includes the `no-store` directive.
+     */
+    honorNoStore?: boolean;
+    /**
+     * Instructs edge servers not to cache the response when the origin response includes the `private` directive.
+     */
+    honorPrivate?: boolean;
+    /**
+     * With the `proxy-revalidate` directive present in the response, this instructs edge servers to successfully revalidate with the origin server before using stale objects in the cache to satisfy new requests.
+     */
+    honorProxyRevalidate?: boolean;
+    /**
+     * Instructs edge servers to cache the object for a length of time set by the `s-maxage` directive in the response. When present in the origin response, this directive takes precedence over the `max-age` directive and the `defaultTtl` setting.
+     */
+    honorSMaxage?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Determines what to do once the cached content has expired, by which time the Akamai platform should have re-fetched and validated content from the origin. If enabled, only allows the re-fetched content to be served. If disabled, may serve stale content if the origin is unavailable.
+     */
+    mustRevalidate?: boolean;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    revalidationSettings?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * The maximum time content may remain cached. Setting the value to `0` is the same as setting a `no-cache` header, which forces content to revalidate.
+     */
+    ttl?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorCentralAuthorization {
+    /**
+     * Enables the centralized authorization behavior.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorChaseRedirects {
+    /**
+     * Allows edge servers to chase redirects.
+     */
+    enabled?: boolean;
+    /**
+     * Specifies, as a string, the maximum number of redirects to follow.
+     */
+    limit?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Once the redirect `limit` is reached, enabling this option serves an HTTP `404` (Not Found) error instead of the last redirect.
+     */
+    serve404?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorClientCertificateAuth {
+    /**
+     * Specify client certificate attributes to include in the `Client-To-Edge` authentication header that's sent to your origin server.
+     */
+    clientCertificateAttributes?: string[];
+    /**
+     * Constructs the `Client-To-Edge` authentication header using information from the client to edge mTLS handshake and forwards it to your origin. You can configure your origin to acknowledge the header to enable transitive trust. Some form of the client x.509 certificate needs to be included in the header. You can include the full certificate or specific attributes.
+     */
+    enable?: boolean;
+    /**
+     * Whether to include the current validation status of the client certificate in the `Client-To-Edge` authentication header. This verifies the validation status of the certificate, regardless of the certificate attributes you're including in the header.
+     */
+    enableClientCertificateValidationStatus?: boolean;
+    /**
+     * Whether to include the complete client certificate in the header, in its binary (DER) format. DER-formatted certificates leave out the `BEGIN CERTIFICATE/END CERTIFICATE` statements and most often use the `.der` extension. Alternatively, you can specify individual `clientCertificateAttributes` you want included in the request.
+     */
+    enableCompleteClientCertificate?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorClientCharacteristics {
+    /**
+     * Specifies the client request's geographic region.
+     */
+    country?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorCloudInterconnects {
+    /**
+     * Specifies the geographical locations of your cloud origin. You should enable Cloud Interconnects only if your origin is in one of these locations, since GCP doesn't provide a discount for egress traffic for any other regions.
+     */
+    cloudLocations?: string[];
+    /**
+     * Channels the traffic to maximize the egress discount at the origin.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorCloudWrapper {
+    /**
+     * Enables Cloud Wrapper behavior.
+     */
+    enabled?: boolean;
+    /**
+     * The location you want to distribute your Cloud Wrapper cache space to. This behavior allows all locations configured in your Cloud Wrapper configuration.
+     */
+    location?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorCloudWrapperAdvanced {
+    /**
+     * Specifies the custom failover map to handle Cloud Wrapper failures. Contact your account representative for more information.
+     */
+    customFailoverMap?: string;
+    /**
+     * Enables failover for Cloud Wrapper.
+     */
+    enabled?: boolean;
+    /**
+     * Specifies the failover map to handle Cloud Wrapper failures. Contact your account representative for more information.
+     */
+    failoverMap?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorCommonMediaClientData {
+    /**
+     * Uses Common Media Client Data (CMCD) metadata to determine the segment URLs your origin server prefetches to speed up content delivery.
+     */
+    enableCmcdSegmentPrefetch?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorConditionalOrigin {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    originId?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorConstructResponse {
+    /**
+     * HTML response of up to 2000 characters to send to the end-user client.
+     */
+    body?: string;
+    /**
+     * Serves the custom response.
+     */
+    enabled?: boolean;
+    /**
+     * For GET requests from clients, this forces edge servers to evict the underlying object from cache. Defaults to `false`.
+     */
+    forceEviction?: boolean;
+    /**
+     * Whether to ignore the custom response when purging.
+     */
+    ignorePurge?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * The HTTP response code to send to the end-user client.
+     */
+    responseCode?: number;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorContentCharacteristics {
+    /**
+     * Optimize based on the total size of the content library delivered.
+     */
+    catalogSize?: string;
+    /**
+     * Optimize based on the type of content.
+     */
+    contentType?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Optimize based on the size of the object retrieved from the origin.
+     */
+    objectSize?: string;
+    /**
+     * Optimize based on the content's expected popularity.
+     */
+    popularityDistribution?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorContentCharacteristicsAmd {
+    /**
+     * Optimize based on the total size of the content library delivered.
+     */
+    catalogSize?: string;
+    /**
+     * Optimize based on the quality of media content.
+     */
+    contentType?: string;
+    /**
+     * Enable delivery of DASH media.
+     */
+    dash?: boolean;
+    /**
+     * Enable delivery of HDS media.
+     */
+    hds?: boolean;
+    /**
+     * Enable delivery of HLS media.
+     */
+    hls?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Optimize based on the content's expected popularity.
+     */
+    popularityDistribution?: string;
+    /**
+     * Specifies the duration of individual segments.
+     */
+    segmentDurationDash?: string;
+    /**
+     * Customizes the number of seconds for the segment.
+     */
+    segmentDurationDashCustom?: number;
+    /**
+     * Specifies the duration of individual fragments.
+     */
+    segmentDurationHds?: string;
+    /**
+     * Customizes the number of seconds for the fragment.
+     */
+    segmentDurationHdsCustom?: number;
+    /**
+     * Specifies the duration of individual segments.
+     */
+    segmentDurationHls?: string;
+    /**
+     * Customizes the number of seconds for the segment.
+     */
+    segmentDurationHlsCustom?: number;
+    /**
+     * Specifies the duration of individual fragments.
+     */
+    segmentDurationSmooth?: string;
+    /**
+     * Customizes the number of seconds for the fragment.
+     */
+    segmentDurationSmoothCustom?: number;
+    /**
+     * Specifies the size of the media object retrieved from the origin.
+     */
+    segmentSizeDash?: string;
+    /**
+     * Specifies the size of the media object retrieved from the origin.
+     */
+    segmentSizeHds?: string;
+    /**
+     * Specifies the size of the media object retrieved from the origin.
+     */
+    segmentSizeHls?: string;
+    /**
+     * Specifies the size of the media object retrieved from the origin.
+     */
+    segmentSizeSmooth?: string;
+    /**
+     * Enable delivery of Smooth media.
+     */
+    smooth?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorContentCharacteristicsDd {
+    /**
+     * Optimize based on the total size of the content library delivered.
+     */
+    catalogSize?: string;
+    /**
+     * Optimize based on the type of content.
+     */
+    contentType?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Optimize based on the size of the object retrieved from the origin.
+     */
+    objectSize?: string;
+    /**
+     * Optimizes the delivery throughput and download times for large files.
+     */
+    optimizeOption?: boolean;
+    /**
+     * Optimize based on the content's expected popularity.
+     */
+    popularityDistribution?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorContentCharacteristicsWsdLargeFile {
+    /**
+     * Optimize based on the total size of the content library delivered.
+     */
+    catalogSize?: string;
+    /**
+     * Optimize based on the type of content.
+     */
+    contentType?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Optimize based on the size of the object retrieved from the origin.
+     */
+    objectSize?: string;
+    /**
+     * Optimize based on the content's expected popularity.
+     */
+    popularityDistribution?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorContentCharacteristicsWsdLive {
+    /**
+     * Optimize based on the total size of the content library delivered.
+     */
+    catalogSize?: string;
+    /**
+     * Optimize based on the quality of media content.
+     */
+    contentType?: string;
+    /**
+     * Enable delivery of DASH media.
+     */
+    dash?: boolean;
+    /**
+     * Enable delivery of HDS media.
+     */
+    hds?: boolean;
+    /**
+     * Enable delivery of HLS media.
+     */
+    hls?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Optimize based on the content's expected popularity.
+     */
+    popularityDistribution?: string;
+    /**
+     * Specifies the duration of individual segments.
+     */
+    segmentDurationDash?: string;
+    /**
+     * Specifies the duration of individual fragments.
+     */
+    segmentDurationHds?: string;
+    /**
+     * Specifies the duration of individual segments.
+     */
+    segmentDurationHls?: string;
+    /**
+     * Specifies the duration of individual fragments.
+     */
+    segmentDurationSmooth?: string;
+    /**
+     * Specifies the size of the media object retrieved from the origin.
+     */
+    segmentSizeDash?: string;
+    /**
+     * Specifies the size of the media object retrieved from the origin.
+     */
+    segmentSizeHds?: string;
+    /**
+     * Specifies the size of the media object retrieved from the origin.
+     */
+    segmentSizeHls?: string;
+    /**
+     * Specifies the size of the media object retrieved from the origin.
+     */
+    segmentSizeSmooth?: string;
+    /**
+     * Enable delivery of Smooth media.
+     */
+    smooth?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorContentCharacteristicsWsdVod {
+    /**
+     * Optimize based on the total size of the content library delivered.
+     */
+    catalogSize?: string;
+    /**
+     * Optimize based on the quality of media content.
+     */
+    contentType?: string;
+    /**
+     * Enable delivery of DASH media.
+     */
+    dash?: boolean;
+    /**
+     * Enable delivery of HDS media.
+     */
+    hds?: boolean;
+    /**
+     * Enable delivery of HLS media.
+     */
+    hls?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Optimize based on the content's expected popularity.
+     */
+    popularityDistribution?: string;
+    /**
+     * Specifies the duration of individual segments.
+     */
+    segmentDurationDash?: string;
+    /**
+     * Specifies the duration of individual fragments.
+     */
+    segmentDurationHds?: string;
+    /**
+     * Specifies the duration of individual segments.
+     */
+    segmentDurationHls?: string;
+    /**
+     * Specifies the duration of individual fragments.
+     */
+    segmentDurationSmooth?: string;
+    /**
+     * Specifies the size of the media object retrieved from the origin.
+     */
+    segmentSizeDash?: string;
+    /**
+     * Specifies the size of the media object retrieved from the origin.
+     */
+    segmentSizeHds?: string;
+    /**
+     * Specifies the size of the media object retrieved from the origin.
+     */
+    segmentSizeHls?: string;
+    /**
+     * Specifies the size of the media object retrieved from the origin.
+     */
+    segmentSizeSmooth?: string;
+    /**
+     * Enable delivery of Smooth media.
+     */
+    smooth?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorContentPrePosition {
+    /**
+     * Enables the Content PrePosition behavior.
+     */
+    enabled?: boolean;
+    firstLocation?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    secondLocation?: string;
+    sourceType?: string;
+    targets?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorContentTargetingProtection {
+    /**
+     * Specifies a set of two-character ISO 3166 country codes from which to allow or deny traffic. See `EdgeScape Data Codes` for a list.
+     */
+    countries?: string[];
+    /**
+     * Specifies the set of Designated Market Area codes from which to allow or deny traffic.  See `EdgeScape Data Codes` for a list.
+     */
+    dmas?: string[];
+    /**
+     * When enabled, verifies IP addresses are unique to specific geographic regions.
+     */
+    enableGeoProtection?: boolean;
+    /**
+     * When enabled, redirects denied requests rather than responding with an error code.
+     */
+    enableGeoRedirectOnDeny?: boolean;
+    /**
+     * Allows you to control access to your content from specific sets of IP addresses and CIDR blocks.
+     */
+    enableIpProtection?: boolean;
+    /**
+     * When enabled, redirects denied requests rather than responding with an error code.
+     */
+    enableIpRedirectOnDeny?: boolean;
+    /**
+     * Allows you allow traffic from certain referring websites, and disallow traffic from unauthorized sites that hijack those links.
+     */
+    enableReferrerProtection?: boolean;
+    /**
+     * When enabled, redirects denied requests rather than responding with an error code.
+     */
+    enableReferrerRedirectOnDeny?: boolean;
+    /**
+     * Enables the Content Targeting feature.
+     */
+    enabled?: boolean;
+    /**
+     * Specifies how to handle requests.
+     */
+    geoProtectionMode?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    geoProtectionTitle?: string;
+    /**
+     * This specifies the full URL to the redirect page for denied requests.
+     */
+    geoRedirectUrl?: string;
+    /**
+     * Specify a set of IP addresses or CIDR blocks to allow or deny.
+     */
+    ipAddresses?: string[];
+    /**
+     * Specifies how to handle requests.
+     */
+    ipProtectionMode?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    ipProtectionTitle?: string;
+    /**
+     * This specifies the full URL to the redirect page for denied requests.
+     */
+    ipRedirectUrl?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specify a set of IP addresses or CIDR blocks that exceptions to the set of included or excluded areas.
+     */
+    overrideIpAddresses?: string[];
+    /**
+     * Specifies the set of domains from which to allow or deny traffic.
+     */
+    referrerDomains?: string[];
+    /**
+     * Specify the action to take.
+     */
+    referrerProtectionMode?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    referrerProtectionTitle?: string;
+    /**
+     * This specifies the full URL to the redirect page for denied requests.
+     */
+    referrerRedirectUrl?: string;
+    /**
+     * Specifies a set of ISO 3166-2 regional codes from which to allow or deny traffic. See `EdgeScape Data Codes` for a list.
+     */
+    regions?: string[];
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorCorsSupport {
+    /**
+     * Accepts requests made using credentials, like cookies or TLS client certificates.
+     */
+    allowCredentials?: boolean;
+    /**
+     * In responses to preflight requests, defines which headers to allow when making the actual request.
+     */
+    allowHeaders?: string;
+    /**
+     * In responses to preflight requests, sets which origin hostnames to accept requests from.
+     */
+    allowOrigins?: string;
+    /**
+     * Enables CORS feature.
+     */
+    enabled?: boolean;
+    /**
+     * In responses to preflight requests, lists names of headers that clients can access. By default, clients can access the following simple response headers: `Cache-Control`, `Content-Language`, `Content-Type`, `Expires`, `Last-Modified`, and `Pragma`. You can add other header names to make them accessible to clients.
+     */
+    exposeHeaders?: string[];
+    /**
+     * Defines the supported request headers.
+     */
+    headers?: string[];
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies any combination of the following methods: `DELETE`, `GET`, `PATCH`, `POST`, and `PUT` that are allowed when accessing the resource from an external domain.
+     */
+    methods?: string[];
+    /**
+     * Defines the origin hostnames to accept requests from. The hostnames that you enter need to start with `http` or `https`. For detailed hostname syntax requirements, refer to RFC-952 and RFC-1123 specifications.
+     */
+    origins?: string[];
+    /**
+     * Defines the number of seconds that the browser should cache the response to a preflight request.
+     */
+    preflightMaxAge?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorCpCode {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * Specifies the CP code as an object. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
+     */
+    value?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorCpCodeValue;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorCpCodeValue {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorCpCodeValueCpCodeLimits;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    createdDate?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    description?: string;
+    id?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    name?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorCpCodeValueCpCodeLimits {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    currentCapacity?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    limit?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorCustomBehavior {
+    /**
+     * The unique identifier for the predefined custom behavior you want to insert into the current rule.
+     */
+    behaviorId?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorDatastream {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    beaconStreamTitle?: string;
+    /**
+     * If enabled, gathers midgress traffic data within the Akamai platform, such as between two edge servers, for all streams configured.
+     */
+    collectMidgressTraffic?: boolean;
+    /**
+     * A set of dash-separated DataStream ID values to limit the scope of reported data. By default, all active streams report. Use the DataStream application to gather stream ID values that apply to this property configuration. Specifying IDs for any streams that don't apply to this property has no effect, and results in no data reported.
+     */
+    datastreamIds?: string;
+    /**
+     * Enables DataStream reporting.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Enables log collection for the property by associating it with DataStream configurations.
+     */
+    logEnabled?: boolean;
+    /**
+     * Specifies the unique IDs of streams configured for the property. For properties created with the previous version of the rule format, this option contains a string instead of an array of strings. You can use the `List streams` operation to get stream IDs.
+     */
+    logStreamNames?: string[];
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    logStreamTitle?: string;
+    /**
+     * Specifies the percentage of log data you want to collect for this property.
+     */
+    samplingPercentage?: number;
+    /**
+     * Specify the DataStream type.
+     */
+    streamType?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorDcp {
+    /**
+     * When enabled, you don't need to pass the JWT token with the mqtt request, and JWT validation is skipped.
+     */
+    anonymous?: boolean;
+    /**
+     * Enables IoT Edge Connect.
+     */
+    enabled?: boolean;
+    /**
+     * When enabled, you can publish and receive messages over a secured HTTP connection on port 443.
+     */
+    gwenabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the globally reserved name for a specific configuration. It includes authorization rules over publishing and subscribing to logical categories known as `topics`. This provides a root path for all topics defined within a namespace configuration.  You can use the `IoT Edge Connect API` to configure access control lists for your namespace configuration.
+     */
+    namespaceId?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * When enabled, you can publish and receive messages over a secured MQTT connection on port 8883.
+     */
+    tlsenabled?: boolean;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * When enabled, you can publish and receive messages through a secured MQTT connection over WebSockets on port 443.
+     */
+    wsenabled?: boolean;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorDcpAuthHmacTransformation {
+    /**
+     * Specifies the hash algorithm.
+     */
+    hashConversionAlgorithm?: string;
+    /**
+     * Specifies the key to generate the hash, ideally a long random string to ensure adequate security.
+     */
+    hashConversionKey?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorDcpAuthRegexTransformation {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies a Perl-compatible regular expression with a single grouping to capture the text.  For example, a value of `^.(.{0,10})` omits the first character, but then captures up to 10 characters after that. If the regular expression does not capture a substring, authentication may fail.
+     */
+    regexPattern?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorDcpAuthSubstringTransformation {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * The zero-based index offset of the last character to extract, where `-1` selects the remainder of the string. If the index is out of bound from the string's length, authentication may fail.
+     */
+    substringEnd?: string;
+    /**
+     * The zero-based index offset of the first character to extract. If the index is out of bound from the string's length, authentication may fail.
+     */
+    substringStart?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorDcpAuthVariableExtractor {
+    /**
+     * Specifies the field in the client certificate to extract the variable from.
+     */
+    certificateField?: string;
+    /**
+     * Where to store the value.
+     */
+    dcpMutualAuthProcessingVariableId?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorDcpDefaultAuthzGroups {
+    /**
+     * Specifies the set of authorization groups to assign to all connecting devices.
+     */
+    groupNames?: string[];
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorDcpDevRelations {
+    /**
+     * Allows you to specify custom JWT server connection values.
+     */
+    customValues?: boolean;
+    /**
+     * Enables the default JWT server and sets the authentication endpoint to a default path.
+     */
+    enabled?: boolean;
+    /**
+     * Specifies the JWT server's hostname.
+     */
+    hostname?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the path to your JWT server's authentication endpoint. This lets you generate JWTs to sign your requests.
+     */
+    path?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorDcpRealTimeAuth {
+    /**
+     * Extracts a hostname from JWT.
+     */
+    extractHostname?: boolean;
+    /**
+     * Extracts a jurisdiction that defines a geographically distributed set of servers from JWT.
+     */
+    extractJurisdiction?: boolean;
+    /**
+     * Extracts a namespace from JSON web tokens (JWT).
+     */
+    extractNamespace?: boolean;
+    /**
+     * Specifies the claim in JWT to extract the hostname from.
+     */
+    hostnameClaim?: string;
+    /**
+     * Specifies the claim in JWT to extract the jurisdiction from.
+     */
+    jurisdictionClaim?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the claim in JWT to extract the namespace from.
+     */
+    namespaceClaim?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorDeliveryReceipt {
+    /**
+     * Enables the behavior.
+     */
+    enabled?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorDenyAccess {
+    /**
+     * Denies access when enabled.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Text message that keys why access is denied. Any subsequent `denyAccess` behaviors within the rule tree may refer to the same `reason` key to override the current behavior.
+     */
+    reason?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorDenyDirectFailoverAccess {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    enabled?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorDeviceCharacteristicCacheId {
+    /**
+     * Specifies a set of information about the device with which to generate a separate cache key.
+     */
+    elements?: string[];
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorDeviceCharacteristicHeader {
+    /**
+     * Specifies the set of information about the requesting device to send to the origin server.
+     */
+    elements?: string[];
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorDnsAsyncRefresh {
+    /**
+     * Allows edge servers to refresh an expired DNS record after serving content.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * Set the maximum allowed time an expired DNS record may be active.
+     */
+    timeout?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorDnsPrefresh {
+    /**
+     * Specifies the amount of time following a DNS record's expiration to asynchronously prefresh it.
+     */
+    delay?: string;
+    /**
+     * Allows edge servers to refresh DNS records before they expire.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * Specifies the amount of time to prefresh a DNS entry if there have been no requests to the domain name.
+     */
+    timeout?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorDowngradeProtocol {
+    /**
+     * Enables the protocol downgrading behavior.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorDownloadCompleteMarker {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    enabled?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorDownloadNotification {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    enabled?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorDownstreamCache {
+    /**
+     * Specify how the edge server calculates the downstream cache by setting the value of the `Expires` header.
+     */
+    allowBehavior?: string;
+    /**
+     * Specify the caching instructions the edge server sends to the end user's client.
+     */
+    behavior?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the HTTP headers to include in the response to the client.
+     */
+    sendHeaders?: string;
+    /**
+     * Adds a `Cache-Control: private` header to prevent objects from being cached in a shared caching proxy.
+     */
+    sendPrivate?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * Sets the duration of the cache. Setting the value to `0` equates to a `no-cache` header that forces revalidation.
+     */
+    ttl?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorDynamicThroughtputOptimization {
+    /**
+     * Enables the quick retry feature.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorDynamicThroughtputOptimizationOverride {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * Specifies the default target forward throughput in Mbps, ranging from 2 to 50 Mbps. If this time is exceeded during a connection attempt, quick retry is enabled and a different forward connection path is used.
+     */
+    throughput?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorDynamicWebContent {
+    /**
+     * Enables image compression for subcustomer content.
+     */
+    imageCompression?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Allows subcustomer content to prefetch over HTTP/2.
+     */
+    prefetch?: boolean;
+    /**
+     * Allows Real User Monitoring (RUM) to collect performance data for subcustomer content. See the `realUserMonitoring` behavior for more information.
+     */
+    realUserMonitoring?: boolean;
+    /**
+     * Optimizes how subcustomer traffic routes from origin to edge servers.  See the `sureRoute` behavior for more information.
+     */
+    sureRoute?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorEcmsBulkUpload {
+    /**
+     * Enables sending a compressed archive file with objects. Sends the archive file to the default path of the target data set: `<hostname>/bulk/<database_name>/<dataset_name>`.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorEcmsDatabase {
+    /**
+     * Specifies a default database for this property. If you don't configure a default data set in the `ecmsDataset` behavior, requests to objects in this database follow the pattern: `<hostname>/datastore/<data_set_name>/<object_key>`.
+     */
+    database?: string;
+    /**
+     * Specifies where to pass a database name in requests. If the specified location doesn't include the database name or the name doesn't match the regular expression, the default database is used.
+     */
+    extractLocation?: string;
+    /**
+     * Specifies the request header that passed the database name. By default, it points to `X-KV-Database`.
+     */
+    headerName?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the query string parameter that passed the database name. By default, it points to `database`.
+     */
+    queryParameterName?: string;
+    /**
+     * Specifies the regular expression that matches the database name in the URL.
+     */
+    regexPattern?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorEcmsDataset {
+    /**
+     * Specifies a default data set for this property. If you don't configure a default database in the `ecmsDatabase` behavior, requests to objects in this data set follow the pattern: `<hostname>/datastore/<database_name>/<object_key>`.
+     */
+    dataset?: string;
+    /**
+     * Specifies where to pass a data set name in requests. If the specified location doesn't include the data set name or the name doesn't match the regular expression pattern, the default data set is used.
+     */
+    extractLocation?: string;
+    /**
+     * Specifies the request header that passed the data set name. By default, it points to `X-KV-Dataset`.
+     */
+    headerName?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the query string parameter that passed the data set name. By default, it points to `dataset`.
+     */
+    queryParameterName?: string;
+    /**
+     * Specifies the regular expression that matches the data set name in the URL.
+     */
+    regexPattern?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorEcmsObjectKey {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Enables sending a compressed archive file with objects to the default path of the target data set: `<hostname>/bulk/<database_name>/<dataset_name>`.
+     */
+    regex?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorEdgeConnect {
+    /**
+     * Specifies the maximum number of lines to include in each log.
+     */
+    aggregateLines?: string;
+    /**
+     * Specifies the log's maximum size.
+     */
+    aggregateSize?: string;
+    /**
+     * Specifies how often logs are generated.
+     */
+    aggregateTime?: string;
+    /**
+     * Describes the API connector type.
+     */
+    apiConnector?: string;
+    /**
+     * Specifies the data set to log.
+     */
+    apiDataElements?: string[];
+    /**
+     * Specifies the target hostname accepting push API requests.
+     */
+    destinationHostname?: string;
+    /**
+     * Specifies the push API's endpoint.
+     */
+    destinationPath?: string;
+    /**
+     * Enables Cloud Monitor's log-publishing behavior.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * When enabled, overrides default log settings.
+     */
+    overrideAggregateSettings?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorEdgeLoadBalancingAdvanced {
+    /**
+     * A description of what the `xml` block does.
+     */
+    description?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * A block of Akamai XML metadata.
+     */
+    xml?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorEdgeLoadBalancingDataCenter {
+    /**
+     * If using session persistence, this specifies the value of the cookie named in the corresponding `edgeLoadBalancingOrigin` behavior's `cookieName` option.
+     */
+    cookieName?: string;
+    /**
+     * Provides a description for the ELB data center, for your own reference.
+     */
+    description?: string;
+    /**
+     * Allows you to specify failover rules.
+     */
+    enableFailover?: boolean;
+    /**
+     * Provides up to four failover rules to apply in the specified order.
+     */
+    failoverRules?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorEdgeLoadBalancingDataCenterFailoverRule[];
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    failoverTitle?: string;
+    /**
+     * Specifies the data center's hostname.
+     */
+    hostname?: string;
+    /**
+     * Specifies this data center's IP address.
+     */
+    ip?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Corresponds to the `id` specified by the `edgeLoadBalancingOrigin` behavior associated with this data center.
+     */
+    originId?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorEdgeLoadBalancingDataCenterFailoverRule {
+    /**
+     * When enabled, interprets the path specified by `contextRoot` as an absolute server path, for example to reference a site-down page. Otherwise when disabled, the path is appended to the request.
+     */
+    absolutePath?: boolean;
+    /**
+     * Specifies the path to use in the forwarding request, typically the root (`/`) when failing over to a different data center, or a full path such as `/static/error.html` when failing over to an error page.
+     */
+    contextRoot?: string;
+    /**
+     * The hostname of the data center to fail over to.
+     */
+    failoverHostname?: string;
+    /**
+     * Allows you to modify the request's hostname or path.
+     */
+    modifyRequest?: boolean;
+    /**
+     * Overrides the request's hostname with the `failoverHostname`.
+     */
+    overrideHostname?: boolean;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorEdgeLoadBalancingOrigin {
+    /**
+     * This specifies the name of the cookie that marks users' persistent sessions. The accompanying `edgeLoadBalancingDataCenter` behavior's `description` option specifies the cookie's value.
+     */
+    cookieName?: string;
+    /**
+     * Provides a description for the ELB origin, for your own reference.
+     */
+    description?: string;
+    /**
+     * Allows you to specify a cookie to pin the user's browser session to one data center. When disabled, ELB's default load balancing may send users to various data centers within the same session.
+     */
+    enableSessionPersistence?: boolean;
+    /**
+     * Specifies the hostname associated with the ELB rule.
+     */
+    hostname?: string;
+    /**
+     * Specifies a unique descriptive string for this ELB origin. The value needs to match the `originId` specified by the `edgeLoadBalancingDataCenter` behavior associated with this origin.
+     */
+    id?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    sessionPersistenceTitle?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorEdgeOriginAuthorization {
+    /**
+     * Specifies the name of the cookie to use for authorization.
+     */
+    cookieName?: string;
+    /**
+     * Specify the cookie's domain, which needs to match the top-level domain of the `Host` header the origin server receives.
+     */
+    domain?: string;
+    /**
+     * Enables the cookie-authorization behavior.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * Specifies the value of the authorization cookie.
+     */
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorEdgeRedirector {
+    /**
+     * Specifies the Cloudlet policy as an object.
+     */
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorEdgeRedirectorCloudletPolicy;
+    /**
+     * Identifies the Cloudlet shared policy to use with this behavior. Use the `Cloudlets API` to list available shared policies.
+     */
+    cloudletSharedPolicy?: number;
+    /**
+     * Enables the Edge Redirector Cloudlet.
+     */
+    enabled?: boolean;
+    /**
+     * Whether you want to apply the Cloudlet shared policy to an unlimited number of properties within your account. Learn more about shared policies and how to create them in `Cloudlets Policy Manager`.
+     */
+    isSharedPolicy?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorEdgeRedirectorCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorEdgeScape {
+    /**
+     * When enabled, sends the `X-Akamai-Edgescape` request header to the origin.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorEdgeSideIncludes {
+    /**
+     * Denies attempts to inject ESI code.
+     */
+    detectInjection?: boolean;
+    /**
+     * Enable ESI only for content featuring the `Edge-control: dca=esi` HTTP response header.
+     */
+    enableViaHttp?: boolean;
+    /**
+     * Enables ESI processing.
+     */
+    enabled?: boolean;
+    /**
+     * Specifies the character sets to use when transcoding the ESI language, `UTF-8` and `ISO-8859-1` for example.
+     */
+    i18nCharsets?: string[];
+    /**
+     * Provides internationalization support for ESI.
+     */
+    i18nStatus?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Allows edge servers to pass the client IP header to the ESI processor.
+     */
+    passClientIp?: boolean;
+    /**
+     * Allows edge servers to pass your origin server's cookies to the ESI processor.
+     */
+    passSetCookie?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorEdgeWorker {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    createEdgeWorker?: string;
+    /**
+     * Identifies the EdgeWorker application to apply to this rule's web traffic. You can use the `EdgeWorkers API` to get this value.
+     */
+    edgeWorkerId?: string;
+    /**
+     * When enabled, applies specified EdgeWorker functionality to this rule's web traffic.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Enables mPulse reports that include data about EdgeWorkers errors generated due to JavaScript errors. For more details, see `Integrate mPulse reports with EdgeWorkers`.
+     */
+    mPulse?: boolean;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    mPulseInformation?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    resourceTier?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorEnforceMtlsSettings {
+    /**
+     * Specify the client certificate authority (CA) sets you want to support in client requests. Run the `List CA Sets` operation in the mTLS Edge TrustStore API to get the `setId` value and pass it in this option as a string. If a request includes a set not defined here, it will be denied. The preset list items you can select are contingent on the CA sets you've created using the mTLS Edge Truststore, and then associated with a certificate in the `Certificate Provisioning System`.
+     */
+    certificateAuthoritySets?: string[];
+    /**
+     * Whether to require a specific mutual transport layer security (mTLS) certificate authority (CA) set in a request from a client to the edge network.
+     */
+    enableAuthSet?: boolean;
+    /**
+     * This denies a request from a client that doesn't match what you've set for the options in this behavior. When disabled, non-matching requests are allowed, but you can incorporate a custom handling operation, such as reviewing generated log entries to see the discrepancies, enable the `Client-To-Edge` authentication header, or issue a custom message.
+     */
+    enableDenyRequest?: boolean;
+    /**
+     * Whether the mutual transport layer security requests from a client should use the online certificate support protocol (OCSP). OCSP can determine the x.509 certificate revocation status during the TLS handshake.
+     */
+    enableOcspStatus?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorEnhancedAkamaiProtocol {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    display?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorEnhancedProxyDetection {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    anonymousVpn?: string;
+    /**
+     * Specifies how to field the proxy request.
+     */
+    bestPracticeAction?: string;
+    /**
+     * This specifies the URL to which to redirect requests.
+     */
+    bestPracticeRedirecturl?: string;
+    /**
+     * This enables detection of requests from anonymous VPNs.
+     */
+    detectAnonymousVpn?: boolean;
+    /**
+     * Specifies how to field anonymous VPN requests.
+     */
+    detectAnonymousVpnAction?: string;
+    /**
+     * This specifies the URL to which to redirect anonymous VPN requests.
+     */
+    detectAnonymousVpnRedirecturl?: string;
+    /**
+     * This detects requests from a hosting provider.
+     */
+    detectHostingProvider?: boolean;
+    /**
+     * This specifies whether to `DENY`, `ALLOW`, or `REDIRECT` requests from hosting providers.
+     */
+    detectHostingProviderAction?: string;
+    /**
+     * This specifies the absolute URL to which to redirect requests from hosting providers.
+     */
+    detectHostingProviderRedirecturl?: string;
+    /**
+     * This enables detection of requests from public proxies.
+     */
+    detectPublicProxy?: boolean;
+    /**
+     * Specifies how to field public proxy requests.
+     */
+    detectPublicProxyAction?: string;
+    /**
+     * This specifies the URL to which to redirect public proxy requests.
+     */
+    detectPublicProxyRedirecturl?: string;
+    /**
+     * This enables detection of requests from a residential proxy. See `Enhanced Proxy Detection with GeoGuard` and learn more about this GeoGuard category before enabling it.
+     */
+    detectResidentialProxy?: boolean;
+    /**
+     * This specifies whether to `DENY`, `ALLOW`, or `REDIRECT` requests from residential proxies.
+     */
+    detectResidentialProxyAction?: string;
+    /**
+     * This specifies the URL to which to redirect requests.
+     */
+    detectResidentialProxyRedirecturl?: string;
+    /**
+     * This enables detection of requests from smart DNS proxies.
+     */
+    detectSmartDnsProxy?: boolean;
+    /**
+     * Specifies whether to `DENY`, `ALLOW`, or `REDIRECT` smart DNS proxy requests.
+     */
+    detectSmartDnsProxyAction?: string;
+    /**
+     * This specifies the URL to which to redirect DNS proxy requests.
+     */
+    detectSmartDnsProxyRedirecturl?: string;
+    /**
+     * This enables detection of requests from Tor exit nodes.
+     */
+    detectTorExitNode?: boolean;
+    /**
+     * This specifies whether to `DENY`, `ALLOW`, or `REDIRECT` requests from Tor exit nodes.
+     */
+    detectTorExitNodeAction?: string;
+    /**
+     * This specifies the URL to which to redirect requests from Tor exit nodes.
+     */
+    detectTorExitNodeRedirecturl?: string;
+    /**
+     * This enables detection of requests from VPN data centers.
+     */
+    detectVpnDataCenter?: boolean;
+    /**
+     * This specifies whether to `DENY`, `ALLOW`, or `REDIRECT` requests from VPN data centers.
+     */
+    detectVpnDataCenterAction?: string;
+    /**
+     * This specifies the URL to which to redirect requests from VPN data centers.
+     */
+    detectVpnDataCenterRedirecturl?: string;
+    /**
+     * Specifies how to field the proxy request.
+     */
+    enableConfigurationMode?: string;
+    /**
+     * Applies GeoGuard proxy detection.
+     */
+    enabled?: boolean;
+    /**
+     * Whether the Enhanced Proxy Detection (Akamai-EPD) header is included in the forward request to mark a connecting IP address as an anonymous proxy, with a two-letter designation. See the `epdForwardHeaderEnrichment` behavior for details.
+     */
+    forwardHeaderEnrichment?: boolean;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    hostingProvider?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    publicProxy?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    residentialProxy?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    smartDnsProxy?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    torExitNode?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    vpnDataCenter?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorEpdForwardHeaderEnrichment {
+    /**
+     * Sends the Enhanced Proxy Detection (`Akamai-EPD`) header in the forward request to determine whether the connecting IP address is an anonymous proxy. The header can contain one or more two-letter codes that indicate the IP address type detected by edge servers:
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorFailAction {
+    /**
+     * Specifies the basic action to take when there is a failure to contact the origin.
+     */
+    actionType?: string;
+    allowFcmParentOverride?: boolean;
+    /**
+     * Specifies a custom path.
+     */
+    cexCustomPath?: boolean;
+    /**
+     * Specifies a hostname.
+     */
+    cexHostname?: string;
+    /**
+     * Specifies a custom path.
+     */
+    cexPath?: string;
+    /**
+     * Specifies a custom redirect path.
+     */
+    contentCustomPath?: boolean;
+    /**
+     * Specifies the static hostname for the alternate redirect.
+     */
+    contentHostname?: string;
+    /**
+     * Specifies a custom redirect path.
+     */
+    contentPath?: string;
+    /**
+     * Specifies a CP code for which to log errors for the NetStorage location. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
+     */
+    cpCode?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorFailActionCpCode;
+    /**
+     * Allows you to modify the original requested path.
+     */
+    dynamicCustomPath?: boolean;
+    /**
+     * Specifies the redirect method.
+     */
+    dynamicMethod?: string;
+    /**
+     * Specifies the new path.
+     */
+    dynamicPath?: string;
+    /**
+     * When enabled in case of a failure to contact the origin, the current behavior applies.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Modifies the redirect's protocol using the value of the `protocol` field.
+     */
+    modifyProtocol?: boolean;
+    /**
+     * When the `actionType` is `RECREATED_NS`, specifies the `NetStorage` origin to serve the alternate content. Contact Akamai Professional Services for your NetStorage origin's `id`.
+     */
+    netStorageHostname?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorFailActionNetStorageHostname;
+    /**
+     * When the `actionType` is `RECREATED_NS`, specifies the path for the `NetStorage` request.
+     */
+    netStoragePath?: string;
+    /**
+     * When using either `contentCustomPath`, `cexCustomPath`, `dynamicCustomPath`, or `redirectCustomPath` to specify a custom path, enabling this passes in the original request's query string as part of the path.
+     */
+    preserveQueryString?: boolean;
+    /**
+     * When the `actionType` is `REDIRECT` and `modifyProtocol` is enabled, this specifies the redirect's protocol.
+     */
+    protocol?: string;
+    /**
+     * Uses the `redirectPath` to customize a new path.
+     */
+    redirectCustomPath?: boolean;
+    /**
+     * When the `actionType` is `REDIRECT` and the `redirectHostnameType` is `ALTERNATE`, this specifies the hostname for the redirect.
+     */
+    redirectHostname?: string;
+    /**
+     * Whether to preserve or customize the hostname.
+     */
+    redirectHostnameType?: string;
+    /**
+     * Specifies the HTTP response code.
+     */
+    redirectMethod?: number;
+    /**
+     * Specifies a new path.
+     */
+    redirectPath?: string;
+    /**
+     * Specifies whether to use a CNAME chain to determine the hostname for the SaaS dynamic failaction.
+     */
+    saasCnameEnabled?: boolean;
+    /**
+     * Specifies the number of elements in the CNAME chain backwards from the edge hostname that determines the hostname for the SaaS dynamic failaction.
+     */
+    saasCnameLevel?: number;
+    /**
+     * Specifies the name of the cookie that identifies this SaaS dynamic failaction.
+     */
+    saasCookie?: string;
+    /**
+     * Specifies the name of the query parameter that identifies this SaaS dynamic failaction.
+     */
+    saasQueryString?: string;
+    /**
+     * Specifies the substitution pattern (a Perl-compatible regular expression) that defines the SaaS dynamic failaction.
+     */
+    saasRegex?: string;
+    /**
+     * Specifies the replacement pattern that defines the SaaS dynamic failaction.
+     */
+    saasReplace?: string;
+    /**
+     * Specifies the static portion of the SaaS dynamic failaction.
+     */
+    saasSuffix?: string;
+    /**
+     * Identifies the component of the request that identifies the SaaS dynamic fail action.
+     */
+    saasType?: string;
+    /**
+     * Assigns a new HTTP status code to the failure response.
+     */
+    statusCode?: number;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorFailActionCpCode {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorFailActionCpCodeCpCodeLimits;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    createdDate?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    description?: string;
+    id?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    name?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorFailActionCpCodeCpCodeLimits {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    currentCapacity?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    limit?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorFailActionNetStorageHostname {
+    cpCode?: number;
+    downloadDomainName?: string;
+    g2oToken?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorFailoverBotManagerFeatureCompatibility {
+    /**
+     * This behavior does not include any options. Specifying the behavior itself enables it.
+     */
+    compatibility?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorFastInvalidate {
+    /**
+     * When enabled, forces a validation test for all edge content to which the behavior applies.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorFips {
+    /**
+     * When enabled, supports the use of FIPS-validated ciphers in the connection between this delivery configuration and your origin server.
+     */
+    enable?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorFirstPartyMarketing {
+    /**
+     * Identifies the Cloudlet policy.
+     */
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorFirstPartyMarketingCloudletPolicy;
+    /**
+     * Enables the Cloud Marketing Cloudlet.
+     */
+    enabled?: boolean;
+    /**
+     * Select how to insert the MediaMath JavaScript reference script.
+     */
+    javaScriptInsertionRule?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specify the URL path prefix that distinguishes Cloud Marketing requests from your other web traffic. Include the leading slash character, but no trailing slash.  For example, if the path prefix is `/mmath`, and the request is for `www.example.com/dir`, the new URL is `www.example.com/mmath/dir`.
+     */
+    mediaMathPrefix?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorFirstPartyMarketingCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorFirstPartyMarketingPlus {
+    /**
+     * Identifies the Cloudlet policy.
+     */
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorFirstPartyMarketingPlusCloudletPolicy;
+    /**
+     * Enables the Cloud Marketing Plus Cloudlet.
+     */
+    enabled?: boolean;
+    /**
+     * Select how to insert the MediaMath JavaScript reference script.
+     */
+    javaScriptInsertionRule?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specify the URL path prefix that distinguishes Cloud Marketing requests from your other web traffic. Include the leading slash character, but no trailing slash.  For example, if the path prefix is `/mmath`, and the request is for `www.example.com/dir`, the new URL is `www.example.com/mmath/dir`.
+     */
+    mediaMathPrefix?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorFirstPartyMarketingPlusCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorForwardRewrite {
+    /**
+     * Identifies the Cloudlet policy.
+     */
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorForwardRewriteCloudletPolicy;
+    /**
+     * This identifies the Cloudlet shared policy to use with this behavior. You can list available shared policies with the `Cloudlets API`.
+     */
+    cloudletSharedPolicy?: number;
+    /**
+     * Enables the Forward Rewrite Cloudlet behavior.
+     */
+    enabled?: boolean;
+    /**
+     * Whether you want to use a shared policy for a Cloudlet. Learn more about shared policies and how to create them in `Cloudlets Policy Manager`.
+     */
+    isSharedPolicy?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorForwardRewriteCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorG2oheader {
+    /**
+     * Specifies the set of data to be encrypted as a combination of concatenated strings.
+     */
+    customSignStrings?: string[];
+    /**
+     * Specifies the name of the header that contains the request data that needs to be encrypted.
+     */
+    dataHeader?: string;
+    /**
+     * Enables the g2o verification behavior.
+     */
+    enabled?: boolean;
+    /**
+     * Specifies the version of the encryption algorithm as an integer from `1` through `5`.
+     */
+    encodingVersion?: number;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the cryptographic `nonce` string.
+     */
+    nonce?: string;
+    /**
+     * Specifies the shared secret key.
+     */
+    secretKey?: string;
+    /**
+     * Specifies the name of the header containing encrypted request data.
+     */
+    signedHeader?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * When disabled, the encrypted string is based on the forwarded URL. If enabled, you can use `customSignString` to customize the set of data to encrypt.
+     */
+    useCustomSignString?: boolean;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorGlobalRequestNumber {
+    /**
+     * With `outputOption` set to specify any set of headers, this specifies the name of the header to report the GRN value.
+     */
+    headerName?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies how to report the GRN value.
+     */
+    outputOption?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * This specifies the name of the variable to assign the GRN value to. You need to pre-declare any `variable` you specify within the rule tree.
+     */
+    variableName?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorGraphqlCaching {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    advanced?: string;
+    /**
+     * When enabled, caches responses that include an `error` field at the top of the response body object.  Disable this if your GraphQL server yields temporary errors with success codes in the 2xx range.
+     */
+    cacheResponsesWithErrors?: boolean;
+    /**
+     * Enables GraphQL caching.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * The name of the JSON body parameter that identifies GraphQL POST requests.
+     */
+    operationsJsonBodyParameterName?: string;
+    /**
+     * Specifies the name of a query parameter that identifies requests as GraphQL queries.
+     */
+    operationsUrlQueryParameterName?: string;
+    /**
+     * Specify what happens if GraphQL query processing fails on POST requests.
+     */
+    postRequestProcessingErrorHandling?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorGzipResponse {
+    /**
+     * Specify when to compress responses.
+     */
+    behavior?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorHdDataAdvanced {
+    /**
+     * Human-readable description of what the XML block does.
+     */
+    description?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * A block of Akamai XML metadata.
+     */
+    xml?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorHealthDetection {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the maximum number of times the edge server will contact your origin server. If your origin is associated with several IP addresses, `maximumReconnects` effectively overrides the value of `retryCount`.
+     */
+    maximumReconnects?: number;
+    /**
+     * The number of consecutive connection failures that mark an IP address as faulty.
+     */
+    retryCount?: number;
+    /**
+     * Specifies the amount of time the edge server will wait before trying to reconnect to an IP address it has already identified as faulty.
+     */
+    retryInterval?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorHsafEipBinding {
+    /**
+     * Whether to pull the serial number from the variable value set in the `advanced` behavior. Work with your Akamai Services team to add the `advanced` behavior earlier in your property to extract and apply the `AKA_PM_EIP_HSAF_SERIAL` variable.
+     */
+    customExtractedSerial?: boolean;
+    /**
+     * Enables HSAF for Edge IP Binding customers with a large footprint.
+     */
+    enabled?: boolean;
+    /**
+     * Specifies the maximum value for the hash range, from 3 through 2046. This needs to be higher than `hashMinValue`.
+     */
+    hashMaxValue?: number;
+    /**
+     * Specifies the minimum value for the HSAF hash range, from 2 through 2045. This needs to be lower than `hashMaxValue`.
+     */
+    hashMinValue?: number;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * Specifies where the behavior is applied.
+     */
+    tier?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorHttp2 {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    enabled?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorHttp3 {
+    /**
+     * This enables HTTP/3 connections between requesting clients and Akamai edge servers. You also need to enable QUIC and TLS 1.3 in your certificate deployment settings. See the `Property Manager documentation` for more details.
+     */
+    enable?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorHttpStrictTransportSecurity {
+    /**
+     * Applies HSTS to this set of requests.
+     */
+    enable?: boolean;
+    /**
+     * When enabled, applies HSTS to all subdomains.
+     */
+    includeSubDomains?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the duration for which to apply HSTS for new browser connections.
+     */
+    maxAge?: string;
+    /**
+     * When enabled, adds this domain to the browser's preload list. You still need to declare the domain at `hstspreload.org`.
+     */
+    preload?: boolean;
+    /**
+     * When enabled, redirects all HTTP requests to HTTPS.
+     */
+    redirect?: boolean;
+    /**
+     * Specifies a response code.
+     */
+    redirectStatusCode?: number;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorHttpToHttpsUpgrade {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    upgrade?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorImOverride {
+    /**
+     * Directly specifies the pixel density. The numeric value is a scaling factor of 1, representing normal density.
+     */
+    dpr?: number;
+    /**
+     * This selects the variable with the desired pixel density. The variable specifies the same type of data as the `dpr` option below.
+     */
+    dprvar?: string;
+    /**
+     * Whether to exclude all query parameters from the Image and Video Manager cache key.
+     */
+    excludeAllQueryParameters?: boolean;
+    /**
+     * Specifies individual query parameters to exclude from the Image and Video Manager cache key.
+     */
+    excludedQueryParameters?: string[];
+    /**
+     * Specifies the type of the browser, or the encodings passed in the `Accept` header, that you want to optimize images for.
+     */
+    format?: string;
+    /**
+     * This selects the variable with the name of the browser you want to optimize images for. The variable specifies the same type of data as the `format` option below.
+     */
+    formatvar?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Selects the type of query parameter you want to set.
+     */
+    override?: string;
+    /**
+     * This selects the desired Image and Video Manager policy name directly. If there is no policy by that name, Image and Video Manager serves the image unmodified.
+     */
+    policy?: string;
+    /**
+     * This selects the variable with the desired Image and Video Manager policy name to apply to image requests. If there is no policy by that name, Image and Video Manager serves the image unmodified.
+     */
+    policyvar?: string;
+    /**
+     * This selects one of the property's rule tree variables to assign to the `policyvarName` variable within Image and Video Manager.
+     */
+    policyvarIMvar?: string;
+    /**
+     * This selects the name of one of the variables defined in an Image and Video Manager policy that you want to replace with the property's rule tree variable.
+     */
+    policyvarName?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * Specifies how to set a query parameter.
+     */
+    typesel?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * Sets the image's desired pixel width directly. If the Image Manager policy doesn't define that width, it serves the next largest width.
+     */
+    width?: number;
+    /**
+     * Selects the variable with the desired width.  If the Image and Video Manager policy doesn't define that width, it serves the next largest width.
+     */
+    widthvar?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorImageAndVideoManager {
+    applyBestFileType?: boolean;
+    cpCodeOriginal?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorImageAndVideoManagerCpCodeOriginal;
+    cpCodeTransformed?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorImageAndVideoManagerCpCodeTransformed;
+    enabled?: boolean;
+    imageSet?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    policySetType?: string;
+    resize?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    videoSet?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorImageAndVideoManagerCpCodeOriginal {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorImageAndVideoManagerCpCodeOriginalCpCodeLimits;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    createdDate?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    description?: string;
+    id?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    name?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorImageAndVideoManagerCpCodeOriginalCpCodeLimits {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    currentCapacity?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    limit?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorImageAndVideoManagerCpCodeTransformed {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorImageAndVideoManagerCpCodeTransformedCpCodeLimits;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    createdDate?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    description?: string;
+    id?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    name?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorImageAndVideoManagerCpCodeTransformedCpCodeLimits {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    currentCapacity?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    limit?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorImageManager {
+    /**
+     * Generates a custom `Image and Video Manager API` token to apply a corresponding policy to this set of images. The token consists of a descriptive label (the `policyToken`) concatenated with a property-specific identifier that's generated when you save the property. The API registers the token when you activate the property.
+     */
+    advanced?: boolean;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    apiReferenceTitle?: string;
+    /**
+     * Specify whether to convert images to the best file type for the requesting device, based on its user agent and the initial image file. This produces the smallest file size possible that retains image quality.
+     */
+    applyBestFileType?: boolean;
+    /**
+     * Assigns a CP code to track traffic and billing for original images that the Image and Video Manager has not modified. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
+     */
+    cpCodeOriginal?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorImageManagerCpCodeOriginal;
+    /**
+     * Assigns a separate CP code to track traffic and billing for derived images. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
+     */
+    cpCodeTransformed?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorImageManagerCpCodeTransformed;
+    /**
+     * Enable image management capabilities and generate a corresponding API token.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Identifies the existing policy set configured with `Image and Video Manager API`.
+     */
+    policySet?: string;
+    /**
+     * Assign a prefix label to help match the policy token to this set of images, limited to 32 alphanumeric or underscore characters. If you don't specify a label, `default` becomes the prefix.
+     */
+    policyToken?: string;
+    /**
+     * Specify the default policy identifier, which is registered with the `Image and Video Manager API` once you activate this property.  The `advanced` option needs to be inactive.
+     */
+    policyTokenDefault?: string;
+    /**
+     * Specify whether to scale down images to the maximum screen resolution, as determined by the rendering device's user agent.  Note that enabling this may affect screen layout in unexpected ways.
+     */
+    resize?: boolean;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    settingsTitle?: string;
+    /**
+     * Specifies a location for your site's heaviest traffic, for use in caching derivatives on edge servers.
+     */
+    superCacheRegion?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    trafficTitle?: string;
+    /**
+     * Whether to use a previously created policy set that may be referenced in other properties, or create a new policy set to use with this property. A policy set can be shared across multiple properties belonging to the same contract. The behavior populates any changes to the policy set across all properties that reference that set.
+     */
+    useExistingPolicySet?: boolean;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorImageManagerCpCodeOriginal {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorImageManagerCpCodeOriginalCpCodeLimits;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    createdDate?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    description?: string;
+    id?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    name?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorImageManagerCpCodeOriginalCpCodeLimits {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    currentCapacity?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    limit?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorImageManagerCpCodeTransformed {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorImageManagerCpCodeTransformedCpCodeLimits;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    createdDate?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    description?: string;
+    id?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    name?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorImageManagerCpCodeTransformedCpCodeLimits {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    currentCapacity?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    limit?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorImageManagerVideo {
+    /**
+     * When disabled, applies a single standard policy based on your property name.  Allows you to reference a rule-specific `policyToken` for videos with different match criteria.
+     */
+    advanced?: boolean;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    apiReferenceTitle?: string;
+    /**
+     * When enabled, automatically converts videos to the best file type for the requesting device. This produces the smallest file size that retains image quality, based on the user agent and the initial image file.
+     */
+    applyBestFileType?: boolean;
+    /**
+     * Specifies the CP code for which to track Image and Video Manager video traffic. Use this along with `cpCodeTransformed` to track traffic to derivative video content. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
+     */
+    cpCodeOriginal?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorImageManagerVideoCpCodeOriginal;
+    /**
+     * Specifies the CP code to identify derivative transformed video content. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
+     */
+    cpCodeTransformed?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorImageManagerVideoCpCodeTransformed;
+    /**
+     * Applies Image and Video Manager's video optimization to the current content.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Identifies the existing policy set configured with `Image and Video Manager API`.
+     */
+    policySet?: string;
+    /**
+     * Specifies a custom policy defined in the Image and Video Manager Policy Manager or the `Image and Video Manager API`. The policy name can include up to 64 alphanumeric, dash, or underscore characters.
+     */
+    policyToken?: string;
+    /**
+     * Specifies the default policy identifier, which is registered with the `Image and Video Manager API` once you activate this property.
+     */
+    policyTokenDefault?: string;
+    /**
+     * When enabled, scales down video for smaller mobile screens, based on the device's `User-Agent` header.
+     */
+    resize?: boolean;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    settingsTitle?: string;
+    /**
+     * To optimize caching, assign a region close to your site's heaviest traffic.
+     */
+    superCacheRegion?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    trafficTitle?: string;
+    /**
+     * Whether to use a previously created policy set that may be referenced in other properties, or create a new policy set to use with this property. A policy set can be shared across multiple properties belonging to the same contract. The behavior populates any changes to the policy set across all properties that reference that set.
+     */
+    useExistingPolicySet?: boolean;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorImageManagerVideoCpCodeOriginal {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorImageManagerVideoCpCodeOriginalCpCodeLimits;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    createdDate?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    description?: string;
+    id?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    name?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorImageManagerVideoCpCodeOriginalCpCodeLimits {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    currentCapacity?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    limit?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorImageManagerVideoCpCodeTransformed {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorImageManagerVideoCpCodeTransformedCpCodeLimits;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    createdDate?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    description?: string;
+    id?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    name?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorImageManagerVideoCpCodeTransformedCpCodeLimits {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    currentCapacity?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    limit?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorInclude {
+    /**
+     * Identifies the include you want to add to your rule tree. You can get the include ID using `PAPI`. This option only accepts digits, without the `inc_` ID prefix.
+     */
+    id?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorInstant {
+    /**
+     * Specify link relation values that activate the prefetching behavior. For example, specifying `fetch` allows you to use shorter `rel="fetch"` markup.
+     */
+    customLinkRelations?: string[];
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * When enabled, applies prefetching only to objects already set to be cacheable, for example using the `caching` behavior. Only applies to content with the `tieredDistribution` behavior enabled.
+     */
+    prefetchCacheable?: boolean;
+    /**
+     * Allows edge servers to prefetch additional HTML pages while pages that link to them are being delivered. This only applies to links from `<a>` or `<link>` tags with the appropriate link relation attribute.
+     */
+    prefetchHtml?: boolean;
+    /**
+     * Allows otherwise non-cacheable `no-store` content to prefetch if the URL path ends with `/` to indicate a request for a default file, or if the extension matches the value of the `prefetchNoStoreExtensions` option. Only applies to content with the `sureRoute` behavior enabled.
+     */
+    prefetchNoStore?: boolean;
+    /**
+     * Specifies a set of file extensions for which the `prefetchNoStore` option is allowed.
+     */
+    prefetchNoStoreExtensions?: string[];
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorInstantConfig {
+    /**
+     * Enables the InstantConfig behavior.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorLargeFileOptimization {
+    /**
+     * Specifies whether to cache partial objects.
+     */
+    enablePartialObjectCaching?: string;
+    /**
+     * Enables the file optimization behavior.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Optimization does not apply to files larger than this, expressed as a number suffixed with a unit string such as `MB` or `GB`. The size of a file can't be greater than 323 GB. If you need to optimize a larger file, contact Akamai Professional Services for help. This option is for internal usage only.
+     */
+    maximumSize?: string;
+    /**
+     * Optimization only applies to files larger than this, expressed as a number suffixed with a unit string such as `MB` or `GB`.
+     */
+    minimumSize?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * When `enablePartialObjectCaching` is set to `PARTIAL_OBJECT_CACHING`, enabling this option signals your intention to vary filenames by version, strongly recommended to avoid serving corrupt content when chunks come from different versions of the same file.
+     */
+    useVersioning?: boolean;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorLargeFileOptimizationAdvanced {
+    /**
+     * Enables the file optimization behavior.
+     */
+    enabled?: boolean;
+    /**
+     * Specifies the size of each fragment used for partial object caching.
+     */
+    fragmentSize?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the size of the file at which point to apply partial object (POC) caching. Append a numeric value with a `MB` or `GB` suffix.
+     */
+    objectSize?: string;
+    /**
+     * The number of POC fragments to prefetch after the request.
+     */
+    prefetchAfterRequest?: number;
+    /**
+     * The number of POC fragments to prefetch during the request.
+     */
+    prefetchDuringRequest?: number;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorLimitBitRate {
+    /**
+     * Specifies a download rate that corresponds to a `thresholdTable` entry. The bit rate appears as a two-member object consisting of a numeric `bitrateValue` and a `bitrateUnit` string, with allowed values of `Kbps`, `Mbps`, and `Gbps`.
+     */
+    bitrateTables?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorLimitBitRateBitrateTable[];
+    /**
+     * When enabled, activates the bit rate limiting behavior.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * Specifies the minimum size of the file or the amount of elapsed download time before applying the bit rate limit from the corresponding `bitrateTable` entry. The threshold appears as a two-member object consisting of a numeric `thresholdValue` and `thresholdUnit` string, with allowed values of `SECONDS` or `BYTES`.
+     */
+    thresholdTables?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorLimitBitRateThresholdTable[];
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorLimitBitRateBitrateTable {
+    /**
+     * The unit of measurement, either `KBPS`, `MBPS`, or `GBPS`.
+     */
+    bitrateUnit?: string;
+    /**
+     * The numeric indicator of the download rate.
+     */
+    bitrateValue?: number;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorLimitBitRateThresholdTable {
+    /**
+     * The unit of measurement, either `SECONDS` of the elapsed download time, or `BYTES` of the file size.
+     */
+    thresholdUnit?: string;
+    /**
+     * The numeric indicator of the minimum file size or elapsed download time.
+     */
+    thresholdValue?: number;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorLogCustom {
+    /**
+     * Specifies an additional data field to append to each log line, maximum 1000 bytes, typically based on a dynamically generated built-in system variable. For example, `round-trip: {{builtin.AK_CLIENT_TURNAROUND_TIME}}ms` logs the total time to complete the response. See `Support for variables` for more information. Since this option can specify both a request and response, it overrides any `customLogField` settings in the `report` behavior.
+     */
+    customLogField?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Whether to append additional custom data to each log line.
+     */
+    logCustomLogField?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorMPulse {
+    /**
+     * This generated value uniquely identifies sections of your website for you to analyze independently. To access this value, see `Enable mPulse in Property Manager`.
+     */
+    apiKey?: string;
+    /**
+     * Allows you to override the browser's default (150) maximum number of reported performance timeline entries.
+     */
+    bufferSize?: string;
+    /**
+     * A JSON string representing a configuration object passed to the JavaScript library under which mPulse runs. It corresponds at run-time to the `window.BOOMR_config` object. For example, this turns on monitoring of Single Page App frameworks: `"{\"history\": {\"enabled\": true, \"auto\": true}}"`.  See `Configuration Overrides` for more information.
+     */
+    configOverride?: string;
+    /**
+     * Applies performance monitoring to this behavior's set of content.
+     */
+    enabled?: boolean;
+    /**
+     * Specifies the version of the Boomerang JavaScript loader snippet. See `mPulse Loader Snippets` for more information.
+     */
+    loaderVersion?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Suppresses gathering metrics for potentially sensitive end-user interactions. Enabling this omits data from some older browsers.
+     */
+    requirePci?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    titleOptional?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorManifestPersonalization {
+    /**
+     * Enables the Manifest Personalization feature.
+     */
+    enabled?: boolean;
+    /**
+     * Includes additional `Akamai-Manifest-Personalization` and `Akamai-Manifest-Personalization-Config-Source` debugging headers.
+     */
+    hlsEnableDebugHeaders?: boolean;
+    /**
+     * Allows you to customize the HLS master manifest that's sent to the requesting client.
+     */
+    hlsEnabled?: boolean;
+    /**
+     * Specifies a comma-delimited set of bit rate ranges, such as `100-400,1000-4000`. Playlists specified in the `#EXT-X-STREAM-INF` tag with bit rates outside of any of those ranges are excluded from the manifest.
+     */
+    hlsFilterInBitrateRanges?: string;
+    /**
+     * Specifies a comma-delimited set of preferred bit rates, such as `100,200,400`. Playlists specified in the `#EXT-X-STREAM-INF` tag with bit rates outside of any of those values by up to 100 Kbps are excluded from the manifest.
+     */
+    hlsFilterInBitrates?: string;
+    /**
+     * Applies with `hlsEnabled` on.
+     */
+    hlsMode?: string;
+    /**
+     * Sets the preferred bit rate in Kbps. This causes the media playlist specified in the `#EXT-X-STREAM-INF` tag that most closely matches the value to list first. All other playlists maintain their current position in the manifest.
+     */
+    hlsPreferredBitrate?: string;
+    /**
+     * Specifies query parameters for the HLS master manifest to customize the manifest's content.  Any settings specified in the query string override those already configured in Property Manager.
+     */
+    hlsQueryParamEnabled?: boolean;
+    /**
+     * Specifies a primary key as a token to accompany the request.
+     */
+    hlsQueryParamSecretKey?: string;
+    /**
+     * Specifies a transition key as a token to accompany the request.
+     */
+    hlsQueryParamTransitionKey?: string;
+    /**
+     * Allows you to configure advanced settings.
+     */
+    hlsShowAdvanced?: boolean;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    hlsTitle?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorManifestRerouting {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Set this value to `adobePrimetime`, which is an external technology partner that provides value added offerings, like advertisement integration, to the requested media objects.
+     */
+    partner?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * The user name for your Adobe Primetime account.
+     */
+    username?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorManualServerPush {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the set of objects to load into the client browser's cache over HTTP2. Each value in the array represents a hostname and full path to the object, such as `www.example.com/js/site.js`.
+     */
+    serverpushlists?: string[];
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorMediaAcceleration {
+    /**
+     * Enables Media Acceleration.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorMediaAccelerationQuicOptout {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    optout?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorMediaClient {
+    /**
+     * Specifies the ID of data source's beacon.
+     */
+    beaconId?: string;
+    /**
+     * Enables client-side download analytics.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * Enables the hybrid HTTP/UDP protocol.
+     */
+    useHybridHttpUdp?: boolean;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorMediaFileRetrievalOptimization {
+    /**
+     * Enables the partial-object caching behavior.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorMediaOriginFailover {
+    /**
+     * When enabled, caches the error response.
+     */
+    cacheErrorResponse?: boolean;
+    /**
+     * This sets error response's TTL.
+     */
+    cacheWindow?: string;
+    /**
+     * Specifies the response code served to the client.
+     */
+    clientResponseCode?: string;
+    /**
+     * Allows you to configure failover settings when the origin has content errors.
+     */
+    detectObjectUnavailable?: boolean;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    detectObjectUnavailableTitle?: string;
+    /**
+     * Allows you to configure failover settings when the origin server responds with errors.
+     */
+    detectOriginUnavailable?: boolean;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    detectOriginUnavailableTitle?: string;
+    /**
+     * Allows you to configure what happens when the origin is unresponsive.
+     */
+    detectOriginUnresponsive?: boolean;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    detectOriginUnresponsiveTitle?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This specifies the redirect's destination hostname.
+     */
+    objectUnavailableAlternateHost?: string;
+    /**
+     * This specifies the origin hostname.
+     */
+    objectUnavailableBackupHost?: string;
+    /**
+     * Enabling this blacklists the origin's IP address.
+     */
+    objectUnavailableBlacklistOriginIp?: boolean;
+    /**
+     * This sets the delay before blacklisting an IP address.
+     */
+    objectUnavailableBlacklistWindow?: string;
+    /**
+     * Changes the request protocol.
+     */
+    objectUnavailableChangeProtocol?: boolean;
+    /**
+     * Specify `RESPONSE_CODES`, the only available option.
+     */
+    objectUnavailableDetectionLevel?: string;
+    /**
+     * Enabling this includes the original set of query parameters.
+     */
+    objectUnavailableIncludeQueryString?: boolean;
+    /**
+     * This specifies the path to form the new URL.
+     */
+    objectUnavailableModifiedPath?: string;
+    /**
+     * Enabling this allows you to modify the request path.
+     */
+    objectUnavailableModifyRequestPath?: boolean;
+    /**
+     * Specifies either the `HTTP` or `HTTPS` protocol.
+     */
+    objectUnavailableProtocol?: string;
+    /**
+     * This sets the recovery option.
+     */
+    objectUnavailableRecovery?: string;
+    /**
+     * Specifies a redirect response code.
+     */
+    objectUnavailableRedirectMethod?: number;
+    /**
+     * Specifies the set of response codes identifying when there are content errors.
+     */
+    objectUnavailableResponseCodes?: string[];
+    /**
+     * Sets how many times to retry.
+     */
+    objectUnavailableRetryLimit?: string;
+    /**
+     * This specifies the redirect's destination hostname.
+     */
+    originUnavailableAlternateHost?: string;
+    /**
+     * This specifies the origin hostname.
+     */
+    originUnavailableBackupHost?: string;
+    /**
+     * Enabling this blacklists the origin's IP address.
+     */
+    originUnavailableBlacklistOriginIp?: boolean;
+    /**
+     * This sets the delay before blacklisting an IP address.
+     */
+    originUnavailableBlacklistWindow?: string;
+    /**
+     * Modifies the request protocol.
+     */
+    originUnavailableChangeProtocol?: boolean;
+    /**
+     * Specify `RESPONSE_CODES`, the only available option.
+     */
+    originUnavailableDetectionLevel?: string;
+    /**
+     * Enabling this includes the original set of query parameters.
+     */
+    originUnavailableIncludeQueryString?: boolean;
+    /**
+     * This specifies the path to form the new URL.
+     */
+    originUnavailableModifiedPath?: string;
+    /**
+     * Modifies the request path.
+     */
+    originUnavailableModifyRequestPath?: boolean;
+    /**
+     * Specifies either the `HTTP` or `HTTPS` protocol.
+     */
+    originUnavailableProtocol?: string;
+    /**
+     * This sets the recovery option.
+     */
+    originUnavailableRecovery?: string;
+    /**
+     * Specifies either a redirect response code.
+     */
+    originUnavailableRedirectMethod?: number;
+    /**
+     * Specifies the set of response codes identifying when the origin responds with errors.
+     */
+    originUnavailableResponseCodes?: string[];
+    /**
+     * Sets how many times to retry.
+     */
+    originUnavailableRetryLimit?: string;
+    /**
+     * This specifies the redirect's destination hostname.
+     */
+    originUnresponsiveAlternateHost?: string;
+    /**
+     * This specifies the origin hostname.
+     */
+    originUnresponsiveBackupHost?: string;
+    /**
+     * Enabling this blacklists the origin's IP address.
+     */
+    originUnresponsiveBlacklistOriginIp?: boolean;
+    /**
+     * This sets the delay before blacklisting an IP address.
+     */
+    originUnresponsiveBlacklistWindow?: string;
+    /**
+     * This allows you to change the request protocol.
+     */
+    originUnresponsiveChangeProtocol?: boolean;
+    /**
+     * Specify the level of response to slow origin connections.
+     */
+    originUnresponsiveDetectionLevel?: string;
+    /**
+     * Enabling this includes the original set of query parameters.
+     */
+    originUnresponsiveIncludeQueryString?: boolean;
+    /**
+     * This specifies the path to form the new URL.
+     */
+    originUnresponsiveModifiedPath?: string;
+    /**
+     * Modifies the request path.
+     */
+    originUnresponsiveModifyRequestPath?: boolean;
+    /**
+     * Specifies which protocol to use.
+     */
+    originUnresponsiveProtocol?: string;
+    /**
+     * This sets the recovery option.
+     */
+    originUnresponsiveRecovery?: string;
+    /**
+     * Specifies the redirect response code.
+     */
+    originUnresponsiveRedirectMethod?: number;
+    /**
+     * Sets how many times to retry.
+     */
+    originUnresponsiveRetryLimit?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    otherOptions?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorMetadataCaching {
+    /**
+     * Enables metadata caching.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorMobileSdkPerformance {
+    /**
+     * Enables the Mobile App Performance SDK.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * When enabled, sends secondary multi-path requests to the origin server.
+     */
+    secondaryMultipathToOrigin?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorModifyIncomingRequestHeader {
+    /**
+     * Either `ADD`, `DELETE`, `MODIFY`, or `PASS` incoming HTTP request headers.
+     */
+    action?: string;
+    /**
+     * When enabled with the `action` set to `MODIFY`, prevents creation of more than one instance of a header.
+     */
+    avoidDuplicateHeaders?: boolean;
+    /**
+     * Specifies a custom field name that applies when the relevant `standard` header name is set to `OTHER`.
+     */
+    customHeaderName?: string;
+    /**
+     * Specifies the new header value.
+     */
+    headerValue?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Supplies an HTTP header replacement value.
+     */
+    newHeaderValue?: string;
+    /**
+     * If the value of `action` is `ADD`, this specifies the name of the field to add.
+     */
+    standardAddHeaderName?: string;
+    /**
+     * If the value of `action` is `DELETE`, this specifies the name of the field to remove.
+     */
+    standardDeleteHeaderName?: string;
+    /**
+     * If the value of `action` is `MODIFY`, this specifies the name of the field to modify.
+     */
+    standardModifyHeaderName?: string;
+    /**
+     * If the value of `action` is `PASS`, this specifies the name of the field to pass through.
+     */
+    standardPassHeaderName?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorModifyIncomingResponseHeader {
+    /**
+     * Either `ADD`, `DELETE`, `MODIFY`, or `PASS` incoming HTTP response headers.
+     */
+    action?: string;
+    /**
+     * When enabled with the `action` set to `MODIFY`, prevents creation of more than one instance of a header.
+     */
+    avoidDuplicateHeaders?: boolean;
+    /**
+     * Specifies a custom field name that applies when the relevant `standard` header name is set to `OTHER`.
+     */
+    customHeaderName?: string;
+    /**
+     * Specifies the header's new value.
+     */
+    headerValue?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies an HTTP header replacement value.
+     */
+    newHeaderValue?: string;
+    /**
+     * If the value of `action` is `ADD`, this specifies the name of the field to add.
+     */
+    standardAddHeaderName?: string;
+    /**
+     * If the value of `action` is `DELETE`, this specifies the name of the field to remove.
+     */
+    standardDeleteHeaderName?: string;
+    /**
+     * If the value of `action` is `MODIFY`, this specifies the name of the field to modify.
+     */
+    standardModifyHeaderName?: string;
+    /**
+     * If the value of `action` is `PASS`, this specifies the name of the field to pass through.
+     */
+    standardPassHeaderName?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorModifyOutgoingRequestHeader {
+    /**
+     * Either `ADD` or `DELETE` outgoing HTTP request headers, `MODIFY` their fixed values, or specify a `REGEX` pattern to transform them.
+     */
+    action?: string;
+    /**
+     * When enabled with the `action` set to `MODIFY`, prevents creation of more than one instance of a header.
+     */
+    avoidDuplicateHeaders?: boolean;
+    /**
+     * Specifies a custom field name that applies when the relevant `standard` header name is set to `OTHER`.
+     */
+    customHeaderName?: string;
+    /**
+     * Specifies the new header value.
+     */
+    headerValue?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * When enabled with the `action` set to `REGEX`, replaces all occurrences of the matched regular expression, otherwise only the first match if disabled.
+     */
+    matchMultiple?: boolean;
+    /**
+     * Specifies an HTTP header replacement value.
+     */
+    newHeaderValue?: string;
+    /**
+     * Specifies a Perl-compatible regular expression to match within the header value.
+     */
+    regexHeaderMatch?: string;
+    /**
+     * Specifies text that replaces the `regexHeaderMatch` pattern within the header value.
+     */
+    regexHeaderReplace?: string;
+    /**
+     * If the value of `action` is `ADD`, this specifies the name of the field to add.
+     */
+    standardAddHeaderName?: string;
+    /**
+     * If the value of `action` is `DELETE`, this specifies the name of the field to remove.
+     */
+    standardDeleteHeaderName?: string;
+    /**
+     * If the value of `action` is `MODIFY` or `REGEX`, this specifies the name of the field to modify.
+     */
+    standardModifyHeaderName?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorModifyOutgoingResponseHeader {
+    /**
+     * Either `ADD` or `DELETE` outgoing HTTP response headers, `MODIFY` their fixed values, or specify a `REGEX` pattern to transform them.
+     */
+    action?: string;
+    /**
+     * When enabled with the `action` set to `MODIFY`, prevents creation of more than one instance of a header. The last header clobbers others with the same name. This option affects the entire set of outgoing headers, and is not confined to the subset of regular expression matches.
+     */
+    avoidDuplicateHeaders?: boolean;
+    /**
+     * Specifies a custom field name that applies when the relevant `standard` header name is set to `OTHER`.
+     */
+    customHeaderName?: string;
+    /**
+     * Specifies the existing value of the header to match.
+     */
+    headerValue?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * When enabled with the `action` set to `REGEX`, replaces all occurrences of the matched regular expression, otherwise only the first match if disabled.
+     */
+    matchMultiple?: boolean;
+    /**
+     * Specifies the new HTTP header replacement value.
+     */
+    newHeaderValue?: string;
+    /**
+     * Specifies a Perl-compatible regular expression to match within the header value.
+     */
+    regexHeaderMatch?: string;
+    /**
+     * Specifies text that replaces the `regexHeaderMatch` pattern within the header value.
+     */
+    regexHeaderReplace?: string;
+    /**
+     * If the value of `action` is `ADD`, this specifies the name of the field to add.
+     */
+    standardAddHeaderName?: string;
+    /**
+     * If the value of `action` is `DELETE`, this specifies the name of the field to remove.
+     */
+    standardDeleteHeaderName?: string;
+    /**
+     * If the value of `action` is `MODIFY` or `REGEX`, this specifies the name of the field to modify.
+     */
+    standardModifyHeaderName?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorModifyViaHeader {
+    /**
+     * Enables `Via` header modifications.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specify how you want to handle the header.
+     */
+    modificationOption?: string;
+    /**
+     * Specifies a new name to replace the existing `Via` header.
+     */
+    renameHeaderTo?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorOrigin {
+    /**
+     * Specifies the hostname to use when forming a cache key.
+     */
+    cacheKeyHostname?: string;
+    /**
+     * Enables `gzip` compression for non-NetStorage origins.
+     */
+    compress?: boolean;
+    /**
+     * Specifies an array of certification objects. See the `verification settings in the Origin Server behavior` or contact your Akamai representative for details on this object's requirements.
+     */
+    customCertificateAuthorities?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorOriginCustomCertificateAuthority[];
+    /**
+     * Specifies an array of certification objects. See the `verification settings in the Origin Server behavior` or contact your Akamai representative for details on this object's requirements.
+     */
+    customCertificates?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorOriginCustomCertificate[];
+    /**
+     * This specifies the name of the custom host header the edge server should pass to the origin.
+     */
+    customForwardHostHeader?: string;
+    /**
+     * Specifies values to look for in the origin certificate's `Subject Alternate Name` or `Common Name` fields. Specify `{{Origin Hostname}}` and `{{Forward Host Header}}` within the text in the order you want them to be evaluated. (Note that these two template items are not the same as in-line `variables`, which use the same curly-brace syntax.)
+     */
+    customValidCnValues?: string[];
+    /**
+     * When enabled on non-NetStorage origins, allows you to send a custom header (the `trueClientIpHeader`) identifying the IP address of the immediate client connecting to the edge server. This may provide more useful information than the standard `X-Forward-For` header, which proxies may modify.
+     */
+    enableTrueClientIp?: boolean;
+    /**
+     * When the `originType` is set to either `CUSTOMER` or `SAAS_DYNAMIC_ORIGIN`, this specifies which `Host` header to pass to the origin.
+     */
+    forwardHostHeader?: string;
+    /**
+     * Specifies the hostname or IPv4 address of your origin server, from which edge servers can retrieve your content.
+     */
+    hostname?: string;
+    /**
+     * Specifies the port on your origin server to which edge servers should connect for HTTP requests, customarily `80`.
+     */
+    httpPort?: number;
+    /**
+     * Specifies the port on your origin server to which edge servers should connect for secure HTTPS requests, customarily `443`. This option only applies if the property is marked as secure. See `Secure property requirements` for guidance.
+     */
+    httpsPort?: number;
+    /**
+     * Specifies which IP version to use when getting content from the origin.
+     */
+    ipVersion?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the maximum TLS version to use for connections to your origin server. As best practice, use `DYNAMIC` to automatically apply the latest supported version.
+     */
+    maxTlsVersion?: string;
+    /**
+     * Specifies the minimum TLS version to use for connections to your origin server.
+     */
+    minTlsVersion?: string;
+    /**
+     * This specifies the media's origin server.
+     */
+    mslorigin?: string;
+    /**
+     * Specifies the details of the NetStorage server.
+     */
+    netStorage?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorOriginNetStorage;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    originCertificate?: string;
+    /**
+     * Specifies which certificate to trust.
+     */
+    originCertsToHonor?: string;
+    /**
+     * Identifies the Edge Load Balancing origin. This needs to correspond to an `edgeLoadBalancingOrigin` behavior's `id` attribute within the same property.
+     */
+    originId?: string;
+    /**
+     * For non-NetStorage origins, enabling this adds a Server Name Indication (SNI) header in the SSL request sent to the origin, with the origin hostname as the value. See the `verification settings in the Origin Server behavior` or contact your Akamai representative for more information.
+     */
+    originSni?: boolean;
+    /**
+     * Choose where your content is retrieved from.
+     */
+    originType?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    ports?: string;
+    /**
+     * Enabling this allows you to use a `CNAME chain` to determine the hostname for this SaaS dynamic origin.
+     */
+    saasCnameEnabled?: boolean;
+    /**
+     * Specifies the desired number of hostnames to use in the `CNAME chain`, starting backwards from the edge server.
+     */
+    saasCnameLevel?: number;
+    /**
+     * Specifies the name of the cookie that identifies this SaaS dynamic origin.
+     */
+    saasCookie?: string;
+    /**
+     * Specifies the name of the query parameter that identifies this SaaS dynamic origin.
+     */
+    saasQueryString?: string;
+    /**
+     * Specifies the Perl-compatible regular expression match that identifies this SaaS dynamic origin.
+     */
+    saasRegex?: string;
+    /**
+     * Specifies replacement text for what `saasRegex` matches.
+     */
+    saasReplace?: string;
+    /**
+     * Specifies the static part of the SaaS dynamic origin.
+     */
+    saasSuffix?: string;
+    /**
+     * Specifies the part of the request that identifies this SaaS dynamic origin.
+     */
+    saasType?: string;
+    /**
+     * Specifies the origin server's hostname, IPv4 address, or IPv6 address. Edge servers retrieve your content from this origin server.
+     */
+    secondHostname?: string;
+    /**
+     * Available only for certain products. This specifies whether you want to use an additional origin server address.
+     */
+    secondHostnameEnabled?: boolean;
+    standardCertificateAuthorities?: string[];
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * Enables transport layer security (TLS) version 1.3 for connections to your origin server.
+     */
+    tls13Support?: boolean;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    tlsVersionTitle?: string;
+    /**
+     * If a client sets the `True-Client-IP` header, the edge server allows it and passes the value to the origin. Otherwise the edge server removes it and sets the value itself.
+     */
+    trueClientIpClientSetting?: boolean;
+    /**
+     * This specifies the name of the field that identifies the end client's IP address, for example `True-Client-IP`.
+     */
+    trueClientIpHeader?: string;
+    /**
+     * With a shared `hostname` such as provided by Amazon AWS, sets a unique cache key for your content.
+     */
+    useUniqueCacheKey?: boolean;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * For non-NetStorage origins, maximize security by controlling which certificates edge servers should trust.
+     */
+    verificationMode?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorOriginCharacteristics {
+    /**
+     * Enables secure use of access keys defined in Cloud Access Manager. Access keys store encrypted authentication details required to sign requests to cloud origins. If you disable this option, you'll need to store the authentication details unencrypted.
+     */
+    accessKeyEncryptedStorage?: boolean;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    adcTitle?: string;
+    /**
+     * Specifies the authentication method.
+     */
+    authenticationMethod?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    authenticationMethodTitle?: string;
+    /**
+     * Specifies active access key ID linked to your AWS account.
+     */
+    awsAccessKeyId?: string;
+    /**
+     * Identifies the unique `awsAccessKeyVersionGuid` access key `created` in Cloud Access Manager to sign your requests to AWS S3.
+     */
+    awsAccessKeyVersionGuid?: string;
+    awsArRegion?: string;
+    /**
+     * This specifies the AWS hostname, without `http://` or `https://` prefixes. If you leave this option empty, it inherits the hostname from the `origin` behavior.
+     */
+    awsHost?: string;
+    /**
+     * This specifies the AWS region code of the location where your bucket resides.
+     */
+    awsRegion?: string;
+    /**
+     * Specifies the secret linked to the access key identifier that you want to use to sign requests to AWS.
+     */
+    awsSecretAccessKey?: string;
+    /**
+     * This specifies the subdomain of your AWS service. It precedes `amazonaws.com` or the region code in the AWS hostname. For example, `s3.amazonaws.com`.
+     */
+    awsService?: string;
+    /**
+     * Specifies the origin's geographic region.
+     */
+    country?: string;
+    /**
+     * Specifies the data to be encrypted as a series of enumerated variable names. See `Built-in system variables` for guidance on each.
+     */
+    customSignStrings?: string[];
+    /**
+     * Provides a region used by Akamai Direct Connection.
+     */
+    directConnectGeo?: string;
+    /**
+     * Specifies the version of the encryption algorithm, an integer from `1` to `5`.
+     */
+    encodingVersion?: number;
+    endPointService?: string;
+    /**
+     * Identifies the unique `gcsAccessKeyVersionGuid` access key `created` in Cloud Access Manager to sign your requests to Google Cloud Storage in interoperability mode.
+     */
+    gcsAccessKeyVersionGuid?: string;
+    /**
+     * Specifies the active access ID linked to your Google account.
+     */
+    gcsHmacKeyAccessId?: string;
+    /**
+     * Specifies the secret linked to the access ID that you want to use to sign requests to Google Cloud Storage.
+     */
+    gcsHmacKeySecret?: string;
+    hostnameTag?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the access key provided by the hosting service.
+     */
+    mslkey?: string;
+    /**
+     * Specifies the origin name provided by the hosting service.
+     */
+    mslname?: string;
+    /**
+     * Specifies the nonce.
+     */
+    nonce?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    originLocationTitle?: string;
+    propertyIdTag?: boolean;
+    roleArn?: string;
+    /**
+     * Specifies the shared secret key.
+     */
+    secretKey?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * Specifies whether to customize your signed string.
+     */
+    useCustomSignString?: boolean;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorOriginCharacteristicsWsd {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies an origin type.
+     */
+    origintype?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorOriginCustomCertificate {
+    canBeCa?: boolean;
+    canBeLeaf?: boolean;
+    issuerRdns?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorOriginCustomCertificateIssuerRdns;
+    notAfter?: number;
+    notBefore?: number;
+    pemEncodedCert?: string;
+    publicKey?: string;
+    publicKeyAlgorithm?: string;
+    publicKeyFormat?: string;
+    selfSigned?: boolean;
+    serialNumber?: string;
+    sha1Fingerprint?: string;
+    sigAlgName?: string;
+    subjectAlternativeNames?: string[];
+    subjectCn?: string;
+    subjectRdns?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorOriginCustomCertificateSubjectRdns;
+    version?: number;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorOriginCustomCertificateAuthority {
+    canBeCa?: boolean;
+    canBeLeaf?: boolean;
+    issuerRdns?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorOriginCustomCertificateAuthorityIssuerRdns;
+    notAfter?: number;
+    notBefore?: number;
+    pemEncodedCert?: string;
+    publicKey?: string;
+    publicKeyAlgorithm?: string;
+    publicKeyFormat?: string;
+    selfSigned?: boolean;
+    serialNumber?: string;
+    sha1Fingerprint?: string;
+    sigAlgName?: string;
+    subjectAlternativeNames?: string[];
+    subjectCn?: string;
+    subjectRdns?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorOriginCustomCertificateAuthoritySubjectRdns;
+    version?: number;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorOriginCustomCertificateAuthorityIssuerRdns {
+    c?: string;
+    cn?: string;
+    o?: string;
+    ou?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorOriginCustomCertificateAuthoritySubjectRdns {
+    c?: string;
+    cn?: string;
+    o?: string;
+    ou?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorOriginCustomCertificateIssuerRdns {
+    c?: string;
+    cn?: string;
+    o?: string;
+    ou?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorOriginCustomCertificateSubjectRdns {
+    c?: string;
+    cn?: string;
+    o?: string;
+    ou?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorOriginFailureRecoveryMethod {
+    /**
+     * Specifies the custom status code to be sent to the client.
+     */
+    customStatusCode?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the recovery method.
+     */
+    recoveryMethod?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorOriginFailureRecoveryPolicy {
+    /**
+     * Synchronizes content between the primary and backup origins, byte for byte.
+     */
+    binaryEquivalentContent?: boolean;
+    /**
+     * Temporarily blocks an origin IP address that experienced a certain number of failures. When an IP address is blocked, the `configName` established for `originResponsivenessRecoveryConfigName` is applied.
+     */
+    enableIpAvoidance?: boolean;
+    /**
+     * Activates and configures a recovery policy.
+     */
+    enabled?: boolean;
+    /**
+     * Defines the number of failures that need to occur to an origin address before it's blocked.
+     */
+    ipAvoidanceErrorThreshold?: number;
+    /**
+     * Defines the number of seconds after which the IP address is removed from the blocklist.
+     */
+    ipAvoidanceRetryInterval?: number;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Enables continuous monitoring of connectivity to the origin. If necessary, applies retry or recovery actions.
+     */
+    monitorOriginResponsiveness?: boolean;
+    /**
+     * Defines the origin response codes that trigger a subsequent retry or recovery action. Specify a single code entry (`501`) or a range (`501:504`). If you configure other `monitorStatusCodes*` and `monitorResponseCodes*` options, you can't use the same codes here.
+     */
+    monitorResponseCodes1s?: string[];
+    /**
+     * Defines the origin response codes that trigger a subsequent retry or recovery action. Specify a single code entry (`501`) or a range (`501:504`). If you configure other `monitorStatusCodes*` and `monitorResponseCodes*` options, you can't use the same codes here.
+     */
+    monitorResponseCodes2s?: string[];
+    /**
+     * Defines the origin response codes that trigger a subsequent retry or recovery action. Specify a single code entry (`501`) or a range (`501:504`). If you configure other `monitorStatusCodes*` and `monitorResponseCodes*` options, you can't use the same codes here..
+     */
+    monitorResponseCodes3s?: string[];
+    /**
+     * Enables continuous monitoring for the specific origin status codes that trigger retry or recovery actions.
+     */
+    monitorStatusCodes1?: boolean;
+    /**
+     * Enables the recovery action for the response codes you define.
+     */
+    monitorStatusCodes1EnableRecovery?: boolean;
+    /**
+     * When the defined response codes apply, attempts a retry on the same origin before executing the recovery method.
+     */
+    monitorStatusCodes1EnableRetry?: boolean;
+    /**
+     * Specifies a recovery configuration using the `configName` you defined in the `recoveryConfig` match criteria. Specify 3 to 20 alphanumeric characters or dashes. Ensure that you use the `recoveryConfig` match criteria to apply this option.
+     */
+    monitorStatusCodes1RecoveryConfigName?: string;
+    /**
+     * Enables continuous monitoring for the specific origin status codes that trigger retry or recovery actions.
+     */
+    monitorStatusCodes2?: boolean;
+    /**
+     * Enables the recovery action for the response codes you define.
+     */
+    monitorStatusCodes2EnableRecovery?: boolean;
+    /**
+     * When the defined response codes apply, attempts a retry on the same origin before executing the recovery method.
+     */
+    monitorStatusCodes2EnableRetry?: boolean;
+    /**
+     * Specifies a recovery configuration using the `configName` you defined in the `recoveryConfig` match criteria. Specify 3 to 20 alphanumeric characters or dashes. Ensure that you use the `recoveryConfig` match criteria to apply this option.
+     */
+    monitorStatusCodes2RecoveryConfigName?: string;
+    /**
+     * Enables continuous monitoring for the specific origin status codes that trigger retry or recovery actions.
+     */
+    monitorStatusCodes3?: boolean;
+    /**
+     * Enables the recovery action for the response codes you define.
+     */
+    monitorStatusCodes3EnableRecovery?: boolean;
+    /**
+     * When the defined response codes apply, attempts a retry on the same origin before executing the recovery method.
+     */
+    monitorStatusCodes3EnableRetry?: boolean;
+    /**
+     * Specifies a recovery configuration using the `configName` you defined in the `recoveryConfig` match criteria. Specify 3 to 20 alphanumeric characters or dashes. Ensure that you use the `recoveryConfig` match criteria to apply this option.
+     */
+    monitorStatusCodes3RecoveryConfigName?: string;
+    /**
+     * Specify a custom timeout, from 1 to 10 seconds.
+     */
+    originResponsivenessCustomTimeout?: number;
+    /**
+     * Enables a recovery action for a specific failure condition.
+     */
+    originResponsivenessEnableRecovery?: boolean;
+    /**
+     * If a specific failure condition applies, attempts a retry on the same origin before executing the recovery method.
+     */
+    originResponsivenessEnableRetry?: boolean;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    originResponsivenessMonitoring?: string;
+    /**
+     * Specifies a recovery configuration using the `configName` you defined in the `recoveryConfig` match criteria. Specify 3 to 20 alphanumeric characters or dashes. Ensure that you use the `recoveryConfig` match criteria to apply this option.
+     */
+    originResponsivenessRecoveryConfigName?: string;
+    /**
+     * The timeout threshold that triggers a retry or recovery action.
+     */
+    originResponsivenessTimeout?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    statusCodeMonitoring1?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    statusCodeMonitoring2?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    statusCodeMonitoring3?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    tuningParameters?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorOriginIpAcl {
+    /**
+     * Enables the Origin IP Access Control List behavior.
+     */
+    enable?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorOriginNetStorage {
+    cpCode?: number;
+    downloadDomainName?: string;
+    g2oToken?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorPermissionsPolicy {
+    /**
+     * The features you've set in `permissionsPolicyDirective` are enabled for domains you specify here. They'll remain disabled for all other domains. Separate multiple domains with a single space. To block the specified directives from all domains, set this to `none`. This generates an empty value in the `Permissions-Policy` header.
+     */
+    allowList?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Each directive represents a browser feature. Specify the ones you want enabled in a client browser that accesses your content. You can add custom entries or provide pre-set values from the list. For more details on each value, see the `guide section` for this behavior.
+     */
+    permissionsPolicyDirectives?: string[];
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorPersistentClientConnection {
+    /**
+     * Enables the persistent connections behavior.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * Specifies the timeout period after which edge server closes the persistent connection with the client, 500 seconds by default.
+     */
+    timeout?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorPersistentConnection {
+    /**
+     * Enables persistent connections.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * Specifies the timeout period after which edge server closes a persistent connection.
+     */
+    timeout?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorPersonallyIdentifiableInformation {
+    /**
+     * When enabled, marks content as personally identifiable information (PII).
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorPhasedRelease {
+    /**
+     * Specifies the Cloudlet policy as an object.
+     */
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorPhasedReleaseCloudletPolicy;
+    /**
+     * Identifies the Cloudlet shared policy to use with this behavior. Use the `Cloudlets API` to list available shared policies.
+     */
+    cloudletSharedPolicy?: number;
+    /**
+     * Enables the Phased Release Cloudlet.
+     */
+    enabled?: boolean;
+    /**
+     * Specifies the number of seconds to wait until the client tries to access the failover origin after the initial failure is detected. Set the value to `0` to immediately request the alternate origin upon failure.
+     */
+    failoverDuration?: number;
+    /**
+     * Allows failure responses at the origin defined by the Cloudlet to fail over to the prevailing origin defined by the property.
+     */
+    failoverEnabled?: boolean;
+    /**
+     * Defines the set of failure codes that initiate the failover response.
+     */
+    failoverResponseCodes?: string[];
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    failoverTitle?: string;
+    /**
+     * Whether you want to apply the Cloudlet shared policy to an unlimited number of properties within your account. Learn more about shared policies and how to create them in `Cloudlets Policy Manager`.
+     */
+    isSharedPolicy?: boolean;
+    /**
+     * A label to distinguish this Phased Release policy from any others within the same property.
+     */
+    label?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Select when to assign a cookie to the population of users the Cloudlet defines. If you select the Cloudlet's `random` membership option, it overrides this option's value so that it is effectively `NONE`.
+     */
+    populationCookieType?: string;
+    /**
+     * Sets the lifetime of the cookie from the initial request. Subsequent requests re-evaluate based on current membership settings.
+     */
+    populationDuration?: string;
+    /**
+     * Specifies the date and time when membership expires, and the browser no longer sends the cookie. Subsequent requests re-evaluate based on current membership settings.
+     */
+    populationExpirationDate?: string;
+    /**
+     * Enabling this option resets the original duration of the cookie if the browser refreshes before the cookie expires.
+     */
+    populationRefresh?: boolean;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    populationTitle?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorPhasedReleaseCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorPreconnect {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the set of hostnames to which to preconnect over HTTP2.
+     */
+    preconnectlists?: string[];
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorPredictiveContentDelivery {
+    /**
+     * Enables the predictive content delivery behavior.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorPredictivePrefetching {
+    /**
+     * The level of prefetching. A higher level results in better client performance, but potentially greater load on the origin.
+     */
+    accuracyTarget?: string;
+    /**
+     * Enables the predictive prefetching behavior.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorPrefetch {
+    /**
+     * Applies prefetching behavior when enabled.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorPrefetchable {
+    /**
+     * Allows matching content to prefetch when referenced on a requested parent page.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorPrefreshCache {
+    /**
+     * Enables the cache prefreshing behavior.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies when the prefresh occurs as a percentage of the TTL. For example, for an object whose cache has 10 minutes left to live, and an origin response that is routinely less than 30 seconds, a percentage of `95` prefreshes the content without unnecessarily increasing load on the origin.
+     */
+    prefreshval?: number;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorQuality {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    audienceSettings?: string;
+    catalogSize?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    contentSettings?: string;
+    contentType?: string;
+    country?: string;
+    deliveryFormat?: string;
+    deliveryType?: string;
+    downloadType?: string;
+    endUserLocation?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    maximumConcurrentUsers?: string;
+    objectSize?: string;
+    optimizeFor?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    originSettings?: string;
+    popularityDistribution?: string;
+    refreshRate?: string;
+    segmentDuration?: number;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorQuicBeta {
+    /**
+     * Enables QUIC support.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * The percentage of responses for which to allow QUIC sessions.
+     */
+    quicOfferPercentage?: number;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorRandomSeek {
+    /**
+     * Enables random seek optimization in FLV files.
+     */
+    flv?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Sets the maximum size of the MP4 file to optimize, expressed as a number suffixed with a unit string such as `MB` or `GB`.
+     */
+    maximumSize?: string;
+    /**
+     * Enables random seek optimization in MP4 files.
+     */
+    mp4?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorRapid {
+    /**
+     * Enables API Gateway for the current set of content.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorReadTimeout {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * Specifies the read timeout necessary before failing with a `504` error. This value should never be zero.
+     */
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorRealTimeReporting {
+    /**
+     * Enables advanced options.
+     */
+    advanced?: boolean;
+    /**
+     * Specifies the percentage for sampling.
+     */
+    beaconSamplingPercentage?: number;
+    /**
+     * Enables reports on delivery of cloud hosted content at near real-time latencies.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorRealUserMonitoring {
+    /**
+     * When enabled, activates real-use monitoring.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorRedirect {
+    /**
+     * Specify how to change the requested hostname, independently from the pathname.
+     */
+    destinationHostname?: string;
+    /**
+     * Specifies the full hostname with which to replace the current hostname.
+     */
+    destinationHostnameOther?: string;
+    /**
+     * Specifies the subdomain with which to replace to the current hostname's leftmost subdomain. For example, a value of `m` changes `www.example.com` to `m.example.com`.
+     */
+    destinationHostnameSibling?: string;
+    /**
+     * Specifies a subdomain to prepend to the current hostname. For example, a value of `m` changes `www.example.com` to `m.www.example.com`.
+     */
+    destinationHostnameSubdomain?: string;
+    /**
+     * Specify how to change the requested pathname, independently from the hostname.
+     */
+    destinationPath?: string;
+    /**
+     * When `destinationPath` is set to `PREFIX_REQUEST`, this replaces the current path.
+     */
+    destinationPathOther?: string;
+    /**
+     * When `destinationPath` is set to `PREFIX_REQUEST`, this prepends the current path. For example, a value of `/prefix/path` changes `/example/index.html` to `/prefix/path/example/index.html`.
+     */
+    destinationPathPrefix?: string;
+    /**
+     * When `destinationPath` is set to `PREFIX_REQUEST` and `destinationPathSuffixStatus` is set to `SUFFIX`, this specifies the suffix to append to the path.
+     */
+    destinationPathSuffix?: string;
+    /**
+     * When `destinationPath` is set to `PREFIX_REQUEST`, this gives you the option of adding a suffix.
+     */
+    destinationPathSuffixStatus?: string;
+    /**
+     * Choose the protocol for the redirect URL.
+     */
+    destinationProtocol?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Either specify a default response for mobile browsers, or customize your own.
+     */
+    mobileDefaultChoice?: string;
+    /**
+     * When set to `APPEND`, passes incoming query string parameters as part of the redirect URL. Otherwise set this to `IGNORE`.
+     */
+    queryString?: string;
+    /**
+     * Specify the redirect's response code.
+     */
+    responseCode?: number;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorRedirectplus {
+    /**
+     * Specifies the redirect as a path expression starting with a `/` character relative to the current root, or as a fully qualified URL. Optionally inject variables, as in this example that refers to the original request's filename: `/path/to/{{builtin.AK_FILENAME}}`.
+     */
+    destination?: string;
+    /**
+     * Enables the redirect feature.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Assigns the status code for the redirect response.
+     */
+    responseCode?: number;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorRefererChecking {
+    /**
+     * Allows all subdomains for the `domains` set, just like adding a `*.` prefix to each.
+     */
+    allowChildren?: boolean;
+    /**
+     * Specifies the set of allowed domains. With `allowChildren` disabled, prefixing values with `*.` specifies domains for which subdomains are allowed.
+     */
+    domains?: string[];
+    /**
+     * Enables the referer-checking behavior.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * When enabled, excludes requests whose `Referer` header include a relative path, or that are missing a `Referer`. When disabled, only excludes requests whose `Referer` hostname is not part of the `domains` set.
+     */
+    strict?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorRemoveQueryParameter {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies parameters to remove from the request.
+     */
+    parameters?: string[];
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorRemoveVary {
+    /**
+     * When enabled, removes the `Vary` header to ensure objects can be cached.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorReport {
+    /**
+     * This specifies the set of cookies names whose values you want to log.
+     */
+    cookies?: string[];
+    /**
+     * Specifies an additional data field to append to each log line, maximum 1000 bytes, typically based on a dynamically generated built-in system variable. For example, `round-trip: {{builtin.AK_CLIENT_TURNAROUND_TIME}}ms` logs the total time to complete the response. See `Support for variables` for more information. If you enable the `logCustom` behavior, it overrides the `customLogField` option.
+     */
+    customLogField?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Log the `Accept-Language` header.
+     */
+    logAcceptLanguage?: boolean;
+    /**
+     * Specifies the set of cookies to log.
+     */
+    logCookies?: string;
+    /**
+     * Whether to append additional custom data to each log line.
+     */
+    logCustomLogField?: boolean;
+    /**
+     * Whether to log the IP address of the Akamai edge server that served the response to the client.
+     */
+    logEdgeIp?: boolean;
+    /**
+     * Log the `Host` header.
+     */
+    logHost?: boolean;
+    /**
+     * Log the `Referer` header.
+     */
+    logReferer?: boolean;
+    /**
+     * Log the `User-Agent` header.
+     */
+    logUserAgent?: boolean;
+    /**
+     * Log any `X-Forwarded-For` request header.
+     */
+    logXForwardedFor?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorRequestClientHints {
+    /**
+     * The client hint data objects you want to receive from the browser.  You can add custom entries or provide pre-set values from the list. For more details on each value, see the `guide section` for this behavior. If you've configured your origin server to pass along data objects, they merge with the ones you set in this array, before the list is sent to the client.
+     */
+    acceptChes?: string[];
+    /**
+     * The critical client hint data objects you want to receive from the browser. The original request from the browser needs to include these objects. Otherwise, a new response header is sent back to the client, asking for all of these client hint data objects. You can add custom entries or provide pre-set values from the list. For more details on each value, see the `guide section` for this behavior.
+     */
+    acceptCriticalChes?: string[];
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This sends an empty instance of the `Accept-CH` response header to clear other `Accept-CH` values currently stored in the client browser. This empty header doesn't get merged with other objects sent from your origin server.
+     */
+    reset?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorRequestControl {
+    /**
+     * Specifies the full path of the branded 403 page, including the filename, but excluding the NetStorage CP code path component.
+     */
+    branded403File?: string;
+    /**
+     * Specifies the response status code for the branded deny action.
+     */
+    branded403StatusCode?: number;
+    /**
+     * Specifies the redirect URL for the branded deny action.
+     */
+    branded403Url?: string;
+    /**
+     * Specifies the branded response page's time to live in the cache, `5` minutes by default.
+     */
+    brandedDenyCacheTtl?: number;
+    /**
+     * Identifies the Cloudlet policy.
+     */
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorRequestControlCloudletPolicy;
+    /**
+     * Identifies the Cloudlet shared policy to use with this behavior. Use the `Cloudlets API` to list available shared policies.
+     */
+    cloudletSharedPolicy?: number;
+    /**
+     * If enabled, serves a branded 403 page for this Cloudlet instance.
+     */
+    enableBranded403?: boolean;
+    /**
+     * Enables the Request Control Cloudlet.
+     */
+    enabled?: boolean;
+    /**
+     * Whether you want to apply the Cloudlet shared policy to an unlimited number of properties within your account. Learn more about shared policies and how to create them in `Cloudlets Policy Manager`.
+     */
+    isSharedPolicy?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the NetStorage domain that contains the branded 403 page.
+     */
+    netStorage?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorRequestControlNetStorage;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorRequestControlCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorRequestControlNetStorage {
+    cpCode?: number;
+    downloadDomainName?: string;
+    g2oToken?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorRequestTypeMarker {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the type of request.
+     */
+    requestType?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorResourceOptimizer {
+    /**
+     * Enables the Resource Optimizer feature.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorResourceOptimizerExtendedCompatibility {
+    /**
+     * Enables `additional support` and error handling.
+     */
+    enableAllFeatures?: boolean;
+    /**
+     * Enables the Resource Optimizer feature.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorResponseCode {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Allows any specified `200` success code to override a `206` partial-content code, in which case the response's content length matches the requested range length.
+     */
+    override206?: boolean;
+    /**
+     * The HTTP status code to replace the existing one.
+     */
+    statusCode?: number;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorResponseCookie {
+    /**
+     * Specifies the name of the cookie, which serves as a key to determine if the cookie is set.
+     */
+    cookieName?: string;
+    /**
+     * When enabled, uses the default domain value, otherwise the set specified in the `domain` field.
+     */
+    defaultDomain?: boolean;
+    /**
+     * When enabled, uses the default path value, otherwise the set specified in the `path` field.
+     */
+    defaultPath?: boolean;
+    /**
+     * If the `defaultDomain` is disabled, this sets the domain for which the cookie is valid. For example, `example.com` makes the cookie valid for that hostname and all subdomains.
+     */
+    domain?: string;
+    /**
+     * If `expires` is set to `DURATION`, this sets the cookie's lifetime.
+     */
+    duration?: string;
+    /**
+     * Allows you to set a response cookie.
+     */
+    enabled?: boolean;
+    /**
+     * If `expires` is set to `FIXED_DATE`, this sets when the cookie expires as a UTC date and time.
+     */
+    expirationDate?: string;
+    /**
+     * Sets various ways to specify when the cookie expires.
+     */
+    expires?: string;
+    /**
+     * When the `type` of cookie is set to `UNIQUE`, this sets the date format.
+     */
+    format?: string;
+    /**
+     * When enabled, includes the `HttpOnly` attribute in the `Set-Cookie` response header to mitigate the risk of client-side scripts accessing the protected cookie, if the browser supports it.
+     */
+    httpOnly?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * If the `defaultPath` is disabled, sets the path component for which the cookie is valid.
+     */
+    path?: string;
+    /**
+     * This option controls the `SameSite` cookie attribute that reduces the risk of cross-site request forgery attacks.
+     */
+    sameSite?: string;
+    /**
+     * When enabled, sets the cookie's `Secure` flag to transmit it with `HTTPS`.
+     */
+    secure?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * What type of value to assign.
+     */
+    type?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * If the cookie `type` is `FIXED`, this specifies the cookie value.
+     */
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorRestrictObjectCaching {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies a fixed maximum size of non-HTML content to cache.
+     */
+    maximumSize?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorReturnCacheStatus {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the name of the HTTP header in which to report the cache status value.
+     */
+    responseHeaderName?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorRewriteUrl {
+    /**
+     * The action to perform on the path.
+     */
+    behavior?: string;
+    /**
+     * When enabled, retains the original path's query parameters.
+     */
+    keepQueryString?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * When `behavior` is `REMOVE` or `REPLACE`, specifies the part of the incoming path you'd like to remove or modify.
+     */
+    match?: string;
+    /**
+     * When enabled, replaces all potential matches rather than only the first.
+     */
+    matchMultiple?: boolean;
+    /**
+     * When `behavior` is set to `REGEX_REPLACE`, specifies the Perl-compatible regular expression to replace with `targetRegex`.
+     */
+    matchRegex?: string;
+    /**
+     * When `behavior` is set to `REPLACE`, this path replaces whatever the `match` field matches in the incoming request's path.
+     */
+    targetPath?: string;
+    /**
+     * When `behavior` is set to `PREPEND`, specifies a path to prepend to the incoming request's URL.
+     */
+    targetPathPrepend?: string;
+    /**
+     * When `behavior` is set to `REGEX_REPLACE`, this replaces whatever the `matchRegex` field matches, along with any captured sequences from `\$1` through `\$9`.
+     */
+    targetRegex?: string;
+    /**
+     * When `behavior` is set to `REWRITE`, specifies the full path to request from the origin.
+     */
+    targetUrl?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorRumCustom {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * A deprecated option to specify an alternate name under which to batch this set of web traffic in your report. Do not use it.
+     */
+    rumGroupName?: string;
+    /**
+     * Specifies the percentage of web traffic to include in your RUM report.
+     */
+    rumSampleRate?: number;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorSaasDefinitions {
+    /**
+     * Specifies the request component that identifies a SaaS application.
+     */
+    applicationAction?: string;
+    /**
+     * Enabling this allows you to identify applications using a `CNAME chain` rather than a single hostname.
+     */
+    applicationCnameEnabled?: boolean;
+    /**
+     * Specifies the number of CNAMEs to use in the chain.
+     */
+    applicationCnameLevel?: number;
+    /**
+     * This specifies the name of the cookie that identifies the application.
+     */
+    applicationCookie?: string;
+    /**
+     * This names the query parameter that identifies the application.
+     */
+    applicationQueryString?: string;
+    /**
+     * Specifies a Perl-compatible regular expression with which to substitute the request's application ID.
+     */
+    applicationRegex?: string;
+    /**
+     * Specifies a string to replace the request's application ID matched by `applicationRegex`.
+     */
+    applicationReplace?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    applicationTitle?: string;
+    /**
+     * Specifies the request component that identifies a SaaS customer.
+     */
+    customerAction?: string;
+    /**
+     * Enabling this allows you to identify customers using a `CNAME chain` rather than a single hostname.
+     */
+    customerCnameEnabled?: boolean;
+    /**
+     * Specifies the number of CNAMEs to use in the chain.
+     */
+    customerCnameLevel?: number;
+    /**
+     * This specifies the name of the cookie that identifies the customer.
+     */
+    customerCookie?: string;
+    /**
+     * This names the query parameter that identifies the customer.
+     */
+    customerQueryString?: string;
+    /**
+     * Specifies a Perl-compatible regular expression with which to substitute the request's customer ID.
+     */
+    customerRegex?: string;
+    /**
+     * Specifies a string to replace the request's customer ID matched by `customerRegex`.
+     */
+    customerReplace?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    customerTitle?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * Specifies the request component that identifies a SaaS user.
+     */
+    usersAction?: string;
+    /**
+     * Enabling this allows you to identify users using a `CNAME chain` rather than a single hostname.
+     */
+    usersCnameEnabled?: boolean;
+    /**
+     * Specifies the number of CNAMEs to use in the chain.
+     */
+    usersCnameLevel?: number;
+    /**
+     * This specifies the name of the cookie that identifies the user.
+     */
+    usersCookie?: string;
+    /**
+     * This names the query parameter that identifies the user.
+     */
+    usersQueryString?: string;
+    /**
+     * Specifies a Perl-compatible regular expression with which to substitute the request's user ID.
+     */
+    usersRegex?: string;
+    /**
+     * Specifies a string to replace the request's user ID matched by `usersRegex`.
+     */
+    usersReplace?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    usersTitle?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorSalesForceCommerceCloudClient {
+    /**
+     * When enabled, overrides the forwarding origin's cache key.
+     */
+    allowOverrideOriginCacheKey?: boolean;
+    /**
+     * An ID value that helps distinguish different types of traffic sent from Akamai to the Salesforce Commerce Cloud. Form the value as `instance-realm-customer`, where `instance` is either `production` or `development`, `realm` is your Salesforce Commerce Cloud service `$REALM` value, and `customer` is the name for your organization in Salesforce Commerce Cloud.  You can use alphanumeric characters, underscores, or dot characters within dash-delimited segment values.
+     */
+    connectorId?: string;
+    /**
+     * Enables the Akamai Connector for Salesforce Commerce Cloud.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies where the `Host` header is defined.
+     */
+    originHostHeader?: string;
+    /**
+     * Specifies where the origin is.
+     */
+    originType?: string;
+    /**
+     * This specifies the hostname or IP address of the custom Salesforce origin.
+     */
+    sf3cOriginHost?: string;
+    /**
+     * This specifies the hostname or IP address of the custom Salesforce host header.
+     */
+    sf3cOriginHostHeader?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorSalesForceCommerceCloudProvider {
+    /**
+     * Enables Akamai Provider for Salesforce Commerce Cloud.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorSalesForceCommerceCloudProviderHostHeader {
+    /**
+     * Specify where the host header derives from.
+     */
+    hostHeaderSource?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorSavePostDcaProcessing {
+    /**
+     * Enables processing of POST requests.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorScheduleInvalidation {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies how to invalidate the content.
+     */
+    refreshMethod?: string;
+    /**
+     * When enabled, invalidation recurs periodically from the `start` time based on the `repeatInterval` time.
+     */
+    repeat?: boolean;
+    /**
+     * Specifies how often to invalidate content from the `start` time, expressed in seconds. For example, an expiration set to midnight and an interval of `86400` seconds invalidates content once a day.  Repeating intervals of less than 5 minutes are not allowed for `NetStorage` origins.
+     */
+    repeatInterval?: string;
+    /**
+     * The UTC date and time when matching cached content is to expire.
+     */
+    start?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorScriptManagement {
+    /**
+     * Enables the Script Management feature.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Script Management uses a JavaScript service worker called `akam-sw.js`. It applies a policy that helps you manage scripts.
+     */
+    serviceworker?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A read-only epoch timestamp that represents the last time a Script Management policy was synchronized with its Ion property.
+     */
+    timestamp?: number;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorSegmentedContentProtection {
+    /**
+     * Enabling this option carries the `ACL` field from the access token over to the session token, to limit the requesting client's access to the specific URL or path set in the `ACL` field. Playback may fail if the base path of the master playlist (and variant playlist, plus segments) varies from that of the `ACL` field.
+     */
+    acl?: boolean;
+    /**
+     * Whether to enable DASH Media Encryption.
+     */
+    dashMediaEncryption?: boolean;
+    /**
+     * Enabling this option carries the `data/payload` field from the access token over to the session token, allowing access to opaque data for log analysis for a URL protected by a session token.
+     */
+    dataPayload?: boolean;
+    /**
+     * When enabled, passes tokens in HLS variant manifest URLs and HLS segment URLs, as an alternative to cookies.
+     */
+    enableTokenInUri?: boolean;
+    /**
+     * Enables the segmented content protection behavior.
+     */
+    enabled?: boolean;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    fieldCarryOver?: string;
+    /**
+     * This allows you to include additional salt properties specific to each end user to strengthen the relationship between the session token and playback session. This specifies the set of request headers whose values generate the salt value, typically `User-Agent`, `X-Playback-Session-Id`, and `Origin`. Any specified header needs to appear in the player's request.
+     */
+    headerForSalts?: string[];
+    /**
+     * Specifies the set of filenames that form HLS master manifest URLs. You can use `*` wildcard character that matches zero or more characters. Make sure to specify master manifest filenames uniquely, to distinguish them from variant manifest files.
+     */
+    hlsMasterManifestFiles?: string[];
+    /**
+     * Enables HLS Segment Encryption.
+     */
+    hlsMediaEncryption?: boolean;
+    /**
+     * Enabling this restricts content access to a specific IP address, only appropriate if it does not change during the playback session.
+     */
+    ip?: boolean;
+    /**
+     * Specifies the encryption key to use as a shared secret to validate tokens.
+     */
+    key?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    mediaEncryptionTitle?: string;
+    /**
+     * Identifies the `TokenAuth` tokens to block from accessing your content.
+     */
+    revokedListId?: number;
+    /**
+     * Specifies a salt as input into the token for added security. This value needs to match the salt used in the token generation code.
+     */
+    salt?: string;
+    /**
+     * Enabling this option carries the `sessionId` value from the access token over to the session token, for use in tracking and counting unique playback sessions.
+     */
+    sessionId?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    tokenAuthHlsTitle?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    tokenAuthenticationTitle?: string;
+    /**
+     * Enable this to deny requests from playback URLs that contain a `TokenAuth` token that uses specific token identifiers.
+     */
+    tokenRevocationEnabled?: boolean;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    tokenRevocationTitle?: string;
+    /**
+     * An alternate encryption key to match along with the `key` field, allowing you to rotate keys with no down time.
+     */
+    transitionKey?: string;
+    /**
+     * Allows you to specify advanced `transitionKey` and `salt` options.
+     */
+    useAdvanced?: boolean;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorSegmentedMediaOptimization {
+    /**
+     * Sets the type of media content to optimize.
+     */
+    behavior?: string;
+    /**
+     * The type of DVR.
+     */
+    dvrType?: string;
+    /**
+     * Set the duration for your media, or `0m` if a DVR is not required.
+     */
+    dvrWindow?: string;
+    /**
+     * Enables ultra low latency (ULL) streaming. ULL reduces latency and decreases overall transfer time of live streams.
+     */
+    enableUllStreaming?: boolean;
+    /**
+     * This specifies when the live media event ends.
+     */
+    endTime?: string;
+    /**
+     * The type of live media.
+     */
+    liveType?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Allows you to configure advanced media options.
+     */
+    showAdvanced?: boolean;
+    /**
+     * This specifies when the live media event begins.
+     */
+    startTime?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorSegmentedMediaStreamingPrefetch {
+    /**
+     * Enables media stream prefetching.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorSetVariable {
+    /**
+     * Specifies the algorithm to apply.
+     */
+    algorithm?: string;
+    /**
+     * Enabling this makes all matches case sensitive.
+     */
+    caseSensitive?: boolean;
+    /**
+     * Specifies the certificate's content.
+     */
+    certificateFieldName?: string;
+    /**
+     * Specifies the name of the cookie to extract.
+     */
+    cookieName?: string;
+    /**
+     * Specifies the client device attribute. Possible values specify information about the client device, including device type, size and browser. For details on fields, see `Device Characterization`.
+     */
+    deviceProfile?: string;
+    /**
+     * Specifies the encryption hex key. For `ALG_3DES` it needs to be 48 characters long, 32 characters for `ALG_AES128`, and 64 characters for `ALG_AES256`.
+     */
+    encryptionKey?: string;
+    /**
+     * Specifies the encryption mode.
+     */
+    encryptionMode?: string;
+    /**
+     * Specifies the zero-based character offset at the end of the substring, without including the character at that index position. Negative indexes specify the offset from the end of the string.
+     */
+    endIndex?: number;
+    /**
+     * Specifies characters `not` to encode, possibly overriding the default set.
+     */
+    exceptChars?: string;
+    /**
+     * This specifies from where to get the value.
+     */
+    extractLocation?: string;
+    /**
+     * Specifies characters to encode, possibly overriding the default set.
+     */
+    forceChars?: string;
+    /**
+     * Specifies an optional format string for the conversion, using format codes such as `%m/%d/%y` as specified by `strftime`. A blank value defaults to RFC-2616 format.
+     */
+    formatString?: string;
+    /**
+     * This specifies the type of value to generate.
+     */
+    generator?: string;
+    /**
+     * Replaces all matches in the string, not just the first.
+     */
+    globalSubstitution?: boolean;
+    /**
+     * Specifies the case-insensitive name of the HTTP header to extract.
+     */
+    headerName?: string;
+    /**
+     * Specifies the algorithm to use to generate the base64-encoded digest.
+     */
+    hmacAlgorithm?: string;
+    /**
+     * Specifies the secret to use in generating the base64-encoded digest.
+     */
+    hmacKey?: string;
+    /**
+     * Specifies a one-time number as an initialization vector.  It needs to be 15 characters long for `ALG_3DES`, and 32 characters for both `ALG_AES128` and `ALG_AES256`.
+     */
+    initializationVector?: string;
+    /**
+     * Specifies the IP version under which a subnet mask generates.
+     */
+    ipVersion?: string;
+    /**
+     * Specifies the prefix of the IPV4 address, a value between 0 and 32.
+     */
+    ipv4Prefix?: number;
+    /**
+     * Specifies the prefix of the IPV6 address, a value between 0 and 128.
+     */
+    ipv6Prefix?: number;
+    /**
+     * Specifies the `X-Akamai-Edgescape` header's field name. Possible values specify basic geolocation, various geographic standards, and information about the client's network. For details on EdgeScape header fields, see the `EdgeScape User Guide`.
+     */
+    locationId?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies a maximum value for the generated integer.
+     */
+    max?: number;
+    /**
+     * Specifies the upper bound of the random number.
+     */
+    maxRandomNumber?: number;
+    /**
+     * Specifies a minimum value for the generated integer.
+     */
+    min?: number;
+    /**
+     * Specifies the lower bound of the random number.
+     */
+    minRandomNumber?: number;
+    /**
+     * Specifies the one-time number used for encryption.
+     */
+    nonce?: string;
+    /**
+     * Specifies the number of random hex bytes to generate.
+     */
+    numberOfBytes?: number;
+    /**
+     * Specifies an additional operand when the `transform` function is set to various arithmetic functions (`ADD`, `SUBTRACT`, `MULTIPLY`, `DIVIDE`, or `MODULO`) or bitwise functions (`BITWISE_AND`, `BITWISE_OR`, or `BITWISE_XOR`).
+     */
+    operandOne?: string;
+    /**
+     * Extracts the value for the specified parameter name from a string that contains key/value pairs. (Use `separator` below to parse them.)
+     */
+    paramName?: string;
+    /**
+     * This specifies a portion of the path.  The indexing starts from `1`, so a value of `/path/to/nested/filename.html` and an offset of `1` yields `path`, and `3` yields `nested`. Negative indexes offset from the right, so `-2` also yields `nested`.
+     */
+    pathComponentOffset?: string;
+    /**
+     * Specifies a number of random bytes to prepend to the key.
+     */
+    prependBytes?: boolean;
+    /**
+     * Specifies the name of the query parameter from which to extract the value.
+     */
+    queryParameterName?: string;
+    /**
+     * Specifies the regular expression pattern (PCRE) to match the value.
+     */
+    regex?: string;
+    /**
+     * Specifies the replacement string. Reinsert grouped items from the match into the replacement using `$1`, `$2` ... `$n`.
+     */
+    replacement?: string;
+    /**
+     * Specifies the case-insensitive name of the HTTP header to extract.
+     */
+    responseHeaderName?: string;
+    /**
+     * Specifies the character that separates pairs of values within the string.
+     */
+    separator?: string;
+    /**
+     * Specifies the name of the origin's `Set-Cookie` response header.
+     */
+    setCookieName?: string;
+    /**
+     * Specifies the zero-based character offset at the start of the substring. Negative indexes specify the offset from the end of the string.
+     */
+    startIndex?: number;
+    /**
+     * Specifies a substring for which the returned value represents a zero-based offset of where it appears in the original string, or `-1` if there's no match.
+     */
+    subString?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * Specifies a function to transform the value. For more details on each transform function, see `Set Variable: Operations`.
+     */
+    transform?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * Determines how you want to set the value.
+     */
+    valueSource?: string;
+    /**
+     * Specifies the predeclared root name of the variable to modify.  When you declare a variable name such as `VAR`, its name is preprended with `PMUSER_` and accessible in a `user` namespace, so that you invoke it in subsequent text fields within the rule tree as `{{user.PMUSER_VAR}}`. In deployed `XML metadata`, it appears as `%(PMUSER_VAR)`.
+     */
+    variableName?: string;
+    /**
+     * This directly specifies the value to assign to the variable. The expression may include a mix of static text and other variables, such as `new_filename.{{builtin.AK_EXTENSION}}` to embed a system variable.
+     */
+    variableValue?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorSimulateErrorCode {
+    /**
+     * Specifies the type of error.
+     */
+    errorType?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * When the `errorType` is `ERR_CONNECT_TIMEOUT`, `ERR_DNS_TIMEOUT`, `ERR_SUREROUTE_DNS_FAIL`, or `ERR_READ_TIMEOUT`, generates an error after the specified amount of time from the initial request.
+     */
+    timeout?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorSiteShield {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    nossmap?: string;
+    /**
+     * Identifies the hostname for the Site Shield map. See `Create a Site Shield map` for more details. Form an object with a `value` key that references the hostname, for example: `"ssmap":{"value":"ss.akamai.net"}`.
+     */
+    ssmap?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorSiteShieldSsmap;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorSiteShieldSsmap {
+    chinaCdnMap?: string;
+    hasMixedHosts?: boolean;
+    name?: string;
+    src?: string;
+    srmap?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorStandardTlsMigration {
+    /**
+     * Allow temporary downgrade of HTTPS traffic to HTTP. This removes various `Origin`, `Referer`, `Cookie`, `Cookie2`, `sec-*` and `proxy-*` headers from the request to origin.
+     */
+    allowHttpsDowngrade?: boolean;
+    /**
+     * Allows temporary upgrade of HTTP traffic to HTTPS.
+     */
+    allowHttpsUpgrade?: boolean;
+    /**
+     * Specifies the number cache sharing days.
+     */
+    cacheSharingDuration?: number;
+    /**
+     * Specifies when to start cache sharing.
+     */
+    cacheSharingStartTime?: string;
+    /**
+     * Allows migration to Standard TLS.
+     */
+    enabled?: boolean;
+    /**
+     * Sets whether your new certificate is SNI-only.
+     */
+    isCertificateSniOnly?: boolean;
+    /**
+     * Allows you to align traffic to various `tieredDistribution` areas.
+     */
+    isTieredDistributionUsed?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the number of days to migrate the cache.
+     */
+    migrationDuration?: number;
+    /**
+     * What kind of traffic you're migrating from.
+     */
+    migrationFrom?: string;
+    /**
+     * Specifies when to start migrating the cache.
+     */
+    migrationStartTime?: string;
+    /**
+     * Specifies the `tieredDistribution` location.
+     */
+    tdLocation?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorStandardTlsMigrationOverride {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    info?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorStrictHeaderParsing {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Rejects requests made with non-RFC-compliant, improperly formatted headers, where the header line starts with a colon, misses a colon or doesn’t end with CR LF. When disabled, the edge servers allow such requests, but correct the violation by removing or rewriting the header line before passing the headers to the origin server.
+     */
+    strictMode?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * Rejects requests made with non-RFC-compliant headers that contain invalid characters in the header name or value or which contain invalidly-folded header lines. When disabled, the edge servers allow such requests, passing the invalid headers to the origin server unchanged.
+     */
+    validMode?: boolean;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorSubCustomer {
+    /**
+     * When enabled, this allows you to deny requests to a subcustomer's content based on specific match conditions, which you use Cloud Embed to configure in each subcustomer's policy.
+     */
+    accessControl?: boolean;
+    /**
+     * Allows you to set which query parameters are included in the cache key.
+     */
+    cacheKey?: boolean;
+    /**
+     * Modifies content caching rules.
+     */
+    caching?: boolean;
+    /**
+     * Allows compression of subcustomer content.
+     */
+    contentCompressor?: boolean;
+    /**
+     * Allows you to apply the `dynamicWebContent` behavior to further modify how dynamic content behaves for subcustomers.
+     */
+    dynamicWebContent?: boolean;
+    /**
+     * Allows Cloud Embed to dynamically modify your subcustomers' content.
+     */
+    enabled?: boolean;
+    /**
+     * Sets subcustomers' location-based whitelists or blacklists.
+     */
+    geoLocation?: boolean;
+    /**
+     * Sets subcustomers' IP whitelists or blacklists.
+     */
+    ip?: boolean;
+    /**
+     * Enables large file delivery for subcustomers.
+     */
+    largeFileDelivery?: boolean;
+    liveVideoDelivery?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Modifies a subcustomer's request path.
+     */
+    modifyPath?: boolean;
+    /**
+     * Enables delivery of media assets to subcustomers.
+     */
+    onDemandVideoDelivery?: boolean;
+    /**
+     * Allows you to assign origin hostnames for customers.
+     */
+    origin?: boolean;
+    /**
+     * This specifies the appropriate domain suffix, which you should typically match with your property hostname. It identifies the domain as trustworthy on the Akamai network, despite being defined within Cloud Embed, outside of your base property configuration. Include this domain suffix if you want to purge subcustomer URLs. For example, if you provide a value of `suffix.example.com`, then to purge `subcustomer.com/some/path`, specify `subcustomer.com.suffix.example.com/some/path` as the purge request's URL.
+     */
+    partnerDomainSuffix?: string;
+    /**
+     * Sets subcustomers' referrer whitelists or blacklist.
+     */
+    referrer?: boolean;
+    /**
+     * Allows you to reschedule when content validates for subcustomers.
+     */
+    refreshContent?: boolean;
+    /**
+     * Allows you to configure unique failover sites for each subcustomer's policy.
+     */
+    siteFailover?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * When enabled, this allows you to configure edge servers to use tokens to control access to subcustomer content.  Use Cloud Embed to configure the token to appear in a cookie, header, or query parameter.
+     */
+    tokenAuthorization?: boolean;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * Web application firewall (WAF) filters, monitors, and blocks certain HTTP traffic. Use `Akamai Cloud Embed` to add a specific behavior to a subcustomer policy and configure how WAF protection is applied.
+     */
+    webApplicationFirewall?: boolean;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorSureRoute {
+    allowFcmParentOverride?: boolean;
+    /**
+     * If `type` is `CUSTOM_MAP`, this specifies the map string provided to you by Akamai Professional Services, or included as part of the `Site Shield` product.
+     */
+    customMap?: string;
+    /**
+     * This specifies a hostname under which to cache race results. This may be useful when a property corresponds to many origin hostnames. By default, SureRoute would launch races for each origin, but consolidating under a single hostname runs only one race.
+     */
+    customStatKey?: string;
+    /**
+     * When disabled, caches race results under the race destination's hostname. If enabled, use `customStatKey` to specify a custom hostname.
+     */
+    enableCustomKey?: boolean;
+    /**
+     * Enables the SureRoute behavior, to optimize delivery of non-cached content.
+     */
+    enabled?: boolean;
+    /**
+     * Forces SureRoute to use SSL when requesting the origin's test object, appropriate if your origin does not respond to HTTP requests, or responds with a redirect to HTTPS.
+     */
+    forceSslForward?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the time-to-live to preserve SureRoute race results, typically `30m`. If traffic exceeds a certain threshold after TTL expires, the overflow is routed directly to the origin, not necessarily optimally. If traffic remains under the threshold, the route is determined by the winner of the most recent race.
+     */
+    raceStatTtl?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    srDownloadLinkTitle?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * Specifies the path and filename for your origin's test object to use in races to test routes.
+     */
+    testObjectUrl?: string;
+    /**
+     * If `toHostStatus` is `OTHER`, this specifies the custom `Host` header to use when requesting the SureRoute test object.
+     */
+    toHost?: string;
+    /**
+     * Specifies which hostname to use.
+     */
+    toHostStatus?: string;
+    /**
+     * Specifies the set of edge servers used to test routes.
+     */
+    type?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorTcpOptimization {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    display?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorTeaLeaf {
+    /**
+     * When enabled, capture HTTPS requests and responses, and send the data to your IBM Tealeaf account.
+     */
+    enabled?: boolean;
+    /**
+     * The integer identifier for the IBM Tealeaf Connector account.
+     */
+    ibmCustomerId?: number;
+    /**
+     * Limit traffic to dynamic, uncached (`No-Store`) content.
+     */
+    limitToDynamic?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorTieredDistribution {
+    /**
+     * When enabled, activates tiered distribution.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * Optionally map the tiered parent server's location close to your origin. A narrower local map minimizes the origin server's load, and increases the likelihood the requested object is cached. A wider global map reduces end-user latency, but decreases the likelihood the requested object is in any given parent server's cache.  This option cannot apply if the property is marked as secure. See `Secure property requirements` for guidance.
+     */
+    tieredDistributionMap?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorTieredDistributionAdvanced {
+    allowall?: boolean;
+    /**
+     * When enabled, activates tiered distribution.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    method?: string;
+    policy?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * Optionally map the tiered parent server's location close to your origin: `CHEU2` for Europe; `CHAUS` for Australia; `CHAPAC` for China and the Asian Pacific area; `CHWUS2`, `CHCUS2`, and `CHEUS2` for different parts of the United States. Choose `CH` or `CH2` for a more global map. A narrower local map minimizes the origin server's load, and increases the likelihood the requested object is cached. A wider global map reduces end-user latency, but decreases the likelihood the requested object is in any given parent server's cache.  This option cannot apply if the property is marked as secure. See `Secure property requirements` for guidance.
+     */
+    tieredDistributionMap?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorTieredDistributionCustomization {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    cloudwrapperMapMigrationTitle?: string;
+    /**
+     * Enables custom maps.
+     */
+    customMapEnabled?: boolean;
+    /**
+     * Specifies the custom map name.
+     */
+    customMapName?: string;
+    /**
+     * Specifies the hash algorithm.
+     */
+    hashAlgorithm?: string;
+    /**
+     * Location from which Cloud Wrapper migration is performed. User should choose the existing Cloud Wrapper location. The new Cloud Wrapper location (to which migration has to happen) is expected to be updated as part of the main "Cloud Wrapper" behavior.
+     */
+    location?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Enables migration of the custom map to Cloud Wrapper.
+     */
+    mapMigrationEnabled?: boolean;
+    /**
+     * Specifies when the map migration should end.
+     */
+    migrationEndDate?: string;
+    /**
+     * Specifies when to start migrating the map.
+     */
+    migrationStartDate?: string;
+    /**
+     * Enables migration within Cloud Wrapper maps.
+     */
+    migrationWithinCwMapsEnabled?: boolean;
+    /**
+     * Specifies a numeric serial end value. Akamai uses serial numbers to group machines and share objects in their cache with other machines in the same region.
+     */
+    serialEnd?: string;
+    /**
+     * Specifies a numeric serial start value.
+     */
+    serialStart?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    tier1Title?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorTimeout {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * Specifies the timeout, for example `10s`.
+     */
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorUidConfiguration {
+    /**
+     * Allows you to extract UIDs from client requests.
+     */
+    enabled?: boolean;
+    /**
+     * Where to extract the UID value from.
+     */
+    extractLocation?: string;
+    /**
+     * This specifies the name of the HTTP header from which to extract the UID value.
+     */
+    headerName?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    legalText?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This specifies the name of the query parameter from which to extract the UID value.
+     */
+    queryParameterName?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * This specifies the name of the rule tree variable from which to extract the UID value.
+     */
+    variableName?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorValidateEntityTag {
+    /**
+     * Enables the ETag validation behavior.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorVerifyJsonWebToken {
+    /**
+     * Verifies JWTs signed with the ES256 algorithm. This signature helps ensure that the token hasn't been tampered with.
+     */
+    enableEs256?: boolean;
+    /**
+     * Verifies JWTs signed with the RS256 algorithm. This signature helps ensure that the token hasn't been tampered with.
+     */
+    enableRs256?: boolean;
+    /**
+     * Specify from where to extract the JWT value.
+     */
+    extractLocation?: string;
+    /**
+     * This specifies the name of the header from which to extract the JWT value.
+     */
+    headerName?: string;
+    /**
+     * An identifier for the JWT keys collection.
+     */
+    jwt?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This specifies the name of the query parameter from which to extract the JWT value.
+     */
+    queryParameterName?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorVerifyJsonWebTokenForDcp {
+    /**
+     * This specifies the authorization group name.
+     */
+    authorizations?: string;
+    /**
+     * This specifies the claim name.
+     */
+    clientId?: string;
+    /**
+     * The JWT value comes from the `X-Akamai-DCP-Token` header by default.  Enabling this option allows you to extract it from another header name that you specify.
+     */
+    customHeader?: boolean;
+    /**
+     * Verifies JWTs signed with the ES256 algorithm. This signature helps to ensure that the token hasn't been tampered with.
+     */
+    enableEs256?: boolean;
+    /**
+     * Verifies JWTs signed with the RS256 algorithm. This signature helps to ensure that the token hasn't been tampered with.
+     */
+    enableRs256?: boolean;
+    /**
+     * Allows you to extract the authorization groups stored in the JWT.
+     */
+    extractAuthorizations?: boolean;
+    /**
+     * Allows you to extract the client ID claim name stored in JWT.
+     */
+    extractClientId?: boolean;
+    /**
+     * Specifies where to get the JWT value from.
+     */
+    extractLocation?: string;
+    /**
+     * Allows you to extract the user name stored in the JWT.
+     */
+    extractUserName?: boolean;
+    /**
+     * This specifies the name of the header to extract the JWT value from.
+     */
+    headerName?: string;
+    /**
+     * An identifier for the JWT keys collection.
+     */
+    jwt?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the primary location to extract the JWT value from. If the specified option doesn't include the JWTs, the system checks the secondary one.
+     */
+    primaryLocation?: string;
+    /**
+     * Specifies the name of the query parameter from which to extract the JWT value.
+     */
+    queryParameterName?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * This specifies the user name.
+     */
+    userName?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorVerifyTokenAuthorization {
+    /**
+     * Specifies the algorithm that generates the token. It needs to match the method chosen in the token generation code.
+     */
+    algorithm?: string;
+    /**
+     * URL-escapes HMAC inputs passed in as query parameters.
+     */
+    escapeHmacInputs?: boolean;
+    /**
+     * When enabled, sends an HTTP error when an authentication test fails.
+     */
+    failureResponse?: boolean;
+    /**
+     * Enabling this removes the query string from the URL used to form an encryption key.
+     */
+    ignoreQueryString?: boolean;
+    /**
+     * The shared secret used to validate tokens, which needs to match the key used in the token generation code.
+     */
+    key?: string;
+    /**
+     * Specifies where to find the token in the incoming request.
+     */
+    location?: string;
+    /**
+     * When `location` is `CLIENT_REQUEST_HEADER`, specifies the name of the incoming request's header where to find the token.
+     */
+    locationId?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies a salt string for input when generating the token, which needs to match the salt value used in the token generation code.
+     */
+    salt?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * Specifies a transition key as a hex value.
+     */
+    transitionKey?: string;
+    /**
+     * If enabled, allows you to specify advanced options such as `algorithm`, `escapeHmacInputs`, `ignoreQueryString`, `transitionKey`, and `salt`.
+     */
+    useAdvanced?: boolean;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorVirtualWaitingRoom {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    accessTitle?: string;
+    /**
+     * This identifies the Visitor Waiting Room Cloudlet shared policy to use with this behavior. You can list available shared policies with the `Cloudlets API`.
+     */
+    cloudletSharedPolicy?: number;
+    /**
+     * This specifies a domain for all session cookies. In case you configure many property hostnames, this may be their common domain. Make sure the user agent accepts the custom domain for any request matching the `virtualWaitingRoom` behavior. Don't use top level domains (TLDs).
+     */
+    customCookieDomain?: string;
+    /**
+     * This specifies the domain used to establish a session with the visitor.
+     */
+    domainConfig?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Whether the queue session should prolong automatically when the `sessionDuration` expires  and the visitor remains active.
+     */
+    sessionAutoProlong?: boolean;
+    /**
+     * Specifies the number of seconds users remain in the waiting room queue.
+     */
+    sessionDuration?: number;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * This specifies the base paths to static resources such as JavaScript, CSS, or image files for the Waiting Room Main Page requests. The option supports the `*` wildcard that matches zero or more characters. Requests matching any of these paths aren't blocked, but marked as Waiting Room Assets and passed through to the origin. See the `virtualWaitingRoomRequest` match criteria to further customize these requests.
+     */
+    waitingRoomAssetsPaths?: string[];
+    /**
+     * This specifies the path to the waiting room main page on the origin server, for example `/vp/waiting-room.html`. When the request is marked as Waiting Room Main Page and blocked, the visitor enters the waiting room. The behavior sets the outgoing request path to the `waitingRoomPath` and modifies the cache key accordingly. See the `virtualWaitingRoomRequest` match criteria to further customize these requests.
+     */
+    waitingRoomPath?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    waitingRoomTitle?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorVirtualWaitingRoomWithEdgeWorkers {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorVisitorPrioritization {
+    /**
+     * Sets advanced configuration options for the allowed user's cookie.
+     */
+    allowedUserCookieAdvanced?: boolean;
+    /**
+     * Sets an automatic `salt` value to verify the integrity of the cookie for an allowed user. Disable this if you want to share the cookie across properties.
+     */
+    allowedUserCookieAutomaticSalt?: boolean;
+    /**
+     * Specifies a domain for an allowed user cookie.
+     */
+    allowedUserCookieDomain?: string;
+    /**
+     * Specify with `allowedUserCookieAdvanced` enabled.
+     */
+    allowedUserCookieDomainType?: string;
+    /**
+     * Sets the number of seconds for the allowed user's session once allowed through to the site.
+     */
+    allowedUserCookieDuration?: number;
+    /**
+     * Sets a cookie for users who have been allowed through to the site.
+     */
+    allowedUserCookieEnabled?: boolean;
+    /**
+     * Applies the `HttpOnly` flag to the allowed user's cookie to ensure it's accessed over HTTP and not manipulated by the client.
+     */
+    allowedUserCookieHttpOnly?: boolean;
+    /**
+     * Specifies a label to distinguish this cookie for an allowed user from others. The value appends to the cookie's name, and helps you to maintain the same user assignment across behaviors within a property, and across properties.
+     */
+    allowedUserCookieLabel?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    allowedUserCookieManagementTitle?: string;
+    /**
+     * Resets the duration of an allowed cookie with each request, so that it only expires if the user doesn't make any requests for the specified duration. Do not enable this option if you want to set a fixed time for all users.
+     */
+    allowedUserCookieRefresh?: boolean;
+    /**
+     * Specifies a fixed `salt` value, which is incorporated into the cookie's value to prevent users from manipulating it. You can use the same salt string across different behaviors or properties to apply a single cookie to all allowed users.
+     */
+    allowedUserCookieSalt?: string;
+    /**
+     * Identifies the Cloudlet policy.
+     */
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorVisitorPrioritizationCloudletPolicy;
+    /**
+     * Enables the Visitor Prioritization behavior.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * When enabled, identifies users by the value of a cookie.
+     */
+    userIdentificationByCookie?: boolean;
+    /**
+     * When enabled, identifies users by the values of GET or POST request headers.
+     */
+    userIdentificationByHeaders?: boolean;
+    /**
+     * Allows IP addresses to identify users.
+     */
+    userIdentificationByIp?: boolean;
+    /**
+     * When enabled, identifies users by the values of GET or POST request parameters.
+     */
+    userIdentificationByParams?: boolean;
+    /**
+     * Specifies the name of the cookie whose value identifies users. To match a user, the value of the cookie needs to remain constant across all requests.
+     */
+    userIdentificationKeyCookie?: string;
+    /**
+     * Specifies names of request headers whose values identify users. To match a user, values for all the specified headers need to remain constant across all requests.
+     */
+    userIdentificationKeyHeaders?: string[];
+    /**
+     * Specifies names of request parameters whose values identify users. To match a user, values for all the specified parameters need to remain constant across all requests. Parameters that are absent or blank may also identify users.
+     */
+    userIdentificationKeyParams?: string[];
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    userIdentificationTitle?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * Specifies the waiting room page's time to live in the cache, `5` minutes by default.
+     */
+    waitingRoomCacheTtl?: number;
+    /**
+     * When enabled along with `waitingRoomCookieEnabled`, sets advanced configuration options for the waiting room cookie.
+     */
+    waitingRoomCookieAdvanced?: boolean;
+    /**
+     * Sets an automatic `salt` value to verify the integrity of the waiting room cookie.  Disable this if you want to share the cookie across properties.
+     */
+    waitingRoomCookieAutomaticSalt?: boolean;
+    /**
+     * Specifies a domain for the waiting room cookie.
+     */
+    waitingRoomCookieDomain?: string;
+    /**
+     * Specify with `waitingRoomCookieAdvanced` enabled, selects whether to use the `DYNAMIC` incoming host header, or a `CUSTOMER`-defined cookie domain.
+     */
+    waitingRoomCookieDomainType?: string;
+    /**
+     * Sets the number of seconds for which users remain in the waiting room. During this time, users who refresh the waiting room page remain there.
+     */
+    waitingRoomCookieDuration?: number;
+    /**
+     * Enables a cookie to track a waiting room assignment.
+     */
+    waitingRoomCookieEnabled?: boolean;
+    /**
+     * Applies the `HttpOnly` flag to the waiting room cookie to ensure it's accessed over HTTP and not manipulated by the client.
+     */
+    waitingRoomCookieHttpOnly?: boolean;
+    /**
+     * Specifies a label to distinguish this waiting room cookie from others. The value appends to the cookie's name, and helps you to maintain the same waiting room assignment across behaviors within a property, and across properties.
+     */
+    waitingRoomCookieLabel?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    waitingRoomCookieManagementTitle?: string;
+    /**
+     * Specifies a fixed `salt` value, which is incorporated into the cookie's value to prevent users from manipulating it. You can use the same salt string across different behaviors or properties to apply a single cookie for the waiting room session.
+     */
+    waitingRoomCookieSalt?: string;
+    /**
+     * Enabling this option shares the same `allowedUserCookieLabel` string. If disabled, specify a different `waitingRoomCookieLabel`.
+     */
+    waitingRoomCookieShareLabel?: boolean;
+    /**
+     * Specifies a CP code for requests sent to the waiting room. You only need to provide the initial `id`, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
+     */
+    waitingRoomCpCode?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorVisitorPrioritizationWaitingRoomCpCode;
+    /**
+     * Specifies the NetStorage directory that contains the static waiting room page, with no trailing slash character.
+     */
+    waitingRoomDirectory?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    waitingRoomManagementTitle?: string;
+    /**
+     * Specifies the NetStorage domain for the waiting room page.
+     */
+    waitingRoomNetStorage?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorVisitorPrioritizationWaitingRoomNetStorage;
+    /**
+     * Specifies the response code for requests sent to the waiting room.
+     */
+    waitingRoomStatusCode?: number;
+    /**
+     * Allows you to assign a different CP code that tracks any requests that are sent to the waiting room.
+     */
+    waitingRoomUseCpCode?: boolean;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorVisitorPrioritizationCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorVisitorPrioritizationFifo {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    accessTitle?: string;
+    /**
+     * This identifies the Visitor Prioritization FIFO shared policy to use with this behavior. You can list available shared policies with the `Cloudlets API`.
+     */
+    cloudletSharedPolicy?: number;
+    /**
+     * This specifies a domain for all session cookies. In case you configure many property hostnames, this may be their common domain. Make sure the user agent accepts the custom domain for any request matching the `visitorPrioritizationFifo` behavior. Don't use top level domains (TLDs).
+     */
+    customCookieDomain?: string;
+    /**
+     * This specifies how to set the domain used to establish a session with the visitor.
+     */
+    domainConfig?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Whether the queue session should prolong automatically when the `sessionDuration` expires  and the visitor remains active.
+     */
+    sessionAutoProlong?: boolean;
+    /**
+     * Specifies the number of seconds users remain in the waiting room queue.
+     */
+    sessionDuration?: number;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * This specifies the base paths to static resources such as `JavaScript`, `CSS`, or image files for the `Waiting Room Main Page` requests. The option supports the `*` wildcard wildcard that matches zero or more characters. Requests matching any of these paths aren't blocked, but marked as Waiting Room Assets and passed through to the origin. See the `visitorPrioritizationRequest` match criteria to further customize these requests.
+     */
+    waitingRoomAssetsPaths?: string[];
+    /**
+     * This specifies the path to the waiting room main page on the origin server, for example `/vp/waiting-room.html`. When the request is marked as `Waiting Room Main Page` and blocked, the visitor enters the waiting room. The behavior sets the outgoing request path to the `waitingRoomPath` and modifies the cache key accordingly. See the `visitorPrioritizationRequest` match criteria to further customize these requests.
+     */
+    waitingRoomPath?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    waitingRoomTitle?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorVisitorPrioritizationFifoStandalone {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorVisitorPrioritizationWaitingRoomCpCode {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorVisitorPrioritizationWaitingRoomCpCodeCpCodeLimits;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    createdDate?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    description?: string;
+    id?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    name?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorVisitorPrioritizationWaitingRoomCpCodeCpCodeLimits {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    currentCapacity?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    limit?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorVisitorPrioritizationWaitingRoomNetStorage {
+    cpCode?: number;
+    downloadDomainName?: string;
+    g2oToken?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorWatermarking {
+    /**
+     * When you work with your watermarking vendor, you can apply several preprocessing methods to your content. See the `AMD help` for more information. Use this option to specify the location of the `A` and `B` variant segments.
+     */
+    abVariantLocation?: string;
+    /**
+     * Provides the primary password used to encrypt patterns in your watermarking tokens.
+     */
+    decryptionPassword1?: string;
+    /**
+     * Provides the secondary password you can use to rotate passwords.
+     */
+    decryptionPassword2?: string;
+    /**
+     * Specifies a label that corresponds to the primary password.
+     */
+    decryptionPasswordId1?: string;
+    /**
+     * Specifies a label for the secondary password, used in rotation scenarios to identify which password to use for decryption.
+     */
+    decryptionPasswordId2?: string;
+    /**
+     * Enables the watermarking behavior.
+     */
+    enable?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    miscellaneousSettingsTitle?: string;
+    /**
+     * If patterns in your watermarking tokens have been encrypted, enabling this allows you to provide values to decrypt them.
+     */
+    patternDecryptionEnable?: boolean;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    patternEncryptionTitle?: string;
+    /**
+     * When enabled, you can verify the signature in your watermarking token.
+     */
+    signatureVerificationEnable?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    tokenSigningTitle?: string;
+    /**
+     * When you work with your watermarking vendor, you can apply several preprocessing methods to your content. See the `AMD help` for more information. With the standard `filename-prefix AB naming` preprocessing method, the watermarking vendor creates two variants of the original segment content and labels them as an `A` and `B` segment in the filename. If you selected the `unlabeled A variant` preprocessing method, enabling this option tells your configuration to use the original filename segment content as your `A` variant.
+     */
+    useOriginalAsA?: boolean;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * Specifies a unique identifier for the first public key.
+     */
+    verificationKeyId1?: string;
+    /**
+     * Specifies a unique identifier for the optional second public key.
+     */
+    verificationKeyId2?: string;
+    /**
+     * Specifies the first public key in its entirety.
+     */
+    verificationPublicKey1?: string;
+    /**
+     * Specifies the optional second public key in its entirety. Specify a second key to enable rotation.
+     */
+    verificationPublicKey2?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorWebApplicationFirewall {
+    /**
+     * An object featuring details about your firewall configuration.
+     */
+    firewallConfiguration?: outputs.GetPropertyRulesBuilderRulesV20240212BehaviorWebApplicationFirewallFirewallConfiguration;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorWebApplicationFirewallFirewallConfiguration {
+    configId?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+     */
+    fileName?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+     */
+    productionStatus?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+     */
+    productionVersion?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+     */
+    stagingStatus?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior
+     */
+    stagingVersion?: number;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorWebSockets {
+    /**
+     * Enables WebSocket traffic.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212BehaviorWebdav {
+    /**
+     * Enables the WebDAV behavior.
+     */
+    enabled?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212Criterion {
+    /**
+     * Matches whether the `imageManager` behavior already applies to the current set of requests. This criterion can be used in includes.
+     */
+    advancedImMatch?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionAdvancedImMatch;
+    /**
+     * This matches a specified percentage of requests when used with the accompanying behavior. Contact Akamai Professional Services for help configuring it. This criterion can be used in includes.
+     */
+    bucket?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionBucket;
+    /**
+     * Matches the current cache state.  Note that any `NO_STORE` or `BYPASS_CACHE` HTTP headers set on the origin's content overrides properties' `caching` instructions, in which case this criteria does not apply. This criterion can be used in includes.
+     */
+    cacheability?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionCacheability;
+    /**
+     * Identifies traffic deployed over Akamai's regional ChinaCDN infrastructure. This criterion can be used in includes.
+     */
+    chinaCdnRegion?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionChinaCdnRegion;
+    /**
+     * Matches whether you have configured a client certificate to authenticate requests to edge servers. This criterion can be used in includes.
+     */
+    clientCertificate?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionClientCertificate;
+    /**
+     * Matches the IP number of the requesting client. To use this condition to match end-user IP addresses, apply it together with the `requestType` matching on the `CLIENT_REQ` value. This criterion can be used in includes.
+     */
+    clientIp?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionClientIp;
+    /**
+     * Matches the version of the IP protocol used by the requesting client. This criterion can be used in includes.
+     */
+    clientIpVersion?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionClientIpVersion;
+    /**
+     * Allows Cloudlets Origins, referenced by label, to define their own criteria to assign custom origin definitions. The criteria may match, for example, for a specified percentage of requests defined by the cloudlet to use an alternative version of a website. This criterion can be used in includes.
+     */
+    cloudletsOrigin?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionCloudletsOrigin;
+    /**
+     * Specifies the type of Akamai network handling the request. This criterion can be used in includes.
+     */
+    contentDeliveryNetwork?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionContentDeliveryNetwork;
+    /**
+     * Matches the HTTP response header's `Content-Type`. This criterion can be used in includes.
+     */
+    contentType?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionContentType;
+    /**
+     * Match various aspects of the device or browser making the request. Based on the value of the `characteristic` option, the expected value is either a boolean, a number, or a string, possibly representing a version number. Each type of value requires a different field. This criterion can be used in includes.
+     */
+    deviceCharacteristic?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionDeviceCharacteristic;
+    /**
+     * This criterion can be used in includes.
+     */
+    ecmdAuthGroups?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionEcmdAuthGroups;
+    /**
+     * This criterion can be used in includes.
+     */
+    ecmdAuthScheme?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionEcmdAuthScheme;
+    /**
+     * This criterion can be used in includes.
+     */
+    ecmdIsAuthenticated?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionEcmdIsAuthenticated;
+    /**
+     * This criterion can be used in includes.
+     */
+    ecmdUsername?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionEcmdUsername;
+    /**
+     * Checks the EdgeWorkers execution status and detects whether a customer's JavaScript failed on edge servers. This criterion can be used in includes.
+     */
+    edgeWorkersFailure?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionEdgeWorkersFailure;
+    /**
+     * Matches the requested filename's extension, if present. This criterion can be used in includes.
+     */
+    fileExtension?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionFileExtension;
+    /**
+     * Matches the requested filename, or test whether it is present. This criterion can be used in includes.
+     */
+    filename?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionFilename;
+    /**
+     * Matches the requested hostname. This criterion can be used in includes.
+     */
+    hostname?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionHostname;
+    /**
+     * This specifies match criteria using Akamai XML metadata. It can only be configured on your behalf by Akamai Professional Services. This criterion is for internal usage only. This criterion can be used in includes.
+     */
+    matchAdvanced?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionMatchAdvanced;
+    /**
+     * Match the assigned content provider code. This criterion can be used in includes.
+     */
+    matchCpCode?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionMatchCpCode;
+    /**
+     * Match a set or range of HTTP response codes. This criterion can be used in includes.
+     */
+    matchResponseCode?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionMatchResponseCode;
+    /**
+     * Matches a built-in variable, or a custom variable pre-declared within the rule tree by the `setVariable` behavior.  See `Support for variables` for more information on this feature. This criterion can be used in includes.
+     */
+    matchVariable?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionMatchVariable;
+    /**
+     * Matches how the current rule corresponds to low-level syntax elements in translated XML metadata, indicating progressive stages as each edge server handles the request and response.  To use this match, you need to be thoroughly familiar with how Akamai edge servers process requests. Contact your Akamai Technical representative if you need help, and test thoroughly on staging before activating on production. This criterion can be used in includes.
+     */
+    metadataStage?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionMetadataStage;
+    /**
+     * Matches when the origin responds with a timeout error. This criterion can be used in includes.
+     */
+    originTimeout?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionOriginTimeout;
+    /**
+     * Matches the URL's non-hostname path component. This criterion can be used in includes.
+     */
+    path?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionPath;
+    /**
+     * Matches query string field names or values. This criterion can be used in includes.
+     */
+    queryStringParameter?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionQueryStringParameter;
+    /**
+     * Matches a specified percentage of requests. Use this match to apply behaviors to a percentage of your incoming requests that differ from the remainder, useful for A/b testing, or to offload traffic onto different servers. This criterion can be used in includes.
+     */
+    random?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionRandom;
+    /**
+     * Matches on specified origin recovery scenarios. The `originFailureRecoveryPolicy` behavior defines the scenarios that trigger the recovery or retry methods you set in the `originFailureRecoveryMethod` rule. If the origin fails, the system checks the name of the recovery method applied to your policy. It then either redirects the requesting client to a backup origin or returns predefined HTTP response codes. This criterion can be used in includes.
+     */
+    recoveryConfig?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionRecoveryConfig;
+    /**
+     * Matches a regular expression against a string, especially to apply behaviors flexibly based on the contents of dynamic `variables`. This criterion can be used in includes.
+     */
+    regularExpression?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionRegularExpression;
+    /**
+     * Match the cookie name or value passed with the request. This criterion can be used in includes.
+     */
+    requestCookie?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionRequestCookie;
+    /**
+     * Match HTTP header names or values. This criterion can be used in includes.
+     */
+    requestHeader?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionRequestHeader;
+    /**
+     * Specify the request's HTTP verb. Also supports WebDAV methods and common Akamai operations. This criterion can be used in includes.
+     */
+    requestMethod?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionRequestMethod;
+    /**
+     * Matches whether the request uses the HTTP or HTTPS protocol. This criterion can be used in includes.
+     */
+    requestProtocol?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionRequestProtocol;
+    /**
+     * Matches the basic type of request. To use this match, you need to be thoroughly familiar with how Akamai edge servers process requests. Contact your Akamai Technical representative if you need help, and test thoroughly on staging before activating on production. This criterion can be used in includes.
+     */
+    requestType?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionRequestType;
+    /**
+     * Match HTTP header names or values. This criterion can be used in includes.
+     */
+    responseHeader?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionResponseHeader;
+    /**
+     * The location of the Akamai server handling the request. This criterion can be used in includes.
+     */
+    serverLocation?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionServerLocation;
+    /**
+     * Specifies ranges of times during which the request occurred. This criterion can be used in includes.
+     */
+    time?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionTime;
+    /**
+     * Match on Auth Token 2.0 verification results. This criterion can be used in includes.
+     */
+    tokenAuthorization?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionTokenAuthorization;
+    /**
+     * Matches the user agent string that helps identify the client browser and device. This criterion can be used in includes.
+     */
+    userAgent?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionUserAgent;
+    /**
+     * The client browser's approximate geographic location, determined by looking up the IP address in a database. This criterion can be used in includes.
+     */
+    userLocation?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionUserLocation;
+    /**
+     * Matches details of the network over which the request was made, determined by looking up the IP address in a database. This criterion can be used in includes.
+     */
+    userNetwork?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionUserNetwork;
+    /**
+     * Matches any runtime errors that occur on edge servers based on the configuration of a `setVariable` behavior. See `Support for variables` section for more information on this feature. This criterion can be used in includes.
+     */
+    variableError?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionVariableError;
+    /**
+     * Helps to customize the requests identified by the `virtualWaitingRoom` behavior. Use this match criteria to define the `originServer` behavior for the waiting room. This criterion cannot be used in includes.
+     */
+    virtualWaitingRoomRequest?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionVirtualWaitingRoomRequest;
+    /**
+     * Helps to customize the requests identified by the `visitorPrioritizationFifo` behavior. The basic use case for this match criteria is to define the `originServer` behavior for the waiting room. This criterion cannot be used in includes.
+     */
+    visitorPrioritizationRequest?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionVisitorPrioritizationRequest;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionAdvancedImMatch {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the match's scope.
+     */
+    matchOn?: string;
+    /**
+     * Specifies the match's logic.
+     */
+    matchOperator?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionBucket {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the percentage of requests to match.
+     */
+    percentage?: number;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionCacheability {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the match's logic.
+     */
+    matchOperator?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * Content's cache is enabled (`CACHEABLE`) or not (`NO_STORE`), or else is ignored (`BYPASS_CACHE`).
+     */
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionChinaCdnRegion {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specify whether the request `IS` or `IS_NOT` deployed over ChinaCDN.
+     */
+    matchOperator?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionClientCertificate {
+    /**
+     * Specifies custom handling of requests if any of the checks in the `enforceMtlsSettings` behavior fail. Enable this and use with behaviors such as `logCustom` so that they execute if the check fails. You need to add the `enforceMtlsSettings` behavior to a parent rule, with its own unique match condition and `enableDenyRequest` option disabled.
+     */
+    enforceMtls?: boolean;
+    /**
+     * Executes rule behaviors only if a client certificate authenticates requests.
+     */
+    isCertificatePresent?: boolean;
+    /**
+     * Matches whether the certificate is `VALID` or `INVALID`. You can also `IGNORE` the certificate's validity.
+     */
+    isCertificateValid?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionClientIp {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Matches the contents of `values` if set to `IS_ONE_OF`, otherwise `IS_NOT_ONE_OF` reverses the match.
+     */
+    matchOperator?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * When connecting via a proxy server as determined by the `X-Forwarded-For` header, enabling this option matches the connecting client's IP address rather than the original end client specified in the header.
+     */
+    useHeaders?: boolean;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * IP or CIDR block, for example: `71.92.0.0/14`.
+     */
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionClientIpVersion {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * When connecting via a proxy server as determined by the `X-Forwarded-For` header, enabling this option matches the connecting client's IP address rather than the original end client specified in the header.
+     */
+    useXForwardedFor?: boolean;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * The IP version of the client request, either `IPV4` or `IPV6`.
+     */
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionCloudletsOrigin {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * The Cloudlets Origins identifier, limited to alphanumeric and underscore characters.
+     */
+    originId?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionContentDeliveryNetwork {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Matches the specified `network` if set to `IS`, otherwise `IS_NOT` reverses the match.
+     */
+    matchOperator?: string;
+    /**
+     * Match the network.
+     */
+    network?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionContentType {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Sets a case-sensitive match for all `values`.
+     */
+    matchCaseSensitive?: boolean;
+    /**
+     * Matches any `Content-Type` among specified `values` when set to `IS_ONE_OF`, otherwise `IS_NOT_ONE_OF` reverses the match.
+     */
+    matchOperator?: string;
+    /**
+     * Allows wildcards in the `value` field, where `?` matches a single character and `*` matches zero or more characters. Specifying `text/*` matches both `text/html` and `text/css`.
+     */
+    matchWildcard?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * `Content-Type` response header value, for example `text/html`.
+     */
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionDeviceCharacteristic {
+    /**
+     * When the `characteristic` expects a boolean value, this specifies the value.
+     */
+    booleanValue?: boolean;
+    /**
+     * Aspect of the device or browser to match.
+     */
+    characteristic?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Sets a case-sensitive match for the `stringValue` field.
+     */
+    matchCaseSensitive?: boolean;
+    /**
+     * Allows wildcards in the `stringValue` field, where `?` matches a single character and `*` matches zero or more characters.
+     */
+    matchWildcard?: boolean;
+    /**
+     * When the `characteristic` expects a numeric value, compares the specified `numericValue` against the matched client.
+     */
+    numericMatchOperator?: string;
+    /**
+     * When the `characteristic` expects a numeric value, this specifies the number.
+     */
+    numericValue?: number;
+    /**
+     * When the `characteristic` expects a string value, set this to `MATCHES_ONE_OF` to match against the `stringValue` set, otherwise set to `DOES_NOT_MATCH_ONE_OF` to exclude that set of values.
+     */
+    stringMatchOperator?: string;
+    /**
+     * When the `characteristic` expects a string, this specifies the set of values.
+     */
+    stringValues?: string[];
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * When the `characteristic` expects a version string value, compares the specified `versionValue` against the matched client, using the following operators: `IS`, `IS_MORE_THAN_OR_EQUAL`, `IS_MORE_THAN`, `IS_LESS_THAN_OR_EQUAL`, `IS_LESS_THAN`, `IS_NOT`.
+     */
+    versionMatchOperator?: string;
+    /**
+     * When the `characteristic` expects a version number, this specifies it as a string.
+     */
+    versionValue?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionEcmdAuthGroups {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    matchOperator?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionEcmdAuthScheme {
+    authScheme?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionEcmdIsAuthenticated {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    matchOperator?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionEcmdUsername {
+    length?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    matchOperator?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionEdgeWorkersFailure {
+    /**
+     * Specify execution status.
+     */
+    execStatus?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionFileExtension {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Sets a case-sensitive match.
+     */
+    matchCaseSensitive?: boolean;
+    /**
+     * Matches the contents of `values` if set to `IS_ONE_OF`, otherwise `IS_NOT_ONE_OF` reverses the match.
+     */
+    matchOperator?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * An array of file extension strings, with no leading dot characters, for example `png`, `jpg`, `jpeg`, and `gif`.
+     */
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionFilename {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Sets a case-sensitive match for the `values` field.
+     */
+    matchCaseSensitive?: boolean;
+    /**
+     * If set to `IS_ONE_OF` or `IS_NOT_ONE_OF`, matches whether the filename matches one of the `values`. If set to `IS_EMPTY` or `IS_NOT_EMPTY`, matches whether the specified filename is part of the path.
+     */
+    matchOperator?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * Matches the filename component of the request URL. Allows wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, specify `filename.*` to accept any extension.
+     */
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionHostname {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Matches the contents of `values` when set to `IS_ONE_OF`, otherwise `IS_NOT_ONE_OF` reverses the match.
+     */
+    matchOperator?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * A list of hostnames. Allows wildcards, where `?` matches a single character and `*` matches zero or more characters. Specifying `*.example.com` matches both `m.example.com` and `www.example.com`.
+     */
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionMatchAdvanced {
+    /**
+     * An XML string that closes the relevant block.
+     */
+    closeXml?: string;
+    /**
+     * A human-readable description of what the XML block does.
+     */
+    description?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * An XML string that opens the relevant block.
+     */
+    openXml?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionMatchCpCode {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * Specifies the CP code as an object. You only need to provide the initial `id` to match the CP code, stripping any `cpc_` prefix to pass the integer to the rule tree. Additional CP code details may reflect back in subsequent read-only data.
+     */
+    value?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionMatchCpCodeValue;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionMatchCpCodeValue {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20240212CriterionMatchCpCodeValueCpCodeLimits;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    createdDate?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    description?: string;
+    id?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    name?: string;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionMatchCpCodeValueCpCodeLimits {
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    currentCapacity?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    limit?: number;
+    /**
+     * This field is only intended for export compatibility purposes, and modifying it will not impact your use of the behavior.
+     */
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionMatchResponseCode {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the start of a range of responses. For example, `400` to match anything from `400` to `500`.
+     */
+    lowerBound?: number;
+    /**
+     * Matches numeric range or a specified set of `values`.
+     */
+    matchOperator?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * Specifies the end of a range of responses. For example, `500` to match anything from `400` to `500`.
+     */
+    upperBound?: number;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * A set of response codes to match, for example `["404","500"]`.
+     */
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionMatchVariable {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the range's numeric minimum value.
+     */
+    lowerBound?: string;
+    /**
+     * When matching string expressions, enabling this performs a case-sensitive match.
+     */
+    matchCaseSensitive?: boolean;
+    /**
+     * The type of match, based on which you use different options to specify the match criteria.
+     */
+    matchOperator?: string;
+    /**
+     * When matching string expressions, enabling this allows wildcards, where `?` matches a single character and `*` matches zero or more characters.
+     */
+    matchWildcard?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * Specifies the range's numeric maximum value.
+     */
+    upperBound?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * Specifies a single matching string.
+     */
+    variableExpression?: string;
+    /**
+     * The name of the variable to match.
+     */
+    variableName?: string;
+    /**
+     * Specifies an array of matching strings.
+     */
+    variableValues?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionMetadataStage {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Compares the current rule with the specified metadata stage.
+     */
+    matchOperator?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * Specifies the metadata stage.
+     */
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionOriginTimeout {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies a single required `ORIGIN_TIMED_OUT` value.
+     */
+    matchOperator?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionPath {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Sets a case-sensitive match.
+     */
+    matchCaseSensitive?: boolean;
+    /**
+     * Matches the contents of the `values` array.
+     */
+    matchOperator?: string;
+    /**
+     * Transforms URLs before comparing them with the provided value. URLs are decoded, and any directory syntax such as `../..` or `//` is stripped as a security measure. This protects URL paths from being accessed by unauthorized users.
+     */
+    normalize?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * Matches the URL path, excluding leading hostname and trailing query parameters. The path is relative to the server root, for example `/blog`. This field allows wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `/blog/*&#47;2014` matches paths with two fixed segments and other varying segments between them.
+     */
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionQueryStringParameter {
+    /**
+     * Matches when the `value` is URL-escaped.
+     */
+    escapeValue?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the match's minimum value.
+     */
+    lowerBound?: number;
+    /**
+     * Sets a case-sensitive match for the `parameterName` field.
+     */
+    matchCaseSensitiveName?: boolean;
+    /**
+     * Sets a case-sensitive match for the `value` field.
+     */
+    matchCaseSensitiveValue?: boolean;
+    /**
+     * Narrows the match criteria.
+     */
+    matchOperator?: string;
+    /**
+     * Allows wildcards in the `parameterName` field, where `?` matches a single character and `*` matches zero or more characters.
+     */
+    matchWildcardName?: boolean;
+    /**
+     * Allows wildcards in the `value` field, where `?` matches a single character and `*` matches zero or more characters.
+     */
+    matchWildcardValue?: boolean;
+    /**
+     * The name of the query field, for example, `q` in `?q=string`.
+     */
+    parameterName?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * When the `value` is numeric, this field specifies the match's maximum value.
+     */
+    upperBound?: number;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * The value of the query field, for example, `string` in `?q=string`.
+     */
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionRandom {
+    /**
+     * Specify a percentage of random requests to which to apply a behavior. Any remainders do not match.
+     */
+    bucket?: number;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionRecoveryConfig {
+    /**
+     * A unique identifier used for origin failure recovery configurations. This is the recovery method configuration name you apply when setting origin failure recovery methods and scenarios in `originFailureRecoveryMethod` and `originFailureRecoveryPolicy` behaviors. The value can contain alphanumeric characters and dashes.
+     */
+    configName?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionRegularExpression {
+    /**
+     * Sets a case-sensitive regular expression match.
+     */
+    caseSensitive?: boolean;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * The string to match, typically the contents of a dynamic variable.
+     */
+    matchString?: string;
+    /**
+     * The regular expression (PCRE) to match against the string.
+     */
+    regex?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionRequestCookie {
+    /**
+     * The name of the cookie, for example, `visitor` in `visitor:anon`.
+     */
+    cookieName?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * When the `value` is numeric, this field specifies the match's minimum value.
+     */
+    lowerBound?: number;
+    /**
+     * Sets a case-sensitive match for the `cookieName` field.
+     */
+    matchCaseSensitiveName?: boolean;
+    /**
+     * Sets a case-sensitive match for the `value` field.
+     */
+    matchCaseSensitiveValue?: boolean;
+    /**
+     * Narrows the match criteria.
+     */
+    matchOperator?: string;
+    /**
+     * Allows wildcards in the `cookieName` field, where `?` matches a single character and `*` matches zero or more characters.
+     */
+    matchWildcardName?: boolean;
+    /**
+     * Allows wildcards in the `value` field, where `?` matches a single character and `*` matches zero or more characters.
+     */
+    matchWildcardValue?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * When the `value` is numeric, this field specifies the match's maximum value.
+     */
+    upperBound?: number;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * The cookie's value, for example, `anon` in `visitor:anon`.
+     */
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionRequestHeader {
+    /**
+     * The name of the request header, for example `Accept-Language`.
+     */
+    headerName?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Sets a case-sensitive match for the `value` field.
+     */
+    matchCaseSensitiveValue?: boolean;
+    /**
+     * Narrows the match criteria.
+     */
+    matchOperator?: string;
+    /**
+     * Allows wildcards in the `headerName` field, where `?` matches a single character and `*` matches zero or more characters.
+     */
+    matchWildcardName?: boolean;
+    /**
+     * Allows wildcards in the `value` field, where `?` matches a single character and `*` matches zero or more characters.
+     */
+    matchWildcardValue?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * The request header's value, for example `en-US` when the header `headerName` is `Accept-Language`.
+     */
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionRequestMethod {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Matches the `value` when set to `IS`, otherwise `IS_NOT` reverses the match.
+     */
+    matchOperator?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * Any of these HTTP methods,  WebDAV methods, or Akamai operations.
+     */
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionRequestProtocol {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * Specifies the protocol.
+     */
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionRequestType {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies whether the request `IS` or `IS_NOT` the type of specified `value`.
+     */
+    matchOperator?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * Specifies the type of request, either a standard `CLIENT_REQ`, an `ESI_FRAGMENT`, or an `EW_SUBREQUEST`.
+     */
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionResponseHeader {
+    /**
+     * The name of the response header, for example `Content-Type`.
+     */
+    headerName?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * When the `value` is numeric, this field specifies the match's minimum value.
+     */
+    lowerBound?: number;
+    /**
+     * When enabled, the match is case-sensitive for the `value` field.
+     */
+    matchCaseSensitiveValue?: boolean;
+    /**
+     * Narrows the match according to various criteria.
+     */
+    matchOperator?: string;
+    /**
+     * Allows wildcards in the `headerName` field, where `?` matches a single character and `*` matches zero or more characters.
+     */
+    matchWildcardName?: boolean;
+    /**
+     * Allows wildcards in the `value` field, where `?` matches a single character and `*` matches zero or more characters.
+     */
+    matchWildcardValue?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * When the `value` is numeric, this field specifies the match's maximum value.
+     */
+    upperBound?: number;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * The response header's value, for example `application/x-www-form-urlencoded` when the header `headerName` is `Content-Type`.
+     */
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionServerLocation {
+    /**
+     * Continent codes.
+     */
+    continents?: string[];
+    /**
+     * ISO 3166-1 country codes, such as `US` or `CN`.
+     */
+    countries?: string[];
+    /**
+     * Indicates the geographic scope.
+     */
+    locationType?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Matches the specified set of values when set to `IS_ONE_OF`, otherwise `IS_NOT_ONE_OF` reverses the match.
+     */
+    matchOperator?: string;
+    /**
+     * ISO 3166 country and region codes, for example `US:MA` for Massachusetts or `JP:13` for Tokyo.
+     */
+    regions?: string[];
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionTime {
+    /**
+     * Adjusts the start time plus repeat interval to account for daylight saving time. Applies when the current time and the start time use different systems, daylight and standard, and the two values are in conflict.
+     */
+    applyDaylightSavingsTime?: boolean;
+    /**
+     * Sets the start of a time period.
+     */
+    beginDate?: string;
+    /**
+     * Sets the end of a fixed time period.
+     */
+    endDate?: string;
+    /**
+     * Sets the start of a fixed time period.
+     */
+    lastingDate?: string;
+    /**
+     * Specifies the end of a time period as a duration relative to the `lastingDate`.
+     */
+    lastingDuration?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies how to define the range of time.
+     */
+    matchOperator?: string;
+    /**
+     * Sets the start of the initial time period.
+     */
+    repeatBeginDate?: string;
+    /**
+     * Sets the duration of each repeating time period.
+     */
+    repeatDuration?: string;
+    /**
+     * Sets the time between each repeating time period's starting points.
+     */
+    repeatInterval?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionTokenAuthorization {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Error match scope.
+     */
+    matchOperator?: string;
+    statusLists?: string[];
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionUserAgent {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Sets a case-sensitive match for the `value` field.
+     */
+    matchCaseSensitive?: boolean;
+    /**
+     * Matches the specified set of `values` when set to `IS_ONE_OF`, otherwise `IS_NOT_ONE_OF` reverses the match.
+     */
+    matchOperator?: string;
+    /**
+     * Allows wildcards in the `value` field, where `?` matches a single character and `*` matches zero or more characters. For example, `*Android*`, `*iPhone5*`, `*Firefox*`, or `*Chrome*` allow substring matches.
+     */
+    matchWildcard?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * The `User-Agent` header's value. For example, `Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)`.
+     */
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionUserLocation {
+    /**
+     * Specifies which IP addresses determine the user's location.
+     */
+    checkIps?: string;
+    /**
+     * Continent codes.
+     */
+    continentValues?: string[];
+    /**
+     * ISO 3166-1 country codes, such as `US` or `CN`.
+     */
+    countryValues?: string[];
+    /**
+     * Indicates the geographic scope.
+     */
+    field?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Matches the specified set of values when set to `IS_ONE_OF`, otherwise `IS_NOT_ONE_OF` reverses the match.
+     */
+    matchOperator?: string;
+    /**
+     * ISO 3166 country and region codes, for example `US:MA` for Massachusetts or `JP:13` for Tokyo.
+     */
+    regionValues?: string[];
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * When connecting via a proxy server as determined by the `X-Forwarded-For` header, enabling this option matches the end client specified in the header. Disabling it matches the connecting client's IP address.
+     */
+    useOnlyFirstXForwardedForIp?: boolean;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionUserNetwork {
+    /**
+     * Bandwidth range in bits per second, either `1`, `57`, `257`, `1000`, `2000`, or `5000`.
+     */
+    bandwidthValues?: string[];
+    /**
+     * Specifies which IP addresses determine the user's network.
+     */
+    checkIps?: string;
+    /**
+     * The type of information to match.
+     */
+    field?: string;
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Matches the specified set of values when set to `IS_ONE_OF`, otherwise `IS_NOT_ONE_OF` reverses the match.
+     */
+    matchOperator?: string;
+    networkTypeValues?: string[];
+    /**
+     * Any set of specific networks.
+     */
+    networkValues?: string[];
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * When connecting via a proxy server as determined by the `X-Forwarded-For` header, enabling this option matches the end client specified in the header. Disabling it matches the connecting client's IP address.
+     */
+    useOnlyFirstXForwardedForIp?: boolean;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionVariableError {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Matches errors for the specified set of `variableNames`, otherwise matches errors from variables outside that set.
+     */
+    result?: boolean;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+    /**
+     * The name of the variable whose error triggers the match, or a space- or comma-delimited list of more than one variable name. Note that if you define a variable named `VAR`, the name in this field needs to appear with its added prefix as `PMUSER_VAR`. When such a variable is inserted into other fields, it appears with an additional namespace as `{{user.PMUSER_VAR}}`. See the `setVariable` behavior for details on variable names.
+     */
+    variableNames?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionVirtualWaitingRoomRequest {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the type of request identified by the `virtualWaitingRoom` behavior.
+     */
+    matchOn?: string;
+    /**
+     * Specifies the match's logic.
+     */
+    matchOperator?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CriterionVisitorPrioritizationRequest {
+    /**
+     * Indicates that your Akamai representative has locked this behavior or criteria so that you can't modify it. This option is for internal usage only.
+     */
+    locked?: boolean;
+    /**
+     * Specifies the type of request identified by the `visitorPrioritizationFifo` behavior.
+     */
+    matchOn?: string;
+    /**
+     * Specifies the match's logic.
+     */
+    matchOperator?: string;
+    /**
+     * This option is for internal usage only.
+     */
+    templateUuid?: string;
+    /**
+     * A uuid member indicates that at least one of its component behaviors or criteria is advanced and read-only. You need to preserve this uuid as well when modifying the rule tree. This option is for internal usage only.
+     */
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212CustomOverride {
+    /**
+     * The name of a custom override
+     */
+    name?: string;
+    /**
+     * The ID of a custom override
+     */
+    overrideId?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20240212Variable {
+    /**
+     * The description for a variable
+     */
+    description: string;
+    /**
+     * Whether a variable should be hidden
+     */
+    hidden: boolean;
+    /**
+     * The name of a variable
+     */
+    name: string;
+    /**
+     * States whether a variable contains sensitive information
+     */
+    sensitive: boolean;
+    /**
+     * The value for a variable
+     */
+    value: string;
+}
+
 export interface GetPropertyRulesTemplateTemplate {
     /**
      * Content of the template as string
@@ -64105,6 +75548,7 @@ export interface GtmGeomapDefaultDatacenter {
 }
 
 export interface GtmPropertyLivenessTest {
+    alternateCaCertificates?: string[];
     answersRequired?: boolean;
     disableNonstandardPortWarning?: boolean;
     disabled?: boolean;
@@ -64113,8 +75557,14 @@ export interface GtmPropertyLivenessTest {
     httpError4xx?: boolean;
     httpError5xx?: boolean;
     httpHeaders?: outputs.GtmPropertyLivenessTestHttpHeader[];
+    httpMethod?: string;
+    httpRequestBody?: string;
     name: string;
     peerCertificateVerification?: boolean;
+    /**
+     * Whether to enable backwards compatibility for liveness endpoints that use older TLS protocols
+     */
+    pre2023SecurityPosture?: boolean;
     recursionRequested?: boolean;
     requestString?: string;
     resourceType?: string;
@@ -64150,6 +75600,7 @@ export interface GtmPropertyTrafficTarget {
      * @deprecated The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored
      */
     name?: string;
+    precedence?: number;
     servers?: string[];
     weight?: number;
 }

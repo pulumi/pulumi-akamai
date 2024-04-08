@@ -26,3 +26,23 @@ requestLimit: Optional[int]
 The maximum number of API requests to be made per second (0 for no limit)
 """
 
+retryDisabled: Optional[bool]
+"""
+Should the retries of API requests be disabled, default false
+"""
+
+retryMax: Optional[int]
+"""
+The maximum number retires of API requests, default 10
+"""
+
+retryWaitMax: Optional[int]
+"""
+The maximum wait time in seconds between API requests retries, default is 30 sec
+"""
+
+retryWaitMin: Optional[int]
+"""
+The minimum wait time in seconds between API requests retries, default is 1 sec
+"""
+

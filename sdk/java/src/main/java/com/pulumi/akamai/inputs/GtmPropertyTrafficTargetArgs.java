@@ -59,6 +59,13 @@ public final class GtmPropertyTrafficTargetArgs extends com.pulumi.resources.Res
         return Optional.ofNullable(this.name);
     }
 
+    @Import(name="precedence")
+    private @Nullable Output<Integer> precedence;
+
+    public Optional<Output<Integer>> precedence() {
+        return Optional.ofNullable(this.precedence);
+    }
+
     @Import(name="servers")
     private @Nullable Output<List<String>> servers;
 
@@ -80,6 +87,7 @@ public final class GtmPropertyTrafficTargetArgs extends com.pulumi.resources.Res
         this.enabled = $.enabled;
         this.handoutCname = $.handoutCname;
         this.name = $.name;
+        this.precedence = $.precedence;
         this.servers = $.servers;
         this.weight = $.weight;
     }
@@ -152,6 +160,15 @@ public final class GtmPropertyTrafficTargetArgs extends com.pulumi.resources.Res
         @Deprecated /* The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored */
         public Builder name(String name) {
             return name(Output.of(name));
+        }
+
+        public Builder precedence(@Nullable Output<Integer> precedence) {
+            $.precedence = precedence;
+            return this;
+        }
+
+        public Builder precedence(Integer precedence) {
+            return precedence(Output.of(precedence));
         }
 
         public Builder servers(@Nullable Output<List<String>> servers) {

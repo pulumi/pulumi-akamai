@@ -26,6 +26,7 @@ export interface GetCPSEnrollmentArgs {
  */
 export interface GetCPSEnrollmentResult {
     readonly adminContacts: outputs.GetCPSEnrollmentAdminContact[];
+    readonly assignedSlots: number[];
     readonly certificateChainType: string;
     readonly certificateType: string;
     readonly commonName: string;
@@ -40,13 +41,16 @@ export interface GetCPSEnrollmentResult {
      */
     readonly id: string;
     readonly networkConfigurations: outputs.GetCPSEnrollmentNetworkConfiguration[];
+    readonly orgId: number;
     readonly organizations: outputs.GetCPSEnrollmentOrganization[];
     readonly pendingChanges: boolean;
+    readonly productionSlots: number[];
     readonly registrationAuthority: string;
     readonly sans: string[];
     readonly secureNetwork: string;
     readonly signatureAlgorithm: string;
     readonly sniOnly: boolean;
+    readonly stagingSlots: number[];
     readonly techContacts: outputs.GetCPSEnrollmentTechContact[];
     readonly validationType: string;
 }

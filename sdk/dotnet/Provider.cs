@@ -76,6 +76,30 @@ namespace Pulumi.Akamai
         [Input("requestLimit", json: true)]
         public Input<int>? RequestLimit { get; set; }
 
+        /// <summary>
+        /// Should the retries of API requests be disabled, default false
+        /// </summary>
+        [Input("retryDisabled", json: true)]
+        public Input<bool>? RetryDisabled { get; set; }
+
+        /// <summary>
+        /// The maximum number retires of API requests, default 10
+        /// </summary>
+        [Input("retryMax", json: true)]
+        public Input<int>? RetryMax { get; set; }
+
+        /// <summary>
+        /// The maximum wait time in seconds between API requests retries, default is 30 sec
+        /// </summary>
+        [Input("retryWaitMax", json: true)]
+        public Input<int>? RetryWaitMax { get; set; }
+
+        /// <summary>
+        /// The minimum wait time in seconds between API requests retries, default is 1 sec
+        /// </summary>
+        [Input("retryWaitMin", json: true)]
+        public Input<int>? RetryWaitMin { get; set; }
+
         public ProviderArgs()
         {
         }

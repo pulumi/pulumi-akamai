@@ -73,6 +73,46 @@ namespace Pulumi.Akamai
             set => _requestLimit.Set(value);
         }
 
+        private static readonly __Value<bool?> _retryDisabled = new __Value<bool?>(() => __config.GetBoolean("retryDisabled"));
+        /// <summary>
+        /// Should the retries of API requests be disabled, default false
+        /// </summary>
+        public static bool? RetryDisabled
+        {
+            get => _retryDisabled.Get();
+            set => _retryDisabled.Set(value);
+        }
+
+        private static readonly __Value<int?> _retryMax = new __Value<int?>(() => __config.GetInt32("retryMax"));
+        /// <summary>
+        /// The maximum number retires of API requests, default 10
+        /// </summary>
+        public static int? RetryMax
+        {
+            get => _retryMax.Get();
+            set => _retryMax.Set(value);
+        }
+
+        private static readonly __Value<int?> _retryWaitMax = new __Value<int?>(() => __config.GetInt32("retryWaitMax"));
+        /// <summary>
+        /// The maximum wait time in seconds between API requests retries, default is 30 sec
+        /// </summary>
+        public static int? RetryWaitMax
+        {
+            get => _retryWaitMax.Get();
+            set => _retryWaitMax.Set(value);
+        }
+
+        private static readonly __Value<int?> _retryWaitMin = new __Value<int?>(() => __config.GetInt32("retryWaitMin"));
+        /// <summary>
+        /// The minimum wait time in seconds between API requests retries, default is 1 sec
+        /// </summary>
+        public static int? RetryWaitMin
+        {
+            get => _retryWaitMin.Get();
+            set => _retryWaitMin.Set(value);
+        }
+
         public static class Types
         {
 

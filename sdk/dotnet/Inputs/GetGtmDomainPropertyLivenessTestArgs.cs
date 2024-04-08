@@ -12,6 +12,18 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetGtmDomainPropertyLivenessTestInputArgs : global::Pulumi.ResourceArgs
     {
+        [Input("alternateCaCertificates", required: true)]
+        private InputList<string>? _alternateCaCertificates;
+
+        /// <summary>
+        /// List of alternate trust anchors (CA certificates)
+        /// </summary>
+        public InputList<string> AlternateCaCertificates
+        {
+            get => _alternateCaCertificates ?? (_alternateCaCertificates = new InputList<string>());
+            set => _alternateCaCertificates = value;
+        }
+
         /// <summary>
         /// If testObjectProtocol is DNS, DOH or DOT, requires an answer to the DNS query to be considered a success.
         /// </summary>
@@ -67,6 +79,18 @@ namespace Pulumi.Akamai.Inputs
         }
 
         /// <summary>
+        /// Contains HTTP method to send if the `testObjectProtocol` is `http` or `https`. Supported values are `TRACE`, `HEAD`, `OPTIONS`, `GET`, `PUT`, `POST`, `PATCH`, `DELETE`. When omitted or `null`, this value defaults to `GET`.
+        /// </summary>
+        [Input("httpMethod", required: true)]
+        public Input<string> HttpMethod { get; set; } = null!;
+
+        /// <summary>
+        /// Contains Base64-encoded HTTP request body to send if the `testObjectProtocol` is `http` or `https`. When omitted or `null`, omits the request body from the request.
+        /// </summary>
+        [Input("httpRequestBody", required: true)]
+        public Input<string> HttpRequestBody { get; set; } = null!;
+
+        /// <summary>
         /// A descriptive name for the liveness test.
         /// </summary>
         [Input("name", required: true)]
@@ -77,6 +101,12 @@ namespace Pulumi.Akamai.Inputs
         /// </summary>
         [Input("peerCertificateVerification", required: true)]
         public Input<bool> PeerCertificateVerification { get; set; } = null!;
+
+        /// <summary>
+        /// Whether to enable backwards compatibility for liveness endpoints that use older TLS protocols
+        /// </summary>
+        [Input("pre2023SecurityPosture", required: true)]
+        public Input<bool> Pre2023SecurityPosture { get; set; } = null!;
 
         /// <summary>
         /// Indicates that if testObjectProtocol is DNS, DOH or DOT, the DNS query is recursive.

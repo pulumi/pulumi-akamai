@@ -14,6 +14,10 @@ namespace Pulumi.Akamai.Outputs
     public sealed class GetGtmDomainPropertyLivenessTestResult
     {
         /// <summary>
+        /// List of alternate trust anchors (CA certificates)
+        /// </summary>
+        public readonly ImmutableArray<string> AlternateCaCertificates;
+        /// <summary>
         /// If testObjectProtocol is DNS, DOH or DOT, requires an answer to the DNS query to be considered a success.
         /// </summary>
         public readonly bool AnswersRequired;
@@ -46,6 +50,14 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGtmDomainPropertyLivenessTestHttpHeaderResult> HttpHeaders;
         /// <summary>
+        /// Contains HTTP method to send if the `testObjectProtocol` is `http` or `https`. Supported values are `TRACE`, `HEAD`, `OPTIONS`, `GET`, `PUT`, `POST`, `PATCH`, `DELETE`. When omitted or `null`, this value defaults to `GET`.
+        /// </summary>
+        public readonly string HttpMethod;
+        /// <summary>
+        /// Contains Base64-encoded HTTP request body to send if the `testObjectProtocol` is `http` or `https`. When omitted or `null`, omits the request body from the request.
+        /// </summary>
+        public readonly string HttpRequestBody;
+        /// <summary>
         /// A descriptive name for the liveness test.
         /// </summary>
         public readonly string Name;
@@ -53,6 +65,10 @@ namespace Pulumi.Akamai.Outputs
         /// Validates the origin certificate. Applies only to tests with testObjectProtocol of https.
         /// </summary>
         public readonly bool PeerCertificateVerification;
+        /// <summary>
+        /// Whether to enable backwards compatibility for liveness endpoints that use older TLS protocols
+        /// </summary>
+        public readonly bool Pre2023SecurityPosture;
         /// <summary>
         /// Indicates that if testObjectProtocol is DNS, DOH or DOT, the DNS query is recursive.
         /// </summary>
@@ -112,6 +128,8 @@ namespace Pulumi.Akamai.Outputs
 
         [OutputConstructor]
         private GetGtmDomainPropertyLivenessTestResult(
+            ImmutableArray<string> alternateCaCertificates,
+
             bool answersRequired,
 
             bool disableNonstandardPortWarning,
@@ -128,9 +146,15 @@ namespace Pulumi.Akamai.Outputs
 
             ImmutableArray<Outputs.GetGtmDomainPropertyLivenessTestHttpHeaderResult> httpHeaders,
 
+            string httpMethod,
+
+            string httpRequestBody,
+
             string name,
 
             bool peerCertificateVerification,
+
+            bool pre2023SecurityPosture,
 
             bool recursionRequested,
 
@@ -160,6 +184,7 @@ namespace Pulumi.Akamai.Outputs
 
             double timeoutPenalty)
         {
+            AlternateCaCertificates = alternateCaCertificates;
             AnswersRequired = answersRequired;
             DisableNonstandardPortWarning = disableNonstandardPortWarning;
             Disabled = disabled;
@@ -168,8 +193,11 @@ namespace Pulumi.Akamai.Outputs
             HttpError4xx = httpError4xx;
             HttpError5xx = httpError5xx;
             HttpHeaders = httpHeaders;
+            HttpMethod = httpMethod;
+            HttpRequestBody = httpRequestBody;
             Name = name;
             PeerCertificateVerification = peerCertificateVerification;
+            Pre2023SecurityPosture = pre2023SecurityPosture;
             RecursionRequested = recursionRequested;
             RequestString = requestString;
             ResourceType = resourceType;

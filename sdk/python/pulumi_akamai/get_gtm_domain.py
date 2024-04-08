@@ -23,7 +23,7 @@ class GetGtmDomainResult:
     """
     A collection of values returned by getGtmDomain.
     """
-    def __init__(__self__, as_maps=None, cidr_maps=None, cname_coalescing_enabled=None, datacenters=None, default_error_penalty=None, default_health_max=None, default_health_multiplier=None, default_health_threshold=None, default_max_unreachable_penalty=None, default_ssl_client_certificate=None, default_ssl_client_private_key=None, default_timeout_penalty=None, default_unreachable_threshold=None, email_notification_lists=None, end_user_mapping_enabled=None, geographic_maps=None, id=None, last_modified=None, last_modified_by=None, links=None, load_feedback=None, load_imbalance_percentage=None, map_update_interval=None, max_properties=None, max_resources=None, max_test_timeout=None, max_ttl=None, min_pingable_region_fraction=None, min_test_interval=None, min_ttl=None, modification_comments=None, name=None, properties=None, resources=None, round_robin_prefix=None, server_monitor_pool=None, status=None, type=None):
+    def __init__(__self__, as_maps=None, cidr_maps=None, cname_coalescing_enabled=None, datacenters=None, default_error_penalty=None, default_health_max=None, default_health_multiplier=None, default_health_threshold=None, default_max_unreachable_penalty=None, default_ssl_client_certificate=None, default_ssl_client_private_key=None, default_timeout_penalty=None, default_unreachable_threshold=None, email_notification_lists=None, end_user_mapping_enabled=None, geographic_maps=None, id=None, last_modified=None, last_modified_by=None, links=None, load_feedback=None, load_imbalance_percentage=None, map_update_interval=None, max_properties=None, max_resources=None, max_test_timeout=None, max_ttl=None, min_pingable_region_fraction=None, min_test_interval=None, min_ttl=None, modification_comments=None, name=None, properties=None, resources=None, round_robin_prefix=None, server_monitor_pool=None, sign_and_serve=None, sign_and_serve_algorithm=None, status=None, type=None):
         if as_maps and not isinstance(as_maps, list):
             raise TypeError("Expected argument 'as_maps' to be a list")
         pulumi.set(__self__, "as_maps", as_maps)
@@ -132,6 +132,12 @@ class GetGtmDomainResult:
         if server_monitor_pool and not isinstance(server_monitor_pool, str):
             raise TypeError("Expected argument 'server_monitor_pool' to be a str")
         pulumi.set(__self__, "server_monitor_pool", server_monitor_pool)
+        if sign_and_serve and not isinstance(sign_and_serve, bool):
+            raise TypeError("Expected argument 'sign_and_serve' to be a bool")
+        pulumi.set(__self__, "sign_and_serve", sign_and_serve)
+        if sign_and_serve_algorithm and not isinstance(sign_and_serve_algorithm, str):
+            raise TypeError("Expected argument 'sign_and_serve_algorithm' to be a str")
+        pulumi.set(__self__, "sign_and_serve_algorithm", sign_and_serve_algorithm)
         if status and not isinstance(status, dict):
             raise TypeError("Expected argument 'status' to be a dict")
         pulumi.set(__self__, "status", status)
@@ -320,6 +326,16 @@ class GetGtmDomainResult:
         return pulumi.get(self, "server_monitor_pool")
 
     @property
+    @pulumi.getter(name="signAndServe")
+    def sign_and_serve(self) -> bool:
+        return pulumi.get(self, "sign_and_serve")
+
+    @property
+    @pulumi.getter(name="signAndServeAlgorithm")
+    def sign_and_serve_algorithm(self) -> str:
+        return pulumi.get(self, "sign_and_serve_algorithm")
+
+    @property
     @pulumi.getter
     def status(self) -> Optional['outputs.GetGtmDomainStatusResult']:
         return pulumi.get(self, "status")
@@ -372,6 +388,8 @@ class AwaitableGetGtmDomainResult(GetGtmDomainResult):
             resources=self.resources,
             round_robin_prefix=self.round_robin_prefix,
             server_monitor_pool=self.server_monitor_pool,
+            sign_and_serve=self.sign_and_serve,
+            sign_and_serve_algorithm=self.sign_and_serve_algorithm,
             status=self.status,
             type=self.type)
 
@@ -439,6 +457,8 @@ def get_gtm_domain(as_maps: Optional[Sequence[pulumi.InputType['GetGtmDomainAsMa
         resources=pulumi.get(__ret__, 'resources'),
         round_robin_prefix=pulumi.get(__ret__, 'round_robin_prefix'),
         server_monitor_pool=pulumi.get(__ret__, 'server_monitor_pool'),
+        sign_and_serve=pulumi.get(__ret__, 'sign_and_serve'),
+        sign_and_serve_algorithm=pulumi.get(__ret__, 'sign_and_serve_algorithm'),
         status=pulumi.get(__ret__, 'status'),
         type=pulumi.get(__ret__, 'type'))
 
