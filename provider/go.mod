@@ -10,9 +10,9 @@ replace (
 )
 
 require (
-	github.com/akamai/terraform-provider-akamai/v5 v5.0.1
-	github.com/pulumi/pulumi-terraform-bridge/pf v0.33.0
-	github.com/pulumi/pulumi-terraform-bridge/v3 v3.80.0
+	github.com/akamai/terraform-provider-akamai/v6 v6.0.0
+	github.com/pulumi/pulumi-terraform-bridge/pf v0.33.1-0.20240412160859-7d378f74db75
+	github.com/pulumi/pulumi-terraform-bridge/v3 v3.80.1-0.20240412160859-7d378f74db75
 	github.com/pulumi/pulumi/pkg/v3 v3.112.0
 	github.com/pulumi/pulumi/sdk/v3 v3.112.0
 	github.com/stretchr/testify v1.8.4
@@ -44,7 +44,6 @@ require (
 	github.com/aead/chacha20 v0.0.0-20180709150244-8b13a72661da // indirect
 	github.com/agext/levenshtein v1.2.3 // indirect
 	github.com/akamai/AkamaiOPEN-edgegrid-golang/v8 v8.0.0 // indirect
-	github.com/akamai/terraform-provider-akamai/v6 v6.0.0 // indirect
 	github.com/allegro/bigcache/v2 v2.2.5 // indirect
 	github.com/andres-erbsen/clock v0.0.0-20160526145045-9e14626cd129 // indirect
 	github.com/apex/log v1.9.0 // indirect
