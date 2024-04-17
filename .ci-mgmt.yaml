@@ -7,3 +7,8 @@ env:
   AKAMAI_CLIENT_TOKEN: ${{ secrets.AKAMAI_CLIENT_TOKEN }}
   AKAMAI_CLIENT_SECRET: ${{ secrets.AKAMAI_CLIENT_SECRET }}
 makeTemplate: bridged
+plugins:
+  - name: terraform
+    version: "1.0.16"
+    kind: converter
+pulumiConvert: 1
