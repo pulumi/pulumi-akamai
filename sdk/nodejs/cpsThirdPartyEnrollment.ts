@@ -90,9 +90,6 @@ export class CpsThirdPartyEnrollment extends pulumi.CustomResource {
      * Type of TLS deployment network
      */
     public readonly secureNetwork!: pulumi.Output<string>;
-    /**
-     * The SHA function. Changing this value may require running terraform destroy, terraform apply
-     */
     public readonly signatureAlgorithm!: pulumi.Output<string | undefined>;
     /**
      * Whether Server Name Indication is used for enrollment
@@ -251,9 +248,6 @@ export interface CpsThirdPartyEnrollmentState {
      * Type of TLS deployment network
      */
     secureNetwork?: pulumi.Input<string>;
-    /**
-     * The SHA function. Changing this value may require running terraform destroy, terraform apply
-     */
     signatureAlgorithm?: pulumi.Input<string>;
     /**
      * Whether Server Name Indication is used for enrollment
@@ -329,9 +323,6 @@ export interface CpsThirdPartyEnrollmentArgs {
      * Type of TLS deployment network
      */
     secureNetwork: pulumi.Input<string>;
-    /**
-     * The SHA function. Changing this value may require running terraform destroy, terraform apply
-     */
     signatureAlgorithm?: pulumi.Input<string>;
     /**
      * Whether Server Name Indication is used for enrollment
