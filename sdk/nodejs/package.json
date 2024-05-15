@@ -1,6 +1,6 @@
 {
     "name": "@pulumi/akamai",
-    "version": "${VERSION}",
+    "version": "7.0.0-alpha.0+dev",
     "description": "A Pulumi package for creating and managing akamai cloud resources.",
     "keywords": [
         "pulumi",
@@ -22,6 +22,7 @@
     },
     "pulumi": {
         "resource": true,
-        "name": "akamai"
+        "name": "akamai",
+        "version": "7.0.0-alpha.0+dev"
     }
 }

@@ -22,6 +22,7 @@ import (
 	"unicode"
 
 	_ "embed"
+
 	_ "github.com/akamai/terraform-provider-akamai/v6/pkg/providers" // Load the providers
 
 	"github.com/akamai/terraform-provider-akamai/v6/pkg/akamai"
@@ -73,7 +74,6 @@ func makeResource(mod string, res string) tokens.Type {
 
 // Provider returns additional overlaid schema and metadata associated with the provider..
 func Provider() tfbridge.ProviderInfo {
-
 	p := pf.MuxShimWithPF(context.Background(),
 		shimv2.NewProvider(akamai.NewSDKProvider(registry.Subproviders()...)()),
 		akamai.NewFrameworkProvider(registry.Subproviders()...)(),
@@ -324,8 +324,10 @@ func Provider() tfbridge.ProviderInfo {
 				"@types/node": "^10.0.0", // so we can access strongly typed node definitions.
 				"@types/mime": "^2.0.0",
 			},
+			RespectSchemaVersion: true,
 		},
 		Python: &tfbridge.PythonInfo{
+			RespectSchemaVersion: true,
 			Requires: map[string]string{
 				"pulumi": ">=3.0.0,<4.0.0",
 			},
@@ -339,8 +341,10 @@ func Provider() tfbridge.ProviderInfo {
 				mainPkg,
 			),
 			GenerateResourceContainerTypes: true,
+			RespectSchemaVersion:           true,
 		},
 		CSharp: &tfbridge.CSharpInfo{
+			RespectSchemaVersion: true,
 			PackageReferences: map[string]string{
 				"Pulumi": "3.*",
 			},
