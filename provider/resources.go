@@ -108,6 +108,9 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_iam_groups",
 		},
 		Resources: map[string]*tfbridge.ResourceInfo{
+
+			"akamai_cloudwrapper_configuration": {ComputeID: tfbridge.DelegateIDField("configName", "akamai", "https://github.com/pulumi/pulumi-akamai")},
+
 			"akamai_appsec_activations":                          {Tok: makeResource(mainMod, "AppSecActivations")},
 			"akamai_appsec_custom_rule":                          {Tok: makeResource(mainMod, "AppSecCustomRule")},
 			"akamai_appsec_custom_rule_action":                   {Tok: makeResource(mainMod, "AppSecCustomRuleAction")},
@@ -155,18 +158,6 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_appsec_threat_intel":                         {Tok: makeResource(mainMod, "AppSecThreatIntel")},
 			"akamai_appsec_wap_selected_hostnames":               {Tok: makeResource(mainMod, "AppSecWapSelectedHostnames")},
 			"akamai_appsec_advanced_settings_evasive_path_match": {Tok: makeResource(mainMod, "AppSecAdvancedSettingsEvasivePathMatch")},
-
-			"akamai_cps_dv_enrollment":          {Tok: makeResource(mainMod, "CpsDvEnrollment")},
-			"akamai_cps_dv_validation":          {Tok: makeResource(mainMod, "CpsDvValidation")},
-			"akamai_cps_third_party_enrollment": {Tok: makeResource(mainMod, "CpsThirdPartyEnrollment")},
-			"akamai_cps_upload_certificate":     {Tok: makeResource(mainMod, "CpsUploadCertificate")},
-
-			"akamai_cloudlets_application_load_balancer":            {Tok: makeResource(mainMod, "CloudletsApplicationLoadBalancer")},
-			"akamai_cloudlets_application_load_balancer_activation": {Tok: makeResource(mainMod, "CloudletsApplicationLoadBalancerActivation")},
-			"akamai_cloudlets_policy":                               {Tok: makeResource(mainMod, "CloudletsPolicy")},
-			"akamai_cloudlets_policy_activation":                    {Tok: makeResource(mainMod, "CloudletsPolicyActivation")},
-
-			"akamai_datastream": {Tok: makeResource(mainMod, "Datastream")},
 
 			"akamai_edgekv": {Tok: makeResource(mainMod, "EdgeKv")},
 			"akamai_edgeworker": {
@@ -373,9 +364,7 @@ func Provider() tfbridge.ProviderInfo {
 }
 
 func noUpstreamDocs() *tfbridge.DocInfo {
-	return &tfbridge.DocInfo{
-		Markdown: []byte(" "),
-	}
+	return &tfbridge.DocInfo{AllowMissing: true}
 }
 
 //go:embed cmd/pulumi-resource-akamai/bridge-metadata.json
