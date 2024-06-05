@@ -108,7 +108,6 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_iam_groups",
 		},
 		Resources: map[string]*tfbridge.ResourceInfo{
-
 			"akamai_cloudwrapper_configuration": {ComputeID: tfbridge.DelegateIDField("configName", "akamai", "https://github.com/pulumi/pulumi-akamai")},
 
 			"akamai_appsec_activations":                          {Tok: makeResource(mainMod, "AppSecActivations")},
