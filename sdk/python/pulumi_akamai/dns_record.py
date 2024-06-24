@@ -215,10 +215,8 @@ class DnsRecordArgs:
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""Field 'active' has been deprecated. Setting it has no effect""")
     def active(self) -> Optional[pulumi.Input[bool]]:
-        warnings.warn("""Field 'active' has been deprecated. Setting it has no effect""", DeprecationWarning)
-        pulumi.log.warn("""active is deprecated: Field 'active' has been deprecated. Setting it has no effect""")
-
         return pulumi.get(self, "active")
 
     @active.setter
@@ -886,10 +884,8 @@ class _DnsRecordState:
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""Field 'active' has been deprecated. Setting it has no effect""")
     def active(self) -> Optional[pulumi.Input[bool]]:
-        warnings.warn("""Field 'active' has been deprecated. Setting it has no effect""", DeprecationWarning)
-        pulumi.log.warn("""active is deprecated: Field 'active' has been deprecated. Setting it has no effect""")
-
         return pulumi.get(self, "active")
 
     @active.setter
@@ -1797,10 +1793,8 @@ class DnsRecord(pulumi.CustomResource):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""Field 'active' has been deprecated. Setting it has no effect""")
     def active(self) -> pulumi.Output[Optional[bool]]:
-        warnings.warn("""Field 'active' has been deprecated. Setting it has no effect""", DeprecationWarning)
-        pulumi.log.warn("""active is deprecated: Field 'active' has been deprecated. Setting it has no effect""")
-
         return pulumi.get(self, "active")
 
     @property
