@@ -60,10 +60,8 @@ class GetGtmCidrmapResult:
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""Required by the terraform plugin testing framework, always set to `gtm_cidrmap`.""")
     def id(self) -> str:
-        warnings.warn("""Required by the terraform plugin testing framework, always set to `gtm_cidrmap`.""", DeprecationWarning)
-        pulumi.log.warn("""id is deprecated: Required by the terraform plugin testing framework, always set to `gtm_cidrmap`.""")
-
         return pulumi.get(self, "id")
 
     @property
