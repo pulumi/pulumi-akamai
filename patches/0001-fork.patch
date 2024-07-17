@@ -1,17 +1,14 @@
-From db7525d74a5a15480743cf6bc1aa8c538367c2fd Mon Sep 17 00:00:00 2001
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Ian Wahbe <ian@wahbe.com>
 Date: Tue, 4 Apr 2023 09:19:57 -0700
 Subject: [PATCH] fork
 
----
- pkg/providers/property/resource_akamai_property.go | 8 +++++---
- 1 file changed, 5 insertions(+), 3 deletions(-)
 
 diff --git a/pkg/providers/property/resource_akamai_property.go b/pkg/providers/property/resource_akamai_property.go
-index 25725b93..0193fd7e 100644
+index 2da8af9b..a99cd158 100644
 --- a/pkg/providers/property/resource_akamai_property.go
 +++ b/pkg/providers/property/resource_akamai_property.go
-@@ -427,9 +427,10 @@ func resourcePropertyCreate(ctx context.Context, d *schema.ResourceData, m inter
+@@ -472,9 +472,10 @@ func resourcePropertyCreate(ctx context.Context, d *schema.ResourceData, m inter
  	// Save minimum state BEFORE moving on
  	d.SetId(propertyID)
  	attrs := map[string]interface{}{
@@ -23,9 +20,9 @@ index 25725b93..0193fd7e 100644
 +		"product_id":     productID,
 +		"latest_version": 1, // we are defaulting to 1 here in the create like we do below in the property creation
  	}
- 	if err := rdSetAttrs(ctx, d, attrs); err != nil {
+ 	if err := tf.SetAttrs(d, attrs); err != nil {
  		return diag.FromErr(err)
-@@ -640,6 +641,7 @@ func resourcePropertyUpdate(ctx context.Context, d *schema.ResourceData, m inter
+@@ -710,6 +711,7 @@ func resourcePropertyUpdate(ctx context.Context, d *schema.ResourceData, m inter
  
  	var propertyVersion int
  	if v, ok := d.GetOk("read_version"); ok && v.(int) != 0 {
@@ -33,6 +30,3 @@ index 25725b93..0193fd7e 100644
  		propertyVersion = v.(int)
  	} else {
  		propertyVersion = property.LatestVersion
--- 
-2.41.0
-
