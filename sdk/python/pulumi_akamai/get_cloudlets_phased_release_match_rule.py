@@ -64,7 +64,7 @@ class AwaitableGetCloudletsPhasedReleaseMatchRuleResult(GetCloudletsPhasedReleas
             match_rules=self.match_rules)
 
 
-def get_cloudlets_phased_release_match_rule(match_rules: Optional[Sequence[pulumi.InputType['GetCloudletsPhasedReleaseMatchRuleMatchRuleArgs']]] = None,
+def get_cloudlets_phased_release_match_rule(match_rules: Optional[Sequence[Union['GetCloudletsPhasedReleaseMatchRuleMatchRuleArgs', 'GetCloudletsPhasedReleaseMatchRuleMatchRuleArgsDict']]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudletsPhasedReleaseMatchRuleResult:
     """
     Use this data source to access information about an existing resource.
@@ -81,7 +81,7 @@ def get_cloudlets_phased_release_match_rule(match_rules: Optional[Sequence[pulum
 
 
 @_utilities.lift_output_func(get_cloudlets_phased_release_match_rule)
-def get_cloudlets_phased_release_match_rule_output(match_rules: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCloudletsPhasedReleaseMatchRuleMatchRuleArgs']]]]] = None,
+def get_cloudlets_phased_release_match_rule_output(match_rules: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudletsPhasedReleaseMatchRuleMatchRuleArgs', 'GetCloudletsPhasedReleaseMatchRuleMatchRuleArgsDict']]]]] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudletsPhasedReleaseMatchRuleResult]:
     """
     Use this data source to access information about an existing resource.

@@ -164,13 +164,13 @@ class CpCode(pulumi.CustomResource):
                  group_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
-                 timeouts: Optional[pulumi.Input[pulumi.InputType['CpCodeTimeoutsArgs']]] = None,
+                 timeouts: Optional[pulumi.Input[Union['CpCodeTimeoutsArgs', 'CpCodeTimeoutsArgsDict']]] = None,
                  __props__=None):
         """
         Create a CpCode resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['CpCodeTimeoutsArgs']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['CpCodeTimeoutsArgs', 'CpCodeTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
         """
         ...
     @overload
@@ -199,7 +199,7 @@ class CpCode(pulumi.CustomResource):
                  group_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
-                 timeouts: Optional[pulumi.Input[pulumi.InputType['CpCodeTimeoutsArgs']]] = None,
+                 timeouts: Optional[pulumi.Input[Union['CpCodeTimeoutsArgs', 'CpCodeTimeoutsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -234,7 +234,7 @@ class CpCode(pulumi.CustomResource):
             group_id: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             product_id: Optional[pulumi.Input[str]] = None,
-            timeouts: Optional[pulumi.Input[pulumi.InputType['CpCodeTimeoutsArgs']]] = None) -> 'CpCode':
+            timeouts: Optional[pulumi.Input[Union['CpCodeTimeoutsArgs', 'CpCodeTimeoutsArgsDict']]] = None) -> 'CpCode':
         """
         Get an existing CpCode resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -242,7 +242,7 @@ class CpCode(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['CpCodeTimeoutsArgs']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['CpCodeTimeoutsArgs', 'CpCodeTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

@@ -64,7 +64,7 @@ class AwaitableGetCloudletsAudienceSegmentationMatchRuleResult(GetCloudletsAudie
             match_rules=self.match_rules)
 
 
-def get_cloudlets_audience_segmentation_match_rule(match_rules: Optional[Sequence[pulumi.InputType['GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs']]] = None,
+def get_cloudlets_audience_segmentation_match_rule(match_rules: Optional[Sequence[Union['GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs', 'GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgsDict']]] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudletsAudienceSegmentationMatchRuleResult:
     """
     Use this data source to access information about an existing resource.
@@ -81,7 +81,7 @@ def get_cloudlets_audience_segmentation_match_rule(match_rules: Optional[Sequenc
 
 
 @_utilities.lift_output_func(get_cloudlets_audience_segmentation_match_rule)
-def get_cloudlets_audience_segmentation_match_rule_output(match_rules: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs']]]]] = None,
+def get_cloudlets_audience_segmentation_match_rule_output(match_rules: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs', 'GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgsDict']]]]] = None,
                                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudletsAudienceSegmentationMatchRuleResult]:
     """
     Use this data source to access information about an existing resource.

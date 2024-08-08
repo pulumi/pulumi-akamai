@@ -133,7 +133,7 @@ public class CloudletsApplicationLoadBalancer extends com.pulumi.resources.Custo
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public CloudletsApplicationLoadBalancer(String name) {
+    public CloudletsApplicationLoadBalancer(java.lang.String name) {
         this(name, CloudletsApplicationLoadBalancerArgs.Empty);
     }
     /**
@@ -141,7 +141,7 @@ public class CloudletsApplicationLoadBalancer extends com.pulumi.resources.Custo
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public CloudletsApplicationLoadBalancer(String name, CloudletsApplicationLoadBalancerArgs args) {
+    public CloudletsApplicationLoadBalancer(java.lang.String name, CloudletsApplicationLoadBalancerArgs args) {
         this(name, args, null);
     }
     /**
@@ -150,15 +150,22 @@ public class CloudletsApplicationLoadBalancer extends com.pulumi.resources.Custo
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public CloudletsApplicationLoadBalancer(String name, CloudletsApplicationLoadBalancerArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer", name, args == null ? CloudletsApplicationLoadBalancerArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+    public CloudletsApplicationLoadBalancer(java.lang.String name, CloudletsApplicationLoadBalancerArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private CloudletsApplicationLoadBalancer(String name, Output<String> id, @Nullable CloudletsApplicationLoadBalancerState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer", name, state, makeResourceOptions(options, id));
+    private CloudletsApplicationLoadBalancer(java.lang.String name, Output<java.lang.String> id, @Nullable CloudletsApplicationLoadBalancerState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static CloudletsApplicationLoadBalancerArgs makeArgs(CloudletsApplicationLoadBalancerArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? CloudletsApplicationLoadBalancerArgs.Empty : args;
+    }
+
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -174,7 +181,7 @@ public class CloudletsApplicationLoadBalancer extends com.pulumi.resources.Custo
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static CloudletsApplicationLoadBalancer get(String name, Output<String> id, @Nullable CloudletsApplicationLoadBalancerState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static CloudletsApplicationLoadBalancer get(java.lang.String name, Output<java.lang.String> id, @Nullable CloudletsApplicationLoadBalancerState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new CloudletsApplicationLoadBalancer(name, id, state, options);
     }
 }
