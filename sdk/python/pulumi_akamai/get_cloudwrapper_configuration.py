@@ -170,8 +170,8 @@ class AwaitableGetCloudwrapperConfigurationResult(GetCloudwrapperConfigurationRe
 
 
 def get_cloudwrapper_configuration(id: Optional[int] = None,
-                                   locations: Optional[Sequence[pulumi.InputType['GetCloudwrapperConfigurationLocationArgs']]] = None,
-                                   multi_cdn_settings: Optional[pulumi.InputType['GetCloudwrapperConfigurationMultiCdnSettingsArgs']] = None,
+                                   locations: Optional[Sequence[Union['GetCloudwrapperConfigurationLocationArgs', 'GetCloudwrapperConfigurationLocationArgsDict']]] = None,
+                                   multi_cdn_settings: Optional[Union['GetCloudwrapperConfigurationMultiCdnSettingsArgs', 'GetCloudwrapperConfigurationMultiCdnSettingsArgsDict']] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudwrapperConfigurationResult:
     """
     Use this data source to access information about an existing resource.
@@ -203,8 +203,8 @@ def get_cloudwrapper_configuration(id: Optional[int] = None,
 
 @_utilities.lift_output_func(get_cloudwrapper_configuration)
 def get_cloudwrapper_configuration_output(id: Optional[pulumi.Input[int]] = None,
-                                          locations: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCloudwrapperConfigurationLocationArgs']]]]] = None,
-                                          multi_cdn_settings: Optional[pulumi.Input[Optional[pulumi.InputType['GetCloudwrapperConfigurationMultiCdnSettingsArgs']]]] = None,
+                                          locations: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudwrapperConfigurationLocationArgs', 'GetCloudwrapperConfigurationLocationArgsDict']]]]] = None,
+                                          multi_cdn_settings: Optional[pulumi.Input[Optional[Union['GetCloudwrapperConfigurationMultiCdnSettingsArgs', 'GetCloudwrapperConfigurationMultiCdnSettingsArgsDict']]]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudwrapperConfigurationResult]:
     """
     Use this data source to access information about an existing resource.

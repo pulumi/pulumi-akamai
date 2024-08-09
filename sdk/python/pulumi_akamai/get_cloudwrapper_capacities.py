@@ -62,7 +62,7 @@ class AwaitableGetCloudwrapperCapacitiesResult(GetCloudwrapperCapacitiesResult):
             id=self.id)
 
 
-def get_cloudwrapper_capacities(capacities: Optional[Sequence[pulumi.InputType['GetCloudwrapperCapacitiesCapacityArgs']]] = None,
+def get_cloudwrapper_capacities(capacities: Optional[Sequence[Union['GetCloudwrapperCapacitiesCapacityArgs', 'GetCloudwrapperCapacitiesCapacityArgsDict']]] = None,
                                 contract_ids: Optional[Sequence[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudwrapperCapacitiesResult:
     """
@@ -81,7 +81,7 @@ def get_cloudwrapper_capacities(capacities: Optional[Sequence[pulumi.InputType['
 
 
 @_utilities.lift_output_func(get_cloudwrapper_capacities)
-def get_cloudwrapper_capacities_output(capacities: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCloudwrapperCapacitiesCapacityArgs']]]]] = None,
+def get_cloudwrapper_capacities_output(capacities: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudwrapperCapacitiesCapacityArgs', 'GetCloudwrapperCapacitiesCapacityArgsDict']]]]] = None,
                                        contract_ids: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudwrapperCapacitiesResult]:
     """

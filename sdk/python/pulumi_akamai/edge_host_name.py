@@ -277,7 +277,7 @@ class EdgeHostName(pulumi.CustomResource):
                  ip_behavior: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
                  status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 timeouts: Optional[pulumi.Input[pulumi.InputType['EdgeHostNameTimeoutsArgs']]] = None,
+                 timeouts: Optional[pulumi.Input[Union['EdgeHostNameTimeoutsArgs', 'EdgeHostNameTimeoutsArgsDict']]] = None,
                  use_cases: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -285,7 +285,7 @@ class EdgeHostName(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] status_update_emails: Email address that should receive updates on the IP behavior update request.
-        :param pulumi.Input[pulumi.InputType['EdgeHostNameTimeoutsArgs']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['EdgeHostNameTimeoutsArgs', 'EdgeHostNameTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[str] use_cases: A JSON encoded list of use cases
         """
         ...
@@ -318,7 +318,7 @@ class EdgeHostName(pulumi.CustomResource):
                  ip_behavior: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
                  status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 timeouts: Optional[pulumi.Input[pulumi.InputType['EdgeHostNameTimeoutsArgs']]] = None,
+                 timeouts: Optional[pulumi.Input[Union['EdgeHostNameTimeoutsArgs', 'EdgeHostNameTimeoutsArgsDict']]] = None,
                  use_cases: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -365,7 +365,7 @@ class EdgeHostName(pulumi.CustomResource):
             ip_behavior: Optional[pulumi.Input[str]] = None,
             product_id: Optional[pulumi.Input[str]] = None,
             status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            timeouts: Optional[pulumi.Input[pulumi.InputType['EdgeHostNameTimeoutsArgs']]] = None,
+            timeouts: Optional[pulumi.Input[Union['EdgeHostNameTimeoutsArgs', 'EdgeHostNameTimeoutsArgsDict']]] = None,
             use_cases: Optional[pulumi.Input[str]] = None) -> 'EdgeHostName':
         """
         Get an existing EdgeHostName resource's state with the given name, id, and optional extra
@@ -375,7 +375,7 @@ class EdgeHostName(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] status_update_emails: Email address that should receive updates on the IP behavior update request.
-        :param pulumi.Input[pulumi.InputType['EdgeHostNameTimeoutsArgs']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['EdgeHostNameTimeoutsArgs', 'EdgeHostNameTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[str] use_cases: A JSON encoded list of use cases
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

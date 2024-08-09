@@ -260,7 +260,7 @@ class EdgeWorker(pulumi.CustomResource):
                  local_bundle: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  resource_tier_id: Optional[pulumi.Input[int]] = None,
-                 timeouts: Optional[pulumi.Input[pulumi.InputType['EdgeWorkerTimeoutsArgs']]] = None,
+                 timeouts: Optional[pulumi.Input[Union['EdgeWorkerTimeoutsArgs', 'EdgeWorkerTimeoutsArgsDict']]] = None,
                  __props__=None):
         """
         Create a EdgeWorker resource with the given unique name, props, and options.
@@ -270,7 +270,7 @@ class EdgeWorker(pulumi.CustomResource):
         :param pulumi.Input[str] local_bundle: The path to the EdgeWorkers tgz code bundle
         :param pulumi.Input[str] name: The EdgeWorker name
         :param pulumi.Input[int] resource_tier_id: The unique identifier of a resource tier
-        :param pulumi.Input[pulumi.InputType['EdgeWorkerTimeoutsArgs']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['EdgeWorkerTimeoutsArgs', 'EdgeWorkerTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
         """
         ...
     @overload
@@ -299,7 +299,7 @@ class EdgeWorker(pulumi.CustomResource):
                  local_bundle: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  resource_tier_id: Optional[pulumi.Input[int]] = None,
-                 timeouts: Optional[pulumi.Input[pulumi.InputType['EdgeWorkerTimeoutsArgs']]] = None,
+                 timeouts: Optional[pulumi.Input[Union['EdgeWorkerTimeoutsArgs', 'EdgeWorkerTimeoutsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -338,7 +338,7 @@ class EdgeWorker(pulumi.CustomResource):
             local_bundle_hash: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             resource_tier_id: Optional[pulumi.Input[int]] = None,
-            timeouts: Optional[pulumi.Input[pulumi.InputType['EdgeWorkerTimeoutsArgs']]] = None,
+            timeouts: Optional[pulumi.Input[Union['EdgeWorkerTimeoutsArgs', 'EdgeWorkerTimeoutsArgsDict']]] = None,
             version: Optional[pulumi.Input[str]] = None,
             warnings: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None) -> 'EdgeWorker':
         """
@@ -354,7 +354,7 @@ class EdgeWorker(pulumi.CustomResource):
         :param pulumi.Input[str] local_bundle_hash: The local bundle hash for the EdgeWorker
         :param pulumi.Input[str] name: The EdgeWorker name
         :param pulumi.Input[int] resource_tier_id: The unique identifier of a resource tier
-        :param pulumi.Input[pulumi.InputType['EdgeWorkerTimeoutsArgs']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['EdgeWorkerTimeoutsArgs', 'EdgeWorkerTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[str] version: The bundle version
         :param pulumi.Input[Sequence[pulumi.Input[str]]] warnings: The list of warnings returned by EdgeWorker validation
         """

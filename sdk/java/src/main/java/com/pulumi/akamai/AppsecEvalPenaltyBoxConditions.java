@@ -63,7 +63,7 @@ public class AppsecEvalPenaltyBoxConditions extends com.pulumi.resources.CustomR
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AppsecEvalPenaltyBoxConditions(String name) {
+    public AppsecEvalPenaltyBoxConditions(java.lang.String name) {
         this(name, AppsecEvalPenaltyBoxConditionsArgs.Empty);
     }
     /**
@@ -71,7 +71,7 @@ public class AppsecEvalPenaltyBoxConditions extends com.pulumi.resources.CustomR
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AppsecEvalPenaltyBoxConditions(String name, AppsecEvalPenaltyBoxConditionsArgs args) {
+    public AppsecEvalPenaltyBoxConditions(java.lang.String name, AppsecEvalPenaltyBoxConditionsArgs args) {
         this(name, args, null);
     }
     /**
@@ -80,15 +80,22 @@ public class AppsecEvalPenaltyBoxConditions extends com.pulumi.resources.CustomR
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AppsecEvalPenaltyBoxConditions(String name, AppsecEvalPenaltyBoxConditionsArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("akamai:index/appsecEvalPenaltyBoxConditions:AppsecEvalPenaltyBoxConditions", name, args == null ? AppsecEvalPenaltyBoxConditionsArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+    public AppsecEvalPenaltyBoxConditions(java.lang.String name, AppsecEvalPenaltyBoxConditionsArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("akamai:index/appsecEvalPenaltyBoxConditions:AppsecEvalPenaltyBoxConditions", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AppsecEvalPenaltyBoxConditions(String name, Output<String> id, @Nullable AppsecEvalPenaltyBoxConditionsState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("akamai:index/appsecEvalPenaltyBoxConditions:AppsecEvalPenaltyBoxConditions", name, state, makeResourceOptions(options, id));
+    private AppsecEvalPenaltyBoxConditions(java.lang.String name, Output<java.lang.String> id, @Nullable AppsecEvalPenaltyBoxConditionsState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("akamai:index/appsecEvalPenaltyBoxConditions:AppsecEvalPenaltyBoxConditions", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static AppsecEvalPenaltyBoxConditionsArgs makeArgs(AppsecEvalPenaltyBoxConditionsArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? AppsecEvalPenaltyBoxConditionsArgs.Empty : args;
+    }
+
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -104,7 +111,7 @@ public class AppsecEvalPenaltyBoxConditions extends com.pulumi.resources.CustomR
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AppsecEvalPenaltyBoxConditions get(String name, Output<String> id, @Nullable AppsecEvalPenaltyBoxConditionsState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AppsecEvalPenaltyBoxConditions get(java.lang.String name, Output<java.lang.String> id, @Nullable AppsecEvalPenaltyBoxConditionsState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AppsecEvalPenaltyBoxConditions(name, id, state, options);
     }
 }

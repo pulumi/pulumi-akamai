@@ -194,7 +194,7 @@ class EdgekvGroupItems(pulumi.CustomResource):
                  items: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  namespace_name: Optional[pulumi.Input[str]] = None,
                  network: Optional[pulumi.Input[str]] = None,
-                 timeouts: Optional[pulumi.Input[pulumi.InputType['EdgekvGroupItemsTimeoutsArgs']]] = None,
+                 timeouts: Optional[pulumi.Input[Union['EdgekvGroupItemsTimeoutsArgs', 'EdgekvGroupItemsTimeoutsArgsDict']]] = None,
                  __props__=None):
         """
         Create a EdgekvGroupItems resource with the given unique name, props, and options.
@@ -204,7 +204,7 @@ class EdgekvGroupItems(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] items: A map of items within the specified group. Each item consists of an item key and a value.
         :param pulumi.Input[str] namespace_name: The name for the EdgeKV namespace.
         :param pulumi.Input[str] network: The network against which to execute the API request.
-        :param pulumi.Input[pulumi.InputType['EdgekvGroupItemsTimeoutsArgs']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['EdgekvGroupItemsTimeoutsArgs', 'EdgekvGroupItemsTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
         """
         ...
     @overload
@@ -233,7 +233,7 @@ class EdgekvGroupItems(pulumi.CustomResource):
                  items: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  namespace_name: Optional[pulumi.Input[str]] = None,
                  network: Optional[pulumi.Input[str]] = None,
-                 timeouts: Optional[pulumi.Input[pulumi.InputType['EdgekvGroupItemsTimeoutsArgs']]] = None,
+                 timeouts: Optional[pulumi.Input[Union['EdgekvGroupItemsTimeoutsArgs', 'EdgekvGroupItemsTimeoutsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -270,7 +270,7 @@ class EdgekvGroupItems(pulumi.CustomResource):
             items: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             namespace_name: Optional[pulumi.Input[str]] = None,
             network: Optional[pulumi.Input[str]] = None,
-            timeouts: Optional[pulumi.Input[pulumi.InputType['EdgekvGroupItemsTimeoutsArgs']]] = None) -> 'EdgekvGroupItems':
+            timeouts: Optional[pulumi.Input[Union['EdgekvGroupItemsTimeoutsArgs', 'EdgekvGroupItemsTimeoutsArgsDict']]] = None) -> 'EdgekvGroupItems':
         """
         Get an existing EdgekvGroupItems resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -282,7 +282,7 @@ class EdgekvGroupItems(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] items: A map of items within the specified group. Each item consists of an item key and a value.
         :param pulumi.Input[str] namespace_name: The name for the EdgeKV namespace.
         :param pulumi.Input[str] network: The network against which to execute the API request.
-        :param pulumi.Input[pulumi.InputType['EdgekvGroupItemsTimeoutsArgs']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['EdgekvGroupItemsTimeoutsArgs', 'EdgekvGroupItemsTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

@@ -394,15 +394,15 @@ class AwaitableGetGtmDomainResult(GetGtmDomainResult):
             type=self.type)
 
 
-def get_gtm_domain(as_maps: Optional[Sequence[pulumi.InputType['GetGtmDomainAsMapArgs']]] = None,
-                   cidr_maps: Optional[Sequence[pulumi.InputType['GetGtmDomainCidrMapArgs']]] = None,
-                   datacenters: Optional[Sequence[pulumi.InputType['GetGtmDomainDatacenterArgs']]] = None,
-                   geographic_maps: Optional[Sequence[pulumi.InputType['GetGtmDomainGeographicMapArgs']]] = None,
-                   links: Optional[Sequence[pulumi.InputType['GetGtmDomainLinkArgs']]] = None,
+def get_gtm_domain(as_maps: Optional[Sequence[Union['GetGtmDomainAsMapArgs', 'GetGtmDomainAsMapArgsDict']]] = None,
+                   cidr_maps: Optional[Sequence[Union['GetGtmDomainCidrMapArgs', 'GetGtmDomainCidrMapArgsDict']]] = None,
+                   datacenters: Optional[Sequence[Union['GetGtmDomainDatacenterArgs', 'GetGtmDomainDatacenterArgsDict']]] = None,
+                   geographic_maps: Optional[Sequence[Union['GetGtmDomainGeographicMapArgs', 'GetGtmDomainGeographicMapArgsDict']]] = None,
+                   links: Optional[Sequence[Union['GetGtmDomainLinkArgs', 'GetGtmDomainLinkArgsDict']]] = None,
                    name: Optional[str] = None,
-                   properties: Optional[Sequence[pulumi.InputType['GetGtmDomainPropertyArgs']]] = None,
-                   resources: Optional[Sequence[pulumi.InputType['GetGtmDomainResourceArgs']]] = None,
-                   status: Optional[pulumi.InputType['GetGtmDomainStatusArgs']] = None,
+                   properties: Optional[Sequence[Union['GetGtmDomainPropertyArgs', 'GetGtmDomainPropertyArgsDict']]] = None,
+                   resources: Optional[Sequence[Union['GetGtmDomainResourceArgs', 'GetGtmDomainResourceArgsDict']]] = None,
+                   status: Optional[Union['GetGtmDomainStatusArgs', 'GetGtmDomainStatusArgsDict']] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGtmDomainResult:
     """
     Use this data source to access information about an existing resource.
@@ -464,15 +464,15 @@ def get_gtm_domain(as_maps: Optional[Sequence[pulumi.InputType['GetGtmDomainAsMa
 
 
 @_utilities.lift_output_func(get_gtm_domain)
-def get_gtm_domain_output(as_maps: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetGtmDomainAsMapArgs']]]]] = None,
-                          cidr_maps: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetGtmDomainCidrMapArgs']]]]] = None,
-                          datacenters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetGtmDomainDatacenterArgs']]]]] = None,
-                          geographic_maps: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetGtmDomainGeographicMapArgs']]]]] = None,
-                          links: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetGtmDomainLinkArgs']]]]] = None,
+def get_gtm_domain_output(as_maps: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmDomainAsMapArgs', 'GetGtmDomainAsMapArgsDict']]]]] = None,
+                          cidr_maps: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmDomainCidrMapArgs', 'GetGtmDomainCidrMapArgsDict']]]]] = None,
+                          datacenters: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmDomainDatacenterArgs', 'GetGtmDomainDatacenterArgsDict']]]]] = None,
+                          geographic_maps: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmDomainGeographicMapArgs', 'GetGtmDomainGeographicMapArgsDict']]]]] = None,
+                          links: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmDomainLinkArgs', 'GetGtmDomainLinkArgsDict']]]]] = None,
                           name: Optional[pulumi.Input[str]] = None,
-                          properties: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetGtmDomainPropertyArgs']]]]] = None,
-                          resources: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetGtmDomainResourceArgs']]]]] = None,
-                          status: Optional[pulumi.Input[Optional[pulumi.InputType['GetGtmDomainStatusArgs']]]] = None,
+                          properties: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmDomainPropertyArgs', 'GetGtmDomainPropertyArgsDict']]]]] = None,
+                          resources: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmDomainResourceArgs', 'GetGtmDomainResourceArgsDict']]]]] = None,
+                          status: Optional[pulumi.Input[Optional[Union['GetGtmDomainStatusArgs', 'GetGtmDomainStatusArgsDict']]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGtmDomainResult]:
     """
     Use this data source to access information about an existing resource.

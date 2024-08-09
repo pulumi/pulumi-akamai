@@ -64,7 +64,7 @@ class AwaitableGetCloudletsForwardRewriteMatchRuleResult(GetCloudletsForwardRewr
             match_rules=self.match_rules)
 
 
-def get_cloudlets_forward_rewrite_match_rule(match_rules: Optional[Sequence[pulumi.InputType['GetCloudletsForwardRewriteMatchRuleMatchRuleArgs']]] = None,
+def get_cloudlets_forward_rewrite_match_rule(match_rules: Optional[Sequence[Union['GetCloudletsForwardRewriteMatchRuleMatchRuleArgs', 'GetCloudletsForwardRewriteMatchRuleMatchRuleArgsDict']]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudletsForwardRewriteMatchRuleResult:
     """
     Use this data source to access information about an existing resource.
@@ -81,7 +81,7 @@ def get_cloudlets_forward_rewrite_match_rule(match_rules: Optional[Sequence[pulu
 
 
 @_utilities.lift_output_func(get_cloudlets_forward_rewrite_match_rule)
-def get_cloudlets_forward_rewrite_match_rule_output(match_rules: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCloudletsForwardRewriteMatchRuleMatchRuleArgs']]]]] = None,
+def get_cloudlets_forward_rewrite_match_rule_output(match_rules: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudletsForwardRewriteMatchRuleMatchRuleArgs', 'GetCloudletsForwardRewriteMatchRuleMatchRuleArgsDict']]]]] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudletsForwardRewriteMatchRuleResult]:
     """
     Use this data source to access information about an existing resource.
