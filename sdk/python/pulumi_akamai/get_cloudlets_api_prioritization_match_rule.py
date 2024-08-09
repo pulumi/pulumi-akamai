@@ -64,7 +64,7 @@ class AwaitableGetCloudletsApiPrioritizationMatchRuleResult(GetCloudletsApiPrior
             match_rules=self.match_rules)
 
 
-def get_cloudlets_api_prioritization_match_rule(match_rules: Optional[Sequence[pulumi.InputType['GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs']]] = None,
+def get_cloudlets_api_prioritization_match_rule(match_rules: Optional[Sequence[Union['GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs', 'GetCloudletsApiPrioritizationMatchRuleMatchRuleArgsDict']]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudletsApiPrioritizationMatchRuleResult:
     """
     Use this data source to access information about an existing resource.
@@ -81,7 +81,7 @@ def get_cloudlets_api_prioritization_match_rule(match_rules: Optional[Sequence[p
 
 
 @_utilities.lift_output_func(get_cloudlets_api_prioritization_match_rule)
-def get_cloudlets_api_prioritization_match_rule_output(match_rules: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs']]]]] = None,
+def get_cloudlets_api_prioritization_match_rule_output(match_rules: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs', 'GetCloudletsApiPrioritizationMatchRuleMatchRuleArgsDict']]]]] = None,
                                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudletsApiPrioritizationMatchRuleResult]:
     """
     Use this data source to access information about an existing resource.

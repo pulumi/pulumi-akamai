@@ -63,7 +63,7 @@ class AwaitableGetGtmResourcesResult(GetGtmResourcesResult):
 
 
 def get_gtm_resources(domain: Optional[str] = None,
-                      resources: Optional[Sequence[pulumi.InputType['GetGtmResourcesResourceArgs']]] = None,
+                      resources: Optional[Sequence[Union['GetGtmResourcesResourceArgs', 'GetGtmResourcesResourceArgsDict']]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGtmResourcesResult:
     """
     Use this data source to access information about an existing resource.
@@ -82,7 +82,7 @@ def get_gtm_resources(domain: Optional[str] = None,
 
 @_utilities.lift_output_func(get_gtm_resources)
 def get_gtm_resources_output(domain: Optional[pulumi.Input[str]] = None,
-                             resources: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetGtmResourcesResourceArgs']]]]] = None,
+                             resources: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmResourcesResourceArgs', 'GetGtmResourcesResourceArgsDict']]]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGtmResourcesResult]:
     """
     Use this data source to access information about an existing resource.

@@ -72,7 +72,7 @@ class AwaitableGetCloudwrapperPropertiesResult(GetCloudwrapperPropertiesResult):
 
 
 def get_cloudwrapper_properties(contract_ids: Optional[Sequence[str]] = None,
-                                properties: Optional[Sequence[pulumi.InputType['GetCloudwrapperPropertiesPropertyArgs']]] = None,
+                                properties: Optional[Sequence[Union['GetCloudwrapperPropertiesPropertyArgs', 'GetCloudwrapperPropertiesPropertyArgsDict']]] = None,
                                 unused: Optional[bool] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudwrapperPropertiesResult:
     """
@@ -94,7 +94,7 @@ def get_cloudwrapper_properties(contract_ids: Optional[Sequence[str]] = None,
 
 @_utilities.lift_output_func(get_cloudwrapper_properties)
 def get_cloudwrapper_properties_output(contract_ids: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                       properties: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCloudwrapperPropertiesPropertyArgs']]]]] = None,
+                                       properties: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudwrapperPropertiesPropertyArgs', 'GetCloudwrapperPropertiesPropertyArgsDict']]]]] = None,
                                        unused: Optional[pulumi.Input[Optional[bool]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudwrapperPropertiesResult]:
     """

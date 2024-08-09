@@ -330,11 +330,11 @@ class CloudwrapperConfiguration(pulumi.CustomResource):
                  comments: Optional[pulumi.Input[str]] = None,
                  config_name: Optional[pulumi.Input[str]] = None,
                  contract_id: Optional[pulumi.Input[str]] = None,
-                 locations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudwrapperConfigurationLocationArgs']]]]] = None,
+                 locations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudwrapperConfigurationLocationArgs', 'CloudwrapperConfigurationLocationArgsDict']]]]] = None,
                  notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  property_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  retain_idle_objects: Optional[pulumi.Input[bool]] = None,
-                 timeouts: Optional[pulumi.Input[pulumi.InputType['CloudwrapperConfigurationTimeoutsArgs']]] = None,
+                 timeouts: Optional[pulumi.Input[Union['CloudwrapperConfigurationTimeoutsArgs', 'CloudwrapperConfigurationTimeoutsArgsDict']]] = None,
                  __props__=None):
         """
         Create a CloudwrapperConfiguration resource with the given unique name, props, and options.
@@ -344,7 +344,7 @@ class CloudwrapperConfiguration(pulumi.CustomResource):
         :param pulumi.Input[str] comments: Additional information you provide to differentiate or track changes of the configuration.
         :param pulumi.Input[str] config_name: Name of the configuration.
         :param pulumi.Input[str] contract_id: Contract ID having Cloud Wrapper entitlement.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudwrapperConfigurationLocationArgs']]]] locations: List of locations to use with the configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudwrapperConfigurationLocationArgs', 'CloudwrapperConfigurationLocationArgsDict']]]] locations: List of locations to use with the configuration.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] notification_emails: Email addresses to use for notifications.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] property_ids: List of properties belonging to eligible products.
         :param pulumi.Input[bool] retain_idle_objects: Retain idle objects beyond their max idle lifetime.
@@ -376,11 +376,11 @@ class CloudwrapperConfiguration(pulumi.CustomResource):
                  comments: Optional[pulumi.Input[str]] = None,
                  config_name: Optional[pulumi.Input[str]] = None,
                  contract_id: Optional[pulumi.Input[str]] = None,
-                 locations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudwrapperConfigurationLocationArgs']]]]] = None,
+                 locations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudwrapperConfigurationLocationArgs', 'CloudwrapperConfigurationLocationArgsDict']]]]] = None,
                  notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  property_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  retain_idle_objects: Optional[pulumi.Input[bool]] = None,
-                 timeouts: Optional[pulumi.Input[pulumi.InputType['CloudwrapperConfigurationTimeoutsArgs']]] = None,
+                 timeouts: Optional[pulumi.Input[Union['CloudwrapperConfigurationTimeoutsArgs', 'CloudwrapperConfigurationTimeoutsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -422,12 +422,12 @@ class CloudwrapperConfiguration(pulumi.CustomResource):
             comments: Optional[pulumi.Input[str]] = None,
             config_name: Optional[pulumi.Input[str]] = None,
             contract_id: Optional[pulumi.Input[str]] = None,
-            locations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudwrapperConfigurationLocationArgs']]]]] = None,
+            locations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudwrapperConfigurationLocationArgs', 'CloudwrapperConfigurationLocationArgsDict']]]]] = None,
             notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             property_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             retain_idle_objects: Optional[pulumi.Input[bool]] = None,
             revision: Optional[pulumi.Input[str]] = None,
-            timeouts: Optional[pulumi.Input[pulumi.InputType['CloudwrapperConfigurationTimeoutsArgs']]] = None) -> 'CloudwrapperConfiguration':
+            timeouts: Optional[pulumi.Input[Union['CloudwrapperConfigurationTimeoutsArgs', 'CloudwrapperConfigurationTimeoutsArgsDict']]] = None) -> 'CloudwrapperConfiguration':
         """
         Get an existing CloudwrapperConfiguration resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -439,7 +439,7 @@ class CloudwrapperConfiguration(pulumi.CustomResource):
         :param pulumi.Input[str] comments: Additional information you provide to differentiate or track changes of the configuration.
         :param pulumi.Input[str] config_name: Name of the configuration.
         :param pulumi.Input[str] contract_id: Contract ID having Cloud Wrapper entitlement.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudwrapperConfigurationLocationArgs']]]] locations: List of locations to use with the configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudwrapperConfigurationLocationArgs', 'CloudwrapperConfigurationLocationArgsDict']]]] locations: List of locations to use with the configuration.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] notification_emails: Email addresses to use for notifications.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] property_ids: List of properties belonging to eligible products.
         :param pulumi.Input[bool] retain_idle_objects: Retain idle objects beyond their max idle lifetime.

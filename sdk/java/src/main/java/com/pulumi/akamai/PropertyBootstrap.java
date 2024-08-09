@@ -76,7 +76,7 @@ public class PropertyBootstrap extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public PropertyBootstrap(String name) {
+    public PropertyBootstrap(java.lang.String name) {
         this(name, PropertyBootstrapArgs.Empty);
     }
     /**
@@ -84,7 +84,7 @@ public class PropertyBootstrap extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public PropertyBootstrap(String name, PropertyBootstrapArgs args) {
+    public PropertyBootstrap(java.lang.String name, PropertyBootstrapArgs args) {
         this(name, args, null);
     }
     /**
@@ -93,15 +93,22 @@ public class PropertyBootstrap extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public PropertyBootstrap(String name, PropertyBootstrapArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("akamai:index/propertyBootstrap:PropertyBootstrap", name, args == null ? PropertyBootstrapArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+    public PropertyBootstrap(java.lang.String name, PropertyBootstrapArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("akamai:index/propertyBootstrap:PropertyBootstrap", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private PropertyBootstrap(String name, Output<String> id, @Nullable PropertyBootstrapState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("akamai:index/propertyBootstrap:PropertyBootstrap", name, state, makeResourceOptions(options, id));
+    private PropertyBootstrap(java.lang.String name, Output<java.lang.String> id, @Nullable PropertyBootstrapState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("akamai:index/propertyBootstrap:PropertyBootstrap", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static PropertyBootstrapArgs makeArgs(PropertyBootstrapArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? PropertyBootstrapArgs.Empty : args;
+    }
+
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -117,7 +124,7 @@ public class PropertyBootstrap extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static PropertyBootstrap get(String name, Output<String> id, @Nullable PropertyBootstrapState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static PropertyBootstrap get(java.lang.String name, Output<java.lang.String> id, @Nullable PropertyBootstrapState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new PropertyBootstrap(name, id, state, options);
     }
 }

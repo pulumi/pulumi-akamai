@@ -64,7 +64,7 @@ class AwaitableGetCloudletsEdgeRedirectorMatchRuleResult(GetCloudletsEdgeRedirec
             match_rules=self.match_rules)
 
 
-def get_cloudlets_edge_redirector_match_rule(match_rules: Optional[Sequence[pulumi.InputType['GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs']]] = None,
+def get_cloudlets_edge_redirector_match_rule(match_rules: Optional[Sequence[Union['GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs', 'GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgsDict']]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudletsEdgeRedirectorMatchRuleResult:
     """
     Use this data source to access information about an existing resource.
@@ -81,7 +81,7 @@ def get_cloudlets_edge_redirector_match_rule(match_rules: Optional[Sequence[pulu
 
 
 @_utilities.lift_output_func(get_cloudlets_edge_redirector_match_rule)
-def get_cloudlets_edge_redirector_match_rule_output(match_rules: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs']]]]] = None,
+def get_cloudlets_edge_redirector_match_rule_output(match_rules: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs', 'GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgsDict']]]]] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudletsEdgeRedirectorMatchRuleResult]:
     """
     Use this data source to access information about an existing resource.

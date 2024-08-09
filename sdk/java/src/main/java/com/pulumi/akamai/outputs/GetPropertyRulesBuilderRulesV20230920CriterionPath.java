@@ -44,7 +44,7 @@ public final class GetPropertyRulesBuilderRulesV20230920CriterionPath {
      */
     private @Nullable String uuid;
     /**
-     * @return Matches the URL path, excluding leading hostname and trailing query parameters. The path is relative to the server root, for example `/blog`. This field allows wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `/blog/*{@literal /}2014` matches paths with two fixed segments and other varying segments between them.
+     * @return Matches the URL path, excluding leading hostname and trailing query parameters. The path is relative to the server root, for example `/blog`. This field allows wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `/blog/*&#47;2014` matches paths with two fixed segments and other varying segments between them.
      * 
      */
     private @Nullable List<String> values;
@@ -93,7 +93,7 @@ public final class GetPropertyRulesBuilderRulesV20230920CriterionPath {
         return Optional.ofNullable(this.uuid);
     }
     /**
-     * @return Matches the URL path, excluding leading hostname and trailing query parameters. The path is relative to the server root, for example `/blog`. This field allows wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `/blog/*{@literal /}2014` matches paths with two fixed segments and other varying segments between them.
+     * @return Matches the URL path, excluding leading hostname and trailing query parameters. The path is relative to the server root, for example `/blog`. This field allows wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `/blog/*&#47;2014` matches paths with two fixed segments and other varying segments between them.
      * 
      */
     public List<String> values() {

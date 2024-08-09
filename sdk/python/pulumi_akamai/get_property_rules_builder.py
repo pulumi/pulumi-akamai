@@ -118,12 +118,12 @@ class AwaitableGetPropertyRulesBuilderResult(GetPropertyRulesBuilderResult):
             rules_v20240212=self.rules_v20240212)
 
 
-def get_property_rules_builder(rules_v20230105: Optional[pulumi.InputType['GetPropertyRulesBuilderRulesV20230105Args']] = None,
-                               rules_v20230530: Optional[pulumi.InputType['GetPropertyRulesBuilderRulesV20230530Args']] = None,
-                               rules_v20230920: Optional[pulumi.InputType['GetPropertyRulesBuilderRulesV20230920Args']] = None,
-                               rules_v20231030: Optional[pulumi.InputType['GetPropertyRulesBuilderRulesV20231030Args']] = None,
-                               rules_v20240109: Optional[pulumi.InputType['GetPropertyRulesBuilderRulesV20240109Args']] = None,
-                               rules_v20240212: Optional[pulumi.InputType['GetPropertyRulesBuilderRulesV20240212Args']] = None,
+def get_property_rules_builder(rules_v20230105: Optional[Union['GetPropertyRulesBuilderRulesV20230105Args', 'GetPropertyRulesBuilderRulesV20230105ArgsDict']] = None,
+                               rules_v20230530: Optional[Union['GetPropertyRulesBuilderRulesV20230530Args', 'GetPropertyRulesBuilderRulesV20230530ArgsDict']] = None,
+                               rules_v20230920: Optional[Union['GetPropertyRulesBuilderRulesV20230920Args', 'GetPropertyRulesBuilderRulesV20230920ArgsDict']] = None,
+                               rules_v20231030: Optional[Union['GetPropertyRulesBuilderRulesV20231030Args', 'GetPropertyRulesBuilderRulesV20231030ArgsDict']] = None,
+                               rules_v20240109: Optional[Union['GetPropertyRulesBuilderRulesV20240109Args', 'GetPropertyRulesBuilderRulesV20240109ArgsDict']] = None,
+                               rules_v20240212: Optional[Union['GetPropertyRulesBuilderRulesV20240212Args', 'GetPropertyRulesBuilderRulesV20240212ArgsDict']] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyRulesBuilderResult:
     """
     Use this data source to access information about an existing resource.
@@ -151,12 +151,12 @@ def get_property_rules_builder(rules_v20230105: Optional[pulumi.InputType['GetPr
 
 
 @_utilities.lift_output_func(get_property_rules_builder)
-def get_property_rules_builder_output(rules_v20230105: Optional[pulumi.Input[Optional[pulumi.InputType['GetPropertyRulesBuilderRulesV20230105Args']]]] = None,
-                                      rules_v20230530: Optional[pulumi.Input[Optional[pulumi.InputType['GetPropertyRulesBuilderRulesV20230530Args']]]] = None,
-                                      rules_v20230920: Optional[pulumi.Input[Optional[pulumi.InputType['GetPropertyRulesBuilderRulesV20230920Args']]]] = None,
-                                      rules_v20231030: Optional[pulumi.Input[Optional[pulumi.InputType['GetPropertyRulesBuilderRulesV20231030Args']]]] = None,
-                                      rules_v20240109: Optional[pulumi.Input[Optional[pulumi.InputType['GetPropertyRulesBuilderRulesV20240109Args']]]] = None,
-                                      rules_v20240212: Optional[pulumi.Input[Optional[pulumi.InputType['GetPropertyRulesBuilderRulesV20240212Args']]]] = None,
+def get_property_rules_builder_output(rules_v20230105: Optional[pulumi.Input[Optional[Union['GetPropertyRulesBuilderRulesV20230105Args', 'GetPropertyRulesBuilderRulesV20230105ArgsDict']]]] = None,
+                                      rules_v20230530: Optional[pulumi.Input[Optional[Union['GetPropertyRulesBuilderRulesV20230530Args', 'GetPropertyRulesBuilderRulesV20230530ArgsDict']]]] = None,
+                                      rules_v20230920: Optional[pulumi.Input[Optional[Union['GetPropertyRulesBuilderRulesV20230920Args', 'GetPropertyRulesBuilderRulesV20230920ArgsDict']]]] = None,
+                                      rules_v20231030: Optional[pulumi.Input[Optional[Union['GetPropertyRulesBuilderRulesV20231030Args', 'GetPropertyRulesBuilderRulesV20231030ArgsDict']]]] = None,
+                                      rules_v20240109: Optional[pulumi.Input[Optional[Union['GetPropertyRulesBuilderRulesV20240109Args', 'GetPropertyRulesBuilderRulesV20240109ArgsDict']]]] = None,
+                                      rules_v20240212: Optional[pulumi.Input[Optional[Union['GetPropertyRulesBuilderRulesV20240212Args', 'GetPropertyRulesBuilderRulesV20240212ArgsDict']]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyRulesBuilderResult]:
     """
     Use this data source to access information about an existing resource.

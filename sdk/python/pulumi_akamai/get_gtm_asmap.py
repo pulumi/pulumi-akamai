@@ -89,10 +89,10 @@ class AwaitableGetGtmAsmapResult(GetGtmAsmapResult):
             map_name=self.map_name)
 
 
-def get_gtm_asmap(assignments: Optional[Sequence[pulumi.InputType['GetGtmAsmapAssignmentArgs']]] = None,
-                  default_datacenter: Optional[pulumi.InputType['GetGtmAsmapDefaultDatacenterArgs']] = None,
+def get_gtm_asmap(assignments: Optional[Sequence[Union['GetGtmAsmapAssignmentArgs', 'GetGtmAsmapAssignmentArgsDict']]] = None,
+                  default_datacenter: Optional[Union['GetGtmAsmapDefaultDatacenterArgs', 'GetGtmAsmapDefaultDatacenterArgsDict']] = None,
                   domain: Optional[str] = None,
-                  links: Optional[Sequence[pulumi.InputType['GetGtmAsmapLinkArgs']]] = None,
+                  links: Optional[Sequence[Union['GetGtmAsmapLinkArgs', 'GetGtmAsmapLinkArgsDict']]] = None,
                   map_name: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGtmAsmapResult:
     """
@@ -117,10 +117,10 @@ def get_gtm_asmap(assignments: Optional[Sequence[pulumi.InputType['GetGtmAsmapAs
 
 
 @_utilities.lift_output_func(get_gtm_asmap)
-def get_gtm_asmap_output(assignments: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetGtmAsmapAssignmentArgs']]]]] = None,
-                         default_datacenter: Optional[pulumi.Input[Optional[pulumi.InputType['GetGtmAsmapDefaultDatacenterArgs']]]] = None,
+def get_gtm_asmap_output(assignments: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmAsmapAssignmentArgs', 'GetGtmAsmapAssignmentArgsDict']]]]] = None,
+                         default_datacenter: Optional[pulumi.Input[Optional[Union['GetGtmAsmapDefaultDatacenterArgs', 'GetGtmAsmapDefaultDatacenterArgsDict']]]] = None,
                          domain: Optional[pulumi.Input[str]] = None,
-                         links: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetGtmAsmapLinkArgs']]]]] = None,
+                         links: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmAsmapLinkArgs', 'GetGtmAsmapLinkArgsDict']]]]] = None,
                          map_name: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGtmAsmapResult]:
     """

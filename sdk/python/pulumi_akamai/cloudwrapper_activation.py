@@ -122,7 +122,7 @@ class CloudwrapperActivation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  config_id: Optional[pulumi.Input[int]] = None,
                  revision: Optional[pulumi.Input[str]] = None,
-                 timeouts: Optional[pulumi.Input[pulumi.InputType['CloudwrapperActivationTimeoutsArgs']]] = None,
+                 timeouts: Optional[pulumi.Input[Union['CloudwrapperActivationTimeoutsArgs', 'CloudwrapperActivationTimeoutsArgsDict']]] = None,
                  __props__=None):
         """
         Create a CloudwrapperActivation resource with the given unique name, props, and options.
@@ -156,7 +156,7 @@ class CloudwrapperActivation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  config_id: Optional[pulumi.Input[int]] = None,
                  revision: Optional[pulumi.Input[str]] = None,
-                 timeouts: Optional[pulumi.Input[pulumi.InputType['CloudwrapperActivationTimeoutsArgs']]] = None,
+                 timeouts: Optional[pulumi.Input[Union['CloudwrapperActivationTimeoutsArgs', 'CloudwrapperActivationTimeoutsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -185,7 +185,7 @@ class CloudwrapperActivation(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             config_id: Optional[pulumi.Input[int]] = None,
             revision: Optional[pulumi.Input[str]] = None,
-            timeouts: Optional[pulumi.Input[pulumi.InputType['CloudwrapperActivationTimeoutsArgs']]] = None) -> 'CloudwrapperActivation':
+            timeouts: Optional[pulumi.Input[Union['CloudwrapperActivationTimeoutsArgs', 'CloudwrapperActivationTimeoutsArgsDict']]] = None) -> 'CloudwrapperActivation':
         """
         Get an existing CloudwrapperActivation resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

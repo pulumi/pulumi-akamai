@@ -343,7 +343,7 @@ class CloudletsPolicy(pulumi.CustomResource):
                  match_rule_format: Optional[pulumi.Input[str]] = None,
                  match_rules: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 timeouts: Optional[pulumi.Input[pulumi.InputType['CloudletsPolicyTimeoutsArgs']]] = None,
+                 timeouts: Optional[pulumi.Input[Union['CloudletsPolicyTimeoutsArgs', 'CloudletsPolicyTimeoutsArgsDict']]] = None,
                  __props__=None):
         """
         Create a CloudletsPolicy resource with the given unique name, props, and options.
@@ -356,7 +356,7 @@ class CloudletsPolicy(pulumi.CustomResource):
         :param pulumi.Input[str] match_rule_format: The version of the Cloudlet specific matchRules
         :param pulumi.Input[str] match_rules: A JSON structure that defines the rules for this policy
         :param pulumi.Input[str] name: The name of the policy. The name must be unique
-        :param pulumi.Input[pulumi.InputType['CloudletsPolicyTimeoutsArgs']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['CloudletsPolicyTimeoutsArgs', 'CloudletsPolicyTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
         """
         ...
     @overload
@@ -388,7 +388,7 @@ class CloudletsPolicy(pulumi.CustomResource):
                  match_rule_format: Optional[pulumi.Input[str]] = None,
                  match_rules: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 timeouts: Optional[pulumi.Input[pulumi.InputType['CloudletsPolicyTimeoutsArgs']]] = None,
+                 timeouts: Optional[pulumi.Input[Union['CloudletsPolicyTimeoutsArgs', 'CloudletsPolicyTimeoutsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -431,7 +431,7 @@ class CloudletsPolicy(pulumi.CustomResource):
             match_rule_format: Optional[pulumi.Input[str]] = None,
             match_rules: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            timeouts: Optional[pulumi.Input[pulumi.InputType['CloudletsPolicyTimeoutsArgs']]] = None,
+            timeouts: Optional[pulumi.Input[Union['CloudletsPolicyTimeoutsArgs', 'CloudletsPolicyTimeoutsArgsDict']]] = None,
             version: Optional[pulumi.Input[int]] = None,
             warnings: Optional[pulumi.Input[str]] = None) -> 'CloudletsPolicy':
         """
@@ -449,7 +449,7 @@ class CloudletsPolicy(pulumi.CustomResource):
         :param pulumi.Input[str] match_rule_format: The version of the Cloudlet specific matchRules
         :param pulumi.Input[str] match_rules: A JSON structure that defines the rules for this policy
         :param pulumi.Input[str] name: The name of the policy. The name must be unique
-        :param pulumi.Input[pulumi.InputType['CloudletsPolicyTimeoutsArgs']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['CloudletsPolicyTimeoutsArgs', 'CloudletsPolicyTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[int] version: The version number of the policy
         :param pulumi.Input[str] warnings: A JSON encoded list of warnings
         """

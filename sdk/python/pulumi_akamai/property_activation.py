@@ -341,13 +341,13 @@ class PropertyActivation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  activation_id: Optional[pulumi.Input[str]] = None,
                  auto_acknowledge_rule_warnings: Optional[pulumi.Input[bool]] = None,
-                 compliance_record: Optional[pulumi.Input[pulumi.InputType['PropertyActivationComplianceRecordArgs']]] = None,
+                 compliance_record: Optional[pulumi.Input[Union['PropertyActivationComplianceRecordArgs', 'PropertyActivationComplianceRecordArgsDict']]] = None,
                  contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  note: Optional[pulumi.Input[str]] = None,
                  property_id: Optional[pulumi.Input[str]] = None,
-                 rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyActivationRuleErrorArgs']]]]] = None,
-                 timeouts: Optional[pulumi.Input[pulumi.InputType['PropertyActivationTimeoutsArgs']]] = None,
+                 rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PropertyActivationRuleErrorArgs', 'PropertyActivationRuleErrorArgsDict']]]]] = None,
+                 timeouts: Optional[pulumi.Input[Union['PropertyActivationTimeoutsArgs', 'PropertyActivationTimeoutsArgsDict']]] = None,
                  version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
@@ -355,9 +355,9 @@ class PropertyActivation(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] auto_acknowledge_rule_warnings: Automatically acknowledge all rule warnings for activation to continue. Default is false
-        :param pulumi.Input[pulumi.InputType['PropertyActivationComplianceRecordArgs']] compliance_record: Provides an audit record when activating on a production network
+        :param pulumi.Input[Union['PropertyActivationComplianceRecordArgs', 'PropertyActivationComplianceRecordArgsDict']] compliance_record: Provides an audit record when activating on a production network
         :param pulumi.Input[str] note: assigns a log message to the activation request
-        :param pulumi.Input[pulumi.InputType['PropertyActivationTimeoutsArgs']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['PropertyActivationTimeoutsArgs', 'PropertyActivationTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
         """
         ...
     @overload
@@ -384,13 +384,13 @@ class PropertyActivation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  activation_id: Optional[pulumi.Input[str]] = None,
                  auto_acknowledge_rule_warnings: Optional[pulumi.Input[bool]] = None,
-                 compliance_record: Optional[pulumi.Input[pulumi.InputType['PropertyActivationComplianceRecordArgs']]] = None,
+                 compliance_record: Optional[pulumi.Input[Union['PropertyActivationComplianceRecordArgs', 'PropertyActivationComplianceRecordArgsDict']]] = None,
                  contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  note: Optional[pulumi.Input[str]] = None,
                  property_id: Optional[pulumi.Input[str]] = None,
-                 rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyActivationRuleErrorArgs']]]]] = None,
-                 timeouts: Optional[pulumi.Input[pulumi.InputType['PropertyActivationTimeoutsArgs']]] = None,
+                 rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PropertyActivationRuleErrorArgs', 'PropertyActivationRuleErrorArgsDict']]]]] = None,
+                 timeouts: Optional[pulumi.Input[Union['PropertyActivationTimeoutsArgs', 'PropertyActivationTimeoutsArgsDict']]] = None,
                  version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -434,15 +434,15 @@ class PropertyActivation(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             activation_id: Optional[pulumi.Input[str]] = None,
             auto_acknowledge_rule_warnings: Optional[pulumi.Input[bool]] = None,
-            compliance_record: Optional[pulumi.Input[pulumi.InputType['PropertyActivationComplianceRecordArgs']]] = None,
+            compliance_record: Optional[pulumi.Input[Union['PropertyActivationComplianceRecordArgs', 'PropertyActivationComplianceRecordArgsDict']]] = None,
             contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             errors: Optional[pulumi.Input[str]] = None,
             network: Optional[pulumi.Input[str]] = None,
             note: Optional[pulumi.Input[str]] = None,
             property_id: Optional[pulumi.Input[str]] = None,
-            rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyActivationRuleErrorArgs']]]]] = None,
+            rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PropertyActivationRuleErrorArgs', 'PropertyActivationRuleErrorArgsDict']]]]] = None,
             status: Optional[pulumi.Input[str]] = None,
-            timeouts: Optional[pulumi.Input[pulumi.InputType['PropertyActivationTimeoutsArgs']]] = None,
+            timeouts: Optional[pulumi.Input[Union['PropertyActivationTimeoutsArgs', 'PropertyActivationTimeoutsArgsDict']]] = None,
             version: Optional[pulumi.Input[int]] = None,
             warnings: Optional[pulumi.Input[str]] = None) -> 'PropertyActivation':
         """
@@ -453,9 +453,9 @@ class PropertyActivation(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] auto_acknowledge_rule_warnings: Automatically acknowledge all rule warnings for activation to continue. Default is false
-        :param pulumi.Input[pulumi.InputType['PropertyActivationComplianceRecordArgs']] compliance_record: Provides an audit record when activating on a production network
+        :param pulumi.Input[Union['PropertyActivationComplianceRecordArgs', 'PropertyActivationComplianceRecordArgsDict']] compliance_record: Provides an audit record when activating on a production network
         :param pulumi.Input[str] note: assigns a log message to the activation request
-        :param pulumi.Input[pulumi.InputType['PropertyActivationTimeoutsArgs']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['PropertyActivationTimeoutsArgs', 'PropertyActivationTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

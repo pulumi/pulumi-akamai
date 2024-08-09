@@ -64,7 +64,7 @@ class AwaitableGetCloudletsRequestControlMatchRuleResult(GetCloudletsRequestCont
             match_rules=self.match_rules)
 
 
-def get_cloudlets_request_control_match_rule(match_rules: Optional[Sequence[pulumi.InputType['GetCloudletsRequestControlMatchRuleMatchRuleArgs']]] = None,
+def get_cloudlets_request_control_match_rule(match_rules: Optional[Sequence[Union['GetCloudletsRequestControlMatchRuleMatchRuleArgs', 'GetCloudletsRequestControlMatchRuleMatchRuleArgsDict']]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudletsRequestControlMatchRuleResult:
     """
     Use this data source to access information about an existing resource.
@@ -81,7 +81,7 @@ def get_cloudlets_request_control_match_rule(match_rules: Optional[Sequence[pulu
 
 
 @_utilities.lift_output_func(get_cloudlets_request_control_match_rule)
-def get_cloudlets_request_control_match_rule_output(match_rules: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCloudletsRequestControlMatchRuleMatchRuleArgs']]]]] = None,
+def get_cloudlets_request_control_match_rule_output(match_rules: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudletsRequestControlMatchRuleMatchRuleArgs', 'GetCloudletsRequestControlMatchRuleMatchRuleArgsDict']]]]] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudletsRequestControlMatchRuleResult]:
     """
     Use this data source to access information about an existing resource.

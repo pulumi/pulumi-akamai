@@ -147,7 +147,7 @@ class CpsDvValidation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enrollment_id: Optional[pulumi.Input[int]] = None,
                  sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 timeouts: Optional[pulumi.Input[pulumi.InputType['CpsDvValidationTimeoutsArgs']]] = None,
+                 timeouts: Optional[pulumi.Input[Union['CpsDvValidationTimeoutsArgs', 'CpsDvValidationTimeoutsArgsDict']]] = None,
                  __props__=None):
         """
         Create a CpsDvValidation resource with the given unique name, props, and options.
@@ -155,7 +155,7 @@ class CpsDvValidation(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] enrollment_id: The unique identifier of enrollment
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: List of SANs
-        :param pulumi.Input[pulumi.InputType['CpsDvValidationTimeoutsArgs']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['CpsDvValidationTimeoutsArgs', 'CpsDvValidationTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
         """
         ...
     @overload
@@ -182,7 +182,7 @@ class CpsDvValidation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enrollment_id: Optional[pulumi.Input[int]] = None,
                  sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 timeouts: Optional[pulumi.Input[pulumi.InputType['CpsDvValidationTimeoutsArgs']]] = None,
+                 timeouts: Optional[pulumi.Input[Union['CpsDvValidationTimeoutsArgs', 'CpsDvValidationTimeoutsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -211,7 +211,7 @@ class CpsDvValidation(pulumi.CustomResource):
             enrollment_id: Optional[pulumi.Input[int]] = None,
             sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             status: Optional[pulumi.Input[str]] = None,
-            timeouts: Optional[pulumi.Input[pulumi.InputType['CpsDvValidationTimeoutsArgs']]] = None) -> 'CpsDvValidation':
+            timeouts: Optional[pulumi.Input[Union['CpsDvValidationTimeoutsArgs', 'CpsDvValidationTimeoutsArgsDict']]] = None) -> 'CpsDvValidation':
         """
         Get an existing CpsDvValidation resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -222,7 +222,7 @@ class CpsDvValidation(pulumi.CustomResource):
         :param pulumi.Input[int] enrollment_id: The unique identifier of enrollment
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: List of SANs
         :param pulumi.Input[str] status: Status of validation
-        :param pulumi.Input[pulumi.InputType['CpsDvValidationTimeoutsArgs']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['CpsDvValidationTimeoutsArgs', 'CpsDvValidationTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

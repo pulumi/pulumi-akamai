@@ -585,40 +585,40 @@ class CpsDvEnrollment(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  acknowledge_pre_verification_warnings: Optional[pulumi.Input[bool]] = None,
-                 admin_contact: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentAdminContactArgs']]] = None,
+                 admin_contact: Optional[pulumi.Input[Union['CpsDvEnrollmentAdminContactArgs', 'CpsDvEnrollmentAdminContactArgsDict']]] = None,
                  allow_duplicate_common_name: Optional[pulumi.Input[bool]] = None,
                  certificate_chain_type: Optional[pulumi.Input[str]] = None,
                  common_name: Optional[pulumi.Input[str]] = None,
                  contract_id: Optional[pulumi.Input[str]] = None,
-                 csr: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentCsrArgs']]] = None,
-                 network_configuration: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentNetworkConfigurationArgs']]] = None,
-                 organization: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentOrganizationArgs']]] = None,
+                 csr: Optional[pulumi.Input[Union['CpsDvEnrollmentCsrArgs', 'CpsDvEnrollmentCsrArgsDict']]] = None,
+                 network_configuration: Optional[pulumi.Input[Union['CpsDvEnrollmentNetworkConfigurationArgs', 'CpsDvEnrollmentNetworkConfigurationArgsDict']]] = None,
+                 organization: Optional[pulumi.Input[Union['CpsDvEnrollmentOrganizationArgs', 'CpsDvEnrollmentOrganizationArgsDict']]] = None,
                  sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  secure_network: Optional[pulumi.Input[str]] = None,
                  signature_algorithm: Optional[pulumi.Input[str]] = None,
                  sni_only: Optional[pulumi.Input[bool]] = None,
-                 tech_contact: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentTechContactArgs']]] = None,
-                 timeouts: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentTimeoutsArgs']]] = None,
+                 tech_contact: Optional[pulumi.Input[Union['CpsDvEnrollmentTechContactArgs', 'CpsDvEnrollmentTechContactArgsDict']]] = None,
+                 timeouts: Optional[pulumi.Input[Union['CpsDvEnrollmentTimeoutsArgs', 'CpsDvEnrollmentTimeoutsArgsDict']]] = None,
                  __props__=None):
         """
         Create a CpsDvEnrollment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] acknowledge_pre_verification_warnings: Whether acknowledge warnings before certificate verification
-        :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentAdminContactArgs']] admin_contact: Contact information for the certificate administrator to use at organization
+        :param pulumi.Input[Union['CpsDvEnrollmentAdminContactArgs', 'CpsDvEnrollmentAdminContactArgsDict']] admin_contact: Contact information for the certificate administrator to use at organization
         :param pulumi.Input[bool] allow_duplicate_common_name: Allow to duplicate common name
         :param pulumi.Input[str] certificate_chain_type: Certificate trust chain type
         :param pulumi.Input[str] common_name: Common name used for enrollment
         :param pulumi.Input[str] contract_id: Contract ID for which enrollment is retrieved
-        :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentCsrArgs']] csr: Certificate signing request generated during enrollment creation
-        :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentNetworkConfigurationArgs']] network_configuration: Settings containing network information and TLS Metadata used by CPS
-        :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentOrganizationArgs']] organization: Organization information
+        :param pulumi.Input[Union['CpsDvEnrollmentCsrArgs', 'CpsDvEnrollmentCsrArgsDict']] csr: Certificate signing request generated during enrollment creation
+        :param pulumi.Input[Union['CpsDvEnrollmentNetworkConfigurationArgs', 'CpsDvEnrollmentNetworkConfigurationArgsDict']] network_configuration: Settings containing network information and TLS Metadata used by CPS
+        :param pulumi.Input[Union['CpsDvEnrollmentOrganizationArgs', 'CpsDvEnrollmentOrganizationArgsDict']] organization: Organization information
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: List of SANs
         :param pulumi.Input[str] secure_network: Type of TLS deployment network
         :param pulumi.Input[str] signature_algorithm: SHA algorithm type
         :param pulumi.Input[bool] sni_only: Whether Server Name Indication is used for enrollment
-        :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentTechContactArgs']] tech_contact: Contact information for an administrator at Akamai
-        :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentTimeoutsArgs']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['CpsDvEnrollmentTechContactArgs', 'CpsDvEnrollmentTechContactArgsDict']] tech_contact: Contact information for an administrator at Akamai
+        :param pulumi.Input[Union['CpsDvEnrollmentTimeoutsArgs', 'CpsDvEnrollmentTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
         """
         ...
     @overload
@@ -644,20 +644,20 @@ class CpsDvEnrollment(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  acknowledge_pre_verification_warnings: Optional[pulumi.Input[bool]] = None,
-                 admin_contact: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentAdminContactArgs']]] = None,
+                 admin_contact: Optional[pulumi.Input[Union['CpsDvEnrollmentAdminContactArgs', 'CpsDvEnrollmentAdminContactArgsDict']]] = None,
                  allow_duplicate_common_name: Optional[pulumi.Input[bool]] = None,
                  certificate_chain_type: Optional[pulumi.Input[str]] = None,
                  common_name: Optional[pulumi.Input[str]] = None,
                  contract_id: Optional[pulumi.Input[str]] = None,
-                 csr: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentCsrArgs']]] = None,
-                 network_configuration: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentNetworkConfigurationArgs']]] = None,
-                 organization: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentOrganizationArgs']]] = None,
+                 csr: Optional[pulumi.Input[Union['CpsDvEnrollmentCsrArgs', 'CpsDvEnrollmentCsrArgsDict']]] = None,
+                 network_configuration: Optional[pulumi.Input[Union['CpsDvEnrollmentNetworkConfigurationArgs', 'CpsDvEnrollmentNetworkConfigurationArgsDict']]] = None,
+                 organization: Optional[pulumi.Input[Union['CpsDvEnrollmentOrganizationArgs', 'CpsDvEnrollmentOrganizationArgsDict']]] = None,
                  sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  secure_network: Optional[pulumi.Input[str]] = None,
                  signature_algorithm: Optional[pulumi.Input[str]] = None,
                  sni_only: Optional[pulumi.Input[bool]] = None,
-                 tech_contact: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentTechContactArgs']]] = None,
-                 timeouts: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentTimeoutsArgs']]] = None,
+                 tech_contact: Optional[pulumi.Input[Union['CpsDvEnrollmentTechContactArgs', 'CpsDvEnrollmentTechContactArgsDict']]] = None,
+                 timeouts: Optional[pulumi.Input[Union['CpsDvEnrollmentTimeoutsArgs', 'CpsDvEnrollmentTimeoutsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -718,24 +718,24 @@ class CpsDvEnrollment(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             acknowledge_pre_verification_warnings: Optional[pulumi.Input[bool]] = None,
-            admin_contact: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentAdminContactArgs']]] = None,
+            admin_contact: Optional[pulumi.Input[Union['CpsDvEnrollmentAdminContactArgs', 'CpsDvEnrollmentAdminContactArgsDict']]] = None,
             allow_duplicate_common_name: Optional[pulumi.Input[bool]] = None,
             certificate_chain_type: Optional[pulumi.Input[str]] = None,
             certificate_type: Optional[pulumi.Input[str]] = None,
             common_name: Optional[pulumi.Input[str]] = None,
             contract_id: Optional[pulumi.Input[str]] = None,
-            csr: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentCsrArgs']]] = None,
-            dns_challenges: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CpsDvEnrollmentDnsChallengeArgs']]]]] = None,
-            http_challenges: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CpsDvEnrollmentHttpChallengeArgs']]]]] = None,
-            network_configuration: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentNetworkConfigurationArgs']]] = None,
-            organization: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentOrganizationArgs']]] = None,
+            csr: Optional[pulumi.Input[Union['CpsDvEnrollmentCsrArgs', 'CpsDvEnrollmentCsrArgsDict']]] = None,
+            dns_challenges: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CpsDvEnrollmentDnsChallengeArgs', 'CpsDvEnrollmentDnsChallengeArgsDict']]]]] = None,
+            http_challenges: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CpsDvEnrollmentHttpChallengeArgs', 'CpsDvEnrollmentHttpChallengeArgsDict']]]]] = None,
+            network_configuration: Optional[pulumi.Input[Union['CpsDvEnrollmentNetworkConfigurationArgs', 'CpsDvEnrollmentNetworkConfigurationArgsDict']]] = None,
+            organization: Optional[pulumi.Input[Union['CpsDvEnrollmentOrganizationArgs', 'CpsDvEnrollmentOrganizationArgsDict']]] = None,
             registration_authority: Optional[pulumi.Input[str]] = None,
             sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             secure_network: Optional[pulumi.Input[str]] = None,
             signature_algorithm: Optional[pulumi.Input[str]] = None,
             sni_only: Optional[pulumi.Input[bool]] = None,
-            tech_contact: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentTechContactArgs']]] = None,
-            timeouts: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentTimeoutsArgs']]] = None,
+            tech_contact: Optional[pulumi.Input[Union['CpsDvEnrollmentTechContactArgs', 'CpsDvEnrollmentTechContactArgsDict']]] = None,
+            timeouts: Optional[pulumi.Input[Union['CpsDvEnrollmentTimeoutsArgs', 'CpsDvEnrollmentTimeoutsArgsDict']]] = None,
             validation_type: Optional[pulumi.Input[str]] = None) -> 'CpsDvEnrollment':
         """
         Get an existing CpsDvEnrollment resource's state with the given name, id, and optional extra
@@ -745,24 +745,24 @@ class CpsDvEnrollment(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] acknowledge_pre_verification_warnings: Whether acknowledge warnings before certificate verification
-        :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentAdminContactArgs']] admin_contact: Contact information for the certificate administrator to use at organization
+        :param pulumi.Input[Union['CpsDvEnrollmentAdminContactArgs', 'CpsDvEnrollmentAdminContactArgsDict']] admin_contact: Contact information for the certificate administrator to use at organization
         :param pulumi.Input[bool] allow_duplicate_common_name: Allow to duplicate common name
         :param pulumi.Input[str] certificate_chain_type: Certificate trust chain type
         :param pulumi.Input[str] certificate_type: Certificate type of enrollment
         :param pulumi.Input[str] common_name: Common name used for enrollment
         :param pulumi.Input[str] contract_id: Contract ID for which enrollment is retrieved
-        :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentCsrArgs']] csr: Certificate signing request generated during enrollment creation
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CpsDvEnrollmentDnsChallengeArgs']]]] dns_challenges: DNS challenge information
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CpsDvEnrollmentHttpChallengeArgs']]]] http_challenges: HTTP challenge information
-        :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentNetworkConfigurationArgs']] network_configuration: Settings containing network information and TLS Metadata used by CPS
-        :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentOrganizationArgs']] organization: Organization information
+        :param pulumi.Input[Union['CpsDvEnrollmentCsrArgs', 'CpsDvEnrollmentCsrArgsDict']] csr: Certificate signing request generated during enrollment creation
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CpsDvEnrollmentDnsChallengeArgs', 'CpsDvEnrollmentDnsChallengeArgsDict']]]] dns_challenges: DNS challenge information
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CpsDvEnrollmentHttpChallengeArgs', 'CpsDvEnrollmentHttpChallengeArgsDict']]]] http_challenges: HTTP challenge information
+        :param pulumi.Input[Union['CpsDvEnrollmentNetworkConfigurationArgs', 'CpsDvEnrollmentNetworkConfigurationArgsDict']] network_configuration: Settings containing network information and TLS Metadata used by CPS
+        :param pulumi.Input[Union['CpsDvEnrollmentOrganizationArgs', 'CpsDvEnrollmentOrganizationArgsDict']] organization: Organization information
         :param pulumi.Input[str] registration_authority: The registration authority or certificate authority (CA) used to obtain a certificate
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: List of SANs
         :param pulumi.Input[str] secure_network: Type of TLS deployment network
         :param pulumi.Input[str] signature_algorithm: SHA algorithm type
         :param pulumi.Input[bool] sni_only: Whether Server Name Indication is used for enrollment
-        :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentTechContactArgs']] tech_contact: Contact information for an administrator at Akamai
-        :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentTimeoutsArgs']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['CpsDvEnrollmentTechContactArgs', 'CpsDvEnrollmentTechContactArgsDict']] tech_contact: Contact information for an administrator at Akamai
+        :param pulumi.Input[Union['CpsDvEnrollmentTimeoutsArgs', 'CpsDvEnrollmentTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[str] validation_type: Enrolment validation type
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

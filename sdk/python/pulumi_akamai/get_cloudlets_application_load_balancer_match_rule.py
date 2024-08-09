@@ -64,7 +64,7 @@ class AwaitableGetCloudletsApplicationLoadBalancerMatchRuleResult(GetCloudletsAp
             match_rules=self.match_rules)
 
 
-def get_cloudlets_application_load_balancer_match_rule(match_rules: Optional[Sequence[pulumi.InputType['GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs']]] = None,
+def get_cloudlets_application_load_balancer_match_rule(match_rules: Optional[Sequence[Union['GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs', 'GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgsDict']]] = None,
                                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudletsApplicationLoadBalancerMatchRuleResult:
     """
     Use this data source to access information about an existing resource.
@@ -81,7 +81,7 @@ def get_cloudlets_application_load_balancer_match_rule(match_rules: Optional[Seq
 
 
 @_utilities.lift_output_func(get_cloudlets_application_load_balancer_match_rule)
-def get_cloudlets_application_load_balancer_match_rule_output(match_rules: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs']]]]] = None,
+def get_cloudlets_application_load_balancer_match_rule_output(match_rules: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs', 'GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgsDict']]]]] = None,
                                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudletsApplicationLoadBalancerMatchRuleResult]:
     """
     Use this data source to access information about an existing resource.

@@ -89,10 +89,10 @@ class AwaitableGetGtmCidrmapResult(GetGtmCidrmapResult):
             map_name=self.map_name)
 
 
-def get_gtm_cidrmap(assignments: Optional[Sequence[pulumi.InputType['GetGtmCidrmapAssignmentArgs']]] = None,
-                    default_datacenter: Optional[pulumi.InputType['GetGtmCidrmapDefaultDatacenterArgs']] = None,
+def get_gtm_cidrmap(assignments: Optional[Sequence[Union['GetGtmCidrmapAssignmentArgs', 'GetGtmCidrmapAssignmentArgsDict']]] = None,
+                    default_datacenter: Optional[Union['GetGtmCidrmapDefaultDatacenterArgs', 'GetGtmCidrmapDefaultDatacenterArgsDict']] = None,
                     domain: Optional[str] = None,
-                    links: Optional[Sequence[pulumi.InputType['GetGtmCidrmapLinkArgs']]] = None,
+                    links: Optional[Sequence[Union['GetGtmCidrmapLinkArgs', 'GetGtmCidrmapLinkArgsDict']]] = None,
                     map_name: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGtmCidrmapResult:
     """
@@ -117,10 +117,10 @@ def get_gtm_cidrmap(assignments: Optional[Sequence[pulumi.InputType['GetGtmCidrm
 
 
 @_utilities.lift_output_func(get_gtm_cidrmap)
-def get_gtm_cidrmap_output(assignments: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetGtmCidrmapAssignmentArgs']]]]] = None,
-                           default_datacenter: Optional[pulumi.Input[Optional[pulumi.InputType['GetGtmCidrmapDefaultDatacenterArgs']]]] = None,
+def get_gtm_cidrmap_output(assignments: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmCidrmapAssignmentArgs', 'GetGtmCidrmapAssignmentArgsDict']]]]] = None,
+                           default_datacenter: Optional[pulumi.Input[Optional[Union['GetGtmCidrmapDefaultDatacenterArgs', 'GetGtmCidrmapDefaultDatacenterArgsDict']]]] = None,
                            domain: Optional[pulumi.Input[str]] = None,
-                           links: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetGtmCidrmapLinkArgs']]]]] = None,
+                           links: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmCidrmapLinkArgs', 'GetGtmCidrmapLinkArgsDict']]]]] = None,
                            map_name: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGtmCidrmapResult]:
     """

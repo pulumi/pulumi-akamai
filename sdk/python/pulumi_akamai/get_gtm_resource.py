@@ -179,8 +179,8 @@ class AwaitableGetGtmResourceResult(GetGtmResourceResult):
 
 
 def get_gtm_resource(domain: Optional[str] = None,
-                     links: Optional[Sequence[pulumi.InputType['GetGtmResourceLinkArgs']]] = None,
-                     resource_instances: Optional[Sequence[pulumi.InputType['GetGtmResourceResourceInstanceArgs']]] = None,
+                     links: Optional[Sequence[Union['GetGtmResourceLinkArgs', 'GetGtmResourceLinkArgsDict']]] = None,
+                     resource_instances: Optional[Sequence[Union['GetGtmResourceResourceInstanceArgs', 'GetGtmResourceResourceInstanceArgsDict']]] = None,
                      resource_name: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGtmResourceResult:
     """
@@ -215,8 +215,8 @@ def get_gtm_resource(domain: Optional[str] = None,
 
 @_utilities.lift_output_func(get_gtm_resource)
 def get_gtm_resource_output(domain: Optional[pulumi.Input[str]] = None,
-                            links: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetGtmResourceLinkArgs']]]]] = None,
-                            resource_instances: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetGtmResourceResourceInstanceArgs']]]]] = None,
+                            links: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmResourceLinkArgs', 'GetGtmResourceLinkArgsDict']]]]] = None,
+                            resource_instances: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmResourceResourceInstanceArgs', 'GetGtmResourceResourceInstanceArgsDict']]]]] = None,
                             resource_name: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGtmResourceResult]:
     """

@@ -108,14 +108,14 @@ public final class GetPropertyRulesBuilderRulesV20240212CriterionPathArgs extend
     }
 
     /**
-     * Matches the URL path, excluding leading hostname and trailing query parameters. The path is relative to the server root, for example `/blog`. This field allows wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `/blog/*{@literal /}2014` matches paths with two fixed segments and other varying segments between them.
+     * Matches the URL path, excluding leading hostname and trailing query parameters. The path is relative to the server root, for example `/blog`. This field allows wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `/blog/*&#47;2014` matches paths with two fixed segments and other varying segments between them.
      * 
      */
     @Import(name="values")
     private @Nullable Output<List<String>> values;
 
     /**
-     * @return Matches the URL path, excluding leading hostname and trailing query parameters. The path is relative to the server root, for example `/blog`. This field allows wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `/blog/*{@literal /}2014` matches paths with two fixed segments and other varying segments between them.
+     * @return Matches the URL path, excluding leading hostname and trailing query parameters. The path is relative to the server root, for example `/blog`. This field allows wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `/blog/*&#47;2014` matches paths with two fixed segments and other varying segments between them.
      * 
      */
     public Optional<Output<List<String>>> values() {
@@ -279,7 +279,7 @@ public final class GetPropertyRulesBuilderRulesV20240212CriterionPathArgs extend
         }
 
         /**
-         * @param values Matches the URL path, excluding leading hostname and trailing query parameters. The path is relative to the server root, for example `/blog`. This field allows wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `/blog/*{@literal /}2014` matches paths with two fixed segments and other varying segments between them.
+         * @param values Matches the URL path, excluding leading hostname and trailing query parameters. The path is relative to the server root, for example `/blog`. This field allows wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `/blog/*&#47;2014` matches paths with two fixed segments and other varying segments between them.
          * 
          * @return builder
          * 
@@ -290,7 +290,7 @@ public final class GetPropertyRulesBuilderRulesV20240212CriterionPathArgs extend
         }
 
         /**
-         * @param values Matches the URL path, excluding leading hostname and trailing query parameters. The path is relative to the server root, for example `/blog`. This field allows wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `/blog/*{@literal /}2014` matches paths with two fixed segments and other varying segments between them.
+         * @param values Matches the URL path, excluding leading hostname and trailing query parameters. The path is relative to the server root, for example `/blog`. This field allows wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `/blog/*&#47;2014` matches paths with two fixed segments and other varying segments between them.
          * 
          * @return builder
          * 
@@ -300,7 +300,7 @@ public final class GetPropertyRulesBuilderRulesV20240212CriterionPathArgs extend
         }
 
         /**
-         * @param values Matches the URL path, excluding leading hostname and trailing query parameters. The path is relative to the server root, for example `/blog`. This field allows wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `/blog/*{@literal /}2014` matches paths with two fixed segments and other varying segments between them.
+         * @param values Matches the URL path, excluding leading hostname and trailing query parameters. The path is relative to the server root, for example `/blog`. This field allows wildcards, where `?` matches a single character and `*` matches zero or more characters. For example, `/blog/*&#47;2014` matches paths with two fixed segments and other varying segments between them.
          * 
          * @return builder
          * 

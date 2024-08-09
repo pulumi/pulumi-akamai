@@ -232,7 +232,7 @@ class EdgeKv(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  geo_location: Optional[pulumi.Input[str]] = None,
                  group_id: Optional[pulumi.Input[int]] = None,
-                 initial_datas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['EdgeKvInitialDataArgs']]]]] = None,
+                 initial_datas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['EdgeKvInitialDataArgs', 'EdgeKvInitialDataArgsDict']]]]] = None,
                  namespace_name: Optional[pulumi.Input[str]] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  retention_in_seconds: Optional[pulumi.Input[int]] = None,
@@ -243,7 +243,7 @@ class EdgeKv(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] geo_location: Storage location for data
         :param pulumi.Input[int] group_id: Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['EdgeKvInitialDataArgs']]]] initial_datas: List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['EdgeKvInitialDataArgs', 'EdgeKvInitialDataArgsDict']]]] initial_datas: List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
         :param pulumi.Input[str] namespace_name: Name for the EKV namespace
         :param pulumi.Input[str] network: The network on which the namespace will be activated
         :param pulumi.Input[int] retention_in_seconds: Retention period for data in this namespace. An update of this value will just affect new EKV items.
@@ -273,7 +273,7 @@ class EdgeKv(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  geo_location: Optional[pulumi.Input[str]] = None,
                  group_id: Optional[pulumi.Input[int]] = None,
-                 initial_datas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['EdgeKvInitialDataArgs']]]]] = None,
+                 initial_datas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['EdgeKvInitialDataArgs', 'EdgeKvInitialDataArgsDict']]]]] = None,
                  namespace_name: Optional[pulumi.Input[str]] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  retention_in_seconds: Optional[pulumi.Input[int]] = None,
@@ -312,7 +312,7 @@ class EdgeKv(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             geo_location: Optional[pulumi.Input[str]] = None,
             group_id: Optional[pulumi.Input[int]] = None,
-            initial_datas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['EdgeKvInitialDataArgs']]]]] = None,
+            initial_datas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['EdgeKvInitialDataArgs', 'EdgeKvInitialDataArgsDict']]]]] = None,
             namespace_name: Optional[pulumi.Input[str]] = None,
             network: Optional[pulumi.Input[str]] = None,
             retention_in_seconds: Optional[pulumi.Input[int]] = None) -> 'EdgeKv':
@@ -325,7 +325,7 @@ class EdgeKv(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] geo_location: Storage location for data
         :param pulumi.Input[int] group_id: Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['EdgeKvInitialDataArgs']]]] initial_datas: List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['EdgeKvInitialDataArgs', 'EdgeKvInitialDataArgsDict']]]] initial_datas: List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
         :param pulumi.Input[str] namespace_name: Name for the EKV namespace
         :param pulumi.Input[str] network: The network on which the namespace will be activated
         :param pulumi.Input[int] retention_in_seconds: Retention period for data in this namespace. An update of this value will just affect new EKV items.
