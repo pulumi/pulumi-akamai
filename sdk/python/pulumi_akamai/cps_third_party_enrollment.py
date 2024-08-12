@@ -594,45 +594,45 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  acknowledge_pre_verification_warnings: Optional[pulumi.Input[bool]] = None,
-                 admin_contact: Optional[pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentAdminContactArgs']]] = None,
+                 admin_contact: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentAdminContactArgs', 'CpsThirdPartyEnrollmentAdminContactArgsDict']]] = None,
                  allow_duplicate_common_name: Optional[pulumi.Input[bool]] = None,
                  auto_approve_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  certificate_chain_type: Optional[pulumi.Input[str]] = None,
                  change_management: Optional[pulumi.Input[bool]] = None,
                  common_name: Optional[pulumi.Input[str]] = None,
                  contract_id: Optional[pulumi.Input[str]] = None,
-                 csr: Optional[pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentCsrArgs']]] = None,
+                 csr: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentCsrArgs', 'CpsThirdPartyEnrollmentCsrArgsDict']]] = None,
                  exclude_sans: Optional[pulumi.Input[bool]] = None,
-                 network_configuration: Optional[pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentNetworkConfigurationArgs']]] = None,
-                 organization: Optional[pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentOrganizationArgs']]] = None,
+                 network_configuration: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentNetworkConfigurationArgs', 'CpsThirdPartyEnrollmentNetworkConfigurationArgsDict']]] = None,
+                 organization: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentOrganizationArgs', 'CpsThirdPartyEnrollmentOrganizationArgsDict']]] = None,
                  sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  secure_network: Optional[pulumi.Input[str]] = None,
                  signature_algorithm: Optional[pulumi.Input[str]] = None,
                  sni_only: Optional[pulumi.Input[bool]] = None,
-                 tech_contact: Optional[pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentTechContactArgs']]] = None,
-                 timeouts: Optional[pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentTimeoutsArgs']]] = None,
+                 tech_contact: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentTechContactArgs', 'CpsThirdPartyEnrollmentTechContactArgsDict']]] = None,
+                 timeouts: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentTimeoutsArgs', 'CpsThirdPartyEnrollmentTimeoutsArgsDict']]] = None,
                  __props__=None):
         """
         Create a CpsThirdPartyEnrollment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] acknowledge_pre_verification_warnings: Whether acknowledge warnings before certificate verification
-        :param pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentAdminContactArgs']] admin_contact: Contact information for the certificate administrator to use at organization
+        :param pulumi.Input[Union['CpsThirdPartyEnrollmentAdminContactArgs', 'CpsThirdPartyEnrollmentAdminContactArgsDict']] admin_contact: Contact information for the certificate administrator to use at organization
         :param pulumi.Input[bool] allow_duplicate_common_name: Allow to duplicate common name
         :param pulumi.Input[Sequence[pulumi.Input[str]]] auto_approve_warnings: List of warnings to be automatically approved
         :param pulumi.Input[str] certificate_chain_type: Certificate trust chain type
         :param pulumi.Input[bool] change_management: When set to false, the certificate will be deployed to both staging and production networks
         :param pulumi.Input[str] common_name: Common name used for enrollment
         :param pulumi.Input[str] contract_id: Contract ID for which enrollment is retrieved
-        :param pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentCsrArgs']] csr: Data used for generation of Certificate Signing Request
+        :param pulumi.Input[Union['CpsThirdPartyEnrollmentCsrArgs', 'CpsThirdPartyEnrollmentCsrArgsDict']] csr: Data used for generation of Certificate Signing Request
         :param pulumi.Input[bool] exclude_sans: When true, SANs are excluded from the CSR
-        :param pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentNetworkConfigurationArgs']] network_configuration: Settings containing network information and TLS metadata used by CPS
-        :param pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentOrganizationArgs']] organization: Organization information
+        :param pulumi.Input[Union['CpsThirdPartyEnrollmentNetworkConfigurationArgs', 'CpsThirdPartyEnrollmentNetworkConfigurationArgsDict']] network_configuration: Settings containing network information and TLS metadata used by CPS
+        :param pulumi.Input[Union['CpsThirdPartyEnrollmentOrganizationArgs', 'CpsThirdPartyEnrollmentOrganizationArgsDict']] organization: Organization information
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: List of SANs
         :param pulumi.Input[str] secure_network: Type of TLS deployment network
         :param pulumi.Input[bool] sni_only: Whether Server Name Indication is used for enrollment
-        :param pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentTechContactArgs']] tech_contact: Contact information for an administrator at Akamai
-        :param pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentTimeoutsArgs']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['CpsThirdPartyEnrollmentTechContactArgs', 'CpsThirdPartyEnrollmentTechContactArgsDict']] tech_contact: Contact information for an administrator at Akamai
+        :param pulumi.Input[Union['CpsThirdPartyEnrollmentTimeoutsArgs', 'CpsThirdPartyEnrollmentTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
         """
         ...
     @overload
@@ -658,23 +658,23 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  acknowledge_pre_verification_warnings: Optional[pulumi.Input[bool]] = None,
-                 admin_contact: Optional[pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentAdminContactArgs']]] = None,
+                 admin_contact: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentAdminContactArgs', 'CpsThirdPartyEnrollmentAdminContactArgsDict']]] = None,
                  allow_duplicate_common_name: Optional[pulumi.Input[bool]] = None,
                  auto_approve_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  certificate_chain_type: Optional[pulumi.Input[str]] = None,
                  change_management: Optional[pulumi.Input[bool]] = None,
                  common_name: Optional[pulumi.Input[str]] = None,
                  contract_id: Optional[pulumi.Input[str]] = None,
-                 csr: Optional[pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentCsrArgs']]] = None,
+                 csr: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentCsrArgs', 'CpsThirdPartyEnrollmentCsrArgsDict']]] = None,
                  exclude_sans: Optional[pulumi.Input[bool]] = None,
-                 network_configuration: Optional[pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentNetworkConfigurationArgs']]] = None,
-                 organization: Optional[pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentOrganizationArgs']]] = None,
+                 network_configuration: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentNetworkConfigurationArgs', 'CpsThirdPartyEnrollmentNetworkConfigurationArgsDict']]] = None,
+                 organization: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentOrganizationArgs', 'CpsThirdPartyEnrollmentOrganizationArgsDict']]] = None,
                  sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  secure_network: Optional[pulumi.Input[str]] = None,
                  signature_algorithm: Optional[pulumi.Input[str]] = None,
                  sni_only: Optional[pulumi.Input[bool]] = None,
-                 tech_contact: Optional[pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentTechContactArgs']]] = None,
-                 timeouts: Optional[pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentTimeoutsArgs']]] = None,
+                 tech_contact: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentTechContactArgs', 'CpsThirdPartyEnrollmentTechContactArgsDict']]] = None,
+                 timeouts: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentTimeoutsArgs', 'CpsThirdPartyEnrollmentTimeoutsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -731,23 +731,23 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             acknowledge_pre_verification_warnings: Optional[pulumi.Input[bool]] = None,
-            admin_contact: Optional[pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentAdminContactArgs']]] = None,
+            admin_contact: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentAdminContactArgs', 'CpsThirdPartyEnrollmentAdminContactArgsDict']]] = None,
             allow_duplicate_common_name: Optional[pulumi.Input[bool]] = None,
             auto_approve_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             certificate_chain_type: Optional[pulumi.Input[str]] = None,
             change_management: Optional[pulumi.Input[bool]] = None,
             common_name: Optional[pulumi.Input[str]] = None,
             contract_id: Optional[pulumi.Input[str]] = None,
-            csr: Optional[pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentCsrArgs']]] = None,
+            csr: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentCsrArgs', 'CpsThirdPartyEnrollmentCsrArgsDict']]] = None,
             exclude_sans: Optional[pulumi.Input[bool]] = None,
-            network_configuration: Optional[pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentNetworkConfigurationArgs']]] = None,
-            organization: Optional[pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentOrganizationArgs']]] = None,
+            network_configuration: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentNetworkConfigurationArgs', 'CpsThirdPartyEnrollmentNetworkConfigurationArgsDict']]] = None,
+            organization: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentOrganizationArgs', 'CpsThirdPartyEnrollmentOrganizationArgsDict']]] = None,
             sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             secure_network: Optional[pulumi.Input[str]] = None,
             signature_algorithm: Optional[pulumi.Input[str]] = None,
             sni_only: Optional[pulumi.Input[bool]] = None,
-            tech_contact: Optional[pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentTechContactArgs']]] = None,
-            timeouts: Optional[pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentTimeoutsArgs']]] = None) -> 'CpsThirdPartyEnrollment':
+            tech_contact: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentTechContactArgs', 'CpsThirdPartyEnrollmentTechContactArgsDict']]] = None,
+            timeouts: Optional[pulumi.Input[Union['CpsThirdPartyEnrollmentTimeoutsArgs', 'CpsThirdPartyEnrollmentTimeoutsArgsDict']]] = None) -> 'CpsThirdPartyEnrollment':
         """
         Get an existing CpsThirdPartyEnrollment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -756,22 +756,22 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] acknowledge_pre_verification_warnings: Whether acknowledge warnings before certificate verification
-        :param pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentAdminContactArgs']] admin_contact: Contact information for the certificate administrator to use at organization
+        :param pulumi.Input[Union['CpsThirdPartyEnrollmentAdminContactArgs', 'CpsThirdPartyEnrollmentAdminContactArgsDict']] admin_contact: Contact information for the certificate administrator to use at organization
         :param pulumi.Input[bool] allow_duplicate_common_name: Allow to duplicate common name
         :param pulumi.Input[Sequence[pulumi.Input[str]]] auto_approve_warnings: List of warnings to be automatically approved
         :param pulumi.Input[str] certificate_chain_type: Certificate trust chain type
         :param pulumi.Input[bool] change_management: When set to false, the certificate will be deployed to both staging and production networks
         :param pulumi.Input[str] common_name: Common name used for enrollment
         :param pulumi.Input[str] contract_id: Contract ID for which enrollment is retrieved
-        :param pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentCsrArgs']] csr: Data used for generation of Certificate Signing Request
+        :param pulumi.Input[Union['CpsThirdPartyEnrollmentCsrArgs', 'CpsThirdPartyEnrollmentCsrArgsDict']] csr: Data used for generation of Certificate Signing Request
         :param pulumi.Input[bool] exclude_sans: When true, SANs are excluded from the CSR
-        :param pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentNetworkConfigurationArgs']] network_configuration: Settings containing network information and TLS metadata used by CPS
-        :param pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentOrganizationArgs']] organization: Organization information
+        :param pulumi.Input[Union['CpsThirdPartyEnrollmentNetworkConfigurationArgs', 'CpsThirdPartyEnrollmentNetworkConfigurationArgsDict']] network_configuration: Settings containing network information and TLS metadata used by CPS
+        :param pulumi.Input[Union['CpsThirdPartyEnrollmentOrganizationArgs', 'CpsThirdPartyEnrollmentOrganizationArgsDict']] organization: Organization information
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: List of SANs
         :param pulumi.Input[str] secure_network: Type of TLS deployment network
         :param pulumi.Input[bool] sni_only: Whether Server Name Indication is used for enrollment
-        :param pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentTechContactArgs']] tech_contact: Contact information for an administrator at Akamai
-        :param pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentTimeoutsArgs']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['CpsThirdPartyEnrollmentTechContactArgs', 'CpsThirdPartyEnrollmentTechContactArgsDict']] tech_contact: Contact information for an administrator at Akamai
+        :param pulumi.Input[Union['CpsThirdPartyEnrollmentTimeoutsArgs', 'CpsThirdPartyEnrollmentTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

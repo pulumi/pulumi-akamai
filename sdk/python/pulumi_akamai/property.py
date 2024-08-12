@@ -405,7 +405,7 @@ class Property(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  contract_id: Optional[pulumi.Input[str]] = None,
                  group_id: Optional[pulumi.Input[str]] = None,
-                 hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyHostnameArgs']]]]] = None,
+                 hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PropertyHostnameArgs', 'PropertyHostnameArgsDict']]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
                  property_id: Optional[pulumi.Input[str]] = None,
@@ -451,7 +451,7 @@ class Property(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  contract_id: Optional[pulumi.Input[str]] = None,
                  group_id: Optional[pulumi.Input[str]] = None,
-                 hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyHostnameArgs']]]]] = None,
+                 hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PropertyHostnameArgs', 'PropertyHostnameArgsDict']]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
                  property_id: Optional[pulumi.Input[str]] = None,
@@ -502,16 +502,16 @@ class Property(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             contract_id: Optional[pulumi.Input[str]] = None,
             group_id: Optional[pulumi.Input[str]] = None,
-            hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyHostnameArgs']]]]] = None,
+            hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PropertyHostnameArgs', 'PropertyHostnameArgsDict']]]]] = None,
             latest_version: Optional[pulumi.Input[int]] = None,
             name: Optional[pulumi.Input[str]] = None,
             product_id: Optional[pulumi.Input[str]] = None,
             production_version: Optional[pulumi.Input[int]] = None,
             property_id: Optional[pulumi.Input[str]] = None,
             read_version: Optional[pulumi.Input[int]] = None,
-            rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyRuleErrorArgs']]]]] = None,
+            rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PropertyRuleErrorArgs', 'PropertyRuleErrorArgsDict']]]]] = None,
             rule_format: Optional[pulumi.Input[str]] = None,
-            rule_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyRuleWarningArgs']]]]] = None,
+            rule_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PropertyRuleWarningArgs', 'PropertyRuleWarningArgsDict']]]]] = None,
             rules: Optional[pulumi.Input[str]] = None,
             staging_version: Optional[pulumi.Input[int]] = None,
             version_notes: Optional[pulumi.Input[str]] = None) -> 'Property':
@@ -531,7 +531,7 @@ class Property(pulumi.CustomResource):
         :param pulumi.Input[str] property_id: Property ID
         :param pulumi.Input[int] read_version: Required property's version to be read
         :param pulumi.Input[str] rule_format: Specify the rule format version (defaults to latest version available when created)
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyRuleWarningArgs']]]] rule_warnings: Rule validation warnings
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PropertyRuleWarningArgs', 'PropertyRuleWarningArgsDict']]]] rule_warnings: Rule validation warnings
         :param pulumi.Input[str] rules: Property Rules as JSON
         :param pulumi.Input[int] staging_version: Property's version currently activated in staging (zero when not active in staging)
         :param pulumi.Input[str] version_notes: Property version notes

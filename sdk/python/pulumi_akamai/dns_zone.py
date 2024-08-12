@@ -339,7 +339,7 @@ class DnsZone(pulumi.CustomResource):
                  sign_and_serve: Optional[pulumi.Input[bool]] = None,
                  sign_and_serve_algorithm: Optional[pulumi.Input[str]] = None,
                  target: Optional[pulumi.Input[str]] = None,
-                 tsig_key: Optional[pulumi.Input[pulumi.InputType['DnsZoneTsigKeyArgs']]] = None,
+                 tsig_key: Optional[pulumi.Input[Union['DnsZoneTsigKeyArgs', 'DnsZoneTsigKeyArgsDict']]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  zone: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -379,7 +379,7 @@ class DnsZone(pulumi.CustomResource):
                  sign_and_serve: Optional[pulumi.Input[bool]] = None,
                  sign_and_serve_algorithm: Optional[pulumi.Input[str]] = None,
                  target: Optional[pulumi.Input[str]] = None,
-                 tsig_key: Optional[pulumi.Input[pulumi.InputType['DnsZoneTsigKeyArgs']]] = None,
+                 tsig_key: Optional[pulumi.Input[Union['DnsZoneTsigKeyArgs', 'DnsZoneTsigKeyArgsDict']]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  zone: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -433,7 +433,7 @@ class DnsZone(pulumi.CustomResource):
             sign_and_serve: Optional[pulumi.Input[bool]] = None,
             sign_and_serve_algorithm: Optional[pulumi.Input[str]] = None,
             target: Optional[pulumi.Input[str]] = None,
-            tsig_key: Optional[pulumi.Input[pulumi.InputType['DnsZoneTsigKeyArgs']]] = None,
+            tsig_key: Optional[pulumi.Input[Union['DnsZoneTsigKeyArgs', 'DnsZoneTsigKeyArgsDict']]] = None,
             type: Optional[pulumi.Input[str]] = None,
             version_id: Optional[pulumi.Input[str]] = None,
             zone: Optional[pulumi.Input[str]] = None) -> 'DnsZone':

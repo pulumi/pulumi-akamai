@@ -375,7 +375,7 @@ class CpsUploadCertificate(pulumi.CustomResource):
                  certificate_ecdsa_pem: Optional[pulumi.Input[str]] = None,
                  certificate_rsa_pem: Optional[pulumi.Input[str]] = None,
                  enrollment_id: Optional[pulumi.Input[int]] = None,
-                 timeouts: Optional[pulumi.Input[pulumi.InputType['CpsUploadCertificateTimeoutsArgs']]] = None,
+                 timeouts: Optional[pulumi.Input[Union['CpsUploadCertificateTimeoutsArgs', 'CpsUploadCertificateTimeoutsArgsDict']]] = None,
                  trust_chain_ecdsa_pem: Optional[pulumi.Input[str]] = None,
                  trust_chain_rsa_pem: Optional[pulumi.Input[str]] = None,
                  wait_for_deployment: Optional[pulumi.Input[bool]] = None,
@@ -390,7 +390,7 @@ class CpsUploadCertificate(pulumi.CustomResource):
         :param pulumi.Input[str] certificate_ecdsa_pem: ECDSA certificate in pem format to be uploaded
         :param pulumi.Input[str] certificate_rsa_pem: RSA certificate in pem format to be uploaded
         :param pulumi.Input[int] enrollment_id: The unique identifier of the enrollment
-        :param pulumi.Input[pulumi.InputType['CpsUploadCertificateTimeoutsArgs']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['CpsUploadCertificateTimeoutsArgs', 'CpsUploadCertificateTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[str] trust_chain_ecdsa_pem: Trust chain in pem format for provided ECDSA certificate
         :param pulumi.Input[str] trust_chain_rsa_pem: Trust chain in pem format for provided RSA certificate
         :param pulumi.Input[bool] wait_for_deployment: Whether to wait for certificate to be deployed
@@ -424,7 +424,7 @@ class CpsUploadCertificate(pulumi.CustomResource):
                  certificate_ecdsa_pem: Optional[pulumi.Input[str]] = None,
                  certificate_rsa_pem: Optional[pulumi.Input[str]] = None,
                  enrollment_id: Optional[pulumi.Input[int]] = None,
-                 timeouts: Optional[pulumi.Input[pulumi.InputType['CpsUploadCertificateTimeoutsArgs']]] = None,
+                 timeouts: Optional[pulumi.Input[Union['CpsUploadCertificateTimeoutsArgs', 'CpsUploadCertificateTimeoutsArgsDict']]] = None,
                  trust_chain_ecdsa_pem: Optional[pulumi.Input[str]] = None,
                  trust_chain_rsa_pem: Optional[pulumi.Input[str]] = None,
                  wait_for_deployment: Optional[pulumi.Input[bool]] = None,
@@ -466,7 +466,7 @@ class CpsUploadCertificate(pulumi.CustomResource):
             certificate_ecdsa_pem: Optional[pulumi.Input[str]] = None,
             certificate_rsa_pem: Optional[pulumi.Input[str]] = None,
             enrollment_id: Optional[pulumi.Input[int]] = None,
-            timeouts: Optional[pulumi.Input[pulumi.InputType['CpsUploadCertificateTimeoutsArgs']]] = None,
+            timeouts: Optional[pulumi.Input[Union['CpsUploadCertificateTimeoutsArgs', 'CpsUploadCertificateTimeoutsArgsDict']]] = None,
             trust_chain_ecdsa_pem: Optional[pulumi.Input[str]] = None,
             trust_chain_rsa_pem: Optional[pulumi.Input[str]] = None,
             unacknowledged_warnings: Optional[pulumi.Input[bool]] = None,
@@ -484,7 +484,7 @@ class CpsUploadCertificate(pulumi.CustomResource):
         :param pulumi.Input[str] certificate_ecdsa_pem: ECDSA certificate in pem format to be uploaded
         :param pulumi.Input[str] certificate_rsa_pem: RSA certificate in pem format to be uploaded
         :param pulumi.Input[int] enrollment_id: The unique identifier of the enrollment
-        :param pulumi.Input[pulumi.InputType['CpsUploadCertificateTimeoutsArgs']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[Union['CpsUploadCertificateTimeoutsArgs', 'CpsUploadCertificateTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[str] trust_chain_ecdsa_pem: Trust chain in pem format for provided ECDSA certificate
         :param pulumi.Input[str] trust_chain_rsa_pem: Trust chain in pem format for provided RSA certificate
         :param pulumi.Input[bool] unacknowledged_warnings: Used to distinguish whether there are unacknowledged warnings for a certificate
