@@ -33,7 +33,7 @@ public class BotmanCustomCode extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public BotmanCustomCode(String name) {
+    public BotmanCustomCode(java.lang.String name) {
         this(name, BotmanCustomCodeArgs.Empty);
     }
     /**
@@ -41,7 +41,7 @@ public class BotmanCustomCode extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public BotmanCustomCode(String name, BotmanCustomCodeArgs args) {
+    public BotmanCustomCode(java.lang.String name, BotmanCustomCodeArgs args) {
         this(name, args, null);
     }
     /**
@@ -50,15 +50,22 @@ public class BotmanCustomCode extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public BotmanCustomCode(String name, BotmanCustomCodeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("akamai:index/botmanCustomCode:BotmanCustomCode", name, args == null ? BotmanCustomCodeArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+    public BotmanCustomCode(java.lang.String name, BotmanCustomCodeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("akamai:index/botmanCustomCode:BotmanCustomCode", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private BotmanCustomCode(String name, Output<String> id, @Nullable BotmanCustomCodeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("akamai:index/botmanCustomCode:BotmanCustomCode", name, state, makeResourceOptions(options, id));
+    private BotmanCustomCode(java.lang.String name, Output<java.lang.String> id, @Nullable BotmanCustomCodeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("akamai:index/botmanCustomCode:BotmanCustomCode", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static BotmanCustomCodeArgs makeArgs(BotmanCustomCodeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? BotmanCustomCodeArgs.Empty : args;
+    }
+
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -74,7 +81,7 @@ public class BotmanCustomCode extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static BotmanCustomCode get(String name, Output<String> id, @Nullable BotmanCustomCodeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static BotmanCustomCode get(java.lang.String name, Output<java.lang.String> id, @Nullable BotmanCustomCodeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new BotmanCustomCode(name, id, state, options);
     }
 }

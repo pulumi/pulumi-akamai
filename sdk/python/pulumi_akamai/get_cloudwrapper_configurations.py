@@ -53,7 +53,7 @@ class AwaitableGetCloudwrapperConfigurationsResult(GetCloudwrapperConfigurations
             id=self.id)
 
 
-def get_cloudwrapper_configurations(configurations: Optional[Sequence[pulumi.InputType['GetCloudwrapperConfigurationsConfigurationArgs']]] = None,
+def get_cloudwrapper_configurations(configurations: Optional[Sequence[Union['GetCloudwrapperConfigurationsConfigurationArgs', 'GetCloudwrapperConfigurationsConfigurationArgsDict']]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudwrapperConfigurationsResult:
     """
     Use this data source to access information about an existing resource.
@@ -69,7 +69,7 @@ def get_cloudwrapper_configurations(configurations: Optional[Sequence[pulumi.Inp
 
 
 @_utilities.lift_output_func(get_cloudwrapper_configurations)
-def get_cloudwrapper_configurations_output(configurations: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCloudwrapperConfigurationsConfigurationArgs']]]]] = None,
+def get_cloudwrapper_configurations_output(configurations: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudwrapperConfigurationsConfigurationArgs', 'GetCloudwrapperConfigurationsConfigurationArgsDict']]]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudwrapperConfigurationsResult]:
     """
     Use this data source to access information about an existing resource.

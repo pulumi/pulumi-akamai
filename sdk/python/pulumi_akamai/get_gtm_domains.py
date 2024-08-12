@@ -53,7 +53,7 @@ class AwaitableGetGtmDomainsResult(GetGtmDomainsResult):
             id=self.id)
 
 
-def get_gtm_domains(domains: Optional[Sequence[pulumi.InputType['GetGtmDomainsDomainArgs']]] = None,
+def get_gtm_domains(domains: Optional[Sequence[Union['GetGtmDomainsDomainArgs', 'GetGtmDomainsDomainArgsDict']]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGtmDomainsResult:
     """
     Use this data source to access information about an existing resource.
@@ -69,7 +69,7 @@ def get_gtm_domains(domains: Optional[Sequence[pulumi.InputType['GetGtmDomainsDo
 
 
 @_utilities.lift_output_func(get_gtm_domains)
-def get_gtm_domains_output(domains: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetGtmDomainsDomainArgs']]]]] = None,
+def get_gtm_domains_output(domains: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmDomainsDomainArgs', 'GetGtmDomainsDomainArgsDict']]]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGtmDomainsResult]:
     """
     Use this data source to access information about an existing resource.

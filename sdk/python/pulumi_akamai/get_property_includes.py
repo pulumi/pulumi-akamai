@@ -93,7 +93,7 @@ class AwaitableGetPropertyIncludesResult(GetPropertyIncludesResult):
 
 def get_property_includes(contract_id: Optional[str] = None,
                           group_id: Optional[str] = None,
-                          parent_property: Optional[pulumi.InputType['GetPropertyIncludesParentPropertyArgs']] = None,
+                          parent_property: Optional[Union['GetPropertyIncludesParentPropertyArgs', 'GetPropertyIncludesParentPropertyArgsDict']] = None,
                           type: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyIncludesResult:
     """
@@ -119,7 +119,7 @@ def get_property_includes(contract_id: Optional[str] = None,
 @_utilities.lift_output_func(get_property_includes)
 def get_property_includes_output(contract_id: Optional[pulumi.Input[str]] = None,
                                  group_id: Optional[pulumi.Input[str]] = None,
-                                 parent_property: Optional[pulumi.Input[Optional[pulumi.InputType['GetPropertyIncludesParentPropertyArgs']]]] = None,
+                                 parent_property: Optional[pulumi.Input[Optional[Union['GetPropertyIncludesParentPropertyArgs', 'GetPropertyIncludesParentPropertyArgsDict']]]] = None,
                                  type: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyIncludesResult]:
     """
