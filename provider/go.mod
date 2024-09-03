@@ -1,6 +1,8 @@
 module github.com/pulumi/pulumi-akamai/provider/v7
 
-go 1.21.12
+go 1.22
+
+toolchain go1.22.6
 
 replace (
 	github.com/akamai/terraform-provider-akamai/v5 => ../upstream
@@ -11,10 +13,10 @@ replace (
 
 require (
 	github.com/akamai/terraform-provider-akamai/v6 v6.0.0
-	github.com/pulumi/pulumi-terraform-bridge/pf v0.42.1
-	github.com/pulumi/pulumi-terraform-bridge/v3 v3.89.1
-	github.com/pulumi/pulumi/pkg/v3 v3.129.0
-	github.com/pulumi/pulumi/sdk/v3 v3.129.0
+	github.com/pulumi/pulumi-terraform-bridge/pf v0.42.2-0.20240830143852-beec4df2d17b
+	github.com/pulumi/pulumi-terraform-bridge/v3 v3.89.2-0.20240830143852-beec4df2d17b
+	github.com/pulumi/pulumi/pkg/v3 v3.130.0
+	github.com/pulumi/pulumi/sdk/v3 v3.130.0
 	github.com/stretchr/testify v1.9.0
 )
 
