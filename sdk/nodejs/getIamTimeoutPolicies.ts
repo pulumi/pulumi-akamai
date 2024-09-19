@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getIamTimeoutPolicies(opts?: pulumi.InvokeOptions): Promise<GetIamTimeoutPoliciesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getIamTimeoutPolicies:getIamTimeoutPolicies", {
     }, opts);
@@ -22,5 +21,7 @@ export interface GetIamTimeoutPoliciesResult {
     readonly policies: {[key: string]: number};
 }
 export function getIamTimeoutPoliciesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetIamTimeoutPoliciesResult> {
-    return pulumi.output(getIamTimeoutPolicies(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getIamTimeoutPolicies:getIamTimeoutPolicies", {
+    }, opts);
 }

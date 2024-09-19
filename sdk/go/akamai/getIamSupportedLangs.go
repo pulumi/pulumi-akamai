@@ -29,13 +29,19 @@ type GetIamSupportedLangsResult struct {
 }
 
 func GetIamSupportedLangsOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetIamSupportedLangsResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamSupportedLangsResult, error) {
-		r, err := GetIamSupportedLangs(ctx, opts...)
-		var s GetIamSupportedLangsResult
-		if r != nil {
-			s = *r
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamSupportedLangsResultOutput, error) {
+		opts = internal.PkgInvokeDefaultOpts(opts)
+		var rv GetIamSupportedLangsResult
+		secret, err := ctx.InvokePackageRaw("akamai:index/getIamSupportedLangs:getIamSupportedLangs", nil, &rv, "", opts...)
+		if err != nil {
+			return GetIamSupportedLangsResultOutput{}, err
 		}
-		return s, err
+
+		output := pulumi.ToOutput(rv).(GetIamSupportedLangsResultOutput)
+		if secret {
+			return pulumi.ToSecret(output).(GetIamSupportedLangsResultOutput), nil
+		}
+		return output, nil
 	}).(GetIamSupportedLangsResultOutput)
 }
 

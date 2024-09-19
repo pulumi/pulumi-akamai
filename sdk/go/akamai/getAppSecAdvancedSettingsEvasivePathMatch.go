@@ -39,14 +39,20 @@ type LookupAppSecAdvancedSettingsEvasivePathMatchResult struct {
 
 func LookupAppSecAdvancedSettingsEvasivePathMatchOutput(ctx *pulumi.Context, args LookupAppSecAdvancedSettingsEvasivePathMatchOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecAdvancedSettingsEvasivePathMatchResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupAppSecAdvancedSettingsEvasivePathMatchResult, error) {
+		ApplyT(func(v interface{}) (LookupAppSecAdvancedSettingsEvasivePathMatchResultOutput, error) {
 			args := v.(LookupAppSecAdvancedSettingsEvasivePathMatchArgs)
-			r, err := LookupAppSecAdvancedSettingsEvasivePathMatch(ctx, &args, opts...)
-			var s LookupAppSecAdvancedSettingsEvasivePathMatchResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupAppSecAdvancedSettingsEvasivePathMatchResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecAdvancedSettingsEvasivePathMatch:getAppSecAdvancedSettingsEvasivePathMatch", args, &rv, "", opts...)
+			if err != nil {
+				return LookupAppSecAdvancedSettingsEvasivePathMatchResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupAppSecAdvancedSettingsEvasivePathMatchResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupAppSecAdvancedSettingsEvasivePathMatchResultOutput), nil
+			}
+			return output, nil
 		}).(LookupAppSecAdvancedSettingsEvasivePathMatchResultOutput)
 }
 

@@ -6,7 +6,6 @@ import * as utilities from "./utilities";
 
 export function getBotmanBotEndpointCoverageReport(args?: GetBotmanBotEndpointCoverageReportArgs, opts?: pulumi.InvokeOptions): Promise<GetBotmanBotEndpointCoverageReportResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getBotmanBotEndpointCoverageReport:getBotmanBotEndpointCoverageReport", {
         "configId": args.configId,
@@ -35,7 +34,12 @@ export interface GetBotmanBotEndpointCoverageReportResult {
     readonly operationId?: string;
 }
 export function getBotmanBotEndpointCoverageReportOutput(args?: GetBotmanBotEndpointCoverageReportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanBotEndpointCoverageReportResult> {
-    return pulumi.output(args).apply((a: any) => getBotmanBotEndpointCoverageReport(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getBotmanBotEndpointCoverageReport:getBotmanBotEndpointCoverageReport", {
+        "configId": args.configId,
+        "operationId": args.operationId,
+    }, opts);
 }
 
 /**

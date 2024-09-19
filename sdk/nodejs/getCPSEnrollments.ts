@@ -7,7 +7,6 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getCPSEnrollments(args: GetCPSEnrollmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetCPSEnrollmentsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getCPSEnrollments:getCPSEnrollments", {
         "contractId": args.contractId,
@@ -33,7 +32,10 @@ export interface GetCPSEnrollmentsResult {
     readonly id: string;
 }
 export function getCPSEnrollmentsOutput(args: GetCPSEnrollmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCPSEnrollmentsResult> {
-    return pulumi.output(args).apply((a: any) => getCPSEnrollments(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getCPSEnrollments:getCPSEnrollments", {
+        "contractId": args.contractId,
+    }, opts);
 }
 
 /**

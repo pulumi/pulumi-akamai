@@ -29,13 +29,19 @@ type GetIamTimezonesResult struct {
 }
 
 func GetIamTimezonesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetIamTimezonesResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamTimezonesResult, error) {
-		r, err := GetIamTimezones(ctx, opts...)
-		var s GetIamTimezonesResult
-		if r != nil {
-			s = *r
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamTimezonesResultOutput, error) {
+		opts = internal.PkgInvokeDefaultOpts(opts)
+		var rv GetIamTimezonesResult
+		secret, err := ctx.InvokePackageRaw("akamai:index/getIamTimezones:getIamTimezones", nil, &rv, "", opts...)
+		if err != nil {
+			return GetIamTimezonesResultOutput{}, err
 		}
-		return s, err
+
+		output := pulumi.ToOutput(rv).(GetIamTimezonesResultOutput)
+		if secret {
+			return pulumi.ToSecret(output).(GetIamTimezonesResultOutput), nil
+		}
+		return output, nil
 	}).(GetIamTimezonesResultOutput)
 }
 

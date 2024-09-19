@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getBotmanCustomDenyAction(args: GetBotmanCustomDenyActionArgs, opts?: pulumi.InvokeOptions): Promise<GetBotmanCustomDenyActionResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getBotmanCustomDenyAction:getBotmanCustomDenyAction", {
         "actionId": args.actionId,
@@ -34,7 +33,11 @@ export interface GetBotmanCustomDenyActionResult {
     readonly json: string;
 }
 export function getBotmanCustomDenyActionOutput(args: GetBotmanCustomDenyActionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanCustomDenyActionResult> {
-    return pulumi.output(args).apply((a: any) => getBotmanCustomDenyAction(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getBotmanCustomDenyAction:getBotmanCustomDenyAction", {
+        "actionId": args.actionId,
+        "configId": args.configId,
+    }, opts);
 }
 
 /**

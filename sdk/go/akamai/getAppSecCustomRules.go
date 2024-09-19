@@ -39,14 +39,20 @@ type GetAppSecCustomRulesResult struct {
 
 func GetAppSecCustomRulesOutput(ctx *pulumi.Context, args GetAppSecCustomRulesOutputArgs, opts ...pulumi.InvokeOption) GetAppSecCustomRulesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAppSecCustomRulesResult, error) {
+		ApplyT(func(v interface{}) (GetAppSecCustomRulesResultOutput, error) {
 			args := v.(GetAppSecCustomRulesArgs)
-			r, err := GetAppSecCustomRules(ctx, &args, opts...)
-			var s GetAppSecCustomRulesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAppSecCustomRulesResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecCustomRules:getAppSecCustomRules", args, &rv, "", opts...)
+			if err != nil {
+				return GetAppSecCustomRulesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAppSecCustomRulesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAppSecCustomRulesResultOutput), nil
+			}
+			return output, nil
 		}).(GetAppSecCustomRulesResultOutput)
 }
 

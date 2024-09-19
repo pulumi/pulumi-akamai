@@ -8,7 +8,6 @@ import * as utilities from "./utilities";
 
 export function getCloudwrapperProperties(args?: GetCloudwrapperPropertiesArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudwrapperPropertiesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getCloudwrapperProperties:getCloudwrapperProperties", {
         "contractIds": args.contractIds,
@@ -39,7 +38,13 @@ export interface GetCloudwrapperPropertiesResult {
     readonly unused?: boolean;
 }
 export function getCloudwrapperPropertiesOutput(args?: GetCloudwrapperPropertiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudwrapperPropertiesResult> {
-    return pulumi.output(args).apply((a: any) => getCloudwrapperProperties(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getCloudwrapperProperties:getCloudwrapperProperties", {
+        "contractIds": args.contractIds,
+        "properties": args.properties,
+        "unused": args.unused,
+    }, opts);
 }
 
 /**

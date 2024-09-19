@@ -7,7 +7,6 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getPropertyIncludes(args: GetPropertyIncludesArgs, opts?: pulumi.InvokeOptions): Promise<GetPropertyIncludesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getPropertyIncludes:getPropertyIncludes", {
         "contractId": args.contractId,
@@ -42,7 +41,13 @@ export interface GetPropertyIncludesResult {
     readonly type?: string;
 }
 export function getPropertyIncludesOutput(args: GetPropertyIncludesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyIncludesResult> {
-    return pulumi.output(args).apply((a: any) => getPropertyIncludes(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getPropertyIncludes:getPropertyIncludes", {
+        "contractId": args.contractId,
+        "groupId": args.groupId,
+        "parentProperty": args.parentProperty,
+        "type": args.type,
+    }, opts);
 }
 
 /**

@@ -36,14 +36,20 @@ type LookupBotmanClientSideSecurityResult struct {
 
 func LookupBotmanClientSideSecurityOutput(ctx *pulumi.Context, args LookupBotmanClientSideSecurityOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanClientSideSecurityResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupBotmanClientSideSecurityResult, error) {
+		ApplyT(func(v interface{}) (LookupBotmanClientSideSecurityResultOutput, error) {
 			args := v.(LookupBotmanClientSideSecurityArgs)
-			r, err := LookupBotmanClientSideSecurity(ctx, &args, opts...)
-			var s LookupBotmanClientSideSecurityResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupBotmanClientSideSecurityResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getBotmanClientSideSecurity:getBotmanClientSideSecurity", args, &rv, "", opts...)
+			if err != nil {
+				return LookupBotmanClientSideSecurityResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupBotmanClientSideSecurityResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupBotmanClientSideSecurityResultOutput), nil
+			}
+			return output, nil
 		}).(LookupBotmanClientSideSecurityResultOutput)
 }
 

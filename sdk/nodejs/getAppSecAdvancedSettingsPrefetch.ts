@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getAppSecAdvancedSettingsPrefetch(args: GetAppSecAdvancedSettingsPrefetchArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecAdvancedSettingsPrefetchResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecAdvancedSettingsPrefetch:getAppSecAdvancedSettingsPrefetch", {
         "configId": args.configId,
@@ -32,7 +31,10 @@ export interface GetAppSecAdvancedSettingsPrefetchResult {
     readonly outputText: string;
 }
 export function getAppSecAdvancedSettingsPrefetchOutput(args: GetAppSecAdvancedSettingsPrefetchOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecAdvancedSettingsPrefetchResult> {
-    return pulumi.output(args).apply((a: any) => getAppSecAdvancedSettingsPrefetch(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getAppSecAdvancedSettingsPrefetch:getAppSecAdvancedSettingsPrefetch", {
+        "configId": args.configId,
+    }, opts);
 }
 
 /**

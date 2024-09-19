@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getAppSecSlowPost(args: GetAppSecSlowPostArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecSlowPostResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecSlowPost:getAppSecSlowPost", {
         "configId": args.configId,
@@ -35,7 +34,11 @@ export interface GetAppSecSlowPostResult {
     readonly securityPolicyId: string;
 }
 export function getAppSecSlowPostOutput(args: GetAppSecSlowPostOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecSlowPostResult> {
-    return pulumi.output(args).apply((a: any) => getAppSecSlowPost(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getAppSecSlowPost:getAppSecSlowPost", {
+        "configId": args.configId,
+        "securityPolicyId": args.securityPolicyId,
+    }, opts);
 }
 
 /**

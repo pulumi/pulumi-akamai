@@ -7,7 +7,6 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getGroups(opts?: pulumi.InvokeOptions): Promise<GetGroupsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getGroups:getGroups", {
     }, opts);
@@ -24,5 +23,7 @@ export interface GetGroupsResult {
     readonly id: string;
 }
 export function getGroupsOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetGroupsResult> {
-    return pulumi.output(getGroups(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getGroups:getGroups", {
+    }, opts);
 }

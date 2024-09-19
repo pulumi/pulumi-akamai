@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getBotmanTransactionalEndpoint(args: GetBotmanTransactionalEndpointArgs, opts?: pulumi.InvokeOptions): Promise<GetBotmanTransactionalEndpointResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getBotmanTransactionalEndpoint:getBotmanTransactionalEndpoint", {
         "configId": args.configId,
@@ -37,7 +36,12 @@ export interface GetBotmanTransactionalEndpointResult {
     readonly securityPolicyId: string;
 }
 export function getBotmanTransactionalEndpointOutput(args: GetBotmanTransactionalEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanTransactionalEndpointResult> {
-    return pulumi.output(args).apply((a: any) => getBotmanTransactionalEndpoint(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getBotmanTransactionalEndpoint:getBotmanTransactionalEndpoint", {
+        "configId": args.configId,
+        "operationId": args.operationId,
+        "securityPolicyId": args.securityPolicyId,
+    }, opts);
 }
 
 /**

@@ -41,14 +41,20 @@ type GetAppSecContractsGroupsResult struct {
 
 func GetAppSecContractsGroupsOutput(ctx *pulumi.Context, args GetAppSecContractsGroupsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecContractsGroupsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAppSecContractsGroupsResult, error) {
+		ApplyT(func(v interface{}) (GetAppSecContractsGroupsResultOutput, error) {
 			args := v.(GetAppSecContractsGroupsArgs)
-			r, err := GetAppSecContractsGroups(ctx, &args, opts...)
-			var s GetAppSecContractsGroupsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAppSecContractsGroupsResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecContractsGroups:getAppSecContractsGroups", args, &rv, "", opts...)
+			if err != nil {
+				return GetAppSecContractsGroupsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAppSecContractsGroupsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAppSecContractsGroupsResultOutput), nil
+			}
+			return output, nil
 		}).(GetAppSecContractsGroupsResultOutput)
 }
 

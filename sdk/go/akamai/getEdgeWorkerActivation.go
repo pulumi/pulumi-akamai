@@ -39,14 +39,20 @@ type GetEdgeWorkerActivationResult struct {
 
 func GetEdgeWorkerActivationOutput(ctx *pulumi.Context, args GetEdgeWorkerActivationOutputArgs, opts ...pulumi.InvokeOption) GetEdgeWorkerActivationResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetEdgeWorkerActivationResult, error) {
+		ApplyT(func(v interface{}) (GetEdgeWorkerActivationResultOutput, error) {
 			args := v.(GetEdgeWorkerActivationArgs)
-			r, err := GetEdgeWorkerActivation(ctx, &args, opts...)
-			var s GetEdgeWorkerActivationResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetEdgeWorkerActivationResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getEdgeWorkerActivation:getEdgeWorkerActivation", args, &rv, "", opts...)
+			if err != nil {
+				return GetEdgeWorkerActivationResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetEdgeWorkerActivationResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetEdgeWorkerActivationResultOutput), nil
+			}
+			return output, nil
 		}).(GetEdgeWorkerActivationResultOutput)
 }
 

@@ -29,13 +29,19 @@ type GetBotmanBotAnalyticsCookieValuesResult struct {
 }
 
 func GetBotmanBotAnalyticsCookieValuesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetBotmanBotAnalyticsCookieValuesResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetBotmanBotAnalyticsCookieValuesResult, error) {
-		r, err := GetBotmanBotAnalyticsCookieValues(ctx, opts...)
-		var s GetBotmanBotAnalyticsCookieValuesResult
-		if r != nil {
-			s = *r
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetBotmanBotAnalyticsCookieValuesResultOutput, error) {
+		opts = internal.PkgInvokeDefaultOpts(opts)
+		var rv GetBotmanBotAnalyticsCookieValuesResult
+		secret, err := ctx.InvokePackageRaw("akamai:index/getBotmanBotAnalyticsCookieValues:getBotmanBotAnalyticsCookieValues", nil, &rv, "", opts...)
+		if err != nil {
+			return GetBotmanBotAnalyticsCookieValuesResultOutput{}, err
 		}
-		return s, err
+
+		output := pulumi.ToOutput(rv).(GetBotmanBotAnalyticsCookieValuesResultOutput)
+		if secret {
+			return pulumi.ToSecret(output).(GetBotmanBotAnalyticsCookieValuesResultOutput), nil
+		}
+		return output, nil
 	}).(GetBotmanBotAnalyticsCookieValuesResultOutput)
 }
 

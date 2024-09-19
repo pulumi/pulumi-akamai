@@ -39,14 +39,20 @@ type LookupAppsecAdvancedSettingsRequestBodyResult struct {
 
 func LookupAppsecAdvancedSettingsRequestBodyOutput(ctx *pulumi.Context, args LookupAppsecAdvancedSettingsRequestBodyOutputArgs, opts ...pulumi.InvokeOption) LookupAppsecAdvancedSettingsRequestBodyResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupAppsecAdvancedSettingsRequestBodyResult, error) {
+		ApplyT(func(v interface{}) (LookupAppsecAdvancedSettingsRequestBodyResultOutput, error) {
 			args := v.(LookupAppsecAdvancedSettingsRequestBodyArgs)
-			r, err := LookupAppsecAdvancedSettingsRequestBody(ctx, &args, opts...)
-			var s LookupAppsecAdvancedSettingsRequestBodyResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupAppsecAdvancedSettingsRequestBodyResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getAppsecAdvancedSettingsRequestBody:getAppsecAdvancedSettingsRequestBody", args, &rv, "", opts...)
+			if err != nil {
+				return LookupAppsecAdvancedSettingsRequestBodyResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupAppsecAdvancedSettingsRequestBodyResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupAppsecAdvancedSettingsRequestBodyResultOutput), nil
+			}
+			return output, nil
 		}).(LookupAppsecAdvancedSettingsRequestBodyResultOutput)
 }
 

@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getAppSecThreatIntel(args: GetAppSecThreatIntelArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecThreatIntelResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecThreatIntel:getAppSecThreatIntel", {
         "configId": args.configId,
@@ -36,7 +35,11 @@ export interface GetAppSecThreatIntelResult {
     readonly threatIntel: string;
 }
 export function getAppSecThreatIntelOutput(args: GetAppSecThreatIntelOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecThreatIntelResult> {
-    return pulumi.output(args).apply((a: any) => getAppSecThreatIntel(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getAppSecThreatIntel:getAppSecThreatIntel", {
+        "configId": args.configId,
+        "securityPolicyId": args.securityPolicyId,
+    }, opts);
 }
 
 /**

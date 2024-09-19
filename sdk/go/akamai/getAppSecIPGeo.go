@@ -44,14 +44,20 @@ type LookupAppSecIPGeoResult struct {
 
 func LookupAppSecIPGeoOutput(ctx *pulumi.Context, args LookupAppSecIPGeoOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecIPGeoResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupAppSecIPGeoResult, error) {
+		ApplyT(func(v interface{}) (LookupAppSecIPGeoResultOutput, error) {
 			args := v.(LookupAppSecIPGeoArgs)
-			r, err := LookupAppSecIPGeo(ctx, &args, opts...)
-			var s LookupAppSecIPGeoResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupAppSecIPGeoResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecIPGeo:getAppSecIPGeo", args, &rv, "", opts...)
+			if err != nil {
+				return LookupAppSecIPGeoResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupAppSecIPGeoResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupAppSecIPGeoResultOutput), nil
+			}
+			return output, nil
 		}).(LookupAppSecIPGeoResultOutput)
 }
 

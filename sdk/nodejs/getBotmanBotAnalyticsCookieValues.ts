@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getBotmanBotAnalyticsCookieValues(opts?: pulumi.InvokeOptions): Promise<GetBotmanBotAnalyticsCookieValuesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getBotmanBotAnalyticsCookieValues:getBotmanBotAnalyticsCookieValues", {
     }, opts);
@@ -22,5 +21,7 @@ export interface GetBotmanBotAnalyticsCookieValuesResult {
     readonly json: string;
 }
 export function getBotmanBotAnalyticsCookieValuesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanBotAnalyticsCookieValuesResult> {
-    return pulumi.output(getBotmanBotAnalyticsCookieValues(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getBotmanBotAnalyticsCookieValues:getBotmanBotAnalyticsCookieValues", {
+    }, opts);
 }

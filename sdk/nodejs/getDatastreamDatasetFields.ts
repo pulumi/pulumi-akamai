@@ -8,7 +8,6 @@ import * as utilities from "./utilities";
 
 export function getDatastreamDatasetFields(args?: GetDatastreamDatasetFieldsArgs, opts?: pulumi.InvokeOptions): Promise<GetDatastreamDatasetFieldsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getDatastreamDatasetFields:getDatastreamDatasetFields", {
         "productId": args.productId,
@@ -34,7 +33,11 @@ export interface GetDatastreamDatasetFieldsResult {
     readonly productId?: string;
 }
 export function getDatastreamDatasetFieldsOutput(args?: GetDatastreamDatasetFieldsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatastreamDatasetFieldsResult> {
-    return pulumi.output(args).apply((a: any) => getDatastreamDatasetFields(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getDatastreamDatasetFields:getDatastreamDatasetFields", {
+        "productId": args.productId,
+    }, opts);
 }
 
 /**

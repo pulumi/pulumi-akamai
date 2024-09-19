@@ -44,14 +44,20 @@ type LookupAppSecWafModeResult struct {
 
 func LookupAppSecWafModeOutput(ctx *pulumi.Context, args LookupAppSecWafModeOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecWafModeResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupAppSecWafModeResult, error) {
+		ApplyT(func(v interface{}) (LookupAppSecWafModeResultOutput, error) {
 			args := v.(LookupAppSecWafModeArgs)
-			r, err := LookupAppSecWafMode(ctx, &args, opts...)
-			var s LookupAppSecWafModeResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupAppSecWafModeResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecWafMode:getAppSecWafMode", args, &rv, "", opts...)
+			if err != nil {
+				return LookupAppSecWafModeResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupAppSecWafModeResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupAppSecWafModeResultOutput), nil
+			}
+			return output, nil
 		}).(LookupAppSecWafModeResultOutput)
 }
 

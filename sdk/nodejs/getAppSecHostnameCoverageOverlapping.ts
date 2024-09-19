@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getAppSecHostnameCoverageOverlapping(args: GetAppSecHostnameCoverageOverlappingArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecHostnameCoverageOverlappingResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecHostnameCoverageOverlapping:getAppSecHostnameCoverageOverlapping", {
         "configId": args.configId,
@@ -35,7 +34,11 @@ export interface GetAppSecHostnameCoverageOverlappingResult {
     readonly outputText: string;
 }
 export function getAppSecHostnameCoverageOverlappingOutput(args: GetAppSecHostnameCoverageOverlappingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecHostnameCoverageOverlappingResult> {
-    return pulumi.output(args).apply((a: any) => getAppSecHostnameCoverageOverlapping(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getAppSecHostnameCoverageOverlapping:getAppSecHostnameCoverageOverlapping", {
+        "configId": args.configId,
+        "hostname": args.hostname,
+    }, opts);
 }
 
 /**

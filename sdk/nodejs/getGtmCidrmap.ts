@@ -7,7 +7,6 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getGtmCidrmap(args: GetGtmCidrmapArgs, opts?: pulumi.InvokeOptions): Promise<GetGtmCidrmapResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getGtmCidrmap:getGtmCidrmap", {
         "assignments": args.assignments,
@@ -44,7 +43,14 @@ export interface GetGtmCidrmapResult {
     readonly mapName: string;
 }
 export function getGtmCidrmapOutput(args: GetGtmCidrmapOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGtmCidrmapResult> {
-    return pulumi.output(args).apply((a: any) => getGtmCidrmap(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getGtmCidrmap:getGtmCidrmap", {
+        "assignments": args.assignments,
+        "defaultDatacenter": args.defaultDatacenter,
+        "domain": args.domain,
+        "links": args.links,
+        "mapName": args.mapName,
+    }, opts);
 }
 
 /**

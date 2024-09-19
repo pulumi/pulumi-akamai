@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getAppSecRuleUpgradeDetails(args: GetAppSecRuleUpgradeDetailsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecRuleUpgradeDetailsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecRuleUpgradeDetails:getAppSecRuleUpgradeDetails", {
         "configId": args.configId,
@@ -35,7 +34,11 @@ export interface GetAppSecRuleUpgradeDetailsResult {
     readonly securityPolicyId: string;
 }
 export function getAppSecRuleUpgradeDetailsOutput(args: GetAppSecRuleUpgradeDetailsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecRuleUpgradeDetailsResult> {
-    return pulumi.output(args).apply((a: any) => getAppSecRuleUpgradeDetails(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getAppSecRuleUpgradeDetails:getAppSecRuleUpgradeDetails", {
+        "configId": args.configId,
+        "securityPolicyId": args.securityPolicyId,
+    }, opts);
 }
 
 /**

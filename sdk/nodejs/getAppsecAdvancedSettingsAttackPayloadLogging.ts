@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getAppsecAdvancedSettingsAttackPayloadLogging(args: GetAppsecAdvancedSettingsAttackPayloadLoggingArgs, opts?: pulumi.InvokeOptions): Promise<GetAppsecAdvancedSettingsAttackPayloadLoggingResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppsecAdvancedSettingsAttackPayloadLogging:getAppsecAdvancedSettingsAttackPayloadLogging", {
         "configId": args.configId,
@@ -35,7 +34,11 @@ export interface GetAppsecAdvancedSettingsAttackPayloadLoggingResult {
     readonly securityPolicyId?: string;
 }
 export function getAppsecAdvancedSettingsAttackPayloadLoggingOutput(args: GetAppsecAdvancedSettingsAttackPayloadLoggingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppsecAdvancedSettingsAttackPayloadLoggingResult> {
-    return pulumi.output(args).apply((a: any) => getAppsecAdvancedSettingsAttackPayloadLogging(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getAppsecAdvancedSettingsAttackPayloadLogging:getAppsecAdvancedSettingsAttackPayloadLogging", {
+        "configId": args.configId,
+        "securityPolicyId": args.securityPolicyId,
+    }, opts);
 }
 
 /**

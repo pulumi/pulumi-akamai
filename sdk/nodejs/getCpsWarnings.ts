@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getCpsWarnings(opts?: pulumi.InvokeOptions): Promise<GetCpsWarningsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getCpsWarnings:getCpsWarnings", {
     }, opts);
@@ -22,5 +21,7 @@ export interface GetCpsWarningsResult {
     readonly warnings: {[key: string]: string};
 }
 export function getCpsWarningsOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetCpsWarningsResult> {
-    return pulumi.output(getCpsWarnings(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getCpsWarnings:getCpsWarnings", {
+    }, opts);
 }

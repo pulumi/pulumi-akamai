@@ -50,14 +50,20 @@ type LookupCloudletsPolicyResult struct {
 
 func LookupCloudletsPolicyOutput(ctx *pulumi.Context, args LookupCloudletsPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupCloudletsPolicyResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupCloudletsPolicyResult, error) {
+		ApplyT(func(v interface{}) (LookupCloudletsPolicyResultOutput, error) {
 			args := v.(LookupCloudletsPolicyArgs)
-			r, err := LookupCloudletsPolicy(ctx, &args, opts...)
-			var s LookupCloudletsPolicyResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupCloudletsPolicyResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getCloudletsPolicy:getCloudletsPolicy", args, &rv, "", opts...)
+			if err != nil {
+				return LookupCloudletsPolicyResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupCloudletsPolicyResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupCloudletsPolicyResultOutput), nil
+			}
+			return output, nil
 		}).(LookupCloudletsPolicyResultOutput)
 }
 

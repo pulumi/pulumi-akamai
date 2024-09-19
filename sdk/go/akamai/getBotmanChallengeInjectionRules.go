@@ -36,14 +36,20 @@ type LookupBotmanChallengeInjectionRulesResult struct {
 
 func LookupBotmanChallengeInjectionRulesOutput(ctx *pulumi.Context, args LookupBotmanChallengeInjectionRulesOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanChallengeInjectionRulesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupBotmanChallengeInjectionRulesResult, error) {
+		ApplyT(func(v interface{}) (LookupBotmanChallengeInjectionRulesResultOutput, error) {
 			args := v.(LookupBotmanChallengeInjectionRulesArgs)
-			r, err := LookupBotmanChallengeInjectionRules(ctx, &args, opts...)
-			var s LookupBotmanChallengeInjectionRulesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupBotmanChallengeInjectionRulesResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getBotmanChallengeInjectionRules:getBotmanChallengeInjectionRules", args, &rv, "", opts...)
+			if err != nil {
+				return LookupBotmanChallengeInjectionRulesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupBotmanChallengeInjectionRulesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupBotmanChallengeInjectionRulesResultOutput), nil
+			}
+			return output, nil
 		}).(LookupBotmanChallengeInjectionRulesResultOutput)
 }
 

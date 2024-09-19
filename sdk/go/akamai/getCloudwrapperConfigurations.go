@@ -35,14 +35,20 @@ type GetCloudwrapperConfigurationsResult struct {
 
 func GetCloudwrapperConfigurationsOutput(ctx *pulumi.Context, args GetCloudwrapperConfigurationsOutputArgs, opts ...pulumi.InvokeOption) GetCloudwrapperConfigurationsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetCloudwrapperConfigurationsResult, error) {
+		ApplyT(func(v interface{}) (GetCloudwrapperConfigurationsResultOutput, error) {
 			args := v.(GetCloudwrapperConfigurationsArgs)
-			r, err := GetCloudwrapperConfigurations(ctx, &args, opts...)
-			var s GetCloudwrapperConfigurationsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetCloudwrapperConfigurationsResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getCloudwrapperConfigurations:getCloudwrapperConfigurations", args, &rv, "", opts...)
+			if err != nil {
+				return GetCloudwrapperConfigurationsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetCloudwrapperConfigurationsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetCloudwrapperConfigurationsResultOutput), nil
+			}
+			return output, nil
 		}).(GetCloudwrapperConfigurationsResultOutput)
 }
 

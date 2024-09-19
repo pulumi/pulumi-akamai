@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getAppSecBypassNetworkLists(args: GetAppSecBypassNetworkListsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecBypassNetworkListsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecBypassNetworkLists:getAppSecBypassNetworkLists", {
         "configId": args.configId,
@@ -36,7 +35,11 @@ export interface GetAppSecBypassNetworkListsResult {
     readonly securityPolicyId: string;
 }
 export function getAppSecBypassNetworkListsOutput(args: GetAppSecBypassNetworkListsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecBypassNetworkListsResult> {
-    return pulumi.output(args).apply((a: any) => getAppSecBypassNetworkLists(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getAppSecBypassNetworkLists:getAppSecBypassNetworkLists", {
+        "configId": args.configId,
+        "securityPolicyId": args.securityPolicyId,
+    }, opts);
 }
 
 /**

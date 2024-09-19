@@ -7,7 +7,6 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getGtmAsmap(args: GetGtmAsmapArgs, opts?: pulumi.InvokeOptions): Promise<GetGtmAsmapResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getGtmAsmap:getGtmAsmap", {
         "assignments": args.assignments,
@@ -44,7 +43,14 @@ export interface GetGtmAsmapResult {
     readonly mapName: string;
 }
 export function getGtmAsmapOutput(args: GetGtmAsmapOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGtmAsmapResult> {
-    return pulumi.output(args).apply((a: any) => getGtmAsmap(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getGtmAsmap:getGtmAsmap", {
+        "assignments": args.assignments,
+        "defaultDatacenter": args.defaultDatacenter,
+        "domain": args.domain,
+        "links": args.links,
+        "mapName": args.mapName,
+    }, opts);
 }
 
 /**

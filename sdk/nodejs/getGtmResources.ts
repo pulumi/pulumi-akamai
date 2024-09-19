@@ -7,7 +7,6 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getGtmResources(args: GetGtmResourcesArgs, opts?: pulumi.InvokeOptions): Promise<GetGtmResourcesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getGtmResources:getGtmResources", {
         "domain": args.domain,
@@ -35,7 +34,11 @@ export interface GetGtmResourcesResult {
     readonly resources?: outputs.GetGtmResourcesResource[];
 }
 export function getGtmResourcesOutput(args: GetGtmResourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGtmResourcesResult> {
-    return pulumi.output(args).apply((a: any) => getGtmResources(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getGtmResources:getGtmResources", {
+        "domain": args.domain,
+        "resources": args.resources,
+    }, opts);
 }
 
 /**

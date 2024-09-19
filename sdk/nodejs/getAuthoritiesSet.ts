@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getAuthoritiesSet(args: GetAuthoritiesSetArgs, opts?: pulumi.InvokeOptions): Promise<GetAuthoritiesSetResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAuthoritiesSet:getAuthoritiesSet", {
         "contract": args.contract,
@@ -31,7 +30,10 @@ export interface GetAuthoritiesSetResult {
     readonly id: string;
 }
 export function getAuthoritiesSetOutput(args: GetAuthoritiesSetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuthoritiesSetResult> {
-    return pulumi.output(args).apply((a: any) => getAuthoritiesSet(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getAuthoritiesSet:getAuthoritiesSet", {
+        "contract": args.contract,
+    }, opts);
 }
 
 /**

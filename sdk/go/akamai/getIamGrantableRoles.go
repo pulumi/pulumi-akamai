@@ -29,13 +29,19 @@ type GetIamGrantableRolesResult struct {
 }
 
 func GetIamGrantableRolesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetIamGrantableRolesResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamGrantableRolesResult, error) {
-		r, err := GetIamGrantableRoles(ctx, opts...)
-		var s GetIamGrantableRolesResult
-		if r != nil {
-			s = *r
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamGrantableRolesResultOutput, error) {
+		opts = internal.PkgInvokeDefaultOpts(opts)
+		var rv GetIamGrantableRolesResult
+		secret, err := ctx.InvokePackageRaw("akamai:index/getIamGrantableRoles:getIamGrantableRoles", nil, &rv, "", opts...)
+		if err != nil {
+			return GetIamGrantableRolesResultOutput{}, err
 		}
-		return s, err
+
+		output := pulumi.ToOutput(rv).(GetIamGrantableRolesResultOutput)
+		if secret {
+			return pulumi.ToSecret(output).(GetIamGrantableRolesResultOutput), nil
+		}
+		return output, nil
 	}).(GetIamGrantableRolesResultOutput)
 }
 

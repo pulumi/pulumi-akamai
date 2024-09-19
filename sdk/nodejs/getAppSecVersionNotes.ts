@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getAppSecVersionNotes(args: GetAppSecVersionNotesArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecVersionNotesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecVersionNotes:getAppSecVersionNotes", {
         "configId": args.configId,
@@ -32,7 +31,10 @@ export interface GetAppSecVersionNotesResult {
     readonly outputText: string;
 }
 export function getAppSecVersionNotesOutput(args: GetAppSecVersionNotesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecVersionNotesResult> {
-    return pulumi.output(args).apply((a: any) => getAppSecVersionNotes(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getAppSecVersionNotes:getAppSecVersionNotes", {
+        "configId": args.configId,
+    }, opts);
 }
 
 /**

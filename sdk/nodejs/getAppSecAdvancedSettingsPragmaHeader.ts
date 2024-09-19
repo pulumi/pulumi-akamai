@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getAppSecAdvancedSettingsPragmaHeader(args: GetAppSecAdvancedSettingsPragmaHeaderArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecAdvancedSettingsPragmaHeaderResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecAdvancedSettingsPragmaHeader:getAppSecAdvancedSettingsPragmaHeader", {
         "configId": args.configId,
@@ -35,7 +34,11 @@ export interface GetAppSecAdvancedSettingsPragmaHeaderResult {
     readonly securityPolicyId?: string;
 }
 export function getAppSecAdvancedSettingsPragmaHeaderOutput(args: GetAppSecAdvancedSettingsPragmaHeaderOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecAdvancedSettingsPragmaHeaderResult> {
-    return pulumi.output(args).apply((a: any) => getAppSecAdvancedSettingsPragmaHeader(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getAppSecAdvancedSettingsPragmaHeader:getAppSecAdvancedSettingsPragmaHeader", {
+        "configId": args.configId,
+        "securityPolicyId": args.securityPolicyId,
+    }, opts);
 }
 
 /**

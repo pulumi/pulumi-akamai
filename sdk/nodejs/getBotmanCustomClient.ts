@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getBotmanCustomClient(args: GetBotmanCustomClientArgs, opts?: pulumi.InvokeOptions): Promise<GetBotmanCustomClientResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getBotmanCustomClient:getBotmanCustomClient", {
         "configId": args.configId,
@@ -34,7 +33,11 @@ export interface GetBotmanCustomClientResult {
     readonly json: string;
 }
 export function getBotmanCustomClientOutput(args: GetBotmanCustomClientOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanCustomClientResult> {
-    return pulumi.output(args).apply((a: any) => getBotmanCustomClient(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getBotmanCustomClient:getBotmanCustomClient", {
+        "configId": args.configId,
+        "customClientId": args.customClientId,
+    }, opts);
 }
 
 /**

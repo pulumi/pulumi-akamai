@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getAppSecReputationProfileActions(args: GetAppSecReputationProfileActionsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecReputationProfileActionsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecReputationProfileActions:getAppSecReputationProfileActions", {
         "configId": args.configId,
@@ -39,7 +38,12 @@ export interface GetAppSecReputationProfileActionsResult {
     readonly securityPolicyId: string;
 }
 export function getAppSecReputationProfileActionsOutput(args: GetAppSecReputationProfileActionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecReputationProfileActionsResult> {
-    return pulumi.output(args).apply((a: any) => getAppSecReputationProfileActions(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getAppSecReputationProfileActions:getAppSecReputationProfileActions", {
+        "configId": args.configId,
+        "reputationProfileId": args.reputationProfileId,
+        "securityPolicyId": args.securityPolicyId,
+    }, opts);
 }
 
 /**

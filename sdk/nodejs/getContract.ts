@@ -6,7 +6,6 @@ import * as utilities from "./utilities";
 
 export function getContract(args?: GetContractArgs, opts?: pulumi.InvokeOptions): Promise<GetContractResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getContract:getContract", {
         "groupId": args.groupId,
@@ -34,7 +33,12 @@ export interface GetContractResult {
     readonly id: string;
 }
 export function getContractOutput(args?: GetContractOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContractResult> {
-    return pulumi.output(args).apply((a: any) => getContract(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getContract:getContract", {
+        "groupId": args.groupId,
+        "groupName": args.groupName,
+    }, opts);
 }
 
 /**

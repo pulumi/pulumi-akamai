@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getAppSecHostnameCoverage(opts?: pulumi.InvokeOptions): Promise<GetAppSecHostnameCoverageResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecHostnameCoverage:getAppSecHostnameCoverage", {
     }, opts);
@@ -23,5 +22,7 @@ export interface GetAppSecHostnameCoverageResult {
     readonly outputText: string;
 }
 export function getAppSecHostnameCoverageOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecHostnameCoverageResult> {
-    return pulumi.output(getAppSecHostnameCoverage(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getAppSecHostnameCoverage:getAppSecHostnameCoverage", {
+    }, opts);
 }

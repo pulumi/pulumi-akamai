@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getAppSecMatchTargets(args: GetAppSecMatchTargetsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecMatchTargetsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecMatchTargets:getAppSecMatchTargets", {
         "configId": args.configId,
@@ -35,7 +34,11 @@ export interface GetAppSecMatchTargetsResult {
     readonly outputText: string;
 }
 export function getAppSecMatchTargetsOutput(args: GetAppSecMatchTargetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecMatchTargetsResult> {
-    return pulumi.output(args).apply((a: any) => getAppSecMatchTargets(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getAppSecMatchTargets:getAppSecMatchTargets", {
+        "configId": args.configId,
+        "matchTargetId": args.matchTargetId,
+    }, opts);
 }
 
 /**

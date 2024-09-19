@@ -43,14 +43,20 @@ type LookupEdgeWorkerResult struct {
 
 func LookupEdgeWorkerOutput(ctx *pulumi.Context, args LookupEdgeWorkerOutputArgs, opts ...pulumi.InvokeOption) LookupEdgeWorkerResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupEdgeWorkerResult, error) {
+		ApplyT(func(v interface{}) (LookupEdgeWorkerResultOutput, error) {
 			args := v.(LookupEdgeWorkerArgs)
-			r, err := LookupEdgeWorker(ctx, &args, opts...)
-			var s LookupEdgeWorkerResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupEdgeWorkerResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getEdgeWorker:getEdgeWorker", args, &rv, "", opts...)
+			if err != nil {
+				return LookupEdgeWorkerResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupEdgeWorkerResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupEdgeWorkerResultOutput), nil
+			}
+			return output, nil
 		}).(LookupEdgeWorkerResultOutput)
 }
 

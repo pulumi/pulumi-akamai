@@ -6,7 +6,6 @@ import * as utilities from "./utilities";
 
 export function getAppSecContractsGroups(args?: GetAppSecContractsGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecContractsGroupsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecContractsGroups:getAppSecContractsGroups", {
         "contractid": args.contractid,
@@ -38,7 +37,12 @@ export interface GetAppSecContractsGroupsResult {
     readonly outputText: string;
 }
 export function getAppSecContractsGroupsOutput(args?: GetAppSecContractsGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecContractsGroupsResult> {
-    return pulumi.output(args).apply((a: any) => getAppSecContractsGroups(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getAppSecContractsGroups:getAppSecContractsGroups", {
+        "contractid": args.contractid,
+        "groupid": args.groupid,
+    }, opts);
 }
 
 /**

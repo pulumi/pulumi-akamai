@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getBotmanChallengeInjectionRules(args: GetBotmanChallengeInjectionRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetBotmanChallengeInjectionRulesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getBotmanChallengeInjectionRules:getBotmanChallengeInjectionRules", {
         "configId": args.configId,
@@ -31,7 +30,10 @@ export interface GetBotmanChallengeInjectionRulesResult {
     readonly json: string;
 }
 export function getBotmanChallengeInjectionRulesOutput(args: GetBotmanChallengeInjectionRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanChallengeInjectionRulesResult> {
-    return pulumi.output(args).apply((a: any) => getBotmanChallengeInjectionRules(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getBotmanChallengeInjectionRules:getBotmanChallengeInjectionRules", {
+        "configId": args.configId,
+    }, opts);
 }
 
 /**

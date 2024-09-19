@@ -29,13 +29,19 @@ type GetPropertyRuleFormatsResult struct {
 }
 
 func GetPropertyRuleFormatsOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetPropertyRuleFormatsResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetPropertyRuleFormatsResult, error) {
-		r, err := GetPropertyRuleFormats(ctx, opts...)
-		var s GetPropertyRuleFormatsResult
-		if r != nil {
-			s = *r
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetPropertyRuleFormatsResultOutput, error) {
+		opts = internal.PkgInvokeDefaultOpts(opts)
+		var rv GetPropertyRuleFormatsResult
+		secret, err := ctx.InvokePackageRaw("akamai:index/getPropertyRuleFormats:getPropertyRuleFormats", nil, &rv, "", opts...)
+		if err != nil {
+			return GetPropertyRuleFormatsResultOutput{}, err
 		}
-		return s, err
+
+		output := pulumi.ToOutput(rv).(GetPropertyRuleFormatsResultOutput)
+		if secret {
+			return pulumi.ToSecret(output).(GetPropertyRuleFormatsResultOutput), nil
+		}
+		return output, nil
 	}).(GetPropertyRuleFormatsResultOutput)
 }
 

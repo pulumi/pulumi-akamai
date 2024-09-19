@@ -29,13 +29,19 @@ type GetIamRolesResult struct {
 }
 
 func GetIamRolesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetIamRolesResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamRolesResult, error) {
-		r, err := GetIamRoles(ctx, opts...)
-		var s GetIamRolesResult
-		if r != nil {
-			s = *r
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamRolesResultOutput, error) {
+		opts = internal.PkgInvokeDefaultOpts(opts)
+		var rv GetIamRolesResult
+		secret, err := ctx.InvokePackageRaw("akamai:index/getIamRoles:getIamRoles", nil, &rv, "", opts...)
+		if err != nil {
+			return GetIamRolesResultOutput{}, err
 		}
-		return s, err
+
+		output := pulumi.ToOutput(rv).(GetIamRolesResultOutput)
+		if secret {
+			return pulumi.ToSecret(output).(GetIamRolesResultOutput), nil
+		}
+		return output, nil
 	}).(GetIamRolesResultOutput)
 }
 

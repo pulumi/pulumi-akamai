@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getBotmanClientSideSecurity(args: GetBotmanClientSideSecurityArgs, opts?: pulumi.InvokeOptions): Promise<GetBotmanClientSideSecurityResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getBotmanClientSideSecurity:getBotmanClientSideSecurity", {
         "configId": args.configId,
@@ -31,7 +30,10 @@ export interface GetBotmanClientSideSecurityResult {
     readonly json: string;
 }
 export function getBotmanClientSideSecurityOutput(args: GetBotmanClientSideSecurityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanClientSideSecurityResult> {
-    return pulumi.output(args).apply((a: any) => getBotmanClientSideSecurity(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getBotmanClientSideSecurity:getBotmanClientSideSecurity", {
+        "configId": args.configId,
+    }, opts);
 }
 
 /**

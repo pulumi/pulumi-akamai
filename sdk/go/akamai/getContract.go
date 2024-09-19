@@ -37,14 +37,20 @@ type GetContractResult struct {
 
 func GetContractOutput(ctx *pulumi.Context, args GetContractOutputArgs, opts ...pulumi.InvokeOption) GetContractResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetContractResult, error) {
+		ApplyT(func(v interface{}) (GetContractResultOutput, error) {
 			args := v.(GetContractArgs)
-			r, err := GetContract(ctx, &args, opts...)
-			var s GetContractResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetContractResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getContract:getContract", args, &rv, "", opts...)
+			if err != nil {
+				return GetContractResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetContractResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetContractResultOutput), nil
+			}
+			return output, nil
 		}).(GetContractResultOutput)
 }
 

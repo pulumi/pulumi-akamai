@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getAppSecWafMode(args: GetAppSecWafModeArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecWafModeResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecWafMode:getAppSecWafMode", {
         "configId": args.configId,
@@ -40,7 +39,11 @@ export interface GetAppSecWafModeResult {
     readonly securityPolicyId: string;
 }
 export function getAppSecWafModeOutput(args: GetAppSecWafModeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecWafModeResult> {
-    return pulumi.output(args).apply((a: any) => getAppSecWafMode(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getAppSecWafMode:getAppSecWafMode", {
+        "configId": args.configId,
+        "securityPolicyId": args.securityPolicyId,
+    }, opts);
 }
 
 /**

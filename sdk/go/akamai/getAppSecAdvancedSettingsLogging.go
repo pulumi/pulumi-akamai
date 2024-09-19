@@ -39,14 +39,20 @@ type LookupAppSecAdvancedSettingsLoggingResult struct {
 
 func LookupAppSecAdvancedSettingsLoggingOutput(ctx *pulumi.Context, args LookupAppSecAdvancedSettingsLoggingOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecAdvancedSettingsLoggingResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupAppSecAdvancedSettingsLoggingResult, error) {
+		ApplyT(func(v interface{}) (LookupAppSecAdvancedSettingsLoggingResultOutput, error) {
 			args := v.(LookupAppSecAdvancedSettingsLoggingArgs)
-			r, err := LookupAppSecAdvancedSettingsLogging(ctx, &args, opts...)
-			var s LookupAppSecAdvancedSettingsLoggingResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupAppSecAdvancedSettingsLoggingResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecAdvancedSettingsLogging:getAppSecAdvancedSettingsLogging", args, &rv, "", opts...)
+			if err != nil {
+				return LookupAppSecAdvancedSettingsLoggingResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupAppSecAdvancedSettingsLoggingResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupAppSecAdvancedSettingsLoggingResultOutput), nil
+			}
+			return output, nil
 		}).(LookupAppSecAdvancedSettingsLoggingResultOutput)
 }
 

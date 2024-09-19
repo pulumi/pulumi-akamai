@@ -7,7 +7,6 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getDatastreamActivationHistory(args: GetDatastreamActivationHistoryArgs, opts?: pulumi.InvokeOptions): Promise<GetDatastreamActivationHistoryResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getDatastreamActivationHistory:getDatastreamActivationHistory", {
         "streamId": args.streamId,
@@ -33,7 +32,10 @@ export interface GetDatastreamActivationHistoryResult {
     readonly streamId: number;
 }
 export function getDatastreamActivationHistoryOutput(args: GetDatastreamActivationHistoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatastreamActivationHistoryResult> {
-    return pulumi.output(args).apply((a: any) => getDatastreamActivationHistory(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getDatastreamActivationHistory:getDatastreamActivationHistory", {
+        "streamId": args.streamId,
+    }, opts);
 }
 
 /**

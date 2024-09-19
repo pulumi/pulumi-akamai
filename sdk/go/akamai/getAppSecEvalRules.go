@@ -43,14 +43,20 @@ type GetAppSecEvalRulesResult struct {
 
 func GetAppSecEvalRulesOutput(ctx *pulumi.Context, args GetAppSecEvalRulesOutputArgs, opts ...pulumi.InvokeOption) GetAppSecEvalRulesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAppSecEvalRulesResult, error) {
+		ApplyT(func(v interface{}) (GetAppSecEvalRulesResultOutput, error) {
 			args := v.(GetAppSecEvalRulesArgs)
-			r, err := GetAppSecEvalRules(ctx, &args, opts...)
-			var s GetAppSecEvalRulesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAppSecEvalRulesResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecEvalRules:getAppSecEvalRules", args, &rv, "", opts...)
+			if err != nil {
+				return GetAppSecEvalRulesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAppSecEvalRulesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAppSecEvalRulesResultOutput), nil
+			}
+			return output, nil
 		}).(GetAppSecEvalRulesResultOutput)
 }
 

@@ -36,14 +36,20 @@ type LookupBotmanChallengeInterceptionRulesResult struct {
 
 func LookupBotmanChallengeInterceptionRulesOutput(ctx *pulumi.Context, args LookupBotmanChallengeInterceptionRulesOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanChallengeInterceptionRulesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupBotmanChallengeInterceptionRulesResult, error) {
+		ApplyT(func(v interface{}) (LookupBotmanChallengeInterceptionRulesResultOutput, error) {
 			args := v.(LookupBotmanChallengeInterceptionRulesArgs)
-			r, err := LookupBotmanChallengeInterceptionRules(ctx, &args, opts...)
-			var s LookupBotmanChallengeInterceptionRulesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupBotmanChallengeInterceptionRulesResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getBotmanChallengeInterceptionRules:getBotmanChallengeInterceptionRules", args, &rv, "", opts...)
+			if err != nil {
+				return LookupBotmanChallengeInterceptionRulesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupBotmanChallengeInterceptionRulesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupBotmanChallengeInterceptionRulesResultOutput), nil
+			}
+			return output, nil
 		}).(LookupBotmanChallengeInterceptionRulesResultOutput)
 }
 

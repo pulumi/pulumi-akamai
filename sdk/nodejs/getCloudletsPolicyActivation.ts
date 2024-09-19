@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getCloudletsPolicyActivation(args: GetCloudletsPolicyActivationArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudletsPolicyActivationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getCloudletsPolicyActivation:getCloudletsPolicyActivation", {
         "associatedProperties": args.associatedProperties,
@@ -38,7 +37,12 @@ export interface GetCloudletsPolicyActivationResult {
     readonly version: number;
 }
 export function getCloudletsPolicyActivationOutput(args: GetCloudletsPolicyActivationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudletsPolicyActivationResult> {
-    return pulumi.output(args).apply((a: any) => getCloudletsPolicyActivation(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getCloudletsPolicyActivation:getCloudletsPolicyActivation", {
+        "associatedProperties": args.associatedProperties,
+        "network": args.network,
+        "policyId": args.policyId,
+    }, opts);
 }
 
 /**

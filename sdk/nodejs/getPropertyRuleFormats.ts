@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getPropertyRuleFormats(opts?: pulumi.InvokeOptions): Promise<GetPropertyRuleFormatsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getPropertyRuleFormats:getPropertyRuleFormats", {
     }, opts);
@@ -22,5 +21,7 @@ export interface GetPropertyRuleFormatsResult {
     readonly ruleFormats: string[];
 }
 export function getPropertyRuleFormatsOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyRuleFormatsResult> {
-    return pulumi.output(getPropertyRuleFormats(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getPropertyRuleFormats:getPropertyRuleFormats", {
+    }, opts);
 }

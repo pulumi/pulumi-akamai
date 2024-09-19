@@ -40,14 +40,20 @@ type LookupEdgekvGroupItemsResult struct {
 
 func LookupEdgekvGroupItemsOutput(ctx *pulumi.Context, args LookupEdgekvGroupItemsOutputArgs, opts ...pulumi.InvokeOption) LookupEdgekvGroupItemsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupEdgekvGroupItemsResult, error) {
+		ApplyT(func(v interface{}) (LookupEdgekvGroupItemsResultOutput, error) {
 			args := v.(LookupEdgekvGroupItemsArgs)
-			r, err := LookupEdgekvGroupItems(ctx, &args, opts...)
-			var s LookupEdgekvGroupItemsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupEdgekvGroupItemsResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getEdgekvGroupItems:getEdgekvGroupItems", args, &rv, "", opts...)
+			if err != nil {
+				return LookupEdgekvGroupItemsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupEdgekvGroupItemsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupEdgekvGroupItemsResultOutput), nil
+			}
+			return output, nil
 		}).(LookupEdgekvGroupItemsResultOutput)
 }
 

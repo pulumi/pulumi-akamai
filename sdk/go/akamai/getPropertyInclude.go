@@ -43,14 +43,20 @@ type LookupPropertyIncludeResult struct {
 
 func LookupPropertyIncludeOutput(ctx *pulumi.Context, args LookupPropertyIncludeOutputArgs, opts ...pulumi.InvokeOption) LookupPropertyIncludeResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupPropertyIncludeResult, error) {
+		ApplyT(func(v interface{}) (LookupPropertyIncludeResultOutput, error) {
 			args := v.(LookupPropertyIncludeArgs)
-			r, err := LookupPropertyInclude(ctx, &args, opts...)
-			var s LookupPropertyIncludeResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupPropertyIncludeResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getPropertyInclude:getPropertyInclude", args, &rv, "", opts...)
+			if err != nil {
+				return LookupPropertyIncludeResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupPropertyIncludeResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupPropertyIncludeResultOutput), nil
+			}
+			return output, nil
 		}).(LookupPropertyIncludeResultOutput)
 }
 

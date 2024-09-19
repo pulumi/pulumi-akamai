@@ -7,7 +7,6 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getPropertiesSearch(args: GetPropertiesSearchArgs, opts?: pulumi.InvokeOptions): Promise<GetPropertiesSearchResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getPropertiesSearch:getPropertiesSearch", {
         "key": args.key,
@@ -36,7 +35,11 @@ export interface GetPropertiesSearchResult {
     readonly value: string;
 }
 export function getPropertiesSearchOutput(args: GetPropertiesSearchOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertiesSearchResult> {
-    return pulumi.output(args).apply((a: any) => getPropertiesSearch(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getPropertiesSearch:getPropertiesSearch", {
+        "key": args.key,
+        "value": args.value,
+    }, opts);
 }
 
 /**

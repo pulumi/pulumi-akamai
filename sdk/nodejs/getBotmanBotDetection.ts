@@ -6,7 +6,6 @@ import * as utilities from "./utilities";
 
 export function getBotmanBotDetection(args?: GetBotmanBotDetectionArgs, opts?: pulumi.InvokeOptions): Promise<GetBotmanBotDetectionResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getBotmanBotDetection:getBotmanBotDetection", {
         "detectionName": args.detectionName,
@@ -32,7 +31,11 @@ export interface GetBotmanBotDetectionResult {
     readonly json: string;
 }
 export function getBotmanBotDetectionOutput(args?: GetBotmanBotDetectionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanBotDetectionResult> {
-    return pulumi.output(args).apply((a: any) => getBotmanBotDetection(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getBotmanBotDetection:getBotmanBotDetection", {
+        "detectionName": args.detectionName,
+    }, opts);
 }
 
 /**

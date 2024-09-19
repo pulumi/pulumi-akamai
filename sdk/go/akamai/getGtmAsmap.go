@@ -43,14 +43,20 @@ type LookupGtmAsmapResult struct {
 
 func LookupGtmAsmapOutput(ctx *pulumi.Context, args LookupGtmAsmapOutputArgs, opts ...pulumi.InvokeOption) LookupGtmAsmapResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupGtmAsmapResult, error) {
+		ApplyT(func(v interface{}) (LookupGtmAsmapResultOutput, error) {
 			args := v.(LookupGtmAsmapArgs)
-			r, err := LookupGtmAsmap(ctx, &args, opts...)
-			var s LookupGtmAsmapResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupGtmAsmapResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getGtmAsmap:getGtmAsmap", args, &rv, "", opts...)
+			if err != nil {
+				return LookupGtmAsmapResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupGtmAsmapResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupGtmAsmapResultOutput), nil
+			}
+			return output, nil
 		}).(LookupGtmAsmapResultOutput)
 }
 
