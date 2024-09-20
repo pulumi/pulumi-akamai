@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getAppSecFailoverHostnames(args: GetAppSecFailoverHostnamesArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecFailoverHostnamesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecFailoverHostnames:getAppSecFailoverHostnames", {
         "configId": args.configId,
@@ -33,7 +32,10 @@ export interface GetAppSecFailoverHostnamesResult {
     readonly outputText: string;
 }
 export function getAppSecFailoverHostnamesOutput(args: GetAppSecFailoverHostnamesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecFailoverHostnamesResult> {
-    return pulumi.output(args).apply((a: any) => getAppSecFailoverHostnames(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getAppSecFailoverHostnames:getAppSecFailoverHostnames", {
+        "configId": args.configId,
+    }, opts);
 }
 
 /**

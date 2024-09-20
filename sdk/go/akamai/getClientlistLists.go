@@ -41,14 +41,20 @@ type GetClientlistListsResult struct {
 
 func GetClientlistListsOutput(ctx *pulumi.Context, args GetClientlistListsOutputArgs, opts ...pulumi.InvokeOption) GetClientlistListsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetClientlistListsResult, error) {
+		ApplyT(func(v interface{}) (GetClientlistListsResultOutput, error) {
 			args := v.(GetClientlistListsArgs)
-			r, err := GetClientlistLists(ctx, &args, opts...)
-			var s GetClientlistListsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetClientlistListsResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getClientlistLists:getClientlistLists", args, &rv, "", opts...)
+			if err != nil {
+				return GetClientlistListsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetClientlistListsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetClientlistListsResultOutput), nil
+			}
+			return output, nil
 		}).(GetClientlistListsResultOutput)
 }
 

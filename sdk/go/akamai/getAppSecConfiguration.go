@@ -40,14 +40,20 @@ type LookupAppSecConfigurationResult struct {
 
 func LookupAppSecConfigurationOutput(ctx *pulumi.Context, args LookupAppSecConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecConfigurationResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupAppSecConfigurationResult, error) {
+		ApplyT(func(v interface{}) (LookupAppSecConfigurationResultOutput, error) {
 			args := v.(LookupAppSecConfigurationArgs)
-			r, err := LookupAppSecConfiguration(ctx, &args, opts...)
-			var s LookupAppSecConfigurationResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupAppSecConfigurationResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecConfiguration:getAppSecConfiguration", args, &rv, "", opts...)
+			if err != nil {
+				return LookupAppSecConfigurationResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupAppSecConfigurationResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupAppSecConfigurationResultOutput), nil
+			}
+			return output, nil
 		}).(LookupAppSecConfigurationResultOutput)
 }
 

@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getBotmanBotCategoryException(args: GetBotmanBotCategoryExceptionArgs, opts?: pulumi.InvokeOptions): Promise<GetBotmanBotCategoryExceptionResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getBotmanBotCategoryException:getBotmanBotCategoryException", {
         "configId": args.configId,
@@ -34,7 +33,11 @@ export interface GetBotmanBotCategoryExceptionResult {
     readonly securityPolicyId: string;
 }
 export function getBotmanBotCategoryExceptionOutput(args: GetBotmanBotCategoryExceptionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanBotCategoryExceptionResult> {
-    return pulumi.output(args).apply((a: any) => getBotmanBotCategoryException(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getBotmanBotCategoryException:getBotmanBotCategoryException", {
+        "configId": args.configId,
+        "securityPolicyId": args.securityPolicyId,
+    }, opts);
 }
 
 /**

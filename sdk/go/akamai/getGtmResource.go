@@ -51,14 +51,20 @@ type LookupGtmResourceResult struct {
 
 func LookupGtmResourceOutput(ctx *pulumi.Context, args LookupGtmResourceOutputArgs, opts ...pulumi.InvokeOption) LookupGtmResourceResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupGtmResourceResult, error) {
+		ApplyT(func(v interface{}) (LookupGtmResourceResultOutput, error) {
 			args := v.(LookupGtmResourceArgs)
-			r, err := LookupGtmResource(ctx, &args, opts...)
-			var s LookupGtmResourceResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupGtmResourceResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getGtmResource:getGtmResource", args, &rv, "", opts...)
+			if err != nil {
+				return LookupGtmResourceResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupGtmResourceResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupGtmResourceResultOutput), nil
+			}
+			return output, nil
 		}).(LookupGtmResourceResultOutput)
 }
 

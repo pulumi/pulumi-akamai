@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getGroup(args: GetGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetGroupResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getGroup:getGroup", {
         "contractId": args.contractId,
@@ -33,7 +32,11 @@ export interface GetGroupResult {
     readonly id: string;
 }
 export function getGroupOutput(args: GetGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGroupResult> {
-    return pulumi.output(args).apply((a: any) => getGroup(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getGroup:getGroup", {
+        "contractId": args.contractId,
+        "groupName": args.groupName,
+    }, opts);
 }
 
 /**

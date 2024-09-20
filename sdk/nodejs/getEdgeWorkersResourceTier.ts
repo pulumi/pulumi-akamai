@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getEdgeWorkersResourceTier(args: GetEdgeWorkersResourceTierArgs, opts?: pulumi.InvokeOptions): Promise<GetEdgeWorkersResourceTierResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getEdgeWorkersResourceTier:getEdgeWorkersResourceTier", {
         "contractId": args.contractId,
@@ -34,7 +33,11 @@ export interface GetEdgeWorkersResourceTierResult {
     readonly resourceTierName: string;
 }
 export function getEdgeWorkersResourceTierOutput(args: GetEdgeWorkersResourceTierOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEdgeWorkersResourceTierResult> {
-    return pulumi.output(args).apply((a: any) => getEdgeWorkersResourceTier(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getEdgeWorkersResourceTier:getEdgeWorkersResourceTier", {
+        "contractId": args.contractId,
+        "resourceTierName": args.resourceTierName,
+    }, opts);
 }
 
 /**

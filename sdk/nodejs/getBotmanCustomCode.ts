@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getBotmanCustomCode(args: GetBotmanCustomCodeArgs, opts?: pulumi.InvokeOptions): Promise<GetBotmanCustomCodeResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getBotmanCustomCode:getBotmanCustomCode", {
         "configId": args.configId,
@@ -31,7 +30,10 @@ export interface GetBotmanCustomCodeResult {
     readonly json: string;
 }
 export function getBotmanCustomCodeOutput(args: GetBotmanCustomCodeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanCustomCodeResult> {
-    return pulumi.output(args).apply((a: any) => getBotmanCustomCode(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getBotmanCustomCode:getBotmanCustomCode", {
+        "configId": args.configId,
+    }, opts);
 }
 
 /**

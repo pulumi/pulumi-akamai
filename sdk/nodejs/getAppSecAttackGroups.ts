@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getAppSecAttackGroups(args: GetAppSecAttackGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecAttackGroupsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecAttackGroups:getAppSecAttackGroups", {
         "attackGroup": args.attackGroup,
@@ -40,7 +39,12 @@ export interface GetAppSecAttackGroupsResult {
     readonly securityPolicyId: string;
 }
 export function getAppSecAttackGroupsOutput(args: GetAppSecAttackGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecAttackGroupsResult> {
-    return pulumi.output(args).apply((a: any) => getAppSecAttackGroups(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getAppSecAttackGroups:getAppSecAttackGroups", {
+        "attackGroup": args.attackGroup,
+        "configId": args.configId,
+        "securityPolicyId": args.securityPolicyId,
+    }, opts);
 }
 
 /**

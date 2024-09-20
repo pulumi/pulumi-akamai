@@ -36,14 +36,20 @@ type GetIamStatesResult struct {
 
 func GetIamStatesOutput(ctx *pulumi.Context, args GetIamStatesOutputArgs, opts ...pulumi.InvokeOption) GetIamStatesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetIamStatesResult, error) {
+		ApplyT(func(v interface{}) (GetIamStatesResultOutput, error) {
 			args := v.(GetIamStatesArgs)
-			r, err := GetIamStates(ctx, &args, opts...)
-			var s GetIamStatesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetIamStatesResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getIamStates:getIamStates", args, &rv, "", opts...)
+			if err != nil {
+				return GetIamStatesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetIamStatesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetIamStatesResultOutput), nil
+			}
+			return output, nil
 		}).(GetIamStatesResultOutput)
 }
 

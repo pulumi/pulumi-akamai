@@ -6,7 +6,6 @@ import * as utilities from "./utilities";
 
 export function getNetworkLists(args?: GetNetworkListsArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkListsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getNetworkLists:getNetworkLists", {
         "name": args.name,
@@ -43,7 +42,13 @@ export interface GetNetworkListsResult {
     readonly type?: string;
 }
 export function getNetworkListsOutput(args?: GetNetworkListsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkListsResult> {
-    return pulumi.output(args).apply((a: any) => getNetworkLists(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getNetworkLists:getNetworkLists", {
+        "name": args.name,
+        "networkListId": args.networkListId,
+        "type": args.type,
+    }, opts);
 }
 
 /**

@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getAppSecPenaltyBox(args: GetAppSecPenaltyBoxArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecPenaltyBoxResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecPenaltyBox:getAppSecPenaltyBox", {
         "configId": args.configId,
@@ -36,7 +35,11 @@ export interface GetAppSecPenaltyBoxResult {
     readonly securityPolicyId: string;
 }
 export function getAppSecPenaltyBoxOutput(args: GetAppSecPenaltyBoxOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecPenaltyBoxResult> {
-    return pulumi.output(args).apply((a: any) => getAppSecPenaltyBox(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getAppSecPenaltyBox:getAppSecPenaltyBox", {
+        "configId": args.configId,
+        "securityPolicyId": args.securityPolicyId,
+    }, opts);
 }
 
 /**

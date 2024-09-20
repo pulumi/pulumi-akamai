@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getCloudwrapperLocation(args: GetCloudwrapperLocationArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudwrapperLocationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getCloudwrapperLocation:getCloudwrapperLocation", {
         "locationName": args.locationName,
@@ -35,7 +34,11 @@ export interface GetCloudwrapperLocationResult {
     readonly trafficTypeId: number;
 }
 export function getCloudwrapperLocationOutput(args: GetCloudwrapperLocationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudwrapperLocationResult> {
-    return pulumi.output(args).apply((a: any) => getCloudwrapperLocation(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getCloudwrapperLocation:getCloudwrapperLocation", {
+        "locationName": args.locationName,
+        "trafficType": args.trafficType,
+    }, opts);
 }
 
 /**

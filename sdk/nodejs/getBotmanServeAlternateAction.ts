@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getBotmanServeAlternateAction(args: GetBotmanServeAlternateActionArgs, opts?: pulumi.InvokeOptions): Promise<GetBotmanServeAlternateActionResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getBotmanServeAlternateAction:getBotmanServeAlternateAction", {
         "actionId": args.actionId,
@@ -34,7 +33,11 @@ export interface GetBotmanServeAlternateActionResult {
     readonly json: string;
 }
 export function getBotmanServeAlternateActionOutput(args: GetBotmanServeAlternateActionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanServeAlternateActionResult> {
-    return pulumi.output(args).apply((a: any) => getBotmanServeAlternateAction(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getBotmanServeAlternateAction:getBotmanServeAlternateAction", {
+        "actionId": args.actionId,
+        "configId": args.configId,
+    }, opts);
 }
 
 /**

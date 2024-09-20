@@ -36,14 +36,20 @@ type GetGtmDatacentersResult struct {
 
 func GetGtmDatacentersOutput(ctx *pulumi.Context, args GetGtmDatacentersOutputArgs, opts ...pulumi.InvokeOption) GetGtmDatacentersResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetGtmDatacentersResult, error) {
+		ApplyT(func(v interface{}) (GetGtmDatacentersResultOutput, error) {
 			args := v.(GetGtmDatacentersArgs)
-			r, err := GetGtmDatacenters(ctx, &args, opts...)
-			var s GetGtmDatacentersResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetGtmDatacentersResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getGtmDatacenters:getGtmDatacenters", args, &rv, "", opts...)
+			if err != nil {
+				return GetGtmDatacentersResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetGtmDatacentersResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetGtmDatacentersResultOutput), nil
+			}
+			return output, nil
 		}).(GetGtmDatacentersResultOutput)
 }
 

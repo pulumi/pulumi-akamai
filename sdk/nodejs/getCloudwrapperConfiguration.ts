@@ -7,7 +7,6 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getCloudwrapperConfiguration(args: GetCloudwrapperConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudwrapperConfigurationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getCloudwrapperConfiguration:getCloudwrapperConfiguration", {
         "id": args.id,
@@ -46,7 +45,12 @@ export interface GetCloudwrapperConfigurationResult {
     readonly status: string;
 }
 export function getCloudwrapperConfigurationOutput(args: GetCloudwrapperConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudwrapperConfigurationResult> {
-    return pulumi.output(args).apply((a: any) => getCloudwrapperConfiguration(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getCloudwrapperConfiguration:getCloudwrapperConfiguration", {
+        "id": args.id,
+        "locations": args.locations,
+        "multiCdnSettings": args.multiCdnSettings,
+    }, opts);
 }
 
 /**

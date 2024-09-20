@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getIamSupportedLangs(opts?: pulumi.InvokeOptions): Promise<GetIamSupportedLangsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getIamSupportedLangs:getIamSupportedLangs", {
     }, opts);
@@ -22,5 +21,7 @@ export interface GetIamSupportedLangsResult {
     readonly languages: string[];
 }
 export function getIamSupportedLangsOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetIamSupportedLangsResult> {
-    return pulumi.output(getIamSupportedLangs(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getIamSupportedLangs:getIamSupportedLangs", {
+    }, opts);
 }

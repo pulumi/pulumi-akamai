@@ -39,14 +39,20 @@ type GetAppSecRuleUpgradeDetailsResult struct {
 
 func GetAppSecRuleUpgradeDetailsOutput(ctx *pulumi.Context, args GetAppSecRuleUpgradeDetailsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecRuleUpgradeDetailsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAppSecRuleUpgradeDetailsResult, error) {
+		ApplyT(func(v interface{}) (GetAppSecRuleUpgradeDetailsResultOutput, error) {
 			args := v.(GetAppSecRuleUpgradeDetailsArgs)
-			r, err := GetAppSecRuleUpgradeDetails(ctx, &args, opts...)
-			var s GetAppSecRuleUpgradeDetailsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAppSecRuleUpgradeDetailsResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecRuleUpgradeDetails:getAppSecRuleUpgradeDetails", args, &rv, "", opts...)
+			if err != nil {
+				return GetAppSecRuleUpgradeDetailsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAppSecRuleUpgradeDetailsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAppSecRuleUpgradeDetailsResultOutput), nil
+			}
+			return output, nil
 		}).(GetAppSecRuleUpgradeDetailsResultOutput)
 }
 

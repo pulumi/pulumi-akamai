@@ -36,14 +36,20 @@ type GetDatastreamActivationHistoryResult struct {
 
 func GetDatastreamActivationHistoryOutput(ctx *pulumi.Context, args GetDatastreamActivationHistoryOutputArgs, opts ...pulumi.InvokeOption) GetDatastreamActivationHistoryResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetDatastreamActivationHistoryResult, error) {
+		ApplyT(func(v interface{}) (GetDatastreamActivationHistoryResultOutput, error) {
 			args := v.(GetDatastreamActivationHistoryArgs)
-			r, err := GetDatastreamActivationHistory(ctx, &args, opts...)
-			var s GetDatastreamActivationHistoryResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetDatastreamActivationHistoryResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getDatastreamActivationHistory:getDatastreamActivationHistory", args, &rv, "", opts...)
+			if err != nil {
+				return GetDatastreamActivationHistoryResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetDatastreamActivationHistoryResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetDatastreamActivationHistoryResultOutput), nil
+			}
+			return output, nil
 		}).(GetDatastreamActivationHistoryResultOutput)
 }
 

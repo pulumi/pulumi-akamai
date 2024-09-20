@@ -43,14 +43,20 @@ type GetAppSecEvalGroupsResult struct {
 
 func GetAppSecEvalGroupsOutput(ctx *pulumi.Context, args GetAppSecEvalGroupsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecEvalGroupsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAppSecEvalGroupsResult, error) {
+		ApplyT(func(v interface{}) (GetAppSecEvalGroupsResultOutput, error) {
 			args := v.(GetAppSecEvalGroupsArgs)
-			r, err := GetAppSecEvalGroups(ctx, &args, opts...)
-			var s GetAppSecEvalGroupsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAppSecEvalGroupsResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecEvalGroups:getAppSecEvalGroups", args, &rv, "", opts...)
+			if err != nil {
+				return GetAppSecEvalGroupsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAppSecEvalGroupsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAppSecEvalGroupsResultOutput), nil
+			}
+			return output, nil
 		}).(GetAppSecEvalGroupsResultOutput)
 }
 

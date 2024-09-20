@@ -8,7 +8,6 @@ import * as utilities from "./utilities";
 
 export function getDatastreams(args?: GetDatastreamsArgs, opts?: pulumi.InvokeOptions): Promise<GetDatastreamsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getDatastreams:getDatastreams", {
         "groupId": args.groupId,
@@ -34,7 +33,11 @@ export interface GetDatastreamsResult {
     readonly streamsDetails: outputs.GetDatastreamsStreamsDetail[];
 }
 export function getDatastreamsOutput(args?: GetDatastreamsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatastreamsResult> {
-    return pulumi.output(args).apply((a: any) => getDatastreams(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getDatastreams:getDatastreams", {
+        "groupId": args.groupId,
+    }, opts);
 }
 
 /**

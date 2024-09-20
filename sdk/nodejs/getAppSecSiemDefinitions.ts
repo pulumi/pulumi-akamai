@@ -6,7 +6,6 @@ import * as utilities from "./utilities";
 
 export function getAppSecSiemDefinitions(args?: GetAppSecSiemDefinitionsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecSiemDefinitionsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecSiemDefinitions:getAppSecSiemDefinitions", {
         "siemDefinitionName": args.siemDefinitionName,
@@ -33,7 +32,11 @@ export interface GetAppSecSiemDefinitionsResult {
     readonly siemDefinitionName?: string;
 }
 export function getAppSecSiemDefinitionsOutput(args?: GetAppSecSiemDefinitionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecSiemDefinitionsResult> {
-    return pulumi.output(args).apply((a: any) => getAppSecSiemDefinitions(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getAppSecSiemDefinitions:getAppSecSiemDefinitions", {
+        "siemDefinitionName": args.siemDefinitionName,
+    }, opts);
 }
 
 /**

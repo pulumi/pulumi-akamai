@@ -35,14 +35,20 @@ type GetGtmDomainsResult struct {
 
 func GetGtmDomainsOutput(ctx *pulumi.Context, args GetGtmDomainsOutputArgs, opts ...pulumi.InvokeOption) GetGtmDomainsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetGtmDomainsResult, error) {
+		ApplyT(func(v interface{}) (GetGtmDomainsResultOutput, error) {
 			args := v.(GetGtmDomainsArgs)
-			r, err := GetGtmDomains(ctx, &args, opts...)
-			var s GetGtmDomainsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetGtmDomainsResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getGtmDomains:getGtmDomains", args, &rv, "", opts...)
+			if err != nil {
+				return GetGtmDomainsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetGtmDomainsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetGtmDomainsResultOutput), nil
+			}
+			return output, nil
 		}).(GetGtmDomainsResultOutput)
 }
 

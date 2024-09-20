@@ -7,7 +7,6 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getPropertyHostnames(args: GetPropertyHostnamesArgs, opts?: pulumi.InvokeOptions): Promise<GetPropertyHostnamesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getPropertyHostnames:getPropertyHostnames", {
         "contractId": args.contractId,
@@ -42,7 +41,13 @@ export interface GetPropertyHostnamesResult {
     readonly version: number;
 }
 export function getPropertyHostnamesOutput(args: GetPropertyHostnamesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyHostnamesResult> {
-    return pulumi.output(args).apply((a: any) => getPropertyHostnames(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getPropertyHostnames:getPropertyHostnames", {
+        "contractId": args.contractId,
+        "groupId": args.groupId,
+        "propertyId": args.propertyId,
+        "version": args.version,
+    }, opts);
 }
 
 /**

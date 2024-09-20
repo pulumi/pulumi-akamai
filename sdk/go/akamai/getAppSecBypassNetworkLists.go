@@ -40,14 +40,20 @@ type GetAppSecBypassNetworkListsResult struct {
 
 func GetAppSecBypassNetworkListsOutput(ctx *pulumi.Context, args GetAppSecBypassNetworkListsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecBypassNetworkListsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAppSecBypassNetworkListsResult, error) {
+		ApplyT(func(v interface{}) (GetAppSecBypassNetworkListsResultOutput, error) {
 			args := v.(GetAppSecBypassNetworkListsArgs)
-			r, err := GetAppSecBypassNetworkLists(ctx, &args, opts...)
-			var s GetAppSecBypassNetworkListsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAppSecBypassNetworkListsResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecBypassNetworkLists:getAppSecBypassNetworkLists", args, &rv, "", opts...)
+			if err != nil {
+				return GetAppSecBypassNetworkListsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAppSecBypassNetworkListsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAppSecBypassNetworkListsResultOutput), nil
+			}
+			return output, nil
 		}).(GetAppSecBypassNetworkListsResultOutput)
 }
 

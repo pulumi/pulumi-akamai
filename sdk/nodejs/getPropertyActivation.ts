@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getPropertyActivation(args: GetPropertyActivationArgs, opts?: pulumi.InvokeOptions): Promise<GetPropertyActivationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getPropertyActivation:getPropertyActivation", {
         "network": args.network,
@@ -42,7 +41,12 @@ export interface GetPropertyActivationResult {
     readonly warnings: string;
 }
 export function getPropertyActivationOutput(args: GetPropertyActivationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyActivationResult> {
-    return pulumi.output(args).apply((a: any) => getPropertyActivation(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getPropertyActivation:getPropertyActivation", {
+        "network": args.network,
+        "propertyId": args.propertyId,
+        "version": args.version,
+    }, opts);
 }
 
 /**

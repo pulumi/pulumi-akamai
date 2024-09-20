@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getBotmanBotManagementSettings(args: GetBotmanBotManagementSettingsArgs, opts?: pulumi.InvokeOptions): Promise<GetBotmanBotManagementSettingsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getBotmanBotManagementSettings:getBotmanBotManagementSettings", {
         "configId": args.configId,
@@ -34,7 +33,11 @@ export interface GetBotmanBotManagementSettingsResult {
     readonly securityPolicyId: string;
 }
 export function getBotmanBotManagementSettingsOutput(args: GetBotmanBotManagementSettingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanBotManagementSettingsResult> {
-    return pulumi.output(args).apply((a: any) => getBotmanBotManagementSettings(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getBotmanBotManagementSettings:getBotmanBotManagementSettings", {
+        "configId": args.configId,
+        "securityPolicyId": args.securityPolicyId,
+    }, opts);
 }
 
 /**

@@ -38,14 +38,20 @@ type GetPropertiesResult struct {
 
 func GetPropertiesOutput(ctx *pulumi.Context, args GetPropertiesOutputArgs, opts ...pulumi.InvokeOption) GetPropertiesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetPropertiesResult, error) {
+		ApplyT(func(v interface{}) (GetPropertiesResultOutput, error) {
 			args := v.(GetPropertiesArgs)
-			r, err := GetProperties(ctx, &args, opts...)
-			var s GetPropertiesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetPropertiesResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getProperties:getProperties", args, &rv, "", opts...)
+			if err != nil {
+				return GetPropertiesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetPropertiesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetPropertiesResultOutput), nil
+			}
+			return output, nil
 		}).(GetPropertiesResultOutput)
 }
 

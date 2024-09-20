@@ -6,7 +6,6 @@ import * as utilities from "./utilities";
 
 export function getAppSecSelectableHostnames(args?: GetAppSecSelectableHostnamesArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecSelectableHostnamesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecSelectableHostnames:getAppSecSelectableHostnames", {
         "activeInProduction": args.activeInProduction,
@@ -46,7 +45,15 @@ export interface GetAppSecSelectableHostnamesResult {
     readonly outputText: string;
 }
 export function getAppSecSelectableHostnamesOutput(args?: GetAppSecSelectableHostnamesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecSelectableHostnamesResult> {
-    return pulumi.output(args).apply((a: any) => getAppSecSelectableHostnames(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getAppSecSelectableHostnames:getAppSecSelectableHostnames", {
+        "activeInProduction": args.activeInProduction,
+        "activeInStaging": args.activeInStaging,
+        "configId": args.configId,
+        "contractid": args.contractid,
+        "groupid": args.groupid,
+    }, opts);
 }
 
 /**

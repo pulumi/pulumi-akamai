@@ -8,7 +8,6 @@ import * as utilities from "./utilities";
 
 export function getPropertyRulesTemplate(args?: GetPropertyRulesTemplateArgs, opts?: pulumi.InvokeOptions): Promise<GetPropertyRulesTemplateResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate", {
         "templateFile": args.templateFile,
@@ -46,7 +45,15 @@ export interface GetPropertyRulesTemplateResult {
     readonly variables?: outputs.GetPropertyRulesTemplateVariable[];
 }
 export function getPropertyRulesTemplateOutput(args?: GetPropertyRulesTemplateOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyRulesTemplateResult> {
-    return pulumi.output(args).apply((a: any) => getPropertyRulesTemplate(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate", {
+        "templateFile": args.templateFile,
+        "templates": args.templates,
+        "varDefinitionFile": args.varDefinitionFile,
+        "varValuesFile": args.varValuesFile,
+        "variables": args.variables,
+    }, opts);
 }
 
 /**

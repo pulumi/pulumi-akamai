@@ -45,14 +45,20 @@ type LookupPropertyActivationResult struct {
 
 func LookupPropertyActivationOutput(ctx *pulumi.Context, args LookupPropertyActivationOutputArgs, opts ...pulumi.InvokeOption) LookupPropertyActivationResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupPropertyActivationResult, error) {
+		ApplyT(func(v interface{}) (LookupPropertyActivationResultOutput, error) {
 			args := v.(LookupPropertyActivationArgs)
-			r, err := LookupPropertyActivation(ctx, &args, opts...)
-			var s LookupPropertyActivationResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupPropertyActivationResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getPropertyActivation:getPropertyActivation", args, &rv, "", opts...)
+			if err != nil {
+				return LookupPropertyActivationResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupPropertyActivationResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupPropertyActivationResultOutput), nil
+			}
+			return output, nil
 		}).(LookupPropertyActivationResultOutput)
 }
 

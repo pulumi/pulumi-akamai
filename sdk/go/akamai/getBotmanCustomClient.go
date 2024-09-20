@@ -38,14 +38,20 @@ type LookupBotmanCustomClientResult struct {
 
 func LookupBotmanCustomClientOutput(ctx *pulumi.Context, args LookupBotmanCustomClientOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanCustomClientResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupBotmanCustomClientResult, error) {
+		ApplyT(func(v interface{}) (LookupBotmanCustomClientResultOutput, error) {
 			args := v.(LookupBotmanCustomClientArgs)
-			r, err := LookupBotmanCustomClient(ctx, &args, opts...)
-			var s LookupBotmanCustomClientResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupBotmanCustomClientResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getBotmanCustomClient:getBotmanCustomClient", args, &rv, "", opts...)
+			if err != nil {
+				return LookupBotmanCustomClientResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupBotmanCustomClientResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupBotmanCustomClientResultOutput), nil
+			}
+			return output, nil
 		}).(LookupBotmanCustomClientResultOutput)
 }
 

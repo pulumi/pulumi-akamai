@@ -29,13 +29,19 @@ type GetIamContactTypesResult struct {
 }
 
 func GetIamContactTypesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetIamContactTypesResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamContactTypesResult, error) {
-		r, err := GetIamContactTypes(ctx, opts...)
-		var s GetIamContactTypesResult
-		if r != nil {
-			s = *r
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamContactTypesResultOutput, error) {
+		opts = internal.PkgInvokeDefaultOpts(opts)
+		var rv GetIamContactTypesResult
+		secret, err := ctx.InvokePackageRaw("akamai:index/getIamContactTypes:getIamContactTypes", nil, &rv, "", opts...)
+		if err != nil {
+			return GetIamContactTypesResultOutput{}, err
 		}
-		return s, err
+
+		output := pulumi.ToOutput(rv).(GetIamContactTypesResultOutput)
+		if secret {
+			return pulumi.ToSecret(output).(GetIamContactTypesResultOutput), nil
+		}
+		return output, nil
 	}).(GetIamContactTypesResultOutput)
 }
 

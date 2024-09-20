@@ -8,7 +8,6 @@ import * as utilities from "./utilities";
 
 export function getCloudwrapperCapacities(args?: GetCloudwrapperCapacitiesArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudwrapperCapacitiesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getCloudwrapperCapacities:getCloudwrapperCapacities", {
         "capacities": args.capacities,
@@ -36,7 +35,12 @@ export interface GetCloudwrapperCapacitiesResult {
     readonly id: string;
 }
 export function getCloudwrapperCapacitiesOutput(args?: GetCloudwrapperCapacitiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudwrapperCapacitiesResult> {
-    return pulumi.output(args).apply((a: any) => getCloudwrapperCapacities(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getCloudwrapperCapacities:getCloudwrapperCapacities", {
+        "capacities": args.capacities,
+        "contractIds": args.contractIds,
+    }, opts);
 }
 
 /**

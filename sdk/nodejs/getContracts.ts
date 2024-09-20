@@ -7,7 +7,6 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getContracts(opts?: pulumi.InvokeOptions): Promise<GetContractsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getContracts:getContracts", {
     }, opts);
@@ -24,5 +23,7 @@ export interface GetContractsResult {
     readonly id: string;
 }
 export function getContractsOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetContractsResult> {
-    return pulumi.output(getContracts(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getContracts:getContracts", {
+    }, opts);
 }

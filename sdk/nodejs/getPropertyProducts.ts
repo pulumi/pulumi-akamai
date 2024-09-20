@@ -7,7 +7,6 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getPropertyProducts(args: GetPropertyProductsArgs, opts?: pulumi.InvokeOptions): Promise<GetPropertyProductsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getPropertyProducts:getPropertyProducts", {
         "contractId": args.contractId,
@@ -33,7 +32,10 @@ export interface GetPropertyProductsResult {
     readonly products: outputs.GetPropertyProductsProduct[];
 }
 export function getPropertyProductsOutput(args: GetPropertyProductsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyProductsResult> {
-    return pulumi.output(args).apply((a: any) => getPropertyProducts(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getPropertyProducts:getPropertyProducts", {
+        "contractId": args.contractId,
+    }, opts);
 }
 
 /**

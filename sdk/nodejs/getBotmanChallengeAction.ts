@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getBotmanChallengeAction(args: GetBotmanChallengeActionArgs, opts?: pulumi.InvokeOptions): Promise<GetBotmanChallengeActionResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getBotmanChallengeAction:getBotmanChallengeAction", {
         "actionId": args.actionId,
@@ -34,7 +33,11 @@ export interface GetBotmanChallengeActionResult {
     readonly json: string;
 }
 export function getBotmanChallengeActionOutput(args: GetBotmanChallengeActionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanChallengeActionResult> {
-    return pulumi.output(args).apply((a: any) => getBotmanChallengeAction(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getBotmanChallengeAction:getBotmanChallengeAction", {
+        "actionId": args.actionId,
+        "configId": args.configId,
+    }, opts);
 }
 
 /**

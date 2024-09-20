@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getCpsDeployments(args: GetCpsDeploymentsArgs, opts?: pulumi.InvokeOptions): Promise<GetCpsDeploymentsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getCpsDeployments:getCpsDeployments", {
         "enrollmentId": args.enrollmentId,
@@ -36,7 +35,10 @@ export interface GetCpsDeploymentsResult {
     readonly stagingCertificateRsa: string;
 }
 export function getCpsDeploymentsOutput(args: GetCpsDeploymentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCpsDeploymentsResult> {
-    return pulumi.output(args).apply((a: any) => getCpsDeployments(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getCpsDeployments:getCpsDeployments", {
+        "enrollmentId": args.enrollmentId,
+    }, opts);
 }
 
 /**

@@ -40,14 +40,20 @@ type LookupBotmanBotDetectionActionResult struct {
 
 func LookupBotmanBotDetectionActionOutput(ctx *pulumi.Context, args LookupBotmanBotDetectionActionOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanBotDetectionActionResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupBotmanBotDetectionActionResult, error) {
+		ApplyT(func(v interface{}) (LookupBotmanBotDetectionActionResultOutput, error) {
 			args := v.(LookupBotmanBotDetectionActionArgs)
-			r, err := LookupBotmanBotDetectionAction(ctx, &args, opts...)
-			var s LookupBotmanBotDetectionActionResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupBotmanBotDetectionActionResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getBotmanBotDetectionAction:getBotmanBotDetectionAction", args, &rv, "", opts...)
+			if err != nil {
+				return LookupBotmanBotDetectionActionResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupBotmanBotDetectionActionResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupBotmanBotDetectionActionResultOutput), nil
+			}
+			return output, nil
 		}).(LookupBotmanBotDetectionActionResultOutput)
 }
 

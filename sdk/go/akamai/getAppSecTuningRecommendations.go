@@ -44,14 +44,20 @@ type GetAppSecTuningRecommendationsResult struct {
 
 func GetAppSecTuningRecommendationsOutput(ctx *pulumi.Context, args GetAppSecTuningRecommendationsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecTuningRecommendationsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAppSecTuningRecommendationsResult, error) {
+		ApplyT(func(v interface{}) (GetAppSecTuningRecommendationsResultOutput, error) {
 			args := v.(GetAppSecTuningRecommendationsArgs)
-			r, err := GetAppSecTuningRecommendations(ctx, &args, opts...)
-			var s GetAppSecTuningRecommendationsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAppSecTuningRecommendationsResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecTuningRecommendations:getAppSecTuningRecommendations", args, &rv, "", opts...)
+			if err != nil {
+				return GetAppSecTuningRecommendationsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAppSecTuningRecommendationsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAppSecTuningRecommendationsResultOutput), nil
+			}
+			return output, nil
 		}).(GetAppSecTuningRecommendationsResultOutput)
 }
 

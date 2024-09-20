@@ -38,14 +38,20 @@ type LookupBotmanBotManagementSettingsResult struct {
 
 func LookupBotmanBotManagementSettingsOutput(ctx *pulumi.Context, args LookupBotmanBotManagementSettingsOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanBotManagementSettingsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupBotmanBotManagementSettingsResult, error) {
+		ApplyT(func(v interface{}) (LookupBotmanBotManagementSettingsResultOutput, error) {
 			args := v.(LookupBotmanBotManagementSettingsArgs)
-			r, err := LookupBotmanBotManagementSettings(ctx, &args, opts...)
-			var s LookupBotmanBotManagementSettingsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupBotmanBotManagementSettingsResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getBotmanBotManagementSettings:getBotmanBotManagementSettings", args, &rv, "", opts...)
+			if err != nil {
+				return LookupBotmanBotManagementSettingsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupBotmanBotManagementSettingsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupBotmanBotManagementSettingsResultOutput), nil
+			}
+			return output, nil
 		}).(LookupBotmanBotManagementSettingsResultOutput)
 }
 

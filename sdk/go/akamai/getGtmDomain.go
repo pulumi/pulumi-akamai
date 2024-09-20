@@ -80,14 +80,20 @@ type LookupGtmDomainResult struct {
 
 func LookupGtmDomainOutput(ctx *pulumi.Context, args LookupGtmDomainOutputArgs, opts ...pulumi.InvokeOption) LookupGtmDomainResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupGtmDomainResult, error) {
+		ApplyT(func(v interface{}) (LookupGtmDomainResultOutput, error) {
 			args := v.(LookupGtmDomainArgs)
-			r, err := LookupGtmDomain(ctx, &args, opts...)
-			var s LookupGtmDomainResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupGtmDomainResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getGtmDomain:getGtmDomain", args, &rv, "", opts...)
+			if err != nil {
+				return LookupGtmDomainResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupGtmDomainResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupGtmDomainResultOutput), nil
+			}
+			return output, nil
 		}).(LookupGtmDomainResultOutput)
 }
 

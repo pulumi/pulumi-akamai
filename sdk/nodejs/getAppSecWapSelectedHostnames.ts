@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getAppSecWapSelectedHostnames(args: GetAppSecWapSelectedHostnamesArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecWapSelectedHostnamesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecWapSelectedHostnames:getAppSecWapSelectedHostnames", {
         "configId": args.configId,
@@ -39,7 +38,11 @@ export interface GetAppSecWapSelectedHostnamesResult {
     readonly selectedHosts: string[];
 }
 export function getAppSecWapSelectedHostnamesOutput(args: GetAppSecWapSelectedHostnamesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecWapSelectedHostnamesResult> {
-    return pulumi.output(args).apply((a: any) => getAppSecWapSelectedHostnames(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getAppSecWapSelectedHostnames:getAppSecWapSelectedHostnames", {
+        "configId": args.configId,
+        "securityPolicyId": args.securityPolicyId,
+    }, opts);
 }
 
 /**

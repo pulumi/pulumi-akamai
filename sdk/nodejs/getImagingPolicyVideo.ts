@@ -7,7 +7,6 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getImagingPolicyVideo(args: GetImagingPolicyVideoArgs, opts?: pulumi.InvokeOptions): Promise<GetImagingPolicyVideoResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getImagingPolicyVideo:getImagingPolicyVideo", {
         "policy": args.policy,
@@ -33,7 +32,10 @@ export interface GetImagingPolicyVideoResult {
     readonly policy: outputs.GetImagingPolicyVideoPolicy;
 }
 export function getImagingPolicyVideoOutput(args: GetImagingPolicyVideoOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetImagingPolicyVideoResult> {
-    return pulumi.output(args).apply((a: any) => getImagingPolicyVideo(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getImagingPolicyVideo:getImagingPolicyVideo", {
+        "policy": args.policy,
+    }, opts);
 }
 
 /**

@@ -7,7 +7,6 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getIamGrantableRoles(opts?: pulumi.InvokeOptions): Promise<GetIamGrantableRolesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getIamGrantableRoles:getIamGrantableRoles", {
     }, opts);
@@ -24,5 +23,7 @@ export interface GetIamGrantableRolesResult {
     readonly id: string;
 }
 export function getIamGrantableRolesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetIamGrantableRolesResult> {
-    return pulumi.output(getIamGrantableRoles(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getIamGrantableRoles:getIamGrantableRoles", {
+    }, opts);
 }

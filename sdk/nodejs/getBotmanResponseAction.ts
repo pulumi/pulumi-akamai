@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getBotmanResponseAction(args: GetBotmanResponseActionArgs, opts?: pulumi.InvokeOptions): Promise<GetBotmanResponseActionResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getBotmanResponseAction:getBotmanResponseAction", {
         "actionId": args.actionId,
@@ -34,7 +33,11 @@ export interface GetBotmanResponseActionResult {
     readonly json: string;
 }
 export function getBotmanResponseActionOutput(args: GetBotmanResponseActionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanResponseActionResult> {
-    return pulumi.output(args).apply((a: any) => getBotmanResponseAction(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getBotmanResponseAction:getBotmanResponseAction", {
+        "actionId": args.actionId,
+        "configId": args.configId,
+    }, opts);
 }
 
 /**

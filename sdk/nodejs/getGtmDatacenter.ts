@@ -7,7 +7,6 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getGtmDatacenter(args: GetGtmDatacenterArgs, opts?: pulumi.InvokeOptions): Promise<GetGtmDatacenterResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getGtmDatacenter:getGtmDatacenter", {
         "datacenterId": args.datacenterId,
@@ -50,7 +49,11 @@ export interface GetGtmDatacenterResult {
     readonly virtual: boolean;
 }
 export function getGtmDatacenterOutput(args: GetGtmDatacenterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGtmDatacenterResult> {
-    return pulumi.output(args).apply((a: any) => getGtmDatacenter(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getGtmDatacenter:getGtmDatacenter", {
+        "datacenterId": args.datacenterId,
+        "domain": args.domain,
+    }, opts);
 }
 
 /**

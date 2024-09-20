@@ -8,7 +8,6 @@ import * as utilities from "./utilities";
 
 export function getCloudwrapperLocations(args?: GetCloudwrapperLocationsArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudwrapperLocationsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getCloudwrapperLocations:getCloudwrapperLocations", {
         "locations": args.locations,
@@ -33,7 +32,11 @@ export interface GetCloudwrapperLocationsResult {
     readonly locations?: outputs.GetCloudwrapperLocationsLocation[];
 }
 export function getCloudwrapperLocationsOutput(args?: GetCloudwrapperLocationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudwrapperLocationsResult> {
-    return pulumi.output(args).apply((a: any) => getCloudwrapperLocations(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getCloudwrapperLocations:getCloudwrapperLocations", {
+        "locations": args.locations,
+    }, opts);
 }
 
 /**

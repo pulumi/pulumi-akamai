@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getAppSecSiemSettings(args: GetAppSecSiemSettingsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecSiemSettingsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecSiemSettings:getAppSecSiemSettings", {
         "configId": args.configId,
@@ -32,7 +31,10 @@ export interface GetAppSecSiemSettingsResult {
     readonly outputText: string;
 }
 export function getAppSecSiemSettingsOutput(args: GetAppSecSiemSettingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecSiemSettingsResult> {
-    return pulumi.output(args).apply((a: any) => getAppSecSiemSettings(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getAppSecSiemSettings:getAppSecSiemSettings", {
+        "configId": args.configId,
+    }, opts);
 }
 
 /**
