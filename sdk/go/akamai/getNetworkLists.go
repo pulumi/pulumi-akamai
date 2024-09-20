@@ -45,14 +45,20 @@ type GetNetworkListsResult struct {
 
 func GetNetworkListsOutput(ctx *pulumi.Context, args GetNetworkListsOutputArgs, opts ...pulumi.InvokeOption) GetNetworkListsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetNetworkListsResult, error) {
+		ApplyT(func(v interface{}) (GetNetworkListsResultOutput, error) {
 			args := v.(GetNetworkListsArgs)
-			r, err := GetNetworkLists(ctx, &args, opts...)
-			var s GetNetworkListsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetNetworkListsResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getNetworkLists:getNetworkLists", args, &rv, "", opts...)
+			if err != nil {
+				return GetNetworkListsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetNetworkListsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetNetworkListsResultOutput), nil
+			}
+			return output, nil
 		}).(GetNetworkListsResultOutput)
 }
 

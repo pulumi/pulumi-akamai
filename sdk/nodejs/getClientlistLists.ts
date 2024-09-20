@@ -8,7 +8,6 @@ import * as utilities from "./utilities";
 
 export function getClientlistLists(args?: GetClientlistListsArgs, opts?: pulumi.InvokeOptions): Promise<GetClientlistListsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getClientlistLists:getClientlistLists", {
         "name": args.name,
@@ -40,7 +39,12 @@ export interface GetClientlistListsResult {
     readonly types?: string[];
 }
 export function getClientlistListsOutput(args?: GetClientlistListsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetClientlistListsResult> {
-    return pulumi.output(args).apply((a: any) => getClientlistLists(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getClientlistLists:getClientlistLists", {
+        "name": args.name,
+        "types": args.types,
+    }, opts);
 }
 
 /**

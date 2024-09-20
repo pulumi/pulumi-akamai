@@ -7,7 +7,6 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getCloudletsApplicationLoadBalancer(args: GetCloudletsApplicationLoadBalancerArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudletsApplicationLoadBalancerResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getCloudletsApplicationLoadBalancer:getCloudletsApplicationLoadBalancer", {
         "originId": args.originId,
@@ -47,7 +46,11 @@ export interface GetCloudletsApplicationLoadBalancerResult {
     readonly warnings: string;
 }
 export function getCloudletsApplicationLoadBalancerOutput(args: GetCloudletsApplicationLoadBalancerOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudletsApplicationLoadBalancerResult> {
-    return pulumi.output(args).apply((a: any) => getCloudletsApplicationLoadBalancer(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getCloudletsApplicationLoadBalancer:getCloudletsApplicationLoadBalancer", {
+        "originId": args.originId,
+        "version": args.version,
+    }, opts);
 }
 
 /**

@@ -43,14 +43,20 @@ type GetAppSecAttackGroupsResult struct {
 
 func GetAppSecAttackGroupsOutput(ctx *pulumi.Context, args GetAppSecAttackGroupsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecAttackGroupsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAppSecAttackGroupsResult, error) {
+		ApplyT(func(v interface{}) (GetAppSecAttackGroupsResultOutput, error) {
 			args := v.(GetAppSecAttackGroupsArgs)
-			r, err := GetAppSecAttackGroups(ctx, &args, opts...)
-			var s GetAppSecAttackGroupsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAppSecAttackGroupsResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecAttackGroups:getAppSecAttackGroups", args, &rv, "", opts...)
+			if err != nil {
+				return GetAppSecAttackGroupsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAppSecAttackGroupsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAppSecAttackGroupsResultOutput), nil
+			}
+			return output, nil
 		}).(GetAppSecAttackGroupsResultOutput)
 }
 

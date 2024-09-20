@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getIamContactTypes(opts?: pulumi.InvokeOptions): Promise<GetIamContactTypesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getIamContactTypes:getIamContactTypes", {
     }, opts);
@@ -22,5 +21,7 @@ export interface GetIamContactTypesResult {
     readonly id: string;
 }
 export function getIamContactTypesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetIamContactTypesResult> {
-    return pulumi.output(getIamContactTypes(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getIamContactTypes:getIamContactTypes", {
+    }, opts);
 }

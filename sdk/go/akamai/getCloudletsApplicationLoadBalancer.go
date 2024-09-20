@@ -49,14 +49,20 @@ type LookupCloudletsApplicationLoadBalancerResult struct {
 
 func LookupCloudletsApplicationLoadBalancerOutput(ctx *pulumi.Context, args LookupCloudletsApplicationLoadBalancerOutputArgs, opts ...pulumi.InvokeOption) LookupCloudletsApplicationLoadBalancerResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupCloudletsApplicationLoadBalancerResult, error) {
+		ApplyT(func(v interface{}) (LookupCloudletsApplicationLoadBalancerResultOutput, error) {
 			args := v.(LookupCloudletsApplicationLoadBalancerArgs)
-			r, err := LookupCloudletsApplicationLoadBalancer(ctx, &args, opts...)
-			var s LookupCloudletsApplicationLoadBalancerResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupCloudletsApplicationLoadBalancerResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getCloudletsApplicationLoadBalancer:getCloudletsApplicationLoadBalancer", args, &rv, "", opts...)
+			if err != nil {
+				return LookupCloudletsApplicationLoadBalancerResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupCloudletsApplicationLoadBalancerResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupCloudletsApplicationLoadBalancerResultOutput), nil
+			}
+			return output, nil
 		}).(LookupCloudletsApplicationLoadBalancerResultOutput)
 }
 

@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getAppSecCustomDeny(args: GetAppSecCustomDenyArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecCustomDenyResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecCustomDeny:getAppSecCustomDeny", {
         "configId": args.configId,
@@ -35,7 +34,11 @@ export interface GetAppSecCustomDenyResult {
     readonly outputText: string;
 }
 export function getAppSecCustomDenyOutput(args: GetAppSecCustomDenyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecCustomDenyResult> {
-    return pulumi.output(args).apply((a: any) => getAppSecCustomDeny(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getAppSecCustomDeny:getAppSecCustomDeny", {
+        "configId": args.configId,
+        "customDenyId": args.customDenyId,
+    }, opts);
 }
 
 /**

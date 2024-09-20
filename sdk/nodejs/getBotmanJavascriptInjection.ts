@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getBotmanJavascriptInjection(args: GetBotmanJavascriptInjectionArgs, opts?: pulumi.InvokeOptions): Promise<GetBotmanJavascriptInjectionResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getBotmanJavascriptInjection:getBotmanJavascriptInjection", {
         "configId": args.configId,
@@ -34,7 +33,11 @@ export interface GetBotmanJavascriptInjectionResult {
     readonly securityPolicyId: string;
 }
 export function getBotmanJavascriptInjectionOutput(args: GetBotmanJavascriptInjectionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanJavascriptInjectionResult> {
-    return pulumi.output(args).apply((a: any) => getBotmanJavascriptInjection(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getBotmanJavascriptInjection:getBotmanJavascriptInjection", {
+        "configId": args.configId,
+        "securityPolicyId": args.securityPolicyId,
+    }, opts);
 }
 
 /**

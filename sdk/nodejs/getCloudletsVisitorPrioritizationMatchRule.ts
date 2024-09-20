@@ -8,7 +8,6 @@ import * as utilities from "./utilities";
 
 export function getCloudletsVisitorPrioritizationMatchRule(args?: GetCloudletsVisitorPrioritizationMatchRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudletsVisitorPrioritizationMatchRuleResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getCloudletsVisitorPrioritizationMatchRule:getCloudletsVisitorPrioritizationMatchRule", {
         "matchRules": args.matchRules,
@@ -34,7 +33,11 @@ export interface GetCloudletsVisitorPrioritizationMatchRuleResult {
     readonly matchRules?: outputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRule[];
 }
 export function getCloudletsVisitorPrioritizationMatchRuleOutput(args?: GetCloudletsVisitorPrioritizationMatchRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudletsVisitorPrioritizationMatchRuleResult> {
-    return pulumi.output(args).apply((a: any) => getCloudletsVisitorPrioritizationMatchRule(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getCloudletsVisitorPrioritizationMatchRule:getCloudletsVisitorPrioritizationMatchRule", {
+        "matchRules": args.matchRules,
+    }, opts);
 }
 
 /**

@@ -7,7 +7,6 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getIamTimezones(opts?: pulumi.InvokeOptions): Promise<GetIamTimezonesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getIamTimezones:getIamTimezones", {
     }, opts);
@@ -24,5 +23,7 @@ export interface GetIamTimezonesResult {
     readonly timezones: outputs.GetIamTimezonesTimezone[];
 }
 export function getIamTimezonesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetIamTimezonesResult> {
-    return pulumi.output(getIamTimezones(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getIamTimezones:getIamTimezones", {
+    }, opts);
 }

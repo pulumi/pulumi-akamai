@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getCpsCsr(args: GetCpsCsrArgs, opts?: pulumi.InvokeOptions): Promise<GetCpsCsrResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getCpsCsr:getCpsCsr", {
         "enrollmentId": args.enrollmentId,
@@ -32,7 +31,10 @@ export interface GetCpsCsrResult {
     readonly id: string;
 }
 export function getCpsCsrOutput(args: GetCpsCsrOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCpsCsrResult> {
-    return pulumi.output(args).apply((a: any) => getCpsCsr(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getCpsCsr:getCpsCsr", {
+        "enrollmentId": args.enrollmentId,
+    }, opts);
 }
 
 /**

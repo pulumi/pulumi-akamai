@@ -38,14 +38,20 @@ type LookupBotmanJavascriptInjectionResult struct {
 
 func LookupBotmanJavascriptInjectionOutput(ctx *pulumi.Context, args LookupBotmanJavascriptInjectionOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanJavascriptInjectionResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupBotmanJavascriptInjectionResult, error) {
+		ApplyT(func(v interface{}) (LookupBotmanJavascriptInjectionResultOutput, error) {
 			args := v.(LookupBotmanJavascriptInjectionArgs)
-			r, err := LookupBotmanJavascriptInjection(ctx, &args, opts...)
-			var s LookupBotmanJavascriptInjectionResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupBotmanJavascriptInjectionResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getBotmanJavascriptInjection:getBotmanJavascriptInjection", args, &rv, "", opts...)
+			if err != nil {
+				return LookupBotmanJavascriptInjectionResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupBotmanJavascriptInjectionResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupBotmanJavascriptInjectionResultOutput), nil
+			}
+			return output, nil
 		}).(LookupBotmanJavascriptInjectionResultOutput)
 }
 

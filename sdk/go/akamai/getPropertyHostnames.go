@@ -42,14 +42,20 @@ type GetPropertyHostnamesResult struct {
 
 func GetPropertyHostnamesOutput(ctx *pulumi.Context, args GetPropertyHostnamesOutputArgs, opts ...pulumi.InvokeOption) GetPropertyHostnamesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetPropertyHostnamesResult, error) {
+		ApplyT(func(v interface{}) (GetPropertyHostnamesResultOutput, error) {
 			args := v.(GetPropertyHostnamesArgs)
-			r, err := GetPropertyHostnames(ctx, &args, opts...)
-			var s GetPropertyHostnamesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetPropertyHostnamesResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getPropertyHostnames:getPropertyHostnames", args, &rv, "", opts...)
+			if err != nil {
+				return GetPropertyHostnamesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetPropertyHostnamesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetPropertyHostnamesResultOutput), nil
+			}
+			return output, nil
 		}).(GetPropertyHostnamesResultOutput)
 }
 

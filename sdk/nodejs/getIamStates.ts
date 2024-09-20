@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getIamStates(args: GetIamStatesArgs, opts?: pulumi.InvokeOptions): Promise<GetIamStatesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getIamStates:getIamStates", {
         "country": args.country,
@@ -31,7 +30,10 @@ export interface GetIamStatesResult {
     readonly states: string[];
 }
 export function getIamStatesOutput(args: GetIamStatesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIamStatesResult> {
-    return pulumi.output(args).apply((a: any) => getIamStates(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getIamStates:getIamStates", {
+        "country": args.country,
+    }, opts);
 }
 
 /**

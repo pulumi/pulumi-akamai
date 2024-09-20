@@ -38,14 +38,20 @@ type GetEdgeWorkersResourceTierResult struct {
 
 func GetEdgeWorkersResourceTierOutput(ctx *pulumi.Context, args GetEdgeWorkersResourceTierOutputArgs, opts ...pulumi.InvokeOption) GetEdgeWorkersResourceTierResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetEdgeWorkersResourceTierResult, error) {
+		ApplyT(func(v interface{}) (GetEdgeWorkersResourceTierResultOutput, error) {
 			args := v.(GetEdgeWorkersResourceTierArgs)
-			r, err := GetEdgeWorkersResourceTier(ctx, &args, opts...)
-			var s GetEdgeWorkersResourceTierResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetEdgeWorkersResourceTierResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getEdgeWorkersResourceTier:getEdgeWorkersResourceTier", args, &rv, "", opts...)
+			if err != nil {
+				return GetEdgeWorkersResourceTierResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetEdgeWorkersResourceTierResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetEdgeWorkersResourceTierResultOutput), nil
+			}
+			return output, nil
 		}).(GetEdgeWorkersResourceTierResultOutput)
 }
 

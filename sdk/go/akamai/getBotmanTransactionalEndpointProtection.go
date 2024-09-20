@@ -36,14 +36,20 @@ type LookupBotmanTransactionalEndpointProtectionResult struct {
 
 func LookupBotmanTransactionalEndpointProtectionOutput(ctx *pulumi.Context, args LookupBotmanTransactionalEndpointProtectionOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanTransactionalEndpointProtectionResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupBotmanTransactionalEndpointProtectionResult, error) {
+		ApplyT(func(v interface{}) (LookupBotmanTransactionalEndpointProtectionResultOutput, error) {
 			args := v.(LookupBotmanTransactionalEndpointProtectionArgs)
-			r, err := LookupBotmanTransactionalEndpointProtection(ctx, &args, opts...)
-			var s LookupBotmanTransactionalEndpointProtectionResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupBotmanTransactionalEndpointProtectionResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getBotmanTransactionalEndpointProtection:getBotmanTransactionalEndpointProtection", args, &rv, "", opts...)
+			if err != nil {
+				return LookupBotmanTransactionalEndpointProtectionResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupBotmanTransactionalEndpointProtectionResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupBotmanTransactionalEndpointProtectionResultOutput), nil
+			}
+			return output, nil
 		}).(LookupBotmanTransactionalEndpointProtectionResultOutput)
 }
 

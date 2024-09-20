@@ -7,7 +7,6 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getGtmDomain(args: GetGtmDomainArgs, opts?: pulumi.InvokeOptions): Promise<GetGtmDomainResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getGtmDomain:getGtmDomain", {
         "asMaps": args.asMaps,
@@ -83,7 +82,18 @@ export interface GetGtmDomainResult {
     readonly type: string;
 }
 export function getGtmDomainOutput(args: GetGtmDomainOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGtmDomainResult> {
-    return pulumi.output(args).apply((a: any) => getGtmDomain(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getGtmDomain:getGtmDomain", {
+        "asMaps": args.asMaps,
+        "cidrMaps": args.cidrMaps,
+        "datacenters": args.datacenters,
+        "geographicMaps": args.geographicMaps,
+        "links": args.links,
+        "name": args.name,
+        "properties": args.properties,
+        "resources": args.resources,
+        "status": args.status,
+    }, opts);
 }
 
 /**

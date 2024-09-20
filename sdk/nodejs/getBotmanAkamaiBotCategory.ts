@@ -6,7 +6,6 @@ import * as utilities from "./utilities";
 
 export function getBotmanAkamaiBotCategory(args?: GetBotmanAkamaiBotCategoryArgs, opts?: pulumi.InvokeOptions): Promise<GetBotmanAkamaiBotCategoryResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getBotmanAkamaiBotCategory:getBotmanAkamaiBotCategory", {
         "categoryName": args.categoryName,
@@ -32,7 +31,11 @@ export interface GetBotmanAkamaiBotCategoryResult {
     readonly json: string;
 }
 export function getBotmanAkamaiBotCategoryOutput(args?: GetBotmanAkamaiBotCategoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanAkamaiBotCategoryResult> {
-    return pulumi.output(args).apply((a: any) => getBotmanAkamaiBotCategory(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getBotmanAkamaiBotCategory:getBotmanAkamaiBotCategory", {
+        "categoryName": args.categoryName,
+    }, opts);
 }
 
 /**

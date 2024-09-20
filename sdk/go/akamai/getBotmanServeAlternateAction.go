@@ -38,14 +38,20 @@ type LookupBotmanServeAlternateActionResult struct {
 
 func LookupBotmanServeAlternateActionOutput(ctx *pulumi.Context, args LookupBotmanServeAlternateActionOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanServeAlternateActionResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupBotmanServeAlternateActionResult, error) {
+		ApplyT(func(v interface{}) (LookupBotmanServeAlternateActionResultOutput, error) {
 			args := v.(LookupBotmanServeAlternateActionArgs)
-			r, err := LookupBotmanServeAlternateAction(ctx, &args, opts...)
-			var s LookupBotmanServeAlternateActionResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupBotmanServeAlternateActionResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getBotmanServeAlternateAction:getBotmanServeAlternateAction", args, &rv, "", opts...)
+			if err != nil {
+				return LookupBotmanServeAlternateActionResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupBotmanServeAlternateActionResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupBotmanServeAlternateActionResultOutput), nil
+			}
+			return output, nil
 		}).(LookupBotmanServeAlternateActionResultOutput)
 }
 

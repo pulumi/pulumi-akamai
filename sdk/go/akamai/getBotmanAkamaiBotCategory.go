@@ -36,14 +36,20 @@ type GetBotmanAkamaiBotCategoryResult struct {
 
 func GetBotmanAkamaiBotCategoryOutput(ctx *pulumi.Context, args GetBotmanAkamaiBotCategoryOutputArgs, opts ...pulumi.InvokeOption) GetBotmanAkamaiBotCategoryResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetBotmanAkamaiBotCategoryResult, error) {
+		ApplyT(func(v interface{}) (GetBotmanAkamaiBotCategoryResultOutput, error) {
 			args := v.(GetBotmanAkamaiBotCategoryArgs)
-			r, err := GetBotmanAkamaiBotCategory(ctx, &args, opts...)
-			var s GetBotmanAkamaiBotCategoryResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetBotmanAkamaiBotCategoryResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getBotmanAkamaiBotCategory:getBotmanAkamaiBotCategory", args, &rv, "", opts...)
+			if err != nil {
+				return GetBotmanAkamaiBotCategoryResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetBotmanAkamaiBotCategoryResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetBotmanAkamaiBotCategoryResultOutput), nil
+			}
+			return output, nil
 		}).(GetBotmanAkamaiBotCategoryResultOutput)
 }
 

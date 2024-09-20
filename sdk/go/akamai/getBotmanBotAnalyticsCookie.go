@@ -36,14 +36,20 @@ type LookupBotmanBotAnalyticsCookieResult struct {
 
 func LookupBotmanBotAnalyticsCookieOutput(ctx *pulumi.Context, args LookupBotmanBotAnalyticsCookieOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanBotAnalyticsCookieResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupBotmanBotAnalyticsCookieResult, error) {
+		ApplyT(func(v interface{}) (LookupBotmanBotAnalyticsCookieResultOutput, error) {
 			args := v.(LookupBotmanBotAnalyticsCookieArgs)
-			r, err := LookupBotmanBotAnalyticsCookie(ctx, &args, opts...)
-			var s LookupBotmanBotAnalyticsCookieResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupBotmanBotAnalyticsCookieResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getBotmanBotAnalyticsCookie:getBotmanBotAnalyticsCookie", args, &rv, "", opts...)
+			if err != nil {
+				return LookupBotmanBotAnalyticsCookieResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupBotmanBotAnalyticsCookieResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupBotmanBotAnalyticsCookieResultOutput), nil
+			}
+			return output, nil
 		}).(LookupBotmanBotAnalyticsCookieResultOutput)
 }
 

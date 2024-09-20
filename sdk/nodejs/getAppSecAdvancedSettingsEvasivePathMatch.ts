@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getAppSecAdvancedSettingsEvasivePathMatch(args: GetAppSecAdvancedSettingsEvasivePathMatchArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecAdvancedSettingsEvasivePathMatchResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecAdvancedSettingsEvasivePathMatch:getAppSecAdvancedSettingsEvasivePathMatch", {
         "configId": args.configId,
@@ -35,7 +34,11 @@ export interface GetAppSecAdvancedSettingsEvasivePathMatchResult {
     readonly securityPolicyId?: string;
 }
 export function getAppSecAdvancedSettingsEvasivePathMatchOutput(args: GetAppSecAdvancedSettingsEvasivePathMatchOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecAdvancedSettingsEvasivePathMatchResult> {
-    return pulumi.output(args).apply((a: any) => getAppSecAdvancedSettingsEvasivePathMatch(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getAppSecAdvancedSettingsEvasivePathMatch:getAppSecAdvancedSettingsEvasivePathMatch", {
+        "configId": args.configId,
+        "securityPolicyId": args.securityPolicyId,
+    }, opts);
 }
 
 /**

@@ -36,14 +36,20 @@ type GetCPSEnrollmentsResult struct {
 
 func GetCPSEnrollmentsOutput(ctx *pulumi.Context, args GetCPSEnrollmentsOutputArgs, opts ...pulumi.InvokeOption) GetCPSEnrollmentsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetCPSEnrollmentsResult, error) {
+		ApplyT(func(v interface{}) (GetCPSEnrollmentsResultOutput, error) {
 			args := v.(GetCPSEnrollmentsArgs)
-			r, err := GetCPSEnrollments(ctx, &args, opts...)
-			var s GetCPSEnrollmentsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetCPSEnrollmentsResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getCPSEnrollments:getCPSEnrollments", args, &rv, "", opts...)
+			if err != nil {
+				return GetCPSEnrollmentsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetCPSEnrollmentsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetCPSEnrollmentsResultOutput), nil
+			}
+			return output, nil
 		}).(GetCPSEnrollmentsResultOutput)
 }
 

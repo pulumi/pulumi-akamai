@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getAppsecAdvancedSettingsPiiLearning(args: GetAppsecAdvancedSettingsPiiLearningArgs, opts?: pulumi.InvokeOptions): Promise<GetAppsecAdvancedSettingsPiiLearningResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppsecAdvancedSettingsPiiLearning:getAppsecAdvancedSettingsPiiLearning", {
         "configId": args.configId,
@@ -32,7 +31,10 @@ export interface GetAppsecAdvancedSettingsPiiLearningResult {
     readonly outputText: string;
 }
 export function getAppsecAdvancedSettingsPiiLearningOutput(args: GetAppsecAdvancedSettingsPiiLearningOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppsecAdvancedSettingsPiiLearningResult> {
-    return pulumi.output(args).apply((a: any) => getAppsecAdvancedSettingsPiiLearning(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getAppsecAdvancedSettingsPiiLearning:getAppsecAdvancedSettingsPiiLearning", {
+        "configId": args.configId,
+    }, opts);
 }
 
 /**

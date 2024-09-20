@@ -8,7 +8,6 @@ import * as utilities from "./utilities";
 
 export function getCloudwrapperConfigurations(args?: GetCloudwrapperConfigurationsArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudwrapperConfigurationsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getCloudwrapperConfigurations:getCloudwrapperConfigurations", {
         "configurations": args.configurations,
@@ -33,7 +32,11 @@ export interface GetCloudwrapperConfigurationsResult {
     readonly id: string;
 }
 export function getCloudwrapperConfigurationsOutput(args?: GetCloudwrapperConfigurationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudwrapperConfigurationsResult> {
-    return pulumi.output(args).apply((a: any) => getCloudwrapperConfigurations(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getCloudwrapperConfigurations:getCloudwrapperConfigurations", {
+        "configurations": args.configurations,
+    }, opts);
 }
 
 /**

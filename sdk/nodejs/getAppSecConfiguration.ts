@@ -6,7 +6,6 @@ import * as utilities from "./utilities";
 
 export function getAppSecConfiguration(args?: GetAppSecConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecConfigurationResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecConfiguration:getAppSecConfiguration", {
         "name": args.name,
@@ -36,7 +35,11 @@ export interface GetAppSecConfigurationResult {
     readonly stagingVersion: number;
 }
 export function getAppSecConfigurationOutput(args?: GetAppSecConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecConfigurationResult> {
-    return pulumi.output(args).apply((a: any) => getAppSecConfiguration(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getAppSecConfiguration:getAppSecConfiguration", {
+        "name": args.name,
+    }, opts);
 }
 
 /**

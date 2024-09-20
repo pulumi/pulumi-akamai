@@ -29,13 +29,19 @@ type GetIamCountriesResult struct {
 }
 
 func GetIamCountriesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetIamCountriesResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamCountriesResult, error) {
-		r, err := GetIamCountries(ctx, opts...)
-		var s GetIamCountriesResult
-		if r != nil {
-			s = *r
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamCountriesResultOutput, error) {
+		opts = internal.PkgInvokeDefaultOpts(opts)
+		var rv GetIamCountriesResult
+		secret, err := ctx.InvokePackageRaw("akamai:index/getIamCountries:getIamCountries", nil, &rv, "", opts...)
+		if err != nil {
+			return GetIamCountriesResultOutput{}, err
 		}
-		return s, err
+
+		output := pulumi.ToOutput(rv).(GetIamCountriesResultOutput)
+		if secret {
+			return pulumi.ToSecret(output).(GetIamCountriesResultOutput), nil
+		}
+		return output, nil
 	}).(GetIamCountriesResultOutput)
 }
 

@@ -37,14 +37,20 @@ type GetCpsCsrResult struct {
 
 func GetCpsCsrOutput(ctx *pulumi.Context, args GetCpsCsrOutputArgs, opts ...pulumi.InvokeOption) GetCpsCsrResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetCpsCsrResult, error) {
+		ApplyT(func(v interface{}) (GetCpsCsrResultOutput, error) {
 			args := v.(GetCpsCsrArgs)
-			r, err := GetCpsCsr(ctx, &args, opts...)
-			var s GetCpsCsrResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetCpsCsrResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getCpsCsr:getCpsCsr", args, &rv, "", opts...)
+			if err != nil {
+				return GetCpsCsrResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetCpsCsrResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetCpsCsrResultOutput), nil
+			}
+			return output, nil
 		}).(GetCpsCsrResultOutput)
 }
 

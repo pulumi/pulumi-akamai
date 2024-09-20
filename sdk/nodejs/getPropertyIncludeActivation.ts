@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getPropertyIncludeActivation(args: GetPropertyIncludeActivationArgs, opts?: pulumi.InvokeOptions): Promise<GetPropertyIncludeActivationResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getPropertyIncludeActivation:getPropertyIncludeActivation", {
         "contractId": args.contractId,
@@ -43,7 +42,13 @@ export interface GetPropertyIncludeActivationResult {
     readonly version: string;
 }
 export function getPropertyIncludeActivationOutput(args: GetPropertyIncludeActivationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyIncludeActivationResult> {
-    return pulumi.output(args).apply((a: any) => getPropertyIncludeActivation(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getPropertyIncludeActivation:getPropertyIncludeActivation", {
+        "contractId": args.contractId,
+        "groupId": args.groupId,
+        "includeId": args.includeId,
+        "network": args.network,
+    }, opts);
 }
 
 /**

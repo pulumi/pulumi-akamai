@@ -52,14 +52,20 @@ type LookupGtmDatacenterResult struct {
 
 func LookupGtmDatacenterOutput(ctx *pulumi.Context, args LookupGtmDatacenterOutputArgs, opts ...pulumi.InvokeOption) LookupGtmDatacenterResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupGtmDatacenterResult, error) {
+		ApplyT(func(v interface{}) (LookupGtmDatacenterResultOutput, error) {
 			args := v.(LookupGtmDatacenterArgs)
-			r, err := LookupGtmDatacenter(ctx, &args, opts...)
-			var s LookupGtmDatacenterResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupGtmDatacenterResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getGtmDatacenter:getGtmDatacenter", args, &rv, "", opts...)
+			if err != nil {
+				return LookupGtmDatacenterResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupGtmDatacenterResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupGtmDatacenterResultOutput), nil
+			}
+			return output, nil
 		}).(LookupGtmDatacenterResultOutput)
 }
 

@@ -38,14 +38,20 @@ type LookupBotmanConditionalActionResult struct {
 
 func LookupBotmanConditionalActionOutput(ctx *pulumi.Context, args LookupBotmanConditionalActionOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanConditionalActionResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupBotmanConditionalActionResult, error) {
+		ApplyT(func(v interface{}) (LookupBotmanConditionalActionResultOutput, error) {
 			args := v.(LookupBotmanConditionalActionArgs)
-			r, err := LookupBotmanConditionalAction(ctx, &args, opts...)
-			var s LookupBotmanConditionalActionResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupBotmanConditionalActionResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getBotmanConditionalAction:getBotmanConditionalAction", args, &rv, "", opts...)
+			if err != nil {
+				return LookupBotmanConditionalActionResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupBotmanConditionalActionResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupBotmanConditionalActionResultOutput), nil
+			}
+			return output, nil
 		}).(LookupBotmanConditionalActionResultOutput)
 }
 

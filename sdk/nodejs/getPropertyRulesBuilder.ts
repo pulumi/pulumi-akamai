@@ -8,7 +8,6 @@ import * as utilities from "./utilities";
 
 export function getPropertyRulesBuilder(args?: GetPropertyRulesBuilderArgs, opts?: pulumi.InvokeOptions): Promise<GetPropertyRulesBuilderResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getPropertyRulesBuilder:getPropertyRulesBuilder", {
         "rulesV20230105": args.rulesV20230105,
@@ -50,7 +49,16 @@ export interface GetPropertyRulesBuilderResult {
     readonly rulesV20240212?: outputs.GetPropertyRulesBuilderRulesV20240212;
 }
 export function getPropertyRulesBuilderOutput(args?: GetPropertyRulesBuilderOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyRulesBuilderResult> {
-    return pulumi.output(args).apply((a: any) => getPropertyRulesBuilder(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getPropertyRulesBuilder:getPropertyRulesBuilder", {
+        "rulesV20230105": args.rulesV20230105,
+        "rulesV20230530": args.rulesV20230530,
+        "rulesV20230920": args.rulesV20230920,
+        "rulesV20231030": args.rulesV20231030,
+        "rulesV20240109": args.rulesV20240109,
+        "rulesV20240212": args.rulesV20240212,
+    }, opts);
 }
 
 /**

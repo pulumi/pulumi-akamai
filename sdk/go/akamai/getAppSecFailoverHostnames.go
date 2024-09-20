@@ -38,14 +38,20 @@ type GetAppSecFailoverHostnamesResult struct {
 
 func GetAppSecFailoverHostnamesOutput(ctx *pulumi.Context, args GetAppSecFailoverHostnamesOutputArgs, opts ...pulumi.InvokeOption) GetAppSecFailoverHostnamesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAppSecFailoverHostnamesResult, error) {
+		ApplyT(func(v interface{}) (GetAppSecFailoverHostnamesResultOutput, error) {
 			args := v.(GetAppSecFailoverHostnamesArgs)
-			r, err := GetAppSecFailoverHostnames(ctx, &args, opts...)
-			var s GetAppSecFailoverHostnamesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAppSecFailoverHostnamesResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecFailoverHostnames:getAppSecFailoverHostnames", args, &rv, "", opts...)
+			if err != nil {
+				return GetAppSecFailoverHostnamesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAppSecFailoverHostnamesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAppSecFailoverHostnamesResultOutput), nil
+			}
+			return output, nil
 		}).(GetAppSecFailoverHostnamesResultOutput)
 }
 

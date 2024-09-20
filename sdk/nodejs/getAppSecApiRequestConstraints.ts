@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getAppSecApiRequestConstraints(args: GetAppSecApiRequestConstraintsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecApiRequestConstraintsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecApiRequestConstraints:getAppSecApiRequestConstraints", {
         "apiId": args.apiId,
@@ -38,7 +37,12 @@ export interface GetAppSecApiRequestConstraintsResult {
     readonly securityPolicyId: string;
 }
 export function getAppSecApiRequestConstraintsOutput(args: GetAppSecApiRequestConstraintsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecApiRequestConstraintsResult> {
-    return pulumi.output(args).apply((a: any) => getAppSecApiRequestConstraints(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getAppSecApiRequestConstraints:getAppSecApiRequestConstraints", {
+        "apiId": args.apiId,
+        "configId": args.configId,
+        "securityPolicyId": args.securityPolicyId,
+    }, opts);
 }
 
 /**

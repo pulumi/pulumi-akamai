@@ -40,14 +40,20 @@ type LookupAppSecThreatIntelResult struct {
 
 func LookupAppSecThreatIntelOutput(ctx *pulumi.Context, args LookupAppSecThreatIntelOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecThreatIntelResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupAppSecThreatIntelResult, error) {
+		ApplyT(func(v interface{}) (LookupAppSecThreatIntelResultOutput, error) {
 			args := v.(LookupAppSecThreatIntelArgs)
-			r, err := LookupAppSecThreatIntel(ctx, &args, opts...)
-			var s LookupAppSecThreatIntelResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupAppSecThreatIntelResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecThreatIntel:getAppSecThreatIntel", args, &rv, "", opts...)
+			if err != nil {
+				return LookupAppSecThreatIntelResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupAppSecThreatIntelResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupAppSecThreatIntelResultOutput), nil
+			}
+			return output, nil
 		}).(LookupAppSecThreatIntelResultOutput)
 }
 

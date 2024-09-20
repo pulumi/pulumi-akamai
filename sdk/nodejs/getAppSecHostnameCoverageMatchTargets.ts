@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getAppSecHostnameCoverageMatchTargets(args: GetAppSecHostnameCoverageMatchTargetsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecHostnameCoverageMatchTargetsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecHostnameCoverageMatchTargets:getAppSecHostnameCoverageMatchTargets", {
         "configId": args.configId,
@@ -35,7 +34,11 @@ export interface GetAppSecHostnameCoverageMatchTargetsResult {
     readonly outputText: string;
 }
 export function getAppSecHostnameCoverageMatchTargetsOutput(args: GetAppSecHostnameCoverageMatchTargetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecHostnameCoverageMatchTargetsResult> {
-    return pulumi.output(args).apply((a: any) => getAppSecHostnameCoverageMatchTargets(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getAppSecHostnameCoverageMatchTargets:getAppSecHostnameCoverageMatchTargets", {
+        "configId": args.configId,
+        "hostname": args.hostname,
+    }, opts);
 }
 
 /**

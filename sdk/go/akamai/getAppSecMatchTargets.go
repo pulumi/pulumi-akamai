@@ -39,14 +39,20 @@ type GetAppSecMatchTargetsResult struct {
 
 func GetAppSecMatchTargetsOutput(ctx *pulumi.Context, args GetAppSecMatchTargetsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecMatchTargetsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAppSecMatchTargetsResult, error) {
+		ApplyT(func(v interface{}) (GetAppSecMatchTargetsResultOutput, error) {
 			args := v.(GetAppSecMatchTargetsArgs)
-			r, err := GetAppSecMatchTargets(ctx, &args, opts...)
-			var s GetAppSecMatchTargetsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAppSecMatchTargetsResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecMatchTargets:getAppSecMatchTargets", args, &rv, "", opts...)
+			if err != nil {
+				return GetAppSecMatchTargetsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAppSecMatchTargetsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAppSecMatchTargetsResultOutput), nil
+			}
+			return output, nil
 		}).(GetAppSecMatchTargetsResultOutput)
 }
 

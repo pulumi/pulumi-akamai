@@ -7,7 +7,6 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getCloudletsSharedPolicy(args: GetCloudletsSharedPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudletsSharedPolicyResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getCloudletsSharedPolicy:getCloudletsSharedPolicy", {
         "activations": args.activations,
@@ -45,7 +44,12 @@ export interface GetCloudletsSharedPolicyResult {
     readonly warnings: string;
 }
 export function getCloudletsSharedPolicyOutput(args: GetCloudletsSharedPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudletsSharedPolicyResult> {
-    return pulumi.output(args).apply((a: any) => getCloudletsSharedPolicy(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getCloudletsSharedPolicy:getCloudletsSharedPolicy", {
+        "activations": args.activations,
+        "policyId": args.policyId,
+        "version": args.version,
+    }, opts);
 }
 
 /**

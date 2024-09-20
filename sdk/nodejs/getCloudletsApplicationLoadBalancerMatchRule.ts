@@ -8,7 +8,6 @@ import * as utilities from "./utilities";
 
 export function getCloudletsApplicationLoadBalancerMatchRule(args?: GetCloudletsApplicationLoadBalancerMatchRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudletsApplicationLoadBalancerMatchRuleResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getCloudletsApplicationLoadBalancerMatchRule:getCloudletsApplicationLoadBalancerMatchRule", {
         "matchRules": args.matchRules,
@@ -34,7 +33,11 @@ export interface GetCloudletsApplicationLoadBalancerMatchRuleResult {
     readonly matchRules?: outputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRule[];
 }
 export function getCloudletsApplicationLoadBalancerMatchRuleOutput(args?: GetCloudletsApplicationLoadBalancerMatchRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudletsApplicationLoadBalancerMatchRuleResult> {
-    return pulumi.output(args).apply((a: any) => getCloudletsApplicationLoadBalancerMatchRule(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getCloudletsApplicationLoadBalancerMatchRule:getCloudletsApplicationLoadBalancerMatchRule", {
+        "matchRules": args.matchRules,
+    }, opts);
 }
 
 /**

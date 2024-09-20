@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getEdgekvGroupItems(args: GetEdgekvGroupItemsArgs, opts?: pulumi.InvokeOptions): Promise<GetEdgekvGroupItemsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getEdgekvGroupItems:getEdgekvGroupItems", {
         "groupName": args.groupName,
@@ -37,7 +36,12 @@ export interface GetEdgekvGroupItemsResult {
     readonly network: string;
 }
 export function getEdgekvGroupItemsOutput(args: GetEdgekvGroupItemsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEdgekvGroupItemsResult> {
-    return pulumi.output(args).apply((a: any) => getEdgekvGroupItems(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getEdgekvGroupItems:getEdgekvGroupItems", {
+        "groupName": args.groupName,
+        "namespaceName": args.namespaceName,
+        "network": args.network,
+    }, opts);
 }
 
 /**

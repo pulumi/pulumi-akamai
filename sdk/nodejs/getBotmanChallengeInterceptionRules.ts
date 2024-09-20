@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getBotmanChallengeInterceptionRules(args: GetBotmanChallengeInterceptionRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetBotmanChallengeInterceptionRulesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getBotmanChallengeInterceptionRules:getBotmanChallengeInterceptionRules", {
         "configId": args.configId,
@@ -31,7 +30,10 @@ export interface GetBotmanChallengeInterceptionRulesResult {
     readonly json: string;
 }
 export function getBotmanChallengeInterceptionRulesOutput(args: GetBotmanChallengeInterceptionRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanChallengeInterceptionRulesResult> {
-    return pulumi.output(args).apply((a: any) => getBotmanChallengeInterceptionRules(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getBotmanChallengeInterceptionRules:getBotmanChallengeInterceptionRules", {
+        "configId": args.configId,
+    }, opts);
 }
 
 /**

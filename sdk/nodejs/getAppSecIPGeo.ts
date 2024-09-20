@@ -5,7 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getAppSecIPGeo(args: GetAppSecIPGeoArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecIPGeoResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecIPGeo:getAppSecIPGeo", {
         "configId": args.configId,
@@ -40,7 +39,11 @@ export interface GetAppSecIPGeoResult {
     readonly ukraineGeoControlAction: string;
 }
 export function getAppSecIPGeoOutput(args: GetAppSecIPGeoOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecIPGeoResult> {
-    return pulumi.output(args).apply((a: any) => getAppSecIPGeo(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("akamai:index/getAppSecIPGeo:getAppSecIPGeo", {
+        "configId": args.configId,
+        "securityPolicyId": args.securityPolicyId,
+    }, opts);
 }
 
 /**

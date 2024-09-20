@@ -38,14 +38,20 @@ type LookupAppSecSelectedHostnamesResult struct {
 
 func LookupAppSecSelectedHostnamesOutput(ctx *pulumi.Context, args LookupAppSecSelectedHostnamesOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecSelectedHostnamesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupAppSecSelectedHostnamesResult, error) {
+		ApplyT(func(v interface{}) (LookupAppSecSelectedHostnamesResultOutput, error) {
 			args := v.(LookupAppSecSelectedHostnamesArgs)
-			r, err := LookupAppSecSelectedHostnames(ctx, &args, opts...)
-			var s LookupAppSecSelectedHostnamesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupAppSecSelectedHostnamesResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecSelectedHostnames:getAppSecSelectedHostnames", args, &rv, "", opts...)
+			if err != nil {
+				return LookupAppSecSelectedHostnamesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupAppSecSelectedHostnamesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupAppSecSelectedHostnamesResultOutput), nil
+			}
+			return output, nil
 		}).(LookupAppSecSelectedHostnamesResultOutput)
 }
 

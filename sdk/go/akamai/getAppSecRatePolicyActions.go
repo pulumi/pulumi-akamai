@@ -40,14 +40,20 @@ type GetAppSecRatePolicyActionsResult struct {
 
 func GetAppSecRatePolicyActionsOutput(ctx *pulumi.Context, args GetAppSecRatePolicyActionsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecRatePolicyActionsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAppSecRatePolicyActionsResult, error) {
+		ApplyT(func(v interface{}) (GetAppSecRatePolicyActionsResultOutput, error) {
 			args := v.(GetAppSecRatePolicyActionsArgs)
-			r, err := GetAppSecRatePolicyActions(ctx, &args, opts...)
-			var s GetAppSecRatePolicyActionsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAppSecRatePolicyActionsResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecRatePolicyActions:getAppSecRatePolicyActions", args, &rv, "", opts...)
+			if err != nil {
+				return GetAppSecRatePolicyActionsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAppSecRatePolicyActionsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAppSecRatePolicyActionsResultOutput), nil
+			}
+			return output, nil
 		}).(GetAppSecRatePolicyActionsResultOutput)
 }
 

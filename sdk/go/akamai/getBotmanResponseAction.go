@@ -38,14 +38,20 @@ type GetBotmanResponseActionResult struct {
 
 func GetBotmanResponseActionOutput(ctx *pulumi.Context, args GetBotmanResponseActionOutputArgs, opts ...pulumi.InvokeOption) GetBotmanResponseActionResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetBotmanResponseActionResult, error) {
+		ApplyT(func(v interface{}) (GetBotmanResponseActionResultOutput, error) {
 			args := v.(GetBotmanResponseActionArgs)
-			r, err := GetBotmanResponseAction(ctx, &args, opts...)
-			var s GetBotmanResponseActionResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetBotmanResponseActionResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getBotmanResponseAction:getBotmanResponseAction", args, &rv, "", opts...)
+			if err != nil {
+				return GetBotmanResponseActionResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetBotmanResponseActionResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetBotmanResponseActionResultOutput), nil
+			}
+			return output, nil
 		}).(GetBotmanResponseActionResultOutput)
 }
 

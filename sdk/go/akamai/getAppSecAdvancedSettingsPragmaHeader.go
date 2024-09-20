@@ -39,14 +39,20 @@ type LookupAppSecAdvancedSettingsPragmaHeaderResult struct {
 
 func LookupAppSecAdvancedSettingsPragmaHeaderOutput(ctx *pulumi.Context, args LookupAppSecAdvancedSettingsPragmaHeaderOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecAdvancedSettingsPragmaHeaderResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupAppSecAdvancedSettingsPragmaHeaderResult, error) {
+		ApplyT(func(v interface{}) (LookupAppSecAdvancedSettingsPragmaHeaderResultOutput, error) {
 			args := v.(LookupAppSecAdvancedSettingsPragmaHeaderArgs)
-			r, err := LookupAppSecAdvancedSettingsPragmaHeader(ctx, &args, opts...)
-			var s LookupAppSecAdvancedSettingsPragmaHeaderResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupAppSecAdvancedSettingsPragmaHeaderResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecAdvancedSettingsPragmaHeader:getAppSecAdvancedSettingsPragmaHeader", args, &rv, "", opts...)
+			if err != nil {
+				return LookupAppSecAdvancedSettingsPragmaHeaderResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupAppSecAdvancedSettingsPragmaHeaderResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupAppSecAdvancedSettingsPragmaHeaderResultOutput), nil
+			}
+			return output, nil
 		}).(LookupAppSecAdvancedSettingsPragmaHeaderResultOutput)
 }
 

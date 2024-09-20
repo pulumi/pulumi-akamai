@@ -36,14 +36,20 @@ type GetCloudletsApiPrioritizationMatchRuleResult struct {
 
 func GetCloudletsApiPrioritizationMatchRuleOutput(ctx *pulumi.Context, args GetCloudletsApiPrioritizationMatchRuleOutputArgs, opts ...pulumi.InvokeOption) GetCloudletsApiPrioritizationMatchRuleResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetCloudletsApiPrioritizationMatchRuleResult, error) {
+		ApplyT(func(v interface{}) (GetCloudletsApiPrioritizationMatchRuleResultOutput, error) {
 			args := v.(GetCloudletsApiPrioritizationMatchRuleArgs)
-			r, err := GetCloudletsApiPrioritizationMatchRule(ctx, &args, opts...)
-			var s GetCloudletsApiPrioritizationMatchRuleResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetCloudletsApiPrioritizationMatchRuleResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getCloudletsApiPrioritizationMatchRule:getCloudletsApiPrioritizationMatchRule", args, &rv, "", opts...)
+			if err != nil {
+				return GetCloudletsApiPrioritizationMatchRuleResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetCloudletsApiPrioritizationMatchRuleResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetCloudletsApiPrioritizationMatchRuleResultOutput), nil
+			}
+			return output, nil
 		}).(GetCloudletsApiPrioritizationMatchRuleResultOutput)
 }
 

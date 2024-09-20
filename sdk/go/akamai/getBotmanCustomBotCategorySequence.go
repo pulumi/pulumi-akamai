@@ -36,14 +36,20 @@ type LookupBotmanCustomBotCategorySequenceResult struct {
 
 func LookupBotmanCustomBotCategorySequenceOutput(ctx *pulumi.Context, args LookupBotmanCustomBotCategorySequenceOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanCustomBotCategorySequenceResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupBotmanCustomBotCategorySequenceResult, error) {
+		ApplyT(func(v interface{}) (LookupBotmanCustomBotCategorySequenceResultOutput, error) {
 			args := v.(LookupBotmanCustomBotCategorySequenceArgs)
-			r, err := LookupBotmanCustomBotCategorySequence(ctx, &args, opts...)
-			var s LookupBotmanCustomBotCategorySequenceResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupBotmanCustomBotCategorySequenceResult
+			secret, err := ctx.InvokePackageRaw("akamai:index/getBotmanCustomBotCategorySequence:getBotmanCustomBotCategorySequence", args, &rv, "", opts...)
+			if err != nil {
+				return LookupBotmanCustomBotCategorySequenceResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupBotmanCustomBotCategorySequenceResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupBotmanCustomBotCategorySequenceResultOutput), nil
+			}
+			return output, nil
 		}).(LookupBotmanCustomBotCategorySequenceResultOutput)
 }
 
