@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -148,9 +153,6 @@ def get_property_rules_builder(rules_v20230105: Optional[Union['GetPropertyRules
         rules_v20231030=pulumi.get(__ret__, 'rules_v20231030'),
         rules_v20240109=pulumi.get(__ret__, 'rules_v20240109'),
         rules_v20240212=pulumi.get(__ret__, 'rules_v20240212'))
-
-
-@_utilities.lift_output_func(get_property_rules_builder)
 def get_property_rules_builder_output(rules_v20230105: Optional[pulumi.Input[Optional[Union['GetPropertyRulesBuilderRulesV20230105Args', 'GetPropertyRulesBuilderRulesV20230105ArgsDict']]]] = None,
                                       rules_v20230530: Optional[pulumi.Input[Optional[Union['GetPropertyRulesBuilderRulesV20230530Args', 'GetPropertyRulesBuilderRulesV20230530ArgsDict']]]] = None,
                                       rules_v20230920: Optional[pulumi.Input[Optional[Union['GetPropertyRulesBuilderRulesV20230920Args', 'GetPropertyRulesBuilderRulesV20230920ArgsDict']]]] = None,
@@ -161,4 +163,22 @@ def get_property_rules_builder_output(rules_v20230105: Optional[pulumi.Input[Opt
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['rulesV20230105'] = rules_v20230105
+    __args__['rulesV20230530'] = rules_v20230530
+    __args__['rulesV20230920'] = rules_v20230920
+    __args__['rulesV20231030'] = rules_v20231030
+    __args__['rulesV20240109'] = rules_v20240109
+    __args__['rulesV20240212'] = rules_v20240212
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getPropertyRulesBuilder:getPropertyRulesBuilder', __args__, opts=opts, typ=GetPropertyRulesBuilderResult)
+    return __ret__.apply(lambda __response__: GetPropertyRulesBuilderResult(
+        id=pulumi.get(__response__, 'id'),
+        json=pulumi.get(__response__, 'json'),
+        rule_format=pulumi.get(__response__, 'rule_format'),
+        rules_v20230105=pulumi.get(__response__, 'rules_v20230105'),
+        rules_v20230530=pulumi.get(__response__, 'rules_v20230530'),
+        rules_v20230920=pulumi.get(__response__, 'rules_v20230920'),
+        rules_v20231030=pulumi.get(__response__, 'rules_v20231030'),
+        rules_v20240109=pulumi.get(__response__, 'rules_v20240109'),
+        rules_v20240212=pulumi.get(__response__, 'rules_v20240212')))

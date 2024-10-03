@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -126,12 +131,21 @@ def get_cps_deployments(enrollment_id: Optional[int] = None,
         production_certificate_rsa=pulumi.get(__ret__, 'production_certificate_rsa'),
         staging_certificate_ecdsa=pulumi.get(__ret__, 'staging_certificate_ecdsa'),
         staging_certificate_rsa=pulumi.get(__ret__, 'staging_certificate_rsa'))
-
-
-@_utilities.lift_output_func(get_cps_deployments)
 def get_cps_deployments_output(enrollment_id: Optional[pulumi.Input[int]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCpsDeploymentsResult]:
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['enrollmentId'] = enrollment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getCpsDeployments:getCpsDeployments', __args__, opts=opts, typ=GetCpsDeploymentsResult)
+    return __ret__.apply(lambda __response__: GetCpsDeploymentsResult(
+        auto_renewal_start_time=pulumi.get(__response__, 'auto_renewal_start_time'),
+        enrollment_id=pulumi.get(__response__, 'enrollment_id'),
+        expiry_date=pulumi.get(__response__, 'expiry_date'),
+        id=pulumi.get(__response__, 'id'),
+        production_certificate_ecdsa=pulumi.get(__response__, 'production_certificate_ecdsa'),
+        production_certificate_rsa=pulumi.get(__response__, 'production_certificate_rsa'),
+        staging_certificate_ecdsa=pulumi.get(__response__, 'staging_certificate_ecdsa'),
+        staging_certificate_rsa=pulumi.get(__response__, 'staging_certificate_rsa')))

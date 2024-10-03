@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -77,12 +82,16 @@ def get_property_products(contract_id: Optional[str] = None,
         contract_id=pulumi.get(__ret__, 'contract_id'),
         id=pulumi.get(__ret__, 'id'),
         products=pulumi.get(__ret__, 'products'))
-
-
-@_utilities.lift_output_func(get_property_products)
 def get_property_products_output(contract_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyProductsResult]:
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['contractId'] = contract_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getPropertyProducts:getPropertyProducts', __args__, opts=opts, typ=GetPropertyProductsResult)
+    return __ret__.apply(lambda __response__: GetPropertyProductsResult(
+        contract_id=pulumi.get(__response__, 'contract_id'),
+        id=pulumi.get(__response__, 'id'),
+        products=pulumi.get(__response__, 'products')))

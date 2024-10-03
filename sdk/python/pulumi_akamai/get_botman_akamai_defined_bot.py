@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -76,12 +81,16 @@ def get_botman_akamai_defined_bot(bot_name: Optional[str] = None,
         bot_name=pulumi.get(__ret__, 'bot_name'),
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'))
-
-
-@_utilities.lift_output_func(get_botman_akamai_defined_bot)
 def get_botman_akamai_defined_bot_output(bot_name: Optional[pulumi.Input[Optional[str]]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBotmanAkamaiDefinedBotResult]:
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['botName'] = bot_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getBotmanAkamaiDefinedBot:getBotmanAkamaiDefinedBot', __args__, opts=opts, typ=GetBotmanAkamaiDefinedBotResult)
+    return __ret__.apply(lambda __response__: GetBotmanAkamaiDefinedBotResult(
+        bot_name=pulumi.get(__response__, 'bot_name'),
+        id=pulumi.get(__response__, 'id'),
+        json=pulumi.get(__response__, 'json')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -178,13 +183,28 @@ def get_app_sec_security_policy_protections(config_id: Optional[int] = None,
         json=pulumi.get(__ret__, 'json'),
         output_text=pulumi.get(__ret__, 'output_text'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
-
-
-@_utilities.lift_output_func(get_app_sec_security_policy_protections)
 def get_app_sec_security_policy_protections_output(config_id: Optional[pulumi.Input[int]] = None,
                                                    security_policy_id: Optional[pulumi.Input[str]] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecSecurityPolicyProtectionsResult]:
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['configId'] = config_id
+    __args__['securityPolicyId'] = security_policy_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppSecSecurityPolicyProtections:getAppSecSecurityPolicyProtections', __args__, opts=opts, typ=GetAppSecSecurityPolicyProtectionsResult)
+    return __ret__.apply(lambda __response__: GetAppSecSecurityPolicyProtectionsResult(
+        apply_api_constraints=pulumi.get(__response__, 'apply_api_constraints'),
+        apply_application_layer_controls=pulumi.get(__response__, 'apply_application_layer_controls'),
+        apply_botman_controls=pulumi.get(__response__, 'apply_botman_controls'),
+        apply_malware_controls=pulumi.get(__response__, 'apply_malware_controls'),
+        apply_network_layer_controls=pulumi.get(__response__, 'apply_network_layer_controls'),
+        apply_rate_controls=pulumi.get(__response__, 'apply_rate_controls'),
+        apply_reputation_controls=pulumi.get(__response__, 'apply_reputation_controls'),
+        apply_slow_post_controls=pulumi.get(__response__, 'apply_slow_post_controls'),
+        config_id=pulumi.get(__response__, 'config_id'),
+        id=pulumi.get(__response__, 'id'),
+        json=pulumi.get(__response__, 'json'),
+        output_text=pulumi.get(__response__, 'output_text'),
+        security_policy_id=pulumi.get(__response__, 'security_policy_id')))

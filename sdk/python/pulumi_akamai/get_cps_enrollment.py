@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -297,12 +302,38 @@ def get_cps_enrollment(enrollment_id: Optional[int] = None,
         staging_slots=pulumi.get(__ret__, 'staging_slots'),
         tech_contacts=pulumi.get(__ret__, 'tech_contacts'),
         validation_type=pulumi.get(__ret__, 'validation_type'))
-
-
-@_utilities.lift_output_func(get_cps_enrollment)
 def get_cps_enrollment_output(enrollment_id: Optional[pulumi.Input[int]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCPSEnrollmentResult]:
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['enrollmentId'] = enrollment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getCPSEnrollment:getCPSEnrollment', __args__, opts=opts, typ=GetCPSEnrollmentResult)
+    return __ret__.apply(lambda __response__: GetCPSEnrollmentResult(
+        admin_contacts=pulumi.get(__response__, 'admin_contacts'),
+        assigned_slots=pulumi.get(__response__, 'assigned_slots'),
+        certificate_chain_type=pulumi.get(__response__, 'certificate_chain_type'),
+        certificate_type=pulumi.get(__response__, 'certificate_type'),
+        common_name=pulumi.get(__response__, 'common_name'),
+        contract_id=pulumi.get(__response__, 'contract_id'),
+        csrs=pulumi.get(__response__, 'csrs'),
+        dns_challenges=pulumi.get(__response__, 'dns_challenges'),
+        enable_multi_stacked_certificates=pulumi.get(__response__, 'enable_multi_stacked_certificates'),
+        enrollment_id=pulumi.get(__response__, 'enrollment_id'),
+        http_challenges=pulumi.get(__response__, 'http_challenges'),
+        id=pulumi.get(__response__, 'id'),
+        network_configurations=pulumi.get(__response__, 'network_configurations'),
+        org_id=pulumi.get(__response__, 'org_id'),
+        organizations=pulumi.get(__response__, 'organizations'),
+        pending_changes=pulumi.get(__response__, 'pending_changes'),
+        production_slots=pulumi.get(__response__, 'production_slots'),
+        registration_authority=pulumi.get(__response__, 'registration_authority'),
+        sans=pulumi.get(__response__, 'sans'),
+        secure_network=pulumi.get(__response__, 'secure_network'),
+        signature_algorithm=pulumi.get(__response__, 'signature_algorithm'),
+        sni_only=pulumi.get(__response__, 'sni_only'),
+        staging_slots=pulumi.get(__response__, 'staging_slots'),
+        tech_contacts=pulumi.get(__response__, 'tech_contacts'),
+        validation_type=pulumi.get(__response__, 'validation_type')))

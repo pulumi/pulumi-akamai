@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -77,12 +82,16 @@ def get_datastreams(group_id: Optional[int] = None,
         group_id=pulumi.get(__ret__, 'group_id'),
         id=pulumi.get(__ret__, 'id'),
         streams_details=pulumi.get(__ret__, 'streams_details'))
-
-
-@_utilities.lift_output_func(get_datastreams)
 def get_datastreams_output(group_id: Optional[pulumi.Input[Optional[int]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatastreamsResult]:
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['groupId'] = group_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getDatastreams:getDatastreams', __args__, opts=opts, typ=GetDatastreamsResult)
+    return __ret__.apply(lambda __response__: GetDatastreamsResult(
+        group_id=pulumi.get(__response__, 'group_id'),
+        id=pulumi.get(__response__, 'id'),
+        streams_details=pulumi.get(__response__, 'streams_details')))
