@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -134,9 +139,6 @@ def get_property_rules(contract_id: Optional[str] = None,
         rule_format=pulumi.get(__ret__, 'rule_format'),
         rules=pulumi.get(__ret__, 'rules'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_property_rules)
 def get_property_rules_output(contract_id: Optional[pulumi.Input[Optional[str]]] = None,
                               group_id: Optional[pulumi.Input[Optional[str]]] = None,
                               property_id: Optional[pulumi.Input[str]] = None,
@@ -146,4 +148,20 @@ def get_property_rules_output(contract_id: Optional[pulumi.Input[Optional[str]]]
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['contractId'] = contract_id
+    __args__['groupId'] = group_id
+    __args__['propertyId'] = property_id
+    __args__['ruleFormat'] = rule_format
+    __args__['version'] = version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getPropertyRules:getPropertyRules', __args__, opts=opts, typ=GetPropertyRulesResult)
+    return __ret__.apply(lambda __response__: GetPropertyRulesResult(
+        contract_id=pulumi.get(__response__, 'contract_id'),
+        errors=pulumi.get(__response__, 'errors'),
+        group_id=pulumi.get(__response__, 'group_id'),
+        id=pulumi.get(__response__, 'id'),
+        property_id=pulumi.get(__response__, 'property_id'),
+        rule_format=pulumi.get(__response__, 'rule_format'),
+        rules=pulumi.get(__response__, 'rules'),
+        version=pulumi.get(__response__, 'version')))

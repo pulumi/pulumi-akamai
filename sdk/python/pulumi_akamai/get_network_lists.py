@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -150,9 +155,6 @@ def get_network_lists(name: Optional[str] = None,
         output_text=pulumi.get(__ret__, 'output_text'),
         sync_point=pulumi.get(__ret__, 'sync_point'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_network_lists)
 def get_network_lists_output(name: Optional[pulumi.Input[Optional[str]]] = None,
                              network_list_id: Optional[pulumi.Input[Optional[str]]] = None,
                              type: Optional[pulumi.Input[Optional[str]]] = None,
@@ -160,4 +162,20 @@ def get_network_lists_output(name: Optional[pulumi.Input[Optional[str]]] = None,
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['name'] = name
+    __args__['networkListId'] = network_list_id
+    __args__['type'] = type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getNetworkLists:getNetworkLists', __args__, opts=opts, typ=GetNetworkListsResult)
+    return __ret__.apply(lambda __response__: GetNetworkListsResult(
+        contract_id=pulumi.get(__response__, 'contract_id'),
+        group_id=pulumi.get(__response__, 'group_id'),
+        id=pulumi.get(__response__, 'id'),
+        json=pulumi.get(__response__, 'json'),
+        lists=pulumi.get(__response__, 'lists'),
+        name=pulumi.get(__response__, 'name'),
+        network_list_id=pulumi.get(__response__, 'network_list_id'),
+        output_text=pulumi.get(__response__, 'output_text'),
+        sync_point=pulumi.get(__response__, 'sync_point'),
+        type=pulumi.get(__response__, 'type')))

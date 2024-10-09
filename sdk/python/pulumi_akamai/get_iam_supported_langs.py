@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -64,11 +69,13 @@ def get_iam_supported_langs(opts: Optional[pulumi.InvokeOptions] = None) -> Awai
     return AwaitableGetIamSupportedLangsResult(
         id=pulumi.get(__ret__, 'id'),
         languages=pulumi.get(__ret__, 'languages'))
-
-
-@_utilities.lift_output_func(get_iam_supported_langs)
 def get_iam_supported_langs_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamSupportedLangsResult]:
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getIamSupportedLangs:getIamSupportedLangs', __args__, opts=opts, typ=GetIamSupportedLangsResult)
+    return __ret__.apply(lambda __response__: GetIamSupportedLangsResult(
+        id=pulumi.get(__response__, 'id'),
+        languages=pulumi.get(__response__, 'languages')))

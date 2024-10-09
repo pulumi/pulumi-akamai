@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -229,13 +234,33 @@ def get_gtm_datacenter(datacenter_id: Optional[int] = None,
         servermonitor_pool=pulumi.get(__ret__, 'servermonitor_pool'),
         state_or_province=pulumi.get(__ret__, 'state_or_province'),
         virtual=pulumi.get(__ret__, 'virtual'))
-
-
-@_utilities.lift_output_func(get_gtm_datacenter)
 def get_gtm_datacenter_output(datacenter_id: Optional[pulumi.Input[int]] = None,
                               domain: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGtmDatacenterResult]:
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['datacenterId'] = datacenter_id
+    __args__['domain'] = domain
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getGtmDatacenter:getGtmDatacenter', __args__, opts=opts, typ=GetGtmDatacenterResult)
+    return __ret__.apply(lambda __response__: GetGtmDatacenterResult(
+        city=pulumi.get(__response__, 'city'),
+        clone_of=pulumi.get(__response__, 'clone_of'),
+        cloud_server_host_header_override=pulumi.get(__response__, 'cloud_server_host_header_override'),
+        cloud_server_targeting=pulumi.get(__response__, 'cloud_server_targeting'),
+        continent=pulumi.get(__response__, 'continent'),
+        country=pulumi.get(__response__, 'country'),
+        datacenter_id=pulumi.get(__response__, 'datacenter_id'),
+        default_load_objects=pulumi.get(__response__, 'default_load_objects'),
+        domain=pulumi.get(__response__, 'domain'),
+        id=pulumi.get(__response__, 'id'),
+        latitude=pulumi.get(__response__, 'latitude'),
+        links=pulumi.get(__response__, 'links'),
+        longitude=pulumi.get(__response__, 'longitude'),
+        nickname=pulumi.get(__response__, 'nickname'),
+        score_penalty=pulumi.get(__response__, 'score_penalty'),
+        servermonitor_pool=pulumi.get(__response__, 'servermonitor_pool'),
+        state_or_province=pulumi.get(__response__, 'state_or_province'),
+        virtual=pulumi.get(__response__, 'virtual')))

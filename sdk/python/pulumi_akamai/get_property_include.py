@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -137,9 +142,6 @@ def get_property_include(contract_id: Optional[str] = None,
         production_version=pulumi.get(__ret__, 'production_version'),
         staging_version=pulumi.get(__ret__, 'staging_version'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_property_include)
 def get_property_include_output(contract_id: Optional[pulumi.Input[str]] = None,
                                 group_id: Optional[pulumi.Input[str]] = None,
                                 include_id: Optional[pulumi.Input[str]] = None,
@@ -147,4 +149,19 @@ def get_property_include_output(contract_id: Optional[pulumi.Input[str]] = None,
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['contractId'] = contract_id
+    __args__['groupId'] = group_id
+    __args__['includeId'] = include_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getPropertyInclude:getPropertyInclude', __args__, opts=opts, typ=GetPropertyIncludeResult)
+    return __ret__.apply(lambda __response__: GetPropertyIncludeResult(
+        contract_id=pulumi.get(__response__, 'contract_id'),
+        group_id=pulumi.get(__response__, 'group_id'),
+        id=pulumi.get(__response__, 'id'),
+        include_id=pulumi.get(__response__, 'include_id'),
+        latest_version=pulumi.get(__response__, 'latest_version'),
+        name=pulumi.get(__response__, 'name'),
+        production_version=pulumi.get(__response__, 'production_version'),
+        staging_version=pulumi.get(__response__, 'staging_version'),
+        type=pulumi.get(__response__, 'type')))

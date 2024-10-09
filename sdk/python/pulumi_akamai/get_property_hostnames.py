@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -113,9 +118,6 @@ def get_property_hostnames(contract_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         property_id=pulumi.get(__ret__, 'property_id'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_property_hostnames)
 def get_property_hostnames_output(contract_id: Optional[pulumi.Input[str]] = None,
                                   group_id: Optional[pulumi.Input[str]] = None,
                                   property_id: Optional[pulumi.Input[str]] = None,
@@ -124,4 +126,17 @@ def get_property_hostnames_output(contract_id: Optional[pulumi.Input[str]] = Non
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['contractId'] = contract_id
+    __args__['groupId'] = group_id
+    __args__['propertyId'] = property_id
+    __args__['version'] = version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getPropertyHostnames:getPropertyHostnames', __args__, opts=opts, typ=GetPropertyHostnamesResult)
+    return __ret__.apply(lambda __response__: GetPropertyHostnamesResult(
+        contract_id=pulumi.get(__response__, 'contract_id'),
+        group_id=pulumi.get(__response__, 'group_id'),
+        hostnames=pulumi.get(__response__, 'hostnames'),
+        id=pulumi.get(__response__, 'id'),
+        property_id=pulumi.get(__response__, 'property_id'),
+        version=pulumi.get(__response__, 'version')))

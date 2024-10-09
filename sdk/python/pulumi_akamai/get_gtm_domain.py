@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -461,9 +466,6 @@ def get_gtm_domain(as_maps: Optional[Sequence[Union['GetGtmDomainAsMapArgs', 'Ge
         sign_and_serve_algorithm=pulumi.get(__ret__, 'sign_and_serve_algorithm'),
         status=pulumi.get(__ret__, 'status'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_gtm_domain)
 def get_gtm_domain_output(as_maps: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmDomainAsMapArgs', 'GetGtmDomainAsMapArgsDict']]]]] = None,
                           cidr_maps: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmDomainCidrMapArgs', 'GetGtmDomainCidrMapArgsDict']]]]] = None,
                           datacenters: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmDomainDatacenterArgs', 'GetGtmDomainDatacenterArgsDict']]]]] = None,
@@ -477,4 +479,56 @@ def get_gtm_domain_output(as_maps: Optional[pulumi.Input[Optional[Sequence[Union
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['asMaps'] = as_maps
+    __args__['cidrMaps'] = cidr_maps
+    __args__['datacenters'] = datacenters
+    __args__['geographicMaps'] = geographic_maps
+    __args__['links'] = links
+    __args__['name'] = name
+    __args__['properties'] = properties
+    __args__['resources'] = resources
+    __args__['status'] = status
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getGtmDomain:getGtmDomain', __args__, opts=opts, typ=GetGtmDomainResult)
+    return __ret__.apply(lambda __response__: GetGtmDomainResult(
+        as_maps=pulumi.get(__response__, 'as_maps'),
+        cidr_maps=pulumi.get(__response__, 'cidr_maps'),
+        cname_coalescing_enabled=pulumi.get(__response__, 'cname_coalescing_enabled'),
+        datacenters=pulumi.get(__response__, 'datacenters'),
+        default_error_penalty=pulumi.get(__response__, 'default_error_penalty'),
+        default_health_max=pulumi.get(__response__, 'default_health_max'),
+        default_health_multiplier=pulumi.get(__response__, 'default_health_multiplier'),
+        default_health_threshold=pulumi.get(__response__, 'default_health_threshold'),
+        default_max_unreachable_penalty=pulumi.get(__response__, 'default_max_unreachable_penalty'),
+        default_ssl_client_certificate=pulumi.get(__response__, 'default_ssl_client_certificate'),
+        default_ssl_client_private_key=pulumi.get(__response__, 'default_ssl_client_private_key'),
+        default_timeout_penalty=pulumi.get(__response__, 'default_timeout_penalty'),
+        default_unreachable_threshold=pulumi.get(__response__, 'default_unreachable_threshold'),
+        email_notification_lists=pulumi.get(__response__, 'email_notification_lists'),
+        end_user_mapping_enabled=pulumi.get(__response__, 'end_user_mapping_enabled'),
+        geographic_maps=pulumi.get(__response__, 'geographic_maps'),
+        id=pulumi.get(__response__, 'id'),
+        last_modified=pulumi.get(__response__, 'last_modified'),
+        last_modified_by=pulumi.get(__response__, 'last_modified_by'),
+        links=pulumi.get(__response__, 'links'),
+        load_feedback=pulumi.get(__response__, 'load_feedback'),
+        load_imbalance_percentage=pulumi.get(__response__, 'load_imbalance_percentage'),
+        map_update_interval=pulumi.get(__response__, 'map_update_interval'),
+        max_properties=pulumi.get(__response__, 'max_properties'),
+        max_resources=pulumi.get(__response__, 'max_resources'),
+        max_test_timeout=pulumi.get(__response__, 'max_test_timeout'),
+        max_ttl=pulumi.get(__response__, 'max_ttl'),
+        min_pingable_region_fraction=pulumi.get(__response__, 'min_pingable_region_fraction'),
+        min_test_interval=pulumi.get(__response__, 'min_test_interval'),
+        min_ttl=pulumi.get(__response__, 'min_ttl'),
+        modification_comments=pulumi.get(__response__, 'modification_comments'),
+        name=pulumi.get(__response__, 'name'),
+        properties=pulumi.get(__response__, 'properties'),
+        resources=pulumi.get(__response__, 'resources'),
+        round_robin_prefix=pulumi.get(__response__, 'round_robin_prefix'),
+        server_monitor_pool=pulumi.get(__response__, 'server_monitor_pool'),
+        sign_and_serve=pulumi.get(__response__, 'sign_and_serve'),
+        sign_and_serve_algorithm=pulumi.get(__response__, 'sign_and_serve_algorithm'),
+        status=pulumi.get(__response__, 'status'),
+        type=pulumi.get(__response__, 'type')))

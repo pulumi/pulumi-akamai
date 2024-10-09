@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -101,9 +106,6 @@ def get_property_include_parents(contract_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         include_id=pulumi.get(__ret__, 'include_id'),
         parents=pulumi.get(__ret__, 'parents'))
-
-
-@_utilities.lift_output_func(get_property_include_parents)
 def get_property_include_parents_output(contract_id: Optional[pulumi.Input[str]] = None,
                                         group_id: Optional[pulumi.Input[str]] = None,
                                         include_id: Optional[pulumi.Input[str]] = None,
@@ -111,4 +113,15 @@ def get_property_include_parents_output(contract_id: Optional[pulumi.Input[str]]
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['contractId'] = contract_id
+    __args__['groupId'] = group_id
+    __args__['includeId'] = include_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getPropertyIncludeParents:getPropertyIncludeParents', __args__, opts=opts, typ=GetPropertyIncludeParentsResult)
+    return __ret__.apply(lambda __response__: GetPropertyIncludeParentsResult(
+        contract_id=pulumi.get(__response__, 'contract_id'),
+        group_id=pulumi.get(__response__, 'group_id'),
+        id=pulumi.get(__response__, 'id'),
+        include_id=pulumi.get(__response__, 'include_id'),
+        parents=pulumi.get(__response__, 'parents')))

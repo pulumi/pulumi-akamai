@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -211,9 +216,6 @@ def get_gtm_resource(domain: Optional[str] = None,
         resource_name=pulumi.get(__ret__, 'resource_name'),
         type=pulumi.get(__ret__, 'type'),
         upper_bound=pulumi.get(__ret__, 'upper_bound'))
-
-
-@_utilities.lift_output_func(get_gtm_resource)
 def get_gtm_resource_output(domain: Optional[pulumi.Input[str]] = None,
                             links: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmResourceLinkArgs', 'GetGtmResourceLinkArgsDict']]]]] = None,
                             resource_instances: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmResourceResourceInstanceArgs', 'GetGtmResourceResourceInstanceArgsDict']]]]] = None,
@@ -222,4 +224,27 @@ def get_gtm_resource_output(domain: Optional[pulumi.Input[str]] = None,
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['domain'] = domain
+    __args__['links'] = links
+    __args__['resourceInstances'] = resource_instances
+    __args__['resourceName'] = resource_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getGtmResource:getGtmResource', __args__, opts=opts, typ=GetGtmResourceResult)
+    return __ret__.apply(lambda __response__: GetGtmResourceResult(
+        aggregation_type=pulumi.get(__response__, 'aggregation_type'),
+        constrained_property=pulumi.get(__response__, 'constrained_property'),
+        decay_rate=pulumi.get(__response__, 'decay_rate'),
+        description=pulumi.get(__response__, 'description'),
+        domain=pulumi.get(__response__, 'domain'),
+        host_header=pulumi.get(__response__, 'host_header'),
+        id=pulumi.get(__response__, 'id'),
+        leader_string=pulumi.get(__response__, 'leader_string'),
+        least_squares_decay=pulumi.get(__response__, 'least_squares_decay'),
+        links=pulumi.get(__response__, 'links'),
+        load_imbalance_percentage=pulumi.get(__response__, 'load_imbalance_percentage'),
+        max_u_multiplicative_increment=pulumi.get(__response__, 'max_u_multiplicative_increment'),
+        resource_instances=pulumi.get(__response__, 'resource_instances'),
+        resource_name=pulumi.get(__response__, 'resource_name'),
+        type=pulumi.get(__response__, 'type'),
+        upper_bound=pulumi.get(__response__, 'upper_bound')))
