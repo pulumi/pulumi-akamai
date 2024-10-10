@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -118,13 +123,22 @@ def get_app_sec_security_policy(config_id: Optional[int] = None,
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'),
         security_policy_id_lists=pulumi.get(__ret__, 'security_policy_id_lists'),
         security_policy_name=pulumi.get(__ret__, 'security_policy_name'))
-
-
-@_utilities.lift_output_func(get_app_sec_security_policy)
 def get_app_sec_security_policy_output(config_id: Optional[pulumi.Input[int]] = None,
                                        security_policy_name: Optional[pulumi.Input[Optional[str]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecSecurityPolicyResult]:
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['configId'] = config_id
+    __args__['securityPolicyName'] = security_policy_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppSecSecurityPolicy:getAppSecSecurityPolicy', __args__, opts=opts, typ=GetAppSecSecurityPolicyResult)
+    return __ret__.apply(lambda __response__: GetAppSecSecurityPolicyResult(
+        config_id=pulumi.get(__response__, 'config_id'),
+        id=pulumi.get(__response__, 'id'),
+        json=pulumi.get(__response__, 'json'),
+        output_text=pulumi.get(__response__, 'output_text'),
+        security_policy_id=pulumi.get(__response__, 'security_policy_id'),
+        security_policy_id_lists=pulumi.get(__response__, 'security_policy_id_lists'),
+        security_policy_name=pulumi.get(__response__, 'security_policy_name')))

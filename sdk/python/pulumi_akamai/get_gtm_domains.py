@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -66,12 +71,15 @@ def get_gtm_domains(domains: Optional[Sequence[Union['GetGtmDomainsDomainArgs', 
     return AwaitableGetGtmDomainsResult(
         domains=pulumi.get(__ret__, 'domains'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_gtm_domains)
 def get_gtm_domains_output(domains: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmDomainsDomainArgs', 'GetGtmDomainsDomainArgsDict']]]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGtmDomainsResult]:
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['domains'] = domains
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getGtmDomains:getGtmDomains', __args__, opts=opts, typ=GetGtmDomainsResult)
+    return __ret__.apply(lambda __response__: GetGtmDomainsResult(
+        domains=pulumi.get(__response__, 'domains'),
+        id=pulumi.get(__response__, 'id')))

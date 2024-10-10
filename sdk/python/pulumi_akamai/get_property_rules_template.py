@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -126,9 +131,6 @@ def get_property_rules_template(template_file: Optional[str] = None,
         var_definition_file=pulumi.get(__ret__, 'var_definition_file'),
         var_values_file=pulumi.get(__ret__, 'var_values_file'),
         variables=pulumi.get(__ret__, 'variables'))
-
-
-@_utilities.lift_output_func(get_property_rules_template)
 def get_property_rules_template_output(template_file: Optional[pulumi.Input[Optional[str]]] = None,
                                        templates: Optional[pulumi.Input[Optional[Sequence[Union['GetPropertyRulesTemplateTemplateArgs', 'GetPropertyRulesTemplateTemplateArgsDict']]]]] = None,
                                        var_definition_file: Optional[pulumi.Input[Optional[str]]] = None,
@@ -138,4 +140,19 @@ def get_property_rules_template_output(template_file: Optional[pulumi.Input[Opti
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['templateFile'] = template_file
+    __args__['templates'] = templates
+    __args__['varDefinitionFile'] = var_definition_file
+    __args__['varValuesFile'] = var_values_file
+    __args__['variables'] = variables
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate', __args__, opts=opts, typ=GetPropertyRulesTemplateResult)
+    return __ret__.apply(lambda __response__: GetPropertyRulesTemplateResult(
+        id=pulumi.get(__response__, 'id'),
+        json=pulumi.get(__response__, 'json'),
+        template_file=pulumi.get(__response__, 'template_file'),
+        templates=pulumi.get(__response__, 'templates'),
+        var_definition_file=pulumi.get(__response__, 'var_definition_file'),
+        var_values_file=pulumi.get(__response__, 'var_values_file'),
+        variables=pulumi.get(__response__, 'variables')))

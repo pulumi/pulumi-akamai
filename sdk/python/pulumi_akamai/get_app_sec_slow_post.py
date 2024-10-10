@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -98,13 +103,20 @@ def get_app_sec_slow_post(config_id: Optional[int] = None,
         json=pulumi.get(__ret__, 'json'),
         output_text=pulumi.get(__ret__, 'output_text'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
-
-
-@_utilities.lift_output_func(get_app_sec_slow_post)
 def get_app_sec_slow_post_output(config_id: Optional[pulumi.Input[int]] = None,
                                  security_policy_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecSlowPostResult]:
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['configId'] = config_id
+    __args__['securityPolicyId'] = security_policy_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppSecSlowPost:getAppSecSlowPost', __args__, opts=opts, typ=GetAppSecSlowPostResult)
+    return __ret__.apply(lambda __response__: GetAppSecSlowPostResult(
+        config_id=pulumi.get(__response__, 'config_id'),
+        id=pulumi.get(__response__, 'id'),
+        json=pulumi.get(__response__, 'json'),
+        output_text=pulumi.get(__response__, 'output_text'),
+        security_policy_id=pulumi.get(__response__, 'security_policy_id')))

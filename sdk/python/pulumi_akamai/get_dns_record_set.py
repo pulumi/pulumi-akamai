@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -100,9 +105,6 @@ def get_dns_record_set(host: Optional[str] = None,
         rdatas=pulumi.get(__ret__, 'rdatas'),
         record_type=pulumi.get(__ret__, 'record_type'),
         zone=pulumi.get(__ret__, 'zone'))
-
-
-@_utilities.lift_output_func(get_dns_record_set)
 def get_dns_record_set_output(host: Optional[pulumi.Input[str]] = None,
                               record_type: Optional[pulumi.Input[str]] = None,
                               zone: Optional[pulumi.Input[str]] = None,
@@ -110,4 +112,15 @@ def get_dns_record_set_output(host: Optional[pulumi.Input[str]] = None,
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['host'] = host
+    __args__['recordType'] = record_type
+    __args__['zone'] = zone
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getDnsRecordSet:getDnsRecordSet', __args__, opts=opts, typ=GetDnsRecordSetResult)
+    return __ret__.apply(lambda __response__: GetDnsRecordSetResult(
+        host=pulumi.get(__response__, 'host'),
+        id=pulumi.get(__response__, 'id'),
+        rdatas=pulumi.get(__response__, 'rdatas'),
+        record_type=pulumi.get(__response__, 'record_type'),
+        zone=pulumi.get(__response__, 'zone')))

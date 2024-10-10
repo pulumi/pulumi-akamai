@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -150,9 +155,6 @@ def get_property_activation(network: Optional[str] = None,
         status=pulumi.get(__ret__, 'status'),
         version=pulumi.get(__ret__, 'version'),
         warnings=pulumi.get(__ret__, 'warnings'))
-
-
-@_utilities.lift_output_func(get_property_activation)
 def get_property_activation_output(network: Optional[pulumi.Input[Optional[str]]] = None,
                                    property_id: Optional[pulumi.Input[str]] = None,
                                    version: Optional[pulumi.Input[Optional[int]]] = None,
@@ -160,4 +162,20 @@ def get_property_activation_output(network: Optional[pulumi.Input[Optional[str]]
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['network'] = network
+    __args__['propertyId'] = property_id
+    __args__['version'] = version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getPropertyActivation:getPropertyActivation', __args__, opts=opts, typ=GetPropertyActivationResult)
+    return __ret__.apply(lambda __response__: GetPropertyActivationResult(
+        activation_id=pulumi.get(__response__, 'activation_id'),
+        contacts=pulumi.get(__response__, 'contacts'),
+        errors=pulumi.get(__response__, 'errors'),
+        id=pulumi.get(__response__, 'id'),
+        network=pulumi.get(__response__, 'network'),
+        note=pulumi.get(__response__, 'note'),
+        property_id=pulumi.get(__response__, 'property_id'),
+        status=pulumi.get(__response__, 'status'),
+        version=pulumi.get(__response__, 'version'),
+        warnings=pulumi.get(__response__, 'warnings')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -199,9 +204,6 @@ def get_cloudwrapper_configuration(id: Optional[int] = None,
         property_ids=pulumi.get(__ret__, 'property_ids'),
         retain_idle_objects=pulumi.get(__ret__, 'retain_idle_objects'),
         status=pulumi.get(__ret__, 'status'))
-
-
-@_utilities.lift_output_func(get_cloudwrapper_configuration)
 def get_cloudwrapper_configuration_output(id: Optional[pulumi.Input[int]] = None,
                                           locations: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudwrapperConfigurationLocationArgs', 'GetCloudwrapperConfigurationLocationArgsDict']]]]] = None,
                                           multi_cdn_settings: Optional[pulumi.Input[Optional[Union['GetCloudwrapperConfigurationMultiCdnSettingsArgs', 'GetCloudwrapperConfigurationMultiCdnSettingsArgsDict']]]] = None,
@@ -209,4 +211,25 @@ def get_cloudwrapper_configuration_output(id: Optional[pulumi.Input[int]] = None
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['id'] = id
+    __args__['locations'] = locations
+    __args__['multiCdnSettings'] = multi_cdn_settings
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getCloudwrapperConfiguration:getCloudwrapperConfiguration', __args__, opts=opts, typ=GetCloudwrapperConfigurationResult)
+    return __ret__.apply(lambda __response__: GetCloudwrapperConfigurationResult(
+        capacity_alerts_threshold=pulumi.get(__response__, 'capacity_alerts_threshold'),
+        comments=pulumi.get(__response__, 'comments'),
+        config_name=pulumi.get(__response__, 'config_name'),
+        contract_id=pulumi.get(__response__, 'contract_id'),
+        id=pulumi.get(__response__, 'id'),
+        last_activated_by=pulumi.get(__response__, 'last_activated_by'),
+        last_activated_date=pulumi.get(__response__, 'last_activated_date'),
+        last_updated_by=pulumi.get(__response__, 'last_updated_by'),
+        last_updated_date=pulumi.get(__response__, 'last_updated_date'),
+        locations=pulumi.get(__response__, 'locations'),
+        multi_cdn_settings=pulumi.get(__response__, 'multi_cdn_settings'),
+        notification_emails=pulumi.get(__response__, 'notification_emails'),
+        property_ids=pulumi.get(__response__, 'property_ids'),
+        retain_idle_objects=pulumi.get(__response__, 'retain_idle_objects'),
+        status=pulumi.get(__response__, 'status')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -64,11 +69,13 @@ def get_iam_contact_types(opts: Optional[pulumi.InvokeOptions] = None) -> Awaita
     return AwaitableGetIamContactTypesResult(
         contact_types=pulumi.get(__ret__, 'contact_types'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_iam_contact_types)
 def get_iam_contact_types_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamContactTypesResult]:
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getIamContactTypes:getIamContactTypes', __args__, opts=opts, typ=GetIamContactTypesResult)
+    return __ret__.apply(lambda __response__: GetIamContactTypesResult(
+        contact_types=pulumi.get(__response__, 'contact_types'),
+        id=pulumi.get(__response__, 'id')))

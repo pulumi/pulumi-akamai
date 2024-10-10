@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -78,12 +83,16 @@ def get_imaging_policy_image(policy: Optional[Union['GetImagingPolicyImagePolicy
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'),
         policy=pulumi.get(__ret__, 'policy'))
-
-
-@_utilities.lift_output_func(get_imaging_policy_image)
 def get_imaging_policy_image_output(policy: Optional[pulumi.Input[Union['GetImagingPolicyImagePolicyArgs', 'GetImagingPolicyImagePolicyArgsDict']]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetImagingPolicyImageResult]:
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['policy'] = policy
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getImagingPolicyImage:getImagingPolicyImage', __args__, opts=opts, typ=GetImagingPolicyImageResult)
+    return __ret__.apply(lambda __response__: GetImagingPolicyImageResult(
+        id=pulumi.get(__response__, 'id'),
+        json=pulumi.get(__response__, 'json'),
+        policy=pulumi.get(__response__, 'policy')))

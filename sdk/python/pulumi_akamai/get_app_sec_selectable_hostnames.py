@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -144,9 +149,6 @@ def get_app_sec_selectable_hostnames(active_in_production: Optional[bool] = None
         hostnames_json=pulumi.get(__ret__, 'hostnames_json'),
         id=pulumi.get(__ret__, 'id'),
         output_text=pulumi.get(__ret__, 'output_text'))
-
-
-@_utilities.lift_output_func(get_app_sec_selectable_hostnames)
 def get_app_sec_selectable_hostnames_output(active_in_production: Optional[pulumi.Input[Optional[bool]]] = None,
                                             active_in_staging: Optional[pulumi.Input[Optional[bool]]] = None,
                                             config_id: Optional[pulumi.Input[Optional[int]]] = None,
@@ -156,4 +158,21 @@ def get_app_sec_selectable_hostnames_output(active_in_production: Optional[pulum
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['activeInProduction'] = active_in_production
+    __args__['activeInStaging'] = active_in_staging
+    __args__['configId'] = config_id
+    __args__['contractid'] = contractid
+    __args__['groupid'] = groupid
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppSecSelectableHostnames:getAppSecSelectableHostnames', __args__, opts=opts, typ=GetAppSecSelectableHostnamesResult)
+    return __ret__.apply(lambda __response__: GetAppSecSelectableHostnamesResult(
+        active_in_production=pulumi.get(__response__, 'active_in_production'),
+        active_in_staging=pulumi.get(__response__, 'active_in_staging'),
+        config_id=pulumi.get(__response__, 'config_id'),
+        contractid=pulumi.get(__response__, 'contractid'),
+        groupid=pulumi.get(__response__, 'groupid'),
+        hostnames=pulumi.get(__response__, 'hostnames'),
+        hostnames_json=pulumi.get(__response__, 'hostnames_json'),
+        id=pulumi.get(__response__, 'id'),
+        output_text=pulumi.get(__response__, 'output_text')))

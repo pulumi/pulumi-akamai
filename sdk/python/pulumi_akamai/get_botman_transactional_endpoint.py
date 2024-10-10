@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -100,9 +105,6 @@ def get_botman_transactional_endpoint(config_id: Optional[int] = None,
         json=pulumi.get(__ret__, 'json'),
         operation_id=pulumi.get(__ret__, 'operation_id'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
-
-
-@_utilities.lift_output_func(get_botman_transactional_endpoint)
 def get_botman_transactional_endpoint_output(config_id: Optional[pulumi.Input[int]] = None,
                                              operation_id: Optional[pulumi.Input[Optional[str]]] = None,
                                              security_policy_id: Optional[pulumi.Input[str]] = None,
@@ -110,4 +112,15 @@ def get_botman_transactional_endpoint_output(config_id: Optional[pulumi.Input[in
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['configId'] = config_id
+    __args__['operationId'] = operation_id
+    __args__['securityPolicyId'] = security_policy_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getBotmanTransactionalEndpoint:getBotmanTransactionalEndpoint', __args__, opts=opts, typ=GetBotmanTransactionalEndpointResult)
+    return __ret__.apply(lambda __response__: GetBotmanTransactionalEndpointResult(
+        config_id=pulumi.get(__response__, 'config_id'),
+        id=pulumi.get(__response__, 'id'),
+        json=pulumi.get(__response__, 'json'),
+        operation_id=pulumi.get(__response__, 'operation_id'),
+        security_policy_id=pulumi.get(__response__, 'security_policy_id')))

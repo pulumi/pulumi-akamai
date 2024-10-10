@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -138,13 +143,24 @@ def get_edge_worker(edgeworker_id: Optional[int] = None,
         resource_tier_id=pulumi.get(__ret__, 'resource_tier_id'),
         version=pulumi.get(__ret__, 'version'),
         warnings=pulumi.get(__ret__, 'warnings'))
-
-
-@_utilities.lift_output_func(get_edge_worker)
 def get_edge_worker_output(edgeworker_id: Optional[pulumi.Input[int]] = None,
                            local_bundle: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEdgeWorkerResult]:
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['edgeworkerId'] = edgeworker_id
+    __args__['localBundle'] = local_bundle
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getEdgeWorker:getEdgeWorker', __args__, opts=opts, typ=GetEdgeWorkerResult)
+    return __ret__.apply(lambda __response__: GetEdgeWorkerResult(
+        edgeworker_id=pulumi.get(__response__, 'edgeworker_id'),
+        group_id=pulumi.get(__response__, 'group_id'),
+        id=pulumi.get(__response__, 'id'),
+        local_bundle=pulumi.get(__response__, 'local_bundle'),
+        local_bundle_hash=pulumi.get(__response__, 'local_bundle_hash'),
+        name=pulumi.get(__response__, 'name'),
+        resource_tier_id=pulumi.get(__response__, 'resource_tier_id'),
+        version=pulumi.get(__response__, 'version'),
+        warnings=pulumi.get(__response__, 'warnings')))

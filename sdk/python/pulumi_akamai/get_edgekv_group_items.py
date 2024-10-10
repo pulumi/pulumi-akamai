@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -100,9 +105,6 @@ def get_edgekv_group_items(group_name: Optional[str] = None,
         items=pulumi.get(__ret__, 'items'),
         namespace_name=pulumi.get(__ret__, 'namespace_name'),
         network=pulumi.get(__ret__, 'network'))
-
-
-@_utilities.lift_output_func(get_edgekv_group_items)
 def get_edgekv_group_items_output(group_name: Optional[pulumi.Input[str]] = None,
                                   namespace_name: Optional[pulumi.Input[str]] = None,
                                   network: Optional[pulumi.Input[str]] = None,
@@ -110,4 +112,15 @@ def get_edgekv_group_items_output(group_name: Optional[pulumi.Input[str]] = None
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['groupName'] = group_name
+    __args__['namespaceName'] = namespace_name
+    __args__['network'] = network
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getEdgekvGroupItems:getEdgekvGroupItems', __args__, opts=opts, typ=GetEdgekvGroupItemsResult)
+    return __ret__.apply(lambda __response__: GetEdgekvGroupItemsResult(
+        group_name=pulumi.get(__response__, 'group_name'),
+        id=pulumi.get(__response__, 'id'),
+        items=pulumi.get(__response__, 'items'),
+        namespace_name=pulumi.get(__response__, 'namespace_name'),
+        network=pulumi.get(__response__, 'network')))
