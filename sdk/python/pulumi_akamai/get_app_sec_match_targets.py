@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -98,13 +103,20 @@ def get_app_sec_match_targets(config_id: Optional[int] = None,
         json=pulumi.get(__ret__, 'json'),
         match_target_id=pulumi.get(__ret__, 'match_target_id'),
         output_text=pulumi.get(__ret__, 'output_text'))
-
-
-@_utilities.lift_output_func(get_app_sec_match_targets)
 def get_app_sec_match_targets_output(config_id: Optional[pulumi.Input[int]] = None,
                                      match_target_id: Optional[pulumi.Input[Optional[int]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecMatchTargetsResult]:
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['configId'] = config_id
+    __args__['matchTargetId'] = match_target_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppSecMatchTargets:getAppSecMatchTargets', __args__, opts=opts, typ=GetAppSecMatchTargetsResult)
+    return __ret__.apply(lambda __response__: GetAppSecMatchTargetsResult(
+        config_id=pulumi.get(__response__, 'config_id'),
+        id=pulumi.get(__response__, 'id'),
+        json=pulumi.get(__response__, 'json'),
+        match_target_id=pulumi.get(__response__, 'match_target_id'),
+        output_text=pulumi.get(__response__, 'output_text')))

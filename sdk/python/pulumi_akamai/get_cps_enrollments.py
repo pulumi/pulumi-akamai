@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -77,12 +82,16 @@ def get_cps_enrollments(contract_id: Optional[str] = None,
         contract_id=pulumi.get(__ret__, 'contract_id'),
         enrollments=pulumi.get(__ret__, 'enrollments'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_cps_enrollments)
 def get_cps_enrollments_output(contract_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCPSEnrollmentsResult]:
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['contractId'] = contract_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getCPSEnrollments:getCPSEnrollments', __args__, opts=opts, typ=GetCPSEnrollmentsResult)
+    return __ret__.apply(lambda __response__: GetCPSEnrollmentsResult(
+        contract_id=pulumi.get(__response__, 'contract_id'),
+        enrollments=pulumi.get(__response__, 'enrollments'),
+        id=pulumi.get(__response__, 'id')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -88,13 +93,19 @@ def get_edge_workers_resource_tier(contract_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         resource_tier_id=pulumi.get(__ret__, 'resource_tier_id'),
         resource_tier_name=pulumi.get(__ret__, 'resource_tier_name'))
-
-
-@_utilities.lift_output_func(get_edge_workers_resource_tier)
 def get_edge_workers_resource_tier_output(contract_id: Optional[pulumi.Input[str]] = None,
                                           resource_tier_name: Optional[pulumi.Input[str]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEdgeWorkersResourceTierResult]:
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['contractId'] = contract_id
+    __args__['resourceTierName'] = resource_tier_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getEdgeWorkersResourceTier:getEdgeWorkersResourceTier', __args__, opts=opts, typ=GetEdgeWorkersResourceTierResult)
+    return __ret__.apply(lambda __response__: GetEdgeWorkersResourceTierResult(
+        contract_id=pulumi.get(__response__, 'contract_id'),
+        id=pulumi.get(__response__, 'id'),
+        resource_tier_id=pulumi.get(__response__, 'resource_tier_id'),
+        resource_tier_name=pulumi.get(__response__, 'resource_tier_name')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -114,9 +119,6 @@ def get_gtm_asmap(assignments: Optional[Sequence[Union['GetGtmAsmapAssignmentArg
         id=pulumi.get(__ret__, 'id'),
         links=pulumi.get(__ret__, 'links'),
         map_name=pulumi.get(__ret__, 'map_name'))
-
-
-@_utilities.lift_output_func(get_gtm_asmap)
 def get_gtm_asmap_output(assignments: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmAsmapAssignmentArgs', 'GetGtmAsmapAssignmentArgsDict']]]]] = None,
                          default_datacenter: Optional[pulumi.Input[Optional[Union['GetGtmAsmapDefaultDatacenterArgs', 'GetGtmAsmapDefaultDatacenterArgsDict']]]] = None,
                          domain: Optional[pulumi.Input[str]] = None,
@@ -126,4 +128,18 @@ def get_gtm_asmap_output(assignments: Optional[pulumi.Input[Optional[Sequence[Un
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['assignments'] = assignments
+    __args__['defaultDatacenter'] = default_datacenter
+    __args__['domain'] = domain
+    __args__['links'] = links
+    __args__['mapName'] = map_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getGtmAsmap:getGtmAsmap', __args__, opts=opts, typ=GetGtmAsmapResult)
+    return __ret__.apply(lambda __response__: GetGtmAsmapResult(
+        assignments=pulumi.get(__response__, 'assignments'),
+        default_datacenter=pulumi.get(__response__, 'default_datacenter'),
+        domain=pulumi.get(__response__, 'domain'),
+        id=pulumi.get(__response__, 'id'),
+        links=pulumi.get(__response__, 'links'),
+        map_name=pulumi.get(__response__, 'map_name')))

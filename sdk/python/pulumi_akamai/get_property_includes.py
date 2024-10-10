@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -114,9 +119,6 @@ def get_property_includes(contract_id: Optional[str] = None,
         includes=pulumi.get(__ret__, 'includes'),
         parent_property=pulumi.get(__ret__, 'parent_property'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_property_includes)
 def get_property_includes_output(contract_id: Optional[pulumi.Input[str]] = None,
                                  group_id: Optional[pulumi.Input[str]] = None,
                                  parent_property: Optional[pulumi.Input[Optional[Union['GetPropertyIncludesParentPropertyArgs', 'GetPropertyIncludesParentPropertyArgsDict']]]] = None,
@@ -125,4 +127,17 @@ def get_property_includes_output(contract_id: Optional[pulumi.Input[str]] = None
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['contractId'] = contract_id
+    __args__['groupId'] = group_id
+    __args__['parentProperty'] = parent_property
+    __args__['type'] = type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getPropertyIncludes:getPropertyIncludes', __args__, opts=opts, typ=GetPropertyIncludesResult)
+    return __ret__.apply(lambda __response__: GetPropertyIncludesResult(
+        contract_id=pulumi.get(__response__, 'contract_id'),
+        group_id=pulumi.get(__response__, 'group_id'),
+        id=pulumi.get(__response__, 'id'),
+        includes=pulumi.get(__response__, 'includes'),
+        parent_property=pulumi.get(__response__, 'parent_property'),
+        type=pulumi.get(__response__, 'type')))

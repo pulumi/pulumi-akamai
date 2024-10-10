@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -142,9 +147,6 @@ def get_property_include_activation(contract_id: Optional[str] = None,
         note=pulumi.get(__ret__, 'note'),
         notify_emails=pulumi.get(__ret__, 'notify_emails'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_property_include_activation)
 def get_property_include_activation_output(contract_id: Optional[pulumi.Input[str]] = None,
                                            group_id: Optional[pulumi.Input[str]] = None,
                                            include_id: Optional[pulumi.Input[str]] = None,
@@ -153,4 +155,20 @@ def get_property_include_activation_output(contract_id: Optional[pulumi.Input[st
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['contractId'] = contract_id
+    __args__['groupId'] = group_id
+    __args__['includeId'] = include_id
+    __args__['network'] = network
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getPropertyIncludeActivation:getPropertyIncludeActivation', __args__, opts=opts, typ=GetPropertyIncludeActivationResult)
+    return __ret__.apply(lambda __response__: GetPropertyIncludeActivationResult(
+        contract_id=pulumi.get(__response__, 'contract_id'),
+        group_id=pulumi.get(__response__, 'group_id'),
+        id=pulumi.get(__response__, 'id'),
+        include_id=pulumi.get(__response__, 'include_id'),
+        name=pulumi.get(__response__, 'name'),
+        network=pulumi.get(__response__, 'network'),
+        note=pulumi.get(__response__, 'note'),
+        notify_emails=pulumi.get(__response__, 'notify_emails'),
+        version=pulumi.get(__response__, 'version')))

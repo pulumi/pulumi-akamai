@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -124,9 +129,6 @@ def get_app_sec_tuning_recommendations(attack_group: Optional[str] = None,
         rule_id=pulumi.get(__ret__, 'rule_id'),
         ruleset_type=pulumi.get(__ret__, 'ruleset_type'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
-
-
-@_utilities.lift_output_func(get_app_sec_tuning_recommendations)
 def get_app_sec_tuning_recommendations_output(attack_group: Optional[pulumi.Input[Optional[str]]] = None,
                                               config_id: Optional[pulumi.Input[int]] = None,
                                               rule_id: Optional[pulumi.Input[Optional[int]]] = None,
@@ -136,4 +138,19 @@ def get_app_sec_tuning_recommendations_output(attack_group: Optional[pulumi.Inpu
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['attackGroup'] = attack_group
+    __args__['configId'] = config_id
+    __args__['ruleId'] = rule_id
+    __args__['rulesetType'] = ruleset_type
+    __args__['securityPolicyId'] = security_policy_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppSecTuningRecommendations:getAppSecTuningRecommendations', __args__, opts=opts, typ=GetAppSecTuningRecommendationsResult)
+    return __ret__.apply(lambda __response__: GetAppSecTuningRecommendationsResult(
+        attack_group=pulumi.get(__response__, 'attack_group'),
+        config_id=pulumi.get(__response__, 'config_id'),
+        id=pulumi.get(__response__, 'id'),
+        json=pulumi.get(__response__, 'json'),
+        rule_id=pulumi.get(__response__, 'rule_id'),
+        ruleset_type=pulumi.get(__response__, 'ruleset_type'),
+        security_policy_id=pulumi.get(__response__, 'security_policy_id')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -178,13 +183,28 @@ def get_property(name: Optional[str] = None,
         rules=pulumi.get(__ret__, 'rules'),
         staging_version=pulumi.get(__ret__, 'staging_version'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_property)
 def get_property_output(name: Optional[pulumi.Input[str]] = None,
                         version: Optional[pulumi.Input[Optional[int]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyResult]:
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['name'] = name
+    __args__['version'] = version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getProperty:getProperty', __args__, opts=opts, typ=GetPropertyResult)
+    return __ret__.apply(lambda __response__: GetPropertyResult(
+        contract_id=pulumi.get(__response__, 'contract_id'),
+        group_id=pulumi.get(__response__, 'group_id'),
+        id=pulumi.get(__response__, 'id'),
+        latest_version=pulumi.get(__response__, 'latest_version'),
+        name=pulumi.get(__response__, 'name'),
+        note=pulumi.get(__response__, 'note'),
+        product_id=pulumi.get(__response__, 'product_id'),
+        production_version=pulumi.get(__response__, 'production_version'),
+        property_id=pulumi.get(__response__, 'property_id'),
+        rule_format=pulumi.get(__response__, 'rule_format'),
+        rules=pulumi.get(__response__, 'rules'),
+        staging_version=pulumi.get(__response__, 'staging_version'),
+        version=pulumi.get(__response__, 'version')))

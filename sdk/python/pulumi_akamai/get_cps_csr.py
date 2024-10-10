@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -86,12 +91,17 @@ def get_cps_csr(enrollment_id: Optional[int] = None,
         csr_rsa=pulumi.get(__ret__, 'csr_rsa'),
         enrollment_id=pulumi.get(__ret__, 'enrollment_id'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_cps_csr)
 def get_cps_csr_output(enrollment_id: Optional[pulumi.Input[int]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCpsCsrResult]:
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['enrollmentId'] = enrollment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getCpsCsr:getCpsCsr', __args__, opts=opts, typ=GetCpsCsrResult)
+    return __ret__.apply(lambda __response__: GetCpsCsrResult(
+        csr_ecdsa=pulumi.get(__response__, 'csr_ecdsa'),
+        csr_rsa=pulumi.get(__response__, 'csr_rsa'),
+        enrollment_id=pulumi.get(__response__, 'enrollment_id'),
+        id=pulumi.get(__response__, 'id')))

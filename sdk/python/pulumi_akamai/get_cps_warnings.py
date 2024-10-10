@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -64,11 +69,13 @@ def get_cps_warnings(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGe
     return AwaitableGetCpsWarningsResult(
         id=pulumi.get(__ret__, 'id'),
         warnings=pulumi.get(__ret__, 'warnings'))
-
-
-@_utilities.lift_output_func(get_cps_warnings)
 def get_cps_warnings_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCpsWarningsResult]:
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getCpsWarnings:getCpsWarnings', __args__, opts=opts, typ=GetCpsWarningsResult)
+    return __ret__.apply(lambda __response__: GetCpsWarningsResult(
+        id=pulumi.get(__response__, 'id'),
+        warnings=pulumi.get(__response__, 'warnings')))

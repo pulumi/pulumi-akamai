@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -66,12 +71,15 @@ def get_cloudwrapper_configurations(configurations: Optional[Sequence[Union['Get
     return AwaitableGetCloudwrapperConfigurationsResult(
         configurations=pulumi.get(__ret__, 'configurations'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_cloudwrapper_configurations)
 def get_cloudwrapper_configurations_output(configurations: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudwrapperConfigurationsConfigurationArgs', 'GetCloudwrapperConfigurationsConfigurationArgsDict']]]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudwrapperConfigurationsResult]:
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['configurations'] = configurations
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getCloudwrapperConfigurations:getCloudwrapperConfigurations', __args__, opts=opts, typ=GetCloudwrapperConfigurationsResult)
+    return __ret__.apply(lambda __response__: GetCloudwrapperConfigurationsResult(
+        configurations=pulumi.get(__response__, 'configurations'),
+        id=pulumi.get(__response__, 'id')))

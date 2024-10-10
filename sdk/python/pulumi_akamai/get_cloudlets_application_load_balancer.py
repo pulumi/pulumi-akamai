@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -199,13 +204,30 @@ def get_cloudlets_application_load_balancer(origin_id: Optional[str] = None,
         type=pulumi.get(__ret__, 'type'),
         version=pulumi.get(__ret__, 'version'),
         warnings=pulumi.get(__ret__, 'warnings'))
-
-
-@_utilities.lift_output_func(get_cloudlets_application_load_balancer)
 def get_cloudlets_application_load_balancer_output(origin_id: Optional[pulumi.Input[str]] = None,
                                                    version: Optional[pulumi.Input[Optional[int]]] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudletsApplicationLoadBalancerResult]:
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['originId'] = origin_id
+    __args__['version'] = version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getCloudletsApplicationLoadBalancer:getCloudletsApplicationLoadBalancer', __args__, opts=opts, typ=GetCloudletsApplicationLoadBalancerResult)
+    return __ret__.apply(lambda __response__: GetCloudletsApplicationLoadBalancerResult(
+        balancing_type=pulumi.get(__response__, 'balancing_type'),
+        created_by=pulumi.get(__response__, 'created_by'),
+        created_date=pulumi.get(__response__, 'created_date'),
+        data_centers=pulumi.get(__response__, 'data_centers'),
+        deleted=pulumi.get(__response__, 'deleted'),
+        description=pulumi.get(__response__, 'description'),
+        id=pulumi.get(__response__, 'id'),
+        immutable=pulumi.get(__response__, 'immutable'),
+        last_modified_by=pulumi.get(__response__, 'last_modified_by'),
+        last_modified_date=pulumi.get(__response__, 'last_modified_date'),
+        liveness_settings=pulumi.get(__response__, 'liveness_settings'),
+        origin_id=pulumi.get(__response__, 'origin_id'),
+        type=pulumi.get(__response__, 'type'),
+        version=pulumi.get(__response__, 'version'),
+        warnings=pulumi.get(__response__, 'warnings')))

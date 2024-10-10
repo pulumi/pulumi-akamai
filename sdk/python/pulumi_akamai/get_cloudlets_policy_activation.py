@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -108,9 +113,6 @@ def get_cloudlets_policy_activation(associated_properties: Optional[Sequence[str
         policy_id=pulumi.get(__ret__, 'policy_id'),
         status=pulumi.get(__ret__, 'status'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_cloudlets_policy_activation)
 def get_cloudlets_policy_activation_output(associated_properties: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                            network: Optional[pulumi.Input[str]] = None,
                                            policy_id: Optional[pulumi.Input[int]] = None,
@@ -118,4 +120,16 @@ def get_cloudlets_policy_activation_output(associated_properties: Optional[pulum
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['associatedProperties'] = associated_properties
+    __args__['network'] = network
+    __args__['policyId'] = policy_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('akamai:index/getCloudletsPolicyActivation:getCloudletsPolicyActivation', __args__, opts=opts, typ=GetCloudletsPolicyActivationResult)
+    return __ret__.apply(lambda __response__: GetCloudletsPolicyActivationResult(
+        associated_properties=pulumi.get(__response__, 'associated_properties'),
+        id=pulumi.get(__response__, 'id'),
+        network=pulumi.get(__response__, 'network'),
+        policy_id=pulumi.get(__response__, 'policy_id'),
+        status=pulumi.get(__response__, 'status'),
+        version=pulumi.get(__response__, 'version')))
