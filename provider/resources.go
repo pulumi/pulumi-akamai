@@ -85,6 +85,7 @@ func Provider() tfbridge.ProviderInfo {
 	prov := tfbridge.ProviderInfo{
 		P:                       p,
 		Name:                    "akamai",
+		DisplayName:             "Akamai",
 		Description:             "A Pulumi package for creating and managing akamai cloud resources.",
 		Keywords:                []string{"pulumi", "akamai"},
 		License:                 "Apache-2.0",
