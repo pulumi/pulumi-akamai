@@ -31,7 +31,7 @@ export interface GetDatastreamActivationHistoryResult {
     readonly id: string;
     readonly streamId: number;
 }
-export function getDatastreamActivationHistoryOutput(args: GetDatastreamActivationHistoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatastreamActivationHistoryResult> {
+export function getDatastreamActivationHistoryOutput(args: GetDatastreamActivationHistoryOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDatastreamActivationHistoryResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getDatastreamActivationHistory:getDatastreamActivationHistory", {
         "streamId": args.streamId,

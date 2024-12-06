@@ -69,12 +69,12 @@ def get_iam_supported_langs(opts: Optional[pulumi.InvokeOptions] = None) -> Awai
     return AwaitableGetIamSupportedLangsResult(
         id=pulumi.get(__ret__, 'id'),
         languages=pulumi.get(__ret__, 'languages'))
-def get_iam_supported_langs_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamSupportedLangsResult]:
+def get_iam_supported_langs_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamSupportedLangsResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getIamSupportedLangs:getIamSupportedLangs', __args__, opts=opts, typ=GetIamSupportedLangsResult)
     return __ret__.apply(lambda __response__: GetIamSupportedLangsResult(
         id=pulumi.get(__response__, 'id'),

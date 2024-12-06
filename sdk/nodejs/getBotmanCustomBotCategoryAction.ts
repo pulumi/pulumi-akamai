@@ -35,7 +35,7 @@ export interface GetBotmanCustomBotCategoryActionResult {
     readonly json: string;
     readonly securityPolicyId: string;
 }
-export function getBotmanCustomBotCategoryActionOutput(args: GetBotmanCustomBotCategoryActionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanCustomBotCategoryActionResult> {
+export function getBotmanCustomBotCategoryActionOutput(args: GetBotmanCustomBotCategoryActionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBotmanCustomBotCategoryActionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getBotmanCustomBotCategoryAction:getBotmanCustomBotCategoryAction", {
         "categoryId": args.categoryId,

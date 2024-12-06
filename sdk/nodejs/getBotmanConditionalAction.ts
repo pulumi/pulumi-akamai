@@ -32,7 +32,7 @@ export interface GetBotmanConditionalActionResult {
     readonly id: string;
     readonly json: string;
 }
-export function getBotmanConditionalActionOutput(args: GetBotmanConditionalActionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanConditionalActionResult> {
+export function getBotmanConditionalActionOutput(args: GetBotmanConditionalActionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBotmanConditionalActionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getBotmanConditionalAction:getBotmanConditionalAction", {
         "actionId": args.actionId,

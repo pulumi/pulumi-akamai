@@ -34,7 +34,7 @@ export interface GetCloudwrapperCapacitiesResult {
      */
     readonly id: string;
 }
-export function getCloudwrapperCapacitiesOutput(args?: GetCloudwrapperCapacitiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudwrapperCapacitiesResult> {
+export function getCloudwrapperCapacitiesOutput(args?: GetCloudwrapperCapacitiesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCloudwrapperCapacitiesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getCloudwrapperCapacities:getCloudwrapperCapacities", {

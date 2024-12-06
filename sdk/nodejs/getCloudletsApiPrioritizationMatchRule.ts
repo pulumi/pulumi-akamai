@@ -32,7 +32,7 @@ export interface GetCloudletsApiPrioritizationMatchRuleResult {
     readonly json: string;
     readonly matchRules?: outputs.GetCloudletsApiPrioritizationMatchRuleMatchRule[];
 }
-export function getCloudletsApiPrioritizationMatchRuleOutput(args?: GetCloudletsApiPrioritizationMatchRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudletsApiPrioritizationMatchRuleResult> {
+export function getCloudletsApiPrioritizationMatchRuleOutput(args?: GetCloudletsApiPrioritizationMatchRuleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCloudletsApiPrioritizationMatchRuleResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getCloudletsApiPrioritizationMatchRule:getCloudletsApiPrioritizationMatchRule", {

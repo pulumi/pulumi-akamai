@@ -36,7 +36,7 @@ export interface GetAppSecApiRequestConstraintsResult {
     readonly outputText: string;
     readonly securityPolicyId: string;
 }
-export function getAppSecApiRequestConstraintsOutput(args: GetAppSecApiRequestConstraintsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecApiRequestConstraintsResult> {
+export function getAppSecApiRequestConstraintsOutput(args: GetAppSecApiRequestConstraintsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecApiRequestConstraintsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecApiRequestConstraints:getAppSecApiRequestConstraints", {
         "apiId": args.apiId,

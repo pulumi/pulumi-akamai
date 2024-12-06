@@ -21,7 +21,7 @@ export interface GetAppSecHostnameCoverageResult {
     readonly json: string;
     readonly outputText: string;
 }
-export function getAppSecHostnameCoverageOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecHostnameCoverageResult> {
+export function getAppSecHostnameCoverageOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecHostnameCoverageResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecHostnameCoverage:getAppSecHostnameCoverage", {
     }, opts);

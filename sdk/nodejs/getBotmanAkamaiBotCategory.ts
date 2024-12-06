@@ -30,7 +30,7 @@ export interface GetBotmanAkamaiBotCategoryResult {
     readonly id: string;
     readonly json: string;
 }
-export function getBotmanAkamaiBotCategoryOutput(args?: GetBotmanAkamaiBotCategoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanAkamaiBotCategoryResult> {
+export function getBotmanAkamaiBotCategoryOutput(args?: GetBotmanAkamaiBotCategoryOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBotmanAkamaiBotCategoryResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getBotmanAkamaiBotCategory:getBotmanAkamaiBotCategory", {

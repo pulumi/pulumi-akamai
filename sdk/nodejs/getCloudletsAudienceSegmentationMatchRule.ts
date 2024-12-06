@@ -32,7 +32,7 @@ export interface GetCloudletsAudienceSegmentationMatchRuleResult {
     readonly json: string;
     readonly matchRules?: outputs.GetCloudletsAudienceSegmentationMatchRuleMatchRule[];
 }
-export function getCloudletsAudienceSegmentationMatchRuleOutput(args?: GetCloudletsAudienceSegmentationMatchRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudletsAudienceSegmentationMatchRuleResult> {
+export function getCloudletsAudienceSegmentationMatchRuleOutput(args?: GetCloudletsAudienceSegmentationMatchRuleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCloudletsAudienceSegmentationMatchRuleResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getCloudletsAudienceSegmentationMatchRule:getCloudletsAudienceSegmentationMatchRule", {

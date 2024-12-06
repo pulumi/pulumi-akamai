@@ -33,7 +33,7 @@ export interface GetAppSecHostnameCoverageMatchTargetsResult {
     readonly json: string;
     readonly outputText: string;
 }
-export function getAppSecHostnameCoverageMatchTargetsOutput(args: GetAppSecHostnameCoverageMatchTargetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecHostnameCoverageMatchTargetsResult> {
+export function getAppSecHostnameCoverageMatchTargetsOutput(args: GetAppSecHostnameCoverageMatchTargetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecHostnameCoverageMatchTargetsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecHostnameCoverageMatchTargets:getAppSecHostnameCoverageMatchTargets", {
         "configId": args.configId,

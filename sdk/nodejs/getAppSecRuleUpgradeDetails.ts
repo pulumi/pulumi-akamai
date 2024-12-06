@@ -33,7 +33,7 @@ export interface GetAppSecRuleUpgradeDetailsResult {
     readonly outputText: string;
     readonly securityPolicyId: string;
 }
-export function getAppSecRuleUpgradeDetailsOutput(args: GetAppSecRuleUpgradeDetailsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecRuleUpgradeDetailsResult> {
+export function getAppSecRuleUpgradeDetailsOutput(args: GetAppSecRuleUpgradeDetailsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecRuleUpgradeDetailsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecRuleUpgradeDetails:getAppSecRuleUpgradeDetails", {
         "configId": args.configId,

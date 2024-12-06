@@ -98,7 +98,7 @@ def get_cloudwrapper_properties(contract_ids: Optional[Sequence[str]] = None,
 def get_cloudwrapper_properties_output(contract_ids: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                        properties: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudwrapperPropertiesPropertyArgs', 'GetCloudwrapperPropertiesPropertyArgsDict']]]]] = None,
                                        unused: Optional[pulumi.Input[Optional[bool]]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudwrapperPropertiesResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudwrapperPropertiesResult]:
     """
     Use this data source to access information about an existing resource.
     """
@@ -106,7 +106,7 @@ def get_cloudwrapper_properties_output(contract_ids: Optional[pulumi.Input[Optio
     __args__['contractIds'] = contract_ids
     __args__['properties'] = properties
     __args__['unused'] = unused
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getCloudwrapperProperties:getCloudwrapperProperties', __args__, opts=opts, typ=GetCloudwrapperPropertiesResult)
     return __ret__.apply(lambda __response__: GetCloudwrapperPropertiesResult(
         contract_ids=pulumi.get(__response__, 'contract_ids'),

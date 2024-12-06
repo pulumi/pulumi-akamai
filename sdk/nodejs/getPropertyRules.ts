@@ -42,7 +42,7 @@ export interface GetPropertyRulesResult {
     readonly rules: string;
     readonly version: number;
 }
-export function getPropertyRulesOutput(args: GetPropertyRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyRulesResult> {
+export function getPropertyRulesOutput(args: GetPropertyRulesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPropertyRulesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getPropertyRules:getPropertyRules", {
         "contractId": args.contractId,

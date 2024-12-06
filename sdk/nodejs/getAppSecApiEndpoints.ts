@@ -37,7 +37,7 @@ export interface GetAppSecApiEndpointsResult {
     readonly outputText: string;
     readonly securityPolicyId?: string;
 }
-export function getAppSecApiEndpointsOutput(args: GetAppSecApiEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecApiEndpointsResult> {
+export function getAppSecApiEndpointsOutput(args: GetAppSecApiEndpointsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecApiEndpointsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecApiEndpoints:getAppSecApiEndpoints", {
         "apiName": args.apiName,

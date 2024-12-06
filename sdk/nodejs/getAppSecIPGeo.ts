@@ -38,7 +38,7 @@ export interface GetAppSecIPGeoResult {
     readonly securityPolicyId: string;
     readonly ukraineGeoControlAction: string;
 }
-export function getAppSecIPGeoOutput(args: GetAppSecIPGeoOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecIPGeoResult> {
+export function getAppSecIPGeoOutput(args: GetAppSecIPGeoOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecIPGeoResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecIPGeo:getAppSecIPGeo", {
         "configId": args.configId,

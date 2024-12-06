@@ -134,7 +134,7 @@ def get_app_sec_tuning_recommendations_output(attack_group: Optional[pulumi.Inpu
                                               rule_id: Optional[pulumi.Input[Optional[int]]] = None,
                                               ruleset_type: Optional[pulumi.Input[Optional[str]]] = None,
                                               security_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecTuningRecommendationsResult]:
+                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecTuningRecommendationsResult]:
     """
     Use this data source to access information about an existing resource.
     """
@@ -144,7 +144,7 @@ def get_app_sec_tuning_recommendations_output(attack_group: Optional[pulumi.Inpu
     __args__['ruleId'] = rule_id
     __args__['rulesetType'] = ruleset_type
     __args__['securityPolicyId'] = security_policy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppSecTuningRecommendations:getAppSecTuningRecommendations', __args__, opts=opts, typ=GetAppSecTuningRecommendationsResult)
     return __ret__.apply(lambda __response__: GetAppSecTuningRecommendationsResult(
         attack_group=pulumi.get(__response__, 'attack_group'),

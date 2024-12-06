@@ -32,7 +32,7 @@ export interface GetCloudletsForwardRewriteMatchRuleResult {
     readonly json: string;
     readonly matchRules?: outputs.GetCloudletsForwardRewriteMatchRuleMatchRule[];
 }
-export function getCloudletsForwardRewriteMatchRuleOutput(args?: GetCloudletsForwardRewriteMatchRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudletsForwardRewriteMatchRuleResult> {
+export function getCloudletsForwardRewriteMatchRuleOutput(args?: GetCloudletsForwardRewriteMatchRuleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCloudletsForwardRewriteMatchRuleResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getCloudletsForwardRewriteMatchRule:getCloudletsForwardRewriteMatchRule", {

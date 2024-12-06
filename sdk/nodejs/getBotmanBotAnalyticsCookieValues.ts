@@ -20,7 +20,7 @@ export interface GetBotmanBotAnalyticsCookieValuesResult {
     readonly id: string;
     readonly json: string;
 }
-export function getBotmanBotAnalyticsCookieValuesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanBotAnalyticsCookieValuesResult> {
+export function getBotmanBotAnalyticsCookieValuesOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBotmanBotAnalyticsCookieValuesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getBotmanBotAnalyticsCookieValues:getBotmanBotAnalyticsCookieValues", {
     }, opts);

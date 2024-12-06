@@ -82,13 +82,13 @@ def get_botman_custom_client_sequence(config_id: Optional[int] = None,
         custom_client_ids=pulumi.get(__ret__, 'custom_client_ids'),
         id=pulumi.get(__ret__, 'id'))
 def get_botman_custom_client_sequence_output(config_id: Optional[pulumi.Input[int]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBotmanCustomClientSequenceResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBotmanCustomClientSequenceResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getBotmanCustomClientSequence:getBotmanCustomClientSequence', __args__, opts=opts, typ=GetBotmanCustomClientSequenceResult)
     return __ret__.apply(lambda __response__: GetBotmanCustomClientSequenceResult(
         config_id=pulumi.get(__response__, 'config_id'),

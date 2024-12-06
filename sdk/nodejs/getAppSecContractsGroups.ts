@@ -36,7 +36,7 @@ export interface GetAppSecContractsGroupsResult {
     readonly json: string;
     readonly outputText: string;
 }
-export function getAppSecContractsGroupsOutput(args?: GetAppSecContractsGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecContractsGroupsResult> {
+export function getAppSecContractsGroupsOutput(args?: GetAppSecContractsGroupsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecContractsGroupsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecContractsGroups:getAppSecContractsGroups", {

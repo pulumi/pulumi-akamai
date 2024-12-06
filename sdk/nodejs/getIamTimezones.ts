@@ -22,7 +22,7 @@ export interface GetIamTimezonesResult {
     readonly id: string;
     readonly timezones: outputs.GetIamTimezonesTimezone[];
 }
-export function getIamTimezonesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetIamTimezonesResult> {
+export function getIamTimezonesOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIamTimezonesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getIamTimezones:getIamTimezones", {
     }, opts);

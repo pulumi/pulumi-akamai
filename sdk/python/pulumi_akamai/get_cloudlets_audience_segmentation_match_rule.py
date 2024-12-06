@@ -84,13 +84,13 @@ def get_cloudlets_audience_segmentation_match_rule(match_rules: Optional[Sequenc
         json=pulumi.get(__ret__, 'json'),
         match_rules=pulumi.get(__ret__, 'match_rules'))
 def get_cloudlets_audience_segmentation_match_rule_output(match_rules: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs', 'GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgsDict']]]]] = None,
-                                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudletsAudienceSegmentationMatchRuleResult]:
+                                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudletsAudienceSegmentationMatchRuleResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['matchRules'] = match_rules
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getCloudletsAudienceSegmentationMatchRule:getCloudletsAudienceSegmentationMatchRule', __args__, opts=opts, typ=GetCloudletsAudienceSegmentationMatchRuleResult)
     return __ret__.apply(lambda __response__: GetCloudletsAudienceSegmentationMatchRuleResult(
         id=pulumi.get(__response__, 'id'),

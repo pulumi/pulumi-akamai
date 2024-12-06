@@ -22,7 +22,7 @@ export interface GetIamGrantableRolesResult {
      */
     readonly id: string;
 }
-export function getIamGrantableRolesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetIamGrantableRolesResult> {
+export function getIamGrantableRolesOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIamGrantableRolesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getIamGrantableRoles:getIamGrantableRoles", {
     }, opts);

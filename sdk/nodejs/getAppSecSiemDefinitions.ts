@@ -31,7 +31,7 @@ export interface GetAppSecSiemDefinitionsResult {
     readonly outputText: string;
     readonly siemDefinitionName?: string;
 }
-export function getAppSecSiemDefinitionsOutput(args?: GetAppSecSiemDefinitionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecSiemDefinitionsResult> {
+export function getAppSecSiemDefinitionsOutput(args?: GetAppSecSiemDefinitionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecSiemDefinitionsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecSiemDefinitions:getAppSecSiemDefinitions", {

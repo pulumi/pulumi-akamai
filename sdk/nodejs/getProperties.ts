@@ -34,7 +34,7 @@ export interface GetPropertiesResult {
     readonly id: string;
     readonly properties: outputs.GetPropertiesProperty[];
 }
-export function getPropertiesOutput(args: GetPropertiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertiesResult> {
+export function getPropertiesOutput(args: GetPropertiesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPropertiesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getProperties:getProperties", {
         "contractId": args.contractId,

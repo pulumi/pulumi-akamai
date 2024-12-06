@@ -206,14 +206,14 @@ def get_cloudlets_application_load_balancer(origin_id: Optional[str] = None,
         warnings=pulumi.get(__ret__, 'warnings'))
 def get_cloudlets_application_load_balancer_output(origin_id: Optional[pulumi.Input[str]] = None,
                                                    version: Optional[pulumi.Input[Optional[int]]] = None,
-                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudletsApplicationLoadBalancerResult]:
+                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudletsApplicationLoadBalancerResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['originId'] = origin_id
     __args__['version'] = version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getCloudletsApplicationLoadBalancer:getCloudletsApplicationLoadBalancer', __args__, opts=opts, typ=GetCloudletsApplicationLoadBalancerResult)
     return __ret__.apply(lambda __response__: GetCloudletsApplicationLoadBalancerResult(
         balancing_type=pulumi.get(__response__, 'balancing_type'),

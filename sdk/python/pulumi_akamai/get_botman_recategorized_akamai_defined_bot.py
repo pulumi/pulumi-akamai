@@ -95,14 +95,14 @@ def get_botman_recategorized_akamai_defined_bot(bot_id: Optional[str] = None,
         json=pulumi.get(__ret__, 'json'))
 def get_botman_recategorized_akamai_defined_bot_output(bot_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                        config_id: Optional[pulumi.Input[int]] = None,
-                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBotmanRecategorizedAkamaiDefinedBotResult]:
+                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBotmanRecategorizedAkamaiDefinedBotResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['botId'] = bot_id
     __args__['configId'] = config_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getBotmanRecategorizedAkamaiDefinedBot:getBotmanRecategorizedAkamaiDefinedBot', __args__, opts=opts, typ=GetBotmanRecategorizedAkamaiDefinedBotResult)
     return __ret__.apply(lambda __response__: GetBotmanRecategorizedAkamaiDefinedBotResult(
         bot_id=pulumi.get(__response__, 'bot_id'),

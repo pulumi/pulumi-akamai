@@ -70,12 +70,12 @@ def get_iam_roles(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIa
     return AwaitableGetIamRolesResult(
         id=pulumi.get(__ret__, 'id'),
         roles=pulumi.get(__ret__, 'roles'))
-def get_iam_roles_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamRolesResult]:
+def get_iam_roles_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamRolesResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getIamRoles:getIamRoles', __args__, opts=opts, typ=GetIamRolesResult)
     return __ret__.apply(lambda __response__: GetIamRolesResult(
         id=pulumi.get(__response__, 'id'),

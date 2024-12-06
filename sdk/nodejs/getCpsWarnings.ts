@@ -20,7 +20,7 @@ export interface GetCpsWarningsResult {
     readonly id: string;
     readonly warnings: {[key: string]: string};
 }
-export function getCpsWarningsOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetCpsWarningsResult> {
+export function getCpsWarningsOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCpsWarningsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getCpsWarnings:getCpsWarnings", {
     }, opts);

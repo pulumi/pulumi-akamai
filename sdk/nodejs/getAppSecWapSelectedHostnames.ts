@@ -37,7 +37,7 @@ export interface GetAppSecWapSelectedHostnamesResult {
     readonly securityPolicyId: string;
     readonly selectedHosts: string[];
 }
-export function getAppSecWapSelectedHostnamesOutput(args: GetAppSecWapSelectedHostnamesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecWapSelectedHostnamesResult> {
+export function getAppSecWapSelectedHostnamesOutput(args: GetAppSecWapSelectedHostnamesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecWapSelectedHostnamesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecWapSelectedHostnames:getAppSecWapSelectedHostnames", {
         "configId": args.configId,
