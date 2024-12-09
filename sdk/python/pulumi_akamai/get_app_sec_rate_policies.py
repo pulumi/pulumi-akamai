@@ -105,14 +105,14 @@ def get_app_sec_rate_policies(config_id: Optional[int] = None,
         rate_policy_id=pulumi.get(__ret__, 'rate_policy_id'))
 def get_app_sec_rate_policies_output(config_id: Optional[pulumi.Input[int]] = None,
                                      rate_policy_id: Optional[pulumi.Input[Optional[int]]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecRatePoliciesResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecRatePoliciesResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
     __args__['ratePolicyId'] = rate_policy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppSecRatePolicies:getAppSecRatePolicies', __args__, opts=opts, typ=GetAppSecRatePoliciesResult)
     return __ret__.apply(lambda __response__: GetAppSecRatePoliciesResult(
         config_id=pulumi.get(__response__, 'config_id'),

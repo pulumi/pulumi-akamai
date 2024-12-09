@@ -115,14 +115,14 @@ def get_app_sec_threat_intel(config_id: Optional[int] = None,
         threat_intel=pulumi.get(__ret__, 'threat_intel'))
 def get_app_sec_threat_intel_output(config_id: Optional[pulumi.Input[int]] = None,
                                     security_policy_id: Optional[pulumi.Input[str]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecThreatIntelResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecThreatIntelResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
     __args__['securityPolicyId'] = security_policy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppSecThreatIntel:getAppSecThreatIntel', __args__, opts=opts, typ=GetAppSecThreatIntelResult)
     return __ret__.apply(lambda __response__: GetAppSecThreatIntelResult(
         config_id=pulumi.get(__response__, 'config_id'),

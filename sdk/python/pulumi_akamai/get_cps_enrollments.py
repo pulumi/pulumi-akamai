@@ -83,13 +83,13 @@ def get_cps_enrollments(contract_id: Optional[str] = None,
         enrollments=pulumi.get(__ret__, 'enrollments'),
         id=pulumi.get(__ret__, 'id'))
 def get_cps_enrollments_output(contract_id: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCPSEnrollmentsResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCPSEnrollmentsResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['contractId'] = contract_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getCPSEnrollments:getCPSEnrollments', __args__, opts=opts, typ=GetCPSEnrollmentsResult)
     return __ret__.apply(lambda __response__: GetCPSEnrollmentsResult(
         contract_id=pulumi.get(__response__, 'contract_id'),

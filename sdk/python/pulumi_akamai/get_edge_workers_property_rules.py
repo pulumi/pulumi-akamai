@@ -82,13 +82,13 @@ def get_edge_workers_property_rules(edgeworker_id: Optional[int] = None,
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'))
 def get_edge_workers_property_rules_output(edgeworker_id: Optional[pulumi.Input[int]] = None,
-                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEdgeWorkersPropertyRulesResult]:
+                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEdgeWorkersPropertyRulesResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['edgeworkerId'] = edgeworker_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getEdgeWorkersPropertyRules:getEdgeWorkersPropertyRules', __args__, opts=opts, typ=GetEdgeWorkersPropertyRulesResult)
     return __ret__.apply(lambda __response__: GetEdgeWorkersPropertyRulesResult(
         edgeworker_id=pulumi.get(__response__, 'edgeworker_id'),

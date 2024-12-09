@@ -53,7 +53,7 @@ export interface GetCPSEnrollmentResult {
     readonly techContacts: outputs.GetCPSEnrollmentTechContact[];
     readonly validationType: string;
 }
-export function getCPSEnrollmentOutput(args: GetCPSEnrollmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCPSEnrollmentResult> {
+export function getCPSEnrollmentOutput(args: GetCPSEnrollmentOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCPSEnrollmentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getCPSEnrollment:getCPSEnrollment", {
         "enrollmentId": args.enrollmentId,

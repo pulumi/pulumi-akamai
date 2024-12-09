@@ -82,13 +82,13 @@ def get_botman_transactional_endpoint_protection(config_id: Optional[int] = None
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'))
 def get_botman_transactional_endpoint_protection_output(config_id: Optional[pulumi.Input[int]] = None,
-                                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBotmanTransactionalEndpointProtectionResult]:
+                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBotmanTransactionalEndpointProtectionResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getBotmanTransactionalEndpointProtection:getBotmanTransactionalEndpointProtection', __args__, opts=opts, typ=GetBotmanTransactionalEndpointProtectionResult)
     return __ret__.apply(lambda __response__: GetBotmanTransactionalEndpointProtectionResult(
         config_id=pulumi.get(__response__, 'config_id'),

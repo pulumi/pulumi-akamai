@@ -32,7 +32,7 @@ export interface GetCloudletsRequestControlMatchRuleResult {
     readonly json: string;
     readonly matchRules?: outputs.GetCloudletsRequestControlMatchRuleMatchRule[];
 }
-export function getCloudletsRequestControlMatchRuleOutput(args?: GetCloudletsRequestControlMatchRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudletsRequestControlMatchRuleResult> {
+export function getCloudletsRequestControlMatchRuleOutput(args?: GetCloudletsRequestControlMatchRuleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCloudletsRequestControlMatchRuleResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getCloudletsRequestControlMatchRule:getCloudletsRequestControlMatchRule", {

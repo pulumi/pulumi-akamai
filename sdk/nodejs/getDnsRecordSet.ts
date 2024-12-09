@@ -35,7 +35,7 @@ export interface GetDnsRecordSetResult {
     readonly recordType: string;
     readonly zone: string;
 }
-export function getDnsRecordSetOutput(args: GetDnsRecordSetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDnsRecordSetResult> {
+export function getDnsRecordSetOutput(args: GetDnsRecordSetOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDnsRecordSetResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getDnsRecordSet:getDnsRecordSet", {
         "host": args.host,

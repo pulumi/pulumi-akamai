@@ -32,7 +32,7 @@ export interface GetBotmanJavascriptInjectionResult {
     readonly json: string;
     readonly securityPolicyId: string;
 }
-export function getBotmanJavascriptInjectionOutput(args: GetBotmanJavascriptInjectionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanJavascriptInjectionResult> {
+export function getBotmanJavascriptInjectionOutput(args: GetBotmanJavascriptInjectionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBotmanJavascriptInjectionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getBotmanJavascriptInjection:getBotmanJavascriptInjection", {
         "configId": args.configId,

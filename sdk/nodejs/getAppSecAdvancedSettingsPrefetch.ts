@@ -30,7 +30,7 @@ export interface GetAppSecAdvancedSettingsPrefetchResult {
     readonly json: string;
     readonly outputText: string;
 }
-export function getAppSecAdvancedSettingsPrefetchOutput(args: GetAppSecAdvancedSettingsPrefetchOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecAdvancedSettingsPrefetchResult> {
+export function getAppSecAdvancedSettingsPrefetchOutput(args: GetAppSecAdvancedSettingsPrefetchOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecAdvancedSettingsPrefetchResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecAdvancedSettingsPrefetch:getAppSecAdvancedSettingsPrefetch", {
         "configId": args.configId,

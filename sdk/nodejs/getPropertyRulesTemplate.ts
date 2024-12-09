@@ -44,7 +44,7 @@ export interface GetPropertyRulesTemplateResult {
     readonly varValuesFile?: string;
     readonly variables?: outputs.GetPropertyRulesTemplateVariable[];
 }
-export function getPropertyRulesTemplateOutput(args?: GetPropertyRulesTemplateOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyRulesTemplateResult> {
+export function getPropertyRulesTemplateOutput(args?: GetPropertyRulesTemplateOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPropertyRulesTemplateResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate", {

@@ -35,7 +35,7 @@ export interface GetBotmanTransactionalEndpointResult {
     readonly operationId?: string;
     readonly securityPolicyId: string;
 }
-export function getBotmanTransactionalEndpointOutput(args: GetBotmanTransactionalEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanTransactionalEndpointResult> {
+export function getBotmanTransactionalEndpointOutput(args: GetBotmanTransactionalEndpointOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBotmanTransactionalEndpointResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getBotmanTransactionalEndpoint:getBotmanTransactionalEndpoint", {
         "configId": args.configId,

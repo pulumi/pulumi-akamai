@@ -32,7 +32,7 @@ export interface GetEdgeWorkersResourceTierResult {
     readonly resourceTierId: number;
     readonly resourceTierName: string;
 }
-export function getEdgeWorkersResourceTierOutput(args: GetEdgeWorkersResourceTierOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEdgeWorkersResourceTierResult> {
+export function getEdgeWorkersResourceTierOutput(args: GetEdgeWorkersResourceTierOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetEdgeWorkersResourceTierResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getEdgeWorkersResourceTier:getEdgeWorkersResourceTier", {
         "contractId": args.contractId,

@@ -115,14 +115,14 @@ def get_app_sec_eval_penalty_box(config_id: Optional[int] = None,
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
 def get_app_sec_eval_penalty_box_output(config_id: Optional[pulumi.Input[int]] = None,
                                         security_policy_id: Optional[pulumi.Input[str]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecEvalPenaltyBoxResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecEvalPenaltyBoxResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
     __args__['securityPolicyId'] = security_policy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppSecEvalPenaltyBox:getAppSecEvalPenaltyBox', __args__, opts=opts, typ=GetAppSecEvalPenaltyBoxResult)
     return __ret__.apply(lambda __response__: GetAppSecEvalPenaltyBoxResult(
         action=pulumi.get(__response__, 'action'),

@@ -40,7 +40,7 @@ export interface GetPropertyIncludesResult {
     readonly parentProperty?: outputs.GetPropertyIncludesParentProperty;
     readonly type?: string;
 }
-export function getPropertyIncludesOutput(args: GetPropertyIncludesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyIncludesResult> {
+export function getPropertyIncludesOutput(args: GetPropertyIncludesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPropertyIncludesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getPropertyIncludes:getPropertyIncludes", {
         "contractId": args.contractId,

@@ -47,7 +47,7 @@ export interface GetGtmResourceResult {
     readonly type: string;
     readonly upperBound: number;
 }
-export function getGtmResourceOutput(args: GetGtmResourceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGtmResourceResult> {
+export function getGtmResourceOutput(args: GetGtmResourceOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetGtmResourceResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getGtmResource:getGtmResource", {
         "domain": args.domain,

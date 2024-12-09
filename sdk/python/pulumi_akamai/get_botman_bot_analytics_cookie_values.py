@@ -69,12 +69,12 @@ def get_botman_bot_analytics_cookie_values(opts: Optional[pulumi.InvokeOptions] 
     return AwaitableGetBotmanBotAnalyticsCookieValuesResult(
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'))
-def get_botman_bot_analytics_cookie_values_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBotmanBotAnalyticsCookieValuesResult]:
+def get_botman_bot_analytics_cookie_values_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBotmanBotAnalyticsCookieValuesResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getBotmanBotAnalyticsCookieValues:getBotmanBotAnalyticsCookieValues', __args__, opts=opts, typ=GetBotmanBotAnalyticsCookieValuesResult)
     return __ret__.apply(lambda __response__: GetBotmanBotAnalyticsCookieValuesResult(
         id=pulumi.get(__response__, 'id'),

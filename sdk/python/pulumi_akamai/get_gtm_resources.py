@@ -85,14 +85,14 @@ def get_gtm_resources(domain: Optional[str] = None,
         resources=pulumi.get(__ret__, 'resources'))
 def get_gtm_resources_output(domain: Optional[pulumi.Input[str]] = None,
                              resources: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmResourcesResourceArgs', 'GetGtmResourcesResourceArgsDict']]]]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGtmResourcesResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGtmResourcesResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['domain'] = domain
     __args__['resources'] = resources
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getGtmResources:getGtmResources', __args__, opts=opts, typ=GetGtmResourcesResult)
     return __ret__.apply(lambda __response__: GetGtmResourcesResult(
         domain=pulumi.get(__response__, 'domain'),

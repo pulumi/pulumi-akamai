@@ -29,7 +29,7 @@ export interface GetEdgeWorkersPropertyRulesResult {
     readonly id: string;
     readonly json: string;
 }
-export function getEdgeWorkersPropertyRulesOutput(args: GetEdgeWorkersPropertyRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEdgeWorkersPropertyRulesResult> {
+export function getEdgeWorkersPropertyRulesOutput(args: GetEdgeWorkersPropertyRulesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetEdgeWorkersPropertyRulesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getEdgeWorkersPropertyRules:getEdgeWorkersPropertyRules", {
         "edgeworkerId": args.edgeworkerId,

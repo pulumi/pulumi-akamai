@@ -32,7 +32,7 @@ export interface GetContractResult {
      */
     readonly id: string;
 }
-export function getContractOutput(args?: GetContractOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContractResult> {
+export function getContractOutput(args?: GetContractOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetContractResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getContract:getContract", {

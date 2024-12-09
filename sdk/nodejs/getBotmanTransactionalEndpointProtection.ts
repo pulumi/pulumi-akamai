@@ -29,7 +29,7 @@ export interface GetBotmanTransactionalEndpointProtectionResult {
     readonly id: string;
     readonly json: string;
 }
-export function getBotmanTransactionalEndpointProtectionOutput(args: GetBotmanTransactionalEndpointProtectionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanTransactionalEndpointProtectionResult> {
+export function getBotmanTransactionalEndpointProtectionOutput(args: GetBotmanTransactionalEndpointProtectionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBotmanTransactionalEndpointProtectionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getBotmanTransactionalEndpointProtection:getBotmanTransactionalEndpointProtection", {
         "configId": args.configId,

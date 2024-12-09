@@ -41,7 +41,7 @@ export interface GetNetworkListsResult {
     readonly syncPoint: number;
     readonly type?: string;
 }
-export function getNetworkListsOutput(args?: GetNetworkListsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkListsResult> {
+export function getNetworkListsOutput(args?: GetNetworkListsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkListsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getNetworkLists:getNetworkLists", {

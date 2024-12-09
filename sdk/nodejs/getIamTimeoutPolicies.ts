@@ -20,7 +20,7 @@ export interface GetIamTimeoutPoliciesResult {
     readonly id: string;
     readonly policies: {[key: string]: number};
 }
-export function getIamTimeoutPoliciesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetIamTimeoutPoliciesResult> {
+export function getIamTimeoutPoliciesOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIamTimeoutPoliciesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getIamTimeoutPolicies:getIamTimeoutPolicies", {
     }, opts);

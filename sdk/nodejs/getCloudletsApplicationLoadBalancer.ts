@@ -45,7 +45,7 @@ export interface GetCloudletsApplicationLoadBalancerResult {
     readonly version?: number;
     readonly warnings: string;
 }
-export function getCloudletsApplicationLoadBalancerOutput(args: GetCloudletsApplicationLoadBalancerOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudletsApplicationLoadBalancerResult> {
+export function getCloudletsApplicationLoadBalancerOutput(args: GetCloudletsApplicationLoadBalancerOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCloudletsApplicationLoadBalancerResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getCloudletsApplicationLoadBalancer:getCloudletsApplicationLoadBalancer", {
         "originId": args.originId,

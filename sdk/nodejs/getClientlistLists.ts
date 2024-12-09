@@ -38,7 +38,7 @@ export interface GetClientlistListsResult {
     readonly outputText: string;
     readonly types?: string[];
 }
-export function getClientlistListsOutput(args?: GetClientlistListsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetClientlistListsResult> {
+export function getClientlistListsOutput(args?: GetClientlistListsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetClientlistListsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getClientlistLists:getClientlistLists", {

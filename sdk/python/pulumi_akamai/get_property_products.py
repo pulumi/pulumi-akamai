@@ -83,13 +83,13 @@ def get_property_products(contract_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         products=pulumi.get(__ret__, 'products'))
 def get_property_products_output(contract_id: Optional[pulumi.Input[str]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyProductsResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyProductsResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['contractId'] = contract_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getPropertyProducts:getPropertyProducts', __args__, opts=opts, typ=GetPropertyProductsResult)
     return __ret__.apply(lambda __response__: GetPropertyProductsResult(
         contract_id=pulumi.get(__response__, 'contract_id'),

@@ -31,7 +31,7 @@ export interface GetImagingPolicyImageResult {
     readonly json: string;
     readonly policy: outputs.GetImagingPolicyImagePolicy;
 }
-export function getImagingPolicyImageOutput(args: GetImagingPolicyImageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetImagingPolicyImageResult> {
+export function getImagingPolicyImageOutput(args: GetImagingPolicyImageOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetImagingPolicyImageResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getImagingPolicyImage:getImagingPolicyImage", {
         "policy": args.policy,
