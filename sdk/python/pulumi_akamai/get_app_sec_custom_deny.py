@@ -105,14 +105,14 @@ def get_app_sec_custom_deny(config_id: Optional[int] = None,
         output_text=pulumi.get(__ret__, 'output_text'))
 def get_app_sec_custom_deny_output(config_id: Optional[pulumi.Input[int]] = None,
                                    custom_deny_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecCustomDenyResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecCustomDenyResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
     __args__['customDenyId'] = custom_deny_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppSecCustomDeny:getAppSecCustomDeny', __args__, opts=opts, typ=GetAppSecCustomDenyResult)
     return __ret__.apply(lambda __response__: GetAppSecCustomDenyResult(
         config_id=pulumi.get(__response__, 'config_id'),

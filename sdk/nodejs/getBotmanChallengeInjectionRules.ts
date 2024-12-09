@@ -29,7 +29,7 @@ export interface GetBotmanChallengeInjectionRulesResult {
     readonly id: string;
     readonly json: string;
 }
-export function getBotmanChallengeInjectionRulesOutput(args: GetBotmanChallengeInjectionRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanChallengeInjectionRulesResult> {
+export function getBotmanChallengeInjectionRulesOutput(args: GetBotmanChallengeInjectionRulesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBotmanChallengeInjectionRulesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getBotmanChallengeInjectionRules:getBotmanChallengeInjectionRules", {
         "configId": args.configId,

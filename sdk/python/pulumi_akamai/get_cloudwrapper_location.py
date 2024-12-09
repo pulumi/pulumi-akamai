@@ -103,14 +103,14 @@ def get_cloudwrapper_location(location_name: Optional[str] = None,
         traffic_type_id=pulumi.get(__ret__, 'traffic_type_id'))
 def get_cloudwrapper_location_output(location_name: Optional[pulumi.Input[str]] = None,
                                      traffic_type: Optional[pulumi.Input[str]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudwrapperLocationResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudwrapperLocationResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['locationName'] = location_name
     __args__['trafficType'] = traffic_type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getCloudwrapperLocation:getCloudwrapperLocation', __args__, opts=opts, typ=GetCloudwrapperLocationResult)
     return __ret__.apply(lambda __response__: GetCloudwrapperLocationResult(
         id=pulumi.get(__response__, 'id'),

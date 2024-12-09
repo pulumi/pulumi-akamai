@@ -20,7 +20,7 @@ export interface GetIamCountriesResult {
      */
     readonly id: string;
 }
-export function getIamCountriesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetIamCountriesResult> {
+export function getIamCountriesOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIamCountriesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getIamCountries:getIamCountries", {
     }, opts);

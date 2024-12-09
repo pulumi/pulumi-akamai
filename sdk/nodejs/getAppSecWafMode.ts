@@ -38,7 +38,7 @@ export interface GetAppSecWafModeResult {
     readonly outputText: string;
     readonly securityPolicyId: string;
 }
-export function getAppSecWafModeOutput(args: GetAppSecWafModeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecWafModeResult> {
+export function getAppSecWafModeOutput(args: GetAppSecWafModeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecWafModeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecWafMode:getAppSecWafMode", {
         "configId": args.configId,

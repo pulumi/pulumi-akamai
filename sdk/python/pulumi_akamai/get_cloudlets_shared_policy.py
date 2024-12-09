@@ -168,7 +168,7 @@ def get_cloudlets_shared_policy(activations: Optional[Union['GetCloudletsSharedP
 def get_cloudlets_shared_policy_output(activations: Optional[pulumi.Input[Optional[Union['GetCloudletsSharedPolicyActivationsArgs', 'GetCloudletsSharedPolicyActivationsArgsDict']]]] = None,
                                        policy_id: Optional[pulumi.Input[int]] = None,
                                        version: Optional[pulumi.Input[Optional[int]]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudletsSharedPolicyResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudletsSharedPolicyResult]:
     """
     Use this data source to access information about an existing resource.
     """
@@ -176,7 +176,7 @@ def get_cloudlets_shared_policy_output(activations: Optional[pulumi.Input[Option
     __args__['activations'] = activations
     __args__['policyId'] = policy_id
     __args__['version'] = version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getCloudletsSharedPolicy:getCloudletsSharedPolicy', __args__, opts=opts, typ=GetCloudletsSharedPolicyResult)
     return __ret__.apply(lambda __response__: GetCloudletsSharedPolicyResult(
         activations=pulumi.get(__response__, 'activations'),

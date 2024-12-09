@@ -35,7 +35,7 @@ export interface GetAppSecCustomRuleActionsResult {
     readonly outputText: string;
     readonly securityPolicyId: string;
 }
-export function getAppSecCustomRuleActionsOutput(args: GetAppSecCustomRuleActionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecCustomRuleActionsResult> {
+export function getAppSecCustomRuleActionsOutput(args: GetAppSecCustomRuleActionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecCustomRuleActionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecCustomRuleActions:getAppSecCustomRuleActions", {
         "configId": args.configId,

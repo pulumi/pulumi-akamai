@@ -36,7 +36,7 @@ export interface GetAppSecExportConfigurationResult {
     readonly searches?: string[];
     readonly version: number;
 }
-export function getAppSecExportConfigurationOutput(args: GetAppSecExportConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecExportConfigurationResult> {
+export function getAppSecExportConfigurationOutput(args: GetAppSecExportConfigurationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecExportConfigurationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecExportConfiguration:getAppSecExportConfiguration", {
         "configId": args.configId,

@@ -126,14 +126,14 @@ def get_clientlist_lists(name: Optional[str] = None,
         types=pulumi.get(__ret__, 'types'))
 def get_clientlist_lists_output(name: Optional[pulumi.Input[Optional[str]]] = None,
                                 types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetClientlistListsResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClientlistListsResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['name'] = name
     __args__['types'] = types
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getClientlistLists:getClientlistLists', __args__, opts=opts, typ=GetClientlistListsResult)
     return __ret__.apply(lambda __response__: GetClientlistListsResult(
         id=pulumi.get(__response__, 'id'),

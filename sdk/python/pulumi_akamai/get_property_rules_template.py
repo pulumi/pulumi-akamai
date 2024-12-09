@@ -136,7 +136,7 @@ def get_property_rules_template_output(template_file: Optional[pulumi.Input[Opti
                                        var_definition_file: Optional[pulumi.Input[Optional[str]]] = None,
                                        var_values_file: Optional[pulumi.Input[Optional[str]]] = None,
                                        variables: Optional[pulumi.Input[Optional[Sequence[Union['GetPropertyRulesTemplateVariableArgs', 'GetPropertyRulesTemplateVariableArgsDict']]]]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyRulesTemplateResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyRulesTemplateResult]:
     """
     Use this data source to access information about an existing resource.
     """
@@ -146,7 +146,7 @@ def get_property_rules_template_output(template_file: Optional[pulumi.Input[Opti
     __args__['varDefinitionFile'] = var_definition_file
     __args__['varValuesFile'] = var_values_file
     __args__['variables'] = variables
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate', __args__, opts=opts, typ=GetPropertyRulesTemplateResult)
     return __ret__.apply(lambda __response__: GetPropertyRulesTemplateResult(
         id=pulumi.get(__response__, 'id'),

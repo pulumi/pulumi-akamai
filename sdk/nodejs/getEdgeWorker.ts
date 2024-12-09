@@ -37,7 +37,7 @@ export interface GetEdgeWorkerResult {
     readonly version: string;
     readonly warnings: string[];
 }
-export function getEdgeWorkerOutput(args: GetEdgeWorkerOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEdgeWorkerResult> {
+export function getEdgeWorkerOutput(args: GetEdgeWorkerOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetEdgeWorkerResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getEdgeWorker:getEdgeWorker", {
         "edgeworkerId": args.edgeworkerId,

@@ -42,7 +42,7 @@ export interface GetGtmCidrmapResult {
     readonly links?: outputs.GetGtmCidrmapLink[];
     readonly mapName: string;
 }
-export function getGtmCidrmapOutput(args: GetGtmCidrmapOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGtmCidrmapResult> {
+export function getGtmCidrmapOutput(args: GetGtmCidrmapOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetGtmCidrmapResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getGtmCidrmap:getGtmCidrmap", {
         "assignments": args.assignments,

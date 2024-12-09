@@ -29,7 +29,7 @@ export interface GetAuthoritiesSetResult {
      */
     readonly id: string;
 }
-export function getAuthoritiesSetOutput(args: GetAuthoritiesSetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuthoritiesSetResult> {
+export function getAuthoritiesSetOutput(args: GetAuthoritiesSetOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAuthoritiesSetResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAuthoritiesSet:getAuthoritiesSet", {
         "contract": args.contract,

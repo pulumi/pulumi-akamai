@@ -138,7 +138,7 @@ def get_app_sec_eval_rules(config_id: Optional[int] = None,
 def get_app_sec_eval_rules_output(config_id: Optional[pulumi.Input[int]] = None,
                                   rule_id: Optional[pulumi.Input[Optional[int]]] = None,
                                   security_policy_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecEvalRulesResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecEvalRulesResult]:
     """
     Use this data source to access information about an existing resource.
     """
@@ -146,7 +146,7 @@ def get_app_sec_eval_rules_output(config_id: Optional[pulumi.Input[int]] = None,
     __args__['configId'] = config_id
     __args__['ruleId'] = rule_id
     __args__['securityPolicyId'] = security_policy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppSecEvalRules:getAppSecEvalRules', __args__, opts=opts, typ=GetAppSecEvalRulesResult)
     return __ret__.apply(lambda __response__: GetAppSecEvalRulesResult(
         condition_exception=pulumi.get(__response__, 'condition_exception'),

@@ -159,7 +159,7 @@ def get_property_rules_builder_output(rules_v20230105: Optional[pulumi.Input[Opt
                                       rules_v20231030: Optional[pulumi.Input[Optional[Union['GetPropertyRulesBuilderRulesV20231030Args', 'GetPropertyRulesBuilderRulesV20231030ArgsDict']]]] = None,
                                       rules_v20240109: Optional[pulumi.Input[Optional[Union['GetPropertyRulesBuilderRulesV20240109Args', 'GetPropertyRulesBuilderRulesV20240109ArgsDict']]]] = None,
                                       rules_v20240212: Optional[pulumi.Input[Optional[Union['GetPropertyRulesBuilderRulesV20240212Args', 'GetPropertyRulesBuilderRulesV20240212ArgsDict']]]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyRulesBuilderResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyRulesBuilderResult]:
     """
     Use this data source to access information about an existing resource.
     """
@@ -170,7 +170,7 @@ def get_property_rules_builder_output(rules_v20230105: Optional[pulumi.Input[Opt
     __args__['rulesV20231030'] = rules_v20231030
     __args__['rulesV20240109'] = rules_v20240109
     __args__['rulesV20240212'] = rules_v20240212
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getPropertyRulesBuilder:getPropertyRulesBuilder', __args__, opts=opts, typ=GetPropertyRulesBuilderResult)
     return __ret__.apply(lambda __response__: GetPropertyRulesBuilderResult(
         id=pulumi.get(__response__, 'id'),

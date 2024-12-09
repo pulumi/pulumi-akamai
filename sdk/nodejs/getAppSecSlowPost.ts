@@ -33,7 +33,7 @@ export interface GetAppSecSlowPostResult {
     readonly outputText: string;
     readonly securityPolicyId: string;
 }
-export function getAppSecSlowPostOutput(args: GetAppSecSlowPostOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecSlowPostResult> {
+export function getAppSecSlowPostOutput(args: GetAppSecSlowPostOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecSlowPostResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecSlowPost:getAppSecSlowPost", {
         "configId": args.configId,

@@ -32,7 +32,7 @@ export interface GetDatastreamDatasetFieldsResult {
     readonly id: string;
     readonly productId?: string;
 }
-export function getDatastreamDatasetFieldsOutput(args?: GetDatastreamDatasetFieldsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatastreamDatasetFieldsResult> {
+export function getDatastreamDatasetFieldsOutput(args?: GetDatastreamDatasetFieldsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDatastreamDatasetFieldsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getDatastreamDatasetFields:getDatastreamDatasetFields", {

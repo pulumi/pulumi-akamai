@@ -32,7 +32,7 @@ export interface GetBotmanChallengeActionResult {
     readonly id: string;
     readonly json: string;
 }
-export function getBotmanChallengeActionOutput(args: GetBotmanChallengeActionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanChallengeActionResult> {
+export function getBotmanChallengeActionOutput(args: GetBotmanChallengeActionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBotmanChallengeActionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getBotmanChallengeAction:getBotmanChallengeAction", {
         "actionId": args.actionId,

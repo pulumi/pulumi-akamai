@@ -105,14 +105,14 @@ def get_edge_worker_activation(edgeworker_id: Optional[int] = None,
         version=pulumi.get(__ret__, 'version'))
 def get_edge_worker_activation_output(edgeworker_id: Optional[pulumi.Input[int]] = None,
                                       network: Optional[pulumi.Input[str]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEdgeWorkerActivationResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEdgeWorkerActivationResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['edgeworkerId'] = edgeworker_id
     __args__['network'] = network
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getEdgeWorkerActivation:getEdgeWorkerActivation', __args__, opts=opts, typ=GetEdgeWorkerActivationResult)
     return __ret__.apply(lambda __response__: GetEdgeWorkerActivationResult(
         activation_id=pulumi.get(__response__, 'activation_id'),

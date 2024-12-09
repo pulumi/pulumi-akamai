@@ -95,14 +95,14 @@ def get_edgekv_groups(namespace_name: Optional[str] = None,
         network=pulumi.get(__ret__, 'network'))
 def get_edgekv_groups_output(namespace_name: Optional[pulumi.Input[str]] = None,
                              network: Optional[pulumi.Input[str]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEdgekvGroupsResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEdgekvGroupsResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['namespaceName'] = namespace_name
     __args__['network'] = network
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getEdgekvGroups:getEdgekvGroups', __args__, opts=opts, typ=GetEdgekvGroupsResult)
     return __ret__.apply(lambda __response__: GetEdgekvGroupsResult(
         groups=pulumi.get(__response__, 'groups'),

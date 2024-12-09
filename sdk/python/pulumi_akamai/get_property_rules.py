@@ -144,7 +144,7 @@ def get_property_rules_output(contract_id: Optional[pulumi.Input[Optional[str]]]
                               property_id: Optional[pulumi.Input[str]] = None,
                               rule_format: Optional[pulumi.Input[Optional[str]]] = None,
                               version: Optional[pulumi.Input[Optional[int]]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyRulesResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyRulesResult]:
     """
     Use this data source to access information about an existing resource.
     """
@@ -154,7 +154,7 @@ def get_property_rules_output(contract_id: Optional[pulumi.Input[Optional[str]]]
     __args__['propertyId'] = property_id
     __args__['ruleFormat'] = rule_format
     __args__['version'] = version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getPropertyRules:getPropertyRules', __args__, opts=opts, typ=GetPropertyRulesResult)
     return __ret__.apply(lambda __response__: GetPropertyRulesResult(
         contract_id=pulumi.get(__response__, 'contract_id'),

@@ -32,7 +32,7 @@ export interface GetBotmanCustomClientResult {
     readonly id: string;
     readonly json: string;
 }
-export function getBotmanCustomClientOutput(args: GetBotmanCustomClientOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanCustomClientResult> {
+export function getBotmanCustomClientOutput(args: GetBotmanCustomClientOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBotmanCustomClientResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getBotmanCustomClient:getBotmanCustomClient", {
         "configId": args.configId,

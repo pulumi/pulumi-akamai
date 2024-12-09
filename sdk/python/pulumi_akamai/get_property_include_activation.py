@@ -151,7 +151,7 @@ def get_property_include_activation_output(contract_id: Optional[pulumi.Input[st
                                            group_id: Optional[pulumi.Input[str]] = None,
                                            include_id: Optional[pulumi.Input[str]] = None,
                                            network: Optional[pulumi.Input[str]] = None,
-                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyIncludeActivationResult]:
+                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyIncludeActivationResult]:
     """
     Use this data source to access information about an existing resource.
     """
@@ -160,7 +160,7 @@ def get_property_include_activation_output(contract_id: Optional[pulumi.Input[st
     __args__['groupId'] = group_id
     __args__['includeId'] = include_id
     __args__['network'] = network
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getPropertyIncludeActivation:getPropertyIncludeActivation', __args__, opts=opts, typ=GetPropertyIncludeActivationResult)
     return __ret__.apply(lambda __response__: GetPropertyIncludeActivationResult(
         contract_id=pulumi.get(__response__, 'contract_id'),

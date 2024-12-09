@@ -72,13 +72,13 @@ def get_cloudwrapper_locations(locations: Optional[Sequence[Union['GetCloudwrapp
         id=pulumi.get(__ret__, 'id'),
         locations=pulumi.get(__ret__, 'locations'))
 def get_cloudwrapper_locations_output(locations: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudwrapperLocationsLocationArgs', 'GetCloudwrapperLocationsLocationArgsDict']]]]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudwrapperLocationsResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudwrapperLocationsResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['locations'] = locations
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getCloudwrapperLocations:getCloudwrapperLocations', __args__, opts=opts, typ=GetCloudwrapperLocationsResult)
     return __ret__.apply(lambda __response__: GetCloudwrapperLocationsResult(
         id=pulumi.get(__response__, 'id'),

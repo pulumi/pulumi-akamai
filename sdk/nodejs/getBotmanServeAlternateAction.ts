@@ -32,7 +32,7 @@ export interface GetBotmanServeAlternateActionResult {
     readonly id: string;
     readonly json: string;
 }
-export function getBotmanServeAlternateActionOutput(args: GetBotmanServeAlternateActionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanServeAlternateActionResult> {
+export function getBotmanServeAlternateActionOutput(args: GetBotmanServeAlternateActionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBotmanServeAlternateActionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getBotmanServeAlternateAction:getBotmanServeAlternateAction", {
         "actionId": args.actionId,

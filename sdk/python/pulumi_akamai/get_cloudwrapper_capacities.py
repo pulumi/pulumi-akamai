@@ -85,14 +85,14 @@ def get_cloudwrapper_capacities(capacities: Optional[Sequence[Union['GetCloudwra
         id=pulumi.get(__ret__, 'id'))
 def get_cloudwrapper_capacities_output(capacities: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudwrapperCapacitiesCapacityArgs', 'GetCloudwrapperCapacitiesCapacityArgsDict']]]]] = None,
                                        contract_ids: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudwrapperCapacitiesResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudwrapperCapacitiesResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['capacities'] = capacities
     __args__['contractIds'] = contract_ids
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getCloudwrapperCapacities:getCloudwrapperCapacities', __args__, opts=opts, typ=GetCloudwrapperCapacitiesResult)
     return __ret__.apply(lambda __response__: GetCloudwrapperCapacitiesResult(
         capacities=pulumi.get(__response__, 'capacities'),

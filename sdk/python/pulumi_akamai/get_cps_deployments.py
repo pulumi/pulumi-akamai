@@ -132,13 +132,13 @@ def get_cps_deployments(enrollment_id: Optional[int] = None,
         staging_certificate_ecdsa=pulumi.get(__ret__, 'staging_certificate_ecdsa'),
         staging_certificate_rsa=pulumi.get(__ret__, 'staging_certificate_rsa'))
 def get_cps_deployments_output(enrollment_id: Optional[pulumi.Input[int]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCpsDeploymentsResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCpsDeploymentsResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['enrollmentId'] = enrollment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getCpsDeployments:getCpsDeployments', __args__, opts=opts, typ=GetCpsDeploymentsResult)
     return __ret__.apply(lambda __response__: GetCpsDeploymentsResult(
         auto_renewal_start_time=pulumi.get(__response__, 'auto_renewal_start_time'),

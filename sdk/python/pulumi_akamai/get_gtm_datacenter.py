@@ -236,14 +236,14 @@ def get_gtm_datacenter(datacenter_id: Optional[int] = None,
         virtual=pulumi.get(__ret__, 'virtual'))
 def get_gtm_datacenter_output(datacenter_id: Optional[pulumi.Input[int]] = None,
                               domain: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGtmDatacenterResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGtmDatacenterResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['datacenterId'] = datacenter_id
     __args__['domain'] = domain
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getGtmDatacenter:getGtmDatacenter', __args__, opts=opts, typ=GetGtmDatacenterResult)
     return __ret__.apply(lambda __response__: GetGtmDatacenterResult(
         city=pulumi.get(__response__, 'city'),

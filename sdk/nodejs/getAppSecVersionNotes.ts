@@ -30,7 +30,7 @@ export interface GetAppSecVersionNotesResult {
     readonly json: string;
     readonly outputText: string;
 }
-export function getAppSecVersionNotesOutput(args: GetAppSecVersionNotesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecVersionNotesResult> {
+export function getAppSecVersionNotesOutput(args: GetAppSecVersionNotesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecVersionNotesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecVersionNotes:getAppSecVersionNotes", {
         "configId": args.configId,

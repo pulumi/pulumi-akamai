@@ -31,7 +31,7 @@ export interface GetAppSecFailoverHostnamesResult {
     readonly json: string;
     readonly outputText: string;
 }
-export function getAppSecFailoverHostnamesOutput(args: GetAppSecFailoverHostnamesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecFailoverHostnamesResult> {
+export function getAppSecFailoverHostnamesOutput(args: GetAppSecFailoverHostnamesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecFailoverHostnamesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecFailoverHostnames:getAppSecFailoverHostnames", {
         "configId": args.configId,

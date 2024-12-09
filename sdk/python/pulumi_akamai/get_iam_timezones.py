@@ -70,12 +70,12 @@ def get_iam_timezones(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableG
     return AwaitableGetIamTimezonesResult(
         id=pulumi.get(__ret__, 'id'),
         timezones=pulumi.get(__ret__, 'timezones'))
-def get_iam_timezones_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamTimezonesResult]:
+def get_iam_timezones_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamTimezonesResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getIamTimezones:getIamTimezones', __args__, opts=opts, typ=GetIamTimezonesResult)
     return __ret__.apply(lambda __response__: GetIamTimezonesResult(
         id=pulumi.get(__response__, 'id'),

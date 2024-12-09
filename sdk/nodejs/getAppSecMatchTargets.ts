@@ -33,7 +33,7 @@ export interface GetAppSecMatchTargetsResult {
     readonly matchTargetId?: number;
     readonly outputText: string;
 }
-export function getAppSecMatchTargetsOutput(args: GetAppSecMatchTargetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecMatchTargetsResult> {
+export function getAppSecMatchTargetsOutput(args: GetAppSecMatchTargetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecMatchTargetsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecMatchTargets:getAppSecMatchTargets", {
         "configId": args.configId,

@@ -44,7 +44,7 @@ export interface GetAppSecSelectableHostnamesResult {
     readonly id: string;
     readonly outputText: string;
 }
-export function getAppSecSelectableHostnamesOutput(args?: GetAppSecSelectableHostnamesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecSelectableHostnamesResult> {
+export function getAppSecSelectableHostnamesOutput(args?: GetAppSecSelectableHostnamesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecSelectableHostnamesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecSelectableHostnames:getAppSecSelectableHostnames", {

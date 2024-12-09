@@ -92,13 +92,13 @@ def get_appsec_advanced_settings_pii_learning(config_id: Optional[int] = None,
         json=pulumi.get(__ret__, 'json'),
         output_text=pulumi.get(__ret__, 'output_text'))
 def get_appsec_advanced_settings_pii_learning_output(config_id: Optional[pulumi.Input[int]] = None,
-                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppsecAdvancedSettingsPiiLearningResult]:
+                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppsecAdvancedSettingsPiiLearningResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppsecAdvancedSettingsPiiLearning:getAppsecAdvancedSettingsPiiLearning', __args__, opts=opts, typ=GetAppsecAdvancedSettingsPiiLearningResult)
     return __ret__.apply(lambda __response__: GetAppsecAdvancedSettingsPiiLearningResult(
         config_id=pulumi.get(__response__, 'config_id'),

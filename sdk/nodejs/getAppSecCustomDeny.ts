@@ -33,7 +33,7 @@ export interface GetAppSecCustomDenyResult {
     readonly json: string;
     readonly outputText: string;
 }
-export function getAppSecCustomDenyOutput(args: GetAppSecCustomDenyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecCustomDenyResult> {
+export function getAppSecCustomDenyOutput(args: GetAppSecCustomDenyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecCustomDenyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecCustomDeny:getAppSecCustomDeny", {
         "configId": args.configId,

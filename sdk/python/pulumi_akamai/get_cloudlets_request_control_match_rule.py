@@ -84,13 +84,13 @@ def get_cloudlets_request_control_match_rule(match_rules: Optional[Sequence[Unio
         json=pulumi.get(__ret__, 'json'),
         match_rules=pulumi.get(__ret__, 'match_rules'))
 def get_cloudlets_request_control_match_rule_output(match_rules: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudletsRequestControlMatchRuleMatchRuleArgs', 'GetCloudletsRequestControlMatchRuleMatchRuleArgsDict']]]]] = None,
-                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudletsRequestControlMatchRuleResult]:
+                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudletsRequestControlMatchRuleResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['matchRules'] = match_rules
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getCloudletsRequestControlMatchRule:getCloudletsRequestControlMatchRule', __args__, opts=opts, typ=GetCloudletsRequestControlMatchRuleResult)
     return __ret__.apply(lambda __response__: GetCloudletsRequestControlMatchRuleResult(
         id=pulumi.get(__response__, 'id'),

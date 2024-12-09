@@ -34,7 +34,7 @@ export interface GetAppSecConfigurationResult {
     readonly productionVersion: number;
     readonly stagingVersion: number;
 }
-export function getAppSecConfigurationOutput(args?: GetAppSecConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecConfigurationResult> {
+export function getAppSecConfigurationOutput(args?: GetAppSecConfigurationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecConfigurationResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecConfiguration:getAppSecConfiguration", {

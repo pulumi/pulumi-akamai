@@ -69,12 +69,12 @@ def get_cps_warnings(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGe
     return AwaitableGetCpsWarningsResult(
         id=pulumi.get(__ret__, 'id'),
         warnings=pulumi.get(__ret__, 'warnings'))
-def get_cps_warnings_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCpsWarningsResult]:
+def get_cps_warnings_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCpsWarningsResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getCpsWarnings:getCpsWarnings', __args__, opts=opts, typ=GetCpsWarningsResult)
     return __ret__.apply(lambda __response__: GetCpsWarningsResult(
         id=pulumi.get(__response__, 'id'),

@@ -92,13 +92,13 @@ def get_app_sec_siem_definitions(siem_definition_name: Optional[str] = None,
         output_text=pulumi.get(__ret__, 'output_text'),
         siem_definition_name=pulumi.get(__ret__, 'siem_definition_name'))
 def get_app_sec_siem_definitions_output(siem_definition_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecSiemDefinitionsResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecSiemDefinitionsResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['siemDefinitionName'] = siem_definition_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppSecSiemDefinitions:getAppSecSiemDefinitions', __args__, opts=opts, typ=GetAppSecSiemDefinitionsResult)
     return __ret__.apply(lambda __response__: GetAppSecSiemDefinitionsResult(
         id=pulumi.get(__response__, 'id'),

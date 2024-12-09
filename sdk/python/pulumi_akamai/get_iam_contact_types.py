@@ -69,12 +69,12 @@ def get_iam_contact_types(opts: Optional[pulumi.InvokeOptions] = None) -> Awaita
     return AwaitableGetIamContactTypesResult(
         contact_types=pulumi.get(__ret__, 'contact_types'),
         id=pulumi.get(__ret__, 'id'))
-def get_iam_contact_types_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamContactTypesResult]:
+def get_iam_contact_types_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamContactTypesResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getIamContactTypes:getIamContactTypes', __args__, opts=opts, typ=GetIamContactTypesResult)
     return __ret__.apply(lambda __response__: GetIamContactTypesResult(
         contact_types=pulumi.get(__response__, 'contact_types'),

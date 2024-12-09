@@ -128,7 +128,7 @@ def get_app_sec_api_endpoints(api_name: Optional[str] = None,
 def get_app_sec_api_endpoints_output(api_name: Optional[pulumi.Input[Optional[str]]] = None,
                                      config_id: Optional[pulumi.Input[int]] = None,
                                      security_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecApiEndpointsResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecApiEndpointsResult]:
     """
     Use this data source to access information about an existing resource.
     """
@@ -136,7 +136,7 @@ def get_app_sec_api_endpoints_output(api_name: Optional[pulumi.Input[Optional[st
     __args__['apiName'] = api_name
     __args__['configId'] = config_id
     __args__['securityPolicyId'] = security_policy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppSecApiEndpoints:getAppSecApiEndpoints', __args__, opts=opts, typ=GetAppSecApiEndpointsResult)
     return __ret__.apply(lambda __response__: GetAppSecApiEndpointsResult(
         api_name=pulumi.get(__response__, 'api_name'),

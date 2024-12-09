@@ -118,7 +118,7 @@ def get_app_sec_export_configuration(config_id: Optional[int] = None,
 def get_app_sec_export_configuration_output(config_id: Optional[pulumi.Input[int]] = None,
                                             searches: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                             version: Optional[pulumi.Input[int]] = None,
-                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecExportConfigurationResult]:
+                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecExportConfigurationResult]:
     """
     Use this data source to access information about an existing resource.
     """
@@ -126,7 +126,7 @@ def get_app_sec_export_configuration_output(config_id: Optional[pulumi.Input[int
     __args__['configId'] = config_id
     __args__['searches'] = searches
     __args__['version'] = version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppSecExportConfiguration:getAppSecExportConfiguration', __args__, opts=opts, typ=GetAppSecExportConfigurationResult)
     return __ret__.apply(lambda __response__: GetAppSecExportConfigurationResult(
         config_id=pulumi.get(__response__, 'config_id'),

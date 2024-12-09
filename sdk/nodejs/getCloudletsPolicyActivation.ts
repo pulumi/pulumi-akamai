@@ -36,7 +36,7 @@ export interface GetCloudletsPolicyActivationResult {
     readonly status: string;
     readonly version: number;
 }
-export function getCloudletsPolicyActivationOutput(args: GetCloudletsPolicyActivationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudletsPolicyActivationResult> {
+export function getCloudletsPolicyActivationOutput(args: GetCloudletsPolicyActivationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCloudletsPolicyActivationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getCloudletsPolicyActivation:getCloudletsPolicyActivation", {
         "associatedProperties": args.associatedProperties,
