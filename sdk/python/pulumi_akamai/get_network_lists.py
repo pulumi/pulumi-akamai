@@ -158,7 +158,7 @@ def get_network_lists(name: Optional[str] = None,
 def get_network_lists_output(name: Optional[pulumi.Input[Optional[str]]] = None,
                              network_list_id: Optional[pulumi.Input[Optional[str]]] = None,
                              type: Optional[pulumi.Input[Optional[str]]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkListsResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkListsResult]:
     """
     Use this data source to access information about an existing resource.
     """
@@ -166,7 +166,7 @@ def get_network_lists_output(name: Optional[pulumi.Input[Optional[str]]] = None,
     __args__['name'] = name
     __args__['networkListId'] = network_list_id
     __args__['type'] = type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getNetworkLists:getNetworkLists', __args__, opts=opts, typ=GetNetworkListsResult)
     return __ret__.apply(lambda __response__: GetNetworkListsResult(
         contract_id=pulumi.get(__response__, 'contract_id'),

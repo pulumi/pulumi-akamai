@@ -44,7 +44,7 @@ export interface GetCloudwrapperConfigurationResult {
     readonly retainIdleObjects: boolean;
     readonly status: string;
 }
-export function getCloudwrapperConfigurationOutput(args: GetCloudwrapperConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudwrapperConfigurationResult> {
+export function getCloudwrapperConfigurationOutput(args: GetCloudwrapperConfigurationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCloudwrapperConfigurationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getCloudwrapperConfiguration:getCloudwrapperConfiguration", {
         "id": args.id,

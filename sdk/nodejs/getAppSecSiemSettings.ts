@@ -30,7 +30,7 @@ export interface GetAppSecSiemSettingsResult {
     readonly json: string;
     readonly outputText: string;
 }
-export function getAppSecSiemSettingsOutput(args: GetAppSecSiemSettingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecSiemSettingsResult> {
+export function getAppSecSiemSettingsOutput(args: GetAppSecSiemSettingsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecSiemSettingsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecSiemSettings:getAppSecSiemSettings", {
         "configId": args.configId,

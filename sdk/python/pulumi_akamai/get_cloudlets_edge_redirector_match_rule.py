@@ -84,13 +84,13 @@ def get_cloudlets_edge_redirector_match_rule(match_rules: Optional[Sequence[Unio
         json=pulumi.get(__ret__, 'json'),
         match_rules=pulumi.get(__ret__, 'match_rules'))
 def get_cloudlets_edge_redirector_match_rule_output(match_rules: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs', 'GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgsDict']]]]] = None,
-                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudletsEdgeRedirectorMatchRuleResult]:
+                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudletsEdgeRedirectorMatchRuleResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['matchRules'] = match_rules
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getCloudletsEdgeRedirectorMatchRule:getCloudletsEdgeRedirectorMatchRule', __args__, opts=opts, typ=GetCloudletsEdgeRedirectorMatchRuleResult)
     return __ret__.apply(lambda __response__: GetCloudletsEdgeRedirectorMatchRuleResult(
         id=pulumi.get(__response__, 'id'),

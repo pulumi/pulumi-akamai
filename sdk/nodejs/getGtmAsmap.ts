@@ -42,7 +42,7 @@ export interface GetGtmAsmapResult {
     readonly links?: outputs.GetGtmAsmapLink[];
     readonly mapName: string;
 }
-export function getGtmAsmapOutput(args: GetGtmAsmapOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGtmAsmapResult> {
+export function getGtmAsmapOutput(args: GetGtmAsmapOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetGtmAsmapResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getGtmAsmap:getGtmAsmap", {
         "assignments": args.assignments,

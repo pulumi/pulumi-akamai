@@ -33,7 +33,7 @@ export interface GetCloudwrapperLocationResult {
     readonly trafficType: string;
     readonly trafficTypeId: number;
 }
-export function getCloudwrapperLocationOutput(args: GetCloudwrapperLocationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudwrapperLocationResult> {
+export function getCloudwrapperLocationOutput(args: GetCloudwrapperLocationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCloudwrapperLocationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getCloudwrapperLocation:getCloudwrapperLocation", {
         "locationName": args.locationName,

@@ -84,13 +84,13 @@ def get_imaging_policy_video(policy: Optional[Union['GetImagingPolicyVideoPolicy
         json=pulumi.get(__ret__, 'json'),
         policy=pulumi.get(__ret__, 'policy'))
 def get_imaging_policy_video_output(policy: Optional[pulumi.Input[Union['GetImagingPolicyVideoPolicyArgs', 'GetImagingPolicyVideoPolicyArgsDict']]] = None,
-                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetImagingPolicyVideoResult]:
+                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetImagingPolicyVideoResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['policy'] = policy
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getImagingPolicyVideo:getImagingPolicyVideo', __args__, opts=opts, typ=GetImagingPolicyVideoResult)
     return __ret__.apply(lambda __response__: GetImagingPolicyVideoResult(
         id=pulumi.get(__response__, 'id'),

@@ -33,7 +33,7 @@ export interface GetAppSecAdvancedSettingsEvasivePathMatchResult {
     readonly outputText: string;
     readonly securityPolicyId?: string;
 }
-export function getAppSecAdvancedSettingsEvasivePathMatchOutput(args: GetAppSecAdvancedSettingsEvasivePathMatchOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecAdvancedSettingsEvasivePathMatchResult> {
+export function getAppSecAdvancedSettingsEvasivePathMatchOutput(args: GetAppSecAdvancedSettingsEvasivePathMatchOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecAdvancedSettingsEvasivePathMatchResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecAdvancedSettingsEvasivePathMatch:getAppSecAdvancedSettingsEvasivePathMatch", {
         "configId": args.configId,

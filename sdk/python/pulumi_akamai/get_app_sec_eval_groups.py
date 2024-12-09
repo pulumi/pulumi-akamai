@@ -138,7 +138,7 @@ def get_app_sec_eval_groups(attack_group: Optional[str] = None,
 def get_app_sec_eval_groups_output(attack_group: Optional[pulumi.Input[Optional[str]]] = None,
                                    config_id: Optional[pulumi.Input[int]] = None,
                                    security_policy_id: Optional[pulumi.Input[str]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecEvalGroupsResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecEvalGroupsResult]:
     """
     Use this data source to access information about an existing resource.
     """
@@ -146,7 +146,7 @@ def get_app_sec_eval_groups_output(attack_group: Optional[pulumi.Input[Optional[
     __args__['attackGroup'] = attack_group
     __args__['configId'] = config_id
     __args__['securityPolicyId'] = security_policy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppSecEvalGroups:getAppSecEvalGroups', __args__, opts=opts, typ=GetAppSecEvalGroupsResult)
     return __ret__.apply(lambda __response__: GetAppSecEvalGroupsResult(
         attack_group=pulumi.get(__response__, 'attack_group'),

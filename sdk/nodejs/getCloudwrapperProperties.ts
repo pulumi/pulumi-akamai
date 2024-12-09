@@ -37,7 +37,7 @@ export interface GetCloudwrapperPropertiesResult {
     readonly properties?: outputs.GetCloudwrapperPropertiesProperty[];
     readonly unused?: boolean;
 }
-export function getCloudwrapperPropertiesOutput(args?: GetCloudwrapperPropertiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudwrapperPropertiesResult> {
+export function getCloudwrapperPropertiesOutput(args?: GetCloudwrapperPropertiesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCloudwrapperPropertiesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getCloudwrapperProperties:getCloudwrapperProperties", {

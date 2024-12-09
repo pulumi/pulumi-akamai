@@ -31,7 +31,7 @@ export interface GetGtmDatacentersResult {
      */
     readonly id: string;
 }
-export function getGtmDatacentersOutput(args: GetGtmDatacentersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGtmDatacentersResult> {
+export function getGtmDatacentersOutput(args: GetGtmDatacentersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetGtmDatacentersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getGtmDatacenters:getGtmDatacenters", {
         "domain": args.domain,

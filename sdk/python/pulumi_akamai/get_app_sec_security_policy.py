@@ -125,14 +125,14 @@ def get_app_sec_security_policy(config_id: Optional[int] = None,
         security_policy_name=pulumi.get(__ret__, 'security_policy_name'))
 def get_app_sec_security_policy_output(config_id: Optional[pulumi.Input[int]] = None,
                                        security_policy_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecSecurityPolicyResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecSecurityPolicyResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
     __args__['securityPolicyName'] = security_policy_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppSecSecurityPolicy:getAppSecSecurityPolicy', __args__, opts=opts, typ=GetAppSecSecurityPolicyResult)
     return __ret__.apply(lambda __response__: GetAppSecSecurityPolicyResult(
         config_id=pulumi.get(__response__, 'config_id'),

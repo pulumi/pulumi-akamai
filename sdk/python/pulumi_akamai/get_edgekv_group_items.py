@@ -108,7 +108,7 @@ def get_edgekv_group_items(group_name: Optional[str] = None,
 def get_edgekv_group_items_output(group_name: Optional[pulumi.Input[str]] = None,
                                   namespace_name: Optional[pulumi.Input[str]] = None,
                                   network: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEdgekvGroupItemsResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEdgekvGroupItemsResult]:
     """
     Use this data source to access information about an existing resource.
     """
@@ -116,7 +116,7 @@ def get_edgekv_group_items_output(group_name: Optional[pulumi.Input[str]] = None
     __args__['groupName'] = group_name
     __args__['namespaceName'] = namespace_name
     __args__['network'] = network
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getEdgekvGroupItems:getEdgekvGroupItems', __args__, opts=opts, typ=GetEdgekvGroupItemsResult)
     return __ret__.apply(lambda __response__: GetEdgekvGroupItemsResult(
         group_name=pulumi.get(__response__, 'group_name'),

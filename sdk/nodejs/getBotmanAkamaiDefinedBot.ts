@@ -30,7 +30,7 @@ export interface GetBotmanAkamaiDefinedBotResult {
     readonly id: string;
     readonly json: string;
 }
-export function getBotmanAkamaiDefinedBotOutput(args?: GetBotmanAkamaiDefinedBotOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanAkamaiDefinedBotResult> {
+export function getBotmanAkamaiDefinedBotOutput(args?: GetBotmanAkamaiDefinedBotOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBotmanAkamaiDefinedBotResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getBotmanAkamaiDefinedBot:getBotmanAkamaiDefinedBot", {

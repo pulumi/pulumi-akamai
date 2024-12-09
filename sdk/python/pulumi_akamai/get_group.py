@@ -85,14 +85,14 @@ def get_group(contract_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'))
 def get_group_output(contract_id: Optional[pulumi.Input[str]] = None,
                      group_name: Optional[pulumi.Input[str]] = None,
-                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGroupResult]:
+                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGroupResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['contractId'] = contract_id
     __args__['groupName'] = group_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getGroup:getGroup', __args__, opts=opts, typ=GetGroupResult)
     return __ret__.apply(lambda __response__: GetGroupResult(
         contract_id=pulumi.get(__response__, 'contract_id'),

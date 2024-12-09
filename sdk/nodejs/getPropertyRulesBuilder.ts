@@ -48,7 +48,7 @@ export interface GetPropertyRulesBuilderResult {
     readonly rulesV20240109?: outputs.GetPropertyRulesBuilderRulesV20240109;
     readonly rulesV20240212?: outputs.GetPropertyRulesBuilderRulesV20240212;
 }
-export function getPropertyRulesBuilderOutput(args?: GetPropertyRulesBuilderOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyRulesBuilderResult> {
+export function getPropertyRulesBuilderOutput(args?: GetPropertyRulesBuilderOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPropertyRulesBuilderResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getPropertyRulesBuilder:getPropertyRulesBuilder", {

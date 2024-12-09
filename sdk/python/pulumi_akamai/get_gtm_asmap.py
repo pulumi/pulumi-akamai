@@ -124,7 +124,7 @@ def get_gtm_asmap_output(assignments: Optional[pulumi.Input[Optional[Sequence[Un
                          domain: Optional[pulumi.Input[str]] = None,
                          links: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmAsmapLinkArgs', 'GetGtmAsmapLinkArgsDict']]]]] = None,
                          map_name: Optional[pulumi.Input[str]] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGtmAsmapResult]:
+                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGtmAsmapResult]:
     """
     Use this data source to access information about an existing resource.
     """
@@ -134,7 +134,7 @@ def get_gtm_asmap_output(assignments: Optional[pulumi.Input[Optional[Sequence[Un
     __args__['domain'] = domain
     __args__['links'] = links
     __args__['mapName'] = map_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getGtmAsmap:getGtmAsmap', __args__, opts=opts, typ=GetGtmAsmapResult)
     return __ret__.apply(lambda __response__: GetGtmAsmapResult(
         assignments=pulumi.get(__response__, 'assignments'),

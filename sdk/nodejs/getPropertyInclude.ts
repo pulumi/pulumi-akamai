@@ -36,7 +36,7 @@ export interface GetPropertyIncludeResult {
     readonly stagingVersion: number;
     readonly type: string;
 }
-export function getPropertyIncludeOutput(args: GetPropertyIncludeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyIncludeResult> {
+export function getPropertyIncludeOutput(args: GetPropertyIncludeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPropertyIncludeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getPropertyInclude:getPropertyInclude", {
         "contractId": args.contractId,

@@ -92,13 +92,13 @@ def get_app_sec_advanced_settings_prefetch(config_id: Optional[int] = None,
         json=pulumi.get(__ret__, 'json'),
         output_text=pulumi.get(__ret__, 'output_text'))
 def get_app_sec_advanced_settings_prefetch_output(config_id: Optional[pulumi.Input[int]] = None,
-                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecAdvancedSettingsPrefetchResult]:
+                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecAdvancedSettingsPrefetchResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppSecAdvancedSettingsPrefetch:getAppSecAdvancedSettingsPrefetch', __args__, opts=opts, typ=GetAppSecAdvancedSettingsPrefetchResult)
     return __ret__.apply(lambda __response__: GetAppSecAdvancedSettingsPrefetchResult(
         config_id=pulumi.get(__response__, 'config_id'),

@@ -33,7 +33,7 @@ export interface GetAppsecEvalPenaltyBoxConditionsResult {
     readonly outputText: string;
     readonly securityPolicyId: string;
 }
-export function getAppsecEvalPenaltyBoxConditionsOutput(args: GetAppsecEvalPenaltyBoxConditionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppsecEvalPenaltyBoxConditionsResult> {
+export function getAppsecEvalPenaltyBoxConditionsOutput(args: GetAppsecEvalPenaltyBoxConditionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppsecEvalPenaltyBoxConditionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppsecEvalPenaltyBoxConditions:getAppsecEvalPenaltyBoxConditions", {
         "configId": args.configId,

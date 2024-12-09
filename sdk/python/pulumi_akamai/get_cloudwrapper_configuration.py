@@ -207,7 +207,7 @@ def get_cloudwrapper_configuration(id: Optional[int] = None,
 def get_cloudwrapper_configuration_output(id: Optional[pulumi.Input[int]] = None,
                                           locations: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudwrapperConfigurationLocationArgs', 'GetCloudwrapperConfigurationLocationArgsDict']]]]] = None,
                                           multi_cdn_settings: Optional[pulumi.Input[Optional[Union['GetCloudwrapperConfigurationMultiCdnSettingsArgs', 'GetCloudwrapperConfigurationMultiCdnSettingsArgsDict']]]] = None,
-                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudwrapperConfigurationResult]:
+                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudwrapperConfigurationResult]:
     """
     Use this data source to access information about an existing resource.
     """
@@ -215,7 +215,7 @@ def get_cloudwrapper_configuration_output(id: Optional[pulumi.Input[int]] = None
     __args__['id'] = id
     __args__['locations'] = locations
     __args__['multiCdnSettings'] = multi_cdn_settings
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getCloudwrapperConfiguration:getCloudwrapperConfiguration', __args__, opts=opts, typ=GetCloudwrapperConfigurationResult)
     return __ret__.apply(lambda __response__: GetCloudwrapperConfigurationResult(
         capacity_alerts_threshold=pulumi.get(__response__, 'capacity_alerts_threshold'),

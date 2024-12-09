@@ -32,7 +32,7 @@ export interface GetDatastreamsResult {
     readonly id: string;
     readonly streamsDetails: outputs.GetDatastreamsStreamsDetail[];
 }
-export function getDatastreamsOutput(args?: GetDatastreamsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatastreamsResult> {
+export function getDatastreamsOutput(args?: GetDatastreamsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDatastreamsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getDatastreams:getDatastreams", {

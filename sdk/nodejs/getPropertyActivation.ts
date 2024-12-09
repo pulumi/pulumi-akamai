@@ -40,7 +40,7 @@ export interface GetPropertyActivationResult {
     readonly version?: number;
     readonly warnings: string;
 }
-export function getPropertyActivationOutput(args: GetPropertyActivationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyActivationResult> {
+export function getPropertyActivationOutput(args: GetPropertyActivationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPropertyActivationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getPropertyActivation:getPropertyActivation", {
         "network": args.network,

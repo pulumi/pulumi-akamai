@@ -108,7 +108,7 @@ def get_botman_transactional_endpoint(config_id: Optional[int] = None,
 def get_botman_transactional_endpoint_output(config_id: Optional[pulumi.Input[int]] = None,
                                              operation_id: Optional[pulumi.Input[Optional[str]]] = None,
                                              security_policy_id: Optional[pulumi.Input[str]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBotmanTransactionalEndpointResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBotmanTransactionalEndpointResult]:
     """
     Use this data source to access information about an existing resource.
     """
@@ -116,7 +116,7 @@ def get_botman_transactional_endpoint_output(config_id: Optional[pulumi.Input[in
     __args__['configId'] = config_id
     __args__['operationId'] = operation_id
     __args__['securityPolicyId'] = security_policy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getBotmanTransactionalEndpoint:getBotmanTransactionalEndpoint', __args__, opts=opts, typ=GetBotmanTransactionalEndpointResult)
     return __ret__.apply(lambda __response__: GetBotmanTransactionalEndpointResult(
         config_id=pulumi.get(__response__, 'config_id'),

@@ -20,7 +20,7 @@ export interface GetIamContactTypesResult {
      */
     readonly id: string;
 }
-export function getIamContactTypesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetIamContactTypesResult> {
+export function getIamContactTypesOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIamContactTypesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getIamContactTypes:getIamContactTypes", {
     }, opts);

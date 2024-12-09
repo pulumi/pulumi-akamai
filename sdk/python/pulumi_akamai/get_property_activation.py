@@ -158,7 +158,7 @@ def get_property_activation(network: Optional[str] = None,
 def get_property_activation_output(network: Optional[pulumi.Input[Optional[str]]] = None,
                                    property_id: Optional[pulumi.Input[str]] = None,
                                    version: Optional[pulumi.Input[Optional[int]]] = None,
-                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyActivationResult]:
+                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyActivationResult]:
     """
     Use this data source to access information about an existing resource.
     """
@@ -166,7 +166,7 @@ def get_property_activation_output(network: Optional[pulumi.Input[Optional[str]]
     __args__['network'] = network
     __args__['propertyId'] = property_id
     __args__['version'] = version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getPropertyActivation:getPropertyActivation', __args__, opts=opts, typ=GetPropertyActivationResult)
     return __ret__.apply(lambda __response__: GetPropertyActivationResult(
         activation_id=pulumi.get(__response__, 'activation_id'),

@@ -108,7 +108,7 @@ def get_botman_bot_detection_action(config_id: Optional[int] = None,
 def get_botman_bot_detection_action_output(config_id: Optional[pulumi.Input[int]] = None,
                                            detection_id: Optional[pulumi.Input[Optional[str]]] = None,
                                            security_policy_id: Optional[pulumi.Input[str]] = None,
-                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBotmanBotDetectionActionResult]:
+                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBotmanBotDetectionActionResult]:
     """
     Use this data source to access information about an existing resource.
     """
@@ -116,7 +116,7 @@ def get_botman_bot_detection_action_output(config_id: Optional[pulumi.Input[int]
     __args__['configId'] = config_id
     __args__['detectionId'] = detection_id
     __args__['securityPolicyId'] = security_policy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getBotmanBotDetectionAction:getBotmanBotDetectionAction', __args__, opts=opts, typ=GetBotmanBotDetectionActionResult)
     return __ret__.apply(lambda __response__: GetBotmanBotDetectionActionResult(
         config_id=pulumi.get(__response__, 'config_id'),

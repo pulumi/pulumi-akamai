@@ -122,13 +122,13 @@ def get_app_sec_configuration(name: Optional[str] = None,
         production_version=pulumi.get(__ret__, 'production_version'),
         staging_version=pulumi.get(__ret__, 'staging_version'))
 def get_app_sec_configuration_output(name: Optional[pulumi.Input[Optional[str]]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecConfigurationResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecConfigurationResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppSecConfiguration:getAppSecConfiguration', __args__, opts=opts, typ=GetAppSecConfigurationResult)
     return __ret__.apply(lambda __response__: GetAppSecConfigurationResult(
         config_id=pulumi.get(__response__, 'config_id'),

@@ -33,7 +33,7 @@ export interface GetAppSecHostnameCoverageOverlappingResult {
     readonly json: string;
     readonly outputText: string;
 }
-export function getAppSecHostnameCoverageOverlappingOutput(args: GetAppSecHostnameCoverageOverlappingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecHostnameCoverageOverlappingResult> {
+export function getAppSecHostnameCoverageOverlappingOutput(args: GetAppSecHostnameCoverageOverlappingOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecHostnameCoverageOverlappingResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecHostnameCoverageOverlapping:getAppSecHostnameCoverageOverlapping", {
         "configId": args.configId,

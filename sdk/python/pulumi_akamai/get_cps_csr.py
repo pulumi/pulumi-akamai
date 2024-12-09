@@ -92,13 +92,13 @@ def get_cps_csr(enrollment_id: Optional[int] = None,
         enrollment_id=pulumi.get(__ret__, 'enrollment_id'),
         id=pulumi.get(__ret__, 'id'))
 def get_cps_csr_output(enrollment_id: Optional[pulumi.Input[int]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCpsCsrResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCpsCsrResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['enrollmentId'] = enrollment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getCpsCsr:getCpsCsr', __args__, opts=opts, typ=GetCpsCsrResult)
     return __ret__.apply(lambda __response__: GetCpsCsrResult(
         csr_ecdsa=pulumi.get(__response__, 'csr_ecdsa'),

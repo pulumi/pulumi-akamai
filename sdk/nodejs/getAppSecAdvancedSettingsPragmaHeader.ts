@@ -33,7 +33,7 @@ export interface GetAppSecAdvancedSettingsPragmaHeaderResult {
     readonly outputText: string;
     readonly securityPolicyId?: string;
 }
-export function getAppSecAdvancedSettingsPragmaHeaderOutput(args: GetAppSecAdvancedSettingsPragmaHeaderOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecAdvancedSettingsPragmaHeaderResult> {
+export function getAppSecAdvancedSettingsPragmaHeaderOutput(args: GetAppSecAdvancedSettingsPragmaHeaderOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecAdvancedSettingsPragmaHeaderResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecAdvancedSettingsPragmaHeader:getAppSecAdvancedSettingsPragmaHeader", {
         "configId": args.configId,
