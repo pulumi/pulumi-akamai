@@ -30,7 +30,7 @@ export interface GetAppsecAdvancedSettingsPiiLearningResult {
     readonly json: string;
     readonly outputText: string;
 }
-export function getAppsecAdvancedSettingsPiiLearningOutput(args: GetAppsecAdvancedSettingsPiiLearningOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppsecAdvancedSettingsPiiLearningResult> {
+export function getAppsecAdvancedSettingsPiiLearningOutput(args: GetAppsecAdvancedSettingsPiiLearningOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppsecAdvancedSettingsPiiLearningResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppsecAdvancedSettingsPiiLearning:getAppsecAdvancedSettingsPiiLearning", {
         "configId": args.configId,

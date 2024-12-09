@@ -34,7 +34,7 @@ export interface GetAppSecEvalPenaltyBoxResult {
     readonly outputText: string;
     readonly securityPolicyId: string;
 }
-export function getAppSecEvalPenaltyBoxOutput(args: GetAppSecEvalPenaltyBoxOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecEvalPenaltyBoxResult> {
+export function getAppSecEvalPenaltyBoxOutput(args: GetAppSecEvalPenaltyBoxOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecEvalPenaltyBoxResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecEvalPenaltyBox:getAppSecEvalPenaltyBox", {
         "configId": args.configId,

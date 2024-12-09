@@ -123,7 +123,7 @@ def get_property_includes_output(contract_id: Optional[pulumi.Input[str]] = None
                                  group_id: Optional[pulumi.Input[str]] = None,
                                  parent_property: Optional[pulumi.Input[Optional[Union['GetPropertyIncludesParentPropertyArgs', 'GetPropertyIncludesParentPropertyArgsDict']]]] = None,
                                  type: Optional[pulumi.Input[Optional[str]]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyIncludesResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyIncludesResult]:
     """
     Use this data source to access information about an existing resource.
     """
@@ -132,7 +132,7 @@ def get_property_includes_output(contract_id: Optional[pulumi.Input[str]] = None
     __args__['groupId'] = group_id
     __args__['parentProperty'] = parent_property
     __args__['type'] = type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getPropertyIncludes:getPropertyIncludes', __args__, opts=opts, typ=GetPropertyIncludesResult)
     return __ret__.apply(lambda __response__: GetPropertyIncludesResult(
         contract_id=pulumi.get(__response__, 'contract_id'),

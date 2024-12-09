@@ -34,7 +34,7 @@ export interface GetCpsDeploymentsResult {
     readonly stagingCertificateEcdsa: string;
     readonly stagingCertificateRsa: string;
 }
-export function getCpsDeploymentsOutput(args: GetCpsDeploymentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCpsDeploymentsResult> {
+export function getCpsDeploymentsOutput(args: GetCpsDeploymentsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCpsDeploymentsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getCpsDeployments:getCpsDeployments", {
         "enrollmentId": args.enrollmentId,

@@ -33,7 +33,7 @@ export interface GetAppsecAdvancedSettingsAttackPayloadLoggingResult {
     readonly outputText: string;
     readonly securityPolicyId?: string;
 }
-export function getAppsecAdvancedSettingsAttackPayloadLoggingOutput(args: GetAppsecAdvancedSettingsAttackPayloadLoggingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppsecAdvancedSettingsAttackPayloadLoggingResult> {
+export function getAppsecAdvancedSettingsAttackPayloadLoggingOutput(args: GetAppsecAdvancedSettingsAttackPayloadLoggingOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppsecAdvancedSettingsAttackPayloadLoggingResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppsecAdvancedSettingsAttackPayloadLogging:getAppsecAdvancedSettingsAttackPayloadLogging", {
         "configId": args.configId,

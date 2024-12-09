@@ -32,7 +32,7 @@ export interface GetAppSecEvalResult {
     readonly outputText: string;
     readonly securityPolicyId: string;
 }
-export function getAppSecEvalOutput(args: GetAppSecEvalOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecEvalResult> {
+export function getAppSecEvalOutput(args: GetAppSecEvalOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecEvalResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecEval:getAppSecEval", {
         "configId": args.configId,

@@ -102,13 +102,13 @@ def get_app_sec_failover_hostnames(config_id: Optional[int] = None,
         json=pulumi.get(__ret__, 'json'),
         output_text=pulumi.get(__ret__, 'output_text'))
 def get_app_sec_failover_hostnames_output(config_id: Optional[pulumi.Input[int]] = None,
-                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecFailoverHostnamesResult]:
+                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecFailoverHostnamesResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppSecFailoverHostnames:getAppSecFailoverHostnames', __args__, opts=opts, typ=GetAppSecFailoverHostnamesResult)
     return __ret__.apply(lambda __response__: GetAppSecFailoverHostnamesResult(
         config_id=pulumi.get(__response__, 'config_id'),

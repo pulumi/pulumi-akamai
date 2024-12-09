@@ -79,12 +79,12 @@ def get_app_sec_hostname_coverage(opts: Optional[pulumi.InvokeOptions] = None) -
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'),
         output_text=pulumi.get(__ret__, 'output_text'))
-def get_app_sec_hostname_coverage_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecHostnameCoverageResult]:
+def get_app_sec_hostname_coverage_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecHostnameCoverageResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppSecHostnameCoverage:getAppSecHostnameCoverage', __args__, opts=opts, typ=GetAppSecHostnameCoverageResult)
     return __ret__.apply(lambda __response__: GetAppSecHostnameCoverageResult(
         id=pulumi.get(__response__, 'id'),

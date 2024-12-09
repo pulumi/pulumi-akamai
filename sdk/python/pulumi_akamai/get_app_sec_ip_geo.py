@@ -155,14 +155,14 @@ def get_app_sec_ip_geo(config_id: Optional[int] = None,
         ukraine_geo_control_action=pulumi.get(__ret__, 'ukraine_geo_control_action'))
 def get_app_sec_ip_geo_output(config_id: Optional[pulumi.Input[int]] = None,
                               security_policy_id: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecIPGeoResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecIPGeoResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
     __args__['securityPolicyId'] = security_policy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppSecIPGeo:getAppSecIPGeo', __args__, opts=opts, typ=GetAppSecIPGeoResult)
     return __ret__.apply(lambda __response__: GetAppSecIPGeoResult(
         asn_network_lists=pulumi.get(__response__, 'asn_network_lists'),

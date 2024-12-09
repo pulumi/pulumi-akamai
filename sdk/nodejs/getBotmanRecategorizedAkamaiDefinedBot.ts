@@ -32,7 +32,7 @@ export interface GetBotmanRecategorizedAkamaiDefinedBotResult {
     readonly id: string;
     readonly json: string;
 }
-export function getBotmanRecategorizedAkamaiDefinedBotOutput(args: GetBotmanRecategorizedAkamaiDefinedBotOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanRecategorizedAkamaiDefinedBotResult> {
+export function getBotmanRecategorizedAkamaiDefinedBotOutput(args: GetBotmanRecategorizedAkamaiDefinedBotOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBotmanRecategorizedAkamaiDefinedBotResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getBotmanRecategorizedAkamaiDefinedBot:getBotmanRecategorizedAkamaiDefinedBot", {
         "botId": args.botId,

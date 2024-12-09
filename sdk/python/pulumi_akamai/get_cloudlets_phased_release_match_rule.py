@@ -84,13 +84,13 @@ def get_cloudlets_phased_release_match_rule(match_rules: Optional[Sequence[Union
         json=pulumi.get(__ret__, 'json'),
         match_rules=pulumi.get(__ret__, 'match_rules'))
 def get_cloudlets_phased_release_match_rule_output(match_rules: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudletsPhasedReleaseMatchRuleMatchRuleArgs', 'GetCloudletsPhasedReleaseMatchRuleMatchRuleArgsDict']]]]] = None,
-                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudletsPhasedReleaseMatchRuleResult]:
+                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudletsPhasedReleaseMatchRuleResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['matchRules'] = match_rules
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getCloudletsPhasedReleaseMatchRule:getCloudletsPhasedReleaseMatchRule', __args__, opts=opts, typ=GetCloudletsPhasedReleaseMatchRuleResult)
     return __ret__.apply(lambda __response__: GetCloudletsPhasedReleaseMatchRuleResult(
         id=pulumi.get(__response__, 'id'),

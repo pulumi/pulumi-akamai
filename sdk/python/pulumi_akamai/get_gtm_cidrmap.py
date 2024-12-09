@@ -124,7 +124,7 @@ def get_gtm_cidrmap_output(assignments: Optional[pulumi.Input[Optional[Sequence[
                            domain: Optional[pulumi.Input[str]] = None,
                            links: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmCidrmapLinkArgs', 'GetGtmCidrmapLinkArgsDict']]]]] = None,
                            map_name: Optional[pulumi.Input[str]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGtmCidrmapResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGtmCidrmapResult]:
     """
     Use this data source to access information about an existing resource.
     """
@@ -134,7 +134,7 @@ def get_gtm_cidrmap_output(assignments: Optional[pulumi.Input[Optional[Sequence[
     __args__['domain'] = domain
     __args__['links'] = links
     __args__['mapName'] = map_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getGtmCidrmap:getGtmCidrmap', __args__, opts=opts, typ=GetGtmCidrmapResult)
     return __ret__.apply(lambda __response__: GetGtmCidrmapResult(
         assignments=pulumi.get(__response__, 'assignments'),

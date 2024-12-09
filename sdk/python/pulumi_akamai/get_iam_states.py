@@ -82,13 +82,13 @@ def get_iam_states(country: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         states=pulumi.get(__ret__, 'states'))
 def get_iam_states_output(country: Optional[pulumi.Input[str]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamStatesResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamStatesResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['country'] = country
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getIamStates:getIamStates', __args__, opts=opts, typ=GetIamStatesResult)
     return __ret__.apply(lambda __response__: GetIamStatesResult(
         country=pulumi.get(__response__, 'country'),

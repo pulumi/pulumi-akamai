@@ -33,7 +33,7 @@ export interface GetBotmanBotEndpointCoverageReportResult {
     readonly json: string;
     readonly operationId?: string;
 }
-export function getBotmanBotEndpointCoverageReportOutput(args?: GetBotmanBotEndpointCoverageReportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanBotEndpointCoverageReportResult> {
+export function getBotmanBotEndpointCoverageReportOutput(args?: GetBotmanBotEndpointCoverageReportOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBotmanBotEndpointCoverageReportResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getBotmanBotEndpointCoverageReport:getBotmanBotEndpointCoverageReport", {

@@ -475,7 +475,7 @@ def get_gtm_domain_output(as_maps: Optional[pulumi.Input[Optional[Sequence[Union
                           properties: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmDomainPropertyArgs', 'GetGtmDomainPropertyArgsDict']]]]] = None,
                           resources: Optional[pulumi.Input[Optional[Sequence[Union['GetGtmDomainResourceArgs', 'GetGtmDomainResourceArgsDict']]]]] = None,
                           status: Optional[pulumi.Input[Optional[Union['GetGtmDomainStatusArgs', 'GetGtmDomainStatusArgsDict']]]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGtmDomainResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGtmDomainResult]:
     """
     Use this data source to access information about an existing resource.
     """
@@ -489,7 +489,7 @@ def get_gtm_domain_output(as_maps: Optional[pulumi.Input[Optional[Sequence[Union
     __args__['properties'] = properties
     __args__['resources'] = resources
     __args__['status'] = status
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getGtmDomain:getGtmDomain', __args__, opts=opts, typ=GetGtmDomainResult)
     return __ret__.apply(lambda __response__: GetGtmDomainResult(
         as_maps=pulumi.get(__response__, 'as_maps'),

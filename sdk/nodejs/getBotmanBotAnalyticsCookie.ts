@@ -29,7 +29,7 @@ export interface GetBotmanBotAnalyticsCookieResult {
     readonly id: string;
     readonly json: string;
 }
-export function getBotmanBotAnalyticsCookieOutput(args: GetBotmanBotAnalyticsCookieOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanBotAnalyticsCookieResult> {
+export function getBotmanBotAnalyticsCookieOutput(args: GetBotmanBotAnalyticsCookieOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBotmanBotAnalyticsCookieResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getBotmanBotAnalyticsCookie:getBotmanBotAnalyticsCookie", {
         "configId": args.configId,

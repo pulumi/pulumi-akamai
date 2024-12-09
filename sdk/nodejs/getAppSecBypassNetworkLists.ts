@@ -34,7 +34,7 @@ export interface GetAppSecBypassNetworkListsResult {
     readonly outputText: string;
     readonly securityPolicyId: string;
 }
-export function getAppSecBypassNetworkListsOutput(args: GetAppSecBypassNetworkListsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecBypassNetworkListsResult> {
+export function getAppSecBypassNetworkListsOutput(args: GetAppSecBypassNetworkListsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecBypassNetworkListsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecBypassNetworkLists:getAppSecBypassNetworkLists", {
         "configId": args.configId,

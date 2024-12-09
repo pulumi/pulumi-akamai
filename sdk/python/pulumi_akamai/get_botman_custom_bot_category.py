@@ -95,14 +95,14 @@ def get_botman_custom_bot_category(category_id: Optional[str] = None,
         json=pulumi.get(__ret__, 'json'))
 def get_botman_custom_bot_category_output(category_id: Optional[pulumi.Input[Optional[str]]] = None,
                                           config_id: Optional[pulumi.Input[int]] = None,
-                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBotmanCustomBotCategoryResult]:
+                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBotmanCustomBotCategoryResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['categoryId'] = category_id
     __args__['configId'] = config_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getBotmanCustomBotCategory:getBotmanCustomBotCategory', __args__, opts=opts, typ=GetBotmanCustomBotCategoryResult)
     return __ret__.apply(lambda __response__: GetBotmanCustomBotCategoryResult(
         category_id=pulumi.get(__response__, 'category_id'),

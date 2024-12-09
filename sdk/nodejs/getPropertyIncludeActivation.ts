@@ -41,7 +41,7 @@ export interface GetPropertyIncludeActivationResult {
     readonly notifyEmails: string[];
     readonly version: string;
 }
-export function getPropertyIncludeActivationOutput(args: GetPropertyIncludeActivationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyIncludeActivationResult> {
+export function getPropertyIncludeActivationOutput(args: GetPropertyIncludeActivationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPropertyIncludeActivationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getPropertyIncludeActivation:getPropertyIncludeActivation", {
         "contractId": args.contractId,

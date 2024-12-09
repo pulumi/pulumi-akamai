@@ -22,7 +22,7 @@ export interface GetIamRolesResult {
     readonly id: string;
     readonly roles: outputs.GetIamRolesRole[];
 }
-export function getIamRolesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetIamRolesResult> {
+export function getIamRolesOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIamRolesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getIamRoles:getIamRoles", {
     }, opts);

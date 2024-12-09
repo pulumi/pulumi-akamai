@@ -216,14 +216,14 @@ def get_cloudlets_policy(policy_id: Optional[int] = None,
         warnings=pulumi.get(__ret__, 'warnings'))
 def get_cloudlets_policy_output(policy_id: Optional[pulumi.Input[int]] = None,
                                 version: Optional[pulumi.Input[Optional[int]]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudletsPolicyResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudletsPolicyResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['policyId'] = policy_id
     __args__['version'] = version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getCloudletsPolicy:getCloudletsPolicy', __args__, opts=opts, typ=GetCloudletsPolicyResult)
     return __ret__.apply(lambda __response__: GetCloudletsPolicyResult(
         activations=pulumi.get(__response__, 'activations'),

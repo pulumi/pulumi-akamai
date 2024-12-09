@@ -32,7 +32,7 @@ export interface GetBotmanCustomDenyActionResult {
     readonly id: string;
     readonly json: string;
 }
-export function getBotmanCustomDenyActionOutput(args: GetBotmanCustomDenyActionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanCustomDenyActionResult> {
+export function getBotmanCustomDenyActionOutput(args: GetBotmanCustomDenyActionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBotmanCustomDenyActionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getBotmanCustomDenyAction:getBotmanCustomDenyAction", {
         "actionId": args.actionId,

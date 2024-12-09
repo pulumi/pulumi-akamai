@@ -303,13 +303,13 @@ def get_cps_enrollment(enrollment_id: Optional[int] = None,
         tech_contacts=pulumi.get(__ret__, 'tech_contacts'),
         validation_type=pulumi.get(__ret__, 'validation_type'))
 def get_cps_enrollment_output(enrollment_id: Optional[pulumi.Input[int]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCPSEnrollmentResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCPSEnrollmentResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['enrollmentId'] = enrollment_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getCPSEnrollment:getCPSEnrollment', __args__, opts=opts, typ=GetCPSEnrollmentResult)
     return __ret__.apply(lambda __response__: GetCPSEnrollmentResult(
         admin_contacts=pulumi.get(__response__, 'admin_contacts'),

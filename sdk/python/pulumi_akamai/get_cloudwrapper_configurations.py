@@ -72,13 +72,13 @@ def get_cloudwrapper_configurations(configurations: Optional[Sequence[Union['Get
         configurations=pulumi.get(__ret__, 'configurations'),
         id=pulumi.get(__ret__, 'id'))
 def get_cloudwrapper_configurations_output(configurations: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudwrapperConfigurationsConfigurationArgs', 'GetCloudwrapperConfigurationsConfigurationArgsDict']]]]] = None,
-                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudwrapperConfigurationsResult]:
+                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudwrapperConfigurationsResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configurations'] = configurations
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getCloudwrapperConfigurations:getCloudwrapperConfigurations', __args__, opts=opts, typ=GetCloudwrapperConfigurationsResult)
     return __ret__.apply(lambda __response__: GetCloudwrapperConfigurationsResult(
         configurations=pulumi.get(__response__, 'configurations'),

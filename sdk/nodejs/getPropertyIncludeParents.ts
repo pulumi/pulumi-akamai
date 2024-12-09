@@ -37,7 +37,7 @@ export interface GetPropertyIncludeParentsResult {
     readonly includeId: string;
     readonly parents: outputs.GetPropertyIncludeParentsParent[];
 }
-export function getPropertyIncludeParentsOutput(args: GetPropertyIncludeParentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyIncludeParentsResult> {
+export function getPropertyIncludeParentsOutput(args: GetPropertyIncludeParentsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPropertyIncludeParentsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getPropertyIncludeParents:getPropertyIncludeParents", {
         "contractId": args.contractId,

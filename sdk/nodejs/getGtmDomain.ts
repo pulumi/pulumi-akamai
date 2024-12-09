@@ -81,7 +81,7 @@ export interface GetGtmDomainResult {
     readonly status?: outputs.GetGtmDomainStatus;
     readonly type: string;
 }
-export function getGtmDomainOutput(args: GetGtmDomainOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGtmDomainResult> {
+export function getGtmDomainOutput(args: GetGtmDomainOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetGtmDomainResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getGtmDomain:getGtmDomain", {
         "asMaps": args.asMaps,

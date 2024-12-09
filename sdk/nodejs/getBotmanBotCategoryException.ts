@@ -32,7 +32,7 @@ export interface GetBotmanBotCategoryExceptionResult {
     readonly json: string;
     readonly securityPolicyId: string;
 }
-export function getBotmanBotCategoryExceptionOutput(args: GetBotmanBotCategoryExceptionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanBotCategoryExceptionResult> {
+export function getBotmanBotCategoryExceptionOutput(args: GetBotmanBotCategoryExceptionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBotmanBotCategoryExceptionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getBotmanBotCategoryException:getBotmanBotCategoryException", {
         "configId": args.configId,

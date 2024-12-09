@@ -35,7 +35,7 @@ export interface GetAppSecRatePolicyActionsResult {
     readonly ratePolicyId?: number;
     readonly securityPolicyId: string;
 }
-export function getAppSecRatePolicyActionsOutput(args: GetAppSecRatePolicyActionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecRatePolicyActionsResult> {
+export function getAppSecRatePolicyActionsOutput(args: GetAppSecRatePolicyActionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecRatePolicyActionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecRatePolicyActions:getAppSecRatePolicyActions", {
         "configId": args.configId,

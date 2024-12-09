@@ -33,7 +33,7 @@ export interface GetGtmResourcesResult {
     readonly id: string;
     readonly resources?: outputs.GetGtmResourcesResource[];
 }
-export function getGtmResourcesOutput(args: GetGtmResourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGtmResourcesResult> {
+export function getGtmResourcesOutput(args: GetGtmResourcesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetGtmResourcesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getGtmResources:getGtmResources", {
         "domain": args.domain,

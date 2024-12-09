@@ -29,7 +29,7 @@ export interface GetIamStatesResult {
     readonly id: string;
     readonly states: string[];
 }
-export function getIamStatesOutput(args: GetIamStatesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIamStatesResult> {
+export function getIamStatesOutput(args: GetIamStatesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIamStatesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getIamStates:getIamStates", {
         "country": args.country,

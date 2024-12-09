@@ -109,7 +109,7 @@ def get_property_include_parents(contract_id: Optional[str] = None,
 def get_property_include_parents_output(contract_id: Optional[pulumi.Input[str]] = None,
                                         group_id: Optional[pulumi.Input[str]] = None,
                                         include_id: Optional[pulumi.Input[str]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyIncludeParentsResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyIncludeParentsResult]:
     """
     Use this data source to access information about an existing resource.
     """
@@ -117,7 +117,7 @@ def get_property_include_parents_output(contract_id: Optional[pulumi.Input[str]]
     __args__['contractId'] = contract_id
     __args__['groupId'] = group_id
     __args__['includeId'] = include_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getPropertyIncludeParents:getPropertyIncludeParents', __args__, opts=opts, typ=GetPropertyIncludeParentsResult)
     return __ret__.apply(lambda __response__: GetPropertyIncludeParentsResult(
         contract_id=pulumi.get(__response__, 'contract_id'),

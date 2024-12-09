@@ -31,7 +31,7 @@ export interface GetCloudwrapperLocationsResult {
     readonly id: string;
     readonly locations?: outputs.GetCloudwrapperLocationsLocation[];
 }
-export function getCloudwrapperLocationsOutput(args?: GetCloudwrapperLocationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudwrapperLocationsResult> {
+export function getCloudwrapperLocationsOutput(args?: GetCloudwrapperLocationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCloudwrapperLocationsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getCloudwrapperLocations:getCloudwrapperLocations", {

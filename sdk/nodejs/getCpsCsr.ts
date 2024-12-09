@@ -30,7 +30,7 @@ export interface GetCpsCsrResult {
      */
     readonly id: string;
 }
-export function getCpsCsrOutput(args: GetCpsCsrOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCpsCsrResult> {
+export function getCpsCsrOutput(args: GetCpsCsrOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCpsCsrResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getCpsCsr:getCpsCsr", {
         "enrollmentId": args.enrollmentId,

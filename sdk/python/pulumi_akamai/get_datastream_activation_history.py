@@ -83,13 +83,13 @@ def get_datastream_activation_history(stream_id: Optional[int] = None,
         id=pulumi.get(__ret__, 'id'),
         stream_id=pulumi.get(__ret__, 'stream_id'))
 def get_datastream_activation_history_output(stream_id: Optional[pulumi.Input[int]] = None,
-                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatastreamActivationHistoryResult]:
+                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatastreamActivationHistoryResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['streamId'] = stream_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getDatastreamActivationHistory:getDatastreamActivationHistory', __args__, opts=opts, typ=GetDatastreamActivationHistoryResult)
     return __ret__.apply(lambda __response__: GetDatastreamActivationHistoryResult(
         activations=pulumi.get(__response__, 'activations'),

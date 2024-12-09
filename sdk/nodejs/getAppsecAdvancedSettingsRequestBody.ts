@@ -33,7 +33,7 @@ export interface GetAppsecAdvancedSettingsRequestBodyResult {
     readonly outputText: string;
     readonly securityPolicyId?: string;
 }
-export function getAppsecAdvancedSettingsRequestBodyOutput(args: GetAppsecAdvancedSettingsRequestBodyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppsecAdvancedSettingsRequestBodyResult> {
+export function getAppsecAdvancedSettingsRequestBodyOutput(args: GetAppsecAdvancedSettingsRequestBodyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppsecAdvancedSettingsRequestBodyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppsecAdvancedSettingsRequestBody:getAppsecAdvancedSettingsRequestBody", {
         "configId": args.configId,

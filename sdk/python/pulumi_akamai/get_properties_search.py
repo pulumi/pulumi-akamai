@@ -96,14 +96,14 @@ def get_properties_search(key: Optional[str] = None,
         value=pulumi.get(__ret__, 'value'))
 def get_properties_search_output(key: Optional[pulumi.Input[str]] = None,
                                  value: Optional[pulumi.Input[str]] = None,
-                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertiesSearchResult]:
+                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertiesSearchResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['key'] = key
     __args__['value'] = value
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getPropertiesSearch:getPropertiesSearch', __args__, opts=opts, typ=GetPropertiesSearchResult)
     return __ret__.apply(lambda __response__: GetPropertiesSearchResult(
         id=pulumi.get(__response__, 'id'),

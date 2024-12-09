@@ -41,7 +41,7 @@ export interface GetAppSecTuningRecommendationsResult {
     readonly rulesetType?: string;
     readonly securityPolicyId?: string;
 }
-export function getAppSecTuningRecommendationsOutput(args: GetAppSecTuningRecommendationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecTuningRecommendationsResult> {
+export function getAppSecTuningRecommendationsOutput(args: GetAppSecTuningRecommendationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecTuningRecommendationsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecTuningRecommendations:getAppSecTuningRecommendations", {
         "attackGroup": args.attackGroup,

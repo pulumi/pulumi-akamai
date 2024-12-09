@@ -33,7 +33,7 @@ export interface GetAppSecReputationProfilesResult {
     readonly outputText: string;
     readonly reputationProfileId?: number;
 }
-export function getAppSecReputationProfilesOutput(args: GetAppSecReputationProfilesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecReputationProfilesResult> {
+export function getAppSecReputationProfilesOutput(args: GetAppSecReputationProfilesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecReputationProfilesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecReputationProfiles:getAppSecReputationProfiles", {
         "configId": args.configId,
