@@ -22,7 +22,7 @@ export interface GetGroupsResult {
      */
     readonly id: string;
 }
-export function getGroupsOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetGroupsResult> {
+export function getGroupsOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetGroupsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getGroups:getGroups", {
     }, opts);

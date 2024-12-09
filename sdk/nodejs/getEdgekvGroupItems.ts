@@ -35,7 +35,7 @@ export interface GetEdgekvGroupItemsResult {
     readonly namespaceName: string;
     readonly network: string;
 }
-export function getEdgekvGroupItemsOutput(args: GetEdgekvGroupItemsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEdgekvGroupItemsResult> {
+export function getEdgekvGroupItemsOutput(args: GetEdgekvGroupItemsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetEdgekvGroupItemsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getEdgekvGroupItems:getEdgekvGroupItems", {
         "groupName": args.groupName,

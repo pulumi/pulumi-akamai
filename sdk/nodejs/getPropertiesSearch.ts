@@ -34,7 +34,7 @@ export interface GetPropertiesSearchResult {
     readonly properties: outputs.GetPropertiesSearchProperty[];
     readonly value: string;
 }
-export function getPropertiesSearchOutput(args: GetPropertiesSearchOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertiesSearchResult> {
+export function getPropertiesSearchOutput(args: GetPropertiesSearchOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPropertiesSearchResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getPropertiesSearch:getPropertiesSearch", {
         "key": args.key,

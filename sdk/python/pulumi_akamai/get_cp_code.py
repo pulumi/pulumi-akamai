@@ -108,7 +108,7 @@ def get_cp_code(contract_id: Optional[str] = None,
 def get_cp_code_output(contract_id: Optional[pulumi.Input[str]] = None,
                        group_id: Optional[pulumi.Input[str]] = None,
                        name: Optional[pulumi.Input[str]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCpCodeResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCpCodeResult]:
     """
     Use this data source to access information about an existing resource.
     """
@@ -116,7 +116,7 @@ def get_cp_code_output(contract_id: Optional[pulumi.Input[str]] = None,
     __args__['contractId'] = contract_id
     __args__['groupId'] = group_id
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getCpCode:getCpCode', __args__, opts=opts, typ=GetCpCodeResult)
     return __ret__.apply(lambda __response__: GetCpCodeResult(
         contract_id=pulumi.get(__response__, 'contract_id'),

@@ -32,7 +32,7 @@ export interface GetCloudletsApplicationLoadBalancerMatchRuleResult {
     readonly json: string;
     readonly matchRules?: outputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRule[];
 }
-export function getCloudletsApplicationLoadBalancerMatchRuleOutput(args?: GetCloudletsApplicationLoadBalancerMatchRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudletsApplicationLoadBalancerMatchRuleResult> {
+export function getCloudletsApplicationLoadBalancerMatchRuleOutput(args?: GetCloudletsApplicationLoadBalancerMatchRuleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCloudletsApplicationLoadBalancerMatchRuleResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getCloudletsApplicationLoadBalancerMatchRule:getCloudletsApplicationLoadBalancerMatchRule", {

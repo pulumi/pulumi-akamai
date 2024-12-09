@@ -122,7 +122,7 @@ def get_property_hostnames_output(contract_id: Optional[pulumi.Input[str]] = Non
                                   group_id: Optional[pulumi.Input[str]] = None,
                                   property_id: Optional[pulumi.Input[str]] = None,
                                   version: Optional[pulumi.Input[Optional[int]]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyHostnamesResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyHostnamesResult]:
     """
     Use this data source to access information about an existing resource.
     """
@@ -131,7 +131,7 @@ def get_property_hostnames_output(contract_id: Optional[pulumi.Input[str]] = Non
     __args__['groupId'] = group_id
     __args__['propertyId'] = property_id
     __args__['version'] = version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getPropertyHostnames:getPropertyHostnames', __args__, opts=opts, typ=GetPropertyHostnamesResult)
     return __ret__.apply(lambda __response__: GetPropertyHostnamesResult(
         contract_id=pulumi.get(__response__, 'contract_id'),

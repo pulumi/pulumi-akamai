@@ -29,7 +29,7 @@ export interface GetBotmanClientSideSecurityResult {
     readonly id: string;
     readonly json: string;
 }
-export function getBotmanClientSideSecurityOutput(args: GetBotmanClientSideSecurityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanClientSideSecurityResult> {
+export function getBotmanClientSideSecurityOutput(args: GetBotmanClientSideSecurityOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBotmanClientSideSecurityResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getBotmanClientSideSecurity:getBotmanClientSideSecurity", {
         "configId": args.configId,

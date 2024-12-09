@@ -125,14 +125,14 @@ def get_app_sec_contracts_groups(contractid: Optional[str] = None,
         output_text=pulumi.get(__ret__, 'output_text'))
 def get_app_sec_contracts_groups_output(contractid: Optional[pulumi.Input[Optional[str]]] = None,
                                         groupid: Optional[pulumi.Input[Optional[int]]] = None,
-                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecContractsGroupsResult]:
+                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecContractsGroupsResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['contractid'] = contractid
     __args__['groupid'] = groupid
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppSecContractsGroups:getAppSecContractsGroups', __args__, opts=opts, typ=GetAppSecContractsGroupsResult)
     return __ret__.apply(lambda __response__: GetAppSecContractsGroupsResult(
         contractid=pulumi.get(__response__, 'contractid'),

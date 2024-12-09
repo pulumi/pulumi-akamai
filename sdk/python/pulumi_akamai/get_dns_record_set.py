@@ -108,7 +108,7 @@ def get_dns_record_set(host: Optional[str] = None,
 def get_dns_record_set_output(host: Optional[pulumi.Input[str]] = None,
                               record_type: Optional[pulumi.Input[str]] = None,
                               zone: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDnsRecordSetResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDnsRecordSetResult]:
     """
     Use this data source to access information about an existing resource.
     """
@@ -116,7 +116,7 @@ def get_dns_record_set_output(host: Optional[pulumi.Input[str]] = None,
     __args__['host'] = host
     __args__['recordType'] = record_type
     __args__['zone'] = zone
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getDnsRecordSet:getDnsRecordSet', __args__, opts=opts, typ=GetDnsRecordSetResult)
     return __ret__.apply(lambda __response__: GetDnsRecordSetResult(
         host=pulumi.get(__response__, 'host'),

@@ -31,7 +31,7 @@ export interface GetAppSecSelectedHostnamesResult {
     readonly id: string;
     readonly outputText: string;
 }
-export function getAppSecSelectedHostnamesOutput(args: GetAppSecSelectedHostnamesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecSelectedHostnamesResult> {
+export function getAppSecSelectedHostnamesOutput(args: GetAppSecSelectedHostnamesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecSelectedHostnamesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecSelectedHostnames:getAppSecSelectedHostnames", {
         "configId": args.configId,

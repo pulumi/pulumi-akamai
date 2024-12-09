@@ -33,7 +33,7 @@ export interface GetGtmDefaultDatacenterResult {
     readonly id: string;
     readonly nickname: string;
 }
-export function getGtmDefaultDatacenterOutput(args: GetGtmDefaultDatacenterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGtmDefaultDatacenterResult> {
+export function getGtmDefaultDatacenterOutput(args: GetGtmDefaultDatacenterOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetGtmDefaultDatacenterResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getGtmDefaultDatacenter:getGtmDefaultDatacenter", {
         "datacenter": args.datacenter,

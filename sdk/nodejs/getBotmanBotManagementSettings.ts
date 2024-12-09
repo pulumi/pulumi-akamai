@@ -32,7 +32,7 @@ export interface GetBotmanBotManagementSettingsResult {
     readonly json: string;
     readonly securityPolicyId: string;
 }
-export function getBotmanBotManagementSettingsOutput(args: GetBotmanBotManagementSettingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanBotManagementSettingsResult> {
+export function getBotmanBotManagementSettingsOutput(args: GetBotmanBotManagementSettingsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBotmanBotManagementSettingsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getBotmanBotManagementSettings:getBotmanBotManagementSettings", {
         "configId": args.configId,

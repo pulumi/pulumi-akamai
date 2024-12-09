@@ -95,14 +95,14 @@ def get_botman_bot_endpoint_coverage_report(config_id: Optional[int] = None,
         operation_id=pulumi.get(__ret__, 'operation_id'))
 def get_botman_bot_endpoint_coverage_report_output(config_id: Optional[pulumi.Input[Optional[int]]] = None,
                                                    operation_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBotmanBotEndpointCoverageReportResult]:
+                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBotmanBotEndpointCoverageReportResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
     __args__['operationId'] = operation_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getBotmanBotEndpointCoverageReport:getBotmanBotEndpointCoverageReport', __args__, opts=opts, typ=GetBotmanBotEndpointCoverageReportResult)
     return __ret__.apply(lambda __response__: GetBotmanBotEndpointCoverageReportResult(
         config_id=pulumi.get(__response__, 'config_id'),

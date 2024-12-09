@@ -69,12 +69,12 @@ def get_property_rule_formats(opts: Optional[pulumi.InvokeOptions] = None) -> Aw
     return AwaitableGetPropertyRuleFormatsResult(
         id=pulumi.get(__ret__, 'id'),
         rule_formats=pulumi.get(__ret__, 'rule_formats'))
-def get_property_rule_formats_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyRuleFormatsResult]:
+def get_property_rule_formats_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyRuleFormatsResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getPropertyRuleFormats:getPropertyRuleFormats', __args__, opts=opts, typ=GetPropertyRuleFormatsResult)
     return __ret__.apply(lambda __response__: GetPropertyRuleFormatsResult(
         id=pulumi.get(__response__, 'id'),

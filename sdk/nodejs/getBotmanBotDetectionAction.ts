@@ -35,7 +35,7 @@ export interface GetBotmanBotDetectionActionResult {
     readonly json: string;
     readonly securityPolicyId: string;
 }
-export function getBotmanBotDetectionActionOutput(args: GetBotmanBotDetectionActionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanBotDetectionActionResult> {
+export function getBotmanBotDetectionActionOutput(args: GetBotmanBotDetectionActionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBotmanBotDetectionActionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getBotmanBotDetectionAction:getBotmanBotDetectionAction", {
         "configId": args.configId,

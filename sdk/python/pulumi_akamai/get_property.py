@@ -185,14 +185,14 @@ def get_property(name: Optional[str] = None,
         version=pulumi.get(__ret__, 'version'))
 def get_property_output(name: Optional[pulumi.Input[str]] = None,
                         version: Optional[pulumi.Input[Optional[int]]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['name'] = name
     __args__['version'] = version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getProperty:getProperty', __args__, opts=opts, typ=GetPropertyResult)
     return __ret__.apply(lambda __response__: GetPropertyResult(
         contract_id=pulumi.get(__response__, 'contract_id'),

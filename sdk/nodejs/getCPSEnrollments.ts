@@ -31,7 +31,7 @@ export interface GetCPSEnrollmentsResult {
      */
     readonly id: string;
 }
-export function getCPSEnrollmentsOutput(args: GetCPSEnrollmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCPSEnrollmentsResult> {
+export function getCPSEnrollmentsOutput(args: GetCPSEnrollmentsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCPSEnrollmentsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getCPSEnrollments:getCPSEnrollments", {
         "contractId": args.contractId,

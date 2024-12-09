@@ -29,7 +29,7 @@ export interface GetBotmanCustomCodeResult {
     readonly id: string;
     readonly json: string;
 }
-export function getBotmanCustomCodeOutput(args: GetBotmanCustomCodeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanCustomCodeResult> {
+export function getBotmanCustomCodeOutput(args: GetBotmanCustomCodeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBotmanCustomCodeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getBotmanCustomCode:getBotmanCustomCode", {
         "configId": args.configId,

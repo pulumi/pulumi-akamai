@@ -35,7 +35,7 @@ export interface GetCpCodeResult {
     readonly name: string;
     readonly productIds: string[];
 }
-export function getCpCodeOutput(args: GetCpCodeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCpCodeResult> {
+export function getCpCodeOutput(args: GetCpCodeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCpCodeResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getCpCode:getCpCode", {
         "contractId": args.contractId,

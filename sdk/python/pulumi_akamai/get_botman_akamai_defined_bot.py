@@ -82,13 +82,13 @@ def get_botman_akamai_defined_bot(bot_name: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'))
 def get_botman_akamai_defined_bot_output(bot_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBotmanAkamaiDefinedBotResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBotmanAkamaiDefinedBotResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['botName'] = bot_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getBotmanAkamaiDefinedBot:getBotmanAkamaiDefinedBot', __args__, opts=opts, typ=GetBotmanAkamaiDefinedBotResult)
     return __ret__.apply(lambda __response__: GetBotmanAkamaiDefinedBotResult(
         bot_name=pulumi.get(__response__, 'bot_name'),

@@ -38,7 +38,7 @@ export interface GetAppSecEvalGroupsResult {
     readonly outputText: string;
     readonly securityPolicyId: string;
 }
-export function getAppSecEvalGroupsOutput(args: GetAppSecEvalGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecEvalGroupsResult> {
+export function getAppSecEvalGroupsOutput(args: GetAppSecEvalGroupsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecEvalGroupsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecEvalGroups:getAppSecEvalGroups", {
         "attackGroup": args.attackGroup,

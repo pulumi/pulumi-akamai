@@ -20,7 +20,7 @@ export interface GetIamSupportedLangsResult {
     readonly id: string;
     readonly languages: string[];
 }
-export function getIamSupportedLangsOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetIamSupportedLangsResult> {
+export function getIamSupportedLangsOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIamSupportedLangsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getIamSupportedLangs:getIamSupportedLangs", {
     }, opts);

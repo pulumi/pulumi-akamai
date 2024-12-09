@@ -40,7 +40,7 @@ export interface GetPropertyHostnamesResult {
     readonly propertyId: string;
     readonly version: number;
 }
-export function getPropertyHostnamesOutput(args: GetPropertyHostnamesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyHostnamesResult> {
+export function getPropertyHostnamesOutput(args: GetPropertyHostnamesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPropertyHostnamesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getPropertyHostnames:getPropertyHostnames", {
         "contractId": args.contractId,

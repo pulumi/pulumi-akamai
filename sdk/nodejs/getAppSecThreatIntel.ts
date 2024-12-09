@@ -34,7 +34,7 @@ export interface GetAppSecThreatIntelResult {
     readonly securityPolicyId: string;
     readonly threatIntel: string;
 }
-export function getAppSecThreatIntelOutput(args: GetAppSecThreatIntelOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecThreatIntelResult> {
+export function getAppSecThreatIntelOutput(args: GetAppSecThreatIntelOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAppSecThreatIntelResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("akamai:index/getAppSecThreatIntel:getAppSecThreatIntel", {
         "configId": args.configId,

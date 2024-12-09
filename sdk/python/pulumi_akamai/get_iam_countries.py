@@ -69,12 +69,12 @@ def get_iam_countries(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableG
     return AwaitableGetIamCountriesResult(
         countries=pulumi.get(__ret__, 'countries'),
         id=pulumi.get(__ret__, 'id'))
-def get_iam_countries_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamCountriesResult]:
+def get_iam_countries_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamCountriesResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getIamCountries:getIamCountries', __args__, opts=opts, typ=GetIamCountriesResult)
     return __ret__.apply(lambda __response__: GetIamCountriesResult(
         countries=pulumi.get(__response__, 'countries'),

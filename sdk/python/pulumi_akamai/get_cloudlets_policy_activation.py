@@ -116,7 +116,7 @@ def get_cloudlets_policy_activation(associated_properties: Optional[Sequence[str
 def get_cloudlets_policy_activation_output(associated_properties: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                            network: Optional[pulumi.Input[str]] = None,
                                            policy_id: Optional[pulumi.Input[int]] = None,
-                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudletsPolicyActivationResult]:
+                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudletsPolicyActivationResult]:
     """
     Use this data source to access information about an existing resource.
     """
@@ -124,7 +124,7 @@ def get_cloudlets_policy_activation_output(associated_properties: Optional[pulum
     __args__['associatedProperties'] = associated_properties
     __args__['network'] = network
     __args__['policyId'] = policy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getCloudletsPolicyActivation:getCloudletsPolicyActivation', __args__, opts=opts, typ=GetCloudletsPolicyActivationResult)
     return __ret__.apply(lambda __response__: GetCloudletsPolicyActivationResult(
         associated_properties=pulumi.get(__response__, 'associated_properties'),

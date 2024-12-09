@@ -83,13 +83,13 @@ def get_datastreams(group_id: Optional[int] = None,
         id=pulumi.get(__ret__, 'id'),
         streams_details=pulumi.get(__ret__, 'streams_details'))
 def get_datastreams_output(group_id: Optional[pulumi.Input[Optional[int]]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatastreamsResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatastreamsResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['groupId'] = group_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getDatastreams:getDatastreams', __args__, opts=opts, typ=GetDatastreamsResult)
     return __ret__.apply(lambda __response__: GetDatastreamsResult(
         group_id=pulumi.get(__response__, 'group_id'),

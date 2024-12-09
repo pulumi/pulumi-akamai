@@ -108,7 +108,7 @@ def get_app_sec_custom_rule_actions(config_id: Optional[int] = None,
 def get_app_sec_custom_rule_actions_output(config_id: Optional[pulumi.Input[int]] = None,
                                            custom_rule_id: Optional[pulumi.Input[Optional[int]]] = None,
                                            security_policy_id: Optional[pulumi.Input[str]] = None,
-                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecCustomRuleActionsResult]:
+                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppSecCustomRuleActionsResult]:
     """
     Use this data source to access information about an existing resource.
     """
@@ -116,7 +116,7 @@ def get_app_sec_custom_rule_actions_output(config_id: Optional[pulumi.Input[int]
     __args__['configId'] = config_id
     __args__['customRuleId'] = custom_rule_id
     __args__['securityPolicyId'] = security_policy_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppSecCustomRuleActions:getAppSecCustomRuleActions', __args__, opts=opts, typ=GetAppSecCustomRuleActionsResult)
     return __ret__.apply(lambda __response__: GetAppSecCustomRuleActionsResult(
         config_id=pulumi.get(__response__, 'config_id'),
