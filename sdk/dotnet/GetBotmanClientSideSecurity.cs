@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetBotmanClientSideSecurityResult> Invoke(GetBotmanClientSideSecurityInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBotmanClientSideSecurityResult>("akamai:index/getBotmanClientSideSecurity:getBotmanClientSideSecurity", args ?? new GetBotmanClientSideSecurityInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetBotmanClientSideSecurityResult> Invoke(GetBotmanClientSideSecurityInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBotmanClientSideSecurityResult>("akamai:index/getBotmanClientSideSecurity:getBotmanClientSideSecurity", args ?? new GetBotmanClientSideSecurityInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -39,21 +39,11 @@ type GetPropertyIncludeParentsResult struct {
 }
 
 func GetPropertyIncludeParentsOutput(ctx *pulumi.Context, args GetPropertyIncludeParentsOutputArgs, opts ...pulumi.InvokeOption) GetPropertyIncludeParentsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetPropertyIncludeParentsResultOutput, error) {
 			args := v.(GetPropertyIncludeParentsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetPropertyIncludeParentsResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getPropertyIncludeParents:getPropertyIncludeParents", args, &rv, "", opts...)
-			if err != nil {
-				return GetPropertyIncludeParentsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetPropertyIncludeParentsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetPropertyIncludeParentsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getPropertyIncludeParents:getPropertyIncludeParents", args, GetPropertyIncludeParentsResultOutput{}, options).(GetPropertyIncludeParentsResultOutput), nil
 		}).(GetPropertyIncludeParentsResultOutput)
 }
 

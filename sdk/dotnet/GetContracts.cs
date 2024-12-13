@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetContractsResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetContractsResult>("akamai:index/getContracts:getContracts", InvokeArgs.Empty, options.WithDefaults());
+
+        public static Output<GetContractsResult> Invoke(InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetContractsResult>("akamai:index/getContracts:getContracts", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

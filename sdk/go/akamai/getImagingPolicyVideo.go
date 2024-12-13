@@ -35,21 +35,11 @@ type LookupImagingPolicyVideoResult struct {
 }
 
 func LookupImagingPolicyVideoOutput(ctx *pulumi.Context, args LookupImagingPolicyVideoOutputArgs, opts ...pulumi.InvokeOption) LookupImagingPolicyVideoResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupImagingPolicyVideoResultOutput, error) {
 			args := v.(LookupImagingPolicyVideoArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupImagingPolicyVideoResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getImagingPolicyVideo:getImagingPolicyVideo", args, &rv, "", opts...)
-			if err != nil {
-				return LookupImagingPolicyVideoResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupImagingPolicyVideoResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupImagingPolicyVideoResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getImagingPolicyVideo:getImagingPolicyVideo", args, LookupImagingPolicyVideoResultOutput{}, options).(LookupImagingPolicyVideoResultOutput), nil
 		}).(LookupImagingPolicyVideoResultOutput)
 }
 

@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetEdgeWorkerResult> Invoke(GetEdgeWorkerInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEdgeWorkerResult>("akamai:index/getEdgeWorker:getEdgeWorker", args ?? new GetEdgeWorkerInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetEdgeWorkerResult> Invoke(GetEdgeWorkerInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetEdgeWorkerResult>("akamai:index/getEdgeWorker:getEdgeWorker", args ?? new GetEdgeWorkerInvokeArgs(), options.WithDefaults());
     }
 
 

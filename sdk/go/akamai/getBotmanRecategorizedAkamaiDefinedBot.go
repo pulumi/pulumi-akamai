@@ -37,21 +37,11 @@ type LookupBotmanRecategorizedAkamaiDefinedBotResult struct {
 }
 
 func LookupBotmanRecategorizedAkamaiDefinedBotOutput(ctx *pulumi.Context, args LookupBotmanRecategorizedAkamaiDefinedBotOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanRecategorizedAkamaiDefinedBotResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupBotmanRecategorizedAkamaiDefinedBotResultOutput, error) {
 			args := v.(LookupBotmanRecategorizedAkamaiDefinedBotArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupBotmanRecategorizedAkamaiDefinedBotResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getBotmanRecategorizedAkamaiDefinedBot:getBotmanRecategorizedAkamaiDefinedBot", args, &rv, "", opts...)
-			if err != nil {
-				return LookupBotmanRecategorizedAkamaiDefinedBotResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupBotmanRecategorizedAkamaiDefinedBotResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupBotmanRecategorizedAkamaiDefinedBotResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getBotmanRecategorizedAkamaiDefinedBot:getBotmanRecategorizedAkamaiDefinedBot", args, LookupBotmanRecategorizedAkamaiDefinedBotResultOutput{}, options).(LookupBotmanRecategorizedAkamaiDefinedBotResultOutput), nil
 		}).(LookupBotmanRecategorizedAkamaiDefinedBotResultOutput)
 }
 

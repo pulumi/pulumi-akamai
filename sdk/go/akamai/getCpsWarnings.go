@@ -30,18 +30,8 @@ type GetCpsWarningsResult struct {
 
 func GetCpsWarningsOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetCpsWarningsResultOutput {
 	return pulumi.ToOutput(0).ApplyT(func(int) (GetCpsWarningsResultOutput, error) {
-		opts = internal.PkgInvokeDefaultOpts(opts)
-		var rv GetCpsWarningsResult
-		secret, err := ctx.InvokePackageRaw("akamai:index/getCpsWarnings:getCpsWarnings", nil, &rv, "", opts...)
-		if err != nil {
-			return GetCpsWarningsResultOutput{}, err
-		}
-
-		output := pulumi.ToOutput(rv).(GetCpsWarningsResultOutput)
-		if secret {
-			return pulumi.ToSecret(output).(GetCpsWarningsResultOutput), nil
-		}
-		return output, nil
+		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+		return ctx.InvokeOutput("akamai:index/getCpsWarnings:getCpsWarnings", nil, GetCpsWarningsResultOutput{}, options).(GetCpsWarningsResultOutput), nil
 	}).(GetCpsWarningsResultOutput)
 }
 

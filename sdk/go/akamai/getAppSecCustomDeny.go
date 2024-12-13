@@ -38,21 +38,11 @@ type LookupAppSecCustomDenyResult struct {
 }
 
 func LookupAppSecCustomDenyOutput(ctx *pulumi.Context, args LookupAppSecCustomDenyOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecCustomDenyResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupAppSecCustomDenyResultOutput, error) {
 			args := v.(LookupAppSecCustomDenyArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupAppSecCustomDenyResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecCustomDeny:getAppSecCustomDeny", args, &rv, "", opts...)
-			if err != nil {
-				return LookupAppSecCustomDenyResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupAppSecCustomDenyResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupAppSecCustomDenyResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getAppSecCustomDeny:getAppSecCustomDeny", args, LookupAppSecCustomDenyResultOutput{}, options).(LookupAppSecCustomDenyResultOutput), nil
 		}).(LookupAppSecCustomDenyResultOutput)
 }
 

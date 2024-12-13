@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetAppSecHostnameCoverageOverlappingResult> Invoke(GetAppSecHostnameCoverageOverlappingInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecHostnameCoverageOverlappingResult>("akamai:index/getAppSecHostnameCoverageOverlapping:getAppSecHostnameCoverageOverlapping", args ?? new GetAppSecHostnameCoverageOverlappingInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetAppSecHostnameCoverageOverlappingResult> Invoke(GetAppSecHostnameCoverageOverlappingInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecHostnameCoverageOverlappingResult>("akamai:index/getAppSecHostnameCoverageOverlapping:getAppSecHostnameCoverageOverlapping", args ?? new GetAppSecHostnameCoverageOverlappingInvokeArgs(), options.WithDefaults());
     }
 
 

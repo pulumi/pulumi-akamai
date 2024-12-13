@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetAppsecAdvancedSettingsPiiLearningResult> Invoke(GetAppsecAdvancedSettingsPiiLearningInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppsecAdvancedSettingsPiiLearningResult>("akamai:index/getAppsecAdvancedSettingsPiiLearning:getAppsecAdvancedSettingsPiiLearning", args ?? new GetAppsecAdvancedSettingsPiiLearningInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetAppsecAdvancedSettingsPiiLearningResult> Invoke(GetAppsecAdvancedSettingsPiiLearningInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppsecAdvancedSettingsPiiLearningResult>("akamai:index/getAppsecAdvancedSettingsPiiLearning:getAppsecAdvancedSettingsPiiLearning", args ?? new GetAppsecAdvancedSettingsPiiLearningInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetAppSecFailoverHostnamesResult> Invoke(GetAppSecFailoverHostnamesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecFailoverHostnamesResult>("akamai:index/getAppSecFailoverHostnames:getAppSecFailoverHostnames", args ?? new GetAppSecFailoverHostnamesInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetAppSecFailoverHostnamesResult> Invoke(GetAppSecFailoverHostnamesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecFailoverHostnamesResult>("akamai:index/getAppSecFailoverHostnames:getAppSecFailoverHostnames", args ?? new GetAppSecFailoverHostnamesInvokeArgs(), options.WithDefaults());
     }
 
 

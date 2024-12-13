@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetBotmanBotEndpointCoverageReportResult> Invoke(GetBotmanBotEndpointCoverageReportInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBotmanBotEndpointCoverageReportResult>("akamai:index/getBotmanBotEndpointCoverageReport:getBotmanBotEndpointCoverageReport", args ?? new GetBotmanBotEndpointCoverageReportInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetBotmanBotEndpointCoverageReportResult> Invoke(GetBotmanBotEndpointCoverageReportInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBotmanBotEndpointCoverageReportResult>("akamai:index/getBotmanBotEndpointCoverageReport:getBotmanBotEndpointCoverageReport", args ?? new GetBotmanBotEndpointCoverageReportInvokeArgs(), options.WithDefaults());
     }
 
 

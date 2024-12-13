@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetEdgeWorkersPropertyRulesResult> Invoke(GetEdgeWorkersPropertyRulesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEdgeWorkersPropertyRulesResult>("akamai:index/getEdgeWorkersPropertyRules:getEdgeWorkersPropertyRules", args ?? new GetEdgeWorkersPropertyRulesInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetEdgeWorkersPropertyRulesResult> Invoke(GetEdgeWorkersPropertyRulesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetEdgeWorkersPropertyRulesResult>("akamai:index/getEdgeWorkersPropertyRules:getEdgeWorkersPropertyRules", args ?? new GetEdgeWorkersPropertyRulesInvokeArgs(), options.WithDefaults());
     }
 
 

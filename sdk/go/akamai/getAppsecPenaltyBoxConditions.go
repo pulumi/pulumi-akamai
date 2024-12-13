@@ -38,21 +38,11 @@ type LookupAppsecPenaltyBoxConditionsResult struct {
 }
 
 func LookupAppsecPenaltyBoxConditionsOutput(ctx *pulumi.Context, args LookupAppsecPenaltyBoxConditionsOutputArgs, opts ...pulumi.InvokeOption) LookupAppsecPenaltyBoxConditionsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupAppsecPenaltyBoxConditionsResultOutput, error) {
 			args := v.(LookupAppsecPenaltyBoxConditionsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupAppsecPenaltyBoxConditionsResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getAppsecPenaltyBoxConditions:getAppsecPenaltyBoxConditions", args, &rv, "", opts...)
-			if err != nil {
-				return LookupAppsecPenaltyBoxConditionsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupAppsecPenaltyBoxConditionsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupAppsecPenaltyBoxConditionsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getAppsecPenaltyBoxConditions:getAppsecPenaltyBoxConditions", args, LookupAppsecPenaltyBoxConditionsResultOutput{}, options).(LookupAppsecPenaltyBoxConditionsResultOutput), nil
 		}).(LookupAppsecPenaltyBoxConditionsResultOutput)
 }
 

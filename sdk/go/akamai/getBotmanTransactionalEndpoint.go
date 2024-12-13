@@ -39,21 +39,11 @@ type LookupBotmanTransactionalEndpointResult struct {
 }
 
 func LookupBotmanTransactionalEndpointOutput(ctx *pulumi.Context, args LookupBotmanTransactionalEndpointOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanTransactionalEndpointResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupBotmanTransactionalEndpointResultOutput, error) {
 			args := v.(LookupBotmanTransactionalEndpointArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupBotmanTransactionalEndpointResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getBotmanTransactionalEndpoint:getBotmanTransactionalEndpoint", args, &rv, "", opts...)
-			if err != nil {
-				return LookupBotmanTransactionalEndpointResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupBotmanTransactionalEndpointResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupBotmanTransactionalEndpointResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getBotmanTransactionalEndpoint:getBotmanTransactionalEndpoint", args, LookupBotmanTransactionalEndpointResultOutput{}, options).(LookupBotmanTransactionalEndpointResultOutput), nil
 		}).(LookupBotmanTransactionalEndpointResultOutput)
 }
 

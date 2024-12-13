@@ -42,21 +42,11 @@ type GetAppSecRulesResult struct {
 }
 
 func GetAppSecRulesOutput(ctx *pulumi.Context, args GetAppSecRulesOutputArgs, opts ...pulumi.InvokeOption) GetAppSecRulesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAppSecRulesResultOutput, error) {
 			args := v.(GetAppSecRulesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAppSecRulesResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecRules:getAppSecRules", args, &rv, "", opts...)
-			if err != nil {
-				return GetAppSecRulesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAppSecRulesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAppSecRulesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getAppSecRules:getAppSecRules", args, GetAppSecRulesResultOutput{}, options).(GetAppSecRulesResultOutput), nil
 		}).(GetAppSecRulesResultOutput)
 }
 

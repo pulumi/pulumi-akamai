@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetDnsRecordSetResult> Invoke(GetDnsRecordSetInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDnsRecordSetResult>("akamai:index/getDnsRecordSet:getDnsRecordSet", args ?? new GetDnsRecordSetInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetDnsRecordSetResult> Invoke(GetDnsRecordSetInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDnsRecordSetResult>("akamai:index/getDnsRecordSet:getDnsRecordSet", args ?? new GetDnsRecordSetInvokeArgs(), options.WithDefaults());
     }
 
 

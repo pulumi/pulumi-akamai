@@ -35,21 +35,11 @@ type LookupBotmanTransactionalEndpointProtectionResult struct {
 }
 
 func LookupBotmanTransactionalEndpointProtectionOutput(ctx *pulumi.Context, args LookupBotmanTransactionalEndpointProtectionOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanTransactionalEndpointProtectionResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupBotmanTransactionalEndpointProtectionResultOutput, error) {
 			args := v.(LookupBotmanTransactionalEndpointProtectionArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupBotmanTransactionalEndpointProtectionResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getBotmanTransactionalEndpointProtection:getBotmanTransactionalEndpointProtection", args, &rv, "", opts...)
-			if err != nil {
-				return LookupBotmanTransactionalEndpointProtectionResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupBotmanTransactionalEndpointProtectionResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupBotmanTransactionalEndpointProtectionResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getBotmanTransactionalEndpointProtection:getBotmanTransactionalEndpointProtection", args, LookupBotmanTransactionalEndpointProtectionResultOutput{}, options).(LookupBotmanTransactionalEndpointProtectionResultOutput), nil
 		}).(LookupBotmanTransactionalEndpointProtectionResultOutput)
 }
 

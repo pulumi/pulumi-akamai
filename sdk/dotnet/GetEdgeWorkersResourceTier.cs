@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetEdgeWorkersResourceTierResult> Invoke(GetEdgeWorkersResourceTierInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEdgeWorkersResourceTierResult>("akamai:index/getEdgeWorkersResourceTier:getEdgeWorkersResourceTier", args ?? new GetEdgeWorkersResourceTierInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetEdgeWorkersResourceTierResult> Invoke(GetEdgeWorkersResourceTierInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetEdgeWorkersResourceTierResult>("akamai:index/getEdgeWorkersResourceTier:getEdgeWorkersResourceTier", args ?? new GetEdgeWorkersResourceTierInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetAppSecSecurityPolicyProtectionsResult> Invoke(GetAppSecSecurityPolicyProtectionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecSecurityPolicyProtectionsResult>("akamai:index/getAppSecSecurityPolicyProtections:getAppSecSecurityPolicyProtections", args ?? new GetAppSecSecurityPolicyProtectionsInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetAppSecSecurityPolicyProtectionsResult> Invoke(GetAppSecSecurityPolicyProtectionsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecSecurityPolicyProtectionsResult>("akamai:index/getAppSecSecurityPolicyProtections:getAppSecSecurityPolicyProtections", args ?? new GetAppSecSecurityPolicyProtectionsInvokeArgs(), options.WithDefaults());
     }
 
 

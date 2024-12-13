@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetAppSecEvalPenaltyBoxResult> Invoke(GetAppSecEvalPenaltyBoxInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecEvalPenaltyBoxResult>("akamai:index/getAppSecEvalPenaltyBox:getAppSecEvalPenaltyBox", args ?? new GetAppSecEvalPenaltyBoxInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetAppSecEvalPenaltyBoxResult> Invoke(GetAppSecEvalPenaltyBoxInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecEvalPenaltyBoxResult>("akamai:index/getAppSecEvalPenaltyBox:getAppSecEvalPenaltyBox", args ?? new GetAppSecEvalPenaltyBoxInvokeArgs(), options.WithDefaults());
     }
 
 

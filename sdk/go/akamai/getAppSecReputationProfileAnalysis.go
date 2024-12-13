@@ -38,21 +38,11 @@ type LookupAppSecReputationProfileAnalysisResult struct {
 }
 
 func LookupAppSecReputationProfileAnalysisOutput(ctx *pulumi.Context, args LookupAppSecReputationProfileAnalysisOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecReputationProfileAnalysisResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupAppSecReputationProfileAnalysisResultOutput, error) {
 			args := v.(LookupAppSecReputationProfileAnalysisArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupAppSecReputationProfileAnalysisResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecReputationProfileAnalysis:getAppSecReputationProfileAnalysis", args, &rv, "", opts...)
-			if err != nil {
-				return LookupAppSecReputationProfileAnalysisResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupAppSecReputationProfileAnalysisResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupAppSecReputationProfileAnalysisResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getAppSecReputationProfileAnalysis:getAppSecReputationProfileAnalysis", args, LookupAppSecReputationProfileAnalysisResultOutput{}, options).(LookupAppSecReputationProfileAnalysisResultOutput), nil
 		}).(LookupAppSecReputationProfileAnalysisResultOutput)
 }
 

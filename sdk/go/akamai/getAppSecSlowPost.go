@@ -38,21 +38,11 @@ type LookupAppSecSlowPostResult struct {
 }
 
 func LookupAppSecSlowPostOutput(ctx *pulumi.Context, args LookupAppSecSlowPostOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecSlowPostResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupAppSecSlowPostResultOutput, error) {
 			args := v.(LookupAppSecSlowPostArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupAppSecSlowPostResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecSlowPost:getAppSecSlowPost", args, &rv, "", opts...)
-			if err != nil {
-				return LookupAppSecSlowPostResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupAppSecSlowPostResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupAppSecSlowPostResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getAppSecSlowPost:getAppSecSlowPost", args, LookupAppSecSlowPostResultOutput{}, options).(LookupAppSecSlowPostResultOutput), nil
 		}).(LookupAppSecSlowPostResultOutput)
 }
 

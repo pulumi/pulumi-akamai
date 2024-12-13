@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetBotmanCustomCodeResult> Invoke(GetBotmanCustomCodeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBotmanCustomCodeResult>("akamai:index/getBotmanCustomCode:getBotmanCustomCode", args ?? new GetBotmanCustomCodeInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetBotmanCustomCodeResult> Invoke(GetBotmanCustomCodeInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBotmanCustomCodeResult>("akamai:index/getBotmanCustomCode:getBotmanCustomCode", args ?? new GetBotmanCustomCodeInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetBotmanJavascriptInjectionResult> Invoke(GetBotmanJavascriptInjectionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBotmanJavascriptInjectionResult>("akamai:index/getBotmanJavascriptInjection:getBotmanJavascriptInjection", args ?? new GetBotmanJavascriptInjectionInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetBotmanJavascriptInjectionResult> Invoke(GetBotmanJavascriptInjectionInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBotmanJavascriptInjectionResult>("akamai:index/getBotmanJavascriptInjection:getBotmanJavascriptInjection", args ?? new GetBotmanJavascriptInjectionInvokeArgs(), options.WithDefaults());
     }
 
 

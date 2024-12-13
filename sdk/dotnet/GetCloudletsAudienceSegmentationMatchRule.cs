@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetCloudletsAudienceSegmentationMatchRuleResult> Invoke(GetCloudletsAudienceSegmentationMatchRuleInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCloudletsAudienceSegmentationMatchRuleResult>("akamai:index/getCloudletsAudienceSegmentationMatchRule:getCloudletsAudienceSegmentationMatchRule", args ?? new GetCloudletsAudienceSegmentationMatchRuleInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetCloudletsAudienceSegmentationMatchRuleResult> Invoke(GetCloudletsAudienceSegmentationMatchRuleInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudletsAudienceSegmentationMatchRuleResult>("akamai:index/getCloudletsAudienceSegmentationMatchRule:getCloudletsAudienceSegmentationMatchRule", args ?? new GetCloudletsAudienceSegmentationMatchRuleInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetAppSecReputationProfileAnalysisResult> Invoke(GetAppSecReputationProfileAnalysisInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecReputationProfileAnalysisResult>("akamai:index/getAppSecReputationProfileAnalysis:getAppSecReputationProfileAnalysis", args ?? new GetAppSecReputationProfileAnalysisInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetAppSecReputationProfileAnalysisResult> Invoke(GetAppSecReputationProfileAnalysisInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecReputationProfileAnalysisResult>("akamai:index/getAppSecReputationProfileAnalysis:getAppSecReputationProfileAnalysis", args ?? new GetAppSecReputationProfileAnalysisInvokeArgs(), options.WithDefaults());
     }
 
 

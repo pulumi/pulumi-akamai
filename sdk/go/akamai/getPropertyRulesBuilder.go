@@ -46,21 +46,11 @@ type GetPropertyRulesBuilderResult struct {
 }
 
 func GetPropertyRulesBuilderOutput(ctx *pulumi.Context, args GetPropertyRulesBuilderOutputArgs, opts ...pulumi.InvokeOption) GetPropertyRulesBuilderResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetPropertyRulesBuilderResultOutput, error) {
 			args := v.(GetPropertyRulesBuilderArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetPropertyRulesBuilderResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getPropertyRulesBuilder:getPropertyRulesBuilder", args, &rv, "", opts...)
-			if err != nil {
-				return GetPropertyRulesBuilderResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetPropertyRulesBuilderResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetPropertyRulesBuilderResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getPropertyRulesBuilder:getPropertyRulesBuilder", args, GetPropertyRulesBuilderResultOutput{}, options).(GetPropertyRulesBuilderResultOutput), nil
 		}).(GetPropertyRulesBuilderResultOutput)
 }
 

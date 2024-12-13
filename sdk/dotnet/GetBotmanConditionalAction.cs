@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetBotmanConditionalActionResult> Invoke(GetBotmanConditionalActionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBotmanConditionalActionResult>("akamai:index/getBotmanConditionalAction:getBotmanConditionalAction", args ?? new GetBotmanConditionalActionInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetBotmanConditionalActionResult> Invoke(GetBotmanConditionalActionInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBotmanConditionalActionResult>("akamai:index/getBotmanConditionalAction:getBotmanConditionalAction", args ?? new GetBotmanConditionalActionInvokeArgs(), options.WithDefaults());
     }
 
 

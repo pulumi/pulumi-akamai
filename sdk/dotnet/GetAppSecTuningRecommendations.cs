@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetAppSecTuningRecommendationsResult> Invoke(GetAppSecTuningRecommendationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecTuningRecommendationsResult>("akamai:index/getAppSecTuningRecommendations:getAppSecTuningRecommendations", args ?? new GetAppSecTuningRecommendationsInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetAppSecTuningRecommendationsResult> Invoke(GetAppSecTuningRecommendationsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecTuningRecommendationsResult>("akamai:index/getAppSecTuningRecommendations:getAppSecTuningRecommendations", args ?? new GetAppSecTuningRecommendationsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetAppSecAdvancedSettingsEvasivePathMatchResult> Invoke(GetAppSecAdvancedSettingsEvasivePathMatchInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecAdvancedSettingsEvasivePathMatchResult>("akamai:index/getAppSecAdvancedSettingsEvasivePathMatch:getAppSecAdvancedSettingsEvasivePathMatch", args ?? new GetAppSecAdvancedSettingsEvasivePathMatchInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetAppSecAdvancedSettingsEvasivePathMatchResult> Invoke(GetAppSecAdvancedSettingsEvasivePathMatchInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecAdvancedSettingsEvasivePathMatchResult>("akamai:index/getAppSecAdvancedSettingsEvasivePathMatch:getAppSecAdvancedSettingsEvasivePathMatch", args ?? new GetAppSecAdvancedSettingsEvasivePathMatchInvokeArgs(), options.WithDefaults());
     }
 
 

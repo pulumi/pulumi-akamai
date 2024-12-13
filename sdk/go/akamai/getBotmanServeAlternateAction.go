@@ -37,21 +37,11 @@ type LookupBotmanServeAlternateActionResult struct {
 }
 
 func LookupBotmanServeAlternateActionOutput(ctx *pulumi.Context, args LookupBotmanServeAlternateActionOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanServeAlternateActionResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupBotmanServeAlternateActionResultOutput, error) {
 			args := v.(LookupBotmanServeAlternateActionArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupBotmanServeAlternateActionResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getBotmanServeAlternateAction:getBotmanServeAlternateAction", args, &rv, "", opts...)
-			if err != nil {
-				return LookupBotmanServeAlternateActionResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupBotmanServeAlternateActionResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupBotmanServeAlternateActionResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getBotmanServeAlternateAction:getBotmanServeAlternateAction", args, LookupBotmanServeAlternateActionResultOutput{}, options).(LookupBotmanServeAlternateActionResultOutput), nil
 		}).(LookupBotmanServeAlternateActionResultOutput)
 }
 

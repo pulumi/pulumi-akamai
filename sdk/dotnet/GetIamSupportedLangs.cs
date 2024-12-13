@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetIamSupportedLangsResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIamSupportedLangsResult>("akamai:index/getIamSupportedLangs:getIamSupportedLangs", InvokeArgs.Empty, options.WithDefaults());
+
+        public static Output<GetIamSupportedLangsResult> Invoke(InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIamSupportedLangsResult>("akamai:index/getIamSupportedLangs:getIamSupportedLangs", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

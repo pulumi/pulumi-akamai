@@ -35,21 +35,11 @@ type GetCloudletsAudienceSegmentationMatchRuleResult struct {
 }
 
 func GetCloudletsAudienceSegmentationMatchRuleOutput(ctx *pulumi.Context, args GetCloudletsAudienceSegmentationMatchRuleOutputArgs, opts ...pulumi.InvokeOption) GetCloudletsAudienceSegmentationMatchRuleResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetCloudletsAudienceSegmentationMatchRuleResultOutput, error) {
 			args := v.(GetCloudletsAudienceSegmentationMatchRuleArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetCloudletsAudienceSegmentationMatchRuleResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getCloudletsAudienceSegmentationMatchRule:getCloudletsAudienceSegmentationMatchRule", args, &rv, "", opts...)
-			if err != nil {
-				return GetCloudletsAudienceSegmentationMatchRuleResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetCloudletsAudienceSegmentationMatchRuleResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetCloudletsAudienceSegmentationMatchRuleResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getCloudletsAudienceSegmentationMatchRule:getCloudletsAudienceSegmentationMatchRule", args, GetCloudletsAudienceSegmentationMatchRuleResultOutput{}, options).(GetCloudletsAudienceSegmentationMatchRuleResultOutput), nil
 		}).(GetCloudletsAudienceSegmentationMatchRuleResultOutput)
 }
 

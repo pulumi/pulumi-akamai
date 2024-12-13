@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetAppSecSelectableHostnamesResult> Invoke(GetAppSecSelectableHostnamesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecSelectableHostnamesResult>("akamai:index/getAppSecSelectableHostnames:getAppSecSelectableHostnames", args ?? new GetAppSecSelectableHostnamesInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetAppSecSelectableHostnamesResult> Invoke(GetAppSecSelectableHostnamesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecSelectableHostnamesResult>("akamai:index/getAppSecSelectableHostnames:getAppSecSelectableHostnames", args ?? new GetAppSecSelectableHostnamesInvokeArgs(), options.WithDefaults());
     }
 
 

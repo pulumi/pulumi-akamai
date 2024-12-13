@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetCpCodeResult> Invoke(GetCpCodeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCpCodeResult>("akamai:index/getCpCode:getCpCode", args ?? new GetCpCodeInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetCpCodeResult> Invoke(GetCpCodeInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCpCodeResult>("akamai:index/getCpCode:getCpCode", args ?? new GetCpCodeInvokeArgs(), options.WithDefaults());
     }
 
 

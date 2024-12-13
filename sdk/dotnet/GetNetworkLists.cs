@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetNetworkListsResult> Invoke(GetNetworkListsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkListsResult>("akamai:index/getNetworkLists:getNetworkLists", args ?? new GetNetworkListsInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetNetworkListsResult> Invoke(GetNetworkListsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNetworkListsResult>("akamai:index/getNetworkLists:getNetworkLists", args ?? new GetNetworkListsInvokeArgs(), options.WithDefaults());
     }
 
 

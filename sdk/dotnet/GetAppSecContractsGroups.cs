@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetAppSecContractsGroupsResult> Invoke(GetAppSecContractsGroupsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecContractsGroupsResult>("akamai:index/getAppSecContractsGroups:getAppSecContractsGroups", args ?? new GetAppSecContractsGroupsInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetAppSecContractsGroupsResult> Invoke(GetAppSecContractsGroupsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecContractsGroupsResult>("akamai:index/getAppSecContractsGroups:getAppSecContractsGroups", args ?? new GetAppSecContractsGroupsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetAppSecMatchTargetsResult> Invoke(GetAppSecMatchTargetsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecMatchTargetsResult>("akamai:index/getAppSecMatchTargets:getAppSecMatchTargets", args ?? new GetAppSecMatchTargetsInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetAppSecMatchTargetsResult> Invoke(GetAppSecMatchTargetsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecMatchTargetsResult>("akamai:index/getAppSecMatchTargets:getAppSecMatchTargets", args ?? new GetAppSecMatchTargetsInvokeArgs(), options.WithDefaults());
     }
 
 

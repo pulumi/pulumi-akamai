@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetAppSecApiRequestConstraintsResult> Invoke(GetAppSecApiRequestConstraintsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecApiRequestConstraintsResult>("akamai:index/getAppSecApiRequestConstraints:getAppSecApiRequestConstraints", args ?? new GetAppSecApiRequestConstraintsInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetAppSecApiRequestConstraintsResult> Invoke(GetAppSecApiRequestConstraintsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecApiRequestConstraintsResult>("akamai:index/getAppSecApiRequestConstraints:getAppSecApiRequestConstraints", args ?? new GetAppSecApiRequestConstraintsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -42,21 +42,11 @@ type LookupAppSecWapSelectedHostnamesResult struct {
 }
 
 func LookupAppSecWapSelectedHostnamesOutput(ctx *pulumi.Context, args LookupAppSecWapSelectedHostnamesOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecWapSelectedHostnamesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupAppSecWapSelectedHostnamesResultOutput, error) {
 			args := v.(LookupAppSecWapSelectedHostnamesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupAppSecWapSelectedHostnamesResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecWapSelectedHostnames:getAppSecWapSelectedHostnames", args, &rv, "", opts...)
-			if err != nil {
-				return LookupAppSecWapSelectedHostnamesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupAppSecWapSelectedHostnamesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupAppSecWapSelectedHostnamesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getAppSecWapSelectedHostnames:getAppSecWapSelectedHostnames", args, LookupAppSecWapSelectedHostnamesResultOutput{}, options).(LookupAppSecWapSelectedHostnamesResultOutput), nil
 		}).(LookupAppSecWapSelectedHostnamesResultOutput)
 }
 

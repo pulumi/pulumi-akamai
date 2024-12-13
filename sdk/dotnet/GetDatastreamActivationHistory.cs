@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetDatastreamActivationHistoryResult> Invoke(GetDatastreamActivationHistoryInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDatastreamActivationHistoryResult>("akamai:index/getDatastreamActivationHistory:getDatastreamActivationHistory", args ?? new GetDatastreamActivationHistoryInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetDatastreamActivationHistoryResult> Invoke(GetDatastreamActivationHistoryInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatastreamActivationHistoryResult>("akamai:index/getDatastreamActivationHistory:getDatastreamActivationHistory", args ?? new GetDatastreamActivationHistoryInvokeArgs(), options.WithDefaults());
     }
 
 

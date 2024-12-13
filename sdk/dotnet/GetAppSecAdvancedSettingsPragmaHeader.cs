@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetAppSecAdvancedSettingsPragmaHeaderResult> Invoke(GetAppSecAdvancedSettingsPragmaHeaderInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecAdvancedSettingsPragmaHeaderResult>("akamai:index/getAppSecAdvancedSettingsPragmaHeader:getAppSecAdvancedSettingsPragmaHeader", args ?? new GetAppSecAdvancedSettingsPragmaHeaderInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetAppSecAdvancedSettingsPragmaHeaderResult> Invoke(GetAppSecAdvancedSettingsPragmaHeaderInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecAdvancedSettingsPragmaHeaderResult>("akamai:index/getAppSecAdvancedSettingsPragmaHeader:getAppSecAdvancedSettingsPragmaHeader", args ?? new GetAppSecAdvancedSettingsPragmaHeaderInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -40,21 +40,11 @@ type GetCpsDeploymentsResult struct {
 }
 
 func GetCpsDeploymentsOutput(ctx *pulumi.Context, args GetCpsDeploymentsOutputArgs, opts ...pulumi.InvokeOption) GetCpsDeploymentsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetCpsDeploymentsResultOutput, error) {
 			args := v.(GetCpsDeploymentsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetCpsDeploymentsResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getCpsDeployments:getCpsDeployments", args, &rv, "", opts...)
-			if err != nil {
-				return GetCpsDeploymentsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetCpsDeploymentsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetCpsDeploymentsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getCpsDeployments:getCpsDeployments", args, GetCpsDeploymentsResultOutput{}, options).(GetCpsDeploymentsResultOutput), nil
 		}).(GetCpsDeploymentsResultOutput)
 }
 
