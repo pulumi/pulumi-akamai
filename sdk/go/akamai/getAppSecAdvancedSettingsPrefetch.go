@@ -36,21 +36,11 @@ type LookupAppSecAdvancedSettingsPrefetchResult struct {
 }
 
 func LookupAppSecAdvancedSettingsPrefetchOutput(ctx *pulumi.Context, args LookupAppSecAdvancedSettingsPrefetchOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecAdvancedSettingsPrefetchResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupAppSecAdvancedSettingsPrefetchResultOutput, error) {
 			args := v.(LookupAppSecAdvancedSettingsPrefetchArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupAppSecAdvancedSettingsPrefetchResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecAdvancedSettingsPrefetch:getAppSecAdvancedSettingsPrefetch", args, &rv, "", opts...)
-			if err != nil {
-				return LookupAppSecAdvancedSettingsPrefetchResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupAppSecAdvancedSettingsPrefetchResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupAppSecAdvancedSettingsPrefetchResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getAppSecAdvancedSettingsPrefetch:getAppSecAdvancedSettingsPrefetch", args, LookupAppSecAdvancedSettingsPrefetchResultOutput{}, options).(LookupAppSecAdvancedSettingsPrefetchResultOutput), nil
 		}).(LookupAppSecAdvancedSettingsPrefetchResultOutput)
 }
 

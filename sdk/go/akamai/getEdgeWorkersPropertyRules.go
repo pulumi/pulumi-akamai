@@ -35,21 +35,11 @@ type GetEdgeWorkersPropertyRulesResult struct {
 }
 
 func GetEdgeWorkersPropertyRulesOutput(ctx *pulumi.Context, args GetEdgeWorkersPropertyRulesOutputArgs, opts ...pulumi.InvokeOption) GetEdgeWorkersPropertyRulesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetEdgeWorkersPropertyRulesResultOutput, error) {
 			args := v.(GetEdgeWorkersPropertyRulesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetEdgeWorkersPropertyRulesResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getEdgeWorkersPropertyRules:getEdgeWorkersPropertyRules", args, &rv, "", opts...)
-			if err != nil {
-				return GetEdgeWorkersPropertyRulesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetEdgeWorkersPropertyRulesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetEdgeWorkersPropertyRulesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getEdgeWorkersPropertyRules:getEdgeWorkersPropertyRules", args, GetEdgeWorkersPropertyRulesResultOutput{}, options).(GetEdgeWorkersPropertyRulesResultOutput), nil
 		}).(GetEdgeWorkersPropertyRulesResultOutput)
 }
 

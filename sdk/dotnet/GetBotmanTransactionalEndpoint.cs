@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetBotmanTransactionalEndpointResult> Invoke(GetBotmanTransactionalEndpointInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBotmanTransactionalEndpointResult>("akamai:index/getBotmanTransactionalEndpoint:getBotmanTransactionalEndpoint", args ?? new GetBotmanTransactionalEndpointInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetBotmanTransactionalEndpointResult> Invoke(GetBotmanTransactionalEndpointInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBotmanTransactionalEndpointResult>("akamai:index/getBotmanTransactionalEndpoint:getBotmanTransactionalEndpoint", args ?? new GetBotmanTransactionalEndpointInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetCloudletsApplicationLoadBalancerResult> Invoke(GetCloudletsApplicationLoadBalancerInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCloudletsApplicationLoadBalancerResult>("akamai:index/getCloudletsApplicationLoadBalancer:getCloudletsApplicationLoadBalancer", args ?? new GetCloudletsApplicationLoadBalancerInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetCloudletsApplicationLoadBalancerResult> Invoke(GetCloudletsApplicationLoadBalancerInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudletsApplicationLoadBalancerResult>("akamai:index/getCloudletsApplicationLoadBalancer:getCloudletsApplicationLoadBalancer", args ?? new GetCloudletsApplicationLoadBalancerInvokeArgs(), options.WithDefaults());
     }
 
 

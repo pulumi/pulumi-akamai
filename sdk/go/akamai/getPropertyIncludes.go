@@ -41,21 +41,11 @@ type GetPropertyIncludesResult struct {
 }
 
 func GetPropertyIncludesOutput(ctx *pulumi.Context, args GetPropertyIncludesOutputArgs, opts ...pulumi.InvokeOption) GetPropertyIncludesResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetPropertyIncludesResultOutput, error) {
 			args := v.(GetPropertyIncludesArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetPropertyIncludesResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getPropertyIncludes:getPropertyIncludes", args, &rv, "", opts...)
-			if err != nil {
-				return GetPropertyIncludesResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetPropertyIncludesResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetPropertyIncludesResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getPropertyIncludes:getPropertyIncludes", args, GetPropertyIncludesResultOutput{}, options).(GetPropertyIncludesResultOutput), nil
 		}).(GetPropertyIncludesResultOutput)
 }
 

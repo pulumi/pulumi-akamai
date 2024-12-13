@@ -37,21 +37,11 @@ type GetEdgekvGroupsResult struct {
 }
 
 func GetEdgekvGroupsOutput(ctx *pulumi.Context, args GetEdgekvGroupsOutputArgs, opts ...pulumi.InvokeOption) GetEdgekvGroupsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetEdgekvGroupsResultOutput, error) {
 			args := v.(GetEdgekvGroupsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetEdgekvGroupsResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getEdgekvGroups:getEdgekvGroups", args, &rv, "", opts...)
-			if err != nil {
-				return GetEdgekvGroupsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetEdgekvGroupsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetEdgekvGroupsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getEdgekvGroups:getEdgekvGroups", args, GetEdgekvGroupsResultOutput{}, options).(GetEdgekvGroupsResultOutput), nil
 		}).(GetEdgekvGroupsResultOutput)
 }
 

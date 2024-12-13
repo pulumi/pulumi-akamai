@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetGroupsResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetGroupsResult>("akamai:index/getGroups:getGroups", InvokeArgs.Empty, options.WithDefaults());
+
+        public static Output<GetGroupsResult> Invoke(InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetGroupsResult>("akamai:index/getGroups:getGroups", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

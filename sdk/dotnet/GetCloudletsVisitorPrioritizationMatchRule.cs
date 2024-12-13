@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetCloudletsVisitorPrioritizationMatchRuleResult> Invoke(GetCloudletsVisitorPrioritizationMatchRuleInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCloudletsVisitorPrioritizationMatchRuleResult>("akamai:index/getCloudletsVisitorPrioritizationMatchRule:getCloudletsVisitorPrioritizationMatchRule", args ?? new GetCloudletsVisitorPrioritizationMatchRuleInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetCloudletsVisitorPrioritizationMatchRuleResult> Invoke(GetCloudletsVisitorPrioritizationMatchRuleInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudletsVisitorPrioritizationMatchRuleResult>("akamai:index/getCloudletsVisitorPrioritizationMatchRule:getCloudletsVisitorPrioritizationMatchRule", args ?? new GetCloudletsVisitorPrioritizationMatchRuleInvokeArgs(), options.WithDefaults());
     }
 
 

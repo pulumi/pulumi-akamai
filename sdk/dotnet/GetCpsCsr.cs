@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetCpsCsrResult> Invoke(GetCpsCsrInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCpsCsrResult>("akamai:index/getCpsCsr:getCpsCsr", args ?? new GetCpsCsrInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetCpsCsrResult> Invoke(GetCpsCsrInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCpsCsrResult>("akamai:index/getCpsCsr:getCpsCsr", args ?? new GetCpsCsrInvokeArgs(), options.WithDefaults());
     }
 
 

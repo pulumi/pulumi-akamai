@@ -37,21 +37,11 @@ type LookupBotmanChallengeActionResult struct {
 }
 
 func LookupBotmanChallengeActionOutput(ctx *pulumi.Context, args LookupBotmanChallengeActionOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanChallengeActionResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupBotmanChallengeActionResultOutput, error) {
 			args := v.(LookupBotmanChallengeActionArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupBotmanChallengeActionResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getBotmanChallengeAction:getBotmanChallengeAction", args, &rv, "", opts...)
-			if err != nil {
-				return LookupBotmanChallengeActionResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupBotmanChallengeActionResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupBotmanChallengeActionResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getBotmanChallengeAction:getBotmanChallengeAction", args, LookupBotmanChallengeActionResultOutput{}, options).(LookupBotmanChallengeActionResultOutput), nil
 		}).(LookupBotmanChallengeActionResultOutput)
 }
 

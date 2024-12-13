@@ -35,21 +35,11 @@ type GetCloudletsRequestControlMatchRuleResult struct {
 }
 
 func GetCloudletsRequestControlMatchRuleOutput(ctx *pulumi.Context, args GetCloudletsRequestControlMatchRuleOutputArgs, opts ...pulumi.InvokeOption) GetCloudletsRequestControlMatchRuleResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetCloudletsRequestControlMatchRuleResultOutput, error) {
 			args := v.(GetCloudletsRequestControlMatchRuleArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetCloudletsRequestControlMatchRuleResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getCloudletsRequestControlMatchRule:getCloudletsRequestControlMatchRule", args, &rv, "", opts...)
-			if err != nil {
-				return GetCloudletsRequestControlMatchRuleResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetCloudletsRequestControlMatchRuleResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetCloudletsRequestControlMatchRuleResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getCloudletsRequestControlMatchRule:getCloudletsRequestControlMatchRule", args, GetCloudletsRequestControlMatchRuleResultOutput{}, options).(GetCloudletsRequestControlMatchRuleResultOutput), nil
 		}).(GetCloudletsRequestControlMatchRuleResultOutput)
 }
 

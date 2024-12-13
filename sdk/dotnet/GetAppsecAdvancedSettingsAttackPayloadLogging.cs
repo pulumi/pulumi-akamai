@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetAppsecAdvancedSettingsAttackPayloadLoggingResult> Invoke(GetAppsecAdvancedSettingsAttackPayloadLoggingInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppsecAdvancedSettingsAttackPayloadLoggingResult>("akamai:index/getAppsecAdvancedSettingsAttackPayloadLogging:getAppsecAdvancedSettingsAttackPayloadLogging", args ?? new GetAppsecAdvancedSettingsAttackPayloadLoggingInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetAppsecAdvancedSettingsAttackPayloadLoggingResult> Invoke(GetAppsecAdvancedSettingsAttackPayloadLoggingInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppsecAdvancedSettingsAttackPayloadLoggingResult>("akamai:index/getAppsecAdvancedSettingsAttackPayloadLogging:getAppsecAdvancedSettingsAttackPayloadLogging", args ?? new GetAppsecAdvancedSettingsAttackPayloadLoggingInvokeArgs(), options.WithDefaults());
     }
 
 

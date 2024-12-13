@@ -39,21 +39,11 @@ type GetDnsRecordSetResult struct {
 }
 
 func GetDnsRecordSetOutput(ctx *pulumi.Context, args GetDnsRecordSetOutputArgs, opts ...pulumi.InvokeOption) GetDnsRecordSetResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDnsRecordSetResultOutput, error) {
 			args := v.(GetDnsRecordSetArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDnsRecordSetResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getDnsRecordSet:getDnsRecordSet", args, &rv, "", opts...)
-			if err != nil {
-				return GetDnsRecordSetResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDnsRecordSetResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDnsRecordSetResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getDnsRecordSet:getDnsRecordSet", args, GetDnsRecordSetResultOutput{}, options).(GetDnsRecordSetResultOutput), nil
 		}).(GetDnsRecordSetResultOutput)
 }
 

@@ -34,21 +34,11 @@ type GetCloudwrapperLocationsResult struct {
 }
 
 func GetCloudwrapperLocationsOutput(ctx *pulumi.Context, args GetCloudwrapperLocationsOutputArgs, opts ...pulumi.InvokeOption) GetCloudwrapperLocationsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetCloudwrapperLocationsResultOutput, error) {
 			args := v.(GetCloudwrapperLocationsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetCloudwrapperLocationsResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getCloudwrapperLocations:getCloudwrapperLocations", args, &rv, "", opts...)
-			if err != nil {
-				return GetCloudwrapperLocationsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetCloudwrapperLocationsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetCloudwrapperLocationsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getCloudwrapperLocations:getCloudwrapperLocations", args, GetCloudwrapperLocationsResultOutput{}, options).(GetCloudwrapperLocationsResultOutput), nil
 		}).(GetCloudwrapperLocationsResultOutput)
 }
 

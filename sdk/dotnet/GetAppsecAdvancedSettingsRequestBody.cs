@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetAppsecAdvancedSettingsRequestBodyResult> Invoke(GetAppsecAdvancedSettingsRequestBodyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppsecAdvancedSettingsRequestBodyResult>("akamai:index/getAppsecAdvancedSettingsRequestBody:getAppsecAdvancedSettingsRequestBody", args ?? new GetAppsecAdvancedSettingsRequestBodyInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetAppsecAdvancedSettingsRequestBodyResult> Invoke(GetAppsecAdvancedSettingsRequestBodyInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppsecAdvancedSettingsRequestBodyResult>("akamai:index/getAppsecAdvancedSettingsRequestBody:getAppsecAdvancedSettingsRequestBody", args ?? new GetAppsecAdvancedSettingsRequestBodyInvokeArgs(), options.WithDefaults());
     }
 
 

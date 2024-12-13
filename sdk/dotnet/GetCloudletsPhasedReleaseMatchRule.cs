@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetCloudletsPhasedReleaseMatchRuleResult> Invoke(GetCloudletsPhasedReleaseMatchRuleInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCloudletsPhasedReleaseMatchRuleResult>("akamai:index/getCloudletsPhasedReleaseMatchRule:getCloudletsPhasedReleaseMatchRule", args ?? new GetCloudletsPhasedReleaseMatchRuleInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetCloudletsPhasedReleaseMatchRuleResult> Invoke(GetCloudletsPhasedReleaseMatchRuleInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudletsPhasedReleaseMatchRuleResult>("akamai:index/getCloudletsPhasedReleaseMatchRule:getCloudletsPhasedReleaseMatchRule", args ?? new GetCloudletsPhasedReleaseMatchRuleInvokeArgs(), options.WithDefaults());
     }
 
 

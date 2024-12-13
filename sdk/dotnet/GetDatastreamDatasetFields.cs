@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetDatastreamDatasetFieldsResult> Invoke(GetDatastreamDatasetFieldsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDatastreamDatasetFieldsResult>("akamai:index/getDatastreamDatasetFields:getDatastreamDatasetFields", args ?? new GetDatastreamDatasetFieldsInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetDatastreamDatasetFieldsResult> Invoke(GetDatastreamDatasetFieldsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatastreamDatasetFieldsResult>("akamai:index/getDatastreamDatasetFields:getDatastreamDatasetFields", args ?? new GetDatastreamDatasetFieldsInvokeArgs(), options.WithDefaults());
     }
 
 

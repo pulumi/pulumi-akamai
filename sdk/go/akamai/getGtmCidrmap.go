@@ -42,21 +42,11 @@ type LookupGtmCidrmapResult struct {
 }
 
 func LookupGtmCidrmapOutput(ctx *pulumi.Context, args LookupGtmCidrmapOutputArgs, opts ...pulumi.InvokeOption) LookupGtmCidrmapResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupGtmCidrmapResultOutput, error) {
 			args := v.(LookupGtmCidrmapArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupGtmCidrmapResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getGtmCidrmap:getGtmCidrmap", args, &rv, "", opts...)
-			if err != nil {
-				return LookupGtmCidrmapResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupGtmCidrmapResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupGtmCidrmapResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getGtmCidrmap:getGtmCidrmap", args, LookupGtmCidrmapResultOutput{}, options).(LookupGtmCidrmapResultOutput), nil
 		}).(LookupGtmCidrmapResultOutput)
 }
 

@@ -36,21 +36,11 @@ type LookupAppsecAdvancedSettingsPiiLearningResult struct {
 }
 
 func LookupAppsecAdvancedSettingsPiiLearningOutput(ctx *pulumi.Context, args LookupAppsecAdvancedSettingsPiiLearningOutputArgs, opts ...pulumi.InvokeOption) LookupAppsecAdvancedSettingsPiiLearningResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupAppsecAdvancedSettingsPiiLearningResultOutput, error) {
 			args := v.(LookupAppsecAdvancedSettingsPiiLearningArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupAppsecAdvancedSettingsPiiLearningResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getAppsecAdvancedSettingsPiiLearning:getAppsecAdvancedSettingsPiiLearning", args, &rv, "", opts...)
-			if err != nil {
-				return LookupAppsecAdvancedSettingsPiiLearningResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupAppsecAdvancedSettingsPiiLearningResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupAppsecAdvancedSettingsPiiLearningResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getAppsecAdvancedSettingsPiiLearning:getAppsecAdvancedSettingsPiiLearning", args, LookupAppsecAdvancedSettingsPiiLearningResultOutput{}, options).(LookupAppsecAdvancedSettingsPiiLearningResultOutput), nil
 		}).(LookupAppsecAdvancedSettingsPiiLearningResultOutput)
 }
 

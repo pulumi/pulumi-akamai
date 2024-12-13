@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetCloudletsRequestControlMatchRuleResult> Invoke(GetCloudletsRequestControlMatchRuleInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCloudletsRequestControlMatchRuleResult>("akamai:index/getCloudletsRequestControlMatchRule:getCloudletsRequestControlMatchRule", args ?? new GetCloudletsRequestControlMatchRuleInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetCloudletsRequestControlMatchRuleResult> Invoke(GetCloudletsRequestControlMatchRuleInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudletsRequestControlMatchRuleResult>("akamai:index/getCloudletsRequestControlMatchRule:getCloudletsRequestControlMatchRule", args ?? new GetCloudletsRequestControlMatchRuleInvokeArgs(), options.WithDefaults());
     }
 
 

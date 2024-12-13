@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetBotmanBotManagementSettingsResult> Invoke(GetBotmanBotManagementSettingsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBotmanBotManagementSettingsResult>("akamai:index/getBotmanBotManagementSettings:getBotmanBotManagementSettings", args ?? new GetBotmanBotManagementSettingsInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetBotmanBotManagementSettingsResult> Invoke(GetBotmanBotManagementSettingsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBotmanBotManagementSettingsResult>("akamai:index/getBotmanBotManagementSettings:getBotmanBotManagementSettings", args ?? new GetBotmanBotManagementSettingsInvokeArgs(), options.WithDefaults());
     }
 
 

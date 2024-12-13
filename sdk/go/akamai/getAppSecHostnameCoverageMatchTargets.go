@@ -38,21 +38,11 @@ type GetAppSecHostnameCoverageMatchTargetsResult struct {
 }
 
 func GetAppSecHostnameCoverageMatchTargetsOutput(ctx *pulumi.Context, args GetAppSecHostnameCoverageMatchTargetsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecHostnameCoverageMatchTargetsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAppSecHostnameCoverageMatchTargetsResultOutput, error) {
 			args := v.(GetAppSecHostnameCoverageMatchTargetsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAppSecHostnameCoverageMatchTargetsResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecHostnameCoverageMatchTargets:getAppSecHostnameCoverageMatchTargets", args, &rv, "", opts...)
-			if err != nil {
-				return GetAppSecHostnameCoverageMatchTargetsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAppSecHostnameCoverageMatchTargetsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAppSecHostnameCoverageMatchTargetsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getAppSecHostnameCoverageMatchTargets:getAppSecHostnameCoverageMatchTargets", args, GetAppSecHostnameCoverageMatchTargetsResultOutput{}, options).(GetAppSecHostnameCoverageMatchTargetsResultOutput), nil
 		}).(GetAppSecHostnameCoverageMatchTargetsResultOutput)
 }
 

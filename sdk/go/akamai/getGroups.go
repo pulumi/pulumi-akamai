@@ -30,18 +30,8 @@ type GetGroupsResult struct {
 
 func GetGroupsOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetGroupsResultOutput {
 	return pulumi.ToOutput(0).ApplyT(func(int) (GetGroupsResultOutput, error) {
-		opts = internal.PkgInvokeDefaultOpts(opts)
-		var rv GetGroupsResult
-		secret, err := ctx.InvokePackageRaw("akamai:index/getGroups:getGroups", nil, &rv, "", opts...)
-		if err != nil {
-			return GetGroupsResultOutput{}, err
-		}
-
-		output := pulumi.ToOutput(rv).(GetGroupsResultOutput)
-		if secret {
-			return pulumi.ToSecret(output).(GetGroupsResultOutput), nil
-		}
-		return output, nil
+		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+		return ctx.InvokeOutput("akamai:index/getGroups:getGroups", nil, GetGroupsResultOutput{}, options).(GetGroupsResultOutput), nil
 	}).(GetGroupsResultOutput)
 }
 

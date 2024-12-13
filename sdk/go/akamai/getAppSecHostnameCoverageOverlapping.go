@@ -38,21 +38,11 @@ type GetAppSecHostnameCoverageOverlappingResult struct {
 }
 
 func GetAppSecHostnameCoverageOverlappingOutput(ctx *pulumi.Context, args GetAppSecHostnameCoverageOverlappingOutputArgs, opts ...pulumi.InvokeOption) GetAppSecHostnameCoverageOverlappingResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAppSecHostnameCoverageOverlappingResultOutput, error) {
 			args := v.(GetAppSecHostnameCoverageOverlappingArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAppSecHostnameCoverageOverlappingResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecHostnameCoverageOverlapping:getAppSecHostnameCoverageOverlapping", args, &rv, "", opts...)
-			if err != nil {
-				return GetAppSecHostnameCoverageOverlappingResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAppSecHostnameCoverageOverlappingResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAppSecHostnameCoverageOverlappingResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getAppSecHostnameCoverageOverlapping:getAppSecHostnameCoverageOverlapping", args, GetAppSecHostnameCoverageOverlappingResultOutput{}, options).(GetAppSecHostnameCoverageOverlappingResultOutput), nil
 		}).(GetAppSecHostnameCoverageOverlappingResultOutput)
 }
 

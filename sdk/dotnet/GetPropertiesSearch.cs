@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetPropertiesSearchResult> Invoke(GetPropertiesSearchInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPropertiesSearchResult>("akamai:index/getPropertiesSearch:getPropertiesSearch", args ?? new GetPropertiesSearchInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetPropertiesSearchResult> Invoke(GetPropertiesSearchInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPropertiesSearchResult>("akamai:index/getPropertiesSearch:getPropertiesSearch", args ?? new GetPropertiesSearchInvokeArgs(), options.WithDefaults());
     }
 
 

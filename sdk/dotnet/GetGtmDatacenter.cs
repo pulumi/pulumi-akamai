@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetGtmDatacenterResult> Invoke(GetGtmDatacenterInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetGtmDatacenterResult>("akamai:index/getGtmDatacenter:getGtmDatacenter", args ?? new GetGtmDatacenterInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetGtmDatacenterResult> Invoke(GetGtmDatacenterInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetGtmDatacenterResult>("akamai:index/getGtmDatacenter:getGtmDatacenter", args ?? new GetGtmDatacenterInvokeArgs(), options.WithDefaults());
     }
 
 

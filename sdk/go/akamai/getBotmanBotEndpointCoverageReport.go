@@ -37,21 +37,11 @@ type GetBotmanBotEndpointCoverageReportResult struct {
 }
 
 func GetBotmanBotEndpointCoverageReportOutput(ctx *pulumi.Context, args GetBotmanBotEndpointCoverageReportOutputArgs, opts ...pulumi.InvokeOption) GetBotmanBotEndpointCoverageReportResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetBotmanBotEndpointCoverageReportResultOutput, error) {
 			args := v.(GetBotmanBotEndpointCoverageReportArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetBotmanBotEndpointCoverageReportResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getBotmanBotEndpointCoverageReport:getBotmanBotEndpointCoverageReport", args, &rv, "", opts...)
-			if err != nil {
-				return GetBotmanBotEndpointCoverageReportResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetBotmanBotEndpointCoverageReportResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetBotmanBotEndpointCoverageReportResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getBotmanBotEndpointCoverageReport:getBotmanBotEndpointCoverageReport", args, GetBotmanBotEndpointCoverageReportResultOutput{}, options).(GetBotmanBotEndpointCoverageReportResultOutput), nil
 		}).(GetBotmanBotEndpointCoverageReportResultOutput)
 }
 

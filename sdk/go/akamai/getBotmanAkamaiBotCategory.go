@@ -35,21 +35,11 @@ type GetBotmanAkamaiBotCategoryResult struct {
 }
 
 func GetBotmanAkamaiBotCategoryOutput(ctx *pulumi.Context, args GetBotmanAkamaiBotCategoryOutputArgs, opts ...pulumi.InvokeOption) GetBotmanAkamaiBotCategoryResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetBotmanAkamaiBotCategoryResultOutput, error) {
 			args := v.(GetBotmanAkamaiBotCategoryArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetBotmanAkamaiBotCategoryResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getBotmanAkamaiBotCategory:getBotmanAkamaiBotCategory", args, &rv, "", opts...)
-			if err != nil {
-				return GetBotmanAkamaiBotCategoryResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetBotmanAkamaiBotCategoryResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetBotmanAkamaiBotCategoryResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getBotmanAkamaiBotCategory:getBotmanAkamaiBotCategory", args, GetBotmanAkamaiBotCategoryResultOutput{}, options).(GetBotmanAkamaiBotCategoryResultOutput), nil
 		}).(GetBotmanAkamaiBotCategoryResultOutput)
 }
 

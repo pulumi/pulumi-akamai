@@ -35,21 +35,11 @@ type GetDatastreamDatasetFieldsResult struct {
 }
 
 func GetDatastreamDatasetFieldsOutput(ctx *pulumi.Context, args GetDatastreamDatasetFieldsOutputArgs, opts ...pulumi.InvokeOption) GetDatastreamDatasetFieldsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetDatastreamDatasetFieldsResultOutput, error) {
 			args := v.(GetDatastreamDatasetFieldsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetDatastreamDatasetFieldsResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getDatastreamDatasetFields:getDatastreamDatasetFields", args, &rv, "", opts...)
-			if err != nil {
-				return GetDatastreamDatasetFieldsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetDatastreamDatasetFieldsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetDatastreamDatasetFieldsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getDatastreamDatasetFields:getDatastreamDatasetFields", args, GetDatastreamDatasetFieldsResultOutput{}, options).(GetDatastreamDatasetFieldsResultOutput), nil
 		}).(GetDatastreamDatasetFieldsResultOutput)
 }
 

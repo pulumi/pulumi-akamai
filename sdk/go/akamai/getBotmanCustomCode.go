@@ -35,21 +35,11 @@ type LookupBotmanCustomCodeResult struct {
 }
 
 func LookupBotmanCustomCodeOutput(ctx *pulumi.Context, args LookupBotmanCustomCodeOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanCustomCodeResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupBotmanCustomCodeResultOutput, error) {
 			args := v.(LookupBotmanCustomCodeArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupBotmanCustomCodeResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getBotmanCustomCode:getBotmanCustomCode", args, &rv, "", opts...)
-			if err != nil {
-				return LookupBotmanCustomCodeResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupBotmanCustomCodeResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupBotmanCustomCodeResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getBotmanCustomCode:getBotmanCustomCode", args, LookupBotmanCustomCodeResultOutput{}, options).(LookupBotmanCustomCodeResultOutput), nil
 		}).(LookupBotmanCustomCodeResultOutput)
 }
 

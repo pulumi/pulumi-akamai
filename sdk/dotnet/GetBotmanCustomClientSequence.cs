@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetBotmanCustomClientSequenceResult> Invoke(GetBotmanCustomClientSequenceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBotmanCustomClientSequenceResult>("akamai:index/getBotmanCustomClientSequence:getBotmanCustomClientSequence", args ?? new GetBotmanCustomClientSequenceInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetBotmanCustomClientSequenceResult> Invoke(GetBotmanCustomClientSequenceInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBotmanCustomClientSequenceResult>("akamai:index/getBotmanCustomClientSequence:getBotmanCustomClientSequence", args ?? new GetBotmanCustomClientSequenceInvokeArgs(), options.WithDefaults());
     }
 
 

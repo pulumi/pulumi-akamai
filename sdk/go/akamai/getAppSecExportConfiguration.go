@@ -40,21 +40,11 @@ type GetAppSecExportConfigurationResult struct {
 }
 
 func GetAppSecExportConfigurationOutput(ctx *pulumi.Context, args GetAppSecExportConfigurationOutputArgs, opts ...pulumi.InvokeOption) GetAppSecExportConfigurationResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAppSecExportConfigurationResultOutput, error) {
 			args := v.(GetAppSecExportConfigurationArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAppSecExportConfigurationResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecExportConfiguration:getAppSecExportConfiguration", args, &rv, "", opts...)
-			if err != nil {
-				return GetAppSecExportConfigurationResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAppSecExportConfigurationResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAppSecExportConfigurationResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getAppSecExportConfiguration:getAppSecExportConfiguration", args, GetAppSecExportConfigurationResultOutput{}, options).(GetAppSecExportConfigurationResultOutput), nil
 		}).(GetAppSecExportConfigurationResultOutput)
 }
 

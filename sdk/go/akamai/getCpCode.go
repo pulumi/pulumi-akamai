@@ -39,21 +39,11 @@ type LookupCpCodeResult struct {
 }
 
 func LookupCpCodeOutput(ctx *pulumi.Context, args LookupCpCodeOutputArgs, opts ...pulumi.InvokeOption) LookupCpCodeResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupCpCodeResultOutput, error) {
 			args := v.(LookupCpCodeArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupCpCodeResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getCpCode:getCpCode", args, &rv, "", opts...)
-			if err != nil {
-				return LookupCpCodeResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupCpCodeResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupCpCodeResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getCpCode:getCpCode", args, LookupCpCodeResultOutput{}, options).(LookupCpCodeResultOutput), nil
 		}).(LookupCpCodeResultOutput)
 }
 

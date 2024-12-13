@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetClientlistListsResult> Invoke(GetClientlistListsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetClientlistListsResult>("akamai:index/getClientlistLists:getClientlistLists", args ?? new GetClientlistListsInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetClientlistListsResult> Invoke(GetClientlistListsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetClientlistListsResult>("akamai:index/getClientlistLists:getClientlistLists", args ?? new GetClientlistListsInvokeArgs(), options.WithDefaults());
     }
 
 

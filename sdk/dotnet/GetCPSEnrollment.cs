@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetCPSEnrollmentResult> Invoke(GetCPSEnrollmentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCPSEnrollmentResult>("akamai:index/getCPSEnrollment:getCPSEnrollment", args ?? new GetCPSEnrollmentInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetCPSEnrollmentResult> Invoke(GetCPSEnrollmentInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCPSEnrollmentResult>("akamai:index/getCPSEnrollment:getCPSEnrollment", args ?? new GetCPSEnrollmentInvokeArgs(), options.WithDefaults());
     }
 
 

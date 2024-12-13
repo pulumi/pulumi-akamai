@@ -37,21 +37,11 @@ type LookupBotmanCustomClientResult struct {
 }
 
 func LookupBotmanCustomClientOutput(ctx *pulumi.Context, args LookupBotmanCustomClientOutputArgs, opts ...pulumi.InvokeOption) LookupBotmanCustomClientResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupBotmanCustomClientResultOutput, error) {
 			args := v.(LookupBotmanCustomClientArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupBotmanCustomClientResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getBotmanCustomClient:getBotmanCustomClient", args, &rv, "", opts...)
-			if err != nil {
-				return LookupBotmanCustomClientResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupBotmanCustomClientResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupBotmanCustomClientResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getBotmanCustomClient:getBotmanCustomClient", args, LookupBotmanCustomClientResultOutput{}, options).(LookupBotmanCustomClientResultOutput), nil
 		}).(LookupBotmanCustomClientResultOutput)
 }
 

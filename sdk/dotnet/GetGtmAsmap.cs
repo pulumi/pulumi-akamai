@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetGtmAsmapResult> Invoke(GetGtmAsmapInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetGtmAsmapResult>("akamai:index/getGtmAsmap:getGtmAsmap", args ?? new GetGtmAsmapInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetGtmAsmapResult> Invoke(GetGtmAsmapInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetGtmAsmapResult>("akamai:index/getGtmAsmap:getGtmAsmap", args ?? new GetGtmAsmapInvokeArgs(), options.WithDefaults());
     }
 
 

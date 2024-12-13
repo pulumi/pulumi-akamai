@@ -30,18 +30,8 @@ type GetIamTimezonesResult struct {
 
 func GetIamTimezonesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetIamTimezonesResultOutput {
 	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamTimezonesResultOutput, error) {
-		opts = internal.PkgInvokeDefaultOpts(opts)
-		var rv GetIamTimezonesResult
-		secret, err := ctx.InvokePackageRaw("akamai:index/getIamTimezones:getIamTimezones", nil, &rv, "", opts...)
-		if err != nil {
-			return GetIamTimezonesResultOutput{}, err
-		}
-
-		output := pulumi.ToOutput(rv).(GetIamTimezonesResultOutput)
-		if secret {
-			return pulumi.ToSecret(output).(GetIamTimezonesResultOutput), nil
-		}
-		return output, nil
+		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+		return ctx.InvokeOutput("akamai:index/getIamTimezones:getIamTimezones", nil, GetIamTimezonesResultOutput{}, options).(GetIamTimezonesResultOutput), nil
 	}).(GetIamTimezonesResultOutput)
 }
 

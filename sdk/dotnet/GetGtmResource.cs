@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetGtmResourceResult> Invoke(GetGtmResourceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetGtmResourceResult>("akamai:index/getGtmResource:getGtmResource", args ?? new GetGtmResourceInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetGtmResourceResult> Invoke(GetGtmResourceInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetGtmResourceResult>("akamai:index/getGtmResource:getGtmResource", args ?? new GetGtmResourceInvokeArgs(), options.WithDefaults());
     }
 
 

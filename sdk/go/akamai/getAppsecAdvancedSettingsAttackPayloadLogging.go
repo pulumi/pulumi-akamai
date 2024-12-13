@@ -38,21 +38,11 @@ type LookupAppsecAdvancedSettingsAttackPayloadLoggingResult struct {
 }
 
 func LookupAppsecAdvancedSettingsAttackPayloadLoggingOutput(ctx *pulumi.Context, args LookupAppsecAdvancedSettingsAttackPayloadLoggingOutputArgs, opts ...pulumi.InvokeOption) LookupAppsecAdvancedSettingsAttackPayloadLoggingResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupAppsecAdvancedSettingsAttackPayloadLoggingResultOutput, error) {
 			args := v.(LookupAppsecAdvancedSettingsAttackPayloadLoggingArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupAppsecAdvancedSettingsAttackPayloadLoggingResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getAppsecAdvancedSettingsAttackPayloadLogging:getAppsecAdvancedSettingsAttackPayloadLogging", args, &rv, "", opts...)
-			if err != nil {
-				return LookupAppsecAdvancedSettingsAttackPayloadLoggingResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupAppsecAdvancedSettingsAttackPayloadLoggingResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupAppsecAdvancedSettingsAttackPayloadLoggingResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getAppsecAdvancedSettingsAttackPayloadLogging:getAppsecAdvancedSettingsAttackPayloadLogging", args, LookupAppsecAdvancedSettingsAttackPayloadLoggingResultOutput{}, options).(LookupAppsecAdvancedSettingsAttackPayloadLoggingResultOutput), nil
 		}).(LookupAppsecAdvancedSettingsAttackPayloadLoggingResultOutput)
 }
 

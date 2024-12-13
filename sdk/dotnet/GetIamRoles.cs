@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetIamRolesResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIamRolesResult>("akamai:index/getIamRoles:getIamRoles", InvokeArgs.Empty, options.WithDefaults());
+
+        public static Output<GetIamRolesResult> Invoke(InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIamRolesResult>("akamai:index/getIamRoles:getIamRoles", InvokeArgs.Empty, options.WithDefaults());
     }
 
 
