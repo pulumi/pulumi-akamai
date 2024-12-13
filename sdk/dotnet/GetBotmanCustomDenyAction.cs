@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetBotmanCustomDenyActionResult> Invoke(GetBotmanCustomDenyActionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBotmanCustomDenyActionResult>("akamai:index/getBotmanCustomDenyAction:getBotmanCustomDenyAction", args ?? new GetBotmanCustomDenyActionInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetBotmanCustomDenyActionResult> Invoke(GetBotmanCustomDenyActionInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBotmanCustomDenyActionResult>("akamai:index/getBotmanCustomDenyAction:getBotmanCustomDenyAction", args ?? new GetBotmanCustomDenyActionInvokeArgs(), options.WithDefaults());
     }
 
 

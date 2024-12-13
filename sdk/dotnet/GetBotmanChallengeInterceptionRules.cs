@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetBotmanChallengeInterceptionRulesResult> Invoke(GetBotmanChallengeInterceptionRulesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBotmanChallengeInterceptionRulesResult>("akamai:index/getBotmanChallengeInterceptionRules:getBotmanChallengeInterceptionRules", args ?? new GetBotmanChallengeInterceptionRulesInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetBotmanChallengeInterceptionRulesResult> Invoke(GetBotmanChallengeInterceptionRulesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBotmanChallengeInterceptionRulesResult>("akamai:index/getBotmanChallengeInterceptionRules:getBotmanChallengeInterceptionRules", args ?? new GetBotmanChallengeInterceptionRulesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetPropertyRulesResult> Invoke(GetPropertyRulesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPropertyRulesResult>("akamai:index/getPropertyRules:getPropertyRules", args ?? new GetPropertyRulesInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetPropertyRulesResult> Invoke(GetPropertyRulesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPropertyRulesResult>("akamai:index/getPropertyRules:getPropertyRules", args ?? new GetPropertyRulesInvokeArgs(), options.WithDefaults());
     }
 
 

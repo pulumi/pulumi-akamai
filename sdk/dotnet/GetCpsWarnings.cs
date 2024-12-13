@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetCpsWarningsResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCpsWarningsResult>("akamai:index/getCpsWarnings:getCpsWarnings", InvokeArgs.Empty, options.WithDefaults());
+
+        public static Output<GetCpsWarningsResult> Invoke(InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCpsWarningsResult>("akamai:index/getCpsWarnings:getCpsWarnings", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

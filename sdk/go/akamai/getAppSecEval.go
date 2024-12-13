@@ -37,21 +37,11 @@ type LookupAppSecEvalResult struct {
 }
 
 func LookupAppSecEvalOutput(ctx *pulumi.Context, args LookupAppSecEvalOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecEvalResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupAppSecEvalResultOutput, error) {
 			args := v.(LookupAppSecEvalArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupAppSecEvalResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecEval:getAppSecEval", args, &rv, "", opts...)
-			if err != nil {
-				return LookupAppSecEvalResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupAppSecEvalResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupAppSecEvalResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getAppSecEval:getAppSecEval", args, LookupAppSecEvalResultOutput{}, options).(LookupAppSecEvalResultOutput), nil
 		}).(LookupAppSecEvalResultOutput)
 }
 

@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetPropertyIncludesResult> Invoke(GetPropertyIncludesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPropertyIncludesResult>("akamai:index/getPropertyIncludes:getPropertyIncludes", args ?? new GetPropertyIncludesInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetPropertyIncludesResult> Invoke(GetPropertyIncludesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPropertyIncludesResult>("akamai:index/getPropertyIncludes:getPropertyIncludes", args ?? new GetPropertyIncludesInvokeArgs(), options.WithDefaults());
     }
 
 

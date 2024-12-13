@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetEdgekvGroupItemsResult> Invoke(GetEdgekvGroupItemsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEdgekvGroupItemsResult>("akamai:index/getEdgekvGroupItems:getEdgekvGroupItems", args ?? new GetEdgekvGroupItemsInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetEdgekvGroupItemsResult> Invoke(GetEdgekvGroupItemsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetEdgekvGroupItemsResult>("akamai:index/getEdgekvGroupItems:getEdgekvGroupItems", args ?? new GetEdgekvGroupItemsInvokeArgs(), options.WithDefaults());
     }
 
 

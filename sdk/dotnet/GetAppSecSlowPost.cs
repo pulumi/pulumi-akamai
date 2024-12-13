@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetAppSecSlowPostResult> Invoke(GetAppSecSlowPostInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecSlowPostResult>("akamai:index/getAppSecSlowPost:getAppSecSlowPost", args ?? new GetAppSecSlowPostInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetAppSecSlowPostResult> Invoke(GetAppSecSlowPostInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecSlowPostResult>("akamai:index/getAppSecSlowPost:getAppSecSlowPost", args ?? new GetAppSecSlowPostInvokeArgs(), options.WithDefaults());
     }
 
 

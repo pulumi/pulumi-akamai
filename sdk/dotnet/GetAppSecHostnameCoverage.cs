@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetAppSecHostnameCoverageResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecHostnameCoverageResult>("akamai:index/getAppSecHostnameCoverage:getAppSecHostnameCoverage", InvokeArgs.Empty, options.WithDefaults());
+
+        public static Output<GetAppSecHostnameCoverageResult> Invoke(InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecHostnameCoverageResult>("akamai:index/getAppSecHostnameCoverage:getAppSecHostnameCoverage", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetAppSecAttackGroupsResult> Invoke(GetAppSecAttackGroupsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecAttackGroupsResult>("akamai:index/getAppSecAttackGroups:getAppSecAttackGroups", args ?? new GetAppSecAttackGroupsInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetAppSecAttackGroupsResult> Invoke(GetAppSecAttackGroupsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecAttackGroupsResult>("akamai:index/getAppSecAttackGroups:getAppSecAttackGroups", args ?? new GetAppSecAttackGroupsInvokeArgs(), options.WithDefaults());
     }
 
 

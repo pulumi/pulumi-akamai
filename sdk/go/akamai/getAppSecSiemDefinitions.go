@@ -36,21 +36,11 @@ type GetAppSecSiemDefinitionsResult struct {
 }
 
 func GetAppSecSiemDefinitionsOutput(ctx *pulumi.Context, args GetAppSecSiemDefinitionsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecSiemDefinitionsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAppSecSiemDefinitionsResultOutput, error) {
 			args := v.(GetAppSecSiemDefinitionsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAppSecSiemDefinitionsResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecSiemDefinitions:getAppSecSiemDefinitions", args, &rv, "", opts...)
-			if err != nil {
-				return GetAppSecSiemDefinitionsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAppSecSiemDefinitionsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAppSecSiemDefinitionsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getAppSecSiemDefinitions:getAppSecSiemDefinitions", args, GetAppSecSiemDefinitionsResultOutput{}, options).(GetAppSecSiemDefinitionsResultOutput), nil
 		}).(GetAppSecSiemDefinitionsResultOutput)
 }
 

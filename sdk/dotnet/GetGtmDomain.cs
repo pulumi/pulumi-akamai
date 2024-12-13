@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetGtmDomainResult> Invoke(GetGtmDomainInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetGtmDomainResult>("akamai:index/getGtmDomain:getGtmDomain", args ?? new GetGtmDomainInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetGtmDomainResult> Invoke(GetGtmDomainInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetGtmDomainResult>("akamai:index/getGtmDomain:getGtmDomain", args ?? new GetGtmDomainInvokeArgs(), options.WithDefaults());
     }
 
 

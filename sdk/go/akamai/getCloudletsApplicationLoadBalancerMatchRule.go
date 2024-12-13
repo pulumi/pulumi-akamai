@@ -35,21 +35,11 @@ type GetCloudletsApplicationLoadBalancerMatchRuleResult struct {
 }
 
 func GetCloudletsApplicationLoadBalancerMatchRuleOutput(ctx *pulumi.Context, args GetCloudletsApplicationLoadBalancerMatchRuleOutputArgs, opts ...pulumi.InvokeOption) GetCloudletsApplicationLoadBalancerMatchRuleResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetCloudletsApplicationLoadBalancerMatchRuleResultOutput, error) {
 			args := v.(GetCloudletsApplicationLoadBalancerMatchRuleArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetCloudletsApplicationLoadBalancerMatchRuleResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getCloudletsApplicationLoadBalancerMatchRule:getCloudletsApplicationLoadBalancerMatchRule", args, &rv, "", opts...)
-			if err != nil {
-				return GetCloudletsApplicationLoadBalancerMatchRuleResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetCloudletsApplicationLoadBalancerMatchRuleResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetCloudletsApplicationLoadBalancerMatchRuleResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getCloudletsApplicationLoadBalancerMatchRule:getCloudletsApplicationLoadBalancerMatchRule", args, GetCloudletsApplicationLoadBalancerMatchRuleResultOutput{}, options).(GetCloudletsApplicationLoadBalancerMatchRuleResultOutput), nil
 		}).(GetCloudletsApplicationLoadBalancerMatchRuleResultOutput)
 }
 

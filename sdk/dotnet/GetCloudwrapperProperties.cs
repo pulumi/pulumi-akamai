@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetCloudwrapperPropertiesResult> Invoke(GetCloudwrapperPropertiesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCloudwrapperPropertiesResult>("akamai:index/getCloudwrapperProperties:getCloudwrapperProperties", args ?? new GetCloudwrapperPropertiesInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetCloudwrapperPropertiesResult> Invoke(GetCloudwrapperPropertiesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudwrapperPropertiesResult>("akamai:index/getCloudwrapperProperties:getCloudwrapperProperties", args ?? new GetCloudwrapperPropertiesInvokeArgs(), options.WithDefaults());
     }
 
 

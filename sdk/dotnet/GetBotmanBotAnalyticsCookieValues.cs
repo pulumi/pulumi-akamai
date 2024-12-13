@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetBotmanBotAnalyticsCookieValuesResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBotmanBotAnalyticsCookieValuesResult>("akamai:index/getBotmanBotAnalyticsCookieValues:getBotmanBotAnalyticsCookieValues", InvokeArgs.Empty, options.WithDefaults());
+
+        public static Output<GetBotmanBotAnalyticsCookieValuesResult> Invoke(InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBotmanBotAnalyticsCookieValuesResult>("akamai:index/getBotmanBotAnalyticsCookieValues:getBotmanBotAnalyticsCookieValues", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

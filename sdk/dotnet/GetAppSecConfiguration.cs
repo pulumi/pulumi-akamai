@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetAppSecConfigurationResult> Invoke(GetAppSecConfigurationInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecConfigurationResult>("akamai:index/getAppSecConfiguration:getAppSecConfiguration", args ?? new GetAppSecConfigurationInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetAppSecConfigurationResult> Invoke(GetAppSecConfigurationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecConfigurationResult>("akamai:index/getAppSecConfiguration:getAppSecConfiguration", args ?? new GetAppSecConfigurationInvokeArgs(), options.WithDefaults());
     }
 
 

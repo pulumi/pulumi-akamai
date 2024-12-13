@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetCloudletsSharedPolicyResult> Invoke(GetCloudletsSharedPolicyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCloudletsSharedPolicyResult>("akamai:index/getCloudletsSharedPolicy:getCloudletsSharedPolicy", args ?? new GetCloudletsSharedPolicyInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetCloudletsSharedPolicyResult> Invoke(GetCloudletsSharedPolicyInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudletsSharedPolicyResult>("akamai:index/getCloudletsSharedPolicy:getCloudletsSharedPolicy", args ?? new GetCloudletsSharedPolicyInvokeArgs(), options.WithDefaults());
     }
 
 

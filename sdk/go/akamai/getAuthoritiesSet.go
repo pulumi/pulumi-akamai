@@ -35,21 +35,11 @@ type GetAuthoritiesSetResult struct {
 }
 
 func GetAuthoritiesSetOutput(ctx *pulumi.Context, args GetAuthoritiesSetOutputArgs, opts ...pulumi.InvokeOption) GetAuthoritiesSetResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAuthoritiesSetResultOutput, error) {
 			args := v.(GetAuthoritiesSetArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAuthoritiesSetResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getAuthoritiesSet:getAuthoritiesSet", args, &rv, "", opts...)
-			if err != nil {
-				return GetAuthoritiesSetResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAuthoritiesSetResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAuthoritiesSetResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getAuthoritiesSet:getAuthoritiesSet", args, GetAuthoritiesSetResultOutput{}, options).(GetAuthoritiesSetResultOutput), nil
 		}).(GetAuthoritiesSetResultOutput)
 }
 

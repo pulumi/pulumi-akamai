@@ -43,21 +43,11 @@ type GetAppSecTuningRecommendationsResult struct {
 }
 
 func GetAppSecTuningRecommendationsOutput(ctx *pulumi.Context, args GetAppSecTuningRecommendationsOutputArgs, opts ...pulumi.InvokeOption) GetAppSecTuningRecommendationsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAppSecTuningRecommendationsResultOutput, error) {
 			args := v.(GetAppSecTuningRecommendationsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAppSecTuningRecommendationsResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecTuningRecommendations:getAppSecTuningRecommendations", args, &rv, "", opts...)
-			if err != nil {
-				return GetAppSecTuningRecommendationsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAppSecTuningRecommendationsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAppSecTuningRecommendationsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getAppSecTuningRecommendations:getAppSecTuningRecommendations", args, GetAppSecTuningRecommendationsResultOutput{}, options).(GetAppSecTuningRecommendationsResultOutput), nil
 		}).(GetAppSecTuningRecommendationsResultOutput)
 }
 

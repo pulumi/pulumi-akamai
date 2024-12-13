@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetDatastreamsResult> Invoke(GetDatastreamsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDatastreamsResult>("akamai:index/getDatastreams:getDatastreams", args ?? new GetDatastreamsInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetDatastreamsResult> Invoke(GetDatastreamsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatastreamsResult>("akamai:index/getDatastreams:getDatastreams", args ?? new GetDatastreamsInvokeArgs(), options.WithDefaults());
     }
 
 

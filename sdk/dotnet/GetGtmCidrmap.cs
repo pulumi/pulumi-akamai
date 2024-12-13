@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetGtmCidrmapResult> Invoke(GetGtmCidrmapInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetGtmCidrmapResult>("akamai:index/getGtmCidrmap:getGtmCidrmap", args ?? new GetGtmCidrmapInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetGtmCidrmapResult> Invoke(GetGtmCidrmapInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetGtmCidrmapResult>("akamai:index/getGtmCidrmap:getGtmCidrmap", args ?? new GetGtmCidrmapInvokeArgs(), options.WithDefaults());
     }
 
 

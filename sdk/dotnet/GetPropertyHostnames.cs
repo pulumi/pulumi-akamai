@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetPropertyHostnamesResult> Invoke(GetPropertyHostnamesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPropertyHostnamesResult>("akamai:index/getPropertyHostnames:getPropertyHostnames", args ?? new GetPropertyHostnamesInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetPropertyHostnamesResult> Invoke(GetPropertyHostnamesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPropertyHostnamesResult>("akamai:index/getPropertyHostnames:getPropertyHostnames", args ?? new GetPropertyHostnamesInvokeArgs(), options.WithDefaults());
     }
 
 

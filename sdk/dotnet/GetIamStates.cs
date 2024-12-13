@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetIamStatesResult> Invoke(GetIamStatesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIamStatesResult>("akamai:index/getIamStates:getIamStates", args ?? new GetIamStatesInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetIamStatesResult> Invoke(GetIamStatesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIamStatesResult>("akamai:index/getIamStates:getIamStates", args ?? new GetIamStatesInvokeArgs(), options.WithDefaults());
     }
 
 

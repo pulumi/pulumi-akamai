@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetBotmanAkamaiDefinedBotResult> Invoke(GetBotmanAkamaiDefinedBotInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBotmanAkamaiDefinedBotResult>("akamai:index/getBotmanAkamaiDefinedBot:getBotmanAkamaiDefinedBot", args ?? new GetBotmanAkamaiDefinedBotInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetBotmanAkamaiDefinedBotResult> Invoke(GetBotmanAkamaiDefinedBotInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetBotmanAkamaiDefinedBotResult>("akamai:index/getBotmanAkamaiDefinedBot:getBotmanAkamaiDefinedBot", args ?? new GetBotmanAkamaiDefinedBotInvokeArgs(), options.WithDefaults());
     }
 
 

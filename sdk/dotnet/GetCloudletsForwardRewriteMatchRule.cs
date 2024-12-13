@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetCloudletsForwardRewriteMatchRuleResult> Invoke(GetCloudletsForwardRewriteMatchRuleInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCloudletsForwardRewriteMatchRuleResult>("akamai:index/getCloudletsForwardRewriteMatchRule:getCloudletsForwardRewriteMatchRule", args ?? new GetCloudletsForwardRewriteMatchRuleInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetCloudletsForwardRewriteMatchRuleResult> Invoke(GetCloudletsForwardRewriteMatchRuleInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudletsForwardRewriteMatchRuleResult>("akamai:index/getCloudletsForwardRewriteMatchRule:getCloudletsForwardRewriteMatchRule", args ?? new GetCloudletsForwardRewriteMatchRuleInvokeArgs(), options.WithDefaults());
     }
 
 

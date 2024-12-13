@@ -35,21 +35,11 @@ type GetCloudletsForwardRewriteMatchRuleResult struct {
 }
 
 func GetCloudletsForwardRewriteMatchRuleOutput(ctx *pulumi.Context, args GetCloudletsForwardRewriteMatchRuleOutputArgs, opts ...pulumi.InvokeOption) GetCloudletsForwardRewriteMatchRuleResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetCloudletsForwardRewriteMatchRuleResultOutput, error) {
 			args := v.(GetCloudletsForwardRewriteMatchRuleArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetCloudletsForwardRewriteMatchRuleResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getCloudletsForwardRewriteMatchRule:getCloudletsForwardRewriteMatchRule", args, &rv, "", opts...)
-			if err != nil {
-				return GetCloudletsForwardRewriteMatchRuleResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetCloudletsForwardRewriteMatchRuleResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetCloudletsForwardRewriteMatchRuleResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getCloudletsForwardRewriteMatchRule:getCloudletsForwardRewriteMatchRule", args, GetCloudletsForwardRewriteMatchRuleResultOutput{}, options).(GetCloudletsForwardRewriteMatchRuleResultOutput), nil
 		}).(GetCloudletsForwardRewriteMatchRuleResultOutput)
 }
 

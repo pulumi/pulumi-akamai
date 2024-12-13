@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetImagingPolicyVideoResult> Invoke(GetImagingPolicyVideoInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetImagingPolicyVideoResult>("akamai:index/getImagingPolicyVideo:getImagingPolicyVideo", args ?? new GetImagingPolicyVideoInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetImagingPolicyVideoResult> Invoke(GetImagingPolicyVideoInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetImagingPolicyVideoResult>("akamai:index/getImagingPolicyVideo:getImagingPolicyVideo", args ?? new GetImagingPolicyVideoInvokeArgs(), options.WithDefaults());
     }
 
 

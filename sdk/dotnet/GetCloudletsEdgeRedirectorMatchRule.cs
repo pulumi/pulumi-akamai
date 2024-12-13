@@ -16,6 +16,9 @@ namespace Pulumi.Akamai
 
         public static Output<GetCloudletsEdgeRedirectorMatchRuleResult> Invoke(GetCloudletsEdgeRedirectorMatchRuleInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCloudletsEdgeRedirectorMatchRuleResult>("akamai:index/getCloudletsEdgeRedirectorMatchRule:getCloudletsEdgeRedirectorMatchRule", args ?? new GetCloudletsEdgeRedirectorMatchRuleInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetCloudletsEdgeRedirectorMatchRuleResult> Invoke(GetCloudletsEdgeRedirectorMatchRuleInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudletsEdgeRedirectorMatchRuleResult>("akamai:index/getCloudletsEdgeRedirectorMatchRule:getCloudletsEdgeRedirectorMatchRule", args ?? new GetCloudletsEdgeRedirectorMatchRuleInvokeArgs(), options.WithDefaults());
     }
 
 

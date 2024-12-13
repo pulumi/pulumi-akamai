@@ -39,21 +39,11 @@ type LookupAppSecPenaltyBoxResult struct {
 }
 
 func LookupAppSecPenaltyBoxOutput(ctx *pulumi.Context, args LookupAppSecPenaltyBoxOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecPenaltyBoxResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupAppSecPenaltyBoxResultOutput, error) {
 			args := v.(LookupAppSecPenaltyBoxArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupAppSecPenaltyBoxResult
-			secret, err := ctx.InvokePackageRaw("akamai:index/getAppSecPenaltyBox:getAppSecPenaltyBox", args, &rv, "", opts...)
-			if err != nil {
-				return LookupAppSecPenaltyBoxResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupAppSecPenaltyBoxResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupAppSecPenaltyBoxResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("akamai:index/getAppSecPenaltyBox:getAppSecPenaltyBox", args, LookupAppSecPenaltyBoxResultOutput{}, options).(LookupAppSecPenaltyBoxResultOutput), nil
 		}).(LookupAppSecPenaltyBoxResultOutput)
 }
 
