@@ -29,7 +29,7 @@ type GetCloudwrapperLocationArgs struct {
 
 // A collection of values returned by getCloudwrapperLocation.
 type GetCloudwrapperLocationResult struct {
-	// Deprecated: Required by the terraform plugin testing framework, always set to `getCloudwrapperLocation`
+	// The provider-assigned unique ID for this managed resource.
 	Id            string `pulumi:"id"`
 	LocationId    string `pulumi:"locationId"`
 	LocationName  string `pulumi:"locationName"`
@@ -71,7 +71,7 @@ func (o GetCloudwrapperLocationResultOutput) ToGetCloudwrapperLocationResultOutp
 	return o
 }
 
-// Deprecated: Required by the terraform plugin testing framework, always set to `getCloudwrapperLocation`
+// The provider-assigned unique ID for this managed resource.
 func (o GetCloudwrapperLocationResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCloudwrapperLocationResult) string { return v.Id }).(pulumi.StringOutput)
 }

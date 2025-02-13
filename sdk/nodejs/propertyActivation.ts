@@ -51,7 +51,7 @@ export class PropertyActivation extends pulumi.CustomResource {
      */
     public readonly note!: pulumi.Output<string | undefined>;
     public readonly propertyId!: pulumi.Output<string>;
-    public readonly ruleErrors!: pulumi.Output<outputs.PropertyActivationRuleError[]>;
+    public /*out*/ readonly ruleErrors!: pulumi.Output<outputs.PropertyActivationRuleError[]>;
     public /*out*/ readonly status!: pulumi.Output<string>;
     /**
      * Enables to set timeout for processing
@@ -104,10 +104,10 @@ export class PropertyActivation extends pulumi.CustomResource {
             resourceInputs["network"] = args ? args.network : undefined;
             resourceInputs["note"] = args ? args.note : undefined;
             resourceInputs["propertyId"] = args ? args.propertyId : undefined;
-            resourceInputs["ruleErrors"] = args ? args.ruleErrors : undefined;
             resourceInputs["timeouts"] = args ? args.timeouts : undefined;
             resourceInputs["version"] = args ? args.version : undefined;
             resourceInputs["errors"] = undefined /*out*/;
+            resourceInputs["ruleErrors"] = undefined /*out*/;
             resourceInputs["status"] = undefined /*out*/;
             resourceInputs["warnings"] = undefined /*out*/;
         }
@@ -169,7 +169,6 @@ export interface PropertyActivationArgs {
      */
     note?: pulumi.Input<string>;
     propertyId: pulumi.Input<string>;
-    ruleErrors?: pulumi.Input<pulumi.Input<inputs.PropertyActivationRuleError>[]>;
     /**
      * Enables to set timeout for processing
      */

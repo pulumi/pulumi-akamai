@@ -20,11 +20,9 @@ public final class GetGtmAsmapResult {
     private @Nullable GetGtmAsmapDefaultDatacenter defaultDatacenter;
     private String domain;
     /**
-     * @deprecated
-     * Required by the terraform plugin testing framework, always set to `gtm_asmap`.
+     * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    @Deprecated /* Required by the terraform plugin testing framework, always set to `gtm_asmap`. */
     private String id;
     private @Nullable List<GetGtmAsmapLink> links;
     private String mapName;
@@ -40,11 +38,9 @@ public final class GetGtmAsmapResult {
         return this.domain;
     }
     /**
-     * @deprecated
-     * Required by the terraform plugin testing framework, always set to `gtm_asmap`.
+     * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    @Deprecated /* Required by the terraform plugin testing framework, always set to `gtm_asmap`. */
     public String id() {
         return this.id;
     }

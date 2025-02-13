@@ -6,6 +6,7 @@ package com.pulumi.akamai;
 import com.pulumi.akamai.DnsZoneArgs;
 import com.pulumi.akamai.Utilities;
 import com.pulumi.akamai.inputs.DnsZoneState;
+import com.pulumi.akamai.outputs.DnsZoneOutboundZoneTransfer;
 import com.pulumi.akamai.outputs.DnsZoneTsigKey;
 import com.pulumi.core.Alias;
 import com.pulumi.core.Output;
@@ -62,6 +63,20 @@ public class DnsZone extends com.pulumi.resources.CustomResource {
 
     public Output<Optional<List<String>>> masters() {
         return Codegen.optional(this.masters);
+    }
+    /**
+     * Outbound zone transfer properties.
+     * 
+     */
+    @Export(name="outboundZoneTransfer", refs={DnsZoneOutboundZoneTransfer.class}, tree="[0]")
+    private Output</* @Nullable */ DnsZoneOutboundZoneTransfer> outboundZoneTransfer;
+
+    /**
+     * @return Outbound zone transfer properties.
+     * 
+     */
+    public Output<Optional<DnsZoneOutboundZoneTransfer>> outboundZoneTransfer() {
+        return Codegen.optional(this.outboundZoneTransfer);
     }
     @Export(name="signAndServe", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> signAndServe;

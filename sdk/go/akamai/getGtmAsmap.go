@@ -35,7 +35,7 @@ type LookupGtmAsmapResult struct {
 	Assignments       []GetGtmAsmapAssignment       `pulumi:"assignments"`
 	DefaultDatacenter *GetGtmAsmapDefaultDatacenter `pulumi:"defaultDatacenter"`
 	Domain            string                        `pulumi:"domain"`
-	// Deprecated: Required by the terraform plugin testing framework, always set to `gtmAsmap`.
+	// The provider-assigned unique ID for this managed resource.
 	Id      string            `pulumi:"id"`
 	Links   []GetGtmAsmapLink `pulumi:"links"`
 	MapName string            `pulumi:"mapName"`
@@ -90,7 +90,7 @@ func (o LookupGtmAsmapResultOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGtmAsmapResult) string { return v.Domain }).(pulumi.StringOutput)
 }
 
-// Deprecated: Required by the terraform plugin testing framework, always set to `gtmAsmap`.
+// The provider-assigned unique ID for this managed resource.
 func (o LookupGtmAsmapResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGtmAsmapResult) string { return v.Id }).(pulumi.StringOutput)
 }

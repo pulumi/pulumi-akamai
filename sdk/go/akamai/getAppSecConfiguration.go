@@ -28,7 +28,8 @@ type LookupAppSecConfigurationArgs struct {
 
 // A collection of values returned by getAppSecConfiguration.
 type LookupAppSecConfigurationResult struct {
-	ConfigId int `pulumi:"configId"`
+	ConfigId  int      `pulumi:"configId"`
+	HostNames []string `pulumi:"hostNames"`
 	// The provider-assigned unique ID for this managed resource.
 	Id                string  `pulumi:"id"`
 	LatestVersion     int     `pulumi:"latestVersion"`
@@ -73,6 +74,10 @@ func (o LookupAppSecConfigurationResultOutput) ToLookupAppSecConfigurationResult
 
 func (o LookupAppSecConfigurationResultOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAppSecConfigurationResult) int { return v.ConfigId }).(pulumi.IntOutput)
+}
+
+func (o LookupAppSecConfigurationResultOutput) HostNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupAppSecConfigurationResult) []string { return v.HostNames }).(pulumi.StringArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.

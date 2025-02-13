@@ -33,6 +33,7 @@ import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyTransformationResize
 import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyTransformationRotate;
 import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyTransformationScale;
 import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyTransformationShears;
+import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyTransformationSmartCrop;
 import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyTransformationTrim;
 import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyTransformationUnsharpMask;
 import com.pulumi.core.annotations.CustomType;
@@ -180,6 +181,11 @@ public final class GetImagingPolicyImagePolicyTransformation {
      * 
      */
     private @Nullable List<GetImagingPolicyImagePolicyTransformationShears> shears;
+    /**
+     * @return Crops around whatever is most important in the image, to a region around a specified area of interest relative to the specified `width` and `height` values. The crop detects any faces present, otherwise features.
+     * 
+     */
+    private @Nullable List<GetImagingPolicyImagePolicyTransformationSmartCrop> smartCrops;
     /**
      * @return Automatically crops uniform backgrounds from the edges of an image.
      * 
@@ -391,6 +397,13 @@ public final class GetImagingPolicyImagePolicyTransformation {
         return this.shears == null ? List.of() : this.shears;
     }
     /**
+     * @return Crops around whatever is most important in the image, to a region around a specified area of interest relative to the specified `width` and `height` values. The crop detects any faces present, otherwise features.
+     * 
+     */
+    public List<GetImagingPolicyImagePolicyTransformationSmartCrop> smartCrops() {
+        return this.smartCrops == null ? List.of() : this.smartCrops;
+    }
+    /**
      * @return Automatically crops uniform backgrounds from the edges of an image.
      * 
      */
@@ -444,6 +457,7 @@ public final class GetImagingPolicyImagePolicyTransformation {
         private @Nullable List<GetImagingPolicyImagePolicyTransformationRotate> rotates;
         private @Nullable List<GetImagingPolicyImagePolicyTransformationScale> scales;
         private @Nullable List<GetImagingPolicyImagePolicyTransformationShears> shears;
+        private @Nullable List<GetImagingPolicyImagePolicyTransformationSmartCrop> smartCrops;
         private @Nullable List<GetImagingPolicyImagePolicyTransformationTrim> trims;
         private @Nullable List<GetImagingPolicyImagePolicyTransformationUnsharpMask> unsharpMasks;
         public Builder() {}
@@ -479,6 +493,7 @@ public final class GetImagingPolicyImagePolicyTransformation {
     	      this.rotates = defaults.rotates;
     	      this.scales = defaults.scales;
     	      this.shears = defaults.shears;
+    	      this.smartCrops = defaults.smartCrops;
     	      this.trims = defaults.trims;
     	      this.unsharpMasks = defaults.unsharpMasks;
         }
@@ -754,6 +769,15 @@ public final class GetImagingPolicyImagePolicyTransformation {
             return shears(List.of(shears));
         }
         @CustomType.Setter
+        public Builder smartCrops(@Nullable List<GetImagingPolicyImagePolicyTransformationSmartCrop> smartCrops) {
+
+            this.smartCrops = smartCrops;
+            return this;
+        }
+        public Builder smartCrops(GetImagingPolicyImagePolicyTransformationSmartCrop... smartCrops) {
+            return smartCrops(List.of(smartCrops));
+        }
+        @CustomType.Setter
         public Builder trims(@Nullable List<GetImagingPolicyImagePolicyTransformationTrim> trims) {
 
             this.trims = trims;
@@ -803,6 +827,7 @@ public final class GetImagingPolicyImagePolicyTransformation {
             _resultValue.rotates = rotates;
             _resultValue.scales = scales;
             _resultValue.shears = shears;
+            _resultValue.smartCrops = smartCrops;
             _resultValue.trims = trims;
             _resultValue.unsharpMasks = unsharpMasks;
             return _resultValue;

@@ -13,8 +13,6 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
-from . import outputs
-from ._inputs import *
 
 __all__ = ['EdgeKvArgs', 'EdgeKv']
 
@@ -25,8 +23,7 @@ class EdgeKvArgs:
                  namespace_name: pulumi.Input[str],
                  network: pulumi.Input[str],
                  retention_in_seconds: pulumi.Input[int],
-                 geo_location: Optional[pulumi.Input[str]] = None,
-                 initial_datas: Optional[pulumi.Input[Sequence[pulumi.Input['EdgeKvInitialDataArgs']]]] = None):
+                 geo_location: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a EdgeKv resource.
         :param pulumi.Input[int] group_id: Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
@@ -34,7 +31,6 @@ class EdgeKvArgs:
         :param pulumi.Input[str] network: The network on which the namespace will be activated
         :param pulumi.Input[int] retention_in_seconds: Retention period for data in this namespace. An update of this value will just affect new EKV items.
         :param pulumi.Input[str] geo_location: Storage location for data
-        :param pulumi.Input[Sequence[pulumi.Input['EdgeKvInitialDataArgs']]] initial_datas: List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
         """
         pulumi.set(__self__, "group_id", group_id)
         pulumi.set(__self__, "namespace_name", namespace_name)
@@ -42,11 +38,6 @@ class EdgeKvArgs:
         pulumi.set(__self__, "retention_in_seconds", retention_in_seconds)
         if geo_location is not None:
             pulumi.set(__self__, "geo_location", geo_location)
-        if initial_datas is not None:
-            warnings.warn("""The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.""", DeprecationWarning)
-            pulumi.log.warn("""initial_datas is deprecated: The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.""")
-        if initial_datas is not None:
-            pulumi.set(__self__, "initial_datas", initial_datas)
 
     @property
     @pulumi.getter(name="groupId")
@@ -108,26 +99,12 @@ class EdgeKvArgs:
     def geo_location(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "geo_location", value)
 
-    @property
-    @pulumi.getter(name="initialDatas")
-    @_utilities.deprecated("""The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.""")
-    def initial_datas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['EdgeKvInitialDataArgs']]]]:
-        """
-        List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
-        """
-        return pulumi.get(self, "initial_datas")
-
-    @initial_datas.setter
-    def initial_datas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['EdgeKvInitialDataArgs']]]]):
-        pulumi.set(self, "initial_datas", value)
-
 
 @pulumi.input_type
 class _EdgeKvState:
     def __init__(__self__, *,
                  geo_location: Optional[pulumi.Input[str]] = None,
                  group_id: Optional[pulumi.Input[int]] = None,
-                 initial_datas: Optional[pulumi.Input[Sequence[pulumi.Input['EdgeKvInitialDataArgs']]]] = None,
                  namespace_name: Optional[pulumi.Input[str]] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  retention_in_seconds: Optional[pulumi.Input[int]] = None):
@@ -135,7 +112,6 @@ class _EdgeKvState:
         Input properties used for looking up and filtering EdgeKv resources.
         :param pulumi.Input[str] geo_location: Storage location for data
         :param pulumi.Input[int] group_id: Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
-        :param pulumi.Input[Sequence[pulumi.Input['EdgeKvInitialDataArgs']]] initial_datas: List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
         :param pulumi.Input[str] namespace_name: Name for the EKV namespace
         :param pulumi.Input[str] network: The network on which the namespace will be activated
         :param pulumi.Input[int] retention_in_seconds: Retention period for data in this namespace. An update of this value will just affect new EKV items.
@@ -144,11 +120,6 @@ class _EdgeKvState:
             pulumi.set(__self__, "geo_location", geo_location)
         if group_id is not None:
             pulumi.set(__self__, "group_id", group_id)
-        if initial_datas is not None:
-            warnings.warn("""The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.""", DeprecationWarning)
-            pulumi.log.warn("""initial_datas is deprecated: The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.""")
-        if initial_datas is not None:
-            pulumi.set(__self__, "initial_datas", initial_datas)
         if namespace_name is not None:
             pulumi.set(__self__, "namespace_name", namespace_name)
         if network is not None:
@@ -179,19 +150,6 @@ class _EdgeKvState:
     @group_id.setter
     def group_id(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "group_id", value)
-
-    @property
-    @pulumi.getter(name="initialDatas")
-    @_utilities.deprecated("""The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.""")
-    def initial_datas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['EdgeKvInitialDataArgs']]]]:
-        """
-        List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
-        """
-        return pulumi.get(self, "initial_datas")
-
-    @initial_datas.setter
-    def initial_datas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['EdgeKvInitialDataArgs']]]]):
-        pulumi.set(self, "initial_datas", value)
 
     @property
     @pulumi.getter(name="namespaceName")
@@ -237,7 +195,6 @@ class EdgeKv(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  geo_location: Optional[pulumi.Input[str]] = None,
                  group_id: Optional[pulumi.Input[int]] = None,
-                 initial_datas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['EdgeKvInitialDataArgs', 'EdgeKvInitialDataArgsDict']]]]] = None,
                  namespace_name: Optional[pulumi.Input[str]] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  retention_in_seconds: Optional[pulumi.Input[int]] = None,
@@ -248,7 +205,6 @@ class EdgeKv(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] geo_location: Storage location for data
         :param pulumi.Input[int] group_id: Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['EdgeKvInitialDataArgs', 'EdgeKvInitialDataArgsDict']]]] initial_datas: List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
         :param pulumi.Input[str] namespace_name: Name for the EKV namespace
         :param pulumi.Input[str] network: The network on which the namespace will be activated
         :param pulumi.Input[int] retention_in_seconds: Retention period for data in this namespace. An update of this value will just affect new EKV items.
@@ -278,7 +234,6 @@ class EdgeKv(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  geo_location: Optional[pulumi.Input[str]] = None,
                  group_id: Optional[pulumi.Input[int]] = None,
-                 initial_datas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['EdgeKvInitialDataArgs', 'EdgeKvInitialDataArgsDict']]]]] = None,
                  namespace_name: Optional[pulumi.Input[str]] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  retention_in_seconds: Optional[pulumi.Input[int]] = None,
@@ -295,7 +250,6 @@ class EdgeKv(pulumi.CustomResource):
             if group_id is None and not opts.urn:
                 raise TypeError("Missing required property 'group_id'")
             __props__.__dict__["group_id"] = group_id
-            __props__.__dict__["initial_datas"] = initial_datas
             if namespace_name is None and not opts.urn:
                 raise TypeError("Missing required property 'namespace_name'")
             __props__.__dict__["namespace_name"] = namespace_name
@@ -317,7 +271,6 @@ class EdgeKv(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             geo_location: Optional[pulumi.Input[str]] = None,
             group_id: Optional[pulumi.Input[int]] = None,
-            initial_datas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['EdgeKvInitialDataArgs', 'EdgeKvInitialDataArgsDict']]]]] = None,
             namespace_name: Optional[pulumi.Input[str]] = None,
             network: Optional[pulumi.Input[str]] = None,
             retention_in_seconds: Optional[pulumi.Input[int]] = None) -> 'EdgeKv':
@@ -330,7 +283,6 @@ class EdgeKv(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] geo_location: Storage location for data
         :param pulumi.Input[int] group_id: Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['EdgeKvInitialDataArgs', 'EdgeKvInitialDataArgsDict']]]] initial_datas: List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
         :param pulumi.Input[str] namespace_name: Name for the EKV namespace
         :param pulumi.Input[str] network: The network on which the namespace will be activated
         :param pulumi.Input[int] retention_in_seconds: Retention period for data in this namespace. An update of this value will just affect new EKV items.
@@ -341,7 +293,6 @@ class EdgeKv(pulumi.CustomResource):
 
         __props__.__dict__["geo_location"] = geo_location
         __props__.__dict__["group_id"] = group_id
-        __props__.__dict__["initial_datas"] = initial_datas
         __props__.__dict__["namespace_name"] = namespace_name
         __props__.__dict__["network"] = network
         __props__.__dict__["retention_in_seconds"] = retention_in_seconds
@@ -362,15 +313,6 @@ class EdgeKv(pulumi.CustomResource):
         Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
         """
         return pulumi.get(self, "group_id")
-
-    @property
-    @pulumi.getter(name="initialDatas")
-    @_utilities.deprecated("""The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.""")
-    def initial_datas(self) -> pulumi.Output[Optional[Sequence['outputs.EdgeKvInitialData']]]:
-        """
-        List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
-        """
-        return pulumi.get(self, "initial_datas")
 
     @property
     @pulumi.getter(name="namespaceName")

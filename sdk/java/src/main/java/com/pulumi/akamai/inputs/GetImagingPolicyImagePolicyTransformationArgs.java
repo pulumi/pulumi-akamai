@@ -33,6 +33,7 @@ import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationResizeA
 import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationRotateArgs;
 import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationScaleArgs;
 import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationShearsArgs;
+import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationSmartCropArgs;
 import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationTrimArgs;
 import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationUnsharpMaskArgs;
 import com.pulumi.core.Output;
@@ -474,6 +475,21 @@ public final class GetImagingPolicyImagePolicyTransformationArgs extends com.pul
     }
 
     /**
+     * Crops around whatever is most important in the image, to a region around a specified area of interest relative to the specified `width` and `height` values. The crop detects any faces present, otherwise features.
+     * 
+     */
+    @Import(name="smartCrops")
+    private @Nullable Output<List<GetImagingPolicyImagePolicyTransformationSmartCropArgs>> smartCrops;
+
+    /**
+     * @return Crops around whatever is most important in the image, to a region around a specified area of interest relative to the specified `width` and `height` values. The crop detects any faces present, otherwise features.
+     * 
+     */
+    public Optional<Output<List<GetImagingPolicyImagePolicyTransformationSmartCropArgs>>> smartCrops() {
+        return Optional.ofNullable(this.smartCrops);
+    }
+
+    /**
      * Automatically crops uniform backgrounds from the edges of an image.
      * 
      */
@@ -536,6 +552,7 @@ public final class GetImagingPolicyImagePolicyTransformationArgs extends com.pul
         this.rotates = $.rotates;
         this.scales = $.scales;
         this.shears = $.shears;
+        this.smartCrops = $.smartCrops;
         this.trims = $.trims;
         this.unsharpMasks = $.unsharpMasks;
     }
@@ -1432,6 +1449,37 @@ public final class GetImagingPolicyImagePolicyTransformationArgs extends com.pul
          */
         public Builder shears(GetImagingPolicyImagePolicyTransformationShearsArgs... shears) {
             return shears(List.of(shears));
+        }
+
+        /**
+         * @param smartCrops Crops around whatever is most important in the image, to a region around a specified area of interest relative to the specified `width` and `height` values. The crop detects any faces present, otherwise features.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder smartCrops(@Nullable Output<List<GetImagingPolicyImagePolicyTransformationSmartCropArgs>> smartCrops) {
+            $.smartCrops = smartCrops;
+            return this;
+        }
+
+        /**
+         * @param smartCrops Crops around whatever is most important in the image, to a region around a specified area of interest relative to the specified `width` and `height` values. The crop detects any faces present, otherwise features.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder smartCrops(List<GetImagingPolicyImagePolicyTransformationSmartCropArgs> smartCrops) {
+            return smartCrops(Output.of(smartCrops));
+        }
+
+        /**
+         * @param smartCrops Crops around whatever is most important in the image, to a region around a specified area of interest relative to the specified `width` and `height` values. The crop detects any faces present, otherwise features.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder smartCrops(GetImagingPolicyImagePolicyTransformationSmartCropArgs... smartCrops) {
+            return smartCrops(List.of(smartCrops));
         }
 
         /**

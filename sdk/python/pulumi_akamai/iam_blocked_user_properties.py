@@ -24,9 +24,9 @@ class IamBlockedUserPropertiesArgs:
                  identity_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a IamBlockedUserProperties resource.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] blocked_properties: List of properties to block for a user
-        :param pulumi.Input[int] group_id: A unique identifier for a group
-        :param pulumi.Input[str] identity_id: A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] blocked_properties: List of properties to block for a user.
+        :param pulumi.Input[int] group_id: A unique identifier for a group.
+        :param pulumi.Input[str] identity_id: A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID.
         """
         pulumi.set(__self__, "blocked_properties", blocked_properties)
         pulumi.set(__self__, "group_id", group_id)
@@ -36,7 +36,7 @@ class IamBlockedUserPropertiesArgs:
     @pulumi.getter(name="blockedProperties")
     def blocked_properties(self) -> pulumi.Input[Sequence[pulumi.Input[int]]]:
         """
-        List of properties to block for a user
+        List of properties to block for a user.
         """
         return pulumi.get(self, "blocked_properties")
 
@@ -48,7 +48,7 @@ class IamBlockedUserPropertiesArgs:
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Input[int]:
         """
-        A unique identifier for a group
+        A unique identifier for a group.
         """
         return pulumi.get(self, "group_id")
 
@@ -60,7 +60,7 @@ class IamBlockedUserPropertiesArgs:
     @pulumi.getter(name="identityId")
     def identity_id(self) -> pulumi.Input[str]:
         """
-        A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID
+        A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID.
         """
         return pulumi.get(self, "identity_id")
 
@@ -77,9 +77,9 @@ class _IamBlockedUserPropertiesState:
                  identity_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering IamBlockedUserProperties resources.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] blocked_properties: List of properties to block for a user
-        :param pulumi.Input[int] group_id: A unique identifier for a group
-        :param pulumi.Input[str] identity_id: A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] blocked_properties: List of properties to block for a user.
+        :param pulumi.Input[int] group_id: A unique identifier for a group.
+        :param pulumi.Input[str] identity_id: A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID.
         """
         if blocked_properties is not None:
             pulumi.set(__self__, "blocked_properties", blocked_properties)
@@ -92,7 +92,7 @@ class _IamBlockedUserPropertiesState:
     @pulumi.getter(name="blockedProperties")
     def blocked_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
         """
-        List of properties to block for a user
+        List of properties to block for a user.
         """
         return pulumi.get(self, "blocked_properties")
 
@@ -104,7 +104,7 @@ class _IamBlockedUserPropertiesState:
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[pulumi.Input[int]]:
         """
-        A unique identifier for a group
+        A unique identifier for a group.
         """
         return pulumi.get(self, "group_id")
 
@@ -116,7 +116,7 @@ class _IamBlockedUserPropertiesState:
     @pulumi.getter(name="identityId")
     def identity_id(self) -> Optional[pulumi.Input[str]]:
         """
-        A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID
+        A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID.
         """
         return pulumi.get(self, "identity_id")
 
@@ -138,9 +138,9 @@ class IamBlockedUserProperties(pulumi.CustomResource):
         Create a IamBlockedUserProperties resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] blocked_properties: List of properties to block for a user
-        :param pulumi.Input[int] group_id: A unique identifier for a group
-        :param pulumi.Input[str] identity_id: A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] blocked_properties: List of properties to block for a user.
+        :param pulumi.Input[int] group_id: A unique identifier for a group.
+        :param pulumi.Input[str] identity_id: A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID.
         """
         ...
     @overload
@@ -206,9 +206,9 @@ class IamBlockedUserProperties(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] blocked_properties: List of properties to block for a user
-        :param pulumi.Input[int] group_id: A unique identifier for a group
-        :param pulumi.Input[str] identity_id: A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] blocked_properties: List of properties to block for a user.
+        :param pulumi.Input[int] group_id: A unique identifier for a group.
+        :param pulumi.Input[str] identity_id: A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -223,7 +223,7 @@ class IamBlockedUserProperties(pulumi.CustomResource):
     @pulumi.getter(name="blockedProperties")
     def blocked_properties(self) -> pulumi.Output[Sequence[int]]:
         """
-        List of properties to block for a user
+        List of properties to block for a user.
         """
         return pulumi.get(self, "blocked_properties")
 
@@ -231,7 +231,7 @@ class IamBlockedUserProperties(pulumi.CustomResource):
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Output[int]:
         """
-        A unique identifier for a group
+        A unique identifier for a group.
         """
         return pulumi.get(self, "group_id")
 
@@ -239,7 +239,7 @@ class IamBlockedUserProperties(pulumi.CustomResource):
     @pulumi.getter(name="identityId")
     def identity_id(self) -> pulumi.Output[str]:
         """
-        A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID
+        A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID.
         """
         return pulumi.get(self, "identity_id")
 

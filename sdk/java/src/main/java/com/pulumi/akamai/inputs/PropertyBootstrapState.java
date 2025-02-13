@@ -16,6 +16,21 @@ public final class PropertyBootstrapState extends com.pulumi.resources.ResourceA
     public static final PropertyBootstrapState Empty = new PropertyBootstrapState();
 
     /**
+     * ID of the property in the Identity and Access Management API.
+     * 
+     */
+    @Import(name="assetId")
+    private @Nullable Output<String> assetId;
+
+    /**
+     * @return ID of the property in the Identity and Access Management API.
+     * 
+     */
+    public Optional<Output<String>> assetId() {
+        return Optional.ofNullable(this.assetId);
+    }
+
+    /**
      * Contract ID to be assigned to the Property
      * 
      */
@@ -78,6 +93,7 @@ public final class PropertyBootstrapState extends com.pulumi.resources.ResourceA
     private PropertyBootstrapState() {}
 
     private PropertyBootstrapState(PropertyBootstrapState $) {
+        this.assetId = $.assetId;
         this.contractId = $.contractId;
         this.groupId = $.groupId;
         this.name = $.name;
@@ -100,6 +116,27 @@ public final class PropertyBootstrapState extends com.pulumi.resources.ResourceA
 
         public Builder(PropertyBootstrapState defaults) {
             $ = new PropertyBootstrapState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param assetId ID of the property in the Identity and Access Management API.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assetId(@Nullable Output<String> assetId) {
+            $.assetId = assetId;
+            return this;
+        }
+
+        /**
+         * @param assetId ID of the property in the Identity and Access Management API.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assetId(String assetId) {
+            return assetId(Output.of(assetId));
         }
 
         /**

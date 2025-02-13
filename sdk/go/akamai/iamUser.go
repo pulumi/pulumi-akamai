@@ -15,53 +15,59 @@ import (
 type IamUser struct {
 	pulumi.CustomResourceState
 
-	// The user's street address
+	// The user's street address.
 	Address pulumi.StringOutput `pulumi:"address"`
-	// A user's per-group role assignments, in JSON form
+	// A user's per-group role assignments, in JSON form.
 	AuthGrantsJson pulumi.StringOutput `pulumi:"authGrantsJson"`
-	// The user's city
+	// The user's city.
 	City pulumi.StringPtrOutput `pulumi:"city"`
-	// To help characterize the user, the value can be any that are available from the view-contact-types operation
+	// To help characterize the user, the value can be any that are available from the view-contact-types operation.
 	ContactType pulumi.StringOutput `pulumi:"contactType"`
-	// As part of the user's location, the value can be any that are available from the view-supported-countries operation
+	// As part of the user's location, the value can be any that are available from the view-supported-countries operation.
 	Country pulumi.StringOutput `pulumi:"country"`
-	// The user's email address
+	// The user's email address.
 	Email pulumi.StringOutput `pulumi:"email"`
-	// Indicates whether email update is pending
+	// Indicates whether email update is pending.
 	EmailUpdatePending pulumi.BoolOutput `pulumi:"emailUpdatePending"`
-	// Indicates whether two-factor authentication is allowed
-	EnableTfa pulumi.BoolOutput `pulumi:"enableTfa"`
-	// The user's first name
+	// Indicates whether multi-factor authentication is allowed.
+	EnableMfa pulumi.BoolPtrOutput `pulumi:"enableMfa"`
+	// Indicates whether two-factor authentication is allowed.
+	EnableTfa pulumi.BoolPtrOutput `pulumi:"enableTfa"`
+	// The user's first name.
 	FirstName pulumi.StringOutput `pulumi:"firstName"`
-	// The user's position at your company
+	// The user's position at your company.
 	JobTitle pulumi.StringPtrOutput `pulumi:"jobTitle"`
-	// ISO 8601 timestamp indicating when the user last logged in
+	// ISO 8601 timestamp indicating when the user last logged in.
 	LastLogin pulumi.StringOutput `pulumi:"lastLogin"`
-	// The user's surname
+	// The user's surname.
 	LastName pulumi.StringOutput `pulumi:"lastName"`
-	// Flag to block a user account
+	// Flag to block a user account.
 	Lock pulumi.BoolPtrOutput `pulumi:"lock"`
-	// The user's mobile phone number
+	// The user's mobile phone number.
 	MobilePhone pulumi.StringPtrOutput `pulumi:"mobilePhone"`
-	// The date a user's password expires
+	// New password for a user.
+	Password pulumi.StringPtrOutput `pulumi:"password"`
+	// The date a user's password expires.
 	PasswordExpiredAfter pulumi.StringOutput `pulumi:"passwordExpiredAfter"`
-	// The user's main phone number
+	// The user's main phone number.
 	Phone pulumi.StringPtrOutput `pulumi:"phone"`
-	// The value can be any that are available from the view-languages operation
+	// The value can be any that are available from the view-languages operation.
 	PreferredLanguage pulumi.StringOutput `pulumi:"preferredLanguage"`
-	// The user's secondary email address
+	// The user's secondary email address.
 	SecondaryEmail pulumi.StringPtrOutput `pulumi:"secondaryEmail"`
-	// The number of seconds it takes for the user's Control Center session to time out if there hasn't been any activity
+	// The number of seconds it takes for the user's Control Center session to time out if there hasn't been any activity.
 	SessionTimeout pulumi.IntOutput `pulumi:"sessionTimeout"`
-	// The user's state
+	// The user's state.
 	State pulumi.StringPtrOutput `pulumi:"state"`
-	// Indicates whether two-factor authentication is configured
+	// Indicates whether two-factor authentication is configured.
 	TfaConfigured pulumi.BoolOutput `pulumi:"tfaConfigured"`
-	// The user's time zone. The value can be any that are available from the view-time-zones operation
+	// The user's time zone. The value can be any that are available from the view-time-zones operation.
 	TimeZone pulumi.StringOutput `pulumi:"timeZone"`
-	// A user's `loginId`. Typically, a user's email address
+	// A user's `loginId`. Typically, a user's email address.
 	UserName pulumi.StringOutput `pulumi:"userName"`
-	// The user's five-digit ZIP code
+	// Specifies email notifications the user receives for products.
+	UserNotifications IamUserUserNotificationsOutput `pulumi:"userNotifications"`
+	// The user's five-digit ZIP code.
 	ZipCode pulumi.StringPtrOutput `pulumi:"zipCode"`
 }
 
@@ -81,15 +87,19 @@ func NewIamUser(ctx *pulumi.Context,
 	if args.Email == nil {
 		return nil, errors.New("invalid value for required argument 'Email'")
 	}
-	if args.EnableTfa == nil {
-		return nil, errors.New("invalid value for required argument 'EnableTfa'")
-	}
 	if args.FirstName == nil {
 		return nil, errors.New("invalid value for required argument 'FirstName'")
 	}
 	if args.LastName == nil {
 		return nil, errors.New("invalid value for required argument 'LastName'")
 	}
+	if args.Password != nil {
+		args.Password = pulumi.ToSecret(args.Password).(pulumi.StringPtrInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"password",
+	})
+	opts = append(opts, secrets)
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource IamUser
 	err := ctx.RegisterResource("akamai:index/iamUser:IamUser", name, args, &resource, opts...)
@@ -113,104 +123,116 @@ func GetIamUser(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering IamUser resources.
 type iamUserState struct {
-	// The user's street address
+	// The user's street address.
 	Address *string `pulumi:"address"`
-	// A user's per-group role assignments, in JSON form
+	// A user's per-group role assignments, in JSON form.
 	AuthGrantsJson *string `pulumi:"authGrantsJson"`
-	// The user's city
+	// The user's city.
 	City *string `pulumi:"city"`
-	// To help characterize the user, the value can be any that are available from the view-contact-types operation
+	// To help characterize the user, the value can be any that are available from the view-contact-types operation.
 	ContactType *string `pulumi:"contactType"`
-	// As part of the user's location, the value can be any that are available from the view-supported-countries operation
+	// As part of the user's location, the value can be any that are available from the view-supported-countries operation.
 	Country *string `pulumi:"country"`
-	// The user's email address
+	// The user's email address.
 	Email *string `pulumi:"email"`
-	// Indicates whether email update is pending
+	// Indicates whether email update is pending.
 	EmailUpdatePending *bool `pulumi:"emailUpdatePending"`
-	// Indicates whether two-factor authentication is allowed
+	// Indicates whether multi-factor authentication is allowed.
+	EnableMfa *bool `pulumi:"enableMfa"`
+	// Indicates whether two-factor authentication is allowed.
 	EnableTfa *bool `pulumi:"enableTfa"`
-	// The user's first name
+	// The user's first name.
 	FirstName *string `pulumi:"firstName"`
-	// The user's position at your company
+	// The user's position at your company.
 	JobTitle *string `pulumi:"jobTitle"`
-	// ISO 8601 timestamp indicating when the user last logged in
+	// ISO 8601 timestamp indicating when the user last logged in.
 	LastLogin *string `pulumi:"lastLogin"`
-	// The user's surname
+	// The user's surname.
 	LastName *string `pulumi:"lastName"`
-	// Flag to block a user account
+	// Flag to block a user account.
 	Lock *bool `pulumi:"lock"`
-	// The user's mobile phone number
+	// The user's mobile phone number.
 	MobilePhone *string `pulumi:"mobilePhone"`
-	// The date a user's password expires
+	// New password for a user.
+	Password *string `pulumi:"password"`
+	// The date a user's password expires.
 	PasswordExpiredAfter *string `pulumi:"passwordExpiredAfter"`
-	// The user's main phone number
+	// The user's main phone number.
 	Phone *string `pulumi:"phone"`
-	// The value can be any that are available from the view-languages operation
+	// The value can be any that are available from the view-languages operation.
 	PreferredLanguage *string `pulumi:"preferredLanguage"`
-	// The user's secondary email address
+	// The user's secondary email address.
 	SecondaryEmail *string `pulumi:"secondaryEmail"`
-	// The number of seconds it takes for the user's Control Center session to time out if there hasn't been any activity
+	// The number of seconds it takes for the user's Control Center session to time out if there hasn't been any activity.
 	SessionTimeout *int `pulumi:"sessionTimeout"`
-	// The user's state
+	// The user's state.
 	State *string `pulumi:"state"`
-	// Indicates whether two-factor authentication is configured
+	// Indicates whether two-factor authentication is configured.
 	TfaConfigured *bool `pulumi:"tfaConfigured"`
-	// The user's time zone. The value can be any that are available from the view-time-zones operation
+	// The user's time zone. The value can be any that are available from the view-time-zones operation.
 	TimeZone *string `pulumi:"timeZone"`
-	// A user's `loginId`. Typically, a user's email address
+	// A user's `loginId`. Typically, a user's email address.
 	UserName *string `pulumi:"userName"`
-	// The user's five-digit ZIP code
+	// Specifies email notifications the user receives for products.
+	UserNotifications *IamUserUserNotifications `pulumi:"userNotifications"`
+	// The user's five-digit ZIP code.
 	ZipCode *string `pulumi:"zipCode"`
 }
 
 type IamUserState struct {
-	// The user's street address
+	// The user's street address.
 	Address pulumi.StringPtrInput
-	// A user's per-group role assignments, in JSON form
+	// A user's per-group role assignments, in JSON form.
 	AuthGrantsJson pulumi.StringPtrInput
-	// The user's city
+	// The user's city.
 	City pulumi.StringPtrInput
-	// To help characterize the user, the value can be any that are available from the view-contact-types operation
+	// To help characterize the user, the value can be any that are available from the view-contact-types operation.
 	ContactType pulumi.StringPtrInput
-	// As part of the user's location, the value can be any that are available from the view-supported-countries operation
+	// As part of the user's location, the value can be any that are available from the view-supported-countries operation.
 	Country pulumi.StringPtrInput
-	// The user's email address
+	// The user's email address.
 	Email pulumi.StringPtrInput
-	// Indicates whether email update is pending
+	// Indicates whether email update is pending.
 	EmailUpdatePending pulumi.BoolPtrInput
-	// Indicates whether two-factor authentication is allowed
+	// Indicates whether multi-factor authentication is allowed.
+	EnableMfa pulumi.BoolPtrInput
+	// Indicates whether two-factor authentication is allowed.
 	EnableTfa pulumi.BoolPtrInput
-	// The user's first name
+	// The user's first name.
 	FirstName pulumi.StringPtrInput
-	// The user's position at your company
+	// The user's position at your company.
 	JobTitle pulumi.StringPtrInput
-	// ISO 8601 timestamp indicating when the user last logged in
+	// ISO 8601 timestamp indicating when the user last logged in.
 	LastLogin pulumi.StringPtrInput
-	// The user's surname
+	// The user's surname.
 	LastName pulumi.StringPtrInput
-	// Flag to block a user account
+	// Flag to block a user account.
 	Lock pulumi.BoolPtrInput
-	// The user's mobile phone number
+	// The user's mobile phone number.
 	MobilePhone pulumi.StringPtrInput
-	// The date a user's password expires
+	// New password for a user.
+	Password pulumi.StringPtrInput
+	// The date a user's password expires.
 	PasswordExpiredAfter pulumi.StringPtrInput
-	// The user's main phone number
+	// The user's main phone number.
 	Phone pulumi.StringPtrInput
-	// The value can be any that are available from the view-languages operation
+	// The value can be any that are available from the view-languages operation.
 	PreferredLanguage pulumi.StringPtrInput
-	// The user's secondary email address
+	// The user's secondary email address.
 	SecondaryEmail pulumi.StringPtrInput
-	// The number of seconds it takes for the user's Control Center session to time out if there hasn't been any activity
+	// The number of seconds it takes for the user's Control Center session to time out if there hasn't been any activity.
 	SessionTimeout pulumi.IntPtrInput
-	// The user's state
+	// The user's state.
 	State pulumi.StringPtrInput
-	// Indicates whether two-factor authentication is configured
+	// Indicates whether two-factor authentication is configured.
 	TfaConfigured pulumi.BoolPtrInput
-	// The user's time zone. The value can be any that are available from the view-time-zones operation
+	// The user's time zone. The value can be any that are available from the view-time-zones operation.
 	TimeZone pulumi.StringPtrInput
-	// A user's `loginId`. Typically, a user's email address
+	// A user's `loginId`. Typically, a user's email address.
 	UserName pulumi.StringPtrInput
-	// The user's five-digit ZIP code
+	// Specifies email notifications the user receives for products.
+	UserNotifications IamUserUserNotificationsPtrInput
+	// The user's five-digit ZIP code.
 	ZipCode pulumi.StringPtrInput
 }
 
@@ -219,85 +241,97 @@ func (IamUserState) ElementType() reflect.Type {
 }
 
 type iamUserArgs struct {
-	// The user's street address
+	// The user's street address.
 	Address *string `pulumi:"address"`
-	// A user's per-group role assignments, in JSON form
+	// A user's per-group role assignments, in JSON form.
 	AuthGrantsJson string `pulumi:"authGrantsJson"`
-	// The user's city
+	// The user's city.
 	City *string `pulumi:"city"`
-	// To help characterize the user, the value can be any that are available from the view-contact-types operation
+	// To help characterize the user, the value can be any that are available from the view-contact-types operation.
 	ContactType *string `pulumi:"contactType"`
-	// As part of the user's location, the value can be any that are available from the view-supported-countries operation
+	// As part of the user's location, the value can be any that are available from the view-supported-countries operation.
 	Country string `pulumi:"country"`
-	// The user's email address
+	// The user's email address.
 	Email string `pulumi:"email"`
-	// Indicates whether two-factor authentication is allowed
-	EnableTfa bool `pulumi:"enableTfa"`
-	// The user's first name
+	// Indicates whether multi-factor authentication is allowed.
+	EnableMfa *bool `pulumi:"enableMfa"`
+	// Indicates whether two-factor authentication is allowed.
+	EnableTfa *bool `pulumi:"enableTfa"`
+	// The user's first name.
 	FirstName string `pulumi:"firstName"`
-	// The user's position at your company
+	// The user's position at your company.
 	JobTitle *string `pulumi:"jobTitle"`
-	// The user's surname
+	// The user's surname.
 	LastName string `pulumi:"lastName"`
-	// Flag to block a user account
+	// Flag to block a user account.
 	Lock *bool `pulumi:"lock"`
-	// The user's mobile phone number
+	// The user's mobile phone number.
 	MobilePhone *string `pulumi:"mobilePhone"`
-	// The user's main phone number
+	// New password for a user.
+	Password *string `pulumi:"password"`
+	// The user's main phone number.
 	Phone *string `pulumi:"phone"`
-	// The value can be any that are available from the view-languages operation
+	// The value can be any that are available from the view-languages operation.
 	PreferredLanguage *string `pulumi:"preferredLanguage"`
-	// The user's secondary email address
+	// The user's secondary email address.
 	SecondaryEmail *string `pulumi:"secondaryEmail"`
-	// The number of seconds it takes for the user's Control Center session to time out if there hasn't been any activity
+	// The number of seconds it takes for the user's Control Center session to time out if there hasn't been any activity.
 	SessionTimeout *int `pulumi:"sessionTimeout"`
-	// The user's state
+	// The user's state.
 	State *string `pulumi:"state"`
-	// The user's time zone. The value can be any that are available from the view-time-zones operation
+	// The user's time zone. The value can be any that are available from the view-time-zones operation.
 	TimeZone *string `pulumi:"timeZone"`
-	// The user's five-digit ZIP code
+	// Specifies email notifications the user receives for products.
+	UserNotifications *IamUserUserNotifications `pulumi:"userNotifications"`
+	// The user's five-digit ZIP code.
 	ZipCode *string `pulumi:"zipCode"`
 }
 
 // The set of arguments for constructing a IamUser resource.
 type IamUserArgs struct {
-	// The user's street address
+	// The user's street address.
 	Address pulumi.StringPtrInput
-	// A user's per-group role assignments, in JSON form
+	// A user's per-group role assignments, in JSON form.
 	AuthGrantsJson pulumi.StringInput
-	// The user's city
+	// The user's city.
 	City pulumi.StringPtrInput
-	// To help characterize the user, the value can be any that are available from the view-contact-types operation
+	// To help characterize the user, the value can be any that are available from the view-contact-types operation.
 	ContactType pulumi.StringPtrInput
-	// As part of the user's location, the value can be any that are available from the view-supported-countries operation
+	// As part of the user's location, the value can be any that are available from the view-supported-countries operation.
 	Country pulumi.StringInput
-	// The user's email address
+	// The user's email address.
 	Email pulumi.StringInput
-	// Indicates whether two-factor authentication is allowed
-	EnableTfa pulumi.BoolInput
-	// The user's first name
+	// Indicates whether multi-factor authentication is allowed.
+	EnableMfa pulumi.BoolPtrInput
+	// Indicates whether two-factor authentication is allowed.
+	EnableTfa pulumi.BoolPtrInput
+	// The user's first name.
 	FirstName pulumi.StringInput
-	// The user's position at your company
+	// The user's position at your company.
 	JobTitle pulumi.StringPtrInput
-	// The user's surname
+	// The user's surname.
 	LastName pulumi.StringInput
-	// Flag to block a user account
+	// Flag to block a user account.
 	Lock pulumi.BoolPtrInput
-	// The user's mobile phone number
+	// The user's mobile phone number.
 	MobilePhone pulumi.StringPtrInput
-	// The user's main phone number
+	// New password for a user.
+	Password pulumi.StringPtrInput
+	// The user's main phone number.
 	Phone pulumi.StringPtrInput
-	// The value can be any that are available from the view-languages operation
+	// The value can be any that are available from the view-languages operation.
 	PreferredLanguage pulumi.StringPtrInput
-	// The user's secondary email address
+	// The user's secondary email address.
 	SecondaryEmail pulumi.StringPtrInput
-	// The number of seconds it takes for the user's Control Center session to time out if there hasn't been any activity
+	// The number of seconds it takes for the user's Control Center session to time out if there hasn't been any activity.
 	SessionTimeout pulumi.IntPtrInput
-	// The user's state
+	// The user's state.
 	State pulumi.StringPtrInput
-	// The user's time zone. The value can be any that are available from the view-time-zones operation
+	// The user's time zone. The value can be any that are available from the view-time-zones operation.
 	TimeZone pulumi.StringPtrInput
-	// The user's five-digit ZIP code
+	// Specifies email notifications the user receives for products.
+	UserNotifications IamUserUserNotificationsPtrInput
+	// The user's five-digit ZIP code.
 	ZipCode pulumi.StringPtrInput
 }
 
@@ -388,122 +422,137 @@ func (o IamUserOutput) ToIamUserOutputWithContext(ctx context.Context) IamUserOu
 	return o
 }
 
-// The user's street address
+// The user's street address.
 func (o IamUserOutput) Address() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamUser) pulumi.StringOutput { return v.Address }).(pulumi.StringOutput)
 }
 
-// A user's per-group role assignments, in JSON form
+// A user's per-group role assignments, in JSON form.
 func (o IamUserOutput) AuthGrantsJson() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamUser) pulumi.StringOutput { return v.AuthGrantsJson }).(pulumi.StringOutput)
 }
 
-// The user's city
+// The user's city.
 func (o IamUserOutput) City() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *IamUser) pulumi.StringPtrOutput { return v.City }).(pulumi.StringPtrOutput)
 }
 
-// To help characterize the user, the value can be any that are available from the view-contact-types operation
+// To help characterize the user, the value can be any that are available from the view-contact-types operation.
 func (o IamUserOutput) ContactType() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamUser) pulumi.StringOutput { return v.ContactType }).(pulumi.StringOutput)
 }
 
-// As part of the user's location, the value can be any that are available from the view-supported-countries operation
+// As part of the user's location, the value can be any that are available from the view-supported-countries operation.
 func (o IamUserOutput) Country() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamUser) pulumi.StringOutput { return v.Country }).(pulumi.StringOutput)
 }
 
-// The user's email address
+// The user's email address.
 func (o IamUserOutput) Email() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamUser) pulumi.StringOutput { return v.Email }).(pulumi.StringOutput)
 }
 
-// Indicates whether email update is pending
+// Indicates whether email update is pending.
 func (o IamUserOutput) EmailUpdatePending() pulumi.BoolOutput {
 	return o.ApplyT(func(v *IamUser) pulumi.BoolOutput { return v.EmailUpdatePending }).(pulumi.BoolOutput)
 }
 
-// Indicates whether two-factor authentication is allowed
-func (o IamUserOutput) EnableTfa() pulumi.BoolOutput {
-	return o.ApplyT(func(v *IamUser) pulumi.BoolOutput { return v.EnableTfa }).(pulumi.BoolOutput)
+// Indicates whether multi-factor authentication is allowed.
+func (o IamUserOutput) EnableMfa() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IamUser) pulumi.BoolPtrOutput { return v.EnableMfa }).(pulumi.BoolPtrOutput)
 }
 
-// The user's first name
+// Indicates whether two-factor authentication is allowed.
+func (o IamUserOutput) EnableTfa() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IamUser) pulumi.BoolPtrOutput { return v.EnableTfa }).(pulumi.BoolPtrOutput)
+}
+
+// The user's first name.
 func (o IamUserOutput) FirstName() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamUser) pulumi.StringOutput { return v.FirstName }).(pulumi.StringOutput)
 }
 
-// The user's position at your company
+// The user's position at your company.
 func (o IamUserOutput) JobTitle() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *IamUser) pulumi.StringPtrOutput { return v.JobTitle }).(pulumi.StringPtrOutput)
 }
 
-// ISO 8601 timestamp indicating when the user last logged in
+// ISO 8601 timestamp indicating when the user last logged in.
 func (o IamUserOutput) LastLogin() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamUser) pulumi.StringOutput { return v.LastLogin }).(pulumi.StringOutput)
 }
 
-// The user's surname
+// The user's surname.
 func (o IamUserOutput) LastName() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamUser) pulumi.StringOutput { return v.LastName }).(pulumi.StringOutput)
 }
 
-// Flag to block a user account
+// Flag to block a user account.
 func (o IamUserOutput) Lock() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IamUser) pulumi.BoolPtrOutput { return v.Lock }).(pulumi.BoolPtrOutput)
 }
 
-// The user's mobile phone number
+// The user's mobile phone number.
 func (o IamUserOutput) MobilePhone() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *IamUser) pulumi.StringPtrOutput { return v.MobilePhone }).(pulumi.StringPtrOutput)
 }
 
-// The date a user's password expires
+// New password for a user.
+func (o IamUserOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IamUser) pulumi.StringPtrOutput { return v.Password }).(pulumi.StringPtrOutput)
+}
+
+// The date a user's password expires.
 func (o IamUserOutput) PasswordExpiredAfter() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamUser) pulumi.StringOutput { return v.PasswordExpiredAfter }).(pulumi.StringOutput)
 }
 
-// The user's main phone number
+// The user's main phone number.
 func (o IamUserOutput) Phone() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *IamUser) pulumi.StringPtrOutput { return v.Phone }).(pulumi.StringPtrOutput)
 }
 
-// The value can be any that are available from the view-languages operation
+// The value can be any that are available from the view-languages operation.
 func (o IamUserOutput) PreferredLanguage() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamUser) pulumi.StringOutput { return v.PreferredLanguage }).(pulumi.StringOutput)
 }
 
-// The user's secondary email address
+// The user's secondary email address.
 func (o IamUserOutput) SecondaryEmail() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *IamUser) pulumi.StringPtrOutput { return v.SecondaryEmail }).(pulumi.StringPtrOutput)
 }
 
-// The number of seconds it takes for the user's Control Center session to time out if there hasn't been any activity
+// The number of seconds it takes for the user's Control Center session to time out if there hasn't been any activity.
 func (o IamUserOutput) SessionTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v *IamUser) pulumi.IntOutput { return v.SessionTimeout }).(pulumi.IntOutput)
 }
 
-// The user's state
+// The user's state.
 func (o IamUserOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *IamUser) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
-// Indicates whether two-factor authentication is configured
+// Indicates whether two-factor authentication is configured.
 func (o IamUserOutput) TfaConfigured() pulumi.BoolOutput {
 	return o.ApplyT(func(v *IamUser) pulumi.BoolOutput { return v.TfaConfigured }).(pulumi.BoolOutput)
 }
 
-// The user's time zone. The value can be any that are available from the view-time-zones operation
+// The user's time zone. The value can be any that are available from the view-time-zones operation.
 func (o IamUserOutput) TimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamUser) pulumi.StringOutput { return v.TimeZone }).(pulumi.StringOutput)
 }
 
-// A user's `loginId`. Typically, a user's email address
+// A user's `loginId`. Typically, a user's email address.
 func (o IamUserOutput) UserName() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamUser) pulumi.StringOutput { return v.UserName }).(pulumi.StringOutput)
 }
 
-// The user's five-digit ZIP code
+// Specifies email notifications the user receives for products.
+func (o IamUserOutput) UserNotifications() IamUserUserNotificationsOutput {
+	return o.ApplyT(func(v *IamUser) IamUserUserNotificationsOutput { return v.UserNotifications }).(IamUserUserNotificationsOutput)
+}
+
+// The user's five-digit ZIP code.
 func (o IamUserOutput) ZipCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *IamUser) pulumi.StringPtrOutput { return v.ZipCode }).(pulumi.StringPtrOutput)
 }

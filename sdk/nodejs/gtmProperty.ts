@@ -58,7 +58,6 @@ export class GtmProperty extends pulumi.CustomResource {
     public readonly name!: pulumi.Output<string>;
     public readonly scoreAggregationType!: pulumi.Output<string>;
     public readonly staticRrSets!: pulumi.Output<outputs.GtmPropertyStaticRrSet[] | undefined>;
-    public readonly staticTtl!: pulumi.Output<number | undefined>;
     public readonly stickinessBonusConstant!: pulumi.Output<number | undefined>;
     public readonly stickinessBonusPercentage!: pulumi.Output<number | undefined>;
     public readonly trafficTargets!: pulumi.Output<outputs.GtmPropertyTrafficTarget[] | undefined>;
@@ -106,7 +105,6 @@ export class GtmProperty extends pulumi.CustomResource {
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["scoreAggregationType"] = state ? state.scoreAggregationType : undefined;
             resourceInputs["staticRrSets"] = state ? state.staticRrSets : undefined;
-            resourceInputs["staticTtl"] = state ? state.staticTtl : undefined;
             resourceInputs["stickinessBonusConstant"] = state ? state.stickinessBonusConstant : undefined;
             resourceInputs["stickinessBonusPercentage"] = state ? state.stickinessBonusPercentage : undefined;
             resourceInputs["trafficTargets"] = state ? state.trafficTargets : undefined;
@@ -157,7 +155,6 @@ export class GtmProperty extends pulumi.CustomResource {
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["scoreAggregationType"] = args ? args.scoreAggregationType : undefined;
             resourceInputs["staticRrSets"] = args ? args.staticRrSets : undefined;
-            resourceInputs["staticTtl"] = args ? args.staticTtl : undefined;
             resourceInputs["stickinessBonusConstant"] = args ? args.stickinessBonusConstant : undefined;
             resourceInputs["stickinessBonusPercentage"] = args ? args.stickinessBonusPercentage : undefined;
             resourceInputs["trafficTargets"] = args ? args.trafficTargets : undefined;
@@ -203,7 +200,6 @@ export interface GtmPropertyState {
     name?: pulumi.Input<string>;
     scoreAggregationType?: pulumi.Input<string>;
     staticRrSets?: pulumi.Input<pulumi.Input<inputs.GtmPropertyStaticRrSet>[]>;
-    staticTtl?: pulumi.Input<number>;
     stickinessBonusConstant?: pulumi.Input<number>;
     stickinessBonusPercentage?: pulumi.Input<number>;
     trafficTargets?: pulumi.Input<pulumi.Input<inputs.GtmPropertyTrafficTarget>[]>;
@@ -243,7 +239,6 @@ export interface GtmPropertyArgs {
     name?: pulumi.Input<string>;
     scoreAggregationType: pulumi.Input<string>;
     staticRrSets?: pulumi.Input<pulumi.Input<inputs.GtmPropertyStaticRrSet>[]>;
-    staticTtl?: pulumi.Input<number>;
     stickinessBonusConstant?: pulumi.Input<number>;
     stickinessBonusPercentage?: pulumi.Input<number>;
     trafficTargets?: pulumi.Input<pulumi.Input<inputs.GtmPropertyTrafficTarget>[]>;

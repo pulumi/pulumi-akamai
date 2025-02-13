@@ -21,6 +21,21 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
     public static final PropertyState Empty = new PropertyState();
 
     /**
+     * ID of the property in the Identity and Access Management API.
+     * 
+     */
+    @Import(name="assetId")
+    private @Nullable Output<String> assetId;
+
+    /**
+     * @return ID of the property in the Identity and Access Management API.
+     * 
+     */
+    public Optional<Output<String>> assetId() {
+        return Optional.ofNullable(this.assetId);
+    }
+
+    /**
      * Contract ID to be assigned to the Property
      * 
      */
@@ -232,6 +247,7 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
     private PropertyState() {}
 
     private PropertyState(PropertyState $) {
+        this.assetId = $.assetId;
         this.contractId = $.contractId;
         this.groupId = $.groupId;
         this.hostnames = $.hostnames;
@@ -265,6 +281,27 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
 
         public Builder(PropertyState defaults) {
             $ = new PropertyState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param assetId ID of the property in the Identity and Access Management API.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assetId(@Nullable Output<String> assetId) {
+            $.assetId = assetId;
+            return this;
+        }
+
+        /**
+         * @param assetId ID of the property in the Identity and Access Management API.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assetId(String assetId) {
+            return assetId(Output.of(assetId));
         }
 
         /**

@@ -30,6 +30,7 @@ type LookupPropertyIncludeArgs struct {
 
 // A collection of values returned by getPropertyInclude.
 type LookupPropertyIncludeResult struct {
+	AssetId           string `pulumi:"assetId"`
 	ContractId        string `pulumi:"contractId"`
 	GroupId           string `pulumi:"groupId"`
 	Id                string `pulumi:"id"`
@@ -74,6 +75,10 @@ func (o LookupPropertyIncludeResultOutput) ToLookupPropertyIncludeResultOutput()
 
 func (o LookupPropertyIncludeResultOutput) ToLookupPropertyIncludeResultOutputWithContext(ctx context.Context) LookupPropertyIncludeResultOutput {
 	return o
+}
+
+func (o LookupPropertyIncludeResultOutput) AssetId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupPropertyIncludeResult) string { return v.AssetId }).(pulumi.StringOutput)
 }
 
 func (o LookupPropertyIncludeResultOutput) ContractId() pulumi.StringOutput {

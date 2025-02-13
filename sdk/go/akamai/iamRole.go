@@ -15,13 +15,13 @@ import (
 type IamRole struct {
 	pulumi.CustomResourceState
 
-	// The description for a role
+	// The description for a role.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// The list of existing unique identifiers for the granted roles
+	// The list of existing unique identifiers for the granted roles.
 	GrantedRoles pulumi.IntArrayOutput `pulumi:"grantedRoles"`
-	// The name you supply for a role
+	// The name you supply for a role.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account
+	// The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account.
 	Type pulumi.StringOutput `pulumi:"type"`
 }
 
@@ -61,24 +61,24 @@ func GetIamRole(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering IamRole resources.
 type iamRoleState struct {
-	// The description for a role
+	// The description for a role.
 	Description *string `pulumi:"description"`
-	// The list of existing unique identifiers for the granted roles
+	// The list of existing unique identifiers for the granted roles.
 	GrantedRoles []int `pulumi:"grantedRoles"`
-	// The name you supply for a role
+	// The name you supply for a role.
 	Name *string `pulumi:"name"`
-	// The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account
+	// The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account.
 	Type *string `pulumi:"type"`
 }
 
 type IamRoleState struct {
-	// The description for a role
+	// The description for a role.
 	Description pulumi.StringPtrInput
-	// The list of existing unique identifiers for the granted roles
+	// The list of existing unique identifiers for the granted roles.
 	GrantedRoles pulumi.IntArrayInput
-	// The name you supply for a role
+	// The name you supply for a role.
 	Name pulumi.StringPtrInput
-	// The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account
+	// The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account.
 	Type pulumi.StringPtrInput
 }
 
@@ -87,25 +87,25 @@ func (IamRoleState) ElementType() reflect.Type {
 }
 
 type iamRoleArgs struct {
-	// The description for a role
+	// The description for a role.
 	Description string `pulumi:"description"`
-	// The list of existing unique identifiers for the granted roles
+	// The list of existing unique identifiers for the granted roles.
 	GrantedRoles []int `pulumi:"grantedRoles"`
-	// The name you supply for a role
+	// The name you supply for a role.
 	Name *string `pulumi:"name"`
-	// The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account
+	// The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account.
 	Type *string `pulumi:"type"`
 }
 
 // The set of arguments for constructing a IamRole resource.
 type IamRoleArgs struct {
-	// The description for a role
+	// The description for a role.
 	Description pulumi.StringInput
-	// The list of existing unique identifiers for the granted roles
+	// The list of existing unique identifiers for the granted roles.
 	GrantedRoles pulumi.IntArrayInput
-	// The name you supply for a role
+	// The name you supply for a role.
 	Name pulumi.StringPtrInput
-	// The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account
+	// The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account.
 	Type pulumi.StringPtrInput
 }
 
@@ -196,22 +196,22 @@ func (o IamRoleOutput) ToIamRoleOutputWithContext(ctx context.Context) IamRoleOu
 	return o
 }
 
-// The description for a role
+// The description for a role.
 func (o IamRoleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamRole) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// The list of existing unique identifiers for the granted roles
+// The list of existing unique identifiers for the granted roles.
 func (o IamRoleOutput) GrantedRoles() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v *IamRole) pulumi.IntArrayOutput { return v.GrantedRoles }).(pulumi.IntArrayOutput)
 }
 
-// The name you supply for a role
+// The name you supply for a role.
 func (o IamRoleOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamRole) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account
+// The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account.
 func (o IamRoleOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamRole) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }

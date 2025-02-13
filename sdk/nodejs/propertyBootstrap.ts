@@ -33,6 +33,10 @@ export class PropertyBootstrap extends pulumi.CustomResource {
     }
 
     /**
+     * ID of the property in the Identity and Access Management API.
+     */
+    public /*out*/ readonly assetId!: pulumi.Output<string>;
+    /**
      * Contract ID to be assigned to the Property
      */
     public readonly contractId!: pulumi.Output<string>;
@@ -62,6 +66,7 @@ export class PropertyBootstrap extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PropertyBootstrapState | undefined;
+            resourceInputs["assetId"] = state ? state.assetId : undefined;
             resourceInputs["contractId"] = state ? state.contractId : undefined;
             resourceInputs["groupId"] = state ? state.groupId : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
@@ -81,6 +86,7 @@ export class PropertyBootstrap extends pulumi.CustomResource {
             resourceInputs["groupId"] = args ? args.groupId : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["productId"] = args ? args.productId : undefined;
+            resourceInputs["assetId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(PropertyBootstrap.__pulumiType, name, resourceInputs, opts);
@@ -91,6 +97,10 @@ export class PropertyBootstrap extends pulumi.CustomResource {
  * Input properties used for looking up and filtering PropertyBootstrap resources.
  */
 export interface PropertyBootstrapState {
+    /**
+     * ID of the property in the Identity and Access Management API.
+     */
+    assetId?: pulumi.Input<string>;
     /**
      * Contract ID to be assigned to the Property
      */

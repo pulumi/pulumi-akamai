@@ -28,12 +28,14 @@ class DnsZoneArgs:
                  end_customer_id: Optional[pulumi.Input[str]] = None,
                  group: Optional[pulumi.Input[str]] = None,
                  masters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 outbound_zone_transfer: Optional[pulumi.Input['DnsZoneOutboundZoneTransferArgs']] = None,
                  sign_and_serve: Optional[pulumi.Input[bool]] = None,
                  sign_and_serve_algorithm: Optional[pulumi.Input[str]] = None,
                  target: Optional[pulumi.Input[str]] = None,
                  tsig_key: Optional[pulumi.Input['DnsZoneTsigKeyArgs']] = None):
         """
         The set of arguments for constructing a DnsZone resource.
+        :param pulumi.Input['DnsZoneOutboundZoneTransferArgs'] outbound_zone_transfer: Outbound zone transfer properties.
         """
         pulumi.set(__self__, "contract", contract)
         pulumi.set(__self__, "type", type)
@@ -46,6 +48,8 @@ class DnsZoneArgs:
             pulumi.set(__self__, "group", group)
         if masters is not None:
             pulumi.set(__self__, "masters", masters)
+        if outbound_zone_transfer is not None:
+            pulumi.set(__self__, "outbound_zone_transfer", outbound_zone_transfer)
         if sign_and_serve is not None:
             pulumi.set(__self__, "sign_and_serve", sign_and_serve)
         if sign_and_serve_algorithm is not None:
@@ -119,6 +123,18 @@ class DnsZoneArgs:
         pulumi.set(self, "masters", value)
 
     @property
+    @pulumi.getter(name="outboundZoneTransfer")
+    def outbound_zone_transfer(self) -> Optional[pulumi.Input['DnsZoneOutboundZoneTransferArgs']]:
+        """
+        Outbound zone transfer properties.
+        """
+        return pulumi.get(self, "outbound_zone_transfer")
+
+    @outbound_zone_transfer.setter
+    def outbound_zone_transfer(self, value: Optional[pulumi.Input['DnsZoneOutboundZoneTransferArgs']]):
+        pulumi.set(self, "outbound_zone_transfer", value)
+
+    @property
     @pulumi.getter(name="signAndServe")
     def sign_and_serve(self) -> Optional[pulumi.Input[bool]]:
         return pulumi.get(self, "sign_and_serve")
@@ -165,6 +181,7 @@ class _DnsZoneState:
                  end_customer_id: Optional[pulumi.Input[str]] = None,
                  group: Optional[pulumi.Input[str]] = None,
                  masters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 outbound_zone_transfer: Optional[pulumi.Input['DnsZoneOutboundZoneTransferArgs']] = None,
                  sign_and_serve: Optional[pulumi.Input[bool]] = None,
                  sign_and_serve_algorithm: Optional[pulumi.Input[str]] = None,
                  target: Optional[pulumi.Input[str]] = None,
@@ -174,6 +191,7 @@ class _DnsZoneState:
                  zone: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DnsZone resources.
+        :param pulumi.Input['DnsZoneOutboundZoneTransferArgs'] outbound_zone_transfer: Outbound zone transfer properties.
         """
         if activation_state is not None:
             pulumi.set(__self__, "activation_state", activation_state)
@@ -189,6 +207,8 @@ class _DnsZoneState:
             pulumi.set(__self__, "group", group)
         if masters is not None:
             pulumi.set(__self__, "masters", masters)
+        if outbound_zone_transfer is not None:
+            pulumi.set(__self__, "outbound_zone_transfer", outbound_zone_transfer)
         if sign_and_serve is not None:
             pulumi.set(__self__, "sign_and_serve", sign_and_serve)
         if sign_and_serve_algorithm is not None:
@@ -268,6 +288,18 @@ class _DnsZoneState:
         pulumi.set(self, "masters", value)
 
     @property
+    @pulumi.getter(name="outboundZoneTransfer")
+    def outbound_zone_transfer(self) -> Optional[pulumi.Input['DnsZoneOutboundZoneTransferArgs']]:
+        """
+        Outbound zone transfer properties.
+        """
+        return pulumi.get(self, "outbound_zone_transfer")
+
+    @outbound_zone_transfer.setter
+    def outbound_zone_transfer(self, value: Optional[pulumi.Input['DnsZoneOutboundZoneTransferArgs']]):
+        pulumi.set(self, "outbound_zone_transfer", value)
+
+    @property
     @pulumi.getter(name="signAndServe")
     def sign_and_serve(self) -> Optional[pulumi.Input[bool]]:
         return pulumi.get(self, "sign_and_serve")
@@ -341,6 +373,7 @@ class DnsZone(pulumi.CustomResource):
                  end_customer_id: Optional[pulumi.Input[str]] = None,
                  group: Optional[pulumi.Input[str]] = None,
                  masters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 outbound_zone_transfer: Optional[pulumi.Input[Union['DnsZoneOutboundZoneTransferArgs', 'DnsZoneOutboundZoneTransferArgsDict']]] = None,
                  sign_and_serve: Optional[pulumi.Input[bool]] = None,
                  sign_and_serve_algorithm: Optional[pulumi.Input[str]] = None,
                  target: Optional[pulumi.Input[str]] = None,
@@ -352,6 +385,7 @@ class DnsZone(pulumi.CustomResource):
         Create a DnsZone resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Union['DnsZoneOutboundZoneTransferArgs', 'DnsZoneOutboundZoneTransferArgsDict']] outbound_zone_transfer: Outbound zone transfer properties.
         """
         ...
     @overload
@@ -381,6 +415,7 @@ class DnsZone(pulumi.CustomResource):
                  end_customer_id: Optional[pulumi.Input[str]] = None,
                  group: Optional[pulumi.Input[str]] = None,
                  masters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 outbound_zone_transfer: Optional[pulumi.Input[Union['DnsZoneOutboundZoneTransferArgs', 'DnsZoneOutboundZoneTransferArgsDict']]] = None,
                  sign_and_serve: Optional[pulumi.Input[bool]] = None,
                  sign_and_serve_algorithm: Optional[pulumi.Input[str]] = None,
                  target: Optional[pulumi.Input[str]] = None,
@@ -403,6 +438,7 @@ class DnsZone(pulumi.CustomResource):
             __props__.__dict__["end_customer_id"] = end_customer_id
             __props__.__dict__["group"] = group
             __props__.__dict__["masters"] = masters
+            __props__.__dict__["outbound_zone_transfer"] = outbound_zone_transfer
             __props__.__dict__["sign_and_serve"] = sign_and_serve
             __props__.__dict__["sign_and_serve_algorithm"] = sign_and_serve_algorithm
             __props__.__dict__["target"] = target
@@ -435,6 +471,7 @@ class DnsZone(pulumi.CustomResource):
             end_customer_id: Optional[pulumi.Input[str]] = None,
             group: Optional[pulumi.Input[str]] = None,
             masters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            outbound_zone_transfer: Optional[pulumi.Input[Union['DnsZoneOutboundZoneTransferArgs', 'DnsZoneOutboundZoneTransferArgsDict']]] = None,
             sign_and_serve: Optional[pulumi.Input[bool]] = None,
             sign_and_serve_algorithm: Optional[pulumi.Input[str]] = None,
             target: Optional[pulumi.Input[str]] = None,
@@ -449,6 +486,7 @@ class DnsZone(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Union['DnsZoneOutboundZoneTransferArgs', 'DnsZoneOutboundZoneTransferArgsDict']] outbound_zone_transfer: Outbound zone transfer properties.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -461,6 +499,7 @@ class DnsZone(pulumi.CustomResource):
         __props__.__dict__["end_customer_id"] = end_customer_id
         __props__.__dict__["group"] = group
         __props__.__dict__["masters"] = masters
+        __props__.__dict__["outbound_zone_transfer"] = outbound_zone_transfer
         __props__.__dict__["sign_and_serve"] = sign_and_serve
         __props__.__dict__["sign_and_serve_algorithm"] = sign_and_serve_algorithm
         __props__.__dict__["target"] = target
@@ -504,6 +543,14 @@ class DnsZone(pulumi.CustomResource):
     @pulumi.getter
     def masters(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "masters")
+
+    @property
+    @pulumi.getter(name="outboundZoneTransfer")
+    def outbound_zone_transfer(self) -> pulumi.Output[Optional['outputs.DnsZoneOutboundZoneTransfer']]:
+        """
+        Outbound zone transfer properties.
+        """
+        return pulumi.get(self, "outbound_zone_transfer")
 
     @property
     @pulumi.getter(name="signAndServe")

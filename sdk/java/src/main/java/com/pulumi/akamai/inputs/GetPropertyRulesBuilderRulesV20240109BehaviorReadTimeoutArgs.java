@@ -62,14 +62,14 @@ public final class GetPropertyRulesBuilderRulesV20240109BehaviorReadTimeoutArgs 
     }
 
     /**
-     * Specifies the read timeout necessary before failing with a `504` error. This value should never be zero.
+     * The amount of time an edge server should wait for each read statement to return a response from the forward server after a connection has already been established. Larger objects may need many reads, and this timeout applies to each read separately. Any failure to complete a read within this time limit aborts the request and sends a 504 Gateway Timeout error to the client.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return Specifies the read timeout necessary before failing with a `504` error. This value should never be zero.
+     * @return The amount of time an edge server should wait for each read statement to return a response from the forward server after a connection has already been established. Larger objects may need many reads, and this timeout applies to each read separately. Any failure to complete a read within this time limit aborts the request and sends a 504 Gateway Timeout error to the client.
      * 
      */
     public Optional<Output<String>> value() {
@@ -167,7 +167,7 @@ public final class GetPropertyRulesBuilderRulesV20240109BehaviorReadTimeoutArgs 
         }
 
         /**
-         * @param value Specifies the read timeout necessary before failing with a `504` error. This value should never be zero.
+         * @param value The amount of time an edge server should wait for each read statement to return a response from the forward server after a connection has already been established. Larger objects may need many reads, and this timeout applies to each read separately. Any failure to complete a read within this time limit aborts the request and sends a 504 Gateway Timeout error to the client.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class GetPropertyRulesBuilderRulesV20240109BehaviorReadTimeoutArgs 
         }
 
         /**
-         * @param value Specifies the read timeout necessary before failing with a `504` error. This value should never be zero.
+         * @param value The amount of time an edge server should wait for each read statement to return a response from the forward server after a connection has already been established. Larger objects may need many reads, and this timeout applies to each read separately. Any failure to complete a read within this time limit aborts the request and sends a 504 Gateway Timeout error to the client.
          * 
          * @return builder
          * 

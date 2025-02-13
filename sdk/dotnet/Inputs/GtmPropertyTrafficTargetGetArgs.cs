@@ -21,9 +21,6 @@ namespace Pulumi.Akamai.Inputs
         [Input("handoutCname")]
         public Input<string>? HandoutCname { get; set; }
 
-        [Input("name")]
-        public Input<string>? Name { get; set; }
-
         [Input("precedence")]
         public Input<int>? Precedence { get; set; }
 

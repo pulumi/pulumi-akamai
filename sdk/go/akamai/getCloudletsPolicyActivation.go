@@ -31,7 +31,7 @@ type LookupCloudletsPolicyActivationArgs struct {
 // A collection of values returned by getCloudletsPolicyActivation.
 type LookupCloudletsPolicyActivationResult struct {
 	AssociatedProperties []string `pulumi:"associatedProperties"`
-	// Deprecated: Required by the terraform plugin testing framework.
+	// The provider-assigned unique ID for this managed resource.
 	Id       string `pulumi:"id"`
 	Network  string `pulumi:"network"`
 	PolicyId int    `pulumi:"policyId"`
@@ -78,7 +78,7 @@ func (o LookupCloudletsPolicyActivationResultOutput) AssociatedProperties() pulu
 	return o.ApplyT(func(v LookupCloudletsPolicyActivationResult) []string { return v.AssociatedProperties }).(pulumi.StringArrayOutput)
 }
 
-// Deprecated: Required by the terraform plugin testing framework.
+// The provider-assigned unique ID for this managed resource.
 func (o LookupCloudletsPolicyActivationResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudletsPolicyActivationResult) string { return v.Id }).(pulumi.StringOutput)
 }

@@ -6,6 +6,7 @@ package com.pulumi.akamai;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -48,6 +49,21 @@ public final class AppsecAdvancedSettingsRequestBodyArgs extends com.pulumi.reso
     }
 
     /**
+     * Indicates if the Request body inspection size should be overridden at policy
+     * 
+     */
+    @Import(name="requestBodyInspectionLimitOverride")
+    private @Nullable Output<Boolean> requestBodyInspectionLimitOverride;
+
+    /**
+     * @return Indicates if the Request body inspection size should be overridden at policy
+     * 
+     */
+    public Optional<Output<Boolean>> requestBodyInspectionLimitOverride() {
+        return Optional.ofNullable(this.requestBodyInspectionLimitOverride);
+    }
+
+    /**
      * Unique identifier of the security policy
      * 
      */
@@ -67,6 +83,7 @@ public final class AppsecAdvancedSettingsRequestBodyArgs extends com.pulumi.reso
     private AppsecAdvancedSettingsRequestBodyArgs(AppsecAdvancedSettingsRequestBodyArgs $) {
         this.configId = $.configId;
         this.requestBodyInspectionLimit = $.requestBodyInspectionLimit;
+        this.requestBodyInspectionLimitOverride = $.requestBodyInspectionLimitOverride;
         this.securityPolicyId = $.securityPolicyId;
     }
 
@@ -128,6 +145,27 @@ public final class AppsecAdvancedSettingsRequestBodyArgs extends com.pulumi.reso
          */
         public Builder requestBodyInspectionLimit(String requestBodyInspectionLimit) {
             return requestBodyInspectionLimit(Output.of(requestBodyInspectionLimit));
+        }
+
+        /**
+         * @param requestBodyInspectionLimitOverride Indicates if the Request body inspection size should be overridden at policy
+         * 
+         * @return builder
+         * 
+         */
+        public Builder requestBodyInspectionLimitOverride(@Nullable Output<Boolean> requestBodyInspectionLimitOverride) {
+            $.requestBodyInspectionLimitOverride = requestBodyInspectionLimitOverride;
+            return this;
+        }
+
+        /**
+         * @param requestBodyInspectionLimitOverride Indicates if the Request body inspection size should be overridden at policy
+         * 
+         * @return builder
+         * 
+         */
+        public Builder requestBodyInspectionLimitOverride(Boolean requestBodyInspectionLimitOverride) {
+            return requestBodyInspectionLimitOverride(Output.of(requestBodyInspectionLimitOverride));
         }
 
         /**

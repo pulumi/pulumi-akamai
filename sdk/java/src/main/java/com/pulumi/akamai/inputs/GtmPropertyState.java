@@ -190,13 +190,6 @@ public final class GtmPropertyState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.staticRrSets);
     }
 
-    @Import(name="staticTtl")
-    private @Nullable Output<Integer> staticTtl;
-
-    public Optional<Output<Integer>> staticTtl() {
-        return Optional.ofNullable(this.staticTtl);
-    }
-
     @Import(name="stickinessBonusConstant")
     private @Nullable Output<Integer> stickinessBonusConstant;
 
@@ -287,7 +280,6 @@ public final class GtmPropertyState extends com.pulumi.resources.ResourceArgs {
         this.name = $.name;
         this.scoreAggregationType = $.scoreAggregationType;
         this.staticRrSets = $.staticRrSets;
-        this.staticTtl = $.staticTtl;
         this.stickinessBonusConstant = $.stickinessBonusConstant;
         this.stickinessBonusPercentage = $.stickinessBonusPercentage;
         this.trafficTargets = $.trafficTargets;
@@ -539,15 +531,6 @@ public final class GtmPropertyState extends com.pulumi.resources.ResourceArgs {
 
         public Builder staticRrSets(GtmPropertyStaticRrSetArgs... staticRrSets) {
             return staticRrSets(List.of(staticRrSets));
-        }
-
-        public Builder staticTtl(@Nullable Output<Integer> staticTtl) {
-            $.staticTtl = staticTtl;
-            return this;
-        }
-
-        public Builder staticTtl(Integer staticTtl) {
-            return staticTtl(Output.of(staticTtl));
         }
 
         public Builder stickinessBonusConstant(@Nullable Output<Integer> stickinessBonusConstant) {

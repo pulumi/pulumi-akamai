@@ -33,6 +33,10 @@ export class PropertyInclude extends pulumi.CustomResource {
     }
 
     /**
+     * ID of the include in the Identity and Access Management API.
+     */
+    public /*out*/ readonly assetId!: pulumi.Output<string>;
+    /**
      * Identifies the contract to which the include is assigned
      */
     public readonly contractId!: pulumi.Output<string>;
@@ -94,6 +98,7 @@ export class PropertyInclude extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PropertyIncludeState | undefined;
+            resourceInputs["assetId"] = state ? state.assetId : undefined;
             resourceInputs["contractId"] = state ? state.contractId : undefined;
             resourceInputs["groupId"] = state ? state.groupId : undefined;
             resourceInputs["latestVersion"] = state ? state.latestVersion : undefined;
@@ -127,6 +132,7 @@ export class PropertyInclude extends pulumi.CustomResource {
             resourceInputs["ruleFormat"] = args ? args.ruleFormat : undefined;
             resourceInputs["rules"] = args ? args.rules : undefined;
             resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["assetId"] = undefined /*out*/;
             resourceInputs["latestVersion"] = undefined /*out*/;
             resourceInputs["productionVersion"] = undefined /*out*/;
             resourceInputs["ruleErrors"] = undefined /*out*/;
@@ -142,6 +148,10 @@ export class PropertyInclude extends pulumi.CustomResource {
  * Input properties used for looking up and filtering PropertyInclude resources.
  */
 export interface PropertyIncludeState {
+    /**
+     * ID of the include in the Identity and Access Management API.
+     */
+    assetId?: pulumi.Input<string>;
     /**
      * Identifies the contract to which the include is assigned
      */

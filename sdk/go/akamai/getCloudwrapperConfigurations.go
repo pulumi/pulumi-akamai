@@ -29,7 +29,7 @@ type GetCloudwrapperConfigurationsArgs struct {
 // A collection of values returned by getCloudwrapperConfigurations.
 type GetCloudwrapperConfigurationsResult struct {
 	Configurations []GetCloudwrapperConfigurationsConfiguration `pulumi:"configurations"`
-	// Deprecated: Required by the terraform plugin testing framework, always set to `getCloudwrapperConfigurations`.
+	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 }
 
@@ -72,7 +72,7 @@ func (o GetCloudwrapperConfigurationsResultOutput) Configurations() GetCloudwrap
 	}).(GetCloudwrapperConfigurationsConfigurationArrayOutput)
 }
 
-// Deprecated: Required by the terraform plugin testing framework, always set to `getCloudwrapperConfigurations`.
+// The provider-assigned unique ID for this managed resource.
 func (o GetCloudwrapperConfigurationsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCloudwrapperConfigurationsResult) string { return v.Id }).(pulumi.StringOutput)
 }

@@ -19,11 +19,9 @@ public final class GetCloudletsSharedPolicyResult {
     private String description;
     private Integer groupId;
     /**
-     * @deprecated
-     * Required by the terraform plugin testing framework, always set to `akamai.getCloudletsSharedPolicy`.
+     * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    @Deprecated /* Required by the terraform plugin testing framework, always set to `akamai.getCloudletsSharedPolicy`. */
     private String id;
     private String matchRules;
     private String name;
@@ -46,11 +44,9 @@ public final class GetCloudletsSharedPolicyResult {
         return this.groupId;
     }
     /**
-     * @deprecated
-     * Required by the terraform plugin testing framework, always set to `akamai.getCloudletsSharedPolicy`.
+     * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    @Deprecated /* Required by the terraform plugin testing framework, always set to `akamai.getCloudletsSharedPolicy`. */
     public String id() {
         return this.id;
     }

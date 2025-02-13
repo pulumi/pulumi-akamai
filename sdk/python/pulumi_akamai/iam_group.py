@@ -23,8 +23,8 @@ class IamGroupArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a IamGroup resource.
-        :param pulumi.Input[int] parent_group_id: Unique identifier for the parent group
-        :param pulumi.Input[str] name: Human readable name for a group
+        :param pulumi.Input[int] parent_group_id: Unique identifier for the parent group.
+        :param pulumi.Input[str] name: Human readable name for a group.
         """
         pulumi.set(__self__, "parent_group_id", parent_group_id)
         if name is not None:
@@ -34,7 +34,7 @@ class IamGroupArgs:
     @pulumi.getter(name="parentGroupId")
     def parent_group_id(self) -> pulumi.Input[int]:
         """
-        Unique identifier for the parent group
+        Unique identifier for the parent group.
         """
         return pulumi.get(self, "parent_group_id")
 
@@ -46,7 +46,7 @@ class IamGroupArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        Human readable name for a group
+        Human readable name for a group.
         """
         return pulumi.get(self, "name")
 
@@ -63,9 +63,9 @@ class _IamGroupState:
                  sub_groups: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
         """
         Input properties used for looking up and filtering IamGroup resources.
-        :param pulumi.Input[str] name: Human readable name for a group
-        :param pulumi.Input[int] parent_group_id: Unique identifier for the parent group
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] sub_groups: Subgroups IDs
+        :param pulumi.Input[str] name: Human readable name for a group.
+        :param pulumi.Input[int] parent_group_id: Unique identifier for the parent group.
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] sub_groups: Subgroups IDs.
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -78,7 +78,7 @@ class _IamGroupState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        Human readable name for a group
+        Human readable name for a group.
         """
         return pulumi.get(self, "name")
 
@@ -90,7 +90,7 @@ class _IamGroupState:
     @pulumi.getter(name="parentGroupId")
     def parent_group_id(self) -> Optional[pulumi.Input[int]]:
         """
-        Unique identifier for the parent group
+        Unique identifier for the parent group.
         """
         return pulumi.get(self, "parent_group_id")
 
@@ -102,7 +102,7 @@ class _IamGroupState:
     @pulumi.getter(name="subGroups")
     def sub_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
         """
-        Subgroups IDs
+        Subgroups IDs.
         """
         return pulumi.get(self, "sub_groups")
 
@@ -123,8 +123,8 @@ class IamGroup(pulumi.CustomResource):
         Create a IamGroup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] name: Human readable name for a group
-        :param pulumi.Input[int] parent_group_id: Unique identifier for the parent group
+        :param pulumi.Input[str] name: Human readable name for a group.
+        :param pulumi.Input[int] parent_group_id: Unique identifier for the parent group.
         """
         ...
     @overload
@@ -185,9 +185,9 @@ class IamGroup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] name: Human readable name for a group
-        :param pulumi.Input[int] parent_group_id: Unique identifier for the parent group
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] sub_groups: Subgroups IDs
+        :param pulumi.Input[str] name: Human readable name for a group.
+        :param pulumi.Input[int] parent_group_id: Unique identifier for the parent group.
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] sub_groups: Subgroups IDs.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -202,7 +202,7 @@ class IamGroup(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        Human readable name for a group
+        Human readable name for a group.
         """
         return pulumi.get(self, "name")
 
@@ -210,7 +210,7 @@ class IamGroup(pulumi.CustomResource):
     @pulumi.getter(name="parentGroupId")
     def parent_group_id(self) -> pulumi.Output[int]:
         """
-        Unique identifier for the parent group
+        Unique identifier for the parent group.
         """
         return pulumi.get(self, "parent_group_id")
 
@@ -218,7 +218,7 @@ class IamGroup(pulumi.CustomResource):
     @pulumi.getter(name="subGroups")
     def sub_groups(self) -> pulumi.Output[Sequence[int]]:
         """
-        Subgroups IDs
+        Subgroups IDs.
         """
         return pulumi.get(self, "sub_groups")
 

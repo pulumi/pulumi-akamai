@@ -28,7 +28,7 @@ export interface GetCloudletsPolicyActivationArgs {
 export interface GetCloudletsPolicyActivationResult {
     readonly associatedProperties?: string[];
     /**
-     * @deprecated Required by the terraform plugin testing framework.
+     * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
     readonly network: string;

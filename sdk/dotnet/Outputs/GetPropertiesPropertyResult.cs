@@ -17,11 +17,9 @@ namespace Pulumi.Akamai.Outputs
         public readonly string GroupId;
         public readonly int LatestVersion;
         public readonly string Note;
-        public readonly string ProductId;
         public readonly int ProductionVersion;
         public readonly string PropertyId;
         public readonly string PropertyName;
-        public readonly string RuleFormat;
         public readonly int StagingVersion;
 
         [OutputConstructor]
@@ -34,15 +32,11 @@ namespace Pulumi.Akamai.Outputs
 
             string note,
 
-            string productId,
-
             int productionVersion,
 
             string propertyId,
 
             string propertyName,
-
-            string ruleFormat,
 
             int stagingVersion)
         {
@@ -50,11 +44,9 @@ namespace Pulumi.Akamai.Outputs
             GroupId = groupId;
             LatestVersion = latestVersion;
             Note = note;
-            ProductId = productId;
             ProductionVersion = productionVersion;
             PropertyId = propertyId;
             PropertyName = propertyName;
-            RuleFormat = ruleFormat;
             StagingVersion = stagingVersion;
         }
     }

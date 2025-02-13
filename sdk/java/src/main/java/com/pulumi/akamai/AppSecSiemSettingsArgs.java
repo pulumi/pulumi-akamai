@@ -3,6 +3,7 @@
 
 package com.pulumi.akamai;
 
+import com.pulumi.akamai.inputs.AppSecSiemSettingsExceptionsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
@@ -38,15 +39,15 @@ public final class AppSecSiemSettingsArgs extends com.pulumi.resources.ResourceA
      * Whether Bot Manager events should be included in SIEM events
      * 
      */
-    @Import(name="enableBotmanSiem", required=true)
-    private Output<Boolean> enableBotmanSiem;
+    @Import(name="enableBotmanSiem")
+    private @Nullable Output<Boolean> enableBotmanSiem;
 
     /**
      * @return Whether Bot Manager events should be included in SIEM events
      * 
      */
-    public Output<Boolean> enableBotmanSiem() {
-        return this.enableBotmanSiem;
+    public Optional<Output<Boolean>> enableBotmanSiem() {
+        return Optional.ofNullable(this.enableBotmanSiem);
     }
 
     /**
@@ -77,6 +78,21 @@ public final class AppSecSiemSettingsArgs extends com.pulumi.resources.ResourceA
      */
     public Output<Boolean> enableSiem() {
         return this.enableSiem;
+    }
+
+    /**
+     * Describes all the protections and actions to be excluded from SIEM events
+     * 
+     */
+    @Import(name="exceptions")
+    private @Nullable Output<AppSecSiemSettingsExceptionsArgs> exceptions;
+
+    /**
+     * @return Describes all the protections and actions to be excluded from SIEM events
+     * 
+     */
+    public Optional<Output<AppSecSiemSettingsExceptionsArgs>> exceptions() {
+        return Optional.ofNullable(this.exceptions);
     }
 
     /**
@@ -116,6 +132,7 @@ public final class AppSecSiemSettingsArgs extends com.pulumi.resources.ResourceA
         this.enableBotmanSiem = $.enableBotmanSiem;
         this.enableForAllPolicies = $.enableForAllPolicies;
         this.enableSiem = $.enableSiem;
+        this.exceptions = $.exceptions;
         this.securityPolicyIds = $.securityPolicyIds;
         this.siemId = $.siemId;
     }
@@ -165,7 +182,7 @@ public final class AppSecSiemSettingsArgs extends com.pulumi.resources.ResourceA
          * @return builder
          * 
          */
-        public Builder enableBotmanSiem(Output<Boolean> enableBotmanSiem) {
+        public Builder enableBotmanSiem(@Nullable Output<Boolean> enableBotmanSiem) {
             $.enableBotmanSiem = enableBotmanSiem;
             return this;
         }
@@ -223,6 +240,27 @@ public final class AppSecSiemSettingsArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
+         * @param exceptions Describes all the protections and actions to be excluded from SIEM events
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exceptions(@Nullable Output<AppSecSiemSettingsExceptionsArgs> exceptions) {
+            $.exceptions = exceptions;
+            return this;
+        }
+
+        /**
+         * @param exceptions Describes all the protections and actions to be excluded from SIEM events
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exceptions(AppSecSiemSettingsExceptionsArgs exceptions) {
+            return exceptions(Output.of(exceptions));
+        }
+
+        /**
          * @param securityPolicyIds List of IDs of security policy for which SIEM integration is to be enabled
          * 
          * @return builder
@@ -277,9 +315,6 @@ public final class AppSecSiemSettingsArgs extends com.pulumi.resources.ResourceA
         public AppSecSiemSettingsArgs build() {
             if ($.configId == null) {
                 throw new MissingRequiredPropertyException("AppSecSiemSettingsArgs", "configId");
-            }
-            if ($.enableBotmanSiem == null) {
-                throw new MissingRequiredPropertyException("AppSecSiemSettingsArgs", "enableBotmanSiem");
             }
             if ($.enableForAllPolicies == null) {
                 throw new MissingRequiredPropertyException("AppSecSiemSettingsArgs", "enableForAllPolicies");

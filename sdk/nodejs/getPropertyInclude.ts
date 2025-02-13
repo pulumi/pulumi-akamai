@@ -26,6 +26,7 @@ export interface GetPropertyIncludeArgs {
  * A collection of values returned by getPropertyInclude.
  */
 export interface GetPropertyIncludeResult {
+    readonly assetId: string;
     readonly contractId: string;
     readonly groupId: string;
     readonly id: string;

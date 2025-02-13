@@ -18,13 +18,6 @@ public final class GtmPropertyTrafficTarget {
     private @Nullable Integer datacenterId;
     private @Nullable Boolean enabled;
     private @Nullable String handoutCname;
-    /**
-     * @deprecated
-     * The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored
-     * 
-     */
-    @Deprecated /* The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored */
-    private @Nullable String name;
     private @Nullable Integer precedence;
     private @Nullable List<String> servers;
     private @Nullable Double weight;
@@ -38,15 +31,6 @@ public final class GtmPropertyTrafficTarget {
     }
     public Optional<String> handoutCname() {
         return Optional.ofNullable(this.handoutCname);
-    }
-    /**
-     * @deprecated
-     * The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored
-     * 
-     */
-    @Deprecated /* The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored */
-    public Optional<String> name() {
-        return Optional.ofNullable(this.name);
     }
     public Optional<Integer> precedence() {
         return Optional.ofNullable(this.precedence);
@@ -70,7 +54,6 @@ public final class GtmPropertyTrafficTarget {
         private @Nullable Integer datacenterId;
         private @Nullable Boolean enabled;
         private @Nullable String handoutCname;
-        private @Nullable String name;
         private @Nullable Integer precedence;
         private @Nullable List<String> servers;
         private @Nullable Double weight;
@@ -80,7 +63,6 @@ public final class GtmPropertyTrafficTarget {
     	      this.datacenterId = defaults.datacenterId;
     	      this.enabled = defaults.enabled;
     	      this.handoutCname = defaults.handoutCname;
-    	      this.name = defaults.name;
     	      this.precedence = defaults.precedence;
     	      this.servers = defaults.servers;
     	      this.weight = defaults.weight;
@@ -102,12 +84,6 @@ public final class GtmPropertyTrafficTarget {
         public Builder handoutCname(@Nullable String handoutCname) {
 
             this.handoutCname = handoutCname;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder name(@Nullable String name) {
-
-            this.name = name;
             return this;
         }
         @CustomType.Setter
@@ -136,7 +112,6 @@ public final class GtmPropertyTrafficTarget {
             _resultValue.datacenterId = datacenterId;
             _resultValue.enabled = enabled;
             _resultValue.handoutCname = handoutCname;
-            _resultValue.name = name;
             _resultValue.precedence = precedence;
             _resultValue.servers = servers;
             _resultValue.weight = weight;

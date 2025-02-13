@@ -33,15 +33,15 @@ export class IamGroup extends pulumi.CustomResource {
     }
 
     /**
-     * Human readable name for a group
+     * Human readable name for a group.
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * Unique identifier for the parent group
+     * Unique identifier for the parent group.
      */
     public readonly parentGroupId!: pulumi.Output<number>;
     /**
-     * Subgroups IDs
+     * Subgroups IDs.
      */
     public /*out*/ readonly subGroups!: pulumi.Output<number[]>;
 
@@ -80,15 +80,15 @@ export class IamGroup extends pulumi.CustomResource {
  */
 export interface IamGroupState {
     /**
-     * Human readable name for a group
+     * Human readable name for a group.
      */
     name?: pulumi.Input<string>;
     /**
-     * Unique identifier for the parent group
+     * Unique identifier for the parent group.
      */
     parentGroupId?: pulumi.Input<number>;
     /**
-     * Subgroups IDs
+     * Subgroups IDs.
      */
     subGroups?: pulumi.Input<pulumi.Input<number>[]>;
 }
@@ -98,11 +98,11 @@ export interface IamGroupState {
  */
 export interface IamGroupArgs {
     /**
-     * Human readable name for a group
+     * Human readable name for a group.
      */
     name?: pulumi.Input<string>;
     /**
-     * Unique identifier for the parent group
+     * Unique identifier for the parent group.
      */
     parentGroupId: pulumi.Input<number>;
 }

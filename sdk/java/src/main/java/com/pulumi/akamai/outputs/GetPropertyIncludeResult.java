@@ -11,6 +11,7 @@ import java.util.Objects;
 
 @CustomType
 public final class GetPropertyIncludeResult {
+    private String assetId;
     private String contractId;
     private String groupId;
     private String id;
@@ -22,6 +23,9 @@ public final class GetPropertyIncludeResult {
     private String type;
 
     private GetPropertyIncludeResult() {}
+    public String assetId() {
+        return this.assetId;
+    }
     public String contractId() {
         return this.contractId;
     }
@@ -59,6 +63,7 @@ public final class GetPropertyIncludeResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String assetId;
         private String contractId;
         private String groupId;
         private String id;
@@ -71,6 +76,7 @@ public final class GetPropertyIncludeResult {
         public Builder() {}
         public Builder(GetPropertyIncludeResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.assetId = defaults.assetId;
     	      this.contractId = defaults.contractId;
     	      this.groupId = defaults.groupId;
     	      this.id = defaults.id;
@@ -82,6 +88,14 @@ public final class GetPropertyIncludeResult {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
+        public Builder assetId(String assetId) {
+            if (assetId == null) {
+              throw new MissingRequiredPropertyException("GetPropertyIncludeResult", "assetId");
+            }
+            this.assetId = assetId;
+            return this;
+        }
         @CustomType.Setter
         public Builder contractId(String contractId) {
             if (contractId == null) {
@@ -156,6 +170,7 @@ public final class GetPropertyIncludeResult {
         }
         public GetPropertyIncludeResult build() {
             final var _resultValue = new GetPropertyIncludeResult();
+            _resultValue.assetId = assetId;
             _resultValue.contractId = contractId;
             _resultValue.groupId = groupId;
             _resultValue.id = id;

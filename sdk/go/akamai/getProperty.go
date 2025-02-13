@@ -29,6 +29,7 @@ type LookupPropertyArgs struct {
 
 // A collection of values returned by getProperty.
 type LookupPropertyResult struct {
+	AssetId    string `pulumi:"assetId"`
 	ContractId string `pulumi:"contractId"`
 	GroupId    string `pulumi:"groupId"`
 	// The provider-assigned unique ID for this managed resource.
@@ -77,6 +78,10 @@ func (o LookupPropertyResultOutput) ToLookupPropertyResultOutput() LookupPropert
 
 func (o LookupPropertyResultOutput) ToLookupPropertyResultOutputWithContext(ctx context.Context) LookupPropertyResultOutput {
 	return o
+}
+
+func (o LookupPropertyResultOutput) AssetId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupPropertyResult) string { return v.AssetId }).(pulumi.StringOutput)
 }
 
 func (o LookupPropertyResultOutput) ContractId() pulumi.StringOutput {

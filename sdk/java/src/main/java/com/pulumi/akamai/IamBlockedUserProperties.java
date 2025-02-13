@@ -18,42 +18,42 @@ import javax.annotation.Nullable;
 @ResourceType(type="akamai:index/iamBlockedUserProperties:IamBlockedUserProperties")
 public class IamBlockedUserProperties extends com.pulumi.resources.CustomResource {
     /**
-     * List of properties to block for a user
+     * List of properties to block for a user.
      * 
      */
     @Export(name="blockedProperties", refs={List.class,Integer.class}, tree="[0,1]")
     private Output<List<Integer>> blockedProperties;
 
     /**
-     * @return List of properties to block for a user
+     * @return List of properties to block for a user.
      * 
      */
     public Output<List<Integer>> blockedProperties() {
         return this.blockedProperties;
     }
     /**
-     * A unique identifier for a group
+     * A unique identifier for a group.
      * 
      */
     @Export(name="groupId", refs={Integer.class}, tree="[0]")
     private Output<Integer> groupId;
 
     /**
-     * @return A unique identifier for a group
+     * @return A unique identifier for a group.
      * 
      */
     public Output<Integer> groupId() {
         return this.groupId;
     }
     /**
-     * A unique identifier for a user&#39;s profile, which corresponds to a user&#39;s actual profile or client ID
+     * A unique identifier for a user&#39;s profile, which corresponds to a user&#39;s actual profile or client ID.
      * 
      */
     @Export(name="identityId", refs={String.class}, tree="[0]")
     private Output<String> identityId;
 
     /**
-     * @return A unique identifier for a user&#39;s profile, which corresponds to a user&#39;s actual profile or client ID
+     * @return A unique identifier for a user&#39;s profile, which corresponds to a user&#39;s actual profile or client ID.
      * 
      */
     public Output<String> identityId() {

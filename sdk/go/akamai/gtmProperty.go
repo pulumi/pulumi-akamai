@@ -39,7 +39,6 @@ type GtmProperty struct {
 	Name                      pulumi.StringOutput                 `pulumi:"name"`
 	ScoreAggregationType      pulumi.StringOutput                 `pulumi:"scoreAggregationType"`
 	StaticRrSets              GtmPropertyStaticRrSetArrayOutput   `pulumi:"staticRrSets"`
-	StaticTtl                 pulumi.IntPtrOutput                 `pulumi:"staticTtl"`
 	StickinessBonusConstant   pulumi.IntPtrOutput                 `pulumi:"stickinessBonusConstant"`
 	StickinessBonusPercentage pulumi.IntPtrOutput                 `pulumi:"stickinessBonusPercentage"`
 	TrafficTargets            GtmPropertyTrafficTargetArrayOutput `pulumi:"trafficTargets"`
@@ -126,7 +125,6 @@ type gtmPropertyState struct {
 	Name                      *string                    `pulumi:"name"`
 	ScoreAggregationType      *string                    `pulumi:"scoreAggregationType"`
 	StaticRrSets              []GtmPropertyStaticRrSet   `pulumi:"staticRrSets"`
-	StaticTtl                 *int                       `pulumi:"staticTtl"`
 	StickinessBonusConstant   *int                       `pulumi:"stickinessBonusConstant"`
 	StickinessBonusPercentage *int                       `pulumi:"stickinessBonusPercentage"`
 	TrafficTargets            []GtmPropertyTrafficTarget `pulumi:"trafficTargets"`
@@ -163,7 +161,6 @@ type GtmPropertyState struct {
 	Name                      pulumi.StringPtrInput
 	ScoreAggregationType      pulumi.StringPtrInput
 	StaticRrSets              GtmPropertyStaticRrSetArrayInput
-	StaticTtl                 pulumi.IntPtrInput
 	StickinessBonusConstant   pulumi.IntPtrInput
 	StickinessBonusPercentage pulumi.IntPtrInput
 	TrafficTargets            GtmPropertyTrafficTargetArrayInput
@@ -204,7 +201,6 @@ type gtmPropertyArgs struct {
 	Name                      *string                    `pulumi:"name"`
 	ScoreAggregationType      string                     `pulumi:"scoreAggregationType"`
 	StaticRrSets              []GtmPropertyStaticRrSet   `pulumi:"staticRrSets"`
-	StaticTtl                 *int                       `pulumi:"staticTtl"`
 	StickinessBonusConstant   *int                       `pulumi:"stickinessBonusConstant"`
 	StickinessBonusPercentage *int                       `pulumi:"stickinessBonusPercentage"`
 	TrafficTargets            []GtmPropertyTrafficTarget `pulumi:"trafficTargets"`
@@ -240,7 +236,6 @@ type GtmPropertyArgs struct {
 	Name                      pulumi.StringPtrInput
 	ScoreAggregationType      pulumi.StringInput
 	StaticRrSets              GtmPropertyStaticRrSetArrayInput
-	StaticTtl                 pulumi.IntPtrInput
 	StickinessBonusConstant   pulumi.IntPtrInput
 	StickinessBonusPercentage pulumi.IntPtrInput
 	TrafficTargets            GtmPropertyTrafficTargetArrayInput
@@ -431,10 +426,6 @@ func (o GtmPropertyOutput) ScoreAggregationType() pulumi.StringOutput {
 
 func (o GtmPropertyOutput) StaticRrSets() GtmPropertyStaticRrSetArrayOutput {
 	return o.ApplyT(func(v *GtmProperty) GtmPropertyStaticRrSetArrayOutput { return v.StaticRrSets }).(GtmPropertyStaticRrSetArrayOutput)
-}
-
-func (o GtmPropertyOutput) StaticTtl() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *GtmProperty) pulumi.IntPtrOutput { return v.StaticTtl }).(pulumi.IntPtrOutput)
 }
 
 func (o GtmPropertyOutput) StickinessBonusConstant() pulumi.IntPtrOutput {

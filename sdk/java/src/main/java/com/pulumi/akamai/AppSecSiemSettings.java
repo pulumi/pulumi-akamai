@@ -6,6 +6,7 @@ package com.pulumi.akamai;
 import com.pulumi.akamai.AppSecSiemSettingsArgs;
 import com.pulumi.akamai.Utilities;
 import com.pulumi.akamai.inputs.AppSecSiemSettingsState;
+import com.pulumi.akamai.outputs.AppSecSiemSettingsExceptions;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
@@ -38,14 +39,14 @@ public class AppSecSiemSettings extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="enableBotmanSiem", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> enableBotmanSiem;
+    private Output</* @Nullable */ Boolean> enableBotmanSiem;
 
     /**
      * @return Whether Bot Manager events should be included in SIEM events
      * 
      */
-    public Output<Boolean> enableBotmanSiem() {
-        return this.enableBotmanSiem;
+    public Output<Optional<Boolean>> enableBotmanSiem() {
+        return Codegen.optional(this.enableBotmanSiem);
     }
     /**
      * Whether to enable SIEM on all security policies in the security configuration
@@ -74,6 +75,20 @@ public class AppSecSiemSettings extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> enableSiem() {
         return this.enableSiem;
+    }
+    /**
+     * Describes all the protections and actions to be excluded from SIEM events
+     * 
+     */
+    @Export(name="exceptions", refs={AppSecSiemSettingsExceptions.class}, tree="[0]")
+    private Output</* @Nullable */ AppSecSiemSettingsExceptions> exceptions;
+
+    /**
+     * @return Describes all the protections and actions to be excluded from SIEM events
+     * 
+     */
+    public Output<Optional<AppSecSiemSettingsExceptions>> exceptions() {
+        return Codegen.optional(this.exceptions);
     }
     /**
      * List of IDs of security policy for which SIEM integration is to be enabled

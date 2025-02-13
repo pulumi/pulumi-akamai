@@ -18,14 +18,14 @@ public final class IamGroupState extends com.pulumi.resources.ResourceArgs {
     public static final IamGroupState Empty = new IamGroupState();
 
     /**
-     * Human readable name for a group
+     * Human readable name for a group.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return Human readable name for a group
+     * @return Human readable name for a group.
      * 
      */
     public Optional<Output<String>> name() {
@@ -33,14 +33,14 @@ public final class IamGroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Unique identifier for the parent group
+     * Unique identifier for the parent group.
      * 
      */
     @Import(name="parentGroupId")
     private @Nullable Output<Integer> parentGroupId;
 
     /**
-     * @return Unique identifier for the parent group
+     * @return Unique identifier for the parent group.
      * 
      */
     public Optional<Output<Integer>> parentGroupId() {
@@ -48,14 +48,14 @@ public final class IamGroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Subgroups IDs
+     * Subgroups IDs.
      * 
      */
     @Import(name="subGroups")
     private @Nullable Output<List<Integer>> subGroups;
 
     /**
-     * @return Subgroups IDs
+     * @return Subgroups IDs.
      * 
      */
     public Optional<Output<List<Integer>>> subGroups() {
@@ -89,7 +89,7 @@ public final class IamGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name Human readable name for a group
+         * @param name Human readable name for a group.
          * 
          * @return builder
          * 
@@ -100,7 +100,7 @@ public final class IamGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name Human readable name for a group
+         * @param name Human readable name for a group.
          * 
          * @return builder
          * 
@@ -110,7 +110,7 @@ public final class IamGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param parentGroupId Unique identifier for the parent group
+         * @param parentGroupId Unique identifier for the parent group.
          * 
          * @return builder
          * 
@@ -121,7 +121,7 @@ public final class IamGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param parentGroupId Unique identifier for the parent group
+         * @param parentGroupId Unique identifier for the parent group.
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class IamGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subGroups Subgroups IDs
+         * @param subGroups Subgroups IDs.
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class IamGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subGroups Subgroups IDs
+         * @param subGroups Subgroups IDs.
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class IamGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subGroups Subgroups IDs
+         * @param subGroups Subgroups IDs.
          * 
          * @return builder
          * 

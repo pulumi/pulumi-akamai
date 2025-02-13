@@ -18,6 +18,20 @@ import javax.annotation.Nullable;
 @ResourceType(type="akamai:index/propertyInclude:PropertyInclude")
 public class PropertyInclude extends com.pulumi.resources.CustomResource {
     /**
+     * ID of the include in the Identity and Access Management API.
+     * 
+     */
+    @Export(name="assetId", refs={String.class}, tree="[0]")
+    private Output<String> assetId;
+
+    /**
+     * @return ID of the include in the Identity and Access Management API.
+     * 
+     */
+    public Output<String> assetId() {
+        return this.assetId;
+    }
+    /**
      * Identifies the contract to which the include is assigned
      * 
      */

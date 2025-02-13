@@ -31,7 +31,7 @@ export interface GetCloudwrapperPropertiesArgs {
 export interface GetCloudwrapperPropertiesResult {
     readonly contractIds?: string[];
     /**
-     * @deprecated Required by the terraform plugin testing framework, always set to `akamai.getCloudwrapperProperties`
+     * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
     readonly properties?: outputs.GetCloudwrapperPropertiesProperty[];

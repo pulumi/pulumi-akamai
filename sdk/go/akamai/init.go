@@ -97,8 +97,6 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AppSecSecurityPolicy{}
 	case "akamai:index/appSecSecurityPolicyRename:AppSecSecurityPolicyRename":
 		r = &AppSecSecurityPolicyRename{}
-	case "akamai:index/appSecSelectedHostnames:AppSecSelectedHostnames":
-		r = &AppSecSelectedHostnames{}
 	case "akamai:index/appSecSiemSettings:AppSecSiemSettings":
 		r = &AppSecSiemSettings{}
 	case "akamai:index/appSecSlowPost:AppSecSlowPost":
@@ -113,8 +111,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AppSecWafMode{}
 	case "akamai:index/appSecWafProtection:AppSecWafProtection":
 		r = &AppSecWafProtection{}
-	case "akamai:index/appSecWapSelectedHostnames:AppSecWapSelectedHostnames":
-		r = &AppSecWapSelectedHostnames{}
+	case "akamai:index/appsecAapSelectedHostnames:AppsecAapSelectedHostnames":
+		r = &AppsecAapSelectedHostnames{}
 	case "akamai:index/appsecAdvancedSettingsAttackPayloadLogging:AppsecAdvancedSettingsAttackPayloadLogging":
 		r = &AppsecAdvancedSettingsAttackPayloadLogging{}
 	case "akamai:index/appsecAdvancedSettingsPiiLearning:AppsecAdvancedSettingsPiiLearning":
@@ -125,6 +123,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AppsecEvalPenaltyBoxConditions{}
 	case "akamai:index/appsecPenaltyBoxConditions:AppsecPenaltyBoxConditions":
 		r = &AppsecPenaltyBoxConditions{}
+	case "akamai:index/appsecRapidRules:AppsecRapidRules":
+		r = &AppsecRapidRules{}
 	case "akamai:index/appsecSecurityPolicyDefaultProtections:AppsecSecurityPolicyDefaultProtections":
 		r = &AppsecSecurityPolicyDefaultProtections{}
 	case "akamai:index/botmanAkamaiBotCategoryAction:BotmanAkamaiBotCategoryAction":
@@ -141,16 +141,22 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &BotmanChallengeAction{}
 	case "akamai:index/botmanChallengeInjectionRules:BotmanChallengeInjectionRules":
 		r = &BotmanChallengeInjectionRules{}
-	case "akamai:index/botmanChallengeInterceptionRules:BotmanChallengeInterceptionRules":
-		r = &BotmanChallengeInterceptionRules{}
 	case "akamai:index/botmanClientSideSecurity:BotmanClientSideSecurity":
 		r = &BotmanClientSideSecurity{}
 	case "akamai:index/botmanConditionalAction:BotmanConditionalAction":
 		r = &BotmanConditionalAction{}
+	case "akamai:index/botmanContentProtectionJavascriptInjectionRule:BotmanContentProtectionJavascriptInjectionRule":
+		r = &BotmanContentProtectionJavascriptInjectionRule{}
+	case "akamai:index/botmanContentProtectionRule:BotmanContentProtectionRule":
+		r = &BotmanContentProtectionRule{}
+	case "akamai:index/botmanContentProtectionRuleSequence:BotmanContentProtectionRuleSequence":
+		r = &BotmanContentProtectionRuleSequence{}
 	case "akamai:index/botmanCustomBotCategory:BotmanCustomBotCategory":
 		r = &BotmanCustomBotCategory{}
 	case "akamai:index/botmanCustomBotCategoryAction:BotmanCustomBotCategoryAction":
 		r = &BotmanCustomBotCategoryAction{}
+	case "akamai:index/botmanCustomBotCategoryItemSequence:BotmanCustomBotCategoryItemSequence":
+		r = &BotmanCustomBotCategoryItemSequence{}
 	case "akamai:index/botmanCustomBotCategorySequence:BotmanCustomBotCategorySequence":
 		r = &BotmanCustomBotCategorySequence{}
 	case "akamai:index/botmanCustomClient:BotmanCustomClient":
@@ -177,6 +183,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ClientlistActivation{}
 	case "akamai:index/clientlistList:ClientlistList":
 		r = &ClientlistList{}
+	case "akamai:index/cloudAccessKey:CloudAccessKey":
+		r = &CloudAccessKey{}
 	case "akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer":
 		r = &CloudletsApplicationLoadBalancer{}
 	case "akamai:index/cloudletsApplicationLoadBalancerActivation:CloudletsApplicationLoadBalancerActivation":
@@ -231,8 +239,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &GtmResource{}
 	case "akamai:index/iamBlockedUserProperties:IamBlockedUserProperties":
 		r = &IamBlockedUserProperties{}
+	case "akamai:index/iamCidrBlock:IamCidrBlock":
+		r = &IamCidrBlock{}
 	case "akamai:index/iamGroup:IamGroup":
 		r = &IamGroup{}
+	case "akamai:index/iamIpAllowlist:IamIpAllowlist":
+		r = &IamIpAllowlist{}
 	case "akamai:index/iamRole:IamRole":
 		r = &IamRole{}
 	case "akamai:index/iamUser:IamUser":
@@ -484,11 +496,6 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"akamai",
-		"index/appSecSelectedHostnames",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"akamai",
 		"index/appSecSiemSettings",
 		&module{version},
 	)
@@ -524,7 +531,7 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"akamai",
-		"index/appSecWapSelectedHostnames",
+		"index/appsecAapSelectedHostnames",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -550,6 +557,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/appsecPenaltyBoxConditions",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/appsecRapidRules",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -594,11 +606,6 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"akamai",
-		"index/botmanChallengeInterceptionRules",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"akamai",
 		"index/botmanClientSideSecurity",
 		&module{version},
 	)
@@ -609,12 +616,32 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"akamai",
+		"index/botmanContentProtectionJavascriptInjectionRule",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/botmanContentProtectionRule",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/botmanContentProtectionRuleSequence",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
 		"index/botmanCustomBotCategory",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/botmanCustomBotCategoryAction",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/botmanCustomBotCategoryItemSequence",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -680,6 +707,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/clientlistList",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/cloudAccessKey",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -819,7 +851,17 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"akamai",
+		"index/iamCidrBlock",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
 		"index/iamGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/iamIpAllowlist",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

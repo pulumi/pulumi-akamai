@@ -12,38 +12,38 @@ import java.util.Objects;
 @CustomType
 public final class GetIamGrantableRolesGrantableRole {
     /**
-     * @return Granted role description
+     * @return Granted role description.
      * 
      */
     private String description;
     /**
-     * @return Granted role ID
+     * @return Granted role ID.
      * 
      */
     private Integer grantedRoleId;
     /**
-     * @return Granted role name
+     * @return Granted role name.
      * 
      */
     private String name;
 
     private GetIamGrantableRolesGrantableRole() {}
     /**
-     * @return Granted role description
+     * @return Granted role description.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return Granted role ID
+     * @return Granted role ID.
      * 
      */
     public Integer grantedRoleId() {
         return this.grantedRoleId;
     }
     /**
-     * @return Granted role name
+     * @return Granted role name.
      * 
      */
     public String name() {

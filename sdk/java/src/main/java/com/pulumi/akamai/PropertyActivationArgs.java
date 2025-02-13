@@ -4,7 +4,6 @@
 package com.pulumi.akamai;
 
 import com.pulumi.akamai.inputs.PropertyActivationComplianceRecordArgs;
-import com.pulumi.akamai.inputs.PropertyActivationRuleErrorArgs;
 import com.pulumi.akamai.inputs.PropertyActivationTimeoutsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
@@ -95,13 +94,6 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
         return this.propertyId;
     }
 
-    @Import(name="ruleErrors")
-    private @Nullable Output<List<PropertyActivationRuleErrorArgs>> ruleErrors;
-
-    public Optional<Output<List<PropertyActivationRuleErrorArgs>>> ruleErrors() {
-        return Optional.ofNullable(this.ruleErrors);
-    }
-
     /**
      * Enables to set timeout for processing
      * 
@@ -134,7 +126,6 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
         this.network = $.network;
         this.note = $.note;
         this.propertyId = $.propertyId;
-        this.ruleErrors = $.ruleErrors;
         this.timeouts = $.timeouts;
         this.version = $.version;
     }
@@ -258,19 +249,6 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
 
         public Builder propertyId(String propertyId) {
             return propertyId(Output.of(propertyId));
-        }
-
-        public Builder ruleErrors(@Nullable Output<List<PropertyActivationRuleErrorArgs>> ruleErrors) {
-            $.ruleErrors = ruleErrors;
-            return this;
-        }
-
-        public Builder ruleErrors(List<PropertyActivationRuleErrorArgs> ruleErrors) {
-            return ruleErrors(Output.of(ruleErrors));
-        }
-
-        public Builder ruleErrors(PropertyActivationRuleErrorArgs... ruleErrors) {
-            return ruleErrors(List.of(ruleErrors));
         }
 
         /**

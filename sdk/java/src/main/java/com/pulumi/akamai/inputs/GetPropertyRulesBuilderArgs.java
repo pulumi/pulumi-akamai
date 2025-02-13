@@ -9,6 +9,10 @@ import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20230920Args;
 import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20231030Args;
 import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20240109Args;
 import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20240212Args;
+import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20240531Args;
+import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20240813Args;
+import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20241021Args;
+import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20250113Args;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.util.Objects;
@@ -62,6 +66,34 @@ public final class GetPropertyRulesBuilderArgs extends com.pulumi.resources.Invo
         return Optional.ofNullable(this.rulesV20240212);
     }
 
+    @Import(name="rulesV20240531")
+    private @Nullable Output<GetPropertyRulesBuilderRulesV20240531Args> rulesV20240531;
+
+    public Optional<Output<GetPropertyRulesBuilderRulesV20240531Args>> rulesV20240531() {
+        return Optional.ofNullable(this.rulesV20240531);
+    }
+
+    @Import(name="rulesV20240813")
+    private @Nullable Output<GetPropertyRulesBuilderRulesV20240813Args> rulesV20240813;
+
+    public Optional<Output<GetPropertyRulesBuilderRulesV20240813Args>> rulesV20240813() {
+        return Optional.ofNullable(this.rulesV20240813);
+    }
+
+    @Import(name="rulesV20241021")
+    private @Nullable Output<GetPropertyRulesBuilderRulesV20241021Args> rulesV20241021;
+
+    public Optional<Output<GetPropertyRulesBuilderRulesV20241021Args>> rulesV20241021() {
+        return Optional.ofNullable(this.rulesV20241021);
+    }
+
+    @Import(name="rulesV20250113")
+    private @Nullable Output<GetPropertyRulesBuilderRulesV20250113Args> rulesV20250113;
+
+    public Optional<Output<GetPropertyRulesBuilderRulesV20250113Args>> rulesV20250113() {
+        return Optional.ofNullable(this.rulesV20250113);
+    }
+
     private GetPropertyRulesBuilderArgs() {}
 
     private GetPropertyRulesBuilderArgs(GetPropertyRulesBuilderArgs $) {
@@ -71,6 +103,10 @@ public final class GetPropertyRulesBuilderArgs extends com.pulumi.resources.Invo
         this.rulesV20231030 = $.rulesV20231030;
         this.rulesV20240109 = $.rulesV20240109;
         this.rulesV20240212 = $.rulesV20240212;
+        this.rulesV20240531 = $.rulesV20240531;
+        this.rulesV20240813 = $.rulesV20240813;
+        this.rulesV20241021 = $.rulesV20241021;
+        this.rulesV20250113 = $.rulesV20250113;
     }
 
     public static Builder builder() {
@@ -143,6 +179,42 @@ public final class GetPropertyRulesBuilderArgs extends com.pulumi.resources.Invo
 
         public Builder rulesV20240212(GetPropertyRulesBuilderRulesV20240212Args rulesV20240212) {
             return rulesV20240212(Output.of(rulesV20240212));
+        }
+
+        public Builder rulesV20240531(@Nullable Output<GetPropertyRulesBuilderRulesV20240531Args> rulesV20240531) {
+            $.rulesV20240531 = rulesV20240531;
+            return this;
+        }
+
+        public Builder rulesV20240531(GetPropertyRulesBuilderRulesV20240531Args rulesV20240531) {
+            return rulesV20240531(Output.of(rulesV20240531));
+        }
+
+        public Builder rulesV20240813(@Nullable Output<GetPropertyRulesBuilderRulesV20240813Args> rulesV20240813) {
+            $.rulesV20240813 = rulesV20240813;
+            return this;
+        }
+
+        public Builder rulesV20240813(GetPropertyRulesBuilderRulesV20240813Args rulesV20240813) {
+            return rulesV20240813(Output.of(rulesV20240813));
+        }
+
+        public Builder rulesV20241021(@Nullable Output<GetPropertyRulesBuilderRulesV20241021Args> rulesV20241021) {
+            $.rulesV20241021 = rulesV20241021;
+            return this;
+        }
+
+        public Builder rulesV20241021(GetPropertyRulesBuilderRulesV20241021Args rulesV20241021) {
+            return rulesV20241021(Output.of(rulesV20241021));
+        }
+
+        public Builder rulesV20250113(@Nullable Output<GetPropertyRulesBuilderRulesV20250113Args> rulesV20250113) {
+            $.rulesV20250113 = rulesV20250113;
+            return this;
+        }
+
+        public Builder rulesV20250113(GetPropertyRulesBuilderRulesV20250113Args rulesV20250113) {
+            return rulesV20250113(Output.of(rulesV20250113));
         }
 
         public GetPropertyRulesBuilderArgs build() {

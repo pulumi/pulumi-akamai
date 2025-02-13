@@ -322,14 +322,14 @@ public final class GetPropertyRulesBuilderRulesV20240212BehaviorOriginArgs exten
     }
 
     /**
-     * For non-NetStorage origins, enabling this adds a Server Name Indication (SNI) header in the SSL request sent to the origin, with the origin hostname as the value. See the `verification settings in the Origin Server behavior` or contact your Akamai representative for more information.
+     * For non-NetStorage origins, enabling this adds a Server Name Indication (SNI) header in the SSL request sent to the origin, with the origin hostname as the value. See the `verification settings in the Origin Server behavior` or contact your Akamai representative for more information. If you want to use TLS version 1.3 in your existing properties, enable this option. New properties have this enabled by default.
      * 
      */
     @Import(name="originSni")
     private @Nullable Output<Boolean> originSni;
 
     /**
-     * @return For non-NetStorage origins, enabling this adds a Server Name Indication (SNI) header in the SSL request sent to the origin, with the origin hostname as the value. See the `verification settings in the Origin Server behavior` or contact your Akamai representative for more information.
+     * @return For non-NetStorage origins, enabling this adds a Server Name Indication (SNI) header in the SSL request sent to the origin, with the origin hostname as the value. See the `verification settings in the Origin Server behavior` or contact your Akamai representative for more information. If you want to use TLS version 1.3 in your existing properties, enable this option. New properties have this enabled by default.
      * 
      */
     public Optional<Output<Boolean>> originSni() {
@@ -538,17 +538,9 @@ public final class GetPropertyRulesBuilderRulesV20240212BehaviorOriginArgs exten
         return Optional.ofNullable(this.templateUuid);
     }
 
-    /**
-     * Enables transport layer security (TLS) version 1.3 for connections to your origin server.
-     * 
-     */
     @Import(name="tls13Support")
     private @Nullable Output<Boolean> tls13Support;
 
-    /**
-     * @return Enables transport layer security (TLS) version 1.3 for connections to your origin server.
-     * 
-     */
     public Optional<Output<Boolean>> tls13Support() {
         return Optional.ofNullable(this.tls13Support);
     }
@@ -1159,7 +1151,7 @@ public final class GetPropertyRulesBuilderRulesV20240212BehaviorOriginArgs exten
         }
 
         /**
-         * @param originSni For non-NetStorage origins, enabling this adds a Server Name Indication (SNI) header in the SSL request sent to the origin, with the origin hostname as the value. See the `verification settings in the Origin Server behavior` or contact your Akamai representative for more information.
+         * @param originSni For non-NetStorage origins, enabling this adds a Server Name Indication (SNI) header in the SSL request sent to the origin, with the origin hostname as the value. See the `verification settings in the Origin Server behavior` or contact your Akamai representative for more information. If you want to use TLS version 1.3 in your existing properties, enable this option. New properties have this enabled by default.
          * 
          * @return builder
          * 
@@ -1170,7 +1162,7 @@ public final class GetPropertyRulesBuilderRulesV20240212BehaviorOriginArgs exten
         }
 
         /**
-         * @param originSni For non-NetStorage origins, enabling this adds a Server Name Indication (SNI) header in the SSL request sent to the origin, with the origin hostname as the value. See the `verification settings in the Origin Server behavior` or contact your Akamai representative for more information.
+         * @param originSni For non-NetStorage origins, enabling this adds a Server Name Indication (SNI) header in the SSL request sent to the origin, with the origin hostname as the value. See the `verification settings in the Origin Server behavior` or contact your Akamai representative for more information. If you want to use TLS version 1.3 in your existing properties, enable this option. New properties have this enabled by default.
          * 
          * @return builder
          * 
@@ -1465,23 +1457,11 @@ public final class GetPropertyRulesBuilderRulesV20240212BehaviorOriginArgs exten
             return templateUuid(Output.of(templateUuid));
         }
 
-        /**
-         * @param tls13Support Enables transport layer security (TLS) version 1.3 for connections to your origin server.
-         * 
-         * @return builder
-         * 
-         */
         public Builder tls13Support(@Nullable Output<Boolean> tls13Support) {
             $.tls13Support = tls13Support;
             return this;
         }
 
-        /**
-         * @param tls13Support Enables transport layer security (TLS) version 1.3 for connections to your origin server.
-         * 
-         * @return builder
-         * 
-         */
         public Builder tls13Support(Boolean tls13Support) {
             return tls13Support(Output.of(tls13Support));
         }

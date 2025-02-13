@@ -46,7 +46,6 @@ class GtmPropertyArgs:
                  min_live_fraction: Optional[pulumi.Input[float]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  static_rr_sets: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]] = None,
-                 static_ttl: Optional[pulumi.Input[int]] = None,
                  stickiness_bonus_constant: Optional[pulumi.Input[int]] = None,
                  stickiness_bonus_percentage: Optional[pulumi.Input[int]] = None,
                  traffic_targets: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]] = None,
@@ -101,8 +100,6 @@ class GtmPropertyArgs:
             pulumi.set(__self__, "name", name)
         if static_rr_sets is not None:
             pulumi.set(__self__, "static_rr_sets", static_rr_sets)
-        if static_ttl is not None:
-            pulumi.set(__self__, "static_ttl", static_ttl)
         if stickiness_bonus_constant is not None:
             pulumi.set(__self__, "stickiness_bonus_constant", stickiness_bonus_constant)
         if stickiness_bonus_percentage is not None:
@@ -342,15 +339,6 @@ class GtmPropertyArgs:
         pulumi.set(self, "static_rr_sets", value)
 
     @property
-    @pulumi.getter(name="staticTtl")
-    def static_ttl(self) -> Optional[pulumi.Input[int]]:
-        return pulumi.get(self, "static_ttl")
-
-    @static_ttl.setter
-    def static_ttl(self, value: Optional[pulumi.Input[int]]):
-        pulumi.set(self, "static_ttl", value)
-
-    @property
     @pulumi.getter(name="stickinessBonusConstant")
     def stickiness_bonus_constant(self) -> Optional[pulumi.Input[int]]:
         return pulumi.get(self, "stickiness_bonus_constant")
@@ -432,7 +420,6 @@ class _GtmPropertyState:
                  name: Optional[pulumi.Input[str]] = None,
                  score_aggregation_type: Optional[pulumi.Input[str]] = None,
                  static_rr_sets: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyStaticRrSetArgs']]]] = None,
-                 static_ttl: Optional[pulumi.Input[int]] = None,
                  stickiness_bonus_constant: Optional[pulumi.Input[int]] = None,
                  stickiness_bonus_percentage: Optional[pulumi.Input[int]] = None,
                  traffic_targets: Optional[pulumi.Input[Sequence[pulumi.Input['GtmPropertyTrafficTargetArgs']]]] = None,
@@ -493,8 +480,6 @@ class _GtmPropertyState:
             pulumi.set(__self__, "score_aggregation_type", score_aggregation_type)
         if static_rr_sets is not None:
             pulumi.set(__self__, "static_rr_sets", static_rr_sets)
-        if static_ttl is not None:
-            pulumi.set(__self__, "static_ttl", static_ttl)
         if stickiness_bonus_constant is not None:
             pulumi.set(__self__, "stickiness_bonus_constant", stickiness_bonus_constant)
         if stickiness_bonus_percentage is not None:
@@ -731,15 +716,6 @@ class _GtmPropertyState:
         pulumi.set(self, "static_rr_sets", value)
 
     @property
-    @pulumi.getter(name="staticTtl")
-    def static_ttl(self) -> Optional[pulumi.Input[int]]:
-        return pulumi.get(self, "static_ttl")
-
-    @static_ttl.setter
-    def static_ttl(self, value: Optional[pulumi.Input[int]]):
-        pulumi.set(self, "static_ttl", value)
-
-    @property
     @pulumi.getter(name="stickinessBonusConstant")
     def stickiness_bonus_constant(self) -> Optional[pulumi.Input[int]]:
         return pulumi.get(self, "stickiness_bonus_constant")
@@ -850,7 +826,6 @@ class GtmProperty(pulumi.CustomResource):
                  name: Optional[pulumi.Input[str]] = None,
                  score_aggregation_type: Optional[pulumi.Input[str]] = None,
                  static_rr_sets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GtmPropertyStaticRrSetArgs', 'GtmPropertyStaticRrSetArgsDict']]]]] = None,
-                 static_ttl: Optional[pulumi.Input[int]] = None,
                  stickiness_bonus_constant: Optional[pulumi.Input[int]] = None,
                  stickiness_bonus_percentage: Optional[pulumi.Input[int]] = None,
                  traffic_targets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GtmPropertyTrafficTargetArgs', 'GtmPropertyTrafficTargetArgsDict']]]]] = None,
@@ -911,7 +886,6 @@ class GtmProperty(pulumi.CustomResource):
                  name: Optional[pulumi.Input[str]] = None,
                  score_aggregation_type: Optional[pulumi.Input[str]] = None,
                  static_rr_sets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GtmPropertyStaticRrSetArgs', 'GtmPropertyStaticRrSetArgsDict']]]]] = None,
-                 static_ttl: Optional[pulumi.Input[int]] = None,
                  stickiness_bonus_constant: Optional[pulumi.Input[int]] = None,
                  stickiness_bonus_percentage: Optional[pulumi.Input[int]] = None,
                  traffic_targets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GtmPropertyTrafficTargetArgs', 'GtmPropertyTrafficTargetArgsDict']]]]] = None,
@@ -960,7 +934,6 @@ class GtmProperty(pulumi.CustomResource):
                 raise TypeError("Missing required property 'score_aggregation_type'")
             __props__.__dict__["score_aggregation_type"] = score_aggregation_type
             __props__.__dict__["static_rr_sets"] = static_rr_sets
-            __props__.__dict__["static_ttl"] = static_ttl
             __props__.__dict__["stickiness_bonus_constant"] = stickiness_bonus_constant
             __props__.__dict__["stickiness_bonus_percentage"] = stickiness_bonus_percentage
             __props__.__dict__["traffic_targets"] = traffic_targets
@@ -1008,7 +981,6 @@ class GtmProperty(pulumi.CustomResource):
             name: Optional[pulumi.Input[str]] = None,
             score_aggregation_type: Optional[pulumi.Input[str]] = None,
             static_rr_sets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GtmPropertyStaticRrSetArgs', 'GtmPropertyStaticRrSetArgsDict']]]]] = None,
-            static_ttl: Optional[pulumi.Input[int]] = None,
             stickiness_bonus_constant: Optional[pulumi.Input[int]] = None,
             stickiness_bonus_percentage: Optional[pulumi.Input[int]] = None,
             traffic_targets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GtmPropertyTrafficTargetArgs', 'GtmPropertyTrafficTargetArgsDict']]]]] = None,
@@ -1054,7 +1026,6 @@ class GtmProperty(pulumi.CustomResource):
         __props__.__dict__["name"] = name
         __props__.__dict__["score_aggregation_type"] = score_aggregation_type
         __props__.__dict__["static_rr_sets"] = static_rr_sets
-        __props__.__dict__["static_ttl"] = static_ttl
         __props__.__dict__["stickiness_bonus_constant"] = stickiness_bonus_constant
         __props__.__dict__["stickiness_bonus_percentage"] = stickiness_bonus_percentage
         __props__.__dict__["traffic_targets"] = traffic_targets
@@ -1185,11 +1156,6 @@ class GtmProperty(pulumi.CustomResource):
     @pulumi.getter(name="staticRrSets")
     def static_rr_sets(self) -> pulumi.Output[Optional[Sequence['outputs.GtmPropertyStaticRrSet']]]:
         return pulumi.get(self, "static_rr_sets")
-
-    @property
-    @pulumi.getter(name="staticTtl")
-    def static_ttl(self) -> pulumi.Output[Optional[int]]:
-        return pulumi.get(self, "static_ttl")
 
     @property
     @pulumi.getter(name="stickinessBonusConstant")

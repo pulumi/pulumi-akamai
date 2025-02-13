@@ -15,11 +15,11 @@ import (
 type IamGroup struct {
 	pulumi.CustomResourceState
 
-	// Human readable name for a group
+	// Human readable name for a group.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// Unique identifier for the parent group
+	// Unique identifier for the parent group.
 	ParentGroupId pulumi.IntOutput `pulumi:"parentGroupId"`
-	// Subgroups IDs
+	// Subgroups IDs.
 	SubGroups pulumi.IntArrayOutput `pulumi:"subGroups"`
 }
 
@@ -56,20 +56,20 @@ func GetIamGroup(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering IamGroup resources.
 type iamGroupState struct {
-	// Human readable name for a group
+	// Human readable name for a group.
 	Name *string `pulumi:"name"`
-	// Unique identifier for the parent group
+	// Unique identifier for the parent group.
 	ParentGroupId *int `pulumi:"parentGroupId"`
-	// Subgroups IDs
+	// Subgroups IDs.
 	SubGroups []int `pulumi:"subGroups"`
 }
 
 type IamGroupState struct {
-	// Human readable name for a group
+	// Human readable name for a group.
 	Name pulumi.StringPtrInput
-	// Unique identifier for the parent group
+	// Unique identifier for the parent group.
 	ParentGroupId pulumi.IntPtrInput
-	// Subgroups IDs
+	// Subgroups IDs.
 	SubGroups pulumi.IntArrayInput
 }
 
@@ -78,17 +78,17 @@ func (IamGroupState) ElementType() reflect.Type {
 }
 
 type iamGroupArgs struct {
-	// Human readable name for a group
+	// Human readable name for a group.
 	Name *string `pulumi:"name"`
-	// Unique identifier for the parent group
+	// Unique identifier for the parent group.
 	ParentGroupId int `pulumi:"parentGroupId"`
 }
 
 // The set of arguments for constructing a IamGroup resource.
 type IamGroupArgs struct {
-	// Human readable name for a group
+	// Human readable name for a group.
 	Name pulumi.StringPtrInput
-	// Unique identifier for the parent group
+	// Unique identifier for the parent group.
 	ParentGroupId pulumi.IntInput
 }
 
@@ -179,17 +179,17 @@ func (o IamGroupOutput) ToIamGroupOutputWithContext(ctx context.Context) IamGrou
 	return o
 }
 
-// Human readable name for a group
+// Human readable name for a group.
 func (o IamGroupOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamGroup) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// Unique identifier for the parent group
+// Unique identifier for the parent group.
 func (o IamGroupOutput) ParentGroupId() pulumi.IntOutput {
 	return o.ApplyT(func(v *IamGroup) pulumi.IntOutput { return v.ParentGroupId }).(pulumi.IntOutput)
 }
 
-// Subgroups IDs
+// Subgroups IDs.
 func (o IamGroupOutput) SubGroups() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v *IamGroup) pulumi.IntArrayOutput { return v.SubGroups }).(pulumi.IntArrayOutput)
 }

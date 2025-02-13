@@ -88,17 +88,21 @@ class PropertyBootstrapArgs:
 @pulumi.input_type
 class _PropertyBootstrapState:
     def __init__(__self__, *,
+                 asset_id: Optional[pulumi.Input[str]] = None,
                  contract_id: Optional[pulumi.Input[str]] = None,
                  group_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering PropertyBootstrap resources.
+        :param pulumi.Input[str] asset_id: ID of the property in the Identity and Access Management API.
         :param pulumi.Input[str] contract_id: Contract ID to be assigned to the Property
         :param pulumi.Input[str] group_id: Group ID to be assigned to the Property
         :param pulumi.Input[str] name: Name to give to the Property (must be unique)
         :param pulumi.Input[str] product_id: Product ID to be assigned to the Property
         """
+        if asset_id is not None:
+            pulumi.set(__self__, "asset_id", asset_id)
         if contract_id is not None:
             pulumi.set(__self__, "contract_id", contract_id)
         if group_id is not None:
@@ -107,6 +111,18 @@ class _PropertyBootstrapState:
             pulumi.set(__self__, "name", name)
         if product_id is not None:
             pulumi.set(__self__, "product_id", product_id)
+
+    @property
+    @pulumi.getter(name="assetId")
+    def asset_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        ID of the property in the Identity and Access Management API.
+        """
+        return pulumi.get(self, "asset_id")
+
+    @asset_id.setter
+    def asset_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "asset_id", value)
 
     @property
     @pulumi.getter(name="contractId")
@@ -222,6 +238,7 @@ class PropertyBootstrap(pulumi.CustomResource):
             if product_id is None and not opts.urn:
                 raise TypeError("Missing required property 'product_id'")
             __props__.__dict__["product_id"] = product_id
+            __props__.__dict__["asset_id"] = None
         super(PropertyBootstrap, __self__).__init__(
             'akamai:index/propertyBootstrap:PropertyBootstrap',
             resource_name,
@@ -232,6 +249,7 @@ class PropertyBootstrap(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            asset_id: Optional[pulumi.Input[str]] = None,
             contract_id: Optional[pulumi.Input[str]] = None,
             group_id: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
@@ -243,6 +261,7 @@ class PropertyBootstrap(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] asset_id: ID of the property in the Identity and Access Management API.
         :param pulumi.Input[str] contract_id: Contract ID to be assigned to the Property
         :param pulumi.Input[str] group_id: Group ID to be assigned to the Property
         :param pulumi.Input[str] name: Name to give to the Property (must be unique)
@@ -252,11 +271,20 @@ class PropertyBootstrap(pulumi.CustomResource):
 
         __props__ = _PropertyBootstrapState.__new__(_PropertyBootstrapState)
 
+        __props__.__dict__["asset_id"] = asset_id
         __props__.__dict__["contract_id"] = contract_id
         __props__.__dict__["group_id"] = group_id
         __props__.__dict__["name"] = name
         __props__.__dict__["product_id"] = product_id
         return PropertyBootstrap(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="assetId")
+    def asset_id(self) -> pulumi.Output[str]:
+        """
+        ID of the property in the Identity and Access Management API.
+        """
+        return pulumi.get(self, "asset_id")
 
     @property
     @pulumi.getter(name="contractId")

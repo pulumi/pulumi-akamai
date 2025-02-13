@@ -33,19 +33,19 @@ export class IamRole extends pulumi.CustomResource {
     }
 
     /**
-     * The description for a role
+     * The description for a role.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * The list of existing unique identifiers for the granted roles
+     * The list of existing unique identifiers for the granted roles.
      */
     public readonly grantedRoles!: pulumi.Output<number[]>;
     /**
-     * The name you supply for a role
+     * The name you supply for a role.
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account
+     * The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account.
      */
     public readonly type!: pulumi.Output<string>;
 
@@ -89,19 +89,19 @@ export class IamRole extends pulumi.CustomResource {
  */
 export interface IamRoleState {
     /**
-     * The description for a role
+     * The description for a role.
      */
     description?: pulumi.Input<string>;
     /**
-     * The list of existing unique identifiers for the granted roles
+     * The list of existing unique identifiers for the granted roles.
      */
     grantedRoles?: pulumi.Input<pulumi.Input<number>[]>;
     /**
-     * The name you supply for a role
+     * The name you supply for a role.
      */
     name?: pulumi.Input<string>;
     /**
-     * The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account
+     * The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account.
      */
     type?: pulumi.Input<string>;
 }
@@ -111,19 +111,19 @@ export interface IamRoleState {
  */
 export interface IamRoleArgs {
     /**
-     * The description for a role
+     * The description for a role.
      */
     description: pulumi.Input<string>;
     /**
-     * The list of existing unique identifiers for the granted roles
+     * The list of existing unique identifiers for the granted roles.
      */
     grantedRoles: pulumi.Input<pulumi.Input<number>[]>;
     /**
-     * The name you supply for a role
+     * The name you supply for a role.
      */
     name?: pulumi.Input<string>;
     /**
-     * The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account
+     * The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account.
      */
     type?: pulumi.Input<string>;
 }

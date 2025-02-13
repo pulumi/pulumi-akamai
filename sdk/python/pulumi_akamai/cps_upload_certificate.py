@@ -197,7 +197,6 @@ class _CpsUploadCertificateState:
                  timeouts: Optional[pulumi.Input['CpsUploadCertificateTimeoutsArgs']] = None,
                  trust_chain_ecdsa_pem: Optional[pulumi.Input[str]] = None,
                  trust_chain_rsa_pem: Optional[pulumi.Input[str]] = None,
-                 unacknowledged_warnings: Optional[pulumi.Input[bool]] = None,
                  wait_for_deployment: Optional[pulumi.Input[bool]] = None):
         """
         Input properties used for looking up and filtering CpsUploadCertificate resources.
@@ -210,7 +209,6 @@ class _CpsUploadCertificateState:
         :param pulumi.Input['CpsUploadCertificateTimeoutsArgs'] timeouts: Enables to set timeout for processing
         :param pulumi.Input[str] trust_chain_ecdsa_pem: Trust chain in pem format for provided ECDSA certificate
         :param pulumi.Input[str] trust_chain_rsa_pem: Trust chain in pem format for provided RSA certificate
-        :param pulumi.Input[bool] unacknowledged_warnings: Used to distinguish whether there are unacknowledged warnings for a certificate
         :param pulumi.Input[bool] wait_for_deployment: Whether to wait for certificate to be deployed
         """
         if acknowledge_change_management is not None:
@@ -231,8 +229,6 @@ class _CpsUploadCertificateState:
             pulumi.set(__self__, "trust_chain_ecdsa_pem", trust_chain_ecdsa_pem)
         if trust_chain_rsa_pem is not None:
             pulumi.set(__self__, "trust_chain_rsa_pem", trust_chain_rsa_pem)
-        if unacknowledged_warnings is not None:
-            pulumi.set(__self__, "unacknowledged_warnings", unacknowledged_warnings)
         if wait_for_deployment is not None:
             pulumi.set(__self__, "wait_for_deployment", wait_for_deployment)
 
@@ -345,18 +341,6 @@ class _CpsUploadCertificateState:
         pulumi.set(self, "trust_chain_rsa_pem", value)
 
     @property
-    @pulumi.getter(name="unacknowledgedWarnings")
-    def unacknowledged_warnings(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Used to distinguish whether there are unacknowledged warnings for a certificate
-        """
-        return pulumi.get(self, "unacknowledged_warnings")
-
-    @unacknowledged_warnings.setter
-    def unacknowledged_warnings(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "unacknowledged_warnings", value)
-
-    @property
     @pulumi.getter(name="waitForDeployment")
     def wait_for_deployment(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -454,7 +438,6 @@ class CpsUploadCertificate(pulumi.CustomResource):
             __props__.__dict__["trust_chain_ecdsa_pem"] = trust_chain_ecdsa_pem
             __props__.__dict__["trust_chain_rsa_pem"] = trust_chain_rsa_pem
             __props__.__dict__["wait_for_deployment"] = wait_for_deployment
-            __props__.__dict__["unacknowledged_warnings"] = None
         super(CpsUploadCertificate, __self__).__init__(
             'akamai:index/cpsUploadCertificate:CpsUploadCertificate',
             resource_name,
@@ -474,7 +457,6 @@ class CpsUploadCertificate(pulumi.CustomResource):
             timeouts: Optional[pulumi.Input[Union['CpsUploadCertificateTimeoutsArgs', 'CpsUploadCertificateTimeoutsArgsDict']]] = None,
             trust_chain_ecdsa_pem: Optional[pulumi.Input[str]] = None,
             trust_chain_rsa_pem: Optional[pulumi.Input[str]] = None,
-            unacknowledged_warnings: Optional[pulumi.Input[bool]] = None,
             wait_for_deployment: Optional[pulumi.Input[bool]] = None) -> 'CpsUploadCertificate':
         """
         Get an existing CpsUploadCertificate resource's state with the given name, id, and optional extra
@@ -492,7 +474,6 @@ class CpsUploadCertificate(pulumi.CustomResource):
         :param pulumi.Input[Union['CpsUploadCertificateTimeoutsArgs', 'CpsUploadCertificateTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
         :param pulumi.Input[str] trust_chain_ecdsa_pem: Trust chain in pem format for provided ECDSA certificate
         :param pulumi.Input[str] trust_chain_rsa_pem: Trust chain in pem format for provided RSA certificate
-        :param pulumi.Input[bool] unacknowledged_warnings: Used to distinguish whether there are unacknowledged warnings for a certificate
         :param pulumi.Input[bool] wait_for_deployment: Whether to wait for certificate to be deployed
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -508,7 +489,6 @@ class CpsUploadCertificate(pulumi.CustomResource):
         __props__.__dict__["timeouts"] = timeouts
         __props__.__dict__["trust_chain_ecdsa_pem"] = trust_chain_ecdsa_pem
         __props__.__dict__["trust_chain_rsa_pem"] = trust_chain_rsa_pem
-        __props__.__dict__["unacknowledged_warnings"] = unacknowledged_warnings
         __props__.__dict__["wait_for_deployment"] = wait_for_deployment
         return CpsUploadCertificate(resource_name, opts=opts, __props__=__props__)
 
@@ -583,14 +563,6 @@ class CpsUploadCertificate(pulumi.CustomResource):
         Trust chain in pem format for provided RSA certificate
         """
         return pulumi.get(self, "trust_chain_rsa_pem")
-
-    @property
-    @pulumi.getter(name="unacknowledgedWarnings")
-    def unacknowledged_warnings(self) -> pulumi.Output[bool]:
-        """
-        Used to distinguish whether there are unacknowledged warnings for a certificate
-        """
-        return pulumi.get(self, "unacknowledged_warnings")
 
     @property
     @pulumi.getter(name="waitForDeployment")

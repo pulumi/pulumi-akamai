@@ -35,7 +35,7 @@ type LookupGtmCidrmapResult struct {
 	Assignments       []GetGtmCidrmapAssignment       `pulumi:"assignments"`
 	DefaultDatacenter *GetGtmCidrmapDefaultDatacenter `pulumi:"defaultDatacenter"`
 	Domain            string                          `pulumi:"domain"`
-	// Deprecated: Required by the terraform plugin testing framework, always set to `gtmCidrmap`.
+	// The provider-assigned unique ID for this managed resource.
 	Id      string              `pulumi:"id"`
 	Links   []GetGtmCidrmapLink `pulumi:"links"`
 	MapName string              `pulumi:"mapName"`
@@ -90,7 +90,7 @@ func (o LookupGtmCidrmapResultOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGtmCidrmapResult) string { return v.Domain }).(pulumi.StringOutput)
 }
 
-// Deprecated: Required by the terraform plugin testing framework, always set to `gtmCidrmap`.
+// The provider-assigned unique ID for this managed resource.
 func (o LookupGtmCidrmapResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGtmCidrmapResult) string { return v.Id }).(pulumi.StringOutput)
 }

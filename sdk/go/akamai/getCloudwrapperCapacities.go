@@ -31,7 +31,7 @@ type GetCloudwrapperCapacitiesArgs struct {
 type GetCloudwrapperCapacitiesResult struct {
 	Capacities  []GetCloudwrapperCapacitiesCapacity `pulumi:"capacities"`
 	ContractIds []string                            `pulumi:"contractIds"`
-	// Deprecated: Required by the terraform plugin testing framework, always set to `getCloudwrapperCapacities`.
+	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 }
 
@@ -77,7 +77,7 @@ func (o GetCloudwrapperCapacitiesResultOutput) ContractIds() pulumi.StringArrayO
 	return o.ApplyT(func(v GetCloudwrapperCapacitiesResult) []string { return v.ContractIds }).(pulumi.StringArrayOutput)
 }
 
-// Deprecated: Required by the terraform plugin testing framework, always set to `getCloudwrapperCapacities`.
+// The provider-assigned unique ID for this managed resource.
 func (o GetCloudwrapperCapacitiesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCloudwrapperCapacitiesResult) string { return v.Id }).(pulumi.StringOutput)
 }

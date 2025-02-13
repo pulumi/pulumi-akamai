@@ -24,6 +24,7 @@ export interface GetPropertyArgs {
  * A collection of values returned by getProperty.
  */
 export interface GetPropertyResult {
+    readonly assetId: string;
     readonly contractId: string;
     readonly groupId: string;
     /**

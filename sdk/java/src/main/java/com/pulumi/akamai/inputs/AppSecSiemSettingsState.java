@@ -3,6 +3,7 @@
 
 package com.pulumi.akamai.inputs;
 
+import com.pulumi.akamai.inputs.AppSecSiemSettingsExceptionsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
@@ -79,6 +80,21 @@ public final class AppSecSiemSettingsState extends com.pulumi.resources.Resource
     }
 
     /**
+     * Describes all the protections and actions to be excluded from SIEM events
+     * 
+     */
+    @Import(name="exceptions")
+    private @Nullable Output<AppSecSiemSettingsExceptionsArgs> exceptions;
+
+    /**
+     * @return Describes all the protections and actions to be excluded from SIEM events
+     * 
+     */
+    public Optional<Output<AppSecSiemSettingsExceptionsArgs>> exceptions() {
+        return Optional.ofNullable(this.exceptions);
+    }
+
+    /**
      * List of IDs of security policy for which SIEM integration is to be enabled
      * 
      */
@@ -115,6 +131,7 @@ public final class AppSecSiemSettingsState extends com.pulumi.resources.Resource
         this.enableBotmanSiem = $.enableBotmanSiem;
         this.enableForAllPolicies = $.enableForAllPolicies;
         this.enableSiem = $.enableSiem;
+        this.exceptions = $.exceptions;
         this.securityPolicyIds = $.securityPolicyIds;
         this.siemId = $.siemId;
     }
@@ -219,6 +236,27 @@ public final class AppSecSiemSettingsState extends com.pulumi.resources.Resource
          */
         public Builder enableSiem(Boolean enableSiem) {
             return enableSiem(Output.of(enableSiem));
+        }
+
+        /**
+         * @param exceptions Describes all the protections and actions to be excluded from SIEM events
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exceptions(@Nullable Output<AppSecSiemSettingsExceptionsArgs> exceptions) {
+            $.exceptions = exceptions;
+            return this;
+        }
+
+        /**
+         * @param exceptions Describes all the protections and actions to be excluded from SIEM events
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exceptions(AppSecSiemSettingsExceptionsArgs exceptions) {
+            return exceptions(Output.of(exceptions));
         }
 
         /**

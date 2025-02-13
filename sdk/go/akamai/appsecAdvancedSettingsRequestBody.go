@@ -19,6 +19,8 @@ type AppsecAdvancedSettingsRequestBody struct {
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
 	// Request body inspection size limit in KB allowed values are 'default', 8, 16, 32
 	RequestBodyInspectionLimit pulumi.StringOutput `pulumi:"requestBodyInspectionLimit"`
+	// Indicates if the Request body inspection size should be overridden at policy
+	RequestBodyInspectionLimitOverride pulumi.BoolPtrOutput `pulumi:"requestBodyInspectionLimitOverride"`
 	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringPtrOutput `pulumi:"securityPolicyId"`
 }
@@ -63,6 +65,8 @@ type appsecAdvancedSettingsRequestBodyState struct {
 	ConfigId *int `pulumi:"configId"`
 	// Request body inspection size limit in KB allowed values are 'default', 8, 16, 32
 	RequestBodyInspectionLimit *string `pulumi:"requestBodyInspectionLimit"`
+	// Indicates if the Request body inspection size should be overridden at policy
+	RequestBodyInspectionLimitOverride *bool `pulumi:"requestBodyInspectionLimitOverride"`
 	// Unique identifier of the security policy
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
@@ -72,6 +76,8 @@ type AppsecAdvancedSettingsRequestBodyState struct {
 	ConfigId pulumi.IntPtrInput
 	// Request body inspection size limit in KB allowed values are 'default', 8, 16, 32
 	RequestBodyInspectionLimit pulumi.StringPtrInput
+	// Indicates if the Request body inspection size should be overridden at policy
+	RequestBodyInspectionLimitOverride pulumi.BoolPtrInput
 	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringPtrInput
 }
@@ -85,6 +91,8 @@ type appsecAdvancedSettingsRequestBodyArgs struct {
 	ConfigId int `pulumi:"configId"`
 	// Request body inspection size limit in KB allowed values are 'default', 8, 16, 32
 	RequestBodyInspectionLimit string `pulumi:"requestBodyInspectionLimit"`
+	// Indicates if the Request body inspection size should be overridden at policy
+	RequestBodyInspectionLimitOverride *bool `pulumi:"requestBodyInspectionLimitOverride"`
 	// Unique identifier of the security policy
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
@@ -95,6 +103,8 @@ type AppsecAdvancedSettingsRequestBodyArgs struct {
 	ConfigId pulumi.IntInput
 	// Request body inspection size limit in KB allowed values are 'default', 8, 16, 32
 	RequestBodyInspectionLimit pulumi.StringInput
+	// Indicates if the Request body inspection size should be overridden at policy
+	RequestBodyInspectionLimitOverride pulumi.BoolPtrInput
 	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringPtrInput
 }
@@ -194,6 +204,13 @@ func (o AppsecAdvancedSettingsRequestBodyOutput) ConfigId() pulumi.IntOutput {
 // Request body inspection size limit in KB allowed values are 'default', 8, 16, 32
 func (o AppsecAdvancedSettingsRequestBodyOutput) RequestBodyInspectionLimit() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppsecAdvancedSettingsRequestBody) pulumi.StringOutput { return v.RequestBodyInspectionLimit }).(pulumi.StringOutput)
+}
+
+// Indicates if the Request body inspection size should be overridden at policy
+func (o AppsecAdvancedSettingsRequestBodyOutput) RequestBodyInspectionLimitOverride() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AppsecAdvancedSettingsRequestBody) pulumi.BoolPtrOutput {
+		return v.RequestBodyInspectionLimitOverride
+	}).(pulumi.BoolPtrOutput)
 }
 
 // Unique identifier of the security policy

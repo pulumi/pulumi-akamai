@@ -41,6 +41,10 @@ export class DnsZone extends pulumi.CustomResource {
     public readonly endCustomerId!: pulumi.Output<string | undefined>;
     public readonly group!: pulumi.Output<string | undefined>;
     public readonly masters!: pulumi.Output<string[] | undefined>;
+    /**
+     * Outbound zone transfer properties.
+     */
+    public readonly outboundZoneTransfer!: pulumi.Output<outputs.DnsZoneOutboundZoneTransfer | undefined>;
     public readonly signAndServe!: pulumi.Output<boolean | undefined>;
     public readonly signAndServeAlgorithm!: pulumi.Output<string | undefined>;
     public readonly target!: pulumi.Output<string | undefined>;
@@ -69,6 +73,7 @@ export class DnsZone extends pulumi.CustomResource {
             resourceInputs["endCustomerId"] = state ? state.endCustomerId : undefined;
             resourceInputs["group"] = state ? state.group : undefined;
             resourceInputs["masters"] = state ? state.masters : undefined;
+            resourceInputs["outboundZoneTransfer"] = state ? state.outboundZoneTransfer : undefined;
             resourceInputs["signAndServe"] = state ? state.signAndServe : undefined;
             resourceInputs["signAndServeAlgorithm"] = state ? state.signAndServeAlgorithm : undefined;
             resourceInputs["target"] = state ? state.target : undefined;
@@ -92,6 +97,7 @@ export class DnsZone extends pulumi.CustomResource {
             resourceInputs["endCustomerId"] = args ? args.endCustomerId : undefined;
             resourceInputs["group"] = args ? args.group : undefined;
             resourceInputs["masters"] = args ? args.masters : undefined;
+            resourceInputs["outboundZoneTransfer"] = args ? args.outboundZoneTransfer : undefined;
             resourceInputs["signAndServe"] = args ? args.signAndServe : undefined;
             resourceInputs["signAndServeAlgorithm"] = args ? args.signAndServeAlgorithm : undefined;
             resourceInputs["target"] = args ? args.target : undefined;
@@ -120,6 +126,10 @@ export interface DnsZoneState {
     endCustomerId?: pulumi.Input<string>;
     group?: pulumi.Input<string>;
     masters?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Outbound zone transfer properties.
+     */
+    outboundZoneTransfer?: pulumi.Input<inputs.DnsZoneOutboundZoneTransfer>;
     signAndServe?: pulumi.Input<boolean>;
     signAndServeAlgorithm?: pulumi.Input<string>;
     target?: pulumi.Input<string>;
@@ -138,6 +148,10 @@ export interface DnsZoneArgs {
     endCustomerId?: pulumi.Input<string>;
     group?: pulumi.Input<string>;
     masters?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Outbound zone transfer properties.
+     */
+    outboundZoneTransfer?: pulumi.Input<inputs.DnsZoneOutboundZoneTransfer>;
     signAndServe?: pulumi.Input<boolean>;
     signAndServeAlgorithm?: pulumi.Input<string>;
     target?: pulumi.Input<string>;

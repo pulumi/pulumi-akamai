@@ -2,8 +2,6 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import * as inputs from "./types/input";
-import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export class EdgeKv extends pulumi.CustomResource {
@@ -43,12 +41,6 @@ export class EdgeKv extends pulumi.CustomResource {
      */
     public readonly groupId!: pulumi.Output<number>;
     /**
-     * List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
-     *
-     * @deprecated The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.
-     */
-    public readonly initialDatas!: pulumi.Output<outputs.EdgeKvInitialData[] | undefined>;
-    /**
      * Name for the EKV namespace
      */
     public readonly namespaceName!: pulumi.Output<string>;
@@ -76,7 +68,6 @@ export class EdgeKv extends pulumi.CustomResource {
             const state = argsOrState as EdgeKvState | undefined;
             resourceInputs["geoLocation"] = state ? state.geoLocation : undefined;
             resourceInputs["groupId"] = state ? state.groupId : undefined;
-            resourceInputs["initialDatas"] = state ? state.initialDatas : undefined;
             resourceInputs["namespaceName"] = state ? state.namespaceName : undefined;
             resourceInputs["network"] = state ? state.network : undefined;
             resourceInputs["retentionInSeconds"] = state ? state.retentionInSeconds : undefined;
@@ -96,7 +87,6 @@ export class EdgeKv extends pulumi.CustomResource {
             }
             resourceInputs["geoLocation"] = args ? args.geoLocation : undefined;
             resourceInputs["groupId"] = args ? args.groupId : undefined;
-            resourceInputs["initialDatas"] = args ? args.initialDatas : undefined;
             resourceInputs["namespaceName"] = args ? args.namespaceName : undefined;
             resourceInputs["network"] = args ? args.network : undefined;
             resourceInputs["retentionInSeconds"] = args ? args.retentionInSeconds : undefined;
@@ -118,12 +108,6 @@ export interface EdgeKvState {
      * Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
      */
     groupId?: pulumi.Input<number>;
-    /**
-     * List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
-     *
-     * @deprecated The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.
-     */
-    initialDatas?: pulumi.Input<pulumi.Input<inputs.EdgeKvInitialData>[]>;
     /**
      * Name for the EKV namespace
      */
@@ -150,12 +134,6 @@ export interface EdgeKvArgs {
      * Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
      */
     groupId: pulumi.Input<number>;
-    /**
-     * List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
-     *
-     * @deprecated The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.
-     */
-    initialDatas?: pulumi.Input<pulumi.Input<inputs.EdgeKvInitialData>[]>;
     /**
      * Name for the EKV namespace
      */

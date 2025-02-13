@@ -15,6 +15,8 @@ import (
 type PropertyBootstrap struct {
 	pulumi.CustomResourceState
 
+	// ID of the property in the Identity and Access Management API.
+	AssetId pulumi.StringOutput `pulumi:"assetId"`
 	// Contract ID to be assigned to the Property
 	ContractId pulumi.StringOutput `pulumi:"contractId"`
 	// Group ID to be assigned to the Property
@@ -64,6 +66,8 @@ func GetPropertyBootstrap(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering PropertyBootstrap resources.
 type propertyBootstrapState struct {
+	// ID of the property in the Identity and Access Management API.
+	AssetId *string `pulumi:"assetId"`
 	// Contract ID to be assigned to the Property
 	ContractId *string `pulumi:"contractId"`
 	// Group ID to be assigned to the Property
@@ -75,6 +79,8 @@ type propertyBootstrapState struct {
 }
 
 type PropertyBootstrapState struct {
+	// ID of the property in the Identity and Access Management API.
+	AssetId pulumi.StringPtrInput
 	// Contract ID to be assigned to the Property
 	ContractId pulumi.StringPtrInput
 	// Group ID to be assigned to the Property
@@ -197,6 +203,11 @@ func (o PropertyBootstrapOutput) ToPropertyBootstrapOutput() PropertyBootstrapOu
 
 func (o PropertyBootstrapOutput) ToPropertyBootstrapOutputWithContext(ctx context.Context) PropertyBootstrapOutput {
 	return o
+}
+
+// ID of the property in the Identity and Access Management API.
+func (o PropertyBootstrapOutput) AssetId() pulumi.StringOutput {
+	return o.ApplyT(func(v *PropertyBootstrap) pulumi.StringOutput { return v.AssetId }).(pulumi.StringOutput)
 }
 
 // Contract ID to be assigned to the Property

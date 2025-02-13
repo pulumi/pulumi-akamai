@@ -35,6 +35,10 @@ export class Property extends pulumi.CustomResource {
     }
 
     /**
+     * ID of the property in the Identity and Access Management API.
+     */
+    public /*out*/ readonly assetId!: pulumi.Output<string>;
+    /**
      * Contract ID to be assigned to the Property
      */
     public readonly contractId!: pulumi.Output<string>;
@@ -102,6 +106,7 @@ export class Property extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PropertyState | undefined;
+            resourceInputs["assetId"] = state ? state.assetId : undefined;
             resourceInputs["contractId"] = state ? state.contractId : undefined;
             resourceInputs["groupId"] = state ? state.groupId : undefined;
             resourceInputs["hostnames"] = state ? state.hostnames : undefined;
@@ -137,6 +142,7 @@ export class Property extends pulumi.CustomResource {
             resourceInputs["ruleFormat"] = args ? args.ruleFormat : undefined;
             resourceInputs["rules"] = args ? args.rules : undefined;
             resourceInputs["versionNotes"] = args ? args.versionNotes : undefined;
+            resourceInputs["assetId"] = undefined /*out*/;
             resourceInputs["latestVersion"] = undefined /*out*/;
             resourceInputs["productionVersion"] = undefined /*out*/;
             resourceInputs["readVersion"] = undefined /*out*/;
@@ -155,6 +161,10 @@ export class Property extends pulumi.CustomResource {
  * Input properties used for looking up and filtering Property resources.
  */
 export interface PropertyState {
+    /**
+     * ID of the property in the Identity and Access Management API.
+     */
+    assetId?: pulumi.Input<string>;
     /**
      * Contract ID to be assigned to the Property
      */

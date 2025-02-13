@@ -155,21 +155,6 @@ public final class CpsUploadCertificateState extends com.pulumi.resources.Resour
     }
 
     /**
-     * Used to distinguish whether there are unacknowledged warnings for a certificate
-     * 
-     */
-    @Import(name="unacknowledgedWarnings")
-    private @Nullable Output<Boolean> unacknowledgedWarnings;
-
-    /**
-     * @return Used to distinguish whether there are unacknowledged warnings for a certificate
-     * 
-     */
-    public Optional<Output<Boolean>> unacknowledgedWarnings() {
-        return Optional.ofNullable(this.unacknowledgedWarnings);
-    }
-
-    /**
      * Whether to wait for certificate to be deployed
      * 
      */
@@ -196,7 +181,6 @@ public final class CpsUploadCertificateState extends com.pulumi.resources.Resour
         this.timeouts = $.timeouts;
         this.trustChainEcdsaPem = $.trustChainEcdsaPem;
         this.trustChainRsaPem = $.trustChainRsaPem;
-        this.unacknowledgedWarnings = $.unacknowledgedWarnings;
         this.waitForDeployment = $.waitForDeployment;
     }
 
@@ -415,27 +399,6 @@ public final class CpsUploadCertificateState extends com.pulumi.resources.Resour
          */
         public Builder trustChainRsaPem(String trustChainRsaPem) {
             return trustChainRsaPem(Output.of(trustChainRsaPem));
-        }
-
-        /**
-         * @param unacknowledgedWarnings Used to distinguish whether there are unacknowledged warnings for a certificate
-         * 
-         * @return builder
-         * 
-         */
-        public Builder unacknowledgedWarnings(@Nullable Output<Boolean> unacknowledgedWarnings) {
-            $.unacknowledgedWarnings = unacknowledgedWarnings;
-            return this;
-        }
-
-        /**
-         * @param unacknowledgedWarnings Used to distinguish whether there are unacknowledged warnings for a certificate
-         * 
-         * @return builder
-         * 
-         */
-        public Builder unacknowledgedWarnings(Boolean unacknowledgedWarnings) {
-            return unacknowledgedWarnings(Output.of(unacknowledgedWarnings));
         }
 
         /**

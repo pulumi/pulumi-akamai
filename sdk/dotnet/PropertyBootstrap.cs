@@ -13,6 +13,12 @@ namespace Pulumi.Akamai
     public partial class PropertyBootstrap : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// ID of the property in the Identity and Access Management API.
+        /// </summary>
+        [Output("assetId")]
+        public Output<string> AssetId { get; private set; } = null!;
+
+        /// <summary>
         /// Contract ID to be assigned to the Property
         /// </summary>
         [Output("contractId")]
@@ -114,6 +120,12 @@ namespace Pulumi.Akamai
 
     public sealed class PropertyBootstrapState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// ID of the property in the Identity and Access Management API.
+        /// </summary>
+        [Input("assetId")]
+        public Input<string>? AssetId { get; set; }
+
         /// <summary>
         /// Contract ID to be assigned to the Property
         /// </summary>
