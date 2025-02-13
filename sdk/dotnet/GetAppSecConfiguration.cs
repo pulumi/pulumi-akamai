@@ -49,6 +49,7 @@ namespace Pulumi.Akamai
     public sealed class GetAppSecConfigurationResult
     {
         public readonly int ConfigId;
+        public readonly ImmutableArray<string> HostNames;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
@@ -63,6 +64,8 @@ namespace Pulumi.Akamai
         private GetAppSecConfigurationResult(
             int configId,
 
+            ImmutableArray<string> hostNames,
+
             string id,
 
             int latestVersion,
@@ -76,6 +79,7 @@ namespace Pulumi.Akamai
             int stagingVersion)
         {
             ConfigId = configId;
+            HostNames = hostNames;
             Id = id;
             LatestVersion = latestVersion;
             Name = name;

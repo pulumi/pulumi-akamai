@@ -25,6 +25,12 @@ namespace Pulumi.Akamai
         public Output<string> RequestBodyInspectionLimit { get; private set; } = null!;
 
         /// <summary>
+        /// Indicates if the Request body inspection size should be overridden at policy
+        /// </summary>
+        [Output("requestBodyInspectionLimitOverride")]
+        public Output<bool?> RequestBodyInspectionLimitOverride { get; private set; } = null!;
+
+        /// <summary>
         /// Unique identifier of the security policy
         /// </summary>
         [Output("securityPolicyId")]
@@ -89,6 +95,12 @@ namespace Pulumi.Akamai
         public Input<string> RequestBodyInspectionLimit { get; set; } = null!;
 
         /// <summary>
+        /// Indicates if the Request body inspection size should be overridden at policy
+        /// </summary>
+        [Input("requestBodyInspectionLimitOverride")]
+        public Input<bool>? RequestBodyInspectionLimitOverride { get; set; }
+
+        /// <summary>
         /// Unique identifier of the security policy
         /// </summary>
         [Input("securityPolicyId")]
@@ -113,6 +125,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("requestBodyInspectionLimit")]
         public Input<string>? RequestBodyInspectionLimit { get; set; }
+
+        /// <summary>
+        /// Indicates if the Request body inspection size should be overridden at policy
+        /// </summary>
+        [Input("requestBodyInspectionLimitOverride")]
+        public Input<bool>? RequestBodyInspectionLimitOverride { get; set; }
 
         /// <summary>
         /// Unique identifier of the security policy

@@ -84,9 +84,6 @@ namespace Pulumi.Akamai
         [Output("staticRrSets")]
         public Output<ImmutableArray<Outputs.GtmPropertyStaticRrSet>> StaticRrSets { get; private set; } = null!;
 
-        [Output("staticTtl")]
-        public Output<int?> StaticTtl { get; private set; } = null!;
-
         [Output("stickinessBonusConstant")]
         public Output<int?> StickinessBonusConstant { get; private set; } = null!;
 
@@ -246,9 +243,6 @@ namespace Pulumi.Akamai
             set => _staticRrSets = value;
         }
 
-        [Input("staticTtl")]
-        public Input<int>? StaticTtl { get; set; }
-
         [Input("stickinessBonusConstant")]
         public Input<int>? StickinessBonusConstant { get; set; }
 
@@ -364,9 +358,6 @@ namespace Pulumi.Akamai
             get => _staticRrSets ?? (_staticRrSets = new InputList<Inputs.GtmPropertyStaticRrSetGetArgs>());
             set => _staticRrSets = value;
         }
-
-        [Input("staticTtl")]
-        public Input<int>? StaticTtl { get; set; }
 
         [Input("stickinessBonusConstant")]
         public Input<int>? StickinessBonusConstant { get; set; }

@@ -71,6 +71,9 @@ namespace Pulumi.Akamai
     public sealed class GetCloudletsPolicyActivationResult
     {
         public readonly ImmutableArray<string> AssociatedProperties;
+        /// <summary>
+        /// The provider-assigned unique ID for this managed resource.
+        /// </summary>
         public readonly string Id;
         public readonly string Network;
         public readonly int PolicyId;

@@ -12,9 +12,6 @@ namespace Pulumi.Akamai
     [AkamaiResourceType("akamai:index/dnsRecord:DnsRecord")]
     public partial class DnsRecord : global::Pulumi.CustomResource
     {
-        [Output("active")]
-        public Output<bool?> Active { get; private set; } = null!;
-
         [Output("algorithm")]
         public Output<int?> Algorithm { get; private set; } = null!;
 
@@ -242,9 +239,6 @@ namespace Pulumi.Akamai
 
     public sealed class DnsRecordArgs : global::Pulumi.ResourceArgs
     {
-        [Input("active")]
-        public Input<bool>? Active { get; set; }
-
         [Input("algorithm")]
         public Input<int>? Algorithm { get; set; }
 
@@ -423,9 +417,6 @@ namespace Pulumi.Akamai
 
     public sealed class DnsRecordState : global::Pulumi.ResourceArgs
     {
-        [Input("active")]
-        public Input<bool>? Active { get; set; }
-
         [Input("algorithm")]
         public Input<int>? Algorithm { get; set; }
 

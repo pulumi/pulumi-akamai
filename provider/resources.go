@@ -106,7 +106,12 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_property_variables",
 			// This provides a DotNet codegen class as follows:
 			// GetIamGroupsGroupSubGroupSubGroupSubGroupSubGroupSubGroupSubGroupSubGroupSubGroupSubGroupSubGrou....
+			"akamai_iam_accessible_groups",
 			"akamai_iam_groups",
+			"akamai_iam_group",
+			"akamai_iam_authorized_users",
+			"akamai_iam_user",
+			"akamai_iam_users",
 		},
 		Resources: map[string]*tfbridge.ResourceInfo{
 			"akamai_cloudwrapper_configuration": {ComputeID: tfbridge.DelegateIDField("configName", "akamai", "https://github.com/pulumi/pulumi-akamai")},

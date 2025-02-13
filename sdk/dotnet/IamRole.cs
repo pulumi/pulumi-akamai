@@ -13,25 +13,25 @@ namespace Pulumi.Akamai
     public partial class IamRole : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The description for a role
+        /// The description for a role.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// The list of existing unique identifiers for the granted roles
+        /// The list of existing unique identifiers for the granted roles.
         /// </summary>
         [Output("grantedRoles")]
         public Output<ImmutableArray<int>> GrantedRoles { get; private set; } = null!;
 
         /// <summary>
-        /// The name you supply for a role
+        /// The name you supply for a role.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account
+        /// The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account.
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -83,7 +83,7 @@ namespace Pulumi.Akamai
     public sealed class IamRoleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The description for a role
+        /// The description for a role.
         /// </summary>
         [Input("description", required: true)]
         public Input<string> Description { get; set; } = null!;
@@ -92,7 +92,7 @@ namespace Pulumi.Akamai
         private InputList<int>? _grantedRoles;
 
         /// <summary>
-        /// The list of existing unique identifiers for the granted roles
+        /// The list of existing unique identifiers for the granted roles.
         /// </summary>
         public InputList<int> GrantedRoles
         {
@@ -101,13 +101,13 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// The name you supply for a role
+        /// The name you supply for a role.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account
+        /// The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
@@ -121,7 +121,7 @@ namespace Pulumi.Akamai
     public sealed class IamRoleState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The description for a role
+        /// The description for a role.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -130,7 +130,7 @@ namespace Pulumi.Akamai
         private InputList<int>? _grantedRoles;
 
         /// <summary>
-        /// The list of existing unique identifiers for the granted roles
+        /// The list of existing unique identifiers for the granted roles.
         /// </summary>
         public InputList<int> GrantedRoles
         {
@@ -139,13 +139,13 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// The name you supply for a role
+        /// The name you supply for a role.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account
+        /// The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

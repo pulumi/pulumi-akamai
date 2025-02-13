@@ -151,7 +151,7 @@ namespace Pulumi.Akamai.Inputs
         public Input<string>? OriginId { get; set; }
 
         /// <summary>
-        /// For non-NetStorage origins, enabling this adds a Server Name Indication (SNI) header in the SSL request sent to the origin, with the origin hostname as the value. See the `verification settings in the Origin Server behavior` or contact your Akamai representative for more information.
+        /// For non-NetStorage origins, enabling this adds a Server Name Indication (SNI) header in the SSL request sent to the origin, with the origin hostname as the value. See the `verification settings in the Origin Server behavior` or contact your Akamai representative for more information. If you want to use TLS version 1.3 in your existing properties, enable this option. New properties have this enabled by default.
         /// </summary>
         [Input("originSni")]
         public Input<bool>? OriginSni { get; set; }
@@ -242,9 +242,6 @@ namespace Pulumi.Akamai.Inputs
         [Input("templateUuid")]
         public Input<string>? TemplateUuid { get; set; }
 
-        /// <summary>
-        /// Enables transport layer security (TLS) version 1.3 for connections to your origin server.
-        /// </summary>
         [Input("tls13Support")]
         public Input<bool>? Tls13Support { get; set; }
 

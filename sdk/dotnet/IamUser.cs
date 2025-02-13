@@ -13,145 +13,163 @@ namespace Pulumi.Akamai
     public partial class IamUser : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The user's street address
+        /// The user's street address.
         /// </summary>
         [Output("address")]
         public Output<string> Address { get; private set; } = null!;
 
         /// <summary>
-        /// A user's per-group role assignments, in JSON form
+        /// A user's per-group role assignments, in JSON form.
         /// </summary>
         [Output("authGrantsJson")]
         public Output<string> AuthGrantsJson { get; private set; } = null!;
 
         /// <summary>
-        /// The user's city
+        /// The user's city.
         /// </summary>
         [Output("city")]
         public Output<string?> City { get; private set; } = null!;
 
         /// <summary>
-        /// To help characterize the user, the value can be any that are available from the view-contact-types operation
+        /// To help characterize the user, the value can be any that are available from the view-contact-types operation.
         /// </summary>
         [Output("contactType")]
         public Output<string> ContactType { get; private set; } = null!;
 
         /// <summary>
-        /// As part of the user's location, the value can be any that are available from the view-supported-countries operation
+        /// As part of the user's location, the value can be any that are available from the view-supported-countries operation.
         /// </summary>
         [Output("country")]
         public Output<string> Country { get; private set; } = null!;
 
         /// <summary>
-        /// The user's email address
+        /// The user's email address.
         /// </summary>
         [Output("email")]
         public Output<string> Email { get; private set; } = null!;
 
         /// <summary>
-        /// Indicates whether email update is pending
+        /// Indicates whether email update is pending.
         /// </summary>
         [Output("emailUpdatePending")]
         public Output<bool> EmailUpdatePending { get; private set; } = null!;
 
         /// <summary>
-        /// Indicates whether two-factor authentication is allowed
+        /// Indicates whether multi-factor authentication is allowed.
         /// </summary>
-        [Output("enableTfa")]
-        public Output<bool> EnableTfa { get; private set; } = null!;
+        [Output("enableMfa")]
+        public Output<bool?> EnableMfa { get; private set; } = null!;
 
         /// <summary>
-        /// The user's first name
+        /// Indicates whether two-factor authentication is allowed.
+        /// </summary>
+        [Output("enableTfa")]
+        public Output<bool?> EnableTfa { get; private set; } = null!;
+
+        /// <summary>
+        /// The user's first name.
         /// </summary>
         [Output("firstName")]
         public Output<string> FirstName { get; private set; } = null!;
 
         /// <summary>
-        /// The user's position at your company
+        /// The user's position at your company.
         /// </summary>
         [Output("jobTitle")]
         public Output<string?> JobTitle { get; private set; } = null!;
 
         /// <summary>
-        /// ISO 8601 timestamp indicating when the user last logged in
+        /// ISO 8601 timestamp indicating when the user last logged in.
         /// </summary>
         [Output("lastLogin")]
         public Output<string> LastLogin { get; private set; } = null!;
 
         /// <summary>
-        /// The user's surname
+        /// The user's surname.
         /// </summary>
         [Output("lastName")]
         public Output<string> LastName { get; private set; } = null!;
 
         /// <summary>
-        /// Flag to block a user account
+        /// Flag to block a user account.
         /// </summary>
         [Output("lock")]
         public Output<bool?> Lock { get; private set; } = null!;
 
         /// <summary>
-        /// The user's mobile phone number
+        /// The user's mobile phone number.
         /// </summary>
         [Output("mobilePhone")]
         public Output<string?> MobilePhone { get; private set; } = null!;
 
         /// <summary>
-        /// The date a user's password expires
+        /// New password for a user.
+        /// </summary>
+        [Output("password")]
+        public Output<string?> Password { get; private set; } = null!;
+
+        /// <summary>
+        /// The date a user's password expires.
         /// </summary>
         [Output("passwordExpiredAfter")]
         public Output<string> PasswordExpiredAfter { get; private set; } = null!;
 
         /// <summary>
-        /// The user's main phone number
+        /// The user's main phone number.
         /// </summary>
         [Output("phone")]
         public Output<string?> Phone { get; private set; } = null!;
 
         /// <summary>
-        /// The value can be any that are available from the view-languages operation
+        /// The value can be any that are available from the view-languages operation.
         /// </summary>
         [Output("preferredLanguage")]
         public Output<string> PreferredLanguage { get; private set; } = null!;
 
         /// <summary>
-        /// The user's secondary email address
+        /// The user's secondary email address.
         /// </summary>
         [Output("secondaryEmail")]
         public Output<string?> SecondaryEmail { get; private set; } = null!;
 
         /// <summary>
-        /// The number of seconds it takes for the user's Control Center session to time out if there hasn't been any activity
+        /// The number of seconds it takes for the user's Control Center session to time out if there hasn't been any activity.
         /// </summary>
         [Output("sessionTimeout")]
         public Output<int> SessionTimeout { get; private set; } = null!;
 
         /// <summary>
-        /// The user's state
+        /// The user's state.
         /// </summary>
         [Output("state")]
         public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
-        /// Indicates whether two-factor authentication is configured
+        /// Indicates whether two-factor authentication is configured.
         /// </summary>
         [Output("tfaConfigured")]
         public Output<bool> TfaConfigured { get; private set; } = null!;
 
         /// <summary>
-        /// The user's time zone. The value can be any that are available from the view-time-zones operation
+        /// The user's time zone. The value can be any that are available from the view-time-zones operation.
         /// </summary>
         [Output("timeZone")]
         public Output<string> TimeZone { get; private set; } = null!;
 
         /// <summary>
-        /// A user's `loginId`. Typically, a user's email address
+        /// A user's `loginId`. Typically, a user's email address.
         /// </summary>
         [Output("userName")]
         public Output<string> UserName { get; private set; } = null!;
 
         /// <summary>
-        /// The user's five-digit ZIP code
+        /// Specifies email notifications the user receives for products.
+        /// </summary>
+        [Output("userNotifications")]
+        public Output<Outputs.IamUserUserNotifications> UserNotifications { get; private set; } = null!;
+
+        /// <summary>
+        /// The user's five-digit ZIP code.
         /// </summary>
         [Output("zipCode")]
         public Output<string?> ZipCode { get; private set; } = null!;
@@ -179,6 +197,10 @@ namespace Pulumi.Akamai
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "password",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -203,115 +225,143 @@ namespace Pulumi.Akamai
     public sealed class IamUserArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The user's street address
+        /// The user's street address.
         /// </summary>
         [Input("address")]
         public Input<string>? Address { get; set; }
 
         /// <summary>
-        /// A user's per-group role assignments, in JSON form
+        /// A user's per-group role assignments, in JSON form.
         /// </summary>
         [Input("authGrantsJson", required: true)]
         public Input<string> AuthGrantsJson { get; set; } = null!;
 
         /// <summary>
-        /// The user's city
+        /// The user's city.
         /// </summary>
         [Input("city")]
         public Input<string>? City { get; set; }
 
         /// <summary>
-        /// To help characterize the user, the value can be any that are available from the view-contact-types operation
+        /// To help characterize the user, the value can be any that are available from the view-contact-types operation.
         /// </summary>
         [Input("contactType")]
         public Input<string>? ContactType { get; set; }
 
         /// <summary>
-        /// As part of the user's location, the value can be any that are available from the view-supported-countries operation
+        /// As part of the user's location, the value can be any that are available from the view-supported-countries operation.
         /// </summary>
         [Input("country", required: true)]
         public Input<string> Country { get; set; } = null!;
 
         /// <summary>
-        /// The user's email address
+        /// The user's email address.
         /// </summary>
         [Input("email", required: true)]
         public Input<string> Email { get; set; } = null!;
 
         /// <summary>
-        /// Indicates whether two-factor authentication is allowed
+        /// Indicates whether multi-factor authentication is allowed.
         /// </summary>
-        [Input("enableTfa", required: true)]
-        public Input<bool> EnableTfa { get; set; } = null!;
+        [Input("enableMfa")]
+        public Input<bool>? EnableMfa { get; set; }
 
         /// <summary>
-        /// The user's first name
+        /// Indicates whether two-factor authentication is allowed.
+        /// </summary>
+        [Input("enableTfa")]
+        public Input<bool>? EnableTfa { get; set; }
+
+        /// <summary>
+        /// The user's first name.
         /// </summary>
         [Input("firstName", required: true)]
         public Input<string> FirstName { get; set; } = null!;
 
         /// <summary>
-        /// The user's position at your company
+        /// The user's position at your company.
         /// </summary>
         [Input("jobTitle")]
         public Input<string>? JobTitle { get; set; }
 
         /// <summary>
-        /// The user's surname
+        /// The user's surname.
         /// </summary>
         [Input("lastName", required: true)]
         public Input<string> LastName { get; set; } = null!;
 
         /// <summary>
-        /// Flag to block a user account
+        /// Flag to block a user account.
         /// </summary>
         [Input("lock")]
         public Input<bool>? Lock { get; set; }
 
         /// <summary>
-        /// The user's mobile phone number
+        /// The user's mobile phone number.
         /// </summary>
         [Input("mobilePhone")]
         public Input<string>? MobilePhone { get; set; }
 
+        [Input("password")]
+        private Input<string>? _password;
+
         /// <summary>
-        /// The user's main phone number
+        /// New password for a user.
+        /// </summary>
+        public Input<string>? Password
+        {
+            get => _password;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _password = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        /// <summary>
+        /// The user's main phone number.
         /// </summary>
         [Input("phone")]
         public Input<string>? Phone { get; set; }
 
         /// <summary>
-        /// The value can be any that are available from the view-languages operation
+        /// The value can be any that are available from the view-languages operation.
         /// </summary>
         [Input("preferredLanguage")]
         public Input<string>? PreferredLanguage { get; set; }
 
         /// <summary>
-        /// The user's secondary email address
+        /// The user's secondary email address.
         /// </summary>
         [Input("secondaryEmail")]
         public Input<string>? SecondaryEmail { get; set; }
 
         /// <summary>
-        /// The number of seconds it takes for the user's Control Center session to time out if there hasn't been any activity
+        /// The number of seconds it takes for the user's Control Center session to time out if there hasn't been any activity.
         /// </summary>
         [Input("sessionTimeout")]
         public Input<int>? SessionTimeout { get; set; }
 
         /// <summary>
-        /// The user's state
+        /// The user's state.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// The user's time zone. The value can be any that are available from the view-time-zones operation
+        /// The user's time zone. The value can be any that are available from the view-time-zones operation.
         /// </summary>
         [Input("timeZone")]
         public Input<string>? TimeZone { get; set; }
 
         /// <summary>
-        /// The user's five-digit ZIP code
+        /// Specifies email notifications the user receives for products.
+        /// </summary>
+        [Input("userNotifications")]
+        public Input<Inputs.IamUserUserNotificationsArgs>? UserNotifications { get; set; }
+
+        /// <summary>
+        /// The user's five-digit ZIP code.
         /// </summary>
         [Input("zipCode")]
         public Input<string>? ZipCode { get; set; }
@@ -325,145 +375,173 @@ namespace Pulumi.Akamai
     public sealed class IamUserState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The user's street address
+        /// The user's street address.
         /// </summary>
         [Input("address")]
         public Input<string>? Address { get; set; }
 
         /// <summary>
-        /// A user's per-group role assignments, in JSON form
+        /// A user's per-group role assignments, in JSON form.
         /// </summary>
         [Input("authGrantsJson")]
         public Input<string>? AuthGrantsJson { get; set; }
 
         /// <summary>
-        /// The user's city
+        /// The user's city.
         /// </summary>
         [Input("city")]
         public Input<string>? City { get; set; }
 
         /// <summary>
-        /// To help characterize the user, the value can be any that are available from the view-contact-types operation
+        /// To help characterize the user, the value can be any that are available from the view-contact-types operation.
         /// </summary>
         [Input("contactType")]
         public Input<string>? ContactType { get; set; }
 
         /// <summary>
-        /// As part of the user's location, the value can be any that are available from the view-supported-countries operation
+        /// As part of the user's location, the value can be any that are available from the view-supported-countries operation.
         /// </summary>
         [Input("country")]
         public Input<string>? Country { get; set; }
 
         /// <summary>
-        /// The user's email address
+        /// The user's email address.
         /// </summary>
         [Input("email")]
         public Input<string>? Email { get; set; }
 
         /// <summary>
-        /// Indicates whether email update is pending
+        /// Indicates whether email update is pending.
         /// </summary>
         [Input("emailUpdatePending")]
         public Input<bool>? EmailUpdatePending { get; set; }
 
         /// <summary>
-        /// Indicates whether two-factor authentication is allowed
+        /// Indicates whether multi-factor authentication is allowed.
+        /// </summary>
+        [Input("enableMfa")]
+        public Input<bool>? EnableMfa { get; set; }
+
+        /// <summary>
+        /// Indicates whether two-factor authentication is allowed.
         /// </summary>
         [Input("enableTfa")]
         public Input<bool>? EnableTfa { get; set; }
 
         /// <summary>
-        /// The user's first name
+        /// The user's first name.
         /// </summary>
         [Input("firstName")]
         public Input<string>? FirstName { get; set; }
 
         /// <summary>
-        /// The user's position at your company
+        /// The user's position at your company.
         /// </summary>
         [Input("jobTitle")]
         public Input<string>? JobTitle { get; set; }
 
         /// <summary>
-        /// ISO 8601 timestamp indicating when the user last logged in
+        /// ISO 8601 timestamp indicating when the user last logged in.
         /// </summary>
         [Input("lastLogin")]
         public Input<string>? LastLogin { get; set; }
 
         /// <summary>
-        /// The user's surname
+        /// The user's surname.
         /// </summary>
         [Input("lastName")]
         public Input<string>? LastName { get; set; }
 
         /// <summary>
-        /// Flag to block a user account
+        /// Flag to block a user account.
         /// </summary>
         [Input("lock")]
         public Input<bool>? Lock { get; set; }
 
         /// <summary>
-        /// The user's mobile phone number
+        /// The user's mobile phone number.
         /// </summary>
         [Input("mobilePhone")]
         public Input<string>? MobilePhone { get; set; }
 
+        [Input("password")]
+        private Input<string>? _password;
+
         /// <summary>
-        /// The date a user's password expires
+        /// New password for a user.
+        /// </summary>
+        public Input<string>? Password
+        {
+            get => _password;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _password = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        /// <summary>
+        /// The date a user's password expires.
         /// </summary>
         [Input("passwordExpiredAfter")]
         public Input<string>? PasswordExpiredAfter { get; set; }
 
         /// <summary>
-        /// The user's main phone number
+        /// The user's main phone number.
         /// </summary>
         [Input("phone")]
         public Input<string>? Phone { get; set; }
 
         /// <summary>
-        /// The value can be any that are available from the view-languages operation
+        /// The value can be any that are available from the view-languages operation.
         /// </summary>
         [Input("preferredLanguage")]
         public Input<string>? PreferredLanguage { get; set; }
 
         /// <summary>
-        /// The user's secondary email address
+        /// The user's secondary email address.
         /// </summary>
         [Input("secondaryEmail")]
         public Input<string>? SecondaryEmail { get; set; }
 
         /// <summary>
-        /// The number of seconds it takes for the user's Control Center session to time out if there hasn't been any activity
+        /// The number of seconds it takes for the user's Control Center session to time out if there hasn't been any activity.
         /// </summary>
         [Input("sessionTimeout")]
         public Input<int>? SessionTimeout { get; set; }
 
         /// <summary>
-        /// The user's state
+        /// The user's state.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// Indicates whether two-factor authentication is configured
+        /// Indicates whether two-factor authentication is configured.
         /// </summary>
         [Input("tfaConfigured")]
         public Input<bool>? TfaConfigured { get; set; }
 
         /// <summary>
-        /// The user's time zone. The value can be any that are available from the view-time-zones operation
+        /// The user's time zone. The value can be any that are available from the view-time-zones operation.
         /// </summary>
         [Input("timeZone")]
         public Input<string>? TimeZone { get; set; }
 
         /// <summary>
-        /// A user's `loginId`. Typically, a user's email address
+        /// A user's `loginId`. Typically, a user's email address.
         /// </summary>
         [Input("userName")]
         public Input<string>? UserName { get; set; }
 
         /// <summary>
-        /// The user's five-digit ZIP code
+        /// Specifies email notifications the user receives for products.
+        /// </summary>
+        [Input("userNotifications")]
+        public Input<Inputs.IamUserUserNotificationsGetArgs>? UserNotifications { get; set; }
+
+        /// <summary>
+        /// The user's five-digit ZIP code.
         /// </summary>
         [Input("zipCode")]
         public Input<string>? ZipCode { get; set; }

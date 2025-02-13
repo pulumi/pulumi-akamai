@@ -22,7 +22,7 @@ namespace Pulumi.Akamai
         /// Whether Bot Manager events should be included in SIEM events
         /// </summary>
         [Output("enableBotmanSiem")]
-        public Output<bool> EnableBotmanSiem { get; private set; } = null!;
+        public Output<bool?> EnableBotmanSiem { get; private set; } = null!;
 
         /// <summary>
         /// Whether to enable SIEM on all security policies in the security configuration
@@ -35,6 +35,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Output("enableSiem")]
         public Output<bool> EnableSiem { get; private set; } = null!;
+
+        /// <summary>
+        /// Describes all the protections and actions to be excluded from SIEM events
+        /// </summary>
+        [Output("exceptions")]
+        public Output<Outputs.AppSecSiemSettingsExceptions?> Exceptions { get; private set; } = null!;
 
         /// <summary>
         /// List of IDs of security policy for which SIEM integration is to be enabled
@@ -103,8 +109,8 @@ namespace Pulumi.Akamai
         /// <summary>
         /// Whether Bot Manager events should be included in SIEM events
         /// </summary>
-        [Input("enableBotmanSiem", required: true)]
-        public Input<bool> EnableBotmanSiem { get; set; } = null!;
+        [Input("enableBotmanSiem")]
+        public Input<bool>? EnableBotmanSiem { get; set; }
 
         /// <summary>
         /// Whether to enable SIEM on all security policies in the security configuration
@@ -117,6 +123,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("enableSiem", required: true)]
         public Input<bool> EnableSiem { get; set; } = null!;
+
+        /// <summary>
+        /// Describes all the protections and actions to be excluded from SIEM events
+        /// </summary>
+        [Input("exceptions")]
+        public Input<Inputs.AppSecSiemSettingsExceptionsArgs>? Exceptions { get; set; }
 
         [Input("securityPolicyIds")]
         private InputList<string>? _securityPolicyIds;
@@ -167,6 +179,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("enableSiem")]
         public Input<bool>? EnableSiem { get; set; }
+
+        /// <summary>
+        /// Describes all the protections and actions to be excluded from SIEM events
+        /// </summary>
+        [Input("exceptions")]
+        public Input<Inputs.AppSecSiemSettingsExceptionsGetArgs>? Exceptions { get; set; }
 
         [Input("securityPolicyIds")]
         private InputList<string>? _securityPolicyIds;

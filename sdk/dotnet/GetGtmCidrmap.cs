@@ -95,6 +95,9 @@ namespace Pulumi.Akamai
         public readonly ImmutableArray<Outputs.GetGtmCidrmapAssignmentResult> Assignments;
         public readonly Outputs.GetGtmCidrmapDefaultDatacenterResult? DefaultDatacenter;
         public readonly string Domain;
+        /// <summary>
+        /// The provider-assigned unique ID for this managed resource.
+        /// </summary>
         public readonly string Id;
         public readonly ImmutableArray<Outputs.GetGtmCidrmapLinkResult> Links;
         public readonly string MapName;
