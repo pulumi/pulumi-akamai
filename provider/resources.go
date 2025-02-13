@@ -193,17 +193,9 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_iam_ip_allowlist": {
 				Tok: makeResource(mainMod, "IamIpAllowlist"),
 				ComputeID: func(ctx context.Context, state resource.PropertyMap) (resource.ID, error) {
-					enabledValue, hasEnabled := state["enabled"]
-					if !hasEnabled {
-						return resource.ID(""), fmt.Errorf("expected field 'enabled' to be present")
-					}
-
-					if enabledValue.IsNull() || !enabledValue.BoolValue() {
-						return resource.ID(""), fmt.Errorf("expected field 'enabled' to be a boolean")
-					}
-
-					enabled := enabledValue.BoolValue()
-					return resource.ID(fmt.Sprintf("%t", enabled)), nil
+					// this resource only has one field called "enabled" which is a boolean
+					// so here we create a dummy ID field to satisfy engine requirements
+					return resource.ID("id"), nil
 				},
 			},
 
