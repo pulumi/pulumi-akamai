@@ -8,27 +8,29 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-akamai/sdk/v7/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v8/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 type DnsZone struct {
 	pulumi.CustomResourceState
 
-	ActivationState       pulumi.StringOutput      `pulumi:"activationState"`
-	AliasCount            pulumi.IntOutput         `pulumi:"aliasCount"`
-	Comment               pulumi.StringPtrOutput   `pulumi:"comment"`
-	Contract              pulumi.StringOutput      `pulumi:"contract"`
-	EndCustomerId         pulumi.StringPtrOutput   `pulumi:"endCustomerId"`
-	Group                 pulumi.StringPtrOutput   `pulumi:"group"`
-	Masters               pulumi.StringArrayOutput `pulumi:"masters"`
-	SignAndServe          pulumi.BoolPtrOutput     `pulumi:"signAndServe"`
-	SignAndServeAlgorithm pulumi.StringPtrOutput   `pulumi:"signAndServeAlgorithm"`
-	Target                pulumi.StringPtrOutput   `pulumi:"target"`
-	TsigKey               DnsZoneTsigKeyPtrOutput  `pulumi:"tsigKey"`
-	Type                  pulumi.StringOutput      `pulumi:"type"`
-	VersionId             pulumi.StringOutput      `pulumi:"versionId"`
-	Zone                  pulumi.StringOutput      `pulumi:"zone"`
+	ActivationState pulumi.StringOutput      `pulumi:"activationState"`
+	AliasCount      pulumi.IntOutput         `pulumi:"aliasCount"`
+	Comment         pulumi.StringPtrOutput   `pulumi:"comment"`
+	Contract        pulumi.StringOutput      `pulumi:"contract"`
+	EndCustomerId   pulumi.StringPtrOutput   `pulumi:"endCustomerId"`
+	Group           pulumi.StringPtrOutput   `pulumi:"group"`
+	Masters         pulumi.StringArrayOutput `pulumi:"masters"`
+	// Outbound zone transfer properties.
+	OutboundZoneTransfer  DnsZoneOutboundZoneTransferPtrOutput `pulumi:"outboundZoneTransfer"`
+	SignAndServe          pulumi.BoolPtrOutput                 `pulumi:"signAndServe"`
+	SignAndServeAlgorithm pulumi.StringPtrOutput               `pulumi:"signAndServeAlgorithm"`
+	Target                pulumi.StringPtrOutput               `pulumi:"target"`
+	TsigKey               DnsZoneTsigKeyPtrOutput              `pulumi:"tsigKey"`
+	Type                  pulumi.StringOutput                  `pulumi:"type"`
+	VersionId             pulumi.StringOutput                  `pulumi:"versionId"`
+	Zone                  pulumi.StringOutput                  `pulumi:"zone"`
 }
 
 // NewDnsZone registers a new resource with the given unique name, arguments, and options.
@@ -76,30 +78,34 @@ func GetDnsZone(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DnsZone resources.
 type dnsZoneState struct {
-	ActivationState       *string         `pulumi:"activationState"`
-	AliasCount            *int            `pulumi:"aliasCount"`
-	Comment               *string         `pulumi:"comment"`
-	Contract              *string         `pulumi:"contract"`
-	EndCustomerId         *string         `pulumi:"endCustomerId"`
-	Group                 *string         `pulumi:"group"`
-	Masters               []string        `pulumi:"masters"`
-	SignAndServe          *bool           `pulumi:"signAndServe"`
-	SignAndServeAlgorithm *string         `pulumi:"signAndServeAlgorithm"`
-	Target                *string         `pulumi:"target"`
-	TsigKey               *DnsZoneTsigKey `pulumi:"tsigKey"`
-	Type                  *string         `pulumi:"type"`
-	VersionId             *string         `pulumi:"versionId"`
-	Zone                  *string         `pulumi:"zone"`
+	ActivationState *string  `pulumi:"activationState"`
+	AliasCount      *int     `pulumi:"aliasCount"`
+	Comment         *string  `pulumi:"comment"`
+	Contract        *string  `pulumi:"contract"`
+	EndCustomerId   *string  `pulumi:"endCustomerId"`
+	Group           *string  `pulumi:"group"`
+	Masters         []string `pulumi:"masters"`
+	// Outbound zone transfer properties.
+	OutboundZoneTransfer  *DnsZoneOutboundZoneTransfer `pulumi:"outboundZoneTransfer"`
+	SignAndServe          *bool                        `pulumi:"signAndServe"`
+	SignAndServeAlgorithm *string                      `pulumi:"signAndServeAlgorithm"`
+	Target                *string                      `pulumi:"target"`
+	TsigKey               *DnsZoneTsigKey              `pulumi:"tsigKey"`
+	Type                  *string                      `pulumi:"type"`
+	VersionId             *string                      `pulumi:"versionId"`
+	Zone                  *string                      `pulumi:"zone"`
 }
 
 type DnsZoneState struct {
-	ActivationState       pulumi.StringPtrInput
-	AliasCount            pulumi.IntPtrInput
-	Comment               pulumi.StringPtrInput
-	Contract              pulumi.StringPtrInput
-	EndCustomerId         pulumi.StringPtrInput
-	Group                 pulumi.StringPtrInput
-	Masters               pulumi.StringArrayInput
+	ActivationState pulumi.StringPtrInput
+	AliasCount      pulumi.IntPtrInput
+	Comment         pulumi.StringPtrInput
+	Contract        pulumi.StringPtrInput
+	EndCustomerId   pulumi.StringPtrInput
+	Group           pulumi.StringPtrInput
+	Masters         pulumi.StringArrayInput
+	// Outbound zone transfer properties.
+	OutboundZoneTransfer  DnsZoneOutboundZoneTransferPtrInput
 	SignAndServe          pulumi.BoolPtrInput
 	SignAndServeAlgorithm pulumi.StringPtrInput
 	Target                pulumi.StringPtrInput
@@ -114,26 +120,30 @@ func (DnsZoneState) ElementType() reflect.Type {
 }
 
 type dnsZoneArgs struct {
-	Comment               *string         `pulumi:"comment"`
-	Contract              string          `pulumi:"contract"`
-	EndCustomerId         *string         `pulumi:"endCustomerId"`
-	Group                 *string         `pulumi:"group"`
-	Masters               []string        `pulumi:"masters"`
-	SignAndServe          *bool           `pulumi:"signAndServe"`
-	SignAndServeAlgorithm *string         `pulumi:"signAndServeAlgorithm"`
-	Target                *string         `pulumi:"target"`
-	TsigKey               *DnsZoneTsigKey `pulumi:"tsigKey"`
-	Type                  string          `pulumi:"type"`
-	Zone                  string          `pulumi:"zone"`
+	Comment       *string  `pulumi:"comment"`
+	Contract      string   `pulumi:"contract"`
+	EndCustomerId *string  `pulumi:"endCustomerId"`
+	Group         *string  `pulumi:"group"`
+	Masters       []string `pulumi:"masters"`
+	// Outbound zone transfer properties.
+	OutboundZoneTransfer  *DnsZoneOutboundZoneTransfer `pulumi:"outboundZoneTransfer"`
+	SignAndServe          *bool                        `pulumi:"signAndServe"`
+	SignAndServeAlgorithm *string                      `pulumi:"signAndServeAlgorithm"`
+	Target                *string                      `pulumi:"target"`
+	TsigKey               *DnsZoneTsigKey              `pulumi:"tsigKey"`
+	Type                  string                       `pulumi:"type"`
+	Zone                  string                       `pulumi:"zone"`
 }
 
 // The set of arguments for constructing a DnsZone resource.
 type DnsZoneArgs struct {
-	Comment               pulumi.StringPtrInput
-	Contract              pulumi.StringInput
-	EndCustomerId         pulumi.StringPtrInput
-	Group                 pulumi.StringPtrInput
-	Masters               pulumi.StringArrayInput
+	Comment       pulumi.StringPtrInput
+	Contract      pulumi.StringInput
+	EndCustomerId pulumi.StringPtrInput
+	Group         pulumi.StringPtrInput
+	Masters       pulumi.StringArrayInput
+	// Outbound zone transfer properties.
+	OutboundZoneTransfer  DnsZoneOutboundZoneTransferPtrInput
 	SignAndServe          pulumi.BoolPtrInput
 	SignAndServeAlgorithm pulumi.StringPtrInput
 	Target                pulumi.StringPtrInput
@@ -255,6 +265,11 @@ func (o DnsZoneOutput) Group() pulumi.StringPtrOutput {
 
 func (o DnsZoneOutput) Masters() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DnsZone) pulumi.StringArrayOutput { return v.Masters }).(pulumi.StringArrayOutput)
+}
+
+// Outbound zone transfer properties.
+func (o DnsZoneOutput) OutboundZoneTransfer() DnsZoneOutboundZoneTransferPtrOutput {
+	return o.ApplyT(func(v *DnsZone) DnsZoneOutboundZoneTransferPtrOutput { return v.OutboundZoneTransfer }).(DnsZoneOutboundZoneTransferPtrOutput)
 }
 
 func (o DnsZoneOutput) SignAndServe() pulumi.BoolPtrOutput {

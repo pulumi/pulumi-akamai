@@ -76,6 +76,9 @@ namespace Pulumi.Akamai
     {
         public readonly ImmutableArray<Outputs.GetCloudwrapperCapacitiesCapacityResult> Capacities;
         public readonly ImmutableArray<string> ContractIds;
+        /// <summary>
+        /// The provider-assigned unique ID for this managed resource.
+        /// </summary>
         public readonly string Id;
 
         [OutputConstructor]

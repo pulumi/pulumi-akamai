@@ -11,6 +11,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -19,6 +20,20 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="akamai:index/cpsDvValidation:CpsDvValidation")
 public class CpsDvValidation extends com.pulumi.resources.CustomResource {
+    /**
+     * Whether to acknowledge all post-verification warnings
+     * 
+     */
+    @Export(name="acknowledgePostVerificationWarnings", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> acknowledgePostVerificationWarnings;
+
+    /**
+     * @return Whether to acknowledge all post-verification warnings
+     * 
+     */
+    public Output<Optional<Boolean>> acknowledgePostVerificationWarnings() {
+        return Codegen.optional(this.acknowledgePostVerificationWarnings);
+    }
     /**
      * The unique identifier of enrollment
      * 

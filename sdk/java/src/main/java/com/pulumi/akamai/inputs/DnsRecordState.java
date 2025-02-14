@@ -5,7 +5,6 @@ package com.pulumi.akamai.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -17,25 +16,6 @@ import javax.annotation.Nullable;
 public final class DnsRecordState extends com.pulumi.resources.ResourceArgs {
 
     public static final DnsRecordState Empty = new DnsRecordState();
-
-    /**
-     * @deprecated
-     * Field &#39;active&#39; has been deprecated. Setting it has no effect
-     * 
-     */
-    @Deprecated /* Field 'active' has been deprecated. Setting it has no effect */
-    @Import(name="active")
-    private @Nullable Output<Boolean> active;
-
-    /**
-     * @deprecated
-     * Field &#39;active&#39; has been deprecated. Setting it has no effect
-     * 
-     */
-    @Deprecated /* Field 'active' has been deprecated. Setting it has no effect */
-    public Optional<Output<Boolean>> active() {
-        return Optional.ofNullable(this.active);
-    }
 
     @Import(name="algorithm")
     private @Nullable Output<Integer> algorithm;
@@ -453,7 +433,6 @@ public final class DnsRecordState extends com.pulumi.resources.ResourceArgs {
     private DnsRecordState() {}
 
     private DnsRecordState(DnsRecordState $) {
-        this.active = $.active;
         this.algorithm = $.algorithm;
         this.answerType = $.answerType;
         this.certificate = $.certificate;
@@ -531,31 +510,6 @@ public final class DnsRecordState extends com.pulumi.resources.ResourceArgs {
 
         public Builder(DnsRecordState defaults) {
             $ = new DnsRecordState(Objects.requireNonNull(defaults));
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * Field &#39;active&#39; has been deprecated. Setting it has no effect
-         * 
-         */
-        @Deprecated /* Field 'active' has been deprecated. Setting it has no effect */
-        public Builder active(@Nullable Output<Boolean> active) {
-            $.active = active;
-            return this;
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * Field &#39;active&#39; has been deprecated. Setting it has no effect
-         * 
-         */
-        @Deprecated /* Field 'active' has been deprecated. Setting it has no effect */
-        public Builder active(Boolean active) {
-            return active(Output.of(active));
         }
 
         public Builder algorithm(@Nullable Output<Integer> algorithm) {

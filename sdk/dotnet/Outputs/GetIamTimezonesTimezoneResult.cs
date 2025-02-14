@@ -14,19 +14,19 @@ namespace Pulumi.Akamai.Outputs
     public sealed class GetIamTimezonesTimezoneResult
     {
         /// <summary>
-        /// The description of a time zone, including the GMT +/-
+        /// The description of a time zone, including the GMT +/-.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// The time zone offset from GMT
+        /// The time zone offset from GMT.
         /// </summary>
         public readonly string Offset;
         /// <summary>
-        /// The time zone posix
+        /// The time zone posix.
         /// </summary>
         public readonly string Posix;
         /// <summary>
-        /// The time zone ID
+        /// The time zone ID.
         /// </summary>
         public readonly string Timezone;
 

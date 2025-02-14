@@ -17,6 +17,21 @@ public final class PropertyIncludeState extends com.pulumi.resources.ResourceArg
     public static final PropertyIncludeState Empty = new PropertyIncludeState();
 
     /**
+     * ID of the include in the Identity and Access Management API.
+     * 
+     */
+    @Import(name="assetId")
+    private @Nullable Output<String> assetId;
+
+    /**
+     * @return ID of the include in the Identity and Access Management API.
+     * 
+     */
+    public Optional<Output<String>> assetId() {
+        return Optional.ofNullable(this.assetId);
+    }
+
+    /**
      * Identifies the contract to which the include is assigned
      * 
      */
@@ -199,6 +214,7 @@ public final class PropertyIncludeState extends com.pulumi.resources.ResourceArg
     private PropertyIncludeState() {}
 
     private PropertyIncludeState(PropertyIncludeState $) {
+        this.assetId = $.assetId;
         this.contractId = $.contractId;
         this.groupId = $.groupId;
         this.latestVersion = $.latestVersion;
@@ -229,6 +245,27 @@ public final class PropertyIncludeState extends com.pulumi.resources.ResourceArg
 
         public Builder(PropertyIncludeState defaults) {
             $ = new PropertyIncludeState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param assetId ID of the include in the Identity and Access Management API.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assetId(@Nullable Output<String> assetId) {
+            $.assetId = assetId;
+            return this;
+        }
+
+        /**
+         * @param assetId ID of the include in the Identity and Access Management API.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assetId(String assetId) {
+            return assetId(Output.of(assetId));
         }
 
         /**

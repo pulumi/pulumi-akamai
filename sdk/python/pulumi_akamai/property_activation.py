@@ -29,7 +29,6 @@ class PropertyActivationArgs:
                  compliance_record: Optional[pulumi.Input['PropertyActivationComplianceRecordArgs']] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  note: Optional[pulumi.Input[str]] = None,
-                 rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleErrorArgs']]]] = None,
                  timeouts: Optional[pulumi.Input['PropertyActivationTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a PropertyActivation resource.
@@ -51,8 +50,6 @@ class PropertyActivationArgs:
             pulumi.set(__self__, "network", network)
         if note is not None:
             pulumi.set(__self__, "note", note)
-        if rule_errors is not None:
-            pulumi.set(__self__, "rule_errors", rule_errors)
         if timeouts is not None:
             pulumi.set(__self__, "timeouts", timeouts)
 
@@ -136,15 +133,6 @@ class PropertyActivationArgs:
     @note.setter
     def note(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "note", value)
-
-    @property
-    @pulumi.getter(name="ruleErrors")
-    def rule_errors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleErrorArgs']]]]:
-        return pulumi.get(self, "rule_errors")
-
-    @rule_errors.setter
-    def rule_errors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleErrorArgs']]]]):
-        pulumi.set(self, "rule_errors", value)
 
     @property
     @pulumi.getter
@@ -351,7 +339,6 @@ class PropertyActivation(pulumi.CustomResource):
                  network: Optional[pulumi.Input[str]] = None,
                  note: Optional[pulumi.Input[str]] = None,
                  property_id: Optional[pulumi.Input[str]] = None,
-                 rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PropertyActivationRuleErrorArgs', 'PropertyActivationRuleErrorArgsDict']]]]] = None,
                  timeouts: Optional[pulumi.Input[Union['PropertyActivationTimeoutsArgs', 'PropertyActivationTimeoutsArgsDict']]] = None,
                  version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
@@ -394,7 +381,6 @@ class PropertyActivation(pulumi.CustomResource):
                  network: Optional[pulumi.Input[str]] = None,
                  note: Optional[pulumi.Input[str]] = None,
                  property_id: Optional[pulumi.Input[str]] = None,
-                 rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PropertyActivationRuleErrorArgs', 'PropertyActivationRuleErrorArgsDict']]]]] = None,
                  timeouts: Optional[pulumi.Input[Union['PropertyActivationTimeoutsArgs', 'PropertyActivationTimeoutsArgsDict']]] = None,
                  version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
@@ -417,12 +403,12 @@ class PropertyActivation(pulumi.CustomResource):
             if property_id is None and not opts.urn:
                 raise TypeError("Missing required property 'property_id'")
             __props__.__dict__["property_id"] = property_id
-            __props__.__dict__["rule_errors"] = rule_errors
             __props__.__dict__["timeouts"] = timeouts
             if version is None and not opts.urn:
                 raise TypeError("Missing required property 'version'")
             __props__.__dict__["version"] = version
             __props__.__dict__["errors"] = None
+            __props__.__dict__["rule_errors"] = None
             __props__.__dict__["status"] = None
             __props__.__dict__["warnings"] = None
         alias_opts = pulumi.ResourceOptions(aliases=[pulumi.Alias(type_="akamai:properties/propertyActivation:PropertyActivation")])

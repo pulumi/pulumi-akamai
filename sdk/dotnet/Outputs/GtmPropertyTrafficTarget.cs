@@ -16,7 +16,6 @@ namespace Pulumi.Akamai.Outputs
         public readonly int? DatacenterId;
         public readonly bool? Enabled;
         public readonly string? HandoutCname;
-        public readonly string? Name;
         public readonly int? Precedence;
         public readonly ImmutableArray<string> Servers;
         public readonly double? Weight;
@@ -29,8 +28,6 @@ namespace Pulumi.Akamai.Outputs
 
             string? handoutCname,
 
-            string? name,
-
             int? precedence,
 
             ImmutableArray<string> servers,
@@ -40,7 +37,6 @@ namespace Pulumi.Akamai.Outputs
             DatacenterId = datacenterId;
             Enabled = enabled;
             HandoutCname = handoutCname;
-            Name = name;
             Precedence = precedence;
             Servers = servers;
             Weight = weight;

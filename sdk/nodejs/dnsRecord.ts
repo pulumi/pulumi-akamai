@@ -32,10 +32,6 @@ export class DnsRecord extends pulumi.CustomResource {
         return obj['__pulumiType'] === DnsRecord.__pulumiType;
     }
 
-    /**
-     * @deprecated Field 'active' has been deprecated. Setting it has no effect
-     */
-    public readonly active!: pulumi.Output<boolean | undefined>;
     public readonly algorithm!: pulumi.Output<number | undefined>;
     public /*out*/ readonly answerType!: pulumi.Output<string>;
     public readonly certificate!: pulumi.Output<string | undefined>;
@@ -109,7 +105,6 @@ export class DnsRecord extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DnsRecordState | undefined;
-            resourceInputs["active"] = state ? state.active : undefined;
             resourceInputs["algorithm"] = state ? state.algorithm : undefined;
             resourceInputs["answerType"] = state ? state.answerType : undefined;
             resourceInputs["certificate"] = state ? state.certificate : undefined;
@@ -180,7 +175,6 @@ export class DnsRecord extends pulumi.CustomResource {
             if ((!args || args.zone === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'zone'");
             }
-            resourceInputs["active"] = args ? args.active : undefined;
             resourceInputs["algorithm"] = args ? args.algorithm : undefined;
             resourceInputs["certificate"] = args ? args.certificate : undefined;
             resourceInputs["digest"] = args ? args.digest : undefined;
@@ -252,10 +246,6 @@ export class DnsRecord extends pulumi.CustomResource {
  * Input properties used for looking up and filtering DnsRecord resources.
  */
 export interface DnsRecordState {
-    /**
-     * @deprecated Field 'active' has been deprecated. Setting it has no effect
-     */
-    active?: pulumi.Input<boolean>;
     algorithm?: pulumi.Input<number>;
     answerType?: pulumi.Input<string>;
     certificate?: pulumi.Input<string>;
@@ -321,10 +311,6 @@ export interface DnsRecordState {
  * The set of arguments for constructing a DnsRecord resource.
  */
 export interface DnsRecordArgs {
-    /**
-     * @deprecated Field 'active' has been deprecated. Setting it has no effect
-     */
-    active?: pulumi.Input<boolean>;
     algorithm?: pulumi.Input<number>;
     certificate?: pulumi.Input<string>;
     digest?: pulumi.Input<string>;

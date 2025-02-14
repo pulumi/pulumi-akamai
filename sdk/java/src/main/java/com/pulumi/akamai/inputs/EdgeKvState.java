@@ -3,12 +3,10 @@
 
 package com.pulumi.akamai.inputs;
 
-import com.pulumi.akamai.inputs.EdgeKvInitialDataArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Integer;
 import java.lang.String;
-import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -46,29 +44,6 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Integer>> groupId() {
         return Optional.ofNullable(this.groupId);
-    }
-
-    /**
-     * List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
-     * 
-     * @deprecated
-     * The attribute &#39;initial_data&#39; has been deprecated. To manage edgeKV items use &#39;akamai_edgekv_group_items&#39; resource instead.
-     * 
-     */
-    @Deprecated /* The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead. */
-    @Import(name="initialDatas")
-    private @Nullable Output<List<EdgeKvInitialDataArgs>> initialDatas;
-
-    /**
-     * @return List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
-     * 
-     * @deprecated
-     * The attribute &#39;initial_data&#39; has been deprecated. To manage edgeKV items use &#39;akamai_edgekv_group_items&#39; resource instead.
-     * 
-     */
-    @Deprecated /* The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead. */
-    public Optional<Output<List<EdgeKvInitialDataArgs>>> initialDatas() {
-        return Optional.ofNullable(this.initialDatas);
     }
 
     /**
@@ -121,7 +96,6 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
     private EdgeKvState(EdgeKvState $) {
         this.geoLocation = $.geoLocation;
         this.groupId = $.groupId;
-        this.initialDatas = $.initialDatas;
         this.namespaceName = $.namespaceName;
         this.network = $.network;
         this.retentionInSeconds = $.retentionInSeconds;
@@ -185,49 +159,6 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder groupId(Integer groupId) {
             return groupId(Output.of(groupId));
-        }
-
-        /**
-         * @param initialDatas List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
-         * 
-         * @return builder
-         * 
-         * @deprecated
-         * The attribute &#39;initial_data&#39; has been deprecated. To manage edgeKV items use &#39;akamai_edgekv_group_items&#39; resource instead.
-         * 
-         */
-        @Deprecated /* The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead. */
-        public Builder initialDatas(@Nullable Output<List<EdgeKvInitialDataArgs>> initialDatas) {
-            $.initialDatas = initialDatas;
-            return this;
-        }
-
-        /**
-         * @param initialDatas List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
-         * 
-         * @return builder
-         * 
-         * @deprecated
-         * The attribute &#39;initial_data&#39; has been deprecated. To manage edgeKV items use &#39;akamai_edgekv_group_items&#39; resource instead.
-         * 
-         */
-        @Deprecated /* The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead. */
-        public Builder initialDatas(List<EdgeKvInitialDataArgs> initialDatas) {
-            return initialDatas(Output.of(initialDatas));
-        }
-
-        /**
-         * @param initialDatas List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
-         * 
-         * @return builder
-         * 
-         * @deprecated
-         * The attribute &#39;initial_data&#39; has been deprecated. To manage edgeKV items use &#39;akamai_edgekv_group_items&#39; resource instead.
-         * 
-         */
-        @Deprecated /* The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead. */
-        public Builder initialDatas(EdgeKvInitialDataArgs... initialDatas) {
-            return initialDatas(List.of(initialDatas));
         }
 
         /**

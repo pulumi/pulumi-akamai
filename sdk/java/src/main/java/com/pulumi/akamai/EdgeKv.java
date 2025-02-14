@@ -6,14 +6,12 @@ package com.pulumi.akamai;
 import com.pulumi.akamai.EdgeKvArgs;
 import com.pulumi.akamai.Utilities;
 import com.pulumi.akamai.inputs.EdgeKvState;
-import com.pulumi.akamai.outputs.EdgeKvInitialData;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import java.lang.Integer;
 import java.lang.String;
-import java.util.List;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
@@ -46,24 +44,6 @@ public class EdgeKv extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> groupId() {
         return this.groupId;
-    }
-    /**
-     * List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
-     * 
-     * @deprecated
-     * The attribute &#39;initial_data&#39; has been deprecated. To manage edgeKV items use &#39;akamai_edgekv_group_items&#39; resource instead.
-     * 
-     */
-    @Deprecated /* The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead. */
-    @Export(name="initialDatas", refs={List.class,EdgeKvInitialData.class}, tree="[0,1]")
-    private Output</* @Nullable */ List<EdgeKvInitialData>> initialDatas;
-
-    /**
-     * @return List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
-     * 
-     */
-    public Output<Optional<List<EdgeKvInitialData>>> initialDatas() {
-        return Codegen.optional(this.initialDatas);
     }
     /**
      * Name for the EKV namespace

@@ -59,6 +59,9 @@ namespace Pulumi.Akamai
     public sealed class GetGtmDomainsResult
     {
         public readonly ImmutableArray<Outputs.GetGtmDomainsDomainResult> Domains;
+        /// <summary>
+        /// The provider-assigned unique ID for this managed resource.
+        /// </summary>
         public readonly string Id;
 
         [OutputConstructor]

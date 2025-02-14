@@ -43,7 +43,6 @@ from .app_sec_rule import *
 from .app_sec_rule_upgrade import *
 from .app_sec_security_policy import *
 from .app_sec_security_policy_rename import *
-from .app_sec_selected_hostnames import *
 from .app_sec_siem_settings import *
 from .app_sec_slow_post import *
 from .app_sec_slow_post_protection import *
@@ -51,12 +50,13 @@ from .app_sec_threat_intel import *
 from .app_sec_version_nodes import *
 from .app_sec_waf_mode import *
 from .app_sec_waf_protection import *
-from .app_sec_wap_selected_hostnames import *
+from .appsec_aap_selected_hostnames import *
 from .appsec_advanced_settings_attack_payload_logging import *
 from .appsec_advanced_settings_pii_learning import *
 from .appsec_advanced_settings_request_body import *
 from .appsec_eval_penalty_box_conditions import *
 from .appsec_penalty_box_conditions import *
+from .appsec_rapid_rules import *
 from .appsec_security_policy_default_protections import *
 from .botman_akamai_bot_category_action import *
 from .botman_bot_analytics_cookie import *
@@ -65,11 +65,14 @@ from .botman_bot_detection_action import *
 from .botman_bot_management_settings import *
 from .botman_challenge_action import *
 from .botman_challenge_injection_rules import *
-from .botman_challenge_interception_rules import *
 from .botman_client_side_security import *
 from .botman_conditional_action import *
+from .botman_content_protection_javascript_injection_rule import *
+from .botman_content_protection_rule import *
+from .botman_content_protection_rule_sequence import *
 from .botman_custom_bot_category import *
 from .botman_custom_bot_category_action import *
+from .botman_custom_bot_category_item_sequence import *
 from .botman_custom_bot_category_sequence import *
 from .botman_custom_client import *
 from .botman_custom_client_sequence import *
@@ -83,6 +86,7 @@ from .botman_transactional_endpoint import *
 from .botman_transactional_endpoint_protection import *
 from .clientlist_activation import *
 from .clientlist_list import *
+from .cloud_access_key import *
 from .cloudlets_application_load_balancer import *
 from .cloudlets_application_load_balancer_activation import *
 from .cloudlets_policy import *
@@ -141,7 +145,6 @@ from .get_app_sec_rules import *
 from .get_app_sec_security_policy import *
 from .get_app_sec_security_policy_protections import *
 from .get_app_sec_selectable_hostnames import *
-from .get_app_sec_selected_hostnames import *
 from .get_app_sec_siem_definitions import *
 from .get_app_sec_siem_settings import *
 from .get_app_sec_slow_post import *
@@ -149,12 +152,13 @@ from .get_app_sec_threat_intel import *
 from .get_app_sec_tuning_recommendations import *
 from .get_app_sec_version_notes import *
 from .get_app_sec_waf_mode import *
-from .get_app_sec_wap_selected_hostnames import *
+from .get_appsec_aap_selected_hostnames import *
 from .get_appsec_advanced_settings_attack_payload_logging import *
 from .get_appsec_advanced_settings_pii_learning import *
 from .get_appsec_advanced_settings_request_body import *
 from .get_appsec_eval_penalty_box_conditions import *
 from .get_appsec_penalty_box_conditions import *
+from .get_appsec_rapid_rules import *
 from .get_authorities_set import *
 from .get_botman_akamai_bot_category import *
 from .get_botman_akamai_bot_category_action import *
@@ -168,11 +172,14 @@ from .get_botman_bot_endpoint_coverage_report import *
 from .get_botman_bot_management_settings import *
 from .get_botman_challenge_action import *
 from .get_botman_challenge_injection_rules import *
-from .get_botman_challenge_interception_rules import *
 from .get_botman_client_side_security import *
 from .get_botman_conditional_action import *
+from .get_botman_content_protection_javascript_injection_rule import *
+from .get_botman_content_protection_rule import *
+from .get_botman_content_protection_rule_sequence import *
 from .get_botman_custom_bot_category import *
 from .get_botman_custom_bot_category_action import *
+from .get_botman_custom_bot_category_item_sequence import *
 from .get_botman_custom_bot_category_sequence import *
 from .get_botman_custom_client import *
 from .get_botman_custom_client_sequence import *
@@ -186,6 +193,10 @@ from .get_botman_serve_alternate_action import *
 from .get_botman_transactional_endpoint import *
 from .get_botman_transactional_endpoint_protection import *
 from .get_clientlist_lists import *
+from .get_cloudaccess_key import *
+from .get_cloudaccess_key_properties import *
+from .get_cloudaccess_key_versions import *
+from .get_cloudaccess_keys import *
 from .get_cloudlets_api_prioritization_match_rule import *
 from .get_cloudlets_application_load_balancer import *
 from .get_cloudlets_application_load_balancer_match_rule import *
@@ -231,16 +242,27 @@ from .get_gtm_datacenters import *
 from .get_gtm_default_datacenter import *
 from .get_gtm_domain import *
 from .get_gtm_domains import *
+from .get_gtm_geomap import *
+from .get_gtm_geomaps import *
 from .get_gtm_resource import *
 from .get_gtm_resources import *
+from .get_iam_account_switch_keys import *
+from .get_iam_allowed_apis import *
+from .get_iam_blocked_properties import *
+from .get_iam_cidr_block import *
+from .get_iam_cidr_blocks import *
 from .get_iam_contact_types import *
 from .get_iam_countries import *
 from .get_iam_grantable_roles import *
+from .get_iam_password_policy import *
+from .get_iam_property_users import *
+from .get_iam_role import *
 from .get_iam_roles import *
 from .get_iam_states import *
 from .get_iam_supported_langs import *
 from .get_iam_timeout_policies import *
 from .get_iam_timezones import *
+from .get_iam_users_affected_by_moving_group import *
 from .get_imaging_policy_image import *
 from .get_imaging_policy_video import *
 from .get_network_lists import *
@@ -259,6 +281,7 @@ from .get_property_rule_formats import *
 from .get_property_rules import *
 from .get_property_rules_builder import *
 from .get_property_rules_template import *
+from .get_zone_dnssec_status import *
 from .gtm_asmap import *
 from .gtm_cidrmap import *
 from .gtm_datacenter import *
@@ -267,7 +290,9 @@ from .gtm_geomap import *
 from .gtm_property import *
 from .gtm_resource import *
 from .iam_blocked_user_properties import *
+from .iam_cidr_block import *
 from .iam_group import *
+from .iam_ip_allowlist import *
 from .iam_role import *
 from .iam_user import *
 from .imaging_policy_image import *
@@ -602,14 +627,6 @@ _utilities.register(
  },
  {
   "pkg": "akamai",
-  "mod": "index/appSecSelectedHostnames",
-  "fqn": "pulumi_akamai",
-  "classes": {
-   "akamai:index/appSecSelectedHostnames:AppSecSelectedHostnames": "AppSecSelectedHostnames"
-  }
- },
- {
-  "pkg": "akamai",
   "mod": "index/appSecSiemSettings",
   "fqn": "pulumi_akamai",
   "classes": {
@@ -666,10 +683,10 @@ _utilities.register(
  },
  {
   "pkg": "akamai",
-  "mod": "index/appSecWapSelectedHostnames",
+  "mod": "index/appsecAapSelectedHostnames",
   "fqn": "pulumi_akamai",
   "classes": {
-   "akamai:index/appSecWapSelectedHostnames:AppSecWapSelectedHostnames": "AppSecWapSelectedHostnames"
+   "akamai:index/appsecAapSelectedHostnames:AppsecAapSelectedHostnames": "AppsecAapSelectedHostnames"
   }
  },
  {
@@ -710,6 +727,14 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/appsecPenaltyBoxConditions:AppsecPenaltyBoxConditions": "AppsecPenaltyBoxConditions"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/appsecRapidRules",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/appsecRapidRules:AppsecRapidRules": "AppsecRapidRules"
   }
  },
  {
@@ -778,14 +803,6 @@ _utilities.register(
  },
  {
   "pkg": "akamai",
-  "mod": "index/botmanChallengeInterceptionRules",
-  "fqn": "pulumi_akamai",
-  "classes": {
-   "akamai:index/botmanChallengeInterceptionRules:BotmanChallengeInterceptionRules": "BotmanChallengeInterceptionRules"
-  }
- },
- {
-  "pkg": "akamai",
   "mod": "index/botmanClientSideSecurity",
   "fqn": "pulumi_akamai",
   "classes": {
@@ -802,6 +819,30 @@ _utilities.register(
  },
  {
   "pkg": "akamai",
+  "mod": "index/botmanContentProtectionJavascriptInjectionRule",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/botmanContentProtectionJavascriptInjectionRule:BotmanContentProtectionJavascriptInjectionRule": "BotmanContentProtectionJavascriptInjectionRule"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/botmanContentProtectionRule",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/botmanContentProtectionRule:BotmanContentProtectionRule": "BotmanContentProtectionRule"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/botmanContentProtectionRuleSequence",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/botmanContentProtectionRuleSequence:BotmanContentProtectionRuleSequence": "BotmanContentProtectionRuleSequence"
+  }
+ },
+ {
+  "pkg": "akamai",
   "mod": "index/botmanCustomBotCategory",
   "fqn": "pulumi_akamai",
   "classes": {
@@ -814,6 +855,14 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/botmanCustomBotCategoryAction:BotmanCustomBotCategoryAction": "BotmanCustomBotCategoryAction"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/botmanCustomBotCategoryItemSequence",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/botmanCustomBotCategoryItemSequence:BotmanCustomBotCategoryItemSequence": "BotmanCustomBotCategoryItemSequence"
   }
  },
  {
@@ -918,6 +967,14 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/clientlistList:ClientlistList": "ClientlistList"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/cloudAccessKey",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/cloudAccessKey:CloudAccessKey": "CloudAccessKey"
   }
  },
  {
@@ -1138,10 +1195,26 @@ _utilities.register(
  },
  {
   "pkg": "akamai",
+  "mod": "index/iamCidrBlock",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/iamCidrBlock:IamCidrBlock": "IamCidrBlock"
+  }
+ },
+ {
+  "pkg": "akamai",
   "mod": "index/iamGroup",
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/iamGroup:IamGroup": "IamGroup"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/iamIpAllowlist",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/iamIpAllowlist:IamIpAllowlist": "IamIpAllowlist"
   }
  },
  {

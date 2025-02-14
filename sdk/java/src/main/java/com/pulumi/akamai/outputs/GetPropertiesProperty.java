@@ -15,11 +15,9 @@ public final class GetPropertiesProperty {
     private String groupId;
     private Integer latestVersion;
     private String note;
-    private String productId;
     private Integer productionVersion;
     private String propertyId;
     private String propertyName;
-    private String ruleFormat;
     private Integer stagingVersion;
 
     private GetPropertiesProperty() {}
@@ -35,9 +33,6 @@ public final class GetPropertiesProperty {
     public String note() {
         return this.note;
     }
-    public String productId() {
-        return this.productId;
-    }
     public Integer productionVersion() {
         return this.productionVersion;
     }
@@ -46,9 +41,6 @@ public final class GetPropertiesProperty {
     }
     public String propertyName() {
         return this.propertyName;
-    }
-    public String ruleFormat() {
-        return this.ruleFormat;
     }
     public Integer stagingVersion() {
         return this.stagingVersion;
@@ -67,11 +59,9 @@ public final class GetPropertiesProperty {
         private String groupId;
         private Integer latestVersion;
         private String note;
-        private String productId;
         private Integer productionVersion;
         private String propertyId;
         private String propertyName;
-        private String ruleFormat;
         private Integer stagingVersion;
         public Builder() {}
         public Builder(GetPropertiesProperty defaults) {
@@ -80,11 +70,9 @@ public final class GetPropertiesProperty {
     	      this.groupId = defaults.groupId;
     	      this.latestVersion = defaults.latestVersion;
     	      this.note = defaults.note;
-    	      this.productId = defaults.productId;
     	      this.productionVersion = defaults.productionVersion;
     	      this.propertyId = defaults.propertyId;
     	      this.propertyName = defaults.propertyName;
-    	      this.ruleFormat = defaults.ruleFormat;
     	      this.stagingVersion = defaults.stagingVersion;
         }
 
@@ -121,14 +109,6 @@ public final class GetPropertiesProperty {
             return this;
         }
         @CustomType.Setter
-        public Builder productId(String productId) {
-            if (productId == null) {
-              throw new MissingRequiredPropertyException("GetPropertiesProperty", "productId");
-            }
-            this.productId = productId;
-            return this;
-        }
-        @CustomType.Setter
         public Builder productionVersion(Integer productionVersion) {
             if (productionVersion == null) {
               throw new MissingRequiredPropertyException("GetPropertiesProperty", "productionVersion");
@@ -153,14 +133,6 @@ public final class GetPropertiesProperty {
             return this;
         }
         @CustomType.Setter
-        public Builder ruleFormat(String ruleFormat) {
-            if (ruleFormat == null) {
-              throw new MissingRequiredPropertyException("GetPropertiesProperty", "ruleFormat");
-            }
-            this.ruleFormat = ruleFormat;
-            return this;
-        }
-        @CustomType.Setter
         public Builder stagingVersion(Integer stagingVersion) {
             if (stagingVersion == null) {
               throw new MissingRequiredPropertyException("GetPropertiesProperty", "stagingVersion");
@@ -174,11 +146,9 @@ public final class GetPropertiesProperty {
             _resultValue.groupId = groupId;
             _resultValue.latestVersion = latestVersion;
             _resultValue.note = note;
-            _resultValue.productId = productId;
             _resultValue.productionVersion = productionVersion;
             _resultValue.propertyId = propertyId;
             _resultValue.propertyName = propertyName;
-            _resultValue.ruleFormat = ruleFormat;
             _resultValue.stagingVersion = stagingVersion;
             return _resultValue;
         }

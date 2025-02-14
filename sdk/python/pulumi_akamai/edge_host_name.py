@@ -29,11 +29,14 @@ class EdgeHostNameArgs:
                  product_id: Optional[pulumi.Input[str]] = None,
                  status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  timeouts: Optional[pulumi.Input['EdgeHostNameTimeoutsArgs']] = None,
+                 ttl: Optional[pulumi.Input[int]] = None,
                  use_cases: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a EdgeHostName resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] status_update_emails: Email address that should receive updates on the IP behavior update request.
         :param pulumi.Input['EdgeHostNameTimeoutsArgs'] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[int] ttl: The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
+               value for product is used.
         :param pulumi.Input[str] use_cases: A JSON encoded list of use cases
         """
         pulumi.set(__self__, "contract_id", contract_id)
@@ -48,6 +51,8 @@ class EdgeHostNameArgs:
             pulumi.set(__self__, "status_update_emails", status_update_emails)
         if timeouts is not None:
             pulumi.set(__self__, "timeouts", timeouts)
+        if ttl is not None:
+            pulumi.set(__self__, "ttl", ttl)
         if use_cases is not None:
             pulumi.set(__self__, "use_cases", use_cases)
 
@@ -130,6 +135,19 @@ class EdgeHostNameArgs:
         pulumi.set(self, "timeouts", value)
 
     @property
+    @pulumi.getter
+    def ttl(self) -> Optional[pulumi.Input[int]]:
+        """
+        The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
+        value for product is used.
+        """
+        return pulumi.get(self, "ttl")
+
+    @ttl.setter
+    def ttl(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "ttl", value)
+
+    @property
     @pulumi.getter(name="useCases")
     def use_cases(self) -> Optional[pulumi.Input[str]]:
         """
@@ -153,11 +171,14 @@ class _EdgeHostNameState:
                  product_id: Optional[pulumi.Input[str]] = None,
                  status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  timeouts: Optional[pulumi.Input['EdgeHostNameTimeoutsArgs']] = None,
+                 ttl: Optional[pulumi.Input[int]] = None,
                  use_cases: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering EdgeHostName resources.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] status_update_emails: Email address that should receive updates on the IP behavior update request.
         :param pulumi.Input['EdgeHostNameTimeoutsArgs'] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[int] ttl: The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
+               value for product is used.
         :param pulumi.Input[str] use_cases: A JSON encoded list of use cases
         """
         if certificate is not None:
@@ -176,6 +197,8 @@ class _EdgeHostNameState:
             pulumi.set(__self__, "status_update_emails", status_update_emails)
         if timeouts is not None:
             pulumi.set(__self__, "timeouts", timeouts)
+        if ttl is not None:
+            pulumi.set(__self__, "ttl", ttl)
         if use_cases is not None:
             pulumi.set(__self__, "use_cases", use_cases)
 
@@ -258,6 +281,19 @@ class _EdgeHostNameState:
         pulumi.set(self, "timeouts", value)
 
     @property
+    @pulumi.getter
+    def ttl(self) -> Optional[pulumi.Input[int]]:
+        """
+        The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
+        value for product is used.
+        """
+        return pulumi.get(self, "ttl")
+
+    @ttl.setter
+    def ttl(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "ttl", value)
+
+    @property
     @pulumi.getter(name="useCases")
     def use_cases(self) -> Optional[pulumi.Input[str]]:
         """
@@ -283,6 +319,7 @@ class EdgeHostName(pulumi.CustomResource):
                  product_id: Optional[pulumi.Input[str]] = None,
                  status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  timeouts: Optional[pulumi.Input[Union['EdgeHostNameTimeoutsArgs', 'EdgeHostNameTimeoutsArgsDict']]] = None,
+                 ttl: Optional[pulumi.Input[int]] = None,
                  use_cases: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -291,6 +328,8 @@ class EdgeHostName(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] status_update_emails: Email address that should receive updates on the IP behavior update request.
         :param pulumi.Input[Union['EdgeHostNameTimeoutsArgs', 'EdgeHostNameTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[int] ttl: The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
+               value for product is used.
         :param pulumi.Input[str] use_cases: A JSON encoded list of use cases
         """
         ...
@@ -324,6 +363,7 @@ class EdgeHostName(pulumi.CustomResource):
                  product_id: Optional[pulumi.Input[str]] = None,
                  status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  timeouts: Optional[pulumi.Input[Union['EdgeHostNameTimeoutsArgs', 'EdgeHostNameTimeoutsArgsDict']]] = None,
+                 ttl: Optional[pulumi.Input[int]] = None,
                  use_cases: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -350,6 +390,7 @@ class EdgeHostName(pulumi.CustomResource):
             __props__.__dict__["product_id"] = product_id
             __props__.__dict__["status_update_emails"] = status_update_emails
             __props__.__dict__["timeouts"] = timeouts
+            __props__.__dict__["ttl"] = ttl
             __props__.__dict__["use_cases"] = use_cases
         alias_opts = pulumi.ResourceOptions(aliases=[pulumi.Alias(type_="akamai:properties/edgeHostName:EdgeHostName")])
         opts = pulumi.ResourceOptions.merge(opts, alias_opts)
@@ -371,6 +412,7 @@ class EdgeHostName(pulumi.CustomResource):
             product_id: Optional[pulumi.Input[str]] = None,
             status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             timeouts: Optional[pulumi.Input[Union['EdgeHostNameTimeoutsArgs', 'EdgeHostNameTimeoutsArgsDict']]] = None,
+            ttl: Optional[pulumi.Input[int]] = None,
             use_cases: Optional[pulumi.Input[str]] = None) -> 'EdgeHostName':
         """
         Get an existing EdgeHostName resource's state with the given name, id, and optional extra
@@ -381,6 +423,8 @@ class EdgeHostName(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] status_update_emails: Email address that should receive updates on the IP behavior update request.
         :param pulumi.Input[Union['EdgeHostNameTimeoutsArgs', 'EdgeHostNameTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
+        :param pulumi.Input[int] ttl: The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
+               value for product is used.
         :param pulumi.Input[str] use_cases: A JSON encoded list of use cases
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -395,6 +439,7 @@ class EdgeHostName(pulumi.CustomResource):
         __props__.__dict__["product_id"] = product_id
         __props__.__dict__["status_update_emails"] = status_update_emails
         __props__.__dict__["timeouts"] = timeouts
+        __props__.__dict__["ttl"] = ttl
         __props__.__dict__["use_cases"] = use_cases
         return EdgeHostName(resource_name, opts=opts, __props__=__props__)
 
@@ -443,6 +488,15 @@ class EdgeHostName(pulumi.CustomResource):
         Enables to set timeout for processing
         """
         return pulumi.get(self, "timeouts")
+
+    @property
+    @pulumi.getter
+    def ttl(self) -> pulumi.Output[Optional[int]]:
+        """
+        The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
+        value for product is used.
+        """
+        return pulumi.get(self, "ttl")
 
     @property
     @pulumi.getter(name="useCases")

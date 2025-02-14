@@ -8,13 +8,15 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-akamai/sdk/v7/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v8/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 type CpsDvValidation struct {
 	pulumi.CustomResourceState
 
+	// Whether to acknowledge all post-verification warnings
+	AcknowledgePostVerificationWarnings pulumi.BoolPtrOutput `pulumi:"acknowledgePostVerificationWarnings"`
 	// The unique identifier of enrollment
 	EnrollmentId pulumi.IntOutput `pulumi:"enrollmentId"`
 	// List of SANs
@@ -58,6 +60,8 @@ func GetCpsDvValidation(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CpsDvValidation resources.
 type cpsDvValidationState struct {
+	// Whether to acknowledge all post-verification warnings
+	AcknowledgePostVerificationWarnings *bool `pulumi:"acknowledgePostVerificationWarnings"`
 	// The unique identifier of enrollment
 	EnrollmentId *int `pulumi:"enrollmentId"`
 	// List of SANs
@@ -69,6 +73,8 @@ type cpsDvValidationState struct {
 }
 
 type CpsDvValidationState struct {
+	// Whether to acknowledge all post-verification warnings
+	AcknowledgePostVerificationWarnings pulumi.BoolPtrInput
 	// The unique identifier of enrollment
 	EnrollmentId pulumi.IntPtrInput
 	// List of SANs
@@ -84,6 +90,8 @@ func (CpsDvValidationState) ElementType() reflect.Type {
 }
 
 type cpsDvValidationArgs struct {
+	// Whether to acknowledge all post-verification warnings
+	AcknowledgePostVerificationWarnings *bool `pulumi:"acknowledgePostVerificationWarnings"`
 	// The unique identifier of enrollment
 	EnrollmentId int `pulumi:"enrollmentId"`
 	// List of SANs
@@ -94,6 +102,8 @@ type cpsDvValidationArgs struct {
 
 // The set of arguments for constructing a CpsDvValidation resource.
 type CpsDvValidationArgs struct {
+	// Whether to acknowledge all post-verification warnings
+	AcknowledgePostVerificationWarnings pulumi.BoolPtrInput
 	// The unique identifier of enrollment
 	EnrollmentId pulumi.IntInput
 	// List of SANs
@@ -187,6 +197,11 @@ func (o CpsDvValidationOutput) ToCpsDvValidationOutput() CpsDvValidationOutput {
 
 func (o CpsDvValidationOutput) ToCpsDvValidationOutputWithContext(ctx context.Context) CpsDvValidationOutput {
 	return o
+}
+
+// Whether to acknowledge all post-verification warnings
+func (o CpsDvValidationOutput) AcknowledgePostVerificationWarnings() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CpsDvValidation) pulumi.BoolPtrOutput { return v.AcknowledgePostVerificationWarnings }).(pulumi.BoolPtrOutput)
 }
 
 // The unique identifier of enrollment

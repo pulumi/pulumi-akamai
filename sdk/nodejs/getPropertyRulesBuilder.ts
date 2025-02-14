@@ -16,6 +16,10 @@ export function getPropertyRulesBuilder(args?: GetPropertyRulesBuilderArgs, opts
         "rulesV20231030": args.rulesV20231030,
         "rulesV20240109": args.rulesV20240109,
         "rulesV20240212": args.rulesV20240212,
+        "rulesV20240531": args.rulesV20240531,
+        "rulesV20240813": args.rulesV20240813,
+        "rulesV20241021": args.rulesV20241021,
+        "rulesV20250113": args.rulesV20250113,
     }, opts);
 }
 
@@ -29,6 +33,10 @@ export interface GetPropertyRulesBuilderArgs {
     rulesV20231030?: inputs.GetPropertyRulesBuilderRulesV20231030;
     rulesV20240109?: inputs.GetPropertyRulesBuilderRulesV20240109;
     rulesV20240212?: inputs.GetPropertyRulesBuilderRulesV20240212;
+    rulesV20240531?: inputs.GetPropertyRulesBuilderRulesV20240531;
+    rulesV20240813?: inputs.GetPropertyRulesBuilderRulesV20240813;
+    rulesV20241021?: inputs.GetPropertyRulesBuilderRulesV20241021;
+    rulesV20250113?: inputs.GetPropertyRulesBuilderRulesV20250113;
 }
 
 /**
@@ -47,6 +55,10 @@ export interface GetPropertyRulesBuilderResult {
     readonly rulesV20231030?: outputs.GetPropertyRulesBuilderRulesV20231030;
     readonly rulesV20240109?: outputs.GetPropertyRulesBuilderRulesV20240109;
     readonly rulesV20240212?: outputs.GetPropertyRulesBuilderRulesV20240212;
+    readonly rulesV20240531?: outputs.GetPropertyRulesBuilderRulesV20240531;
+    readonly rulesV20240813?: outputs.GetPropertyRulesBuilderRulesV20240813;
+    readonly rulesV20241021?: outputs.GetPropertyRulesBuilderRulesV20241021;
+    readonly rulesV20250113?: outputs.GetPropertyRulesBuilderRulesV20250113;
 }
 export function getPropertyRulesBuilderOutput(args?: GetPropertyRulesBuilderOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPropertyRulesBuilderResult> {
     args = args || {};
@@ -58,6 +70,10 @@ export function getPropertyRulesBuilderOutput(args?: GetPropertyRulesBuilderOutp
         "rulesV20231030": args.rulesV20231030,
         "rulesV20240109": args.rulesV20240109,
         "rulesV20240212": args.rulesV20240212,
+        "rulesV20240531": args.rulesV20240531,
+        "rulesV20240813": args.rulesV20240813,
+        "rulesV20241021": args.rulesV20241021,
+        "rulesV20250113": args.rulesV20250113,
     }, opts);
 }
 
@@ -71,4 +87,8 @@ export interface GetPropertyRulesBuilderOutputArgs {
     rulesV20231030?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20231030Args>;
     rulesV20240109?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20240109Args>;
     rulesV20240212?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20240212Args>;
+    rulesV20240531?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20240531Args>;
+    rulesV20240813?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20240813Args>;
+    rulesV20241021?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20241021Args>;
+    rulesV20250113?: pulumi.Input<inputs.GetPropertyRulesBuilderRulesV20250113Args>;
 }

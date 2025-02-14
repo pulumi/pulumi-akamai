@@ -18,56 +18,56 @@ import javax.annotation.Nullable;
 @ResourceType(type="akamai:index/iamRole:IamRole")
 public class IamRole extends com.pulumi.resources.CustomResource {
     /**
-     * The description for a role
+     * The description for a role.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return The description for a role
+     * @return The description for a role.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * The list of existing unique identifiers for the granted roles
+     * The list of existing unique identifiers for the granted roles.
      * 
      */
     @Export(name="grantedRoles", refs={List.class,Integer.class}, tree="[0,1]")
     private Output<List<Integer>> grantedRoles;
 
     /**
-     * @return The list of existing unique identifiers for the granted roles
+     * @return The list of existing unique identifiers for the granted roles.
      * 
      */
     public Output<List<Integer>> grantedRoles() {
         return this.grantedRoles;
     }
     /**
-     * The name you supply for a role
+     * The name you supply for a role.
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return The name you supply for a role
+     * @return The name you supply for a role.
      * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
-     * The role type which indicates whether it&#39;s a standard role provided by Akamai or a custom role for the account
+     * The role type which indicates whether it&#39;s a standard role provided by Akamai or a custom role for the account.
      * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
-     * @return The role type which indicates whether it&#39;s a standard role provided by Akamai or a custom role for the account
+     * @return The role type which indicates whether it&#39;s a standard role provided by Akamai or a custom role for the account.
      * 
      */
     public Output<String> type() {

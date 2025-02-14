@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v7/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v8/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -29,7 +29,7 @@ type GetGtmDomainsArgs struct {
 // A collection of values returned by getGtmDomains.
 type GetGtmDomainsResult struct {
 	Domains []GetGtmDomainsDomain `pulumi:"domains"`
-	// Deprecated: Required by the terraform plugin testing framework, always set to `getGtmDomains`.
+	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 }
 
@@ -70,7 +70,7 @@ func (o GetGtmDomainsResultOutput) Domains() GetGtmDomainsDomainArrayOutput {
 	return o.ApplyT(func(v GetGtmDomainsResult) []GetGtmDomainsDomain { return v.Domains }).(GetGtmDomainsDomainArrayOutput)
 }
 
-// Deprecated: Required by the terraform plugin testing framework, always set to `getGtmDomains`.
+// The provider-assigned unique ID for this managed resource.
 func (o GetGtmDomainsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGtmDomainsResult) string { return v.Id }).(pulumi.StringOutput)
 }

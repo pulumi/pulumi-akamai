@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-akamai/sdk/v7/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v8/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -18,11 +18,13 @@ type AppSecSiemSettings struct {
 	// Unique identifier of the security configuration
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
 	// Whether Bot Manager events should be included in SIEM events
-	EnableBotmanSiem pulumi.BoolOutput `pulumi:"enableBotmanSiem"`
+	EnableBotmanSiem pulumi.BoolPtrOutput `pulumi:"enableBotmanSiem"`
 	// Whether to enable SIEM on all security policies in the security configuration
 	EnableForAllPolicies pulumi.BoolOutput `pulumi:"enableForAllPolicies"`
 	// Whether to enable SIEM
 	EnableSiem pulumi.BoolOutput `pulumi:"enableSiem"`
+	// Describes all the protections and actions to be excluded from SIEM events
+	Exceptions AppSecSiemSettingsExceptionsPtrOutput `pulumi:"exceptions"`
 	// List of IDs of security policy for which SIEM integration is to be enabled
 	SecurityPolicyIds pulumi.StringArrayOutput `pulumi:"securityPolicyIds"`
 	// Unique identifier of the SIEM settings being modified
@@ -38,9 +40,6 @@ func NewAppSecSiemSettings(ctx *pulumi.Context,
 
 	if args.ConfigId == nil {
 		return nil, errors.New("invalid value for required argument 'ConfigId'")
-	}
-	if args.EnableBotmanSiem == nil {
-		return nil, errors.New("invalid value for required argument 'EnableBotmanSiem'")
 	}
 	if args.EnableForAllPolicies == nil {
 		return nil, errors.New("invalid value for required argument 'EnableForAllPolicies'")
@@ -82,6 +81,8 @@ type appSecSiemSettingsState struct {
 	EnableForAllPolicies *bool `pulumi:"enableForAllPolicies"`
 	// Whether to enable SIEM
 	EnableSiem *bool `pulumi:"enableSiem"`
+	// Describes all the protections and actions to be excluded from SIEM events
+	Exceptions *AppSecSiemSettingsExceptions `pulumi:"exceptions"`
 	// List of IDs of security policy for which SIEM integration is to be enabled
 	SecurityPolicyIds []string `pulumi:"securityPolicyIds"`
 	// Unique identifier of the SIEM settings being modified
@@ -97,6 +98,8 @@ type AppSecSiemSettingsState struct {
 	EnableForAllPolicies pulumi.BoolPtrInput
 	// Whether to enable SIEM
 	EnableSiem pulumi.BoolPtrInput
+	// Describes all the protections and actions to be excluded from SIEM events
+	Exceptions AppSecSiemSettingsExceptionsPtrInput
 	// List of IDs of security policy for which SIEM integration is to be enabled
 	SecurityPolicyIds pulumi.StringArrayInput
 	// Unique identifier of the SIEM settings being modified
@@ -111,11 +114,13 @@ type appSecSiemSettingsArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`
 	// Whether Bot Manager events should be included in SIEM events
-	EnableBotmanSiem bool `pulumi:"enableBotmanSiem"`
+	EnableBotmanSiem *bool `pulumi:"enableBotmanSiem"`
 	// Whether to enable SIEM on all security policies in the security configuration
 	EnableForAllPolicies bool `pulumi:"enableForAllPolicies"`
 	// Whether to enable SIEM
 	EnableSiem bool `pulumi:"enableSiem"`
+	// Describes all the protections and actions to be excluded from SIEM events
+	Exceptions *AppSecSiemSettingsExceptions `pulumi:"exceptions"`
 	// List of IDs of security policy for which SIEM integration is to be enabled
 	SecurityPolicyIds []string `pulumi:"securityPolicyIds"`
 	// Unique identifier of the SIEM settings being modified
@@ -127,11 +132,13 @@ type AppSecSiemSettingsArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId pulumi.IntInput
 	// Whether Bot Manager events should be included in SIEM events
-	EnableBotmanSiem pulumi.BoolInput
+	EnableBotmanSiem pulumi.BoolPtrInput
 	// Whether to enable SIEM on all security policies in the security configuration
 	EnableForAllPolicies pulumi.BoolInput
 	// Whether to enable SIEM
 	EnableSiem pulumi.BoolInput
+	// Describes all the protections and actions to be excluded from SIEM events
+	Exceptions AppSecSiemSettingsExceptionsPtrInput
 	// List of IDs of security policy for which SIEM integration is to be enabled
 	SecurityPolicyIds pulumi.StringArrayInput
 	// Unique identifier of the SIEM settings being modified
@@ -231,8 +238,8 @@ func (o AppSecSiemSettingsOutput) ConfigId() pulumi.IntOutput {
 }
 
 // Whether Bot Manager events should be included in SIEM events
-func (o AppSecSiemSettingsOutput) EnableBotmanSiem() pulumi.BoolOutput {
-	return o.ApplyT(func(v *AppSecSiemSettings) pulumi.BoolOutput { return v.EnableBotmanSiem }).(pulumi.BoolOutput)
+func (o AppSecSiemSettingsOutput) EnableBotmanSiem() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AppSecSiemSettings) pulumi.BoolPtrOutput { return v.EnableBotmanSiem }).(pulumi.BoolPtrOutput)
 }
 
 // Whether to enable SIEM on all security policies in the security configuration
@@ -243,6 +250,11 @@ func (o AppSecSiemSettingsOutput) EnableForAllPolicies() pulumi.BoolOutput {
 // Whether to enable SIEM
 func (o AppSecSiemSettingsOutput) EnableSiem() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AppSecSiemSettings) pulumi.BoolOutput { return v.EnableSiem }).(pulumi.BoolOutput)
+}
+
+// Describes all the protections and actions to be excluded from SIEM events
+func (o AppSecSiemSettingsOutput) Exceptions() AppSecSiemSettingsExceptionsPtrOutput {
+	return o.ApplyT(func(v *AppSecSiemSettings) AppSecSiemSettingsExceptionsPtrOutput { return v.Exceptions }).(AppSecSiemSettingsExceptionsPtrOutput)
 }
 
 // List of IDs of security policy for which SIEM integration is to be enabled

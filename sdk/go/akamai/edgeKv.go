@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-akamai/sdk/v7/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v8/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -19,10 +19,6 @@ type EdgeKv struct {
 	GeoLocation pulumi.StringPtrOutput `pulumi:"geoLocation"`
 	// Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
 	GroupId pulumi.IntOutput `pulumi:"groupId"`
-	// List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
-	//
-	// Deprecated: The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.
-	InitialDatas EdgeKvInitialDataArrayOutput `pulumi:"initialDatas"`
 	// Name for the EKV namespace
 	NamespaceName pulumi.StringOutput `pulumi:"namespaceName"`
 	// The network on which the namespace will be activated
@@ -77,10 +73,6 @@ type edgeKvState struct {
 	GeoLocation *string `pulumi:"geoLocation"`
 	// Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
 	GroupId *int `pulumi:"groupId"`
-	// List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
-	//
-	// Deprecated: The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.
-	InitialDatas []EdgeKvInitialData `pulumi:"initialDatas"`
 	// Name for the EKV namespace
 	NamespaceName *string `pulumi:"namespaceName"`
 	// The network on which the namespace will be activated
@@ -94,10 +86,6 @@ type EdgeKvState struct {
 	GeoLocation pulumi.StringPtrInput
 	// Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
 	GroupId pulumi.IntPtrInput
-	// List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
-	//
-	// Deprecated: The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.
-	InitialDatas EdgeKvInitialDataArrayInput
 	// Name for the EKV namespace
 	NamespaceName pulumi.StringPtrInput
 	// The network on which the namespace will be activated
@@ -115,10 +103,6 @@ type edgeKvArgs struct {
 	GeoLocation *string `pulumi:"geoLocation"`
 	// Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
 	GroupId int `pulumi:"groupId"`
-	// List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
-	//
-	// Deprecated: The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.
-	InitialDatas []EdgeKvInitialData `pulumi:"initialDatas"`
 	// Name for the EKV namespace
 	NamespaceName string `pulumi:"namespaceName"`
 	// The network on which the namespace will be activated
@@ -133,10 +117,6 @@ type EdgeKvArgs struct {
 	GeoLocation pulumi.StringPtrInput
 	// Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
 	GroupId pulumi.IntInput
-	// List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
-	//
-	// Deprecated: The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.
-	InitialDatas EdgeKvInitialDataArrayInput
 	// Name for the EKV namespace
 	NamespaceName pulumi.StringInput
 	// The network on which the namespace will be activated
@@ -240,13 +220,6 @@ func (o EdgeKvOutput) GeoLocation() pulumi.StringPtrOutput {
 // Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
 func (o EdgeKvOutput) GroupId() pulumi.IntOutput {
 	return o.ApplyT(func(v *EdgeKv) pulumi.IntOutput { return v.GroupId }).(pulumi.IntOutput)
-}
-
-// List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
-//
-// Deprecated: The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.
-func (o EdgeKvOutput) InitialDatas() EdgeKvInitialDataArrayOutput {
-	return o.ApplyT(func(v *EdgeKv) EdgeKvInitialDataArrayOutput { return v.InitialDatas }).(EdgeKvInitialDataArrayOutput)
 }
 
 // Name for the EKV namespace

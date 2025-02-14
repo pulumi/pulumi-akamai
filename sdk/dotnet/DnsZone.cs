@@ -33,6 +33,12 @@ namespace Pulumi.Akamai
         [Output("masters")]
         public Output<ImmutableArray<string>> Masters { get; private set; } = null!;
 
+        /// <summary>
+        /// Outbound zone transfer properties.
+        /// </summary>
+        [Output("outboundZoneTransfer")]
+        public Output<Outputs.DnsZoneOutboundZoneTransfer?> OutboundZoneTransfer { get; private set; } = null!;
+
         [Output("signAndServe")]
         public Output<bool?> SignAndServe { get; private set; } = null!;
 
@@ -124,6 +130,12 @@ namespace Pulumi.Akamai
             set => _masters = value;
         }
 
+        /// <summary>
+        /// Outbound zone transfer properties.
+        /// </summary>
+        [Input("outboundZoneTransfer")]
+        public Input<Inputs.DnsZoneOutboundZoneTransferArgs>? OutboundZoneTransfer { get; set; }
+
         [Input("signAndServe")]
         public Input<bool>? SignAndServe { get; set; }
 
@@ -175,6 +187,12 @@ namespace Pulumi.Akamai
             get => _masters ?? (_masters = new InputList<string>());
             set => _masters = value;
         }
+
+        /// <summary>
+        /// Outbound zone transfer properties.
+        /// </summary>
+        [Input("outboundZoneTransfer")]
+        public Input<Inputs.DnsZoneOutboundZoneTransferGetArgs>? OutboundZoneTransfer { get; set; }
 
         [Input("signAndServe")]
         public Input<bool>? SignAndServe { get; set; }

@@ -21,15 +21,19 @@ class AppsecAdvancedSettingsRequestBodyArgs:
     def __init__(__self__, *,
                  config_id: pulumi.Input[int],
                  request_body_inspection_limit: pulumi.Input[str],
+                 request_body_inspection_limit_override: Optional[pulumi.Input[bool]] = None,
                  security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AppsecAdvancedSettingsRequestBody resource.
         :param pulumi.Input[int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[str] request_body_inspection_limit: Request body inspection size limit in KB allowed values are 'default', 8, 16, 32
+        :param pulumi.Input[bool] request_body_inspection_limit_override: Indicates if the Request body inspection size should be overridden at policy
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "request_body_inspection_limit", request_body_inspection_limit)
+        if request_body_inspection_limit_override is not None:
+            pulumi.set(__self__, "request_body_inspection_limit_override", request_body_inspection_limit_override)
         if security_policy_id is not None:
             pulumi.set(__self__, "security_policy_id", security_policy_id)
 
@@ -58,6 +62,18 @@ class AppsecAdvancedSettingsRequestBodyArgs:
         pulumi.set(self, "request_body_inspection_limit", value)
 
     @property
+    @pulumi.getter(name="requestBodyInspectionLimitOverride")
+    def request_body_inspection_limit_override(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the Request body inspection size should be overridden at policy
+        """
+        return pulumi.get(self, "request_body_inspection_limit_override")
+
+    @request_body_inspection_limit_override.setter
+    def request_body_inspection_limit_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "request_body_inspection_limit_override", value)
+
+    @property
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -75,17 +91,21 @@ class _AppsecAdvancedSettingsRequestBodyState:
     def __init__(__self__, *,
                  config_id: Optional[pulumi.Input[int]] = None,
                  request_body_inspection_limit: Optional[pulumi.Input[str]] = None,
+                 request_body_inspection_limit_override: Optional[pulumi.Input[bool]] = None,
                  security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppsecAdvancedSettingsRequestBody resources.
         :param pulumi.Input[int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[str] request_body_inspection_limit: Request body inspection size limit in KB allowed values are 'default', 8, 16, 32
+        :param pulumi.Input[bool] request_body_inspection_limit_override: Indicates if the Request body inspection size should be overridden at policy
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
         if request_body_inspection_limit is not None:
             pulumi.set(__self__, "request_body_inspection_limit", request_body_inspection_limit)
+        if request_body_inspection_limit_override is not None:
+            pulumi.set(__self__, "request_body_inspection_limit_override", request_body_inspection_limit_override)
         if security_policy_id is not None:
             pulumi.set(__self__, "security_policy_id", security_policy_id)
 
@@ -114,6 +134,18 @@ class _AppsecAdvancedSettingsRequestBodyState:
         pulumi.set(self, "request_body_inspection_limit", value)
 
     @property
+    @pulumi.getter(name="requestBodyInspectionLimitOverride")
+    def request_body_inspection_limit_override(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the Request body inspection size should be overridden at policy
+        """
+        return pulumi.get(self, "request_body_inspection_limit_override")
+
+    @request_body_inspection_limit_override.setter
+    def request_body_inspection_limit_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "request_body_inspection_limit_override", value)
+
+    @property
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -133,6 +165,7 @@ class AppsecAdvancedSettingsRequestBody(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  config_id: Optional[pulumi.Input[int]] = None,
                  request_body_inspection_limit: Optional[pulumi.Input[str]] = None,
+                 request_body_inspection_limit_override: Optional[pulumi.Input[bool]] = None,
                  security_policy_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -141,6 +174,7 @@ class AppsecAdvancedSettingsRequestBody(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[str] request_body_inspection_limit: Request body inspection size limit in KB allowed values are 'default', 8, 16, 32
+        :param pulumi.Input[bool] request_body_inspection_limit_override: Indicates if the Request body inspection size should be overridden at policy
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         ...
@@ -168,6 +202,7 @@ class AppsecAdvancedSettingsRequestBody(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  config_id: Optional[pulumi.Input[int]] = None,
                  request_body_inspection_limit: Optional[pulumi.Input[str]] = None,
+                 request_body_inspection_limit_override: Optional[pulumi.Input[bool]] = None,
                  security_policy_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -184,6 +219,7 @@ class AppsecAdvancedSettingsRequestBody(pulumi.CustomResource):
             if request_body_inspection_limit is None and not opts.urn:
                 raise TypeError("Missing required property 'request_body_inspection_limit'")
             __props__.__dict__["request_body_inspection_limit"] = request_body_inspection_limit
+            __props__.__dict__["request_body_inspection_limit_override"] = request_body_inspection_limit_override
             __props__.__dict__["security_policy_id"] = security_policy_id
         super(AppsecAdvancedSettingsRequestBody, __self__).__init__(
             'akamai:index/appsecAdvancedSettingsRequestBody:AppsecAdvancedSettingsRequestBody',
@@ -197,6 +233,7 @@ class AppsecAdvancedSettingsRequestBody(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             config_id: Optional[pulumi.Input[int]] = None,
             request_body_inspection_limit: Optional[pulumi.Input[str]] = None,
+            request_body_inspection_limit_override: Optional[pulumi.Input[bool]] = None,
             security_policy_id: Optional[pulumi.Input[str]] = None) -> 'AppsecAdvancedSettingsRequestBody':
         """
         Get an existing AppsecAdvancedSettingsRequestBody resource's state with the given name, id, and optional extra
@@ -207,6 +244,7 @@ class AppsecAdvancedSettingsRequestBody(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[str] request_body_inspection_limit: Request body inspection size limit in KB allowed values are 'default', 8, 16, 32
+        :param pulumi.Input[bool] request_body_inspection_limit_override: Indicates if the Request body inspection size should be overridden at policy
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -215,6 +253,7 @@ class AppsecAdvancedSettingsRequestBody(pulumi.CustomResource):
 
         __props__.__dict__["config_id"] = config_id
         __props__.__dict__["request_body_inspection_limit"] = request_body_inspection_limit
+        __props__.__dict__["request_body_inspection_limit_override"] = request_body_inspection_limit_override
         __props__.__dict__["security_policy_id"] = security_policy_id
         return AppsecAdvancedSettingsRequestBody(resource_name, opts=opts, __props__=__props__)
 
@@ -233,6 +272,14 @@ class AppsecAdvancedSettingsRequestBody(pulumi.CustomResource):
         Request body inspection size limit in KB allowed values are 'default', 8, 16, 32
         """
         return pulumi.get(self, "request_body_inspection_limit")
+
+    @property
+    @pulumi.getter(name="requestBodyInspectionLimitOverride")
+    def request_body_inspection_limit_override(self) -> pulumi.Output[Optional[bool]]:
+        """
+        Indicates if the Request body inspection size should be overridden at policy
+        """
+        return pulumi.get(self, "request_body_inspection_limit_override")
 
     @property
     @pulumi.getter(name="securityPolicyId")

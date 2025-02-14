@@ -13,19 +13,19 @@ namespace Pulumi.Akamai
     public partial class IamBlockedUserProperties : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// List of properties to block for a user
+        /// List of properties to block for a user.
         /// </summary>
         [Output("blockedProperties")]
         public Output<ImmutableArray<int>> BlockedProperties { get; private set; } = null!;
 
         /// <summary>
-        /// A unique identifier for a group
+        /// A unique identifier for a group.
         /// </summary>
         [Output("groupId")]
         public Output<int> GroupId { get; private set; } = null!;
 
         /// <summary>
-        /// A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID
+        /// A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID.
         /// </summary>
         [Output("identityId")]
         public Output<string> IdentityId { get; private set; } = null!;
@@ -80,7 +80,7 @@ namespace Pulumi.Akamai
         private InputList<int>? _blockedProperties;
 
         /// <summary>
-        /// List of properties to block for a user
+        /// List of properties to block for a user.
         /// </summary>
         public InputList<int> BlockedProperties
         {
@@ -89,13 +89,13 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// A unique identifier for a group
+        /// A unique identifier for a group.
         /// </summary>
         [Input("groupId", required: true)]
         public Input<int> GroupId { get; set; } = null!;
 
         /// <summary>
-        /// A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID
+        /// A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID.
         /// </summary>
         [Input("identityId", required: true)]
         public Input<string> IdentityId { get; set; } = null!;
@@ -112,7 +112,7 @@ namespace Pulumi.Akamai
         private InputList<int>? _blockedProperties;
 
         /// <summary>
-        /// List of properties to block for a user
+        /// List of properties to block for a user.
         /// </summary>
         public InputList<int> BlockedProperties
         {
@@ -121,13 +121,13 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// A unique identifier for a group
+        /// A unique identifier for a group.
         /// </summary>
         [Input("groupId")]
         public Input<int>? GroupId { get; set; }
 
         /// <summary>
-        /// A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID
+        /// A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID.
         /// </summary>
         [Input("identityId")]
         public Input<string>? IdentityId { get; set; }

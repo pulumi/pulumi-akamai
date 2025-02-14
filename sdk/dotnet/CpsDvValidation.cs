@@ -13,6 +13,12 @@ namespace Pulumi.Akamai
     public partial class CpsDvValidation : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// Whether to acknowledge all post-verification warnings
+        /// </summary>
+        [Output("acknowledgePostVerificationWarnings")]
+        public Output<bool?> AcknowledgePostVerificationWarnings { get; private set; } = null!;
+
+        /// <summary>
         /// The unique identifier of enrollment
         /// </summary>
         [Output("enrollmentId")]
@@ -83,6 +89,12 @@ namespace Pulumi.Akamai
     public sealed class CpsDvValidationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Whether to acknowledge all post-verification warnings
+        /// </summary>
+        [Input("acknowledgePostVerificationWarnings")]
+        public Input<bool>? AcknowledgePostVerificationWarnings { get; set; }
+
+        /// <summary>
         /// The unique identifier of enrollment
         /// </summary>
         [Input("enrollmentId", required: true)]
@@ -114,6 +126,12 @@ namespace Pulumi.Akamai
 
     public sealed class CpsDvValidationState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Whether to acknowledge all post-verification warnings
+        /// </summary>
+        [Input("acknowledgePostVerificationWarnings")]
+        public Input<bool>? AcknowledgePostVerificationWarnings { get; set; }
+
         /// <summary>
         /// The unique identifier of enrollment
         /// </summary>

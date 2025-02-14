@@ -8,13 +8,15 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-akamai/sdk/v7/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v8/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 type Property struct {
 	pulumi.CustomResourceState
 
+	// ID of the property in the Identity and Access Management API.
+	AssetId pulumi.StringOutput `pulumi:"assetId"`
 	// Contract ID to be assigned to the Property
 	ContractId pulumi.StringOutput `pulumi:"contractId"`
 	// Group ID to be assigned to the Property
@@ -90,6 +92,8 @@ func GetProperty(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Property resources.
 type propertyState struct {
+	// ID of the property in the Identity and Access Management API.
+	AssetId *string `pulumi:"assetId"`
 	// Contract ID to be assigned to the Property
 	ContractId *string `pulumi:"contractId"`
 	// Group ID to be assigned to the Property
@@ -121,6 +125,8 @@ type propertyState struct {
 }
 
 type PropertyState struct {
+	// ID of the property in the Identity and Access Management API.
+	AssetId pulumi.StringPtrInput
 	// Contract ID to be assigned to the Property
 	ContractId pulumi.StringPtrInput
 	// Group ID to be assigned to the Property
@@ -281,6 +287,11 @@ func (o PropertyOutput) ToPropertyOutput() PropertyOutput {
 
 func (o PropertyOutput) ToPropertyOutputWithContext(ctx context.Context) PropertyOutput {
 	return o
+}
+
+// ID of the property in the Identity and Access Management API.
+func (o PropertyOutput) AssetId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.AssetId }).(pulumi.StringOutput)
 }
 
 // Contract ID to be assigned to the Property

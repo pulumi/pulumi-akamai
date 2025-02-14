@@ -23,10 +23,10 @@ import (
 
 	_ "embed"
 
-	_ "github.com/akamai/terraform-provider-akamai/v6/pkg/providers" // Load the providers
+	_ "github.com/akamai/terraform-provider-akamai/v7/pkg/providers" // Load the providers
 
-	"github.com/akamai/terraform-provider-akamai/v6/pkg/akamai"
-	"github.com/akamai/terraform-provider-akamai/v6/pkg/providers/registry"
+	"github.com/akamai/terraform-provider-akamai/v7/pkg/akamai"
+	"github.com/akamai/terraform-provider-akamai/v7/pkg/providers/registry"
 
 	pf "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/pf/tfbridge"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
@@ -35,7 +35,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/common/resource"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/tokens"
 
-	"github.com/pulumi/pulumi-akamai/provider/v7/pkg/version"
+	"github.com/pulumi/pulumi-akamai/provider/v8/pkg/version"
 )
 
 // all of the token components used below.
@@ -92,7 +92,7 @@ func Provider() tfbridge.ProviderInfo {
 		Homepage:                "https://pulumi.io",
 		Repository:              "https://github.com/pulumi/pulumi-akamai",
 		GitHubOrg:               "akamai",
-		TFProviderModuleVersion: "v6",
+		TFProviderModuleVersion: "v7",
 		Version:                 version.Version,
 		UpstreamRepoPath:        "./upstream",
 		Config: map[string]*tfbridge.SchemaInfo{
@@ -106,7 +106,12 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_property_variables",
 			// This provides a DotNet codegen class as follows:
 			// GetIamGroupsGroupSubGroupSubGroupSubGroupSubGroupSubGroupSubGroupSubGroupSubGroupSubGroupSubGrou....
+			"akamai_iam_accessible_groups",
 			"akamai_iam_groups",
+			"akamai_iam_group",
+			"akamai_iam_authorized_users",
+			"akamai_iam_user",
+			"akamai_iam_users",
 		},
 		Resources: map[string]*tfbridge.ResourceInfo{
 			"akamai_cloudwrapper_configuration": {ComputeID: tfbridge.DelegateIDField("configName", "akamai", "https://github.com/pulumi/pulumi-akamai")},
@@ -116,7 +121,6 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_appsec_custom_rule_action":                   {Tok: makeResource(mainMod, "AppSecCustomRuleAction")},
 			"akamai_appsec_match_target":                         {Tok: makeResource(mainMod, "AppSecMatchTarget")},
 			"akamai_appsec_match_target_sequence":                {Tok: makeResource(mainMod, "AppSecMatchTargetSequence")},
-			"akamai_appsec_selected_hostnames":                   {Tok: makeResource(mainMod, "AppSecSelectedHostnames")},
 			"akamai_appsec_advanced_settings_logging":            {Tok: makeResource(mainMod, "AppSecAdvancedSettingsLogging")},
 			"akamai_appsec_advanced_settings_prefetch":           {Tok: makeResource(mainMod, "AppSecAdvancedSettingsPrefetch")},
 			"akamai_appsec_api_request_constraints":              {Tok: makeResource(mainMod, "AppSecApiRequestConstraints")},
@@ -156,7 +160,6 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_appsec_malware_protection":                   {Tok: makeResource(mainMod, "AppSecMalwareProtection")},
 			"akamai_appsec_rule":                                 {Tok: makeResource(mainMod, "AppSecRule")},
 			"akamai_appsec_threat_intel":                         {Tok: makeResource(mainMod, "AppSecThreatIntel")},
-			"akamai_appsec_wap_selected_hostnames":               {Tok: makeResource(mainMod, "AppSecWapSelectedHostnames")},
 			"akamai_appsec_advanced_settings_evasive_path_match": {Tok: makeResource(mainMod, "AppSecAdvancedSettingsEvasivePathMatch")},
 
 			"akamai_edgekv": {Tok: makeResource(mainMod, "EdgeKv")},
@@ -183,6 +186,18 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_iam_group":                   {Tok: makeResource(mainMod, "IamGroup")},
 			"akamai_iam_role":                    {Tok: makeResource(mainMod, "IamRole")},
 			"akamai_iam_user":                    {Tok: makeResource(mainMod, "IamUser")},
+			"akamai_iam_cidr_block": {
+				Tok:       makeResource(mainMod, "IamCidrBlock"),
+				ComputeID: tfbridge.DelegateIDField("cidr_block_id", "akamai", "https://github.com/pulumi/pulumi-akamai"),
+			},
+			"akamai_iam_ip_allowlist": {
+				Tok: makeResource(mainMod, "IamIpAllowlist"),
+				ComputeID: func(ctx context.Context, state resource.PropertyMap) (resource.ID, error) {
+					// this resource only has one field called "enabled" which is a boolean
+					// so here we create a dummy ID field to satisfy engine requirements
+					return resource.ID("id"), nil
+				},
+			},
 
 			"akamai_property": {
 				Tok: makeResource(mainMod, "Property"),
@@ -202,6 +217,11 @@ func Provider() tfbridge.ProviderInfo {
 			},
 			"akamai_property_include":            {Tok: makeResource(mainMod, "PropertyInclude")},
 			"akamai_property_include_activation": {Tok: makeResource(mainMod, "PropertyIncludeActivation")},
+
+			"akamai_cloudaccess_key": {
+				Tok:       makeResource(mainMod, "CloudAccessKey"),
+				ComputeID: tfbridge.DelegateIDField("access_key_uid", "akamai", "https://github.com/pulumi/pulumi-akamai"),
+			},
 		},
 		DataSources: map[string]*tfbridge.DataSourceInfo{
 			"akamai_contract":  {Tok: makeDataSource(mainMod, "getContract")},
@@ -209,52 +229,51 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_group":     {Tok: makeDataSource(mainMod, "getGroup")},
 			"akamai_groups":    {Tok: makeDataSource(mainMod, "getGroups")},
 
-			"akamai_appsec_configuration":                        {Tok: makeDataSource(mainMod, "getAppSecConfiguration")},
-			"akamai_appsec_configuration_version":                {Tok: makeDataSource(mainMod, "getAppSecConfigurationVersion")},
-			"akamai_appsec_custom_rule_actions":                  {Tok: makeDataSource(mainMod, "getAppSecCustomRuleActions")},
-			"akamai_appsec_custom_rules":                         {Tok: makeDataSource(mainMod, "getAppSecCustomRules")},
-			"akamai_appsec_export_configuration":                 {Tok: makeDataSource(mainMod, "getAppSecExportConfiguration")},
-			"akamai_appsec_match_targets":                        {Tok: makeDataSource(mainMod, "getAppSecMatchTargets")},
-			"akamai_appsec_security_policy":                      {Tok: makeDataSource(mainMod, "getAppSecSecurityPolicy")},
-			"akamai_appsec_selectable_hostnames":                 {Tok: makeDataSource(mainMod, "getAppSecSelectableHostnames")},
-			"akamai_appsec_selected_hostnames":                   {Tok: makeDataSource(mainMod, "getAppSecSelectedHostnames")},
-			"akamai_appsec_advanced_settings_logging":            {Tok: makeDataSource(mainMod, "getAppSecAdvancedSettingsLogging")},
-			"akamai_appsec_advanced_settings_prefetch":           {Tok: makeDataSource(mainMod, "getAppSecAdvancedSettingsPrefetch")},
-			"akamai_appsec_api_endpoints":                        {Tok: makeDataSource(mainMod, "getAppSecApiEndpoints")},
-			"akamai_appsec_api_request_constraints":              {Tok: makeDataSource(mainMod, "getAppSecApiRequestConstraints")},
-			"akamai_appsec_bypass_network_lists":                 {Tok: makeDataSource(mainMod, "getAppSecBypassNetworkLists")},
-			"akamai_appsec_contracts_groups":                     {Tok: makeDataSource(mainMod, "getAppSecContractsGroups")},
-			"akamai_appsec_custom_deny":                          {Tok: makeDataSource(mainMod, "getAppSecCustomDeny")},
-			"akamai_appsec_eval":                                 {Tok: makeDataSource(mainMod, "getAppSecEval")},
-			"akamai_appsec_failover_hostnames":                   {Tok: makeDataSource(mainMod, "getAppSecFailoverHostnames")},
-			"akamai_appsec_hostname_coverage":                    {Tok: makeDataSource(mainMod, "getAppSecHostnameCoverage")},
-			"akamai_appsec_hostname_coverage_match_targets":      {Tok: makeDataSource(mainMod, "getAppSecHostnameCoverageMatchTargets")},
-			"akamai_appsec_hostname_coverage_overlapping":        {Tok: makeDataSource(mainMod, "getAppSecHostnameCoverageOverlapping")},
-			"akamai_appsec_ip_geo":                               {Tok: makeDataSource(mainMod, "getAppSecIPGeo")},
-			"akamai_appsec_malware_content_types":                {Tok: makeDataSource(mainMod, "getAppSecMalwareContentTypes")},
-			"akamai_appsec_malware_policies":                     {Tok: makeDataSource(mainMod, "getAppSecMalwarePolicies")},
-			"akamai_appsec_malware_policy_actions":               {Tok: makeDataSource(mainMod, "getAppSecMalwarePolicyActions")},
-			"akamai_appsec_penalty_box":                          {Tok: makeDataSource(mainMod, "getAppSecPenaltyBox")},
-			"akamai_appsec_eval_penalty_box":                     {Tok: makeDataSource(mainMod, "getAppSecEvalPenaltyBox")},
-			"akamai_appsec_rate_policies":                        {Tok: makeDataSource(mainMod, "getAppSecRatePolicies")},
-			"akamai_appsec_rate_policy_actions":                  {Tok: makeDataSource(mainMod, "getAppSecRatePolicyActions")},
-			"akamai_appsec_reputation_profile_actions":           {Tok: makeDataSource(mainMod, "getAppSecReputationProfileActions")},
-			"akamai_appsec_reputation_profile_analysis":          {Tok: makeDataSource(mainMod, "getAppSecReputationProfileAnalysis")},
-			"akamai_appsec_reputation_profiles":                  {Tok: makeDataSource(mainMod, "getAppSecReputationProfiles")},
-			"akamai_appsec_rule_upgrade_details":                 {Tok: makeDataSource(mainMod, "getAppSecRuleUpgradeDetails")},
-			"akamai_appsec_security_policy_protections":          {Tok: makeDataSource(mainMod, "getAppSecSecurityPolicyProtections")},
-			"akamai_appsec_siem_definitions":                     {Tok: makeDataSource(mainMod, "getAppSecSiemDefinitions")},
-			"akamai_appsec_siem_settings":                        {Tok: makeDataSource(mainMod, "getAppSecSiemSettings")},
-			"akamai_appsec_slow_post":                            {Tok: makeDataSource(mainMod, "getAppSecSlowPost")},
-			"akamai_appsec_version_notes":                        {Tok: makeDataSource(mainMod, "getAppSecVersionNotes")},
-			"akamai_appsec_waf_mode":                             {Tok: makeDataSource(mainMod, "getAppSecWafMode")},
-			"akamai_appsec_advanced_settings_pragma_header":      {Tok: makeDataSource(mainMod, "getAppSecAdvancedSettingsPragmaHeader")},
-			"akamai_appsec_attack_groups":                        {Tok: makeDataSource(mainMod, "getAppSecAttackGroups")},
-			"akamai_appsec_eval_rules":                           {Tok: makeDataSource(mainMod, "getAppSecEvalRules")},
-			"akamai_appsec_rules":                                {Tok: makeDataSource(mainMod, "getAppSecRules")},
-			"akamai_appsec_eval_groups":                          {Tok: makeDataSource(mainMod, "getAppSecEvalGroups")},
-			"akamai_appsec_threat_intel":                         {Tok: makeDataSource(mainMod, "getAppSecThreatIntel")},
-			"akamai_appsec_wap_selected_hostnames":               {Tok: makeDataSource(mainMod, "getAppSecWapSelectedHostnames")},
+			"akamai_appsec_configuration":                   {Tok: makeDataSource(mainMod, "getAppSecConfiguration")},
+			"akamai_appsec_configuration_version":           {Tok: makeDataSource(mainMod, "getAppSecConfigurationVersion")},
+			"akamai_appsec_custom_rule_actions":             {Tok: makeDataSource(mainMod, "getAppSecCustomRuleActions")},
+			"akamai_appsec_custom_rules":                    {Tok: makeDataSource(mainMod, "getAppSecCustomRules")},
+			"akamai_appsec_export_configuration":            {Tok: makeDataSource(mainMod, "getAppSecExportConfiguration")},
+			"akamai_appsec_match_targets":                   {Tok: makeDataSource(mainMod, "getAppSecMatchTargets")},
+			"akamai_appsec_security_policy":                 {Tok: makeDataSource(mainMod, "getAppSecSecurityPolicy")},
+			"akamai_appsec_selectable_hostnames":            {Tok: makeDataSource(mainMod, "getAppSecSelectableHostnames")},
+			"akamai_appsec_advanced_settings_logging":       {Tok: makeDataSource(mainMod, "getAppSecAdvancedSettingsLogging")},
+			"akamai_appsec_advanced_settings_prefetch":      {Tok: makeDataSource(mainMod, "getAppSecAdvancedSettingsPrefetch")},
+			"akamai_appsec_api_endpoints":                   {Tok: makeDataSource(mainMod, "getAppSecApiEndpoints")},
+			"akamai_appsec_api_request_constraints":         {Tok: makeDataSource(mainMod, "getAppSecApiRequestConstraints")},
+			"akamai_appsec_bypass_network_lists":            {Tok: makeDataSource(mainMod, "getAppSecBypassNetworkLists")},
+			"akamai_appsec_contracts_groups":                {Tok: makeDataSource(mainMod, "getAppSecContractsGroups")},
+			"akamai_appsec_custom_deny":                     {Tok: makeDataSource(mainMod, "getAppSecCustomDeny")},
+			"akamai_appsec_eval":                            {Tok: makeDataSource(mainMod, "getAppSecEval")},
+			"akamai_appsec_failover_hostnames":              {Tok: makeDataSource(mainMod, "getAppSecFailoverHostnames")},
+			"akamai_appsec_hostname_coverage":               {Tok: makeDataSource(mainMod, "getAppSecHostnameCoverage")},
+			"akamai_appsec_hostname_coverage_match_targets": {Tok: makeDataSource(mainMod, "getAppSecHostnameCoverageMatchTargets")},
+			"akamai_appsec_hostname_coverage_overlapping":   {Tok: makeDataSource(mainMod, "getAppSecHostnameCoverageOverlapping")},
+			"akamai_appsec_ip_geo":                          {Tok: makeDataSource(mainMod, "getAppSecIPGeo")},
+			"akamai_appsec_malware_content_types":           {Tok: makeDataSource(mainMod, "getAppSecMalwareContentTypes")},
+			"akamai_appsec_malware_policies":                {Tok: makeDataSource(mainMod, "getAppSecMalwarePolicies")},
+			"akamai_appsec_malware_policy_actions":          {Tok: makeDataSource(mainMod, "getAppSecMalwarePolicyActions")},
+			"akamai_appsec_penalty_box":                     {Tok: makeDataSource(mainMod, "getAppSecPenaltyBox")},
+			"akamai_appsec_eval_penalty_box":                {Tok: makeDataSource(mainMod, "getAppSecEvalPenaltyBox")},
+			"akamai_appsec_rate_policies":                   {Tok: makeDataSource(mainMod, "getAppSecRatePolicies")},
+			"akamai_appsec_rate_policy_actions":             {Tok: makeDataSource(mainMod, "getAppSecRatePolicyActions")},
+			"akamai_appsec_reputation_profile_actions":      {Tok: makeDataSource(mainMod, "getAppSecReputationProfileActions")},
+			"akamai_appsec_reputation_profile_analysis":     {Tok: makeDataSource(mainMod, "getAppSecReputationProfileAnalysis")},
+			"akamai_appsec_reputation_profiles":             {Tok: makeDataSource(mainMod, "getAppSecReputationProfiles")},
+			"akamai_appsec_rule_upgrade_details":            {Tok: makeDataSource(mainMod, "getAppSecRuleUpgradeDetails")},
+			"akamai_appsec_security_policy_protections":     {Tok: makeDataSource(mainMod, "getAppSecSecurityPolicyProtections")},
+			"akamai_appsec_siem_definitions":                {Tok: makeDataSource(mainMod, "getAppSecSiemDefinitions")},
+			"akamai_appsec_siem_settings":                   {Tok: makeDataSource(mainMod, "getAppSecSiemSettings")},
+			"akamai_appsec_slow_post":                       {Tok: makeDataSource(mainMod, "getAppSecSlowPost")},
+			"akamai_appsec_version_notes":                   {Tok: makeDataSource(mainMod, "getAppSecVersionNotes")},
+			"akamai_appsec_waf_mode":                        {Tok: makeDataSource(mainMod, "getAppSecWafMode")},
+			"akamai_appsec_advanced_settings_pragma_header": {Tok: makeDataSource(mainMod, "getAppSecAdvancedSettingsPragmaHeader")},
+			"akamai_appsec_attack_groups":                   {Tok: makeDataSource(mainMod, "getAppSecAttackGroups")},
+			"akamai_appsec_eval_rules":                      {Tok: makeDataSource(mainMod, "getAppSecEvalRules")},
+			"akamai_appsec_rules":                           {Tok: makeDataSource(mainMod, "getAppSecRules")},
+			"akamai_appsec_eval_groups":                     {Tok: makeDataSource(mainMod, "getAppSecEvalGroups")},
+			"akamai_appsec_threat_intel":                    {Tok: makeDataSource(mainMod, "getAppSecThreatIntel")},
+
 			"akamai_appsec_advanced_settings_evasive_path_match": {Tok: makeDataSource(mainMod, "getAppSecAdvancedSettingsEvasivePathMatch")},
 			"akamai_appsec_tuning_recommendations":               {Tok: makeDataSource(mainMod, "getAppSecTuningRecommendations")},
 			"akamai_cps_enrollment":                              {Tok: makeDataSource(mainMod, "getCPSEnrollment")},

@@ -18,14 +18,14 @@ public final class IamRoleState extends com.pulumi.resources.ResourceArgs {
     public static final IamRoleState Empty = new IamRoleState();
 
     /**
-     * The description for a role
+     * The description for a role.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return The description for a role
+     * @return The description for a role.
      * 
      */
     public Optional<Output<String>> description() {
@@ -33,14 +33,14 @@ public final class IamRoleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The list of existing unique identifiers for the granted roles
+     * The list of existing unique identifiers for the granted roles.
      * 
      */
     @Import(name="grantedRoles")
     private @Nullable Output<List<Integer>> grantedRoles;
 
     /**
-     * @return The list of existing unique identifiers for the granted roles
+     * @return The list of existing unique identifiers for the granted roles.
      * 
      */
     public Optional<Output<List<Integer>>> grantedRoles() {
@@ -48,14 +48,14 @@ public final class IamRoleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The name you supply for a role
+     * The name you supply for a role.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return The name you supply for a role
+     * @return The name you supply for a role.
      * 
      */
     public Optional<Output<String>> name() {
@@ -63,14 +63,14 @@ public final class IamRoleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The role type which indicates whether it&#39;s a standard role provided by Akamai or a custom role for the account
+     * The role type which indicates whether it&#39;s a standard role provided by Akamai or a custom role for the account.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return The role type which indicates whether it&#39;s a standard role provided by Akamai or a custom role for the account
+     * @return The role type which indicates whether it&#39;s a standard role provided by Akamai or a custom role for the account.
      * 
      */
     public Optional<Output<String>> type() {
@@ -105,7 +105,7 @@ public final class IamRoleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description The description for a role
+         * @param description The description for a role.
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class IamRoleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description The description for a role
+         * @param description The description for a role.
          * 
          * @return builder
          * 
@@ -126,7 +126,7 @@ public final class IamRoleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param grantedRoles The list of existing unique identifiers for the granted roles
+         * @param grantedRoles The list of existing unique identifiers for the granted roles.
          * 
          * @return builder
          * 
@@ -137,7 +137,7 @@ public final class IamRoleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param grantedRoles The list of existing unique identifiers for the granted roles
+         * @param grantedRoles The list of existing unique identifiers for the granted roles.
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class IamRoleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param grantedRoles The list of existing unique identifiers for the granted roles
+         * @param grantedRoles The list of existing unique identifiers for the granted roles.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class IamRoleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name The name you supply for a role
+         * @param name The name you supply for a role.
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class IamRoleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name The name you supply for a role
+         * @param name The name you supply for a role.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class IamRoleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type The role type which indicates whether it&#39;s a standard role provided by Akamai or a custom role for the account
+         * @param type The role type which indicates whether it&#39;s a standard role provided by Akamai or a custom role for the account.
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class IamRoleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type The role type which indicates whether it&#39;s a standard role provided by Akamai or a custom role for the account
+         * @param type The role type which indicates whether it&#39;s a standard role provided by Akamai or a custom role for the account.
          * 
          * @return builder
          * 

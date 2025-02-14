@@ -33,6 +33,7 @@ import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationResize;
 import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationRotate;
 import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationScale;
 import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationShears;
+import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationSmartCrop;
 import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationTrim;
 import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationUnsharpMask;
 import com.pulumi.core.annotations.Import;
@@ -473,6 +474,21 @@ public final class GetImagingPolicyImagePolicyTransformation extends com.pulumi.
     }
 
     /**
+     * Crops around whatever is most important in the image, to a region around a specified area of interest relative to the specified `width` and `height` values. The crop detects any faces present, otherwise features.
+     * 
+     */
+    @Import(name="smartCrops")
+    private @Nullable List<GetImagingPolicyImagePolicyTransformationSmartCrop> smartCrops;
+
+    /**
+     * @return Crops around whatever is most important in the image, to a region around a specified area of interest relative to the specified `width` and `height` values. The crop detects any faces present, otherwise features.
+     * 
+     */
+    public Optional<List<GetImagingPolicyImagePolicyTransformationSmartCrop>> smartCrops() {
+        return Optional.ofNullable(this.smartCrops);
+    }
+
+    /**
      * Automatically crops uniform backgrounds from the edges of an image.
      * 
      */
@@ -535,6 +551,7 @@ public final class GetImagingPolicyImagePolicyTransformation extends com.pulumi.
         this.rotates = $.rotates;
         this.scales = $.scales;
         this.shears = $.shears;
+        this.smartCrops = $.smartCrops;
         this.trims = $.trims;
         this.unsharpMasks = $.unsharpMasks;
     }
@@ -1149,6 +1166,27 @@ public final class GetImagingPolicyImagePolicyTransformation extends com.pulumi.
          */
         public Builder shears(GetImagingPolicyImagePolicyTransformationShears... shears) {
             return shears(List.of(shears));
+        }
+
+        /**
+         * @param smartCrops Crops around whatever is most important in the image, to a region around a specified area of interest relative to the specified `width` and `height` values. The crop detects any faces present, otherwise features.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder smartCrops(@Nullable List<GetImagingPolicyImagePolicyTransformationSmartCrop> smartCrops) {
+            $.smartCrops = smartCrops;
+            return this;
+        }
+
+        /**
+         * @param smartCrops Crops around whatever is most important in the image, to a region around a specified area of interest relative to the specified `width` and `height` values. The crop detects any faces present, otherwise features.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder smartCrops(GetImagingPolicyImagePolicyTransformationSmartCrop... smartCrops) {
+            return smartCrops(List.of(smartCrops));
         }
 
         /**

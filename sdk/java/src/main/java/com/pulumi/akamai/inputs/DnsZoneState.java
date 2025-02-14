@@ -3,6 +3,7 @@
 
 package com.pulumi.akamai.inputs;
 
+import com.pulumi.akamai.inputs.DnsZoneOutboundZoneTransferArgs;
 import com.pulumi.akamai.inputs.DnsZoneTsigKeyArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
@@ -68,6 +69,21 @@ public final class DnsZoneState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.masters);
     }
 
+    /**
+     * Outbound zone transfer properties.
+     * 
+     */
+    @Import(name="outboundZoneTransfer")
+    private @Nullable Output<DnsZoneOutboundZoneTransferArgs> outboundZoneTransfer;
+
+    /**
+     * @return Outbound zone transfer properties.
+     * 
+     */
+    public Optional<Output<DnsZoneOutboundZoneTransferArgs>> outboundZoneTransfer() {
+        return Optional.ofNullable(this.outboundZoneTransfer);
+    }
+
     @Import(name="signAndServe")
     private @Nullable Output<Boolean> signAndServe;
 
@@ -127,6 +143,7 @@ public final class DnsZoneState extends com.pulumi.resources.ResourceArgs {
         this.endCustomerId = $.endCustomerId;
         this.group = $.group;
         this.masters = $.masters;
+        this.outboundZoneTransfer = $.outboundZoneTransfer;
         this.signAndServe = $.signAndServe;
         this.signAndServeAlgorithm = $.signAndServeAlgorithm;
         this.target = $.target;
@@ -219,6 +236,27 @@ public final class DnsZoneState extends com.pulumi.resources.ResourceArgs {
 
         public Builder masters(String... masters) {
             return masters(List.of(masters));
+        }
+
+        /**
+         * @param outboundZoneTransfer Outbound zone transfer properties.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder outboundZoneTransfer(@Nullable Output<DnsZoneOutboundZoneTransferArgs> outboundZoneTransfer) {
+            $.outboundZoneTransfer = outboundZoneTransfer;
+            return this;
+        }
+
+        /**
+         * @param outboundZoneTransfer Outbound zone transfer properties.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder outboundZoneTransfer(DnsZoneOutboundZoneTransferArgs outboundZoneTransfer) {
+            return outboundZoneTransfer(Output.of(outboundZoneTransfer));
         }
 
         public Builder signAndServe(@Nullable Output<Boolean> signAndServe) {

@@ -20,11 +20,9 @@ public final class GetGtmCidrmapResult {
     private @Nullable GetGtmCidrmapDefaultDatacenter defaultDatacenter;
     private String domain;
     /**
-     * @deprecated
-     * Required by the terraform plugin testing framework, always set to `gtm_cidrmap`.
+     * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    @Deprecated /* Required by the terraform plugin testing framework, always set to `gtm_cidrmap`. */
     private String id;
     private @Nullable List<GetGtmCidrmapLink> links;
     private String mapName;
@@ -40,11 +38,9 @@ public final class GetGtmCidrmapResult {
         return this.domain;
     }
     /**
-     * @deprecated
-     * Required by the terraform plugin testing framework, always set to `gtm_cidrmap`.
+     * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    @Deprecated /* Required by the terraform plugin testing framework, always set to `gtm_cidrmap`. */
     public String id() {
         return this.id;
     }

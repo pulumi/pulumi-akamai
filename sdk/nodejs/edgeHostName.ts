@@ -49,6 +49,11 @@ export class EdgeHostName extends pulumi.CustomResource {
      */
     public readonly timeouts!: pulumi.Output<outputs.EdgeHostNameTimeouts | undefined>;
     /**
+     * The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
+     * value for product is used.
+     */
+    public readonly ttl!: pulumi.Output<number | undefined>;
+    /**
      * A JSON encoded list of use cases
      */
     public readonly useCases!: pulumi.Output<string | undefined>;
@@ -74,6 +79,7 @@ export class EdgeHostName extends pulumi.CustomResource {
             resourceInputs["productId"] = state ? state.productId : undefined;
             resourceInputs["statusUpdateEmails"] = state ? state.statusUpdateEmails : undefined;
             resourceInputs["timeouts"] = state ? state.timeouts : undefined;
+            resourceInputs["ttl"] = state ? state.ttl : undefined;
             resourceInputs["useCases"] = state ? state.useCases : undefined;
         } else {
             const args = argsOrState as EdgeHostNameArgs | undefined;
@@ -97,6 +103,7 @@ export class EdgeHostName extends pulumi.CustomResource {
             resourceInputs["productId"] = args ? args.productId : undefined;
             resourceInputs["statusUpdateEmails"] = args ? args.statusUpdateEmails : undefined;
             resourceInputs["timeouts"] = args ? args.timeouts : undefined;
+            resourceInputs["ttl"] = args ? args.ttl : undefined;
             resourceInputs["useCases"] = args ? args.useCases : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -125,6 +132,11 @@ export interface EdgeHostNameState {
      */
     timeouts?: pulumi.Input<inputs.EdgeHostNameTimeouts>;
     /**
+     * The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
+     * value for product is used.
+     */
+    ttl?: pulumi.Input<number>;
+    /**
      * A JSON encoded list of use cases
      */
     useCases?: pulumi.Input<string>;
@@ -148,6 +160,11 @@ export interface EdgeHostNameArgs {
      * Enables to set timeout for processing
      */
     timeouts?: pulumi.Input<inputs.EdgeHostNameTimeouts>;
+    /**
+     * The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
+     * value for product is used.
+     */
+    ttl?: pulumi.Input<number>;
     /**
      * A JSON encoded list of use cases
      */

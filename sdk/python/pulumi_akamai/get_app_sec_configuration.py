@@ -26,10 +26,13 @@ class GetAppSecConfigurationResult:
     """
     A collection of values returned by getAppSecConfiguration.
     """
-    def __init__(__self__, config_id=None, id=None, latest_version=None, name=None, output_text=None, production_version=None, staging_version=None):
+    def __init__(__self__, config_id=None, host_names=None, id=None, latest_version=None, name=None, output_text=None, production_version=None, staging_version=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
+        if host_names and not isinstance(host_names, list):
+            raise TypeError("Expected argument 'host_names' to be a list")
+        pulumi.set(__self__, "host_names", host_names)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -53,6 +56,11 @@ class GetAppSecConfigurationResult:
     @pulumi.getter(name="configId")
     def config_id(self) -> int:
         return pulumi.get(self, "config_id")
+
+    @property
+    @pulumi.getter(name="hostNames")
+    def host_names(self) -> Sequence[str]:
+        return pulumi.get(self, "host_names")
 
     @property
     @pulumi.getter
@@ -95,6 +103,7 @@ class AwaitableGetAppSecConfigurationResult(GetAppSecConfigurationResult):
             yield self
         return GetAppSecConfigurationResult(
             config_id=self.config_id,
+            host_names=self.host_names,
             id=self.id,
             latest_version=self.latest_version,
             name=self.name,
@@ -115,6 +124,7 @@ def get_app_sec_configuration(name: Optional[str] = None,
 
     return AwaitableGetAppSecConfigurationResult(
         config_id=pulumi.get(__ret__, 'config_id'),
+        host_names=pulumi.get(__ret__, 'host_names'),
         id=pulumi.get(__ret__, 'id'),
         latest_version=pulumi.get(__ret__, 'latest_version'),
         name=pulumi.get(__ret__, 'name'),
@@ -132,6 +142,7 @@ def get_app_sec_configuration_output(name: Optional[pulumi.Input[Optional[str]]]
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getAppSecConfiguration:getAppSecConfiguration', __args__, opts=opts, typ=GetAppSecConfigurationResult)
     return __ret__.apply(lambda __response__: GetAppSecConfigurationResult(
         config_id=pulumi.get(__response__, 'config_id'),
+        host_names=pulumi.get(__response__, 'host_names'),
         id=pulumi.get(__response__, 'id'),
         latest_version=pulumi.get(__response__, 'latest_version'),
         name=pulumi.get(__response__, 'name'),

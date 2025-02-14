@@ -261,14 +261,14 @@ public final class GetPropertyRulesBuilderRulesV20230530Behavior extends com.pul
     }
 
     /**
-     * The Adaptive Image Compression feature compresses JPEG images depending on the requesting network&#39;s performance, thus improving response time. The behavior specifies three performance tiers based on round-trip tests: 1 for excellent, 2 for good, and 3 for poor. It assigns separate performance criteria for mobile (cellular) and non-mobile networks, which the `compressMobile` and `compressStandard` options enable independently. This behavior can be used in includes.
+     * &gt; **Note**: Starting from May 31, 2024, Adaptive Image Compression is no longer supported and the image compression configured through this functionality won&#39;t take place. As an alternative, we offer `Image &amp; Video Manager`. It intelligently and automatically optimizes images and videos on the fly for every user. Reach out to your Akamai representatives for more information on this product. This behavior can be used in includes.
      * 
      */
     @Import(name="adaptiveImageCompression")
     private @Nullable GetPropertyRulesBuilderRulesV20230530BehaviorAdaptiveImageCompression adaptiveImageCompression;
 
     /**
-     * @return The Adaptive Image Compression feature compresses JPEG images depending on the requesting network&#39;s performance, thus improving response time. The behavior specifies three performance tiers based on round-trip tests: 1 for excellent, 2 for good, and 3 for poor. It assigns separate performance criteria for mobile (cellular) and non-mobile networks, which the `compressMobile` and `compressStandard` options enable independently. This behavior can be used in includes.
+     * @return &gt; **Note**: Starting from May 31, 2024, Adaptive Image Compression is no longer supported and the image compression configured through this functionality won&#39;t take place. As an alternative, we offer `Image &amp; Video Manager`. It intelligently and automatically optimizes images and videos on the fly for every user. Reach out to your Akamai representatives for more information on this product. This behavior can be used in includes.
      * 
      */
     public Optional<GetPropertyRulesBuilderRulesV20230530BehaviorAdaptiveImageCompression> adaptiveImageCompression() {
@@ -2346,14 +2346,14 @@ public final class GetPropertyRulesBuilderRulesV20230530Behavior extends com.pul
     }
 
     /**
-     * Specifies characteristics of the origin. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior cannot be used in includes.
+     * Specifies characteristics of the origin. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior can be used in includes.
      * 
      */
     @Import(name="originCharacteristics")
     private @Nullable GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteristics originCharacteristics;
 
     /**
-     * @return Specifies characteristics of the origin. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior cannot be used in includes.
+     * @return Specifies characteristics of the origin. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior can be used in includes.
      * 
      */
     public Optional<GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteristics> originCharacteristics() {
@@ -2631,14 +2631,14 @@ public final class GetPropertyRulesBuilderRulesV20230530Behavior extends com.pul
     }
 
     /**
-     * This behavior specifies how long the edge server should wait for a response from the requesting forward server after a connection has already been established. Any failure to read aborts the request and sends a `504` Gateway Timeout error to the client. Contact Akamai Professional Services for help configuring this behavior. This behavior can be used in includes.
+     * This behavior specifies how long the edge server should wait for a response from the requesting forward server after a connection has already been established. This behavior can be used in includes.
      * 
      */
     @Import(name="readTimeout")
     private @Nullable GetPropertyRulesBuilderRulesV20230530BehaviorReadTimeout readTimeout;
 
     /**
-     * @return This behavior specifies how long the edge server should wait for a response from the requesting forward server after a connection has already been established. Any failure to read aborts the request and sends a `504` Gateway Timeout error to the client. Contact Akamai Professional Services for help configuring this behavior. This behavior can be used in includes.
+     * @return This behavior specifies how long the edge server should wait for a response from the requesting forward server after a connection has already been established. This behavior can be used in includes.
      * 
      */
     public Optional<GetPropertyRulesBuilderRulesV20230530BehaviorReadTimeout> readTimeout() {
@@ -2646,14 +2646,14 @@ public final class GetPropertyRulesBuilderRulesV20230530Behavior extends com.pul
     }
 
     /**
-     * This enables `Real-Time Reporting` for Akamai Cloud Embed customers. The behavior can only be configured on your behalf by Akamai Professional Services. This behavior is for internal usage only. This behavior can be used in includes.
+     * This enables Real-Time Reporting for Akamai `Cloud Embed` customers. The behavior can only be configured on your behalf by Akamai Professional Services. You can access real-time reports data for that base configuration with `Media Delivery Reports API`. This behavior is for internal usage only. This behavior can be used in includes.
      * 
      */
     @Import(name="realTimeReporting")
     private @Nullable GetPropertyRulesBuilderRulesV20230530BehaviorRealTimeReporting realTimeReporting;
 
     /**
-     * @return This enables `Real-Time Reporting` for Akamai Cloud Embed customers. The behavior can only be configured on your behalf by Akamai Professional Services. This behavior is for internal usage only. This behavior can be used in includes.
+     * @return This enables Real-Time Reporting for Akamai `Cloud Embed` customers. The behavior can only be configured on your behalf by Akamai Professional Services. You can access real-time reports data for that base configuration with `Media Delivery Reports API`. This behavior is for internal usage only. This behavior can be used in includes.
      * 
      */
     public Optional<GetPropertyRulesBuilderRulesV20230530BehaviorRealTimeReporting> realTimeReporting() {
@@ -3006,14 +3006,14 @@ public final class GetPropertyRulesBuilderRulesV20230530Behavior extends com.pul
     }
 
     /**
-     * Ensures unresponsive linked JavaScript files do not prevent HTML pages from loading. This behavior cannot be used in includes.
+     * Ensures unresponsive linked JavaScript files do not prevent HTML pages from loading. See `Script Management API` for more information. This behavior cannot be used in includes.
      * 
      */
     @Import(name="scriptManagement")
     private @Nullable GetPropertyRulesBuilderRulesV20230530BehaviorScriptManagement scriptManagement;
 
     /**
-     * @return Ensures unresponsive linked JavaScript files do not prevent HTML pages from loading. This behavior cannot be used in includes.
+     * @return Ensures unresponsive linked JavaScript files do not prevent HTML pages from loading. See `Script Management API` for more information. This behavior cannot be used in includes.
      * 
      */
     public Optional<GetPropertyRulesBuilderRulesV20230530BehaviorScriptManagement> scriptManagement() {
@@ -3748,7 +3748,7 @@ public final class GetPropertyRulesBuilderRulesV20230530Behavior extends com.pul
         }
 
         /**
-         * @param adaptiveImageCompression The Adaptive Image Compression feature compresses JPEG images depending on the requesting network&#39;s performance, thus improving response time. The behavior specifies three performance tiers based on round-trip tests: 1 for excellent, 2 for good, and 3 for poor. It assigns separate performance criteria for mobile (cellular) and non-mobile networks, which the `compressMobile` and `compressStandard` options enable independently. This behavior can be used in includes.
+         * @param adaptiveImageCompression &gt; **Note**: Starting from May 31, 2024, Adaptive Image Compression is no longer supported and the image compression configured through this functionality won&#39;t take place. As an alternative, we offer `Image &amp; Video Manager`. It intelligently and automatically optimizes images and videos on the fly for every user. Reach out to your Akamai representatives for more information on this product. This behavior can be used in includes.
          * 
          * @return builder
          * 
@@ -5277,7 +5277,7 @@ public final class GetPropertyRulesBuilderRulesV20230530Behavior extends com.pul
         }
 
         /**
-         * @param originCharacteristics Specifies characteristics of the origin. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior cannot be used in includes.
+         * @param originCharacteristics Specifies characteristics of the origin. Akamai uses this information to optimize your metadata configuration, which may result in better origin offload and end-user performance. This behavior can be used in includes.
          * 
          * @return builder
          * 
@@ -5486,7 +5486,7 @@ public final class GetPropertyRulesBuilderRulesV20230530Behavior extends com.pul
         }
 
         /**
-         * @param readTimeout This behavior specifies how long the edge server should wait for a response from the requesting forward server after a connection has already been established. Any failure to read aborts the request and sends a `504` Gateway Timeout error to the client. Contact Akamai Professional Services for help configuring this behavior. This behavior can be used in includes.
+         * @param readTimeout This behavior specifies how long the edge server should wait for a response from the requesting forward server after a connection has already been established. This behavior can be used in includes.
          * 
          * @return builder
          * 
@@ -5497,7 +5497,7 @@ public final class GetPropertyRulesBuilderRulesV20230530Behavior extends com.pul
         }
 
         /**
-         * @param realTimeReporting This enables `Real-Time Reporting` for Akamai Cloud Embed customers. The behavior can only be configured on your behalf by Akamai Professional Services. This behavior is for internal usage only. This behavior can be used in includes.
+         * @param realTimeReporting This enables Real-Time Reporting for Akamai `Cloud Embed` customers. The behavior can only be configured on your behalf by Akamai Professional Services. You can access real-time reports data for that base configuration with `Media Delivery Reports API`. This behavior is for internal usage only. This behavior can be used in includes.
          * 
          * @return builder
          * 
@@ -5761,7 +5761,7 @@ public final class GetPropertyRulesBuilderRulesV20230530Behavior extends com.pul
         }
 
         /**
-         * @param scriptManagement Ensures unresponsive linked JavaScript files do not prevent HTML pages from loading. This behavior cannot be used in includes.
+         * @param scriptManagement Ensures unresponsive linked JavaScript files do not prevent HTML pages from loading. See `Script Management API` for more information. This behavior cannot be used in includes.
          * 
          * @return builder
          * 

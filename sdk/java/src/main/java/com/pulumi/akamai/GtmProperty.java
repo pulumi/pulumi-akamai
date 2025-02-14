@@ -168,12 +168,6 @@ public class GtmProperty extends com.pulumi.resources.CustomResource {
     public Output<Optional<List<GtmPropertyStaticRrSet>>> staticRrSets() {
         return Codegen.optional(this.staticRrSets);
     }
-    @Export(name="staticTtl", refs={Integer.class}, tree="[0]")
-    private Output</* @Nullable */ Integer> staticTtl;
-
-    public Output<Optional<Integer>> staticTtl() {
-        return Codegen.optional(this.staticTtl);
-    }
     @Export(name="stickinessBonusConstant", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> stickinessBonusConstant;
 

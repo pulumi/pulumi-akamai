@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-akamai/sdk/v7/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v8/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -131,9 +131,8 @@ type propertyActivationArgs struct {
 	Contacts         []string                            `pulumi:"contacts"`
 	Network          *string                             `pulumi:"network"`
 	// assigns a log message to the activation request
-	Note       *string                       `pulumi:"note"`
-	PropertyId string                        `pulumi:"propertyId"`
-	RuleErrors []PropertyActivationRuleError `pulumi:"ruleErrors"`
+	Note       *string `pulumi:"note"`
+	PropertyId string  `pulumi:"propertyId"`
 	// Enables to set timeout for processing
 	Timeouts *PropertyActivationTimeouts `pulumi:"timeouts"`
 	Version  int                         `pulumi:"version"`
@@ -151,7 +150,6 @@ type PropertyActivationArgs struct {
 	// assigns a log message to the activation request
 	Note       pulumi.StringPtrInput
 	PropertyId pulumi.StringInput
-	RuleErrors PropertyActivationRuleErrorArrayInput
 	// Enables to set timeout for processing
 	Timeouts PropertyActivationTimeoutsPtrInput
 	Version  pulumi.IntInput

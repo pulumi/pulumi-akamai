@@ -9,6 +9,10 @@ import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230920;
 import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20231030;
 import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20240109;
 import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20240212;
+import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20240531;
+import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20240813;
+import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20241021;
+import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20250113;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
@@ -31,6 +35,10 @@ public final class GetPropertyRulesBuilderResult {
     private @Nullable GetPropertyRulesBuilderRulesV20231030 rulesV20231030;
     private @Nullable GetPropertyRulesBuilderRulesV20240109 rulesV20240109;
     private @Nullable GetPropertyRulesBuilderRulesV20240212 rulesV20240212;
+    private @Nullable GetPropertyRulesBuilderRulesV20240531 rulesV20240531;
+    private @Nullable GetPropertyRulesBuilderRulesV20240813 rulesV20240813;
+    private @Nullable GetPropertyRulesBuilderRulesV20241021 rulesV20241021;
+    private @Nullable GetPropertyRulesBuilderRulesV20250113 rulesV20250113;
 
     private GetPropertyRulesBuilderResult() {}
     /**
@@ -64,6 +72,18 @@ public final class GetPropertyRulesBuilderResult {
     public Optional<GetPropertyRulesBuilderRulesV20240212> rulesV20240212() {
         return Optional.ofNullable(this.rulesV20240212);
     }
+    public Optional<GetPropertyRulesBuilderRulesV20240531> rulesV20240531() {
+        return Optional.ofNullable(this.rulesV20240531);
+    }
+    public Optional<GetPropertyRulesBuilderRulesV20240813> rulesV20240813() {
+        return Optional.ofNullable(this.rulesV20240813);
+    }
+    public Optional<GetPropertyRulesBuilderRulesV20241021> rulesV20241021() {
+        return Optional.ofNullable(this.rulesV20241021);
+    }
+    public Optional<GetPropertyRulesBuilderRulesV20250113> rulesV20250113() {
+        return Optional.ofNullable(this.rulesV20250113);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -83,6 +103,10 @@ public final class GetPropertyRulesBuilderResult {
         private @Nullable GetPropertyRulesBuilderRulesV20231030 rulesV20231030;
         private @Nullable GetPropertyRulesBuilderRulesV20240109 rulesV20240109;
         private @Nullable GetPropertyRulesBuilderRulesV20240212 rulesV20240212;
+        private @Nullable GetPropertyRulesBuilderRulesV20240531 rulesV20240531;
+        private @Nullable GetPropertyRulesBuilderRulesV20240813 rulesV20240813;
+        private @Nullable GetPropertyRulesBuilderRulesV20241021 rulesV20241021;
+        private @Nullable GetPropertyRulesBuilderRulesV20250113 rulesV20250113;
         public Builder() {}
         public Builder(GetPropertyRulesBuilderResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -95,6 +119,10 @@ public final class GetPropertyRulesBuilderResult {
     	      this.rulesV20231030 = defaults.rulesV20231030;
     	      this.rulesV20240109 = defaults.rulesV20240109;
     	      this.rulesV20240212 = defaults.rulesV20240212;
+    	      this.rulesV20240531 = defaults.rulesV20240531;
+    	      this.rulesV20240813 = defaults.rulesV20240813;
+    	      this.rulesV20241021 = defaults.rulesV20241021;
+    	      this.rulesV20250113 = defaults.rulesV20250113;
         }
 
         @CustomType.Setter
@@ -157,6 +185,30 @@ public final class GetPropertyRulesBuilderResult {
             this.rulesV20240212 = rulesV20240212;
             return this;
         }
+        @CustomType.Setter
+        public Builder rulesV20240531(@Nullable GetPropertyRulesBuilderRulesV20240531 rulesV20240531) {
+
+            this.rulesV20240531 = rulesV20240531;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder rulesV20240813(@Nullable GetPropertyRulesBuilderRulesV20240813 rulesV20240813) {
+
+            this.rulesV20240813 = rulesV20240813;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder rulesV20241021(@Nullable GetPropertyRulesBuilderRulesV20241021 rulesV20241021) {
+
+            this.rulesV20241021 = rulesV20241021;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder rulesV20250113(@Nullable GetPropertyRulesBuilderRulesV20250113 rulesV20250113) {
+
+            this.rulesV20250113 = rulesV20250113;
+            return this;
+        }
         public GetPropertyRulesBuilderResult build() {
             final var _resultValue = new GetPropertyRulesBuilderResult();
             _resultValue.id = id;
@@ -168,6 +220,10 @@ public final class GetPropertyRulesBuilderResult {
             _resultValue.rulesV20231030 = rulesV20231030;
             _resultValue.rulesV20240109 = rulesV20240109;
             _resultValue.rulesV20240212 = rulesV20240212;
+            _resultValue.rulesV20240531 = rulesV20240531;
+            _resultValue.rulesV20240813 = rulesV20240813;
+            _resultValue.rulesV20241021 = rulesV20241021;
+            _resultValue.rulesV20250113 = rulesV20250113;
             return _resultValue;
         }
     }

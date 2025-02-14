@@ -14,21 +14,17 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetCloudwrapperLocationsResult {
     /**
-     * @deprecated
-     * Required by the terraform plugin testing framework, always set to `akamai.getCloudwrapperLocations`
+     * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    @Deprecated /* Required by the terraform plugin testing framework, always set to `akamai.getCloudwrapperLocations` */
     private String id;
     private @Nullable List<GetCloudwrapperLocationsLocation> locations;
 
     private GetCloudwrapperLocationsResult() {}
     /**
-     * @deprecated
-     * Required by the terraform plugin testing framework, always set to `akamai.getCloudwrapperLocations`
+     * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    @Deprecated /* Required by the terraform plugin testing framework, always set to `akamai.getCloudwrapperLocations` */
     public String id() {
         return this.id;
     }

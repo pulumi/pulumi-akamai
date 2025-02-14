@@ -41,6 +41,10 @@ export class AppsecAdvancedSettingsRequestBody extends pulumi.CustomResource {
      */
     public readonly requestBodyInspectionLimit!: pulumi.Output<string>;
     /**
+     * Indicates if the Request body inspection size should be overridden at policy
+     */
+    public readonly requestBodyInspectionLimitOverride!: pulumi.Output<boolean | undefined>;
+    /**
      * Unique identifier of the security policy
      */
     public readonly securityPolicyId!: pulumi.Output<string | undefined>;
@@ -60,6 +64,7 @@ export class AppsecAdvancedSettingsRequestBody extends pulumi.CustomResource {
             const state = argsOrState as AppsecAdvancedSettingsRequestBodyState | undefined;
             resourceInputs["configId"] = state ? state.configId : undefined;
             resourceInputs["requestBodyInspectionLimit"] = state ? state.requestBodyInspectionLimit : undefined;
+            resourceInputs["requestBodyInspectionLimitOverride"] = state ? state.requestBodyInspectionLimitOverride : undefined;
             resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
         } else {
             const args = argsOrState as AppsecAdvancedSettingsRequestBodyArgs | undefined;
@@ -71,6 +76,7 @@ export class AppsecAdvancedSettingsRequestBody extends pulumi.CustomResource {
             }
             resourceInputs["configId"] = args ? args.configId : undefined;
             resourceInputs["requestBodyInspectionLimit"] = args ? args.requestBodyInspectionLimit : undefined;
+            resourceInputs["requestBodyInspectionLimitOverride"] = args ? args.requestBodyInspectionLimitOverride : undefined;
             resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -91,6 +97,10 @@ export interface AppsecAdvancedSettingsRequestBodyState {
      */
     requestBodyInspectionLimit?: pulumi.Input<string>;
     /**
+     * Indicates if the Request body inspection size should be overridden at policy
+     */
+    requestBodyInspectionLimitOverride?: pulumi.Input<boolean>;
+    /**
      * Unique identifier of the security policy
      */
     securityPolicyId?: pulumi.Input<string>;
@@ -108,6 +118,10 @@ export interface AppsecAdvancedSettingsRequestBodyArgs {
      * Request body inspection size limit in KB allowed values are 'default', 8, 16, 32
      */
     requestBodyInspectionLimit: pulumi.Input<string>;
+    /**
+     * Indicates if the Request body inspection size should be overridden at policy
+     */
+    requestBodyInspectionLimitOverride?: pulumi.Input<boolean>;
     /**
      * Unique identifier of the security policy
      */

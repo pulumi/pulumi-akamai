@@ -92,6 +92,23 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
+     * value for product is used.
+     * 
+     */
+    @Import(name="ttl")
+    private @Nullable Output<Integer> ttl;
+
+    /**
+     * @return The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
+     * value for product is used.
+     * 
+     */
+    public Optional<Output<Integer>> ttl() {
+        return Optional.ofNullable(this.ttl);
+    }
+
+    /**
      * A JSON encoded list of use cases
      * 
      */
@@ -117,6 +134,7 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
         this.productId = $.productId;
         this.statusUpdateEmails = $.statusUpdateEmails;
         this.timeouts = $.timeouts;
+        this.ttl = $.ttl;
         this.useCases = $.useCases;
     }
 
@@ -242,6 +260,29 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder timeouts(EdgeHostNameTimeoutsArgs timeouts) {
             return timeouts(Output.of(timeouts));
+        }
+
+        /**
+         * @param ttl The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
+         * value for product is used.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ttl(@Nullable Output<Integer> ttl) {
+            $.ttl = ttl;
+            return this;
+        }
+
+        /**
+         * @param ttl The time to live, or number of seconds to keep an edge hostname assigned to a map or target. If not provided default
+         * value for product is used.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ttl(Integer ttl) {
+            return ttl(Output.of(ttl));
         }
 
         /**

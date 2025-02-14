@@ -25,12 +25,6 @@ namespace Pulumi.Akamai
         public Output<int> GroupId { get; private set; } = null!;
 
         /// <summary>
-        /// List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
-        /// </summary>
-        [Output("initialDatas")]
-        public Output<ImmutableArray<Outputs.EdgeKvInitialData>> InitialDatas { get; private set; } = null!;
-
-        /// <summary>
         /// Name for the EKV namespace
         /// </summary>
         [Output("namespaceName")]
@@ -106,19 +100,6 @@ namespace Pulumi.Akamai
         [Input("groupId", required: true)]
         public Input<int> GroupId { get; set; } = null!;
 
-        [Input("initialDatas")]
-        private InputList<Inputs.EdgeKvInitialDataArgs>? _initialDatas;
-
-        /// <summary>
-        /// List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
-        /// </summary>
-        [Obsolete(@"The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.")]
-        public InputList<Inputs.EdgeKvInitialDataArgs> InitialDatas
-        {
-            get => _initialDatas ?? (_initialDatas = new InputList<Inputs.EdgeKvInitialDataArgs>());
-            set => _initialDatas = value;
-        }
-
         /// <summary>
         /// Name for the EKV namespace
         /// </summary>
@@ -156,19 +137,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("groupId")]
         public Input<int>? GroupId { get; set; }
-
-        [Input("initialDatas")]
-        private InputList<Inputs.EdgeKvInitialDataGetArgs>? _initialDatas;
-
-        /// <summary>
-        /// List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
-        /// </summary>
-        [Obsolete(@"The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.")]
-        public InputList<Inputs.EdgeKvInitialDataGetArgs> InitialDatas
-        {
-            get => _initialDatas ?? (_initialDatas = new InputList<Inputs.EdgeKvInitialDataGetArgs>());
-            set => _initialDatas = value;
-        }
 
         /// <summary>
         /// Name for the EKV namespace

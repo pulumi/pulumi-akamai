@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export class AppSecSiemSettings extends pulumi.CustomResource {
@@ -39,7 +41,7 @@ export class AppSecSiemSettings extends pulumi.CustomResource {
     /**
      * Whether Bot Manager events should be included in SIEM events
      */
-    public readonly enableBotmanSiem!: pulumi.Output<boolean>;
+    public readonly enableBotmanSiem!: pulumi.Output<boolean | undefined>;
     /**
      * Whether to enable SIEM on all security policies in the security configuration
      */
@@ -48,6 +50,10 @@ export class AppSecSiemSettings extends pulumi.CustomResource {
      * Whether to enable SIEM
      */
     public readonly enableSiem!: pulumi.Output<boolean>;
+    /**
+     * Describes all the protections and actions to be excluded from SIEM events
+     */
+    public readonly exceptions!: pulumi.Output<outputs.AppSecSiemSettingsExceptions | undefined>;
     /**
      * List of IDs of security policy for which SIEM integration is to be enabled
      */
@@ -74,15 +80,13 @@ export class AppSecSiemSettings extends pulumi.CustomResource {
             resourceInputs["enableBotmanSiem"] = state ? state.enableBotmanSiem : undefined;
             resourceInputs["enableForAllPolicies"] = state ? state.enableForAllPolicies : undefined;
             resourceInputs["enableSiem"] = state ? state.enableSiem : undefined;
+            resourceInputs["exceptions"] = state ? state.exceptions : undefined;
             resourceInputs["securityPolicyIds"] = state ? state.securityPolicyIds : undefined;
             resourceInputs["siemId"] = state ? state.siemId : undefined;
         } else {
             const args = argsOrState as AppSecSiemSettingsArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'configId'");
-            }
-            if ((!args || args.enableBotmanSiem === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'enableBotmanSiem'");
             }
             if ((!args || args.enableForAllPolicies === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'enableForAllPolicies'");
@@ -97,6 +101,7 @@ export class AppSecSiemSettings extends pulumi.CustomResource {
             resourceInputs["enableBotmanSiem"] = args ? args.enableBotmanSiem : undefined;
             resourceInputs["enableForAllPolicies"] = args ? args.enableForAllPolicies : undefined;
             resourceInputs["enableSiem"] = args ? args.enableSiem : undefined;
+            resourceInputs["exceptions"] = args ? args.exceptions : undefined;
             resourceInputs["securityPolicyIds"] = args ? args.securityPolicyIds : undefined;
             resourceInputs["siemId"] = args ? args.siemId : undefined;
         }
@@ -126,6 +131,10 @@ export interface AppSecSiemSettingsState {
      */
     enableSiem?: pulumi.Input<boolean>;
     /**
+     * Describes all the protections and actions to be excluded from SIEM events
+     */
+    exceptions?: pulumi.Input<inputs.AppSecSiemSettingsExceptions>;
+    /**
      * List of IDs of security policy for which SIEM integration is to be enabled
      */
     securityPolicyIds?: pulumi.Input<pulumi.Input<string>[]>;
@@ -146,7 +155,7 @@ export interface AppSecSiemSettingsArgs {
     /**
      * Whether Bot Manager events should be included in SIEM events
      */
-    enableBotmanSiem: pulumi.Input<boolean>;
+    enableBotmanSiem?: pulumi.Input<boolean>;
     /**
      * Whether to enable SIEM on all security policies in the security configuration
      */
@@ -155,6 +164,10 @@ export interface AppSecSiemSettingsArgs {
      * Whether to enable SIEM
      */
     enableSiem: pulumi.Input<boolean>;
+    /**
+     * Describes all the protections and actions to be excluded from SIEM events
+     */
+    exceptions?: pulumi.Input<inputs.AppSecSiemSettingsExceptions>;
     /**
      * List of IDs of security policy for which SIEM integration is to be enabled
      */

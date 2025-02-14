@@ -148,14 +148,6 @@ namespace Pulumi.Akamai
         [Input("propertyId", required: true)]
         public Input<string> PropertyId { get; set; } = null!;
 
-        [Input("ruleErrors")]
-        private InputList<Inputs.PropertyActivationRuleErrorArgs>? _ruleErrors;
-        public InputList<Inputs.PropertyActivationRuleErrorArgs> RuleErrors
-        {
-            get => _ruleErrors ?? (_ruleErrors = new InputList<Inputs.PropertyActivationRuleErrorArgs>());
-            set => _ruleErrors = value;
-        }
-
         /// <summary>
         /// Enables to set timeout for processing
         /// </summary>

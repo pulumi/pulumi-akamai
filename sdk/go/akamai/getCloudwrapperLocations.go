@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-akamai/sdk/v7/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v8/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -28,7 +28,7 @@ type GetCloudwrapperLocationsArgs struct {
 
 // A collection of values returned by getCloudwrapperLocations.
 type GetCloudwrapperLocationsResult struct {
-	// Deprecated: Required by the terraform plugin testing framework, always set to `getCloudwrapperLocations`
+	// The provider-assigned unique ID for this managed resource.
 	Id        string                             `pulumi:"id"`
 	Locations []GetCloudwrapperLocationsLocation `pulumi:"locations"`
 }
@@ -66,7 +66,7 @@ func (o GetCloudwrapperLocationsResultOutput) ToGetCloudwrapperLocationsResultOu
 	return o
 }
 
-// Deprecated: Required by the terraform plugin testing framework, always set to `getCloudwrapperLocations`
+// The provider-assigned unique ID for this managed resource.
 func (o GetCloudwrapperLocationsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCloudwrapperLocationsResult) string { return v.Id }).(pulumi.StringOutput)
 }

@@ -22,7 +22,6 @@ class DnsRecordArgs:
                  recordtype: pulumi.Input[str],
                  ttl: pulumi.Input[int],
                  zone: pulumi.Input[str],
-                 active: Optional[pulumi.Input[bool]] = None,
                  algorithm: Optional[pulumi.Input[int]] = None,
                  certificate: Optional[pulumi.Input[str]] = None,
                  digest: Optional[pulumi.Input[str]] = None,
@@ -81,11 +80,6 @@ class DnsRecordArgs:
         pulumi.set(__self__, "recordtype", recordtype)
         pulumi.set(__self__, "ttl", ttl)
         pulumi.set(__self__, "zone", zone)
-        if active is not None:
-            warnings.warn("""Field 'active' has been deprecated. Setting it has no effect""", DeprecationWarning)
-            pulumi.log.warn("""active is deprecated: Field 'active' has been deprecated. Setting it has no effect""")
-        if active is not None:
-            pulumi.set(__self__, "active", active)
         if algorithm is not None:
             pulumi.set(__self__, "algorithm", algorithm)
         if certificate is not None:
@@ -217,16 +211,6 @@ class DnsRecordArgs:
     @zone.setter
     def zone(self, value: pulumi.Input[str]):
         pulumi.set(self, "zone", value)
-
-    @property
-    @pulumi.getter
-    @_utilities.deprecated("""Field 'active' has been deprecated. Setting it has no effect""")
-    def active(self) -> Optional[pulumi.Input[bool]]:
-        return pulumi.get(self, "active")
-
-    @active.setter
-    def active(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "active", value)
 
     @property
     @pulumi.getter
@@ -700,7 +684,6 @@ class DnsRecordArgs:
 @pulumi.input_type
 class _DnsRecordState:
     def __init__(__self__, *,
-                 active: Optional[pulumi.Input[bool]] = None,
                  algorithm: Optional[pulumi.Input[int]] = None,
                  answer_type: Optional[pulumi.Input[str]] = None,
                  certificate: Optional[pulumi.Input[str]] = None,
@@ -763,11 +746,6 @@ class _DnsRecordState:
         """
         Input properties used for looking up and filtering DnsRecord resources.
         """
-        if active is not None:
-            warnings.warn("""Field 'active' has been deprecated. Setting it has no effect""", DeprecationWarning)
-            pulumi.log.warn("""active is deprecated: Field 'active' has been deprecated. Setting it has no effect""")
-        if active is not None:
-            pulumi.set(__self__, "active", active)
         if algorithm is not None:
             pulumi.set(__self__, "algorithm", algorithm)
         if answer_type is not None:
@@ -886,16 +864,6 @@ class _DnsRecordState:
             pulumi.set(__self__, "weight", weight)
         if zone is not None:
             pulumi.set(__self__, "zone", zone)
-
-    @property
-    @pulumi.getter
-    @_utilities.deprecated("""Field 'active' has been deprecated. Setting it has no effect""")
-    def active(self) -> Optional[pulumi.Input[bool]]:
-        return pulumi.get(self, "active")
-
-    @active.setter
-    def active(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "active", value)
 
     @property
     @pulumi.getter
@@ -1434,7 +1402,6 @@ class DnsRecord(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 active: Optional[pulumi.Input[bool]] = None,
                  algorithm: Optional[pulumi.Input[int]] = None,
                  certificate: Optional[pulumi.Input[str]] = None,
                  digest: Optional[pulumi.Input[str]] = None,
@@ -1519,7 +1486,6 @@ class DnsRecord(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 active: Optional[pulumi.Input[bool]] = None,
                  algorithm: Optional[pulumi.Input[int]] = None,
                  certificate: Optional[pulumi.Input[str]] = None,
                  digest: Optional[pulumi.Input[str]] = None,
@@ -1584,7 +1550,6 @@ class DnsRecord(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = DnsRecordArgs.__new__(DnsRecordArgs)
 
-            __props__.__dict__["active"] = active
             __props__.__dict__["algorithm"] = algorithm
             __props__.__dict__["certificate"] = certificate
             __props__.__dict__["digest"] = digest
@@ -1662,7 +1627,6 @@ class DnsRecord(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            active: Optional[pulumi.Input[bool]] = None,
             algorithm: Optional[pulumi.Input[int]] = None,
             answer_type: Optional[pulumi.Input[str]] = None,
             certificate: Optional[pulumi.Input[str]] = None,
@@ -1734,7 +1698,6 @@ class DnsRecord(pulumi.CustomResource):
 
         __props__ = _DnsRecordState.__new__(_DnsRecordState)
 
-        __props__.__dict__["active"] = active
         __props__.__dict__["algorithm"] = algorithm
         __props__.__dict__["answer_type"] = answer_type
         __props__.__dict__["certificate"] = certificate
@@ -1795,12 +1758,6 @@ class DnsRecord(pulumi.CustomResource):
         __props__.__dict__["weight"] = weight
         __props__.__dict__["zone"] = zone
         return DnsRecord(resource_name, opts=opts, __props__=__props__)
-
-    @property
-    @pulumi.getter
-    @_utilities.deprecated("""Field 'active' has been deprecated. Setting it has no effect""")
-    def active(self) -> pulumi.Output[Optional[bool]]:
-        return pulumi.get(self, "active")
 
     @property
     @pulumi.getter

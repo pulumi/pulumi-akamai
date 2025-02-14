@@ -8,13 +8,15 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-akamai/sdk/v7/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v8/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 type PropertyInclude struct {
 	pulumi.CustomResourceState
 
+	// ID of the include in the Identity and Access Management API.
+	AssetId pulumi.StringOutput `pulumi:"assetId"`
 	// Identifies the contract to which the include is assigned
 	ContractId pulumi.StringOutput `pulumi:"contractId"`
 	// Identifies the group to which the include is assigned
@@ -83,6 +85,8 @@ func GetPropertyInclude(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering PropertyInclude resources.
 type propertyIncludeState struct {
+	// ID of the include in the Identity and Access Management API.
+	AssetId *string `pulumi:"assetId"`
 	// Identifies the contract to which the include is assigned
 	ContractId *string `pulumi:"contractId"`
 	// Identifies the group to which the include is assigned
@@ -110,6 +114,8 @@ type propertyIncludeState struct {
 }
 
 type PropertyIncludeState struct {
+	// ID of the include in the Identity and Access Management API.
+	AssetId pulumi.StringPtrInput
 	// Identifies the contract to which the include is assigned
 	ContractId pulumi.StringPtrInput
 	// Identifies the group to which the include is assigned
@@ -260,6 +266,11 @@ func (o PropertyIncludeOutput) ToPropertyIncludeOutput() PropertyIncludeOutput {
 
 func (o PropertyIncludeOutput) ToPropertyIncludeOutputWithContext(ctx context.Context) PropertyIncludeOutput {
 	return o
+}
+
+// ID of the include in the Identity and Access Management API.
+func (o PropertyIncludeOutput) AssetId() pulumi.StringOutput {
+	return o.ApplyT(func(v *PropertyInclude) pulumi.StringOutput { return v.AssetId }).(pulumi.StringOutput)
 }
 
 // Identifies the contract to which the include is assigned

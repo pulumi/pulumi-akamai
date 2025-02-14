@@ -13,6 +13,12 @@ namespace Pulumi.Akamai
     public partial class PropertyInclude : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// ID of the include in the Identity and Access Management API.
+        /// </summary>
+        [Output("assetId")]
+        public Output<string> AssetId { get; private set; } = null!;
+
+        /// <summary>
         /// Identifies the contract to which the include is assigned
         /// </summary>
         [Output("contractId")]
@@ -180,6 +186,12 @@ namespace Pulumi.Akamai
 
     public sealed class PropertyIncludeState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// ID of the include in the Identity and Access Management API.
+        /// </summary>
+        [Input("assetId")]
+        public Input<string>? AssetId { get; set; }
+
         /// <summary>
         /// Identifies the contract to which the include is assigned
         /// </summary>

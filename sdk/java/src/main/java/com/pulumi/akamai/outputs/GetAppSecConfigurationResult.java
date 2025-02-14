@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -14,6 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetAppSecConfigurationResult {
     private Integer configId;
+    private List<String> hostNames;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -28,6 +30,9 @@ public final class GetAppSecConfigurationResult {
     private GetAppSecConfigurationResult() {}
     public Integer configId() {
         return this.configId;
+    }
+    public List<String> hostNames() {
+        return this.hostNames;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -62,6 +67,7 @@ public final class GetAppSecConfigurationResult {
     @CustomType.Builder
     public static final class Builder {
         private Integer configId;
+        private List<String> hostNames;
         private String id;
         private Integer latestVersion;
         private @Nullable String name;
@@ -72,6 +78,7 @@ public final class GetAppSecConfigurationResult {
         public Builder(GetAppSecConfigurationResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.configId = defaults.configId;
+    	      this.hostNames = defaults.hostNames;
     	      this.id = defaults.id;
     	      this.latestVersion = defaults.latestVersion;
     	      this.name = defaults.name;
@@ -87,6 +94,17 @@ public final class GetAppSecConfigurationResult {
             }
             this.configId = configId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder hostNames(List<String> hostNames) {
+            if (hostNames == null) {
+              throw new MissingRequiredPropertyException("GetAppSecConfigurationResult", "hostNames");
+            }
+            this.hostNames = hostNames;
+            return this;
+        }
+        public Builder hostNames(String... hostNames) {
+            return hostNames(List.of(hostNames));
         }
         @CustomType.Setter
         public Builder id(String id) {
@@ -137,6 +155,7 @@ public final class GetAppSecConfigurationResult {
         public GetAppSecConfigurationResult build() {
             final var _resultValue = new GetAppSecConfigurationResult();
             _resultValue.configId = configId;
+            _resultValue.hostNames = hostNames;
             _resultValue.id = id;
             _resultValue.latestVersion = latestVersion;
             _resultValue.name = name;

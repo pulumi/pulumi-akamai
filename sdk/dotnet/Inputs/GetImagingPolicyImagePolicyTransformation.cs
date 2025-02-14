@@ -360,6 +360,18 @@ namespace Pulumi.Akamai.Inputs
             set => _shears = value;
         }
 
+        [Input("smartCrops")]
+        private List<Inputs.GetImagingPolicyImagePolicyTransformationSmartCropArgs>? _smartCrops;
+
+        /// <summary>
+        /// Crops around whatever is most important in the image, to a region around a specified area of interest relative to the specified `width` and `height` values. The crop detects any faces present, otherwise features.
+        /// </summary>
+        public List<Inputs.GetImagingPolicyImagePolicyTransformationSmartCropArgs> SmartCrops
+        {
+            get => _smartCrops ?? (_smartCrops = new List<Inputs.GetImagingPolicyImagePolicyTransformationSmartCropArgs>());
+            set => _smartCrops = value;
+        }
+
         [Input("trims")]
         private List<Inputs.GetImagingPolicyImagePolicyTransformationTrimArgs>? _trims;
 

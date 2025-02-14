@@ -13,6 +13,8 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['AppSecSiemSettingsArgs', 'AppSecSiemSettings']
 
@@ -20,25 +22,30 @@ __all__ = ['AppSecSiemSettingsArgs', 'AppSecSiemSettings']
 class AppSecSiemSettingsArgs:
     def __init__(__self__, *,
                  config_id: pulumi.Input[int],
-                 enable_botman_siem: pulumi.Input[bool],
                  enable_for_all_policies: pulumi.Input[bool],
                  enable_siem: pulumi.Input[bool],
                  siem_id: pulumi.Input[int],
+                 enable_botman_siem: Optional[pulumi.Input[bool]] = None,
+                 exceptions: Optional[pulumi.Input['AppSecSiemSettingsExceptionsArgs']] = None,
                  security_policy_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a AppSecSiemSettings resource.
         :param pulumi.Input[int] config_id: Unique identifier of the security configuration
-        :param pulumi.Input[bool] enable_botman_siem: Whether Bot Manager events should be included in SIEM events
         :param pulumi.Input[bool] enable_for_all_policies: Whether to enable SIEM on all security policies in the security configuration
         :param pulumi.Input[bool] enable_siem: Whether to enable SIEM
         :param pulumi.Input[int] siem_id: Unique identifier of the SIEM settings being modified
+        :param pulumi.Input[bool] enable_botman_siem: Whether Bot Manager events should be included in SIEM events
+        :param pulumi.Input['AppSecSiemSettingsExceptionsArgs'] exceptions: Describes all the protections and actions to be excluded from SIEM events
         :param pulumi.Input[Sequence[pulumi.Input[str]]] security_policy_ids: List of IDs of security policy for which SIEM integration is to be enabled
         """
         pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "enable_botman_siem", enable_botman_siem)
         pulumi.set(__self__, "enable_for_all_policies", enable_for_all_policies)
         pulumi.set(__self__, "enable_siem", enable_siem)
         pulumi.set(__self__, "siem_id", siem_id)
+        if enable_botman_siem is not None:
+            pulumi.set(__self__, "enable_botman_siem", enable_botman_siem)
+        if exceptions is not None:
+            pulumi.set(__self__, "exceptions", exceptions)
         if security_policy_ids is not None:
             pulumi.set(__self__, "security_policy_ids", security_policy_ids)
 
@@ -53,18 +60,6 @@ class AppSecSiemSettingsArgs:
     @config_id.setter
     def config_id(self, value: pulumi.Input[int]):
         pulumi.set(self, "config_id", value)
-
-    @property
-    @pulumi.getter(name="enableBotmanSiem")
-    def enable_botman_siem(self) -> pulumi.Input[bool]:
-        """
-        Whether Bot Manager events should be included in SIEM events
-        """
-        return pulumi.get(self, "enable_botman_siem")
-
-    @enable_botman_siem.setter
-    def enable_botman_siem(self, value: pulumi.Input[bool]):
-        pulumi.set(self, "enable_botman_siem", value)
 
     @property
     @pulumi.getter(name="enableForAllPolicies")
@@ -103,6 +98,30 @@ class AppSecSiemSettingsArgs:
         pulumi.set(self, "siem_id", value)
 
     @property
+    @pulumi.getter(name="enableBotmanSiem")
+    def enable_botman_siem(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether Bot Manager events should be included in SIEM events
+        """
+        return pulumi.get(self, "enable_botman_siem")
+
+    @enable_botman_siem.setter
+    def enable_botman_siem(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_botman_siem", value)
+
+    @property
+    @pulumi.getter
+    def exceptions(self) -> Optional[pulumi.Input['AppSecSiemSettingsExceptionsArgs']]:
+        """
+        Describes all the protections and actions to be excluded from SIEM events
+        """
+        return pulumi.get(self, "exceptions")
+
+    @exceptions.setter
+    def exceptions(self, value: Optional[pulumi.Input['AppSecSiemSettingsExceptionsArgs']]):
+        pulumi.set(self, "exceptions", value)
+
+    @property
     @pulumi.getter(name="securityPolicyIds")
     def security_policy_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -122,6 +141,7 @@ class _AppSecSiemSettingsState:
                  enable_botman_siem: Optional[pulumi.Input[bool]] = None,
                  enable_for_all_policies: Optional[pulumi.Input[bool]] = None,
                  enable_siem: Optional[pulumi.Input[bool]] = None,
+                 exceptions: Optional[pulumi.Input['AppSecSiemSettingsExceptionsArgs']] = None,
                  security_policy_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  siem_id: Optional[pulumi.Input[int]] = None):
         """
@@ -130,6 +150,7 @@ class _AppSecSiemSettingsState:
         :param pulumi.Input[bool] enable_botman_siem: Whether Bot Manager events should be included in SIEM events
         :param pulumi.Input[bool] enable_for_all_policies: Whether to enable SIEM on all security policies in the security configuration
         :param pulumi.Input[bool] enable_siem: Whether to enable SIEM
+        :param pulumi.Input['AppSecSiemSettingsExceptionsArgs'] exceptions: Describes all the protections and actions to be excluded from SIEM events
         :param pulumi.Input[Sequence[pulumi.Input[str]]] security_policy_ids: List of IDs of security policy for which SIEM integration is to be enabled
         :param pulumi.Input[int] siem_id: Unique identifier of the SIEM settings being modified
         """
@@ -141,6 +162,8 @@ class _AppSecSiemSettingsState:
             pulumi.set(__self__, "enable_for_all_policies", enable_for_all_policies)
         if enable_siem is not None:
             pulumi.set(__self__, "enable_siem", enable_siem)
+        if exceptions is not None:
+            pulumi.set(__self__, "exceptions", exceptions)
         if security_policy_ids is not None:
             pulumi.set(__self__, "security_policy_ids", security_policy_ids)
         if siem_id is not None:
@@ -195,6 +218,18 @@ class _AppSecSiemSettingsState:
         pulumi.set(self, "enable_siem", value)
 
     @property
+    @pulumi.getter
+    def exceptions(self) -> Optional[pulumi.Input['AppSecSiemSettingsExceptionsArgs']]:
+        """
+        Describes all the protections and actions to be excluded from SIEM events
+        """
+        return pulumi.get(self, "exceptions")
+
+    @exceptions.setter
+    def exceptions(self, value: Optional[pulumi.Input['AppSecSiemSettingsExceptionsArgs']]):
+        pulumi.set(self, "exceptions", value)
+
+    @property
     @pulumi.getter(name="securityPolicyIds")
     def security_policy_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -228,6 +263,7 @@ class AppSecSiemSettings(pulumi.CustomResource):
                  enable_botman_siem: Optional[pulumi.Input[bool]] = None,
                  enable_for_all_policies: Optional[pulumi.Input[bool]] = None,
                  enable_siem: Optional[pulumi.Input[bool]] = None,
+                 exceptions: Optional[pulumi.Input[Union['AppSecSiemSettingsExceptionsArgs', 'AppSecSiemSettingsExceptionsArgsDict']]] = None,
                  security_policy_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  siem_id: Optional[pulumi.Input[int]] = None,
                  __props__=None):
@@ -239,6 +275,7 @@ class AppSecSiemSettings(pulumi.CustomResource):
         :param pulumi.Input[bool] enable_botman_siem: Whether Bot Manager events should be included in SIEM events
         :param pulumi.Input[bool] enable_for_all_policies: Whether to enable SIEM on all security policies in the security configuration
         :param pulumi.Input[bool] enable_siem: Whether to enable SIEM
+        :param pulumi.Input[Union['AppSecSiemSettingsExceptionsArgs', 'AppSecSiemSettingsExceptionsArgsDict']] exceptions: Describes all the protections and actions to be excluded from SIEM events
         :param pulumi.Input[Sequence[pulumi.Input[str]]] security_policy_ids: List of IDs of security policy for which SIEM integration is to be enabled
         :param pulumi.Input[int] siem_id: Unique identifier of the SIEM settings being modified
         """
@@ -269,6 +306,7 @@ class AppSecSiemSettings(pulumi.CustomResource):
                  enable_botman_siem: Optional[pulumi.Input[bool]] = None,
                  enable_for_all_policies: Optional[pulumi.Input[bool]] = None,
                  enable_siem: Optional[pulumi.Input[bool]] = None,
+                 exceptions: Optional[pulumi.Input[Union['AppSecSiemSettingsExceptionsArgs', 'AppSecSiemSettingsExceptionsArgsDict']]] = None,
                  security_policy_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  siem_id: Optional[pulumi.Input[int]] = None,
                  __props__=None):
@@ -283,8 +321,6 @@ class AppSecSiemSettings(pulumi.CustomResource):
             if config_id is None and not opts.urn:
                 raise TypeError("Missing required property 'config_id'")
             __props__.__dict__["config_id"] = config_id
-            if enable_botman_siem is None and not opts.urn:
-                raise TypeError("Missing required property 'enable_botman_siem'")
             __props__.__dict__["enable_botman_siem"] = enable_botman_siem
             if enable_for_all_policies is None and not opts.urn:
                 raise TypeError("Missing required property 'enable_for_all_policies'")
@@ -292,6 +328,7 @@ class AppSecSiemSettings(pulumi.CustomResource):
             if enable_siem is None and not opts.urn:
                 raise TypeError("Missing required property 'enable_siem'")
             __props__.__dict__["enable_siem"] = enable_siem
+            __props__.__dict__["exceptions"] = exceptions
             __props__.__dict__["security_policy_ids"] = security_policy_ids
             if siem_id is None and not opts.urn:
                 raise TypeError("Missing required property 'siem_id'")
@@ -310,6 +347,7 @@ class AppSecSiemSettings(pulumi.CustomResource):
             enable_botman_siem: Optional[pulumi.Input[bool]] = None,
             enable_for_all_policies: Optional[pulumi.Input[bool]] = None,
             enable_siem: Optional[pulumi.Input[bool]] = None,
+            exceptions: Optional[pulumi.Input[Union['AppSecSiemSettingsExceptionsArgs', 'AppSecSiemSettingsExceptionsArgsDict']]] = None,
             security_policy_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             siem_id: Optional[pulumi.Input[int]] = None) -> 'AppSecSiemSettings':
         """
@@ -323,6 +361,7 @@ class AppSecSiemSettings(pulumi.CustomResource):
         :param pulumi.Input[bool] enable_botman_siem: Whether Bot Manager events should be included in SIEM events
         :param pulumi.Input[bool] enable_for_all_policies: Whether to enable SIEM on all security policies in the security configuration
         :param pulumi.Input[bool] enable_siem: Whether to enable SIEM
+        :param pulumi.Input[Union['AppSecSiemSettingsExceptionsArgs', 'AppSecSiemSettingsExceptionsArgsDict']] exceptions: Describes all the protections and actions to be excluded from SIEM events
         :param pulumi.Input[Sequence[pulumi.Input[str]]] security_policy_ids: List of IDs of security policy for which SIEM integration is to be enabled
         :param pulumi.Input[int] siem_id: Unique identifier of the SIEM settings being modified
         """
@@ -334,6 +373,7 @@ class AppSecSiemSettings(pulumi.CustomResource):
         __props__.__dict__["enable_botman_siem"] = enable_botman_siem
         __props__.__dict__["enable_for_all_policies"] = enable_for_all_policies
         __props__.__dict__["enable_siem"] = enable_siem
+        __props__.__dict__["exceptions"] = exceptions
         __props__.__dict__["security_policy_ids"] = security_policy_ids
         __props__.__dict__["siem_id"] = siem_id
         return AppSecSiemSettings(resource_name, opts=opts, __props__=__props__)
@@ -348,7 +388,7 @@ class AppSecSiemSettings(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="enableBotmanSiem")
-    def enable_botman_siem(self) -> pulumi.Output[bool]:
+    def enable_botman_siem(self) -> pulumi.Output[Optional[bool]]:
         """
         Whether Bot Manager events should be included in SIEM events
         """
@@ -369,6 +409,14 @@ class AppSecSiemSettings(pulumi.CustomResource):
         Whether to enable SIEM
         """
         return pulumi.get(self, "enable_siem")
+
+    @property
+    @pulumi.getter
+    def exceptions(self) -> pulumi.Output[Optional['outputs.AppSecSiemSettingsExceptions']]:
+        """
+        Describes all the protections and actions to be excluded from SIEM events
+        """
+        return pulumi.get(self, "exceptions")
 
     @property
     @pulumi.getter(name="securityPolicyIds")

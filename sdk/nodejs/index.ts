@@ -195,11 +195,6 @@ export type AppSecSecurityPolicyRename = import("./appSecSecurityPolicyRename").
 export const AppSecSecurityPolicyRename: typeof import("./appSecSecurityPolicyRename").AppSecSecurityPolicyRename = null as any;
 utilities.lazyLoad(exports, ["AppSecSecurityPolicyRename"], () => require("./appSecSecurityPolicyRename"));
 
-export { AppSecSelectedHostnamesArgs, AppSecSelectedHostnamesState } from "./appSecSelectedHostnames";
-export type AppSecSelectedHostnames = import("./appSecSelectedHostnames").AppSecSelectedHostnames;
-export const AppSecSelectedHostnames: typeof import("./appSecSelectedHostnames").AppSecSelectedHostnames = null as any;
-utilities.lazyLoad(exports, ["AppSecSelectedHostnames"], () => require("./appSecSelectedHostnames"));
-
 export { AppSecSiemSettingsArgs, AppSecSiemSettingsState } from "./appSecSiemSettings";
 export type AppSecSiemSettings = import("./appSecSiemSettings").AppSecSiemSettings;
 export const AppSecSiemSettings: typeof import("./appSecSiemSettings").AppSecSiemSettings = null as any;
@@ -235,10 +230,10 @@ export type AppSecWafProtection = import("./appSecWafProtection").AppSecWafProte
 export const AppSecWafProtection: typeof import("./appSecWafProtection").AppSecWafProtection = null as any;
 utilities.lazyLoad(exports, ["AppSecWafProtection"], () => require("./appSecWafProtection"));
 
-export { AppSecWapSelectedHostnamesArgs, AppSecWapSelectedHostnamesState } from "./appSecWapSelectedHostnames";
-export type AppSecWapSelectedHostnames = import("./appSecWapSelectedHostnames").AppSecWapSelectedHostnames;
-export const AppSecWapSelectedHostnames: typeof import("./appSecWapSelectedHostnames").AppSecWapSelectedHostnames = null as any;
-utilities.lazyLoad(exports, ["AppSecWapSelectedHostnames"], () => require("./appSecWapSelectedHostnames"));
+export { AppsecAapSelectedHostnamesArgs, AppsecAapSelectedHostnamesState } from "./appsecAapSelectedHostnames";
+export type AppsecAapSelectedHostnames = import("./appsecAapSelectedHostnames").AppsecAapSelectedHostnames;
+export const AppsecAapSelectedHostnames: typeof import("./appsecAapSelectedHostnames").AppsecAapSelectedHostnames = null as any;
+utilities.lazyLoad(exports, ["AppsecAapSelectedHostnames"], () => require("./appsecAapSelectedHostnames"));
 
 export { AppsecAdvancedSettingsAttackPayloadLoggingArgs, AppsecAdvancedSettingsAttackPayloadLoggingState } from "./appsecAdvancedSettingsAttackPayloadLogging";
 export type AppsecAdvancedSettingsAttackPayloadLogging = import("./appsecAdvancedSettingsAttackPayloadLogging").AppsecAdvancedSettingsAttackPayloadLogging;
@@ -264,6 +259,11 @@ export { AppsecPenaltyBoxConditionsArgs, AppsecPenaltyBoxConditionsState } from 
 export type AppsecPenaltyBoxConditions = import("./appsecPenaltyBoxConditions").AppsecPenaltyBoxConditions;
 export const AppsecPenaltyBoxConditions: typeof import("./appsecPenaltyBoxConditions").AppsecPenaltyBoxConditions = null as any;
 utilities.lazyLoad(exports, ["AppsecPenaltyBoxConditions"], () => require("./appsecPenaltyBoxConditions"));
+
+export { AppsecRapidRulesArgs, AppsecRapidRulesState } from "./appsecRapidRules";
+export type AppsecRapidRules = import("./appsecRapidRules").AppsecRapidRules;
+export const AppsecRapidRules: typeof import("./appsecRapidRules").AppsecRapidRules = null as any;
+utilities.lazyLoad(exports, ["AppsecRapidRules"], () => require("./appsecRapidRules"));
 
 export { AppsecSecurityPolicyDefaultProtectionsArgs, AppsecSecurityPolicyDefaultProtectionsState } from "./appsecSecurityPolicyDefaultProtections";
 export type AppsecSecurityPolicyDefaultProtections = import("./appsecSecurityPolicyDefaultProtections").AppsecSecurityPolicyDefaultProtections;
@@ -305,11 +305,6 @@ export type BotmanChallengeInjectionRules = import("./botmanChallengeInjectionRu
 export const BotmanChallengeInjectionRules: typeof import("./botmanChallengeInjectionRules").BotmanChallengeInjectionRules = null as any;
 utilities.lazyLoad(exports, ["BotmanChallengeInjectionRules"], () => require("./botmanChallengeInjectionRules"));
 
-export { BotmanChallengeInterceptionRulesArgs, BotmanChallengeInterceptionRulesState } from "./botmanChallengeInterceptionRules";
-export type BotmanChallengeInterceptionRules = import("./botmanChallengeInterceptionRules").BotmanChallengeInterceptionRules;
-export const BotmanChallengeInterceptionRules: typeof import("./botmanChallengeInterceptionRules").BotmanChallengeInterceptionRules = null as any;
-utilities.lazyLoad(exports, ["BotmanChallengeInterceptionRules"], () => require("./botmanChallengeInterceptionRules"));
-
 export { BotmanClientSideSecurityArgs, BotmanClientSideSecurityState } from "./botmanClientSideSecurity";
 export type BotmanClientSideSecurity = import("./botmanClientSideSecurity").BotmanClientSideSecurity;
 export const BotmanClientSideSecurity: typeof import("./botmanClientSideSecurity").BotmanClientSideSecurity = null as any;
@@ -320,6 +315,21 @@ export type BotmanConditionalAction = import("./botmanConditionalAction").Botman
 export const BotmanConditionalAction: typeof import("./botmanConditionalAction").BotmanConditionalAction = null as any;
 utilities.lazyLoad(exports, ["BotmanConditionalAction"], () => require("./botmanConditionalAction"));
 
+export { BotmanContentProtectionJavascriptInjectionRuleArgs, BotmanContentProtectionJavascriptInjectionRuleState } from "./botmanContentProtectionJavascriptInjectionRule";
+export type BotmanContentProtectionJavascriptInjectionRule = import("./botmanContentProtectionJavascriptInjectionRule").BotmanContentProtectionJavascriptInjectionRule;
+export const BotmanContentProtectionJavascriptInjectionRule: typeof import("./botmanContentProtectionJavascriptInjectionRule").BotmanContentProtectionJavascriptInjectionRule = null as any;
+utilities.lazyLoad(exports, ["BotmanContentProtectionJavascriptInjectionRule"], () => require("./botmanContentProtectionJavascriptInjectionRule"));
+
+export { BotmanContentProtectionRuleArgs, BotmanContentProtectionRuleState } from "./botmanContentProtectionRule";
+export type BotmanContentProtectionRule = import("./botmanContentProtectionRule").BotmanContentProtectionRule;
+export const BotmanContentProtectionRule: typeof import("./botmanContentProtectionRule").BotmanContentProtectionRule = null as any;
+utilities.lazyLoad(exports, ["BotmanContentProtectionRule"], () => require("./botmanContentProtectionRule"));
+
+export { BotmanContentProtectionRuleSequenceArgs, BotmanContentProtectionRuleSequenceState } from "./botmanContentProtectionRuleSequence";
+export type BotmanContentProtectionRuleSequence = import("./botmanContentProtectionRuleSequence").BotmanContentProtectionRuleSequence;
+export const BotmanContentProtectionRuleSequence: typeof import("./botmanContentProtectionRuleSequence").BotmanContentProtectionRuleSequence = null as any;
+utilities.lazyLoad(exports, ["BotmanContentProtectionRuleSequence"], () => require("./botmanContentProtectionRuleSequence"));
+
 export { BotmanCustomBotCategoryArgs, BotmanCustomBotCategoryState } from "./botmanCustomBotCategory";
 export type BotmanCustomBotCategory = import("./botmanCustomBotCategory").BotmanCustomBotCategory;
 export const BotmanCustomBotCategory: typeof import("./botmanCustomBotCategory").BotmanCustomBotCategory = null as any;
@@ -329,6 +339,11 @@ export { BotmanCustomBotCategoryActionArgs, BotmanCustomBotCategoryActionState }
 export type BotmanCustomBotCategoryAction = import("./botmanCustomBotCategoryAction").BotmanCustomBotCategoryAction;
 export const BotmanCustomBotCategoryAction: typeof import("./botmanCustomBotCategoryAction").BotmanCustomBotCategoryAction = null as any;
 utilities.lazyLoad(exports, ["BotmanCustomBotCategoryAction"], () => require("./botmanCustomBotCategoryAction"));
+
+export { BotmanCustomBotCategoryItemSequenceArgs, BotmanCustomBotCategoryItemSequenceState } from "./botmanCustomBotCategoryItemSequence";
+export type BotmanCustomBotCategoryItemSequence = import("./botmanCustomBotCategoryItemSequence").BotmanCustomBotCategoryItemSequence;
+export const BotmanCustomBotCategoryItemSequence: typeof import("./botmanCustomBotCategoryItemSequence").BotmanCustomBotCategoryItemSequence = null as any;
+utilities.lazyLoad(exports, ["BotmanCustomBotCategoryItemSequence"], () => require("./botmanCustomBotCategoryItemSequence"));
 
 export { BotmanCustomBotCategorySequenceArgs, BotmanCustomBotCategorySequenceState } from "./botmanCustomBotCategorySequence";
 export type BotmanCustomBotCategorySequence = import("./botmanCustomBotCategorySequence").BotmanCustomBotCategorySequence;
@@ -394,6 +409,11 @@ export { ClientlistListArgs, ClientlistListState } from "./clientlistList";
 export type ClientlistList = import("./clientlistList").ClientlistList;
 export const ClientlistList: typeof import("./clientlistList").ClientlistList = null as any;
 utilities.lazyLoad(exports, ["ClientlistList"], () => require("./clientlistList"));
+
+export { CloudAccessKeyArgs, CloudAccessKeyState } from "./cloudAccessKey";
+export type CloudAccessKey = import("./cloudAccessKey").CloudAccessKey;
+export const CloudAccessKey: typeof import("./cloudAccessKey").CloudAccessKey = null as any;
+utilities.lazyLoad(exports, ["CloudAccessKey"], () => require("./cloudAccessKey"));
 
 export { CloudletsApplicationLoadBalancerArgs, CloudletsApplicationLoadBalancerState } from "./cloudletsApplicationLoadBalancer";
 export type CloudletsApplicationLoadBalancer = import("./cloudletsApplicationLoadBalancer").CloudletsApplicationLoadBalancer;
@@ -685,11 +705,6 @@ export const getAppSecSelectableHostnames: typeof import("./getAppSecSelectableH
 export const getAppSecSelectableHostnamesOutput: typeof import("./getAppSecSelectableHostnames").getAppSecSelectableHostnamesOutput = null as any;
 utilities.lazyLoad(exports, ["getAppSecSelectableHostnames","getAppSecSelectableHostnamesOutput"], () => require("./getAppSecSelectableHostnames"));
 
-export { GetAppSecSelectedHostnamesArgs, GetAppSecSelectedHostnamesResult, GetAppSecSelectedHostnamesOutputArgs } from "./getAppSecSelectedHostnames";
-export const getAppSecSelectedHostnames: typeof import("./getAppSecSelectedHostnames").getAppSecSelectedHostnames = null as any;
-export const getAppSecSelectedHostnamesOutput: typeof import("./getAppSecSelectedHostnames").getAppSecSelectedHostnamesOutput = null as any;
-utilities.lazyLoad(exports, ["getAppSecSelectedHostnames","getAppSecSelectedHostnamesOutput"], () => require("./getAppSecSelectedHostnames"));
-
 export { GetAppSecSiemDefinitionsArgs, GetAppSecSiemDefinitionsResult, GetAppSecSiemDefinitionsOutputArgs } from "./getAppSecSiemDefinitions";
 export const getAppSecSiemDefinitions: typeof import("./getAppSecSiemDefinitions").getAppSecSiemDefinitions = null as any;
 export const getAppSecSiemDefinitionsOutput: typeof import("./getAppSecSiemDefinitions").getAppSecSiemDefinitionsOutput = null as any;
@@ -725,10 +740,10 @@ export const getAppSecWafMode: typeof import("./getAppSecWafMode").getAppSecWafM
 export const getAppSecWafModeOutput: typeof import("./getAppSecWafMode").getAppSecWafModeOutput = null as any;
 utilities.lazyLoad(exports, ["getAppSecWafMode","getAppSecWafModeOutput"], () => require("./getAppSecWafMode"));
 
-export { GetAppSecWapSelectedHostnamesArgs, GetAppSecWapSelectedHostnamesResult, GetAppSecWapSelectedHostnamesOutputArgs } from "./getAppSecWapSelectedHostnames";
-export const getAppSecWapSelectedHostnames: typeof import("./getAppSecWapSelectedHostnames").getAppSecWapSelectedHostnames = null as any;
-export const getAppSecWapSelectedHostnamesOutput: typeof import("./getAppSecWapSelectedHostnames").getAppSecWapSelectedHostnamesOutput = null as any;
-utilities.lazyLoad(exports, ["getAppSecWapSelectedHostnames","getAppSecWapSelectedHostnamesOutput"], () => require("./getAppSecWapSelectedHostnames"));
+export { GetAppsecAapSelectedHostnamesArgs, GetAppsecAapSelectedHostnamesResult, GetAppsecAapSelectedHostnamesOutputArgs } from "./getAppsecAapSelectedHostnames";
+export const getAppsecAapSelectedHostnames: typeof import("./getAppsecAapSelectedHostnames").getAppsecAapSelectedHostnames = null as any;
+export const getAppsecAapSelectedHostnamesOutput: typeof import("./getAppsecAapSelectedHostnames").getAppsecAapSelectedHostnamesOutput = null as any;
+utilities.lazyLoad(exports, ["getAppsecAapSelectedHostnames","getAppsecAapSelectedHostnamesOutput"], () => require("./getAppsecAapSelectedHostnames"));
 
 export { GetAppsecAdvancedSettingsAttackPayloadLoggingArgs, GetAppsecAdvancedSettingsAttackPayloadLoggingResult, GetAppsecAdvancedSettingsAttackPayloadLoggingOutputArgs } from "./getAppsecAdvancedSettingsAttackPayloadLogging";
 export const getAppsecAdvancedSettingsAttackPayloadLogging: typeof import("./getAppsecAdvancedSettingsAttackPayloadLogging").getAppsecAdvancedSettingsAttackPayloadLogging = null as any;
@@ -754,6 +769,11 @@ export { GetAppsecPenaltyBoxConditionsArgs, GetAppsecPenaltyBoxConditionsResult,
 export const getAppsecPenaltyBoxConditions: typeof import("./getAppsecPenaltyBoxConditions").getAppsecPenaltyBoxConditions = null as any;
 export const getAppsecPenaltyBoxConditionsOutput: typeof import("./getAppsecPenaltyBoxConditions").getAppsecPenaltyBoxConditionsOutput = null as any;
 utilities.lazyLoad(exports, ["getAppsecPenaltyBoxConditions","getAppsecPenaltyBoxConditionsOutput"], () => require("./getAppsecPenaltyBoxConditions"));
+
+export { GetAppsecRapidRulesArgs, GetAppsecRapidRulesResult, GetAppsecRapidRulesOutputArgs } from "./getAppsecRapidRules";
+export const getAppsecRapidRules: typeof import("./getAppsecRapidRules").getAppsecRapidRules = null as any;
+export const getAppsecRapidRulesOutput: typeof import("./getAppsecRapidRules").getAppsecRapidRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getAppsecRapidRules","getAppsecRapidRulesOutput"], () => require("./getAppsecRapidRules"));
 
 export { GetAuthoritiesSetArgs, GetAuthoritiesSetResult, GetAuthoritiesSetOutputArgs } from "./getAuthoritiesSet";
 export const getAuthoritiesSet: typeof import("./getAuthoritiesSet").getAuthoritiesSet = null as any;
@@ -820,11 +840,6 @@ export const getBotmanChallengeInjectionRules: typeof import("./getBotmanChallen
 export const getBotmanChallengeInjectionRulesOutput: typeof import("./getBotmanChallengeInjectionRules").getBotmanChallengeInjectionRulesOutput = null as any;
 utilities.lazyLoad(exports, ["getBotmanChallengeInjectionRules","getBotmanChallengeInjectionRulesOutput"], () => require("./getBotmanChallengeInjectionRules"));
 
-export { GetBotmanChallengeInterceptionRulesArgs, GetBotmanChallengeInterceptionRulesResult, GetBotmanChallengeInterceptionRulesOutputArgs } from "./getBotmanChallengeInterceptionRules";
-export const getBotmanChallengeInterceptionRules: typeof import("./getBotmanChallengeInterceptionRules").getBotmanChallengeInterceptionRules = null as any;
-export const getBotmanChallengeInterceptionRulesOutput: typeof import("./getBotmanChallengeInterceptionRules").getBotmanChallengeInterceptionRulesOutput = null as any;
-utilities.lazyLoad(exports, ["getBotmanChallengeInterceptionRules","getBotmanChallengeInterceptionRulesOutput"], () => require("./getBotmanChallengeInterceptionRules"));
-
 export { GetBotmanClientSideSecurityArgs, GetBotmanClientSideSecurityResult, GetBotmanClientSideSecurityOutputArgs } from "./getBotmanClientSideSecurity";
 export const getBotmanClientSideSecurity: typeof import("./getBotmanClientSideSecurity").getBotmanClientSideSecurity = null as any;
 export const getBotmanClientSideSecurityOutput: typeof import("./getBotmanClientSideSecurity").getBotmanClientSideSecurityOutput = null as any;
@@ -835,6 +850,21 @@ export const getBotmanConditionalAction: typeof import("./getBotmanConditionalAc
 export const getBotmanConditionalActionOutput: typeof import("./getBotmanConditionalAction").getBotmanConditionalActionOutput = null as any;
 utilities.lazyLoad(exports, ["getBotmanConditionalAction","getBotmanConditionalActionOutput"], () => require("./getBotmanConditionalAction"));
 
+export { GetBotmanContentProtectionJavascriptInjectionRuleArgs, GetBotmanContentProtectionJavascriptInjectionRuleResult, GetBotmanContentProtectionJavascriptInjectionRuleOutputArgs } from "./getBotmanContentProtectionJavascriptInjectionRule";
+export const getBotmanContentProtectionJavascriptInjectionRule: typeof import("./getBotmanContentProtectionJavascriptInjectionRule").getBotmanContentProtectionJavascriptInjectionRule = null as any;
+export const getBotmanContentProtectionJavascriptInjectionRuleOutput: typeof import("./getBotmanContentProtectionJavascriptInjectionRule").getBotmanContentProtectionJavascriptInjectionRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanContentProtectionJavascriptInjectionRule","getBotmanContentProtectionJavascriptInjectionRuleOutput"], () => require("./getBotmanContentProtectionJavascriptInjectionRule"));
+
+export { GetBotmanContentProtectionRuleArgs, GetBotmanContentProtectionRuleResult, GetBotmanContentProtectionRuleOutputArgs } from "./getBotmanContentProtectionRule";
+export const getBotmanContentProtectionRule: typeof import("./getBotmanContentProtectionRule").getBotmanContentProtectionRule = null as any;
+export const getBotmanContentProtectionRuleOutput: typeof import("./getBotmanContentProtectionRule").getBotmanContentProtectionRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanContentProtectionRule","getBotmanContentProtectionRuleOutput"], () => require("./getBotmanContentProtectionRule"));
+
+export { GetBotmanContentProtectionRuleSequenceArgs, GetBotmanContentProtectionRuleSequenceResult, GetBotmanContentProtectionRuleSequenceOutputArgs } from "./getBotmanContentProtectionRuleSequence";
+export const getBotmanContentProtectionRuleSequence: typeof import("./getBotmanContentProtectionRuleSequence").getBotmanContentProtectionRuleSequence = null as any;
+export const getBotmanContentProtectionRuleSequenceOutput: typeof import("./getBotmanContentProtectionRuleSequence").getBotmanContentProtectionRuleSequenceOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanContentProtectionRuleSequence","getBotmanContentProtectionRuleSequenceOutput"], () => require("./getBotmanContentProtectionRuleSequence"));
+
 export { GetBotmanCustomBotCategoryArgs, GetBotmanCustomBotCategoryResult, GetBotmanCustomBotCategoryOutputArgs } from "./getBotmanCustomBotCategory";
 export const getBotmanCustomBotCategory: typeof import("./getBotmanCustomBotCategory").getBotmanCustomBotCategory = null as any;
 export const getBotmanCustomBotCategoryOutput: typeof import("./getBotmanCustomBotCategory").getBotmanCustomBotCategoryOutput = null as any;
@@ -844,6 +874,11 @@ export { GetBotmanCustomBotCategoryActionArgs, GetBotmanCustomBotCategoryActionR
 export const getBotmanCustomBotCategoryAction: typeof import("./getBotmanCustomBotCategoryAction").getBotmanCustomBotCategoryAction = null as any;
 export const getBotmanCustomBotCategoryActionOutput: typeof import("./getBotmanCustomBotCategoryAction").getBotmanCustomBotCategoryActionOutput = null as any;
 utilities.lazyLoad(exports, ["getBotmanCustomBotCategoryAction","getBotmanCustomBotCategoryActionOutput"], () => require("./getBotmanCustomBotCategoryAction"));
+
+export { GetBotmanCustomBotCategoryItemSequenceArgs, GetBotmanCustomBotCategoryItemSequenceResult, GetBotmanCustomBotCategoryItemSequenceOutputArgs } from "./getBotmanCustomBotCategoryItemSequence";
+export const getBotmanCustomBotCategoryItemSequence: typeof import("./getBotmanCustomBotCategoryItemSequence").getBotmanCustomBotCategoryItemSequence = null as any;
+export const getBotmanCustomBotCategoryItemSequenceOutput: typeof import("./getBotmanCustomBotCategoryItemSequence").getBotmanCustomBotCategoryItemSequenceOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanCustomBotCategoryItemSequence","getBotmanCustomBotCategoryItemSequenceOutput"], () => require("./getBotmanCustomBotCategoryItemSequence"));
 
 export { GetBotmanCustomBotCategorySequenceArgs, GetBotmanCustomBotCategorySequenceResult, GetBotmanCustomBotCategorySequenceOutputArgs } from "./getBotmanCustomBotCategorySequence";
 export const getBotmanCustomBotCategorySequence: typeof import("./getBotmanCustomBotCategorySequence").getBotmanCustomBotCategorySequence = null as any;
@@ -919,6 +954,26 @@ export { GetClientlistListsArgs, GetClientlistListsResult, GetClientlistListsOut
 export const getClientlistLists: typeof import("./getClientlistLists").getClientlistLists = null as any;
 export const getClientlistListsOutput: typeof import("./getClientlistLists").getClientlistListsOutput = null as any;
 utilities.lazyLoad(exports, ["getClientlistLists","getClientlistListsOutput"], () => require("./getClientlistLists"));
+
+export { GetCloudaccessKeyArgs, GetCloudaccessKeyResult, GetCloudaccessKeyOutputArgs } from "./getCloudaccessKey";
+export const getCloudaccessKey: typeof import("./getCloudaccessKey").getCloudaccessKey = null as any;
+export const getCloudaccessKeyOutput: typeof import("./getCloudaccessKey").getCloudaccessKeyOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudaccessKey","getCloudaccessKeyOutput"], () => require("./getCloudaccessKey"));
+
+export { GetCloudaccessKeyPropertiesArgs, GetCloudaccessKeyPropertiesResult, GetCloudaccessKeyPropertiesOutputArgs } from "./getCloudaccessKeyProperties";
+export const getCloudaccessKeyProperties: typeof import("./getCloudaccessKeyProperties").getCloudaccessKeyProperties = null as any;
+export const getCloudaccessKeyPropertiesOutput: typeof import("./getCloudaccessKeyProperties").getCloudaccessKeyPropertiesOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudaccessKeyProperties","getCloudaccessKeyPropertiesOutput"], () => require("./getCloudaccessKeyProperties"));
+
+export { GetCloudaccessKeyVersionsArgs, GetCloudaccessKeyVersionsResult, GetCloudaccessKeyVersionsOutputArgs } from "./getCloudaccessKeyVersions";
+export const getCloudaccessKeyVersions: typeof import("./getCloudaccessKeyVersions").getCloudaccessKeyVersions = null as any;
+export const getCloudaccessKeyVersionsOutput: typeof import("./getCloudaccessKeyVersions").getCloudaccessKeyVersionsOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudaccessKeyVersions","getCloudaccessKeyVersionsOutput"], () => require("./getCloudaccessKeyVersions"));
+
+export { GetCloudaccessKeysResult } from "./getCloudaccessKeys";
+export const getCloudaccessKeys: typeof import("./getCloudaccessKeys").getCloudaccessKeys = null as any;
+export const getCloudaccessKeysOutput: typeof import("./getCloudaccessKeys").getCloudaccessKeysOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudaccessKeys","getCloudaccessKeysOutput"], () => require("./getCloudaccessKeys"));
 
 export { GetCloudletsApiPrioritizationMatchRuleArgs, GetCloudletsApiPrioritizationMatchRuleResult, GetCloudletsApiPrioritizationMatchRuleOutputArgs } from "./getCloudletsApiPrioritizationMatchRule";
 export const getCloudletsApiPrioritizationMatchRule: typeof import("./getCloudletsApiPrioritizationMatchRule").getCloudletsApiPrioritizationMatchRule = null as any;
@@ -1135,6 +1190,16 @@ export const getGtmDomains: typeof import("./getGtmDomains").getGtmDomains = nul
 export const getGtmDomainsOutput: typeof import("./getGtmDomains").getGtmDomainsOutput = null as any;
 utilities.lazyLoad(exports, ["getGtmDomains","getGtmDomainsOutput"], () => require("./getGtmDomains"));
 
+export { GetGtmGeomapArgs, GetGtmGeomapResult, GetGtmGeomapOutputArgs } from "./getGtmGeomap";
+export const getGtmGeomap: typeof import("./getGtmGeomap").getGtmGeomap = null as any;
+export const getGtmGeomapOutput: typeof import("./getGtmGeomap").getGtmGeomapOutput = null as any;
+utilities.lazyLoad(exports, ["getGtmGeomap","getGtmGeomapOutput"], () => require("./getGtmGeomap"));
+
+export { GetGtmGeomapsArgs, GetGtmGeomapsResult, GetGtmGeomapsOutputArgs } from "./getGtmGeomaps";
+export const getGtmGeomaps: typeof import("./getGtmGeomaps").getGtmGeomaps = null as any;
+export const getGtmGeomapsOutput: typeof import("./getGtmGeomaps").getGtmGeomapsOutput = null as any;
+utilities.lazyLoad(exports, ["getGtmGeomaps","getGtmGeomapsOutput"], () => require("./getGtmGeomaps"));
+
 export { GetGtmResourceArgs, GetGtmResourceResult, GetGtmResourceOutputArgs } from "./getGtmResource";
 export const getGtmResource: typeof import("./getGtmResource").getGtmResource = null as any;
 export const getGtmResourceOutput: typeof import("./getGtmResource").getGtmResourceOutput = null as any;
@@ -1144,6 +1209,31 @@ export { GetGtmResourcesArgs, GetGtmResourcesResult, GetGtmResourcesOutputArgs }
 export const getGtmResources: typeof import("./getGtmResources").getGtmResources = null as any;
 export const getGtmResourcesOutput: typeof import("./getGtmResources").getGtmResourcesOutput = null as any;
 utilities.lazyLoad(exports, ["getGtmResources","getGtmResourcesOutput"], () => require("./getGtmResources"));
+
+export { GetIamAccountSwitchKeysArgs, GetIamAccountSwitchKeysResult, GetIamAccountSwitchKeysOutputArgs } from "./getIamAccountSwitchKeys";
+export const getIamAccountSwitchKeys: typeof import("./getIamAccountSwitchKeys").getIamAccountSwitchKeys = null as any;
+export const getIamAccountSwitchKeysOutput: typeof import("./getIamAccountSwitchKeys").getIamAccountSwitchKeysOutput = null as any;
+utilities.lazyLoad(exports, ["getIamAccountSwitchKeys","getIamAccountSwitchKeysOutput"], () => require("./getIamAccountSwitchKeys"));
+
+export { GetIamAllowedApisArgs, GetIamAllowedApisResult, GetIamAllowedApisOutputArgs } from "./getIamAllowedApis";
+export const getIamAllowedApis: typeof import("./getIamAllowedApis").getIamAllowedApis = null as any;
+export const getIamAllowedApisOutput: typeof import("./getIamAllowedApis").getIamAllowedApisOutput = null as any;
+utilities.lazyLoad(exports, ["getIamAllowedApis","getIamAllowedApisOutput"], () => require("./getIamAllowedApis"));
+
+export { GetIamBlockedPropertiesArgs, GetIamBlockedPropertiesResult, GetIamBlockedPropertiesOutputArgs } from "./getIamBlockedProperties";
+export const getIamBlockedProperties: typeof import("./getIamBlockedProperties").getIamBlockedProperties = null as any;
+export const getIamBlockedPropertiesOutput: typeof import("./getIamBlockedProperties").getIamBlockedPropertiesOutput = null as any;
+utilities.lazyLoad(exports, ["getIamBlockedProperties","getIamBlockedPropertiesOutput"], () => require("./getIamBlockedProperties"));
+
+export { GetIamCidrBlockArgs, GetIamCidrBlockResult, GetIamCidrBlockOutputArgs } from "./getIamCidrBlock";
+export const getIamCidrBlock: typeof import("./getIamCidrBlock").getIamCidrBlock = null as any;
+export const getIamCidrBlockOutput: typeof import("./getIamCidrBlock").getIamCidrBlockOutput = null as any;
+utilities.lazyLoad(exports, ["getIamCidrBlock","getIamCidrBlockOutput"], () => require("./getIamCidrBlock"));
+
+export { GetIamCidrBlocksResult } from "./getIamCidrBlocks";
+export const getIamCidrBlocks: typeof import("./getIamCidrBlocks").getIamCidrBlocks = null as any;
+export const getIamCidrBlocksOutput: typeof import("./getIamCidrBlocks").getIamCidrBlocksOutput = null as any;
+utilities.lazyLoad(exports, ["getIamCidrBlocks","getIamCidrBlocksOutput"], () => require("./getIamCidrBlocks"));
 
 export { GetIamContactTypesResult } from "./getIamContactTypes";
 export const getIamContactTypes: typeof import("./getIamContactTypes").getIamContactTypes = null as any;
@@ -1159,6 +1249,21 @@ export { GetIamGrantableRolesResult } from "./getIamGrantableRoles";
 export const getIamGrantableRoles: typeof import("./getIamGrantableRoles").getIamGrantableRoles = null as any;
 export const getIamGrantableRolesOutput: typeof import("./getIamGrantableRoles").getIamGrantableRolesOutput = null as any;
 utilities.lazyLoad(exports, ["getIamGrantableRoles","getIamGrantableRolesOutput"], () => require("./getIamGrantableRoles"));
+
+export { GetIamPasswordPolicyResult } from "./getIamPasswordPolicy";
+export const getIamPasswordPolicy: typeof import("./getIamPasswordPolicy").getIamPasswordPolicy = null as any;
+export const getIamPasswordPolicyOutput: typeof import("./getIamPasswordPolicy").getIamPasswordPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getIamPasswordPolicy","getIamPasswordPolicyOutput"], () => require("./getIamPasswordPolicy"));
+
+export { GetIamPropertyUsersArgs, GetIamPropertyUsersResult, GetIamPropertyUsersOutputArgs } from "./getIamPropertyUsers";
+export const getIamPropertyUsers: typeof import("./getIamPropertyUsers").getIamPropertyUsers = null as any;
+export const getIamPropertyUsersOutput: typeof import("./getIamPropertyUsers").getIamPropertyUsersOutput = null as any;
+utilities.lazyLoad(exports, ["getIamPropertyUsers","getIamPropertyUsersOutput"], () => require("./getIamPropertyUsers"));
+
+export { GetIamRoleArgs, GetIamRoleResult, GetIamRoleOutputArgs } from "./getIamRole";
+export const getIamRole: typeof import("./getIamRole").getIamRole = null as any;
+export const getIamRoleOutput: typeof import("./getIamRole").getIamRoleOutput = null as any;
+utilities.lazyLoad(exports, ["getIamRole","getIamRoleOutput"], () => require("./getIamRole"));
 
 export { GetIamRolesResult } from "./getIamRoles";
 export const getIamRoles: typeof import("./getIamRoles").getIamRoles = null as any;
@@ -1184,6 +1289,11 @@ export { GetIamTimezonesResult } from "./getIamTimezones";
 export const getIamTimezones: typeof import("./getIamTimezones").getIamTimezones = null as any;
 export const getIamTimezonesOutput: typeof import("./getIamTimezones").getIamTimezonesOutput = null as any;
 utilities.lazyLoad(exports, ["getIamTimezones","getIamTimezonesOutput"], () => require("./getIamTimezones"));
+
+export { GetIamUsersAffectedByMovingGroupArgs, GetIamUsersAffectedByMovingGroupResult, GetIamUsersAffectedByMovingGroupOutputArgs } from "./getIamUsersAffectedByMovingGroup";
+export const getIamUsersAffectedByMovingGroup: typeof import("./getIamUsersAffectedByMovingGroup").getIamUsersAffectedByMovingGroup = null as any;
+export const getIamUsersAffectedByMovingGroupOutput: typeof import("./getIamUsersAffectedByMovingGroup").getIamUsersAffectedByMovingGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getIamUsersAffectedByMovingGroup","getIamUsersAffectedByMovingGroupOutput"], () => require("./getIamUsersAffectedByMovingGroup"));
 
 export { GetImagingPolicyImageArgs, GetImagingPolicyImageResult, GetImagingPolicyImageOutputArgs } from "./getImagingPolicyImage";
 export const getImagingPolicyImage: typeof import("./getImagingPolicyImage").getImagingPolicyImage = null as any;
@@ -1275,6 +1385,11 @@ export const getPropertyRulesTemplate: typeof import("./getPropertyRulesTemplate
 export const getPropertyRulesTemplateOutput: typeof import("./getPropertyRulesTemplate").getPropertyRulesTemplateOutput = null as any;
 utilities.lazyLoad(exports, ["getPropertyRulesTemplate","getPropertyRulesTemplateOutput"], () => require("./getPropertyRulesTemplate"));
 
+export { GetZoneDnssecStatusArgs, GetZoneDnssecStatusResult, GetZoneDnssecStatusOutputArgs } from "./getZoneDnssecStatus";
+export const getZoneDnssecStatus: typeof import("./getZoneDnssecStatus").getZoneDnssecStatus = null as any;
+export const getZoneDnssecStatusOutput: typeof import("./getZoneDnssecStatus").getZoneDnssecStatusOutput = null as any;
+utilities.lazyLoad(exports, ["getZoneDnssecStatus","getZoneDnssecStatusOutput"], () => require("./getZoneDnssecStatus"));
+
 export { GtmAsmapArgs, GtmAsmapState } from "./gtmAsmap";
 export type GtmAsmap = import("./gtmAsmap").GtmAsmap;
 export const GtmAsmap: typeof import("./gtmAsmap").GtmAsmap = null as any;
@@ -1315,10 +1430,20 @@ export type IamBlockedUserProperties = import("./iamBlockedUserProperties").IamB
 export const IamBlockedUserProperties: typeof import("./iamBlockedUserProperties").IamBlockedUserProperties = null as any;
 utilities.lazyLoad(exports, ["IamBlockedUserProperties"], () => require("./iamBlockedUserProperties"));
 
+export { IamCidrBlockArgs, IamCidrBlockState } from "./iamCidrBlock";
+export type IamCidrBlock = import("./iamCidrBlock").IamCidrBlock;
+export const IamCidrBlock: typeof import("./iamCidrBlock").IamCidrBlock = null as any;
+utilities.lazyLoad(exports, ["IamCidrBlock"], () => require("./iamCidrBlock"));
+
 export { IamGroupArgs, IamGroupState } from "./iamGroup";
 export type IamGroup = import("./iamGroup").IamGroup;
 export const IamGroup: typeof import("./iamGroup").IamGroup = null as any;
 utilities.lazyLoad(exports, ["IamGroup"], () => require("./iamGroup"));
+
+export { IamIpAllowlistArgs, IamIpAllowlistState } from "./iamIpAllowlist";
+export type IamIpAllowlist = import("./iamIpAllowlist").IamIpAllowlist;
+export const IamIpAllowlist: typeof import("./iamIpAllowlist").IamIpAllowlist = null as any;
+utilities.lazyLoad(exports, ["IamIpAllowlist"], () => require("./iamIpAllowlist"));
 
 export { IamRoleArgs, IamRoleState } from "./iamRole";
 export type IamRole = import("./iamRole").IamRole;
@@ -1485,8 +1610,6 @@ const _module = {
                 return new AppSecSecurityPolicy(name, <any>undefined, { urn })
             case "akamai:index/appSecSecurityPolicyRename:AppSecSecurityPolicyRename":
                 return new AppSecSecurityPolicyRename(name, <any>undefined, { urn })
-            case "akamai:index/appSecSelectedHostnames:AppSecSelectedHostnames":
-                return new AppSecSelectedHostnames(name, <any>undefined, { urn })
             case "akamai:index/appSecSiemSettings:AppSecSiemSettings":
                 return new AppSecSiemSettings(name, <any>undefined, { urn })
             case "akamai:index/appSecSlowPost:AppSecSlowPost":
@@ -1501,8 +1624,8 @@ const _module = {
                 return new AppSecWafMode(name, <any>undefined, { urn })
             case "akamai:index/appSecWafProtection:AppSecWafProtection":
                 return new AppSecWafProtection(name, <any>undefined, { urn })
-            case "akamai:index/appSecWapSelectedHostnames:AppSecWapSelectedHostnames":
-                return new AppSecWapSelectedHostnames(name, <any>undefined, { urn })
+            case "akamai:index/appsecAapSelectedHostnames:AppsecAapSelectedHostnames":
+                return new AppsecAapSelectedHostnames(name, <any>undefined, { urn })
             case "akamai:index/appsecAdvancedSettingsAttackPayloadLogging:AppsecAdvancedSettingsAttackPayloadLogging":
                 return new AppsecAdvancedSettingsAttackPayloadLogging(name, <any>undefined, { urn })
             case "akamai:index/appsecAdvancedSettingsPiiLearning:AppsecAdvancedSettingsPiiLearning":
@@ -1513,6 +1636,8 @@ const _module = {
                 return new AppsecEvalPenaltyBoxConditions(name, <any>undefined, { urn })
             case "akamai:index/appsecPenaltyBoxConditions:AppsecPenaltyBoxConditions":
                 return new AppsecPenaltyBoxConditions(name, <any>undefined, { urn })
+            case "akamai:index/appsecRapidRules:AppsecRapidRules":
+                return new AppsecRapidRules(name, <any>undefined, { urn })
             case "akamai:index/appsecSecurityPolicyDefaultProtections:AppsecSecurityPolicyDefaultProtections":
                 return new AppsecSecurityPolicyDefaultProtections(name, <any>undefined, { urn })
             case "akamai:index/botmanAkamaiBotCategoryAction:BotmanAkamaiBotCategoryAction":
@@ -1529,16 +1654,22 @@ const _module = {
                 return new BotmanChallengeAction(name, <any>undefined, { urn })
             case "akamai:index/botmanChallengeInjectionRules:BotmanChallengeInjectionRules":
                 return new BotmanChallengeInjectionRules(name, <any>undefined, { urn })
-            case "akamai:index/botmanChallengeInterceptionRules:BotmanChallengeInterceptionRules":
-                return new BotmanChallengeInterceptionRules(name, <any>undefined, { urn })
             case "akamai:index/botmanClientSideSecurity:BotmanClientSideSecurity":
                 return new BotmanClientSideSecurity(name, <any>undefined, { urn })
             case "akamai:index/botmanConditionalAction:BotmanConditionalAction":
                 return new BotmanConditionalAction(name, <any>undefined, { urn })
+            case "akamai:index/botmanContentProtectionJavascriptInjectionRule:BotmanContentProtectionJavascriptInjectionRule":
+                return new BotmanContentProtectionJavascriptInjectionRule(name, <any>undefined, { urn })
+            case "akamai:index/botmanContentProtectionRule:BotmanContentProtectionRule":
+                return new BotmanContentProtectionRule(name, <any>undefined, { urn })
+            case "akamai:index/botmanContentProtectionRuleSequence:BotmanContentProtectionRuleSequence":
+                return new BotmanContentProtectionRuleSequence(name, <any>undefined, { urn })
             case "akamai:index/botmanCustomBotCategory:BotmanCustomBotCategory":
                 return new BotmanCustomBotCategory(name, <any>undefined, { urn })
             case "akamai:index/botmanCustomBotCategoryAction:BotmanCustomBotCategoryAction":
                 return new BotmanCustomBotCategoryAction(name, <any>undefined, { urn })
+            case "akamai:index/botmanCustomBotCategoryItemSequence:BotmanCustomBotCategoryItemSequence":
+                return new BotmanCustomBotCategoryItemSequence(name, <any>undefined, { urn })
             case "akamai:index/botmanCustomBotCategorySequence:BotmanCustomBotCategorySequence":
                 return new BotmanCustomBotCategorySequence(name, <any>undefined, { urn })
             case "akamai:index/botmanCustomClient:BotmanCustomClient":
@@ -1565,6 +1696,8 @@ const _module = {
                 return new ClientlistActivation(name, <any>undefined, { urn })
             case "akamai:index/clientlistList:ClientlistList":
                 return new ClientlistList(name, <any>undefined, { urn })
+            case "akamai:index/cloudAccessKey:CloudAccessKey":
+                return new CloudAccessKey(name, <any>undefined, { urn })
             case "akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer":
                 return new CloudletsApplicationLoadBalancer(name, <any>undefined, { urn })
             case "akamai:index/cloudletsApplicationLoadBalancerActivation:CloudletsApplicationLoadBalancerActivation":
@@ -1619,8 +1752,12 @@ const _module = {
                 return new GtmResource(name, <any>undefined, { urn })
             case "akamai:index/iamBlockedUserProperties:IamBlockedUserProperties":
                 return new IamBlockedUserProperties(name, <any>undefined, { urn })
+            case "akamai:index/iamCidrBlock:IamCidrBlock":
+                return new IamCidrBlock(name, <any>undefined, { urn })
             case "akamai:index/iamGroup:IamGroup":
                 return new IamGroup(name, <any>undefined, { urn })
+            case "akamai:index/iamIpAllowlist:IamIpAllowlist":
+                return new IamIpAllowlist(name, <any>undefined, { urn })
             case "akamai:index/iamRole:IamRole":
                 return new IamRole(name, <any>undefined, { urn })
             case "akamai:index/iamUser:IamUser":
@@ -1692,7 +1829,6 @@ pulumi.runtime.registerResourceModule("akamai", "index/appSecRule", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecRuleUpgrade", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecSecurityPolicy", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecSecurityPolicyRename", _module)
-pulumi.runtime.registerResourceModule("akamai", "index/appSecSelectedHostnames", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecSiemSettings", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecSlowPost", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecSlowPostProtection", _module)
@@ -1700,12 +1836,13 @@ pulumi.runtime.registerResourceModule("akamai", "index/appSecThreatIntel", _modu
 pulumi.runtime.registerResourceModule("akamai", "index/appSecVersionNodes", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecWafMode", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecWafProtection", _module)
-pulumi.runtime.registerResourceModule("akamai", "index/appSecWapSelectedHostnames", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/appsecAapSelectedHostnames", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecAdvancedSettingsAttackPayloadLogging", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecAdvancedSettingsPiiLearning", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecAdvancedSettingsRequestBody", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecEvalPenaltyBoxConditions", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecPenaltyBoxConditions", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/appsecRapidRules", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecSecurityPolicyDefaultProtections", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanAkamaiBotCategoryAction", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanBotAnalyticsCookie", _module)
@@ -1714,11 +1851,14 @@ pulumi.runtime.registerResourceModule("akamai", "index/botmanBotDetectionAction"
 pulumi.runtime.registerResourceModule("akamai", "index/botmanBotManagementSettings", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanChallengeAction", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanChallengeInjectionRules", _module)
-pulumi.runtime.registerResourceModule("akamai", "index/botmanChallengeInterceptionRules", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanClientSideSecurity", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanConditionalAction", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/botmanContentProtectionJavascriptInjectionRule", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/botmanContentProtectionRule", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/botmanContentProtectionRuleSequence", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomBotCategory", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomBotCategoryAction", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomBotCategoryItemSequence", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomBotCategorySequence", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomClient", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomClientSequence", _module)
@@ -1732,6 +1872,7 @@ pulumi.runtime.registerResourceModule("akamai", "index/botmanTransactionalEndpoi
 pulumi.runtime.registerResourceModule("akamai", "index/botmanTransactionalEndpointProtection", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/clientlistActivation", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/clientlistList", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/cloudAccessKey", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cloudletsApplicationLoadBalancer", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cloudletsApplicationLoadBalancerActivation", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cloudletsPolicy", _module)
@@ -1759,7 +1900,9 @@ pulumi.runtime.registerResourceModule("akamai", "index/gtmGeomap", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/gtmProperty", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/gtmResource", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/iamBlockedUserProperties", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/iamCidrBlock", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/iamGroup", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/iamIpAllowlist", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/iamRole", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/iamUser", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/imagingPolicyImage", _module)

@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-akamai/sdk/v7/go/akamai/internal"
+	"github.com/pulumi/pulumi-akamai/sdk/v8/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -33,8 +33,6 @@ type CpsUploadCertificate struct {
 	TrustChainEcdsaPem pulumi.StringPtrOutput `pulumi:"trustChainEcdsaPem"`
 	// Trust chain in pem format for provided RSA certificate
 	TrustChainRsaPem pulumi.StringPtrOutput `pulumi:"trustChainRsaPem"`
-	// Used to distinguish whether there are unacknowledged warnings for a certificate
-	UnacknowledgedWarnings pulumi.BoolOutput `pulumi:"unacknowledgedWarnings"`
 	// Whether to wait for certificate to be deployed
 	WaitForDeployment pulumi.BoolPtrOutput `pulumi:"waitForDeployment"`
 }
@@ -90,8 +88,6 @@ type cpsUploadCertificateState struct {
 	TrustChainEcdsaPem *string `pulumi:"trustChainEcdsaPem"`
 	// Trust chain in pem format for provided RSA certificate
 	TrustChainRsaPem *string `pulumi:"trustChainRsaPem"`
-	// Used to distinguish whether there are unacknowledged warnings for a certificate
-	UnacknowledgedWarnings *bool `pulumi:"unacknowledgedWarnings"`
 	// Whether to wait for certificate to be deployed
 	WaitForDeployment *bool `pulumi:"waitForDeployment"`
 }
@@ -115,8 +111,6 @@ type CpsUploadCertificateState struct {
 	TrustChainEcdsaPem pulumi.StringPtrInput
 	// Trust chain in pem format for provided RSA certificate
 	TrustChainRsaPem pulumi.StringPtrInput
-	// Used to distinguish whether there are unacknowledged warnings for a certificate
-	UnacknowledgedWarnings pulumi.BoolPtrInput
 	// Whether to wait for certificate to be deployed
 	WaitForDeployment pulumi.BoolPtrInput
 }
@@ -302,11 +296,6 @@ func (o CpsUploadCertificateOutput) TrustChainEcdsaPem() pulumi.StringPtrOutput 
 // Trust chain in pem format for provided RSA certificate
 func (o CpsUploadCertificateOutput) TrustChainRsaPem() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsUploadCertificate) pulumi.StringPtrOutput { return v.TrustChainRsaPem }).(pulumi.StringPtrOutput)
-}
-
-// Used to distinguish whether there are unacknowledged warnings for a certificate
-func (o CpsUploadCertificateOutput) UnacknowledgedWarnings() pulumi.BoolOutput {
-	return o.ApplyT(func(v *CpsUploadCertificate) pulumi.BoolOutput { return v.UnacknowledgedWarnings }).(pulumi.BoolOutput)
 }
 
 // Whether to wait for certificate to be deployed

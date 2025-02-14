@@ -35,6 +35,10 @@ export class CpsDvValidation extends pulumi.CustomResource {
     }
 
     /**
+     * Whether to acknowledge all post-verification warnings
+     */
+    public readonly acknowledgePostVerificationWarnings!: pulumi.Output<boolean | undefined>;
+    /**
      * The unique identifier of enrollment
      */
     public readonly enrollmentId!: pulumi.Output<number>;
@@ -64,6 +68,7 @@ export class CpsDvValidation extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CpsDvValidationState | undefined;
+            resourceInputs["acknowledgePostVerificationWarnings"] = state ? state.acknowledgePostVerificationWarnings : undefined;
             resourceInputs["enrollmentId"] = state ? state.enrollmentId : undefined;
             resourceInputs["sans"] = state ? state.sans : undefined;
             resourceInputs["status"] = state ? state.status : undefined;
@@ -73,6 +78,7 @@ export class CpsDvValidation extends pulumi.CustomResource {
             if ((!args || args.enrollmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'enrollmentId'");
             }
+            resourceInputs["acknowledgePostVerificationWarnings"] = args ? args.acknowledgePostVerificationWarnings : undefined;
             resourceInputs["enrollmentId"] = args ? args.enrollmentId : undefined;
             resourceInputs["sans"] = args ? args.sans : undefined;
             resourceInputs["timeouts"] = args ? args.timeouts : undefined;
@@ -87,6 +93,10 @@ export class CpsDvValidation extends pulumi.CustomResource {
  * Input properties used for looking up and filtering CpsDvValidation resources.
  */
 export interface CpsDvValidationState {
+    /**
+     * Whether to acknowledge all post-verification warnings
+     */
+    acknowledgePostVerificationWarnings?: pulumi.Input<boolean>;
     /**
      * The unique identifier of enrollment
      */
@@ -109,6 +119,10 @@ export interface CpsDvValidationState {
  * The set of arguments for constructing a CpsDvValidation resource.
  */
 export interface CpsDvValidationArgs {
+    /**
+     * Whether to acknowledge all post-verification warnings
+     */
+    acknowledgePostVerificationWarnings?: pulumi.Input<boolean>;
     /**
      * The unique identifier of enrollment
      */

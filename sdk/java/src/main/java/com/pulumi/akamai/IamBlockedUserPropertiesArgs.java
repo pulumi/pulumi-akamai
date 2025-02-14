@@ -17,14 +17,14 @@ public final class IamBlockedUserPropertiesArgs extends com.pulumi.resources.Res
     public static final IamBlockedUserPropertiesArgs Empty = new IamBlockedUserPropertiesArgs();
 
     /**
-     * List of properties to block for a user
+     * List of properties to block for a user.
      * 
      */
     @Import(name="blockedProperties", required=true)
     private Output<List<Integer>> blockedProperties;
 
     /**
-     * @return List of properties to block for a user
+     * @return List of properties to block for a user.
      * 
      */
     public Output<List<Integer>> blockedProperties() {
@@ -32,14 +32,14 @@ public final class IamBlockedUserPropertiesArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * A unique identifier for a group
+     * A unique identifier for a group.
      * 
      */
     @Import(name="groupId", required=true)
     private Output<Integer> groupId;
 
     /**
-     * @return A unique identifier for a group
+     * @return A unique identifier for a group.
      * 
      */
     public Output<Integer> groupId() {
@@ -47,14 +47,14 @@ public final class IamBlockedUserPropertiesArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * A unique identifier for a user&#39;s profile, which corresponds to a user&#39;s actual profile or client ID
+     * A unique identifier for a user&#39;s profile, which corresponds to a user&#39;s actual profile or client ID.
      * 
      */
     @Import(name="identityId", required=true)
     private Output<String> identityId;
 
     /**
-     * @return A unique identifier for a user&#39;s profile, which corresponds to a user&#39;s actual profile or client ID
+     * @return A unique identifier for a user&#39;s profile, which corresponds to a user&#39;s actual profile or client ID.
      * 
      */
     public Output<String> identityId() {
@@ -88,7 +88,7 @@ public final class IamBlockedUserPropertiesArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param blockedProperties List of properties to block for a user
+         * @param blockedProperties List of properties to block for a user.
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class IamBlockedUserPropertiesArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param blockedProperties List of properties to block for a user
+         * @param blockedProperties List of properties to block for a user.
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class IamBlockedUserPropertiesArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param blockedProperties List of properties to block for a user
+         * @param blockedProperties List of properties to block for a user.
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class IamBlockedUserPropertiesArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param groupId A unique identifier for a group
+         * @param groupId A unique identifier for a group.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class IamBlockedUserPropertiesArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param groupId A unique identifier for a group
+         * @param groupId A unique identifier for a group.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class IamBlockedUserPropertiesArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param identityId A unique identifier for a user&#39;s profile, which corresponds to a user&#39;s actual profile or client ID
+         * @param identityId A unique identifier for a user&#39;s profile, which corresponds to a user&#39;s actual profile or client ID.
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class IamBlockedUserPropertiesArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param identityId A unique identifier for a user&#39;s profile, which corresponds to a user&#39;s actual profile or client ID
+         * @param identityId A unique identifier for a user&#39;s profile, which corresponds to a user&#39;s actual profile or client ID.
          * 
          * @return builder
          * 

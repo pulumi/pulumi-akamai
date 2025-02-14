@@ -60,6 +60,7 @@ namespace Pulumi.Akamai
     [OutputType]
     public sealed class GetPropertyIncludeResult
     {
+        public readonly string AssetId;
         public readonly string ContractId;
         public readonly string GroupId;
         public readonly string Id;
@@ -72,6 +73,8 @@ namespace Pulumi.Akamai
 
         [OutputConstructor]
         private GetPropertyIncludeResult(
+            string assetId,
+
             string contractId,
 
             string groupId,
@@ -90,6 +93,7 @@ namespace Pulumi.Akamai
 
             string type)
         {
+            AssetId = assetId;
             ContractId = contractId;
             GroupId = groupId;
             Id = id;

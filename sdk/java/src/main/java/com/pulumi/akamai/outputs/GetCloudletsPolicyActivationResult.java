@@ -15,11 +15,9 @@ import javax.annotation.Nullable;
 public final class GetCloudletsPolicyActivationResult {
     private @Nullable List<String> associatedProperties;
     /**
-     * @deprecated
-     * Required by the terraform plugin testing framework.
+     * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    @Deprecated /* Required by the terraform plugin testing framework. */
     private String id;
     private String network;
     private Integer policyId;
@@ -31,11 +29,9 @@ public final class GetCloudletsPolicyActivationResult {
         return this.associatedProperties == null ? List.of() : this.associatedProperties;
     }
     /**
-     * @deprecated
-     * Required by the terraform plugin testing framework.
+     * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    @Deprecated /* Required by the terraform plugin testing framework. */
     public String id() {
         return this.id;
     }

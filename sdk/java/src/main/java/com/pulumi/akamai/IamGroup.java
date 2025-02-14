@@ -18,42 +18,42 @@ import javax.annotation.Nullable;
 @ResourceType(type="akamai:index/iamGroup:IamGroup")
 public class IamGroup extends com.pulumi.resources.CustomResource {
     /**
-     * Human readable name for a group
+     * Human readable name for a group.
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return Human readable name for a group
+     * @return Human readable name for a group.
      * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
-     * Unique identifier for the parent group
+     * Unique identifier for the parent group.
      * 
      */
     @Export(name="parentGroupId", refs={Integer.class}, tree="[0]")
     private Output<Integer> parentGroupId;
 
     /**
-     * @return Unique identifier for the parent group
+     * @return Unique identifier for the parent group.
      * 
      */
     public Output<Integer> parentGroupId() {
         return this.parentGroupId;
     }
     /**
-     * Subgroups IDs
+     * Subgroups IDs.
      * 
      */
     @Export(name="subGroups", refs={List.class,Integer.class}, tree="[0,1]")
     private Output<List<Integer>> subGroups;
 
     /**
-     * @return Subgroups IDs
+     * @return Subgroups IDs.
      * 
      */
     public Output<List<Integer>> subGroups() {

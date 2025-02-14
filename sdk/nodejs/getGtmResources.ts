@@ -28,7 +28,7 @@ export interface GetGtmResourcesArgs {
 export interface GetGtmResourcesResult {
     readonly domain: string;
     /**
-     * @deprecated Required by the terraform plugin testing framework, always set to `akamai.getGtmResources`.
+     * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
     readonly resources?: outputs.GetGtmResourcesResource[];

@@ -67,12 +67,6 @@ namespace Pulumi.Akamai
         public Output<string?> TrustChainRsaPem { get; private set; } = null!;
 
         /// <summary>
-        /// Used to distinguish whether there are unacknowledged warnings for a certificate
-        /// </summary>
-        [Output("unacknowledgedWarnings")]
-        public Output<bool> UnacknowledgedWarnings { get; private set; } = null!;
-
-        /// <summary>
         /// Whether to wait for certificate to be deployed
         /// </summary>
         [Output("waitForDeployment")]
@@ -257,12 +251,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("trustChainRsaPem")]
         public Input<string>? TrustChainRsaPem { get; set; }
-
-        /// <summary>
-        /// Used to distinguish whether there are unacknowledged warnings for a certificate
-        /// </summary>
-        [Input("unacknowledgedWarnings")]
-        public Input<bool>? UnacknowledgedWarnings { get; set; }
 
         /// <summary>
         /// Whether to wait for certificate to be deployed

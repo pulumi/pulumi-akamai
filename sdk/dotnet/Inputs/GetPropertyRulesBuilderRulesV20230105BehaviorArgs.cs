@@ -25,7 +25,7 @@ namespace Pulumi.Akamai.Inputs
         public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorAdaptiveAccelerationInputArgs>? AdaptiveAcceleration { get; set; }
 
         /// <summary>
-        /// The Adaptive Image Compression feature compresses JPEG images depending on the requesting network's performance, thus improving response time. The behavior specifies three performance tiers based on round-trip tests: 1 for excellent, 2 for good, and 3 for poor. It assigns separate performance criteria for mobile (cellular) and non-mobile networks, which the `compressMobile` and `compressStandard` options enable independently. This behavior can be used in includes.
+        /// &gt; **Note**: Starting from May 31, 2024, Adaptive Image Compression is no longer supported and the image compression configured through this functionality won't take place. As an alternative, we offer `Image &amp; Video Manager`. It intelligently and automatically optimizes images and videos on the fly for every user. Reach out to your Akamai representatives for more information on this product. This behavior can be used in includes.
         /// </summary>
         [Input("adaptiveImageCompression")]
         public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorAdaptiveImageCompressionInputArgs>? AdaptiveImageCompression { get; set; }
@@ -979,13 +979,13 @@ namespace Pulumi.Akamai.Inputs
         public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRapidInputArgs>? Rapid { get; set; }
 
         /// <summary>
-        /// This behavior specifies how long the edge server should wait for a response from the requesting forward server after a connection has already been established. Any failure to read aborts the request and sends a `504` Gateway Timeout error to the client. Contact Akamai Professional Services for help configuring this behavior. This behavior can be used in includes.
+        /// This behavior specifies how long the edge server should wait for a response from the requesting forward server after a connection has already been established. This behavior can be used in includes.
         /// </summary>
         [Input("readTimeout")]
         public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorReadTimeoutInputArgs>? ReadTimeout { get; set; }
 
         /// <summary>
-        /// This enables `Real-Time Reporting` for Akamai Cloud Embed customers. The behavior can only be configured on your behalf by Akamai Professional Services. This behavior is for internal usage only. This behavior can be used in includes.
+        /// This enables Real-Time Reporting for Akamai `Cloud Embed` customers. The behavior can only be configured on your behalf by Akamai Professional Services. You can access real-time reports data for that base configuration with `Media Delivery Reports API`. This behavior is for internal usage only. This behavior can be used in includes.
         /// </summary>
         [Input("realTimeReporting")]
         public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorRealTimeReportingInputArgs>? RealTimeReporting { get; set; }
@@ -1129,7 +1129,7 @@ namespace Pulumi.Akamai.Inputs
         public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorScheduleInvalidationInputArgs>? ScheduleInvalidation { get; set; }
 
         /// <summary>
-        /// Ensures unresponsive linked JavaScript files do not prevent HTML pages from loading. This behavior cannot be used in includes.
+        /// Ensures unresponsive linked JavaScript files do not prevent HTML pages from loading. See `Script Management API` for more information. This behavior cannot be used in includes.
         /// </summary>
         [Input("scriptManagement")]
         public Input<Inputs.GetPropertyRulesBuilderRulesV20230105BehaviorScriptManagementInputArgs>? ScriptManagement { get; set; }

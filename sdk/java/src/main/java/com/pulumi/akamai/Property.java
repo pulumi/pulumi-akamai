@@ -23,6 +23,20 @@ import javax.annotation.Nullable;
 @ResourceType(type="akamai:index/property:Property")
 public class Property extends com.pulumi.resources.CustomResource {
     /**
+     * ID of the property in the Identity and Access Management API.
+     * 
+     */
+    @Export(name="assetId", refs={String.class}, tree="[0]")
+    private Output<String> assetId;
+
+    /**
+     * @return ID of the property in the Identity and Access Management API.
+     * 
+     */
+    public Output<String> assetId() {
+        return this.assetId;
+    }
+    /**
      * Contract ID to be assigned to the Property
      * 
      */

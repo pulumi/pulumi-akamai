@@ -71,10 +71,6 @@ export class CpsUploadCertificate extends pulumi.CustomResource {
      */
     public readonly trustChainRsaPem!: pulumi.Output<string | undefined>;
     /**
-     * Used to distinguish whether there are unacknowledged warnings for a certificate
-     */
-    public /*out*/ readonly unacknowledgedWarnings!: pulumi.Output<boolean>;
-    /**
      * Whether to wait for certificate to be deployed
      */
     public readonly waitForDeployment!: pulumi.Output<boolean | undefined>;
@@ -101,7 +97,6 @@ export class CpsUploadCertificate extends pulumi.CustomResource {
             resourceInputs["timeouts"] = state ? state.timeouts : undefined;
             resourceInputs["trustChainEcdsaPem"] = state ? state.trustChainEcdsaPem : undefined;
             resourceInputs["trustChainRsaPem"] = state ? state.trustChainRsaPem : undefined;
-            resourceInputs["unacknowledgedWarnings"] = state ? state.unacknowledgedWarnings : undefined;
             resourceInputs["waitForDeployment"] = state ? state.waitForDeployment : undefined;
         } else {
             const args = argsOrState as CpsUploadCertificateArgs | undefined;
@@ -118,7 +113,6 @@ export class CpsUploadCertificate extends pulumi.CustomResource {
             resourceInputs["trustChainEcdsaPem"] = args ? args.trustChainEcdsaPem : undefined;
             resourceInputs["trustChainRsaPem"] = args ? args.trustChainRsaPem : undefined;
             resourceInputs["waitForDeployment"] = args ? args.waitForDeployment : undefined;
-            resourceInputs["unacknowledgedWarnings"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CpsUploadCertificate.__pulumiType, name, resourceInputs, opts);
@@ -165,10 +159,6 @@ export interface CpsUploadCertificateState {
      * Trust chain in pem format for provided RSA certificate
      */
     trustChainRsaPem?: pulumi.Input<string>;
-    /**
-     * Used to distinguish whether there are unacknowledged warnings for a certificate
-     */
-    unacknowledgedWarnings?: pulumi.Input<boolean>;
     /**
      * Whether to wait for certificate to be deployed
      */

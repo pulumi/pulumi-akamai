@@ -95,6 +95,9 @@ namespace Pulumi.Akamai
         public readonly ImmutableArray<Outputs.GetGtmAsmapAssignmentResult> Assignments;
         public readonly Outputs.GetGtmAsmapDefaultDatacenterResult? DefaultDatacenter;
         public readonly string Domain;
+        /// <summary>
+        /// The provider-assigned unique ID for this managed resource.
+        /// </summary>
         public readonly string Id;
         public readonly ImmutableArray<Outputs.GetGtmAsmapLinkResult> Links;
         public readonly string MapName;

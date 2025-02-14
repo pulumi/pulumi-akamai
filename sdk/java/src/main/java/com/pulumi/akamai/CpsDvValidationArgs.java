@@ -7,6 +7,7 @@ import com.pulumi.akamai.inputs.CpsDvValidationTimeoutsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -18,6 +19,21 @@ import javax.annotation.Nullable;
 public final class CpsDvValidationArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final CpsDvValidationArgs Empty = new CpsDvValidationArgs();
+
+    /**
+     * Whether to acknowledge all post-verification warnings
+     * 
+     */
+    @Import(name="acknowledgePostVerificationWarnings")
+    private @Nullable Output<Boolean> acknowledgePostVerificationWarnings;
+
+    /**
+     * @return Whether to acknowledge all post-verification warnings
+     * 
+     */
+    public Optional<Output<Boolean>> acknowledgePostVerificationWarnings() {
+        return Optional.ofNullable(this.acknowledgePostVerificationWarnings);
+    }
 
     /**
      * The unique identifier of enrollment
@@ -67,6 +83,7 @@ public final class CpsDvValidationArgs extends com.pulumi.resources.ResourceArgs
     private CpsDvValidationArgs() {}
 
     private CpsDvValidationArgs(CpsDvValidationArgs $) {
+        this.acknowledgePostVerificationWarnings = $.acknowledgePostVerificationWarnings;
         this.enrollmentId = $.enrollmentId;
         this.sans = $.sans;
         this.timeouts = $.timeouts;
@@ -88,6 +105,27 @@ public final class CpsDvValidationArgs extends com.pulumi.resources.ResourceArgs
 
         public Builder(CpsDvValidationArgs defaults) {
             $ = new CpsDvValidationArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param acknowledgePostVerificationWarnings Whether to acknowledge all post-verification warnings
+         * 
+         * @return builder
+         * 
+         */
+        public Builder acknowledgePostVerificationWarnings(@Nullable Output<Boolean> acknowledgePostVerificationWarnings) {
+            $.acknowledgePostVerificationWarnings = acknowledgePostVerificationWarnings;
+            return this;
+        }
+
+        /**
+         * @param acknowledgePostVerificationWarnings Whether to acknowledge all post-verification warnings
+         * 
+         * @return builder
+         * 
+         */
+        public Builder acknowledgePostVerificationWarnings(Boolean acknowledgePostVerificationWarnings) {
+            return acknowledgePostVerificationWarnings(Output.of(acknowledgePostVerificationWarnings));
         }
 
         /**

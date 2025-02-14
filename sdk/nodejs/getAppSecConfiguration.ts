@@ -24,6 +24,7 @@ export interface GetAppSecConfigurationArgs {
  */
 export interface GetAppSecConfigurationResult {
     readonly configId: number;
+    readonly hostNames: string[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */

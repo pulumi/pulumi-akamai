@@ -15,11 +15,9 @@ import javax.annotation.Nullable;
 public final class GetGtmDomainsResult {
     private @Nullable List<GetGtmDomainsDomain> domains;
     /**
-     * @deprecated
-     * Required by the terraform plugin testing framework, always set to `akamai.getGtmDomains`.
+     * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    @Deprecated /* Required by the terraform plugin testing framework, always set to `akamai.getGtmDomains`. */
     private String id;
 
     private GetGtmDomainsResult() {}
@@ -27,11 +25,9 @@ public final class GetGtmDomainsResult {
         return this.domains == null ? List.of() : this.domains;
     }
     /**
-     * @deprecated
-     * Required by the terraform plugin testing framework, always set to `akamai.getGtmDomains`.
+     * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    @Deprecated /* Required by the terraform plugin testing framework, always set to `akamai.getGtmDomains`. */
     public String id() {
         return this.id;
     }

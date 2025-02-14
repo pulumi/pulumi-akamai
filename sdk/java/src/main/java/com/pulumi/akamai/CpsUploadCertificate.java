@@ -147,20 +147,6 @@ public class CpsUploadCertificate extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.trustChainRsaPem);
     }
     /**
-     * Used to distinguish whether there are unacknowledged warnings for a certificate
-     * 
-     */
-    @Export(name="unacknowledgedWarnings", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> unacknowledgedWarnings;
-
-    /**
-     * @return Used to distinguish whether there are unacknowledged warnings for a certificate
-     * 
-     */
-    public Output<Boolean> unacknowledgedWarnings() {
-        return this.unacknowledgedWarnings;
-    }
-    /**
      * Whether to wait for certificate to be deployed
      * 
      */

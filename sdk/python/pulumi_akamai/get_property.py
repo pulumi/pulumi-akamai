@@ -26,7 +26,10 @@ class GetPropertyResult:
     """
     A collection of values returned by getProperty.
     """
-    def __init__(__self__, contract_id=None, group_id=None, id=None, latest_version=None, name=None, note=None, product_id=None, production_version=None, property_id=None, rule_format=None, rules=None, staging_version=None, version=None):
+    def __init__(__self__, asset_id=None, contract_id=None, group_id=None, id=None, latest_version=None, name=None, note=None, product_id=None, production_version=None, property_id=None, rule_format=None, rules=None, staging_version=None, version=None):
+        if asset_id and not isinstance(asset_id, str):
+            raise TypeError("Expected argument 'asset_id' to be a str")
+        pulumi.set(__self__, "asset_id", asset_id)
         if contract_id and not isinstance(contract_id, str):
             raise TypeError("Expected argument 'contract_id' to be a str")
         pulumi.set(__self__, "contract_id", contract_id)
@@ -66,6 +69,11 @@ class GetPropertyResult:
         if version and not isinstance(version, int):
             raise TypeError("Expected argument 'version' to be a int")
         pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="assetId")
+    def asset_id(self) -> str:
+        return pulumi.get(self, "asset_id")
 
     @property
     @pulumi.getter(name="contractId")
@@ -142,6 +150,7 @@ class AwaitableGetPropertyResult(GetPropertyResult):
         if False:
             yield self
         return GetPropertyResult(
+            asset_id=self.asset_id,
             contract_id=self.contract_id,
             group_id=self.group_id,
             id=self.id,
@@ -170,6 +179,7 @@ def get_property(name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getProperty:getProperty', __args__, opts=opts, typ=GetPropertyResult).value
 
     return AwaitableGetPropertyResult(
+        asset_id=pulumi.get(__ret__, 'asset_id'),
         contract_id=pulumi.get(__ret__, 'contract_id'),
         group_id=pulumi.get(__ret__, 'group_id'),
         id=pulumi.get(__ret__, 'id'),
@@ -195,6 +205,7 @@ def get_property_output(name: Optional[pulumi.Input[str]] = None,
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('akamai:index/getProperty:getProperty', __args__, opts=opts, typ=GetPropertyResult)
     return __ret__.apply(lambda __response__: GetPropertyResult(
+        asset_id=pulumi.get(__response__, 'asset_id'),
         contract_id=pulumi.get(__response__, 'contract_id'),
         group_id=pulumi.get(__response__, 'group_id'),
         id=pulumi.get(__response__, 'id'),

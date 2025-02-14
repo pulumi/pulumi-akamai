@@ -54,6 +54,9 @@ namespace Pulumi.Akamai
     [OutputType]
     public sealed class GetCloudwrapperLocationResult
     {
+        /// <summary>
+        /// The provider-assigned unique ID for this managed resource.
+        /// </summary>
         public readonly string Id;
         public readonly string LocationId;
         public readonly string LocationName;

@@ -18,14 +18,14 @@ public final class IamGroupArgs extends com.pulumi.resources.ResourceArgs {
     public static final IamGroupArgs Empty = new IamGroupArgs();
 
     /**
-     * Human readable name for a group
+     * Human readable name for a group.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return Human readable name for a group
+     * @return Human readable name for a group.
      * 
      */
     public Optional<Output<String>> name() {
@@ -33,14 +33,14 @@ public final class IamGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Unique identifier for the parent group
+     * Unique identifier for the parent group.
      * 
      */
     @Import(name="parentGroupId", required=true)
     private Output<Integer> parentGroupId;
 
     /**
-     * @return Unique identifier for the parent group
+     * @return Unique identifier for the parent group.
      * 
      */
     public Output<Integer> parentGroupId() {
@@ -73,7 +73,7 @@ public final class IamGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name Human readable name for a group
+         * @param name Human readable name for a group.
          * 
          * @return builder
          * 
@@ -84,7 +84,7 @@ public final class IamGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name Human readable name for a group
+         * @param name Human readable name for a group.
          * 
          * @return builder
          * 
@@ -94,7 +94,7 @@ public final class IamGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param parentGroupId Unique identifier for the parent group
+         * @param parentGroupId Unique identifier for the parent group.
          * 
          * @return builder
          * 
@@ -105,7 +105,7 @@ public final class IamGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param parentGroupId Unique identifier for the parent group
+         * @param parentGroupId Unique identifier for the parent group.
          * 
          * @return builder
          * 

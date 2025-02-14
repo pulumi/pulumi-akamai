@@ -13,6 +13,7 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyResult {
+    private String assetId;
     private String contractId;
     private String groupId;
     /**
@@ -32,6 +33,9 @@ public final class GetPropertyResult {
     private @Nullable Integer version;
 
     private GetPropertyResult() {}
+    public String assetId() {
+        return this.assetId;
+    }
     public String contractId() {
         return this.contractId;
     }
@@ -85,6 +89,7 @@ public final class GetPropertyResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String assetId;
         private String contractId;
         private String groupId;
         private String id;
@@ -101,6 +106,7 @@ public final class GetPropertyResult {
         public Builder() {}
         public Builder(GetPropertyResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.assetId = defaults.assetId;
     	      this.contractId = defaults.contractId;
     	      this.groupId = defaults.groupId;
     	      this.id = defaults.id;
@@ -116,6 +122,14 @@ public final class GetPropertyResult {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
+        public Builder assetId(String assetId) {
+            if (assetId == null) {
+              throw new MissingRequiredPropertyException("GetPropertyResult", "assetId");
+            }
+            this.assetId = assetId;
+            return this;
+        }
         @CustomType.Setter
         public Builder contractId(String contractId) {
             if (contractId == null) {
@@ -220,6 +234,7 @@ public final class GetPropertyResult {
         }
         public GetPropertyResult build() {
             final var _resultValue = new GetPropertyResult();
+            _resultValue.assetId = assetId;
             _resultValue.contractId = contractId;
             _resultValue.groupId = groupId;
             _resultValue.id = id;

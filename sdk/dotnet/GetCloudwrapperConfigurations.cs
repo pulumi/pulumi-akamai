@@ -59,6 +59,9 @@ namespace Pulumi.Akamai
     public sealed class GetCloudwrapperConfigurationsResult
     {
         public readonly ImmutableArray<Outputs.GetCloudwrapperConfigurationsConfigurationResult> Configurations;
+        /// <summary>
+        /// The provider-assigned unique ID for this managed resource.
+        /// </summary>
         public readonly string Id;
 
         [OutputConstructor]

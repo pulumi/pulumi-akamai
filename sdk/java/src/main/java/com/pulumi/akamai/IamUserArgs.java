@@ -3,6 +3,7 @@
 
 package com.pulumi.akamai;
 
+import com.pulumi.akamai.inputs.IamUserUserNotificationsArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
@@ -19,14 +20,14 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     public static final IamUserArgs Empty = new IamUserArgs();
 
     /**
-     * The user&#39;s street address
+     * The user&#39;s street address.
      * 
      */
     @Import(name="address")
     private @Nullable Output<String> address;
 
     /**
-     * @return The user&#39;s street address
+     * @return The user&#39;s street address.
      * 
      */
     public Optional<Output<String>> address() {
@@ -34,14 +35,14 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A user&#39;s per-group role assignments, in JSON form
+     * A user&#39;s per-group role assignments, in JSON form.
      * 
      */
     @Import(name="authGrantsJson", required=true)
     private Output<String> authGrantsJson;
 
     /**
-     * @return A user&#39;s per-group role assignments, in JSON form
+     * @return A user&#39;s per-group role assignments, in JSON form.
      * 
      */
     public Output<String> authGrantsJson() {
@@ -49,14 +50,14 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The user&#39;s city
+     * The user&#39;s city.
      * 
      */
     @Import(name="city")
     private @Nullable Output<String> city;
 
     /**
-     * @return The user&#39;s city
+     * @return The user&#39;s city.
      * 
      */
     public Optional<Output<String>> city() {
@@ -64,14 +65,14 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * To help characterize the user, the value can be any that are available from the view-contact-types operation
+     * To help characterize the user, the value can be any that are available from the view-contact-types operation.
      * 
      */
     @Import(name="contactType")
     private @Nullable Output<String> contactType;
 
     /**
-     * @return To help characterize the user, the value can be any that are available from the view-contact-types operation
+     * @return To help characterize the user, the value can be any that are available from the view-contact-types operation.
      * 
      */
     public Optional<Output<String>> contactType() {
@@ -79,14 +80,14 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * As part of the user&#39;s location, the value can be any that are available from the view-supported-countries operation
+     * As part of the user&#39;s location, the value can be any that are available from the view-supported-countries operation.
      * 
      */
     @Import(name="country", required=true)
     private Output<String> country;
 
     /**
-     * @return As part of the user&#39;s location, the value can be any that are available from the view-supported-countries operation
+     * @return As part of the user&#39;s location, the value can be any that are available from the view-supported-countries operation.
      * 
      */
     public Output<String> country() {
@@ -94,14 +95,14 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The user&#39;s email address
+     * The user&#39;s email address.
      * 
      */
     @Import(name="email", required=true)
     private Output<String> email;
 
     /**
-     * @return The user&#39;s email address
+     * @return The user&#39;s email address.
      * 
      */
     public Output<String> email() {
@@ -109,29 +110,44 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Indicates whether two-factor authentication is allowed
+     * Indicates whether multi-factor authentication is allowed.
      * 
      */
-    @Import(name="enableTfa", required=true)
-    private Output<Boolean> enableTfa;
+    @Import(name="enableMfa")
+    private @Nullable Output<Boolean> enableMfa;
 
     /**
-     * @return Indicates whether two-factor authentication is allowed
+     * @return Indicates whether multi-factor authentication is allowed.
      * 
      */
-    public Output<Boolean> enableTfa() {
-        return this.enableTfa;
+    public Optional<Output<Boolean>> enableMfa() {
+        return Optional.ofNullable(this.enableMfa);
     }
 
     /**
-     * The user&#39;s first name
+     * Indicates whether two-factor authentication is allowed.
+     * 
+     */
+    @Import(name="enableTfa")
+    private @Nullable Output<Boolean> enableTfa;
+
+    /**
+     * @return Indicates whether two-factor authentication is allowed.
+     * 
+     */
+    public Optional<Output<Boolean>> enableTfa() {
+        return Optional.ofNullable(this.enableTfa);
+    }
+
+    /**
+     * The user&#39;s first name.
      * 
      */
     @Import(name="firstName", required=true)
     private Output<String> firstName;
 
     /**
-     * @return The user&#39;s first name
+     * @return The user&#39;s first name.
      * 
      */
     public Output<String> firstName() {
@@ -139,14 +155,14 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The user&#39;s position at your company
+     * The user&#39;s position at your company.
      * 
      */
     @Import(name="jobTitle")
     private @Nullable Output<String> jobTitle;
 
     /**
-     * @return The user&#39;s position at your company
+     * @return The user&#39;s position at your company.
      * 
      */
     public Optional<Output<String>> jobTitle() {
@@ -154,14 +170,14 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The user&#39;s surname
+     * The user&#39;s surname.
      * 
      */
     @Import(name="lastName", required=true)
     private Output<String> lastName;
 
     /**
-     * @return The user&#39;s surname
+     * @return The user&#39;s surname.
      * 
      */
     public Output<String> lastName() {
@@ -169,14 +185,14 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Flag to block a user account
+     * Flag to block a user account.
      * 
      */
     @Import(name="lock")
     private @Nullable Output<Boolean> lock;
 
     /**
-     * @return Flag to block a user account
+     * @return Flag to block a user account.
      * 
      */
     public Optional<Output<Boolean>> lock() {
@@ -184,14 +200,14 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The user&#39;s mobile phone number
+     * The user&#39;s mobile phone number.
      * 
      */
     @Import(name="mobilePhone")
     private @Nullable Output<String> mobilePhone;
 
     /**
-     * @return The user&#39;s mobile phone number
+     * @return The user&#39;s mobile phone number.
      * 
      */
     public Optional<Output<String>> mobilePhone() {
@@ -199,14 +215,29 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The user&#39;s main phone number
+     * New password for a user.
+     * 
+     */
+    @Import(name="password")
+    private @Nullable Output<String> password;
+
+    /**
+     * @return New password for a user.
+     * 
+     */
+    public Optional<Output<String>> password() {
+        return Optional.ofNullable(this.password);
+    }
+
+    /**
+     * The user&#39;s main phone number.
      * 
      */
     @Import(name="phone")
     private @Nullable Output<String> phone;
 
     /**
-     * @return The user&#39;s main phone number
+     * @return The user&#39;s main phone number.
      * 
      */
     public Optional<Output<String>> phone() {
@@ -214,14 +245,14 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The value can be any that are available from the view-languages operation
+     * The value can be any that are available from the view-languages operation.
      * 
      */
     @Import(name="preferredLanguage")
     private @Nullable Output<String> preferredLanguage;
 
     /**
-     * @return The value can be any that are available from the view-languages operation
+     * @return The value can be any that are available from the view-languages operation.
      * 
      */
     public Optional<Output<String>> preferredLanguage() {
@@ -229,14 +260,14 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The user&#39;s secondary email address
+     * The user&#39;s secondary email address.
      * 
      */
     @Import(name="secondaryEmail")
     private @Nullable Output<String> secondaryEmail;
 
     /**
-     * @return The user&#39;s secondary email address
+     * @return The user&#39;s secondary email address.
      * 
      */
     public Optional<Output<String>> secondaryEmail() {
@@ -244,14 +275,14 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The number of seconds it takes for the user&#39;s Control Center session to time out if there hasn&#39;t been any activity
+     * The number of seconds it takes for the user&#39;s Control Center session to time out if there hasn&#39;t been any activity.
      * 
      */
     @Import(name="sessionTimeout")
     private @Nullable Output<Integer> sessionTimeout;
 
     /**
-     * @return The number of seconds it takes for the user&#39;s Control Center session to time out if there hasn&#39;t been any activity
+     * @return The number of seconds it takes for the user&#39;s Control Center session to time out if there hasn&#39;t been any activity.
      * 
      */
     public Optional<Output<Integer>> sessionTimeout() {
@@ -259,14 +290,14 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The user&#39;s state
+     * The user&#39;s state.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The user&#39;s state
+     * @return The user&#39;s state.
      * 
      */
     public Optional<Output<String>> state() {
@@ -274,14 +305,14 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The user&#39;s time zone. The value can be any that are available from the view-time-zones operation
+     * The user&#39;s time zone. The value can be any that are available from the view-time-zones operation.
      * 
      */
     @Import(name="timeZone")
     private @Nullable Output<String> timeZone;
 
     /**
-     * @return The user&#39;s time zone. The value can be any that are available from the view-time-zones operation
+     * @return The user&#39;s time zone. The value can be any that are available from the view-time-zones operation.
      * 
      */
     public Optional<Output<String>> timeZone() {
@@ -289,14 +320,29 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The user&#39;s five-digit ZIP code
+     * Specifies email notifications the user receives for products.
+     * 
+     */
+    @Import(name="userNotifications")
+    private @Nullable Output<IamUserUserNotificationsArgs> userNotifications;
+
+    /**
+     * @return Specifies email notifications the user receives for products.
+     * 
+     */
+    public Optional<Output<IamUserUserNotificationsArgs>> userNotifications() {
+        return Optional.ofNullable(this.userNotifications);
+    }
+
+    /**
+     * The user&#39;s five-digit ZIP code.
      * 
      */
     @Import(name="zipCode")
     private @Nullable Output<String> zipCode;
 
     /**
-     * @return The user&#39;s five-digit ZIP code
+     * @return The user&#39;s five-digit ZIP code.
      * 
      */
     public Optional<Output<String>> zipCode() {
@@ -312,18 +358,21 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         this.contactType = $.contactType;
         this.country = $.country;
         this.email = $.email;
+        this.enableMfa = $.enableMfa;
         this.enableTfa = $.enableTfa;
         this.firstName = $.firstName;
         this.jobTitle = $.jobTitle;
         this.lastName = $.lastName;
         this.lock = $.lock;
         this.mobilePhone = $.mobilePhone;
+        this.password = $.password;
         this.phone = $.phone;
         this.preferredLanguage = $.preferredLanguage;
         this.secondaryEmail = $.secondaryEmail;
         this.sessionTimeout = $.sessionTimeout;
         this.state = $.state;
         this.timeZone = $.timeZone;
+        this.userNotifications = $.userNotifications;
         this.zipCode = $.zipCode;
     }
 
@@ -346,7 +395,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param address The user&#39;s street address
+         * @param address The user&#39;s street address.
          * 
          * @return builder
          * 
@@ -357,7 +406,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param address The user&#39;s street address
+         * @param address The user&#39;s street address.
          * 
          * @return builder
          * 
@@ -367,7 +416,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param authGrantsJson A user&#39;s per-group role assignments, in JSON form
+         * @param authGrantsJson A user&#39;s per-group role assignments, in JSON form.
          * 
          * @return builder
          * 
@@ -378,7 +427,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param authGrantsJson A user&#39;s per-group role assignments, in JSON form
+         * @param authGrantsJson A user&#39;s per-group role assignments, in JSON form.
          * 
          * @return builder
          * 
@@ -388,7 +437,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param city The user&#39;s city
+         * @param city The user&#39;s city.
          * 
          * @return builder
          * 
@@ -399,7 +448,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param city The user&#39;s city
+         * @param city The user&#39;s city.
          * 
          * @return builder
          * 
@@ -409,7 +458,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contactType To help characterize the user, the value can be any that are available from the view-contact-types operation
+         * @param contactType To help characterize the user, the value can be any that are available from the view-contact-types operation.
          * 
          * @return builder
          * 
@@ -420,7 +469,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contactType To help characterize the user, the value can be any that are available from the view-contact-types operation
+         * @param contactType To help characterize the user, the value can be any that are available from the view-contact-types operation.
          * 
          * @return builder
          * 
@@ -430,7 +479,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param country As part of the user&#39;s location, the value can be any that are available from the view-supported-countries operation
+         * @param country As part of the user&#39;s location, the value can be any that are available from the view-supported-countries operation.
          * 
          * @return builder
          * 
@@ -441,7 +490,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param country As part of the user&#39;s location, the value can be any that are available from the view-supported-countries operation
+         * @param country As part of the user&#39;s location, the value can be any that are available from the view-supported-countries operation.
          * 
          * @return builder
          * 
@@ -451,7 +500,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param email The user&#39;s email address
+         * @param email The user&#39;s email address.
          * 
          * @return builder
          * 
@@ -462,7 +511,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param email The user&#39;s email address
+         * @param email The user&#39;s email address.
          * 
          * @return builder
          * 
@@ -472,18 +521,39 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableTfa Indicates whether two-factor authentication is allowed
+         * @param enableMfa Indicates whether multi-factor authentication is allowed.
          * 
          * @return builder
          * 
          */
-        public Builder enableTfa(Output<Boolean> enableTfa) {
+        public Builder enableMfa(@Nullable Output<Boolean> enableMfa) {
+            $.enableMfa = enableMfa;
+            return this;
+        }
+
+        /**
+         * @param enableMfa Indicates whether multi-factor authentication is allowed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableMfa(Boolean enableMfa) {
+            return enableMfa(Output.of(enableMfa));
+        }
+
+        /**
+         * @param enableTfa Indicates whether two-factor authentication is allowed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableTfa(@Nullable Output<Boolean> enableTfa) {
             $.enableTfa = enableTfa;
             return this;
         }
 
         /**
-         * @param enableTfa Indicates whether two-factor authentication is allowed
+         * @param enableTfa Indicates whether two-factor authentication is allowed.
          * 
          * @return builder
          * 
@@ -493,7 +563,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param firstName The user&#39;s first name
+         * @param firstName The user&#39;s first name.
          * 
          * @return builder
          * 
@@ -504,7 +574,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param firstName The user&#39;s first name
+         * @param firstName The user&#39;s first name.
          * 
          * @return builder
          * 
@@ -514,7 +584,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param jobTitle The user&#39;s position at your company
+         * @param jobTitle The user&#39;s position at your company.
          * 
          * @return builder
          * 
@@ -525,7 +595,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param jobTitle The user&#39;s position at your company
+         * @param jobTitle The user&#39;s position at your company.
          * 
          * @return builder
          * 
@@ -535,7 +605,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lastName The user&#39;s surname
+         * @param lastName The user&#39;s surname.
          * 
          * @return builder
          * 
@@ -546,7 +616,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lastName The user&#39;s surname
+         * @param lastName The user&#39;s surname.
          * 
          * @return builder
          * 
@@ -556,7 +626,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lock Flag to block a user account
+         * @param lock Flag to block a user account.
          * 
          * @return builder
          * 
@@ -567,7 +637,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lock Flag to block a user account
+         * @param lock Flag to block a user account.
          * 
          * @return builder
          * 
@@ -577,7 +647,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mobilePhone The user&#39;s mobile phone number
+         * @param mobilePhone The user&#39;s mobile phone number.
          * 
          * @return builder
          * 
@@ -588,7 +658,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mobilePhone The user&#39;s mobile phone number
+         * @param mobilePhone The user&#39;s mobile phone number.
          * 
          * @return builder
          * 
@@ -598,7 +668,28 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param phone The user&#39;s main phone number
+         * @param password New password for a user.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder password(@Nullable Output<String> password) {
+            $.password = password;
+            return this;
+        }
+
+        /**
+         * @param password New password for a user.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder password(String password) {
+            return password(Output.of(password));
+        }
+
+        /**
+         * @param phone The user&#39;s main phone number.
          * 
          * @return builder
          * 
@@ -609,7 +700,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param phone The user&#39;s main phone number
+         * @param phone The user&#39;s main phone number.
          * 
          * @return builder
          * 
@@ -619,7 +710,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param preferredLanguage The value can be any that are available from the view-languages operation
+         * @param preferredLanguage The value can be any that are available from the view-languages operation.
          * 
          * @return builder
          * 
@@ -630,7 +721,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param preferredLanguage The value can be any that are available from the view-languages operation
+         * @param preferredLanguage The value can be any that are available from the view-languages operation.
          * 
          * @return builder
          * 
@@ -640,7 +731,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param secondaryEmail The user&#39;s secondary email address
+         * @param secondaryEmail The user&#39;s secondary email address.
          * 
          * @return builder
          * 
@@ -651,7 +742,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param secondaryEmail The user&#39;s secondary email address
+         * @param secondaryEmail The user&#39;s secondary email address.
          * 
          * @return builder
          * 
@@ -661,7 +752,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sessionTimeout The number of seconds it takes for the user&#39;s Control Center session to time out if there hasn&#39;t been any activity
+         * @param sessionTimeout The number of seconds it takes for the user&#39;s Control Center session to time out if there hasn&#39;t been any activity.
          * 
          * @return builder
          * 
@@ -672,7 +763,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sessionTimeout The number of seconds it takes for the user&#39;s Control Center session to time out if there hasn&#39;t been any activity
+         * @param sessionTimeout The number of seconds it takes for the user&#39;s Control Center session to time out if there hasn&#39;t been any activity.
          * 
          * @return builder
          * 
@@ -682,7 +773,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The user&#39;s state
+         * @param state The user&#39;s state.
          * 
          * @return builder
          * 
@@ -693,7 +784,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The user&#39;s state
+         * @param state The user&#39;s state.
          * 
          * @return builder
          * 
@@ -703,7 +794,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeZone The user&#39;s time zone. The value can be any that are available from the view-time-zones operation
+         * @param timeZone The user&#39;s time zone. The value can be any that are available from the view-time-zones operation.
          * 
          * @return builder
          * 
@@ -714,7 +805,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeZone The user&#39;s time zone. The value can be any that are available from the view-time-zones operation
+         * @param timeZone The user&#39;s time zone. The value can be any that are available from the view-time-zones operation.
          * 
          * @return builder
          * 
@@ -724,7 +815,28 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zipCode The user&#39;s five-digit ZIP code
+         * @param userNotifications Specifies email notifications the user receives for products.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder userNotifications(@Nullable Output<IamUserUserNotificationsArgs> userNotifications) {
+            $.userNotifications = userNotifications;
+            return this;
+        }
+
+        /**
+         * @param userNotifications Specifies email notifications the user receives for products.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder userNotifications(IamUserUserNotificationsArgs userNotifications) {
+            return userNotifications(Output.of(userNotifications));
+        }
+
+        /**
+         * @param zipCode The user&#39;s five-digit ZIP code.
          * 
          * @return builder
          * 
@@ -735,7 +847,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zipCode The user&#39;s five-digit ZIP code
+         * @param zipCode The user&#39;s five-digit ZIP code.
          * 
          * @return builder
          * 
@@ -753,9 +865,6 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
             }
             if ($.email == null) {
                 throw new MissingRequiredPropertyException("IamUserArgs", "email");
-            }
-            if ($.enableTfa == null) {
-                throw new MissingRequiredPropertyException("IamUserArgs", "enableTfa");
             }
             if ($.firstName == null) {
                 throw new MissingRequiredPropertyException("IamUserArgs", "firstName");

@@ -11,7 +11,6 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
-import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -20,18 +19,6 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="akamai:index/dnsRecord:DnsRecord")
 public class DnsRecord extends com.pulumi.resources.CustomResource {
-    /**
-     * @deprecated
-     * Field &#39;active&#39; has been deprecated. Setting it has no effect
-     * 
-     */
-    @Deprecated /* Field 'active' has been deprecated. Setting it has no effect */
-    @Export(name="active", refs={Boolean.class}, tree="[0]")
-    private Output</* @Nullable */ Boolean> active;
-
-    public Output<Optional<Boolean>> active() {
-        return Codegen.optional(this.active);
-    }
     @Export(name="algorithm", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> algorithm;
 

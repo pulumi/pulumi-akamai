@@ -13,19 +13,19 @@ namespace Pulumi.Akamai
     public partial class IamGroup : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Human readable name for a group
+        /// Human readable name for a group.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// Unique identifier for the parent group
+        /// Unique identifier for the parent group.
         /// </summary>
         [Output("parentGroupId")]
         public Output<int> ParentGroupId { get; private set; } = null!;
 
         /// <summary>
-        /// Subgroups IDs
+        /// Subgroups IDs.
         /// </summary>
         [Output("subGroups")]
         public Output<ImmutableArray<int>> SubGroups { get; private set; } = null!;
@@ -77,13 +77,13 @@ namespace Pulumi.Akamai
     public sealed class IamGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Human readable name for a group
+        /// Human readable name for a group.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// Unique identifier for the parent group
+        /// Unique identifier for the parent group.
         /// </summary>
         [Input("parentGroupId", required: true)]
         public Input<int> ParentGroupId { get; set; } = null!;
@@ -97,13 +97,13 @@ namespace Pulumi.Akamai
     public sealed class IamGroupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Human readable name for a group
+        /// Human readable name for a group.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// Unique identifier for the parent group
+        /// Unique identifier for the parent group.
         /// </summary>
         [Input("parentGroupId")]
         public Input<int>? ParentGroupId { get; set; }
@@ -112,7 +112,7 @@ namespace Pulumi.Akamai
         private InputList<int>? _subGroups;
 
         /// <summary>
-        /// Subgroups IDs
+        /// Subgroups IDs.
         /// </summary>
         public InputList<int> SubGroups
         {

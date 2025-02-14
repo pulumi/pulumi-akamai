@@ -22,15 +22,19 @@ __all__ = ['CpsDvValidationArgs', 'CpsDvValidation']
 class CpsDvValidationArgs:
     def __init__(__self__, *,
                  enrollment_id: pulumi.Input[int],
+                 acknowledge_post_verification_warnings: Optional[pulumi.Input[bool]] = None,
                  sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  timeouts: Optional[pulumi.Input['CpsDvValidationTimeoutsArgs']] = None):
         """
         The set of arguments for constructing a CpsDvValidation resource.
         :param pulumi.Input[int] enrollment_id: The unique identifier of enrollment
+        :param pulumi.Input[bool] acknowledge_post_verification_warnings: Whether to acknowledge all post-verification warnings
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: List of SANs
         :param pulumi.Input['CpsDvValidationTimeoutsArgs'] timeouts: Enables to set timeout for processing
         """
         pulumi.set(__self__, "enrollment_id", enrollment_id)
+        if acknowledge_post_verification_warnings is not None:
+            pulumi.set(__self__, "acknowledge_post_verification_warnings", acknowledge_post_verification_warnings)
         if sans is not None:
             pulumi.set(__self__, "sans", sans)
         if timeouts is not None:
@@ -47,6 +51,18 @@ class CpsDvValidationArgs:
     @enrollment_id.setter
     def enrollment_id(self, value: pulumi.Input[int]):
         pulumi.set(self, "enrollment_id", value)
+
+    @property
+    @pulumi.getter(name="acknowledgePostVerificationWarnings")
+    def acknowledge_post_verification_warnings(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to acknowledge all post-verification warnings
+        """
+        return pulumi.get(self, "acknowledge_post_verification_warnings")
+
+    @acknowledge_post_verification_warnings.setter
+    def acknowledge_post_verification_warnings(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "acknowledge_post_verification_warnings", value)
 
     @property
     @pulumi.getter
@@ -76,17 +92,21 @@ class CpsDvValidationArgs:
 @pulumi.input_type
 class _CpsDvValidationState:
     def __init__(__self__, *,
+                 acknowledge_post_verification_warnings: Optional[pulumi.Input[bool]] = None,
                  enrollment_id: Optional[pulumi.Input[int]] = None,
                  sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  status: Optional[pulumi.Input[str]] = None,
                  timeouts: Optional[pulumi.Input['CpsDvValidationTimeoutsArgs']] = None):
         """
         Input properties used for looking up and filtering CpsDvValidation resources.
+        :param pulumi.Input[bool] acknowledge_post_verification_warnings: Whether to acknowledge all post-verification warnings
         :param pulumi.Input[int] enrollment_id: The unique identifier of enrollment
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: List of SANs
         :param pulumi.Input[str] status: Status of validation
         :param pulumi.Input['CpsDvValidationTimeoutsArgs'] timeouts: Enables to set timeout for processing
         """
+        if acknowledge_post_verification_warnings is not None:
+            pulumi.set(__self__, "acknowledge_post_verification_warnings", acknowledge_post_verification_warnings)
         if enrollment_id is not None:
             pulumi.set(__self__, "enrollment_id", enrollment_id)
         if sans is not None:
@@ -95,6 +115,18 @@ class _CpsDvValidationState:
             pulumi.set(__self__, "status", status)
         if timeouts is not None:
             pulumi.set(__self__, "timeouts", timeouts)
+
+    @property
+    @pulumi.getter(name="acknowledgePostVerificationWarnings")
+    def acknowledge_post_verification_warnings(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to acknowledge all post-verification warnings
+        """
+        return pulumi.get(self, "acknowledge_post_verification_warnings")
+
+    @acknowledge_post_verification_warnings.setter
+    def acknowledge_post_verification_warnings(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "acknowledge_post_verification_warnings", value)
 
     @property
     @pulumi.getter(name="enrollmentId")
@@ -150,6 +182,7 @@ class CpsDvValidation(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 acknowledge_post_verification_warnings: Optional[pulumi.Input[bool]] = None,
                  enrollment_id: Optional[pulumi.Input[int]] = None,
                  sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  timeouts: Optional[pulumi.Input[Union['CpsDvValidationTimeoutsArgs', 'CpsDvValidationTimeoutsArgsDict']]] = None,
@@ -158,6 +191,7 @@ class CpsDvValidation(pulumi.CustomResource):
         Create a CpsDvValidation resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[bool] acknowledge_post_verification_warnings: Whether to acknowledge all post-verification warnings
         :param pulumi.Input[int] enrollment_id: The unique identifier of enrollment
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: List of SANs
         :param pulumi.Input[Union['CpsDvValidationTimeoutsArgs', 'CpsDvValidationTimeoutsArgsDict']] timeouts: Enables to set timeout for processing
@@ -185,6 +219,7 @@ class CpsDvValidation(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 acknowledge_post_verification_warnings: Optional[pulumi.Input[bool]] = None,
                  enrollment_id: Optional[pulumi.Input[int]] = None,
                  sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  timeouts: Optional[pulumi.Input[Union['CpsDvValidationTimeoutsArgs', 'CpsDvValidationTimeoutsArgsDict']]] = None,
@@ -197,6 +232,7 @@ class CpsDvValidation(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = CpsDvValidationArgs.__new__(CpsDvValidationArgs)
 
+            __props__.__dict__["acknowledge_post_verification_warnings"] = acknowledge_post_verification_warnings
             if enrollment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'enrollment_id'")
             __props__.__dict__["enrollment_id"] = enrollment_id
@@ -213,6 +249,7 @@ class CpsDvValidation(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            acknowledge_post_verification_warnings: Optional[pulumi.Input[bool]] = None,
             enrollment_id: Optional[pulumi.Input[int]] = None,
             sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             status: Optional[pulumi.Input[str]] = None,
@@ -224,6 +261,7 @@ class CpsDvValidation(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[bool] acknowledge_post_verification_warnings: Whether to acknowledge all post-verification warnings
         :param pulumi.Input[int] enrollment_id: The unique identifier of enrollment
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: List of SANs
         :param pulumi.Input[str] status: Status of validation
@@ -233,11 +271,20 @@ class CpsDvValidation(pulumi.CustomResource):
 
         __props__ = _CpsDvValidationState.__new__(_CpsDvValidationState)
 
+        __props__.__dict__["acknowledge_post_verification_warnings"] = acknowledge_post_verification_warnings
         __props__.__dict__["enrollment_id"] = enrollment_id
         __props__.__dict__["sans"] = sans
         __props__.__dict__["status"] = status
         __props__.__dict__["timeouts"] = timeouts
         return CpsDvValidation(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="acknowledgePostVerificationWarnings")
+    def acknowledge_post_verification_warnings(self) -> pulumi.Output[Optional[bool]]:
+        """
+        Whether to acknowledge all post-verification warnings
+        """
+        return pulumi.get(self, "acknowledge_post_verification_warnings")
 
     @property
     @pulumi.getter(name="enrollmentId")

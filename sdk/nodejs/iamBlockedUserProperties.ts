@@ -33,15 +33,15 @@ export class IamBlockedUserProperties extends pulumi.CustomResource {
     }
 
     /**
-     * List of properties to block for a user
+     * List of properties to block for a user.
      */
     public readonly blockedProperties!: pulumi.Output<number[]>;
     /**
-     * A unique identifier for a group
+     * A unique identifier for a group.
      */
     public readonly groupId!: pulumi.Output<number>;
     /**
-     * A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID
+     * A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID.
      */
     public readonly identityId!: pulumi.Output<string>;
 
@@ -86,15 +86,15 @@ export class IamBlockedUserProperties extends pulumi.CustomResource {
  */
 export interface IamBlockedUserPropertiesState {
     /**
-     * List of properties to block for a user
+     * List of properties to block for a user.
      */
     blockedProperties?: pulumi.Input<pulumi.Input<number>[]>;
     /**
-     * A unique identifier for a group
+     * A unique identifier for a group.
      */
     groupId?: pulumi.Input<number>;
     /**
-     * A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID
+     * A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID.
      */
     identityId?: pulumi.Input<string>;
 }
@@ -104,15 +104,15 @@ export interface IamBlockedUserPropertiesState {
  */
 export interface IamBlockedUserPropertiesArgs {
     /**
-     * List of properties to block for a user
+     * List of properties to block for a user.
      */
     blockedProperties: pulumi.Input<pulumi.Input<number>[]>;
     /**
-     * A unique identifier for a group
+     * A unique identifier for a group.
      */
     groupId: pulumi.Input<number>;
     /**
-     * A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID
+     * A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID.
      */
     identityId: pulumi.Input<string>;
 }

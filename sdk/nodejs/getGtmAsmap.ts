@@ -36,7 +36,7 @@ export interface GetGtmAsmapResult {
     readonly defaultDatacenter?: outputs.GetGtmAsmapDefaultDatacenter;
     readonly domain: string;
     /**
-     * @deprecated Required by the terraform plugin testing framework, always set to `gtmAsmap`.
+     * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
     readonly links?: outputs.GetGtmAsmapLink[];

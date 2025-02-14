@@ -125,6 +125,10 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationShearsResult> Shears;
         /// <summary>
+        /// Crops around whatever is most important in the image, to a region around a specified area of interest relative to the specified `width` and `height` values. The crop detects any faces present, otherwise features.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationSmartCropResult> SmartCrops;
+        /// <summary>
         /// Automatically crops uniform backgrounds from the edges of an image.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationTrimResult> Trims;
@@ -195,6 +199,8 @@ namespace Pulumi.Akamai.Outputs
 
             ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationShearsResult> shears,
 
+            ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationSmartCropResult> smartCrops,
+
             ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationTrimResult> trims,
 
             ImmutableArray<Outputs.GetImagingPolicyImagePolicyTransformationUnsharpMaskResult> unsharpMasks)
@@ -229,6 +235,7 @@ namespace Pulumi.Akamai.Outputs
             Rotates = rotates;
             Scales = scales;
             Shears = shears;
+            SmartCrops = smartCrops;
             Trims = trims;
             UnsharpMasks = unsharpMasks;
         }
