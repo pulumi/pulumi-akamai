@@ -13,7 +13,7 @@ replace (
 
 require (
 	github.com/akamai/terraform-provider-akamai/v7 v7.0.0
-	github.com/pulumi/pulumi-terraform-bridge/v3 v3.104.0
+	github.com/pulumi/pulumi-terraform-bridge/v3 v3.104.1-0.20250313133841-de5510662e1c
 	github.com/pulumi/pulumi/pkg/v3 v3.153.1
 	github.com/pulumi/pulumi/sdk/v3 v3.153.1
 	github.com/stretchr/testify v1.10.0
